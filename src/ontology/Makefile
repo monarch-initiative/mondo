@@ -39,6 +39,18 @@ $(ONT).obo: $(ONT).owl
 	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 
 # ----------------------------------------
+# DOSDP Modules
+# ----------------------------------------
+all_mods: modules/disease_by_location.owl
+
+modules/%.tsv: modules/%.csv
+	csv2tsv.py $< $@
+
+modules/%.owl: modules/%.tsv
+	dosdp-tools  --obo-prefixes --ontology=../ontology/tbn-edit.owl  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
+
+
+# ----------------------------------------
 # Import modules
 # ----------------------------------------
 # Most ontologies are modularly constructed using portions of other ontologies
