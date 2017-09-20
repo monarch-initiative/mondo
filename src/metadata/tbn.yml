@@ -1,0 +1,27 @@
+# PURL configuration for http://purl.obolibrary.org/obo/tbn
+
+idspace: TBN
+base_url: /obo/tbn
+
+products:
+- tbn.owl: https://raw.githubusercontent.com/cmungall/tbd-disease-ontology/master/tbn.owl
+- tbn.obo: https://raw.githubusercontent.com/cmungall/tbd-disease-ontology/master/tbn.obo
+
+term_browser: ontobee
+example_terms:
+- TBN_0000000
+
+entries:
+
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/cmungall/tbd-disease-ontology/v
+
+- prefix: /tracker/
+  replacement: https://github.com/cmungall/tbd-disease-ontology/issues
+
+- prefix: /about/
+  replacement: http://www.ontobee.org/ontology/TBN?iri=http://purl.obolibrary.org/obo/
+
+## generic fall-through, serve direct from github by default
+- prefix: /
+  replacement: https://raw.githubusercontent.com/cmungall/tbd-disease-ontology/master/
