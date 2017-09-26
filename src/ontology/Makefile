@@ -4,9 +4,9 @@
 # these can be overwritten on the command line
 
 OBO=http://purl.obolibrary.org/obo
-ONT=tbn
+ONT=tbd
 BASE=$(OBO)/$(ONT)
-SRC=$(ONT)-edit.owl
+SRC=$(ONT)-edit.obo
 RELEASEDIR=../..
 ROBOT= robot
 OWLTOOLS= owltools
@@ -36,7 +36,8 @@ prepare_release: all
 $(ONT).owl: $(SRC)
 	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 $(ONT).obo: $(ONT).owl
-	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+	owltools --use-catalog $< --merge-imports-closure -o -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+#	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 
 # ----------------------------------------
 # DOSDP Modules
@@ -47,7 +48,7 @@ modules/%.tsv: modules/%.csv
 	csv2tsv.py $< $@
 
 modules/%.owl: modules/%.tsv
-	dosdp-tools  --obo-prefixes --ontology=../ontology/tbn-edit.owl  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
+	dosdp-tools  --obo-prefixes --ontology=../ontology/tbd-edit.owl  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
 
 
 # ----------------------------------------
