@@ -38,7 +38,8 @@ $(ONT).owl: $(SRC)
 $(ONT).obo: $(ONT).owl
 	owltools --use-catalog $< --merge-imports-closure -o -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 #	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
-
+$(ONT).jsonz: $(ONT).owl
+	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 # ----------------------------------------
 # DOSDP Modules
 # ----------------------------------------
@@ -106,3 +107,11 @@ REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
+
+# ----------------------------------------
+# Lexical mapping
+# ----------------------------------------
+
+# align against self (*not* external ontologies)
+mappings.tsv: tbd.json
+	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@
