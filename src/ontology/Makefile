@@ -38,7 +38,7 @@ $(ONT).owl: $(SRC)
 $(ONT).obo: $(ONT).owl
 	owltools --use-catalog $< --merge-imports-closure -o -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 #	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
-$(ONT).jsonz: $(ONT).owl
+$(ONT).json: $(ONT).owl
 	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 # ----------------------------------------
 # DOSDP Modules
