@@ -40,6 +40,15 @@ $(ONT).obo: $(ONT).owl
 #	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 $(ONT).json: $(ONT).owl
 	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+
+$(ONT)-basic.owl: $(ONT).owl
+	owltools --use-catalog $< --remove-imports-closure --remove-dangling -o $@
+$(ONT)-basic.obo: $(ONT)-basic.owl
+	owltools --use-catalog $<  -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+%.json: %.owl
+	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+
+
 # ----------------------------------------
 # DOSDP Modules
 # ----------------------------------------
