@@ -79,6 +79,9 @@ mirror/%.owl: $(SRC)
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
+imports/%_newterms.txt:
+	robot query -i tbd-edit.obo -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
+
 # ----------------------------------------
 # Release
 # ----------------------------------------
