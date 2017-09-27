@@ -99,6 +99,13 @@ release: $(ONT).owl $(ONT).obo
 	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
 
 # ----------------------------------------
+# Editing
+# ----------------------------------------
+
+INF: tbd-edit.obo
+	owltools --use-catalog  tbd-edit.obo --assert-inferred-subclass-axioms --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+
+# ----------------------------------------
 # Sparql queries: Q/C
 # ----------------------------------------
 
