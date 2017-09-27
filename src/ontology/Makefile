@@ -134,3 +134,6 @@ all_reports: $(SRC)
 # align against self (*not* external ontologies)
 mappings.tsv: tbd.json
 	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@
+
+hp-mappings.tsv: tbd.json
+	ontobio-lexmap.py hp $< > $@.tmp && mv $@.tmp $@
