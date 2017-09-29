@@ -36,15 +36,15 @@ prepare_release: all
 $(ONT).owl: $(SRC)
 	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 $(ONT).obo: $(ONT).owl
-	owltools --use-catalog $< --merge-imports-closure -o -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+	owltools --use-catalog $< --merge-imports-closure -o -f obo --no-check $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 #	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 $(ONT).json: $(ONT).owl
 	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
 $(ONT)-basic.owl: $(ONT).owl
-	owltools --use-catalog $< --remove-imports-closure --remove-dangling -o $@
+	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o $@
 $(ONT)-basic.obo: $(ONT)-basic.owl
-	owltools --use-catalog $<  -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+	owltools --use-catalog $<  -o -f obo $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 %.json: %.owl
 	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
@@ -137,3 +137,7 @@ mappings.tsv: tbd.json
 
 hp-mappings.tsv: tbd.json
 	ontobio-lexmap.py hp $< > $@.tmp && mv $@.tmp $@
+
+
+unlikely.md: linked-rpt.md
+	./unlikely-axiom-report.pl $< | head -200 > $@
