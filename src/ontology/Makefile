@@ -68,7 +68,7 @@ modules/%.owl: modules/%.tsv
 # These live in the imports/ folder
 # These can be regenerated with make all_imports
 
-IMPORTS = uberon cl go pato ro bfo
+IMPORTS = uberon cl go pato ro bfo mfoem
 IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 # Make this target to regenerate ALL
@@ -141,3 +141,6 @@ hp-mappings.tsv: tbd.json
 
 unlikely.md: linked-rpt.md
 	./unlikely-axiom-report.pl $< | head -200 > $@
+
+phenotype_annotation.tab:
+	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@
