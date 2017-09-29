@@ -1,6 +1,12 @@
 [![Build Status](https://travis-ci.org/cmungall/tbd-disease-ontology.svg?branch=master)](https://travis-ci.org/cmungall/tbd-disease-ontology)
 [![DOI](https://zenodo.org/badge/13996/cmungall/tbd-disease-ontology.svg)](https://zenodo.org/badge/latestdoi/13996/cmungall/tbd-disease-ontology)
 
+**IMPORTANT**
+
+Read the editors guide:
+
+https://docs.google.com/document/d/19bp9MpCHCxbjMmbntB2e5gZNzzNlu06DnDB8xcoSXK8/edit#
+
 # tbd-disease-ontology
 
 This ontology... YOUR DESCRIPTION HERE
