@@ -151,3 +151,6 @@ phenotype_annotation.tab:
 
 mim2gene_medgen:
 	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
+
+modules/equiv-xrefs.obo: tbd-edit.obo
+	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
