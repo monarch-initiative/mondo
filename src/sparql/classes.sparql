@@ -2,6 +2,9 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT ?cls WHERE 
 {
-  ?cls a owl:Class 
+  { ?cls a owl:Class }
+  UNION
+  { ?b owl:someValuesFrom ?cls }
+  
   FILTER (!isBlank(?cls))
 }
