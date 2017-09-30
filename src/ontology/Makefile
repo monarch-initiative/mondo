@@ -148,3 +148,6 @@ unlikely.md: linked-rpt.md
 
 phenotype_annotation.tab:
 	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@
+
+mim2gene_medgen:
+	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
