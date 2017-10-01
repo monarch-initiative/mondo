@@ -13,6 +13,9 @@ OWLTOOLS= owltools
 USECAT= --use-catalog
 SPARQLDIR = ../sparql
 
+CONSTRUCTS= embedded-definition
+INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
+
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
@@ -26,6 +29,8 @@ prepare_release: all
 	git add $(RELEASEDIR)/imports/*{obo,owl} &&\
 	(test -f subsets/*owl && cp subsets/*{owl,obo} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
+
+all_includes: $(INCLUDES_OWL)
 
 # ----------------------------------------
 # Main release targets
@@ -130,6 +135,18 @@ REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
+
+# ----------------------------------------
+# Sparql constructs
+# ----------------------------------------
+
+# generate includes from sparql CONSTRUCT queries;
+# these can then be merged in to the main ontology
+#include-%.owl: ../sparql/construct-%.sparql $(SRC)
+#	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/tbd/$@ -o $@
+
+imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
+	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/tbd/$@ -o $@
 
 # ----------------------------------------
 # Lexical mapping
