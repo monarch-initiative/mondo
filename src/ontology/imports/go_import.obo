@@ -2,6 +2,25 @@ format-version: 1.2
 ontology: tbd/imports/go_import
 
 [Term]
+id: GO:0000041
+name: transition metal ion transport
+def: "The directed movement of transition metal ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A transition metal is an element whose atom has an incomplete d-subshell of extranuclear electrons, or which gives rise to a cation or cations with an incomplete d-subshell. Transition metals often have more than one valency state. Biologically relevant transition metals include vanadium, manganese, iron, copper, cobalt, nickel, molybdenum and silver." [ISBN:0198506732]
+synonym: "transition metal transport" EXACT []
+is_a: GO:0030001 ! metal ion transport
+
+[Term]
+id: GO:0000323
+name: lytic vacuole
+def: "A vacuole that is maintained at an acidic pH and which contains degradative enzymes, including a wide variety of acid hydrolases." [GOC:krc]
+is_a: GO:0005773 ! vacuole
+
+[Term]
+id: GO:0002544
+name: chronic inflammatory response
+def: "Inflammation of prolonged duration (weeks or months) in which active inflammation, tissue destruction, and attempts at repair are proceeding simultaneously. Although it may follow acute inflammation, chronic inflammation frequently begins insidiously, as a low-grade, smoldering, often asymptomatic response." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
+is_a: GO:0006954 ! inflammatory response
+
+[Term]
 id: GO:0003008
 name: system process
 def: "A multicellular organismal process carried out by any of the organs or tissues in an organ system. An organ system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a biological objective." [GOC:mtg_cardio]
@@ -17,10 +36,48 @@ synonym: "cellular component" EXACT []
 synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
 
 [Term]
+id: GO:0005622
+name: intracellular
+def: "The living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." [ISBN:0198506732]
+synonym: "internal to cell" EXACT []
+synonym: "nucleocytoplasm" RELATED [GOC:mah]
+synonym: "protoplasm" EXACT []
+synonym: "protoplast" RELATED [GOC:mah]
+is_a: GO:0044464 ! cell part
+
+[Term]
 id: GO:0005623
 name: cell
 def: "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:go_curators]
 is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0005737
+name: cytoplasm
+def: "All of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." [ISBN:0198547684]
+is_a: GO:0044424 ! intracellular part
+
+[Term]
+id: GO:0005764
+name: lysosome
+def: "A small lytic vacuole that has cell cycle-independent morphology and is found in most animal cells and that contains a variety of hydrolases, most of which have their maximal activities in the pH range 5-6. The contained enzymes display latency if properly isolated. About 40 different lysosomal hydrolases are known and lysosomes have a great variety of morphologies and functions." [GOC:mah, ISBN:0198506732]
+is_a: GO:0000323 ! lytic vacuole
+
+[Term]
+id: GO:0005773
+name: vacuole
+def: "A closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material. Cells contain one or several vacuoles, that may have different functions from each other. Vacuoles have a diverse array of functions. They can act as a storage organelle for nutrients or waste products, as a degradative compartment, as a cost-effective way of increasing cell size, and as a homeostatic regulator controlling both turgor pressure and pH of the cytosol." [GOC:mtg_sensu, ISBN:0198506732]
+synonym: "vacuolar carboxypeptidase Y" RELATED []
+is_a: GO:0043231 ! intracellular membrane-bounded organelle
+is_a: GO:0044444 ! cytoplasmic part
+
+[Term]
+id: GO:0005777
+name: peroxisome
+def: "A small organelle enclosed by a single membrane, and found in most eukaryotic cells. Contains peroxidases and other enzymes involved in a variety of metabolic processes including free radical detoxification, lipid catabolism and biosynthesis, and hydrogen peroxide metabolism." [GOC:pm, PMID:9302272, UniProtKB-KW:KW-0576]
+synonym: "peroxisomal" RELATED [GOC:curators]
+synonym: "peroxisome vesicle" BROAD []
+is_a: GO:0042579 ! microbody
 
 [Term]
 id: GO:0005886
@@ -111,6 +168,32 @@ synonym: "energy reserve metabolism" EXACT []
 is_a: GO:0015980 ! energy derivation by oxidation of organic compounds
 
 [Term]
+id: GO:0006464
+name: cellular protein modification process
+def: "The covalent alteration of one or more amino acids occurring in proteins, peptides and nascent polypeptides (co-translational, post-translational modifications) occurring at the level of an individual cell. Includes the modification of charged tRNAs that are destined to occur in a protein (pre-translation modification)." [GOC:go_curators]
+synonym: "process resulting in protein modification" RELATED []
+synonym: "protein modification process" BROAD [GOC:bf, GOC:jl]
+synonym: "protein tagging activity" RELATED []
+is_a: GO:0036211 ! protein modification process
+is_a: GO:0044267 ! cellular protein metabolic process
+
+[Term]
+id: GO:0006486
+name: protein glycosylation
+def: "A protein modification process that results in the addition of a carbohydrate or carbohydrate derivative unit to a protein amino acid, e.g. the addition of glycan chains to proteins." [GOC:curators, GOC:pr]
+synonym: "protein amino acid glycosylation" EXACT [GOC:bf]
+is_a: GO:0006464 ! cellular protein modification process
+is_a: GO:0043413 ! macromolecule glycosylation
+relationship: BFO:0000050 GO:0009101 ! glycoprotein biosynthetic process
+
+[Term]
+id: GO:0006493
+name: protein O-linked glycosylation
+def: "A protein glycosylation process in which a carbohydrate or carbohydrate derivative unit is added to a protein via the hydroxyl group of peptidyl-serine, peptidyl-threonine, peptidyl-hydroxylysine, or peptidyl-hydroxyproline, or via the phenol group of peptidyl-tyrosine, forming an O-glycan." [GOC:pr, ISBN:0879695595, RESID:AA0153, RESID:AA0154, RESID:AA0155, RESID:AA0157, RESID:AA0212]
+synonym: "protein amino acid O-linked glycosylation" EXACT [GOC:bf]
+is_a: GO:0006486 ! protein glycosylation
+
+[Term]
 id: GO:0006520
 name: cellular amino acid metabolic process
 def: "The chemical reactions and pathways involving amino acids, carboxylic acids containing one or more amino groups, as carried out by individual cells." [CHEBI:33709, GOC:curators, ISBN:0198506732]
@@ -141,11 +224,82 @@ is_a: GO:0006563 ! L-serine metabolic process
 is_a: GO:0009070 ! serine family amino acid biosynthetic process
 
 [Term]
+id: GO:0006584
+name: catecholamine metabolic process
+def: "The chemical reactions and pathways involving any of a group of physiologically important biogenic amines that possess a catechol (3,4-dihydroxyphenyl) nucleus and are derivatives of 3,4-dihydroxyphenylethylamine." [GOC:jl, ISBN:0198506732]
+synonym: "catecholamine metabolism" EXACT []
+is_a: GO:0009712 ! catechol-containing compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
+id: GO:0006725
+name: cellular aromatic compound metabolic process
+def: "The chemical reactions and pathways involving aromatic compounds, any organic compound characterized by one or more planar rings, each of which contains conjugated double bonds and delocalized pi electrons, as carried out by individual cells." [GOC:ai, ISBN:0198506732]
+synonym: "aromatic compound metabolism" EXACT []
+synonym: "aromatic hydrocarbon metabolic process" NARROW []
+synonym: "aromatic hydrocarbon metabolism" NARROW []
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
 id: GO:0006807
 name: nitrogen compound metabolic process
 def: "The chemical reactions and pathways involving organic or inorganic compounds that contain nitrogen." [CHEBI:51143, GOC:go_curators, GOC:jl, ISBN:0198506732]
 synonym: "nitrogen compound metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0006810
+name: transport
+def: "The directed movement of substances (such as macromolecules, small molecules, ions) or cellular components (such as complexes and organelles) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter, pore or motor protein." [GOC:dos, GOC:dph, GOC:jl, GOC:mah]
+synonym: "single-organism transport" RELATED []
+synonym: "small molecule transport" NARROW []
+synonym: "solute:solute exchange" NARROW []
+is_a: GO:0051234 ! establishment of localization
+
+[Term]
+id: GO:0006811
+name: ion transport
+def: "The directed movement of charged atoms or small charged molecules into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+is_a: GO:0006810 ! transport
+
+[Term]
+id: GO:0006812
+name: cation transport
+def: "The directed movement of cations, atoms or small molecules with a net positive charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+synonym: "di-, tri-valent inorganic cation transport" NARROW [GOC:mah]
+is_a: GO:0006811 ! ion transport
+
+[Term]
+id: GO:0006826
+name: iron ion transport
+def: "The directed movement of iron (Fe) ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+synonym: "iron transport" EXACT []
+is_a: GO:0000041 ! transition metal ion transport
+
+[Term]
+id: GO:0006950
+name: response to stress
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a disturbance in organismal or cellular homeostasis, usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." [GOC:mah]
+synonym: "response to abiotic stress" RELATED []
+synonym: "response to biotic stress" RELATED []
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0006952
+name: defense response
+def: "Reactions, triggered in response to the presence of a foreign body or the occurrence of an injury, which result in restriction of damage to the organism attacked or prevention/recovery from the infection caused by the attack." [GOC:go_curators]
+synonym: "antimicrobial peptide activity" RELATED []
+synonym: "defence response" EXACT []
+synonym: "defense/immunity protein activity" RELATED []
+synonym: "physiological defense response" EXACT []
+is_a: GO:0006950 ! response to stress
+
+[Term]
+id: GO:0006954
+name: inflammatory response
+def: "The immediate defensive reaction (by vertebrate tissue) to infection or injury caused by chemical or physical agents. The process is characterized by local vasodilation, extravasation of plasma into intercellular spaces and accumulation of white blood cells and macrophages." [GO_REF:0000022, GOC:mtg_15nov05, ISBN:0198506732]
+synonym: "Inflammation" BROAD []
+is_a: GO:0006952 ! defense response
 
 [Term]
 id: GO:0007610
@@ -213,6 +367,18 @@ synonym: "synthesis" EXACT []
 is_a: GO:0008152 ! metabolic process
 
 [Term]
+id: GO:0009059
+name: macromolecule biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [CHEBI:33694, GOC:mah]
+synonym: "biopolymer biosynthetic process" EXACT [GOC:mtg_chebi_dec09]
+synonym: "macromolecule anabolism" EXACT []
+synonym: "macromolecule biosynthesis" EXACT []
+synonym: "macromolecule formation" EXACT []
+synonym: "macromolecule synthesis" EXACT []
+is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
 id: GO:0009069
 name: serine family amino acid metabolic process
 def: "The chemical reactions and pathways involving amino acids of the serine family, comprising cysteine, glycine, homoserine, selenocysteine and serine." [GOC:ai]
@@ -229,6 +395,48 @@ synonym: "serine family amino acid formation" EXACT []
 synonym: "serine family amino acid synthesis" EXACT []
 is_a: GO:0009069 ! serine family amino acid metabolic process
 is_a: GO:1901607 ! alpha-amino acid biosynthetic process
+
+[Term]
+id: GO:0009100
+name: glycoprotein metabolic process
+def: "The chemical reactions and pathways involving glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." [GOC:go_curators, ISBN:0198506732]
+synonym: "glycoprotein metabolism" EXACT []
+is_a: GO:0019538 ! protein metabolic process
+is_a: GO:0044260 ! cellular macromolecule metabolic process
+is_a: GO:1901135 ! carbohydrate derivative metabolic process
+
+[Term]
+id: GO:0009101
+name: glycoprotein biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." [GOC:go_curators, ISBN:0198506732]
+synonym: "glycoprotein anabolism" EXACT []
+synonym: "glycoprotein biosynthesis" EXACT []
+synonym: "glycoprotein formation" EXACT []
+synonym: "glycoprotein synthesis" EXACT []
+is_a: GO:0009100 ! glycoprotein metabolic process
+is_a: GO:0034645 ! cellular macromolecule biosynthetic process
+is_a: GO:1901137 ! carbohydrate derivative biosynthetic process
+is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
+id: GO:0009712
+name: catechol-containing compound metabolic process
+def: "The chemical reactions and pathways involving a compound containing a pyrocatechol (1,2-benzenediol) nucleus or substituent." [GOC:sm, ISBN:0198547684]
+synonym: "catechol metabolic process" RELATED []
+synonym: "catechol metabolism" RELATED []
+is_a: GO:0018958 ! phenol-containing compound metabolic process
+
+[Term]
+id: GO:0009713
+name: catechol-containing compound biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of catechol-containing compounds. Catechol is a compound containing a pyrocatechol nucleus or substituent." [GOC:go_curators]
+synonym: "catechol anabolism" RELATED []
+synonym: "catechol biosynthesis" RELATED []
+synonym: "catechol biosynthetic process" RELATED []
+synonym: "catechol formation" RELATED []
+synonym: "catechol synthesis" RELATED []
+is_a: GO:0009712 ! catechol-containing compound metabolic process
+is_a: GO:0046189 ! phenol-containing compound biosynthetic process
 
 [Term]
 id: GO:0009987
@@ -268,11 +476,64 @@ is_a: GO:0044283 ! small molecule biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
+id: GO:0018958
+name: phenol-containing compound metabolic process
+def: "The chemical reactions and pathways involving a phenol, any compound containing one or more hydroxyl groups directly attached to an aromatic carbon ring." [CHEBI:33853, ISBN:0198506732]
+synonym: "carbolic acid metabolic process" EXACT []
+synonym: "carbolic acid metabolism" EXACT []
+synonym: "hydroxybenzene metabolic process" EXACT []
+synonym: "hydroxybenzene metabolism" EXACT []
+synonym: "phenol-containing compound metabolism" EXACT [GOC:curators]
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0019438
+name: aromatic compound biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of aromatic compounds, any substance containing an aromatic carbon ring." [GOC:ai]
+synonym: "aromatic compound anabolism" EXACT []
+synonym: "aromatic compound biosynthesis" EXACT []
+synonym: "aromatic compound formation" EXACT []
+synonym: "aromatic compound synthesis" EXACT []
+synonym: "aromatic hydrocarbon biosynthesis" NARROW []
+synonym: "aromatic hydrocarbon biosynthetic process" NARROW []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
+
+[Term]
+id: GO:0019538
+name: protein metabolic process
+def: "The chemical reactions and pathways involving a protein.  Includes protein modification." [GOC:ma]
+synonym: "protein metabolic process and modification" EXACT []
+synonym: "protein metabolism" EXACT []
+synonym: "protein metabolism and modification" EXACT []
+is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:0044238 ! primary metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
 id: GO:0019752
 name: carboxylic acid metabolic process
 def: "The chemical reactions and pathways involving carboxylic acids, any organic acid containing one or more carboxyl (COOH) groups or anions (COO-)." [ISBN:0198506732]
 synonym: "carboxylic acid metabolism" EXACT []
 is_a: GO:0043436 ! oxoacid metabolic process
+
+[Term]
+id: GO:0030001
+name: metal ion transport
+def: "The directed movement of metal ions, any metal ion with an electric charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+synonym: "heavy metal ion transport" NARROW []
+is_a: GO:0006812 ! cation transport
+
+[Term]
+id: GO:0030431
+name: sleep
+def: "Any process in which an organism enters and maintains a periodic, readily reversible state of reduced awareness and metabolic activity. Usually accompanied by physical relaxation, the onset of sleep in humans and other mammals is marked by a change in the electrical activity of the brain." [ISBN:0192800981]
+synonym: "diapause" RELATED []
+synonym: "dormancy" RELATED []
+synonym: "lethargus" RELATED []
+is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0030990
@@ -284,12 +545,29 @@ synonym: "intraflagellar transport particle" EXACT []
 is_a: GO:0043234 ! protein complex
 
 [Term]
+id: GO:0031594
+name: neuromuscular junction
+def: "The junction between the axon of a motor neuron and a muscle fiber. In response to the arrival of action potentials, the presynaptic button releases molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane of the muscle fiber, leading to a change in post-synaptic potential." [GOC:nln]
+synonym: "motor endplate" RELATED [NIF_Subcellular:nlx_subcell_20090512]
+synonym: "NMJ" RELATED [GOC:ha]
+is_a: GO:0045202 ! synapse
+
+[Term]
 id: GO:0032501
 name: multicellular organismal process
 def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." [GOC:curators, GOC:dph, GOC:isa_complete, GOC:tb]
 synonym: "organismal physiological process" EXACT []
 synonym: "single-multicellular organism process" RELATED []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0032838
+name: cell projection cytoplasm
+def: "All of the contents of a plasma membrane bounded cell projection, excluding the plasma membrane surrounding the projection." [GOC:krc, GOC:mah]
+is_a: GO:0099568 ! cytoplasmic region
+is_a: GO:0120038 ! plasma membrane bounded cell projection part
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: BFO:0000050 GO:0120025 ! plasma membrane bounded cell projection
 
 [Term]
 id: GO:0032991
@@ -300,6 +578,19 @@ synonym: "protein containing complex" EXACT []
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0034645
+name: cellular macromolecule biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass, carried out by individual cells." [CHEBI:33694, GOC:mah]
+synonym: "cellular biopolymer biosynthetic process" EXACT [GOC:mtg_chebi_dec09]
+synonym: "cellular macromolecule anabolism" EXACT [GOC:mah]
+synonym: "cellular macromolecule biosynthesis" EXACT [GOC:mah]
+synonym: "cellular macromolecule formation" EXACT [GOC:mah]
+synonym: "cellular macromolecule synthesis" EXACT [GOC:mah]
+is_a: GO:0009059 ! macromolecule biosynthetic process
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:0044260 ! cellular macromolecule metabolic process
+
+[Term]
 id: GO:0035176
 name: social behavior
 def: "Behavior directed towards society, or taking place between members of the same species. Occurs predominantly, or only, in individuals that are part of a group." [GOC:jh2, PMID:12848939, Wikipedia:Social_behavior]
@@ -307,6 +598,33 @@ synonym: "cooperative behavior" RELATED []
 synonym: "social behaviour" EXACT []
 is_a: GO:0051703 ! intraspecies interaction between organisms
 is_a: GO:0051705 ! multi-organism behavior
+
+[Term]
+id: GO:0036211
+name: protein modification process
+def: "The covalent alteration of one or more amino acids occurring in proteins, peptides and nascent polypeptides (co-translational, post-translational modifications). Includes the modification of charged tRNAs that are destined to occur in a protein (pre-translation modification)." [GOC:bf, GOC:jl]
+synonym: "protein modification" EXACT [GOC:bf]
+is_a: GO:0019538 ! protein metabolic process
+is_a: GO:0043412 ! macromolecule modification
+
+[Term]
+id: GO:0042423
+name: catecholamine biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of any of a group of physiologically important biogenic amines that possess a catechol (3,4-dihydroxyphenyl) nucleus and are derivatives of 3,4-dihydroxyphenylethylamine." [GOC:jl, ISBN:0198506732]
+synonym: "catecholamine anabolism" EXACT []
+synonym: "catecholamine biosynthesis" EXACT []
+synonym: "catecholamine formation" EXACT []
+synonym: "catecholamine synthesis" EXACT []
+is_a: GO:0006584 ! catecholamine metabolic process
+is_a: GO:0009713 ! catechol-containing compound biosynthetic process
+is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
+id: GO:0042579
+name: microbody
+def: "Cytoplasmic organelles, spherical or oval in shape, that are bounded by a single membrane and contain oxidative enzymes, especially those utilizing hydrogen peroxide (H2O2)." [ISBN:0198506732]
+is_a: GO:0043231 ! intracellular membrane-bounded organelle
+is_a: GO:0044444 ! cytoplasmic part
 
 [Term]
 id: GO:0042995
@@ -332,11 +650,48 @@ def: "Organized structure of distinctive morphology and function. Includes the n
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0043227
+name: membrane-bounded organelle
+def: "Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane." [GOC:go_curators]
+synonym: "membrane-enclosed organelle" EXACT []
+is_a: GO:0043226 ! organelle
+
+[Term]
+id: GO:0043229
+name: intracellular organelle
+def: "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." [GOC:go_curators]
+is_a: GO:0043226 ! organelle
+is_a: GO:0044424 ! intracellular part
+intersection_of: GO:0043226 ! organelle
+intersection_of: BFO:0000050 GO:0005622 ! intracellular
+
+[Term]
+id: GO:0043231
+name: intracellular membrane-bounded organelle
+def: "Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane and occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane." [GOC:go_curators]
+synonym: "intracellular membrane-enclosed organelle" EXACT []
+is_a: GO:0043227 ! membrane-bounded organelle
+is_a: GO:0043229 ! intracellular organelle
+
+[Term]
 id: GO:0043234
 name: protein complex
 def: "A stable macromolecular complex composed (only) of two or more polypeptide subunits along with any covalently attached molecules (such as lipid anchors or oligosaccharide) or non-protein prosthetic groups (such as nucleotides or metal ions). Prosthetic group in this context refers to a tightly bound cofactor. The component polypeptide subunits may be identical." [GOC:go_curators, http://www.ebi.ac.uk/intact/complex/documentation/]
 synonym: "protein-protein complex" EXACT []
 is_a: GO:0032991 ! macromolecular complex
+
+[Term]
+id: GO:0043412
+name: macromolecule modification
+def: "The covalent alteration of one or more monomeric units in a polypeptide, polynucleotide, polysaccharide, or other biological macromolecule, resulting in a change in its properties." [GOC:go_curators]
+is_a: GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0043413
+name: macromolecule glycosylation
+def: "The covalent attachment of a glycosyl residue to one or more monomeric units in a polypeptide, polynucleotide, polysaccharide, or other biological macromolecule." [GOC:jl]
+is_a: GO:0043412 ! macromolecule modification
+is_a: GO:0070085 ! glycosylation
 
 [Term]
 id: GO:0043436
@@ -416,6 +771,14 @@ is_a: GO:0044260 ! cellular macromolecule metabolic process
 is_a: GO:0044262 ! cellular carbohydrate metabolic process
 
 [Term]
+id: GO:0044267
+name: cellular protein metabolic process
+def: "The chemical reactions and pathways involving a specific protein, rather than of proteins in general, occurring at the level of an individual cell. Includes cellular protein modification." [GOC:jl]
+synonym: "cellular protein metabolism" EXACT []
+is_a: GO:0019538 ! protein metabolic process
+is_a: GO:0044260 ! cellular macromolecule metabolic process
+
+[Term]
 id: GO:0044281
 name: small molecule metabolic process
 def: "The chemical reactions and pathways involving small molecules, any low molecular weight, monomeric, non-encoded molecule." [GOC:curators, GOC:pde, GOC:vw]
@@ -440,6 +803,15 @@ intersection_of: BFO:0000050 GO:0043226 ! organelle
 relationship: BFO:0000050 GO:0043226 ! organelle
 
 [Term]
+id: GO:0044424
+name: intracellular part
+def: "Any constituent part of the living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." [GOC:jl]
+is_a: GO:0044464 ! cell part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005622 ! intracellular
+relationship: BFO:0000050 GO:0005622 ! intracellular
+
+[Term]
 id: GO:0044425
 name: membrane part
 def: "Any constituent part of a membrane, a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins." [GOC:jl]
@@ -447,6 +819,37 @@ is_a: GO:0005575 ! cellular_component
 intersection_of: GO:0005575 ! cellular_component
 intersection_of: BFO:0000050 GO:0016020 ! membrane
 relationship: BFO:0000050 GO:0016020 ! membrane
+
+[Term]
+id: GO:0044437
+name: vacuolar part
+def: "Any constituent part of a vacuole, a closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material." [GOC:jl]
+synonym: "vacuole component" EXACT []
+is_a: GO:0044444 ! cytoplasmic part
+is_a: GO:0044446 ! intracellular organelle part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005773 ! vacuole
+relationship: BFO:0000050 GO:0005773 ! vacuole
+
+[Term]
+id: GO:0044438
+name: microbody part
+def: "Any constituent part of a microbody, a cytoplasmic organelle, spherical or oval in shape, that is bounded by a single membrane and contains oxidative enzymes, especially those utilizing hydrogen peroxide (H2O2)." [GOC:jl]
+is_a: GO:0044444 ! cytoplasmic part
+is_a: GO:0044446 ! intracellular organelle part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0042579 ! microbody
+relationship: BFO:0000050 GO:0042579 ! microbody
+
+[Term]
+id: GO:0044439
+name: peroxisomal part
+def: "Any constituent part of a peroxisome, a small, membrane-bounded organelle that uses dioxygen (O2) to oxidize organic molecules; contains some enzymes that produce and others that degrade hydrogen peroxide (H2O2)." [GOC:jl]
+synonym: "peroxisome component" EXACT []
+is_a: GO:0044438 ! microbody part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005777 ! peroxisome
+relationship: BFO:0000050 GO:0005777 ! peroxisome
 
 [Term]
 id: GO:0044441
@@ -463,6 +866,34 @@ is_a: GO:0120038 ! plasma membrane bounded cell projection part
 intersection_of: GO:0005575 ! cellular_component
 intersection_of: BFO:0000050 GO:0005929 ! cilium
 relationship: BFO:0000050 GO:0005929 ! cilium
+
+[Term]
+id: GO:0044444
+name: cytoplasmic part
+def: "Any constituent part of the cytoplasm, all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." [GOC:jl]
+synonym: "cytoplasm component" EXACT []
+is_a: GO:0044424 ! intracellular part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005737 ! cytoplasm
+relationship: BFO:0000050 GO:0005737 ! cytoplasm
+
+[Term]
+id: GO:0044446
+name: intracellular organelle part
+def: "A constituent part of an intracellular organelle, an organized structure of distinctive morphology and function, occurring within the cell. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton but excludes the plasma membrane." [GOC:jl]
+is_a: GO:0044422 ! organelle part
+is_a: GO:0044424 ! intracellular part
+relationship: BFO:0000050 GO:0043229 ! intracellular organelle
+
+[Term]
+id: GO:0044456
+name: synapse part
+def: "Any constituent part of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." [GOC:jl]
+synonym: "synaptic component" RELATED [NIF_Subcellular:sao1784069613]
+is_a: GO:0005575 ! cellular_component
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0045202 ! synapse
+relationship: BFO:0000050 GO:0045202 ! synapse
 
 [Term]
 id: GO:0044459
@@ -495,6 +926,28 @@ intersection_of: BFO:0000050 GO:0005623 ! cell
 relationship: BFO:0000050 GO:0005623 ! cell
 
 [Term]
+id: GO:0045202
+name: synapse
+def: "The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." [ISBN:0198506732]
+synonym: "electrotonic synapse" RELATED [NIF_Subcellular:sao1311109124]
+synonym: "mixed synapse" NARROW [NIF_Subcellular:sao1506103497]
+synonym: "synaptic junction" EXACT []
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0046189
+name: phenol-containing compound biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a phenol, any compound containing one or more hydroxyl groups directly attached to an aromatic carbon ring." [CHEBI:33853, GOC:ai]
+synonym: "phenol-containing compound anabolism" EXACT [GOC:curators]
+synonym: "phenol-containing compound biosynthesis" EXACT [GOC:curators]
+synonym: "phenol-containing compound formation" EXACT [GOC:curators]
+synonym: "phenol-containing compound synthesis" EXACT [GOC:curators]
+is_a: GO:0018958 ! phenol-containing compound metabolic process
+is_a: GO:0019438 ! aromatic compound biosynthetic process
+is_a: GO:1901362 ! organic cyclic compound biosynthetic process
+is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
+
+[Term]
 id: GO:0046394
 name: carboxylic acid biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of carboxylic acids, any organic acid containing one or more carboxyl (-COOH) groups." [ISBN:0198506732]
@@ -519,6 +972,34 @@ id: GO:0050890
 name: cognition
 def: "The operation of the mind by which an organism becomes aware of objects of thought or perception; it includes the mental activities associated with thinking, learning, and memory." [http://www.onelook.com/, ISBN:0721619908]
 is_a: GO:0050877 ! nervous system process
+
+[Term]
+id: GO:0050896
+name: response to stimulus
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus. The process begins with detection of the stimulus and ends with a change in state or activity or the cell or organism." [GOC:ai, GOC:bf]
+synonym: "physiological response to stimulus" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0051179
+name: localization
+def: "Any process in which a cell, a substance, or a cellular entity, such as a protein complex or organelle, is transported, tethered to or otherwise maintained in a specific location. In the case of substances, localization may also be achieved via selective degradation." [GOC:ai, GOC:dos]
+synonym: "establishment and maintenance of cellular component location" NARROW []
+synonym: "establishment and maintenance of localization" EXACT []
+synonym: "establishment and maintenance of position" EXACT []
+synonym: "establishment and maintenance of substance location" NARROW []
+synonym: "establishment and maintenance of substrate location" NARROW []
+synonym: "localisation" EXACT [GOC:mah]
+synonym: "single organism localization" RELATED [GOC:TermGenie]
+synonym: "single-organism localization" RELATED []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0051234
+name: establishment of localization
+def: "Any process that localizes a substance or cellular component. This may occur via movement, tethering or selective degradation." [GOC:ai, GOC:dos]
+synonym: "establishment of localisation" EXACT [GOC:mah]
+is_a: GO:0051179 ! localization
 
 [Term]
 id: GO:0051703
@@ -558,6 +1039,12 @@ synonym: "oxidoreductase process" EXACT systematic_synonym []
 is_a: GO:0008152 ! metabolic process
 
 [Term]
+id: GO:0070085
+name: glycosylation
+def: "The covalent attachment and further modification of carbohydrate residues to a substrate molecule." [GOC:hjd, GOC:mah]
+is_a: GO:0008152 ! metabolic process
+
+[Term]
 id: GO:0071704
 name: organic substance metabolic process
 def: "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon." [CHEBI:50860, GOC:mah]
@@ -571,6 +1058,15 @@ id: GO:0071944
 name: cell periphery
 def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." [GOC:mah]
 is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0097060
+name: synaptic membrane
+def: "A specialized area of membrane on either the presynaptic or the postsynaptic side of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." [GOC:BHF, PMID:20410104]
+is_a: GO:0044456 ! synapse part
+is_a: GO:0098590 ! plasma membrane region
+intersection_of: GO:0098590 ! plasma membrane region
+intersection_of: BFO:0000050 GO:0045202 ! synapse
 
 [Term]
 id: GO:0098590
@@ -601,6 +1097,15 @@ intersection_of: GO:0043234 ! protein complex
 intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
 
 [Term]
+id: GO:0099568
+name: cytoplasmic region
+def: "Any (proper) part of the cytoplasm of a single cell of sufficient size to still be considered cytoplasm\"" [GOC:dos]
+is_a: GO:0005737 ! cytoplasm
+is_a: GO:0044444 ! cytoplasmic part
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: BFO:0000050 GO:0005737 ! cytoplasm
+
+[Term]
 id: GO:0120025
 name: plasma membrane bounded cell projection
 def: "A prolongation or process extending from a cell and that is bounded by plasma membrane, e.g. a cilium, lamellipodium, or axon." [GOC:krc]
@@ -617,6 +1122,42 @@ is_a: GO:0044463 ! cell projection part
 intersection_of: GO:0005575 ! cellular_component
 intersection_of: BFO:0000050 GO:0120025 ! plasma membrane bounded cell projection
 relationship: BFO:0000050 GO:0120025 ! plasma membrane bounded cell projection
+
+[Term]
+id: GO:1901135
+name: carbohydrate derivative metabolic process
+def: "The chemical reactions and pathways involving carbohydrate derivative." [GOC:TermGenie]
+synonym: "carbohydrate derivative metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:1901137
+name: carbohydrate derivative biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of carbohydrate derivative." [GOC:TermGenie]
+synonym: "carbohydrate derivative anabolism" EXACT [GOC:TermGenie]
+synonym: "carbohydrate derivative biosynthesis" EXACT [GOC:TermGenie]
+synonym: "carbohydrate derivative formation" EXACT [GOC:TermGenie]
+synonym: "carbohydrate derivative synthesis" EXACT [GOC:TermGenie]
+is_a: GO:1901135 ! carbohydrate derivative metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:1901360
+name: organic cyclic compound metabolic process
+def: "The chemical reactions and pathways involving organic cyclic compound." [GOC:TermGenie]
+synonym: "organic cyclic compound metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:1901362
+name: organic cyclic compound biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of organic cyclic compound." [GOC:TermGenie]
+synonym: "organic cyclic compound anabolism" EXACT [GOC:TermGenie]
+synonym: "organic cyclic compound biosynthesis" EXACT [GOC:TermGenie]
+synonym: "organic cyclic compound formation" EXACT [GOC:TermGenie]
+synonym: "organic cyclic compound synthesis" EXACT [GOC:TermGenie]
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
 id: GO:1901564
@@ -670,6 +1211,24 @@ synonym: "alpha-amino acid formation" EXACT [GOC:TermGenie]
 synonym: "alpha-amino acid synthesis" EXACT [GOC:TermGenie]
 is_a: GO:0008652 ! cellular amino acid biosynthetic process
 is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:1901615
+name: organic hydroxy compound metabolic process
+def: "The chemical reactions and pathways involving organic hydroxy compound." [GOC:pr, GOC:TermGenie]
+synonym: "organic hydroxy compound metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:1901617
+name: organic hydroxy compound biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of organic hydroxy compound." [GOC:pr, GOC:TermGenie]
+synonym: "organic hydroxy compound anabolism" EXACT [GOC:TermGenie]
+synonym: "organic hydroxy compound biosynthesis" EXACT [GOC:TermGenie]
+synonym: "organic hydroxy compound formation" EXACT [GOC:TermGenie]
+synonym: "organic hydroxy compound synthesis" EXACT [GOC:TermGenie]
+is_a: GO:1901576 ! organic substance biosynthetic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
 
 [Typedef]
 id: BFO:0000050
