@@ -20,7 +20,7 @@ INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_imports $(ONT).owl $(ONT).obo
+all: sparql_test all_imports $(ONT).owl $(ONT).obo $(ONT).json
 test: sparql_test all
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(RELEASEDIR) &&\
@@ -97,7 +97,7 @@ mirror/mfoem.owl:
 	$(OWLTOOLS) $(OBO)/mfoem.owl --remove-annotation-assertions -l -s -d --make-subset-by-properties -f BFO:0000050 // --remove-dangling-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
-imports/%_newterms.txt:
+imports/%_terms.txt:
 	robot query -i tbd-edit.obo -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
 
 # ----------------------------------------
