@@ -3544,13 +3544,6 @@ intersection_of: BFO:0000050 UBERON:0001423 ! radius bone
 relationship: BFO:0000050 UBERON:0001423 ! radius bone
 
 [Term]
-id: UBERON:0001029
-name: obsolete neuromuscular junction
-synonym: "junctio neuromuscularis" RELATED LATIN [http://en.wikipedia.org/wiki/Neuromuscular_junction]
-synonym: "synapsis neuromuscularis" RELATED LATIN [http://en.wikipedia.org/wiki/Neuromuscular_junction]
-is_obsolete: true
-
-[Term]
 id: UBERON:0001032
 name: sensory system
 def: "Anatomical system that overlaps the nervous system and is responsible for receiving and processing sensory information." [http://en.wikipedia.org/wiki/Sensory_system]
@@ -14014,6 +14007,19 @@ is_a: UBERON:0001962 ! gut-associated lymphoid tissue
 relationship: BFO:0000050 UBERON:0001735 {source="cjm"} ! tonsillar ring
 relationship: RO:0001025 UBERON:0000167 ! oral cavity
 relationship: RO:0002433 UBERON:0001735 ! tonsillar ring
+
+[Term]
+id: UBERON:0002373
+name: palatine tonsil
+def: "tonsils on the left and right sides at the back of the throat. one of the mucosa-associated lymphoid tissues (MALT), located at the entrance to the upper respiratory and gastrointestinal tracts to protect the body from the entry of exogenous material through mucosal sites[WP]." [http://en.wikipedia.org/wiki/Palatine_tonsil]
+synonym: "faucial tonsil" EXACT []
+synonym: "Gaumenmandel@de" RELATED [BTO:0004714]
+synonym: "tonsil" BROAD []
+synonym: "tonsilla palatina" RELATED LATIN [http://en.wikipedia.org/wiki/Palatine_tonsil]
+is_a: UBERON:0002372 ! tonsil
+is_a: UBERON:0004119 ! endoderm-derived structure
+relationship: RO:0002202 UBERON:0010023 {notes="the dorsal elongation of the second pouch endoderm of all mammals, with the exception of rodents, gives rise to the epithelial lining of palatine tonsils; in rodents, the ventral portion of the second pouch appears to degenerate whereas the remaining part is incorporated into the lateral border of the pharynx; it appears that rodents no longer require tonsils as their function is carried out by the NALT (Nose/Nasal-Associated Lymphoid Tissue) system in the upper respiratory tract", source="http://www.ncbi.nlm.nih.gov/pubmed/20144910", source="ISBN10:1607950324", source="MP:anna"} ! dorsal part of pharyngeal pouch 2
+relationship: RO:0002254 UBERON:0002539 {source="Wikipedia"} ! pharyngeal arch
 
 [Term]
 id: UBERON:0002374
@@ -48030,6 +48036,24 @@ intersection_of: BFO:0000050 UBERON:0012650 ! gastroduodenal junction
 relationship: BFO:0000050 UBERON:0012650 ! gastroduodenal junction
 
 [Term]
+id: UBERON:0012652
+name: colorectum
+def: "The subdivision of the digestive tract that consists of the colon and the rectum." [http://orcid.org/0000-0002-6601-2165]
+is_a: UBERON:0004921 {order="non-canonical", source="cjm"} ! subdivision of digestive tract
+relationship: BFO:0000050 UBERON:0000059 ! large intestine
+relationship: BFO:0000051 UBERON:0001052 ! rectum
+relationship: BFO:0000051 UBERON:0001155 ! colon
+
+[Term]
+id: UBERON:0013067
+name: colorectal mucosa
+def: "A mucosa that is part of a colorectum." [OBOL:automatic]
+is_a: UBERON:0001207 ! mucosa of large intestine
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0012652 ! colorectum
+relationship: BFO:0000050 UBERON:0012652 ! colorectum
+
+[Term]
 id: UBERON:0013118
 name: sulcus of brain
 def: "A depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy), https://github.com/obophenotype/uberon/issues/315]
@@ -52091,6 +52115,21 @@ relationship: BFO:0000050 UBERON:0001222 ! right ureter
 id: UBERON:0018135
 name: fibrocollagenous connective tissue
 is_a: UBERON:0011824 ! fibrous connective tissue
+
+[Term]
+id: UBERON:0018140
+name: mammary lobe
+def: "A cluster of mammary gland lobules. In humans this is a distinct lobe and located in the breast region." [http://orcid.org/0000-0002-6601-2165]
+synonym: "breast lobe" NARROW HUMAN_PREFERRED [BTO:0004718, NCBITaxon:9606]
+synonym: "lobe of breast" NARROW HUMAN_PREFERRED [BTO:0004718, NCBITaxon:9606]
+synonym: "lobe of mammary gland" NARROW HUMAN_PREFERRED [BTO:0004718, NCBITaxon:9606]
+synonym: "lobi glandulae mammariae" NARROW HUMAN_PREFERRED [BTO:0004718, NCBITaxon:9606]
+synonym: "lobus glandulae mammariae" RELATED LATIN [BTO:0004718]
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0009912 ! anatomical lobe
+relationship: BFO:0000050 UBERON:0001911 ! mammary gland
+relationship: BFO:0000050 UBERON:0002100 ! trunk
+relationship: BFO:0000051 UBERON:0001912 ! lobule of mammary gland
 
 [Term]
 id: UBERON:0018142

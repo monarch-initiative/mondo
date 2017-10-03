@@ -21,6 +21,17 @@ def: "Inflammation of prolonged duration (weeks or months) in which active infla
 is_a: GO:0006954 ! inflammatory response
 
 [Term]
+id: GO:0002818
+name: intracellular defense response
+def: "A physiological defense response which occurs intracellularly." [GOC:add]
+synonym: "intracellular defence response" EXACT []
+is_a: GO:0006968 ! cellular defense response
+is_a: GO:0033554 ! cellular response to stress
+intersection_of: GO:0006952 ! defense response
+intersection_of: BFO:0000066 GO:0005622 ! intracellular
+relationship: BFO:0000066 GO:0005622 ! intracellular
+
+[Term]
 id: GO:0003008
 name: system process
 def: "A multicellular organismal process carried out by any of the organs or tissues in an organ system. An organ system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a biological objective." [GOC:mtg_cardio]
@@ -135,6 +146,37 @@ is_a: GO:0006073 ! cellular glucan metabolic process
 is_a: GO:0006112 ! energy reserve metabolic process
 
 [Term]
+id: GO:0005996
+name: monosaccharide metabolic process
+def: "The chemical reactions and pathways involving monosaccharides, the simplest carbohydrates. They are polyhydric alcohols containing either an aldehyde or a keto group and between three to ten or more carbon atoms. They form the constitutional repeating units of oligo- and polysaccharides." [ISBN:0198506732]
+synonym: "monosaccharide metabolism" EXACT []
+is_a: GO:0005975 ! carbohydrate metabolic process
+is_a: GO:0044281 ! small molecule metabolic process
+
+[Term]
+id: GO:0006006
+name: glucose metabolic process
+def: "The chemical reactions and pathways involving glucose, the aldohexose gluco-hexose. D-glucose is dextrorotatory and is sometimes known as dextrose; it is an important source of energy for living organisms and is found free as well as combined in homo- and hetero-oligosaccharides and polysaccharides." [ISBN:0198506732]
+synonym: "cellular glucose metabolic process" EXACT [GOC:vw]
+synonym: "glucose metabolism" EXACT []
+is_a: GO:0019318 ! hexose metabolic process
+
+[Term]
+id: GO:0006066
+name: alcohol metabolic process
+def: "The chemical reactions and pathways involving alcohols, any of a class of compounds containing one or more hydroxyl groups attached to a saturated carbon atom." [CHEBI:30879, ISBN:0198506732]
+synonym: "alcohol metabolism" EXACT []
+is_a: GO:0044281 ! small molecule metabolic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0006071
+name: glycerol metabolic process
+def: "The chemical reactions and pathways involving glycerol, 1,2,3-propanetriol, a sweet, hygroscopic, viscous liquid, widely distributed in nature as a constituent of many lipids." [GOC:ai, ISBN:0198506732]
+synonym: "glycerol metabolism" EXACT []
+is_a: GO:0019400 ! alditol metabolic process
+
+[Term]
 id: GO:0006073
 name: cellular glucan metabolic process
 def: "The chemical reactions and pathways involving glucans, polysaccharides consisting only of glucose residues, occurring at the level of an individual cell." [ISBN:0198547684]
@@ -159,6 +201,15 @@ synonym: "energy pathways" BROAD []
 synonym: "intermediary metabolism" RELATED [GOC:mah]
 synonym: "metabolic energy generation" RELATED []
 is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0006094
+name: gluconeogenesis
+def: "The formation of glucose from noncarbohydrate precursors, such as pyruvate, amino acids and glycerol." [MetaCyc:GLUCONEO-PWY]
+synonym: "glucose biosynthesis" EXACT []
+synonym: "glucose biosynthetic process" EXACT []
+is_a: GO:0006006 ! glucose metabolic process
+is_a: GO:0019319 ! hexose biosynthetic process
 
 [Term]
 id: GO:0006112
@@ -206,6 +257,14 @@ is_a: GO:0044238 ! primary metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
+id: GO:0006547
+name: histidine metabolic process
+def: "The chemical reactions and pathways involving histidine, 2-amino-3-(1H-imidazol-4-yl)propanoic acid." [GOC:go_curators]
+synonym: "histidine metabolism" EXACT []
+is_a: GO:0052803 ! imidazole-containing compound metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0006563
 name: L-serine metabolic process
 def: "The chemical reactions and pathways involving L-serine, the L-enantiomer of serine, i.e. (2S)-2-amino-3-hydroxypropanoic acid." [CHEBI:17115, GOC:ai, GOC:jsg]
@@ -230,6 +289,40 @@ def: "The chemical reactions and pathways involving any of a group of physiologi
 synonym: "catecholamine metabolism" EXACT []
 is_a: GO:0009712 ! catechol-containing compound metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
+id: GO:0006629
+name: lipid metabolic process
+def: "The chemical reactions and pathways involving lipids, compounds soluble in an organic solvent but not, or sparingly, in an aqueous solvent. Includes fatty acids; neutral fats, other fatty-acid esters, and soaps; long-chain (fatty) alcohols and waxes; sphingoids and other long-chain bases; glycolipids, phospholipids and sphingolipids; and carotenes, polyprenols, sterols, terpenes and other isoprenoids." [GOC:ma]
+synonym: "lipid metabolism" EXACT []
+is_a: GO:0044238 ! primary metabolic process
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:0006694
+name: steroid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of steroids, compounds with a 1,2,cyclopentanoperhydrophenanthrene nucleus; includes de novo formation and steroid interconversion by modification." [GOC:go_curators]
+synonym: "steroid anabolism" EXACT []
+synonym: "steroid biosynthesis" EXACT []
+synonym: "steroid formation" EXACT []
+synonym: "steroid synthesis" EXACT []
+synonym: "steroidogenesis" EXACT []
+is_a: GO:0008202 ! steroid metabolic process
+is_a: GO:0008610 ! lipid biosynthetic process
+is_a: GO:1901362 ! organic cyclic compound biosynthetic process
+
+[Term]
+id: GO:0006699
+name: bile acid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of bile acids, any of a group of steroid carboxylic acids occurring in bile." [GOC:go_curators]
+synonym: "bile acid anabolism" EXACT []
+synonym: "bile acid biosynthesis" EXACT []
+synonym: "bile acid formation" EXACT []
+synonym: "bile acid synthesis" EXACT []
+is_a: GO:0006694 ! steroid biosynthetic process
+is_a: GO:0008206 ! bile acid metabolic process
+is_a: GO:0072330 ! monocarboxylic acid biosynthetic process
+is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
 id: GO:0006725
@@ -302,6 +395,32 @@ synonym: "Inflammation" BROAD []
 is_a: GO:0006952 ! defense response
 
 [Term]
+id: GO:0006968
+name: cellular defense response
+def: "A defense response that is mediated by cells." [GOC:ebc]
+synonym: "cellular defence response" EXACT []
+is_a: GO:0006952 ! defense response
+
+[Term]
+id: GO:0007034
+name: vacuolar transport
+def: "The directed movement of substances into, out of or within a vacuole." [GOC:ai]
+is_a: GO:0046907 ! intracellular transport
+
+[Term]
+id: GO:0007041
+name: lysosomal transport
+def: "The directed movement of substances into, out of or within a lysosome." [GOC:ai]
+is_a: GO:0007034 ! vacuolar transport
+
+[Term]
+id: GO:0007568
+name: aging
+def: "A developmental process that is a deterioration and loss of function over time. Aging includes loss of functions such as resistance to disease, homeostasis, and fertility, as well as wear and tear. Aging includes cellular senescence, but is more inclusive. May precede death and may succeed developmental maturation (GO:0021700)." [GOC:PO_curators]
+synonym: "ageing" EXACT []
+is_a: GO:0032502 ! developmental process
+
+[Term]
 id: GO:0007610
 name: behavior
 def: "The internally coordinated responses (actions or inactions) of animals (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity." [GOC:ems, GOC:jl, ISBN:0395448956, PMID:20160973]
@@ -310,6 +429,7 @@ synonym: "behaviour" EXACT []
 synonym: "behavioural response to stimulus" EXACT []
 synonym: "single-organism behavior" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0032502 ! developmental process
 
 [Term]
 id: GO:0007611
@@ -342,6 +462,48 @@ synonym: "metabolism" EXACT []
 synonym: "metabolism resulting in cell growth" NARROW []
 synonym: "single-organism metabolic process" RELATED []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0008202
+name: steroid metabolic process
+def: "The chemical reactions and pathways involving steroids, compounds with a 1,2,cyclopentanoperhydrophenanthrene nucleus." [ISBN:0198547684]
+synonym: "steroid metabolism" EXACT []
+is_a: GO:0006629 ! lipid metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+
+[Term]
+id: GO:0008206
+name: bile acid metabolic process
+def: "The chemical reactions and pathways involving bile acids, any of a group of steroid carboxylic acids occurring in bile, where they are present as the sodium salts of their amides with glycine or taurine." [GOC:go_curators]
+synonym: "bile acid metabolism" EXACT []
+is_a: GO:0008202 ! steroid metabolic process
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0008610
+name: lipid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of lipids, compounds soluble in an organic solvent but not, or sparingly, in an aqueous solvent." [GOC:go_curators]
+synonym: "lipid anabolism" EXACT []
+synonym: "lipid biosynthesis" EXACT []
+synonym: "lipid formation" EXACT []
+synonym: "lipid synthesis" EXACT []
+synonym: "lipogenesis" EXACT [GOC:sl]
+is_a: GO:0006629 ! lipid metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:0008643
+name: carbohydrate transport
+def: "The directed movement of carbohydrate into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Carbohydrates are any of a group of organic compounds based of the general formula Cx(H2O)y." [GOC:ai]
+synonym: "sugar transport" NARROW []
+is_a: GO:0071702 ! organic substance transport
+
+[Term]
+id: GO:0008645
+name: hexose transport
+def: "The directed movement of hexose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A hexose is any six-carbon monosaccharide which in its linear form contains either an aldehyde group at position 1 (aldohexose) or a ketone group at position 2 (ketohexose)." [GOC:ai]
+is_a: GO:0015749 ! monosaccharide transport
 
 [Term]
 id: GO:0008652
@@ -397,6 +559,13 @@ is_a: GO:0009069 ! serine family amino acid metabolic process
 is_a: GO:1901607 ! alpha-amino acid biosynthetic process
 
 [Term]
+id: GO:0009081
+name: branched-chain amino acid metabolic process
+def: "The chemical reactions and pathways involving amino acids containing a branched carbon skeleton, comprising isoleucine, leucine and valine." [CHEBI:22918, GOC:ai]
+synonym: "branched chain family amino acid metabolism" EXACT [GOC:ai]
+is_a: GO:0006520 ! cellular amino acid metabolic process
+
+[Term]
 id: GO:0009100
 name: glycoprotein metabolic process
 def: "The chemical reactions and pathways involving glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." [GOC:go_curators, ISBN:0198506732]
@@ -417,6 +586,20 @@ is_a: GO:0009100 ! glycoprotein metabolic process
 is_a: GO:0034645 ! cellular macromolecule biosynthetic process
 is_a: GO:1901137 ! carbohydrate derivative biosynthetic process
 is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
+id: GO:0009448
+name: gamma-aminobutyric acid metabolic process
+def: "The chemical reactions and pathways involving gamma-aminobutyric acid (GABA, 4-aminobutyrate), an amino acid which acts as a neurotransmitter in some organisms." [ISBN:0198506732]
+synonym: "4-aminobutanoate metabolic process" EXACT []
+synonym: "4-aminobutanoate metabolism" EXACT []
+synonym: "4-aminobutyrate metabolic process" EXACT []
+synonym: "4-aminobutyrate metabolism" EXACT []
+synonym: "GABA metabolic process" EXACT []
+synonym: "GABA metabolism" EXACT []
+synonym: "gamma-aminobutyric acid metabolism" EXACT []
+is_a: GO:0006520 ! cellular amino acid metabolic process
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
 
 [Term]
 id: GO:0009712
@@ -449,6 +632,25 @@ synonym: "single-organism cellular process" RELATED []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0010876
+name: lipid localization
+def: "Any process in which a lipid is transported to, or maintained in, a specific location." [GOC:BHF, GOC:dph, GOC:tb]
+synonym: "lipid localisation" EXACT [GOC:mah]
+is_a: GO:0033036 ! macromolecule localization
+
+[Term]
+id: GO:0015749
+name: monosaccharide transport
+def: "The directed movement of monosaccharides into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Monosaccharides are the simplest carbohydrates; they are polyhydric alcohols containing either an aldehyde or a keto group and between three to ten or more carbon atoms. They form the constitutional repeating units of oligo- and polysaccharides." [GOC:ai]
+is_a: GO:0008643 ! carbohydrate transport
+
+[Term]
+id: GO:0015758
+name: glucose transport
+def: "The directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+is_a: GO:0008645 ! hexose transport
+
+[Term]
 id: GO:0015980
 name: energy derivation by oxidation of organic compounds
 def: "The chemical reactions and pathways by which a cell derives energy from organic compounds; results in the oxidation of the compounds from which energy is released." [GOC:mah]
@@ -461,6 +663,19 @@ id: GO:0016020
 name: membrane
 def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." [GOC:dos, GOC:mah, ISBN:0815316194]
 is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0016051
+name: carbohydrate biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of carbohydrates, any of a group of organic compounds based of the general formula Cx(H2O)y." [ISBN:0198506732]
+synonym: "anabolic carbohydrate metabolic process" EXACT []
+synonym: "anabolic carbohydrate metabolism" EXACT []
+synonym: "carbohydrate anabolism" EXACT []
+synonym: "carbohydrate biosynthesis" EXACT []
+synonym: "carbohydrate formation" EXACT []
+synonym: "carbohydrate synthesis" EXACT []
+is_a: GO:0005975 ! carbohydrate metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
 id: GO:0016053
@@ -476,6 +691,26 @@ is_a: GO:0044283 ! small molecule biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
+id: GO:0016125
+name: sterol metabolic process
+def: "The chemical reactions and pathways involving sterols, steroids with one or more hydroxyl groups and a hydrocarbon side-chain in the molecule." [ISBN:0198547684]
+synonym: "sterol metabolism" EXACT []
+is_a: GO:0008202 ! steroid metabolic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0016126
+name: sterol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of sterols, steroids with one or more hydroxyl groups and a hydrocarbon side-chain in the molecule." [GOC:go_curators]
+synonym: "sterol anabolism" EXACT []
+synonym: "sterol biosynthesis" EXACT []
+synonym: "sterol formation" EXACT []
+synonym: "sterol synthesis" EXACT []
+is_a: GO:0006694 ! steroid biosynthetic process
+is_a: GO:0016125 ! sterol metabolic process
+is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
+
+[Term]
 id: GO:0018958
 name: phenol-containing compound metabolic process
 def: "The chemical reactions and pathways involving a phenol, any compound containing one or more hydroxyl groups directly attached to an aromatic carbon ring." [CHEBI:33853, ISBN:0198506732]
@@ -487,6 +722,32 @@ synonym: "phenol-containing compound metabolism" EXACT [GOC:curators]
 is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0019318
+name: hexose metabolic process
+def: "The chemical reactions and pathways involving a hexose, any monosaccharide with a chain of six carbon atoms in the molecule." [ISBN:0198506732]
+synonym: "hexose metabolism" EXACT []
+is_a: GO:0005996 ! monosaccharide metabolic process
+
+[Term]
+id: GO:0019319
+name: hexose biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of hexose, any monosaccharide with a chain of six carbon atoms in the molecule." [ISBN:0198506732]
+synonym: "hexose anabolism" EXACT []
+synonym: "hexose biosynthesis" EXACT []
+synonym: "hexose formation" EXACT []
+synonym: "hexose synthesis" EXACT []
+is_a: GO:0019318 ! hexose metabolic process
+is_a: GO:0046364 ! monosaccharide biosynthetic process
+
+[Term]
+id: GO:0019400
+name: alditol metabolic process
+def: "The chemical reactions and pathways involving alditols, any polyhydric alcohol derived from the acyclic form of a monosaccharide by reduction of its aldehyde or keto group to an alcoholic group." [ISBN:0198506732]
+synonym: "alditol metabolism" EXACT []
+is_a: GO:0019751 ! polyol metabolic process
+is_a: GO:0044262 ! cellular carbohydrate metabolic process
 
 [Term]
 id: GO:0019438
@@ -513,11 +774,34 @@ is_a: GO:0044238 ! primary metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
+id: GO:0019751
+name: polyol metabolic process
+def: "The chemical reactions and pathways involving a polyol, any alcohol containing three or more hydroxyl groups attached to saturated carbon atoms." [CHEBI:26191, GOC:go_curators]
+synonym: "polyhydric alcohol metabolic process" EXACT []
+synonym: "polyol metabolism" EXACT []
+is_a: GO:0006066 ! alcohol metabolic process
+
+[Term]
 id: GO:0019752
 name: carboxylic acid metabolic process
 def: "The chemical reactions and pathways involving carboxylic acids, any organic acid containing one or more carboxyl (COOH) groups or anions (COO-)." [ISBN:0198506732]
 synonym: "carboxylic acid metabolism" EXACT []
 is_a: GO:0043436 ! oxoacid metabolic process
+
+[Term]
+id: GO:0019915
+name: lipid storage
+def: "The accumulation and maintenance in cells or tissues of lipids, compounds soluble in organic solvents but insoluble or sparingly soluble in aqueous solvents. Lipid reserves can be accumulated during early developmental stages for mobilization and utilization at later stages of development." [GOC:dph, GOC:mah, GOC:tb, PMID:11102830]
+synonym: "lipid retention" EXACT [GOC:dph, GOC:tb]
+synonym: "lipid sequestering" NARROW [GOC:dph, GOC:tb]
+synonym: "lipid sequestration" NARROW [GOC:dph, GOC:tb]
+synonym: "retention of lipids" EXACT [GOC:dph, GOC:tb]
+synonym: "sequestering of lipids" NARROW [GOC:dph, GOC:tb]
+synonym: "sequestration of lipid" NARROW [GOC:dph, GOC:tb]
+synonym: "sequestration of lipids" EXACT [GOC:dph, GOC:tb]
+synonym: "storage of lipids" EXACT []
+is_a: GO:0051235 ! maintenance of location
+relationship: BFO:0000050 GO:0010876 ! lipid localization
 
 [Term]
 id: GO:0030001
@@ -561,6 +845,22 @@ synonym: "single-multicellular organism process" RELATED []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0032502
+name: developmental process
+def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition." [GOC:isa_complete]
+synonym: "development" NARROW []
+synonym: "single-organism developmental process" RELATED []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0032787
+name: monocarboxylic acid metabolic process
+def: "The chemical reactions and pathways involving monocarboxylic acids, any organic acid containing one carboxyl (COOH) group or anion (COO-)." [GOC:vk]
+synonym: "monocarboxylate metabolic process" EXACT []
+synonym: "monocarboxylic acid metabolism" EXACT []
+is_a: GO:0019752 ! carboxylic acid metabolic process
+
+[Term]
 id: GO:0032838
 name: cell projection cytoplasm
 def: "All of the contents of a plasma membrane bounded cell projection, excluding the plasma membrane surrounding the projection." [GOC:krc, GOC:mah]
@@ -576,6 +876,28 @@ def: "A stable assembly of two or more macromolecules, i.e. proteins, nucleic ac
 synonym: "macromolecule complex" EXACT []
 synonym: "protein containing complex" EXACT []
 is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0033036
+name: macromolecule localization
+def: "Any process in which a macromolecule is transported to, or maintained in, a specific location." [GOC:mah]
+synonym: "macromolecule localisation" EXACT [GOC:mah]
+is_a: GO:0051179 ! localization
+
+[Term]
+id: GO:0033554
+name: cellular response to stress
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus indicating the organism is under stress. The stress is usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." [GOC:mah]
+is_a: GO:0006950 ! response to stress
+is_a: GO:0051716 ! cellular response to stimulus
+
+[Term]
+id: GO:0034641
+name: cellular nitrogen compound metabolic process
+def: "The chemical reactions and pathways involving various organic and inorganic nitrogenous compounds, as carried out by individual cells." [GOC:mah]
+synonym: "cellular nitrogen compound metabolism" EXACT []
+is_a: GO:0006807 ! nitrogen compound metabolic process
+is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0034645
@@ -705,6 +1027,12 @@ synonym: "oxo acid metabolic process" EXACT []
 synonym: "oxo acid metabolism" EXACT []
 synonym: "oxoacid metabolism" EXACT []
 is_a: GO:0006082 ! organic acid metabolic process
+
+[Term]
+id: GO:0043473
+name: pigmentation
+def: "The accumulation of pigment in an organism, tissue or cell, either by increased deposition or by increased number of cells." [GOC:jl]
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0044042
@@ -948,6 +1276,18 @@ is_a: GO:1901362 ! organic cyclic compound biosynthetic process
 is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
+id: GO:0046364
+name: monosaccharide biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of monosaccharides, polyhydric alcohols containing either an aldehyde or a keto group and between three to ten or more carbon atoms." [ISBN:0198506732]
+synonym: "monosaccharide anabolism" EXACT []
+synonym: "monosaccharide biosynthesis" EXACT []
+synonym: "monosaccharide formation" EXACT []
+synonym: "monosaccharide synthesis" EXACT []
+is_a: GO:0005996 ! monosaccharide metabolic process
+is_a: GO:0016051 ! carbohydrate biosynthetic process
+is_a: GO:0044283 ! small molecule biosynthetic process
+
+[Term]
 id: GO:0046394
 name: carboxylic acid biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of carboxylic acids, any organic acid containing one or more carboxyl (-COOH) groups." [ISBN:0198506732]
@@ -957,6 +1297,26 @@ synonym: "carboxylic acid formation" EXACT []
 synonym: "carboxylic acid synthesis" EXACT []
 is_a: GO:0016053 ! organic acid biosynthetic process
 is_a: GO:0019752 ! carboxylic acid metabolic process
+
+[Term]
+id: GO:0046483
+name: heterocycle metabolic process
+def: "The chemical reactions and pathways involving heterocyclic compounds, those with a cyclic molecular structure and at least two different atoms in the ring (or rings)." [CHEBI:5686, ISBN:0198506732]
+synonym: "heterocycle metabolism" EXACT []
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0046907
+name: intracellular transport
+def: "The directed movement of substances within a cell." [GOC:ai]
+synonym: "single organism intracellular transport" RELATED [GOC:TermGenie]
+synonym: "single-organism intracellular transport" RELATED []
+is_a: GO:0006810 ! transport
+is_a: GO:0051641 ! cellular localization
+is_a: GO:0051649 ! establishment of localization in cell
+intersection_of: GO:0006810 ! transport
+intersection_of: BFO:0000066 GO:0005622 ! intracellular
+relationship: BFO:0000066 GO:0005622 ! intracellular
 
 [Term]
 id: GO:0050877
@@ -1002,6 +1362,59 @@ synonym: "establishment of localisation" EXACT [GOC:mah]
 is_a: GO:0051179 ! localization
 
 [Term]
+id: GO:0051235
+name: maintenance of location
+def: "Any process in which a cell, substance or cellular entity, such as a protein complex or organelle, is maintained in a location and prevented from moving elsewhere." [GOC:ai, GOC:dph, GOC:tb]
+synonym: "maintenance of localization" EXACT []
+synonym: "retention" NARROW []
+synonym: "sequestering" NARROW []
+synonym: "storage" NARROW []
+is_a: GO:0051179 ! localization
+is_a: GO:0065008 ! regulation of biological quality
+
+[Term]
+id: GO:0051641
+name: cellular localization
+def: "A cellular localization process whereby a substance or cellular entity, such as a protein complex or organelle, is transported to, and/or maintained in, a specific location within a cell including the localization of substances or cellular entities to the cell membrane." [GOC:tb, GOC:vw]
+synonym: "cellular localisation" EXACT [GOC:mah]
+synonym: "establishment and maintenance of cellular localization" EXACT []
+synonym: "establishment and maintenance of localization in cell or cell membrane" EXACT []
+synonym: "intracellular localization" NARROW []
+synonym: "localization within cell" NARROW []
+synonym: "single organism cellular localization" EXACT [GOC:TermGenie]
+synonym: "single-organism cellular localization" RELATED []
+is_a: GO:0051179 ! localization
+
+[Term]
+id: GO:0051649
+name: establishment of localization in cell
+def: "Any process, occuring in a cell, that localizes a substance or cellular component. This may occur via movement, tethering or selective degradation." [GOC:ai, GOC:dos, GOC:dph, GOC:tb]
+synonym: "establishment of cellular localization" RELATED [GOC:dph, GOC:tb]
+synonym: "establishment of intracellular localization" NARROW []
+synonym: "establishment of localisation in cell" EXACT [GOC:mah]
+synonym: "establishment of localization within cell" NARROW []
+synonym: "positioning within cell" NARROW []
+is_a: GO:0051234 ! establishment of localization
+intersection_of: GO:0051234 ! establishment of localization
+intersection_of: BFO:0000066 GO:0005623 ! cell
+relationship: BFO:0000050 GO:0051641 ! cellular localization
+relationship: BFO:0000066 GO:0005623 ! cell
+
+[Term]
+id: GO:0051668
+name: localization within membrane
+def: "Any process in which a substance or cellular entity, such as a protein complex or organelle, is transported to, and/or maintained in, a specific location within a membrane." [GOC:ai]
+synonym: "establishment and maintenance of localization in membrane" EXACT []
+synonym: "establishment and maintenance of position in membrane" EXACT []
+synonym: "localisation within membrane" EXACT [GOC:mah]
+synonym: "localization to membrane" EXACT []
+synonym: "positioning within membrane" NARROW []
+is_a: GO:0051641 ! cellular localization
+intersection_of: GO:0051179 ! localization
+intersection_of: BFO:0000066 GO:0016020 ! membrane
+relationship: BFO:0000066 GO:0016020 ! membrane
+
+[Term]
 id: GO:0051703
 name: intraspecies interaction between organisms
 def: "Any process in which an organism has an effect on an organism of the same species." [GOC:ai]
@@ -1031,6 +1444,24 @@ is_a: GO:0007610 ! behavior
 is_a: GO:0051704 ! multi-organism process
 
 [Term]
+id: GO:0051716
+name: cellular response to stimulus
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus. The process begins with detection of the stimulus by a cell and ends with a change in state or activity or the cell." [GOC:bf, GOC:jl]
+is_a: GO:0009987 ! cellular process
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0052803
+name: imidazole-containing compound metabolic process
+def: "The chemical reactions and pathways involving imidazoles, five-membered organic heterocycle containing two nitrogen atoms at positions 1 and 3, or any of its derivatives; compounds containing an imidazole skeleton." [CHEBI:24780]
+synonym: "imidazole metabolism" EXACT []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
 id: GO:0055114
 name: oxidation-reduction process
 def: "A metabolic process that results in the removal or addition of one or more electrons to or from a substance, with or without the concomitant removal or addition of a proton or protons." [GOC:dhl, GOC:ecd, GOC:jh2, GOC:jid, GOC:mlg, GOC:rph]
@@ -1039,10 +1470,31 @@ synonym: "oxidoreductase process" EXACT systematic_synonym []
 is_a: GO:0008152 ! metabolic process
 
 [Term]
+id: GO:0065007
+name: biological regulation
+def: "Any process that modulates a measurable attribute of any biological process, quality or function." [GOC:dph, GOC:isa_complete, GOC:mah, GOC:pr, GOC:vw]
+synonym: "regulation" BROAD []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0065008
+name: regulation of biological quality
+def: "Any process that modulates a qualitative or quantitative trait of a biological quality. A biological quality is a measurable attribute of an organism or part of an organism, such as size, mass, shape, color, etc." [GOC:dph, GOC:isa_complete, GOC:mah, GOC:pr, GOC:vw]
+synonym: "regulation of biological attribute" EXACT []
+synonym: "regulation of biological characteristic" EXACT []
+is_a: GO:0065007 ! biological regulation
+
+[Term]
 id: GO:0070085
 name: glycosylation
 def: "The covalent attachment and further modification of carbohydrate residues to a substrate molecule." [GOC:hjd, GOC:mah]
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0071702
+name: organic substance transport
+def: "The directed movement of organic substances into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore. An organic substance is a molecular entity that contains carbon." [CHEBI:50860, GOC:mah]
+is_a: GO:0006810 ! transport
 
 [Term]
 id: GO:0071704
@@ -1058,6 +1510,17 @@ id: GO:0071944
 name: cell periphery
 def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." [GOC:mah]
 is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0072330
+name: monocarboxylic acid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of monocarboxylic acids, any organic acid containing one carboxyl (-COOH) group." [CHEBI:25384, GOC:mah]
+synonym: "monocarboxylic acid anabolism" EXACT [GOC:mah]
+synonym: "monocarboxylic acid biosynthesis" EXACT [GOC:mah]
+synonym: "monocarboxylic acid formation" EXACT [GOC:mah]
+synonym: "monocarboxylic acid synthesis" EXACT [GOC:mah]
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
+is_a: GO:0046394 ! carboxylic acid biosynthetic process
 
 [Term]
 id: GO:0097060
@@ -1239,4 +1702,9 @@ inverse_of: BFO:0000051
 [Typedef]
 id: BFO:0000051
 is_transitive: true
+
+[Typedef]
+id: BFO:0000066
+holds_over_chain: BFO:0000050 BFO:0000066
+transitive_over: BFO:0000050
 
