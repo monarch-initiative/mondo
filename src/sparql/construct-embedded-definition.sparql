@@ -1,0 +1,29 @@
+prefix oio:   <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl:   <http://www.w3.org/2002/07/owl#>
+prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xml:   <http://www.w3.org/XML/1998/namespace>
+prefix xsd:   <http://www.w3.org/2001/XMLSchema#>
+prefix vocab: <http://id.nlm.nih.gov/mesh/vocab#>
+prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+prefix def:  <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix dct: <http://purl.org/dc/terms/>
+
+CONSTRUCT {
+  ?x dct:description ?desc
+}
+WHERE {
+   ?x owl:equivalentClass [
+     owl:intersectionOf [
+       rdf:rest*/rdf:first [
+         owl:someValuesFrom [
+           def: ?srcdef ;
+           rdfs:label ?srclabel
+         ]
+       ]
+     ]
+   ]
+
+   bind(concat( str(?srclabel), ": ", str( ?srcdef )) AS ?desc)
+   FILTER regex(str(?x), "http://purl.obolibrary.org/obo/TBD_")
+   
+}
