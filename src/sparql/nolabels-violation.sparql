@@ -8,6 +8,6 @@ SELECT ?cls WHERE {
 	FILTER NOT EXISTS {?cls rdfs:label ?lab}
 	FILTER NOT EXISTS {?cls replaced_by: ?replCls}
         FILTER (!isBlank(?cls))
-        FILTER ( regex(str(?cls), "^http://purl.obolibrary.org/obo/GO_"))
+        FILTER ( regex(str(?cls), "^http://purl.obolibrary.org/obo/TBD_"))
 }
 ORDER BY ?cls
