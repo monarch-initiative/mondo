@@ -341,6 +341,11 @@ intersection_of: BFO:0000050 UBERON:0000058 ! part of duct
 relationship: BFO:0000050 UBERON:0000058 ! part of duct
 
 [Term]
+id: CL:0000069
+name: branched duct epithelial cell
+is_a: CL:0000068 ! duct epithelial cell
+
+[Term]
 id: CL:0000075
 name: columnar/cuboidal epithelial cell
 is_a: CL:0000066 ! epithelial cell
@@ -577,6 +582,20 @@ intersection_of: RO:0002215 GO:0009306 ! capable of protein secretion
 relationship: RO:0002215 GO:0009306 ! capable of protein secretion
 
 [Term]
+id: CL:0000159
+name: seromucus secreting cell
+is_a: CL:0000151 ! secretory cell
+
+[Term]
+id: CL:0000160
+name: goblet cell
+def: "A cell of the epithelial lining that produce and secrete mucins." [MESH:A03.492.411.369.320]
+synonym: "chalice cell" EXACT []
+is_a: CL:0000150 ! glandular epithelial cell
+is_a: CL:0000319 ! mucus secreting cell
+relationship: RO:0002215 GO:0070254 ! capable of mucus secretion
+
+[Term]
 id: CL:0000163
 name: endocrine cell
 def: "A cell of an endocrine gland, ductless glands that secrete substances which are released directly into the circulation and which influence metabolism and other body functions." [MESH:A06.407]
@@ -791,6 +810,15 @@ relationship: BFO:0000050 UBERON:0001003 ! part of skin epidermis
 relationship: RO:0002215 GO:0002775 ! capable of antimicrobial peptide production
 relationship: RO:0002215 GO:0002776 ! capable of antimicrobial peptide secretion
 relationship: RO:0002215 GO:0090023 ! capable of positive regulation of neutrophil chemotaxis
+
+[Term]
+id: CL:0000319
+name: mucus secreting cell
+synonym: "mucous cell" EXACT []
+is_a: CL:0000159 ! seromucus secreting cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: RO:0002215 GO:0070254 ! capable of mucus secretion
+relationship: RO:0002215 GO:0070254 ! capable of mucus secretion
 
 [Term]
 id: CL:0000325
@@ -2402,6 +2430,17 @@ intersection_of: BFO:0000050 UBERON:0000065 ! part of respiratory tract
 relationship: BFO:0000050 UBERON:0000065 ! part of respiratory tract
 
 [Term]
+id: CL:0002370
+name: respiratory goblet cell
+def: "A simple columnar epithelial cell that secretes mucin. Rough endoplasmic reticulum, mitochondria, the nucleus, and other organelles are concentrated in the basal portion. The apical plasma membrane projects microvilli to increase surface area for secretion." [GOC:tfm, ISBN:0721662544]
+synonym: "respiratory mucosa goblet cells" EXACT [MP:0010863]
+is_a: CL:0000160 ! goblet cell
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0000065 ! part of respiratory tract
+relationship: BFO:0000050 UBERON:0000065 ! part of respiratory tract
+relationship: BFO:0000050 UBERON:0004802 ! part of respiratory tract epithelium
+
+[Term]
 id: CL:0002371
 name: somatic cell
 def: "A cell of an organism that does not pass on its genetic material to the organism's offspring (i.e. a non-germ line cell)." [GOC:tfm, ISBN:0721662544]
@@ -2643,6 +2682,54 @@ intersection_of: BFO:0000050 UBERON:0000945 ! part of stomach
 relationship: BFO:0000050 UBERON:0000945 ! part of stomach
 
 [Term]
+id: CL:1000313
+name: gastric goblet cell
+def: "A goblet cell that is part of the epithelium of stomach." [GOC:tfm]
+synonym: "goblet cell of epithelium of stomach" EXACT [FMA:263035]
+is_a: CL:0000160 ! goblet cell
+is_a: CL:0002180 ! mucous cell of stomach
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0000945 ! part of stomach
+relationship: BFO:0000050 UBERON:0000945 ! part of stomach
+relationship: BFO:0000050 UBERON:0001276 ! part of epithelium of stomach
+
+[Term]
+id: CL:1000317
+name: intestinal villus goblet cell
+def: "A goblet cell that is part of the epithelium of intestinal villus." [GOC:tfm]
+synonym: "goblet cell of epithelium of intestinal villus" EXACT []
+is_a: CL:1000495 ! small intestine goblet cell
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0001213 ! part of intestinal villus
+relationship: BFO:0000050 UBERON:0001213 ! part of intestinal villus
+relationship: BFO:0000050 UBERON:0013636 ! part of epithelium of intestinal villus
+
+[Term]
+id: CL:1000322
+name: pancreatic goblet cell
+def: "A goblet cell that is part of the epithelium of pancreatic duct." [GOC:tfm]
+synonym: "goblet cell of epithelium of pancreatic duct" EXACT [FMA:263058]
+is_a: CL:0000069 ! branched duct epithelial cell
+is_a: CL:0000160 ! goblet cell
+is_a: CL:1001599 ! pancreas exocrine glandular cell
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0001264 ! part of pancreas
+relationship: BFO:0000050 UBERON:0001264 ! part of pancreas
+relationship: BFO:0000050 UBERON:0009970 ! part of epithelium of pancreatic duct
+
+[Term]
+id: CL:1000324
+name: duodenal goblet cell
+def: "A goblet cell that is part of the epithelium proper of duodenum." [GOC:tfm]
+synonym: "goblet cell of epithelium proper of duodenum" EXACT []
+is_a: CL:1000317 ! intestinal villus goblet cell
+is_a: CL:1001589 ! duodenum glandular cell
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0002114 ! part of duodenum
+relationship: BFO:0000050 UBERON:0002114 ! part of duodenum
+relationship: BFO:0000050 UBERON:0008346 ! part of duodenal epithelium
+
+[Term]
 id: CL:1000428
 name: stem cell of epidermis
 def: "A somatic stem cell that is part of the epidermis." [GOC:tfm]
@@ -2651,6 +2738,20 @@ is_a: CL:0000723 {is_inferred="true"} ! somatic stem cell
 intersection_of: CL:0000723 ! somatic stem cell
 intersection_of: BFO:0000050 UBERON:0001003 ! part of skin epidermis
 relationship: BFO:0000050 UBERON:0001003 ! part of skin epidermis
+
+[Term]
+id: CL:1000495
+name: small intestine goblet cell
+def: "A goblet cell that is part of the small intestine." [GOC:tfm]
+synonym: "goblet cell of epithelium of small intestine" EXACT []
+synonym: "goblet cell of small intestine" EXACT []
+synonym: "small intestinal goblet cell" EXACT [FMA:86929]
+is_a: CL:0000160 ! goblet cell
+is_a: CL:1001598 ! small intestine glandular cell
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0002108 ! part of small intestine
+relationship: BFO:0000050 UBERON:0001902 ! part of epithelium of small intestine
+relationship: BFO:0000050 UBERON:0002108 ! part of small intestine
 
 [Term]
 id: CL:1001433
@@ -3252,6 +3353,12 @@ name: leukocyte cell-cell adhesion
 is_a: GO:0016337 ! single organismal cell-cell adhesion
 
 [Term]
+id: GO:0007589
+name: body fluid secretion
+is_a: GO:0046903 ! secretion
+is_a: GO:0050878 ! regulation of body fluid levels
+
+[Term]
 id: GO:0007596
 name: blood coagulation
 is_a: GO:0007599 ! hemostasis
@@ -3632,6 +3739,12 @@ name: secretion by cell
 is_a: GO:0044763 ! single-organism cellular process
 is_a: GO:0046903 ! secretion
 is_a: GO:0051649 ! establishment of localization in cell
+
+[Term]
+id: GO:0032941
+name: secretion by tissue
+is_a: GO:0044707 ! single-multicellular organism process
+is_a: GO:0046903 ! secretion
 
 [Term]
 id: GO:0032991
@@ -4225,6 +4338,12 @@ is_a: GO:0008150 ! biological_process
 id: GO:0065008
 name: regulation of biological quality
 is_a: GO:0065007 ! biological regulation
+
+[Term]
+id: GO:0070254
+name: mucus secretion
+is_a: GO:0007589 ! body fluid secretion
+is_a: GO:0032941 ! secretion by tissue
 
 [Term]
 id: GO:0070486
