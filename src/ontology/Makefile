@@ -171,3 +171,19 @@ mim2gene_medgen:
 
 modules/equiv-xrefs.obo: tbd-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
+
+# ----------------------------------------
+# Kboom
+# ----------------------------------------
+
+ptable.tsv: tbd-edit.obo
+	../utils/xrefs2ptable.pl $< > $@.tmp && mv $@.tmp $@
+
+seed.owl: tbd-edit.obo ext.obo
+	owltools --use-catalog $< --remove-imports-declarations --merge-support-ontologies -o $@
+
+ext.obo: ptable.tsv
+	perl -ne '($$goo, $$x) = split;print "$$x\t$$x\n"' $< | tbl2obo.pl  > $@
+
+bridge.owl: ptable.tsv seed.owl
+	kboom --experimental  --splitSize 50 --max 4 -m linked-rpt.md -j linked-rpt.json -n -o $@ -t $^
