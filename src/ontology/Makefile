@@ -179,6 +179,9 @@ modules/equiv-xrefs.obo: tbd-edit.obo
 tbdx.obo: tbd-edit.obo
 	perl -npe 's@source="MONDO:(equivalentto|subclassof|superclassof|other|relatedto)@semantics="MONDO:$$1@i' $< > $@
 
+check: tbd-edit.obo
+	$(HOME)/repos/go-ontology/src/util/check-obo-for-standard-release.pl --disable-xrf-abbs-check $<
+
 # ----------------------------------------
 # Kboom
 # ----------------------------------------
