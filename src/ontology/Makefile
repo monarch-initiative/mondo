@@ -154,7 +154,7 @@ imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql
 
 # align against self (*not* external ontologies)
 mappings.tsv: tbd.json
-	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@
+	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@http://purl.obolibrary.org/obo/TBD_@TBD:@g' $@
 
 hp-mappings.tsv: tbd.json
 	ontobio-lexmap.py hp $< > $@.tmp && mv $@.tmp $@
