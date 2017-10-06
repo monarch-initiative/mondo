@@ -173,6 +173,13 @@ modules/equiv-xrefs.obo: tbd-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
 
 # ----------------------------------------
+# Hacky
+# ----------------------------------------
+
+tbdx.obo: tbd-edit.obo
+	perl -npe 's@source="MONDO:(equivalentto|subclassof|superclassof|other|relatedto)@semantics="MONDO:$$1@i' $< > $@
+
+# ----------------------------------------
 # Kboom
 # ----------------------------------------
 
