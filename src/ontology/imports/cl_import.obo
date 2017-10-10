@@ -463,6 +463,14 @@ synonym: "surface ectoderm cell" EXACT []
 is_a: CL:0000221 ! ectodermal cell
 
 [Term]
+id: CL:0000115
+name: endothelial cell
+def: "An endothelial cell comprises the outermost layer or lining of anatomical structures and can be squamous or cuboidal. In mammals, endothelial cell has vimentin filaments and is derived from the mesoderm." [GOC:tfm, http://en.wikipedia.org/wiki/Endothelial_cell, https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3364936&group_id=36855, MESH:D042783, PMID:21275341]
+synonym: "endotheliocyte" EXACT []
+is_a: CL:0000213 ! lining cell
+is_a: CL:0002078 ! meso-epithelial cell
+
+[Term]
 id: CL:0000123
 name: neuron associated cell (sensu Vertebrata)
 is_a: CL:0000095 ! neuron associated cell
@@ -653,6 +661,19 @@ relationship: RO:0002202 CL:0000056 ! develops from myoblast
 id: CL:0000211
 name: electrically active cell
 def: "A cell whose function is determined by the generation or the reception of an electric signal." [FB:ma]
+is_a: CL:0000003 ! native cell
+
+[Term]
+id: CL:0000213
+name: lining cell
+def: "A cell within an epithelial cell sheet whose main function is to act as an internal or external covering for a tissue or an organism." [JB:jb]
+synonym: "boundary cell" EXACT []
+is_a: CL:0000215 ! barrier cell
+
+[Term]
+id: CL:0000215
+name: barrier cell
+def: "A cell whose primary function is to prevent the transport of stuff across compartments." [JB:jb]
 is_a: CL:0000003 ! native cell
 
 [Term]
@@ -1003,6 +1024,22 @@ def: "A cell whose primary function is to protect the organism." [JB:jb]
 is_a: CL:0000003 ! native cell
 
 [Term]
+id: CL:0000492
+name: CD4-positive helper T cell
+def: "A CD4-positive, alpha-beta T cell that cooperates with other lymphocytes via direct contact or cytokine release to initiate a variety of immune functions." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, ISBN:0781735149, MESH:A11.118.637.555.567.569.200.400]
+synonym: "CD4-positive helper T lymphocyte" EXACT []
+synonym: "CD4-positive helper T-cell" EXACT []
+synonym: "CD4-positive helper T-lymphocyte" EXACT []
+synonym: "CD4-positive T-helper cell" EXACT []
+is_a: CL:0000624 {is_inferred="true"} ! CD4-positive, alpha-beta T cell
+is_a: CL:0000912 ! helper T cell
+intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
+intersection_of: RO:0002215 GO:0001816 ! capable of cytokine production
+relationship: has_completed GO:0030217 ! T cell differentiation
+relationship: RO:0002202 CL:0000896 ! develops from activated CD4-positive, alpha-beta T cell
+relationship: RO:0002215 GO:0001816 ! capable of cytokine production
+
+[Term]
 id: CL:0000519
 name: phagocyte (sensu Nematoda and Protostomia)
 def: "A phagocyte from organisms in the Nematoda or Protostomia clades." [GOC:tfm]
@@ -1251,6 +1288,35 @@ relationship: RO:0002215 GO:0002228 ! capable of natural killer cell mediated im
 relationship: RO:0002215 GO:0050776 ! capable of regulation of immune response
 
 [Term]
+id: CL:0000624
+name: CD4-positive, alpha-beta T cell
+def: "A mature alpha-beta T cell that expresses an alpha-beta T cell receptor and the CD4 coreceptor." [GOC:add, ISBN:0781735149]
+synonym: "CD4-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "CD4-positive, alpha-beta T-cell" EXACT []
+synonym: "CD4-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000791 {is_inferred="true"} ! mature alpha-beta T cell
+intersection_of: CL:0000791 ! mature alpha-beta T cell
+intersection_of: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+intersection_of: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+disjoint_from: CL:0000625 ! CD8-positive, alpha-beta T cell
+relationship: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+relationship: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+
+[Term]
+id: CL:0000625
+name: CD8-positive, alpha-beta T cell
+def: "A T cell expressing an alpha-beta T cell receptor and the CD8 coreceptor." [GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "CD8-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "CD8-positive, alpha-beta T-cell" EXACT []
+synonym: "CD8-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000791 {is_inferred="true"} ! mature alpha-beta T cell
+intersection_of: CL:0000791 ! mature alpha-beta T cell
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+
+[Term]
 id: CL:0000630
 name: supportive cell
 def: "A cell whose primary function is to support other cell types." [FB:ma, GOC:tfm]
@@ -1496,6 +1562,207 @@ relationship: lacks_plasma_membrane_part GO:0042613 ! MHC class II protein compl
 relationship: lacks_plasma_membrane_part PR:000001289 ! membrane-spanning 4-domains subfamily A member 1
 relationship: RO:0002104 PR:000001935 ! has plasma membrane part syndecan-1
 relationship: RO:0002202 CL:0000980 ! develops from plasmablast
+
+[Term]
+id: CL:0000789
+name: alpha-beta T cell
+def: "A T cell that expresses an alpha-beta T cell receptor complex." [GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "alpha-beta T lymphocyte" EXACT []
+synonym: "alpha-beta T-cell" EXACT []
+synonym: "alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000084 {is_inferred="true"} ! T cell
+intersection_of: CL:0000084 ! T cell
+intersection_of: RO:0002104 GO:0042105 ! has plasma membrane part alpha-beta T cell receptor complex
+relationship: RO:0002104 GO:0042105 ! has plasma membrane part alpha-beta T cell receptor complex
+
+[Term]
+id: CL:0000790
+name: immature alpha-beta T cell
+def: "An alpha-beta T cell that has an immature phenotype and has not completed T cell selection." [GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "immature alpha-beta T lymphocyte" EXACT []
+synonym: "immature alpha-beta T-cell" EXACT []
+synonym: "immature alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000789 {is_inferred="true"} ! alpha-beta T cell
+is_a: CL:0002420 ! immature T cell
+intersection_of: CL:0000789 ! alpha-beta T cell
+intersection_of: has_not_completed GO:0045058 ! T cell selection
+relationship: has_not_completed GO:0045058 ! T cell selection
+
+[Term]
+id: CL:0000791
+name: mature alpha-beta T cell
+def: "A alpha-beta T cell that has a mature phenotype." [GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "mature alpha-beta T lymphocyte" EXACT []
+synonym: "mature alpha-beta T-cell" EXACT []
+synonym: "mature alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000789 {is_inferred="true"} ! alpha-beta T cell
+is_a: CL:0002419 ! mature T cell
+intersection_of: CL:0000789 ! alpha-beta T cell
+intersection_of: has_completed GO:0045058 ! T cell selection
+relationship: has_completed GO:0045058 ! T cell selection
+relationship: RO:0002202 CL:0000790 ! develops from immature alpha-beta T cell
+
+[Term]
+id: CL:0000805
+name: immature single positive thymocyte
+def: "A thymocyte that has the phenotype CD4-negative, CD8-positive, CD44-negative, CD25-negative, and pre-TCR-positive." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149]
+synonym: "immature single positive T cell" EXACT []
+synonym: "immature single positive T lymphocyte" EXACT []
+synonym: "immature single positive T-lymphocyte" EXACT []
+synonym: "ISP" EXACT []
+synonym: "T.ISP.th" EXACT []
+is_a: CL:0000893 {is_inferred="true"} ! thymocyte
+intersection_of: CL:0000893 ! thymocyte
+intersection_of: has_high_plasma_membrane_amount PR:000001932 ! signal transducer CD24
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001307 ! CD44 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+intersection_of: RO:0002104 GO:0043384 ! has plasma membrane part pre-T cell receptor complex
+intersection_of: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: has_high_plasma_membrane_amount PR:000001932 ! signal transducer CD24
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: lacks_plasma_membrane_part PR:000001307 ! CD44 molecule
+relationship: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+relationship: RO:0002104 GO:0043384 ! has plasma membrane part pre-T cell receptor complex
+relationship: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: RO:0002202 CL:0000808 ! develops from DN4 thymocyte
+
+[Term]
+id: CL:0000806
+name: DN2 thymocyte
+def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-positive, and CD25-positive." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "DN2 alpha-beta immature T lymphocyte" EXACT []
+synonym: "DN2 alpha-beta immature T-cell" EXACT []
+synonym: "DN2 alpha-beta immature T-lymphocyte" EXACT []
+synonym: "DN2 cell" EXACT []
+synonym: "DN2 immature T cell" EXACT []
+synonym: "double negative 2" EXACT []
+synonym: "preT.DN2.Th" EXACT []
+synonym: "TN2 cell" EXACT []
+synonym: "TN2 thymocyte" EXACT []
+is_a: CL:0002489 ! double negative thymocyte
+intersection_of: CL:0000893 ! thymocyte
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+intersection_of: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
+intersection_of: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+relationship: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
+relationship: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: RO:0002202 CL:0000894 ! develops from DN1 thymic pro-T cell
+
+[Term]
+id: CL:0000807
+name: DN3 thymocyte
+def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-negative, and CD25-positive and expressing the T cell receptor beta-chain in complex with the pre-T cell receptor alpha chain." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "DN3 alpha-beta immature T lymphocyte" EXACT []
+synonym: "DN3 alpha-beta immature T-cell" EXACT []
+synonym: "DN3 alpha-beta immature T-lymphocyte" EXACT []
+synonym: "DN3 cell" EXACT []
+synonym: "DN3 immature T cell" EXACT []
+synonym: "double negative 3" EXACT []
+synonym: "early cortical thymocyte" BROAD []
+synonym: "preT.DN3.Th" EXACT []
+synonym: "TN3 cell" EXACT []
+synonym: "TN3 thymocyte" EXACT []
+is_a: CL:0002489 ! double negative thymocyte
+intersection_of: CL:0000893 ! thymocyte
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001307 ! CD44 molecule
+intersection_of: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+intersection_of: RO:0002104 GO:0043384 ! has plasma membrane part pre-T cell receptor complex
+intersection_of: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: lacks_plasma_membrane_part PR:000001307 ! CD44 molecule
+relationship: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+relationship: RO:0002104 GO:0043384 ! has plasma membrane part pre-T cell receptor complex
+relationship: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: RO:0002202 CL:0000806 ! develops from DN2 thymocyte
+
+[Term]
+id: CL:0000808
+name: DN4 thymocyte
+def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-negative, CD25-negative, and pre-TCR-positive." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "DN4 alpha-beta immature T lymphocyte" EXACT []
+synonym: "DN4 alpha-beta immature T-lymphocyte" EXACT []
+synonym: "DN4 cell" EXACT []
+synonym: "DN4 immature T cell" EXACT []
+synonym: "DN4 immature T-cell" EXACT []
+synonym: "double negative 4" EXACT []
+synonym: "early cortical thymocyte" BROAD []
+synonym: "T.DN4.th" EXACT []
+is_a: CL:0002489 ! double negative thymocyte
+intersection_of: CL:0000893 ! thymocyte
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001307 ! CD44 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+intersection_of: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+intersection_of: RO:0002104 GO:0043384 ! has plasma membrane part pre-T cell receptor complex
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: lacks_plasma_membrane_part PR:000001307 ! CD44 molecule
+relationship: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+relationship: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+relationship: RO:0002104 GO:0043384 ! has plasma membrane part pre-T cell receptor complex
+relationship: RO:0002202 CL:0000807 ! develops from DN3 thymocyte
+
+[Term]
+id: CL:0000809
+name: double-positive, alpha-beta thymocyte
+def: "A thymocyte expressing the alpha-beta T cell receptor complex as well as both the CD4 and CD8 coreceptors." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "double-positive, alpha-beta immature T lymphocyte" EXACT []
+synonym: "DP cell" EXACT []
+synonym: "DP thymocyte" EXACT []
+synonym: "late cortical thymocyte" BROAD []
+is_a: CL:0000790 {is_inferred="true"} ! immature alpha-beta T cell
+is_a: CL:0000893 ! thymocyte
+intersection_of: CL:0000790 ! immature alpha-beta T cell
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+intersection_of: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+intersection_of: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+relationship: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: RO:0002202 CL:0000805 ! develops from immature single positive thymocyte
+
+[Term]
+id: CL:0000810
+name: CD4-positive, alpha-beta thymocyte
+def: "An immature alpha-beta T cell that is located in the thymus and is CD4-positive and CD8-negative." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "CD4-positive, alpha-beta immature T lymphocyte" EXACT []
+synonym: "CD4-positive, alpha-beta immature T-cell" EXACT []
+synonym: "CD4-positive, alpha-beta immature T-lymphocyte" EXACT []
+synonym: "SP CD4 cell" EXACT []
+is_a: CL:0000790 {is_inferred="true"} ! immature alpha-beta T cell
+is_a: CL:0000893 ! thymocyte
+intersection_of: CL:0000790 ! immature alpha-beta T cell
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+intersection_of: lacks_plasma_membrane_part PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
+intersection_of: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: lacks_plasma_membrane_part PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
+relationship: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+relationship: RO:0002202 CL:0000809 ! develops from double-positive, alpha-beta thymocyte
+
+[Term]
+id: CL:0000811
+name: CD8-positive, alpha-beta thymocyte
+def: "An immature alpha-beta T cell that is located in the thymus and is CD8-positive and CD4-negative." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "CD8-positive, alpha-beta immature T cell" RELATED []
+synonym: "CD8-positive, alpha-beta immature T lymphocyte" EXACT []
+synonym: "CD8-positive, alpha-beta immature T-cell" EXACT []
+synonym: "CD8-positive, alpha-beta immature T-lymphocyte" EXACT []
+synonym: "SP CD8 cell" EXACT []
+is_a: CL:0000790 {is_inferred="true"} ! immature alpha-beta T cell
+is_a: CL:0000893 ! thymocyte
+intersection_of: CL:0000790 ! immature alpha-beta T cell
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: RO:0002202 CL:0000809 ! develops from double-positive, alpha-beta thymocyte
 
 [Term]
 id: CL:0000816
@@ -1758,6 +2025,213 @@ relationship: RO:0002104 PR:000001338 ! has plasma membrane part complement rece
 relationship: RO:0002215 GO:0042742 ! capable of defense response to bacterium
 
 [Term]
+id: CL:0000893
+name: thymocyte
+def: "An immature T cell located in the thymus." [GO_REF:0000031, GOC:add, GOC:tfm, PMID:12415312]
+synonym: "immature T cell" BROAD []
+synonym: "immature T lymphocyte" BROAD []
+synonym: "immature T-cell" BROAD []
+synonym: "immature T-lymphocyte" BROAD []
+synonym: "thymic lymphocyte" EXACT []
+is_a: CL:0002420 {is_inferred="true"} ! immature T cell
+intersection_of: CL:0000084 ! T cell
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+intersection_of: has_not_completed GO:0045058 ! T cell selection
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: has_not_completed GO:0045058 ! T cell selection
+
+[Term]
+id: CL:0000894
+name: DN1 thymic pro-T cell
+def: "A pro-T cell that has the phenotype CD4-negative, CD8-negative, CD44-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:tfm]
+synonym: "DN1 thymic pro-T lymphocyte" EXACT []
+synonym: "DN1 thymic pro-T-cell" EXACT []
+synonym: "DN1 thymic pro-T-lymphocyte" EXACT []
+synonym: "DN1 thymic progenitor T cell" EXACT []
+synonym: "DN1 thymocyte" EXACT []
+synonym: "double negative 1" EXACT []
+synonym: "preT.DN1.Th" EXACT []
+is_a: CL:0000827 {is_inferred="true"} ! pro-T cell
+intersection_of: CL:0000827 ! pro-T cell
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
+intersection_of: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+intersection_of: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: lacks_plasma_membrane_part PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
+relationship: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+relationship: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
+relationship: RO:0002202 CL:0002425 ! develops from early T lineage precursor
+
+[Term]
+id: CL:0000895
+name: naive thymus-derived CD4-positive, alpha-beta T cell
+def: "An antigen inexperienced CD4-positive, alpha-beta T cell with the phenotype CCR7-positive, CD127-positive and CD62L-positive. This cell type develops in the thymus. This cell type is also described as being CD25-negative, CD62L-high, and CD44-low." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, PMID:19100699, PMID:22343568]
+synonym: "naive CD4+ T cell" BROAD [PMID:22343568]
+synonym: "naive thymus-derived CD4-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "naive thymus-derived CD4-positive, alpha-beta T-cell" EXACT []
+synonym: "naive thymus-derived CD4-positive, alpha-beta T-lymphocyte" EXACT []
+synonym: "T.4Nve.Sp" EXACT []
+synonym: "Th0" EXACT [GOC:tfm]
+is_a: CL:0000624 {is_inferred="true"} ! CD4-positive, alpha-beta T cell
+is_a: CL:0000898 ! naive T cell
+intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
+intersection_of: has_high_plasma_membrane_amount PR:000001318 ! L-selectin
+intersection_of: has_low_plasma_membrane_amount PR:000001307 ! CD44 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+intersection_of: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+intersection_of: RO:0002104 PR:000001203 ! has plasma membrane part C-C chemokine receptor type 7
+intersection_of: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+relationship: has_high_plasma_membrane_amount PR:000001318 ! L-selectin
+relationship: has_low_plasma_membrane_amount PR:000001307 ! CD44 molecule
+relationship: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+relationship: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+relationship: RO:0002104 PR:000001203 ! has plasma membrane part C-C chemokine receptor type 7
+relationship: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+relationship: RO:0002202 CL:0002436 ! develops from mature CD4 single-positive thymocyte
+
+[Term]
+id: CL:0000896
+name: activated CD4-positive, alpha-beta T cell
+def: "A recently activated CD4-positive, alpha-beta T cell with the phenotype CD69-positive, CD62L-negative, CD127-negative, and CD25-positive." [GO_REF:0000031, GOC:add, GOC:pam]
+synonym: "activated CD4-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "activated CD4-positive, alpha-beta T-cell" EXACT []
+synonym: "activated CD4-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000624 {is_inferred="true"} ! CD4-positive, alpha-beta T cell
+intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
+intersection_of: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+intersection_of: lacks_plasma_membrane_part PR:000001869 ! interleukin-7 receptor subunit alpha
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+intersection_of: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+relationship: lacks_plasma_membrane_part PR:000001869 ! interleukin-7 receptor subunit alpha
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: RO:0002202 CL:0000895 ! develops from naive thymus-derived CD4-positive, alpha-beta T cell
+
+[Term]
+id: CL:0000898
+name: naive T cell
+def: "Mature T cell not yet exposed to antigen with the phenotype CCR7-positive, CD45RA-positive, and CD127-positive. This cell type is also described as being CD25-negative, CD62L-high and CD44-low." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:19100699]
+synonym: "naive T lymphocyte" EXACT []
+synonym: "naive T-cell" EXACT []
+synonym: "naive T-lymphocyte" EXACT []
+is_a: CL:0002419 {is_inferred="true"} ! mature T cell
+intersection_of: CL:0002419 ! mature T cell
+intersection_of: has_completed GO:0045058 ! T cell selection
+intersection_of: has_high_plasma_membrane_amount PR:000001318 ! L-selectin
+intersection_of: has_low_plasma_membrane_amount PR:000001307 ! CD44 molecule
+intersection_of: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+intersection_of: RO:0002104 PR:000001203 ! has plasma membrane part C-C chemokine receptor type 7
+intersection_of: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+relationship: has_completed GO:0045058 ! T cell selection
+relationship: has_high_plasma_membrane_amount PR:000001318 ! L-selectin
+relationship: has_low_plasma_membrane_amount PR:000001307 ! CD44 molecule
+relationship: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+relationship: RO:0002104 PR:000001203 ! has plasma membrane part C-C chemokine receptor type 7
+relationship: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+
+[Term]
+id: CL:0000900
+name: naive thymus-derived CD8-positive, alpha-beta T cell
+def: "A CD8-positive, alpha-beta T cell that has not experienced activation via antigen contact and has the phenotype CD45RA-positive, CCR7-positive and CD127-positive. This cell type is also described as being CD25-negative, CD62L-high and CD44-low." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149, PMID:22343568]
+synonym: "naive CD8+ T cell" BROAD [PMID:22343568]
+synonym: "naive thymus-dervied CD8-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "naive thymus-dervied CD8-positive, alpha-beta T-cell" EXACT []
+synonym: "naive thymus-dervied CD8-positive, alpha-beta T-lymphocyte" EXACT []
+synonym: "T.8Nve.Sp" NARROW []
+is_a: CL:0000625 {is_inferred="true"} ! CD8-positive, alpha-beta T cell
+is_a: CL:0000898 ! naive T cell
+intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
+intersection_of: has_high_plasma_membrane_amount PR:000001318 ! L-selectin
+intersection_of: has_low_plasma_membrane_amount PR:000001307 ! CD44 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+intersection_of: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+intersection_of: RO:0002104 PR:000001203 ! has plasma membrane part C-C chemokine receptor type 7
+intersection_of: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+relationship: has_high_plasma_membrane_amount PR:000001318 ! L-selectin
+relationship: has_low_plasma_membrane_amount PR:000001307 ! CD44 molecule
+relationship: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+relationship: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+relationship: RO:0002104 PR:000001203 ! has plasma membrane part C-C chemokine receptor type 7
+relationship: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+relationship: RO:0002202 CL:0002437 ! develops from mature CD8 single-positive thymocyte
+
+[Term]
+id: CL:0000906
+name: activated CD8-positive, alpha-beta T cell
+def: "A CD8-positive, alpha-beta T cell with the phenotype CD69-positive, CD62L-negative, CD127-negative, CD25-positive, and CCR7-negative." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm]
+synonym: "activated CD8-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "activated CD8-positive, alpha-beta T-cell" EXACT []
+synonym: "activated CD8-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000625 {is_inferred="true"} ! CD8-positive, alpha-beta T cell
+intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
+intersection_of: lacks_plasma_membrane_part PR:000001203 ! C-C chemokine receptor type 7
+intersection_of: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+intersection_of: lacks_plasma_membrane_part PR:000001869 ! interleukin-7 receptor subunit alpha
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+intersection_of: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: lacks_plasma_membrane_part PR:000001203 ! C-C chemokine receptor type 7
+relationship: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+relationship: lacks_plasma_membrane_part PR:000001869 ! interleukin-7 receptor subunit alpha
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: RO:0002202 CL:0000900 ! develops from naive thymus-derived CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0000908
+name: CD8-positive, alpha-beta cytokine secreting effector T cell
+def: "A CD8-positive, alpha-beta T cell with the phenotype CD69-positive, CD62L-negative, CD127-negative, and CD25-positive, that secretes cytokines." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:20146720]
+synonym: "CD8-positive, alpha-beta cytokine secreting effector T lymphocyte" EXACT []
+synonym: "CD8-positive, alpha-beta cytokine secreting effector T-cell" EXACT []
+synonym: "CD8-positive, alpha-beta cytokine secreting effector T-lymphocyte" EXACT []
+is_a: CL:0000625 {is_inferred="true"} ! CD8-positive, alpha-beta T cell
+is_a: CL:0000912 ! helper T cell
+intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
+intersection_of: has_completed GO:0030217 ! T cell differentiation
+intersection_of: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+intersection_of: lacks_plasma_membrane_part PR:000001869 ! interleukin-7 receptor subunit alpha
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+intersection_of: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+intersection_of: RO:0002215 GO:0001816 ! capable of cytokine production
+relationship: has_completed GO:0030217 ! T cell differentiation
+relationship: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+relationship: lacks_plasma_membrane_part PR:000001869 ! interleukin-7 receptor subunit alpha
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002104 PR:000001380 ! has plasma membrane part interleukin-2 receptor subunit alpha
+relationship: RO:0002202 CL:0000906 ! develops from activated CD8-positive, alpha-beta T cell
+relationship: RO:0002215 GO:0001816 ! capable of cytokine production
+
+[Term]
+id: CL:0000911
+name: effector T cell
+def: "A differentiated T cell with ability to traffic to peripheral tissues and is capable of mounting a specific immune response." [GOC:PAM-ADD, GOC:tfm, ISBN:0877799148, PMID:18395547]
+synonym: "effector T lymphocyte" EXACT []
+synonym: "effector T-cell" EXACT []
+synonym: "effector T-lymphocyte" EXACT []
+is_a: CL:0002419 {is_inferred="true"} ! mature T cell
+intersection_of: CL:0002419 ! mature T cell
+intersection_of: has_completed GO:0030217 ! T cell differentiation
+intersection_of: has_completed GO:0045058 ! T cell selection
+relationship: has_completed GO:0030217 ! T cell differentiation
+relationship: has_completed GO:0045058 ! T cell selection
+
+[Term]
+id: CL:0000912
+name: helper T cell
+def: "A effector T cell that provides help in the form of secreted cytokines to other immune cells." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:18395547]
+synonym: "helper T lymphocyte" EXACT []
+synonym: "helper T-cell" EXACT []
+synonym: "helper T-lymphocyte" EXACT []
+synonym: "T-helper cell" EXACT []
+is_a: CL:0000911 {is_inferred="true"} ! effector T cell
+intersection_of: CL:0000911 ! effector T cell
+intersection_of: RO:0002215 GO:0001816 ! capable of cytokine production
+relationship: RO:0002215 GO:0001816 ! capable of cytokine production
+
+[Term]
 id: CL:0000937
 name: pre-natural killer cell
 def: "Cell committed to natural killer cell lineage that has the phenotype CD122-positive, CD34-positive, and CD117-positive. This cell type lacks expression of natural killer receptor proteins." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:pam, GOC:tfm, PMID:16551251, PMID:17100874]
@@ -1770,6 +2244,22 @@ intersection_of: RO:0002104 PR:000002065 ! has plasma membrane part mast/stem ce
 relationship: RO:0002104 PR:000001003 ! has plasma membrane part CD34 molecule
 relationship: RO:0002104 PR:000001381 ! has plasma membrane part interleukin-2 receptor subunit beta
 relationship: RO:0002104 PR:000002065 ! has plasma membrane part mast/stem cell growth factor receptor
+
+[Term]
+id: CL:0000941
+name: thymic conventional dendritic cell
+def: "A dendritic cell arising in thymus that has the phenotype CD11c-positive, CD11b-negative, and CD45RA-negative." [GO_REF:0000031, GOC:add, GOC:pam, PMID:19273629]
+is_a: CL:0000990 {is_inferred="true"} ! conventional dendritic cell
+intersection_of: CL:0000990 ! conventional dendritic cell
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+intersection_of: lacks_plasma_membrane_part PR:000001012 ! integrin alpha-M
+intersection_of: lacks_plasma_membrane_part PR:000001015 ! receptor-type tyrosine-protein phosphatase C isoform CD45RA
+intersection_of: RO:0002104 PR:000001013 ! has plasma membrane part integrin alpha-X
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: lacks_plasma_membrane_part PR:000001012 ! integrin alpha-M
+relationship: lacks_plasma_membrane_part PR:000001015 ! receptor-type tyrosine-protein phosphatase C isoform CD45RA
+relationship: RO:0002104 PR:000001013 ! has plasma membrane part integrin alpha-X
+relationship: RO:0002202 CL:0000894 ! develops from DN1 thymic pro-T cell
 
 [Term]
 id: CL:0000945
@@ -1825,6 +2315,51 @@ relationship: has_completed GO:0071707 ! immunoglobulin heavy chain V-D-J recomb
 relationship: lacks_part PR:000006611 ! DNA nucleotidylexotransferase
 relationship: lacks_plasma_membrane_part PR:000001003 ! CD34 molecule
 relationship: RO:0002202 CL:0000826 ! develops from pro-B cell
+
+[Term]
+id: CL:0000958
+name: T1 B cell
+def: "A transitional stage B cell that migrates from the bone marrow into the peripheral circulation, and finally to the spleen. This cell type has the phenotype surface IgM-positive, surface IgD-negative, CD21-negative, CD23-negative, and CD62L-negative, and CD93-positive. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-negative." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2193793, PMID:12810111]
+synonym: "T1 B lymphocyte" EXACT []
+synonym: "T1 B-cell" EXACT []
+synonym: "T1 B-lymphocyte" EXACT []
+synonym: "transitional stage 1 B cell" EXACT []
+is_a: CL:0000818 {is_inferred="true"} ! transitional stage B cell
+intersection_of: CL:0000818 ! transitional stage B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738 ! IgD immunoglobulin complex
+intersection_of: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+intersection_of: lacks_plasma_membrane_part PR:000001338 ! complement receptor type 2
+intersection_of: lacks_plasma_membrane_part PR:000001880 ! low affinity immunoglobulin epsilon Fc receptor
+intersection_of: RO:0002104 PR:000002037 ! has plasma membrane part complement component C1q receptor
+relationship: lacks_plasma_membrane_part GO:0071738 ! IgD immunoglobulin complex
+relationship: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+relationship: lacks_plasma_membrane_part PR:000001338 ! complement receptor type 2
+relationship: lacks_plasma_membrane_part PR:000001880 ! low affinity immunoglobulin epsilon Fc receptor
+relationship: RO:0002104 PR:000002037 ! has plasma membrane part complement component C1q receptor
+
+[Term]
+id: CL:0000959
+name: T2 B cell
+def: "A transitional stage B cell that has the phenotype surface IgM-positive, surface IgD-postive, CD21-positive, CD23-positive, CD62L-negative, CD93-positive and is located in the splenic B follicles. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-positive." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2193793, PMID:12810111]
+synonym: "T2 B lymphocyte" EXACT []
+synonym: "T2 B-cell" EXACT []
+synonym: "T2 B-lymphocyte" EXACT []
+synonym: "transitional stage 2 B cell" EXACT []
+is_a: CL:0000818 {is_inferred="true"} ! transitional stage B cell
+intersection_of: CL:0000818 ! transitional stage B cell
+intersection_of: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+intersection_of: RO:0002104 GO:0071738 ! has plasma membrane part IgD immunoglobulin complex
+intersection_of: RO:0002104 GO:0071753 ! has plasma membrane part IgM immunoglobulin complex
+intersection_of: RO:0002104 PR:000001338 ! has plasma membrane part complement receptor type 2
+intersection_of: RO:0002104 PR:000001880 ! has plasma membrane part low affinity immunoglobulin epsilon Fc receptor
+intersection_of: RO:0002104 PR:000002037 ! has plasma membrane part complement component C1q receptor
+relationship: lacks_plasma_membrane_part PR:000001318 ! L-selectin
+relationship: RO:0002104 GO:0071738 ! has plasma membrane part IgD immunoglobulin complex
+relationship: RO:0002104 GO:0071753 ! has plasma membrane part IgM immunoglobulin complex
+relationship: RO:0002104 PR:000001338 ! has plasma membrane part complement receptor type 2
+relationship: RO:0002104 PR:000001880 ! has plasma membrane part low affinity immunoglobulin epsilon Fc receptor
+relationship: RO:0002104 PR:000002037 ! has plasma membrane part complement component C1q receptor
+relationship: RO:0002202 CL:0000958 ! develops from T1 B cell
 
 [Term]
 id: CL:0000980
@@ -1992,6 +2527,50 @@ is_a: CL:0000548 {is_inferred="true"} ! animal cell
 intersection_of: CL:0000548 ! animal cell
 intersection_of: BFO:0000050 UBERON:0001474 ! part of bone element
 relationship: BFO:0000050 UBERON:0001474 ! part of bone element
+
+[Term]
+id: CL:0001044
+name: effector CD4-positive, alpha-beta T cell
+def: "A CD4-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive." [GOC:add, PMID:22343568]
+synonym: "effector CD4+ T cell" BROAD [PMID:22343568]
+synonym: "effector CD4-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "effector CD4-positive, alpha-beta T-cell" EXACT []
+synonym: "effector CD4-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
+is_a: CL:0000911 ! effector T cell
+intersection_of: CL:0000911 ! effector T cell
+intersection_of: lacks_plasma_membrane_part PR:000001203 ! C-C chemokine receptor type 7
+intersection_of: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+intersection_of: RO:0002104 GO:0042105 ! has plasma membrane part alpha-beta T cell receptor complex
+intersection_of: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+intersection_of: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+relationship: lacks_plasma_membrane_part PR:000001203 ! C-C chemokine receptor type 7
+relationship: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+relationship: RO:0002104 GO:0042105 ! has plasma membrane part alpha-beta T cell receptor complex
+relationship: RO:0002104 PR:000001004 ! has plasma membrane part CD4 molecule
+relationship: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+
+[Term]
+id: CL:0001050
+name: effector CD8-positive, alpha-beta T cell
+def: "A CD8-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive." [GOC:add, PMID:22343568]
+synonym: "effector CD8+ T cell" BROAD [PMID:22343568]
+synonym: "effector CD8-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "effector CD8-positive, alpha-beta T-cell" EXACT []
+synonym: "effector CD8-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
+is_a: CL:0000911 ! effector T cell
+intersection_of: CL:0000911 ! effector T cell
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: lacks_plasma_membrane_part PR:000001203 ! C-C chemokine receptor type 7
+intersection_of: RO:0002104 GO:0042105 ! has plasma membrane part alpha-beta T cell receptor complex
+intersection_of: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+intersection_of: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: lacks_plasma_membrane_part PR:000001203 ! C-C chemokine receptor type 7
+relationship: RO:0002104 GO:0042105 ! has plasma membrane part alpha-beta T cell receptor complex
+relationship: RO:0002104 PR:000001015 ! has plasma membrane part receptor-type tyrosine-protein phosphatase C isoform CD45RA
+relationship: RO:0002104 PR:000025402 ! has plasma membrane part T cell receptor co-receptor CD8
 
 [Term]
 id: CL:0001054
@@ -2185,6 +2764,17 @@ relationship: RO:0002104 PR:000001003 ! has plasma membrane part CD34 molecule
 relationship: RO:0002202 CL:0001024 ! develops from CD34-positive, CD38-negative hematopoietic stem cell
 
 [Term]
+id: CL:0002059
+name: CD8alpha-positive thymic conventional dendritic cell
+def: "A conventional thymic dendritic cell that is CD8alpha-positive." [GOC:tfm, http://www.immgen.org/index_content.html, PMID:19273629]
+synonym: "CD8alpha-alpha-positive thymic conventional dendritic cell" EXACT []
+synonym: "DC.8+.Th" EXACT []
+is_a: CL:0000941 {is_inferred="true"} ! thymic conventional dendritic cell
+intersection_of: CL:0000941 ! thymic conventional dendritic cell
+intersection_of: RO:0002104 PR:000001084 ! has plasma membrane part T-cell surface glycoprotein CD8 alpha chain
+relationship: RO:0002104 PR:000001084 ! has plasma membrane part T-cell surface glycoprotein CD8 alpha chain
+
+[Term]
 id: CL:0002064
 name: pancreatic acinar cell
 def: "A secretory cell found in pancreatic acini that secretes digestive enzymes and mucins. This cell is a typical zymogenic cell, have a basal nucleus and basophilic cytoplasm consisting of regular arrays of granular endoplasmic reticulum with mitochondria and dense secretory granules." [GOC:tfm, http://www.copewithcytokines.de/cope.cgi?key=pancreatic%20acinar%20cells, ISBN:0517223651, PMID:20395539]
@@ -2243,6 +2833,36 @@ is_a: CL:0001035 {is_inferred="true"} ! bone cell
 intersection_of: CL:0001035 ! bone cell
 intersection_of: BFO:0000050 UBERON:0002371 ! part of bone marrow
 relationship: BFO:0000050 UBERON:0002371 ! part of bone marrow
+
+[Term]
+id: CL:0002127
+name: innate effector T cell
+def: "A T cell with a receptor of limited diversity that is capable of immediate effector functions upon stimulation." [GOC:tfm, PMID:20581831]
+is_a: CL:0000911 {is_inferred="true"} ! effector T cell
+intersection_of: CL:0000911 ! effector T cell
+intersection_of: RO:0002215 GO:0045087 ! capable of innate immune response
+relationship: RO:0002215 GO:0045087 ! capable of innate immune response
+
+[Term]
+id: CL:0002138
+name: endothelial cell of lymphatic vessel
+def: "A endothelial cell of a lymphatic vessel. The border of the oak leaf-shaped endothelial cell of initial lymphatics are joined by specialized buttons. The discontinuous feature of buttons distinguishes them from zippers in collecting lymphatics, but both types of junctions are composed of proteins typical of adherens junctions and tight junctions found in the endothelium of blood vessels. Buttons seal the sides of flaps of the oak leaf-shaped endothelial cell, leaving open the tips of flaps as routes for fluid entry without disassembly and reformation of intercellular junctions." [GOC:tfm, PMID:17846148]
+synonym: "LEC" EXACT []
+synonym: "lymphatic endothelial cell" EXACT []
+is_a: CL:0002139 {is_inferred="true"} ! endothelial cell of vascular tree
+intersection_of: CL:0002139 ! endothelial cell of vascular tree
+intersection_of: BFO:0000050 UBERON:0001473 ! part of lymphatic vessel
+intersection_of: RO:0002202 CL:0005022 ! develops from vascular lymphangioblast
+relationship: BFO:0000050 UBERON:0001473 ! part of lymphatic vessel
+relationship: RO:0002202 CL:0005022 ! develops from vascular lymphangioblast
+
+[Term]
+id: CL:0002139
+name: endothelial cell of vascular tree
+def: "An endothelial cell of the vascular tree, which includes blood vessels and lymphatic vessels." [GOC:dsd, GOC:tfm, PMID:12768659]
+synonym: "cubodial endothelial cell of vascular tree" NARROW []
+synonym: "vascular endothelial cell" EXACT []
+is_a: CL:0000115 ! endothelial cell
 
 [Term]
 id: CL:0002159
@@ -2353,6 +2973,19 @@ def: "An endothelial cell found in the mucosa associated with the facial skeleto
 is_a: CL:0002076 ! endo-epithelial cell
 
 [Term]
+id: CL:0002293
+name: epithelial cell of thymus
+def: "An epithelial cell of the thymus. Epithelial reticular cells are pleomorphic, stellate, non-phagocytic cells which seem to be supportive in function and are held together by desmosomes. They replace the fibroblastoid reticular cells found in other lymphoid organs. Other epithelial cells in the medulla have the ultrastructure of secretory cells. Although different epithelial cells throughout the thymus appear alike by light microscopy their ultrastructure and function varies." [FMA:72208, GOC:tfm]
+synonym: "epithelial cell of thymus gland" EXACT []
+synonym: "epithelial reticular cell" EXACT []
+synonym: "epithelial reticular cell of thymus" EXACT []
+synonym: "thymic epithelial cell" EXACT []
+is_a: CL:0002076 {is_inferred="true"} ! endo-epithelial cell
+intersection_of: CL:0002076 ! endo-epithelial cell
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+
+[Term]
 id: CL:0002303
 name: pigmented ciliary epithelial cell
 def: "A ciliated epithelial cell of the retina, this cell type uptakes sodium chloride and passes it to non-pigmented ciliary epithelial cells." [PMID:15106942]
@@ -2447,6 +3080,221 @@ def: "A cell of an organism that does not pass on its genetic material to the or
 is_a: CL:0000003 ! native cell
 
 [Term]
+id: CL:0002419
+name: mature T cell
+def: "A T cell that expresses a T cell receptor complex and has completed T cell selection." [GOC:tfm]
+synonym: "CD3e-positive T cell" EXACT []
+synonym: "CD3epsilon T cell" RELATED []
+synonym: "mature T-cell" EXACT []
+is_a: CL:0000084 {is_inferred="true"} ! T cell
+intersection_of: CL:0000084 ! T cell
+intersection_of: has_completed GO:0045058 ! T cell selection
+intersection_of: RO:0002104 GO:0042101 ! has plasma membrane part T cell receptor complex
+relationship: has_completed GO:0045058 ! T cell selection
+relationship: RO:0002104 GO:0042101 ! has plasma membrane part T cell receptor complex
+
+[Term]
+id: CL:0002420
+name: immature T cell
+def: "A T cell that has not completed T cell selection." [GOC:tfm]
+synonym: "immature T-cell" EXACT []
+is_a: CL:0000084 {is_inferred="true"} ! T cell
+intersection_of: CL:0000084 ! T cell
+intersection_of: has_not_completed GO:0045058 ! T cell selection
+relationship: has_not_completed GO:0045058 ! T cell selection
+
+[Term]
+id: CL:0002423
+name: DN2a thymocyte
+def: "A DN2 thymocyte that is Kit-hi." [GOC:tfm, PMID:20595614]
+is_a: CL:0000806 {is_inferred="true"} ! DN2 thymocyte
+intersection_of: CL:0000806 ! DN2 thymocyte
+intersection_of: has_high_plasma_membrane_amount PR:000002065 ! mast/stem cell growth factor receptor
+relationship: has_high_plasma_membrane_amount PR:000002065 ! mast/stem cell growth factor receptor
+
+[Term]
+id: CL:0002424
+name: DN2b thymocyte
+def: "A DN2 thymocyte that is Kit-low." [GOC:tfm, PMID:20595614]
+is_a: CL:0000806 {is_inferred="true"} ! DN2 thymocyte
+intersection_of: CL:0000806 ! DN2 thymocyte
+intersection_of: has_low_plasma_membrane_amount PR:000002065 ! mast/stem cell growth factor receptor
+relationship: has_low_plasma_membrane_amount PR:000002065 ! mast/stem cell growth factor receptor
+relationship: RO:0002202 CL:0002423 ! develops from DN2a thymocyte
+
+[Term]
+id: CL:0002425
+name: early T lineage precursor
+def: "A pro-T cell that is lin-negative, CD25-negative, CD127-negative, CD44-positive and kit-positive." [GOC:dsd, GOC:tfm, http://www.immgen.org/index_content.html, PMID:16551251]
+synonym: "ETP" EXACT []
+synonym: "preT.ETP.Th" EXACT []
+is_a: CL:0000827 {is_inferred="true"} ! pro-T cell
+intersection_of: CL:0000827 ! pro-T cell
+intersection_of: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+intersection_of: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
+intersection_of: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+intersection_of: RO:0002104 PR:000002065 ! has plasma membrane part mast/stem cell growth factor receptor
+relationship: lacks_plasma_membrane_part PR:000001380 ! interleukin-2 receptor subunit alpha
+relationship: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
+relationship: RO:0002104 PR:000001869 ! has plasma membrane part interleukin-7 receptor subunit alpha
+relationship: RO:0002104 PR:000002065 ! has plasma membrane part mast/stem cell growth factor receptor
+
+[Term]
+id: CL:0002427
+name: resting double-positive thymocyte
+def: "A double-positive, alpha-beta thymocyte that is small and not proliferating." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "T.DP.sm.Th" EXACT []
+is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
+intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
+intersection_of: RO:0000053 PATO:0000587 ! bearer of decreased size
+relationship: RO:0000053 PATO:0000587 ! bearer of decreased size
+
+[Term]
+id: CL:0002428
+name: double-positive blast
+def: "A double-positive thymocyte that is large (i.e. has a high forward scatter signal in flow cytometry) and is actively proliferating." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "activated double-positive thymocyte" EXACT []
+synonym: "T.DPb.Th" EXACT []
+is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
+intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
+intersection_of: RO:0000053 PATO:0000586 ! bearer of increased size
+intersection_of: RO:0000056 GO:0008283 ! participates in cell proliferation
+relationship: RO:0000053 PATO:0000586 ! bearer of increased size
+relationship: RO:0000056 GO:0008283 ! participates in cell proliferation
+relationship: RO:0002202 CL:0002427 ! develops from resting double-positive thymocyte
+
+[Term]
+id: CL:0002429
+name: CD69-positive double-positive thymocyte
+def: "A double-positive thymocyte that is CD69-positive and has begun positive selection." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "T.DP69+.Th" EXACT []
+is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
+intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
+intersection_of: has_low_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: RO:0000056 GO:0043368 ! participates in positive T cell selection
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: has_low_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: RO:0000056 GO:0043368 ! participates in positive T cell selection
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002202 CL:0002428 ! develops from double-positive blast
+
+[Term]
+id: CL:0002430
+name: CD4-intermediate, CD8-positive double-positive thymocyte
+def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "T.4int8+.Th" EXACT []
+is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
+intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: has_low_plasma_membrane_amount PR:000001004 ! CD4 molecule
+intersection_of: RO:0000056 GO:0043368 ! participates in positive T cell selection
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: has_low_plasma_membrane_amount PR:000001004 ! CD4 molecule
+relationship: RO:0000056 GO:0043368 ! participates in positive T cell selection
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002202 CL:0002429 ! develops from CD69-positive double-positive thymocyte
+
+[Term]
+id: CL:0002431
+name: CD4-positive, CD8-intermediate double-positive thymocyte
+def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "T.4int8+.th" EXACT []
+is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
+intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: has_low_plasma_membrane_amount PR:000025402 ! T cell receptor co-receptor CD8
+intersection_of: RO:0000056 GO:0043368 ! participates in positive T cell selection
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: has_low_plasma_membrane_amount PR:000025402 ! T cell receptor co-receptor CD8
+relationship: RO:0000056 GO:0043368 ! participates in positive T cell selection
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002202 CL:0002429 ! develops from CD69-positive double-positive thymocyte
+
+[Term]
+id: CL:0002432
+name: CD24-positive, CD4 single-positive thymocyte
+def: "A CD4-positive, CD8-negative thymocyte that is CD24-positive and expresses high levels of the alpha-beta T cell receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "CD24-positive, CD4 single-positive semimature thymocyte" EXACT []
+synonym: "T.4SP24int.Th" EXACT []
+is_a: CL:0000810 {is_inferred="true"} ! CD4-positive, alpha-beta thymocyte
+intersection_of: CL:0000810 ! CD4-positive, alpha-beta thymocyte
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: RO:0002104 PR:000001932 ! has plasma membrane part signal transducer CD24
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: RO:0002104 PR:000001932 ! has plasma membrane part signal transducer CD24
+relationship: RO:0002202 CL:0002433 ! develops from CD69-positive, CD4-positive single-positive thymocyte
+
+[Term]
+id: CL:0002433
+name: CD69-positive, CD4-positive single-positive thymocyte
+def: "A CD4-positive, CD8-negative thymocyte that expresses high levels of the alpha-beta T cell receptor and is CD69-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "intermediate CD4-single-positive" EXACT []
+synonym: "T.4SP69+.Th" EXACT []
+is_a: CL:0000810 {is_inferred="true"} ! CD4-positive, alpha-beta thymocyte
+intersection_of: CL:0000810 ! CD4-positive, alpha-beta thymocyte
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002202 CL:0002431 ! develops from CD4-positive, CD8-intermediate double-positive thymocyte
+
+[Term]
+id: CL:0002434
+name: CD24-positive, CD8 single-positive thymocyte
+def: "A CD8-positive, CD4-negative thymocyte that is CD24-positive and expresses high levels of the alpha-beta T cell receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "CD24-positive, CD8 single-positive semimature thymocyte" EXACT []
+synonym: "T.8SP24int.Th" EXACT []
+is_a: CL:0000811 {is_inferred="true"} ! CD8-positive, alpha-beta thymocyte
+intersection_of: CL:0000811 ! CD8-positive, alpha-beta thymocyte
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: RO:0002104 PR:000001932 ! has plasma membrane part signal transducer CD24
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: RO:0002104 PR:000001932 ! has plasma membrane part signal transducer CD24
+relationship: RO:0002202 CL:0002435 ! develops from CD69-positive, CD8-positive single-positive thymocyte
+
+[Term]
+id: CL:0002435
+name: CD69-positive, CD8-positive single-positive thymocyte
+def: "A CD4-positive, CD8-negative thymocyte that expresses high levels of the alpha-beta T cell receptor and is CD69-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "intermediate CD8-single-positive" EXACT []
+synonym: "T.8SP69+.Th" EXACT []
+is_a: CL:0000811 {is_inferred="true"} ! CD8-positive, alpha-beta thymocyte
+intersection_of: CL:0000811 ! CD8-positive, alpha-beta thymocyte
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
+relationship: RO:0002202 CL:0002430 ! develops from CD4-intermediate, CD8-positive double-positive thymocyte
+
+[Term]
+id: CL:0002436
+name: mature CD4 single-positive thymocyte
+def: "A mature CD4-positive, CD8-negative alpha-beta T cell found in the thymus that is CD24-low and has high expression of the T cell receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+synonym: "T.4SP24-.Th" RELATED []
+is_a: CL:0000624 {is_inferred="true"} ! CD4-positive, alpha-beta T cell
+intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: has_low_plasma_membrane_amount PR:000001932 ! signal transducer CD24
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: has_low_plasma_membrane_amount PR:000001932 ! signal transducer CD24
+relationship: RO:0002202 CL:0002432 ! develops from CD24-positive, CD4 single-positive thymocyte
+
+[Term]
+id: CL:0002437
+name: mature CD8 single-positive thymocyte
+def: "A mature CD8-positive, CD4-negative alpha-beta T cell found in the thymus that is CD24-low and has high expression of the T cell receptor." [GOC:tfm, http:www.immgen.org/index_content.html]
+synonym: "T.8SP24-.Th" EXACT []
+is_a: CL:0000625 {is_inferred="true"} ! CD8-positive, alpha-beta T cell
+intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
+intersection_of: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+intersection_of: has_low_plasma_membrane_amount PR:000001932 ! signal transducer CD24
+relationship: has_high_plasma_membrane_amount GO:0042105 ! alpha-beta T cell receptor complex
+relationship: has_low_plasma_membrane_amount PR:000001932 ! signal transducer CD24
+relationship: RO:0002202 CL:0002434 ! develops from CD24-positive, CD8 single-positive thymocyte
+
+[Term]
 id: CL:0002453
 name: oligodendrocyte precursor cell
 def: "The cell type from which oligodendrocytes develop. This cell originates from multiple structures within the developing brain including the medial ganglion eminence and the lateral ganglionic eminence. These cells migrate throughout the central nervous system and persist into adulthood where they play an important role in remyelination of injured neurons." [GOC:tfm, PMID:20142420]
@@ -2470,6 +3318,16 @@ relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
 relationship: lacks_plasma_membrane_part PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
 
 [Term]
+id: CL:0002460
+name: CD8alpha-negative thymic conventional dendritic cell
+def: "A conventional thymic dendritic cell that is CD8alpha-negative." [GOC:tfm, http://www.immgen.org/index_content.html, PMID:19273629]
+synonym: "DC.8-.Th" EXACT []
+is_a: CL:0000941 {is_inferred="true"} ! thymic conventional dendritic cell
+intersection_of: CL:0000941 ! thymic conventional dendritic cell
+intersection_of: lacks_plasma_membrane_part PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
+relationship: lacks_plasma_membrane_part PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
+
+[Term]
 id: CL:0002465
 name: CD11b-positive dendritic cell
 def: "A conventional dendritic cell that expresses CD11b (ITGAM)." [GOC:tfm, http://www.immgen.org/index_content.html]
@@ -2477,6 +3335,18 @@ is_a: CL:0000990 {is_inferred="true"} ! conventional dendritic cell
 intersection_of: CL:0000990 ! conventional dendritic cell
 intersection_of: RO:0002104 PR:000001012 ! has plasma membrane part integrin alpha-M
 relationship: RO:0002104 PR:000001012 ! has plasma membrane part integrin alpha-M
+
+[Term]
+id: CL:0002489
+name: double negative thymocyte
+def: "A thymocyte that lacks expression of CD4 and CD8." [GOC:tfm, MP:0002407]
+synonym: "double negative T cell" BROAD []
+is_a: CL:0000893 {is_inferred="true"} ! thymocyte
+intersection_of: CL:0000893 ! thymocyte
+intersection_of: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+intersection_of: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
+relationship: lacks_plasma_membrane_part PR:000001004 ! CD4 molecule
+relationship: lacks_plasma_membrane_part PR:000025402 ! T cell receptor co-receptor CD8
 
 [Term]
 id: CL:0002494
@@ -2577,6 +3447,25 @@ is_a: CL:0000066 ! epithelial cell
 relationship: RO:0002104 GO:0005929 ! has plasma membrane part cilium
 
 [Term]
+id: CL:0005020
+name: lymphangioblast
+def: "Lymphatic progenitor cells. " [CL:CVS]
+is_a: CL:0000048 {is_inferred="true"} ! multi fate stem cell
+intersection_of: CL:0000048 ! multi fate stem cell
+intersection_of: RO:0002220 UBERON:0004536 ! adjacent to lymph vasculature
+relationship: RO:0002220 UBERON:0004536 ! adjacent to lymph vasculature
+
+[Term]
+id: CL:0005022
+name: vascular lymphangioblast
+def: "Lymphatic progenitor cells, derived from the veins, that give rise to lymphatic endothelial cells." [CL:CVS]
+synonym: "parachordal lymphangioblast" NARROW []
+is_a: CL:0005020 {is_inferred="true"} ! lymphangioblast
+intersection_of: CL:0005020 ! lymphangioblast
+intersection_of: RO:0002220 UBERON:0001638 ! adjacent to vein
+relationship: RO:0002220 UBERON:0001638 ! adjacent to vein
+
+[Term]
 id: CL:0007004
 name: premigratory neural crest cell
 def: "Cell that is part of the neural crest region of the neuroepithelium, prior to migration. Note that not all premigratory neural crest cells may become migratory neural crest cells." [UBERONREF:0000002]
@@ -2618,6 +3507,15 @@ is_a: CL:1001610 ! bone marrow hematopoietic cell
 intersection_of: CL:0000842 ! mononuclear cell
 intersection_of: BFO:0000050 UBERON:0002371 ! part of bone marrow
 relationship: BFO:0000050 UBERON:0002371 ! part of bone marrow
+
+[Term]
+id: CL:0010008
+name: cardiac endothelial cell
+is_a: CL:0000115 ! endothelial cell
+is_a: CL:0002494 ! cardiocyte
+intersection_of: CL:0000115 ! endothelial cell
+intersection_of: BFO:0000050 UBERON:0000948 ! part of heart
+relationship: BFO:0000050 UBERON:0000948 ! part of heart
 
 [Term]
 id: CL:0010020
@@ -2882,6 +3780,15 @@ is_a: CL:0002575 ! central nervous system pericyte
 intersection_of: CL:0000669 ! pericyte cell
 intersection_of: BFO:0000050 UBERON:0000955 ! part of brain
 relationship: BFO:0000050 UBERON:0000955 ! part of brain
+
+[Term]
+id: CL:2000053
+name: splenic endothelial cell
+def: "Any endothelial cell that is part of a spleen." [GOC:TermGenie]
+is_a: CL:0000115 ! endothelial cell
+intersection_of: CL:0000115 ! endothelial cell
+intersection_of: BFO:0000050 UBERON:0002106 ! part of spleen
+relationship: BFO:0000050 UBERON:0002106 ! part of spleen
 
 [Term]
 id: CL:2000074
@@ -3389,6 +4296,11 @@ name: metabolic process
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0008283
+name: cell proliferation
+is_a: GO:0044699 ! single-organism process
+
+[Term]
 id: GO:0009306
 name: protein secretion
 is_a: GO:0015031 ! protein transport
@@ -3821,6 +4733,17 @@ is_a: GO:0040012 ! regulation of locomotion
 is_a: GO:0048518 ! positive regulation of biological process
 
 [Term]
+id: GO:0042101
+name: T cell receptor complex
+is_a: GO:0098802 ! plasma membrane receptor complex
+relationship: BFO:0000051 PR:000001020 {comment="To be added to GO"} ! has part CD3 epsilon
+
+[Term]
+id: GO:0042105
+name: alpha-beta T cell receptor complex
+is_a: GO:0042101 ! T cell receptor complex
+
+[Term]
 id: GO:0042110
 name: T cell activation
 is_a: GO:0046649 ! lymphocyte activation
@@ -3942,6 +4865,16 @@ name: receptor complex
 is_a: GO:0043234 ! protein complex
 
 [Term]
+id: GO:0043368
+name: positive T cell selection
+is_a: GO:0045058 ! T cell selection
+
+[Term]
+id: GO:0043384
+name: pre-T cell receptor complex
+is_a: GO:0098802 ! plasma membrane receptor complex
+
+[Term]
 id: GO:0044237
 name: cellular metabolic process
 is_a: GO:0008152 ! metabolic process
@@ -4057,6 +4990,11 @@ id: GO:0044767
 name: single-organism developmental process
 is_a: GO:0032502 ! developmental process
 is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0045058
+name: T cell selection
+is_a: GO:0002376 ! immune system process
 
 [Term]
 id: GO:0045087
@@ -4576,6 +5514,12 @@ is_a: PATO:0000117 ! size
 is_a: PATO:0002305 ! increased object quality
 
 [Term]
+id: PATO:0000587
+name: decreased size
+is_a: PATO:0000117 ! size
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
 id: PATO:0001241
 name: physical object quality
 is_a: PATO:0000001 ! quality
@@ -4669,6 +5613,17 @@ is_a: PATO:0000052 ! shape
 id: PATO:0002300
 name: increased quality
 is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002301
+name: decreased quality
+is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002303
+name: decreased object quality
+is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0002301 ! decreased quality
 
 [Term]
 id: PATO:0002305
@@ -4860,6 +5815,27 @@ def: "A chemokine receptor that is a translation product of the CCR1, CCR3, or C
 is_a: PR:000001128 ! chemokine receptor
 
 [Term]
+id: PR:000001203
+name: C-C chemokine receptor type 7
+def: "A chemokine receptor that is a translation product of the human CCR7 gene or a 1:1 ortholog thereof. The preferred ligands are CCL19 and CCL21." []
+synonym: "BLR2" EXACT []
+synonym: "C-C CKR-7" EXACT []
+synonym: "CC-CKR-7" EXACT []
+synonym: "CCR-7" EXACT []
+synonym: "CCR7" EXACT []
+synonym: "CD197" EXACT []
+synonym: "CDw197" EXACT []
+synonym: "chemokine receptor CCR7" EXACT []
+synonym: "CMKBR7" RELATED []
+synonym: "EBI1" EXACT []
+synonym: "Ebi1h" RELATED []
+synonym: "EBV-induced G-protein coupled receptor 1" EXACT []
+synonym: "epstein-Barr virus-induced G-protein coupled receptor 1" EXACT []
+synonym: "EVI1" RELATED []
+synonym: "MIP-3 beta receptor" EXACT []
+is_a: PR:000001128 ! chemokine receptor
+
+[Term]
 id: PR:000001254
 name: C-C chemokine receptor type 1
 def: "A chemokine receptor CCR1/3/1L that is a translation product of the human CCR1 gene or a 1:1 ortholog thereof." []
@@ -4957,6 +5933,29 @@ synonym: "phagocytic glycoprotein I" EXACT []
 is_a: PR:000000001 ! protein
 
 [Term]
+id: PR:000001318
+name: L-selectin
+def: "A protein that is a translation product of the human SELL gene or a 1:1 ortholog thereof. It is a leukocyte adhesion receptor that play an important role in regulating the inflammatory response by mediating leukocyte tethering and rolling on adherent leukocytes." []
+synonym: "CD62 antigen-like family member L" EXACT []
+synonym: "CD62L" EXACT []
+synonym: "gp90-MEL" EXACT []
+synonym: "LAM-1" EXACT []
+synonym: "LECAM1" EXACT []
+synonym: "leukocyte adhesion molecule 1" EXACT []
+synonym: "leukocyte surface antigen Leu-8" EXACT []
+synonym: "leukocyte-endothelial cell adhesion molecule 1" EXACT []
+synonym: "LNHR" RELATED []
+synonym: "ly-22" EXACT []
+synonym: "Ly22" RELATED []
+synonym: "LYAM1" RELATED []
+synonym: "lymph node homing receptor" EXACT []
+synonym: "lymphocyte antigen 22" EXACT []
+synonym: "lymphocyte surface MEL-14 antigen" EXACT []
+synonym: "SELL" EXACT []
+synonym: "TQ1" EXACT []
+is_a: PR:000000001 ! protein
+
+[Term]
 id: PR:000001327
 name: cadherin
 def: "A protein that has a core domain structure of signal sequence, propeptide, five Cadherin domains (Pfam:PF00028), a transmembrane region, and a Cadherin cytoplasmic region (Pfam:PF01049). Cadherins function as adhesion molecules that mediate Ca2+-dependent cell-cell adhesion in solid tissues." []
@@ -5034,6 +6033,21 @@ is_a: PR:000000001 ! protein
 id: PR:000001355
 name: immunoglobulin gamma Fc receptor II/III/IV
 def: "A protein with a core domain architecture consisting of an extracellular domain containing two copies of the Immunoglobulin domain (Pfam:PF00047), followed by a single-pass transmembrane region and a small intracellular domain. The active protein is a low affinity receptor for immunoglobulin gamma chain Fc region. Human II-a, II-b, and II-c represent a recent gene expansion and are equally related to mouse II, III, and IV. Human III-A and III-B are closely related and closer to mouse IV than to mouse III." []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000001380
+name: interleukin-2 receptor subunit alpha
+def: "A protein that is a translation product of the human IL2RA gene or a 1:1 ortholog thereof." []
+synonym: "CD25" EXACT []
+synonym: "IL-2 receptor subunit alpha" EXACT []
+synonym: "IL-2-RA" EXACT []
+synonym: "IL-2R subunit alpha" EXACT []
+synonym: "IL2-RA" EXACT []
+synonym: "Il2r" RELATED []
+synonym: "IL2RA" EXACT []
+synonym: "p55" BROAD []
+synonym: "TAC antigen" EXACT []
 is_a: PR:000000001 ! protein
 
 [Term]
@@ -5561,6 +6575,14 @@ name: amino acid chain
 def: "An organic amino compound that is a polymer of amino acid chain components (unmodified amino-acid residues and/or modified amino-acid residues linked by peptide bonds or derivatives of such bonds." []
 synonym: "peptide" NARROW []
 synonym: "polypeptide" NARROW []
+
+[Term]
+id: PR:000025402
+name: T cell receptor co-receptor CD8
+def: "A protein complex that is a membrane-bound heterodimeric co-receptor for MHC class-I antigen/T-cell receptor interaction." []
+synonym: "CD8alphabeta" EXACT []
+synonym: "TCR co-receptor CD8" EXACT []
+is_a: GO:0043234 ! protein complex
 
 [Term]
 id: PR:000025796
@@ -6264,6 +7286,14 @@ def: "Epithelium which consists of a single layer of epithelial cells. Examples:
 synonym: "simple epithelium" EXACT []
 synonym: "unilaminar epithelia" RELATED []
 is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0000913
+name: interstitial fluid
+def: "Interstitial fluid is a bodily fluid consisting of a solution which bathes and surrounds the cells of multicellular animals. It is the main component of the extracellular fluid, which also includes plasma and transcellular fluid." []
+synonym: "intercellular fluid" EXACT []
+synonym: "tissue fluid" EXACT []
+is_a: UBERON:0000463 ! organism substance
 
 [Term]
 id: UBERON:0000915
@@ -7063,6 +8093,21 @@ relationship: BFO:0000050 UBERON:0000160 ! part of intestine
 relationship: BFO:0000050 UBERON:0001242 ! part of intestinal mucosa
 
 [Term]
+id: UBERON:0001422
+name: facial lymphatic vessel
+def: "A lymphatic vessel that is part of a face [Automatically generated definition]." []
+synonym: "buccal lymphatic vessel" EXACT []
+synonym: "face lymph vessel" EXACT []
+synonym: "face lymphatic vessel" EXACT []
+synonym: "FL" RELATED []
+synonym: "lymph vessel of face" EXACT []
+synonym: "lymphatic vessel of face" EXACT []
+is_a: UBERON:0001473 ! lymphatic vessel
+intersection_of: UBERON:0001473 ! lymphatic vessel
+intersection_of: BFO:0000050 UBERON:0001456 ! part of face
+relationship: BFO:0000050 UBERON:0001456 ! part of face
+
+[Term]
 id: UBERON:0001434
 name: skeletal system
 def: "Anatomical system that is a multi-element, multi-tissue anatomical cluster that consists of the skeleton and the articular system." []
@@ -7103,6 +8148,21 @@ is_a: UBERON:0001444 ! subdivision of head
 relationship: BFO:0000051 UBERON:0000165 ! has part mouth
 
 [Term]
+id: UBERON:0001473
+name: lymphatic vessel
+def: "A vessel that contains or conveys lymph, that originates as an interfibrillar or intercellular cleft or space in a tissue or organ, and that if small has no distinct walls or walls composed only of endothelial cells and if large resembles a vein in structure[BTO]." []
+synonym: "lymph vessel" EXACT []
+synonym: "vas lymphaticum" RELATED []
+is_a: CARO:0000003 ! anatomical structure
+is_a: UBERON:0000055 ! vessel
+intersection_of: UBERON:0000055 ! vessel
+intersection_of: BFO:0000050 UBERON:0004536 ! part of lymph vasculature
+disjoint_from: UBERON:0001981 ! blood vessel
+relationship: BFO:0000050 UBERON:0004536 ! part of lymph vasculature
+relationship: BFO:0000050 UBERON:0006558 ! part of lymphatic part of lymphoid system
+relationship: BFO:0000051 UBERON:0002391 ! has part lymph
+
+[Term]
 id: UBERON:0001474
 name: bone element
 def: "Skeletal element that is composed of bone tissue." []
@@ -7134,6 +8194,28 @@ def: "The segment of the respiratory tract that starts proximally with the nose 
 is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000072 ! proximo-distal subdivision of respiratory tract
 relationship: BFO:0000051 UBERON:0000004 ! has part nose
+
+[Term]
+id: UBERON:0001638
+name: vein
+def: "Any of the tubular branching vessels that carry blood from the capillaries toward the heart." []
+synonym: "vascular element" RELATED []
+synonym: "vena" RELATED []
+synonym: "venae" RELATED []
+synonym: "venous subtree" BROAD []
+synonym: "venous tree organ part" EXACT []
+synonym: "venous vessel" BROAD []
+is_a: UBERON:0003920 ! venous blood vessel
+
+[Term]
+id: UBERON:0001744
+name: lymphoid tissue
+def: "Portion of connective tissue with various types of white blood cells enmeshed in it, most numerous being the lymphocytes[WP]." []
+synonym: "lymphatic tissue" EXACT []
+synonym: "lymphocytic tissue" EXACT []
+is_a: UBERON:0034769 ! lymphomyeloid tissue
+relationship: BFO:0000050 UBERON:0002193 ! part of hemolymphoid system
+relationship: BFO:0000050 UBERON:0002465 ! part of lymphoid system
 
 [Term]
 id: UBERON:0001890
@@ -7368,6 +8450,19 @@ synonym: "proximal intestine" RELATED []
 synonym: "upper intestine" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: BFO:0000050 UBERON:0002108 ! part of small intestine
+
+[Term]
+id: UBERON:0002125
+name: thymus lobule
+def: "A lobule that is part of a thymus. Divided into an outer cortex and inner medulla and separated from each other by connective tissue septa, but with the medullary tissue continuous from lobule to lobule.[ncit,modified]." []
+synonym: "lobule of thymus" EXACT []
+synonym: "thymic lobule" EXACT []
+synonym: "thymus lobule" EXACT []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0009911 ! lobule
+intersection_of: UBERON:0009911 ! lobule
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
 
 [Term]
 id: UBERON:0002193
@@ -7620,6 +8715,26 @@ intersection_of: BFO:0000050 UBERON:0000949 ! part of endocrine system
 relationship: BFO:0000050 UBERON:0000949 ! part of endocrine system
 
 [Term]
+id: UBERON:0002370
+name: thymus
+def: "Anatomical structure of largely lymphoid tissue that functions in cell-mediated immunity by being the site where T cells develop." []
+synonym: "thymus gland" EXACT []
+synonym: "thymus organ" EXACT []
+is_a: CARO:0000003 ! anatomical structure
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0002368 ! endocrine gland
+is_a: UBERON:0004177 ! hemopoietic organ
+is_a: UBERON:0005057 ! immune organ
+is_a: UBERON:0005058 ! hemolymphoid system gland
+relationship: BFO:0000050 UBERON:0000153 ! part of anterior region of body
+relationship: BFO:0000050 UBERON:0000949 ! part of endocrine system
+relationship: BFO:0000050 UBERON:0002390 ! part of hematopoietic system
+relationship: BFO:0000050 UBERON:0002405 ! part of immune system
+relationship: BFO:0000051 UBERON:0003483 ! has part thymus lymphoid tissue
+relationship: BFO:0000051 UBERON:0003846 ! has part thymus epithelium
+relationship: RO:0002202 UBERON:0005562 ! develops from thymus primordium
+
+[Term]
 id: UBERON:0002371
 name: bone marrow
 def: "the soft tissue that fills the cavities of bones" []
@@ -7659,6 +8774,14 @@ disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
 relationship: BFO:0000050 UBERON:0002193 ! part of hemolymphoid system
 relationship: RO:0002202 UBERON:0003061 ! develops from blood island
+
+[Term]
+id: UBERON:0002391
+name: lymph
+def: "Lymph is the fluid that is formed when interstitial fluid enters the conduits of the lymphatic system[WP]." []
+synonym: "lympha" RELATED []
+is_a: UBERON:0000179 ! haemolymphatic fluid
+relationship: RO:0002202 UBERON:0000913 ! develops from interstitial fluid
 
 [Term]
 id: UBERON:0002405
@@ -7721,6 +8844,18 @@ is_a: UBERON:0003929 ! digestive tract epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0003729 ! part of mouth mucosa
 relationship: BFO:0000050 UBERON:0003729 ! part of mouth mucosa
+
+[Term]
+id: UBERON:0002465
+name: lymphoid system
+def: "The lymphatic system in vertebrates is a network of conduits that carry a clear fluid called lymph. It also includes the lymphoid tissue through which the lymph travels. Lymphoid tissue is found in many organs, particularly the lymph nodes, and in the lymphoid follicles associated with the digestive system such as the tonsils. The system also includes all the structures dedicated to the circulation and production of lymphocytes, which includes the spleen, thymus, bone marrow and the lymphoid tissue associated with the digestive system[WP]." []
+synonym: "lymphatic circulatory system" RELATED []
+synonym: "lymphatic drainage system" RELATED []
+synonym: "lymphatic system" NARROW []
+synonym: "systema lymphoideum" RELATED []
+is_a: UBERON:0000467 ! anatomical system
+relationship: BFO:0000050 UBERON:0002193 ! part of hemolymphoid system
+relationship: BFO:0000050 UBERON:0002405 ! part of immune system
 
 [Term]
 id: UBERON:0002530
@@ -8123,6 +9258,22 @@ intersection_of: BFO:0000050 UBERON:0001555 ! part of digestive tract
 relationship: BFO:0000050 UBERON:0001555 ! part of digestive tract
 
 [Term]
+id: UBERON:0003456
+name: respiratory system lymphatic vessel
+def: "A lymphatic vessel that is part of a respiratory system [Automatically generated definition]." []
+synonym: "apparatus respiratorius lymph vessel" EXACT []
+synonym: "apparatus respiratorius lymphatic vessel" EXACT []
+synonym: "lymph vessel of apparatus respiratorius" EXACT []
+synonym: "lymph vessel of respiratory system" EXACT []
+synonym: "lymphatic vessel of apparatus respiratorius" EXACT []
+synonym: "lymphatic vessel of respiratory system" EXACT []
+synonym: "respiratory system lymph vessel" EXACT []
+is_a: UBERON:0001473 ! lymphatic vessel
+intersection_of: UBERON:0001473 ! lymphatic vessel
+intersection_of: BFO:0000050 UBERON:0001004 ! part of respiratory system
+relationship: BFO:0000050 UBERON:0001004 ! part of respiratory system
+
+[Term]
 id: UBERON:0003457
 name: head bone
 def: "A bone that is part of a head [Automatically generated definition]." []
@@ -8155,6 +9306,19 @@ is_a: UBERON:0005177 ! trunk region element
 intersection_of: UBERON:0001474 ! bone element
 intersection_of: BFO:0000050 UBERON:0002100 ! part of trunk
 relationship: BFO:0000050 UBERON:0002100 ! part of trunk
+
+[Term]
+id: UBERON:0003483
+name: thymus lymphoid tissue
+def: "A portion of lymphoid tissue that is part of a thymus [Automatically generated definition]." []
+synonym: "lymphoid tissue of thymus" EXACT []
+synonym: "lymphoid tissue of thymus gland" EXACT []
+synonym: "thymus gland lymphoid tissue" EXACT []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0001744 ! lymphoid tissue
+intersection_of: UBERON:0001744 ! lymphoid tissue
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
 
 [Term]
 id: UBERON:0003496
@@ -8423,6 +9587,26 @@ intersection_of: BFO:0000050 UBERON:0002417 ! part of abdominal segment of trunk
 relationship: BFO:0000050 UBERON:0002417 ! part of abdominal segment of trunk
 
 [Term]
+id: UBERON:0003846
+name: thymus epithelium
+def: "An epithelium that is part of a thymus, forming a supporting framework[MP,modified]." []
+synonym: "epithelial tissue of thymus" EXACT []
+synonym: "epithelial tissue of thymus gland" EXACT []
+synonym: "epithelium of thymus" EXACT []
+synonym: "epithelium of thymus gland" EXACT []
+synonym: "thymic epithelial tissue" EXACT []
+synonym: "thymic epithelium" EXACT []
+synonym: "thymus epithelial tissue" EXACT []
+synonym: "thymus gland epithelial tissue" EXACT []
+synonym: "thymus gland epithelium" EXACT []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0012275 ! meso-epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
+relationship: BFO:0000050 UBERON:0002370 ! part of thymus
+
+[Term]
 id: UBERON:0003887
 name: intraembryonic coelom
 def: "The part of the coelom in the embryo between the somatopleuric and splanchnopleuric mesoderm; the principal body cavities of the trunk (thoracic, abdominal, and pelvic) arise from this embryonic part of the coelom" []
@@ -8456,6 +9640,17 @@ def: "Epithelial tubes transport gases, liquids and cells from one site to anoth
 synonym: "epithelial or endothelial tube" EXACT []
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0003920
+name: venous blood vessel
+def: "A blood vessel that carries blood from the capillaries toward the heart" []
+synonym: "segment of venous tree organ" EXACT []
+synonym: "venous tree organ segment" EXACT []
+is_a: UBERON:0001981 ! blood vessel
+intersection_of: UBERON:0001981 ! blood vessel
+intersection_of: BFO:0000050 UBERON:0004582 ! part of venous system
+relationship: BFO:0000050 UBERON:0004582 ! part of venous system
 
 [Term]
 id: UBERON:0003921
@@ -8751,6 +9946,24 @@ relationship: BFO:0000051 UBERON:0000948 ! has part heart
 relationship: BFO:0000051 UBERON:0001981 ! has part blood vessel
 
 [Term]
+id: UBERON:0004536
+name: lymph vasculature
+def: "A network of blunt ended vessels lacking direct connection to the blood vascular system. These vessels collect and drain fluids and macromolecules from interstitial spaces throughout the animal. They derive from a subpopulation of endothelial cells and have walls that are much thinner than the blood carrying vessels. Lymphatic vessels are usually classified as either superficial or deep." []
+synonym: "lymph vessels" RELATED []
+synonym: "lymphatic trunks and ducts" EXACT []
+synonym: "lymphatic vasculature" EXACT []
+synonym: "lymphatic vessel network" EXACT []
+synonym: "lymphatic vessels set" EXACT []
+synonym: "set of lymphatic vessels" EXACT []
+synonym: "trunci et ductus lymphatici" EXACT []
+is_a: CARO:0000003 ! anatomical structure
+is_a: UBERON:0002049 ! vasculature
+intersection_of: UBERON:0002049 ! vasculature
+intersection_of: BFO:0000051 UBERON:0002391 ! has part lymph
+relationship: BFO:0000050 UBERON:0006558 ! part of lymphatic part of lymphoid system
+relationship: BFO:0000051 UBERON:0002391 ! has part lymph
+
+[Term]
 id: UBERON:0004537
 name: blood vasculature
 def: "A vascular network consisting of blood vessels." []
@@ -8761,6 +9974,21 @@ synonym: "blood vessels" RELATED []
 synonym: "set of blood vessels" EXACT []
 is_a: UBERON:0002049 ! vasculature
 relationship: BFO:0000050 UBERON:0004535 ! part of cardiovascular system
+
+[Term]
+id: UBERON:0004581
+name: systemic venous system
+def: "The part of the venous system that drains the general body tissues[Kardong]" []
+synonym: "systemic venous circulatory system" EXACT []
+is_a: UBERON:0002049 ! vasculature
+relationship: BFO:0000050 UBERON:0004582 ! part of venous system
+
+[Term]
+id: UBERON:0004582
+name: venous system
+def: "The part of the cardiovascular system consisting of all venous vessels. In vertebrates with a double circulation, this can be divided into systemic and pulmonary portions." []
+synonym: "vein system" EXACT []
+is_a: UBERON:0007798 ! vascular system
 
 [Term]
 id: UBERON:0004716
@@ -9159,6 +10387,16 @@ intersection_of: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
 relationship: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
 
 [Term]
+id: UBERON:0005194
+name: thoracic vein
+def: "A vein that is part of a thorax [Automatically generated definition]." []
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003834 ! thoracic segment blood vessel
+intersection_of: UBERON:0001638 ! vein
+intersection_of: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
+relationship: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
+
+[Term]
 id: UBERON:0005250
 name: stomatodeum gland
 def: "A gland that is part of a stomodeum." []
@@ -9273,6 +10511,18 @@ synonym: "ventral ectoderm" RELATED []
 is_a: UBERON:0000479 ! tissue
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: RO:0002202 UBERON:0000924 ! develops from ectoderm
+
+[Term]
+id: UBERON:0005562
+name: thymus primordium
+def: "A small outgrowth of the pharyngeal epithelium that is the site of lymphocyte cell production[ZFA]. [PMID]." []
+synonym: "thymic primordium" EXACT []
+synonym: "thymic rudiment" EXACT []
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:0003351 ! pharyngeal epithelium
+relationship: BFO:0000050 UBERON:0002405 ! part of immune system
+relationship: BFO:0000050 UBERON:0003295 ! part of pharyngeal gland
+relationship: RO:0002202 UBERON:0007690 ! develops from early pharyngeal endoderm
 
 [Term]
 id: UBERON:0005602
@@ -9456,6 +10706,17 @@ def: "Liquid components of living organisms. includes fluids that are excreted o
 synonym: "body fluid" EXACT []
 synonym: "fluid" BROAD []
 is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0006558
+name: lymphatic part of lymphoid system
+def: "An organ system subdivision that is a network of vessels capable of removing accumulating protein and fluid from the interstitial space and returning it to the vascular space. In some species, this network is connected to the immune system via lymph nodes and lymphocyte-producing organs, with the whole being the lymphoid system." []
+synonym: "lymphatic system" EXACT []
+synonym: "lymphatic tree system" EXACT []
+synonym: "lymporeticular system" RELATED []
+is_a: UBERON:0011216 ! organ system subdivision
+relationship: BFO:0000050 UBERON:0001009 ! part of circulatory system
+relationship: BFO:0000050 UBERON:0002465 ! part of lymphoid system
 
 [Term]
 id: UBERON:0006562
@@ -9847,6 +11108,16 @@ intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
 relationship: BFO:0000050 UBERON:0000922 ! part of embryo
 
 [Term]
+id: UBERON:0008817
+name: thymus primordium endoderm
+def: "An endoderm that is part of a thymus primordium." []
+is_a: UBERON:0000925 ! endoderm
+is_a: UBERON:0004119 ! endoderm-derived structure
+intersection_of: UBERON:0000925 ! endoderm
+intersection_of: BFO:0000050 UBERON:0005562 ! part of thymus primordium
+relationship: BFO:0000050 UBERON:0005562 ! part of thymus primordium
+
+[Term]
 id: UBERON:0008823
 name: neural tube derived brain
 def: "A brain that develops_from a neural tube." []
@@ -9900,6 +11171,16 @@ intersection_of: BFO:0000050 UBERON:0000945 ! part of stomach
 relationship: BFO:0000050 UBERON:0000945 ! part of stomach
 
 [Term]
+id: UBERON:0009115
+name: thoracic thymus
+def: "A mature thymus that is entirely part of thoracic region." []
+is_a: UBERON:0002370 ! thymus
+is_a: UBERON:0005178 ! thoracic cavity element
+intersection_of: UBERON:0002370 ! thymus
+intersection_of: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
+relationship: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
+
+[Term]
 id: UBERON:0009122
 name: adenohypophyseal placode
 def: "The adenohypophyseal placode forms the anterior lobe of the pituitary gland and gives rise to the endocrine secretory cells of the pituitary" []
@@ -9907,6 +11188,19 @@ synonym: "pituitary placode" RELATED []
 is_a: UBERON:0002546 ! cranial placode
 is_a: UBERON:0011814 ! non-neurogenic ectodermal placode
 relationship: RO:0002202 UBERON:0005497 ! develops from non-neural ectoderm
+
+[Term]
+id: UBERON:0009141
+name: craniocervical region vein
+def: "A vein that is part of a craniocervical region." []
+synonym: "craniocervical vein" EXACT []
+synonym: "head and neck veins" EXACT []
+synonym: "vein of head and neck" EXACT []
+is_a: UBERON:0013140 ! systemic vein
+intersection_of: UBERON:0001638 ! vein
+intersection_of: BFO:0000050 UBERON:0007811 ! part of craniocervical region
+relationship: BFO:0000050 UBERON:0004581 ! part of systemic venous system
+relationship: BFO:0000050 UBERON:0007811 ! part of craniocervical region
 
 [Term]
 id: UBERON:0009142
@@ -10290,6 +11584,20 @@ intersection_of: BFO:0000050 UBERON:0000033 ! part of head
 relationship: BFO:0000050 UBERON:0000033 ! part of head
 
 [Term]
+id: UBERON:0011363
+name: cranial lymph vasculature
+def: "A lymph vasculature that is part of a head." []
+synonym: "cranial lymph vessel" EXACT []
+synonym: "cranial lymph vessels" RELATED []
+synonym: "set of cranial lymphatic vessels" RELATED []
+synonym: "set of lymphatic vessels of head" EXACT []
+is_a: UBERON:0002200 ! vasculature of head
+is_a: UBERON:0004536 ! lymph vasculature
+intersection_of: UBERON:0004536 ! lymph vasculature
+intersection_of: BFO:0000050 UBERON:0000033 ! part of head
+relationship: BFO:0000050 UBERON:0000033 ! part of head
+
+[Term]
 id: UBERON:0011642
 name: oral epithelium from ectoderm
 def: "An epithelium that develops_from a ectoderm and is part of a oral epithelium." []
@@ -10418,6 +11726,27 @@ synonym: "textus haemopoieticus" EXACT []
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0034769 ! lymphomyeloid tissue
 relationship: BFO:0000050 UBERON:0002390 ! part of hematopoietic system
+
+[Term]
+id: UBERON:0013126
+name: vein of abdomen
+def: "A vein that is part of a abdomen." []
+synonym: "abdominal vein" EXACT []
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003497 ! abdomen blood vessel
+intersection_of: UBERON:0001638 ! vein
+intersection_of: BFO:0000050 UBERON:0000916 ! part of abdomen
+relationship: BFO:0000050 UBERON:0000916 ! part of abdomen
+
+[Term]
+id: UBERON:0013140
+name: systemic vein
+def: "Any vein within the general circulation that transports blood back to the right atrium of the heart." []
+synonym: "systemic venous tree organ part" EXACT []
+is_a: UBERON:0001638 ! vein
+intersection_of: UBERON:0001638 ! vein
+intersection_of: BFO:0000050 UBERON:0004581 ! part of systemic venous system
+relationship: BFO:0000050 UBERON:0004581 ! part of systemic venous system
 
 [Term]
 id: UBERON:0013158
@@ -10925,6 +12254,12 @@ holds_over_chain: BFO:0000051 RO:0002131
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
+id: RO:0002163
+name: spatially disjoint from
+def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
+is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
 id: RO:0002202
 name: develops from
 def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
@@ -10959,6 +12294,14 @@ def: "c stands in this relationship to p if and only if there exists some p' suc
 holds_over_chain: RO:0002215 BFO:0000050 {http://purl.obolibrary.org/obo/RO_0002582="true"}
 is_a: RO:0002328 ! functionally related to
 is_a: RO:0002500 ! causal agent in
+
+[Typedef]
+id: RO:0002220
+name: adjacent to
+def: "x adjacent to y if and only if x and y share a boundary" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_a: RO:0002163 ! spatially disjoint from
 
 [Typedef]
 id: RO:0002254

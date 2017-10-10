@@ -7,7 +7,7 @@ OBO=http://purl.obolibrary.org/obo
 ONT=tbd
 BASE=$(OBO)/$(ONT)
 SRC=$(ONT)-edit.obo
-RELEASEDIR=../..
+RELEASEDIR=../../target/
 ROBOT= robot
 OWLTOOLS= owltools
 USECAT= --use-catalog
@@ -31,6 +31,9 @@ prepare_release: all
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
 
 all_includes: $(INCLUDES_OWL)
+
+osf_upload:
+	cd $(RELEASEDIR) && osf -p pkmr5 upload -f -r * current/
 
 # ----------------------------------------
 # Main release targets
@@ -122,9 +125,14 @@ INF: tbd-edit.obo
 # adding the name here will make the violation check live
 VCHECKS = equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 
+QSRC = $(SRC)-noimports.owl
+
+$(QSRC): $(SRC)
+	owltools --use-catalog $< --remove-imports-declarations -o $@
+
 # run all violation checks
 VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
-sparql_test: $(SRC)
+sparql_test: $(QSRC)
 	robot verify -i $< --queries $(VQUERIES) -O reports/
 
 # ----------------------------------------
