@@ -4,10 +4,10 @@
 # these can be overwritten on the command line
 
 OBO=http://purl.obolibrary.org/obo
-ONT=tbd
+ONT=mondo
 BASE=$(OBO)/$(ONT)
 SRC=$(ONT)-edit.obo
-RELEASEDIR=../..
+RELEASEDIR=../../target/
 ROBOT= robot
 OWLTOOLS= owltools
 USECAT= --use-catalog
@@ -23,14 +23,16 @@ INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 all: sparql_test all_imports $(ONT).owl $(ONT).obo $(ONT).json
 test: sparql_test all
 prepare_release: all
-	cp $(ONT).owl $(ONT).obo $(RELEASEDIR) &&\
+	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
 	mkdir -p $(RELEASEDIR)/imports &&\
 	cp imports/*{owl,obo} $(RELEASEDIR)/imports &&\
-	git add $(RELEASEDIR)/imports/*{obo,owl} &&\
-	(test -f subsets/*owl && cp subsets/*{owl,obo} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
+	(test -f subsets/*owl && cp subsets/*{owl,obo,json} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
 
 all_includes: $(INCLUDES_OWL)
+
+osf_upload:
+	cd $(RELEASEDIR) && osf -p 2qk53 upload -f -r * current/
 
 # ----------------------------------------
 # Main release targets
@@ -63,7 +65,7 @@ modules/%.tsv: modules/%.csv
 	csv2tsv.py $< $@
 
 modules/%.owl: modules/%.tsv
-	dosdp-tools  --obo-prefixes --ontology=../ontology/tbd-edit.owl  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
+	dosdp-tools  --obo-prefixes --ontology=../ontology/mondo-edit.owl  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
 
 
 # ----------------------------------------
@@ -98,7 +100,7 @@ mirror/mfoem.owl:
 .PRECIOUS: mirror/%.owl
 
 imports/%_terms.txt:
-	robot query -i tbd-edit.obo -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
+	robot query -i mondo-edit.obo -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
 
 # ----------------------------------------
 # Release
@@ -111,8 +113,8 @@ release: $(ONT).owl $(ONT).obo
 # Editing
 # ----------------------------------------
 
-INF: tbd-edit.obo
-	owltools --use-catalog  tbd-edit.obo --assert-inferred-subclass-axioms --markIsInferred --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+INF: mondo-edit.obo
+	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --markIsInferred --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 # ----------------------------------------
 # Sparql queries: Q/C
@@ -122,9 +124,14 @@ INF: tbd-edit.obo
 # adding the name here will make the violation check live
 VCHECKS = equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 
+QSRC = $(SRC)-noimports.owl
+
+$(QSRC): $(SRC)
+	owltools --use-catalog $< --remove-imports-declarations -o $@
+
 # run all violation checks
 VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
-sparql_test: $(SRC)
+sparql_test: $(QSRC)
 	robot verify -i $< --queries $(VQUERIES) -O reports/
 
 # ----------------------------------------
@@ -143,20 +150,20 @@ all_reports: $(SRC)
 # generate includes from sparql CONSTRUCT queries;
 # these can then be merged in to the main ontology
 #include-%.owl: ../sparql/construct-%.sparql $(SRC)
-#	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/tbd/$@ -o $@
+#	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
 imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
-	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/tbd/$@ -o $@
+	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
 # ----------------------------------------
 # Lexical mapping
 # ----------------------------------------
 
 # align against self (*not* external ontologies)
-mappings.tsv: tbd.json
-	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@http://purl.obolibrary.org/obo/TBD_@TBD:@g' $@
+mappings.tsv: mondo.json
+	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@http://purl.obolibrary.org/obo/MONDO_@MONDO:@g' $@
 
-hp-mappings.tsv: tbd.json
+hp-mappings.tsv: mondo.json
 	ontobio-lexmap.py hp $< > $@.tmp && mv $@.tmp $@
 
 
@@ -169,27 +176,27 @@ phenotype_annotation.tab:
 mim2gene_medgen:
 	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
 
-modules/equiv-xrefs.obo: tbd-edit.obo
+modules/equiv-xrefs.obo: mondo-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
 
 # ----------------------------------------
 # Hacky
 # ----------------------------------------
 
-tbdx.obo: tbd-edit.obo
+mondox.obo: mondo-edit.obo
 	perl -npe 's@source="MONDO:(equivalentto|subclassof|superclassof|other|relatedto)@semantics="MONDO:$$1@i' $< > $@
 
-check: tbd-edit.obo
+check: mondo-edit.obo
 	$(HOME)/repos/go-ontology/src/util/check-obo-for-standard-release.pl --disable-xrf-abbs-check $<
 
 # ----------------------------------------
 # Kboom
 # ----------------------------------------
 
-ptable.tsv: tbd-edit.obo
+ptable.tsv: mondo-edit.obo
 	../utils/xrefs2ptable.pl $< > $@.tmp && mv $@.tmp $@
 
-seed.owl: tbd-edit.obo ext.obo
+seed.owl: mondo-edit.obo ext.obo
 	owltools --use-catalog $< --remove-imports-declarations --merge-support-ontologies -o $@
 
 ext.obo: ptable.tsv
