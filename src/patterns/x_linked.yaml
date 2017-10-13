@@ -1,0 +1,26 @@
+pattern_name: x_linked
+
+classes:
+  x_linked_inheritance: HP:0001417
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "Thing"
+
+name:
+  text: "X-linked %s"
+  vars:
+   - disease
+
+def:
+  text: "X-linked form of %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'x_linked_inheritance'"
+  vars:
+    - disease
+

@@ -1,0 +1,26 @@
+pattern_name: autosomal_recessive
+
+classes:
+  autosomal recessive inheritance: HP:0000007
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "Thing"
+
+name:
+  text: "autosomal recessive %s"
+  vars:
+   - disease
+
+def:
+  text: "Autosomal recessive form of %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'autosomal recessive inheritance'"
+  vars:
+    - disease
+

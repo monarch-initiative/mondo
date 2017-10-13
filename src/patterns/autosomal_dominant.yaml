@@ -1,0 +1,26 @@
+pattern_name: autosomal_dominant
+
+classes:
+  autosomal dominant inheritance: HP:0000006
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "Thing"
+
+name:
+  text: "autosomal dominant %s"
+  vars:
+   - disease
+
+def:
+  text: "Autosomal dominant form of %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'autosomal dominant inheritance'"
+  vars:
+    - disease
+

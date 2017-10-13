@@ -1,0 +1,31 @@
+pattern_name: acquired
+
+classes: []
+
+relations: 
+
+vars:
+  disease: "Thing"
+
+name:
+  text: "acquired %s"
+  vars:
+   - disease
+
+annotations:
+  - property: oio:hasExactSynonym
+    text: "acquired %s"
+    vars:
+     - disease
+
+def:
+  text: "Acquired %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has_status' some 'acquired'"
+  vars:
+    - disease
+
+

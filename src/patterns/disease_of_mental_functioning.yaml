@@ -1,0 +1,27 @@
+pattern_name: disease_of_mental_functioning
+
+classes:
+  disease: "OGMS:0000031"
+
+relations:
+  affects: "TODO:1"
+
+vars:
+  process: "owl:Thing"
+
+name:
+  text: "%s disease"
+  vars:
+   - process
+
+def:
+  text: "A disease of mental functioning that is affects %s."
+  vars:
+    - process
+
+equivalentTo:
+  text: "'disease' and 'affects' some %s"
+  vars:
+    - process
+
+
