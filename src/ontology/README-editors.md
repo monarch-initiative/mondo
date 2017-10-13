@@ -1,28 +1,30 @@
-These notes are for the EDITORS of tbn
+These notes are for the EDITORS of mondo
 
-This project was created using the [ontology starter kit](https://github.com/cmungall/ontology-starter-kit). See the site for details.
+**PLEASE READ THE DOCUMENTATION HERE**
 
-For more details on ontology management, please see the [OBO tutorial](https://github.com/jamesaoverton/obo-tutorial) or the [Gene Ontology Editors Tutorial](go-protege-tutorial.readthedocs.io)
+https://docs.google.com/document/d/19bp9MpCHCxbjMmbntB2e5gZNzzNlu06DnDB8xcoSXK8/edit#
+
+The rest of this document describes generic ontology editing guidelines
 
 ## Editors Version
 
-Make sure you have an ID range in the [idranges file](tbn-idranges.owl)
+Make sure you have an ID range in the [idranges file](mondo-idranges.owl)
 
 If you do not have one, get one from the head curator.
 
-The editors version is [tbn-edit.owl](tbn-edit.owl)
+The editors version is [mondo-edit.obo](mondo-edit.obo)
 
-** DO NOT EDIT tbn.obo OR tbn.owl in the top level directory **
+** DO NOT EDIT mondo.obo OR mondo.owl in the top level directory **
 
-[../../tbn.owl](../../tbn.owl) is the release version
+[../../mondo.owl](../../mondo.owl) is the release version
 
-To edit, open the file in Protege. First make sure you have the repository cloned, see [the GitHub project](https://github.com/cmungall/tbd-disease-ontology) for details.
+To edit, open the file in Protege. First make sure you have the repository cloned, see [the GitHub project](https://github.com/monarch-initiative/mondo) for details.
 
 ## ID Ranges
 
 These are stored in the file
 
- * [tbn-idranges.owl](tbn-idranges.owl)
+ * [mondo-idranges.owl](mondo-idranges.owl)
 
 ** ONLY USE IDs WITHIN YOUR RANGE!! **
 
@@ -53,7 +55,7 @@ d type:
 
     make prepare_release
 
-This generates derived files such as tbn.owl and tbn.obo and places
+This generates derived files such as mondo.owl and mondo.obo and places
 them in the top level (../..). The versionIRI will be added.
 
 Commit and push these files.
@@ -68,16 +70,16 @@ Finally type
 
 IMMEDIATELY AFTERWARDS (do *not* make further modifications) go here:
 
- * https://github.com/cmungall/tbd-disease-ontology/releases
- * https://github.com/cmungall/tbd-disease-ontology/releases/new
+ * https://github.com/monarch-initiative/mondo/releases
+ * https://github.com/monarch-initiative/mondo/releases/new
 
 The value of the "Tag version" field MUST be
 
     vYYYY-MM-DD
 
 The initial lowercase "v" is REQUIRED. The YYYY-MM-DD *must* match
-what is in the versionIRI of the derived tbn.owl (data-version in
-tbn.obo).
+what is in the versionIRI of the derived mondo.owl (data-version in
+mondo.obo).
 
 Release title should be YYYY-MM-DD, optionally followed by a title (e.g. "january release")
 
@@ -89,14 +91,14 @@ The PURLs are already configured to pull from github. This means that
 BOTH ontology purls and versioned ontology purls will resolve to the
 correct ontologies. Try it!
 
- * http://purl.obolibrary.org/obo/tbn.owl <-- current ontology PURL
- * http://purl.obolibrary.org/obo/tbn/releases/YYYY-MM-DD.owl <-- change to the release you just made
+ * http://purl.obolibrary.org/obo/mondo.owl <-- current ontology PURL
+ * http://purl.obolibrary.org/obo/mondo/releases/YYYY-MM-DD.owl <-- change to the release you just made
 
 For questions on this contact Chris Mungall or email obo-admin AT obofoundry.org
 
 # Travis Continuous Integration System
 
-Check the build status here: [![Build Status](https://travis-ci.org/cmungall/tbd-disease-ontology.svg?branch=master)](https://travis-ci.org/cmungall/tbd-disease-ontology)
+Check the build status here: [![Build Status](https://travis-ci.org/monarch-initiative/mondo.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo)
 
-Note: if you have only just created this project you will need to authorize travis for this repo. Go to [https://travis-ci.org/profile/cmungall](https://travis-ci.org/profile/cmungall) for details
+Note: if you have only just created this project you will need to authorize travis for this repo. Go to [https://travis-ci.org/profile/monarch-initiative](https://travis-ci.org/profile/monarch-initiative) for details
 

@@ -23,17 +23,16 @@ INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 all: sparql_test all_imports $(ONT).owl $(ONT).obo $(ONT).json
 test: sparql_test all
 prepare_release: all
-	cp $(ONT).owl $(ONT).obo $(RELEASEDIR) &&\
+	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
 	mkdir -p $(RELEASEDIR)/imports &&\
 	cp imports/*{owl,obo} $(RELEASEDIR)/imports &&\
-	git add $(RELEASEDIR)/imports/*{obo,owl} &&\
-	(test -f subsets/*owl && cp subsets/*{owl,obo} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
+	(test -f subsets/*owl && cp subsets/*{owl,obo,json} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
 
 all_includes: $(INCLUDES_OWL)
 
 osf_upload:
-	cd $(RELEASEDIR) && osf -p pkmr5 upload -f -r * current/
+	cd $(RELEASEDIR) && osf -p 2qk53 upload -f -r * current/
 
 # ----------------------------------------
 # Main release targets
