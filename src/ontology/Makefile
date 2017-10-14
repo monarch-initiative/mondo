@@ -138,7 +138,7 @@ sparql_test: $(QSRC)
 # Sparql queries: Reports
 # ----------------------------------------
 
-REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms
+REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
@@ -188,6 +188,9 @@ mondox.obo: mondo-edit.obo
 
 check: mondo-edit.obo
 	$(HOME)/repos/go-ontology/src/util/check-obo-for-standard-release.pl --disable-xrf-abbs-check $<
+
+mondo-edit.owl: mondo-edit.obo
+	robot convert -i $< -o $@
 
 # ----------------------------------------
 # Kboom

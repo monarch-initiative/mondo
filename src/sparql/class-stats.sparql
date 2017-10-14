@@ -1,0 +1,26 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+
+SELECT ?cls ?cls_label
+  (COUNT(DISTINCT ?textdef) AS ?textdef_count)
+  (COUNT(DISTINCT ?xref) AS ?xref_count)
+  (COUNT(DISTINCT ?supNamedCls) AS ?named_superclass_count)
+  (COUNT(DISTINCT ?supClsExpr) AS ?anon_superclass_count)
+  (COUNT(DISTINCT ?eqNamedCls) AS ?named_equiv_count)
+  (COUNT(DISTINCT ?eqClsExpr) AS ?anon_equiv_count)
+WHERE 
+{
+  ?cls a owl:Class .
+  ?cls rdfs:label ?cls_label .
+  OPTIONAL { ?cls oio:hasDbXref ?xref }
+  OPTIONAL { ?cls IAO:0000115 ?textdef }
+  OPTIONAL { ?cls owl:equivalentClass ?supNamedCls . FILTER (!isBlank(?supNamedCls)) }
+  OPTIONAL { ?cls owl:equivalentClass ?supAnonCls . FILTER (isBlank(?supAnonCls)) }
+  OPTIONAL { ?cls owl:equivalentClass ?eqNamedCls . FILTER (!isBlank(?eqNamedCls)) }
+  OPTIONAL { ?cls owl:equivalentClass ?eqClsExpr . FILTER (isBlank(?eqClsExpr)) }
+}
+GROUP BY ?cls ?cls_label

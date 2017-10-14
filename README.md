@@ -1,15 +1,17 @@
 [![Build Status](https://travis-ci.org/monarch-initiative/mondo-build.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo-build)
 [![DOI](https://zenodo.org/badge/13996/monarch-initiative/mondo-build.svg)](https://zenodo.org/badge/latestdoi/13996/monarch-initiative/mondo-build)
 
-**IMPORTANT**
-
-Read the editors guide:
-
-https://docs.google.com/document/d/19bp9MpCHCxbjMmbntB2e5gZNzzNlu06DnDB8xcoSXK8/edit#
-
 # Mondo
 
+This is the new repo for mondo - not yet active
+
 ## Versions
+
+Currently available as pre-release:
+
+ * http://purl.obolibrary.org/obo/mondo/pre/mondo.obo
+ * http://purl.obolibrary.org/obo/mondo/pre/mondo.json
+ * http://purl.obolibrary.org/obo/mondo/pre/mondo.owl
 
 ### Stable release versions
 
@@ -24,6 +26,8 @@ http://purl.obolibrary.org/obo/mondo.owl
 Editors of this ontology should use the edit version, [src/ontology/mondo-edit.obo](src/ontology/mondo-edit.obo)
 
 Read the editors guide first!
+
+https://docs.google.com/document/d/19bp9MpCHCxbjMmbntB2e5gZNzzNlu06DnDB8xcoSXK8/edit#
 
 ## Contact
 
