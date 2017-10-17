@@ -155,6 +155,9 @@ all_reports: $(SRC)
 imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
+imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
+	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
+
 # ----------------------------------------
 # Lexical mapping
 # ----------------------------------------
@@ -165,6 +168,15 @@ mappings.tsv: mondo.json
 
 hp-mappings.tsv: mondo.json
 	ontobio-lexmap.py hp $< > $@.tmp && mv $@.tmp $@
+
+mesh-mappings.tsv: mondo.json mesh.json
+	ontobio-lexmap.py $^ > $@.tmp && mv $@.tmp $@
+
+ptable-%.tsv: %-mappings.tsv
+	cat $< | p.df  'df[["left", "right","pr_subClassOf","pr_superClassOf","pr_equivalentTo","pr_other"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && csv2tsv.py $@.tmp $@
+
+%-mappings-best.tsv: %-mappings.tsv
+	cat $< | p.df  'df[["left", "left_label", "right", "right_label", "reciprocal_score"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && mv $@.tmp $@
 
 
 unlikely.md: linked-rpt.md
@@ -207,3 +219,4 @@ ext.obo: ptable.tsv
 
 bridge.owl: ptable.tsv seed.owl
 	kboom --experimental  --splitSize 50 --max 4 -m linked-rpt.md -j linked-rpt.json -n -o $@ -t $^
+
