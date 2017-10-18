@@ -158,8 +158,11 @@ all_reports: $(SRC)
 imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
-imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
-	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
+#imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
+#	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
+
+imports/equivalencies.owl: $(SRC)
+	../utils/xrefs2axioms.pl $< > $@.tmp && owltools $@.tmp -o $@
 
 # ----------------------------------------
 # Lexical mapping
