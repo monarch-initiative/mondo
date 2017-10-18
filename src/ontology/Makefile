@@ -20,7 +20,7 @@ INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_imports $(ONT).owl $(ONT).obo $(ONT).json
+all: sparql_test all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json
 test: sparql_test all
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -38,9 +38,12 @@ osf_upload:
 # Main release targets
 # ----------------------------------------
 
+merged.owl: $(SRC) imports/equivalencies.owl
+	owltools $^ --merge-support-ontologies -o $@
+
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-$(ONT).owl: $(SRC)
+$(ONT).owl: merged.owl
 	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 $(ONT).obo: $(ONT).owl
 	owltools --use-catalog $< --merge-imports-closure -o -f obo --no-check $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
