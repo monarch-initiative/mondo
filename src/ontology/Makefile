@@ -16,11 +16,13 @@ SPARQLDIR = ../sparql
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 
+obo-filter-axiom-header = grep -v ^owl-axioms:
+
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json
+all: sparql_test all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json
 test: sparql_test all
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -38,18 +40,38 @@ osf_upload:
 # Main release targets
 # ----------------------------------------
 
-merged.owl: $(SRC) imports/equivalencies.owl
-	owltools $^ --merge-support-ontologies -o $@
+ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
+# perform reasoning on source
+# SKIP FOR NOW: assume pre-asserted, but run reasoner to check
+reasoned.owl: $(SRC)
+	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@-validated.owl && cp $< $@
+#	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@
+
+# merged = reasoned + equivalencies
+merged.owl: reasoned.owl imports/equivalencies.owl
+	owltools --use-catalog $^ --merge-support-ontologies -o $@
+
+# PRE-RELEASES: MONDO IDs primary
+#
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-$(ONT).owl: merged.owl
-	$(ROBOT)  reason -i $< -r ELK relax reduce -r ELK annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
-$(ONT).obo: $(ONT).owl
-	owltools --use-catalog $< --merge-imports-closure -o -f obo --no-check $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
-#	$(ROBOT) convert -i $< -f obo -o $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
-$(ONT).json: $(ONT).owl
+pre/$(ONT).owl: merged.owl
+	$(ROBOT) annotate -i $< -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+
+# obo is self-contained
+pre/$(ONT).obo: reasoned.owl
+	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
+#	owltools --use-catalog $< --merge-imports-closure -o -f obo --no-check $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
+pre/$(ONT).json: $(ONT).owl
 	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+
+# CURRENT RELEASES: map back to clique leaders
+mondo.owl: pre/mondo.owl
+	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -s Orphanet 20 -s OMIM 10 -s NCIT 9 -s EFO 8 -s DOID 5 -s MESH 4 -s MONDO 1 -o $@
+
+mondo.obo: mondo.owl
+	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
 
 $(ONT)-basic.owl: $(ONT).owl
 	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o $@
@@ -68,7 +90,7 @@ modules/%.tsv: modules/%.csv
 	csv2tsv.py $< $@
 
 modules/%.owl: modules/%.tsv
-	dosdp-tools  --obo-prefixes --ontology=../ontology/mondo-edit.owl  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
+	dosdp-tools  --obo-prefixes --ontology=../ontology/mondo-edit.obo  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
 
 
 # ----------------------------------------
@@ -117,7 +139,7 @@ release: $(ONT).owl $(ONT).obo
 # ----------------------------------------
 
 INF: mondo-edit.obo
-	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --markIsInferred --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --markIsInferred --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: UBERON' -  > $@
 
 # ----------------------------------------
 # Sparql queries: Q/C
@@ -135,7 +157,7 @@ $(QSRC): $(SRC)
 # run all violation checks
 VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(QSRC)
-	robot verify -i $< --queries $(VQUERIES) -O reports/
+	robot verify -i $< --queries $(VQUERIES) -O reports/ && touch $@
 
 # ----------------------------------------
 # Sparql queries: Reports
@@ -145,6 +167,9 @@ REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms clas
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
+
+reports/%.tsv: $(SRC)
+	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@
 
 # ----------------------------------------
 # Sparql constructs
@@ -158,11 +183,11 @@ all_reports: $(SRC)
 imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
-#imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
-#	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
+imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
+	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
-imports/equivalencies.owl: $(SRC)
-	../utils/xrefs2axioms.pl $< > $@.tmp && owltools $@.tmp -o $@
+#imports/equivalencies.owl: $(SRC)
+#	../utils/xrefs2axioms.pl $< > $@.tmp && owltools $@.tmp -o $@
 
 # ----------------------------------------
 # Lexical mapping
