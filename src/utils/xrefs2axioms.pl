@@ -24,6 +24,8 @@ while(<>) {
     if (m@^xref: (\S+).*source="MONDO:equivalentTo@) {
         my $x = $1;
 
-        print "$id owl:equivalentTo $x .\n";
+        print "$id owl:equivalentClass $x .\n";
+        print "$id a owl:Class .\n";
+        print "$x a owl:Class .\n";
     }
 }

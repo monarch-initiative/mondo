@@ -22,7 +22,7 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json
+all: sparql_test all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo
 test: sparql_test all
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -34,7 +34,7 @@ prepare_release: all
 all_includes: $(INCLUDES_OWL)
 
 osf_upload:
-	cd $(RELEASEDIR) && osf -p 2qk53 upload -f -r * current/
+	cd ../.. && osf -p 2qk53 upload -f -r target/ current
 
 # ----------------------------------------
 # Main release targets
@@ -63,7 +63,7 @@ pre/$(ONT).owl: merged.owl
 pre/$(ONT).obo: reasoned.owl
 	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
 #	owltools --use-catalog $< --merge-imports-closure -o -f obo --no-check $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
-pre/$(ONT).json: $(ONT).owl
+pre/$(ONT).json: pre/$(ONT).owl
 	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
 # CURRENT RELEASES: map back to clique leaders
