@@ -203,6 +203,9 @@ hp-mappings.tsv: mondo.json
 mesh-mappings.tsv: mondo.json mesh.json
 	ontobio-lexmap.py $^ > $@.tmp && mv $@.tmp $@
 
+gard-mappings.tsv: mondo-edit.json gard.json
+	ontobio-lexmap.py $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
+
 ptable-%.tsv: %-mappings.tsv
 	cat $< | p.df  'df[["left", "right","pr_subClassOf","pr_superClassOf","pr_equivalentTo","pr_other"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && csv2tsv.py $@.tmp $@
 
