@@ -22,19 +22,20 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo
+all: sparql_test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo
 test: sparql_test all
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
 	mkdir -p $(RELEASEDIR)/imports &&\
 	cp imports/*{owl,obo} $(RELEASEDIR)/imports &&\
+	cp pre/*{owl,obo} $(RELEASEDIR)/pre &&\
 	(test -f subsets/*owl && cp subsets/*{owl,obo,json} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
 
 all_includes: $(INCLUDES_OWL)
 
 osf_upload:
-	cd ../.. && osf -p 2qk53 upload -f -r target/ current
+	cd ../.. && osf -p 2qk53 upload -f -r target/ current/
 
 # ----------------------------------------
 # Main release targets
@@ -42,9 +43,12 @@ osf_upload:
 
 ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
+filtered.obo: $(SRC)
+	egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
+
 # perform reasoning on source
 # SKIP FOR NOW: assume pre-asserted, but run reasoner to check
-reasoned.owl: $(SRC)
+reasoned.owl: filtered.obo
 	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@-validated.owl && cp $< $@
 #	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@
 
@@ -68,7 +72,7 @@ pre/$(ONT).json: pre/$(ONT).owl
 
 # CURRENT RELEASES: map back to clique leaders
 mondo.owl: pre/mondo.owl
-	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -s Orphanet 20 -s OMIM 10 -s NCIT 9 -s EFO 8 -s DOID 5 -s MESH 4 -s MONDO 1 -o $@
+	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -s Orphanet 20 -s OMIM 10 -s NCIT 9 -s EFO 8 -s DOID 5 -s MESH 4 -s MONDO 1 --remove-dangling -o $@
 
 mondo.obo: mondo.owl
 	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
@@ -117,7 +121,7 @@ imports/%_import.obo: imports/%_import.owl
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: 
-	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations  -o $@
+	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/mfoem.owl: 
@@ -163,7 +167,7 @@ sparql_test: $(QSRC)
 # Sparql queries: Reports
 # ----------------------------------------
 
-REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats
+REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats root-classes
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
@@ -206,12 +210,17 @@ mesh-mappings.tsv: mondo.json mesh.json
 gard-mappings.tsv: mondo-edit.json gard.json
 	ontobio-lexmap.py $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
 
+ncit-mappings.tsv: mondo-edit.json neoplasm-core.json
+	ontobio-lexmap.py -v -e $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
+
 ptable-%.tsv: %-mappings.tsv
 	cat $< | p.df  'df[["left", "right","pr_subClassOf","pr_superClassOf","pr_equivalentTo","pr_other"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && csv2tsv.py $@.tmp $@
 
 %-mappings-best.tsv: %-mappings.tsv
 	cat $< | p.df  'df[["left", "left_label", "right", "right_label", "reciprocal_score"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && mv $@.tmp $@
 
+%-mappings-filtered.tsv: %-mappings.tsv
+	cat $< | | p.df  'df[df.reciprocal_score==4]' 'df[df.left_match_type=="label"]' 'df[df.right_match_type=="label"]' 'df[["left", "left_label", "right", "right_label"]]'  -i tsv -o tsv  > $@.tmp && mv $@.tmp $@
 
 unlikely.md: linked-rpt.md
 	./unlikely-axiom-report.pl $< | head -200 > $@
@@ -246,11 +255,17 @@ ptable.tsv: mondo-edit.obo
 	../utils/xrefs2ptable.pl $< > $@.tmp && mv $@.tmp $@
 
 seed.owl: mondo-edit.obo ext.obo
-	owltools --use-catalog $< --remove-imports-declarations --merge-support-ontologies -o $@
+	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
+
+seed-ncit.owl: mondo-edit.obo neoplasm-core.owl
+	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
 
 ext.obo: ptable.tsv
 	perl -ne '($$goo, $$x) = split;print "$$x\t$$x\n"' $< | tbl2obo.pl  > $@
 
 bridge.owl: ptable.tsv seed.owl
 	kboom --experimental  --splitSize 50 --max 4 -m linked-rpt.md -j linked-rpt.json -n -o $@ -t $^
+
+bridge-%.owl: ptable-%.tsv seed-%.owl
+	kboom --experimental  --splitSize 50 --max 4 -m linked-rpt-$*.md -j linked-rpt-$*.json -n -o $@ -t $^
 

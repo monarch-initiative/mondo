@@ -5,6 +5,8 @@
 
 This is the new repo for mondo - not yet active
 
+See: obofoundry.org/ontology/mondo.html
+
 ## Versions
 
 Currently available as pre-release:
