@@ -1,0 +1,11 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?c ?n WHERE {
+  ?c a owl:Class .
+  FILTER (!isBlank(?c)) .
+  FILTER NOT EXISTS {?c rdfs:subClassOf ?p } .
+  FILTER NOT EXISTS {?c owl:deprecated ?d } .
+  OPTIONAL {?c rdfs:label ?n}
+       
+}
