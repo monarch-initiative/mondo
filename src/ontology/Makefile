@@ -22,7 +22,7 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo
+all: sparql_test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json
 test: sparql_test all
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -222,7 +222,7 @@ ptable-%.tsv: %-mappings.tsv
 	cat $< | p.df  'df[["left", "left_label", "right", "right_label", "reciprocal_score"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && mv $@.tmp $@
 
 %-mappings-filtered.tsv: %-mappings.tsv
-	cat $< | | p.df  'df[df.reciprocal_score==4]' 'df[df.left_match_type=="label"]' 'df[df.right_match_type=="label"]' 'df[["left", "left_label", "right", "right_label"]]'  -i tsv -o tsv  > $@.tmp && mv $@.tmp $@
+	cat $< | p.df  'df[df.reciprocal_score==4]' 'df[df.left_match_type=="label"]' 'df[df.right_match_type=="label"]' 'df[["left", "left_label", "right", "right_label"]]'  -i tsv -o tsv  > $@.tmp && mv $@.tmp $@
 
 unlikely.md: linked-rpt.md
 	./unlikely-axiom-report.pl $< | head -200 > $@
@@ -271,3 +271,11 @@ bridge.owl: ptable.tsv seed.owl
 bridge-%.owl: ptable-%.tsv seed-%.owl
 	kboom --experimental  --splitSize 50 --max 4 -m linked-rpt-$*.md -j linked-rpt-$*.json -n -o $@ -t $^
 
+# ----------------------------------------
+# HACK: extraction
+# ----------------------------------------
+v-%.png:
+	tbl2p -p id $* > $*.pro && \
+	blip ontol-query -r mondoeq -r mondo -r medic -r snomed_tidy -r icd10 -r neoplasm -r ordop -r disease -consult extract.pro -i $*.pro -query "id(X),q(X,ID)" -to obo > v-$*.obo && \
+	owltools v-$*.obo --remove-dangling -o -f obo v-$*-trim.obo && \
+	blip ontol-subset -u ontol_config_do -i v-$*-trim.obo -idfile $* -down 5 -to png > $@
