@@ -26,9 +26,9 @@ An alternate version of this version of MONDO that retains external
 IDs and primary IDs is available in the extid/ folder on OSF, or via
 purls
 
- * http://purl.obolibrary.org/obo/extid/mondo.obo
- * http://purl.obolibrary.org/obo/extid/mondo.owl
- * http://purl.obolibrary.org/obo/extid/mondo.json
+ * http://purl.obolibrary.org/obo/mondo/extid/mondo.obo
+ * http://purl.obolibrary.org/obo/mondo/extid/mondo.owl
+ * http://purl.obolibrary.org/obo/mondo/extid/mondo.json
 
 Note this support will not be maintained in perpetuity. You are
 recommended to use the main MONDO release.

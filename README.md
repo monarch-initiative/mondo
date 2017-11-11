@@ -1,25 +1,20 @@
 
 # Mondo
 
-This is the new repo for mondo - not yet active
+This is the repository for managing MONDO. For more details on this ontology see the page on OBO:
 
-See: obofoundry.org/ontology/mondo.html
+ * obofoundry.org/ontology/mondo.html
 
 ## Versions
 
-Currently available as pre-release:
+Stable release versions
 
- * http://purl.obolibrary.org/obo/mondo/pre/mondo.obo
- * http://purl.obolibrary.org/obo/mondo/pre/mondo.json
- * http://purl.obolibrary.org/obo/mondo/pre/mondo.owl
+ * http://purl.obolibrary.org/obo/mondo.obo
+ * http://purl.obolibrary.org/obo/mondo.json
+ * http://purl.obolibrary.org/obo/mondo.owl
 
-### Stable release versions
+See [Changes.md](Changed.md) for more details
 
-The latest version of the ontology can always be found at:
-
-http://purl.obolibrary.org/obo/mondo.owl
-
-(note this will not show up until the request has been approved by obofoundry.org)
 
 ### Editors' version
 
