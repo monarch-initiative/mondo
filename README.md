@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/monarch-initiative/mondo-build.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo-build)
-[![DOI](https://zenodo.org/badge/13996/monarch-initiative/mondo-build.svg)](https://zenodo.org/badge/latestdoi/13996/monarch-initiative/mondo-build)
 
 # Mondo
 
