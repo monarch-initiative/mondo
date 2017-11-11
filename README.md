@@ -3,7 +3,7 @@
 
 This is the repository for managing MONDO. For more details on this ontology see the page on OBO:
 
- * obofoundry.org/ontology/mondo.html
+ * http://obofoundry.org/ontology/mondo.html
 
 ## Versions
 
