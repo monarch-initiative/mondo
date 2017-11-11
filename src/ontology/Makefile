@@ -22,8 +22,8 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: sparql_test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json
-test: sparql_test all
+all: test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json
+test: sparql_test test_nomerge
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
 	mkdir -p $(RELEASEDIR)/imports &&\
@@ -44,7 +44,8 @@ osf_upload:
 ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO)@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' > $@.tmp && mv $@.tmp $@
+#egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 # perform reasoning on source
 # SKIP FOR NOW: assume pre-asserted, but run reasoner to check
@@ -60,30 +61,40 @@ merged.owl: reasoned.owl imports/equivalencies.owl
 #
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-pre/$(ONT).owl: merged.owl
+$(ONT).owl: merged.owl
 	$(ROBOT) annotate -i $< -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
 # obo is self-contained
-pre/$(ONT).obo: reasoned.owl
+$(ONT).obo: reasoned.owl
 	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
 #	owltools --use-catalog $< --merge-imports-closure -o -f obo --no-check $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
-pre/$(ONT).json: pre/$(ONT).owl
-	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+$(ONT).json: pre/$(ONT).owl
+	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
+#	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+
+pre/$(ONT).%: $(ONT).%
+	cp $< $@
 
 # CURRENT RELEASES: map back to clique leaders
-mondo.owl: pre/mondo.owl
-	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -s Orphanet 20 -s OMIM 10 -s NCIT 9 -s EFO 8 -s DOID 5 -s MESH 4 -s MONDO 1 --remove-dangling -o $@
+extid/mondo.owl: mondo.owl
+	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -s NCIT 20 -s Orphanet 10 -s OMIM 8 -s EFO 6 -s DOID 5 -s MESH 4 -s MONDO 1 --remove-dangling -o $@
 
-mondo.obo: mondo.owl
+extid/mondo.obo: extid/mondo.owl
 	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
 
-$(ONT)-basic.owl: $(ONT).owl
-	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o $@
-$(ONT)-basic.obo: $(ONT)-basic.owl
-	owltools --use-catalog $<  -o -f obo $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
-%.json: %.owl
-	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+#$(ONT)-basic.owl: $(ONT).owl
+#	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o $@
+#$(ONT)-basic.obo: $(ONT)-basic.owl
+#	owltools --use-catalog $<  -o -f obo $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 
+%.json: %.owl
+	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
+#	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+
+# ensure that inference including equivalencies does not result in merging any classes in MONDO.
+# if this fails, the resolution is to look for two MONDO classes with equivalence to the same external class
+test_nomerge: mondo.owl
+	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@
 
 # ----------------------------------------
 # DOSDP Modules
