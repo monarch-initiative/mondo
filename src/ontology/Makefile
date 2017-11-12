@@ -130,14 +130,6 @@ imports/%_import.owl: mirror/%.owl imports/%_terms.txt
 imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && mv $@.tmp $@
 
-# clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: 
-	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
-.PRECIOUS: mirror/%.owl
-
-mirror/mfoem.owl: 
-	$(OWLTOOLS) $(OBO)/mfoem.owl --remove-annotation-assertions -l -s -d --make-subset-by-properties -f BFO:0000050 // --remove-dangling-annotations  -o $@
-.PRECIOUS: mirror/%.owl
 
 imports/%_terms.txt:
 	robot query -i mondo-edit.obo -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
@@ -207,6 +199,22 @@ imports/equivalencies.obo: imports/equivalencies.owl
 #	../utils/xrefs2axioms.pl $< > $@.tmp && owltools $@.tmp -o $@
 
 # ----------------------------------------
+# External ontologies
+# ----------------------------------------
+
+# clone remote ontology locally, perfoming some excision of relations and annotations
+mirror/%.owl: 
+	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/mfoem.owl: 
+	$(OWLTOOLS) $(OBO)/mfoem.owl --remove-annotation-assertions -l -s -d --make-subset-by-properties -f BFO:0000050 // --remove-dangling-annotations  -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/neoplasm-core.owl:
+	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@
+
+# ----------------------------------------
 # Lexical mapping
 # ----------------------------------------
 
@@ -241,11 +249,15 @@ unlikely.md: linked-rpt.md
 phenotype_annotation.tab:
 	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@
 
-mim2gene_medgen:
-	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
 
 modules/equiv-xrefs.obo: mondo-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
+
+mim2gene_medgen:
+	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
+
+omim2medgen.obo: mim2gene_medgen
+	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
 
 # ----------------------------------------
 # Hacky
@@ -270,7 +282,7 @@ ptable.tsv: mondo-edit.obo
 seed.owl: mondo-edit.obo ext.obo
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
 
-seed-ncit.owl: mondo-edit.obo neoplasm-core.owl
+seed-ncit.owl: mondo-edit.obo mirror/neoplasm-core.owl
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
 
 ext.obo: ptable.tsv
@@ -290,3 +302,6 @@ v-%.png:
 	blip ontol-query -r mondoeq -r mondo -r medic -r snomed_tidy -r icd10 -r neoplasm -r ordop -r disease -consult extract.pro -i $*.pro -query "id(X),q(X,ID)" -to obo > v-$*.obo && \
 	owltools v-$*.obo --remove-dangling -o -f obo v-$*-trim.obo && \
 	blip ontol-subset -u ontol_config_do -i v-$*-trim.obo -idfile $* -down 5 -to png > $@
+
+../../scratch/mondo-ncit-finding.tsv:
+	blip-findall -i imports/equivalencies.obo  -i mondo.obo -r neoplasm "(R='NCIT:R115';R='NCIT:R108'),parent(X,R,Y),equivalent_class(M,X)" -select "x(M,Y)" -no_pred -label  > $@.tmp && sort -u $@.tmp > $@
