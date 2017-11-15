@@ -214,6 +214,8 @@ mirror/mfoem.owl:
 mirror/neoplasm-core.owl:
 	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@
 
+mirror/rdo.obo:
+	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@
 # ----------------------------------------
 # Lexical mapping
 # ----------------------------------------
@@ -231,17 +233,21 @@ mesh-mappings.tsv: mondo.json mesh.json
 gard-mappings.tsv: mondo-edit.json gard.json
 	ontobio-lexmap.py $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
 
+medgen-mappings.tsv: mondo-edit.json mirror/medgen-disease-extract.obo
+	ontobio-lexmap.py -v -e $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
+
 ncit-mappings.tsv: mondo-edit.json neoplasm-core.json
 	ontobio-lexmap.py -v -e $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
 
 ptable-%.tsv: %-mappings.tsv
-	cat $< | p.df  'df[["left", "right","pr_subClassOf","pr_superClassOf","pr_equivalentTo","pr_other"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && csv2tsv.py $@.tmp $@
+	cat $< | p.df  'df[df.right_novel==True]' 'df[["left", "right","pr_subClassOf","pr_superClassOf","pr_equivalentTo","pr_other"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && csv2tsv.py $@.tmp $@
 
 %-mappings-best.tsv: %-mappings.tsv
 	cat $< | p.df  'df[["left", "left_label", "right", "right_label", "reciprocal_score"]]' -o csv -i tsv | grep -v '^"left' | grep MONDO > $@.tmp && mv $@.tmp $@
 
 %-mappings-filtered.tsv: %-mappings.tsv
 	cat $< | p.df  'df[df.reciprocal_score==4]' 'df[df.left_match_type=="label"]' 'df[df.right_match_type=="label"]' 'df[["left", "left_label", "right", "right_label"]]'  -i tsv -o tsv  > $@.tmp && mv $@.tmp $@
+
 
 unlikely.md: linked-rpt.md
 	./unlikely-axiom-report.pl $< | head -200 > $@
@@ -282,7 +288,7 @@ ptable.tsv: mondo-edit.obo
 seed.owl: mondo-edit.obo ext.obo
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
 
-seed-ncit.owl: mondo-edit.obo mirror/neoplasm-core.owl
+seed-ncit.owl: mondo-edit.obo imports/equivalencies-ncit.obo neoplasm-core-nd.obo
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
 
 ext.obo: ptable.tsv
