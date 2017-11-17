@@ -1,0 +1,12 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix obo: <http://purl.obolibrary.org/obo/>
+
+SELECT ?prefix (COUNT(DISTINCT ?xref) AS ?numberOfXrefs) WHERE 
+{
+  ?cls a owl:Class ; 
+     oio:hasDbXref ?xref
+  FILTER (!isBlank(?cls))
+  BIND( strbefore(str(?xref), ":") AS ?prefix)
+}
+GROUP BY ?prefix

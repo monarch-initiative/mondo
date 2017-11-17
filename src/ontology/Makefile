@@ -175,7 +175,10 @@ REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
-reports/%.tsv: $(SRC)
+reports/edit/%.tsv: $(SRC)
+	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@
+
+reports/release/%.tsv: mondo.owl
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@
 
 # ----------------------------------------
