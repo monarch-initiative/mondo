@@ -154,7 +154,7 @@ INF: mondo-edit.obo
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-VCHECKS = equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+VCHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 
 QSRC = $(SRC)-noimports.owl
 
@@ -164,7 +164,7 @@ $(QSRC): $(SRC)
 # run all violation checks
 VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(QSRC)
-	robot verify -i $< --queries $(VQUERIES) -O reports/ && touch $@
+	robot verify -i $< --queries $(VQUERIES) -O reports/edit/ && touch $@
 
 # ----------------------------------------
 # Sparql queries: Reports
