@@ -175,11 +175,12 @@ REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
 all_reports: $(SRC)
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
+# TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
 reports/edit/%.tsv: $(SRC)
-	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@
+	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 reports/release/%.tsv: mondo.owl
-	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@
+	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # ----------------------------------------
 # Sparql constructs
