@@ -1,5 +1,18 @@
 format-version: 1.2
-ontology: tbd/imports/go_import
+ontology: mondo/imports/go_import
+
+[Term]
+id: GO:0000002
+name: mitochondrial genome maintenance
+def: "The maintenance of the structure and integrity of the mitochondrial genome; includes replication and segregation of the mitochondrial chromosome." [GOC:ai, GOC:vw]
+is_a: GO:0007005 ! mitochondrion organization
+
+[Term]
+id: GO:0000003
+name: reproduction
+def: "The production of new individuals that contain some portion of genetic material inherited from one or more parent organisms." [GOC:go_curators, GOC:isa_complete, GOC:jl, ISBN:0198506732]
+synonym: "reproductive physiological process" EXACT []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0000041
@@ -51,6 +64,19 @@ intersection_of: GO:0005694 ! chromosome
 intersection_of: BFO:0000050 GO:0005737 ! cytoplasm
 
 [Term]
+id: GO:0000262
+name: mitochondrial chromosome
+def: "A chromosome found in the mitochondrion of a eukaryotic cell." [GOC:mah]
+synonym: "mitochondrial DNA" NARROW []
+synonym: "mitochondrial genome" RELATED []
+synonym: "mtDNA" NARROW []
+is_a: GO:0000229 ! cytoplasmic chromosome
+is_a: GO:0044429 ! mitochondrial part
+intersection_of: GO:0005694 ! chromosome
+intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
+relationship: BFO:0000050 GO:0042645 ! mitochondrial nucleoid
+
+[Term]
 id: GO:0000323
 name: lytic vacuole
 def: "A vacuole that is maintained at an acidic pH and which contains degradative enzymes, including a wide variety of acid hydrolases." [GOC:krc]
@@ -83,6 +109,25 @@ intersection_of: GO:0000785 ! chromatin
 intersection_of: BFO:0000050 GO:0005634 ! nucleus
 
 [Term]
+id: GO:0000820
+name: regulation of glutamine family amino acid metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving amino acids of the glutamine family, comprising arginine, glutamate, glutamine and proline." [GOC:go_curators]
+synonym: "regulation of glutamine family amino acid metabolism" EXACT []
+is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0009064 ! glutamine family amino acid metabolic process
+relationship: RO:0002211 GO:0009064 ! glutamine family amino acid metabolic process
+
+[Term]
+id: GO:0000959
+name: mitochondrial RNA metabolic process
+def: "The chemical reactions and pathways involving RNA transcribed from the mitochondrial genome and occurring in the mitochondrion." [GOC:krc, GOC:mah]
+is_a: GO:0016070 ! RNA metabolic process
+intersection_of: GO:0016070 ! RNA metabolic process
+intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
+relationship: BFO:0000066 GO:0005739 ! mitochondrion
+
+[Term]
 id: GO:0000981
 name: RNA polymerase II transcription factor activity, sequence-specific DNA binding
 def: "Interacting selectively and non-covalently with a specific DNA sequence in order to modulate transcription by RNA polymerase II. The transcription factor may or may not also interact selectively with a protein or macromolecular complex." [GOC:txnOH]
@@ -90,6 +135,19 @@ synonym: "sequence-specific DNA binding RNA polymerase II transcription factor a
 is_a: GO:0003700 ! transcription factor activity, sequence-specific DNA binding
 relationship: BFO:0000050 GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 relationship: BFO:0000066 GO:0000790 ! nuclear chromatin
+
+[Term]
+id: GO:0000988
+name: transcription factor activity, protein binding
+def: "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules), in order to modulate transcription. A protein binding transcription factor may or may not also interact with the template nucleic acid (either DNA or RNA) as well." [GOC:txnOH]
+synonym: "protein binding transcription factor activity" EXACT []
+synonym: "transcription factor activity" BROAD []
+is_a: GO:0003674 ! molecular_function
+intersection_of: GO:0003674 ! molecular_function
+intersection_of: BFO:0000050 GO:1903506 ! regulation of nucleic acid-templated transcription
+intersection_of: BFO:0000051 GO:0005515 ! protein binding
+relationship: BFO:0000050 GO:1903506 ! regulation of nucleic acid-templated transcription
+relationship: BFO:0000051 GO:0005515 ! protein binding
 
 [Term]
 id: GO:0001071
@@ -100,6 +158,44 @@ is_a: GO:0003674 ! molecular_function
 relationship: BFO:0000050 GO:2001141 ! regulation of RNA biosynthetic process
 
 [Term]
+id: GO:0001802
+name: type III hypersensitivity
+def: "An inflammatory response resulting from recognition of immune complexes via complement or Fc receptors on effector cells leading to activation of neutrophils and other leukocytes and damage to bystander tissue." [GOC:add, ISBN:0781735149]
+is_a: GO:0002444 ! myeloid leukocyte mediated immunity
+is_a: GO:0002524 ! hypersensitivity
+is_a: GO:0016064 ! immunoglobulin mediated immune response
+
+[Term]
+id: GO:0001803
+name: regulation of type III hypersensitivity
+def: "Any process that modulates the frequency, rate, or extent of type III hypersensitivity, a type of inflammatory response." [GOC:add, ISBN:0781735149]
+is_a: GO:0002883 ! regulation of hypersensitivity
+is_a: GO:0002886 ! regulation of myeloid leukocyte mediated immunity
+is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0001802 ! type III hypersensitivity
+relationship: RO:0002211 GO:0001802 ! type III hypersensitivity
+
+[Term]
+id: GO:0001806
+name: type IV hypersensitivity
+def: "An inflammatory response driven by T cell recognition of processed soluble or cell-associated antigens leading to cytokine release and leukocyte activation." [GOC:add, ISBN:0781735149]
+synonym: "delayed hypersensitivity response" EXACT []
+synonym: "delayed-type hypersensitivity" EXACT []
+is_a: GO:0002456 ! T cell mediated immunity
+is_a: GO:0002524 ! hypersensitivity
+
+[Term]
+id: GO:0001807
+name: regulation of type IV hypersensitivity
+def: "Any process that modulates the frequency, rate, or extent of type IV hypersensitivity, a type of inflammatory response." [GOC:add, ISBN:0781735149]
+is_a: GO:0002709 ! regulation of T cell mediated immunity
+is_a: GO:0002883 ! regulation of hypersensitivity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0001806 ! type IV hypersensitivity
+relationship: RO:0002211 GO:0001806 ! type IV hypersensitivity
+
+[Term]
 id: GO:0001894
 name: tissue homeostasis
 def: "A homeostatic process involved in the maintenance of an internal steady state within a defined tissue of an organism, including control of cellular proliferation and death and control of metabolic function." [GOC:add, GOC:isa_complete]
@@ -108,10 +204,132 @@ is_a: GO:0060249 ! anatomical structure homeostasis
 relationship: BFO:0000050 GO:0048871 ! multicellular organismal homeostasis
 
 [Term]
+id: GO:0002087
+name: regulation of respiratory gaseous exchange by neurological system process
+def: "A process carried out by the nervous system that is required for the proper control of respiratory gaseous exchange. This process occurs in the respiratory center of the brain in vertebrates." [GOC:dph, GOC:tb, PMID:12458206]
+synonym: "neurological control of breathing" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0044065 ! regulation of respiratory system process
+is_a: GO:0050877 ! nervous system process
+intersection_of: GO:0050877 ! nervous system process
+intersection_of: RO:0002211 GO:0007585 ! respiratory gaseous exchange
+
+[Term]
+id: GO:0002250
+name: adaptive immune response
+def: "An immune response mediated by cells expressing specific receptors for antigen produced through a somatic diversification process, and allowing for an enhanced secondary response to subsequent exposures to the same antigen (immunological memory)." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "acquired immune response" EXACT [ISBN:068340007X]
+synonym: "immune memory response" EXACT [GOC:add]
+is_a: GO:0006955 ! immune response
+
+[Term]
+id: GO:0002252
+name: immune effector process
+def: "Any process of the immune system that can potentially contribute to an immune response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+is_a: GO:0002376 ! immune system process
+
+[Term]
+id: GO:0002376
+name: immune system process
+def: "Any process involved in the development or functioning of the immune system, an organismal system for calibrated responses to potential internal or invasive threats." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05]
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0002437
+name: inflammatory response to antigenic stimulus
+def: "An inflammatory response to an antigenic stimulus, which can be include any number of T cell or B cell epitopes." [GOC:add, ISBN:0781735149]
+is_a: GO:0006954 ! inflammatory response
+is_a: GO:0006955 ! immune response
+
+[Term]
+id: GO:0002438
+name: acute inflammatory response to antigenic stimulus
+def: "An acute inflammatory response to an antigenic stimulus. An acute inflammatory response occurs within a matter of minutes or hours, and either resolves within a few days or becomes a chronic inflammatory response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+is_a: GO:0002437 ! inflammatory response to antigenic stimulus
+is_a: GO:0002526 ! acute inflammatory response
+
+[Term]
+id: GO:0002443
+name: leukocyte mediated immunity
+def: "Any process involved in the carrying out of an immune response by a leukocyte." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "cell-mediated immune response" RELATED []
+synonym: "cellular immune response" RELATED []
+synonym: "immune cell effector process" EXACT []
+synonym: "immune cell mediated immunity" EXACT []
+synonym: "leucocyte immune effector process" EXACT []
+synonym: "leucocyte mediated immunity" EXACT []
+synonym: "leukocyte immune effector process" EXACT []
+is_a: GO:0002252 ! immune effector process
+
+[Term]
+id: GO:0002444
+name: myeloid leukocyte mediated immunity
+def: "Any process involved in the carrying out of an immune response by a myeloid leukocyte." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "myeloid leucocyte immune effector process" EXACT []
+synonym: "myeloid leucocyte mediated immunity" EXACT []
+synonym: "myeloid leukocyte immune effector process" EXACT []
+is_a: GO:0002443 ! leukocyte mediated immunity
+
+[Term]
+id: GO:0002445
+name: type II hypersensitivity
+def: "An inflammatory response resulting in cell death or dysfunction mediated by activation of the classical complement pathway or induction of effector cell phagocytosis, cytolysis mechanisms via complement or Fc receptors following the binding of antibodies to cell surface antigens on a target cell, or mediated by the direct binding of antibody to cellular receptors." [GOC:add, ISBN:0781735149]
+is_a: GO:0002444 ! myeloid leukocyte mediated immunity
+is_a: GO:0002524 ! hypersensitivity
+is_a: GO:0016064 ! immunoglobulin mediated immune response
+
+[Term]
+id: GO:0002449
+name: lymphocyte mediated immunity
+def: "Any process involved in the carrying out of an immune response by a lymphocyte." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "cell-mediated immunity" BROAD []
+synonym: "cellular immune response" BROAD []
+is_a: GO:0002443 ! leukocyte mediated immunity
+
+[Term]
+id: GO:0002456
+name: T cell mediated immunity
+def: "Any process involved in the carrying out of an immune response by a T cell." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "cell-mediated immunity" BROAD []
+synonym: "cellular immune response" BROAD []
+synonym: "T lymphocyte mediated immunity" EXACT []
+synonym: "T-cell mediated immunity" EXACT []
+synonym: "T-lymphocyte mediated immunity" EXACT []
+is_a: GO:0002449 ! lymphocyte mediated immunity
+is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+
+[Term]
+id: GO:0002460
+name: adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+def: "An immune response mediated by lymphocytes expressing specific receptors for antigen produced through a somatic diversification process that includes somatic recombination of germline gene segments encoding immunoglobulin superfamily domains. Recombined receptors for antigen encoded by immunoglobulin superfamily domains include T cell receptors and immunoglobulins (antibodies) produced by B cells. The first encounter with antigen elicits a primary immune response that is slow and not of great magnitude. T and B cells selected by antigen become activated and undergo clonal expansion. A fraction of antigen-reactive T and B cells become memory cells, whereas others differentiate into effector cells. The memory cells generated during the primary response enable a much faster and stronger secondary immune response upon subsequent exposures to the same antigen (immunological memory). An example of this is the adaptive immune response found in Mus musculus." [GOC:add, GOC:mtg_sensu, ISBN:0781735149, ISBN:1405196831]
+is_a: GO:0002250 ! adaptive immune response
+
+[Term]
+id: GO:0002524
+name: hypersensitivity
+def: "An inflammatory response to an exogenous environmental antigen or an endogenous antigen initiated by the adaptive immune system." [GOC:jal, ISBN:0781735149]
+synonym: "hypersensitivity response" RELATED [ISBN:0781735149]
+is_a: GO:0002438 ! acute inflammatory response to antigenic stimulus
+
+[Term]
+id: GO:0002526
+name: acute inflammatory response
+def: "Inflammation which comprises a rapid, short-lived, relatively uniform response to acute injury or antigenic challenge and is characterized by accumulations of fluid, plasma proteins, and granulocytic leukocytes. An acute inflammatory response occurs within a matter of minutes or hours, and either resolves within a few days or becomes a chronic inflammatory response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+is_a: GO:0006954 ! inflammatory response
+
+[Term]
 id: GO:0002544
 name: chronic inflammatory response
 def: "Inflammation of prolonged duration (weeks or months) in which active inflammation, tissue destruction, and attempts at repair are proceeding simultaneously. Although it may follow acute inflammation, chronic inflammation frequently begins insidiously, as a low-grade, smoldering, often asymptomatic response." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
 is_a: GO:0006954 ! inflammatory response
+
+[Term]
+id: GO:0002673
+name: regulation of acute inflammatory response
+def: "Any process that modulates the frequency, rate, or extent of an acute inflammatory response." [GOC:add]
+is_a: GO:0050727 ! regulation of inflammatory response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002526 ! acute inflammatory response
+relationship: RO:0002211 GO:0002526 ! acute inflammatory response
 
 [Term]
 id: GO:0002676
@@ -121,6 +339,70 @@ is_a: GO:0050727 ! regulation of inflammatory response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0002544 ! chronic inflammatory response
 relationship: RO:0002211 GO:0002544 ! chronic inflammatory response
+
+[Term]
+id: GO:0002682
+name: regulation of immune system process
+def: "Any process that modulates the frequency, rate, or extent of an immune system process." [GOC:add]
+is_a: GO:0050789 ! regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002376 ! immune system process
+relationship: RO:0002211 GO:0002376 ! immune system process
+
+[Term]
+id: GO:0002697
+name: regulation of immune effector process
+def: "Any process that modulates the frequency, rate, or extent of an immune effector process." [GOC:add]
+is_a: GO:0002682 ! regulation of immune system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002252 ! immune effector process
+relationship: RO:0002211 GO:0002252 ! immune effector process
+
+[Term]
+id: GO:0002703
+name: regulation of leukocyte mediated immunity
+def: "Any process that modulates the frequency, rate, or extent of leukocyte mediated immunity." [GOC:add]
+synonym: "regulation of immune cell mediated immunity" EXACT []
+synonym: "regulation of leucocyte mediated immunity" EXACT []
+is_a: GO:0002697 ! regulation of immune effector process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002443 ! leukocyte mediated immunity
+relationship: RO:0002211 GO:0002443 ! leukocyte mediated immunity
+
+[Term]
+id: GO:0002706
+name: regulation of lymphocyte mediated immunity
+def: "Any process that modulates the frequency, rate, or extent of lymphocyte mediated immunity." [GOC:add]
+is_a: GO:0002703 ! regulation of leukocyte mediated immunity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002449 ! lymphocyte mediated immunity
+relationship: RO:0002211 GO:0002449 ! lymphocyte mediated immunity
+
+[Term]
+id: GO:0002709
+name: regulation of T cell mediated immunity
+def: "Any process that modulates the frequency, rate, or extent of T cell mediated immunity." [GOC:add]
+synonym: "regulation of T lymphocyte mediated immunity" EXACT []
+synonym: "regulation of T-cell mediated immunity" EXACT []
+synonym: "regulation of T-lymphocyte mediated immunity" EXACT []
+is_a: GO:0002706 ! regulation of lymphocyte mediated immunity
+is_a: GO:0002822 ! regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002456 ! T cell mediated immunity
+relationship: RO:0002211 GO:0002456 ! T cell mediated immunity
+
+[Term]
+id: GO:0002712
+name: regulation of B cell mediated immunity
+def: "Any process that modulates the frequency, rate, or extent of B cell mediated immunity." [GOC:add]
+synonym: "regulation of B lymphocyte mediated immunity" EXACT []
+synonym: "regulation of B-cell mediated immunity" EXACT []
+synonym: "regulation of B-lymphocyte mediated immunity" EXACT []
+is_a: GO:0002706 ! regulation of lymphocyte mediated immunity
+is_a: GO:0002822 ! regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0019724 ! B cell mediated immunity
+relationship: RO:0002211 GO:0019724 ! B cell mediated immunity
 
 [Term]
 id: GO:0002790
@@ -151,11 +433,112 @@ intersection_of: BFO:0000066 GO:0005622 ! intracellular
 relationship: BFO:0000066 GO:0005622 ! intracellular
 
 [Term]
+id: GO:0002819
+name: regulation of adaptive immune response
+def: "Any process that modulates the frequency, rate, or extent of an adaptive immune response." [GOC:add]
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002250 ! adaptive immune response
+relationship: RO:0002211 GO:0002250 ! adaptive immune response
+
+[Term]
+id: GO:0002822
+name: regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+def: "Any process that modulates the frequency, rate, or extent of an adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains. An example of this process is found in the Gnathostomata." [GOC:add, GOC:mtg_sensu]
+is_a: GO:0002819 ! regulation of adaptive immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+relationship: RO:0002211 GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+
+[Term]
+id: GO:0002861
+name: regulation of inflammatory response to antigenic stimulus
+def: "Any process that modulates the frequency, rate, or extent of an inflammatory response to an antigenic stimulus." [GOC:add]
+is_a: GO:0050727 ! regulation of inflammatory response
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002437 ! inflammatory response to antigenic stimulus
+relationship: RO:0002211 GO:0002437 ! inflammatory response to antigenic stimulus
+
+[Term]
+id: GO:0002864
+name: regulation of acute inflammatory response to antigenic stimulus
+def: "Any process that modulates the frequency, rate, or extent of an acute inflammatory response to an antigenic stimulus." [GOC:add]
+is_a: GO:0002673 ! regulation of acute inflammatory response
+is_a: GO:0002861 ! regulation of inflammatory response to antigenic stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002438 ! acute inflammatory response to antigenic stimulus
+relationship: RO:0002211 GO:0002438 ! acute inflammatory response to antigenic stimulus
+
+[Term]
+id: GO:0002883
+name: regulation of hypersensitivity
+def: "Any process that modulates the frequency, rate, or extent of hypersensitivity." [GOC:add]
+is_a: GO:0002864 ! regulation of acute inflammatory response to antigenic stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002524 ! hypersensitivity
+relationship: RO:0002211 GO:0002524 ! hypersensitivity
+
+[Term]
+id: GO:0002886
+name: regulation of myeloid leukocyte mediated immunity
+def: "Any process that modulates the frequency, rate, or extent of myeloid leukocyte mediated immunity." [GOC:add]
+is_a: GO:0002703 ! regulation of leukocyte mediated immunity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002444 ! myeloid leukocyte mediated immunity
+relationship: RO:0002211 GO:0002444 ! myeloid leukocyte mediated immunity
+
+[Term]
+id: GO:0002889
+name: regulation of immunoglobulin mediated immune response
+def: "Any process that modulates the frequency, rate, or extent of an immunoglobulin mediated immune response." [GOC:add]
+is_a: GO:0002712 ! regulation of B cell mediated immunity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016064 ! immunoglobulin mediated immune response
+relationship: RO:0002211 GO:0016064 ! immunoglobulin mediated immune response
+
+[Term]
+id: GO:0002892
+name: regulation of type II hypersensitivity
+def: "Any process that modulates the frequency, rate, or extent of type II hypersensitivity." [GOC:add]
+is_a: GO:0002883 ! regulation of hypersensitivity
+is_a: GO:0002886 ! regulation of myeloid leukocyte mediated immunity
+is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002445 ! type II hypersensitivity
+relationship: RO:0002211 GO:0002445 ! type II hypersensitivity
+
+[Term]
+id: GO:0003006
+name: developmental process involved in reproduction
+def: "A developmental process in which a progressive change in the state of some part of an organism specifically contributes to its ability to form offspring." [GOC:dph, GOC:isa_complete]
+synonym: "puberty" NARROW [GOC:dph]
+synonym: "reproductive developmental process" RELATED [GOC:dph, GOC:tb]
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0032502 ! developmental process
+intersection_of: GO:0032502 ! developmental process
+intersection_of: BFO:0000050 GO:0000003 ! reproduction
+
+[Term]
 id: GO:0003008
 name: system process
 def: "A multicellular organismal process carried out by any of the organs or tissues in an organ system. An organ system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a biological objective." [GOC:mtg_cardio]
 synonym: "organ system process" EXACT []
 is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0003013
+name: circulatory system process
+def: "A organ system process carried out by any of the organs or tissues of the circulatory system. The circulatory system is an organ system that moves extracellular fluids to and from tissue within a multicellular organism." [GOC:mtg_cardio]
+is_a: GO:0003008 ! system process
+
+[Term]
+id: GO:0003016
+name: respiratory system process
+def: "A system process carried out by the organs and tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange." [GOC:dph, GOC:mtg_cardio, GOC:tb]
+synonym: "respiratory gaseous exchange by respiratory system" EXACT []
+is_a: GO:0003008 ! system process
+is_a: GO:0007585 ! respiratory gaseous exchange
 
 [Term]
 id: GO:0003674
@@ -217,6 +600,73 @@ synonym: "palmitoyl-coenzyme A dehydrogenase activity" EXACT [EC:1.3.99.13]
 is_a: GO:0003995 ! acyl-CoA dehydrogenase activity
 
 [Term]
+id: GO:0004618
+name: phosphoglycerate kinase activity
+def: "Catalysis of the reaction: 3-phospho-D-glycerate + ATP = 3-phospho-D-glyceroyl phosphate + ADP + H(+)." [EC:2.7.2.3, RHEA:14804]
+synonym: "3-PGK" RELATED [EC:2.7.2.3]
+synonym: "3-phosphoglycerate kinase activity" EXACT [EC:2.7.2.3]
+synonym: "3-phosphoglycerate phosphokinase activity" EXACT [EC:2.7.2.3]
+synonym: "3-phosphoglyceric acid kinase activity" EXACT [EC:2.7.2.3]
+synonym: "3-phosphoglyceric acid phosphokinase activity" EXACT [EC:2.7.2.3]
+synonym: "3-phosphoglyceric kinase activity" EXACT [EC:2.7.2.3]
+synonym: "ATP-3-phospho-D-glycerate-1-phosphotransferase activity" EXACT [EC:2.7.2.3]
+synonym: "ATP:3-phospho-D-glycerate 1-phosphotransferase activity" EXACT [EC:2.7.2.3]
+synonym: "ATP:D-3-phosphoglycerate 1-phosphotransferase activity" EXACT [EC:2.7.2.3]
+synonym: "glycerate 3-phosphate kinase activity" EXACT [EC:2.7.2.3]
+synonym: "glycerophosphate kinase activity" EXACT [EC:2.7.2.3]
+synonym: "PGK" RELATED [EC:2.7.2.3]
+synonym: "phosphoglyceric acid kinase activity" EXACT [EC:2.7.2.3]
+synonym: "phosphoglyceric kinase activity" EXACT [EC:2.7.2.3]
+synonym: "phosphoglycerokinase activity" EXACT [EC:2.7.2.3]
+is_a: GO:0016301 ! kinase activity
+is_a: GO:0016774 ! phosphotransferase activity, carboxyl group as acceptor
+
+[Term]
+id: GO:0004619
+name: phosphoglycerate mutase activity
+def: "Catalysis of the reaction: 2-phospho-D-glycerate = 3-phospho-D-glycerate." [EC:5.4.2.1]
+synonym: "bisphosphoglyceromutase" RELATED [EC:5.4.2.1]
+synonym: "D-phosphoglycerate 2,3-phosphomutase activity" EXACT [EC:5.4.2.1]
+synonym: "diphosphoglycomutase" RELATED [EC:5.4.2.1]
+synonym: "GriP mutase" NARROW [EC:5.4.2.1]
+synonym: "monophosphoglycerate mutase activity" EXACT [EC:5.4.2.1]
+synonym: "monophosphoglyceromutase activity" EXACT [EC:5.4.2.1]
+synonym: "MPGM" RELATED [EC:5.4.2.1]
+synonym: "PGA mutase activity" EXACT [EC:5.4.2.1]
+synonym: "PGAM activity" EXACT [EC:5.4.2.1]
+synonym: "PGM" EXACT []
+synonym: "phosphoglycerate phosphomutase activity" EXACT [EC:5.4.2.1]
+synonym: "phosphoglyceromutase activity" EXACT [EC:5.4.2.1]
+is_a: GO:0016868 ! intramolecular transferase activity, phosphotransferases
+
+[Term]
+id: GO:0004634
+name: phosphopyruvate hydratase activity
+def: "Catalysis of the reaction: 2-phospho-D-glycerate = phosphoenolpyruvate + H2O." [EC:4.2.1.11, ISBN:0198506732]
+synonym: "14-3-2-protein" RELATED [EC:4.2.1.11]
+synonym: "2-phospho-D-glycerate hydro-lyase (phosphoenolpyruvate-forming)" EXACT [EC:4.2.1.11]
+synonym: "2-phospho-D-glycerate hydro-lyase activity" EXACT [EC:4.2.1.11]
+synonym: "2-phospho-D-glycerate-hydrolase activity" EXACT []
+synonym: "2-phosphoglycerate dehydratase activity" EXACT [EC:4.2.1.11]
+synonym: "2-phosphoglycerate enolase activity" EXACT [EC:4.2.1.11]
+synonym: "2-phosphoglyceric dehydratase activity" EXACT [EC:4.2.1.11]
+synonym: "enolase activity" EXACT [EC:4.2.1.11]
+synonym: "gamma-enolase activity" EXACT [EC:4.2.1.11]
+synonym: "nervous-system specific enolase" NARROW [EC:4.2.1.11]
+synonym: "phosphoenolpyruvate hydratase activity" EXACT [EC:4.2.1.11]
+is_a: GO:0016836 ! hydro-lyase activity
+
+[Term]
+id: GO:0004743
+name: pyruvate kinase activity
+def: "Catalysis of the reaction: ATP + pyruvate = ADP + phosphoenolpyruvate." [EC:2.7.1.40]
+synonym: "ATP:pyruvate 2-O-phosphotransferase activity" EXACT [EC:2.7.1.40]
+synonym: "phosphoenol transphosphorylase activity" EXACT [EC:2.7.1.40]
+synonym: "phosphoenolpyruvate kinase activity" EXACT [EC:2.7.1.40]
+is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
+relationship: BFO:0000050 GO:0006096 ! glycolytic process
+
+[Term]
 id: GO:0004871
 name: signal transducer activity
 def: "Conveys a signal across a cell to trigger a change in cell function or state. A signal is a physical entity or change in state that is used to transfer information in order to trigger a response." [GOC:go_curators]
@@ -262,6 +712,69 @@ relationship: BFO:0000050 GO:0030521 ! androgen receptor signaling pathway
 relationship: BFO:0000051 GO:0005497 ! androgen binding
 
 [Term]
+id: GO:0004888
+name: transmembrane signaling receptor activity
+def: "Combining with an extracellular or intracellular signal and transmitting the signal from one side of the membrane to the other to initiate a change in cell activity or state as part of signal transduction." [GOC:go_curators, Wikipedia:Transmembrane_receptor]
+synonym: "non G protein coupled 7TM receptor activity" NARROW []
+synonym: "non-G-protein coupled 7TM receptor activity" NARROW []
+synonym: "non-G-protein-coupled 7TM receptor activity" NARROW []
+synonym: "transmembrane receptor activity" BROAD [GOC:bf, GOC:signaling]
+synonym: "transmembrane signalling receptor activity" EXACT [GOC:mah]
+is_a: GO:0038023 ! signaling receptor activity
+is_a: GO:0099600 ! transmembrane receptor activity
+intersection_of: GO:0099600 ! transmembrane receptor activity
+intersection_of: BFO:0000050 GO:0007165 ! signal transduction
+
+[Term]
+id: GO:0004970
+name: ionotropic glutamate receptor activity
+def: "Catalysis of the transmembrane transfer of an ion by a channel that opens when glutamate has been bound by the channel complex or one of its constituent parts." [ISBN:0198506732]
+is_a: GO:0008066 ! glutamate receptor activity
+is_a: GO:0022824 ! transmitter-gated ion channel activity
+relationship: BFO:0000050 GO:0035235 ! ionotropic glutamate receptor signaling pathway
+
+[Term]
+id: GO:0004972
+name: NMDA glutamate receptor activity
+def: "An cation channel that opens in response to binding by extracellular glutmate, but only if glycine is also bound and the membrane is depolarized.  Voltage gating is indirect, due to ejection of bound magnesium from the pore at permissive voltages." [GOC:mah, PMID:10049997]
+synonym: "N-methyl-D-aspartate selective glutamate receptor activity" EXACT []
+synonym: "NMDA receptor" EXACT []
+is_a: GO:0004970 ! ionotropic glutamate receptor activity
+is_a: GO:0005244 ! voltage-gated ion channel activity
+is_a: GO:0099094 ! ligand-gated cation channel activity
+
+[Term]
+id: GO:0005102
+name: receptor binding
+def: "Interacting selectively and non-covalently with one or more specific sites on a receptor molecule, a macromolecule that undergoes combination with a hormone, neurotransmitter, drug or intracellular messenger to initiate a change in cell function." [GOC:bf, GOC:ceb, ISBN:0198506732]
+synonym: "receptor ligand" NARROW []
+synonym: "receptor-associated protein activity" RELATED []
+is_a: GO:0005515 ! protein binding
+
+[Term]
+id: GO:0005179
+name: hormone activity
+def: "The action characteristic of a hormone, any substance formed in very small amounts in one specialized organ or group of cells and carried (sometimes in the bloodstream) to another organ or group of cells in the same organism, upon which it has a specific regulatory action. The term was originally applied to agents with a stimulatory physiological action in vertebrate animals (as opposed to a chalone, which has a depressant action). Usage is now extended to regulatory compounds in lower animals and plants, and to synthetic substances having comparable effects; all bind receptors and trigger some biological process." [GOC:dph, GOC:mah, ISBN:0198506732]
+synonym: "cAMP generating peptide activity" NARROW []
+synonym: "glycopeptide hormone" NARROW []
+synonym: "lipopeptide hormone" NARROW []
+synonym: "peptide hormone" NARROW []
+is_a: GO:0048018 ! receptor ligand activity
+
+[Term]
+id: GO:0005183
+name: gonadotropin hormone-releasing hormone activity
+def: "The action characteristic of gonadotropin hormone-releasing hormone (GnRH), any of a family of decapeptide amide hormones that are released by the hypothalamus in response to neural and/or chemical stimuli. In at least mammals, upon receptor binding, GnRH causes the release of follicle-stimulating hormone (FSH) and luteinizing hormone (LH) by the anterior pituitary." [ISBN:0198506732, PMID:11026571, Wikipedia:Gonadotropin-releasing_hormone]
+synonym: "GnRH activity" EXACT [ISBN:0198506732]
+synonym: "gonadotrophin hormone-releasing hormone activity" EXACT [GOC:dph]
+synonym: "LH/FSH-RF" EXACT [ISBN:0198506732]
+synonym: "LHRH activity" EXACT [ISBN:0198506732]
+synonym: "luteinizing hormone-releasing factor activity" EXACT [ISBN:0198506732]
+synonym: "luteinizing hormone-releasing hormone activity" EXACT [ISBN:0198506732]
+synonym: "luteinizing hormone/follicle-stimulating hormone releasing factor activity" EXACT [ISBN:0198506732]
+is_a: GO:0005179 ! hormone activity
+
+[Term]
 id: GO:0005215
 name: transporter activity
 def: "Enables the directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells." [GOC:ai, GOC:dgf]
@@ -279,6 +792,31 @@ is_a: GO:0015075 ! ion transmembrane transporter activity
 is_a: GO:0022838 ! substrate-specific channel activity
 
 [Term]
+id: GO:0005230
+name: extracellular ligand-gated ion channel activity
+def: "Enables the transmembrane transfer of an ion by a channel that opens when a specific extracellular ligand has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
+is_a: GO:0015276 ! ligand-gated ion channel activity
+
+[Term]
+id: GO:0005244
+name: voltage-gated ion channel activity
+def: "Enables the transmembrane transfer of an ion by a voltage-gated channel. An ion is an atom or group of atoms carrying an electric charge by virtue of having gained or lost one or more electrons. A voltage-gated channel is a channel whose open state is dependent on the voltage across the membrane in which it is embedded." [GOC:mtg_transport, ISBN:0198506732, ISBN:0815340729]
+synonym: "voltage gated ion channel activity" EXACT []
+synonym: "voltage-dependent ion channel activity" EXACT []
+is_a: GO:0005216 ! ion channel activity
+is_a: GO:0022832 ! voltage-gated channel activity
+relationship: BFO:0000050 GO:0034765 ! regulation of ion transmembrane transport
+
+[Term]
+id: GO:0005261
+name: cation channel activity
+def: "Enables the energy-independent passage of cations across a lipid bilayer down a concentration gradient." [GOC:def, GOC:dph, GOC:mtg_transport, GOC:pr, ISBN:0815340729]
+synonym: "cation diffusion facilitator activity" EXACT []
+synonym: "non-selective cation channel activity" NARROW []
+is_a: GO:0005216 ! ion channel activity
+is_a: GO:0008324 ! cation transmembrane transporter activity
+
+[Term]
 id: GO:0005488
 name: binding
 def: "The selective, non-covalent, often stoichiometric, interaction of a molecule with one or more specific sites on another molecule." [GOC:ceb, GOC:mah, ISBN:0198506732]
@@ -290,6 +828,14 @@ id: GO:0005497
 name: androgen binding
 def: "Interacting selectively and non-covalently with any androgen, male sex hormones." [CHEBI:50113, GOC:jl]
 is_a: GO:0042562 ! hormone binding
+
+[Term]
+id: GO:0005515
+name: protein binding
+def: "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules)." [GOC:go_curators]
+synonym: "glycoprotein binding" NARROW []
+synonym: "protein amino acid binding" EXACT []
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0005575
@@ -336,6 +882,23 @@ id: GO:0005737
 name: cytoplasm
 def: "All of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." [ISBN:0198547684]
 is_a: GO:0044424 ! intracellular part
+
+[Term]
+id: GO:0005739
+name: mitochondrion
+def: "A semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration." [GOC:giardia, ISBN:0198506732]
+synonym: "mitochondria" EXACT []
+is_a: GO:0043231 ! intracellular membrane-bounded organelle
+is_a: GO:0044444 ! cytoplasmic part
+
+[Term]
+id: GO:0005759
+name: mitochondrial matrix
+def: "The gel-like material, with considerable fine structure, that lies in the matrix space, or lumen, of a mitochondrion. It contains the enzymes of the tricarboxylic acid cycle and, in some organisms, the enzymes concerned with fatty acid oxidation." [GOC:as, ISBN:0198506732]
+synonym: "mitochondrial lumen" EXACT []
+synonym: "mitochondrial stroma" NARROW []
+is_a: GO:0044429 ! mitochondrial part
+is_a: GO:0070013 ! intracellular organelle lumen
 
 [Term]
 id: GO:0005764
@@ -432,11 +995,25 @@ is_a: GO:0005975 ! carbohydrate metabolic process
 is_a: GO:0044281 ! small molecule metabolic process
 
 [Term]
+id: GO:0006000
+name: fructose metabolic process
+def: "The chemical reactions and pathways involving fructose, the ketohexose arabino-2-hexulose. Fructose exists in a open chain form or as a ring compound. D-fructose is the sweetest of the sugars and is found free in a large number of fruits and honey." [ISBN:0198506732]
+synonym: "fructose metabolism" EXACT []
+is_a: GO:0019318 ! hexose metabolic process
+
+[Term]
 id: GO:0006006
 name: glucose metabolic process
 def: "The chemical reactions and pathways involving glucose, the aldohexose gluco-hexose. D-glucose is dextrorotatory and is sometimes known as dextrose; it is an important source of energy for living organisms and is found free as well as combined in homo- and hetero-oligosaccharides and polysaccharides." [ISBN:0198506732]
 synonym: "cellular glucose metabolic process" EXACT [GOC:vw]
 synonym: "glucose metabolism" EXACT []
+is_a: GO:0019318 ! hexose metabolic process
+
+[Term]
+id: GO:0006012
+name: galactose metabolic process
+def: "The chemical reactions and pathways involving galactose, the aldohexose galacto-hexose. D-galactose is widely distributed in combined form in plants, animals and microorganisms as a constituent of oligo- and polysaccharides; it also occurs in galactolipids and as its glucoside in lactose and melibiose." [ISBN:0198506732]
+synonym: "galactose metabolism" EXACT []
 is_a: GO:0019318 ! hexose metabolic process
 
 [Term]
@@ -472,6 +1049,14 @@ is_a: GO:0044281 ! small molecule metabolic process
 is_a: GO:0071704 ! organic substance metabolic process
 
 [Term]
+id: GO:0006090
+name: pyruvate metabolic process
+def: "The chemical reactions and pathways involving pyruvate, 2-oxopropanoate." [GOC:go_curators]
+synonym: "pyruvate dehydrogenase bypass" RELATED []
+synonym: "pyruvate metabolism" EXACT []
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
+
+[Term]
 id: GO:0006091
 name: generation of precursor metabolites and energy
 def: "The chemical reactions and pathways resulting in the formation of precursor metabolites, substances from which energy is derived, and any process involved in the liberation of energy from these substances." [GOC:jl]
@@ -490,6 +1075,43 @@ is_a: GO:0006006 ! glucose metabolic process
 is_a: GO:0019319 ! hexose biosynthetic process
 
 [Term]
+id: GO:0006096
+name: glycolytic process
+def: "The chemical reactions and pathways resulting in the breakdown of a carbohydrate into pyruvate, with the concomitant production of a small amount of ATP and the reduction of NAD(P) to NAD(P)H. Glycolysis begins with the metabolism of a carbohydrate to generate products that can enter the pathway and ends with the production of pyruvate. Pyruvate may be converted to acetyl-coenzyme A, ethanol, lactate, or other small molecules." [GOC:bf, GOC:dph, ISBN:0201090910, ISBN:0716720094, ISBN:0879010479, Wikipedia:Glycolysis]
+synonym: "anaerobic glycolysis" RELATED []
+synonym: "Embden-Meyerhof pathway" RELATED []
+synonym: "Embden-Meyerhof-Parnas pathway" RELATED []
+synonym: "glycolysis" RELATED [GOC:dph]
+synonym: "modifed Embden-Meyerhof pathway" RELATED []
+is_a: GO:0006090 ! pyruvate metabolic process
+is_a: GO:0006757 ! ATP generation from ADP
+is_a: GO:0016052 ! carbohydrate catabolic process
+is_a: GO:0046496 ! nicotinamide nucleotide metabolic process
+relationship: BFO:0000051 GO:0004618 ! phosphoglycerate kinase activity
+relationship: BFO:0000051 GO:0004619 ! phosphoglycerate mutase activity
+relationship: BFO:0000051 GO:0004634 ! phosphopyruvate hydratase activity
+relationship: BFO:0000051 GO:0004743 ! pyruvate kinase activity
+relationship: BFO:0000051 GO:0043891 ! glyceraldehyde-3-phosphate dehydrogenase (NAD(P)+) (phosphorylating) activity
+
+[Term]
+id: GO:0006099
+name: tricarboxylic acid cycle
+def: "A nearly universal metabolic pathway in which the acetyl group of acetyl coenzyme A is effectively oxidized to two CO2 and four pairs of electrons are transferred to coenzymes. The acetyl group combines with oxaloacetate to form citrate, which undergoes successive transformations to isocitrate, 2-oxoglutarate, succinyl-CoA, succinate, fumarate, malate, and oxaloacetate again, thus completing the cycle. In eukaryotes the tricarboxylic acid is confined to the mitochondria. See also glyoxylate cycle." [ISBN:0198506732]
+synonym: "citric acid cycle" EXACT []
+synonym: "Krebs cycle" EXACT []
+synonym: "TCA cycle" EXACT []
+is_a: GO:0006101 ! citrate metabolic process
+is_a: GO:0044238 ! primary metabolic process
+relationship: BFO:0000050 GO:0009060 ! aerobic respiration
+
+[Term]
+id: GO:0006101
+name: citrate metabolic process
+def: "The chemical reactions and pathways involving citrate, 2-hydroxy-1,2,3-propanetricarboyxlate. Citrate is widely distributed in nature and is an important intermediate in the TCA cycle and the glyoxylate cycle." [ISBN:0198506732]
+synonym: "citrate metabolism" EXACT []
+is_a: GO:0072350 ! tricarboxylic acid metabolic process
+
+[Term]
 id: GO:0006109
 name: regulation of carbohydrate metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving carbohydrates." [GOC:go_curators]
@@ -498,6 +1120,19 @@ is_a: GO:0080090 ! regulation of primary metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0005975 ! carbohydrate metabolic process
 relationship: RO:0002211 GO:0005975 ! carbohydrate metabolic process
+
+[Term]
+id: GO:0006110
+name: regulation of glycolytic process
+def: "Any process that modulates the frequency, rate or extent of glycolysis." [GOC:go_curators]
+is_a: GO:0042325 ! regulation of phosphorylation
+is_a: GO:0043467 ! regulation of generation of precursor metabolites and energy
+is_a: GO:0043470 ! regulation of carbohydrate catabolic process
+is_a: GO:0051196 ! regulation of coenzyme metabolic process
+is_a: GO:1903578 ! regulation of ATP metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006096 ! glycolytic process
+relationship: RO:0002211 GO:0006096 ! glycolytic process
 
 [Term]
 id: GO:0006111
@@ -532,6 +1167,34 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 is_a: GO:0044238 ! primary metabolic process
 is_a: GO:0046483 ! heterocycle metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
+
+[Term]
+id: GO:0006140
+name: regulation of nucleotide metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving nucleotides." [GOC:go_curators]
+synonym: "regulation of nucleotide metabolism" EXACT []
+is_a: GO:0019219 ! regulation of nucleobase-containing compound metabolic process
+is_a: GO:0019220 ! regulation of phosphate metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0009117 ! nucleotide metabolic process
+relationship: RO:0002211 GO:0009117 ! nucleotide metabolic process
+
+[Term]
+id: GO:0006163
+name: purine nucleotide metabolic process
+def: "The chemical reactions and pathways involving a purine nucleotide, a compound consisting of nucleoside (a purine base linked to a deoxyribose or ribose sugar) esterified with a phosphate group at either the 3' or 5'-hydroxyl group of the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine metabolic process" NARROW []
+synonym: "purine metabolism" NARROW []
+synonym: "purine nucleotide metabolism" EXACT []
+is_a: GO:0009117 ! nucleotide metabolic process
+is_a: GO:0072521 ! purine-containing compound metabolic process
+
+[Term]
+id: GO:0006165
+name: nucleoside diphosphate phosphorylation
+def: "The process of introducing a phosphate group into a nucleoside diphosphate to produce a nucleoside triphosphate." [GOC:ai]
+is_a: GO:0009132 ! nucleoside diphosphate metabolic process
+is_a: GO:0046939 ! nucleotide phosphorylation
 
 [Term]
 id: GO:0006259
@@ -623,6 +1286,18 @@ synonym: "transcription from Pol II promoter" EXACT []
 is_a: GO:0006351 ! transcription, DNA-templated
 
 [Term]
+id: GO:0006390
+name: transcription from mitochondrial promoter
+def: "The synthesis of RNA from a mitochondrial DNA template, usually by a specific mitochondrial RNA polymerase." [GOC:jl]
+synonym: "mitochondrial transcription" EXACT []
+is_a: GO:0000959 ! mitochondrial RNA metabolic process
+is_a: GO:0006351 ! transcription, DNA-templated
+intersection_of: GO:0006351 ! transcription, DNA-templated
+intersection_of: BFO:0000050 GO:0140053 ! mitochondrial gene expression
+intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
+relationship: BFO:0000050 GO:0140053 ! mitochondrial gene expression
+
+[Term]
 id: GO:0006464
 name: cellular protein modification process
 def: "The covalent alteration of one or more amino acids occurring in proteins, peptides and nascent polypeptides (co-translational, post-translational modifications) occurring at the level of an individual cell. Includes the modification of charged tRNAs that are destined to occur in a protein (pre-translation modification)." [GOC:go_curators]
@@ -671,6 +1346,13 @@ is_a: GO:0080090 ! regulation of primary metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006520 ! cellular amino acid metabolic process
 relationship: RO:0002211 GO:0006520 ! cellular amino acid metabolic process
+
+[Term]
+id: GO:0006541
+name: glutamine metabolic process
+def: "The chemical reactions and pathways involving glutamine, 2-amino-4-carbamoylbutanoic acid." [GOC:ai]
+synonym: "glutamine metabolism" EXACT []
+is_a: GO:0009064 ! glutamine family amino acid metabolic process
 
 [Term]
 id: GO:0006547
@@ -734,6 +1416,14 @@ is_a: GO:0044238 ! primary metabolic process
 is_a: GO:0071704 ! organic substance metabolic process
 
 [Term]
+id: GO:0006631
+name: fatty acid metabolic process
+def: "The chemical reactions and pathways involving fatty acids, aliphatic monocarboxylic acids liberated from naturally occurring fats and oils by hydrolysis." [ISBN:0198547684]
+synonym: "fatty acid metabolism" EXACT []
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
+is_a: GO:0044255 ! cellular lipid metabolic process
+
+[Term]
 id: GO:0006694
 name: steroid biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of steroids, compounds with a 1,2,cyclopentanoperhydrophenanthrene nucleus; includes de novo formation and steroid interconversion by modification." [GOC:go_curators]
@@ -769,6 +1459,43 @@ synonym: "aromatic hydrocarbon metabolism" NARROW []
 is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
+id: GO:0006732
+name: coenzyme metabolic process
+def: "The chemical reactions and pathways involving coenzymes, any of various nonprotein organic cofactors that are required, in addition to an enzyme and a substrate, for an enzymatic reaction to proceed." [ISBN:0198506732]
+synonym: "coenzyme and prosthetic group metabolic process" BROAD []
+synonym: "coenzyme and prosthetic group metabolism" BROAD []
+synonym: "coenzyme metabolism" EXACT []
+synonym: "group transfer coenzyme metabolic process" NARROW []
+synonym: "group transfer coenzyme metabolism" NARROW []
+is_a: GO:0051186 ! cofactor metabolic process
+
+[Term]
+id: GO:0006733
+name: oxidoreduction coenzyme metabolic process
+def: "The chemical reactions and pathways involving coenzymes that are required, in addition to an enzyme and a substrate, for an oxidoreductase reaction to proceed." [GOC:mah]
+synonym: "oxidoreduction coenzyme metabolism" EXACT []
+is_a: GO:0006732 ! coenzyme metabolic process
+
+[Term]
+id: GO:0006753
+name: nucleoside phosphate metabolic process
+def: "The chemical reactions and pathways involving any phosphorylated nucleoside." [GOC:mah]
+synonym: "nucleoside phosphate metabolism" EXACT []
+is_a: GO:0006796 ! phosphate-containing compound metabolic process
+is_a: GO:0019637 ! organophosphate metabolic process
+is_a: GO:0055086 ! nucleobase-containing small molecule metabolic process
+
+[Term]
+id: GO:0006757
+name: ATP generation from ADP
+def: "The process of introducing a phosphate group into ADP, adenosine diphosphate, to produce ATP." [GOC:ai]
+synonym: "ADP phosphorylation" EXACT [GOC:dph]
+is_a: GO:0006091 ! generation of precursor metabolites and energy
+is_a: GO:0006165 ! nucleoside diphosphate phosphorylation
+is_a: GO:0046031 ! ADP metabolic process
+is_a: GO:0046034 ! ATP metabolic process
+
+[Term]
 id: GO:0006790
 name: sulfur compound metabolic process
 def: "The chemical reactions and pathways involving the nonmetallic element sulfur or compounds that contain sulfur, such as the amino acids methionine and cysteine or the tripeptide glutathione." [GOC:ai]
@@ -776,6 +1503,21 @@ synonym: "sulfur metabolism" EXACT []
 synonym: "sulphur metabolic process" EXACT []
 synonym: "sulphur metabolism" EXACT []
 is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0006793
+name: phosphorus metabolic process
+def: "The chemical reactions and pathways involving the nonmetallic element phosphorus or compounds that contain phosphorus, usually in the form of a phosphate group (PO4)." [GOC:ai]
+synonym: "phosphorus metabolism" EXACT []
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0006796
+name: phosphate-containing compound metabolic process
+def: "The chemical reactions and pathways involving the phosphate group, the anion or salt of any phosphoric acid." [GOC:ai]
+synonym: "phosphate metabolic process" RELATED []
+synonym: "phosphate metabolism" EXACT []
+is_a: GO:0006793 ! phosphorus metabolic process
 
 [Term]
 id: GO:0006807
@@ -814,6 +1556,15 @@ synonym: "iron transport" EXACT []
 is_a: GO:0000041 ! transition metal ion transport
 
 [Term]
+id: GO:0006839
+name: mitochondrial transport
+def: "Transport of substances into, out of or within a mitochondrion." [GOC:ai]
+synonym: "mitochondrial alpha-ketoglutarate/malate transport" NARROW []
+synonym: "mitochondrial aspartate/glutamate transport" NARROW []
+synonym: "mitochondrial sodium/calcium ion exchange" NARROW []
+is_a: GO:0046907 ! intracellular transport
+
+[Term]
 id: GO:0006950
 name: response to stress
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a disturbance in organismal or cellular homeostasis, usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." [GOC:mah]
@@ -839,6 +1590,13 @@ synonym: "Inflammation" BROAD []
 is_a: GO:0006952 ! defense response
 
 [Term]
+id: GO:0006955
+name: immune response
+def: "Any immune system process that functions in the calibrated response of an organism to a potential internal or invasive threat." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05]
+is_a: GO:0002376 ! immune system process
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
 id: GO:0006968
 name: cellular defense response
 def: "A defense response that is mediated by cells." [GOC:ebc]
@@ -854,6 +1612,25 @@ synonym: "DNA damage response" EXACT []
 synonym: "response to DNA damage stimulus" BROAD []
 synonym: "response to genotoxic stress" EXACT []
 is_a: GO:0033554 ! cellular response to stress
+
+[Term]
+id: GO:0006996
+name: organelle organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of an organelle within a cell. An organelle is an organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." [GOC:mah]
+synonym: "organelle organisation" EXACT [GOC:curators]
+synonym: "organelle organization and biogenesis" RELATED [GOC:dph, GOC:jl, GOC:mah]
+synonym: "single organism organelle organization" EXACT [GOC:TermGenie]
+synonym: "single-organism organelle organization" RELATED []
+is_a: GO:0016043 ! cellular component organization
+
+[Term]
+id: GO:0007005
+name: mitochondrion organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a mitochondrion; includes mitochondrial morphogenesis and distribution, and replication of the mitochondrial genome as well as synthesis of new mitochondrial components." [GOC:dph, GOC:jl, GOC:mah, GOC:sgd_curators, PMID:9786946]
+synonym: "mitochondria organization" EXACT [GOC:mah]
+synonym: "mitochondrion organisation" EXACT [GOC:mah]
+synonym: "mitochondrion organization and biogenesis" RELATED [GOC:curators]
+is_a: GO:0006996 ! organelle organization
 
 [Term]
 id: GO:0007034
@@ -888,6 +1665,38 @@ relationship: BFO:0000050 GO:0023052 ! signaling
 relationship: BFO:0000050 GO:0051716 ! cellular response to stimulus
 
 [Term]
+id: GO:0007166
+name: cell surface receptor signaling pathway
+def: "A series of molecular signals initiated by activation of a receptor on the surface of a cell. The pathway begins with binding of an extracellular ligand to a cell surface receptor, or for receptors that signal in the absence of a ligand, by ligand-withdrawal or the activity of a constitutively active receptor. The pathway ends with regulation of a downstream cellular process, e.g. transcription." [GOC:bf, GOC:mah, GOC:pr, GOC:signaling]
+synonym: "cell surface receptor linked signal transduction" EXACT []
+synonym: "cell surface receptor linked signaling pathway" EXACT [GOC:bf]
+synonym: "cell surface receptor linked signalling pathway" EXACT [GOC:mah]
+is_a: GO:0007165 ! signal transduction
+
+[Term]
+id: GO:0007215
+name: glutamate receptor signaling pathway
+def: "A series of molecular signals initiated by the binding of glutamate to a glutamate receptor on the surface of a target cell, and ending with regulation of a downstream cellular process, e.g. transcription." [GOC:mah, GOC:signaling, PMID:9131252]
+synonym: "glutamate signaling pathway" EXACT [GOC:bf]
+synonym: "glutamate signalling pathway" EXACT []
+is_a: GO:0007166 ! cell surface receptor signaling pathway
+relationship: BFO:0000051 GO:0008066 ! glutamate receptor activity
+
+[Term]
+id: GO:0007264
+name: small GTPase mediated signal transduction
+def: "Any series of molecular signals in which a small monomeric GTPase relays one or more of the signals." [GOC:mah]
+synonym: "small GTPase-mediated signal transduction" EXACT []
+is_a: GO:0035556 ! intracellular signal transduction
+
+[Term]
+id: GO:0007265
+name: Ras protein signal transduction
+def: "A series of molecular signals within the cell that are mediated by a member of the Ras superfamily of proteins switching to a GTP-bound active state." [GOC:bf]
+synonym: "Ras mediated signal transduction" EXACT []
+is_a: GO:0007264 ! small GTPase mediated signal transduction
+
+[Term]
 id: GO:0007267
 name: cell-cell signaling
 def: "Any process that mediates the transfer of information from one cell to another. This process includes signal transduction in the receiving cell and, where applicable, release of a ligand and any processes that actively facilitate its transport and presentation to the receiving cell.  Examples include signaling via soluble ligands, via cell adhesion molecules and via gap junctions." [GOC:dos, GOC:mah]
@@ -896,11 +1705,28 @@ is_a: GO:0007154 ! cell communication
 is_a: GO:0023052 ! signaling
 
 [Term]
+id: GO:0007565
+name: female pregnancy
+def: "The set of physiological processes that allow an embryo or foetus to develop within the body of a female animal. It covers the time from fertilization of a female ovum by a male spermatozoon until birth." [ISBN:0192800825]
+synonym: "carrying of young" RELATED []
+synonym: "gestation" EXACT []
+is_a: GO:0044703 ! multi-organism reproductive process
+is_a: GO:0044706 ! multi-multicellular organism process
+
+[Term]
 id: GO:0007568
 name: aging
 def: "A developmental process that is a deterioration and loss of function over time. Aging includes loss of functions such as resistance to disease, homeostasis, and fertility, as well as wear and tear. Aging includes cellular senescence, but is more inclusive. May precede death and may succeed developmental maturation (GO:0021700)." [GOC:PO_curators]
 synonym: "ageing" EXACT []
 is_a: GO:0032502 ! developmental process
+
+[Term]
+id: GO:0007585
+name: respiratory gaseous exchange
+def: "The process of gaseous exchange between an organism and its environment. In plants, microorganisms, and many small animals, air or water makes direct contact with the organism's cells or tissue fluids, and the processes of diffusion supply the organism with dioxygen (O2) and remove carbon dioxide (CO2). In larger animals the efficiency of gaseous exchange is improved by specialized respiratory organs, such as lungs and gills, which are ventilated by breathing mechanisms." [ISBN:0198506732]
+synonym: "breathing" BROAD []
+synonym: "respiration" BROAD []
+is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0007610
@@ -925,6 +1751,20 @@ id: GO:0007613
 name: memory
 def: "The activities involved in the mental information processing system that receives (registers), modifies, stores, and retrieves informational stimuli. The main stages involved in the formation and retrieval of memory are encoding (processing of received information by acquisition), storage (building a permanent record of received information as a result of consolidation) and retrieval (calling back the stored information and use it in a suitable way to execute a given task)." [GOC:curators, http://www.onelook.com/, ISBN:0582227089]
 is_a: GO:0007611 ! learning or memory
+
+[Term]
+id: GO:0008015
+name: blood circulation
+def: "The flow of blood through the body of an animal, enabling the transport of nutrients to the tissues and the removal of waste products." [GOC:mtg_heart, ISBN:0192800825]
+synonym: "hemolymph circulation" RELATED []
+is_a: GO:0003013 ! circulatory system process
+
+[Term]
+id: GO:0008066
+name: glutamate receptor activity
+def: "Combining with glutamate and transmitting the signal from one side of the membrane to the other to initiate a change in cell activity." [GOC:ai, GOC:signaling]
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+relationship: BFO:0000051 GO:0016595 ! glutamate binding
 
 [Term]
 id: GO:0008150
@@ -961,6 +1801,14 @@ synonym: "bile acid metabolism" EXACT []
 is_a: GO:0008202 ! steroid metabolic process
 is_a: GO:0032787 ! monocarboxylic acid metabolic process
 is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0008324
+name: cation transmembrane transporter activity
+def: "Enables the transfer of cation from one side of the membrane to the other." [GOC:dgf, GOC:mtg_transport, ISBN:0815340729]
+synonym: "transmembrane cation transporter activity" EXACT []
+is_a: GO:0015075 ! ion transmembrane transporter activity
+relationship: BFO:0000050 GO:0098655 ! cation transmembrane transport
 
 [Term]
 id: GO:0008610
@@ -1033,6 +1881,12 @@ is_a: GO:0043170 ! macromolecule metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
+id: GO:0009060
+name: aerobic respiration
+def: "The enzymatic release of energy from inorganic and organic compounds (especially carbohydrates and fats) which requires oxygen as the terminal electron acceptor." [GOC:das, GOC:jl, ISBN:0140513590]
+is_a: GO:0045333 ! cellular respiration
+
+[Term]
 id: GO:0009063
 name: cellular amino acid catabolic process
 def: "The chemical reactions and pathways resulting in the breakdown of amino acids, organic acids containing one or more amino substituents." [GOC:ai]
@@ -1043,6 +1897,13 @@ synonym: "cellular amino acid degradation" EXACT []
 is_a: GO:0006520 ! cellular amino acid metabolic process
 is_a: GO:0046395 ! carboxylic acid catabolic process
 is_a: GO:1901565 ! organonitrogen compound catabolic process
+
+[Term]
+id: GO:0009064
+name: glutamine family amino acid metabolic process
+def: "The chemical reactions and pathways involving amino acids of the glutamine family, comprising arginine, glutamate, glutamine and proline." [GOC:ai]
+synonym: "glutamine family amino acid metabolism" EXACT []
+is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
 id: GO:0009069
@@ -1111,6 +1972,122 @@ is_a: GO:0009100 ! glycoprotein metabolic process
 is_a: GO:0034645 ! cellular macromolecule biosynthetic process
 is_a: GO:1901137 ! carbohydrate derivative biosynthetic process
 is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
+id: GO:0009117
+name: nucleotide metabolic process
+def: "The chemical reactions and pathways involving a nucleotide, a nucleoside that is esterified with (ortho)phosphate or an oligophosphate at any hydroxyl group on the glycose moiety; may be mono-, di- or triphosphate; this definition includes cyclic nucleotides (nucleoside cyclic phosphates)." [GOC:ma]
+synonym: "nucleotide metabolism" EXACT []
+is_a: GO:0006753 ! nucleoside phosphate metabolic process
+
+[Term]
+id: GO:0009123
+name: nucleoside monophosphate metabolic process
+def: "The chemical reactions and pathways involving a nucleoside monophosphate, a compound consisting of a nucleobase linked to a deoxyribose or ribose sugar esterified with phosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "nucleoside monophosphate metabolism" EXACT []
+is_a: GO:0006753 ! nucleoside phosphate metabolic process
+
+[Term]
+id: GO:0009126
+name: purine nucleoside monophosphate metabolic process
+def: "The chemical reactions and pathways involving purine nucleoside monophosphate, a compound consisting of a purine base linked to a ribose or deoxyribose sugar esterified with phosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine nucleoside monophosphate metabolism" EXACT []
+is_a: GO:0009123 ! nucleoside monophosphate metabolic process
+
+[Term]
+id: GO:0009132
+name: nucleoside diphosphate metabolic process
+def: "The chemical reactions and pathways involving a nucleoside diphosphate, a compound consisting of a nucleobase linked to a deoxyribose or ribose sugar esterified with diphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "nucleoside diphosphate metabolism" EXACT []
+is_a: GO:0006753 ! nucleoside phosphate metabolic process
+
+[Term]
+id: GO:0009135
+name: purine nucleoside diphosphate metabolic process
+def: "The chemical reactions and pathways involving purine nucleoside diphosphate, a compound consisting of a purine base linked to a ribose or deoxyribose sugar esterified with diphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine nucleoside diphosphate metabolism" EXACT []
+is_a: GO:0009132 ! nucleoside diphosphate metabolic process
+
+[Term]
+id: GO:0009141
+name: nucleoside triphosphate metabolic process
+def: "The chemical reactions and pathways involving a nucleoside triphosphate, a compound consisting of a nucleobase linked to a deoxyribose or ribose sugar esterified with triphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "nucleoside triphosphate metabolism" EXACT []
+is_a: GO:0006753 ! nucleoside phosphate metabolic process
+
+[Term]
+id: GO:0009144
+name: purine nucleoside triphosphate metabolic process
+def: "The chemical reactions and pathways involving purine nucleoside triphosphate, a compound consisting of a purine base linked to a ribose or deoxyribose sugar esterified with triphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine nucleoside triphosphate metabolism" EXACT []
+is_a: GO:0009141 ! nucleoside triphosphate metabolic process
+
+[Term]
+id: GO:0009150
+name: purine ribonucleotide metabolic process
+def: "The chemical reactions and pathways involving a purine ribonucleotide, a compound consisting of ribonucleoside (a purine base linked to a ribose sugar) esterified with a phosphate group at either the 3' or 5'-hydroxyl group of the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine ribonucleotide metabolism" EXACT []
+is_a: GO:0006163 ! purine nucleotide metabolic process
+is_a: GO:0009259 ! ribonucleotide metabolic process
+
+[Term]
+id: GO:0009161
+name: ribonucleoside monophosphate metabolic process
+def: "The chemical reactions and pathways involving a ribonucleoside monophosphate, a compound consisting of a nucleobase linked to a ribose sugar esterified with phosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "ribonucleoside monophosphate metabolism" EXACT []
+is_a: GO:0009123 ! nucleoside monophosphate metabolic process
+
+[Term]
+id: GO:0009167
+name: purine ribonucleoside monophosphate metabolic process
+def: "The chemical reactions and pathways involving purine ribonucleoside monophosphate, a compound consisting of a purine base linked to a ribose sugar esterified with phosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine ribonucleoside monophosphate metabolism" EXACT []
+is_a: GO:0009126 ! purine nucleoside monophosphate metabolic process
+is_a: GO:0009161 ! ribonucleoside monophosphate metabolic process
+
+[Term]
+id: GO:0009179
+name: purine ribonucleoside diphosphate metabolic process
+def: "The chemical reactions and pathways involving purine ribonucleoside diphosphate, a compound consisting of a purine base linked to a ribose sugar esterified with diphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine ribonucleoside diphosphate metabolism" EXACT []
+is_a: GO:0009135 ! purine nucleoside diphosphate metabolic process
+is_a: GO:0009185 ! ribonucleoside diphosphate metabolic process
+
+[Term]
+id: GO:0009185
+name: ribonucleoside diphosphate metabolic process
+def: "The chemical reactions and pathways involving a ribonucleoside diphosphate, a compound consisting of a nucleobase linked to a ribose sugar esterified with diphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "ribonucleoside diphosphate metabolism" EXACT []
+is_a: GO:0009132 ! nucleoside diphosphate metabolic process
+
+[Term]
+id: GO:0009199
+name: ribonucleoside triphosphate metabolic process
+def: "The chemical reactions and pathways involving a ribonucleoside triphosphate, a compound consisting of a nucleobase linked to a ribose sugar esterified with triphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "ribonucleoside triphosphate metabolism" EXACT []
+is_a: GO:0009141 ! nucleoside triphosphate metabolic process
+
+[Term]
+id: GO:0009205
+name: purine ribonucleoside triphosphate metabolic process
+def: "The chemical reactions and pathways involving purine ribonucleoside triphosphate, a compound consisting of a purine base linked to a ribose sugar esterified with triphosphate on the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "purine ribonucleoside triphosphate metabolism" EXACT []
+is_a: GO:0009144 ! purine nucleoside triphosphate metabolic process
+is_a: GO:0009199 ! ribonucleoside triphosphate metabolic process
+
+[Term]
+id: GO:0009259
+name: ribonucleotide metabolic process
+def: "The chemical reactions and pathways involving a ribonucleotide, a compound consisting of ribonucleoside (a base linked to a ribose sugar) esterified with a phosphate group at either the 3' or 5'-hydroxyl group of the sugar." [GOC:go_curators, ISBN:0198506732]
+synonym: "ribonucleotide metabolism" EXACT []
+is_a: GO:0009117 ! nucleotide metabolic process
+is_a: GO:0019693 ! ribose phosphate metabolic process
+
+[Term]
+id: GO:0009295
+name: nucleoid
+def: "The region of a virus, bacterial cell, mitochondrion or chloroplast to which the nucleic acid is confined." [GOC:bm, GOC:ma, ISBN:3540076689]
+is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0009308
@@ -1353,6 +2330,16 @@ def: "Any process that modulates the levels of hormone within an organism or a t
 is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
+id: GO:0010821
+name: regulation of mitochondrion organization
+def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of a mitochondrion." [GOC:dph, GOC:tb]
+synonym: "regulation of mitochondrion organisation" EXACT [GOC:mah]
+is_a: GO:0033043 ! regulation of organelle organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007005 ! mitochondrion organization
+relationship: RO:0002211 GO:0007005 ! mitochondrion organization
+
+[Term]
 id: GO:0010827
 name: regulation of glucose transport
 def: "Any process that modulates the frequency, rate or extent of glucose transport. Glucose transport is the directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:dph, GOC:tb]
@@ -1388,6 +2375,15 @@ is_a: GO:0010675 ! regulation of cellular carbohydrate metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006006 ! glucose metabolic process
 relationship: RO:0002211 GO:0006006 ! glucose metabolic process
+
+[Term]
+id: GO:0010911
+name: regulation of isomerase activity
+def: "Any process that modulates the activity of an isomerase. An isomerase catalyzes the geometric or structural changes within one molecule. Isomerase is the systematic name for any enzyme of EC class 5." [GOC:dph, GOC:tb]
+is_a: GO:0050790 ! regulation of catalytic activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016853 ! isomerase activity
+relationship: RO:0002211 GO:0016853 ! isomerase activity
 
 [Term]
 id: GO:0010959
@@ -1426,6 +2422,14 @@ synonym: "pore class transporter activity" RELATED []
 is_a: GO:0022803 ! passive transmembrane transporter activity
 
 [Term]
+id: GO:0015276
+name: ligand-gated ion channel activity
+def: "Enables the transmembrane transfer of an ion by a channel that opens when a specific ligand has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
+synonym: "ionotropic receptor activity" NARROW [GOC:bf, GOC:sart]
+is_a: GO:0005216 ! ion channel activity
+is_a: GO:0022834 ! ligand-gated channel activity
+
+[Term]
 id: GO:0015749
 name: monosaccharide transport
 def: "The directed movement of monosaccharides into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Monosaccharides are the simplest carbohydrates; they are polyhydric alcohols containing either an aldehyde or a keto group and between three to ten or more carbon atoms. They form the constitutional repeating units of oligo- and polysaccharides." [GOC:ai]
@@ -1445,6 +2449,28 @@ is_a: GO:0042886 ! amide transport
 is_a: GO:0071702 ! organic substance transport
 
 [Term]
+id: GO:0015837
+name: amine transport
+def: "The directed movement of amines, including polyamines, organic compounds containing one or more amino groups, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai, ISBN:0198506732]
+synonym: "amine/polyamine transport" RELATED []
+is_a: GO:0071702 ! organic substance transport
+is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
+id: GO:0015844
+name: monoamine transport
+def: "The directed movement of monoamines, organic compounds that contain one amino group that is connected to an aromatic ring by an ethylene group (-CH2-CH2-), into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [CHEBI:25375, GOC:mah]
+is_a: GO:0071702 ! organic substance transport
+is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
+id: GO:0015850
+name: organic hydroxy compound transport
+def: "The directed movement of an organic hydroxy compound (organic alcohol) into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. An organic hydroxy compound is an organic compound having at least one hydroxy group attached to a carbon atom." [CHEBI:33822, GOC:ai]
+synonym: "organic alcohol transport" EXACT [CHEBI:33822]
+is_a: GO:0071702 ! organic substance transport
+
+[Term]
 id: GO:0015980
 name: energy derivation by oxidation of organic compounds
 def: "The chemical reactions and pathways by which a cell derives energy from organic compounds; results in the oxidation of the compounds from which energy is released." [GOC:mah]
@@ -1459,6 +2485,19 @@ def: "A lipid bilayer along with all the proteins and protein complexes embedded
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0016043
+name: cellular component organization
+def: "A process that results in the assembly, arrangement of constituent parts, or disassembly of a cellular component." [GOC:ai, GOC:jl, GOC:mah]
+synonym: "cell organisation" EXACT []
+synonym: "cell organization and biogenesis" RELATED [GOC:mah]
+synonym: "cellular component organisation at cellular level" EXACT [GOC:mah]
+synonym: "cellular component organisation in other organism" EXACT [GOC:mah]
+synonym: "cellular component organization at cellular level" EXACT []
+synonym: "cellular component organization in other organism" EXACT []
+is_a: GO:0009987 ! cellular process
+is_a: GO:0071840 ! cellular component organization or biogenesis
+
+[Term]
 id: GO:0016051
 name: carbohydrate biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of carbohydrates, any of a group of organic compounds based of the general formula Cx(H2O)y." [ISBN:0198506732]
@@ -1470,6 +2509,19 @@ synonym: "carbohydrate formation" EXACT []
 synonym: "carbohydrate synthesis" EXACT []
 is_a: GO:0005975 ! carbohydrate metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:0016052
+name: carbohydrate catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of carbohydrates, any of a group of organic compounds based of the general formula Cx(H2O)y." [ISBN:0198506732]
+synonym: "carbohydrate breakdown" EXACT []
+synonym: "carbohydrate catabolism" EXACT []
+synonym: "carbohydrate degradation" EXACT []
+synonym: "catabolic carbohydrate metabolic process" EXACT []
+synonym: "catabolic carbohydrate metabolism" EXACT []
+synonym: "single-organism carbohydrate catabolic process" RELATED []
+is_a: GO:0005975 ! carbohydrate metabolic process
+is_a: GO:1901575 ! organic substance catabolic process
 
 [Term]
 id: GO:0016053
@@ -1495,6 +2547,13 @@ is_a: GO:0006082 ! organic acid metabolic process
 is_a: GO:0044248 ! cellular catabolic process
 is_a: GO:0044282 ! small molecule catabolic process
 is_a: GO:1901575 ! organic substance catabolic process
+
+[Term]
+id: GO:0016064
+name: immunoglobulin mediated immune response
+def: "An immune response mediated by immunoglobulins, whether cell-bound or in solution." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "antibody-mediated immune response" EXACT []
+is_a: GO:0019724 ! B cell mediated immunity
 
 [Term]
 id: GO:0016070
@@ -1525,6 +2584,20 @@ is_a: GO:0016125 ! sterol metabolic process
 is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
+id: GO:0016301
+name: kinase activity
+def: "Catalysis of the transfer of a phosphate group, usually from ATP, to a substrate molecule." [ISBN:0198506732]
+synonym: "phosphokinase activity" EXACT []
+is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
+relationship: BFO:0000050 GO:0016310 ! phosphorylation
+
+[Term]
+id: GO:0016310
+name: phosphorylation
+def: "The process of introducing a phosphate group into a molecule, usually with the formation of a phosphoric ester, a phosphoric anhydride or a phosphoric amide." [ISBN:0198506732]
+is_a: GO:0006796 ! phosphate-containing compound metabolic process
+
+[Term]
 id: GO:0016491
 name: oxidoreductase activity
 def: "Catalysis of an oxidation-reduction (redox) reaction, a reversible chemical reaction in which the oxidation state of an atom or atoms within a molecule is altered. One substrate acts as a hydrogen or electron donor and becomes oxidized, while the other acts as hydrogen or electron acceptor and becomes reduced." [GOC:go_curators]
@@ -1534,10 +2607,103 @@ is_a: GO:0003824 ! catalytic activity
 relationship: BFO:0000050 GO:0055114 ! oxidation-reduction process
 
 [Term]
+id: GO:0016595
+name: glutamate binding
+def: "Interacting selectively and non-covalently with glutamate, the anion of 2-aminopentanedioic acid." [GOC:ai]
+synonym: "glutamic acid binding" EXACT []
+is_a: GO:0016597 ! amino acid binding
+
+[Term]
+id: GO:0016597
+name: amino acid binding
+def: "Interacting selectively and non-covalently with an amino acid, organic acids containing one or more amino substituents." [GOC:ai]
+is_a: GO:0031406 ! carboxylic acid binding
+
+[Term]
+id: GO:0016620
+name: oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor
+def: "Catalysis of an oxidation-reduction (redox) reaction in which an aldehyde or ketone (oxo) group acts as a hydrogen or electron donor and reduces NAD or NADP." [GOC:jl]
+is_a: GO:0016903 ! oxidoreductase activity, acting on the aldehyde or oxo group of donors
+
+[Term]
 id: GO:0016627
 name: oxidoreductase activity, acting on the CH-CH group of donors
 def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-CH group acts as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." [GOC:ai]
 synonym: "oxidoreductase activity, acting on the CH-CH group of donors, other acceptors" NARROW []
+is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
+id: GO:0016740
+name: transferase activity
+def: "Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." [ISBN:0198506732]
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016772
+name: transferase activity, transferring phosphorus-containing groups
+def: "Catalysis of the transfer of a phosphorus-containing group from one compound (donor) to another (acceptor)." [GOC:jl, ISBN:0198506732]
+is_a: GO:0016740 ! transferase activity
+
+[Term]
+id: GO:0016773
+name: phosphotransferase activity, alcohol group as acceptor
+def: "Catalysis of the transfer of a phosphorus-containing group from one compound (donor) to an alcohol group (acceptor)." [GOC:jl]
+is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
+
+[Term]
+id: GO:0016774
+name: phosphotransferase activity, carboxyl group as acceptor
+def: "Catalysis of the transfer of a phosphorus-containing group from one compound (donor) to a carboxyl group (acceptor)." [GOC:jl]
+is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
+
+[Term]
+id: GO:0016829
+name: lyase activity
+def: "Catalysis of the cleavage of C-C, C-O, C-N and other bonds by other means than by hydrolysis or oxidation, or conversely adding a group to a double bond. They differ from other enzymes in that two substrates are involved in one reaction direction, but only one in the other direction. When acting on the single substrate, a molecule is eliminated and this generates either a new double bond or a new ring." [EC:4.-.-.-, ISBN:0198547684]
+synonym: "other lyase activity" NARROW []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016835
+name: carbon-oxygen lyase activity
+def: "Catalysis of the breakage of a carbon-oxygen bond." [EC:4.2.-.-]
+synonym: "other carbon-oxygen lyase activity" NARROW []
+is_a: GO:0016829 ! lyase activity
+
+[Term]
+id: GO:0016836
+name: hydro-lyase activity
+def: "Catalysis of the cleavage of a carbon-oxygen bond by elimination of water." [EC:4.2.1]
+is_a: GO:0016835 ! carbon-oxygen lyase activity
+
+[Term]
+id: GO:0016853
+name: isomerase activity
+def: "Catalysis of the geometric or structural changes within one molecule. Isomerase is the systematic name for any enzyme of EC class 5." [ISBN:0198506732]
+synonym: "other isomerase activity" NARROW []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016866
+name: intramolecular transferase activity
+def: "Catalysis of the transfer of a functional group from one position to another within a single molecule." [GOC:mah]
+synonym: "intramolecular transferase activity, transferring other groups" NARROW []
+synonym: "mutase activity" EXACT []
+is_a: GO:0016853 ! isomerase activity
+
+[Term]
+id: GO:0016868
+name: intramolecular transferase activity, phosphotransferases
+def: "Catalysis of the transfer of a phosphate group from one position to another within a single molecule." [GOC:mah]
+synonym: "phosphomutase activity" EXACT []
+synonym: "phosphotransferase activity, with regeneration of donors, apparently catalyzing intramolecular transfers" EXACT []
+is_a: GO:0016866 ! intramolecular transferase activity
+
+[Term]
+id: GO:0016903
+name: oxidoreductase activity, acting on the aldehyde or oxo group of donors
+def: "Catalysis of an oxidation-reduction (redox) reaction in which an aldehyde or ketone (oxo) group acts as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." [GOC:ai]
+synonym: "oxidoreductase activity, acting on the aldehyde or oxo group of donors, other acceptors" NARROW []
 is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
@@ -1572,6 +2738,19 @@ is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901615 ! organic hydroxy compound metabolic process
 
 [Term]
+id: GO:0019098
+name: reproductive behavior
+def: "The specific behavior of an organism that is associated with reproduction." [GOC:jl, GOC:pr]
+synonym: "multicellular organism reproductive behavior" NARROW []
+synonym: "reproductive behavior in a multicellular organism" EXACT [GOC:curators]
+synonym: "reproductive behaviour" EXACT []
+synonym: "single-organism reproductive behavior" RELATED []
+is_a: GO:0007610 ! behavior
+is_a: GO:0048609 ! multicellular organismal reproductive process
+intersection_of: GO:0007610 ! behavior
+intersection_of: BFO:0000050 GO:0000003 ! reproduction
+
+[Term]
 id: GO:0019216
 name: regulation of lipid metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving lipids." [GOC:go_curators]
@@ -1580,6 +2759,17 @@ is_a: GO:0080090 ! regulation of primary metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006629 ! lipid metabolic process
 relationship: RO:0002211 GO:0006629 ! lipid metabolic process
+
+[Term]
+id: GO:0019217
+name: regulation of fatty acid metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving fatty acids." [GOC:go_curators]
+synonym: "regulation of fatty acid metabolism" EXACT []
+is_a: GO:0010565 ! regulation of cellular ketone metabolic process
+is_a: GO:0019216 ! regulation of lipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006631 ! fatty acid metabolic process
+relationship: RO:0002211 GO:0006631 ! fatty acid metabolic process
 
 [Term]
 id: GO:0019218
@@ -1603,6 +2793,16 @@ is_a: GO:0080090 ! regulation of primary metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006139 ! nucleobase-containing compound metabolic process
 relationship: RO:0002211 GO:0006139 ! nucleobase-containing compound metabolic process
+
+[Term]
+id: GO:0019220
+name: regulation of phosphate metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving phosphates." [GOC:go_curators]
+synonym: "regulation of phosphate metabolism" EXACT []
+is_a: GO:0051174 ! regulation of phosphorus metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006796 ! phosphate-containing compound metabolic process
+relationship: RO:0002211 GO:0006796 ! phosphate-containing compound metabolic process
 
 [Term]
 id: GO:0019222
@@ -1631,6 +2831,22 @@ synonym: "hexose formation" EXACT []
 synonym: "hexose synthesis" EXACT []
 is_a: GO:0019318 ! hexose metabolic process
 is_a: GO:0046364 ! monosaccharide biosynthetic process
+
+[Term]
+id: GO:0019362
+name: pyridine nucleotide metabolic process
+def: "The chemical reactions and pathways involving a pyridine nucleotide, a nucleotide characterized by a pyridine derivative as a nitrogen base." [GOC:jl]
+synonym: "pyridine nucleotide metabolism" EXACT []
+is_a: GO:0006733 ! oxidoreduction coenzyme metabolic process
+is_a: GO:0009117 ! nucleotide metabolic process
+is_a: GO:0072524 ! pyridine-containing compound metabolic process
+
+[Term]
+id: GO:0019395
+name: fatty acid oxidation
+def: "The removal of one or more electrons from a fatty acid, with or without the concomitant removal of a proton or protons, by reaction with an electron-accepting substance, by addition of oxygen or by removal of hydrogen." [ISBN:0198506732, MetaCyc:FAO-PWY]
+is_a: GO:0006631 ! fatty acid metabolic process
+is_a: GO:0034440 ! lipid oxidation
 
 [Term]
 id: GO:0019400
@@ -1687,6 +2903,36 @@ is_a: GO:0071941 ! nitrogen cycle metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
+id: GO:0019637
+name: organophosphate metabolic process
+def: "The chemical reactions and pathways involving organophosphates, any phosphate-containing organic compound." [ISBN:0198506732]
+synonym: "organophosphate metabolism" EXACT []
+is_a: GO:0006793 ! phosphorus metabolic process
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:0019693
+name: ribose phosphate metabolic process
+def: "The chemical reactions and pathways involving ribose phosphate, any phosphorylated ribose sugar." [GOC:ai]
+synonym: "ribose phosphate metabolism" EXACT []
+is_a: GO:0006796 ! phosphate-containing compound metabolic process
+is_a: GO:0019637 ! organophosphate metabolic process
+is_a: GO:1901135 ! carbohydrate derivative metabolic process
+
+[Term]
+id: GO:0019724
+name: B cell mediated immunity
+def: "Any process involved with the carrying out of an immune response by a B cell, through, for instance, the production of antibodies or cytokines, or antigen presentation to T cells." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "B lymphocyte mediated immune effector process" EXACT []
+synonym: "B lymphocyte mediated immunity" EXACT []
+synonym: "B-cell mediated immune effector process" EXACT []
+synonym: "B-cell mediated immunity" EXACT []
+synonym: "B-lymphocyte mediated immune effector process" EXACT []
+synonym: "B-lymphocyte mediated immunity" EXACT []
+is_a: GO:0002449 ! lymphocyte mediated immunity
+is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+
+[Term]
 id: GO:0019725
 name: cellular homeostasis
 def: "Any process involved in the maintenance of an internal steady state at the level of the cell." [GOC:isa_complete, GOC:jl, ISBN:0395825172]
@@ -1727,10 +2973,69 @@ is_a: GO:0051235 ! maintenance of location
 relationship: BFO:0000050 GO:0010876 ! lipid localization
 
 [Term]
+id: GO:0022412
+name: cellular process involved in reproduction in multicellular organism
+def: "A process, occurring at the cellular level, that is involved in the reproductive function of a multicellular organism." [GOC:isa_complete]
+synonym: "reproductive cellular process in multicellular organism" EXACT [GOC:curators]
+is_a: GO:0009987 ! cellular process
+is_a: GO:0022414 ! reproductive process
+intersection_of: GO:0009987 ! cellular process
+intersection_of: BFO:0000050 GO:0032504 ! multicellular organism reproduction
+relationship: BFO:0000050 GO:0032504 ! multicellular organism reproduction
+
+[Term]
+id: GO:0022414
+name: reproductive process
+def: "A biological process that directly contributes to the process of producing new individuals by one or two organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." [GOC:dph, GOC:isa_complete]
+synonym: "single organism reproductive process" RELATED []
+is_a: GO:0008150 ! biological_process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: BFO:0000050 GO:0000003 ! reproduction
+relationship: BFO:0000050 GO:0000003 ! reproduction
+
+[Term]
 id: GO:0022803
 name: passive transmembrane transporter activity
 def: "Enables the transfer of a solute from one side of the membrane to the other, down the solute's concentration gradient." [GOC:mtg_transport, ISBN:0815340729]
 is_a: GO:0022857 ! transmembrane transporter activity
+
+[Term]
+id: GO:0022824
+name: transmitter-gated ion channel activity
+def: "Enables the transmembrane transfer of an ion by a channel that opens when a specific neurotransmitter has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
+synonym: "ionotropic neurotransmitter receptor activity" NARROW [GOC:bf, GOC:sart]
+is_a: GO:0005230 ! extracellular ligand-gated ion channel activity
+is_a: GO:0022835 ! transmitter-gated channel activity
+
+[Term]
+id: GO:0022832
+name: voltage-gated channel activity
+def: "Enables the transmembrane transfer of a solute by a channel whose open state is dependent on the voltage across the membrane in which it is embedded." [GOC:mtg_transport, ISBN:0815340729]
+is_a: GO:0022836 ! gated channel activity
+relationship: BFO:0000050 GO:0051049 ! regulation of transport
+
+[Term]
+id: GO:0022834
+name: ligand-gated channel activity
+def: "Enables the transmembrane transfer of a solute by a channel that opens when a specific ligand has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
+is_a: GO:0022836 ! gated channel activity
+is_a: GO:0099600 ! transmembrane receptor activity
+
+[Term]
+id: GO:0022835
+name: transmitter-gated channel activity
+def: "Enables the transmembrane transfer of a solute by a channel that opens when a specific neurotransmitter has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
+synonym: "extracellular substance gated channel activity" EXACT []
+synonym: "neurotransmitter-gated channel activity" EXACT []
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+is_a: GO:0022834 ! ligand-gated channel activity
+is_a: GO:0030594 ! neurotransmitter receptor activity
+
+[Term]
+id: GO:0022836
+name: gated channel activity
+def: "Enables the transmembrane transfer of a solute by a channel that opens in response to a specific stimulus." [GOC:mtg_transport]
+is_a: GO:0015267 ! channel activity
 
 [Term]
 id: GO:0022838
@@ -1745,6 +3050,13 @@ name: transmembrane transporter activity
 def: "Enables the transfer of a substance from one side of a membrane to the other." [GOC:mtg_transport, ISBN:0815340729]
 is_a: GO:0005215 ! transporter activity
 relationship: BFO:0000050 GO:0055085 ! transmembrane transport
+
+[Term]
+id: GO:0022890
+name: inorganic cation transmembrane transporter activity
+def: "Enables the transfer of inorganic cations from one side of a membrane to the other. Inorganic cations are atoms or small molecules with a positive charge that do not contain carbon in covalent linkage." [GOC:ai, GOC:mtg_transport, ISBN:0815340729]
+synonym: "di-, tri-valent inorganic cation transmembrane transporter activity" NARROW [GOC:mah]
+is_a: GO:0008324 ! cation transmembrane transporter activity
 
 [Term]
 id: GO:0022891
@@ -1778,6 +3090,13 @@ is_a: GO:0007165 ! signal transduction
 intersection_of: GO:0007165 ! signal transduction
 intersection_of: BFO:0000050 GO:0010468 ! regulation of gene expression
 relationship: BFO:0000050 GO:0010468 ! regulation of gene expression
+
+[Term]
+id: GO:0023035
+name: CD40 signaling pathway
+def: "A series of molecular signals initiated by the binding of the cell surface receptor CD40 to one of its physiological ligands, and ending with regulation of a downstream cellular process, e.g. transcription." [GOC:mtg_signal, GOC:signaling, PMID:11348017]
+synonym: "CD40 signalling pathway" EXACT [GOC:mah]
+is_a: GO:0007166 ! cell surface receptor signaling pathway
 
 [Term]
 id: GO:0023051
@@ -1826,6 +3145,12 @@ is_a: GO:0002790 ! peptide secretion
 is_a: GO:0046879 ! hormone secretion
 
 [Term]
+id: GO:0030258
+name: lipid modification
+def: "The covalent alteration of one or more fatty acids in a lipid, resulting in a change in the properties of the lipid." [GOC:mah]
+is_a: GO:0044255 ! cellular lipid metabolic process
+
+[Term]
 id: GO:0030431
 name: sleep
 def: "Any process in which an organism enters and maintains a periodic, readily reversible state of reduced awareness and metabolic activity. Usually accompanied by physical relaxation, the onset of sleep in humans and other mammals is marked by a change in the electrical activity of the brain." [ISBN:0192800981]
@@ -1858,6 +3183,21 @@ synonym: "intracellular receptor mediated signaling pathway" EXACT []
 synonym: "intracellular receptor-mediated signaling pathway" EXACT []
 synonym: "intracellular receptor-mediated signalling pathway" EXACT []
 is_a: GO:0007165 ! signal transduction
+
+[Term]
+id: GO:0030545
+name: receptor regulator activity
+def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is changed." [GOC:ceb]
+is_a: GO:0098772 ! molecular function regulator
+relationship: BFO:0000050 GO:0010469 ! regulation of receptor activity
+relationship: RO:0002211 GO:0004872 ! receptor activity
+
+[Term]
+id: GO:0030594
+name: neurotransmitter receptor activity
+def: "Combining with a neurotransmitter and transmitting the signal to initiate a change in cell activity." [GOC:jl, GOC:signaling]
+is_a: GO:0038023 ! signaling receptor activity
+relationship: BFO:0000051 GO:0042165 ! neurotransmitter binding
 
 [Term]
 id: GO:0030990
@@ -1936,6 +3276,13 @@ intersection_of: RO:0002211 GO:0006464 ! cellular protein modification process
 relationship: RO:0002211 GO:0006464 ! cellular protein modification process
 
 [Term]
+id: GO:0031406
+name: carboxylic acid binding
+def: "Interacting selectively and non-covalently with a carboxylic acid, any organic acid containing one or more carboxyl (COOH) groups or anions (COO-)." [GOC:mah, ISBN:0198506732]
+is_a: GO:0043168 ! anion binding
+is_a: GO:0043177 ! organic acid binding
+
+[Term]
 id: GO:0031594
 name: neuromuscular junction
 def: "The junction between the axon of a motor neuron and a muscle fiber. In response to the arrival of action potentials, the presynaptic button releases molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane of the muscle fiber, leading to a change in post-synaptic potential." [GOC:nln]
@@ -1966,6 +3313,19 @@ name: nuclear lumen
 def: "The volume enclosed by the nuclear inner membrane." [GOC:mah, GOC:pz]
 is_a: GO:0044428 ! nuclear part
 is_a: GO:0070013 ! intracellular organelle lumen
+
+[Term]
+id: GO:0032042
+name: mitochondrial DNA metabolic process
+def: "The chemical reactions and pathways involving mitochondrial DNA." [GOC:mah]
+synonym: "mitochondrial DNA metabolism" EXACT []
+synonym: "mtDNA metabolic process" EXACT []
+synonym: "mtDNA metabolism" EXACT []
+is_a: GO:0006259 ! DNA metabolic process
+intersection_of: GO:0006259 ! DNA metabolic process
+intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
+relationship: BFO:0000050 GO:0000002 ! mitochondrial genome maintenance
+relationship: BFO:0000066 GO:0005739 ! mitochondrion
 
 [Term]
 id: GO:0032101
@@ -2033,6 +3393,13 @@ def: "A biological process whose specific outcome is the progression of an integ
 synonym: "development" NARROW []
 synonym: "single-organism developmental process" RELATED []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0032504
+name: multicellular organism reproduction
+def: "The biological process in which new individuals are produced by one or two multicellular organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." [GOC:isa_complete, GOC:jid]
+is_a: GO:0000003 ! reproduction
+is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0032774
@@ -2125,6 +3492,17 @@ synonym: "macromolecule localisation" EXACT [GOC:mah]
 is_a: GO:0051179 ! localization
 
 [Term]
+id: GO:0033043
+name: regulation of organelle organization
+def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of an organelle." [GOC:mah]
+synonym: "regulation of organelle organisation" EXACT [GOC:mah]
+synonym: "regulation of organelle organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0051128 ! regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006996 ! organelle organization
+relationship: RO:0002211 GO:0006996 ! organelle organization
+
+[Term]
 id: GO:0033143
 name: regulation of intracellular steroid hormone receptor signaling pathway
 def: "Any process that modulates the frequency, rate or extent of the activity of any intracellular steroid hormone receptor signaling pathway." [GOC:mah]
@@ -2198,6 +3576,13 @@ is_a: GO:1903314 ! regulation of nitrogen cycle metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0019627 ! urea metabolic process
 relationship: RO:0002211 GO:0019627 ! urea metabolic process
+
+[Term]
+id: GO:0034440
+name: lipid oxidation
+def: "The removal of one or more electrons from a lipid, with or without the concomitant removal of a proton or protons, by reaction with an electron-accepting substance, by addition of oxygen or by removal of hydrogen." [GOC:BHF, GOC:mah]
+is_a: GO:0030258 ! lipid modification
+is_a: GO:0055114 ! oxidation-reduction process
 
 [Term]
 id: GO:0034641
@@ -2277,6 +3662,14 @@ is_a: GO:0051703 ! intraspecies interaction between organisms
 is_a: GO:0051705 ! multi-organism behavior
 
 [Term]
+id: GO:0035235
+name: ionotropic glutamate receptor signaling pathway
+def: "A series of molecular signals initiated by glutamate binding to a glutamate receptor on the surface of the target cell, followed by the movement of ions through a channel in the receptor complex. Ends with regulation of a downstream cellular process, e.g. transcription." [GOC:signaling, ISBN:0198506732]
+synonym: "ionotropic glutamate receptor signalling pathway" EXACT []
+is_a: GO:0007215 ! glutamate receptor signaling pathway
+relationship: BFO:0000051 GO:0004970 ! ionotropic glutamate receptor activity
+
+[Term]
 id: GO:0035556
 name: intracellular signal transduction
 def: "The process in which a signal is passed on to downstream components within the cell, which become activated themselves to further propagate the signal and finally trigger a change in the function or state of the cell." [GOC:bf, GOC:jl, GOC:signaling, ISBN:3527303782]
@@ -2306,6 +3699,12 @@ is_a: GO:0006111 ! regulation of gluconeogenesis
 is_a: GO:1900402 ! regulation of carbohydrate metabolic process by regulation of transcription from RNA polymerase II promoter
 intersection_of: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 intersection_of: RO:0002211 GO:0006094 ! gluconeogenesis
+
+[Term]
+id: GO:0036094
+name: small molecule binding
+def: "Interacting selectively and non-covalently with a small molecule, any low molecular weight, monomeric, non-encoded molecule." [GOC:curators, GOC:pde, GOC:pm]
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0036211
@@ -2338,6 +3737,12 @@ intersection_of: RO:0002211 GO:0006584 ! catecholamine metabolic process
 relationship: RO:0002211 GO:0006584 ! catecholamine metabolic process
 
 [Term]
+id: GO:0042165
+name: neurotransmitter binding
+def: "Interacting selectively and non-covalently with a neurotransmitter, any chemical substance that is capable of transmitting (or inhibiting the transmission of) a nerve impulse from a neuron to another cell." [ISBN:0198506732]
+is_a: GO:0005488 ! binding
+
+[Term]
 id: GO:0042180
 name: cellular ketone metabolic process
 def: "The chemical reactions and pathways involving any of a class of organic compounds that contain the carbonyl group, CO, and in which the carbonyl group is bonded only to carbon atoms, as carried out by individual cells. The general formula for a ketone is RCOR, where R and R are alkyl or aryl groups." [GOC:jl, ISBN:0787650153]
@@ -2353,6 +3758,15 @@ def: "Any process that results in a change in state or activity of a cell or an 
 synonym: "response to chemical stimulus" EXACT [GOC:dos]
 synonym: "response to chemical substance" EXACT []
 is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0042325
+name: regulation of phosphorylation
+def: "Any process that modulates the frequency, rate or extent of addition of phosphate groups into a molecule." [GOC:jl]
+is_a: GO:0019220 ! regulation of phosphate metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016310 ! phosphorylation
+relationship: RO:0002211 GO:0016310 ! phosphorylation
 
 [Term]
 id: GO:0042423
@@ -2387,6 +3801,17 @@ synonym: "homeostasis" RELATED []
 is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
+id: GO:0042645
+name: mitochondrial nucleoid
+def: "The region of a mitochondrion to which the DNA is confined." [GOC:jl]
+is_a: GO:0009295 ! nucleoid
+is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
+is_a: GO:0044429 ! mitochondrial part
+intersection_of: GO:0009295 ! nucleoid
+intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
+relationship: BFO:0000050 GO:0005759 ! mitochondrial matrix
+
+[Term]
 id: GO:0042762
 name: regulation of sulfur metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving sulfur, the nonmetallic element sulfur or compounds that contain sulfur." [GOC:go_curators]
@@ -2414,12 +3839,31 @@ synonym: "cellular projection" EXACT []
 is_a: GO:0044464 ! cell part
 
 [Term]
+id: GO:0043167
+name: ion binding
+def: "Interacting selectively and non-covalently with ions, charged atoms or groups of atoms." [GOC:jl]
+synonym: "atom binding" RELATED []
+is_a: GO:0005488 ! binding
+
+[Term]
+id: GO:0043168
+name: anion binding
+def: "Interacting selectively and non-covalently with anions, charged atoms or groups of atoms with a net negative charge." [GOC:jl]
+is_a: GO:0043167 ! ion binding
+
+[Term]
 id: GO:0043170
 name: macromolecule metabolic process
 def: "The chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [CHEBI:33694, GOC:mah]
 synonym: "biopolymer metabolic process" EXACT [GOC:mtg_chebi_dec09]
 synonym: "macromolecule metabolism" EXACT []
 is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:0043177
+name: organic acid binding
+def: "Interacting selectively and non-covalently with an organic acid, any acidic compound containing carbon in covalent linkage." [GOC:jl, ISBN:0198506732]
+is_a: GO:0036094 ! small molecule binding
 
 [Term]
 id: GO:0043226
@@ -2508,6 +3952,15 @@ intersection_of: RO:0002211 GO:0006811 ! ion transport
 relationship: RO:0002211 GO:0006811 ! ion transport
 
 [Term]
+id: GO:0043393
+name: regulation of protein binding
+def: "Any process that modulates the frequency, rate or extent of protein binding." [GOC:go_curators]
+is_a: GO:0051098 ! regulation of binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0005515 ! protein binding
+relationship: RO:0002211 GO:0005515 ! protein binding
+
+[Term]
 id: GO:0043401
 name: steroid hormone mediated signaling pathway
 def: "A series of molecular signals mediated by a steroid hormone binding to a receptor." [PMID:12606724]
@@ -2542,6 +3995,15 @@ synonym: "oxoacid metabolism" EXACT []
 is_a: GO:0006082 ! organic acid metabolic process
 
 [Term]
+id: GO:0043457
+name: regulation of cellular respiration
+def: "Any process that modulates the frequency, rate or extent of cellular respiration, the enzymatic release of energy from organic compounds." [GOC:jl]
+is_a: GO:0043467 ! regulation of generation of precursor metabolites and energy
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0045333 ! cellular respiration
+relationship: RO:0002211 GO:0045333 ! cellular respiration
+
+[Term]
 id: GO:0043467
 name: regulation of generation of precursor metabolites and energy
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of precursor metabolites, substances from which energy is derived, and the processes involved in the liberation of energy from these substances." [GOC:jl]
@@ -2551,10 +4013,48 @@ intersection_of: RO:0002211 GO:0006091 ! generation of precursor metabolites and
 relationship: RO:0002211 GO:0006091 ! generation of precursor metabolites and energy
 
 [Term]
+id: GO:0043470
+name: regulation of carbohydrate catabolic process
+def: "Any process that modulates the frequency, rate, or extent of the chemical reactions and pathways resulting in the breakdown of carbohydrates." [GOC:mlg]
+is_a: GO:0006109 ! regulation of carbohydrate metabolic process
+is_a: GO:0009894 ! regulation of catabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016052 ! carbohydrate catabolic process
+relationship: RO:0002211 GO:0016052 ! carbohydrate catabolic process
+
+[Term]
 id: GO:0043473
 name: pigmentation
 def: "The accumulation of pigment in an organism, tissue or cell, either by increased deposition or by increased number of cells." [GOC:jl]
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0043504
+name: mitochondrial DNA repair
+def: "The process of restoring mitochondrial DNA after damage." [PMID:12565799, PMID:15189144, PMID:16050976]
+is_a: GO:0006281 ! DNA repair
+is_a: GO:0032042 ! mitochondrial DNA metabolic process
+intersection_of: GO:0006281 ! DNA repair
+intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
+
+[Term]
+id: GO:0043549
+name: regulation of kinase activity
+def: "Any process that modulates the frequency, rate or extent of kinase activity, the catalysis of the transfer of a phosphate group, usually from ATP, to a substrate molecule." [GOC:bf]
+is_a: GO:0042325 ! regulation of phosphorylation
+is_a: GO:0051338 ! regulation of transferase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016301 ! kinase activity
+relationship: RO:0002211 GO:0016301 ! kinase activity
+
+[Term]
+id: GO:0043576
+name: regulation of respiratory gaseous exchange
+def: "Any process that modulates the frequency, rate or extent of the process of gaseous exchange between an organism and its environment." [GOC:jl]
+is_a: GO:0051239 ! regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007585 ! respiratory gaseous exchange
+relationship: RO:0002211 GO:0007585 ! respiratory gaseous exchange
 
 [Term]
 id: GO:0043603
@@ -2569,6 +4069,17 @@ name: amide biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of an amide, any derivative of an oxoacid in which an acidic hydroxy group has been replaced by an amino or substituted amino group." [CHEBI:32988]
 is_a: GO:0043603 ! cellular amide metabolic process
 is_a: GO:0044271 ! cellular nitrogen compound biosynthetic process
+
+[Term]
+id: GO:0043891
+name: glyceraldehyde-3-phosphate dehydrogenase (NAD(P)+) (phosphorylating) activity
+def: "Catalysis of the reaction: D-glyceraldehyde 3-phosphate + phosphate + NAD(P)+ = 3-phospho-D-glyceroyl phosphate + NAD(P)H + H+." [EC:1.2.1.59]
+synonym: "D-glyceraldehyde 3-phosphate:NAD(P)+ oxidoreductase (phosphorylating)" EXACT []
+synonym: "glyceraldehyde-3-phosphate dehydrogenase (NAD(P)) (phosphorylating)" EXACT []
+synonym: "NAD(P)-dependent glyceraldehyde-3-phosphate dehydrogenase activity" EXACT [EC:1.2.1.59]
+synonym: "triosephosphate dehydrogenase (NAD(P))" EXACT []
+synonym: "triosephosphate dehydrogenase (NAD(P)+)" EXACT [EC:1.2.1.59]
+is_a: GO:0016620 ! oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0043900
@@ -2594,6 +4105,16 @@ is_a: GO:0051239 ! regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0003008 ! system process
 relationship: RO:0002211 GO:0003008 ! system process
+
+[Term]
+id: GO:0044065
+name: regulation of respiratory system process
+def: "Any process that modulates the frequency, rate or extent of a respiratory system process, an organ system process carried out by any of the organs or tissues of the respiratory system." [GOC:jl]
+is_a: GO:0043576 ! regulation of respiratory gaseous exchange
+is_a: GO:0044057 ! regulation of system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0003016 ! respiratory system process
+relationship: RO:0002211 GO:0003016 ! respiratory system process
 
 [Term]
 id: GO:0044106
@@ -2637,6 +4158,14 @@ synonym: "cellular biosynthesis" EXACT []
 synonym: "cellular formation" EXACT []
 synonym: "cellular synthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0044255
+name: cellular lipid metabolic process
+def: "The chemical reactions and pathways involving lipids, as carried out by individual cells." [GOC:jl]
+synonym: "cellular lipid metabolism" EXACT []
+is_a: GO:0006629 ! lipid metabolic process
 is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
@@ -2762,6 +4291,18 @@ intersection_of: BFO:0000050 GO:0005634 ! nucleus
 relationship: BFO:0000050 GO:0005634 ! nucleus
 
 [Term]
+id: GO:0044429
+name: mitochondrial part
+def: "Any constituent part of a mitochondrion, a semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration." [GOC:jl]
+synonym: "mitochondrial subcomponent" EXACT [NIF_Subcellular:sao666410040]
+synonym: "mitochondrion component" EXACT []
+is_a: GO:0044444 ! cytoplasmic part
+is_a: GO:0044446 ! intracellular organelle part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
+relationship: BFO:0000050 GO:0005739 ! mitochondrion
+
+[Term]
 id: GO:0044437
 name: vacuolar part
 def: "Any constituent part of a vacuole, a closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material." [GOC:jl]
@@ -2877,6 +4418,20 @@ intersection_of: BFO:0000050 GO:0005623 ! cell
 relationship: BFO:0000050 GO:0005623 ! cell
 
 [Term]
+id: GO:0044703
+name: multi-organism reproductive process
+def: "A biological process that directly contributes to the process of producing new individuals, involving another organism." [GOC:jl]
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0051704 ! multi-organism process
+
+[Term]
+id: GO:0044706
+name: multi-multicellular organism process
+def: "A multicellular organism process which involves another multicellular organism of the same or different species." [GOC:jl]
+is_a: GO:0032501 ! multicellular organismal process
+is_a: GO:0051704 ! multi-organism process
+
+[Term]
 id: GO:0045124
 name: regulation of bone resorption
 def: "Any process that modulates the frequency, rate or extent of bone tissue loss (resorption)." [GOC:ai]
@@ -2896,11 +4451,38 @@ synonym: "synaptic junction" EXACT []
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0045333
+name: cellular respiration
+def: "The enzymatic release of energy from inorganic and organic compounds (especially carbohydrates and fats) which either requires oxygen (aerobic respiration) or does not (anaerobic respiration)." [GOC:das, ISBN:0140513590, ISBN:0198506732]
+synonym: "oxidative metabolic process" EXACT []
+synonym: "oxidative metabolism" EXACT []
+synonym: "respiration" BROAD []
+is_a: GO:0015980 ! energy derivation by oxidation of organic compounds
+
+[Term]
 id: GO:0045453
 name: bone resorption
 def: "The process in which specialized cells known as osteoclasts degrade the organic and inorganic portions of bone, and endocytose and transport the degradation products." [GOC:mah, PMID:10968780]
 is_a: GO:0001894 ! tissue homeostasis
 relationship: BFO:0000050 GO:0046849 ! bone remodeling
+
+[Term]
+id: GO:0046031
+name: ADP metabolic process
+def: "The chemical reactions and pathways involving ADP, adenosine 5'-diphosphate." [GOC:go_curators]
+synonym: "ADP metabolism" EXACT []
+is_a: GO:0009150 ! purine ribonucleotide metabolic process
+is_a: GO:0009167 ! purine ribonucleoside monophosphate metabolic process
+is_a: GO:0009179 ! purine ribonucleoside diphosphate metabolic process
+
+[Term]
+id: GO:0046034
+name: ATP metabolic process
+def: "The chemical reactions and pathways involving ATP, adenosine triphosphate, a universally important coenzyme and enzyme regulator." [GOC:go_curators]
+synonym: "ATP metabolism" EXACT []
+is_a: GO:0009150 ! purine ribonucleotide metabolic process
+is_a: GO:0009167 ! purine ribonucleoside monophosphate metabolic process
+is_a: GO:0009205 ! purine ribonucleoside triphosphate metabolic process
 
 [Term]
 id: GO:0046189
@@ -2914,6 +4496,15 @@ is_a: GO:0018958 ! phenol-containing compound metabolic process
 is_a: GO:0019438 ! aromatic compound biosynthetic process
 is_a: GO:1901362 ! organic cyclic compound biosynthetic process
 is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
+
+[Term]
+id: GO:0046320
+name: regulation of fatty acid oxidation
+def: "Any process that modulates the frequency, rate or extent of fatty acid oxidation." [GOC:ai]
+is_a: GO:0019217 ! regulation of fatty acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0019395 ! fatty acid oxidation
+relationship: RO:0002211 GO:0019395 ! fatty acid oxidation
 
 [Term]
 id: GO:0046364
@@ -2954,6 +4545,22 @@ name: heterocycle metabolic process
 def: "The chemical reactions and pathways involving heterocyclic compounds, those with a cyclic molecular structure and at least two different atoms in the ring (or rings)." [CHEBI:5686, ISBN:0198506732]
 synonym: "heterocycle metabolism" EXACT []
 is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0046496
+name: nicotinamide nucleotide metabolic process
+def: "The chemical reactions and pathways involving nicotinamide nucleotides, any nucleotide that contains combined nicotinamide." [ISBN:0198506732]
+synonym: "nicotinamide nucleotide metabolism" EXACT []
+is_a: GO:0019362 ! pyridine nucleotide metabolic process
+
+[Term]
+id: GO:0046578
+name: regulation of Ras protein signal transduction
+def: "Any process that modulates the frequency, rate or extent of Ras protein signal transduction." [GOC:bf]
+is_a: GO:0051056 ! regulation of small GTPase mediated signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007265 ! Ras protein signal transduction
+relationship: RO:0002211 GO:0007265 ! Ras protein signal transduction
 
 [Term]
 id: GO:0046849
@@ -3025,6 +4632,23 @@ intersection_of: BFO:0000066 GO:0005622 ! intracellular
 relationship: BFO:0000066 GO:0005622 ! intracellular
 
 [Term]
+id: GO:0046939
+name: nucleotide phosphorylation
+def: "The process of introducing one or more phosphate groups into a nucleotide to produce a phosphorylated nucleoside." [GOC:ai]
+is_a: GO:0009117 ! nucleotide metabolic process
+is_a: GO:0016310 ! phosphorylation
+
+[Term]
+id: GO:0048018
+name: receptor ligand activity
+def: "The activity of a gene product that interacts with a receptor to effect a change in the activity of the receptor. Ligands may be produced by the same, or different, cell that expresses the receptor. Ligands may diffuse extracellularly from their point of origin to the receiving cell, or remain attached to an adjacent cell surface (e.g. Notch ligands)." [GOC:kv, GOC:molecular_function_refactoring, GOC:pdt]
+synonym: "receptor agonist activity" BROAD [GOC:molecular_function_refactoring]
+synonym: "signaling molecule" EXACT []
+is_a: GO:0005102 ! receptor binding
+is_a: GO:0030545 ! receptor regulator activity
+relationship: RO:0002211 GO:0038023 ! signaling receptor activity
+
+[Term]
 id: GO:0048545
 name: response to steroid hormone
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a steroid hormone stimulus." [GOC:go_curators]
@@ -3043,6 +4667,15 @@ intersection_of: RO:0002211 GO:0050896 ! response to stimulus
 relationship: RO:0002211 GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0048609
+name: multicellular organismal reproductive process
+def: "The process, occurring above the cellular level, that is pertinent to the reproductive function of a multicellular organism. This includes the integrated processes at the level of tissues and organs." [GOC:dph, GOC:jid, GOC:tb]
+synonym: "organismal reproductive process" BROAD [GOC:curators]
+synonym: "reproductive process in a multicellular organism" EXACT [GOC:curators]
+is_a: GO:0022414 ! reproductive process
+relationship: BFO:0000050 GO:0032504 ! multicellular organism reproduction
+
+[Term]
 id: GO:0048771
 name: tissue remodeling
 def: "The reorganization or renovation of existing tissues. This process can either change the characteristics of a tissue such as in blood vessel remodeling, or result in the dynamic equilibrium of a tissue such as in bone remodeling." [GOC:ebc]
@@ -3054,6 +4687,23 @@ name: multicellular organismal homeostasis
 def: "Any process involved in the maintenance of an internal steady state at the level of the multicellular organism." [GOC:isa_complete]
 is_a: GO:0032501 ! multicellular organismal process
 is_a: GO:0042592 ! homeostatic process
+
+[Term]
+id: GO:0050432
+name: catecholamine secretion
+def: "The regulated release of catecholamines by a cell. The catecholamines are a group of physiologically important biogenic amines that possess a catechol (3,4-dihydroxyphenyl) nucleus and are derivatives of 3,4-dihydroxyphenylethylamine." [GOC:ai, GOC:ef]
+is_a: GO:0032940 ! secretion by cell
+is_a: GO:0051937 ! catecholamine transport
+
+[Term]
+id: GO:0050433
+name: regulation of catecholamine secretion
+def: "Any process that modulates the frequency, rate or extent of the regulated release of catecholamines." [GOC:ai]
+is_a: GO:0051952 ! regulation of amine transport
+is_a: GO:1903530 ! regulation of secretion by cell
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0050432 ! catecholamine secretion
+relationship: RO:0002211 GO:0050432 ! catecholamine secretion
 
 [Term]
 id: GO:0050666
@@ -3086,6 +4736,16 @@ is_a: GO:0032101 ! regulation of response to external stimulus
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006954 ! inflammatory response
 relationship: RO:0002211 GO:0006954 ! inflammatory response
+
+[Term]
+id: GO:0050776
+name: regulation of immune response
+def: "Any process that modulates the frequency, rate or extent of the immune response, the immunological reaction of an organism to an immunogenic stimulus." [GOC:ai]
+is_a: GO:0002682 ! regulation of immune system process
+is_a: GO:0048583 ! regulation of response to stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006955 ! immune response
+relationship: RO:0002211 GO:0006955 ! immune response
 
 [Term]
 id: GO:0050789
@@ -3175,6 +4835,14 @@ synonym: "physiological response to stimulus" EXACT []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0050905
+name: neuromuscular process
+def: "Any process pertaining to the functions of the nervous and muscular systems of an organism." [GOC:ai]
+synonym: "neuromotor process" EXACT []
+synonym: "neuromuscular physiological process" EXACT []
+is_a: GO:0050877 ! nervous system process
+
+[Term]
 id: GO:0051046
 name: regulation of secretion
 def: "Any process that modulates the frequency, rate or extent of the controlled release of a substance from a cell or a tissue." [GOC:ai]
@@ -3204,6 +4872,16 @@ intersection_of: RO:0002211 GO:0006259 ! DNA metabolic process
 relationship: RO:0002211 GO:0006259 ! DNA metabolic process
 
 [Term]
+id: GO:0051056
+name: regulation of small GTPase mediated signal transduction
+def: "Any process that modulates the frequency, rate or extent of small GTPase mediated signal transduction." [GOC:go_curators]
+synonym: "regulation of small GTPase-mediated signal transduction" EXACT []
+is_a: GO:1902531 ! regulation of intracellular signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007264 ! small GTPase mediated signal transduction
+relationship: RO:0002211 GO:0007264 ! small GTPase mediated signal transduction
+
+[Term]
 id: GO:0051090
 name: regulation of sequence-specific DNA binding transcription factor activity
 def: "Any process that modulates the frequency, rate or extent of the activity of a transcription factor, any factor involved in the initiation or regulation of transcription." [GOC:ai]
@@ -3224,6 +4902,19 @@ intersection_of: RO:0002211 GO:0005488 ! binding
 relationship: RO:0002211 GO:0005488 ! binding
 
 [Term]
+id: GO:0051128
+name: regulation of cellular component organization
+def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of cell structures, including the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:ai]
+synonym: "regulation of cell organisation" RELATED [GOC:mah]
+synonym: "regulation of cell organization" RELATED [GOC:mah]
+synonym: "regulation of cellular component organisation" EXACT [GOC:curators]
+synonym: "regulation of cellular component organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0050794 ! regulation of cellular process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016043 ! cellular component organization
+relationship: RO:0002211 GO:0016043 ! cellular component organization
+
+[Term]
 id: GO:0051171
 name: regulation of nitrogen compound metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving nitrogen or nitrogenous compounds." [GOC:ai, GOC:tb]
@@ -3233,6 +4924,16 @@ is_a: GO:0019222 ! regulation of metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006807 ! nitrogen compound metabolic process
 relationship: RO:0002211 GO:0006807 ! nitrogen compound metabolic process
+
+[Term]
+id: GO:0051174
+name: regulation of phosphorus metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving phosphorus or compounds containing phosphorus." [GOC:ai]
+synonym: "regulation of phosphorus metabolism" EXACT []
+is_a: GO:0031323 ! regulation of cellular metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006793 ! phosphorus metabolic process
+relationship: RO:0002211 GO:0006793 ! phosphorus metabolic process
 
 [Term]
 id: GO:0051179
@@ -3247,6 +4948,35 @@ synonym: "localisation" EXACT [GOC:mah]
 synonym: "single organism localization" RELATED [GOC:TermGenie]
 synonym: "single-organism localization" RELATED []
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0051186
+name: cofactor metabolic process
+def: "The chemical reactions and pathways involving a cofactor, a substance that is required for the activity of an enzyme or other protein. Cofactors may be inorganic, such as the metal atoms zinc, iron, and copper in certain forms, or organic, in which case they are referred to as coenzymes. Cofactors may either be bound tightly to active sites or bind loosely with the substrate." [GOC:ai]
+synonym: "cofactor metabolism" EXACT []
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0051193
+name: regulation of cofactor metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving a cofactor." [GOC:ai]
+synonym: "regulation of cofactor metabolism" EXACT []
+is_a: GO:0031323 ! regulation of cellular metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0051186 ! cofactor metabolic process
+relationship: RO:0002211 GO:0051186 ! cofactor metabolic process
+
+[Term]
+id: GO:0051196
+name: regulation of coenzyme metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving a coenzyme." [GOC:ai]
+synonym: "regulation of coenzyme and prosthetic group metabolic process" BROAD []
+synonym: "regulation of coenzyme and prosthetic group metabolism" BROAD []
+synonym: "regulation of coenzyme metabolism" EXACT []
+is_a: GO:0051193 ! regulation of cofactor metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006732 ! coenzyme metabolic process
+relationship: RO:0002211 GO:0006732 ! coenzyme metabolic process
 
 [Term]
 id: GO:0051234
@@ -3297,6 +5027,26 @@ is_a: GO:0060255 ! regulation of macromolecule metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0016070 ! RNA metabolic process
 relationship: RO:0002211 GO:0016070 ! RNA metabolic process
+
+[Term]
+id: GO:0051338
+name: regulation of transferase activity
+def: "Any process that modulates the frequency, rate or extent of transferase activity, the catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." [EC:2.-.-.-, GOC:ai]
+synonym: "transferase regulator" EXACT []
+is_a: GO:0050790 ! regulation of catalytic activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016740 ! transferase activity
+relationship: RO:0002211 GO:0016740 ! transferase activity
+
+[Term]
+id: GO:0051339
+name: regulation of lyase activity
+def: "Any process that modulates the frequency, rate or extent of lyase activity, the catalysis of the cleavage of C-C, C-O, C-N and other bonds by other means than by hydrolysis or oxidation, or conversely adding a group to a double bond. They differ from other enzymes in that two substrates are involved in one reaction direction, but only one in the other direction. When acting on the single substrate, a molecule is eliminated and this generates either a new double bond or a new ring." [EC:4.-.-.-, GOC:ai]
+synonym: "lyase regulator" EXACT []
+is_a: GO:0050790 ! regulation of catalytic activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016829 ! lyase activity
+relationship: RO:0002211 GO:0016829 ! lyase activity
 
 [Term]
 id: GO:0051341
@@ -3388,6 +5138,22 @@ is_a: GO:0009987 ! cellular process
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0051937
+name: catecholamine transport
+def: "The directed movement of catecholamines, a group of physiologically important biogenic amines that possess a catechol (3,4-dihydroxyphenyl) nucleus and are derivatives of 3,4-dihydroxyphenylethylamine." [GOC:ai, ISBN:0198506732]
+is_a: GO:0015844 ! monoamine transport
+is_a: GO:0015850 ! organic hydroxy compound transport
+
+[Term]
+id: GO:0051952
+name: regulation of amine transport
+def: "Any process that modulates the frequency, rate or extent of the directed movement of amines into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+is_a: GO:0051049 ! regulation of transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0015837 ! amine transport
+relationship: RO:0002211 GO:0015837 ! amine transport
+
+[Term]
 id: GO:0052803
 name: imidazole-containing compound metabolic process
 def: "The chemical reactions and pathways involving imidazoles, five-membered organic heterocycle containing two nitrogen atoms at positions 1 and 3, or any of its derivatives; compounds containing an imidazole skeleton." [CHEBI:24780]
@@ -3404,6 +5170,15 @@ name: transmembrane transport
 def: "The process in which a solute is transported across a lipid bilayer, from one side of a membrane to the other" [GOC:dph, GOC:jid]
 synonym: "membrane transport" EXACT []
 is_a: GO:0006810 ! transport
+
+[Term]
+id: GO:0055086
+name: nucleobase-containing small molecule metabolic process
+def: "The cellular chemical reactions and pathways involving a nucleobase-containing small molecule: a nucleobase, a nucleoside, or a nucleotide." [GOC:vw]
+synonym: "nucleobase, nucleoside and nucleotide metabolic process" RELATED []
+synonym: "nucleobase, nucleoside and nucleotide metabolism" EXACT []
+is_a: GO:0006139 ! nucleobase-containing compound metabolic process
+is_a: GO:0044281 ! small molecule metabolic process
 
 [Term]
 id: GO:0055114
@@ -3623,6 +5398,15 @@ def: "The directed movement of nitrogen-containing compounds into, out of or wit
 is_a: GO:0006810 ! transport
 
 [Term]
+id: GO:0071840
+name: cellular component organization or biogenesis
+def: "A process that results in the biosynthesis of constituent macromolecules, assembly, arrangement of constituent parts, or disassembly of a cellular component." [GOC:mah]
+synonym: "cellular component organisation or biogenesis" EXACT [GOC:mah]
+synonym: "cellular component organisation or biogenesis at cellular level" EXACT [GOC:mah]
+synonym: "cellular component organization or biogenesis at cellular level" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
 id: GO:0071941
 name: nitrogen cycle metabolic process
 def: "A nitrogen compound metabolic process that contributes to the nitrogen cycle. The nitrogen cycle is a series of metabolic pathways by which nitrogen is converted between various forms and redox states; it encompasses pathways in which nitrogen is acted upon directly, such as nitrification, denitrification, nitrogen fixation, and mineralization." [GOC:mah, PMID:16675690, Wikipedia:Nitrogen_cycle]
@@ -3653,6 +5437,23 @@ is_a: GO:0032787 ! monocarboxylic acid metabolic process
 is_a: GO:0046394 ! carboxylic acid biosynthetic process
 
 [Term]
+id: GO:0072350
+name: tricarboxylic acid metabolic process
+def: "The chemical reactions and pathways involving dicarboxylic acids, any organic acid containing three carboxyl (COOH) groups or anions (COO-)." [CHEBI:27093, GOC:mah]
+synonym: "tricarboxylic acid metabolism" EXACT [GOC:mah]
+is_a: GO:0019752 ! carboxylic acid metabolic process
+
+[Term]
+id: GO:0072361
+name: regulation of glycolytic process by regulation of transcription from RNA polymerase II promoter
+def: "Any process that modulates the frequency, rate or extent of glycolysis by modulating the frequency, rate or extent of transcription from an RNA polymerase II promoter." [GOC:BHF, GOC:mah]
+is_a: GO:0006110 ! regulation of glycolytic process
+is_a: GO:0098679 ! regulation of carbohydrate catabolic process by regulation of transcription from RNA polymerase II promoter
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006096 ! glycolytic process
+intersection_of: RO:0002211 GO:0006366 ! transcription from RNA polymerase II promoter
+
+[Term]
 id: GO:0072364
 name: regulation of cellular ketone metabolic process by regulation of transcription from RNA polymerase II promoter
 def: "Any process that modulates the frequency, rate or extent of a cellular ketone metabolic process by modulating the frequency, rate or extent of transcription from an RNA polymerase II promoter." [GOC:BHF, GOC:mah]
@@ -3662,6 +5463,29 @@ is_a: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 is_a: GO:0010565 ! regulation of cellular ketone metabolic process
 intersection_of: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 intersection_of: RO:0002211 GO:0042180 ! cellular ketone metabolic process
+
+[Term]
+id: GO:0072521
+name: purine-containing compound metabolic process
+def: "The chemical reactions and pathways involving a purine-containing compound, i.e. any compound that contains purine or a formal derivative thereof." [CHEBI:26401, GOC:mah]
+synonym: "purine and derivative metabolic process" EXACT [GOC:curators]
+synonym: "purine-containing compound metabolism" EXACT [GOC:mah]
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
+id: GO:0072524
+name: pyridine-containing compound metabolic process
+def: "The chemical reactions and pathways involving a pyridine-containing compound, i.e. any compound that contains pyridine or a formal derivative thereof." [CHEBI:26421, GOC:mah]
+synonym: "pyridine and derivative metabolic process" EXACT [GOC:curators]
+synonym: "pyridine-containing compound metabolism" EXACT [GOC:mah]
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0080090
@@ -3750,6 +5574,31 @@ intersection_of: GO:0016020 ! membrane
 intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
 
 [Term]
+id: GO:0098655
+name: cation transmembrane transport
+def: "A process in which a cation is transported from one side of a membrane to the other by means of some agent such as a transporter or pore." [GOC:dos, GOC:vw]
+is_a: GO:0006812 ! cation transport
+is_a: GO:0034220 ! ion transmembrane transport
+
+[Term]
+id: GO:0098679
+name: regulation of carbohydrate catabolic process by regulation of transcription from RNA polymerase II promoter
+def: "A regulation of transcription from RNA polymerase II promoter that results in regulation of carbohydrate catabloism." [PMID:16408318]
+synonym: "regulation of carbohydrate catabolism by regulation of transcription from RNA polymerase II promoter" EXACT []
+is_a: GO:0043470 ! regulation of carbohydrate catabolic process
+is_a: GO:1900402 ! regulation of carbohydrate metabolic process by regulation of transcription from RNA polymerase II promoter
+intersection_of: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
+intersection_of: RO:0002211 GO:0016052 ! carbohydrate catabolic process
+
+[Term]
+id: GO:0098772
+name: molecular function regulator
+def: "A molecular function that modulates the activity of a gene product or complex.  Examples include enzyme regulators and channel regulators." [GOC:dos, GOC:pt]
+is_a: GO:0003674 ! molecular_function
+relationship: BFO:0000050 GO:0065009 ! regulation of molecular function
+relationship: RO:0002211 GO:0003674 ! molecular_function
+
+[Term]
 id: GO:0098796
 name: membrane protein complex
 def: "Any protein complex that is part of a membrane." [GOC:dos]
@@ -3768,6 +5617,23 @@ intersection_of: GO:0043234 ! protein complex
 intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
 
 [Term]
+id: GO:0098798
+name: mitochondrial protein complex
+def: "A protein complex that is part of a mitochondrion." [GOC:dos]
+is_a: GO:0043234 ! protein complex
+is_a: GO:0044429 ! mitochondrial part
+intersection_of: GO:0043234 ! protein complex
+intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
+
+[Term]
+id: GO:0099094
+name: ligand-gated cation channel activity
+def: "Enables the transmembrane transfer of an inorganic cation by a channel that opens when a specific ligand has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
+is_a: GO:0005261 ! cation channel activity
+is_a: GO:0015276 ! ligand-gated ion channel activity
+is_a: GO:0022890 ! inorganic cation transmembrane transporter activity
+
+[Term]
 id: GO:0099536
 name: synaptic signaling
 def: "Cell-cell signaling to, from or or within a synapse." [GOC:dos]
@@ -3781,6 +5647,21 @@ is_a: GO:0005737 ! cytoplasm
 is_a: GO:0044444 ! cytoplasmic part
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: BFO:0000050 GO:0005737 ! cytoplasm
+
+[Term]
+id: GO:0099600
+name: transmembrane receptor activity
+def: "Combining with an extracellular or intracellular signal and transmitting a signal from one side of the membrane to the other." [GOC:dos]
+is_a: GO:0004872 ! receptor activity
+
+[Term]
+id: GO:0099601
+name: regulation of neurotransmitter receptor activity
+def: "Any process that modulates the frequency, rate or extent of neurotransmitter receptor activity. Modulation may be via an effect on ligand affinity, or effector funtion such as ion selectivity or pore opening/closing in ionotropic receptors." [GOC:dos]
+is_a: GO:0010469 ! regulation of receptor activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0030594 ! neurotransmitter receptor activity
+relationship: RO:0002211 GO:0030594 ! neurotransmitter receptor activity
 
 [Term]
 id: GO:0099643
@@ -3838,6 +5719,25 @@ intersection_of: BFO:0000050 GO:0120025 ! plasma membrane bounded cell projectio
 relationship: BFO:0000050 GO:0120025 ! plasma membrane bounded cell projection
 
 [Term]
+id: GO:0140053
+name: mitochondrial gene expression
+def: "The process in which a mitochondrial gene's sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." [PMID:27058308]
+is_a: GO:0010467 ! gene expression
+intersection_of: GO:0010467 ! gene expression
+intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
+relationship: BFO:0000066 GO:0005739 ! mitochondrion
+
+[Term]
+id: GO:1900120
+name: regulation of receptor binding
+def: "Any process that modulates the frequency, rate or extent of a protein or other molecule binding to a receptor." [GOC:signaling, GOC:TermGenie]
+synonym: "regulation of receptor ligand" NARROW [GOC:TermGenie]
+is_a: GO:0043393 ! regulation of protein binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0005102 ! receptor binding
+relationship: RO:0002211 GO:0005102 ! receptor binding
+
+[Term]
 id: GO:1900393
 name: regulation of iron ion transport by regulation of transcription from RNA polymerase II promoter
 def: "A regulation of transcription from RNA polymerase II promoter that results in regulation of iron ion transport." [GOC:mah, GOC:TermGenie, PMID:11956219]
@@ -3858,6 +5758,29 @@ is_a: GO:0006109 ! regulation of carbohydrate metabolic process
 is_a: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 intersection_of: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 intersection_of: RO:0002211 GO:0005975 ! carbohydrate metabolic process
+
+[Term]
+id: GO:1900449
+name: regulation of glutamate receptor signaling pathway
+def: "Any process that modulates the frequency, rate or extent of glutamate receptor signaling pathway." [GOC:BHF, GOC:TermGenie]
+synonym: "regulation of glutamate signaling pathway" EXACT [GOC:TermGenie]
+synonym: "regulation of glutamate signalling pathway" EXACT [GOC:TermGenie]
+is_a: GO:0009966 ! regulation of signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007215 ! glutamate receptor signaling pathway
+relationship: RO:0002211 GO:0007215 ! glutamate receptor signaling pathway
+
+[Term]
+id: GO:1900542
+name: regulation of purine nucleotide metabolic process
+def: "Any process that modulates the frequency, rate or extent of purine nucleotide metabolic process." [GOC:TermGenie]
+synonym: "regulation of purine metabolic process" NARROW [GOC:TermGenie]
+synonym: "regulation of purine metabolism" NARROW [GOC:TermGenie]
+synonym: "regulation of purine nucleotide metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0006140 ! regulation of nucleotide metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006163 ! purine nucleotide metabolic process
+relationship: RO:0002211 GO:0006163 ! purine nucleotide metabolic process
 
 [Term]
 id: GO:1901135
@@ -4030,6 +5953,28 @@ intersection_of: RO:0002211 GO:0009450 ! gamma-aminobutyric acid catabolic proce
 relationship: RO:0002211 GO:0009450 ! gamma-aminobutyric acid catabolic process
 
 [Term]
+id: GO:1901858
+name: regulation of mitochondrial DNA metabolic process
+def: "Any process that modulates the frequency, rate or extent of mitochondrial DNA metabolic process." [GOC:TermGenie, GOC:yaf, PMID:23150719]
+synonym: "regulation of mitochondrial DNA metabolism" EXACT [GOC:TermGenie]
+synonym: "regulation of mtDNA metabolic process" EXACT [GOC:TermGenie]
+synonym: "regulation of mtDNA metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0010821 ! regulation of mitochondrion organization
+is_a: GO:0051052 ! regulation of DNA metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0032042 ! mitochondrial DNA metabolic process
+relationship: RO:0002211 GO:0032042 ! mitochondrial DNA metabolic process
+
+[Term]
+id: GO:1902113
+name: nucleotide phosphorylation involved in DNA repair
+def: "Any nucleotide phosphorylation that is involved in DNA repair." [GOC:TermGenie, PMID:11729194]
+is_a: GO:0046939 ! nucleotide phosphorylation
+intersection_of: GO:0046939 ! nucleotide phosphorylation
+intersection_of: BFO:0000050 GO:0006281 ! DNA repair
+relationship: BFO:0000050 GO:0006281 ! DNA repair
+
+[Term]
 id: GO:1902531
 name: regulation of intracellular signal transduction
 def: "Any process that modulates the frequency, rate or extent of intracellular signal transduction." [GOC:dph, GOC:signaling, GOC:tb, GOC:TermGenie]
@@ -4055,6 +6000,29 @@ is_a: GO:0051246 ! regulation of protein metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0009100 ! glycoprotein metabolic process
 relationship: RO:0002211 GO:0009100 ! glycoprotein metabolic process
+
+[Term]
+id: GO:1903108
+name: regulation of transcription from mitochondrial promoter
+def: "Any process that modulates the frequency, rate or extent of transcription from mitochondrial promoter." [GO_REF:0000058, GOC:TermGenie, PMID:21357609]
+synonym: "regulation of mitochondrial transcription" EXACT [GOC:TermGenie]
+is_a: GO:0006355 ! regulation of transcription, DNA-templated
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006390 ! transcription from mitochondrial promoter
+relationship: RO:0002211 GO:0006390 ! transcription from mitochondrial promoter
+
+[Term]
+id: GO:1903302
+name: regulation of pyruvate kinase activity
+def: "Any process that modulates the frequency, rate or extent of pyruvate kinase activity." [GO_REF:0000059, GOC:mr, GOC:TermGenie, PMID:15804508]
+synonym: "regulation of ATP:pyruvate 2-O-phosphotransferase activity" EXACT [GOC:TermGenie]
+synonym: "regulation of phosphoenol transphosphorylase activity" EXACT [GOC:TermGenie]
+synonym: "regulation of phosphoenolpyruvate kinase activity" EXACT [GOC:TermGenie]
+is_a: GO:0006110 ! regulation of glycolytic process
+is_a: GO:0051338 ! regulation of transferase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0004743 ! pyruvate kinase activity
+relationship: RO:0002211 GO:0004743 ! pyruvate kinase activity
 
 [Term]
 id: GO:1903314
@@ -4084,6 +6052,16 @@ intersection_of: RO:0002211 GO:0097659 ! nucleic acid-templated transcription
 relationship: RO:0002211 GO:0097659 ! nucleic acid-templated transcription
 
 [Term]
+id: GO:1903522
+name: regulation of blood circulation
+def: "Any process that modulates the frequency, rate or extent of blood circulation." [GO_REF:0000058, GOC:mr, GOC:TermGenie, PMID:10659969]
+synonym: "regulation of hemolymph circulation" RELATED [GOC:TermGenie]
+is_a: GO:0044057 ! regulation of system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0008015 ! blood circulation
+relationship: RO:0002211 GO:0008015 ! blood circulation
+
+[Term]
 id: GO:1903530
 name: regulation of secretion by cell
 def: "Any process that modulates the frequency, rate or extent of secretion by cell." [GO_REF:0000058, GOC:pm, GOC:TermGenie, PMID:12130530]
@@ -4093,6 +6071,47 @@ is_a: GO:0051046 ! regulation of secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0032940 ! secretion by cell
 relationship: RO:0002211 GO:0032940 ! secretion by cell
+
+[Term]
+id: GO:1903578
+name: regulation of ATP metabolic process
+def: "Any process that modulates the frequency, rate or extent of ATP metabolic process." [GO_REF:0000058, GOC:TermGenie, PMID:20695849]
+synonym: "regulation of ATP metabolism" EXACT [GOC:TermGenie]
+is_a: GO:1900542 ! regulation of purine nucleotide metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0046034 ! ATP metabolic process
+relationship: RO:0002211 GO:0046034 ! ATP metabolic process
+
+[Term]
+id: GO:1903715
+name: regulation of aerobic respiration
+def: "Any process that modulates the frequency, rate or extent of aerobic respiration." [GO_REF:0000058, GOC:TermGenie, PMID:19266076]
+is_a: GO:0043457 ! regulation of cellular respiration
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0009060 ! aerobic respiration
+relationship: RO:0002211 GO:0009060 ! aerobic respiration
+
+[Term]
+id: GO:1903759
+name: signal transduction involved in regulation of aerobic respiration
+def: "Any signal transduction that is involved in regulation of aerobic respiration." [GO_REF:0000060, GOC:TermGenie, PMID:19266076]
+synonym: "signaling cascade involved in regulation of aerobic respiration" NARROW [GOC:TermGenie]
+synonym: "signaling pathway involved in regulation of aerobic respiration" RELATED [GOC:TermGenie]
+synonym: "signalling cascade involved in regulation of aerobic respiration" NARROW [GOC:TermGenie]
+synonym: "signalling pathway involved in regulation of aerobic respiration" RELATED [GOC:TermGenie]
+is_a: GO:0007165 ! signal transduction
+intersection_of: GO:0007165 ! signal transduction
+intersection_of: BFO:0000050 GO:1903715 ! regulation of aerobic respiration
+relationship: BFO:0000050 GO:1903715 ! regulation of aerobic respiration
+
+[Term]
+id: GO:1904062
+name: regulation of cation transmembrane transport
+def: "Any process that modulates the frequency, rate or extent of cation transmembrane transport." [GO_REF:0000058, GOC:TermGenie, PMID:15304482]
+is_a: GO:0034765 ! regulation of ion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0098655 ! cation transmembrane transport
+relationship: RO:0002211 GO:0098655 ! cation transmembrane transport
 
 [Term]
 id: GO:1904098
@@ -4116,6 +6135,22 @@ intersection_of: RO:0002211 GO:0008206 ! bile acid metabolic process
 relationship: RO:0002211 GO:0008206 ! bile acid metabolic process
 
 [Term]
+id: GO:1905114
+name: cell surface receptor signaling pathway involved in cell-cell signaling
+def: "Any cell surface receptor signaling pathway that is involved in cell-cell signaling." [GO_REF:0000060, GOC:TermGenie, ISBN:0-7167-3051-0]
+synonym: "cell surface receptor linked signal transduction involved in cell-cell signaling" EXACT [GOC:TermGenie]
+synonym: "cell surface receptor linked signal transduction involved in cell-cell signalling" EXACT [GOC:TermGenie]
+synonym: "cell surface receptor linked signaling pathway involved in cell-cell signaling" EXACT [GOC:TermGenie]
+synonym: "cell surface receptor linked signaling pathway involved in cell-cell signalling" EXACT [GOC:TermGenie]
+synonym: "cell surface receptor linked signalling pathway involved in cell-cell signaling" EXACT [GOC:TermGenie]
+synonym: "cell surface receptor linked signalling pathway involved in cell-cell signalling" EXACT [GOC:TermGenie]
+synonym: "cell surface receptor signaling pathway involved in cell-cell signalling" EXACT [GOC:TermGenie]
+is_a: GO:0007166 ! cell surface receptor signaling pathway
+intersection_of: GO:0007166 ! cell surface receptor signaling pathway
+intersection_of: BFO:0000050 GO:0007267 ! cell-cell signaling
+relationship: BFO:0000050 GO:0007267 ! cell-cell signaling
+
+[Term]
 id: GO:1905952
 name: regulation of lipid localization
 def: "Any process that modulates the frequency, rate or extent of lipid localization." [GO_REF:0000058, GOC:TermGenie, PMID:17564681]
@@ -4124,6 +6159,13 @@ is_a: GO:0032879 ! regulation of localization
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0010876 ! lipid localization
 relationship: RO:0002211 GO:0010876 ! lipid localization
+
+[Term]
+id: GO:1990542
+name: mitochondrial transmembrane transport
+def: "The process in which a solute is transported from one side of a membrane to the other into, out of or within a mitochondrion." [PMID:20533899]
+is_a: GO:0006839 ! mitochondrial transport
+is_a: GO:0055085 ! transmembrane transport
 
 [Term]
 id: GO:2000112
@@ -4141,6 +6183,15 @@ intersection_of: RO:0002211 GO:0034645 ! cellular macromolecule biosynthetic pro
 relationship: RO:0002211 GO:0034645 ! cellular macromolecule biosynthetic process
 
 [Term]
+id: GO:2000241
+name: regulation of reproductive process
+def: "Any process that modulates the frequency, rate or extent of reproductive process." [GOC:mah]
+is_a: GO:0050789 ! regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0022414 ! reproductive process
+relationship: RO:0002211 GO:0022414 ! reproductive process
+
+[Term]
 id: GO:2000282
 name: regulation of cellular amino acid biosynthetic process
 def: "Any process that modulates the frequency, rate or extent of cellular amino acid biosynthetic process." [GOC:obol]
@@ -4154,6 +6205,28 @@ is_a: GO:0031326 ! regulation of cellular biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0008652 ! cellular amino acid biosynthetic process
 relationship: RO:0002211 GO:0008652 ! cellular amino acid biosynthetic process
+
+[Term]
+id: GO:2000310
+name: regulation of NMDA receptor activity
+def: "Any process that modulates the frequency, rate or extent of N-methyl-D-aspartate selective glutamate receptor activity." [GOC:BHF]
+synonym: "regulation of N-methyl-D-aspartate selective glutamate receptor activity" EXACT []
+is_a: GO:0099601 ! regulation of neurotransmitter receptor activity
+is_a: GO:1900449 ! regulation of glutamate receptor signaling pathway
+is_a: GO:2001257 ! regulation of cation channel activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0004972 ! NMDA glutamate receptor activity
+relationship: RO:0002211 GO:0004972 ! NMDA glutamate receptor activity
+
+[Term]
+id: GO:2000348
+name: regulation of CD40 signaling pathway
+def: "Any process that modulates the frequency, rate or extent of signaling via the CD40 signaling pathway." [GOC:mah]
+synonym: "regulation of CD40 signalling pathway" EXACT [GOC:obol]
+is_a: GO:0009966 ! regulation of signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0023035 ! CD40 signaling pathway
+relationship: RO:0002211 GO:0023035 ! CD40 signaling pathway
 
 [Term]
 id: GO:2000819
@@ -4207,6 +6280,18 @@ is_a: GO:0051252 ! regulation of RNA metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0032774 ! RNA biosynthetic process
 relationship: RO:0002211 GO:0032774 ! RNA biosynthetic process
+
+[Term]
+id: GO:2001257
+name: regulation of cation channel activity
+def: "Any process that modulates the frequency, rate or extent of cation channel activity." [GOC:BHF]
+synonym: "regulation of cation diffusion facilitator activity" EXACT [GOC:obol]
+synonym: "regulation of nonselective cation channel activity" EXACT [GOC:obol]
+is_a: GO:0032412 ! regulation of ion transmembrane transporter activity
+is_a: GO:1904062 ! regulation of cation transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0005261 ! cation channel activity
+relationship: RO:0002211 GO:0005261 ! cation channel activity
 
 [Typedef]
 id: BFO:0000050

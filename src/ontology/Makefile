@@ -22,7 +22,7 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json
+all: test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json
 test: sparql_test test_nomerge
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -73,7 +73,9 @@ $(ONT).json: pre/$(ONT).owl
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
 pre/$(ONT).%: $(ONT).%
-	cp $< $@
+	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
+pre/$(ONT).json: $(ONT).owl
+	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
 
 # CURRENT RELEASES: map back to clique leaders
 extid/mondo.owl: mondo.owl
@@ -115,7 +117,7 @@ modules/%.owl: modules/%.tsv
 # These live in the imports/ folder
 # These can be regenerated with make all_imports
 
-IMPORTS = uberon cl go pato ro hp mfoem
+IMPORTS = uberon cl go pato ro hp mfoem ncbitaxon chebi envo
 IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 # Make this target to regenerate ALL
@@ -146,7 +148,11 @@ release: $(ONT).owl $(ONT).obo
 # ----------------------------------------
 
 INF: mondo-edit.obo
-	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --markIsInferred --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: UBERON' -  > $@
+	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --markIsInferred --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
+
+NEWAXTEST: mondo-edit.owl new.owl
+#	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m z.owl -o $@
+	owltools --use-catalog  $^ --merge-support-ontologies --assert-inferred-subclass-axioms --always-assert-super-classes --markIsInferred --removeRedundant  --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
 
 # ----------------------------------------
 # Sparql queries: Q/C
@@ -206,9 +212,20 @@ imports/equivalencies.obo: imports/equivalencies.owl
 # External ontologies
 # ----------------------------------------
 
+mirror/%-raw.owl: mirror/%.owl
+	$(OWLTOOLS) $< --remove-axioms-about -v 
+
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: 
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/ncbitaxon.owl: 
+	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@
+.PRECIOUS: mirror/%.owl
+
+mirror/chebi.owl: 
+	wget --no-check-certificate $(OBO)/chebi.obo -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/mfoem.owl: 

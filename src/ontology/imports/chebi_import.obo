@@ -1,0 +1,1038 @@
+format-version: 1.2
+ontology: mondo/imports/chebi_import
+
+[Term]
+id: CHEBI:10545
+name: electron
+def: "Elementary particle not affected by the strong force having a spin 1/2, a negative elementary charge and a rest mass of 0.000548579903(13) u, or 0.51099906(15) MeV." []
+synonym: "beta" RELATED []
+synonym: "beta(-)" RELATED []
+synonym: "beta-particle" RELATED []
+synonym: "e" RELATED []
+synonym: "e(-)" RELATED []
+synonym: "e-" RELATED []
+synonym: "electron" EXACT []
+synonym: "negatron" RELATED []
+is_a: CHEBI:36338 ! lepton
+
+[Term]
+id: CHEBI:15036
+name: retinoate
+synonym: "3,7-dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)nona-2,4,6,8-tetraenoate" EXACT []
+synonym: "retinoate" EXACT []
+is_a: CHEBI:26537 ! retinoid
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:26536 ! retinoic acid
+
+[Term]
+id: CHEBI:17891
+name: donor
+def: "A molecular entity that can transfer (\"donate\") an electron, a pair of electrons, an atom or a group to another molecular entity." []
+synonym: "Donator" RELATED []
+synonym: "donneur" RELATED []
+synonym: "Donor" EXACT []
+synonym: "donor" EXACT []
+is_a: CHEBI:51086 ! chemical role
+
+[Term]
+id: CHEBI:18059
+name: lipid
+def: "'Lipids' is a loosely defined term for substances of biological origin that are soluble in nonpolar solvents. They consist of saponifiable lipids, such as glycerides (fats and oils) and phospholipids, as well as nonsaponifiable lipids, principally steroids." []
+synonym: "Lipid" EXACT []
+synonym: "lipids" EXACT []
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:22563
+name: anion
+def: "A monoatomic or polyatomic species having one or more elementary charges of the electron." []
+synonym: "Anion" EXACT []
+synonym: "anion" EXACT []
+synonym: "Anionen" RELATED []
+synonym: "aniones" RELATED []
+synonym: "anions" RELATED []
+is_a: CHEBI:24870 ! ion
+
+[Term]
+id: CHEBI:23019
+name: carbonyl group
+synonym: ">C=O" RELATED []
+synonym: "carbonyl" EXACT []
+synonym: "carbonyl group" EXACT []
+is_a: CHEBI:51422 ! organodiyl group
+
+[Term]
+id: CHEBI:23367
+name: molecular entity
+def: "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity." []
+synonym: "entidad molecular" RELATED []
+synonym: "entidades moleculares" RELATED []
+synonym: "entite moleculaire" RELATED []
+synonym: "molecular entities" RELATED []
+synonym: "molecular entity" EXACT []
+synonym: "molekulare Entitaet" RELATED []
+is_a: CHEBI:24431 ! chemical entity
+
+[Term]
+id: CHEBI:23849
+name: diterpenoid
+def: "Any terpenoid derived from a diterpene. The term includes compounds in which the C20 skeleton of the parent diterpene has been rearranged or modified by the removal of one or more skeletal atoms (generally methyl groups)." []
+synonym: "C20 isoprenoids" RELATED []
+synonym: "diterpenoides" RELATED []
+synonym: "diterpenoids" EXACT []
+is_a: CHEBI:26873 ! terpenoid
+relationship: has_parent_hydride CHEBI:35190 ! diterpene
+
+[Term]
+id: CHEBI:23888
+name: drug
+def: "Any substance which when absorbed into a living organism may modify one or more of its functions. The term is generally accepted for a substance taken for a therapeutic purpose, but is also commonly used for abused substances." []
+synonym: "drugs" RELATED []
+synonym: "medicine" RELATED []
+is_a: CHEBI:52217 ! pharmaceutical
+
+[Term]
+id: CHEBI:24431
+name: chemical entity
+def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
+synonym: "chemical entity" EXACT []
+
+[Term]
+id: CHEBI:24432
+name: biological role
+def: "A role played by the molecular entity or part thereof within a biological context." []
+synonym: "biological function" RELATED []
+is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:24433
+name: group
+def: "A defined linked collection of atoms or a single atom within a molecular entity." []
+synonym: "group" EXACT []
+synonym: "groupe" RELATED []
+synonym: "grupo" RELATED []
+synonym: "grupos" RELATED []
+synonym: "Gruppe" RELATED []
+synonym: "Rest" RELATED []
+is_a: CHEBI:24431 ! chemical entity
+relationship: BFO:0000051 CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:24632
+name: hydrocarbon
+def: "A compound consisting of carbon and hydrogen only." []
+synonym: "hidrocarburo" RELATED []
+synonym: "hidrocarburos" RELATED []
+synonym: "hydrocarbon" EXACT []
+synonym: "hydrocarbons" EXACT []
+synonym: "hydrocarbure" RELATED []
+synonym: "Kohlenwasserstoff" RELATED []
+synonym: "Kohlenwasserstoffe" RELATED []
+is_a: CHEBI:33245 ! organic fundamental parent
+
+[Term]
+id: CHEBI:24651
+name: hydroxides
+def: "Hydroxides are chemical compounds containing a hydroxy group or salts containing hydroxide (OH(-))." []
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:33608 ! hydrogen molecular entity
+is_a: CHEBI:37577 ! heteroatomic molecular entity
+relationship: BFO:0000051 CHEBI:43176 ! hydroxy group
+
+[Term]
+id: CHEBI:24833
+name: oxoacid
+def: "A compound which contains oxygen, at least one other element, and at least one hydrogen bound to oxygen, and which produces a conjugate base by loss of positive hydrogen ion(s) (hydrons)." []
+synonym: "oxacids" RELATED []
+synonym: "oxiacids" RELATED []
+synonym: "oxo acid" RELATED []
+synonym: "oxoacid" EXACT []
+synonym: "oxoacids" EXACT []
+synonym: "oxy-acids" RELATED []
+synonym: "oxyacids" RELATED []
+is_a: CHEBI:24651 ! hydroxides
+relationship: RO:0000087 CHEBI:39141 ! Bronsted acid
+
+[Term]
+id: CHEBI:24835
+name: inorganic molecular entity
+def: "A molecular entity that contains no carbon." []
+synonym: "anorganische Verbindungen" RELATED []
+synonym: "inorganic compounds" RELATED []
+synonym: "inorganic entity" RELATED []
+synonym: "inorganic molecular entities" RELATED []
+synonym: "inorganics" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:24870
+name: ion
+def: "A molecular entity having a net electric charge." []
+synonym: "Ion" EXACT []
+synonym: "ion" EXACT []
+synonym: "Ionen" RELATED []
+synonym: "iones" RELATED []
+synonym: "ions" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:24913
+name: isoprenoid
+def: "Any lipid formally derived from isoprene (2-methylbuta-1,3-diene), the skeleton of which can generally be discerned in repeated occurrence in the molecule. The skeleton of isoprenoids may differ from strict additivity of isoprene units by loss or shift of a fragment, commonly a methyl group. The class includes both hydrocarbons and oxygenated derivatives." []
+synonym: "isoprenoid" EXACT []
+synonym: "isoprenoids" EXACT []
+synonym: "isoprenoids" RELATED []
+is_a: CHEBI:18059 ! lipid
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:25212
+name: metabolite
+def: "Any intermediate or product resulting from metabolism. The term 'metabolite' subsumes the classes commonly known as primary and secondary metabolites." []
+synonym: "metabolite" EXACT []
+synonym: "metabolites" RELATED []
+synonym: "primary metabolites" RELATED []
+synonym: "secondary metabolites" RELATED []
+is_a: CHEBI:52206 ! biochemical role
+
+[Term]
+id: CHEBI:25367
+name: molecule
+def: "Any polyatomic entity that is an electrically neutral entity consisting of more than one atom." []
+synonym: "molecula" RELATED []
+synonym: "molecule" EXACT []
+synonym: "molecules" RELATED []
+synonym: "Molekuel" RELATED []
+synonym: "neutral molecular compounds" RELATED []
+is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
+id: CHEBI:25384
+name: monocarboxylic acid
+def: "An oxoacid containing a single carboxy group." []
+synonym: "monocarboxylic acid" EXACT []
+synonym: "monocarboxylic acids" RELATED []
+is_a: CHEBI:33575 ! carboxylic acid
+relationship: is_conjugate_acid_of CHEBI:35757 ! monocarboxylic acid anion
+
+[Term]
+id: CHEBI:25585
+name: nonmetal atom
+synonym: "Nichtmetall" RELATED []
+synonym: "Nichtmetalle" RELATED []
+synonym: "no metal" RELATED []
+synonym: "no metales" RELATED []
+synonym: "non-metal" RELATED []
+synonym: "non-metaux" RELATED []
+synonym: "nonmetal" EXACT []
+synonym: "nonmetal" RELATED []
+synonym: "nonmetals" RELATED []
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:25696
+name: organic anion
+def: "Any organic ion with a net negative charge." []
+synonym: "organic anions" RELATED []
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:25699 ! organic ion
+
+[Term]
+id: CHEBI:25699
+name: organic ion
+synonym: "organic ions" RELATED []
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:25741
+name: oxide
+def: "An oxide is a chemical compound of oxygen with other chemical elements." []
+synonym: "oxide" EXACT []
+synonym: "oxides" RELATED []
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:37577 ! heteroatomic molecular entity
+
+[Term]
+id: CHEBI:25805
+name: oxygen atom
+synonym: "8O" RELATED []
+synonym: "O" RELATED []
+synonym: "oxigeno" RELATED []
+synonym: "oxygen" EXACT []
+synonym: "oxygen" RELATED []
+synonym: "oxygene" RELATED []
+synonym: "Sauerstoff" RELATED []
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33303 ! chalcogen
+relationship: RO:0000087 CHEBI:33937 ! macronutrient
+
+[Term]
+id: CHEBI:25806
+name: oxygen molecular entity
+synonym: "oxygen molecular entities" RELATED []
+synonym: "oxygen molecular entity" EXACT []
+is_a: CHEBI:33304 ! chalcogen molecular entity
+relationship: BFO:0000051 CHEBI:25805 ! oxygen atom
+
+[Term]
+id: CHEBI:26536
+name: retinoic acid
+def: "A retinoid consisting of 3,7-dimethylnona-2,4,6,8-tetraenoic acid substituted at position 9 by a 2,6,6-trimethylcyclohex-1-en-1-yl group (geometry of the four exocyclic double bonds is not specified)." []
+synonym: "3,7-dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)nona-2,4,6,8-tetraenoic acid" EXACT []
+is_a: CHEBI:26537 ! retinoid
+is_a: CHEBI:79020 ! alpha,beta-unsaturated monocarboxylic acid
+relationship: is_conjugate_acid_of CHEBI:15036 ! retinoate
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:26537
+name: retinoid
+def: "Oxygenated derivatives of 3,7-dimethyl-1-(2,6,6-trimethylcyclohex-1-enyl)nona-1,3,5,7-tetraene and derivatives thereof." []
+synonym: "retinoid" EXACT []
+synonym: "retinoids" EXACT []
+synonym: "retinoids" RELATED []
+is_a: CHEBI:23849 ! diterpenoid
+
+[Term]
+id: CHEBI:26873
+name: terpenoid
+def: "Any isoprenoid that is a natural product or related compound formally derived from isoprene units. Terpenoids may contain oxygen in various functional groups. This class is subdivided according to the number of carbon atoms in the parent terpene. The skeleton of terpenoids may differ from strict additivity of isoprene units by the loss or shift of a fragment, generally a methyl group." []
+synonym: "Terpenoid" EXACT []
+synonym: "terpenoide" RELATED []
+synonym: "terpenoides" RELATED []
+synonym: "terpenoids" EXACT []
+is_a: CHEBI:24913 ! isoprenoid
+relationship: has_parent_hydride CHEBI:35186 ! terpene
+
+[Term]
+id: CHEBI:27594
+name: carbon atom
+synonym: "6C" RELATED []
+synonym: "C" RELATED []
+synonym: "Carbon" RELATED []
+synonym: "carbon" EXACT []
+synonym: "carbon" RELATED []
+synonym: "carbone" RELATED []
+synonym: "carbonium" RELATED []
+synonym: "carbono" RELATED []
+synonym: "Kohlenstoff" RELATED []
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33306 ! carbon group element atom
+relationship: RO:0000087 CHEBI:33937 ! macronutrient
+
+[Term]
+id: CHEBI:29067
+name: carboxylic acid anion
+def: "The conjugate base formed when the carboxy group of a carboxylic acid is deprotonated." []
+synonym: "a carboxylate" RELATED []
+synonym: "carboxylic acid anions" RELATED []
+synonym: "carboxylic anions" RELATED []
+is_a: CHEBI:25696 ! organic anion
+is_a: CHEBI:35406 ! oxoanion
+relationship: is_conjugate_base_of CHEBI:33575 ! carboxylic acid
+
+[Term]
+id: CHEBI:33232
+name: application
+def: "Intended use of the molecular entity or part thereof by humans." []
+is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:33233
+name: fundamental particle
+def: "A particle not known to have substructure." []
+synonym: "elementary particle" EXACT []
+synonym: "elementary particles" RELATED []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:33245
+name: organic fundamental parent
+def: "An organic fundamental parent is a structure used as a basis for substitutive names in organic nomenclature, containing, in addition to one or more hydrogen atoms, a single atom of an element, a number of atoms (alike or different) linked together to form an unbranched chain, a monocyclic or polycyclic ring system, or a ring assembly or ring/chain system." []
+synonym: "organic fundamental parents" RELATED []
+synonym: "organic parent hydrides" RELATED []
+is_a: CHEBI:37175 ! organic hydride
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:33246
+name: inorganic group
+def: "Any substituent group which does not contain carbon." []
+synonym: "inorganic groups" RELATED []
+is_a: CHEBI:24433 ! group
+
+[Term]
+id: CHEBI:33247
+name: organic group
+def: "Any substituent group or skeleton containing carbon." []
+synonym: "organic groups" RELATED []
+is_a: CHEBI:24433 ! group
+relationship: is_substituent_group_from CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:33249
+name: organyl group
+def: "Any organic substituent group, regardless of functional type, having one free valence at a carbon atom." []
+synonym: "groupe organyle" RELATED []
+synonym: "grupo organilo" RELATED []
+synonym: "grupos organilo" RELATED []
+synonym: "organyl group" EXACT []
+synonym: "organyl groups" EXACT []
+is_a: CHEBI:51447 ! organic univalent group
+
+[Term]
+id: CHEBI:33250
+name: atom
+def: "A chemical entity constituting the smallest component of an element having the chemical properties of the element." []
+synonym: "atom" EXACT []
+synonym: "atome" RELATED []
+synonym: "atomo" RELATED []
+synonym: "atoms" RELATED []
+synonym: "atomus" RELATED []
+synonym: "element" RELATED []
+synonym: "elements" RELATED []
+is_a: CHEBI:24431 ! chemical entity
+relationship: BFO:0000051 CHEBI:10545 ! electron
+relationship: BFO:0000051 CHEBI:33252 ! atomic nucleus
+
+[Term]
+id: CHEBI:33252
+name: atomic nucleus
+def: "A nucleus is the positively charged central portion of an atom, excluding the orbital electrons." []
+synonym: "Atomkern" RELATED []
+synonym: "Kern" RELATED []
+synonym: "noyau" RELATED []
+synonym: "noyau atomique" RELATED []
+synonym: "nuclei" RELATED []
+synonym: "nucleo" RELATED []
+synonym: "nucleo atomico" RELATED []
+synonym: "nucleus" EXACT []
+synonym: "nucleus atomi" RELATED []
+is_a: CHEBI:36347 ! nuclear particle
+relationship: BFO:0000051 CHEBI:33253 ! nucleon
+
+[Term]
+id: CHEBI:33253
+name: nucleon
+def: "Heavy nuclear particle: proton or neutron." []
+synonym: "nucleon" EXACT []
+synonym: "nucleons" RELATED []
+synonym: "Nukleon" RELATED []
+synonym: "Nukleonen" RELATED []
+is_a: CHEBI:36339 ! baryon
+is_a: CHEBI:36347 ! nuclear particle
+
+[Term]
+id: CHEBI:33273
+name: polyatomic anion
+def: "An anion consisting of more than one atom." []
+synonym: "polyatomic anions" RELATED []
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:36358 ! polyatomic ion
+
+[Term]
+id: CHEBI:33284
+name: nutrient
+def: "A nutrient is a food component that an organism uses to survive and grow." []
+synonym: "nutrients" RELATED []
+is_a: CHEBI:78295 ! food component
+
+[Term]
+id: CHEBI:33285
+name: heteroorganic entity
+def: "A heteroorganic entity is an organic molecular entity in which carbon atoms or organic groups are bonded directly to one or more heteroatoms." []
+synonym: "heteroorganic entities" RELATED []
+synonym: "organoelement compounds" RELATED []
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:33303
+name: chalcogen
+def: "Any p-block element belonging to the group 16 family of the periodic table." []
+synonym: "anfigeno" RELATED []
+synonym: "anfigenos" RELATED []
+synonym: "calcogeno" RELATED []
+synonym: "calcogenos" RELATED []
+synonym: "chalcogen" EXACT []
+synonym: "chalcogene" RELATED []
+synonym: "chalcogenes" RELATED []
+synonym: "chalcogens" EXACT []
+synonym: "Chalkogen" RELATED []
+synonym: "Chalkogene" RELATED []
+synonym: "group 16 elements" RELATED []
+synonym: "group VI elements" RELATED []
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33304
+name: chalcogen molecular entity
+def: "Any p-block molecular entity containing a chalcogen." []
+synonym: "chalcogen compounds" RELATED []
+synonym: "chalcogen molecular entities" RELATED []
+synonym: "chalcogen molecular entity" EXACT []
+is_a: CHEBI:33675 ! p-block molecular entity
+relationship: BFO:0000051 CHEBI:33303 ! chalcogen
+
+[Term]
+id: CHEBI:33306
+name: carbon group element atom
+synonym: "carbon group element" RELATED []
+synonym: "carbon group elements" RELATED []
+synonym: "carbonoides" RELATED []
+synonym: "cristallogene" RELATED []
+synonym: "cristallogenes" RELATED []
+synonym: "group 14 elements" EXACT []
+synonym: "group IV elements" RELATED []
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33318
+name: main group element atom
+def: "An atom belonging to one of the main groups (found in the s- and p- blocks) of the periodic table." []
+synonym: "Hauptgruppenelement" RELATED []
+synonym: "Hauptgruppenelemente" RELATED []
+synonym: "main group element" RELATED []
+synonym: "main group elements" EXACT []
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33559
+name: s-block element atom
+synonym: "s-block element" RELATED []
+synonym: "s-block elements" RELATED []
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33560
+name: p-block element atom
+def: "Any main group element atom belonging to the p-block of the periodic table." []
+synonym: "p-block element" RELATED []
+synonym: "p-block elements" RELATED []
+is_a: CHEBI:33318 ! main group element atom
+
+[Term]
+id: CHEBI:33575
+name: carboxylic acid
+def: "A carbon oxoacid acid carrying at least one -C(=O)OH group and having the structure RC(=O)OH, where R is any any monovalent functional group. Carboxylic acids are the most common type of organic acid." []
+synonym: "acide carboxylique" RELATED []
+synonym: "acides carboxyliques" RELATED []
+synonym: "acido carboxilico" RELATED []
+synonym: "acidos carboxilicos" RELATED []
+synonym: "Carbonsaeure" RELATED []
+synonym: "Carbonsaeuren" RELATED []
+synonym: "carboxylic acid" EXACT []
+synonym: "carboxylic acids" EXACT []
+synonym: "Karbonsaeure" RELATED []
+synonym: "RC(=O)OH" RELATED []
+is_a: CHEBI:35605 ! carbon oxoacid
+is_a: CHEBI:36586 ! carbonyl compound
+is_a: CHEBI:64709 ! organic acid
+relationship: BFO:0000051 CHEBI:46883 ! carboxy group
+relationship: is_conjugate_acid_of CHEBI:29067 ! carboxylic acid anion
+
+[Term]
+id: CHEBI:33579
+name: main group molecular entity
+def: "A molecular entity containing one or more atoms from any of groups 1, 2, 13, 14, 15, 16, 17, and 18 of the periodic table." []
+synonym: "main group compounds" RELATED []
+synonym: "main group molecular entities" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+relationship: BFO:0000051 CHEBI:33318 ! main group element atom
+
+[Term]
+id: CHEBI:33582
+name: carbon group molecular entity
+synonym: "carbon group molecular entities" RELATED []
+synonym: "carbon group molecular entity" EXACT []
+is_a: CHEBI:33675 ! p-block molecular entity
+relationship: BFO:0000051 CHEBI:33306 ! carbon group element atom
+
+[Term]
+id: CHEBI:33608
+name: hydrogen molecular entity
+synonym: "hydrogen compounds" RELATED []
+synonym: "hydrogen molecular entities" RELATED []
+is_a: CHEBI:33674 ! s-block molecular entity
+relationship: BFO:0000051 CHEBI:49637 ! hydrogen atom
+
+[Term]
+id: CHEBI:33674
+name: s-block molecular entity
+def: "An s-block molecular entity is a molecular entity containing one or more atoms of an s-block element." []
+synonym: "s-block compounds" RELATED []
+synonym: "s-block molecular entities" RELATED []
+synonym: "s-block molecular entity" EXACT []
+is_a: CHEBI:33579 ! main group molecular entity
+relationship: BFO:0000051 CHEBI:33559 ! s-block element atom
+
+[Term]
+id: CHEBI:33675
+name: p-block molecular entity
+def: "A main group molecular entity that contains one or more atoms of a p-block element." []
+synonym: "p-block compounds" RELATED []
+synonym: "p-block molecular entities" RELATED []
+synonym: "p-block molecular entitiy" RELATED []
+is_a: CHEBI:33579 ! main group molecular entity
+relationship: BFO:0000051 CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33692
+name: hydrides
+def: "Hydrides are chemical compounds of hydrogen with other chemical elements." []
+is_a: CHEBI:33608 ! hydrogen molecular entity
+is_a: CHEBI:37577 ! heteroatomic molecular entity
+
+[Term]
+id: CHEBI:33937
+name: macronutrient
+synonym: "macronutrients" RELATED []
+is_a: CHEBI:33284 ! nutrient
+
+[Term]
+id: CHEBI:35186
+name: terpene
+def: "A hydrocarbon of biological origin having carbon skeleton formally derived from isoprene [CH2=C(CH3)CH=CH2]." []
+synonym: "Terpen" RELATED []
+synonym: "terpene" EXACT []
+synonym: "terpenes" EXACT []
+synonym: "terpenes" RELATED []
+synonym: "terpeno" RELATED []
+synonym: "terpenos" RELATED []
+is_a: CHEBI:24632 ! hydrocarbon
+is_a: CHEBI:24913 ! isoprenoid
+
+[Term]
+id: CHEBI:35190
+name: diterpene
+def: "A C20 terpene." []
+synonym: "Diterpen" RELATED []
+synonym: "diterpenes" EXACT []
+synonym: "diterpenes" RELATED []
+synonym: "diterpeno" RELATED []
+synonym: "diterpenos" RELATED []
+is_a: CHEBI:35186 ! terpene
+
+[Term]
+id: CHEBI:35406
+name: oxoanion
+def: "An oxoanion is an anion derived from an oxoacid by loss of hydron(s) bound to oxygen." []
+synonym: "oxoacid anions" RELATED []
+synonym: "oxoanion" EXACT []
+synonym: "oxoanions" RELATED []
+is_a: CHEBI:25741 ! oxide
+is_a: CHEBI:33273 ! polyatomic anion
+
+[Term]
+id: CHEBI:35605
+name: carbon oxoacid
+synonym: "carbon oxoacids" RELATED []
+synonym: "oxoacids of carbon" RELATED []
+is_a: CHEBI:24833 ! oxoacid
+is_a: CHEBI:36963 ! organooxygen compound
+
+[Term]
+id: CHEBI:35610
+name: antineoplastic agent
+def: "A substance that inhibits or prevents the proliferation of neoplasms." []
+synonym: "anticancer agent" RELATED []
+synonym: "anticancer agents" RELATED []
+synonym: "antineoplastic" RELATED []
+synonym: "antineoplastic agents" RELATED []
+synonym: "cytostatic" RELATED []
+is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:35757
+name: monocarboxylic acid anion
+def: "A carboxylic acid anion formed when the carboxy group of a monocarboxylic acid is deprotonated." []
+synonym: "a monocarboxylate" RELATED []
+synonym: "Carboxylate" RELATED []
+synonym: "Monocarboxylate" RELATED []
+synonym: "monocarboxylates" RELATED []
+synonym: "monocarboxylic acid anions" RELATED []
+is_a: CHEBI:29067 ! carboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:25384 ! monocarboxylic acid
+
+[Term]
+id: CHEBI:36338
+name: lepton
+def: "Lepton is a fermion that does not experience the strong force (strong interaction). The term is derived from the Greek lambdaepsilonpitauomicronsigma (small, thin)." []
+synonym: "leptons" RELATED []
+is_a: CHEBI:33233 ! fundamental particle
+is_a: CHEBI:36340 ! fermion
+
+[Term]
+id: CHEBI:36339
+name: baryon
+def: "Baryon is a fermion that does experience the strong force (strong interaction). The term is derived from the Greek betaalpharhoupsilonsigma (heavy)." []
+synonym: "baryons" RELATED []
+is_a: CHEBI:36340 ! fermion
+is_a: CHEBI:36344 ! hadron
+
+[Term]
+id: CHEBI:36340
+name: fermion
+def: "Particle of half-integer spin quantum number following Fermi-Dirac statistics. Fermions are named after Enrico Fermi." []
+synonym: "fermion" EXACT []
+synonym: "fermions" RELATED []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36342
+name: subatomic particle
+def: "A particle smaller than an atom." []
+synonym: "subatomic particles" RELATED []
+
+[Term]
+id: CHEBI:36343
+name: composite particle
+def: "A subatomic particle known to have substructure (i.e. consisting of smaller particles)." []
+synonym: "composite particles" RELATED []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36344
+name: hadron
+def: "Hadron is a subatomic particle which experiences the strong force." []
+synonym: "hadrons" RELATED []
+is_a: CHEBI:36343 ! composite particle
+
+[Term]
+id: CHEBI:36347
+name: nuclear particle
+def: "A nucleus or any of its constituents in any of their energy states." []
+synonym: "nuclear particle" EXACT []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36357
+name: polyatomic entity
+def: "Any molecular entity consisting of more than one atom." []
+synonym: "polyatomic entities" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+relationship: BFO:0000051 CHEBI:24433 ! group
+
+[Term]
+id: CHEBI:36358
+name: polyatomic ion
+def: "An ion consisting of more than one atom." []
+synonym: "polyatomic ions" RELATED []
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
+id: CHEBI:36586
+name: carbonyl compound
+def: "Any compound containing the carbonyl group, C=O. The term is commonly used in the restricted sense of aldehydes and ketones, although it actually includes carboxylic acids and derivatives." []
+synonym: "carbonyl compounds" EXACT []
+is_a: CHEBI:36587 ! organic oxo compound
+is_a: CHEBI:36963 ! organooxygen compound
+relationship: BFO:0000051 CHEBI:23019 ! carbonyl group
+
+[Term]
+id: CHEBI:36587
+name: organic oxo compound
+def: "Organic compounds containing an oxygen atom, =O, doubly bonded to carbon or another element." []
+synonym: "organic oxo compounds" RELATED []
+synonym: "oxo compounds" EXACT []
+is_a: CHEBI:72695 ! organic molecule
+relationship: BFO:0000051 CHEBI:46629 ! oxo group
+
+[Term]
+id: CHEBI:36962
+name: organochalcogen compound
+def: "An organochalcogen compound is a compound containing at least one carbon-chalcogen bond." []
+synonym: "organochalcogen compound" EXACT []
+synonym: "organochalcogen compounds" RELATED []
+is_a: CHEBI:33285 ! heteroorganic entity
+is_a: CHEBI:33304 ! chalcogen molecular entity
+
+[Term]
+id: CHEBI:36963
+name: organooxygen compound
+def: "An organochalcogen compound containing at least one carbon-oxygen bond." []
+synonym: "organooxygen compound" EXACT []
+synonym: "organooxygen compounds" RELATED []
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:36962 ! organochalcogen compound
+
+[Term]
+id: CHEBI:37175
+name: organic hydride
+synonym: "organic hydrides" RELATED []
+is_a: CHEBI:33692 ! hydrides
+
+[Term]
+id: CHEBI:37527
+name: acid
+def: "An acid is a molecular entity capable of donating a hydron (Bronsted acid) or capable of forming a covalent bond with an electron pair (Lewis acid)." []
+synonym: "Acid" EXACT []
+synonym: "acid" EXACT []
+synonym: "acide" RELATED []
+synonym: "acido" RELATED []
+synonym: "acids" RELATED []
+synonym: "an acid" RELATED []
+synonym: "Saeure" RELATED []
+synonym: "Saeuren" RELATED []
+is_a: CHEBI:51086 ! chemical role
+
+[Term]
+id: CHEBI:37577
+name: heteroatomic molecular entity
+def: "A molecular entity consisting of two or more chemical elements." []
+synonym: "chemical compound" RELATED []
+synonym: "heteroatomic molecular entities" RELATED []
+is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
+id: CHEBI:39141
+name: Bronsted acid
+def: "A molecular entity capable of donating a hydron to an acceptor (Bronsted base)." []
+synonym: "acide de Bronsted" RELATED []
+synonym: "Bronsted acid" EXACT []
+synonym: "Bronsted-Saeure" RELATED []
+synonym: "donneur d'hydron" RELATED []
+synonym: "hydron donor" RELATED []
+is_a: CHEBI:17891 ! donor
+is_a: CHEBI:37527 ! acid
+
+[Term]
+id: CHEBI:43176
+name: hydroxy group
+synonym: "-OH" RELATED []
+synonym: "hydroxy" EXACT []
+synonym: "HYDROXY GROUP" EXACT []
+synonym: "hydroxy group" EXACT []
+synonym: "hydroxyl" RELATED []
+synonym: "hydroxyl group" RELATED []
+synonym: "oxidanyl" EXACT []
+is_a: CHEBI:33246 ! inorganic group
+
+[Term]
+id: CHEBI:46629
+name: oxo group
+synonym: "=O" RELATED []
+synonym: "oxo" EXACT []
+synonym: "OXO GROUP" EXACT []
+is_a: CHEBI:33246 ! inorganic group
+
+[Term]
+id: CHEBI:46883
+name: carboxy group
+synonym: "-C(O)OH" RELATED []
+synonym: "-CO2H" RELATED []
+synonym: "-COOH" RELATED []
+synonym: "carboxy" EXACT []
+synonym: "CARBOXY GROUP" EXACT []
+synonym: "carboxyl group" RELATED []
+is_a: CHEBI:33249 ! organyl group
+
+[Term]
+id: CHEBI:49637
+name: hydrogen atom
+synonym: "1H" RELATED []
+synonym: "H" RELATED []
+synonym: "hidrogeno" RELATED []
+synonym: "hydrogen" EXACT []
+synonym: "hydrogen" RELATED []
+synonym: "hydrogene" RELATED []
+synonym: "Wasserstoff" RELATED []
+is_a: CHEBI:24835 ! inorganic molecular entity
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33559 ! s-block element atom
+relationship: RO:0000087 CHEBI:33937 ! macronutrient
+
+[Term]
+id: CHEBI:50176
+name: keratolytic drug
+def: "A drug that softens, separates, and causes desquamation of the cornified epithelium or horny layer of skin. Keratolytic drugs are used to expose mycelia of infecting fungi or to treat corns, warts, and certain other skin diseases." []
+synonym: "desquamating agent" RELATED []
+synonym: "keratolytic agent" RELATED []
+synonym: "keratolytic drugs" RELATED []
+synonym: "skin-peeling agent" RELATED []
+is_a: CHEBI:50177 ! dermatologic drug
+
+[Term]
+id: CHEBI:50177
+name: dermatologic drug
+def: "A drug used to treat or prevent skin disorders or for the routine care of skin." []
+synonym: "dermatologic agent" RELATED []
+synonym: "dermatologic drugs" RELATED []
+synonym: "dermatological agent" RELATED []
+is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:50860
+name: organic molecular entity
+def: "Any molecular entity that contains carbon." []
+synonym: "organic compounds" RELATED []
+synonym: "organic entity" RELATED []
+synonym: "organic molecular entities" RELATED []
+is_a: CHEBI:33582 ! carbon group molecular entity
+relationship: BFO:0000051 CHEBI:27594 ! carbon atom
+
+[Term]
+id: CHEBI:50905
+name: teratogenic agent
+def: "A role played by a chemical compound  in biological systems with adverse consequences in embryo developments, leading to birth defects, embryo death or altered development, growth retardation and functional defect." []
+synonym: "agent teratogene" RELATED []
+synonym: "teratogen" RELATED []
+synonym: "teratogeno" RELATED []
+is_a: CHEBI:52209 ! aetiopathogenetic role
+
+[Term]
+id: CHEBI:50906
+name: role
+def: "A role is particular behaviour which a material entity may exhibit." []
+
+[Term]
+id: CHEBI:51086
+name: chemical role
+def: "A role played by the molecular entity or part thereof within a chemical context." []
+is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:51422
+name: organodiyl group
+def: "Any organic substituent group, regardless of functional type, having two free valences at carbon atom(s)." []
+synonym: "organodiyl groups" RELATED []
+is_a: CHEBI:51446 ! organic divalent group
+
+[Term]
+id: CHEBI:51446
+name: organic divalent group
+is_a: CHEBI:33247 ! organic group
+
+[Term]
+id: CHEBI:51447
+name: organic univalent group
+synonym: "organic monovalent group" RELATED []
+is_a: CHEBI:33247 ! organic group
+
+[Term]
+id: CHEBI:52206
+name: biochemical role
+def: "A biological role played by the molecular entity or part thereof within a biochemical context." []
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:52209
+name: aetiopathogenetic role
+def: "A role played by the molecular entity or part thereof which causes the development of a pathological process." []
+synonym: "etiopathogenetic agent" RELATED []
+synonym: "etiopathogenetic role" RELATED []
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:52211
+name: physiological role
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:52217
+name: pharmaceutical
+def: "Any substance introduced into a living organism with therapeutic or diagnostic purpose." []
+synonym: "farmaco" RELATED []
+synonym: "medicament" RELATED []
+synonym: "pharmaceuticals" RELATED []
+is_a: CHEBI:33232 ! application
+
+[Term]
+id: CHEBI:6067
+name: isotretinoin
+def: "A retinoic acid that is all-trans-retinoic acid in which the double bond which is alpha,beta- to the carboxy group is isomerised to Z configuration. A synthetic retinoid, it is used for the treatment of severe cases of acne and other skin diseases." []
+synonym: "(2Z,4E6E,8E)-3,7-dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)nona-2,4,6,8-tetraenoic acid" EXACT []
+synonym: "(7E,9E,11E,13Z)-retinoic acid" RELATED []
+synonym: "13-cis-retinoic acid" RELATED []
+synonym: "13-cis-Vitamin A acid" RELATED []
+synonym: "13-RA" RELATED []
+synonym: "Accutane" RELATED []
+synonym: "Amnesteem" RELATED []
+synonym: "cis-RA" RELATED []
+synonym: "Claravis" RELATED []
+synonym: "isotretinoin" RELATED []
+synonym: "isotretinoina" RELATED []
+synonym: "isotretinoine" RELATED []
+synonym: "isotretinoino" RELATED []
+synonym: "isotretinoinum" RELATED []
+synonym: "Neovitamin A acid" RELATED []
+is_a: CHEBI:26536 ! retinoic acid
+relationship: RO:0000087 CHEBI:35610 ! antineoplastic agent
+relationship: RO:0000087 CHEBI:50176 ! keratolytic drug
+relationship: RO:0000087 CHEBI:50905 ! teratogenic agent
+
+[Term]
+id: CHEBI:64709
+name: organic acid
+def: "Any organic molecular entity that is acidic and contains carbon in covalent linkage." []
+synonym: "organic acids" RELATED []
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:72695
+name: organic molecule
+def: "Any molecule that consists of at least one carbon atom as part of the electrically neutral entity." []
+synonym: "organic compound" RELATED []
+synonym: "organic compounds" RELATED []
+synonym: "organic molecules" RELATED []
+is_a: CHEBI:25367 ! molecule
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:75763
+name: eukaryotic metabolite
+def: "Any  metabolite produced during a metabolic reaction in eukaryotes, the taxon that include members of the fungi, plantae and animalia kingdoms." []
+synonym: "eukaryotic metabolites" RELATED []
+is_a: CHEBI:25212 ! metabolite
+
+[Term]
+id: CHEBI:75767
+name: animal metabolite
+def: "Any eukaryotic metabolite produced during a metabolic reaction in animals that include diverse creatures from sponges, insects to mammals." []
+synonym: "animal metabolites" RELATED []
+is_a: CHEBI:75763 ! eukaryotic metabolite
+
+[Term]
+id: CHEBI:75768
+name: mammalian metabolite
+def: "Any animal metabolite produced during a metabolic reaction in mammals." []
+synonym: "mammalian metabolites" RELATED []
+is_a: CHEBI:75767 ! animal metabolite
+
+[Term]
+id: CHEBI:77746
+name: human metabolite
+def: "Any mammalian metabolite  produced during a metabolic reaction in humans (Homo sapiens)." []
+synonym: "H. sapiens metabolite" RELATED []
+synonym: "H. sapiens metabolites" RELATED []
+synonym: "Homo sapiens metabolite" RELATED []
+synonym: "Homo sapiens metabolites" RELATED []
+is_a: CHEBI:75768 ! mammalian metabolite
+
+[Term]
+id: CHEBI:78295
+name: food component
+def: "Any substance that is distributed in foodstuffs. It includes materials derived from plants or animals, such as vitamins or minerals, as well as environmental contaminants." []
+synonym: "dietary component" RELATED []
+synonym: "dietary components" RELATED []
+synonym: "food components" RELATED []
+is_a: CHEBI:52211 ! physiological role
+
+[Term]
+id: CHEBI:79020
+name: alpha,beta-unsaturated monocarboxylic acid
+def: "A monocarboxylic acid in which the carbon of the carboxy group is directly attached to a C=C or C#C bond." []
+synonym: "2,3-unsaturated monocarboxylic acid" RELATED []
+synonym: "2,3-unsaturated monocarboxylic acids" RELATED []
+synonym: "alpha,beta-unsaturated monocarboxylic acids" RELATED []
+is_a: CHEBI:25384 ! monocarboxylic acid
+
+[Typedef]
+id: BFO:0000051
+is_transitive: true
+
+[Typedef]
+id: is_conjugate_acid_of
+inverse_of: is_conjugate_base_of
+
