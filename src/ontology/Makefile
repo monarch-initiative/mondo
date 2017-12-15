@@ -143,6 +143,11 @@ imports/%_terms.txt:
 release: $(ONT).owl $(ONT).obo
 	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
 
+$(ONT)-lastbuild.owl: $(ONT).owl
+	wget --no-check-certificate $(OBO)/$(ONT).owl -O $@.tmp && mv $@.tmp $@
+$(ONT)-diff.md: $(ONT)-lastbuild.owl 
+	owljs-diff -o $@ $< $(ONT).owl
+
 # ----------------------------------------
 # Editing
 # ----------------------------------------
