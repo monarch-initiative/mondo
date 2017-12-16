@@ -145,6 +145,8 @@ release: $(ONT).owl $(ONT).obo
 
 $(ONT)-lastbuild.owl: $(ONT).owl
 	wget --no-check-certificate $(OBO)/$(ONT).owl -O $@.tmp && mv $@.tmp $@
+$(ONT)-lastbuild.obo: $(ONT).obo
+	wget --no-check-certificate $(OBO)/$(ONT).obo -O $@.tmp && mv $@.tmp $@
 $(ONT)-diff.md: $(ONT)-lastbuild.owl 
 	owljs-diff -o $@ $< $(ONT).owl
 
