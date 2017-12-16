@@ -580,6 +580,25 @@ intersection_of: BFO:0000050 UBERON:0001016 ! nervous system
 relationship: BFO:0000050 UBERON:0001016 ! nervous system
 
 [Term]
+id: UBERON:0000074
+name: renal glomerulus
+def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]." [http://en.wikipedia.org/wiki/Glomerulus, MP:0005325]
+synonym: "glomerular capillary tuft" RELATED [ZFA:0001288]
+synonym: "glomerular tuft" RELATED INCONSISTENT []
+synonym: "glomerulus" BROAD []
+synonym: "glomerulus renis" RELATED LATIN [http://en.wikipedia.org/wiki/Glomerulus]
+synonym: "Malphigian glomerulus" RELATED MISSPELLING [BTO:0000530]
+synonym: "Malpighian glomerulus" RELATED [http://medical-dictionary.thefreedictionary.com/malpighian+glomerulus]
+synonym: "Malpighian tuft" RELATED [http://medical-dictionary.thefreedictionary.com/malpighian+glomerulus]
+synonym: "renal corpuscle" RELATED INCONSISTENT []
+synonym: "renal glomeruli" EXACT [TAO:0001288]
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: BFO:0000050 UBERON:0001229 {source="FMA", source="MA"} ! renal corpuscle
+relationship: RO:0002202 UBERON:0005749 ! glomerular tuft
+relationship: RO:0002219 UBERON:0001230 ! glomerular capsule
+
+[Term]
 id: UBERON:0000075
 name: subdivision of skeletal system
 def: "Anatomical cluster consisting of the skeletal elements and articular elements that are part of an individual subdivision of the organism." [https://orcid.org/0000-0002-6601-2165, UBERONREF:0000003]
@@ -1607,6 +1626,14 @@ is_a: UBERON:0003408 ! gland of digestive tract
 intersection_of: UBERON:0002530 ! gland
 intersection_of: BFO:0000050 UBERON:0001242 ! intestinal mucosa
 relationship: BFO:0000050 UBERON:0001242 ! intestinal mucosa
+
+[Term]
+id: UBERON:0000341
+name: throat
+def: "In anatomy, the throat is the anterior part of the neck, in front of the vertebral column. It consists of the pharynx and larynx. An important feature of the throat is the epiglottis, a flap which separates the esophagus from the trachea and prevents inhalation of food or drink. The throat contains various blood vessels, various pharyngeal muscles, the trachea (windpipe) and the esophagus. The hyoid bone and the clavicle are the only bones located in the throat of mammals. It is sometimes considered a synonym for fauces. [WP,unvetted]." [http://en.wikipedia.org/wiki/Throat]
+synonym: "gula" RELATED LATIN []
+is_a: UBERON:0034929 ! external soft tissue zone
+relationship: BFO:0000050 UBERON:0000974 ! neck
 
 [Term]
 id: UBERON:0000344
@@ -5335,6 +5362,44 @@ relationship: BFO:0000050 UBERON:0008987 {source="FMA"} ! renal parenchyma
 relationship: RO:0002433 UBERON:0002113 ! kidney
 
 [Term]
+id: UBERON:0001229
+name: renal corpuscle
+def: "the structure containing the glomerular capsule and the glomerulus that serves as the initial blood-filtering component of a nephron" [ISBN:0-683-40008-8, MP:0002827]
+synonym: "corpusculum renale" EXACT LATIN []
+synonym: "corpusculum renis" RELATED LATIN [http://en.wikipedia.org/wiki/Renal_corpuscle]
+synonym: "cortical renal corpuscle" RELATED [MA:0000376]
+synonym: "kidney corpuscle" RELATED [http://en.wikipedia.org/wiki/Renal_corpuscle]
+synonym: "Malphigian corpuscle" EXACT MISSPELLING [MA:0000376]
+synonym: "Malpighian corpuscle" EXACT [ZFA:0005281]
+is_a: UBERON:0000063 ! organ subunit
+relationship: BFO:0000050 UBERON:0001225 ! cortex of kidney
+relationship: BFO:0000050 UBERON:0001285 {source="MA", source="ZFA"} ! nephron
+relationship: BFO:0000050 UBERON:0007684 {source="FMA"} ! uriniferous tubule
+relationship: RO:0002433 UBERON:0001225 ! cortex of kidney
+relationship: RO:0002433 UBERON:0001285 ! nephron
+
+[Term]
+id: UBERON:0001230
+name: glomerular capsule
+def: "A cup-like sac at the expanded beginning of a tubular component of a nephron that contains the glomerulus" [http://en.wikipedia.org/wiki/Bowman%27s_capsule, MGI:pvb, MP:0002828]
+synonym: "Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+synonym: "Bowman's capsule" RELATED [TAO:0005254]
+synonym: "Bowmans capsule" EXACT [KUPO:0001001]
+synonym: "capsula glomerularis" EXACT LATIN []
+synonym: "capsula glomeruli" RELATED LATIN []
+synonym: "Malphigian capsule" RELATED MISSPELLING [BTO:0002297]
+synonym: "Malpighian capsule" RELATED [UBERO:cjm]
+synonym: "Mueller capsule" RELATED [BTO:0002297]
+synonym: "Muellerian capsule" RELATED [BTO:0002297]
+synonym: "pronephric glomerular capsule" RELATED [TAO:0005310]
+synonym: "renal glomerular capsule" EXACT [TAO:0005254]
+is_a: UBERON:0000064 ! organ part
+disjoint_from: UBERON:0002015 ! kidney capsule
+relationship: BFO:0000050 UBERON:0001229 ! renal corpuscle
+relationship: RO:0002202 UBERON:0004199 ! S-shaped body
+relationship: RO:0002433 UBERON:0001229 ! renal corpuscle
+
+[Term]
 id: UBERON:0001231
 name: nephron tubule
 def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, http://en.wikipedia.org/wiki/Renal_tubule]
@@ -8810,6 +8875,21 @@ is_a: UBERON:0005913 ! zone of bone organ
 is_a: UBERON:0010313 ! neural crest-derived structure
 relationship: BFO:0000050 UBERON:0001678 ! temporal bone
 relationship: BFO:0000050 UBERON:0002517 {source="FMA"} ! basicranium
+
+[Term]
+id: UBERON:0001697
+name: orbit of skull
+def: "Subdivision of skeleton that is an anterolateral part of the cranium and structurally supports the eye. Includes bones formed and located in sclerotic layer of eyeball." [http://en.wikipedia.org/wiki/Orbit_(anatomy), http://orcid.org/0000-0002-6601-2165, TAO:0001410]
+synonym: "bony orbit" EXACT []
+synonym: "eye socket" EXACT []
+synonym: "orbit" RELATED [ZFA:0001410]
+synonym: "orbit of skull" EXACT [FMA:53074]
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0010912 ! subdivision of skeleton
+is_a: UBERON:0015212 ! lateral structure
+relationship: BFO:0000050 UBERON:0004088 ! orbital region
+relationship: BSPO:0000126 UBERON:0011156 {source="FMA-abduced-lr"} ! facial skeleton
+relationship: RO:0001015 UBERON:0000019 ! camera-type eye
 
 [Term]
 id: UBERON:0001700
@@ -23785,6 +23865,66 @@ intersection_of: BFO:0000050 UBERON:0001555 ! digestive tract
 intersection_of: RO:0002202 UBERON:0000925 ! endoderm
 
 [Term]
+id: UBERON:0004188
+name: glomerular epithelium
+def: "The glomerular epithelium is an epithelial tissue that covers the outer surfaces of the glomerulus. The glomerular epithelium consists of both parietal and visceral epithelium. Metanephric glomerular parietal epithelial cells are specialized epithelial cells that form tight junctions as a barrier to protein transport. A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the metanephros." [GO:0072010]
+synonym: "epithelium of glomerulus" EXACT []
+synonym: "epithelium of kidney glomerulus" EXACT []
+synonym: "epithelium of renal glomerulus" EXACT []
+synonym: "glomerular epithelial cell" RELATED [BTO:0001515]
+synonym: "kidney glomerular epithelium" EXACT [MA:0002847]
+is_a: UBERON:0004211 ! nephron epithelium
+is_a: UBERON:0012275 ! meso-epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0000074 ! renal glomerulus
+relationship: BFO:0000050 UBERON:0000074 ! renal glomerulus
+
+[Term]
+id: UBERON:0004189
+name: glomerular endothelium
+def: "The glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus" [GO:0072011]
+synonym: "endothelium of renal glomerulus" EXACT [OBOL:automatic]
+synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
+is_a: UBERON:0004188 ! glomerular epithelium
+is_a: UBERON:0004852 ! cardiovascular system endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: BFO:0000050 UBERON:0000074 ! renal glomerulus
+relationship: BFO:0000050 UBERON:0004190 ! renal glomerulus vasculature
+
+[Term]
+id: UBERON:0004190
+name: renal glomerulus vasculature
+def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus" [GO:0072012]
+synonym: "glomerulus vasculature" EXACT [OBOL:automatic]
+synonym: "renal glomerulus vascular network" EXACT [OBOL:automatic]
+synonym: "renal glomerulus vasculature" EXACT [OBOL:automatic]
+synonym: "vascular network of renal glomerulus" EXACT [OBOL:automatic]
+synonym: "vasculature of renal glomerulus" EXACT [OBOL:automatic]
+is_a: UBERON:0006544 ! kidney vasculature
+intersection_of: UBERON:0002049 ! vasculature
+intersection_of: BFO:0000050 UBERON:0000074 ! renal glomerulus
+relationship: BFO:0000050 UBERON:0000074 ! renal glomerulus
+
+[Term]
+id: UBERON:0004198
+name: comma-shaped body
+def: "The comma-shaped body is the precursor structure to the S-shaped body that contributes to the morphogenesis of the nephron" [GO:0072049]
+synonym: "CSB" EXACT ABBREVIATION []
+is_a: UBERON:0005423 ! developing anatomical structure
+relationship: BFO:0000050 UBERON:0010532 {source="cjm"} ! primitive nephron
+relationship: RO:0002202 UBERON:0004209 {source="ZFA"} ! renal vesicle
+
+[Term]
+id: UBERON:0004199
+name: S-shaped body
+def: "The S-shaped body is the successor of the comma-shaped body that contributes to the morphogenesis of the nephron" [GO:0072050]
+synonym: "SSB" EXACT ABBREVIATION []
+synonym: "stage II nephron" EXACT [http://www.gudmap.org/Organ_Summaries/Metanephros/Renal_vesicle.html]
+is_a: UBERON:0005423 ! developing anatomical structure
+relationship: BFO:0000050 UBERON:0010532 {source="cjm"} ! primitive nephron
+relationship: RO:0002202 UBERON:0004198 {source="GO"} ! comma-shaped body
+
+[Term]
 id: UBERON:0004200
 name: kidney pyramid
 def: "Kidney pyramids are the conical arrangements of tubules that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts." [GO:0072056, http://anatomy.uams.edu/anatomyhtml/kidney.html]
@@ -23849,6 +23989,24 @@ is_a: UBERON:0004819 ! kidney epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0001285 ! nephron
 relationship: BFO:0000050 UBERON:0001285 ! nephron
+
+[Term]
+id: UBERON:0004212
+name: glomerular capillary
+def: "the small branching blood vessels in the kidney glomerulus that receives blood from the kidney afferent arterioles; these capillaries are under high pressure for filtering within the glomerulus" [MGI:csmith, MP:0011320]
+synonym: "blood capillary of renal glomerulus" EXACT [OBOL:automatic]
+synonym: "capillary of renal glomerulus" EXACT [OBOL:automatic]
+synonym: "capillary vessel of renal glomerulus" EXACT [OBOL:automatic]
+synonym: "glomerular capillaries" RELATED PLURAL []
+synonym: "glomerular capillary system" RELATED [MA:0002587]
+synonym: "renal glomerulus blood capillary" EXACT [OBOL:automatic]
+synonym: "renal glomerulus capillary" EXACT [OBOL:automatic]
+synonym: "renal glomerulus capillary vessel" EXACT [OBOL:automatic]
+is_a: UBERON:0003527 ! kidney capillary
+intersection_of: UBERON:0001982 ! capillary
+intersection_of: BFO:0000050 UBERON:0000074 ! renal glomerulus
+relationship: BFO:0000050 UBERON:0004190 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! renal glomerulus vasculature
+relationship: RO:0002433 UBERON:0000074 ! renal glomerulus
 
 [Term]
 id: UBERON:0004214
@@ -25082,6 +25240,18 @@ relationship: BFO:0000050 UBERON:0000011 ! parasympathetic nervous system
 relationship: extends_fibers_into UBERON:0001808 ! parasympathetic ganglion
 relationship: RO:0002254 UBERON:0005428 {source="NCBIBook:NBK10065"} ! vagal neural crest
 relationship: RO:0002254 UBERON:0010075 {source="NCBIBook:NBK10065"} ! sacral neural crest
+
+[Term]
+id: UBERON:0004294
+name: glomerular capillary endothelium
+def: "An endothelium that is part of a glomerular capillary." [OBOL:automatic]
+synonym: "renal glomerulus capillary endothelium" EXACT [OBOL:automatic]
+is_a: UBERON:0001915 ! endothelium of capillary
+is_a: UBERON:0004189 ! glomerular endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: BFO:0000050 UBERON:0004212 ! glomerular capillary
+relationship: BFO:0000050 UBERON:0004212 ! glomerular capillary
+relationship: RO:0002433 UBERON:0004212 ! glomerular capillary
 
 [Term]
 id: UBERON:0004296
@@ -27117,6 +27287,16 @@ relationship: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
 relationship: RO:0002202 UBERON:0000307 ! blastula
 
 [Term]
+id: UBERON:0004736
+name: metanephric glomerulus
+def: "glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
+synonym: "glomerulus of metanephros" EXACT []
+is_a: UBERON:0000074 ! renal glomerulus
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0000081 ! metanephros
+
+[Term]
 id: UBERON:0004737
 name: metanephric collecting duct
 def: "A collecting duct of renal tubule that is part of a metanephros [Automatically generated definition]." [OBOL:automatic]
@@ -27129,6 +27309,23 @@ intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
 relationship: BFO:0000050 UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 relationship: RO:0002202 UBERON:0003220 {source="Wikipedia-abduced"} ! metanephric mesenchyme
 relationship: RO:0002202 UBERON:0014706 ! primitive renal collecting duct system
+
+[Term]
+id: UBERON:0004739
+name: pronephric glomerulus
+def: "The glomus forms from the splanchnic intermediate mesoderm and is the vascularized filtration unit, filtering the blood before it enters the tubules. The glomus is external to the nephron and extends over more than one body segment." [GO:0072013, GOC:mtg_kidney_jan10, http://dx.doi.org/10.1371/journal.pone.0099864, http://www.ncbi.nlm.nih.gov/pubmed/10572058, http://www.ncbi.nlm.nih.gov/pubmed/15647339, http://www.ncbi.nlm.nih.gov/pubmed/9268568, XAO:0000318]
+synonym: "corpuscle" RELATED [XAO:0000318]
+synonym: "glomera" RELATED PLURAL [XAO:0000318]
+synonym: "glomerulus of pronephros" EXACT []
+synonym: "glomus" NARROW [XAO:0000318]
+synonym: "pronephric glomera" RELATED [VHOG:0001237]
+synonym: "pronephric glomeruli" RELATED PLURAL [VHOG:0001237]
+synonym: "pronephric glomus" RELATED [VHOG:0001237]
+is_a: UBERON:0000074 ! renal glomerulus
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: RO:0002202 UBERON:0007128 {source="XAO"} ! glomeral mesenchyme
 
 [Term]
 id: UBERON:0004742
@@ -28156,6 +28353,16 @@ is_a: UBERON:0002203 ! vasculature of eye
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: BFO:0000050 UBERON:0000966 ! retina
 relationship: BFO:0000050 UBERON:0000966 ! retina
+
+[Term]
+id: UBERON:0004867
+name: orbital cavity
+def: "Anatomical cavity bounded by the orbital region of the cranium and forming the location of some or all of the eye." [http://orcid.org/0000-0002-6601-2165]
+synonym: "orbit" RELATED [AAO:0000343]
+is_a: UBERON:0002553 ! anatomical cavity
+intersection_of: UBERON:0002553 ! anatomical cavity
+intersection_of: RO:0002572 UBERON:0001697 ! orbit of skull
+relationship: RO:0002572 UBERON:0001697 ! orbit of skull
 
 [Term]
 id: UBERON:0004869
@@ -30726,6 +30933,15 @@ relationship: BFO:0000050 UBERON:0004737 {is_inferred="true", source="https://gi
 relationship: BFO:0000050 UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 
 [Term]
+id: UBERON:0005133
+name: metanephric glomerulus vasculature
+def: "The metanephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the metanephric glomerulus[GO]." [GO:0072239]
+is_a: UBERON:0004190 ! renal glomerulus vasculature
+intersection_of: UBERON:0004190 ! renal glomerulus vasculature
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
+
+[Term]
 id: UBERON:0005134
 name: metanephric nephron epithelium
 def: "The metanephric nephron epithelium is a tissue that covers the surface of a nephron in the metanephros[GO]." [GO:0072243]
@@ -30736,12 +30952,54 @@ intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
 relationship: BFO:0000050 UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
+id: UBERON:0005135
+name: metanephric glomerular epithelium
+def: "A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the metanephros[GO]." [GO:0072244]
+is_a: UBERON:0004188 ! glomerular epithelium
+is_a: UBERON:0005134 ! metanephric nephron epithelium
+intersection_of: UBERON:0004188 ! glomerular epithelium
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+
+[Term]
+id: UBERON:0005136
+name: metanephric glomerular endothelium
+def: "The metanephric glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus of the metanephros[GO]." [GO:0072264]
+is_a: UBERON:0004189 ! glomerular endothelium
+is_a: UBERON:0005135 ! metanephric glomerular epithelium
+intersection_of: UBERON:0004189 ! glomerular endothelium
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+relationship: BFO:0000050 UBERON:0005133 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus vasculature
+
+[Term]
 id: UBERON:0005137
 name: metanephric capsule
 def: "The metanephric capsule is the tough fibrous layer surrounding the metanephros, covered in a thick layer of perinephric adipose tissue. It provides some protection from trauma and damage[GO]." [GO:0072213]
 is_a: UBERON:0002015 ! kidney capsule
 is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0002015 ! kidney capsule
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005144
+name: metanephric glomerular capillary
+def: "This process pertains to the initial formation of a structure from unspecified parts[GO]." [GO:0072277]
+is_a: UBERON:0004212 ! glomerular capillary
+intersection_of: UBERON:0004212 ! glomerular capillary
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+
+[Term]
+id: UBERON:0005145
+name: metanephric comma-shaped body
+def: "The metanephric comma-shaped body is the precursor structure to the metanephric S-shaped body that contributes to the morphogenesis of a nephron in the metanephros[GO]." [GO:0072278]
+is_a: UBERON:0004198 ! comma-shaped body
+intersection_of: UBERON:0004198 ! comma-shaped body
 intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
 relationship: BFO:0000050 UBERON:0000081 ! metanephros
 
@@ -30768,6 +31026,15 @@ intersection_of: UBERON:0004209 ! renal vesicle
 intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
 relationship: RO:0002202 UBERON:0005113 {source="EHDAA2"} ! metanephric cortex mesenchyme
 relationship: RO:0002387 UBERON:0005134 ! metanephric nephron epithelium
+
+[Term]
+id: UBERON:0005148
+name: metanephric S-shaped body
+def: "The metanephric S-shaped body is the successor of the metanephric comma-shaped body that contributes to the morphogenesis of a nephron in the metanephros[GO]." [GO:0072284]
+is_a: UBERON:0004199 ! S-shaped body
+intersection_of: UBERON:0004199 ! S-shaped body
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005153
@@ -31708,6 +31975,45 @@ intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
 relationship: BFO:0000050 UBERON:0000080 ! mesonephros
 
 [Term]
+id: UBERON:0005325
+name: mesonephric glomerulus
+def: "The mesonephric glomerulus is a capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the mature vertebrate kidney, or mesonephros[GO]." [GO:0061224]
+synonym: "glomerulus" BROAD SENSU [AAO:0010388]
+is_a: UBERON:0000074 ! renal glomerulus
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005326
+name: mesonephric glomerulus vasculature
+def: "The mesonephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the mesonephric glomerulus[GO]." [GO:0061231]
+is_a: UBERON:0004190 ! renal glomerulus vasculature
+intersection_of: UBERON:0004190 ! renal glomerulus vasculature
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
+
+[Term]
+id: UBERON:0005327
+name: mesonephric glomerular epithelium
+def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the mesonephros[GO]." [GO:0061232]
+is_a: UBERON:0004188 ! glomerular epithelium
+is_a: UBERON:0005330 ! mesonephric nephron epithelium
+intersection_of: UBERON:0004188 ! glomerular epithelium
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
+relationship: BFO:0000050 UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
+
+[Term]
+id: UBERON:0005328
+name: mesonephric comma-shaped body
+def: "The mesonephric comma-shaped body is the precursor structure to the mesonephric S-shaped body that contributes to the morphogenesis of a nephron in the mesonephros[GO]." [GO:0061236]
+is_a: UBERON:0004198 ! comma-shaped body
+intersection_of: UBERON:0004198 ! comma-shaped body
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0000080 ! mesonephros
+
+[Term]
 id: UBERON:0005330
 name: mesonephric nephron epithelium
 def: "The mesonephric nephron epithelium is a tissue that covers the surface of a nephron in the mesonephros[GO]." [GO:0061241]
@@ -31728,6 +32034,15 @@ intersection_of: UBERON:0004209 ! renal vesicle
 intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
 relationship: RO:0002202 UBERON:0010534 {source="ZFA"} ! primitive mesonephric nephron
 relationship: RO:0002387 UBERON:0005330 ! mesonephric nephron epithelium
+
+[Term]
+id: UBERON:0005332
+name: mesonephric S-shaped body
+def: "The mesonephric S-shaped body is the successor of the mesonephric comma-shaped body that contributes to the morphogenesis of a nephron in the mesonephros[GO]." [GO:0061244]
+is_a: UBERON:0004199 ! S-shaped body
+intersection_of: UBERON:0004199 ! S-shaped body
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0000080 ! mesonephros
 
 [Term]
 id: UBERON:0005333
@@ -33256,6 +33571,17 @@ relationship: conduit_for UBERON:0000941 ! cranial nerve II
 relationship: conduit_for UBERON:0001619 ! ophthalmic artery
 
 [Term]
+id: UBERON:0005749
+name: glomerular tuft
+def: "The capillary loops of the kidney that normally function as a filtration unit[MP]." [http://en.wikipedia.org/wiki/Glomerulus, http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron, MP:0005325]
+synonym: "glomerular capillary tuft" RELATED []
+synonym: "glomerulus" RELATED INCONSISTENT [EMAPA:28239]
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: BFO:0000050 UBERON:0001230 ! glomerular capsule
+relationship: RO:0002202 UBERON:0003220 {source="Wikipedia"} ! metanephric mesenchyme
+
+[Term]
 id: UBERON:0005753
 name: caudal part of nephrogenic cord
 def: "The metanephros develops from the most caudal part of the nephrogenic cord that is itself derived from the intermediate plate mesoderm." [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
@@ -33303,6 +33629,33 @@ synonym: "basement membrane of connective tissue" EXACT [FMA:63872]
 synonym: "membrana basalis" EXACT LATIN [http://en.wikipedia.org/wiki/Basement_membrane]
 is_a: UBERON:0005764 {source="FMA"} ! acellular membrane
 relationship: BFO:0000050 UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005777
+name: glomerular basement membrane
+def: "the layer of extracellular matrix that lies between the endothelium of the glomerular capillaries and the podocytes of the inner or visceral layer of the Bowman capsule; it is a fusion of the endothelial cell and podocyte basal laminas and acts as a physical barrier and an ion-selective filter" [MGI:anna, MP:0011348]
+synonym: "GBM" BROAD ABBREVIATION []
+synonym: "glomerular capillary basement membrane" EXACT [MA:0001659]
+synonym: "glomerular filtration membrane" EXACT [ZFA:0005285]
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005769 ! basement membrane of epithelium
+intersection_of: UBERON:0005769 ! basement membrane of epithelium
+intersection_of: BFO:0000050 UBERON:0000074 ! renal glomerulus
+relationship: BFO:0000050 UBERON:0004188 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! glomerular epithelium
+
+[Term]
+id: UBERON:0005788
+name: lamina rara interna
+def: "Layer of the glomerular basement membrane adjacent to the glomerular capillary." [ZFIN:curator]
+synonym: "internal layer of glomerular basement membrane" EXACT [FMA:74277]
+synonym: "lamina interna of glomerular basement membrane" EXACT [FMA:74277]
+is_a: UBERON:0000476 ! acellular anatomical structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0000476 ! acellular anatomical structure
+intersection_of: BFO:0000050 UBERON:0005777 ! glomerular basement membrane
+intersection_of: RO:0002220 UBERON:0001230 ! glomerular capsule
+relationship: BFO:0000050 UBERON:0005777 ! glomerular basement membrane
+relationship: RO:0002220 UBERON:0001230 ! glomerular capsule
 
 [Term]
 id: UBERON:0005792
@@ -34323,6 +34676,16 @@ intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
 relationship: BFO:0000050 UBERON:0000080 ! mesonephros
 
 [Term]
+id: UBERON:0006183
+name: mesonephric glomerular capillary
+def: "." [GO:0061249]
+is_a: UBERON:0004212 ! glomerular capillary
+intersection_of: UBERON:0004212 ! glomerular capillary
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
+relationship: BFO:0000050 UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
+
+[Term]
 id: UBERON:0006207
 name: aortico-pulmonary spiral septum
 def: "The spiral septum that separates the truncus arteriosus into a ventral pulmonary trunk and the dorsal aorta[MP]. The aorticopulmonary septum is developmentally formed from neural crest, specifically the cardiac neural crest, and actively separates the aorta and pulmonary arteries and fuses with the interventricular septum within the heart during development. The actual mechanism of septation of the outflow tract is poorly understood, but is recognized as a dynamic process with contributions from contractile, hemodynamic, and extracellular matrix interactions." [http://en.wikipedia.org/wiki/Aorticopulmonary_septum, MP:0010650]
@@ -34704,6 +35067,17 @@ synonym: "chordamesoderm" RELATED []
 synonym: "presumptive notochord" RELATED []
 is_a: UBERON:0005423 ! developing anatomical structure
 relationship: RO:0002202 UBERON:0000924 {source="EHDAA2"} ! ectoderm
+
+[Term]
+id: UBERON:0006271
+name: orbital fissure
+def: "Either of two openings transmitting nerves and blood vessels to or from the orbit." [http://www.merriam-webster.com/medical/orbital%20fissure]
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0013685 ! foramen of skull
+intersection_of: UBERON:0013685 ! foramen of skull
+intersection_of: BFO:0000050 UBERON:0001697 ! orbit of skull
+relationship: BFO:0000050 UBERON:0001697 ! orbit of skull
+relationship: BFO:0000050 UBERON:0011156 {source="EMAPA"} ! facial skeleton
 
 [Term]
 id: UBERON:0006272
@@ -36535,6 +36909,11 @@ name: mechanosensory system
 is_a: UBERON:0001032 ! sensory system
 
 [Term]
+id: UBERON:0007095
+name: somatic musculature
+is_a: UBERON:0000383 ! musculature of body
+
+[Term]
 id: UBERON:0007098
 name: mandibular neural crest
 def: "Cranial neural crest that migrates into the mandibular arch." [ZFA:0007064]
@@ -36644,6 +37023,15 @@ synonym: "third pharyngeal pouch" RELATED [VHOG:0000966]
 synonym: "third visceral pouch" EXACT [XAO:0000251]
 synonym: "visceral pouch 3" EXACT [XAO:0000251]
 is_a: UBERON:0004117 ! pharyngeal pouch
+
+[Term]
+id: UBERON:0007128
+name: glomeral mesenchyme
+def: "Portion of tissue that consists of the precursors of the pronephric glomus or glomerulus; derived from the medial portion of the pronephric intermediate mesoderm." [ISBN:0815318960]
+synonym: "corpuscle" RELATED [XAO:0000110]
+synonym: "glomerulus" RELATED [XAO:0000110]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: RO:0002202 UBERON:0003064 ! intermediate mesoderm
 
 [Term]
 id: UBERON:0007134
@@ -37234,6 +37622,26 @@ is_a: UBERON:0002049 ! vasculature
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: BFO:0000050 UBERON:0000026 ! appendage
 relationship: BFO:0000050 UBERON:0000026 ! appendage
+
+[Term]
+id: UBERON:0007306
+name: pronephric glomerular capillary
+def: "A glomerular capillary that is part of a pronephros." [OBOL:automatic]
+is_a: UBERON:0004212 ! glomerular capillary
+intersection_of: UBERON:0004212 ! glomerular capillary
+intersection_of: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: BFO:0000050 UBERON:0004739 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric glomerulus
+relationship: BFO:0000050 UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
+
+[Term]
+id: UBERON:0007307
+name: pronephric glomerular basement membrane
+def: "A glomerular basement membrane that is part of a pronephros." [OBOL:automatic]
+synonym: "pronephric glomerular filtration membrane" EXACT [ZFA:0005313]
+is_a: UBERON:0005777 ! glomerular basement membrane
+intersection_of: UBERON:0005777 ! glomerular basement membrane
+intersection_of: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: BFO:0000050 UBERON:0004739 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric glomerulus
 
 [Term]
 id: UBERON:0007324
@@ -40385,6 +40793,15 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 relationship: BFO:0000050 UBERON:0000166 {source="EHDAA2"} ! oral opening
 relationship: BFO:0000050 UBERON:0005384 {source="EHDAA2"} ! nasal cavity epithelium
 relationship: RO:0002202 UBERON:0009671 {notes="posterior portion", source="EHDAA2"} ! nasal fin
+
+[Term]
+id: UBERON:0009674
+name: accessory XI nerve spinal component
+def: "The spinal root of accessory nerve (or part) is firm in texture, and its fibers arise from the motor cells in the lateral part of the anterior column of the gray substance of the medulla spinalis as low as the fifth cervical nerve. Passing through the lateral funiculus of the medulla spinalis, they emerge on its surface and unite to form a single trunk, which ascends between the ligamentum denticulatum and the posterior roots of the spinal nerves; enters the skull through the foramen magnum, and is then directed to the jugular foramen, through which it passes, lying in the same sheath of dura mater as the vagus, but separated from it by a fold of the arachnoid. In the jugular foramen, it receives one or two filaments from the cranial part of the nerve, or else joins it for a short distance and then separates from it again. As its exit from the jugular foramen, it runs backward in front of the internal jugular vein in 66.6 per cent. of cases, and behind in it 33.3 per cent. The nerve then descends obliquely behind the Digastricus and Stylohyoideus to the upper part of the Sternocleidomastoideus; it pierces this muscle, and courses obliquely across the posterior triangle of the neck, to end in the deep surface of the Trapezius. As it traverses the Sternocleidomastoideus it gives several filaments to the muscle, and joins with branches from the second cervical nerve. In the posterior triangle it unites with the second and third cervical nerves, while beneath the Trapezius it forms a plexus with the third and fourth cervical nerves, and from this plexus fibers are distributed to the muscle." [http://en.wikipedia.org/wiki/Spinal_root_of_accessory_nerve]
+synonym: "spinal part of the accessory nerve" EXACT [NeuroNames:1709]
+is_a: UBERON:0001780 ! spinal nerve
+relationship: BFO:0000050 UBERON:0002019 {source="EHDAA2"} ! accessory XI nerve
+relationship: RO:0002380 UBERON:0002019 ! accessory XI nerve
 
 [Term]
 id: UBERON:0009676
@@ -43701,6 +44118,20 @@ relationship: BFO:0000050 UBERON:0005259 {source="EHDAA2"} ! lower leg mesenchym
 relationship: RO:0002387 UBERON:0000979 ! tibia
 
 [Term]
+id: UBERON:0010854
+name: skin of front of neck
+def: "A skin of neck that is part of a throat." [OBOL:automatic]
+synonym: "skin of anterior neck" EXACT [FMA:23023]
+synonym: "skin of anterior part of neck" EXACT [FMA:23023]
+synonym: "skin of anterior portion of neck" EXACT [FMA:23023]
+synonym: "skin of throat" EXACT []
+is_a: UBERON:0001417 ! skin of neck
+intersection_of: UBERON:0001417 ! skin of neck
+intersection_of: BFO:0000050 UBERON:0000341 ! throat
+relationship: BFO:0000050 UBERON:0000341 ! throat
+relationship: BFO:0000050 UBERON:0011154 ! gular region
+
+[Term]
 id: UBERON:0010881
 name: limb cartilage element
 def: "A skeletal element that is part of a limb and composed of cartilage tissue." [http://orcid.org/0000-0002-6601-2165]
@@ -44239,6 +44670,13 @@ intersection_of: RO:0001025 UBERON:0000009 ! submucosa
 relationship: BFO:0000050 UBERON:0003126 ! trachea
 relationship: RO:0001025 UBERON:0000009 ! submucosa
 relationship: RO:0002150 UBERON:0003350 {notes="perforates"} ! epithelium of mucosa
+
+[Term]
+id: UBERON:0011154
+name: gular region
+def: "Surface structure that extends from the chin covering pharynx and larynx." [http://orcid.org/0000-0002-6601-2165]
+is_a: UBERON:0003102 {source="TAO"} ! surface structure
+relationship: BFO:0000050 UBERON:0007811 ! craniocervical region
 
 [Term]
 id: UBERON:0011156
@@ -46167,6 +46605,13 @@ intersection_of: RO:0002380 UBERON:0001516 ! abdominal aorta
 relationship: RO:0002380 UBERON:0001516 ! abdominal aorta
 
 [Term]
+id: UBERON:0012273
+name: periampullary region of duodenum
+synonym: "periampullary region" EXACT []
+is_a: UBERON:0004921 ! subdivision of digestive tract
+relationship: BFO:0000050 UBERON:0002114 ! duodenum
+
+[Term]
 id: UBERON:0012274
 name: columnar epithelium
 def: "An epithelium that consists of columnar epithelial cells. Columnar epithelia are epithelial cells whose heights are at least four times their width. Columnar epithelia are divided into simple (or unilayered), and the rarer stratified (or multi-layered).[WP, modified]" [http://en.wikipedia.org/wiki/Columnar_epithelium]
@@ -47213,6 +47658,16 @@ relationship: BFO:0000050 UBERON:0002813 {source="FMA"} ! right cerebral hemisph
 relationship: BSPO:0000121 UBERON:0001893 ! telencephalon
 
 [Term]
+id: UBERON:0013165
+name: epiglottic vallecula
+def: "A depression in front of the epiglottis, in which food is temporarily gathered as the animal chews." [http://en.wikipedia.org/wiki/Epiglottic_vallecula, ISBN10:0073040584]
+synonym: "vallecula" BROAD []
+synonym: "vallecula epiglottica" EXACT LATIN []
+synonym: "vallecula of epiglottis" EXACT [FMA:55037]
+is_a: UBERON:0000064 ! organ part
+relationship: BFO:0000050 UBERON:0000341 ! throat
+
+[Term]
 id: UBERON:0013191
 name: ovarian cortex
 def: "the layer of the ovarian stroma lying immediately beneath the tunica albuginea, composed of connective tissue cells and fibers, among which are scattered primary and secondary (antral) follicles in various stages of development; the cortex varies in thickness according to the age of the individual, becoming thinner with advancing years; included in the follicles are the cumulus oophorus, membrana granulosa (and the granulosa cells inside it), corona radiata, zona pellucida, and primary oocyte; the zona pellucida, theca of follicle, antrum and liquor folliculi are also contained in the follicle; also in the cortex is the corpus luteum derived from the follicles." [MGI:anna]
@@ -47608,6 +48063,15 @@ is_a: UBERON:0015212 ! lateral structure
 intersection_of: UBERON:0001328 ! lobe of prostate
 intersection_of: BSPO:0000126 UBERON:0002367 ! prostate gland
 relationship: BSPO:0000126 UBERON:0002367 ! prostate gland
+
+[Term]
+id: UBERON:0013645
+name: gular gland
+def: "A gland that is part of the gular region (throat)" [http://orcid.org/0000-0002-6601-2165]
+is_a: UBERON:0003297 ! gland of integumental system
+intersection_of: UBERON:0002530 ! gland
+intersection_of: BFO:0000050 UBERON:0011154 ! gular region
+relationship: BFO:0000050 UBERON:0011154 ! gular region
 
 [Term]
 id: UBERON:0013685
@@ -48925,6 +49389,15 @@ relationship: RO:0002219 UBERON:0011899 ! epimysium
 relationship: RO:0002473 UBERON:0001134 ! skeletal muscle tissue
 
 [Term]
+id: UBERON:0014895
+name: somatic muscle
+def: "A muscle structure of invertebrates whose origin and insertion sites are in basal side of the epidermis or structures derived from it. The simplest somatic muscles consist of a single cell and associated extracellular structures." [GOC:DOS]
+synonym: "skeletal muscle" RELATED [FBbt:00005073]
+is_a: UBERON:0005090 ! muscle structure
+relationship: BFO:0000050 UBERON:0007095 ! somatic musculature
+relationship: RO:0002371 UBERON:0002416 ! integumental system
+
+[Term]
 id: UBERON:0014903
 name: primordial vasculature
 def: "A portion of tissue that will develop into vasculature." [ZFA:0005076, ZFA:curator]
@@ -49741,6 +50214,15 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0003978 ! valve
 intersection_of: BFO:0000050 UBERON:0000056 ! ureter
 relationship: BFO:0000050 UBERON:0000056 ! ureter
+
+[Term]
+id: UBERON:0015423
+name: hilar portion of hepatic duct
+def: "The segment of either hepatic duct located in the hilum of the liver." [ncithesaurus:Hilar_Portion_of_the_Hepatic_Duct]
+synonym: "hilar part of hepatic duct" EXACT [MA:0002665]
+is_a: UBERON:0005171 {source="ncithesaurus"} ! hepatic duct
+relationship: BFO:0000050 UBERON:0005604 {source="MA"} ! extrahepatic part of hepatic duct
+relationship: RO:0001025 UBERON:0002107 {notes="located in or on the hilum, but not part of the liver"} ! liver
 
 [Term]
 id: UBERON:0015453
@@ -52269,6 +52751,18 @@ intersection_of: BFO:0000050 UBERON:0000058 ! duct
 relationship: BFO:0000050 UBERON:0000058 ! duct
 
 [Term]
+id: UBERON:0034972
+name: jugular body
+def: "A nonchromaffin paraganglion located in the wall of the jugular bulb." [MESH:A08.800.550.700.120.600.350]
+synonym: "glomus jugulare" EXACT []
+synonym: "glomus tympanicum" EXACT []
+synonym: "jugulotympanic body" EXACT [FMA:50848]
+synonym: "tympanic body" EXACT [FMA:50848]
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0034979 ! nonchromaffin paraganglion
+relationship: BFO:0000050 UBERON:0034980 {source="cjm"} ! jugular bulb
+
+[Term]
 id: UBERON:0034978
 name: paraganglion (generic)
 def: "A cluster of neuroendocrine cells derived from neural crest. Paraganglia may be chromaffin or nonchromaffin" [http://en.wikipedia.org/wiki/Paraganglion, http://orcid.org/0000-0002-6601-2165]
@@ -52281,6 +52775,14 @@ id: UBERON:0034979
 name: nonchromaffin paraganglion
 def: "A cluster of chemoreceptive and support cells associated with blood vessels and nerves." [http://en.wikipedia.org/wiki/Paraganglion, MESH:A08.800.550.700.120.600]
 is_a: UBERON:0034978 ! paraganglion (generic)
+
+[Term]
+id: UBERON:0034980
+name: jugular bulb
+synonym: "bulb of jugular vein" EXACT []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0013522 ! subdivision of tube
+relationship: BFO:0000050 UBERON:0001586 {source="FMA"} ! internal jugular vein
 
 [Term]
 id: UBERON:0034994
@@ -52604,6 +53106,15 @@ is_a: UBERON:0001473 ! lymphatic vessel
 intersection_of: UBERON:0001473 ! lymphatic vessel
 intersection_of: BFO:0000050 UBERON:0035549 ! superficial vasculature
 relationship: BFO:0000050 UBERON:0035549 ! superficial vasculature
+
+[Term]
+id: UBERON:0035228
+name: tonsillar fossa
+def: "Between the plica triangularis and the surface of the palatine tonsils is a space known as the tonsillar fossa (or tonsillar sinus); in many cases, however, this sinus is obliterated by its walls becoming adherent." [http://en.wikipedia.org/wiki/Tonsillar_fossa]
+synonym: "tonsillar bed" EXACT [FMA:55041]
+synonym: "tonsillar sinus" EXACT [FMA:55041]
+is_a: UBERON:0000464 ! anatomical space
+relationship: BFO:0000050 UBERON:0002372 ! tonsil
 
 [Term]
 id: UBERON:0035237
@@ -53370,6 +53881,16 @@ intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0001981 ! blood vessel
 relationship: BFO:0000050 UBERON:0001981 ! blood vessel
 relationship: RO:0002473 UBERON:0004797 ! blood vessel layer
+
+[Term]
+id: UBERON:0036068
+name: subglottis
+def: "The lower portion of the larynx, extending from just beneath the vocal cords down to the top of the trachea." [https://en.wikipedia.org/wiki/Subglottis, MP:0030000, ORCID:orcid.org/0000-0002-6490-7723]
+synonym: "infraglottic part of larynx" EXACT [FMA:55477]
+synonym: "subglottic larynx" EXACT [FMA:55477]
+synonym: "subglottic region" EXACT [MP:0030000]
+is_a: UBERON:0000072 ! proximo-distal subdivision of respiratory tract
+relationship: BFO:0000050 UBERON:0001737 ! larynx
 
 [Term]
 id: UBERON:0036072

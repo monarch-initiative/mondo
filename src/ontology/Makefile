@@ -133,8 +133,8 @@ imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && mv $@.tmp $@
 
 
-imports/%_terms.txt:
-	robot query -i mondo-edit.obo -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
+imports/%_terms.txt:  $(SRC)
+	robot query -i $< -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
 
 # ----------------------------------------
 # Release

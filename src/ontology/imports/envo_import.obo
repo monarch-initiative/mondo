@@ -120,6 +120,19 @@ name: asbestos dust
 is_a: ENVO:02000101 ! fibrous dust
 
 [Term]
+id: ENVO:02000108
+name: cotton dust
+is_a: ENVO:02000109 ! dust from plant parts
+
+[Term]
+id: ENVO:02000109
+name: dust from plant parts
+is_a: ENVO:00002008 ! dust
+intersection_of: ENVO:00002008 ! dust
+intersection_of: RO:0001000 PO:0025131 ! plant anatomical entity
+relationship: RO:0001000 PO:0025131 ! plant anatomical entity
+
+[Term]
 id: ENVO:09200000
 name: temperature of environmental material
 def: "The temperature of some environmental material." []
@@ -181,6 +194,14 @@ id: PATO:0002198
 name: quality of a substance
 def: "A quality inhering in a bearer by virtue of its constitution." []
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PO:0025131
+name: plant anatomical entity
+def: "An anatomical entity that is or was part of a plant." []
+synonym: "entidad anat&#243mica vegetal (Spanish, exact)" EXACT []
+synonym: "植物 解剖学（形態）的実体 (Japanese, exact)" EXACT []
+is_a: BFO:0000040 ! material entity
 
 [Typedef]
 id: BFO:0000050
