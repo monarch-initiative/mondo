@@ -29,6 +29,7 @@ prepare_release: all
 	mkdir -p $(RELEASEDIR)/imports &&\
 	cp imports/*{owl,obo} $(RELEASEDIR)/imports &&\
 	cp pre/*{owl,obo} $(RELEASEDIR)/pre &&\
+	cp exit/*{owl,obo,json} $(RELEASEDIR)/extid &&\
 	(test -f subsets/*owl && cp subsets/*{owl,obo,json} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
 
@@ -242,6 +243,19 @@ mirror/mfoem.owl:
 mirror/neoplasm-core.owl:
 	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@
 
+mirror/ncit.owl:
+	wget --no-check-certificate $(OBO)/ncit.owl -O $@
+
+mirror/ncit-disease.ids: mirror/ncit.owl
+	robot query -i $< -s ../sparql/ncit-subclass-of-disease.sparql $@
+
+mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.ids
+	robot extract -i $< -T mirror/ncit-disease.ids --method BOT -o $@
+
+mirror/ncit-disease.obo: mirror/ncit-disease.owl
+	owltools $< -o -f obo $@
+#	robot convert -i $< -o $@
+
 mirror/rdo.obo:
 	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@
 # ----------------------------------------
@@ -264,7 +278,9 @@ gard-mappings.tsv: mondo-edit.json gard.json
 medgen-mappings.tsv: mondo-edit.json mirror/medgen-disease-extract.obo
 	ontobio-lexmap.py -v -e $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
 
-ncit-mappings.tsv: mondo-edit.json neoplasm-core.json
+neoplasm-mappings.tsv: mondo-edit.json neoplasm-core.json
+	ontobio-lexmap.py -v -e $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
+ncit-mappings.tsv: mondo-edit.json mirror/ncit-disease.json
 	ontobio-lexmap.py -v -e $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
 
 ptable-%.tsv: %-mappings.tsv
@@ -316,8 +332,10 @@ ptable.tsv: mondo-edit.obo
 seed.owl: mondo-edit.obo ext.obo
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
 
-seed-ncit.owl: mondo-edit.obo imports/equivalencies-ncit.obo neoplasm-core-nd.obo
-	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
+#seed-ncit.owl: mondo-edit.obo imports/equivalencies-ncit.obo neoplasm-core-nd.obo
+#	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
+seed-ncit.owl: mondo-edit.obo imports/equivalencies.owl mirror/ncit-disease.owl
+	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies --remove-disjoints -o $@
 
 ext.obo: ptable.tsv
 	perl -ne '($$goo, $$x) = split;print "$$x\t$$x\n"' $< | tbl2obo.pl  > $@
@@ -339,3 +357,10 @@ v-%.png:
 
 ../../scratch/mondo-ncit-finding.tsv:
 	blip-findall -i imports/equivalencies.obo  -i mondo.obo -r neoplasm "(R='NCIT:R115';R='NCIT:R108'),parent(X,R,Y),equivalent_class(M,X)" -select "x(M,Y)" -no_pred -label  > $@.tmp && sort -u $@.tmp > $@
+
+# ----------------------------------------
+# TEST
+# ----------------------------------------
+
+ncit-eq.obo: ncit-kboom-curated.obo
+	perl -npe 's@\{@{source="MONDO:equivalentTo", @' $< > $@
