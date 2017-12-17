@@ -1759,6 +1759,18 @@ relationship: BFO:0000051 UBERON:0004200 ! kidney pyramid
 relationship: RO:0002433 UBERON:0002113 ! kidney
 
 [Term]
+id: UBERON:0000365
+name: urothelium
+def: "An epithelial tissue layer that lines much of the urinary tract, including the renal pelvis, the ureters, the bladder, and parts of the urethra." [http://en.wikipedia.org/wiki/Urothelium, https://github.com/obophenotype/uberon/issues/92]
+synonym: "epithelium transitionale" EXACT [FMA:63914]
+synonym: "transitional epithelium" BROAD INCONSISTENT []
+synonym: "transitional epithelium" EXACT [FMA:63914, https://github.com/obophenotype/uberon/issues/92]
+synonym: "uroepithelium" EXACT [FMA:67695]
+is_a: UBERON:0000486 ! multilaminar epithelium
+is_a: UBERON:0005911 ! endo-epithelium
+relationship: BFO:0000050 UBERON:0001008 ! renal system
+
+[Term]
 id: UBERON:0000366
 name: flexor muscle
 def: "a skeletal muscle whose contraction bends a joint." [http://www.thefreedictionary.com/flexor+muscle, https://github.com/obophenotype/uberon/issues/57]
@@ -5685,6 +5697,22 @@ intersection_of: UBERON:0000030 ! lamina propria
 intersection_of: BFO:0000050 UBERON:0000056 ! ureter
 relationship: BFO:0000050 UBERON:0004980 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mucosa of ureter
 relationship: BFO:0000050 UBERON:0009916 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! wall of ureter
+
+[Term]
+id: UBERON:0001254
+name: urothelium of ureter
+def: "The luminal epithelium of the tube that conducts the urine from the renal pelvis to the bladder[MP]" [MP:0000535]
+synonym: "transitional epithelium of ureter" EXACT []
+synonym: "ureter luminal urothelium" RELATED INCONSISTENT [MP:0000535]
+synonym: "ureter transitional epithelium" EXACT []
+synonym: "ureter urothelium" EXACT []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0000365 ! urothelium
+is_a: UBERON:0012275 ! meso-epithelium
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: BFO:0000050 UBERON:0000056 ! ureter
+relationship: BFO:0000050 UBERON:0000056 ! ureter
+relationship: RO:0002433 UBERON:0000056 ! ureter
 
 [Term]
 id: UBERON:0001255
@@ -13223,6 +13251,34 @@ relationship: BFO:0000050 UBERON:0003277 {source="VHOG"} ! skeleton of upper jaw
 relationship: RO:0002495 UBERON:0011628 {source="Bgee:AN"} ! early premaxilla
 
 [Term]
+id: UBERON:0002257
+name: ventral horn of spinal cord
+def: "The ventral grey column of the spinal cord[MP]. The neurons of the ventral region of the mature spinal cord participate in motor output[GO]." [GO:0021517, http://en.wikipedia.org/wiki/Anterior_horn_of_spinal_cord, https://sourceforge.net/tracker/?group_id=36855&atid=440764, MP:0005112]
+synonym: "anterior column" RELATED [http://en.wikipedia.org/wiki/Anterior_horn_of_spinal_cord]
+synonym: "anterior column of the spinal cord" RELATED [http://en.wikipedia.org/wiki/Anterior_horn_of_spinal_cord]
+synonym: "anterior gray column of spinal cord" EXACT [FMA:256541]
+synonym: "anterior gray horn of spinal cord" EXACT [FMA:256541]
+synonym: "anterior grey column of spinal cord" EXACT []
+synonym: "anterior horn" EXACT [NIFSTD:birnlex_2668]
+synonym: "anterior horn (spinal cord)" RELATED [http://en.wikipedia.org/wiki/Anterior_horn_of_spinal_cord]
+synonym: "columna grisea anterior medullae spinalis" EXACT LATIN [FMA:256541, FMA:TA]
+synonym: "cornu anterius medullae spinalis" RELATED LATIN [http://en.wikipedia.org/wiki/Anterior_horn_of_spinal_cord]
+synonym: "spinal cord anterior horn" EXACT [NIFSTD:birnlex_2668]
+synonym: "spinal cord ventral horn" EXACT []
+synonym: "ventral gray column of spinal cord" EXACT [FMA:256541]
+synonym: "ventral gray matter of spinal cord" EXACT [FMA:256541]
+synonym: "ventral grey column of spinal cord" EXACT []
+synonym: "ventral grey horn" EXACT [NIFSTD:birnlex_2668]
+synonym: "ventral horn of the spinal cord" RELATED [BAMS:VH]
+synonym: "ventral horn spinal cord" EXACT [ZFA:0000702]
+synonym: "ventral horns spinal cord" RELATED PLURAL [VHOG:0001288]
+synonym: "ventral region of spinal cord" EXACT []
+synonym: "ventral spinal cord" EXACT []
+is_a: UBERON:0016550 ! spinal cord column
+relationship: BSPO:0000126 UBERON:0002315 {source="FMA-abduced-lr"} ! gray matter of spinal cord
+relationship: RO:0002433 UBERON:0002315 ! gray matter of spinal cord
+
+[Term]
 id: UBERON:0002264
 name: olfactory bulb
 def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO]." [BTO:0000961, http://en.wikipedia.org/wiki/Olfactory_bulb]
@@ -13907,6 +13963,29 @@ relationship: BFO:0000050 UBERON:0002350 {source="ZFA"} ! conducting system of h
 relationship: RO:0002433 UBERON:0002350 ! conducting system of heart
 
 [Term]
+id: UBERON:0002352
+name: atrioventricular node
+def: "An area of conducting tissue between the atria and the ventricles of the heart that conducts the normal electrical impulse from the atria to the ventricles." [http://en.wikipedia.org/wiki/Atrioventricular_node, UBERON:cjm]
+synonym: "A-V node" RELATED [EMAPA:35153]
+synonym: "Aschoff-Tawara node" EXACT [FMA:9478]
+synonym: "atrio-ventricular node" RELATED [EMAPA:35153]
+synonym: "atrioventricular nodal muscle tissue" EXACT [FMA:9478]
+synonym: "atriovetricular node" RELATED [TAO:0005070]
+synonym: "AV nodal muscle tissue" EXACT [FMA:9478]
+synonym: "AV node" EXACT [FMA:9478, MA:0000095]
+synonym: "downstream pacemaker" RELATED [ZFA:0005070]
+synonym: "node of Tawara" EXACT [FMA:9478]
+synonym: "nodus atrioventricularis" EXACT LATIN [FMA:TA]
+synonym: "nodus atrioventricularis" RELATED LATIN [http://en.wikipedia.org/wiki/Atrioventricular_node]
+is_a: UBERON:0004491 ! cardiac muscle tissue of interatrial septum
+is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
+is_a: UBERON:0010131 {source="cjm"} ! conducting tissue of heart
+relationship: BFO:0000050 UBERON:0002350 ! conducting system of heart
+relationship: RO:0002170 UBERON:0002085 ! interatrial septum
+relationship: RO:0002170 UBERON:0005979 ! crista terminalis
+relationship: RO:0002433 UBERON:0002350 ! conducting system of heart
+
+[Term]
 id: UBERON:0002355
 name: pelvic region of trunk
 def: "The lower segment of the trunk, inferioposterior to the abdomen proper, in the transition area between the trunk and the lower limbs." [http://en.wikipedia.org/wiki/Pelvis, http://orcid.org/0000-0002-6601-2165, https://github.com/obophenotype/uberon/issues/720]
@@ -14360,6 +14439,24 @@ synonym: "lympha" RELATED LATIN [http://en.wikipedia.org/wiki/Lymph]
 is_a: UBERON:0000179 ! haemolymphatic fluid
 relationship: BFO:0000050 UBERON:0006558 ! lymphatic part of lymphoid system
 relationship: RO:0002494 UBERON:0000913 ! interstitial fluid
+
+[Term]
+id: UBERON:0002393
+name: pharyngotympanic tube
+def: "Organ with organ cavity which connects the cavity of the middle ear to the cavity of the pharynx. Examples: There are only two pharyngotympanic tubes, the right and the left pharyngotympanic tubes.[FMA]" [FMA:FMA, http://en.wikipedia.org/wiki/Eustachian_tube]
+synonym: "auditory tube" EXACT [MA:0000255]
+synonym: "eustachian tube" RELATED []
+synonym: "internal auditory tube" EXACT []
+synonym: "pharyngo-tympanic tube" EXACT [MA:0000255]
+synonym: "tuba auditiva" EXACT LATIN [FMA:9705, FMA:TA]
+synonym: "tuba auditiva; tuba auditoria; tuba auditivea" RELATED LATIN [http://en.wikipedia.org/wiki/Eustachian_tube]
+synonym: "tuba auditoria" EXACT LATIN [FMA:9705, FMA:TA]
+synonym: "tuba pharyngotympanica" RELATED LATIN []
+is_a: UBERON:0000062 {source="FMA"} ! organ
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0001756 ! middle ear
+relationship: BFO:0000051 UBERON:0010062 ! pharyngotympanic tube epithelium
+relationship: RO:0002254 UBERON:0010020 {source="UBERON:0010062"} ! tubotympanic recess epithelium
 
 [Term]
 id: UBERON:0002394
@@ -15476,20 +15573,6 @@ intersection_of: UBERON:0006843 ! root of cranial nerve
 intersection_of: extends_fibers_into UBERON:0001644 ! trochlear nerve
 relationship: BFO:0000050 UBERON:0002298 ! brainstem
 relationship: extends_fibers_into UBERON:0001644 ! trochlear nerve
-
-[Term]
-id: UBERON:0002651
-name: anterior horn of lateral ventricle
-def: "Part of the lateral ventricle that extends anteriorly into the frontal lobes, bordered by the head of the caudate nucleus on the lateral side (Adapted from Heimer, 1996)" [NIFSTD:birnlex_1279]
-synonym: "anterior horn of lateral ventricle" EXACT [FMA:74520]
-synonym: "cornu anterius" RELATED LATIN [http://en.wikipedia.org/wiki/Anterior_horn_of_lateral_ventricle]
-synonym: "cornu anterius (ventriculi lateralis)" EXACT LATIN [FMA:74520, FMA:TA]
-synonym: "cornu anterius ventriculi lateralis" EXACT LATIN [FMA:74520, FMA:TA]
-synonym: "cornu frontale (ventriculi lateralis)" EXACT LATIN [FMA:74520, FMA:TA]
-synonym: "cornu frontale ventriculi lateralis" EXACT LATIN [FMA:74520, FMA:TA]
-synonym: "frontal horn of lateral ventricle" EXACT [FMA:74520]
-synonym: "ventriculus lateralis, cornu anterius" EXACT LATIN [FMA:74520, FMA:TA]
-is_a: UBERON:0002285 ! telencephalic ventricle
 
 [Term]
 id: UBERON:0002668
@@ -26762,6 +26845,26 @@ relationship: BFO:0000050 UBERON:0002106 ! spleen
 relationship: RO:0002433 UBERON:0002106 ! spleen
 
 [Term]
+id: UBERON:0004645
+name: urinary bladder urothelium
+def: "The epithelial lining of the luminal space of the urinary bladder." [MP:0000540]
+synonym: "bladder transitional cell epithelium" EXACT [FMA:15936]
+synonym: "epithelium of bladder" RELATED [EMAPA:28601]
+synonym: "transitional epithelium" RELATED [MA:0001693]
+synonym: "transitional epithelium of urinary bladder" EXACT [FMA:15936]
+synonym: "urinary bladder transitional epithelium" EXACT [FMA:15936]
+synonym: "urothelium" BROAD [BTO:0001245]
+synonym: "urothelium of urinary bladder" EXACT [FMA:15936]
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0000365 ! urothelium
+is_a: UBERON:0003350 ! epithelium of mucosa
+is_a: UBERON:0012275 ! meso-epithelium
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: BFO:0000050 UBERON:0001255 ! urinary bladder
+relationship: BFO:0000050 UBERON:0001259 ! mucosa of urinary bladder
+relationship: RO:0002433 UBERON:0001255 ! urinary bladder
+
+[Term]
 id: UBERON:0004647
 name: liver lobule
 def: "the polygonal structure of the liver that consists of hepatocytes radiating outward from a hepatic vein" [ISBN:0-683-40008-8, MP:0008987]
@@ -27645,6 +27748,46 @@ intersection_of: BFO:0000050 UBERON:0005409 ! alimentary part of gastrointestina
 relationship: BFO:0000050 UBERON:0001555 ! digestive tract
 relationship: BFO:0000050 UBERON:0005409 ! alimentary part of gastrointestinal system
 relationship: RO:0002220 UBERON:0006909 {source="BTO-modified"} ! lumen of digestive tract
+
+[Term]
+id: UBERON:0004787
+name: urethra urothelium
+def: "An urothelium that is part of a urethra [Automatically generated definition]." [OBOL:automatic]
+synonym: "urethra uroepithelium" EXACT [OBOL:automatic]
+synonym: "uroepithelium of urethra" EXACT [OBOL:automatic]
+synonym: "urothelium of urethra" EXACT [OBOL:automatic]
+is_a: UBERON:0000365 ! urothelium
+is_a: UBERON:0002325 ! epithelium of urethra
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: BFO:0000050 UBERON:0000057 ! urethra
+relationship: RO:0002433 UBERON:0000057 ! urethra
+
+[Term]
+id: UBERON:0004788
+name: kidney pelvis urothelium
+def: "the epithelial lining of the luminal space of the kidney pelvis" [MGI:csmith, MP:0011336]
+synonym: "kidney pelvis transitional epithelium" EXACT [OBOL:automatic]
+synonym: "kidney pelvis uroepithelium" EXACT [OBOL:automatic]
+synonym: "pelvic urothelium" RELATED [EMAPA:28077]
+synonym: "pelvis of ureter uroepithelium" EXACT [OBOL:automatic]
+synonym: "pelvis of ureter urothelium" EXACT [OBOL:automatic]
+synonym: "renal pelvis transitional epithelium" EXACT [OBOL:automatic]
+synonym: "renal pelvis uroepithelium" EXACT [OBOL:automatic]
+synonym: "renal pelvis urothelium" EXACT [OBOL:automatic]
+synonym: "transitional epithelium of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "transitional epithelium of renal pelvis" EXACT [FMA:263264]
+synonym: "uroepithelium of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "uroepithelium of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "uroepithelium of renal pelvis" EXACT [OBOL:automatic]
+synonym: "urothelium of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "urothelium of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "urothelium of renal pelvis" EXACT [OBOL:automatic]
+is_a: UBERON:0001254 ! urothelium of ureter
+is_a: UBERON:0004819 ! kidney epithelium
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: BFO:0000050 UBERON:0001224 ! renal pelvis
+relationship: BFO:0000050 UBERON:0001224 ! renal pelvis
+relationship: RO:0002433 UBERON:0001224 ! renal pelvis
 
 [Term]
 id: UBERON:0004789
@@ -30523,6 +30666,42 @@ is_a: UBERON:0009647 ! tympanic membrane epithelium
 intersection_of: UBERON:0009647 ! tympanic membrane epithelium
 intersection_of: BFO:0000050 UBERON:0010063 ! tympanic cavity epithelium
 relationship: BFO:0000050 UBERON:0010063 ! tympanic cavity epithelium
+
+[Term]
+id: UBERON:0005044
+name: mucosa of pharyngotympanic tube
+def: "A mucosa that is part of a pharyngotympanic tube [Automatically generated definition]." [OBOL:automatic]
+synonym: "auditory tube mucosa" EXACT [OBOL:automatic]
+synonym: "auditory tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "auditory tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "auditory tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "internal auditory tube mucosa" EXACT [OBOL:automatic]
+synonym: "internal auditory tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "internal auditory tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "internal auditory tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of pharyngotympanic tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of auditory tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pharyngotympanic tube" EXACT [OBOL:automatic]
+synonym: "mucuous membrane of eustachian tube" EXACT [FMA:60109]
+synonym: "mucuous membrane of pharyngotympanic tube" EXACT [FMA:60109]
+synonym: "organ mucosa of auditory tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pharyngotympanic tube" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube mucosa" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "tunica mucosa (tuba auditiva)" EXACT [FMA:60109]
+synonym: "tunica mucosa (tuba auditoria)" EXACT [FMA:60109]
+is_a: UBERON:0005026 ! mucosa of middle ear
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
+relationship: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
 
 [Term]
 id: UBERON:0005045
@@ -34213,6 +34392,18 @@ is_a: UBERON:0000478 ! extraembryonic structure
 relationship: RO:0002202 UBERON:0004874 {source="ISBN10:0073040584"} ! somatopleure
 
 [Term]
+id: UBERON:0005979
+name: crista terminalis
+def: "The vertical crest of the interior wall of the right atrium that lies to the right of the sinus of the vena cava and separates this from the remainder of the right atrium" [MP:0010495]
+synonym: "crista terminalis atrii dextri" EXACT LATIN [FMA:9236, FMA:TA]
+synonym: "crista terminalis cordis" EXACT [FMA:9236]
+synonym: "crista terminalis of right atrium" EXACT [FMA:9236]
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: BFO:0000050 UBERON:0002078 ! right cardiac atrium
+relationship: RO:0002433 UBERON:0002078 ! right cardiac atrium
+
+[Term]
 id: UBERON:0005983
 name: heart layer
 def: "The laminar structure of the heart" [MP:0010545]
@@ -37673,6 +37864,38 @@ relationship: RO:0002170 UBERON:0000160 ! intestine
 relationship: RO:0002433 UBERON:0000017 ! exocrine pancreas
 
 [Term]
+id: UBERON:0007354
+name: cartilage of pharyngotympanic tube
+def: "A triangular plate of elastic fibrocartilage that forms the cartilage component of the pharyngotympanic tube." [http://en.wikipedia.org/wiki/Cartilage_of_pharyngotympanic_tube, http://orcid.org/0000-0002-6601-2165]
+synonym: "cartilage of auditory tube" EXACT [FMA:60096]
+synonym: "cartilage of eustachian tube" EXACT [FMA:60096]
+synonym: "cartilago tubae auditivae" EXACT LATIN [FMA:60096, FMA:TA]
+synonym: "cartilago tubae auditivae; cartilago tubae auditoriae" RELATED LATIN [http://en.wikipedia.org/wiki/Cartilage_of_pharyngotympanic_tube]
+synonym: "cartilago tubae auditoriae" EXACT LATIN [FMA:60096, FMA:TA]
+synonym: "pharyngotympanic tube cartilage" EXACT [FMA:60096]
+is_a: UBERON:0007844 ! cartilage element
+intersection_of: UBERON:0007844 ! cartilage element
+intersection_of: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
+relationship: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
+
+[Term]
+id: UBERON:0007355
+name: bony part of pharyngotympanic tube
+def: "The bony part of pharyngotympanic tube is about 12 mm. in length. It begins in the carotid wall of the tympanic cavity, below the septum canalis musculotubarii, and, gradually narrowing, ends at the angle of junction of the squama and the petrous portion of the temporal bone, its extremity presenting a jagged margin which serves for the attachment of the cartilaginous portion." [http://en.wikipedia.org/wiki/Bony_part_of_pharyngotympanic_tube]
+synonym: "bony part of auditory tube" EXACT [FMA:60057]
+synonym: "bony part of eustachian tube" EXACT [FMA:60057]
+synonym: "osseous portion" RELATED [http://en.wikipedia.org/wiki/Bony_part_of_pharyngotympanic_tube]
+synonym: "osseous portion of eustachian tube" EXACT [FMA:60057]
+synonym: "pars ossea (tuba auditiva)" EXACT [FMA:60057]
+synonym: "pars ossea (tuba auditoria)" EXACT [FMA:60057]
+synonym: "pars ossea tubae auditivae" RELATED LATIN [http://en.wikipedia.org/wiki/Bony_part_of_pharyngotympanic_tube]
+is_a: UBERON:0002481 ! bone tissue
+is_a: UBERON:0003566 ! head connective tissue
+intersection_of: UBERON:0002481 ! bone tissue
+intersection_of: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
+relationship: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
+
+[Term]
 id: UBERON:0007367
 name: surface of tongue
 def: "An anatomical surface that is part of a tongue." [OBOL:automatic]
@@ -40853,6 +41076,23 @@ intersection_of: BFO:0000050 UBERON:0003277 ! skeleton of upper jaw
 relationship: BFO:0000050 UBERON:0003277 ! skeleton of upper jaw
 
 [Term]
+id: UBERON:0009692
+name: lumen of pharyngotympanic tube
+def: "A organ cavity that is part of a pharyngotympanic tube." [OBOL:automatic]
+synonym: "auditory tube lumen" EXACT [EHDAA2:0004118]
+synonym: "lumen of auditory tube" EXACT [FMA:60079]
+synonym: "lumen of eustachian tube" EXACT [FMA:60079]
+synonym: "pharyngotympanic tube lumen" EXACT [FMA:60079]
+is_a: UBERON:0002558 ! organ cavity
+is_a: UBERON:0005082 {source="EHDAA2"} ! tube lumen
+intersection_of: UBERON:0002558 ! organ cavity
+intersection_of: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
+relationship: BFO:0000050 UBERON:0002393 ! pharyngotympanic tube
+relationship: RO:0002150 UBERON:0010060 ! pharyngeal opening of pharyngotympanic tube
+relationship: RO:0002219 UBERON:0010062 {source="cjm"} ! pharyngotympanic tube epithelium
+relationship: RO:0002285 UBERON:0005625 {source="EHDAA2/Kardong"} ! tubotympanic recess lumen
+
+[Term]
 id: UBERON:0009695
 name: epithelium of laryngopharynx
 def: "A epithelium that is part of a hypopharynx." [OBOL:automatic]
@@ -41751,6 +41991,48 @@ id: UBERON:0010059
 name: hypoglossal cord
 is_a: UBERON:0002036 {source="EHDAA2"} ! striated muscle tissue
 relationship: BFO:0000050 UBERON:0010056 {source="EHDAA2"} ! future tongue
+
+[Term]
+id: UBERON:0010060
+name: pharyngeal opening of pharyngotympanic tube
+def: "On the lateral wall of the nasal part of the pharynx is the pharyngeal opening of auditory tube (pharyngeal ostium), somewhat triangular in shape, and bounded behind by a firm prominence, the torus or cushion, caused by the medial end of the cartilage of the tube which elevates the mucous membrane." [http://en.wikipedia.org/wiki/Pharyngeal_opening_of_auditory_tube]
+synonym: "ostium pharyngeum tubae auditivae" EXACT LATIN [FMA:TA]
+synonym: "ostium pharyngeum tubae auditivae" RELATED LATIN [http://en.wikipedia.org/wiki/Pharyngeal_opening_of_auditory_tube]
+synonym: "ostium pharyngeum tubae auditoriae" EXACT LATIN [FMA:TA]
+synonym: "pharyngeal opening of auditory tube" EXACT [FMA:54979]
+synonym: "pharyngeal opening of eustachian tube" EXACT [FMA:54979]
+synonym: "pharyngeal orifice of auditory tube" EXACT [FMA:54979]
+synonym: "pharyngeal orifice of eustachian tube" EXACT [FMA:54979]
+synonym: "pharyngeal orifice of pharyngotympanic tube" EXACT [FMA:54979]
+synonym: "pharyngeal ostium" RELATED [http://en.wikipedia.org/wiki/Pharyngeal_opening_of_auditory_tube]
+synonym: "pharyngeal ostium of auditory tube" EXACT [FMA:54979]
+synonym: "pharyngeal ostium of eustachian tube" EXACT [FMA:54979]
+synonym: "pharyngeal ostium of pharyngotympanic tube" EXACT [FMA:54979]
+synonym: "pharyngeal tubal ostium" EXACT [FMA:54979]
+is_a: UBERON:0000464 ! anatomical space
+relationship: BFO:0000050 UBERON:0001042 ! chordate pharynx
+relationship: RO:0002150 UBERON:0010061 ! lumen of nasopharynx
+
+[Term]
+id: UBERON:0010061
+name: lumen of nasopharynx
+synonym: "nasopharyngeal luman" EXACT []
+synonym: "nasopharynx cavity" EXACT []
+synonym: "nasopharynx lumen" EXACT [FMA:55094]
+is_a: UBERON:0000464 ! anatomical space
+relationship: BFO:0000050 UBERON:0001728 ! nasopharynx
+relationship: BFO:0000050 UBERON:0001731 ! cavity of pharynx
+
+[Term]
+id: UBERON:0010062
+name: pharyngotympanic tube epithelium
+synonym: "auditory tube epithelium" EXACT [EHDAA2:0004117]
+synonym: "eustachian tube epithelium" EXACT [https://orcid.org/0000-0002-6601-2165]
+is_a: UBERON:0003914 {source="EHDAA2"} ! epithelial tube
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0015813 ! middle ear epithelium
+relationship: BFO:0000050 UBERON:0002393 {source="cjm"} ! pharyngotympanic tube
+relationship: RO:0002225 UBERON:0010020 {source="EHDAA2"} ! tubotympanic recess epithelium
 
 [Term]
 id: UBERON:0010063
@@ -48842,6 +49124,17 @@ relationship: BFO:0000050 UBERON:0002037 ! cerebellum
 relationship: BSPO:0001107 UBERON:0002956 ! granular layer of cerebellar cortex
 
 [Term]
+id: UBERON:0014610
+name: thoracic spinal cord ventral horn
+def: "A ventral horn of spinal cord that is part of a thoracic spinal cord." [OBOL:automatic]
+synonym: "thoracic spinal cord anterior horn" RELATED [NIFSTD:birnlex_1410]
+synonym: "thoracic spinal cord ventral horn" EXACT HUMAN_PREFERRED [NIFSTD:birnlex_1410]
+is_a: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: BFO:0000050 UBERON:0003038 ! thoracic spinal cord
+relationship: BFO:0000050 UBERON:0003038 ! thoracic spinal cord
+
+[Term]
 id: UBERON:0014613
 name: cervical spinal cord gray matter
 def: "A gray matter of spinal cord that is part of a cervical spinal cord." [OBOL:automatic]
@@ -48883,6 +49176,17 @@ is_a: UBERON:0002211 ! nerve root
 intersection_of: UBERON:0002211 ! nerve root
 intersection_of: extends_fibers_into UBERON:0002019 ! accessory XI nerve
 relationship: extends_fibers_into UBERON:0002019 ! accessory XI nerve
+
+[Term]
+id: UBERON:0014621
+name: cervical spinal cord ventral horn
+def: "A ventral horn of spinal cord that is part of a cervical spinal cord." [OBOL:automatic]
+synonym: "cervical spinal cord anterior horn" RELATED [NIFSTD:birnlex_1680]
+synonym: "cervical spinal cord ventral horn" EXACT HUMAN_PREFERRED [NIFSTD:birnlex_1680]
+is_a: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: BFO:0000050 UBERON:0002726 ! cervical spinal cord
+relationship: BFO:0000050 UBERON:0002726 ! cervical spinal cord
 
 [Term]
 id: UBERON:0014636
@@ -50997,6 +51301,12 @@ intersection_of: RO:0002473 UBERON:0002316 ! white matter
 relationship: RO:0002473 UBERON:0002316 ! white matter
 
 [Term]
+id: UBERON:0016550
+name: spinal cord column
+is_a: UBERON:0011215 ! central nervous system cell part cluster
+relationship: BFO:0000050 UBERON:0002240 ! spinal cord
+
+[Term]
 id: UBERON:0016552
 name: phlegm
 def: "mucus produced in the respiratory tract." [http://orcid.org/0000-0002-6601-2165]
@@ -52257,6 +52567,17 @@ is_a: UBERON:0002315 ! gray matter of spinal cord
 intersection_of: UBERON:0002020 ! gray matter
 intersection_of: BFO:0000050 UBERON:0005843 ! sacral spinal cord
 relationship: BFO:0000050 UBERON:0005843 ! sacral spinal cord
+
+[Term]
+id: UBERON:0032748
+name: sacral spinal cord ventral horn
+synonym: "sacral spinal cord anterior horn" RELATED [NIFSTD:birnlex_1457]
+synonym: "sacral spinal cord ventral horn" EXACT [NIFSTD:birnlex_1457]
+synonym: "sacral spinal cord ventral horn" EXACT HUMAN_PREFERRED [NIFSTD:birnlex_1457]
+is_a: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: BFO:0000050 UBERON:0005843 ! sacral spinal cord
+relationship: BFO:0000050 UBERON:0029503 ! sacral spinal cord gray matter
 
 [Term]
 id: UBERON:0034670

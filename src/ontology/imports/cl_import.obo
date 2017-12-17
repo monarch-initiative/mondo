@@ -6297,6 +6297,16 @@ is_a: CL:0000359 {is_inferred="true"} ! vascular associated smooth muscle cell
 is_a: CL:0002319 ! neural cell
 
 [Term]
+id: CL:0002597
+name: smooth muscle cell of bladder
+def: "A smooth muscle cell of the bladder." [GC:tfm]
+is_a: CL:0000192 {is_inferred="true"} ! smooth muscle cell
+is_a: CL:1001319 ! bladder cell
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+
+[Term]
 id: CL:0002620
 name: skin fibroblast
 def: "A fibroblast of skin." [GOC:tfm]
@@ -6588,6 +6598,17 @@ intersection_of: BFO:0000050 UBERON:0002114 ! part of duodenum
 relationship: BFO:0000050 UBERON:0002114 ! part of duodenum
 
 [Term]
+id: CL:1000296
+name: epithelial cell of urethra
+def: "An epithelial cell that is part of the urethra." [GOC:tfm]
+is_a: CL:0000066 {is_inferred="true"} ! epithelial cell
+is_a: CL:0002371 ! somatic cell
+is_a: CL:1001320 ! urethra cell
+intersection_of: CL:0000066 ! epithelial cell
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+relationship: BFO:0000050 UBERON:0000057 ! part of urethra
+
+[Term]
 id: CL:1000313
 name: gastric goblet cell
 def: "A goblet cell that is part of the epithelium of stomach." [GOC:tfm]
@@ -6738,6 +6759,48 @@ intersection_of: CL:0000160 ! goblet cell
 intersection_of: BFO:0000050 UBERON:0002108 ! part of small intestine
 relationship: BFO:0000050 UBERON:0001902 ! part of epithelium of small intestine
 relationship: BFO:0000050 UBERON:0002108 ! part of small intestine
+
+[Term]
+id: CL:1000600
+name: lower urinary tract cell
+is_a: CL:0000548 {is_inferred="true"} ! animal cell
+intersection_of: CL:0000548 ! animal cell
+intersection_of: BFO:0000050 UBERON:0001556 ! part of lower urinary tract
+relationship: BFO:0000050 UBERON:0001556 ! part of lower urinary tract
+
+[Term]
+id: CL:1001319
+name: bladder cell
+is_a: CL:1000600 ! lower urinary tract cell
+intersection_of: CL:0000548 ! animal cell
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+
+[Term]
+id: CL:1001320
+name: urethra cell
+is_a: CL:1000600 ! lower urinary tract cell
+intersection_of: CL:0000548 ! animal cell
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+relationship: BFO:0000050 UBERON:0000057 ! part of urethra
+
+[Term]
+id: CL:1001428
+name: bladder urothelial cell
+is_a: CL:0000731 {is_inferred="true"} ! urothelial cell
+is_a: CL:1001319 {is_inferred="true"} ! bladder cell
+intersection_of: CL:0000731 ! urothelial cell
+intersection_of: BFO:0000050 UBERON:0004645 ! part of urinary bladder urothelium
+relationship: BFO:0000050 UBERON:0004645 ! part of urinary bladder urothelium
+
+[Term]
+id: CL:1001430
+name: urethra urothelial cell
+is_a: CL:0000731 {is_inferred="true"} ! urothelial cell
+is_a: CL:1000296 ! epithelial cell of urethra
+intersection_of: CL:0000731 ! urothelial cell
+intersection_of: BFO:0000050 UBERON:0004787 ! part of urethra urothelium
+relationship: BFO:0000050 UBERON:0004787 ! part of urethra urothelium
 
 [Term]
 id: CL:1001433
@@ -10986,6 +11049,16 @@ def: "A tubular structure that contains, conveys body fluid, such as blood or ly
 is_a: UBERON:0004111 ! anatomical conduit
 
 [Term]
+id: UBERON:0000057
+name: urethra
+def: "the fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening" []
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: BFO:0000050 UBERON:0001556 ! part of lower urinary tract
+relationship: RO:0002202 UBERON:0000164 ! develops from primitive urogenital sinus
+relationship: RO:0002202 UBERON:0013241 ! develops from embryonic urethral groove
+
+[Term]
 id: UBERON:0000058
 name: duct
 def: "A tubular structure that transports secreted or excreted substances." []
@@ -11464,6 +11537,17 @@ name: serous gland
 def: "A gland in which the principal secretory cells are serous secreting cells." []
 is_a: UBERON:0002365 ! exocrine gland
 relationship: BFO:0000051 UBERON:0013232 ! has part serous acinus
+
+[Term]
+id: UBERON:0000414
+name: mucous gland
+def: "A gland in which the principal secretory cells are mucus secreting cells." []
+synonym: "glandula mucosa" EXACT []
+synonym: "muciparous gland" RELATED []
+synonym: "mucous secreting gland" RELATED []
+synonym: "mucus gland" RELATED []
+synonym: "mucus-secreting gland" RELATED []
+is_a: UBERON:0002365 ! exocrine gland
 
 [Term]
 id: UBERON:0000415
@@ -12706,6 +12790,79 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 relationship: BFO:0000050 UBERON:0002106 ! part of spleen
 
 [Term]
+id: UBERON:0001255
+name: urinary bladder
+def: "distensible musculomembranous organ situated in the anterior part of the pelvic cavity in which urine collects before excretion[MP]." []
+synonym: "bladder" BROAD []
+synonym: "urocyst" RELATED []
+synonym: "vesica" RELATED []
+synonym: "vesica urinaria" EXACT []
+is_a: UBERON:0002075 ! viscus
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0018707 ! bladder organ
+relationship: BFO:0000050 UBERON:0001556 ! part of lower urinary tract
+relationship: RO:0002202 UBERON:0000164 ! develops from primitive urogenital sinus
+
+[Term]
+id: UBERON:0001256
+name: wall of urinary bladder
+def: "An anatomical wall that lines the insider of a urinary bladder." []
+synonym: "anatomical wall of bladder" EXACT []
+synonym: "anatomical wall of urinary bladder" EXACT []
+synonym: "bladder anatomical wall" EXACT []
+synonym: "bladder wall" EXACT []
+synonym: "urinary bladder anatomical wall" EXACT []
+synonym: "urinary bladder wall" EXACT []
+synonym: "wall of bladder" EXACT []
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0000060 ! anatomical wall
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+
+[Term]
+id: UBERON:0001259
+name: mucosa of urinary bladder
+def: "the mucous membrane lining the urinary bladder" []
+synonym: "bladder mucosa" EXACT []
+synonym: "bladder mucous membrane" EXACT []
+synonym: "bladder organ mucosa" EXACT []
+synonym: "mucosa of bladder" EXACT []
+synonym: "mucous membrane of bladder" EXACT []
+synonym: "mucous membrane of urinary bladder" EXACT []
+synonym: "tunica mucosa (vesica urinaria)" EXACT []
+synonym: "tunica mucosa vesicae" EXACT []
+synonym: "tunica mucosa vesicae urinariae" EXACT []
+synonym: "urinary bladder mucosa" EXACT []
+synonym: "urinary bladder mucous membrane" EXACT []
+is_a: UBERON:0000344 ! mucosa
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001256 ! part of wall of urinary bladder
+
+[Term]
+id: UBERON:0001260
+name: serosa of urinary bladder
+def: "A serous membrane that is part of a urinary bladder [Automatically generated definition]." []
+synonym: "bladder serosa" EXACT []
+synonym: "bladder serous membrane" EXACT []
+synonym: "serosa of bladder" EXACT []
+synonym: "serous coat of bladder" EXACT []
+synonym: "serous coat of urinary bladder" EXACT []
+synonym: "serous membrane of bladder" EXACT []
+synonym: "serous membrane of urinary bladder" EXACT []
+synonym: "tunica serosa (vesica urinaria)" EXACT []
+synonym: "tunica serosa vesicae" EXACT []
+synonym: "urinary bladder serosa" EXACT []
+synonym: "urinary bladder serous membrane" EXACT []
+synonym: "visceral peritoneum of urinary bladder" EXACT []
+is_a: UBERON:0000042 ! serous membrane
+intersection_of: UBERON:0000042 ! serous membrane
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001256 ! part of wall of urinary bladder
+
+[Term]
 id: UBERON:0001262
 name: wall of intestine
 def: "An anatomical wall that is part of a intestine [Automatically generated definition]." []
@@ -12878,6 +13035,40 @@ intersection_of: BFO:0000050 UBERON:0000996 ! part of vagina
 relationship: BFO:0000050 UBERON:0000996 ! part of vagina
 
 [Term]
+id: UBERON:0001333
+name: male urethra
+def: "A urethra that is part of a male reproductive system." []
+is_a: UBERON:0000057 ! urethra
+intersection_of: UBERON:0000057 ! urethra
+intersection_of: BFO:0000050 UBERON:0003101 ! part of male organism
+relationship: BFO:0000050 UBERON:0003101 ! part of male organism
+
+[Term]
+id: UBERON:0001334
+name: female urethra
+def: "A urethra that is part of a female reproductive system." []
+synonym: "urethra feminina" RELATED []
+synonym: "urethra muliebris" RELATED []
+is_a: UBERON:0000057 ! urethra
+intersection_of: UBERON:0000057 ! urethra
+intersection_of: BFO:0000050 UBERON:0003100 ! part of female organism
+relationship: BFO:0000050 UBERON:0003100 ! part of female organism
+
+[Term]
+id: UBERON:0001338
+name: urethral gland
+def: "Any of the numerous small mucous-secreting glands located in the wall of the male or female urethra that help protect the epithelium from the corrosive urine" []
+synonym: "gland of urethra" EXACT []
+synonym: "urethra gland" EXACT []
+synonym: "urethra gland (male or female)" EXACT []
+synonym: "urethral mucuous gland" EXACT []
+is_a: UBERON:0000414 ! mucous gland
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0002530 ! gland
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+relationship: BFO:0000050 UBERON:0000057 ! part of urethra
+
+[Term]
 id: UBERON:0001343
 name: seminiferous tubule of testis
 def: "The tubules in the testes where spermatogenesis occurs." []
@@ -13019,6 +13210,16 @@ synonym: "gut tube" RELATED []
 is_a: UBERON:0000025 ! tube
 relationship: BFO:0000050 UBERON:0001007 ! part of digestive system
 relationship: RO:0002202 UBERON:0007026 ! develops from presumptive gut
+
+[Term]
+id: UBERON:0001556
+name: lower urinary tract
+def: "Subdivision of urinary system which consists of the urinary bladder and the urethra." []
+is_a: CARO:0000003 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: BFO:0000050 UBERON:0001008 ! part of renal system
+relationship: BFO:0000051 UBERON:0000057 ! has part urethra
+relationship: BFO:0000051 UBERON:0001255 ! has part urinary bladder
 
 [Term]
 id: UBERON:0001630
@@ -13704,6 +13905,25 @@ synonym: "white matter of neuraxis" EXACT []
 synonym: "white substance" EXACT []
 is_a: UBERON:0011215 ! central nervous system cell part cluster
 relationship: BFO:0000051 UBERON:0006135 ! has part myelinated nerve fiber
+
+[Term]
+id: UBERON:0002325
+name: epithelium of urethra
+def: "The urethra is a renal system organ that carries urine from the bladder to outside the body. The epithelium is the tubular, planar layer of cells through which the urine passes.." []
+synonym: "epithelial tissue of urethra" EXACT []
+synonym: "urethra epithelial tissue" EXACT []
+synonym: "urethra epithelium" EXACT []
+synonym: "urethral epithelium" RELATED []
+synonym: "urethral plate" RELATED []
+synonym: "urethral seam" RELATED []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0006555 ! excretory tube
+is_a: UBERON:0012275 ! meso-epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+relationship: BFO:0000050 UBERON:0000057 ! part of urethra
 
 [Term]
 id: UBERON:0002329
@@ -15282,6 +15502,17 @@ intersection_of: UBERON:0001474 ! bone element
 intersection_of: BFO:0000050 UBERON:0002417 ! part of abdominal segment of trunk
 
 [Term]
+id: UBERON:0003829
+name: urethra muscle tissue
+def: "Any muscle tissue that is part of the urethra." []
+synonym: "urethral muscle layer" RELATED []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005090 ! muscle structure
+intersection_of: UBERON:0005090 ! muscle structure
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+relationship: BFO:0000050 UBERON:0000057 ! part of urethra
+
+[Term]
 id: UBERON:0003831
 name: respiratory system muscle
 def: "Any muscle organ that is part of a respiratory system [Automatically generated definition]." []
@@ -16118,6 +16349,25 @@ intersection_of: BFO:0000050 UBERON:0001981 ! part of blood vessel
 relationship: BFO:0000050 UBERON:0001981 ! part of blood vessel
 
 [Term]
+id: UBERON:0004645
+name: urinary bladder urothelium
+def: "The epithelial lining of the luminal space of the urinary bladder." []
+synonym: "bladder transitional cell epithelium" EXACT []
+synonym: "epithelium of bladder" RELATED []
+synonym: "transitional epithelium" RELATED []
+synonym: "transitional epithelium of urinary bladder" EXACT []
+synonym: "urinary bladder transitional epithelium" EXACT []
+synonym: "urothelium" BROAD []
+synonym: "urothelium of urinary bladder" EXACT []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0000365 ! urothelium
+is_a: UBERON:0003350 ! epithelium of mucosa
+is_a: UBERON:0012275 ! meso-epithelium
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001259 ! part of mucosa of urinary bladder
+
+[Term]
 id: UBERON:0004647
 name: liver lobule
 def: "the polygonal structure of the liver that consists of hepatocytes radiating outward from a hepatic vein" []
@@ -16352,6 +16602,32 @@ intersection_of: UBERON:0000344 ! mucosa
 intersection_of: BFO:0000050 UBERON:0005409 ! part of alimentary part of gastrointestinal system
 relationship: BFO:0000050 UBERON:0001555 ! part of digestive tract
 relationship: BFO:0000050 UBERON:0005409 ! part of alimentary part of gastrointestinal system
+
+[Term]
+id: UBERON:0004787
+name: urethra urothelium
+def: "An urothelium that is part of a urethra [Automatically generated definition]." []
+synonym: "urethra uroepithelium" EXACT []
+synonym: "uroepithelium of urethra" EXACT []
+synonym: "urothelium of urethra" EXACT []
+is_a: UBERON:0000365 ! urothelium
+is_a: UBERON:0002325 ! epithelium of urethra
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+
+[Term]
+id: UBERON:0004790
+name: skin mucous gland
+def: "A mucous gland that is part of the skin." []
+synonym: "mucous gland of entire skin" EXACT []
+synonym: "mucous gland of skin of body" EXACT []
+synonym: "skin mucus gland" EXACT []
+synonym: "skin of body mucous gland" EXACT []
+is_a: UBERON:0000414 ! mucous gland
+is_a: UBERON:0007771 ! epidermis gland
+is_a: UBERON:0019319 ! exocrine gland of integumental system
+intersection_of: UBERON:0000414 ! mucous gland
+intersection_of: BFO:0000050 UBERON:0002097 ! part of skin of body
 
 [Term]
 id: UBERON:0004797
@@ -16726,6 +17002,23 @@ intersection_of: BFO:0000050 UBERON:0001173 ! part of biliary tree
 relationship: BFO:0000050 UBERON:0001173 ! part of biliary tree
 
 [Term]
+id: UBERON:0004943
+name: submucosa of urinary bladder
+def: "The submucous layer of the wall of the urinary bladder." []
+synonym: "bladder submucosa" EXACT []
+synonym: "submucosa of bladder" EXACT []
+synonym: "submucous layer of urinary bladder" RELATED []
+synonym: "tela submucosa (vesica urinaria)" EXACT []
+synonym: "tela submucosa vesicae" EXACT []
+synonym: "tela submucosa vesicae urinariae" EXACT []
+synonym: "urinary bladder submucosa" EXACT []
+is_a: UBERON:0000009 ! submucosa
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001256 ! part of wall of urinary bladder
+
+[Term]
 id: UBERON:0004983
 name: mucosa of vagina
 def: "A mucosa that is part of a vagina [Automatically generated definition]." []
@@ -16768,6 +17061,38 @@ is_a: UBERON:0004119 ! endoderm-derived structure
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: BFO:0000050 UBERON:0001173 ! part of biliary tree
 relationship: BFO:0000050 UBERON:0001173 ! part of biliary tree
+
+[Term]
+id: UBERON:0005013
+name: mucosa of male urethra
+def: "A mucosa that is part of a male urethra [Automatically generated definition]." []
+synonym: "male urethra mucosa" EXACT []
+synonym: "male urethra mucosa of organ" EXACT []
+synonym: "male urethra mucous membrane" EXACT []
+synonym: "male urethra organ mucosa" EXACT []
+synonym: "mucosa of organ of male urethra" EXACT []
+synonym: "mucous membrane of male urethra" EXACT []
+synonym: "organ mucosa of male urethra" EXACT []
+is_a: UBERON:0012299 ! mucosa of urethra
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0001333 ! part of male urethra
+relationship: BFO:0000050 UBERON:0001333 ! part of male urethra
+
+[Term]
+id: UBERON:0005014
+name: mucosa of female urethra
+def: "A mucosa that is part of a female urethra [Automatically generated definition]." []
+synonym: "female urethra mucosa" EXACT []
+synonym: "female urethra mucosa of organ" EXACT []
+synonym: "female urethra mucous membrane" EXACT []
+synonym: "female urethra organ mucosa" EXACT []
+synonym: "mucosa of organ of female urethra" EXACT []
+synonym: "mucous membrane of female urethra" EXACT []
+synonym: "organ mucosa of female urethra" EXACT []
+is_a: UBERON:0012299 ! mucosa of urethra
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0001334 ! part of female urethra
+relationship: BFO:0000050 UBERON:0001334 ! part of female urethra
 
 [Term]
 id: UBERON:0005048
@@ -18994,6 +19319,33 @@ relationship: BFO:0000050 UBERON:0009117 ! part of indifferent gonad
 relationship: RO:0002202 UBERON:0005891 ! develops from coelomic epithelium
 
 [Term]
+id: UBERON:0010186
+name: male urethral gland
+def: "any of the numerous small mucous-secreting glands located in the wall of the penile urethra" []
+synonym: "gland of Littre" EXACT []
+synonym: "gland of male urethra" EXACT []
+synonym: "glandulae urethrales urethrae masculinae" RELATED []
+synonym: "Littre's gland" EXACT []
+synonym: "male urethra gland" EXACT []
+synonym: "urethral gland (male)" EXACT []
+is_a: UBERON:0001338 ! urethral gland
+intersection_of: UBERON:0001338 ! urethral gland
+intersection_of: BFO:0000050 UBERON:0001333 ! part of male urethra
+relationship: BFO:0000050 UBERON:0001333 ! part of male urethra
+
+[Term]
+id: UBERON:0010187
+name: female urethral gland
+def: "An urethral gland that is part of a female urethra." []
+synonym: "female urethra gland" EXACT []
+synonym: "gland of female urethra" EXACT []
+synonym: "urethral gland (female)" EXACT []
+is_a: UBERON:0001338 ! urethral gland
+intersection_of: UBERON:0001338 ! urethral gland
+intersection_of: BFO:0000050 UBERON:0001334 ! part of female urethra
+relationship: BFO:0000050 UBERON:0001334 ! part of female urethra
+
+[Term]
 id: UBERON:0010188
 name: protuberance
 def: "A roughly circular bulge in a surface." []
@@ -19595,6 +19947,20 @@ intersection_of: BFO:0000050 UBERON:0007811 ! part of craniocervical region
 relationship: BFO:0000050 UBERON:0007811 ! part of craniocervical region
 
 [Term]
+id: UBERON:0012239
+name: urinary bladder vasculature
+def: "network of tubes that carries blood through the distensible musculomembranous organ that serves to collect and store urine excreted by the kidneys[MP]" []
+synonym: "bladder vasculature" EXACT []
+synonym: "blood vessel of bladder" RELATED []
+synonym: "blood vessels of bladder" EXACT []
+synonym: "set of urinary bladder blood vessels" EXACT []
+is_a: UBERON:0002201 ! vasculature of trunk
+is_a: UBERON:0006876 ! vasculature of organ
+intersection_of: UBERON:0002049 ! vasculature
+intersection_of: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+relationship: BFO:0000050 UBERON:0001255 ! part of urinary bladder
+
+[Term]
 id: UBERON:0012274
 name: columnar epithelium
 def: "An epithelium that consists of columnar epithelial cells. Columnar epithelia are epithelial cells whose heights are at least four times their width. Columnar epithelia are divided into simple (or unilayered), and the rarer stratified (or multi-layered).[WP, modified]" []
@@ -19619,6 +19985,19 @@ synonym: "cloacal fold" BROAD []
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: BFO:0000050 UBERON:0000922 ! part of embryo
 relationship: BFO:0000050 UBERON:0012469 ! part of external anal region
+
+[Term]
+id: UBERON:0012299
+name: mucosa of urethra
+def: "A mucosa that is part of a urethra." []
+synonym: "mucous membrane of urethra" EXACT []
+synonym: "tunica mucosa urethrae" EXACT []
+synonym: "urethral mucosa" EXACT []
+is_a: UBERON:0000344 ! mucosa
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+relationship: BFO:0000050 UBERON:0000057 ! part of urethra
 
 [Term]
 id: UBERON:0012361
@@ -19833,6 +20212,16 @@ intersection_of: BFO:0000050 UBERON:0000409 ! part of serous gland
 relationship: BFO:0000050 UBERON:0000409 ! part of serous gland
 
 [Term]
+id: UBERON:0013241
+name: embryonic urethral groove
+def: "The precursor of the urethra" []
+synonym: "sulcus urethralis primarius" EXACT []
+synonym: "urethral groove" EXACT []
+synonym: "urethral sulcus" EXACT []
+is_a: UBERON:0002050 ! embryonic structure
+relationship: RO:0002202 UBERON:0004876 ! develops from urogenital fold
+
+[Term]
 id: UBERON:0013247
 name: male paramesonephric duct
 def: "A epithelial tube that develops from a Mullerian duct in a male. Later degenerates." []
@@ -20009,6 +20398,17 @@ is_a: UBERON:0035050 ! excretory duct
 relationship: BFO:0000050 UBERON:0002384 ! part of connective tissue
 
 [Term]
+id: UBERON:0014717
+name: mucous acinus
+def: "The secretory unit of a mucous gland. The acinar portion is composed of mucous secreting cells." []
+synonym: "acinus of mucuous gland" EXACT []
+synonym: "mucus acinus" EXACT []
+is_a: UBERON:0011858 ! acinus of exocrine gland
+intersection_of: UBERON:0009842 ! glandular acinus
+intersection_of: BFO:0000050 UBERON:0000414 ! part of mucous gland
+relationship: BFO:0000050 UBERON:0000414 ! part of mucous gland
+
+[Term]
 id: UBERON:0014719
 name: intralobular duct
 def: "A duct that is located within a lobule, with no more connective tissue intervening between ducts and secretory units (i.e., acini or tubules) than between adjacent secretory units. Intercalated and striated ducts are intralobular" []
@@ -20097,6 +20497,16 @@ is_a: UBERON:0005178 ! thoracic cavity element
 relationship: BFO:0000050 UBERON:0004535 ! part of cardiovascular system
 
 [Term]
+id: UBERON:0015418
+name: urethra mesenchymal layer
+def: "A mesenchyme that is part of a urethra." []
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0000057 ! part of urethra
+relationship: BFO:0000050 UBERON:0000057 ! part of urethra
+
+[Term]
 id: UBERON:0015757
 name: heterogeneous tissue
 synonym: "portion of heterogeneous tissue" EXACT []
@@ -20135,6 +20545,17 @@ intersection_of: BFO:0000050 UBERON:0002107 ! part of liver
 relationship: BFO:0000050 UBERON:0002107 ! part of liver
 
 [Term]
+id: UBERON:0016510
+name: epithelium of male urethra
+def: "A epithelium that is part of a male urethra." []
+synonym: "male urethral epithelium" EXACT []
+synonym: "urethral epithelium of male" EXACT []
+is_a: UBERON:0002325 ! epithelium of urethra
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0001333 ! part of male urethra
+relationship: BFO:0000050 UBERON:0001333 ! part of male urethra
+
+[Term]
 id: UBERON:0016512
 name: lumen of duodenum
 def: "A anatomical space that is part of a duodenum." []
@@ -20144,6 +20565,17 @@ is_a: UBERON:0000464 ! anatomical space
 intersection_of: UBERON:0000464 ! anatomical space
 intersection_of: BFO:0000050 UBERON:0002114 ! part of duodenum
 relationship: BFO:0000050 UBERON:0002114 ! part of duodenum
+
+[Term]
+id: UBERON:0016520
+name: epithelium of female urethra
+def: "A epithelium that is part of a female urethra." []
+synonym: "female urethral epithelium" EXACT []
+synonym: "urethral epithelium of female" EXACT []
+is_a: UBERON:0002325 ! epithelium of urethra
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0001334 ! part of female urethra
+relationship: BFO:0000050 UBERON:0001334 ! part of female urethra
 
 [Term]
 id: UBERON:0016545
@@ -20270,6 +20702,14 @@ is_a: UBERON:0006876 ! vasculature of organ
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: BFO:0000050 UBERON:0000948 ! part of heart
 relationship: BFO:0000050 UBERON:0000948 ! part of heart
+
+[Term]
+id: UBERON:0018707
+name: bladder organ
+def: "A membranous sac in animals that serves as the receptacle of a liquid or contains gas." []
+synonym: "bladder" NARROW []
+is_a: UBERON:0000489 ! cavitated compound organ
+is_a: UBERON:0009856 ! sac
 
 [Term]
 id: UBERON:0019042

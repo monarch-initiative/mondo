@@ -158,6 +158,13 @@ is_a: GO:0003674 ! molecular_function
 relationship: BFO:0000050 GO:2001141 ! regulation of RNA biosynthetic process
 
 [Term]
+id: GO:0001501
+name: skeletal system development
+def: "The process whose specific outcome is the progression of the skeleton over time, from its formation to the mature structure. The skeleton is the bony framework of the body in vertebrates (endoskeleton) or the hard outer envelope of insects (exoskeleton or dermoskeleton)." [GOC:dph, GOC:jid, GOC:tb, http://www.stedmans.com/]
+synonym: "skeletal development" EXACT []
+is_a: GO:0048731 ! system development
+
+[Term]
 id: GO:0001802
 name: type III hypersensitivity
 def: "An inflammatory response resulting from recognition of immune complexes via complement or Fc receptors on effector cells leading to activation of neutrophils and other leukocytes and damage to bystander tissue." [GOC:add, ISBN:0781735149]
@@ -212,6 +219,17 @@ is_a: GO:0044065 ! regulation of respiratory system process
 is_a: GO:0050877 ! nervous system process
 intersection_of: GO:0050877 ! nervous system process
 intersection_of: RO:0002211 GO:0007585 ! respiratory gaseous exchange
+
+[Term]
+id: GO:0002246
+name: wound healing involved in inflammatory response
+def: "The series of events that restore integrity to damaged tissue that contribute to an inflammatory response." [GOC:jal, ISBN:0721601871]
+synonym: "healing during inflammatory response" RELATED [GOC:dph]
+synonym: "inflammatory response wound healing" RELATED [GOC:dph]
+is_a: GO:0042060 ! wound healing
+intersection_of: GO:0042060 ! wound healing
+intersection_of: BFO:0000050 GO:0006954 ! inflammatory response
+relationship: BFO:0000050 GO:0090594 ! inflammatory response to wounding
 
 [Term]
 id: GO:0002250
@@ -945,10 +963,23 @@ synonym: "extracellular" EXACT []
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0005578
+name: proteinaceous extracellular matrix
+def: "A layer consisting mainly of proteins (especially collagen) and glycosaminoglycans (mostly as proteoglycans) that forms a sheet underlying or overlying cells such as endothelial and epithelial cells. The proteins are secreted by cells in the vicinity. An example of this component is found in Mus musculus." [GOC:mtg_sensu, ISBN:0198547684]
+is_a: GO:0031012 ! extracellular matrix
+
+[Term]
 id: GO:0005581
 name: collagen trimer
 def: "A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures." [GOC:dos, GOC:mah, ISBN:0721639976, PMID:19693541, PMID:21421911]
 is_a: GO:0043234 ! protein complex
+
+[Term]
+id: GO:0005604
+name: basement membrane
+def: "A thin layer of dense material found in various animal tissues interposed between the cells and the adjacent connective tissue. It consists of the basal lamina plus an associated layer of reticulin fibers." [ISBN:0198547684]
+is_a: GO:0044420 ! extracellular matrix component
+relationship: BFO:0000050 GO:0005578 ! proteinaceous extracellular matrix
 
 [Term]
 id: GO:0005622
@@ -972,6 +1003,13 @@ name: nucleus
 def: "A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell's chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent." [GOC:go_curators]
 synonym: "cell nucleus" EXACT []
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
+
+[Term]
+id: GO:0005652
+name: nuclear lamina
+def: "The fibrous, electron-dense layer lying on the nucleoplasmic side of the inner membrane of a cell nucleus, composed of lamin filaments. The polypeptides of the lamina are thought to be concerned in the dissolution of the nuclear envelope and its re-formation during mitosis. The lamina is composed of lamin A and lamin C filaments cross-linked into an orthogonal lattice, which is attached via lamin B to the inner nuclear membrane through interactions with a lamin B receptor, an IFAP, in the membrane." [ISBN:0198506732, ISBN:0716731363]
+is_a: GO:0044428 ! nuclear part
+relationship: BFO:0000050 GO:0034399 ! nuclear periphery
 
 [Term]
 id: GO:0005694
@@ -1870,6 +1908,19 @@ is_a: GO:0007154 ! cell communication
 is_a: GO:0023052 ! signaling
 
 [Term]
+id: GO:0007275
+name: multicellular organism development
+def: "The biological process whose specific outcome is the progression of a multicellular organism over time from an initial condition (e.g. a zygote or a young adult) to a later condition (e.g. a multicellular animal or an aged adult)." [GOC:dph, GOC:ems, GOC:isa_complete, GOC:tb]
+is_a: GO:0032501 ! multicellular organismal process
+is_a: GO:0048856 ! anatomical structure development
+
+[Term]
+id: GO:0007548
+name: sex differentiation
+def: "The establishment of the sex of an organism by physical differentiation." [GOC:ai]
+is_a: GO:0003006 ! developmental process involved in reproduction
+
+[Term]
 id: GO:0007565
 name: female pregnancy
 def: "The set of physiological processes that allow an embryo or foetus to develop within the body of a female animal. It covers the time from fertilization of a female ovum by a male spermatozoon until birth." [ISBN:0192800825]
@@ -1892,6 +1943,21 @@ def: "The process of gaseous exchange between an organism and its environment. I
 synonym: "breathing" BROAD []
 synonym: "respiration" BROAD []
 is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0007596
+name: blood coagulation
+def: "The sequential process in which the multiple coagulation factors of the blood interact, ultimately resulting in the formation of an insoluble fibrin clot; it may be divided into three stages: stage 1, the formation of intrinsic and extrinsic prothrombin converting principle; stage 2, the formation of thrombin; stage 3, the formation of stable fibrin polymers." [http://www.graylab.ac.uk/omd/, ISBN:0198506732]
+synonym: "blood clotting" EXACT []
+is_a: GO:0007599 ! hemostasis
+is_a: GO:0050817 ! coagulation
+relationship: BFO:0000050 GO:0042060 ! wound healing
+
+[Term]
+id: GO:0007599
+name: hemostasis
+def: "The stopping of bleeding (loss of body fluid) or the arrest of the circulation to an organ or part." [ISBN:0198506732]
+is_a: GO:0050878 ! regulation of body fluid levels
 
 [Term]
 id: GO:0007610
@@ -2321,6 +2387,13 @@ synonym: "response to environmental stimulus" EXACT []
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0009611
+name: response to wounding
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus indicating damage to the organism." [GOC:go_curators]
+synonym: "physiological response to wounding" EXACT []
+is_a: GO:0006950 ! response to stress
+
+[Term]
 id: GO:0009712
 name: catechol-containing compound metabolic process
 def: "The chemical reactions and pathways involving a compound containing a pyrocatechol (1,2-benzenediol) nucleus or substituent." [GOC:sm, ISBN:0198547684]
@@ -2571,6 +2644,17 @@ is_a: GO:1905952 ! regulation of lipid localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0019915 ! lipid storage
 relationship: RO:0002211 GO:0019915 ! lipid storage
+
+[Term]
+id: GO:0010889
+name: regulation of sequestering of triglyceride
+def: "Any process that modulates the rate, frequency or extent of sequestering of triglyceride. Triglyceride sequestration is the process of binding or confining any triester of glycerol such that it is separated from other components of a biological system." [GOC:BHF, GOC:dph, GOC:tb]
+synonym: "regulation of sequestering of triacylglycerol" EXACT [GOC:mah]
+synonym: "regulation of triacylglycerol sequestration" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0010883 ! regulation of lipid storage
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0030730 ! sequestering of triglyceride
+relationship: RO:0002211 GO:0030730 ! sequestering of triglyceride
 
 [Term]
 id: GO:0010906
@@ -3219,6 +3303,12 @@ synonym: "carboxylic acid metabolism" EXACT []
 is_a: GO:0043436 ! oxoacid metabolic process
 
 [Term]
+id: GO:0019814
+name: immunoglobulin complex
+def: "A protein complex that in its canonical form is composed of two identical immunoglobulin heavy chains and two identical immunoglobulin light chains, held together by disulfide bonds and sometimes complexed with additional proteins. An immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph." [GOC:add, GOC:jl, ISBN:0781765196]
+is_a: GO:0043234 ! protein complex
+
+[Term]
 id: GO:0019915
 name: lipid storage
 def: "The accumulation and maintenance in cells or tissues of lipids, compounds soluble in organic solvents but insoluble or sparingly soluble in aqueous solvents. Lipid reserves can be accumulated during early developmental stages for mobilization and utilization at later stages of development." [GOC:dph, GOC:mah, GOC:tb, PMID:11102830]
@@ -3406,6 +3496,18 @@ is_a: GO:0002790 ! peptide secretion
 is_a: GO:0046879 ! hormone secretion
 
 [Term]
+id: GO:0030193
+name: regulation of blood coagulation
+def: "Any process that modulates the frequency, rate or extent of blood coagulation." [GOC:mah]
+is_a: GO:0032101 ! regulation of response to external stimulus
+is_a: GO:0050818 ! regulation of coagulation
+is_a: GO:0061041 ! regulation of wound healing
+is_a: GO:1900046 ! regulation of hemostasis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007596 ! blood coagulation
+relationship: RO:0002211 GO:0007596 ! blood coagulation
+
+[Term]
 id: GO:0030258
 name: lipid modification
 def: "The covalent alteration of one or more fatty acids in a lipid, resulting in a change in the properties of the lipid." [GOC:mah]
@@ -3461,6 +3563,27 @@ is_a: GO:0038023 ! signaling receptor activity
 relationship: BFO:0000051 GO:0042165 ! neurotransmitter binding
 
 [Term]
+id: GO:0030730
+name: sequestering of triglyceride
+def: "The process of binding or confining any triester of glycerol such that it is separated from other components of a biological system." [GOC:mah, ISBN:0198506732]
+synonym: "retention of triacylglycerol" EXACT []
+synonym: "retention of triglyceride" EXACT []
+synonym: "sequestering of triacylglycerol" EXACT []
+synonym: "sequestration of triacylglycerol" EXACT []
+synonym: "sequestration of triglyceride" EXACT []
+synonym: "storage of triacylglycerol" EXACT []
+synonym: "storage of triglyceride" EXACT []
+synonym: "triacylglycerol retention" EXACT []
+synonym: "triacylglycerol sequestering" EXACT []
+synonym: "triacylglycerol sequestration" EXACT []
+synonym: "triacylglycerol storage" EXACT []
+synonym: "triglyceride retention" EXACT []
+synonym: "triglyceride sequestering" EXACT []
+synonym: "triglyceride sequestration" EXACT []
+synonym: "triglyceride storage" EXACT []
+is_a: GO:0019915 ! lipid storage
+
+[Term]
 id: GO:0030990
 name: intraciliary transport particle
 def: "A nonmembrane-bound oligomeric protein complex that participates in bidirectional transport of molecules (cargo) along axonemal microtubules." [GOC:cilia, GOC:kmv, PMID:14570576, PMID:22118932, PMID:23945166]
@@ -3468,6 +3591,12 @@ synonym: "IFT complex" RELATED []
 synonym: "intraflagellar transport complex" EXACT []
 synonym: "intraflagellar transport particle" EXACT []
 is_a: GO:0043234 ! protein complex
+
+[Term]
+id: GO:0031012
+name: extracellular matrix
+def: "A structure lying external to one or more cells, which provides structural support for cells or tissues." [GOC:mah, NIF_Subcellular:nlx_subcell_20090513]
+is_a: GO:0044421 ! extracellular region part
 
 [Term]
 id: GO:0031323
@@ -3849,6 +3978,13 @@ intersection_of: RO:0002211 GO:0019627 ! urea metabolic process
 relationship: RO:0002211 GO:0019627 ! urea metabolic process
 
 [Term]
+id: GO:0034399
+name: nuclear periphery
+def: "The portion of the nuclear lumen proximal to the inner nuclear membrane." [GOC:krc, GOC:mah]
+is_a: GO:0044428 ! nuclear part
+relationship: BFO:0000050 GO:0031981 ! nuclear lumen
+
+[Term]
 id: GO:0034440
 name: lipid oxidation
 def: "The removal of one or more electrons from a lipid, with or without the concomitant removal of a proton or protons, by reaction with an electron-accepting substance, by addition of oxygen or by removal of hydrogen." [GOC:BHF, GOC:mah]
@@ -3995,6 +4131,12 @@ is_a: GO:0004871 ! signal transducer activity
 is_a: GO:0004872 ! receptor activity
 intersection_of: GO:0004872 ! receptor activity
 intersection_of: BFO:0000050 GO:0007165 ! signal transduction
+
+[Term]
+id: GO:0042060
+name: wound healing
+def: "The series of events that restore integrity to a damaged tissue, following an injury." [GOC:bf, PMID:15269788]
+is_a: GO:0009611 ! response to wounding
 
 [Term]
 id: GO:0042069
@@ -4534,6 +4676,16 @@ is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0044281 ! small molecule metabolic process
 
 [Term]
+id: GO:0044420
+name: extracellular matrix component
+def: "Any constituent part of the extracellular matrix, the structure lying external to one or more cells, which provides structural support for cells or tissues; may be completely external to the cell (as in animals) or be part of the cell (as often seen in plants)." [GOC:jl]
+synonym: "extracellular matrix part" EXACT []
+is_a: GO:0044421 ! extracellular region part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0031012 ! extracellular matrix
+relationship: BFO:0000050 GO:0031012 ! extracellular matrix
+
+[Term]
 id: GO:0044421
 name: extracellular region part
 def: "Any constituent part of the extracellular region, the space external to the outermost structure of a cell. For cells without external protective or external encapsulating structures this refers to space outside of the plasma membrane. This term covers constituent parts of the host cell environment outside an intracellular parasite." [GOC:jl]
@@ -4961,6 +5113,15 @@ is_a: GO:0030545 ! receptor regulator activity
 relationship: RO:0002211 GO:0038023 ! signaling receptor activity
 
 [Term]
+id: GO:0048513
+name: animal organ development
+def: "Development of a tissue or tissues that work together to perform a specific function or functions. Development pertains to the process whose specific outcome is the progression of a structure over time, from its formation to the mature structure. Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions." [GOC:dph, GOC:jid]
+synonym: "development of an organ" EXACT []
+synonym: "organogenesis" EXACT []
+is_a: GO:0048856 ! anatomical structure development
+relationship: BFO:0000050 GO:0048731 ! system development
+
+[Term]
 id: GO:0048545
 name: response to steroid hormone
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a steroid hormone stimulus." [GOC:go_curators]
@@ -4988,10 +5149,24 @@ is_a: GO:0022414 ! reproductive process
 relationship: BFO:0000050 GO:0032504 ! multicellular organism reproduction
 
 [Term]
+id: GO:0048731
+name: system development
+def: "The process whose specific outcome is the progression of an organismal system over time, from its formation to the mature structure. A system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a given biological process." [GOC:dph, GOC:jid]
+is_a: GO:0048856 ! anatomical structure development
+relationship: BFO:0000050 GO:0007275 ! multicellular organism development
+
+[Term]
 id: GO:0048771
 name: tissue remodeling
 def: "The reorganization or renovation of existing tissues. This process can either change the characteristics of a tissue such as in blood vessel remodeling, or result in the dynamic equilibrium of a tissue such as in bone remodeling." [GOC:ebc]
 is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0048856
+name: anatomical structure development
+def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." [GO_REF:0000021, GOC:mtg_15jun06]
+synonym: "development of an anatomical structure" EXACT []
+is_a: GO:0032502 ! developmental process
 
 [Term]
 id: GO:0048871
@@ -5125,6 +5300,23 @@ intersection_of: RO:0002211 GO:0006694 ! steroid biosynthetic process
 relationship: RO:0002211 GO:0006694 ! steroid biosynthetic process
 
 [Term]
+id: GO:0050817
+name: coagulation
+def: "The process in which a fluid solution, or part of it, changes into a solid or semisolid mass." [ISBN:0198506732]
+synonym: "clotting" EXACT []
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0050818
+name: regulation of coagulation
+def: "Any process that modulates the frequency, rate or extent of coagulation, the process in which a fluid solution, or part of it, changes into a solid or semisolid mass." [GOC:ai]
+synonym: "regulation of clotting" EXACT []
+is_a: GO:0051239 ! regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0050817 ! coagulation
+relationship: RO:0002211 GO:0050817 ! coagulation
+
+[Term]
 id: GO:0050877
 name: nervous system process
 def: "A organ system process carried out by any of the organs or tissues of neurological system." [GOC:ai, GOC:mtg_cardio]
@@ -5132,6 +5324,12 @@ synonym: "neurological system process" EXACT []
 synonym: "neurophysiological process" EXACT []
 synonym: "pan-neural process" RELATED []
 is_a: GO:0003008 ! system process
+
+[Term]
+id: GO:0050878
+name: regulation of body fluid levels
+def: "Any process that modulates the levels of body fluids." [GOC:ai, GOC:dph, GOC:tb]
+is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
 id: GO:0050890
@@ -5565,6 +5763,13 @@ intersection_of: RO:0002211 GO:0051641 ! cellular localization
 relationship: RO:0002211 GO:0051641 ! cellular localization
 
 [Term]
+id: GO:0060348
+name: bone development
+def: "The process whose specific outcome is the progression of bone over time, from its formation to the mature structure. Bone is the hard skeletal connective tissue consisting of both mineral and cellular components." [GOC:dph]
+is_a: GO:0048513 ! animal organ development
+relationship: BFO:0000050 GO:0001501 ! skeletal system development
+
+[Term]
 id: GO:0060765
 name: regulation of androgen receptor signaling pathway
 def: "Any process that modulates the rate, frequency, or extent of the androgen receptor signaling pathway." [GOC:dph]
@@ -5573,6 +5778,15 @@ is_a: GO:0033143 ! regulation of intracellular steroid hormone receptor signalin
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0030521 ! androgen receptor signaling pathway
 relationship: RO:0002211 GO:0030521 ! androgen receptor signaling pathway
+
+[Term]
+id: GO:0061041
+name: regulation of wound healing
+def: "Any process that modulates the rate, frequency, or extent of the series of events that restore integrity to a damaged tissue, following an injury." [GOC:BHF, GOC:dph]
+is_a: GO:1903034 ! regulation of response to wounding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042060 ! wound healing
+relationship: RO:0002211 GO:0042060 ! wound healing
 
 [Term]
 id: GO:0065007
@@ -5885,6 +6099,13 @@ is_a: GO:0006139 ! nucleobase-containing compound metabolic process
 is_a: GO:0043170 ! macromolecule metabolic process
 
 [Term]
+id: GO:0090594
+name: inflammatory response to wounding
+def: "The immediate defensive reaction by vertebrate tissue to injury caused by chemical or physical agents." [GOC:add]
+is_a: GO:0006954 ! inflammatory response
+is_a: GO:0009611 ! response to wounding
+
+[Term]
 id: GO:0097060
 name: synaptic membrane
 def: "A specialized area of membrane on either the presynaptic or the postsynaptic side of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." [GOC:BHF, PMID:20410104]
@@ -5921,6 +6142,16 @@ is_a: GO:0016020 ! membrane
 is_a: GO:0044459 ! plasma membrane part
 intersection_of: GO:0016020 ! membrane
 intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
+
+[Term]
+id: GO:0098651
+name: basement membrane collagen trimer
+def: "Any collagen timer that is part of a basement membrane." [GOC:dos, PMID:21421911]
+is_a: GO:0005581 ! collagen trimer
+is_a: GO:0044420 ! extracellular matrix component
+intersection_of: GO:0005581 ! collagen trimer
+intersection_of: BFO:0000050 GO:0005604 ! basement membrane
+relationship: BFO:0000050 GO:0005604 ! basement membrane
 
 [Term]
 id: GO:0098655
@@ -6072,6 +6303,16 @@ intersection_of: GO:0006366 ! transcription from RNA polymerase II promoter
 intersection_of: RO:0002211 GO:0005975 ! carbohydrate metabolic process
 
 [Term]
+id: GO:0106014
+name: regulation of inflammatory response to wounding
+def: "Any process that modulates the frequency, rate or extent of the inflammatory response to wounding." [GOC:BHF, GOC:BHF_miRNA, GOC:rph, PMID:26022821]
+is_a: GO:0050727 ! regulation of inflammatory response
+is_a: GO:1903034 ! regulation of response to wounding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0090594 ! inflammatory response to wounding
+relationship: RO:0002211 GO:0090594 ! inflammatory response to wounding
+
+[Term]
 id: GO:0120025
 name: plasma membrane bounded cell projection
 def: "A prolongation or process extending from a cell and that is bounded by plasma membrane, e.g. a cilium, lamellipodium, or axon." [GOC:krc]
@@ -6097,6 +6338,16 @@ is_a: GO:0010467 ! gene expression
 intersection_of: GO:0010467 ! gene expression
 intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
 relationship: BFO:0000066 GO:0005739 ! mitochondrion
+
+[Term]
+id: GO:1900046
+name: regulation of hemostasis
+def: "Any process that modulates the frequency, rate or extent of hemostasis." [GOC:TermGenie]
+is_a: GO:0050789 ! regulation of biological process
+is_a: GO:0050878 ! regulation of body fluid levels
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007599 ! hemostasis
+relationship: RO:0002211 GO:0007599 ! hemostasis
 
 [Term]
 id: GO:1900115
@@ -6407,6 +6658,15 @@ intersection_of: RO:0002211 GO:0035556 ! intracellular signal transduction
 relationship: RO:0002211 GO:0035556 ! intracellular signal transduction
 
 [Term]
+id: GO:1903010
+name: regulation of bone development
+def: "Any process that modulates the frequency, rate or extent of bone development." [GO_REF:0000058, GOC:mr, GOC:TermGenie, PMID:22510437]
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0060348 ! bone development
+relationship: RO:0002211 GO:0060348 ! bone development
+
+[Term]
 id: GO:1903018
 name: regulation of glycoprotein metabolic process
 def: "Any process that modulates the frequency, rate or extent of glycoprotein metabolic process." [GO_REF:0000058, GOC:BHF, GOC:rl, GOC:TermGenie, PMID:23544079]
@@ -6416,6 +6676,16 @@ is_a: GO:0051246 ! regulation of protein metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0009100 ! glycoprotein metabolic process
 relationship: RO:0002211 GO:0009100 ! glycoprotein metabolic process
+
+[Term]
+id: GO:1903034
+name: regulation of response to wounding
+def: "Any process that modulates the frequency, rate or extent of response to wounding." [GO_REF:0000058, GOC:kmv, GOC:TermGenie, pmid:19164535]
+synonym: "regulation of physiological response to wounding" EXACT [GOC:TermGenie]
+is_a: GO:0080134 ! regulation of response to stress
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0009611 ! response to wounding
+relationship: RO:0002211 GO:0009611 ! response to wounding
 
 [Term]
 id: GO:1903108
@@ -6591,6 +6861,16 @@ name: mitochondrial transmembrane transport
 def: "The process in which a solute is transported from one side of a membrane to the other into, out of or within a mitochondrion." [PMID:20533899]
 is_a: GO:0006839 ! mitochondrial transport
 is_a: GO:0055085 ! transmembrane transport
+
+[Term]
+id: GO:2000026
+name: regulation of multicellular organismal development
+def: "Any process that modulates the frequency, rate or extent of multicellular organismal development." [GOC:obol]
+is_a: GO:0050793 ! regulation of developmental process
+is_a: GO:0051239 ! regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007275 ! multicellular organism development
+relationship: RO:0002211 GO:0007275 ! multicellular organism development
 
 [Term]
 id: GO:2000112
