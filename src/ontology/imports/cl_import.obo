@@ -1427,32 +1427,10 @@ intersection_of: RO:0002215 GO:0046879 ! capable of hormone secretion
 relationship: RO:0002215 GO:0046879 ! capable of hormone secretion
 
 [Term]
-id: CL:0000385
-name: prohemocyte (sensu Nematoda and Protostomia)
-is_a: CL:0000390 ! blood cell (sensu Nematoda and Protostomia)
-
-[Term]
-id: CL:0000387
-name: hemocyte (sensu Nematoda and Protostomia)
-is_a: CL:0000519 ! phagocyte (sensu Nematoda and Protostomia)
-relationship: RO:0002202 CL:0000385 ! develops from prohemocyte (sensu Nematoda and Protostomia)
-relationship: RO:0002215 GO:0035010 {source="PMID:18025161"} ! capable of encapsulation of foreign target
-
-[Term]
-id: CL:0000390
-name: blood cell (sensu Nematoda and Protostomia)
-is_a: CL:0000081 ! blood cell
-
-[Term]
 id: CL:0000393
 name: electrically responsive cell
 def: "A cell whose function is determined by its response to an electric signal." [FB:ma]
 is_a: CL:0000211 ! electrically active cell
-
-[Term]
-id: CL:0000398
-name: polygonal cell
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000404
@@ -1666,12 +1644,6 @@ is_a: CL:0000056 {is_inferred="true"} ! myoblast
 intersection_of: CL:0000056 ! myoblast
 intersection_of: RO:0002203 CL:0000192 ! develops into smooth muscle cell
 relationship: RO:0002203 CL:0000192 ! develops into smooth muscle cell
-
-[Term]
-id: CL:0000519
-name: phagocyte (sensu Nematoda and Protostomia)
-def: "A phagocyte from organisms in the Nematoda or Protostomia clades." [GOC:tfm]
-is_a: CL:0000234 ! phagocyte
 
 [Term]
 id: CL:0000527
@@ -2464,29 +2436,6 @@ relationship: has_high_plasma_membrane_amount PR:000001865 ! interleukin-3 recep
 relationship: has_high_plasma_membrane_amount PR:000007431 ! high affinity immunoglobulin epsilon receptor subunit alpha
 relationship: RO:0002104 PR:000001344 ! has plasma membrane part ectonucleotide pyrophosphatase/phosphodiesterase family member 3
 relationship: RO:0002104 PR:000001950 ! has plasma membrane part tumor necrosis factor ligand superfamily member 5
-
-[Term]
-id: CL:0000771
-name: eosinophil
-def: "Any of the immature or mature forms of a granular leukocyte with a nucleus that usually has two lobes connected by one or more slender threads of chromatin, and cytoplasm containing coarse, round granules that are uniform in size and which can be stained by the dye eosin. Eosinophils are CD9-positive, CD191-positive, and CD193-positive." [GOC:add, GOC:amm, GOC:dsd, GOC:tfm, ISBN:0721601464, PMCID:PMC2626675, PMID:10914487, PMID:1662676]
-synonym: "eosinocyte" EXACT []
-synonym: "eosinophilic granulocyte" EXACT []
-synonym: "eosinophilic leucocyte" EXACT []
-synonym: "eosinophilic leukocyte" EXACT []
-synonym: "polymorphonuclear leucocyte" BROAD []
-synonym: "polymorphonuclear leukocyte" BROAD []
-is_a: CL:0000094 {is_inferred="true"} ! granulocyte
-intersection_of: CL:0000094 ! granulocyte
-intersection_of: RO:0002104 PR:000001254 ! has plasma membrane part C-C chemokine receptor type 1
-intersection_of: RO:0002104 PR:000001255 ! has plasma membrane part C-C chemokine receptor type 3
-intersection_of: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
-intersection_of: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
-intersection_of: RO:0002104 PR:000005178 ! has plasma membrane part CD9 molecule
-relationship: RO:0002104 PR:000001254 ! has plasma membrane part C-C chemokine receptor type 1
-relationship: RO:0002104 PR:000001255 ! has plasma membrane part C-C chemokine receptor type 3
-relationship: RO:0002104 PR:000001307 ! has plasma membrane part CD44 molecule
-relationship: RO:0002104 PR:000001343 ! has plasma membrane part CD69 molecule
-relationship: RO:0002104 PR:000005178 ! has plasma membrane part CD9 molecule
 
 [Term]
 id: CL:0000775
@@ -8428,11 +8377,6 @@ is_a: GO:0006807 ! nitrogen compound metabolic process
 is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
-id: GO:0035010
-name: encapsulation of foreign target
-is_a: GO:0002252 ! immune effector process
-
-[Term]
 id: GO:0035051
 name: cardiocyte differentiation
 is_a: GO:0030154 ! cell differentiation
@@ -9846,26 +9790,6 @@ synonym: "epstein-Barr virus-induced G-protein coupled receptor 1" EXACT []
 synonym: "EVI1" RELATED []
 synonym: "MIP-3 beta receptor" EXACT []
 is_a: PR:000001128 ! chemokine receptor
-
-[Term]
-id: PR:000001254
-name: C-C chemokine receptor type 1
-def: "A chemokine receptor CCR1/3/1L that is a translation product of the human CCR1 gene or a 1:1 ortholog thereof." []
-synonym: "C-C CKR-1" EXACT []
-synonym: "CC-CKR-1" EXACT []
-synonym: "CCR-1" EXACT []
-synonym: "CCR1" EXACT []
-synonym: "CD191" EXACT []
-synonym: "chemokine receptor CCR1" EXACT []
-synonym: "CMKBR1" RELATED []
-synonym: "CMKR1" RELATED []
-synonym: "HM145" EXACT []
-synonym: "LD78 receptor" EXACT []
-synonym: "macrophage inflammatory protein 1-alpha receptor" EXACT []
-synonym: "MIP-1alpha-R" EXACT []
-synonym: "RANTES-R" EXACT []
-synonym: "SCYAR1" RELATED []
-is_a: PR:000001197 ! chemokine receptor CCR1/3/1L
 
 [Term]
 id: PR:000001255
