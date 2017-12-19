@@ -217,6 +217,15 @@ imports/equivalencies.obo: imports/equivalencies.owl
 #	../utils/xrefs2axioms.pl $< > $@.tmp && owltools $@.tmp -o $@
 
 # ----------------------------------------
+# Merge constructs
+# ----------------------------------------
+mondo-premerge-%.owl: mondo.owl mirror/%.owl
+	owltools --use-catalog $^ --merge-support-ontologies -o $@.tmp && mv $@.tmp $@
+
+mondo-plus-%.owl: mondo-premerge-%.owl
+	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@.tmp && mv $@.tmp $@
+
+# ----------------------------------------
 # External ontologies
 # ----------------------------------------
 
