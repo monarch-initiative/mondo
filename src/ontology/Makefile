@@ -255,8 +255,12 @@ mirror/neoplasm-core.owl:
 mirror/ncit.owl:
 	wget --no-check-certificate $(OBO)/ncit.owl -O $@
 
-mirror/ncit-disease.ids: mirror/ncit.owl
+mirror/ncit-disease.uris: mirror/ncit.owl
 	robot query -i $< -s ../sparql/ncit-subclass-of-disease.sparql $@
+
+mirror/ncit-disease.ids: mirror/ncit-disease.uris
+	perl -npe 's@http://purl.obolibrary.org/obo/NCIT_@NCIT:@' $< > $@
+
 
 mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.ids
 	robot extract -i $< -T mirror/ncit-disease.ids --method BOT -o $@
