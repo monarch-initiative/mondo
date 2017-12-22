@@ -1,0 +1,145 @@
+format-version: 1.2
+ontology: mondo/imports/foodon_import
+
+[Term]
+id: BFO:0000001
+name: entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+
+[Term]
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000001 ! entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000001 ! entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+
+[Term]
+id: CHEBI:24432
+name: biological role
+def: "A role played by the molecular entity or part thereof within a biological context." []
+is_a: CHEBI:50906 ! role
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
+
+[Term]
+id: CHEBI:33290
+name: food
+def: "Any material that can be ingested by an organism." []
+is_a: CHEBI:52211 ! physiological role
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
+
+[Term]
+id: CHEBI:50906
+name: role
+def: "A role is particular behaviour which a material entity may exhibit." []
+is_a: BFO:0000023 ! role
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
+
+[Term]
+id: CHEBI:52211
+name: physiological role
+is_a: CHEBI:24432 ! biological role
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
+
+[Term]
+id: ENVO:00010483
+name: environmental material
+def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: FOODON:00001002
+name: foodon product type
+def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." [Wikipedia:Food]
+is_a: FOODON:03400361 ! food product type
+
+[Term]
+id: FOODON:00001046
+name: seafood product
+is_a: FOODON:00001092 ! animal food product
+
+[Term]
+id: FOODON:00001092
+name: animal food product
+def: "A food product which is derived from or produced by an animal." []
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03411297 ! derives from animal used as food source
+
+[Term]
+id: FOODON:00001176
+name: invertebrate food product
+is_a: FOODON:00001092 ! animal food product
+
+[Term]
+id: FOODON:00001293
+name: shellfish food product
+is_a: FOODON:00001046 ! seafood product
+is_a: FOODON:00001176 ! invertebrate food product
+
+[Term]
+id: FOODON:00002381
+name: food product by organism
+is_a: FOODON:00001002 ! foodon product type
+
+[Term]
+id: FOODON:00002403
+name: food material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0000087 CHEBI:33290 ! has role food
+
+[Term]
+id: FOODON:03315468
+name: shellfish
+is_a: FOODON:00001293 ! shellfish food product
+
+[Term]
+id: FOODON:03400361
+name: food product type
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0361
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411297
+name: animal used as food source
+def: "Multicellular animal, e.g., fish, meat animal or poultry." []
+comment: LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
+xref: LANGUAL:B1297
+is_a: FOODON:03411564 ! food source
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411564
+name: food source
+def: "Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995]." []
+xref: LANGUAL:B1564
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Typedef]
+id: RO:0000087
+name: has role
+def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
+id: RO:0001000
+name: derives from
+def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_reflexive: true
+
