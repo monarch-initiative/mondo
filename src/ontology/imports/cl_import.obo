@@ -1391,6 +1391,12 @@ intersection_of: BFO:0000050 UBERON:0000358 ! part of blastocyst
 relationship: BFO:0000050 UBERON:0000358 ! part of blastocyst
 
 [Term]
+id: CL:0000354
+name: blastemal cell
+synonym: "blastema cell" EXACT []
+is_a: CL:0000048 ! multi fate stem cell
+
+[Term]
 id: CL:0000357
 name: stratified epithelial stem cell
 is_a: CL:0000036 ! epithelial fate stem cell
@@ -2415,27 +2421,6 @@ is_a: CL:0000763 ! myeloid cell
 intersection_of: CL:0000738 ! leukocyte
 intersection_of: RO:0002202 CL:0000049 ! develops from common myeloid progenitor
 relationship: RO:0002202 CL:0000049 ! develops from common myeloid progenitor
-
-[Term]
-id: CL:0000767
-name: basophil
-def: "Any of the immature or mature forms of a granular leukocyte that in its mature form has an irregularly shaped, pale-staining nucleus that is partially constricted into two lobes, and with cytoplasm that contains coarse, bluish-black granules of variable size. Basophils contain vasoactive amines such as histamine and serotonin, which are released on appropriate stimulation. A basophil is CD123-positive, CD193-positive, CD203c-positive, and FceRIa-positive." [GOC:add, GOC:amm, GOC:dsd, GOC:tfm, ISBN:0721601464, MESH:D001491, PMCID:PMC2626675, PMID:11927641, PMID:19741522, PMID:21236338, PMID:9933081]
-synonym: "basophilic leucocyte" EXACT []
-synonym: "basophilic leukocyte" EXACT []
-synonym: "polymorphonuclear leucocyte" BROAD []
-synonym: "polymorphonuclear leukocyte" BROAD []
-is_a: CL:0000094 {is_inferred="true"} ! granulocyte
-intersection_of: CL:0000094 ! granulocyte
-intersection_of: has_high_plasma_membrane_amount PR:000001255 ! C-C chemokine receptor type 3
-intersection_of: has_high_plasma_membrane_amount PR:000001865 ! interleukin-3 receptor class 2 alpha chain
-intersection_of: has_high_plasma_membrane_amount PR:000007431 ! high affinity immunoglobulin epsilon receptor subunit alpha
-intersection_of: RO:0002104 PR:000001344 ! has plasma membrane part ectonucleotide pyrophosphatase/phosphodiesterase family member 3
-intersection_of: RO:0002104 PR:000001950 ! has plasma membrane part tumor necrosis factor ligand superfamily member 5
-relationship: has_high_plasma_membrane_amount PR:000001255 ! C-C chemokine receptor type 3
-relationship: has_high_plasma_membrane_amount PR:000001865 ! interleukin-3 receptor class 2 alpha chain
-relationship: has_high_plasma_membrane_amount PR:000007431 ! high affinity immunoglobulin epsilon receptor subunit alpha
-relationship: RO:0002104 PR:000001344 ! has plasma membrane part ectonucleotide pyrophosphatase/phosphodiesterase family member 3
-relationship: RO:0002104 PR:000001950 ! has plasma membrane part tumor necrosis factor ligand superfamily member 5
 
 [Term]
 id: CL:0000775
@@ -9960,20 +9945,6 @@ synonym: "MLR-3" EXACT []
 is_a: PR:000000001 ! protein
 
 [Term]
-id: PR:000001344
-name: ectonucleotide pyrophosphatase/phosphodiesterase family member 3
-def: "A protein that is a translation product of the human ENPP3 gene or a 1:1 ortholog thereof." []
-synonym: "CD203c" EXACT []
-synonym: "E-NPP 3" EXACT []
-synonym: "ectonucleotide pyrophosphatase/phosphodiesterase 3" EXACT []
-synonym: "ENPP3" EXACT []
-synonym: "PD-Ibeta" EXACT []
-synonym: "PDNP3" RELATED []
-synonym: "phosphodiesterase I beta" EXACT []
-synonym: "phosphodiesterase I/nucleotide pyrophosphatase 3" EXACT []
-is_a: PR:000000001 ! protein
-
-[Term]
 id: PR:000001345
 name: endoglin
 def: "A protein that is a translation product of the human ENG gene or a 1:1 ortholog thereof." []
@@ -10434,20 +10405,6 @@ synonym: "TfR1" EXACT []
 synonym: "TFRC" EXACT []
 synonym: "TR" RELATED []
 synonym: "Trfr" EXACT []
-is_a: PR:000000001 ! protein
-
-[Term]
-id: PR:000001950
-name: tumor necrosis factor ligand superfamily member 5
-def: "A protein that is a translation product of the human CD40LG gene or a 1:1 ortholog thereof." []
-synonym: "CD154" EXACT []
-synonym: "CD40-L" EXACT []
-synonym: "CD40L" RELATED []
-synonym: "CD40LG" EXACT []
-synonym: "T-cell antigen Gp39" EXACT []
-synonym: "TNF-related activation protein" EXACT []
-synonym: "TNFSF5" RELATED []
-synonym: "TRAP" BROAD []
 is_a: PR:000000001 ! protein
 
 [Term]

@@ -22,6 +22,13 @@ disjoint_from: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 
 [Term]
+id: BFO:0000017
+name: realizable entity
+def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
+
+[Term]
 id: BFO:0000019
 name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
@@ -33,6 +40,12 @@ def: "A continuant that inheres in or is borne by other entities. Every instance
 def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
 def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
 is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000017 ! realizable entity
 
 [Term]
 id: BFO:0000031
@@ -70,6 +83,23 @@ is_a: ENVO:01000814 ! solid environmental material
 relationship: RO:0000086 PATO:0001546 ! quality of a solid
 
 [Term]
+id: ENVO:00002264
+name: waste material
+def: "A material which is not the desired output of a process and which is typically the input of a process which removes it from its producer (e.g. a disposal process)." []
+is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0000087 ENVO:01000665 ! waste role
+relationship: RO:0000087 ENVO:01000665 ! waste role
+
+[Term]
+id: ENVO:00002872
+name: bagasse
+def: "The biomass remaining after sugarcane stalks are crushed to extract their juice." []
+synonym: "sugarcane bagasse" EXACT []
+is_a: ENVO:00002264 ! waste material
+relationship: RO:0000087 ENVO:01000665 ! waste role
+
+[Term]
 id: ENVO:00010483
 name: environmental material
 def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
@@ -85,6 +115,12 @@ intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0002473 CHEBI:46662 ! mineral
 relationship: RO:0000086 PATO:0001546 ! quality of a solid
 relationship: RO:0002473 CHEBI:46662 ! mineral
+
+[Term]
+id: ENVO:01000665
+name: waste role
+def: "A role that is realized in some process wherein the bearer is discarded or not utilized further." []
+is_a: BFO:0000023 ! role
 
 [Term]
 id: ENVO:01000814
@@ -229,8 +265,19 @@ is_a: RO:0000052
 inverse_of: RO:0000086
 
 [Typedef]
+id: RO:0000081
+is_a: RO:0000052
+inverse_of: RO:0000087
+
+[Typedef]
 id: RO:0000086
 range: BFO:0000019 ! quality
+is_a: RO:0000053
+
+[Typedef]
+id: RO:0000087
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000023 ! role
 is_a: RO:0000053
 
 [Typedef]

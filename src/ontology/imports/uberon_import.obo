@@ -9482,6 +9482,18 @@ is_a: UBERON:4000013 ! mineralized skeletal tissue
 relationship: RO:0002494 UBERON:0011587 {source="VSAO"} ! pre-dentine
 
 [Term]
+id: UBERON:0001752
+name: enamel
+def: "A dentine-like hypermineralized substance that covers the tooth tip. Enamel's primary mineral is hydroxylapatite, which is a crystalline calcium phosphate. Unlike dentin and bone, enamel does not contain collagen. Instead, it has two unique classes of proteins called amelogenins and enamelins[WP]." [http://en.wikipedia.org/wiki/Enamel_organ, ZFIN:curator]
+synonym: "enamel of tooth" EXACT []
+synonym: "enamel tissue" EXACT [VSAO:curator]
+synonym: "enameloid" RELATED []
+synonym: "tooth enamel" EXACT []
+is_a: UBERON:0010365 {source="VSAO"} ! odontoid tissue
+is_a: UBERON:4000013 ! mineralized skeletal tissue
+relationship: RO:0002202 UBERON:0011588 {source="VSAO"} ! pre-enamel
+
+[Term]
 id: UBERON:0001754
 name: dental pulp
 def: "The part in the center of a tooth made up of living soft tissue and cells called odontoblasts[WP]." [http://en.wikipedia.org/wiki/Dental_pulp]
@@ -45469,6 +45481,14 @@ synonym: "predentin" EXACT [http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3360947]
 synonym: "predentine tissue" EXACT [VSAO:curator]
 is_a: UBERON:0010365 {source="VSAO"} ! odontoid tissue
 relationship: RO:0002202 UBERON:0002342 {source="https://github.com/obophenotype/uberon/wiki/The-neural-crest"} ! neural crest
+
+[Term]
+id: UBERON:0011588
+name: pre-enamel
+def: "Odontogenic tissue that is avascular non-mineralized matrix that is deposited by preameloblast and ameloblasts that are excluded from the matrix." [GO_REF:0000034, http://dx.plos.org/10.1371/journal.pone.0051070, PSPUB:0000170, VSAO:0000066]
+synonym: "pre-enamel tissue" EXACT [VSAO:curator]
+synonym: "preenamel tissue" EXACT [VSAO:curator]
+is_a: UBERON:0010365 {source="VSAO"} ! odontoid tissue
 
 [Term]
 id: UBERON:0011589
