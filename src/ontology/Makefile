@@ -118,7 +118,7 @@ modules/%.owl: modules/%.tsv
 # These live in the imports/ folder
 # These can be regenerated with make all_imports
 
-IMPORTS = uberon cl go pato ro hp mfoem ncbitaxon chebi envo
+IMPORTS = uberon cl go pato ro hp mfoem ncbitaxon chebi envo foodon
 IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 # Make this target to regenerate ALL
