@@ -1,1 +1,33 @@
-old-mondo/rare.yaml
+pattern_name: rare
+
+classes:
+  rare: PATO:0000381 ## decreased frequency
+
+relations:
+  has modifier: RO:0002573
+
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "rare %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "rare %s"
+    vars:
+     - disease
+
+def:
+  text: "Rare %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'rare'"
+  vars:
+    - disease
+
+

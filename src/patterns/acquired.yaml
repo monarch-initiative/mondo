@@ -1,11 +1,13 @@
 pattern_name: acquired
 
-classes: []
+classes:
+  acquired: MONDO:0021141
 
-relations: 
+relations:
+  has modifier: RO:0002573
 
 vars:
-  disease: "Thing"
+  disease: "owl:Thing"
 
 name:
   text: "acquired %s"
@@ -13,18 +15,18 @@ name:
    - disease
 
 annotations:
-  - property: oio:hasExactSynonym
+  - annotationProperty: oio:hasExactSynonym
     text: "acquired %s"
     vars:
      - disease
 
 def:
-  text: "Acquired %s."
+  text: "An instance of %s that is acquired during the lifetime of the individual."
   vars:
     - disease
 
 equivalentTo:
-  text: "%s and 'has_status' some 'acquired'"
+  text: "%s and 'has modifier' some 'acquired'"
   vars:
     - disease
 

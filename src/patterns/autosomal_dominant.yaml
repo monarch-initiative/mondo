@@ -7,13 +7,19 @@ relations:
   has modifier: RO:0002573
   
 vars:
-  disease: "Thing"
-
+  disease: "owl:Thing"
+  
 name:
   text: "autosomal dominant %s"
   vars:
    - disease
 
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s, autosomal dominant"
+    vars:
+     - disease
+   
 def:
   text: "Autosomal dominant form of %s."
   vars:

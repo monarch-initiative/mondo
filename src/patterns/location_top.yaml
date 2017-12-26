@@ -1,10 +1,10 @@
 pattern_name: location_top
 
 classes:
-  disease: DOID:4
+  disease: MONDO:0000001
 
 relations:
-  located_in: RO:0001025
+  disease has location: RO:0004026
 
 vars:
   location: "owl:Thing"
@@ -15,12 +15,12 @@ name:
    - location
 
 def:
-  text: "A disease that is located in %s."
+  text: "A disease involving the %s."
   vars:
     - location
 
 equivalentTo:
-  text: "'disease' and 'located_in' some %s"
+  text: "'disease' and 'disease has location' some %s"
   vars:
     - location
 

@@ -1,1 +1,36 @@
-old-mondo/rare_genetic.yaml
+pattern_name: rare_genetic
+
+classes:
+  rare: PATO:0000381 ## decreased frequency
+  genotype: GENO:0000536
+
+relations: 
+  has modifier: RO:0002573
+  has causal agent: RO:0002608
+
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "rare genetic %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "rare genetic %s"
+    vars:
+     - disease
+
+def:
+  text: "Rare genetic %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has causal agent' some 'genotype' and 'has modifier' some 'rare'"
+  vars:
+    - disease
+
+
+

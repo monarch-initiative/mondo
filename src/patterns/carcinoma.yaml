@@ -1,26 +1,36 @@
 pattern_name: carcinoma
 
 classes:
-  disease: "OGMS:0000031"
+  carcinoma: MONDO:0004993
 
 relations:
-  located_in: "RO:0001025"
+  located_in: RO:0004026
 
 vars:
   location: "owl:Thing"
 
 name:
-  text: "%s disease"
+  text: "%s carcinoma"
   vars:
    - location
 
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "malignant %s neoplasm"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "carcinoma of %s"
+    vars:
+     - location
+
 def:
-  text: "A disease that is located in %s."
+  text: "A carcinoma involving a %s."
   vars:
     - location
 
 equivalentTo:
-  text: "'disease' and 'located_in' some %s"
+  text: "'carcinoma' and 'located_in' some %s"
   vars:
     - location
 

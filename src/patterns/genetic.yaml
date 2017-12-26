@@ -1,1 +1,32 @@
-old-mondo/genetic.yaml
+pattern_name: genetic
+
+classes:
+  constitutional: MONDO:0021140
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "genetic %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "genetic %s"
+    vars:
+     - disease
+
+def:
+  text: "An instance of %s that is present from birth and inherited."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'constitutional'"
+  vars:
+    - disease
+
