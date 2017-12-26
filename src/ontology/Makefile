@@ -73,6 +73,12 @@ $(ONT).json: pre/$(ONT).owl
 	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
+$(ONT)-atomic.owl: $(ONT).owl
+	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+
+$(ONT)-merged.owl: $(ONT).owl
+	owltools --use-catalog $< --merge-imports-closure --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+
 pre/$(ONT).%: $(ONT).%
 	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
 pre/$(ONT).json: $(ONT).owl

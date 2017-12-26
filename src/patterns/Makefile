@@ -1,7 +1,14 @@
 ## THIS IS A BIOMAKE MAKEFILE ##
 
 #PATTERNS = hereditary acquired location_top location rare genetic dependence
-PATTERNS = autosomal_dominant autosomal_recessive x_linked location_top rare genetic acquired rare_genetic malignant benign cancer carcinoma sarcoma neoplasm syndromic isolated
+PATTERNS = \
+autosomal_dominant autosomal_recessive x_linked \
+location_top \
+inborn_metabolic \
+allergy \
+rare genetic acquired rare_genetic \
+syndromic isolated \
+malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm
 
 all: all_mondo_ld all_disease  all_ordo all_ncit all_icd all_snomed
 

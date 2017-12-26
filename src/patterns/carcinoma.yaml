@@ -4,7 +4,7 @@ classes:
   carcinoma: MONDO:0004993
 
 relations:
-  located_in: RO:0004026
+  disease has location: RO:0004026
 
 vars:
   location: "owl:Thing"
@@ -30,7 +30,7 @@ def:
     - location
 
 equivalentTo:
-  text: "'carcinoma' and 'located_in' some %s"
+  text: "'carcinoma' and 'disease has location' some %s"
   vars:
     - location
 

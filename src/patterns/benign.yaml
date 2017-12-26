@@ -1,0 +1,34 @@
+pattern_name: benign
+
+classes:
+  neoplasm: MONDO:0005070
+  neoplastic, non-malignant: PATO:0002096
+
+relations:
+  has modifier: RO:0002573
+
+vars:
+  neoplasm: "neoplasm"
+
+name:
+  text: "benign %s"
+  vars:
+   - neoplasm
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s, benign"
+    vars:
+     - neoplasm
+
+def:
+  text: "A form of %s without malignant characteristics."
+  vars:
+    - neoplasm
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'neoplastic, non-malignant'"
+  vars:
+    - neoplasm
+
+

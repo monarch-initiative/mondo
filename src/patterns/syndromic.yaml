@@ -1,0 +1,33 @@
+pattern_name: syndromic
+
+classes:
+  syndromic: MONDO:0021127
+
+relations:
+  has modifier: RO:0002573
+
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "syndromic %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "nonsyndromic %s"
+    vars:
+     - disease
+
+def:
+  text: "A %s that is not part of a larger syndrome."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'syndromic'"
+  vars:
+    - disease
+
+

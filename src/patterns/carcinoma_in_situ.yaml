@@ -1,0 +1,37 @@
+pattern_name: carcinoma_in_situ
+
+classes:
+  carcinoma in situ: MONDO:0004647
+
+relations:
+  disease has location: RO:0004026
+
+vars:
+  location: "owl:Thing"
+
+name:
+  text: "%s carcinoma in situ"
+  vars:
+   - location
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "malignant %s neoplasm"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "carcinoma in situ of %s"
+    vars:
+     - location
+
+def:
+  text: "A carcinoma in situ involving a %s."
+  vars:
+    - location
+
+equivalentTo:
+  text: "'carcinoma in situ' and 'disease has location' some %s"
+  vars:
+    - location
+
+

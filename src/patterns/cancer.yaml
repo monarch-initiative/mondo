@@ -1,0 +1,28 @@
+pattern_name: cancer
+
+classes:
+  cancer: MONDO:0004992
+
+relations:
+  disease has location: RO:0004026
+
+vars:
+  location: "owl:Thing"
+
+name:
+  text: "%s cancer"
+  vars:
+   - location
+
+
+def:
+  text: "A cancer involving a %s."
+  vars:
+    - location
+
+equivalentTo:
+  text: "'cancer' and 'disease has location' some %s"
+  vars:
+    - location
+
+

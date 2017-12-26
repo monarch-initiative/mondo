@@ -1,0 +1,38 @@
+pattern_name: location
+
+classes:
+  disease: MONDO:0000001
+
+relations:
+  disease has location: RO:0004026
+
+vars:
+  disease: "'disease'"
+  location: "owl:Thing"
+
+name:
+  text: "%s of %s"
+  vars:
+   - disease
+   - location
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s %s"
+    vars:
+     - location
+     - disease
+
+def:
+  text: "A %s that involves the %s."
+  vars:
+    - disease
+    - location
+
+equivalentTo:
+  text: "%s and 'disease has location' some %s"
+  vars:
+    - disease
+    - location
+
+

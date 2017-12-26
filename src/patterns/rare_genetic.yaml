@@ -1,12 +1,11 @@
 pattern_name: rare_genetic
 
 classes:
-  rare: PATO:0000381 ## decreased frequency
-  genotype: GENO:0000536
+  constitutional: MONDO:0021140
+  rare: MONDO:0021136
 
 relations: 
   has modifier: RO:0002573
-  has causal agent: RO:0002608
 
 vars:
   disease: "owl:Thing"
@@ -18,17 +17,22 @@ name:
 
 annotations:
   - annotationProperty: oio:hasExactSynonym
-    text: "rare genetic %s"
+    text: "rare inborn %s"
+    vars:
+     - disease
+
+  - annotationProperty: oio:hasExactSynonym
+    text: "rare constitutional %s"
     vars:
      - disease
 
 def:
-  text: "Rare genetic %s."
+  text: "A form of %s that is both rare and inborn."
   vars:
     - disease
 
 equivalentTo:
-  text: "%s and 'has causal agent' some 'genotype' and 'has modifier' some 'rare'"
+  text: "%s and 'has modifier' some 'constitutional' and 'has modifier' some 'rare'"
   vars:
     - disease
 

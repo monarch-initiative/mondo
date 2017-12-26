@@ -1,0 +1,37 @@
+pattern_name: benign_neoplasm
+
+classes:
+  benign neoplasm: MONDO:0005165
+
+relations:
+  disease has location: RO:0004026
+
+vars:
+  location: "owl:Thing"
+
+name:
+  text: "%s benign neoplasm"
+  vars:
+   - location
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "malignant %s benign neoplasm"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "benign neoplasm of %s"
+    vars:
+     - location
+
+def:
+  text: "A benign neoplasm involving a %s."
+  vars:
+    - location
+
+equivalentTo:
+  text: "'benign neoplasm' and 'disease has location' some %s"
+  vars:
+    - location
+
+

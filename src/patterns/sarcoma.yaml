@@ -1,0 +1,37 @@
+pattern_name: sarcoma
+
+classes:
+  sarcoma: MONDO:0005089
+
+relations:
+  disease has location: RO:0004026
+
+vars:
+  location: "owl:Thing"
+
+name:
+  text: "%s sarcoma"
+  vars:
+   - location
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "malignant %s neoplasm"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "sarcoma of %s"
+    vars:
+     - location
+
+def:
+  text: "A sarcoma involving a %s."
+  vars:
+    - location
+
+equivalentTo:
+  text: "'sarcoma' and 'disease has location' some %s"
+  vars:
+    - location
+
+
