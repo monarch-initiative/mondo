@@ -1,0 +1,29 @@
+pattern_name: infectious_disease_by_agent
+
+classes:
+  infectious disease: MONDO:0005550
+  organism: NCBITaxon:1
+
+# NOTE: this may change in future
+relations:
+  has material basis in: IDO:0000664
+
+vars:
+  agent: "'organism'"
+
+name:
+  text: "%s infectious disease"
+  vars:
+   - agent
+
+def:
+  text: "A infectious disease involving the %s."
+  vars:
+    - agent
+
+equivalentTo:
+  text: "'infectious disease' and 'has material basis in' some %s"
+  vars:
+    - agent
+
+
