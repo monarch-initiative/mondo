@@ -1,36 +1,36 @@
-pattern_name: carcinoma
+pattern_name: allergy
 
 classes:
-  carcinoma: MONDO:0004993
+  allergy: MONDO:0005271
 
 relations:
-  disease has location: RO:0004026
+  realized in response to stimulus:  RO:0004028
 
 vars:
-  location: "owl:Thing"
+  location: "Thing"
 
 name:
-  text: "%s carcinoma"
+  text: "%s allergy"
   vars:
    - location
 
 annotations:
-  - annotationProperty: oio:hasExactSynonym
+  - property: oio:hasExactSynonym
     text: "malignant %s neoplasm"
     vars:
      - location
-  - annotationProperty: oio:hasExactSynonym
-    text: "carcinoma of %s"
+  - property: oio:hasExactSynonym
+    text: "allergy of %s"
     vars:
      - location
 
 def:
-  text: "A carcinoma involving a %s."
+  text: "A allergy involving a %s."
   vars:
     - location
 
 equivalentTo:
-  text: "'carcinoma' and 'disease has location' some %s"
+  text: "'allergy' and 'realized in response to stimulus' some %s"
   vars:
     - location
 

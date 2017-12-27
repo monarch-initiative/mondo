@@ -2,13 +2,13 @@
 
 #PATTERNS = hereditary acquired location_top location rare genetic dependence
 PATTERNS = \
-autosomal_dominant autosomal_recessive x_linked \
+autosomal_dominant autosomal_recessive x_linked y_linked \
 location_top \
 inborn_metabolic \
-allergy \
+allergy inflammatory_disease_by_site infectious_disease_by_agent \
 rare genetic acquired rare_genetic \
 syndromic isolated \
-malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm
+malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm neoplasm_by_origin
 
 all: all_mondo_ld all_disease  all_ordo all_ncit all_icd all_snomed
 
