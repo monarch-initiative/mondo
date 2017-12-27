@@ -7,27 +7,27 @@ relations:
   realized in response to stimulus:  RO:0004028
 
 vars:
-  location: "owl:Thing"
+  substance: "owl:Thing"
 
 name:
   text: "%s allergy"
   vars:
-   - location
+   - substance
 
 annotations:
   - annotationProperty: oio:hasExactSynonym
     text: "allergy of %s"
     vars:
-     - location
+     - substance
 
 def:
   text: "A allergy involving a %s."
   vars:
-    - location
+    - substance
 
 equivalentTo:
   text: "'allergy' and 'realized in response to stimulus' some %s"
   vars:
-    - location
+    - substance
 
 
