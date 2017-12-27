@@ -1,7 +1,7 @@
 pattern_name: genetic
 
 classes:
-  constitutional: MONDO:0021140
+  genetic: MONDO:0021150
 
 relations:
   has modifier: RO:0002573
@@ -21,12 +21,12 @@ annotations:
      - disease
 
 def:
-  text: "An instance of %s that is present from birth and inherited."
+  text: "An instance of %s that is caused by a modification of the individual's genome."
   vars:
     - disease
 
 equivalentTo:
-  text: "%s and 'has modifier' some 'constitutional'"
+  text: "%s and 'has modifier' some 'genetic'"
   vars:
     - disease
 
