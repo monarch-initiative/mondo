@@ -1,16 +1,18 @@
 ## THIS IS A BIOMAKE MAKEFILE ##
 
+SRCM := ../ontology/mondo-merged.owl
+
 #PATTERNS = hereditary acquired location_top location rare genetic dependence
 PATTERNS = \
 autosomal_dominant autosomal_recessive x_linked y_linked \
 location_top \
 inborn_metabolic \
 allergy inflammatory_disease_by_site infectious_disease_by_agent \
-rare genetic acquired rare_genetic constitutional hereditary \
+rare genetic acquired rare_genetic congenital hereditary \
 syndromic isolated \
 malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm neoplasm_by_origin
 
-all: all_mondo_ld all_disease  all_ordo all_ncit all_icd all_snomed
+all: all_mondo_ld merged-ld.owl  all_disease  all_ordo all_ncit all_icd all_snomed
 
 all_disease_ld: $(patsubst %,ld-disease-%.tsv,$(PATTERNS))
 all_disease: $(patsubst %,lx-disease-%.tsv,$(PATTERNS))
@@ -44,18 +46,20 @@ lx-$(Ont)-$(P).tsv:
 #	blip-findall -r $(Ont) -r uberonp  -u odputil -i disease_patterns.pro -goal "load_onts($(P))" "write_tuple($(P))" -select C-V -no_pred -use_tabs -label > $@.tmp && mv $@.tmp $@
 
 ld-mondo-%.tsv: %.yaml
-	dosdp-tools  --ontology=../ontology/mondo-merged.owl --reasoner=elk --obo-prefixes=true --template=$< --outfile=$@.tmp query && ./fix-tsvs.pl $@.tmp > $@
+	dosdp-tools  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$< --outfile=$@.tmp query && ./fix-tsvs.pl $@.tmp > $@
 
 #ld-%.tsv: ld-%.csv
 #	csv2tsv.py $< $@
 
-%.obo: %.owl
-	owltools $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@
 
 %-logical.owl: %.owl
 	owltools $< --remove-annotation-assertions -o $@
 %-logical.obo: %.owl
-	owltools $< --remove-annotation-assertions -o -f obo $@
+	owltools $< --remove-annotation-assertions $(SRCM) --add-imports-from-supports   -o -f obo $@.tmp && grep -v ^imports: $@.tmp > $@
+
+# GENERIC
+%.obo: %.owl
+	owltools $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@
 
 lx-$(Ont)-$(P).owl: lx-$(Ont)-$(P).tsv 
 	apply-pattern.py -n $(OBO)/$(Ont)/$(P).owl  -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(P).yaml  > $@.tmp && mv $@.tmp $@
