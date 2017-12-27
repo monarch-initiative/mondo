@@ -1900,6 +1900,14 @@ intersection_of: GO:0016021 ! integral component of membrane
 intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
 
 [Term]
+id: GO:0005901
+name: caveola
+def: "A membrane raft that forms small pit, depression, or invagination that communicates with the outside of a cell and extends inward, indenting the cytoplasm and the cell membrane. Examples include flask-shaped invaginations of the plasma membrane in adipocytes associated with caveolin proteins, and minute pits or incuppings of the cell membrane formed during pinocytosis.  Caveolae may be pinched off to form free vesicles within the cytoplasm." [GOC:mah, ISBN:0721662544, PMID:16645198]
+synonym: "caveolae" EXACT []
+synonym: "caveolar membrane" RELATED []
+is_a: GO:0044853 ! plasma membrane raft
+
+[Term]
 id: GO:0005911
 name: cell-cell junction
 def: "A cell junction that forms a connection between two or more cells in a multicellular organism; excludes direct cytoplasmic junctions such as ring canals." [GOC:dgh, GOC:hb, GOC:mah]
@@ -3624,6 +3632,17 @@ synonym: "purine ribonucleoside triphosphate synthesis" EXACT []
 is_a: GO:0009145 ! purine nucleoside triphosphate biosynthetic process
 is_a: GO:0009201 ! ribonucleoside triphosphate biosynthetic process
 is_a: GO:0009205 ! purine ribonucleoside triphosphate metabolic process
+
+[Term]
+id: GO:0009235
+name: cobalamin metabolic process
+def: "The chemical reactions and pathways involving cobalamin (vitamin B12), a water-soluble vitamin characterized by possession of a corrin nucleus containing a cobalt atom." [GOC:go_curators]
+synonym: "cobalamin metabolism" EXACT []
+synonym: "vitamin B12 metabolic process" EXACT []
+synonym: "vitamin B12 metabolism" EXACT []
+synonym: "vitamin B12 reduction" NARROW []
+is_a: GO:0006767 ! water-soluble vitamin metabolic process
+is_a: GO:0033013 ! tetrapyrrole metabolic process
 
 [Term]
 id: GO:0009259
@@ -6827,6 +6846,16 @@ synonym: "protein containing complex" EXACT []
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0033013
+name: tetrapyrrole metabolic process
+def: "The chemical reactions and pathways involving tetrapyrroles, natural pigments containing four pyrrole rings joined by one-carbon units linking position 2 of one pyrrole ring to position 5 of the next." [CHEBI:26932, GOC:mah]
+synonym: "tetrapyrrole metabolism" EXACT []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
 id: GO:0033036
 name: macromolecule localization
 def: "Any process in which a macromolecule is transported to, or maintained in, a specific location." [GOC:mah]
@@ -8527,6 +8556,24 @@ name: multi-multicellular organism process
 def: "A multicellular organism process which involves another multicellular organism of the same or different species." [GOC:jl]
 is_a: GO:0032501 ! multicellular organismal process
 is_a: GO:0051704 ! multi-organism process
+
+[Term]
+id: GO:0044853
+name: plasma membrane raft
+def: "A membrane raft that is part of the plasma membrane." [GOC:jl]
+is_a: GO:0045121 ! membrane raft
+is_a: GO:0098590 ! plasma membrane region
+intersection_of: GO:0045121 ! membrane raft
+intersection_of: BFO:0000050 GO:0005886 ! plasma membrane
+
+[Term]
+id: GO:0045121
+name: membrane raft
+def: "Any of the small (10-200 nm), heterogeneous, highly dynamic, sterol- and sphingolipid-enriched membrane domains that compartmentalize cellular processes. Small rafts can sometimes be stabilized to form larger platforms through protein-protein and protein-lipid interactions." [PMID:16645198, PMID:20044567]
+synonym: "GEM domain" RELATED []
+synonym: "glycolipid-enriched membrane domain" RELATED []
+synonym: "lipid raft" EXACT []
+is_a: GO:0098857 ! membrane microdomain
 
 [Term]
 id: GO:0045124
@@ -12454,6 +12501,18 @@ synonym: "direct ligand regulated sequence-specific DNA binding transcription fa
 is_a: GO:0003700 ! transcription factor activity, sequence-specific DNA binding
 
 [Term]
+id: GO:0098589
+name: membrane region
+def: "A membrane that is a part of a larger membrane.  Examples include the apical region of the plasma membrane of an epithelial cell and the various regions of the endoplasmic reticulum membrane." [GOC:dos]
+synonym: "region of membrane" EXACT []
+is_a: GO:0016020 ! membrane
+is_a: GO:0044425 ! membrane part
+intersection_of: GO:0016020 ! membrane
+intersection_of: BFO:0000050 GO:0098805 ! whole membrane
+disjoint_from: GO:0098805 ! whole membrane
+relationship: BFO:0000050 GO:0098805 ! whole membrane
+
+[Term]
 id: GO:0098590
 name: plasma membrane region
 def: "A membrane that is a (regional) part of the plasma membrane." [GOC:dos]
@@ -12581,6 +12640,18 @@ is_a: GO:0043234 ! protein complex
 is_a: GO:0044429 ! mitochondrial part
 intersection_of: GO:0043234 ! protein complex
 intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
+
+[Term]
+id: GO:0098805
+name: whole membrane
+def: "Any lipid bilayer that completely encloses some structure, and all the proteins embedded in it or attached to it.  Examples include the plasma membrane and most organelle membranes." [GOC:dos]
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0098857
+name: membrane microdomain
+def: "A membrane region with a lipid composition that is distinct from that of the membrane regions that surround it." [PMID:20044567, PMID:26253820]
+is_a: GO:0098589 ! membrane region
 
 [Term]
 id: GO:0098975
@@ -13379,6 +13450,57 @@ synonym: "organic cyclic compound formation" EXACT [GOC:TermGenie]
 synonym: "organic cyclic compound synthesis" EXACT [GOC:TermGenie]
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:1901401
+name: regulation of tetrapyrrole metabolic process
+def: "Any process that modulates the frequency, rate or extent of tetrapyrrole metabolic process." [GOC:mengo_curators, GOC:TermGenie]
+synonym: "regulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031323 ! regulation of cellular metabolic process
+is_a: GO:0051171 ! regulation of nitrogen compound metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0033013 ! tetrapyrrole metabolic process
+relationship: RO:0002211 GO:0033013 ! tetrapyrrole metabolic process
+
+[Term]
+id: GO:1901402
+name: negative regulation of tetrapyrrole metabolic process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of tetrapyrrole metabolic process." [GOC:mengo_curators, GOC:TermGenie]
+synonym: "down regulation of tetrapyrrole metabolic process" EXACT [GOC:TermGenie]
+synonym: "down regulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "down-regulation of tetrapyrrole metabolic process" EXACT [GOC:TermGenie]
+synonym: "down-regulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "downregulation of tetrapyrrole metabolic process" EXACT [GOC:TermGenie]
+synonym: "downregulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "inhibition of tetrapyrrole metabolic process" NARROW [GOC:TermGenie]
+synonym: "inhibition of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "negative regulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031324 ! negative regulation of cellular metabolic process
+is_a: GO:0051172 ! negative regulation of nitrogen compound metabolic process
+is_a: GO:1901401 ! regulation of tetrapyrrole metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0033013 ! tetrapyrrole metabolic process
+relationship: RO:0002212 GO:0033013 ! tetrapyrrole metabolic process
+
+[Term]
+id: GO:1901403
+name: positive regulation of tetrapyrrole metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of tetrapyrrole metabolic process." [GOC:mengo_curators, GOC:TermGenie]
+synonym: "activation of tetrapyrrole metabolic process" NARROW [GOC:TermGenie]
+synonym: "activation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "positive regulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "up regulation of tetrapyrrole metabolic process" EXACT [GOC:TermGenie]
+synonym: "up regulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "up-regulation of tetrapyrrole metabolic process" EXACT [GOC:TermGenie]
+synonym: "up-regulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+synonym: "upregulation of tetrapyrrole metabolic process" EXACT [GOC:TermGenie]
+synonym: "upregulation of tetrapyrrole metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031325 ! positive regulation of cellular metabolic process
+is_a: GO:0051173 ! positive regulation of nitrogen compound metabolic process
+is_a: GO:1901401 ! regulation of tetrapyrrole metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0033013 ! tetrapyrrole metabolic process
+relationship: RO:0002213 GO:0033013 ! tetrapyrrole metabolic process
 
 [Term]
 id: GO:1901503
