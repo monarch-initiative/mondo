@@ -7,7 +7,7 @@ relations:
   realized in response to stimulus:  RO:0004028
 
 vars:
-  location: "Thing"
+  location: "owl:Thing"
 
 name:
   text: "%s allergy"
@@ -15,11 +15,7 @@ name:
    - location
 
 annotations:
-  - property: oio:hasExactSynonym
-    text: "malignant %s neoplasm"
-    vars:
-     - location
-  - property: oio:hasExactSynonym
+  - annotationProperty: oio:hasExactSynonym
     text: "allergy of %s"
     vars:
      - location

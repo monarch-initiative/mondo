@@ -6,7 +6,7 @@ autosomal_dominant autosomal_recessive x_linked y_linked \
 location_top \
 inborn_metabolic \
 allergy inflammatory_disease_by_site infectious_disease_by_agent \
-rare genetic acquired rare_genetic \
+rare genetic acquired rare_genetic constitutional hereditary \
 syndromic isolated \
 malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm neoplasm_by_origin
 
@@ -18,6 +18,7 @@ all_ordo: $(patsubst %,lx-ordo-%.tsv,$(PATTERNS))
 all_ncit: $(patsubst %,lx-ncit-%.tsv,$(PATTERNS))
 all_icd: $(patsubst %,lx-icd10-%.tsv,$(PATTERNS))
 all_snomed: $(patsubst %,lx-snomed_disorder-%.tsv,$(PATTERNS))
+all_mondo_lx_tsv: $(patsubst %,lx-mondo-%.tsv,$(PATTERNS))
 all_mondo_lx: $(patsubst %,lx-mondo-%.owl,$(PATTERNS))
 all_mondo_ld: $(patsubst %,ld-mondo-%.owl,$(PATTERNS))
 
