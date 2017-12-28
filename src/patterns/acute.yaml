@@ -1,0 +1,32 @@
+pattern_name: acute
+
+classes:
+  acute: PATO:0000389
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "acute %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s, acute"
+    vars:
+     - disease
+
+def:
+  text: "Acute form of %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'acute'"
+  vars:
+    - disease
+

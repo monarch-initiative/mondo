@@ -1,0 +1,32 @@
+pattern_name: hereditary
+
+classes:
+  hereditary: MONDO:0021152
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "hereditary %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "hereditary %s"
+    vars:
+     - disease
+
+def:
+  text: "An instance of %s that is caused by an inherited modification of the individual's genome."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'hereditary'"
+  vars:
+    - disease
+

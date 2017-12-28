@@ -1,0 +1,32 @@
+pattern_name: congenital
+
+classes:
+  congenital: MONDO:0021140
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "congenital %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "congenital %s"
+    vars:
+     - disease
+
+def:
+  text: "An instance of %s that is present from birth."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'congenital'"
+  vars:
+    - disease
+

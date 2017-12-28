@@ -1,0 +1,32 @@
+pattern_name: chronic
+
+classes:
+  chronic: PATO:0001863
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "chronic %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s, chronic"
+    vars:
+     - disease
+
+def:
+  text: "Chronic form of %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'chronic'"
+  vars:
+    - disease
+

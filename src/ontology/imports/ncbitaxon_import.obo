@@ -1850,6 +1850,16 @@ is_a: NCBITaxon:203692 ! Spirochaetia
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:137
+name: Spirochaetaceae
+namespace: ncbi_taxonomy
+synonym: "Treponemataceae" RELATED in_part []
+xref: GC_ID:11
+xref: PMID:23908650
+is_a: NCBITaxon:136 ! Spirochaetales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:137207
 name: Oligoryzomys longicaudatus
 namespace: ncbi_taxonomy
@@ -2179,6 +2189,24 @@ is_a: NCBITaxon:1485 ! Clostridium
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:1496
+name: Clostridioides difficile
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1440055
+alt_id: NCBITaxon:1581190
+synonym: "[Clostridium] difficile" EXACT equivalent_name []
+synonym: "Bacillus difficilis" RELATED synonym []
+synonym: "Clostridium difficile" RELATED genbank_synonym []
+synonym: "Clostridium difficle" RELATED misspelling []
+synonym: "Peptoclostridium difficile" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:23834245
+xref: PMID:27370902
+xref: PMID:27902176
+is_a: NCBITaxon:1870884 ! Clostridioides
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1502
 name: Clostridium perfringens
 namespace: ncbi_taxonomy
@@ -2258,6 +2286,18 @@ synonym: "anamorphic Chaetothyriales" RELATED in_part []
 synonym: "mitosporic Chaetothyriales" RELATED in_part []
 xref: GC_ID:1
 is_a: NCBITaxon:34395 ! Chaetothyriales
+
+[Term]
+id: NCBITaxon:157
+name: Treponema
+namespace: ncbi_taxonomy
+synonym: "Microspironema" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:23961314
+xref: PMID:9019153
+xref: PMID:9734025
+is_a: NCBITaxon:137 ! Spirochaetaceae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:1570301
@@ -2911,6 +2951,16 @@ is_a: NCBITaxon:186801 ! Clostridia
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:186804
+name: Peptostreptococcaceae
+namespace: ncbi_taxonomy
+synonym: "Clostridium cluster XI" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:20212322
+is_a: NCBITaxon:186802 ! Clostridiales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:186817
 name: Bacillaceae
 namespace: ncbi_taxonomy
@@ -2945,26 +2995,13 @@ is_a: NCBITaxon:91061 ! Bacilli
 property_value: has_rank NCBITaxon:order
 
 [Term]
-id: NCBITaxon:1883
-name: Streptomyces
+id: NCBITaxon:1870884
+name: Clostridioides
 namespace: ncbi_taxonomy
-alt_id: NCBITaxon:1973
-alt_id: NCBITaxon:31945
-alt_id: NCBITaxon:65506
-synonym: "Chainia" RELATED synonym []
 xref: GC_ID:11
-xref: PMID:10843062
-xref: PMID:11411701
-xref: PMID:1371059
-xref: PMID:15023980
-xref: PMID:15950131
-xref: PMID:16560709
-xref: PMID:4886644
-xref: PMID:8590678
-xref: PMID:8934906
-xref: PMID:9336904
-xref: PMID:9731302
-is_a: NCBITaxon:2062 ! Streptomycetaceae
+xref: PMID:27370902
+xref: PMID:27902176
+is_a: NCBITaxon:186804 ! Peptostreptococcaceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -3351,19 +3388,6 @@ xref: PMID:24096318
 is_a: NCBITaxon:1933189 ! Sandfly fever Naples phlebovirus
 
 [Term]
-id: NCBITaxon:2062
-name: Streptomycetaceae
-namespace: ncbi_taxonomy
-synonym: "Actinoplanaceae" RELATED in_part []
-xref: GC_ID:11
-xref: PMID:12785304
-xref: PMID:13129998
-xref: PMID:16560709
-xref: PMID:19244447
-is_a: NCBITaxon:85011 ! Streptomycetales
-property_value: has_rank NCBITaxon:family
-
-[Term]
 id: NCBITaxon:206351
 name: Neisseriales
 namespace: ncbi_taxonomy
@@ -3616,15 +3640,6 @@ xref: GC_ID:11
 xref: PMID:12734250
 xref: PMID:1283774
 is_a: NCBITaxon:111527 ! pseudomallei group
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:285466
-name: Streptomyces lavendularectus
-namespace: ncbi_taxonomy
-synonym: "\"Streptomyces lavendularectus\" (Krassilnikov and Kuchaeva) Pridham 1970" EXACT equivalent_name []
-xref: GC_ID:11
-is_a: NCBITaxon:1883 ! Streptomyces
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -8027,19 +8042,6 @@ name: Propionibacteriales
 namespace: ncbi_taxonomy
 synonym: "Propionibacterineae" RELATED synonym []
 synonym: "Propionicibacterineae" EXACT equivalent_name []
-xref: GC_ID:11
-xref: PMID:19244447
-is_a: NCBITaxon:1760 ! Actinobacteria <class>
-property_value: has_rank NCBITaxon:order
-
-[Term]
-id: NCBITaxon:85011
-name: Streptomycetales
-namespace: ncbi_taxonomy
-alt_id: NCBITaxon:1882
-synonym: "Streptomycetes" RELATED synonym []
-synonym: "Streptomycetineae" EXACT equivalent_name []
-synonym: "Streptomycineae" RELATED synonym []
 xref: GC_ID:11
 xref: PMID:19244447
 is_a: NCBITaxon:1760 ! Actinobacteria <class>
