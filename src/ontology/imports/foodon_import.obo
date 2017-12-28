@@ -97,6 +97,30 @@ intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
 [Term]
+id: FOODON:03000003
+name: brown shrimp
+def: "Farfantepenaeus aztecus is a species of marine penaeid shrimps found around the east coast of the USA and Mexico" []
+is_a: FOODON:03411081 ! penaeid shrimp family as food source
+intersection_of: NCBITaxon:6690 ! Farfantepenaeus aztecus
+intersection_of: RO:0000087 CHEBI:33290 ! has role food
+
+[Term]
+id: FOODON:03000004
+name: green mud crab
+def: "Scylla paramamosain is a mud crab commonly consumed in South-east Asia." []
+is_a: FOODON:03412215 ! mud crab family as food source
+intersection_of: NCBITaxon:85552 ! Scylla paramamosain
+intersection_of: RO:0000087 CHEBI:33290 ! has role food
+
+[Term]
+id: FOODON:03000005
+name: Indian prawn
+def: "The Indian prawn (Fenneropenaeus indicus, formerly Penaeus indicus), is one of the major commercial prawn species of the world. It is found in the Indo-West Pacific from eastern and south-eastern Africa, through India, Malaysia and Indonesia to southern China and northern Australia" []
+is_a: FOODON:03411081 ! penaeid shrimp family as food source
+intersection_of: NCBITaxon:29960 ! Fenneropenaeus indicus
+intersection_of: RO:0000087 CHEBI:33290 ! has role food
+
+[Term]
 id: FOODON:03315468
 name: shellfish
 is_a: FOODON:00001293 ! shellfish food product
@@ -111,12 +135,88 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411021
+name: fish or lower water animal as food source
+xref: LANGUAL:B1021
+is_a: FOODON:03411297 ! animal used as food source
+property_value: hasSynonym "invertebrate, water" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411059
+name: shellfish or crustacean as food source
+xref: LANGUAL:B1059
+is_a: FOODON:03411021 ! fish or lower water animal as food source
+union_of: FOODON:03411374 ! crustacean as food source
+union_of: FOODON:03411433 ! shellfish as food source
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411081
+name: penaeid shrimp family as food source
+xref: http://eol.org/pages/7184
+xref: LANGUAL:B1081
+is_a: FOODON:03411237 ! shrimp as food source
+property_value: hasSynonym "penaeid shrimps" xsd:string
+property_value: hasSynonym "penaeidae" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 WIKIPEDIA:Penaeus xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411237
+name: shrimp as food source
+xref: http://eol.org/pages/2602479
+xref: LANGUAL:B1237
+is_a: FOODON:03411998 ! decapod as food source
+property_value: hasSynonym "caridea" xsd:string
+property_value: hasSynonym "crangonidae" xsd:string
+property_value: hasSynonym "palaemondidae" xsd:string
+property_value: hasSynonym "penaeidae" xsd:string
+property_value: hasSynonym "prawn" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411297
 name: animal used as food source
 def: "Multicellular animal, e.g., fish, meat animal or poultry." []
 comment: LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
 xref: LANGUAL:B1297
 is_a: FOODON:03411564 ! food source
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411335
+name: crab as food source
+xref: http://eol.org/pages/2604866
+xref: LANGUAL:B1335
+is_a: FOODON:03411998 ! decapod as food source
+property_value: hasSynonym "brachyura" xsd:string
+property_value: hasSynonym "short-tailed crabs" xsd:string
+property_value: hasSynonym "true crabs" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411374
+name: crustacean as food source
+xref: http://eol.org/pages/2598871
+xref: LANGUAL:B1374
+is_a: FOODON:03411059 ! shellfish or crustacean as food source
+disjoint_from: FOODON:03411433 ! shellfish as food source
+property_value: hasSynonym "crustacea" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411433
+name: shellfish as food source
+xref: LANGUAL:B1433
+is_a: FOODON:03411059 ! shellfish or crustacean as food source
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -128,6 +228,243 @@ xref: LANGUAL:B1564
 is_a: ENVO:00010483 ! environmental material
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411998
+name: decapod as food source
+xref: LANGUAL:B1998
+is_a: FOODON:03411374 ! crustacean as food source
+property_value: hasSynonym "decapoda" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412215
+name: mud crab family as food source
+xref: http://eol.org/pages/7229
+xref: LANGUAL:B2215
+is_a: FOODON:03411335 ! crab as food source
+property_value: hasSynonym "mud crabs" xsd:string
+property_value: hasSynonym "pebble crabs" xsd:string
+property_value: hasSynonym "rubble crabs" xsd:string
+property_value: hasSynonym "xanthidae" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03420116
+name: part of plant or animal
+def: "Anatomical part of the plant or animal from which the food product or its major ingredient is derived, e.g., *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: FOODON:03420144
+name: plant above surface, excluding fruit and seed
+is_a: FOODON:03420148 ! root, stem, leaf or flower
+
+[Term]
+id: FOODON:03420148
+name: root, stem, leaf or flower
+def: "The parts of a plant that are not fruit or seed." []
+is_a: FOODON:03420174 ! part of plant
+
+[Term]
+id: FOODON:03420164
+name: part of animal
+def: "Anatomical part of an animal; includes eggs and milk that, although separated from the animal, are prouced as integral parts and are affected by the animal's food intake and metabolism." []
+is_a: FOODON:03420116 ! part of plant or animal
+
+[Term]
+id: FOODON:03420174
+name: part of plant
+def: "Anatomical part of a plant, such as fruit, seed, pod, leaf, stem or flower as well as the whole plant." []
+is_a: FOODON:03420116 ! part of plant or animal
+
+[Term]
+id: FOODON:03420177
+name: gluten
+def: "Extract, concentrate or isolate high in gluten, the predominant protein of wheat or corn." []
+is_a: FOODON:03420236 ! protein extract, concentrate or isolate
+
+[Term]
+id: FOODON:03420194
+name: egg
+def: "Poultry, game bird or turtle eggs." []
+is_a: FOODON:03420164 ! part of animal
+
+[Term]
+id: FOODON:03420228
+name: extract, concentrate or isolate of plant or animal
+def: "A physical-chemical component separated from the food source or its parts by extraction, centrifugation, filtration, heat processing, expressing or a similar process. The separated component may be converted through further processing. If this is done, the final substance is indexed. A water-extracted component may remain in aqueous dispersion. The extract, concentrate or isolate is indexed in preference to the anatomic part from which it is derived. For example, peanut oil is indexed under *PEANUT* combined wih *FAT OR OIL* rather than with *SEED OR KERNEL*. On the other hand, fruit and vegetable juices can be indexed under *FRUIT JUICE OR NECTAR* or *VEGETABLE JUICE* (A. PRODUCT TYPE); therefore the anatomic part of the plant should be indexed." []
+is_a: FOODON:03420116 ! part of plant or animal
+
+[Term]
+id: FOODON:03420236
+name: protein extract, concentrate or isolate
+def: "Extract, concentrate or isolate high in protein; may contain amino acids, polypeptides and enzymes. Includes casein, gelatin, and gluten." []
+is_a: FOODON:03420228 ! extract, concentrate or isolate of plant or animal
+
+[Term]
+id: FOODON:03420237
+name: floret or flower
+def: "The pigmented blossom of a plant that contains the reproductive  organs; a floret is a single flower of a multiple flowered inflorescence. Also includes flower buds." []
+is_a: FOODON:03420144 ! plant above surface, excluding fruit and seed
+
+[Term]
+id: FOODON:03420279
+name: pollen
+is_a: FOODON:03420310 ! stamen
+
+[Term]
+id: FOODON:03420310
+name: stamen
+def: "A pollen-bearing organ in a flower, made up of a slender stalk (filament) and a pollen sac (anther) (Webster's)" []
+is_a: FOODON:03420237 ! floret or flower
+
+[Term]
+id: NCBITaxon:111520
+name: Penaeoidea
+is_a: NCBITaxon:6683 ! Decapoda
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:116704
+name: Eubrachyura
+is_a: NCBITaxon:6752 ! Brachyura
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:116706
+name: Heterotremata
+is_a: NCBITaxon:116704 ! Eubrachyura
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:133898
+name: Fenneropenaeus
+is_a: NCBITaxon:6685 ! Penaeidae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:197562
+name: Pancrustacea
+is_a: NCBITaxon:33317 ! Protostomia
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:2759
+name: Eukaryota
+synonym: "eucaryotes" EXACT []
+synonym: "eukaryotes" EXACT []
+is_a: OBI:0100026 ! organism
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:29960
+name: Fenneropenaeus indicus
+is_a: NCBITaxon:133898 ! Fenneropenaeus
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:33154
+name: Opisthokonta
+is_a: NCBITaxon:2759 ! Eukaryota
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:33213
+name: Bilateria
+is_a: NCBITaxon:33154 ! Opisthokonta
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:33317
+name: Protostomia
+is_a: NCBITaxon:33213 ! Bilateria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6657
+name: Crustacea
+synonym: "crustaceans" EXACT []
+is_a: NCBITaxon:197562 ! Pancrustacea
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6682
+name: Eucarida
+is_a: NCBITaxon:6657 ! Crustacea
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6683
+name: Decapoda
+is_a: NCBITaxon:6682 ! Eucarida
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6685
+name: Penaeidae
+synonym: "penaeid shrimps" EXACT []
+is_a: NCBITaxon:111520 ! Penaeoidea
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6690
+name: Farfantepenaeus aztecus
+synonym: "brown shrimp" EXACT []
+is_a: NCBITaxon:85653 ! Farfantepenaeus
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6692
+name: Pleocyemata
+is_a: NCBITaxon:6683 ! Decapoda
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6752
+name: Brachyura
+synonym: "short-tailed crabs" EXACT []
+synonym: "true crabs" EXACT []
+is_a: NCBITaxon:6692 ! Pleocyemata
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6757
+name: Portunidae
+synonym: "swimming crabs" EXACT []
+is_a: NCBITaxon:6774 ! Portunoidea
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6774
+name: Portunoidea
+is_a: NCBITaxon:116706 ! Heterotremata
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:85552
+name: Scylla paramamosain
+synonym: "green mud crab" EXACT []
+is_a: NCBITaxon:6757 ! Portunidae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:85653
+name: Farfantepenaeus
+is_a: NCBITaxon:6685 ! Penaeidae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: OBI:0100026
+name: organism
+def: "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs." []
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000111 "organism" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000119 "WEB: http://en.wikipedia.org/wiki/Organism" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 
 [Typedef]
 id: RO:0000087

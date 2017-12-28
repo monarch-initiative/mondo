@@ -164,6 +164,29 @@ synonym: "saccharidum" RELATED []
 is_a: CHEBI:78616 ! carbohydrates and carbohydrate derivatives
 
 [Term]
+id: CHEBI:16705
+name: 6-aminopenicillanic acid
+def: "A penicillanic acid compound having a (6R)-amino substituent. The active nucleus common to all penicillins, it may be substituted at the 6-amino position to form the semisynthetic penicillins, resulting in a variety of antibacterial and pharmacologic characteristics." []
+synonym: "(+)-6-aminopenicillanic acid" RELATED []
+synonym: "(2S,5R,6R)-6-amino-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylic acid" RELATED []
+synonym: "6-amino-2,2-dimethylpenam-3alpha-carboxylic acid" EXACT []
+synonym: "6-Aminopenicillamine acid" RELATED []
+synonym: "6-Aminopenicillanate" RELATED []
+synonym: "6-Aminopenicillanic acid" EXACT []
+synonym: "6-APA" RELATED []
+synonym: "6-Apa" RELATED []
+synonym: "6-Aps" RELATED []
+synonym: "6beta-aminopenicillanic acid" RELATED []
+synonym: "Aminopenicillanic acid" RELATED []
+synonym: "Penicin" RELATED []
+synonym: "Penin" RELATED []
+synonym: "Phenacyl 6-aminopenicillinate" RELATED []
+is_a: CHEBI:25865 ! penicillanic acids
+relationship: has_functional_parent CHEBI:37806 ! penicillanic acid
+relationship: is_conjugate_base_of CHEBI:30938 ! 6-aminopenicillanate
+relationship: is_tautomer_of CHEBI:57869 ! 6-aminopenicillanic acid zwitterion
+
+[Term]
 id: CHEBI:17087
 name: ketone
 def: "A compound in which a carbonyl group is bonded to two carbon atoms: R2C=O (neither R may be H)." []
@@ -205,6 +228,17 @@ relationship: RO:0000087 CHEBI:59163 ! biomarker
 relationship: RO:0000087 CHEBI:62488 ! signalling molecule
 relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:17334
+name: penicillin
+def: "Any member of the group of substituted penams containing two methyl substituents at position 2, a carboxylate substituent at position 3 and a carboxamido group at position 6." []
+synonym: "Penicillin" EXACT []
+synonym: "penicillins" EXACT []
+synonym: "penicillins" RELATED []
+is_a: CHEBI:25865 ! penicillanic acids
+relationship: has_functional_parent CHEBI:16705 ! 6-aminopenicillanic acid
+relationship: is_conjugate_acid_of CHEBI:51356 ! penicillinate anion
 
 [Term]
 id: CHEBI:17514
@@ -514,6 +548,13 @@ synonym: "molekulare Entitaet" RELATED []
 is_a: CHEBI:24431 ! chemical entity
 
 [Term]
+id: CHEBI:23443
+name: cyclic amide
+synonym: "cyclic amide" EXACT []
+synonym: "cyclic amides" RELATED []
+is_a: CHEBI:32988 ! amide
+
+[Term]
 id: CHEBI:23482
 name: cyclohexanones
 def: "Any alicyclic ketone based on a cyclohexane skeleton and its substituted derivatives thereof." []
@@ -644,6 +685,13 @@ synonym: "Wildkrautbekaempfungsmittel" RELATED []
 is_a: CHEBI:25944 ! pesticide
 
 [Term]
+id: CHEBI:24531
+name: heterocyclic antibiotic
+synonym: "heterocyclic antibiotics" RELATED []
+is_a: CHEBI:24532 ! organic heterocyclic compound
+relationship: RO:0000087 CHEBI:33281 ! antimicrobial agent
+
+[Term]
 id: CHEBI:24532
 name: organic heterocyclic compound
 def: "A cyclic compound having as ring members atoms of carbon and at least of one other element." []
@@ -727,6 +775,19 @@ synonym: "isoprenoids" EXACT []
 synonym: "isoprenoids" RELATED []
 is_a: CHEBI:18059 ! lipid
 is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:24995
+name: lactam
+def: "Cyclic amides of amino carboxylic acids, having a 1-azacycloalkan-2-one structure, or analogues having unsaturation or heteroatoms replacing one or more carbon atoms of the ring." []
+synonym: "lactam" EXACT []
+synonym: "lactams" EXACT []
+synonym: "lactams" RELATED []
+synonym: "Laktam" RELATED []
+synonym: "Laktame" RELATED []
+is_a: CHEBI:23443 ! cyclic amide
+is_a: CHEBI:37622 ! carboxamide
+is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
 
 [Term]
 id: CHEBI:25000
@@ -845,6 +906,13 @@ is_a: CHEBI:33300 ! pnictogen
 relationship: RO:0000087 CHEBI:33937 ! macronutrient
 
 [Term]
+id: CHEBI:25558
+name: organonitrogen heterocyclic antibiotic
+synonym: "organonitrogen heterocyclic antibiotics" RELATED []
+is_a: CHEBI:24531 ! heterocyclic antibiotic
+is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
+
+[Term]
 id: CHEBI:25585
 name: nonmetal atom
 synonym: "Nichtmetall" RELATED []
@@ -944,6 +1012,12 @@ synonym: "oxygen molecular entities" RELATED []
 synonym: "oxygen molecular entity" EXACT []
 is_a: CHEBI:33304 ! chalcogen molecular entity
 relationship: BFO:0000051 CHEBI:25805 ! oxygen atom
+
+[Term]
+id: CHEBI:25865
+name: penicillanic acids
+is_a: CHEBI:33575 ! carboxylic acid
+is_a: CHEBI:35992 ! penams
 
 [Term]
 id: CHEBI:25944
@@ -1052,6 +1126,31 @@ relationship: RO:0000087 CHEBI:51039 ! dopamine uptake inhibitor
 relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
 
 [Term]
+id: CHEBI:26833
+name: sulfur atom
+synonym: "16S" RELATED []
+synonym: "azufre" RELATED []
+synonym: "Elemental sulfur" RELATED []
+synonym: "S" RELATED []
+synonym: "Schwefel" RELATED []
+synonym: "soufre" RELATED []
+synonym: "sulfur" EXACT []
+synonym: "sulfur" RELATED []
+synonym: "sulphur" RELATED []
+synonym: "theion" RELATED []
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33303 ! chalcogen
+relationship: RO:0000087 CHEBI:33937 ! macronutrient
+
+[Term]
+id: CHEBI:26835
+name: sulfur molecular entity
+synonym: "sulfur molecular entities" RELATED []
+synonym: "sulfur molecular entity" EXACT []
+is_a: CHEBI:33304 ! chalcogen molecular entity
+relationship: BFO:0000051 CHEBI:26833 ! sulfur atom
+
+[Term]
 id: CHEBI:26873
 name: terpenoid
 def: "Any isoprenoid that is a natural product or related compound formally derived from isoprene units. Terpenoids may contain oxygen in various functional groups. This class is subdivided according to the number of carbon atoms in the parent terpene. The skeleton of terpenoids may differ from strict additivity of isoprene units by the loss or shift of a fragment, generally a methyl group." []
@@ -1114,6 +1213,18 @@ synonym: "univalent carboxylic acyl groups" RELATED []
 is_a: CHEBI:37838 ! carboacyl group
 
 [Term]
+id: CHEBI:27369
+name: zwitterion
+def: "A neutral compound having formal unit electrical charges of opposite sign on non-adjacent atoms. Sometimes referred to as inner salts, dipolar ions (a misnomer)." []
+synonym: "compose zwitterionique" RELATED []
+synonym: "compuestos zwitterionicos" RELATED []
+synonym: "zwitterion" EXACT []
+synonym: "zwitteriones" RELATED []
+synonym: "zwitterionic compounds" RELATED []
+synonym: "zwitterions" EXACT []
+is_a: CHEBI:51151 ! dipolar compound
+
+[Term]
 id: CHEBI:27594
 name: carbon atom
 synonym: "6C" RELATED []
@@ -1128,6 +1239,15 @@ synonym: "Kohlenstoff" RELATED []
 is_a: CHEBI:25585 ! nonmetal atom
 is_a: CHEBI:33306 ! carbon group element atom
 relationship: RO:0000087 CHEBI:33937 ! macronutrient
+
+[Term]
+id: CHEBI:27933
+name: beta-lactam antibiotic
+def: "An organonitrogen heterocyclic antibiotic that contains a beta-lactam ring." []
+synonym: "beta-Lactam antibiotics" RELATED []
+synonym: "beta-lactam antibiotics" RELATED []
+is_a: CHEBI:25558 ! organonitrogen heterocyclic antibiotic
+is_a: CHEBI:35627 ! beta-lactam
 
 [Term]
 id: CHEBI:27958
@@ -1298,6 +1418,14 @@ synonym: "an alcohol" RELATED []
 is_a: CHEBI:33822 ! organic hydroxy compound
 
 [Term]
+id: CHEBI:30938
+name: 6-aminopenicillanate
+synonym: "(2S,5R,6R)-6-amino-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylate" EXACT []
+is_a: CHEBI:51356 ! penicillinate anion
+relationship: is_conjugate_acid_of CHEBI:16705 ! 6-aminopenicillanic acid
+relationship: is_conjugate_base_of CHEBI:57869 ! 6-aminopenicillanic acid zwitterion
+
+[Term]
 id: CHEBI:30985
 name: 4,4'-bipyridine
 def: "A  bipyridine in which the two pyridine moieties are linked by a bond between positions C-4 and C-4'." []
@@ -1463,6 +1591,15 @@ synonym: "primary amides" EXACT []
 is_a: CHEBI:32988 ! amide
 
 [Term]
+id: CHEBI:33261
+name: organosulfur compound
+def: "An organosulfur compound is a compound containing at least one carbon-sulfur bond." []
+synonym: "organosulfur compound" EXACT []
+synonym: "organosulfur compounds" RELATED []
+is_a: CHEBI:26835 ! sulfur molecular entity
+is_a: CHEBI:36962 ! organochalcogen compound
+
+[Term]
 id: CHEBI:33273
 name: polyatomic anion
 def: "An anion consisting of more than one atom." []
@@ -1474,6 +1611,22 @@ is_a: CHEBI:36358 ! polyatomic ion
 id: CHEBI:33280
 name: molecular messenger
 synonym: "chemical messenger" RELATED []
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:33281
+name: antimicrobial agent
+def: "A substance that kills or slows the growth of microorganisms, including bacteria, viruses, fungi and protozoans." []
+synonym: "antibiotic" RELATED []
+synonym: "antibiotics" RELATED []
+synonym: "Antibiotika" RELATED []
+synonym: "Antibiotikum" RELATED []
+synonym: "antibiotique" RELATED []
+synonym: "antimicrobial" RELATED []
+synonym: "antimicrobial agents" RELATED []
+synonym: "antimicrobials" RELATED []
+synonym: "microbicide" RELATED []
+synonym: "microbicides" RELATED []
 is_a: CHEBI:24432 ! biological role
 
 [Term]
@@ -2015,6 +2168,13 @@ synonym: "Katalysator" RELATED []
 is_a: CHEBI:51086 ! chemical role
 
 [Term]
+id: CHEBI:35238
+name: amino acid zwitterion
+def: "The zwitterionic form of an amino acid having a negatively charged carboxyl group and a positively charged amino group." []
+synonym: "amino acid zwitterion" EXACT []
+is_a: CHEBI:27369 ! zwitterion
+
+[Term]
 id: CHEBI:35274
 name: ammonium ion
 def: "Ammonium, NH4(+), and derivatives formed by substitution by univalent groups." []
@@ -2191,6 +2351,14 @@ synonym: "vasodilator agents" RELATED []
 is_a: CHEBI:35554 ! cardiovascular drug
 
 [Term]
+id: CHEBI:35627
+name: beta-lactam
+def: "A lactam in which the amide bond is contained within a four-membered ring, which includes the amide nitrogen and the carbonyl carbon." []
+synonym: "beta-Lactam" EXACT []
+synonym: "beta-lactams" RELATED []
+is_a: CHEBI:24995 ! lactam
+
+[Term]
 id: CHEBI:35640
 name: adrenergic uptake inhibitor
 def: "Adrenergic uptake inhibitors are drugs that block the transport of adrenergic transmitters into axon terminals or into storage vesicles within terminals. The tricyclic antidepressants and amphetamines are among the therapeutically important drugs that may act via inhibition of adrenergic transport. Many of these drugs also block transport of serotonin." []
@@ -2249,6 +2417,16 @@ def: "A substance used for its pharmacological action on any aspect of neurotran
 synonym: "neurotransmitter agents" RELATED []
 is_a: CHEBI:23888 ! drug
 is_a: CHEBI:52210 ! pharmacological role
+
+[Term]
+id: CHEBI:35992
+name: penams
+def: "Natural and synthetic antibiotics containing the 4-thia-1-azabicyclo[3.2.0]heptan-7-one structure, generally assumed to have the 5R configuration unless otherwise specified." []
+synonym: "penams" EXACT []
+is_a: CHEBI:27171 ! organic heterobicyclic compound
+is_a: CHEBI:27933 ! beta-lactam antibiotic
+is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
+is_a: CHEBI:38106 ! organosulfur heterocyclic compound
 
 [Term]
 id: CHEBI:36054
@@ -2580,6 +2758,15 @@ is_a: CHEBI:36963 ! organooxygen compound
 relationship: BFO:0000051 CHEBI:23004 ! carbamoyl group
 
 [Term]
+id: CHEBI:37806
+name: penicillanic acid
+def: "A penam that consists of 3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane bearing a carboxy group at position 2 and having (2S,5R)-configuration." []
+synonym: "(2S,5R)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylic acid" RELATED []
+synonym: "2,2-dimethylpenam-3alpha-carboxylic acid" EXACT []
+synonym: "penicillanic acid" EXACT []
+is_a: CHEBI:25865 ! penicillanic acids
+
+[Term]
 id: CHEBI:37838
 name: carboacyl group
 def: "A carboacyl group is a group formed by loss of at least one OH from the carboxy group of a carboxylic acid." []
@@ -2649,6 +2836,14 @@ synonym: "organooxygen heterocyclic compounds" RELATED []
 synonym: "oxacycles" RELATED []
 is_a: CHEBI:24532 ! organic heterocyclic compound
 is_a: CHEBI:36963 ! organooxygen compound
+
+[Term]
+id: CHEBI:38106
+name: organosulfur heterocyclic compound
+synonym: "heterocyclic organosulfur compounds" RELATED []
+synonym: "organosulfur heterocyclic compounds" RELATED []
+is_a: CHEBI:24532 ! organic heterocyclic compound
+is_a: CHEBI:33261 ! organosulfur compound
 
 [Term]
 id: CHEBI:38147
@@ -2939,6 +3134,13 @@ synonym: "carboxy" EXACT []
 synonym: "CARBOXY GROUP" EXACT []
 synonym: "carboxyl group" RELATED []
 is_a: CHEBI:33249 ! organyl group
+
+[Term]
+id: CHEBI:47811
+name: penamcarboxylate
+synonym: "penamcarboxylates" RELATED []
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+is_a: CHEBI:35992 ! penams
 
 [Term]
 id: CHEBI:47867
@@ -3256,6 +3458,24 @@ is_a: CHEBI:33302 ! pnictogen molecular entity
 relationship: BFO:0000051 CHEBI:25555 ! nitrogen atom
 
 [Term]
+id: CHEBI:51151
+name: dipolar compound
+def: "An  organic molecule that is electrically neutral carrying a positive and a negative charge in one of its major canonical descriptions. In most dipolar compounds the charges are delocalized; however the term is also applied to species where this is not the case." []
+synonym: "dipolar compounds" RELATED []
+is_a: CHEBI:72695 ! organic molecule
+
+[Term]
+id: CHEBI:51356
+name: penicillinate anion
+def: "Any anion formed by loss of a proton from the carboxy group of a penicillin." []
+synonym: "penicillin" RELATED []
+synonym: "penicillin anion" RELATED []
+synonym: "penicillin anions" RELATED []
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+is_a: CHEBI:47811 ! penamcarboxylate
+relationship: is_conjugate_base_of CHEBI:17334 ! penicillin
+
+[Term]
 id: CHEBI:51374
 name: GABA agent
 def: "A substance, such as agonists, antagonists, degradation or uptake inhibitors, depleters, precursors, and modulators of receptor function, used for its pharmacological actions on GABAergic systems." []
@@ -3376,6 +3596,17 @@ synonym: "2,4,6-trioxotetrahydro-2H-pyrimidine-1,5-diide" EXACT []
 synonym: "barbiturate dianion" RELATED []
 is_a: CHEBI:25696 ! organic anion
 relationship: is_conjugate_base_of CHEBI:16294 ! barbituric acid
+
+[Term]
+id: CHEBI:57869
+name: 6-aminopenicillanic acid zwitterion
+def: "Zwitterionic form of 6-aminopenicillanic acid arising from migration of a proton from the carboxy group to the 6-amino group; major species at pH 7.3." []
+synonym: "(2S,5R,6R)-6-azaniumyl-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylate" RELATED []
+synonym: "6-aminopenicillanate" RELATED []
+synonym: "6-azaniumyl-2,2-dimethylpenam-3alpha-carboxylate" EXACT []
+is_a: CHEBI:35238 ! amino acid zwitterion
+relationship: is_conjugate_acid_of CHEBI:30938 ! 6-aminopenicillanate
+relationship: is_tautomer_of CHEBI:16705 ! 6-aminopenicillanic acid
 
 [Term]
 id: CHEBI:58072

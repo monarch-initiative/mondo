@@ -11646,6 +11646,40 @@ is_a: UBERON:0013754 ! integumentary system layer
 relationship: BFO:0000050 UBERON:0001003 ! skin epidermis
 
 [Term]
+id: UBERON:0002026
+name: stratum spinosum of epidermis
+def: "the layer of polyhedral cells in the epidermis found between the stratum granulosum and stratum basale; shrinkage and adhesion of these cells gives a spiny or prickly appearance" [ISBN:0-683-40008-8, MP:0001236]
+synonym: "epidermis prickle cell layer" RELATED []
+synonym: "epidermis stratum spinosum" EXACT []
+synonym: "Malpighian layer" BROAD [http://en.wikipedia.org/wiki/Malpighian_layer]
+synonym: "prickle cell layer" RELATED [BTO:0000435]
+synonym: "prickle cell layer of epidermis" EXACT [FMA:67542]
+synonym: "squamous cell layer of epidermis" EXACT []
+synonym: "stratum Malpighii" BROAD LATIN [http://en.wikipedia.org/wiki/Malpighian]
+synonym: "stratum spinosum" EXACT []
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0013754 ! integumentary system layer
+relationship: BFO:0000050 UBERON:0001003 ! skin epidermis
+relationship: RO:0002220 UBERON:0002025 ! stratum basale of epidermis
+relationship: RO:0002220 UBERON:0002069 ! stratum granulosum of epidermis
+
+[Term]
+id: UBERON:0002027
+name: stratum corneum of epidermis
+def: "the outer layer of the epidermis, consisting of several layers of flat keratinized non-nucleated cells" [ISBN:0-683-40008-8, MP:0001240]
+synonym: "cornified layer" EXACT []
+synonym: "epidermis stratum corneum" EXACT []
+synonym: "horny layer" BROAD [BTO:0000344]
+synonym: "horny layer of epidermis" EXACT [FMA:67545]
+synonym: "keratinized squame layer" BROAD []
+synonym: "keratinized squame layer of epidermis" EXACT []
+synonym: "stratum corneum" BROAD []
+synonym: "stratum corneum epidermidis" RELATED LATIN [http://en.wikipedia.org/wiki/Stratum_corneum]
+is_a: UBERON:0003055 ! periderm
+is_a: UBERON:0013754 ! integumentary system layer
+relationship: BSPO:0000108 UBERON:0002069 ! stratum granulosum of epidermis
+
+[Term]
 id: UBERON:0002028
 name: hindbrain
 def: "The most posterior of the three principal regions of the brain. In mammals and birds the hindbrain is divided into a rostral metencephalon and a caudal myelencephalon. In zebrafish, with the exception of the cerebellum, the ventral remainder of the metencephalon can be separated only arbitrarily from the more caudal myelencephalic portion of the medulla oblongata (From: Neuroanatomy of the Zebrafish Brain)[ZFA]. Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata[FMA]." [http://en.wikipedia.org/wiki/Rhombencephalon, ZFA:0000029, ZFIN:curator]
@@ -12002,6 +12036,19 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 relationship: BFO:0000050 UBERON:0001255 {source="EHDAA2"} ! urinary bladder
 relationship: RO:0002150 UBERON:0007118 ! umbilicus
 relationship: RO:0002202 UBERON:0004340 {source="EHDAA2"} ! allantois
+
+[Term]
+id: UBERON:0002069
+name: stratum granulosum of epidermis
+def: "the layer of flattened cells containing basophilic granules of keratohyalin and lying just above the stratum spinosum (spiny layer) of the epidermis" [ISBN:0-683-40008-8, MP:0001239]
+synonym: "epidermis granular layer" RELATED []
+synonym: "epidermis stratum granulosum" EXACT []
+synonym: "granular layer of epidermis" EXACT [FMA:70344]
+synonym: "stratum granulosum" EXACT [BTO:0000361]
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0013754 ! integumentary system layer
+relationship: BFO:0000050 UBERON:0001003 ! skin epidermis
+relationship: BSPO:0015014 UBERON:0002026 ! stratum spinosum of epidermis
 
 [Term]
 id: UBERON:0002072
@@ -54963,6 +55010,11 @@ is_a: BFO:0000050
 [Typedef]
 id: BSPO:0005001
 is_a: BFO:0000050
+
+[Typedef]
+id: BSPO:0015014
+is_a: BSPO:0000108
+is_a: RO:0002220
 
 [Typedef]
 id: BSPO:0015101
