@@ -7,6 +7,7 @@ PATTERNS = \
 autosomal_dominant autosomal_recessive x_linked y_linked \
 chronic acute \
 location_top \
+disease_by_dysfunctional_structure \
 inborn_metabolic \
 allergy inflammatory_disease_by_site infectious_disease_by_agent \
 rare genetic acquired rare_genetic congenital hereditary \
