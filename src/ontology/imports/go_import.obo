@@ -328,6 +328,13 @@ is_a: GO:0060249 ! anatomical structure homeostasis
 relationship: BFO:0000050 GO:0048871 ! multicellular organismal homeostasis
 
 [Term]
+id: GO:0001964
+name: startle response
+def: "An action or movement due to the application of a sudden unexpected stimulus." [GOC:dph]
+is_a: GO:0009605 ! response to external stimulus
+is_a: GO:0050905 ! neuromuscular process
+
+[Term]
 id: GO:0002082
 name: regulation of oxidative phosphorylation
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the phosphorylation of ADP to ATP that accompanies the oxidation of a metabolite through the operation of the respiratory chain. Oxidation of compounds establishes a proton gradient across the membrane, providing the energy for ATP synthesis." [GOC:dph]
@@ -1254,6 +1261,14 @@ is_a: GO:0032501 ! multicellular organismal process
 id: GO:0003013
 name: circulatory system process
 def: "A organ system process carried out by any of the organs or tissues of the circulatory system. The circulatory system is an organ system that moves extracellular fluids to and from tissue within a multicellular organism." [GOC:mtg_cardio]
+is_a: GO:0003008 ! system process
+
+[Term]
+id: GO:0003014
+name: renal system process
+def: "A organ system process carried out by any of the organs or tissues of the renal system. The renal system maintains fluid balance, and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products. In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels; in other species, the renal system may comprise related structures (e.g., nephrocytes and malpighian tubules in Drosophila)." [GOC:cjm, GOC:mtg_cardio, GOC:mtg_kidney_jan10]
+synonym: "excretory system process" EXACT []
+synonym: "kidney system process" RELATED []
 is_a: GO:0003008 ! system process
 
 [Term]
@@ -2573,6 +2588,24 @@ is_a: GO:0072330 ! monocarboxylic acid biosynthetic process
 is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
+id: GO:0006720
+name: isoprenoid metabolic process
+def: "The chemical reactions and pathways involving isoprenoid compounds, isoprene (2-methylbuta-1,3-diene) or compounds containing or derived from linked isoprene (3-methyl-2-butenylene) residues." [ISBN:0198547684]
+synonym: "isoprenoid metabolism" EXACT []
+synonym: "polyisoprenoid metabolic process" NARROW []
+synonym: "polyisoprenoid metabolism" NARROW []
+synonym: "polyterpene metabolic process" NARROW []
+synonym: "polyterpene metabolism" NARROW []
+is_a: GO:0044255 ! cellular lipid metabolic process
+
+[Term]
+id: GO:0006721
+name: terpenoid metabolic process
+def: "The chemical reactions and pathways involving terpenoids, any member of a class of compounds characterized by an isoprenoid chemical structure and including derivatives with various functional groups." [ISBN:0198506732]
+synonym: "terpenoid metabolism" EXACT []
+is_a: GO:0006720 ! isoprenoid metabolic process
+
+[Term]
 id: GO:0006725
 name: cellular aromatic compound metabolic process
 def: "The chemical reactions and pathways involving aromatic compounds, any organic compound characterized by one or more planar rings, each of which contains conjugated double bonds and delocalized pi electrons, as carried out by individual cells." [GOC:ai, ISBN:0198506732]
@@ -3055,6 +3088,19 @@ synonym: "respiration" BROAD []
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
+id: GO:0007588
+name: excretion
+def: "The elimination by an organism of the waste products that arise as a result of metabolic activity. These products include water, carbon dioxide (CO2), and nitrogenous compounds." [ISBN:0192801023]
+is_a: GO:0003008 ! system process
+
+[Term]
+id: GO:0007589
+name: body fluid secretion
+def: "The controlled release of a fluid by a cell or tissue in an animal." [GOC:ai, GOC:dph, GOC:mah, GOC:tb]
+is_a: GO:0046903 ! secretion
+is_a: GO:0050878 ! regulation of body fluid levels
+
+[Term]
 id: GO:0007596
 name: blood coagulation
 def: "The sequential process in which the multiple coagulation factors of the blood interact, ultimately resulting in the formation of an insoluble fibrin clot; it may be divided into three stages: stage 1, the formation of intrinsic and extrinsic prothrombin converting principle; stage 2, the formation of thrombin; stage 3, the formation of stable fibrin polymers." [http://www.graylab.ac.uk/omd/, ISBN:0198506732]
@@ -3115,6 +3161,17 @@ id: GO:0007613
 name: memory
 def: "The activities involved in the mental information processing system that receives (registers), modifies, stores, and retrieves informational stimuli. The main stages involved in the formation and retrieval of memory are encoding (processing of received information by acquisition), storage (building a permanent record of received information as a result of consolidation) and retrieval (calling back the stored information and use it in a suitable way to execute a given task)." [GOC:curators, http://www.onelook.com/, ISBN:0582227089]
 is_a: GO:0007611 ! learning or memory
+
+[Term]
+id: GO:0007631
+name: feeding behavior
+def: "Behavior associated with the intake of food." [GOC:mah]
+synonym: "behavioral response to food" EXACT []
+synonym: "behavioural response to food" EXACT []
+synonym: "drinking" NARROW []
+synonym: "eating" NARROW []
+synonym: "feeding behaviour" EXACT []
+is_a: GO:0007610 ! behavior
 
 [Term]
 id: GO:0008015
@@ -4918,6 +4975,22 @@ is_a: GO:0044260 ! cellular macromolecule metabolic process
 is_a: GO:0090304 ! nucleic acid metabolic process
 
 [Term]
+id: GO:0016108
+name: tetraterpenoid metabolic process
+def: "The chemical reactions and pathways involving tetraterpenoid compounds, terpenoids with eight isoprene units." [ISBN:0198547684]
+synonym: "tetraterpene metabolic process" NARROW []
+synonym: "tetraterpene metabolism" NARROW []
+synonym: "tetraterpenoid metabolism" EXACT []
+is_a: GO:0006721 ! terpenoid metabolic process
+
+[Term]
+id: GO:0016116
+name: carotenoid metabolic process
+def: "The chemical reactions and pathways involving carotenoids, tetraterpenoid compounds in which two units of 4 isoprenoid residues joined head-to-tail are themselves joined tail-to-tail." [ISBN:0198547684]
+synonym: "carotenoid metabolism" EXACT []
+is_a: GO:0016108 ! tetraterpenoid metabolic process
+
+[Term]
 id: GO:0016125
 name: sterol metabolic process
 def: "The chemical reactions and pathways involving sterols, steroids with one or more hydroxyl groups and a hydrocarbon side-chain in the molecule." [ISBN:0198547684]
@@ -5413,6 +5486,17 @@ is_a: GO:0042592 ! homeostatic process
 intersection_of: GO:0042592 ! homeostatic process
 intersection_of: BFO:0000066 GO:0005623 ! cell
 relationship: BFO:0000066 GO:0005623 ! cell
+
+[Term]
+id: GO:0019747
+name: regulation of isoprenoid metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving isoprenoids." [GOC:go_curators]
+synonym: "regulation of isoprenoid metabolism" EXACT []
+is_a: GO:0019216 ! regulation of lipid metabolic process
+is_a: GO:0031323 ! regulation of cellular metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006720 ! isoprenoid metabolic process
+relationship: RO:0002211 GO:0006720 ! isoprenoid metabolic process
 
 [Term]
 id: GO:0019751
@@ -6838,6 +6922,15 @@ is_a: GO:0009987 ! cellular process
 is_a: GO:0046903 ! secretion
 
 [Term]
+id: GO:0032941
+name: secretion by tissue
+def: "The controlled release of a substance by a tissue." [GOC:mah]
+synonym: "expulsion of gland contents" RELATED [GOC:mah]
+synonym: "tissue secretion" EXACT []
+is_a: GO:0032501 ! multicellular organismal process
+is_a: GO:0046903 ! secretion
+
+[Term]
 id: GO:0032991
 name: macromolecular complex
 def: "A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together." [GOC:dos, GOC:mah]
@@ -7671,6 +7764,13 @@ intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
 relationship: BFO:0000050 GO:0005759 ! mitochondrial matrix
 
 [Term]
+id: GO:0042755
+name: eating behavior
+def: "The specific behavior of an organism relating to the intake of food, any substance (usually solid) that can be metabolized by an organism to give energy and build tissue." [GOC:jl, GOC:pr, ISBN:01928006X]
+synonym: "eating behaviour" EXACT []
+is_a: GO:0007631 ! feeding behavior
+
+[Term]
 id: GO:0042762
 name: regulation of sulfur metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving sulfur, the nonmetallic element sulfur or compounds that contain sulfur." [GOC:go_curators]
@@ -7946,6 +8046,17 @@ intersection_of: RO:0002212 GO:0006811 ! ion transport
 relationship: RO:0002212 GO:0006811 ! ion transport
 
 [Term]
+id: GO:0043292
+name: contractile fiber
+def: "Fibers, composed of actin, myosin, and associated proteins, found in cells of smooth or striated muscle." [GOC:go_curators, ISBN:0815316194]
+synonym: "contractile fibre" EXACT []
+synonym: "muscle fiber" BROAD []
+synonym: "muscle fibre" BROAD []
+is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
+is_a: GO:0044444 ! cytoplasmic part
+is_a: GO:0099512 ! supramolecular fiber
+
+[Term]
 id: GO:0043393
 name: regulation of protein binding
 def: "Any process that modulates the frequency, rate or extent of protein binding." [GOC:go_curators]
@@ -8145,6 +8256,16 @@ is_a: GO:0051239 ! regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0003008 ! system process
 relationship: RO:0002211 GO:0003008 ! system process
+
+[Term]
+id: GO:0044062
+name: regulation of excretion
+def: "Any process that modulates the frequency, rate, or extent of excretion, the elimination by an organism of the waste products that arise as a result of metabolic activity." [GOC:jl]
+is_a: GO:0044057 ! regulation of system process
+is_a: GO:0051046 ! regulation of secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007588 ! excretion
+relationship: RO:0002211 GO:0007588 ! excretion
 
 [Term]
 id: GO:0044065
@@ -8492,6 +8613,19 @@ def: "A constituent part of an intracellular organelle, an organized structure o
 is_a: GO:0044422 ! organelle part
 is_a: GO:0044424 ! intracellular part
 relationship: BFO:0000050 GO:0043229 ! intracellular organelle
+
+[Term]
+id: GO:0044449
+name: contractile fiber part
+def: "Any constituent part of a contractile fiber, a fiber composed of actin, myosin, and associated proteins, found in cells of smooth or striated muscle." [GOC:jl]
+synonym: "contractile fibre component" EXACT []
+synonym: "muscle fiber component" BROAD []
+synonym: "muscle fibre component" BROAD []
+is_a: GO:0044422 ! organelle part
+is_a: GO:0044444 ! cytoplasmic part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0043292 ! contractile fiber
+relationship: BFO:0000050 GO:0043292 ! contractile fiber
 
 [Term]
 id: GO:0044454
@@ -8922,6 +9056,39 @@ is_a: GO:1903524 ! positive regulation of blood circulation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0060047 ! heart contraction
 relationship: RO:0002213 GO:0060047 ! heart contraction
+
+[Term]
+id: GO:0045827
+name: negative regulation of isoprenoid metabolic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving isoprenoid." [GOC:go_curators]
+synonym: "down regulation of isoprenoid metabolic process" EXACT []
+synonym: "down-regulation of isoprenoid metabolic process" EXACT []
+synonym: "downregulation of isoprenoid metabolic process" EXACT []
+synonym: "inhibition of isoprenoid metabolic process" NARROW []
+synonym: "negative regulation of isoprenoid metabolism" EXACT []
+is_a: GO:0019747 ! regulation of isoprenoid metabolic process
+is_a: GO:0031324 ! negative regulation of cellular metabolic process
+is_a: GO:0045833 ! negative regulation of lipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006720 ! isoprenoid metabolic process
+relationship: RO:0002212 GO:0006720 ! isoprenoid metabolic process
+
+[Term]
+id: GO:0045828
+name: positive regulation of isoprenoid metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving isoprenoid." [GOC:go_curators]
+synonym: "activation of isoprenoid metabolic process" NARROW []
+synonym: "positive regulation of isoprenoid metabolism" EXACT []
+synonym: "stimulation of isoprenoid metabolic process" NARROW []
+synonym: "up regulation of isoprenoid metabolic process" EXACT []
+synonym: "up-regulation of isoprenoid metabolic process" EXACT []
+synonym: "upregulation of isoprenoid metabolic process" EXACT []
+is_a: GO:0019747 ! regulation of isoprenoid metabolic process
+is_a: GO:0031325 ! positive regulation of cellular metabolic process
+is_a: GO:0045834 ! positive regulation of lipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006720 ! isoprenoid metabolic process
+relationship: RO:0002213 GO:0006720 ! isoprenoid metabolic process
 
 [Term]
 id: GO:0045833
@@ -11581,6 +11748,15 @@ intersection_of: RO:0002212 GO:0006486 ! protein glycosylation
 relationship: RO:0002212 GO:0006486 ! protein glycosylation
 
 [Term]
+id: GO:0060073
+name: micturition
+def: "The regulation of body fluids process in which parasympathetic nerves stimulate the bladder wall muscle to contract and expel urine from the body." [GOC:dph]
+synonym: "urination" EXACT []
+synonym: "urine voiding" EXACT []
+is_a: GO:0003014 ! renal system process
+is_a: GO:0007588 ! excretion
+
+[Term]
 id: GO:0060089
 name: molecular transducer activity
 def: "A compound molecular function in which an effector function is controlled by one or more regulatory components." [GOC:dos, GOC:pdt]
@@ -11608,6 +11784,16 @@ is_a: GO:0019222 ! regulation of metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0043170 ! macromolecule metabolic process
 relationship: RO:0002211 GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0060259
+name: regulation of feeding behavior
+def: "Any process that modulates the rate, frequency or extent of the behavior associated with the intake of food." [GOC:BHF, GOC:dph, GOC:tb]
+synonym: "regulation of feeding behaviour" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0050795 ! regulation of behavior
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007631 ! feeding behavior
+relationship: RO:0002211 GO:0007631 ! feeding behavior
 
 [Term]
 id: GO:0060284
@@ -11781,6 +11967,13 @@ is_a: GO:0044424 ! intracellular part
 intersection_of: GO:0031974 ! membrane-enclosed lumen
 intersection_of: BFO:0000050 GO:0043229 ! intracellular organelle
 relationship: BFO:0000050 GO:0043229 ! intracellular organelle
+
+[Term]
+id: GO:0070075
+name: tear secretion
+def: "The regulated release of the aqueous layer of the tear film from the lacrimal glands. Tears are the liquid product of a process of lacrimation to clean and lubricate the eyes. Tear fluid contains water, mucin, lipids, lysozyme, lactoferrin, lipocalin, lacritin, immunoglobulins, glucose, urea, sodium, and potassium." [GOC:rph]
+is_a: GO:0007589 ! body fluid secretion
+is_a: GO:0032941 ! secretion by tissue
 
 [Term]
 id: GO:0070085
@@ -12640,6 +12833,15 @@ is_a: GO:0043234 ! protein complex
 is_a: GO:0044429 ! mitochondrial part
 intersection_of: GO:0043234 ! protein complex
 intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
+
+[Term]
+id: GO:0098801
+name: regulation of renal system process
+def: "Any process that modulates the frequency, rate or extent of a system process, a multicellular organismal process carried out by the renal system." [GOC:dos]
+is_a: GO:0044057 ! regulation of system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0003014 ! renal system process
+relationship: RO:0002211 GO:0003014 ! renal system process
 
 [Term]
 id: GO:0098805
@@ -15027,6 +15229,54 @@ intersection_of: RO:0002213 GO:0007585 ! respiratory gaseous exchange
 relationship: RO:0002213 GO:0007585 ! respiratory gaseous exchange
 
 [Term]
+id: GO:1903998
+name: regulation of eating behavior
+def: "Any process that modulates the frequency, rate or extent of eating behavior." [GO_REF:0000058, GOC:TermGenie, PMID:11961051]
+synonym: "regulation of eating behaviour" EXACT [GOC:TermGenie]
+is_a: GO:0060259 ! regulation of feeding behavior
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042755 ! eating behavior
+relationship: RO:0002211 GO:0042755 ! eating behavior
+
+[Term]
+id: GO:1903999
+name: negative regulation of eating behavior
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of eating behavior." [GO_REF:0000058, GOC:TermGenie, PMID:11961051]
+synonym: "down regulation of eating behavior" EXACT [GOC:TermGenie]
+synonym: "down regulation of eating behaviour" EXACT [GOC:TermGenie]
+synonym: "down-regulation of eating behavior" EXACT [GOC:TermGenie]
+synonym: "down-regulation of eating behaviour" EXACT [GOC:TermGenie]
+synonym: "downregulation of eating behavior" EXACT [GOC:TermGenie]
+synonym: "downregulation of eating behaviour" EXACT [GOC:TermGenie]
+synonym: "inhibition of eating behavior" NARROW [GOC:TermGenie]
+synonym: "inhibition of eating behaviour" NARROW [GOC:TermGenie]
+synonym: "negative regulation of eating behaviour" EXACT [GOC:TermGenie]
+is_a: GO:1903998 ! regulation of eating behavior
+is_a: GO:2000252 ! negative regulation of feeding behavior
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042755 ! eating behavior
+relationship: RO:0002212 GO:0042755 ! eating behavior
+
+[Term]
+id: GO:1904000
+name: positive regulation of eating behavior
+def: "Any process that activates or increases the frequency, rate or extent of eating behavior." [GO_REF:0000058, GOC:TermGenie, PMID:11961051]
+synonym: "activation of eating behavior" NARROW [GOC:TermGenie]
+synonym: "activation of eating behaviour" NARROW [GOC:TermGenie]
+synonym: "positive regulation of eating behaviour" EXACT [GOC:TermGenie]
+synonym: "up regulation of eating behavior" EXACT [GOC:TermGenie]
+synonym: "up regulation of eating behaviour" EXACT [GOC:TermGenie]
+synonym: "up-regulation of eating behavior" EXACT [GOC:TermGenie]
+synonym: "up-regulation of eating behaviour" EXACT [GOC:TermGenie]
+synonym: "upregulation of eating behavior" EXACT [GOC:TermGenie]
+synonym: "upregulation of eating behaviour" EXACT [GOC:TermGenie]
+is_a: GO:1903998 ! regulation of eating behavior
+is_a: GO:2000253 ! positive regulation of feeding behavior
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042755 ! eating behavior
+relationship: RO:0002213 GO:0042755 ! eating behavior
+
+[Term]
 id: GO:1904062
 name: regulation of cation transmembrane transport
 def: "Any process that modulates the frequency, rate or extent of cation transmembrane transport." [GO_REF:0000058, GOC:TermGenie, PMID:15304482]
@@ -15799,6 +16049,36 @@ is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0022414 ! reproductive process
 relationship: RO:0002213 GO:0022414 ! reproductive process
+
+[Term]
+id: GO:2000252
+name: negative regulation of feeding behavior
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of feeding behavior." [GOC:obol]
+synonym: "negative regulation of behavioral response to food" EXACT [GOC:obol]
+synonym: "negative regulation of behavioural response to food" EXACT [GOC:obol]
+synonym: "negative regulation of drinking" RELATED [GOC:obol]
+synonym: "negative regulation of eating" RELATED [GOC:obol]
+synonym: "negative regulation of feeding behaviour" EXACT [GOC:obol]
+is_a: GO:0048521 ! negative regulation of behavior
+is_a: GO:0060259 ! regulation of feeding behavior
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007631 ! feeding behavior
+relationship: RO:0002212 GO:0007631 ! feeding behavior
+
+[Term]
+id: GO:2000253
+name: positive regulation of feeding behavior
+def: "Any process that activates or increases the frequency, rate or extent of feeding behavior." [GOC:obol]
+synonym: "positive regulation of behavioral response to food" EXACT [GOC:obol]
+synonym: "positive regulation of behavioural response to food" EXACT [GOC:obol]
+synonym: "positive regulation of drinking" RELATED [GOC:obol]
+synonym: "positive regulation of eating" RELATED [GOC:obol]
+synonym: "positive regulation of feeding behaviour" EXACT [GOC:obol]
+is_a: GO:0048520 ! positive regulation of behavior
+is_a: GO:0060259 ! regulation of feeding behavior
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007631 ! feeding behavior
+relationship: RO:0002213 GO:0007631 ! feeding behavior
 
 [Term]
 id: GO:2000272
