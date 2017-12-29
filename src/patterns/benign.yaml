@@ -1,5 +1,13 @@
 pattern_name: benign
 
+description: >-
+
+  This is a design pattern for classes representing benign neoplasms, extending
+  a generic neoplasm class. For example, a benign adrenal gland pheochromocytoma,
+  defined as being the benign form of the more general adrenal gland pheochromocytoma.
+
+  TODO: encode alternate way of representing
+
 classes:
   neoplasm: MONDO:0005070
   neoplastic, non-malignant: PATO:0002096
@@ -8,7 +16,7 @@ relations:
   has modifier: RO:0002573
 
 vars:
-  neoplasm: "neoplasm"
+  neoplasm: "'neoplasm'"
 
 name:
   text: "benign %s"

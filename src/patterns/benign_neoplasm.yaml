@@ -1,5 +1,15 @@
 pattern_name: benign_neoplasm
 
+description: >-
+
+  Neoplasms are benign or malignant tissue growths resulting from
+  uncontrolled cell proliferation cell types.
+  
+  This is a design pattern for classes representing *benign* neoplasms based on
+  their location.
+
+  See also: benign.yaml TODO: choose one over another
+
 classes:
   benign neoplasm: MONDO:0005165
 
@@ -10,17 +20,29 @@ vars:
   location: "owl:Thing"
 
 name:
-  text: "%s benign neoplasm"
+  text: "benign %s neoplasm"
   vars:
    - location
 
 annotations:
   - annotationProperty: oio:hasExactSynonym
-    text: "malignant %s benign neoplasm"
+    text: "%s benign neoplasm"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s benign tumor"
     vars:
      - location
   - annotationProperty: oio:hasExactSynonym
     text: "benign neoplasm of %s"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "benign % tumor"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s neoplasm, benign"
     vars:
      - location
 
