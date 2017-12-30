@@ -364,7 +364,7 @@ bridge.owl: ptable.tsv seed.owl
 	kboom --experimental  --splitSize 50 --max 4 -m linked-rpt.md -j linked-rpt.json -n -o $@ -t $^
 
 bridge-%.owl: ptable-%.tsv seed-%.owl
-	kboom --experimental  --splitSize 50 --max 4 -m linked-rpt-$*.md -j linked-rpt-$*.json -n -o $@ -t $^
+	kboom --experimental  --splitSize 50 --max 6 -m linked-rpt-$*.md -j linked-rpt-$*.json -n -o $@ -t $^
 
 # ----------------------------------------
 # HACK: extraction
