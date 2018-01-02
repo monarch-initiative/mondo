@@ -45,7 +45,7 @@ osf_upload:
 ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT)@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID)@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 # perform reasoning on source

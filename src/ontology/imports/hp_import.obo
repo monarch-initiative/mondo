@@ -23690,14 +23690,6 @@ name: Abdominal symptom
 is_a: HP:0025032 ! Abnormality of digestive system physiology
 
 [Term]
-id: HP:0011463
-name: Childhood onset
-def: "Onset of disease at the age of between 1 and 5 years." [DDD:hfirth]
-is_a: HP:0003674 ! Onset
-intersection_of: HP:0003674 ! Onset
-intersection_of: RO:0002488 HsapDv:0000081 ! existence starts during child stage
-
-[Term]
 id: HP:0011472
 name: Abnormality of small intestinal villus morphology
 synonym: "Abnormal shape of small intestinal villus" EXACT [orcid.org/0000-0001-5208-3432]
@@ -28893,48 +28885,6 @@ synonym: "Abnormality of hard tissues of teeth" EXACT []
 synonym: "Abnormality of tooth hard tissue" EXACT []
 is_a: HP:0000924 {is_inferred="true"} ! Abnormality of the skeletal system
 is_a: HP:0003549 {is_inferred="true"} ! Abnormality of connective tissue
-
-[Term]
-id: HsapDv:0000000
-name: human life cycle stage
-namespace: human_stages_ontology
-def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:0000105]
-synonym: "developmental stage" EXACT []
-synonym: "stage" NARROW []
-xref: UBERON:0000105
-
-[Term]
-id: HsapDv:0000001
-name: human life cycle
-namespace: human_developmental_stage
-def: "Temporal interval that defines human life from the prenatal stage until late adulthood." [Bgee:curator]
-xref: UBERON:0000104
-is_a: HsapDv:0000000 ! human life cycle stage
-property_value: start_dpf "0.0" xsd:float
-
-[Term]
-id: HsapDv:0000080
-name: immature stage
-namespace: human_developmental_stage
-def: "Human developmental stage that covers the period from birth until 12 years old." [Bgee:curator]
-synonym: "0-12 years" EXACT []
-synonym: "child" RELATED []
-xref: UBERON:0000112
-is_a: HsapDv:0000000 ! human life cycle stage
-relationship: part_of HsapDv:0000001 ! human life cycle
-property_value: end_ypb "13.0" xsd:float
-property_value: start_ypb "0.0" xsd:float
-
-[Term]
-id: HsapDv:0000081
-name: child stage
-namespace: human_developmental_stage
-def: "Immature stage that refers to child who is over 2 and under 13 years old." [Bgee:curator]
-synonym: "2-12 years" EXACT []
-is_a: HsapDv:0000000 ! human life cycle stage
-relationship: part_of HsapDv:0000080 ! immature stage
-property_value: end_ypb "13.0" xsd:float
-property_value: start_ypb "2.0" xsd:float
 
 [Term]
 id: MPATH:0
@@ -48649,43 +48599,6 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 domain: BFO:0000003 ! occurrent
 range: BFO:0000004 ! independent continuant
 holds_over_chain: BFO:0000051 BFO:0000066 {http://purl.obolibrary.org/obo/RO_0002581="true"}
-
-[Typedef]
-id: RO:0002487
-name: relation between structure and stage
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, typically connecting an anatomical entity to a biological process or developmental stage." xsd:string
-domain: BFO:0000002 ! continuant
-range: BFO:0000003 ! occurrent
-
-[Typedef]
-id: RO:0002488
-name: existence starts during
-def: "x existence starts during y if and only if the time point at which x starts is after or equivalent to the time point at which y starts and before or equivalent to the time point at which y ends. Formally: x existence starts during y iff α(x) >= α(y) & α(x) <= ω(y)." []
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-is_a: RO:0002490 ! existence overlaps
-is_a: RO:0002496 ! existence starts during or after
-transitive_over: part_of ! part of
-
-[Typedef]
-id: RO:0002490
-name: existence overlaps
-def: "x existence overlaps y if and only if either (a) the start of x is part of y or (b) the end of x is part of y. Formally: x existence starts and ends during y iff (α(x) >= α(y) & α(x) <= ω(y)) OR (ω(x) <= ω(y) & ω(x) >= α(y))" []
-comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-is_a: RO:0002487 ! relation between structure and stage
-
-[Typedef]
-id: RO:0002496
-name: existence starts during or after
-def: "x existence starts during or after y if and only if the time point at which x starts is after or equivalent to the time point at which y starts. Formally: x existence starts during or after y iff α (x) >= α (y)." []
-comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-holds_over_chain: part_of RO:0002496
-holds_over_chain: RO:0002258 RO:0002496
-is_a: RO:0002487 ! relation between structure and stage
-transitive_over: part_of ! part of
-transitive_over: preceded_by ! preceded_by
 
 [Typedef]
 id: RO:0002500

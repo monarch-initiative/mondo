@@ -320,6 +320,47 @@ intersection_of: RO:0002213 GO:0001806 ! type IV hypersensitivity
 relationship: RO:0002213 GO:0001806 ! type IV hypersensitivity
 
 [Term]
+id: GO:0001810
+name: regulation of type I hypersensitivity
+def: "Any process that modulates the frequency, rate, or extent of type I hypersensitivity, a type of inflammatory response." [ISBN:0781735149]
+is_a: GO:0002883 ! regulation of hypersensitivity
+is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016068 ! type I hypersensitivity
+relationship: RO:0002211 GO:0016068 ! type I hypersensitivity
+
+[Term]
+id: GO:0001811
+name: negative regulation of type I hypersensitivity
+def: "Any process that stops, prevents, or reduces the rate of type I hypersensitivity, a type of inflammatory response." [GOC:add, ISBN:0781735149]
+synonym: "down regulation of type I hypersensitivity" EXACT []
+synonym: "down-regulation of type I hypersensitivity" EXACT []
+synonym: "downregulation of type I hypersensitivity" EXACT []
+synonym: "inhibition of type I hypersensitivity" NARROW []
+is_a: GO:0001810 ! regulation of type I hypersensitivity
+is_a: GO:0002884 ! negative regulation of hypersensitivity
+is_a: GO:0002890 ! negative regulation of immunoglobulin mediated immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0016068 ! type I hypersensitivity
+relationship: RO:0002212 GO:0016068 ! type I hypersensitivity
+
+[Term]
+id: GO:0001812
+name: positive regulation of type I hypersensitivity
+def: "Any process that activates or increases the frequency, rate or extent of type I hypersensitivity, a type of inflammatory response." [GOC:add, ISBN:0781735149]
+synonym: "activation of type I hypersensitivity" NARROW []
+synonym: "stimulation of type I hypersensitivity" NARROW []
+synonym: "up regulation of type I hypersensitivity" EXACT []
+synonym: "up-regulation of type I hypersensitivity" EXACT []
+synonym: "upregulation of type I hypersensitivity" EXACT []
+is_a: GO:0001810 ! regulation of type I hypersensitivity
+is_a: GO:0002885 ! positive regulation of hypersensitivity
+is_a: GO:0002891 ! positive regulation of immunoglobulin mediated immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0016068 ! type I hypersensitivity
+relationship: RO:0002213 GO:0016068 ! type I hypersensitivity
+
+[Term]
 id: GO:0001894
 name: tissue homeostasis
 def: "A homeostatic process involved in the maintenance of an internal steady state within a defined tissue of an organism, including control of cellular proliferation and death and control of metabolic function." [GOC:add, GOC:isa_complete]
@@ -1302,6 +1343,13 @@ def: "The actions of a single gene product or complex at the molecular level con
 synonym: "molecular function" EXACT []
 
 [Term]
+id: GO:0003676
+name: nucleic acid binding
+def: "Interacting selectively and non-covalently with any nucleic acid." [GOC:jl]
+is_a: GO:0097159 ! organic cyclic compound binding
+is_a: GO:1901363 ! heterocyclic compound binding
+
+[Term]
 id: GO:0003700
 name: transcription factor activity, sequence-specific DNA binding
 def: "Interacting selectively and non-covalently with a specific DNA sequence in order to modulate transcription. The transcription factor may or may not also interact selectively with a protein or macromolecular complex." [GOC:curators, GOC:txnOH]
@@ -1316,6 +1364,15 @@ name: steroid hormone receptor activity
 def: "Combining with a steroid hormone and transmitting the signal within the cell to initiate a change in cell activity or function." [GOC:signaling, PMID:14708019]
 is_a: GO:0038023 ! signaling receptor activity
 relationship: BFO:0000050 GO:0043401 ! steroid hormone mediated signaling pathway
+
+[Term]
+id: GO:0003723
+name: RNA binding
+def: "Interacting selectively and non-covalently with an RNA molecule or a portion thereof." [GOC:jl, GOC:mah]
+synonym: "poly(A) RNA binding" RELATED []
+synonym: "poly(A)-RNA binding" RELATED []
+synonym: "poly-A RNA binding" RELATED []
+is_a: GO:0003676 ! nucleic acid binding
 
 [Term]
 id: GO:0003810
@@ -1686,6 +1743,16 @@ id: GO:0005230
 name: extracellular ligand-gated ion channel activity
 def: "Enables the transmembrane transfer of an ion by a channel that opens when a specific extracellular ligand has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
 is_a: GO:0015276 ! ligand-gated ion channel activity
+
+[Term]
+id: GO:0005231
+name: excitatory extracellular ligand-gated ion channel activity
+def: "Enables the transmembrane transfer of an ion by a channel that opens when a specific extracellular ligand has been bound by the channel complex or one of its constituent parts, where channel opening contributes to an increase in membrane potential." [GOC:mah, ISBN:0323037070]
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+is_a: GO:0005230 ! extracellular ligand-gated ion channel activity
+intersection_of: GO:0005230 ! extracellular ligand-gated ion channel activity
+intersection_of: BFO:0000050 GO:0060079 ! excitatory postsynaptic potential
+relationship: BFO:0000050 GO:0060079 ! excitatory postsynaptic potential
 
 [Term]
 id: GO:0005244
@@ -2366,6 +2433,13 @@ intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
 relationship: BFO:0000050 GO:0140053 ! mitochondrial gene expression
 
 [Term]
+id: GO:0006396
+name: RNA processing
+def: "Any process involved in the conversion of one or more primary RNA transcripts into one or more mature RNA molecules." [GOC:mah]
+is_a: GO:0016070 ! RNA metabolic process
+relationship: BFO:0000050 GO:0010467 ! gene expression
+
+[Term]
 id: GO:0006464
 name: cellular protein modification process
 def: "The covalent alteration of one or more amino acids occurring in proteins, peptides and nascent polypeptides (co-translational, post-translational modifications) occurring at the level of an individual cell. Includes the modification of charged tRNAs that are destined to occur in a protein (pre-translation modification)." [GOC:go_curators]
@@ -2770,6 +2844,18 @@ def: "The directed movement of hydrogen (H2 or H+), into, out of or within a cel
 is_a: GO:0006810 ! transport
 
 [Term]
+id: GO:0006820
+name: anion transport
+def: "The directed movement of anions, atoms or small molecules with a net negative charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+is_a: GO:0006811 ! ion transport
+
+[Term]
+id: GO:0006821
+name: chloride transport
+def: "The directed movement of chloride into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:krc]
+is_a: GO:0015698 ! inorganic anion transport
+
+[Term]
 id: GO:0006826
 name: iron ion transport
 def: "The directed movement of iron (Fe) ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
@@ -2804,6 +2890,13 @@ intersection_of: GO:0008643 ! carbohydrate transport
 intersection_of: BFO:0000066 GO:0005576 ! extracellular region
 
 [Term]
+id: GO:0006869
+name: lipid transport
+def: "The directed movement of lipids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Lipids are compounds soluble in an organic solvent but not, or sparingly, in an aqueous solvent." [ISBN:0198506732]
+is_a: GO:0071702 ! organic substance transport
+relationship: BFO:0000050 GO:0010876 ! lipid localization
+
+[Term]
 id: GO:0006873
 name: cellular ion homeostasis
 def: "Any process involved in the maintenance of an internal steady state of ions at the level of a cell." [GOC:mah]
@@ -2817,6 +2910,14 @@ def: "Any process involved in the maintenance of an internal steady state of met
 synonym: "cellular heavy metal ion homeostasis" NARROW []
 is_a: GO:0030003 ! cellular cation homeostasis
 is_a: GO:0055065 ! metal ion homeostasis
+
+[Term]
+id: GO:0006878
+name: cellular copper ion homeostasis
+def: "Any process involved in the maintenance of an internal steady state of copper ions at the level of a cell." [GOC:ai, GOC:mah]
+synonym: "copper homeostasis" BROAD []
+is_a: GO:0046916 ! cellular transition metal ion homeostasis
+is_a: GO:0055070 ! copper ion homeostasis
 
 [Term]
 id: GO:0006879
@@ -3020,6 +3121,21 @@ is_a: GO:0007154 ! cell communication
 is_a: GO:0023052 ! signaling
 
 [Term]
+id: GO:0007268
+name: chemical synaptic transmission
+def: "The vesicular release of classical neurotransmitter molecules from a presynapse, across a chemical synapse, the subsequent activation of neurotransmitter receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." [GOC:jl, MeSH:D009435]
+synonym: "neurotransmission" RELATED [GOC:dph]
+synonym: "signal transmission across a synapse" BROAD []
+synonym: "synaptic transmission" BROAD []
+is_a: GO:0098916 ! anterograde trans-synaptic signaling
+
+[Term]
+id: GO:0007274
+name: neuromuscular synaptic transmission
+def: "The process of synaptic transmission from a neuron to a muscle, across a synapse." [GOC:dos, GOC:jl, MeSH:D009435]
+is_a: GO:0007268 ! chemical synaptic transmission
+
+[Term]
 id: GO:0007275
 name: multicellular organism development
 def: "The biological process whose specific outcome is the progression of a multicellular organism over time from an initial condition (e.g. a zygote or a young adult) to a later condition (e.g. a multicellular animal or an aged adult)." [GOC:dph, GOC:ems, GOC:isa_complete, GOC:tb]
@@ -3085,6 +3201,12 @@ name: respiratory gaseous exchange
 def: "The process of gaseous exchange between an organism and its environment. In plants, microorganisms, and many small animals, air or water makes direct contact with the organism's cells or tissue fluids, and the processes of diffusion supply the organism with dioxygen (O2) and remove carbon dioxide (CO2). In larger animals the efficiency of gaseous exchange is improved by specialized respiratory organs, such as lungs and gills, which are ventilated by breathing mechanisms." [ISBN:0198506732]
 synonym: "breathing" BROAD []
 synonym: "respiration" BROAD []
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0007586
+name: digestion
+def: "The whole of the physical, chemical, and biochemical processes carried out by multicellular organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." [GOC:isa_complete, ISBN:0198506732]
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
@@ -3262,12 +3384,27 @@ is_a: GO:0015075 ! ion transmembrane transporter activity
 relationship: BFO:0000050 GO:0098655 ! cation transmembrane transport
 
 [Term]
+id: GO:0008380
+name: RNA splicing
+def: "The process of removing sections of the primary RNA transcript to remove sequences not present in the mature form of the RNA and joining the remaining sections to form the mature form of the RNA." [GOC:krc, GOC:mah]
+synonym: "pre-mRNA splicing factor activity" RELATED []
+is_a: GO:0006396 ! RNA processing
+
+[Term]
 id: GO:0008484
 name: sulfuric ester hydrolase activity
 def: "Catalysis of the reaction: RSO-R' + H2O = RSOOH + R'H. This reaction is the hydrolysis of any sulfuric ester bond, any ester formed from sulfuric acid, O=SO(OH)2." [GOC:ai]
 synonym: "sulfatase activity" EXACT []
 synonym: "sulphuric ester hydrolase activity" EXACT []
 is_a: GO:0016788 ! hydrolase activity, acting on ester bonds
+
+[Term]
+id: GO:0008509
+name: anion transmembrane transporter activity
+def: "Enables the transfer of a negatively charged ion from one side of a membrane to the other." [GOC:dgf, GOC:mtg_transport, ISBN:0815340729]
+synonym: "anion transporter activity" EXACT []
+is_a: GO:0015075 ! ion transmembrane transporter activity
+relationship: BFO:0000050 GO:0098656 ! anion transmembrane transport
 
 [Term]
 id: GO:0008610
@@ -4550,6 +4687,15 @@ synonym: "lipid localisation" EXACT [GOC:mah]
 is_a: GO:0033036 ! macromolecule localization
 
 [Term]
+id: GO:0010877
+name: lipid transport involved in lipid storage
+def: "The directed movement of lipids into cells that is part of their accumulation and maintenance." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0006869 ! lipid transport
+intersection_of: GO:0006869 ! lipid transport
+intersection_of: BFO:0000050 GO:0019915 ! lipid storage
+relationship: BFO:0000050 GO:0019915 ! lipid storage
+
+[Term]
 id: GO:0010883
 name: regulation of lipid storage
 def: "Any process that modulates the rate, frequency or extent of lipid storage. Lipid storage is the accumulation and maintenance in cells or tissues of lipids, compounds soluble in organic solvents but insoluble or sparingly soluble in aqueous solvents. Lipid reserves can be accumulated during early developmental stages for mobilization and utilization at later stages of development." [GOC:BHF, GOC:dph, GOC:tb]
@@ -4764,6 +4910,21 @@ is_a: GO:0022891 ! substrate-specific transmembrane transporter activity
 relationship: BFO:0000050 GO:0034220 ! ion transmembrane transport
 
 [Term]
+id: GO:0015103
+name: inorganic anion transmembrane transporter activity
+def: "Enables the transfer of inorganic anions from one side of a membrane to the other. Inorganic anions are atoms or small molecules with a negative charge which do not contain carbon in covalent linkage." [GOC:ai]
+is_a: GO:0008509 ! anion transmembrane transporter activity
+relationship: BFO:0000050 GO:0015698 ! inorganic anion transport
+
+[Term]
+id: GO:0015108
+name: chloride transmembrane transporter activity
+def: "Enables the transfer of chloride ions from one side of a membrane to the other." [GOC:ai]
+synonym: "chloride ion transmembrane transporter activity" EXACT [GOC:pr]
+is_a: GO:0015103 ! inorganic anion transmembrane transporter activity
+relationship: BFO:0000050 GO:1902476 ! chloride transmembrane transport
+
+[Term]
 id: GO:0015267
 name: channel activity
 def: "Enables the energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel. Stereospecificity is not exhibited but this transport may be specific for a particular molecular species or class of molecules." [GOC:mtg_transport, ISBN:0815340729, TC:1.-.-.-.-]
@@ -4784,10 +4945,31 @@ is_a: GO:0005216 ! ion channel activity
 is_a: GO:0022834 ! ligand-gated channel activity
 
 [Term]
+id: GO:0015464
+name: acetylcholine receptor activity
+def: "Combining with acetylcholine and transmitting the signal from one side of the membrane to the other to initiate a change in cell activity." [GOC:jl, GOC:signaling]
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+is_a: GO:0030594 ! neurotransmitter receptor activity
+relationship: BFO:0000051 GO:0042166 ! acetylcholine binding
+
+[Term]
 id: GO:0015672
 name: monovalent inorganic cation transport
 def: "The directed movement of inorganic cations with a valency of one into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Inorganic cations are atoms or small molecules with a positive charge which do not contain carbon in covalent linkage." [GOC:ai]
 is_a: GO:0006812 ! cation transport
+
+[Term]
+id: GO:0015693
+name: magnesium ion transport
+def: "The directed movement of magnesium (Mg) ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+synonym: "magnesium transport" RELATED []
+is_a: GO:0070838 ! divalent metal ion transport
+
+[Term]
+id: GO:0015698
+name: inorganic anion transport
+def: "The directed movement of inorganic anions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Inorganic anions are atoms or small molecules with a negative charge which do not contain carbon in covalent linkage." [GOC:krc]
+is_a: GO:0006820 ! anion transport
 
 [Term]
 id: GO:0015749
@@ -4965,6 +5147,14 @@ name: immunoglobulin mediated immune response
 def: "An immune response mediated by immunoglobulins, whether cell-bound or in solution." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
 synonym: "antibody-mediated immune response" EXACT []
 is_a: GO:0019724 ! B cell mediated immunity
+
+[Term]
+id: GO:0016068
+name: type I hypersensitivity
+def: "An inflammatory response driven by antigen recognition by antibodies bound to Fc receptors on mast cells or basophils, occurring within minutes after exposure of a sensitized individual to the antigen, and leading to the release of a variety of inflammatory mediators such as histamines." [GOC:add, ISBN:0781735149]
+synonym: "immediate hypersensitivity response" EXACT []
+is_a: GO:0002524 ! hypersensitivity
+is_a: GO:0016064 ! immunoglobulin mediated immune response
 
 [Term]
 id: GO:0016070
@@ -5563,6 +5753,15 @@ intersection_of: BFO:0000050 GO:0000003 ! reproduction
 relationship: BFO:0000050 GO:0000003 ! reproduction
 
 [Term]
+id: GO:0022600
+name: digestive system process
+def: "A physical, chemical, or biochemical process carried out by living organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." [GOC:isa_complete, GOC:jid, GOC:mtg_cardio]
+is_a: GO:0003008 ! system process
+intersection_of: GO:0003008 ! system process
+intersection_of: BFO:0000050 GO:0007586 ! digestion
+relationship: BFO:0000050 GO:0007586 ! digestion
+
+[Term]
 id: GO:0022603
 name: regulation of anatomical structure morphogenesis
 def: "Any process that modulates the frequency, rate or extent of anatomical structure morphogenesis." [GOC:mah]
@@ -5622,6 +5821,20 @@ name: substrate-specific channel activity
 def: "Enables the energy-independent facilitated diffusion, mediated by passage of a specific solute through a transmembrane aqueous pore or channel. Stereospecificity is not exhibited but this transport may be specific for a particular molecular species or class of molecules." [GOC:mtg_transport]
 is_a: GO:0015267 ! channel activity
 is_a: GO:0022891 ! substrate-specific transmembrane transporter activity
+
+[Term]
+id: GO:0022848
+name: acetylcholine-gated cation-selective channel activity
+def: "Selectively enables the transmembrane transfer of a cation by a channel that opens upon binding acetylcholine." [GOC:mah, PMID:2466967]
+synonym: "acetylcholine-activated cation-selective channel activity" EXACT []
+synonym: "acetylcholine-gated cation channel activity" EXACT []
+synonym: "iontropic acetylcholine receptor activity" EXACT []
+synonym: "nicotinergic acetylcholine receptor activity" EXACT []
+synonym: "nicotinic acetylcholine-activated cation-selective channel activity" EXACT [GOC:bf]
+is_a: GO:0005231 ! excitatory extracellular ligand-gated ion channel activity
+is_a: GO:0015464 ! acetylcholine receptor activity
+is_a: GO:0099094 ! ligand-gated cation channel activity
+is_a: GO:1904315 ! transmitter-gated ion channel activity involved in regulation of postsynaptic membrane potential
 
 [Term]
 id: GO:0022857
@@ -6671,6 +6884,47 @@ intersection_of: RO:0002213 GO:0042445 ! hormone metabolic process
 relationship: RO:0002213 GO:0042445 ! hormone metabolic process
 
 [Term]
+id: GO:0032368
+name: regulation of lipid transport
+def: "Any process that modulates the frequency, rate or extent of the directed movement of lipids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:mah]
+is_a: GO:0051049 ! regulation of transport
+is_a: GO:1905952 ! regulation of lipid localization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006869 ! lipid transport
+relationship: RO:0002211 GO:0006869 ! lipid transport
+
+[Term]
+id: GO:0032369
+name: negative regulation of lipid transport
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the directed movement of lipids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:mah]
+synonym: "down regulation of lipid transport" EXACT []
+synonym: "down-regulation of lipid transport" EXACT []
+synonym: "downregulation of lipid transport" EXACT []
+synonym: "inhibition of lipid transport" NARROW []
+is_a: GO:0032368 ! regulation of lipid transport
+is_a: GO:0051051 ! negative regulation of transport
+is_a: GO:1905953 ! negative regulation of lipid localization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006869 ! lipid transport
+relationship: RO:0002212 GO:0006869 ! lipid transport
+
+[Term]
+id: GO:0032370
+name: positive regulation of lipid transport
+def: "Any process that activates or increases the frequency, rate or extent of the directed movement of lipids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:mah]
+synonym: "activation of lipid transport" NARROW []
+synonym: "stimulation of lipid transport" NARROW []
+synonym: "up regulation of lipid transport" EXACT []
+synonym: "up-regulation of lipid transport" EXACT []
+synonym: "upregulation of lipid transport" EXACT []
+is_a: GO:0032368 ! regulation of lipid transport
+is_a: GO:0051050 ! positive regulation of transport
+is_a: GO:1905954 ! positive regulation of lipid localization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006869 ! lipid transport
+relationship: RO:0002213 GO:0006869 ! lipid transport
+
+[Term]
 id: GO:0032386
 name: regulation of intracellular transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of substances within cells." [GOC:mah]
@@ -6965,6 +7219,28 @@ is_a: GO:0051128 ! regulation of cellular component organization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006996 ! organelle organization
 relationship: RO:0002211 GO:0006996 ! organelle organization
+
+[Term]
+id: GO:0033119
+name: negative regulation of RNA splicing
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of RNA splicing." [GOC:mah]
+is_a: GO:0010629 ! negative regulation of gene expression
+is_a: GO:0043484 ! regulation of RNA splicing
+is_a: GO:0051253 ! negative regulation of RNA metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0008380 ! RNA splicing
+relationship: RO:0002212 GO:0008380 ! RNA splicing
+
+[Term]
+id: GO:0033120
+name: positive regulation of RNA splicing
+def: "Any process that activates or increases the frequency, rate or extent of RNA splicing." [GOC:mah]
+is_a: GO:0010628 ! positive regulation of gene expression
+is_a: GO:0043484 ! regulation of RNA splicing
+is_a: GO:0051254 ! positive regulation of RNA metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0008380 ! RNA splicing
+relationship: RO:0002213 GO:0008380 ! RNA splicing
 
 [Term]
 id: GO:0033143
@@ -7454,6 +7730,13 @@ is_a: GO:0007215 ! glutamate receptor signaling pathway
 relationship: BFO:0000051 GO:0004970 ! ionotropic glutamate receptor activity
 
 [Term]
+id: GO:0035295
+name: tube development
+def: "The process whose specific outcome is the progression of a tube over time, from its initial formation to a mature structure. Epithelial and endothelial tubes transport gases, liquids and cells from one site to another and form the basic structure of many organs and tissues including lung and trachea, kidney, the mammary gland, the vascular system and the gastrointestinal and urinary-genital tracts." [PMID:12526790]
+is_a: GO:0048856 ! anatomical structure development
+relationship: BFO:0000050 GO:0007275 ! multicellular organism development
+
+[Term]
 id: GO:0035556
 name: intracellular signal transduction
 def: "The process in which a signal is passed on to downstream components within the cell, which become activated themselves to further propagate the signal and finally trigger a change in the function or state of the cell." [GOC:bf, GOC:jl, GOC:signaling, ISBN:3527303782]
@@ -7630,10 +7913,24 @@ intersection_of: RO:0002211 GO:0006584 ! catecholamine metabolic process
 relationship: RO:0002211 GO:0006584 ! catecholamine metabolic process
 
 [Term]
+id: GO:0042157
+name: lipoprotein metabolic process
+def: "The chemical reactions and pathways involving any conjugated, water-soluble protein in which the covalently attached nonprotein group consists of a lipid or lipids." [ISBN:0198506732]
+synonym: "lipoprotein metabolism" EXACT []
+is_a: GO:0019538 ! protein metabolic process
+
+[Term]
 id: GO:0042165
 name: neurotransmitter binding
 def: "Interacting selectively and non-covalently with a neurotransmitter, any chemical substance that is capable of transmitting (or inhibiting the transmission of) a nerve impulse from a neuron to another cell." [ISBN:0198506732]
 is_a: GO:0005488 ! binding
+
+[Term]
+id: GO:0042166
+name: acetylcholine binding
+def: "Interacting selectively and non-covalently with acetylcholine, an acetic acid ester of the organic base choline that functions as a neurotransmitter, released at the synapses of parasympathetic nerves and at neuromuscular junctions." [GOC:ai]
+is_a: GO:0042165 ! neurotransmitter binding
+is_a: GO:0070405 ! ammonium ion binding
 
 [Term]
 id: GO:0042180
@@ -7702,6 +7999,12 @@ is_a: GO:0045937 ! positive regulation of phosphate metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0016310 ! phosphorylation
 relationship: RO:0002213 GO:0016310 ! phosphorylation
+
+[Term]
+id: GO:0042391
+name: regulation of membrane potential
+def: "Any process that modulates the establishment or extent of a membrane potential, the electric potential existing across any membrane arising from charges in the membrane itself and from the charges present in the media on either side of the membrane." [GOC:jl, GOC:mtg_cardio, GOC:tb, ISBN:0198506732]
+is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
 id: GO:0042403
@@ -7905,6 +8208,12 @@ is_a: GO:0005488 ! binding
 id: GO:0043168
 name: anion binding
 def: "Interacting selectively and non-covalently with anions, charged atoms or groups of atoms with a net negative charge." [GOC:jl]
+is_a: GO:0043167 ! ion binding
+
+[Term]
+id: GO:0043169
+name: cation binding
+def: "Interacting selectively and non-covalently with cations, charged atoms or groups of atoms with a net positive charge." [GOC:jl]
 is_a: GO:0043167 ! ion binding
 
 [Term]
@@ -8150,6 +8459,16 @@ def: "The accumulation of pigment in an organism, tissue or cell, either by incr
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0043484
+name: regulation of RNA splicing
+def: "Any process that modulates the frequency, rate or extent of RNA splicing, the process of removing sections of the primary RNA transcript to remove sequences not present in the mature form of the RNA and joining the remaining sections to form the mature form of the RNA." [GOC:jl]
+is_a: GO:0010468 ! regulation of gene expression
+is_a: GO:0051252 ! regulation of RNA metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0008380 ! RNA splicing
+relationship: RO:0002211 GO:0008380 ! RNA splicing
+
+[Term]
 id: GO:0043504
 name: mitochondrial DNA repair
 def: "The process of restoring mitochondrial DNA after damage." [PMID:12565799, PMID:15189144, PMID:16050976]
@@ -8258,6 +8577,15 @@ intersection_of: RO:0002211 GO:0003008 ! system process
 relationship: RO:0002211 GO:0003008 ! system process
 
 [Term]
+id: GO:0044058
+name: regulation of digestive system process
+def: "Any process that modulates the frequency, rate or extent of a digestive system process, a physical, chemical, or biochemical process carried out by living organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." [GOC:jl]
+is_a: GO:0044057 ! regulation of system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0022600 ! digestive system process
+relationship: RO:0002211 GO:0022600 ! digestive system process
+
+[Term]
 id: GO:0044062
 name: regulation of excretion
 def: "Any process that modulates the frequency, rate, or extent of excretion, the elimination by an organism of the waste products that arise as a result of metabolic activity." [GOC:jl]
@@ -8276,6 +8604,15 @@ is_a: GO:0044057 ! regulation of system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0003016 ! respiratory system process
 relationship: RO:0002211 GO:0003016 ! respiratory system process
+
+[Term]
+id: GO:0044070
+name: regulation of anion transport
+def: "Any process that modulates the frequency, rate or extent of the directed movement of anions, atoms or small molecules with a net negative charge into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:jl]
+is_a: GO:0043269 ! regulation of ion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006820 ! anion transport
+relationship: RO:0002211 GO:0006820 ! anion transport
 
 [Term]
 id: GO:0044085
@@ -8750,6 +9087,14 @@ synonym: "electrotonic synapse" RELATED [NIF_Subcellular:sao1311109124]
 synonym: "mixed synapse" NARROW [NIF_Subcellular:sao1506103497]
 synonym: "synaptic junction" EXACT []
 is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0045211
+name: postsynaptic membrane
+def: "A specialized area of membrane facing the presynaptic membrane on the tip of the nerve ending and separated from it by a minute cleft (the synaptic cleft). Neurotransmitters cross the synaptic cleft and transmit the signal to the postsynaptic membrane." [ISBN:0198506732]
+synonym: "post-synaptic membrane" EXACT []
+is_a: GO:0097060 ! synaptic membrane
+relationship: BFO:0000050 GO:0098794 ! postsynapse
 
 [Term]
 id: GO:0045254
@@ -9535,6 +9880,13 @@ is_a: GO:0009167 ! purine ribonucleoside monophosphate metabolic process
 is_a: GO:0009205 ! purine ribonucleoside triphosphate metabolic process
 
 [Term]
+id: GO:0046110
+name: xanthine metabolic process
+def: "The chemical reactions and pathways involving xanthine, 2,6-dihydroxypurine, a purine formed in the metabolic breakdown of guanine but not present in nucleic acids." [GOC:go_curators]
+synonym: "xanthine metabolism" EXACT []
+is_a: GO:0006144 ! purine nucleobase metabolic process
+
+[Term]
 id: GO:0046136
 name: positive regulation of vitamin metabolic process
 def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving a vitamin, one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." [GOC:ai]
@@ -10045,6 +10397,16 @@ is_a: GO:0014070 ! response to organic cyclic compound
 is_a: GO:0033993 ! response to lipid
 
 [Term]
+id: GO:0048565
+name: digestive tract development
+def: "The process whose specific outcome is the progression of the digestive tract over time, from its formation to the mature structure. The digestive tract is the anatomical structure through which food passes and is processed." [GOC:go_curators]
+synonym: "gut development" BROAD [GOC:dph]
+synonym: "intestinal development" NARROW []
+synonym: "intestine development" NARROW []
+is_a: GO:0035295 ! tube development
+relationship: BFO:0000050 GO:0055123 ! digestive system development
+
+[Term]
 id: GO:0048583
 name: regulation of response to stimulus
 def: "Any process that modulates the frequency, rate or extent of a response to a stimulus. Response to stimulus is a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus." [GOC:jid]
@@ -10316,6 +10678,50 @@ intersection_of: RO:0002213 GO:0006954 ! inflammatory response
 relationship: RO:0002213 GO:0006954 ! inflammatory response
 
 [Term]
+id: GO:0050746
+name: regulation of lipoprotein metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving lipoproteins, any conjugated, water-soluble protein in which the nonprotein group consists of a lipid or lipids." [GOC:ai]
+synonym: "regulation of lipoprotein metabolism" EXACT []
+is_a: GO:0031323 ! regulation of cellular metabolic process
+is_a: GO:0051246 ! regulation of protein metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042157 ! lipoprotein metabolic process
+relationship: RO:0002211 GO:0042157 ! lipoprotein metabolic process
+
+[Term]
+id: GO:0050747
+name: positive regulation of lipoprotein metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving lipoproteins, any conjugated, water-soluble protein in which the nonprotein group consists of a lipid or lipids." [GOC:ai]
+synonym: "activation of lipoprotein metabolic process" NARROW []
+synonym: "positive regulation of lipoprotein metabolism" EXACT []
+synonym: "stimulation of lipoprotein metabolic process" NARROW []
+synonym: "up regulation of lipoprotein metabolic process" EXACT []
+synonym: "up-regulation of lipoprotein metabolic process" EXACT []
+synonym: "upregulation of lipoprotein metabolic process" EXACT []
+is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
+is_a: GO:0050746 ! regulation of lipoprotein metabolic process
+is_a: GO:0051247 ! positive regulation of protein metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042157 ! lipoprotein metabolic process
+relationship: RO:0002213 GO:0042157 ! lipoprotein metabolic process
+
+[Term]
+id: GO:0050748
+name: negative regulation of lipoprotein metabolic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving lipoproteins, any conjugated, water-soluble protein in which the nonprotein group consists of a lipid or lipids." [GOC:ai]
+synonym: "down regulation of lipoprotein metabolic process" EXACT []
+synonym: "down-regulation of lipoprotein metabolic process" EXACT []
+synonym: "downregulation of lipoprotein metabolic process" EXACT []
+synonym: "inhibition of lipoprotein metabolic process" NARROW []
+synonym: "negative regulation of lipoprotein metabolism" EXACT []
+is_a: GO:0031324 ! negative regulation of cellular metabolic process
+is_a: GO:0050746 ! regulation of lipoprotein metabolic process
+is_a: GO:0051248 ! negative regulation of protein metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042157 ! lipoprotein metabolic process
+relationship: RO:0002212 GO:0042157 ! lipoprotein metabolic process
+
+[Term]
 id: GO:0050764
 name: regulation of phagocytosis
 def: "Any process that modulates the frequency, rate or extent of phagocytosis, the process in which phagocytes engulf external particulate material." [GOC:ai]
@@ -10453,6 +10859,50 @@ synonym: "negative regulation of crystal formation" RELATED []
 is_a: GO:0048878 ! chemical homeostasis
 
 [Term]
+id: GO:0050804
+name: modulation of chemical synaptic transmission
+def: "Any process that modulates the frequency or amplitude of synaptic transmission, the process of communication from a neuron to a target (neuron, muscle, or secretory cell) across a synapse.  Amplitude, in this case, refers to the change in postsynaptic membrane potential due to a single instance of synaptic transmission." [GOC:ai]
+synonym: "modulation of synaptic transmission" BROAD []
+synonym: "regulation of chemical synaptic transmission" EXACT []
+synonym: "regulation of synaptic transmission" EXACT []
+is_a: GO:0010646 ! regulation of cell communication
+is_a: GO:0023051 ! regulation of signaling
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007268 ! chemical synaptic transmission
+relationship: RO:0002211 GO:0007268 ! chemical synaptic transmission
+
+[Term]
+id: GO:0050805
+name: negative regulation of synaptic transmission
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of synaptic transmission, the process of communication from a neuron to a target (neuron, muscle, or secretory cell) across a synapse." [GOC:ai]
+synonym: "down regulation of synaptic transmission" EXACT []
+synonym: "down-regulation of synaptic transmission" EXACT []
+synonym: "downregulation of synaptic transmission" EXACT []
+synonym: "inhibition of synaptic transmission" NARROW []
+is_a: GO:0010648 ! negative regulation of cell communication
+is_a: GO:0023057 ! negative regulation of signaling
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007268 ! chemical synaptic transmission
+relationship: RO:0002212 GO:0007268 ! chemical synaptic transmission
+
+[Term]
+id: GO:0050806
+name: positive regulation of synaptic transmission
+def: "Any process that activates or increases the frequency, rate or extent of synaptic transmission, the process of communication from a neuron to a target (neuron, muscle, or secretory cell) across a synapse." [GOC:ai]
+synonym: "activation of synaptic transmission" NARROW []
+synonym: "stimulation of synaptic transmission" NARROW []
+synonym: "up regulation of synaptic transmission" EXACT []
+synonym: "up-regulation of synaptic transmission" EXACT []
+synonym: "upregulation of synaptic transmission" EXACT []
+is_a: GO:0010647 ! positive regulation of cell communication
+is_a: GO:0023056 ! positive regulation of signaling
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007268 ! chemical synaptic transmission
+relationship: RO:0002213 GO:0007268 ! chemical synaptic transmission
+
+[Term]
 id: GO:0050810
 name: regulation of steroid biosynthetic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of steroids, compounds with a 1,2,cyclopentanoperhydrophenanthrene nucleus." [GOC:ai]
@@ -10536,6 +10986,13 @@ id: GO:0050890
 name: cognition
 def: "The operation of the mind by which an organism becomes aware of objects of thought or perception; it includes the mental activities associated with thinking, learning, and memory." [http://www.onelook.com/, ISBN:0721619908]
 is_a: GO:0050877 ! nervous system process
+
+[Term]
+id: GO:0050892
+name: intestinal absorption
+def: "Any process in which nutrients are taken up from the contents of the intestine." [GOC:ai, GOC:dph]
+is_a: GO:0006810 ! transport
+is_a: GO:0022600 ! digestive system process
 
 [Term]
 id: GO:0050896
@@ -11653,6 +12110,20 @@ is_a: GO:0055080 ! cation homeostasis
 is_a: GO:0098771 ! inorganic ion homeostasis
 
 [Term]
+id: GO:0055067
+name: monovalent inorganic cation homeostasis
+def: "Any process involved in the maintenance of an internal steady state of monovalent inorganic cations within an organism or cell." [GOC:ai, GOC:jid, GOC:mah]
+is_a: GO:0055080 ! cation homeostasis
+is_a: GO:0098771 ! inorganic ion homeostasis
+
+[Term]
+id: GO:0055070
+name: copper ion homeostasis
+def: "Any process involved in the maintenance of an internal steady state of copper ions within an organism or cell." [GOC:ai, GOC:jid, GOC:mah]
+synonym: "copper homeostasis" BROAD []
+is_a: GO:0055076 ! transition metal ion homeostasis
+
+[Term]
 id: GO:0055072
 name: iron ion homeostasis
 def: "Any process involved in the maintenance of an internal steady state of iron ions within an organism or cell." [GOC:ai, GOC:jid, GOC:mah]
@@ -11664,6 +12135,13 @@ id: GO:0055076
 name: transition metal ion homeostasis
 def: "Any process involved in the maintenance of an internal steady state of transition metal ions within an organism or cell. A transition metal is an element whose atom has an incomplete d-subshell of extranuclear electrons, or which gives rise to a cation or cations with an incomplete d-subshell. Transition metals often have more than one valency state. Biologically relevant transition metals include vanadium, manganese, iron, copper, cobalt, nickel, molybdenum and silver." [GOC:jid, GOC:mah, ISBN:0198506732]
 is_a: GO:0055065 ! metal ion homeostasis
+
+[Term]
+id: GO:0055078
+name: sodium ion homeostasis
+def: "Any process involved in the maintenance of an internal steady state of sodium ions within an organism or cell." [GOC:ai, GOC:jid, GOC:mah]
+is_a: GO:0055065 ! metal ion homeostasis
+is_a: GO:0055067 ! monovalent inorganic cation homeostasis
 
 [Term]
 id: GO:0055080
@@ -11701,6 +12179,12 @@ def: "A metabolic process that results in the removal or addition of one or more
 synonym: "oxidation reduction" EXACT [GOC:curators]
 synonym: "oxidoreductase process" EXACT systematic_synonym []
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0055123
+name: digestive system development
+def: "The process whose specific outcome is the progression of the digestive system over time, from its formation to the mature structure. The digestive system is the entire structure in which digestion takes place. Digestion is all of the physical, chemical, and biochemical processes carried out by multicellular organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." [GOC:jid]
+is_a: GO:0048731 ! system development
 
 [Term]
 id: GO:0060047
@@ -11755,6 +12239,32 @@ synonym: "urination" EXACT []
 synonym: "urine voiding" EXACT []
 is_a: GO:0003014 ! renal system process
 is_a: GO:0007588 ! excretion
+
+[Term]
+id: GO:0060078
+name: regulation of postsynaptic membrane potential
+def: "Any process that modulates the potential difference across a post-synaptic membrane." [GOC:dph, GOC:ef]
+synonym: "regulation of post-synaptic membrane potential" EXACT []
+is_a: GO:0042391 ! regulation of membrane potential
+
+[Term]
+id: GO:0060079
+name: excitatory postsynaptic potential
+def: "A process that leads to a temporary increase in postsynaptic potential due to the flow of positively charged ions into the postsynaptic cell. The flow of ions that causes an EPSP is an excitatory postsynaptic current (EPSC) and makes it easier for the neuron to fire an action potential." [GOC:dph, GOC:ef]
+synonym: "regulation of EPSP" RELATED []
+synonym: "regulation of excitatory post-synaptic membrane potential" EXACT []
+is_a: GO:0060078 ! regulation of postsynaptic membrane potential
+relationship: BFO:0000050 GO:0099565 ! chemical synaptic transmission, postsynaptic
+
+[Term]
+id: GO:0060084
+name: synaptic transmission involved in micturition
+def: "The process of communication from a neuron to a smooth muscle in the bladder that contributes to the expulsion of urine from the body." [GOC:dph, PMID:15827347]
+synonym: "synaptic transmission involved in urination" RELATED []
+is_a: GO:0007274 ! neuromuscular synaptic transmission
+intersection_of: GO:0007268 ! chemical synaptic transmission
+intersection_of: BFO:0000050 GO:0060073 ! micturition
+relationship: BFO:0000050 GO:0060073 ! micturition
 
 [Term]
 id: GO:0060089
@@ -11820,6 +12330,26 @@ name: bone development
 def: "The process whose specific outcome is the progression of bone over time, from its formation to the mature structure. Bone is the hard skeletal connective tissue consisting of both mineral and cellular components." [GOC:dph]
 is_a: GO:0048513 ! animal organ development
 relationship: BFO:0000050 GO:0001501 ! skeletal system development
+
+[Term]
+id: GO:0060456
+name: positive regulation of digestive system process
+def: "Any process that increases the frequency, rate or extent of a digestive system process, a physical, chemical, or biochemical process carried out by living organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." [GOC:dph, GOC:tb]
+is_a: GO:0044058 ! regulation of digestive system process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0022600 ! digestive system process
+relationship: RO:0002213 GO:0022600 ! digestive system process
+
+[Term]
+id: GO:0060457
+name: negative regulation of digestive system process
+def: "Any process that decreases the frequency, rate or extent of a digestive system process, a physical, chemical, or biochemical process carried out by living organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." [GOC:dph, GOC:tb]
+is_a: GO:0044058 ! regulation of digestive system process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0022600 ! digestive system process
+relationship: RO:0002212 GO:0022600 ! digestive system process
 
 [Term]
 id: GO:0060467
@@ -12033,12 +12563,27 @@ synonym: "anchoring cell junction" EXACT [GOC:mah]
 is_a: GO:0030054 ! cell junction
 
 [Term]
+id: GO:0070293
+name: renal absorption
+def: "A renal system process in which water, ions, glucose and proteins are taken up from the collecting ducts, glomerulus and proximal and distal loops of the nephron. In non-mammalian species, absorption may occur in related structures (e.g. protein absorption is observed in nephrocytes in Drosophila, see PMID:23264686)." [GOC:dph, GOC:mah, GOC:yaf]
+synonym: "nephron absorption" EXACT [GOC:mah]
+synonym: "renal reabsorption" EXACT [GOC:dph]
+is_a: GO:0003014 ! renal system process
+
+[Term]
 id: GO:0070324
 name: thyroid hormone binding
 def: "Interacting selectively and non-covalently with thyroxine (T4) or triiodothyronine (T3), tyrosine-based hormones produced by the thyroid gland." [GOC:rph]
 synonym: "thyroxine binding" NARROW [GOC:mah]
 synonym: "triiodothyronine binding" NARROW [GOC:mah]
 is_a: GO:0042562 ! hormone binding
+
+[Term]
+id: GO:0070405
+name: ammonium ion binding
+def: "Interacting selectively and non-covalently with ammonium ions (NH4+)." [CHEBI:28938, GOC:ecd]
+synonym: "ammonium binding" RELATED []
+is_a: GO:0043169 ! cation binding
 
 [Term]
 id: GO:0070701
@@ -12049,6 +12594,13 @@ synonym: "mucous" EXACT []
 synonym: "mucous layer" EXACT []
 synonym: "mucus" EXACT []
 is_a: GO:0044421 ! extracellular region part
+
+[Term]
+id: GO:0070838
+name: divalent metal ion transport
+def: "The directed movement of divalent metal cations, any metal ion with a +2 electric charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:mah]
+is_a: GO:0030001 ! metal ion transport
+is_a: GO:0072511 ! divalent inorganic cation transport
 
 [Term]
 id: GO:0070857
@@ -12365,6 +12917,45 @@ intersection_of: RO:0002211 GO:0042180 ! cellular ketone metabolic process
 intersection_of: RO:0002213 GO:0006366 ! transcription from RNA polymerase II promoter
 
 [Term]
+id: GO:0072367
+name: regulation of lipid transport by regulation of transcription from RNA polymerase II promoter
+def: "Any process that modulates the frequency, rate or extent of lipid transport by modulating the frequency, rate or extent of transcription from an RNA polymerase II promoter." [GOC:BHF, GOC:mah]
+synonym: "regulation of lipid transport by regulation of transcription from an RNA polymerase II promoter" EXACT [GOC:bf]
+is_a: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
+is_a: GO:0032368 ! regulation of lipid transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006366 ! transcription from RNA polymerase II promoter
+intersection_of: RO:0002211 GO:0006869 ! lipid transport
+
+[Term]
+id: GO:0072368
+name: regulation of lipid transport by negative regulation of transcription from RNA polymerase II promoter
+def: "Any process that modulates the frequency, rate or extent of lipid transport by stopping, preventing, or reducing the frequency, rate or extent of transcription from an RNA polymerase II promoter." [GOC:BHF, GOC:mah]
+synonym: "regulation of lipid transport by negative regulation of transcription from an RNA polymerase II promoter" EXACT [GOC:bf]
+is_a: GO:0000122 ! negative regulation of transcription from RNA polymerase II promoter
+is_a: GO:0072367 ! regulation of lipid transport by regulation of transcription from RNA polymerase II promoter
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006869 ! lipid transport
+intersection_of: RO:0002212 GO:0006366 ! transcription from RNA polymerase II promoter
+
+[Term]
+id: GO:0072369
+name: regulation of lipid transport by positive regulation of transcription from RNA polymerase II promoter
+def: "Any process that modulates the frequency, rate or extent of lipid transport by activating or increasing the frequency, rate or extent of transcription from an RNA polymerase II promoter." [GOC:BHF, GOC:mah]
+synonym: "regulation of lipid transport by positive regulation of transcription from an RNA polymerase II promoter" EXACT [GOC:bf]
+is_a: GO:0045944 ! positive regulation of transcription from RNA polymerase II promoter
+is_a: GO:0072367 ! regulation of lipid transport by regulation of transcription from RNA polymerase II promoter
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006869 ! lipid transport
+intersection_of: RO:0002213 GO:0006366 ! transcription from RNA polymerase II promoter
+
+[Term]
+id: GO:0072511
+name: divalent inorganic cation transport
+def: "The directed movement of inorganic cations with a valency of two into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Inorganic cations are atoms or small molecules with a positive charge which do not contain carbon in covalent linkage." [GOC:mah]
+is_a: GO:0006812 ! cation transport
+
+[Term]
 id: GO:0072521
 name: purine-containing compound metabolic process
 def: "The chemical reactions and pathways involving a purine-containing compound, i.e. any compound that contains purine or a formal derivative thereof." [CHEBI:26401, GOC:mah]
@@ -12618,6 +13209,20 @@ intersection_of: RO:0002212 GO:0006119 ! oxidative phosphorylation
 relationship: RO:0002212 GO:0006119 ! oxidative phosphorylation
 
 [Term]
+id: GO:0090394
+name: negative regulation of excitatory postsynaptic potential
+def: "Any process that prevents the establishment or decreases the extent of the excitatory postsynaptic potential (EPSP) which is a temporary increase in postsynaptic potential due to the flow of positively charged ions into the postsynaptic cell. The flow of ions that causes an EPSP is an excitatory postsynaptic current (EPSC) and makes it easier for the neuron to fire an action potential." [GOC:BHF]
+synonym: "negative regulation of EPSP" RELATED []
+synonym: "negative regulation of excitatory post-synaptic membrane potential" EXACT []
+synonym: "reduction of excitatory postsynaptic membrane potential" EXACT [GOC:bf]
+is_a: GO:0009968 ! negative regulation of signal transduction
+is_a: GO:0050805 ! negative regulation of synaptic transmission
+is_a: GO:0098815 ! modulation of excitatory postsynaptic potential
+intersection_of: GO:0050789 ! regulation of biological process
+intersection_of: RO:0002212 GO:0060079 ! excitatory postsynaptic potential
+relationship: RO:0002212 GO:0060079 ! excitatory postsynaptic potential
+
+[Term]
 id: GO:0090407
 name: organophosphate biosynthetic process
 def: "The chemical reactions and pathways resulting in the biosynthesis of deoxyribose phosphate, the phosphorylated sugar 2-deoxy-erythro-pentose." [GOC:chem_mtg]
@@ -12646,6 +13251,12 @@ is_a: GO:0044456 ! synapse part
 is_a: GO:0098590 ! plasma membrane region
 intersection_of: GO:0098590 ! plasma membrane region
 intersection_of: BFO:0000050 GO:0045202 ! synapse
+
+[Term]
+id: GO:0097159
+name: organic cyclic compound binding
+def: "Interacting selectively and non-covalently with an organic cyclic compound, any molecular entity that contains carbon arranged in a cyclic molecular structure." [CHEBI:33832, GOC:sjw, PMID:7583672]
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0097384
@@ -12752,12 +13363,29 @@ is_a: GO:0006812 ! cation transport
 is_a: GO:0034220 ! ion transmembrane transport
 
 [Term]
+id: GO:0098656
+name: anion transmembrane transport
+def: "A process in which an anion is transported from one side of a membrane to the other by means of some agent such as a transporter or pore." [GOC:dos, GOC:vw]
+is_a: GO:0006820 ! anion transport
+is_a: GO:0034220 ! ion transmembrane transport
+
+[Term]
 id: GO:0098660
 name: inorganic ion transmembrane transport
 def: "A process in which an inorganic ion is transported from one side of a membrane to the other by means of some agent such as a transporter or pore." [GOC:mah]
 synonym: "inorganic ion membrane transport" EXACT []
 synonym: "transmembrane inorganic ion transport" EXACT [GOC:dph, GOC:tb]
 is_a: GO:0034220 ! ion transmembrane transport
+
+[Term]
+id: GO:0098661
+name: inorganic anion transmembrane transport
+def: "A process in which an inorganic anion is transported from one side of a membrane to the other by means of some agent such as a transporter or pore." [GOC:mah]
+synonym: "inorganic anion membrane transport" EXACT []
+synonym: "transmembrane inorganic anion transport" EXACT [GOC:dph, GOC:tb]
+is_a: GO:0015698 ! inorganic anion transport
+is_a: GO:0098656 ! anion transmembrane transport
+is_a: GO:0098660 ! inorganic ion transmembrane transport
 
 [Term]
 id: GO:0098662
@@ -12850,10 +13478,65 @@ def: "Any lipid bilayer that completely encloses some structure, and all the pro
 is_a: GO:0016020 ! membrane
 
 [Term]
+id: GO:0098815
+name: modulation of excitatory postsynaptic potential
+def: "Any process that modulates the frequency, rate or extent of excitatory postsynaptic potential (EPSP). EPSP is a process that leads to a temporary increase in postsynaptic potential due to the flow of positively charged ions into the postsynaptic cell. The flow of ions that causes an EPSP is an excitatory postsynaptic current (EPSC) and makes it easier for the neuron to fire an action potential." [GOC:dos]
+is_a: GO:0009966 ! regulation of signal transduction
+is_a: GO:0042391 ! regulation of membrane potential
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: GO:0050789 ! regulation of biological process
+intersection_of: RO:0002211 GO:0060079 ! excitatory postsynaptic potential
+relationship: RO:0002211 GO:0060079 ! excitatory postsynaptic potential
+
+[Term]
+id: GO:0098856
+name: intestinal lipid absorption
+def: "Any process in which lipids are taken up from the contents of the intestine." [GOC:dos, GOC:sl, PMID:18768481]
+is_a: GO:0006869 ! lipid transport
+is_a: GO:0050892 ! intestinal absorption
+
+[Term]
 id: GO:0098857
 name: membrane microdomain
 def: "A membrane region with a lipid composition that is distinct from that of the membrane regions that surround it." [PMID:20044567, PMID:26253820]
 is_a: GO:0098589 ! membrane region
+
+[Term]
+id: GO:0098916
+name: anterograde trans-synaptic signaling
+def: "Cell-cell signaling from pre to post-synapse, across the synaptic cleft" [GOC:dos]
+is_a: GO:0099537 ! trans-synaptic signaling
+
+[Term]
+id: GO:0098936
+name: intrinsic component of postsynaptic membrane
+def: "The component of the postsynaptic membrane consisting of the gene products and protein complexes having either part of their peptide sequence embedded in the hydrophobic region of the membrane or some other covalently attached group such as a GPI anchor that is similarly embedded in the membrane." [GOC:dos, GOC:mah]
+synonym: "intrinsic to postsynaptic membrane" NARROW []
+is_a: GO:0099240 ! intrinsic component of synaptic membrane
+intersection_of: GO:0031224 ! intrinsic component of membrane
+intersection_of: BFO:0000050 GO:0045211 ! postsynaptic membrane
+relationship: BFO:0000050 GO:0045211 ! postsynaptic membrane
+
+[Term]
+id: GO:0098960
+name: postsynaptic neurotransmitter receptor activity
+def: "Neurotransmitter receptor activity occuring in the postsynaptic membrane during synaptic transmission." [GOC:dos, GOC:signaling]
+synonym: "neurotransmitter receptor activity involved in chemical synaptic transmission." EXACT []
+is_a: GO:0030594 ! neurotransmitter receptor activity
+intersection_of: GO:0030594 ! neurotransmitter receptor activity
+intersection_of: BFO:0000050 GO:0007268 ! chemical synaptic transmission
+relationship: BFO:0000050 GO:0099565 ! chemical synaptic transmission, postsynaptic
+relationship: BFO:0000066 GO:0045211 ! postsynaptic membrane
+
+[Term]
+id: GO:0098962
+name: regulation of postsynaptic neurotransmitter receptor activity
+def: "Any process that modulates the frequency, rate or extent of neurotransmitter receptor activity involved in synaptic transmission. Modulation may be via an effect on ligand affinity, or effector funtion such as ion selectivity or pore opening/closing in ionotropic receptors." [GOC:dos]
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+is_a: GO:0099601 ! regulation of neurotransmitter receptor activity
+intersection_of: GO:0065009 ! regulation of molecular function
+intersection_of: RO:0002211 GO:0098960 ! postsynaptic neurotransmitter receptor activity
+relationship: RO:0002211 GO:0098960 ! postsynaptic neurotransmitter receptor activity
 
 [Term]
 id: GO:0098975
@@ -12861,6 +13544,15 @@ name: postsynapse of neuromuscular junction
 def: "The postsynapse of a neuromuscular junction. In vertebrate muscles this includes the motor end-plate, consisting of postjunctional folds of the sarcolemma." [GOC:dos, Wikipedia:Neuromuscular_junction&oldid=723623502]
 is_a: GO:0098794 ! postsynapse
 relationship: BFO:0000050 GO:0031594 ! neuromuscular junction
+
+[Term]
+id: GO:0098976
+name: excitatory chemical synaptic transmission
+def: "Synaptic transmission that results in an excitatory postsynaptic potential." [GOC:dos]
+is_a: GO:0007268 ! chemical synaptic transmission
+intersection_of: GO:0007268 ! chemical synaptic transmission
+intersection_of: BFO:0000051 GO:0060079 ! excitatory postsynaptic potential
+relationship: BFO:0000051 GO:0060079 ! excitatory postsynaptic potential
 
 [Term]
 id: GO:0099003
@@ -12876,6 +13568,15 @@ id: GO:0099023
 name: tethering complex
 def: "Any protein complex that plays a role in vesicle tethering." [GOC:dos, GOC:vw, PMID:27243008]
 is_a: GO:0032991 ! macromolecular complex
+
+[Term]
+id: GO:0099055
+name: integral component of postsynaptic membrane
+def: "The component of the postsynaptic membrane consisting of the gene products and protein complexes having at least some part of their peptide sequence embedded in the hydrophobic region of the membrane." [GOC:dos]
+is_a: GO:0098936 ! intrinsic component of postsynaptic membrane
+is_a: GO:0099699 ! integral component of synaptic membrane
+intersection_of: GO:0016021 ! integral component of membrane
+intersection_of: BFO:0000050 GO:0045211 ! postsynaptic membrane
 
 [Term]
 id: GO:0099080
@@ -12896,6 +13597,24 @@ def: "Enables the transmembrane transfer of an inorganic cation by a channel tha
 is_a: GO:0005261 ! cation channel activity
 is_a: GO:0015276 ! ligand-gated ion channel activity
 is_a: GO:0022890 ! inorganic cation transmembrane transporter activity
+
+[Term]
+id: GO:0099170
+name: postsynaptic modulation of chemical synaptic transmission
+def: "Any process, acting in the postsynapse that results in modulation of chemical synaptic transmission." [GOC:dos]
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: BFO:0000066 GO:0098794 ! postsynapse
+relationship: BFO:0000066 GO:0098794 ! postsynapse
+
+[Term]
+id: GO:0099171
+name: presynaptic modulation of chemical synaptic transmission
+def: "Any process, acting in the presynapse that results in modulation of chemical synaptic transmission." [GOC:dos]
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: BFO:0000066 GO:0098793 ! presynapse
+relationship: BFO:0000066 GO:0098793 ! presynapse
 
 [Term]
 id: GO:0099240
@@ -12922,10 +13641,57 @@ synonym: "fibril" RELATED []
 is_a: GO:0099081 ! supramolecular polymer
 
 [Term]
+id: GO:0099529
+name: neurotransmitter receptor activity involved in regulation of postsynaptic membrane potential
+def: "Neurotransmitter receptor activity occurring in the postsynaptic membrane that is involved in regulating postsynaptic membrane potential, either directly (ionotropic receptors) or indirectly (e.g. via GPCR activation of an ion channel.)" [GOC:dos]
+is_a: GO:0098960 ! postsynaptic neurotransmitter receptor activity
+intersection_of: GO:0030594 ! neurotransmitter receptor activity
+intersection_of: BFO:0000050 GO:0060078 ! regulation of postsynaptic membrane potential
+relationship: BFO:0000050 GO:0060078 ! regulation of postsynaptic membrane potential
+
+[Term]
+id: GO:0099531
+name: presynaptic process involved in chemical synaptic transmission
+def: "The pathway leading to secretion of a neurotransmitter from the presynapse as part of synaptic transmission." [GOC:dos]
+is_a: GO:0008150 ! biological_process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: BFO:0000050 GO:0007268 ! chemical synaptic transmission
+intersection_of: BFO:0000066 GO:0098793 ! presynapse
+relationship: BFO:0000050 GO:0007268 ! chemical synaptic transmission
+relationship: BFO:0000066 GO:0098793 ! presynapse
+
+[Term]
 id: GO:0099536
 name: synaptic signaling
 def: "Cell-cell signaling to, from or or within a synapse." [GOC:dos]
 is_a: GO:0007267 ! cell-cell signaling
+
+[Term]
+id: GO:0099537
+name: trans-synaptic signaling
+def: "Cell-cell signaling in either direction across the synaptic cleft." [GOC:dos]
+is_a: GO:0099536 ! synaptic signaling
+
+[Term]
+id: GO:0099550
+name: trans-synaptic signaling, modulating synaptic transmission
+def: "Cell-cell signaling between presynapse and postsynapse, across the synaptic cleft, that modulates the synaptic transmission properties of the synapse." [GOC:dos]
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+is_a: GO:0099537 ! trans-synaptic signaling
+intersection_of: GO:0099537 ! trans-synaptic signaling
+intersection_of: RO:0002211 GO:0007268 ! chemical synaptic transmission
+
+[Term]
+id: GO:0099565
+name: chemical synaptic transmission, postsynaptic
+def: "The part of synaptic transmission occurring in the post-synapse: a signal transduction pathway consisting of neurotransmitter receptor activation and its effects on postsynaptic membrane potential and the ionic composition of the postsynaptic cytosol." [GOC:dos]
+synonym: "postsynaptic process involved in chemical synaptic transmission" RELATED syngo_official_label []
+is_a: GO:1905114 ! cell surface receptor signaling pathway involved in cell-cell signaling
+intersection_of: GO:0007166 ! cell surface receptor signaling pathway
+intersection_of: BFO:0000050 GO:0007268 ! chemical synaptic transmission
+intersection_of: BFO:0000066 GO:0098794 ! postsynapse
+relationship: BFO:0000050 GO:0007268 ! chemical synaptic transmission
+relationship: BFO:0000066 GO:0098794 ! postsynapse
 
 [Term]
 id: GO:0099568
@@ -13090,6 +13856,12 @@ intersection_of: BFO:0000050 GO:0120025 ! plasma membrane bounded cell projectio
 relationship: BFO:0000050 GO:0120025 ! plasma membrane bounded cell projection
 
 [Term]
+id: GO:0120054
+name: intestinal motility
+def: "Contractions of the intestinal tract that include peristalsis (moving contents onward) and non-peristaltic movement (moving contents back and forth)." [GOC:sl, PMID:15890336]
+is_a: GO:0022600 ! digestive system process
+
+[Term]
 id: GO:0140053
 name: mitochondrial gene expression
 def: "The process in which a mitochondrial gene's sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." [PMID:27058308]
@@ -13180,6 +13952,43 @@ is_a: GO:1900046 ! regulation of hemostasis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0007599 ! hemostasis
 relationship: RO:0002213 GO:0007599 ! hemostasis
+
+[Term]
+id: GO:1900073
+name: regulation of neuromuscular synaptic transmission
+def: "Any process that modulates the frequency, rate or extent of neuromuscular synaptic transmission." [GOC:kmv, GOC:TermGenie]
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007274 ! neuromuscular synaptic transmission
+relationship: RO:0002211 GO:0007274 ! neuromuscular synaptic transmission
+
+[Term]
+id: GO:1900074
+name: negative regulation of neuromuscular synaptic transmission
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of neuromuscular synaptic transmission." [GOC:kmv, GOC:TermGenie]
+synonym: "down regulation of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+synonym: "down-regulation of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+synonym: "downregulation of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+synonym: "inhibition of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+is_a: GO:0050805 ! negative regulation of synaptic transmission
+is_a: GO:1900073 ! regulation of neuromuscular synaptic transmission
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007274 ! neuromuscular synaptic transmission
+relationship: RO:0002212 GO:0007274 ! neuromuscular synaptic transmission
+
+[Term]
+id: GO:1900075
+name: positive regulation of neuromuscular synaptic transmission
+def: "Any process that activates or increases the frequency, rate or extent of neuromuscular synaptic transmission." [GOC:kmv, GOC:TermGenie]
+synonym: "activation of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+synonym: "up regulation of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+synonym: "up-regulation of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+synonym: "upregulation of neuromuscular synaptic transmission" RELATED [GOC:TermGenie]
+is_a: GO:0050806 ! positive regulation of synaptic transmission
+is_a: GO:1900073 ! regulation of neuromuscular synaptic transmission
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007274 ! neuromuscular synaptic transmission
+relationship: RO:0002213 GO:0007274 ! neuromuscular synaptic transmission
 
 [Term]
 id: GO:1900115
@@ -13652,6 +14461,12 @@ synonym: "organic cyclic compound formation" EXACT [GOC:TermGenie]
 synonym: "organic cyclic compound synthesis" EXACT [GOC:TermGenie]
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:1901363
+name: heterocyclic compound binding
+def: "Interacting selectively and non-covalently with heterocyclic compound." [GOC:TermGenie]
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:1901401
@@ -14206,6 +15021,13 @@ synonym: "erythrose 4-phosphate/phosphoenolpyruvate family amino acid metabolism
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
+id: GO:1902476
+name: chloride transmembrane transport
+def: "The directed movement of chloride across a membrane." [GOC:TermGenie, GOC:vw]
+is_a: GO:0006821 ! chloride transport
+is_a: GO:0098661 ! inorganic anion transmembrane transport
+
+[Term]
 id: GO:1902494
 name: catalytic complex
 def: "A protein complex which is capable of catalytic activity." [GOC:bhm, GOC:TermGenie, PMID:8077207]
@@ -14584,6 +15406,33 @@ is_a: GO:1903034 ! regulation of response to wounding
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0009611 ! response to wounding
 relationship: RO:0002213 GO:0009611 ! response to wounding
+
+[Term]
+id: GO:1903048
+name: regulation of acetylcholine-gated cation channel activity
+def: "Any process that modulates the frequency, rate or extent of acetylcholine-gated cation channel activity." [GO_REF:0000059, GOC:bf, GOC:PARL, GOC:TermGenie, PMID:21718690]
+is_a: GO:0098815 ! modulation of excitatory postsynaptic potential
+is_a: GO:0098962 ! regulation of postsynaptic neurotransmitter receptor activity
+is_a: GO:2001257 ! regulation of cation channel activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0022848 ! acetylcholine-gated cation-selective channel activity
+relationship: RO:0002211 GO:0022848 ! acetylcholine-gated cation-selective channel activity
+
+[Term]
+id: GO:1903049
+name: negative regulation of acetylcholine-gated cation channel activity
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of acetylcholine-gated cation channel activity." [GO_REF:0000059, GOC:bf, GOC:PARL, GOC:TermGenie, PMID:21718690]
+synonym: "down regulation of acetylcholine-gated cation channel activity" EXACT [GOC:TermGenie]
+synonym: "down-regulation of acetylcholine-gated cation channel activity" EXACT [GOC:TermGenie]
+synonym: "downregulation of acetylcholine-gated cation channel activity" EXACT [GOC:TermGenie]
+synonym: "inhibition of acetylcholine-gated cation channel activity" NARROW [GOC:TermGenie]
+is_a: GO:0090394 ! negative regulation of excitatory postsynaptic potential
+is_a: GO:1903048 ! regulation of acetylcholine-gated cation channel activity
+is_a: GO:2000272 ! negative regulation of receptor activity
+is_a: GO:2001258 ! negative regulation of cation channel activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0022848 ! acetylcholine-gated cation-selective channel activity
+relationship: RO:0002212 GO:0022848 ! acetylcholine-gated cation-selective channel activity
 
 [Term]
 id: GO:1903108
@@ -15181,6 +16030,93 @@ intersection_of: RO:0002213 GO:0061337 ! cardiac conduction
 relationship: RO:0002213 GO:0061337 ! cardiac conduction
 
 [Term]
+id: GO:1903792
+name: negative regulation of anion transport
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of anion transport." [GO_REF:0000058, GOC:TermGenie, PMID:11336802]
+synonym: "down regulation of anion transport" EXACT [GOC:TermGenie]
+synonym: "down-regulation of anion transport" EXACT [GOC:TermGenie]
+synonym: "downregulation of anion transport" EXACT [GOC:TermGenie]
+synonym: "inhibition of anion transport" NARROW [GOC:TermGenie]
+is_a: GO:0043271 ! negative regulation of ion transport
+is_a: GO:0044070 ! regulation of anion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006820 ! anion transport
+relationship: RO:0002212 GO:0006820 ! anion transport
+
+[Term]
+id: GO:1903793
+name: positive regulation of anion transport
+def: "Any process that activates or increases the frequency, rate or extent of anion transport." [GO_REF:0000058, GOC:TermGenie, PMID:11336802]
+synonym: "activation of anion transport" NARROW [GOC:TermGenie]
+synonym: "up regulation of anion transport" EXACT [GOC:TermGenie]
+synonym: "up-regulation of anion transport" EXACT [GOC:TermGenie]
+synonym: "upregulation of anion transport" EXACT [GOC:TermGenie]
+is_a: GO:0043270 ! positive regulation of ion transport
+is_a: GO:0044070 ! regulation of anion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006820 ! anion transport
+relationship: RO:0002213 GO:0006820 ! anion transport
+
+[Term]
+id: GO:1903795
+name: regulation of inorganic anion transmembrane transport
+def: "Any process that modulates the frequency, rate or extent of inorganic anion transmembrane transport." [GO_REF:0000058, GOC:TermGenie, PMID:11336802]
+synonym: "regulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "regulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+is_a: GO:1903959 ! regulation of anion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0098661 ! inorganic anion transmembrane transport
+relationship: RO:0002211 GO:0098661 ! inorganic anion transmembrane transport
+
+[Term]
+id: GO:1903796
+name: negative regulation of inorganic anion transmembrane transport
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of inorganic anion transmembrane transport." [GO_REF:0000058, GOC:TermGenie, PMID:11336802]
+synonym: "down regulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "down regulation of inorganic anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "down regulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+synonym: "down-regulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "down-regulation of inorganic anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "down-regulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+synonym: "downregulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "downregulation of inorganic anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "downregulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+synonym: "inhibition of inorganic anion membrane transport" NARROW [GOC:TermGenie]
+synonym: "inhibition of inorganic anion transmembrane transport" NARROW [GOC:TermGenie]
+synonym: "inhibition of transmembrane inorganic anion transport" NARROW [GOC:TermGenie]
+synonym: "negative regulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "negative regulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+is_a: GO:1903795 ! regulation of inorganic anion transmembrane transport
+is_a: GO:1903960 ! negative regulation of anion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0098661 ! inorganic anion transmembrane transport
+relationship: RO:0002212 GO:0098661 ! inorganic anion transmembrane transport
+
+[Term]
+id: GO:1903797
+name: positive regulation of inorganic anion transmembrane transport
+def: "Any process that activates or increases the frequency, rate or extent of inorganic anion transmembrane transport." [GO_REF:0000058, GOC:TermGenie, PMID:11336802]
+synonym: "activation of inorganic anion membrane transport" NARROW [GOC:TermGenie]
+synonym: "activation of inorganic anion transmembrane transport" NARROW [GOC:TermGenie]
+synonym: "activation of transmembrane inorganic anion transport" NARROW [GOC:TermGenie]
+synonym: "positive regulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "positive regulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+synonym: "up regulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "up regulation of inorganic anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "up regulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+synonym: "up-regulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "up-regulation of inorganic anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "up-regulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+synonym: "upregulation of inorganic anion membrane transport" EXACT [GOC:TermGenie]
+synonym: "upregulation of inorganic anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "upregulation of transmembrane inorganic anion transport" EXACT [GOC:TermGenie]
+is_a: GO:1903795 ! regulation of inorganic anion transmembrane transport
+is_a: GO:1903961 ! positive regulation of anion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0098661 ! inorganic anion transmembrane transport
+relationship: RO:0002213 GO:0098661 ! inorganic anion transmembrane transport
+
+[Term]
 id: GO:1903862
 name: positive regulation of oxidative phosphorylation
 def: "Any process that activates or increases the frequency, rate or extent of oxidative phosphorylation." [GO_REF:0000058, GOC:TermGenie, PMID:10225962]
@@ -15227,6 +16163,46 @@ is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0007585 ! respiratory gaseous exchange
 relationship: RO:0002213 GO:0007585 ! respiratory gaseous exchange
+
+[Term]
+id: GO:1903959
+name: regulation of anion transmembrane transport
+def: "Any process that modulates the frequency, rate or extent of anion transmembrane transport." [GO_REF:0000058, GOC:TermGenie, GOC:vw]
+is_a: GO:0034765 ! regulation of ion transmembrane transport
+is_a: GO:0044070 ! regulation of anion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0098656 ! anion transmembrane transport
+relationship: RO:0002211 GO:0098656 ! anion transmembrane transport
+
+[Term]
+id: GO:1903960
+name: negative regulation of anion transmembrane transport
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of anion transmembrane transport." [GO_REF:0000058, GOC:TermGenie, GOC:vw]
+synonym: "down regulation of anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "down-regulation of anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "downregulation of anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "inhibition of anion transmembrane transport" NARROW [GOC:TermGenie]
+is_a: GO:0034766 ! negative regulation of ion transmembrane transport
+is_a: GO:1903792 ! negative regulation of anion transport
+is_a: GO:1903959 ! regulation of anion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0098656 ! anion transmembrane transport
+relationship: RO:0002212 GO:0098656 ! anion transmembrane transport
+
+[Term]
+id: GO:1903961
+name: positive regulation of anion transmembrane transport
+def: "Any process that activates or increases the frequency, rate or extent of anion transmembrane transport." [GO_REF:0000058, GOC:TermGenie, GOC:vw]
+synonym: "activation of anion transmembrane transport" NARROW [GOC:TermGenie]
+synonym: "up regulation of anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "up-regulation of anion transmembrane transport" EXACT [GOC:TermGenie]
+synonym: "upregulation of anion transmembrane transport" EXACT [GOC:TermGenie]
+is_a: GO:0034767 ! positive regulation of ion transmembrane transport
+is_a: GO:1903793 ! positive regulation of anion transport
+is_a: GO:1903959 ! regulation of anion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0098656 ! anion transmembrane transport
+relationship: RO:0002213 GO:0098656 ! anion transmembrane transport
 
 [Term]
 id: GO:1903998
@@ -15466,6 +16442,97 @@ intersection_of: RO:0002213 GO:0008206 ! bile acid metabolic process
 relationship: RO:0002213 GO:0008206 ! bile acid metabolic process
 
 [Term]
+id: GO:1904315
+name: transmitter-gated ion channel activity involved in regulation of postsynaptic membrane potential
+def: "Any transmitter-gated ion channel activity that is involved in regulation of postsynaptic membrane potential." [GO_REF:0000061, GOC:TermGenie, PMID:20200227]
+synonym: "ionotropic neurotransmitter receptor activity involved in regulation of post-synaptic membrane potential" NARROW [GOC:TermGenie]
+synonym: "ionotropic neurotransmitter receptor activity involved in regulation of postsynaptic membrane potential" NARROW [GOC:TermGenie]
+is_a: GO:0022824 ! transmitter-gated ion channel activity
+is_a: GO:0099529 ! neurotransmitter receptor activity involved in regulation of postsynaptic membrane potential
+intersection_of: GO:0022824 ! transmitter-gated ion channel activity
+intersection_of: BFO:0000050 GO:0060078 ! regulation of postsynaptic membrane potential
+
+[Term]
+id: GO:1904478
+name: regulation of intestinal absorption
+def: "Any process that modulates the frequency, rate or extent of intestinal absorption." [GO_REF:0000058, GOC:BHF, GOC:rl, GOC:TermGenie, PMID:12469120]
+is_a: GO:0044058 ! regulation of digestive system process
+is_a: GO:0051049 ! regulation of transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0050892 ! intestinal absorption
+relationship: RO:0002211 GO:0050892 ! intestinal absorption
+
+[Term]
+id: GO:1904479
+name: negative regulation of intestinal absorption
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of intestinal absorption." [GO_REF:0000058, GOC:BHF, GOC:rl, GOC:TermGenie, PMID:12469120]
+synonym: "down regulation of intestinal absorption" EXACT [GOC:TermGenie]
+synonym: "down-regulation of intestinal absorption" EXACT [GOC:TermGenie]
+synonym: "downregulation of intestinal absorption" EXACT [GOC:TermGenie]
+synonym: "inhibition of intestinal absorption" NARROW [GOC:TermGenie]
+is_a: GO:0051051 ! negative regulation of transport
+is_a: GO:0060457 ! negative regulation of digestive system process
+is_a: GO:1904478 ! regulation of intestinal absorption
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0050892 ! intestinal absorption
+relationship: RO:0002212 GO:0050892 ! intestinal absorption
+
+[Term]
+id: GO:1904480
+name: positive regulation of intestinal absorption
+def: "Any process that activates or increases the frequency, rate or extent of intestinal absorption." [GO_REF:0000058, GOC:BHF, GOC:rl, GOC:TermGenie, PMID:12469120]
+synonym: "activation of intestinal absorption" NARROW [GOC:TermGenie]
+synonym: "up regulation of intestinal absorption" EXACT [GOC:TermGenie]
+synonym: "up-regulation of intestinal absorption" EXACT [GOC:TermGenie]
+synonym: "upregulation of intestinal absorption" EXACT [GOC:TermGenie]
+is_a: GO:0051050 ! positive regulation of transport
+is_a: GO:0060456 ! positive regulation of digestive system process
+is_a: GO:1904478 ! regulation of intestinal absorption
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0050892 ! intestinal absorption
+relationship: RO:0002213 GO:0050892 ! intestinal absorption
+
+[Term]
+id: GO:1904729
+name: regulation of intestinal lipid absorption
+def: "Any process that modulates the frequency, rate or extent of intestinal lipid absorption." [GO_REF:0000058, GOC:TermGenie, PMID:18768481]
+is_a: GO:0032368 ! regulation of lipid transport
+is_a: GO:1904478 ! regulation of intestinal absorption
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0098856 ! intestinal lipid absorption
+relationship: RO:0002211 GO:0098856 ! intestinal lipid absorption
+
+[Term]
+id: GO:1904730
+name: negative regulation of intestinal lipid absorption
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of intestinal lipid absorption." [GO_REF:0000058, GOC:TermGenie, PMID:18768481]
+synonym: "down regulation of intestinal lipid absorption" EXACT [GOC:TermGenie]
+synonym: "down-regulation of intestinal lipid absorption" EXACT [GOC:TermGenie]
+synonym: "downregulation of intestinal lipid absorption" EXACT [GOC:TermGenie]
+synonym: "inhibition of intestinal lipid absorption" NARROW [GOC:TermGenie]
+is_a: GO:0032369 ! negative regulation of lipid transport
+is_a: GO:1904479 ! negative regulation of intestinal absorption
+is_a: GO:1904729 ! regulation of intestinal lipid absorption
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0098856 ! intestinal lipid absorption
+relationship: RO:0002212 GO:0098856 ! intestinal lipid absorption
+
+[Term]
+id: GO:1904731
+name: positive regulation of intestinal lipid absorption
+def: "Any process that activates or increases the frequency, rate or extent of intestinal lipid absorption." [GO_REF:0000058, GOC:TermGenie, PMID:18768481]
+synonym: "activation of intestinal lipid absorption" NARROW [GOC:TermGenie]
+synonym: "up regulation of intestinal lipid absorption" EXACT [GOC:TermGenie]
+synonym: "up-regulation of intestinal lipid absorption" EXACT [GOC:TermGenie]
+synonym: "upregulation of intestinal lipid absorption" EXACT [GOC:TermGenie]
+is_a: GO:0032370 ! positive regulation of lipid transport
+is_a: GO:1904480 ! positive regulation of intestinal absorption
+is_a: GO:1904729 ! regulation of intestinal lipid absorption
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0098856 ! intestinal lipid absorption
+relationship: RO:0002213 GO:0098856 ! intestinal lipid absorption
+
+[Term]
 id: GO:1904774
 name: negative regulation of ubiquinone biosynthetic process
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of ubiquinone biosynthetic process." [GO_REF:0000058, GOC:TermGenie, PMID:8125303]
@@ -15688,6 +16755,20 @@ intersection_of: RO:0002213 GO:0004972 ! NMDA glutamate receptor activity
 relationship: RO:0002213 GO:0004972 ! NMDA glutamate receptor activity
 
 [Term]
+id: GO:1905030
+name: voltage-gated ion channel activity involved in regulation of postsynaptic membrane potential
+def: "Any voltage-gated ion channel activity that is involved in regulation of postsynaptic membrane potential." [GO_REF:0000061, GOC:TermGenie, ISBN:9780071120005]
+synonym: "voltage gated ion channel activity involved in regulation of post-synaptic membrane potential" EXACT [GOC:TermGenie]
+synonym: "voltage gated ion channel activity involved in regulation of postsynaptic membrane potential" EXACT [GOC:TermGenie]
+synonym: "voltage-dependent ion channel activity involved in regulation of post-synaptic membrane potential" EXACT [GOC:TermGenie]
+synonym: "voltage-dependent ion channel activity involved in regulation of postsynaptic membrane potential" EXACT [GOC:TermGenie]
+synonym: "voltage-gated ion channel activity involved in regulation of post-synaptic membrane potential" EXACT [GOC:TermGenie]
+is_a: GO:0005244 ! voltage-gated ion channel activity
+intersection_of: GO:0005244 ! voltage-gated ion channel activity
+intersection_of: BFO:0000050 GO:0060078 ! regulation of postsynaptic membrane potential
+relationship: BFO:0000050 GO:0060078 ! regulation of postsynaptic membrane potential
+
+[Term]
 id: GO:1905038
 name: regulation of membrane lipid metabolic process
 def: "Any process that modulates the frequency, rate or extent of membrane lipid metabolic process." [GO_REF:0000058, GOC:TermGenie, PMID:25954280]
@@ -15750,6 +16831,43 @@ is_a: GO:1905153 ! regulation of membrane invagination
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0010324 ! membrane invagination
 relationship: RO:0002213 GO:0010324 ! membrane invagination
+
+[Term]
+id: GO:1905214
+name: regulation of RNA binding
+def: "Any process that modulates the frequency, rate or extent of RNA binding." [GO_REF:0000059, GOC:bf, GOC:PARL, GOC:TermGenie]
+is_a: GO:0051098 ! regulation of binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0003723 ! RNA binding
+relationship: RO:0002211 GO:0003723 ! RNA binding
+
+[Term]
+id: GO:1905215
+name: negative regulation of RNA binding
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of RNA binding." [GO_REF:0000059, GOC:bf, GOC:PARL, GOC:TermGenie]
+synonym: "down regulation of RNA binding" EXACT [GOC:TermGenie]
+synonym: "down-regulation of RNA binding" EXACT [GOC:TermGenie]
+synonym: "downregulation of RNA binding" EXACT [GOC:TermGenie]
+synonym: "inhibition of RNA binding" NARROW [GOC:TermGenie]
+is_a: GO:0051100 ! negative regulation of binding
+is_a: GO:1905214 ! regulation of RNA binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0003723 ! RNA binding
+relationship: RO:0002212 GO:0003723 ! RNA binding
+
+[Term]
+id: GO:1905216
+name: positive regulation of RNA binding
+def: "Any process that activates or increases the frequency, rate or extent of RNA binding." [GO_REF:0000059, GOC:bf, GOC:PARL, GOC:TermGenie, PMID:25116364]
+synonym: "activation of RNA binding" NARROW [GOC:TermGenie]
+synonym: "up regulation of RNA binding" EXACT [GOC:TermGenie]
+synonym: "up-regulation of RNA binding" EXACT [GOC:TermGenie]
+synonym: "upregulation of RNA binding" EXACT [GOC:TermGenie]
+is_a: GO:0051099 ! positive regulation of binding
+is_a: GO:1905214 ! regulation of RNA binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0003723 ! RNA binding
+relationship: RO:0002213 GO:0003723 ! RNA binding
 
 [Term]
 id: GO:1905292
@@ -16192,6 +17310,19 @@ intersection_of: RO:0002213 GO:0023035 ! CD40 signaling pathway
 relationship: RO:0002213 GO:0023035 ! CD40 signaling pathway
 
 [Term]
+id: GO:2000463
+name: positive regulation of excitatory postsynaptic potential
+def: "Any process that enhances the establishment or increases the extent of the excitatory postsynaptic potential (EPSP) which is a temporary increase in postsynaptic potential due to the flow of positively charged ions into the postsynaptic cell. The flow of ions that causes an EPSP is an excitatory postsynaptic current (EPSC) and makes it easier for the neuron to fire an action potential." [GOC:bf, GOC:BHF]
+synonym: "positive regulation of EPSP" RELATED [GOC:bf, GOC:obol]
+synonym: "positive regulation of excitatory post-synaptic membrane potential" EXACT []
+is_a: GO:0009967 ! positive regulation of signal transduction
+is_a: GO:0050806 ! positive regulation of synaptic transmission
+is_a: GO:0098815 ! modulation of excitatory postsynaptic potential
+intersection_of: GO:0050789 ! regulation of biological process
+intersection_of: RO:0002213 GO:0060079 ! excitatory postsynaptic potential
+relationship: RO:0002213 GO:0060079 ! excitatory postsynaptic potential
+
+[Term]
 id: GO:2000736
 name: regulation of stem cell differentiation
 def: "Any process that modulates the frequency, rate or extent of stem cell differentiation." [GOC:obol]
@@ -16373,6 +17504,25 @@ is_a: GO:2001169 ! regulation of ATP biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006754 ! ATP biosynthetic process
 relationship: RO:0002213 GO:0006754 ! ATP biosynthetic process
+
+[Term]
+id: GO:2001225
+name: regulation of chloride transport
+def: "Any process that modulates the frequency, rate or extent of chloride transport." [GOC:dph]
+is_a: GO:0044070 ! regulation of anion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006821 ! chloride transport
+relationship: RO:0002211 GO:0006821 ! chloride transport
+
+[Term]
+id: GO:2001226
+name: negative regulation of chloride transport
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of chloride transport." [GOC:dph]
+is_a: GO:1903792 ! negative regulation of anion transport
+is_a: GO:2001225 ! regulation of chloride transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006821 ! chloride transport
+relationship: RO:0002212 GO:0006821 ! chloride transport
 
 [Term]
 id: GO:2001257

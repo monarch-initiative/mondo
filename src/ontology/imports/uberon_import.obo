@@ -6562,6 +6562,22 @@ intersection_of: BFO:0000050 UBERON:0003100 ! female organism
 relationship: BFO:0000050 UBERON:0003100 ! female organism
 
 [Term]
+id: UBERON:0001335
+name: prostatic urethra
+def: "the widest and most dilatable part of the male urethra canal which runs almost vertically through the prostate from its base to its apex, lying nearer its anterior than its posterior surface; this portion of the urethral canal is spindle-shaped, being wider in the middle than at either extremity, and narrowest below, where it joins the membranous portion; it is lined by transitional epithelium and contains in its posterior wall, or floor, the orifices of the prostatic utricle, ejaculatory ducts, and prostatic ducts, collectively known as the seminal colliculus (aka verumontanum)" [MGI:anna, MP:0011777]
+synonym: "male prostatic urethra" EXACT [MP:0011777]
+synonym: "pars prostatica urethrae" EXACT [MP:0011777]
+synonym: "pars prostatica urethrae" EXACT LATIN [http://en.wikipedia.org/wiki/Prostatic_urethra]
+synonym: "pars prostatica urethrae" RELATED [BTO:0003163]
+synonym: "prostatic part of male urethra" EXACT [MP:0011777]
+synonym: "prostatic part of urethra" EXACT []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0013522 ! subdivision of tube
+relationship: BFO:0000050 UBERON:0001333 {source="FMA", source="MA"} ! male urethra
+relationship: RO:0001025 UBERON:0002367 {source="FMA"} ! prostate gland
+relationship: RO:0002433 UBERON:0001333 ! male urethra
+
+[Term]
 id: UBERON:0001338
 name: urethral gland
 def: "Any of the numerous small mucous-secreting glands located in the wall of the male or female urethra that help protect the epithelium from the corrosive urine" [MP:anna]
@@ -22255,6 +22271,25 @@ relationship: BFO:0000050 UBERON:0002116 ! ileum
 relationship: RO:0002202 UBERON:0007105 {source="Wikipedia"} ! vitelline duct
 
 [Term]
+id: UBERON:0003707
+name: sinus of Valsalva
+def: "one of the anatomic dilations of the ascending aorta, which occurs just above the aortic valve." [http://en.wikipedia.org/wiki/Aortic_sinus]
+synonym: "aortic sinus" EXACT [MP:0010483]
+synonym: "Petit sinus" EXACT [MP:0010483]
+synonym: "Petit's sinus" EXACT [http://en.wikipedia.org/wiki/Aortic_sinus]
+synonym: "sinus aorta" RELATED [http://en.wikipedia.org/wiki/Aortic_sinus]
+synonym: "sinus aortae" RELATED LATIN [http://en.wikipedia.org/wiki/Aortic_sinus]
+synonym: "sinus aortae" RELATED [http://en.wikipedia.org/wiki/Aortic_sinus]
+synonym: "sinus of Morgagni" RELATED [http://en.wikipedia.org/wiki/Aortic_sinus]
+synonym: "sinus of Otto" RELATED [http://en.wikipedia.org/wiki/Aortic_sinus]
+synonym: "Valsalva sinus" EXACT [MP:0010483]
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0010172 {source="FMA", source="MP"} ! bulb of aorta
+relationship: RO:0002433 UBERON:0010172 ! bulb of aorta
+
+[Term]
 id: UBERON:0003709
 name: circle of Willis
 def: "A circle of arteries that supply blood to the brain. The Circle of Willis comprises the following arteries: Anterior cerebral artery (left and right); Anterior communicating artery; Internal carotid artery (left and right); Posterior cerebral artery (left and right); Posterior communicating artery (left and right).The basilar artery and middle cerebral arteries, supplying the brain, are also considered part of the circle" [http://en.wikipedia.org/wiki/Circle_of_Willis]
@@ -30732,6 +30767,32 @@ intersection_of: BFO:0000050 UBERON:0001334 ! female urethra
 relationship: BFO:0000050 UBERON:0001334 ! female urethra
 
 [Term]
+id: UBERON:0005015
+name: mucosa of prostatic urethra
+def: "A mucosa that is part of a prostatic urethra [Automatically generated definition]." [OBOL:automatic]
+synonym: "mucosa of organ of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of prostatic urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of prostatic urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of prostatic urethra" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra mucosa" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "prostatic urethra mucosa" EXACT [OBOL:automatic]
+synonym: "prostatic urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "prostatic urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "prostatic urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "prostatic urethral mucosa" EXACT [FMA:77079]
+synonym: "tunica mucosa urethrae prosticae" EXACT LATIN [FMA:77079, FMA:TA]
+is_a: UBERON:0005013 ! mucosa of male urethra
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0001335 ! prostatic urethra
+relationship: BFO:0000050 UBERON:0001335 ! prostatic urethra
+
+[Term]
 id: UBERON:0005017
 name: mucosa of lacrimal sac
 def: "A mucosa that is part of a lacrimal sac [Automatically generated definition]." [OBOL:automatic]
@@ -36875,6 +36936,15 @@ synonym: "galea aponeurotica; aponeurosis epicranialis" RELATED LATIN [http://en
 synonym: "galeal aponeurosis" RELATED [http://en.wikipedia.org/wiki/Galea_aponeurotica]
 is_a: UBERON:0006614 ! aponeurosis
 relationship: BFO:0000050 UBERON:0000403 {source="FMA"} ! scalp
+
+[Term]
+id: UBERON:0006666
+name: great cerebral vein
+def: "The great cerebral vein is one of the large blood vessels in the skull draining the cerebrum (brain)[WP,unvetted]" [http://en.wikipedia.org/wiki/Great_cerebral_vein]
+synonym: "great cerebral vein" EXACT [FMA:50993]
+synonym: "great cerebral vein of Galen" EXACT [FMA:50993]
+synonym: "vein of Galen" EXACT [FMA:50993]
+is_a: UBERON:0001663 ! cerebral vein
 
 [Term]
 id: UBERON:0006668
@@ -51559,6 +51629,14 @@ intersection_of: BFO:0000050 UBERON:0001837 ! duct of salivary gland
 relationship: BFO:0000050 UBERON:0001837 ! duct of salivary gland
 
 [Term]
+id: UBERON:0015777
+name: transitional epithelium of prostatic urethra
+is_a: UBERON:0004787 ! urethra urothelium
+is_a: UBERON:0005911 {source="FMA"} ! endo-epithelium
+is_a: UBERON:0016510 ! epithelium of male urethra
+relationship: BFO:0000050 UBERON:0001335 ! prostatic urethra
+
+[Term]
 id: UBERON:0015783
 name: smooth muscle layer in fatty layer of subcutaneous tissue
 def: "A smooth muscle tissue that is part of a hypodermis." [OBOL:automatic]
@@ -52025,6 +52103,31 @@ is_a: UBERON:0035763 ! cavity of cardiac chamber
 intersection_of: UBERON:0002553 ! anatomical cavity
 intersection_of: RO:0002572 UBERON:0002084 ! heart left ventricle
 relationship: RO:0002572 UBERON:0002084 ! heart left ventricle
+
+[Term]
+id: UBERON:0016515
+name: muscular layer of prostatic urethra
+def: "A muscular coat that is part of a prostatic urethra." [OBOL:automatic]
+synonym: "muscle layer of prostatic part of urethra" EXACT [FMA:FMA]
+synonym: "muscle layer of prostatic urethra" EXACT [EMAPA:30956]
+synonym: "muscle layer of prostatic urethra" EXACT [FMA:FMA]
+synonym: "muscular coat of prostatic urethra" EXACT [FMA:FMA]
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0006660 ! muscular coat
+intersection_of: UBERON:0006660 ! muscular coat
+intersection_of: BFO:0000050 UBERON:0001335 ! prostatic urethra
+relationship: BFO:0000050 UBERON:0001335 ! prostatic urethra
+
+[Term]
+id: UBERON:0016516
+name: lamina propria of prostatic urethra
+def: "A lamina propria that is part of a prostatic urethra." [OBOL:automatic]
+synonym: "lamina propria of prostatic part of urethra" EXACT [FMA:FMA]
+synonym: "lamina propria of prostatic urethra" EXACT [EMAPA:32303]
+is_a: UBERON:0002326 ! lamina propria of urethra
+intersection_of: UBERON:0000030 ! lamina propria
+intersection_of: BFO:0000050 UBERON:0001335 ! prostatic urethra
+relationship: BFO:0000050 UBERON:0001335 ! prostatic urethra
 
 [Term]
 id: UBERON:0016517
