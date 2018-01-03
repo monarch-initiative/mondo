@@ -1755,6 +1755,16 @@ intersection_of: BFO:0000050 GO:0060079 ! excitatory postsynaptic potential
 relationship: BFO:0000050 GO:0060079 ! excitatory postsynaptic potential
 
 [Term]
+id: GO:0005243
+name: gap junction channel activity
+def: "A wide pore channel activity that enables a direct cytoplasmic connection from one cell to an adjacent cell. The gap junction can pass large solutes as well as electrical signals between cells. Gap junctions consist of two gap junction hemi-channels, or connexons, one contributed by each membrane through which the gap junction passes." [GOC:dgh, GOC:mtg_transport, ISBN:0815340729]
+synonym: "connexin" RELATED []
+synonym: "innexin" NARROW []
+synonym: "innexin channel activity" EXACT []
+synonym: "intercellular channel" BROAD []
+is_a: GO:0022829 ! wide pore channel activity
+
+[Term]
 id: GO:0005244
 name: voltage-gated ion channel activity
 def: "Enables the transmembrane transfer of an ion by a voltage-gated channel. An ion is an atom or group of atoms carrying an electric charge by virtue of having gained or lost one or more electrons. A voltage-gated channel is a channel whose open state is dependent on the voltage across the membrane in which it is embedded." [GOC:mtg_transport, ISBN:0198506732, ISBN:0815340729]
@@ -3165,6 +3175,20 @@ synonym: "sense organ development" EXACT [GOC:dph]
 is_a: GO:0048513 ! animal organ development
 
 [Term]
+id: GO:0007498
+name: mesoderm development
+def: "The process whose specific outcome is the progression of the mesoderm over time, from its formation to the mature structure. The mesoderm is the middle germ layer that develops into muscle, bone, cartilage, blood and connective tissue." [GOC:dph, GOC:tb]
+is_a: GO:0009888 ! tissue development
+
+[Term]
+id: GO:0007499
+name: ectoderm and mesoderm interaction
+def: "A cell-cell signaling process occurring between the two gastrulation-generated layers of the ectoderm and the mesoderm." [GOC:isa_complete]
+synonym: "ectoderm/mesoderm interaction" EXACT []
+is_a: GO:0007267 ! cell-cell signaling
+relationship: BFO:0000050 GO:0007498 ! mesoderm development
+
+[Term]
 id: GO:0007548
 name: sex differentiation
 def: "The establishment of the sex of an organism by physical differentiation." [GOC:ai]
@@ -4266,6 +4290,13 @@ is_a: GO:0031349 ! positive regulation of defense response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006968 ! cellular defense response
 relationship: RO:0002213 GO:0006968 ! cellular defense response
+
+[Term]
+id: GO:0010259
+name: multicellular organism aging
+def: "An aging process that has as participant a whole multicellular organism. Multicellular organism aging includes loss of functions such as resistance to disease, homeostasis, and fertility, as well as wear and tear. Multicellular organisms aging includes processes like cellular senescence and organ senescence, but is more inclusive. May precede death (GO:0016265) of an organism and may succeed developmental maturation (GO:0021700)." [GOC:PO_curators]
+is_a: GO:0007275 ! multicellular organism development
+is_a: GO:0007568 ! aging
 
 [Term]
 id: GO:0010324
@@ -5784,6 +5815,14 @@ def: "Enables the transmembrane transfer of an ion by a channel that opens when 
 synonym: "ionotropic neurotransmitter receptor activity" NARROW [GOC:bf, GOC:sart]
 is_a: GO:0005230 ! extracellular ligand-gated ion channel activity
 is_a: GO:0022835 ! transmitter-gated channel activity
+
+[Term]
+id: GO:0022829
+name: wide pore channel activity
+def: "Enables the transport of a solute across a membrane via a large pore, un-gated channel. Examples include gap junctions, which transport substances from one cell to another; and porins which transport substances in and out of bacteria, mitochondria and chloroplasts." [GOC:mtg_transport, ISBN:0815340729]
+synonym: "gap junction activity" NARROW []
+synonym: "non-gated, wide pore channel activity" EXACT []
+is_a: GO:0015267 ! channel activity
 
 [Term]
 id: GO:0022832
@@ -12784,6 +12823,12 @@ def: "Any process that results in a change in state or activity of a cell (in te
 is_a: GO:0009719 ! response to endogenous stimulus
 
 [Term]
+id: GO:0071696
+name: ectodermal placode development
+def: "The progression of an ectodermal placode over time from its initial formation until its mature state. An ectodermal placode is a thickening of the ectoderm that is the primordium of many structures derived from the ectoderm." [GOC:mah]
+is_a: GO:0048856 ! anatomical structure development
+
+[Term]
 id: GO:0071702
 name: organic substance transport
 def: "The directed movement of organic substances into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore. An organic substance is a molecular entity that contains carbon." [CHEBI:50860, GOC:mah]
@@ -17308,6 +17353,35 @@ is_a: GO:2000348 ! regulation of CD40 signaling pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0023035 ! CD40 signaling pathway
 relationship: RO:0002213 GO:0023035 ! CD40 signaling pathway
+
+[Term]
+id: GO:2000380
+name: regulation of mesoderm development
+def: "Any process that modulates the frequency, rate or extent of mesoderm development." [GOC:BHF]
+is_a: GO:0050793 ! regulation of developmental process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007498 ! mesoderm development
+relationship: RO:0002211 GO:0007498 ! mesoderm development
+
+[Term]
+id: GO:2000381
+name: negative regulation of mesoderm development
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of mesoderm development." [GOC:BHF]
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:2000380 ! regulation of mesoderm development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007498 ! mesoderm development
+relationship: RO:0002212 GO:0007498 ! mesoderm development
+
+[Term]
+id: GO:2000382
+name: positive regulation of mesoderm development
+def: "Any process that activates or increases the frequency, rate or extent of mesoderm development." [GOC:BHF]
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:2000380 ! regulation of mesoderm development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007498 ! mesoderm development
+relationship: RO:0002213 GO:0007498 ! mesoderm development
 
 [Term]
 id: GO:2000463

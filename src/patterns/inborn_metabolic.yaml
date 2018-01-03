@@ -12,13 +12,17 @@ vars:
   process: "'process'"
 
 name:
-  text: "%s disorder"
+  text: "inborn %s disorder"
   vars:
    - process
 
 annotations:
-  - annotationProperty: oio:hasExactSynonym
+  - annotationProperty: oio:hasRelatedSynonym
     text: "rare inborn error of %s"
+    vars:
+     - process
+  - annotationProperty: oio:hasExactSynonym
+    text: "inborn error of %s"
     vars:
      - process
 
