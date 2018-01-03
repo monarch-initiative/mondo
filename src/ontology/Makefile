@@ -58,6 +58,9 @@ reasoned.owl: filtered.obo
 merged.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
 
+disjoint_sibs.owl: $(SRC)
+	robot query --format ttl -c ../sparql/construct-disjoint-siblings.sparql $@ -i $<
+
 # PRE-RELEASES: MONDO IDs primary
 #
 # by default we use Elk to perform a reason-relax-reduce chain
@@ -278,6 +281,20 @@ mirror/ncit-disease.obo: mirror/ncit-disease.owl
 
 mirror/rdo.obo:
 	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@
+
+# ----------------------------------------
+# Rewritten ext axioms
+# ----------------------------------------
+imports/axioms-%.owl:
+	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+.PRECIOUS: imports/axioms-%.owl
+
+imports/axioms-%.obo: imports/axioms-%.owl
+	owltools $< -o -f obo --no-check $@
+
+testcombo-%: imports/axioms-%.owl disjoint_sibs.owl
+	owltools --use-catalog mondo-edit.obo disjoint_sibs.owl $< --merge-support-ontologies --run-reasoner -r elk -u -m imports/bad-$*.owl
+
 # ----------------------------------------
 # Lexical mapping
 # ----------------------------------------

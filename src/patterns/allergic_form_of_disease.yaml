@@ -1,0 +1,34 @@
+pattern_name: allergic_form_of_disease
+
+classes:
+  disease: MONDO:0000001
+  type I hypersensitivity: GO:0016068
+
+relations:
+  disease has basis in disruption of: RO:0004021
+
+vars:
+  disease: "'disease'"
+
+name:
+  text: "allergic %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "allergic form of %s"
+    vars:
+     - disease
+
+def:
+  text: "A %s with a basis in a pathological type I hypersensitivity reaction."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "'disease' and 'disease has basis in disruption of' some 'type I hypersensitivity'"
+  vars:
+    - disease
+
+

@@ -6,10 +6,10 @@ SRCM := ../ontology/mondo-merged.owl
 PATTERNS = \
 autosomal_dominant autosomal_recessive x_linked y_linked \
 chronic acute \
-location_top \
+location location_top \
 disease_by_dysfunctional_structure \
 inborn_metabolic \
-allergy inflammatory_disease_by_site infectious_disease_by_agent \
+allergy allergic_form_of_disease autoimmune_inflammation inflammatory_disease_by_site infectious_disease_by_agent \
 rare genetic acquired rare_genetic congenital hereditary \
 syndromic isolated \
 malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm neoplasm_by_origin
