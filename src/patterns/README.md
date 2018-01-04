@@ -45,7 +45,6 @@ The [Makefile](Makefile) also includes target for reverse engineering OWL defini
  * [neoplasm_by_origin.yaml](neoplasm_by_origin.yaml)
  * [sarcoma.yaml](sarcoma.yaml)
 
-
 ## Allergy, inflammation and infection
 
  * [allergic_form_of_disease.yaml](allergic_form_of_disease.yaml)
