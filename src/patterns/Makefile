@@ -25,6 +25,7 @@ all_snomed: $(patsubst %,lx-snomed_disorder-%.tsv,$(PATTERNS))
 all_mondo_lx_tsv: $(patsubst %,lx-mondo-%.tsv,$(PATTERNS))
 all_mondo_lx: $(patsubst %,lx-mondo-%.owl,$(PATTERNS))
 all_mondo_ld: $(patsubst %,ld-mondo-%.owl,$(PATTERNS))
+all_mondo_ld_csv: $(patsubst %,%.csv,$(PATTERNS))
 
 all_yaml: $(patsubst %,%.yaml,$(PATTERNS))
 
@@ -49,6 +50,9 @@ lx-$(Ont)-$(P).tsv:
 
 ld-mondo-%.tsv: %.yaml
 	dosdp-tools  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$< --outfile=$@.tmp query && ./fix-tsvs.pl $@.tmp > $@
+
+%.csv: ld-mondo-%.tsv
+	cp $< $@
 
 #ld-%.tsv: ld-%.csv
 #	csv2tsv.py $< $@

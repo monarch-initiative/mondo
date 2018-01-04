@@ -5,7 +5,7 @@ This directory contains design pattern specifications for the construction and m
 There are two kinds of files in this repo
 
  * `*.yaml` design pattern specification [DOSDP spec](https://github.com/dosumis/dead_simple_owl_design_patterns)
- * `ld-mondo-*.tsv` tsv reverse engineered from ontology following DP (uses [dosdp-tools](https://github.com/INCATools/dosdp-tools) )
+ * `*.csv` tsv reverse engineered from ontology following DP (uses [dosdp-tools](https://github.com/INCATools/dosdp-tools) )
 
 The overall philosophy is to split rather than lump; so for example, we have distinct DPs for [carcinoma](carcinoma.yaml) and [cancer](cancer.yaml)
 
