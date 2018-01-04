@@ -51,9 +51,10 @@ lx-$(Ont)-$(P).tsv:
 
 ld-mondo-%.tsv: %.yaml
 	dosdp-tools  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$< --outfile=$@.tmp query && ./fix-tsvs.pl $@.tmp > $@
+.PRECIOUS: ld-mondo-%.tsv
 
 %.csv: ld-mondo-%.tsv
-	cp $< $@
+	tsv2csv.py $< $@
 
 #ld-%.tsv: ld-%.csv
 #	csv2tsv.py $< $@
