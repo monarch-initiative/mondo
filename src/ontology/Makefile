@@ -22,7 +22,7 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json
+all: test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 test: sparql_test test_nomerge
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -286,14 +286,14 @@ mirror/rdo.obo:
 # Rewritten ext axioms
 # ----------------------------------------
 imports/axioms-%.owl:
-	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: imports/axioms-%.owl
 
 imports/axioms-%.obo: imports/axioms-%.owl
 	owltools $< -o -f obo --no-check $@
 
-testcombo-%: imports/axioms-%.owl disjoint_sibs.owl
-	owltools --use-catalog mondo-edit.obo disjoint_sibs.owl $< --merge-support-ontologies --run-reasoner -r elk -u -m imports/bad-$*.owl
+testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
+	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m imports/bad-$*.owl
 
 # ----------------------------------------
 # Lexical mapping
