@@ -19,14 +19,13 @@ The [Makefile](Makefile) also includes target for reverse engineering OWL defini
 
 ### Genetic v acquired etiology
 
+ * [acquired.yaml](acquired.yaml)
+ * [genetic.yaml](genetic.yaml)
+ * [hereditary.yaml](hereditary.yaml)
  * [x_linked.yaml](x_linked.yaml)
  * [y_linked.yaml](y_linked.yaml)
  * [autosomal_dominant.yaml](autosomal_dominant.yaml)
  * [autosomal_recessive.yaml](autosomal_recessive.yaml)
-
- * [acquired.yaml](acquired.yaml)
- * [genetic.yaml](genetic.yaml)
- * [hereditary.yaml](hereditary.yaml)
  * [congenital.yaml](congenital.yaml)
 
 ## Chronic v acute
