@@ -1,0 +1,35 @@
+pattern_name: inborn_metabolic
+
+classes:
+  disease: MONDO:0000001
+  process: BFO:0000015
+
+relations: 
+  disease has basis in disruption of: RO:0004021
+
+vars:
+  process: "'process'"
+
+name:
+  text: "%s disorder"
+  vars:
+   - process
+
+annotations:
+  - annotationProperty: oio:hasRelatedSynonym
+    text: "disorder of %s"
+    vars:
+     - process
+
+def:
+  text: "A disease that has its basis in the disruption of %s."
+  vars:
+    - process
+
+equivalentTo:
+  text: "'disease' and 'disease has basis in disruption of' some %s"
+  vars:
+    - process
+
+
+
