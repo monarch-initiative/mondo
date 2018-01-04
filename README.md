@@ -17,13 +17,21 @@ Stable release versions
 See [Changes.md](Changed.md) for more details
 
 
-### Editors' version
+## Editors' version
 
 Editors of this ontology should use the edit version, [src/ontology/mondo-edit.obo](src/ontology/mondo-edit.obo)
 
 Read the editors guide first!
 
 https://docs.google.com/document/d/19bp9MpCHCxbjMmbntB2e5gZNzzNlu06DnDB8xcoSXK8/edit#
+
+Layout:
+
+ * src/
+    * [patterns](src/ontology) ontology source, plus imports, Makefile
+    * [patterns](src/patterns) templated design patterns
+    * [sparql](src/sparql) SPARQL queries
+
 
 ## Contact
 
