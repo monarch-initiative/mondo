@@ -1,3 +1,4 @@
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 
@@ -8,8 +9,10 @@ CONSTRUCT {
             rdfs:label ?sibLabel
 }
 WHERE {
- ?c rdfs:subClassOf ?p
- NOT EXISTS { ?c owl:deprecated "true"^^xsd:boolean }
+ ?c rdfs:subClassOf ?p .
+ FILTER(isIRI(?c))
+ FILTER(isIRI(?p))
+ FILTER NOT EXISTS { ?c owl:deprecated "true"^^xsd:boolean }
  OPTIONAL {
    ?c rdfs:label ?clabel
    BIND(concat("DISJOINT-SIB-OF ", ?clabel) AS ?sibLabel)
