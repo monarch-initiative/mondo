@@ -2343,6 +2343,26 @@ relationship: RO:0002202 UBERON:0000164 {source="Wikipedia"} ! primitive urogeni
 relationship: sexually_homologous_to UBERON:0002366 {source="Wikipedia"} ! bulbo-urethral gland
 
 [Term]
+id: UBERON:0000461
+name: minor vestibular gland
+def: "Small mucous glands opening upon the vestibular mucous membrane between the urethral and the vaginal orifice." [BTO:0003116]
+synonym: "glandula vestibular minor" EXACT [FMA:20019]
+synonym: "glandula vestibulares minor" RELATED [BTO:0003116]
+synonym: "Guerin's gland" RELATED [BTO:0003116]
+synonym: "Guérin's gland" RELATED []
+synonym: "lesser vestibular gland" EXACT [FMA:20019]
+synonym: "paraurethral gland" RELATED [BTO:0003116]
+synonym: "periurethral gland" RELATED [BTO:0003116]
+synonym: "Schueller's gland" RELATED [BTO:0003116]
+synonym: "Skene gland" RELATED INCONSISTENT []
+synonym: "Skene's gland" RELATED INCONSISTENT [BTO:0003116]
+synonym: "urethral gland of female urethra" RELATED [BTO:0003116]
+is_a: UBERON:0010145 {source="ncithesaurus"} ! paraurethral gland
+is_a: UBERON:0010187 ! female urethral gland
+is_a: UBERON:0011826 ! vestibular gland
+relationship: BFO:0000050 UBERON:0000474 {source="FMA"} ! female reproductive system
+
+[Term]
 id: UBERON:0000463
 name: organism substance
 def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." [http://orcid.org/0000-0001-9114-8737]
@@ -46995,6 +47015,18 @@ name: vestibular gland
 def: "Lobular organ the parenchyma of which consists of glandular acini which communicate with the vestibule of vagina. Examples: right vestibular gland, lesser vestibular gland." [FMA:20020, http://en.wikipedia.org/wiki/Vestibular_glands]
 is_a: UBERON:0005398 ! female reproductive gland
 relationship: BFO:0000050 UBERON:0000997 ! mammalian vulva
+
+[Term]
+id: UBERON:0011830
+name: duct of lesser vestibular gland
+def: "A duct that is part of a minor vestibular gland." [OBOL:automatic]
+synonym: "lesser vestibular gland duct" EXACT [FMA:20094]
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010146 ! paraurethral duct
+is_a: UBERON:0011831 ! duct of vestibular gland
+intersection_of: UBERON:0000058 ! duct
+intersection_of: BFO:0000050 UBERON:0000461 ! minor vestibular gland
+relationship: BFO:0000050 UBERON:0000461 ! minor vestibular gland
 
 [Term]
 id: UBERON:0011831
