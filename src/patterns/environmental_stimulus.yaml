@@ -1,0 +1,39 @@
+pattern_name: environmental_stimulus
+
+classes:
+  disease: MONDO:0000001
+  environmental material: ENVO:00010483
+
+relations:
+  realized in response to stimulus: RO:0004028
+
+vars:
+  disease: "'disease'"
+  stimulus: "'environmental material'"
+
+name:
+  text: "%s from %s"
+  vars:
+   - disease
+   - stimulus
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s %s"
+    vars:
+     - stimulus
+     - disease
+
+def:
+  text: "A %s that is caused by exposure to %s."
+  vars:
+    - disease
+    - stimulus
+
+equivalentTo:
+  text: "%s and 'realized in response to stimulus' some %s"
+  vars:
+    - disease
+    - stimulus
+
+
