@@ -10,6 +10,7 @@ location location_top \
 disease_by_dysfunctional_structure \
 basis_in_disruption_of_process \
 inborn_metabolic \
+environmental_stimulus \
 allergy allergic_form_of_disease autoimmune_inflammation inflammatory_disease_by_site infectious_disease_by_agent \
 rare genetic acquired rare_genetic congenital hereditary \
 syndromic isolated \

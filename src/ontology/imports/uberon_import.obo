@@ -13778,6 +13778,25 @@ intersection_of: BFO:0000050 UBERON:0002422 ! fourth ventricle
 relationship: BFO:0000050 UBERON:0002422 ! fourth ventricle
 
 [Term]
+id: UBERON:0002291
+name: central canal of spinal cord
+def: "Spinal cord structure that is part of the ventricular system and is filled with cerebral-spinal fluid and runs the length of the spinal cord." [http://www.ncbi.nlm.nih.gov/pubmed/23409159, ZFIN:curator]
+synonym: "canalis centralis" EXACT [ZFA:0000938]
+synonym: "central canal" EXACT [ZFA:0000938]
+synonym: "central canal of spinal cord" EXACT []
+synonym: "central canal, spinal cord/medulla" RELATED [BAMS:C]
+synonym: "spinal cord central canal" EXACT []
+synonym: "ventricle of spinal cord" EXACT [FMA:78497]
+is_a: UBERON:0004111 {source="cjm"} ! anatomical conduit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0002240 {source="MA"} ! spinal cord
+relationship: BFO:0000050 UBERON:0005281 {source="FMA"} ! ventricular system of central nervous system
+relationship: BFO:0000051 UBERON:0001359 ! cerebrospinal fluid
+relationship: channel_for UBERON:0001359 ! cerebrospinal fluid
+relationship: RO:0002433 UBERON:0002240 ! spinal cord
+
+[Term]
 id: UBERON:0002293
 name: costochondral joint
 def: "A bars of hyaline cartilage located between the distal part of a rib and a costal cartilage, connecting the ribs to the sternum ." [HP:0000920, http://en.wikipedia.org/wiki/Costochondral_joint]
@@ -27425,6 +27444,40 @@ relationship: BFO:0000050 UBERON:0002106 ! spleen
 relationship: RO:0002433 UBERON:0002106 ! spleen
 
 [Term]
+id: UBERON:0004642
+name: third ventricle ependyma
+def: "An ependyma that is part of a third ventricle [Automatically generated definition]." [OBOL:automatic]
+synonym: "3rd ventricle ependyma" EXACT [MA:0000882]
+synonym: "ependyma of third ventricle" EXACT [MA:0000882]
+is_a: UBERON:0005357 ! brain ependyma
+intersection_of: UBERON:0004670 ! ependyma
+intersection_of: BFO:0000050 UBERON:0002286 ! third ventricle
+relationship: BFO:0000050 UBERON:0002286 ! third ventricle
+
+[Term]
+id: UBERON:0004643
+name: lateral ventricle ependyma
+def: "An ependyma that is part of a lateral ventricle [Automatically generated definition]." [OBOL:automatic]
+synonym: "ependyma of lateral ventricle" EXACT [FMA:242825]
+is_a: UBERON:0005357 ! brain ependyma
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+intersection_of: UBERON:0004670 ! ependyma
+intersection_of: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
+relationship: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
+
+[Term]
+id: UBERON:0004644
+name: fourth ventricle ependyma
+def: "An ependyma that is part of a fourth ventricle [Automatically generated definition]." [OBOL:automatic]
+synonym: "4th ventricle ependyma" RELATED [MA:0000986]
+synonym: "ependyma of fourth ventricle" EXACT [FMA:242835]
+is_a: UBERON:0005357 ! brain ependyma
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+intersection_of: UBERON:0004670 ! ependyma
+intersection_of: BFO:0000050 UBERON:0002422 ! fourth ventricle
+relationship: BFO:0000050 UBERON:0002422 ! fourth ventricle
+
+[Term]
 id: UBERON:0004645
 name: urinary bladder urothelium
 def: "The epithelial lining of the luminal space of the urinary bladder." [MP:0000540]
@@ -27581,6 +27634,19 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 intersection_of: UBERON:0000161 ! orifice
 intersection_of: BFO:0000050 UBERON:0002422 ! fourth ventricle
 relationship: BFO:0000050 UBERON:0002422 ! fourth ventricle
+
+[Term]
+id: UBERON:0004670
+name: ependyma
+def: "The thin epithelium-like membrane composed of ependymal cells that lines the ventricular system of the brain and the spinal cord." [http://en.wikipedia.org/wiki/Ependyma, http://orcid.org/0000-0002-6601-2165, ISBN-10:0387949542]
+synonym: "ependyma of neuraxis" EXACT [FMA:242791]
+synonym: "ependymal epithelium" EXACT [BTO:0000401]
+synonym: "lamina epithelialis" RELATED [FMA:242791]
+is_a: UBERON:0007601 ! ciliated epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+relationship: BFO:0000050 UBERON:0005358 ! ventricle of nervous system
+relationship: RO:0002202 UBERON:0004060 ! neural tube ventricular layer
+relationship: RO:0002433 UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0004673
@@ -32995,6 +33061,17 @@ relationship: BFO:0000051 UBERON:0001000 ! vas deferens
 relationship: RO:0002433 UBERON:0004054 ! internal male genitalia
 
 [Term]
+id: UBERON:0005357
+name: brain ependyma
+def: "the ependymal cell layer that lines the brain ventricles" [http://orcid.org/0000-0002-6601-2165, ISBN-10:0387949542]
+synonym: "ependyma of ventricular system of brain" EXACT [FMA:242837]
+is_a: UBERON:0004670 ! ependyma
+intersection_of: UBERON:0004670 ! ependyma
+intersection_of: BFO:0000050 UBERON:0004086 ! brain ventricle
+relationship: BFO:0000050 UBERON:0004086 ! brain ventricle
+relationship: RO:0002433 UBERON:0003947 ! brain ventricle/choroid plexus
+
+[Term]
 id: UBERON:0005358
 name: ventricle of nervous system
 def: "A layer in the central nervous system that lines system of communicating cavities in the brain and spinal cord." [https://github.com/obophenotype/uberon/issues/300]
@@ -33002,6 +33079,20 @@ synonym: "region of wall of ventricular system of neuraxis" RELATED [FMA:242770]
 synonym: "ventricular layer" EXACT [EMAPA:35209]
 is_a: UBERON:0004923 ! organ component layer
 relationship: BFO:0000050 UBERON:0001016 ! nervous system
+
+[Term]
+id: UBERON:0005359
+name: spinal cord ependyma
+def: "the ependymal cell layer that lines the spinal cord" [http://orcid.org/0000-0002-6601-2165, ISBN-10:0387949542]
+synonym: "ependyma of central canal of spinal cord" EXACT [FMA:242839]
+synonym: "spinal cord ependymal layer" EXACT [MA:0001125]
+synonym: "spinal cord ventricular layer" RELATED []
+is_a: UBERON:0004670 ! ependyma
+intersection_of: UBERON:0004670 ! ependyma
+intersection_of: BFO:0000050 UBERON:0002240 ! spinal cord
+relationship: BFO:0000050 UBERON:0002291 ! central canal of spinal cord
+relationship: RO:0002202 UBERON:0034710 ! spinal cord ventricular layer
+relationship: RO:0002433 UBERON:0002240 ! spinal cord
 
 [Term]
 id: UBERON:0005362
@@ -41434,6 +41525,22 @@ is_a: UBERON:0005478 ! sulcus limitans of neural tube
 intersection_of: UBERON:0005478 ! sulcus limitans of neural tube
 intersection_of: BFO:0000050 UBERON:0006241 ! future spinal cord
 relationship: BFO:0000050 UBERON:0006241 ! future spinal cord
+
+[Term]
+id: UBERON:0009572
+name: lumen of central canal of spinal cord
+def: "A cerebrospinal fluid-filled space that runs longitudinally through the length of the entire spinal cord. The central canal is contiguous with the ventricular system of the brain. The central canal represents the adult remainder of the neural tube." [http://en.wikipedia.org/wiki/Central_canal]
+synonym: "cavity of central canal of spinal cord" EXACT [FMA:242845]
+synonym: "central canal lumen" EXACT [https://orcid.org/0000-0002-6601-2165]
+synonym: "neural lumen" RELATED []
+synonym: "spinal cord lumen" EXACT [EMAPA:25042]
+is_a: UBERON:0000464 ! anatomical space
+intersection_of: UBERON:0000464 ! anatomical space
+intersection_of: RO:0002572 UBERON:0002291 ! central canal of spinal cord
+relationship: BFO:0000050 UBERON:0005281 {source="FMA-modified"} ! ventricular system of central nervous system
+relationship: RO:0002221 UBERON:0001359 ! cerebrospinal fluid
+relationship: RO:0002494 UBERON:0003842 ! neural tube lumen
+relationship: RO:0002572 UBERON:0002291 ! central canal of spinal cord
 
 [Term]
 id: UBERON:0009576
@@ -50056,6 +50163,18 @@ intersection_of: BFO:0000050 UBERON:0001869 ! cerebral hemisphere
 relationship: BFO:0000050 UBERON:0001869 ! cerebral hemisphere
 
 [Term]
+id: UBERON:0014538
+name: subdivision of spinal cord central canal
+def: "A subdivision of the central canal of the spinal cord along its anterior-posterior axis. This is typically subdivided into cervical, thoracic, lumbar and sacral segments" [http://orcid.org/0000-0002-6601-2165]
+synonym: "regional part of spinal cord central canal" EXACT HUMAN_PREFERRED [NIFSTD:birnlex_717]
+is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+intersection_of: UBERON:0004111 ! anatomical conduit
+intersection_of: subdivision_of UBERON:0002291 ! central canal of spinal cord
+relationship: BFO:0000050 UBERON:0002291 ! central canal of spinal cord
+relationship: subdivision_of UBERON:0002291 ! central canal of spinal cord
+
+[Term]
 id: UBERON:0014540
 name: white matter lamina of cerebellum
 def: "The white laminae of cerebellum is subdivision of the cerebellar cortex comprised of myelinated axons lying deep to the granule cell layer of the cerebellar cortex." [http://neurolex.org/wiki/Category\:White_laminae_of_cerebellum]
@@ -50075,6 +50194,37 @@ intersection_of: UBERON:0014530 ! white matter lamina of neuraxis
 intersection_of: BFO:0000050 UBERON:0002037 ! cerebellum
 relationship: BFO:0000050 UBERON:0002037 ! cerebellum
 relationship: BSPO:0001107 UBERON:0002956 ! granular layer of cerebellar cortex
+
+[Term]
+id: UBERON:0014541
+name: thoracic division of spinal cord central canal
+def: "Part of spinal cord central canal contained in the thoracic spinal cord. It is continuous rostrally with the cervical spinal cord central canal and caudally with the lumbar spinal cord central canal." [NIFSTD:birnlex_1395]
+synonym: "thoracic spinal cord central canal" EXACT HUMAN_PREFERRED [NIFSTD:birnlex_1395]
+is_a: UBERON:0014538 {source="NIFSTD"} ! subdivision of spinal cord central canal
+intersection_of: UBERON:0014538 ! subdivision of spinal cord central canal
+intersection_of: subdivision_of UBERON:0003038 ! thoracic spinal cord
+relationship: subdivision_of UBERON:0003038 ! thoracic spinal cord
+
+[Term]
+id: UBERON:0014542
+name: cervical division of cord spinal central canal
+def: "Part of central canal contained within the cervical spinal cord. It is continuous caudally with the thoracic spinal cord central canal and rostrally with the fourth ventricle of the brain via the obex" [NIFSTD:birnlex_1511]
+synonym: "cervical spinal cord central canal" EXACT HUMAN_PREFERRED [NIFSTD:birnlex_1511]
+is_a: UBERON:0014538 {source="NIFSTD"} ! subdivision of spinal cord central canal
+intersection_of: UBERON:0014538 ! subdivision of spinal cord central canal
+intersection_of: subdivision_of UBERON:0002726 ! cervical spinal cord
+relationship: subdivision_of UBERON:0002726 ! cervical spinal cord
+
+[Term]
+id: UBERON:0014547
+name: sacral division of spinal cord central canal
+def: "Part of spinal cord central canal contained in the sacral spinal cord. It is continuous rostrally with the spinal cord central canal of the lumbar cord." [NIFSTD:nlx_anat_1010008]
+synonym: "lumbosacral spinal cord central canal" RELATED []
+synonym: "sacral spinal cord central canal" EXACT HUMAN_PREFERRED [NIFSTD:nlx_anat_1010008]
+is_a: UBERON:0014538 ! subdivision of spinal cord central canal
+intersection_of: UBERON:0014538 ! subdivision of spinal cord central canal
+intersection_of: subdivision_of UBERON:0005843 ! sacral spinal cord
+relationship: subdivision_of UBERON:0005843 ! sacral spinal cord
 
 [Term]
 id: UBERON:0014610
