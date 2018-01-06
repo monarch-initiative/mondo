@@ -15,6 +15,7 @@ SPARQLDIR = ../sparql
 
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
+ISODATE:=`date +%Y-%m-%d`
 
 obo-filter-axiom-header = grep -v ^owl-axioms:
 
@@ -29,14 +30,14 @@ prepare_release: all
 	mkdir -p $(RELEASEDIR)/imports &&\
 	cp imports/*{owl,obo} $(RELEASEDIR)/imports &&\
 	cp pre/*{owl,obo} $(RELEASEDIR)/pre &&\
-	cp exit/*{owl,obo,json} $(RELEASEDIR)/extid &&\
+	cp extid/*{owl,obo,json} $(RELEASEDIR)/extid &&\
 	(test -f subsets/*owl && cp subsets/*{owl,obo,json} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
 
 all_includes: $(INCLUDES_OWL)
 
 osf_upload:
-	cd ../.. && osf -p 2qk53 upload -f -r target/ current/
+	cd ../.. && $(HOME)/repos/osf-cli/venv/bin/osf -p 2qk53 upload -f -r target/ current/
 
 # ----------------------------------------
 # Main release targets
@@ -45,14 +46,17 @@ osf_upload:
 ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID)@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v 'relationship: disease_has_basis_in_dysfunction_of NCBIGene:' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID):@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v 'relationship: disease_has_basis_in_dysfunction_of NCBIGene:' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 # perform reasoning on source
-# SKIP FOR NOW: assume pre-asserted, but run reasoner to check
-reasoned.owl: filtered.obo
-	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@-validated.owl && cp $< $@
-#	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@
+# PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
+# note: robot will protect redundant annotated axioms
+reasoned-redundant.owl: filtered.obo
+	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@
+#	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@-validated.owl && cp $< $@
+reasoned.owl: reasoned-redundant.owl
+	owltools --use-catalog $< --assert-inferred-subclass-axioms --always-assert-super-classes --removeRedundant --markIsInferred --allowEquivalencies --merge-axiom-annotations -o $@
 
 # merged = reasoned + equivalencies
 merged.owl: reasoned.owl imports/equivalencies.owl
@@ -127,7 +131,7 @@ modules/%.owl: modules/%.tsv
 # These live in the imports/ folder
 # These can be regenerated with make all_imports
 
-IMPORTS = uberon cl go pato ro hp mfoem ncbitaxon chebi envo foodon
+IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo foodon
 IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 # Make this target to regenerate ALL
@@ -164,10 +168,11 @@ $(ONT)-diff.md: $(ONT)-lastbuild.owl
 # Editing
 # ----------------------------------------
 
-ISODATE=`date +%Y-%m-%d`
+td:
+	echo '$(ISODATE)'
 # NOTE: no longer removes redundant
 INF: mondo-edit.obo
-	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --keepRedundant --markIsInferred --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | perl -npe 's@is_inferred="true"@source="OWLReasoner:Elk-$(ISODATE)"@' egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
+	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --keepRedundant --markIsInferred --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | perl -npe 's@is_inferred="true"@source="OWLReasoner:Elk-$(ISODATE)"@' | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
 
 NEWAXTEST: mondo-edit.owl new.owl
 #	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m z.owl -o $@
@@ -196,8 +201,8 @@ sparql_test: $(QSRC)
 # ----------------------------------------
 
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats root-classes
-REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
-all_reports: $(SRC)
+REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/release/$V.tsv)
+all_reports: mondo.owl
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
@@ -245,7 +250,7 @@ mirror/%-raw.owl: mirror/%.owl
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: 
-	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
+	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/ncbitaxon.owl: 
