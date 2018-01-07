@@ -1290,6 +1290,23 @@ relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
 
 [Term]
+id: CHEBI:28112
+name: nickel atom
+def: "Chemical element (nickel group element atom) with atomic number 28." []
+synonym: "28Ni" RELATED []
+synonym: "Ni" RELATED []
+synonym: "niccolum" RELATED []
+synonym: "Nickel" RELATED []
+synonym: "nickel" EXACT []
+synonym: "nickel" RELATED []
+synonym: "niquel" RELATED []
+synonym: "Raney alloy" RELATED []
+is_a: CHEBI:33362 ! nickel group element atom
+is_a: CHEBI:88184 ! metal allergen
+relationship: RO:0000087 CHEBI:27027 ! micronutrient
+relationship: RO:0000087 CHEBI:53000 ! epitope
+
+[Term]
 id: CHEBI:28616
 name: carbamic acid
 def: "A one-carbon compound that is ammonia in which one of the hydrogens is replaced by a carboxy group. Although carbamic acid derivatives are common, carbamic acid itself has never been synthesised." []
@@ -1762,6 +1779,15 @@ is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
+id: CHEBI:33362
+name: nickel group element atom
+synonym: "group 10 elements" EXACT []
+synonym: "nickel group element" RELATED []
+synonym: "nickel group elements" RELATED []
+is_a: CHEBI:27081 ! transition element atom
+is_a: CHEBI:33561 ! d-block element atom
+
+[Term]
 id: CHEBI:33405
 name: hydracid
 def: "A hydracid is a compound which contains hydrogen that is not bound to oxygen, and which produces a conjugate base by loss of positive hydrogen ion(s) (hydrons)." []
@@ -2031,6 +2057,24 @@ synonym: "manganese group molecular entity" EXACT []
 is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33352 ! manganese group element atom
+
+[Term]
+id: CHEBI:33747
+name: nickel group molecular entity
+synonym: "nickel group molecular entities" RELATED []
+synonym: "nickel group molecular entity" EXACT []
+is_a: CHEBI:33497 ! transition element molecular entity
+is_a: CHEBI:33676 ! d-block molecular entity
+relationship: BFO:0000051 CHEBI:33362 ! nickel group element atom
+
+[Term]
+id: CHEBI:33748
+name: nickel molecular entity
+synonym: "nickel compounds" RELATED []
+synonym: "nickel molecular entities" RELATED []
+synonym: "nickel molecular entity" EXACT []
+is_a: CHEBI:33747 ! nickel group molecular entity
+relationship: BFO:0000051 CHEBI:28112 ! nickel atom
 
 [Term]
 id: CHEBI:33780

@@ -301,6 +301,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002097">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002132"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to progress, invade surrounding tissues or metastasize.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic, malignant</rdfs:label>
     </owl:Class>
@@ -308,6 +309,22 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0002097"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to progress, invade surrounding tissues or metastasize.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PATOC:GVG</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002132 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002132">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition not to invade surrounding tissues.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic, non-invasive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0002132"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition not to invade surrounding tissues.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PATOC:GVG</oboInOwl:hasDbXref>
     </owl:Axiom>
 </rdf:RDF>

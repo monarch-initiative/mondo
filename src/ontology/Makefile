@@ -23,7 +23,7 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: test all_reports all_imports imports/equivalencies.owl $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+all: test all_reports all_imports imports/equivalencies.owl imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 test: sparql_test test_nomerge
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -342,6 +342,12 @@ unlikely.md: linked-rpt.md
 phenotype_annotation.tab:
 	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@
 
+d2p.tsv: phenotype_annotation.tab
+	../utils/phenotab2tbl.pl $< > $@
+
+# TODO: replace with sparql
+reports/release/semantic-xref-pairs.tsv: d2p.pro
+	blip-findall -i imports/equivalencies.obo  -i mondo-edit.obo -i $< -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 modules/equiv-xrefs.obo: mondo-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@

@@ -2628,6 +2628,17 @@ is_a: GO:0072330 ! monocarboxylic acid biosynthetic process
 is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
+id: GO:0006704
+name: glucocorticoid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of glucocorticoids, hormonal C21 corticosteroids synthesized from cholesterol." [ISBN:0198506732]
+synonym: "glucocorticoid anabolism" EXACT []
+synonym: "glucocorticoid biosynthesis" EXACT []
+synonym: "glucocorticoid formation" EXACT []
+synonym: "glucocorticoid synthesis" EXACT []
+is_a: GO:0006694 ! steroid biosynthetic process
+is_a: GO:0008211 ! glucocorticoid metabolic process
+
+[Term]
 id: GO:0006720
 name: isoprenoid metabolic process
 def: "The chemical reactions and pathways involving isoprenoid compounds, isoprene (2-methylbuta-1,3-diene) or compounds containing or derived from linked isoprene (3-methyl-2-butenylene) residues." [ISBN:0198547684]
@@ -3334,6 +3345,15 @@ synonym: "bile acid metabolism" EXACT []
 is_a: GO:0008202 ! steroid metabolic process
 is_a: GO:0032787 ! monocarboxylic acid metabolic process
 is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0008211
+name: glucocorticoid metabolic process
+def: "The chemical reactions and pathways involving glucocorticoids, hormonal C21 corticosteroids synthesized from cholesterol. Glucocorticoids act primarily on carbohydrate and protein metabolism, and have anti-inflammatory effects." [ISBN:0198506732]
+synonym: "glucocorticoid metabolism" EXACT []
+synonym: "glucocorticosteroid metabolic process" EXACT []
+synonym: "glucocorticosteroid metabolism" EXACT []
+is_a: GO:0008202 ! steroid metabolic process
 
 [Term]
 id: GO:0008233
@@ -6727,6 +6747,94 @@ intersection_of: RO:0002213 GO:0050877 ! nervous system process
 relationship: RO:0002213 GO:0050877 ! nervous system process
 
 [Term]
+id: GO:0031943
+name: regulation of glucocorticoid metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving glucocorticoids." [GOC:mah]
+synonym: "regulation of glucocorticoid metabolism" EXACT []
+is_a: GO:0019218 ! regulation of steroid metabolic process
+is_a: GO:0031323 ! regulation of cellular metabolic process
+is_a: GO:0032350 ! regulation of hormone metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0008211 ! glucocorticoid metabolic process
+relationship: RO:0002211 GO:0008211 ! glucocorticoid metabolic process
+
+[Term]
+id: GO:0031944
+name: negative regulation of glucocorticoid metabolic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving glucocorticoids." [GOC:mah]
+synonym: "down regulation of glucocorticoid metabolic process" EXACT []
+synonym: "down-regulation of glucocorticoid metabolic process" EXACT []
+synonym: "downregulation of glucocorticoid metabolic process" EXACT []
+synonym: "inhibition of glucocorticoid metabolic process" NARROW []
+synonym: "negative regulation of glucocorticoid metabolism" EXACT []
+is_a: GO:0031324 ! negative regulation of cellular metabolic process
+is_a: GO:0031943 ! regulation of glucocorticoid metabolic process
+is_a: GO:0032351 ! negative regulation of hormone metabolic process
+is_a: GO:0045939 ! negative regulation of steroid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0008211 ! glucocorticoid metabolic process
+relationship: RO:0002212 GO:0008211 ! glucocorticoid metabolic process
+
+[Term]
+id: GO:0031945
+name: positive regulation of glucocorticoid metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving glucocorticoids." [GOC:mah]
+synonym: "activation of glucocorticoid metabolic process" NARROW []
+synonym: "positive regulation of glucocorticoid metabolism" EXACT []
+synonym: "stimulation of glucocorticoid metabolic process" NARROW []
+synonym: "up regulation of glucocorticoid metabolic process" EXACT []
+synonym: "up-regulation of glucocorticoid metabolic process" EXACT []
+synonym: "upregulation of glucocorticoid metabolic process" EXACT []
+is_a: GO:0031325 ! positive regulation of cellular metabolic process
+is_a: GO:0031943 ! regulation of glucocorticoid metabolic process
+is_a: GO:0032352 ! positive regulation of hormone metabolic process
+is_a: GO:0045940 ! positive regulation of steroid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0008211 ! glucocorticoid metabolic process
+relationship: RO:0002213 GO:0008211 ! glucocorticoid metabolic process
+
+[Term]
+id: GO:0031946
+name: regulation of glucocorticoid biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of glucocorticoids." [GOC:mah]
+is_a: GO:0031943 ! regulation of glucocorticoid metabolic process
+is_a: GO:0090030 ! regulation of steroid hormone biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006704 ! glucocorticoid biosynthetic process
+relationship: RO:0002211 GO:0006704 ! glucocorticoid biosynthetic process
+
+[Term]
+id: GO:0031947
+name: negative regulation of glucocorticoid biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of glucocorticoids." [GOC:mah]
+synonym: "down regulation of glucocorticoid biosynthetic process" EXACT []
+synonym: "down-regulation of glucocorticoid biosynthetic process" EXACT []
+synonym: "downregulation of glucocorticoid biosynthetic process" EXACT []
+synonym: "inhibition of glucocorticoid biosynthetic process" NARROW []
+is_a: GO:0031944 ! negative regulation of glucocorticoid metabolic process
+is_a: GO:0031946 ! regulation of glucocorticoid biosynthetic process
+is_a: GO:0090032 ! negative regulation of steroid hormone biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006704 ! glucocorticoid biosynthetic process
+relationship: RO:0002212 GO:0006704 ! glucocorticoid biosynthetic process
+
+[Term]
+id: GO:0031948
+name: positive regulation of glucocorticoid biosynthetic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of glucocorticoids." [GOC:mah]
+synonym: "activation of glucocorticoid biosynthetic process" NARROW []
+synonym: "stimulation of glucocorticoid biosynthetic process" NARROW []
+synonym: "up regulation of glucocorticoid biosynthetic process" EXACT []
+synonym: "up-regulation of glucocorticoid biosynthetic process" EXACT []
+synonym: "upregulation of glucocorticoid biosynthetic process" EXACT []
+is_a: GO:0031945 ! positive regulation of glucocorticoid metabolic process
+is_a: GO:0031946 ! regulation of glucocorticoid biosynthetic process
+is_a: GO:0090031 ! positive regulation of steroid hormone biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006704 ! glucocorticoid biosynthetic process
+relationship: RO:0002213 GO:0006704 ! glucocorticoid biosynthetic process
+
+[Term]
 id: GO:0031974
 name: membrane-enclosed lumen
 def: "The enclosed volume within a sealed membrane or between two sealed membranes. Encompasses the volume enclosed by the membranes of a particular organelle, e.g. endoplasmic reticulum lumen, or the space between the two lipid bilayers of a double membrane surrounding an organelle, e.g. nuclear envelope lumen." [GOC:add, GOC:mah]
@@ -6912,6 +7020,21 @@ is_a: GO:0032350 ! regulation of hormone metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0042445 ! hormone metabolic process
 relationship: RO:0002213 GO:0042445 ! hormone metabolic process
+
+[Term]
+id: GO:0032353
+name: negative regulation of hormone biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of hormones." [GOC:ai]
+synonym: "down regulation of hormone biosynthetic process" EXACT []
+synonym: "down-regulation of hormone biosynthetic process" EXACT []
+synonym: "downregulation of hormone biosynthetic process" EXACT []
+synonym: "inhibition of hormone biosynthetic process" NARROW []
+is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
+is_a: GO:0032351 ! negative regulation of hormone metabolic process
+is_a: GO:0046885 ! regulation of hormone biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042446 ! hormone biosynthetic process
+relationship: RO:0002212 GO:0042446 ! hormone biosynthetic process
 
 [Term]
 id: GO:0032368
@@ -7599,6 +7722,28 @@ is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0044260 ! cellular macromolecule metabolic process
 
 [Term]
+id: GO:0034650
+name: cortisol metabolic process
+def: "The chemical reactions and pathways involving cortisol, the steroid hormone 11-beta-17,21-trihydroxypregn-4-ene-3,20-dione. Cortisol is synthesized from cholesterol in the adrenal gland and controls carbohydrate, fat and protein metabolism and has anti-inflammatory properties." [CHEBI:17650, GOC:BHF, GOC:mah, GOC:rl]
+synonym: "cortisol metabolism" EXACT []
+is_a: GO:0008211 ! glucocorticoid metabolic process
+is_a: GO:0042180 ! cellular ketone metabolic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0034651
+name: cortisol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of cortisol, the steroid hormone 11-beta-17,21-trihydroxypregn-4-ene-3,20-dione. Cortisol is synthesized from cholesterol in the adrenal gland and controls carbohydrate, fat and protein metabolism and has anti-inflammatory properties." [CHEBI:17650, GOC:BHF, GOC:mah, GOC:rl]
+synonym: "cortisol anabolism" NARROW []
+synonym: "cortisol biosynthesis" EXACT []
+synonym: "cortisol formation" EXACT []
+synonym: "cortisol synthesis" EXACT []
+is_a: GO:0006704 ! glucocorticoid biosynthetic process
+is_a: GO:0034650 ! cortisol metabolic process
+is_a: GO:0042181 ! ketone biosynthetic process
+is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
+
+[Term]
 id: GO:0034654
 name: nucleobase-containing compound biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of nucleobases, nucleosides, nucleotides and nucleic acids." [GOC:mah]
@@ -8073,6 +8218,17 @@ def: "The chemical reactions and pathways involving any hormone, naturally occur
 synonym: "hormone metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
 is_a: GO:0010817 ! regulation of hormone levels
+
+[Term]
+id: GO:0042446
+name: hormone biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of any hormone, naturally occurring substances secreted by specialized cells that affects the metabolism or behavior of other cells possessing functional receptors for the hormone." [CHEBI:24621, GOC:jl]
+synonym: "hormone anabolism" EXACT []
+synonym: "hormone biosynthesis" EXACT []
+synonym: "hormone formation" EXACT []
+synonym: "hormone synthesis" EXACT []
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0042445 ! hormone metabolic process
 
 [Term]
 id: GO:0042562
@@ -10200,6 +10356,40 @@ is_a: GO:1903530 ! regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0046879 ! hormone secretion
 relationship: RO:0002211 GO:0046879 ! hormone secretion
+
+[Term]
+id: GO:0046885
+name: regulation of hormone biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of hormones." [GOC:ai]
+synonym: "regulation of hormone anabolism" EXACT []
+synonym: "regulation of hormone biosynthesis" EXACT []
+synonym: "regulation of hormone formation" EXACT []
+synonym: "regulation of hormone synthesis" EXACT []
+is_a: GO:0031326 ! regulation of cellular biosynthetic process
+is_a: GO:0032350 ! regulation of hormone metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042446 ! hormone biosynthetic process
+relationship: RO:0002211 GO:0042446 ! hormone biosynthetic process
+
+[Term]
+id: GO:0046886
+name: positive regulation of hormone biosynthetic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of hormones." [GOC:ai]
+synonym: "activation of hormone biosynthetic process" NARROW []
+synonym: "positive regulation of hormone anabolism" EXACT []
+synonym: "positive regulation of hormone biosynthesis" EXACT []
+synonym: "positive regulation of hormone formation" EXACT []
+synonym: "positive regulation of hormone synthesis" EXACT []
+synonym: "stimulation of hormone biosynthetic process" NARROW []
+synonym: "up regulation of hormone biosynthetic process" EXACT []
+synonym: "up-regulation of hormone biosynthetic process" EXACT []
+synonym: "upregulation of hormone biosynthetic process" EXACT []
+is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
+is_a: GO:0032352 ! positive regulation of hormone metabolic process
+is_a: GO:0046885 ! regulation of hormone biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042446 ! hormone biosynthetic process
+relationship: RO:0002213 GO:0042446 ! hormone biosynthetic process
 
 [Term]
 id: GO:0046887
@@ -13115,6 +13305,29 @@ is_a: GO:0007154 ! cell communication
 intersection_of: GO:0007154 ! cell communication
 intersection_of: BFO:0000050 GO:0061337 ! cardiac conduction
 relationship: BFO:0000050 GO:0061337 ! cardiac conduction
+
+[Term]
+id: GO:0090030
+name: regulation of steroid hormone biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of steroid hormones,compounds with a 1, 2, cyclopentanoperhydrophenanthrene nucleus that act as hormones." [GOC:dph, GOC:tb]
+is_a: GO:0046885 ! regulation of hormone biosynthetic process
+is_a: GO:0050810 ! regulation of steroid biosynthetic process
+
+[Term]
+id: GO:0090031
+name: positive regulation of steroid hormone biosynthetic process
+def: "Any process that increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of steroid hormones,compounds with a 1, 2, cyclopentanoperhydrophenanthrene nucleus that act as hormones." [GOC:dph, GOC:tb]
+is_a: GO:0010893 ! positive regulation of steroid biosynthetic process
+is_a: GO:0046886 ! positive regulation of hormone biosynthetic process
+is_a: GO:0090030 ! regulation of steroid hormone biosynthetic process
+
+[Term]
+id: GO:0090032
+name: negative regulation of steroid hormone biosynthetic process
+def: "Any process that decreases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of steroid hormones,compounds with a 1, 2, cyclopentanoperhydrophenanthrene nucleus that act as hormones." [GOC:dph, GOC:tb]
+is_a: GO:0010894 ! negative regulation of steroid biosynthetic process
+is_a: GO:0032353 ! negative regulation of hormone biosynthetic process
+is_a: GO:0090030 ! regulation of steroid hormone biosynthetic process
 
 [Term]
 id: GO:0090087
@@ -17120,6 +17333,48 @@ is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0009887 ! animal organ morphogenesis
 relationship: RO:0002211 GO:0009887 ! animal organ morphogenesis
+
+[Term]
+id: GO:2000064
+name: regulation of cortisol biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of cortisol biosynthetic process." [GOC:obol, GOC:yaf]
+synonym: "regulation of cortisol anabolism" RELATED [GOC:obol]
+synonym: "regulation of cortisol biosynthesis" EXACT [GOC:obol]
+synonym: "regulation of cortisol formation" EXACT [GOC:obol]
+synonym: "regulation of cortisol synthesis" EXACT [GOC:obol]
+is_a: GO:0010566 ! regulation of ketone biosynthetic process
+is_a: GO:0031946 ! regulation of glucocorticoid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0034651 ! cortisol biosynthetic process
+relationship: RO:0002211 GO:0034651 ! cortisol biosynthetic process
+
+[Term]
+id: GO:2000065
+name: negative regulation of cortisol biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of cortisol biosynthetic process." [GOC:obol, GOC:yaf]
+synonym: "negative regulation of cortisol anabolism" RELATED [GOC:obol]
+synonym: "negative regulation of cortisol biosynthesis" EXACT [GOC:obol]
+synonym: "negative regulation of cortisol formation" EXACT [GOC:obol]
+synonym: "negative regulation of cortisol synthesis" EXACT [GOC:obol]
+is_a: GO:0031947 ! negative regulation of glucocorticoid biosynthetic process
+is_a: GO:2000064 ! regulation of cortisol biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0034651 ! cortisol biosynthetic process
+relationship: RO:0002212 GO:0034651 ! cortisol biosynthetic process
+
+[Term]
+id: GO:2000066
+name: positive regulation of cortisol biosynthetic process
+def: "Any process that activates or increases the frequency, rate or extent of cortisol biosynthetic process." [GOC:obol, GOC:yaf]
+synonym: "positive regulation of cortisol anabolism" RELATED [GOC:obol]
+synonym: "positive regulation of cortisol biosynthesis" EXACT [GOC:obol]
+synonym: "positive regulation of cortisol formation" EXACT [GOC:obol]
+synonym: "positive regulation of cortisol synthesis" EXACT [GOC:obol]
+is_a: GO:0031948 ! positive regulation of glucocorticoid biosynthetic process
+is_a: GO:2000064 ! regulation of cortisol biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0034651 ! cortisol biosynthetic process
+relationship: RO:0002213 GO:0034651 ! cortisol biosynthetic process
 
 [Term]
 id: GO:2000112
