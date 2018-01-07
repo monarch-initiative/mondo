@@ -212,6 +212,11 @@ reports/edit/%.tsv: $(SRC)
 reports/release/%.tsv: mondo.owl
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
+# TODO: replace with sparql
+reports/release/semantic-xref-pairs.tsv: d2p.pro
+	blip-findall -i imports/equivalencies.obo  -i mondo-edit.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
+
+
 # ----------------------------------------
 # Sparql constructs
 # ----------------------------------------
@@ -345,9 +350,6 @@ phenotype_annotation.tab:
 d2p.tsv: phenotype_annotation.tab
 	../utils/phenotab2tbl.pl $< > $@
 
-# TODO: replace with sparql
-reports/release/semantic-xref-pairs.tsv: d2p.pro
-	blip-findall -i imports/equivalencies.obo  -i mondo-edit.obo -i $< -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 modules/equiv-xrefs.obo: mondo-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
@@ -405,7 +407,10 @@ v-%.png:
 	blip ontol-subset -u ontol_config_do -i v-$*-trim.obo -idfile $* -down 5 -to png > $@
 
 ../../scratch/mondo-ncit-finding.tsv:
-	blip-findall -i imports/equivalencies.obo  -i mondo.obo -r neoplasm "(R='NCIT:R115';R='NCIT:R108'),parent(X,R,Y),equivalent_class(M,X)" -select "x(M,Y)" -no_pred -label  > $@.tmp && sort -u $@.tmp > $@
+	blip-findall -i imports/equivalencies.obo  -i mondo.obo -r neoplasm "(R='NCIT:R115';R='NCIT:R108'),parent(X,R,Y),equivalent_class(M,X)" -select "x(M,Y)" -no_pred -label -use_tabs  > $@.tmp && sort -u $@.tmp > $@
+
+#../../scratch/mondo-ncit-finding.tsv:
+
 
 # ----------------------------------------
 # TEST
