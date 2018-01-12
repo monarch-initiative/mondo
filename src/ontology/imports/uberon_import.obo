@@ -10503,6 +10503,13 @@ is_a: UBERON:0015212 ! lateral structure
 relationship: BSPO:0000126 UBERON:0000165 ! mouth
 
 [Term]
+id: UBERON:0001830
+name: minor salivary gland
+def: "One of the smaller, largely mucus-secreting, exocrine glands of the oral cavity, consisting of the labial, buccal, molar, lingual, and palatine glands[MP]." [http://en.wikipedia.org/wiki/Salivary_gland#Minor_Salivary_Glands, MP:0003791]
+is_a: UBERON:0001044 ! saliva-secreting gland
+relationship: BFO:0000050 UBERON:0005334 ! oral lamina propria
+
+[Term]
 id: UBERON:0001831
 name: parotid gland
 def: "The parotid gland is the largest of the salivary glands. It is found wrapped around the mandibular ramus, and it secretes saliva through Stensen's duct into the oral cavity, to facilitate mastication and swallowing. [WP,unvetted]." [http://en.wikipedia.org/wiki/Parotid_gland]
@@ -10659,6 +10666,17 @@ relationship: BFO:0000050 UBERON:0001757 ! pinna
 relationship: BFO:0000050 UBERON:0001867 ! cartilage of external ear
 
 [Term]
+id: UBERON:0001849
+name: membranous labyrinth
+def: "Organ with organ cavity which consists of the vestibular labyrinth and the cochlear labyrinth. The membranous labyrinth is lodged within the bony labyrinth and has the same general form; it is, however, considerably smaller and is partly separated from the bony walls by a quantity of fluid, the perilymph.[FMA, WP]" [FMA:61022, http://en.wikipedia.org/wiki/Membranous_labyrinth]
+synonym: "labyrinthus membranaceus" EXACT LATIN [http://en.wikipedia.org/wiki/Membranous_labyrinth]
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0001846 {source="FMA", source="MA"} ! internal ear
+relationship: RO:0001025 UBERON:0004637 ! otic capsule
+
+[Term]
 id: UBERON:0001850
 name: lacrimal drainage system
 def: "A collection of channels that connects the conjunctival sac with the nasal cavity, encompassing the lacrimal ducts, the lacrimal sac and the naso-lacrimal duct." [http://orcid.org/0000-0002-6601-2165]
@@ -10678,6 +10696,17 @@ synonym: "cortex" EXACT [FMA:61109]
 synonym: "cortex of organ" EXACT []
 is_a: UBERON:0000064 ! organ part
 relationship: RO:0002007 UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0001860
+name: endolymphatic duct
+def: "the small membranous canal, connecting with both saccule and utricle of the membranous labyrinth, passing through the aqueduct of vestibule, and terminating in the endolymphatic sac" [MGI:anna, MGI:smb, MP:0006011]
+synonym: "ductus endolymphaticus" EXACT LATIN [AAO:0000135]
+synonym: "ductus endolymphaticus" RELATED LATIN [http://en.wikipedia.org/wiki/Endolymphatic_duct]
+is_a: UBERON:0000025 ! tube
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0001849 ! membranous labyrinth
 
 [Term]
 id: UBERON:0001866
@@ -13513,6 +13542,17 @@ intersection_of: UBERON:0000982 ! skeletal joint
 intersection_of: RO:0002219 UBERON:0001484 ! articular capsule
 disjoint_from: UBERON:0011134 ! nonsynovial joint
 relationship: RO:0002219 UBERON:0001484 ! articular capsule
+
+[Term]
+id: UBERON:0002223
+name: endolymphatic sac
+def: "From the posterior wall of the saccule a canal, the ductus endolymphaticus, is given off; this duct is joined by the ductus utriculosaccularis, and then passes along the aquaeductus vestibuli and ends in a blind pouch, the endolymphatic sac, on the posterior surface of the petrous portion of the temporal bone, where it is in contact with the dura mater. Studies suggest that the endolymphatic duct and endolymphatic sac perform both absorptive and secretory, as well as phagocytic and immunodefensive,functions . [WP,unvetted]." [http://en.wikipedia.org/wiki/Endolymphatic_sac]
+synonym: "saccus endolymphaticus" EXACT [AAO:0000551]
+synonym: "saccus endolymphaticus" RELATED LATIN [http://en.wikipedia.org/wiki/Endolymphatic_sac]
+is_a: UBERON:0006937 ! inner ear epithelium
+is_a: UBERON:0007499 {source="EHDAA2"} ! epithelial sac
+relationship: BFO:0000050 UBERON:0001846 {source="VHOG"} ! internal ear
+relationship: RO:0002202 UBERON:0006226 {source="EHDAA2"} ! endolymphatic appendage
 
 [Term]
 id: UBERON:0002224
@@ -17065,6 +17105,14 @@ is_a: UBERON:0000479 ! tissue
 relationship: RO:0002254 UBERON:0000926 ! mesoderm
 
 [Term]
+id: UBERON:0003110
+name: otic region
+synonym: "cranial vault" RELATED [ZFA:0000189]
+is_a: UBERON:0034921 ! multi organ part structure
+relationship: BFO:0000050 UBERON:0001703 ! neurocranium
+relationship: BFO:0000050 UBERON:0002241 ! chondrocranium
+
+[Term]
 id: UBERON:0003111
 name: sphenoid region
 def: "Anatomical cluster that forms the floor and sidewalls of the middle part of the cranium." [TAO:0000290, UBERONREF:0000007]
@@ -17549,6 +17597,20 @@ intersection_of: BFO:0000050 UBERON:0001911 ! mammary gland
 relationship: BFO:0000050 UBERON:0001911 ! mammary gland
 relationship: RO:0002202 UBERON:0011272 {source="EHDAA2", source="Wikipathways:WP2062"} ! embryonic skin basal layer
 relationship: RO:0002433 UBERON:0001911 ! mammary gland
+
+[Term]
+id: UBERON:0003246
+name: epithelium of endolymphatic sac
+def: "An epithelium that is part of a endolymphatic sac [Automatically generated definition]." [OBOL:automatic]
+synonym: "endolymphatic sac epithelial tissue" EXACT [OBOL:automatic]
+synonym: "endolymphatic sac epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of endolymphatic sac" EXACT [OBOL:automatic]
+is_a: UBERON:0006937 ! inner ear epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0002223 ! endolymphatic sac
+intersection_of: RO:0002220 UBERON:0000464 ! anatomical space
+relationship: BFO:0000050 UBERON:0002223 ! endolymphatic sac
+relationship: RO:0002220 UBERON:0000464 ! anatomical space
 
 [Term]
 id: UBERON:0003247
@@ -18713,6 +18775,18 @@ is_a: UBERON:0004809 ! salivary gland epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0001832 ! sublingual gland
 relationship: BFO:0000050 UBERON:0001832 ! sublingual gland
+
+[Term]
+id: UBERON:0003362
+name: epithelium of endolymphatic duct
+def: "An epithelium that is part of a endolymphatic duct [Automatically generated definition]." [OBOL:automatic]
+synonym: "endolymphatic duct epithelial tissue" EXACT [OBOL:automatic]
+synonym: "endolymphatic duct epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of endolymphatic duct" EXACT [OBOL:automatic]
+is_a: UBERON:0006937 ! inner ear epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0001860 ! endolymphatic duct
+relationship: BFO:0000050 UBERON:0001860 ! endolymphatic duct
 
 [Term]
 id: UBERON:0003364
@@ -22308,6 +22382,21 @@ synonym: "Meckels diverticulum" RELATED [GAID:317]
 is_a: UBERON:0006590 ! remnant of embryonic structure
 relationship: BFO:0000050 UBERON:0002116 ! ileum
 relationship: RO:0002202 UBERON:0007105 {source="Wikipedia"} ! vitelline duct
+
+[Term]
+id: UBERON:0003706
+name: laryngeal vocal fold
+def: "Either of two pairs of folds of mucous membrane projecting into the larynx." [Medical_Dictionary:http\://medical-dictionary.thefreedictionary.com/]
+synonym: "plica vocalis" RELATED [BTO:0005084]
+synonym: "true vocal cord" EXACT [FMA:55457]
+synonym: "vocal band" RELATED [BTO:0005084]
+synonym: "vocal chord" RELATED [BTO:0005084]
+synonym: "vocal cord" EXACT [FMA:55457]
+synonym: "vocal fold" RELATED [MESH:A04.329.364.737]
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0034681 ! vocal organ
+relationship: BFO:0000050 UBERON:0002486 {source="BTO", source="FMA-abduced"} ! glottis
+relationship: BSPO:0000126 UBERON:0002486 {source="FMA-abduced-lr"} ! glottis
 
 [Term]
 id: UBERON:0003707
@@ -27436,6 +27525,24 @@ synonym: "sphincter" EXACT []
 is_a: UBERON:0001630 ! muscle organ
 
 [Term]
+id: UBERON:0004637
+name: otic capsule
+def: "The capsule surrounding the inner ear mechanism." [http://www.biology-online.org/dictionary/Otic_capsule]
+synonym: "auditory capsule" RELATED [VHOG:0000854]
+synonym: "otic capsule" EXACT [ZFA:0001500]
+synonym: "otic capsule element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "otic capsule endochondral element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "otic capsule skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "otic region" RELATED []
+synonym: "periotic" RELATED []
+synonym: "periotic capsule" RELATED [VHOG:0000854]
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0010363 ! endochondral element
+relationship: BFO:0000050 UBERON:0001846 ! internal ear
+relationship: BFO:0000050 UBERON:0003110 ! otic region
+
+[Term]
 id: UBERON:0004638
 name: blood vessel endothelium
 def: "An endothelium that lines the blood vasculature. Other endothelia may line lymph vessels, the heart" [https://orcid.org/0000-0002-6601-2165]
@@ -31509,6 +31616,33 @@ intersection_of: BFO:0000050 UBERON:0003216 ! hard palate
 relationship: BFO:0000050 UBERON:0003216 ! hard palate
 
 [Term]
+id: UBERON:0005047
+name: mucosa of vocal fold
+def: "A mucosa that is part of a vocal cord [Automatically generated definition]." [OBOL:automatic]
+synonym: "mucosa of glottis" EXACT [FMA:64017]
+synonym: "mucosa of organ of true vocal cord" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vocal cord" EXACT [OBOL:automatic]
+synonym: "mucosa of true vocal cord" EXACT [OBOL:automatic]
+synonym: "mucosa of vocal cord" EXACT [OBOL:automatic]
+synonym: "mucous membrane of true vocal cord" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vocal cord" EXACT [OBOL:automatic]
+synonym: "organ mucosa of true vocal cord" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vocal cord" EXACT [OBOL:automatic]
+synonym: "true vocal cord mucosa" EXACT [OBOL:automatic]
+synonym: "true vocal cord mucosa of organ" EXACT [OBOL:automatic]
+synonym: "true vocal cord mucous membrane" EXACT [OBOL:automatic]
+synonym: "true vocal cord organ mucosa" EXACT [OBOL:automatic]
+synonym: "vocal cord mucosa" EXACT [OBOL:automatic]
+synonym: "vocal cord mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vocal cord mucous membrane" EXACT [OBOL:automatic]
+synonym: "vocal cord organ mucosa" EXACT [OBOL:automatic]
+synonym: "vocal fold mucosa" EXACT [FMA:64017]
+is_a: UBERON:0001824 ! mucosa of larynx
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0003706 ! laryngeal vocal fold
+relationship: BFO:0000050 UBERON:0003706 ! laryngeal vocal fold
+
+[Term]
 id: UBERON:0005048
 name: mucosa of uterine tube
 def: "A mucosa that is part of a fallopian tube [Automatically generated definition]." [OBOL:automatic]
@@ -33338,6 +33472,32 @@ relationship: BFO:0000050 UBERON:0001007 ! digestive system
 relationship: RO:0002492 UBERON:0000066 ! fully formed stage
 
 [Term]
+id: UBERON:0005410
+name: cartilaginous otic capsule
+def: "A otic capsule endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
+synonym: "auditory capsule" EXACT [ZFA:0001500]
+synonym: "otic capsule cartilage element" EXACT []
+is_a: UBERON:0003932 ! cartilage element of chondrocranium
+is_a: UBERON:0004637 ! otic capsule
+intersection_of: UBERON:0004637 ! otic capsule
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010349 {source="EHDAA2"} ! otic capsule pre-cartilage condensation
+
+[Term]
+id: UBERON:0005411
+name: bony otic capsule
+def: "the cartilage or bony capsule surrounding the inner ear mechanism" [ISBN:0-683-40008-8, MP:0000039]
+synonym: "otic capsule bone" EXACT []
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0003462 ! facial bone
+is_a: UBERON:0004637 ! otic capsule
+is_a: UBERON:0011164 ! neurocranium bone
+intersection_of: UBERON:0004637 ! otic capsule
+intersection_of: RO:0002473 UBERON:0002481 ! bone tissue
+relationship: BFO:0000050 UBERON:0001694 {source="EHDAA2"} ! petrous part of temporal bone
+relationship: RO:0002202 UBERON:0005410 ! cartilaginous otic capsule
+
+[Term]
 id: UBERON:0005417
 name: forelimb bud
 def: "A limb bud that develops into a forelimb." [http://orcid.org/0000-0002-6601-2165]
@@ -33528,6 +33688,14 @@ synonym: "region of neck" EXACT [FMA:24219]
 synonym: "subdivision of neck" EXACT [FMA:24219]
 is_a: UBERON:0011676 ! subdivision of organism along main body axis
 relationship: BFO:0000050 UBERON:0000974 ! neck
+
+[Term]
+id: UBERON:0005437
+name: conus medullaris
+def: "The conus medullaris is the terminal end of the spinal cord. It occurs near lumbar vertebral levels 1 (L1) and 2 (L2). After the spinal cord tapers out, the spinal nerves continue as dangling nerve roots called cauda equina. This terminal nerve root tail is referred to as the filum terminale. The upper end of the conus medullaris is usually not well defined." [http://en.wikipedia.org/wiki/Conus_medullaris]
+synonym: "medullary cone" EXACT []
+synonym: "termination of the spinal cord" RELATED []
+is_a: UBERON:0005844 ! spinal cord segment
 
 [Term]
 id: UBERON:0005445
@@ -35843,6 +36011,12 @@ name: elbow joint primordium
 is_a: UBERON:0001048 ! primordium
 relationship: BFO:0000050 UBERON:0003318 ! mesenchyme of elbow
 relationship: RO:0002387 UBERON:0001490 ! elbow joint
+
+[Term]
+id: UBERON:0006226
+name: endolymphatic appendage
+is_a: UBERON:0006598 ! presumptive structure
+relationship: RO:0002387 UBERON:0001860 ! endolymphatic duct
 
 [Term]
 id: UBERON:0006227
@@ -44323,6 +44497,16 @@ intersection_of: BFO:0000050 UBERON:0010031 ! 6th arch mesenchyme
 intersection_of: RO:0002202 UBERON:0006904 ! head mesenchyme from mesoderm
 relationship: BFO:0000050 UBERON:0010031 {source="EHDAA2"} ! 6th arch mesenchyme
 relationship: RO:0002202 UBERON:0006904 {source="EHDAA2"} ! head mesenchyme from mesoderm
+
+[Term]
+id: UBERON:0010349
+name: otic capsule pre-cartilage condensation
+def: "A otic capsule endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
+synonym: "otic capsule anlage" EXACT []
+is_a: UBERON:0004637 ! otic capsule
+intersection_of: UBERON:0004637 ! otic capsule
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+relationship: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
 
 [Term]
 id: UBERON:0010355
@@ -53826,6 +54010,12 @@ relationship: BFO:0000050 UBERON:0001733 ! soft palate
 relationship: BFO:0000050 UBERON:0014453 ! gustatory epithelium of palate
 
 [Term]
+id: UBERON:0034681
+name: vocal organ
+def: "Any organ that is the primary organ of vocalization behavior. Examples: The laryngeal vocal cord (humans), the syrinx (birds)." [http://orcid.org/0000-0002-6601-2165]
+is_a: UBERON:0000062 ! organ
+
+[Term]
 id: UBERON:0034705
 name: developing neuroepithelium
 def: "An embryonic or larval epithelium that is committed to form part of the nervous system." [AEO:0001008, AEO:JB]
@@ -54315,6 +54505,18 @@ intersection_of: BFO:0000050 UBERON:0000058 ! duct
 relationship: BFO:0000050 UBERON:0000058 ! duct
 
 [Term]
+id: UBERON:0034971
+name: aortic body
+def: "one of several small clusters of chemoreceptors, baroreceptors, and supporting cells located along the aortic arch." [http://en.wikipedia.org/wiki/Aortic_body]
+synonym: "aortic bodies" RELATED PLURAL [http://en.wikipedia.org/wiki/Aortic_body]
+synonym: "aortic glands" RELATED PLURAL [http://en.wikipedia.org/wiki/Aortic_body]
+synonym: "Zuckerkandl's body" RELATED [http://en.wikipedia.org/wiki/Aortic_body]
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0013765 ! digestive system element
+is_a: UBERON:0034979 ! nonchromaffin paraganglion
+relationship: BFO:0000050 UBERON:0004363 ! pharyngeal arch artery
+
+[Term]
 id: UBERON:0034972
 name: jugular body
 def: "A nonchromaffin paraganglion located in the wall of the jugular bulb." [MESH:A08.800.550.700.120.600.350]
@@ -54347,6 +54549,16 @@ synonym: "bulb of jugular vein" EXACT []
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0013522 ! subdivision of tube
 relationship: BFO:0000050 UBERON:0001586 {source="FMA"} ! internal jugular vein
+
+[Term]
+id: UBERON:0034987
+name: lumbar nerve plexus
+def: "A nervous plexus in the lumbar region of the body which forms part of the lumbosacral plexus." [http://en.wikipedia.org/wiki/Lumbar_plexus]
+synonym: "femoral plexus" RELATED [http://en.wikipedia.org/wiki/Lumbar_plexus]
+synonym: "lumbar plexus" EXACT [FMA:5908]
+synonym: "plexus lumbalis" EXACT [FMA:TA]
+synonym: "plexus lumbalis" RELATED [http://en.wikipedia.org/wiki/Lumbar_plexus]
+is_a: UBERON:0001815 ! lumbosacral nerve plexus
 
 [Term]
 id: UBERON:0034994
@@ -54677,6 +54889,19 @@ intersection_of: BSPO:0000121 UBERON:0000033 ! head
 relationship: BSPO:0000121 UBERON:0000033 ! head
 
 [Term]
+id: UBERON:0035177
+name: abdominal part of esophagus
+def: "Clinical esophageal segment composed of smooth muscle. It corresponds to the inferior part of the lower third topographic segment of the esophagus." [ncithesaurus:Abdominal_Esophagus]
+synonym: "abdominal esophagus" EXACT [FMA:9397]
+synonym: "abdominal part of oesophagus" EXACT [FMA:9397]
+synonym: "pars abdominalis (oesophagus)" EXACT [FMA:9397]
+synonym: "pars abdominalis oesophageae" EXACT LATIN [FMA:9397, FMA:TA]
+synonym: "T11 part of esophagus" EXACT [FMA:9397]
+synonym: "t11 segment of esophagus" RELATED [FMA:9397]
+is_a: UBERON:0013522 ! subdivision of tube
+relationship: BFO:0000050 UBERON:0001043 {source="FMA"} ! esophagus
+
+[Term]
 id: UBERON:0035198
 name: superficial lymphatic vessel
 def: "The tubules that carry lymph throughout the body that are just beneath the surface of the skin." [ncithesaurus:Superficial_Lymphatic_Vessel]
@@ -54685,6 +54910,17 @@ is_a: UBERON:0001473 ! lymphatic vessel
 intersection_of: UBERON:0001473 ! lymphatic vessel
 intersection_of: BFO:0000050 UBERON:0035549 ! superficial vasculature
 relationship: BFO:0000050 UBERON:0035549 ! superficial vasculature
+
+[Term]
+id: UBERON:0035216
+name: thoracic part of esophagus
+def: "Zone of esophagus located in the thorax." [FMA:9396]
+synonym: "pars thoracica (oesophagus)" EXACT LATIN [FMA:9396, FMA:TA]
+synonym: "pars thoracica oesophageae" EXACT LATIN [FMA:9396, FMA:TA]
+synonym: "thoracic esophagus" EXACT [FMA:9396]
+synonym: "thoracic part of oesophagus" EXACT [FMA:9396]
+is_a: UBERON:0013522 ! subdivision of tube
+relationship: BFO:0000050 UBERON:0001043 {source="FMA"} ! esophagus
 
 [Term]
 id: UBERON:0035228
@@ -54865,6 +55101,18 @@ is_a: UBERON:0015212 ! lateral structure
 intersection_of: UBERON:0001146 ! suprarenal vein
 intersection_of: BSPO:0000121 UBERON:0000468 ! multicellular organism
 relationship: BSPO:0000121 UBERON:0000468 ! multicellular organism
+
+[Term]
+id: UBERON:0035450
+name: cervical part of esophagus
+def: "Clinical esophageal segment composed of skeletal muscle. It corresponds to the superior part of the upper third topographic segment of the esophagus." [ncithesaurus:Cervical_Esophagus]
+synonym: "cervical esophagus" EXACT [FMA:9395]
+synonym: "cervical part of oesophagus" EXACT [FMA:9395]
+synonym: "pars cervicalis (oesophagus)" EXACT [FMA:9395]
+synonym: "pars cervicalis oesophageae" EXACT LATIN [FMA:9395, FMA:TA]
+synonym: "pars colli oesophageae" EXACT LATIN [FMA:9395, FMA:TA]
+is_a: UBERON:0013522 ! subdivision of tube
+relationship: BFO:0000050 UBERON:0001043 {source="FMA"} ! esophagus
 
 [Term]
 id: UBERON:0035465
