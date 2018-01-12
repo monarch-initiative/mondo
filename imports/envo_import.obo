@@ -1,0 +1,303 @@
+format-version: 1.2
+ontology: mondo/imports/envo_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000020>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000031>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/ENVO_00010483>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001125>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0001546>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0001985>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000086>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000004> (<http://purl.obolibrary.org/obo/BFO_0000004>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000020> (<http://purl.obolibrary.org/obo/BFO_0000020>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000031> (<http://purl.obolibrary.org/obo/BFO_0000031>)\n\n\n# Class: <http://purl.obolibrary.org/obo/ENVO_01001125> (<http://purl.obolibrary.org/obo/ENVO_01001125>)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01001125> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_00010483> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> ObjectUnionOf(<http://purl.obolibrary.org/obo/PATO_0001546> <http://purl.obolibrary.org/obo/PATO_0001985>))))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001125> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> ObjectUnionOf(<http://purl.obolibrary.org/obo/PATO_0001546> <http://purl.obolibrary.org/obo/PATO_0001985>)))\n\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000004> <http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000031>)\n)
+
+[Term]
+id: BFO:0000001
+name: entity
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
+is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000017
+name: realizable entity
+def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
+
+[Term]
+id: BFO:0000019
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000020
+name: specifically dependent continuant
+def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
+def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000031
+name: generically dependent continuant
+def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
+def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CHEBI:24431
+name: chemical entity
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CHEBI:46662
+name: mineral
+is_a: CHEBI:59999 ! chemical substance
+
+[Term]
+id: CHEBI:59999
+name: chemical substance
+is_a: CHEBI:24431 ! chemical entity
+
+[Term]
+id: ENVO:00002008
+name: dust
+def: "Minute solid particles with diameters less than 500 micrometers. Occurs in and may be deposited from, the atmosphere." []
+is_a: ENVO:01000814 ! solid environmental material
+relationship: RO:0000086 PATO:0001546 ! quality of a solid
+
+[Term]
+id: ENVO:00002264
+name: waste material
+def: "A material which is not the desired output of a process and which is typically the input of a process which removes it from its producer (e.g. a disposal process)." []
+is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0000087 ENVO:01000665 ! waste role
+relationship: RO:0000087 ENVO:01000665 ! waste role
+
+[Term]
+id: ENVO:00002872
+name: bagasse
+def: "The biomass remaining after sugarcane stalks are crushed to extract their juice." []
+synonym: "sugarcane bagasse" EXACT []
+is_a: ENVO:00002264 ! waste material
+relationship: RO:0000087 ENVO:01000665 ! waste role
+
+[Term]
+id: ENVO:00010483
+name: environmental material
+def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
+synonym: "portion of environmental material" EXACT []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: ENVO:01000256
+name: mineral material
+def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." []
+is_a: ENVO:01000814 ! solid environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0002473 CHEBI:46662 ! mineral
+relationship: RO:0000086 PATO:0001546 ! quality of a solid
+relationship: RO:0002473 CHEBI:46662 ! mineral
+
+[Term]
+id: ENVO:01000665
+name: waste role
+def: "A role that is realized in some process wherein the bearer is discarded or not utilized further." []
+is_a: BFO:0000023 ! role
+
+[Term]
+id: ENVO:01000814
+name: solid environmental material
+def: "An environmental material which is in a solid state." []
+is_a: ENVO:01001125 ! ice
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0000086 PATO:0001546 ! quality of a solid
+relationship: RO:0000086 PATO:0001546 ! quality of a solid
+
+[Term]
+id: ENVO:01001125
+name: ice
+def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:02000100
+name: mineral dust
+is_a: ENVO:00002008 ! dust
+intersection_of: ENVO:00002008 ! dust
+intersection_of: RO:0001000 ENVO:01000256 ! mineral material
+relationship: RO:0001000 ENVO:01000256 ! mineral material
+
+[Term]
+id: ENVO:02000101
+name: fibrous dust
+is_a: ENVO:00002008 ! dust
+
+[Term]
+id: ENVO:02000106
+name: asbestos dust
+is_a: ENVO:02000101 ! fibrous dust
+
+[Term]
+id: ENVO:02000108
+name: cotton dust
+is_a: ENVO:02000109 ! dust from plant parts
+
+[Term]
+id: ENVO:02000109
+name: dust from plant parts
+is_a: ENVO:00002008 ! dust
+intersection_of: ENVO:00002008 ! dust
+intersection_of: RO:0001000 PO:0025131 ! plant anatomical entity
+relationship: RO:0001000 PO:0025131 ! plant anatomical entity
+
+[Term]
+id: ENVO:09200000
+name: temperature of environmental material
+def: "The temperature of some environmental material." []
+synonym: "environmental material temperature" EXACT []
+is_a: PATO:0000146 ! temperature
+intersection_of: PATO:0000146 ! temperature
+intersection_of: RO:0000052 ENVO:00010483 ! environmental material
+relationship: RO:0000052 ENVO:00010483 ! environmental material
+
+[Term]
+id: PATO:0000001
+name: quality
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
+synonym: "trait" EXACT []
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: PATO:0000146
+name: temperature
+def: "A physical quality of the thermal energy of a system." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001018
+name: physical quality
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." []
+synonym: "relational physical quality" EXACT []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+def: "A quality which inheres in a continuant." []
+synonym: "monadic quality of a continuant" EXACT []
+synonym: "monadic quality of an object" NARROW []
+synonym: "monadic quality of continuant" NARROW []
+synonym: "multiply inhering quality of a physical entity" EXACT []
+synonym: "quality of a continuant" EXACT []
+synonym: "quality of a single physical entity" EXACT []
+synonym: "quality of an object" EXACT []
+synonym: "quality of continuant" EXACT []
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001546
+name: quality of a solid
+def: "A physical quality inhering in a bearer by virtue of the bearer's exhibiting the physical characteristics of an entity characterized by particles arranged such that their shape and volume are relatively stable." []
+synonym: "solidity" EXACT []
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0001985
+name: frozen
+def: "A quality inhering in a bearer by virtue of the bearer's being kept below its freezing point." []
+is_a: PATO:0000146 ! temperature
+
+[Term]
+id: PATO:0002198
+name: quality of a substance
+def: "A quality inhering in a bearer by virtue of its constitution." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PO:0025131
+name: plant anatomical entity
+def: "An anatomical entity that is or was part of a plant." []
+synonym: "entidad anat&#243mica vegetal (Spanish, exact)" EXACT []
+synonym: "植物 解剖学（形態）的実体 (Japanese, exact)" EXACT []
+is_a: BFO:0000040 ! material entity
+
+[Typedef]
+id: BFO:0000050
+is_transitive: true
+is_a: RO:0002131
+inverse_of: BFO:0000051
+
+[Typedef]
+id: BFO:0000051
+is_transitive: true
+is_a: RO:0002131
+
+[Typedef]
+id: RO:0000052
+is_a: RO:0002314
+inverse_of: RO:0000053
+
+[Typedef]
+id: RO:0000053
+range: BFO:0000020 ! specifically dependent continuant
+
+[Typedef]
+id: RO:0000080
+is_a: RO:0000052
+inverse_of: RO:0000086
+
+[Typedef]
+id: RO:0000081
+is_a: RO:0000052
+inverse_of: RO:0000087
+
+[Typedef]
+id: RO:0000086
+range: BFO:0000019 ! quality
+is_a: RO:0000053
+
+[Typedef]
+id: RO:0000087
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000023 ! role
+is_a: RO:0000053
+
+[Typedef]
+id: RO:0001000
+inverse_of: RO:0001001
+
+[Typedef]
+id: RO:0002131
+holds_over_chain: BFO:0000050 BFO:0000050
+holds_over_chain: BFO:0000051 BFO:0000050
+holds_over_chain: BFO:0000051 RO:0002131
+is_a: RO:0002323
+
+[Typedef]
+id: RO:0002314
+holds_over_chain: RO:0000052 BFO:0000050
+is_a: RO:0002502
+transitive_over: BFO:0000050
+
+[Typedef]
+id: RO:0002473
+is_a: BFO:0000051
+
