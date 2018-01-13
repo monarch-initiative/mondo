@@ -296,6 +296,11 @@ mirror/rdo.obo:
 # ----------------------------------------
 # Rewritten ext axioms
 # ----------------------------------------
+
+imports/axioms-%-nd.owl:
+	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+.PRECIOUS: imports/axioms-%.owl
+
 imports/axioms-%.owl:
 	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: imports/axioms-%.owl
