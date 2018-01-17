@@ -1,3 +1,113 @@
 format-version: 1.2
 ontology: mondo/imports/pato_import
 
+[Term]
+id: PATO:0000001
+name: quality
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
+synonym: "trait" EXACT []
+
+[Term]
+id: PATO:0000051
+name: morphology
+def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." [PATOC:GVG]
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000141
+name: structure
+def: "A morphology quality inhering in a bearer by virtue of the bearer's relative position, shape, arrangements and connectivity of an organism's various parts; the pattern underlying its form." [PATOC:GVG]
+synonym: "conformation" BROAD [VT:1000738]
+synonym: "relational structural quality" EXACT []
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000389
+name: acute
+def: "A quality of a process inhering in a bearer by virtue of the bearer's having a sudden onset, sharp rise, and short course." [dictionary:reference]
+is_a: PATO:0001309 ! duration
+
+[Term]
+id: PATO:0001018
+name: physical quality
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." [PATOC:GVG]
+synonym: "relational physical quality" EXACT []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001236
+name: process quality
+def: "A quality which inheres in an process." [PATOC:GVG]
+synonym: "quality of a process" EXACT []
+synonym: "quality of occurrent" EXACT []
+synonym: "quality of process" EXACT []
+synonym: "relational quality of occurrent" EXACT []
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+def: "A quality which inheres in a continuant." [PATOC:GVG]
+synonym: "monadic quality of a continuant" EXACT []
+synonym: "monadic quality of an object" NARROW []
+synonym: "monadic quality of continuant" NARROW []
+synonym: "multiply inhering quality of a physical entity" EXACT []
+synonym: "quality of a continuant" EXACT []
+synonym: "quality of a single physical entity" EXACT []
+synonym: "quality of an object" EXACT []
+synonym: "quality of continuant" EXACT []
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001309
+name: duration
+def: "A process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point." [PATOC:mellybelly]
+synonym: "period" EXACT []
+synonym: "time" RELATED []
+is_a: PATO:0002062 ! physical quality of a process
+
+[Term]
+id: PATO:0001414
+name: catalytic activity
+def: "A physical quality inhering in a catalyst by virtue of the amount of the catalyst's action." [PATOC:GVG]
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001863
+name: chronic
+def: "A duration quality of a process inhering in a bearer by virtue of the bearer's having slow progressive course of indefinite duration." [PATOC:cjm]
+is_a: PATO:0001309 ! duration
+
+[Term]
+id: PATO:0002011
+name: neoplastic
+def: "A structural quality which is held by a bearer when the latter's disposition the presence of abnormally proliferating masses of cells." [PATOC:MAH]
+synonym: "tumorous" EXACT []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0002062
+name: physical quality of a process
+is_a: PATO:0001236 ! process quality
+
+[Term]
+id: PATO:0002096
+name: neoplastic, non-malignant
+def: "A disposition inhering in a tumour by virtue of the bearer's disposition not to progress, invade surrounding tissues or metastasize." [PATOC:GVG]
+synonym: "benign" RELATED []
+is_a: PATO:0002011 ! neoplastic
+disjoint_from: PATO:0002097 ! neoplastic, malignant
+
+[Term]
+id: PATO:0002097
+name: neoplastic, malignant
+def: "A disposition inhering in a tumour by virtue of the bearer's disposition to progress, invade surrounding tissues or metastasize." [PATOC:GVG]
+is_a: PATO:0002011 ! neoplastic
+disjoint_from: PATO:0002132 ! neoplastic, non-invasive
+
+[Term]
+id: PATO:0002132
+name: neoplastic, non-invasive
+def: "A disposition inhering in a tumour by virtue of the bearer's disposition not to invade surrounding tissues." [PATOC:GVG]
+is_a: PATO:0002011 ! neoplastic
+

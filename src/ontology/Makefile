@@ -148,7 +148,7 @@ imports/%_import.obo: imports/%_import.owl
 
 
 imports/%_terms.txt:  $(SRC)
-	robot query -f tsv -i $< -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
+	robot query -f tsv -i $< -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | perl -npe 's@^\<@@;s@>$$@@' | sort -u > $@
 
 # ----------------------------------------
 # Release
@@ -173,6 +173,11 @@ td:
 # NOTE: no longer removes redundant
 INF: mondo-edit.obo
 	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --keepRedundant --markIsInferred --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | perl -npe 's@is_inferred="true"@source="OWLReasoner:Elk-$(ISODATE)"@' | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
+
+NORM: mondo-edit.obo
+	owltools --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.tmp && mv $@.tmp $@
+
+
 
 NEWAXTEST: mondo-edit.owl new.owl
 #	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m z.owl -o $@
@@ -216,6 +221,8 @@ reports/release/%.tsv: mondo.owl
 reports/release/semantic-xref-pairs.tsv: d2p.pro
 	blip-findall -i imports/equivalencies.obo  -i mondo-edit.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
+report.yaml: $(SRC)
+	robot report -i $< report -o $@
 
 # ----------------------------------------
 # Sparql constructs
