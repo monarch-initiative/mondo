@@ -148,7 +148,7 @@ imports/%_import.obo: imports/%_import.owl
 
 
 imports/%_terms.txt:  $(SRC)
-	robot query -i $< -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
+	robot query -f tsv -i $< -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | sort -u > $@
 
 # ----------------------------------------
 # Release
