@@ -23,7 +23,7 @@ Editors of this ontology should use the edit version, [src/ontology/mondo-edit.o
 
 Read the editors guide first!
 
-https://docs.google.com/document/d/19bp9MpCHCxbjMmbntB2e5gZNzzNlu06DnDB8xcoSXK8/edit#
+http://bit.ly/mondo-editors
 
 Layout:
 

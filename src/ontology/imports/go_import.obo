@@ -10865,6 +10865,50 @@ intersection_of: RO:0002212 GO:0050667 ! homocysteine metabolic process
 relationship: RO:0002212 GO:0050667 ! homocysteine metabolic process
 
 [Term]
+id: GO:0050673
+name: epithelial cell proliferation
+def: "The multiplication or reproduction of epithelial cells, resulting in the expansion of a cell population. Epithelial cells make up the epithelium, the covering of internal and external surfaces of the body, including the lining of vessels and other small cavities. It consists of cells joined by small amounts of cementing substances." [ISBN:0721662544]
+is_a: GO:0008283 ! cell proliferation
+
+[Term]
+id: GO:0050678
+name: regulation of epithelial cell proliferation
+def: "Any process that modulates the frequency, rate or extent of epithelial cell proliferation." [GOC:ai]
+is_a: GO:0042127 ! regulation of cell proliferation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0050673 ! epithelial cell proliferation
+relationship: RO:0002211 GO:0050673 ! epithelial cell proliferation
+
+[Term]
+id: GO:0050679
+name: positive regulation of epithelial cell proliferation
+def: "Any process that activates or increases the rate or extent of epithelial cell proliferation." [GOC:ai]
+synonym: "activation of epithelial cell proliferation" NARROW []
+synonym: "stimulation of epithelial cell proliferation" NARROW []
+synonym: "up regulation of epithelial cell proliferation" EXACT []
+synonym: "up-regulation of epithelial cell proliferation" EXACT []
+synonym: "upregulation of epithelial cell proliferation" EXACT []
+is_a: GO:0008284 ! positive regulation of cell proliferation
+is_a: GO:0050678 ! regulation of epithelial cell proliferation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0050673 ! epithelial cell proliferation
+relationship: RO:0002213 GO:0050673 ! epithelial cell proliferation
+
+[Term]
+id: GO:0050680
+name: negative regulation of epithelial cell proliferation
+def: "Any process that stops, prevents or reduces the rate or extent of epithelial cell proliferation." [GOC:ai]
+synonym: "down regulation of epithelial cell proliferation" EXACT []
+synonym: "down-regulation of epithelial cell proliferation" EXACT []
+synonym: "downregulation of epithelial cell proliferation" EXACT []
+synonym: "inhibition of epithelial cell proliferation" NARROW []
+is_a: GO:0008285 ! negative regulation of cell proliferation
+is_a: GO:0050678 ! regulation of epithelial cell proliferation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0050673 ! epithelial cell proliferation
+relationship: RO:0002212 GO:0050673 ! epithelial cell proliferation
+
+[Term]
 id: GO:0050727
 name: regulation of inflammatory response
 def: "Any process that modulates the frequency, rate or extent of the inflammatory response, the immediate defensive reaction (by vertebrate tissue) to infection or injury caused by chemical or physical agents." [GOC:ai]
@@ -12461,6 +12505,15 @@ intersection_of: RO:0002212 GO:0006486 ! protein glycosylation
 relationship: RO:0002212 GO:0006486 ! protein glycosylation
 
 [Term]
+id: GO:0060054
+name: positive regulation of epithelial cell proliferation involved in wound healing
+def: "Any process that activates or increases the rate or extent of epithelial cell proliferation, contributing to the restoration of integrity to a damaged tissue following an injury." [GOC:dph]
+is_a: GO:0050679 ! positive regulation of epithelial cell proliferation
+intersection_of: GO:0050679 ! positive regulation of epithelial cell proliferation
+intersection_of: BFO:0000050 GO:0042060 ! wound healing
+relationship: BFO:0000050 GO:0042060 ! wound healing
+
+[Term]
 id: GO:0060073
 name: micturition
 def: "The regulation of body fluids process in which parasympathetic nerves stimulate the bladder wall muscle to contract and expel urine from the body." [GOC:dph]
@@ -13524,6 +13577,12 @@ id: GO:0097159
 name: organic cyclic compound binding
 def: "Interacting selectively and non-covalently with an organic cyclic compound, any molecular entity that contains carbon arranged in a cyclic molecular structure." [CHEBI:33832, GOC:sjw, PMID:7583672]
 is_a: GO:0005488 ! binding
+
+[Term]
+id: GO:0097325
+name: melanocyte proliferation
+def: "The multiplication or reproduction of melanocytes, resulting in the expansion of a cell population. A melanocyte is a pigment cell derived from the neural crest. It contains melanin-filled pigment granules, which give a brown to black appearance." [CL:0000148, GOC:uh, PMID:22637532]
+is_a: GO:0050673 ! epithelial cell proliferation
 
 [Term]
 id: GO:0097384
