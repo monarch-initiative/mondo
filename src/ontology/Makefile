@@ -290,8 +290,8 @@ mirror/ncit-disease.ids: mirror/ncit-disease.uris
 	perl -npe 's@http://purl.obolibrary.org/obo/NCIT_@NCIT:@' $< > $@
 
 
-mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.ids
-	robot extract -i $< -T mirror/ncit-disease.ids --method BOT -o $@
+mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.uris
+	robot extract -i $< -T mirror/ncit-disease.uris --method BOT -o $@
 
 mirror/ncit-disease.obo: mirror/ncit-disease.owl
 	owltools $< -o -f obo $@
@@ -308,9 +308,14 @@ imports/axioms-%-nd.owl:
 	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: imports/axioms-%.owl
 
+imports/axioms-%-all.owl:
+	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+.PRECIOUS: imports/axioms-%.owl
+
 imports/axioms-%.owl:
 	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: imports/axioms-%.owl
+
 
 imports/axioms-%.obo: imports/axioms-%.owl
 	owltools $< -o -f obo --no-check $@
