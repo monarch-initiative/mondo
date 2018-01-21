@@ -201,6 +201,13 @@ VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(QSRC)
 	robot verify -i $< --queries $(VQUERIES) -O reports/edit/ && touch $@
 
+PL2SPARQL = pl2sparql  -c ../plq/lexical_match_queries.pro
+../sparql/%.sparql:
+	 $(PL2SPARQL) -v  "$*" > $@.tmp && mv $@.tmp $@
+
+reports/pq-%.tsv: mondo-edit.owl
+	 $(PL2SPARQL) -f tsv -v -i $< -e -l "$*" > $@.tmp && mv $@.tmp $@
+
 # ----------------------------------------
 # Sparql queries: Reports
 # ----------------------------------------
@@ -211,7 +218,7 @@ all_reports: mondo.owl
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
-reports/edit/%.tsv: $(SRC)
+reports/edit/%.tsv: $(SRC) $(SPARQLDIR)/%.sparql
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 reports/release/%.tsv: mondo.owl
@@ -322,6 +329,9 @@ imports/axioms-%.obo: imports/axioms-%.owl
 
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m imports/bad-$*.owl
+
+debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
+	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@
 
 # ----------------------------------------
 # Lexical mapping
@@ -435,3 +445,20 @@ v-%.png:
 
 ncit-eq.obo: ncit-kboom-curated.obo
 	perl -npe 's@\{@{source="MONDO:equivalentTo", @' $< > $@
+
+# ----------------------------------------
+# BLAZEGRAPH
+# ----------------------------------------
+
+BGJAR = target/jars/blazegraph-jar.jar
+
+$(BGJAR):
+	mkdir -p jars && cd jars && curl -O http://tenet.dl.sourceforge.net/project/bigdata/bigdata/2.1.1/blazegraph.jar
+.PRECIOUS: $(BGJAR)
+
+BG = java -XX:+UseG1GC -Xmx12G -cp $(BGJAR) com.bigdata.rdf.store.DataLoader -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties
+load-blazegraph: mondo-edit.owl
+	$(BG) $<
+
+bg-start:
+	java -server -Xmx8g -Dbigdata.propertyFile=conf/blazegraph.properties -jar $(BGJAR)
