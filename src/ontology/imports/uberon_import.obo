@@ -13184,6 +13184,21 @@ intersection_of: RO:0002150 UBERON:0008951 ! left lung lobe
 relationship: RO:0002150 UBERON:0008951 ! left lung lobe
 
 [Term]
+id: UBERON:0002180
+name: ventral funiculus of spinal cord
+def: "The white substance of the spinal cord lying on either side between the ventral median fissure and the ventral roots of the spinal nerves." [http://medical-dictionary.thefreedictionary.com/ventral+funiculus]
+synonym: "anterior funiculus" EXACT []
+synonym: "anterior funiculus of spinal cord" EXACT []
+synonym: "anterior white column of spinal cord" EXACT [FMA:74003]
+synonym: "funiculus anterior medullae spinalis" EXACT LATIN [FMA:74003, FMA:TA]
+synonym: "ventral funiculi" RELATED PLURAL [ZFA:0000605]
+synonym: "ventral funiculus" EXACT [ZFA:0000605]
+synonym: "ventral funiculus of spinal cord" EXACT []
+synonym: "ventral white column of spinal cord" EXACT [FMA:74003]
+is_a: UBERON:0006127 ! funiculus of spinal cord
+relationship: BSPO:0000126 UBERON:0002318 {source="FMA-abduced-lr"} ! white matter of spinal cord
+
+[Term]
 id: UBERON:0002182
 name: main bronchus
 def: "One of two branches of the trachea." [http://en.wikipedia.org/wiki/Main_bronchus]
@@ -29666,6 +29681,22 @@ intersection_of: UBERON:0004590 ! sphincter muscle
 intersection_of: BFO:0000050 UBERON:0000057 ! urethra
 
 [Term]
+id: UBERON:0004919
+name: external urethral sphincter
+def: "." [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra, http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra]
+synonym: "annulus urethralis" EXACT []
+synonym: "external sphincter muscle of urethra" EXACT []
+synonym: "external sphincter of urethra" EXACT []
+synonym: "external urethral sphincter muscle" EXACT []
+synonym: "m. urethralis" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/9879823]
+synonym: "musculus sphincter urethrae membranaceae" RELATED LATIN [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra]
+synonym: "urethralis" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/9879823, MA:0002401]
+synonym: "urethralis muscle" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/9879823]
+is_a: UBERON:0004917 ! urethral sphincter
+relationship: RO:0002372 UBERON:0001274 {notes="Junction of the inferior rami of the pubis and ischium to the extent of 1.25 to 2 cm.", source="dbpedia"} ! ischium
+relationship: RO:0002372 UBERON:0001275 {notes="Junction of the inferior rami of the pubis and ischium to the extent of 1.25 to 2 cm.", source="dbpedia"} ! pubis
+
+[Term]
 id: UBERON:0004921
 name: subdivision of digestive tract
 def: "A proximal-distal subdivision of the digestive tract." [http://orcid.org/0000-0002-6601-2165]
@@ -33294,6 +33325,17 @@ def: "The lobe at the anterior part of each cerebral hemisphere, responsible for
 is_a: UBERON:0016526 ! lobe of cerebral hemisphere
 
 [Term]
+id: UBERON:0005375
+name: spinal cord ventral column
+def: "the area of white matter of the spinal cord located on either side of the ventral (anterior) medial fissure" [ISBN:0-683-40008-8, MP:0009679]
+synonym: "anterior column" EXACT []
+synonym: "spinal cord anterior column" EXACT []
+synonym: "ventral column" EXACT []
+is_a: UBERON:0016550 ! spinal cord column
+relationship: BFO:0000050 UBERON:0002180 ! ventral funiculus of spinal cord
+relationship: RO:0002433 UBERON:0002318 ! white matter of spinal cord
+
+[Term]
 id: UBERON:0005381
 name: dentate gyrus granule cell layer
 def: "Granule cell layer is also called the DG principal cell layer. This one of the three layers of dentate gyrus that lies deep to the molecular layer and is made of densely packed layer that is four to eight granule cells thick." [NIFSTD:birnlex_4129]
@@ -34961,6 +35003,34 @@ intersection_of: RO:0002220 UBERON:0006071 ! caudal region
 relationship: RO:0002220 UBERON:0006071 ! caudal region
 
 [Term]
+id: UBERON:0005852
+name: thoracic spinal cord ventral column
+def: "A subdivision of spinal cord ventral column that is part of a thoracic spinal cord." [OBOL:automatic]
+is_a: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: BFO:0000050 UBERON:0003038 ! thoracic spinal cord
+relationship: BFO:0000050 UBERON:0003038 ! thoracic spinal cord
+
+[Term]
+id: UBERON:0005853
+name: sacral spinal cord ventral column
+def: "A subdivision of spinal cord ventral column that is part of a sacral spinal cord." [OBOL:automatic]
+is_a: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: BFO:0000050 UBERON:0005843 ! sacral spinal cord
+relationship: BFO:0000050 UBERON:0005843 ! sacral spinal cord
+
+[Term]
+id: UBERON:0005854
+name: cervical spinal cord ventral column
+def: "A subdivision of spinal cord ventral column that is part of a cervical spinal cord." [OBOL:automatic]
+synonym: "cervical spinal cord anterior column" EXACT [NIFSTD:birnlex_1660]
+is_a: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: BFO:0000050 UBERON:0002726 ! cervical spinal cord
+relationship: BFO:0000050 UBERON:0002726 ! cervical spinal cord
+
+[Term]
 id: UBERON:0005856
 name: developing mesenchymal condensation
 def: "A delimited region of dense mesenchyme within looser mesenchyme." [AEO:0000148]
@@ -35831,6 +35901,25 @@ relationship: BFO:0000050 UBERON:0001255 ! urinary bladder
 relationship: RO:0002202 UBERON:0005760 {source="EHDAA2-modified"} ! urorectal septum
 relationship: RO:0002202 UBERON:0009845 {source="EHDAA2"} ! urogenital sinus mesenchyme
 relationship: RO:0002433 UBERON:0001255 ! urinary bladder
+
+[Term]
+id: UBERON:0006127
+name: funiculus of spinal cord
+def: "A funiculus of neuraxis that is part of a spinal cord." [OBOL:automatic]
+synonym: "spinal cord funiculus" EXACT [FMA:77460]
+synonym: "white column of spinal cord" EXACT [FMA:77460]
+is_a: UBERON:0006133 ! funiculus of neuraxis
+intersection_of: UBERON:0006133 ! funiculus of neuraxis
+intersection_of: BFO:0000050 UBERON:0002240 ! spinal cord
+relationship: BFO:0000050 UBERON:0002318 ! white matter of spinal cord
+
+[Term]
+id: UBERON:0006133
+name: funiculus of neuraxis
+def: "The cerebrospinal nerves consist of numerous nerve fibers collected together and enclosed in membranous sheaths. A small bundle of fibers, enclosed in a tubular sheath, is called a funiculus; if the nerve is of small size, it may consist only of a single funiculus; but if large, the funiculi are collected together into larger bundles or fasciculi, which are bound together in a common membranous investment. Examples include: Anterior funiculus of the spinal cord Lateral funiculus of the spinal cord Posterior funiculus of the spinal cord Funiculus solitarius of the medulla Funiculus separans" [http://en.wikipedia.org/wiki/Funiculus_%28neurology%29]
+is_a: UBERON:0000122 ! neuron projection bundle
+is_a: UBERON:0011215 ! central nervous system cell part cluster
+relationship: BFO:0000050 UBERON:0002316 ! white matter
 
 [Term]
 id: UBERON:0006134
@@ -46608,6 +46697,61 @@ intersection_of: BFO:0000050 UBERON:0005299 ! prepuce of clitoris
 relationship: BFO:0000050 UBERON:0005299 ! prepuce of clitoris
 
 [Term]
+id: UBERON:0011379
+name: male external urethral sphincter
+def: "The external sphincter muscle of urethra (or sphincter urethrae membranaceae) surrounds the whole length of the membranous portion of the urethra, and is enclosed in the fasciæ of the urogenital diaphragm. They arch across the front of the urethra and bulbourethral glands, pass around the urethra, and behind it unite with the muscle of the opposite side, by means of a tendinous raphé." [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra]
+synonym: "bulboglandular" RELATED [MA:0002273]
+synonym: "bulboglandular muscle" RELATED []
+synonym: "external urethral sphincter of male urethra" EXACT [FMA:19733]
+synonym: "male sphincter urethrae" EXACT [FMA:19733]
+synonym: "male sphincter urethrae muscle" EXACT [FMA:19733]
+synonym: "male urethral sphincter muscle" EXACT [FMA:19733]
+synonym: "musculus sphincter urethrae externus (urethra masculina)" EXACT LATIN [FMA:19733, FMA:TA]
+synonym: "musculus sphincter urethrae externus urethrae masculinae" EXACT LATIN [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra]
+synonym: "musculus sphincter urethrae membranaceae" EXACT LATIN [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra]
+is_a: UBERON:0004919 ! external urethral sphincter
+is_a: UBERON:0005156 ! reproductive structure
+intersection_of: UBERON:0004919 ! external urethral sphincter
+intersection_of: BFO:0000050 UBERON:0000079 ! male reproductive system
+relationship: BFO:0000050 UBERON:0000079 ! male reproductive system
+
+[Term]
+id: UBERON:0011380
+name: female external urethral sphincter
+def: "The external sphincter muscle of female urethra is a muscle which controls urination." [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra]
+synonym: "compressor urethrae" RELATED INCONSISTENT [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra]
+synonym: "external urethral sphincter of female urethra" EXACT []
+synonym: "musculus sphincter urethrae externus (urethra feminina)" EXACT LATIN [FMA:19778, FMA:TA]
+synonym: "musculus sphincter urethrae externus urethrae femininae" EXACT LATIN [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra]
+synonym: "outer muscle layer of female urethra" EXACT [FMA:19778]
+synonym: "rhabdosphincter of female urethra" EXACT [FMA:19778]
+synonym: "sphincter urethrovaginalis" RELATED DEPRECATED [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra]
+synonym: "striated muscle layer of female urethra" EXACT [FMA:19778]
+synonym: "urethrovaginal sphincter" RELATED DEPRECATED [http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra]
+is_a: UBERON:0004919 ! external urethral sphincter
+is_a: UBERON:0005156 ! reproductive structure
+intersection_of: UBERON:0004919 ! external urethral sphincter
+intersection_of: BFO:0000050 UBERON:0000474 ! female reproductive system
+relationship: BFO:0000050 UBERON:0000474 ! female reproductive system
+
+[Term]
+id: UBERON:0011390
+name: pudendal nerve
+def: "The pudendal nerve is a somatic nerve in the pelvic region that innervates the external genitalia of both sexes, as well as sphincters for the bladder and the rectum. It originates in Onuf's nucleus in the sacral region of the spinal cord." [http://en.wikipedia.org/wiki/Pudendal_nerve]
+synonym: "internal pudendal nerve" RELATED [http://en.wikipedia.org/wiki/Pudendal_nerve]
+synonym: "pudenal nerve" RELATED [http://en.wikipedia.org/wiki/Pudendal_nerve]
+synonym: "pudendal" RELATED [http://en.wikipedia.org/wiki/Pudendal_nerve]
+is_a: UBERON:0003444 ! pelvis nerve
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0004176 ! external genitalia
+intersection_of: RO:0002134 UBERON:0004916 ! anal sphincter
+intersection_of: RO:0002134 UBERON:0004919 ! external urethral sphincter
+relationship: BFO:0000050 UBERON:0000012 ! somatic nervous system
+relationship: RO:0002134 UBERON:0004176 ! external genitalia
+relationship: RO:0002134 UBERON:0004916 ! anal sphincter
+relationship: RO:0002134 UBERON:0004919 ! external urethral sphincter
+
+[Term]
 id: UBERON:0011565
 name: lumen of gastrointestinal system
 synonym: "cavity of digestive tract" EXACT []
@@ -52724,6 +52868,12 @@ is_a: UBERON:0011215 ! central nervous system cell part cluster
 relationship: BFO:0000050 UBERON:0002240 ! spinal cord
 
 [Term]
+id: UBERON:0016551
+name: subdivision of spinal cord ventral column
+is_a: UBERON:0016550 ! spinal cord column
+relationship: BFO:0000050 UBERON:0005375 ! spinal cord ventral column
+
+[Term]
 id: UBERON:0016552
 name: phlegm
 def: "mucus produced in the respiratory tract." [http://orcid.org/0000-0002-6601-2165]
@@ -53520,6 +53670,22 @@ intersection_of: BFO:0000050 UBERON:0005609 ! iliac artery
 relationship: BFO:0000050 UBERON:0005609 ! iliac artery
 
 [Term]
+id: UBERON:0019198
+name: dorsal nerve of clitoris
+def: "The deep terminal division of the pudendal nerve that runs along the dorsum of the clitoral shaft and innervates the the glans clitoris." [http://en.wikipedia.org/wiki/Dorsal_nerve_of_clitoris, http://medical-dictionary.thefreedictionary.com/dorsal%20nerve%20of%20clitoris]
+synonym: "dorsal nerve of the clitoris" RELATED [http://en.wikipedia.org/wiki/Dorsal_nerve_of_clitoris]
+synonym: "nervus dorsalis clitoridis" EXACT [FMA:21870]
+is_a: UBERON:0003444 ! pelvis nerve
+is_a: UBERON:0035650 ! nerve of clitoris
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0002411 ! clitoris
+intersection_of: RO:0002134 UBERON:0006653 ! glans clitoris
+intersection_of: RO:0002380 UBERON:0011390 ! pudendal nerve
+relationship: BFO:0000050 UBERON:0002411 {source="FMA"} ! clitoris
+relationship: RO:0002134 UBERON:0006653 ! glans clitoris
+relationship: RO:0002380 UBERON:0011390 ! pudendal nerve
+
+[Term]
 id: UBERON:0019204
 name: skin epithelium
 def: "Any region of epithelium that is part of a skin region." [http://orcid.org/0000-0002-6601-2165]
@@ -53790,6 +53956,20 @@ synonym: "right colic flexure" EXACT [FMA:14550]
 synonym: "right colic flexure" RELATED [http://en.wikipedia.org/wiki/Hepatic_flexure]
 is_a: UBERON:0022275 ! colic flexure
 relationship: RO:0002202 UBERON:0001045 {source="Wikipedia"} ! midgut
+
+[Term]
+id: UBERON:0022278
+name: nucleus of pudendal nerve
+def: "A nucleus in the ventral part of the anterior horn of the sacral region of the spinal cord that is the origin of the pudendal nerve." [http://en.wikipedia.org/wiki/Onuf%27s_nucleus, https://en.wikipedia.org/wiki/Pudendal_nerve#Nucleus]
+synonym: "nucleus of Onuf" EXACT [FMA:257031]
+synonym: "Onuf's nucleus" EXACT [FMA:77024]
+synonym: "pudendal neural nucleus" EXACT [FMA:77024]
+is_a: UBERON:0011777 ! nucleus of spinal cord
+intersection_of: UBERON:0000125 ! neural nucleus
+intersection_of: extends_fibers_into UBERON:0011390 ! pudendal nerve
+relationship: BFO:0000050 UBERON:0002257 ! ventral horn of spinal cord
+relationship: BFO:0000050 UBERON:0005853 ! sacral spinal cord ventral column
+relationship: extends_fibers_into UBERON:0011390 ! pudendal nerve
 
 [Term]
 id: UBERON:0022279

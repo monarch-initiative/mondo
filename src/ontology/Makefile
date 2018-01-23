@@ -23,7 +23,7 @@ obo-filter-axiom-header = grep -v ^owl-axioms:
 # Top-level targets
 # ----------------------------------------
 
-all: test all_reports all_imports imports/equivalencies.owl imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+all: test all_imports all_reports imports/equivalencies.owl imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 test: sparql_test test_nomerge
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -46,7 +46,7 @@ osf_upload:
 ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID):@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v 'relationship: disease_has_basis_in_dysfunction_of NCBIGene:' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID):@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | grep -v 'relationship: disease_has_basis_in_dysfunction_of NCBIGene:' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 # perform reasoning on source
@@ -214,7 +214,7 @@ reports/pq-%.tsv: mondo-edit.owl
 
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats root-classes
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/release/$V.tsv)
-all_reports: mondo.owl
+all_reports: mondo.owl reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
@@ -228,8 +228,13 @@ reports/release/%.tsv: mondo.owl
 reports/release/semantic-xref-pairs.tsv: d2p.pro
 	blip-findall -i imports/equivalencies.obo  -i mondo-edit.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
-report.yaml: $(SRC)
-	robot report -i $< report -o $@
+reports/edit/report.yaml: $(SRC)
+	robot report -i $< report -o $@.tmp && mv $@.tmp $@
+reports/release/mondo-obo-report.yaml: mondo.obo
+	robot report -i $< report -o $@.tmp && mv $@.tmp $@
+
+reports/release/mondo-owl-report.yaml: mondo.owl
+	robot report -i $< report -o $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Sparql constructs

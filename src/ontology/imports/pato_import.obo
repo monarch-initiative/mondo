@@ -14,6 +14,23 @@ def: "A quality of a single physical entity inhering in the bearer by virtue of 
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
+id: PATO:0000060
+name: spatial pattern
+def: "A spatial quality inhering in a bearer by virtue of the bearer's exhibiting repetition of placement of its parts." [PATOC:GVG]
+synonym: "distribution" EXACT []
+synonym: "pattern" RELATED []
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0000140
+name: position
+def: "A spatial quality inhering in a bearer by virtue of the bearer's spatial location relative to other objects in the vicinity." [PATOC:GVG]
+synonym: "location" EXACT []
+synonym: "placement" EXACT []
+synonym: "relational spatial quality" EXACT []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0000141
 name: structure
 def: "A morphology quality inhering in a bearer by virtue of the bearer's relative position, shape, arrangements and connectivity of an organism's various parts; the pattern underlying its form." [PATOC:GVG]
@@ -26,6 +43,14 @@ id: PATO:0000389
 name: acute
 def: "A quality of a process inhering in a bearer by virtue of the bearer's having a sudden onset, sharp rise, and short course." [dictionary:reference]
 is_a: PATO:0001309 ! duration
+
+[Term]
+id: PATO:0000627
+name: localized
+def: "A spatial pattern quality inhering in a bearer by virtue of the bearer's being confined or restricted to a particular location." [WordNet:WordNet]
+synonym: "focal" EXACT []
+synonym: "localised" EXACT []
+is_a: PATO:0000060 ! spatial pattern
 
 [Term]
 id: PATO:0001018
@@ -71,6 +96,14 @@ id: PATO:0001414
 name: catalytic activity
 def: "A physical quality inhering in a catalyst by virtue of the amount of the catalyst's action." [PATOC:GVG]
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001566
+name: distributed
+def: "A spatial pattern inhering in a bearer by virtue of the bearer's being spread out or scattered about or divided up." [WordNet:WordNet]
+synonym: "diffuse" EXACT []
+synonym: "scattered" EXACT []
+is_a: PATO:0000060 ! spatial pattern
 
 [Term]
 id: PATO:0001863
