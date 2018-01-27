@@ -54,6 +54,9 @@ ld-mondo-%.tsv: %.yaml
 	dosdp-tools  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$< --outfile=$@.tmp query && ./fix-tsvs.pl $@.tmp > $@
 .PRECIOUS: ld-mondo-%.tsv
 
+roundtrip-mondo-%.owl: ld-mondo-%.tsv %.yaml
+	dosdp-tools  --ontology=$(SRCM) --infile=$< --obo-prefixes=true --template=$*.yaml --outfile=$@.tmp generate && mv $@.tmp $@
+
 %.csv: ld-mondo-%.tsv
 	tsv2csv.py $< $@
 
