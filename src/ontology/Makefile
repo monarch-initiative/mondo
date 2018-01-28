@@ -201,12 +201,14 @@ VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(QSRC)
 	robot verify -i $< --queries $(VQUERIES) -O reports/edit/ && touch $@
 
-PL2SPARQL = pl2sparql  -c ../plq/lexical_match_queries.pro
+PL2SPARQL = pl2sparql  -c ../plq/lexical_match_queries.pro -c ../plq/checks.pro -c ../plq/reports.pro
 ../sparql/%.sparql:
 	 $(PL2SPARQL) -v  "$*" > $@.tmp && mv $@.tmp $@
 
-reports/pq-%.tsv: mondo-edit.owl
+reports/pql-%.tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -e -l "$*" > $@.tmp && mv $@.tmp $@
+reports/pq-%.tsv: mondo-edit.owl
+	 $(PL2SPARQL) -f tsv -v -i $< -e  "$*" > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Sparql queries: Reports
