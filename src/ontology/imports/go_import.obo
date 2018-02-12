@@ -196,6 +196,13 @@ synonym: "osteogenesis" EXACT []
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
+id: GO:0001568
+name: blood vessel development
+def: "The process whose specific outcome is the progression of a blood vessel over time, from its formation to the mature structure. The blood vessel is the vasculature carrying blood." [GOC:hjd, UBERON:0001981]
+is_a: GO:0048856 ! anatomical structure development
+relationship: BFO:0000050 GO:0001944 ! vasculature development
+
+[Term]
 id: GO:0001654
 name: eye development
 def: "The process whose specific outcome is the progression of the eye over time, from its formation to the mature structure. The eye is the organ of sight." [GOC:jid, GOC:jl]
@@ -361,12 +368,76 @@ intersection_of: RO:0002213 GO:0016068 ! type I hypersensitivity
 relationship: RO:0002213 GO:0016068 ! type I hypersensitivity
 
 [Term]
+id: GO:0001848
+name: complement binding
+def: "Interacting selectively and non-covalently with any component or product of the complement cascade." [GOC:add, ISBN:0781735149]
+is_a: GO:0005515 ! protein binding
+
+[Term]
 id: GO:0001894
 name: tissue homeostasis
 def: "A homeostatic process involved in the maintenance of an internal steady state within a defined tissue of an organism, including control of cellular proliferation and death and control of metabolic function." [GOC:add, GOC:isa_complete]
 synonym: "tissue maintenance" NARROW [GOC:add]
 is_a: GO:0060249 ! anatomical structure homeostasis
 relationship: BFO:0000050 GO:0048871 ! multicellular organismal homeostasis
+
+[Term]
+id: GO:0001944
+name: vasculature development
+def: "The process whose specific outcome is the progression of the vasculature over time, from its formation to the mature structure. The vasculature is an interconnected tubular multi-tissue structure that contains fluid that is actively transported around the organism." [GOC:dph, UBERON:0002409]
+synonym: "vascular system development" RELATED [GOC:curators]
+is_a: GO:0048731 ! system development
+relationship: BFO:0000050 GO:0072358 ! cardiovascular system development
+
+[Term]
+id: GO:0001959
+name: regulation of cytokine-mediated signaling pathway
+def: "Any process that modulates the frequency, rate or extent of the cytokine mediated signaling pathway." [GOC:hjd]
+synonym: "regulation of cytokine and chemokine mediated signaling pathway" EXACT []
+synonym: "regulation of cytokine mediated signaling pathway" EXACT [GOC:dph, GOC:tb]
+synonym: "regulation of cytokine mediated signalling pathway" EXACT []
+is_a: GO:0009966 ! regulation of signal transduction
+is_a: GO:0060759 ! regulation of response to cytokine stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0019221 ! cytokine-mediated signaling pathway
+relationship: RO:0002211 GO:0019221 ! cytokine-mediated signaling pathway
+
+[Term]
+id: GO:0001960
+name: negative regulation of cytokine-mediated signaling pathway
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the cytokine mediated signaling pathway." [GOC:hjd]
+synonym: "down regulation of cytokine mediated signaling pathway" EXACT []
+synonym: "down-regulation of cytokine mediated signaling pathway" EXACT []
+synonym: "downregulation of cytokine mediated signaling pathway" EXACT []
+synonym: "inhibition of cytokine mediated signaling pathway" NARROW []
+synonym: "negative regulation of cytokine and chemokine mediated signaling pathway" EXACT []
+synonym: "negative regulation of cytokine mediated signaling pathway" EXACT [GOC:dph, GOC:tb]
+synonym: "negative regulation of cytokine mediated signalling pathway" EXACT []
+is_a: GO:0001959 ! regulation of cytokine-mediated signaling pathway
+is_a: GO:0009968 ! negative regulation of signal transduction
+is_a: GO:0060761 ! negative regulation of response to cytokine stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0019221 ! cytokine-mediated signaling pathway
+relationship: RO:0002212 GO:0019221 ! cytokine-mediated signaling pathway
+
+[Term]
+id: GO:0001961
+name: positive regulation of cytokine-mediated signaling pathway
+def: "Any process that activates or increases the frequency, rate or extent of a cytokine mediated signaling pathway." [GOC:hjd]
+synonym: "activation of cytokine mediated signaling pathway" NARROW []
+synonym: "positive regulation of cytokine and chemokine mediated signaling pathway" EXACT []
+synonym: "positive regulation of cytokine mediated signaling pathway" EXACT [GOC:dph, GOC:tb]
+synonym: "positive regulation of cytokine mediated signalling pathway" EXACT []
+synonym: "stimulation of cytokine mediated signaling pathway" NARROW []
+synonym: "up regulation of cytokine mediated signaling pathway" EXACT []
+synonym: "up-regulation of cytokine mediated signaling pathway" EXACT []
+synonym: "upregulation of cytokine mediated signaling pathway" EXACT []
+is_a: GO:0001959 ! regulation of cytokine-mediated signaling pathway
+is_a: GO:0009967 ! positive regulation of signal transduction
+is_a: GO:0060760 ! positive regulation of response to cytokine stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0019221 ! cytokine-mediated signaling pathway
+relationship: RO:0002213 GO:0019221 ! cytokine-mediated signaling pathway
 
 [Term]
 id: GO:0001964
@@ -481,6 +552,13 @@ def: "Any process of the immune system that can potentially contribute to an imm
 is_a: GO:0002376 ! immune system process
 
 [Term]
+id: GO:0002253
+name: activation of immune response
+def: "Any process that initiates an immune response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+is_a: GO:0002376 ! immune system process
+is_a: GO:0050778 ! positive regulation of immune response
+
+[Term]
 id: GO:0002262
 name: myeloid cell homeostasis
 def: "The process of regulating the proliferation and elimination of myeloid cells such that the total number of myeloid cells within a whole or part of an organism is stable over time in the absence of an outside stimulus." [CL:0000763, GOC:add]
@@ -492,6 +570,35 @@ id: GO:0002376
 name: immune system process
 def: "Any process involved in the development or functioning of the immune system, an organismal system for calibrated responses to potential internal or invasive threats." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05]
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0002429
+name: immune response-activating cell surface receptor signaling pathway
+def: "A series of molecular signals initiated by the binding of an extracellular ligand to a receptor on the surface of a cell capable of activating or perpetuating an immune response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "activation of immune response by cell surface receptor signaling pathway" EXACT []
+synonym: "immune response-activating cell surface receptor signalling pathway" EXACT []
+is_a: GO:0002757 ! immune response-activating signal transduction
+is_a: GO:0002768 ! immune response-regulating cell surface receptor signaling pathway
+
+[Term]
+id: GO:0002430
+name: complement receptor mediated signaling pathway
+def: "A series of molecular signals generated as a consequence of a component of the complement pathway binding to a complement receptor. Such components include both whole complement proteins and fragments of complement proteins generated through the activity of the complement pathway." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "complement receptor mediated signalling pathway" EXACT []
+synonym: "immune response-regulating cell surface receptor signalling pathway" BROAD []
+is_a: GO:0002429 ! immune response-activating cell surface receptor signaling pathway
+
+[Term]
+id: GO:0002433
+name: immune response-regulating cell surface receptor signaling pathway involved in phagocytosis
+def: "An immune response-regulating cell surface receptor signaling pathway that contributes to the endocytic engulfment of external particulate material by phagocytes." [GO_REF:0000022, GOC:add, GOC:bf, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "immune response-regulating cell surface receptor signalling pathway involved in phagocytosis" EXACT [GOC:mah]
+synonym: "phagocytosis triggered by activation of immune response cell surface activating receptor" EXACT [GO_REF:0000022]
+is_a: GO:0002252 ! immune effector process
+is_a: GO:0002768 ! immune response-regulating cell surface receptor signaling pathway
+intersection_of: GO:0002768 ! immune response-regulating cell surface receptor signaling pathway
+intersection_of: BFO:0000050 GO:0006909 ! phagocytosis
+relationship: BFO:0000050 GO:0006909 ! phagocytosis
 
 [Term]
 id: GO:0002437
@@ -873,6 +980,29 @@ intersection_of: RO:0002213 GO:0019724 ! B cell mediated immunity
 relationship: RO:0002213 GO:0019724 ! B cell mediated immunity
 
 [Term]
+id: GO:0002757
+name: immune response-activating signal transduction
+def: "The cascade of processes by which a signal interacts with a receptor, causing a change in the level or activity of a second messenger or other downstream target, and ultimately leading to activation or perpetuation of an immune response." [GOC:add]
+is_a: GO:0002253 ! activation of immune response
+is_a: GO:0002764 ! immune response-regulating signaling pathway
+
+[Term]
+id: GO:0002764
+name: immune response-regulating signaling pathway
+def: "The cascade of processes by which a signal interacts with a receptor, causing a change in the level or activity of a second messenger or other downstream target, and ultimately leading to the activation, perpetuation, or inhibition of an immune response." [GOC:add, ISBN:0781735149, PMID:15771571]
+synonym: "immune response-regulating signalling pathway" EXACT [GOC:mah]
+is_a: GO:0007165 ! signal transduction
+is_a: GO:0050776 ! regulation of immune response
+
+[Term]
+id: GO:0002768
+name: immune response-regulating cell surface receptor signaling pathway
+def: "A series of molecular signals initiated by the binding of an extracellular ligand to a receptor on the surface of the target cell capable of activating, perpetuating, or inhibiting an immune response." [GOC:add, ISBN:0781735149, PMID:15771571]
+synonym: "immune response-regulating cell surface receptor signalling pathway" EXACT []
+is_a: GO:0002764 ! immune response-regulating signaling pathway
+is_a: GO:0007166 ! cell surface receptor signaling pathway
+
+[Term]
 id: GO:0002790
 name: peptide secretion
 def: "The controlled release of a peptide from a cell or a tissue." [GOC:add]
@@ -1237,6 +1367,44 @@ intersection_of: RO:0002213 GO:0002445 ! type II hypersensitivity
 relationship: RO:0002213 GO:0002445 ! type II hypersensitivity
 
 [Term]
+id: GO:0002920
+name: regulation of humoral immune response
+def: "Any process that modulates the frequency, rate, or extent of a humoral immune response." [GOC:add]
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006959 ! humoral immune response
+relationship: RO:0002211 GO:0006959 ! humoral immune response
+
+[Term]
+id: GO:0002921
+name: negative regulation of humoral immune response
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of a humoral immune response." [GOC:add]
+synonym: "down regulation of humoral immune response" EXACT []
+synonym: "down-regulation of humoral immune response" EXACT []
+synonym: "downregulation of humoral immune response" EXACT []
+synonym: "inhibition of humoral immune response" NARROW []
+is_a: GO:0002920 ! regulation of humoral immune response
+is_a: GO:0050777 ! negative regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006959 ! humoral immune response
+relationship: RO:0002212 GO:0006959 ! humoral immune response
+
+[Term]
+id: GO:0002922
+name: positive regulation of humoral immune response
+def: "Any process that activates or increases the frequency, rate, or extent of a humoral immune response." [GOC:add]
+synonym: "activation of humoral immune response" NARROW []
+synonym: "stimulation of humoral immune response" NARROW []
+synonym: "up regulation of humoral immune response" EXACT []
+synonym: "up-regulation of humoral immune response" EXACT []
+synonym: "upregulation of humoral immune response" EXACT []
+is_a: GO:0002920 ! regulation of humoral immune response
+is_a: GO:0050778 ! positive regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006959 ! humoral immune response
+relationship: RO:0002213 GO:0006959 ! humoral immune response
+
+[Term]
 id: GO:0003006
 name: developmental process involved in reproduction
 def: "A developmental process in which a progressive change in the state of some part of an organism specifically contributes to its ability to form offspring." [GOC:dph, GOC:isa_complete]
@@ -1352,6 +1520,18 @@ name: catalytic activity
 def: "Catalysis of a biochemical reaction at physiological temperatures. In biologically catalyzed reactions, the reactants are known as substrates, and the catalysts are naturally occurring macromolecular substances known as enzymes. Enzymes possess specific binding sites for substrates, and are usually composed wholly or largely of protein, but RNA that has catalytic activity (ribozyme) is often also regarded as enzymatic." [GOC:vw, ISBN:0198506732]
 synonym: "enzyme activity" EXACT [GOC:dph, GOC:tb]
 is_a: GO:0003674 ! molecular_function
+
+[Term]
+id: GO:0003842
+name: 1-pyrroline-5-carboxylate dehydrogenase activity
+def: "Catalysis of the reaction: 1-pyrroline-5-carboxylate + NAD+ + H2O = L-glutamate + NADH + H(+)." [EC:1.5.1.12]
+synonym: "1-pyrroline dehydrogenase" BROAD [EC:1.5.1.12]
+synonym: "1-pyrroline-5-carboxylate:NAD+ oxidoreductase activity" EXACT [EC:1.5.1.12]
+synonym: "delta1-pyrroline-5-carboxylate dehydrogenase activity" EXACT [EC:1.5.1.12]
+synonym: "L-pyrroline-5-carboxylate-NAD+ oxidoreductase activity" EXACT [EC:1.5.1.12]
+synonym: "pyrroline-5-carboxylate dehydrogenase activity" EXACT [EC:1.5.1.12]
+synonym: "pyrroline-5-carboxylic acid dehydrogenase activity" EXACT [EC:1.5.1.12]
+is_a: GO:0016646 ! oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0003943
@@ -1582,6 +1762,15 @@ synonym: "viral antireceptor activity" NARROW []
 is_a: GO:0060089 ! molecular transducer activity
 
 [Term]
+id: GO:0004875
+name: complement receptor activity
+def: "Combining with any component or product of the complement cascade and transmitting the signal from one side of the membrane to the other to initiate a change in cell activity." [GOC:add, GOC:ai, GOC:pg, GOC:signaling, ISBN:0781735149, PMID:11884446]
+synonym: "anaphylatoxin receptor activity" RELATED []
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+relationship: BFO:0000050 GO:0002430 ! complement receptor mediated signaling pathway
+relationship: BFO:0000051 GO:0001848 ! complement binding
+
+[Term]
 id: GO:0004879
 name: nuclear receptor activity
 def: "Combining with a signal and transmitting the signal to the transcriptional machinery by interacting selectively and non-covalently with a specific DNA sequence in order to modulate transcription by RNA polymerase II." [GOC:signaling, GOC:txnOH]
@@ -1629,6 +1818,17 @@ intersection_of: GO:0099600 ! transmembrane receptor activity
 intersection_of: BFO:0000050 GO:0007165 ! signal transduction
 
 [Term]
+id: GO:0004896
+name: cytokine receptor activity
+def: "Combining with a cytokine and transmitting the signal from one side of the membrane to the other to initiate a change in cell activity." [GOC:add, GOC:mah]
+synonym: "hematopoietin/interferon-class (D200-domain) cytokine receptor activity" RELATED []
+synonym: "IL receptor" NARROW []
+synonym: "interleukin receptor activity" NARROW []
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+relationship: BFO:0000050 GO:0019221 ! cytokine-mediated signaling pathway
+relationship: BFO:0000051 GO:0019955 ! cytokine binding
+
+[Term]
 id: GO:0004970
 name: ionotropic glutamate receptor activity
 def: "Catalysis of the transmembrane transfer of an ion by a channel that opens when glutamate has been bound by the channel complex or one of its constituent parts." [ISBN:0198506732]
@@ -1653,6 +1853,14 @@ def: "Interacting selectively and non-covalently with one or more specific sites
 synonym: "receptor ligand" NARROW []
 synonym: "receptor-associated protein activity" RELATED []
 is_a: GO:0005515 ! protein binding
+
+[Term]
+id: GO:0005125
+name: cytokine activity
+def: "Functions to control the survival, growth, differentiation and effector function of tissues and cells." [ISBN:0198599471]
+synonym: "autocrine activity" RELATED [GOC:rl]
+synonym: "paracrine activity" RELATED [GOC:rl]
+is_a: GO:0048018 ! receptor ligand activity
 
 [Term]
 id: GO:0005179
@@ -2564,6 +2772,18 @@ is_a: GO:0009712 ! catechol-containing compound metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
+id: GO:0006624
+name: vacuolar protein processing
+def: "Protein processing that takes place in the vacuole. Most protein processing in the vacuole represents proteolytic cleavage of precursors to form active enzymes." [GOC:mah]
+synonym: "vacuolar protein maturation" RELATED []
+synonym: "vacuolar proteolysis" RELATED []
+is_a: GO:0016485 ! protein processing
+is_a: GO:0044267 ! cellular protein metabolic process
+intersection_of: GO:0016485 ! protein processing
+intersection_of: BFO:0000066 GO:0005773 ! vacuole
+relationship: BFO:0000066 GO:0005773 ! vacuole
+
+[Term]
 id: GO:0006629
 name: lipid metabolic process
 def: "The chemical reactions and pathways involving lipids, compounds soluble in an organic solvent but not, or sparingly, in an aqueous solvent. Includes fatty acids; neutral fats, other fatty-acid esters, and soaps; long-chain (fatty) alcohols and waxes; sphingoids and other long-chain bases; glycolipids, phospholipids and sphingolipids; and carotenes, polyprenols, sterols, terpenes and other isoprenoids." [GOC:ma]
@@ -2978,6 +3198,24 @@ is_a: GO:0002376 ! immune system process
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0006956
+name: complement activation
+def: "Any process involved in the activation of any of the steps of the complement cascade, which allows for the direct killing of microbes, the disposal of immune complexes, and the regulation of other immune processes; the initial steps of complement activation involve one of three pathways, the classical pathway, the alternative pathway, and the lectin pathway, all of which lead to the terminal complement pathway." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
+synonym: "complement activity" RELATED []
+synonym: "complement cascade" EXACT [GOC:add]
+synonym: "complement response" EXACT []
+is_a: GO:0002252 ! immune effector process
+is_a: GO:0002253 ! activation of immune response
+is_a: GO:0006959 ! humoral immune response
+is_a: GO:0072376 ! protein activation cascade
+
+[Term]
+id: GO:0006959
+name: humoral immune response
+def: "An immune response mediated through a body fluid." [GOC:hb, ISBN:0198506732]
+is_a: GO:0006955 ! immune response
+
+[Term]
 id: GO:0006968
 name: cellular defense response
 def: "A defense response that is mediated by cells." [GOC:ebc]
@@ -3135,6 +3373,29 @@ synonym: "generation of spermatozoa" EXACT systematic_synonym []
 is_a: GO:0048232 ! male gamete generation
 
 [Term]
+id: GO:0007399
+name: nervous system development
+def: "The process whose specific outcome is the progression of nervous tissue over time, from its formation to its mature state." [GOC:dgh]
+synonym: "pan-neural process" RELATED []
+is_a: GO:0048731 ! system development
+
+[Term]
+id: GO:0007417
+name: central nervous system development
+def: "The process whose specific outcome is the progression of the central nervous system over time, from its formation to the mature structure. The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the brain and spinal cord. In those invertebrates with a central nervous system it typically consists of a brain, cerebral ganglia and a nerve cord." [GOC:bf, GOC:jid, ISBN:0582227089]
+synonym: "CNS development" EXACT []
+is_a: GO:0048731 ! system development
+relationship: BFO:0000050 GO:0007399 ! nervous system development
+
+[Term]
+id: GO:0007420
+name: brain development
+def: "The process whose specific outcome is the progression of the brain over time, from its formation to the mature structure. Brain development begins with patterning events in the neural tube and ends with the mature structure that is the center of thought and emotion. The brain is responsible for the coordination and control of bodily activities and the interpretation of information from the senses (sight, hearing, smell, etc.)." [GOC:dph, GOC:jid, GOC:tb, UBERON:0000955]
+is_a: GO:0048513 ! animal organ development
+relationship: BFO:0000050 GO:0007417 ! central nervous system development
+relationship: BFO:0000050 GO:0060322 ! head development
+
+[Term]
 id: GO:0007423
 name: sensory organ development
 def: "The process whose specific outcome is the progression of sensory organs over time, from its formation to the mature structure." [GOC:go_curators]
@@ -3154,6 +3415,15 @@ def: "A cell-cell signaling process occurring between the two gastrulation-gener
 synonym: "ectoderm/mesoderm interaction" EXACT []
 is_a: GO:0007267 ! cell-cell signaling
 relationship: BFO:0000050 GO:0007498 ! mesoderm development
+
+[Term]
+id: GO:0007507
+name: heart development
+def: "The process whose specific outcome is the progression of the heart over time, from its formation to the mature structure. The heart is a hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood." [GOC:jid, UBERON:0000948]
+synonym: "cardiac development" RELATED []
+synonym: "dorsal vessel development" NARROW []
+is_a: GO:0048513 ! animal organ development
+relationship: BFO:0000050 GO:0072359 ! circulatory system development
 
 [Term]
 id: GO:0007548
@@ -4051,6 +4321,22 @@ is_a: GO:0007165 ! signal transduction
 relationship: BFO:0000050 GO:0032870 ! cellular response to hormone stimulus
 
 [Term]
+id: GO:0009790
+name: embryo development
+def: "The process whose specific outcome is the progression of an embryo from its formation until the end of its embryonic life stage. The end of the embryonic stage is organism-specific. For example, for mammals, the process would begin with zygote formation and end with birth. For insects, the process would begin at zygote formation and end with larval hatching. For plant zygotic embryos, this would be from zygote formation to the end of seed dormancy. For plant vegetative embryos, this would be from the initial determination of the cell or group of cells to form an embryo until the point when the embryo becomes independent of the parent plant." [GOC:go_curators, GOC:isa_complete, GOC:mtg_sensu]
+synonym: "embryogenesis" EXACT []
+synonym: "embryogenesis and morphogenesis" BROAD []
+synonym: "embryonal development" EXACT []
+is_a: GO:0007275 ! multicellular organism development
+
+[Term]
+id: GO:0009792
+name: embryo development ending in birth or egg hatching
+def: "The process whose specific outcome is the progression of an embryo over time, from zygote formation until the end of the embryonic life stage. The end of the embryonic life stage is organism-specific and may be somewhat arbitrary; for mammals it is usually considered to be birth, for insects the hatching of the first instar larva from the eggshell." [GOC:go_curators, GOC:isa_complete, GOC:mtg_sensu]
+synonym: "embryogenesis" BROAD []
+is_a: GO:0009790 ! embryo development
+
+[Term]
 id: GO:0009887
 name: animal organ morphogenesis
 def: "Morphogenesis of an animal organ. An organ is defined as a tissue or set of tissues that work together to perform a specific function or functions. Morphogenesis is the process in which anatomical structures are generated and organized. Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions." [GOC:dgh, GOC:go_curators, ISBN:0471245208, ISBN:0721662544]
@@ -4898,6 +5184,30 @@ intersection_of: RO:0002213 GO:0008233 ! peptidase activity
 relationship: RO:0002213 GO:0008233 ! peptidase activity
 
 [Term]
+id: GO:0010954
+name: positive regulation of protein processing
+def: "Any process that increases the rate, frequency or extent of protein maturation by peptide bond cleavage." [GOC:dph, GOC:mah, GOC:tb]
+synonym: "positive regulation of protein maturation by peptide bond cleavage" EXACT [GOC:bf]
+is_a: GO:0045862 ! positive regulation of proteolysis
+is_a: GO:0070613 ! regulation of protein processing
+is_a: GO:1903319 ! positive regulation of protein maturation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0016485 ! protein processing
+relationship: RO:0002213 GO:0016485 ! protein processing
+
+[Term]
+id: GO:0010955
+name: negative regulation of protein processing
+def: "Any process that decreases the rate, frequency or extent of protein maturation by peptide bond cleavage." [GOC:dph, GOC:mah, GOC:tb]
+synonym: "negative regulation of protein maturation by peptide bond cleavage" EXACT [GOC:bf]
+is_a: GO:0045861 ! negative regulation of proteolysis
+is_a: GO:0070613 ! regulation of protein processing
+is_a: GO:1903318 ! negative regulation of protein maturation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0016485 ! protein processing
+relationship: RO:0002212 GO:0016485 ! protein processing
+
+[Term]
 id: GO:0010959
 name: regulation of metal ion transport
 def: "Any process that modulates the frequency, rate, or extent of metal ion transport. Metal ion transport is the directed movement of metal ions, any metal ion with an electric charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:dph, GOC:tb]
@@ -5098,6 +5408,30 @@ is_a: GO:0006818 ! hydrogen transport
 is_a: GO:0015672 ! monovalent inorganic cation transport
 
 [Term]
+id: GO:0016010
+name: dystrophin-associated glycoprotein complex
+def: "A multiprotein complex that forms a strong mechanical link between the cytoskeleton and extracellular matrix; typical of, but not confined to, muscle cells. The complex is composed of transmembrane, cytoplasmic, and extracellular proteins, including dystrophin, sarcoglycans, dystroglycan, dystrobrevins, syntrophins, sarcospan, caveolin-3, and NO synthase." [PMID:15117830, PMID:16710609]
+synonym: "DGC" EXACT []
+synonym: "dystrophin glycoprotein complex" EXACT []
+is_a: GO:0090665 ! glycoprotein complex
+is_a: GO:0098797 ! plasma membrane protein complex
+
+[Term]
+id: GO:0016011
+name: dystroglycan complex
+def: "A protein complex that includes alpha- and beta-dystroglycan, which are alternative products of the same gene; the laminin-binding component of the dystrophin-associated glycoprotein complex, providing a link between the subsarcolemmal cytoskeleton (in muscle cells) and the extracellular matrix. Alpha-dystroglycan is an extracellular protein binding to alpha-laminin and to beta-dystroglycan; beta-dystroglycan is a transmembrane protein which binds alpha-dystroglycan and dystrophin." [PMID:15117830, PMID:16710609]
+is_a: GO:0098797 ! plasma membrane protein complex
+relationship: BFO:0000050 GO:0016010 ! dystrophin-associated glycoprotein complex
+
+[Term]
+id: GO:0016012
+name: sarcoglycan complex
+def: "A protein complex formed of four sarcoglycans plus sarcospan; there are six known sarcoglycans: alpha-, beta-, gamma-, delta-, epsilon- and zeta-sarcoglycan; all are N-glycosylated single-pass transmembrane proteins. The sarcoglycan-sarcospan complex is a subcomplex of the dystrophin glycoprotein complex, and is fixed to the dystrophin axis by a lateral association with the dystroglycan complex." [PMID:15117830, PMID:16710609]
+synonym: "sarcoglycan-sarcospan complex" EXACT []
+is_a: GO:0098797 ! plasma membrane protein complex
+relationship: BFO:0000050 GO:0016011 ! dystroglycan complex
+
+[Term]
 id: GO:0016020
 name: membrane
 def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." [GOC:dos, GOC:mah, ISBN:0815316194]
@@ -5281,6 +5615,17 @@ def: "The controlled self-propelled movement of a cell from one site to a destin
 is_a: GO:0048870 ! cell motility
 
 [Term]
+id: GO:0016485
+name: protein processing
+def: "Any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein. Protein maturation is the process leading to the attainment of the full functional capacity of a protein." [GOC:curators, GOC:jl, GOC:jsg]
+synonym: "peptidolysis during protein maturation" RELATED [GOC:mah]
+synonym: "protein maturation by peptide bond cleavage" EXACT [GOC:bf]
+synonym: "protein maturation by peptide bond hydrolysis" EXACT [GOC:mah]
+synonym: "protein maturation by proteolysis" RELATED [GOC:mah]
+is_a: GO:0006508 ! proteolysis
+is_a: GO:0051604 ! protein maturation
+
+[Term]
 id: GO:0016491
 name: oxidoreductase activity
 def: "Catalysis of an oxidation-reduction (redox) reaction, a reversible chemical reaction in which the oxidation state of an atom or atoms within a molecule is altered. One substrate acts as a hydrogen or electron donor and becomes oxidized, while the other acts as hydrogen or electron acceptor and becomes reduced." [GOC:go_curators]
@@ -5314,6 +5659,19 @@ name: oxidoreductase activity, acting on the CH-CH group of donors
 def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-CH group acts as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." [GOC:ai]
 synonym: "oxidoreductase activity, acting on the CH-CH group of donors, other acceptors" NARROW []
 is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
+id: GO:0016645
+name: oxidoreductase activity, acting on the CH-NH group of donors
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-NH group acts as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." [GOC:ai]
+synonym: "oxidoreductase activity, acting on the CH-NH group of donors, other acceptors" NARROW []
+is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
+id: GO:0016646
+name: oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-NH group acts as a hydrogen or electron donor and reduces NAD or NADP." [GOC:jl]
+is_a: GO:0016645 ! oxidoreductase activity, acting on the CH-NH group of donors
 
 [Term]
 id: GO:0016651
@@ -5582,6 +5940,15 @@ intersection_of: RO:0002211 GO:0006796 ! phosphate-containing compound metabolic
 relationship: RO:0002211 GO:0006796 ! phosphate-containing compound metabolic process
 
 [Term]
+id: GO:0019221
+name: cytokine-mediated signaling pathway
+def: "A series of molecular signals initiated by the binding of a cytokine to a receptor on the surface of a cell, and ending with regulation of a downstream cellular process, e.g. transcription." [GOC:mah, GOC:signaling, PMID:19295629]
+synonym: "cytokine and chemokine mediated signaling pathway" EXACT []
+synonym: "cytokine mediated signalling pathway" EXACT []
+is_a: GO:0007166 ! cell surface receptor signaling pathway
+relationship: BFO:0000050 GO:0071345 ! cellular response to cytokine stimulus
+
+[Term]
 id: GO:0019222
 name: regulation of metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways within a cell or an organism." [GOC:go_curators]
@@ -5772,6 +6139,14 @@ name: sexual reproduction
 def: "A reproduction process that creates a new organism by combining the genetic material of two organisms. It occurs both in eukaryotes and prokaryotes: in multicellular eukaryotic organisms, an individual is created anew; in prokaryotes, the initial cell has additional or transformed genetic material. In a process called genetic recombination, genetic material (DNA) originating from two different individuals (parents) join up so that homologous sequences are aligned with each other, and this is followed by exchange of genetic information. After the new recombinant chromosome is formed, it is passed on to progeny." [GOC:jl, http://en.wikipedia.org/wiki/Sexual_reproduction, ISBN:0387520546]
 is_a: GO:0000003 ! reproduction
 is_a: GO:0044703 ! multi-organism reproductive process
+
+[Term]
+id: GO:0019955
+name: cytokine binding
+def: "Interacting selectively and non-covalently with a cytokine, any of a group of proteins that function to control the survival, growth and differentiation of tissues and cells, and which have autocrine and paracrine activity." [GOC:ai, GOC:bf, ISBN:0198599471]
+synonym: "IL binding" NARROW []
+synonym: "interleukin binding" NARROW []
+is_a: GO:0005515 ! protein binding
 
 [Term]
 id: GO:0022412
@@ -6226,6 +6601,20 @@ synonym: "lethargus" RELATED []
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
+id: GO:0030449
+name: regulation of complement activation
+def: "Any process that modulates the frequency, rate or extent of complement activation." [GOC:go_curators]
+synonym: "regulation of complement cascade" EXACT [GOC:add]
+is_a: GO:0002673 ! regulation of acute inflammatory response
+is_a: GO:0002697 ! regulation of immune effector process
+is_a: GO:0002920 ! regulation of humoral immune response
+is_a: GO:0070613 ! regulation of protein processing
+is_a: GO:2000257 ! regulation of protein activation cascade
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006956 ! complement activation
+relationship: RO:0002211 GO:0006956 ! complement activation
+
+[Term]
 id: GO:0030518
 name: intracellular steroid hormone receptor signaling pathway
 def: "A series of molecular signals generated as a consequence of a intracellular steroid hormone receptor binding to one of its physiological ligands." [GOC:mah, GOC:signaling]
@@ -6348,6 +6737,14 @@ is_a: GO:0045981 ! positive regulation of nucleotide metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0009165 ! nucleotide biosynthetic process
 relationship: RO:0002213 GO:0009165 ! nucleotide biosynthetic process
+
+[Term]
+id: GO:0030901
+name: midbrain development
+def: "The process whose specific outcome is the progression of the midbrain over time, from its formation to the mature structure. The midbrain is the middle division of the three primary divisions of the developing chordate brain or the corresponding part of the adult brain (in vertebrates, includes a ventral part containing the cerebral peduncles and a dorsal tectum containing the corpora quadrigemina and that surrounds the aqueduct of Sylvius connecting the third and fourth ventricles)." [http://www2.merriam-webster.com/cgi-bin/mwmednlm?book=Medical&va=midbrain]
+synonym: "mesencephalon development" EXACT []
+is_a: GO:0048856 ! anatomical structure development
+relationship: BFO:0000050 GO:0007420 ! brain development
 
 [Term]
 id: GO:0030936
@@ -7584,6 +7981,13 @@ def: "Any process that results in a change in state or activity of a cell or an 
 is_a: GO:0010033 ! response to organic substance
 
 [Term]
+id: GO:0034097
+name: response to cytokine
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a cytokine stimulus." [GOC:sl]
+synonym: "response to cytokine stimulus" EXACT [GOC:dos]
+is_a: GO:0010033 ! response to organic substance
+
+[Term]
 id: GO:0034101
 name: erythrocyte homeostasis
 def: "Any process of regulating the production and elimination of erythrocytes within an organism." [GOC:add, PMID:10694114, PMID:14754397]
@@ -7888,6 +8292,26 @@ intersection_of: RO:0002213 GO:0034220 ! ion transmembrane transport
 relationship: RO:0002213 GO:0034220 ! ion transmembrane transport
 
 [Term]
+id: GO:0034982
+name: mitochondrial protein processing
+def: "The peptide cleavage of mitochondrial proteins, including cleavage contributing to their import." [GOC:curators]
+synonym: "mitochondrial protein modification" RELATED []
+is_a: GO:0016485 ! protein processing
+is_a: GO:0044267 ! cellular protein metabolic process
+intersection_of: GO:0016485 ! protein processing
+intersection_of: BFO:0000066 GO:0005739 ! mitochondrion
+relationship: BFO:0000066 GO:0005739 ! mitochondrion
+
+[Term]
+id: GO:0035051
+name: cardiocyte differentiation
+def: "The process in which a relatively unspecialized cell acquires the specialized structural and/or functional features of a cell that will form part of the cardiac organ of an individual." [GOC:bf]
+synonym: "cardiac cell differentiation" EXACT []
+synonym: "heart cell differentiation" EXACT []
+is_a: GO:0030154 ! cell differentiation
+relationship: BFO:0000050 GO:0007507 ! heart development
+
+[Term]
 id: GO:0035176
 name: social behavior
 def: "Behavior directed towards society, or taking place between members of the same species. Occurs predominantly, or only, in individuals that are part of a group." [GOC:jh2, PMID:12848939, Wikipedia:Social_behavior]
@@ -8069,6 +8493,22 @@ is_a: GO:0048518 ! positive regulation of biological process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0040011 ! locomotion
 relationship: RO:0002213 GO:0040011 ! locomotion
+
+[Term]
+id: GO:0040019
+name: positive regulation of embryonic development
+def: "Any process that activates or increases the frequency, rate or extent of embryonic development." [GOC:go_curators]
+synonym: "activation of embryonic development" NARROW []
+synonym: "stimulation of embryonic development" NARROW []
+synonym: "up regulation of embryonic development" EXACT []
+synonym: "up-regulation of embryonic development" EXACT []
+synonym: "upregulation of embryonic development" EXACT []
+is_a: GO:0045995 ! regulation of embryonic development
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0009790 ! embryo development
+relationship: RO:0002213 GO:0009790 ! embryo development
 
 [Term]
 id: GO:0042060
@@ -8333,6 +8773,12 @@ synonym: "neuron protrusion" EXACT [NIF_Subcellular:sao-250931889]
 synonym: "neuronal cell projection" EXACT []
 is_a: GO:0097458 ! neuron part
 is_a: GO:0120025 ! plasma membrane bounded cell projection
+
+[Term]
+id: GO:0043009
+name: chordate embryonic development
+def: "The process whose specific outcome is the progression of the embryo over time, from zygote formation through a stage including a notochord and neural tube until birth or egg hatching." [GOC:mtg_sensu]
+is_a: GO:0009792 ! embryo development ending in birth or egg hatching
 
 [Term]
 id: GO:0043010
@@ -9804,6 +10250,43 @@ intersection_of: RO:0002213 GO:0006584 ! catecholamine metabolic process
 relationship: RO:0002213 GO:0006584 ! catecholamine metabolic process
 
 [Term]
+id: GO:0045916
+name: negative regulation of complement activation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of complement activation." [GOC:go_curators]
+synonym: "down regulation of complement activation" EXACT []
+synonym: "down-regulation of complement activation" EXACT []
+synonym: "downregulation of complement activation" EXACT []
+synonym: "inhibition of complement activation" NARROW []
+synonym: "negative regulation of complement cascade" EXACT [GOC:add]
+is_a: GO:0002698 ! negative regulation of immune effector process
+is_a: GO:0002921 ! negative regulation of humoral immune response
+is_a: GO:0010955 ! negative regulation of protein processing
+is_a: GO:0030449 ! regulation of complement activation
+is_a: GO:2000258 ! negative regulation of protein activation cascade
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006956 ! complement activation
+relationship: RO:0002212 GO:0006956 ! complement activation
+
+[Term]
+id: GO:0045917
+name: positive regulation of complement activation
+def: "Any process that activates or increases the frequency, rate or extent of complement activation." [GOC:go_curators]
+synonym: "activation of complement activation" NARROW []
+synonym: "positive regulation of complement cascade" EXACT [GOC:add]
+synonym: "stimulation of complement activation" NARROW []
+synonym: "up regulation of complement activation" EXACT []
+synonym: "up-regulation of complement activation" EXACT []
+synonym: "upregulation of complement activation" EXACT []
+is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0002922 ! positive regulation of humoral immune response
+is_a: GO:0010954 ! positive regulation of protein processing
+is_a: GO:0030449 ! regulation of complement activation
+is_a: GO:2000259 ! positive regulation of protein activation cascade
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006956 ! complement activation
+relationship: RO:0002213 GO:0006956 ! complement activation
+
+[Term]
 id: GO:0045922
 name: negative regulation of fatty acid metabolic process
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving fatty acids." [GOC:go_curators]
@@ -10055,6 +10538,30 @@ is_a: GO:0045935 ! positive regulation of nucleobase-containing compound metabol
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006206 ! pyrimidine nucleobase metabolic process
 relationship: RO:0002213 GO:0006206 ! pyrimidine nucleobase metabolic process
+
+[Term]
+id: GO:0045992
+name: negative regulation of embryonic development
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of embryonic development." [GOC:go_curators]
+synonym: "down regulation of embryonic development" EXACT []
+synonym: "down-regulation of embryonic development" EXACT []
+synonym: "downregulation of embryonic development" EXACT []
+synonym: "inhibition of embryonic development" NARROW []
+is_a: GO:0045995 ! regulation of embryonic development
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0009790 ! embryo development
+relationship: RO:0002212 GO:0009790 ! embryo development
+
+[Term]
+id: GO:0045995
+name: regulation of embryonic development
+def: "Any process that modulates the frequency, rate or extent of embryonic development." [GOC:go_curators]
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0009790 ! embryo development
+relationship: RO:0002211 GO:0009790 ! embryo development
 
 [Term]
 id: GO:0046031
@@ -10528,6 +11035,13 @@ is_a: GO:0048856 ! anatomical structure development
 relationship: BFO:0000050 GO:0048731 ! system development
 
 [Term]
+id: GO:0048514
+name: blood vessel morphogenesis
+def: "The process in which the anatomical structures of blood vessels are generated and organized. The blood vessel is the vasculature carrying blood." [GOC:jid]
+is_a: GO:0009653 ! anatomical structure morphogenesis
+relationship: BFO:0000050 GO:0001568 ! blood vessel development
+
+[Term]
 id: GO:0048518
 name: positive regulation of biological process
 def: "Any process that activates or increases the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." [GOC:jid]
@@ -10716,6 +11230,15 @@ id: GO:0048771
 name: tissue remodeling
 def: "The reorganization or renovation of existing tissues. This process can either change the characteristics of a tissue such as in blood vessel remodeling, or result in the dynamic equilibrium of a tissue such as in bone remodeling." [GOC:ebc]
 is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0048844
+name: artery morphogenesis
+def: "The process in which the anatomical structures of arterial blood vessels are generated and organized. Arteries are blood vessels that transport blood from the heart to the body and its organs." [GOC:dsf, PMID:16740480]
+synonym: "arterial morphogenesis" EXACT []
+synonym: "arteriogenesis" EXACT [GOC:mtg_heart]
+is_a: GO:0048514 ! blood vessel morphogenesis
+relationship: BFO:0000050 GO:0060840 ! artery development
 
 [Term]
 id: GO:0048856
@@ -12202,6 +12725,13 @@ intersection_of: RO:0002212 GO:0016491 ! oxidoreductase activity
 relationship: RO:0002212 GO:0016491 ! oxidoreductase activity
 
 [Term]
+id: GO:0051604
+name: protein maturation
+def: "Any process leading to the attainment of the full functional capacity of a protein." [GOC:ai]
+is_a: GO:0019538 ! protein metabolic process
+relationship: BFO:0000050 GO:0010467 ! gene expression
+
+[Term]
 id: GO:0051641
 name: cellular localization
 def: "A cellular localization process whereby a substance or cellular entity, such as a protein complex or organelle, is transported to, and/or maintained in, a specific location within a cell including the localization of substances or cellular entities to the cell membrane." [GOC:tb, GOC:vw]
@@ -12344,6 +12874,46 @@ intersection_of: RO:0002213 GO:0015837 ! amine transport
 relationship: RO:0002213 GO:0015837 ! amine transport
 
 [Term]
+id: GO:0051960
+name: regulation of nervous system development
+def: "Any process that modulates the frequency, rate or extent of nervous system development, the origin and formation of nervous tissue." [GOC:ai]
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007399 ! nervous system development
+relationship: RO:0002211 GO:0007399 ! nervous system development
+
+[Term]
+id: GO:0051961
+name: negative regulation of nervous system development
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of nervous system development, the origin and formation of nervous tissue." [GOC:ai]
+synonym: "down regulation of nervous system development" EXACT []
+synonym: "down-regulation of nervous system development" EXACT []
+synonym: "downregulation of nervous system development" EXACT []
+synonym: "inhibition of nervous system development" NARROW []
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:0051960 ! regulation of nervous system development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007399 ! nervous system development
+relationship: RO:0002212 GO:0007399 ! nervous system development
+
+[Term]
+id: GO:0051962
+name: positive regulation of nervous system development
+def: "Any process that activates, maintains or increases the frequency, rate or extent of nervous system development, the origin and formation of nervous tissue." [GOC:ai]
+synonym: "activation of nervous system development" NARROW []
+synonym: "stimulation of nervous system development" NARROW []
+synonym: "up regulation of nervous system development" EXACT []
+synonym: "up-regulation of nervous system development" EXACT []
+synonym: "upregulation of nervous system development" EXACT []
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:0051960 ! regulation of nervous system development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007399 ! nervous system development
+relationship: RO:0002213 GO:0007399 ! nervous system development
+
+[Term]
 id: GO:0052547
 name: regulation of peptidase activity
 def: "Any process that modulates the frequency, rate or extent of peptidase activity, the hydrolysis of peptide bonds within proteins." [EC:3.4, GOC:ai]
@@ -12460,6 +13030,13 @@ def: "The process whose specific outcome is the progression of the digestive sys
 is_a: GO:0048731 ! system development
 
 [Term]
+id: GO:0060037
+name: pharyngeal system development
+def: "The process whose specific outcome is the progression of the pharyngeal system over time, from its formation to the mature structure. The pharyngeal system is a transient embryonic complex that is specific to vertebrates. It comprises the pharyngeal arches, bulges of tissues of mesoderm and neural crest derivation through which pass nerves and pharyngeal arch arteries. The arches are separated internally by pharyngeal pouches, evaginations of foregut endoderm, and externally by pharyngeal clefts, invaginations of surface ectoderm. The development of the system ends when the stucture it contributes to are forming: the thymus, thyroid, parathyroids, maxilla, mandible, aortic arch, cardiac outflow tract, external and middle ear." [GOC:dph]
+is_a: GO:0048731 ! system development
+relationship: BFO:0000050 GO:0043009 ! chordate embryonic development
+
+[Term]
 id: GO:0060047
 name: heart contraction
 def: "The multicellular organismal process in which the heart decreases in volume in a characteristic way to propel blood through the body." [GOC:dph]
@@ -12555,6 +13132,17 @@ def: "A compound molecular function in which an effector function is controlled 
 is_a: GO:0003674 ! molecular_function
 
 [Term]
+id: GO:0060136
+name: embryonic process involved in female pregnancy
+def: "A reproductive process occurring in the embryo or fetus that allows the embryo or fetus to develop within the mother." [GOC:dph]
+is_a: GO:0048609 ! multicellular organismal reproductive process
+intersection_of: GO:0022414 ! reproductive process
+intersection_of: BFO:0000050 GO:0007565 ! female pregnancy
+intersection_of: BFO:0000050 GO:0009790 ! embryo development
+relationship: BFO:0000050 GO:0007565 ! female pregnancy
+relationship: BFO:0000050 GO:0009792 ! embryo development ending in birth or egg hatching
+
+[Term]
 id: GO:0060235
 name: lens induction in camera-type eye
 def: "Signaling at short range between the head ectoderm and the optic vesicle that results in the head ectoderm forming a lens." [GOC:dph, ISBN:0878932437]
@@ -12595,6 +13183,44 @@ is_a: GO:0045595 ! regulation of cell differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0048468 ! cell development
 relationship: RO:0002211 GO:0048468 ! cell development
+
+[Term]
+id: GO:0060300
+name: regulation of cytokine activity
+def: "Any process that modulates the rate, frequency or extent of the activity of a molecule that controls the survival, growth, differentiation and effector function of tissues and cells." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0010469 ! regulation of receptor activity
+is_a: GO:1900120 ! regulation of receptor binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0005125 ! cytokine activity
+relationship: RO:0002211 GO:0005125 ! cytokine activity
+
+[Term]
+id: GO:0060301
+name: positive regulation of cytokine activity
+def: "Any process that increases the rate, frequency or extent of the activity of a molecule that controls the survival, growth, differentiation and effector function of tissues and cells." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0048518 ! positive regulation of biological process
+is_a: GO:0060300 ! regulation of cytokine activity
+is_a: GO:1900122 ! positive regulation of receptor binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0005125 ! cytokine activity
+relationship: RO:0002213 GO:0005125 ! cytokine activity
+
+[Term]
+id: GO:0060302
+name: negative regulation of cytokine activity
+def: "Any process that decreases the rate, frequency or extent of the activity of a molecule that controls the survival, growth, differentiation and effector function of tissues and cells." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0048519 ! negative regulation of biological process
+is_a: GO:0060300 ! regulation of cytokine activity
+is_a: GO:1900121 ! negative regulation of receptor binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0005125 ! cytokine activity
+relationship: RO:0002212 GO:0005125 ! cytokine activity
+
+[Term]
+id: GO:0060322
+name: head development
+def: "The biological process whose specific outcome is the progression of a head from an initial condition to its mature state. The head is the anterior-most division of the body." [GOC:dph]
+is_a: GO:0048856 ! anatomical structure development
 
 [Term]
 id: GO:0060341
@@ -12663,6 +13289,35 @@ intersection_of: RO:0002211 GO:0016192 ! vesicle-mediated transport
 relationship: RO:0002211 GO:0016192 ! vesicle-mediated transport
 
 [Term]
+id: GO:0060759
+name: regulation of response to cytokine stimulus
+def: "Any process that modulates the rate, frequency, or extent of a response to cytokine stimulus." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0048583 ! regulation of response to stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0034097 ! response to cytokine
+relationship: RO:0002211 GO:0034097 ! response to cytokine
+
+[Term]
+id: GO:0060760
+name: positive regulation of response to cytokine stimulus
+def: "Any process that increases the rate, frequency, or extent of a response to cytokine stimulus." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0048584 ! positive regulation of response to stimulus
+is_a: GO:0060759 ! regulation of response to cytokine stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0034097 ! response to cytokine
+relationship: RO:0002213 GO:0034097 ! response to cytokine
+
+[Term]
+id: GO:0060761
+name: negative regulation of response to cytokine stimulus
+def: "Any process that decreases the rate, frequency, or extent of a response to cytokine stimulus." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0048585 ! negative regulation of response to stimulus
+is_a: GO:0060759 ! regulation of response to cytokine stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0034097 ! response to cytokine
+relationship: RO:0002212 GO:0034097 ! response to cytokine
+
+[Term]
 id: GO:0060765
 name: regulation of androgen receptor signaling pathway
 def: "Any process that modulates the rate, frequency, or extent of the androgen receptor signaling pathway." [GOC:dph]
@@ -12702,6 +13357,12 @@ intersection_of: BFO:0000050 GO:0001894 ! tissue homeostasis
 relationship: BFO:0000050 GO:0048873 ! homeostasis of number of cells within a tissue
 
 [Term]
+id: GO:0060840
+name: artery development
+def: "The progression of the artery over time, from its initial formation to the mature structure. An artery is a blood vessel that carries blood away from the heart to a capillary bed." [GOC:dph, GOC:sdb_2009, GOC:tb]
+is_a: GO:0001568 ! blood vessel development
+
+[Term]
 id: GO:0060850
 name: regulation of transcription involved in cell fate commitment
 def: "Any process that modulates the frequency, rate or extent of transcription from an RNA polymerase II promoter that contributes to the commitment of a cell to a specific fate." [GOC:dph, GOC:sdb_2009, GOC:tb]
@@ -12709,6 +13370,15 @@ is_a: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 intersection_of: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
 intersection_of: BFO:0000050 GO:0045165 ! cell fate commitment
 relationship: BFO:0000050 GO:0045165 ! cell fate commitment
+
+[Term]
+id: GO:0060973
+name: cell migration involved in heart development
+def: "The orderly movement of a cell from one site to another that will contribute to the progression of the heart over time, from its initial formation, to the mature organ." [GOC:mtg_heart]
+is_a: GO:0016477 ! cell migration
+intersection_of: GO:0016477 ! cell migration
+intersection_of: BFO:0000050 GO:0007507 ! heart development
+relationship: BFO:0000050 GO:0007507 ! heart development
 
 [Term]
 id: GO:0061024
@@ -12742,11 +13412,48 @@ intersection_of: RO:0002212 GO:0042060 ! wound healing
 relationship: RO:0002212 GO:0042060 ! wound healing
 
 [Term]
+id: GO:0061307
+name: cardiac neural crest cell differentiation involved in heart development
+def: "The process in which a relatively unspecialized cell acquires specialized features of a cardiac neural crest cell that will migrate to the heart and contribute to its development. Cardiac neural crest cells are specialized cells that migrate toward the heart from the third, fourth and sixth pharyngeal arches." [GOC:dph, GOC:mtg_heart, PMID:19705442]
+is_a: GO:0014033 ! neural crest cell differentiation
+is_a: GO:0035051 ! cardiocyte differentiation
+intersection_of: GO:0014033 ! neural crest cell differentiation
+intersection_of: BFO:0000050 GO:0007507 ! heart development
+
+[Term]
+id: GO:0061308
+name: cardiac neural crest cell development involved in heart development
+def: "The process aimed at the progression of a cardiac neural crest cell over time, from initial commitment of the cell to its specific fate, to the fully functional differentiated cell that contributes to the development of the heart." [GOC:dph, GOC:mtg_heart]
+is_a: GO:0014032 ! neural crest cell development
+intersection_of: GO:0014032 ! neural crest cell development
+intersection_of: BFO:0000050 GO:0007507 ! heart development
+relationship: BFO:0000050 GO:0061307 ! cardiac neural crest cell differentiation involved in heart development
+
+[Term]
+id: GO:0061311
+name: cell surface receptor signaling pathway involved in heart development
+def: "Any series of molecular signals initiated by the binding of a receptor on the surface of a cell to a physiological ligand, which contributes to the progression of the heart over time." [GOC:dph, GOC:mtg_heart, GOC:signaling]
+synonym: "cell surface receptor linked signaling pathway involved in heart development" EXACT [GOC:bf]
+synonym: "cell surface receptor linked signalling pathway involved in heart development" EXACT [GOC:mah]
+is_a: GO:0007166 ! cell surface receptor signaling pathway
+intersection_of: GO:0007166 ! cell surface receptor signaling pathway
+intersection_of: BFO:0000050 GO:0007507 ! heart development
+relationship: BFO:0000050 GO:0007507 ! heart development
+
+[Term]
 id: GO:0061337
 name: cardiac conduction
 def: "Transfer of an organized electrical impulse across the heart to coordinate the contraction of cardiac muscles. The process begins with generation of an action potential (in the sinoatrial node (SA) in humans) and ends with a change in the rate, frequency, or extent of the contraction of the heart muscles." [GOC:dph]
 is_a: GO:0008016 ! regulation of heart contraction
 is_a: GO:0035637 ! multicellular organismal signaling
+
+[Term]
+id: GO:0061626
+name: pharyngeal arch artery morphogenesis
+def: "The process in which the anatomical structures of a pharyngeal arch artery is generated and organized. The pharyngeal arch arteries are a series of six paired embryological vascular structures, the development of which give rise to several major arteries, such as the stapedial artery, the middle meningeal artery, the internal carotid artery and the pulmonary artery." [GOC:BHF, GOC:dph, PMID:20122914]
+synonym: "aortic arch artery morphogenesis" BROAD [GOC:dph]
+is_a: GO:0048844 ! artery morphogenesis
+relationship: BFO:0000050 GO:0060037 ! pharyngeal system development
 
 [Term]
 id: GO:0065007
@@ -12875,6 +13582,17 @@ name: ammonium ion binding
 def: "Interacting selectively and non-covalently with ammonium ions (NH4+)." [CHEBI:28938, GOC:ecd]
 synonym: "ammonium binding" RELATED []
 is_a: GO:0043169 ! cation binding
+
+[Term]
+id: GO:0070613
+name: regulation of protein processing
+def: "Any process that modulates the frequency, rate or extent of protein processing, any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein." [GOC:mah]
+synonym: "regulation of protein maturation by peptide bond cleavage" EXACT []
+is_a: GO:0030162 ! regulation of proteolysis
+is_a: GO:1903317 ! regulation of protein maturation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016485 ! protein processing
+relationship: RO:0002211 GO:0016485 ! protein processing
 
 [Term]
 id: GO:0070701
@@ -13029,6 +13747,13 @@ is_a: GO:0010033 ! response to organic substance
 is_a: GO:0070887 ! cellular response to chemical stimulus
 
 [Term]
+id: GO:0071345
+name: cellular response to cytokine stimulus
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a cytokine stimulus." [GOC:mah]
+is_a: GO:0034097 ! response to cytokine
+is_a: GO:0071310 ! cellular response to organic substance
+
+[Term]
 id: GO:0071383
 name: cellular response to steroid hormone stimulus
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a steroid hormone stimulus." [GOC:mah]
@@ -13148,6 +13873,19 @@ synonym: "tricarboxylic acid metabolism" EXACT [GOC:mah]
 is_a: GO:0019752 ! carboxylic acid metabolic process
 
 [Term]
+id: GO:0072358
+name: cardiovascular system development
+def: "The process whose specific outcome is the progression of the cardiovascular system over time, from its formation to the mature structure. The cardiovascular system is the anatomical system that has as its parts the heart and blood vessels." [GOC:mah, UBERON:0004535]
+is_a: GO:0048731 ! system development
+relationship: BFO:0000050 GO:0072359 ! circulatory system development
+
+[Term]
+id: GO:0072359
+name: circulatory system development
+def: "The process whose specific outcome is the progression of the circulatory system over time, from its formation to the mature structure. The circulatory system is the organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis." [GOC:mah, UBERON:0001009]
+is_a: GO:0048731 ! system development
+
+[Term]
 id: GO:0072361
 name: regulation of glycolytic process by regulation of transcription from RNA polymerase II promoter
 def: "Any process that modulates the frequency, rate or extent of glycolysis by modulating the frequency, rate or extent of transcription from an RNA polymerase II promoter." [GOC:BHF, GOC:mah]
@@ -13245,6 +13983,15 @@ is_a: GO:0072367 ! regulation of lipid transport by regulation of transcription 
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006869 ! lipid transport
 intersection_of: RO:0002213 GO:0006366 ! transcription from RNA polymerase II promoter
+
+[Term]
+id: GO:0072376
+name: protein activation cascade
+def: "A response to a stimulus that consists of a sequential series of modifications to a set of proteins where the product of one reaction acts catalytically in the following reaction. The magnitude of the response is typically amplified at each successive step in the cascade. Modifications typically include proteolysis or covalent modification, and may also include binding events." [GOC:add, GOC:mah, GOC:pde]
+synonym: "protein activation pathway" EXACT [GOC:add]
+synonym: "protein activitory cascade" EXACT [GOC:add]
+is_a: GO:0019538 ! protein metabolic process
+is_a: GO:0050896 ! response to stimulus
 
 [Term]
 id: GO:0072511
@@ -13562,6 +14309,12 @@ name: sensory organ morphogenesis
 def: "Morphogenesis of a sensory organ. A sensory organ is defined as a tissue or set of tissues that work together to receive and transmit signals from external or internal stimuli. Morphogenesis is the process in which anatomical structures are generated and organized. Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions." [GOC:kmv, ISBN:978-0199210893]
 is_a: GO:0009887 ! animal organ morphogenesis
 relationship: BFO:0000050 GO:0007423 ! sensory organ development
+
+[Term]
+id: GO:0090665
+name: glycoprotein complex
+def: "A protein complex containing at least one glycosylated protein, may be held together by both covalent and noncovalent bonds." [GOC:pf, PMID:7693675, PMID:8662961]
+is_a: GO:0043234 ! protein complex
 
 [Term]
 id: GO:0097060
@@ -14718,6 +15471,126 @@ is_a: GO:1901135 ! carbohydrate derivative metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
+id: GO:1901213
+name: regulation of transcription from RNA polymerase II promoter involved in heart development
+def: "Any process that modulates the frequency, rate or extent of transcription from an RNA polymerase II promoter that contributes to the development of the heart over time." [GOC:BHF, GOC:TermGenie]
+synonym: "global transcription regulation from Pol II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "global transcription regulation from Pol II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "global transcription regulation from Pol II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "regulation of gene-specific transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "regulation of gene-specific transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "regulation of gene-specific transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "regulation of global transcription from Pol II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "regulation of global transcription from Pol II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "regulation of global transcription from Pol II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "regulation of transcription from Pol II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "regulation of transcription from Pol II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "regulation of transcription from Pol II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "regulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "regulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "regulation of transcription from RNA polymerase II promoter, global involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "regulation of transcription from RNA polymerase II promoter, global involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "regulation of transcription from RNA polymerase II promoter, global involved in heart development" RELATED [GOC:TermGenie]
+is_a: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
+intersection_of: GO:0006357 ! regulation of transcription from RNA polymerase II promoter
+intersection_of: BFO:0000050 GO:0007507 ! heart development
+relationship: BFO:0000050 GO:0007507 ! heart development
+
+[Term]
+id: GO:1901227
+name: negative regulation of transcription from RNA polymerase II promoter involved in heart development
+def: "Any negative regulation of transcription from RNA polymerase II promoter that is involved in heart development." [GOC:BHF, GOC:TermGenie]
+synonym: "down regulation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "down regulation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "down regulation of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "down regulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "down regulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "down regulation of transcription from RNA polymerase II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "down-regulation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "down-regulation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "down-regulation of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "down-regulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "down-regulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "down-regulation of transcription from RNA polymerase II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "downregulation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "downregulation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "downregulation of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "downregulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "downregulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "downregulation of transcription from RNA polymerase II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "inhibition of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "inhibition of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "inhibition of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "inhibition of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "inhibition of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "inhibition of transcription from RNA polymerase II promoter involved in heart development" NARROW [GOC:TermGenie]
+synonym: "negative regulation of gene-specific transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of gene-specific transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of gene-specific transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of global transcription from Pol II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of global transcription from Pol II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of global transcription from Pol II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of transcription from Pol II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of transcription from Pol II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "negative regulation of transcription from Pol II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "negative regulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "negative regulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+is_a: GO:0000122 ! negative regulation of transcription from RNA polymerase II promoter
+is_a: GO:1901213 ! regulation of transcription from RNA polymerase II promoter involved in heart development
+intersection_of: GO:0000122 ! negative regulation of transcription from RNA polymerase II promoter
+intersection_of: BFO:0000050 GO:0007507 ! heart development
+
+[Term]
+id: GO:1901228
+name: positive regulation of transcription from RNA polymerase II promoter involved in heart development
+def: "Any positive regulation of transcription from RNA polymerase II promoter that is involved in heart development." [GOC:BHF, GOC:TermGenie]
+synonym: "activation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "activation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "activation of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "activation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "activation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "activation of transcription from RNA polymerase II promoter involved in heart development" NARROW [GOC:TermGenie]
+synonym: "positive regulation of gene-specific transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of gene-specific transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of gene-specific transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of global transcription from Pol II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of global transcription from Pol II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of global transcription from Pol II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of transcription from Pol II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of transcription from Pol II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "positive regulation of transcription from Pol II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "positive regulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "positive regulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "stimulation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "stimulation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "stimulation of global transcription from RNA polymerase II promoter involved in heart development" NARROW [GOC:TermGenie]
+synonym: "stimulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "stimulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "stimulation of transcription from RNA polymerase II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "up regulation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "up regulation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "up regulation of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "up regulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "up regulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "up regulation of transcription from RNA polymerase II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "up-regulation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "up-regulation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "up-regulation of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "up-regulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "up-regulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "up-regulation of transcription from RNA polymerase II promoter involved in heart development" EXACT [GOC:TermGenie]
+synonym: "upregulation of global transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "upregulation of global transcription from RNA polymerase II promoter involved in dorsal vessel development" RELATED [GOC:TermGenie]
+synonym: "upregulation of global transcription from RNA polymerase II promoter involved in heart development" RELATED [GOC:TermGenie]
+synonym: "upregulation of transcription from RNA polymerase II promoter involved in cardiac development" RELATED [GOC:TermGenie]
+synonym: "upregulation of transcription from RNA polymerase II promoter involved in dorsal vessel development" NARROW [GOC:TermGenie]
+synonym: "upregulation of transcription from RNA polymerase II promoter involved in heart development" EXACT [GOC:TermGenie]
+is_a: GO:0045944 ! positive regulation of transcription from RNA polymerase II promoter
+is_a: GO:1901213 ! regulation of transcription from RNA polymerase II promoter involved in heart development
+intersection_of: GO:0045944 ! positive regulation of transcription from RNA polymerase II promoter
+intersection_of: BFO:0000050 GO:0007507 ! heart development
+
+[Term]
 id: GO:1901293
 name: nucleoside phosphate biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of a nucleoside phosphate." [GOC:TermGenie]
@@ -14759,6 +15632,36 @@ is_a: GO:2000146 ! negative regulation of cell motility
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0030317 ! flagellated sperm motility
 relationship: RO:0002212 GO:0030317 ! flagellated sperm motility
+
+[Term]
+id: GO:1901342
+name: regulation of vasculature development
+def: "Any process that modulates the frequency, rate or extent of vasculature development." [GOC:TermGenie]
+synonym: "regulation of vascular system development" RELATED [GOC:TermGenie]
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0001944 ! vasculature development
+relationship: RO:0002211 GO:0001944 ! vasculature development
+
+[Term]
+id: GO:1901343
+name: negative regulation of vasculature development
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of vasculature development." [GOC:TermGenie]
+synonym: "down regulation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "down regulation of vasculature development" EXACT [GOC:TermGenie]
+synonym: "down-regulation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "down-regulation of vasculature development" EXACT [GOC:TermGenie]
+synonym: "downregulation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "downregulation of vasculature development" EXACT [GOC:TermGenie]
+synonym: "inhibition of vascular system development" RELATED [GOC:TermGenie]
+synonym: "inhibition of vasculature development" NARROW [GOC:TermGenie]
+synonym: "negative regulation of vascular system development" RELATED [GOC:TermGenie]
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:1901342 ! regulation of vasculature development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0001944 ! vasculature development
+relationship: RO:0002212 GO:0001944 ! vasculature development
 
 [Term]
 id: GO:1901360
@@ -15900,6 +16803,46 @@ intersection_of: RO:0002213 GO:0071941 ! nitrogen cycle metabolic process
 relationship: RO:0002213 GO:0071941 ! nitrogen cycle metabolic process
 
 [Term]
+id: GO:1903317
+name: regulation of protein maturation
+def: "Any process that modulates the frequency, rate or extent of protein maturation." [GO_REF:0000058, GOC:TermGenie, GOC:vw]
+is_a: GO:0010468 ! regulation of gene expression
+is_a: GO:0051246 ! regulation of protein metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0051604 ! protein maturation
+relationship: RO:0002211 GO:0051604 ! protein maturation
+
+[Term]
+id: GO:1903318
+name: negative regulation of protein maturation
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of protein maturation." [GO_REF:0000058, GOC:TermGenie, GOC:vw]
+synonym: "down regulation of protein maturation" EXACT [GOC:TermGenie]
+synonym: "down-regulation of protein maturation" EXACT [GOC:TermGenie]
+synonym: "downregulation of protein maturation" EXACT [GOC:TermGenie]
+synonym: "inhibition of protein maturation" NARROW [GOC:TermGenie]
+is_a: GO:0010629 ! negative regulation of gene expression
+is_a: GO:0051248 ! negative regulation of protein metabolic process
+is_a: GO:1903317 ! regulation of protein maturation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0051604 ! protein maturation
+relationship: RO:0002212 GO:0051604 ! protein maturation
+
+[Term]
+id: GO:1903319
+name: positive regulation of protein maturation
+def: "Any process that activates or increases the frequency, rate or extent of protein maturation." [GO_REF:0000058, GOC:TermGenie, GOC:vw]
+synonym: "activation of protein maturation" NARROW [GOC:TermGenie]
+synonym: "up regulation of protein maturation" EXACT [GOC:TermGenie]
+synonym: "up-regulation of protein maturation" EXACT [GOC:TermGenie]
+synonym: "upregulation of protein maturation" EXACT [GOC:TermGenie]
+is_a: GO:0010628 ! positive regulation of gene expression
+is_a: GO:0051247 ! positive regulation of protein metabolic process
+is_a: GO:1903317 ! regulation of protein maturation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0051604 ! protein maturation
+relationship: RO:0002213 GO:0051604 ! protein maturation
+
+[Term]
 id: GO:1903335
 name: regulation of vacuolar transport
 def: "Any process that modulates the frequency, rate or extent of vacuolar transport." [GO_REF:0000058, GOC:TermGenie, GOC:vw]
@@ -16579,6 +17522,26 @@ intersection_of: RO:0002213 GO:0042755 ! eating behavior
 relationship: RO:0002213 GO:0042755 ! eating behavior
 
 [Term]
+id: GO:1904018
+name: positive regulation of vasculature development
+def: "Any process that activates or increases the frequency, rate or extent of vasculature development." [GO_REF:0000058, GOC:TermGenie, PMID:21472453]
+synonym: "activation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "activation of vasculature development" NARROW [GOC:TermGenie]
+synonym: "positive regulation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "up regulation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "up regulation of vasculature development" EXACT [GOC:TermGenie]
+synonym: "up-regulation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "up-regulation of vasculature development" EXACT [GOC:TermGenie]
+synonym: "upregulation of vascular system development" RELATED [GOC:TermGenie]
+synonym: "upregulation of vasculature development" EXACT [GOC:TermGenie]
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:1901342 ! regulation of vasculature development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0001944 ! vasculature development
+relationship: RO:0002213 GO:0001944 ! vasculature development
+
+[Term]
 id: GO:1904062
 name: regulation of cation transmembrane transport
 def: "Any process that modulates the frequency, rate or extent of cation transmembrane transport." [GO_REF:0000058, GOC:TermGenie, PMID:15304482]
@@ -17159,6 +18122,68 @@ intersection_of: RO:0002213 GO:0010324 ! membrane invagination
 relationship: RO:0002213 GO:0010324 ! membrane invagination
 
 [Term]
+id: GO:1905207
+name: regulation of cardiocyte differentiation
+def: "Any process that modulates the frequency, rate or extent of cardiocyte differentiation." [GO_REF:0000058, GOC:bc, GOC:BHF, GOC:BHF_miRNA, GOC:TermGenie, PMID:23069713]
+synonym: "regulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "regulation of heart cell differentiation" EXACT [GOC:TermGenie]
+is_a: GO:0045595 ! regulation of cell differentiation
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0035051 ! cardiocyte differentiation
+relationship: RO:0002211 GO:0035051 ! cardiocyte differentiation
+
+[Term]
+id: GO:1905208
+name: negative regulation of cardiocyte differentiation
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of cardiocyte differentiation." [GO_REF:0000058, GOC:bc, GOC:BHF, GOC:BHF_miRNA, GOC:TermGenie, PMID:23069713]
+synonym: "down regulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "down regulation of cardiocyte differentiation" EXACT [GOC:TermGenie]
+synonym: "down regulation of heart cell differentiation" EXACT [GOC:TermGenie]
+synonym: "down-regulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "down-regulation of cardiocyte differentiation" EXACT [GOC:TermGenie]
+synonym: "down-regulation of heart cell differentiation" EXACT [GOC:TermGenie]
+synonym: "downregulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "downregulation of cardiocyte differentiation" EXACT [GOC:TermGenie]
+synonym: "downregulation of heart cell differentiation" EXACT [GOC:TermGenie]
+synonym: "inhibition of cardiac cell differentiation" NARROW [GOC:TermGenie]
+synonym: "inhibition of cardiocyte differentiation" NARROW [GOC:TermGenie]
+synonym: "inhibition of heart cell differentiation" NARROW [GOC:TermGenie]
+synonym: "negative regulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "negative regulation of heart cell differentiation" EXACT [GOC:TermGenie]
+is_a: GO:0045596 ! negative regulation of cell differentiation
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:1905207 ! regulation of cardiocyte differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0035051 ! cardiocyte differentiation
+relationship: RO:0002212 GO:0035051 ! cardiocyte differentiation
+
+[Term]
+id: GO:1905209
+name: positive regulation of cardiocyte differentiation
+def: "Any process that activates or increases the frequency, rate or extent of cardiocyte differentiation." [GO_REF:0000058, GOC:bc, GOC:BHF, GOC:BHF_miRNA, GOC:TermGenie, PMID:23069713]
+synonym: "activation of cardiac cell differentiation" NARROW [GOC:TermGenie]
+synonym: "activation of cardiocyte differentiation" NARROW [GOC:TermGenie]
+synonym: "activation of heart cell differentiation" NARROW [GOC:TermGenie]
+synonym: "positive regulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "positive regulation of heart cell differentiation" EXACT [GOC:TermGenie]
+synonym: "up regulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "up regulation of cardiocyte differentiation" EXACT [GOC:TermGenie]
+synonym: "up regulation of heart cell differentiation" EXACT [GOC:TermGenie]
+synonym: "up-regulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "up-regulation of cardiocyte differentiation" EXACT [GOC:TermGenie]
+synonym: "up-regulation of heart cell differentiation" EXACT [GOC:TermGenie]
+synonym: "upregulation of cardiac cell differentiation" EXACT [GOC:TermGenie]
+synonym: "upregulation of cardiocyte differentiation" EXACT [GOC:TermGenie]
+synonym: "upregulation of heart cell differentiation" EXACT [GOC:TermGenie]
+is_a: GO:0045597 ! positive regulation of cell differentiation
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:1905207 ! regulation of cardiocyte differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0035051 ! cardiocyte differentiation
+relationship: RO:0002213 GO:0035051 ! cardiocyte differentiation
+
+[Term]
 id: GO:1905214
 name: regulation of RNA binding
 def: "Any process that modulates the frequency, rate or extent of RNA binding." [GO_REF:0000059, GOC:bf, GOC:PARL, GOC:TermGenie]
@@ -17254,6 +18279,66 @@ is_a: GO:2000243 ! positive regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0009566 ! fertilization
 relationship: RO:0002213 GO:0009566 ! fertilization
+
+[Term]
+id: GO:1905651
+name: regulation of artery morphogenesis
+def: "Any process that modulates the frequency, rate or extent of artery morphogenesis." [GO_REF:0000058, GOC:BHF, GOC:BHF_miRNA, GOC:rph, GOC:TermGenie, PMID:27389411]
+synonym: "regulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "regulation of arteriogenesis" EXACT [GOC:TermGenie]
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
+is_a: GO:1901342 ! regulation of vasculature development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0048844 ! artery morphogenesis
+relationship: RO:0002211 GO:0048844 ! artery morphogenesis
+
+[Term]
+id: GO:1905652
+name: negative regulation of artery morphogenesis
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of artery morphogenesis." [GO_REF:0000058, GOC:BHF, GOC:BHF_miRNA, GOC:rph, GOC:TermGenie, PMID:27389411]
+synonym: "down regulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "down regulation of arteriogenesis" EXACT [GOC:TermGenie]
+synonym: "down regulation of artery morphogenesis" EXACT [GOC:TermGenie]
+synonym: "down-regulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "down-regulation of arteriogenesis" EXACT [GOC:TermGenie]
+synonym: "down-regulation of artery morphogenesis" EXACT [GOC:TermGenie]
+synonym: "downregulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "downregulation of arteriogenesis" EXACT [GOC:TermGenie]
+synonym: "downregulation of artery morphogenesis" EXACT [GOC:TermGenie]
+synonym: "inhibition of arterial morphogenesis" NARROW [GOC:TermGenie]
+synonym: "inhibition of arteriogenesis" NARROW [GOC:TermGenie]
+synonym: "inhibition of artery morphogenesis" NARROW [GOC:TermGenie]
+synonym: "negative regulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "negative regulation of arteriogenesis" EXACT [GOC:TermGenie]
+is_a: GO:1905651 ! regulation of artery morphogenesis
+is_a: GO:2000181 ! negative regulation of blood vessel morphogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0048844 ! artery morphogenesis
+relationship: RO:0002212 GO:0048844 ! artery morphogenesis
+
+[Term]
+id: GO:1905653
+name: positive regulation of artery morphogenesis
+def: "Any process that activates or increases the frequency, rate or extent of artery morphogenesis." [GO_REF:0000058, GOC:BHF, GOC:BHF_miRNA, GOC:rph, GOC:TermGenie, PMID:27389411]
+synonym: "activation of arterial morphogenesis" NARROW [GOC:TermGenie]
+synonym: "activation of arteriogenesis" NARROW [GOC:TermGenie]
+synonym: "activation of artery morphogenesis" NARROW [GOC:TermGenie]
+synonym: "positive regulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "positive regulation of arteriogenesis" EXACT [GOC:TermGenie]
+synonym: "up regulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "up regulation of arteriogenesis" EXACT [GOC:TermGenie]
+synonym: "up regulation of artery morphogenesis" EXACT [GOC:TermGenie]
+synonym: "up-regulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "up-regulation of arteriogenesis" EXACT [GOC:TermGenie]
+synonym: "up-regulation of artery morphogenesis" EXACT [GOC:TermGenie]
+synonym: "upregulation of arterial morphogenesis" EXACT [GOC:TermGenie]
+synonym: "upregulation of arteriogenesis" EXACT [GOC:TermGenie]
+synonym: "upregulation of artery morphogenesis" EXACT [GOC:TermGenie]
+is_a: GO:1904018 ! positive regulation of vasculature development
+is_a: GO:1905651 ! regulation of artery morphogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0048844 ! artery morphogenesis
+relationship: RO:0002213 GO:0048844 ! artery morphogenesis
 
 [Term]
 id: GO:1905706
@@ -17508,6 +18593,16 @@ intersection_of: RO:0002213 GO:0048870 ! cell motility
 relationship: RO:0002213 GO:0048870 ! cell motility
 
 [Term]
+id: GO:2000181
+name: negative regulation of blood vessel morphogenesis
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of blood vessel morphogenesis." [GOC:dph, GOC:yaf]
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
+is_a: GO:1901343 ! negative regulation of vasculature development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0048514 ! blood vessel morphogenesis
+relationship: RO:0002212 GO:0048514 ! blood vessel morphogenesis
+
+[Term]
 id: GO:2000241
 name: regulation of reproductive process
 def: "Any process that modulates the frequency, rate or extent of reproductive process." [GOC:mah]
@@ -17565,6 +18660,44 @@ is_a: GO:0060259 ! regulation of feeding behavior
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0007631 ! feeding behavior
 relationship: RO:0002213 GO:0007631 ! feeding behavior
+
+[Term]
+id: GO:2000257
+name: regulation of protein activation cascade
+def: "Any process that modulates the frequency, rate or extent of protein activation cascade." [GOC:mah]
+synonym: "regulation of protein activation pathway" EXACT [GOC:obol]
+synonym: "regulation of protein activitory cascade" EXACT [GOC:obol]
+is_a: GO:0048583 ! regulation of response to stimulus
+is_a: GO:0051246 ! regulation of protein metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0072376 ! protein activation cascade
+relationship: RO:0002211 GO:0072376 ! protein activation cascade
+
+[Term]
+id: GO:2000258
+name: negative regulation of protein activation cascade
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of protein activation cascade." [GOC:mah]
+synonym: "negative regulation of protein activation pathway" EXACT [GOC:obol]
+synonym: "negative regulation of protein activitory cascade" EXACT [GOC:obol]
+is_a: GO:0048585 ! negative regulation of response to stimulus
+is_a: GO:0051248 ! negative regulation of protein metabolic process
+is_a: GO:2000257 ! regulation of protein activation cascade
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0072376 ! protein activation cascade
+relationship: RO:0002212 GO:0072376 ! protein activation cascade
+
+[Term]
+id: GO:2000259
+name: positive regulation of protein activation cascade
+def: "Any process that activates or increases the frequency, rate or extent of protein activation cascade." [GOC:mah]
+synonym: "positive regulation of protein activation pathway" EXACT [GOC:obol]
+synonym: "positive regulation of protein activitory cascade" EXACT [GOC:obol]
+is_a: GO:0048584 ! positive regulation of response to stimulus
+is_a: GO:0051247 ! positive regulation of protein metabolic process
+is_a: GO:2000257 ! regulation of protein activation cascade
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0072376 ! protein activation cascade
+relationship: RO:0002213 GO:0072376 ! protein activation cascade
 
 [Term]
 id: GO:2000272

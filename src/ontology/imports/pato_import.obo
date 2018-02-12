@@ -130,12 +130,20 @@ def: "A disposition inhering in a tumour by virtue of the bearer's disposition n
 synonym: "benign" RELATED []
 is_a: PATO:0002011 ! neoplastic
 disjoint_from: PATO:0002097 ! neoplastic, malignant
+disjoint_from: PATO:0002098 ! neoplastic, metastatic
 disjoint_from: PATO:0002129 ! neoplastic, invasive
 
 [Term]
 id: PATO:0002097
 name: neoplastic, malignant
 def: "A disposition inhering in a tumour by virtue of the bearer's disposition to progress, invade surrounding tissues or metastasize." [PATOC:GVG]
+is_a: PATO:0002011 ! neoplastic
+disjoint_from: PATO:0002132 ! neoplastic, non-invasive
+
+[Term]
+id: PATO:0002098
+name: neoplastic, metastatic
+def: "A disposition inhering in a tumour by virtue of the bearer's disposition to spread and invade distant tissues." [PATOC:GVG]
 is_a: PATO:0002011 ! neoplastic
 disjoint_from: PATO:0002132 ! neoplastic, non-invasive
 

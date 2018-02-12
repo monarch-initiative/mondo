@@ -6501,6 +6501,15 @@ intersection_of: UBERON:0014892 {source="FMAdef"} ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002355 {source="FMAdef"} ! pelvic region of trunk
 
 [Term]
+id: UBERON:0001326
+name: levator ani muscle
+def: "The Levator ani is a broad, thin muscle, situated on the side of the pelvis. It is attached to the inner surface of the side of the lesser pelvis, and unites with its fellow of the opposite side to form the greater part of the floor of the pelvic cavity. It supports the viscera in pelvic cavity, and surrounds the various structures which pass through it. In combination with the Coccygeus muscle, it forms the pelvic diaphragm. [WP,unvetted]." [http://en.wikipedia.org/wiki/Levator_ani]
+synonym: "levator ani" EXACT [MA:0002332]
+synonym: "musculus levator ani" EXACT LATIN [http://en.wikipedia.org/wiki/Levator_ani]
+is_a: UBERON:0001325 ! muscle of pelvis
+relationship: RO:0002372 UBERON:0002355 {notes="inner surface of the side of the lesser pelvis", source="dbpedia"} ! pelvic region of trunk
+
+[Term]
 id: UBERON:0001328
 name: lobe of prostate
 def: "A portion of a prostate that forms a lobe." [https://github.com/obophenotype/uberon/issues/665]
@@ -7318,6 +7327,37 @@ synonym: "elbow region" EXACT []
 is_a: UBERON:0002529 {source="FMA"} ! limb segment
 is_a: UBERON:0008785 ! upper limb segment
 relationship: BFO:0000050 UBERON:0001460 {source="EHDAA2"} ! arm
+
+[Term]
+id: UBERON:0001463
+name: manual digit 1
+def: "1st (preaxial) digit of the manus[Wikipedia]." [http://en.wikipedia.org/wiki/Thumb, http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264]
+synonym: "alula" NARROW SENSU [http://en.wikipedia.org/wiki/Alula]
+synonym: "digit 1 of fore-paw" EXACT [EMAPA:17429]
+synonym: "digit 1 of manus" EXACT []
+synonym: "digitus 1" BROAD []
+synonym: "digitus I" BROAD LATIN [http://en.wikipedia.org/wiki/Thumb]
+synonym: "digitus primus" BROAD LATIN [http://en.wikipedia.org/wiki/Thumb]
+synonym: "digitus primus [I]" BROAD []
+synonym: "finger 1" EXACT [EHDAA2:0000511]
+synonym: "first digit of hand" EXACT []
+synonym: "first finger" RELATED [EMAPA:17429]
+synonym: "fore digit I" EXACT [AAO:0010639]
+synonym: "fore limb digit 1" EXACT [OBOL:accepted]
+synonym: "forelimb dewclaw" NARROW SENSU [http://en.wikipedia.org/wiki/Dewclaw]
+synonym: "hand digit 1" EXACT [MA:0000454]
+synonym: "hand digit 1" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit 1" EXACT []
+synonym: "manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "pollex" EXACT LATIN [http://en.wikipedia.org/wiki/Thumb]
+synonym: "thumb" NARROW SENSU []
+is_a: UBERON:0006048 ! digit 1
+is_a: UBERON:0019231 ! manual digit 1 or 5
+intersection_of: UBERON:0006048 ! digit 1
+intersection_of: BFO:0000050 UBERON:0002398 ! manus
+relationship: BFO:0000050 UBERON:0012141 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! manual digitopodium region
+relationship: BFO:0000050 UBERON:5001463 ! manual digit 1 plus metapodial segment
+relationship: BSPO:0001113 UBERON:0002398 ! manus
 
 [Term]
 id: UBERON:0001464
@@ -8562,6 +8602,22 @@ relationship: indirectly_supplies UBERON:0000945 {source="ISBN10:0073040584"} ! 
 relationship: indirectly_supplies UBERON:0002106 {source="ISBN10:0073040584"} ! spleen
 relationship: indirectly_supplies UBERON:0002107 {source="ISBN10:0073040584"} ! liver
 relationship: RO:0002380 UBERON:0001516 {notes="dorsal aorta in primitive verts", source="Wikipedia"} ! abdominal aorta
+
+[Term]
+id: UBERON:0001641
+name: transverse sinus
+def: "one of the dural venous sinuses and drains the superior sagittal sinus the occipital sinus and the straight sinus, and empties into the sigmoid sinus which in turn reaches the jugular bulb." [http://radiopaedia.org/articles/transverse-sinus]
+synonym: "groove for right and left transverse sinuses" RELATED [http://en.wikipedia.org/wiki/Transverse_sinuses]
+synonym: "lateral sinus" RELATED [FMA:50763]
+synonym: "sinus transversus" RELATED [http://en.wikipedia.org/wiki/Transverse_sinuses]
+synonym: "sinus transversus durae matris" EXACT LATIN [http://en.wikipedia.org/wiki/Transverse_sinuses]
+synonym: "transverse sinus" RELATED [http://en.wikipedia.org/wiki/Transverse_sinuses]
+synonym: "transverse sinus vein" RELATED [http://en.wikipedia.org/wiki/Transverse_sinuses]
+is_a: UBERON:0003502 ! neck blood vessel
+is_a: UBERON:0017635 ! paired venous dural sinus
+intersection_of: UBERON:0017635 ! paired venous dural sinus
+intersection_of: RO:0002376 UBERON:0005475 ! sigmoid sinus
+relationship: RO:0002376 UBERON:0005475 ! sigmoid sinus
 
 [Term]
 id: UBERON:0001643
@@ -13785,6 +13841,18 @@ synonym: "reticular formation (classical)" EXACT [NeuroNames:1223]
 synonym: "reticular formation of the brainstem" EXACT [NeuroNames:1223]
 is_a: UBERON:0002616 ! regional part of brain
 relationship: BFO:0000050 UBERON:0002298 ! brainstem
+
+[Term]
+id: UBERON:0002279
+name: vestibular aqueduct
+def: "At the hinder part of the medial wall of the vestibule is the orifice of the vestibular aqueduct, which extends to the posterior surface of the petrous portion of the temporal bone. It transmits a small vein, and contains a tubular prolongation of the membranous labyrinth, the ductus endolymphaticus, which ends in a cul-de-sac between the layers of the dura mater within the cranial cavity. [WP,unvetted]." [http://en.wikipedia.org/wiki/Vestibular_aqueduct]
+synonym: "aqueductus vestibuli" RELATED LATIN [http://en.wikipedia.org/wiki/Vestibular_aqueduct]
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0013685 ! foramen of skull
+intersection_of: UBERON:0013685 ! foramen of skull
+intersection_of: conduit_for UBERON:0036074 ! vein of vestibular aqueduct
+relationship: BFO:0000050 UBERON:0005236 ! osseus labyrinth vestibule
+relationship: conduit_for UBERON:0036074 ! vein of vestibular aqueduct
 
 [Term]
 id: UBERON:0002285
@@ -21961,6 +22029,189 @@ relationship: BFO:0000050 UBERON:0004663 ! aorta wall
 relationship: RO:0002433 UBERON:0004663 ! aorta wall
 
 [Term]
+id: UBERON:0003620
+name: manual digit 1 phalanx
+def: "A phalanx that is part of a hand digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "fore limb digit 1 phalanx" EXACT [OBOL:accepted]
+synonym: "hand digit 1 phalanx" EXACT [MA:0001389]
+synonym: "hand digit 1 phalanx" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit I phalanx" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "phalanx of hand digit 1" EXACT [OBOL:automatic]
+synonym: "phalanx of thumb" EXACT [OBOL:automatic]
+synonym: "thumb phalanx" EXACT [OBOL:automatic]
+is_a: UBERON:0001436 ! phalanx of manus
+is_a: UBERON:0015025 ! manual digit 1 phalanx endochondral element
+intersection_of: UBERON:0003221 ! phalanx
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: RO:0002202 UBERON:0010675 ! manual digit 1 phalanx cartilage element
+
+[Term]
+id: UBERON:0003625
+name: manual digit 5
+def: "5th digit of the manus." [http://en.wikipedia.org/wiki/Little_finger]
+synonym: "5th digit of hand" EXACT []
+synonym: "5th finger" EXACT []
+synonym: "digit 5 of fore-paw" EXACT [EMAPA:17441]
+synonym: "fifth digit of hand" EXACT [FMA:24949]
+synonym: "fifth finger" EXACT []
+synonym: "finger 5" EXACT [EHDAA2:0000535]
+synonym: "fore digit V" EXACT [AAO:0010643]
+synonym: "fore limb digit 5" EXACT [OBOL:accepted]
+synonym: "hand digit 5" EXACT [MA:0000458]
+synonym: "hand digit 5" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "little finger" NARROW []
+synonym: "manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "manual digitus minimus" RELATED LATIN [http://en.wikipedia.org/wiki/Little_finger]
+synonym: "manual digitus V" RELATED LATIN [http://en.wikipedia.org/wiki/Little_finger]
+synonym: "manus digiti minimi" RELATED []
+synonym: "manus quintus" RELATED LATIN [http://en.wikipedia.org/wiki/Little_finger]
+is_a: UBERON:0006052 ! digit 5
+is_a: UBERON:0019231 ! manual digit 1 or 5
+intersection_of: UBERON:0006052 ! digit 5
+intersection_of: BFO:0000050 UBERON:0002398 ! manus
+relationship: BFO:0000050 UBERON:0012141 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! manual digitopodium region
+relationship: BFO:0000050 UBERON:5003625 ! manual digit 5 plus metapodial segment
+
+[Term]
+id: UBERON:0003631
+name: pedal digit 1
+def: "1st digit of the hind autopod." [http://en.wikipedia.org/wiki/Hallux]
+synonym: "big toe" NARROW []
+synonym: "digit 1 of hind-paw" EXACT [EMAPA:17460]
+synonym: "digit 1 of pes" EXACT []
+synonym: "digitus primus (I) pedis" RELATED [BTO:0002349]
+synonym: "digitus primus pedis" EXACT LATIN []
+synonym: "first toe" RELATED [EMAPA:17460]
+synonym: "foot digit 1" EXACT [MA:0000465]
+synonym: "foot digit 1" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "great toe" EXACT [FMA:25047]
+synonym: "hallex" EXACT []
+synonym: "hallux" EXACT LATIN [FMA:TA]
+synonym: "hallux; digitus primus [I]" EXACT [FMA:25047]
+synonym: "hind digit 1" EXACT []
+synonym: "hind digit I" EXACT [AAO:0010644]
+synonym: "hind limb digit 1" EXACT [OBOL:accepted]
+synonym: "hindlimb dewclaw" NARROW SENSU [http://en.wikipedia.org/wiki/Dewclaw]
+synonym: "large toe" RELATED [EMAPA:17460]
+synonym: "pedal digit 1" EXACT []
+synonym: "pedal digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "pes digit I" EXACT []
+synonym: "preaxial digit of hindlimb" EXACT []
+synonym: "toe 1" EXACT [EHDAA2:0002037]
+is_a: UBERON:0006048 ! digit 1
+is_a: UBERON:0019241 ! pedal digit 1 or 5
+intersection_of: UBERON:0006048 ! digit 1
+intersection_of: BFO:0000050 UBERON:0002387 ! pes
+relationship: BFO:0000050 UBERON:0012142 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pedal digitopodium region
+relationship: BFO:0000050 UBERON:5003631 ! pedal digit 1 plus metapodial segment
+relationship: BSPO:0001113 UBERON:0002387 ! pes
+
+[Term]
+id: UBERON:0003635
+name: pedal digit 5
+def: "5th digit of the hind autopod." [http://en.wikipedia.org/wiki/Fifth_toe, https://orcid.org/0000-0002-6601-2165]
+synonym: "5th toe" EXACT []
+synonym: "digit 5 of hind-paw" EXACT [EMAPA:17472]
+synonym: "digitus minimus pedis" EXACT LATIN [http://en.wikipedia.org/wiki/Fifth_toe]
+synonym: "digitus minimus; digitus quintus [v]" EXACT [FMA:25053]
+synonym: "digitus quintus (V) pedis" RELATED [BTO:0002353]
+synonym: "digitus quintus [V]" EXACT [FMA:25053]
+synonym: "digitus quintus [V] pedis" EXACT LATIN [FMA:25053, FMA:TA]
+synonym: "digitus quintus of pes" EXACT []
+synonym: "digitus quintus pedis" EXACT LATIN [http://en.wikipedia.org/wiki/Fifth_toe]
+synonym: "digitus V of pes" EXACT []
+synonym: "fifth digit of foot" EXACT [FMA:25053]
+synonym: "fifth toe" EXACT [FMA:25053]
+synonym: "foot digit 5" EXACT [MA:0000469]
+synonym: "foot digit 5" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind digit 5" EXACT []
+synonym: "hind digit V" EXACT [AAO:0010658]
+synonym: "hind limb digit 5" EXACT [OBOL:accepted]
+synonym: "little toe" NARROW []
+synonym: "pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "pedal digitus minimus" EXACT []
+synonym: "pes digit V" EXACT []
+synonym: "toe 5" EXACT [EHDAA2:0002057]
+is_a: UBERON:0006052 ! digit 5
+is_a: UBERON:0019241 ! pedal digit 1 or 5
+intersection_of: UBERON:0006052 ! digit 5
+intersection_of: BFO:0000050 UBERON:0002387 ! pes
+relationship: BFO:0000050 UBERON:0012142 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pedal digitopodium region
+relationship: BFO:0000050 UBERON:5003635 ! pedal digit 5 plus metapodial segment
+
+[Term]
+id: UBERON:0003639
+name: manual digit 5 phalanx
+def: "A phalanx that is part of a hand digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "5 th digit of hand digit long bone" EXACT [OBOL:automatic]
+synonym: "5 th digit of hand long bone of digit" EXACT [OBOL:automatic]
+synonym: "5 th digit of hand phalanx" EXACT [OBOL:automatic]
+synonym: "5 th finger digit long bone" EXACT [OBOL:automatic]
+synonym: "5 th finger long bone of digit" EXACT [OBOL:automatic]
+synonym: "5 th finger phalanx" EXACT [OBOL:automatic]
+synonym: "digit long bone of 5 th digit of hand" EXACT [OBOL:automatic]
+synonym: "digit long bone of 5 th finger" EXACT [OBOL:automatic]
+synonym: "digit long bone of fifth finger" EXACT [OBOL:automatic]
+synonym: "digit long bone of hand digit 5" EXACT [OBOL:automatic]
+synonym: "fifth finger digit long bone" EXACT [OBOL:automatic]
+synonym: "fifth finger long bone of digit" EXACT [OBOL:automatic]
+synonym: "fifth finger phalanx" EXACT [OBOL:automatic]
+synonym: "fore limb digit 5 phalanx" EXACT [OBOL:accepted]
+synonym: "hand digit 5 digit long bone" EXACT [OBOL:automatic]
+synonym: "hand digit 5 long bone of digit" EXACT [OBOL:automatic]
+synonym: "hand digit 5 phalanx" EXACT [MA:0001393]
+synonym: "hand digit 5 phalanx" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "little finger phalanx" EXACT [FMA:35489]
+synonym: "long bone of digit of 5 th digit of hand" EXACT [OBOL:automatic]
+synonym: "long bone of digit of 5 th finger" EXACT [OBOL:automatic]
+synonym: "long bone of digit of fifth finger" EXACT [OBOL:automatic]
+synonym: "long bone of digit of hand digit 5" EXACT [OBOL:automatic]
+synonym: "manual digit V phalanx" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "phalanx of 5 th digit of hand" EXACT [OBOL:automatic]
+synonym: "phalanx of 5 th finger" EXACT [OBOL:automatic]
+synonym: "phalanx of 5th finger" EXACT []
+synonym: "phalanx of fifth digit of hand" EXACT [FMA:35489]
+synonym: "phalanx of fifth finger" EXACT [OBOL:automatic]
+synonym: "phalanx of hand digit 5" EXACT [OBOL:automatic]
+synonym: "phalanx of little finger" EXACT [FMA:35489]
+synonym: "phalanx of manual digitus minimus" EXACT [OBOL:automatic]
+is_a: UBERON:0001436 ! phalanx of manus
+is_a: UBERON:0015029 ! manual digit 5 phalanx endochondral element
+intersection_of: UBERON:0003221 ! phalanx
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: RO:0002202 UBERON:0010679 ! manual digit 5 phalanx cartilage element
+
+[Term]
+id: UBERON:0003640
+name: pedal digit 1 phalanx
+def: "A phalanx that is part of a foot digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "big toe phalanx" EXACT [FMA:32884]
+synonym: "digit long bone of foot digit 1" EXACT [OBOL:automatic]
+synonym: "digit long bone of hallux" EXACT [OBOL:automatic]
+synonym: "foot digit 1 digit long bone" EXACT [OBOL:automatic]
+synonym: "foot digit 1 long bone of digit" EXACT [OBOL:automatic]
+synonym: "foot digit 1 phalanx" EXACT [MA:0001381]
+synonym: "foot digit 1 phalanx" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hallux digit long bone" EXACT [OBOL:automatic]
+synonym: "hallux long bone of digit" EXACT [OBOL:automatic]
+synonym: "hallux phalanx" EXACT [OBOL:automatic]
+synonym: "hind limb digit 1 phalanx" EXACT [OBOL:accepted]
+synonym: "long bone of digit of foot digit 1" EXACT [OBOL:automatic]
+synonym: "long bone of digit of hallux" EXACT [OBOL:automatic]
+synonym: "pedal digit I phalanx" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "phalanx of big toe" EXACT [FMA:32884]
+synonym: "phalanx of first digit of foot" EXACT [FMA:32884]
+synonym: "phalanx of first toe" RELATED [FMA:32884]
+synonym: "phalanx of foot digit 1" EXACT [OBOL:automatic]
+synonym: "phalanx of great toe" EXACT [FMA:32884]
+synonym: "phalanx of hallux" EXACT [OBOL:automatic]
+is_a: UBERON:0001449 ! phalanx of pes
+is_a: UBERON:0015031 ! pedal digit 1 phalanx endochondral element
+intersection_of: UBERON:0003221 ! phalanx
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: RO:0002202 UBERON:0010680 ! pedal digit 1 phalanx cartilage element
+
+[Term]
 id: UBERON:0003643
 name: respiratory system arterial blood vessel
 def: "An arterial blood vessel that is part of a respiratory system [Automatically generated definition]." [OBOL:automatic]
@@ -21978,6 +22229,118 @@ is_a: UBERON:0003509 ! arterial blood vessel
 is_a: UBERON:0003517 ! kidney blood vessel
 intersection_of: UBERON:0003509 ! arterial blood vessel
 intersection_of: BFO:0000050 UBERON:0002113 ! kidney
+
+[Term]
+id: UBERON:0003645
+name: metacarpal bone of digit 1
+def: "A metacarpal bone that distally_connected_to a proximal phalanx of manual digit 1." [OBOL:automatic]
+synonym: "finger 1 metacarpus" EXACT []
+synonym: "first digit of hand metacarpal" EXACT [OBOL:automatic]
+synonym: "first digit of hand metacarpal bone" EXACT [OBOL:automatic]
+synonym: "first metacarpal bone" EXACT [FMA:23899]
+synonym: "forelimb digit 1 metacarpus" RELATED [EMAPA:19112]
+synonym: "hand digit 1 metacarpal" EXACT [OBOL:automatic]
+synonym: "hand digit 1 metacarpal bone" EXACT [OBOL:automatic]
+synonym: "manual digit 1 metacarpus" EXACT []
+synonym: "metacarpal 1" EXACT []
+synonym: "metacarpal bone digit 1" EXACT [MA:0001364]
+synonym: "metacarpal bone of digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metacarpal bone of first digit of hand" EXACT [OBOL:automatic]
+synonym: "metacarpal bone of hand digit 1" EXACT [OBOL:automatic]
+synonym: "metacarpal bone of thumb" EXACT [OBOL:automatic]
+synonym: "metacarpal I" EXACT [FMA:23899]
+synonym: "metacarpal of first digit of hand" EXACT [OBOL:automatic]
+synonym: "metacarpal of hand digit 1" EXACT [OBOL:automatic]
+synonym: "metacarpal of thumb" EXACT [OBOL:automatic]
+synonym: "thumb metacarpal" EXACT [OBOL:automatic]
+synonym: "thumb metacarpal bone" EXACT [OBOL:automatic]
+is_a: UBERON:0002374 ! metacarpal bone
+is_a: UBERON:0013581 ! metapodium bone 1
+is_a: UBERON:0015043 ! manual digit 1 metacarpus endochondral element
+intersection_of: UBERON:0015043 ! manual digit 1 metacarpus endochondral element
+intersection_of: RO:0002473 UBERON:0002481 ! bone tissue
+relationship: RO:0002202 UBERON:0010570 ! manual digit 1 metacarpus cartilage element
+
+[Term]
+id: UBERON:0003649
+name: metacarpal bone of digit 5
+def: "A metacarpal bone that distally_connected_to a proximal phalanx of manual digit 5." [OBOL:automatic]
+synonym: "5 th digit of hand metacarpal" EXACT [OBOL:automatic]
+synonym: "5 th digit of hand metacarpal bone" EXACT [OBOL:automatic]
+synonym: "5 th finger metacarpal" EXACT [OBOL:automatic]
+synonym: "5 th finger metacarpal bone" EXACT [OBOL:automatic]
+synonym: "fifth finger metacarpal" EXACT [OBOL:automatic]
+synonym: "fifth finger metacarpal bone" EXACT [OBOL:automatic]
+synonym: "fifth metacarpal bone" EXACT [FMA:23903]
+synonym: "finger 5 metacarpus" EXACT []
+synonym: "forelimb digit 5 metacarpus" RELATED [EMAPA:19120]
+synonym: "hand digit 5 metacarpal" EXACT [OBOL:automatic]
+synonym: "hand digit 5 metacarpal bone" EXACT [OBOL:automatic]
+synonym: "manual digit 5 metacarpus" EXACT []
+synonym: "metacarpal 5" EXACT []
+synonym: "metacarpal bone digit 5" EXACT [MA:0001368]
+synonym: "metacarpal bone of 5 th digit of hand" EXACT [OBOL:automatic]
+synonym: "metacarpal bone of 5 th finger" EXACT [OBOL:automatic]
+synonym: "metacarpal bone of digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metacarpal bone of fifth finger" EXACT [OBOL:automatic]
+synonym: "metacarpal bone of hand digit 5" EXACT [OBOL:automatic]
+synonym: "metacarpal of 5 th digit of hand" EXACT [OBOL:automatic]
+synonym: "metacarpal of 5 th finger" EXACT [OBOL:automatic]
+synonym: "metacarpal of fifth finger" EXACT [OBOL:automatic]
+synonym: "metacarpal of hand digit 5" EXACT [OBOL:automatic]
+synonym: "metacarpal V" EXACT []
+is_a: UBERON:0002374 ! metacarpal bone
+is_a: UBERON:0013585 ! metapodium bone 5
+is_a: UBERON:0015047 ! manual digit 5 metacarpus endochondral element
+intersection_of: UBERON:0015047 ! manual digit 5 metacarpus endochondral element
+intersection_of: RO:0002473 UBERON:0002481 ! bone tissue
+relationship: RO:0002202 UBERON:0010574 ! manual digit 5 metacarpus cartilage element
+
+[Term]
+id: UBERON:0003650
+name: metatarsal bone of digit 1
+def: "A metatarsal bone that distally_connected_to a proximal phalanx of pedal digit 1." [OBOL:automatic]
+synonym: "first metatarsal bone" EXACT [FMA:24502]
+synonym: "foot digit 1 metatarsal bone" EXACT [OBOL:automatic]
+synonym: "hallux metatarsal bone" EXACT [OBOL:automatic]
+synonym: "hindlimb digit 1 metatarsus" RELATED [EMAPA:19123]
+synonym: "metatarsal 1" EXACT []
+synonym: "metatarsal bone digit 1" EXACT [MA:0001369]
+synonym: "metatarsal bone of digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metatarsal bone of foot digit 1" EXACT [OBOL:automatic]
+synonym: "metatarsal bone of hallux" EXACT [OBOL:automatic]
+synonym: "metatarsal I" EXACT [AAO:0000925]
+synonym: "toe 1 metatarsal" EXACT []
+synonym: "toe 1 metatarsus" EXACT []
+is_a: UBERON:0001448 ! metatarsal bone
+is_a: UBERON:0013581 ! metapodium bone 1
+is_a: UBERON:0015037 ! pedal digit 1 metatarsal endochondral element
+intersection_of: UBERON:0015037 ! pedal digit 1 metatarsal endochondral element
+intersection_of: RO:0002473 UBERON:0002481 ! bone tissue
+relationship: distally_connected_to UBERON:0004332 ! proximal phalanx of pedal digit 1
+relationship: RO:0002202 UBERON:0010557 ! pedal digit 1 metatarsal cartilage element
+
+[Term]
+id: UBERON:0003654
+name: metatarsal bone of digit 5
+def: "A metatarsal bone that distally_connected_to a proximal phalanx of pedal digit 5." [OBOL:automatic]
+synonym: "fifth metatarsal bone" EXACT [FMA:24506]
+synonym: "foot digit 5 metatarsal bone" EXACT [OBOL:automatic]
+synonym: "hindlimb digit 5 metatarsus" RELATED [EMAPA:19131]
+synonym: "metatarsal 5" EXACT []
+synonym: "metatarsal bone digit 5" EXACT [MA:0001373]
+synonym: "metatarsal bone of digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metatarsal bone of foot digit 5" EXACT [OBOL:automatic]
+synonym: "metatarsal V" EXACT [AAO:0000929]
+synonym: "toe 5 metatarsal" EXACT []
+synonym: "toe 5 metatarsus" EXACT []
+is_a: UBERON:0001448 ! metatarsal bone
+is_a: UBERON:0013585 ! metapodium bone 5
+is_a: UBERON:0015041 ! pedal digit 5 metatarsal endochondral element
+intersection_of: UBERON:0015041 ! pedal digit 5 metatarsal endochondral element
+intersection_of: RO:0002473 UBERON:0002481 ! bone tissue
+relationship: distally_connected_to UBERON:0004336 ! proximal phalanx of pedal digit 5
+relationship: RO:0002202 UBERON:0010561 ! pedal digit 5 metatarsal cartilage element
 
 [Term]
 id: UBERON:0003656
@@ -23196,6 +23559,29 @@ is_a: UBERON:0009749 ! limb mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0002103 ! hindlimb
 relationship: BFO:0000050 UBERON:0002103 ! hindlimb
+
+[Term]
+id: UBERON:0003863
+name: pedal digit 5 phalanx
+def: "A phalanx that is part of a foot digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "digit long bone of foot digit 5" EXACT [OBOL:automatic]
+synonym: "foot digit 5 digit long bone" EXACT [OBOL:automatic]
+synonym: "foot digit 5 long bone of digit" EXACT [OBOL:automatic]
+synonym: "foot digit 5 phalanx" EXACT [MA:0001385]
+synonym: "foot digit 5 phalanx" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 5 phalanx" EXACT [OBOL:accepted]
+synonym: "little toe phalanx" EXACT [FMA:32902]
+synonym: "long bone of digit of foot digit 5" EXACT [OBOL:automatic]
+synonym: "pedal digit V phalanx" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "phalanx of fifth digit of foot" EXACT [FMA:32902]
+synonym: "phalanx of fifth toe" EXACT [FMA:32902]
+synonym: "phalanx of foot digit 5" EXACT [OBOL:automatic]
+synonym: "phalanx of little toe" EXACT [FMA:32902]
+is_a: UBERON:0001449 ! phalanx of pes
+is_a: UBERON:0015035 ! pedal digit 5 phalanx endochondral element
+intersection_of: UBERON:0003221 ! phalanx
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: RO:0002202 UBERON:0010684 ! pedal digit 5 phalanx cartilage element
 
 [Term]
 id: UBERON:0003864
@@ -26124,6 +26510,220 @@ intersection_of: RO:0002170 UBERON:0003821 ! metapodium bone
 relationship: RO:0002170 UBERON:0003821 ! metapodium bone
 
 [Term]
+id: UBERON:0004314
+name: distal phalanx of manual digit 5
+def: "A distal phalanx that is part of a hand digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "5th digit of hand distal phalanx" EXACT [OBOL:automatic]
+synonym: "5th finger distal phalanx" EXACT [OBOL:automatic]
+synonym: "distal phalanx of 5th digit of hand" EXACT [OBOL:automatic]
+synonym: "distal phalanx of 5th finger" EXACT [OBOL:automatic]
+synonym: "distal phalanx of fifth digit of hand" EXACT [FMA:23949]
+synonym: "distal phalanx of fifth finger" EXACT [OBOL:automatic]
+synonym: "distal phalanx of little finger" EXACT [FMA:23949]
+synonym: "distal phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "fifth distal phalanx of hand" EXACT [FMA:23949]
+synonym: "fifth finger distal phalanx" EXACT [OBOL:automatic]
+synonym: "hand digit 5 distal phalanx" EXACT [OBOL:automatic]
+is_a: UBERON:0003639 ! manual digit 5 phalanx
+is_a: UBERON:0003865 ! distal phalanx of manus
+is_a: UBERON:0014487 ! distal phalanx of digit 5
+intersection_of: UBERON:0004300 ! distal phalanx
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+
+[Term]
+id: UBERON:0004315
+name: distal phalanx of pedal digit 1
+def: "A distal phalanx that is part of a foot digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "distal phalanx of big toe" EXACT [FMA:32627]
+synonym: "distal phalanx of first digit of foot" EXACT [FMA:32627]
+synonym: "distal phalanx of foot digit 1" EXACT [OBOL:automatic]
+synonym: "distal phalanx of great toe" EXACT [FMA:32627]
+synonym: "distal phalanx of hallux" EXACT [OBOL:automatic]
+synonym: "distal phalanx of pedal digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "first distal phalanx of foot" EXACT [FMA:32627]
+synonym: "foot digit 1 distal phalanx" EXACT [OBOL:automatic]
+synonym: "hallux distal phalanx" EXACT [OBOL:automatic]
+is_a: UBERON:0003640 ! pedal digit 1 phalanx
+is_a: UBERON:0003867 ! distal phalanx of pes
+is_a: UBERON:0014483 ! distal phalanx of digit 1
+intersection_of: UBERON:0004300 ! distal phalanx
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+
+[Term]
+id: UBERON:0004319
+name: distal phalanx of pedal digit 5
+def: "A distal phalanx that is part of a foot digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "5th toe distal phalanx" EXACT [OBOL:automatic]
+synonym: "distal phalanx of 5th toe" EXACT [OBOL:automatic]
+synonym: "distal phalanx of fifth digit of foot" EXACT [FMA:32631]
+synonym: "distal phalanx of fifth toe" EXACT [FMA:32631]
+synonym: "distal phalanx of foot digit 5" EXACT [OBOL:automatic]
+synonym: "distal phalanx of little toe" EXACT [FMA:32631]
+synonym: "distal phalanx of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "distal phalanx of the 5th toe" EXACT [OBOL:automatic]
+synonym: "fifth distal phalanx of foot" EXACT [FMA:32631]
+synonym: "foot digit 5 distal phalanx" EXACT [OBOL:automatic]
+is_a: UBERON:0003863 ! pedal digit 5 phalanx
+is_a: UBERON:0003867 ! distal phalanx of pes
+is_a: UBERON:0014487 ! distal phalanx of digit 5
+intersection_of: UBERON:0004300 ! distal phalanx
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+
+[Term]
+id: UBERON:0004323
+name: middle phalanx of manual digit 5
+def: "A middle phalanx that is part of a hand digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "5th digit of hand intermediate phalanx" EXACT [OBOL:automatic]
+synonym: "5th digit of hand middle phalanx" EXACT [OBOL:automatic]
+synonym: "5th finger intermediate phalanx" EXACT [OBOL:automatic]
+synonym: "5th finger middle phalanx" EXACT [OBOL:automatic]
+synonym: "fifth finger intermediate phalanx" EXACT [OBOL:automatic]
+synonym: "fifth finger middle phalanx" EXACT [OBOL:automatic]
+synonym: "fifth middle phalanx of hand" EXACT [FMA:23936]
+synonym: "hand digit 5 intermediate phalanx" EXACT [OBOL:automatic]
+synonym: "hand digit 5 middle phalanx" EXACT [OBOL:automatic]
+synonym: "intermediate phalanx of 5th digit of hand" EXACT [OBOL:automatic]
+synonym: "intermediate phalanx of 5th finger" EXACT [OBOL:automatic]
+synonym: "intermediate phalanx of fifth finger" EXACT [OBOL:automatic]
+synonym: "intermediate phalanx of hand digit 5" EXACT [OBOL:automatic]
+synonym: "middle phalanx of 5th digit of hand" EXACT [OBOL:automatic]
+synonym: "middle phalanx of 5th finger" EXACT [OBOL:automatic]
+synonym: "middle phalanx of fifth digit of hand" EXACT [FMA:23936]
+synonym: "middle phalanx of fifth finger" EXACT [OBOL:automatic]
+synonym: "middle phalanx of little finger" EXACT [OBOL:automatic]
+synonym: "middle phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0003639 ! manual digit 5 phalanx
+is_a: UBERON:0003864 ! middle phalanx of manus
+is_a: UBERON:0014491 ! middle phalanx of digit 5
+intersection_of: UBERON:0004301 ! middle phalanx
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+
+[Term]
+id: UBERON:0004327
+name: middle phalanx of pedal digit 5
+def: "A middle phalanx that is part of a pedal digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "5th toe intermediate phalanx" EXACT [OBOL:automatic]
+synonym: "5th toe middle phalanx" EXACT [OBOL:automatic]
+synonym: "foot digit 5 intermediate phalanx" EXACT [OBOL:automatic]
+synonym: "foot digit 5 middle phalanx" EXACT [OBOL:automatic]
+synonym: "intermediate phalanx of 5th toe" EXACT [OBOL:automatic]
+synonym: "intermediate phalanx of foot digit 5" EXACT [OBOL:automatic]
+synonym: "middle phalanx of 5th toe" EXACT [OBOL:automatic]
+synonym: "middle phalanx of foot digit 5" EXACT [OBOL:automatic]
+synonym: "middle phalanx of little toe" EXACT [OBOL:automatic]
+synonym: "middle phalanx of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "middle phalanx of the 5th toe" EXACT [OBOL:automatic]
+is_a: UBERON:0003863 ! pedal digit 5 phalanx
+is_a: UBERON:0003866 ! middle phalanx of pes
+is_a: UBERON:0014491 ! middle phalanx of digit 5
+intersection_of: UBERON:0004301 ! middle phalanx
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+
+[Term]
+id: UBERON:0004331
+name: proximal phalanx of manual digit 5
+def: "A proximal phalanx that is part of a hand digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "5th digit of hand proximal phalanx" EXACT [OBOL:automatic]
+synonym: "5th finger proximal phalanx" EXACT [OBOL:automatic]
+synonym: "fifth finger proximal phalanx" EXACT [OBOL:automatic]
+synonym: "fifth proximal phalanx of hand" EXACT [FMA:23922]
+synonym: "hand digit 5 proximal phalanx" EXACT [OBOL:automatic]
+synonym: "manual digit 5 proximal phalanx" EXACT [PHENOSCAPE:wd]
+synonym: "manual phalanx V-1" EXACT [PHENOSCAPE:wd]
+synonym: "proximal phalanx of 5th digit of hand" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of 5th finger" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of fifth digit of hand" EXACT [FMA:23922]
+synonym: "proximal phalanx of fifth finger" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of little finger" EXACT [FMA:23922]
+synonym: "proximal phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0002234 ! proximal phalanx of manus
+is_a: UBERON:0003639 ! manual digit 5 phalanx
+is_a: UBERON:0014505 ! proximal phalanx of digit 5
+intersection_of: UBERON:0004302 ! proximal phalanx
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: proximally_connected_to UBERON:0003649 ! metacarpal bone of digit 5
+
+[Term]
+id: UBERON:0004332
+name: proximal phalanx of pedal digit 1
+def: "A proximal phalanx that is part of a pedal digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "foot digit 1 proximal phalanx" EXACT [OBOL:automatic]
+synonym: "hallux proximal phalanx" EXACT [OBOL:automatic]
+synonym: "pedal phalanx I-1" EXACT [PHENOSCAPE:wd]
+synonym: "predal digit 1 proximal phalanx" EXACT [PHENOSCAPE:wd]
+synonym: "proximal phalanx of big toe" EXACT [FMA:43252]
+synonym: "proximal phalanx of foot digit 1" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of great toe" EXACT [FMA:43252]
+synonym: "proximal phalanx of hallux" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of pedal digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal phalanx of the 1st toe" EXACT []
+is_a: UBERON:0003640 ! pedal digit 1 phalanx
+is_a: UBERON:0003868 ! proximal phalanx of pes
+is_a: UBERON:0014501 ! proximal phalanx of digit 1
+intersection_of: UBERON:0004302 ! proximal phalanx
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: proximally_connected_to UBERON:0003650 ! metatarsal bone of digit 1
+
+[Term]
+id: UBERON:0004336
+name: proximal phalanx of pedal digit 5
+def: "A proximal phalanx that is part of a pedal digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "5th toe proximal phalanx" EXACT [OBOL:automatic]
+synonym: "fifth proximal phalanx of foot" EXACT [FMA:32621]
+synonym: "foot digit 5 proximal phalanx" EXACT [OBOL:automatic]
+synonym: "pedal phalanx V-1" EXACT [PHENOSCAPE:wd]
+synonym: "predal digit 5 proximal phalanx" EXACT [PHENOSCAPE:wd]
+synonym: "proximal phalanx of 5th toe" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of fifth digit of foot" EXACT [FMA:32621]
+synonym: "proximal phalanx of fifth toe" EXACT [FMA:32621]
+synonym: "proximal phalanx of foot digit 5" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of little toe" EXACT [OBOL:automatic]
+synonym: "proximal phalanx of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal phalanx of the 5th toe" EXACT []
+is_a: UBERON:0003863 ! pedal digit 5 phalanx
+is_a: UBERON:0003868 ! proximal phalanx of pes
+is_a: UBERON:0014505 ! proximal phalanx of digit 5
+intersection_of: UBERON:0004302 ! proximal phalanx
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: proximally_connected_to UBERON:0003654 ! metatarsal bone of digit 5
+
+[Term]
+id: UBERON:0004337
+name: distal phalanx of manual digit 1
+def: "A distal phalanx that is part of a hand digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "distal phalanx of first digit of hand" EXACT [FMA:23945]
+synonym: "distal phalanx of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "distal phalanx of thumb" EXACT [OBOL:automatic]
+synonym: "first distal phalanx of hand" EXACT [FMA:23945]
+synonym: "manual digit 1 distal phalanx" EXACT [PHENOSCAPE:wd]
+synonym: "PDP" EXACT [http://en.wikipedia.org/wiki/Distal_phalanges#Thumb]
+synonym: "pollical distal phalanx" EXACT [http://en.wikipedia.org/wiki/Distal_phalanges#Thumb]
+synonym: "thumb distal phalanx" EXACT [OBOL:automatic]
+is_a: UBERON:0003620 ! manual digit 1 phalanx
+is_a: UBERON:0003865 ! distal phalanx of manus
+is_a: UBERON:0014483 ! distal phalanx of digit 1
+intersection_of: UBERON:0004300 ! distal phalanx
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+
+[Term]
+id: UBERON:0004338
+name: proximal phalanx of manual digit 1
+def: "A proximal phalanx that is part of a hand digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "first proximal phalanx of hand" EXACT [FMA:23918]
+synonym: "manual digit 1 proximal phalanx" EXACT [PHENOSCAPE:wd]
+synonym: "manual phalanx I-1" EXACT [PHENOSCAPE:wd]
+synonym: "proximal phalanx of first digit of hand" EXACT [FMA:23918]
+synonym: "proximal phalanx of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal phalanx of thumb" EXACT [OBOL:automatic]
+synonym: "thumb proximal" EXACT [OBOL:automatic]
+is_a: UBERON:0002234 ! proximal phalanx of manus
+is_a: UBERON:0003620 ! manual digit 1 phalanx
+is_a: UBERON:0014501 ! proximal phalanx of digit 1
+intersection_of: UBERON:0004302 ! proximal phalanx
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: proximally_connected_to UBERON:0003645 ! metacarpal bone of digit 1
+
+[Term]
 id: UBERON:0004340
 name: allantois
 def: "A membranous sac that develops from the posterior part of the alimentary canal in the embryos of mammals, birds, and reptiles, and it is important in the formation of the umbilical cord and placenta in mammals[VHOG]." [http://en.wikipedia.org/wiki/Allantois, VHOG:0000738]
@@ -26495,6 +27095,39 @@ intersection_of: BFO:0000050 UBERON:0002374 ! metacarpal bone
 relationship: BFO:0000050 UBERON:0002374 ! metacarpal bone
 
 [Term]
+id: UBERON:0004391
+name: epiphysis of first metacarpal bone
+def: "An epiphysis that is part of a metacarpal bone of digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "first metacarpal bone epiphysis" EXACT [FMA:33793]
+synonym: "metacarpal 1 epiphysis" EXACT []
+is_a: UBERON:0004390 ! epiphysis of metacarpal bone
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: BFO:0000050 UBERON:0003645 ! metacarpal bone of digit 1
+relationship: BFO:0000050 UBERON:0003645 ! metacarpal bone of digit 1
+
+[Term]
+id: UBERON:0004395
+name: epiphysis of first metatarsal bone
+def: "An epiphysis that is part of a metatarsal bone of digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "first metatarsal bone epiphysis" EXACT [FMA:33815]
+synonym: "metatarsal 1 epiphysis" EXACT []
+is_a: UBERON:0004389 ! epiphysis of metatarsal bone
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: BFO:0000050 UBERON:0003650 ! metatarsal bone of digit 1
+relationship: BFO:0000050 UBERON:0003650 ! metatarsal bone of digit 1
+
+[Term]
+id: UBERON:0004399
+name: epiphysis of fifth metatarsal bone
+def: "An epiphysis that is part of a metatarsal bone of digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "fifth metatarsal bone epiphysis" EXACT [FMA:86315]
+synonym: "metatarsal 5 epiphysis" EXACT []
+is_a: UBERON:0004389 ! epiphysis of metatarsal bone
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: BFO:0000050 UBERON:0003654 ! metatarsal bone of digit 5
+relationship: BFO:0000050 UBERON:0003654 ! metatarsal bone of digit 5
+
+[Term]
 id: UBERON:0004400
 name: bone tissue of epiphysis
 def: "A portion of bone tissue that is part of a epiphysis [Automatically generated definition]." [OBOL:automatic]
@@ -26680,6 +27313,164 @@ is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004390 ! epiphysis of metacarpal bone
 intersection_of: UBERON:0004380 ! proximal epiphysis
 intersection_of: BFO:0000050 UBERON:0002374 ! metacarpal bone
+
+[Term]
+id: UBERON:0004417
+name: proximal epiphysis of phalanx of manual digit 1
+def: "A proximal epiphysis that is part of a manual digit 1 phalanx [Automatically generated definition]." [OBOL:automatic]
+synonym: "basal epiphysis of phalanx of thumb" EXACT [FMA:37489]
+synonym: "base of phalanx of first digit of hand" EXACT [FMA:37489]
+synonym: "base of phalanx of thumb" EXACT [FMA:37489]
+synonym: "proximal epiphysis of phalanx of manual digit 1" EXACT []
+synonym: "proximal epiphysis of phalanx of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal epiphysis of phalanx of thumb" NARROW SENSU [FMA:37489, NCBITaxon:9606]
+is_a: UBERON:0004414 ! proximal epiphysis of phalanx of manus
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0003620 ! manual digit 1 phalanx
+relationship: BFO:0000050 UBERON:0003620 ! manual digit 1 phalanx
+
+[Term]
+id: UBERON:0004421
+name: proximal epiphysis of phalanx of manual digit 5
+def: "A proximal epiphysis that is part of a manual digit 5 phalanx [Automatically generated definition]." [OBOL:automatic]
+synonym: "basal epiphysis of phalanx of fifth finger" EXACT [FMA:37534]
+synonym: "basal epiphysis of phalanx of little finger" EXACT [FMA:37534]
+synonym: "base of phalanx of fifth digit of hand" EXACT [FMA:37534]
+synonym: "base of phalanx of fifth finger" EXACT [FMA:37534]
+synonym: "base of phalanx of little finger" EXACT [FMA:37534]
+synonym: "proximal epiphysis of phalanx of little finger" NARROW SENSU [FMA:37534, NCBITaxon:9606]
+synonym: "proximal epiphysis of phalanx of manual digit 5" EXACT []
+synonym: "proximal epiphysis of phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0004414 ! proximal epiphysis of phalanx of manus
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0003639 ! manual digit 5 phalanx
+relationship: BFO:0000050 UBERON:0003639 ! manual digit 5 phalanx
+
+[Term]
+id: UBERON:0004422
+name: proximal epiphysis of first metacarpal bone
+def: "A proximal epiphysis that is part of a metacarpal bone of digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "base of first metacarpal bone" EXACT [FMA:42788]
+synonym: "first metacarpal bone base" EXACT [FMA:42788]
+synonym: "proximal epiphysis of metacarpal 1" EXACT []
+is_a: UBERON:0004391 ! epiphysis of first metacarpal bone
+is_a: UBERON:0004416 ! proximal epiphysis of metacarpal bone
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0003645 ! metacarpal bone of digit 1
+
+[Term]
+id: UBERON:0004426
+name: proximal epiphysis of fifth metacarpal bone
+def: "A proximal epiphysis that is part of a metacarpal bone of digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "base of fifth metacarpal bone" EXACT [FMA:42800]
+synonym: "fifth metacarpal bone base" EXACT [FMA:42800]
+synonym: "proximal end of fifth metacarpal bone" EXACT [FMA:42800]
+synonym: "proximal epiphysis of metacarpal 5" EXACT []
+is_a: UBERON:0004416 ! proximal epiphysis of metacarpal bone
+is_a: UBERON:0011104 ! epiphysis of fifth metacarpal bone
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0003649 ! metacarpal bone of digit 5
+
+[Term]
+id: UBERON:0004427
+name: proximal epiphysis of first metatarsal bone
+def: "A proximal epiphysis that is part of a metatarsal bone of digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "base of first metatarsal bone" EXACT [FMA:42963]
+synonym: "proximal end of first metatarsal bone" EXACT [FMA:42963]
+synonym: "proximal epiphysis of metatarsal 1" EXACT []
+is_a: UBERON:0004395 ! epiphysis of first metatarsal bone
+is_a: UBERON:0004415 ! proximal epiphysis of metatarsal bone
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0003650 ! metatarsal bone of digit 1
+
+[Term]
+id: UBERON:0004431
+name: proximal epiphysis of fifth metatarsal bone
+def: "A proximal epiphysis that is part of a metatarsal bone of digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "base of fifth metatarsal bone" EXACT [FMA:42967]
+synonym: "proximal end of fifth metatarsal bone" EXACT [FMA:42967]
+synonym: "proximal epiphysis of metatarsal 5" EXACT []
+is_a: UBERON:0004399 ! epiphysis of fifth metatarsal bone
+is_a: UBERON:0004415 ! proximal epiphysis of metatarsal bone
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0003654 ! metatarsal bone of digit 5
+
+[Term]
+id: UBERON:0004435
+name: proximal epiphysis of distal phalanx of manual digit 5
+def: "A proximal epiphysis that is part of a distal phalanx of manual digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "basal epiphysis of distal phalanx of fifth finger" EXACT [FMA:37541]
+synonym: "basal epiphysis of distal phalanx of little finger" EXACT [FMA:37541]
+synonym: "base of distal phalanx of fifth digit of hand" EXACT [FMA:37541]
+synonym: "base of distal phalanx of fifth finger" EXACT [FMA:37541]
+synonym: "base of distal phalanx of little finger" EXACT [FMA:37541]
+synonym: "proximal epiphysis of distal phalanx of little finger" NARROW SENSU [FMA:37541, NCBITaxon:9606]
+synonym: "proximal epiphysis of distal phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0004421 ! proximal epiphysis of phalanx of manual digit 5
+is_a: UBERON:0011979 ! epiphysis of distal phalanx of manus
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0004314 ! distal phalanx of manual digit 5
+relationship: BFO:0000050 UBERON:0004314 ! distal phalanx of manual digit 5
+
+[Term]
+id: UBERON:0004439
+name: proximal epiphysis of middle phalanx of manual digit 5
+def: "A proximal epiphysis that is part of a middle phalanx of manual digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "basal epiphysis of middle phalanx of fifth finger" EXACT [FMA:37538]
+synonym: "basal epiphysis of middle phalanx of little finger" EXACT [FMA:37538]
+synonym: "base of middle phalanx of fifth digit of hand" EXACT [FMA:37538]
+synonym: "base of middle phalanx of fifth finger" EXACT [FMA:37538]
+synonym: "base of middle phalanx of little finger" EXACT [FMA:37538]
+synonym: "proximal epiphysis of middle phalanx of little finger" NARROW SENSU [FMA:37538, NCBITaxon:9606]
+synonym: "proximal epiphysis of middle phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0004421 ! proximal epiphysis of phalanx of manual digit 5
+is_a: UBERON:0011978 ! epiphysis of middle phalanx of manus
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0004323 ! middle phalanx of manual digit 5
+relationship: BFO:0000050 UBERON:0004323 ! middle phalanx of manual digit 5
+
+[Term]
+id: UBERON:0004443
+name: proximal epiphysis of proximal phalanx of manual digit 5
+def: "A proximal epiphysis that is part of a proximal phalanx of manual digit 5 [Automatically generated definition]." [OBOL:automatic]
+synonym: "basal epiphysis of proximal phalanx of little finger" EXACT [FMA:37535]
+synonym: "base of proximal phalanx of fifth digit of hand" EXACT [FMA:37535]
+synonym: "base of proximal phalanx of fifth finger" EXACT [FMA:37535]
+synonym: "base of proximal phalanx of little finger" EXACT [FMA:37535]
+synonym: "proximal epiphysis of proximal phalanx of little finger" NARROW SENSU [FMA:37535, NCBITaxon:9606]
+synonym: "proximal epiphysis of proximal phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0004421 ! proximal epiphysis of phalanx of manual digit 5
+is_a: UBERON:0011977 ! epiphysis of proximal phalanx of manus
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0004331 ! proximal phalanx of manual digit 5
+relationship: BFO:0000050 UBERON:0004331 ! proximal phalanx of manual digit 5
+
+[Term]
+id: UBERON:0004444
+name: proximal epiphysis of distal phalanx of manual digit 1
+def: "A proximal epiphysis that is part of a distal phalanx of manual digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "base of distal phalanx of thumb" EXACT [FMA:37493]
+synonym: "proximal epiphysis of distal phalanx of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal epiphysis of distal phalanx of thumb" NARROW SENSU [FMA:37493, NCBITaxon:9606]
+is_a: UBERON:0004417 ! proximal epiphysis of phalanx of manual digit 1
+is_a: UBERON:0011979 ! epiphysis of distal phalanx of manus
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0004337 ! distal phalanx of manual digit 1
+relationship: BFO:0000050 UBERON:0004337 ! distal phalanx of manual digit 1
+
+[Term]
+id: UBERON:0004445
+name: proximal epiphysis of proximal phalanx of manual digit 1
+def: "A proximal epiphysis that is part of a proximal phalanx of manual digit 1 [Automatically generated definition]." [OBOL:automatic]
+synonym: "basal epiphysis of proximal phalanx of thumb" EXACT [FMA:37490]
+synonym: "base of proximal phalanx of thumb" EXACT [FMA:37490]
+synonym: "proximal epiphysis of proximal phalanx of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal epiphysis of proximal phalanx of thumb" NARROW SENSU [FMA:37490, NCBITaxon:9606]
+is_a: UBERON:0004417 ! proximal epiphysis of phalanx of manual digit 1
+is_a: UBERON:0011977 ! epiphysis of proximal phalanx of manus
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0004338 ! proximal phalanx of manual digit 1
+relationship: BFO:0000050 UBERON:0004338 ! proximal phalanx of manual digit 1
 
 [Term]
 id: UBERON:0004446
@@ -32595,6 +33386,25 @@ intersection_of: BFO:0000050 UBERON:0004348 ! optic eminence
 relationship: BFO:0000050 UBERON:0004348 ! optic eminence
 
 [Term]
+id: UBERON:0005236
+name: osseus labyrinth vestibule
+def: "A small, oval, bony chamber of the labyrinth. The vestibule contains the utricle and saccule, organs which are part of the balancing apparatus of the ear." [BTO:0003382, http://en.wikipedia.org/wiki/Vestibule_of_the_ear]
+synonym: "bony labyrinth vestibule" EXACT []
+synonym: "inner ear vestibule" RELATED [BTO:0003382]
+synonym: "inner ear vestibulum" EXACT [BTO:0003382]
+synonym: "osseous labyrinth vestibule" EXACT [OBOL:automatic]
+synonym: "vestibular apparatus" RELATED [GAID:881]
+synonym: "vestibular part of bony labyrinth" RELATED [FMA:60183]
+synonym: "vestibule" BROAD [MP:0000034, XAO:0000199]
+synonym: "vestibule of bony labyrinth" EXACT [FMA:60183]
+synonym: "vestibulum auris" RELATED LATIN [http://en.wikipedia.org/wiki/Vestibule_of_the_ear]
+synonym: "vestibulum labyrinthi" RELATED LATIN [http://en.wikipedia.org/wiki/Vestibule_of_the_ear]
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0001839 ! bony labyrinth
+relationship: RO:0002433 UBERON:0001846 ! internal ear
+
+[Term]
 id: UBERON:0005239
 name: basal plate metencephalon
 synonym: "metencephalon basal plate" EXACT [EHDAA2:0001154]
@@ -33888,6 +34698,15 @@ relationship: BFO:0000050 UBERON:0002355 ! pelvic region of trunk
 relationship: RO:0002551 UBERON:0006075 ! sacral region of vertebral column
 
 [Term]
+id: UBERON:0005475
+name: sigmoid sinus
+def: "A portion of the lateral venous sinus, bulging prominently into the mastoid cavity, that serves as a principal conduit by which blood leaves the cranium[EPIC]. The sigmoid is drained by the internal jugular vein" [http://en.wikipedia.org/wiki/Sigmoid_sinus, http://palaeos.com/vertebrates/glossary/glossaryS.html]
+synonym: "sulcus sigmoideus" RELATED LATIN [http://en.wikipedia.org/wiki/Sigmoid_sinus]
+is_a: UBERON:0003502 ! neck blood vessel
+is_a: UBERON:0017635 {source="FMA"} ! paired venous dural sinus
+relationship: RO:0002376 UBERON:0001586 {source="Palaeos"} ! internal jugular vein
+
+[Term]
 id: UBERON:0005477
 name: stomach fundus epithelium
 def: "A simple columnar epithelium that is part of a fundus of stomach." [OBOL:automatic]
@@ -34345,6 +35164,30 @@ intersection_of: BFO:0000050 UBERON:0001766 ! anterior chamber of eyeball
 relationship: BFO:0000050 UBERON:0001766 ! anterior chamber of eyeball
 
 [Term]
+id: UBERON:0005648
+name: manual digit 5 epithelium
+def: "An epithelium that is part of a manual digit 5." [OBOL:automatic]
+synonym: "fore limb digit 5 epithelium" EXACT [OBOL:accepted]
+synonym: "hand digit 5 epithelium" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit V epithelium" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005227 ! manual digit epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: BFO:0000050 UBERON:0003625 ! manual digit 5
+
+[Term]
+id: UBERON:0005652
+name: pedal digit 5 epithelium
+def: "An epithelium that is part of a pedal digit 5." [OBOL:automatic]
+synonym: "foot digit 5 epithelium" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 5 epithelium" EXACT [OBOL:accepted]
+synonym: "pedal digit V epithelium" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005226 ! pedal digit epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: BFO:0000050 UBERON:0003635 ! pedal digit 5
+
+[Term]
 id: UBERON:0005656
 name: lens vesicle epithelium
 def: "An epithelium that is part of a lens vesicle." [OBOL:automatic]
@@ -34558,6 +35401,30 @@ is_a: UBERON:0009494 ! pharyngeal arch mesenchymal region
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0003115 ! pharyngeal arch 4
 relationship: BFO:0000050 UBERON:0003115 ! pharyngeal arch 4
+
+[Term]
+id: UBERON:0005695
+name: manual digit 5 mesenchyme
+def: "Mesenchyme that is part of a developing manual digit 5." [OBOL:automatic]
+synonym: "fore limb digit 5 mesenchyme" EXACT [OBOL:accepted]
+synonym: "hand digit 5 mesenchyme" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit V mesenchyme" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005257 ! manual digit mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: BFO:0000050 UBERON:0003625 ! manual digit 5
+
+[Term]
+id: UBERON:0005699
+name: pedal digit 5 mesenchyme
+def: "Mesenchyme that is part of a developing pedal digit 5." [OBOL:automatic]
+synonym: "foot digit 5 mesenchyme" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 5 mesenchyme" EXACT [OBOL:accepted]
+synonym: "pedal digit V mesenchyme" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005255 ! pedal digit mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: BFO:0000050 UBERON:0003635 ! pedal digit 5
 
 [Term]
 id: UBERON:0005702
@@ -35716,6 +36583,34 @@ is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0010313 ! neural crest-derived structure
 relationship: BFO:0000050 UBERON:0000946 ! cardial valve
+
+[Term]
+id: UBERON:0006048
+name: digit 1
+def: "A digit that is part of a digit 1 plus metapodial segment." [OBOL:automatic]
+synonym: "autopod digit 1" EXACT []
+synonym: "dewclaw" NARROW SENSU [http://en.wikipedia.org/wiki/Dewclaw]
+synonym: "digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "limb digit 1" EXACT [MA:0003023]
+is_a: UBERON:0019221 ! digit 1 or 5
+intersection_of: UBERON:0002544 ! digit
+intersection_of: BFO:0000050 UBERON:5006048 ! digit 1 plus metapodial segment
+relationship: BFO:0000050 UBERON:5006048 ! digit 1 plus metapodial segment
+relationship: BSPO:0001113 UBERON:0002470 ! autopod region
+
+[Term]
+id: UBERON:0006052
+name: digit 5
+def: "A digit that is part of a digit 5 plus metapodial segment." [OBOL:automatic]
+synonym: "autopod digit 5" EXACT []
+synonym: "digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "digiti minimi" RELATED []
+synonym: "fifth digit" EXACT []
+synonym: "limb digit 5" EXACT []
+is_a: UBERON:0019221 ! digit 1 or 5
+intersection_of: UBERON:0002544 ! digit
+intersection_of: BFO:0000050 UBERON:5006052 ! digit 5 plus metapodial segment
+relationship: BFO:0000050 UBERON:5006052 ! digit 5 plus metapodial segment
 
 [Term]
 id: UBERON:0006056
@@ -38489,6 +39384,13 @@ intersection_of: RO:0002572 UBERON:0001155 ! colon
 relationship: RO:0002572 UBERON:0001155 ! colon
 
 [Term]
+id: UBERON:0007160
+name: inferior petrosal sinus
+def: "The inferior petrosal sinus, within the human head, is an area beneath the brain, which allows blood veins to span the area, from the center of the head downward. It drains from the cavernous sinus (beneath the brain) to the sigmoid sinuses above the internal jugular vein." [http://en.wikipedia.org/wiki/Inferior_petrosal_sinus]
+synonym: "sinus petrosal inferior" EXACT [FMA:50770]
+is_a: UBERON:0017635 {source="FMA"} ! paired venous dural sinus
+
+[Term]
 id: UBERON:0007171
 name: border of scapula
 synonym: "scapular border" EXACT [FMA:23797]
@@ -39658,6 +40560,134 @@ intersection_of: BFO:0000050 UBERON:0002389 ! manual digit
 relationship: BFO:0000050 UBERON:0002389 ! manual digit
 relationship: RO:0002176 UBERON:0001436 {notes="two in series"} ! phalanx of manus
 relationship: RO:0002176 UBERON:0001436 {minCardinality="2", maxCardinality="2"} ! phalanx of manus
+
+[Term]
+id: UBERON:0007723
+name: interphalangeal joint of manual digit 1
+def: "An interphalangeal joint of manus that is part of a manual digit 1." [OBOL:automatic]
+synonym: "interphalangeal joint of first digit of hand" EXACT [FMA:35312]
+synonym: "interphalangeal joint of hand digit 1" EXACT []
+synonym: "interphalangeal joint of manual digit 1" EXACT []
+synonym: "interphalangeal joint of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "interphalangeal joint of pollex" EXACT []
+synonym: "interphalangeal joint of thumb" NARROW SENSU [FMA:35312, NCBITaxon:9606]
+is_a: UBERON:0007722 ! interphalangeal joint of manus
+intersection_of: UBERON:0007722 ! interphalangeal joint of manus
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: RO:0002176 UBERON:0003620 {minCardinality="2", maxCardinality="2"} ! manual digit 1 phalanx
+
+[Term]
+id: UBERON:0007724
+name: interphalangeal joint of pedal digit 1
+def: "An interphalangeal joint of pes that is part of a pedal digit 1." [OBOL:automatic]
+synonym: "interphalangeal joint of big toe" NARROW SENSU [FMA:35353, NCBITaxon:9606]
+synonym: "interphalangeal joint of first digit of foot" EXACT [FMA:35353]
+synonym: "interphalangeal joint of first digit of pes" EXACT [FMA:35353]
+synonym: "interphalangeal joint of first toe" RELATED [FMA:35353]
+synonym: "interphalangeal joint of foot digit 1" EXACT []
+synonym: "interphalangeal joint of great toe" EXACT [FMA:35353]
+synonym: "interphalangeal joint of hallux" EXACT []
+synonym: "interphalangeal joint of pedal digit 1" EXACT []
+synonym: "interphalangeal joint of pedal digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0007721 ! interphalangeal joint of pes
+intersection_of: UBERON:0007721 ! interphalangeal joint of pes
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: RO:0002176 UBERON:0003640 {minCardinality="2", maxCardinality="2"} ! pedal digit 1 phalanx
+
+[Term]
+id: UBERON:0007728
+name: interphalangeal joint of pedal digit 5
+def: "An interphalangeal joint of pes that is part of a pedal digit 5." [OBOL:automatic]
+synonym: "interphalangeal joint of fifth digit of foot" EXACT [FMA:35365]
+synonym: "interphalangeal joint of fifth toe" EXACT [FMA:35365]
+synonym: "interphalangeal joint of little toe" NARROW SENSU [FMA:35365, NCBITaxon:9606]
+synonym: "interphalangeal joint of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0007721 ! interphalangeal joint of pes
+intersection_of: UBERON:0007721 ! interphalangeal joint of pes
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: RO:0002176 UBERON:0003863 {minCardinality="2", maxCardinality="2"} ! pedal digit 5 phalanx
+
+[Term]
+id: UBERON:0007732
+name: interphalangeal joint of manual digit 5
+def: "An interphalangeal joint of manus that is part of a manual digit 5." [OBOL:automatic]
+synonym: "interphalangeal joint of fifth digit of hand" EXACT [FMA:35407]
+synonym: "interphalangeal joint of fifth finger" EXACT [FMA:35407]
+synonym: "interphalangeal joint of little finger" NARROW SENSU [FMA:35407, NCBITaxon:9606]
+synonym: "interphalangeal joint of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0007722 ! interphalangeal joint of manus
+intersection_of: UBERON:0007722 ! interphalangeal joint of manus
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: RO:0002176 UBERON:0003863 {minCardinality="2", maxCardinality="2"} ! pedal digit 5 phalanx
+
+[Term]
+id: UBERON:0007735
+name: metacarpophalangeal joint of manual digit 1
+def: "A skeletal joint that connects a metacarpal bone and connects a proximal phalanx of manual digit 1." [OBOL:automatic]
+synonym: "metacarpo-phalangeal joint of digit 1 of fore-paw" NARROW [EMAPA:25057]
+synonym: "metacarpophalangeal joint of digit 1" EXACT []
+synonym: "metacarpophalangeal joint of first digit of hand" EXACT [FMA:35249]
+synonym: "metacarpophalangeal joint of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metacarpophalangeal joint of thumb" NARROW SENSU [FMA:35249, NCBITaxon:9606]
+is_a: UBERON:0003695 ! metacarpophalangeal joint
+intersection_of: UBERON:0000982 ! skeletal joint
+intersection_of: RO:0002176 UBERON:0002374 ! metacarpal bone
+intersection_of: RO:0002176 UBERON:0004338 ! proximal phalanx of manual digit 1
+relationship: BFO:0000050 UBERON:0001463 {source="FMA"} ! manual digit 1
+relationship: RO:0002176 UBERON:0004338 ! proximal phalanx of manual digit 1
+
+[Term]
+id: UBERON:0007747
+name: metacarpophalangeal joint of manual digit 5
+def: "A skeletal joint that connects a metacarpal bone and connects a proximal phalanx of manual digit 5." [OBOL:automatic]
+synonym: "metacarpo-phalangeal joint of digit 5 of fore-paw" NARROW [EMAPA:25069]
+synonym: "metacarpophalangeal joint of digit 5" EXACT []
+synonym: "metacarpophalangeal joint of fifth digit of hand" EXACT [FMA:35261]
+synonym: "metacarpophalangeal joint of fifth finger" EXACT [FMA:35261]
+synonym: "metacarpophalangeal joint of little finger" NARROW SENSU [FMA:35261, NCBITaxon:9606]
+synonym: "metacarpophalangeal joint of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0003695 ! metacarpophalangeal joint
+intersection_of: UBERON:0000982 ! skeletal joint
+intersection_of: RO:0002176 UBERON:0002374 ! metacarpal bone
+intersection_of: RO:0002176 UBERON:0004331 ! proximal phalanx of manual digit 5
+relationship: BFO:0000050 UBERON:0003625 {source="FMA"} ! manual digit 5
+relationship: RO:0002176 UBERON:0004331 ! proximal phalanx of manual digit 5
+
+[Term]
+id: UBERON:0007750
+name: metatarsophalangeal joint of pedal digit 1
+def: "A skeletal joint that connects a metatarsal bone and connects a distal phalanx of pedal digit 1." [OBOL:automatic]
+synonym: "first metatarsophalangeal joint" EXACT []
+synonym: "metatarsophalangeal joint of big toe" NARROW SENSU [FMA:35228, NCBITaxon:9606]
+synonym: "metatarsophalangeal joint of first digit of foot" EXACT [FMA:35228]
+synonym: "metatarsophalangeal joint of first toe" RELATED [FMA:35228]
+synonym: "metatarsophalangeal joint of great toe" EXACT [FMA:35228]
+synonym: "metatarsophalangeal joint of pedal digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0003696 ! metatarsophalangeal joint
+intersection_of: UBERON:0000982 ! skeletal joint
+intersection_of: RO:0002176 UBERON:0001448 ! metatarsal bone
+intersection_of: RO:0002176 UBERON:0004315 ! distal phalanx of pedal digit 1
+relationship: BFO:0000050 UBERON:0003631 {source="FMA"} ! pedal digit 1
+relationship: RO:0002176 UBERON:0004315 ! distal phalanx of pedal digit 1
+
+[Term]
+id: UBERON:0007762
+name: metatarsophalangeal joint of pedal digit 5
+def: "A skeletal joint that connects a metatarsal bone and connects a distal phalanx of pedal digit 5." [OBOL:automatic]
+synonym: "metatarsophalangeal joint of fifth digit of foot" EXACT [FMA:35240]
+synonym: "metatarsophalangeal joint of fifth toe" EXACT [FMA:35240]
+synonym: "metatarsophalangeal joint of little toe" NARROW SENSU [FMA:35240, NCBITaxon:9606]
+synonym: "metatarsophalangeal joint of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0003696 ! metatarsophalangeal joint
+intersection_of: UBERON:0000982 ! skeletal joint
+intersection_of: RO:0002176 UBERON:0001448 ! metatarsal bone
+intersection_of: RO:0002176 UBERON:0004319 ! distal phalanx of pedal digit 5
+relationship: BFO:0000050 UBERON:0003635 {source="FMA"} ! pedal digit 5
+relationship: RO:0002176 UBERON:0004319 ! distal phalanx of pedal digit 5
 
 [Term]
 id: UBERON:0007771
@@ -45220,6 +46250,190 @@ relationship: proximally_connected_to UBERON:0009878 ! mesopodial skeleton
 relationship: RO:0002576 UBERON:0009877 ! metapodium region
 
 [Term]
+id: UBERON:0010547
+name: pedal digit 1 metatarsal pre-cartilage condensation
+def: "A pedal digit metatarsal pre-cartilage condensation that is part of a pedal digit 1 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 1 metatarsal pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 1 metatarsal pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "pedal digit I metatarsal pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "toe 1 metatarsal pre-cartilage condensation" EXACT [EHDAA2:0002040]
+is_a: UBERON:0010687 ! pedal digit metatarsal pre-cartilage condensation
+is_a: UBERON:0015037 ! pedal digit 1 metatarsal endochondral element
+intersection_of: UBERON:0015037 ! pedal digit 1 metatarsal endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010551
+name: pedal digit 5 metatarsal pre-cartilage condensation
+def: "A pedal digit metatarsal pre-cartilage condensation that is part of a pedal digit 5 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 5 metatarsal pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 5 metatarsal pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "pedal digit V metatarsal pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "toe 5 metatarsal pre-cartilage condensation" EXACT [EHDAA2:0002060]
+is_a: UBERON:0010687 ! pedal digit metatarsal pre-cartilage condensation
+is_a: UBERON:0015041 ! pedal digit 5 metatarsal endochondral element
+intersection_of: UBERON:0015041 ! pedal digit 5 metatarsal endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010557
+name: pedal digit 1 metatarsal cartilage element
+def: "A pedal digit metatarsal cartilage condensation that is part of a pedal digit 1 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 1 metatarsal cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 1 metatarsal cartilage condensation" EXACT [OBOL:accepted]
+synonym: "pedal digit I metatarsal cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "toe 1 metatarsal cartilage condensation" EXACT []
+is_a: UBERON:0010697 ! pedal digit metatarsal cartilage element
+is_a: UBERON:0015037 ! pedal digit 1 metatarsal endochondral element
+intersection_of: UBERON:0015037 ! pedal digit 1 metatarsal endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010547 ! pedal digit 1 metatarsal pre-cartilage condensation
+
+[Term]
+id: UBERON:0010561
+name: pedal digit 5 metatarsal cartilage element
+def: "A pedal digit metatarsal cartilage element that is part of a pedal digit 5 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 5 metatarsal cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 5 metatarsal cartilage element" EXACT [OBOL:accepted]
+synonym: "pedal digit V metatarsal cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "toe 5 metatarsal cartilage element" EXACT []
+is_a: UBERON:0010697 ! pedal digit metatarsal cartilage element
+is_a: UBERON:0015041 ! pedal digit 5 metatarsal endochondral element
+intersection_of: UBERON:0015041 ! pedal digit 5 metatarsal endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010551 ! pedal digit 5 metatarsal pre-cartilage condensation
+
+[Term]
+id: UBERON:0010562
+name: pedal digit 1 mesenchyme
+def: "Mesenchyme that is part of a developing pedal digit 1." [OBOL:automatic]
+synonym: "foot digit 1 mesenchyme" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 1 mesenchyme" EXACT [OBOL:accepted]
+synonym: "pedal digit I mesenchyme" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005255 ! pedal digit mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: BFO:0000050 UBERON:0003631 ! pedal digit 1
+
+[Term]
+id: UBERON:0010564
+name: manual digit 1 mesenchyme
+def: "Mesenchyme that is part of a developing manual digit 1." [OBOL:automatic]
+synonym: "fore limb digit 1 mesenchyme" EXACT [OBOL:accepted]
+synonym: "hand digit 1 mesenchyme" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit I mesenchyme" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005257 ! manual digit mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: BFO:0000050 UBERON:0001463 ! manual digit 1
+
+[Term]
+id: UBERON:0010565
+name: manual digit 1 metacarpus pre-cartilage condensation
+def: "A manual digit metacarpus pre-cartilage condensation that is part of a manual digit 1 mesenchyme." [OBOL:automatic]
+synonym: "finger 1 metacarpus pre-cartilage condensation" EXACT [EHDAA2:0000515]
+synonym: "fore limb digit 1 metacarpus pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "hand digit 1 metacarpus pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit I metacarpus pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metacarpal 1 pre-cartilage condensation" EXACT []
+is_a: UBERON:0010698 ! manual digit metacarpus pre-cartilage condensation
+is_a: UBERON:0015043 ! manual digit 1 metacarpus endochondral element
+intersection_of: UBERON:0015043 ! manual digit 1 metacarpus endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010569
+name: manual digit 5 metacarpus pre-cartilage condensation
+def: "A manual digit metacarpus pre-cartilage condensation that is part of a manual digit 5 mesenchyme." [OBOL:automatic]
+synonym: "finger 5 metacarpus pre-cartilage condensation" EXACT [EHDAA2:0000539]
+synonym: "fore limb digit 5 metacarpus pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "hand digit 5 metacarpus pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit V metacarpus pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metacarpal 5 pre-cartilage condensation" EXACT []
+is_a: UBERON:0010698 ! manual digit metacarpus pre-cartilage condensation
+is_a: UBERON:0015047 ! manual digit 5 metacarpus endochondral element
+intersection_of: UBERON:0015047 ! manual digit 5 metacarpus endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010570
+name: manual digit 1 metacarpus cartilage element
+def: "A manual digit metacarpus cartilage element that is part of a manual digit 1 mesenchyme." [OBOL:automatic]
+synonym: "finger 1 metacarpus cartilage element" EXACT [EHDAA2:0000514]
+synonym: "fore limb digit 1 metacarpus cartilage element" EXACT [OBOL:accepted]
+synonym: "hand digit 1 metacarpus cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit I metacarpus cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metacarpus 1 cartilage element" EXACT []
+is_a: UBERON:0010699 ! manual digit metacarpus cartilage element
+is_a: UBERON:0015043 ! manual digit 1 metacarpus endochondral element
+intersection_of: UBERON:0015043 ! manual digit 1 metacarpus endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010565 ! manual digit 1 metacarpus pre-cartilage condensation
+
+[Term]
+id: UBERON:0010574
+name: manual digit 5 metacarpus cartilage element
+def: "A manual digit metacarpus cartilage element that is part of a manual digit 5 mesenchyme." [OBOL:automatic]
+synonym: "finger 5 metacarpus cartilage condensation" EXACT [EHDAA2:0000538]
+synonym: "fore limb digit 5 metacarpus cartilage element" EXACT [OBOL:accepted]
+synonym: "hand digit 5 metacarpus cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit V metacarpus cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "metacarpus 5 cartilage element" EXACT []
+is_a: UBERON:0010699 ! manual digit metacarpus cartilage element
+is_a: UBERON:0015047 ! manual digit 5 metacarpus endochondral element
+intersection_of: UBERON:0015047 ! manual digit 5 metacarpus endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010569 ! manual digit 5 metacarpus pre-cartilage condensation
+
+[Term]
+id: UBERON:0010575
+name: manual digit 1 phalanx pre-cartilage condensation
+def: "A pre-cartilage condensation that is part of a manual digit 1 mesenchyme." [OBOL:automatic]
+synonym: "fore limb digit 1 phalanx pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "hand digit 1 phalanx pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit I phalanx pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010586 ! manual digit phalanx pre-cartilage condensation
+is_a: UBERON:0015025 ! manual digit 1 phalanx endochondral element
+intersection_of: UBERON:0015025 ! manual digit 1 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010579
+name: manual digit 5 phalanx pre-cartilage condensation
+def: "A pre-cartilage condensation that is part of a manual digit 5 mesenchyme." [OBOL:automatic]
+synonym: "fore limb digit 5 phalanx pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "hand digit 5 phalanx pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit V phalanx pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010586 ! manual digit phalanx pre-cartilage condensation
+is_a: UBERON:0015029 ! manual digit 5 phalanx endochondral element
+intersection_of: UBERON:0015029 ! manual digit 5 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010580
+name: pedal digit 1 phalanx pre-cartilage condensation
+def: "A pre-cartilage condensation that is part of a pedal digit 1 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 1 phalanx pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 1 phalanx pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "pedal digit I phalanx pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010585 ! pedal digit phalanx pre-cartilage condensation
+is_a: UBERON:0015031 ! pedal digit 1 phalanx endochondral element
+intersection_of: UBERON:0015031 ! pedal digit 1 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010584
+name: pedal digit 5 phalanx pre-cartilage condensation
+def: "A pre-cartilage condensation that is part of a pedal digit 5 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 5 phalanx pre-cartilage condensation" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 5 phalanx pre-cartilage condensation" EXACT [OBOL:accepted]
+synonym: "pedal digit V phalanx pre-cartilage condensation" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010585 ! pedal digit phalanx pre-cartilage condensation
+is_a: UBERON:0015035 ! pedal digit 5 phalanx endochondral element
+intersection_of: UBERON:0015035 ! pedal digit 5 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
 id: UBERON:0010585
 name: pedal digit phalanx pre-cartilage condensation
 def: "A pre-cartilage condensation that is part of a pedal digit mesenchyme." [OBOL:automatic]
@@ -45248,6 +46462,58 @@ is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015024 ! manual digit phalanx endochondral element
 intersection_of: UBERON:0015024 ! manual digit phalanx endochondral element
 intersection_of: RO:0002473 UBERON:0005866 ! pre-cartilage condensation
+
+[Term]
+id: UBERON:0010675
+name: manual digit 1 phalanx cartilage element
+def: "A cartilage element that is part of a manual digit 1 mesenchyme." [OBOL:automatic]
+synonym: "fore limb digit 1 phalanx cartilage condensation" EXACT [OBOL:accepted]
+synonym: "hand digit 1 phalanx cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit I phalanx cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010686 ! manual digit phalanx cartilage element
+is_a: UBERON:0015025 ! manual digit 1 phalanx endochondral element
+intersection_of: UBERON:0015025 ! manual digit 1 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010575 ! manual digit 1 phalanx pre-cartilage condensation
+
+[Term]
+id: UBERON:0010679
+name: manual digit 5 phalanx cartilage element
+def: "A cartilage element that is part of a manual digit 5 mesenchyme." [OBOL:automatic]
+synonym: "fore limb digit 5 phalanx cartilage condensation" EXACT [OBOL:accepted]
+synonym: "hand digit 5 phalanx cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit V phalanx cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010686 ! manual digit phalanx cartilage element
+is_a: UBERON:0015029 ! manual digit 5 phalanx endochondral element
+intersection_of: UBERON:0015029 ! manual digit 5 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010579 ! manual digit 5 phalanx pre-cartilage condensation
+
+[Term]
+id: UBERON:0010680
+name: pedal digit 1 phalanx cartilage element
+def: "A cartilage element that is part of a pedal digit 1 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 1 phalanx cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 1 phalanx cartilage condensation" EXACT [OBOL:accepted]
+synonym: "pedal digit I phalanx cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010685 ! pedal digit phalanx cartilage element
+is_a: UBERON:0015031 ! pedal digit 1 phalanx endochondral element
+intersection_of: UBERON:0015031 ! pedal digit 1 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010580 ! pedal digit 1 phalanx pre-cartilage condensation
+
+[Term]
+id: UBERON:0010684
+name: pedal digit 5 phalanx cartilage element
+def: "A cartilage element that is part of a pedal digit 5 mesenchyme." [OBOL:automatic]
+synonym: "foot digit 5 phalanx cartilage element" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 5 phalanx cartilage condensation" EXACT [OBOL:accepted]
+synonym: "pedal digit V phalanx cartilage element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0010685 ! pedal digit phalanx cartilage element
+is_a: UBERON:0015035 ! pedal digit 5 phalanx endochondral element
+intersection_of: UBERON:0015035 ! pedal digit 5 phalanx endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! cartilage tissue
+relationship: RO:0002202 UBERON:0010584 ! pedal digit 5 phalanx pre-cartilage condensation
 
 [Term]
 id: UBERON:0010685
@@ -45312,6 +46578,30 @@ intersection_of: BFO:0000050 UBERON:0002398 ! manus
 disjoint_from: UBERON:0010696 {source="lexical"} ! skeleton of pedal acropodium
 relationship: BFO:0000050 UBERON:0012151 {source="PHENOSCAPE:ni"} ! skeleton of manual digitopodium
 relationship: proximally_connected_to UBERON:0010544 ! metacarpus skeleton
+
+[Term]
+id: UBERON:0010690
+name: manual digit 1 epithelium
+def: "An epithelium that is part of a manual digit 1." [OBOL:automatic]
+synonym: "fore limb digit 1 epithelium" EXACT [OBOL:accepted]
+synonym: "hand digit 1 epithelium" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "manual digit I epithelium" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005227 ! manual digit epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: BFO:0000050 UBERON:0001463 ! manual digit 1
+
+[Term]
+id: UBERON:0010693
+name: pedal digit 1 epithelium
+def: "An epithelium that is part of a pedal digit 1." [OBOL:automatic]
+synonym: "foot digit 1 epithelium" NARROW SENSU [NCBITaxon:9606, OBOL:accepted]
+synonym: "hind limb digit 1 epithelium" EXACT [OBOL:accepted]
+synonym: "pedal digit I epithelium" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0005226 ! pedal digit epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: BFO:0000050 UBERON:0003631 ! pedal digit 1
 
 [Term]
 id: UBERON:0010695
@@ -46044,6 +47334,17 @@ relationship: RO:0002134 UBERON:0001817 ! lacrimal gland
 relationship: RO:0002380 UBERON:0000348 {source="FMA"} ! ophthalmic nerve
 
 [Term]
+id: UBERON:0011104
+name: epiphysis of fifth metacarpal bone
+def: "An epiphysis that is part of a metacarpal bone of digit 5." [OBOL:automatic]
+synonym: "fifth metacarpal bone epiphysis" EXACT [FMA:86330]
+synonym: "metacarpal 5 epiphysis" EXACT []
+is_a: UBERON:0004390 ! epiphysis of metacarpal bone
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: BFO:0000050 UBERON:0003649 ! metacarpal bone of digit 5
+relationship: BFO:0000050 UBERON:0003649 ! metacarpal bone of digit 5
+
+[Term]
 id: UBERON:0011107
 name: synovial joint of pelvic girdle
 def: "A synovial joint that is part of a pelvic girdle region." [OBOL:automatic]
@@ -46550,6 +47851,21 @@ def: "Scent glands are exocrine glands found in most mammals. They produce semi-
 is_a: UBERON:0002365 ! exocrine gland
 
 [Term]
+id: UBERON:0011265
+name: carpometacarpal joint of digit 1
+def: "A carpometacarpal joint that connects to metacarpal 1." [http://en.wikipedia.org/wiki/Carpometacarpal_joint#Thumb]
+synonym: "carpometacarpal joint of digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "carpometacarpal joint of pollex" EXACT [FMA:35421]
+synonym: "carpometacarpal joint of the thumb" RELATED [http://en.wikipedia.org/wiki/Carpometacarpal_joint#Thumb]
+synonym: "carpometacarpal joint of thumb" EXACT [FMA:35421]
+synonym: "TMJ" RELATED INCONSISTENT [http://en.wikipedia.org/wiki/Carpometacarpal_joint#Thumb]
+synonym: "trapeziometacarpal joint" RELATED [http://en.wikipedia.org/wiki/Carpometacarpal_joint#Thumb]
+is_a: UBERON:0011119 ! carpometacarpal joint
+intersection_of: UBERON:0011119 ! carpometacarpal joint
+intersection_of: RO:0002176 UBERON:0003645 ! metacarpal bone of digit 1
+relationship: RO:0002176 UBERON:0003645 ! metacarpal bone of digit 1
+
+[Term]
 id: UBERON:0011270
 name: dorsal trunk
 def: "The part of the trunk that is in the dorsum[cjm]." [http://en.wikipedia.org/wiki/Human_back, UBERONREF:0000006]
@@ -46569,6 +47885,66 @@ is_a: UBERON:0000490 {source="EHDAA2"} ! unilaminar epithelium
 is_a: UBERON:0010371 ! ecto-epithelium
 relationship: BFO:0000050 UBERON:0002199 {source="EHDAA2"} ! integument
 relationship: RO:0002202 UBERON:0000076 {source="EHDAA2"} ! external ectoderm
+
+[Term]
+id: UBERON:0011273
+name: nail of manual digit 1
+def: "A nail that is part of a manual digit 1." [OBOL:automatic]
+synonym: "claw of digit 1 of fore-paw" EXACT [EMAPA:18734]
+synonym: "nail of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "nail of thumb" EXACT [FMA:54329]
+synonym: "nail plate of thumb" EXACT [FMA:54329]
+synonym: "thumb nail" EXACT [FMA:54329]
+is_a: UBERON:0009565 {source="FMA"} ! nail of manual digit
+intersection_of: UBERON:0001705 ! nail
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: BFO:0000050 UBERON:0001463 ! manual digit 1
+
+[Term]
+id: UBERON:0011277
+name: nail of manual digit 5
+def: "A nail that is part of a manual digit 5." [OBOL:automatic]
+synonym: "claw of digit 5 of fore-paw" EXACT [EMAPA:18738]
+synonym: "little finger nail" EXACT [FMA:54341]
+synonym: "nail of fifth finger" EXACT [FMA:54341]
+synonym: "nail of little finger" RELATED [FMA:54341]
+synonym: "nail of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "nail plate of little finger" EXACT [FMA:54341]
+is_a: UBERON:0009565 {source="FMA"} ! nail of manual digit
+intersection_of: UBERON:0001705 ! nail
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: BFO:0000050 UBERON:0003625 ! manual digit 5
+
+[Term]
+id: UBERON:0011278
+name: nail of pedal digit 1
+def: "A nail that is part of a pedal digit 1." [OBOL:automatic]
+synonym: "big toe nail" EXACT [FMA:54344]
+synonym: "claw of digit 1 of hind-paw" EXACT [EMAPA:18739]
+synonym: "nail of big toe" EXACT [FMA:54344]
+synonym: "nail of first toe" RELATED [FMA:54344]
+synonym: "nail of great toe" EXACT [FMA:54344]
+synonym: "nail of pedal digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "nail plate of big toe" EXACT [FMA:54344]
+is_a: UBERON:0009567 {source="FMA"} ! nail of pedal digit
+intersection_of: UBERON:0001705 ! nail
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: BFO:0000050 UBERON:0003631 ! pedal digit 1
+
+[Term]
+id: UBERON:0011282
+name: nail of pedal digit 5
+def: "A nail that is part of a pedal digit 5." [OBOL:automatic]
+synonym: "claw of digit 5 of hind-paw" EXACT [EMAPA:18743]
+synonym: "little toe nail" EXACT [FMA:54356]
+synonym: "nail of fifth toe" EXACT [FMA:54356]
+synonym: "nail of little toe" EXACT [FMA:54356]
+synonym: "nail of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "nail plate of little toe" EXACT [FMA:54356]
+is_a: UBERON:0009567 {source="FMA"} ! nail of pedal digit
+intersection_of: UBERON:0001705 ! nail
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: BFO:0000050 UBERON:0003635 ! pedal digit 5
 
 [Term]
 id: UBERON:0011289
@@ -49721,6 +51097,28 @@ relationship: RO:0002202 UBERON:0006273 {source="EHDAA2"} ! otic pit
 relationship: RO:0002572 UBERON:0003051 ! ear vesicle
 
 [Term]
+id: UBERON:0013581
+name: metapodium bone 1
+def: "A metapodium bone that is part of a digit 1 plus metapodial segment." [OBOL:automatic]
+synonym: "metapodium 1" EXACT []
+synonym: "metapodium I" EXACT []
+is_a: UBERON:0003821 ! metapodium bone
+intersection_of: UBERON:0003821 ! metapodium bone
+intersection_of: BFO:0000050 UBERON:5006048 ! digit 1 plus metapodial segment
+relationship: BFO:0000050 UBERON:5006048 ! digit 1 plus metapodial segment
+
+[Term]
+id: UBERON:0013585
+name: metapodium bone 5
+def: "A metapodium bone that is part of a digit 5 plus metapodial segment." [OBOL:automatic]
+synonym: "metapodium 5" EXACT []
+synonym: "metapodium V" EXACT []
+is_a: UBERON:0003821 ! metapodium bone
+intersection_of: UBERON:0003821 ! metapodium bone
+intersection_of: BFO:0000050 UBERON:5006052 ! digit 5 plus metapodial segment
+relationship: BFO:0000050 UBERON:5006052 ! digit 5 plus metapodial segment
+
+[Term]
 id: UBERON:0013631
 name: sesamoid element
 def: "Ossicle that develops within bands of dense, regular connective tissue (e.g., tendons and ligaments). Sesamoids are generally located proximate to a bony prominence, over which the dense regular connective tissue wraps, and/or a joint or articulation." [PSPUB:0000169, VSAO:0000137]
@@ -50492,6 +51890,105 @@ relationship: BFO:0000051 UBERON:0003252 ! thoracic rib cage
 relationship: RO:0002473 UBERON:0015019 ! rib endochondral element
 
 [Term]
+id: UBERON:0014483
+name: distal phalanx of digit 1
+def: "A distal phalanx that is part of a digit 1 [Automatically generated definition]." [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 1 distal phalanx" EXACT [PHENOSCAPE:wd]
+synonym: "digit I P3" RELATED []
+synonym: "distal phalanx of digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "distal phalanx of first digit" EXACT []
+synonym: "first distal phalanx" RELATED []
+is_a: UBERON:0004300 ! distal phalanx
+intersection_of: UBERON:0004300 ! distal phalanx
+intersection_of: BFO:0000050 UBERON:0006048 ! digit 1
+relationship: BFO:0000050 UBERON:0006048 ! digit 1
+relationship: BFO:0000050 UBERON:5106048 ! digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:0014487
+name: distal phalanx of digit 5
+def: "A distal phalanx that is part of a digit 5 [Automatically generated definition]." [http://orcid.org/0000-0002-6601-2165]
+synonym: "5th digit distal phalanx" EXACT []
+synonym: "digit 5 distal phalanx" EXACT [PHENOSCAPE:wd]
+synonym: "digit V P3" RELATED []
+synonym: "distal phalanx of 5th digit" EXACT []
+synonym: "distal phalanx of digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "distal phalanx of fifth digit" EXACT []
+synonym: "distal phalanx of little digit" EXACT []
+synonym: "fifth digit distal phalanx" EXACT []
+synonym: "fifth distal phalanx" EXACT []
+is_a: UBERON:0004300 ! distal phalanx
+intersection_of: UBERON:0004300 ! distal phalanx
+intersection_of: BFO:0000050 UBERON:0006052 ! digit 5
+relationship: BFO:0000050 UBERON:0006052 ! digit 5
+relationship: BFO:0000050 UBERON:5106052 ! digit 5 digitopodial skeleton
+
+[Term]
+id: UBERON:0014491
+name: middle phalanx of digit 5
+def: "A middle phalanx that is part of a digit 5 [Automatically generated definition]." [http://orcid.org/0000-0002-6601-2165]
+synonym: "5th digit intermediate phalanx" EXACT []
+synonym: "5th digit middle phalanx" EXACT []
+synonym: "5th digit of intermediate phalanx" EXACT []
+synonym: "5th digit of middle phalanx" EXACT []
+synonym: "digit 5 intermediate phalanx" EXACT []
+synonym: "digit 5 middle phalanx" EXACT []
+synonym: "digit V P2" RELATED []
+synonym: "fifth digit intermediate phalanx" EXACT []
+synonym: "fifth digit middle phalanx" EXACT []
+synonym: "fifth middle phalanx" EXACT []
+synonym: "intermediate phalanx of 5th digit" EXACT []
+synonym: "intermediate phalanx of digit 5" EXACT []
+synonym: "intermediate phalanx of fifth digit" EXACT []
+synonym: "middle phalanx of 5th digit" EXACT []
+synonym: "middle phalanx of digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "middle phalanx of fifth digit" EXACT []
+synonym: "middle phalanx of little digit" EXACT []
+is_a: UBERON:0004301 ! middle phalanx
+intersection_of: UBERON:0004301 ! middle phalanx
+intersection_of: BFO:0000050 UBERON:0006052 ! digit 5
+relationship: BFO:0000050 UBERON:0006052 ! digit 5
+relationship: BFO:0000050 UBERON:5106052 ! digit 5 digitopodial skeleton
+
+[Term]
+id: UBERON:0014501
+name: proximal phalanx of digit 1
+def: "A proximal phalanx that is part of a autopod digit 1 [Automatically generated definition]." [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit I P1" EXACT []
+synonym: "digit I-1" EXACT [PHENOSCAPE:wd]
+synonym: "first proximal phalanx of autopod" EXACT []
+synonym: "proximal phalanx of digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal phalanx of first digit of autopod" EXACT []
+is_a: UBERON:0004302 ! proximal phalanx
+intersection_of: UBERON:0004302 ! proximal phalanx
+intersection_of: BFO:0000050 UBERON:0006048 ! digit 1
+relationship: BFO:0000050 UBERON:0006048 ! digit 1
+relationship: BFO:0000050 UBERON:5106048 ! digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:0014505
+name: proximal phalanx of digit 5
+def: "A proximal phalanx that is part of a autopod digit 5 [Automatically generated definition]." [http://orcid.org/0000-0002-6601-2165]
+synonym: "5th digit of autopod proximal phalanx" EXACT []
+synonym: "5th digit proximal phalanx" EXACT []
+synonym: "autopod digit 5 proximal phalanx" EXACT []
+synonym: "digit V P1" EXACT []
+synonym: "digit V-1" EXACT [PHENOSCAPE:wd]
+synonym: "fifth digit proximal phalanx" EXACT []
+synonym: "fifth proximal phalanx of autopod" EXACT []
+synonym: "proximal phalanx of 5th digit" EXACT []
+synonym: "proximal phalanx of 5th digit of autopod" EXACT []
+synonym: "proximal phalanx of digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "proximal phalanx of fifth digit" EXACT []
+synonym: "proximal phalanx of fifth digit of autopod" EXACT []
+synonym: "proximal phalanx of little digit" EXACT []
+is_a: UBERON:0004302 ! proximal phalanx
+intersection_of: UBERON:0004302 ! proximal phalanx
+intersection_of: BFO:0000050 UBERON:0006052 ! digit 5
+relationship: BFO:0000050 UBERON:0006052 ! digit 5
+relationship: BFO:0000050 UBERON:5106052 ! digit 5 digitopodial skeleton
+
+[Term]
 id: UBERON:0014530
 name: white matter lamina of neuraxis
 synonym: "lamina of neuraxis" BROAD [FMA:83856]
@@ -50705,6 +52202,39 @@ is_a: UBERON:0019262 ! white matter of myelencephalon
 intersection_of: UBERON:0002316 ! white matter
 intersection_of: BFO:0000050 UBERON:0001896 ! medulla oblongata
 relationship: BFO:0000050 UBERON:0001896 ! medulla oblongata
+
+[Term]
+id: UBERON:0014671
+name: distal interphalangeal joint of manural digit 5
+synonym: "distal interphalangeal joint of little finger" EXACT [FMA:35343]
+synonym: "distal interphalangeal joint of manural digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0007732 ! interphalangeal joint of manual digit 5
+is_a: UBERON:0014680 ! distal interphalangeal joint of digit 5
+intersection_of: UBERON:0009768 ! distal interphalangeal joint
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+
+[Term]
+id: UBERON:0014675
+name: distal interphalangeal joint of pedal digit 5
+synonym: "distal interphalangeal joint of fifth digit of foot" EXACT [FMA:35393]
+synonym: "distal interphalangeal joint of fifth toe" EXACT [FMA:35393]
+synonym: "distal interphalangeal joint of little toe" EXACT [FMA:35393]
+synonym: "distal interphalangeal joint of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0007728 ! interphalangeal joint of pedal digit 5
+is_a: UBERON:0014680 ! distal interphalangeal joint of digit 5
+intersection_of: UBERON:0009768 ! distal interphalangeal joint
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+
+[Term]
+id: UBERON:0014680
+name: distal interphalangeal joint of digit 5
+def: "A distal interphalangeal joint that is part of a digit 5." [OBOL:automatic]
+synonym: "distal interphalangeal joint 5" RELATED []
+synonym: "distal interphalangeal joint of digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0009768 ! distal interphalangeal joint
+intersection_of: UBERON:0009768 ! distal interphalangeal joint
+intersection_of: BFO:0000050 UBERON:0006052 ! digit 5
+relationship: BFO:0000050 UBERON:0006052 ! digit 5
 
 [Term]
 id: UBERON:0014686
@@ -51093,6 +52623,38 @@ intersection_of: BFO:0000050 UBERON:0002080 ! heart right ventricle
 relationship: BFO:0000050 UBERON:0002080 ! heart right ventricle
 
 [Term]
+id: UBERON:0014871
+name: distal epiphysis of distal phalanx of pedal digit 1
+def: "A distal epiphysis that is part of a distal phalanx of pedal digit 1." [OBOL:automatic]
+synonym: "distal end of distal phalanx of big toe" EXACT [FMA:33036]
+synonym: "distal epiphysis of distal phalanx of big toe" EXACT [FMA:33036]
+synonym: "distal epiphysis of distal phalanx of pedal digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "head of distal phalanx of big toe" EXACT [FMA:33036]
+synonym: "head of distal phalanx of first digit of foot" EXACT [FMA:33036]
+synonym: "head of distal phalanx of great toe" EXACT [FMA:33036]
+synonym: "ungual tuberosity of distal phalanx of big toe" RELATED [FMA:33036]
+is_a: UBERON:0014876 ! distal epiphysis of distal phalanx of pedal digit
+intersection_of: UBERON:0004379 ! distal epiphysis
+intersection_of: BFO:0000050 UBERON:0004315 ! distal phalanx of pedal digit 1
+relationship: BFO:0000050 UBERON:0004315 ! distal phalanx of pedal digit 1
+
+[Term]
+id: UBERON:0014875
+name: distal epiphysis of distal phalanx of pedal digit 5
+def: "A distal epiphysis that is part of a distal phalanx of pedal digit 5." [OBOL:automatic]
+synonym: "distal end of distal phalanx of little toe" EXACT [FMA:33106]
+synonym: "distal epiphysis of distal phalanx of little toe" EXACT [FMA:33106]
+synonym: "distal epiphysis of distal phalanx of pedal digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "head of distal phalanx of fifth digit of foot" EXACT [FMA:33106]
+synonym: "head of distal phalanx of fifth toe" EXACT [FMA:33106]
+synonym: "head of distal phalanx of little toe" EXACT [FMA:33106]
+synonym: "ungual tuberosity of distal phalanx of fifth toe" RELATED [FMA:33106]
+is_a: UBERON:0014876 ! distal epiphysis of distal phalanx of pedal digit
+intersection_of: UBERON:0004379 ! distal epiphysis
+intersection_of: BFO:0000050 UBERON:0004319 ! distal phalanx of pedal digit 5
+relationship: BFO:0000050 UBERON:0004319 ! distal phalanx of pedal digit 5
+
+[Term]
 id: UBERON:0014876
 name: distal epiphysis of distal phalanx of pedal digit
 synonym: "distal end of distal phalanx of toe" EXACT []
@@ -51104,6 +52666,38 @@ is_a: UBERON:0013122 ! distal epiphysis of phalanx of pes
 is_a: UBERON:0014887 ! distal epiphysis of distal phalanx of digit
 intersection_of: UBERON:0004379 ! distal epiphysis
 intersection_of: BFO:0000050 UBERON:0003867 ! distal phalanx of pes
+
+[Term]
+id: UBERON:0014881
+name: distal epiphysis of distal phalanx of manual digit 1
+def: "A distal epiphysis that is part of a distal phalanx of manual digit 1." [OBOL:automatic]
+synonym: "distal end of phalanx of right thumb" EXACT [FMA:37609]
+synonym: "distal epiphysis of distal phalanx of manual digit I" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "distal epiphysis of distal phalanx of thumb" EXACT [FMA:37609]
+synonym: "head of distal phalanx of first digit of hand" EXACT [FMA:37609]
+synonym: "head of distal phalanx of thumb" EXACT [FMA:37609]
+synonym: "ungual tuberosity of distal phalanx of thumb" RELATED [FMA:37609]
+is_a: UBERON:0014886 ! distal epiphysis of distal phalanx of manual digit
+intersection_of: UBERON:0004379 ! distal epiphysis
+intersection_of: BFO:0000050 UBERON:0004337 ! distal phalanx of manual digit 1
+relationship: BFO:0000050 UBERON:0004337 ! distal phalanx of manual digit 1
+
+[Term]
+id: UBERON:0014885
+name: distal epiphysis of distal phalanx of manual digit 5
+def: "A distal epiphysis that is part of a distal phalanx of manual digit 5." [OBOL:automatic]
+synonym: "distal end of distal phalanx of fifth finger" EXACT [FMA:37657]
+synonym: "distal end of distal phalanx of little finger" EXACT [FMA:37657]
+synonym: "distal epiphysis of distal phalanx of little finger" EXACT [FMA:37657]
+synonym: "distal epiphysis of distal phalanx of manual digit V" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+synonym: "head of distal phalanx of fifth digit of hand" EXACT [FMA:37657]
+synonym: "head of distal phalanx of fifth finger" EXACT [FMA:37657]
+synonym: "head of distal phalanx of little finger" EXACT [FMA:37657]
+synonym: "ungual tuberosity of distal phalanx of little finger" RELATED [FMA:37657]
+is_a: UBERON:0014886 ! distal epiphysis of distal phalanx of manual digit
+intersection_of: UBERON:0004379 ! distal epiphysis
+intersection_of: BFO:0000050 UBERON:0004314 ! distal phalanx of manual digit 5
+relationship: BFO:0000050 UBERON:0004314 ! distal phalanx of manual digit 5
 
 [Term]
 id: UBERON:0014886
@@ -51396,6 +52990,38 @@ relationship: BFO:0000050 UBERON:0010688 ! skeleton of manual acropodium
 relationship: BFO:0000050 UBERON:5102389 ! manual digit digitopodial skeleton
 
 [Term]
+id: UBERON:0015025
+name: manual digit 1 phalanx endochondral element
+def: "A manual digit 1 phalanx bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 1 phalanx element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 1 phalanx skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit I phalanx endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015024 ! manual digit phalanx endochondral element
+intersection_of: UBERON:0015023 ! phalanx endochondral element
+intersection_of: BFO:0000050 UBERON:0001463 ! manual digit 1
+union_of: UBERON:0003620 ! manual digit 1 phalanx
+union_of: UBERON:0010575 ! manual digit 1 phalanx pre-cartilage condensation
+union_of: UBERON:0010675 ! manual digit 1 phalanx cartilage element
+relationship: BFO:0000050 UBERON:0001463 ! manual digit 1
+relationship: BFO:0000050 UBERON:5101463 ! manual digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:0015029
+name: manual digit 5 phalanx endochondral element
+def: "A manual digit 5 phalanx bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 5 phalanx element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 5 phalanx skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit V phalanx endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015024 ! manual digit phalanx endochondral element
+intersection_of: UBERON:0015023 ! phalanx endochondral element
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
+union_of: UBERON:0003639 ! manual digit 5 phalanx
+union_of: UBERON:0010579 ! manual digit 5 phalanx pre-cartilage condensation
+union_of: UBERON:0010679 ! manual digit 5 phalanx cartilage element
+relationship: BFO:0000050 UBERON:0003625 ! manual digit 5
+relationship: BFO:0000050 UBERON:5103625 ! manual digit 5 digitopodial skeleton
+
+[Term]
 id: UBERON:0015030
 name: pedal digit phalanx endochondral element
 def: "A pedal digit phalanx bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
@@ -51411,6 +53037,38 @@ union_of: UBERON:0010685 ! pedal digit phalanx cartilage element
 relationship: BFO:0000050 UBERON:0001466 ! pedal digit
 relationship: BFO:0000050 UBERON:0010696 ! skeleton of pedal acropodium
 relationship: BFO:0000050 UBERON:5101466 ! pedal digit digitopodial skeleton
+
+[Term]
+id: UBERON:0015031
+name: pedal digit 1 phalanx endochondral element
+def: "A pedal digit 1 phalanx bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 1 phalanx element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 1 phalanx skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit I phalanx endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015030 ! pedal digit phalanx endochondral element
+intersection_of: UBERON:0015023 ! phalanx endochondral element
+intersection_of: BFO:0000050 UBERON:0003631 ! pedal digit 1
+union_of: UBERON:0003640 ! pedal digit 1 phalanx
+union_of: UBERON:0010580 ! pedal digit 1 phalanx pre-cartilage condensation
+union_of: UBERON:0010680 ! pedal digit 1 phalanx cartilage element
+relationship: BFO:0000050 UBERON:0003631 ! pedal digit 1
+relationship: BFO:0000050 UBERON:5103631 ! pedal digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:0015035
+name: pedal digit 5 phalanx endochondral element
+def: "A pedal digit 5 phalanx bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 5 phalanx element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 5 phalanx skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit V phalanx endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015030 ! pedal digit phalanx endochondral element
+intersection_of: UBERON:0015023 ! phalanx endochondral element
+intersection_of: BFO:0000050 UBERON:0003635 ! pedal digit 5
+union_of: UBERON:0003863 ! pedal digit 5 phalanx
+union_of: UBERON:0010584 ! pedal digit 5 phalanx pre-cartilage condensation
+union_of: UBERON:0010684 ! pedal digit 5 phalanx cartilage element
+relationship: BFO:0000050 UBERON:0003635 ! pedal digit 5
+relationship: BFO:0000050 UBERON:5103635 ! pedal digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0015036
@@ -51429,6 +53087,36 @@ relationship: BFO:0000050 UBERON:0000983 ! metatarsus region
 relationship: BFO:0000050 UBERON:0012152 ! skeleton of pedal digitopodium
 
 [Term]
+id: UBERON:0015037
+name: pedal digit 1 metatarsal endochondral element
+def: "A pedal digit 1 metatarsal bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 1 metatarsal element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 1 metatarsal skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit I metatarsal endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015036 ! pedal digit metatarsal endochondral element
+intersection_of: UBERON:0015036 ! pedal digit metatarsal endochondral element
+intersection_of: BFO:0000050 UBERON:5103631 ! pedal digit 1 digitopodial skeleton
+union_of: UBERON:0003650 ! metatarsal bone of digit 1
+union_of: UBERON:0010547 ! pedal digit 1 metatarsal pre-cartilage condensation
+union_of: UBERON:0010557 ! pedal digit 1 metatarsal cartilage element
+relationship: BFO:0000050 UBERON:5103631 ! pedal digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:0015041
+name: pedal digit 5 metatarsal endochondral element
+def: "A pedal digit 5 metatarsal bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 5 metatarsal element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit 5 metatarsal skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "pedal digit V metatarsal endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015036 ! pedal digit metatarsal endochondral element
+intersection_of: UBERON:0015036 ! pedal digit metatarsal endochondral element
+intersection_of: BFO:0000050 UBERON:5103635 ! pedal digit 5 digitopodial skeleton
+union_of: UBERON:0003654 ! metatarsal bone of digit 5
+union_of: UBERON:0010551 ! pedal digit 5 metatarsal pre-cartilage condensation
+union_of: UBERON:0010561 ! pedal digit 5 metatarsal cartilage element
+relationship: BFO:0000050 UBERON:5103635 ! pedal digit 5 digitopodial skeleton
+
+[Term]
 id: UBERON:0015042
 name: manual digit metacarpus endochondral element
 def: "A manual digit metacarpus bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
@@ -51443,6 +53131,36 @@ union_of: UBERON:0010698 ! manual digit metacarpus pre-cartilage condensation
 union_of: UBERON:0010699 ! manual digit metacarpus cartilage element
 relationship: BFO:0000050 UBERON:0004453 ! metacarpus region
 relationship: BFO:0000050 UBERON:0012151 ! skeleton of manual digitopodium
+
+[Term]
+id: UBERON:0015043
+name: manual digit 1 metacarpus endochondral element
+def: "A manual digit 1 metacarpus bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 1 metacarpus element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 1 metacarpus skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit I metacarpus endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015042 ! manual digit metacarpus endochondral element
+intersection_of: UBERON:0015042 ! manual digit metacarpus endochondral element
+intersection_of: BFO:0000050 UBERON:5101463 ! manual digit 1 digitopodial skeleton
+union_of: UBERON:0003645 ! metacarpal bone of digit 1
+union_of: UBERON:0010565 ! manual digit 1 metacarpus pre-cartilage condensation
+union_of: UBERON:0010570 ! manual digit 1 metacarpus cartilage element
+relationship: BFO:0000050 UBERON:5101463 ! manual digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:0015047
+name: manual digit 5 metacarpus endochondral element
+def: "A manual digit 5 metacarpus bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 5 metacarpus element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit 5 metacarpus skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+synonym: "manual digit V metacarpus endochondral element" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:0015042 ! manual digit metacarpus endochondral element
+intersection_of: UBERON:0015042 ! manual digit metacarpus endochondral element
+intersection_of: BFO:0000050 UBERON:5103625 ! manual digit 5 digitopodial skeleton
+union_of: UBERON:0003649 ! metacarpal bone of digit 5
+union_of: UBERON:0010569 ! manual digit 5 metacarpus pre-cartilage condensation
+union_of: UBERON:0010574 ! manual digit 5 metacarpus cartilage element
+relationship: BFO:0000050 UBERON:5103625 ! manual digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0015049
@@ -52423,6 +54141,14 @@ is_a: UBERON:0000310 ! breast
 intersection_of: UBERON:0000310 ! breast
 intersection_of: BFO:0000050 UBERON:0003101 ! male organism
 relationship: BFO:0000050 UBERON:0003101 ! male organism
+
+[Term]
+id: UBERON:0016426
+name: proximal interphalangeal joint of little finger
+is_a: UBERON:0007732 ! interphalangeal joint of manual digit 5
+is_a: UBERON:0009767 ! proximal interphalangeal joint
+intersection_of: UBERON:0009767 ! proximal interphalangeal joint
+intersection_of: BFO:0000050 UBERON:0003625 ! manual digit 5
 
 [Term]
 id: UBERON:0016435
@@ -53719,6 +55445,41 @@ relationship: BFO:0000051 UBERON:0000966 ! retina
 relationship: BFO:0000051 UBERON:0001776 ! optic choroid
 
 [Term]
+id: UBERON:0019221
+name: digit 1 or 5
+def: "Either of the outermost digits in a five-digit autopod, or their phylogenetic equivalent." [UBERON:cjm]
+synonym: "lateral digit" RELATED HUMAN_PREFERRED []
+synonym: "outer digit" RELATED HUMAN_PREFERRED []
+synonym: "outermost digit" RELATED HUMAN_PREFERRED []
+is_a: UBERON:0002544 ! digit
+union_of: UBERON:0006048 ! digit 1
+union_of: UBERON:0006052 ! digit 5
+
+[Term]
+id: UBERON:0019231
+name: manual digit 1 or 5
+synonym: "lateral finger" RELATED HUMAN_PREFERRED []
+synonym: "lateral manual digit" RELATED HUMAN_PREFERRED []
+synonym: "outer manual digit" RELATED HUMAN_PREFERRED []
+synonym: "outermost manual digit" RELATED HUMAN_PREFERRED []
+is_a: UBERON:0002389 ! manual digit
+is_a: UBERON:0019221 ! digit 1 or 5
+union_of: UBERON:0001463 ! manual digit 1
+union_of: UBERON:0003625 ! manual digit 5
+
+[Term]
+id: UBERON:0019241
+name: pedal digit 1 or 5
+synonym: "lateral pedal digit" RELATED HUMAN_PREFERRED []
+synonym: "lateral toe" RELATED HUMAN_PREFERRED []
+synonym: "outer pedal digit" RELATED HUMAN_PREFERRED []
+synonym: "outermost pedal digit" RELATED HUMAN_PREFERRED []
+is_a: UBERON:0001466 ! pedal digit
+is_a: UBERON:0019221 ! digit 1 or 5
+union_of: UBERON:0003631 ! pedal digit 1
+union_of: UBERON:0003635 ! pedal digit 5
+
+[Term]
 id: UBERON:0019258
 name: white matter of hindbrain
 def: "A white matter that is part of the hindbrain." [OBOL:automatic]
@@ -54952,6 +56713,29 @@ relationship: RO:0002134 UBERON:0008338 ! plantar part of pes
 relationship: RO:0002380 UBERON:0001323 ! tibial nerve
 
 [Term]
+id: UBERON:0035110
+name: lateral plantar nerve
+def: "A plantar nerve that supplies the lateral side of the plantar part of the foot, including pedal digit 5." [http://en.wikipedia.org/wiki/Lateral_plantar_nerve, http://orcid.org/0000-0002-6601-2165]
+synonym: "external plantar nerve" EXACT [FMA:44724]
+synonym: "nervus plantaris lateralis" EXACT LATIN [http://en.wikipedia.org/wiki/Lateral_plantar_nerve]
+is_a: UBERON:0035109 ! plantar nerve
+intersection_of: UBERON:0035109 ! plantar nerve
+intersection_of: RO:0002134 UBERON:0003635 ! pedal digit 5
+disjoint_from: UBERON:0035111 {source="lexical"} ! medial plantar nerve
+relationship: RO:0002134 UBERON:0003635 ! pedal digit 5
+
+[Term]
+id: UBERON:0035111
+name: medial plantar nerve
+def: "A plantar nerve that supplies the medial side of the plantar part of the foot, including pedal digit 1." [http://en.wikipedia.org/wiki/Lateral_plantar_nerve, http://orcid.org/0000-0002-6601-2165]
+synonym: "internal plantar nerve" EXACT [FMA:44716]
+synonym: "nervus plantaris medialis" EXACT LATIN [http://en.wikipedia.org/wiki/Medial_plantar_nerve]
+is_a: UBERON:0035109 ! plantar nerve
+intersection_of: UBERON:0035109 ! plantar nerve
+intersection_of: RO:0002134 UBERON:0003631 ! pedal digit 1
+relationship: RO:0002134 UBERON:0003631 ! pedal digit 1
+
+[Term]
 id: UBERON:0035118
 name: material entity in digestive tract
 def: "Any material entity that is located in the digestive tract. This includes undigested food and liquid as well as unexcreted waste products. It also includes other entities such as ingested stones used to aid digestion. Any microbial cells or cell populations are also included." [https://github.com/EnvironmentOntology/envo/issues/110]
@@ -55924,6 +57708,20 @@ relationship: BFO:0000050 UBERON:0008947 ! respiratory primordium
 relationship: RO:0002202 UBERON:0004873 {source="EHDAA2"} ! splanchnopleure
 
 [Term]
+id: UBERON:0036074
+name: vein of vestibular aqueduct
+def: "A vein that leaves the vestibule through an individual bone canal running parallel to the vestibular aqueduct up to the dura of the posterior side of the petrosa in the area of the endolymphatic sac. It then opens in the inferior petrosal sinus or the jugular bulb. The vein receives other branches from the bone, dura and sac." [http://www.ncbi.nlm.nih.gov/pubmed/42339]
+synonym: "vena aqueductus vestibuli" EXACT LATIN [FMA:TA]
+synonym: "vestibular aqueduct vein" EXACT [FMA:52367]
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0003502 ! neck blood vessel
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0009141 ! craniocervical region vein
+relationship: RO:0002376 UBERON:0001641 {source="FMA"} ! transverse sinus
+relationship: RO:0002376 UBERON:0005475 {source="FMA"} ! sigmoid sinus
+relationship: RO:0002376 UBERON:0007160 {source="FMA"} ! inferior petrosal sinus
+
+[Term]
 id: UBERON:0036146
 name: cardiopharyngeal field
 def: "An region of the mesoderm that includes anterior lateral mesoderm of the first heart field plus contiguous pharyngeal mesoderm that gives rise to second-heart-field-derived regions of the heart and branchiomeric muscles." [BGEE:ann, http://www.nature.com/nature/journal/v520/n7548/full/nature14435.html#bx1]
@@ -56348,6 +58146,23 @@ intersection_of: BFO:0000050 UBERON:0001474 ! bone element
 relationship: BFO:0000050 UBERON:0001474 ! bone element
 
 [Term]
+id: UBERON:5001463
+name: manual digit 1 plus metapodial segment
+def: "A subdivision of the autopod consisting of manual digit 1 plus the region incorporating a single metapodial element. These segments are typically repeated along the pre-axiom to post-axial axis." [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 1" BROAD [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 1 ( phalanges plus metapodial) plus soft tissue" BROAD COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 1 digitopodial subdivision" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 1 ray" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit I plus metapodial segment" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5002389 ! manual digit plus metapodial segment
+is_a: UBERON:5006048 ! digit 1 plus metapodial segment
+intersection_of: UBERON:5006048 ! digit 1 plus metapodial segment
+intersection_of: BFO:0000050 UBERON:0002398 ! manus
+relationship: BFO:0000050 UBERON:0002398 ! manus
+relationship: BFO:0000051 UBERON:0001463 ! manual digit 1
+relationship: RO:0002551 UBERON:5101463 ! manual digit 1 digitopodial skeleton
+
+[Term]
 id: UBERON:5001466
 name: pedal digit plus metapodial segment
 def: "A subdivision of the autopod consisting of pedal digit plus the region incorporating a single metapodial element. These segments are typically repeated along the pre-axiom to post-axial axis." [http://orcid.org/0000-0002-6601-2165]
@@ -56393,6 +58208,98 @@ relationship: BFO:0000051 UBERON:0002544 ! digit
 relationship: RO:0002551 UBERON:5102544 ! individual digit of digitopodial skeleton
 
 [Term]
+id: UBERON:5003625
+name: manual digit 5 plus metapodial segment
+def: "A subdivision of the autopod consisting of manual digit 5 plus the region incorporating a single metapodial element. These segments are typically repeated along the pre-axiom to post-axial axis." [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 5" BROAD [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 5 ( phalanges plus metapodial) plus soft tissue" BROAD COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 5 digitopodial subdivision" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 5 ray" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit V plus metapodial segment" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5002389 ! manual digit plus metapodial segment
+is_a: UBERON:5006052 ! digit 5 plus metapodial segment
+intersection_of: UBERON:5006052 ! digit 5 plus metapodial segment
+intersection_of: BFO:0000050 UBERON:0002398 ! manus
+relationship: BFO:0000050 UBERON:0002398 ! manus
+relationship: BFO:0000051 UBERON:0003625 ! manual digit 5
+relationship: RO:0002551 UBERON:5103625 ! manual digit 5 digitopodial skeleton
+
+[Term]
+id: UBERON:5003631
+name: pedal digit 1 plus metapodial segment
+def: "A subdivision of the autopod consisting of pedal digit 1 plus the region incorporating a single metapodial element. These segments are typically repeated along the pre-axiom to post-axial axis." [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 1" BROAD [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 1 ( phalanges plus metapodial) plus soft tissue" BROAD COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 1 digitopodial subdivision" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 1 ray" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit I plus metapodial segment" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5001466 ! pedal digit plus metapodial segment
+is_a: UBERON:5006048 ! digit 1 plus metapodial segment
+intersection_of: UBERON:5006048 ! digit 1 plus metapodial segment
+intersection_of: BFO:0000050 UBERON:0002387 ! pes
+relationship: BFO:0000051 UBERON:0003631 ! pedal digit 1
+relationship: RO:0002551 UBERON:5103631 ! pedal digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:5003635
+name: pedal digit 5 plus metapodial segment
+def: "A subdivision of the autopod consisting of pedal digit 5 plus the region incorporating a single metapodial element. These segments are typically repeated along the pre-axiom to post-axial axis." [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 5" BROAD [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 5 ( phalanges plus metapodial) plus soft tissue" BROAD COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 5 digitopodial subdivision" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 5 ray" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit V plus metapodial segment" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5001466 ! pedal digit plus metapodial segment
+is_a: UBERON:5006052 ! digit 5 plus metapodial segment
+intersection_of: UBERON:5006052 ! digit 5 plus metapodial segment
+intersection_of: BFO:0000050 UBERON:0002387 ! pes
+relationship: BFO:0000051 UBERON:0003635 ! pedal digit 5
+relationship: RO:0002551 UBERON:5103635 ! pedal digit 5 digitopodial skeleton
+
+[Term]
+id: UBERON:5006048
+name: digit 1 plus metapodial segment
+def: "A subdivision of the autopod consisting of digit 1 plus the region incorporating a single metapodial element. These segments are typically repeated along the pre-axiom to post-axial axis." [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 1" BROAD [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 1 ( phalanges plus metapodial) plus soft tissue" BROAD COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 1 digitopodial subdivision" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 1 ray" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit I plus metapodial segment" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5002544 ! digit plus metapodial segment
+intersection_of: UBERON:5002544 ! digit plus metapodial segment
+intersection_of: RO:0002551 UBERON:5106048 ! digit 1 digitopodial skeleton
+relationship: BFO:0000051 UBERON:0006048 ! digit 1
+relationship: RO:0002551 UBERON:5106048 ! digit 1 digitopodial skeleton
+
+[Term]
+id: UBERON:5006052
+name: digit 5 plus metapodial segment
+def: "A subdivision of the autopod consisting of digit 5 plus the region incorporating a single metapodial element. These segments are typically repeated along the pre-axiom to post-axial axis." [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 5" BROAD [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 5 ( phalanges plus metapodial) plus soft tissue" BROAD COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 5 digitopodial subdivision" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 5 ray" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit V plus metapodial segment" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5002544 ! digit plus metapodial segment
+intersection_of: UBERON:5002544 ! digit plus metapodial segment
+intersection_of: RO:0002551 UBERON:5106052 ! digit 5 digitopodial skeleton
+relationship: BFO:0000051 UBERON:0006052 ! digit 5
+relationship: RO:0002551 UBERON:5106052 ! digit 5 digitopodial skeleton
+
+[Term]
+id: UBERON:5101463
+name: manual digit 1 digitopodial skeleton
+def: "A subdivision of the skeleton of the autopod consisting of the phalanges of manual digit 1 plus the associated metapodial element." [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 1" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 1 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit I digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+is_a: UBERON:5106048 ! digit 1 digitopodial skeleton
+intersection_of: UBERON:0010912 ! subdivision of skeleton
+intersection_of: RO:0002576 UBERON:5001463 ! manual digit 1 plus metapodial segment
+relationship: RO:0002576 UBERON:5001463 ! manual digit 1 plus metapodial segment
+
+[Term]
 id: UBERON:5101466
 name: pedal digit digitopodial skeleton
 def: "A subdivision of the skeleton of the autopod consisting of the phalanges of pedal digit plus the associated metapodial element." [http://orcid.org/0000-0002-6601-2165]
@@ -56426,6 +58333,69 @@ intersection_of: UBERON:0010912 ! subdivision of skeleton
 intersection_of: RO:0002576 UBERON:5002544 ! digit plus metapodial segment
 relationship: BFO:0000050 UBERON:0012150 ! skeleton of digitopodium
 relationship: RO:0002576 UBERON:5002544 ! digit plus metapodial segment
+
+[Term]
+id: UBERON:5103625
+name: manual digit 5 digitopodial skeleton
+def: "A subdivision of the skeleton of the autopod consisting of the phalanges of manual digit 5 plus the associated metapodial element." [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 5" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit 5 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
+synonym: "manual digit V digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+is_a: UBERON:5106052 ! digit 5 digitopodial skeleton
+intersection_of: UBERON:0010912 ! subdivision of skeleton
+intersection_of: RO:0002576 UBERON:5003625 ! manual digit 5 plus metapodial segment
+relationship: RO:0002576 UBERON:5003625 ! manual digit 5 plus metapodial segment
+
+[Term]
+id: UBERON:5103631
+name: pedal digit 1 digitopodial skeleton
+def: "A subdivision of the skeleton of the autopod consisting of the phalanges of pedal digit 1 plus the associated metapodial element." [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 1" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 1 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit I digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
+is_a: UBERON:5106048 ! digit 1 digitopodial skeleton
+intersection_of: UBERON:0010912 ! subdivision of skeleton
+intersection_of: RO:0002576 UBERON:5003631 ! pedal digit 1 plus metapodial segment
+relationship: RO:0002576 UBERON:5003631 ! pedal digit 1 plus metapodial segment
+
+[Term]
+id: UBERON:5103635
+name: pedal digit 5 digitopodial skeleton
+def: "A subdivision of the skeleton of the autopod consisting of the phalanges of pedal digit 5 plus the associated metapodial element." [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 5" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit 5 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
+synonym: "pedal digit V digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
+is_a: UBERON:5106052 ! digit 5 digitopodial skeleton
+intersection_of: UBERON:0010912 ! subdivision of skeleton
+intersection_of: RO:0002576 UBERON:5003635 ! pedal digit 5 plus metapodial segment
+relationship: RO:0002576 UBERON:5003635 ! pedal digit 5 plus metapodial segment
+
+[Term]
+id: UBERON:5106048
+name: digit 1 digitopodial skeleton
+def: "A subdivision of the skeleton of the autopod consisting of the phalanges of digit 1 plus the associated metapodial element." [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 1" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 1 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit I digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+intersection_of: UBERON:0010912 ! subdivision of skeleton
+intersection_of: RO:0002576 UBERON:5006048 ! digit 1 plus metapodial segment
+relationship: RO:0002576 UBERON:5006048 ! digit 1 plus metapodial segment
+
+[Term]
+id: UBERON:5106052
+name: digit 5 digitopodial skeleton
+def: "A subdivision of the skeleton of the autopod consisting of the phalanges of digit 5 plus the associated metapodial element." [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 5" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit 5 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
+synonym: "digit V digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
+is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+intersection_of: UBERON:0010912 ! subdivision of skeleton
+intersection_of: RO:0002576 UBERON:5006052 ! digit 5 plus metapodial segment
+relationship: RO:0002576 UBERON:5006052 ! digit 5 plus metapodial segment
 
 [Typedef]
 id: BFO:0000050

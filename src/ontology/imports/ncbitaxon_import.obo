@@ -811,6 +811,24 @@ is_a: NCBITaxon:260963 ! Avulavirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:11216
+name: Human respirovirus 3
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:11202
+synonym: "HPIV-3" BROAD genbank_acronym []
+synonym: "HPIV3" BROAD acronym []
+synonym: "Human parainfluenza 3 virus" RELATED synonym []
+synonym: "Human parainfluenza virus 3" RELATED synonym []
+synonym: "human parainfluenza virus 3 HPIV3" RELATED synonym []
+synonym: "Human parainfluenza virus type 3" RELATED synonym []
+synonym: "human parainfluenza virus type 3 PIV3" RELATED synonym []
+synonym: "Parainfluenza virus type 3" RELATED synonym []
+synonym: "parainfluenza virus type 3 PIV-3" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:186938 ! Respirovirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:11229
 name: Morbillivirus
 namespace: ncbi_taxonomy
@@ -2237,6 +2255,15 @@ is_a: NCBITaxon:1648037 ! Poodae
 property_value: has_rank NCBITaxon:tribe
 
 [Term]
+id: NCBITaxon:147537
+name: Saccharomycotina
+namespace: ncbi_taxonomy
+synonym: "true yeasts" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:716545 ! saccharomyceta
+property_value: has_rank NCBITaxon:subphylum
+
+[Term]
 id: NCBITaxon:147538
 name: Pezizomycotina
 namespace: ncbi_taxonomy
@@ -2441,6 +2468,22 @@ name: Deltaretrovirus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:327045 ! Orthoretrovirinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1535325
+name: Candida/Lodderomyces clade
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:766764 ! Debaryomycetaceae
+
+[Term]
+id: NCBITaxon:1535326
+name: Candida <Debaryomycetaceae>
+namespace: ncbi_taxonomy
+synonym: "Candida" EXACT scientific_name []
+xref: GC_ID:1
+is_a: NCBITaxon:1535325 ! Candida/Lodderomyces clade
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -2915,6 +2958,16 @@ is_a: NCBITaxon:11157 ! Mononegavirales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:1789
+name: Mycobacterium xenopi
+namespace: ncbi_taxonomy
+synonym: "Mycobacterium xenopei" RELATED synonym []
+synonym: "Mycobacterium xenopii" RELATED misspelling []
+xref: GC_ID:11
+is_a: NCBITaxon:1763 ! Mycobacterium
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1809
 name: Mycobacterium ulcerans
 namespace: ncbi_taxonomy
@@ -3122,6 +3175,14 @@ is_a: NCBITaxon:91061 ! Bacilli
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:186938
+name: Respirovirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:11158 ! Paramyxoviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:1870884
 name: Clostridioides
 namespace: ncbi_taxonomy
@@ -3130,6 +3191,10 @@ xref: PMID:27370902
 xref: PMID:27902176
 is_a: NCBITaxon:186804 ! Peptostreptococcaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1891762
+alt_id: NCBITaxon:10629
 
 [Term]
 id: NCBITaxon:1903411
@@ -3523,6 +3588,36 @@ xref: PMID:16403855
 xref: PMID:23575986
 is_a: NCBITaxon:28216 ! Betaproteobacteria
 property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:209
+name: Helicobacter
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:28203
+xref: GC_ID:11
+xref: PMID:11156001
+xref: PMID:15143020
+xref: PMID:1704793
+xref: PMID:17329766
+is_a: NCBITaxon:72293 ! Helicobacteraceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:210
+name: Helicobacter pylori
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:219
+synonym: "Campylobacter pylori" RELATED synonym []
+synonym: "Campylobacter pylori subsp. pylori" RELATED synonym []
+synonym: "Campylobacter pyloridis" RELATED synonym []
+synonym: "Helicobacter nemestrinae" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11931154
+xref: PMID:1995031
+xref: PMID:8186097
+xref: PMID:8494747
+is_a: NCBITaxon:209 ! Helicobacter
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:213849
@@ -4471,32 +4566,10 @@ is_a: NCBITaxon:6942 ! Amblyomma
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:34608
-name: Amblyomma hebraeum
-namespace: ncbi_taxonomy
-synonym: "African tick bite fever vector" EXACT common_name []
-synonym: "Amblyomma herbraeum" RELATED misspelling []
-synonym: "bont tick" EXACT genbank_common_name []
-synonym: "English bont tick" EXACT common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:6942 ! Amblyomma
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:34609
 name: Amblyomma maculatum
 namespace: ncbi_taxonomy
 synonym: "Gulf Coast tick" EXACT genbank_common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:6942 ! Amblyomma
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:34610
-name: Amblyomma variegatum
-namespace: ncbi_taxonomy
-synonym: "Amblyomma (Theileriella) variegatum" RELATED synonym []
-synonym: "tropical bont tick" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:6942 ! Amblyomma
 property_value: has_rank NCBITaxon:species
@@ -4717,6 +4790,10 @@ xref: GC_ID:1
 xref: PMID:20380562
 is_a: NCBITaxon:418103 ! Plasmodium (Plasmodium)
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:36362
+alt_id: NCBITaxon:10624
 
 [Term]
 id: NCBITaxon:36596
@@ -5945,6 +6022,25 @@ xref: GC_ID:1
 xref: PMID:17572334
 is_a: NCBITaxon:451864 ! Dikarya
 property_value: has_rank NCBITaxon:phylum
+
+[Term]
+id: NCBITaxon:4891
+name: Saccharomycetes
+namespace: ncbi_taxonomy
+synonym: "Hemiascomycetes" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:147537 ! Saccharomycotina
+property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:4892
+name: Saccharomycetales
+namespace: ncbi_taxonomy
+synonym: "budding yeasts" EXACT genbank_common_name []
+synonym: "Endomycetales" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:4891 ! Saccharomycetes
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:49202
@@ -7829,6 +7925,16 @@ is_a: NCBITaxon:1236 ! Gammaproteobacteria
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:72293
+name: Helicobacteraceae
+namespace: ncbi_taxonomy
+synonym: "Helicobacter group" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:16403855
+is_a: NCBITaxon:213849 ! Campylobacterales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:72294
 name: Campylobacteraceae
 namespace: ncbi_taxonomy
@@ -7987,6 +8093,14 @@ is_a: NCBITaxon:28211 ! Alphaproteobacteria
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:766764
+name: Debaryomycetaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:4892 ! Saccharomycetales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:768
 name: Anaplasma
 namespace: ncbi_taxonomy
@@ -8112,6 +8226,23 @@ synonym: "Gnathostomata" EXACT scientific_name []
 synonym: "jawed vertebrates" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:7742 ! Vertebrata <Metazoa>
+
+[Term]
+id: NCBITaxon:779
+name: Ehrlichia ruminantium
+namespace: ncbi_taxonomy
+synonym: "Cowdria ruminantium" RELATED synonym []
+synonym: "heartwater rickettsia" EXACT genbank_common_name []
+synonym: "Kurlovia ruminantium" RELATED synonym []
+synonym: "Nicollea ruminantium" RELATED synonym []
+synonym: "Rickettsia ruminantium" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11414267
+xref: PMID:11760958
+xref: PMID:1380292
+xref: PMID:1581187
+is_a: NCBITaxon:106178 ! canis group
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:780
