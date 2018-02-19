@@ -28,6 +28,7 @@ all_mondo_lx_tsv: $(patsubst %,lx-mondo-%.tsv,$(PATTERNS))
 all_mondo_lx: $(patsubst %,lx-mondo-%.owl,$(PATTERNS))
 all_mondo_ld: $(patsubst %,ld-mondo-%.owl,$(PATTERNS))
 all_mondo_ld_csv: $(patsubst %,%.csv,$(PATTERNS))
+all_mondo_ld_obo: $(patsubst %,ld-mondo-%.obo,$(PATTERNS))
 
 all_yaml: $(patsubst %,%.yaml,$(PATTERNS))
 
