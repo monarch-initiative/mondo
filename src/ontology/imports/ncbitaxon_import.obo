@@ -4165,6 +4165,15 @@ xref: GC_ID:1
 is_a: NCBITaxon:138948 ! Enterovirus A
 
 [Term]
+id: NCBITaxon:317865
+name: Rickettsia conorii subsp. indica
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
+
+[Term]
 id: NCBITaxon:3193
 name: Embryophyta
 namespace: ncbi_taxonomy
@@ -4388,6 +4397,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:555407 ! Centramoebida
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:33682
+name: Euglenozoa
+namespace: ncbi_taxonomy
+synonym: "Euglenozoans" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
 id: NCBITaxon:33743
@@ -5805,6 +5822,17 @@ is_a: NCBITaxon:134362 ! Capnodiales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:45258
+name: Rickettsia conorii subsp. israelensis
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:317864
+synonym: "Israeli tick typhus rickettsia" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
+
+[Term]
 id: NCBITaxon:455381
 name: Capillariidae
 namespace: ncbi_taxonomy
@@ -5895,6 +5923,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:44281 ! Pneumocystidaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:47570
+name: Schizotrypanum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5690 ! Trypanosoma
+property_value: has_rank NCBITaxon:subgenus
 
 [Term]
 id: NCBITaxon:476427
@@ -6586,11 +6622,31 @@ is_a: NCBITaxon:773 ! Bartonella
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:5653
+name: Kinetoplastida
+namespace: ncbi_taxonomy
+synonym: "Kinetoplastea" RELATED synonym []
+synonym: "kinetoplastids" RELATED blast_name []
+synonym: "kinetoplasts" EXACT genbank_common_name []
+synonym: "Protomonadida" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:33682 ! Euglenozoa
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:565302
 name: Human adenovirus B1
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:108098 ! Human mastadenovirus B
+
+[Term]
+id: NCBITaxon:5654
+name: Trypanosomatidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5653 ! Kinetoplastida
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:565995
@@ -6601,6 +6657,22 @@ synonym: "Bundibugyo virus" RELATED synonym []
 synonym: "Ebolavirus bundibugyo" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:186536 ! Ebolavirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5690
+name: Trypanosoma
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5654 ! Trypanosomatidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5693
+name: Trypanosoma cruzi
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:47570 ! Schizotrypanum
 property_value: has_rank NCBITaxon:species
 
 [Term]

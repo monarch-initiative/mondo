@@ -4,6 +4,7 @@
 # these can be overwritten on the command line
 
 OBO=http://purl.obolibrary.org/obo
+OIO=http://www.geneontology.org/formats/oboInOwl\#
 ONT=mondo
 BASE=$(OBO)/$(ONT)
 SRC=$(ONT)-edit.obo
@@ -314,16 +315,93 @@ mirror/ncit-disease.obo: mirror/ncit-disease.owl
 mirror/rdo.obo:
 	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@
 
+mirror/ordo_orphanet.owl.zip:
+	wget -nd -P mirror http://www.orphadata.org/data/ORDO/$@
+
+mirror/ordo_orphanet.owl: mirror/ordo_orphanet.owl.zip
+	unzip  mirror/ordo_orphanet.owl.zip -d mirror
+	touch $@
+
+# ~~~~~~~~
+# ORDO
+# ~~~~~~~~
+EFO=http://www.ebi.ac.uk/efo
+
+
+# STEP 1: DOWNLOAD
+mirror/obo_orphanet_1.owl: mirror/ordo_orphanet.owl
+	owltools $< --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
+           --rename-entity $(EFO)/alternative_term $(OIO)hasExactSynonym\
+           --rename-entity $(OBO)/ECO_0000218\
+           $(OIO)source -o $@.tmp && mv $@.tmp $@
+
+# STEP 2: Fix XREFs
+mirror/obo_orphanet_2.owl: mirror/obo_orphanet_1.owl
+	perl -npe 's@MeSH:@MESH:@;s@ICD-10:@ICD10:@;' $< >  $@.tmp && mv $@.tmp $@
+
+# STEP 2b: Create is-a from part-of
+mirror/obo_orphanet_sc.owl: mirror/obo_orphanet_2.owl
+	robot query --format ttl -c ../sparql/construct-subclass-from-part-of.sparql $@ -i $<
+
+# STEP 2c: Create subsets based on subClass to sub-root level
+mirror/obo_orphanet_subsets.owl: mirror/obo_orphanet_2.owl
+	robot query --format ttl -c ../sparql/construct-ordo-subsets.sparql $@ -i $<
+
+# STEP 3: merge 2b and 2c in to 2
+mirror/obo_orphanet_3.owl: mirror/obo_orphanet_2.owl mirror/obo_orphanet_sc.owl mirror/obo_orphanet_subsets.owl
+	owltools $^ --merge-support-ontologies -o $@
+
+# STEP 3b: make an .obo file
+mirror/obo_orphanet_3.obo: mirror/obo_orphanet_3.owl
+	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+
+# STEP 4: Remove part-ofs (see 2b, we have these as subClassOf now)
+mirror/obo_orphanet_4.obo: mirror/obo_orphanet_3.obo
+	grep -v '^relationship: BFO:0000050' $< > $@
+
+mirror/obo_orphanet.obo: mirror/obo_orphanet_4.obo
+	cp $< $@
+mirror/obo_orphanet.owl: mirror/obo_orphanet.obo
+	owltools $< -o $@.tmp && perl -npe 's@http://purl.obolibrary.org/obo/Orphanet_@http://www.orpha.net/ORDO/Orphanet_@g' $@.tmp > $@
+
+# ----------------------------------------
+# Indirect inferences
+# ----------------------------------------
+imports/indirect.owl: mondo-edit.obo
+	robot reason -r elk -i $< query  --format ttl  -c ../sparql/construct-indirect-subclass-of.sparql $@
+imports/tag-indirect.owl: mondo-edit.obo
+	robot reason -r elk -i $< query  --format ttl  -c ../sparql/construct-tag-indirect-subclass-of.sparql $@
+
+
 # ----------------------------------------
 # Rewritten ext axioms
 # ----------------------------------------
 
-imports/axioms-%-nd.owl:
-	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+# Generates synonym from labels
+imports/lsyns-%.owl: mirror/%.owl
+	robot query -i $<  --format ttl -c ../sparql/construct-related-synonym-from-label.sparql $@
+
+# Merges in the syns generated as above step
+imports/%-plus-lsyns.owl: mirror/%.owl imports/lsyns-%.owl
+	owltools $^ --merge-support-ontologies -o $@
+
+# logical merge, no duplicate axioms
+imports/axioms-%-nd.owl: imports/%-plus-lsyns.owl
+	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: imports/axioms-%.owl
 
-imports/axioms-%-all.owl:
-	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+# bring in strictly new literals in annotation axioms
+imports/ann-axioms-%-new.owl: imports/%-plus-lsyns.owl
+	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+.PRECIOUS: imports/axioms-%.owl
+
+imports/ann-axioms-ncit-disease-new.owl: mirror/ncit-disease.owl
+	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+.PRECIOUS: imports/axioms-%.owl
+
+# all axioms
+imports/axioms-%-all.owl: imports/%-plus-lsyns.owl
+	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: imports/axioms-%.owl
 
 imports/axioms-%.owl:
@@ -332,6 +410,8 @@ imports/axioms-%.owl:
 
 
 imports/axioms-%.obo: imports/axioms-%.owl
+	owltools $< -o -f obo --no-check $@
+imports/ann-axioms-%.obo: imports/ann-axioms-%.owl
 	owltools $< -o -f obo --no-check $@
 
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
@@ -378,12 +458,6 @@ ptable-%.tsv: %-mappings.tsv
 unlikely.md: linked-rpt.md
 	./unlikely-axiom-report.pl $< | head -200 > $@
 
-phenotype_annotation.tab:
-	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@
-
-d2p.tsv: phenotype_annotation.tab
-	../utils/phenotab2tbl.pl $< > $@
-
 
 modules/equiv-xrefs.obo: mondo-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
@@ -393,6 +467,15 @@ mim2gene_medgen:
 
 omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
+
+# ----------------------------------------
+# Anns
+# ----------------------------------------
+phenotype_annotation.tab:
+	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@
+
+d2p.tsv: phenotype_annotation.tab
+	../utils/phenotab2tbl.pl $< > $@
 
 # ----------------------------------------
 # Hacky
