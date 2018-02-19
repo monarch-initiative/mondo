@@ -37,8 +37,9 @@ prepare_release: all
 
 all_includes: $(INCLUDES_OWL)
 
+OSF_UPLOAD = $(HOME)/repos/osf-cli/venv/bin/osf -p 2qk53 upload
 osf_upload:
-	cd ../.. && $(HOME)/repos/osf-cli/venv/bin/osf -p 2qk53 upload -f -r target/ current/
+	cd ../.. && $(OSF_UPLOAD) -f -r target/ current/ && $(OSF_UPLOAD) -f -r target/ releases/$(ISODATE)
 
 # ----------------------------------------
 # Main release targets

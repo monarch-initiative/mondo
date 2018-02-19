@@ -6226,6 +6226,106 @@ relationship: RO:0002433 UBERON:0002113 ! kidney
 relationship: RO:0002495 UBERON:0010532 {source="Bgee:AN"} ! primitive nephron
 
 [Term]
+id: UBERON:0001287
+name: proximal convoluted tubule
+def: "The proximal convoluted tubule is the most proximal portion of the proximal tubule and extends from the glomerular capsule to the proximal straight tubule." [GO:0072019]
+synonym: "1st convoluted tubule" RELATED []
+synonym: "first convoluted tubule" RELATED []
+synonym: "kidney proximal convoluted tubule" RELATED [EMAPA:28287]
+synonym: "PCT" RELATED []
+synonym: "proximal convoluted renal tubule" EXACT []
+synonym: "renal proximal convoluted tubule" RELATED [http://orcid.org/0000-0002-6601-2165]
+synonym: "tubulus contortus proximalis" EXACT []
+synonym: "tubulus contortus proximalis" RELATED LATIN [http://en.wikipedia.org/wiki/Proximal_convoluted_tubule]
+synonym: "tubulus convolutus proximalis" RELATED LATIN []
+is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
+is_a: UBERON:0006853 ! renal cortex tubule
+is_a: UBERON:0012275 ! meso-epithelium
+relationship: BFO:0000050 UBERON:0001225 {notes="checkme"} ! cortex of kidney
+relationship: BFO:0000050 UBERON:0004134 {notes="MA uses subclass", source="GOC:mtg_kidney_jan10"} ! proximal tubule
+relationship: RO:0002150 UBERON:0001230 {source="GO"} ! glomerular capsule
+relationship: RO:0002150 UBERON:0001290 ! proximal straight tubule
+relationship: RO:0002202 UBERON:0003220 {source="Wikipedia"} ! metanephric mesenchyme
+relationship: RO:0002433 UBERON:0001231 ! nephron tubule
+
+[Term]
+id: UBERON:0001288
+name: loop of Henle
+def: "the section of the renal tubule in the kidney medulla with a hairpin bend; consists of a descending limb and an ascending limb, and is situated between the proximal convoluted tubule to the distal convoluted tubule; it functions to reabsorb water and ions from the urine" [MGI:csmith, MP:0004755]
+synonym: "ansa nephroni" EXACT LATIN [http://en.wikipedia.org/wiki/Loop_of_Henle]
+synonym: "Henle loop" EXACT []
+synonym: "Henle's loop" EXACT []
+is_a: UBERON:0007685 ! region of nephron tubule
+intersection_of: UBERON:0007685 ! region of nephron tubule
+intersection_of: RO:0002150 UBERON:0001287 ! proximal convoluted tubule
+intersection_of: RO:0002150 UBERON:0001292 ! distal convoluted tubule
+relationship: RO:0002150 UBERON:0001287 ! proximal convoluted tubule
+relationship: RO:0002150 UBERON:0001292 ! distal convoluted tubule
+relationship: RO:0002433 UBERON:0001231 ! nephron tubule
+
+[Term]
+id: UBERON:0001289
+name: descending limb of loop of Henle
+def: "the portion of the renal tubule that constitutes the proximal part of the loop of Henle, has low permeability to ions and urea, and is highly permeable to water; it consists of an initial short thick segment lined by low simple cuboidal epithelium and a long thin segment lined by simple squamous epithelium; however, this distinction is not as important physiologically as in the ascending limb, so often the two are treated as one structure" [MGI:anna, MP:0011341]
+synonym: "descending limb" BROAD []
+synonym: "descending limb of Henle's loop" EXACT []
+synonym: "loop of Henle descending limb" EXACT []
+is_a: UBERON:0007685 {source="FMA"} ! region of nephron tubule
+relationship: BFO:0000050 UBERON:0001288 {source="FMA"} ! loop of Henle
+relationship: RO:0002433 UBERON:0001288 ! loop of Henle
+
+[Term]
+id: UBERON:0001290
+name: proximal straight tubule
+def: "The proximal straight tubule is the part of the descending limb that extends from the proximal convoluted tubule to the descending thin tubule." [GO:0072020]
+synonym: "pars recta" RELATED []
+synonym: "pars recta tubuli renalis" RELATED [BTO:0000055]
+synonym: "proximal tubule segment 3" RELATED [MA:0002614]
+synonym: "S3" EXACT [GO:0072020]
+synonym: "segment 3 of proximal tubule" RELATED [EMAPA:29661]
+synonym: "thick descending limb of proximal tubule" EXACT []
+synonym: "tubulus rectus proximalis" EXACT []
+is_a: UBERON:0006853 ! renal cortex tubule
+is_a: UBERON:0009035 {source="MA"} ! renal straight tubule
+relationship: BFO:0000050 UBERON:0001289 {source="MA"} ! descending limb of loop of Henle
+relationship: BFO:0000050 UBERON:0004134 {notes="MA uses subclass", source="GOC:mtg_kidney_jan10"} ! proximal tubule
+relationship: BFO:0000050 UBERON:0006542 {source="MA"} ! outer medulla outer stripe loop of Henle
+relationship: RO:0002150 UBERON:0001287 ! proximal convoluted tubule
+relationship: RO:0002150 UBERON:0005096 ! descending thin limb
+
+[Term]
+id: UBERON:0001292
+name: distal convoluted tubule
+def: "The first segment of the nephron lying just downstream from the loop of Henle, immediately after the macula densa." [GO:0072025]
+synonym: "distal convoluted renal tubule" EXACT []
+synonym: "second convoluted tubule" RELATED []
+synonym: "tubulus contortus distalis" EXACT []
+synonym: "tubulus contortus distalis" RELATED LATIN [http://en.wikipedia.org/wiki/Distal_convoluted_tubule]
+synonym: "tubulus convolutus distalis" RELATED LATIN []
+is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
+is_a: UBERON:0006853 ! renal cortex tubule
+is_a: UBERON:0012275 ! meso-epithelium
+relationship: BFO:0000050 UBERON:0004135 {source="EMAPA", source="GO", source="MA-modified-from-isa"} ! distal tubule
+relationship: RO:0002202 UBERON:0003220 ! metanephric mesenchyme
+relationship: RO:0002433 UBERON:0001231 ! nephron tubule
+
+[Term]
+id: UBERON:0001293
+name: outer medulla of kidney
+def: "The renal outer medulla is the region of the kidney that lies between the renal cortex and the renal inner medulla[GO]." [GOC:mtg_kidney_jan10, http://dx.doi.org/10.1371/journal.pone.0099864]
+synonym: "kidney outer medulla" RELATED [BTO:0001746]
+synonym: "outer renal medulla" EXACT []
+synonym: "outer zone of medulla of kidney" EXACT []
+synonym: "outer zone of renal medulla" EXACT []
+synonym: "renal outer medulla" EXACT [BTO:0001746]
+synonym: "set of outer region of renal pyramids" RELATED [FMA:17733]
+synonym: "zona externa (medullaris renalis)" EXACT LATIN [FMA:17733, FMA:TA]
+synonym: "zona externa medullae renalis" EXACT LATIN [FMA:17733, FMA:TA]
+is_a: UBERON:0000064 ! organ part
+relationship: BFO:0000050 UBERON:0000362 ! renal medulla
+relationship: RO:0002433 UBERON:0000362 ! renal medulla
+
+[Term]
 id: UBERON:0001295
 name: endometrium
 def: "the glandular mucous membrane lining of the uterine cavity that is hormonally responsive during the estrous/menstrual cycle and during pregnancy" [MESH:A05.360.319.679.490, MGI:smb, MP:0004896]
@@ -24822,6 +24922,36 @@ is_a: UBERON:0009662 ! hindbrain nucleus
 relationship: BFO:0000050 UBERON:0000988 ! pons
 
 [Term]
+id: UBERON:0004134
+name: proximal tubule
+def: "In mammals, the proximal tubule is a nephron tubule that connects Bowman's capsule to the loop of Henle. It has a brush border epithelial morphology[GO]." [GO:0072014]
+synonym: "kidney proximal tubule" EXACT [MA:0002611]
+synonym: "proximal kidney tubule" EXACT [MESH:A05.810.453.736.560.570]
+synonym: "renal proximal tubule" EXACT []
+is_a: UBERON:0006853 ! renal cortex tubule
+relationship: BFO:0000050 UBERON:0001225 {notes="checkme"} ! cortex of kidney
+relationship: BFO:0000050 UBERON:0001231 {source="multiple"} ! nephron tubule
+relationship: RO:0002150 UBERON:0001230 {source="GO"} ! glomerular capsule
+relationship: RO:0002150 UBERON:0001289 {source="GO"} ! descending limb of loop of Henle
+
+[Term]
+id: UBERON:0004135
+name: distal tubule
+def: "The distal tubule is a nephron tubule that consists of the distal convoluted tubule and distal straight tubule segments" [GO:0072017]
+synonym: "kidney distal tubule" EXACT [MA:0002633]
+synonym: "renal distal tubule" EXACT []
+is_a: UBERON:0007685 ! region of nephron tubule
+
+[Term]
+id: UBERON:0004136
+name: intermediate tubule
+def: "The intermediate tubule is a nephron tubule that lies between the proximal and distal tubules" [GO:0072018]
+synonym: "renal intermediate tubule" EXACT []
+synonym: "tubulus attenuatus" EXACT [FMA:17718]
+is_a: UBERON:0007685 ! region of nephron tubule
+relationship: BFO:0000050 UBERON:0001288 {source="FMA"} ! loop of Henle
+
+[Term]
 id: UBERON:0004139
 name: cardiogenic plate
 def: "The first recognizable structure derived from the heart field" [GO:0003142]
@@ -25136,6 +25266,20 @@ relationship: BFO:0000050 UBERON:0000362 ! renal medulla
 relationship: RO:0002433 UBERON:0000362 ! renal medulla
 
 [Term]
+id: UBERON:0004202
+name: kidney outer medulla outer stripe
+def: "The outer stripe is the region of the kidney that lies distal to the line of termination of the straight renal tubules" [GO:0072058]
+synonym: "outer medulla outer stripe" EXACT [MA:0002629]
+synonym: "outer stripe" EXACT [GO:0072058]
+synonym: "outer stripe of medulla of kidney" EXACT [FMA:76662]
+synonym: "outer stripe of outer medulla" EXACT [EMAPA:29663]
+synonym: "outer stripe of renal medulla" EXACT [FMA:76662]
+synonym: "stria externa medullae renalis" EXACT LATIN [FMA:76662, FMA:TA]
+is_a: UBERON:0010000 ! multicellular anatomical structure
+relationship: BFO:0000050 UBERON:0001293 ! outer medulla of kidney
+relationship: RO:0002433 UBERON:0001293 ! outer medulla of kidney
+
+[Term]
 id: UBERON:0004203
 name: cortical collecting duct
 def: "The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
@@ -25147,6 +25291,17 @@ intersection_of: BFO:0000050 UBERON:0001225 ! cortex of kidney
 intersection_of: BFO:0000050 UBERON:0001232 ! collecting duct of renal tubule
 relationship: BFO:0000050 UBERON:0001225 ! cortex of kidney
 relationship: BFO:0000050 UBERON:0001232 ! collecting duct of renal tubule
+
+[Term]
+id: UBERON:0004204
+name: outer medullary collecting duct
+def: "The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla" [GO:0072060]
+synonym: "kidney outer medulla collecting duct" EXACT [MA:0002599]
+synonym: "outer renal medulla collecting duct" EXACT [MA:0002599]
+is_a: UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: BFO:0000050 UBERON:0001293 ! outer medulla of kidney
+relationship: BFO:0000050 UBERON:0001293 ! outer medulla of kidney
 
 [Term]
 id: UBERON:0004208
@@ -32762,6 +32917,23 @@ is_a: UBERON:0002050 ! embryonic structure
 relationship: RO:0002202 UBERON:0007687 {source="GO"} ! kidney field
 
 [Term]
+id: UBERON:0005096
+name: descending thin limb
+def: "The descending thin limb is a part of the loop of Henle situated just after the proximal straight tubule (S3). It extends to the tip of the loop of Henle[GO]." [GO:0072022, http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "descending limb of Henle's loop" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "descending limb of loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "descending thin limb of loop of Henle" EXACT []
+synonym: "loop of Henle descending thin limb" EXACT []
+synonym: "loop of Henle thin descending limb" EXACT [MA:0002625]
+synonym: "pars descendens (tubulus attenuatus)" EXACT [FMA:17719]
+synonym: "thin descending limb" EXACT []
+synonym: "thin descending limb of loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "thin descending limb of the loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "thin descending loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+is_a: UBERON:0000064 ! organ part
+relationship: BFO:0000050 UBERON:0004136 ! intermediate tubule
+
+[Term]
 id: UBERON:0005103
 name: mesonephric epithelium
 def: "An epithelium that is part of a mesonephros [Automatically generated definition]." [OBOL:automatic]
@@ -32840,6 +33012,71 @@ intersection_of: UBERON:0004203 ! cortical collecting duct
 intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
 relationship: BFO:0000050 UBERON:0004737 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric collecting duct
 relationship: BFO:0000050 UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
+
+[Term]
+id: UBERON:0005116
+name: metanephric descending thin limb
+def: "It extends to the tip of the metanephric loop of Henle[GO]." [GO:0072220]
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005096 ! descending thin limb
+intersection_of: UBERON:0005096 ! descending thin limb
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0005130 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric loop of Henle
+
+[Term]
+id: UBERON:0005117
+name: metanephric distal convoluted tubule
+def: "The metanephric distal convoluted tubule is a portion of the metanephric nephron tubule that connects the metanephric loop of Henle to the collecting duct[GO]." [GO:0072221]
+is_a: UBERON:0001292 ! distal convoluted tubule
+is_a: UBERON:0005146 ! metanephric nephron tubule
+intersection_of: UBERON:0001292 ! distal convoluted tubule
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+relationship: BFO:0000050 UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
+
+[Term]
+id: UBERON:0005124
+name: metanephric proximal convoluted tubule
+def: "The metanephric proximal convoluted tubule is the most proximal portion of the metanephric proximal tubule and extends from the metanephric glomerular capsule to the metanephric proximal straight tubule[GO]." [GO:0072229]
+is_a: UBERON:0001287 ! proximal convoluted tubule
+is_a: UBERON:0005146 ! metanephric nephron tubule
+intersection_of: UBERON:0001287 ! proximal convoluted tubule
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+relationship: BFO:0000050 UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
+
+[Term]
+id: UBERON:0005125
+name: metanephric proximal straight tubule
+def: "The metanephric proximal straight tubule is the part of the metanephric descending limb that extends from the metanephric proximal convoluted tubule to the metanephric descending thin tubule[GO]." [GO:0072230]
+is_a: UBERON:0001290 ! proximal straight tubule
+is_a: UBERON:0005146 ! metanephric nephron tubule
+intersection_of: UBERON:0001290 ! proximal straight tubule
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+relationship: BFO:0000050 UBERON:0005151 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric proximal tubule
+relationship: BFO:0000050 UBERON:0010533 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
+
+[Term]
+id: UBERON:0005129
+name: metanephric distal tubule
+def: "The metanephric distal tubule is a metanephric nephron tubule that begins at the metanephric macula densa and extends to the metanephric connecting tubule[GO]." [GO:0072235]
+is_a: UBERON:0004135 ! distal tubule
+is_a: UBERON:0005146 ! metanephric nephron tubule
+intersection_of: UBERON:0004135 ! distal tubule
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+
+[Term]
+id: UBERON:0005130
+name: metanephric loop of Henle
+def: "The metanephric loop of Henle is a metanephric nephron tubule that connects the proximal convoluted tubule to the distal convoluted tubule in the metanephros[GO]." [GO:0072236]
+is_a: UBERON:0001288 ! loop of Henle
+is_a: UBERON:0005146 ! metanephric nephron tubule
+intersection_of: UBERON:0001288 ! loop of Henle
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0004136 ! intermediate tubule
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005133
@@ -32944,6 +33181,17 @@ is_a: UBERON:0004199 ! S-shaped body
 intersection_of: UBERON:0004199 ! S-shaped body
 intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
 relationship: BFO:0000050 UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+
+[Term]
+id: UBERON:0005151
+name: metanephric proximal tubule
+def: "The metanephric proximal tubule is a metanephric nephron tubule that connects Bowman's capsule to the descending thin limb of the loop of Henle in the metanephros. It has a brush border epithelial morphology[GO]." [GO:0072288]
+is_a: UBERON:0004134 ! proximal tubule
+is_a: UBERON:0005146 ! metanephric nephron tubule
+intersection_of: UBERON:0004134 ! proximal tubule
+intersection_of: BFO:0000050 UBERON:0000081 ! metanephros
+relationship: BFO:0000050 UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
+relationship: BFO:0000050 UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 
 [Term]
 id: UBERON:0005153
@@ -36854,6 +37102,25 @@ intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
 relationship: BFO:0000050 UBERON:0000080 ! mesonephros
 
 [Term]
+id: UBERON:0006173
+name: pronephric proximal tubule
+synonym: "pronephros proximal tubule" EXACT [GO:0039011]
+is_a: UBERON:0004134 ! proximal tubule
+is_a: UBERON:0005310 ! pronephric nephron tubule
+intersection_of: UBERON:0004134 ! proximal tubule
+intersection_of: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: BFO:0000050 UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
+
+[Term]
+id: UBERON:0006175
+name: pronephric distal tubule
+is_a: UBERON:0004135 ! distal tubule
+is_a: UBERON:0005310 ! pronephric nephron tubule
+intersection_of: UBERON:0004135 ! distal tubule
+intersection_of: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: BFO:0000050 UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
+
+[Term]
 id: UBERON:0006183
 name: mesonephric glomerular capillary
 def: "." [GO:0061249]
@@ -36862,6 +37129,28 @@ intersection_of: UBERON:0004212 ! glomerular capillary
 intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
 relationship: BFO:0000050 UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 relationship: BFO:0000050 UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
+
+[Term]
+id: UBERON:0006190
+name: mesonephric distal tubule
+def: "The mesonephric distal tubule is a mesonephric nephron tubule that begins at the macula densa and extends to the mesonephric connecting tubule" [GO:0061273]
+is_a: UBERON:0000083 ! mesonephric tubule
+is_a: UBERON:0004135 ! distal tubule
+is_a: UBERON:0005330 ! mesonephric nephron epithelium
+intersection_of: UBERON:0004135 ! distal tubule
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
+
+[Term]
+id: UBERON:0006192
+name: mesonephric proximal tubule
+def: "The mesonephric proximal tubule extends from the capsule to the distal tubule" [GO:0061275]
+is_a: UBERON:0000083 ! mesonephric tubule
+is_a: UBERON:0004134 ! proximal tubule
+is_a: UBERON:0005330 ! mesonephric nephron epithelium
+intersection_of: UBERON:0004134 ! proximal tubule
+intersection_of: BFO:0000050 UBERON:0000080 ! mesonephros
+relationship: BFO:0000050 UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 
 [Term]
 id: UBERON:0006207
@@ -37673,6 +37962,14 @@ name: oblique extraocular muscle
 is_a: UBERON:0006531 ! oculomotor muscle
 
 [Term]
+id: UBERON:0006534
+name: renal convoluted tubule
+def: "Any region of a nephron tubule that is convoluted. Examples: distal convoluted tubule, proximal convoluted tuble." [http://orcid.org/0000-0002-6601-2165]
+synonym: "convoluted tubule" EXACT []
+synonym: "kidney convoluted tubule" EXACT [MA:0001665]
+is_a: UBERON:0007685 ! region of nephron tubule
+
+[Term]
 id: UBERON:0006535
 name: skin secretion
 def: "A portion of organism substance that secreted_by a zone of skin." [OBOL:automatic]
@@ -37733,6 +38030,15 @@ is_a: UBERON:0000456 ! secretion of exocrine gland
 intersection_of: UBERON:0000463 ! organism substance
 intersection_of: RO:0003001 UBERON:0001911 ! mammary gland
 relationship: RO:0003001 UBERON:0001911 ! mammary gland
+
+[Term]
+id: UBERON:0006542
+name: outer medulla outer stripe loop of Henle
+def: "A loop of Henle that is part of a kidney outer medulla outer stripe." [OBOL:automatic]
+is_a: UBERON:0034996 ! outer renal medulla loop of Henle
+intersection_of: UBERON:0001288 ! loop of Henle
+intersection_of: BFO:0000050 UBERON:0004202 ! kidney outer medulla outer stripe
+relationship: BFO:0000050 UBERON:0004202 ! kidney outer medulla outer stripe
 
 [Term]
 id: UBERON:0006544
@@ -38563,6 +38869,17 @@ relationship: BFO:0000050 UBERON:0007831 {source="ZFA-abduced"} ! pectoral girdl
 relationship: distally_connected_to UBERON:0007272 ! pectoral appendage skeleton
 relationship: RO:0002202 UBERON:0004753 {source="ZFA"} ! scapulocoracoid
 relationship: RO:0002202 UBERON:0006290 {evidence="definitional"} ! scapula cartilage element
+
+[Term]
+id: UBERON:0006853
+name: renal cortex tubule
+def: "A region of nephron tubule that is part of a cortex of kidney." [OBOL:automatic]
+synonym: "cortical tubule" RELATED [MA:0002609]
+synonym: "kidney cortex tubule" EXACT [MA:0002609]
+is_a: UBERON:0007685 ! region of nephron tubule
+intersection_of: UBERON:0007685 ! region of nephron tubule
+intersection_of: BFO:0000050 UBERON:0001225 ! cortex of kidney
+relationship: BFO:0000050 UBERON:0001225 {source="MA"} ! cortex of kidney
 
 [Term]
 id: UBERON:0006855
@@ -39865,6 +40182,16 @@ intersection_of: RO:0002387 UBERON:0005721 ! pronephric mesoderm
 relationship: RO:0002387 UBERON:0005721 ! pronephric mesoderm
 
 [Term]
+id: UBERON:0007298
+name: pronephric proximal convoluted tubule
+def: "A proximal convoluted tubule that is part of a pronephros." [OBOL:automatic]
+is_a: UBERON:0001287 ! proximal convoluted tubule
+is_a: UBERON:0005310 ! pronephric nephron tubule
+intersection_of: UBERON:0001287 ! proximal convoluted tubule
+intersection_of: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: BFO:0000050 UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
+
+[Term]
 id: UBERON:0007300
 name: pectoral appendage blood vessel
 def: "A blood vessel that is part of a pectoral appendage." [OBOL:automatic]
@@ -40417,6 +40744,13 @@ is_a: UBERON:0006555 ! excretory tube
 relationship: BFO:0000050 UBERON:0002113 {source="FMA"} ! kidney
 relationship: BFO:0000051 UBERON:0001232 ! collecting duct of renal tubule
 relationship: BFO:0000051 UBERON:0001285 ! nephron
+
+[Term]
+id: UBERON:0007685
+name: region of nephron tubule
+synonym: "region of renal tubule" RELATED [FMA:17692]
+synonym: "renal tubule region" EXACT [FMA:17692]
+is_a: UBERON:0001231 ! nephron tubule
 
 [Term]
 id: UBERON:0007687
@@ -41282,6 +41616,32 @@ intersection_of: BFO:0000050 UBERON:0000310 ! breast
 relationship: BFO:0000050 UBERON:0000310 ! breast
 
 [Term]
+id: UBERON:0008404
+name: proximal tubular epithelium
+def: "The cells lining the proximal tubule are cuboidal epithelial cells with deep basal membrane invaginations that provide a large basal surface area. The long microvilli (the brush border) lining the tubule lumen, maximize luminal surface area and make these cells ideally suited for both reabsorptive and secretory functions." [_Chapter_3, Renal_Physiology:Section_7]
+synonym: "epithelium of proximal convoluted tubule" EXACT [FMA:64808]
+synonym: "epithelium of proximal renal tubule" EXACT [FMA:64808]
+synonym: "proximal renal tubule epithelium" EXACT [FMA:64808]
+synonym: "proximal tubule epithelium" RELATED [BTO:0003576]
+synonym: "proximale tubular epithelium" EXACT [BTO:0003576]
+is_a: UBERON:0004810 ! nephron tubule epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0004134 ! proximal tubule
+intersection_of: RO:0002220 UBERON:0000464 ! anatomical space
+relationship: BFO:0000050 UBERON:0004134 ! proximal tubule
+
+[Term]
+id: UBERON:0008408
+name: distal tubular epithelium
+def: "An epithelium that is part of a distal tubule." [OBOL:automatic]
+synonym: "distal tubule epithelium" RELATED [BTO:0003948]
+is_a: UBERON:0004810 ! nephron tubule epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0004135 ! distal tubule
+intersection_of: RO:0002220 UBERON:0000464 ! anatomical space
+relationship: BFO:0000050 UBERON:0004135 {source="BTO"} ! distal tubule
+
+[Term]
 id: UBERON:0008420
 name: buccal epithelium
 def: "An epithelium that is part of a buccal mucosa." [OBOL:automatic]
@@ -42040,6 +42400,14 @@ is_a: UBERON:0002016 ! pulmonary vein
 intersection_of: UBERON:0002016 ! pulmonary vein
 intersection_of: RO:0002179 UBERON:0002167 ! right lung
 relationship: RO:0002179 UBERON:0002167 ! right lung
+
+[Term]
+id: UBERON:0009035
+name: renal straight tubule
+def: "Any region of a nephron tubule that is straight. Examples: distal convoluted tubule, proximal convoluted tuble." [http://orcid.org/0000-0002-6601-2165]
+synonym: "kidney straight tubule" EXACT [MA:0002634]
+synonym: "straight tubule" EXACT []
+is_a: UBERON:0007685 ! region of nephron tubule
 
 [Term]
 id: UBERON:0009042
@@ -43037,6 +43405,18 @@ is_a: UBERON:0002329 ! somite
 intersection_of: UBERON:0002329 ! somite
 intersection_of: BFO:0000050 UBERON:0002415 ! tail
 relationship: BFO:0000050 UBERON:0002415 ! tail
+
+[Term]
+id: UBERON:0009622
+name: pronephric proximal straight tubule
+def: "A proximal straight tubule that is part of a pronephros." [ZFIN:ZDB-PUB-071029-9]
+synonym: "proximal straight tubules" RELATED PLURAL [TAO:0002239]
+is_a: UBERON:0001290 ! proximal straight tubule
+is_a: UBERON:0005310 ! pronephric nephron tubule
+intersection_of: UBERON:0001290 ! proximal straight tubule
+intersection_of: BFO:0000050 UBERON:0002120 ! pronephros
+relationship: BFO:0000050 UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
+relationship: BFO:0000050 UBERON:0006173 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric proximal tubule
 
 [Term]
 id: UBERON:0009623
@@ -56518,6 +56898,25 @@ is_a: UBERON:0005253 ! head mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0011595 ! jaw region
 relationship: BFO:0000050 UBERON:0011595 ! jaw region
+
+[Term]
+id: UBERON:0034996
+name: outer renal medulla loop of Henle
+synonym: "loop of Henle, outer medullary portion" EXACT [EMAPA:28322]
+is_a: UBERON:0034997 ! renal medulla loop of Henle
+intersection_of: UBERON:0001288 ! loop of Henle
+intersection_of: BFO:0000050 UBERON:0001293 ! outer medulla of kidney
+relationship: BFO:0000050 UBERON:0001293 ! outer medulla of kidney
+
+[Term]
+id: UBERON:0034997
+name: renal medulla loop of Henle
+synonym: "loop of Henle of renal medulla" EXACT [EMAPA:35460]
+synonym: "loop of Henle, medullary portion" EXACT []
+is_a: UBERON:0001288 ! loop of Henle
+intersection_of: UBERON:0001288 ! loop of Henle
+intersection_of: BFO:0000050 UBERON:0000362 ! renal medulla
+relationship: BFO:0000050 UBERON:0000362 ! renal medulla
 
 [Term]
 id: UBERON:0035004
