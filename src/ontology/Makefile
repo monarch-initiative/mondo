@@ -276,7 +276,7 @@ mondo-plus-%.owl: mondo-premerge-%.owl
 # External ontologies
 # ----------------------------------------
 
-XD = gard ncit-disease obo_orphanet icd10 doid medgen-disease-extract
+XD = gard ncit-disease obo_orphanet icd10 doid medgen-disease-extract snomed mesh
 mirror/xdisease-all.owl: $(patsubst %, mirror/%.owl, $(XD))
 	owltools $^ --merge-support-ontologies -o $@
 
@@ -412,9 +412,9 @@ imports/axioms-%-all.owl: imports/%-plus-lsyns.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: imports/axioms-%.owl
 
-imports/axioms-%.owl:
-	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
-.PRECIOUS: imports/axioms-%.owl
+#imports/axioms-%.owl:
+#	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+#.PRECIOUS: imports/axioms-%.owl
 
 
 imports/axioms-%.obo: imports/axioms-%.owl
