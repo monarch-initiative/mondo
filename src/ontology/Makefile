@@ -29,8 +29,7 @@ test: sparql_test test_nomerge
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
 	mkdir -p $(RELEASEDIR)/imports &&\
-	cp imports/*{owl,obo} $(RELEASEDIR)/imports &&\
-	cp pre/*{owl,obo} $(RELEASEDIR)/pre &&\
+	cp imports/*_import.{owl,obo} $(RELEASEDIR)/imports &&\
 	cp extid/*{owl,obo,json} $(RELEASEDIR)/extid &&\
 	(test -f subsets/*owl && cp subsets/*{owl,obo,json} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
 	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
@@ -209,6 +208,10 @@ PL2SPARQL = pl2sparql  -c ../plq/lexical_match_queries.pro -c ../plq/checks.pro 
 
 reports/pql-%.tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -e -l "$*" > $@.tmp && mv $@.tmp $@
+
+reports/$(Q)-pqlx-$(Ont).tsv: mondo-edit.owl
+	 $(PL2SPARQL) -f tsv -v -i $< -i mirror/$(Ont).owl -e -l "$(Q)" > $@.tmp && mv $@.tmp $@
+
 reports/pq-%.tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -e  "$*" > $@.tmp && mv $@.tmp $@
 
@@ -272,6 +275,10 @@ mondo-plus-%.owl: mondo-premerge-%.owl
 # ----------------------------------------
 # External ontologies
 # ----------------------------------------
+
+XD = gard ncit-disease obo_orphanet icd10 doid medgen-disease-extract
+mirror/xdisease-all.owl: $(patsubst %, mirror/%.owl, $(XD))
+	owltools $^ --merge-support-ontologies -o $@
 
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v 
