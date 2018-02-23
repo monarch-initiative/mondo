@@ -55,3 +55,9 @@ a 'pre' release consisting of classes with MONDO IDs as primary. See
 obo page for more details:
 
 http://obofoundry.org/ontology/mondo.html
+
+## NNNN
+
+Addition of OMIA
+
+https://github.com/monarch-initiative/monarch-disease-ontology/issues/55
