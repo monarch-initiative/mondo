@@ -372,6 +372,23 @@ mirror/obo_orphanet.obo: mirror/obo_orphanet_4.obo
 mirror/obo_orphanet.owl: mirror/obo_orphanet.obo
 	owltools $< -o $@.tmp && perl -npe 's@http://purl.obolibrary.org/obo/Orphanet_@http://www.orpha.net/ORDO/Orphanet_@g' $@.tmp > $@
 
+mirror/omia.ttl: 
+	wget --no-check-certificate http://data.monarchinitiative.org/ttl/omia.ttl -O $@ && touch $@
+.PRECIOUS: mirror/omia.ttl
+
+mirror/omia-1.owl: mirror/omia.ttl
+	owltools $< --set-ontology-id $(OBO)/mondo/$@ -o $@
+.PRECIOUS: mirror/omia-1.owl
+
+mirror/omia-2.obo: mirror/omia-1.owl
+	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | grep -v ^property_value | perl -npe 's@xref: OMIM:@relationship: RO:HOM0000001 OMIM:@' | perl -npe 's@is_a: MESH:@relationship: RO:HOM0000001 MESH:@' | obo-grep.pl --neg -r 'id: http' - | ../utils/fix-omia-names.pl > $@.tmp.obo && robot reduce -i $@.tmp.obo -o $@
+
+mirror/omia.owl: mirror/omia-2.obo imports/equivalencies.owl
+	owltools $^ --add-imports-from-supports --reasoner elk --merge-equivalence-sets -s MONDO 20 --remove-imports-declarations  -o $@
+
+mirror/omia.obo: mirror/omia.owl
+	owltools --use-catalog $< -o -f obo $@
+
 # ----------------------------------------
 # Indirect inferences
 # ----------------------------------------
