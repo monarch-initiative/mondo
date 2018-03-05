@@ -565,15 +565,29 @@ ncit-eq.obo: ncit-kboom-curated.obo
 # BLAZEGRAPH
 # ----------------------------------------
 
-BGJAR = target/jars/blazegraph-jar.jar
+BGVERSION = 2.1.4
+bg: bg-run pause bg-load
 
-$(BGJAR):
-	mkdir -p jars && cd jars && curl -O http://tenet.dl.sourceforge.net/project/bigdata/bigdata/2.1.1/blazegraph.jar
-.PRECIOUS: $(BGJAR)
+bg-data:
+	mkdir $@
 
-BG = java -XX:+UseG1GC -Xmx12G -cp $(BGJAR) com.bigdata.rdf.store.DataLoader -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties
-load-blazegraph: mondo-edit.owl
-	$(BG) $<
+bg-sync: mondo.owl mirror/xdisease-all.owl
+	cp $^ bg-data
 
-bg-start:
-	java -server -Xmx8g -Dbigdata.propertyFile=conf/blazegraph.properties -jar $(BGJAR)
+examples/load-data:
+	mkdir $@
+examples/load-data/%.ttl: examples/data/%.ttl.gz examples/load-data 
+	gzip -dc $< > $@
+
+bg-run: bg-data
+	docker run --name blazegraph -d -p 8889:8080 -v $(PWD)/conf/blazegraph.properties:/RWStore.properties -v $(PWD)/bg-data/:/data lyrasis/blazegraph:$(BGVERSION)
+
+pause:
+	sleep 1
+
+bg-load: bg-data bg-sync
+	curl -X POST --data-binary @examples/dataloader.txt   --header 'Content-Type:text/plain'   http://localhost:8889/bigdata/dataloader
+
+bg-stop:
+	docker kill blazegraph; docker rm blazegraph
+
