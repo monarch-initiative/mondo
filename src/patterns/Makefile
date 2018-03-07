@@ -79,7 +79,7 @@ lx-$(Ont)-$(P).owl: lx-$(Ont)-$(P).tsv
 
 ld-$(Ont)-$(P).owl: ld-$(Ont)-$(P).tsv 
 	apply-pattern.py -n $(OBO)/$(Ont)/$(P).owl -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(P).yaml  > $@.tmp && mv $@.tmp $@
-
+#	dosdp-tools  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$(P).yaml --outfile=$@.tmp generate && mv $@.tmp $@
 
 merged-ld.owl: $(patsubst %,ld-mondo-%.owl,$(PATTERNS))
 	owltools --create-ontology $(OBO)/mondo/dp.owl $^ --merge-support-ontologies -o $@
