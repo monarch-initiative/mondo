@@ -3506,6 +3506,25 @@ def: "The activities involved in the mental information processing system that r
 is_a: GO:0007611 ! learning or memory
 
 [Term]
+id: GO:0007622
+name: rhythmic behavior
+def: "The specific behavior of an organism that recur with measured regularity." [GOC:jl, GOC:pr]
+synonym: "rhythmic behavioral response to stimulus" EXACT []
+synonym: "rhythmic behaviour" EXACT []
+synonym: "rhythmic behavioural response to stimulus" EXACT []
+is_a: GO:0007610 ! behavior
+is_a: GO:0048511 ! rhythmic process
+
+[Term]
+id: GO:0007623
+name: circadian rhythm
+def: "Any biological process in an organism that recurs with a regularity of approximately 24 hours." [GOC:bf, GOC:go_curators]
+synonym: "circadian process" EXACT []
+synonym: "circadian response" RELATED []
+synonym: "response to circadian rhythm" RELATED []
+is_a: GO:0048511 ! rhythmic process
+
+[Term]
 id: GO:0007631
 name: feeding behavior
 def: "Behavior associated with the intake of food." [GOC:mah]
@@ -6109,6 +6128,13 @@ synonym: "interleukin binding" NARROW []
 is_a: GO:0005515 ! protein binding
 
 [Term]
+id: GO:0022410
+name: circadian sleep/wake cycle process
+def: "A behavioral process involved in the cycle from wakefulness through an orderly succession of sleep states and stages that occurs on an approximately 24 hour rhythm." [GOC:isa_complete]
+is_a: GO:0048512 ! circadian behavior
+relationship: BFO:0000050 GO:0042745 ! circadian sleep/wake cycle
+
+[Term]
 id: GO:0022412
 name: cellular process involved in reproduction in multicellular organism
 def: "A process, occurring at the cellular level, that is involved in the reproductive function of a multicellular organism." [GOC:isa_complete]
@@ -8547,6 +8573,48 @@ synonym: "response to chemical substance" EXACT []
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0042320
+name: regulation of circadian sleep/wake cycle, REM sleep
+def: "Any process that modulates the frequency, rate or extent of rapid eye movement (REM) sleep." [GOC:jl, PMID:11506998]
+synonym: "regulation of REM sleep" EXACT []
+is_a: GO:0045187 ! regulation of circadian sleep/wake cycle, sleep
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042747 ! circadian sleep/wake cycle, REM sleep
+relationship: RO:0002211 GO:0042747 ! circadian sleep/wake cycle, REM sleep
+
+[Term]
+id: GO:0042321
+name: negative regulation of circadian sleep/wake cycle, sleep
+def: "Any process that stops, prevents or reduces the duration or quality of sleep, a readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals." [GOC:go_curators, GOC:jl, ISBN:0192800981]
+synonym: "down regulation of circadian sleep/wake cycle, sleep" EXACT []
+synonym: "down-regulation of circadian sleep/wake cycle, sleep" EXACT []
+synonym: "downregulation of circadian sleep/wake cycle, sleep" EXACT []
+synonym: "inhibition of circadian sleep/wake cycle, sleep" NARROW []
+synonym: "negative regulation of sleep" EXACT []
+is_a: GO:0042754 ! negative regulation of circadian rhythm
+is_a: GO:0045187 ! regulation of circadian sleep/wake cycle, sleep
+is_a: GO:0048521 ! negative regulation of behavior
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0050802 ! circadian sleep/wake cycle, sleep
+relationship: RO:0002212 GO:0050802 ! circadian sleep/wake cycle, sleep
+
+[Term]
+id: GO:0042322
+name: negative regulation of circadian sleep/wake cycle, REM sleep
+def: "Any process that stops, prevents or reduces the duration or quality of rapid eye movement (REM) sleep." [GOC:go_curators, GOC:jl]
+synonym: "down regulation of circadian sleep/wake cycle, REM sleep" EXACT []
+synonym: "down-regulation of circadian sleep/wake cycle, REM sleep" EXACT []
+synonym: "downregulation of circadian sleep/wake cycle, REM sleep" EXACT []
+synonym: "inhibition of circadian sleep/wake cycle, REM sleep" NARROW []
+synonym: "negative regulation of REM sleep" EXACT []
+is_a: GO:0042320 ! regulation of circadian sleep/wake cycle, REM sleep
+is_a: GO:0042321 ! negative regulation of circadian sleep/wake cycle, sleep
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042747 ! circadian sleep/wake cycle, REM sleep
+relationship: RO:0002212 GO:0042747 ! circadian sleep/wake cycle, REM sleep
+
+[Term]
 id: GO:0042325
 name: regulation of phosphorylation
 def: "Any process that modulates the frequency, rate or extent of addition of phosphate groups into a molecule." [GOC:jl]
@@ -8660,6 +8728,68 @@ is_a: GO:0044429 ! mitochondrial part
 intersection_of: GO:0009295 ! nucleoid
 intersection_of: BFO:0000050 GO:0005739 ! mitochondrion
 relationship: BFO:0000050 GO:0005759 ! mitochondrial matrix
+
+[Term]
+id: GO:0042745
+name: circadian sleep/wake cycle
+def: "The cycle from wakefulness through an orderly succession of sleep states and stages that occurs on an approximately 24 hour rhythm." [GOC:jl, http://www.sleepquest.com]
+is_a: GO:0048512 ! circadian behavior
+
+[Term]
+id: GO:0042747
+name: circadian sleep/wake cycle, REM sleep
+def: "A stage in the circadian sleep cycle during which dreams occur and the body undergoes marked changes including rapid eye movement, loss of reflexes, and increased pulse rate and brain activity." [GOC:jl, ISBN:0395825172]
+is_a: GO:0022410 ! circadian sleep/wake cycle process
+relationship: BFO:0000050 GO:0050802 ! circadian sleep/wake cycle, sleep
+
+[Term]
+id: GO:0042749
+name: regulation of circadian sleep/wake cycle
+def: "Any process that modulates the frequency, rate or extent of the circadian sleep/wake cycle." [GOC:jl]
+is_a: GO:0042752 ! regulation of circadian rhythm
+is_a: GO:0050795 ! regulation of behavior
+is_a: GO:0051239 ! regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042745 ! circadian sleep/wake cycle
+relationship: RO:0002211 GO:0042745 ! circadian sleep/wake cycle
+
+[Term]
+id: GO:0042752
+name: regulation of circadian rhythm
+def: "Any process that modulates the frequency, rate or extent of a circadian rhythm. A circadian rhythm is a biological process in an organism that recurs with a regularity of approximately 24 hours." [GOC:dph, GOC:jl, GOC:tb]
+is_a: GO:0050789 ! regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007623 ! circadian rhythm
+relationship: RO:0002211 GO:0007623 ! circadian rhythm
+
+[Term]
+id: GO:0042753
+name: positive regulation of circadian rhythm
+def: "Any process that activates or increases the frequency, rate or extent of a circadian rhythm behavior." [GOC:go_curators]
+synonym: "activation of circadian rhythm" NARROW []
+synonym: "stimulation of circadian rhythm" NARROW []
+synonym: "up regulation of circadian rhythm" EXACT []
+synonym: "up-regulation of circadian rhythm" EXACT []
+synonym: "upregulation of circadian rhythm" EXACT []
+is_a: GO:0042752 ! regulation of circadian rhythm
+is_a: GO:0048518 ! positive regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007623 ! circadian rhythm
+relationship: RO:0002213 GO:0007623 ! circadian rhythm
+
+[Term]
+id: GO:0042754
+name: negative regulation of circadian rhythm
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a circadian rhythm behavior." [GOC:go_curators]
+synonym: "down regulation of circadian rhythm" EXACT []
+synonym: "down-regulation of circadian rhythm" EXACT []
+synonym: "downregulation of circadian rhythm" EXACT []
+synonym: "inhibition of circadian rhythm" NARROW []
+is_a: GO:0042752 ! regulation of circadian rhythm
+is_a: GO:0048519 ! negative regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007623 ! circadian rhythm
+relationship: RO:0002212 GO:0007623 ! circadian rhythm
 
 [Term]
 id: GO:0042755
@@ -9681,6 +9811,16 @@ intersection_of: BFO:0000050 GO:0045165 ! cell fate commitment
 relationship: BFO:0000050 GO:0045165 ! cell fate commitment
 
 [Term]
+id: GO:0045187
+name: regulation of circadian sleep/wake cycle, sleep
+def: "Any process that modulates the frequency, rate or extent of sleep; a readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals." [GOC:jl, ISBN:0192800981]
+synonym: "regulation of sleep" EXACT []
+is_a: GO:0042749 ! regulation of circadian sleep/wake cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0050802 ! circadian sleep/wake cycle, sleep
+relationship: RO:0002211 GO:0050802 ! circadian sleep/wake cycle, sleep
+
+[Term]
 id: GO:0045202
 name: synapse
 def: "The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." [ISBN:0198506732]
@@ -10346,6 +10486,24 @@ intersection_of: RO:0002213 GO:0006796 ! phosphate-containing compound metabolic
 relationship: RO:0002213 GO:0006796 ! phosphate-containing compound metabolic process
 
 [Term]
+id: GO:0045938
+name: positive regulation of circadian sleep/wake cycle, sleep
+def: "Any process that activates or increases the duration or quality of sleep, a readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals." [GOC:go_curators]
+synonym: "activation of circadian sleep/wake cycle, sleep" NARROW []
+synonym: "positive regulation of sleep" EXACT []
+synonym: "stimulation of circadian sleep/wake cycle, sleep" NARROW []
+synonym: "up regulation of circadian sleep/wake cycle, sleep" EXACT []
+synonym: "up-regulation of circadian sleep/wake cycle, sleep" EXACT []
+synonym: "upregulation of circadian sleep/wake cycle, sleep" EXACT []
+is_a: GO:0042753 ! positive regulation of circadian rhythm
+is_a: GO:0045187 ! regulation of circadian sleep/wake cycle, sleep
+is_a: GO:0048520 ! positive regulation of behavior
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0050802 ! circadian sleep/wake cycle, sleep
+relationship: RO:0002213 GO:0050802 ! circadian sleep/wake cycle, sleep
+
+[Term]
 id: GO:0045939
 name: negative regulation of steroid metabolic process
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving steroids." [GOC:go_curators]
@@ -10522,6 +10680,22 @@ is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0009790 ! embryo development
 relationship: RO:0002211 GO:0009790 ! embryo development
+
+[Term]
+id: GO:0046005
+name: positive regulation of circadian sleep/wake cycle, REM sleep
+def: "Any process that activates or increases the duration or quality of rapid eye movement (REM) sleep." [GOC:go_curators]
+synonym: "activation of circadian sleep/wake cycle, REM sleep" NARROW []
+synonym: "positive regulation of REM sleep" EXACT []
+synonym: "stimulation of circadian sleep/wake cycle, REM sleep" NARROW []
+synonym: "up regulation of circadian sleep/wake cycle, REM sleep" EXACT []
+synonym: "up-regulation of circadian sleep/wake cycle, REM sleep" EXACT []
+synonym: "upregulation of circadian sleep/wake cycle, REM sleep" EXACT []
+is_a: GO:0042320 ! regulation of circadian sleep/wake cycle, REM sleep
+is_a: GO:0045938 ! positive regulation of circadian sleep/wake cycle, sleep
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042747 ! circadian sleep/wake cycle, REM sleep
+relationship: RO:0002213 GO:0042747 ! circadian sleep/wake cycle, REM sleep
 
 [Term]
 id: GO:0046031
@@ -10984,6 +11158,21 @@ synonym: "terminal differentiation" RELATED [GOC:dph, GOC:tb]
 is_a: GO:0048856 ! anatomical structure development
 is_a: GO:0048869 ! cellular developmental process
 relationship: BFO:0000050 GO:0030154 ! cell differentiation
+
+[Term]
+id: GO:0048511
+name: rhythmic process
+def: "Any process pertinent to the generation and maintenance of rhythms in the physiology of an organism." [GOC:jid]
+synonym: "rhythm" RELATED []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0048512
+name: circadian behavior
+def: "The specific behavior of an organism that recurs with a regularity of approximately 24 hours." [GOC:bf, GOC:go_curators, GOC:pr]
+synonym: "circadian rhythm behavior" EXACT []
+is_a: GO:0007622 ! rhythmic behavior
+is_a: GO:0007623 ! circadian rhythm
 
 [Term]
 id: GO:0048513
@@ -11613,6 +11802,15 @@ synonym: "electrolyte homeostasis" RELATED []
 synonym: "negative regulation of crystal biosynthesis" RELATED []
 synonym: "negative regulation of crystal formation" RELATED []
 is_a: GO:0048878 ! chemical homeostasis
+
+[Term]
+id: GO:0050802
+name: circadian sleep/wake cycle, sleep
+def: "The part of the circadian sleep/wake cycle where the organism is asleep." [GOC:ai]
+is_a: GO:0022410 ! circadian sleep/wake cycle process
+is_a: GO:0030431 ! sleep
+intersection_of: GO:0030431 ! sleep
+intersection_of: BFO:0000050 GO:0042745 ! circadian sleep/wake cycle
 
 [Term]
 id: GO:0050804
