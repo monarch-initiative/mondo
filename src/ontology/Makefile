@@ -283,8 +283,11 @@ mirror/xdisease-all.owl: $(patsubst %, mirror/%.owl, $(XD))
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v 
 
+trigger-mirror:
+	touch $@
+
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: 
+mirror/%.owl: trigger-mirror
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
