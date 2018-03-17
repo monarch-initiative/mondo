@@ -256,7 +256,7 @@ imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
 imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
-	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
+	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && perl -pi -ne 's@http://purl.obolibrary.org/obo/UMLS_@http://linkedlifedata.com/resource/umls/id/@' && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 imports/equivalencies.obo: imports/equivalencies.owl
 	robot convert -i $< -o $@
 
