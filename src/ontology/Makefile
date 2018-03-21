@@ -202,12 +202,15 @@ VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(QSRC)
 	robot verify -i $< --queries $(VQUERIES) -O reports/edit/ && touch $@
 
-PL2SPARQL = pl2sparql  -c ../plq/lexical_match_queries.pro -c ../plq/checks.pro -c ../plq/reports.pro
+PL2SPARQL = ../plq/pq-mondo
 ../sparql/%.sparql:
 	 $(PL2SPARQL) -v  "$*" > $@.tmp && mv $@.tmp $@
 
 reports/pql-%.tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -e -l "$*" > $@.tmp && mv $@.tmp $@
+
+reports/bg-%.tsv: 
+	 $(PL2SPARQL) -f tsv -l "$*" > $@.tmp && mv $@.tmp $@
 
 reports/$(Q)-pqlx-$(Ont).tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -i mirror/$(Ont).owl -e -l "$(Q)" > $@.tmp && mv $@.tmp $@
@@ -574,23 +577,24 @@ bg: bg-run pause bg-load
 bg-data:
 	mkdir $@
 
-bg-sync: mondo.owl mirror/xdisease-all.owl
+XD_OWL = $(patsubst %, mirror/%.owl, $(XD))
+bg-sync: mondo.owl  $(XD_OWL)
 	cp $^ bg-data
 
-examples/load-data:
-	mkdir $@
-examples/load-data/%.ttl: examples/data/%.ttl.gz examples/load-data 
-	gzip -dc $< > $@
 
 bg-run: bg-data
-	docker run --name blazegraph -d -p 8889:8080 -v $(PWD)/conf/blazegraph.properties:/RWStore.properties -v $(PWD)/bg-data/:/data lyrasis/blazegraph:$(BGVERSION)
+	docker run --name blazegraph -d -p 8889:8080 -v $(PWD)/blazegraph/RWStore.properties:/RWStore.properties -v $(PWD)/bg-data/:/data lyrasis/blazegraph:$(BGVERSION)
 
 pause:
 	sleep 1
 
-bg-load: bg-data bg-sync
-	curl -X POST --data-binary @examples/dataloader.txt   --header 'Content-Type:text/plain'   http://localhost:8889/bigdata/dataloader
+bg-load: bg-data bg-sync bg-load-direct
+
+bg-load-direct:
+	curl -X POST --data-binary @blazegraph/dataloader.txt   --header 'Content-Type:text/plain'   http://localhost:8889/bigdata/dataloader
 
 bg-stop:
 	docker kill blazegraph; docker rm blazegraph
 
+bg-clean:
+	rm bg-data/*
