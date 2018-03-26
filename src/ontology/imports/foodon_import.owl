@@ -82,6 +82,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001303 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/FOODON_00001303">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">has taxonomic identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000087 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000087">
@@ -217,6 +226,28 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001015">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411347"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">This food product type includes food products which are derived from or produced by a plant.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">plant food product</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001046 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001046">
@@ -247,11 +278,108 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001093 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001093">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
+        <rdfs:label xml:lang="en">cereal grain food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001141 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001141">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001093"/>
+        <rdfs:label xml:lang="en">wheat based food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001143 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001143">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411261"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
+        <rdfs:label xml:lang="en">fungal food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001145 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001145">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412846"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
+        <rdfs:label xml:lang="en">microbial food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001173 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001173">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001015"/>
+        <rdfs:label xml:lang="en">plant seed food product</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001176 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001176">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
         <rdfs:label xml:lang="en">invertebrate food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001184 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001184">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411301"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
+        <obo:IAO_0000115 xml:lang="en">This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">algal food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001248 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001248">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+        <rdfs:label xml:lang="en">fish food product</rdfs:label>
     </owl:Class>
     
 
@@ -428,6 +556,28 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411215 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411215">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411261"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411301"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412345"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412846"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411237 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411237">
@@ -446,6 +596,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411261 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411261">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B1261</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">fungus as food source</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411297 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411297">
@@ -456,6 +618,19 @@
         <oboInOwl:hasDbXref>LANGUAL:B1297</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*.</rdfs:comment>
         <rdfs:label xml:lang="en">animal used as food source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411301 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411301">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Unicellular and multicellular algae.</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B1301</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">algae as food source</rdfs:label>
     </owl:Class>
     
 
@@ -472,6 +647,20 @@
         <oboInOwl:hasSynonym xml:lang="en">short-tailed crabs</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">true crabs</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">crab as food source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411347 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411347">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Multicellular plants.</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B1347</oboInOwl:hasDbXref>
+        <rdfs:comment xml:lang="en">LanguaL curation note: For unicellular plants as well as for algae, mushrooms and yeast, use the appropriate narrower term under *ALGAE OR FUNGUS USED AS FOOD SOURCE*.</rdfs:comment>
+        <rdfs:label xml:lang="en">plant used as food source</rdfs:label>
     </owl:Class>
     
 
@@ -542,6 +731,46 @@
         <oboInOwl:hasSynonym xml:lang="en">rubble crabs</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">xanthidae</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">mud crab family as food source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03412345 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412345">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Lichens are composite organisms consisting of a symbiotic association of a fungus (the mycobiont) with a photosynthetic partner (the photobiont or phycobiont), usually either a green alga (commonly Trebouxia) or cyanobacterium (commonly Nostoc).</obo:IAO_0000115>
+        <obo:IAO_0000119>WIKIPEDIA:Lichen</obo:IAO_0000119>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B2345</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">lichen as food source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03412846 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412846">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B2846</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">bacteria as food source</rdfs:label>
     </owl:Class>
     
 
@@ -710,6 +939,17 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33317"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pancrustacea</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eubacteria</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bacteria</rdfs:label>
     </owl:Class>
     
 
@@ -894,6 +1134,25 @@
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <rdfs:label xml:lang="en">organism</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411215"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411297"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411347"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 

@@ -212,6 +212,14 @@ is_a: GO:0048856 ! anatomical structure development
 relationship: BFO:0000050 GO:0001944 ! part of vasculature development
 
 [Term]
+id: GO:0001570
+name: vasculogenesis
+def: "The differentiation of endothelial cells from progenitor cells during blood vessel development, and the de novo formation of blood vessels and tubes." []
+synonym: "vascular morphogenesis" EXACT []
+is_a: GO:0030154 ! cell differentiation
+relationship: BFO:0000050 GO:0048514 ! part of blood vessel morphogenesis
+
+[Term]
 id: GO:0001654
 name: eye development
 def: "The process whose specific outcome is the progression of the eye over time, from its formation to the mature structure. The eye is the organ of sight." []
@@ -381,6 +389,15 @@ id: GO:0001848
 name: complement binding
 def: "Interacting selectively and non-covalently with any component or product of the complement cascade." []
 is_a: GO:0005515 ! protein binding
+
+[Term]
+id: GO:0001887
+name: selenium compound metabolic process
+def: "The chemical reactions and pathways involving compounds that contain selenium, such as selenocysteine." []
+synonym: "selenium compound metabolism" EXACT []
+synonym: "selenium metabolic process" EXACT []
+synonym: "selenium metabolism" EXACT []
+is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0001894
@@ -2947,6 +2964,15 @@ name: water-soluble vitamin metabolic process
 def: "The chemical reactions and pathways involving any of a diverse group of vitamins that are soluble in water." []
 synonym: "water-soluble vitamin metabolism" EXACT []
 is_a: GO:0006766 ! vitamin metabolic process
+
+[Term]
+id: GO:0006778
+name: porphyrin-containing compound metabolic process
+def: "The chemical reactions and pathways involving any member of a large group of derivatives or analogs of porphyrin. Porphyrins consists of a ring of four pyrrole nuclei linked each to the next at their alpha positions through a methine group." []
+synonym: "porphyrin metabolic process" RELATED []
+synonym: "porphyrin metabolism" RELATED []
+is_a: GO:0033013 ! tetrapyrrole metabolic process
+is_a: GO:0051186 ! cofactor metabolic process
 
 [Term]
 id: GO:0006790
@@ -6124,6 +6150,13 @@ synonym: "antibody" NARROW []
 is_a: GO:0032991 ! protein-containing complex
 
 [Term]
+id: GO:0019889
+name: pteridine metabolic process
+def: "The chemical reactions and pathways involving pteridine, pyrazino(2,3-dipyrimidine), the parent structure of pterins and the pteroyl group." []
+synonym: "pteridine metabolism" EXACT []
+is_a: GO:0042558 ! pteridine-containing compound metabolic process
+
+[Term]
 id: GO:0019915
 name: lipid storage
 def: "The accumulation and maintenance in cells or tissues of lipids, compounds soluble in organic solvents but insoluble or sparingly soluble in aqueous solvents. Lipid reserves can be accumulated during early developmental stages for mobilization and utilization at later stages of development." []
@@ -8416,6 +8449,15 @@ is_a: GO:0048856 ! anatomical structure development
 relationship: BFO:0000050 GO:0007275 ! part of multicellular organism development
 
 [Term]
+id: GO:0035441
+name: cell migration involved in vasculogenesis
+def: "The orderly movement of a cell from one site to another that will contribute to the differentiation of an endothelial cell that will form de novo blood vessels and tubes." []
+is_a: GO:0016477 ! cell migration
+intersection_of: GO:0016477 ! cell migration
+intersection_of: BFO:0000050 GO:0001570 ! part of vasculogenesis
+relationship: BFO:0000050 GO:0001570 ! part of vasculogenesis
+
+[Term]
 id: GO:0035556
 name: intracellular signal transduction
 def: "The process in which a signal is passed on to downstream components within the cell, which become activated themselves to further propagate the signal and finally trigger a change in the function or state of the cell." []
@@ -8592,6 +8634,17 @@ id: GO:0042060
 name: wound healing
 def: "The series of events that restore integrity to a damaged tissue, following an injury." []
 is_a: GO:0009611 ! response to wounding
+
+[Term]
+id: GO:0042068
+name: regulation of pteridine metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving pteridine." []
+synonym: "regulation of pteridine metabolism" EXACT []
+is_a: GO:0031323 ! regulation of cellular metabolic process
+is_a: GO:0051171 ! regulation of nitrogen compound metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0019889 ! regulates pteridine metabolic process
+relationship: RO:0002211 GO:0019889 ! regulates pteridine metabolic process
 
 [Term]
 id: GO:0042069
@@ -8799,6 +8852,20 @@ synonym: "hormone formation" EXACT []
 synonym: "hormone synthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0042445 ! hormone metabolic process
+
+[Term]
+id: GO:0042558
+name: pteridine-containing compound metabolic process
+def: "The chemical reactions and pathways involving any compound containing pteridine (pyrazino(2,3-dipyrimidine)), e.g. pteroic acid, xanthopterin and folic acid." []
+synonym: "pteridine and derivative metabolic process" EXACT []
+synonym: "pteridine and derivative metabolism" EXACT []
+synonym: "pteridine-containing compound metabolism" EXACT []
+synonym: "pterin metabolic process" NARROW []
+synonym: "pterin metabolism" NARROW []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0042562
@@ -10368,6 +10435,39 @@ intersection_of: RO:0002213 GO:0006508 ! positively regulates proteolysis
 relationship: RO:0002213 GO:0006508 ! positively regulates proteolysis
 
 [Term]
+id: GO:0045863
+name: negative regulation of pteridine metabolic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving pteridine." []
+synonym: "down regulation of pteridine metabolic process" EXACT []
+synonym: "down-regulation of pteridine metabolic process" EXACT []
+synonym: "downregulation of pteridine metabolic process" EXACT []
+synonym: "inhibition of pteridine metabolic process" NARROW []
+synonym: "negative regulation of pteridine metabolism" EXACT []
+is_a: GO:0031324 ! negative regulation of cellular metabolic process
+is_a: GO:0042068 ! regulation of pteridine metabolic process
+is_a: GO:0051172 ! negative regulation of nitrogen compound metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0019889 ! negatively regulates pteridine metabolic process
+relationship: RO:0002212 GO:0019889 ! negatively regulates pteridine metabolic process
+
+[Term]
+id: GO:0045864
+name: positive regulation of pteridine metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving pteridine." []
+synonym: "activation of pteridine metabolic process" NARROW []
+synonym: "positive regulation of pteridine metabolism" EXACT []
+synonym: "stimulation of pteridine metabolic process" NARROW []
+synonym: "up regulation of pteridine metabolic process" EXACT []
+synonym: "up-regulation of pteridine metabolic process" EXACT []
+synonym: "upregulation of pteridine metabolic process" EXACT []
+is_a: GO:0031325 ! positive regulation of cellular metabolic process
+is_a: GO:0042068 ! regulation of pteridine metabolic process
+is_a: GO:0051173 ! positive regulation of nitrogen compound metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0019889 ! positively regulates pteridine metabolic process
+relationship: RO:0002213 GO:0019889 ! positively regulates pteridine metabolic process
+
+[Term]
 id: GO:0045892
 name: negative regulation of transcription, DNA-templated
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of cellular DNA-templated transcription." []
@@ -11562,6 +11662,15 @@ synonym: "arterial morphogenesis" EXACT []
 synonym: "arteriogenesis" EXACT []
 is_a: GO:0048514 ! blood vessel morphogenesis
 relationship: BFO:0000050 GO:0060840 ! part of artery development
+
+[Term]
+id: GO:0048845
+name: venous blood vessel morphogenesis
+def: "The process in which the anatomical structures of venous blood vessels are generated and organized. Veins are blood vessels that transport blood from the body and its organs to the heart." []
+synonym: "vein morphogenesis" BROAD []
+synonym: "venous morphogenesis" EXACT []
+is_a: GO:0048514 ! blood vessel morphogenesis
+relationship: BFO:0000050 GO:0060841 ! part of venous blood vessel development
 
 [Term]
 id: GO:0048856
@@ -13716,6 +13825,12 @@ relationship: BFO:0000050 GO:0048873 ! part of homeostasis of number of cells wi
 id: GO:0060840
 name: artery development
 def: "The progression of the artery over time, from its initial formation to the mature structure. An artery is a blood vessel that carries blood away from the heart to a capillary bed." []
+is_a: GO:0001568 ! blood vessel development
+
+[Term]
+id: GO:0060841
+name: venous blood vessel development
+def: "The progression of the venous blood vessel over time from its initial formation to the mature structure. Venous blood vessels carry blood back to the heart after the capillary bed." []
 is_a: GO:0001568 ! blood vessel development
 
 [Term]
@@ -19483,6 +19598,42 @@ is_a: GO:2001169 ! regulation of ATP biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006754 ! positively regulates ATP biosynthetic process
 relationship: RO:0002213 GO:0006754 ! positively regulates ATP biosynthetic process
+
+[Term]
+id: GO:2001212
+name: regulation of vasculogenesis
+def: "Any process that modulates the frequency, rate or extent of vasculogenesis." []
+synonym: "regulation of vascular morphogenesis" EXACT []
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
+is_a: GO:0045595 ! regulation of cell differentiation
+is_a: GO:1901342 ! regulation of vasculature development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0001570 ! regulates vasculogenesis
+relationship: RO:0002211 GO:0001570 ! regulates vasculogenesis
+
+[Term]
+id: GO:2001213
+name: negative regulation of vasculogenesis
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of vasculogenesis." []
+synonym: "negative regulation of vascular morphogenesis" EXACT []
+is_a: GO:0045596 ! negative regulation of cell differentiation
+is_a: GO:2000181 ! negative regulation of blood vessel morphogenesis
+is_a: GO:2001212 ! regulation of vasculogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0001570 ! negatively regulates vasculogenesis
+relationship: RO:0002212 GO:0001570 ! negatively regulates vasculogenesis
+
+[Term]
+id: GO:2001214
+name: positive regulation of vasculogenesis
+def: "Any process that activates or increases the frequency, rate or extent of vasculogenesis." []
+synonym: "positive regulation of vascular morphogenesis" EXACT []
+is_a: GO:0045597 ! positive regulation of cell differentiation
+is_a: GO:1904018 ! positive regulation of vasculature development
+is_a: GO:2001212 ! regulation of vasculogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0001570 ! positively regulates vasculogenesis
+relationship: RO:0002213 GO:0001570 ! positively regulates vasculogenesis
 
 [Term]
 id: GO:2001225

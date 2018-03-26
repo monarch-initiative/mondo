@@ -395,6 +395,15 @@ mirror/omia.owl: mirror/omia-2.obo imports/equivalencies.owl
 mirror/omia.obo: mirror/omia.owl
 	owltools --use-catalog $< -o -f obo $@
 
+mirror/efo-src.owl:
+	wget --no-check-certificate http://www.ebi.ac.uk/efo/efo.owl -O $@
+
+mirror/efo.owl: mirror/efo-src.owl
+	cp $< $@
+
+mirror/efo.obo: mirror/efo-src.owl
+	owltools $< -o -f obo --no-check $@.tmp && perl ../utils/fix-efo.pl $@.tmp > $@
+
 # ----------------------------------------
 # Indirect inferences
 # ----------------------------------------

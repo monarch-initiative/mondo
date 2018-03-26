@@ -1,5 +1,6 @@
 format-version: 1.2
 ontology: mondo/imports/foodon_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_00002403>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411215>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411261>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411297>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411301>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411347>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03412345>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03412846>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03411215> (<http://purl.obolibrary.org/obo/FOODON_03411215>)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/FOODON_03411215> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/FOODON_00002403> ObjectUnionOf(<http://purl.obolibrary.org/obo/FOODON_03411261> <http://purl.obolibrary.org/obo/FOODON_03411301> <http://purl.obolibrary.org/obo/FOODON_03412345> <http://purl.obolibrary.org/obo/FOODON_03412846>)))\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03411297> (<http://purl.obolibrary.org/obo/FOODON_03411297>)\n\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03411347> (<http://purl.obolibrary.org/obo/FOODON_03411347>)\n\n\n\nDisjointClasses(<http://purl.obolibrary.org/obo/FOODON_03411215> <http://purl.obolibrary.org/obo/FOODON_03411297> <http://purl.obolibrary.org/obo/FOODON_03411347>)\n)
 
 [Term]
 id: BFO:0000001
@@ -62,6 +63,15 @@ def: "A substance, usually composed primarily of carbohydrates, fats, water and/
 is_a: FOODON:03400361 ! food product type
 
 [Term]
+id: FOODON:00001015
+name: plant food product
+def: "This food product type includes food products which are derived from or produced by a plant." []
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03411347 ! derives from plant used as food source
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
 id: FOODON:00001046
 name: seafood product
 is_a: FOODON:00001092 ! animal food product
@@ -75,8 +85,50 @@ intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:03411297 ! derives from animal used as food source
 
 [Term]
+id: FOODON:00001093
+name: cereal grain food product
+is_a: FOODON:00001173 ! plant seed food product
+
+[Term]
+id: FOODON:00001141
+name: wheat based food product
+is_a: FOODON:00001093 ! cereal grain food product
+
+[Term]
+id: FOODON:00001143
+name: fungal food product
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03411261 ! derives from fungus as food source
+
+[Term]
+id: FOODON:00001145
+name: microbial food product
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03412846 ! derives from bacteria as food source
+
+[Term]
+id: FOODON:00001173
+name: plant seed food product
+is_a: FOODON:00001015 ! plant food product
+
+[Term]
 id: FOODON:00001176
 name: invertebrate food product
+is_a: FOODON:00001092 ! animal food product
+
+[Term]
+id: FOODON:00001184
+name: algal food product
+def: "This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms." []
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03411301 ! derives from algae as food source
+
+[Term]
+id: FOODON:00001248
+name: fish food product
 is_a: FOODON:00001092 ! animal food product
 
 [Term]
@@ -166,6 +218,10 @@ property_value: IAO:0000119 WIKIPEDIA:Penaeus xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411215
+disjoint_from: FOODON:03411297 ! animal used as food source
+
+[Term]
 id: FOODON:03411237
 name: shrimp as food source
 xref: http://eol.org/pages/2602479
@@ -180,11 +236,28 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411261
+name: fungus as food source
+xref: LANGUAL:B1261
+is_a: FOODON:03411564 ! food source
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411297
 name: animal used as food source
 def: "Multicellular animal, e.g., fish, meat animal or poultry." []
 comment: LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
 xref: LANGUAL:B1297
+is_a: FOODON:03411564 ! food source
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411301
+name: algae as food source
+def: "Unicellular and multicellular algae." []
+xref: LANGUAL:B1301
 is_a: FOODON:03411564 ! food source
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -198,6 +271,16 @@ is_a: FOODON:03411998 ! decapod as food source
 property_value: hasSynonym "brachyura" xsd:string
 property_value: hasSynonym "short-tailed crabs" xsd:string
 property_value: hasSynonym "true crabs" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411347
+name: plant used as food source
+def: "Multicellular plants." []
+comment: LanguaL curation note: For unicellular plants as well as for algae, mushrooms and yeast, use the appropriate narrower term under *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
+xref: LANGUAL:B1347
+is_a: FOODON:03411564 ! food source
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -248,6 +331,26 @@ property_value: hasSynonym "mud crabs" xsd:string
 property_value: hasSynonym "pebble crabs" xsd:string
 property_value: hasSynonym "rubble crabs" xsd:string
 property_value: hasSynonym "xanthidae" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412345
+name: lichen as food source
+def: "Lichens are composite organisms consisting of a symbiotic association of a fungus (the mycobiont) with a photosynthetic partner (the photobiont or phycobiont), usually either a green alga (commonly Trebouxia) or cyanobacterium (commonly Nostoc)." []
+xref: LANGUAL:B2345
+is_a: FOODON:03411564 ! food source
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 WIKIPEDIA:Lichen xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412846
+name: bacteria as food source
+xref: LANGUAL:B2846
+is_a: FOODON:03411564 ! food source
+intersection_of: FOODON:00001303 NCBITaxon:2 ! has taxonomic identifier Bacteria
+intersection_of: FOODON:00001303 NCBITaxon:2 {all_only="true"} ! has taxonomic identifier Bacteria
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -349,6 +452,13 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 id: NCBITaxon:197562
 name: Pancrustacea
 is_a: NCBITaxon:33317 ! Protostomia
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:2
+name: Bacteria
+synonym: "eubacteria" EXACT []
+is_a: OBI:0100026 ! organism
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -465,6 +575,10 @@ property_value: IAO:0000111 "organism" xsd:string
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 "WEB: http://en.wikipedia.org/wiki/Organism" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+
+[Typedef]
+id: FOODON:00001303
+name: has taxonomic identifier
 
 [Typedef]
 id: RO:0000087
