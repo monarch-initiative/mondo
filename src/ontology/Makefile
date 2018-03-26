@@ -409,44 +409,49 @@ imports/tag-indirect.owl: mondo-edit.obo
 # ----------------------------------------
 
 # Generates synonym from labels
-imports/lsyns-%.owl: mirror/%.owl
+compare/lsyns-%.owl: mirror/%.owl
 	robot query -i $<  --format ttl -c ../sparql/construct-related-synonym-from-label.sparql $@
+.PRECIOUS: compare/lsyns-%.owl
 
 # Merges in the syns generated as above step
-imports/%-plus-lsyns.owl: mirror/%.owl imports/lsyns-%.owl
+compare/%-plus-lsyns.owl: mirror/%.owl compare/lsyns-%.owl
 	owltools $^ --merge-support-ontologies -o $@
 
 # logical merge, no duplicate axioms
-imports/axioms-%-nd.owl: imports/%-plus-lsyns.owl
+compare/axioms-%-nd.owl: compare/%-plus-lsyns.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
-.PRECIOUS: imports/axioms-%.owl
+.PRECIOUS: compare/axioms-%.owl
+
+compare/axioms-%-d.owl: compare/%-plus-lsyns.owl
+	owltools --use-catalog mondo-edit.obo --copy-axioms -D -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+.PRECIOUS: compare/axioms-%.owl
 
 # bring in strictly new literals in annotation axioms
-imports/ann-axioms-%-new.owl: imports/%-plus-lsyns.owl
+compare/ann-axioms-%-new.owl: compare/%-plus-lsyns.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
-.PRECIOUS: imports/axioms-%.owl
+.PRECIOUS: compare/axioms-%.owl
 
-imports/ann-axioms-ncit-disease-new.owl: mirror/ncit-disease.owl
+compare/ann-axioms-ncit-disease-new.owl: mirror/ncit-disease.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
-.PRECIOUS: imports/axioms-%.owl
+.PRECIOUS: compare/axioms-%.owl
 
 # all axioms
-imports/axioms-%-all.owl: imports/%-plus-lsyns.owl
+compare/axioms-%-all.owl: compare/%-plus-lsyns.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
-.PRECIOUS: imports/axioms-%.owl
+.PRECIOUS: compare/axioms-%.owl
 
-#imports/axioms-%.owl:
+#compare/axioms-%.owl:
 #	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
-#.PRECIOUS: imports/axioms-%.owl
+#.PRECIOUS: compare/axioms-%.owl
 
 
-imports/axioms-%.obo: imports/axioms-%.owl
+compare/axioms-%.obo: compare/axioms-%.owl
 	owltools $< -o -f obo --no-check $@
-imports/ann-axioms-%.obo: imports/ann-axioms-%.owl
+compare/ann-axioms-%.obo: compare/ann-axioms-%.owl
 	owltools $< -o -f obo --no-check $@
 
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
-	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m imports/bad-$*.owl
+	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@

@@ -3241,6 +3241,40 @@ is_a: NCBITaxon:186804 ! Peptostreptococcaceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:188543
+name: Demodicidae
+namespace: ncbi_taxonomy
+synonym: "follicle mites" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:188547 ! Cheyletoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:188544
+name: Demodex
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:188543 ! Demodicidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:188547
+name: Cheyletoidea
+namespace: ncbi_taxonomy
+synonym: "Chelyetoidea" RELATED misspelling []
+synonym: "Chelytoidea" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:188550 ! Raphignathae
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:188550
+name: Raphignathae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:83145 ! Eleutherengona
+
+[Term]
 id: NCBITaxon:1891762
 alt_id: NCBITaxon:10629
 
@@ -6052,6 +6086,14 @@ is_a: NCBITaxon:206351 ! Neisseriales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:481310
+name: Demodex folliculorum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:188544 ! Demodex
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:482
 name: Neisseria
 namespace: ncbi_taxonomy
@@ -6844,6 +6886,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:68459 ! Giardiinae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:574145
+name: Demodex brevis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:188544 ! Demodex
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:5752
@@ -8830,6 +8880,15 @@ synonym: "Parasitengonae" RELATED synonym []
 synonym: "velvet mites" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:83138 ! Anystina
+
+[Term]
+id: NCBITaxon:83145
+name: Eleutherengona
+namespace: ncbi_taxonomy
+synonym: "Eleutherengonides" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:6947 ! Prostigmata
+property_value: has_rank NCBITaxon:infraorder
 
 [Term]
 id: NCBITaxon:84526
