@@ -298,6 +298,9 @@ mirror/ncbitaxon.owl:
 	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@
 .PRECIOUS: mirror/%.owl
 
+mirror/hp.owl: trigger-mirror
+	wget --no-check-certificate $(OBO)/hp.obo -O $@.tmp && mv $@.tmp $@
+
 mirror/chebi.owl: 
 	wget --no-check-certificate $(OBO)/chebi.obo -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
