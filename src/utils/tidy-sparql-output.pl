@@ -28,6 +28,8 @@ sub fixcell {
 
 sub fixuri {
     $_ = shift;
+    s@^http://www.w3.org/2000/01/rdf-schema#(\w+)@rdfs:$1@;
+    s@^http://www.geneontology.org/formats/oboInOwl#(\w+)@oboInOwl:$1@;
     s@^http://purl.obolibrary.org/obo/(\w+)_@$1:@;
     return $_;
 }
