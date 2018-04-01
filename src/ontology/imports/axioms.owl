@@ -83,6 +83,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/MONDO_0021141 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0021141"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0021152 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0021152"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -135,6 +147,16 @@
         </owl:annotatedTarget>
         <oboInOwl:created_by>cjm</oboInOwl:created_by>
     </owl:Axiom>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002573"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0021141"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002573"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0021152"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Restriction>
 </rdf:RDF>
 
 
