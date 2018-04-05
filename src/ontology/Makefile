@@ -425,6 +425,7 @@ compare/lsyns-%.owl: mirror/%.owl
 # Merges in the syns generated as above step
 compare/%-plus-lsyns.owl: mirror/%.owl compare/lsyns-%.owl
 	owltools $^ --merge-support-ontologies -o $@
+.PRECIOUS: compare/%-plus-lsyns.owl
 
 # logical merge, no duplicate axioms
 compare/axioms-%-nd.owl: compare/%-plus-lsyns.owl
@@ -432,7 +433,7 @@ compare/axioms-%-nd.owl: compare/%-plus-lsyns.owl
 .PRECIOUS: compare/axioms-%.owl
 
 compare/axioms-%-d.owl: compare/%-plus-lsyns.owl
-	owltools --use-catalog mondo-edit.obo --copy-axioms -D -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+	owltools --use-catalog mondo-edit.obo --copy-axioms -I -D -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # bring in strictly new literals in annotation axioms
