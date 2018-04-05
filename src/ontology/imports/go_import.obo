@@ -1552,6 +1552,25 @@ synonym: "medium-chain acyl-coenzyme A dehydrogenase activity" EXACT []
 is_a: GO:0016627 ! oxidoreductase activity, acting on the CH-CH group of donors
 
 [Term]
+id: GO:0004046
+name: aminoacylase activity
+def: "Catalysis of the reaction: an N-acyl-L-amino acid + H2O = a carboxylate + an L-amino acid." []
+synonym: "acylase I activity" NARROW []
+synonym: "alpha-N-acylaminoacid hydrolase activity" EXACT []
+synonym: "amido acid deacylase activity" EXACT []
+synonym: "aminoacylase I activity" NARROW []
+synonym: "benzamidase activity" RELATED []
+synonym: "dehydropeptidase II activity" NARROW []
+synonym: "hippurase activity" EXACT []
+synonym: "histozyme activity" RELATED []
+synonym: "L-amino-acid acylase activity" EXACT []
+synonym: "L-aminoacylase activity" EXACT []
+synonym: "long acyl amidoacylase activity" EXACT []
+synonym: "N-acyl-L-amino-acid amidohydrolase activity" EXACT []
+synonym: "short acyl amidoacylase activity" EXACT []
+is_a: GO:0016811 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides
+
+[Term]
 id: GO:0004175
 name: endopeptidase activity
 def: "Catalysis of the hydrolysis of internal, alpha-peptide bonds in a polypeptide chain." []
@@ -1926,10 +1945,27 @@ synonym: "ligand" NARROW []
 is_a: GO:0003674 ! molecular_function
 
 [Term]
+id: GO:0005496
+name: steroid binding
+def: "Interacting selectively and non-covalently with a steroid, any of a large group of substances that have in common a ring system based on 1,2-cyclopentanoperhydrophenanthrene." []
+is_a: GO:0008289 ! lipid binding
+is_a: GO:0097159 ! organic cyclic compound binding
+
+[Term]
 id: GO:0005497
 name: androgen binding
 def: "Interacting selectively and non-covalently with any androgen, male sex hormones." []
 is_a: GO:0042562 ! hormone binding
+
+[Term]
+id: GO:0005499
+name: vitamin D binding
+def: "Interacting selectively and non-covalently with vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
+synonym: "calciferol binding" NARROW []
+synonym: "cholecalciferol binding" NARROW []
+synonym: "ergocalciferol binding" NARROW []
+is_a: GO:0005496 ! steroid binding
+is_a: GO:0019842 ! vitamin binding
 
 [Term]
 id: GO:0005515
@@ -1938,6 +1974,12 @@ def: "Interacting selectively and non-covalently with any protein or protein com
 synonym: "glycoprotein binding" NARROW []
 synonym: "protein amino acid binding" EXACT []
 is_a: GO:0005488 ! binding
+
+[Term]
+id: GO:0005518
+name: collagen binding
+def: "Interacting selectively and non-covalently with collagen, a group of fibrous proteins of very high tensile strength that form the main component of connective tissue in animals. Collagen is highly enriched in glycine (some regions are 33% glycine) and proline, occurring predominantly as 3-hydroxyproline (about 20%)." []
+is_a: GO:0044877 ! protein-containing complex binding
 
 [Term]
 id: GO:0005575
@@ -2966,6 +3008,13 @@ synonym: "water-soluble vitamin metabolism" EXACT []
 is_a: GO:0006766 ! vitamin metabolic process
 
 [Term]
+id: GO:0006775
+name: fat-soluble vitamin metabolic process
+def: "The chemical reactions and pathways involving of any of a diverse group of vitamins that are soluble in organic solvents and relatively insoluble in water." []
+synonym: "fat-soluble vitamin metabolism" EXACT []
+is_a: GO:0006766 ! vitamin metabolic process
+
+[Term]
 id: GO:0006778
 name: porphyrin-containing compound metabolic process
 def: "The chemical reactions and pathways involving any member of a large group of derivatives or analogs of porphyrin. Porphyrins consists of a ring of four pyrrole nuclei linked each to the next at their alpha positions through a methine group." []
@@ -3063,6 +3112,22 @@ is_a: GO:0006810 ! transport
 intersection_of: GO:0006810 ! transport
 intersection_of: BFO:0000066 GO:0005576 ! occurs in extracellular region
 relationship: BFO:0000066 GO:0005576 ! occurs in extracellular region
+
+[Term]
+id: GO:0006860
+name: extracellular amino acid transport
+def: "The directed extracellular movement of amino acids." []
+is_a: GO:0006858 ! extracellular transport
+is_a: GO:0006865 ! amino acid transport
+intersection_of: GO:0006865 ! amino acid transport
+intersection_of: BFO:0000066 GO:0005576 ! occurs in extracellular region
+
+[Term]
+id: GO:0006865
+name: amino acid transport
+def: "The directed movement of amino acids, organic acids containing one or more amino substituents, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0046942 ! carboxylic acid transport
+is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
 id: GO:0006869
@@ -3455,6 +3520,15 @@ synonym: "ageing" EXACT []
 is_a: GO:0032502 ! developmental process
 
 [Term]
+id: GO:0007584
+name: response to nutrient
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a nutrient stimulus." []
+synonym: "nutritional response pathway" NARROW []
+synonym: "response to nutrients" EXACT []
+is_a: GO:0031667 ! response to nutrient levels
+is_a: GO:0042221 ! response to chemical
+
+[Term]
 id: GO:0007585
 name: respiratory gaseous exchange
 def: "The process of gaseous exchange between an organism and its environment. In plants, microorganisms, and many small animals, air or water makes direct contact with the organism's cells or tissue fluids, and the processes of diffusion supply the organism with dioxygen (O2) and remove carbon dioxide (CO2). In larger animals the efficiency of gaseous exchange is improved by specialized respiratory organs, such as lungs and gills, which are ventilated by breathing mechanisms." []
@@ -3598,6 +3672,12 @@ is_a: GO:0004888 ! transmembrane signaling receptor activity
 relationship: BFO:0000051 GO:0016595 ! has_part glutamate binding
 
 [Term]
+id: GO:0008144
+name: drug binding
+def: "Interacting selectively and non-covalently with a drug, any naturally occurring or synthetic substance, other than a nutrient, that, when administered or applied to an organism, affects the structure or functioning of the organism; in particular, any such substance used in the diagnosis, prevention, or treatment of disease." []
+is_a: GO:0005488 ! binding
+
+[Term]
 id: GO:0008150
 name: biological_process
 def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." []
@@ -3700,6 +3780,12 @@ intersection_of: RO:0002212 GO:0008283 ! negatively regulates cell proliferation
 relationship: RO:0002212 GO:0008283 ! negatively regulates cell proliferation
 
 [Term]
+id: GO:0008289
+name: lipid binding
+def: "Interacting selectively and non-covalently with a lipid." []
+is_a: GO:0005488 ! binding
+
+[Term]
 id: GO:0008324
 name: cation transmembrane transporter activity
 def: "Enables the transfer of cation from one side of a membrane to the other." []
@@ -3713,6 +3799,22 @@ name: RNA splicing
 def: "The process of removing sections of the primary RNA transcript to remove sequences not present in the mature form of the RNA and joining the remaining sections to form the mature form of the RNA." []
 synonym: "pre-mRNA splicing factor activity" RELATED []
 is_a: GO:0006396 ! RNA processing
+
+[Term]
+id: GO:0008434
+name: calcitriol receptor activity
+def: "Combining with calcitriol, the hormonally active form of vitamin D3, and transmitting the signal to the transcriptional machinery by interacting selectively and non-covalently with a specific DNA sequence in order to modulate transcription by RNA polymerase II." []
+synonym: "1,25-(OH)2D3 receptor activity" EXACT []
+synonym: "1,25-dihydroxycholecalciferol receptor activity" EXACT []
+synonym: "1,25-dihydroxyvitamin D3 receptor activity" EXACT []
+synonym: "1alpha,25(OH)2D3 receptor activity" EXACT []
+synonym: "1alpha,25-dihydroxyvitamin D3 receptor activity" EXACT []
+synonym: "vitamin D receptor activity" BROAD []
+synonym: "vitamin D3 receptor activity" RELATED []
+is_a: GO:0004879 ! nuclear receptor activity
+is_a: GO:0038023 ! signaling receptor activity
+relationship: BFO:0000050 GO:0070561 ! part of vitamin D receptor signaling pathway
+relationship: BFO:0000051 GO:1902098 ! has_part calcitriol binding
 
 [Term]
 id: GO:0008484
@@ -3918,6 +4020,18 @@ synonym: "coenzyme formation" EXACT []
 synonym: "coenzyme synthesis" EXACT []
 is_a: GO:0006732 ! coenzyme metabolic process
 is_a: GO:0051188 ! cofactor biosynthetic process
+
+[Term]
+id: GO:0009110
+name: vitamin biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a vitamin, one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
+synonym: "vitamin anabolism" EXACT []
+synonym: "vitamin biosynthesis" EXACT []
+synonym: "vitamin formation" EXACT []
+synonym: "vitamin synthesis" EXACT []
+is_a: GO:0006766 ! vitamin metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:0044283 ! small molecule biosynthetic process
 
 [Term]
 id: GO:0009112
@@ -4580,6 +4694,12 @@ synonym: "single-organism cellular process" RELATED []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0009991
+name: response to extracellular stimulus
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an extracellular stimulus." []
+is_a: GO:0009605 ! response to external stimulus
+
+[Term]
 id: GO:0010033
 name: response to organic substance
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an organic substance stimulus." []
@@ -5212,6 +5332,18 @@ intersection_of: RO:0002212 GO:0016485 ! negatively regulates protein processing
 relationship: RO:0002212 GO:0016485 ! negatively regulates protein processing
 
 [Term]
+id: GO:0010957
+name: negative regulation of vitamin D biosynthetic process
+def: "Any process that decreases the rate, frequency or extent of a vitamin D biosynthetic process. Vitamin D biosynthesis is the chemical reactions and pathways resulting in the formation of vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
+is_a: GO:0010894 ! negative regulation of steroid biosynthetic process
+is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
+is_a: GO:0046137 ! negative regulation of vitamin metabolic process
+is_a: GO:0060556 ! regulation of vitamin D biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042368 ! negatively regulates vitamin D biosynthetic process
+relationship: RO:0002212 GO:0042368 ! negatively regulates vitamin D biosynthetic process
+
+[Term]
 id: GO:0010959
 name: regulation of metal ion transport
 def: "Any process that modulates the frequency, rate, or extent of metal ion transport. Metal ion transport is the directed movement of metal ions, any metal ion with an electric charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
@@ -5330,9 +5462,22 @@ def: "The directed movement of inorganic anions into, out of or within a cell, o
 is_a: GO:0006820 ! anion transport
 
 [Term]
+id: GO:0015711
+name: organic anion transport
+def: "The directed movement of organic anions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Organic anions are atoms or small molecules with a negative charge which contain carbon in covalent linkage." []
+is_a: GO:0006820 ! anion transport
+is_a: GO:0071702 ! organic substance transport
+
+[Term]
 id: GO:0015758
 is_obsolete: true
 replaced_by: GO:1904659
+
+[Term]
+id: GO:0015804
+name: neutral amino acid transport
+def: "The directed movement of neutral amino acids, amino acids with no net charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0006865 ! amino acid transport
 
 [Term]
 id: GO:0015833
@@ -5355,6 +5500,12 @@ name: monoamine transport
 def: "The directed movement of monoamines, organic compounds that contain one amino group that is connected to an aromatic ring by an ethylene group (-CH2-CH2-), into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 is_a: GO:0071702 ! organic substance transport
 is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
+id: GO:0015849
+name: organic acid transport
+def: "The directed movement of organic acids, any acidic compound containing carbon in covalent linkage, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0071702 ! organic substance transport
 
 [Term]
 id: GO:0015850
@@ -5739,6 +5890,19 @@ synonym: "glycosidase activity" EXACT []
 synonym: "glycosylase" NARROW []
 synonym: "N-glycosylase" NARROW []
 is_a: GO:0016787 ! hydrolase activity
+
+[Term]
+id: GO:0016810
+name: hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
+def: "Catalysis of the hydrolysis of any carbon-nitrogen bond, C-N, with the exception of peptide bonds." []
+synonym: "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in other compounds" NARROW []
+is_a: GO:0016787 ! hydrolase activity
+
+[Term]
+id: GO:0016811
+name: hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides
+def: "Catalysis of the hydrolysis of any non-peptide carbon-nitrogen bond in a linear amide." []
+is_a: GO:0016810 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
 
 [Term]
 id: GO:0016829
@@ -6148,6 +6312,12 @@ name: immunoglobulin complex
 def: "A protein complex that in its canonical form is composed of two identical immunoglobulin heavy chains and two identical immunoglobulin light chains, held together by disulfide bonds and sometimes complexed with additional proteins. An immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph." []
 synonym: "antibody" NARROW []
 is_a: GO:0032991 ! protein-containing complex
+
+[Term]
+id: GO:0019842
+name: vitamin binding
+def: "Interacting selectively and non-covalently with a vitamin, one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
+is_a: GO:0036094 ! small molecule binding
 
 [Term]
 id: GO:0019889
@@ -6634,6 +6804,14 @@ is_a: GO:2000146 ! negative regulation of cell motility
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0016477 ! negatively regulates cell migration
 relationship: RO:0002212 GO:0016477 ! negatively regulates cell migration
+
+[Term]
+id: GO:0030343
+name: vitamin D3 25-hydroxylase activity
+def: "Catalysis of the reaction: vitamin D3 + NADPH + H+ + O2 = calcidiol + NADP+ + H2O." []
+synonym: "cholecalciferol 25-hydroxylase activity" EXACT []
+is_a: GO:0070643 ! vitamin D 25-hydroxylase activity
+relationship: BFO:0000050 GO:0036378 ! part of calcitriol biosynthetic process from calciol
 
 [Term]
 id: GO:0030424
@@ -7247,6 +7425,36 @@ intersection_of: RO:0002213 GO:0050877 ! positively regulates nervous system pro
 relationship: RO:0002213 GO:0050877 ! positively regulates nervous system process
 
 [Term]
+id: GO:0031667
+name: response to nutrient levels
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus reflecting the presence, absence, or concentration of nutrients." []
+is_a: GO:0009991 ! response to extracellular stimulus
+
+[Term]
+id: GO:0031668
+name: cellular response to extracellular stimulus
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an extracellular stimulus." []
+is_a: GO:0007154 ! cell communication
+is_a: GO:0009991 ! response to extracellular stimulus
+is_a: GO:0051716 ! cellular response to stimulus
+is_a: GO:0071496 ! cellular response to external stimulus
+
+[Term]
+id: GO:0031669
+name: cellular response to nutrient levels
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus reflecting the presence, absence, or concentration of nutrients." []
+is_a: GO:0031667 ! response to nutrient levels
+is_a: GO:0031668 ! cellular response to extracellular stimulus
+
+[Term]
+id: GO:0031670
+name: cellular response to nutrient
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a nutrient stimulus." []
+is_a: GO:0007584 ! response to nutrient
+is_a: GO:0031669 ! cellular response to nutrient levels
+is_a: GO:0070887 ! cellular response to chemical stimulus
+
+[Term]
 id: GO:0031943
 name: regulation of glucocorticoid metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving glucocorticoids." []
@@ -7434,6 +7642,82 @@ is_a: GO:0048584 ! positive regulation of response to stimulus
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0009605 ! positively regulates response to external stimulus
 relationship: RO:0002213 GO:0009605 ! positively regulates response to external stimulus
+
+[Term]
+id: GO:0032104
+name: regulation of response to extracellular stimulus
+def: "Any process that modulates the frequency, rate or extent of a response to an extracellular stimulus." []
+is_a: GO:0032101 ! regulation of response to external stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0009991 ! regulates response to extracellular stimulus
+relationship: RO:0002211 GO:0009991 ! regulates response to extracellular stimulus
+
+[Term]
+id: GO:0032105
+name: negative regulation of response to extracellular stimulus
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a response to an extracellular stimulus." []
+synonym: "down regulation of response to extracellular stimulus" EXACT []
+synonym: "down-regulation of response to extracellular stimulus" EXACT []
+synonym: "downregulation of response to extracellular stimulus" EXACT []
+synonym: "inhibition of response to extracellular stimulus" NARROW []
+is_a: GO:0032102 ! negative regulation of response to external stimulus
+is_a: GO:0032104 ! regulation of response to extracellular stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0009991 ! negatively regulates response to extracellular stimulus
+relationship: RO:0002212 GO:0009991 ! negatively regulates response to extracellular stimulus
+
+[Term]
+id: GO:0032106
+name: positive regulation of response to extracellular stimulus
+def: "Any process that activates, maintains or increases the rate of a response to an extracellular stimulus." []
+synonym: "activation of response to extracellular stimulus" NARROW []
+synonym: "stimulation of response to extracellular stimulus" NARROW []
+synonym: "up regulation of response to extracellular stimulus" EXACT []
+synonym: "up-regulation of response to extracellular stimulus" EXACT []
+synonym: "upregulation of response to extracellular stimulus" EXACT []
+is_a: GO:0032103 ! positive regulation of response to external stimulus
+is_a: GO:0032104 ! regulation of response to extracellular stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0009991 ! positively regulates response to extracellular stimulus
+relationship: RO:0002213 GO:0009991 ! positively regulates response to extracellular stimulus
+
+[Term]
+id: GO:0032107
+name: regulation of response to nutrient levels
+def: "Any process that modulates the frequency, rate or extent of a response to nutrient levels." []
+is_a: GO:0032104 ! regulation of response to extracellular stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0031667 ! regulates response to nutrient levels
+relationship: RO:0002211 GO:0031667 ! regulates response to nutrient levels
+
+[Term]
+id: GO:0032108
+name: negative regulation of response to nutrient levels
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a response to nutrient levels." []
+synonym: "down regulation of response to nutrient levels" EXACT []
+synonym: "down-regulation of response to nutrient levels" EXACT []
+synonym: "downregulation of response to nutrient levels" EXACT []
+synonym: "inhibition of response to nutrient levels" NARROW []
+is_a: GO:0032105 ! negative regulation of response to extracellular stimulus
+is_a: GO:0032107 ! regulation of response to nutrient levels
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0031667 ! negatively regulates response to nutrient levels
+relationship: RO:0002212 GO:0031667 ! negatively regulates response to nutrient levels
+
+[Term]
+id: GO:0032109
+name: positive regulation of response to nutrient levels
+def: "Any process that activates or increases the frequency, rate or extent of a response to nutrient levels." []
+synonym: "activation of response to nutrient levels" NARROW []
+synonym: "stimulation of response to nutrient levels" NARROW []
+synonym: "up regulation of response to nutrient levels" EXACT []
+synonym: "up-regulation of response to nutrient levels" EXACT []
+synonym: "upregulation of response to nutrient levels" EXACT []
+is_a: GO:0032106 ! positive regulation of response to extracellular stimulus
+is_a: GO:0032107 ! regulation of response to nutrient levels
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0031667 ! positively regulates response to nutrient levels
+relationship: RO:0002213 GO:0031667 ! positively regulates response to nutrient levels
 
 [Term]
 id: GO:0032268
@@ -7794,6 +8078,44 @@ intersection_of: RO:0002211 GO:0005976 ! regulates polysaccharide metabolic proc
 relationship: RO:0002211 GO:0005976 ! regulates polysaccharide metabolic process
 
 [Term]
+id: GO:0032890
+name: regulation of organic acid transport
+def: "Any process that modulates the frequency, rate or extent of the directed movement of organic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0051049 ! regulation of transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0015849 ! regulates organic acid transport
+relationship: RO:0002211 GO:0015849 ! regulates organic acid transport
+
+[Term]
+id: GO:0032891
+name: negative regulation of organic acid transport
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the directed movement of organic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "down regulation of organic acid transport" EXACT []
+synonym: "down-regulation of organic acid transport" EXACT []
+synonym: "downregulation of organic acid transport" EXACT []
+synonym: "inhibition of organic acid transport" NARROW []
+is_a: GO:0032890 ! regulation of organic acid transport
+is_a: GO:0051051 ! negative regulation of transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0015849 ! negatively regulates organic acid transport
+relationship: RO:0002212 GO:0015849 ! negatively regulates organic acid transport
+
+[Term]
+id: GO:0032892
+name: positive regulation of organic acid transport
+def: "Any process that activates or increases the frequency, rate or extent of the directed movement of organic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "activation of organic acid transport" NARROW []
+synonym: "stimulation of organic acid transport" NARROW []
+synonym: "up regulation of organic acid transport" EXACT []
+synonym: "up-regulation of organic acid transport" EXACT []
+synonym: "upregulation of organic acid transport" EXACT []
+is_a: GO:0032890 ! regulation of organic acid transport
+is_a: GO:0051050 ! positive regulation of transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0015849 ! positively regulates organic acid transport
+relationship: RO:0002213 GO:0015849 ! positively regulates organic acid transport
+
+[Term]
 id: GO:0032940
 name: secretion by cell
 def: "The controlled release of a substance by a cell." []
@@ -7950,6 +8272,62 @@ is_a: GO:0120038 ! plasma membrane bounded cell projection part
 intersection_of: GO:0005575 ! cellular_component
 intersection_of: BFO:0000050 GO:0030424 ! part of axon
 relationship: BFO:0000050 GO:0030424 ! part of axon
+
+[Term]
+id: GO:0033273
+name: response to vitamin
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a vitamin stimulus." []
+is_a: GO:0007584 ! response to nutrient
+
+[Term]
+id: GO:0033280
+name: response to vitamin D
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a vitamin D stimulus." []
+synonym: "response to calciferol" EXACT []
+synonym: "response to cholecalciferol" NARROW []
+synonym: "response to ergocalciferol" NARROW []
+is_a: GO:0014070 ! response to organic cyclic compound
+is_a: GO:0033273 ! response to vitamin
+is_a: GO:0033993 ! response to lipid
+is_a: GO:1901700 ! response to oxygen-containing compound
+
+[Term]
+id: GO:0033341
+name: regulation of collagen binding
+def: "Any process that modulates the frequency, rate or extent of collagen binding." []
+is_a: GO:0051098 ! regulation of binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0005518 ! regulates collagen binding
+relationship: RO:0002211 GO:0005518 ! regulates collagen binding
+
+[Term]
+id: GO:0033342
+name: negative regulation of collagen binding
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of collagen binding." []
+synonym: "down regulation of collagen binding" EXACT []
+synonym: "down-regulation of collagen binding" EXACT []
+synonym: "downregulation of collagen binding" EXACT []
+synonym: "inhibition of collagen binding" NARROW []
+is_a: GO:0033341 ! regulation of collagen binding
+is_a: GO:0051100 ! negative regulation of binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0005518 ! negatively regulates collagen binding
+relationship: RO:0002212 GO:0005518 ! negatively regulates collagen binding
+
+[Term]
+id: GO:0033343
+name: positive regulation of collagen binding
+def: "Any process that activates or increases the frequency, rate or extent of collagen binding." []
+synonym: "activation of collagen binding" NARROW []
+synonym: "stimulation of collagen binding" NARROW []
+synonym: "up regulation of collagen binding" EXACT []
+synonym: "up-regulation of collagen binding" EXACT []
+synonym: "upregulation of collagen binding" EXACT []
+is_a: GO:0033341 ! regulation of collagen binding
+is_a: GO:0051099 ! positive regulation of binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0005518 ! positively regulates collagen binding
+relationship: RO:0002213 GO:0005518 ! positively regulates collagen binding
 
 [Term]
 id: GO:0033554
@@ -8562,12 +8940,44 @@ is_a: GO:0019538 ! protein metabolic process
 is_a: GO:0043412 ! macromolecule modification
 
 [Term]
+id: GO:0036378
+name: calcitriol biosynthetic process from calciol
+def: "Conversion of vitamin D3 from its largely inactive form (calciol, also called cholecalciferol) into a hormonally active form (calcitriol). Conversion requires 25-hydroxylation of calciol in the liver to form calcidiol, and subsequent 1,alpha-hydroxylation of calcidiol in the kidney to form calcitriol." []
+synonym: "1alpha,25(OH)2D3 biosynthesis" BROAD []
+synonym: "1alpha,25-dihydroxycholecalciferol biosynthesis" BROAD []
+synonym: "1alpha,25-dihydroxyvitamin D3 biosynthesis" BROAD []
+synonym: "calcitriol biosynthesis from calciol" EXACT []
+synonym: "vitamin D3 activation" EXACT []
+is_a: GO:0017144 ! drug metabolic process
+is_a: GO:0042368 ! vitamin D biosynthetic process
+is_a: GO:0042446 ! hormone biosynthetic process
+is_a: GO:0044108 ! cellular alcohol biosynthetic process
+is_a: GO:0046173 ! polyol biosynthetic process
+is_a: GO:0070640 ! vitamin D3 metabolic process
+
+[Term]
 id: GO:0038023
 name: signaling receptor activity
 def: "Receiving a signal and transmitting it in the cell to initiate a change in cell activity. A signal is a physical entity or change in state that is used to transfer information in order to trigger a response." []
 synonym: "receptor activity" BROAD []
 synonym: "receptor activity involved in signal transduction" EXACT []
 is_a: GO:0060089 ! molecular transducer activity
+
+[Term]
+id: GO:0038064
+name: collagen receptor activity
+def: "Combining with a collagen and transmitting the signal from one side of the membrane to the other to initiate a change in cell activity." []
+synonym: "transmembrane collagen receptor activity" EXACT []
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+relationship: BFO:0000050 GO:0038065 ! part of collagen-activated signaling pathway
+relationship: BFO:0000051 GO:0005518 ! has_part collagen binding
+
+[Term]
+id: GO:0038065
+name: collagen-activated signaling pathway
+def: "A series of molecular signals initiated by collagen binding to a cell surface receptor, and ending with regulation of a downstream cellular process, e.g. transcription." []
+synonym: "collagen-activated signalling pathway" EXACT []
+is_a: GO:0007166 ! cell surface receptor signaling pathway
 
 [Term]
 id: GO:0040011
@@ -8806,6 +9216,51 @@ is_a: GO:0045937 ! positive regulation of phosphate metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0016310 ! positively regulates phosphorylation
 relationship: RO:0002213 GO:0016310 ! positively regulates phosphorylation
+
+[Term]
+id: GO:0042359
+name: vitamin D metabolic process
+def: "The chemical reactions and pathways involving vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
+synonym: "calciferol metabolic process" NARROW []
+synonym: "calciferol metabolism" NARROW []
+synonym: "cholecalciferol metabolic process" NARROW []
+synonym: "cholecalciferol metabolism" NARROW []
+synonym: "ergocalciferol metabolic process" NARROW []
+synonym: "ergocalciferol metabolism" NARROW []
+synonym: "vitamin D metabolism" EXACT []
+is_a: GO:0006775 ! fat-soluble vitamin metabolic process
+is_a: GO:0008202 ! steroid metabolic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0042362
+name: fat-soluble vitamin biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of any of a diverse group of vitamins that are soluble in organic solvents and relatively insoluble in water." []
+synonym: "fat-soluble vitamin anabolism" EXACT []
+synonym: "fat-soluble vitamin biosynthesis" EXACT []
+synonym: "fat-soluble vitamin formation" EXACT []
+synonym: "fat-soluble vitamin synthesis" EXACT []
+is_a: GO:0006775 ! fat-soluble vitamin metabolic process
+is_a: GO:0009110 ! vitamin biosynthetic process
+
+[Term]
+id: GO:0042368
+name: vitamin D biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
+synonym: "calciferol biosynthesis" NARROW []
+synonym: "calciferol biosynthetic process" NARROW []
+synonym: "cholecalciferol biosynthesis" NARROW []
+synonym: "cholecalciferol biosynthetic process" NARROW []
+synonym: "ergocalciferol biosynthesis" NARROW []
+synonym: "ergocalciferol biosynthetic process" NARROW []
+synonym: "vitamin D anabolism" EXACT []
+synonym: "vitamin D biosynthesis" EXACT []
+synonym: "vitamin D formation" EXACT []
+synonym: "vitamin D synthesis" EXACT []
+is_a: GO:0006694 ! steroid biosynthetic process
+is_a: GO:0042359 ! vitamin D metabolic process
+is_a: GO:0042362 ! fat-soluble vitamin biosynthetic process
+is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
 id: GO:0042391
@@ -9585,6 +10040,21 @@ is_a: GO:0009308 ! amine metabolic process
 is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 
 [Term]
+id: GO:0044107
+name: cellular alcohol metabolic process
+def: "The chemical reactions and pathways involving alcohols, any of a class of compounds containing one or more hydroxyl groups attached to a saturated carbon atom, as carried out by individual cells." []
+is_a: GO:0006066 ! alcohol metabolic process
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0044108
+name: cellular alcohol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of alcohols, any of a class of compounds containing one or more hydroxyl groups attached to a saturated carbon atom, carried out at the level of an individual cell." []
+is_a: GO:0044107 ! cellular alcohol metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:0046165 ! alcohol biosynthetic process
+
+[Term]
 id: GO:0044237
 name: cellular metabolic process
 def: "The chemical reactions and pathways by which individual cells transform chemical substances." []
@@ -9965,6 +10435,14 @@ is_a: GO:0045121 ! membrane raft
 is_a: GO:0098590 ! plasma membrane region
 intersection_of: GO:0045121 ! membrane raft
 intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0044877
+name: protein-containing complex binding
+def: "Interacting selectively and non-covalently with a macromolecular complex." []
+synonym: "macromolecular complex binding" RELATED []
+synonym: "protein complex binding" EXACT []
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0045121
@@ -10985,6 +11463,30 @@ intersection_of: RO:0002212 GO:0006766 ! negatively regulates vitamin metabolic 
 relationship: RO:0002212 GO:0006766 ! negatively regulates vitamin metabolic process
 
 [Term]
+id: GO:0046165
+name: alcohol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of alcohols, any of a class of compounds containing one or more hydroxyl groups attached to a saturated carbon atom." []
+synonym: "alcohol anabolism" EXACT []
+synonym: "alcohol biosynthesis" EXACT []
+synonym: "alcohol formation" EXACT []
+synonym: "alcohol synthesis" EXACT []
+is_a: GO:0006066 ! alcohol metabolic process
+is_a: GO:0044283 ! small molecule biosynthetic process
+is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
+
+[Term]
+id: GO:0046173
+name: polyol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a polyol, any alcohol containing three or more hydroxyl groups attached to saturated carbon atoms." []
+synonym: "polyhydric alcohol biosynthetic process" EXACT []
+synonym: "polyol anabolism" EXACT []
+synonym: "polyol biosynthesis" EXACT []
+synonym: "polyol formation" EXACT []
+synonym: "polyol synthesis" EXACT []
+is_a: GO:0019751 ! polyol metabolic process
+is_a: GO:0046165 ! alcohol biosynthetic process
+
+[Term]
 id: GO:0046189
 name: phenol-containing compound biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of a phenol, any compound containing one or more hydroxyl groups directly attached to an aromatic carbon ring." []
@@ -11384,6 +11886,13 @@ name: nucleotide phosphorylation
 def: "The process of introducing one or more phosphate groups into a nucleotide to produce a phosphorylated nucleoside." []
 is_a: GO:0009117 ! nucleotide metabolic process
 is_a: GO:0016310 ! phosphorylation
+
+[Term]
+id: GO:0046942
+name: carboxylic acid transport
+def: "The directed movement of carboxylic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Carboxylic acids are organic acids containing one or more carboxyl (COOH) groups or anions (COO-)." []
+is_a: GO:0015711 ! organic anion transport
+is_a: GO:0015849 ! organic acid transport
 
 [Term]
 id: GO:0046950
@@ -13331,6 +13840,52 @@ intersection_of: RO:0002213 GO:0015837 ! positively regulates amine transport
 relationship: RO:0002213 GO:0015837 ! positively regulates amine transport
 
 [Term]
+id: GO:0051955
+name: regulation of amino acid transport
+def: "Any process that modulates the frequency, rate or extent of the directed movement of amino acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0032890 ! regulation of organic acid transport
+is_a: GO:0044070 ! regulation of anion transport
+is_a: GO:0051952 ! regulation of amine transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006865 ! regulates amino acid transport
+relationship: RO:0002211 GO:0006865 ! regulates amino acid transport
+
+[Term]
+id: GO:0051956
+name: negative regulation of amino acid transport
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the directed movement of amino acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "down regulation of amino acid transport" EXACT []
+synonym: "down-regulation of amino acid transport" EXACT []
+synonym: "downregulation of amino acid transport" EXACT []
+synonym: "inhibition of amino acid transport" NARROW []
+synonym: "negative regulation of amino acid transmembrane transport" EXACT []
+is_a: GO:0032891 ! negative regulation of organic acid transport
+is_a: GO:0051953 ! negative regulation of amine transport
+is_a: GO:0051955 ! regulation of amino acid transport
+is_a: GO:1903792 ! negative regulation of anion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006865 ! negatively regulates amino acid transport
+relationship: RO:0002212 GO:0006865 ! negatively regulates amino acid transport
+
+[Term]
+id: GO:0051957
+name: positive regulation of amino acid transport
+def: "Any process that activates, maintains or increases the frequency, rate or extent of the directed movement of amino acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "activation of amino acid transport" NARROW []
+synonym: "positive regulation of amino acid transmembrane transport" EXACT []
+synonym: "stimulation of amino acid transport" NARROW []
+synonym: "up regulation of amino acid transport" EXACT []
+synonym: "up-regulation of amino acid transport" EXACT []
+synonym: "upregulation of amino acid transport" EXACT []
+is_a: GO:0032892 ! positive regulation of organic acid transport
+is_a: GO:0051954 ! positive regulation of amine transport
+is_a: GO:0051955 ! regulation of amino acid transport
+is_a: GO:1903793 ! positive regulation of anion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006865 ! positively regulates amino acid transport
+relationship: RO:0002213 GO:0006865 ! positively regulates amino acid transport
+
+[Term]
 id: GO:0051960
 name: regulation of nervous system development
 def: "Any process that modulates the frequency, rate or extent of nervous system development, the origin and formation of nervous tissue." []
@@ -13744,6 +14299,29 @@ is_a: GO:0009888 ! tissue development
 relationship: BFO:0000050 GO:0048513 ! part of animal organ development
 
 [Term]
+id: GO:0060556
+name: regulation of vitamin D biosynthetic process
+def: "Any process that modulates the rate frequency or extent of a vitamin D biosynthetic process. Vitamin D biosynthesis is the chemical reactions and pathways resulting in the formation of vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
+is_a: GO:0030656 ! regulation of vitamin metabolic process
+is_a: GO:0031326 ! regulation of cellular biosynthetic process
+is_a: GO:0050810 ! regulation of steroid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042368 ! regulates vitamin D biosynthetic process
+relationship: RO:0002211 GO:0042368 ! regulates vitamin D biosynthetic process
+
+[Term]
+id: GO:0060557
+name: positive regulation of vitamin D biosynthetic process
+def: "Any process that increases the rate, frequency or extent of a vitamin D biosynthetic process. Vitamin D biosynthesis is the chemical reactions and pathways resulting in the formation of vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
+is_a: GO:0010893 ! positive regulation of steroid biosynthetic process
+is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
+is_a: GO:0046136 ! positive regulation of vitamin metabolic process
+is_a: GO:0060556 ! regulation of vitamin D biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042368 ! positively regulates vitamin D biosynthetic process
+relationship: RO:0002213 GO:0042368 ! positively regulates vitamin D biosynthetic process
+
+[Term]
 id: GO:0060627
 name: regulation of vesicle-mediated transport
 def: "Any process that modulates the rate, frequency, or extent of vesicle-mediated transport, the directed movement of substances, either within a vesicle or in the vesicle membrane, into, out of or within a cell." []
@@ -14048,6 +14626,64 @@ synonym: "triiodothyronine binding" NARROW []
 is_a: GO:0042562 ! hormone binding
 
 [Term]
+id: GO:0070561
+name: vitamin D receptor signaling pathway
+def: "The series of molecular signals generated as a consequence of a vitamin D receptor binding to one of its physiological ligands." []
+synonym: "calcitriol signaling pathway" NARROW []
+synonym: "VDR signaling pathway" EXACT []
+synonym: "vitamin D receptor signalling pathway" EXACT []
+is_a: GO:0030522 ! intracellular receptor signaling pathway
+relationship: BFO:0000050 GO:0071305 ! part of cellular response to vitamin D
+
+[Term]
+id: GO:0070562
+name: regulation of vitamin D receptor signaling pathway
+def: "Any process that modulates the frequency, rate or extent of vitamin D receptor signaling pathway activity." []
+synonym: "regulation of VDR signaling pathway" EXACT []
+synonym: "regulation of vitamin D receptor signalling pathway" EXACT []
+is_a: GO:0009966 ! regulation of signal transduction
+is_a: GO:0032107 ! regulation of response to nutrient levels
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0070561 ! regulates vitamin D receptor signaling pathway
+relationship: RO:0002211 GO:0070561 ! regulates vitamin D receptor signaling pathway
+
+[Term]
+id: GO:0070563
+name: negative regulation of vitamin D receptor signaling pathway
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the vitamin D receptor signaling pathway activity." []
+synonym: "down regulation of vitamin D receptor signaling pathway" EXACT []
+synonym: "down-regulation of vitamin D receptor signaling pathway" EXACT []
+synonym: "downregulation of vitamin D receptor signaling pathway" EXACT []
+synonym: "inhibition of vitamin D receptor signaling pathway" NARROW []
+synonym: "negative regulation of VDR signaling pathway" EXACT []
+synonym: "negative regulation of VDR signalling pathway" EXACT []
+synonym: "negative regulation vitamin D receptor signalling pathway" EXACT []
+is_a: GO:0009968 ! negative regulation of signal transduction
+is_a: GO:0032108 ! negative regulation of response to nutrient levels
+is_a: GO:0070562 ! regulation of vitamin D receptor signaling pathway
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0070561 ! negatively regulates vitamin D receptor signaling pathway
+relationship: RO:0002212 GO:0070561 ! negatively regulates vitamin D receptor signaling pathway
+
+[Term]
+id: GO:0070564
+name: positive regulation of vitamin D receptor signaling pathway
+def: "Any process that activates or increases the frequency, rate or extent of vitamin D receptor signaling pathway activity." []
+synonym: "activation of vitamin D receptor signaling pathway" NARROW []
+synonym: "positive regulation of VDR signaling pathway" EXACT []
+synonym: "positive regulation of vitamin D receptor signalling pathway" EXACT []
+synonym: "stimulation of vitamin D receptor signaling pathway" NARROW []
+synonym: "up regulation of vitamin D receptor signaling pathway" EXACT []
+synonym: "up-regulation of vitamin D receptor signaling pathway" EXACT []
+synonym: "upregulation of vitamin D receptor signaling pathway" EXACT []
+is_a: GO:0009967 ! positive regulation of signal transduction
+is_a: GO:0032109 ! positive regulation of response to nutrient levels
+is_a: GO:0070562 ! regulation of vitamin D receptor signaling pathway
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0070561 ! positively regulates vitamin D receptor signaling pathway
+relationship: RO:0002213 GO:0070561 ! positively regulates vitamin D receptor signaling pathway
+
+[Term]
 id: GO:0070613
 name: regulation of protein processing
 def: "Any process that modulates the frequency, rate or extent of protein processing, any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein." []
@@ -14057,6 +14693,27 @@ is_a: GO:1903317 ! regulation of protein maturation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0016485 ! regulates protein processing
 relationship: RO:0002211 GO:0016485 ! regulates protein processing
+
+[Term]
+id: GO:0070640
+name: vitamin D3 metabolic process
+def: "The chemical reactions and pathways involving vitamin D3, (3S,5Z,7E)-9,10-secocholesta-5,7,10(19)-trien-3-ol." []
+synonym: "calciol metabolic process" EXACT []
+synonym: "cholecalciferol metabolic process" EXACT []
+synonym: "vitamin D3 metabolism" EXACT []
+is_a: GO:0042359 ! vitamin D metabolic process
+is_a: GO:0042445 ! hormone metabolic process
+is_a: GO:1902652 ! secondary alcohol metabolic process
+
+[Term]
+id: GO:0070643
+name: vitamin D 25-hydroxylase activity
+def: "Catalysis of the hydroxylation of C-25 of any form of vitamin D." []
+synonym: "calciferol 25-hydroxylase activity" NARROW []
+synonym: "cholecalciferol 25-hydroxylase activity" NARROW []
+synonym: "ergocalciferol 25-hydroxylase activity" NARROW []
+synonym: "vitamin D2 25-hydroxylase activity" NARROW []
+is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
 id: GO:0070701
@@ -14204,6 +14861,26 @@ is_a: GO:0009628 ! response to abiotic stimulus
 is_a: GO:0104004 ! cellular response to environmental stimulus
 
 [Term]
+id: GO:0071295
+name: cellular response to vitamin
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a vitamin stimulus." []
+is_a: GO:0031670 ! cellular response to nutrient
+is_a: GO:0033273 ! response to vitamin
+
+[Term]
+id: GO:0071305
+name: cellular response to vitamin D
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a vitamin D stimulus." []
+synonym: "cellular response to calciferol" EXACT []
+synonym: "cellular response to cholecalciferol" NARROW []
+synonym: "cellular response to ergocalciferol" NARROW []
+is_a: GO:0033280 ! response to vitamin D
+is_a: GO:0071295 ! cellular response to vitamin
+is_a: GO:0071396 ! cellular response to lipid
+is_a: GO:0071407 ! cellular response to organic cyclic compound
+is_a: GO:1901701 ! cellular response to oxygen-containing compound
+
+[Term]
 id: GO:0071310
 name: cellular response to organic substance
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an organic substance stimulus." []
@@ -14262,6 +14939,13 @@ id: GO:0071495
 name: cellular response to endogenous stimulus
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus arising within the organism." []
 is_a: GO:0009719 ! response to endogenous stimulus
+
+[Term]
+id: GO:0071496
+name: cellular response to external stimulus
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an external stimulus." []
+synonym: "cellular response to environmental stimulus" EXACT []
+is_a: GO:0009605 ! response to external stimulus
 
 [Term]
 id: GO:0071696
@@ -15675,6 +16359,43 @@ intersection_of: RO:0002213 GO:0005102 ! positively regulates signaling receptor
 relationship: RO:0002213 GO:0005102 ! positively regulates signaling receptor binding
 
 [Term]
+id: GO:1900130
+name: regulation of lipid binding
+def: "Any process that modulates the frequency, rate or extent of lipid binding." []
+is_a: GO:0051098 ! regulation of binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0008289 ! regulates lipid binding
+relationship: RO:0002211 GO:0008289 ! regulates lipid binding
+
+[Term]
+id: GO:1900131
+name: negative regulation of lipid binding
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of lipid binding." []
+synonym: "down regulation of lipid binding" EXACT []
+synonym: "down-regulation of lipid binding" EXACT []
+synonym: "downregulation of lipid binding" EXACT []
+synonym: "inhibition of lipid binding" NARROW []
+is_a: GO:0051100 ! negative regulation of binding
+is_a: GO:1900130 ! regulation of lipid binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0008289 ! negatively regulates lipid binding
+relationship: RO:0002212 GO:0008289 ! negatively regulates lipid binding
+
+[Term]
+id: GO:1900132
+name: positive regulation of lipid binding
+def: "Any process that activates or increases the frequency, rate or extent of lipid binding." []
+synonym: "activation of lipid binding" NARROW []
+synonym: "up regulation of lipid binding" EXACT []
+synonym: "up-regulation of lipid binding" EXACT []
+synonym: "upregulation of lipid binding" EXACT []
+is_a: GO:0051099 ! positive regulation of binding
+is_a: GO:1900130 ! regulation of lipid binding
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0008289 ! positively regulates lipid binding
+relationship: RO:0002213 GO:0008289 ! positively regulates lipid binding
+
+[Term]
 id: GO:1900371
 name: regulation of purine nucleotide biosynthetic process
 def: "Any process that modulates the frequency, rate or extent of purine nucleotide biosynthetic processes." []
@@ -16472,6 +17193,21 @@ is_a: GO:0042181 ! ketone biosynthetic process
 is_a: GO:1901661 ! quinone metabolic process
 
 [Term]
+id: GO:1901700
+name: response to oxygen-containing compound
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an oxygen-containing compound stimulus." []
+synonym: "response to oxygen molecular entity" EXACT []
+is_a: GO:0042221 ! response to chemical
+
+[Term]
+id: GO:1901701
+name: cellular response to oxygen-containing compound
+def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an oxygen-containing compound stimulus." []
+synonym: "cellular response to oxygen molecular entity" EXACT []
+is_a: GO:0070887 ! cellular response to chemical stimulus
+is_a: GO:1901700 ! response to oxygen-containing compound
+
+[Term]
 id: GO:1901706
 name: mesenchymal cell differentiation involved in bone development
 def: "The process in which relatively unspecialized cells acquire specialized structural and/or functional features that characterize the mesenchymal cells of bone as it progresses from its formation to the mature state." []
@@ -16793,6 +17529,21 @@ intersection_of: RO:0002213 GO:0030317 ! positively regulates flagellated sperm 
 relationship: RO:0002213 GO:0030317 ! positively regulates flagellated sperm motility
 
 [Term]
+id: GO:1902098
+name: calcitriol binding
+def: "Interacting selectively and non-covalently with calcitriol. Calcitriol (1,25-dihydroxycholecalciferol) is the hormonally active form of vitamin D3." []
+synonym: "1,25-dihydroxycholecalciferol binding" EXACT []
+synonym: "1,25-dihydroxyvitamin D3 binding" EXACT []
+synonym: "1alpha,25(OH)2 vitamin D3 binding" EXACT []
+synonym: "1alpha,25(OH)2D3 binding" EXACT []
+synonym: "1alpha,25-dihydroxycholecalciferol binding" EXACT []
+synonym: "1alpha,25-dihydroxyvitamin D3 binding" EXACT []
+synonym: "hormonally active vitamin D3 binding" EXACT []
+is_a: GO:0008144 ! drug binding
+is_a: GO:0042562 ! hormone binding
+is_a: GO:1902271 ! D3 vitamins binding
+
+[Term]
 id: GO:1902113
 name: nucleotide phosphorylation involved in DNA repair
 def: "Any nucleotide phosphorylation that is involved in DNA repair." []
@@ -16815,6 +17566,12 @@ def: "The chemical reactions and pathways involving ketone body." []
 synonym: "ketone body metabolism" EXACT []
 is_a: GO:0017144 ! drug metabolic process
 is_a: GO:1901568 ! fatty acid derivative metabolic process
+
+[Term]
+id: GO:1902271
+name: D3 vitamins binding
+def: "Interacting selectively and non-covalently with D3 vitamins." []
+is_a: GO:0005499 ! vitamin D binding
 
 [Term]
 id: GO:1902476
@@ -16999,6 +17756,13 @@ is_a: GO:0015672 ! monovalent inorganic cation transport
 is_a: GO:0098662 ! inorganic cation transmembrane transport
 
 [Term]
+id: GO:1902652
+name: secondary alcohol metabolic process
+def: "The chemical reactions and pathways involving secondary alcohol." []
+synonym: "secondary alcohol metabolism" EXACT []
+is_a: GO:0006066 ! alcohol metabolic process
+
+[Term]
 id: GO:1902679
 name: negative regulation of RNA biosynthetic process
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of RNA biosynthetic process." []
@@ -17069,6 +17833,90 @@ is_a: GO:2001141 ! regulation of RNA biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0032774 ! positively regulates RNA biosynthetic process
 relationship: RO:0002213 GO:0032774 ! positively regulates RNA biosynthetic process
+
+[Term]
+id: GO:1902930
+name: regulation of alcohol biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of alcohol biosynthetic process." []
+synonym: "regulation of alcohol anabolism" EXACT []
+synonym: "regulation of alcohol biosynthesis" EXACT []
+synonym: "regulation of alcohol formation" EXACT []
+synonym: "regulation of alcohol synthesis" EXACT []
+synonym: "regulation of solventogenesis" BROAD []
+is_a: GO:0009889 ! regulation of biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0046165 ! regulates alcohol biosynthetic process
+relationship: RO:0002211 GO:0046165 ! regulates alcohol biosynthetic process
+
+[Term]
+id: GO:1902931
+name: negative regulation of alcohol biosynthetic process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of alcohol biosynthetic process." []
+synonym: "down regulation of alcohol anabolism" EXACT []
+synonym: "down regulation of alcohol biosynthesis" EXACT []
+synonym: "down regulation of alcohol biosynthetic process" EXACT []
+synonym: "down regulation of alcohol formation" EXACT []
+synonym: "down regulation of alcohol synthesis" EXACT []
+synonym: "down-regulation of alcohol anabolism" EXACT []
+synonym: "down-regulation of alcohol biosynthesis" EXACT []
+synonym: "down-regulation of alcohol biosynthetic process" EXACT []
+synonym: "down-regulation of alcohol formation" EXACT []
+synonym: "down-regulation of alcohol synthesis" EXACT []
+synonym: "downregulation of alcohol anabolism" EXACT []
+synonym: "downregulation of alcohol biosynthesis" EXACT []
+synonym: "downregulation of alcohol biosynthetic process" EXACT []
+synonym: "downregulation of alcohol formation" EXACT []
+synonym: "downregulation of alcohol synthesis" EXACT []
+synonym: "inhibition of alcohol anabolism" NARROW []
+synonym: "inhibition of alcohol biosynthesis" NARROW []
+synonym: "inhibition of alcohol biosynthetic process" NARROW []
+synonym: "inhibition of alcohol formation" NARROW []
+synonym: "inhibition of alcohol synthesis" NARROW []
+synonym: "negative regulation of alcohol anabolism" EXACT []
+synonym: "negative regulation of alcohol biosynthesis" EXACT []
+synonym: "negative regulation of alcohol formation" EXACT []
+synonym: "negative regulation of alcohol synthesis" EXACT []
+synonym: "negative regulation of solventogenesis" BROAD []
+is_a: GO:0009890 ! negative regulation of biosynthetic process
+is_a: GO:1902930 ! regulation of alcohol biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0046165 ! negatively regulates alcohol biosynthetic process
+relationship: RO:0002212 GO:0046165 ! negatively regulates alcohol biosynthetic process
+
+[Term]
+id: GO:1902932
+name: positive regulation of alcohol biosynthetic process
+def: "Any process that activates or increases the frequency, rate or extent of alcohol biosynthetic process." []
+synonym: "activation of alcohol anabolism" NARROW []
+synonym: "activation of alcohol biosynthesis" NARROW []
+synonym: "activation of alcohol biosynthetic process" NARROW []
+synonym: "activation of alcohol formation" NARROW []
+synonym: "activation of alcohol synthesis" NARROW []
+synonym: "positive regulation of alcohol anabolism" EXACT []
+synonym: "positive regulation of alcohol biosynthesis" EXACT []
+synonym: "positive regulation of alcohol formation" EXACT []
+synonym: "positive regulation of alcohol synthesis" EXACT []
+synonym: "positive regulation of solventogenesis" BROAD []
+synonym: "up regulation of alcohol anabolism" EXACT []
+synonym: "up regulation of alcohol biosynthesis" EXACT []
+synonym: "up regulation of alcohol biosynthetic process" EXACT []
+synonym: "up regulation of alcohol formation" EXACT []
+synonym: "up regulation of alcohol synthesis" EXACT []
+synonym: "up-regulation of alcohol anabolism" EXACT []
+synonym: "up-regulation of alcohol biosynthesis" EXACT []
+synonym: "up-regulation of alcohol biosynthetic process" EXACT []
+synonym: "up-regulation of alcohol formation" EXACT []
+synonym: "up-regulation of alcohol synthesis" EXACT []
+synonym: "upregulation of alcohol anabolism" EXACT []
+synonym: "upregulation of alcohol biosynthesis" EXACT []
+synonym: "upregulation of alcohol biosynthetic process" EXACT []
+synonym: "upregulation of alcohol formation" EXACT []
+synonym: "upregulation of alcohol synthesis" EXACT []
+is_a: GO:0009891 ! positive regulation of biosynthetic process
+is_a: GO:1902930 ! regulation of alcohol biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0046165 ! positively regulates alcohol biosynthetic process
+relationship: RO:0002213 GO:0046165 ! positively regulates alcohol biosynthetic process
 
 [Term]
 id: GO:1903010

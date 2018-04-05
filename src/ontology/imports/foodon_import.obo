@@ -178,11 +178,58 @@ name: shellfish (whole or flesh)
 is_a: FOODON:00001293 ! shellfish food product
 
 [Term]
+id: FOODON:03400352
+name: product type, international
+def: "Renamed from *PRODUCT TYPE, CODEX ALIMENTARIUS* in LanguaL 2008." []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0352
+is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03400361
 name: food product type
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: LANGUAL:A0361
 is_a: BFO:0000040 ! material entity
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400643
+name: classification of food and feed commodities (codex alimentarius)
+def: "Codex Alimentarius, Volume 2 - 1993, Section 2:  Pesticide Residues in Food.\n\nThe Codex Classification of food and animal feed commodities moving in trade and the description of the various items and groups of food and animal feedstuffs included in the present document have been developed by the Codex Committee on Pesticide Residues. It was first adopted by the 18th Session of the Codex Alimentarius Commission, (1989).\n\nThe Codex Classification includes food commodities and animal feedstuffs for which Codex maximum residue limits will not necessarily be established. The Classification is intended to be as complete a listing of food commodities in trade as possible, classified into groups on the basis of the commodity's similar potential for pesticide residues.\n\nThe Classification may also be appropriate for other purposes such as setting maximum levels for other types of residues or for other contaminants in food. The Codex Classification should be consulted in order to obtain a precise description of the food or animal feed commodities and, especially, in cases where Codex maximum residue limits have been set for groups of food and groups of animal feedstuffs. The Codex Classification is intended to promote harmonization of the terms used to describe commodities which are subject to maximum residue limits and of the approach to grouping commodities with similar potential for residue for which a common group maximum residue limit can be set." []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0643
+is_a: FOODON:03400352 ! product type, international
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400644
+name: a.  primary food commodities of plant origin (ccpr)
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0644
+is_a: FOODON:03400643 ! classification of food and feed commodities (codex alimentarius)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400652
+name: 04  nuts and seeds (ccpr)
+def: "TYPE 04  -  NUTS AND SEEDS\n\nNuts and seeds are derived from a large variety of trees, shrubs and herbaceous plants, mostly cultivated.\n\nThe mature seeds or nuts are used as human food, for the production of beverages or edible vegetable oils and for the production of seed meals and cakes for animal feed." []
+xref: LANGUAL:A0652
+is_a: FOODON:03400644 ! a.  primary food commodities of plant origin (ccpr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400685
+name: 022  tree nuts (tn) (ccpr)
+def: "Tree nuts are the seeds of a variety of trees and shrubs which are characterized by a hard inedible shell enclosing an oily seed.\nThe seed is protected from pesticides applied during the growing season by the shell and other parts of the fruit.\nThe edible portion of the nut is consumed in succulent, dried or processed forms." []
+xref: LANGUAL:A0685
+is_a: FOODON:03400652 ! 04  nuts and seeds (ccpr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
