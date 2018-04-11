@@ -322,6 +322,9 @@ mirror/ncit-disease.ids: mirror/ncit-disease.uris
 mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.uris
 	robot extract -i $< -T mirror/ncit-disease.uris --method BOT -o $@
 
+mirror/ncit-%-xrefs.ttl: mirror/ncit.owl
+	robot query -c ../sparql/construct-$*-xrefs-from-ncit.sparql $@ -i $<
+
 mirror/ncit-disease.obo: mirror/ncit-disease.owl
 	owltools $< -o -f obo $@
 #	robot convert -i $< -o $@
