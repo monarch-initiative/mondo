@@ -325,6 +325,9 @@ mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.uris
 mirror/ncit-%-xrefs.ttl: mirror/ncit.owl
 	robot query -c ../sparql/construct-$*-xrefs-from-ncit.sparql $@ -i $<
 
+mirror/merge-ncit-xrefs.owl: mirror/ncit.owl mirror/ncit-icdo-xrefs.ttl mirror/ncit-umls-xrefs.ttl
+	owltools $^ --merge-support-ontologies -o $@
+
 mirror/ncit-disease.obo: mirror/ncit-disease.owl
 	owltools $< -o -f obo $@
 #	robot convert -i $< -o $@
