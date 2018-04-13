@@ -438,6 +438,7 @@ compare/axioms-%-nd.owl: compare/%-plus-lsyns.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
+# duplicate axioms, for provenance tagging
 compare/axioms-%-d.owl: compare/%-plus-lsyns.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -I -D -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
