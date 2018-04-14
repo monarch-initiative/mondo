@@ -1,6 +1,6 @@
-SELECT ?c1 ?c2 WHERE {
-?c1 <http://www.w3.org/2000/01/rdf-schema#label> ?v0 .
-?c2 <http://www.w3.org/2000/01/rdf-schema#label> ?v0 .
+SELECT ?c1 ?n0 ?c2 WHERE {
+?c1 <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
+?c2 <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
 FILTER NOT EXISTS {?c1 <http://www.w3.org/2002/07/owl#deprecated> ?v1} .
 FILTER NOT EXISTS {?c2 <http://www.w3.org/2002/07/owl#deprecated> ?v2} .
 FILTER (?c1 != ?c2)
