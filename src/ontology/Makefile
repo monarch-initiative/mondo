@@ -218,6 +218,9 @@ reports/$(Q)-pqlx-$(Ont).tsv: mondo-edit.owl
 reports/pq-%.tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -e  "$*" > $@.tmp && mv $@.tmp $@
 
+reports/proxy-merge.tsv:
+	pl2sparql -f tsv -A void.ttl -e -i all -c ../plq/proxy_merge.pro proxy_merge > $@.tmp && mv $@.tmp $@
+
 # ----------------------------------------
 # Sparql queries: Reports
 # ----------------------------------------
@@ -238,13 +241,14 @@ reports/release/%.tsv: mondo.owl
 reports/release/semantic-xref-pairs.tsv: d2p.pro
 	blip-findall -i imports/equivalencies.obo  -i mondo-edit.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
+RR=$(HOME)/repos/rctauber/robot/bin/robot report
 reports/edit/report.yaml: $(SRC)
-	robot report -i $< report -o $@.tmp && mv $@.tmp $@
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
 reports/release/mondo-obo-report.yaml: mondo.obo
-	robot report -i $< report -o $@.tmp && mv $@.tmp $@
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
 
 reports/release/mondo-owl-report.yaml: mondo.owl
-	robot report -i $< report -o $@.tmp && mv $@.tmp $@
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Sparql constructs
@@ -280,6 +284,7 @@ mondo-plus-%.owl: mondo-premerge-%.owl
 # ----------------------------------------
 
 XD = gard ncit-disease obo_orphanet icd10 doid medgen-disease-extract snomed mesh
+XD_OWL = $(patsubst %, mirror/%.owl, $(XD))
 mirror/xdisease-all.owl: $(patsubst %, mirror/%.owl, $(XD))
 	owltools $^ --merge-support-ontologies -o $@
 
@@ -481,6 +486,9 @@ debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 mappings.tsv: mondo.json
 	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@http://purl.obolibrary.org/obo/MONDO_@MONDO:@g' $@
 
+%-mappings.tsv: mondo-edit.json mirror/%.json
+	ontobio-lexmap.py $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
+
 hp-mappings.tsv: mondo.json
 	ontobio-lexmap.py hp $< > $@.tmp && mv $@.tmp $@
 
@@ -592,20 +600,28 @@ ncit-eq.obo: ncit-kboom-curated.obo
 # ----------------------------------------
 # BLAZEGRAPH
 # ----------------------------------------
+# (experimental)
+#
+# For query and reporting purposes, it is useful to have a blazegraph
+# instance containing mondo plus external ontologies.
+#
+# The blazegraph instance can run as a docker container
 
 BGVERSION = 2.1.4
+BGPORT=8921
 bg: bg-run pause bg-load
 
+# folder to stage OWL to be loaded into BG
 bg-data:
 	mkdir $@
 
-XD_OWL = $(patsubst %, mirror/%.owl, $(XD))
+# sync data folder; mondo + external ontologies
 bg-sync: mondo.owl  $(XD_OWL)
-	cp $^ bg-data
+	rm bg-data/* && cp $^ bg-data
 
-
+# start up a docker image with blazegraph and local configuration
 bg-run: bg-data
-	docker run --name blazegraph -d -p 8889:8080 -v $(PWD)/blazegraph/RWStore.properties:/RWStore.properties -v $(PWD)/bg-data/:/data lyrasis/blazegraph:$(BGVERSION)
+	docker run --name blazegraph -d -p $(BGPORT):8080 -v $(PWD)/blazegraph/RWStore.properties:/RWStore.properties -v $(PWD)/bg-data/:/data lyrasis/blazegraph:$(BGVERSION)
 
 pause:
 	sleep 1
@@ -613,7 +629,7 @@ pause:
 bg-load: bg-data bg-sync bg-load-direct
 
 bg-load-direct:
-	curl -X POST --data-binary @blazegraph/dataloader.txt   --header 'Content-Type:text/plain'   http://localhost:8889/bigdata/dataloader
+	curl -X POST --data-binary @blazegraph/dataloader.txt   --header 'Content-Type:text/plain'   http://localhost:$(BGPORT)/bigdata/dataloader
 
 bg-stop:
 	docker kill blazegraph; docker rm blazegraph

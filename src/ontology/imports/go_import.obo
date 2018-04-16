@@ -100,6 +100,18 @@ intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
 relationship: BFO:0000050 GO:0042645 ! part of mitochondrial nucleoid
 
 [Term]
+id: GO:0000272
+name: polysaccharide catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of a polysaccharide, a polymer of many (typically more than 10) monosaccharide residues linked glycosidically." []
+synonym: "multicellular organismal polysaccharide catabolic process" NARROW []
+synonym: "polysaccharide breakdown" EXACT []
+synonym: "polysaccharide catabolism" EXACT []
+synonym: "polysaccharide degradation" EXACT []
+is_a: GO:0005976 ! polysaccharide metabolic process
+is_a: GO:0009057 ! macromolecule catabolic process
+is_a: GO:0016052 ! carbohydrate catabolic process
+
+[Term]
 id: GO:0000323
 name: lytic vacuole
 def: "A vacuole that is maintained at an acidic pH and which contains degradative enzymes, including a wide variety of acid hydrolases." []
@@ -1521,6 +1533,26 @@ synonym: "pyrroline-5-carboxylic acid dehydrogenase activity" EXACT []
 is_a: GO:0016646 ! oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor
 
 [Term]
+id: GO:0003872
+name: 6-phosphofructokinase activity
+def: "Catalysis of the reaction: ATP + D-fructose-6-phosphate = ADP + D-fructose 1,6-bisphosphate." []
+synonym: "6-phosphofructokinase reduction" EXACT []
+synonym: "6-phosphofructose 1-kinase activity" EXACT []
+synonym: "ATP-dependent phosphofructokinase activity" EXACT []
+synonym: "ATP:D-fructose-6-phosphate 1-phosphotransferase activity" EXACT []
+synonym: "D-fructose-6-phosphate 1-phosphotransferase activity" EXACT []
+synonym: "fructose 6-phosphate kinase activity" EXACT []
+synonym: "fructose 6-phosphokinase activity" EXACT []
+synonym: "nucleotide triphosphate-dependent phosphofructokinase activity" EXACT []
+synonym: "PFK" RELATED []
+synonym: "phospho-1,6-fructokinase activity" EXACT []
+synonym: "phosphofructokinase (phosphorylating)" EXACT []
+synonym: "phosphofructokinase I activity" EXACT []
+synonym: "phosphohexokinase activity" BROAD []
+is_a: GO:0008443 ! phosphofructokinase activity
+relationship: BFO:0000050 GO:0061615 ! part of glycolytic process through fructose-6-phosphate
+
+[Term]
 id: GO:0003943
 name: N-acetylgalactosamine-4-sulfatase activity
 def: "Catalysis of the hydrolysis of the 4-sulfate groups of the N-acetyl-D-galactosamine 4-sulfate units of chondroitin sulfate and dermatan sulfate." []
@@ -1550,6 +1582,15 @@ synonym: "long-chain acyl-CoA dehydrogenase activity" EXACT []
 synonym: "medium-chain acyl-CoA dehydrogenase activity" NARROW []
 synonym: "medium-chain acyl-coenzyme A dehydrogenase activity" EXACT []
 is_a: GO:0016627 ! oxidoreductase activity, acting on the CH-CH group of donors
+
+[Term]
+id: GO:0004000
+name: adenosine deaminase activity
+def: "Catalysis of the reaction: adenosine + H2O = inosine + NH3." []
+synonym: "adenosine aminohydrolase activity" EXACT []
+synonym: "adenosine deaminase reaction" EXACT []
+is_a: GO:0016814 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines
+is_a: GO:0019239 ! deaminase activity
 
 [Term]
 id: GO:0004046
@@ -1588,6 +1629,46 @@ synonym: "blood coagulation factor activity" RELATED []
 synonym: "serine elastase activity" RELATED []
 is_a: GO:0004175 ! endopeptidase activity
 is_a: GO:0008236 ! serine-type peptidase activity
+
+[Term]
+id: GO:0004332
+name: fructose-bisphosphate aldolase activity
+def: "Catalysis of the reaction: D-fructose 1,6-bisphosphate = glycerone phosphate + D-glyceraldehyde-3-phosphate." []
+synonym: "1,6-diphosphofructose aldolase activity" EXACT []
+synonym: "aldolase activity" BROAD []
+synonym: "D-fructose-1,6-bisphosphate D-glyceraldehyde-3-phosphate-lyase (glycerone-phosphate-forming)" EXACT []
+synonym: "D-fructose-1,6-bisphosphate D-glyceraldehyde-3-phosphate-lyase activity" EXACT []
+synonym: "diphosphofructose aldolase activity" EXACT []
+synonym: "fructoaldolase activity" EXACT []
+synonym: "fructose 1,6-diphosphate aldolase activity" EXACT []
+synonym: "fructose 1-monophosphate aldolase activity" EXACT []
+synonym: "fructose 1-phosphate aldolase activity" EXACT []
+synonym: "fructose diphosphate aldolase activity" EXACT []
+synonym: "fructose-1,6-bisphosphate triosephosphate-lyase activity" EXACT []
+synonym: "ketose 1-phosphate aldolase activity" EXACT []
+synonym: "phosphofructoaldolase activity" EXACT []
+synonym: "SMALDO" RELATED []
+synonym: "zymohexase activity" EXACT []
+is_a: GO:0016832 ! aldehyde-lyase activity
+
+[Term]
+id: GO:0004347
+name: glucose-6-phosphate isomerase activity
+def: "Catalysis of the reaction: D-glucose 6-phosphate = D-fructose 6-phosphate." []
+synonym: "D-glucose-6-phosphate aldose-ketose-isomerase activity" EXACT []
+synonym: "D-glucose-6-phosphate ketol-isomerase activity" EXACT []
+synonym: "glucose phosphate isomerase activity" EXACT []
+synonym: "hexose monophosphate isomerase activity" BROAD []
+synonym: "hexose phosphate isomerase activity" EXACT []
+synonym: "hexosephosphate isomerase activity" BROAD []
+synonym: "oxoisomerase activity" RELATED []
+synonym: "phosphoglucoisomerase activity" EXACT []
+synonym: "phosphoglucose isomerase activity" EXACT []
+synonym: "phosphohexoisomerase activity" BROAD []
+synonym: "phosphohexomutase activity" BROAD []
+synonym: "phosphohexose isomerase activity" BROAD []
+synonym: "phosphosaccharomutase activity" BROAD []
+is_a: GO:0016861 ! intramolecular oxidoreductase activity, interconverting aldoses and ketoses
 
 [Term]
 id: GO:0004415
@@ -1670,6 +1751,15 @@ synonym: "ketodase activity" EXACT []
 is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
+id: GO:0004614
+name: phosphoglucomutase activity
+def: "Catalysis of the reaction: alpha-D-glucose 1-phosphate = alpha-D-glucose 6-phosphate." []
+synonym: "alpha-D-glucose 1,6-phosphomutase activity" EXACT []
+synonym: "glucose phosphomutase activity" EXACT []
+synonym: "phosphoglucose mutase activity" EXACT []
+is_a: GO:0016868 ! intramolecular transferase activity, phosphotransferases
+
+[Term]
 id: GO:0004618
 name: phosphoglycerate kinase activity
 def: "Catalysis of the reaction: 3-phospho-D-glycerate + ATP = 3-phospho-D-glyceroyl phosphate + ADP + H(+)." []
@@ -1746,6 +1836,19 @@ synonym: "phosphoenol transphosphorylase activity" EXACT []
 synonym: "phosphoenolpyruvate kinase activity" EXACT []
 is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
 relationship: BFO:0000050 GO:0006096 ! part of glycolytic process
+
+[Term]
+id: GO:0004807
+name: triose-phosphate isomerase activity
+def: "Catalysis of the reaction: D-glyceraldehyde 3-phosphate = glycerone phosphate." []
+synonym: "D-glyceraldehyde-3-phosphate aldose-ketose-isomerase activity" EXACT []
+synonym: "D-glyceraldehyde-3-phosphate ketol-isomerase activity" EXACT []
+synonym: "phosphotriose isomerase activity" EXACT []
+synonym: "triose phosphate mutase activity" EXACT []
+synonym: "triose phosphoisomerase activity" EXACT []
+synonym: "triosephosphate isomerase activity" EXACT []
+synonym: "triosephosphate mutase activity" EXACT []
+is_a: GO:0016861 ! intramolecular oxidoreductase activity, interconverting aldoses and ketoses
 
 [Term]
 id: GO:0004871
@@ -2673,6 +2776,44 @@ synonym: "protein amino acid O-linked glycosylation" EXACT []
 is_a: GO:0006486 ! protein glycosylation
 
 [Term]
+id: GO:0006497
+name: protein lipidation
+def: "The covalent attachment of lipid groups to an amino acid in a protein." []
+synonym: "lipid:protein modification" EXACT []
+synonym: "protein amino acid lipidation" EXACT []
+is_a: GO:0006464 ! cellular protein modification process
+relationship: BFO:0000050 GO:0042158 ! part of lipoprotein biosynthetic process
+
+[Term]
+id: GO:0006505
+name: GPI anchor metabolic process
+def: "The chemical reactions and pathways involving glycosylphosphatidylinositol anchors, molecular mechanisms for attaching membrane proteins to the lipid bilayer of cell membranes. Structurally they consist of a molecule of phosphatidylinositol to which is linked, via the C-6 hydroxyl of the inositol, a carbohydrate chain. This chain is in turn linked to the protein through an ethanolamine phosphate group, the amino group of which is in amide linkage with the C-terminal carboxyl of the protein chain, the phosphate group being esterified to the C-6 hydroxyl of the terminal mannose of the core carbohydrate chain." []
+synonym: "glycosylphosphatidylinositol metabolic process" EXACT []
+synonym: "glycosylphosphatidylinositol metabolism" EXACT []
+synonym: "GPI anchor metabolism" EXACT []
+synonym: "GPI/GSI anchor metabolic process" BROAD []
+synonym: "GPI/GSI anchor metabolism" BROAD []
+is_a: GO:0006664 ! glycolipid metabolic process
+is_a: GO:0046488 ! phosphatidylinositol metabolic process
+
+[Term]
+id: GO:0006506
+name: GPI anchor biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a glycosylphosphatidylinositol (GPI) anchor that attaches some membrane proteins to the lipid bilayer of the cell membrane. The phosphatidylinositol group is linked via the C-6 hydroxyl residue of inositol to a carbohydrate chain which is itself linked to the protein via an ethanolamine phosphate group, its amino group forming an amide linkage with the C-terminal carboxyl of the protein. Some GPI anchors have variants on this canonical linkage." []
+synonym: "glycosylphosphatidylinositol biosynthesis" EXACT []
+synonym: "glycosylphosphatidylinositol biosynthetic process" EXACT []
+synonym: "GPI anchor anabolism" EXACT []
+synonym: "GPI anchor biosynthesis" EXACT []
+synonym: "GPI anchor formation" EXACT []
+synonym: "GPI anchor synthesis" EXACT []
+synonym: "GPI/GSI anchor biosynthesis" BROAD []
+synonym: "GPI/GSI anchor biosynthetic process" BROAD []
+is_a: GO:0006497 ! protein lipidation
+is_a: GO:0006505 ! GPI anchor metabolic process
+is_a: GO:0006661 ! phosphatidylinositol biosynthetic process
+is_a: GO:0009247 ! glycolipid biosynthetic process
+
+[Term]
 id: GO:0006508
 name: proteolysis
 def: "The hydrolysis of proteins into smaller polypeptides and/or amino acids by cleavage of their peptide bonds." []
@@ -2687,6 +2828,14 @@ def: "The removal of sugar residues from a glycosylated protein." []
 synonym: "glycoprotein deglycosylation" EXACT []
 is_a: GO:0006464 ! cellular protein modification process
 is_a: GO:0009100 ! glycoprotein metabolic process
+
+[Term]
+id: GO:0006518
+name: peptide metabolic process
+def: "The chemical reactions and pathways involving peptides, compounds of two or more amino acids where the alpha carboxyl group of one is bound to the alpha amino group of another." []
+synonym: "peptide metabolism" EXACT []
+is_a: GO:0043603 ! cellular amide metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0006520
@@ -2832,11 +2981,54 @@ synonym: "membrane lipid metabolism" EXACT []
 is_a: GO:0044255 ! cellular lipid metabolic process
 
 [Term]
+id: GO:0006644
+name: phospholipid metabolic process
+def: "The chemical reactions and pathways involving phospholipids, any lipid containing phosphoric acid as a mono- or diester." []
+synonym: "phospholipid metabolism" EXACT []
+is_a: GO:0006796 ! phosphate-containing compound metabolic process
+is_a: GO:0019637 ! organophosphate metabolic process
+is_a: GO:0044255 ! cellular lipid metabolic process
+
+[Term]
+id: GO:0006650
+name: glycerophospholipid metabolic process
+def: "The chemical reactions and pathways involving glycerophospholipids, any derivative of glycerophosphate that contains at least one O-acyl, O-alkyl, or O-alkenyl group attached to the glycerol residue." []
+synonym: "alpha-glycerophosphate pathway" RELATED []
+synonym: "glycerophospholipid metabolism" EXACT []
+synonym: "phosphoglyceride metabolic process" EXACT []
+synonym: "phosphoglyceride metabolism" EXACT []
+is_a: GO:0006644 ! phospholipid metabolic process
+is_a: GO:0046486 ! glycerolipid metabolic process
+
+[Term]
+id: GO:0006661
+name: phosphatidylinositol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of phosphatidylinositol, any glycophospholipid in which the sn-glycerol 3-phosphate residue is esterified to the 1-hydroxyl group of 1D-myo-inositol." []
+synonym: "phosphatidylinositol anabolism" EXACT []
+synonym: "phosphatidylinositol biosynthesis" EXACT []
+synonym: "phosphatidylinositol formation" EXACT []
+synonym: "phosphatidylinositol synthesis" EXACT []
+synonym: "phosphoinositide biosynthesis" EXACT []
+synonym: "phosphoinositide biosynthetic process" EXACT []
+synonym: "PtdIns biosynthesis" EXACT []
+synonym: "PtdIns biosynthetic process" EXACT []
+is_a: GO:0046474 ! glycerophospholipid biosynthetic process
+is_a: GO:0046488 ! phosphatidylinositol metabolic process
+
+[Term]
 id: GO:0006662
 name: glycerol ether metabolic process
 def: "The chemical reactions and pathways involving glycerol ethers, any anhydride formed between two organic hydroxy compounds, one of which is glycerol." []
 synonym: "glycerol ether metabolism" EXACT []
 is_a: GO:0018904 ! ether metabolic process
+
+[Term]
+id: GO:0006664
+name: glycolipid metabolic process
+def: "The chemical reactions and pathways involving glycolipids, a class of 1,2-di-O-acylglycerols joined at oxygen 3 by a glycosidic linkage to a carbohydrate part (usually a mono-, di- or tri-saccharide). Some substances classified as bacterial glycolipids have the sugar group acylated by one or more fatty acids and the glycerol group may be absent." []
+synonym: "glycolipid metabolism" EXACT []
+is_a: GO:0006643 ! membrane lipid metabolic process
+is_a: GO:1903509 ! liposaccharide metabolic process
 
 [Term]
 id: GO:0006665
@@ -2959,6 +3151,17 @@ synonym: "ubiquinone formation" EXACT []
 synonym: "ubiquinone synthesis" EXACT []
 is_a: GO:0006743 ! ubiquinone metabolic process
 is_a: GO:1901663 ! quinone biosynthetic process
+
+[Term]
+id: GO:0006749
+name: glutathione metabolic process
+def: "The chemical reactions and pathways involving glutathione, the tripeptide glutamylcysteinylglycine, which acts as a coenzyme for some enzymes and as an antioxidant in the protection of sulfhydryl groups in enzymes and other proteins; it has a specific role in the reduction of hydrogen peroxide (H2O2) and oxidized ascorbate, and it participates in the gamma-glutamyl cycle." []
+synonym: "glutathione metabolism" EXACT []
+synonym: "oxidized glutathione reduction" NARROW []
+is_a: GO:0006518 ! peptide metabolic process
+is_a: GO:0006575 ! cellular modified amino acid metabolic process
+is_a: GO:0006790 ! sulfur compound metabolic process
+is_a: GO:0051186 ! cofactor metabolic process
 
 [Term]
 id: GO:0006753
@@ -3318,6 +3521,15 @@ intersection_of: BFO:0000066 GO:0005739 ! occurs in mitochondrion
 relationship: BFO:0000066 GO:0005739 ! occurs in mitochondrion
 
 [Term]
+id: GO:0007009
+name: plasma membrane organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the plasma membrane." []
+synonym: "plasma membrane organisation" EXACT []
+synonym: "plasma membrane organization and biogenesis" RELATED []
+is_a: GO:0061024 ! membrane organization
+relationship: BFO:0000050 GO:0010256 ! part of endomembrane system organization
+
+[Term]
 id: GO:0007034
 name: vacuolar transport
 def: "The directed movement of substances into, out of or within a vacuole." []
@@ -3406,6 +3618,14 @@ synonym: "neurotransmission" RELATED []
 synonym: "signal transmission across a synapse" BROAD []
 synonym: "synaptic transmission" BROAD []
 is_a: GO:0098916 ! anterograde trans-synaptic signaling
+
+[Term]
+id: GO:0007272
+name: ensheathment of neurons
+def: "The process in which glial cells envelop neuronal cell bodies and/or axons to form an insulating layer. This can take the form of myelinating or non-myelinating ensheathment." []
+synonym: "ionic insulation of neurons by glial cells" RELATED []
+is_a: GO:0009987 ! cellular process
+relationship: BFO:0000050 GO:0007399 ! part of nervous system development
 
 [Term]
 id: GO:0007274
@@ -3794,6 +4014,15 @@ is_a: GO:0015075 ! ion transmembrane transporter activity
 relationship: BFO:0000050 GO:0098655 ! part of cation transmembrane transport
 
 [Term]
+id: GO:0008366
+name: axon ensheathment
+def: "Any process in which the axon of a neuron is insulated, and that insulation maintained, thereby preventing dispersion of the electrical signal." []
+synonym: "cellular axon ensheathment" EXACT []
+synonym: "cellular nerve ensheathment" RELATED []
+synonym: "nerve ensheathment" RELATED []
+is_a: GO:0007272 ! ensheathment of neurons
+
+[Term]
 id: GO:0008380
 name: RNA splicing
 def: "The process of removing sections of the primary RNA transcript to remove sequences not present in the mature form of the RNA and joining the remaining sections to form the mature form of the RNA." []
@@ -3815,6 +4044,21 @@ is_a: GO:0004879 ! nuclear receptor activity
 is_a: GO:0038023 ! signaling receptor activity
 relationship: BFO:0000050 GO:0070561 ! part of vitamin D receptor signaling pathway
 relationship: BFO:0000051 GO:1902098 ! has_part calcitriol binding
+
+[Term]
+id: GO:0008443
+name: phosphofructokinase activity
+def: "Catalysis of the transfer of a phosphate group, usually from ATP, to a phosphofructose substrate molecule." []
+is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
+is_a: GO:0019200 ! carbohydrate kinase activity
+
+[Term]
+id: GO:0008482
+name: sulfite oxidase activity
+def: "Catalysis of the reaction: H(2)O + O(2) + sulfite = H(2)O(2) + H(+) + sulfate." []
+synonym: "sulfite:oxygen oxidoreductase activity" EXACT []
+synonym: "sulphite oxidase activity" EXACT []
+is_a: GO:0016670 ! oxidoreductase activity, acting on a sulfur group of donors, oxygen as acceptor
 
 [Term]
 id: GO:0008484
@@ -3881,6 +4125,19 @@ is_a: GO:0046394 ! carboxylic acid biosynthetic process
 is_a: GO:1901566 ! organonitrogen compound biosynthetic process
 
 [Term]
+id: GO:0008654
+name: phospholipid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of phospholipids, any lipid containing phosphoric acid as a mono- or diester." []
+synonym: "phospholipid anabolism" EXACT []
+synonym: "phospholipid biosynthesis" EXACT []
+synonym: "phospholipid formation" EXACT []
+synonym: "phospholipid synthesis" EXACT []
+is_a: GO:0006644 ! phospholipid metabolic process
+is_a: GO:0008610 ! lipid biosynthetic process
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:0090407 ! organophosphate biosynthetic process
+
+[Term]
 id: GO:0009056
 name: catabolic process
 def: "The chemical reactions and pathways resulting in the breakdown of substances, including the breakdown of carbon compounds with the liberation of energy for use by the cell or organism." []
@@ -3890,6 +4147,18 @@ synonym: "degradation" EXACT []
 synonym: "multicellular organismal catabolic process" NARROW []
 synonym: "single-organism catabolic process" RELATED []
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0009057
+name: macromolecule catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
+synonym: "biopolymer catabolic process" EXACT []
+synonym: "macromolecule breakdown" EXACT []
+synonym: "macromolecule catabolism" EXACT []
+synonym: "macromolecule degradation" EXACT []
+synonym: "multicellular organismal macromolecule catabolic process" NARROW []
+is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:1901575 ! organic substance catabolic process
 
 [Term]
 id: GO:0009058
@@ -4278,6 +4547,18 @@ is_a: GO:0006767 ! water-soluble vitamin metabolic process
 is_a: GO:0017144 ! drug metabolic process
 is_a: GO:0033013 ! tetrapyrrole metabolic process
 is_a: GO:0051186 ! cofactor metabolic process
+
+[Term]
+id: GO:0009247
+name: glycolipid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of glycolipid, a class of 1,2-di-O-acylglycerols joined at oxygen 3 by a glycosidic linkage to a carbohydrate part (usually a mono-, di- or tri-saccharide)." []
+synonym: "glycolipid anabolism" EXACT []
+synonym: "glycolipid biosynthesis" EXACT []
+synonym: "glycolipid formation" EXACT []
+synonym: "glycolipid synthesis" EXACT []
+is_a: GO:0006664 ! glycolipid metabolic process
+is_a: GO:0046467 ! membrane lipid biosynthetic process
+is_a: GO:1901137 ! carbohydrate derivative biosynthetic process
 
 [Term]
 id: GO:0009259
@@ -4741,6 +5022,14 @@ intersection_of: RO:0002213 GO:0006968 ! positively regulates cellular defense r
 relationship: RO:0002213 GO:0006968 ! positively regulates cellular defense response
 
 [Term]
+id: GO:0010256
+name: endomembrane system organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the endomembrane system." []
+synonym: "endomembrane organization" EXACT []
+synonym: "endomembrane system organisation" EXACT []
+is_a: GO:0016043 ! cellular component organization
+
+[Term]
 id: GO:0010259
 name: multicellular organism aging
 def: "An aging process that has as participant a whole multicellular organism. Multicellular organism aging includes loss of functions such as resistance to disease, homeostasis, and fertility, as well as wear and tear. Multicellular organisms aging includes processes like cellular senescence and organ senescence, but is more inclusive. May precede death (GO:0016265) of an organism and may succeed developmental maturation (GO:0021700)." []
@@ -4821,6 +5110,35 @@ is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0038023 ! regulates signaling receptor activity
 relationship: RO:0002211 GO:0038023 ! regulates signaling receptor activity
+
+[Term]
+id: GO:0010511
+name: regulation of phosphatidylinositol biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of phosphatidylinositol." []
+is_a: GO:0071071 ! regulation of phospholipid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006661 ! regulates phosphatidylinositol biosynthetic process
+relationship: RO:0002211 GO:0006661 ! regulates phosphatidylinositol biosynthetic process
+
+[Term]
+id: GO:0010512
+name: negative regulation of phosphatidylinositol biosynthetic process
+def: "Any process that decreases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of phosphatidylinositol." []
+is_a: GO:0010511 ! regulation of phosphatidylinositol biosynthetic process
+is_a: GO:0071072 ! negative regulation of phospholipid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006661 ! negatively regulates phosphatidylinositol biosynthetic process
+relationship: RO:0002212 GO:0006661 ! negatively regulates phosphatidylinositol biosynthetic process
+
+[Term]
+id: GO:0010513
+name: positive regulation of phosphatidylinositol biosynthetic process
+def: "Any process that increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of phosphatidylinositol." []
+is_a: GO:0010511 ! regulation of phosphatidylinositol biosynthetic process
+is_a: GO:0071073 ! positive regulation of phospholipid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006661 ! positively regulates phosphatidylinositol biosynthetic process
+relationship: RO:0002213 GO:0006661 ! positively regulates phosphatidylinositol biosynthetic process
 
 [Term]
 id: GO:0010556
@@ -5824,6 +6142,21 @@ synonym: "oxidoreductase activity, acting on NADH or NADPH, other acceptor" NARR
 is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
+id: GO:0016667
+name: oxidoreductase activity, acting on a sulfur group of donors
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a sulfur-containing group acts as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." []
+synonym: "oxidoreductase activity, acting on sulfur group of donors, other acceptors" NARROW []
+synonym: "oxidoreductase activity, acting on sulphur group of donors" EXACT []
+is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
+id: GO:0016670
+name: oxidoreductase activity, acting on a sulfur group of donors, oxygen as acceptor
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a sulfur-containing group acts as a hydrogen or electron donor and reduces oxygen." []
+synonym: "oxidoreductase activity, acting on sulphur group of donors, oxygen as acceptor" EXACT []
+is_a: GO:0016667 ! oxidoreductase activity, acting on a sulfur group of donors
+
+[Term]
 id: GO:0016740
 name: transferase activity
 def: "Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." []
@@ -5905,6 +6238,12 @@ def: "Catalysis of the hydrolysis of any non-peptide carbon-nitrogen bond in a l
 is_a: GO:0016810 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
 
 [Term]
+id: GO:0016814
+name: hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines
+def: "Catalysis of the hydrolysis of any non-peptide carbon-nitrogen bond in a cyclic amidine, a compound of the form R-C(=NH)-NH2." []
+is_a: GO:0016810 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
+
+[Term]
 id: GO:0016829
 name: lyase activity
 def: "Catalysis of the cleavage of C-C, C-O, C-N and other bonds by other means than by hydrolysis or oxidation, or conversely adding a group to a double bond. They differ from other enzymes in that two substrates are involved in one reaction direction, but only one in the other direction. When acting on the single substrate, a molecule is eliminated and this generates either a new double bond or a new ring." []
@@ -5926,6 +6265,13 @@ synonym: "decarboxylase activity" EXACT []
 is_a: GO:0016830 ! carbon-carbon lyase activity
 
 [Term]
+id: GO:0016832
+name: aldehyde-lyase activity
+def: "Catalysis of the cleavage of a C-C bond in a molecule containing a hydroxyl group and a carbonyl group to form two smaller molecules, each being an aldehyde or a ketone." []
+synonym: "aldolase activity" BROAD []
+is_a: GO:0016830 ! carbon-carbon lyase activity
+
+[Term]
 id: GO:0016835
 name: carbon-oxygen lyase activity
 def: "Catalysis of the breakage of a carbon-oxygen bond." []
@@ -5944,6 +6290,21 @@ name: isomerase activity
 def: "Catalysis of the geometric or structural changes within one molecule. Isomerase is the systematic name for any enzyme of EC class 5." []
 synonym: "other isomerase activity" NARROW []
 is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016860
+name: intramolecular oxidoreductase activity
+def: "Catalysis of an oxidation-reduction (redox) reaction in which the hydrogen donor and acceptor are the same molecule, and no oxidized product appears." []
+synonym: "intramolecular isomerase activity" EXACT []
+synonym: "intramolecular oxidoreductase activity, other intramolecular oxidoreductases" NARROW []
+is_a: GO:0016853 ! isomerase activity
+
+[Term]
+id: GO:0016861
+name: intramolecular oxidoreductase activity, interconverting aldoses and ketoses
+def: "Catalysis of an oxidation-reduction (redox) reaction in which the hydrogen donor and acceptor, which is an aldose or a ketose, are the same molecule, and no oxidized product appears." []
+synonym: "intramolecular isomerase activity, interconverting aldoses and ketoses" EXACT []
+is_a: GO:0016860 ! intramolecular oxidoreductase activity
 
 [Term]
 id: GO:0016866
@@ -6053,6 +6414,13 @@ intersection_of: GO:0007610 ! behavior
 intersection_of: BFO:0000050 GO:0000003 ! part of reproduction
 
 [Term]
+id: GO:0019200
+name: carbohydrate kinase activity
+def: "Catalysis of the transfer of a phosphate group, usually from ATP, to a carbohydrate substrate molecule." []
+is_a: GO:0016301 ! kinase activity
+relationship: BFO:0000050 GO:0046835 ! part of carbohydrate phosphorylation
+
+[Term]
 id: GO:0019216
 name: regulation of lipid metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving lipids." []
@@ -6126,6 +6494,20 @@ is_a: GO:0050789 ! regulation of biological process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0008152 ! regulates metabolic process
 relationship: RO:0002211 GO:0008152 ! regulates metabolic process
+
+[Term]
+id: GO:0019233
+name: sensory perception of pain
+def: "The series of events required for an organism to receive a painful stimulus, convert it to a molecular signal, and recognize and characterize the signal. Pain is medically defined as the physical sensation of discomfort or distress caused by injury or illness, so can hence be described as a harmful stimulus which signals current (or impending) tissue damage. Pain may come from extremes of temperature, mechanical damage, electricity or from noxious chemical substances. This is a neurological process." []
+synonym: "nociception" EXACT []
+synonym: "perception of physiological pain" NARROW []
+is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0019239
+name: deaminase activity
+def: "Catalysis of the removal of an amino group from a substrate, producing ammonia (NH3)." []
+is_a: GO:0016787 ! hydrolase activity
 
 [Term]
 id: GO:0019318
@@ -7379,6 +7761,49 @@ def: "The junction between the axon of a motor neuron and a muscle fiber. In res
 synonym: "motor endplate" RELATED []
 synonym: "NMJ" RELATED []
 is_a: GO:0045202 ! synapse
+
+[Term]
+id: GO:0031641
+name: regulation of myelination
+def: "Any process that modulates the frequency, rate or extent of the formation of a myelin sheath around nerve axons." []
+is_a: GO:0050794 ! regulation of cellular process
+is_a: GO:0051960 ! regulation of nervous system development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042552 ! regulates myelination
+relationship: RO:0002211 GO:0042552 ! regulates myelination
+
+[Term]
+id: GO:0031642
+name: negative regulation of myelination
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the formation of a myelin sheath around nerve axons." []
+synonym: "down regulation of myelination" EXACT []
+synonym: "down-regulation of myelination" EXACT []
+synonym: "downregulation of myelination" EXACT []
+synonym: "inhibition of myelination" NARROW []
+is_a: GO:0031641 ! regulation of myelination
+is_a: GO:0031645 ! negative regulation of neurological system process
+is_a: GO:0048523 ! negative regulation of cellular process
+is_a: GO:0051961 ! negative regulation of nervous system development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042552 ! negatively regulates myelination
+relationship: RO:0002212 GO:0042552 ! negatively regulates myelination
+
+[Term]
+id: GO:0031643
+name: positive regulation of myelination
+def: "Any process that activates or increases the frequency, rate or extent of the formation of a myelin sheath around nerve axons." []
+synonym: "activation of myelination" NARROW []
+synonym: "stimulation of myelination" NARROW []
+synonym: "up regulation of myelination" EXACT []
+synonym: "up-regulation of myelination" EXACT []
+synonym: "upregulation of myelination" EXACT []
+is_a: GO:0031641 ! regulation of myelination
+is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0048522 ! positive regulation of cellular process
+is_a: GO:0051962 ! positive regulation of nervous system development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042552 ! positively regulates myelination
+relationship: RO:0002213 GO:0042552 ! positively regulates myelination
 
 [Term]
 id: GO:0031644
@@ -9102,6 +9527,18 @@ synonym: "lipoprotein metabolism" EXACT []
 is_a: GO:0019538 ! protein metabolic process
 
 [Term]
+id: GO:0042158
+name: lipoprotein biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of any conjugated, water-soluble protein in which the covalently attached nonprotein group consists of a lipid or lipids." []
+synonym: "lipoprotein anabolism" EXACT []
+synonym: "lipoprotein biosynthesis" EXACT []
+synonym: "lipoprotein formation" EXACT []
+synonym: "lipoprotein synthesis" EXACT []
+is_a: GO:0034645 ! cellular macromolecule biosynthetic process
+is_a: GO:0042157 ! lipoprotein metabolic process
+is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
 id: GO:0042165
 name: neurotransmitter binding
 def: "Interacting selectively and non-covalently with a neurotransmitter, any chemical substance that is capable of transmitting (or inhibiting the transmission of) a nerve impulse from a neuron to another cell." []
@@ -9307,6 +9744,13 @@ synonym: "hormone formation" EXACT []
 synonym: "hormone synthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0042445 ! hormone metabolic process
+
+[Term]
+id: GO:0042552
+name: myelination
+def: "The process in which myelin sheaths are formed and maintained around neurons. Oligodendrocytes in the brain and spinal cord and Schwann cells in the peripheral nervous system wrap axons with compact layers of their plasma membrane. Adjacent myelin segments are separated by a non-myelinated stretch of axon called a node of Ranvier." []
+synonym: "myelinogenesis" RELATED []
+is_a: GO:0008366 ! axon ensheathment
 
 [Term]
 id: GO:0042558
@@ -9609,6 +10053,13 @@ id: GO:0043177
 name: organic acid binding
 def: "Interacting selectively and non-covalently with an organic acid, any acidic compound containing carbon in covalent linkage." []
 is_a: GO:0036094 ! small molecule binding
+
+[Term]
+id: GO:0043217
+name: myelin maintenance
+def: "The process of preserving the structure and function of mature myelin. This includes maintaining the compact structure of myelin necessary for its electrical insulating characteristics as well as the structure of non-compact regions such as Schmidt-Lantermann clefts and paranodal loops. This does not include processes responsible for maintaining the nodes of Ranvier, which are not part of the myelin sheath." []
+is_a: GO:0007009 ! plasma membrane organization
+relationship: BFO:0000050 GO:0042552 ! part of myelination
 
 [Term]
 id: GO:0043226
@@ -10443,6 +10894,18 @@ def: "Interacting selectively and non-covalently with a macromolecular complex."
 synonym: "macromolecular complex binding" RELATED []
 synonym: "protein complex binding" EXACT []
 is_a: GO:0005488 ! binding
+
+[Term]
+id: GO:0045017
+name: glycerolipid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of glycerolipids, any lipid with a glycerol backbone." []
+synonym: "glycerolipid anabolism" EXACT []
+synonym: "glycerolipid biosynthesis" EXACT []
+synonym: "glycerolipid formation" EXACT []
+synonym: "glycerolipid synthesis" EXACT []
+is_a: GO:0008610 ! lipid biosynthetic process
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:0046486 ! glycerolipid metabolic process
 
 [Term]
 id: GO:0045121
@@ -11605,6 +12068,20 @@ is_a: GO:0008610 ! lipid biosynthetic process
 is_a: GO:0044249 ! cellular biosynthetic process
 
 [Term]
+id: GO:0046474
+name: glycerophospholipid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of glycerophospholipids, any derivative of glycerophosphate that contains at least one O-acyl, O-alkyl, or O-alkenyl group attached to the glycerol residue." []
+synonym: "glycerophospholipid anabolism" EXACT []
+synonym: "glycerophospholipid biosynthesis" EXACT []
+synonym: "glycerophospholipid formation" EXACT []
+synonym: "glycerophospholipid synthesis" EXACT []
+synonym: "phosphoglyceride biosynthesis" EXACT []
+synonym: "phosphoglyceride biosynthetic process" EXACT []
+is_a: GO:0006650 ! glycerophospholipid metabolic process
+is_a: GO:0008654 ! phospholipid biosynthetic process
+is_a: GO:0045017 ! glycerolipid biosynthetic process
+
+[Term]
 id: GO:0046483
 name: heterocycle metabolic process
 def: "The chemical reactions and pathways involving heterocyclic compounds, those with a cyclic molecular structure and at least two different atoms in the ring (or rings)." []
@@ -11619,6 +12096,24 @@ synonym: "ether lipid metabolism" EXACT []
 synonym: "plasmalogen metabolic process" NARROW []
 is_a: GO:0006662 ! glycerol ether metabolic process
 is_a: GO:0044255 ! cellular lipid metabolic process
+
+[Term]
+id: GO:0046486
+name: glycerolipid metabolic process
+def: "The chemical reactions and pathways involving glycerolipids, any lipid with a glycerol backbone. Diacylglycerol and phosphatidate are key lipid intermediates of glycerolipid biosynthesis." []
+synonym: "glycerolipid metabolism" EXACT []
+is_a: GO:0044255 ! cellular lipid metabolic process
+
+[Term]
+id: GO:0046488
+name: phosphatidylinositol metabolic process
+def: "The chemical reactions and pathways involving phosphatidylinositol, any glycophospholipid in which a sn-glycerol 3-phosphate residue is esterified to the 1-hydroxyl group of 1D-myo-inositol." []
+synonym: "phosphatidylinositol metabolism" EXACT []
+synonym: "phosphoinositide metabolic process" EXACT []
+synonym: "phosphoinositide metabolism" EXACT []
+synonym: "PtdIns metabolic process" EXACT []
+synonym: "PtdIns metabolism" EXACT []
+is_a: GO:0006650 ! glycerophospholipid metabolic process
 
 [Term]
 id: GO:0046496
@@ -11686,6 +12181,13 @@ synonym: "heterocycle catabolism" EXACT []
 synonym: "heterocycle degradation" EXACT []
 is_a: GO:0044248 ! cellular catabolic process
 is_a: GO:0046483 ! heterocycle metabolic process
+
+[Term]
+id: GO:0046835
+name: carbohydrate phosphorylation
+def: "The process of introducing a phosphate group into a carbohydrate, any organic compound based on the general formula Cx(H2O)y." []
+is_a: GO:0016310 ! phosphorylation
+is_a: GO:0044262 ! cellular carbohydrate metabolic process
 
 [Term]
 id: GO:0046849
@@ -13786,6 +14288,15 @@ is_a: GO:0009987 ! cellular process
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0051930
+name: regulation of sensory perception of pain
+def: "Any process that modulates the frequency, rate or extent of the sensory perception of pain, the series of events required for an organism to receive a painful stimulus, convert it to a molecular signal, and recognize and characterize the signal." []
+is_a: GO:0051931 ! regulation of sensory perception
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0019233 ! regulates sensory perception of pain
+relationship: RO:0002211 GO:0019233 ! regulates sensory perception of pain
+
+[Term]
 id: GO:0051931
 name: regulation of sensory perception
 def: "Any process that modulates the frequency, rate or extent of sensory perception, the series of events required for an organism to receive a sensory stimulus, convert it to a molecular signal, and recognize and characterize the signal." []
@@ -14497,6 +15008,38 @@ is_a: GO:0008016 ! regulation of heart contraction
 is_a: GO:0035637 ! multicellular organismal signaling
 
 [Term]
+id: GO:0061615
+name: glycolytic process through fructose-6-phosphate
+def: "The chemical reactions and pathways resulting in the breakdown of a monosaccharide into pyruvate, occurring through a fructose-6-phosphate intermediate, with the concomitant production of ATP and NADH." []
+synonym: "glycolysis through fructose-6-phosphate" EXACT []
+is_a: GO:0006096 ! glycolytic process
+intersection_of: GO:0006096 ! glycolytic process
+intersection_of: BFO:0000051 GO:0003872 ! has_part 6-phosphofructokinase activity
+intersection_of: BFO:0000051 GO:0004332 ! has_part fructose-bisphosphate aldolase activity
+intersection_of: BFO:0000051 GO:0004807 ! has_part triose-phosphate isomerase activity
+relationship: BFO:0000051 GO:0003872 ! has_part 6-phosphofructokinase activity
+relationship: BFO:0000051 GO:0004332 ! has_part fructose-bisphosphate aldolase activity
+relationship: BFO:0000051 GO:0004807 ! has_part triose-phosphate isomerase activity
+
+[Term]
+id: GO:0061620
+name: glycolytic process through glucose-6-phosphate
+def: "The chemical reactions and pathways resulting in the breakdown of a carbohydrate into pyruvate, occurring through a glucose-6-phosphate intermediate, with the concomitant production of a small amount of ATP." []
+is_a: GO:0061615 ! glycolytic process through fructose-6-phosphate
+intersection_of: GO:0061615 ! glycolytic process through fructose-6-phosphate
+intersection_of: BFO:0000051 GO:0004347 ! has_part glucose-6-phosphate isomerase activity
+relationship: BFO:0000051 GO:0004347 ! has_part glucose-6-phosphate isomerase activity
+
+[Term]
+id: GO:0061622
+name: glycolytic process through glucose-1-phosphate
+def: "The chemical reactions and pathways through a glucose-1-phosphate intermediate that result in the catabolism of a carbohydrate into pyruvate, with the concomitant production of a small amount of ATP." []
+is_a: GO:0061620 ! glycolytic process through glucose-6-phosphate
+intersection_of: GO:0061620 ! glycolytic process through glucose-6-phosphate
+intersection_of: BFO:0000051 GO:0004614 ! has_part phosphoglucomutase activity
+relationship: BFO:0000051 GO:0004614 ! has_part phosphoglucomutase activity
+
+[Term]
 id: GO:0061626
 name: pharyngeal arch artery morphogenesis
 def: "The process in which the anatomical structures of a pharyngeal arch artery is generated and organized. The pharyngeal arch arteries are a series of six paired embryological vascular structures, the development of which give rise to several major arteries, such as the stapedial artery, the middle meningeal artery, the internal carotid artery and the pulmonary artery." []
@@ -14851,6 +15394,62 @@ name: medium-chain-acyl-CoA dehydrogenase activity
 def: "Catalysis of the reaction: acyl-CoA + acceptor = 2,3-dehydroacyl-CoA + reduced acceptor, where the acyl group is a medium-chain fatty acid residue. A medium chain fatty acid is any fatty acid with a chain length of between C6 and C12." []
 synonym: "MCAD activity" EXACT []
 is_a: GO:0003995 ! acyl-CoA dehydrogenase activity
+
+[Term]
+id: GO:0071071
+name: regulation of phospholipid biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of phospholipids." []
+synonym: "regulation of phospholipid anabolism" EXACT []
+synonym: "regulation of phospholipid biosynthesis" EXACT []
+synonym: "regulation of phospholipid formation" EXACT []
+synonym: "regulation of phospholipid synthesis" EXACT []
+is_a: GO:0031326 ! regulation of cellular biosynthetic process
+is_a: GO:0046890 ! regulation of lipid biosynthetic process
+is_a: GO:1903725 ! regulation of phospholipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0008654 ! regulates phospholipid biosynthetic process
+relationship: RO:0002211 GO:0008654 ! regulates phospholipid biosynthetic process
+
+[Term]
+id: GO:0071072
+name: negative regulation of phospholipid biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of phospholipids." []
+synonym: "down regulation of phospholipid biosynthetic process" EXACT []
+synonym: "down-regulation of phospholipid biosynthetic process" EXACT []
+synonym: "downregulation of phospholipid biosynthetic process" EXACT []
+synonym: "inhibition of phospholipid biosynthetic process" NARROW []
+synonym: "negative regulation of phospholipid anabolism" EXACT []
+synonym: "negative regulation of phospholipid biosynthesis" EXACT []
+synonym: "negative regulation of phospholipid formation" EXACT []
+synonym: "negative regulation of phospholipid synthesis" EXACT []
+is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
+is_a: GO:0051055 ! negative regulation of lipid biosynthetic process
+is_a: GO:0071071 ! regulation of phospholipid biosynthetic process
+is_a: GO:1903726 ! negative regulation of phospholipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0008654 ! negatively regulates phospholipid biosynthetic process
+relationship: RO:0002212 GO:0008654 ! negatively regulates phospholipid biosynthetic process
+
+[Term]
+id: GO:0071073
+name: positive regulation of phospholipid biosynthetic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of phospholipids." []
+synonym: "activation of phospholipid biosynthetic process" NARROW []
+synonym: "positive regulation of phospholipid anabolism" EXACT []
+synonym: "positive regulation of phospholipid biosynthesis" EXACT []
+synonym: "positive regulation of phospholipid formation" EXACT []
+synonym: "positive regulation of phospholipid synthesis" EXACT []
+synonym: "stimulation of phospholipid biosynthetic process" NARROW []
+synonym: "up regulation of phospholipid biosynthetic process" EXACT []
+synonym: "up-regulation of phospholipid biosynthetic process" EXACT []
+synonym: "upregulation of phospholipid biosynthetic process" EXACT []
+is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
+is_a: GO:0046889 ! positive regulation of lipid biosynthetic process
+is_a: GO:0071071 ! regulation of phospholipid biosynthetic process
+is_a: GO:1903727 ! positive regulation of phospholipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0008654 ! positively regulates phospholipid biosynthetic process
+relationship: RO:0002213 GO:0008654 ! positively regulates phospholipid biosynthetic process
 
 [Term]
 id: GO:0071214
@@ -15495,6 +16094,13 @@ def: "A protein complex containing at least one glycosylated protein, may be hel
 is_a: GO:0032991 ! protein-containing complex
 
 [Term]
+id: GO:0093001
+name: glycolysis from storage polysaccharide through glucose-1-phosphate
+def: "The chemical reactions and pathways resulting in the breakdown of a storage polysaccharide into pyruvate through a glucose-1-phosphate intermediate, with the concomitant production of a small amount of ATP and the reduction of NAD to NADH." []
+is_a: GO:0000272 ! polysaccharide catabolic process
+is_a: GO:0061622 ! glycolytic process through glucose-1-phosphate
+
+[Term]
 id: GO:0097014
 name: ciliary plasm
 def: "All of the contents of a cilium, excluding the plasma membrane surrounding the cilium." []
@@ -16066,6 +16672,15 @@ intersection_of: GO:0006366 ! transcription by RNA polymerase II
 intersection_of: RO:0002213 GO:0006281 ! positively regulates DNA repair
 
 [Term]
+id: GO:0100032
+name: positive regulation of phospholipid biosynthetic process by transcription from RNA polymerase II promoter
+def: "Any transcription from RNA polymerase II promoter process that positively_regulates phospholipid biosynthetic process" []
+is_a: GO:0006366 ! transcription by RNA polymerase II
+is_a: GO:0071073 ! positive regulation of phospholipid biosynthetic process
+intersection_of: GO:0006366 ! transcription by RNA polymerase II
+intersection_of: RO:0002213 GO:0008654 ! positively regulates phospholipid biosynthetic process
+
+[Term]
 id: GO:0100036
 name: positive regulation of purine nucleotide biosynthetic process by transcription from RNA polymerase II promoter
 def: "Any transcription from RNA polymerase II promoter process that positively_regulates purine nucleotide biosynthetic process" []
@@ -16539,6 +17154,17 @@ is_a: GO:0045944 ! positive regulation of transcription by RNA polymerase II
 intersection_of: GO:0050789 ! regulation of biological process
 intersection_of: RO:0002213 GO:0100026 ! positively regulates positive regulation of DNA repair by transcription from RNA polymerase II promoter
 relationship: RO:0002213 GO:0100026 ! positively regulates positive regulation of DNA repair by transcription from RNA polymerase II promoter
+
+[Term]
+id: GO:1900413
+name: positive regulation of phospholipid biosynthetic process by positive regulation of transcription from RNA polymerase II promoter
+def: "A positive regulation of transcription from RNA polymerase II promoter that results in positive regulation of phospholipid biosynthetic process." []
+synonym: "positive regulation of phospholipid biosynthesis by positive regulation of transcription from RNA polymerase II promoter" EXACT []
+synonym: "positive regulation of phospholipid synthesis by positive regulation of transcription from RNA polymerase II promoter" EXACT []
+is_a: GO:0045944 ! positive regulation of transcription by RNA polymerase II
+is_a: GO:0071073 ! positive regulation of phospholipid biosynthetic process
+intersection_of: GO:0045944 ! positive regulation of transcription by RNA polymerase II
+intersection_of: RO:0002213 GO:0008654 ! positively regulates phospholipid biosynthetic process
 
 [Term]
 id: GO:1900418
@@ -18084,6 +18710,71 @@ intersection_of: RO:0002212 GO:0022848 ! negatively regulates acetylcholine-gate
 relationship: RO:0002212 GO:0022848 ! negatively regulates acetylcholine-gated cation-selective channel activity
 
 [Term]
+id: GO:1903059
+name: regulation of protein lipidation
+def: "Any process that modulates the frequency, rate or extent of protein lipidation." []
+synonym: "regulation of lipid:protein modification" EXACT []
+synonym: "regulation of protein amino acid lipidation" EXACT []
+is_a: GO:0031399 ! regulation of protein modification process
+is_a: GO:0050746 ! regulation of lipoprotein metabolic process
+is_a: GO:2000112 ! regulation of cellular macromolecule biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006497 ! regulates protein lipidation
+relationship: RO:0002211 GO:0006497 ! regulates protein lipidation
+
+[Term]
+id: GO:1903060
+name: negative regulation of protein lipidation
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of protein lipidation." []
+synonym: "down regulation of lipid:protein modification" EXACT []
+synonym: "down regulation of protein amino acid lipidation" EXACT []
+synonym: "down regulation of protein lipidation" EXACT []
+synonym: "down-regulation of lipid:protein modification" EXACT []
+synonym: "down-regulation of protein amino acid lipidation" EXACT []
+synonym: "down-regulation of protein lipidation" EXACT []
+synonym: "downregulation of lipid:protein modification" EXACT []
+synonym: "downregulation of protein amino acid lipidation" EXACT []
+synonym: "downregulation of protein lipidation" EXACT []
+synonym: "inhibition of lipid:protein modification" NARROW []
+synonym: "inhibition of protein amino acid lipidation" NARROW []
+synonym: "inhibition of protein lipidation" NARROW []
+synonym: "negative regulation of lipid:protein modification" EXACT []
+synonym: "negative regulation of protein amino acid lipidation" EXACT []
+is_a: GO:0031400 ! negative regulation of protein modification process
+is_a: GO:0050748 ! negative regulation of lipoprotein metabolic process
+is_a: GO:1903059 ! regulation of protein lipidation
+is_a: GO:2000113 ! negative regulation of cellular macromolecule biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006497 ! negatively regulates protein lipidation
+relationship: RO:0002212 GO:0006497 ! negatively regulates protein lipidation
+
+[Term]
+id: GO:1903061
+name: positive regulation of protein lipidation
+def: "Any process that activates or increases the frequency, rate or extent of protein lipidation." []
+synonym: "activation of lipid:protein modification" NARROW []
+synonym: "activation of protein amino acid lipidation" NARROW []
+synonym: "activation of protein lipidation" NARROW []
+synonym: "positive regulation of lipid:protein modification" EXACT []
+synonym: "positive regulation of protein amino acid lipidation" EXACT []
+synonym: "up regulation of lipid:protein modification" EXACT []
+synonym: "up regulation of protein amino acid lipidation" EXACT []
+synonym: "up regulation of protein lipidation" EXACT []
+synonym: "up-regulation of lipid:protein modification" EXACT []
+synonym: "up-regulation of protein amino acid lipidation" EXACT []
+synonym: "up-regulation of protein lipidation" EXACT []
+synonym: "upregulation of lipid:protein modification" EXACT []
+synonym: "upregulation of protein amino acid lipidation" EXACT []
+synonym: "upregulation of protein lipidation" EXACT []
+is_a: GO:0010557 ! positive regulation of macromolecule biosynthetic process
+is_a: GO:0031401 ! positive regulation of protein modification process
+is_a: GO:0050747 ! positive regulation of lipoprotein metabolic process
+is_a: GO:1903059 ! regulation of protein lipidation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006497 ! positively regulates protein lipidation
+relationship: RO:0002213 GO:0006497 ! positively regulates protein lipidation
+
+[Term]
 id: GO:1903108
 name: regulation of mitochondrial transcription
 def: "Any process that modulates the frequency, rate or extent of transcription occuring in the mitochondrion." []
@@ -18339,6 +19030,14 @@ intersection_of: RO:0002213 GO:0097659 ! positively regulates nucleic acid-templ
 relationship: RO:0002213 GO:0097659 ! positively regulates nucleic acid-templated transcription
 
 [Term]
+id: GO:1903509
+name: liposaccharide metabolic process
+def: "The chemical reactions and pathways involving liposaccharide." []
+synonym: "liposaccharide metabolism" EXACT []
+is_a: GO:0006629 ! lipid metabolic process
+is_a: GO:1901135 ! carbohydrate derivative metabolic process
+
+[Term]
 id: GO:1903510
 name: mucopolysaccharide metabolic process
 def: "The chemical reactions and pathways involving mucopolysaccharide." []
@@ -18510,6 +19209,68 @@ is_a: GO:0043457 ! regulation of cellular respiration
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0009060 ! regulates aerobic respiration
 relationship: RO:0002211 GO:0009060 ! regulates aerobic respiration
+
+[Term]
+id: GO:1903725
+name: regulation of phospholipid metabolic process
+def: "Any process that modulates the frequency, rate or extent of phospholipid metabolic process." []
+synonym: "regulation of phospholipid metabolism" EXACT []
+is_a: GO:0019216 ! regulation of lipid metabolic process
+is_a: GO:0019220 ! regulation of phosphate metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006644 ! regulates phospholipid metabolic process
+relationship: RO:0002211 GO:0006644 ! regulates phospholipid metabolic process
+
+[Term]
+id: GO:1903726
+name: negative regulation of phospholipid metabolic process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of phospholipid metabolic process." []
+synonym: "down regulation of phospholipid metabolic process" EXACT []
+synonym: "down regulation of phospholipid metabolism" EXACT []
+synonym: "down-regulation of phospholipid metabolic process" EXACT []
+synonym: "down-regulation of phospholipid metabolism" EXACT []
+synonym: "downregulation of phospholipid metabolic process" EXACT []
+synonym: "downregulation of phospholipid metabolism" EXACT []
+synonym: "inhibition of phospholipid metabolic process" NARROW []
+synonym: "inhibition of phospholipid metabolism" NARROW []
+synonym: "negative regulation of phospholipid metabolism" EXACT []
+is_a: GO:0045833 ! negative regulation of lipid metabolic process
+is_a: GO:0045936 ! negative regulation of phosphate metabolic process
+is_a: GO:1903725 ! regulation of phospholipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006644 ! negatively regulates phospholipid metabolic process
+relationship: RO:0002212 GO:0006644 ! negatively regulates phospholipid metabolic process
+
+[Term]
+id: GO:1903727
+name: positive regulation of phospholipid metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of phospholipid metabolic process." []
+synonym: "activation of phospholipid metabolic process" NARROW []
+synonym: "activation of phospholipid metabolism" NARROW []
+synonym: "positive regulation of phospholipid metabolism" EXACT []
+synonym: "up regulation of phospholipid metabolic process" EXACT []
+synonym: "up regulation of phospholipid metabolism" EXACT []
+synonym: "up-regulation of phospholipid metabolic process" EXACT []
+synonym: "up-regulation of phospholipid metabolism" EXACT []
+synonym: "upregulation of phospholipid metabolic process" EXACT []
+synonym: "upregulation of phospholipid metabolism" EXACT []
+is_a: GO:0045834 ! positive regulation of lipid metabolic process
+is_a: GO:0045937 ! positive regulation of phosphate metabolic process
+is_a: GO:1903725 ! regulation of phospholipid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006644 ! positively regulates phospholipid metabolic process
+relationship: RO:0002213 GO:0006644 ! positively regulates phospholipid metabolic process
+
+[Term]
+id: GO:1903729
+name: regulation of plasma membrane organization
+def: "Any process that modulates the frequency, rate or extent of plasma membrane organization." []
+synonym: "regulation of plasma membrane organisation" EXACT []
+synonym: "regulation of plasma membrane organization and biogenesis" RELATED []
+is_a: GO:0051128 ! regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007009 ! regulates plasma membrane organization
+relationship: RO:0002211 GO:0007009 ! regulates plasma membrane organization
 
 [Term]
 id: GO:1903759
@@ -18964,6 +19725,54 @@ intersection_of: RO:0002213 GO:0001944 ! positively regulates vasculature develo
 relationship: RO:0002213 GO:0001944 ! positively regulates vasculature development
 
 [Term]
+id: GO:1904057
+name: negative regulation of sensory perception of pain
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of sensory perception of pain." []
+synonym: "down regulation of nociception" EXACT []
+synonym: "down regulation of perception of physiological pain" NARROW []
+synonym: "down regulation of sensory perception of pain" EXACT []
+synonym: "down-regulation of nociception" EXACT []
+synonym: "down-regulation of perception of physiological pain" NARROW []
+synonym: "down-regulation of sensory perception of pain" EXACT []
+synonym: "downregulation of nociception" EXACT []
+synonym: "downregulation of perception of physiological pain" NARROW []
+synonym: "downregulation of sensory perception of pain" EXACT []
+synonym: "inhibition of nociception" NARROW []
+synonym: "inhibition of perception of physiological pain" NARROW []
+synonym: "inhibition of sensory perception of pain" NARROW []
+synonym: "negative regulation of nociception" EXACT []
+synonym: "negative regulation of perception of physiological pain" NARROW []
+is_a: GO:0031645 ! negative regulation of neurological system process
+is_a: GO:0051930 ! regulation of sensory perception of pain
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0019233 ! negatively regulates sensory perception of pain
+relationship: RO:0002212 GO:0019233 ! negatively regulates sensory perception of pain
+
+[Term]
+id: GO:1904058
+name: positive regulation of sensory perception of pain
+def: "Any process that activates or increases the frequency, rate or extent of sensory perception of pain." []
+synonym: "activation of nociception" NARROW []
+synonym: "activation of perception of physiological pain" NARROW []
+synonym: "activation of sensory perception of pain" NARROW []
+synonym: "positive regulation of nociception" EXACT []
+synonym: "positive regulation of perception of physiological pain" NARROW []
+synonym: "up regulation of nociception" EXACT []
+synonym: "up regulation of perception of physiological pain" NARROW []
+synonym: "up regulation of sensory perception of pain" EXACT []
+synonym: "up-regulation of nociception" EXACT []
+synonym: "up-regulation of perception of physiological pain" NARROW []
+synonym: "up-regulation of sensory perception of pain" EXACT []
+synonym: "upregulation of nociception" EXACT []
+synonym: "upregulation of perception of physiological pain" NARROW []
+synonym: "upregulation of sensory perception of pain" EXACT []
+is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0051930 ! regulation of sensory perception of pain
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0019233 ! positively regulates sensory perception of pain
+relationship: RO:0002213 GO:0019233 ! positively regulates sensory perception of pain
+
+[Term]
 id: GO:1904062
 name: regulation of cation transmembrane transport
 def: "Any process that modulates the frequency, rate or extent of cation transmembrane transport." []
@@ -19200,6 +20009,54 @@ is_a: GO:1904478 ! regulation of intestinal absorption
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0050892 ! positively regulates intestinal absorption
 relationship: RO:0002213 GO:0050892 ! positively regulates intestinal absorption
+
+[Term]
+id: GO:1904538
+name: regulation of glycolytic process through fructose-6-phosphate
+def: "Any process that modulates the frequency, rate or extent of glycolytic process through fructose-6-phosphate." []
+synonym: "regulation of glycolysis through fructose-6-phosphate" EXACT []
+is_a: GO:0006110 ! regulation of glycolytic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0061615 ! regulates glycolytic process through fructose-6-phosphate
+relationship: RO:0002211 GO:0061615 ! regulates glycolytic process through fructose-6-phosphate
+
+[Term]
+id: GO:1904539
+name: negative regulation of glycolytic process through fructose-6-phosphate
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of glycolytic process through fructose-6-phosphate." []
+synonym: "down regulation of glycolysis through fructose-6-phosphate" EXACT []
+synonym: "down regulation of glycolytic process through fructose-6-phosphate" EXACT []
+synonym: "down-regulation of glycolysis through fructose-6-phosphate" EXACT []
+synonym: "down-regulation of glycolytic process through fructose-6-phosphate" EXACT []
+synonym: "downregulation of glycolysis through fructose-6-phosphate" EXACT []
+synonym: "downregulation of glycolytic process through fructose-6-phosphate" EXACT []
+synonym: "inhibition of glycolysis through fructose-6-phosphate" NARROW []
+synonym: "inhibition of glycolytic process through fructose-6-phosphate" NARROW []
+synonym: "negative regulation of glycolysis through fructose-6-phosphate" EXACT []
+is_a: GO:0045820 ! negative regulation of glycolytic process
+is_a: GO:1904538 ! regulation of glycolytic process through fructose-6-phosphate
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0061615 ! negatively regulates glycolytic process through fructose-6-phosphate
+relationship: RO:0002212 GO:0061615 ! negatively regulates glycolytic process through fructose-6-phosphate
+
+[Term]
+id: GO:1904540
+name: positive regulation of glycolytic process through fructose-6-phosphate
+def: "Any process that activates or increases the frequency, rate or extent of glycolytic process through fructose-6-phosphate." []
+synonym: "activation of glycolysis through fructose-6-phosphate" NARROW []
+synonym: "activation of glycolytic process through fructose-6-phosphate" NARROW []
+synonym: "positive regulation of glycolysis through fructose-6-phosphate" EXACT []
+synonym: "up regulation of glycolysis through fructose-6-phosphate" EXACT []
+synonym: "up regulation of glycolytic process through fructose-6-phosphate" EXACT []
+synonym: "up-regulation of glycolysis through fructose-6-phosphate" EXACT []
+synonym: "up-regulation of glycolytic process through fructose-6-phosphate" EXACT []
+synonym: "upregulation of glycolysis through fructose-6-phosphate" EXACT []
+synonym: "upregulation of glycolytic process through fructose-6-phosphate" EXACT []
+is_a: GO:0045821 ! positive regulation of glycolytic process
+is_a: GO:1904538 ! regulation of glycolytic process through fructose-6-phosphate
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0061615 ! positively regulates glycolytic process through fructose-6-phosphate
+relationship: RO:0002213 GO:0061615 ! positively regulates glycolytic process through fructose-6-phosphate
 
 [Term]
 id: GO:1904729
