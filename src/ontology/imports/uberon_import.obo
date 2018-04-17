@@ -4543,6 +4543,14 @@ intersection_of: RO:0002179 UBERON:0002369 ! drains adrenal gland
 relationship: RO:0002179 UBERON:0002369 ! drains adrenal gland
 
 [Term]
+id: UBERON:0001148
+name: median nerve
+def: "A nerve of the arm that originates from the brachial plexus and is formed from parts of the medial and lateral cords of the brachial plexus, and continues down the arm to enter the forearm with the brachial artery. It originates from the brachial plexus with roots from C5, C6, C7, C8 &amp; T1." []
+synonym: "nervus medianus" RELATED []
+is_a: UBERON:0003433 ! arm nerve
+relationship: RO:0002380 UBERON:0001814 ! branching_part_of brachial nerve plexus
+
+[Term]
 id: UBERON:0001152
 name: cystic duct
 def: "the tubular structure that conducts gall bladder contents from the gall bladder to the common bile duct" []
@@ -5996,6 +6004,15 @@ intersection_of: BFO:0000050 UBERON:0002106 ! part of spleen
 relationship: BFO:0000050 UBERON:1000024 ! part of parenchyma of spleen
 
 [Term]
+id: UBERON:0001267
+name: femoral nerve
+def: "The femoral nerve, the largest branch of the lumbar plexus, arises from the ventral divisions of the second, third, and fourth lumbar nerves. It descends through the fibers of the Psoas major, emerging from the muscle at the lower part of its lateral border, and passes down between it and the Iliacus, behind the iliac fascia; it then runs beneath the inguinal ligament, into the thigh, and splits into an anterior and a posterior division. Under the inguinal ligament, it is separated from the femoral artery by a portion of the Psoas major. [WP,unvetted]." []
+synonym: "anterior crural nerve" EXACT []
+synonym: "nervus femoralis" RELATED []
+is_a: UBERON:0003431 ! leg nerve
+relationship: RO:0002134 UBERON:0004482 ! innervates musculature of lower limb
+
+[Term]
 id: UBERON:0001268
 name: peritoneal fluid
 def: "Transudate contained in the peritoneal cavity." []
@@ -6627,6 +6644,22 @@ def: "The tibial nerve is a branch of the sciatic nerve. The tibial nerve passes
 synonym: "medial popliteal nerve" EXACT []
 synonym: "n. tibialis" RELATED []
 is_a: UBERON:0003431 ! leg nerve
+disjoint_from: UBERON:0001324 ! common fibular nerve
+relationship: RO:0002380 UBERON:0001322 ! branching_part_of sciatic nerve
+
+[Term]
+id: UBERON:0001324
+name: common fibular nerve
+def: "A nerve arising at the terminal division of the sciatic nerve at the popliteal fossa and extending to the neck of the fibula, ultimately innervating the Peroneus muscle[MP]." []
+synonym: "common peroneal nerve" EXACT []
+synonym: "extrernal peroneal nerve" EXACT []
+synonym: "lateral popliteal nerve" EXACT []
+synonym: "n. fibularis communis" RELATED []
+synonym: "n. peroneus communis" RELATED []
+synonym: "nervus fibularis communis" RELATED []
+synonym: "nervus peroneus communis" EXACT []
+is_a: UBERON:0003431 ! leg nerve
+is_a: UBERON:0035652 ! fibular nerve
 relationship: RO:0002380 UBERON:0001322 ! branching_part_of sciatic nerve
 
 [Term]
@@ -7305,6 +7338,19 @@ relationship: BFO:0000050 UBERON:0001441 ! part of hindlimb skeleton
 relationship: RO:0002576 UBERON:0002387 ! skeleton of pes
 
 [Term]
+id: UBERON:0001446
+name: fibula
+def: "The major postaxial endochondral bone in the posterior zeugopod[Phenoscape]." []
+is_a: UBERON:0002495 ! long bone
+is_a: UBERON:0003608 ! hindlimb long bone
+is_a: UBERON:0004251 ! hindlimb zeugopod bone
+is_a: UBERON:0015013 ! fibula endochondral element
+intersection_of: UBERON:0015013 ! fibula endochondral element
+intersection_of: RO:0002473 UBERON:0002481 ! composed primarily of bone tissue
+relationship: BSPO:0001115 UBERON:0010720 ! postaxialmost_part_of hindlimb zeugopod skeleton
+relationship: RO:0002202 UBERON:0010851 ! develops_from fibula cartilage element
+
+[Term]
 id: UBERON:0001447
 name: tarsal bone
 def: "A bone that is part of the tarsal skeleton. Examples: calcaneus, talus, centralia." []
@@ -7811,6 +7857,39 @@ relationship: RO:0002176 UBERON:0009880 ! connects carpal skeleton
 relationship: RO:0002176 UBERON:0010703 ! connects forelimb zeugopod skeleton
 
 [Term]
+id: UBERON:0001492
+name: radial nerve
+def: "A nerve that supplies the upper limb, including the triceps brachii muscle of the arm, as well as all 12 muscles in the posterior osteofascial compartment of the forearm, as well as the associated joints and overlying skin." []
+synonym: "nervus radialis" RELATED []
+is_a: UBERON:0003433 ! arm nerve
+relationship: RO:0002134 UBERON:0001509 ! innervates triceps brachii
+relationship: RO:0002134 UBERON:0003403 ! innervates skin of forearm
+relationship: RO:0002134 UBERON:0004487 ! innervates musculature of forelimb zeugopod
+relationship: RO:0002380 UBERON:0001814 ! branching_part_of brachial nerve plexus
+
+[Term]
+id: UBERON:0001493
+name: axillary nerve
+def: "The axillary nerve is a nerve of the human body, that comes off the posterior cord of the brachial plexus at the level of the axilla (armpit) and carries nerve fibers from C5 and C6. The axillary nerve travels through the quadrangular space with the posterior circumflex humeral artery and vein. [WP,unvetted]." []
+synonym: "auxillery nerve" RELATED []
+synonym: "circumflex humeral nerve" EXACT []
+synonym: "circumflex nerve" RELATED []
+synonym: "nervus axillaris" RELATED []
+is_a: UBERON:0003433 ! arm nerve
+relationship: BFO:0000050 UBERON:0001460 ! part of arm
+relationship: BFO:0000050 UBERON:0001814 ! part of brachial nerve plexus
+relationship: RO:0002134 UBERON:0009472 ! innervates axilla
+
+[Term]
+id: UBERON:0001494
+name: ulnar nerve
+def: "A nerve which runs near the ulna bone." []
+synonym: "nervus ulnaris" RELATED []
+is_a: UBERON:0003433 ! arm nerve
+relationship: RO:0002134 UBERON:0003625 ! innervates manual digit 5
+relationship: RO:0002380 UBERON:0001814 ! branching_part_of brachial nerve plexus
+
+[Term]
 id: UBERON:0001496
 name: ascending aorta
 def: "The ascending aorta is the portion of the aorta in a two-pass circulatory system that lies between the heart and the arch of aorta[GO]. A portion of the aorta commencing at the upper part of the base of the left ventricle, on a level with the lower border of the third costal cartilage behind the left half of the sternum; it passes obliquely upward, forward, and to the right, in the direction of the heart's axis, as high as the upper border of the second right costal cartilage, describing a slight curve in its course, and being situated, about 6 cm behind the posterior surface of the sternum. The total length is about 5 cm in length [Wikipedia]" []
@@ -7882,6 +7961,42 @@ is_a: UBERON:0003662 ! forelimb muscle
 intersection_of: UBERON:0014892 ! skeletal muscle organ
 intersection_of: BFO:0000050 UBERON:0002398 ! part of manus
 relationship: BFO:0000050 UBERON:0004489 ! part of musculature of manus
+
+[Term]
+id: UBERON:0001507
+name: biceps brachii
+def: "A muscle in the forelimb stylopod which in humans has several functions, the most important being to rotate the forearm and to flex the elbow. [WP,unvetted]." []
+synonym: "biceps" BROAD []
+synonym: "biceps brachii %26 brachialis muscles" RELATED []
+synonym: "biceps brachii muscle" RELATED []
+synonym: "biceps cubiti" RELATED []
+synonym: "biceps muscle" RELATED []
+synonym: "musculus biceps brachii" RELATED []
+is_a: UBERON:0004255 ! forelimb stylopod muscle
+relationship: RO:0002005 UBERON:0003724 ! innervated_by musculocutaneous nerve
+relationship: RO:0002372 UBERON:0006633 ! has_muscle_origin coracoid process of scapula
+relationship: RO:0002372 UBERON:0010760 ! has_muscle_origin supraglenoid tubercle
+relationship: RO:0002373 UBERON:0001423 ! has_muscle_insertion radius bone
+relationship: RO:0002568 UBERON:0001509 ! has_muscle_antagonist triceps brachii
+
+[Term]
+id: UBERON:0001509
+name: triceps brachii
+def: "The triceps brachii muscle (Latin for 'three-headed' muscle of the arm, it is called a three headed muscle because there are three bundles of muscle, each of different origin, joining together at the elbow) is the large muscle on the back of the human upper limb. It is the muscle principally responsible for extension of the elbow joint (i.e. straightening of the arm). Though a similarly-named muscle, the triceps surae, is found on the lower leg, the triceps brachii is commonly called simply the 'triceps'. [WP,unvetted]." []
+synonym: "musculus triceps brachii" RELATED []
+synonym: "triceps" EXACT []
+synonym: "triceps brachii muscle" EXACT []
+synonym: "triceps muscle" RELATED []
+is_a: UBERON:0001482 ! muscle of shoulder
+is_a: UBERON:0004255 ! forelimb stylopod muscle
+is_a: UBERON:0034908 ! scapular muscle
+relationship: BFO:0000050 UBERON:0003822 ! part of forelimb stylopod
+relationship: RO:0002005 UBERON:0001492 ! innervated_by radial nerve
+relationship: RO:0002005 UBERON:0001493 ! innervated_by axillary nerve
+relationship: RO:0002372 UBERON:0000976 ! has_muscle_origin humerus
+relationship: RO:0002372 UBERON:0006849 ! has_muscle_origin scapula
+relationship: RO:0002373 UBERON:0006810 ! has_muscle_insertion olecranon
+relationship: RO:0002568 UBERON:0001507 ! has_muscle_antagonist biceps brachii
 
 [Term]
 id: UBERON:0001510
@@ -10204,6 +10319,35 @@ relationship: BFO:0000050 UBERON:0000966 ! part of retina
 relationship: RO:0002433 UBERON:0000966 ! contributes to morphology of retina
 
 [Term]
+id: UBERON:0001782
+name: pigmented layer of retina
+def: "A monolayer of pigmented epithelium covering the neural retina; develops from the outer of the two layers of the optic cup[ZFA]. the pigmented cell layer just outside the neurosensory retina that nourishes retinal visual cells, and is firmly attached to the underlying choroid and overlying retinal visual cells[WP]." []
+synonym: "epithelium, retinal pigment" RELATED []
+synonym: "outer pigmented layer of retina" EXACT []
+synonym: "p. pigmentosa retinae" RELATED []
+synonym: "pigment epithelium of retina" EXACT []
+synonym: "pigmented epithelium" RELATED []
+synonym: "pigmented retina" RELATED []
+synonym: "pigmented retina epithelium" EXACT []
+synonym: "pigmented retinal epithelium" EXACT []
+synonym: "PRE" RELATED []
+synonym: "retinal pigment epithelium" EXACT []
+synonym: "retinal pigment layer" RELATED []
+synonym: "retinal pigmented epithelium" EXACT []
+synonym: "RPE" RELATED []
+synonym: "stratum pigmentosa retinae" RELATED []
+synonym: "stratum pigmentosum (retina)" EXACT []
+synonym: "stratum pigmentosum retinae" EXACT []
+is_a: UBERON:0000957 ! lamina
+is_a: UBERON:0001781 ! layer of retina
+is_a: UBERON:0015808 ! eye epithelium
+intersection_of: UBERON:0001781 ! layer of retina
+intersection_of: RO:0002495 UBERON:0005424 ! immediate transformation of presumptive retinal pigmented epithelium
+relationship: RO:0002220 UBERON:0001787 ! adjacent_to photoreceptor layer of retina
+relationship: RO:0002220 UBERON:0003902 ! adjacent_to retinal neural layer
+relationship: RO:0002495 UBERON:0005424 ! immediate transformation of presumptive retinal pigmented epithelium
+
+[Term]
 id: UBERON:0001783
 name: optic disc
 def: "The optic disc or optic nerve head is the location where ganglion cell axons exit the eye to form the optic nerve. There are no light sensitive rods or cones to respond to a light stimulus at this point. This causes a break in the visual field called 'the blind spot' or the 'physiological blind spot'. The optic nerve head in a normal human eye carries from 1 to 1.2 million neurons from the eye towards the brain. [WP,unvetted]." []
@@ -10233,6 +10377,115 @@ intersection_of: BSPO:0000096 UBERON:0001780 ! anterior_to spinal nerve
 intersection_of: extends_fibers_into UBERON:0000955 ! brain
 relationship: BSPO:0000096 UBERON:0001780 ! anterior_to spinal nerve
 relationship: RO:0002254 UBERON:0003099 ! has developmental contribution from cranial neural crest
+
+[Term]
+id: UBERON:0001787
+name: photoreceptor layer of retina
+def: "The layer within the retina where the photoreceptor cell receptor segments reside." []
+synonym: "layer of rods and cones" RELATED []
+synonym: "retina photoreceptor layer" EXACT []
+synonym: "retinal photoreceptor layer" EXACT []
+synonym: "retinal photoreceptor layers" RELATED []
+synonym: "stratum segmentorum externorum et internorum (retina)" EXACT []
+synonym: "stratum segmentorum externorum et internorum retinae" EXACT []
+is_a: UBERON:0001781 ! layer of retina
+relationship: BFO:0000050 UBERON:0003902 ! part of retinal neural layer
+relationship: RO:0002220 UBERON:0001788 ! adjacent_to outer limiting layer of retina
+
+[Term]
+id: UBERON:0001788
+name: outer limiting layer of retina
+def: "The row of jucntional complexes between the plasma membranes of rod segments and the Muller glia cells; this barrier separates the layer of inner and outer segments of the rods and cones from the outer nuclear layer and forms a blood-retina barrier[MP]." []
+synonym: "blood retina barrier" RELATED []
+synonym: "BRB" RELATED []
+synonym: "external limiting lamina of retina" EXACT []
+synonym: "external limiting membrane" EXACT []
+synonym: "external limiting membrane of retina" EXACT []
+synonym: "outer limiting membrane" EXACT []
+synonym: "outer limiting membrane of retina" EXACT []
+synonym: "outer limiting membranes" RELATED []
+synonym: "retina external limiting lamina" EXACT []
+synonym: "retina outer limiting membrane" EXACT []
+synonym: "stratum limitans externum (retina)" EXACT []
+synonym: "stratum limitans externum retinae" EXACT []
+is_a: UBERON:0007619 ! limiting membrane of retina
+relationship: RO:0002220 UBERON:0001789 ! adjacent_to outer nuclear layer of retina
+
+[Term]
+id: UBERON:0001789
+name: outer nuclear layer of retina
+def: "The layer within the retina where the photoreceptor cell bodies reside." []
+synonym: "external nuclear layer" RELATED []
+synonym: "layer of outer granules" RELATED []
+synonym: "neural retina outer nuclear layer" EXACT []
+synonym: "ONL" NARROW []
+synonym: "outer nuclear layer" BROAD []
+synonym: "retina outer nuclear layer" EXACT []
+synonym: "retina, outer nuclear layer" RELATED []
+synonym: "retinal outer nuclear layer" EXACT []
+synonym: "retinal outer nuclear layers" RELATED []
+synonym: "stratum nucleare externum (retina)" EXACT []
+synonym: "stratum nucleare externum retinae" EXACT []
+is_a: UBERON:0001781 ! layer of retina
+relationship: BFO:0000050 UBERON:0003902 ! part of retinal neural layer
+relationship: RO:0002220 UBERON:0001790 ! adjacent_to outer plexiform layer of retina
+relationship: RO:0002433 UBERON:0003902 ! contributes to morphology of retinal neural layer
+
+[Term]
+id: UBERON:0001790
+name: outer plexiform layer of retina
+def: "The layer within the retina where the bipolar cells synapse with the photoreceptor cells[ZFA]. Between the inner and outer nuclear layers, the outer plexiform layer (OPL) contains connections between the photoreceptors and bipolar and horizontal cells[GO]." []
+synonym: "external plexiform layer" BROAD []
+synonym: "outer plexiform layer" EXACT []
+synonym: "retina outer plexiform layer" EXACT []
+synonym: "retina, outer plexiform layer" RELATED []
+synonym: "retinal outer plexiform layer" EXACT []
+synonym: "retinal outer plexiform layers" RELATED []
+synonym: "stratum plexiforme externum" EXACT []
+synonym: "stratum plexiforme externum retinae" EXACT []
+is_a: UBERON:0001781 ! layer of retina
+relationship: BFO:0000050 UBERON:0003902 ! part of retinal neural layer
+relationship: RO:0002220 UBERON:0001791 ! adjacent_to inner nuclear layer of retina
+relationship: RO:0002433 UBERON:0003902 ! contributes to morphology of retinal neural layer
+
+[Term]
+id: UBERON:0001791
+name: inner nuclear layer of retina
+def: "Cytoarchitectural layer of retina containing closely packed cell bodies, the majority of which are bipolar cells (adapted from Wikipedia)." []
+synonym: "INL" NARROW []
+synonym: "inner nuclear layer" EXACT []
+synonym: "intermediate cell layer" EXACT []
+synonym: "layer of inner granules" RELATED []
+synonym: "neural retina inner nuclear layer" EXACT []
+synonym: "retina inner nuclear layer" EXACT []
+synonym: "retina, inner nuclear layer" RELATED []
+synonym: "retinal inner nuclear layer" EXACT []
+synonym: "stratum nucleare internum" EXACT []
+synonym: "stratum nucleare internum retinae" EXACT []
+is_a: UBERON:0001781 ! layer of retina
+relationship: BFO:0000050 UBERON:0003902 ! part of retinal neural layer
+relationship: RO:0002220 UBERON:0001795 ! adjacent_to inner plexiform layer of retina
+relationship: RO:0002433 UBERON:0003902 ! contributes to morphology of retinal neural layer
+
+[Term]
+id: UBERON:0001792
+name: ganglionic layer of retina
+def: "Cytoarchitectural layer of retina that contains somata of retinal ganglion cells, bounded by the stratum opticum and the inner plexiform layer" []
+synonym: "ganglion cell layer" BROAD []
+synonym: "ganglionic cell layer of retina" EXACT []
+synonym: "GCL layer" EXACT []
+synonym: "retina ganglion cell layer" EXACT []
+synonym: "retina ganglion layer" EXACT []
+synonym: "retina, ganglion cell layer" RELATED []
+synonym: "retinal ganglion cell layer" EXACT []
+synonym: "retinal ganglion layer" EXACT []
+synonym: "RGC layer" EXACT []
+synonym: "stratum ganglionicum (retina)" EXACT []
+synonym: "stratum ganglionicum retinae" RELATED []
+is_a: UBERON:0001781 ! layer of retina
+relationship: BFO:0000050 UBERON:0003902 ! part of retinal neural layer
+relationship: RO:0002220 UBERON:0001793 ! adjacent_to nerve fiber layer of retina
+relationship: RO:0002433 UBERON:0003902 ! contributes to morphology of retinal neural layer
 
 [Term]
 id: UBERON:0001793
@@ -10270,6 +10523,29 @@ synonym: "retina internal limiting lamina" EXACT []
 synonym: "stratum limitans internum retinae" EXACT []
 is_a: UBERON:0007619 ! limiting membrane of retina
 relationship: RO:0002220 UBERON:0001797 ! adjacent_to vitreous humor
+
+[Term]
+id: UBERON:0001795
+name: inner plexiform layer of retina
+def: "Cytoarchitectural layer of the retina that is made up of a dense reticulum of fibrils formed by interlaced dendrites of retinal ganglion cells and cells of the inner nuclear layer (adapted from Wikipedia)" []
+synonym: "inner plexiform layer" RELATED []
+synonym: "internal plexiform layer of retina" RELATED []
+synonym: "IPL" NARROW []
+synonym: "retina inner plexiform layer" EXACT []
+synonym: "retina, inner plexiform layer" RELATED []
+synonym: "retinal inner plexiform layer" EXACT []
+synonym: "retinal internal plexiform layer" RELATED []
+synonym: "stratum plexifome internum" RELATED []
+synonym: "stratum plexiforme internum" EXACT []
+synonym: "stratum plexiforme internum retinae" RELATED []
+is_a: UBERON:0001781 ! layer of retina
+intersection_of: UBERON:0001781 ! layer of retina
+intersection_of: RO:0002220 UBERON:0001791 ! adjacent_to inner nuclear layer of retina
+intersection_of: RO:0002220 UBERON:0001792 ! adjacent_to ganglionic layer of retina
+relationship: BFO:0000050 UBERON:0003902 ! part of retinal neural layer
+relationship: RO:0002220 UBERON:0001791 ! adjacent_to inner nuclear layer of retina
+relationship: RO:0002220 UBERON:0001792 ! adjacent_to ganglionic layer of retina
+relationship: RO:0002433 UBERON:0003902 ! contributes to morphology of retinal neural layer
 
 [Term]
 id: UBERON:0001796
@@ -13677,6 +13953,13 @@ def: "Nonsynovial joint in which the articulating bones or cartilages are connec
 synonym: "articulatio fibrosa" EXACT []
 synonym: "junctura fibrosa" RELATED []
 is_a: UBERON:0011134 ! nonsynovial joint
+
+[Term]
+id: UBERON:0002210
+name: syndesmosis
+def: "Fibrous joint in which the articulating bones or cartilages of the vertebral column and the limbs as well as articulating ossicles, are connected by skeletal ligaments or membranes. Examples: Intervertebral syndesmosis, inferior tibiofibular joint.[FMA]" []
+is_a: UBERON:0002209 ! fibrous joint
+is_a: UBERON:0002213 ! cartilaginous joint
 
 [Term]
 id: UBERON:0002211
@@ -23048,6 +23331,16 @@ synonym: "middle fossa" BROAD []
 is_a: UBERON:0008789 ! cranial fossa
 
 [Term]
+id: UBERON:0003724
+name: musculocutaneous nerve
+def: "a large branch of the brachial plexus supplying various parts of the upper arm (as flexor muscles) and forearm (as the skin)." []
+synonym: "casserio's nerve" EXACT []
+synonym: "nervus musculocutaneus" RELATED []
+is_a: UBERON:0001021 ! nerve
+relationship: RO:0002134 UBERON:0002102 ! innervates forelimb
+relationship: RO:0002380 UBERON:0001814 ! branching_part_of brachial nerve plexus
+
+[Term]
 id: UBERON:0003725
 name: cervical nerve plexus
 def: "An arrangement of nerve fibers, running from the spine that travels to the head and neck where it innervates skin and muscle." []
@@ -24232,6 +24525,23 @@ relationship: BSPO:0000122 UBERON:0001777 ! in_posterior_side_of substantia prop
 relationship: RO:0002433 UBERON:0001777 ! contributes to morphology of substantia propria of cornea
 
 [Term]
+id: UBERON:0003957
+name: Bruch's membrane
+def: "A transparent, nearly structureless innermost layer of the choroid in contact with the pigmented layer of the retina." []
+synonym: "basal lamina of choroid" RELATED []
+synonym: "Bruch membrane" EXACT []
+synonym: "Bruch's basal membrane" EXACT []
+synonym: "lamina basalis (choroid)" EXACT []
+synonym: "lamina basilis" BROAD []
+synonym: "lamina choroideae basalis" EXACT []
+synonym: "vitreous lamina" EXACT []
+is_a: UBERON:0000476 ! acellular anatomical structure
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0001776 ! part of optic choroid
+relationship: BFO:0000050 UBERON:0013399 ! part of blood vessel layer of choroid
+relationship: RO:0002220 UBERON:0001782 ! adjacent_to pigmented layer of retina
+
+[Term]
 id: UBERON:0003959
 name: rete testis
 def: "An anastomosing network of delicate tubules located in the hilum of the testicle (mediastinum testis) that carries sperm from the seminiferous tubules to the vasa efferentia[WP]." []
@@ -24691,6 +25001,13 @@ is_a: UBERON:0005913 ! zone of bone organ
 is_a: UBERON:0010313 ! neural crest-derived structure
 relationship: BFO:0000050 UBERON:0001708 ! part of jaw skeleton
 relationship: RO:0002254 UBERON:0008969 ! has developmental contribution from dental follicle
+
+[Term]
+id: UBERON:0004105
+name: subungual region
+def: "Region beneath a nail or claw." []
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: BFO:0000050 UBERON:0001705 ! part of nail
 
 [Term]
 id: UBERON:0004108
@@ -27271,6 +27588,17 @@ intersection_of: BFO:0000050 UBERON:0001436 ! part of phalanx of manus
 relationship: BFO:0000050 UBERON:0001436 ! part of phalanx of manus
 
 [Term]
+id: UBERON:0004388
+name: epiphysis of fibula
+def: "An epiphysis that is part of a fibula [Automatically generated definition]." []
+synonym: "fibula epiphysis" EXACT []
+is_a: UBERON:0001437 ! epiphysis
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: BFO:0000050 UBERON:0001446 ! part of fibula
+relationship: BFO:0000050 UBERON:0001446 ! part of fibula
+
+[Term]
 id: UBERON:0004389
 name: epiphysis of metatarsal bone
 def: "An epiphysis that is part of a metatarsal bone [Automatically generated definition]." []
@@ -27435,6 +27763,17 @@ is_a: UBERON:0004387 ! epiphysis of phalanx of manus
 is_a: UBERON:0004448 ! distal epiphysis of phalanx
 intersection_of: UBERON:0004379 ! distal epiphysis
 intersection_of: BFO:0000050 UBERON:0001436 ! part of phalanx of manus
+
+[Term]
+id: UBERON:0004410
+name: distal epiphysis of fibula
+def: "A distal epiphysis that is part of a fibula [Automatically generated definition]." []
+synonym: "distal end of fibula" EXACT []
+synonym: "lower end of fibula" EXACT []
+is_a: UBERON:0004379 ! distal epiphysis
+is_a: UBERON:0004388 ! epiphysis of fibula
+intersection_of: UBERON:0004379 ! distal epiphysis
+intersection_of: BFO:0000050 UBERON:0001446 ! part of fibula
 
 [Term]
 id: UBERON:0004411
@@ -28156,6 +28495,16 @@ is_a: UBERON:0004830 ! respiratory system skeletal muscle
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: BFO:0000050 UBERON:0001103 ! part of diaphragm
 relationship: BFO:0000050 UBERON:0001103 ! part of diaphragm
+
+[Term]
+id: UBERON:0004502
+name: skeletal muscle tissue of biceps brachii
+def: "A portion of skeletal muscle tissue that is part of a biceps brachii [Automatically generated definition]." []
+synonym: "skeletal muscle tissue of biceps brachii muscle" RELATED []
+is_a: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: BFO:0000050 UBERON:0001507 ! part of biceps brachii
+relationship: BFO:0000050 UBERON:0001507 ! part of biceps brachii
 
 [Term]
 id: UBERON:0004515
@@ -34755,6 +35104,26 @@ synonym: "developmental tissue" RELATED []
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
+id: UBERON:0005424
+name: presumptive retinal pigmented epithelium
+def: "Portion of tissue that is the outer layer of the optic cup and will become the retinal pigmented epithelium." []
+synonym: "future pigmented layer" RELATED []
+synonym: "future pigmented retinal epithelium" RELATED []
+synonym: "future PRE" RELATED []
+synonym: "future retinal pigmented epithelium" EXACT []
+synonym: "future RPE" EXACT []
+synonym: "optic cup outer layer" EXACT []
+synonym: "outer layer optic cup" EXACT []
+synonym: "presumptive pigmented epithelia" EXACT []
+synonym: "presumptive pigmented epithelium" RELATED []
+is_a: UBERON:0006598 ! presumptive structure
+is_a: UBERON:0010312 ! immature eye
+intersection_of: UBERON:0006598 ! presumptive structure
+intersection_of: RO:0002387 UBERON:0001782 ! has potential to develop into pigmented layer of retina
+relationship: BFO:0000050 UBERON:0003072 ! part of optic cup
+relationship: RO:0002387 UBERON:0001782 ! has potential to develop into pigmented layer of retina
+
+[Term]
 id: UBERON:0005425
 name: presumptive neural retina
 def: "Portion of tissue that is the inner layer of the optic cup and will become the neural retina." []
@@ -36127,6 +36496,12 @@ is_a: UBERON:0002481 ! bone tissue
 intersection_of: UBERON:0002481 ! bone tissue
 intersection_of: BFO:0000050 UBERON:0002495 ! part of long bone
 relationship: BFO:0000050 UBERON:0002495 ! part of long bone
+
+[Term]
+id: UBERON:0005813
+name: tubercle
+def: "A round nodule, small eminence, or warty outgrowth found on bones, skin, or within the lungs in tuberculosis. They are also found on the leading edge of Humpback Whale's flippers, improving fluid flow over the flipper's surface[WP]." []
+is_a: UBERON:0004529 ! anatomical projection
 
 [Term]
 id: UBERON:0005837
@@ -38416,6 +38791,16 @@ intersection_of: UBERON:0001637 ! artery
 intersection_of: RO:0002178 UBERON:0001103 ! supplies diaphragm
 intersection_of: RO:0002380 UBERON:0002456 ! branching_part_of internal thoracic artery
 relationship: RO:0002380 UBERON:0002456 ! branching_part_of internal thoracic artery
+
+[Term]
+id: UBERON:0006633
+name: coracoid process of scapula
+def: "A process of the scapula in most mammals representing the remnant of the coracoid bone of lower vertebrates thas has become fused with the scapula." []
+synonym: "coracoid process" EXACT []
+synonym: "coracoid process of the scapula" EXACT []
+synonym: "processus coracoideus" RELATED []
+is_a: UBERON:0005913 ! zone of bone organ
+relationship: BFO:0000050 UBERON:0006849 ! part of scapula
 
 [Term]
 id: UBERON:0006642
@@ -41439,6 +41824,29 @@ intersection_of: RO:0002007 UBERON:0007844 ! bounding layer of cartilage element
 relationship: RO:0002007 UBERON:0007844 ! bounding layer of cartilage element
 
 [Term]
+id: UBERON:0008188
+name: tendon of biceps brachii
+def: "A tendon that attaches_to a biceps brachii." []
+synonym: "biceps brachii tendon" EXACT []
+synonym: "tendon of biceps brachii muscle" RELATED []
+is_a: UBERON:0000043 ! tendon
+intersection_of: UBERON:0000043 ! tendon
+intersection_of: RO:0002371 UBERON:0001507 ! attaches_to biceps brachii
+relationship: RO:0002371 UBERON:0001507 ! attaches_to biceps brachii
+
+[Term]
+id: UBERON:0008192
+name: tendon of triceps brachii
+def: "A tendon that attaches_to a triceps brachii." []
+synonym: "tendon of triceps brachii muscle" RELATED []
+synonym: "triceps brachii tendon" EXACT []
+synonym: "triceps tendon" EXACT []
+is_a: UBERON:0000043 ! tendon
+intersection_of: UBERON:0000043 ! tendon
+intersection_of: RO:0002371 UBERON:0001509 ! attaches_to triceps brachii
+relationship: RO:0002371 UBERON:0001509 ! attaches_to triceps brachii
+
+[Term]
 id: UBERON:0008193
 name: pneumatized bone
 def: "A bone that is hollow or contains many air cells, such as the mastoid process of the temporal bone[TMD]." []
@@ -41829,6 +42237,20 @@ is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004383 ! epiphysis of tibia
 intersection_of: UBERON:0004380 ! proximal epiphysis
 intersection_of: BFO:0000050 UBERON:0000979 ! part of tibia
+
+[Term]
+id: UBERON:0008775
+name: proximal epiphysis of fibula
+def: "A proximal epiphysis that is part of a fibula." []
+synonym: "caput fibulae" EXACT []
+synonym: "fibular head" RELATED []
+synonym: "head of fibula" EXACT []
+synonym: "proximal end of fibula" EXACT []
+synonym: "upper end of fibula" EXACT []
+is_a: UBERON:0004380 ! proximal epiphysis
+is_a: UBERON:0004388 ! epiphysis of fibula
+intersection_of: UBERON:0004380 ! proximal epiphysis
+intersection_of: BFO:0000050 UBERON:0001446 ! part of fibula
 
 [Term]
 id: UBERON:0008780
@@ -42625,6 +43047,22 @@ intersection_of: BFO:0000050 UBERON:0002078 ! part of right cardiac atrium
 relationship: BFO:0000050 UBERON:0002078 ! part of right cardiac atrium
 relationship: BFO:0000050 UBERON:0006218 ! part of common atrial chamber
 relationship: RO:0002202 UBERON:0005092 ! develops_from right horn of sinus venosus
+
+[Term]
+id: UBERON:0009132
+name: peroneus
+def: "One of a group of three muscles fibularis (peronæus) longus, brevis, and tertius originating on the fibula and inserting on the metatarsals" []
+synonym: "fibularis" EXACT []
+synonym: "fibularis muscle" EXACT []
+synonym: "peroneal muscle" EXACT []
+synonym: "peroneal muscle group" EXACT []
+synonym: "peroneal muscles" EXACT []
+synonym: "peroneus muscle" EXACT []
+synonym: "peronæus muscle" EXACT []
+is_a: UBERON:0004256 ! hindlimb zeugopod muscle
+relationship: BFO:0000050 UBERON:0003823 ! part of hindlimb zeugopod
+relationship: RO:0002372 UBERON:0001446 ! has_muscle_origin fibula
+relationship: RO:0002373 UBERON:0001448 ! has_muscle_insertion metatarsal bone
 
 [Term]
 id: UBERON:0009133
@@ -47398,6 +47836,16 @@ is_a: UBERON:0000475 ! organism subdivision
 relationship: BFO:0000050 UBERON:0000026 ! part of appendage
 
 [Term]
+id: UBERON:0010760
+name: supraglenoid tubercle
+def: "The supraglenoid tubercle is a region of the scapula to which the long head of the biceps brachii muscle attaches." []
+synonym: "supraglenoid tuberosity" EXACT []
+synonym: "tuberculum supraglenoidale" RELATED []
+is_a: UBERON:0005813 ! tubercle
+is_a: UBERON:4100000 ! skeletal element projection
+relationship: BFO:0000050 UBERON:0006633 ! part of coracoid process of scapula
+
+[Term]
 id: UBERON:0010801
 name: calcaneum pre-cartilage condensation
 def: "A calcaneum endochondral element that is composed primarily of a pre-cartilage condensation." []
@@ -47484,6 +47932,34 @@ intersection_of: UBERON:0005866 ! pre-cartilage condensation
 intersection_of: RO:0002387 UBERON:0000979 ! has potential to develop into tibia
 relationship: BFO:0000050 UBERON:0005259 ! part of lower leg mesenchyme
 relationship: RO:0002387 UBERON:0000979 ! has potential to develop into tibia
+
+[Term]
+id: UBERON:0010851
+name: fibula cartilage element
+def: "A cartilaginous condensation that has the potential to develop into a fibula." []
+synonym: "fibulal cartilage condensation" EXACT []
+synonym: "fibular cartilage condensation" EXACT []
+synonym: "fibulra cartilage condensation" RELATED []
+is_a: UBERON:0010885 ! hindlimb cartilage element
+is_a: UBERON:0015013 ! fibula endochondral element
+intersection_of: UBERON:0015013 ! fibula endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! composed primarily of cartilage tissue
+relationship: BFO:0000050 UBERON:0005259 ! part of lower leg mesenchyme
+relationship: RO:0002202 UBERON:0010852 ! develops_from fibula pre-cartilage condensation
+
+[Term]
+id: UBERON:0010852
+name: fibula pre-cartilage condensation
+def: "A pre-cartilage condensation that has the potential to develop into a fibula." []
+synonym: "fibulal pre-cartilage condensation" EXACT []
+synonym: "fibular pre-cartilage condensation" EXACT []
+is_a: UBERON:0005259 ! lower leg mesenchyme
+is_a: UBERON:0005866 ! pre-cartilage condensation
+is_a: UBERON:0015013 ! fibula endochondral element
+intersection_of: UBERON:0005866 ! pre-cartilage condensation
+intersection_of: RO:0002387 UBERON:0001446 ! has potential to develop into fibula
+relationship: BFO:0000050 UBERON:0005259 ! part of lower leg mesenchyme
+relationship: RO:0002387 UBERON:0001446 ! has potential to develop into fibula
 
 [Term]
 id: UBERON:0010854
@@ -47862,6 +48338,23 @@ intersection_of: RO:0002176 UBERON:0001423 ! connects radius bone
 relationship: BFO:0000050 UBERON:0001490 ! part of elbow joint
 relationship: RO:0002176 UBERON:0000976 ! connects humerus
 relationship: RO:0002176 UBERON:0001423 ! connects radius bone
+
+[Term]
+id: UBERON:0011112
+name: tibiofibular joint
+def: "A joint that connects the tibia and the fibula." []
+synonym: "fibulatibial joint" EXACT []
+synonym: "fibulotibial joint" EXACT []
+synonym: "tibiafibular joint" EXACT []
+is_a: UBERON:0002210 ! syndesmosis
+is_a: UBERON:0003840 ! hindlimb joint
+intersection_of: UBERON:0000982 ! skeletal joint
+intersection_of: BFO:0000050 UBERON:0003823 ! part of hindlimb zeugopod
+intersection_of: RO:0002176 UBERON:0000979 ! connects tibia
+intersection_of: RO:0002176 UBERON:0001446 ! connects fibula
+relationship: BFO:0000050 UBERON:0003823 ! part of hindlimb zeugopod
+relationship: RO:0002176 UBERON:0000979 ! connects tibia
+relationship: RO:0002176 UBERON:0001446 ! connects fibula
 
 [Term]
 id: UBERON:0011118
@@ -49547,6 +50040,18 @@ intersection_of: UBERON:0000982 ! skeletal joint
 intersection_of: RO:0002176 UBERON:0001423 ! connects radius bone
 intersection_of: RO:0002176 UBERON:0009880 ! connects carpal skeleton
 relationship: RO:0002176 UBERON:0001423 ! connects radius bone
+
+[Term]
+id: UBERON:0011971
+name: calcaneofibular ligament
+def: "A skeletal ligament that connects the fibula to the calcaneus" []
+synonym: "ligamentum calcaneofibulare" EXACT []
+is_a: UBERON:0003701 ! calcaneal tendon
+intersection_of: UBERON:0008846 ! skeletal ligament
+intersection_of: RO:0002176 UBERON:0001446 ! connects fibula
+intersection_of: RO:0002176 UBERON:0001450 ! connects calcaneus
+relationship: BFO:0000050 UBERON:0001488 ! part of ankle joint
+relationship: RO:0002176 UBERON:0001446 ! connects fibula
 
 [Term]
 id: UBERON:0011972
@@ -51331,6 +51836,20 @@ relationship: BFO:0000050 UBERON:0000079 ! part of male reproductive system
 relationship: RO:0002202 UBERON:0003890 ! develops_from Mullerian duct
 
 [Term]
+id: UBERON:0013279
+name: diaphysis of fibula
+def: "A diaphysis that is part of a fibula[Automatically generated definition]." []
+synonym: "body of fibula" EXACT []
+synonym: "corpus fibulae" EXACT []
+synonym: "fibula diaphysis" EXACT []
+synonym: "shaft of fibula" EXACT []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004769 ! diaphysis
+intersection_of: UBERON:0004769 ! diaphysis
+intersection_of: BFO:0000050 UBERON:0001446 ! part of fibula
+relationship: BFO:0000050 UBERON:0001446 ! part of fibula
+
+[Term]
 id: UBERON:0013280
 name: diaphysis of tibia
 def: "A diaphysis that is part of a tibia." []
@@ -51345,6 +51864,21 @@ is_a: UBERON:0004769 ! diaphysis
 intersection_of: UBERON:0004769 ! diaphysis
 intersection_of: BFO:0000050 UBERON:0000979 ! part of tibia
 relationship: BFO:0000050 UBERON:0000979 ! part of tibia
+
+[Term]
+id: UBERON:0013399
+name: blood vessel layer of choroid
+synonym: "Haller's layer" NARROW []
+synonym: "lamina choroideae vasculosa" EXACT []
+synonym: "lamina vasculosa (choroid)" EXACT []
+synonym: "lamina vasculosa of choroid" EXACT []
+synonym: "outer layer of choroid proper" EXACT []
+synonym: "Sattler's layer" NARROW []
+synonym: "vessel layer of choroid" EXACT []
+is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0001776 ! part of optic choroid
+relationship: RO:0002473 UBERON:0001981 ! composed primarily of blood vessel
 
 [Term]
 id: UBERON:0013411
@@ -53367,6 +53901,18 @@ union_of: UBERON:0010745 ! sacral vertebra cartilage element
 relationship: BFO:0000050 UBERON:0006075 ! part of sacral region of vertebral column
 
 [Term]
+id: UBERON:0015013
+name: fibula endochondral element
+def: "The major postaxial endochondral element in the posterior zeugopod[Phenoscape]." []
+synonym: "fibula element" EXACT []
+synonym: "fibula skeletal element" BROAD []
+is_a: UBERON:0015022 ! hindlimb endochondral element
+union_of: UBERON:0001446 ! fibula
+union_of: UBERON:0010851 ! fibula cartilage element
+union_of: UBERON:0010852 ! fibula pre-cartilage condensation
+relationship: BFO:0000050 UBERON:0010720 ! part of hindlimb zeugopod skeleton
+
+[Term]
 id: UBERON:0015014
 name: calcaneum endochondral element
 def: "A calcaneum bone or its cartilage or pre-cartilage precursor." []
@@ -55247,6 +55793,32 @@ intersection_of: BFO:0000050 UBERON:0002495 ! part of long bone
 relationship: BFO:0000050 UBERON:0002495 ! part of long bone
 
 [Term]
+id: UBERON:0016928
+name: metaphysis of fibula
+def: "A metaphysis that is part of a fibula." []
+synonym: "fibula metaphysis" EXACT []
+synonym: "fibular metaphysis" EXACT []
+is_a: UBERON:0001438 ! metaphysis
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0001438 ! metaphysis
+intersection_of: BFO:0000050 UBERON:0001446 ! part of fibula
+relationship: BFO:0000050 UBERON:0001446 ! part of fibula
+
+[Term]
+id: UBERON:0017163
+name: skin bony tubercle
+def: "A bony structure embedded in skin, roughly equivalent to osteoderms." []
+synonym: "bony tubercle" BROAD []
+synonym: "bony tubercles" RELATED []
+is_a: UBERON:0005813 ! tubercle
+is_a: UBERON:0013703 ! integumentary projection
+intersection_of: UBERON:0005813 ! tubercle
+intersection_of: BFO:0000050 UBERON:0002199 ! part of integument
+intersection_of: RO:0002473 UBERON:0002481 ! composed primarily of bone tissue
+relationship: BFO:0000050 UBERON:0002199 ! part of integument
+relationship: RO:0002473 UBERON:0002481 ! composed primarily of bone tissue
+
+[Term]
 id: UBERON:0017261
 name: intertarsal sesamoid
 def: "A sesamoid element that is part of a tarsal skeleton." []
@@ -55772,6 +56344,18 @@ is_a: UBERON:0018664 ! neck of bone element
 intersection_of: UBERON:0001560 ! neck of organ
 intersection_of: BFO:0000050 UBERON:0006849 ! part of scapula
 relationship: BFO:0000050 UBERON:0006849 ! part of scapula
+
+[Term]
+id: UBERON:0018673
+name: neck of fibula
+synonym: "fibula neck" EXACT []
+synonym: "fibular neck" EXACT []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005055 ! zone of long bone
+is_a: UBERON:0018664 ! neck of bone element
+intersection_of: UBERON:0001560 ! neck of organ
+intersection_of: BFO:0000050 UBERON:0001446 ! part of fibula
+relationship: BFO:0000050 UBERON:0001446 ! part of fibula
 
 [Term]
 id: UBERON:0018674
@@ -57056,6 +57640,19 @@ intersection_of: BFO:0000050 UBERON:0011595 ! part of jaw region
 relationship: BFO:0000050 UBERON:0011595 ! part of jaw region
 
 [Term]
+id: UBERON:0035038
+name: carpal tunnel
+def: "The fibro-osseous passageway on the palmar side of the wrist that connects the distal forearm to the middle compartment of the deep plane of the palm." []
+synonym: "carpal canal" EXACT []
+synonym: "carpel tunnel" RELATED []
+is_a: UBERON:0004111 ! anatomical conduit
+intersection_of: UBERON:0004111 ! anatomical conduit
+intersection_of: BFO:0000050 UBERON:0004452 ! part of carpal region
+intersection_of: conduit_for UBERON:0001148 ! median nerve
+relationship: BFO:0000050 UBERON:0004452 ! part of carpal region
+relationship: conduit_for UBERON:0001148 ! median nerve
+
+[Term]
 id: UBERON:0035041
 name: deep temporal artery
 def: "The deep temporal arteries, two in number, anterior and posterior, ascend between the Temporalis and the pericranium. They supply the muscle, and anastomose with the middle temporal artery. The anterior communicates with the lacrimal artery by means of small branches which perforate the zygomatic bone and great wing of the sphenoid." []
@@ -57882,6 +58479,16 @@ union_of: UBERON:0001299 ! glans penis
 union_of: UBERON:0006653 ! glans clitoris
 relationship: BFO:0000050 UBERON:0003133 ! part of reproductive organ
 relationship: RO:0002202 UBERON:0013238 ! develops_from future glans
+
+[Term]
+id: UBERON:0035652
+name: fibular nerve
+def: "Any nerve that innervates the fibularis. Includes the common fibular nerve, and its branches" []
+synonym: "peroneal nerve" EXACT []
+is_a: UBERON:0001021 ! nerve
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0009132 ! innervates peroneus
+relationship: RO:0002134 UBERON:0009132 ! innervates peroneus
 
 [Term]
 id: UBERON:0035662

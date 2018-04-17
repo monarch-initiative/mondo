@@ -295,6 +295,16 @@ holds_over_chain: BFO:0000051 RO:0002131
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
+id: RO:0002162
+name: in taxon
+def: "x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed." []
+range: BFO:0000004 ! independent continuant
+holds_over_chain: BFO:0000050 RO:0002162
+holds_over_chain: BFO:0000051 RO:0002162
+holds_over_chain: RO:0002215 RO:0002162
+is_a: RO:0002320 ! evolutionarily related to
+
+[Typedef]
 id: RO:0002180
 name: has component
 def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
@@ -403,6 +413,11 @@ id: RO:0002305
 name: causally upstream of, negative effect
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004046 ! causally upstream of or within, negative effect
+
+[Typedef]
+id: RO:0002320
+name: evolutionarily related to
+def: "A relationship that holds via some environmental process" []
 
 [Typedef]
 id: RO:0002321

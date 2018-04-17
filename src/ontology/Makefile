@@ -486,7 +486,7 @@ debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 mappings.tsv: mondo.json
 	ontobio-lexmap.py $< > $@.tmp && mv $@.tmp $@ && perl -pi -ne 's@http://purl.obolibrary.org/obo/MONDO_@MONDO:@g' $@
 
-%-mappings.tsv: mondo-edit.json mirror/%.json
+%-mappings.tsv: mondo.json mirror/%.json
 	ontobio-lexmap.py $^ -u unmapped-$@ > $@.tmp && mv $@.tmp $@
 
 hp-mappings.tsv: mondo.json

@@ -77,6 +77,17 @@ relationship: RO:0002202 CL:0000008 ! develops from migratory cranial neural cre
 relationship: RO:0002202 CL:0000333 ! develops from migratory neural crest cell
 
 [Term]
+id: CL:0000006
+name: neuronal receptor cell
+synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
+is_a: CL:0000101 ! sensory neuron
+is_a: CL:0000197 ! receptor cell
+intersection_of: CL:0000197 ! receptor cell
+intersection_of: CL:0000540 ! neuron
+intersection_of: RO:0002215 GO:0050906 ! capable of detection of stimulus involved in sensory perception
+relationship: RO:0002215 GO:0050906 ! capable of detection of stimulus involved in sensory perception
+
+[Term]
 id: CL:0000008
 name: migratory cranial neural crest cell
 is_a: CL:0000333 ! migratory neural crest cell
@@ -645,6 +656,18 @@ relationship: RO:0002215 GO:0002830 ! capable of positive regulation of type 2 i
 relationship: RO:0002215 GO:0030210 ! capable of heparin biosynthetic process
 
 [Term]
+id: CL:0000098
+name: sensory epithelial cell
+def: "A specialized epithelial cell involved in sensory perception. Restricted to special sense organs of the olfactory, gustatory, and vestibulocochlear receptor systems; contain sensory cells surrounded by supportive, non-receptive cells." []
+synonym: "neuroepithelial cell" BROAD []
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0000197 ! receptor cell
+is_a: CL:0002371 ! somatic cell
+intersection_of: CL:0000066 ! epithelial cell
+intersection_of: RO:0002215 GO:0050906 ! capable of detection of stimulus involved in sensory perception
+relationship: RO:0002215 GO:0050906 ! capable of detection of stimulus involved in sensory perception
+
+[Term]
 id: CL:0000100
 name: motor neuron
 def: "An efferent neuron that passes from the central nervous system or a ganglion toward or to a muscle and conducts an impulse that causes or inhibits movement." []
@@ -652,6 +675,15 @@ synonym: "anterior horn cell" NARROW []
 synonym: "motoneuron" EXACT []
 is_a: CL:0000527 ! efferent neuron
 relationship: RO:0002120 CL:0000187 ! synapsed to muscle cell
+
+[Term]
+id: CL:0000101
+name: sensory neuron
+def: "Any neuron having a sensory function; an afferent neuron conveying sensory impulses." []
+is_a: CL:0000526 ! afferent neuron
+intersection_of: CL:0000540 ! neuron
+intersection_of: RO:0002215 GO:0050906 ! capable of detection of stimulus involved in sensory perception
+relationship: RO:0002215 GO:0050906 ! capable of detection of stimulus involved in sensory perception
 
 [Term]
 id: CL:0000114
@@ -1056,6 +1088,20 @@ is_a: CL:0008007 ! visceral muscle cell
 relationship: RO:0002202 CL:0000514 ! develops from smooth muscle myoblast
 
 [Term]
+id: CL:0000197
+name: receptor cell
+is_a: CL:0000003 ! native cell
+
+[Term]
+id: CL:0000210
+name: photoreceptor cell
+def: "A cell specialized to detect and transduce light." []
+is_a: CL:0000006 ! neuronal receptor cell
+intersection_of: CL:0000540 ! neuron
+intersection_of: RO:0002215 GO:0050962 ! capable of detection of light stimulus involved in sensory perception
+relationship: RO:0002215 GO:0050962 ! capable of detection of light stimulus involved in sensory perception
+
+[Term]
 id: CL:0000211
 name: electrically active cell
 def: "A cell whose function is determined by the generation or the reception of an electric signal." []
@@ -1263,6 +1309,14 @@ is_a: CL:0002371 ! somatic cell
 id: CL:0000255
 name: eukaryotic cell
 is_a: CL:0000003 ! native cell
+
+[Term]
+id: CL:0000287
+name: eye photoreceptor cell
+is_a: CL:0000210 ! photoreceptor cell
+intersection_of: CL:0000210 ! photoreceptor cell
+intersection_of: BFO:0000050 UBERON:0000970 ! part of eye
+relationship: BFO:0000050 UBERON:0000970 ! part of eye
 
 [Term]
 id: CL:0000295
@@ -1661,6 +1715,13 @@ is_a: CL:0000056 ! myoblast
 intersection_of: CL:0000056 ! myoblast
 intersection_of: RO:0002203 CL:0000192 ! develops into smooth muscle cell
 relationship: RO:0002203 CL:0000192 ! develops into smooth muscle cell
+
+[Term]
+id: CL:0000526
+name: afferent neuron
+def: "A neuron which conveys sensory information centrally from the periphery." []
+synonym: "input neuron" EXACT []
+is_a: CL:0000540 ! neuron
 
 [Term]
 id: CL:0000527
@@ -7787,9 +7848,38 @@ is_a: GO:0015031 ! protein transport
 is_a: GO:0032940 ! secretion by cell
 
 [Term]
+id: GO:0009314
+name: response to radiation
+is_a: GO:0009628 ! response to abiotic stimulus
+
+[Term]
+id: GO:0009416
+name: response to light stimulus
+is_a: GO:0009314 ! response to radiation
+
+[Term]
 id: GO:0009566
 name: fertilization
 is_a: GO:0022414 ! reproductive process
+
+[Term]
+id: GO:0009581
+name: detection of external stimulus
+is_a: GO:0009605 ! response to external stimulus
+is_a: GO:0051606 ! detection of stimulus
+
+[Term]
+id: GO:0009582
+name: detection of abiotic stimulus
+is_a: GO:0009628 ! response to abiotic stimulus
+is_a: GO:0051606 ! detection of stimulus
+
+[Term]
+id: GO:0009583
+name: detection of light stimulus
+is_a: GO:0009416 ! response to light stimulus
+is_a: GO:0009581 ! detection of external stimulus
+is_a: GO:0009582 ! detection of abiotic stimulus
 
 [Term]
 id: GO:0009605
@@ -7805,6 +7895,11 @@ is_a: GO:0050896 ! response to stimulus
 id: GO:0009617
 name: response to bacterium
 is_a: GO:0051707 ! response to other organism
+
+[Term]
+id: GO:0009628
+name: response to abiotic stimulus
+is_a: GO:0050896 ! response to stimulus
 
 [Term]
 id: GO:0009653
@@ -8863,6 +8958,11 @@ name: response to stimulus
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0050906
+name: detection of stimulus involved in sensory perception
+is_a: GO:0051606 ! detection of stimulus
+
+[Term]
 id: GO:0050920
 name: regulation of chemotaxis
 is_a: GO:0032101 ! regulation of response to external stimulus
@@ -8874,6 +8974,12 @@ name: positive regulation of chemotaxis
 is_a: GO:0032103 ! positive regulation of response to external stimulus
 is_a: GO:0040017 ! positive regulation of locomotion
 is_a: GO:0050920 ! regulation of chemotaxis
+
+[Term]
+id: GO:0050962
+name: detection of light stimulus involved in sensory perception
+is_a: GO:0009583 ! detection of light stimulus
+is_a: GO:0050906 ! detection of stimulus involved in sensory perception
 
 [Term]
 id: GO:0051094
@@ -8939,6 +9045,11 @@ id: GO:0051458
 name: corticotropin secretion
 is_a: GO:0030072 ! peptide hormone secretion
 is_a: GO:0060986 ! endocrine hormone secretion
+
+[Term]
+id: GO:0051606
+name: detection of stimulus
+is_a: GO:0050896 ! response to stimulus
 
 [Term]
 id: GO:0051608

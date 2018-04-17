@@ -893,6 +893,35 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000006">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000197"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000540"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050906"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000101"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000197"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050906"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuronal receptor cell (sensu Animalia)</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuronal receptor cell</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000008 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000008">
@@ -2525,6 +2554,36 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000098 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000098">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000066"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050906"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000066"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000197"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002371"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050906"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specialized epithelial cell involved in sensory perception. Restricted to special sense organs of the olfactory, gustatory, and vestibulocochlear receptor systems; contain sensory cells surrounded by supportive, non-receptive cells.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroepithelial cell</oboInOwl:hasBroadSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensory epithelial cell</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000100 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000100">
@@ -2539,6 +2598,33 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">motoneuron</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior horn cell</oboInOwl:hasNarrowSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">motor neuron</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000101 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000101">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000540"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050906"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000526"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050906"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any neuron having a sensory function; an afferent neuron conveying sensory impulses.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensory neuron</rdfs:label>
     </owl:Class>
     
 
@@ -3505,6 +3591,42 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000197 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000197">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000210 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000210">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000540"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050962"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0050962"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell specialized to detect and transduce light.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">photoreceptor cell</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000211 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000211">
@@ -4034,6 +4156,32 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000255">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eukaryotic cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000287 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000287">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000210"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000970"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000210"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000970"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eye photoreceptor cell</rdfs:label>
     </owl:Class>
     
 
@@ -5050,6 +5198,17 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myoblast, smooth muscle</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">satellite cell</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">smooth muscle myoblast</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000526 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000526">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000540"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neuron which conveys sensory information centrally from the periphery.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">input neuron</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent neuron</rdfs:label>
     </owl:Class>
     
 
@@ -23307,11 +23466,60 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0009314 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009314">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009628"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to radiation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0009416 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009416">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009314"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to light stimulus</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0009566 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009566">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0022414"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fertilization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0009581 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009581">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009605"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051606"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of external stimulus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0009582 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009582">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009628"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051606"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of abiotic stimulus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0009583 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009583">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009416"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009582"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of light stimulus</rdfs:label>
     </owl:Class>
     
 
@@ -23339,6 +23547,15 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009617">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051707"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to bacterium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0009628 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009628">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0050896"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to abiotic stimulus</rdfs:label>
     </owl:Class>
     
 
@@ -25177,6 +25394,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0050906 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0050906">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051606"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of stimulus involved in sensory perception</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0050920 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0050920">
@@ -25194,6 +25420,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0040017"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0050920"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of chemotaxis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0050962 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0050962">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009583"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0050906"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of light stimulus involved in sensory perception</rdfs:label>
     </owl:Class>
     
 
@@ -25307,6 +25543,15 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0030072"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0060986"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">corticotropin secretion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0051606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0051606">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0050896"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of stimulus</rdfs:label>
     </owl:Class>
     
 
