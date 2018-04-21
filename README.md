@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/monarch-initiative/mondo-build.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo-build)
+[![Build Status](https://travis-ci.org/monarch-initiative/mondo.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo)
 
 # Mondo
 
