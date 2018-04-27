@@ -288,6 +288,13 @@ XD_OWL = $(patsubst %, mirror/%.owl, $(XD))
 mirror/xdisease-all.owl: $(patsubst %, mirror/%.owl, $(XD))
 	owltools $^ --merge-support-ontologies -o $@
 
+mirror/xdisease-labels.owl: mirror/xdisease-all.owl
+	robot query --format ttl -c ../sparql/construct-labels.sparql $@ -i $<
+
+mirror/labels:  $(patsubst %, mirror/%-labels.owl, $(XD))
+mirror/%-labels.owl: mirror/%.owl
+	robot query --format ttl -c ../sparql/construct-labels.sparql $@ -i $<
+
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v 
 
@@ -555,8 +562,15 @@ mondo-edit.owl: mondo-edit.obo
 # Kboom
 # ----------------------------------------
 
-ptable.tsv: mondo-edit.obo
-	../utils/xrefs2ptable.pl $< > $@.tmp && mv $@.tmp $@
+# new
+weights.tsv:
+	pl2sparql -f tsv -e -i mondo-edit.owl  -c ../plq/kboom_weights.pro w > $@
+
+ptable.tsv: weights.tsv
+	../utils/softmax-weights.py $< > $@
+
+#ptable.tsv: mondo-edit.obo
+#	../utils/xrefs2ptable.pl $< > $@.tmp && mv $@.tmp $@
 
 seed.owl: mondo-edit.obo ext.obo
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
