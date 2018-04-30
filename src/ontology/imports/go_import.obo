@@ -217,6 +217,13 @@ def: "Any process that modulates levels of neurotransmitter." []
 is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
+id: GO:0001523
+name: retinoid metabolic process
+def: "The chemical reactions and pathways involving retinoids, any member of a class of isoprenoids that contain or are derived from four prenyl groups linked head-to-tail. Retinoids include retinol and retinal and structurally similar natural derivatives or synthetic compounds, but need not have vitamin A activity." []
+synonym: "retinoid metabolism" EXACT []
+is_a: GO:0016101 ! diterpenoid metabolic process
+
+[Term]
 id: GO:0001568
 name: blood vessel development
 def: "The process whose specific outcome is the progression of a blood vessel over time, from its formation to the mature structure. The blood vessel is the vasculature carrying blood." []
@@ -3218,6 +3225,14 @@ synonym: "fat-soluble vitamin metabolism" EXACT []
 is_a: GO:0006766 ! vitamin metabolic process
 
 [Term]
+id: GO:0006776
+name: vitamin A metabolic process
+def: "The chemical reactions and pathways involving any of the vitamin A compounds, retinol, retinal (retinaldehyde) and retinoic acid, all of which are derivatives of beta-carotene." []
+synonym: "vitamin A metabolism" EXACT []
+is_a: GO:0001523 ! retinoid metabolic process
+is_a: GO:0006775 ! fat-soluble vitamin metabolic process
+
+[Term]
 id: GO:0006778
 name: porphyrin-containing compound metabolic process
 def: "The chemical reactions and pathways involving any member of a large group of derivatives or analogs of porphyrin. Porphyrins consists of a ring of four pyrrole nuclei linked each to the next at their alpha positions through a methine group." []
@@ -3297,6 +3312,13 @@ name: iron ion transport
 def: "The directed movement of iron (Fe) ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 synonym: "iron transport" EXACT []
 is_a: GO:0000041 ! transition metal ion transport
+
+[Term]
+id: GO:0006835
+name: dicarboxylic acid transport
+def: "The directed movement of dicarboxylic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "sodium:dicarboxylate transport" RELATED []
+is_a: GO:0046942 ! carboxylic acid transport
 
 [Term]
 id: GO:0006839
@@ -3866,6 +3888,17 @@ synonym: "drinking" NARROW []
 synonym: "eating" NARROW []
 synonym: "feeding behaviour" EXACT []
 is_a: GO:0007610 ! behavior
+
+[Term]
+id: GO:0007632
+name: visual behavior
+def: "The behavior of an organism in response to a visual stimulus." []
+synonym: "behavioral response to visual stimulus" EXACT []
+synonym: "behavioural response to visual stimulus" EXACT []
+synonym: "visual behaviour" EXACT []
+is_a: GO:0007610 ! behavior
+is_a: GO:0009416 ! response to light stimulus
+is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0008015
@@ -5787,6 +5820,13 @@ is_a: GO:0006820 ! anion transport
 is_a: GO:0071702 ! organic substance transport
 
 [Term]
+id: GO:0015723
+name: bilirubin transport
+def: "The directed movement of bilirubin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0006835 ! dicarboxylic acid transport
+is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
 id: GO:0015758
 is_obsolete: true
 replaced_by: GO:1904659
@@ -5998,6 +6038,15 @@ name: RNA metabolic process
 def: "The cellular chemical reactions and pathways involving RNA, ribonucleic acid, one of the two main type of nucleic acid, consisting of a long, unbranched macromolecule formed from ribonucleotides joined in 3',5'-phosphodiester linkage." []
 synonym: "RNA metabolism" EXACT []
 is_a: GO:0090304 ! nucleic acid metabolic process
+
+[Term]
+id: GO:0016101
+name: diterpenoid metabolic process
+def: "The chemical reactions and pathways involving diterpenoid compounds, terpenoids with four isoprene units." []
+synonym: "diterpene metabolic process" NARROW []
+synonym: "diterpene metabolism" NARROW []
+synonym: "diterpenoid metabolism" EXACT []
+is_a: GO:0006721 ! terpenoid metabolic process
 
 [Term]
 id: GO:0016108
@@ -6500,6 +6549,20 @@ is_a: GO:0050789 ! regulation of biological process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0008152 ! regulates metabolic process
 relationship: RO:0002211 GO:0008152 ! regulates metabolic process
+
+[Term]
+id: GO:0019230
+name: proprioception
+def: "The series of events by which an organism senses the position, location, orientation, and movement of the body and its parts. Proprioception is mediated by proprioceptors, sensory nerve terminals found in muscles, tendons, and joint capsules, which give information concerning movements and position of the body. The receptors in the labyrinth are sometimes also considered proprioceptors." []
+is_a: GO:0007600 ! sensory perception
+relationship: BFO:0000050 GO:0050884 ! part of neuromuscular process controlling posture
+
+[Term]
+id: GO:0019232
+name: perception of rate of movement
+def: "The series of events by which an organism senses the speed and direction of movement of the body and its parts." []
+synonym: "kinesthesia" EXACT []
+is_a: GO:0019230 ! proprioception
 
 [Term]
 id: GO:0019233
@@ -13235,6 +13298,13 @@ def: "Any process that modulates the levels of body fluids." []
 is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
+id: GO:0050884
+name: neuromuscular process controlling posture
+def: "Any process in which an organism voluntarily modulates its posture, the alignment of its anatomical parts." []
+synonym: "regulation of posture" EXACT []
+is_a: GO:0050905 ! neuromuscular process
+
+[Term]
 id: GO:0050890
 name: cognition
 def: "The operation of the mind by which an organism becomes aware of objects of thought or perception; it includes the mental activities associated with thinking, learning, and memory." []
@@ -13276,6 +13346,16 @@ synonym: "chemi-mechanical coupling" RELATED []
 synonym: "mechanosensory perception" EXACT []
 synonym: "perception of mechanical stimulus" EXACT []
 is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0050975
+name: sensory perception of touch
+def: "The series of events required for an organism to receive a touch stimulus, convert it to a molecular signal, and recognize and characterize the signal. This is a neurological process. The perception of touch in animals is mediated by mechanoreceptors in the skin and mucous membranes and is the sense by which contact with objects gives evidence as to certain of their qualities. Different types of touch can be perceived (for example, light, coarse, pressure and tickling) and the stimulus may be external or internal (e.g. the feeling of a full stomach)." []
+synonym: "perception of touch" EXACT []
+synonym: "tactile sense" EXACT []
+synonym: "taction" EXACT []
+synonym: "tactition" EXACT []
+is_a: GO:0050954 ! sensory perception of mechanical stimulus
 
 [Term]
 id: GO:0051046
@@ -17977,6 +18057,17 @@ is_a: GO:1901715 ! regulation of gamma-aminobutyric acid catabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0009450 ! positively regulates gamma-aminobutyric acid catabolic process
 relationship: RO:0002213 GO:0009450 ! positively regulates gamma-aminobutyric acid catabolic process
+
+[Term]
+id: GO:1901738
+name: regulation of vitamin A metabolic process
+def: "Any process that modulates the frequency, rate or extent of vitamin A metabolic process." []
+synonym: "regulation of vitamin A metabolism" EXACT []
+is_a: GO:0019747 ! regulation of isoprenoid metabolic process
+is_a: GO:0030656 ! regulation of vitamin metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006776 ! regulates vitamin A metabolic process
+relationship: RO:0002211 GO:0006776 ! regulates vitamin A metabolic process
 
 [Term]
 id: GO:1901856

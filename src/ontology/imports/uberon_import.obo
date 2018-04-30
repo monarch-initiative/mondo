@@ -9537,6 +9537,20 @@ relationship: protects UBERON:0010409 ! ocular surface region
 relationship: RO:0002433 UBERON:0000019 ! contributes to morphology of camera-type eye
 
 [Term]
+id: UBERON:0001712
+name: upper eyelid
+synonym: "palpebra superior" EXACT []
+synonym: "superior eyelid" EXACT []
+is_a: UBERON:0001711 ! eyelid
+
+[Term]
+id: UBERON:0001713
+name: lower eyelid
+synonym: "inferior eyelid" EXACT []
+synonym: "palpebra inferior" EXACT []
+is_a: UBERON:0001711 ! eyelid
+
+[Term]
 id: UBERON:0001714
 name: cranial ganglion
 def: "the groups of nerve cell bodies associated with the twelve cranial nerves" []
@@ -16046,6 +16060,20 @@ is_a: UBERON:0004573 ! systemic artery
 intersection_of: UBERON:0001637 ! artery
 intersection_of: RO:0002178 UBERON:0002240 ! supplies spinal cord
 relationship: RO:0002178 UBERON:0002240 ! supplies spinal cord
+
+[Term]
+id: UBERON:0002459
+name: inferior palpebral vein
+def: "A blood vessel that drains from from an lower eyelid." []
+synonym: "inferior palpebral veins" EXACT []
+synonym: "inferior palpebral veins set" EXACT []
+synonym: "lower palpebral vein" RELATED []
+synonym: "vein of inferior eyelid" EXACT []
+synonym: "venae palpebrales inferiores" RELATED []
+is_a: UBERON:0014769 ! palpebral vein
+intersection_of: UBERON:0014769 ! palpebral vein
+intersection_of: RO:0002179 UBERON:0001713 ! drains lower eyelid
+relationship: RO:0002179 UBERON:0001713 ! drains lower eyelid
 
 [Term]
 id: UBERON:0002460
@@ -23811,6 +23839,38 @@ relationship: BFO:0000050 UBERON:0005176 ! part of tooth enamel organ
 relationship: RO:0002202 UBERON:0004362 ! develops_from pharyngeal arch 1
 
 [Term]
+id: UBERON:0003844
+name: upper eyelid epithelium
+def: "An epithelium that is part of an upper eyelid [Automatically generated definition]." []
+synonym: "epithelial tissue of superior eyelid" EXACT []
+synonym: "epithelial tissue of upper eyelid" EXACT []
+synonym: "epithelium of superior eyelid" EXACT []
+synonym: "epithelium of upper eyelid" EXACT []
+synonym: "superior eyelid epithelial tissue" EXACT []
+synonym: "superior eyelid epithelium" EXACT []
+synonym: "upper eyelid epithelial tissue" EXACT []
+is_a: UBERON:0035034 ! eyelid epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0001712 ! part of upper eyelid
+relationship: BFO:0000050 UBERON:0001712 ! part of upper eyelid
+
+[Term]
+id: UBERON:0003845
+name: lower eyelid epithelium
+def: "An epithelium that is part of a lower eyelid [Automatically generated definition]." []
+synonym: "epithelial tissue of inferior eyelid" EXACT []
+synonym: "epithelial tissue of lower eyelid" EXACT []
+synonym: "epithelium of inferior eyelid" EXACT []
+synonym: "epithelium of lower eyelid" EXACT []
+synonym: "inferior eyelid epithelial tissue" EXACT []
+synonym: "inferior eyelid epithelium" EXACT []
+synonym: "lower eyelid epithelial tissue" EXACT []
+is_a: UBERON:0035034 ! eyelid epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0001713 ! part of lower eyelid
+relationship: BFO:0000050 UBERON:0001713 ! part of lower eyelid
+
+[Term]
 id: UBERON:0003846
 name: thymus epithelium
 def: "An epithelium that is part of a thymus, forming a supporting framework[MP,modified]." []
@@ -23951,6 +24011,32 @@ intersection_of: BFO:0000050 UBERON:0008281 ! part of tooth bud
 relationship: BFO:0000050 UBERON:0008281 ! part of tooth bud
 relationship: RO:0002202 UBERON:0007213 ! develops_from mesenchyme derived from head neural crest
 relationship: RO:0002220 UBERON:0005176 ! adjacent_to tooth enamel organ
+
+[Term]
+id: UBERON:0003857
+name: upper eyelid mesenchyme
+def: "Mesenchyme that is part of a developing upper eyelid [Automatically generated definition]." []
+synonym: "mesenchyme of superior eyelid" EXACT []
+synonym: "mesenchyme of upper eyelid" EXACT []
+synonym: "superior eyelid mesenchyme" EXACT []
+is_a: UBERON:0010330 ! eyelid mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0001712 ! part of upper eyelid
+relationship: BFO:0000050 UBERON:0001712 ! part of upper eyelid
+relationship: RO:0002202 UBERON:0000076 ! develops_from external ectoderm
+
+[Term]
+id: UBERON:0003858
+name: lower eyelid mesenchyme
+def: "Mesenchyme that is part of a developing lower eyelid [Automatically generated definition]." []
+synonym: "inferior eyelid mesenchyme" EXACT []
+synonym: "mesenchyme of inferior eyelid" EXACT []
+synonym: "mesenchyme of lower eyelid" EXACT []
+is_a: UBERON:0010330 ! eyelid mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0001713 ! part of lower eyelid
+relationship: BFO:0000050 UBERON:0001713 ! part of lower eyelid
+relationship: RO:0002202 UBERON:0000076 ! develops_from external ectoderm
 
 [Term]
 id: UBERON:0003859
@@ -39139,6 +39225,25 @@ relationship: BFO:0000050 UBERON:0007223 ! part of osseus cochlea
 relationship: RO:0002433 UBERON:0001844 ! contributes to morphology of cochlea
 
 [Term]
+id: UBERON:0006742
+name: canthus
+def: "A canthus is a corner of the eye where the upper and lower eyelids meet. The bicanthal plane is the transversal plane linking both canthi and defines the upper boundary of the midface." []
+synonym: "angle of eye" RELATED []
+synonym: "bicanthal" RELATED []
+synonym: "bicanthal plane" RELATED []
+synonym: "canthi" RELATED []
+synonym: "canthoplasty" RELATED []
+synonym: "canthorum" RELATED []
+synonym: "canthus %28anatomy%29" RELATED []
+synonym: "canthus of eye" RELATED []
+synonym: "palpebral commissure" EXACT []
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0007651 ! anatomical junction
+relationship: BFO:0000050 UBERON:0000019 ! part of camera-type eye
+relationship: RO:0002176 UBERON:0001712 ! connects upper eyelid
+relationship: RO:0002176 UBERON:0001713 ! connects lower eyelid
+
+[Term]
 id: UBERON:0006756
 name: median lingual swelling
 def: "During the third week of embryological development there appears, immediately behind the ventral ends of the two halves of the mandibular arch, a rounded swelling named the tuberculum impar, which was described by His as undergoing enlargement to form the buccal part of the tongue. More recent researches, however, show that this part of the tongue is mainly, if not entirely, developed from a pair of lateral swellings which rise from the inner surface of the mandibular arch and meet in the middle line. The site of their meeting remains post-embryonically as the median sulcus of the tongue. The tuberculum impar is said to form the central part of the tongue immediately in front of the foramen cecum, but Hammar insists that it is purely a transitory structure and forms no part of the adult tongue[WP, Gray's]." []
@@ -46239,6 +46344,17 @@ intersection_of: UBERON:0000064 ! organ part
 intersection_of: subdivision_of UBERON:0001811 ! conjunctiva
 relationship: BFO:0000050 UBERON:0001811 ! part of conjunctiva
 relationship: subdivision_of UBERON:0001811 ! conjunctiva
+
+[Term]
+id: UBERON:0010309
+name: palpebral bone
+def: "An ossified element investing the upper eyelid." []
+synonym: "palpebral" BROAD []
+is_a: UBERON:0003462 ! facial bone
+is_a: UBERON:0010321 ! skeletal element of eye region
+intersection_of: UBERON:0001474 ! bone element
+intersection_of: BFO:0000050 UBERON:0001712 ! part of upper eyelid
+relationship: BFO:0000050 UBERON:0001712 ! part of upper eyelid
 
 [Term]
 id: UBERON:0010312
@@ -53428,6 +53544,16 @@ intersection_of: BSPO:0000120 UBERON:0001103 ! in_left_side_of diaphragm
 relationship: BSPO:0000120 UBERON:0001103 ! in_left_side_of diaphragm
 
 [Term]
+id: UBERON:0014768
+name: superior palpebral vein
+def: "A blood vessel that drains from from an upper eyelid." []
+synonym: "venae palpebrales superiores" RELATED []
+is_a: UBERON:0014769 ! palpebral vein
+intersection_of: UBERON:0014769 ! palpebral vein
+intersection_of: RO:0002179 UBERON:0001712 ! drains upper eyelid
+relationship: RO:0002179 UBERON:0001712 ! drains upper eyelid
+
+[Term]
 id: UBERON:0014769
 name: palpebral vein
 def: "A blood vessel that drains from from an eyelid." []
@@ -56261,6 +56387,26 @@ relationship: RO:0002220 UBERON:0001273 ! adjacent_to ilium
 relationship: RO:0002220 UBERON:0001274 ! adjacent_to ischium
 
 [Term]
+id: UBERON:0018408
+name: infra-orbital nerve
+def: "A branch of the maxillary nerve that enters the infraorbital canal and innervates the lower eyelid, upper lip, the nasal vestibule, the upper incisors, canines, premolars, upper gums, lower eyelid and conjunctiva, and part of the nose." []
+synonym: "infra-orbital nerve" RELATED []
+synonym: "infraorbital nerve" EXACT []
+synonym: "infraorbital portion" RELATED []
+is_a: UBERON:0011779 ! nerve of head region
+is_a: UBERON:0022298 ! lower eyelid nerve
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0000402 ! innervates nasal vestibule
+intersection_of: RO:0002134 UBERON:0001713 ! innervates lower eyelid
+intersection_of: RO:0002134 UBERON:0001834 ! innervates upper lip
+intersection_of: RO:0002134 UBERON:0011601 ! innervates gingiva of upper jaw
+intersection_of: RO:0002380 UBERON:0000377 ! branching_part_of maxillary nerve
+relationship: RO:0002134 UBERON:0000402 ! innervates nasal vestibule
+relationship: RO:0002134 UBERON:0001834 ! innervates upper lip
+relationship: RO:0002134 UBERON:0011601 ! innervates gingiva of upper jaw
+relationship: RO:0002380 UBERON:0000377 ! branching_part_of maxillary nerve
+
+[Term]
 id: UBERON:0018413
 name: facial nerve canal
 def: "A Z-shaped canal running through the temporal bone from the internal acoustic meatus to the stylomastoid foramen. It is located within the middle ear region, according to its shape it is divided into three main segments: the labyrinthine, the tympanic, and the mastoidal segment ." []
@@ -56824,6 +56970,47 @@ is_a: UBERON:0000463 ! organism substance
 intersection_of: UBERON:0000463 ! organism substance
 intersection_of: RO:0003001 UBERON:0003937 ! produced_by reproductive gland
 relationship: RO:0003001 UBERON:0003937 ! produced_by reproductive gland
+
+[Term]
+id: UBERON:0022296
+name: inferior palpebral branch of infra-orbital nerve
+def: "A nerve that innervates a lower eyelid and is a branch of the infra-orbital branch of the maxillary nerve." []
+synonym: "rami palpebrales inferiores nervi infraorbitalis" EXACT []
+is_a: UBERON:0022297 ! palpebral branch of infra-orbital nerve
+is_a: UBERON:0022298 ! lower eyelid nerve
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0001713 ! innervates lower eyelid
+intersection_of: RO:0002380 UBERON:0018408 ! branching_part_of infra-orbital nerve
+
+[Term]
+id: UBERON:0022297
+name: palpebral branch of infra-orbital nerve
+def: "A nerve that innervates an eyelid and is a branch of the infra-orbital branch of the maxillary nerve." []
+synonym: "palpebral branch of maxillary nerve" EXACT []
+is_a: UBERON:0003437 ! eyelid nerve
+is_a: UBERON:0011779 ! nerve of head region
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0001711 ! innervates eyelid
+intersection_of: RO:0002380 UBERON:0018408 ! branching_part_of infra-orbital nerve
+relationship: RO:0002380 UBERON:0018408 ! branching_part_of infra-orbital nerve
+
+[Term]
+id: UBERON:0022298
+name: lower eyelid nerve
+def: "A nerve that innervates a lower eyelid." []
+is_a: UBERON:0003437 ! eyelid nerve
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0001713 ! innervates lower eyelid
+relationship: RO:0002134 UBERON:0001713 ! innervates lower eyelid
+
+[Term]
+id: UBERON:0022299
+name: upper eyelid nerve
+def: "A nerve that innervates an upper eyelid." []
+is_a: UBERON:0003437 ! eyelid nerve
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: RO:0002134 UBERON:0001712 ! innervates upper eyelid
+relationship: RO:0002134 UBERON:0001712 ! innervates upper eyelid
 
 [Term]
 id: UBERON:0022303
@@ -58029,6 +58216,14 @@ intersection_of: BSPO:0000120 UBERON:0000033 ! in_left_side_of head
 relationship: BSPO:0000120 UBERON:0000033 ! in_left_side_of head
 
 [Term]
+id: UBERON:0035298
+name: tuberculum sellae
+def: "An elevated zone of the sella turcica behind the chiasmatic groove[WP,modified]." []
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0034944 ! zone of organ
+relationship: BFO:0000050 UBERON:0003689 ! part of sella turcica
+
+[Term]
 id: UBERON:0035307
 name: branch of vertebral artery
 synonym: "vertebral arterial branch" EXACT []
@@ -58706,6 +58901,29 @@ is_a: UBERON:0006660 ! muscular coat
 intersection_of: UBERON:0006660 ! muscular coat
 intersection_of: BFO:0000050 UBERON:0007650 ! part of esophagogastric junction
 relationship: BFO:0000050 UBERON:0007650 ! part of esophagogastric junction
+
+[Term]
+id: UBERON:0035845
+name: enthesis
+def: "The connective tissue between tendon and bone insertion sites, which acts to transmit tensile load from soft tissues to bone. They may be of the dense fibrous connective tissue or fibrocartilage type; fibrous entheses attach directly to bone or periosteum primarily via fibrous tissue, and fibrocartilaginous entheses attach to bone through a transitional layer of fibrocartilage from the fibrous tendon tissue the sites where tendons or ligaments insert into the bone. Recurring stress or inflammatory autoimmune disease can cause inflammation or occasionally fibrosis and calcification of the enthesis." []
+is_a: UBERON:0002384 ! connective tissue
+relationship: RO:0002371 UBERON:0000043 ! attaches_to tendon
+
+[Term]
+id: UBERON:0035846
+name: fibrous enthesis
+is_a: UBERON:0035845 ! enthesis
+intersection_of: UBERON:0035845 ! enthesis
+intersection_of: RO:0002473 UBERON:0007846 ! composed primarily of dense regular connective tissue
+relationship: RO:0002473 UBERON:0007846 ! composed primarily of dense regular connective tissue
+
+[Term]
+id: UBERON:0035847
+name: fibrocartilage enthesis
+is_a: UBERON:0035845 ! enthesis
+intersection_of: UBERON:0035845 ! enthesis
+intersection_of: RO:0002473 UBERON:0001995 ! composed primarily of fibrocartilage
+relationship: RO:0002473 UBERON:0001995 ! composed primarily of fibrocartilage
 
 [Term]
 id: UBERON:0035881
