@@ -32,6 +32,8 @@ Layout:
     * [patterns](src/patterns) templated design patterns
     * [sparql](src/sparql) SPARQL queries
 
+## License
+[CC-BY](https://creativecommons.org/licenses/by/3.0/)
 
 ## Contact
 
@@ -40,3 +42,5 @@ Please use this GitHub repository's [Issue tracker](https://github.com/monarch-i
 ## Acknowledgements
 
 This ontology repository was created using the [ontology starter kit](https://github.com/INCATools/ontology-starter-kit)
+
+
