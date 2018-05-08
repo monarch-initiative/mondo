@@ -18,13 +18,19 @@ CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 ISODATE:=`date +%Y-%m-%d`
 
+FMTS = obo owl json
+
 obo-filter-axiom-header = grep -v ^owl-axioms:
+
+PV_CC0 = http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
 
-all: test all_imports all_reports imports/equivalencies.owl imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+
+all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+
 test: sparql_test test_nomerge
 prepare_release: all
 	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
@@ -112,6 +118,21 @@ extid/mondo.obo: extid/mondo.owl
 # if this fails, the resolution is to look for two MONDO classes with equivalence to the same external class
 test_nomerge: mondo.owl
 	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@
+
+# ----------------------------------------
+# CC-0 MINIMAL
+# ----------------------------------------
+all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-minimal.json
+
+subsets/mondo-minimal.owl: mondo.owl
+	owltools --use-catalog $< --extract-mingraph --remove-imports-declarations --set-ontology-id $(OBO)/mondo/subsets/mondo-minimal.owl --add-ontology-annotation $(PV_CC0) -o $@
+
+subsets/%.json: subsets/%.owl
+	robot convert -i $< -o $@
+
+subsets/%.obo: subsets/%.owl
+	robot convert -i $< -o $@
+
 
 # ----------------------------------------
 # DOSDP Modules
@@ -262,8 +283,11 @@ reports/release/mondo-owl-report.yaml: mondo.owl
 imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
+FIX_UMLS = perl -pi -ne 's@http://purl.obolibrary.org/obo/UMLS_@http://linkedlifedata.com/resource/umls/id/@'
+
+all_equivalencies: imports/equivalencies.owl  imports/equivalencies.obo imports/equivalencies.json
 imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
-	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && perl -pi -ne 's@http://purl.obolibrary.org/obo/UMLS_@http://linkedlifedata.com/resource/umls/id/@'  $@.tmp.ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
+	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && $(FIX_UMLS)  $@.tmp.ttl && robot annotate -i $@.tmp.ttl -a $(PV_CC0) -O $(OBO)/mondo/$@ -o $@
 imports/equivalencies.obo: imports/equivalencies.owl
 	robot convert -i $< -o $@
 
@@ -557,6 +581,12 @@ check: mondo-edit.obo
 
 mondo-edit.owl: mondo-edit.obo
 	robot convert -i $< -o $@
+
+d2taxon-wd.tsv:
+	pq-wd -f tsv  "has_cause(D,T),doid_id(D,DX),ncbitaxon_id(T,TX)" "x(DX,TX)" > $@.tmp && perl -npe 's@\t@\tNCBITaxon:@' $@.tmp > $@
+
+d2symp-wd.tsv:
+	pq-wd -f tsv  "symptoms(D,S),doid_id(D,DX),umls_id(S,SX),enlabel(S,SN)" "x(DX,SX,SN)" > $@.tmp && perl -npe 's@\tC@\tUMLS:C@' $@.tmp > $@
 
 # ----------------------------------------
 # Kboom

@@ -105,11 +105,26 @@ name: chemical substance
 is_a: CHEBI:24431 ! chemical entity
 
 [Term]
+id: ENVO:00001995
+name: rock
+def: "A rock is a naturally occurring solid aggregate of one or more minerals or mineraloids." []
+is_a: ENVO:01000814 ! solid environmental material
+disjoint_from: ENVO:01000256 ! mineral material
+relationship: RO:0000086 PATO:0000386 ! has quality hard
+relationship: RO:0000086 PATO:0001546 ! has quality quality of a solid
+
+[Term]
 id: ENVO:00002008
 name: dust
 def: "Minute solid particles with diameters less than 500 micrometers. Occurs in and may be deposited from, the atmosphere." []
 is_a: ENVO:01000814 ! solid environmental material
-relationship: RO:0000086 PATO:0001546 ! quality of a solid
+relationship: RO:0000086 PATO:0001546 ! has quality quality of a solid
+
+[Term]
+id: ENVO:00002016
+name: sedimentary rock
+def: "A rock formed by deposition of either clastic sediments, organic matter, or chemical precipitates (evaporites), followed by compaction of the particulate matter and cementation during diagenesis." []
+is_a: ENVO:00001995 ! rock
 
 [Term]
 id: ENVO:00002264
@@ -117,8 +132,8 @@ name: waste material
 def: "A material which is not the desired output of a process and which is typically the input of a process which removes it from its producer (e.g. a disposal process)." []
 is_a: ENVO:00010483 ! environmental material
 intersection_of: ENVO:00010483 ! environmental material
-intersection_of: RO:0000087 ENVO:01000665 ! waste role
-relationship: RO:0000087 ENVO:01000665 ! waste role
+intersection_of: RO:0000087 ENVO:01000665 ! has role waste role
+relationship: RO:0000087 ENVO:01000665 ! has role waste role
 
 [Term]
 id: ENVO:00002297
@@ -126,8 +141,8 @@ name: environmental feature
 def: "A material entity which determines an environmental system." []
 is_a: BFO:0000040 ! material entity
 intersection_of: BFO:0000040 ! material entity
-intersection_of: RO:0002508 ENVO:01000254 ! environmental system
-relationship: RO:0002508 ENVO:01000254 ! environmental system
+intersection_of: RO:0002508 ENVO:01000254 ! determines environmental system
+relationship: RO:0002508 ENVO:01000254 ! determines environmental system
 
 [Term]
 id: ENVO:00002872
@@ -135,7 +150,13 @@ name: bagasse
 def: "The biomass remaining after sugarcane stalks are crushed to extract their juice." []
 synonym: "sugarcane bagasse" EXACT []
 is_a: ENVO:00002264 ! waste material
-relationship: RO:0000087 ENVO:01000665 ! waste role
+relationship: RO:0000087 ENVO:01000665 ! has role waste role
+
+[Term]
+id: ENVO:00003030
+name: silage
+def: "A fermented, high-moisture forage that can be fed to ruminants." []
+is_a: ENVO:0010003 ! agricultural environmental material
 
 [Term]
 id: ENVO:00010483
@@ -143,6 +164,17 @@ name: environmental material
 def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
 synonym: "portion of environmental material" EXACT []
 is_a: BFO:0000040 ! material entity
+
+[Term]
+id: ENVO:0010001
+name: anthropogenic environmental material
+def: "Anthropogenic material in or on which organisms may live." []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:0010003
+name: agricultural environmental material
+is_a: ENVO:0010001 ! anthropogenic environmental material
 
 [Term]
 id: ENVO:01000254
@@ -157,9 +189,9 @@ name: mineral material
 def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." []
 is_a: ENVO:01000814 ! solid environmental material
 intersection_of: ENVO:00010483 ! environmental material
-intersection_of: RO:0002473 CHEBI:46662 ! mineral
-relationship: RO:0000086 PATO:0001546 ! quality of a solid
-relationship: RO:0002473 CHEBI:46662 ! mineral
+intersection_of: RO:0002473 CHEBI:46662 ! composed primarily of mineral
+relationship: RO:0000086 PATO:0001546 ! has quality quality of a solid
+relationship: RO:0002473 CHEBI:46662 ! composed primarily of mineral
 
 [Term]
 id: ENVO:01000313
@@ -179,8 +211,8 @@ name: solid environmental material
 def: "An environmental material which is in a solid state." []
 is_a: ENVO:01001125 ! ice
 intersection_of: ENVO:00010483 ! environmental material
-intersection_of: RO:0000086 PATO:0001546 ! quality of a solid
-relationship: RO:0000086 PATO:0001546 ! quality of a solid
+intersection_of: RO:0000086 PATO:0001546 ! has quality quality of a solid
+relationship: RO:0000086 PATO:0001546 ! has quality quality of a solid
 
 [Term]
 id: ENVO:01000951
@@ -195,10 +227,10 @@ def: "A process during which a natural environmental system is altered by human 
 synonym: "anthropization" EXACT []
 is_a: ENVO:02500027 ! anthropogenic environmental process
 intersection_of: ENVO:02500027 ! anthropogenic environmental process
-intersection_of: RO:0002233 ENVO:01000951 ! natural environment
-intersection_of: RO:0002234 ENVO:01000313 ! anthropogenic environment
-relationship: RO:0002233 ENVO:01000951 ! natural environment
-relationship: RO:0002234 ENVO:01000313 ! anthropogenic environment
+intersection_of: RO:0002233 ENVO:01000951 ! has input natural environment
+intersection_of: RO:0002234 ENVO:01000313 ! has output anthropogenic environment
+relationship: RO:0002233 ENVO:01000951 ! has input natural environment
+relationship: RO:0002234 ENVO:01000313 ! has output anthropogenic environment
 
 [Term]
 id: ENVO:01000997
@@ -212,8 +244,8 @@ name: environmental system determined by a material
 def: "An environmental system within which an environmental material strongly influences the system's composition and properties." []
 is_a: ENVO:01000254 ! environmental system
 intersection_of: ENVO:01000254 ! environmental system
-intersection_of: RO:0002507 ENVO:00010483 ! environmental material
-relationship: RO:0002507 ENVO:00010483 ! environmental material
+intersection_of: RO:0002507 ENVO:00010483 ! determined by environmental material
+relationship: RO:0002507 ENVO:00010483 ! determined by environmental material
 
 [Term]
 id: ENVO:01001000
@@ -222,8 +254,8 @@ def: "An environmental system which is determined by a living organism." []
 synonym: "host-associated environment" RELATED []
 is_a: ENVO:01001110 ! ecosystem
 intersection_of: ENVO:01000254 ! environmental system
-intersection_of: RO:0002507 NCBITaxon:131567 ! cellular organisms
-relationship: RO:0002507 NCBITaxon:131567 ! cellular organisms
+intersection_of: RO:0002507 NCBITaxon:131567 ! determined by cellular organisms
+relationship: RO:0002507 NCBITaxon:131567 ! determined by cellular organisms
 
 [Term]
 id: ENVO:01001002
@@ -233,16 +265,16 @@ synonym: "animal environment" BROAD []
 synonym: "Metazoan-associated environment" EXACT []
 is_a: ENVO:01001000 ! environmental system determined by an organism
 intersection_of: ENVO:01000254 ! environmental system
-intersection_of: RO:0002507 NCBITaxon:33208 ! Metazoa
-relationship: RO:0002507 NCBITaxon:33208 ! Metazoa
+intersection_of: RO:0002507 NCBITaxon:33208 ! determined by Metazoa
+relationship: RO:0002507 NCBITaxon:33208 ! determined by Metazoa
 
 [Term]
 id: ENVO:01001023
 name: radiation
 def: "A process during which energy is emitted or transmitted in the form of waves or particles through space or a material medium." []
 is_a: ENVO:02500000 ! environmental system process
-relationship: RO:0000057 CHEBI:36342 ! subatomic particle
-relationship: RO:0000057 ENVO:00010483 ! environmental material
+relationship: RO:0000057 CHEBI:36342 ! has participant subatomic particle
+relationship: RO:0000057 ENVO:00010483 ! has participant environmental material
 
 [Term]
 id: ENVO:01001026
@@ -256,8 +288,8 @@ name: environment associated with an animal part or small animal
 def: "An environmental system determined by part of a living or dead animal, or a whole small animal." []
 is_a: ENVO:01000254 ! environmental system
 intersection_of: ENVO:01000254 ! environmental system
-intersection_of: RO:0002507 CARO:0000006 ! material anatomical entity
-relationship: RO:0002507 CARO:0000006 ! material anatomical entity
+intersection_of: RO:0002507 CARO:0000006 ! determined by material anatomical entity
+relationship: RO:0002507 CARO:0000006 ! determined by material anatomical entity
 
 [Term]
 id: ENVO:01001057
@@ -278,12 +310,27 @@ def: "An ice is an environmental material which is either frozen or which is mai
 is_a: ENVO:00010483 ! environmental material
 
 [Term]
+id: ENVO:02000091
+name: coal
+def: "A combustible black or brownish-black sedimentary rock usually occurring in rock strata in layers or veins called coal beds or coal seams." []
+is_a: ENVO:00002016 ! sedimentary rock
+relationship: RO:0000086 PATO:0015022 ! has quality increased combustibility
+
+[Term]
+id: ENVO:02000099
+name: coal dust
+is_a: ENVO:00002008 ! dust
+intersection_of: ENVO:00002008 ! dust
+intersection_of: RO:0001000 ENVO:02000091 ! derives from coal
+relationship: RO:0001000 ENVO:02000091 ! derives from coal
+
+[Term]
 id: ENVO:02000100
 name: mineral dust
 is_a: ENVO:00002008 ! dust
 intersection_of: ENVO:00002008 ! dust
-intersection_of: RO:0001000 ENVO:01000256 ! mineral material
-relationship: RO:0001000 ENVO:01000256 ! mineral material
+intersection_of: RO:0001000 ENVO:01000256 ! derives from mineral material
+relationship: RO:0001000 ENVO:01000256 ! derives from mineral material
 
 [Term]
 id: ENVO:02000101
@@ -305,8 +352,8 @@ id: ENVO:02000109
 name: dust from plant parts
 is_a: ENVO:00002008 ! dust
 intersection_of: ENVO:00002008 ! dust
-intersection_of: RO:0001000 PO:0025131 ! plant anatomical entity
-relationship: RO:0001000 PO:0025131 ! plant anatomical entity
+intersection_of: RO:0001000 PO:0025131 ! derives from plant anatomical entity
+relationship: RO:0001000 PO:0025131 ! derives from plant anatomical entity
 
 [Term]
 id: ENVO:02500000
@@ -320,8 +367,8 @@ name: anthropogenic environmental process
 def: "An environmental process which is driven by the action of humans." []
 is_a: ENVO:02500000 ! environmental system process
 intersection_of: ENVO:02500000 ! environmental system process
-intersection_of: RO:0002218 NCBITaxon:9606 ! Homo sapiens
-relationship: RO:0002218 NCBITaxon:9606 ! Homo sapiens
+intersection_of: RO:0002218 NCBITaxon:9606 ! has active participant Homo sapiens
+relationship: RO:0002218 NCBITaxon:9606 ! has active participant Homo sapiens
 
 [Term]
 id: ENVO:09200000
@@ -330,8 +377,8 @@ def: "The temperature of some environmental material." []
 synonym: "environmental material temperature" EXACT []
 is_a: PATO:0000146 ! temperature
 intersection_of: PATO:0000146 ! temperature
-intersection_of: RO:0000052 ENVO:00010483 ! environmental material
-relationship: RO:0000052 ENVO:00010483 ! environmental material
+intersection_of: RO:0000052 ENVO:00010483 ! inheres in environmental material
+relationship: RO:0000052 ENVO:00010483 ! inheres in environmental material
 
 [Term]
 id: GO:0008150
@@ -557,6 +604,14 @@ synonym: "trait" EXACT []
 is_a: BFO:0000020 ! specifically dependent continuant
 
 [Term]
+id: PATO:0000048
+name: hardness
+def: "A physical quality inhering in a bearer by virtue of the bearer's resistance to pressure, being broken, or pierced" []
+synonym: "impenetrability" RELATED []
+synonym: "toughness" RELATED []
+is_a: PATO:0001546 ! quality of a solid
+
+[Term]
 id: PATO:0000051
 name: morphology
 def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." []
@@ -585,6 +640,16 @@ id: PATO:0000146
 name: temperature
 def: "A physical quality of the thermal energy of a system." []
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000386
+name: hard
+def: "A hardness quality of being rigid and resistant to pressure." []
+synonym: "firm" RELATED []
+synonym: "impenetrable" RELATED []
+synonym: "tough" RELATED []
+is_a: PATO:0000048 ! hardness
+is_a: PATO:0002305 ! increased object quality
 
 [Term]
 id: PATO:0000587
@@ -639,6 +704,12 @@ def: "A quality inhering in a bearer by virtue of its constitution." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0002300
+name: increased quality
+def: "A quality that has a value that is increased compared to normal or average." []
+is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
 id: PATO:0002301
 name: decreased quality
 def: "A quality that has a value that is decreased compared to normal or average." []
@@ -650,6 +721,27 @@ name: decreased object quality
 def: "A quality of an object that has a value that is decreased compared to normal or average." []
 is_a: PATO:0001241 ! physical object quality
 is_a: PATO:0002301 ! decreased quality
+
+[Term]
+id: PATO:0002305
+name: increased object quality
+def: "A quality of an object that has a value that is increased compared to normal or average." []
+is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0002300 ! increased quality
+
+[Term]
+id: PATO:0015021
+name: combustibility
+def: "The propensity of a material to undergo combustion. Combustion encompasses smouldering and flaming combustion. Combustibility is usually applied to solids." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0015022
+name: increased combustibility
+def: "An increase in combustibility." []
+synonym: "combustible" EXACT []
+is_a: PATO:0002305 ! increased object quality
+is_a: PATO:0015021 ! combustibility
 
 [Term]
 id: PCO:0000000
@@ -715,215 +807,315 @@ is_a: BFO:0000004 ! independent continuant
 
 [Typedef]
 id: BFO:0000050
+name: part of
+def: "a core relation that holds between a part and its whole" []
 is_transitive: true
-is_a: RO:0002131
-inverse_of: BFO:0000051
+is_a: RO:0002131 ! overlaps
+inverse_of: BFO:0000051 ! has part
 
 [Typedef]
 id: BFO:0000051
+name: has part
+def: "a core relation that holds between a whole and its part" []
 is_transitive: true
-is_a: RO:0002131
+is_a: RO:0002131 ! overlaps
 
 [Typedef]
 id: RO:0000052
-is_a: RO:0002314
-inverse_of: RO:0000053
+name: inheres in
+def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
+is_a: RO:0002314 ! inheres in part of
+inverse_of: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000053
+name: bearer of
+def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
 range: BFO:0000020 ! specifically dependent continuant
 
 [Typedef]
 id: RO:0000056
+name: participates in
+def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
 domain: BFO:0000002 ! continuant
 range: BFO:0000003 ! occurrent
-inverse_of: RO:0000057
+inverse_of: RO:0000057 ! has participant
 
 [Typedef]
 id: RO:0000057
+name: has participant
+def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
 domain: BFO:0000003 ! occurrent
 range: BFO:0000002 ! continuant
 holds_over_chain: BFO:0000051 RO:0000057
 
 [Typedef]
 id: RO:0000080
-is_a: RO:0000052
-inverse_of: RO:0000086
+name: quality of
+def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! inheres in
+inverse_of: RO:0000086 ! has quality
 
 [Typedef]
 id: RO:0000081
-is_a: RO:0000052
-inverse_of: RO:0000087
+name: role of
+def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! inheres in
+inverse_of: RO:0000087 ! has role
 
 [Typedef]
 id: RO:0000086
+name: has quality
+def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
 range: BFO:0000019 ! quality
-is_a: RO:0000053
+is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000087
+name: has role
+def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000023 ! role
-is_a: RO:0000053
+is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0001000
-inverse_of: RO:0001001
+name: derives from
+def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+inverse_of: RO:0001001 ! derives into
+
+[Typedef]
+id: RO:0001001
+name: derives into
+def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
 
 [Typedef]
 id: RO:0002131
+name: overlaps
+def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
 holds_over_chain: BFO:0000050 BFO:0000050
 holds_over_chain: BFO:0000051 BFO:0000050
 holds_over_chain: BFO:0000051 RO:0002131
-is_a: RO:0002323
+is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
 id: RO:0002215
+name: capable of
+def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000015 ! process
-is_a: RO:0002216
+is_a: RO:0002216 ! capable of part of
 
 [Typedef]
 id: RO:0002216
+name: capable of part of
+def: "c stands in this relationship to p if and only if there exists some p' such that c is capable_of p', and p' is part_of p." []
 holds_over_chain: RO:0002215 BFO:0000050
-is_a: RO:0002328
-is_a: RO:0002500
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002500 ! causal agent in
 
 [Typedef]
 id: RO:0002217
-is_a: RO:0000056
-inverse_of: RO:0002218
+name: actively participates in
+def: "x actively participates in y if and only if x participates in y and x realizes some active role" []
+is_a: RO:0000056 ! participates in
+inverse_of: RO:0002218 ! has active participant
 
 [Typedef]
 id: RO:0002218
-is_a: RO:0000057
+name: has active participant
+def: "x has participant y if and only if x realizes some active role that inheres in y" []
+is_a: RO:0000057 ! has participant
 
 [Typedef]
 id: RO:0002233
-is_a: RO:0000057
-inverse_of: RO:0002352
+name: has input
+def: "p has direct input c iff c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
+is_a: RO:0000057 ! has participant
+inverse_of: RO:0002352 ! input of
 
 [Typedef]
 id: RO:0002234
-is_a: RO:0000057
-inverse_of: RO:0002353
+name: has output
+def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p." []
+is_a: RO:0000057 ! has participant
+inverse_of: RO:0002353 ! output of
 
 [Typedef]
 id: RO:0002295
+name: results in developmental progression of
+def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
 domain: GO:0008150 ! biological_process
 range: CARO:0000003 ! anatomical structure
-is_a: RO:0002324
+is_a: RO:0002324 ! developmentally related to
 
 [Typedef]
 id: RO:0002297
-is_a: RO:0002234
-is_a: RO:0002295
-inverse_of: RO:0002354
+name: results in formation of
+is_a: RO:0002234 ! has output
+is_a: RO:0002295 ! results in developmental progression of
+inverse_of: RO:0002354 ! formed as result of
 
 [Typedef]
 id: RO:0002314
+name: inheres in part of
+def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
 holds_over_chain: RO:0000052 BFO:0000050
-is_a: RO:0002502
-transitive_over: BFO:0000050
+is_a: RO:0002502 ! depends on
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002323
+name: mereotopologically related to
+def: "A mereological relationship or a topological relationship" []
+
+[Typedef]
+id: RO:0002324
+name: developmentally related to
+def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+
+[Typedef]
+id: RO:0002328
+name: functionally related to
 
 [Typedef]
 id: RO:0002329
+name: part of structure that is capable of
+def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
 holds_over_chain: BFO:0000050 RO:0002215
-is_a: RO:0002328
+is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002352
-is_a: RO:0000056
-is_a: RO:0002328
+name: input of
+is_a: RO:0000056 ! participates in
+is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002353
-is_a: RO:0000056
-is_a: RO:0002328
+name: output of
+is_a: RO:0000056 ! participates in
+is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002354
-is_a: RO:0002353
+name: formed as result of
+is_a: RO:0002353 ! output of
 
 [Typedef]
 id: RO:0002410
-is_a: RO:0002609
+name: causally related to
+def: "This relation groups causal relations between material entities and causal relations between processes" []
+is_a: RO:0002609 ! related via dependence to
 
 [Typedef]
 id: RO:0002418
+name: causally upstream of or within
+def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
 is_transitive: true
-is_a: RO:0002501
-inverse_of: RO:0002427
+is_a: RO:0002501 ! causal relation between processes
+inverse_of: RO:0002427 ! causally downstream of or within
 
 [Typedef]
 id: RO:0002427
+name: causally downstream of or within
 is_transitive: true
-is_a: RO:0002501
+is_a: RO:0002501 ! causal relation between processes
 
 [Typedef]
 id: RO:0002473
-is_a: BFO:0000051
+name: composed primarily of
+def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
+is_a: BFO:0000051 ! has part
 
 [Typedef]
 id: RO:0002500
-is_a: RO:0002595
-inverse_of: RO:0002608
+name: causal agent in
+def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
+is_a: RO:0002595 ! causal relation between material entity and a process
+inverse_of: RO:0002608 ! has causal agent
 
 [Typedef]
 id: RO:0002501
+name: causal relation between processes
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
-is_a: RO:0002410
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002502
+name: depends on
 
 [Typedef]
 id: RO:0002506
+name: causal relation between material entities
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
-is_a: RO:0002410
+is_a: RO:0002410 ! causally related to
 
 [Typedef]
 id: RO:0002507
+name: determined by
+def: "s determined by f if and only if s is a type of system, and f is a material entity that is part of s, such that f exerts a strong causal influence on the functioning of s, and the removal of f would cause the collapse of s." []
 domain: RO:0002577 ! system
 range: BFO:0000040 ! material entity
-is_a: BFO:0000050
-is_a: RO:0002509
-is_a: RO:0002559
-inverse_of: RO:0002508
+is_a: BFO:0000050 ! part of
+is_a: RO:0002509 ! determined by part of
+is_a: RO:0002559 ! causally influenced by
+inverse_of: RO:0002508 ! determines
 
 [Typedef]
 id: RO:0002508
-is_a: RO:0002566
+name: determines
+is_a: RO:0002566 ! causally influences
 
 [Typedef]
 id: RO:0002509
+name: determined by part of
+def: "s 'determined by part of' w if and only if there exists some f such that (1) s 'determined by' f and (2) f part_of w, or f=w." []
 domain: RO:0002577 ! system
 range: BFO:0000040 ! material entity
 holds_over_chain: RO:0002507 BFO:0000050
-is_a: RO:0002131
-is_a: RO:0002506
+is_a: RO:0002131 ! overlaps
+is_a: RO:0002506 ! causal relation between material entities
 
 [Typedef]
 id: RO:0002559
-is_a: RO:0002506
-inverse_of: RO:0002566
+name: causally influenced by
+is_a: RO:0002506 ! causal relation between material entities
+inverse_of: RO:0002566 ! causally influences
 
 [Typedef]
 id: RO:0002566
-is_a: RO:0002506
+name: causally influences
+def: "Holds between materal entities a and b if the activity of a is causally upstream of the activity of b, or causally upstream of a an activity that modifies b" []
+is_a: RO:0002506 ! causal relation between material entities
 
 [Typedef]
 id: RO:0002584
+name: has part structure that is capable of
+def: "s 'has part structure that is capable of' p if and only if there exists some part x such that s 'has part' x and x 'capable of' p" []
 holds_over_chain: BFO:0000051 RO:0002215
-is_a: RO:0002328
-is_a: RO:0002595
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002595 ! causal relation between material entity and a process
 
 [Typedef]
 id: RO:0002595
+name: causal relation between material entity and a process
+def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
 domain: BFO:0000040 ! material entity
 range: BFO:0000015 ! process
-is_a: RO:0002410
+is_a: RO:0002410 ! causally related to
 
 [Typedef]
 id: RO:0002608
-is_a: RO:0002410
+name: has causal agent
+def: "Inverse of 'causal agent in'" []
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002609
+name: related via dependence to
+def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
 
