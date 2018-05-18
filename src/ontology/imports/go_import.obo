@@ -3611,6 +3611,19 @@ is_a: GO:0007166 ! cell surface receptor signaling pathway
 relationship: BFO:0000051 GO:0008066 ! has_part glutamate receptor activity
 
 [Term]
+id: GO:0007249
+name: I-kappaB kinase/NF-kappaB signaling
+def: "The process in which a signal is passed on to downstream components within the cell through the I-kappaB-kinase (IKK)-dependent activation of NF-kappaB. The cascade begins with activation of a trimeric IKK complex (consisting of catalytic kinase subunits IKKalpha and/or IKKbeta, and the regulatory scaffold protein NEMO) and ends with the regulation of transcription of target genes by NF-kappaB. In a resting state, NF-kappaB dimers are bound to I-kappaB proteins, sequestering NF-kappaB in the cytoplasm. Phosphorylation of I-kappaB targets I-kappaB for ubiquitination and proteasomal degradation, thus releasing the NF-kappaB dimers, which can translocate to the nucleus to bind DNA and regulate transcription." []
+synonym: "activation of the inhibitor of kappa kinase" RELATED []
+synonym: "canonical NF-kappaB signaling cascade" EXACT []
+synonym: "I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "I-kappaB kinase/NF-kappaB signal transduction" EXACT []
+synonym: "NF-kappaB cascade" BROAD []
+synonym: "p50-dependent NF-kappaB signaling" RELATED []
+is_a: GO:0035556 ! intracellular signal transduction
+relationship: BFO:0000051 GO:0051092 ! has_part positive regulation of NF-kappaB transcription factor activity
+
+[Term]
 id: GO:0007264
 name: small GTPase mediated signal transduction
 def: "Any series of molecular signals in which a small monomeric GTPase relays one or more of the signals." []
@@ -10095,6 +10108,47 @@ intersection_of: RO:0002212 GO:0003824 ! negatively regulates catalytic activity
 relationship: RO:0002212 GO:0003824 ! negatively regulates catalytic activity
 
 [Term]
+id: GO:0043122
+name: regulation of I-kappaB kinase/NF-kappaB signaling
+def: "Any process that modulates I-kappaB kinase/NF-kappaB signaling." []
+synonym: "regulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+is_a: GO:1902531 ! regulation of intracellular signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007249 ! regulates I-kappaB kinase/NF-kappaB signaling
+relationship: RO:0002211 GO:0007249 ! regulates I-kappaB kinase/NF-kappaB signaling
+
+[Term]
+id: GO:0043123
+name: positive regulation of I-kappaB kinase/NF-kappaB signaling
+def: "Any process that activates or increases the frequency, rate or extent of I-kappaB kinase/NF-kappaB signaling." []
+synonym: "activation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "positive regulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "stimulation of I-kappaB kinase/NF-kappaB cascade" NARROW []
+synonym: "up regulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "up-regulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "upregulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+is_a: GO:0043122 ! regulation of I-kappaB kinase/NF-kappaB signaling
+is_a: GO:1902533 ! positive regulation of intracellular signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007249 ! positively regulates I-kappaB kinase/NF-kappaB signaling
+relationship: RO:0002213 GO:0007249 ! positively regulates I-kappaB kinase/NF-kappaB signaling
+
+[Term]
+id: GO:0043124
+name: negative regulation of I-kappaB kinase/NF-kappaB signaling
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of -kappaB kinase/NF-kappaB signaling." []
+synonym: "down regulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "down-regulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "downregulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+synonym: "inhibition of I-kappaB kinase/NF-kappaB cascade" NARROW []
+synonym: "negative regulation of I-kappaB kinase/NF-kappaB cascade" RELATED []
+is_a: GO:0043122 ! regulation of I-kappaB kinase/NF-kappaB signaling
+is_a: GO:1902532 ! negative regulation of intracellular signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007249 ! negatively regulates I-kappaB kinase/NF-kappaB signaling
+relationship: RO:0002212 GO:0007249 ! negatively regulates I-kappaB kinase/NF-kappaB signaling
+
+[Term]
 id: GO:0043167
 name: ion binding
 def: "Interacting selectively and non-covalently with ions, charged atoms or groups of atoms." []
@@ -13567,6 +13621,15 @@ is_a: GO:0051090 ! regulation of DNA binding transcription factor activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0003700 ! positively regulates DNA binding transcription factor activity
 relationship: RO:0002213 GO:0003700 ! positively regulates DNA binding transcription factor activity
+
+[Term]
+id: GO:0051092
+name: positive regulation of NF-kappaB transcription factor activity
+def: "Any process that activates or increases the frequency, rate or extent of activity of the transcription factor NF-kappaB." []
+synonym: "activation of NF-kappaB" EXACT []
+synonym: "activation of NF-kappaB transcription factor" EXACT []
+synonym: "NF-kappaB activation" EXACT []
+is_a: GO:0051091 ! positive regulation of DNA binding transcription factor activity
 
 [Term]
 id: GO:0051093

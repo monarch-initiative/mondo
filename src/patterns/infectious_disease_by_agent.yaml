@@ -1,4 +1,4 @@
-pattern_name: infectious_disease_by_agent
+pattern_name: specific_infectious_disease_by_agent
 
 classes:
   infectious disease: MONDO:0005550
@@ -9,31 +9,26 @@ relations:
   realized in response to stimulus: RO:0004028
 
 vars:
+  disease: "'disease'"
   agent: "'organism'"
 
 name:
   text: "%s infectious disease"
   vars:
    - agent
+   - disease
 
-annotations:
-  - annotationProperty: oio:hasExactSynonym
-    text: "%s infection"
-    vars:
-     - agent
-  - annotationProperty: oio:hasRelatedSynonym
-    text: "infections, %s"
-    vars:
-     - agent
    
 def:
-  text: "A infectious disease involving the %s."
+  text: "A %s caused by infection with %s."
   vars:
+    - disease    
     - agent
 
 equivalentTo:
-  text: "'infectious disease' and 'realized in response to stimulus' some %s"
+  text: "%s and 'realized in response to stimulus' some %s"
   vars:
+    - disease    
     - agent
 
 
