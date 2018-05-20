@@ -4153,6 +4153,18 @@ xref: UMLS:C0042510
 is_a: HP:0004308 ! Ventricular arrhythmia
 
 [Term]
+id: HP:0001669
+name: Transposition of the great arteries
+namespace: human_phenotype
+def: "A complex congenital heart defect in which the aorta arises from the morphologic right ventricle and the pulmonary artery arises from the morphologic left ventricle." [eMedicine:900574, HPO:probinson, pmid:10798431]
+synonym: "Transposition of great vessels" EXACT []
+xref: SNOMEDCT_US:204296002
+xref: SNOMEDCT_US:26146002
+xref: UMLS:C3536741
+is_a: HP:0011563 ! Abnormal ventriculo-arterial connection
+is_a: HP:0011603 ! Congenital malformation of the great arteries
+
+[Term]
 id: HP:0001686
 name: Loss of voice
 namespace: human_phenotype
@@ -10444,6 +10456,36 @@ created_by: peter
 creation_date: 2012-04-07T10:27:48Z
 
 [Term]
+id: HP:0011545
+name: Abnormal connection of the cardiac segments
+namespace: human_phenotype
+def: "A deviance in the normal connections between two cardiac segements." [Eidem\, Benjamin W.\, Frank Cetta\, and Patrick W. Leary. Echocardiography in pediatric and adult congenital heart disease. Philadelphia: Wolters Kluwer Health/Lippincott Williams & Wilkins\, 2010. Print.]
+synonym: "Discordant connection of the cardiac segments" EXACT []
+xref: UMLS:C4023306
+is_a: HP:0001627 ! Abnormal heart morphology
+created_by: peter
+creation_date: 2012-04-07T11:24:25Z
+
+[Term]
+id: HP:0011563
+name: Abnormal ventriculo-arterial connection
+namespace: human_phenotype
+xref: UMLS:C4023296
+is_a: HP:0011545 ! Abnormal connection of the cardiac segments
+created_by: peter
+creation_date: 2012-04-08T07:32:38Z
+
+[Term]
+id: HP:0011603
+name: Congenital malformation of the great arteries
+namespace: human_phenotype
+def: "Defect or defects of the morphogenesis of the aorta and pulmonary arteries." []
+xref: UMLS:C0478012
+is_a: HP:0030962 ! Abnormal morphology of the great vessels
+created_by: peter
+creation_date: 2012-04-08T02:51:09Z
+
+[Term]
 id: HP:0011675
 name: Arrhythmia
 namespace: human_phenotype
@@ -11528,6 +11570,15 @@ property_value: http://purl.org/dc/elements/1.1/creator "robinp" xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2017-03-17T17:47:04Z xsd:dateTime
 
 [Term]
+id: HP:0030962
+name: Abnormal morphology of the great vessels
+namespace: human_phenotype
+def: "A structural anomaly affecting a blood vessel involved in the circulation of the heart, i.e., the superior or inferior vena cava, the pulmonary arteries, the pulmonary veins, and the aorta." []
+is_a: HP:0025015 ! Abnormal vascular morphology
+property_value: http://purl.org/dc/elements/1.1/creator "robinp" xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2017-04-18T13:00:44Z xsd:dateTime
+
+[Term]
 id: HP:0030972
 name: Abnormal systemic blood pressure
 namespace: human_phenotype
@@ -11618,6 +11669,19 @@ def: "Any anomolous structure of the renal corpuscle, which is the initial compo
 is_a: HP:0011035 ! Abnormality of renal cortex morphology
 property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2017-08-12T18:30:25Z xsd:dateTime
+
+[Term]
+id: HP:0031348
+name: Dextrotransposition of the great arteries
+namespace: human_phenotype
+def: "A type of transposition of the great arteries (TGA) in which aorta is in front of and primarily to the right of the pulmonary artery. This is the most common kind of TGA." [PMID:25082585]
+synonym: "D-loop transposition of the great arteries" EXACT []
+synonym: "D-TGA" EXACT HP:0045077 []
+xref: Fyler:0700
+xref: Fyler:700
+is_a: HP:0001669 ! Transposition of the great arteries
+property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2017-08-27T14:17:00Z xsd:dateTime
 
 [Term]
 id: HP:0031365

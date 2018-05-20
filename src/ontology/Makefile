@@ -97,12 +97,16 @@ filtered.obo: $(SRC)
 skos.ttl: $(SRC)
 	../utils/mk-skos.pl $< > $@
 
+# this appears to be problematic. not all declarations are restored on a save.
+#REMOVE_DECLARATIONS = --remove-axioms -t Declaration
+REMOVE_DECLARATIONS=
+
 # necessary to remove stray declarations induced by obo2owl;
 # we remove declaration axioms for ALL classes;
 # all necessary ones are implicitly added back when converting back to OWL
 # see: https://github.com/owlcs/owlapi/pull/761
 filtered.owl: filtered.obo skos.ttl
-	owltools --use-catalog $< --remove-axioms -t Declaration skos.ttl --merge-support-ontologies -o $@
+	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
 
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
@@ -127,7 +131,7 @@ $(ONT).owl: merged.owl
 # obo is self-contained
 $(ONT).obo: reasoned.owl
 	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
-$(ONT).json: pre/$(ONT).owl
+$(ONT).json: $(ONT).owl
 	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
@@ -138,7 +142,7 @@ $(ONT).json: pre/$(ONT).owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 $(ONT)-component.owl: reasoned.owl
-	$(OWLTOOLS) --use-catalog $< $(patsubst %,--remove-import-declaration $(OBO)/$(ONT)/imports/%_import.owl, $(ONTOLOGY_IMPORTS))  --merge-imports-closure --remove-axioms -t Declaration --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+	$(OWLTOOLS) --use-catalog $< $(patsubst %,--remove-import-declaration $(OBO)/$(ONT)/imports/%_import.owl, $(ONTOLOGY_IMPORTS))  --merge-imports-closure $(REMOVE_DECLARATIONS) --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
 
 $(ONT)-component.obo: $(ONT)-component.owl
 	$(OWL2OBO)
@@ -149,17 +153,17 @@ $(ONT)-component.json: $(ONT)-component.owl
 $(ONT)-merged.owl: $(ONT).owl
 	owltools --use-catalog $< --merge-imports-closure --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
 
-pre/$(ONT).%: $(ONT).%
-	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
-pre/$(ONT).json: $(ONT).owl
-	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
+#pre/$(ONT).%: $(ONT).%
+#	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
+#pre/$(ONT).json: $(ONT).owl
+#	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
 
 # CURRENT RELEASES: map back to clique leaders
-extid/mondo.owl: mondo.owl
-	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -s NCIT 20 -s Orphanet 10 -s OMIM 8 -s EFO 6 -s DOID 5 -s MESH 4 -s MONDO 1 --remove-dangling -o $@
+#extid/mondo.owl: mondo.owl
+#	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -s NCIT 20 -s Orphanet 10 -s OMIM 8 -s EFO 6 -s DOID 5 -s MESH 4 -s MONDO 1 --remove-dangling -o $@
 
-extid/mondo.obo: extid/mondo.owl
-	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
+#extid/mondo.obo: extid/mondo.owl
+#	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
 
 #$(ONT)-basic.owl: $(ONT).owl
 #	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o $@
@@ -345,7 +349,7 @@ reports/release/%.tsv: mondo.owl
 reports/release/semantic-xref-pairs.tsv: d2p.pro mondo-component.obo
 	blip-findall -i mondo-component.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
-RR=$(HOME)/repos/rctauber/robot/bin/robot report
+RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
 reports/edit/report.yaml: $(SRC)
 	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
 reports/release/mondo-obo-report.yaml: mondo.obo
