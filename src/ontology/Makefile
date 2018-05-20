@@ -22,29 +22,67 @@ FMTS = obo owl json
 
 obo-filter-axiom-header = grep -v ^owl-axioms:
 
+OWL2OBO = robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@
+
 PV_CC0 = http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
 
+all: all_artefacts
 
-all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+# ----------------------------------------
+# Artefacts
+# ----------------------------------------
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo foodon
+IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
+IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
+IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
 
-test: sparql_test test_nomerge
-prepare_release: all
-	cp $(ONT).owl $(ONT).obo $(ONT).json $(RELEASEDIR) &&\
-	mkdir -p $(RELEASEDIR)/imports &&\
-	cp imports/*_import.{owl,obo} $(RELEASEDIR)/imports &&\
-	cp extid/*{owl,obo,json} $(RELEASEDIR)/extid &&\
-	(test -f subsets/*owl && cp subsets/*{owl,obo,json} $(RELEASEDIR)/subsets && git add $(RELEASEDIR)/subsets/* || echo "no subsets") &&\
-	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
+SUBSETS = mondo-minimal
+SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
+
+MAIN_PRODUCTS = $(ONT) $(ONT)-component
+MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
+ARTEFACTS = \
+  $(MAIN_FILES) \
+  $(SUBSET_FILES) \
+  $(IMPORT_FILES) 
+
+list_artefacts:
+	echo $(ARTEFACTS)
+	du -sh $(ARTEFACTS)
+%-DU: 
+	@test -f $* && du -sh $* || echo "MISSING" $*
+
+
+all_artefacts: all_reports $(ARTEFACTS)
+
+# ----------------------------------------
+# Tests
+# ----------------------------------------
+
+#all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+
+test: debug.owl sparql_test_edit sparql_test_main_owl sparql_test_main_obo test_nomerge
+
+
+# ----------------------------------------
+# Staging releases
+# ----------------------------------------
+
+prepare_release: $(ARTEFACTS)
+	rsync -R $^ ../../target
+	cp ../../Changes.md ../../target
 
 all_includes: $(INCLUDES_OWL)
 
 OSF_UPLOAD = $(HOME)/repos/osf-cli/venv/bin/osf -p 2qk53 upload
 osf_upload:
 	cd ../.. && $(OSF_UPLOAD) -f -r target/ current/ && $(OSF_UPLOAD) -f -r target/ releases/$(ISODATE)
+
 
 # ----------------------------------------
 # Main release targets
@@ -56,21 +94,28 @@ filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID):@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | grep -v 'relationship: disease_has_basis_in_dysfunction_of NCBIGene:' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
+skos.ttl: $(SRC)
+	../utils/mk-skos.pl $< > $@
+
+# necessary to remove stray declarations induced by obo2owl;
+# we remove declaration axioms for ALL classes;
+# all necessary ones are implicitly added back when converting back to OWL
+# see: https://github.com/owlcs/owlapi/pull/761
+filtered.owl: filtered.obo skos.ttl
+	owltools --use-catalog $< --remove-axioms -t Declaration skos.ttl --merge-support-ontologies -o $@
+
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
 # note: robot will protect redundant annotated axioms
-reasoned-redundant.owl: filtered.obo
-	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@
-#	$(ROBOT) reason -i $< -r ELK relax reduce -r ELK $(ANN) -o $@-validated.owl && cp $< $@
-reasoned.owl: reasoned-redundant.owl
-	owltools --use-catalog $< --assert-inferred-subclass-axioms --always-assert-super-classes --removeRedundant --markIsInferred --allowEquivalencies --merge-axiom-annotations -o $@
+reasoned.owl: filtered.owl $(IMPORT_FILES_OWL)
+	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
 # merged = reasoned + equivalencies
+# TODO: rename this -plus-equivs
 merged.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
 
-disjoint_sibs.owl: $(SRC)
-	robot query --format ttl -c ../sparql/construct-disjoint-siblings.sparql $@ -i $<
+
 
 # PRE-RELEASES: MONDO IDs primary
 #
@@ -82,13 +127,24 @@ $(ONT).owl: merged.owl
 # obo is self-contained
 $(ONT).obo: reasoned.owl
 	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
-#	owltools --use-catalog $< --merge-imports-closure -o -f obo --no-check $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 $(ONT).json: pre/$(ONT).owl
 	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
-$(ONT)-atomic.owl: $(ONT).owl
-	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+#$(ONT)-atomic.owl: $(ONT).owl
+#	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+
+# Component module.
+# we remove imports and merge in additional assertions
+# note: typically component is not pre-reasoned, but this is compex for mondo.
+$(ONT)-component.owl: reasoned.owl
+	$(OWLTOOLS) --use-catalog $< $(patsubst %,--remove-import-declaration $(OBO)/$(ONT)/imports/%_import.owl, $(ONTOLOGY_IMPORTS))  --merge-imports-closure --remove-axioms -t Declaration --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+
+$(ONT)-component.obo: $(ONT)-component.owl
+	$(OWL2OBO)
+$(ONT)-component.json: $(ONT)-component.owl
+	robot convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
+
 
 $(ONT)-merged.owl: $(ONT).owl
 	owltools --use-catalog $< --merge-imports-closure --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
@@ -124,14 +180,15 @@ test_nomerge: mondo.owl
 # ----------------------------------------
 all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-minimal.json
 
-subsets/mondo-minimal.owl: mondo.owl
-	owltools --use-catalog $< --extract-mingraph --remove-imports-declarations --set-ontology-id $(OBO)/mondo/subsets/mondo-minimal.owl --add-ontology-annotation $(PV_CC0) -o $@
+TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref
+subsets/mondo-minimal.owl: mondo-component.owl
+	owltools --use-catalog $< $(TRIM_MINIMAL) --set-ontology-id $(OBO)/mondo/$@ --add-ontology-annotation $(PV_CC0) -o $@
 
 subsets/%.json: subsets/%.owl
 	robot convert -i $< -o $@
 
 subsets/%.obo: subsets/%.owl
-	robot convert -i $< -o $@
+	robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
 
 # ----------------------------------------
@@ -151,17 +208,21 @@ modules/%.owl: modules/%.tsv
 # ----------------------------------------
 # Most ontologies are modularly constructed using portions of other ontologies
 # These live in the imports/ folder
-# These can be regenerated with make all_imports
+# These can be regenerated with make all_imports 
 
-IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo foodon
-IMPORTS_OWL = $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
+ONTOLOGY_IMPORTS_OWL = $(patsubst %, imports/%_import.owl, $(ONTOLOGY_IMPORTS))
+ONTOLOGY_IMPORTS_OBO = $(patsubst %, imports/%_import.obo, $(ONTOLOGY_IMPORTS))
+ONTOLOGY_IMPORTS_OWL_ROOTS = $(patsubst %, imports/%_import.owl-roots.tsv, $(ONTOLOGY_IMPORTS))
 
 # Make this target to regenerate ALL
-all_imports: $(IMPORTS_OWL)
+all_imports: all_imports_owl all_imports_obo  all_imports_owl_roots
+all_imports_owl: $(ONTOLOGY_IMPORTS_OWL)
+all_imports_owl_roots: $(ONTOLOGY_IMPORTS_OWL_ROOTS)
+all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 
 # Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(BASE)/$@ -o $@
+	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(BASE)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
@@ -211,17 +272,27 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-VCHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label
+EDIT_CHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label
+
+MAIN_OWL_CHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label
+
+MAIN_OBO_CHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label
 
 QSRC = $(SRC)-noimports.owl
 
 $(QSRC): $(SRC)
 	owltools --use-catalog $< --remove-imports-declarations -o $@
 
-# run all violation checks
-VQUERIES = $(foreach V,$(VCHECKS),$(SPARQLDIR)/$V-violation.sparql)
-sparql_test: $(QSRC)
-	robot verify -i $< --queries $(VQUERIES) -O reports/edit/ && touch $@
+# run all violation checks on edit file
+sparql_test_edit: $(QSRC)
+	robot verify -i $< --queries $(foreach V,$(EDIT_CHECKS),$(SPARQLDIR)/$V-violation.sparql) -O reports/edit/ && touch $@
+
+sparql_test_main_owl: $(ONT).owl
+	robot verify -i $< --queries $(foreach V,$(MAIN_OWL_CHECKS),$(SPARQLDIR)/$V-violation.sparql) -O reports/edit/ && touch $@
+
+sparql_test_main_obo: $(ONT).obo
+	robot verify -i $< --queries $(foreach V,$(MAIN_OBO_CHECKS),$(SPARQLDIR)/$V-violation.sparql) -O reports/edit/ && touch $@
+
 
 PL2SPARQL = ../plq/pq-mondo
 ../sparql/%.sparql:
@@ -242,13 +313,25 @@ reports/pq-%.tsv: mondo-edit.owl
 reports/proxy-merge.tsv:
 	pl2sparql -f tsv -A void.ttl -e -i all -c ../plq/proxy_merge.pro proxy_merge > $@.tmp && mv $@.tmp $@
 
+# the main OWL file will have 'pseudo-roots' caused by the fact that external classes
+# are referenced; restrict the report to those with labels
+%.owl-roots.tsv: %.owl
+	robot query -f tsv -i $< -s $(SPARQLDIR)/root-labeled-classes.sparql $@
+%.obo-roots.tsv: %.obo
+	robot query -f tsv -i $< -s $(SPARQLDIR)/root-classes.sparql $@
+
+prefixes: mondo-edit.obo
+	grep ^xref $< | cut -f2 -d : | count-occ.pl
+
 # ----------------------------------------
 # Sparql queries: Reports
 # ----------------------------------------
 
+
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats root-classes
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/release/$V.tsv)
-all_reports: mondo.owl reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml
+REPORT_FILES = reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml reports/release/semantic-xref-pairs.tsv
+all_reports: mondo.owl $(REPORT_FILES)
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
@@ -259,8 +342,8 @@ reports/release/%.tsv: mondo.owl
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # TODO: replace with sparql
-reports/release/semantic-xref-pairs.tsv: d2p.pro
-	blip-findall -i imports/equivalencies.obo  -i mondo-edit.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
+reports/release/semantic-xref-pairs.tsv: d2p.pro mondo-component.obo
+	blip-findall -i mondo-component.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 RR=$(HOME)/repos/rctauber/robot/bin/robot report
 reports/edit/report.yaml: $(SRC)
@@ -269,6 +352,9 @@ reports/release/mondo-obo-report.yaml: mondo.obo
 	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
 
 reports/release/mondo-owl-report.yaml: mondo.owl
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
+
+%-report.tsv: %
 	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
@@ -331,22 +417,30 @@ mirror/%.owl: trigger-mirror
 .PRECIOUS: mirror/%.owl
 
 mirror/ncbitaxon.owl: 
-	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@
-.PRECIOUS: mirror/%.owl
+	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@ && touch $@
+.PRECIOUS: mirror/ncbitaxon.owl
+
+# hp.owl currently contains many stray root classes
+mirror/hp.obo: trigger-mirror
+	wget --no-check-certificate $(OBO)/hp.obo -O $@.tmp && mv $@.tmp $@ && touch $@
+.PRECIOUS: mirror/hp.obo
+mirror/hp.owl:  mirror/hp.obo
+	$(OWLTOOLS) $< -o $@.tmp && mv $@.tmp $@
+.PRECIOUS: mirror/hp.owl
 
 mirror/chebi.owl: 
-	wget --no-check-certificate $(OBO)/chebi.obo -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@
-.PRECIOUS: mirror/%.owl
+	wget --no-check-certificate $(OBO)/chebi.obo -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@ && touch $@
+.PRECIOUS: mirror/chebi.owl
 
 mirror/mfoem.owl: 
 	$(OWLTOOLS) $(OBO)/mfoem.owl --remove-annotation-assertions -l -s -d --make-subset-by-properties -f BFO:0000050 // --remove-dangling-annotations  -o $@
-.PRECIOUS: mirror/%.owl
+.PRECIOUS: mirror/mfoem.owl
 
 mirror/neoplasm-core.owl:
-	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@
+	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@ && touch $@
 
 mirror/ncit.owl:
-	wget --no-check-certificate $(OBO)/ncit.owl -O $@
+	wget --no-check-certificate $(OBO)/ncit.owl -O $@ && touch $@
 
 mirror/ncit-disease.uris: mirror/ncit.owl
 	robot query -i $< -s ../sparql/ncit-subclass-of-disease.sparql $@
@@ -369,10 +463,10 @@ mirror/ncit-disease.obo: mirror/ncit-disease.owl
 #	robot convert -i $< -o $@
 
 mirror/rdo.obo:
-	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@
+	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@ && touch $@
 
 mirror/ordo_orphanet.owl.zip:
-	wget -nd -P mirror http://www.orphadata.org/data/ORDO/$@
+	wget -nd -P mirror http://www.orphadata.org/data/ORDO/$@  && touch $@
 
 mirror/ordo_orphanet.owl: mirror/ordo_orphanet.owl.zip
 	unzip  mirror/ordo_orphanet.owl.zip -d mirror
@@ -438,7 +532,7 @@ mirror/omia.obo: mirror/omia.owl
 	owltools --use-catalog $< -o -f obo $@
 
 mirror/efo-src.owl:
-	wget --no-check-certificate http://www.ebi.ac.uk/efo/efo.owl -O $@
+	wget --no-check-certificate http://www.ebi.ac.uk/efo/efo.owl -O $@ && touch $@
 
 mirror/efo.owl: mirror/efo-src.owl
 	cp $< $@
@@ -503,6 +597,11 @@ compare/axioms-%.obo: compare/axioms-%.owl
 compare/ann-axioms-%.obo: compare/ann-axioms-%.owl
 	owltools $< -o -f obo --no-check $@
 
+# construct an OWL file that expresses the fact that every child term must be distinct from its superclas
+# C1 SubClassOf P ==> exists C2 : C2 subClassOf P, C1 DisjointWith C2
+disjoint_sibs.owl: $(SRC)
+	robot query --format ttl -c ../sparql/construct-disjoint-siblings.sparql $@ -i $<
+
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
 
@@ -555,7 +654,7 @@ modules/equiv-xrefs.obo: mondo-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@
 
 mim2gene_medgen:
-	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
+	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen && touch $@
 
 omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
@@ -564,7 +663,7 @@ omim2medgen.obo: mim2gene_medgen
 # Anns
 # ----------------------------------------
 phenotype_annotation.tab:
-	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@
+	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@ && touch $@
 
 d2p.tsv: phenotype_annotation.tab
 	../utils/phenotab2tbl.pl $< > $@
