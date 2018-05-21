@@ -1020,23 +1020,6 @@ intersection_of: RO:0002215 GO:0035929 ! capable of steroid hormone secretion
 relationship: RO:0002215 GO:0035929 ! capable of steroid hormone secretion
 
 [Term]
-id: CL:0000177
-name: testosterone secreting cell
-is_a: CL:0000151 ! secretory cell
-intersection_of: CL:0000151 ! secretory cell
-intersection_of: RO:0002215 GO:0035936 ! capable of testosterone secretion
-relationship: RO:0002215 GO:0035936 ! capable of testosterone secretion
-
-[Term]
-id: CL:0000178
-name: Leydig cell
-def: "A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis." []
-synonym: "interstitial cell" BROAD []
-synonym: "interstitial cell of Leydig" EXACT []
-is_a: CL:0000177 ! testosterone secreting cell
-relationship: BFO:0000050 UBERON:0005212 ! part of Leydig cell region of testis
-
-[Term]
 id: CL:0000181
 name: metabolising cell
 def: "A cell whose primary function is intermediary metabolism." []
@@ -5388,15 +5371,6 @@ synonym: "vascular endothelial cell" EXACT []
 is_a: CL:0000115 ! endothelial cell
 
 [Term]
-id: CL:0002144
-name: capillary endothelial cell
-def: "An endothelial cell found in capillaries." []
-is_a: CL:0000071 ! blood vessel endothelial cell
-intersection_of: CL:0000071 ! blood vessel endothelial cell
-intersection_of: BFO:0000050 UBERON:0001915 ! part of endothelium of capillary
-relationship: BFO:0000050 UBERON:0001915 ! part of endothelium of capillary
-
-[Term]
 id: CL:0002145
 name: ciliated columnar cell of tracheobronchial tree
 def: "A ciliated columnar cell found in the trachea and bronchus. Vary from low to tall columnar; possesses up to 300 cilia at its surface, interspersed with long irregular microvilli with the cilia varying in length from about 6um in the trachea to about 4um in the terminal bronchioles; driving force of the ciliary current in the bronchial tree." []
@@ -5521,19 +5495,6 @@ intersection_of: BFO:0000050 UBERON:0002371 ! part of bone marrow
 relationship: BFO:0000050 UBERON:0002371 ! part of bone marrow
 
 [Term]
-id: CL:0002241
-name: pulmonary interstitial fibroblast
-def: "A fibroblasts found in interstitial spaces in the pulmonary tract. Greater numbers of these cells are found in idiopathic pulmonary fibrosis." []
-synonym: "pulmonary myofibroblast" EXACT []
-synonym: "pulmonary septal cell" EXACT []
-is_a: CL:0000057 ! fibroblast
-intersection_of: CL:0000057 ! fibroblast
-intersection_of: BFO:0000050 UBERON:0001004 ! part of respiratory system
-intersection_of: BFO:0000050 UBERON:0005169 ! part of interstitial tissue
-relationship: BFO:0000050 UBERON:0001004 ! part of respiratory system
-relationship: BFO:0000050 UBERON:0005169 ! part of interstitial tissue
-
-[Term]
 id: CL:0002242
 name: nucleate cell
 def: "A cell containing at least one nucleus." []
@@ -5575,15 +5536,6 @@ id: CL:0002261
 name: endothelial cell of viscerocranial mucosa
 def: "An endothelial cell found in the mucosa associated with the facial skeleton." []
 is_a: CL:0002076 ! endo-epithelial cell
-
-[Term]
-id: CL:0002262
-name: endothelial cell of sinusoid
-def: "An endothelial cell that lines any of the venous cavities through which blood passes in various glands and organs such as the spleen and liver." []
-is_a: CL:0000115 ! endothelial cell
-intersection_of: CL:0000115 ! endothelial cell
-intersection_of: BFO:0000050 UBERON:0003909 ! part of sinusoid
-relationship: BFO:0000050 UBERON:0003909 ! part of sinusoid
 
 [Term]
 id: CL:0002266
@@ -6907,16 +6859,6 @@ is_a: CL:1000331 ! serous cell of epithelium of bronchus
 intersection_of: CL:0000313 ! serous secreting cell
 intersection_of: BFO:0000050 UBERON:0002051 ! part of epithelium of bronchiole
 relationship: BFO:0000050 UBERON:0002051 ! part of epithelium of bronchiole
-
-[Term]
-id: CL:1000398
-name: endothelial cell of hepatic sinusoid
-def: "An endothelial cell that is part of the hepatic sinusoid." []
-synonym: "endotheliocyte of hepatic sinusoid" EXACT []
-is_a: CL:0002262 ! endothelial cell of sinusoid
-intersection_of: CL:0002262 ! endothelial cell of sinusoid
-intersection_of: BFO:0000050 UBERON:0001281 ! part of hepatic sinusoid
-relationship: BFO:0000050 UBERON:0001281 ! part of hepatic sinusoid
 
 [Term]
 id: CL:1000413
@@ -8731,13 +8673,6 @@ id: GO:0035929
 name: steroid hormone secretion
 is_a: GO:0006869 ! lipid transport
 is_a: GO:0060986 ! endocrine hormone secretion
-
-[Term]
-id: GO:0035936
-name: testosterone secretion
-is_a: GO:0006869 ! lipid transport
-is_a: GO:0015850 ! organic hydroxy compound transport
-is_a: GO:0046879 ! hormone secretion
 
 [Term]
 id: GO:0036161
@@ -11762,16 +11697,6 @@ intersection_of: BFO:0000050 UBERON:0001555 ! part of digestive tract
 relationship: BFO:0000050 UBERON:0001555 ! part of digestive tract
 
 [Term]
-id: UBERON:0000332
-name: yellow bone marrow
-def: "bone marrow in which the fat cells predominate in the meshes of the reticular network." []
-synonym: "fat marrow" RELATED []
-synonym: "medulla ossium flava" EXACT []
-synonym: "yellow marrow" EXACT []
-is_a: UBERON:0002371 ! bone marrow
-relationship: BFO:0000050 UBERON:0007195 ! part of stroma of bone marrow
-
-[Term]
 id: UBERON:0000333
 name: intestinal gland
 def: "A gland that is part of the intestinal mucosa. Examples include the intestinal crypts, duodenal gland[cjm]." []
@@ -11836,7 +11761,6 @@ id: UBERON:0000353
 name: parenchyma
 def: "functional part of an organ in the body. This is in contrast to the stroma, which refers to the structural tissue of organs, being exactly, connective tissues." []
 is_a: UBERON:0000064 ! organ part
-disjoint_from: UBERON:0003891 ! stroma
 
 [Term]
 id: UBERON:0000355
@@ -13296,26 +13220,6 @@ relationship: BFO:0000050 UBERON:0002107 ! part of liver
 relationship: RO:0002202 UBERON:0008835 ! develops from hepatic diverticulum
 
 [Term]
-id: UBERON:0001281
-name: hepatic sinusoid
-def: "Wide thin-walled blood vessels in the liver. In mammals they have neither veinous or arterial markers." []
-synonym: "hepatic sinusoids" RELATED []
-synonym: "liver hepatic sinusoids" EXACT []
-synonym: "liver sinusoid" EXACT []
-synonym: "liver sinusoidal blood vessel" EXACT []
-synonym: "sinusoid of liver" EXACT []
-synonym: "sinusoidal blood vessel of liver" EXACT []
-synonym: "vas capillare sinusoideum" EXACT []
-synonym: "vas sinusoideum" EXACT []
-is_a: UBERON:0003909 ! sinusoid
-is_a: UBERON:0005911 ! endo-epithelium
-is_a: UBERON:0015796 ! liver blood vessel
-intersection_of: UBERON:0003909 ! sinusoid
-intersection_of: BFO:0000050 UBERON:0002107 ! part of liver
-relationship: BFO:0000050 UBERON:0004647 ! part of liver lobule
-relationship: BFO:0000050 UBERON:0006877 ! part of vasculature of liver
-
-[Term]
 id: UBERON:0001282
 name: intralobular bile duct
 def: "the tubules located between the bile canaliculi and interlobular bile ducts near the outer edge of a classic liver lobule" []
@@ -13639,20 +13543,6 @@ intersection_of: BFO:0000050 UBERON:0002108 ! part of small intestine
 relationship: BFO:0000050 UBERON:0001204 ! part of mucosa of small intestine
 
 [Term]
-id: UBERON:0001915
-name: endothelium of capillary
-def: "An endothelium that is part of a capillary [Automatically generated definition]." []
-synonym: "blood capillary endothelium" EXACT []
-synonym: "capillary endothelium" EXACT []
-synonym: "capillary vessel endothelium" EXACT []
-synonym: "endothelium of blood capillary" EXACT []
-synonym: "endothelium of capillary vessel" EXACT []
-is_a: UBERON:0004638 ! blood vessel endothelium
-intersection_of: UBERON:0001986 ! endothelium
-intersection_of: BFO:0000050 UBERON:0001982 ! part of capillary
-relationship: BFO:0000050 UBERON:0001982 ! part of capillary
-
-[Term]
 id: UBERON:0001917
 name: endothelium of artery
 def: "An endothelium that is part of an artery [Automatically generated definition]." []
@@ -13737,15 +13627,6 @@ relationship: BFO:0000050 UBERON:0004537 ! part of blood vasculature
 relationship: BFO:0000051 UBERON:0007500 ! has part epithelial tube open at both ends
 relationship: RO:0002202 UBERON:0004872 ! develops from splanchnic layer of lateral plate mesoderm
 relationship: RO:0002202 UBERON:0006965 ! develops from vascular cord
-
-[Term]
-id: UBERON:0001982
-name: capillary
-def: "Any of the smallest blood vessels connecting arterioles with venules." []
-synonym: "blood capillary" EXACT []
-synonym: "capillary vessel" EXACT []
-is_a: UBERON:0001981 ! blood vessel
-is_a: UBERON:0010523 ! microcirculatory vessel
 
 [Term]
 id: UBERON:0001986
@@ -15540,40 +15421,6 @@ intersection_of: BFO:0000050 UBERON:0002370 ! part of thymus
 relationship: BFO:0000050 UBERON:0002370 ! part of thymus
 
 [Term]
-id: UBERON:0003489
-name: respiratory system capillary endothelium
-def: "An endothelium of capillary that is part of a respiratory system [Automatically generated definition]." []
-synonym: "apparatus respiratorius blood capillary endothelium" EXACT []
-synonym: "apparatus respiratorius capillary endothelium" EXACT []
-synonym: "apparatus respiratorius capillary vessel endothelium" EXACT []
-synonym: "apparatus respiratorius endothelium of blood capillary" EXACT []
-synonym: "apparatus respiratorius endothelium of capillary" EXACT []
-synonym: "apparatus respiratorius endothelium of capillary vessel" EXACT []
-synonym: "blood capillary endothelium of apparatus respiratorius" EXACT []
-synonym: "blood capillary endothelium of respiratory system" EXACT []
-synonym: "capillary endothelium of apparatus respiratorius" EXACT []
-synonym: "capillary endothelium of respiratory system" EXACT []
-synonym: "capillary vessel endothelium of apparatus respiratorius" EXACT []
-synonym: "capillary vessel endothelium of respiratory system" EXACT []
-synonym: "endothelium of blood capillary of apparatus respiratorius" EXACT []
-synonym: "endothelium of blood capillary of respiratory system" EXACT []
-synonym: "endothelium of capillary of apparatus respiratorius" EXACT []
-synonym: "endothelium of capillary of respiratory system" EXACT []
-synonym: "endothelium of capillary vessel of apparatus respiratorius" EXACT []
-synonym: "endothelium of capillary vessel of respiratory system" EXACT []
-synonym: "respiratory system blood capillary endothelium" EXACT []
-synonym: "respiratory system capillary vessel endothelium" EXACT []
-synonym: "respiratory system endothelium of blood capillary" EXACT []
-synonym: "respiratory system endothelium of capillary" EXACT []
-synonym: "respiratory system endothelium of capillary vessel" EXACT []
-is_a: UBERON:0001915 ! endothelium of capillary
-is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
-intersection_of: UBERON:0001915 ! endothelium of capillary
-intersection_of: BFO:0000050 UBERON:0001004 ! part of respiratory system
-relationship: BFO:0000050 UBERON:0003504 ! part of respiratory system blood vessel
-relationship: BFO:0000050 UBERON:0003526 ! part of respiratory system capillary
-
-[Term]
 id: UBERON:0003496
 name: head blood vessel
 def: "A blood vessel that is part of a head [Automatically generated definition]." []
@@ -15674,26 +15521,6 @@ is_a: UBERON:0001981 ! blood vessel
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: BFO:0000050 UBERON:0002100 ! part of trunk
 relationship: BFO:0000050 UBERON:0002100 ! part of trunk
-
-[Term]
-id: UBERON:0003526
-name: respiratory system capillary
-def: "A capillary that is part of a respiratory system [Automatically generated definition]." []
-synonym: "apparatus respiratorius blood capillary" EXACT []
-synonym: "apparatus respiratorius capillary" EXACT []
-synonym: "apparatus respiratorius capillary vessel" EXACT []
-synonym: "blood capillary of apparatus respiratorius" EXACT []
-synonym: "blood capillary of respiratory system" EXACT []
-synonym: "capillary of apparatus respiratorius" EXACT []
-synonym: "capillary of respiratory system" EXACT []
-synonym: "capillary vessel of apparatus respiratorius" EXACT []
-synonym: "capillary vessel of respiratory system" EXACT []
-synonym: "respiratory system blood capillary" EXACT []
-synonym: "respiratory system capillary vessel" EXACT []
-is_a: UBERON:0001982 ! capillary
-is_a: UBERON:0003504 ! respiratory system blood vessel
-intersection_of: UBERON:0001982 ! capillary
-intersection_of: BFO:0000050 UBERON:0001004 ! part of respiratory system
 
 [Term]
 id: UBERON:0003529
@@ -16203,14 +16030,6 @@ relationship: BFO:0000050 UBERON:0011997 ! part of coelom
 relationship: RO:0002202 UBERON:0003081 ! develops from lateral plate mesoderm
 
 [Term]
-id: UBERON:0003891
-name: stroma
-def: "Connective, non-functional supportive framework of a biological cell, tissue, or organ. Contrast with parenchyma." []
-synonym: "stromal connective tissue" RELATED []
-is_a: UBERON:0000064 ! organ part
-relationship: BFO:0000051 UBERON:0002384 ! has part connective tissue
-
-[Term]
 id: UBERON:0003894
 name: liver primordium
 def: "A small endodermal thickening in the foregut adjacent to the transverse septum. Invaginates forming the hepatic diverticulum." []
@@ -16226,18 +16045,6 @@ is_a: UBERON:0006598 ! presumptive structure
 is_a: UBERON:0009497 ! epithelium of foregut-midgut junction
 relationship: BFO:0000050 UBERON:0009550 ! part of endoderm of foregut-midgut junction
 relationship: RO:0002202 UBERON:0001041 ! develops from foregut
-
-[Term]
-id: UBERON:0003909
-name: sinusoid
-def: "small blood vessel similar to a capillary but with a fenestrated endothelium. Sinusoids are found in the liver, lymphoid tissue, endocrine organs, and hematopoietic organs such as the bone marrow and the spleen. Sinusoids found within terminal villi of the placenta are not comparable to these; they possess a continuous endothelium and complete basal lamina[WP]." []
-synonym: "endothelium of irregular blood filled space" RELATED []
-synonym: "sinusoidal blood vessel" EXACT []
-synonym: "sinusoidal blood vessel endothelium" EXACT []
-synonym: "sinusoidal capillary" RELATED []
-synonym: "sinusoidal endothelium" RELATED []
-is_a: UBERON:0001982 ! capillary
-is_a: UBERON:2005260 ! fenestrated capillary
 
 [Term]
 id: UBERON:0003914
@@ -17715,13 +17522,6 @@ synonym: "multi-cell-part structure" EXACT []
 is_a: UBERON:0000477 ! anatomical cluster
 
 [Term]
-id: UBERON:0005169
-name: interstitial tissue
-def: "connective tissue between the cellular elements of a structure." []
-synonym: "interstitium" EXACT []
-is_a: UBERON:0003891 ! stroma
-
-[Term]
 id: UBERON:0005172
 name: abdomen element
 def: "An organ or element that is in the abdomen. Examples: spleen, intestine, kidney, abdominal mammary gland." []
@@ -17789,20 +17589,6 @@ is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003834 ! thoracic segment blood vessel
 intersection_of: UBERON:0001638 ! vein
 intersection_of: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
-
-[Term]
-id: UBERON:0005212
-name: Leydig cell region of testis
-def: "The male gonad containing two functional parts: the SEMINIFEROUS TUBULES for the production and transport of male germ cells (SPERMATOGENESIS) and the interstitial compartment containing LEYDIG CELLS that produce ANDROGENS.." []
-synonym: "interstitium of testis" EXACT []
-synonym: "interstitium of the testis" EXACT []
-synonym: "testis - interstitial" EXACT []
-synonym: "testis interstitial tissue" EXACT []
-synonym: "testis interstitium" EXACT []
-is_a: BFO:0000004 ! independent continuant
-is_a: UBERON:0005156 ! reproductive structure
-is_a: UBERON:0005169 ! interstitial tissue
-relationship: BFO:0000050 UBERON:0000473 ! part of testis
 
 [Term]
 id: UBERON:0005250
@@ -18639,17 +18425,6 @@ is_a: UBERON:0005423 ! developing anatomical structure
 relationship: BFO:0000050 UBERON:0014903 ! part of primordial vasculature
 
 [Term]
-id: UBERON:0006966
-name: coronary capillary
-def: "A capillary that is part of the coronary system." []
-synonym: "heart capillary" EXACT []
-is_a: UBERON:0001982 ! capillary
-is_a: UBERON:0003498 ! heart blood vessel
-intersection_of: UBERON:0001982 ! capillary
-intersection_of: BFO:0000050 UBERON:0000948 ! part of heart
-relationship: BFO:0000050 UBERON:0018674 ! part of heart vasculature
-
-[Term]
 id: UBERON:0007005
 name: cardiogenic splanchnic mesoderm
 def: "The splanchnic mesoderm in the cardiogenic region where the heart develops; it gives rise to endocardial heart tubes that fuse to form the primordial cardiac tube, the heart primordium[web]. Two migratory heart primordia that move ventrally during the course of neurulation, and then fuse[XAO]." []
@@ -18739,19 +18514,6 @@ def: "An intermediate stage (between the neural plate and neural rod) during the
 synonym: "presumptive central nervous system" RELATED []
 is_a: UBERON:0016879 ! future central nervous system
 relationship: RO:0002202 UBERON:0003075 ! develops from neural plate
-
-[Term]
-id: UBERON:0007195
-name: stroma of bone marrow
-def: "The stroma of the bone marrow is all tissue not directly involved in the primary function of hematopoiesis. The yellow bone marrow belongs here, and makes the majority of the bone marrow stroma, in addition to stromal cells located in the red bone marrow. Yellow bone marrow is found in the Medullary cavity. Still, the stroma is indirectly involved in hematopoiesis, since it provides the hematopoietic microenvironment that facilitates hematopoiesis by the parenchymal cells. For instance, they generate colony stimulating factors, affecting hematopoiesis." []
-synonym: "bone marrow stroma" EXACT []
-is_a: UBERON:0003891 ! stroma
-is_a: UBERON:0004120 ! mesoderm-derived structure
-intersection_of: UBERON:0003891 ! stroma
-intersection_of: BFO:0000050 UBERON:0002371 ! part of bone marrow
-relationship: BFO:0000050 UBERON:0002371 ! part of bone marrow
-relationship: BFO:0000051 UBERON:0000332 ! has part yellow bone marrow
-relationship: BFO:0000051 UBERON:0003909 ! has part sinusoid
 
 [Term]
 id: UBERON:0007196
@@ -19741,20 +19503,6 @@ def: "A roughly circular bulge in a surface." []
 is_a: UBERON:0003102 ! surface structure
 
 [Term]
-id: UBERON:0010233
-name: stroma of thyroid gland
-def: "The connective tissue that supports the lobules and follicles of the thyroid gland." []
-synonym: "thyroid gland stroma" EXACT []
-synonym: "thyroid stroma" EXACT []
-is_a: UBERON:0003891 ! stroma
-is_a: UBERON:0004119 ! endoderm-derived structure
-is_a: UBERON:0010313 ! neural crest-derived structure
-intersection_of: UBERON:0003891 ! stroma
-intersection_of: BFO:0000050 UBERON:0002046 ! part of thyroid gland
-relationship: BFO:0000050 UBERON:0002046 ! part of thyroid gland
-relationship: RO:0002202 UBERON:0002342 ! develops from neural crest
-
-[Term]
 id: UBERON:0010254
 name: 2nd arch mesenchyme from neural crest
 def: "Mesenchyme that develops_from a neural crest and is part of a 2nd arch mesenchyme." []
@@ -20037,14 +19785,6 @@ def: "Epithelium composed of a single layer of cells, appearing as layered becau
 synonym: "epithelium pseudostratificatum columnare ciliatum (trachea et bronchi)" EXACT []
 is_a: UBERON:0007592 ! ciliated columnar epithelium
 is_a: UBERON:0010498 ! pseudostratified columnar epithelium
-
-[Term]
-id: UBERON:0010523
-name: microcirculatory vessel
-def: "A vessel of the microcirculature, lying between the arterioles and venules; includes capillaries (blood and lymphatic), metarterioles and arteriovenous anastomoses." []
-synonym: "microcirculatory vessels" RELATED []
-is_a: UBERON:0000055 ! vessel
-relationship: BFO:0000050 UBERON:0002049 ! part of vasculature
 
 [Term]
 id: UBERON:0010912
@@ -20821,28 +20561,6 @@ intersection_of: BFO:0000050 UBERON:0001041 ! part of foregut
 relationship: BFO:0000050 UBERON:0001041 ! part of foregut
 
 [Term]
-id: UBERON:0016405
-name: pulmonary capillary
-def: "A capillary that is part of a lung." []
-synonym: "capillary of lung" EXACT []
-is_a: UBERON:0003512 ! lung blood vessel
-is_a: UBERON:0003526 ! respiratory system capillary
-intersection_of: UBERON:0001982 ! capillary
-intersection_of: BFO:0000050 UBERON:0002048 ! part of lung
-
-[Term]
-id: UBERON:0016478
-name: liver stroma
-def: "A stroma that is part of a liver." []
-synonym: "hepatic stroma" EXACT []
-synonym: "stroma of liver" EXACT []
-is_a: UBERON:0003891 ! stroma
-is_a: UBERON:0004119 ! endoderm-derived structure
-intersection_of: UBERON:0003891 ! stroma
-intersection_of: BFO:0000050 UBERON:0002107 ! part of liver
-relationship: BFO:0000050 UBERON:0002107 ! part of liver
-
-[Term]
 id: UBERON:0016510
 name: epithelium of male urethra
 def: "A epithelium that is part of a male urethra." []
@@ -20973,16 +20691,6 @@ is_a: UBERON:0004119 ! endoderm-derived structure
 intersection_of: UBERON:0001473 ! lymphatic vessel
 intersection_of: BFO:0000050 UBERON:0002048 ! part of lung
 relationship: BFO:0000050 UBERON:0018226 ! part of pulmonary part of lymphatic system
-
-[Term]
-id: UBERON:0018234
-name: stroma of pancreas
-def: "A stroma that is part of a pancreas." []
-synonym: "pancreatic stroma" EXACT []
-is_a: UBERON:0003891 ! stroma
-intersection_of: UBERON:0003891 ! stroma
-intersection_of: BFO:0000050 UBERON:0001264 ! part of pancreas
-relationship: BFO:0000050 UBERON:0001264 ! part of pancreas
 
 [Term]
 id: UBERON:0018257
@@ -21271,15 +20979,6 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: BFO:0000050 UBERON:0002106 ! part of spleen
 relationship: BFO:0000050 UBERON:0002106 ! part of spleen
-
-[Term]
-id: UBERON:2005260
-name: fenestrated capillary
-def: "Capillary that has pores in the endothelial cells (60-80 nm in diameter) that are spanned by a diaphragm of radially oriented fibrils and allow small molecules and limited amounts of protein to diffuse" []
-synonym: "fenestrated blood vessel endothelium" BROAD []
-synonym: "fenestrated capillary vessel" EXACT []
-is_a: UBERON:0001982 ! capillary
-is_a: UBERON:0004638 ! blood vessel endothelium
 
 [Term]
 id: UBERON:3000961

@@ -44,10 +44,12 @@ SUBSETS = mondo-minimal
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
 
+
 MAIN_PRODUCTS = $(ONT) $(ONT)-component
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
   $(MAIN_FILES) \
+  $(REPORT_FILES) \
   $(SUBSET_FILES) \
   $(IMPORT_FILES) 
 
@@ -332,10 +334,13 @@ prefixes: mondo-edit.obo
 # ----------------------------------------
 
 
-REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats root-classes
+REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats root-classes superclass-count
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/release/$V.tsv)
-REPORT_FILES = reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml reports/release/semantic-xref-pairs.tsv
-all_reports: mondo.owl $(REPORT_FILES)
+MAIN_REPORT_FILES = $(foreach V, $(REPORTS), reports/release/$V.tsv)
+ADDITIONAL_REPORT_FILES = reports/release/semantic-xref-pairs.tsv
+#ADDITIONAL_REPORT_FILES = reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml reports/release/semantic-xref-pairs.tsv
+REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
+all_reports: mondo.owl $(ADDITIONAL_REPORT_FILES)
 	robot query -f tsv -i $< $(REPORT_ARGS)
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176

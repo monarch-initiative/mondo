@@ -1,3 +1,22 @@
+## 2018-05-20 Release
+
+New classes:
+
+ * [Aeromonas hydrophila intestinal disease](http://purl.obolibrary.org/obo/MONDO_0024459)
+ * [non-inflammatory vasculopathy](http://purl.obolibrary.org/obo/MONDO_0024471)
+ * [benign chondrogenic neoplasm](http://purl.obolibrary.org/obo/MONDO_0024470)
+ * [pituitary hormone deficiency, combined, 1](http://purl.obolibrary.org/obo/MONDO_0024464)
+ * [ovarian dysgenesis 1](http://purl.obolibrary.org/obo/MONDO_0024463)
+ * [facial paresis, hereditary congenital, 1](http://purl.obolibrary.org/obo/MONDO_0024466)
+ * [surfactant metabolism dysfunction, pulmonary, 2](http://purl.obolibrary.org/obo/MONDO_0024465)
+ * [anterior pituitary gland disease](http://purl.obolibrary.org/obo/MONDO_0024468)
+ * [apocrine sweat gland disease](http://purl.obolibrary.org/obo/MONDO_0024467)
+ * [chondrogenic neoplasm](http://purl.obolibrary.org/obo/MONDO_0024469)
+ * [obsolete herpesviridae infections](http://purl.obolibrary.org/obo/MONDO_0024460)
+ * [familial cutaneous melanoma](http://purl.obolibrary.org/obo/MONDO_0024462)
+ * [angiomatosis](http://purl.obolibrary.org/obo/MONDO_0024461)
+
+
 ## 2018-05-18 Release
 
 Highlights:
