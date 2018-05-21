@@ -351,15 +351,15 @@ reports/release/semantic-xref-pairs.tsv: d2p.pro mondo-component.obo
 
 RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
 reports/edit/report.yaml: $(SRC)
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 reports/release/mondo-obo-report.yaml: mondo.obo
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 reports/release/mondo-owl-report.yaml: mondo.owl
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 %-report.tsv: %
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@
+	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 # ----------------------------------------
 # Sparql constructs
