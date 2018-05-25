@@ -615,7 +615,7 @@ testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
-	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@
+	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 
 # ----------------------------------------
 # Lexical mapping
