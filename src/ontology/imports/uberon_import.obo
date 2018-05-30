@@ -8524,6 +8524,15 @@ relationship: BFO:0000050 UBERON:0035639 ! part of ocular adnexa
 relationship: RO:0002202 UBERON:0006230 ! develops_from extrinsic ocular pre-muscle mass
 
 [Term]
+id: UBERON:0001604
+name: levator palpebrae superioris
+def: "The levator palpebrae superioris (or levator muscle of upper eyelid) is the muscle in the orbit that elevates the superior (upper) eyelid. [WP,unvetted]." []
+is_a: UBERON:0001601 ! extra-ocular muscle
+relationship: BFO:0000050 UBERON:0001711 ! part of eyelid
+relationship: RO:0002372 UBERON:0001677 ! has_muscle_origin sphenoid bone
+relationship: RO:0002373 UBERON:0004772 ! has_muscle_insertion eyelid tarsus
+
+[Term]
 id: UBERON:0001605
 name: ciliary muscle
 def: "The ciliary muscle is a ring of smooth muscle in the middle layer of the eye that controls the eye's accommodation for viewing objects at varying distances and regulates the flow of aqueous humour through Schlemm's canal. [WP,unvetted]." []
@@ -10835,6 +10844,23 @@ intersection_of: BFO:0000050 UBERON:0001750 ! part of lacrimal apparatus
 relationship: BFO:0000050 UBERON:0001750 ! part of lacrimal apparatus
 relationship: RO:0002202 UBERON:0022284 ! develops_from lacrimal gland bud
 relationship: RO:0002433 UBERON:0001750 ! contributes to morphology of lacrimal apparatus
+
+[Term]
+id: UBERON:0001818
+name: tarsal gland
+def: "A modified lobulated sebaceous gland at the rim of an eyelid, responsible for the supply of meibum." []
+synonym: "gland of Meibom" EXACT []
+synonym: "glandula tarsales" EXACT []
+synonym: "Meibomian gland" EXACT []
+synonym: "palpebral gland" RELATED []
+synonym: "tarsoconjunctival gland" RELATED []
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0013231 ! sebaceous gland of eyelid
+is_a: UBERON:0015251 ! modified sebaceous gland
+intersection_of: UBERON:0001821 ! sebaceous gland
+intersection_of: BFO:0000050 UBERON:0004772 ! part of eyelid tarsus
+relationship: BFO:0000050 UBERON:0004772 ! part of eyelid tarsus
+relationship: RO:0002433 UBERON:0001711 ! contributes to morphology of eyelid
 
 [Term]
 id: UBERON:0001820
@@ -14265,6 +14291,19 @@ intersection_of: UBERON:0013685 ! foramen of skull
 intersection_of: conduit_for UBERON:0036074 ! vein of vestibular aqueduct
 relationship: BFO:0000050 UBERON:0005236 ! part of osseus labyrinth vestibule
 relationship: conduit_for UBERON:0036074 ! vein of vestibular aqueduct
+
+[Term]
+id: UBERON:0002283
+name: nail matrix
+def: "Portion of tissue (or germinal matrix) upon which the nail rests, the part of the nail bed that extends beneath the nail root and contains nerves, lymph and blood vessels. The matrix is responsible for the production of the cells that become the nail plate. The width and thickness of the nail plate is determined by the size, length, and thickness of the matrix, while the shape of the fingertip itself determines if the nail plate is flat, arched, or hooked. The matrix will continue to grow as long as it receives nutrition and remains in a healthy condition. As new nail plate cells are incubated, they emerge from the matrix round and white to push older nail plate cells forward; and in this way yet older cells become compressed, flat, and translucent, making the pink colour of the capillaries in the nail bed below visible[WP]." []
+synonym: "keratogenous membrane" EXACT []
+synonym: "matrix unguis" EXACT []
+synonym: "nail germinal matrix" EXACT []
+synonym: "nail root" RELATED []
+synonym: "onychostroma" EXACT []
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0004121 ! ectoderm-derived structure
+relationship: BFO:0000050 UBERON:0001705 ! part of nail
 
 [Term]
 id: UBERON:0002285
@@ -24736,6 +24775,20 @@ relationship: BFO:0000051 UBERON:0001980 ! has part arteriole
 relationship: RO:0002433 UBERON:0002125 ! contributes to morphology of thymus lobule
 
 [Term]
+id: UBERON:0004000
+name: tarsal gland acinus
+def: "A sac-like structure comprising a sebaceous gland." []
+synonym: "acinus of tarsal gland" EXACT []
+synonym: "Meibomian gland acinus" EXACT []
+synonym: "palpebral gland acinus" RELATED []
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0011846 ! acinus of sebaceous gland
+intersection_of: UBERON:0009842 ! glandular acinus
+intersection_of: BFO:0000050 UBERON:0001818 ! part of tarsal gland
+relationship: BFO:0000050 UBERON:0001818 ! part of tarsal gland
+relationship: RO:0002433 UBERON:0001818 ! contributes to morphology of tarsal gland
+
+[Term]
 id: UBERON:0004001
 name: olfactory bulb layer
 def: "." []
@@ -28204,6 +28257,7 @@ is_a: UBERON:0006716 ! mesopodium region
 is_a: UBERON:0008784 ! lower limb segment
 intersection_of: UBERON:0006716 ! mesopodium region
 intersection_of: BFO:0000050 UBERON:0002387 ! part of pes
+disjoint_from: UBERON:0004772 ! eyelid tarsus
 relationship: BFO:0000050 UBERON:0002387 ! part of pes
 relationship: distally_connected_to UBERON:0000983 ! metatarsus region
 relationship: proximally_connected_to UBERON:0003823 ! hindlimb zeugopod
@@ -28587,6 +28641,16 @@ is_a: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: BFO:0000050 UBERON:0001507 ! part of biceps brachii
 relationship: BFO:0000050 UBERON:0001507 ! part of biceps brachii
+
+[Term]
+id: UBERON:0004508
+name: skeletal muscle tissue of levator palpebrae superioris
+def: "A portion of skeletal muscle tissue that is part of a levator palpebrae superioris [Automatically generated definition]." []
+is_a: UBERON:0003269 ! skeletal muscle tissue of eye
+is_a: UBERON:0010313 ! neural crest-derived structure
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: BFO:0000050 UBERON:0001604 ! part of levator palpebrae superioris
+relationship: BFO:0000050 UBERON:0001604 ! part of levator palpebrae superioris
 
 [Term]
 id: UBERON:0004515
@@ -29820,6 +29884,50 @@ intersection_of: RO:0002176 UBERON:0001707 ! connects nasal cavity
 intersection_of: RO:0002176 UBERON:0001728 ! connects nasopharynx
 relationship: BFO:0000050 UBERON:0003128 ! part of cranium
 relationship: RO:0002176 UBERON:0001728 ! connects nasopharynx
+
+[Term]
+id: UBERON:0004772
+name: eyelid tarsus
+def: "The tarsi (tarsal plates) are two comparatively thick, elongated plates of dense connective tissue, about 2.5 cm. in length; one is found in each eyelid, and contributes to its form and support. They directly abut the lid margins." []
+synonym: "eyelid tarsi" RELATED []
+synonym: "tarsal plate" EXACT []
+synonym: "tarsal plate of eyelid" EXACT []
+synonym: "tarsi" RELATED []
+synonym: "tarsus palpebralis" EXACT []
+is_a: UBERON:0000094 ! membrane organ
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0001711 ! part of eyelid
+relationship: BFO:0000050 UBERON:0003581 ! part of eyelid connective tissue
+
+[Term]
+id: UBERON:0004773
+name: superior eyelid tarsus
+def: "An eyelid tarsus that is part of a upper eyelid [Automatically generated definition]." []
+synonym: "superior tarsal plate" EXACT []
+synonym: "superior tarsus" EXACT []
+synonym: "superior tarsus of eyelid" EXACT []
+synonym: "tarsal plate of upper eyelid" EXACT []
+synonym: "tarsus of upper eyelid" EXACT []
+synonym: "tarsus superior" EXACT []
+is_a: UBERON:0004772 ! eyelid tarsus
+intersection_of: UBERON:0004772 ! eyelid tarsus
+intersection_of: BFO:0000050 UBERON:0001712 ! part of upper eyelid
+relationship: BFO:0000050 UBERON:0001712 ! part of upper eyelid
+
+[Term]
+id: UBERON:0004774
+name: inferior eyelid tarsus
+def: "An eyelid tarsus that is part of a lower eyelid [Automatically generated definition]." []
+synonym: "inferior tarsal plate" EXACT []
+synonym: "inferior tarsus" EXACT []
+synonym: "inferior tarsus of eyelid" EXACT []
+synonym: "tarsal plate of lower eyelid" EXACT []
+synonym: "tarsus inferior" EXACT []
+synonym: "tarsus of lower eyelid" EXACT []
+is_a: UBERON:0004772 ! eyelid tarsus
+intersection_of: UBERON:0004772 ! eyelid tarsus
+intersection_of: BFO:0000050 UBERON:0001713 ! part of lower eyelid
+relationship: BFO:0000050 UBERON:0001713 ! part of lower eyelid
 
 [Term]
 id: UBERON:0004777
@@ -46832,6 +46940,25 @@ relationship: BFO:0000050 UBERON:0009142 ! part of entire embryonic mesenchyme
 relationship: RO:0002202 UBERON:0004873 ! develops_from splanchnopleure
 
 [Term]
+id: UBERON:0010379
+name: superior tarsal muscle
+def: "The superior tarsal muscle is a smooth muscle adjoining the levator palpebrae superioris muscle that helps to raise the upper eyelid." []
+synonym: "mueller muscle" RELATED []
+synonym: "Mueller's muscle" EXACT []
+synonym: "Muller's muscle" RELATED []
+synonym: "musculus tarsalis superior" RELATED []
+synonym: "Müller's muscle" RELATED []
+synonym: "the superior tarsal muscle" RELATED []
+is_a: UBERON:0003386 ! smooth muscle of eye
+is_a: UBERON:0010313 ! neural crest-derived structure
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: BFO:0000050 UBERON:0004773 ! part of superior eyelid tarsus
+relationship: BFO:0000050 UBERON:0004773 ! part of superior eyelid tarsus
+relationship: RO:0002005 UBERON:0000013 ! innervated_by sympathetic nervous system
+relationship: RO:0002150 UBERON:0001604 ! continuous_with levator palpebrae superioris
+relationship: RO:0002372 UBERON:0001604 ! has_muscle_origin levator palpebrae superioris
+
+[Term]
 id: UBERON:0010384
 name: lumen of laryngopharynx
 def: "A anatomical space that is enclosed by a hypopharynx." []
@@ -54961,6 +55088,16 @@ intersection_of: BFO:0000050 UBERON:0000999 ! part of ejaculatory duct
 relationship: BFO:0000050 UBERON:0000999 ! part of ejaculatory duct
 
 [Term]
+id: UBERON:0015751
+name: inferior tarsal muscle
+def: "A smooth muscle tissue that is part of a inferior eyelid tarsus." []
+is_a: UBERON:0003386 ! smooth muscle of eye
+is_a: UBERON:0010313 ! neural crest-derived structure
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: BFO:0000050 UBERON:0004774 ! part of inferior eyelid tarsus
+relationship: BFO:0000050 UBERON:0004774 ! part of inferior eyelid tarsus
+
+[Term]
 id: UBERON:0015757
 name: heterogeneous tissue
 synonym: "portion of heterogeneous tissue" EXACT []
@@ -56821,6 +56958,19 @@ intersection_of: extends_fibers_into UBERON:0001579 ! olfactory nerve
 relationship: extends_fibers_into UBERON:0001579 ! olfactory nerve
 
 [Term]
+id: UBERON:0019315
+name: meibum
+def: "an oily substance that prevents evaporation of the eye's tear film" []
+synonym: "tarsal gland secretion" RELATED []
+is_a: UBERON:0001866 ! sebum
+intersection_of: UBERON:0001866 ! sebum
+intersection_of: RO:0003001 UBERON:0001818 ! produced_by tarsal gland
+relationship: BFO:0000050 UBERON:0000019 ! part of camera-type eye
+relationship: RO:0002220 UBERON:0010230 ! adjacent_to eyeball of camera-type eye
+relationship: RO:0002221 UBERON:0022287 ! surrounds tear film
+relationship: RO:0003001 UBERON:0001818 ! produced_by tarsal gland
+
+[Term]
 id: UBERON:0019319
 name: exocrine gland of integumental system
 def: "An exocrine gland that is part of a integumental system." []
@@ -56934,6 +57084,18 @@ def: "the single bud-like invagination of the conjunctival fornix epithelium at 
 is_a: UBERON:0005153 ! epithelial bud
 is_a: UBERON:0015808 ! eye epithelium
 relationship: BFO:0000050 UBERON:0001750 ! part of lacrimal apparatus
+
+[Term]
+id: UBERON:0022287
+name: tear film
+def: "An aqueous substance that covers the anterior surface of the eyeball, keeping the cornea wet." []
+synonym: "precorneal film" EXACT []
+is_a: UBERON:0000456 ! secretion of exocrine gland
+is_a: UBERON:0006314 ! bodily fluid
+relationship: BFO:0000050 UBERON:0001801 ! part of anterior segment of eyeball
+relationship: BFO:0000050 UBERON:0010409 ! part of ocular surface region
+relationship: protects UBERON:0010409 ! ocular surface region
+relationship: RO:0002473 UBERON:0001827 ! composed primarily of secretion of lacrimal gland
 
 [Term]
 id: UBERON:0022288

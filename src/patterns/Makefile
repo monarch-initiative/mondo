@@ -1,6 +1,6 @@
 ## THIS IS A BIOMAKE MAKEFILE ##
 
-SRCM := ../ontology/mondo-merged.owl
+SRCM := ../ontology/mondo-edit.obo
 
 #PATTERNS = hereditary acquired location_top location rare genetic dependence
 PATTERNS = \
@@ -11,10 +11,12 @@ disease_by_dysfunctional_structure \
 basis_in_disruption_of_process \
 inborn_metabolic \
 environmental_stimulus \
-allergy allergic_form_of_disease autoimmune_inflammation inflammatory_disease_by_site infectious_disease_by_agent \
+allergy allergic_form_of_disease autoimmune_inflammation inflammatory_disease_by_site\
+infectious_disease_by_agent specific_infectious_disease_by_agent\
 rare genetic acquired rare_genetic congenital hereditary \
 syndromic isolated \
-malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm neoplasm_by_origin
+malignant benign cancer carcinoma carcinoma_in_situ sarcoma neoplasm neoplasm_by_origin \
+neuroendocrine_neoplasm neuroendocrine_neoplasm_grade1
 
 all: all_mondo_ld merged-ld.owl  all_disease  all_ordo all_ncit all_icd all_snomed
 

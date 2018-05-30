@@ -2142,6 +2142,18 @@ def: "A collagen heterotrimer containing type XI alpha chains in alpha1(XI)alpha
 is_a: GO:0005583 ! fibrillar collagen trimer
 
 [Term]
+id: GO:0005593
+name: FACIT collagen trimer
+def: "A collagen trimer that associates with collagen fibrils and consists of collagen monomers that contain two or more relatively short triple-helical domains connected by non-triple-helical sequences." []
+is_a: GO:0005581 ! collagen trimer
+
+[Term]
+id: GO:0005594
+name: collagen type IX trimer
+def: "A collagen heterotrimer containing type IX alpha chains in alpha1(IX)alpha2(IX)alpha3(IX) trimers; type IX collagen triple helices associate to form a structure that links glycosaminoglycans to type II collagen fibrils." []
+is_a: GO:0005593 ! FACIT collagen trimer
+
+[Term]
 id: GO:0005604
 name: basement membrane
 def: "A thin layer of dense material found in various animal tissues interposed between the cells and the adjacent connective tissue. It consists of the basal lamina plus an associated layer of reticulin fibers." []
@@ -5884,6 +5896,24 @@ name: organic hydroxy compound transport
 def: "The directed movement of an organic hydroxy compound (organic alcohol) into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. An organic hydroxy compound is an organic compound having at least one hydroxy group attached to a carbon atom." []
 synonym: "organic alcohol transport" EXACT []
 is_a: GO:0071702 ! organic substance transport
+
+[Term]
+id: GO:0015888
+name: thiamine transport
+def: "The directed movement of thiamine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Thiamine is vitamin B1, a water soluble vitamin present in fresh vegetables and meats, especially liver." []
+synonym: "thiamin transport" EXACT []
+synonym: "vitamin B1 transport" EXACT []
+is_a: GO:0015893 ! drug transport
+is_a: GO:0045117 ! azole transport
+is_a: GO:0051180 ! vitamin transport
+is_a: GO:0072348 ! sulfur compound transport
+
+[Term]
+id: GO:0015893
+name: drug transport
+def: "The directed movement of a drug, a substance used in the diagnosis, treatment or prevention of a disease, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0006810 ! transport
+relationship: BFO:0000050 GO:0042493 ! part of response to drug
 
 [Term]
 id: GO:0015925
@@ -9828,6 +9858,14 @@ is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0042445 ! hormone metabolic process
 
 [Term]
+id: GO:0042493
+name: response to drug
+def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a drug stimulus. A drug is a substance used in the diagnosis, treatment or prevention of a disease." []
+synonym: "drug resistance" RELATED []
+synonym: "drug susceptibility/resistance" RELATED []
+is_a: GO:0042221 ! response to chemical
+
+[Term]
 id: GO:0042552
 name: myelination
 def: "The process in which myelin sheaths are formed and maintained around neurons. Oligodendrocytes in the brain and spinal cord and Schwann cells in the peripheral nervous system wrap axons with compact layers of their plasma membrane. Adjacent myelin segments are separated by a non-myelinated stretch of axon called a node of Ranvier." []
@@ -11029,6 +11067,13 @@ synonym: "glycerolipid synthesis" EXACT []
 is_a: GO:0008610 ! lipid biosynthetic process
 is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0046486 ! glycerolipid metabolic process
+
+[Term]
+id: GO:0045117
+name: azole transport
+def: "The directed movement of azoles, heterocyclic compounds found in many biologically important substances, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0071702 ! organic substance transport
+is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
 id: GO:0045121
@@ -13856,6 +13901,13 @@ synonym: "single-organism localization" RELATED []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0051180
+name: vitamin transport
+def: "The directed movement of vitamins into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A vitamin is one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
+synonym: "vitamin or cofactor transport" BROAD []
+is_a: GO:0006810 ! transport
+
+[Term]
 id: GO:0051186
 name: cofactor metabolic process
 def: "The chemical reactions and pathways involving a cofactor, a substance that is required for the activity of an enzyme or other protein. Cofactors may be inorganic, such as the metal atoms zinc, iron, and copper in certain forms, or organic, in which case they are referred to as coenzymes. Cofactors may either be bound tightly to active sites or bind loosely with the substrate." []
@@ -15758,6 +15810,13 @@ synonym: "monocarboxylic acid formation" EXACT []
 synonym: "monocarboxylic acid synthesis" EXACT []
 is_a: GO:0032787 ! monocarboxylic acid metabolic process
 is_a: GO:0046394 ! carboxylic acid biosynthetic process
+
+[Term]
+id: GO:0072348
+name: sulfur compound transport
+def: "The directed movement of compounds that contain sulfur, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "sulfur-containing compound transport" EXACT []
+is_a: GO:0006810 ! transport
 
 [Term]
 id: GO:0072350
@@ -21399,6 +21458,41 @@ is_a: GO:2001020 ! regulation of response to DNA damage stimulus
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006974 ! positively regulates cellular response to DNA damage stimulus
 relationship: RO:0002213 GO:0006974 ! positively regulates cellular response to DNA damage stimulus
+
+[Term]
+id: GO:2001023
+name: regulation of response to drug
+def: "Any process that modulates the frequency, rate or extent of response to drug." []
+synonym: "regulation of drug resistance" RELATED []
+synonym: "regulation of drug susceptibility/resistance" RELATED []
+is_a: GO:0048583 ! regulation of response to stimulus
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042493 ! regulates response to drug
+relationship: RO:0002211 GO:0042493 ! regulates response to drug
+
+[Term]
+id: GO:2001024
+name: negative regulation of response to drug
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of response to drug." []
+synonym: "negative regulation of drug resistance" RELATED []
+synonym: "negative regulation of drug susceptibility/resistance" RELATED []
+is_a: GO:0048585 ! negative regulation of response to stimulus
+is_a: GO:2001023 ! regulation of response to drug
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042493 ! negatively regulates response to drug
+relationship: RO:0002212 GO:0042493 ! negatively regulates response to drug
+
+[Term]
+id: GO:2001025
+name: positive regulation of response to drug
+def: "Any process that activates or increases the frequency, rate or extent of response to drug." []
+synonym: "positive regulation of drug resistance" RELATED []
+synonym: "positive regulation of drug susceptibility/resistance" RELATED []
+is_a: GO:0048584 ! positive regulation of response to stimulus
+is_a: GO:2001023 ! regulation of response to drug
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042493 ! positively regulates response to drug
+relationship: RO:0002213 GO:0042493 ! positively regulates response to drug
 
 [Term]
 id: GO:2001141
