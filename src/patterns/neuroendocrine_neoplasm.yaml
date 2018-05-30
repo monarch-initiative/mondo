@@ -1,0 +1,54 @@
+pattern_name: neoendocrine_neoplasm
+
+description: >-
+
+  Note that tumor is typically a synonym for neoplasm, although this
+  can be context dependent. For NETs, NCIT uses the nomenclature 'tumor'
+  to indicate 'well differentiated, low or intermediate grade tumor'.
+  This can also be called carcinoid, see
+  https://www.cancer.org/cancer/gastrointestinal-carcinoid-tumor/about/what-is-gastrointestinal-carcinoid.html
+  We attempt to spell this out in our labels.
+
+classes:
+  neuroendocrine neoplasm: MONDO:0019496
+
+relations:
+  disease has location: RO:0004026
+
+vars:
+  location: "owl:Thing"
+
+name:
+  text: "%s neuroendocrine neoplasm"
+  vars:
+   - location
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "neuroendocrine neoplasm of %s"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s neuroendocrine tumor, well differentiated, low or intermediate grade"
+    vars:
+     - location
+  - annotationProperty: oio:hasRelatedSynonym
+    text: "%s neuroendocrine tumor"
+    vars:
+     - location
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s NET"
+    vars:
+     - location
+
+def:
+  text: "A neuroendocrine neoplasm involving a %s."
+  vars:
+    - location
+
+equivalentTo:
+  text: "'neuroendocrine neoplasm' and 'disease has location' some %s"
+  vars:
+    - location
+
+

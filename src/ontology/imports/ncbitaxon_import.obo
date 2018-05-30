@@ -992,6 +992,15 @@ is_a: NCBITaxon:780 ! Rickettsia
 property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
 
 [Term]
+id: NCBITaxon:115425
+name: Cochliomyia hominivorax
+namespace: ncbi_taxonomy
+synonym: "primary screw-worm" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:66360 ! Cochliomyia
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:11552
 name: Influenza C virus
 namespace: ncbi_taxonomy
@@ -1062,14 +1071,6 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:35301 ! ssRNA negative-strand viruses
 property_value: has_rank NCBITaxon:family
-
-[Term]
-id: NCBITaxon:11618
-name: Arenavirus
-namespace: ncbi_taxonomy
-xref: GC_ID:1
-is_a: NCBITaxon:208898 ! unclassified Arenaviridae
-property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:11619
@@ -1872,14 +1873,6 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:1399768 ! Basidiobolomycetes
 property_value: has_rank NCBITaxon:order
-
-[Term]
-id: NCBITaxon:127007
-name: Rhipicephalus pumilio
-namespace: ncbi_taxonomy
-xref: GC_ID:1
-is_a: NCBITaxon:426455 ! Rhipicephalus <subgenus>
-property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:12721
@@ -4139,16 +4132,6 @@ is_a: NCBITaxon:31969 ! Mollicutes
 property_value: has_rank NCBITaxon:order
 
 [Term]
-id: NCBITaxon:208898
-name: unclassified Arenaviridae
-namespace: ncbi_taxonomy
-alt_id: NCBITaxon:327788
-synonym: "unclassified Arenavirus" RELATED synonym []
-synonym: "unclassified arenaviruses" RELATED synonym []
-xref: GC_ID:1
-is_a: NCBITaxon:11617 ! Arenaviridae
-
-[Term]
 id: NCBITaxon:209
 name: Helicobacter
 namespace: ncbi_taxonomy
@@ -4844,6 +4827,15 @@ is_a: NCBITaxon:85819 ! Phthiraptera
 property_value: has_rank NCBITaxon:suborder
 
 [Term]
+id: NCBITaxon:302011
+name: Rickettsia conorii subsp. caspia
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
+
+[Term]
 id: NCBITaxon:30639
 name: Mastomys
 namespace: ncbi_taxonomy
@@ -4869,15 +4861,6 @@ synonym: "Amdovirus" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:40119 ! Parvovirinae
 property_value: has_rank NCBITaxon:genus
-
-[Term]
-id: NCBITaxon:31241
-name: Dirofilaria repens
-namespace: ncbi_taxonomy
-synonym: "Dirofilaria (Nochtiella) repens" RELATED synonym []
-xref: GC_ID:1
-is_a: NCBITaxon:6286 ! Dirofilaria
-property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:31244
@@ -4997,6 +4980,15 @@ xref: GC_ID:11
 xref: PMID:19244447
 is_a: NCBITaxon:85004 ! Bifidobacteriales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:319546
+name: Rickettsia conorii subsp. conorii
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
 
 [Term]
 id: NCBITaxon:31969
@@ -6649,6 +6641,14 @@ is_a: NCBITaxon:7157 ! Culicidae
 property_value: has_rank NCBITaxon:subfamily
 
 [Term]
+id: NCBITaxon:43913
+name: Chrysomyinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:7371 ! Calliphoridae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
 id: NCBITaxon:43920
 name: Chrysopsinae
 namespace: ncbi_taxonomy
@@ -7553,6 +7553,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:53549 ! Sabethini
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:54281
+name: Chrysomyini
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:43913 ! Chrysomyinae
+property_value: has_rank NCBITaxon:tribe
 
 [Term]
 id: NCBITaxon:54285
@@ -8751,17 +8759,6 @@ is_a: NCBITaxon:6296 ! Onchocercidae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
-id: NCBITaxon:6287
-name: Dirofilaria immitis
-namespace: ncbi_taxonomy
-synonym: "canine heartworm nematode" EXACT common_name []
-synonym: "Dirofilaria (Dirofilaria) immitis" RELATED synonym []
-synonym: "dog heartworm nematode" EXACT genbank_common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:6286 ! Dirofilaria
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:629
 name: Yersinia <bacteria>
 namespace: ncbi_taxonomy
@@ -9138,6 +9135,14 @@ name: Phaeoannellomyces
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:156300 ! Chaetothyriales incertae sedis
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:66360
+name: Cochliomyia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:54281 ! Chrysomyini
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -9891,6 +9896,20 @@ name: Dicrocoeliidae
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:56251 ! Plagiorchioidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:7371
+name: Calliphoridae
+namespace: ncbi_taxonomy
+synonym: "blow flies" EXACT common_name []
+synonym: "blow flly" EXACT common_name []
+synonym: "blow-fly" EXACT common_name []
+synonym: "blowflies" EXACT genbank_common_name []
+synonym: "blowflly" EXACT common_name []
+synonym: "bottle flies" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:43755 ! Oestroidea
 property_value: has_rank NCBITaxon:family
 
 [Term]
@@ -10688,6 +10707,14 @@ xref: PMID:23475340
 xref: PMID:26373441
 is_a: NCBITaxon:1386 ! Bacillus <bacterium>
 property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
+
+[Term]
+id: NCBITaxon:88456
+name: Cyclospora cayetanensis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:44417 ! Cyclospora
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:88770

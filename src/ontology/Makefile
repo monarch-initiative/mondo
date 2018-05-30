@@ -386,6 +386,10 @@ imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
 imports/equivalencies.obo: imports/equivalencies.owl
 	robot convert -i $< -o $@
 
+clean_imports: $(patsubst %, clean-mirror-%, $(ONTOLOGY_IMPORTS))
+clean-mirror-%: 
+	test -f mirror/%.owl && rm mirror/%.owl || echo 'no mirror file'
+
 #imports/equivalencies.owl: $(SRC)
 #	../utils/xrefs2axioms.pl $< > $@.tmp && owltools $@.tmp -o $@
 
@@ -421,7 +425,7 @@ trigger-mirror:
 	touch $@
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: trigger-mirror
+mirror/%.owl: 
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
@@ -430,7 +434,7 @@ mirror/ncbitaxon.owl:
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # hp.owl currently contains many stray root classes
-mirror/hp.obo: trigger-mirror
+mirror/hp.obo: 
 	wget --no-check-certificate $(OBO)/hp.obo -O $@.tmp && mv $@.tmp $@ && touch $@
 .PRECIOUS: mirror/hp.obo
 mirror/hp.owl:  mirror/hp.obo
@@ -615,7 +619,10 @@ testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
-	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@
+	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
+
+debug2.owl: mondo.owl disjoint_sibs.owl imports/equivalencies.owl
+	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 
 # ----------------------------------------
 # Lexical mapping
@@ -703,6 +710,9 @@ d2symp-wd.tsv:
 # new
 weights.tsv:
 	pl2sparql -f tsv -e -i mondo-edit.owl  -c ../plq/kboom_weights.pro w > $@
+
+weights-mg.tsv:
+	pl2sparql -f tsv -e -i mondo-edit.owl -i mirror/medgen-disease-extract.owl  -c ../plq/kboom_weights.pro w > $@
 
 ptable.tsv: weights.tsv
 	../utils/softmax-weights.py $< > $@

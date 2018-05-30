@@ -6,38 +6,38 @@ description: >-
 
 classes:
   disease: MONDO:0000001
-  anatomical structure: UBERON:0000061
+  organism: NCBITaxon:1
 
 relations:
-  disease has inflammation site: RO:0004027
+  realized in response to stimulus: RO:0004028
 
 vars:
   disease: "'disease'"
-  location: "'anatomical structure'"
+  agent: "'organism'"
 
 name:
   text: "%s %s"
   vars:
-   - location
+   - agent
    - disease
 
 annotations:
   - annotationProperty: oio:hasExactSynonym
-    text: "%s %sitis"
+    text: "%s caused %s"
     vars:
+     - agent
      - disease
-     - location
    
 def:
-  text: "An %s involving a pathogenic inflammatory response in the %s."
+  text: "An %s caused by infection with %s."
   vars:
     - disease
-    - location
+    - agent
 
 equivalentTo:
-  text: "%s and 'disease has inflammation site' some %s"
+  text: "%s and 'realized in response to stimulus' some %s"
   vars:
     - disease
-    - location
+    - agent
 
 

@@ -769,34 +769,6 @@ xref: UMLS:C4025874
 is_a: HP:0000929 ! Abnormality of the skull
 
 [Term]
-id: HP:0000245
-name: Abnormality of the paranasal sinuses
-namespace: human_phenotype
-def: "Abnormality of the paranasal (cranial) sinuses, which are air-filled spaces that are located within the bones of the skull and face and communicate with the nasal cavity. They comprise the maxillary sinuses, the frontal sinuses, the ethmoid sinuses, and the sphenoid sinuses." [HPO:curators]
-synonym: "Abnormality of the sinuses" BROAD layperson []
-synonym: "Abnormality of the sinuses of the head" EXACT layperson [ORCID:0000-0001-5889-4463]
-xref: UMLS:C4025873
-is_a: HP:0011821 ! Abnormality of facial skeleton
-
-[Term]
-id: HP:0000246
-name: Sinusitis
-namespace: human_phenotype
-def: "Inflammation of the paranasal sinuses owing to a viral, bacterial, or fungal infection, allergy, or an autoimmune reaction." [HPO:probinson]
-subset: hposlim_core
-synonym: "Sinus disease" RELATED layperson [ORCID:0000-0001-5889-4463]
-synonym: "Sinus infection" BROAD layperson []
-synonym: "Sinus inflammation" EXACT layperson [ORCID:0000-0001-5889-4463]
-xref: MSH:D010254
-xref: MSH:D012852
-xref: SNOMEDCT_US:36971009
-xref: SNOMEDCT_US:7393007
-xref: UMLS:C0030469
-xref: UMLS:C0037199
-is_a: HP:0000245 ! Abnormality of the paranasal sinuses
-is_a: HP:0012649 ! Increased inflammatory response
-
-[Term]
 id: HP:0000252
 name: Microcephaly
 namespace: human_phenotype
@@ -1310,6 +1282,22 @@ xref: UMLS:C4020889
 is_a: HP:0004328 ! Abnormal anterior segment morphology
 
 [Term]
+id: HP:0000486
+name: Strabismus
+namespace: human_phenotype
+def: "Strabismus (also known as squint) is a condition in which the eyes are not properly aligned with each other." [HPO:probinson]
+subset: hposlim_core
+synonym: "Cross-eyed" EXACT layperson []
+synonym: "Heterotropia" EXACT []
+synonym: "Squint" EXACT layperson []
+synonym: "Squint eyes" EXACT layperson [ORCID:0000-0001-5208-3432, ORCID:0000-0001-5889-4463]
+xref: MSH:D013285
+xref: SNOMEDCT_US:128602000
+xref: SNOMEDCT_US:22066006
+xref: UMLS:C0038379
+is_a: HP:0000549 ! Abnormal conjugate eye movement
+
+[Term]
 id: HP:0000491
 name: Keratitis
 namespace: human_phenotype
@@ -1585,6 +1573,15 @@ xref: MSH:D012162
 xref: SNOMEDCT_US:95695004
 xref: UMLS:C0035304
 is_a: HP:0000479 ! Abnormal retinal morphology
+
+[Term]
+id: HP:0000549
+name: Abnormal conjugate eye movement
+namespace: human_phenotype
+def: "Any deviation from the normal motor coordination of the eyes that allows for bilateral fixation on a single object." [HPO:probinson]
+synonym: "Disconjugate eye movements" EXACT []
+xref: UMLS:C1845274
+is_a: HP:0000496 ! Abnormality of eye movement
 
 [Term]
 id: HP:0000553
@@ -4123,21 +4120,6 @@ xref: UMLS:C0003507
 is_a: HP:0031652 ! Abnormal aortic valve physiology
 
 [Term]
-id: HP:0001651
-name: Dextrocardia
-namespace: human_phenotype
-def: "The heart is located in the right hand sided hemithorax. That is, there is a left-right reversal (or \"mirror reflection\") of the anatomical location of the heart in which the heart is locate on the right side instead of the left." [DDD:dbrown, HPO:sdoelken]
-synonym: "Thoracic situs inversus" EXACT []
-xref: EPCC:02.01.02
-xref: Fyler:0110
-xref: Fyler:110
-xref: ICD-10:Q24.0
-xref: MSH:D003914
-xref: SNOMEDCT_US:27637000
-xref: UMLS:C0011813
-is_a: HP:0004307 ! Abnormal anatomic location of the heart
-
-[Term]
 id: HP:0001662
 name: Bradycardia
 namespace: human_phenotype
@@ -4181,27 +4163,6 @@ xref: SNOMEDCT_US:441913003
 xref: SNOMEDCT_US:44564008
 xref: UMLS:C0003564
 is_a: HP:0001608 ! Abnormality of the voice
-
-[Term]
-id: HP:0001696
-name: Situs inversus totalis
-namespace: human_phenotype
-def: "A left-right reversal (or \"mirror reflection\") of the anatomical location of the major thoracic and abdominal organs." [DDD:dbrown, HPO:probinson]
-synonym: "Situs inversus" RELATED []
-synonym: "situs oppositus" EXACT []
-synonym: "situs transversus" EXACT []
-xref: Fyler:0100
-xref: Fyler:100
-xref: MSH:D012857
-xref: MSH:D059446
-xref: SNOMEDCT_US:14821001
-xref: SNOMEDCT_US:24614000
-xref: SNOMEDCT_US:27317008
-xref: SNOMEDCT_US:43876007
-xref: UMLS:C0037221
-xref: UMLS:C0266642
-is_a: HP:0001651 ! Dextrocardia
-is_a: HP:0011534 ! Abnormal spatial orientation of the cardiac segments
 
 [Term]
 id: HP:0001697
@@ -5467,6 +5428,34 @@ is_a: HP:0002197 ! Generalized seizures
 is_a: HP:0011146 ! Dialeptic seizures
 
 [Term]
+id: HP:0002134
+name: Abnormality of the basal ganglia
+namespace: human_phenotype
+alt_id: HP:0006952
+alt_id: HP:0007257
+def: "Abnormality of the basal ganglia." [HPO:probinson]
+comment: The basal ganglia are a group of nuclei (striatum, pallidum substantia nigra, and the subthalamic nucleus) at the base of the forebrain that are connected to the cerebral cortex, the thalamus, and other areas. The basal ganglia subserve motor functions that are distinct from those of the pyramidal (corticospinal) tract, for which reason neurologic abnormalities caused by lesions to the basal ganglia are often referred to as extrapyramidal.
+synonym: "Anomaly of the basal ganglia" EXACT []
+synonym: "Basal ganglia disease" EXACT []
+xref: MSH:D001480
+xref: SNOMEDCT_US:70835005
+xref: UMLS:C0004782
+is_a: HP:0010993 ! Abnormality of the cerebral subcortex
+
+[Term]
+id: HP:0002135
+name: Basal ganglia calcification
+namespace: human_phenotype
+alt_id: HP:0002485
+def: "The presence of calcium deposition affecting one or more structures of the basal ganglia." [HPO:probinson]
+synonym: "Basal ganglia calcifications" EXACT []
+synonym: "Basal ganglion calcification" EXACT []
+synonym: "Calcification of the basal ganglia" EXACT []
+xref: UMLS:C1389280
+is_a: HP:0002134 ! Abnormality of the basal ganglia
+is_a: HP:0002514 ! Cerebral calcification
+
+[Term]
 id: HP:0002143
 name: Abnormality of the spinal cord
 namespace: human_phenotype
@@ -6009,6 +5998,15 @@ xref: UMLS:C4025708
 is_a: HP:0001317 ! Abnormality of the cerebellum
 
 [Term]
+id: HP:0002450
+name: Abnormal motor neuron morphology
+namespace: human_phenotype
+def: "Any structural anomal that affects the motor neuron." []
+synonym: "Abnormal shape of motor neuron" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: UMLS:C4025707
+is_a: HP:0012757 ! Abnormal neuron morphology
+
+[Term]
 id: HP:0002459
 name: Dysautonomia
 namespace: human_phenotype
@@ -6077,6 +6075,24 @@ synonym: "Degeneration of the spinocerebellar tracts" EXACT []
 synonym: "Spinocerebellar degeneration" EXACT []
 xref: UMLS:C1866751
 is_a: HP:0003133 ! Abnormality of the spinocerebellar tracts
+
+[Term]
+id: HP:0002514
+name: Cerebral calcification
+namespace: human_phenotype
+alt_id: HP:0002502
+alt_id: HP:0005806
+alt_id: HP:0006848
+def: "The presence of calcium deposition within brain structures." [HPO:probinson]
+comment: This finding can be demonstrated upon cerebral computer tomography, magnetic resonance imaging, or potentially by standard radiography of the skull.
+synonym: "Brain calcification" EXACT []
+synonym: "Intracerebral calcifications" EXACT []
+synonym: "Intracranial calcification" EXACT []
+synonym: "Intracranial calcifications" EXACT []
+xref: SNOMEDCT_US:17944005
+xref: UMLS:C0270685
+is_a: HP:0002060 ! Abnormality of the cerebrum
+is_a: HP:0010766 ! Ectopic calcification
 
 [Term]
 id: HP:0002524
@@ -7488,16 +7504,6 @@ created_by: peter
 creation_date: 2008-02-20T01:23:00Z
 
 [Term]
-id: HP:0004307
-name: Abnormal anatomic location of the heart
-namespace: human_phenotype
-def: "Thickening of the left ventricle wall with congenital onset." [PMID:154915]
-xref: UMLS:C4025359
-is_a: HP:0001627 ! Abnormal heart morphology
-created_by: peter
-creation_date: 2008-02-20T01:23:00Z
-
-[Term]
 id: HP:0004308
 name: Ventricular arrhythmia
 namespace: human_phenotype
@@ -8301,6 +8307,16 @@ xref: UMLS:C0154671
 is_a: HP:0007369 ! Atrophy/Degeneration affecting the cerebrum
 
 [Term]
+id: HP:0007354
+name: Amyotrophic lateral sclerosis
+namespace: human_phenotype
+synonym: "Lou gehrig's disease" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: MSH:D000690
+xref: SNOMEDCT_US:86044005
+xref: UMLS:C0002736
+is_a: HP:0007373 ! Motor neuron atrophy
+
+[Term]
 id: HP:0007364
 name: Aplasia/Hypoplasia of the cerebrum
 namespace: human_phenotype
@@ -8351,6 +8367,18 @@ is_a: HP:0001273 ! Abnormality of the corpus callosum
 is_a: HP:0007364 ! Aplasia/Hypoplasia of the cerebrum
 created_by: peter
 creation_date: 2008-04-01T10:35:00Z
+
+[Term]
+id: HP:0007373
+name: Motor neuron atrophy
+namespace: human_phenotype
+def: "Wasting involving the motor neuron." [HPO:probinson]
+synonym: "Motor neuron degeneration" EXACT [ORCID:0000-0001-5208-3432]
+xref: UMLS:C4024896
+is_a: HP:0002450 ! Abnormal motor neuron morphology
+is_a: HP:0007367 ! Atrophy/Degeneration affecting the central nervous system
+created_by: peter
+creation_date: 2008-04-01T10:39:00Z
 
 [Term]
 id: HP:0007375
@@ -9459,6 +9487,16 @@ created_by: peter
 creation_date: 2010-04-24T03:53:19Z
 
 [Term]
+id: HP:0010766
+name: Ectopic calcification
+namespace: human_phenotype
+def: "Deposition of calcium salts in a tissue or location in which calcification does not normally occur." [HPO:probinson]
+xref: UMLS:C3806226
+is_a: HP:0000924 ! Abnormality of the skeletal system
+created_by: doelkens
+creation_date: 2010-04-27T09:52:59Z
+
+[Term]
 id: HP:0010783
 name: Erythema
 namespace: human_phenotype
@@ -9998,20 +10036,6 @@ created_by: peter
 creation_date: 2011-06-08T07:11:09Z
 
 [Term]
-id: HP:0011109
-name: Chronic sinusitis
-namespace: human_phenotype
-def: "A chronic form of sinusitis." [HPO:probinson]
-synonym: "Chronic sinus disease" RELATED layperson [ORCID:0000-0001-5889-4463]
-synonym: "Sinusitis, chronic" RELATED [HPO:skoehler]
-xref: SNOMEDCT_US:40055000
-xref: UMLS:C0149516
-xref: UMLS:C0748720
-is_a: HP:0000246 ! Sinusitis
-created_by: peter
-creation_date: 2011-06-10T07:33:14Z
-
-[Term]
 id: HP:0011110
 name: Tonsillitis
 namespace: human_phenotype
@@ -10464,16 +10488,6 @@ xref: UMLS:C4023320
 is_a: HP:0000504 ! Abnormality of vision
 created_by: peter
 creation_date: 2012-04-06T06:00:34Z
-
-[Term]
-id: HP:0011534
-name: Abnormal spatial orientation of the cardiac segments
-namespace: human_phenotype
-def: "Abnormality of the spatial relationship of the cardiac segments to other components of the heart." []
-xref: UMLS:C4023313
-is_a: HP:0001627 ! Abnormal heart morphology
-created_by: peter
-creation_date: 2012-04-07T10:27:48Z
 
 [Term]
 id: HP:0011545
@@ -11261,6 +11275,18 @@ xref: UMLS:C0010200
 is_a: HP:0002795 ! Functional respiratory abnormality
 created_by: peter
 creation_date: 2014-03-23T03:19:50Z
+
+[Term]
+id: HP:0012757
+name: Abnormal neuron morphology
+namespace: human_phenotype
+def: "A structural anomaly of a neuron." [KI:phemming]
+synonym: "Abnormal neuron shape" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Abnormal neuronal morphology" EXACT []
+xref: UMLS:C4022739
+is_a: HP:0012639 ! Abnormality of nervous system morphology
+created_by: peter
+creation_date: 2014-04-02T05:12:30Z
 
 [Term]
 id: HP:0012758

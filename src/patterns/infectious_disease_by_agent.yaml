@@ -1,7 +1,7 @@
-pattern_name: specific_infectious_disease_by_agent
+pattern_name: infectious_disease_by_agent
 
 classes:
-  infectious disease: MONDO:0005550
+  disease: MONDO:0000001
   organism: NCBITaxon:1
 
 # NOTE: this may change in future
@@ -9,26 +9,22 @@ relations:
   realized in response to stimulus: RO:0004028
 
 vars:
-  disease: "'disease'"
   agent: "'organism'"
 
 name:
   text: "%s infectious disease"
   vars:
    - agent
-   - disease
 
    
 def:
-  text: "A %s caused by infection with %s."
+  text: "A disease caused by infection with %s."
   vars:
-    - disease    
     - agent
 
 equivalentTo:
-  text: "%s and 'realized in response to stimulus' some %s"
+  text: "'disease' and 'realized in response to stimulus' some %s"
   vars:
-    - disease    
     - agent
 
 
