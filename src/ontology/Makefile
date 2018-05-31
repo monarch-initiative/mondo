@@ -113,7 +113,7 @@ filtered.owl: filtered.obo skos.ttl
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
 # note: robot will protect redundant annotated axioms
-reasoned.owl: filtered.owl $(IMPORT_FILES_OWL)
+reasoned.owl: filtered.owl 
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
 # merged = reasoned + equivalencies
