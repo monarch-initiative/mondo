@@ -26,7 +26,7 @@ OWL2OBO = robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo >
 
 PV_CC0 = http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 
-FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@; s@$(OBO)/UMLS_@http://linkedlifedata.com/resource/umls/id/@'
+FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@g; s@$(OBO)/UMLS_@http://linkedlifedata.com/resource/umls/id/@g'
 
 # ----------------------------------------
 # Top-level targets
