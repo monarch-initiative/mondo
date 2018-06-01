@@ -380,7 +380,7 @@ reports/release/mondo-owl-report.yaml: mondo.owl
 imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
-FIX_URIS_IN_PLACE = perl -pi -ne '$(FIX_URI_EXPR)'
+FIX_URIS_IN_PLACE = perl -pi -ne $(FIX_URI_EXPR)
 
 all_equivalencies: imports/equivalencies.owl  imports/equivalencies.obo imports/equivalencies.json
 imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
