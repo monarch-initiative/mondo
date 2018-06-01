@@ -26,6 +26,8 @@ OWL2OBO = robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo >
 
 PV_CC0 = http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 
+FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@; s@$(OBO)/UMLS_@http://linkedlifedata.com/resource/umls/id/@'
+
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
@@ -378,11 +380,11 @@ reports/release/mondo-owl-report.yaml: mondo.owl
 imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
-FIX_UMLS = perl -pi -ne 's@http://purl.obolibrary.org/obo/UMLS_@http://linkedlifedata.com/resource/umls/id/@'
+FIX_URIS_IN_PLACE = perl -pi -ne '$(FIX_URI_EXPR)'
 
 all_equivalencies: imports/equivalencies.owl  imports/equivalencies.obo imports/equivalencies.json
 imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
-	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && $(FIX_UMLS)  $@.tmp.ttl && robot annotate -i $@.tmp.ttl -a $(PV_CC0) -O $(OBO)/mondo/$@ -o $@
+	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && $(FIX_URIS_IN_PLACE)  $@.tmp.ttl && robot annotate -i $@.tmp.ttl -a $(PV_CC0) -O $(OBO)/mondo/$@ -o $@
 imports/equivalencies.obo: imports/equivalencies.owl
 	robot convert -i $< -o $@
 
