@@ -6839,6 +6839,19 @@ xref: UMLS:C0020437
 is_a: HP:0040077 ! Abnormal concentration of calcium in blood
 
 [Term]
+id: HP:0003073
+name: Hypoalbuminemia
+namespace: human_phenotype
+def: "Reduction in the concentration of albumin in the blood." [HPO:probinson]
+synonym: "Hypoalbuminaemia" EXACT []
+synonym: "Low albumin" BROAD layperson []
+synonym: "Low blood albumin" EXACT layperson []
+xref: MSH:D034141
+xref: SNOMEDCT_US:119247004
+xref: UMLS:C0239981
+is_a: HP:0012116 ! Abnormal albumin level
+
+[Term]
 id: HP:0003074
 name: Hyperglycemia
 namespace: human_phenotype
@@ -7650,6 +7663,20 @@ xref: UMLS:C1844806
 is_a: HP:0004323 ! Abnormality of body weight
 created_by: peter
 creation_date: 2008-02-27T03:22:00Z
+
+[Term]
+id: HP:0004326
+name: Cachexia
+namespace: human_phenotype
+def: "Severe weight loss, wasting of muscle, loss of appetite, and general debility related to a chronic disease." [HPO:probinson]
+synonym: "Wasting syndrome" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: MSH:D002100
+xref: SNOMEDCT_US:238108007
+xref: SNOMEDCT_US:285384003
+xref: UMLS:C0006625
+is_a: HP:0001824 ! Weight loss
+created_by: peter
+creation_date: 2008-02-27T03:23:00Z
 
 [Term]
 id: HP:0004328
@@ -9570,6 +9597,20 @@ created_by: peter
 creation_date: 2010-08-03T06:29:35Z
 
 [Term]
+id: HP:0010876
+name: Abnormality of circulating protein level
+namespace: human_phenotype
+def: "An abnormal level of a circulating protein in the blood." [HPO:probinson]
+synonym: "Blood protein disease" RELATED layperson []
+synonym: "Serum protein abnormality" RELATED []
+xref: UMLS:C4020763
+xref: UMLS:C4020764
+xref: UMLS:C4023679
+is_a: HP:0001939 ! Abnormality of metabolism/homeostasis
+created_by: peter
+creation_date: 2010-09-07T01:51:12Z
+
+[Term]
 id: HP:0010884
 name: Acromelia
 namespace: human_phenotype
@@ -10904,6 +10945,17 @@ is_a: HP:0012649 ! Increased inflammatory response
 is_a: HP:0410042 ! Abnormal liver morphology
 created_by: hecht
 creation_date: 2012-09-16T05:03:29Z
+
+[Term]
+id: HP:0012116
+name: Abnormal albumin level
+namespace: human_phenotype
+def: "Deviation from normal concentration of albumin in the blood." [HPO:probinson]
+synonym: "Abnormal albumin level" EXACT layperson []
+xref: UMLS:C4023036
+is_a: HP:0010876 ! Abnormality of circulating protein level
+created_by: hecht
+creation_date: 2012-09-16T05:14:53Z
 
 [Term]
 id: HP:0012145

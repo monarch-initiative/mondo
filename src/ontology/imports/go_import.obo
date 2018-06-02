@@ -3351,6 +3351,15 @@ intersection_of: BFO:0000066 GO:0005576 ! occurs in extracellular region
 relationship: BFO:0000066 GO:0005576 ! occurs in extracellular region
 
 [Term]
+id: GO:0006859
+name: extracellular carbohydrate transport
+def: "The directed extracellular movement of carbohydrates." []
+is_a: GO:0006858 ! extracellular transport
+is_a: GO:0008643 ! carbohydrate transport
+intersection_of: GO:0008643 ! carbohydrate transport
+intersection_of: BFO:0000066 GO:0005576 ! occurs in extracellular region
+
+[Term]
 id: GO:0006860
 name: extracellular amino acid transport
 def: "The directed extracellular movement of amino acids." []
@@ -4168,6 +4177,23 @@ is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:0042816 ! vitamin B6 metabolic process
 is_a: GO:0051186 ! cofactor metabolic process
 is_a: GO:1901615 ! organic hydroxy compound metabolic process
+
+[Term]
+id: GO:0008643
+name: carbohydrate transport
+def: "The directed movement of carbohydrate into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Carbohydrates are any of a group of organic compounds based of the general formula Cx(H2O)y." []
+synonym: "sugar transport" NARROW []
+is_a: GO:0071702 ! organic substance transport
+
+[Term]
+id: GO:0008645
+name: hexose transmembrane transport
+def: "The process in which hexose is transported across a membrane. Hexoses are any aldoses with a chain of six carbon atoms in the molecule." []
+synonym: "hexose membrane transport" RELATED []
+synonym: "hexose transport" RELATED []
+synonym: "high-affinity hexose transport" NARROW []
+synonym: "low-affinity hexose transport" NARROW []
+is_a: GO:0015749 ! monosaccharide transmembrane transport
 
 [Term]
 id: GO:0008652
@@ -5508,6 +5534,38 @@ intersection_of: RO:0002212 GO:0007005 ! negatively regulates mitochondrion orga
 relationship: RO:0002212 GO:0007005 ! negatively regulates mitochondrion organization
 
 [Term]
+id: GO:0010827
+name: regulation of glucose transmembrane transport
+def: "Any process that modulates the frequency, rate or extent of glucose transport across a membrane. Glucose transport is the directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "regulation of glucose transport" RELATED []
+is_a: GO:0034762 ! regulation of transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:1904659 ! regulates glucose transmembrane transport
+relationship: RO:0002211 GO:1904659 ! regulates glucose transmembrane transport
+
+[Term]
+id: GO:0010828
+name: positive regulation of glucose transmembrane transport
+def: "Any process that increases the frequency, rate or extent of glucose transport across a membrane. Glucose transport is the directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "positive regulation of glucose transport" RELATED []
+is_a: GO:0010827 ! regulation of glucose transmembrane transport
+is_a: GO:0034764 ! positive regulation of transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:1904659 ! positively regulates glucose transmembrane transport
+relationship: RO:0002213 GO:1904659 ! positively regulates glucose transmembrane transport
+
+[Term]
+id: GO:0010829
+name: negative regulation of glucose transmembrane transport
+def: "Any process that decreases the frequency, rate or extent of glucose transport across a membrane. Glucose transport is the directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "negative regulation of glucose transport" RELATED []
+is_a: GO:0010827 ! regulation of glucose transmembrane transport
+is_a: GO:0034763 ! negative regulation of transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:1904659 ! negatively regulates glucose transmembrane transport
+relationship: RO:0002212 GO:1904659 ! negatively regulates glucose transmembrane transport
+
+[Term]
 id: GO:0010876
 name: lipid localization
 def: "Any process in which a lipid is transported to, or maintained in, a specific location." []
@@ -5850,6 +5908,13 @@ name: bilirubin transport
 def: "The directed movement of bilirubin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 is_a: GO:0006835 ! dicarboxylic acid transport
 is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
+id: GO:0015749
+name: monosaccharide transmembrane transport
+def: "The process in which a monosaccharide is transported across a lipid bilayer, from one side of a membrane to the other. Monosaccharides are the simplest carbohydrates; they are polyhydric alcohols containing either an aldehyde or a keto group and between three to ten or more carbon atoms. They form the constitutional repeating units of oligo- and polysaccharides." []
+synonym: "monosaccharide transport" RELATED []
+is_a: GO:0034219 ! carbohydrate transmembrane transport
 
 [Term]
 id: GO:0015758
@@ -7306,6 +7371,12 @@ def: "Catalysis of the reaction: vitamin D3 + NADPH + H+ + O2 = calcidiol + NADP
 synonym: "cholecalciferol 25-hydroxylase activity" EXACT []
 is_a: GO:0070643 ! vitamin D 25-hydroxylase activity
 relationship: BFO:0000050 GO:0036378 ! part of calcitriol biosynthetic process from calciol
+
+[Term]
+id: GO:0030421
+name: defecation
+def: "The expulsion of feces from the rectum." []
+is_a: GO:0007588 ! excretion
 
 [Term]
 id: GO:0030424
@@ -9017,6 +9088,15 @@ is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0048771 ! positively regulates tissue remodeling
 relationship: RO:0002213 GO:0048771 ! positively regulates tissue remodeling
+
+[Term]
+id: GO:0034219
+name: carbohydrate transmembrane transport
+def: "The process in which a carbohydrate is transported across a membrane." []
+synonym: "carbohydrate membrane transport" EXACT []
+synonym: "transmembrane carbohydrate transport" EXACT []
+is_a: GO:0008643 ! carbohydrate transport
+is_a: GO:0055085 ! transmembrane transport
 
 [Term]
 id: GO:0034220
@@ -20276,6 +20356,13 @@ intersection_of: RO:0002213 GO:0061615 ! positively regulates glycolytic process
 relationship: RO:0002213 GO:0061615 ! positively regulates glycolytic process through fructose-6-phosphate
 
 [Term]
+id: GO:1904659
+name: glucose transmembrane transport
+def: "The process in which glucose is transported across a membrane." []
+synonym: "glucose transport" RELATED []
+is_a: GO:0008645 ! hexose transmembrane transport
+
+[Term]
 id: GO:1904729
 name: regulation of intestinal lipid absorption
 def: "Any process that modulates the frequency, rate or extent of intestinal lipid absorption." []
@@ -21251,6 +21338,37 @@ is_a: GO:2000282 ! regulation of cellular amino acid biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0008652 ! positively regulates cellular amino acid biosynthetic process
 relationship: RO:0002213 GO:0008652 ! positively regulates cellular amino acid biosynthetic process
+
+[Term]
+id: GO:2000292
+name: regulation of defecation
+def: "Any process that modulates the frequency, rate or extent of defecation." []
+is_a: GO:0044062 ! regulation of excretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0030421 ! regulates defecation
+relationship: RO:0002211 GO:0030421 ! regulates defecation
+
+[Term]
+id: GO:2000293
+name: negative regulation of defecation
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of defecation." []
+is_a: GO:0051048 ! negative regulation of secretion
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:2000292 ! regulation of defecation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0030421 ! negatively regulates defecation
+relationship: RO:0002212 GO:0030421 ! negatively regulates defecation
+
+[Term]
+id: GO:2000294
+name: positive regulation of defecation
+def: "Any process that activates or increases the frequency, rate or extent of defecation." []
+is_a: GO:0051047 ! positive regulation of secretion
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:2000292 ! regulation of defecation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0030421 ! positively regulates defecation
+relationship: RO:0002213 GO:0030421 ! positively regulates defecation
 
 [Term]
 id: GO:2000310

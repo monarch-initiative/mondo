@@ -1,8 +1,19 @@
+## 2018-06-01 Release
+
+ * [autoimmune retinopathy](http://purl.obolibrary.org/obo/MONDO_0100014)
+ * [adult-onset segmental dystonia](http://purl.obolibrary.org/obo/MONDO_0100015)
+ * [early-onset generalized dystonia](http://purl.obolibrary.org/obo/MONDO_0100016)
+ * [ECHS1-related paroxysmal dyskinesia](http://purl.obolibrary.org/obo/MONDO_0100019)
+ * [von Willebrand disease (hereditary or acquired)](http://purl.obolibrary.org/obo/MONDO_0024574)
+ * [familial hypertrophic cardiomyopathy](http://purl.obolibrary.org/obo/MONDO_0024573)
+ * [immunodeficiency-related disorder](http://purl.obolibrary.org/obo/MONDO_0024572)
+ * [AIDS-related disorder](http://purl.obolibrary.org/obo/MONDO_0024571)
+
 ## 2018-05-29 Release
 
 New classes:
 
-* [vascular bone neoplasm](http://purl.obolibrary.org/obo/MONDO_0024499)
+ * [vascular bone neoplasm](http://purl.obolibrary.org/obo/MONDO_0024499)
  * [glioma susceptibility 1](http://purl.obolibrary.org/obo/MONDO_0024498)
  * [familial chronic mucocutaneous candidiasis](http://purl.obolibrary.org/obo/MONDO_0024486)
  * [papillary urothelial hyperplasia](http://purl.obolibrary.org/obo/MONDO_0024485)
