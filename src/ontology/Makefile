@@ -266,7 +266,7 @@ INF: mondo-edit.obo
 	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --keepRedundant --markIsInferred --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | perl -npe 's@is_inferred="true"@source="OWLReasoner:Elk-$(ISODATE)"@' | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
 
 NORM: mondo-edit.obo
-	owltools --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.tmp && mv $@.tmp $@
+	owltools-compat --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.tmp && mv $@.tmp $@
 
 
 
@@ -601,6 +601,9 @@ compare/ann-axioms-ncit-disease-new.owl: mirror/ncit-disease.owl
 compare/axioms-%-all.owl: compare/%-plus-lsyns.owl
 	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
+
+compare/entailed.obo: mondo-edit.obo
+	owltools --use-catalog $< --remove-axiom-annotations --reasoner elk --silence-elk --tag-entailed-axioms --set-ontology-id $(OBO)/mondo/$@ -o -f obo $@
 
 #compare/axioms-%.owl:
 #	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
