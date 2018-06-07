@@ -1,0 +1,42 @@
+@prefix    void: <http://rdfs.org/ns/void#> .
+@prefix	    lib: <http://www.swi-prolog.org/rdf/library/> .
+@prefix     owl: <http://www.w3.org/2002/07/owl#> .
+@prefix     rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix    rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix	dcterms: <http://purl.org/dc/terms/> .
+@prefix	   foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix     mondo: <http://purl.obolibrary.org/obo/MONDO> .
+@prefix        : <http://purl.obolibrary.org/obo/> .
+
+<mondo_edit>
+    a void:Dataset ;
+    dcterms:title "mondo edit file" ;
+    void:dataDump <mondo-edit.owl> ;
+    lib:source <http://monarchinitiative.org/> .
+    
+<equivs>
+    a lib:Ontology ;
+    a lib:Virtual ;
+    owl:imports <imports/equivalencies.owl> .
+    
+
+<ro>
+    a lib:Ontology ;
+    a lib:Virtual ;
+    owl:imports <http://purl.obolibrary.org/obo/ro.owl> .
+
+<hp>
+    a void:Dataset ;
+    dcterms:title "hp" ;
+    void:dataDump <hp.ttl> ;
+    lib:source <http://purl.obolibrary.org/obo/hp.owl> .
+
+<external>
+    a lib:Ontology ;
+    a lib:Virtual ;
+    owl:imports <mirror/mesh.owl>, <mirror/doid.owl>, <mirror/obo_orphanet.owl>, <mirror/ncit-disease.owl>, <mirror/snomed.owl>, <mirror/mesh.owl> .
+
+<all>
+    a lib:Ontology ;
+    a lib:Virtual ;
+    owl:imports <mondo_edit>, <equivs>, <external> .

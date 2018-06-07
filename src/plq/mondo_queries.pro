@@ -111,3 +111,8 @@ ext_merged(XC1,XC2,C,P) :-
         curie_uri(X2,XC2),
         X1 @< X2.
 
+equivalent_to_deprecated(C,X) :-
+        owl_equivalent_class(C,X),
+        C\=X,
+        deprecated(X).
+

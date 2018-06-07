@@ -318,6 +318,9 @@ reports/$(Q)-pqlx-$(Ont).tsv: mondo-edit.owl
 reports/pq-%.tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -e  "$*" > $@.tmp && mv $@.tmp $@
 
+reports/equiv-obs-%.tsv:
+	pl2sparql -e -A void.ttl -i mondo_edit -i equivs -i mirror/$*.owl -c ../plq/mondo_queries.pro -l equivalent_to_deprecated > $@
+
 reports/proxy-merge.tsv:
 	pl2sparql -f tsv -A void.ttl -e -i all -c ../plq/proxy_merge.pro proxy_merge > $@.tmp && mv $@.tmp $@
 
@@ -685,6 +688,9 @@ omim2medgen.obo: mim2gene_medgen
 # ----------------------------------------
 phenotype_annotation.tab:
 	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@ && touch $@
+
+g2p.tsv:
+	wget http://compbio.charite.de/jenkins/job/hpo.annotations.monthly/lastStableBuild/artifact/annotation/ALL_SOURCES_ALL_FREQUENCIES_genes_to_phenotype.txt -O $@ && touch $@
 
 d2p.tsv: phenotype_annotation.tab
 	../utils/phenotab2tbl.pl $< > $@
