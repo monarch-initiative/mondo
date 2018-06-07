@@ -1,4 +1,5 @@
 :- use_module(library(obo_metadata/oio)).
+:- use_module(library(obo_metadata/iao_metadata)).
 %:- use_module(library(rdf_owl/owl)).
 
 :- use_module(library(sparqlprog/emulate_builtins)).
@@ -115,4 +116,11 @@ equivalent_to_deprecated(C,X) :-
         owl_equivalent_class(C,X),
         C\=X,
         deprecated(X).
+
+equivalent_to_replaced_by(C,X,Y) :-
+        owl_equivalent_class(C,X),
+        C\=X,
+        deprecated(X),
+        term_replaced_by(X,Y).
+
 
