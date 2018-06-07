@@ -320,6 +320,8 @@ reports/pq-%.tsv: mondo-edit.owl
 
 reports/equiv-obs-%.tsv:
 	pl2sparql -e -A void.ttl -i mondo_edit -i equivs -i mirror/$*.owl -c ../plq/mondo_queries.pro -l equivalent_to_deprecated > $@
+reports/equiv-replaced-by-%.tsv:
+	pl2sparql -e -A void.ttl -i mondo_edit -i equivs -i mirror/$*.owl -c ../plq/mondo_queries.pro -l equivalent_to_replaced_by > $@
 
 reports/proxy-merge.tsv:
 	pl2sparql -f tsv -A void.ttl -e -i all -c ../plq/proxy_merge.pro proxy_merge > $@.tmp && mv $@.tmp $@
@@ -453,6 +455,11 @@ mirror/chebi.owl:
 mirror/mfoem.owl: 
 	$(OWLTOOLS) $(OBO)/mfoem.owl --remove-annotation-assertions -l -s -d --make-subset-by-properties -f BFO:0000050 // --remove-dangling-annotations  -o $@
 .PRECIOUS: mirror/mfoem.owl
+
+# we have to roundtrip some ontologies through obo for obscure reasons see https://github.com/monarch-initiative/mondo/issues/237
+mirror/doid.owl:
+	wget --no-check-certificate $(OBO)/doid.owl -O doid1.owl && owltools doid1.owl -o -f obo doid1.obo && owltools doid1.obo -o $@
+
 
 mirror/neoplasm-core.owl:
 	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@ && touch $@
