@@ -190,7 +190,9 @@ all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-m
 
 TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref
 subsets/mondo-minimal.owl: mondo-component.owl
-	owltools --use-catalog $< $(TRIM_MINIMAL) --set-ontology-id $(OBO)/mondo/$@ --add-ontology-annotation $(PV_CC0) -o $@
+	owltools --use-catalog $< $(TRIM_MINIMAL) --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
+	robot annotate -R -i $@.tmp.owl -o $@.tmp2.owl &&\
+	owltools $@.tmp2 --add-ontology-annotation $(PV_CC0) -o $@
 
 subsets/%.json: subsets/%.owl
 	robot convert -i $< -o $@
