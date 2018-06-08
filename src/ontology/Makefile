@@ -191,8 +191,8 @@ all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-m
 TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref
 subsets/mondo-minimal.owl: mondo-component.owl
 	owltools --use-catalog $< $(TRIM_MINIMAL) --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
-	robot annotate -R -i $@.tmp.owl -o $@.tmp2.owl &&\
-	owltools $@.tmp2 --add-ontology-annotation $(PV_CC0) -o $@
+	robot annotate -R true -i $@.tmp.owl -o $@.tmp2.owl &&\
+	owltools $@.tmp2.owl --add-ontology-annotation $(PV_CC0) -o $@
 
 subsets/%.json: subsets/%.owl
 	robot convert -i $< -o $@
@@ -350,7 +350,8 @@ ADDITIONAL_REPORT_FILES = reports/release/semantic-xref-pairs.tsv
 #ADDITIONAL_REPORT_FILES = reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml reports/release/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 all_reports: mondo.owl $(ADDITIONAL_REPORT_FILES)
-	robot query -f tsv -i $< $(REPORT_ARGS)
+	robot query -f tsv -i $< $(REPORT_ARGS) && touch $@
+
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
 reports/edit/%.tsv: $(SRC) $(SPARQLDIR)/%.sparql

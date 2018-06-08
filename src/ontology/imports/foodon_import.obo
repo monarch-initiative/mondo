@@ -3,16 +3,25 @@ ontology: mondo/imports/foodon_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_00002403>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411215>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411261>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411297>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411301>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03411347>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03412345>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03412846>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03420167>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/FOODON_03420294>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PO_0009001>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PO_0009085>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PO_0009087>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PO_0030109>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000052>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0001000>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>))\n############################\n#   Object Properties\n############################\n\n# Object Property: <http://purl.obolibrary.org/obo/BFO_0000050> (<http://purl.obolibrary.org/obo/BFO_0000050>)\n\nEquivalentObjectProperties(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectInverseOf(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0000052> (<http://purl.obolibrary.org/obo/RO_0000052>)\n\nEquivalentObjectProperties(<http://purl.obolibrary.org/obo/RO_0000052> ObjectInverseOf(<http://purl.obolibrary.org/obo/RO_0000053>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002351> (<http://purl.obolibrary.org/obo/RO_0002351>)\n\nIrreflexiveObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>)\n\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03411215> (<http://purl.obolibrary.org/obo/FOODON_03411215>)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/FOODON_03411215> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/FOODON_00002403> ObjectUnionOf(<http://purl.obolibrary.org/obo/FOODON_03411261> <http://purl.obolibrary.org/obo/FOODON_03411301> <http://purl.obolibrary.org/obo/FOODON_03412345> <http://purl.obolibrary.org/obo/FOODON_03412846>)))\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03411297> (<http://purl.obolibrary.org/obo/FOODON_03411297>)\n\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03411347> (<http://purl.obolibrary.org/obo/FOODON_03411347>)\n\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03420167> (<http://purl.obolibrary.org/obo/FOODON_03420167>)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/FOODON_03420167> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/PO_0009001>))\n\n# Class: <http://purl.obolibrary.org/obo/FOODON_03420294> (<http://purl.obolibrary.org/obo/FOODON_03420294>)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/FOODON_03420294> ObjectUnionOf(<http://purl.obolibrary.org/obo/PO_0009085> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/PO_0009087> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0001000> <http://purl.obolibrary.org/obo/PO_0030109>))))\n\n\nDisjointClasses(<http://purl.obolibrary.org/obo/FOODON_03411215> <http://purl.obolibrary.org/obo/FOODON_03411297> <http://purl.obolibrary.org/obo/FOODON_03411347>)\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
 id: BFO:0000002
 name: continuant
 def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
 is_a: BFO:0000002 ! continuant
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
@@ -35,6 +44,13 @@ name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
 is_a: BFO:0000017 ! realizable entity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Term]
+id: BFO:0000024
+name: fiat object
+name: fiat object part
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: BFO:0000040
@@ -74,8 +90,9 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
 [Term]
 id: ENVO:00010483
 name: environmental material
+def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
 def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
-is_a: BFO:0000040 ! material entity
+is_a: BFO:0000024 ! fiat object part
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
@@ -83,16 +100,19 @@ id: FOODON:00001002
 name: foodon product type
 def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." [Wikipedia:Food]
 is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001015
 name: plant food product
 def: "This food product type includes food products which are derived from or produced by a plant." []
 is_a: FOODON:00002381 ! food product by organism
+is_a: FOODON:00002403 ! food material
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:03411347 ! derives from plant (food source)
 property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001046
@@ -142,6 +162,7 @@ name: plant seed food product
 is_a: FOODON:00001015 ! plant food product
 intersection_of: FOODON:00001015 ! plant food product
 intersection_of: RO:0001000 FOODON:03420155 ! derives from seed (anatomical part)
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001176
@@ -181,12 +202,15 @@ intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish (food sourc
 id: FOODON:00002381
 name: food product by organism
 is_a: FOODON:00001002 ! foodon product type
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00002403
 name: food material
+is_a: ENVO:00010483 ! environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:03000003
@@ -286,11 +310,13 @@ property_value: IAO:0000412 http://langual.org xsd:string
 [Term]
 id: FOODON:03400361
 name: food product type
+def: "A food product type is a class of food products that is differentiated by its food composition, processing and/or consumption characteristics. This does not include brand name products but it may include generic food dish categories." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: LANGUAL:A0361
 is_a: BFO:0000040 ! material entity
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:03400643

@@ -2310,6 +2310,19 @@ xref: UMLS:C4025821
 is_a: HP:0040075 ! Hypopituitarism
 
 [Term]
+id: HP:0000834
+name: Abnormality of the adrenal glands
+namespace: human_phenotype
+def: "Abnormality of the adrenal glands, i.e., of the endocrine glands located at the top of the kindneys." [HPO:probinson]
+synonym: "Adrenal abnormalities" EXACT layperson []
+synonym: "Adrenal gland disease" RELATED layperson []
+xref: MSH:D000307
+xref: SNOMEDCT_US:30171000
+xref: UMLS:C0001621
+xref: UMLS:C4021794
+is_a: HP:0000818 ! Abnormality of the endocrine system
+
+[Term]
 id: HP:0000842
 name: Hyperinsulinemia
 namespace: human_phenotype
@@ -2333,6 +2346,33 @@ xref: UMLS:C0020502
 is_a: HP:0011767 ! Abnormality of the parathyroid physiology
 
 [Term]
+id: HP:0000846
+name: Adrenal insufficiency
+namespace: human_phenotype
+alt_id: HP:0000865
+alt_id: HP:0008218
+def: "Insufficient production of steroid hormones (primarily cortisol) by the adrenal glands as a result of a primary defect in the glands themselves." [HPO:probinson, pmid:11443143]
+comment: Adrenal insufficiency may cause persistent vomiting, anorexia, hypoglycemia, poor weight gain in a child, or unexplained weight loss in an adult, malaise, fatigue, muscular weakness, unexplained isotonic or hyponatremic dehydration, hyperkalemia, hypotension, hypoglycemia and especially generalized hyperpigmentation.
+synonym: "Hypoadrenalism" EXACT []
+xref: MSH:D000309
+xref: SNOMEDCT_US:111563005
+xref: SNOMEDCT_US:237785004
+xref: SNOMEDCT_US:386584007
+xref: UMLS:C0001623
+is_a: HP:0011733 ! Abnormality of adrenal physiology
+
+[Term]
+id: HP:0000847
+name: Abnormality of renin-angiotensin system
+namespace: human_phenotype
+alt_id: HP:0003350
+def: "An abnormality of the renin-angiotensin system." [HPO:probinson]
+comment: The renin-angiotensin system is a hormone system that regulates blood pressure and water (fluid) balance.
+synonym: "Abnormality of the renin-aldosterone axis" EXACT []
+xref: UMLS:C4021793
+is_a: HP:0000818 ! Abnormality of the endocrine system
+
+[Term]
 id: HP:0000853
 name: Goiter
 namespace: human_phenotype
@@ -2352,6 +2392,22 @@ synonym: "Menstrual irregularity" EXACT layperson []
 xref: SNOMEDCT_US:80182007
 xref: UMLS:C0156404
 is_a: HP:0008373 ! Puberty and gonadal disorders
+
+[Term]
+id: HP:0000859
+name: Hyperaldosteronism
+namespace: human_phenotype
+alt_id: HP:0004318
+alt_id: HP:0005975
+def: "Overproduction of the mineralocorticoid aldosterone by the adrenal cortex." [DDD:spark, HPO:probinson]
+synonym: "Elevated plasma aldosterone" EXACT layperson []
+synonym: "Increased aldosterone" EXACT layperson []
+synonym: "Increased aldosterone production" EXACT layperson []
+synonym: "Mineralocorticoid excess" EXACT []
+xref: MSH:D006929
+xref: SNOMEDCT_US:88213004
+xref: UMLS:C0020428
+is_a: HP:0002717 ! Adrenal overactivity
 
 [Term]
 id: HP:0000864
@@ -4787,6 +4843,21 @@ xref: UMLS:C0011175
 is_a: HP:0011032 ! Abnormality of fluid regulation
 
 [Term]
+id: HP:0001945
+name: Fever
+namespace: human_phenotype
+def: "Elevated body temperature due to failed thermoregulation." [HPO:sdoelken]
+comment: Hyperthermia is defined as a temperature greater than 37.5-38.3 degree celsius (100-101 degree Fahrenheit).
+synonym: "Fever" EXACT layperson []
+synonym: "Hyperthermia" EXACT []
+synonym: "Pyrexia" EXACT []
+xref: MSH:D005334
+xref: SNOMEDCT_US:386661006
+xref: SNOMEDCT_US:50177009
+xref: UMLS:C0015967
+is_a: HP:0004370 ! Abnormality of temperature regulation
+
+[Term]
 id: HP:0001962
 name: Palpitations
 namespace: human_phenotype
@@ -6349,6 +6420,16 @@ xref: UMLS:C0497156
 is_a: HP:0002733 ! Abnormality of the lymph nodes
 
 [Term]
+id: HP:0002717
+name: Adrenal overactivity
+namespace: human_phenotype
+comment: Cortisol is the main member of the glucocorticoid family in humans and together with aldosterone is one of the main secretions of the adrenal cortex.
+xref: UMLS:C4025685
+is_a: HP:0011733 ! Abnormality of adrenal physiology
+created_by: peter
+creation_date: 2008-02-25T10:41:00Z
+
+[Term]
 id: HP:0002718
 name: Recurrent bacterial infections
 namespace: human_phenotype
@@ -7154,6 +7235,18 @@ xref: UMLS:C4025630
 is_a: HP:0011842 ! Abnormality of skeletal morphology
 
 [Term]
+id: HP:0003351
+name: Decreased circulating renin level
+namespace: human_phenotype
+alt_id: HP:0003263
+def: "An decreased level of renin (PRO:000013883) in the blood." [HPO:probinson]
+synonym: "Decreased plasma renin activity" EXACT []
+synonym: "Low plasma renin activity" EXACT []
+synonym: "Suppressed plasma renin activity" EXACT []
+xref: UMLS:C1845206
+is_a: HP:0040084 ! Abnormal circulating renin
+
+[Term]
 id: HP:0003355
 name: Aminoaciduria
 namespace: human_phenotype
@@ -7581,6 +7674,30 @@ xref: UMLS:C4048270
 is_a: HP:0010701 ! Abnormal immunoglobulin level
 created_by: peter
 creation_date: 2008-02-20T03:34:00Z
+
+[Term]
+id: HP:0004319
+name: Decreased circulating aldosterone level
+namespace: human_phenotype
+alt_id: HP:0000355
+alt_id: HP:0002924
+alt_id: HP:0008184
+alt_id: HP:0008190
+def: "Abnormally reduced levels of aldosterone." [DDD:spark, HPO:probinson]
+comment: Aldosterone is a hormone that is produce by the adrenal cortex and that acts on the distal tubules and collecting ducts to favor retention of sodium excretion of potassium, and increased water retention, thereby tending to increase blood pressure. Aldosterone is sometimes called a mineralocorticoid because of its influence on sodium homeostasis.
+synonym: "Decreased aldosterone" EXACT []
+synonym: "Decreased aldosterone production" EXACT []
+synonym: "Decreased serum aldosterone" EXACT []
+synonym: "Hypoaldosteronism" EXACT []
+synonym: "Mineralocorticoid insufficiency" EXACT []
+xref: MSH:D006994
+xref: SNOMEDCT_US:60086000
+xref: UMLS:C0020595
+xref: UMLS:C0857899
+xref: UMLS:C1846226
+is_a: HP:0008207 ! Primary adrenal insufficiency
+created_by: peter
+creation_date: 2008-02-25T10:45:00Z
 
 [Term]
 id: HP:0004322
@@ -8675,6 +8792,27 @@ xref: SNOMEDCT_US:37193007
 xref: UMLS:C0015503
 xref: UMLS:C4024722
 is_a: HP:0010988 ! Abnormality of the extrinsic pathway
+
+[Term]
+id: HP:0008207
+name: Primary adrenal insufficiency
+namespace: human_phenotype
+alt_id: HP:0000862
+alt_id: HP:0008219
+alt_id: HP:0008252
+def: "Insufficient production of steroid hormones (primarily cortisol) by the adrenal glands as a result of a primary defect in the glands themselves." [HPO:probinson]
+comment: Deficiency of both glucocorticoids and mineralocorticoids.
+synonym: "Addison disease" EXACT []
+synonym: "Addison's disease" EXACT []
+synonym: "Adrenocortical insufficiency" EXACT []
+synonym: "Primary adrenocortical failure" EXACT []
+xref: MSH:D000224
+xref: SNOMEDCT_US:363732003
+xref: SNOMEDCT_US:373662000
+xref: SNOMEDCT_US:386584007
+xref: UMLS:C0001403
+xref: UMLS:C0405580
+is_a: HP:0000846 ! Adrenal insufficiency
 
 [Term]
 id: HP:0008321
@@ -10091,6 +10229,17 @@ created_by: peter
 creation_date: 2011-03-09T11:00:32Z
 
 [Term]
+id: HP:0011043
+name: Abnormality of circulating adrenocorticotropin level
+namespace: human_phenotype
+def: "An abnormal concentration of corticotropin in the blood." [HPO:probinson]
+comment: Adrenocorticotropic hormone (ACTH), also known as corticotropin, is a polypeptide hormone produced and secreted by the pituitary gland comprising 39 amino acid residues coupled in a linear sequence. . It is a component of the hypothalamic-pituitary-adrenal axis and stimulates increased production and release of corticosteroids and cortisol from the adrenal cortex.
+xref: UMLS:C4023574
+is_a: HP:0003117 ! Abnormality of circulating hormone level
+created_by: peter
+creation_date: 2011-03-10T07:46:59Z
+
+[Term]
 id: HP:0011107
 name: Recurrent aphthous stomatitis
 namespace: human_phenotype
@@ -10653,6 +10802,17 @@ xref: UMLS:C4023215
 is_a: HP:0012638 ! Abnormality of nervous system physiology
 created_by: peter
 creation_date: 2012-04-19T07:44:18Z
+
+[Term]
+id: HP:0011733
+name: Abnormality of adrenal physiology
+namespace: human_phenotype
+alt_id: HP:0002855
+def: "A functional abnormality of the adrenal glands." [HPO:probinson]
+xref: UMLS:C4023212
+is_a: HP:0000834 ! Abnormality of the adrenal glands
+created_by: peter
+creation_date: 2012-04-21T08:05:42Z
 
 [Term]
 id: HP:0011747
@@ -11421,6 +11581,45 @@ created_by: peter
 creation_date: 2014-05-24T04:37:10Z
 
 [Term]
+id: HP:0012823
+name: Clinical modifier
+namespace: human_phenotype
+alt_id: HP:0000004
+def: "This subontology is designed to provide terms to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects." [HPO:probinson]
+comment: Note that some of the terms, such as Intellectual disability, have children terms such as Severe intellectual disability that represent precomposed combinations of modifiers and phenotypic abnormality terms. This done where the medical community commonly uses these terms with a fixed meaning (for instance, the Intellectual disability terms are used with specific IQ ranges). For computational reasoning, the semantics are intended to be the same as if there was a combination of the phenotype term and the clinical modifier term.
+synonym: "Phenotypic modifier" EXACT []
+xref: UMLS:C4021064
+is_a: HP:0000001 ! All
+created_by: peter
+creation_date: 2014-06-06T06:34:24Z
+
+[Term]
+id: HP:0012824
+name: Severity
+namespace: human_phenotype
+def: "The intensity or degree of a manifestation." [HPO:probinson]
+comment: Synonymous with PATO:0000049, intensity.
+synonym: "Intensity" EXACT []
+xref: SNOMEDCT_US:103370009
+xref: UMLS:C0522510
+is_a: HP:0012823 ! Clinical modifier
+created_by: peter
+creation_date: 2014-06-06T06:39:22Z
+
+[Term]
+id: HP:0012825
+name: Mild
+namespace: human_phenotype
+def: "Having a relatively minor degree of severity. For quantitative traits, a deviation of between two and three standard deviations from the appropriate population mean." [HPO:probinson]
+comment: PATO:0000394, mild.
+synonym: "Mild" EXACT layperson []
+xref: SNOMEDCT_US:446411000124101
+xref: UMLS:C1513302
+is_a: HP:0012824 ! Severity
+created_by: peter
+creation_date: 2014-06-06T06:41:33Z
+
+[Term]
 id: HP:0012874
 name: Abnormal male reproductive system physiology
 namespace: human_phenotype
@@ -11695,6 +11894,22 @@ def: "An anomalous (adventitious) sound produced by the breathing process." [HPO
 xref: SNOMEDCT_US:301273002
 xref: UMLS:C0231856
 is_a: HP:0002795 ! Functional respiratory abnormality
+
+[Term]
+id: HP:0030850
+name: Abnormal pulse pressure
+namespace: human_phenotype
+def: "An anomaly of the pulse pressure, which is defined as the systolic pressured minus the diastolic pressure." [HPO:probinson]
+xref: UMLS:C0855322
+is_a: HP:0030163 ! Abnormal vascular physiology
+
+[Term]
+id: HP:0030852
+name: High pulse pressure
+namespace: human_phenotype
+def: "Increased amplitude of the pulse pressure (systolic blood pressure minus diastolic blood pressure)." [HPO:probinson]
+xref: UMLS:C0855323
+is_a: HP:0030850 ! Abnormal pulse pressure
 
 [Term]
 id: HP:0030875
@@ -11991,6 +12206,16 @@ namespace: human_phenotype
 synonym: "Abnormal blood calcium levels" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: UMLS:C4022450
 is_a: HP:0004363 ! Abnormality of calcium homeostasis
+created_by: HPO:skoehler
+
+[Term]
+id: HP:0040084
+name: Abnormal circulating renin
+namespace: human_phenotype
+synonym: "Abnormal circulating renin" EXACT layperson []
+synonym: "Abnormal plasma renin" EXACT layperson [HPO:skoehler]
+xref: UMLS:C4021038
+is_a: HP:0000847 ! Abnormality of renin-angiotensin system
 created_by: HPO:skoehler
 
 [Term]

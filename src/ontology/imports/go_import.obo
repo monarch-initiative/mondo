@@ -1600,6 +1600,21 @@ is_a: GO:0016814 ! hydrolase activity, acting on carbon-nitrogen (but not peptid
 is_a: GO:0019239 ! deaminase activity
 
 [Term]
+id: GO:0004029
+name: aldehyde dehydrogenase (NAD) activity
+def: "Catalysis of the reaction: an aldehyde + NAD+ + H2O = an acid + NADH + H+." []
+synonym: "aldehyde dehydrogenase (NAD+)" EXACT []
+synonym: "aldehyde:NAD+ oxidoreductase activity" EXACT []
+synonym: "CoA-independent aldehyde dehydrogenase activity" EXACT []
+synonym: "m-methylbenzaldehyde dehydrogenase activity" EXACT []
+synonym: "NAD-aldehyde dehydrogenase activity" EXACT []
+synonym: "NAD-dependent 4-hydroxynonenal dehydrogenase activity" EXACT []
+synonym: "NAD-dependent aldehyde dehydrogenase activity" EXACT []
+synonym: "NAD-linked aldehyde dehydrogenase activity" EXACT []
+synonym: "propionaldehyde dehydrogenase activity" EXACT []
+is_a: GO:0016620 ! oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor
+
+[Term]
 id: GO:0004046
 name: aminoacylase activity
 def: "Catalysis of the reaction: an N-acyl-L-amino acid + H2O = a carboxylate + an L-amino acid." []
@@ -9478,6 +9493,42 @@ is_a: GO:0023052 ! signaling
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
+id: GO:0035898
+name: parathyroid hormone secretion
+def: "The regulated release of parathyroid hormone into the circulatory system." []
+synonym: "parathormone secretion" EXACT []
+synonym: "parathyrin secretion" EXACT []
+synonym: "PTH secretion" EXACT []
+is_a: GO:0060986 ! endocrine hormone secretion
+
+[Term]
+id: GO:0035929
+name: steroid hormone secretion
+def: "The regulated release of any steroid that acts as a hormone into the circulatory system." []
+is_a: GO:0006869 ! lipid transport
+is_a: GO:0060986 ! endocrine hormone secretion
+
+[Term]
+id: GO:0035930
+name: corticosteroid hormone secretion
+def: "The regulated release of any corticosteroid hormone into the circulatory system." []
+synonym: "corticosteroid secretion" BROAD []
+is_a: GO:0035929 ! steroid hormone secretion
+
+[Term]
+id: GO:0035931
+name: mineralocorticoid secretion
+def: "The regulated release of any mineralocorticoid into the circulatory system. Mineralocorticoids are a class of steroid hormones that regulate water and electrolyte metabolism." []
+is_a: GO:0035930 ! corticosteroid hormone secretion
+
+[Term]
+id: GO:0035932
+name: aldosterone secretion
+def: "The regulated release of aldosterone into the circulatory system. Aldosterone is a pregnane-based steroid hormone produced by the outer-section (zona glomerulosa) of the adrenal cortex in the adrenal gland, and acts on the distal tubules and collecting ducts of the kidney to cause the conservation of sodium, secretion of potassium, increased water retention, and increased blood pressure. The overall effect of aldosterone is to increase reabsorption of ions and water in the kidney." []
+is_a: GO:0015850 ! organic hydroxy compound transport
+is_a: GO:0035931 ! mineralocorticoid secretion
+
+[Term]
 id: GO:0035947
 name: regulation of gluconeogenesis by regulation of transcription from RNA polymerase II promoter
 def: "Any process that modulates the frequency, rate or extent of gluconeogenesis, by regulation of transcription from an RNA polymerase II promoter." []
@@ -10650,6 +10701,16 @@ is_a: GO:0044057 ! regulation of system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0022600 ! regulates digestive system process
 relationship: RO:0002211 GO:0022600 ! regulates digestive system process
+
+[Term]
+id: GO:0044060
+name: regulation of endocrine process
+def: "Any process that modulates the frequency, rate or extent of an endocrine process, a process involving the secretion of or response to endocrine hormones. An endocrine hormone is a hormone released into the circulatory system." []
+synonym: "regulation of endocrine system process" EXACT []
+is_a: GO:0044057 ! regulation of system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0050886 ! regulates endocrine process
+relationship: RO:0002211 GO:0050886 ! regulates endocrine process
 
 [Term]
 id: GO:0044062
@@ -13492,6 +13553,14 @@ synonym: "regulation of posture" EXACT []
 is_a: GO:0050905 ! neuromuscular process
 
 [Term]
+id: GO:0050886
+name: endocrine process
+def: "The process that involves the secretion of or response to endocrine hormones. An endocrine hormone is a hormone released into the circulatory system." []
+synonym: "endocrine physiological process" EXACT []
+synonym: "endocrine physiology" EXACT []
+is_a: GO:0003008 ! system process
+
+[Term]
 id: GO:0050890
 name: cognition
 def: "The operation of the mind by which an organism becomes aware of objects of thought or perception; it includes the mental activities associated with thinking, learning, and memory." []
@@ -15228,6 +15297,13 @@ is_a: GO:0016477 ! cell migration
 intersection_of: GO:0016477 ! cell migration
 intersection_of: BFO:0000050 GO:0007507 ! part of heart development
 relationship: BFO:0000050 GO:0007507 ! part of heart development
+
+[Term]
+id: GO:0060986
+name: endocrine hormone secretion
+def: "The regulated release of a hormone into the circulatory system." []
+is_a: GO:0046879 ! hormone secretion
+relationship: BFO:0000050 GO:0050886 ! part of endocrine process
 
 [Term]
 id: GO:0061024
@@ -21533,6 +21609,172 @@ is_a: GO:2000823 ! regulation of androgen receptor activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0004882 ! positively regulates androgen receptor activity
 relationship: RO:0002213 GO:0004882 ! positively regulates androgen receptor activity
+
+[Term]
+id: GO:2000828
+name: regulation of parathyroid hormone secretion
+def: "Any process that modulates the frequency, rate or extent of parathyroid hormone secretion." []
+synonym: "regulation of parathormone secretion" EXACT []
+synonym: "regulation of parathyrin secretion" EXACT []
+synonym: "regulation of PTH secretion" EXACT []
+is_a: GO:0044060 ! regulation of endocrine process
+is_a: GO:0046883 ! regulation of hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0035898 ! regulates parathyroid hormone secretion
+relationship: RO:0002211 GO:0035898 ! regulates parathyroid hormone secretion
+
+[Term]
+id: GO:2000829
+name: negative regulation of parathyroid hormone secretion
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of parathyroid hormone secretion." []
+synonym: "negative regulation of parathormone secretion" EXACT []
+synonym: "negative regulation of parathyrin secretion" EXACT []
+synonym: "negative regulation of PTH secretion" EXACT []
+is_a: GO:0046888 ! negative regulation of hormone secretion
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:2000828 ! regulation of parathyroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0035898 ! negatively regulates parathyroid hormone secretion
+relationship: RO:0002212 GO:0035898 ! negatively regulates parathyroid hormone secretion
+
+[Term]
+id: GO:2000830
+name: positive regulation of parathyroid hormone secretion
+def: "Any process that activates or increases the frequency, rate or extent of parathyroid hormone secretion." []
+synonym: "positive regulation of parathormone secretion" EXACT []
+synonym: "positive regulation of parathyrin secretion" EXACT []
+synonym: "positive regulation of PTH secretion" EXACT []
+is_a: GO:0046887 ! positive regulation of hormone secretion
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:2000828 ! regulation of parathyroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0035898 ! positively regulates parathyroid hormone secretion
+relationship: RO:0002213 GO:0035898 ! positively regulates parathyroid hormone secretion
+
+[Term]
+id: GO:2000831
+name: regulation of steroid hormone secretion
+def: "Any process that modulates the frequency, rate or extent of steroid hormone secretion." []
+is_a: GO:0032368 ! regulation of lipid transport
+is_a: GO:0044060 ! regulation of endocrine process
+is_a: GO:0046883 ! regulation of hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0035929 ! regulates steroid hormone secretion
+relationship: RO:0002211 GO:0035929 ! regulates steroid hormone secretion
+
+[Term]
+id: GO:2000832
+name: negative regulation of steroid hormone secretion
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of steroid hormone secretion." []
+is_a: GO:0032369 ! negative regulation of lipid transport
+is_a: GO:0046888 ! negative regulation of hormone secretion
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:2000831 ! regulation of steroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0035929 ! negatively regulates steroid hormone secretion
+relationship: RO:0002212 GO:0035929 ! negatively regulates steroid hormone secretion
+
+[Term]
+id: GO:2000833
+name: positive regulation of steroid hormone secretion
+def: "Any process that activates or increases the frequency, rate or extent of steroid hormone secretion." []
+is_a: GO:0032370 ! positive regulation of lipid transport
+is_a: GO:0046887 ! positive regulation of hormone secretion
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:2000831 ! regulation of steroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0035929 ! positively regulates steroid hormone secretion
+relationship: RO:0002213 GO:0035929 ! positively regulates steroid hormone secretion
+
+[Term]
+id: GO:2000846
+name: regulation of corticosteroid hormone secretion
+def: "Any process that modulates the frequency, rate or extent of corticosteroid hormone secretion." []
+synonym: "regulation of corticosteroid secretion" RELATED []
+is_a: GO:2000831 ! regulation of steroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0035930 ! regulates corticosteroid hormone secretion
+relationship: RO:0002211 GO:0035930 ! regulates corticosteroid hormone secretion
+
+[Term]
+id: GO:2000847
+name: negative regulation of corticosteroid hormone secretion
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of corticosteroid hormone secretion." []
+synonym: "negative regulation of corticosteroid secretion" RELATED []
+is_a: GO:2000832 ! negative regulation of steroid hormone secretion
+is_a: GO:2000846 ! regulation of corticosteroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0035930 ! negatively regulates corticosteroid hormone secretion
+relationship: RO:0002212 GO:0035930 ! negatively regulates corticosteroid hormone secretion
+
+[Term]
+id: GO:2000848
+name: positive regulation of corticosteroid hormone secretion
+def: "Any process that activates or increases the frequency, rate or extent of corticosteroid hormone secretion." []
+synonym: "positive regulation of corticosteroid secretion" RELATED []
+is_a: GO:2000833 ! positive regulation of steroid hormone secretion
+is_a: GO:2000846 ! regulation of corticosteroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0035930 ! positively regulates corticosteroid hormone secretion
+relationship: RO:0002213 GO:0035930 ! positively regulates corticosteroid hormone secretion
+
+[Term]
+id: GO:2000855
+name: regulation of mineralocorticoid secretion
+def: "Any process that modulates the frequency, rate or extent of mineralocorticoid secretion." []
+is_a: GO:2000846 ! regulation of corticosteroid hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0035931 ! regulates mineralocorticoid secretion
+relationship: RO:0002211 GO:0035931 ! regulates mineralocorticoid secretion
+
+[Term]
+id: GO:2000856
+name: negative regulation of mineralocorticoid secretion
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of mineralocorticoid secretion." []
+is_a: GO:2000847 ! negative regulation of corticosteroid hormone secretion
+is_a: GO:2000855 ! regulation of mineralocorticoid secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0035931 ! negatively regulates mineralocorticoid secretion
+relationship: RO:0002212 GO:0035931 ! negatively regulates mineralocorticoid secretion
+
+[Term]
+id: GO:2000857
+name: positive regulation of mineralocorticoid secretion
+def: "Any process that activates or increases the frequency, rate or extent of mineralocorticoid secretion." []
+is_a: GO:2000848 ! positive regulation of corticosteroid hormone secretion
+is_a: GO:2000855 ! regulation of mineralocorticoid secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0035931 ! positively regulates mineralocorticoid secretion
+relationship: RO:0002213 GO:0035931 ! positively regulates mineralocorticoid secretion
+
+[Term]
+id: GO:2000858
+name: regulation of aldosterone secretion
+def: "Any process that modulates the frequency, rate or extent of aldosterone secretion." []
+is_a: GO:2000855 ! regulation of mineralocorticoid secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0035932 ! regulates aldosterone secretion
+relationship: RO:0002211 GO:0035932 ! regulates aldosterone secretion
+
+[Term]
+id: GO:2000859
+name: negative regulation of aldosterone secretion
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of aldosterone secretion." []
+is_a: GO:2000856 ! negative regulation of mineralocorticoid secretion
+is_a: GO:2000858 ! regulation of aldosterone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0035932 ! negatively regulates aldosterone secretion
+relationship: RO:0002212 GO:0035932 ! negatively regulates aldosterone secretion
+
+[Term]
+id: GO:2000860
+name: positive regulation of aldosterone secretion
+def: "Any process that activates or increases the frequency, rate or extent of aldosterone secretion." []
+is_a: GO:2000857 ! positive regulation of mineralocorticoid secretion
+is_a: GO:2000858 ! regulation of aldosterone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0035932 ! positively regulates aldosterone secretion
+relationship: RO:0002213 GO:0035932 ! positively regulates aldosterone secretion
 
 [Term]
 id: GO:2001020
