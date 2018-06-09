@@ -5,6 +5,7 @@
 
 OBO=http://purl.obolibrary.org/obo
 OIO=http://www.geneontology.org/formats/oboInOwl\#
+SKOS=http://www.w3.org/2004/02/skos/core\#
 ONT=mondo
 BASE=$(OBO)/$(ONT)
 SRC=$(ONT)-edit.obo
@@ -188,9 +189,9 @@ test_nomerge: mondo.owl
 # ----------------------------------------
 all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-minimal.json
 
-TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref
-subsets/mondo-minimal.owl: mondo-component.owl
-	owltools --use-catalog $< $(TRIM_MINIMAL) --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
+TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch 
+subsets/mondo-minimal.owl: mondo-component.owl imports/equivalencies.owl
+	owltools --use-catalog $< $(TRIM_MINIMAL) imports/equivalencies.owl --merge-support-ontologies --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
 	robot annotate -R true -i $@.tmp.owl -o $@.tmp2.owl &&\
 	owltools $@.tmp2.owl --add-ontology-annotation $(PV_CC0) -o $@
 

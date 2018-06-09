@@ -1,3 +1,16 @@
+## 2018-06-08 Release
+
+ * [orbit neoplasm](http://purl.obolibrary.org/obo/MONDO_0024611)
+ * [parasitic skin disease](http://purl.obolibrary.org/obo/MONDO_0024610)
+ * [dientamoebiasis](http://purl.obolibrary.org/obo/MONDO_0024608)
+ * [congenital muscular dystrophy with cataracts and intellectual disability](http://purl.obolibrary.org/obo/MONDO_0024607)
+ * [vulvar squamous cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0024609)
+ * [pregnancy disease](http://purl.obolibrary.org/obo/MONDO_0024575)
+ * [CD3epsilon deficiency](http://purl.obolibrary.org/obo/MONDO_0024597)
+ * [hypertension-associated pregnancy disorder](http://purl.obolibrary.org/obo/MONDO_0024581)
+ * [hernia](http://purl.obolibrary.org/obo/MONDO_0024583)
+ * [male reproductive system neoplasm](http://purl.obolibrary.org/obo/MONDO_0024582)
+
 ## 2018-06-01 Release
 
  * [autoimmune retinopathy](http://purl.obolibrary.org/obo/MONDO_0100014)
