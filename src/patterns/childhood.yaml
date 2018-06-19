@@ -1,0 +1,36 @@
+pattern_name: childhood
+
+classes:
+  childhood: HP:0011463
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "childhood %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s of childhood"
+    vars:
+     - disease
+  - annotationProperty: oio:hasRelatedSynonym
+    text: "pediatric %s"
+    vars:
+     - disease
+
+def:
+  text: "A %s that occurs during childhood."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'childhood'"
+  vars:
+    - disease
+
