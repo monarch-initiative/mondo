@@ -4689,6 +4689,13 @@ relationship: RO:0002150 UBERON:0001161 ! continuous_with body of stomach
 relationship: RO:0002433 UBERON:0000945 ! contributes to morphology of stomach
 
 [Term]
+id: UBERON:0001164
+name: greater curvature of stomach
+def: "The greater curvature of the stomach is directed mainly forward, and is four or five times as long as the lesser curvature. [WP,unvetted]." []
+synonym: "stomach greater curvature" EXACT []
+is_a: UBERON:0009870 ! zone of stomach
+
+[Term]
 id: UBERON:0001165
 name: pyloric antrum
 def: "the area at the bottom of the stomach on the caudal side of the pyloric canal that contains gastrin-producing G cells, which stimulate acid production, and the luminal pH-sensitive population of somatostatin-producing D cells" []
@@ -11115,6 +11122,21 @@ relationship: BFO:0000050 UBERON:0001846 ! part of internal ear
 relationship: BFO:0000050 UBERON:0004681 ! part of vestibular system
 
 [Term]
+id: UBERON:0001840
+name: semicircular canal
+def: "One of three half-circular, interconnected tubes located inside each ear[WP]." []
+synonym: "canalis semicircularis" RELATED []
+synonym: "ductus semicirculares" RELATED []
+synonym: "scc" RELATED []
+synonym: "semicircular canals" EXACT []
+synonym: "semicircular ducts" RELATED []
+is_a: UBERON:0000025 ! tube
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0001846 ! part of internal ear
+relationship: BFO:0000050 UBERON:0001849 ! part of membranous labyrinth
+
+[Term]
 id: UBERON:0001844
 name: cochlea
 def: "the spiral-shaped bony canal in the inner ear containing the hair cells that transduce sound. Its core component is the Organ of Corti, the sensory organ of hearing, which is distributed along the partition separating fluid chambers in the coiled tapered tube of the cochlea. [WP,modified]." []
@@ -11197,6 +11219,19 @@ def: "the small membranous canal, connecting with both saccule and utricle of th
 synonym: "ductus endolymphaticus" EXACT []
 synonym: "ductus endolymphaticus" RELATED []
 is_a: UBERON:0000025 ! tube
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0001849 ! part of membranous labyrinth
+
+[Term]
+id: UBERON:0001862
+name: vestibular labyrinth
+def: "The part of the membranous labyrinth that includes the utricle and saccule lodged within the vestibule and the semicircular ducts lodged eccentrically in the corresponding canals." []
+synonym: "inner ear vestibular component" EXACT []
+synonym: "labyrinthus vestibularis" RELATED []
+synonym: "vestibular apparatus" RELATED []
+synonym: "vestibular component" BROAD []
+is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0001849 ! part of membranous labyrinth
@@ -16683,6 +16718,20 @@ relationship: BFO:0000050 UBERON:0001943 ! part of midbrain tegmentum
 relationship: extends_fibers_into UBERON:0001643 ! oculomotor nerve
 
 [Term]
+id: UBERON:0002673
+name: vestibular nuclear complex
+def: "Nuclear complex containing the vestibular nuclei." []
+synonym: "nuclei vestibulares" RELATED []
+synonym: "nuclei vestibulares in medulla oblongata" EXACT []
+synonym: "vestibular nuclei" EXACT []
+synonym: "vestibular nuclei in medulla oblongata" EXACT []
+synonym: "vestibular nucleus" RELATED []
+is_a: UBERON:0007245 ! nuclear complex of neuraxis
+is_a: UBERON:0019263 ! gray matter of hindbrain
+relationship: BFO:0000050 UBERON:0001896 ! part of medulla oblongata
+relationship: BFO:0000050 UBERON:0004681 ! part of vestibular system
+
+[Term]
 id: UBERON:0002682
 name: abducens nucleus
 def: "Nucleus located beneath the floor of the 4th ventricle in the pontine tegmentum, containing motor neurons innervating the lateral rectus muscle of the eye (Brodal, Neurological Anatomy, 3rd ed., 1981, pg 533)" []
@@ -16927,6 +16976,26 @@ is_a: UBERON:0001869 ! cerebral hemisphere
 intersection_of: UBERON:0001869 ! cerebral hemisphere
 intersection_of: BSPO:0000121 UBERON:0000955 ! in_right_side_of brain
 relationship: BSPO:0000121 UBERON:0000955 ! in_right_side_of brain
+
+[Term]
+id: UBERON:0002824
+name: vestibular ganglion
+def: "The ganglion of the vestibular nerve. It contains the cell bodies of the bipolar primary afferent neurons whose peripheral processes form synaptic contact with hair cells of the vestibular sensory end organs[WP,unvetted]. Distributed to the maculae of the utricle and saccule and to the ampullary crests of the semicircular ducts. The vestibular fibers arise in bipolar cells in the vestibular ganglion in the internal acoustic meatus." []
+synonym: "nucleus nervi oculomotorii, pars medialis" RELATED []
+synonym: "Scarpa's ganglion" EXACT []
+synonym: "vestibular part of vestibulocochlear ganglion" EXACT []
+synonym: "vestibulocochlear ganglion vestibular component" RELATED []
+synonym: "vestibulocochlear VIII ganglion vestibular component" EXACT []
+is_a: UBERON:0001714 ! cranial ganglion
+is_a: UBERON:0001800 ! sensory ganglion
+is_a: UBERON:0003338 ! ganglion of peripheral nervous system
+is_a: UBERON:0006585 ! vestibular organ
+is_a: UBERON:0010313 ! neural crest-derived structure
+intersection_of: UBERON:0001714 ! cranial ganglion
+intersection_of: extends_fibers_into UBERON:0003723 ! vestibular nerve
+relationship: BFO:0000050 UBERON:0001862 ! part of vestibular labyrinth
+relationship: BFO:0000050 UBERON:0002827 ! part of vestibulocochlear ganglion
+relationship: extends_fibers_into UBERON:0003723 ! vestibular nerve
 
 [Term]
 id: UBERON:0002827
@@ -23084,6 +23153,14 @@ relationship: conduit_for UBERON:0001896 ! medulla oblongata
 relationship: RO:0001025 UBERON:0001676 ! located_in occipital bone
 
 [Term]
+id: UBERON:0003688
+name: omentum
+def: "A fold of peritoneum originating at the stomach and supporting the viscera." []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0034944 ! zone of organ
+relationship: BFO:0000050 UBERON:0001178 ! part of visceral peritoneum
+
+[Term]
 id: UBERON:0003689
 name: sella turcica
 def: "The sella turcica is a saddle-shaped depression in the sphenoid bone at the base of the human skull. [WP,unvetted]." []
@@ -23392,6 +23469,30 @@ def: "The compartment containing the anterior extremities and half the inferior 
 synonym: "fossa cranii media" RELATED []
 synonym: "middle fossa" BROAD []
 is_a: UBERON:0008789 ! cranial fossa
+
+[Term]
+id: UBERON:0003723
+name: vestibular nerve
+def: "The vestibular nerve is one of the two branches of the Vestibulocochlear nerve (the cochlear nerve being the other). It goes to the semicircular canals via the vestibular ganglion. It receives positional information. Axons of the vestibular nerve synapse in the vestibular nucleus on the lateral floor and wall of the fourth ventricle in the pons and medulla. It arises from bipolar cells in the vestibular ganglion, ganglion of Scarpa, which is situated in the upper part of the outer end of the internal auditory meatus. [WP,unvetted]." []
+synonym: "nervus vestibularis" RELATED []
+synonym: "scarpa ganglion" RELATED []
+synonym: "scarpa's ganglion" RELATED []
+synonym: "scarpas ganglion" RELATED []
+synonym: "vestibular root of acoustic nerve" EXACT []
+synonym: "vestibular root of eighth cranial nerve" EXACT []
+synonym: "vestibulocochlear nerve vestibular root" RELATED []
+synonym: "vestibulocochlear VIII nerve vestibular component" EXACT []
+is_a: UBERON:0011779 ! nerve of head region
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: extends_fibers_into UBERON:0007228 ! vestibular nucleus
+intersection_of: RO:0002134 UBERON:0001840 ! innervates semicircular canal
+intersection_of: RO:0002134 UBERON:0006585 ! innervates vestibular organ
+intersection_of: RO:0002380 UBERON:0001648 ! branching_part_of vestibulocochlear nerve
+relationship: BFO:0000050 UBERON:0004681 ! part of vestibular system
+relationship: extends_fibers_into UBERON:0007228 ! vestibular nucleus
+relationship: RO:0002134 UBERON:0001840 ! innervates semicircular canal
+relationship: RO:0002134 UBERON:0006585 ! innervates vestibular organ
+relationship: RO:0002380 UBERON:0001648 ! branching_part_of vestibulocochlear nerve
 
 [Term]
 id: UBERON:0003724
@@ -34648,6 +34749,17 @@ relationship: RO:0002220 UBERON:0006653 ! adjacent_to glans clitoris
 relationship: RO:0002494 UBERON:0035006 ! transformation of preputial swelling of female
 
 [Term]
+id: UBERON:0005305
+name: thyroid follicle
+def: "Discrete, cystlike units of the thyroid gland that are lined with cuboidal epithelium and are filled with a colloid substance, about 30 to each lobule[BTO]." []
+synonym: "thyroid follicles" RELATED []
+synonym: "thyroid gland follicle" EXACT []
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004119 ! endoderm-derived structure
+relationship: BFO:0000050 UBERON:0002046 ! part of thyroid gland
+relationship: RO:0002433 UBERON:0002046 ! contributes to morphology of thyroid gland
+
+[Term]
 id: UBERON:0005309
 name: pronephric nephron
 def: "A pronephric nephron is the functional unit of the pronephros[GO]." []
@@ -34882,6 +34994,24 @@ synonym: "future neocortex" RELATED []
 synonym: "neocortex cortical plate" EXACT []
 is_a: UBERON:0014950 ! layer of developing cerebral cortex
 relationship: RO:0002387 UBERON:0001950 ! has potential to develop into neocortex
+
+[Term]
+id: UBERON:0005344
+name: peritoneal vaginal process
+def: "A peritoneal diverticulum in the embryonic lower anterior abdominal wall that traverses the inguinal canal. In the male it forms the tunica vaginalis testis and normally loses its connection with the peritoneal cavity; a persistent processus vaginalis in the female is known as the canal of Nuck[MP]." []
+synonym: "peritoneal diverticulum" RELATED []
+synonym: "processus vaginalis" BROAD []
+synonym: "processus vaginalis peritonei" RELATED []
+synonym: "processus vaginalis peritonei masculinus" NARROW []
+synonym: "processus vaginalis peritoneus" EXACT []
+synonym: "saccus vaginalis" EXACT []
+synonym: "vaginal process" RELATED []
+synonym: "vaginal process of peritoneum" EXACT []
+synonym: "vaginal process of peritoneum" RELATED []
+synonym: "vaginal process of testis" RELATED []
+synonym: "vaginal process of the peritoneum" RELATED []
+is_a: UBERON:0034696 ! fold of peritoneum
+relationship: BFO:0000050 UBERON:0000922 ! part of embryo
 
 [Term]
 id: UBERON:0005352
@@ -35439,6 +35569,26 @@ intersection_of: BFO:0000050 UBERON:0001677 ! part of sphenoid bone
 intersection_of: conduit_for UBERON:0000377 ! maxillary nerve
 relationship: BFO:0000050 UBERON:0001677 ! part of sphenoid bone
 relationship: conduit_for UBERON:0000377 ! maxillary nerve
+
+[Term]
+id: UBERON:0005448
+name: greater omentum
+def: "The greater omentum (also the great omentum, omentum majus, gastrocolic omentum, epiploön, or, especially in animals, caul) is a large fold of peritoneum that hangs down from the stomach, and extends from the stomach to the posterior abdominal wall after associating with the transverse colon." []
+synonym: "caul" RELATED []
+synonym: "epiploic" RELATED []
+synonym: "epiplooen" RELATED []
+synonym: "epiploon" RELATED []
+synonym: "epiploön" RELATED []
+synonym: "gastrocolic omentum" RELATED []
+synonym: "great omentum" RELATED []
+synonym: "omentectomy" RELATED []
+synonym: "omentum majus" RELATED []
+is_a: UBERON:0003688 ! omentum
+relationship: BFO:0000050 UBERON:0001178 ! part of visceral peritoneum
+relationship: RO:0001025 UBERON:0003887 ! located_in intraembryonic coelom
+relationship: RO:0002202 UBERON:0002296 ! develops_from dorsal mesentery
+relationship: RO:0002202 UBERON:0005602 ! develops_from dorsal mesogastrium
+relationship: RO:0002371 UBERON:0001164 ! attaches_to greater curvature of stomach
 
 [Term]
 id: UBERON:0005451
@@ -36165,6 +36315,15 @@ is_a: UBERON:0001136 ! mesothelium
 intersection_of: UBERON:0001136 ! mesothelium
 intersection_of: RO:0001025 UBERON:0001179 ! located_in peritoneal cavity
 relationship: RO:0001025 UBERON:0001179 ! located_in peritoneal cavity
+
+[Term]
+id: UBERON:0005670
+name: greater omentum mesothelium
+def: "A mesothelium that is part of a greater omentum." []
+is_a: UBERON:0001136 ! mesothelium
+intersection_of: UBERON:0001136 ! mesothelium
+intersection_of: BFO:0000050 UBERON:0005448 ! part of greater omentum
+relationship: BFO:0000050 UBERON:0005448 ! part of greater omentum
 
 [Term]
 id: UBERON:0005672
@@ -37234,6 +37393,17 @@ intersection_of: UBERON:0004923 ! organ component layer
 intersection_of: BFO:0000050 UBERON:0000948 ! part of heart
 relationship: BFO:0000050 UBERON:0000948 ! part of heart
 relationship: RO:0002433 UBERON:0000948 ! contributes to morphology of heart
+
+[Term]
+id: UBERON:0005984
+name: subendocardium layer
+def: "The layer of loose fibrous tissue located between the endocardium and myocardium which contains the nerves and the impulse-conducting system (Purkinje fibers) of the heart" []
+is_a: UBERON:0005983 ! heart layer
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000051 UBERON:0001021 ! has part nerve
+relationship: RO:0002220 UBERON:0002165 ! adjacent_to endocardium
+relationship: RO:0002220 UBERON:0002349 ! adjacent_to myocardium
+relationship: RO:0002473 UBERON:0011824 ! composed primarily of fibrous connective tissue
 
 [Term]
 id: UBERON:0005985
@@ -39067,6 +39237,24 @@ intersection_of: BFO:0000050 UBERON:0000998 ! part of seminal vesicle
 relationship: BFO:0000050 UBERON:0000998 ! part of seminal vesicle
 
 [Term]
+id: UBERON:0006650
+name: tunica vaginalis testis
+def: "the outer coelomic epithelial covering of the testis; a sac of serous tissue covering the testis and the epididymis within which the testis can move about; it covers the tunica albuginea" []
+synonym: "lamina parietalis" RELATED []
+synonym: "lamina visceralis" RELATED []
+synonym: "processus vaginalis testis" RELATED []
+synonym: "testis tunica vaginalis" EXACT []
+synonym: "tunica vaginalis" RELATED []
+synonym: "tunica vaginalis of testis" EXACT []
+synonym: "tunica vaginalis testis" RELATED []
+is_a: UBERON:0000158 ! membranous layer
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005156 ! reproductive structure
+relationship: BFO:0000050 UBERON:0000473 ! part of testis
+relationship: BFO:0000051 UBERON:0001136 ! has part mesothelium
+relationship: RO:0002202 UBERON:0005344 ! develops_from peritoneal vaginal process
+
+[Term]
 id: UBERON:0006652
 name: muscular layer of vagina
 synonym: "muscular coat of vagina" EXACT []
@@ -39884,6 +40072,19 @@ intersection_of: BFO:0000050 UBERON:0011953 ! part of stomach glandular region
 relationship: BFO:0000050 UBERON:0011953 ! part of stomach glandular region
 
 [Term]
+id: UBERON:0006932
+name: vestibular epithelium
+def: "An epithelium that is part of a vestibular labyrinth." []
+synonym: "epithelium of vestibular labyrinth" EXACT []
+synonym: "inner ear vestibular component epithelium" EXACT []
+synonym: "vestibular sensory epithelium" EXACT []
+is_a: UBERON:0006934 ! sensory epithelium
+is_a: UBERON:0006937 ! inner ear epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0001862 ! part of vestibular labyrinth
+relationship: BFO:0000050 UBERON:0001862 ! part of vestibular labyrinth
+
+[Term]
 id: UBERON:0006934
 name: sensory epithelium
 def: "Simple columnar epithelium made up of cells specialized to serve as sensory cells for the reception of external stimuli, as the sensory cells of the cochlea, vestibule, nasal mucosa, and tongue." []
@@ -40525,6 +40726,19 @@ name: osseus cochlea
 def: "The osseous cochlea is the bony foundation that forms the small shell arrangement for the cochlear nerve." []
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: BFO:0000050 UBERON:0001844 ! part of cochlea
+
+[Term]
+id: UBERON:0007228
+name: vestibular nucleus
+def: "A cranial nucleus for the vestibular nerve. [WP,unvetted]." []
+synonym: "vestibular nucleus of acoustic nerve" EXACT []
+synonym: "vestibular nucleus of eighth cranial nerve" EXACT []
+synonym: "vestibular VIII nucleus" EXACT []
+is_a: UBERON:0007635 ! nucleus of medulla oblongata
+intersection_of: UBERON:0000125 ! neural nucleus
+intersection_of: BFO:0000050 UBERON:0002673 ! part of vestibular nuclear complex
+relationship: BFO:0000050 UBERON:0002673 ! part of vestibular nuclear complex
+relationship: extends_fibers_into UBERON:0003723 ! vestibular nerve
 
 [Term]
 id: UBERON:0007237
@@ -47142,6 +47356,25 @@ is_a: UBERON:0007592 ! ciliated columnar epithelium
 is_a: UBERON:0010498 ! pseudostratified columnar epithelium
 
 [Term]
+id: UBERON:0010506
+name: meningeal dura mater
+def: "The inner layer of the dura mater surrounding the brain. It is mostly fused with the outer layer, the endocranium that is adherent to the inner aspect of the cranial bones. These two layers form the dura mater. The latter covers and protects the brain and the spinal cord." []
+synonym: "inner layer of dura mater" EXACT []
+synonym: "meningeal dura" EXACT []
+synonym: "meningeal layer of dura mater" EXACT []
+is_a: UBERON:0010507 ! layer of dura mater
+relationship: protects UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0010507
+name: layer of dura mater
+def: "The intracranial dura mater, consisting of two layers: the outer periosteal layer which normally always adheres to the periosteum of the bones of the cranial vault; and the inner meningeal layer which in most places is fused with the outer. The two layers separate to accommodate meningeal vessels and large venous (dural) sinuses. The meningeal layer is also involved in the formation of the various dural folds, such as the falx cerebri and tentorium cerebelli and is comparable to and continuous with the dural mater of the spinal cord. The cranial epidural space is then a potential space between the bone and the combined periosteum/periosteal layer of the dura mater realised only pathologically and is neither continuous with or comparable to the vertebral epidural space" []
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0002363 ! part of dura mater
+
+[Term]
 id: UBERON:0010522
 name: replacement element
 def: "Skeletal element that forms as a replacement or substitution of another element or tissue." []
@@ -48827,6 +49060,18 @@ is_a: UBERON:0004766 ! cranial bone
 intersection_of: UBERON:0001474 ! bone element
 intersection_of: BFO:0000050 UBERON:0001703 ! part of neurocranium
 relationship: BFO:0000050 UBERON:0001703 ! part of neurocranium
+
+[Term]
+id: UBERON:0011166
+name: patellofemoral joint
+synonym: "femorapatellar joint" EXACT []
+synonym: "femoropatellar joint" EXACT []
+synonym: "patello femoral joint" EXACT []
+is_a: UBERON:0003840 ! hindlimb joint
+is_a: UBERON:0011139 ! synovial limb joint
+relationship: BFO:0000050 UBERON:0001485 ! part of knee joint
+relationship: RO:0002176 UBERON:0000981 ! connects femur
+relationship: RO:0002176 UBERON:0002446 ! connects patella
 
 [Term]
 id: UBERON:0011171
@@ -50785,6 +51030,20 @@ relationship: RO:0002176 UBERON:0009958 ! connects bladder lumen
 relationship: RO:0002176 UBERON:0010390 ! connects lumen of urethra
 
 [Term]
+id: UBERON:0012246
+name: thyroid follicular lumen
+def: "A follicular lumen is the closed cavity within a follicle of the thyroid gland. It is surrounded by follicular cells and filled with colloid, a concentrated solution of thyroglobulin" []
+synonym: "follicular lumen" BROAD []
+synonym: "lumen of thyroid follicle" EXACT []
+synonym: "thyroid follicle lumen" EXACT []
+synonym: "thyroid follicular space" EXACT []
+is_a: UBERON:0000464 ! anatomical space
+intersection_of: UBERON:0000464 ! anatomical space
+intersection_of: RO:0002572 UBERON:0005305 ! luminal space of thyroid follicle
+relationship: RO:0002219 UBERON:0012363 ! surrounded_by thyroid follicle epithelium
+relationship: RO:0002572 UBERON:0005305 ! luminal space of thyroid follicle
+
+[Term]
 id: UBERON:0012247
 name: cervical gland
 def: "mucus-secreting glands in the mucosa of the uterine cervix" []
@@ -51236,6 +51495,20 @@ id: UBERON:0012361
 name: internal anal region
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: BFO:0000050 UBERON:0001353 ! part of anal region
+
+[Term]
+id: UBERON:0012363
+name: thyroid follicle epithelium
+def: "A epithelium that is part of a thyroid follicle." []
+synonym: "epithelium of thyroid follicle" EXACT []
+synonym: "thryoid epithelium" BROAD []
+synonym: "thyroid follicle epithelium" EXACT []
+synonym: "wall of thyroid follicle" EXACT []
+is_a: UBERON:0000484 ! simple cuboidal epithelium
+is_a: UBERON:0005911 ! endo-epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0005305 ! part of thyroid follicle
+relationship: BFO:0000050 UBERON:0005305 ! part of thyroid follicle
 
 [Term]
 id: UBERON:0012367
@@ -57339,6 +57612,14 @@ def: "Any organ that is the primary organ of vocalization behavior. Examples: Th
 is_a: UBERON:0000062 ! organ
 
 [Term]
+id: UBERON:0034696
+name: fold of peritoneum
+synonym: "peritoneal fold" EXACT []
+synonym: "peritoneal outpouching" NARROW []
+synonym: "peritoneal pouch" RELATED []
+is_a: UBERON:0002358 ! peritoneum
+
+[Term]
 id: UBERON:0034705
 name: developing neuroepithelium
 def: "An embryonic or larval epithelium that is committed to form part of the nervous system." []
@@ -58308,6 +58589,18 @@ intersection_of: BFO:0000050 UBERON:0035549 ! part of vasculature of integument
 relationship: BFO:0000050 UBERON:0035549 ! part of vasculature of integument
 
 [Term]
+id: UBERON:0035201
+name: gastrocolic ligament
+def: "A major portion of the greater omentum between the stomach and the transverse colon." []
+is_a: UBERON:0034696 ! fold of peritoneum
+intersection_of: UBERON:0034696 ! fold of peritoneum
+intersection_of: RO:0002176 UBERON:0000945 ! connects stomach
+intersection_of: RO:0002176 UBERON:0001157 ! connects transverse colon
+relationship: BFO:0000050 UBERON:0005448 ! part of greater omentum
+relationship: RO:0002176 UBERON:0000945 ! connects stomach
+relationship: RO:0002176 UBERON:0001157 ! connects transverse colon
+
+[Term]
 id: UBERON:0035216
 name: thoracic part of esophagus
 def: "Zone of esophagus located in the thorax." []
@@ -58371,6 +58664,18 @@ intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0001729 ! part of oropharynx
 intersection_of: BSPO:0000126 UBERON:0001729 ! in_lateral_side_of oropharynx
 relationship: BSPO:0000126 UBERON:0001729 ! in_lateral_side_of oropharynx
+
+[Term]
+id: UBERON:0035289
+name: axillary tail of breast
+def: "An extension of the tissue of the breast which extends into the axilla." []
+synonym: "axillary process" EXACT []
+synonym: "axillary tail" EXACT []
+synonym: "axillary tail of Spence" EXACT []
+synonym: "processus axillaris (glandula mammaria)" EXACT []
+synonym: "tail of Spence" EXACT []
+is_a: UBERON:0000475 ! organism subdivision
+relationship: BFO:0000050 UBERON:0000310 ! part of breast
 
 [Term]
 id: UBERON:0035295
@@ -58486,6 +58791,16 @@ intersection_of: RO:0002178 UBERON:0000007 ! supplies pituitary gland
 relationship: RO:0002178 UBERON:0000007 ! supplies pituitary gland
 
 [Term]
+id: UBERON:0035416
+name: diaphragma sellae
+def: "The diaphragma sellae or sellar diaphragm is the circular fold of dura mater that almost completely roofs the fossa hypophyseos in the sphenoid bone of the skull. It retains the pituitary gland in the fossa hypophyseos, with only the infundibulum of the pituitary gland passing through it." []
+synonym: "sellar diaphragm" EXACT []
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0034944 ! zone of organ
+relationship: BFO:0000050 UBERON:0010506 ! part of meningeal dura mater
+
+[Term]
 id: UBERON:0035431
 name: mediastinal pleura
 def: "The parietal pleura that lines the mediastinum." []
@@ -58589,6 +58904,21 @@ is_a: UBERON:0004885 ! hilum
 intersection_of: UBERON:0004885 ! hilum
 intersection_of: BFO:0000050 UBERON:0000029 ! part of lymph node
 relationship: BFO:0000050 UBERON:0000029 ! part of lymph node
+
+[Term]
+id: UBERON:0035498
+name: gastrophrenic ligament
+def: "the portion of the greater omentum that extends from the greater curvature of the stomach to the inferior surface of the diaphragm" []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005172 ! abdomen element
+is_a: UBERON:0008845 ! nonskeletal ligament
+intersection_of: UBERON:0008845 ! nonskeletal ligament
+intersection_of: BFO:0000050 UBERON:0005448 ! part of greater omentum
+intersection_of: RO:0002176 UBERON:0001103 ! connects diaphragm
+intersection_of: RO:0002176 UBERON:0001164 ! connects greater curvature of stomach
+relationship: BFO:0000050 UBERON:0005448 ! part of greater omentum
+relationship: RO:0002176 UBERON:0001103 ! connects diaphragm
+relationship: RO:0002176 UBERON:0001164 ! connects greater curvature of stomach
 
 [Term]
 id: UBERON:0035508

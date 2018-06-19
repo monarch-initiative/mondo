@@ -123,4 +123,10 @@ equivalent_to_replaced_by(C,X,Y) :-
         deprecated(X),
         term_replaced_by(X,Y).
 
+simj_merge_candidates(C1,C2,S,N1,N2) :-
+        simj_by_subclass(C1,C2,S,N1,N2),
+        N1 > 3,
+        S > 0.8,
+        C1 @< C2.
+
 

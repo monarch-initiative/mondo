@@ -258,6 +258,20 @@ relationship: is_conjugate_base_of CHEBI:36856 ! hydrogen isocyanide
 relationship: RO:0000087 CHEBI:38500 ! EC 1.9.3.1 (cytochrome c oxidase) inhibitor
 
 [Term]
+id: CHEBI:17602
+name: 4-aminophenol
+def: "An amino phenol (one of the three possible isomers) which has the single amino substituent located para to the phenolic -OH group." []
+synonym: "4-Aminobenzenol" RELATED []
+synonym: "4-AMINOPHENOL" EXACT []
+synonym: "4-Aminophenol" EXACT []
+synonym: "4-aminophenol" EXACT []
+synonym: "4-Hydroxyaniline" RELATED []
+synonym: "p-Aminophenol" RELATED []
+synonym: "p-hydroxyaniline" RELATED []
+is_a: CHEBI:28829 ! aminophenol
+relationship: RO:0000087 CHEBI:25212 ! metabolite
+
+[Term]
 id: CHEBI:17790
 name: methanol
 def: "The primary alcohol that is the simplest aliphatic alcohol, comprising a methyl and an alcohol group." []
@@ -411,6 +425,13 @@ synonym: "Alkaloide" RELATED []
 synonym: "alkaloids" EXACT []
 is_a: CHEBI:35352 ! organonitrogen compound
 relationship: RO:0000087 CHEBI:25212 ! metabolite
+
+[Term]
+id: CHEBI:22562
+name: anilines
+def: "Any  aromatic amine that is benzene carrying at least one amino substituent and its substituted derivatives." []
+is_a: CHEBI:22712 ! benzenes
+is_a: CHEBI:33860 ! aromatic amine
 
 [Term]
 id: CHEBI:22563
@@ -614,6 +635,13 @@ is_a: CHEBI:25693 ! organic heteromonocyclic compound
 is_a: CHEBI:38104 ! oxacycle
 
 [Term]
+id: CHEBI:24261
+name: glucocorticoid
+def: "Glucocorticoids are a class of steroid hormones that regulate a variety of physiological processes, in particular control of the concentration of glucose in blood." []
+synonym: "glucocorticoids" RELATED []
+is_a: CHEBI:36699 ! corticosteroid hormone
+
+[Term]
 id: CHEBI:24400
 name: glycoside
 def: "A glycosyl compound resulting from the attachment of a glycosyl group to a non-acyl group RO-, RS-, RSe-, etc. The bond between the glycosyl group and the non-acyl group is called a glycosidic bond. By extension, the terms N-glycosides and C-glycosides are used as class names for glycosylamines and for compounds having a glycosyl group attached to a hydrocarbyl group respectively. These terms are misnomers and should not be used. The preferred terms are glycosylamines and C-glycosyl compounds, respectively." []
@@ -700,6 +728,15 @@ synonym: "organic heterocyclic compounds" RELATED []
 is_a: CHEBI:33285 ! heteroorganic entity
 is_a: CHEBI:33832 ! organic cyclic compound
 is_a: CHEBI:5686 ! heterocyclic compound
+
+[Term]
+id: CHEBI:24621
+name: hormone
+def: "Originally referring to an endogenous compound that is formed in specialized organ or group of cells and carried to another organ or group of cells, in the same organism, upon which it has a specific regulatory function, the term is now commonly used to include non-endogenous, semi-synthetic and fully synthetic analogues of such compounds." []
+synonym: "endocrine" RELATED []
+synonym: "hormones" RELATED []
+is_a: CHEBI:33280 ! molecular messenger
+is_a: CHEBI:48705 ! agonist
 
 [Term]
 id: CHEBI:24632
@@ -1081,6 +1118,20 @@ synonym: "sapogenins" RELATED []
 is_a: CHEBI:51958 ! organic polycyclic compound
 
 [Term]
+id: CHEBI:26764
+name: steroid hormone
+def: "Any steroid that acts as hormone." []
+synonym: "hormona esteroide" RELATED []
+synonym: "hormonas esteroideas" RELATED []
+synonym: "hormone steroide" RELATED []
+synonym: "hormones steroides" RELATED []
+synonym: "steroid hormones" RELATED []
+synonym: "Steroidhormon" RELATED []
+synonym: "Steroidhormone" RELATED []
+is_a: CHEBI:35341 ! steroid
+relationship: RO:0000087 CHEBI:24621 ! hormone
+
+[Term]
 id: CHEBI:26766
 name: steroid lactone
 synonym: "steroid lactones" RELATED []
@@ -1322,6 +1373,16 @@ is_a: CHEBI:35605 ! carbon oxoacid
 is_a: CHEBI:64708 ! one-carbon compound
 relationship: is_conjugate_acid_of CHEBI:13941 ! carbamate
 relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+
+[Term]
+id: CHEBI:28829
+name: aminophenol
+def: "A substituted aniline carrying a hydroxy substituent." []
+synonym: "aminobenzenol" RELATED []
+synonym: "aminophenol" EXACT []
+synonym: "hydroxyaniline" RELATED []
+is_a: CHEBI:33853 ! phenols
+is_a: CHEBI:48975 ! substituted aniline
 
 [Term]
 id: CHEBI:28938
@@ -2111,6 +2172,17 @@ is_a: CHEBI:33598 ! carbocyclic compound
 is_a: CHEBI:33659 ! organic aromatic compound
 
 [Term]
+id: CHEBI:33853
+name: phenols
+def: "Organic aromatic compounds having one or more hydroxy groups attached to a benzene or other arene ring." []
+synonym: "arenols" RELATED []
+synonym: "Aryl alcohol" RELATED []
+synonym: "aryl alcohol" RELATED []
+synonym: "phenols" EXACT []
+is_a: CHEBI:33659 ! organic aromatic compound
+is_a: CHEBI:33822 ! organic hydroxy compound
+
+[Term]
 id: CHEBI:33859
 name: aromatic carboxylic acid
 def: "Any carboxylic acid in which the carboxy group is directly bonded to an aromatic ring." []
@@ -2118,6 +2190,18 @@ synonym: "aromatic carboxylic acids" RELATED []
 is_a: CHEBI:33575 ! carboxylic acid
 is_a: CHEBI:33659 ! organic aromatic compound
 relationship: is_conjugate_acid_of CHEBI:91007 ! aromatic carboxylate
+
+[Term]
+id: CHEBI:33860
+name: aromatic amine
+def: "An amino compound in which the amino group is linked directly to an aromatic system." []
+synonym: "aromatic amines" RELATED []
+synonym: "aryl amine" RELATED []
+synonym: "aryl amines" RELATED []
+synonym: "arylamine" RELATED []
+synonym: "arylamines" RELATED []
+is_a: CHEBI:33659 ! organic aromatic compound
+is_a: CHEBI:50047 ! organic amino compound
 
 [Term]
 id: CHEBI:33893
@@ -2312,11 +2396,46 @@ synonym: "psychotropic drugs" RELATED []
 is_a: CHEBI:35470 ! central nervous system drug
 
 [Term]
+id: CHEBI:35472
+name: anti-inflammatory drug
+def: "A substance that reduces or suppresses inflammation." []
+synonym: "anti-inflammatory drugs" RELATED []
+synonym: "antiinflammatory agent" RELATED []
+synonym: "antiinflammatory drug" RELATED []
+synonym: "antiinflammatory drugs" RELATED []
+is_a: CHEBI:23888 ! drug
+is_a: CHEBI:67079 ! anti-inflammatory agent
+
+[Term]
+id: CHEBI:35475
+name: non-steroidal anti-inflammatory drug
+def: "An anti-inflammatory drug that is not a steroid. In addition to anti-inflammatory actions, non-steroidal anti-inflammatory drugs have analgesic, antipyretic, and platelet-inhibitory actions. They act by blocking the synthesis of prostaglandins by inhibiting cyclooxygenase, which converts arachidonic acid to cyclic endoperoxides, precursors of prostaglandins." []
+synonym: "non-steroidal anti-inflammatory agent" RELATED []
+synonym: "non-steroidal anti-inflammatory drugs" RELATED []
+synonym: "NSAID" RELATED []
+synonym: "NSAIDs" RELATED []
+is_a: CHEBI:35472 ! anti-inflammatory drug
+is_a: CHEBI:35842 ! antirheumatic drug
+
+[Term]
 id: CHEBI:35480
 name: analgesic
 def: "An agent capable of relieving pain without the loss of consciousness or without producing anaesthesia. In addition, analgesic is a role played by a compound which is exhibited by a capability to cause a reduction of pain symptoms." []
 is_a: CHEBI:23888 ! drug
 is_a: CHEBI:52210 ! pharmacological role
+
+[Term]
+id: CHEBI:35481
+name: non-narcotic analgesic
+def: "A drug that has principally analgesic, antipyretic and anti-inflammatory actions. Non-narcotic analgesics do not bind to opioid receptors." []
+is_a: CHEBI:35480 ! analgesic
+
+[Term]
+id: CHEBI:35493
+name: antipyretic
+def: "A drug that prevents or reduces fever by lowering the body temperature from a raised state. An antipyretic will not affect the normal body temperature if one does not have fever. Antipyretics cause the hypothalamus to override an interleukin-induced increase in temperature. The body will then work to lower the temperature and the result is a reduction in fever." []
+synonym: "anti-pyretic" RELATED []
+is_a: CHEBI:23888 ! drug
 
 [Term]
 id: CHEBI:35523
@@ -2334,6 +2453,38 @@ def: "A drug that mimics the effects of stimulating postganglionic adrenergic sy
 synonym: "sympathomimetic" RELATED []
 synonym: "sympathomimetics" RELATED []
 is_a: CHEBI:37962 ! adrenergic agent
+
+[Term]
+id: CHEBI:35544
+name: EC 1.14.99.1 (prostaglandin-endoperoxide synthase) inhibitor
+def: "A compound or agent that combines with cyclooxygenases (EC 1.14.99.1) and thereby prevents its substrate-enzyme combination with arachidonic acid and the formation of icosanoids, prostaglandins, and thromboxanes." []
+synonym: "(5Z,8Z,11Z,14Z)-icosa-5,8,11,14-tetraenoate,hydrogen-donor:oxygen oxidoreductase inhibitor" RELATED []
+synonym: "(5Z,8Z,11Z,14Z)-icosa-5,8,11,14-tetraenoate,hydrogen-donor:oxygen oxidoreductase inhibitors" RELATED []
+synonym: "(PG)H synthase inhibitor" RELATED []
+synonym: "(PG)H synthase inhibitors" RELATED []
+synonym: "COX inhibitor" RELATED []
+synonym: "cyclooxygenase (EC 1.14.99.1) inhibitor" RELATED []
+synonym: "cyclooxygenase (EC 1.14.99.1) inhibitors" RELATED []
+synonym: "cyclooxygenase inhibitor" RELATED []
+synonym: "cyclooxygenase inhibitors" RELATED []
+synonym: "EC 1.14.99.1 (cyclooxygenase) inhibitor" RELATED []
+synonym: "EC 1.14.99.1 (cyclooxygenase) inhibitors" RELATED []
+synonym: "EC 1.14.99.1 (prostaglandin-endoperoxide synthase) inhibitors" RELATED []
+synonym: "EC 1.14.99.1 inhibitor" RELATED []
+synonym: "EC 1.14.99.1 inhibitors" RELATED []
+synonym: "fatty acid cyclooxygenase inhibitor" RELATED []
+synonym: "fatty acid cyclooxygenase inhibitors" RELATED []
+synonym: "PG synthetase inhibitor" RELATED []
+synonym: "PG synthetase inhibitors" RELATED []
+synonym: "prostaglandin endoperoxide synthetase inhibitor" RELATED []
+synonym: "prostaglandin endoperoxide synthetase inhibitors" RELATED []
+synonym: "prostaglandin G/H synthase inhibitor" RELATED []
+synonym: "prostaglandin G/H synthase inhibitors" RELATED []
+synonym: "prostaglandin synthase inhibitor" RELATED []
+synonym: "prostaglandin synthase inhibitors" RELATED []
+synonym: "prostaglandin synthetase inhibitor" RELATED []
+synonym: "prostaglandin synthetase inhibitors" RELATED []
+is_a: CHEBI:76840 ! EC 1.14.99.* (miscellaneous oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen) inhibitor
 
 [Term]
 id: CHEBI:35545
@@ -2445,6 +2596,15 @@ synonym: "monocarboxylates" RELATED []
 synonym: "monocarboxylic acid anions" RELATED []
 is_a: CHEBI:29067 ! carboxylic acid anion
 relationship: is_conjugate_base_of CHEBI:25384 ! monocarboxylic acid
+
+[Term]
+id: CHEBI:35842
+name: antirheumatic drug
+def: "A drug used to treat rheumatoid arthritis." []
+synonym: "anti-rheumatic drugs" RELATED []
+synonym: "antirheumatic agent" RELATED []
+synonym: "antirheumatic drugs" RELATED []
+is_a: CHEBI:23888 ! drug
 
 [Term]
 id: CHEBI:35881
@@ -2625,6 +2785,15 @@ def: "A compound containing at least one carbon-halogen bond." []
 synonym: "organohalogen compounds" RELATED []
 is_a: CHEBI:33285 ! heteroorganic entity
 is_a: CHEBI:37578 ! halide
+
+[Term]
+id: CHEBI:36699
+name: corticosteroid hormone
+def: "Any of a class of steroid hormones that are produced in the adrenal cortex." []
+synonym: "adrenal cortex hormones" RELATED []
+synonym: "corticosteroid hormones" RELATED []
+is_a: CHEBI:26764 ! steroid hormone
+is_a: CHEBI:50858 ! corticosteroid
 
 [Term]
 id: CHEBI:36820
@@ -3151,6 +3320,45 @@ relationship: RO:0000087 CHEBI:53000 ! epitope
 relationship: RO:0000087 CHEBI:63510 ! EC 3.6.3.9 (Na(+)/K(+)-transporting ATPase) inhibitor
 
 [Term]
+id: CHEBI:46195
+name: paracetamol
+def: "A member of the class of phenols that is 4-aminophenol in which one of the hydrogens attached to the amino group has been replaced by an acetyl group." []
+synonym: "4'-hydroxyacetanilide" RELATED []
+synonym: "4-(Acetylamino)phenol" RELATED []
+synonym: "4-acetamidophenol" RELATED []
+synonym: "Acenol" RELATED []
+synonym: "Acetaminofen" RELATED []
+synonym: "acetaminofen" RELATED []
+synonym: "Acetaminophen" RELATED []
+synonym: "acetaminophene" RELATED []
+synonym: "APAP" RELATED []
+synonym: "N-(4-hydroxyphenyl)acetamide" EXACT []
+synonym: "N-acetyl-p-aminophenol" RELATED []
+synonym: "p-acetamidophenol" RELATED []
+synonym: "p-acetaminophenol" RELATED []
+synonym: "p-Acetylaminophenol" RELATED []
+synonym: "p-hydroxyacetanilide" RELATED []
+synonym: "p-hydroxyphenolacetamide" RELATED []
+synonym: "Panadol" RELATED []
+synonym: "Paracetamol" EXACT []
+synonym: "paracetamol" RELATED []
+synonym: "paracetamolum" RELATED []
+synonym: "Tylenol" RELATED []
+is_a: CHEBI:22160 ! acetamides
+is_a: CHEBI:33853 ! phenols
+relationship: has_functional_parent CHEBI:17602 ! 4-aminophenol
+relationship: RO:0000087 CHEBI:35475 ! non-steroidal anti-inflammatory drug
+relationship: RO:0000087 CHEBI:35481 ! non-narcotic analgesic
+relationship: RO:0000087 CHEBI:35493 ! antipyretic
+relationship: RO:0000087 CHEBI:35703 ! xenobiotic
+relationship: RO:0000087 CHEBI:50629 ! cyclooxygenase 2 inhibitor
+relationship: RO:0000087 CHEBI:50630 ! cyclooxygenase 1 inhibitor
+relationship: RO:0000087 CHEBI:50908 ! hepatotoxic agent
+relationship: RO:0000087 CHEBI:73263 ! cyclooxygenase 3 inhibitor
+relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
+relationship: RO:0000087 CHEBI:85234 ! human blood serum metabolite
+
+[Term]
 id: CHEBI:46629
 name: oxo group
 synonym: "=O" RELATED []
@@ -3245,6 +3453,16 @@ synonym: "dopaminergic agents" RELATED []
 is_a: CHEBI:35942 ! neurotransmitter agent
 
 [Term]
+id: CHEBI:48705
+name: agonist
+def: "Substance which binds to cell receptors normally responding to naturally occurring substances and which produces a response of its own." []
+synonym: "agonist" EXACT []
+synonym: "agonista" RELATED []
+synonym: "agoniste" RELATED []
+synonym: "agonists" RELATED []
+is_a: CHEBI:52210 ! pharmacological role
+
+[Term]
 id: CHEBI:48706
 name: antagonist
 def: "Substance that attaches to and blocks cell receptors that normally bind naturally occurring substances." []
@@ -3253,6 +3471,12 @@ synonym: "antagonista" RELATED []
 synonym: "antagoniste" RELATED []
 synonym: "antagonists" RELATED []
 is_a: CHEBI:52210 ! pharmacological role
+
+[Term]
+id: CHEBI:48975
+name: substituted aniline
+synonym: "substituted anilines" RELATED []
+is_a: CHEBI:22562 ! anilines
 
 [Term]
 id: CHEBI:49637
@@ -3386,6 +3610,57 @@ synonym: "hydroxyalkanes" RELATED []
 is_a: CHEBI:2571 ! aliphatic alcohol
 
 [Term]
+id: CHEBI:50629
+name: cyclooxygenase 2 inhibitor
+def: "A cyclooxygenase inhibitor that interferes with the action of cyclooxygenase 2." []
+synonym: "COX-2 inhibitor" RELATED []
+synonym: "COX-2 inhibitors" RELATED []
+synonym: "cyclo-oxygenase 2 inhibitor" RELATED []
+synonym: "cyclo-oxygenase 2 inhibitors" RELATED []
+synonym: "cyclo-oxygenase-2 inhibitor" RELATED []
+synonym: "cyclo-oxygenase-2 inhibitors" RELATED []
+synonym: "cyclooxygenase 2 inhibitors" RELATED []
+synonym: "cyclooxygenase-2 inhibitor" RELATED []
+synonym: "cyclooxygenase-2 inhibitors" RELATED []
+synonym: "PGHS-2 inhibitor" RELATED []
+synonym: "PGHS-2 inhibitors" RELATED []
+synonym: "prostaglandin H synthase-2 inhibitor" RELATED []
+synonym: "prostaglandin H synthase-2 inhibitors" RELATED []
+synonym: "prostaglandin-endoperoxide synthase 2 inhibitor" RELATED []
+synonym: "prostaglandin-endoperoxide synthase 2 inhibitors" RELATED []
+is_a: CHEBI:35544 ! EC 1.14.99.1 (prostaglandin-endoperoxide synthase) inhibitor
+
+[Term]
+id: CHEBI:50630
+name: cyclooxygenase 1 inhibitor
+def: "A cyclooxygenase inhibitor that interferes with the action of cyclooxygenase 1." []
+synonym: "COX-1 inhibitor" RELATED []
+synonym: "COX-1 inhibitors" RELATED []
+synonym: "cyclo-oxygenase 1 inhibitor" RELATED []
+synonym: "cyclo-oxygenase 1 inhibitors" RELATED []
+synonym: "cyclooxygenase 1 inhibitors" RELATED []
+synonym: "cyclooxygenase-1 inhibitor" RELATED []
+synonym: "cyclooxygenase-1 inhibitors" RELATED []
+synonym: "prostaglandin G/H synthase 1 inhibitor" RELATED []
+synonym: "prostaglandin G/H synthase 1 inhibitors" RELATED []
+synonym: "prostaglandin H2 synthase 1 inhibitor" RELATED []
+synonym: "prostaglandin H2 synthase 1 inhibitors" RELATED []
+synonym: "prostaglandin-endoperoxide synthase 1 inhibitor" RELATED []
+synonym: "prostaglandin-endoperoxide synthase 1 inhibitors" RELATED []
+synonym: "PTGS1 inhibitor" RELATED []
+synonym: "PTGS1 inhibitors" RELATED []
+is_a: CHEBI:35544 ! EC 1.14.99.1 (prostaglandin-endoperoxide synthase) inhibitor
+
+[Term]
+id: CHEBI:50858
+name: corticosteroid
+def: "A natural or synthetic analogue of the hormones secreted by the adrenal gland." []
+synonym: "corticoides" RELATED []
+synonym: "corticosteroides" RELATED []
+synonym: "corticosteroids" RELATED []
+is_a: CHEBI:35341 ! steroid
+
+[Term]
 id: CHEBI:50860
 name: organic molecular entity
 def: "Any molecular entity that contains carbon." []
@@ -3431,6 +3706,16 @@ is_a: CHEBI:52209 ! aetiopathogenetic role
 id: CHEBI:50906
 name: role
 def: "A role is particular behaviour which a material entity may exhibit." []
+
+[Term]
+id: CHEBI:50908
+name: hepatotoxic agent
+def: "A role played by a chemical compound exihibiting itself through the ability to induce damage to the liver in animals." []
+synonym: "agente hepatotoxico" RELATED []
+synonym: "hepatotoxicant" RELATED []
+synonym: "hepatoxic agent" RELATED []
+synonym: "hepatoxicant" RELATED []
+is_a: CHEBI:52209 ! aetiopathogenetic role
 
 [Term]
 id: CHEBI:50910
@@ -3974,6 +4259,15 @@ is_a: CHEBI:35274 ! ammonium ion
 relationship: is_conjugate_acid_of CHEBI:32877 ! primary amine
 
 [Term]
+id: CHEBI:67079
+name: anti-inflammatory agent
+def: "Any compound that has anti-inflammatory effects." []
+synonym: "anti-inflammatory agents" RELATED []
+synonym: "antiinflammatory agent" RELATED []
+synonym: "antiinflammatory agents" RELATED []
+is_a: CHEBI:33232 ! application
+
+[Term]
 id: CHEBI:72695
 name: organic molecule
 def: "Any molecule that consists of at least one carbon atom as part of the electrically neutral entity." []
@@ -3999,6 +4293,19 @@ synonym: "EC 3.6.*.* inhibitors" RELATED []
 synonym: "inhibitor of hydrolase acting on acid anhydride (EC 3.6.*)" RELATED []
 synonym: "inhibitors of hydrolase acting on acid anhydride (EC 3.6.*)" RELATED []
 is_a: CHEBI:76759 ! EC 3.* (hydrolase) inhibitor
+
+[Term]
+id: CHEBI:73263
+name: cyclooxygenase 3 inhibitor
+def: "A cyclooxygenase inhibitor that interferes with the action of cyclooxygenase 3." []
+synonym: "COX-3 inhibitor" RELATED []
+synonym: "COX-3 inhibitors" RELATED []
+synonym: "cyclo-oxygenase 3 inhibitor" RELATED []
+synonym: "cyclo-oxygenase 3 inhibitors" RELATED []
+synonym: "cyclooxygenase 3 inhibitors" RELATED []
+synonym: "cyclooxygenase-3 inhibitor" RELATED []
+synonym: "cyclooxygenase-3 inhibitors" RELATED []
+is_a: CHEBI:35544 ! EC 1.14.99.1 (prostaglandin-endoperoxide synthase) inhibitor
 
 [Term]
 id: CHEBI:74634
@@ -4153,6 +4460,17 @@ synonym: "EC 1.14.14.* inhibitor" RELATED []
 synonym: "EC 1.14.14.* inhibitors" RELATED []
 synonym: "oxidoreductase acting on paired donors, with incorporation of 1 atom of oxygen, with reduced flavin or flavoprotein as one donor (EC 1.14.14.*) inhibitor" RELATED []
 synonym: "oxidoreductase acting on paired donors, with incorporation of 1 atom of oxygen, with reduced flavin or flavoprotein as one donor (EC 1.14.14.*) inhibitors" RELATED []
+is_a: CHEBI:76741 ! EC 1.14.* (oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen) inhibitor
+
+[Term]
+id: CHEBI:76840
+name: EC 1.14.99.* (miscellaneous oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen) inhibitor
+def: "An EC 1.14.* (oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen) inhibitor that interferes with the action of any enzyme in the EC 1.14.99.* (miscellaneous) category." []
+synonym: "EC 1.14.99.* (miscellaneous oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen) inhibitors" RELATED []
+synonym: "EC 1.14.99.* inhibitor" RELATED []
+synonym: "EC 1.14.99.* inhibitors" RELATED []
+synonym: "miscellaneous oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen (EC 1.14.99.*) inhibitor" RELATED []
+synonym: "miscellaneous oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen (EC 1.14.99.*) inhibitors" RELATED []
 is_a: CHEBI:76741 ! EC 1.14.* (oxidoreductase acting on paired donors, with incorporation or reduction of molecular oxygen) inhibitor
 
 [Term]
@@ -4382,6 +4700,13 @@ synonym: "cardiac glycosides" RELATED []
 is_a: CHEBI:24400 ! glycoside
 is_a: CHEBI:26766 ! steroid lactone
 relationship: RO:0000087 CHEBI:77307 ! cardioprotective agent
+
+[Term]
+id: CHEBI:85234
+name: human blood serum metabolite
+def: "Any metabolite (endogenous or exogenous) found in human blood serum samples." []
+synonym: "human blood serum metabolites" RELATED []
+is_a: CHEBI:77746 ! human metabolite
 
 [Term]
 id: CHEBI:88184

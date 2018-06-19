@@ -1536,6 +1536,32 @@ xref: UMLS:C0003076
 is_a: HP:0008053 ! Aplasia/Hypoplasia of the iris
 
 [Term]
+id: HP:0000528
+name: Anophthalmia
+namespace: human_phenotype
+alt_id: HP:0001485
+alt_id: HP:0007664
+def: "Absence of the globe or eyeball." [DDD:ncarter]
+subset: hposlim_core
+synonym: "Absence of eyeballs" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Absence of globes of eyes" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Anophthalmia, clinical" EXACT []
+synonym: "Clinical anophthalmia, unilateral/bilateral" EXACT []
+synonym: "Failure of development of eyeball" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Missing eyeball" EXACT layperson [ORCID:0000-0001-5208-3432, ORCID:0000-0001-5889-4463]
+synonym: "Missing globe of eye" EXACT [ORCID:0000-0001-5208-3432, ORCID:0000-0001-5889-4463]
+synonym: "No eyeball" EXACT layperson [ORCID:0000-0001-5208-3432, ORCID:0000-0001-5889-4463]
+synonym: "No globe of eye" EXACT [ORCID:0000-0001-5208-3432, ORCID:0000-0001-5889-4463]
+synonym: "Ocular absence" EXACT [ORCID:0000-0001-5208-3432, ORCID:0000-0001-5889-4463]
+xref: Fyler:4864
+xref: MSH:D000853
+xref: SNOMEDCT_US:204099004
+xref: SNOMEDCT_US:7183006
+xref: UMLS:C0003119
+is_a: HP:0008056 ! Aplasia/Hypoplasia affecting the eye
+is_a: HP:0100887 ! Abnormality of globe size
+
+[Term]
 id: HP:0000532
 name: Abnormal chorioretinal morphology
 namespace: human_phenotype
@@ -1617,6 +1643,29 @@ xref: MSH:D058499
 xref: SNOMEDCT_US:314407005
 xref: UMLS:C0854723
 is_a: HP:0000479 ! Abnormal retinal morphology
+
+[Term]
+id: HP:0000568
+name: Microphthalmia
+namespace: human_phenotype
+alt_id: HP:0007996
+def: "A developmental anomaly characterized by abnormal smallness of one or both eyes." [HPO:probinson]
+subset: hposlim_core
+synonym: "Abnormally small eyeball" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Abnormally small globe of eye" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Decreased size of eyeball" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Decreased size of globe of eye" BROAD [ORCID:0000-0001-5889-4463]
+synonym: "Microphthalmos" EXACT []
+synonym: "Nanophthalmos" RELATED []
+xref: Fyler:4877
+xref: MSH:D008850
+xref: SNOMEDCT_US:204108000
+xref: SNOMEDCT_US:61142002
+xref: UMLS:C0026010
+xref: UMLS:C4280625
+xref: UMLS:C4280808
+is_a: HP:0008056 ! Aplasia/Hypoplasia affecting the eye
+is_a: HP:0100887 ! Abnormality of globe size
 
 [Term]
 id: HP:0000572
@@ -2959,21 +3008,6 @@ xref: UMLS:C3806554
 is_a: HP:0000964 ! Eczema
 
 [Term]
-id: HP:0001061
-name: Acne
-namespace: human_phenotype
-alt_id: HP:0005596
-def: "A skin condition in which there is an increase in sebum secretion by the pilosebaceous apparatus associated with open comedones (blackheads), closed comedones (whiteheads), and pustular nodules (papules, pustules, and cysts)." [HPO:probinson]
-comment: Acne can be a consequence of increased sebum production as a result of increased testosterone production (in males and females) during puberty. Blockage of hair follicles canresult from accumulating keratin and sebum, resulting in plug formation called microcomedone, which can enlarge just beneath the surface of the skin in the pore itself. It may become visible as a closed comedone (whitehead), a firm white papule. Further enlargement leads to an open comedone (blackhead). The comedones are not themselves inflammatory. Proprionibacterium acnes can induce inflammation, leding to an inflammed, red papule.
-subset: hposlim_core
-synonym: "Acne" EXACT layperson []
-synonym: "Breaking out" BROAD layperson []
-xref: MEDDRA:10000496 "Acne"
-xref: SNOMEDCT_US:11381005
-xref: UMLS:C0702166
-is_a: HP:0011123 ! Inflammatory abnormality of the skin
-
-[Term]
 id: HP:0001072
 name: Thickened skin
 namespace: human_phenotype
@@ -4176,6 +4210,36 @@ xref: UMLS:C0003507
 is_a: HP:0031652 ! Abnormal aortic valve physiology
 
 [Term]
+id: HP:0001651
+name: Dextrocardia
+namespace: human_phenotype
+def: "The heart is located in the right hand sided hemithorax. That is, there is a left-right reversal (or \"mirror reflection\") of the anatomical location of the heart in which the heart is locate on the right side instead of the left." [DDD:dbrown, HPO:sdoelken]
+synonym: "Thoracic situs inversus" EXACT []
+xref: EPCC:02.01.02
+xref: Fyler:0110
+xref: Fyler:110
+xref: ICD-10:Q24.0
+xref: MSH:D003914
+xref: SNOMEDCT_US:27637000
+xref: UMLS:C0011813
+is_a: HP:0004307 ! Abnormal anatomic location of the heart
+
+[Term]
+id: HP:0001654
+name: Abnormal heart valve morphology
+namespace: human_phenotype
+alt_id: HP:0001703
+def: "Any structural abnormality of a cardiac valve." [HPO:probinson]
+synonym: "Abnormality of the heart valves" EXACT []
+synonym: "Valvular abnormality" EXACT []
+synonym: "Valvular heart disease" RELATED []
+xref: MSH:D006349
+xref: SNOMEDCT_US:368009
+xref: UMLS:C0018824
+xref: UMLS:C0241654
+is_a: HP:0001627 ! Abnormal heart morphology
+
+[Term]
 id: HP:0001662
 name: Bradycardia
 namespace: human_phenotype
@@ -4211,6 +4275,19 @@ is_a: HP:0011563 ! Abnormal ventriculo-arterial connection
 is_a: HP:0011603 ! Congenital malformation of the great arteries
 
 [Term]
+id: HP:0001679
+name: Abnormal aortic morphology
+namespace: human_phenotype
+alt_id: HP:0030963
+def: "An abnormality of the aorta." [HPO:probinson, PMID:24910511]
+synonym: "Abnormal aorta morphology" EXACT [ORCID:0000-0001-5208-3432]
+synonym: "Abnormality of the aorta" EXACT []
+xref: Fyler:1453
+xref: UMLS:C4025756
+is_a: HP:0011004 ! Abnormal systemic arterial morphology
+is_a: HP:0030962 ! Abnormal morphology of the great vessels
+
+[Term]
 id: HP:0001686
 name: Loss of voice
 namespace: human_phenotype
@@ -4241,6 +4318,35 @@ xref: MSH:D010490
 xref: SNOMEDCT_US:373945007
 xref: UMLS:C0031039
 is_a: HP:0001697 ! Abnormal pericardium morphology
+
+[Term]
+id: HP:0001700
+name: Myocardial necrosis
+namespace: human_phenotype
+def: "Irreversible damage to heart tissue (myocardium) due to lack of oxygen after a heart attack (myocardial infarction)." [Biomarkers of Myocardial Necrosis. In: Morrow D.A. (eds) Cardiovascular Biomarkers. Contemporary Cardiology. Humana Press]
+xref: SNOMEDCT_US:251061000
+xref: UMLS:C1442837
+is_a: HP:0001637 ! Abnormal myocardium morphology
+
+[Term]
+id: HP:0001702
+name: Abnormal tricuspid valve morphology
+namespace: human_phenotype
+alt_id: HP:0031440
+def: "Any structural anomaly of the tricuspid valve." [HPO:probinson]
+synonym: "Abnormality of the tricuspid valve" EXACT []
+xref: EPCC:06.01.00
+xref: UMLS:C4025753
+is_a: HP:0006705 ! Abnormal atrioventricular valve morphology
+
+[Term]
+id: HP:0001710
+name: Conotruncal defect
+namespace: human_phenotype
+def: "A congenital malformation of the outflow tract of the heart. Conotruncal defects are thought to result from a disturbance of the outflow tract of the embryonic heart, and comprise truncus arteriosus, tetralogy of Fallot, interrupted aortic arch, transposition of the great arteries, and double outlet right ventricle." [HPO:probinson]
+synonym: "Conotruncal heart defects" EXACT []
+xref: UMLS:C1853238
+is_a: HP:0011603 ! Congenital malformation of the great arteries
 
 [Term]
 id: HP:0001718
@@ -5096,6 +5202,23 @@ xref: SNOMEDCT_US:225595004
 xref: UMLS:C0009806
 xref: UMLS:C0237326
 is_a: HP:0011458 ! Abdominal symptom
+
+[Term]
+id: HP:0002023
+name: Anal atresia
+namespace: human_phenotype
+alt_id: HP:0001550
+def: "Congenital absence of the anus, i.e., the opening at the bottom end of the intestinal tract." [HPO:probinson]
+subset: hposlim_core
+synonym: "Imperforate anus" RELATED []
+xref: Fyler:4402
+xref: Fyler:4443
+xref: MEDDRA:10002120 "Anal atresia"
+xref: MSH:D001006
+xref: SNOMEDCT_US:204712000
+xref: SNOMEDCT_US:204731006
+xref: UMLS:C0003466
+is_a: HP:0004378 ! Abnormality of the anus
 
 [Term]
 id: HP:0002024
@@ -7645,6 +7768,16 @@ created_by: peter
 creation_date: 2008-02-20T01:23:00Z
 
 [Term]
+id: HP:0004307
+name: Abnormal anatomic location of the heart
+namespace: human_phenotype
+def: "Thickening of the left ventricle wall with congenital onset." [PMID:154915]
+xref: UMLS:C4025359
+is_a: HP:0001627 ! Abnormal heart morphology
+created_by: peter
+creation_date: 2008-02-20T01:23:00Z
+
+[Term]
 id: HP:0004308
 name: Ventricular arrhythmia
 namespace: human_phenotype
@@ -8028,6 +8161,18 @@ is_a: HP:0001871 ! Abnormality of blood and blood-forming tissues
 is_a: HP:0011793 ! Neoplasm by anatomical site
 created_by: peter
 creation_date: 2008-03-18T07:44:00Z
+
+[Term]
+id: HP:0004378
+name: Abnormality of the anus
+namespace: human_phenotype
+def: "Abnormality of the anal canal." [HPO:probinson]
+comment: The anal canal is continuous proximally with the rectum and distally terminates with the anus.
+synonym: "Abnormality of the anus" EXACT layperson []
+xref: UMLS:C4025329
+is_a: HP:0012732 ! Anorectal anomaly
+created_by: peter
+creation_date: 2008-03-18T08:11:00Z
 
 [Term]
 id: HP:0004381
@@ -8438,6 +8583,18 @@ xref: UMLS:C0553980
 is_a: HP:0004306 ! Abnormal endocardium morphology
 
 [Term]
+id: HP:0006705
+name: Abnormal atrioventricular valve morphology
+namespace: human_phenotype
+alt_id: HP:0006675
+def: "An abnormality of an atrioventricular valve." [HPO:probinson]
+synonym: "Abnormality of the atrioventricular valves" EXACT []
+xref: UMLS:C4024995
+is_a: HP:0001654 ! Abnormal heart valve morphology
+created_by: peter
+creation_date: 2008-03-29T03:34:00Z
+
+[Term]
 id: HP:0006753
 name: Neoplasm of the stomach
 namespace: human_phenotype
@@ -8646,6 +8803,15 @@ xref: UMLS:C0234632
 is_a: HP:0000504 ! Abnormality of vision
 
 [Term]
+id: HP:0007707
+name: Aphakia
+namespace: human_phenotype
+def: "Absence of the crystalline lens of the eye as a result of a developmental defect." [HPO:probinson]
+xref: MSH:C537786
+xref: UMLS:C1853230
+is_a: HP:0008063 ! Aplasia/Hypoplasia of the lens
+
+[Term]
 id: HP:0007754
 name: Macular dystrophy
 namespace: human_phenotype
@@ -8739,6 +8905,19 @@ def: "Absence or underdevelopment of the anterior segment of the eye." [HPO:prob
 xref: UMLS:C4024739
 is_a: HP:0004328 ! Abnormal anterior segment morphology
 is_a: HP:0008056 ! Aplasia/Hypoplasia affecting the eye
+created_by: peter
+creation_date: 2008-04-02T03:33:00Z
+
+[Term]
+id: HP:0008063
+name: Aplasia/Hypoplasia of the lens
+namespace: human_phenotype
+def: "Absence or underdevelopment of the lens." [HPO:probinson]
+synonym: "Absent/small lens" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Absent/underdeveloped lens" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: UMLS:C4024738
+is_a: HP:0000517 ! Abnormality of the lens
+is_a: HP:0008062 ! Aplasia/Hypoplasia affecting the anterior segment of the eye
 created_by: peter
 creation_date: 2008-04-02T03:33:00Z
 
@@ -11827,6 +12006,22 @@ xref: UMLS:C4022563
 is_a: HP:0011805 ! Abnormality of muscle morphology
 
 [Term]
+id: HP:0030347
+name: Abnormal circulating androgen level
+namespace: human_phenotype
+def: "An anomaly in the blood concentration of an androgen, that is, of a steroid hormone that controls development and maintenance of masculine characteristics. The androgens include testosterone and Dehydroepiandrosterone." [HPO:probinson]
+xref: UMLS:C4072892
+is_a: HP:0003117 ! Abnormality of circulating hormone level
+
+[Term]
+id: HP:0030348
+name: Increased circulating androgen level
+namespace: human_phenotype
+def: "An elevation of the blood concentration of an androgen, that is, of a steroid hormone that controls development and maintenance of masculine characteristics. The androgens include testosterone and Dehydroepiandrosterone." [HPO:probinson]
+xref: UMLS:C4072893
+is_a: HP:0030347 ! Abnormal circulating androgen level
+
+[Term]
 id: HP:0030669
 name: Abnormal morphology of the ocular adnexa
 namespace: human_phenotype
@@ -12956,6 +13151,20 @@ synonym: "Abnormality of eyeball location" EXACT layperson [ORCID:0000-0001-5889
 synonym: "Abnormality of eyeball position" EXACT layperson [ORCID:0000-0001-5889-4463]
 synonym: "Abnormality of globe position" EXACT [ORCID:0000-0001-5889-4463]
 xref: UMLS:C4021946
+is_a: HP:0000315 ! Abnormality of the orbital region
+is_a: HP:0012374 ! Abnormal globe morphology
+created_by: doelkens
+creation_date: 2011-12-13T04:25:29Z
+
+[Term]
+id: HP:0100887
+name: Abnormality of globe size
+namespace: human_phenotype
+alt_id: HP:0010725
+def: "An abnormality in the size of the ocular globe (eyeball)." [HPO:sdoelken]
+synonym: "Abnormality of eyeball size" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Eye size difference" EXACT layperson []
+xref: UMLS:C4021945
 is_a: HP:0000315 ! Abnormality of the orbital region
 is_a: HP:0012374 ! Abnormal globe morphology
 created_by: doelkens

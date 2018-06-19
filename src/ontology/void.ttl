@@ -19,22 +19,23 @@
     a lib:Virtual ;
     owl:imports <imports/equivalencies.owl> .
     
-
+# note: downloads but will not reuse cache;
+# however, if a file ro.owl exists in same dir,
+# will use this
 <ro>
     a lib:Ontology ;
     a lib:Virtual ;
     owl:imports <http://purl.obolibrary.org/obo/ro.owl> .
 
 <hp>
-    a void:Dataset ;
-    dcterms:title "hp" ;
-    void:dataDump <hp.ttl> ;
-    lib:source <http://purl.obolibrary.org/obo/hp.owl> .
+    a lib:Ontology ;
+    a lib:Virtual ;
+    owl:imports <http://purl.obolibrary.org/obo/hp.owl> .
 
 <external>
     a lib:Ontology ;
     a lib:Virtual ;
-    owl:imports <mirror/mesh.owl>, <mirror/doid.owl>, <mirror/obo_orphanet.owl>, <mirror/ncit-disease.owl>, <mirror/snomed.owl>, <mirror/mesh.owl> .
+    owl:imports <mirror/mesh.owl>, <mirror/doid.owl>, <mirror/obo_orphanet.owl>, <mirror/ncit-disease.owl>, <mirror/snomed.owl>, <mirror/efo.owl> , <mirror/gard.owl> .
 
 <all>
     a lib:Ontology ;

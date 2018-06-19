@@ -105,6 +105,40 @@ name: chemical substance
 is_a: CHEBI:24431 ! chemical entity
 
 [Term]
+id: ENVO:00000000
+name: geographic feature
+synonym: "macroscopic spatial feature" EXACT []
+is_a: ENVO:01000813 ! astronomical body part
+
+[Term]
+id: ENVO:00000002
+name: anthropogenic geographic feature
+def: "An anthropogenic geographic feature is a geographic feature\nresulting from the influence of human beings on nature." []
+synonym: "man-made feature" RELATED []
+synonym: "manmade feature" RELATED []
+is_a: ENVO:00000000 ! geographic feature
+
+[Term]
+id: ENVO:00000070
+name: construction
+def: "A feature that has been constructed by deliberate human effort." []
+synonym: "constructed feature" EXACT []
+is_a: ENVO:00000002 ! anthropogenic geographic feature
+intersection_of: ENVO:00002297 ! environmental feature
+intersection_of: RO:0002353 ENVO:01000996 ! output of construction process
+relationship: BFO:0000050 ENVO:01000983 ! part of technosphere
+relationship: RO:0002353 ENVO:01000996 ! output of construction process
+
+[Term]
+id: ENVO:00000073
+name: building
+def: "A permanent walled and roofed construction." []
+synonym: "BUILDING" EXACT []
+synonym: "building" EXACT []
+is_a: ENVO:00000070 ! construction
+relationship: BFO:0000051 ENVO:01000420 ! has part building part
+
+[Term]
 id: ENVO:00001995
 name: rock
 def: "A rock is a naturally occurring solid aggregate of one or more minerals or mineraloids." []
@@ -112,6 +146,12 @@ is_a: ENVO:01000814 ! solid environmental material
 disjoint_from: ENVO:01000256 ! mineral material
 relationship: RO:0000086 PATO:0000386 ! has quality hard
 relationship: RO:0000086 PATO:0001546 ! has quality quality of a solid
+
+[Term]
+id: ENVO:00002004
+name: mesoscopic physical object
+def: "An environmental feature that is, or can be, contained and is predominantly composed of one or a few types of stuff." []
+is_a: ENVO:00002297 ! environmental feature
 
 [Term]
 id: ENVO:00002008
@@ -159,6 +199,21 @@ def: "A fermented, high-moisture forage that can be fed to ruminants." []
 is_a: ENVO:0010003 ! agricultural environmental material
 
 [Term]
+id: ENVO:00003074
+name: manufactured product
+def: "A material entity that has been processed by humans or their technology in any way, including intermediate products as well as final products." []
+synonym: "manufactured good" EXACT []
+is_a: ENVO:00003075 ! anthropogenic abiotic mesoscopic feature
+intersection_of: BFO:0000040 ! material entity
+intersection_of: RO:0002353 ENVO:01000993 ! output of manufacturing process
+relationship: RO:0002353 ENVO:01000993 ! output of manufacturing process
+
+[Term]
+id: ENVO:00003075
+name: anthropogenic abiotic mesoscopic feature
+is_a: ENVO:01000010 ! abiotic mesoscopic physical object
+
+[Term]
 id: ENVO:00010483
 name: environmental material
 def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
@@ -175,6 +230,11 @@ is_a: ENVO:00010483 ! environmental material
 id: ENVO:0010003
 name: agricultural environmental material
 is_a: ENVO:0010001 ! anthropogenic environmental material
+
+[Term]
+id: ENVO:01000010
+name: abiotic mesoscopic physical object
+is_a: ENVO:00002004 ! mesoscopic physical object
 
 [Term]
 id: ENVO:01000254
@@ -194,16 +254,62 @@ relationship: RO:0000086 PATO:0001546 ! has quality quality of a solid
 relationship: RO:0002473 CHEBI:46662 ! composed primarily of mineral
 
 [Term]
+id: ENVO:01000303
+name: endolithic environment
+def: "An endolithic environment is an environment that exists within solid rock. " []
+is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0002219 ENVO:00001995 ! surrounded by rock
+relationship: RO:0002219 ENVO:00001995 ! surrounded by rock
+
+[Term]
 id: ENVO:01000313
 name: anthropogenic environment
 def: "An anthropogenic environment is an environmental system which is the product of human activity." []
 is_a: ENVO:01000254 ! environmental system
 
 [Term]
+id: ENVO:01000420
+name: building part
+def: "A building part is a construction which is part of a building." []
+is_a: ENVO:00000070 ! construction
+relationship: BFO:0000050 ENVO:00000073 ! part of building
+
+[Term]
+id: ENVO:01000637
+name: outer space
+def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." []
+synonym: "space" BROAD []
+is_a: ENVO:00002297 ! environmental feature
+
+[Term]
 id: ENVO:01000665
 name: waste role
 def: "A role that is realized in some process wherein the bearer is discarded or not utilized further." []
 is_a: BFO:0000023 ! role
+
+[Term]
+id: ENVO:01000799
+name: astronomical body
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." []
+synonym: "celestial body" RELATED []
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000804
+name: astronomical object
+def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." []
+synonym: "celestial object" RELATED []
+is_a: ENVO:00002297 ! environmental feature
+relationship: BFO:0000051 ENVO:01000799 {minCardinality="1"} ! has part astronomical body
+relationship: RO:0002219 ENVO:01000637 ! surrounded by outer space
+
+[Term]
+id: ENVO:01000813
+name: astronomical body part
+def: "A material part of an astronomical body." []
+is_a: ENVO:00002297 ! environmental feature
+relationship: BFO:0000050 ENVO:01000799 ! part of astronomical body
 
 [Term]
 id: ENVO:01000814
@@ -213,6 +319,14 @@ is_a: ENVO:01001125 ! ice
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0000086 PATO:0001546 ! has quality quality of a solid
 relationship: RO:0000086 PATO:0001546 ! has quality quality of a solid
+
+[Term]
+id: ENVO:01000817
+name: biosphere
+def: "A biosphere is an environmental system which includes, as parts, all the living entities within the gravitational sphere of influence of an astronomical body, and the non-living and dead entities which they interact with." []
+is_a: ENVO:01000813 ! astronomical body part
+is_a: ENVO:01001110 ! ecosystem
+relationship: BFO:0000051 PCO:0000000 ! has part collection of organisms
 
 [Term]
 id: ENVO:01000951
@@ -231,6 +345,33 @@ intersection_of: RO:0002233 ENVO:01000951 ! has input natural environment
 intersection_of: RO:0002234 ENVO:01000313 ! has output anthropogenic environment
 relationship: RO:0002233 ENVO:01000951 ! has input natural environment
 relationship: RO:0002234 ENVO:01000313 ! has output anthropogenic environment
+
+[Term]
+id: ENVO:01000983
+name: technosphere
+def: "An environmental system which includes, as parts, all the entities which have been constructed or manufactured by humans or their technology within the gravitational sphere of influence of an astronomical body." []
+is_a: ENVO:01000813 ! astronomical body part
+relationship: BFO:0000051 ENVO:00000070 ! has part construction
+relationship: BFO:0000051 ENVO:00003074 ! has part manufactured product
+relationship: RO:0002131 ENVO:01000817 ! overlaps biosphere
+
+[Term]
+id: ENVO:01000993
+name: manufacturing process
+def: "A planned process during which raw or recycled materials are transformed into products for use or sale using labour and machines, tools, chemical and biological processing, or formulation." []
+is_a: ENVO:01000952 ! anthropisation
+intersection_of: ENVO:01000952 ! anthropisation
+intersection_of: RO:0002234 ENVO:00003074 ! has output manufactured product
+relationship: RO:0002234 ENVO:00003074 ! has output manufactured product
+
+[Term]
+id: ENVO:01000996
+name: construction process
+def: "An process during which natural or manufactured materials and products are processed and arranged by humans or their technology into structures." []
+is_a: ENVO:01000952 ! anthropisation
+intersection_of: ENVO:01000952 ! anthropisation
+intersection_of: RO:0002234 ENVO:00000070 ! has output construction
+relationship: RO:0002234 ENVO:00000070 ! has output construction
 
 [Term]
 id: ENVO:01000997
@@ -926,6 +1067,10 @@ id: RO:0002218
 name: has active participant
 def: "x has participant y if and only if x realizes some active role that inheres in y" []
 is_a: RO:0000057 ! has participant
+
+[Typedef]
+id: RO:0002219
+name: surrounded by
 
 [Typedef]
 id: RO:0002233

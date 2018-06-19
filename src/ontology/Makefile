@@ -71,7 +71,7 @@ all_artefacts: all_reports $(ARTEFACTS)
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
-test: debug.owl sparql_test_edit sparql_test_main_owl sparql_test_main_obo test_nomerge
+test: debug.owl mondo-edit.owl sparql_test_edit sparql_test_main_owl sparql_test_main_obo test_nomerge
 
 
 # ----------------------------------------

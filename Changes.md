@@ -1,3 +1,32 @@
+## 2018-06-15 Release
+
+*  [bipolar depression](http://purl.obolibrary.org/obo/MONDO_0024613)
+*  [manic bipolar affective disorder](http://purl.obolibrary.org/obo/MONDO_0024612)
+*  [T-cell and NK-cell neoplasm](http://purl.obolibrary.org/obo/MONDO_0024615)
+*  [neurotic depression](http://purl.obolibrary.org/obo/MONDO_0024614)
+*  [xanthogranuloma](http://purl.obolibrary.org/obo/MONDO_0024617)
+*  [tympanitis](http://purl.obolibrary.org/obo/MONDO_0024616)
+*  [central nervous system infectious disorder](http://purl.obolibrary.org/obo/MONDO_0024619)
+*  [poliovirus infection](http://purl.obolibrary.org/obo/MONDO_0024618)
+*  [defective phagocytic cell chemotaxis](http://purl.obolibrary.org/obo/MONDO_0024630)
+*  [hypertensive renal disease](http://purl.obolibrary.org/obo/MONDO_0024633)
+*  [defective phagocytic cell opsonization](http://purl.obolibrary.org/obo/MONDO_0024632)
+*  [small intestine disease](http://purl.obolibrary.org/obo/MONDO_0024635)
+*  [large intestine disease](http://purl.obolibrary.org/obo/MONDO_0024634)
+*  [malignant soft tissue neoplasm](http://purl.obolibrary.org/obo/MONDO_0024637)
+*  [inflammation of heart layer](http://purl.obolibrary.org/obo/MONDO_0024636)
+*  [gastric enterochromaffin cell serotonin-producing neuroendocrine tumor](http://purl.obolibrary.org/obo/MONDO_0024639)
+*  [pancreatic gastrinoma](http://purl.obolibrary.org/obo/MONDO_0024638)
+*  [meningitis caused by poliovirus](http://purl.obolibrary.org/obo/MONDO_0024620)
+*  [thyroid gland adenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0024622)
+*  [serous cystadenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0024621)
+*  [atrophy of lacrimal gland](http://purl.obolibrary.org/obo/MONDO_0024624)
+*  [otorhinolaryngologic disease](http://purl.obolibrary.org/obo/MONDO_0024623)
+*  [defective phagocytic cell engulfment](http://purl.obolibrary.org/obo/MONDO_0024626)
+*  [disorder of lacrimal gland](http://purl.obolibrary.org/obo/MONDO_0024625)
+*  [phagocytic cell dysfunction](http://purl.obolibrary.org/obo/MONDO_0024627)
+*  [gastric neuroendocrine tumor G2](http://purl.obolibrary.org/obo/MONDO_0024642)
+
 ## 2018-06-08 Release
 
  * [orbit neoplasm](http://purl.obolibrary.org/obo/MONDO_0024611)
