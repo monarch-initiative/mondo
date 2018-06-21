@@ -2467,6 +2467,12 @@ is_a: GO:0044444 ! cytoplasmic part
 relationship: BFO:0000050 GO:0012505 ! part of endomembrane system
 
 [Term]
+id: GO:0005829
+name: cytosol
+def: "The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes." []
+is_a: GO:0044444 ! cytoplasmic part
+
+[Term]
 id: GO:0005886
 name: plasma membrane
 def: "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." []
@@ -4094,6 +4100,15 @@ is_a: GO:0046903 ! secretion
 is_a: GO:0050878 ! regulation of body fluid levels
 
 [Term]
+id: GO:0007595
+name: lactation
+def: "The regulated release of milk from the mammary glands and the period of time that a mother lactates to feed her young." []
+synonym: "milk secretion" EXACT []
+is_a: GO:0007589 ! body fluid secretion
+relationship: BFO:0000050 GO:0030879 ! part of mammary gland development
+relationship: BFO:0000051 GO:0060156 ! has_part milk ejection reflex
+
+[Term]
 id: GO:0007596
 name: blood coagulation
 def: "The sequential process in which the multiple coagulation factors of the blood interact, ultimately resulting in the formation of an insoluble fibrin clot; it may be divided into three stages: stage 1, the formation of intrinsic and extrinsic prothrombin converting principle; stage 2, the formation of thrombin; stage 3, the formation of stable fibrin polymers." []
@@ -4154,6 +4169,29 @@ id: GO:0007613
 name: memory
 def: "The activities involved in the mental information processing system that receives (registers), modifies, stores, and retrieves informational stimuli. The main stages involved in the formation and retrieval of memory are encoding (processing of received information by acquisition), storage (building a permanent record of received information as a result of consolidation) and retrieval (calling back the stored information and use it in a suitable way to execute a given task)." []
 is_a: GO:0007611 ! learning or memory
+
+[Term]
+id: GO:0007617
+name: mating behavior
+def: "The behavioral interactions between organisms for the purpose of mating, or sexual reproduction resulting in the formation of zygotes." []
+synonym: "mating behaviour" EXACT []
+is_a: GO:0019098 ! reproductive behavior
+intersection_of: GO:0007610 ! behavior
+intersection_of: BFO:0000050 GO:0007618 ! part of mating
+relationship: BFO:0000050 GO:0007618 ! part of mating
+
+[Term]
+id: GO:0007618
+name: mating
+def: "The pairwise union of individuals for the purpose of sexual reproduction, ultimately resulting in the formation of zygotes." []
+is_a: GO:0044703 ! multi-organism reproductive process
+relationship: BFO:0000050 GO:0019953 ! part of sexual reproduction
+
+[Term]
+id: GO:0007620
+name: copulation
+def: "The act of sexual union between male and female, involving the transfer of sperm." []
+is_a: GO:0007618 ! mating
 
 [Term]
 id: GO:0007622
@@ -6518,6 +6556,15 @@ def: "The controlled self-propelled movement of a cell from one site to a destin
 is_a: GO:0048870 ! cell motility
 
 [Term]
+id: GO:0016482
+name: cytosolic transport
+def: "The directed movement of substances or organelles within the cytosol." []
+is_a: GO:0046907 ! intracellular transport
+intersection_of: GO:0006810 ! transport
+intersection_of: BFO:0000066 GO:0005829 ! occurs in cytosol
+relationship: BFO:0000066 GO:0005829 ! occurs in cytosol
+
+[Term]
 id: GO:0016485
 name: protein processing
 def: "Any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein. Protein maturation is the process leading to the attainment of the full functional capacity of a protein." []
@@ -7951,6 +7998,13 @@ def: "Any chromosome other than a sex chromosome." []
 is_a: GO:0005694 ! chromosome
 
 [Term]
+id: GO:0030879
+name: mammary gland development
+def: "The process whose specific outcome is the progression of the mammary gland over time, from its formation to the mature structure. The mammary gland is a large compound sebaceous gland that in female mammals is modified to secrete milk. Its development starts with the formation of the mammary line and ends as the mature gland cycles between nursing and weaning stages." []
+synonym: "mammogenesis" NARROW []
+is_a: GO:0048732 ! gland development
+
+[Term]
 id: GO:0030901
 name: midbrain development
 def: "The process whose specific outcome is the progression of the midbrain over time, from its formation to the mature structure. The midbrain is the middle division of the three primary divisions of the developing chordate brain or the corresponding part of the adult brain (in vertebrates, includes a ventral part containing the cerebral peduncles and a dorsal tectum containing the corpora quadrigemina and that surrounds the aqueduct of Sylvius connecting the third and fourth ventricles)." []
@@ -9309,6 +9363,16 @@ name: cellular response to stress
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus indicating the organism is under stress. The stress is usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." []
 is_a: GO:0006950 ! response to stress
 is_a: GO:0051716 ! cellular response to stimulus
+
+[Term]
+id: GO:0033576
+name: protein glycosylation in cytosol
+def: "The addition of a carbohydrate or carbohydrate derivative unit to a protein amino acid in the cytosol." []
+synonym: "protein amino acid glycosylation in cytosol" EXACT []
+is_a: GO:0006486 ! protein glycosylation
+intersection_of: GO:0006486 ! protein glycosylation
+intersection_of: BFO:0000066 GO:0005829 ! occurs in cytosol
+relationship: BFO:0000066 GO:0005829 ! occurs in cytosol
 
 [Term]
 id: GO:0033578
@@ -10691,6 +10755,13 @@ is_a: GO:0043604 ! amide biosynthetic process
 is_a: GO:1901566 ! organonitrogen compound biosynthetic process
 
 [Term]
+id: GO:0043084
+name: penile erection
+def: "The hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow." []
+is_a: GO:0048609 ! multicellular organismal reproductive process
+relationship: BFO:0000050 GO:0007620 ! part of copulation
+
+[Term]
 id: GO:0043085
 name: positive regulation of catalytic activity
 def: "Any process that activates or increases the activity of an enzyme." []
@@ -11565,6 +11636,16 @@ intersection_of: BFO:0000050 GO:0005737 ! part of cytoplasm
 relationship: BFO:0000050 GO:0005737 ! part of cytoplasm
 
 [Term]
+id: GO:0044445
+name: cytosolic part
+def: "Any constituent part of cytosol, that part of the cytoplasm that does not contain membranous or particulate subcellular components." []
+synonym: "cytosol component" EXACT []
+is_a: GO:0044444 ! cytoplasmic part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
+relationship: BFO:0000050 GO:0005829 ! part of cytosol
+
+[Term]
 id: GO:0044446
 name: intracellular organelle part
 def: "A constituent part of an intracellular organelle, an organized structure of distinctive morphology and function, occurring within the cell. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton but excludes the plasma membrane." []
@@ -11787,6 +11868,16 @@ def: "A specialized area of membrane facing the presynaptic membrane on the tip 
 synonym: "post-synaptic membrane" EXACT []
 is_a: GO:0097060 ! synaptic membrane
 relationship: BFO:0000050 GO:0098794 ! part of postsynapse
+
+[Term]
+id: GO:0045250
+name: cytosolic pyruvate dehydrogenase complex
+def: "Complex that carries out the oxidative decarboxylation of pyruvate to form acetyl-CoA; comprises subunits possessing three catalytic activities: pyruvate dehydrogenase (E1), dihydrolipoamide S-acetyltransferase (E2), and dihydrolipoamide dehydrogenase (E3). Usually contains fewer subunits than its eukaryotic counterpart; for example, the E. coli complex contains 12 E1 dimers, 8 E2 trimers, and 6 E3 dimers arranged in highly symmetric cubic order." []
+synonym: "pyruvate dehydrogenase complex (lipoamide)" RELATED []
+is_a: GO:0044445 ! cytosolic part
+is_a: GO:0045254 ! pyruvate dehydrogenase complex
+intersection_of: GO:0045254 ! pyruvate dehydrogenase complex
+intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
 
 [Term]
 id: GO:0045254
@@ -13525,6 +13616,12 @@ name: system development
 def: "The process whose specific outcome is the progression of an organismal system over time, from its formation to the mature structure. A system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a given biological process." []
 is_a: GO:0048856 ! anatomical structure development
 relationship: BFO:0000050 GO:0007275 ! part of multicellular organism development
+
+[Term]
+id: GO:0048732
+name: gland development
+def: "The process whose specific outcome is the progression of a gland over time, from its formation to the mature structure. A gland is an organ specialised for secretion." []
+is_a: GO:0048513 ! animal organ development
 
 [Term]
 id: GO:0048762
@@ -15604,6 +15701,12 @@ def: "The process whose specific outcome is the progression of the digestive sys
 is_a: GO:0048731 ! system development
 
 [Term]
+id: GO:0060004
+name: reflex
+def: "An automatic response to a stimulus beginning with a nerve impulse from a receptor and ending with the action of an effector such as a gland or a muscle. Signaling never reaches a level of consciousness." []
+is_a: GO:0009605 ! response to external stimulus
+
+[Term]
 id: GO:0060037
 name: pharyngeal system development
 def: "The process whose specific outcome is the progression of the pharyngeal system over time, from its formation to the mature structure. The pharyngeal system is a transient embryonic complex that is specific to vertebrates. It comprises the pharyngeal arches, bulges of tissues of mesoderm and neural crest derivation through which pass nerves and pharyngeal arch arteries. The arches are separated internally by pharyngeal pouches, evaginations of foregut endoderm, and externally by pharyngeal clefts, invaginations of surface ectoderm. The development of the system ends when the stucture it contributes to are forming: the thymus, thyroid, parathyroids, maxilla, mandible, aortic arch, cardiac outflow tract, external and middle ear." []
@@ -15749,6 +15852,16 @@ relationship: BFO:0000050 GO:0007565 ! part of female pregnancy
 relationship: BFO:0000050 GO:0009792 ! part of embryo development ending in birth or egg hatching
 
 [Term]
+id: GO:0060156
+name: milk ejection reflex
+def: "A reflex that occurs in response to suckling, beginning with a nerve impulse from a receptor in the mammary gland and ending with the ejection of milk from the gland. Signaling never reaches a level of consciousness." []
+synonym: "milk ejection" EXACT []
+is_a: GO:0007589 ! body fluid secretion
+is_a: GO:0032941 ! secretion by tissue
+is_a: GO:0060004 ! reflex
+relationship: BFO:0000050 GO:0007595 ! part of lactation
+
+[Term]
 id: GO:0060235
 name: lens induction in camera-type eye
 def: "Signaling at short range between the head ectoderm and the optic vesicle that results in the head ectoderm forming a lens." []
@@ -15846,6 +15959,41 @@ is_a: GO:0048513 ! animal organ development
 relationship: BFO:0000050 GO:0001501 ! part of skeletal system development
 
 [Term]
+id: GO:0060405
+name: regulation of penile erection
+def: "Any process that modulates the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow." []
+is_a: GO:0043900 ! regulation of multi-organism process
+is_a: GO:0051239 ! regulation of multicellular organismal process
+is_a: GO:2000241 ! regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0043084 ! regulates penile erection
+relationship: RO:0002211 GO:0043084 ! regulates penile erection
+
+[Term]
+id: GO:0060406
+name: positive regulation of penile erection
+def: "Any process that increases the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow." []
+is_a: GO:0043902 ! positive regulation of multi-organism process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:0060405 ! regulation of penile erection
+is_a: GO:2000243 ! positive regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0043084 ! positively regulates penile erection
+relationship: RO:0002213 GO:0043084 ! positively regulates penile erection
+
+[Term]
+id: GO:0060407
+name: negative regulation of penile erection
+def: "Any process that stops, prevents, or reduces the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow." []
+is_a: GO:0043901 ! negative regulation of multi-organism process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:0060405 ! regulation of penile erection
+is_a: GO:2000242 ! negative regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0043084 ! negatively regulates penile erection
+relationship: RO:0002212 GO:0043084 ! negatively regulates penile erection
+
+[Term]
 id: GO:0060456
 name: positive regulation of digestive system process
 def: "Any process that increases the frequency, rate or extent of a digestive system process, a physical, chemical, or biochemical process carried out by living organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." []
@@ -15908,6 +16056,16 @@ intersection_of: RO:0002213 GO:0042368 ! positively regulates vitamin D biosynth
 relationship: RO:0002213 GO:0042368 ! positively regulates vitamin D biosynthetic process
 
 [Term]
+id: GO:0060610
+name: mesenchymal cell differentiation involved in mammary gland development
+def: "The process in which a relatively unspecialized cell acquires specialized features of a mammary gland mesenchymal cell. Mammary gland mesenchymal cells form a loosely connected network of cells that surround the mammary ducts." []
+synonym: "mammary gland mesenchymal cell differentiation" EXACT []
+is_a: GO:0048762 ! mesenchymal cell differentiation
+intersection_of: GO:0048762 ! mesenchymal cell differentiation
+intersection_of: BFO:0000050 GO:0030879 ! part of mammary gland development
+relationship: BFO:0000050 GO:0030879 ! part of mammary gland development
+
+[Term]
 id: GO:0060627
 name: regulation of vesicle-mediated transport
 def: "Any process that modulates the rate, frequency, or extent of vesicle-mediated transport, the directed movement of substances, either within a vesicle or in the vesicle membrane, into, out of or within a cell." []
@@ -15945,6 +16103,16 @@ is_a: GO:0060759 ! regulation of response to cytokine stimulus
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0034097 ! negatively regulates response to cytokine
 relationship: RO:0002212 GO:0034097 ! negatively regulates response to cytokine
+
+[Term]
+id: GO:0060764
+name: cell-cell signaling involved in mammary gland development
+def: "Any process that mediates the transfer of information from one cell to another and contributes to the progression of the mammary gland, from its initial state to the mature structure." []
+synonym: "cell-cell signalling involved in mammary gland development" EXACT []
+is_a: GO:0007267 ! cell-cell signaling
+intersection_of: GO:0007267 ! cell-cell signaling
+intersection_of: BFO:0000050 GO:0030879 ! part of mammary gland development
+relationship: BFO:0000050 GO:0030879 ! part of mammary gland development
 
 [Term]
 id: GO:0060765
@@ -16128,6 +16296,13 @@ def: "The process in which the anatomical structures of a pharyngeal arch artery
 synonym: "aortic arch artery morphogenesis" BROAD []
 is_a: GO:0048844 ! artery morphogenesis
 relationship: BFO:0000050 GO:0060037 ! part of pharyngeal system development
+
+[Term]
+id: GO:0061702
+name: inflammasome complex
+def: "A cytosolic protein complex that is capable of activating caspase-1." []
+is_a: GO:0032991 ! protein-containing complex
+is_a: GO:0044445 ! cytosolic part
 
 [Term]
 id: GO:0065007
@@ -17669,6 +17844,38 @@ name: supramolecular fiber
 def: "A polymer consisting of an indefinite number of protein or protein complex subunits that have polymerised to form a fiber-shaped structure." []
 synonym: "fibril" RELATED []
 is_a: GO:0099081 ! supramolecular polymer
+
+[Term]
+id: GO:0099522
+name: region of cytosol
+def: "Any (proper) part of the cytosol of a single cell of sufficient size to still be considered cytosol" []
+is_a: GO:0005829 ! cytosol
+is_a: GO:0044445 ! cytosolic part
+intersection_of: GO:0005829 ! cytosol
+intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
+
+[Term]
+id: GO:0099523
+name: presynaptic cytosol
+def: "The region of the cytosol consisting of all cytosol that is part of the presynapse." []
+is_a: GO:0044456 ! synapse part
+is_a: GO:0097458 ! neuron part
+is_a: GO:0099522 ! region of cytosol
+intersection_of: GO:0005829 ! cytosol
+intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
+intersection_of: BFO:0000050 GO:0098793 ! part of presynapse
+relationship: BFO:0000050 GO:0098793 ! part of presynapse
+
+[Term]
+id: GO:0099524
+name: postsynaptic cytosol
+def: "The region of the cytosol consisting of all cytosol that is part of the postsynapse." []
+is_a: GO:0044456 ! synapse part
+is_a: GO:0099522 ! region of cytosol
+intersection_of: GO:0005829 ! cytosol
+intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
+intersection_of: BFO:0000050 GO:0098794 ! part of postsynapse
+relationship: BFO:0000050 GO:0098794 ! part of postsynapse
 
 [Term]
 id: GO:0099529
@@ -20256,6 +20463,49 @@ intersection_of: RO:0002213 GO:0007034 ! positively regulates vacuolar transport
 relationship: RO:0002213 GO:0007034 ! positively regulates vacuolar transport
 
 [Term]
+id: GO:1903487
+name: regulation of lactation
+def: "Any process that modulates the frequency, rate or extent of lactation." []
+is_a: GO:0050878 ! regulation of body fluid levels
+is_a: GO:0051046 ! regulation of secretion
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007595 ! regulates lactation
+relationship: RO:0002211 GO:0007595 ! regulates lactation
+
+[Term]
+id: GO:1903488
+name: negative regulation of lactation
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of lactation." []
+synonym: "down regulation of lactation" EXACT []
+synonym: "down-regulation of lactation" EXACT []
+synonym: "downregulation of lactation" EXACT []
+synonym: "inhibition of lactation" NARROW []
+is_a: GO:0051048 ! negative regulation of secretion
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:1903487 ! regulation of lactation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007595 ! negatively regulates lactation
+relationship: RO:0002212 GO:0007595 ! negatively regulates lactation
+
+[Term]
+id: GO:1903489
+name: positive regulation of lactation
+def: "Any process that activates or increases the frequency, rate or extent of lactation." []
+synonym: "activation of lactation" NARROW []
+synonym: "up regulation of lactation" EXACT []
+synonym: "up-regulation of lactation" EXACT []
+synonym: "upregulation of lactation" EXACT []
+is_a: GO:0051047 ! positive regulation of secretion
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:1903487 ! regulation of lactation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007595 ! positively regulates lactation
+relationship: RO:0002213 GO:0007595 ! positively regulates lactation
+
+[Term]
 id: GO:1903506
 name: regulation of nucleic acid-templated transcription
 def: "Any process that modulates the frequency, rate or extent of nucleic acid-templated transcription." []
@@ -20463,6 +20713,54 @@ is_a: GO:1903578 ! regulation of ATP metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0046034 ! positively regulates ATP metabolic process
 relationship: RO:0002213 GO:0046034 ! positively regulates ATP metabolic process
+
+[Term]
+id: GO:1903649
+name: regulation of cytoplasmic transport
+def: "Any process that modulates the frequency, rate or extent of cytoplasmic transport." []
+synonym: "regulation of cytoplasmic streaming" NARROW []
+is_a: GO:0032386 ! regulation of intracellular transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0016482 ! regulates cytosolic transport
+relationship: RO:0002211 GO:0016482 ! regulates cytosolic transport
+
+[Term]
+id: GO:1903650
+name: negative regulation of cytoplasmic transport
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of cytoplasmic transport." []
+synonym: "down regulation of cytoplasmic streaming" NARROW []
+synonym: "down regulation of cytoplasmic transport" EXACT []
+synonym: "down-regulation of cytoplasmic streaming" NARROW []
+synonym: "down-regulation of cytoplasmic transport" EXACT []
+synonym: "downregulation of cytoplasmic streaming" NARROW []
+synonym: "downregulation of cytoplasmic transport" EXACT []
+synonym: "inhibition of cytoplasmic streaming" NARROW []
+synonym: "inhibition of cytoplasmic transport" NARROW []
+synonym: "negative regulation of cytoplasmic streaming" NARROW []
+is_a: GO:0032387 ! negative regulation of intracellular transport
+is_a: GO:1903649 ! regulation of cytoplasmic transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0016482 ! negatively regulates cytosolic transport
+relationship: RO:0002212 GO:0016482 ! negatively regulates cytosolic transport
+
+[Term]
+id: GO:1903651
+name: positive regulation of cytoplasmic transport
+def: "Any process that activates or increases the frequency, rate or extent of cytoplasmic transport." []
+synonym: "activation of cytoplasmic streaming" NARROW []
+synonym: "activation of cytoplasmic transport" NARROW []
+synonym: "positive regulation of cytoplasmic streaming" NARROW []
+synonym: "up regulation of cytoplasmic streaming" NARROW []
+synonym: "up regulation of cytoplasmic transport" EXACT []
+synonym: "up-regulation of cytoplasmic streaming" NARROW []
+synonym: "up-regulation of cytoplasmic transport" EXACT []
+synonym: "upregulation of cytoplasmic streaming" NARROW []
+synonym: "upregulation of cytoplasmic transport" EXACT []
+is_a: GO:0032388 ! positive regulation of intracellular transport
+is_a: GO:1903649 ! regulation of cytoplasmic transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0016482 ! positively regulates cytosolic transport
+relationship: RO:0002213 GO:0016482 ! positively regulates cytosolic transport
 
 [Term]
 id: GO:1903715

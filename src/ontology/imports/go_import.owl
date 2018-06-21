@@ -4913,6 +4913,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0005829 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005829">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044444"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytosol</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0005886 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005886">
@@ -7669,6 +7679,29 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0007595 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007595">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007589"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030879"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0060156"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The regulated release of milk from the mammary glands and the period of time that a mother lactates to feed her young.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">milk secretion</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lactation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0007596 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007596">
@@ -7764,6 +7797,60 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007611"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The activities involved in the mental information processing system that receives (registers), modifies, stores, and retrieves informational stimuli. The main stages involved in the formation and retrieval of memory are encoding (processing of received information by acquisition), storage (building a permanent record of received information as a result of consolidation) and retrieval (calling back the stored information and use it in a suitable way to execute a given task).</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">memory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0007617 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007617">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0007610"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007618"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0019098"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007618"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The behavioral interactions between organisms for the purpose of mating, or sexual reproduction resulting in the formation of zygotes.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mating behaviour</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mating behavior</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0007618 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007618">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044703"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0019953"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The pairwise union of individuals for the purpose of sexual reproduction, ultimately resulting in the formation of zygotes.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0007620 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007620">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007618"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The act of sexual union between male and female, involving the transfer of sperm.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copulation</rdfs:label>
     </owl:Class>
     
 
@@ -12321,6 +12408,33 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0016482 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016482">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0006810"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0046907"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The directed movement of substances or organelles within the cytosol.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytosolic transport</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0016485 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016485">
@@ -14965,6 +15079,17 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005694"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any chromosome other than a sex chromosome.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autosome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0030879 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0030879">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0048732"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process whose specific outcome is the progression of the mammary gland over time, from its formation to the mature structure. The mammary gland is a large compound sebaceous gland that in female mammals is modified to secrete milk. Its development starts with the formation of the mammary line and ends as the mature gland cycles between nursing and weaning stages.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mammogenesis</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mammary gland development</rdfs:label>
     </owl:Class>
     
 
@@ -17966,6 +18091,34 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0033576 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0033576">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0006486"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0006486"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The addition of a carbohydrate or carbohydrate derivative unit to a protein amino acid in the cytosol.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein amino acid glycosylation in cytosol</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein glycosylation in cytosol</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0033578 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0033578">
@@ -20611,6 +20764,22 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0043084 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043084">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0048609"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007620"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">penile erection</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0043085 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043085">
@@ -22540,6 +22709,34 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0044445 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0044445">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005575"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044444"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any constituent part of cytosol, that part of the cytoplasm that does not contain membranous or particulate subcellular components.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytosol component</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytosolic part</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0044446 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0044446">
@@ -23030,6 +23227,29 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specialized area of membrane facing the presynaptic membrane on the tip of the nerve ending and separated from it by a minute cleft (the synaptic cleft). Neurotransmitters cross the synaptic cleft and transmit the signal to the postsynaptic membrane.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">post-synaptic membrane</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postsynaptic membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0045250 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0045250">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0045254"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044445"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0045254"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Complex that carries out the oxidative decarboxylation of pyruvate to form acetyl-CoA; comprises subunits possessing three catalytic activities: pyruvate dehydrogenase (E1), dihydrolipoamide S-acetyltransferase (E2), and dihydrolipoamide dehydrogenase (E3). Usually contains fewer subunits than its eukaryotic counterpart; for example, the E. coli complex contains 12 E1 dimers, 8 E2 trimers, and 6 E3 dimers arranged in highly symmetric cubic order.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyruvate dehydrogenase complex (lipoamide)</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytosolic pyruvate dehydrogenase complex</rdfs:label>
     </owl:Class>
     
 
@@ -26518,6 +26738,16 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process whose specific outcome is the progression of an organismal system over time, from its formation to the mature structure. A system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a given biological process.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">system development</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0048732 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0048732">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0048513"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process whose specific outcome is the progression of a gland over time, from its formation to the mature structure. A gland is an organ specialised for secretion.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gland development</rdfs:label>
     </owl:Class>
     
 
@@ -30980,6 +31210,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0060004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009605"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An automatic response to a stimulus beginning with a nerve impulse from a receptor and ending with the action of an effector such as a gland or a muscle. Signaling never reaches a level of consciousness.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reflex</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0060037 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060037">
@@ -31334,6 +31574,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0060156 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060156">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007589"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032941"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0060004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007595"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reflex that occurs in response to suckling, beginning with a nerve impulse from a receptor in the mammary gland and ending with the ejection of milk from the gland. Signaling never reaches a level of consciousness.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">milk ejection</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">milk ejection reflex</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0060235 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060235">
@@ -31583,6 +31842,95 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0060405 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060405">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043084"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043900"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051239"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_2000241"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043084"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that modulates the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of penile erection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0060406 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060406">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043084"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043902"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051240"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0060405"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_2000243"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043084"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that increases the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of penile erection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0060407 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060407">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043084"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043901"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051241"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0060405"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_2000242"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043084"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that stops, prevents, or reduces the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of penile erection</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0060456 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060456">
@@ -31744,6 +32092,34 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0060610 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060610">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0048762"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030879"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0048762"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030879"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process in which a relatively unspecialized cell acquires specialized features of a mammary gland mesenchymal cell. Mammary gland mesenchymal cells form a loosely connected network of cells that surround the mammary ducts.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mammary gland mesenchymal cell differentiation</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesenchymal cell differentiation involved in mammary gland development</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0060627 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060627">
@@ -31851,6 +32227,34 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that decreases the rate, frequency, or extent of a response to cytokine stimulus.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of response to cytokine stimulus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0060764 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0060764">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0007267"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030879"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007267"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030879"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that mediates the transfer of information from one cell to another and contributes to the progression of the mammary gland, from its initial state to the mature structure.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell-cell signalling involved in mammary gland development</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell-cell signaling involved in mammary gland development</rdfs:label>
     </owl:Class>
     
 
@@ -32331,6 +32735,17 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process in which the anatomical structures of a pharyngeal arch artery is generated and organized. The pharyngeal arch arteries are a series of six paired embryological vascular structures, the development of which give rise to several major arteries, such as the stapedial artery, the middle meningeal artery, the internal carotid artery and the pulmonary artery.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aortic arch artery morphogenesis</oboInOwl:hasBroadSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal arch artery morphogenesis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0061702 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0061702">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044445"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cytosolic protein complex that is capable of activating caspase-1.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflammasome complex</rdfs:label>
     </owl:Class>
     
 
@@ -35469,6 +35884,93 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A polymer consisting of an indefinite number of protein or protein complex subunits that have polymerised to form a fiber-shaped structure.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fibril</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">supramolecular fiber</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0099522 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0099522">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044445"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any (proper) part of the cytosol of a single cell of sufficient size to still be considered cytosol</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">region of cytosol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0099523 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0099523">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0098793"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044456"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0097458"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0099522"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0098793"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The region of the cytosol consisting of all cytosol that is part of the presynapse.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">presynaptic cytosol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0099524 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0099524">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005829"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0098794"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044456"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0099522"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0098794"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The region of the cytosol consisting of all cytosol that is part of the postsynapse.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postsynaptic cytosol</rdfs:label>
     </owl:Class>
     
 
@@ -40382,6 +40884,103 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_1903487 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1903487">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007595"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0050878"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051046"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_2000026"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007595"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that modulates the frequency, rate or extent of lactation.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of lactation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_1903488 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1903488">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007595"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051048"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051093"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051241"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_1903487"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007595"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that stops, prevents or reduces the frequency, rate or extent of lactation.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">down regulation of lactation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">down-regulation of lactation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">downregulation of lactation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inhibition of lactation</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of lactation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_1903489 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1903489">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007595"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051047"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051094"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0051240"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_1903487"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007595"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that activates or increases the frequency, rate or extent of lactation.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up regulation of lactation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up-regulation of lactation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upregulation of lactation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activation of lactation</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of lactation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_1903506 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1903506">
@@ -40824,6 +41423,108 @@
         <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activation of ATP metabolic process</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activation of ATP metabolism</oboInOwl:hasNarrowSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of ATP metabolic process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_1903649 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1903649">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016482"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032386"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016482"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that modulates the frequency, rate or extent of cytoplasmic transport.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of cytoplasmic transport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_1903650 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1903650">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016482"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032387"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_1903649"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016482"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that stops, prevents or reduces the frequency, rate or extent of cytoplasmic transport.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">down regulation of cytoplasmic transport</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">down-regulation of cytoplasmic transport</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">downregulation of cytoplasmic transport</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">down regulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">down-regulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">downregulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inhibition of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inhibition of cytoplasmic transport</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of cytoplasmic transport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_1903651 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1903651">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0008150"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016482"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032388"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_1903649"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016482"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any process that activates or increases the frequency, rate or extent of cytoplasmic transport.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up regulation of cytoplasmic transport</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up-regulation of cytoplasmic transport</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upregulation of cytoplasmic transport</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activation of cytoplasmic transport</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up regulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up-regulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upregulation of cytoplasmic streaming</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of cytoplasmic transport</rdfs:label>
     </owl:Class>
     
 
