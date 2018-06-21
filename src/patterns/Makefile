@@ -81,7 +81,7 @@ lx-$(Ont)-$(P).owl: lx-$(Ont)-$(P).tsv
 	apply-pattern.py -n $(OBO)/$(Ont)/$(P).owl  -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(P).yaml  > $@.tmp && mv $@.tmp $@
 
 ld-$(Ont)-$(P).owl: ld-$(Ont)-$(P).tsv 
-	apply-pattern.py -n $(OBO)/$(Ont)/$(P).owl -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(P).yaml  > $@.tmp && mv $@.tmp $@
+	apply-pattern.py -S syns.json -n $(OBO)/$(Ont)/$(P).owl -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(P).yaml  > $@.tmp && mv $@.tmp $@
 #	dosdp-tools  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$(P).yaml --outfile=$@.tmp generate && mv $@.tmp $@
 
 merged-ld.owl: $(patsubst %,ld-mondo-%.owl,$(PATTERNS))
@@ -89,6 +89,10 @@ merged-ld.owl: $(patsubst %,ld-mondo-%.owl,$(PATTERNS))
 
 merged-%.obo: merged-%.owl
 	owltools $< -o -f obo $@
+
+# TODO: replace using dosdp-tools
+syns.json:
+	extract-obo-syns.pl -e $(HOME)/repos/ext.obo $(HOME)/repos/go-ontology/target/go.obo  > $@
 
 fooz:
 	lsaz ddddd

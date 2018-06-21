@@ -33,7 +33,7 @@ FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@g; s@$(OBO)/UMLS_@ht
 # Top-level targets
 # ----------------------------------------
 
-all: all_artefacts
+all: test all_artefacts
 
 # ----------------------------------------
 # Artefacts
@@ -51,10 +51,10 @@ SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
 MAIN_PRODUCTS = $(ONT) $(ONT)-component
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
+  $(IMPORT_FILES) \
   $(MAIN_FILES) \
   $(REPORT_FILES) \
-  $(SUBSET_FILES) \
-  $(IMPORT_FILES) 
+  $(SUBSET_FILES)
 
 list_artefacts:
 	echo $(ARTEFACTS)
