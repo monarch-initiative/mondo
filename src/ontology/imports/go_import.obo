@@ -14253,6 +14253,13 @@ synonym: "regulation of posture" EXACT []
 is_a: GO:0050905 ! neuromuscular process
 
 [Term]
+id: GO:0050885
+name: neuromuscular process controlling balance
+def: "Any process that an organism uses to control its balance, the orientation of the organism (or the head of the organism) in relation to the source of gravity. In humans and animals, balance is perceived through visual cues, the labyrinth system of the inner ears and information from skin pressure receptors and muscle and joint receptors." []
+synonym: "regulation of balance" RELATED []
+is_a: GO:0050905 ! neuromuscular process
+
+[Term]
 id: GO:0050886
 name: endocrine process
 def: "The process that involves the secretion of or response to endocrine hormones. An endocrine hormone is a hormone released into the circulatory system." []
@@ -14343,6 +14350,14 @@ synonym: "chemi-mechanical coupling" RELATED []
 synonym: "mechanosensory perception" EXACT []
 synonym: "perception of mechanical stimulus" EXACT []
 is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0050957
+name: equilibrioception
+def: "The series of events required for an organism to receive an orientational stimulus, convert it to a molecular signal, and recognize and characterize the signal. Equilibrioception refers to a combination of processes by which an organism can perceive its orientation with respect to gravity. In animals, stimuli come from labyrinth system of the inner ears, monitoring the direction of motion; visual stimuli, with information on orientation and motion; pressure receptors, which tell the organism which body surfaces are in contact with the ground; and proprioceptive cues, which report which parts of the body are in motion." []
+synonym: "sensory perception of orientation with respect to gravity" EXACT []
+is_a: GO:0007600 ! sensory perception
+relationship: BFO:0000050 GO:0050885 ! part of neuromuscular process controlling balance
 
 [Term]
 id: GO:0050975
@@ -15316,6 +15331,30 @@ is_a: GO:0051341 ! regulation of oxidoreductase activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0016491 ! negatively regulates oxidoreductase activity
 relationship: RO:0002212 GO:0016491 ! negatively regulates oxidoreductase activity
+
+[Term]
+id: GO:0051355
+name: proprioception involved in equilibrioception
+def: "The series of events contributing to equilibrioception by which an organism senses the position, location, orientation, and movement of the body and its parts. Proprioception plays an important role in the ability of an organism to perceive its orientation with respect to gravity." []
+synonym: "equilibrioception by proprioception" EXACT []
+synonym: "perception of orientation with respect to gravity by proprioception" EXACT []
+synonym: "proprioception during equilibrioception" RELATED []
+is_a: GO:0019230 ! proprioception
+intersection_of: GO:0019230 ! proprioception
+intersection_of: BFO:0000050 GO:0050957 ! part of equilibrioception
+relationship: BFO:0000050 GO:0050957 ! part of equilibrioception
+
+[Term]
+id: GO:0051356
+name: visual perception involved in equilibrioception
+def: "The series of events during equilibrioception required for an organism to receive a visual stimulus, convert it to a molecular signal, and recognize and characterize the signal. Visual input plays an important role in the ability of an organism to perceive its orientation with respect to gravity." []
+synonym: "equilibrioception by visual perception" NARROW []
+synonym: "perception of orientation with respect to gravity by visual perception" EXACT []
+synonym: "visual perception during equilibrioception" RELATED []
+is_a: GO:0007601 ! visual perception
+intersection_of: GO:0007601 ! visual perception
+intersection_of: BFO:0000050 GO:0050957 ! part of equilibrioception
+relationship: BFO:0000050 GO:0050957 ! part of equilibrioception
 
 [Term]
 id: GO:0051560
