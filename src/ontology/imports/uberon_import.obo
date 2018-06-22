@@ -35026,6 +35026,30 @@ relationship: BFO:0000051 UBERON:0001000 ! has part vas deferens
 relationship: RO:0002433 UBERON:0004054 ! contributes to morphology of internal male genitalia
 
 [Term]
+id: UBERON:0005356
+name: Rathke's pouch
+def: "A pouch of ectoderm that grows out from the upper surface of the embryonic stomodeum and gives rise to the anterior and intermediate lobes of the pituitary gland[MP]. In embryogenesis, Rathke's pouch is a depression in the roof of the developing mouth in front of the buccopharyngeal membrane. It gives rise to the anterior pituitary (adenohypophysis), a part of the endocrine system[WP]." []
+synonym: "adenohypophysial pouch" NARROW []
+synonym: "craniobuccal pouch" RELATED []
+synonym: "craniopharyngeal pouch" RELATED []
+synonym: "hypophyseal diverticulum" RELATED []
+synonym: "hypophyseal pouch" RELATED []
+synonym: "nasohypophyseal pouch" RELATED []
+synonym: "pituitary diverticulum" RELATED []
+synonym: "pouch of Rathke" EXACT []
+synonym: "Rathke pouch" EXACT []
+synonym: "Rathke's cleft" RELATED []
+synonym: "Rathke's cyst" RELATED []
+synonym: "Rathke's pocket" RELATED []
+synonym: "Rathkes pouch epithelium" NARROW []
+is_a: UBERON:0005423 ! developing anatomical structure
+is_a: UBERON:0007499 ! epithelial sac
+is_a: UBERON:0010371 ! ecto-epithelium
+relationship: BFO:0000050 UBERON:0000033 ! part of head
+relationship: RO:0002202 UBERON:0000930 ! develops_from stomodeum
+relationship: RO:0002202 UBERON:0009122 ! develops_from adenohypophyseal placode
+
+[Term]
 id: UBERON:0005357
 name: brain ependyma
 def: "the ependymal cell layer that lines the brain ventricles" []
@@ -45408,6 +45432,18 @@ relationship: RO:0002176 UBERON:0001255 ! connects urinary bladder
 relationship: RO:0002433 UBERON:0001008 ! contributes to morphology of renal system
 
 [Term]
+id: UBERON:0009974
+name: lumen of Rathke's pouch
+def: "An anatomical cavity that surrounded_by a Rathke's pouch." []
+synonym: "Rathkes pouch invagination" NARROW []
+is_a: UBERON:0005082 ! tube lumen
+is_a: UBERON:0007473 ! lumen of epithelial sac
+intersection_of: UBERON:0000464 ! anatomical space
+intersection_of: RO:0002572 UBERON:0005356 ! luminal space of Rathke's pouch
+relationship: RO:0002219 UBERON:0012287 ! surrounded_by Rathkes pouch epithelium
+relationship: RO:0002572 UBERON:0005356 ! luminal space of Rathke's pouch
+
+[Term]
 id: UBERON:0009978
 name: epicondyle
 def: "." []
@@ -51203,6 +51239,22 @@ intersection_of: UBERON:0001821 ! sebaceous gland
 intersection_of: BFO:0000050 UBERON:0011932 ! part of pilosebaceous unit
 intersection_of: BFO:0000050 UBERON:0012336 ! part of perianal skin
 relationship: BFO:0000050 UBERON:0012336 ! part of perianal skin
+
+[Term]
+id: UBERON:0012287
+name: Rathkes pouch epithelium
+def: "A epithelial sac that is part of a Rathke's pouch." []
+is_a: UBERON:0004906 ! ectodermal part of digestive tract
+is_a: UBERON:0007499 ! epithelial sac
+is_a: UBERON:0009854 ! digestive tract diverticulum
+is_a: UBERON:0011642 ! oral epithelium from ectoderm
+intersection_of: UBERON:0007499 ! epithelial sac
+intersection_of: BFO:0000050 UBERON:0005356 ! part of Rathke's pouch
+intersection_of: RO:0002220 UBERON:0009974 ! adjacent_to lumen of Rathke's pouch
+relationship: BFO:0000050 UBERON:0005356 ! part of Rathke's pouch
+relationship: BFO:0000050 UBERON:0011642 ! part of oral epithelium from ectoderm
+relationship: RO:0002202 UBERON:0009479 ! develops_from ectoderm of buccopharyngeal membrane
+relationship: RO:0002220 UBERON:0009974 ! adjacent_to lumen of Rathke's pouch
 
 [Term]
 id: UBERON:0012292
