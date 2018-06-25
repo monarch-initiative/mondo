@@ -212,6 +212,39 @@ xref: UMLS:C1852534
 is_a: HP:0003241 ! External genital hypoplasia
 
 [Term]
+id: HP:0000069
+name: Abnormality of the ureter
+namespace: human_phenotype
+alt_id: HP:0006001
+def: "An abnormality of the ureter." [HPO:probinson]
+synonym: "Abnormality of the ureters" EXACT []
+synonym: "Ureter issue" EXACT []
+synonym: "Ureteral anomalies" EXACT []
+xref: UMLS:C1840382
+is_a: HP:0010935 ! Abnormality of the upper urinary tract
+
+[Term]
+id: HP:0000071
+name: Ureteral stenosis
+namespace: human_phenotype
+def: "The presence of a stenotic, i.e., constricted ureter." [HPO:probinson]
+synonym: "Narrowing of the ureter" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: SNOMEDCT_US:95574003
+xref: UMLS:C0521618
+is_a: HP:0006000 ! Ureteral obstruction
+
+[Term]
+id: HP:0000074
+name: Ureteropelvic junction obstruction
+namespace: human_phenotype
+def: "Blockage of urine flow from the renal pelvis to the proximal ureter." [Eurenomics:ewuehl]
+synonym: "Pelviureteric junction obstruction" EXACT []
+xref: MSH:C537373
+xref: SNOMEDCT_US:95575002
+xref: UMLS:C0521619
+is_a: HP:0000071 ! Ureteral stenosis
+
+[Term]
 id: HP:0000077
 name: Abnormality of the kidney
 namespace: human_phenotype
@@ -6875,6 +6908,17 @@ xref: UMLS:C4021748
 is_a: HP:0004332 ! Abnormal lymphocyte morphology
 
 [Term]
+id: HP:0002870
+name: Obstructive sleep apnea
+namespace: human_phenotype
+def: "A condition characterized by obstruction of the airway and by pauses in breathing during sleep occurring many times during the night. Obstructive sleep apnea is related to a relaxation of muscle tone (which normally occurs during sleep) leading to partial collapse of the soft tissues in the airway with resultant obstruction of the air flow." [HPO:probinson]
+synonym: "Obstructive sleep apnoea" RELATED []
+xref: MSH:D020181
+xref: SNOMEDCT_US:78275009
+xref: UMLS:C0520679
+is_a: HP:0010535 ! Sleep apnea
+
+[Term]
 id: HP:0002883
 name: Hyperventilation
 namespace: human_phenotype
@@ -8526,6 +8570,17 @@ is_a: HP:0002750 ! Delayed skeletal maturation
 is_a: HP:0200000 ! Dysharmonic bone age
 
 [Term]
+id: HP:0006000
+name: Ureteral obstruction
+namespace: human_phenotype
+def: "Obstruction of the flow of urine through the ureter." [HPO:probinson]
+xref: Fyler:4492
+xref: MSH:D014517
+xref: SNOMEDCT_US:20018005
+xref: UMLS:C0041956
+is_a: HP:0000069 ! Abnormality of the ureter
+
+[Term]
 id: HP:0006483
 name: Abnormal number of teeth
 namespace: human_phenotype
@@ -9192,6 +9247,19 @@ synonym: "Symmetrical rhizomelic limb shortening" EXACT []
 xref: UMLS:C1866730
 is_a: HP:0008873 ! Disproportionate short-limb short stature
 is_a: HP:0009826 ! Limb undergrowth
+
+[Term]
+id: HP:0009064
+name: Generalized lipodystrophy
+namespace: human_phenotype
+alt_id: HP:0008966
+def: "Generalized degenerative changes of the fat tissue." [HPO:curators]
+synonym: "Lipodystrophy, generalized" EXACT []
+xref: MSH:D052497
+xref: SNOMEDCT_US:284449005
+xref: SNOMEDCT_US:86907008
+xref: UMLS:C0221032
+is_a: HP:0009125 ! Lipodystrophy
 
 [Term]
 id: HP:0009115
@@ -11365,6 +11433,18 @@ created_by: peter
 creation_date: 2012-09-16T08:21:57Z
 
 [Term]
+id: HP:0012205
+name: Globozoospermia
+namespace: human_phenotype
+def: "Any structural anomaly of the acrosome resulting in a round sperm head." [HPO:probinson, MP:0002686]
+xref: MSH:D000072660
+xref: SNOMEDCT_US:236818008
+xref: UMLS:C0403825
+is_a: HP:0012865 ! Sperm head anomaly
+created_by: peter
+creation_date: 2013-03-12T12:21:08Z
+
+[Term]
 id: HP:0012210
 name: Abnormal renal morphology
 namespace: human_phenotype
@@ -11858,6 +11938,52 @@ created_by: peter
 creation_date: 2014-06-06T06:41:33Z
 
 [Term]
+id: HP:0012862
+name: Abnormal germ cell morphology
+namespace: human_phenotype
+def: "Any structural anomaly of a reproductive cell." [HPO:probinson]
+synonym: "Abnormally shaped of reproductive cell" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: UMLS:C4022704
+is_a: HP:0012243 ! Abnormal reproductive system morphology
+created_by: hecht
+creation_date: 2014-06-09T10:01:49Z
+
+[Term]
+id: HP:0012863
+name: Abnormal male germ cell morphology
+namespace: human_phenotype
+def: "A structural anomaly of a male reproductive cell." [HPO:probinson]
+xref: UMLS:C4022703
+is_a: HP:0012862 ! Abnormal germ cell morphology
+created_by: hecht
+creation_date: 2014-06-09T10:05:33Z
+
+[Term]
+id: HP:0012864
+name: Abnormal sperm morphology
+namespace: human_phenotype
+def: "A structural anomaly of sperm." [HPO:probinson]
+synonym: "Abnormal shape of sperm" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Teratospermia" EXACT []
+synonym: "Teratozoospermia" EXACT []
+xref: MSH:D000072660
+xref: SNOMEDCT_US:236817003
+xref: UMLS:C0403824
+is_a: HP:0012863 ! Abnormal male germ cell morphology
+created_by: hecht
+creation_date: 2014-06-09T10:07:03Z
+
+[Term]
+id: HP:0012865
+name: Sperm head anomaly
+namespace: human_phenotype
+def: "A structural abnormality of the sperm head." [HPO:probinson, pmid:22198630]
+xref: UMLS:C4022702
+is_a: HP:0012864 ! Abnormal sperm morphology
+created_by: hecht
+creation_date: 2014-06-09T10:48:21Z
+
+[Term]
 id: HP:0012874
 name: Abnormal male reproductive system physiology
 namespace: human_phenotype
@@ -11937,6 +12063,15 @@ def: "Short-lived and not permanent. This term applies to a phenotypic abnormali
 is_a: HP:0011008 ! Temporal pattern
 property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2016-12-03T22:19:26Z xsd:dateTime
+
+[Term]
+id: HP:0025234
+name: Parasomnia
+namespace: human_phenotype
+def: "An undesirable physical event or experience that occur during entry into sleep, during sleep, or during arousal from sleep." [PMID:27647645]
+is_a: HP:0002360 ! Sleep disturbance
+property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2016-12-14T11:50:48Z xsd:dateTime
 
 [Term]
 id: HP:0025270

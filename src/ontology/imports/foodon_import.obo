@@ -136,6 +136,16 @@ intersection_of: FOODON:00001173 ! plant seed food product
 intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant (food source)
 
 [Term]
+id: FOODON:00001107
+name: bovine dairy food product
+is_a: FOODON:00001256 ! dairy food product
+
+[Term]
+id: FOODON:00001109
+name: caprine dairy food product
+is_a: FOODON:00001107 ! bovine dairy food product
+
+[Term]
 id: FOODON:00001141
 name: wheat based food product
 is_a: FOODON:00001093 ! cereal grain food product
@@ -191,12 +201,56 @@ name: fish food product
 is_a: FOODON:00001092 ! vertebrate animal food product
 
 [Term]
+id: FOODON:00001256
+name: dairy food product
+def: "Food made from milk." []
+is_a: FOODON:00001092 ! vertebrate animal food product
+relationship: RO:0001000 UBERON:0001913 ! derives from milk (mammary secretion)
+
+[Term]
+id: FOODON:00001257
+name: milk or milk based food product
+is_a: FOODON:00001256 ! dairy food product
+
+[Term]
 id: FOODON:00001293
 name: shellfish food product
 is_a: FOODON:00001046 ! seafood product
 intersection_of: FOODON:00001046 ! seafood product
 intersection_of: FOODON:00001176 ! invertebrate animal food product
 intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish (food source)
+
+[Term]
+id: FOODON:00001771
+name: cow milk based food product
+is_a: FOODON:00001257 ! milk or milk based food product
+
+[Term]
+id: FOODON:00001792
+name: crustacean food product
+is_a: FOODON:00001046 ! seafood product
+
+[Term]
+id: FOODON:00001911
+name: goat milk or milk based food product
+is_a: FOODON:00001109 ! caprine dairy food product
+relationship: RO:0001000 FOODON:03305803 ! derives from goat milk (food product)
+relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
+
+[Term]
+id: FOODON:00002044
+name: molluscs food product
+is_a: FOODON:00001046 ! seafood product
+
+[Term]
+id: FOODON:00002239
+name: shrimp food product
+is_a: FOODON:00001792 ! crustacean food product
+
+[Term]
+id: FOODON:00002244
+name: snail food product
+is_a: FOODON:00002044 ! molluscs food product
 
 [Term]
 id: FOODON:00002381
@@ -250,6 +304,18 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03305803
+name: goat milk (food product)
+comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F5803
+is_a: FOODON:00001911 ! goat milk or milk based food product
+intersection_of: UBERON:0001913 ! milk (mammary secretion)
+intersection_of: RO:0002225 FOODON:03412611 ! develops from part of doe (goat) (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03315468
 name: shellfish (whole or flesh)
 comment: SIREN DB annotation:\n* has quality 'solid' (http://purl.obolibrary.org/obo/FOODON_03430151)\n* derives from 'meat part of animal' (http://purl.obolibrary.org/obo/FOODON_03420103)\n        
@@ -266,6 +332,24 @@ name: product type, other
 comment: LanguaL curation note: Used only if the product does not fall under any of the major product types listed. [FDA CFSAN 1995]
 xref: LANGUAL:A0004
 is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400148
+name: milk or milk product (us cfr)
+def: "Milk in all forms, milk-based beverage, cultured milk product, or milk or milk product analog. Index infant formula under *MEAL REPLACEMENT*." []
+xref: LANGUAL:A0148
+is_a: FOODON:03400164 ! dairy product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400164
+name: dairy product (us cfr)
+def: "Milk, a product derived from milk, or a dairy product analog; includes cheese and frozen dairy desserts. [FDA CFSAN 1995]" []
+xref: LANGUAL:A0164
+is_a: FOODON:03401270 ! product type,  u.s. code of federal regulations, title 21
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -404,6 +488,14 @@ property_value: IAO:0000119 WIKIPEDIA:Penaeus xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411134
+name: animal (mammal) (food source)
+xref: LANGUAL:B1134
+is_a: FOODON:03411297 ! vertebrate animal (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411215
 name: algae, bacteria or fungus (food source)
 xref: LANGUAL:B1215
@@ -460,6 +552,22 @@ id: FOODON:03411324
 name: grain plant (food source)
 xref: LANGUAL:B1324
 is_a: FOODON:03411047 ! grain or seed-producing plant (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411328
+name: goat (food source)
+synonym: "Capra hircus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328660
+xref: ITIS:180715
+xref: LANGUAL:B1328
+xref: MSW3:14200776
+xref: NCBITaxon:9925
+is_a: FOODON:03411134 ! animal (mammal) (food source)
+intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
+intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
+property_value: hasSynonym "capra hircus" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -554,6 +662,38 @@ property_value: IAO:0000119 WIKIPEDIA:Lichen xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03412611
+name: doe (goat) (food source)
+synonym: "Capra hircus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328660
+xref: ITIS:180715
+xref: LANGUAL:B2611
+xref: MSW3:14200776
+xref: NCBITaxon:9925
+is_a: FOODON:03411328 ! goat (food source)
+intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
+intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
+property_value: hasSynonym "capra hircus" xsd:string
+property_value: hasSynonym "nanny goat" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412702
+name: kid (food source)
+synonym: "Capra hircus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328660
+xref: ITIS:180715
+xref: LANGUAL:B2702
+xref: MSW3:14200776
+xref: NCBITaxon:9925
+is_a: FOODON:03411328 ! goat (food source)
+intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
+intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03412846
 name: bacteria (food source)
 xref: LANGUAL:B2846
@@ -572,10 +712,28 @@ union_of: FOODON:03420294 ! fruit peel (anatomical part)
 union_of: FOODON:03420295 ! fruit seed (anatomical part)
 
 [Term]
+id: FOODON:03420113
+name: milk or milk component
+def: "A broad term that includes milk and its components, cream, curd and whey; use the appropriate specific term when milk or a milk product is the principal ingredient. Use the appropriate term under *MEAT ANIMAL* to index the source of the milk (note: 21 CFR 131.110 defines milk as cow's milk)." []
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
 id: FOODON:03420116
 name: part of plant or animal
 def: "Anatomical part of the plant or animal from which the food product or its major ingredient is derived, e.g., *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*." []
 is_a: BFO:0000040 ! material entity
+
+[Term]
+id: FOODON:03420122
+name: nonmeat part of animal
+def: "Bone, feathers, shell, skin or trim fat." []
+is_a: FOODON:03420127 ! animal body or body part
+
+[Term]
+id: FOODON:03420127
+name: animal body or body part
+def: "Includes carcass meat, organ meat, and nonmeat parts of animals, as well as the whole animal." []
+is_a: FOODON:03420164 ! part of animal
 
 [Term]
 id: FOODON:03420144
@@ -703,9 +861,28 @@ is_a: NCBITaxon:116704 ! Eubrachyura
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:117571
+name: Euteleostomi
+synonym: "bony vertebrates" EXACT []
+is_a: NCBITaxon:7776 ! Gnathostomata <vertebrate>
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:1338369
+name: Dipnotetrapodomorpha
+is_a: NCBITaxon:117571 ! Euteleostomi
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:133898
 name: Fenneropenaeus
 is_a: NCBITaxon:6685 ! Penaeidae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:1437010
+name: Boreoeutheria
+is_a: NCBITaxon:9347 ! Eutheria
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -736,6 +913,33 @@ is_a: NCBITaxon:133898 ! Fenneropenaeus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:314145
+name: Laurasiatheria
+is_a: NCBITaxon:1437010 ! Boreoeutheria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:32523
+name: Tetrapoda
+synonym: "tetrapods" EXACT []
+is_a: NCBITaxon:1338369 ! Dipnotetrapodomorpha
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:32524
+name: Amniota
+synonym: "amniotes" EXACT []
+is_a: NCBITaxon:32523 ! Tetrapoda
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:32525
+name: Theria <Mammalia>
+synonym: "Theria" EXACT []
+is_a: NCBITaxon:40674 ! Mammalia
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:33154
 name: Opisthokonta
 is_a: NCBITaxon:2759 ! Eukaryota
@@ -751,6 +955,26 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 id: NCBITaxon:33317
 name: Protostomia
 is_a: NCBITaxon:33213 ! Bilateria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:33511
+name: Deuterostomia
+synonym: "deuterostomes" EXACT []
+is_a: NCBITaxon:33213 ! Bilateria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:35500
+name: Pecora
+is_a: NCBITaxon:91561 ! Cetartiodactyla
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:40674
+name: Mammalia
+synonym: "mammals" EXACT []
+is_a: NCBITaxon:32524 ! Amniota
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -834,6 +1058,29 @@ is_a: NCBITaxon:6657 ! Crustacea
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:7711
+name: Chordata
+synonym: "chordates" EXACT []
+is_a: NCBITaxon:33511 ! Deuterostomia
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:7742
+name: Vertebrata <Metazoa>
+synonym: "Vertebrata" EXACT []
+synonym: "vertebrates" EXACT []
+is_a: NCBITaxon:7711 ! Chordata
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:7776
+name: Gnathostomata <vertebrate>
+synonym: "Gnathostomata" EXACT []
+synonym: "jawed vertebrates" EXACT []
+is_a: NCBITaxon:7742 ! Vertebrata <Metazoa>
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:85552
 name: Scylla paramamosain
 synonym: "green mud crab" EXACT []
@@ -844,6 +1091,43 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 id: NCBITaxon:85653
 name: Farfantepenaeus
 is_a: NCBITaxon:6685 ! Penaeidae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:91561
+name: Cetartiodactyla
+synonym: "whales, hippos, ruminants, pigs, camels etc." EXACT []
+is_a: NCBITaxon:314145 ! Laurasiatheria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9347
+name: Eutheria
+synonym: "eutherian mammals" EXACT []
+synonym: "placental mammals" EXACT []
+synonym: "placentals" EXACT []
+is_a: NCBITaxon:32525 ! Theria <Mammalia>
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9895
+name: Bovidae
+is_a: NCBITaxon:35500 ! Pecora
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9925
+name: Capra hircus
+synonym: "domestic goat" EXACT []
+synonym: "goat" EXACT []
+synonym: "goats" EXACT []
+is_a: NCBITaxon:9963 ! Caprinae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9963
+name: Caprinae
+is_a: NCBITaxon:9895 ! Bovidae
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -935,6 +1219,19 @@ name: hesperidium fruit
 def: "A berry fruit (PO:0030108) which develops from a superior gynoecium (PO:0009062) and at maturity comprises a thickened exocarp (PO:0009085), thickened mesocarp (PO:0009087), and endocarp (PO:0009086), and has as parts juice sacs (PO:0006013) on a carpel adaxial epidermis (PO:0025618)." []
 is_a: PO:0030108 ! berry fruit
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: UBERON:0000463
+name: organism substance
+def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." []
+is_a: FOODON:03420122 ! nonmeat part of animal
+
+[Term]
+id: UBERON:0001913
+name: milk (mammary secretion)
+def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
+is_a: FOODON:03420113 ! milk or milk component
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Typedef]
 id: BFO:0000050
@@ -1067,6 +1364,71 @@ is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
+id: RO:0002202
+name: develops from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_transitive: true
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002203 ! develops into
+
+[Typedef]
+id: RO:0002203
+name: develops into
+def: "inverse of develops from" []
+subset: RO:0002259
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_transitive: true
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002387 ! has potential to develop into
+is_a: RO:0002388 ! has potential to directly develop into
+
+[Typedef]
+id: RO:0002225
+name: develops from part of
+def: "x develops from part of y if and only if there exists some z such that x develops from z and z is part of y" []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002258
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "false" xsd:boolean
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
+is_a: RO:0002324 ! developmentally related to
+inverse_of: RO:0002286 ! developmentally succeeded by
+
+[Typedef]
+id: RO:0002286
+name: developmentally succeeded by
+def: "Inverse of developmentally preceded by" []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
 id: RO:0002314
 name: inheres in part of
 def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
@@ -1089,6 +1451,14 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 property_value: RO:0001900 RO:0001901
 
 [Typedef]
+id: RO:0002324
+name: developmentally related to
+def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
 id: RO:0002350
 name: member of
 def: "is member of is a mereological relation between a item and a collection." []
@@ -1109,6 +1479,33 @@ property_value: IAO:0000119 "SIO" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 property_value: RO:0001900 RO:0001901
 is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002384
+name: has developmental potential involving
+def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: RO:0002387
+name: has potential to develop into
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002388
+name: has potential to directly develop into
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002387 ! has potential to develop into
 
 [Typedef]
 id: RO:0002502

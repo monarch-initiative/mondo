@@ -39,6 +39,16 @@ synonym: "Glykol" RELATED []
 is_a: CHEBI:23824 ! diol
 
 [Term]
+id: CHEBI:13719
+name: acetylsalicylate
+def: "A benzoate that is the conjugate base of acetylsalicylic acid, arising from deprotonation of the carboxy group." []
+synonym: "2-(acetyloxy)benzoate" EXACT []
+synonym: "acetylsalicylate" EXACT []
+is_a: CHEBI:22718 ! benzoates
+relationship: has_functional_parent CHEBI:30762 ! salicylate
+relationship: is_conjugate_base_of CHEBI:15365 ! acetylsalicylic acid
+
+[Term]
 id: CHEBI:137419
 name: secondary ammonium ion
 def: "An organic cation obtained by protonation of any secondary amine; major species at pH 7.3." []
@@ -91,6 +101,77 @@ synonym: "Oxidized donor" RELATED []
 is_a: CHEBI:51086 ! chemical role
 
 [Term]
+id: CHEBI:15365
+name: acetylsalicylic acid
+def: "A member of the class of benzoic acids that is salicylic acid in which the hydrogen that is attached to the phenolic hydroxy group has been replaced by an acetoxy group. A non-steroidal anti-inflammatory drug with cyclooxygenase inhibitor activity." []
+synonym: "2-(ACETYLOXY)BENZOIC ACID" RELATED []
+synonym: "2-(acetyloxy)benzoic acid" EXACT []
+synonym: "2-Acetoxybenzenecarboxylic acid" RELATED []
+synonym: "2-acetoxybenzoic acid" RELATED []
+synonym: "Acetylsalicylate" RELATED []
+synonym: "Acetylsalicylic acid" EXACT []
+synonym: "Acetylsalicylsaeure" RELATED []
+synonym: "acide 2-(acetyloxy)benzoique" RELATED []
+synonym: "acide acetylsalicylique" RELATED []
+synonym: "acido acetilsalicilico" RELATED []
+synonym: "acidum acetylsalicylicum" RELATED []
+synonym: "ASA" RELATED []
+synonym: "Aspirin" RELATED []
+synonym: "Azetylsalizylsaeure" RELATED []
+synonym: "Easprin" RELATED []
+synonym: "o-acetoxybenzoic acid" RELATED []
+synonym: "O-acetylsalicylic acid" RELATED []
+synonym: "o-carboxyphenyl acetate" RELATED []
+synonym: "salicylic acid acetate" RELATED []
+is_a: CHEBI:22723 ! benzoic acids
+is_a: CHEBI:26596 ! salicylates
+is_a: CHEBI:47622 ! acetate ester
+relationship: has_functional_parent CHEBI:16914 ! salicylic acid
+relationship: is_conjugate_acid_of CHEBI:13719 ! acetylsalicylate
+relationship: RO:0000087 CHEBI:35475 ! non-steroidal anti-inflammatory drug
+relationship: RO:0000087 CHEBI:35481 ! non-narcotic analgesic
+relationship: RO:0000087 CHEBI:35493 ! antipyretic
+relationship: RO:0000087 CHEBI:49023 ! prostaglandin antagonist
+relationship: RO:0000087 CHEBI:50249 ! anticoagulant
+relationship: RO:0000087 CHEBI:50427 ! platelet aggregation inhibitor
+relationship: RO:0000087 CHEBI:50629 ! cyclooxygenase 2 inhibitor
+relationship: RO:0000087 CHEBI:50630 ! cyclooxygenase 1 inhibitor
+relationship: RO:0000087 CHEBI:50905 ! teratogenic agent
+relationship: RO:0000087 CHEBI:73182 ! plant activator
+relationship: RO:0000087 CHEBI:77425 ! EC 1.1.1.188 (prostaglandin-F synthase) inhibitor
+relationship: RO:0000087 CHEBI:88188 ! drug allergen
+
+[Term]
+id: CHEBI:15366
+name: acetic acid
+def: "A simple monocarboxylic acid containing two carbons." []
+synonym: "ACETIC ACID" EXACT []
+synonym: "Acetic acid" EXACT []
+synonym: "acetic acid" EXACT []
+synonym: "acide acetique" RELATED []
+synonym: "AcOH" RELATED []
+synonym: "CH3-COOH" RELATED []
+synonym: "CH3CO2H" RELATED []
+synonym: "E 260" RELATED []
+synonym: "E-260" RELATED []
+synonym: "E260" RELATED []
+synonym: "Essigsaeure" RELATED []
+synonym: "Ethanoic acid" RELATED []
+synonym: "ethoic acid" RELATED []
+synonym: "Ethylic acid" RELATED []
+synonym: "HOAc" RELATED []
+synonym: "INS No. 260" RELATED []
+synonym: "MeCO2H" RELATED []
+synonym: "MeCOOH" RELATED []
+synonym: "Methanecarboxylic acid" RELATED []
+is_a: CHEBI:25384 ! monocarboxylic acid
+relationship: is_conjugate_acid_of CHEBI:30089 ! acetate
+relationship: RO:0000087 CHEBI:48356 ! protic solvent
+relationship: RO:0000087 CHEBI:64049 ! food acidity regulator
+relationship: RO:0000087 CHEBI:65256 ! antimicrobial food preservative
+relationship: RO:0000087 CHEBI:83056 ! Daphnia magna metabolite
+
+[Term]
 id: CHEBI:15734
 name: primary alcohol
 def: "A primary alcohol is a compound in which a hydroxy group, -OH, is attached to a saturated carbon atom which has either three hydrogen atoms attached to it or only one other carbon atom and two hydrogen atoms attached to it." []
@@ -126,6 +207,23 @@ relationship: RO:0000087 CHEBI:59740 ! nucleophilic reagent
 relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 relationship: RO:0000087 CHEBI:77941 ! EC 3.5.1.4 (amidase) inhibitor
 relationship: RO:0000087 CHEBI:78433 ! refrigerant
+
+[Term]
+id: CHEBI:16150
+name: benzoate
+def: "The simplest member of the class of  benzoates that is the conjugate base of benzoic acid, comprising a benzoic acid core with a proton missing to give a charge of -1." []
+synonym: "Benzenecarboxylate" RELATED []
+synonym: "Benzeneformate" RELATED []
+synonym: "Benzenemethanoate" RELATED []
+synonym: "benzoate" EXACT []
+synonym: "benzoate anion" RELATED []
+synonym: "benzoic acid, ion(1-)" RELATED []
+synonym: "Phenylcarboxylate" RELATED []
+synonym: "Phenylformate" RELATED []
+is_a: CHEBI:22718 ! benzoates
+relationship: is_conjugate_base_of CHEBI:30746 ! benzoic acid
+relationship: RO:0000087 CHEBI:76924 ! plant metabolite
+relationship: RO:0000087 CHEBI:76967 ! human xenobiotic metabolite
 
 [Term]
 id: CHEBI:16294
@@ -185,6 +283,27 @@ is_a: CHEBI:25865 ! penicillanic acids
 relationship: has_functional_parent CHEBI:37806 ! penicillanic acid
 relationship: is_conjugate_base_of CHEBI:30938 ! 6-aminopenicillanate
 relationship: is_tautomer_of CHEBI:57869 ! 6-aminopenicillanic acid zwitterion
+
+[Term]
+id: CHEBI:16914
+name: salicylic acid
+def: "A monohydroxybenzoic acid that is benzoic acid with a hydroxy group at the ortho position. It is obtained from the bark of the white willow and wintergreen leaves." []
+synonym: "2-carboxyphenol" RELATED []
+synonym: "2-HYDROXYBENZOIC ACID" RELATED []
+synonym: "2-hydroxybenzoic acid" EXACT []
+synonym: "o-carboxyphenol" RELATED []
+synonym: "o-Hydroxybenzoic acid" RELATED []
+synonym: "o-hydroxybenzoic acid" RELATED []
+synonym: "Salicylic acid" EXACT []
+is_a: CHEBI:25389 ! monohydroxybenzoic acid
+relationship: is_conjugate_acid_of CHEBI:30762 ! salicylate
+relationship: RO:0000087 CHEBI:35441 ! antiinfective agent
+relationship: RO:0000087 CHEBI:35718 ! antifungal agent
+relationship: RO:0000087 CHEBI:37848 ! plant hormone
+relationship: RO:0000087 CHEBI:50176 ! keratolytic drug
+relationship: RO:0000087 CHEBI:73181 ! EC 1.11.1.11 (L-ascorbate peroxidase) inhibitors
+relationship: RO:0000087 CHEBI:76924 ! plant metabolite
+relationship: RO:0000087 CHEBI:84735 ! algal metabolite
 
 [Term]
 id: CHEBI:17087
@@ -480,6 +599,13 @@ def: "Any benzenoid aromatic compound consisting of the benzene skeleton and its
 is_a: CHEBI:33836 ! benzenoid aromatic compound
 
 [Term]
+id: CHEBI:22718
+name: benzoates
+def: "A monocarboxylic acid anion obtained by deprotonation of the carboxy group of any benzoic acid." []
+synonym: "benzoate anion" RELATED []
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+
+[Term]
 id: CHEBI:22723
 name: benzoic acids
 def: "Any aromatic carboxylic acid that consists of benzene in which at least a single hydrogen has been substituted by a carboxy group." []
@@ -567,6 +693,13 @@ synonym: "molecular entities" RELATED []
 synonym: "molecular entity" EXACT []
 synonym: "molekulare Entitaet" RELATED []
 is_a: CHEBI:24431 ! chemical entity
+
+[Term]
+id: CHEBI:23423
+name: pseudohalogen oxoacid
+synonym: "pseudohalogen oxoacid" EXACT []
+synonym: "pseudohalogen oxoacids" RELATED []
+is_a: CHEBI:24833 ! oxoacid
 
 [Term]
 id: CHEBI:23443
@@ -761,6 +894,26 @@ is_a: CHEBI:37577 ! heteroatomic molecular entity
 relationship: BFO:0000051 CHEBI:43176 ! hydroxy group
 
 [Term]
+id: CHEBI:24675
+name: hydroxybenzoate
+def: "Any benzoate derivative carrying a single carboxylate group and at least one hydroxy substituent." []
+synonym: "hydroxybenzoates" RELATED []
+is_a: CHEBI:22718 ! benzoates
+is_a: CHEBI:36059 ! hydroxy monocarboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:24676 ! hydroxybenzoic acid
+
+[Term]
+id: CHEBI:24676
+name: hydroxybenzoic acid
+def: "Any benzoic acid carrying one or more phenolic hydroxy groups on the benzene ring." []
+synonym: "hydroxybenzoic acid" EXACT []
+synonym: "hydroxybenzoic acids" RELATED []
+is_a: CHEBI:22723 ! benzoic acids
+is_a: CHEBI:33853 ! phenols
+relationship: has_functional_parent CHEBI:30746 ! benzoic acid
+relationship: is_conjugate_acid_of CHEBI:24675 ! hydroxybenzoate
+
+[Term]
 id: CHEBI:24833
 name: oxoacid
 def: "A compound which contains oxygen, at least one other element, and at least one hydrogen bound to oxygen, and which produces a conjugate base by loss of positive hydrogen ion(s) (hydrons)." []
@@ -922,6 +1075,20 @@ is_a: CHEBI:33575 ! carboxylic acid
 relationship: is_conjugate_acid_of CHEBI:35757 ! monocarboxylic acid anion
 
 [Term]
+id: CHEBI:25388
+name: monohydroxybenzoate
+def: "A hydroxybenzoate carrying a single hydroxy substituent at unspecified position." []
+synonym: "monohydroxybenzoates" RELATED []
+is_a: CHEBI:24675 ! hydroxybenzoate
+
+[Term]
+id: CHEBI:25389
+name: monohydroxybenzoic acid
+def: "Any hydroxybenzoic acid having a single phenolic hydroxy substituent on the benzene ring." []
+synonym: "monohydroxybenzoic acids" RELATED []
+is_a: CHEBI:24676 ! hydroxybenzoic acid
+
+[Term]
 id: CHEBI:25512
 name: neurotransmitter
 def: "An endogenous compound that is used to transmit information across the synapse between a neuron and another cell." []
@@ -1073,6 +1240,13 @@ is_a: CHEBI:25693 ! organic heteromonocyclic compound
 is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
 
 [Term]
+id: CHEBI:26155
+name: plant growth regulator
+def: "A chemical, natural or artificial, that can affect the rate of growth of a plant." []
+synonym: "plant growth regulators" RELATED []
+is_a: CHEBI:39317 ! growth regulator
+
+[Term]
 id: CHEBI:26191
 name: polyol
 def: "A compound that contains two or more hydroxy groups." []
@@ -1097,6 +1271,12 @@ synonym: "retinoid" EXACT []
 synonym: "retinoids" EXACT []
 synonym: "retinoids" RELATED []
 is_a: CHEBI:23849 ! diterpenoid
+
+[Term]
+id: CHEBI:26596
+name: salicylates
+def: "Any salt or ester arising from reaction of the carboxy group of salicylic acid, or any ester resulting from the condensation of the phenolic hydroxy group of salicylic acid with an organic acid." []
+is_a: CHEBI:36963 ! organooxygen compound
 
 [Term]
 id: CHEBI:26605
@@ -1341,6 +1521,22 @@ relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
 
 [Term]
+id: CHEBI:28024
+name: cyanic acid
+synonym: "[C(N)OH]" RELATED []
+synonym: "Cyanic acid" EXACT []
+synonym: "Cyansaeure" RELATED []
+synonym: "HOCN" RELATED []
+synonym: "hydrogen nitridooxocarbonate" EXACT []
+synonym: "hydroxidonitridocarbon" EXACT []
+synonym: "nitridooxocarbonic acid" EXACT []
+synonym: "Zyansaeure" RELATED []
+is_a: CHEBI:23423 ! pseudohalogen oxoacid
+is_a: CHEBI:64708 ! one-carbon compound
+relationship: is_conjugate_acid_of CHEBI:29195 ! cyanate
+relationship: is_tautomer_of CHEBI:29202 ! isocyanic acid
+
+[Term]
 id: CHEBI:28112
 name: nickel atom
 def: "Chemical element (nickel group element atom) with atomic number 28." []
@@ -1416,6 +1612,43 @@ is_a: CHEBI:35406 ! oxoanion
 relationship: is_conjugate_base_of CHEBI:33575 ! carboxylic acid
 
 [Term]
+id: CHEBI:29195
+name: cyanate
+synonym: "[C(N)O](-)" RELATED []
+synonym: "Cyanat" RELATED []
+synonym: "cyanate" EXACT []
+synonym: "cyanate ion" RELATED []
+synonym: "nitridooxidocarbonate(1-)" EXACT []
+synonym: "OCN(-)" RELATED []
+synonym: "Zyanat" RELATED []
+is_a: CHEBI:35352 ! organonitrogen compound
+is_a: CHEBI:36828 ! pseudohalide anion
+relationship: is_conjugate_base_of CHEBI:28024 ! cyanic acid
+relationship: is_conjugate_base_of CHEBI:29202 ! isocyanic acid
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:29202
+name: isocyanic acid
+def: "A colourless, volatile, poisonous inorganic compound with the formula HNCO; the simplest stable chemical compound that contains carbon, hydrogen, nitrogen, and oxygen, the four most commonly-found elements in organic chemistry and biology." []
+synonym: "[C(NH)O]" RELATED []
+synonym: "carbimide" RELATED []
+synonym: "HN=C=O" RELATED []
+synonym: "HNCO" RELATED []
+synonym: "hydrogen isocyanate" RELATED []
+synonym: "ICA" RELATED []
+synonym: "isocyanate" RELATED []
+synonym: "isocyanic acid" EXACT []
+synonym: "isocyansaeure" RELATED []
+synonym: "isozyansaeure" RELATED []
+synonym: "methenamide" RELATED []
+synonym: "oxidoazanediidocarbon" RELATED []
+is_a: CHEBI:33405 ! hydracid
+is_a: CHEBI:64708 ! one-carbon compound
+relationship: is_conjugate_acid_of CHEBI:29195 ! cyanate
+relationship: is_tautomer_of CHEBI:28024 ! cyanic acid
+
+[Term]
 id: CHEBI:29337
 name: azanide
 synonym: "amide" EXACT []
@@ -1447,6 +1680,23 @@ synonym: "2,4,6-trioxotetrahydro-2H-pyrimidin-1-ide" EXACT []
 synonym: "barbiturate anion" RELATED []
 is_a: CHEBI:22691 ! barbiturate anion
 relationship: is_conjugate_base_of CHEBI:16294 ! barbituric acid
+
+[Term]
+id: CHEBI:30089
+name: acetate
+def: "A monocarboxylic acid anion resulting from the removal of a proton from the carboxy group of acetic acid." []
+synonym: "acetate" EXACT []
+synonym: "ACETATE ION" RELATED []
+synonym: "acetic acid, ion(1-)" RELATED []
+synonym: "Azetat" RELATED []
+synonym: "CH3-COO(-)" RELATED []
+synonym: "Ethanoat" RELATED []
+synonym: "ethanoate" RELATED []
+synonym: "MeCO2 anion" RELATED []
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:15366 ! acetic acid
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
 id: CHEBI:30501
@@ -1485,6 +1735,47 @@ relationship: RO:0000087 CHEBI:25212 ! metabolite
 relationship: RO:0000087 CHEBI:27026 ! toxin
 relationship: RO:0000087 CHEBI:46787 ! solvent
 relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+
+[Term]
+id: CHEBI:30746
+name: benzoic acid
+def: "A compound comprising a benzene ring core carrying a carboxylic acid substituent." []
+synonym: "acide benzoique" RELATED []
+synonym: "Aromatic carboxylic acid" RELATED []
+synonym: "Benzenecarboxylic acid" RELATED []
+synonym: "Benzeneformic acid" RELATED []
+synonym: "Benzenemethanoic acid" RELATED []
+synonym: "Benzoesaeure" RELATED []
+synonym: "BENZOIC ACID" EXACT []
+synonym: "Benzoic acid" EXACT []
+synonym: "benzoic acid" EXACT []
+synonym: "Dracylic acid" RELATED []
+synonym: "E210" RELATED []
+synonym: "Phenylcarboxylic acid" RELATED []
+synonym: "Phenylformic acid" RELATED []
+is_a: CHEBI:22723 ! benzoic acids
+relationship: is_conjugate_acid_of CHEBI:16150 ! benzoate
+relationship: RO:0000087 CHEBI:64996 ! EC 1.13.11.33 (arachidonate 15-lipoxygenase) inhibitor
+relationship: RO:0000087 CHEBI:65001 ! EC 3.1.1.3 (triacylglycerol lipase) inhibitor
+relationship: RO:0000087 CHEBI:65256 ! antimicrobial food preservative
+relationship: RO:0000087 CHEBI:76924 ! plant metabolite
+relationship: RO:0000087 CHEBI:76967 ! human xenobiotic metabolite
+relationship: RO:0000087 CHEBI:84735 ! algal metabolite
+relationship: RO:0000087 CHEBI:88188 ! drug allergen
+
+[Term]
+id: CHEBI:30762
+name: salicylate
+def: "A monohydroxybenzoate that is the conjugate base of salicylic acid." []
+synonym: "2-hydroxybenzoate" EXACT []
+synonym: "2-hydroxybenzoic acid ion(1-)" RELATED []
+synonym: "o-hydroxybenzoate" RELATED []
+synonym: "sal" RELATED []
+synonym: "Salicylate" EXACT []
+synonym: "salicylate" EXACT []
+is_a: CHEBI:25388 ! monohydroxybenzoate
+relationship: is_conjugate_base_of CHEBI:16914 ! salicylic acid
+relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 
 [Term]
 id: CHEBI:30879
@@ -1721,6 +2012,16 @@ def: "A heteroorganic entity is an organic molecular entity in which carbon atom
 synonym: "heteroorganic entities" RELATED []
 synonym: "organoelement compounds" RELATED []
 is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:33286
+name: agrochemical
+def: "An agrochemical is a substance that is used in agriculture or horticulture." []
+synonym: "agrichemical" RELATED []
+synonym: "agrichemicals" RELATED []
+synonym: "agricultural chemicals" RELATED []
+synonym: "agrochemicals" RELATED []
+is_a: CHEBI:33232 ! application
 
 [Term]
 id: CHEBI:33292
@@ -2377,6 +2678,16 @@ is_a: CHEBI:25741 ! oxide
 is_a: CHEBI:33273 ! polyatomic anion
 
 [Term]
+id: CHEBI:35441
+name: antiinfective agent
+def: "A substance used in the prophylaxis or therapy of infectious diseases." []
+synonym: "anti-infective agents" RELATED []
+synonym: "anti-infective drugs" RELATED []
+synonym: "antiinfective agents" RELATED []
+synonym: "antiinfective drug" RELATED []
+is_a: CHEBI:23888 ! drug
+
+[Term]
 id: CHEBI:35470
 name: central nervous system drug
 def: "A class of drugs producing both physiological and psychological effects through a variety of mechanisms involving the central nervous system." []
@@ -2586,6 +2897,17 @@ synonym: "xenobiotics" EXACT []
 is_a: CHEBI:24432 ! biological role
 
 [Term]
+id: CHEBI:35718
+name: antifungal agent
+def: "An  antimicrobial agent that destroys fungi by suppressing their ability to grow or reproduce." []
+synonym: "antifungal" RELATED []
+synonym: "antifungal agents" RELATED []
+synonym: "antifungal drug" RELATED []
+synonym: "antifungal drugs" RELATED []
+synonym: "antifungals" RELATED []
+is_a: CHEBI:33281 ! antimicrobial agent
+
+[Term]
 id: CHEBI:35757
 name: monocarboxylic acid anion
 def: "A carboxylic acid anion formed when the carboxy group of a monocarboxylic acid is deprotonated." []
@@ -2605,6 +2927,14 @@ synonym: "anti-rheumatic drugs" RELATED []
 synonym: "antirheumatic agent" RELATED []
 synonym: "antirheumatic drugs" RELATED []
 is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:35856
+name: lipoxygenase inhibitor
+def: "A compound or agent that combines with lipoxygenase and thereby prevents its substrate-enzyme combination with arachidonic acid and the formation of the icosanoid products hydroxyicosatetraenoic acid and various leukotrienes." []
+synonym: "lipooxygenase inhibitor" RELATED []
+synonym: "lipoxygenase inhibitors" RELATED []
+is_a: CHEBI:76837 ! EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 O atoms) inhibitor
 
 [Term]
 id: CHEBI:35881
@@ -2642,6 +2972,15 @@ synonym: "benzoic acid esters" RELATED []
 is_a: CHEBI:33308 ! carboxylic ester
 is_a: CHEBI:62732 ! aromatic ester
 relationship: has_functional_parent CHEBI:22723 ! benzoic acids
+
+[Term]
+id: CHEBI:36059
+name: hydroxy monocarboxylic acid anion
+def: "Any monocarboxylic acid anion carrying at least one hydroxy substituent." []
+synonym: "hydroxy monocarboxylic acid anions" RELATED []
+synonym: "hydroxymonocarboxylic acid anion" RELATED []
+synonym: "hydroxymonocarboxylic acid anions" RELATED []
+is_a: CHEBI:35757 ! monocarboxylic acid anion
 
 [Term]
 id: CHEBI:36132
@@ -2990,6 +3329,20 @@ is_a: CHEBI:22221 ! acyl group
 relationship: is_substituent_group_from CHEBI:33575 ! carboxylic acid
 
 [Term]
+id: CHEBI:37848
+name: plant hormone
+def: "A plant growth regulator that modulates the formation of stems, leaves and flowers, as well as the development and ripening of fruit. The term includes endogenous and non-endogenous compounds (e.g. active compounds produced by bacteria on the leaf surface) as well as semi-synthetic and fully synthetic compounds." []
+synonym: "phytohormone" RELATED []
+synonym: "phytohormones" RELATED []
+synonym: "plant growth factor" RELATED []
+synonym: "plant growth factors" RELATED []
+synonym: "plant growth hormone" RELATED []
+synonym: "plant growth hormones" RELATED []
+synonym: "plant hormones" RELATED []
+is_a: CHEBI:24621 ! hormone
+is_a: CHEBI:26155 ! plant growth regulator
+
+[Term]
 id: CHEBI:37949
 name: azacycloalkane
 synonym: "azacycloalkanes" RELATED []
@@ -3238,6 +3591,13 @@ is_a: CHEBI:17891 ! donor
 is_a: CHEBI:22695 ! base
 
 [Term]
+id: CHEBI:39317
+name: growth regulator
+def: "Any chemical substance that inhibits the life-cycle of an organism." []
+synonym: "growth regulators" RELATED []
+is_a: CHEBI:24432 ! biological role
+
+[Term]
 id: CHEBI:39447
 name: pyrimidines
 def: "Any compound having a pyrimidine as part of its structure." []
@@ -3388,6 +3748,20 @@ synonym: "carboxyl group" RELATED []
 is_a: CHEBI:33249 ! organyl group
 
 [Term]
+id: CHEBI:47622
+name: acetate ester
+def: "Any carboxylic ester where the carboxylic acid component is acetic acid." []
+synonym: "acetate" RELATED []
+synonym: "acetate esters" RELATED []
+synonym: "acetates" RELATED []
+synonym: "Acetic ester" RELATED []
+synonym: "Acetyl ester" RELATED []
+synonym: "acetyl esters" RELATED []
+synonym: "an acetyl ester" RELATED []
+is_a: CHEBI:33308 ! carboxylic ester
+relationship: has_functional_parent CHEBI:15366 ! acetic acid
+
+[Term]
 id: CHEBI:47811
 name: penamcarboxylate
 synonym: "penamcarboxylates" RELATED []
@@ -3479,6 +3853,21 @@ synonym: "substituted anilines" RELATED []
 is_a: CHEBI:22562 ! anilines
 
 [Term]
+id: CHEBI:49020
+name: hormone antagonist
+def: "A chemical substance which inhibits the function of the endocrine glands, the biosynthesis of their secreted hormones, or the action of hormones upon their specific sites." []
+synonym: "hormone antagonists" RELATED []
+is_a: CHEBI:48706 ! antagonist
+is_a: CHEBI:51061 ! hormone receptor modulator
+
+[Term]
+id: CHEBI:49023
+name: prostaglandin antagonist
+def: "A compound that inhibits the action of prostaglandins." []
+synonym: "prostaglandin inhibitor" RELATED []
+is_a: CHEBI:49020 ! hormone antagonist
+
+[Term]
 id: CHEBI:49637
 name: hydrogen atom
 synonym: "1H" RELATED []
@@ -3533,6 +3922,21 @@ synonym: "P450 inhibitors" RELATED []
 is_a: CHEBI:76898 ! EC 1.14.14.1 (unspecific monooxygenase) inhibitor
 
 [Term]
+id: CHEBI:50248
+name: hematologic agent
+def: "Drug that acts on blood and blood-forming organs and those that affect the hemostatic system." []
+synonym: "hematologic agents" RELATED []
+is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:50249
+name: anticoagulant
+def: "An agent that prevents blood clotting." []
+synonym: "anticoagulante" RELATED []
+synonym: "anticoagulants" RELATED []
+is_a: CHEBI:50248 ! hematologic agent
+
+[Term]
 id: CHEBI:50267
 name: protective agent
 def: "Synthetic or natural substance which is given to prevent a disease or disorder or are used in the process of treating a disease or injury due to a poisonous agent." []
@@ -3574,6 +3978,13 @@ id: CHEBI:50406
 name: probe
 def: "A role played by a molecular entity used to study the microscopic environment." []
 is_a: CHEBI:33232 ! application
+
+[Term]
+id: CHEBI:50427
+name: platelet aggregation inhibitor
+def: "A drug or agent which antagonizes or impairs any mechanism leading to blood platelet aggregation, whether during the phases of activation and shape change or following the dense-granule release reaction and stimulation of the prostaglandin-thromboxane system." []
+synonym: "platelet aggregation inhibitors" RELATED []
+is_a: CHEBI:50248 ! hematologic agent
 
 [Term]
 id: CHEBI:50511
@@ -3772,6 +4183,14 @@ synonym: "DRI" RELATED []
 is_a: CHEBI:48560 ! dopaminergic agent
 
 [Term]
+id: CHEBI:51061
+name: hormone receptor modulator
+def: "A drug that modulates the function of the endocrine glands, the biosynthesis of their secreted hormones, or the action of hormones upon their specific sites." []
+synonym: "hormone receptor modulators" RELATED []
+is_a: CHEBI:23888 ! drug
+is_a: CHEBI:90710 ! receptor modulator
+
+[Term]
 id: CHEBI:51086
 name: chemical role
 def: "A role played by the molecular entity or part thereof within a chemical context." []
@@ -3904,6 +4323,15 @@ synonym: "antigenic determinant" RELATED []
 synonym: "epitope function" RELATED []
 synonym: "epitope role" RELATED []
 is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:53212
+name: isocyanates
+def: "Organonitrogen compounds that are derivatives of isocyanic acid; compounds containing the isocyanate functional group -N=C=O (as opposed to the cyanate group, -O-C#N)." []
+synonym: "iso-cyanates" RELATED []
+is_a: CHEBI:35352 ! organonitrogen compound
+is_a: CHEBI:36963 ! organooxygen compound
+relationship: has_functional_parent CHEBI:29202 ! isocyanic acid
 
 [Term]
 id: CHEBI:5686
@@ -4202,6 +4630,25 @@ synonym: "sodium-potassium pump inhibitors" RELATED []
 is_a: CHEBI:76895 ! EC 3.6.3.* (acid anhydride hydrolase catalysing transmembrane movement of substances) inhibitor
 
 [Term]
+id: CHEBI:64047
+name: food additive
+def: "Any substance which is added to food to preserve or enhance its flavour and/or appearance." []
+synonym: "food additives" RELATED []
+is_a: CHEBI:33232 ! application
+is_a: CHEBI:78295 ! food component
+
+[Term]
+id: CHEBI:64049
+name: food acidity regulator
+def: "A food additive that is used to change or otherwise control the acidity or alkalinity of foods. They may be acids, bases, neutralising agents or buffering agents." []
+synonym: "acidity regulator" RELATED []
+synonym: "acidity regulators" RELATED []
+synonym: "food acidity regulators" RELATED []
+synonym: "pH control agent" RELATED []
+synonym: "pH control agents" RELATED []
+is_a: CHEBI:64047 ! food additive
+
+[Term]
 id: CHEBI:64459
 name: biaryl
 def: "An organic aromatic compound whose structure contains two aromatic rings or ring systems, joined to each other by a single bond." []
@@ -4249,6 +4696,122 @@ synonym: "mitotic inhibitors" RELATED []
 is_a: CHEBI:52210 ! pharmacological role
 
 [Term]
+id: CHEBI:64996
+name: EC 1.13.11.33 (arachidonate 15-lipoxygenase) inhibitor
+def: "A lipoxygenase inhibitor that interferes with the action of arachidonate 15-lipoxygenase (EC 1.13.11.33)." []
+synonym: "15-lipoxygenase inhibitor" RELATED []
+synonym: "15-lipoxygenase inhibitors" RELATED []
+synonym: "15-LOX inhibitor" RELATED []
+synonym: "15-LOX inhibitors" RELATED []
+synonym: "arachidonate 15-lipoxygenase (EC 1.13.11.33) inhibitor" RELATED []
+synonym: "arachidonate 15-lipoxygenase (EC 1.13.11.33) inhibitors" RELATED []
+synonym: "arachidonate 15-lipoxygenase inhibitor" RELATED []
+synonym: "arachidonate 15-lipoxygenase inhibitors" RELATED []
+synonym: "arachidonate:oxygen 15-oxidoreductase inhibitor" RELATED []
+synonym: "arachidonate:oxygen 15-oxidoreductase inhibitors" RELATED []
+synonym: "EC 1.13.11.33 (arachidonate 15-lipoxygenase) inhibitors" RELATED []
+synonym: "EC 1.13.11.33 inhibitor" RELATED []
+synonym: "EC 1.13.11.33 inhibitors" RELATED []
+synonym: "linoleic acid omega(6)-lipoxygenase inhibitor" RELATED []
+synonym: "linoleic acid omega(6)-lipoxygenase inhibitors" RELATED []
+synonym: "omega(6) lipoxygenase inhibitor" RELATED []
+synonym: "omega(6) lipoxygenase inhibitors" RELATED []
+is_a: CHEBI:35856 ! lipoxygenase inhibitor
+is_a: CHEBI:76837 ! EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 O atoms) inhibitor
+
+[Term]
+id: CHEBI:65001
+name: EC 3.1.1.3 (triacylglycerol lipase) inhibitor
+def: "Any EC 3.1.1.* (carboxylic ester hydrolase) inhibitor that inhibits the action of triacylglycerol lipase (EC 3.1.1.3)." []
+synonym: "butyrinase inhibitor" RELATED []
+synonym: "butyrinase inhibitors" RELATED []
+synonym: "cacordase inhibitor" RELATED []
+synonym: "cacordase inhibitors" RELATED []
+synonym: "capalase L inhibitor" RELATED []
+synonym: "capalase L inhibitors" RELATED []
+synonym: "EC 3.1.1.3 (triacylglycerol lipase) inhibitors" RELATED []
+synonym: "EC 3.1.1.3 inhibitor" RELATED []
+synonym: "EC 3.1.1.3 inhibitors" RELATED []
+synonym: "GEH inhibitor" RELATED []
+synonym: "GEH inhibitors" RELATED []
+synonym: "glycerol ester hydrolase inhibitor" RELATED []
+synonym: "glycerol ester hydrolase inhibitors" RELATED []
+synonym: "glycerol-ester hydrolase inhibitor" RELATED []
+synonym: "glycerol-ester hydrolase inhibitors" RELATED []
+synonym: "heparin releasable hepatic lipase inhibitor" RELATED []
+synonym: "heparin releasable hepatic lipase inhibitors" RELATED []
+synonym: "hepatic lipase inhibitor" RELATED []
+synonym: "hepatic lipase inhibitors" RELATED []
+synonym: "hepatic monoacylglycerol acyltransferase inhibitor" RELATED []
+synonym: "hepatic monoacylglycerol acyltransferase inhibitors" RELATED []
+synonym: "lipase inhibitor" RELATED []
+synonym: "lipase inhibitors" RELATED []
+synonym: "lipazin inhibitor" RELATED []
+synonym: "lipazin inhibitors" RELATED []
+synonym: "liver lipase inhibitor" RELATED []
+synonym: "liver lipase inhibitors" RELATED []
+synonym: "pancreatic lipase inhibitor" RELATED []
+synonym: "pancreatic lipase inhibitors" RELATED []
+synonym: "pancreatic triacylglycerol lipase inhibitor" RELATED []
+synonym: "pancreatic triacylglycerol lipase inhibitors" RELATED []
+synonym: "post-heparin plasma protamine-resistant lipase inhibitor" RELATED []
+synonym: "post-heparin plasma protamine-resistant lipase inhibitors" RELATED []
+synonym: "PPL inhibitor" RELATED []
+synonym: "PPL inhibitors" RELATED []
+synonym: "salt-resistant post-heparin lipase inhibitor" RELATED []
+synonym: "salt-resistant post-heparin lipase inhibitors" RELATED []
+synonym: "steapsin inhibitor" RELATED []
+synonym: "steapsin inhibitors" RELATED []
+synonym: "triacetinase inhibitor" RELATED []
+synonym: "triacetinase inhibitors" RELATED []
+synonym: "triacylglycerol ester hydrolase inhibitor" RELATED []
+synonym: "triacylglycerol ester hydrolase inhibitors" RELATED []
+synonym: "triacylglycerol lipase (EC 3.1.1.3) inhibitor" RELATED []
+synonym: "triacylglycerol lipase (EC 3.1.1.3) inhibitors" RELATED []
+synonym: "triacylglycerol lipase inhibitor" RELATED []
+synonym: "triacylglycerol lipase inhibitors" RELATED []
+synonym: "tributyrase inhibitor" RELATED []
+synonym: "tributyrase inhibitors" RELATED []
+synonym: "tributyrin esterase inhibitor" RELATED []
+synonym: "tributyrin esterase inhibitors" RELATED []
+synonym: "tributyrinase inhibitor" RELATED []
+synonym: "tributyrinase inhibitors" RELATED []
+synonym: "triglyceridase inhibitor" RELATED []
+synonym: "triglyceridase inhibitors" RELATED []
+synonym: "triglyceride hydrolase inhibitor" RELATED []
+synonym: "triglyceride hydrolase inhibitors" RELATED []
+synonym: "triglyceride lipase inhibitor" RELATED []
+synonym: "triglyceride lipase inhibitors" RELATED []
+synonym: "triolein hydrolase inhibitor" RELATED []
+synonym: "triolein hydrolase inhibitors" RELATED []
+synonym: "Tween hydrolase inhibitor" RELATED []
+synonym: "Tween hydrolase inhibitors" RELATED []
+synonym: "tween-hydrolysing esterase inhibitor" RELATED []
+synonym: "tween-hydrolyzing esterase inhibitors" RELATED []
+synonym: "Tweenase inhibitor" RELATED []
+synonym: "Tweenase inhibitors" RELATED []
+synonym: "Tweenesterase inhibitor" RELATED []
+synonym: "Tweenesterase inhibitors" RELATED []
+is_a: CHEBI:76773 ! EC 3.1.1.* (carboxylic ester hydrolase) inhibitor
+
+[Term]
+id: CHEBI:65255
+name: food preservative
+def: "Substances which are added to food in order to prevent decomposition caused by  microbial growth or by undesirable chemical changes." []
+synonym: "food preservatives" RELATED []
+is_a: CHEBI:64047 ! food additive
+
+[Term]
+id: CHEBI:65256
+name: antimicrobial food preservative
+def: "A food preservative which prevents decomposition of food by preventing the growth of fungi or bacteria. In European countries, E-numbers for permitted food preservatives are from E200 to E299, divided into sorbates (E200-209), benzoates (E210-219), sulfites (E220-229), phenols and formates (E230-239), nitrates (E240-259), acetates (E260-269), lactates (E270-279), propionates (E280-289) and others (E290-299)." []
+synonym: "antimicrobial food preservatives" RELATED []
+synonym: "antimicrobial preservative" RELATED []
+synonym: "antimicrobial preservatives" RELATED []
+is_a: CHEBI:33281 ! antimicrobial agent
+is_a: CHEBI:65255 ! food preservative
+
+[Term]
 id: CHEBI:65296
 name: primary ammonium ion
 def: "An ammonium ion resulting from the protonation of the nitrogen atom of a primary amine. Major species at pH 7.3." []
@@ -4276,6 +4839,36 @@ synonym: "organic compounds" RELATED []
 synonym: "organic molecules" RELATED []
 is_a: CHEBI:25367 ! molecule
 is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:73181
+name: EC 1.11.1.11 (L-ascorbate peroxidase) inhibitors
+def: "An  EC 1.11.1.* (peroxidases) inhibitor that inhibits the action of L-ascorbate peroxidase (EC 1.11.1.11)." []
+synonym: "ascorbate peroxidase inhibitor" RELATED []
+synonym: "ascorbate peroxidase inhibitors" RELATED []
+synonym: "ascorbic acid peroxidase inhibitor" RELATED []
+synonym: "ascorbic acid peroxidase inhibitors" RELATED []
+synonym: "EC 1.11.1.11 (L-ascorbate peroxidase) inhibitors" EXACT []
+synonym: "EC 1.11.1.11 inhibitor" RELATED []
+synonym: "EC 1.11.1.11 inhibitors" RELATED []
+synonym: "L-ascorbate peroxidase (EC 1.11.1.11) inhibitor" RELATED []
+synonym: "L-ascorbate peroxidase (EC 1.11.1.11) inhibitors" RELATED []
+synonym: "L-ascorbate peroxidase inhibitor" RELATED []
+synonym: "L-ascorbate peroxidase inhibitors" RELATED []
+synonym: "L-ascorbate:hydrogen-peroxide oxidoreductase inhibitor" RELATED []
+synonym: "L-ascorbate:hydrogen-peroxide oxidoreductase inhibitors" RELATED []
+synonym: "L-ascorbic acid peroxidase inhibitor" RELATED []
+synonym: "L-ascorbic acid peroxidase inhibitors" RELATED []
+synonym: "L-ascorbic acid-specific peroxidase inhibitor" RELATED []
+synonym: "L-ascorbic acid-specific peroxidase inhibitors" RELATED []
+is_a: CHEBI:75381 ! EC 1.11.1.* (peroxidases) inhibitor
+
+[Term]
+id: CHEBI:73182
+name: plant activator
+def: "Any compound that protects plants by activating their defence mechanisms." []
+synonym: "plant activators" RELATED []
+is_a: CHEBI:33286 ! agrochemical
 
 [Term]
 id: CHEBI:73216
@@ -4313,6 +4906,22 @@ name: cardenolides
 def: "Any steroid lactone that is a  C23 steroid with a five-membered lactone ring at C-17 and its substituted derivatives. They form the aglycone constituents of cardiac glycosides." []
 is_a: CHEBI:26766 ! steroid lactone
 is_a: CHEBI:50523 ! butenolide
+
+[Term]
+id: CHEBI:75381
+name: EC 1.11.1.* (peroxidases) inhibitor
+def: "An EC 1.11.* (oxidoreductase acting on peroxide as donors) inhibitor that interferes with the action of any of the peroxidases (EC 1.11.1.*)." []
+synonym: "EC 1.11.1 inhibitor" RELATED []
+synonym: "EC 1.11.1 inhibitors" RELATED []
+synonym: "EC 1.11.1.* (peroxidase) inhibitor" RELATED []
+synonym: "EC 1.11.1.* (peroxidase) inhibitors" RELATED []
+synonym: "EC 1.11.1.* (peroxidases) inhibitors" RELATED []
+synonym: "EC 1.11.1.* inhibitor" RELATED []
+synonym: "EC 1.11.1.* inhibitors" RELATED []
+synonym: "inhibitor of peroxidases" RELATED []
+synonym: "inhibitors of peroxidases" RELATED []
+synonym: "peroxidases inhibitors" RELATED []
+is_a: CHEBI:76738 ! EC 1.11.* (oxidoreductase acting on peroxide as donors) inhibitor
 
 [Term]
 id: CHEBI:75763
@@ -4368,6 +4977,13 @@ synonym: "prokaryotic metabolites" RELATED []
 is_a: CHEBI:25212 ! metabolite
 
 [Term]
+id: CHEBI:76206
+name: xenobiotic metabolite
+def: "Any metabolite produced by metabolism of a xenobiotic compound." []
+synonym: "xenobiotic metabolites" RELATED []
+is_a: CHEBI:25212 ! metabolite
+
+[Term]
 id: CHEBI:76725
 name: EC 1.* (oxidoreductase) inhibitor
 def: "An enzyme inhibitor which interferes with the action of an oxidoreductase (EC 1.*.*.*)." []
@@ -4381,6 +4997,23 @@ synonym: "oxidoreductase inhibitors" RELATED []
 is_a: CHEBI:23924 ! enzyme inhibitor
 
 [Term]
+id: CHEBI:76726
+name: EC 1.1.* (oxidoreductase acting on donor CH-OH group) inhibitor
+def: "An oxidoreductase inhibitor which interferes with the action of an oxidoreductase acting on the CH-OH group of donors (EC 1.1.*.*)." []
+synonym: "EC 1.1.* (oxidoreductase acting on donor CH-OH group) inhibitors" RELATED []
+synonym: "EC 1.1.* inhibitor" RELATED []
+synonym: "EC 1.1.* inhibitors" RELATED []
+synonym: "inhibitor of oxidoreductase acting on CH-OH group of donor" RELATED []
+synonym: "inhibitor of oxidoreductase acting on CH-OH group of donors" RELATED []
+synonym: "inhibitors of oxidoreductase acting on CH-OH group of donor" RELATED []
+synonym: "inhibitors of oxidoreductase acting on CH-OH group of donors" RELATED []
+synonym: "oxidoreductase acting on donor CH-OH group (EC 1.1.*) inhibitor" RELATED []
+synonym: "oxidoreductase acting on donor CH-OH group (EC 1.1.*) inhibitors" RELATED []
+synonym: "oxidoreductase acting on donor CH-OH group inhibitor" RELATED []
+synonym: "oxidoreductase acting on donor CH-OH group inhibitors" RELATED []
+is_a: CHEBI:76725 ! EC 1.* (oxidoreductase) inhibitor
+
+[Term]
 id: CHEBI:76736
 name: EC 1.9.* (oxidoreductase acting on donor heme group) inhibitor
 def: "An oxidoreductase inhibitor which interferes with the action of an oxidoreductase acting on a heme group of donors (EC 1.9.*.*)." []
@@ -4391,6 +5024,34 @@ synonym: "EC 1.9.* inhibitor" RELATED []
 synonym: "EC 1.9.* inhibitors" RELATED []
 synonym: "oxidoreductase acting on a heme group of donors (EC 1.9.*) inhibitor" RELATED []
 synonym: "oxidoreductase acting on a heme group of donors (EC 1.9.*) inhibitors" RELATED []
+is_a: CHEBI:76725 ! EC 1.* (oxidoreductase) inhibitor
+
+[Term]
+id: CHEBI:76738
+name: EC 1.11.* (oxidoreductase acting on peroxide as donors) inhibitor
+def: "An oxidoreductase inhibitor which interferes with the action of an oxidoreductase acting on peroxide as donors (EC 1.11.*.*)." []
+synonym: "EC 1.11.* (oxidoreductase acting on peroxide as donors) inhibitors" RELATED []
+synonym: "EC 1.11.* (oxidoreductases acting on peroxide as donors) inhibitor" RELATED []
+synonym: "EC 1.11.* (oxidoreductases acting on peroxide as donors) inhibitors" RELATED []
+synonym: "EC 1.11.* inhibitor" RELATED []
+synonym: "EC 1.11.* inhibitors" RELATED []
+synonym: "oxidoreductase acting on peroxide as donors (EC 1.11.*) inhibitor" RELATED []
+synonym: "oxidoreductase acting on peroxide as donors (EC 1.11.*) inhibitors" RELATED []
+synonym: "oxidoreductases acting on peroxide as donors (EC 1.11.*) inhibitor" RELATED []
+synonym: "oxidoreductases acting on peroxide as donors (EC 1.11.*) inhibitors" RELATED []
+is_a: CHEBI:76725 ! EC 1.* (oxidoreductase) inhibitor
+
+[Term]
+id: CHEBI:76740
+name: EC 1.13.* [oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases)] inhibitor
+def: "An oxidoreductase inhibitor which interferes with the action of an oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases), EC 1.13.*.*." []
+synonym: "EC 1.13.* [oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases)] inhibitors" RELATED []
+synonym: "EC 1.13.* inhibitor" RELATED []
+synonym: "EC 1.13.* inhibitors" RELATED []
+synonym: "oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases) (EC 1.13.*) inhibitor" RELATED []
+synonym: "oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases) (EC 1.13.*) inhibitors" RELATED []
+synonym: "oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases) inhibitor" RELATED []
+synonym: "oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases) inhibitors" RELATED []
 is_a: CHEBI:76725 ! EC 1.* (oxidoreductase) inhibitor
 
 [Term]
@@ -4426,6 +5087,19 @@ synonym: "hydrolase inhibitors" RELATED []
 is_a: CHEBI:23924 ! enzyme inhibitor
 
 [Term]
+id: CHEBI:76760
+name: EC 3.1.* (ester hydrolase) inhibitor
+def: "A hydrolase inhibitor that interferes with the action of any ester hydrolase (EC 3.1.*.*)." []
+synonym: "EC 3.1.* (ester hydrolase) inhibitors" RELATED []
+synonym: "EC 3.1.* inhibitor" RELATED []
+synonym: "EC 3.1.* inhibitors" RELATED []
+synonym: "ester hydrolase (EC 3.1.*) inhibitor" RELATED []
+synonym: "ester hydrolase (EC 3.1.*) inhibitors" RELATED []
+synonym: "ester hydrolase inhibitor" RELATED []
+synonym: "ester hydrolase inhibitors" RELATED []
+is_a: CHEBI:76759 ! EC 3.* (hydrolase) inhibitor
+
+[Term]
 id: CHEBI:76764
 name: EC 3.5.* (hydrolases acting on non-peptide C-N bonds) inhibitor
 def: "Any hydrolase inhibitor that interferes with the action of a hydrolase acting on C-N bonds, other than peptide bonds (EC 3.5.*.*)." []
@@ -4439,6 +5113,17 @@ synonym: "EC 3.5.* inhibitors" RELATED []
 is_a: CHEBI:76759 ! EC 3.* (hydrolase) inhibitor
 
 [Term]
+id: CHEBI:76773
+name: EC 3.1.1.* (carboxylic ester hydrolase) inhibitor
+def: "An EC 3.1.* (ester hydrolase) inhibitor that interferes with the action of a carboxylic ester hydrolase (EC 3.1.1.*)." []
+synonym: "carboxylic ester hydrolase (EC 3.1.1.*) inhibitor" RELATED []
+synonym: "carboxylic ester hydrolase (EC 3.1.1.*) inhibitors" RELATED []
+synonym: "EC 3.1.1.* (carboxylic ester hydrolase) inhibitors" RELATED []
+synonym: "EC 3.1.1.* inhibitor" RELATED []
+synonym: "EC 3.1.1.* inhibitors" RELATED []
+is_a: CHEBI:76760 ! EC 3.1.* (ester hydrolase) inhibitor
+
+[Term]
 id: CHEBI:76807
 name: EC 3.5.1.* (non-peptide linear amide C-N hydrolase) inhibitor
 def: "An EC 3.5.* (hydrolases acting on non-peptide C-N bonds) inhibitor that interferes with the action of any non-peptide linear amide C-N hydrolase (EC 3.5.1.*)." []
@@ -4448,6 +5133,30 @@ synonym: "EC 3.5.1.* inhibitors" RELATED []
 synonym: "non-peptide linear amide C-N hydrolase (EC 3.5.1.*) inhibitor" RELATED []
 synonym: "non-peptide linear amide C-N hydrolase (EC 3.5.1.*) inhibitors" RELATED []
 is_a: CHEBI:76764 ! EC 3.5.* (hydrolases acting on non-peptide C-N bonds) inhibitor
+
+[Term]
+id: CHEBI:76835
+name: EC 1.1.1.* (oxidoreductase acting on donor CH-OH group, NAD(+) or NADP(+) acceptor) inhibitor
+def: "An EC 1.1.* (oxidoreductase acting on donor CH-OH group) inhibitor that uses NAD(+) or NADP(+) as acceptor (EC 1.1.1.*)." []
+synonym: "EC 1.1.1.* (oxidoreductase acting on donor CH-OH group, NAD(+) or NADP(+)acceptor) inhibitors" RELATED []
+synonym: "EC 1.1.1.* inhibitor" RELATED []
+synonym: "EC 1.1.1.* inhibitors" RELATED []
+synonym: "oxidoreductase acting on donor CH-OH group, NAD(+) or NADP(+) acceptor (EC 1.1.1.*) inhibitor" RELATED []
+synonym: "oxidoreductase acting on donor CH-OH group, NAD(+) or NADP(+) acceptor (EC 1.1.1.*) inhibitors" RELATED []
+is_a: CHEBI:76726 ! EC 1.1.* (oxidoreductase acting on donor CH-OH group) inhibitor
+
+[Term]
+id: CHEBI:76837
+name: EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 O atoms) inhibitor
+def: "An EC 1.13.* [oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases)] inhibitor that inhibits the action of any oxidoreductase incorporating 2 atoms of oxygen (EC 1.13.11.*)." []
+synonym: "EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 atoms of oxygen) inhibitor" RELATED []
+synonym: "EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 atoms of oxygen) inhibitors" RELATED []
+synonym: "EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 O atoms) inhibitors" RELATED []
+synonym: "EC 1.13.11.* inhibitor" RELATED []
+synonym: "EC 1.13.11.* inhibitors" RELATED []
+synonym: "oxidoreductase acting on single donors and incorporating 2 atoms of oxygen (EC 1.13.11.*) inhibitor" RELATED []
+synonym: "oxidoreductase acting on single donors and incorporating 2 atoms of oxygen (EC 1.13.11.*) inhibitors" RELATED []
+is_a: CHEBI:76740 ! EC 1.13.* [oxidoreductase acting on single donors with incorporation of molecular oxygen (oxygenases)] inhibitor
 
 [Term]
 id: CHEBI:76838
@@ -4549,6 +5258,14 @@ synonym: "fungal metabolites" RELATED []
 is_a: CHEBI:75763 ! eukaryotic metabolite
 
 [Term]
+id: CHEBI:76967
+name: human xenobiotic metabolite
+def: "Any human metabolite produced by metabolism of a xenobiotic compound in humans." []
+synonym: "human xenobiotic metabolites" RELATED []
+is_a: CHEBI:76206 ! xenobiotic metabolite
+is_a: CHEBI:77746 ! human metabolite
+
+[Term]
 id: CHEBI:76969
 name: bacterial metabolite
 def: "Any prokaryotic metabolite produced during a metabolic reaction in bacteria." []
@@ -4569,6 +5286,41 @@ name: cardioprotective agent
 def: "Any protective agent that is able to prevent damage to the heart." []
 synonym: "cardioprotective agents" RELATED []
 is_a: CHEBI:50267 ! protective agent
+
+[Term]
+id: CHEBI:77425
+name: EC 1.1.1.188 (prostaglandin-F synthase) inhibitor
+def: "An EC 1.1.1.* (oxidoreductase acting on donor CH-OH group, NAD(+) or NADP(+) acceptor) inhibitor that interferes with the action of prostaglandin-F synthase (EC 1.1.1.188)." []
+synonym: "(5Z,13E)-(15S)-9alpha,11alpha,15-trihydroxyprosta-5,13-dienoate:NADP(+) 11-oxidoreductase inhibitor" RELATED []
+synonym: "(5Z,13E)-(15S)-9alpha,11alpha,15-trihydroxyprosta-5,13-dienoate:NADP(+) 11-oxidoreductase inhibitors" RELATED []
+synonym: "EC 1.1.1.188 (prostaglandin-F synthase) inhibitors" RELATED []
+synonym: "EC 1.1.1.188 inhibitor" RELATED []
+synonym: "EC 1.1.1.188 inhibitors" RELATED []
+synonym: "NADPH-dependent prostaglandin D2 11-keto reductase inhibitor" RELATED []
+synonym: "NADPH-dependent prostaglandin D2 11-keto reductase inhibitors" RELATED []
+synonym: "PGD2 11-ketoreductase inhibitor" RELATED []
+synonym: "PGD2 11-ketoreductase inhibitors" RELATED []
+synonym: "PGF synthetase inhibitor" RELATED []
+synonym: "PGF synthetase inhibitors" RELATED []
+synonym: "PGF2alpha synthetase inhibitor" RELATED []
+synonym: "PGF2alpha synthetase inhibitors" RELATED []
+synonym: "prostaglandin 11-keto reductase inhibitor" RELATED []
+synonym: "prostaglandin 11-keto reductase inhibitors" RELATED []
+synonym: "prostaglandin 11-ketoreductase inhibitor" RELATED []
+synonym: "prostaglandin 11-ketoreductase inhibitors" RELATED []
+synonym: "prostaglandin D2-ketoreductase inhibitor" RELATED []
+synonym: "prostaglandin D2-ketoreductase inhibitors" RELATED []
+synonym: "prostaglandin F synthase inhibitor" RELATED []
+synonym: "prostaglandin F synthase inhibitors" RELATED []
+synonym: "prostaglandin F synthetase inhibitor" RELATED []
+synonym: "prostaglandin F synthetase inhibitors" RELATED []
+synonym: "prostaglandin-D2 11-reductase inhibitor" RELATED []
+synonym: "prostaglandin-D2 11-reductase inhibitors" RELATED []
+synonym: "reductase, 15-hydroxy-11-oxoprostaglandin inhibitor" RELATED []
+synonym: "reductase, 15-hydroxy-11-oxoprostaglandin inhibitors" RELATED []
+synonym: "synthetase, prostaglandin F2alpha inhibitor" RELATED []
+synonym: "synthetase, prostaglandin F2alpha inhibitors" RELATED []
+is_a: CHEBI:76835 ! EC 1.1.1.* (oxidoreductase acting on donor CH-OH group, NAD(+) or NADP(+) acceptor) inhibitor
 
 [Term]
 id: CHEBI:77746
@@ -4687,6 +5439,27 @@ relationship: RO:0000087 CHEBI:50910 ! neurotoxin
 relationship: RO:0000087 CHEBI:60643 ! NMDA receptor antagonist
 
 [Term]
+id: CHEBI:83039
+name: crustacean metabolite
+def: "An animal metabolite produced by arthropods such as crabs, lobsters, crayfish, shrimps and krill." []
+synonym: "crustacean metabolites" RELATED []
+is_a: CHEBI:75767 ! animal metabolite
+
+[Term]
+id: CHEBI:83056
+name: Daphnia magna metabolite
+def: "A Daphnia metabolite produced by the species Daphnia magna." []
+synonym: "Daphnia magna metabolites" RELATED []
+is_a: CHEBI:83057 ! Daphnia metabolite
+
+[Term]
+id: CHEBI:83057
+name: Daphnia metabolite
+def: "A crustacean metabolite produced by the genus of small planktonic arthropods, Daphnia" []
+synonym: "Daphnia metabolites" RELATED []
+is_a: CHEBI:83039 ! crustacean metabolite
+
+[Term]
 id: CHEBI:83403
 name: monochlorobenzenes
 def: "Any member of the class of chlorobenzenes containing a mono- or poly-substituted benzene ring in which only one substituent is chlorine." []
@@ -4700,6 +5473,13 @@ synonym: "cardiac glycosides" RELATED []
 is_a: CHEBI:24400 ! glycoside
 is_a: CHEBI:26766 ! steroid lactone
 relationship: RO:0000087 CHEBI:77307 ! cardioprotective agent
+
+[Term]
+id: CHEBI:84735
+name: algal metabolite
+def: "Any eukaryotic metabolite produced during a metabolic reaction in algae including unicellular organisms like chlorella and diatoms to multicellular organisms like giant kelps and brown algae." []
+synonym: "algal metabolites" RELATED []
+is_a: CHEBI:75763 ! eukaryotic metabolite
 
 [Term]
 id: CHEBI:85234
@@ -4717,6 +5497,21 @@ synonym: "allergenic metals" RELATED []
 synonym: "metal allergens" RELATED []
 is_a: CHEBI:33521 ! metal atom
 relationship: RO:0000087 CHEBI:50904 ! allergen
+
+[Term]
+id: CHEBI:88188
+name: drug allergen
+def: "Any drug which causes the onset of an allergic reaction." []
+synonym: "allergenic drug" RELATED []
+is_a: CHEBI:23888 ! drug
+is_a: CHEBI:50904 ! allergen
+
+[Term]
+id: CHEBI:90710
+name: receptor modulator
+def: "A drug that acts as an antagonist, agonist, reverse agonist, or in some other fashion when interacting with cellular receptors." []
+synonym: "receptor modulators" RELATED []
+is_a: CHEBI:23888 ! drug
 
 [Term]
 id: CHEBI:91007

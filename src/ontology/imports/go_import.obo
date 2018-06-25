@@ -2416,6 +2416,71 @@ is_a: GO:0043231 ! intracellular membrane-bounded organelle
 is_a: GO:0044444 ! cytoplasmic part
 
 [Term]
+id: GO:0005740
+name: mitochondrial envelope
+def: "The double lipid bilayer enclosing the mitochondrion and separating its contents from the cell cytoplasm; includes the intermembrane space." []
+is_a: GO:0031967 ! organelle envelope
+is_a: GO:0044429 ! mitochondrial part
+
+[Term]
+id: GO:0005743
+name: mitochondrial inner membrane
+def: "The inner, i.e. lumen-facing, lipid bilayer of the mitochondrial envelope. It is highly folded to form cristae." []
+synonym: "inner mitochondrial membrane" EXACT []
+is_a: GO:0019866 ! organelle inner membrane
+is_a: GO:0031966 ! mitochondrial membrane
+
+[Term]
+id: GO:0005746
+name: mitochondrial respiratory chain
+def: "The protein complexes that form the mitochondrial electron transport system (the respiratory chain), associated with the inner mitochondrial membrane. The respiratory chain complexes transfer electrons from an electron donor to an electron acceptor and are associated with a proton pump to create a transmembrane electrochemical gradient." []
+synonym: "mitochondrial electron transport chain" EXACT []
+is_a: GO:0044455 ! mitochondrial membrane part
+is_a: GO:0070469 ! respiratory chain
+intersection_of: GO:0070469 ! respiratory chain
+intersection_of: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
+relationship: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
+
+[Term]
+id: GO:0005747
+name: mitochondrial respiratory chain complex I
+def: "A protein complex located in the mitochondrial inner membrane that forms part of the mitochondrial respiratory chain. It contains about 25 different polypeptide subunits, including NADH dehydrogenase (ubiquinone), flavin mononucleotide and several different iron-sulfur clusters containing non-heme iron. The iron undergoes oxidation-reduction between Fe(II) and Fe(III), and catalyzes proton translocation linked to the oxidation of NADH by ubiquinone." []
+is_a: GO:0045271 ! respiratory chain complex I
+is_a: GO:0098800 ! inner mitochondrial membrane protein complex
+is_a: GO:1990204 ! oxidoreductase complex
+intersection_of: GO:0045271 ! respiratory chain complex I
+intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
+relationship: BFO:0000050 GO:0005746 ! part of mitochondrial respiratory chain
+
+[Term]
+id: GO:0005750
+name: mitochondrial respiratory chain complex III
+def: "A protein complex located in the mitochondrial inner membrane that forms part of the mitochondrial respiratory chain. Contains about 10 polypeptide subunits including four redox centers: cytochrome b/b6, cytochrome c1 and an 2Fe-2S cluster. Catalyzes the oxidation of ubiquinol by oxidized cytochrome c1." []
+synonym: "mitochondrial coenzyme Q-cytochrome c oxidoreductase complex" EXACT []
+synonym: "mitochondrial coenzyme Q-cytochrome c reductase complex" EXACT []
+synonym: "mitochondrial complex III" EXACT []
+synonym: "mitochondrial cytochrome bc(1) complex" EXACT []
+synonym: "mitochondrial cytochrome bc1 complex" EXACT []
+synonym: "mitochondrial electron transport complex III" RELATED []
+synonym: "mitochondrial ubiquinol-cytochrome c oxidoreductase complex" EXACT []
+synonym: "mitochondrial ubiquinol-cytochrome-c reductase complex" EXACT []
+is_a: GO:0045275 ! respiratory chain complex III
+is_a: GO:0098800 ! inner mitochondrial membrane protein complex
+intersection_of: GO:0045275 ! respiratory chain complex III
+intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
+relationship: BFO:0000050 GO:0005746 ! part of mitochondrial respiratory chain
+
+[Term]
+id: GO:0005753
+name: mitochondrial proton-transporting ATP synthase complex
+def: "A proton-transporting ATP synthase complex found in the mitochondrial membrane." []
+synonym: "mitochondrial respiratory chain complex V" EXACT []
+is_a: GO:0045259 ! proton-transporting ATP synthase complex
+is_a: GO:0098800 ! inner mitochondrial membrane protein complex
+intersection_of: GO:0045259 ! proton-transporting ATP synthase complex
+intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
+
+[Term]
 id: GO:0005759
 name: mitochondrial matrix
 def: "The gel-like material, with considerable fine structure, that lies in the matrix space, or lumen, of a mitochondrion. It contains the enzymes of the tricarboxylic acid cycle and, in some organisms, the enzymes concerned with fatty acid oxidation." []
@@ -6550,6 +6615,14 @@ def: "The process of introducing a phosphate group into a molecule, usually with
 is_a: GO:0006796 ! phosphate-containing compound metabolic process
 
 [Term]
+id: GO:0016469
+name: proton-transporting two-sector ATPase complex
+def: "A large protein complex that catalyzes the synthesis or hydrolysis of ATP by a rotational mechanism, coupled to the transport of protons across a membrane. The complex comprises a membrane sector (F0, V0, or A0) that carries out proton transport and a cytoplasmic compartment sector (F1, V1, or A1) that catalyzes ATP synthesis or hydrolysis. Two major types have been characterized: V-type ATPases couple ATP hydrolysis to the transport of protons across a concentration gradient, whereas F-type ATPases, also known as ATP synthases, normally run in the reverse direction to utilize energy from a proton concentration or electrochemical gradient to synthesize ATP. A third type, A-type ATPases have been found in archaea, and are closely related to eukaryotic V-type ATPases but are reversible." []
+synonym: "hydrogen-transporting two-sector ATPase complex" EXACT []
+synonym: "vacuolar hydrogen-transporting ATPase" RELATED []
+is_a: GO:0098796 ! membrane protein complex
+
+[Term]
 id: GO:0016477
 name: cell migration
 def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues. Cell migration is a central process in the development and maintenance of multicellular organisms." []
@@ -7276,6 +7349,14 @@ id: GO:0019842
 name: vitamin binding
 def: "Interacting selectively and non-covalently with a vitamin, one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
 is_a: GO:0036094 ! small molecule binding
+
+[Term]
+id: GO:0019866
+name: organelle inner membrane
+def: "The inner, i.e. lumen-facing, lipid bilayer of an organelle envelope; usually highly selective to most ions and metabolites." []
+is_a: GO:0031090 ! organelle membrane
+is_a: GO:0044424 ! intracellular part
+relationship: BFO:0000050 GO:0031967 ! part of organelle envelope
 
 [Term]
 id: GO:0019889
@@ -8024,6 +8105,19 @@ intersection_of: BFO:0000050 GO:0005887 ! part of integral component of plasma m
 relationship: BFO:0000050 GO:0005887 ! part of integral component of plasma membrane
 
 [Term]
+id: GO:0030964
+name: NADH dehydrogenase complex
+def: "An integral membrane complex that possesses NADH oxidoreductase activity. The complex is one of the components of the electron transport chain. It catalyzes the transfer of a pair of electrons from NADH to a quinone." []
+synonym: "Complex I" EXACT []
+synonym: "NADH dehydrogenase complex (plastoquinone)" NARROW []
+synonym: "NADH dehydrogenase complex (quinone)" NARROW []
+synonym: "NADH dehydrogenase complex (ubiquinone)" NARROW []
+synonym: "NADH:plastoquinone reductase complex" NARROW []
+synonym: "plastid NADH dehydrogenase complex (plastoquinone)" NARROW []
+is_a: GO:0098796 ! membrane protein complex
+is_a: GO:1902494 ! catalytic complex
+
+[Term]
 id: GO:0030990
 name: intraciliary transport particle
 def: "A nonmembrane-bound oligomeric protein complex that participates in bidirectional transport of molecules (cargo) along axonemal microtubules." []
@@ -8037,6 +8131,15 @@ id: GO:0031012
 name: extracellular matrix
 def: "A structure lying external to one or more cells, which provides structural support for cells or tissues." []
 is_a: GO:0044421 ! extracellular region part
+
+[Term]
+id: GO:0031090
+name: organelle membrane
+def: "A membrane that is one of the two lipid bilayers of an organelle envelope or the outermost membrane of single membrane bound organelle." []
+synonym: "intracellular membrane" RELATED []
+is_a: GO:0016020 ! membrane
+is_a: GO:0044422 ! organelle part
+relationship: BFO:0000050 GO:0043227 ! part of membrane-bounded organelle
 
 [Term]
 id: GO:0031091
@@ -8070,6 +8173,47 @@ is_a: GO:0031224 ! intrinsic component of membrane
 is_a: GO:0044459 ! plasma membrane part
 intersection_of: GO:0031224 ! intrinsic component of membrane
 intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0031300
+name: intrinsic component of organelle membrane
+def: "The component of the organelle membrane consisting of the gene products and protein complexes having either part of their peptide sequence embedded in the hydrophobic region of the membrane or some other covalently attached group such as a GPI anchor that is similarly embedded in the membrane." []
+synonym: "intrinsic to organelle membrane" NARROW []
+is_a: GO:0031224 ! intrinsic component of membrane
+is_a: GO:0044422 ! organelle part
+intersection_of: GO:0031224 ! intrinsic component of membrane
+intersection_of: BFO:0000050 GO:0031090 ! part of organelle membrane
+relationship: BFO:0000050 GO:0031090 ! part of organelle membrane
+
+[Term]
+id: GO:0031301
+name: integral component of organelle membrane
+def: "The component of the organelle membrane consisting of the gene products having at least some part of their peptide sequence embedded in the hydrophobic region of the membrane." []
+synonym: "integral to organelle membrane" EXACT []
+is_a: GO:0016021 ! integral component of membrane
+is_a: GO:0031300 ! intrinsic component of organelle membrane
+intersection_of: GO:0016021 ! integral component of membrane
+intersection_of: BFO:0000050 GO:0031090 ! part of organelle membrane
+
+[Term]
+id: GO:0031304
+name: intrinsic component of mitochondrial inner membrane
+def: "The component of the mitochondrial inner membrane consisting of the gene products and protein complexes having either part of their peptide sequence embedded in the hydrophobic region of the membrane or some other covalently attached group such as a GPI anchor that is similarly embedded in the membrane." []
+synonym: "intrinsic to mitochondrial inner membrane" NARROW []
+is_a: GO:0098573 ! intrinsic component of mitochondrial membrane
+intersection_of: GO:0031224 ! intrinsic component of membrane
+intersection_of: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
+relationship: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
+
+[Term]
+id: GO:0031305
+name: integral component of mitochondrial inner membrane
+def: "The component of the mitochondrial inner membrane consisting of the gene products having at least some part of their peptide sequence embedded in the hydrophobic region of the membrane." []
+synonym: "integral to mitochondrial inner membrane" EXACT []
+is_a: GO:0031304 ! intrinsic component of mitochondrial inner membrane
+is_a: GO:0032592 ! integral component of mitochondrial membrane
+intersection_of: GO:0016021 ! integral component of membrane
+intersection_of: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
 
 [Term]
 id: GO:0031323
@@ -8571,10 +8715,32 @@ intersection_of: RO:0002213 GO:0006704 ! positively regulates glucocorticoid bio
 relationship: RO:0002213 GO:0006704 ! positively regulates glucocorticoid biosynthetic process
 
 [Term]
+id: GO:0031966
+name: mitochondrial membrane
+def: "Either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope." []
+is_a: GO:0031090 ! organelle membrane
+is_a: GO:0044429 ! mitochondrial part
+relationship: BFO:0000050 GO:0005740 ! part of mitochondrial envelope
+
+[Term]
+id: GO:0031967
+name: organelle envelope
+def: "A double membrane structure enclosing an organelle, including two lipid bilayers and the region between them. In some cases, an organelle envelope may have more than two membranes." []
+is_a: GO:0031975 ! envelope
+is_a: GO:0044446 ! intracellular organelle part
+relationship: BFO:0000050 GO:0043227 ! part of membrane-bounded organelle
+
+[Term]
 id: GO:0031974
 name: membrane-enclosed lumen
 def: "The enclosed volume within a sealed membrane or between two sealed membranes. Encompasses the volume enclosed by the membranes of a particular organelle, e.g. endoplasmic reticulum lumen, or the space between the two lipid bilayers of a double membrane surrounding an organelle, e.g. nuclear envelope lumen." []
 is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0031975
+name: envelope
+def: "A multilayered structure surrounding all or part of a cell; encompasses one or more lipid bilayers, and may include a cell wall layer; also includes the space between layers." []
+is_a: GO:0044464 ! cell part
 
 [Term]
 id: GO:0031981
@@ -9047,6 +9213,16 @@ name: multicellular organism reproduction
 def: "The biological process in which new individuals are produced by one or two multicellular organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." []
 is_a: GO:0000003 ! reproduction
 is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0032592
+name: integral component of mitochondrial membrane
+def: "The component of the mitochondrial membrane consisting of the gene products having at least some part of their peptide sequence embedded in the hydrophobic region of the membrane." []
+synonym: "integral to mitochondrial membrane" NARROW []
+is_a: GO:0031301 ! integral component of organelle membrane
+is_a: GO:0098573 ! intrinsic component of mitochondrial membrane
+intersection_of: GO:0016021 ! integral component of membrane
+intersection_of: BFO:0000050 GO:0031966 ! part of mitochondrial membrane
 
 [Term]
 id: GO:0032774
@@ -11677,6 +11853,16 @@ intersection_of: BFO:0000050 GO:0000228 ! part of nuclear chromosome
 relationship: BFO:0000050 GO:0000228 ! part of nuclear chromosome
 
 [Term]
+id: GO:0044455
+name: mitochondrial membrane part
+def: "Any constituent part of a mitochondrial membrane, either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope." []
+is_a: GO:0044425 ! membrane part
+is_a: GO:0044429 ! mitochondrial part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0031966 ! part of mitochondrial membrane
+relationship: BFO:0000050 GO:0031966 ! part of mitochondrial membrane
+
+[Term]
 id: GO:0044456
 name: synapse part
 def: "Any constituent part of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." []
@@ -11887,6 +12073,88 @@ synonym: "dihydrolipoyl dehydrogenase complex" BROAD []
 synonym: "pyruvate dehydrogenase complex (lipoamide)" EXACT []
 is_a: GO:0044444 ! cytoplasmic part
 is_a: GO:1990204 ! oxidoreductase complex
+
+[Term]
+id: GO:0045259
+name: proton-transporting ATP synthase complex
+def: "A proton-transporting two-sector ATPase complex that catalyzes the phosphorylation of ADP to ATP during oxidative phosphorylation. The complex comprises a membrane sector (F0) that carries out proton transport and a cytoplasmic compartment sector (F1) that catalyzes ATP synthesis by a rotational mechanism; the extramembrane sector (containing 3 a and 3 b subunits) is connected via the d-subunit to the membrane sector by several smaller subunits. Within this complex, the g and e subunits and the 9-12 c subunits rotate by consecutive 120 degree angles and perform parts of ATP synthesis. This movement is driven by the hydrogen ion electrochemical potential gradient." []
+synonym: "hydrogen-translocating F-type ATPase complex" EXACT []
+synonym: "hydrogen-transporting ATP synthase complex" EXACT []
+synonym: "proton-transporting F-type ATPase complex" RELATED []
+is_a: GO:0016469 ! proton-transporting two-sector ATPase complex
+is_a: GO:0044424 ! intracellular part
+
+[Term]
+id: GO:0045260
+name: plasma membrane proton-transporting ATP synthase complex
+def: "A proton-transporting ATP synthase complex found in the plasma membrane. Examples of this component are found in Bacterial species." []
+synonym: "hydrogen-translocating F-type ATPase complex" BROAD []
+synonym: "hydrogen-transporting ATP synthase" EXACT []
+synonym: "plasma membrane hydrogen-translocating F-type ATPase complex" EXACT []
+synonym: "proton-transporting ATP synthase complex" BROAD []
+is_a: GO:0045259 ! proton-transporting ATP synthase complex
+is_a: GO:0098797 ! plasma membrane protein complex
+intersection_of: GO:0045259 ! proton-transporting ATP synthase complex
+intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0045271
+name: respiratory chain complex I
+def: "Respiratory chain complex I is an enzyme of the respiratory chain. It consists of several polypeptide chains and is L-shaped, with a horizontal arm lying in the membrane and a vertical arm that projects into the matrix. The electrons of NADH enter the chain at this complex." []
+synonym: "electron transport complex I" RELATED []
+synonym: "NADH dehydrogenase (ubiquinone) complex" EXACT []
+synonym: "NADH dehydrogenase complex (ubiquinone)" EXACT []
+synonym: "NADH-Q oxidoreductase complex" EXACT []
+is_a: GO:0030964 ! NADH dehydrogenase complex
+is_a: GO:0098803 ! respiratory chain complex
+
+[Term]
+id: GO:0045272
+name: plasma membrane respiratory chain complex I
+def: "A subcomplex of the respiratory chain located in the plasma membrane. It contains about 25 different polypeptide subunits, including NADH dehydrogenase (ubiquinone), flavin mononucleotide and several different iron-sulfur clusters containing non-heme iron. The iron undergoes oxidation-reduction between Fe(II) and Fe(III), and catalyzes proton translocation linked to the oxidation of NADH by ubiquinone. Examples of this component are found in bacterial species." []
+synonym: "NADH dehydrogenase (ubiquinone) complex" BROAD []
+synonym: "respiratory chain complex I" BROAD []
+is_a: GO:0045271 ! respiratory chain complex I
+is_a: GO:0098797 ! plasma membrane protein complex
+is_a: GO:1990204 ! oxidoreductase complex
+intersection_of: GO:0045271 ! respiratory chain complex I
+intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+relationship: BFO:0000050 GO:0070470 ! part of plasma membrane respiratory chain
+
+[Term]
+id: GO:0045275
+name: respiratory chain complex III
+def: "A protein complex that transfers electrons from ubiquinol to cytochrome c and translocates two protons across a membrane. The complex contains a core structure of three catalytic subunits: cytochrome b, the Rieske iron sulfur protein (ISP), and cytochrome c1, which are arranged in an integral membrane-bound dimeric complex; additional subunits are present, and vary among different species." []
+synonym: "coenzyme Q-cytochrome c oxidoreductase complex" RELATED []
+synonym: "coenzyme Q-cytochrome c reductase complex" RELATED []
+synonym: "complex III" EXACT []
+synonym: "CoQH2-cytochrome c reductase complex" RELATED []
+synonym: "cytochrome bc(1) complex" EXACT []
+synonym: "cytochrome bc1 complex" EXACT []
+synonym: "electron transport complex III" RELATED []
+synonym: "ubiquinol-cytochrome c oxidoreductase complex" EXACT []
+synonym: "ubiquinol-cytochrome-c reductase complex" EXACT []
+is_a: GO:0044424 ! intracellular part
+is_a: GO:0070069 ! cytochrome complex
+is_a: GO:0098803 ! respiratory chain complex
+is_a: GO:1990204 ! oxidoreductase complex
+
+[Term]
+id: GO:0045276
+name: plasma membrane respiratory chain complex III
+def: "A part of the respiratory chain located in the plasma membrane, containing about 10 polypeptide subunits including four redox centers: cytochrome b/b6, cytochrome c1 and an 2Fe-2S cluster. Catalyzes the oxidation of ubiquinol by oxidized cytochrome c1. Examples of this component are found in bacterial species." []
+synonym: "plasma membrane coenzyme Q-cytochrome c oxidoreductase complex" EXACT []
+synonym: "plasma membrane coenzyme Q-cytochrome c reductase complex" EXACT []
+synonym: "plasma membrane cytochrome bc1 complex" EXACT []
+synonym: "plasma membrane ubiquinol-cytochrome-c reductase complex" EXACT []
+synonym: "respiratory chain complex III" BROAD []
+synonym: "ubiquinol-cytochrome c oxidoreductase complex" BROAD []
+synonym: "ubiquinol-cytochrome-c reductase complex" BROAD []
+is_a: GO:0045275 ! respiratory chain complex III
+is_a: GO:0098797 ! plasma membrane protein complex
+intersection_of: GO:0045275 ! respiratory chain complex III
+intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+relationship: BFO:0000050 GO:0070470 ! part of plasma membrane respiratory chain
 
 [Term]
 id: GO:0045321
@@ -16385,6 +16653,12 @@ intersection_of: BFO:0000050 GO:0043229 ! part of intracellular organelle
 relationship: BFO:0000050 GO:0043229 ! part of intracellular organelle
 
 [Term]
+id: GO:0070069
+name: cytochrome complex
+def: "A protein complex in which at least one of the proteins is a cytochrome, i.e. a heme-containing protein involved in catalysis of redox reactions." []
+is_a: GO:0032991 ! protein-containing complex
+
+[Term]
 id: GO:0070075
 name: tear secretion
 def: "The regulated release of the aqueous layer of the tear film from the lacrimal glands. Tears are the liquid product of a process of lacrimation to clean and lubricate the eyes. Tear fluid contains water, mucin, lipids, lysozyme, lactoferrin, lipocalin, lacritin, immunoglobulins, glucose, urea, sodium, and potassium." []
@@ -16463,6 +16737,21 @@ def: "Interacting selectively and non-covalently with thyroxine (T4) or triiodot
 synonym: "thyroxine binding" NARROW []
 synonym: "triiodothyronine binding" NARROW []
 is_a: GO:0042562 ! hormone binding
+
+[Term]
+id: GO:0070469
+name: respiratory chain
+def: "The protein complexes that form the electron transport system (the respiratory chain), associated with a cell membrane, usually the plasma membrane (in prokaryotes) or the inner mitochondrial membrane (on eukaryotes). The respiratory chain complexes transfer electrons from an electron donor to an electron acceptor and are associated with a proton pump to create a transmembrane electrochemical gradient." []
+synonym: "membrane electron transport chain" EXACT []
+is_a: GO:0044425 ! membrane part
+
+[Term]
+id: GO:0070470
+name: plasma membrane respiratory chain
+def: "A respiratory chain located in the plasma membrane of a cell; made up of the protein complexes that form the electron transport system (the respiratory chain), associated with the plasma membrane. The respiratory chain complexes transfer electrons from an electron donor to an electron acceptor and are associated with a proton pump to create a transmembrane electrochemical gradient." []
+synonym: "plasma membrane electron transport chain" EXACT []
+is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0070469 ! respiratory chain
 
 [Term]
 id: GO:0070561
@@ -17514,6 +17803,16 @@ synonym: "direct ligand regulated sequence-specific DNA binding transcription fa
 is_a: GO:0003700 ! DNA binding transcription factor activity
 
 [Term]
+id: GO:0098573
+name: intrinsic component of mitochondrial membrane
+def: "The component of the mitochondrial membrane consisting of the gene products and protein complexes having either part of their peptide sequence embedded in the hydrophobic region of the membrane or some other covalently attached group such as a GPI anchor that is similarly embedded in the membrane." []
+synonym: "intrinsic to mitochondrial membrane" NARROW []
+is_a: GO:0031300 ! intrinsic component of organelle membrane
+is_a: GO:0044455 ! mitochondrial membrane part
+intersection_of: GO:0031224 ! intrinsic component of membrane
+intersection_of: BFO:0000050 GO:0031966 ! part of mitochondrial membrane
+
+[Term]
 id: GO:0098589
 name: membrane region
 def: "A membrane that is a part of a larger membrane.  Examples include the apical region of the plasma membrane of an epithelial cell and the various regions of the endoplasmic reticulum membrane." []
@@ -17686,6 +17985,17 @@ intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
 
 [Term]
+id: GO:0098800
+name: inner mitochondrial membrane protein complex
+def: "Any protein complex that is part of the inner mitochondrial membrane." []
+is_a: GO:0044455 ! mitochondrial membrane part
+is_a: GO:0098796 ! membrane protein complex
+is_a: GO:0098798 ! mitochondrial protein complex
+intersection_of: GO:0032991 ! protein-containing complex
+intersection_of: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
+relationship: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
+
+[Term]
 id: GO:0098801
 name: regulation of renal system process
 def: "Any process that modulates the frequency, rate or extent of a system process, a multicellular organismal process carried out by the renal system." []
@@ -17693,6 +18003,15 @@ is_a: GO:0044057 ! regulation of system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0003014 ! regulates renal system process
 relationship: RO:0002211 GO:0003014 ! regulates renal system process
+
+[Term]
+id: GO:0098803
+name: respiratory chain complex
+def: "Any protein complex that is part of a respiratory chain" []
+is_a: GO:0098796 ! membrane protein complex
+intersection_of: GO:0032991 ! protein-containing complex
+intersection_of: BFO:0000050 GO:0070469 ! part of respiratory chain
+relationship: BFO:0000050 GO:0070469 ! part of respiratory chain
 
 [Term]
 id: GO:0098805
