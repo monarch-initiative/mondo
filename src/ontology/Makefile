@@ -85,7 +85,8 @@ prepare_release: $(ARTEFACTS)
 all_includes: $(INCLUDES_OWL)
 
 OSF_UPLOAD = $(HOME)/repos/osf-cli/venv/bin/osf -p 2qk53 upload
-osf_upload:
+osf_upload: prepare_release osf_upload_direct
+osf_upload_direct:
 	cd ../.. && $(OSF_UPLOAD) -f -r target/ current/ && $(OSF_UPLOAD) -f -r target/ releases/$(ISODATE)
 
 
