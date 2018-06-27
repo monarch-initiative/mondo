@@ -4451,6 +4451,15 @@ is_a: NCBITaxon:131567 ! cellular organisms
 property_value: has_rank NCBITaxon:superkingdom
 
 [Term]
+id: NCBITaxon:27829
+name: Strongyloidea
+namespace: ncbi_taxonomy
+synonym: "Strongyloidae" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:6308 ! Strongylida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
 id: NCBITaxon:27841
 name: Echinostomata
 namespace: ncbi_taxonomy
@@ -6423,6 +6432,14 @@ is_a: NCBITaxon:4753 ! Pneumocystis
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:42113
+name: Clitellata
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6340 ! Annelida
+property_value: has_rank NCBITaxon:class
+
+[Term]
 id: NCBITaxon:422676
 name: Aconoidasida
 namespace: ncbi_taxonomy
@@ -7603,6 +7620,14 @@ is_a: NCBITaxon:155616 ! Tremellomycetes
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:52564
+name: Oesophagostomum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:63235 ! Cloacinidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:526524
 name: Erysipelotrichia
 namespace: ncbi_taxonomy
@@ -7896,7 +7921,14 @@ property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:55824
+name: Hirudinea
+namespace: ncbi_taxonomy
 alt_id: NCBITaxon:6403
+synonym: "Hirudinida" RELATED synonym []
+synonym: "leeches" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:42113 ! Clitellata
+property_value: has_rank NCBITaxon:subclass
 
 [Term]
 id: NCBITaxon:5583
@@ -9000,6 +9032,14 @@ is_a: NCBITaxon:1649845 ! Yersinia pseudotuberculosis complex
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:63235
+name: Cloacinidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:27829 ! Strongyloidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:6329
 name: Trichocephalida
 namespace: ncbi_taxonomy
@@ -9032,6 +9072,16 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:6333 ! Trichinella
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6340
+name: Annelida
+namespace: ncbi_taxonomy
+synonym: "annelid worms" EXACT genbank_common_name []
+synonym: "segmented worms" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:1206795 ! Lophotrochozoa
+property_value: has_rank NCBITaxon:phylum
 
 [Term]
 id: NCBITaxon:63417
