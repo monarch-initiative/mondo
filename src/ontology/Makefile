@@ -433,6 +433,22 @@ mirror/%-labels.owl: mirror/%.owl
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v 
 
+mirror/omim-src.ttl: 
+	wget --no-check-certificate http://data.monarchinitiative.org/ttl/omim.ttl -O $@
+.PRECIOUS: mirror/omim.ttl
+
+mirror/omim-src.owl: mirror/omim-src.ttl
+	owltools $< --set-ontology-id $(OBO)/mondo/$@ -o $@
+mirror/omim-src.obo: mirror/omim-src.owl
+	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | ../utils/fix-omim.pl  > $@
+
+mirror/omim.obo: mirror/omim-src.obo
+	obo-grep.pl --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' $< | obo-grep.pl -r 'id: OMIM' -   > $@.tmp && mv $@.tmp $@
+mirror/omim.owl: mirror/omim.obo
+	owltools $< -o -f obo $@
+
+
+
 trigger-mirror:
 	touch $@
 
