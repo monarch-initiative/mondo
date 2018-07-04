@@ -1,3 +1,32 @@
+## 2018-07-02 Release
+
+ * [inherited auditory system disease](http://purl.obolibrary.org/obo/MONDO_0037940)
+ * [pyrimidine metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037937)
+ * [inborn disorder of aspartate family metabolism](http://purl.obolibrary.org/obo/MONDO_0037938)
+ * [porphyria](http://purl.obolibrary.org/obo/MONDO_0037939)
+ * [carbohydrate metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037792)
+ * [glycerol metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037807)
+ * [purine metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037829)
+ * [porphyrin metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037821)
+ * [vertebral joint disease](http://purl.obolibrary.org/obo/MONDO_0037847)
+ * [inherited fatty acid metabolism disorder](http://purl.obolibrary.org/obo/MONDO_0037858)
+ * [bordetellosis](http://purl.obolibrary.org/obo/MONDO_0037872)
+ * [valine metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037870)
+ * [amino acid metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037871)
+ * [hyperlipoproteinemia](http://purl.obolibrary.org/obo/MONDO_0037748)
+ * [spinal injury](http://purl.obolibrary.org/obo/MONDO_0037747)
+ * [malignant peritoneal germ cell tumor](http://purl.obolibrary.org/obo/MONDO_0040673)
+ * [class V glucose-6-phosphate dehydrogenase deficiency](http://purl.obolibrary.org/obo/MONDO_0040671)
+ * [invasive carcinoma](http://purl.obolibrary.org/obo/MONDO_0040677)
+ * [great vessel cancer](http://purl.obolibrary.org/obo/MONDO_0040676)
+ * [myofibroblastoma](http://purl.obolibrary.org/obo/MONDO_0040675)
+ * [orgasm disorder](http://purl.obolibrary.org/obo/MONDO_0040674)
+ * [urothelial carcinoma](http://purl.obolibrary.org/obo/MONDO_0040679)
+ * [infiltrating urothelial carcinoma](http://purl.obolibrary.org/obo/MONDO_0040678)
+ * [autosomal dominant oculocutaneous albinism](http://purl.obolibrary.org/obo/MONDO_0040654)
+ * [autosomal recessive ocular albinism](http://purl.obolibrary.org/obo/MONDO_0040653)
+ * [inherited glutathione metabolism disease](http://purl.obolibrary.org/obo/MONDO_0040566)
+
 ## 2018-06-29 Release
 
  * [complex neurodevelopmental disorder](http://purl.obolibrary.org/obo/MONDO_0100038)

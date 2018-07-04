@@ -624,6 +624,43 @@ intersection_of: GO:0042116 ! macrophage activation
 intersection_of: BFO:0000050 GO:0006955 ! part of immune response
 
 [Term]
+id: GO:0002285
+name: lymphocyte activation involved in immune response
+def: "A change in morphology and behavior of a lymphocyte resulting from exposure to a specific antigen, mitogen, cytokine, chemokine, cellular ligand, or soluble factor, leading to the initiation or perpetuation of an immune response." []
+synonym: "lymphocyte activation during immune response" RELATED []
+is_a: GO:0002366 ! leukocyte activation involved in immune response
+is_a: GO:0046649 ! lymphocyte activation
+intersection_of: GO:0046649 ! lymphocyte activation
+intersection_of: BFO:0000050 GO:0006955 ! part of immune response
+
+[Term]
+id: GO:0002286
+name: T cell activation involved in immune response
+def: "The change in morphology and behavior of a mature or immature T cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific, leading to the initiation or perpetuation of an immune response." []
+synonym: "T cell activation during immune response" RELATED []
+synonym: "T lymphocyte activation during immune response" RELATED []
+synonym: "T-cell activation during immune response" RELATED []
+synonym: "T-lymphocyte activation during immune response" RELATED []
+is_a: GO:0002285 ! lymphocyte activation involved in immune response
+is_a: GO:0042110 ! T cell activation
+intersection_of: GO:0042110 ! T cell activation
+intersection_of: BFO:0000050 GO:0006955 ! part of immune response
+
+[Term]
+id: GO:0002292
+name: T cell differentiation involved in immune response
+def: "The process in which an antigenically naive T cell acquires the specialized features of an effector, regulatory, or memory T cell as part of an immune response. Effector T cells include cells which provide T cell help or exhibit cytotoxicity towards other cells." []
+synonym: "T cell development involved in immune response" RELATED []
+synonym: "T cell differentiation during immune response" RELATED []
+synonym: "T lymphocyte differentiation during immune response" RELATED []
+synonym: "T-cell differentiation during immune response" RELATED []
+synonym: "T-lymphocyte differentiation during immune response" RELATED []
+is_a: GO:0002286 ! T cell activation involved in immune response
+is_a: GO:0030217 ! T cell differentiation
+intersection_of: GO:0030217 ! T cell differentiation
+intersection_of: BFO:0000050 GO:0006955 ! part of immune response
+
+[Term]
 id: GO:0002366
 name: leukocyte activation involved in immune response
 def: "A change in morphology and behavior of a leukocyte resulting from exposure to a specific antigen, mitogen, cytokine, cellular ligand, or soluble factor, leading to the initiation or perpetuation of an immune response." []
@@ -739,6 +776,22 @@ id: GO:0002460
 name: adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
 def: "An immune response mediated by lymphocytes expressing specific receptors for antigen produced through a somatic diversification process that includes somatic recombination of germline gene segments encoding immunoglobulin superfamily domains. Recombined receptors for antigen encoded by immunoglobulin superfamily domains include T cell receptors and immunoglobulins (antibodies) produced by B cells. The first encounter with antigen elicits a primary immune response that is slow and not of great magnitude. T and B cells selected by antigen become activated and undergo clonal expansion. A fraction of antigen-reactive T and B cells become memory cells, whereas others differentiate into effector cells. The memory cells generated during the primary response enable a much faster and stronger secondary immune response upon subsequent exposures to the same antigen (immunological memory). An example of this is the adaptive immune response found in Mus musculus." []
 is_a: GO:0002250 ! adaptive immune response
+
+[Term]
+id: GO:0002520
+name: immune system development
+def: "The process whose specific outcome is the progression of an organismal system whose objective is to provide calibrated responses by an organism to a potential internal or invasive threat, over time, from its formation to the mature structure. A system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a given biological process." []
+is_a: GO:0002376 ! immune system process
+is_a: GO:0048731 ! system development
+
+[Term]
+id: GO:0002521
+name: leukocyte differentiation
+def: "The process in which a relatively unspecialized hemopoietic precursor cell acquires the specialized features of a leukocyte. A leukocyte is an achromatic cell of the myeloid or lymphoid lineages capable of ameboid movement, found in blood or other tissue." []
+synonym: "immune cell differentiation" EXACT []
+synonym: "leucocyte differentiation" EXACT []
+is_a: GO:0030154 ! cell differentiation
+relationship: BFO:0000050 GO:0030097 ! part of hemopoiesis
 
 [Term]
 id: GO:0002524
@@ -1844,6 +1897,16 @@ synonym: "phosphohexomutase activity" BROAD []
 synonym: "phosphohexose isomerase activity" BROAD []
 synonym: "phosphosaccharomutase activity" BROAD []
 is_a: GO:0016861 ! intramolecular oxidoreductase activity, interconverting aldoses and ketoses
+
+[Term]
+id: GO:0004357
+name: glutamate-cysteine ligase activity
+def: "Catalysis of the reaction: L-cysteine + L-glutamate + ATP = L-gamma-glutamyl-L-cysteine + ADP + 2 H(+) + phosphate." []
+synonym: "gamma-glutamyl-L-cysteine synthetase activity" EXACT []
+synonym: "gamma-glutamylcysteine synthetase activity" EXACT []
+synonym: "gamma-glutamylcysteinyl synthetase activity" EXACT []
+synonym: "L-glutamate:L-cysteine gamma-ligase (ADP-forming) activity" EXACT []
+is_a: GO:0016881 ! acid-amino acid ligase activity
 
 [Term]
 id: GO:0004363
@@ -3211,6 +3274,15 @@ is_a: GO:0006563 ! L-serine metabolic process
 is_a: GO:0009070 ! serine family amino acid biosynthetic process
 
 [Term]
+id: GO:0006568
+name: tryptophan metabolic process
+def: "The chemical reactions and pathways involving tryptophan, the chiral amino acid 2-amino-3-(1H-indol-3-yl)propanoic acid." []
+synonym: "tryptophan metabolism" EXACT []
+is_a: GO:0006586 ! indolalkylamine metabolic process
+is_a: GO:0009072 ! aromatic amino acid family metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0006570
 name: tyrosine metabolic process
 def: "The chemical reactions and pathways involving tyrosine, an aromatic amino acid, 2-amino-3-(4-hydroxyphenyl)propanoic acid." []
@@ -3230,6 +3302,14 @@ is_a: GO:0009074 ! aromatic amino acid family catabolic process
 is_a: GO:1901606 ! alpha-amino acid catabolic process
 
 [Term]
+id: GO:0006573
+name: valine metabolic process
+def: "The chemical reactions and pathways involving valine, 2-amino-3-methylbutanoic acid." []
+synonym: "valine metabolism" EXACT []
+is_a: GO:0009081 ! branched-chain amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0006575
 name: cellular modified amino acid metabolic process
 def: "The chemical reactions and pathways involving compounds derived from amino acids, organic acids containing one or more amino substituents." []
@@ -3243,12 +3323,29 @@ is_a: GO:0044237 ! cellular metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
+id: GO:0006576
+name: cellular biogenic amine metabolic process
+def: "The chemical reactions and pathways occurring at the level of individual cells involving any of a group of naturally occurring, biologically active amines, such as norepinephrine, histamine, and serotonin, many of which act as neurotransmitters." []
+synonym: "biogenic amine metabolism" EXACT []
+is_a: GO:0044106 ! cellular amine metabolic process
+
+[Term]
 id: GO:0006584
 name: catecholamine metabolic process
 def: "The chemical reactions and pathways involving any of a group of physiologically important biogenic amines that possess a catechol (3,4-dihydroxyphenyl) nucleus and are derivatives of 3,4-dihydroxyphenylethylamine." []
 synonym: "catecholamine metabolism" EXACT []
 is_a: GO:0009712 ! catechol-containing compound metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
+id: GO:0006586
+name: indolalkylamine metabolic process
+def: "The chemical reactions and pathways involving indolalkylamines, indole or indole derivatives containing a primary, secondary, or tertiary amine group." []
+synonym: "indolalkylamine metabolism" EXACT []
+synonym: "indolamine metabolic process" BROAD []
+synonym: "indolamine metabolism" BROAD []
+is_a: GO:0006576 ! cellular biogenic amine metabolic process
+is_a: GO:0042430 ! indole-containing compound metabolic process
 
 [Term]
 id: GO:0006600
@@ -3286,6 +3383,18 @@ def: "The chemical reactions and pathways involving fatty acids, aliphatic monoc
 synonym: "fatty acid metabolism" EXACT []
 is_a: GO:0032787 ! monocarboxylic acid metabolic process
 is_a: GO:0044255 ! cellular lipid metabolic process
+
+[Term]
+id: GO:0006633
+name: fatty acid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a fatty acid, any of the aliphatic monocarboxylic acids that can be liberated by hydrolysis from naturally occurring fats and oils. Fatty acids are predominantly straight-chain acids of 4 to 24 carbon atoms, which may be saturated or unsaturated; branched fatty acids and hydroxy fatty acids also occur, and very long chain acids of over 30 carbons are found in waxes." []
+synonym: "fatty acid anabolism" EXACT []
+synonym: "fatty acid biosynthesis" EXACT []
+synonym: "fatty acid formation" EXACT []
+synonym: "fatty acid synthesis" EXACT []
+is_a: GO:0006631 ! fatty acid metabolic process
+is_a: GO:0008610 ! lipid biosynthetic process
+is_a: GO:0072330 ! monocarboxylic acid biosynthetic process
 
 [Term]
 id: GO:0006643
@@ -3691,6 +3800,15 @@ synonym: "mitochondrial sodium/calcium ion exchange" NARROW []
 is_a: GO:0006810 ! transport
 
 [Term]
+id: GO:0006855
+name: drug transmembrane transport
+def: "The process in which a drug is transported across a membrane." []
+synonym: "drug membrane transport" EXACT []
+synonym: "multidrug transport" RELATED []
+is_a: GO:0015893 ! drug transport
+is_a: GO:0055085 ! transmembrane transport
+
+[Term]
 id: GO:0006858
 name: extracellular transport
 def: "The transport of substances that occurs outside cells." []
@@ -3966,6 +4084,37 @@ id: GO:0007154
 name: cell communication
 def: "Any process that mediates interactions between a cell and its surroundings. Encompasses interactions such as signaling or attachment between one cell and another cell, between a cell and an extracellular matrix, or between a cell and any other aspect of its environment." []
 is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0007155
+name: cell adhesion
+def: "The attachment of a cell, either to another cell or to an underlying substrate such as the extracellular matrix, via cell adhesion molecules." []
+synonym: "cell adhesion molecule activity" RELATED []
+synonym: "single organism cell adhesion" RELATED []
+is_a: GO:0022610 ! biological adhesion
+
+[Term]
+id: GO:0007159
+name: leukocyte cell-cell adhesion
+def: "The attachment of a leukocyte to another cell via adhesion molecules." []
+synonym: "leukocyte adhesion" EXACT []
+synonym: "leukocyte cell adhesion" EXACT []
+is_a: GO:0098609 ! cell-cell adhesion
+
+[Term]
+id: GO:0007162
+name: negative regulation of cell adhesion
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of cell adhesion." []
+synonym: "cell adhesion receptor inhibitor activity" RELATED []
+synonym: "down regulation of cell adhesion" EXACT []
+synonym: "down-regulation of cell adhesion" EXACT []
+synonym: "downregulation of cell adhesion" EXACT []
+synonym: "inhibition of cell adhesion" NARROW []
+is_a: GO:0030155 ! regulation of cell adhesion
+is_a: GO:0048523 ! negative regulation of cellular process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007155 ! negatively regulates cell adhesion
+relationship: RO:0002212 GO:0007155 ! negatively regulates cell adhesion
 
 [Term]
 id: GO:0007165
@@ -4439,6 +4588,20 @@ is_a: GO:0017171 ! serine hydrolase activity
 is_a: GO:0070011 ! peptidase activity, acting on L-amino acid peptides
 
 [Term]
+id: GO:0008238
+name: exopeptidase activity
+def: "Catalysis of the hydrolysis of a peptide bond not more than three residues from the N- or C-terminus of a polypeptide chain, in a reaction that requires a free N-terminal amino group, C-terminal carboxyl group or both." []
+synonym: "exoprotease activity" NARROW []
+is_a: GO:0070011 ! peptidase activity, acting on L-amino acid peptides
+
+[Term]
+id: GO:0008242
+name: omega peptidase activity
+def: "Catalysis of the removal of terminal peptide residues that are substituted, cyclized or linked by isopeptide bonds (peptide linkages other than those of alpha-carboxyl to alpha-amino groups)." []
+synonym: "peptidase activity, acting on peptides containing modified amino acids" RELATED []
+is_a: GO:0008238 ! exopeptidase activity
+
+[Term]
 id: GO:0008283
 name: cell proliferation
 def: "The multiplication or reproduction of cells, resulting in the expansion of a cell population." []
@@ -4549,6 +4712,13 @@ def: "Enables the transfer of a negatively charged ion from one side of a membra
 synonym: "anion transporter activity" EXACT []
 is_a: GO:0015075 ! ion transmembrane transporter activity
 relationship: BFO:0000050 GO:0098656 ! part of anion transmembrane transport
+
+[Term]
+id: GO:0008514
+name: organic anion transmembrane transporter activity
+def: "Enables the transfer of organic anions from one side of a membrane to the other. Organic anions are atoms or small molecules with a negative charge which contain carbon in covalent linkage." []
+is_a: GO:0008509 ! anion transmembrane transporter activity
+relationship: BFO:0000050 GO:0015711 ! part of organic anion transport
 
 [Term]
 id: GO:0008610
@@ -4701,6 +4871,13 @@ synonym: "glutamine family amino acid metabolism" EXACT []
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
+id: GO:0009066
+name: aspartate family amino acid metabolic process
+def: "The chemical reactions and pathways involving amino acids of the aspartate family, comprising asparagine, aspartate, lysine, methionine and threonine." []
+synonym: "aspartate family amino acid metabolism" EXACT []
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0009069
 name: serine family amino acid metabolic process
 def: "The chemical reactions and pathways involving amino acids of the serine family, comprising cysteine, glycine, homoserine, selenocysteine and serine." []
@@ -4767,6 +4944,39 @@ is_a: GO:0009100 ! glycoprotein metabolic process
 is_a: GO:0034645 ! cellular macromolecule biosynthetic process
 is_a: GO:1901137 ! carbohydrate derivative biosynthetic process
 is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
+id: GO:0009106
+name: lipoate metabolic process
+def: "The chemical reactions and pathways involving lipoate, 1,2-dithiolane-3-pentanoate, the anion derived from lipoic acid." []
+synonym: "lipoate metabolism" EXACT []
+synonym: "lipoic acid metabolic process" EXACT []
+synonym: "lipoic acid metabolism" EXACT []
+is_a: GO:0006631 ! fatty acid metabolic process
+is_a: GO:0006732 ! coenzyme metabolic process
+is_a: GO:0006790 ! sulfur compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+
+[Term]
+id: GO:0009107
+name: lipoate biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of lipoate, 1,2-dithiolane-3-pentanoate, the anion derived from lipoic acid." []
+synonym: "lipoate anabolism" EXACT []
+synonym: "lipoate biosynthesis" EXACT []
+synonym: "lipoate formation" EXACT []
+synonym: "lipoate synthesis" EXACT []
+synonym: "lipoic acid anabolism" EXACT []
+synonym: "lipoic acid biosynthesis" EXACT []
+synonym: "lipoic acid biosynthetic process" EXACT []
+synonym: "lipoic acid formation" EXACT []
+synonym: "lipoic acid synthesis" EXACT []
+is_a: GO:0006633 ! fatty acid biosynthetic process
+is_a: GO:0009106 ! lipoate metabolic process
+is_a: GO:0009108 ! coenzyme biosynthetic process
+is_a: GO:0018130 ! heterocycle biosynthetic process
+is_a: GO:0044272 ! sulfur compound biosynthetic process
+is_a: GO:1901362 ! organic cyclic compound biosynthetic process
 
 [Term]
 id: GO:0009108
@@ -6264,6 +6474,17 @@ is_a: GO:0015103 ! inorganic anion transmembrane transporter activity
 relationship: BFO:0000050 GO:1902476 ! part of chloride transmembrane transport
 
 [Term]
+id: GO:0015238
+name: drug transmembrane transporter activity
+def: "Enables the transfer of a drug from one side of a membrane to the other. A drug is any naturally occurring or synthetic substance, other than a nutrient, that, when administered or applied to an organism, affects the structure or functioning of the organism; in particular, any such substance used in the diagnosis, prevention, or treatment of disease." []
+synonym: "drug transporter activity" RELATED []
+synonym: "multidrug efflux pump activity" RELATED []
+synonym: "multidrug transporter activity" RELATED []
+synonym: "multidrug, alkane resistant pump activity" RELATED []
+is_a: GO:0022857 ! transmembrane transporter activity
+relationship: BFO:0000050 GO:0006855 ! part of drug transmembrane transport
+
+[Term]
 id: GO:0015267
 name: channel activity
 def: "Enables the energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel. Stereospecificity is not exhibited but this transport may be specific for a particular molecular species or class of molecules." []
@@ -6862,6 +7083,12 @@ def: "Catalysis of the hydrolysis of any non-peptide carbon-nitrogen bond in a l
 is_a: GO:0016810 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
 
 [Term]
+id: GO:0016812
+name: hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amides
+def: "Catalysis of the hydrolysis of any non-peptide carbon-nitrogen bond in a cyclic amide." []
+is_a: GO:0016810 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
+
+[Term]
 id: GO:0016814
 name: hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines
 def: "Catalysis of the hydrolysis of any non-peptide carbon-nitrogen bond in a cyclic amidine, a compound of the form R-C(=NH)-NH2." []
@@ -7010,6 +7237,24 @@ name: drug metabolic process
 def: "The chemical reactions and pathways involving a drug, a substance used in the diagnosis, treatment or prevention of a disease; as used here antibiotic substances (see antibiotic metabolism) are considered to be drugs, even if not used in medical or veterinary practice." []
 synonym: "drug metabolism" EXACT []
 is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0017168
+name: 5-oxoprolinase (ATP-hydrolyzing) activity
+def: "Catalysis of the reaction: 5-oxo-L-proline + ATP + 2 H(2)O = L-glutamate + ADP + 2 H(+) + phosphate." []
+synonym: "5-OPase activity" EXACT []
+synonym: "5-oxo-L-prolinase activity" EXACT []
+synonym: "5-oxo-L-proline amidohydrolase (ATP-hydrolysing)" EXACT []
+synonym: "5-oxoprolinase (ATP-hydrolysing)" EXACT []
+synonym: "5-oxoprolinase activity" EXACT []
+synonym: "L-pyroglutamate hydrolase activity" EXACT []
+synonym: "oxoprolinase activity" EXACT []
+synonym: "pyroglutamase (ATP-hydrolysing)" EXACT []
+synonym: "pyroglutamase (ATP-hydrolyzing) activity" EXACT []
+synonym: "pyroglutamase activity" EXACT []
+synonym: "pyroglutamate hydrolase activity" EXACT []
+synonym: "pyroglutamic hydrolase activity" EXACT []
+is_a: GO:0016812 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amides
 
 [Term]
 id: GO:0017171
@@ -7437,6 +7682,44 @@ synonym: "interleukin binding" NARROW []
 is_a: GO:0005515 ! protein binding
 
 [Term]
+id: GO:0022407
+name: regulation of cell-cell adhesion
+def: "Any process that modulates the frequency, rate or extent of attachment of a cell to another cell." []
+is_a: GO:0030155 ! regulation of cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0098609 ! regulates cell-cell adhesion
+relationship: RO:0002211 GO:0098609 ! regulates cell-cell adhesion
+
+[Term]
+id: GO:0022408
+name: negative regulation of cell-cell adhesion
+def: "Any process that stops, prevents or reduces the rate or extent of cell adhesion to another cell." []
+synonym: "down regulation of cell-cell adhesion" EXACT []
+synonym: "down-regulation of cell-cell adhesion" EXACT []
+synonym: "downregulation of cell-cell adhesion" EXACT []
+synonym: "inhibition of cell-cell adhesion" NARROW []
+is_a: GO:0007162 ! negative regulation of cell adhesion
+is_a: GO:0022407 ! regulation of cell-cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0098609 ! negatively regulates cell-cell adhesion
+relationship: RO:0002212 GO:0098609 ! negatively regulates cell-cell adhesion
+
+[Term]
+id: GO:0022409
+name: positive regulation of cell-cell adhesion
+def: "Any process that activates or increases the rate or extent of cell adhesion to another cell." []
+synonym: "activation of cell-cell adhesion" NARROW []
+synonym: "stimulation of cell-cell adhesion" NARROW []
+synonym: "up regulation of cell-cell adhesion" EXACT []
+synonym: "up-regulation of cell-cell adhesion" EXACT []
+synonym: "upregulation of cell-cell adhesion" EXACT []
+is_a: GO:0022407 ! regulation of cell-cell adhesion
+is_a: GO:0045785 ! positive regulation of cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0098609 ! positively regulates cell-cell adhesion
+relationship: RO:0002213 GO:0098609 ! positively regulates cell-cell adhesion
+
+[Term]
 id: GO:0022410
 name: circadian sleep/wake cycle process
 def: "A behavioral process involved in the cycle from wakefulness through an orderly succession of sleep states and stages that occurs on an approximately 24 hour rhythm." []
@@ -7482,6 +7765,12 @@ is_a: GO:0050793 ! regulation of developmental process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0009653 ! regulates anatomical structure morphogenesis
 relationship: RO:0002211 GO:0009653 ! regulates anatomical structure morphogenesis
+
+[Term]
+id: GO:0022610
+name: biological adhesion
+def: "The attachment of a cell or organism to a substrate, another cell, or other organism. Biological adhesion includes intracellular attachment between membrane regions." []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0022803
@@ -7708,6 +7997,26 @@ is_a: GO:0002790 ! peptide secretion
 is_a: GO:0046879 ! hormone secretion
 
 [Term]
+id: GO:0030097
+name: hemopoiesis
+def: "The process whose specific outcome is the progression of the myeloid and lymphoid derived organ/tissue systems of the blood and other parts of the body over time, from formation to the mature structure. The site of hemopoiesis is variable during development, but occurs primarily in bone marrow or kidney in many adult vertebrates." []
+synonym: "blood cell biosynthesis" EXACT []
+synonym: "blood cell formation" EXACT []
+synonym: "haemopoiesis" EXACT []
+synonym: "hematopoiesis" EXACT []
+is_a: GO:0048534 ! hematopoietic or lymphoid organ development
+
+[Term]
+id: GO:0030098
+name: lymphocyte differentiation
+def: "The process in which a relatively unspecialized precursor cell acquires specialized features of a lymphocyte. A lymphocyte is a leukocyte commonly found in the blood and lymph that has the characteristics of a large nucleus, a neutral staining cytoplasm, and prominent heterochromatin." []
+synonym: "lymphocyte cell differentiation" EXACT []
+synonym: "lymphocyte development" RELATED []
+synonym: "lymphocytic blood cell differentiation" EXACT []
+is_a: GO:0002521 ! leukocyte differentiation
+is_a: GO:0046649 ! lymphocyte activation
+
+[Term]
 id: GO:0030100
 name: regulation of endocytosis
 def: "Any process that modulates the frequency, rate or extent of endocytosis." []
@@ -7742,6 +8051,16 @@ id: GO:0030154
 name: cell differentiation
 def: "The process in which relatively unspecialized cells, e.g. embryonic or regenerative cells, acquire specialized structural and/or functional features that characterize the cells, tissues, or organs of the mature organism or some other relatively stable phase of the organism's life history. Differentiation includes the processes involved in commitment of a cell to a specific fate and its subsequent development to the mature state." []
 is_a: GO:0048869 ! cellular developmental process
+
+[Term]
+id: GO:0030155
+name: regulation of cell adhesion
+def: "Any process that modulates the frequency, rate or extent of attachment of a cell to another cell or to the extracellular matrix." []
+synonym: "cell adhesion receptor regulator activity" RELATED []
+is_a: GO:0050789 ! regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007155 ! regulates cell adhesion
+relationship: RO:0002211 GO:0007155 ! regulates cell adhesion
 
 [Term]
 id: GO:0030162
@@ -7812,6 +8131,17 @@ def: "The chemical reactions and pathways involving hyaluronan, the naturally oc
 synonym: "hyaluronan metabolism" EXACT []
 is_a: GO:0019752 ! carboxylic acid metabolic process
 is_a: GO:1903510 ! mucopolysaccharide metabolic process
+
+[Term]
+id: GO:0030217
+name: T cell differentiation
+def: "The process in which a precursor cell type acquires characteristics of a more mature T-cell. A T cell is a type of lymphocyte whose definin characteristic is the expression of a T cell receptor complex." []
+synonym: "T cell development" RELATED []
+synonym: "T lymphocyte differentiation" EXACT []
+synonym: "T-cell differentiation" EXACT []
+synonym: "T-lymphocyte differentiation" EXACT []
+is_a: GO:0030098 ! lymphocyte differentiation
+is_a: GO:0042110 ! T cell activation
 
 [Term]
 id: GO:0030258
@@ -8955,6 +9285,25 @@ intersection_of: RO:0002213 GO:0031667 ! positively regulates response to nutrie
 relationship: RO:0002213 GO:0031667 ! positively regulates response to nutrient levels
 
 [Term]
+id: GO:0032217
+name: riboflavin transmembrane transporter activity
+def: "Enables the transfer of riboflavin from one side of a membrane to the other. Riboflavin (vitamin B2) is a water-soluble B-complex vitamin, converted in the cell to FMN and FAD, cofactors required for the function of flavoproteins." []
+synonym: "riboflavin transporter activity" RELATED []
+is_a: GO:0008514 ! organic anion transmembrane transporter activity
+is_a: GO:0015238 ! drug transmembrane transporter activity
+is_a: GO:0090482 ! vitamin transmembrane transporter activity
+relationship: BFO:0000050 GO:0032218 ! part of riboflavin transport
+
+[Term]
+id: GO:0032218
+name: riboflavin transport
+def: "The directed movement of riboflavin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Riboflavin (vitamin B2) is a water-soluble B-complex vitamin, converted in the cell to FMN and FAD, cofactors required for the function of flavoproteins." []
+is_a: GO:0015711 ! organic anion transport
+is_a: GO:0015893 ! drug transport
+is_a: GO:0051180 ! vitamin transport
+is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
 id: GO:0032268
 name: regulation of cellular protein metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving a protein, occurring at the level of an individual cell." []
@@ -9415,6 +9764,57 @@ is_a: GO:0051128 ! regulation of cellular component organization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006996 ! regulates organelle organization
 relationship: RO:0002211 GO:0006996 ! regulates organelle organization
+
+[Term]
+id: GO:0033077
+name: T cell differentiation in thymus
+def: "The process in which a precursor cell type acquires the specialized features of a T cell via a differentiation pathway dependent upon transit through the thymus." []
+synonym: "T cell development in thymus" RELATED []
+synonym: "thymic T cell differentiation" EXACT []
+synonym: "thymocyte cell differentiation" EXACT []
+synonym: "thymocyte differentiation" EXACT []
+is_a: GO:0030217 ! T cell differentiation
+
+[Term]
+id: GO:0033081
+name: regulation of T cell differentiation in thymus
+def: "Any process that modulates the frequency, rate or extent of T cell differentiation in the thymus." []
+synonym: "regulation of T cell development in thymus" RELATED []
+synonym: "regulation of thymic T cell differentiation" EXACT []
+synonym: "regulation of thymocyte cell differentiation" EXACT []
+synonym: "regulation of thymocyte differentiation" EXACT []
+is_a: GO:0045580 ! regulation of T cell differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0033077 ! regulates T cell differentiation in thymus
+relationship: RO:0002211 GO:0033077 ! regulates T cell differentiation in thymus
+
+[Term]
+id: GO:0033085
+name: negative regulation of T cell differentiation in thymus
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of T cell differentiation in the thymus." []
+synonym: "negative regulation of T cell development in thymus" RELATED []
+synonym: "negative regulation of thymic T cell differentiation" EXACT []
+synonym: "negative regulation of thymocyte cell differentiation" EXACT []
+synonym: "negative regulation of thymocyte differentiation" EXACT []
+is_a: GO:0033081 ! regulation of T cell differentiation in thymus
+is_a: GO:0045581 ! negative regulation of T cell differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0033077 ! negatively regulates T cell differentiation in thymus
+relationship: RO:0002212 GO:0033077 ! negatively regulates T cell differentiation in thymus
+
+[Term]
+id: GO:0033089
+name: positive regulation of T cell differentiation in thymus
+def: "Any process that activates or increases the frequency, rate or extent of T cell differentiation in the thymus." []
+synonym: "positive regulation of T cell development in thymus" RELATED []
+synonym: "positive regulation of thymic T cell differentiation" EXACT []
+synonym: "positive regulation of thymocyte cell differentiation" EXACT []
+synonym: "positive regulation of thymocyte differentiation" EXACT []
+is_a: GO:0033081 ! regulation of T cell differentiation in thymus
+is_a: GO:0045582 ! positive regulation of T cell differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0033077 ! positively regulates T cell differentiation in thymus
+relationship: RO:0002213 GO:0033077 ! positively regulates T cell differentiation in thymus
 
 [Term]
 id: GO:0033119
@@ -10075,6 +10475,44 @@ is_a: GO:0051703 ! intraspecies interaction between organisms
 is_a: GO:0051705 ! multi-organism behavior
 
 [Term]
+id: GO:0035227
+name: regulation of glutamate-cysteine ligase activity
+def: "Any process that modulates the activity of glutamate-cysteine ligase." []
+is_a: GO:0051340 ! regulation of ligase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0004357 ! regulates glutamate-cysteine ligase activity
+relationship: RO:0002211 GO:0004357 ! regulates glutamate-cysteine ligase activity
+
+[Term]
+id: GO:0035228
+name: negative regulation of glutamate-cysteine ligase activity
+def: "Any process that stops or reduces the activity of the enzyme glutamate-cysteine ligase." []
+synonym: "down regulation of glutamate-cysteine ligase activity" EXACT []
+synonym: "down-regulation of glutamate-cysteine ligase activity" EXACT []
+synonym: "downregulation of glutamate-cysteine ligase activity" EXACT []
+synonym: "inhibition of glutamate-cysteine ligase activity" NARROW []
+is_a: GO:0035227 ! regulation of glutamate-cysteine ligase activity
+is_a: GO:0051352 ! negative regulation of ligase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0004357 ! negatively regulates glutamate-cysteine ligase activity
+relationship: RO:0002212 GO:0004357 ! negatively regulates glutamate-cysteine ligase activity
+
+[Term]
+id: GO:0035229
+name: positive regulation of glutamate-cysteine ligase activity
+def: "Any process that activates or increases the activity of glutamate-cysteine ligase, typically by lowering its sensitivity to inhibition by glutathione and by increasing its affinity for glutamate." []
+synonym: "activation of glutamate-cysteine ligase activity" NARROW []
+synonym: "stimulation of glutamate-cysteine ligase activity" NARROW []
+synonym: "up regulation of glutamate-cysteine ligase activity" EXACT []
+synonym: "up-regulation of glutamate-cysteine ligase activity" EXACT []
+synonym: "upregulation of glutamate-cysteine ligase activity" EXACT []
+is_a: GO:0035227 ! regulation of glutamate-cysteine ligase activity
+is_a: GO:0051351 ! positive regulation of ligase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0004357 ! positively regulates glutamate-cysteine ligase activity
+relationship: RO:0002213 GO:0004357 ! positively regulates glutamate-cysteine ligase activity
+
+[Term]
 id: GO:0035235
 name: ionotropic glutamate receptor signaling pathway
 def: "A series of molecular signals initiated by glutamate binding to a glutamate receptor on the surface of the target cell, followed by the movement of ions through a channel in the receptor complex. Ends with regulation of a downstream cellular process, e.g. transcription." []
@@ -10110,6 +10548,14 @@ is_a: GO:0016477 ! cell migration
 intersection_of: GO:0016477 ! cell migration
 intersection_of: BFO:0000050 GO:0001570 ! part of vasculogenesis
 relationship: BFO:0000050 GO:0001570 ! part of vasculogenesis
+
+[Term]
+id: GO:0035461
+name: vitamin transmembrane transport
+def: "The process in which a vitamin is transported across a membrane. A vitamin is one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
+synonym: "vitamin membrane transport" EXACT []
+is_a: GO:0051180 ! vitamin transport
+is_a: GO:0055085 ! transmembrane transport
 
 [Term]
 id: GO:0035556
@@ -10258,6 +10704,14 @@ is_a: GO:0019538 ! protein metabolic process
 is_a: GO:0043412 ! macromolecule modification
 
 [Term]
+id: GO:0036374
+name: glutathione hydrolase activity
+def: "Catalysis of the reaction: glutathione + H2O = L-cysteinylglycine + L-glutamate." []
+synonym: "gamma-glutamyltranspeptidase activity" EXACT []
+synonym: "glutathionase activity" EXACT []
+is_a: GO:0008242 ! omega peptidase activity
+
+[Term]
 id: GO:0036378
 name: calcitriol biosynthetic process from calciol
 def: "Conversion of vitamin D3 from its largely inactive form (calciol, also called cholecalciferol) into a hormonally active form (calcitriol). Conversion requires 25-hydroxylation of calciol in the liver to form calcidiol, and subsequent 1,alpha-hydroxylation of calcidiol in the kidney to form calcitriol." []
@@ -10386,6 +10840,15 @@ intersection_of: RO:0002211 GO:0006584 ! regulates catecholamine metabolic proce
 relationship: RO:0002211 GO:0006584 ! regulates catecholamine metabolic process
 
 [Term]
+id: GO:0042110
+name: T cell activation
+def: "The change in morphology and behavior of a mature or immature T cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific." []
+synonym: "T lymphocyte activation" EXACT []
+synonym: "T-cell activation" EXACT []
+synonym: "T-lymphocyte activation" EXACT []
+is_a: GO:0046649 ! lymphocyte activation
+
+[Term]
 id: GO:0042116
 name: macrophage activation
 def: "A change in morphology and behavior of a macrophage resulting from exposure to a cytokine, chemokine, cellular ligand, or soluble factor." []
@@ -10472,6 +10935,21 @@ def: "Any process that results in a change in state or activity of a cell or an 
 synonym: "response to chemical stimulus" EXACT []
 synonym: "response to chemical substance" EXACT []
 is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0042304
+name: regulation of fatty acid biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of fatty acids, any of the aliphatic monocarboxylic acids that can be liberated by hydrolysis from naturally occurring fats and oils." []
+synonym: "regulation of fatty acid anabolism" EXACT []
+synonym: "regulation of fatty acid biosynthesis" EXACT []
+synonym: "regulation of fatty acid formation" EXACT []
+synonym: "regulation of fatty acid synthesis" EXACT []
+is_a: GO:0019217 ! regulation of fatty acid metabolic process
+is_a: GO:0031326 ! regulation of cellular biosynthetic process
+is_a: GO:0046890 ! regulation of lipid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006633 ! regulates fatty acid biosynthetic process
+relationship: RO:0002211 GO:0006633 ! regulates fatty acid biosynthetic process
 
 [Term]
 id: GO:0042310
@@ -10655,6 +11133,23 @@ synonym: "catecholamine synthesis" EXACT []
 is_a: GO:0006584 ! catecholamine metabolic process
 is_a: GO:0009713 ! catechol-containing compound biosynthetic process
 is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
+id: GO:0042430
+name: indole-containing compound metabolic process
+def: "The chemical reactions and pathways involving compounds that contain an indole (2,3-benzopyrrole) skeleton." []
+synonym: "indole and derivative metabolic process" EXACT []
+synonym: "indole and derivative metabolism" EXACT []
+synonym: "indole derivative metabolic process" NARROW []
+synonym: "indole derivative metabolism" NARROW []
+synonym: "indole-containing compound metabolism" EXACT []
+synonym: "ketole metabolic process" EXACT []
+synonym: "ketole metabolism" EXACT []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0042445
@@ -11996,6 +12491,26 @@ is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0046486 ! glycerolipid metabolic process
 
 [Term]
+id: GO:0045058
+name: T cell selection
+def: "The process in which T cells that express T cell receptors that are restricted by self MHC protein complexes and tolerant to self antigens are selected for further maturation." []
+synonym: "T lymphocyte selection" EXACT []
+synonym: "T-cell selection" EXACT []
+synonym: "T-lymphocyte selection" EXACT []
+is_a: GO:0002376 ! immune system process
+relationship: BFO:0000050 GO:0030217 ! part of T cell differentiation
+
+[Term]
+id: GO:0045061
+name: thymic T cell selection
+def: "The process of T cell selection that occurs in the thymus." []
+synonym: "thymic T lymphocyte selection" EXACT []
+synonym: "thymic T-cell selection" EXACT []
+synonym: "thymic T-lymphocyte selection" EXACT []
+is_a: GO:0045058 ! T cell selection
+relationship: BFO:0000050 GO:0033077 ! part of T cell differentiation in thymus
+
+[Term]
 id: GO:0045087
 name: innate immune response
 def: "Innate immune responses are defense responses mediated by germline encoded components that directly recognize components of potential pathogens." []
@@ -12232,6 +12747,59 @@ is_a: GO:0001894 ! tissue homeostasis
 relationship: BFO:0000050 GO:0046849 ! part of bone remodeling
 
 [Term]
+id: GO:0045580
+name: regulation of T cell differentiation
+def: "Any process that modulates the frequency, rate or extent of T cell differentiation." []
+synonym: "regulation of T cell development" RELATED []
+synonym: "regulation of T lymphocyte differentiation" EXACT []
+synonym: "regulation of T-cell differentiation" EXACT []
+synonym: "regulation of T-lymphocyte differentiation" EXACT []
+is_a: GO:0045619 ! regulation of lymphocyte differentiation
+is_a: GO:0050863 ! regulation of T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0030217 ! regulates T cell differentiation
+relationship: RO:0002211 GO:0030217 ! regulates T cell differentiation
+
+[Term]
+id: GO:0045581
+name: negative regulation of T cell differentiation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of T cell differentiation." []
+synonym: "down regulation of T cell differentiation" EXACT []
+synonym: "down-regulation of T cell differentiation" EXACT []
+synonym: "downregulation of T cell differentiation" EXACT []
+synonym: "inhibition of T cell differentiation" NARROW []
+synonym: "negative regulation of T cell development" RELATED []
+synonym: "negative regulation of T lymphocyte differentiation" EXACT []
+synonym: "negative regulation of T-cell differentiation" EXACT []
+synonym: "negative regulation of T-lymphocyte differentiation" EXACT []
+is_a: GO:0045580 ! regulation of T cell differentiation
+is_a: GO:0045620 ! negative regulation of lymphocyte differentiation
+is_a: GO:0050868 ! negative regulation of T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0030217 ! negatively regulates T cell differentiation
+relationship: RO:0002212 GO:0030217 ! negatively regulates T cell differentiation
+
+[Term]
+id: GO:0045582
+name: positive regulation of T cell differentiation
+def: "Any process that activates or increases the frequency, rate or extent of T cell differentiation." []
+synonym: "activation of T cell differentiation" NARROW []
+synonym: "positive regulation of T cell development" RELATED []
+synonym: "positive regulation of T lymphocyte differentiation" EXACT []
+synonym: "positive regulation of T-cell differentiation" EXACT []
+synonym: "positive regulation of T-lymphocyte differentiation" EXACT []
+synonym: "stimulation of T cell differentiation" NARROW []
+synonym: "up regulation of T cell differentiation" EXACT []
+synonym: "up-regulation of T cell differentiation" EXACT []
+synonym: "upregulation of T cell differentiation" EXACT []
+is_a: GO:0045580 ! regulation of T cell differentiation
+is_a: GO:0045621 ! positive regulation of lymphocyte differentiation
+is_a: GO:0050870 ! positive regulation of T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0030217 ! positively regulates T cell differentiation
+relationship: RO:0002213 GO:0030217 ! positively regulates T cell differentiation
+
+[Term]
 id: GO:0045595
 name: regulation of cell differentiation
 def: "Any process that modulates the frequency, rate or extent of cell differentiation, the process in which relatively unspecialized cells acquire specialized structural and functional features." []
@@ -12273,6 +12841,70 @@ intersection_of: RO:0002213 GO:0030154 ! positively regulates cell differentiati
 relationship: RO:0002213 GO:0030154 ! positively regulates cell differentiation
 
 [Term]
+id: GO:0045619
+name: regulation of lymphocyte differentiation
+def: "Any process that modulates the frequency, rate or extent of lymphocyte differentiation." []
+synonym: "regulation of lymphocyte development" RELATED []
+is_a: GO:0051249 ! regulation of lymphocyte activation
+is_a: GO:1902105 ! regulation of leukocyte differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0030098 ! regulates lymphocyte differentiation
+relationship: RO:0002211 GO:0030098 ! regulates lymphocyte differentiation
+
+[Term]
+id: GO:0045620
+name: negative regulation of lymphocyte differentiation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of lymphocyte differentiation." []
+synonym: "down regulation of lymphocyte differentiation" EXACT []
+synonym: "down-regulation of lymphocyte differentiation" EXACT []
+synonym: "downregulation of lymphocyte differentiation" EXACT []
+synonym: "inhibition of lymphocyte differentiation" NARROW []
+synonym: "negative regulation of lymphocyte development" RELATED []
+is_a: GO:0045619 ! regulation of lymphocyte differentiation
+is_a: GO:0051250 ! negative regulation of lymphocyte activation
+is_a: GO:1902106 ! negative regulation of leukocyte differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0030098 ! negatively regulates lymphocyte differentiation
+relationship: RO:0002212 GO:0030098 ! negatively regulates lymphocyte differentiation
+
+[Term]
+id: GO:0045621
+name: positive regulation of lymphocyte differentiation
+def: "Any process that activates or increases the frequency, rate or extent of lymphocyte differentiation." []
+synonym: "activation of lymphocyte differentiation" NARROW []
+synonym: "positive regulation of lymphocyte development" RELATED []
+synonym: "stimulation of lymphocyte differentiation" NARROW []
+synonym: "up regulation of lymphocyte differentiation" EXACT []
+synonym: "up-regulation of lymphocyte differentiation" EXACT []
+synonym: "upregulation of lymphocyte differentiation" EXACT []
+is_a: GO:0045619 ! regulation of lymphocyte differentiation
+is_a: GO:0051251 ! positive regulation of lymphocyte activation
+is_a: GO:1902107 ! positive regulation of leukocyte differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0030098 ! positively regulates lymphocyte differentiation
+relationship: RO:0002213 GO:0030098 ! positively regulates lymphocyte differentiation
+
+[Term]
+id: GO:0045717
+name: negative regulation of fatty acid biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of fatty acids." []
+synonym: "down regulation of fatty acid biosynthetic process" EXACT []
+synonym: "down-regulation of fatty acid biosynthetic process" EXACT []
+synonym: "downregulation of fatty acid biosynthetic process" EXACT []
+synonym: "inhibition of fatty acid biosynthetic process" NARROW []
+synonym: "negative regulation of fatty acid anabolism" EXACT []
+synonym: "negative regulation of fatty acid biosynthesis" EXACT []
+synonym: "negative regulation of fatty acid formation" EXACT []
+synonym: "negative regulation of fatty acid synthesis" EXACT []
+is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
+is_a: GO:0042304 ! regulation of fatty acid biosynthetic process
+is_a: GO:0045922 ! negative regulation of fatty acid metabolic process
+is_a: GO:0051055 ! negative regulation of lipid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006633 ! negatively regulates fatty acid biosynthetic process
+relationship: RO:0002212 GO:0006633 ! negatively regulates fatty acid biosynthetic process
+
+[Term]
 id: GO:0045721
 name: negative regulation of gluconeogenesis
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of gluconeogenesis." []
@@ -12302,6 +12934,27 @@ is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006094 ! positively regulates gluconeogenesis
 relationship: RO:0002213 GO:0006094 ! positively regulates gluconeogenesis
+
+[Term]
+id: GO:0045723
+name: positive regulation of fatty acid biosynthetic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of fatty acids." []
+synonym: "activation of fatty acid biosynthetic process" NARROW []
+synonym: "positive regulation of fatty acid anabolism" EXACT []
+synonym: "positive regulation of fatty acid biosynthesis" EXACT []
+synonym: "positive regulation of fatty acid formation" EXACT []
+synonym: "positive regulation of fatty acid synthesis" EXACT []
+synonym: "stimulation of fatty acid biosynthetic process" NARROW []
+synonym: "up regulation of fatty acid biosynthetic process" EXACT []
+synonym: "up-regulation of fatty acid biosynthetic process" EXACT []
+synonym: "upregulation of fatty acid biosynthetic process" EXACT []
+is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
+is_a: GO:0042304 ! regulation of fatty acid biosynthetic process
+is_a: GO:0045923 ! positive regulation of fatty acid metabolic process
+is_a: GO:0046889 ! positive regulation of lipid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006633 ! positively regulates fatty acid biosynthetic process
+relationship: RO:0002213 GO:0006633 ! positively regulates fatty acid biosynthetic process
 
 [Term]
 id: GO:0045738
@@ -12410,6 +13063,21 @@ is_a: GO:0046852 ! positive regulation of bone remodeling
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0045453 ! positively regulates bone resorption
 relationship: RO:0002213 GO:0045453 ! positively regulates bone resorption
+
+[Term]
+id: GO:0045785
+name: positive regulation of cell adhesion
+def: "Any process that activates or increases the frequency, rate or extent of cell adhesion." []
+synonym: "activation of cell adhesion" NARROW []
+synonym: "stimulation of cell adhesion" NARROW []
+synonym: "up regulation of cell adhesion" EXACT []
+synonym: "up-regulation of cell adhesion" EXACT []
+synonym: "upregulation of cell adhesion" EXACT []
+is_a: GO:0030155 ! regulation of cell adhesion
+is_a: GO:0048518 ! positive regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007155 ! positively regulates cell adhesion
+relationship: RO:0002213 GO:0007155 ! positively regulates cell adhesion
 
 [Term]
 id: GO:0045806
@@ -13448,6 +14116,12 @@ intersection_of: RO:0002212 GO:0007265 ! negatively regulates Ras protein signal
 relationship: RO:0002212 GO:0007265 ! negatively regulates Ras protein signal transduction
 
 [Term]
+id: GO:0046649
+name: lymphocyte activation
+def: "A change in morphology and behavior of a lymphocyte resulting from exposure to a specific antigen, mitogen, cytokine, chemokine, cellular ligand, or soluble factor." []
+is_a: GO:0045321 ! leukocyte activation
+
+[Term]
 id: GO:0046655
 name: folic acid metabolic process
 def: "The chemical reactions and pathways involving folic acid, pteroylglutamic acid. Folic acid is widely distributed as a member of the vitamin B complex and is essential for the synthesis of purine and pyrimidines." []
@@ -13854,6 +14528,16 @@ is_a: GO:0050794 ! regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0009987 ! negatively regulates cellular process
 relationship: RO:0002212 GO:0009987 ! negatively regulates cellular process
+
+[Term]
+id: GO:0048534
+name: hematopoietic or lymphoid organ development
+def: "The process whose specific outcome is the progression of any organ involved in hematopoiesis (also known as hemopoiesis) or lymphoid cell activation over time, from its formation to the mature structure. Such development includes differentiation of resident cell types (stromal cells) and of migratory cell types dependent on the unique microenvironment afforded by the organ for their proper differentiation." []
+synonym: "haematopoietic or lymphoid organ development" EXACT []
+synonym: "haemopoietic or lymphoid organ development" EXACT []
+synonym: "hemopoietic or lymphoid organ development" EXACT []
+is_a: GO:0048513 ! animal organ development
+relationship: BFO:0000050 GO:0002520 ! part of immune system development
 
 [Term]
 id: GO:0048545
@@ -14519,6 +15203,18 @@ intersection_of: RO:0002213 GO:0050817 ! positively regulates coagulation
 relationship: RO:0002213 GO:0050817 ! positively regulates coagulation
 
 [Term]
+id: GO:0050863
+name: regulation of T cell activation
+def: "Any process that modulates the frequency, rate or extent of T cell activation." []
+synonym: "regulation of T lymphocyte activation" EXACT []
+synonym: "regulation of T-cell activation" EXACT []
+synonym: "regulation of T-lymphocyte activation" EXACT []
+is_a: GO:0051249 ! regulation of lymphocyte activation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0042110 ! regulates T cell activation
+relationship: RO:0002211 GO:0042110 ! regulates T cell activation
+
+[Term]
 id: GO:0050865
 name: regulation of cell activation
 def: "Any process that modulates the frequency, rate or extent of cell activation, the change in the morphology or behavior of a cell resulting from exposure to an activating factor such as a cellular or soluble ligand." []
@@ -14555,6 +15251,43 @@ is_a: GO:0050865 ! regulation of cell activation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001775 ! positively regulates cell activation
 relationship: RO:0002213 GO:0001775 ! positively regulates cell activation
+
+[Term]
+id: GO:0050868
+name: negative regulation of T cell activation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of T cell activation." []
+synonym: "down regulation of T cell activation" EXACT []
+synonym: "down-regulation of T cell activation" EXACT []
+synonym: "downregulation of T cell activation" EXACT []
+synonym: "inhibition of T cell activation" NARROW []
+synonym: "negative regulation of T lymphocyte activation" EXACT []
+synonym: "negative regulation of T-cell activation" EXACT []
+synonym: "negative regulation of T-lymphocyte activation" EXACT []
+is_a: GO:0050863 ! regulation of T cell activation
+is_a: GO:0051250 ! negative regulation of lymphocyte activation
+is_a: GO:1903038 ! negative regulation of leukocyte cell-cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042110 ! negatively regulates T cell activation
+relationship: RO:0002212 GO:0042110 ! negatively regulates T cell activation
+
+[Term]
+id: GO:0050870
+name: positive regulation of T cell activation
+def: "Any process that activates or increases the frequency, rate or extent of T cell activation." []
+synonym: "activation of T cell activation" NARROW []
+synonym: "positive regulation of T lymphocyte activation" EXACT []
+synonym: "positive regulation of T-cell activation" EXACT []
+synonym: "positive regulation of T-lymphocyte activation" EXACT []
+synonym: "stimulation of T cell activation" NARROW []
+synonym: "up regulation of T cell activation" EXACT []
+synonym: "up-regulation of T cell activation" EXACT []
+synonym: "upregulation of T cell activation" EXACT []
+is_a: GO:0050863 ! regulation of T cell activation
+is_a: GO:0051251 ! positive regulation of lymphocyte activation
+is_a: GO:1903039 ! positive regulation of leukocyte cell-cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042110 ! positively regulates T cell activation
+relationship: RO:0002213 GO:0042110 ! positively regulates T cell activation
 
 [Term]
 id: GO:0050877
@@ -15367,6 +16100,44 @@ is_a: GO:0051246 ! regulation of protein metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0019538 ! negatively regulates protein metabolic process
 relationship: RO:0002212 GO:0019538 ! negatively regulates protein metabolic process
+
+[Term]
+id: GO:0051249
+name: regulation of lymphocyte activation
+def: "Any process that modulates the frequency, rate or extent of lymphocyte activation." []
+is_a: GO:0002694 ! regulation of leukocyte activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0046649 ! regulates lymphocyte activation
+relationship: RO:0002211 GO:0046649 ! regulates lymphocyte activation
+
+[Term]
+id: GO:0051250
+name: negative regulation of lymphocyte activation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of lymphocyte activation." []
+synonym: "down regulation of lymphocyte activation" EXACT []
+synonym: "down-regulation of lymphocyte activation" EXACT []
+synonym: "downregulation of lymphocyte activation" EXACT []
+synonym: "inhibition of lymphocyte activation" NARROW []
+is_a: GO:0002695 ! negative regulation of leukocyte activation
+is_a: GO:0051249 ! regulation of lymphocyte activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0046649 ! negatively regulates lymphocyte activation
+relationship: RO:0002212 GO:0046649 ! negatively regulates lymphocyte activation
+
+[Term]
+id: GO:0051251
+name: positive regulation of lymphocyte activation
+def: "Any process that activates or increases the frequency, rate or extent of lymphocyte activation." []
+synonym: "activation of lymphocyte activation" NARROW []
+synonym: "stimulation of lymphocyte activation" NARROW []
+synonym: "up regulation of lymphocyte activation" EXACT []
+synonym: "up-regulation of lymphocyte activation" EXACT []
+synonym: "upregulation of lymphocyte activation" EXACT []
+is_a: GO:0002696 ! positive regulation of leukocyte activation
+is_a: GO:0051249 ! regulation of lymphocyte activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0046649 ! positively regulates lymphocyte activation
+relationship: RO:0002213 GO:0046649 ! positively regulates lymphocyte activation
 
 [Term]
 id: GO:0051252
@@ -16805,6 +17576,14 @@ synonym: "triiodothyronine binding" NARROW []
 is_a: GO:0042562 ! hormone binding
 
 [Term]
+id: GO:0070327
+name: thyroid hormone transport
+def: "The directed movement of thyroid hormone into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "thyroxine transport" NARROW []
+synonym: "triiodothyronine transport" NARROW []
+is_a: GO:0009914 ! hormone transport
+
+[Term]
 id: GO:0070469
 name: respiratory chain
 def: "The protein complexes that form the electron transport system (the respiratory chain), associated with a cell membrane, usually the plasma membrane (in prokaryotes) or the inner mitochondrial membrane (on eukaryotes). The respiratory chain complexes transfer electrons from an electron donor to an electron acceptor and are associated with a proton pump to create a transmembrane electrochemical gradient." []
@@ -17707,6 +18486,27 @@ intersection_of: RO:0002212 GO:0006119 ! negatively regulates oxidative phosphor
 relationship: RO:0002212 GO:0006119 ! negatively regulates oxidative phosphorylation
 
 [Term]
+id: GO:0090357
+name: regulation of tryptophan metabolic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving tryptophan, the chiral amino acid 2-amino-3-(1H-indol-3-yl)propanoic acid." []
+synonym: "regulation of tryptophan metabolism" EXACT []
+is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006568 ! regulates tryptophan metabolic process
+relationship: RO:0002211 GO:0006568 ! regulates tryptophan metabolic process
+
+[Term]
+id: GO:0090358
+name: positive regulation of tryptophan metabolic process
+def: "Any process that increases the frequency, rate or extent of the chemical reactions and pathways involving tryptophan, the chiral amino acid 2-amino-3-(1H-indol-3-yl)propanoic acid." []
+synonym: "positive regulation of tryptophan metabolism" EXACT []
+is_a: GO:0045764 ! positive regulation of cellular amino acid metabolic process
+is_a: GO:0090357 ! regulation of tryptophan metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006568 ! positively regulates tryptophan metabolic process
+relationship: RO:0002213 GO:0006568 ! positively regulates tryptophan metabolic process
+
+[Term]
 id: GO:0090394
 name: negative regulation of excitatory postsynaptic potential
 def: "Any process that prevents the establishment or decreases the extent of the excitatory postsynaptic potential (EPSP) which is a temporary increase in postsynaptic potential due to the flow of positively charged ions into the postsynaptic cell. The flow of ions that causes an EPSP is an excitatory postsynaptic current (EPSC) and makes it easier for the neuron to fire an action potential." []
@@ -17726,6 +18526,15 @@ name: organophosphate biosynthetic process
 def: "The chemical reactions and pathways resulting in the biosynthesis of deoxyribose phosphate, the phosphorylated sugar 2-deoxy-erythro-pentose." []
 is_a: GO:0019637 ! organophosphate metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:0090482
+name: vitamin transmembrane transporter activity
+def: "Enables the transfer of a vitamin from one side of a membrane to the other." []
+synonym: "vitamin or cofactor transporter activity" BROAD []
+synonym: "vitamin transporter activity" RELATED []
+is_a: GO:0022857 ! transmembrane transporter activity
+relationship: BFO:0000050 GO:0035461 ! part of vitamin transmembrane transport
 
 [Term]
 id: GO:0090594
@@ -17899,6 +18708,36 @@ is_a: GO:0016020 ! membrane
 is_a: GO:0044459 ! plasma membrane part
 intersection_of: GO:0016020 ! membrane
 intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0098609
+name: cell-cell adhesion
+def: "The attachment of one cell to another cell via adhesion molecules." []
+synonym: "single organismal cell-cell adhesion" RELATED []
+is_a: GO:0007155 ! cell adhesion
+
+[Term]
+id: GO:0098631
+name: cell adhesion mediator activity
+def: "Any binding by a cell surface protein to a molecule external to the cell, that meditates adhesion of the cell to that external substrate." []
+synonym: "cell adhesion molecule" EXACT []
+synonym: "protein binding involved in cell adhesion" EXACT []
+is_a: GO:0005488 ! binding
+intersection_of: GO:0005488 ! binding
+intersection_of: BFO:0000050 GO:0007155 ! part of cell adhesion
+relationship: BFO:0000050 GO:0007155 ! part of cell adhesion
+
+[Term]
+id: GO:0098632
+name: cell-cell adhesion mediator activity
+def: "Any binding by a protein on one cell to a protein on another cell that meditates adhesion between the two cells." []
+synonym: "cell-cell adhesion molecule" EXACT []
+synonym: "protein binding involved in cell-cell adhesion" EXACT []
+is_a: GO:0005515 ! protein binding
+is_a: GO:0098631 ! cell adhesion mediator activity
+intersection_of: GO:0005515 ! protein binding
+intersection_of: BFO:0000050 GO:0098609 ! part of cell-cell adhesion
+relationship: BFO:0000050 GO:0098609 ! part of cell-cell adhesion
 
 [Term]
 id: GO:0098643
@@ -18392,6 +19231,15 @@ intersection_of: GO:0016021 ! integral component of membrane
 intersection_of: BFO:0000050 GO:0097060 ! part of synaptic membrane
 
 [Term]
+id: GO:0100017
+name: negative regulation of cell-cell adhesion by transcription from RNA polymerase II promoter
+def: "Any transcription from RNA polymerase II promoter process that negatively_regulates single organismal cell-cell adhesion" []
+is_a: GO:0006366 ! transcription by RNA polymerase II
+is_a: GO:0022408 ! negative regulation of cell-cell adhesion
+intersection_of: GO:0006366 ! transcription by RNA polymerase II
+intersection_of: RO:0002212 GO:0098609 ! negatively regulates cell-cell adhesion
+
+[Term]
 id: GO:0100020
 name: regulation of transport by transcription from RNA polymerase II promoter
 def: "Any transcription from RNA polymerase II promoter process that regulates transport" []
@@ -18453,6 +19301,15 @@ is_a: GO:0006366 ! transcription by RNA polymerase II
 is_a: GO:1900373 ! positive regulation of purine nucleotide biosynthetic process
 intersection_of: GO:0006366 ! transcription by RNA polymerase II
 intersection_of: RO:0002213 GO:0006164 ! positively regulates purine nucleotide biosynthetic process
+
+[Term]
+id: GO:0100070
+name: regulation of fatty acid biosynthetic process by transcription from RNA polymerase II promoter
+def: "Any transcription from RNA polymerase II promoter process that regulates fatty acid biosynthetic process" []
+is_a: GO:0006366 ! transcription by RNA polymerase II
+is_a: GO:0042304 ! regulation of fatty acid biosynthetic process
+intersection_of: GO:0006366 ! transcription by RNA polymerase II
+intersection_of: RO:0002211 GO:0006633 ! regulates fatty acid biosynthetic process
 
 [Term]
 id: GO:0104004
@@ -18536,6 +19393,15 @@ is_a: GO:0097458 ! neuron part
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: BFO:0000050 GO:0043005 ! part of neuron projection
 relationship: BFO:0000050 GO:0043005 ! part of neuron projection
+
+[Term]
+id: GO:0140039
+name: cell-cell adhesion in response to extracellular stimulus
+def: "The attachment of one cell to another cell via adhesion molecules as a result of an extracellular stimulus." []
+is_a: GO:0098609 ! cell-cell adhesion
+intersection_of: GO:0098609 ! cell-cell adhesion
+intersection_of: BFO:0000050 GO:0031668 ! part of cellular response to extracellular stimulus
+relationship: BFO:0000050 GO:0031668 ! part of cellular response to extracellular stimulus
 
 [Term]
 id: GO:0140053
@@ -18858,6 +19724,15 @@ is_a: GO:1900544 ! positive regulation of purine nucleotide metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006164 ! positively regulates purine nucleotide biosynthetic process
 relationship: RO:0002213 GO:0006164 ! positively regulates purine nucleotide biosynthetic process
+
+[Term]
+id: GO:1900387
+name: negative regulation of cell-cell adhesion by negative regulation of transcription from RNA polymerase II promoter
+def: "A negative regulation of transcription from RNA polymerase II promoter that results in negative regulation of cell-cell adhesion." []
+is_a: GO:0000122 ! negative regulation of transcription by RNA polymerase II
+is_a: GO:0022408 ! negative regulation of cell-cell adhesion
+intersection_of: GO:0000122 ! negative regulation of transcription by RNA polymerase II
+intersection_of: RO:0002212 GO:0098609 ! negatively regulates cell-cell adhesion
 
 [Term]
 id: GO:1900392
@@ -19946,6 +20821,68 @@ is_a: GO:0042562 ! hormone binding
 is_a: GO:1902271 ! D3 vitamins binding
 
 [Term]
+id: GO:1902105
+name: regulation of leukocyte differentiation
+def: "Any process that modulates the frequency, rate or extent of leukocyte differentiation." []
+synonym: "regulation of immune cell differentiation" EXACT []
+synonym: "regulation of leucocyte differentiation" EXACT []
+is_a: GO:0045595 ! regulation of cell differentiation
+is_a: GO:1903706 ! regulation of hemopoiesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002521 ! regulates leukocyte differentiation
+relationship: RO:0002211 GO:0002521 ! regulates leukocyte differentiation
+
+[Term]
+id: GO:1902106
+name: negative regulation of leukocyte differentiation
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of leukocyte differentiation." []
+synonym: "down regulation of immune cell differentiation" EXACT []
+synonym: "down regulation of leucocyte differentiation" EXACT []
+synonym: "down regulation of leukocyte differentiation" EXACT []
+synonym: "down-regulation of immune cell differentiation" EXACT []
+synonym: "down-regulation of leucocyte differentiation" EXACT []
+synonym: "down-regulation of leukocyte differentiation" EXACT []
+synonym: "downregulation of immune cell differentiation" EXACT []
+synonym: "downregulation of leucocyte differentiation" EXACT []
+synonym: "downregulation of leukocyte differentiation" EXACT []
+synonym: "inhibition of immune cell differentiation" NARROW []
+synonym: "inhibition of leucocyte differentiation" NARROW []
+synonym: "inhibition of leukocyte differentiation" NARROW []
+synonym: "negative regulation of immune cell differentiation" EXACT []
+synonym: "negative regulation of leucocyte differentiation" EXACT []
+is_a: GO:0045596 ! negative regulation of cell differentiation
+is_a: GO:1902105 ! regulation of leukocyte differentiation
+is_a: GO:1903707 ! negative regulation of hemopoiesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0002521 ! negatively regulates leukocyte differentiation
+relationship: RO:0002212 GO:0002521 ! negatively regulates leukocyte differentiation
+
+[Term]
+id: GO:1902107
+name: positive regulation of leukocyte differentiation
+def: "Any process that activates or increases the frequency, rate or extent of leukocyte differentiation." []
+synonym: "activation of immune cell differentiation" NARROW []
+synonym: "activation of leucocyte differentiation" NARROW []
+synonym: "activation of leukocyte differentiation" NARROW []
+synonym: "positive regulation of immune cell differentiation" EXACT []
+synonym: "positive regulation of leucocyte differentiation" EXACT []
+synonym: "up regulation of immune cell differentiation" EXACT []
+synonym: "up regulation of leucocyte differentiation" EXACT []
+synonym: "up regulation of leukocyte differentiation" EXACT []
+synonym: "up-regulation of immune cell differentiation" EXACT []
+synonym: "up-regulation of leucocyte differentiation" EXACT []
+synonym: "up-regulation of leukocyte differentiation" EXACT []
+synonym: "upregulation of immune cell differentiation" EXACT []
+synonym: "upregulation of leucocyte differentiation" EXACT []
+synonym: "upregulation of leukocyte differentiation" EXACT []
+is_a: GO:0045597 ! positive regulation of cell differentiation
+is_a: GO:1902105 ! regulation of leukocyte differentiation
+is_a: GO:1903708 ! positive regulation of hemopoiesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0002521 ! positively regulates leukocyte differentiation
+relationship: RO:0002213 GO:0002521 ! positively regulates leukocyte differentiation
+
+[Term]
 id: GO:1902113
 name: nucleotide phosphorylation involved in DNA repair
 def: "Any nucleotide phosphorylation that is involved in DNA repair." []
@@ -20482,6 +21419,65 @@ is_a: GO:1903034 ! regulation of response to wounding
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0009611 ! positively regulates response to wounding
 relationship: RO:0002213 GO:0009611 ! positively regulates response to wounding
+
+[Term]
+id: GO:1903037
+name: regulation of leukocyte cell-cell adhesion
+def: "Any process that modulates the frequency, rate or extent of leukocyte cell-cell adhesion." []
+synonym: "regulation of leukocyte adhesion" EXACT []
+synonym: "regulation of leukocyte cell adhesion" EXACT []
+is_a: GO:0022407 ! regulation of cell-cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007159 ! regulates leukocyte cell-cell adhesion
+relationship: RO:0002211 GO:0007159 ! regulates leukocyte cell-cell adhesion
+
+[Term]
+id: GO:1903038
+name: negative regulation of leukocyte cell-cell adhesion
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of leukocyte cell-cell adhesion." []
+synonym: "down regulation of leukocyte adhesion" EXACT []
+synonym: "down regulation of leukocyte cell adhesion" EXACT []
+synonym: "down regulation of leukocyte cell-cell adhesion" EXACT []
+synonym: "down-regulation of leukocyte adhesion" EXACT []
+synonym: "down-regulation of leukocyte cell adhesion" EXACT []
+synonym: "down-regulation of leukocyte cell-cell adhesion" EXACT []
+synonym: "downregulation of leukocyte adhesion" EXACT []
+synonym: "downregulation of leukocyte cell adhesion" EXACT []
+synonym: "downregulation of leukocyte cell-cell adhesion" EXACT []
+synonym: "inhibition of leukocyte adhesion" NARROW []
+synonym: "inhibition of leukocyte cell adhesion" NARROW []
+synonym: "inhibition of leukocyte cell-cell adhesion" NARROW []
+synonym: "negative regulation of leukocyte adhesion" EXACT []
+synonym: "negative regulation of leukocyte cell adhesion" EXACT []
+is_a: GO:0022408 ! negative regulation of cell-cell adhesion
+is_a: GO:1903037 ! regulation of leukocyte cell-cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007159 ! negatively regulates leukocyte cell-cell adhesion
+relationship: RO:0002212 GO:0007159 ! negatively regulates leukocyte cell-cell adhesion
+
+[Term]
+id: GO:1903039
+name: positive regulation of leukocyte cell-cell adhesion
+def: "Any process that activates or increases the frequency, rate or extent of leukocyte cell-cell adhesion." []
+synonym: "activation of leukocyte adhesion" NARROW []
+synonym: "activation of leukocyte cell adhesion" NARROW []
+synonym: "activation of leukocyte cell-cell adhesion" NARROW []
+synonym: "positive regulation of leukocyte adhesion" EXACT []
+synonym: "positive regulation of leukocyte cell adhesion" EXACT []
+synonym: "up regulation of leukocyte adhesion" EXACT []
+synonym: "up regulation of leukocyte cell adhesion" EXACT []
+synonym: "up regulation of leukocyte cell-cell adhesion" EXACT []
+synonym: "up-regulation of leukocyte adhesion" EXACT []
+synonym: "up-regulation of leukocyte cell adhesion" EXACT []
+synonym: "up-regulation of leukocyte cell-cell adhesion" EXACT []
+synonym: "upregulation of leukocyte adhesion" EXACT []
+synonym: "upregulation of leukocyte cell adhesion" EXACT []
+synonym: "upregulation of leukocyte cell-cell adhesion" EXACT []
+is_a: GO:0022409 ! positive regulation of cell-cell adhesion
+is_a: GO:1903037 ! regulation of leukocyte cell-cell adhesion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007159 ! positively regulates leukocyte cell-cell adhesion
+relationship: RO:0002213 GO:0007159 ! positively regulates leukocyte cell-cell adhesion
 
 [Term]
 id: GO:1903048
@@ -21185,6 +22181,92 @@ is_a: GO:1903649 ! regulation of cytoplasmic transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0016482 ! positively regulates cytosolic transport
 relationship: RO:0002213 GO:0016482 ! positively regulates cytosolic transport
+
+[Term]
+id: GO:1903706
+name: regulation of hemopoiesis
+def: "Any process that modulates the frequency, rate or extent of hemopoiesis." []
+synonym: "regulation of blood cell biosynthesis" EXACT []
+synonym: "regulation of blood cell formation" EXACT []
+synonym: "regulation of haemopoiesis" EXACT []
+synonym: "regulation of hematopoiesis" EXACT []
+is_a: GO:0002682 ! regulation of immune system process
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0030097 ! regulates hemopoiesis
+relationship: RO:0002211 GO:0030097 ! regulates hemopoiesis
+
+[Term]
+id: GO:1903707
+name: negative regulation of hemopoiesis
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of hemopoiesis." []
+synonym: "down regulation of blood cell biosynthesis" EXACT []
+synonym: "down regulation of blood cell formation" EXACT []
+synonym: "down regulation of haemopoiesis" EXACT []
+synonym: "down regulation of hematopoiesis" EXACT []
+synonym: "down regulation of hemopoiesis" EXACT []
+synonym: "down-regulation of blood cell biosynthesis" EXACT []
+synonym: "down-regulation of blood cell formation" EXACT []
+synonym: "down-regulation of haemopoiesis" EXACT []
+synonym: "down-regulation of hematopoiesis" EXACT []
+synonym: "down-regulation of hemopoiesis" EXACT []
+synonym: "downregulation of blood cell biosynthesis" EXACT []
+synonym: "downregulation of blood cell formation" EXACT []
+synonym: "downregulation of haemopoiesis" EXACT []
+synonym: "downregulation of hematopoiesis" EXACT []
+synonym: "downregulation of hemopoiesis" EXACT []
+synonym: "inhibition of blood cell biosynthesis" NARROW []
+synonym: "inhibition of blood cell formation" NARROW []
+synonym: "inhibition of haemopoiesis" NARROW []
+synonym: "inhibition of hematopoiesis" NARROW []
+synonym: "inhibition of hemopoiesis" NARROW []
+synonym: "negative regulation of blood cell biosynthesis" EXACT []
+synonym: "negative regulation of blood cell formation" EXACT []
+synonym: "negative regulation of haemopoiesis" EXACT []
+synonym: "negative regulation of hematopoiesis" EXACT []
+is_a: GO:0002683 ! negative regulation of immune system process
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:1903706 ! regulation of hemopoiesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0030097 ! negatively regulates hemopoiesis
+relationship: RO:0002212 GO:0030097 ! negatively regulates hemopoiesis
+
+[Term]
+id: GO:1903708
+name: positive regulation of hemopoiesis
+def: "Any process that activates or increases the frequency, rate or extent of hemopoiesis." []
+synonym: "activation of blood cell biosynthesis" NARROW []
+synonym: "activation of blood cell formation" NARROW []
+synonym: "activation of haemopoiesis" NARROW []
+synonym: "activation of hematopoiesis" NARROW []
+synonym: "activation of hemopoiesis" NARROW []
+synonym: "positive regulation of blood cell biosynthesis" EXACT []
+synonym: "positive regulation of blood cell formation" EXACT []
+synonym: "positive regulation of haemopoiesis" EXACT []
+synonym: "positive regulation of hematopoiesis" EXACT []
+synonym: "up regulation of blood cell biosynthesis" EXACT []
+synonym: "up regulation of blood cell formation" EXACT []
+synonym: "up regulation of haemopoiesis" EXACT []
+synonym: "up regulation of hematopoiesis" EXACT []
+synonym: "up regulation of hemopoiesis" EXACT []
+synonym: "up-regulation of blood cell biosynthesis" EXACT []
+synonym: "up-regulation of blood cell formation" EXACT []
+synonym: "up-regulation of haemopoiesis" EXACT []
+synonym: "up-regulation of hematopoiesis" EXACT []
+synonym: "up-regulation of hemopoiesis" EXACT []
+synonym: "upregulation of blood cell biosynthesis" EXACT []
+synonym: "upregulation of blood cell formation" EXACT []
+synonym: "upregulation of haemopoiesis" EXACT []
+synonym: "upregulation of hematopoiesis" EXACT []
+synonym: "upregulation of hemopoiesis" EXACT []
+is_a: GO:0002684 ! positive regulation of immune system process
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:1903706 ! regulation of hemopoiesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0030097 ! positively regulates hemopoiesis
+relationship: RO:0002213 GO:0030097 ! positively regulates hemopoiesis
 
 [Term]
 id: GO:1903715
@@ -23285,6 +24367,16 @@ is_a: GO:2000468 ! regulation of peroxidase activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0004601 ! positively regulates peroxidase activity
 relationship: RO:0002213 GO:0004601 ! positively regulates peroxidase activity
+
+[Term]
+id: GO:2000531
+name: regulation of fatty acid biosynthetic process by regulation of transcription from RNA polymerase II promoter
+def: "Any process that modulates the frequency, rate or extent of the biosynthesis of fatty acids, by modulating the frequency, rate or extent of transcription from an RNA polymerase II promoter." []
+is_a: GO:0042304 ! regulation of fatty acid biosynthetic process
+is_a: GO:0072364 ! regulation of cellular ketone metabolic process by regulation of transcription from RNA polymerase II promoter
+intersection_of: GO:0050789 ! regulation of biological process
+intersection_of: RO:0002211 GO:0100070 ! regulates regulation of fatty acid biosynthetic process by transcription from RNA polymerase II promoter
+relationship: RO:0002211 GO:0100070 ! regulates regulation of fatty acid biosynthetic process by transcription from RNA polymerase II promoter
 
 [Term]
 id: GO:2000736

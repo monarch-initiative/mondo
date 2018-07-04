@@ -8223,6 +8223,16 @@ synonym: "trunk of left common carotid tree" EXACT []
 is_a: UBERON:0001530 ! common carotid artery plus branches
 
 [Term]
+id: UBERON:0001542
+name: inguinal lymph node
+def: "the lymph nodes located in the groin area" []
+is_a: UBERON:0003968 ! peripheral lymph node
+is_a: UBERON:0005173 ! abdominal segment element
+intersection_of: UBERON:0000029 ! lymph node
+intersection_of: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+relationship: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+
+[Term]
 id: UBERON:0001549
 name: dorsal metatarsal vein
 def: "The dorsal metatarsal veins are veins which drain the metatarsus of the foot. [WP,unvetted]." []
@@ -24802,6 +24812,12 @@ intersection_of: UBERON:0002521 ! elastic tissue
 intersection_of: BFO:0000050 UBERON:0000014 ! part of zone of skin
 relationship: BFO:0000050 UBERON:0000014 ! part of zone of skin
 relationship: RO:0002433 UBERON:0000014 ! contributes to morphology of zone of skin
+
+[Term]
+id: UBERON:0003968
+name: peripheral lymph node
+def: "The lymph nodes located outside the thoracic and abdominal cavities, such as the submandibular, prescapular, axillary, inguinal and popliteal lymph nodes" []
+is_a: UBERON:0000029 ! lymph node
 
 [Term]
 id: UBERON:0003975
@@ -42457,6 +42473,23 @@ intersection_of: BFO:0000050 UBERON:0002411 ! part of clitoris
 relationship: BFO:0000050 UBERON:0002411 ! part of clitoris
 
 [Term]
+id: UBERON:0008337
+name: inguinal part of abdomen
+def: "The external junctural region between the lower part of the abdomen and the thigh." []
+synonym: "groin" EXACT []
+synonym: "groin area" EXACT []
+synonym: "groin region" EXACT []
+synonym: "iliac fossa viewed surgically" EXACT []
+synonym: "iliac region" EXACT []
+synonym: "iliac region" RELATED []
+synonym: "inguen" EXACT []
+synonym: "inguen" RELATED []
+synonym: "inguinal region" EXACT []
+synonym: "inguinal region" RELATED []
+is_a: UBERON:0000475 ! organism subdivision
+relationship: BFO:0000050 UBERON:0002417 ! part of abdominal segment of trunk
+
+[Term]
 id: UBERON:0008338
 name: plantar part of pes
 def: "The sole is the bottom of the foot." []
@@ -42566,6 +42599,16 @@ is_a: UBERON:0002424 ! oral epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0006956 ! part of buccal mucosa
 relationship: BFO:0000050 UBERON:0006956 ! part of buccal mucosa
+
+[Term]
+id: UBERON:0008424
+name: inguinal mammary gland
+def: "A mammary gland that is part of a inguinal part of abdomen." []
+is_a: UBERON:0001911 ! mammary gland
+is_a: UBERON:0005173 ! abdominal segment element
+intersection_of: UBERON:0001911 ! mammary gland
+intersection_of: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+relationship: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
 
 [Term]
 id: UBERON:0008425
@@ -56278,6 +56321,17 @@ relationship: BFO:0000050 UBERON:0006208 ! part of auditory hillocks
 relationship: RO:0002202 UBERON:0003066 ! develops_from pharyngeal arch 2
 
 [Term]
+id: UBERON:0016632
+name: isthmus of fallopian tube
+synonym: "isthmus of oviduct" RELATED []
+synonym: "isthmus of uterine tube" RELATED []
+synonym: "isthmus tubae uterinae" EXACT []
+synonym: "uterine tube isthmus" RELATED []
+is_a: UBERON:0003889 ! fallopian tube
+is_a: UBERON:0013515 ! subdivision of oviduct
+relationship: BFO:0000050 UBERON:0003889 ! part of fallopian tube
+
+[Term]
 id: UBERON:0016852
 name: skin scent gland
 def: "A scent gland that is part of the skin" []
@@ -58988,6 +59042,18 @@ intersection_of: RO:0002176 UBERON:0001164 ! connects greater curvature of stoma
 relationship: BFO:0000050 UBERON:0005448 ! part of greater omentum
 relationship: RO:0002176 UBERON:0001103 ! connects diaphragm
 relationship: RO:0002176 UBERON:0001164 ! connects greater curvature of stomach
+
+[Term]
+id: UBERON:0035505
+name: right inguinal part of abdomen
+synonym: "right iliac fossa viewed surgically" EXACT []
+synonym: "right iliac region" EXACT []
+synonym: "right inguinal region" EXACT []
+is_a: UBERON:0008337 ! inguinal part of abdomen
+is_a: UBERON:0015212 ! lateral structure
+intersection_of: UBERON:0008337 ! inguinal part of abdomen
+intersection_of: BSPO:0000121 UBERON:0000916 ! in_right_side_of abdomen
+relationship: BSPO:0000121 UBERON:0000916 ! in_right_side_of abdomen
 
 [Term]
 id: UBERON:0035508

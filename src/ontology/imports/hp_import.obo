@@ -3870,6 +3870,15 @@ xref: UMLS:C0241764
 is_a: HP:0010985 ! Gonosomal inheritance
 
 [Term]
+id: HP:0001419
+name: X-linked recessive inheritance
+namespace: human_phenotype
+def: "A mode of inheritance that is observed for recessive traits related to a gene encoded on the X chromosome. In the context of medical genetics, X-linked recessive disorders manifest in males (who have one copy of the X chromosome and are thus hemizygotes), but generally not in female heterozygotes who have one mutant and one normal allele." [HPO:curators]
+synonym: "X-linked recessive" EXACT [HPO:skoehler]
+xref: UMLS:C1845977
+is_a: HP:0001417 ! X-linked inheritance
+
+[Term]
 id: HP:0001433
 name: Hepatosplenomegaly
 namespace: human_phenotype
@@ -7144,6 +7153,19 @@ xref: UMLS:C0020456
 is_a: HP:0011015 ! Abnormality of blood glucose concentration
 
 [Term]
+id: HP:0003076
+name: Glycosuria
+namespace: human_phenotype
+alt_id: HP:0003122
+def: "An increased concentration of glucose in the urine." [HPO:gcarletti]
+comment: Glycosuria, the excretion of abnormal amounts of glucose in the urine, generally results in osmotic diuresis.
+synonym: "Glucosuria" EXACT []
+xref: MSH:D006029
+xref: SNOMEDCT_US:45154002
+xref: UMLS:C0017979
+is_a: HP:0011016 ! Abnormality of urine glucose concentration
+
+[Term]
 id: HP:0003077
 name: Hyperlipidemia
 namespace: human_phenotype
@@ -10229,6 +10251,29 @@ created_by: peter
 creation_date: 2011-02-07T04:28:55Z
 
 [Term]
+id: HP:0010979
+name: Abnormality of the level of lipoprotein cholesterol
+namespace: human_phenotype
+def: "An abnormal increase or decrease in the level of lipoprotein cholesterol in the blood." [HPO:probinson]
+comment: Cholesterol esters and free cholesterol which are contained in or bound to lipoproteins.
+xref: UMLS:C4023615
+is_a: HP:0003107 ! Abnormality of cholesterol metabolism
+created_by: peter
+creation_date: 2011-02-07T09:47:29Z
+
+[Term]
+id: HP:0010980
+name: Hyperlipoproteinemia
+namespace: human_phenotype
+def: "An abnormal increase in the level of lipoprotein cholesterol in the blood." [HPO:probinson]
+xref: MSH:D006951
+xref: SNOMEDCT_US:3744001
+xref: UMLS:C0020476
+is_a: HP:0010979 ! Abnormality of the level of lipoprotein cholesterol
+created_by: peter
+creation_date: 2011-02-07T10:56:30Z
+
+[Term]
 id: HP:0010985
 name: Gonosomal inheritance
 namespace: human_phenotype
@@ -10402,6 +10447,17 @@ xref: UMLS:C4023597
 is_a: HP:0011014 ! Abnormal glucose homeostasis
 created_by: peter
 creation_date: 2011-02-21T10:41:13Z
+
+[Term]
+id: HP:0011016
+name: Abnormality of urine glucose concentration
+namespace: human_phenotype
+def: "An abnormality of the concentration of glucose in the urine." [HPO:gcarletti]
+xref: UMLS:C4023596
+is_a: HP:0003110 ! Abnormality of urine homeostasis
+is_a: HP:0011014 ! Abnormal glucose homeostasis
+created_by: peter
+creation_date: 2011-02-21T11:09:32Z
 
 [Term]
 id: HP:0011017
@@ -11613,6 +11669,19 @@ created_by: hecht
 creation_date: 2013-10-19T05:37:08Z
 
 [Term]
+id: HP:0012393
+name: Allergy
+namespace: human_phenotype
+def: "An allergy is an immune response or reaction to substances that are usually not harmful." [HPO:probinson]
+synonym: "Allergy" EXACT layperson []
+xref: MSH:D006967
+xref: SNOMEDCT_US:419076005
+xref: UMLS:C1527304
+is_a: HP:0100326 ! Immunologic hypersensitivity
+created_by: peter
+creation_date: 2013-11-07T07:47:22Z
+
+[Term]
 id: HP:0012443
 name: Abnormality of brain morphology
 namespace: human_phenotype
@@ -11677,6 +11746,21 @@ xref: UMLS:C0030193
 is_a: HP:0025142 ! Constitutional symptom
 created_by: peter
 creation_date: 2013-12-15T09:38:08Z
+
+[Term]
+id: HP:0012532
+name: Chronic pain
+namespace: human_phenotype
+def: "Persistent pain, usually defined as pain that has laster longer than 3 to 6 months." [HPO:probinson, pmid:1875958]
+comment: Acute pain is provoked by a specific disease or injury, serves a useful biologic purpose, is associated with skeletal muscle spasm and sympathetic nervous system activation, and is self-limited. Chronic pain, in contrast, may be considered a disease state. It is pain that outlasts the normal time of healing.
+synonym: "Chronic pain" EXACT layperson []
+synonym: "Long-lasting pain" EXACT layperson [ORCID:0000-0002-6548-5200]
+xref: MSH:D059350
+xref: SNOMEDCT_US:82423001
+xref: UMLS:C0150055
+is_a: HP:0012531 ! Pain
+created_by: peter
+creation_date: 2013-12-15T09:46:55Z
 
 [Term]
 id: HP:0012535
@@ -12404,6 +12488,16 @@ property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2017-06-10T15:30:13Z xsd:dateTime
 
 [Term]
+id: HP:0031247
+name: Whooping cough
+namespace: human_phenotype
+def: "A type of cough characterized by a burst of numerous and rapid coughs followed by a long inhaling effort that is accompanied by a high-pitched whooping sound produced by the inhalation of air." [PMID:24219484]
+comment: The term whooping cough is usually used to describe the disease caused by infection of the respiratory tract with Bordatella pertussis. This HPO term refers to the major symptom of that disease.
+is_a: HP:0012735 ! Cough
+property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2017-08-12T13:22:51Z xsd:dateTime
+
+[Term]
 id: HP:0031258
 name: Delirium
 namespace: human_phenotype
@@ -12668,6 +12762,15 @@ xref: MSH:D009436
 xref: SNOMEDCT_US:253098009
 xref: UMLS:C0027794
 is_a: HP:0410043 ! Abnormal neural tube morphology
+created_by: HPO:skoehler
+
+[Term]
+id: HP:0045014
+name: Hypolipidemia
+namespace: human_phenotype
+xref: SNOMEDCT_US:238090007
+xref: UMLS:C0342892
+is_a: HP:0003119 ! Abnormality of lipid metabolism
 created_by: HPO:skoehler
 
 [Term]

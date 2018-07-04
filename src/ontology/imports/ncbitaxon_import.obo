@@ -574,6 +574,14 @@ is_a: NCBITaxon:11040 ! Rubivirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:11046
+name: Arterivirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:76803 ! Arteriviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:11050
 name: Flaviviridae
 namespace: ncbi_taxonomy
@@ -4185,6 +4193,34 @@ is_a: NCBITaxon:2085 ! Mycoplasmatales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:2093
+name: Mycoplasma
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:29500
+alt_id: NCBITaxon:57371
+synonym: "Asterococcus" RELATED synonym []
+synonym: "Asteromyces" RELATED synonym []
+synonym: "Borrelomyces" RELATED synonym []
+synonym: "Bovimyces" RELATED synonym []
+synonym: "Eperythrozoon" RELATED synonym []
+synonym: "Haemobartonella" RELATED synonym []
+synonym: "Pleuropneumonia" RELATED synonym []
+xref: GC_ID:4
+xref: PMID:10826816
+xref: PMID:11321109
+xref: PMID:11411711
+xref: PMID:11931184
+xref: PMID:13403276
+xref: PMID:15176735
+xref: PMID:16350067
+xref: PMID:16403858
+xref: PMID:25288662
+xref: PMID:8863441
+xref: PMID:8995799
+is_a: NCBITaxon:2092 ! Mycoplasmataceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:210
 name: Helicobacter pylori
 namespace: ncbi_taxonomy
@@ -4199,6 +4235,18 @@ xref: PMID:1995031
 xref: PMID:8186097
 xref: PMID:8494747
 is_a: NCBITaxon:209 ! Helicobacter
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:2104
+name: Mycoplasma pneumoniae
+namespace: ncbi_taxonomy
+synonym: "Filterable agent of primary atypical pneumonia" RELATED synonym []
+synonym: "Schizoplasma pneumoniae" RELATED synonym []
+xref: GC_ID:4
+xref: PMID:19871393
+xref: PMID:4867945
+is_a: NCBITaxon:2093 ! Mycoplasma
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -4728,6 +4776,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:35278 ! ssRNA positive-strand viruses, no DNA stage
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:29169
+name: Ancylostoma
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:53469 ! Ancylostomatinae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:29171
@@ -5262,6 +5318,23 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:33264 ! Dictyocaulidae
 property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:33277
+name: Ancylostomatoidea
+namespace: ncbi_taxonomy
+synonym: "hookworms" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6308 ! Strongylida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:33278
+name: Ancylostomatidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33277 ! Ancylostomatoidea
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:33317
@@ -7012,6 +7085,30 @@ is_a: NCBITaxon:28843 ! Diphyllobothriidae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:46682
+name: Heterakoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6249 ! Ascaridida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:46683
+name: Ascaridiidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:46682 ! Heterakoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:46684
+name: Ascaridia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:46683 ! Ascaridiidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:468
 name: Moraxellaceae
 namespace: ncbi_taxonomy
@@ -7680,6 +7777,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:53466 ! Mesocestoididae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:53469
+name: Ancylostomatinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33278 ! Ancylostomatidae
+property_value: has_rank NCBITaxon:subfamily
 
 [Term]
 id: NCBITaxon:53527
@@ -10303,6 +10408,14 @@ xref: GC_ID:11
 xref: PMID:11760958
 is_a: NCBITaxon:942 ! Anaplasmataceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:76803
+name: Arteriviridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:76804 ! Nidovirales
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:76804

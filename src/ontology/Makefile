@@ -656,8 +656,10 @@ testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
+debug2.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
+	owltools --use-catalog  $^ --merge-support-ontologies --merge-equivalence-sets -s MONDO 100 --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 
-debug2.owl: mondo.owl disjoint_sibs.owl imports/equivalencies.owl
+debug-prod.owl: mondo.owl disjoint_sibs.owl imports/equivalencies.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 
 # ----------------------------------------
