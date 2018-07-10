@@ -1,6 +1,6 @@
 format-version: 1.2
 ontology: mondo/imports/hp_import
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))\n\n\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HP_0000991> \"\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HP_0002564> \"human_phenotype\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HP_0002564> \"HP:0002564\"^^xsd:string)\nAnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0002564> \"obsolete Malformation of the heart and great vessels\"^^xsd:string)\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))\n\n\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HP_0000991> \"\")\n)
 
 [Term]
 id: HP:0000001
@@ -545,6 +545,16 @@ is_a: HP:0000008 ! Abnormality of female internal genitalia
 is_a: HP:0000858 ! Menstrual irregularities
 
 [Term]
+id: HP:0000142
+name: Abnormality of the vagina
+namespace: human_phenotype
+alt_id: HP:0008650
+def: "An abnormality of the vagina." [HPO:probinson]
+synonym: "Vaginal malformation" EXACT []
+xref: UMLS:C1856023
+is_a: HP:0000008 ! Abnormality of female internal genitalia
+
+[Term]
 id: HP:0000144
 name: Decreased fertility
 namespace: human_phenotype
@@ -589,11 +599,11 @@ synonym: "Glossal abnormality" EXACT [ORCID:0000-0001-5889-4463]
 synonym: "Lingual abnormality" EXACT [ORCID:0000-0001-5889-4463]
 synonym: "Tongue abnormality" EXACT layperson []
 xref: UMLS:C0878638
-is_a: HP:0000163 ! Abnormality of the oral cavity
+is_a: HP:0000163 ! Abnormal oral cavity morphology
 
 [Term]
 id: HP:0000159
-name: Abnormality of the lip
+name: Abnormal lip morphology
 namespace: human_phenotype
 def: "An abnormality of the lip." [HPO:probinson]
 synonym: "Abnormal lip" EXACT layperson [HPO:skoehler]
@@ -603,16 +613,16 @@ synonym: "Deformity of lip" NARROW layperson [ORCID:0000-0001-5889-4463]
 synonym: "Lip abnormality" EXACT layperson []
 synonym: "Malformation of lip" NARROW layperson [ORCID:0000-0001-5889-4463]
 xref: UMLS:C2183966
-is_a: HP:0000153 ! Abnormality of the mouth
+is_a: HP:0000163 ! Abnormal oral cavity morphology
 
 [Term]
 id: HP:0000163
-name: Abnormality of the oral cavity
+name: Abnormal oral cavity morphology
 namespace: human_phenotype
 def: "Abnormality of the oral cavity, i.e., the opening or hollow part of the mouth." [HPO:probinson]
 synonym: "Abnormality of the oral cavity" EXACT layperson []
 xref: UMLS:C4025887
-is_a: HP:0000153 ! Abnormality of the mouth
+is_a: HP:0031816 ! Abnormal oral morphology
 
 [Term]
 id: HP:0000164
@@ -637,7 +647,7 @@ xref: MSH:D014071
 xref: SNOMEDCT_US:422775003
 xref: UMLS:C0040427
 xref: UMLS:C0262444
-is_a: HP:0000163 ! Abnormality of the oral cavity
+is_a: HP:0000163 ! Abnormal oral cavity morphology
 
 [Term]
 id: HP:0000168
@@ -649,11 +659,11 @@ subset: hposlim_core
 synonym: "Abnormality of the gums" EXACT layperson [ORCID:0000-0001-5889-4463]
 synonym: "Gingival abnormality" EXACT []
 xref: UMLS:C4021816
-is_a: HP:0011830 ! Abnormality of oral mucosa
+is_a: HP:0011830 ! Abnormal oral mucosa morphology
 
 [Term]
 id: HP:0000174
-name: Abnormality of the palate
+name: Abnormal palate morphology
 namespace: human_phenotype
 def: "Any abnormality of the palate, i.e., of roof of the mouth." [HPO:probinson]
 subset: hposlim_core
@@ -661,7 +671,7 @@ synonym: "Abnormality of the palate" EXACT layperson []
 synonym: "Abnormality of the roof of the mouth" EXACT layperson [ORCID:0000-0001-5889-4463]
 synonym: "Palate abnormality" EXACT []
 xref: UMLS:C4021815
-is_a: HP:0000163 ! Abnormality of the oral cavity
+is_a: HP:0000163 ! Abnormal oral cavity morphology
 
 [Term]
 id: HP:0000175
@@ -683,7 +693,7 @@ xref: SNOMEDCT_US:87979003
 xref: UMLS:C0008925
 xref: UMLS:C2981150
 is_a: HP:0000202 ! Oral cleft
-is_a: HP:0100737 ! Abnormality of the hard palate
+is_a: HP:0100737 ! Abnormal hard palate morphology
 
 [Term]
 id: HP:0000177
@@ -696,7 +706,22 @@ synonym: "Anomaly of the upper lip" NARROW layperson [ORCID:0000-0001-5889-4463]
 synonym: "Deformity of the upper lip" NARROW layperson [ORCID:0000-0001-5889-4463]
 synonym: "Malformation of the upper lip" NARROW layperson [ORCID:0000-0001-5889-4463]
 xref: UMLS:C4025884
-is_a: HP:0000159 ! Abnormality of the lip
+is_a: HP:0000159 ! Abnormal lip morphology
+
+[Term]
+id: HP:0000201
+name: Pierre-Robin sequence
+namespace: human_phenotype
+def: "Pierre Robin malformation is a sequence of developmental malformations characterized by micrognathia (mandibular hypoplasia), glossoptosis and cleft palate." [HPO:probinson]
+synonym: "Pierre Robin sequence" EXACT []
+synonym: "Pierre-robin anomaly" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Pierre-robin deformity" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Pierre-robin malformation" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Robin sequence" EXACT []
+xref: MSH:D010855
+xref: SNOMEDCT_US:4602007
+xref: UMLS:C0031900
+is_a: HP:0031816 ! Abnormal oral morphology
 
 [Term]
 id: HP:0000202
@@ -711,7 +736,7 @@ xref: SNOMEDCT_US:253983005
 xref: SNOMEDCT_US:66948001
 xref: UMLS:C0158646
 xref: UMLS:C4021813
-is_a: HP:0000153 ! Abnormality of the mouth
+is_a: HP:0031816 ! Abnormal oral morphology
 
 [Term]
 id: HP:0000219
@@ -761,7 +786,7 @@ synonym: "Thin vermilion borders" RELATED [HPO:skoehler]
 synonym: "Thin vermillion" EXACT []
 xref: SNOMEDCT_US:301348000
 xref: UMLS:C0578038
-is_a: HP:0000159 ! Abnormality of the lip
+is_a: HP:0000159 ! Abnormal lip morphology
 
 [Term]
 id: HP:0000234
@@ -784,6 +809,7 @@ def: "Hydrocephalus is an active distension of the ventricular system of the bra
 comment: Hydrocephalus results from an imbalance between the rate of production of cerebrospinal fluid (CSF), mainly in the choroid plexus, and its reabsorption in the subarchnoid space over brain and spinal cord.
 synonym: "Hydrocephaly" EXACT []
 synonym: "Nonsyndromal hydrocephalus" EXACT []
+synonym: "Too much cerebrospinal fluid in the brain" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: MSH:D006849
 xref: SNOMEDCT_US:230745008
 xref: UMLS:C0020255
@@ -1353,7 +1379,7 @@ subset: hposlim_core
 synonym: "Abnormality of the eyelid" EXACT layperson []
 synonym: "Abnormality of the eyelids" EXACT layperson []
 xref: UMLS:C4021803
-is_a: HP:0030669 ! Abnormal morphology of the ocular adnexa
+is_a: HP:0030669 ! Abnormal ocular adnexa morphology
 
 [Term]
 id: HP:0000496
@@ -1393,13 +1419,13 @@ is_a: HP:0012373 ! Abnormal eye physiology
 
 [Term]
 id: HP:0000502
-name: Abnormality of the conjunctiva
+name: Abnormal conjunctiva morphology
 namespace: human_phenotype
 def: "An abnormality of the conjunctiva." [HPO:curators]
 comment: The conjunctiva is a thin, sparsely vascularized transparent membrane that covers and protects the sclera (the bulbar conjunctiva), and forms the inner lining of the eyelids (the tarsal conjunctiva).
 subset: hposlim_core
 xref: UMLS:C4025847
-is_a: HP:0030669 ! Abnormal morphology of the ocular adnexa
+is_a: HP:0030669 ! Abnormal ocular adnexa morphology
 
 [Term]
 id: HP:0000504
@@ -1458,11 +1484,12 @@ namespace: human_phenotype
 def: "Inflammation of the conjunctiva." [HPO:probinson]
 subset: hposlim_core
 synonym: "Conjunctivitis, recurrent" RELATED [HPO:skoehler]
+synonym: "Pink eye" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: MSH:D003231
 xref: SNOMEDCT_US:9826008
 xref: UMLS:C0009763
 xref: UMLS:C1864156
-is_a: HP:0000502 ! Abnormality of the conjunctiva
+is_a: HP:0000502 ! Abnormal conjunctiva morphology
 is_a: HP:0025337 ! Red eye
 is_a: HP:0100533 ! Inflammatory abnormality of the eye
 
@@ -1488,6 +1515,7 @@ def: "A cataract is an opacity or clouding that develops in the crystalline lens
 comment: Note that some ophthalmologists call any opacity in the lens a cataract, while others restrict the term to lens opacities that impair vision. We use the term to refer to the first meaning (any lens opacity).
 subset: hposlim_core
 synonym: "Cataracts" EXACT []
+synonym: "Clouding of the lens of the eye" EXACT layperson [orcid.org/0000-0002-6548-5200]
 synonym: "Cloudy lens" EXACT layperson [ORCID:0000-0001-6908-9849]
 synonym: "Lens opacities" EXACT []
 synonym: "Lens opacity" EXACT []
@@ -1617,14 +1645,16 @@ synonym: "Abnormality of the eyebrow" EXACT layperson []
 xref: UMLS:C4011556
 is_a: HP:0000606 ! Abnormality of the periorbital region
 is_a: HP:0001595 ! Abnormality of the hair
-is_a: HP:0030669 ! Abnormal morphology of the ocular adnexa
+is_a: HP:0030669 ! Abnormal ocular adnexa morphology
 
 [Term]
 id: HP:0000546
 name: Retinal degeneration
 namespace: human_phenotype
 alt_id: HP:0007632
+alt_id: HP:0007790
 alt_id: HP:0007863
+alt_id: HP:0007893
 def: "A nonspecific term denoting degeneration of the retinal pigment epithelium and/or retinal photoreceptor cells." [HPO:probinson, ORCID:0000-0003-0986-4123]
 subset: hposlim_core
 synonym: "Retina degeneration" EXACT layperson [ORCID:0000-0001-5208-3432]
@@ -2652,7 +2682,7 @@ is_a: HP:0001574 ! Abnormality of the integument
 id: HP:0000952
 name: Jaundice
 namespace: human_phenotype
-def: "Yellow pigmentation of the skin or sclera due to bilirubin, which in turn is the result of increased bilirubin concentration in the bloodstream." [HPO:curators]
+def: "Yellow pigmentation of the skin or sclera due to bilirubin, which in turn is the result of increased bilirubin concentration in the bloodstream." [HPO:probinson]
 synonym: "Icterus" EXACT [ORCID:0000-0001-6908-9849]
 synonym: "Jaundice" EXACT layperson []
 synonym: "Yellow skin" EXACT layperson [ORCID:0000-0001-6908-9849]
@@ -3154,6 +3184,16 @@ is_a: HP:0000991 ! Xanthomatosis
 is_a: HP:0010732 ! Nodular changes affecting the eyelids
 
 [Term]
+id: HP:0001153
+name: Septate vagina
+namespace: human_phenotype
+def: "The presence of a vaginal septum, thereby creating a vaginal duplication. The septum is longitudinal in the majority of cases." [HPO:curators]
+synonym: "Double vagina" EXACT layperson [ORCID:0000-0001-6908-9849]
+xref: SNOMEDCT_US:47054003
+xref: UMLS:C0266411
+is_a: HP:0000142 ! Abnormality of the vagina
+
+[Term]
 id: HP:0001155
 name: Abnormality of the hand
 namespace: human_phenotype
@@ -3183,6 +3223,7 @@ alt_id: HP:0006128
 alt_id: HP:0100667
 def: "Digits that appear disproportionately short compared to the hand/foot. The word brachydactyly is used here to describe a series distinct patterns of shortened digits (brachydactyly types A-E). This is the sense used here." [HPO:probinson]
 synonym: "Brachydactyly syndrome" EXACT []
+synonym: "Short fingers or toes" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: MSH:D059327
 xref: SNOMEDCT_US:43476002
 xref: UMLS:C0221357
@@ -3355,6 +3396,7 @@ id: HP:0001257
 name: Spasticity
 namespace: human_phenotype
 def: "A motor disorder characterized by a velocity-dependent increase in tonic stretch reflexes with increased muscle tone, exaggerated (hyperexcitable) tendon reflexes." [HPO:probinson]
+synonym: "Involuntary muscle stiffness, contraction, or spasm" EXACT layperson [orcid.org/0000-0002-6548-5200]
 synonym: "Muscle spasticity" EXACT []
 synonym: "Muscular spasticity" EXACT []
 xref: MSH:D009128
@@ -3677,8 +3719,7 @@ id: HP:0001339
 name: Lissencephaly
 namespace: human_phenotype
 alt_id: HP:0002537
-def: "A congenital absence of the convolutions of the cerebral cortex and a poorly formed sylvian fissure." [HPO:curators]
-synonym: "Agyria" EXACT []
+def: "Lissencephaly (LIS, which subsumes the terms agyria and pachygyria), together with subcortical-band heterotopia (SBH) comprises a spectrum of malformations of cortical development caused by insufficient neuronal migration. The key features of LIS are an abnormally thick cortex with reduced or absent formation of the cerebral convolutions, while SBH consists of abnormal bands of neurons beneath a normal cortex, although the cerebral gyri may be separated by unusually shallow sulci." [HPO:curators]
 xref: MSH:D054082
 xref: SNOMEDCT_US:204036008
 xref: UMLS:C0266463
@@ -3821,6 +3862,7 @@ def: "A chronic disorder of the liver in which liver tissue becomes scarred and 
 comment: Cirrhosis is caused by chronic liver disease as a result of viral infections (hepatitis), alcohol abuse, certain medications, certain metabolic disorders of iron and copper, and many others. Cirrhosis may lead to a number of abnormalities including hepatomegaly, jaundice, abnormal liver function tests, ascites, dilatation of veins in the abdominal wall, anemia, and clotting deficiencies.
 synonym: "Hepatic cirrhosis" EXACT []
 synonym: "Liver cirrhosis" RELATED [HPO:skoehler]
+synonym: "Scar tissue replaces healthy tissue in the liver" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: MSH:D008103
 xref: SNOMEDCT_US:19943007
 xref: UMLS:C0023890
@@ -4100,6 +4142,24 @@ xref: UMLS:C0853087
 is_a: HP:0011138 ! Abnormality of skin adnexa morphology
 
 [Term]
+id: HP:0001600
+name: Abnormality of the larynx
+namespace: human_phenotype
+def: "An abnormality of the larynx." [HPO:probinson]
+synonym: "Laryngeal abnormalities" EXACT []
+synonym: "Laryngeal anomalies" EXACT []
+xref: UMLS:C4021777
+is_a: HP:0002087 ! Abnormality of the upper respiratory tract
+
+[Term]
+id: HP:0001607
+name: Subglottic stenosis
+namespace: human_phenotype
+xref: SNOMEDCT_US:22668006
+xref: UMLS:C0238441
+is_a: HP:0025423 ! Abnormal larynx morphology
+
+[Term]
 id: HP:0001608
 name: Abnormality of the voice
 namespace: human_phenotype
@@ -4205,6 +4265,7 @@ id: HP:0001638
 name: Cardiomyopathy
 namespace: human_phenotype
 def: "A myocardial disorder in which the heart muscle is structurally and functionally abnormal, in the absence of coronary artery disease, hypertension, valvular disease and congenital heart disease sufficient to cause the observed myocardial abnormality." [HPO:probinson, pmid:17916581]
+synonym: "Disease of the heart muscle" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: Fyler:1840
 xref: MSH:D009202
 xref: SNOMEDCT_US:57809008
@@ -4222,6 +4283,7 @@ alt_id: HP:0200130
 def: "Dilated cardiomyopathy (DCM) is defined by the presence of left ventricular dilatation and left ventricular systolic dysfunction in the absence of abnormal loading conditions (hypertension, valve disease) or coronary artery disease sufficient to cause global systolic impairment. Right ventricular dilation and dysfunction may be present but are not necessary for the diagnosis." [pmid:17916581]
 synonym: "Cardiomyopathy, dilated" EXACT []
 synonym: "Congestive cardiomyopathy" EXACT []
+synonym: "Stretched and thinned heart muscle" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: Fyler:1843
 xref: MSH:D002311
 xref: SNOMEDCT_US:195021004
@@ -4688,11 +4750,12 @@ is_a: HP:0011895 ! Anemia due to reduced life span of red cells
 
 [Term]
 id: HP:0001879
-name: Abnormality of eosinophils
+name: Abnormal eosinophil morphology
 namespace: human_phenotype
 def: "An eosinophil abnormality." [HPO:probinson]
+synonym: "Abnormality of eosinophils" EXACT []
 xref: UMLS:C4025738
-is_a: HP:0001911 ! Abnormality of granulocytes
+is_a: HP:0001911 ! Abnormal granulocyte morphology
 
 [Term]
 id: HP:0001880
@@ -4702,7 +4765,7 @@ def: "Increased count of eosinophils in the blood." [HPO:sdoelken]
 synonym: "High blood eosinophil count" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: MSH:D004802
 xref: UMLS:C0014457
-is_a: HP:0001879 ! Abnormality of eosinophils
+is_a: HP:0001879 ! Abnormal eosinophil morphology
 is_a: HP:0001974 ! Leukocytosis
 
 [Term]
@@ -4817,6 +4880,7 @@ def: "A reduction in erythrocytes volume or hemoglobin concentration." [HPO:prob
 comment: Anemia is not a specific entity but can result from many underlying pathologic processes. The three main causes of anemia are blood loss, decreased or faulty red blood cell production, and increased destruction of red blood cells. Various classifications are in clinical use including a classification according to the mean corpuscular volume (MCV) of the erythrocytes: microcytic, macrocytic, or normocytic. Anemias can also be classified according to variations in cell size and shape, as reflected by the red-cell distribution width (RDW). Additionally, anemias can be classified into those of inadequate production and hemolytic anemias.
 synonym: "Anaemia" EXACT []
 synonym: "Decreased hemoglobin" RELATED []
+synonym: "Low number of red blood cells or hemoglobin" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: MSH:D000740
 xref: SNOMEDCT_US:165397008
 xref: SNOMEDCT_US:271737000
@@ -4826,10 +4890,11 @@ is_a: HP:0001877 ! Abnormal erythrocyte morphology
 
 [Term]
 id: HP:0001911
-name: Abnormality of granulocytes
+name: Abnormal granulocyte morphology
 namespace: human_phenotype
 alt_id: HP:0005438
-def: "An abnormality of granulocytes." [HPO:probinson]
+def: "Any structural abnormality or abnormal count of granulocytes." [HPO:probinson]
+synonym: "Abnormality of granulocytes" EXACT []
 synonym: "Abnormality of neutrophil" EXACT []
 xref: SNOMEDCT_US:250274006
 xref: UMLS:C0427515
@@ -4844,7 +4909,7 @@ xref: MSH:D000380
 xref: SNOMEDCT_US:17182001
 xref: SNOMEDCT_US:417672002
 xref: UMLS:C0001824
-is_a: HP:0001911 ! Abnormality of granulocytes
+is_a: HP:0001911 ! Abnormal granulocyte morphology
 
 [Term]
 id: HP:0001920
@@ -5017,6 +5082,17 @@ xref: SNOMEDCT_US:386661006
 xref: SNOMEDCT_US:50177009
 xref: UMLS:C0015967
 is_a: HP:0004370 ! Abnormality of temperature regulation
+
+[Term]
+id: HP:0001959
+name: Polydipsia
+namespace: human_phenotype
+def: "Excessive thirst manifested by excessive fluid intake." []
+xref: MSH:D059606
+xref: SNOMEDCT_US:17173007
+xref: SNOMEDCT_US:267026004
+xref: UMLS:C0085602
+is_a: HP:0030082 ! Abnormal drinking behavior
 
 [Term]
 id: HP:0001962
@@ -5265,6 +5341,7 @@ namespace: human_phenotype
 alt_id: HP:0001550
 def: "Congenital absence of the anus, i.e., the opening at the bottom end of the intestinal tract." [HPO:probinson]
 subset: hposlim_core
+synonym: "Absent anus" EXACT layperson [orcid.org/0000-0002-6548-5200]
 synonym: "Imperforate anus" RELATED []
 xref: Fyler:4402
 xref: Fyler:4443
@@ -5315,7 +5392,7 @@ synonym: "Abnormality of the rectum" EXACT layperson []
 synonym: "Anomaly of the rectum" EXACT layperson []
 xref: SNOMEDCT_US:86993003
 xref: UMLS:C0266210
-is_a: HP:0002250 ! Abnormality of the large intestine
+is_a: HP:0002250 ! Abnormal large intestine morphology
 is_a: HP:0012732 ! Anorectal anomaly
 
 [Term]
@@ -5540,6 +5617,7 @@ id: HP:0002094
 name: Dyspnea
 namespace: human_phenotype
 def: "Difficult or labored breathing." [HPO:probinson]
+synonym: "Trouble breathing" EXACT layperson []
 xref: MSH:D004417
 xref: SNOMEDCT_US:230145002
 xref: SNOMEDCT_US:267036007
@@ -5636,6 +5714,7 @@ id: HP:0002110
 name: Bronchiectasis
 namespace: human_phenotype
 def: "Persistent abnormal dilatation of the bronchi owing to localized and irreversible destruction and widening of the large airways." [HPO:probinson]
+synonym: "Permanent enlargement of the airways of the lungs" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: MSH:D001987
 xref: SNOMEDCT_US:12295008
 xref: UMLS:C0006267
@@ -6048,7 +6127,7 @@ is_a: HP:0025085 ! Bloody diarrhea
 
 [Term]
 id: HP:0002250
-name: Abnormality of the large intestine
+name: Abnormal large intestine morphology
 namespace: human_phenotype
 def: "Any abnormality of the large intestine." [HPO:probinson]
 comment: The large intestine comprises the cecum and colon.
@@ -6282,6 +6361,7 @@ alt_id: HP:0007310
 def: "Dysfunction of the autonomic nervous system." [HPO:probinson]
 comment: Dysautonomia is a general term that refers to any dysfunction of the autonomic nervous system.
 synonym: "Autonomic dysfunction" EXACT []
+synonym: "Autonomic nervous dysfunction" EXACT [ORCID:0000-0001-5208-3432, PMID: 29651625]
 xref: MSH:D001342
 xref: MSH:D054969
 xref: SNOMEDCT_US:15241006
@@ -6352,6 +6432,7 @@ alt_id: HP:0005806
 alt_id: HP:0006848
 def: "The presence of calcium deposition within brain structures." [HPO:probinson]
 comment: This finding can be demonstrated upon cerebral computer tomography, magnetic resonance imaging, or potentially by standard radiography of the skull.
+synonym: "Abnormal deposits of calcium in the brain" EXACT layperson [orcid.org/0000-0002-6548-5200]
 synonym: "Brain calcification" EXACT []
 synonym: "Intracerebral calcifications" EXACT []
 synonym: "Intracranial calcification" EXACT []
@@ -7356,15 +7437,17 @@ is_a: HP:0040290 ! Abnormality of skeletal muscles
 
 [Term]
 id: HP:0003225
-name: Reduced factor V activity
+name: Reduced coagulation factor V activity
 namespace: human_phenotype
-def: "Decreased activity of coagulation factor V, Factor V, which is activated to factor Va by means of minute amounts of thrombin (and inactivated by larger amounts of thrombin). Activated factor V (fVa) is a cofactor in the formation of the prothrombinase complex." [HPO:probinson]
+def: "Decreased activity of coagulation factor V." [HPO:probinson]
+comment: Factor V is activated to factor Va by means of minute amounts of thrombin (and inactivated by larger amounts of thrombin). Activated factor V (fVa) is a cofactor in the formation of the prothrombinase complex.
 synonym: "Factor V deficiency" RELATED []
+synonym: "Reduced factor V activity" EXACT []
 xref: MSH:D005166
 xref: SNOMEDCT_US:4320005
 xref: SNOMEDCT_US:88776002
 xref: UMLS:C0015499
-is_a: HP:0010990 ! Abnormality of the common coagulation pathway
+is_a: HP:0031899 ! Abnormal coagulation factor V activity
 
 [Term]
 id: HP:0003231
@@ -7474,7 +7557,9 @@ alt_id: HP:0002903
 alt_id: HP:0200014
 def: "An increased concentration of an amino acid in the urine." [HPO:SKOEHLER]
 synonym: "Abnormal urinary amino-acid findings" RELATED layperson []
+synonym: "High urine amino acid levels" EXACT layperson [orcid.org/0000-0001-5208-3432]
 synonym: "Hyperaminoaciduria" EXACT []
+synonym: "Increased levels of animo acids in urine" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: SNOMEDCT_US:35912001
 xref: UMLS:C0238621
 xref: UMLS:C4020843
@@ -7721,6 +7806,7 @@ alt_id: HP:0003669
 def: "Onset of disease manifestations in adulthood, defined here as at the age of 16 years or later." [HPO:probinson]
 synonym: "Onset in adulthood" EXACT []
 synonym: "Onset in early adulthood" EXACT []
+synonym: "Symptoms begin in adulthood" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: UMLS:C1853562
 is_a: HP:0003674 ! Onset
 
@@ -8398,6 +8484,15 @@ xref: UMLS:C0015526
 is_a: HP:0010989 ! Abnormality of the intrinsic pathway
 
 [Term]
+id: HP:0004905
+name: Vitamin A deficiency
+namespace: human_phenotype
+xref: MSH:D014802
+xref: SNOMEDCT_US:72000004
+xref: UMLS:C0042842
+is_a: HP:0008372 ! Abnormality of vitamin A metabolism
+
+[Term]
 id: HP:0005132
 name: Pericardial constriction
 namespace: human_phenotype
@@ -8819,6 +8914,7 @@ alt_id: HP:0007137
 def: "Absence or underdevelopment of the corpus callosum." [HPO:probinson]
 synonym: "Absent/hypoplastic corpus callosum" EXACT []
 synonym: "Agenesis/hypoplastic corpus callosum" EXACT []
+synonym: "Complete or partial absence of the corpus callosum" EXACT []
 synonym: "Hypoplasia or absence of the corpus callosum" EXACT []
 synonym: "Hypoplastic or absent corpus callosum" EXACT []
 xref: UMLS:C1861866
@@ -8961,6 +9057,27 @@ synonym: "Lacunar retinal depigmentation" RELATED []
 xref: UMLS:C1844751
 xref: UMLS:C4072866
 is_a: HP:0000532 ! Abnormal chorioretinal morphology
+
+[Term]
+id: HP:0007957
+name: Corneal opacity
+namespace: human_phenotype
+alt_id: HP:0007844
+alt_id: HP:0007883
+alt_id: HP:0008502
+def: "A reduction of corneal clarity." [HPO:probinson]
+subset: hposlim_core
+synonym: "Corneal clouding" EXACT []
+synonym: "Corneal opacities" EXACT []
+synonym: "Reduction of corneal clarity" EXACT []
+synonym: "Scarring or clouding of the cornea of the eye" EXACT []
+xref: MSH:D003318
+xref: SNOMEDCT_US:413921009
+xref: SNOMEDCT_US:64634000
+xref: SNOMEDCT_US:95735008
+xref: UMLS:C0010038
+xref: UMLS:C0521719
+is_a: HP:0000481 ! Abnormal cornea morphology
 
 [Term]
 id: HP:0008035
@@ -9128,6 +9245,15 @@ xref: SNOMEDCT_US:76642003
 xref: UMLS:C0015519
 xref: UMLS:C4024702
 is_a: HP:0010990 ! Abnormality of the common coagulation pathway
+
+[Term]
+id: HP:0008372
+name: Abnormality of vitamin A metabolism
+namespace: human_phenotype
+xref: UMLS:C4024686
+is_a: HP:0100508 ! Abnormality of vitamin metabolism
+created_by: peter
+creation_date: 2008-04-04T12:29:00Z
 
 [Term]
 id: HP:0008373
@@ -9583,7 +9709,7 @@ xref: SNOMEDCT_US:20607006
 xref: SNOMEDCT_US:61170000
 xref: UMLS:C0038362
 xref: UMLS:C0149704
-is_a: HP:0011830 ! Abnormality of oral mucosa
+is_a: HP:0011830 ! Abnormal oral mucosa morphology
 is_a: HP:0012649 ! Increased inflammatory response
 created_by: peter
 creation_date: 2009-07-12T09:48:56Z
@@ -10017,6 +10143,7 @@ name: Erythema
 namespace: human_phenotype
 def: "Redness of the skin, caused by hyperemia of the capillaries in the lower layers of the skin." [HPO:probinson]
 subset: hposlim_core
+synonym: "Redness of skin or mucous membrane" EXACT []
 xref: MSH:D004890
 xref: MSH:D005483
 xref: SNOMEDCT_US:20255002
@@ -10252,10 +10379,11 @@ creation_date: 2011-02-07T04:28:55Z
 
 [Term]
 id: HP:0010979
-name: Abnormality of the level of lipoprotein cholesterol
+name: Abnormality lipoprotein cholesterol concentration
 namespace: human_phenotype
 def: "An abnormal increase or decrease in the level of lipoprotein cholesterol in the blood." [HPO:probinson]
-comment: Cholesterol esters and free cholesterol which are contained in or bound to lipoproteins.
+comment: Lipoproteins transport fats (lipids) in the blood circulation. Lipids are insoluble in water, meaning that they could not be transported in the blood circulation on their own. There are five major types of lipoproteins: (i) chylomicrons; VLDL (very low-density lipoprotein); (iii) IDL (intermediate-density lipoprotein); (iv) LDL (low-density lipoprotein); and (v) HDL (high-density lipoprotein). Clinical measures assess the amount of cholesterol carried by different lipoproteins. For instance, LDL-cholesterol (LDL-C) is the maount of cholesterol carried by LDL.
+synonym: "Abnormality of the level of lipoprotein cholesterol" EXACT []
 xref: UMLS:C4023615
 is_a: HP:0003107 ! Abnormality of cholesterol metabolism
 created_by: peter
@@ -10269,7 +10397,7 @@ def: "An abnormal increase in the level of lipoprotein cholesterol in the blood.
 xref: MSH:D006951
 xref: SNOMEDCT_US:3744001
 xref: UMLS:C0020476
-is_a: HP:0010979 ! Abnormality of the level of lipoprotein cholesterol
+is_a: HP:0010979 ! Abnormality lipoprotein cholesterol concentration
 created_by: peter
 creation_date: 2011-02-07T10:56:30Z
 
@@ -11051,6 +11179,7 @@ alt_id: HP:0003586
 alt_id: HP:0003617
 def: "Onset of disease at the age of between 1 and 5 years." [DDD:hfirth]
 comment: This term refers to ages up to but not including the fifth birthday (see Juvenile onset).
+synonym: "Symptoms begin in childhood" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: UMLS:C1837352
 is_a: HP:0003674 ! Onset
 created_by: peter
@@ -11282,15 +11411,16 @@ creation_date: 2012-04-29T04:37:30Z
 
 [Term]
 id: HP:0011830
-name: Abnormality of oral mucosa
+name: Abnormal oral mucosa morphology
 namespace: human_phenotype
 def: "Abnormality of the oral mucosa." [HPO:probinson]
 subset: hposlim_core
 synonym: "Abnormality of lining of mouth" EXACT layperson [ORCID:0000-0001-5889-4463]
 synonym: "Abnormality of mucosa of mouth" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of oral mucosa" EXACT []
 synonym: "Abnormality of oral mucous membrane" EXACT [ORCID:0000-0001-5889-4463]
 xref: UMLS:C4023170
-is_a: HP:0000163 ! Abnormality of the oral cavity
+is_a: HP:0000163 ! Abnormal oral cavity morphology
 created_by: peter
 creation_date: 2012-05-01T10:43:40Z
 
@@ -11426,12 +11556,13 @@ creation_date: 2012-07-16T12:25:35Z
 
 [Term]
 id: HP:0011996
-name: Elevated factor V activity
+name: Elevated coagulation factor V activity
 namespace: human_phenotype
 def: "Increased activity of coagulation factor V, Factor V, which is activated to factor Va by means of minute amounts of thrombin (and inactivated by larger amounts of thrombin). Activated factor V (fVa) is a cofactor in the formation of the prothrombinase complex." [HPO:probinson]
+synonym: "Elevated factor V activity" EXACT []
 synonym: "Plasma factor V elevated" EXACT []
 xref: UMLS:C4021106
-is_a: HP:0010990 ! Abnormality of the common coagulation pathway
+is_a: HP:0031899 ! Abnormal coagulation factor V activity
 created_by: peter
 creation_date: 2012-07-19T11:40:31Z
 
@@ -12195,6 +12326,15 @@ property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2017-04-23T10:55:52Z xsd:dateTime
 
 [Term]
+id: HP:0025423
+name: Abnormal larynx morphology
+namespace: human_phenotype
+def: "Any anomaly of the structure of the larynx." []
+is_a: HP:0001600 ! Abnormality of the larynx
+property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2017-04-23T12:44:49Z xsd:dateTime
+
+[Term]
 id: HP:0025426
 name: Abnormal bronchus morphology
 namespace: human_phenotype
@@ -12245,6 +12385,16 @@ xref: pmid:21931493
 xref: SNOMEDCT_US:60380001
 xref: UMLS:C0027404
 is_a: HP:0002360 ! Sleep disturbance
+
+[Term]
+id: HP:0030082
+name: Abnormal drinking behavior
+namespace: human_phenotype
+def: "Abnormal consumption of fluids with excessive or insufficient consumption of fluid or any other abnormal pattern of fluid consumption." []
+comment: Note that this HPO term refers to an abnormal habit of drinking fluids but does not directly refer to an psychological disorder.
+synonym: "Abnormal drinking behavior" EXACT layperson []
+xref: UMLS:C4022657
+is_a: HP:0040202 ! Abnormal consumption behavior
 
 [Term]
 id: HP:0030163
@@ -12301,7 +12451,7 @@ is_a: HP:0030347 ! Abnormal circulating androgen level
 
 [Term]
 id: HP:0030669
-name: Abnormal morphology of the ocular adnexa
+name: Abnormal ocular adnexa morphology
 namespace: human_phenotype
 def: "An anomaly of the adjacent structures (i.e., adnexa) of the eye, defined as the lacrimal apparatus, the extraocular muscles and the eyelids, eyelashes, eyebrows and the conjunctiva." []
 xref: UMLS:C4073120
@@ -12331,6 +12481,16 @@ xref: MSH:D020863
 xref: SNOMEDCT_US:277333006
 xref: UMLS:C0349606
 is_a: HP:0002011 ! Morphological abnormality of the central nervous system
+
+[Term]
+id: HP:0030764
+name: Ochronosis
+namespace: human_phenotype
+def: "Brown or blue-gray discoloration of the skin tha can present on the axillary and inguinal areas, face, palms or soles. In addition, blue-black discoloration can be apparent on skin overlying cartilage in which the pigment is deposited, such as the ears. This is a characteristic manifestation of alkaptonuria, which is an autosomal recessively inherited deficiency of homogentisic acid oxidase that results in accumulation of homogentisic acid in collagenous structures. The sclerae are also typically involved." [HPO:probinson, PMID:24447956, PMID:26929770]
+xref: MSH:D009794
+xref: SNOMEDCT_US:410042009
+xref: UMLS:C0028817
+is_a: HP:0011121 ! Abnormality of skin morphology
 
 [Term]
 id: HP:0030791
@@ -12622,6 +12782,26 @@ property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2018-02-25T14:55:46Z xsd:dateTime
 
 [Term]
+id: HP:0031816
+name: Abnormal oral morphology
+namespace: human_phenotype
+def: "Any structural anomaly of the mouth, which is also known as the oral cavity." []
+is_a: HP:0000153 ! Abnormality of the mouth
+property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2018-04-29T14:55:47Z xsd:dateTime
+
+[Term]
+id: HP:0031899
+name: Abnormal coagulation factor V activity
+namespace: human_phenotype
+def: "Any deviation from the activity of coagulation factor V." []
+comment: Factor V is activated to factor Va by means of minute amounts of thrombin (and inactivated by larger amounts of thrombin). Activated factor V (fVa) is a cofactor in the formation of the prothrombinase complex.
+synonym: "Abnormal factor V activity" EXACT []
+is_a: HP:0010990 ! Abnormality of the common coagulation pathway
+property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2018-05-19T15:11:38Z xsd:dateTime
+
+[Term]
 id: HP:0040006
 name: Mortality/Aging
 namespace: human_phenotype
@@ -12719,6 +12899,13 @@ synonym: "Decreased head circumference" EXACT layperson []
 xref: SNOMEDCT_US:271611007
 xref: UMLS:C0424688
 is_a: HP:0000240 ! Abnormality of skull size
+
+[Term]
+id: HP:0040202
+name: Abnormal consumption behavior
+namespace: human_phenotype
+xref: UMLS:C4073150
+is_a: HP:0000708 ! Behavioral abnormality
 
 [Term]
 id: HP:0040211
@@ -12940,7 +13127,7 @@ namespace: human_phenotype
 def: "A depression located on a lip." [HPO:probinson]
 subset: hposlim_core
 xref: UMLS:C0341059
-is_a: HP:0000159 ! Abnormality of the lip
+is_a: HP:0000159 ! Abnormal lip morphology
 is_a: HP:0100276 ! Skin pit
 created_by: doelkens
 creation_date: 2010-07-20T04:06:32Z
@@ -13246,6 +13433,17 @@ created_by: doelkens
 creation_date: 2010-12-29T05:45:28Z
 
 [Term]
+id: HP:0100640
+name: Laryngeal cyst
+namespace: human_phenotype
+def: "Presence of a cyst (sac-like structure) located in the larynx." [HPO:probinson, pmid:24040590]
+xref: SNOMEDCT_US:195867000
+xref: UMLS:C0339880
+is_a: HP:0025423 ! Abnormal larynx morphology
+created_by: doelkens
+creation_date: 2010-12-29T05:48:37Z
+
+[Term]
 id: HP:0100658
 name: Cellulitis
 namespace: human_phenotype
@@ -13309,11 +13507,12 @@ creation_date: 2011-05-16T06:47:54Z
 
 [Term]
 id: HP:0100737
-name: Abnormality of the hard palate
+name: Abnormal hard palate morphology
 namespace: human_phenotype
+synonym: "Abnormality of the hard palate" EXACT []
 synonym: "Abnormality of the secondary palate" BROAD [ORCID:0000-0001-5889-4463]
 xref: UMLS:C4021983
-is_a: HP:0000174 ! Abnormality of the palate
+is_a: HP:0000174 ! Abnormal palate morphology
 created_by: doelkens
 creation_date: 2011-06-06T05:42:10Z
 

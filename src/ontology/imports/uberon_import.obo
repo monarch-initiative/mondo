@@ -6972,6 +6972,25 @@ intersection_of: BFO:0000050 UBERON:0000978 ! part of leg
 relationship: BFO:0000050 UBERON:0004466 ! part of musculature of leg
 
 [Term]
+id: UBERON:0001384
+name: primary motor cortex
+def: "The part of the cerebral cortex that receives projections from the motor thalamus and which projects to motor neurons in the brainstem and spinal cord. The motor cortex corresponds to Brodmann's area 4 (MM). The primary motor cortex, or M1, is located on the precentral gyrus and on the anterior paracentral lobule on the medial surface of the brain. Of the three motor cortex areas, stimulation of the primary motor cortex requires the least amount of electrical current to elicit a movement. http://neuroscience.uth.tmc.edu/s3/chapter03.html" []
+synonym: "excitable area" RELATED []
+synonym: "gyrus precentralis" RELATED []
+synonym: "motor area" RELATED []
+synonym: "motor cortex" EXACT []
+synonym: "prefrontal gyrus" RELATED []
+synonym: "primary motor area" RELATED []
+synonym: "Rolando's area" RELATED []
+synonym: "somatic motor areas" RELATED []
+synonym: "somatomotor areas" RELATED []
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+relationship: BFO:0000050 UBERON:0001870 ! part of frontal cortex
+relationship: RO:0002433 UBERON:0000956 ! contributes to morphology of cerebral cortex
+relationship: RO:0002433 UBERON:0001870 ! contributes to morphology of frontal cortex
+
+[Term]
 id: UBERON:0001394
 name: axillary artery
 def: "Artery that supplies the axilla" []
@@ -9188,6 +9207,21 @@ is_a: UBERON:0001638 ! vein
 intersection_of: UBERON:0001638 ! vein
 intersection_of: RO:0002179 UBERON:0002037 ! drains cerebellum
 relationship: RO:0002179 UBERON:0002037 ! drains cerebellum
+
+[Term]
+id: UBERON:0001673
+name: central retinal vein
+def: "The central retinal vein (retinal vein) is a short vein that runs through the optic nerve and drains blood from the capillaries of the retina into the larger veins outside the eye. The anatomy of the veins of the orbit of the eye varies between individuals, and in some the central retinal vein drains into the superior ophthalmic vein, and in some it drains directly into the cavernous sinus. [WP,unvetted]." []
+synonym: "retinal vein" EXACT []
+synonym: "vena centralis retinae" RELATED []
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0009141 ! craniocervical region vein
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0000019 ! part of camera-type eye
+relationship: RO:0002179 UBERON:0000966 ! drains retina
+relationship: RO:0002225 UBERON:0006011 ! develops_from_part_of hyaloid vein
+relationship: RO:0002376 UBERON:0003712 ! tributary_of cavernous sinus
+relationship: RO:0002376 UBERON:0005486 ! tributary_of venous dural sinus
 
 [Term]
 id: UBERON:0001675
@@ -35863,6 +35897,19 @@ def: "Cranial neural crest which gives rise to the glossopharyngeal ganglion." [
 is_a: UBERON:0003099 ! cranial neural crest
 
 [Term]
+id: UBERON:0005492
+name: hyaloid vessel
+def: "A blood vessel that is associated with the lens. In mammals, this is transient and normally nourishes the retina, immature lens and primary vitreous of the developing eye." []
+synonym: "hyaloid blood vessels" EXACT []
+synonym: "hyaloid capillary system" RELATED []
+synonym: "hyaloid vascular system" RELATED []
+synonym: "hyaloid vasculature" RELATED []
+synonym: "hyaloid vessels" EXACT []
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0002203 ! part of vasculature of eye
+
+[Term]
 id: UBERON:0005496
 name: neural tube lateral wall
 def: "Portion of tissue on the side of the lumen of the neural tube." []
@@ -37674,6 +37721,14 @@ is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0010313 ! neural crest-derived structure
 relationship: BFO:0000050 UBERON:0000946 ! part of cardial valve
+
+[Term]
+id: UBERON:0006011
+name: hyaloid vein
+synonym: "hyaloid veins" EXACT []
+is_a: UBERON:0005492 ! hyaloid vessel
+is_a: UBERON:0009141 ! craniocervical region vein
+relationship: RO:0002202 UBERON:0011191 ! develops_from ophthalmic vein
 
 [Term]
 id: UBERON:0006048
@@ -49189,6 +49244,14 @@ relationship: BFO:0000050 UBERON:0001169 ! part of wall of large intestine
 relationship: BFO:0000050 UBERON:0001207 ! part of mucosa of large intestine
 
 [Term]
+id: UBERON:0011191
+name: ophthalmic vein
+def: "Ophthalmic veins are veins which drain the eye. More specifically, they can refer to: Superior ophthalmic vein Inferior ophthalmic vein" []
+synonym: "opthalmic vein" EXACT []
+synonym: "vena ophthalmica" RELATED []
+is_a: UBERON:0009141 ! craniocervical region vein
+
+[Term]
 id: UBERON:0011197
 name: parathyroid epithelium
 def: "An epithelium that is part of a parathyroid gland." []
@@ -59867,6 +59930,15 @@ intersection_of: UBERON:0010164 ! collection of hairs
 intersection_of: BFO:0000050 UBERON:0001691 ! part of external ear
 relationship: BFO:0000050 UBERON:0001691 ! part of external ear
 relationship: RO:0002473 UBERON:0022279 ! composed primarily of strand of hair on external ear
+
+[Term]
+id: UBERON:1000011
+name: labial commissure
+def: "Anatomical structure consisting of either corner of the mouth." []
+synonym: "commissura labiorum oris" RELATED []
+synonym: "corner of mouth" RELATED []
+is_a: UBERON:0034929 ! external soft tissue zone
+relationship: BFO:0000050 UBERON:0000165 ! part of mouth
 
 [Term]
 id: UBERON:1000021

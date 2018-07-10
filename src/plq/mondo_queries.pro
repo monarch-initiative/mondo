@@ -53,16 +53,43 @@ xref_prefix_srcont(C,X,P,S) :-
 curie_prefix(Literal,Pre) :-
         str_before(Literal,":",Pre).
 
-equiv_from_xref(C,X) :-
+mondo_equiv_xref(C,X) :-
         xref_src(C,X,_,"MONDO:equivalentTo").
-equiv_from_xref(C,X,P) :-
+mondo_equiv_xref(C,X,P) :-
         xref_src(C,X,_,"MONDO:equivalentTo"),
         curie_prefix(X,P).
+
+
+mondo_xref_semantics(C,X,Rel,P) :-
+        xref_src(C,X,_,Src),
+        curie_prefix(X,P),
+        src_semantics(Src,Rel).
+mondo_xref_semantics(C,X,Rel) :-
+        xref_src(C,X,_,Src),
+        src_semantics(Src,Rel).
+
+
+src_semantics("MONDO:equivalentTo",(=)) :- !.
+src_semantics("MONDO:subClassOf",(<)) :- !.
+src_semantics("MONDO:superClassOf",(>)) :- !.
+src_semantics("MONDO:relatedTo",(~)) :- !.
+src_semantics(_,(-)) :- !.
+
+
+
+
+mondo_equiv_class_via_xref(C,XC,P) :-
+        mondo_equiv_xref(C,X,P),
+        curie_uri(X,XC).
+mondo_equiv_class_via_xref(C,XC) :-
+        mondo_equiv_xref(C,X),
+        curie_uri(X,XC).
+
 
 rare_disease('MONDO:0021200').
 
 rare(C) :- rare_disease(C).
-rare(C) :- equiv_from_xref(C,_,'OMIM').
+rare(C) :- mondo_equiv_xref(C,_,'OMIM').
 
 %! curie_uri(+Literal:literal, ?URI:atom) is semidet
 curie_uri(Literal,URI) :-
@@ -104,8 +131,8 @@ ordo_missing_xref_src(C,X,S) :-
 ext_merged(X1,X2,C) :-
         ext_merged(X1,X2,C,_).
 ext_merged(XC1,XC2,C,P) :-
-        equiv_from_xref(C,X1),
-        equiv_from_xref(C,X2),
+        mondo_equiv_xref(C,X1),
+        mondo_equiv_xref(C,X2),
         curie_prefix(X1,P),
         curie_prefix(X2,P),
         curie_uri(X1,XC1),

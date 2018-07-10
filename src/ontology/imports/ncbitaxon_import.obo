@@ -999,18 +999,6 @@ is_a: NCBITaxon:66360 ! Cochliomyia
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:11552
-name: Influenza C virus
-namespace: ncbi_taxonomy
-alt_id: NCBITaxon:186678
-synonym: "FLUCV" BROAD acronym []
-synonym: "Influenza C viruses" RELATED synonym []
-synonym: "Influenza virus type C" RELATED synonym []
-xref: GC_ID:1
-is_a: NCBITaxon:197913 ! Influenzavirus C
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:11571
 name: Bunyaviridae
 namespace: ncbi_taxonomy
@@ -1978,6 +1966,14 @@ xref: GC_ID:1
 is_a: NCBITaxon:5794 ! Apicomplexa
 
 [Term]
+id: NCBITaxon:12845
+name: Swine influenza virus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:35324 ! unclassified Orthomyxoviridae
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:128827
 name: Erysipelotrichaceae
 namespace: ncbi_taxonomy
@@ -2245,6 +2241,14 @@ is_a: NCBITaxon:203692 ! Spirochaetia
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:136841
+name: Pseudomonas aeruginosa group
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:286 ! Pseudomonas
+property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
+
+[Term]
 id: NCBITaxon:137
 name: Spirochaetaceae
 namespace: ncbi_taxonomy
@@ -2401,6 +2405,13 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:1264859 ! Entomophthoromycotina
 property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:1402491
+name: Pseudomonas aeruginosa CF5
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:287 ! Pseudomonas aeruginosa
 
 [Term]
 id: NCBITaxon:140564
@@ -3799,6 +3810,18 @@ is_a: NCBITaxon:213115 ! Desulfovibrionales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:196
+name: Campylobacter fetus
+namespace: ncbi_taxonomy
+synonym: "Spirillum fetus" RELATED synonym []
+synonym: "Vibrio fetus" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11321120
+xref: PMID:1354478
+is_a: NCBITaxon:194 ! Campylobacter
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1963758
 name: Myomorpha
 namespace: ncbi_taxonomy
@@ -3806,19 +3829,6 @@ synonym: "Sciurognathi" RELATED in_part []
 xref: GC_ID:1
 is_a: NCBITaxon:9989 ! Rodentia
 property_value: has_rank NCBITaxon:suborder
-
-[Term]
-id: NCBITaxon:197
-name: Campylobacter jejuni
-namespace: ncbi_taxonomy
-synonym: "Ampylobacter jejuni" RELATED misspelling []
-synonym: "Campylobacter fetus subsp. jejuni" RELATED synonym []
-synonym: "Vibrio hepaticus" RELATED synonym []
-synonym: "Vibrio jejuni" RELATED synonym []
-xref: GC_ID:11
-xref: PMID:11321120
-is_a: NCBITaxon:194 ! Campylobacter
-property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:197562
@@ -4685,6 +4695,34 @@ xref: PMID:7727274
 xref: PMID:9103607
 is_a: NCBITaxon:135621 ! Pseudomonadaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:287
+name: Pseudomonas aeruginosa
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1224290
+alt_id: NCBITaxon:1437768
+alt_id: NCBITaxon:1437769
+alt_id: NCBITaxon:1437770
+alt_id: NCBITaxon:1683559
+alt_id: NCBITaxon:1683561
+alt_id: NCBITaxon:1860124
+alt_id: NCBITaxon:931955
+alt_id: NCBITaxon:931956
+alt_id: NCBITaxon:931957
+alt_id: NCBITaxon:931958
+alt_id: NCBITaxon:932477
+synonym: "Bacillus aeruginosus" RELATED synonym []
+synonym: "Bacillus pyocyaneus" RELATED synonym []
+synonym: "Bacterium aeruginosum" RELATED synonym []
+synonym: "Bacterium pyocyaneum" RELATED synonym []
+synonym: "Micrococcus pyocyaneus" RELATED synonym []
+synonym: "Peudomonas aeruginosa" RELATED misspelling []
+synonym: "Pseudomonas polycolor" RELATED synonym []
+synonym: "Pseudomonas pyocyanea" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:136841 ! Pseudomonas aeruginosa group
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:28843
@@ -5791,6 +5829,13 @@ xref: GC_ID:1
 is_a: NCBITaxon:439488 ! ssRNA viruses
 
 [Term]
+id: NCBITaxon:35324
+name: unclassified Orthomyxoviridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:11308 ! Orthomyxoviridae
+
+[Term]
 id: NCBITaxon:35325
 name: dsRNA viruses
 namespace: ncbi_taxonomy
@@ -6511,6 +6556,23 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:6340 ! Annelida
 property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:42230
+name: Mansonella
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6296 ! Onchocercidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:42231
+name: Mansonella perstans
+namespace: ncbi_taxonomy
+synonym: "Dipetalonema perstans" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:42230 ! Mansonella
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:422676
@@ -9090,6 +9152,15 @@ is_a: NCBITaxon:6295 ! Filarioidea
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:630
+name: Yersinia enterocolitica
+namespace: ncbi_taxonomy
+synonym: "Bacterium enterocoliticum" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:629 ! Yersinia <bacteria>
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:6308
 name: Strongylida
 namespace: ncbi_taxonomy
@@ -9153,6 +9224,23 @@ alt_id: NCBITaxon:6331
 xref: GC_ID:1
 is_a: NCBITaxon:1457286 ! Dorylaimia
 property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:633
+name: Yersinia pseudotuberculosis
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1161941
+synonym: "[Pasteurella] lymphangitidis" RELATED misspelling []
+synonym: "Bacillus pseudotuberkulosis" RELATED synonym []
+synonym: "Bacterium pseudotuberculosis" RELATED synonym []
+synonym: "Pasteurella lymphangitidis" RELATED synonym []
+synonym: "Pasteurella pseudotuberculosis" RELATED synonym []
+synonym: "Shigella pseudotuberculosis" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:2223608
+xref: PMID:23919959
+is_a: NCBITaxon:1649845 ! Yersinia pseudotuberculosis complex
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:6332
@@ -9436,6 +9524,15 @@ synonym: "Lujo virus" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:1653394 ! Mammarenavirus
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:652611
+name: Pseudomonas aeruginosa PA14
+namespace: ncbi_taxonomy
+synonym: "Pseudomonas aeruginosa str. PA14" EXACT equivalent_name []
+synonym: "Pseudomonas aeruginosa strain PA14" EXACT equivalent_name []
+xref: GC_ID:11
+is_a: NCBITaxon:287 ! Pseudomonas aeruginosa
 
 [Term]
 id: NCBITaxon:65647

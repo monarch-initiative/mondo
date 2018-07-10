@@ -410,6 +410,29 @@ intersection_of: RO:0002213 GO:0016068 ! positively regulates type I hypersensit
 relationship: RO:0002213 GO:0016068 ! positively regulates type I hypersensitivity
 
 [Term]
+id: GO:0001838
+name: embryonic epithelial tube formation
+def: "The morphogenesis of an embryonic epithelium into a tube-shaped structure." []
+is_a: GO:0072175 ! epithelial tube formation
+relationship: BFO:0000050 GO:0016331 ! part of morphogenesis of embryonic epithelium
+
+[Term]
+id: GO:0001841
+name: neural tube formation
+def: "The formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system." []
+synonym: "neural tube morphogenesis" EXACT []
+synonym: "neurulation" EXACT []
+is_a: GO:0001838 ! embryonic epithelial tube formation
+relationship: BFO:0000050 GO:0021915 ! part of neural tube development
+
+[Term]
+id: GO:0001843
+name: neural tube closure
+def: "The last step in the formation of the neural tube, where the paired neural folds are brought together and fuse at the dorsal midline." []
+is_a: GO:0060606 ! tube closure
+relationship: BFO:0000050 GO:0014020 ! part of primary neural tube formation
+
+[Term]
 id: GO:0001848
 name: complement binding
 def: "Interacting selectively and non-covalently with any component or product of the complement cascade." []
@@ -496,6 +519,14 @@ name: startle response
 def: "An action or movement due to the application of a sudden unexpected stimulus." []
 is_a: GO:0009605 ! response to external stimulus
 is_a: GO:0050905 ! neuromuscular process
+
+[Term]
+id: GO:0002009
+name: morphogenesis of an epithelium
+def: "The process in which the anatomical structures of epithelia are generated and organized. An epithelium consists of closely packed cells arranged in one or more layers, that covers the outer surfaces of the body or lines any internal cavity or tube." []
+synonym: "epithelium morphogenesis" EXACT []
+is_a: GO:0048729 ! tissue morphogenesis
+relationship: BFO:0000050 GO:0060429 ! part of epithelium development
 
 [Term]
 id: GO:0002082
@@ -1297,6 +1328,88 @@ intersection_of: RO:0002213 GO:0002460 ! positively regulates adaptive immune re
 relationship: RO:0002213 GO:0002460 ! positively regulates adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
 
 [Term]
+id: GO:0002825
+name: regulation of T-helper 1 type immune response
+def: "Any process that modulates the frequency, rate, or extent of a T-helper 1 type immune response." []
+is_a: GO:0002822 ! regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042088 ! regulates T-helper 1 type immune response
+relationship: RO:0002211 GO:0042088 ! regulates T-helper 1 type immune response
+
+[Term]
+id: GO:0002826
+name: negative regulation of T-helper 1 type immune response
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of a T-helper 1 type immune response." []
+synonym: "down regulation of T-helper 1 type immune response" EXACT []
+synonym: "down-regulation of T-helper 1 type immune response" EXACT []
+synonym: "downregulation of T-helper 1 type immune response" EXACT []
+synonym: "inhibition of T-helper 1 type immune response" NARROW []
+is_a: GO:0002823 ! negative regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+is_a: GO:0002825 ! regulation of T-helper 1 type immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042088 ! negatively regulates T-helper 1 type immune response
+relationship: RO:0002212 GO:0042088 ! negatively regulates T-helper 1 type immune response
+
+[Term]
+id: GO:0002827
+name: positive regulation of T-helper 1 type immune response
+def: "Any process that activates or increases the frequency, rate, or extent of a T-helper 1 type immune response." []
+synonym: "activation of T-helper 1 type immune response" NARROW []
+synonym: "stimulation of T-helper 1 type immune response" NARROW []
+synonym: "up regulation of T-helper 1 type immune response" EXACT []
+synonym: "up-regulation of T-helper 1 type immune response" EXACT []
+synonym: "upregulation of T-helper 1 type immune response" EXACT []
+is_a: GO:0002824 ! positive regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+is_a: GO:0002825 ! regulation of T-helper 1 type immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042088 ! positively regulates T-helper 1 type immune response
+relationship: RO:0002213 GO:0042088 ! positively regulates T-helper 1 type immune response
+
+[Term]
+id: GO:0002828
+name: regulation of type 2 immune response
+def: "Any process that modulates the frequency, rate, or extent of a type 2 immune response." []
+synonym: "regulation of T-helper 2 type immune response" NARROW []
+synonym: "regulation of Th2 immune response" NARROW []
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042092 ! regulates type 2 immune response
+relationship: RO:0002211 GO:0042092 ! regulates type 2 immune response
+
+[Term]
+id: GO:0002829
+name: negative regulation of type 2 immune response
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of a type 2 immune response." []
+synonym: "down regulation of type 2 immune response" EXACT []
+synonym: "down-regulation of type 2 immune response" EXACT []
+synonym: "downregulation of type 2 immune response" EXACT []
+synonym: "inhibition of type 2 immune response" NARROW []
+synonym: "negative regulation of T-helper 2 type immune response" NARROW []
+synonym: "negative regulation of Th2 immune response" NARROW []
+is_a: GO:0002828 ! regulation of type 2 immune response
+is_a: GO:0050777 ! negative regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042092 ! negatively regulates type 2 immune response
+relationship: RO:0002212 GO:0042092 ! negatively regulates type 2 immune response
+
+[Term]
+id: GO:0002830
+name: positive regulation of type 2 immune response
+def: "Any process that activates or increases the frequency, rate, or extent of a type 2 immune response." []
+synonym: "activation of type 2 immune response" NARROW []
+synonym: "positive regulation of T-helper 2 type immune response" NARROW []
+synonym: "positive regulation of Th2 immune response" NARROW []
+synonym: "stimulation of type 2 immune response" NARROW []
+synonym: "up regulation of type 2 immune response" EXACT []
+synonym: "up-regulation of type 2 immune response" EXACT []
+synonym: "upregulation of type 2 immune response" EXACT []
+is_a: GO:0002828 ! regulation of type 2 immune response
+is_a: GO:0050778 ! positive regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042092 ! positively regulates type 2 immune response
+relationship: RO:0002213 GO:0042092 ! positively regulates type 2 immune response
+
+[Term]
 id: GO:0002861
 name: regulation of inflammatory response to antigenic stimulus
 def: "Any process that modulates the frequency, rate, or extent of an inflammatory response to an antigenic stimulus." []
@@ -1712,6 +1825,28 @@ synonym: "pyrroline-5-carboxylic acid dehydrogenase activity" EXACT []
 is_a: GO:0016646 ! oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor
 
 [Term]
+id: GO:0003867
+name: 4-aminobutyrate transaminase activity
+def: "Catalysis of the reaction: 4-aminobutanoate + amino group acceptor = succinate semialdehyde + amino acid." []
+synonym: "4-aminobutanoate transaminase activity" EXACT []
+synonym: "4-aminobutyrate aminotransferase activity" EXACT []
+synonym: "4-aminobutyric acid aminotransferase activity" EXACT []
+synonym: "aminobutyrate aminotransferase activity" EXACT []
+synonym: "aminobutyrate transaminase activity" EXACT []
+synonym: "beta-alanine aminotransferase" RELATED []
+synonym: "GABA aminotransferase activity" EXACT []
+synonym: "GABA transaminase activity" EXACT []
+synonym: "GABA transferase activity" EXACT []
+synonym: "gamma-amino-N-butyrate transaminase activity" EXACT []
+synonym: "gamma-aminobutyrate aminotransaminase activity" EXACT []
+synonym: "gamma-aminobutyrate transaminase activity" EXACT []
+synonym: "gamma-aminobutyric acid aminotransferase activity" EXACT []
+synonym: "gamma-aminobutyric acid transaminase activity" EXACT []
+synonym: "gamma-aminobutyric transaminase activity" EXACT []
+synonym: "glutamate-succinic semialdehyde transaminase activity" EXACT []
+is_a: GO:0008483 ! transaminase activity
+
+[Term]
 id: GO:0003872
 name: 6-phosphofructokinase activity
 def: "Catalysis of the reaction: ATP + D-fructose-6-phosphate = ADP + D-fructose 1,6-bisphosphate." []
@@ -1899,6 +2034,21 @@ synonym: "phosphosaccharomutase activity" BROAD []
 is_a: GO:0016861 ! intramolecular oxidoreductase activity, interconverting aldoses and ketoses
 
 [Term]
+id: GO:0004351
+name: glutamate decarboxylase activity
+def: "Catalysis of the reaction: L-glutamate = 4-aminobutanoate + CO2." []
+synonym: "aspartic alpha-decarboxylase" BROAD []
+synonym: "cysteic acid decarboxylase activity" EXACT []
+synonym: "gamma-glutamate decarboxylase activity" EXACT []
+synonym: "L-aspartate-alpha-decarboxylase activity" EXACT []
+synonym: "L-glutamate 1-carboxy-lyase (4-aminobutanoate-forming)" EXACT []
+synonym: "L-glutamate 1-carboxy-lyase activity" EXACT []
+synonym: "L-glutamate alpha-decarboxylase activity" EXACT []
+synonym: "L-glutamic acid decarboxylase activity" EXACT []
+synonym: "L-glutamic decarboxylase activity" EXACT []
+is_a: GO:0016831 ! carboxy-lyase activity
+
+[Term]
 id: GO:0004357
 name: glutamate-cysteine ligase activity
 def: "Catalysis of the reaction: L-cysteine + L-glutamate + ATP = L-gamma-glutamyl-L-cysteine + ADP + 2 H(+) + phosphate." []
@@ -1951,6 +2101,12 @@ synonym: "sulfoiduronate sulfohydrolase activity" EXACT []
 is_a: GO:0008484 ! sulfuric ester hydrolase activity
 
 [Term]
+id: GO:0004457
+name: lactate dehydrogenase activity
+def: "Catalysis of the reaction: lactate + NAD+ = H+ + NADH + pyruvate." []
+is_a: GO:0016614 ! oxidoreductase activity, acting on CH-OH group of donors
+
+[Term]
 id: GO:0004466
 name: long-chain-acyl-CoA dehydrogenase activity
 def: "Catalysis of the reaction: acyl-CoA + ETF = 2,3-dehydroacyl-CoA + reduced ETF." []
@@ -1960,6 +2116,38 @@ synonym: "long-chain-acyl-CoA:acceptor 2,3-oxidoreductase activity" EXACT []
 synonym: "palmitoyl-CoA dehydrogenase activity" EXACT []
 synonym: "palmitoyl-coenzyme A dehydrogenase activity" EXACT []
 is_a: GO:0003995 ! acyl-CoA dehydrogenase activity
+
+[Term]
+id: GO:0004485
+name: methylcrotonoyl-CoA carboxylase activity
+def: "Catalysis of the reaction: 3-methylbut-2-enoyl-CoA + ATP + bicarbonate = trans-3-methylglutaconyl-CoA + ADP + 2 H(+) + phosphate." []
+synonym: "3-methylcrotonoyl-CoA:carbon-dioxide ligase (ADP-forming)" EXACT []
+synonym: "beta-methylcrotonyl CoA carboxylase activity" EXACT []
+synonym: "beta-methylcrotonyl coenzyme A carboxylase activity" EXACT []
+synonym: "beta-methylcrotonyl-CoA carboxylase activity" EXACT []
+synonym: "MCCC activity" EXACT []
+synonym: "methylcrotonyl coenzyme A carboxylase activity" EXACT []
+synonym: "methylcrotonyl-CoA carboxylase activity" EXACT []
+is_a: GO:0016421 ! CoA carboxylase activity
+
+[Term]
+id: GO:0004497
+name: monooxygenase activity
+def: "Catalysis of the incorporation of one atom from molecular oxygen into a compound and the reduction of the other atom of oxygen to water." []
+synonym: "hydroxylase activity" RELATED []
+is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
+id: GO:0004509
+name: steroid 21-monooxygenase activity
+def: "Catalysis of the reaction: a steroid + donor-H2 + O2 = a 21-hydroxysteroid + acceptor + H2O." []
+synonym: "21-hydroxylase activity" EXACT []
+synonym: "cytochrome P450 CYP21A1" NARROW []
+synonym: "cytochrome p450 XXIA1 activity" NARROW []
+synonym: "steroid 21-hydroxylase activity" EXACT []
+synonym: "steroid,hydrogen-donor:oxygen oxidoreductase (21-hydroxylating)" EXACT []
+is_a: GO:0008395 ! steroid hydroxylase activity
+is_a: GO:0016705 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen
 
 [Term]
 id: GO:0004553
@@ -2121,6 +2309,29 @@ synonym: "phosphoenol transphosphorylase activity" EXACT []
 synonym: "phosphoenolpyruvate kinase activity" EXACT []
 is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
 relationship: BFO:0000050 GO:0006096 ! part of glycolytic process
+
+[Term]
+id: GO:0004749
+name: ribose phosphate diphosphokinase activity
+def: "Catalysis of the reaction: D-ribose 5-phosphate + ATP = 5-phospho-alpha-D-ribose 1-diphosphate + AMP + 2 H(+)." []
+synonym: "5-phosphoribose pyrophosphorylase activity" EXACT []
+synonym: "5-phosphoribosyl-1-pyrophosphate synthetase activity" EXACT []
+synonym: "5-phosphoribosyl-alpha-1-pyrophosphate synthetase activity" EXACT []
+synonym: "ATP:D-ribose-5-phosphate diphosphotransferase activity" EXACT []
+synonym: "phosphoribosyl diphosphate synthetase activity" EXACT []
+synonym: "phosphoribosyl pyrophosphate synthetase activity" EXACT []
+synonym: "phosphoribosyl-diphosphate synthetase activity" EXACT []
+synonym: "phosphoribosylpyrophosphate synthase activity" EXACT []
+synonym: "phosphoribosylpyrophosphate synthetase activity" EXACT []
+synonym: "PP-ribose P synthetase activity" EXACT []
+synonym: "PPRibP synthetase activity" EXACT []
+synonym: "PRPP synthetase activity" EXACT []
+synonym: "pyrophosphoribosylphosphate synthetase activity" EXACT []
+synonym: "ribophosphate pyrophosphokinase activity" EXACT []
+synonym: "ribose-5-phosphate pyrophosphokinase activity" EXACT []
+synonym: "ribose-phosphate diphosphokinase activity" EXACT []
+synonym: "ribose-phosphate pyrophosphokinase activity" EXACT []
+is_a: GO:0016778 ! diphosphotransferase activity
 
 [Term]
 id: GO:0004807
@@ -2324,6 +2535,13 @@ synonym: "cation diffusion facilitator activity" EXACT []
 synonym: "non-selective cation channel activity" NARROW []
 is_a: GO:0005216 ! ion channel activity
 is_a: GO:0022890 ! inorganic cation transmembrane transporter activity
+
+[Term]
+id: GO:0005262
+name: calcium channel activity
+def: "Enables the facilitated diffusion of a calcium ion (by an energy-independent process) involving passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism." []
+is_a: GO:0005261 ! cation channel activity
+is_a: GO:0015085 ! calcium ion transmembrane transporter activity
 
 [Term]
 id: GO:0005488
@@ -3765,6 +3983,15 @@ synonym: "di-, tri-valent inorganic cation transport" NARROW []
 is_a: GO:0006811 ! ion transport
 
 [Term]
+id: GO:0006816
+name: calcium ion transport
+def: "The directed movement of calcium (Ca) ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "calcium transport" EXACT []
+synonym: "mitochondrial sodium/calcium ion exchange" NARROW []
+synonym: "sodium:calcium exchange" NARROW []
+is_a: GO:0070838 ! divalent metal ion transport
+
+[Term]
 id: GO:0006820
 name: anion transport
 def: "The directed movement of anions, atoms or small molecules with a net negative charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
@@ -3888,6 +4115,13 @@ def: "Any process involved in the maintenance of an internal steady state of iro
 synonym: "iron homeostasis" BROAD []
 is_a: GO:0046916 ! cellular transition metal ion homeostasis
 is_a: GO:0055072 ! iron ion homeostasis
+
+[Term]
+id: GO:0006885
+name: regulation of pH
+def: "Any process involved in the maintenance of an internal equilibrium of hydrogen ions, thereby modulating the internal pH, within an organism or cell." []
+synonym: "hydrogen ion homeostasis" EXACT []
+is_a: GO:0055067 ! monovalent inorganic cation homeostasis
 
 [Term]
 id: GO:0006897
@@ -4508,6 +4742,13 @@ is_a: GO:0004888 ! transmembrane signaling receptor activity
 relationship: BFO:0000051 GO:0016595 ! has_part glutamate binding
 
 [Term]
+id: GO:0008080
+name: N-acetyltransferase activity
+def: "Catalysis of the transfer of an acetyl group to a nitrogen atom on the acceptor molecule." []
+is_a: GO:0016407 ! acetyltransferase activity
+is_a: GO:0016410 ! N-acyltransferase activity
+
+[Term]
 id: GO:0008144
 name: drug binding
 def: "Interacting selectively and non-covalently with a drug, any naturally occurring or synthetic substance, other than a nutrient, that, when administered or applied to an organism, affects the structure or functioning of the organism; in particular, any such substance used in the diagnosis, prevention, or treatment of disease." []
@@ -4667,6 +4908,14 @@ synonym: "pre-mRNA splicing factor activity" RELATED []
 is_a: GO:0006396 ! RNA processing
 
 [Term]
+id: GO:0008395
+name: steroid hydroxylase activity
+def: "Catalysis of the formation of a hydroxyl group on a steroid by incorporation of oxygen from O2." []
+synonym: "cytochrome P450 CYP2G1" NARROW []
+synonym: "olfactory-specific steroid hydroxylase activity" NARROW []
+is_a: GO:0004497 ! monooxygenase activity
+
+[Term]
 id: GO:0008434
 name: calcitriol receptor activity
 def: "Combining with calcitriol, the hormonally active form of vitamin D3, and transmitting the signal to the transcriptional machinery by interacting selectively and non-covalently with a specific DNA sequence in order to modulate transcription by RNA polymerase II." []
@@ -4696,6 +4945,13 @@ def: "Catalysis of the reaction: H(2)O + O(2) + sulfite = H(2)O(2) + H(+) + sulf
 synonym: "sulfite:oxygen oxidoreductase activity" EXACT []
 synonym: "sulphite oxidase activity" EXACT []
 is_a: GO:0016670 ! oxidoreductase activity, acting on a sulfur group of donors, oxygen as acceptor
+
+[Term]
+id: GO:0008483
+name: transaminase activity
+def: "Catalysis of the transfer of an amino group to an acceptor, usually a 2-oxo acid." []
+synonym: "aminotransferase activity" EXACT []
+is_a: GO:0016769 ! transferase activity, transferring nitrogenous groups
 
 [Term]
 id: GO:0008484
@@ -6048,6 +6304,12 @@ intersection_of: RO:0002212 GO:0007154 ! negatively regulates cell communication
 relationship: RO:0002212 GO:0007154 ! negatively regulates cell communication
 
 [Term]
+id: GO:0010669
+name: epithelial structure maintenance
+def: "A tissue homeostatic process required for the maintenance of epithelial structure." []
+is_a: GO:0001894 ! tissue homeostasis
+
+[Term]
 id: GO:0010675
 name: regulation of cellular carbohydrate metabolic process
 def: "Any process that modulates the rate, extent or frequency of the chemical reactions and pathways involving carbohydrates, any of a group of organic compounds based of the general formula Cx(H2O)y, as carried out by individual cells." []
@@ -6421,6 +6683,15 @@ relationship: BFO:0000051 GO:0005773 ! has_part vacuole
 relationship: BFO:0000051 GO:0005886 ! has_part plasma membrane
 
 [Term]
+id: GO:0014020
+name: primary neural tube formation
+def: "The formation of the neural tube from an epithelial cell sheet (the neuroepithelium or neural plate). In primary neurulation, the cells surrounding the neural plate direct the neural plate cells to proliferate, invaginate, and pinch off from the surface to form a hollow epithelial tube. Primary neurulation is the typical mechanism of formation of the anterior neural tube." []
+synonym: "primary neural tube morphogenesis" EXACT []
+synonym: "primary neurulation" EXACT []
+is_a: GO:0001838 ! embryonic epithelial tube formation
+relationship: BFO:0000050 GO:0001841 ! part of neural tube formation
+
+[Term]
 id: GO:0014031
 name: mesenchymal cell development
 def: "The process aimed at the progression of a mesenchymal cell over time, from initial commitment of the cell to its specific fate, to the fully functional differentiated cell." []
@@ -6456,6 +6727,13 @@ def: "Enables the transfer of an ion from one side of a membrane to the other." 
 synonym: "ion transporter activity" EXACT []
 is_a: GO:0022857 ! transmembrane transporter activity
 relationship: BFO:0000050 GO:0034220 ! part of ion transmembrane transport
+
+[Term]
+id: GO:0015085
+name: calcium ion transmembrane transporter activity
+def: "Enables the transfer of calcium (Ca) ions from one side of a membrane to the other." []
+is_a: GO:0046873 ! metal ion transmembrane transporter activity
+relationship: BFO:0000050 GO:0070588 ! part of calcium ion transmembrane transport
 
 [Term]
 id: GO:0015103
@@ -6863,6 +7141,18 @@ intersection_of: BFO:0000050 GO:0098869 ! part of cellular oxidant detoxificatio
 relationship: BFO:0000050 GO:0098869 ! part of cellular oxidant detoxification
 
 [Term]
+id: GO:0016250
+name: N-sulfoglucosamine sulfohydrolase activity
+def: "Catalysis of the reaction: N-sulfo-D-glucosamine + H2O = D-glucosamine + sulfate." []
+synonym: "2-desoxy-D-glucoside-2-sulphamate sulphohydrolase (sulphamate sulphohydrolase)" EXACT []
+synonym: "heparin sulfamidase activity" EXACT []
+synonym: "N-sulfo-D-glucosamine sulfohydrolase activity" EXACT []
+synonym: "N-sulphoglucosamine sulphohydrolase activity" EXACT []
+synonym: "sulfoglucosamine sulfamidase activity" EXACT []
+synonym: "sulphamidase activity" EXACT []
+is_a: GO:0016826 ! hydrolase activity, acting on acid sulfur-nitrogen bonds
+
+[Term]
 id: GO:0016301
 name: kinase activity
 def: "Catalysis of the transfer of a phosphate group, usually from ATP, to a substrate molecule." []
@@ -6875,6 +7165,32 @@ id: GO:0016310
 name: phosphorylation
 def: "The process of introducing a phosphate group into a molecule, usually with the formation of a phosphoric ester, a phosphoric anhydride or a phosphoric amide." []
 is_a: GO:0006796 ! phosphate-containing compound metabolic process
+
+[Term]
+id: GO:0016331
+name: morphogenesis of embryonic epithelium
+def: "The process in which the anatomical structures of embryonic epithelia are generated and organized." []
+is_a: GO:0002009 ! morphogenesis of an epithelium
+is_a: GO:0048598 ! embryonic morphogenesis
+
+[Term]
+id: GO:0016407
+name: acetyltransferase activity
+def: "Catalysis of the transfer of an acetyl group to an acceptor molecule." []
+synonym: "acetylase activity" EXACT []
+is_a: GO:0016747 ! transferase activity, transferring acyl groups other than amino-acyl groups
+
+[Term]
+id: GO:0016410
+name: N-acyltransferase activity
+def: "Catalysis of the transfer of an acyl group to a nitrogen atom on the acceptor molecule." []
+is_a: GO:0016747 ! transferase activity, transferring acyl groups other than amino-acyl groups
+
+[Term]
+id: GO:0016421
+name: CoA carboxylase activity
+def: "Catalysis of the joining of a carboxyl group to a molecule that is attached to CoA, with the concomitant hydrolysis of the diphosphate bond in ATP or a similar triphosphate." []
+is_a: GO:0016885 ! ligase activity, forming carbon-carbon bonds
 
 [Term]
 id: GO:0016469
@@ -7002,6 +7318,13 @@ def: "Catalysis of an oxidation-reduction (redox) reaction in which the peroxide
 is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
+id: GO:0016705
+name: oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen
+def: "Catalysis of an oxidation-reduction (redox) reaction in which hydrogen or electrons are transferred from each of two donors, and molecular oxygen is reduced or incorporated into a donor." []
+synonym: "oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, miscellaneous" NARROW []
+is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
 id: GO:0016740
 name: transferase activity
 def: "Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." []
@@ -7013,6 +7336,13 @@ name: transferase activity, transferring acyl groups
 def: "Catalysis of the transfer of an acyl group from one compound (donor) to another (acceptor)." []
 synonym: "acyltransferase activity" EXACT []
 is_a: GO:0016740 ! transferase activity
+
+[Term]
+id: GO:0016747
+name: transferase activity, transferring acyl groups other than amino-acyl groups
+def: "Catalysis of the transfer of an acyl group, other than amino-acyl, from one compound (donor) to another (acceptor)." []
+synonym: "transferase activity, transferring groups other than amino-acyl groups" EXACT []
+is_a: GO:0016746 ! transferase activity, transferring acyl groups
 
 [Term]
 id: GO:0016755
@@ -7027,6 +7357,13 @@ id: GO:0016765
 name: transferase activity, transferring alkyl or aryl (other than methyl) groups
 def: "Catalysis of the transfer of an alkyl or aryl (but not methyl) group from one compound (donor) to another (acceptor)." []
 synonym: "transferase activity, transferring alkyl or aryl groups, other than methyl groups" EXACT []
+is_a: GO:0016740 ! transferase activity
+
+[Term]
+id: GO:0016769
+name: transferase activity, transferring nitrogenous groups
+def: "Catalysis of the transfer of a nitrogenous group from one compound (donor) to another (acceptor)." []
+synonym: "transferase activity, transferring other nitrogenous groups" NARROW []
 is_a: GO:0016740 ! transferase activity
 
 [Term]
@@ -7045,6 +7382,12 @@ is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing grou
 id: GO:0016774
 name: phosphotransferase activity, carboxyl group as acceptor
 def: "Catalysis of the transfer of a phosphorus-containing group from one compound (donor) to a carboxyl group (acceptor)." []
+is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
+
+[Term]
+id: GO:0016778
+name: diphosphotransferase activity
+def: "Catalysis of the transfer of a diphosphate group from one compound (donor) to a another (acceptor)." []
 is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
 
 [Term]
@@ -7093,6 +7436,13 @@ id: GO:0016814
 name: hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines
 def: "Catalysis of the hydrolysis of any non-peptide carbon-nitrogen bond in a cyclic amidine, a compound of the form R-C(=NH)-NH2." []
 is_a: GO:0016810 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds
+
+[Term]
+id: GO:0016826
+name: hydrolase activity, acting on acid sulfur-nitrogen bonds
+def: "Catalysis of the hydrolysis of any acid sulfur-nitrogen bond." []
+synonym: "hydrolase activity, acting on acid sulphur-nitrogen bonds" EXACT []
+is_a: GO:0016787 ! hydrolase activity
 
 [Term]
 id: GO:0016829
@@ -7195,6 +7545,12 @@ synonym: "peptide synthase activity" EXACT []
 is_a: GO:0016879 ! ligase activity, forming carbon-nitrogen bonds
 
 [Term]
+id: GO:0016885
+name: ligase activity, forming carbon-carbon bonds
+def: "Catalysis of the joining of two molecules via a carbon-carbon bond, with the concomitant hydrolysis of the diphosphate bond in ATP or a similar triphosphate." []
+is_a: GO:0016874 ! ligase activity
+
+[Term]
 id: GO:0016903
 name: oxidoreductase activity, acting on the aldehyde or oxo group of donors
 def: "Catalysis of an oxidation-reduction (redox) reaction in which an aldehyde or ketone (oxo) group acts as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." []
@@ -7272,6 +7628,14 @@ synonym: "heterocycle formation" EXACT []
 synonym: "heterocycle synthesis" EXACT []
 is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0046483 ! heterocycle metabolic process
+
+[Term]
+id: GO:0018271
+name: biotin-protein ligase activity
+def: "Catalysis of the reaction: ATP + biotin + protein = AMP + diphosphate + biotin-protein." []
+synonym: "biotin-apoprotein ligase activity" EXACT []
+is_a: GO:0016879 ! ligase activity, forming carbon-nitrogen bonds
+is_a: GO:0140096 ! catalytic activity, acting on a protein
 
 [Term]
 id: GO:0018904
@@ -7680,6 +8044,15 @@ def: "Interacting selectively and non-covalently with a cytokine, any of a group
 synonym: "IL binding" NARROW []
 synonym: "interleukin binding" NARROW []
 is_a: GO:0005515 ! protein binding
+
+[Term]
+id: GO:0021915
+name: neural tube development
+def: "The process whose specific outcome is the progression of the neural tube over time, from its formation to the mature structure. The mature structure of the neural tube exists when the tube has been segmented into the forebrain, midbrain, hindbrain and spinal cord regions. In addition neural crest has budded away from the epithelium." []
+is_a: GO:0035295 ! tube development
+is_a: GO:0060429 ! epithelium development
+relationship: BFO:0000050 GO:0007399 ! part of nervous system development
+relationship: BFO:0000050 GO:0043009 ! part of chordate embryonic development
 
 [Term]
 id: GO:0022407
@@ -9615,6 +9988,44 @@ intersection_of: GO:0016021 ! integral component of membrane
 intersection_of: BFO:0000050 GO:0031966 ! part of mitochondrial membrane
 
 [Term]
+id: GO:0032768
+name: regulation of monooxygenase activity
+def: "Any process that modulates the activity of a monooxygenase." []
+is_a: GO:0051341 ! regulation of oxidoreductase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0004497 ! regulates monooxygenase activity
+relationship: RO:0002211 GO:0004497 ! regulates monooxygenase activity
+
+[Term]
+id: GO:0032769
+name: negative regulation of monooxygenase activity
+def: "Any process that stops or reduces the activity of a monooxygenase." []
+synonym: "down regulation of monooxygenase activity" EXACT []
+synonym: "down-regulation of monooxygenase activity" EXACT []
+synonym: "downregulation of monooxygenase activity" EXACT []
+synonym: "inhibition of monooxygenase activity" NARROW []
+is_a: GO:0032768 ! regulation of monooxygenase activity
+is_a: GO:0051354 ! negative regulation of oxidoreductase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0004497 ! negatively regulates monooxygenase activity
+relationship: RO:0002212 GO:0004497 ! negatively regulates monooxygenase activity
+
+[Term]
+id: GO:0032770
+name: positive regulation of monooxygenase activity
+def: "Any process that activates or increases the activity of a monooxygenase." []
+synonym: "activation of monooxygenase activity" NARROW []
+synonym: "stimulation of monooxygenase activity" NARROW []
+synonym: "up regulation of monooxygenase activity" EXACT []
+synonym: "up-regulation of monooxygenase activity" EXACT []
+synonym: "upregulation of monooxygenase activity" EXACT []
+is_a: GO:0032768 ! regulation of monooxygenase activity
+is_a: GO:0051353 ! positive regulation of oxidoreductase activity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0004497 ! positively regulates monooxygenase activity
+relationship: RO:0002213 GO:0004497 ! positively regulates monooxygenase activity
+
+[Term]
 id: GO:0032774
 name: RNA biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of RNA, ribonucleic acid, one of the two main type of nucleic acid, consisting of a long, unbranched macromolecule formed from ribonucleotides joined in 3',5'-phosphodiester linkage. Includes polymerization of ribonucleotide monomers. Refers not only to transcription but also to e.g. viral RNA replication." []
@@ -10460,6 +10871,15 @@ is_a: GO:0030154 ! cell differentiation
 relationship: BFO:0000050 GO:0007507 ! part of heart development
 
 [Term]
+id: GO:0035148
+name: tube formation
+def: "Creation of the central hole of a tube in an anatomical structure through which gases and/or liquids flow." []
+synonym: "lumen formation in an anatomical structure" RELATED []
+synonym: "tube lumen formation" EXACT []
+is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
+relationship: BFO:0000050 GO:0035239 ! part of tube morphogenesis
+
+[Term]
 id: GO:0035150
 name: regulation of tube size
 def: "Ensuring that a tube is of the correct length and diameter. Tube size must be maintained not only during tube formation, but also throughout development and in some physiological processes." []
@@ -10838,6 +11258,21 @@ is_a: GO:0080090 ! regulation of primary metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006584 ! regulates catecholamine metabolic process
 relationship: RO:0002211 GO:0006584 ! regulates catecholamine metabolic process
+
+[Term]
+id: GO:0042088
+name: T-helper 1 type immune response
+def: "An immune response which is associated with resistance to intracellular bacteria, fungi, and protozoa, and pathological conditions such as arthritis, and which is typically orchestrated by the production of particular cytokines by T-helper 1 cells, most notably interferon-gamma, IL-2, and lymphotoxin." []
+synonym: "Th1 immune response" EXACT []
+is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+
+[Term]
+id: GO:0042092
+name: type 2 immune response
+def: "An immune response which is associated with resistance to extracellular organisms such as helminths and pathological conditions such as allergy, which is orchestrated by the production of particular cytokines, most notably IL-4, IL-5, IL-10, and IL-13, by any of a variety of cell types including T-helper 2 cells, eosinophils, basophils, mast cells, and nuocytes, resulting in enhanced production of certain antibody isotypes and other effects." []
+synonym: "T-helper 2 type immune response" NARROW []
+synonym: "Th2 immune response" NARROW []
+is_a: GO:0006955 ! immune response
 
 [Term]
 id: GO:0042110
@@ -14200,6 +14635,19 @@ intersection_of: RO:0002213 GO:0046849 ! positively regulates bone remodeling
 relationship: RO:0002213 GO:0046849 ! positively regulates bone remodeling
 
 [Term]
+id: GO:0046873
+name: metal ion transmembrane transporter activity
+def: "Enables the transfer of metal ions from one side of a membrane to the other." []
+synonym: "heavy metal ion porter activity" NARROW []
+synonym: "heavy metal ion transporter activity" NARROW []
+synonym: "heavy metal ion:hydrogen symporter activity" NARROW []
+synonym: "heavy metal-exporting ATPase activity" NARROW []
+synonym: "high affinity metal ion uptake transporter activity" NARROW []
+synonym: "low affinity metal ion uptake transporter activity" NARROW []
+is_a: GO:0022890 ! inorganic cation transmembrane transporter activity
+relationship: BFO:0000050 GO:0030001 ! part of metal ion transport
+
+[Term]
 id: GO:0046879
 name: hormone secretion
 def: "The regulated release of hormones, substances with a specific regulatory effect on a particular organ or group of cells." []
@@ -14627,6 +15075,21 @@ synonym: "organismal reproductive process" BROAD []
 synonym: "reproductive process in a multicellular organism" EXACT []
 is_a: GO:0022414 ! reproductive process
 relationship: BFO:0000050 GO:0032504 ! part of multicellular organism reproduction
+
+[Term]
+id: GO:0048646
+name: anatomical structure formation involved in morphogenesis
+def: "The developmental process pertaining to the initial formation of an anatomical structure from unspecified parts. This process begins with the specific processes that contribute to the appearance of the discrete structure and ends when the structural rudiment is recognizable. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." []
+synonym: "formation of an anatomical structure involved in morphogenesis" EXACT []
+is_a: GO:0032502 ! developmental process
+relationship: BFO:0000050 GO:0009653 ! part of anatomical structure morphogenesis
+
+[Term]
+id: GO:0048729
+name: tissue morphogenesis
+def: "The process in which the anatomical structures of a tissue are generated and organized." []
+is_a: GO:0009653 ! anatomical structure morphogenesis
+relationship: BFO:0000050 GO:0009888 ! part of tissue development
 
 [Term]
 id: GO:0048731
@@ -16572,6 +17035,47 @@ is_a: GO:0009987 ! cellular process
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0051924
+name: regulation of calcium ion transport
+def: "Any process that modulates the frequency, rate or extent of the directed movement of calcium ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "regulation of calcium transport" EXACT []
+is_a: GO:0010959 ! regulation of metal ion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006816 ! regulates calcium ion transport
+relationship: RO:0002211 GO:0006816 ! regulates calcium ion transport
+
+[Term]
+id: GO:0051926
+name: negative regulation of calcium ion transport
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the directed movement of calcium ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "down regulation of calcium ion transport" EXACT []
+synonym: "down-regulation of calcium ion transport" EXACT []
+synonym: "downregulation of calcium ion transport" EXACT []
+synonym: "inhibition of calcium ion transport" NARROW []
+synonym: "negative regulation of calcium transport" EXACT []
+is_a: GO:0043271 ! negative regulation of ion transport
+is_a: GO:0051924 ! regulation of calcium ion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006816 ! negatively regulates calcium ion transport
+relationship: RO:0002212 GO:0006816 ! negatively regulates calcium ion transport
+
+[Term]
+id: GO:0051928
+name: positive regulation of calcium ion transport
+def: "Any process that activates or increases the frequency, rate or extent of the directed movement of calcium ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+synonym: "activation of calcium ion transport" NARROW []
+synonym: "positive regulation of calcium transport" EXACT []
+synonym: "stimulation of calcium ion transport" NARROW []
+synonym: "up regulation of calcium ion transport" EXACT []
+synonym: "up-regulation of calcium ion transport" EXACT []
+synonym: "upregulation of calcium ion transport" EXACT []
+is_a: GO:0043270 ! positive regulation of ion transport
+is_a: GO:0051924 ! regulation of calcium ion transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006816 ! positively regulates calcium ion transport
+relationship: RO:0002213 GO:0006816 ! positively regulates calcium ion transport
+
+[Term]
 id: GO:0051930
 name: regulation of sensory perception of pain
 def: "Any process that modulates the frequency, rate or extent of the sensory perception of pain, the series of events required for an organism to receive a painful stimulus, convert it to a molecular signal, and recognize and characterize the signal." []
@@ -17138,6 +17642,12 @@ intersection_of: RO:0002212 GO:0043084 ! negatively regulates penile erection
 relationship: RO:0002212 GO:0043084 ! negatively regulates penile erection
 
 [Term]
+id: GO:0060429
+name: epithelium development
+def: "The process whose specific outcome is the progression of an epithelium over time, from its formation to the mature structure. An epithelium is a tissue that covers the internal or external surfaces of an anatomical structure." []
+is_a: GO:0009888 ! tissue development
+
+[Term]
 id: GO:0060456
 name: positive regulation of digestive system process
 def: "Any process that increases the frequency, rate or extent of a digestive system process, a physical, chemical, or biochemical process carried out by living organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." []
@@ -17198,6 +17708,19 @@ is_a: GO:0060556 ! regulation of vitamin D biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0042368 ! positively regulates vitamin D biosynthetic process
 relationship: RO:0002213 GO:0042368 ! positively regulates vitamin D biosynthetic process
+
+[Term]
+id: GO:0060562
+name: epithelial tube morphogenesis
+def: "The process in which the anatomical structures of a tube are generated and organized from an epithelium. Epithelial tubes transport gases, liquids and cells from one site to another and form the basic structure of many organs and tissues, with tube shape and organization varying from the single-celled excretory organ in Caenorhabditis elegans to the branching trees of the mammalian kidney and insect tracheal system." []
+is_a: GO:0002009 ! morphogenesis of an epithelium
+is_a: GO:0035239 ! tube morphogenesis
+
+[Term]
+id: GO:0060606
+name: tube closure
+def: "Creation of the central hole of a tube in an anatomical structure by sealing the edges of an epithelial fold." []
+is_a: GO:0035148 ! tube formation
 
 [Term]
 id: GO:0060610
@@ -17657,6 +18180,15 @@ intersection_of: RO:0002213 GO:0070561 ! positively regulates vitamin D receptor
 relationship: RO:0002213 GO:0070561 ! positively regulates vitamin D receptor signaling pathway
 
 [Term]
+id: GO:0070588
+name: calcium ion transmembrane transport
+def: "A process in which a calcium ion is transported from one side of a membrane to the other by means of some agent such as a transporter or pore." []
+synonym: "calcium ion membrane transport" EXACT []
+synonym: "transmembrane calcium transport" EXACT []
+is_a: GO:0006816 ! calcium ion transport
+is_a: GO:0098662 ! inorganic cation transmembrane transport
+
+[Term]
 id: GO:0070613
 name: regulation of protein processing
 def: "Any process that modulates the frequency, rate or extent of protein processing, any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein." []
@@ -18013,6 +18545,13 @@ id: GO:0071944
 name: cell periphery
 def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." []
 is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0072175
+name: epithelial tube formation
+def: "The developmental process pertaining to the initial formation of an epithelial tube." []
+is_a: GO:0035148 ! tube formation
+relationship: BFO:0000050 GO:0060562 ! part of epithelial tube morphogenesis
 
 [Term]
 id: GO:0072329
@@ -19969,6 +20508,46 @@ intersection_of: RO:0002213 GO:0006163 ! positively regulates purine nucleotide 
 relationship: RO:0002213 GO:0006163 ! positively regulates purine nucleotide metabolic process
 
 [Term]
+id: GO:1901019
+name: regulation of calcium ion transmembrane transporter activity
+def: "Any process that modulates the frequency, rate or extent of calcium ion transmembrane transporter activity." []
+is_a: GO:0032412 ! regulation of ion transmembrane transporter activity
+is_a: GO:1903169 ! regulation of calcium ion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0015085 ! regulates calcium ion transmembrane transporter activity
+relationship: RO:0002211 GO:0015085 ! regulates calcium ion transmembrane transporter activity
+
+[Term]
+id: GO:1901020
+name: negative regulation of calcium ion transmembrane transporter activity
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of calcium ion transmembrane transporter activity." []
+synonym: "down regulation of calcium ion transmembrane transporter activity" EXACT []
+synonym: "down-regulation of calcium ion transmembrane transporter activity" EXACT []
+synonym: "downregulation of calcium ion transmembrane transporter activity" EXACT []
+synonym: "inhibition of calcium ion transmembrane transporter activity" NARROW []
+is_a: GO:0032413 ! negative regulation of ion transmembrane transporter activity
+is_a: GO:1901019 ! regulation of calcium ion transmembrane transporter activity
+is_a: GO:1903170 ! negative regulation of calcium ion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0015085 ! negatively regulates calcium ion transmembrane transporter activity
+relationship: RO:0002212 GO:0015085 ! negatively regulates calcium ion transmembrane transporter activity
+
+[Term]
+id: GO:1901021
+name: positive regulation of calcium ion transmembrane transporter activity
+def: "Any process that activates or increases the frequency, rate or extent of calcium ion transmembrane transporter activity." []
+synonym: "activation of calcium ion transmembrane transporter activity" NARROW []
+synonym: "up regulation of calcium ion transmembrane transporter activity" EXACT []
+synonym: "up-regulation of calcium ion transmembrane transporter activity" EXACT []
+synonym: "upregulation of calcium ion transmembrane transporter activity" EXACT []
+is_a: GO:0032414 ! positive regulation of ion transmembrane transporter activity
+is_a: GO:1901019 ! regulation of calcium ion transmembrane transporter activity
+is_a: GO:1904427 ! positive regulation of calcium ion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0015085 ! positively regulates calcium ion transmembrane transporter activity
+relationship: RO:0002213 GO:0015085 ! positively regulates calcium ion transmembrane transporter activity
+
+[Term]
 id: GO:1901135
 name: carbohydrate derivative metabolic process
 def: "The chemical reactions and pathways involving carbohydrate derivative." []
@@ -20763,6 +21342,14 @@ is_a: GO:1901858 ! regulation of mitochondrial DNA metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0032042 ! positively regulates mitochondrial DNA metabolic process
 relationship: RO:0002213 GO:0032042 ! positively regulates mitochondrial DNA metabolic process
+
+[Term]
+id: GO:1901999
+name: homogentisate metabolic process
+def: "The chemical reactions and pathways involving homogentisate." []
+synonym: "homogentisate metabolism" EXACT []
+is_a: GO:0018958 ! phenol-containing compound metabolic process
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
 
 [Term]
 id: GO:1902064
@@ -21601,6 +22188,43 @@ is_a: GO:1903108 ! regulation of mitochondrial transcription
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006390 ! positively regulates mitochondrial transcription
 relationship: RO:0002213 GO:0006390 ! positively regulates mitochondrial transcription
+
+[Term]
+id: GO:1903169
+name: regulation of calcium ion transmembrane transport
+def: "Any process that modulates the frequency, rate or extent of calcium ion transmembrane transport." []
+synonym: "regulation of calcium ion membrane transport" EXACT []
+synonym: "regulation of transmembrane calcium transport" EXACT []
+is_a: GO:0051924 ! regulation of calcium ion transport
+is_a: GO:1904062 ! regulation of cation transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0070588 ! regulates calcium ion transmembrane transport
+relationship: RO:0002211 GO:0070588 ! regulates calcium ion transmembrane transport
+
+[Term]
+id: GO:1903170
+name: negative regulation of calcium ion transmembrane transport
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of calcium ion transmembrane transport." []
+synonym: "down regulation of calcium ion membrane transport" EXACT []
+synonym: "down regulation of calcium ion transmembrane transport" EXACT []
+synonym: "down regulation of transmembrane calcium transport" EXACT []
+synonym: "down-regulation of calcium ion membrane transport" EXACT []
+synonym: "down-regulation of calcium ion transmembrane transport" EXACT []
+synonym: "down-regulation of transmembrane calcium transport" EXACT []
+synonym: "downregulation of calcium ion membrane transport" EXACT []
+synonym: "downregulation of calcium ion transmembrane transport" EXACT []
+synonym: "downregulation of transmembrane calcium transport" EXACT []
+synonym: "inhibition of calcium ion membrane transport" NARROW []
+synonym: "inhibition of calcium ion transmembrane transport" NARROW []
+synonym: "inhibition of transmembrane calcium transport" NARROW []
+synonym: "negative regulation of calcium ion membrane transport" EXACT []
+synonym: "negative regulation of transmembrane calcium transport" EXACT []
+is_a: GO:0051926 ! negative regulation of calcium ion transport
+is_a: GO:1903169 ! regulation of calcium ion transmembrane transport
+is_a: GO:1904063 ! negative regulation of cation transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0070588 ! negatively regulates calcium ion transmembrane transport
+relationship: RO:0002212 GO:0070588 ! negatively regulates calcium ion transmembrane transport
 
 [Term]
 id: GO:1903282
@@ -23128,6 +23752,31 @@ intersection_of: GO:0022824 ! transmitter-gated ion channel activity
 intersection_of: BFO:0000050 GO:0060078 ! part of regulation of postsynaptic membrane potential
 
 [Term]
+id: GO:1904427
+name: positive regulation of calcium ion transmembrane transport
+def: "Any process that activates or increases the frequency, rate or extent of calcium ion transmembrane transport." []
+synonym: "activation of calcium ion membrane transport" NARROW []
+synonym: "activation of calcium ion transmembrane transport" NARROW []
+synonym: "activation of transmembrane calcium transport" NARROW []
+synonym: "positive regulation of calcium ion membrane transport" EXACT []
+synonym: "positive regulation of transmembrane calcium transport" EXACT []
+synonym: "up regulation of calcium ion membrane transport" EXACT []
+synonym: "up regulation of calcium ion transmembrane transport" EXACT []
+synonym: "up regulation of transmembrane calcium transport" EXACT []
+synonym: "up-regulation of calcium ion membrane transport" EXACT []
+synonym: "up-regulation of calcium ion transmembrane transport" EXACT []
+synonym: "up-regulation of transmembrane calcium transport" EXACT []
+synonym: "upregulation of calcium ion membrane transport" EXACT []
+synonym: "upregulation of calcium ion transmembrane transport" EXACT []
+synonym: "upregulation of transmembrane calcium transport" EXACT []
+is_a: GO:0051928 ! positive regulation of calcium ion transport
+is_a: GO:1903169 ! regulation of calcium ion transmembrane transport
+is_a: GO:1904064 ! positive regulation of cation transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0070588 ! positively regulates calcium ion transmembrane transport
+relationship: RO:0002213 GO:0070588 ! positively regulates calcium ion transmembrane transport
+
+[Term]
 id: GO:1904478
 name: regulation of intestinal absorption
 def: "Any process that modulates the frequency, rate or extent of intestinal absorption." []
@@ -23662,6 +24311,46 @@ intersection_of: RO:0002213 GO:0003723 ! positively regulates RNA binding
 relationship: RO:0002213 GO:0003723 ! positively regulates RNA binding
 
 [Term]
+id: GO:1905276
+name: regulation of epithelial tube formation
+def: "Any process that modulates the frequency, rate or extent of epithelial tube formation." []
+is_a: GO:1905330 ! regulation of morphogenesis of an epithelium
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0072175 ! regulates epithelial tube formation
+relationship: RO:0002211 GO:0072175 ! regulates epithelial tube formation
+
+[Term]
+id: GO:1905277
+name: negative regulation of epithelial tube formation
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of epithelial tube formation." []
+synonym: "down regulation of epithelial tube formation" EXACT []
+synonym: "down-regulation of epithelial tube formation" EXACT []
+synonym: "downregulation of epithelial tube formation" EXACT []
+synonym: "inhibition of epithelial tube formation" NARROW []
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:1905276 ! regulation of epithelial tube formation
+is_a: GO:1905331 ! negative regulation of morphogenesis of an epithelium
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0072175 ! negatively regulates epithelial tube formation
+relationship: RO:0002212 GO:0072175 ! negatively regulates epithelial tube formation
+
+[Term]
+id: GO:1905278
+name: positive regulation of epithelial tube formation
+def: "Any process that activates or increases the frequency, rate or extent of epithelial tube formation." []
+synonym: "activation of epithelial tube formation" NARROW []
+synonym: "up regulation of epithelial tube formation" EXACT []
+synonym: "up-regulation of epithelial tube formation" EXACT []
+synonym: "upregulation of epithelial tube formation" EXACT []
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:1905276 ! regulation of epithelial tube formation
+is_a: GO:1905332 ! positive regulation of morphogenesis of an epithelium
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0072175 ! positively regulates epithelial tube formation
+relationship: RO:0002213 GO:0072175 ! positively regulates epithelial tube formation
+
+[Term]
 id: GO:1905292
 name: regulation of neural crest cell differentiation
 def: "Any process that modulates the frequency, rate or extent of neural crest cell differentiation." []
@@ -23700,6 +24389,54 @@ is_a: GO:2000738 ! positive regulation of stem cell differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0014033 ! positively regulates neural crest cell differentiation
 relationship: RO:0002213 GO:0014033 ! positively regulates neural crest cell differentiation
+
+[Term]
+id: GO:1905330
+name: regulation of morphogenesis of an epithelium
+def: "Any process that modulates the frequency, rate or extent of morphogenesis of an epithelium." []
+synonym: "regulation of epithelium morphogenesis" EXACT []
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002009 ! regulates morphogenesis of an epithelium
+relationship: RO:0002211 GO:0002009 ! regulates morphogenesis of an epithelium
+
+[Term]
+id: GO:1905331
+name: negative regulation of morphogenesis of an epithelium
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of morphogenesis of an epithelium." []
+synonym: "down regulation of epithelium morphogenesis" EXACT []
+synonym: "down regulation of morphogenesis of an epithelium" EXACT []
+synonym: "down-regulation of epithelium morphogenesis" EXACT []
+synonym: "down-regulation of morphogenesis of an epithelium" EXACT []
+synonym: "downregulation of epithelium morphogenesis" EXACT []
+synonym: "downregulation of morphogenesis of an epithelium" EXACT []
+synonym: "inhibition of epithelium morphogenesis" NARROW []
+synonym: "inhibition of morphogenesis of an epithelium" NARROW []
+synonym: "negative regulation of epithelium morphogenesis" EXACT []
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:1905330 ! regulation of morphogenesis of an epithelium
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0002009 ! negatively regulates morphogenesis of an epithelium
+relationship: RO:0002212 GO:0002009 ! negatively regulates morphogenesis of an epithelium
+
+[Term]
+id: GO:1905332
+name: positive regulation of morphogenesis of an epithelium
+def: "Any process that activates or increases the frequency, rate or extent of morphogenesis of an epithelium." []
+synonym: "activation of epithelium morphogenesis" NARROW []
+synonym: "activation of morphogenesis of an epithelium" NARROW []
+synonym: "positive regulation of epithelium morphogenesis" EXACT []
+synonym: "up regulation of epithelium morphogenesis" EXACT []
+synonym: "up regulation of morphogenesis of an epithelium" EXACT []
+synonym: "up-regulation of epithelium morphogenesis" EXACT []
+synonym: "up-regulation of morphogenesis of an epithelium" EXACT []
+synonym: "upregulation of epithelium morphogenesis" EXACT []
+synonym: "upregulation of morphogenesis of an epithelium" EXACT []
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:1905330 ! regulation of morphogenesis of an epithelium
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0002009 ! positively regulates morphogenesis of an epithelium
+relationship: RO:0002213 GO:0002009 ! positively regulates morphogenesis of an epithelium
 
 [Term]
 id: GO:1905516
