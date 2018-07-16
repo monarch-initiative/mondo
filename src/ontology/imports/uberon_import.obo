@@ -14279,6 +14279,19 @@ relationship: BFO:0000050 UBERON:0003277 ! part of skeleton of upper jaw
 relationship: RO:0002495 UBERON:0011628 ! immediate transformation of early premaxilla
 
 [Term]
+id: UBERON:0002247
+name: uterine horn
+def: "either one of the pair of tubular extensions from the uterine body where the uterus and the uterine tubes meet; uterine horns are anterior Mullerian duct-derived structures" []
+synonym: "cornu uteri" RELATED []
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0005156 ! reproductive structure
+is_a: UBERON:0015212 ! lateral structure
+relationship: BFO:0000050 UBERON:0000995 ! part of uterus
+relationship: BSPO:0000126 UBERON:0000995 ! in_lateral_side_of uterus
+relationship: RO:0002170 UBERON:0003889 ! connected to fallopian tube
+relationship: RO:0002433 UBERON:0000995 ! contributes to morphology of uterus
+
+[Term]
 id: UBERON:0002257
 name: ventral horn of spinal cord
 def: "The ventral grey column of the spinal cord[MP]. The neurons of the ventral region of the mature spinal cord participate in motor output[GO]." []
@@ -19470,6 +19483,18 @@ is_a: UBERON:0000115 ! lung epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0002168 ! part of left lung
 relationship: BFO:0000050 UBERON:0002168 ! part of left lung
+
+[Term]
+id: UBERON:0003366
+name: epithelium of uterine horn
+def: "An epithelium that is part of a uterine horn [Automatically generated definition]." []
+synonym: "epithelial tissue of uterine horn" EXACT []
+synonym: "uterine horn epithelial tissue" EXACT []
+synonym: "uterine horn epithelium" EXACT []
+is_a: UBERON:0006955 ! uterine epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0002247 ! part of uterine horn
+relationship: BFO:0000050 UBERON:0002247 ! part of uterine horn
 
 [Term]
 id: UBERON:0003368
@@ -43417,6 +43442,24 @@ is_a: UBERON:0001418 ! skin of thorax
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: BFO:0000050 UBERON:0008231 ! part of dorsal thoracic segment of trunk
 relationship: BFO:0000050 UBERON:0008231 ! part of dorsal thoracic segment of trunk
+
+[Term]
+id: UBERON:0009020
+name: left uterine horn
+def: "An uterine horn that is in the left side of a uterus." []
+is_a: UBERON:0002247 ! uterine horn
+intersection_of: UBERON:0002247 ! uterine horn
+intersection_of: BSPO:0000120 UBERON:0000995 ! in_left_side_of uterus
+relationship: BSPO:0000120 UBERON:0000995 ! in_left_side_of uterus
+
+[Term]
+id: UBERON:0009022
+name: right uterine horn
+def: "An uterine horn that is in the right side of a uterus." []
+is_a: UBERON:0002247 ! uterine horn
+intersection_of: UBERON:0002247 ! uterine horn
+intersection_of: BSPO:0000121 UBERON:0000995 ! in_right_side_of uterus
+relationship: BSPO:0000121 UBERON:0000995 ! in_right_side_of uterus
 
 [Term]
 id: UBERON:0009027

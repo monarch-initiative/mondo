@@ -16925,6 +16925,78 @@ intersection_of: BFO:0000050 GO:0050957 ! part of equilibrioception
 relationship: BFO:0000050 GO:0050957 ! part of equilibrioception
 
 [Term]
+id: GO:0051458
+name: corticotropin secretion
+def: "The regulated release of corticotropin by a cell. Corticotropin hormone is a polypeptide hormone synthesized and secreted from corticotropes in the anterior lobe of the pituitary gland in response to corticotropin-releasing hormone (CRH) released by the hypothalamus." []
+synonym: "ACTH secretion" EXACT []
+synonym: "adrenocorticotropic hormone secretion" EXACT []
+synonym: "adrenocorticotropin secretion" RELATED []
+synonym: "adrenotropic hormone secretion" EXACT []
+synonym: "adrenotropin secretion" EXACT []
+synonym: "corticotropic hormone secretion" EXACT []
+is_a: GO:0030072 ! peptide hormone secretion
+is_a: GO:0060986 ! endocrine hormone secretion
+
+[Term]
+id: GO:0051459
+name: regulation of corticotropin secretion
+def: "Any process that modulates the frequency, rate or extent of the regulated release of corticotropic hormone from a cell." []
+synonym: "regulation of ACTH secretion" EXACT []
+synonym: "regulation of adrenocorticotropic hormone secretion" EXACT []
+synonym: "regulation of adrenocorticotropin secretion" EXACT []
+synonym: "regulation of adrenotropin hormone secretion" EXACT []
+synonym: "regulation of adrenotropin secretion" EXACT []
+synonym: "regulation of corticotropic hormone secretion" EXACT []
+is_a: GO:0044060 ! regulation of endocrine process
+is_a: GO:0090276 ! regulation of peptide hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0051458 ! regulates corticotropin secretion
+relationship: RO:0002211 GO:0051458 ! regulates corticotropin secretion
+
+[Term]
+id: GO:0051460
+name: negative regulation of corticotropin secretion
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the regulated release of corticotropic hormone from a cell." []
+synonym: "down regulation of adrenocorticotropin secretion" EXACT []
+synonym: "down-regulation of adrenocorticotropin secretion" EXACT []
+synonym: "downregulation of adrenocorticotropin secretion" EXACT []
+synonym: "inhibition of adrenocorticotropin secretion" NARROW []
+synonym: "negative regulation of ACTH secretion" EXACT []
+synonym: "negative regulation of adrenocorticotropic hormone secretion" EXACT []
+synonym: "negative regulation of adrenocorticotropin secretion" EXACT []
+synonym: "negative regulation of adrenotropic hormone secretion" EXACT []
+synonym: "negative regulation of adrenotropin secretion" EXACT []
+synonym: "negative regulation of corticotropic hormone secretion" EXACT []
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+is_a: GO:0051459 ! regulation of corticotropin secretion
+is_a: GO:0090278 ! negative regulation of peptide hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0051458 ! negatively regulates corticotropin secretion
+relationship: RO:0002212 GO:0051458 ! negatively regulates corticotropin secretion
+
+[Term]
+id: GO:0051461
+name: positive regulation of corticotropin secretion
+def: "Any process that activates or increases the frequency, rate or extent of the regulated release of corticotropin hormone from a cell." []
+synonym: "activation of adrenocorticotropin secretion" NARROW []
+synonym: "positive regulation of ACTH secretion" EXACT []
+synonym: "positive regulation of adrenocorticotropic hormone secretion" EXACT []
+synonym: "positive regulation of adrenocorticotropin secretion" EXACT []
+synonym: "positive regulation of adrenotropic hormone secretion" EXACT []
+synonym: "positive regulation of adrenotropin secretion" EXACT []
+synonym: "positive regulation of corticotropic hormone secretion" EXACT []
+synonym: "stimulation of adrenocorticotropin secretion" NARROW []
+synonym: "up regulation of adrenocorticotropin secretion" EXACT []
+synonym: "up-regulation of adrenocorticotropin secretion" EXACT []
+synonym: "upregulation of adrenocorticotropin secretion" EXACT []
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+is_a: GO:0051459 ! regulation of corticotropin secretion
+is_a: GO:0090277 ! positive regulation of peptide hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0051458 ! positively regulates corticotropin secretion
+relationship: RO:0002213 GO:0051458 ! positively regulates corticotropin secretion
+
+[Term]
 id: GO:0051560
 name: mitochondrial calcium ion homeostasis
 def: "Any process involved in the maintenance of an internal steady state of calcium ions within the cytoplasm of a cell or between mitochondria and their surroundings." []
@@ -18497,6 +18569,13 @@ name: cellular response to external stimulus
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an external stimulus." []
 synonym: "cellular response to environmental stimulus" EXACT []
 is_a: GO:0009605 ! response to external stimulus
+
+[Term]
+id: GO:0071625
+name: vocalization behavior
+def: "The behavior in which an organism produces sounds by a mechanism involving its respiratory system." []
+synonym: "vocalisation behaviour" EXACT []
+is_a: GO:0007610 ! behavior
 
 [Term]
 id: GO:0071696

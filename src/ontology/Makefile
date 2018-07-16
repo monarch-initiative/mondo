@@ -713,6 +713,10 @@ mim2gene_medgen:
 omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
 
+# NEW: uses rdf_matcher
+all_unique.tsv:
+	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all unique_match > $@
+
 # ----------------------------------------
 # Anns
 # ----------------------------------------

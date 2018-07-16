@@ -1063,6 +1063,23 @@ relationship: is_conjugate_base_of CHEBI:32786 ! tyrosinium
 relationship: RO:0000087 CHEBI:83056 ! Daphnia magna metabolite
 
 [Term]
+id: CHEBI:18248
+name: iron atom
+def: "An iron group element atom that has atomic number 26." []
+synonym: "26Fe" RELATED []
+synonym: "Eisen" RELATED []
+synonym: "Fe" RELATED []
+synonym: "fer" RELATED []
+synonym: "ferrum" RELATED []
+synonym: "hierro" RELATED []
+synonym: "Iron" RELATED []
+synonym: "iron" EXACT []
+synonym: "iron" RELATED []
+is_a: CHEBI:33356 ! iron group element atom
+relationship: RO:0000087 CHEBI:27027 ! micronutrient
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+
+[Term]
 id: CHEBI:18291
 name: manganese atom
 synonym: "25Mn" RELATED []
@@ -1711,6 +1728,15 @@ synonym: "Ionen" RELATED []
 synonym: "iones" RELATED []
 synonym: "ions" RELATED []
 is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:24873
+name: iron molecular entity
+synonym: "iron compounds" RELATED []
+synonym: "iron molecular entities" RELATED []
+synonym: "iron molecular entity" EXACT []
+is_a: CHEBI:33744 ! iron group molecular entity
+relationship: BFO:0000051 CHEBI:18248 ! iron atom
 
 [Term]
 id: CHEBI:24913
@@ -3580,6 +3606,15 @@ is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
+id: CHEBI:33356
+name: iron group element atom
+synonym: "group 8 elements" EXACT []
+synonym: "iron group element" RELATED []
+synonym: "iron group elements" RELATED []
+is_a: CHEBI:27081 ! transition element atom
+is_a: CHEBI:33561 ! d-block element atom
+
+[Term]
 id: CHEBI:33358
 name: cobalt group element atom
 synonym: "cobalt group element" RELATED []
@@ -4049,6 +4084,15 @@ synonym: "manganese group molecular entity" EXACT []
 is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33352 ! manganese group element atom
+
+[Term]
+id: CHEBI:33744
+name: iron group molecular entity
+synonym: "iron group molecular entities" RELATED []
+synonym: "iron group molecular entity" EXACT []
+is_a: CHEBI:33497 ! transition element molecular entity
+is_a: CHEBI:33676 ! d-block molecular entity
+relationship: BFO:0000051 CHEBI:33356 ! iron group element atom
 
 [Term]
 id: CHEBI:33747
@@ -5861,6 +5905,24 @@ synonym: "OXO GROUP" EXACT []
 is_a: CHEBI:33246 ! inorganic group
 
 [Term]
+id: CHEBI:46662
+name: mineral
+def: "In general, a mineral is a chemical substance that is normally crystalline formed and has been formed as a result of geological processes. The term also includes metamict substances (naturally occurring, formerly crystalline substances whose crystallinity has been destroyed by ionising radiation) and can include naturally occurring amorphous substances that have never been crystalline ('mineraloids') such as georgite and calciouranoite as well as substances formed by the action of geological processes on bigenic compounds ('biogenic minerals')." []
+synonym: "mineral" EXACT []
+synonym: "Minerale" RELATED []
+synonym: "minerales" RELATED []
+synonym: "minerals" RELATED []
+synonym: "mineraux" RELATED []
+is_a: CHEBI:59999 ! chemical substance
+
+[Term]
+id: CHEBI:46725
+name: oxide mineral
+synonym: "oxide minerals" RELATED []
+is_a: CHEBI:24836 ! inorganic oxide
+is_a: CHEBI:46662 ! mineral
+
+[Term]
 id: CHEBI:46787
 name: solvent
 def: "A liquid that can dissolve other substances (solutes) without any change in their chemical composition." []
@@ -6423,6 +6485,44 @@ synonym: "Dietary Supplement" RELATED []
 synonym: "Food Supplementation" RELATED []
 synonym: "Nutritional supplement" RELATED []
 is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:50816
+name: iron oxide
+synonym: "iron oxides" RELATED []
+is_a: CHEBI:24873 ! iron molecular entity
+
+[Term]
+id: CHEBI:50817
+name: iron oxide mineral
+synonym: "iron oxide minerals" RELATED []
+is_a: CHEBI:46725 ! oxide mineral
+is_a: CHEBI:50816 ! iron oxide
+
+[Term]
+id: CHEBI:50818
+name: hematite
+synonym: "blood stone" RELATED []
+synonym: "Blutstein" RELATED []
+synonym: "Haematit" RELATED []
+synonym: "haematite" RELATED []
+synonym: "hematita" RELATED []
+synonym: "hematite" EXACT []
+synonym: "oligist" RELATED []
+synonym: "oligiste" RELATED []
+is_a: CHEBI:50817 ! iron oxide mineral
+is_a: CHEBI:50819 ! ferric oxide
+
+[Term]
+id: CHEBI:50819
+name: ferric oxide
+synonym: "diiron trioxide" EXACT []
+synonym: "Eisen(III)-oxid" RELATED []
+synonym: "Eisentrioxid" RELATED []
+synonym: "iron trioxide" RELATED []
+synonym: "iron(3+) oxide" EXACT []
+synonym: "iron(III) oxide" EXACT []
+is_a: CHEBI:50816 ! iron oxide
 
 [Term]
 id: CHEBI:50858

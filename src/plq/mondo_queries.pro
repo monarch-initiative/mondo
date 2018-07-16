@@ -13,8 +13,9 @@
 :- rdf_register_prefix('SCTID','http://purl.obolibrary.org/obo/SCTID_').
 :- rdf_register_prefix('UMLS','http://linkedlifedata.com/resource/umls/id/').
 :- rdf_register_prefix('MEDGEN','http://purl.obolibrary.org/obo/MEDGEN_').
+:- rdf_register_prefix('EFO','http://www.ebi.ac.uk/efo/EFO_').
 :- rdf_register_prefix('ICD10','http://purl.obolibrary.org/obo/ICD10_').
-:- rdf_register_prefix('Orphanet','http://purl.obolibrary.org/obo/Orphanet_').
+:- rdf_register_prefix('Orphanet','http://www.orpha.net/ORDO/Orphanet_').
 :- rdf_register_ns(oio,'http://www.geneontology.org/formats/oboInOwl#').
 
 % fake
