@@ -704,6 +704,16 @@ is_a: GO:0002274 ! myeloid leukocyte activation
 is_a: GO:0002366 ! leukocyte activation involved in immune response
 
 [Term]
+id: GO:0002279
+name: mast cell activation involved in immune response
+def: "The change in morphology and behavior of a mast cell resulting from exposure to a cytokine, chemokine, soluble factor, or to (at least in mammals) an antigen which the mast cell has specifically bound via IgE bound to Fc-epsilonRI receptors, leading to the initiation or perpetuation of an immune response." []
+synonym: "mast cell activation during immune response" RELATED []
+is_a: GO:0002275 ! myeloid cell activation involved in immune response
+is_a: GO:0045576 ! mast cell activation
+intersection_of: GO:0045576 ! mast cell activation
+intersection_of: BFO:0000050 GO:0006955 ! part of immune response
+
+[Term]
 id: GO:0002281
 name: macrophage activation involved in immune response
 def: "A change in morphology and behavior of a macrophage resulting from exposure to a cytokine, chemokine, cellular ligand, or soluble factor, leading to the initiation or perpetuation of an immune response." []
@@ -2666,6 +2676,19 @@ id: GO:0005578
 name: proteinaceous extracellular matrix
 def: "A layer consisting mainly of proteins (especially collagen) and glycosaminoglycans (mostly as proteoglycans) that forms a sheet underlying or overlying cells such as endothelial and epithelial cells. The proteins are secreted by cells in the vicinity. An example of this component is found in Mus musculus." []
 is_a: GO:0031012 ! extracellular matrix
+
+[Term]
+id: GO:0005579
+name: membrane attack complex
+def: "A protein complex produced by sequentially activated components of the complement cascade inserted into a target cell membrane and forming a pore leading to cell lysis via ion and water flow." []
+synonym: "MAC" EXACT []
+synonym: "membrane attack complex protein alphaM chain" NARROW []
+synonym: "membrane attack complex protein beta2 chain" NARROW []
+synonym: "TCC" EXACT []
+synonym: "terminal complement complex" EXACT []
+is_a: GO:0046930 ! pore complex
+is_a: GO:0098797 ! plasma membrane protein complex
+relationship: BFO:0000050 GO:0005887 ! part of integral component of plasma membrane
 
 [Term]
 id: GO:0005581
@@ -10301,6 +10324,72 @@ synonym: "protein-protein complex" NARROW []
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: GO:0033003
+name: regulation of mast cell activation
+def: "Any process that modulates the frequency, rate, or extent of mast cell activation." []
+is_a: GO:0002694 ! regulation of leukocyte activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0045576 ! regulates mast cell activation
+relationship: RO:0002211 GO:0045576 ! regulates mast cell activation
+
+[Term]
+id: GO:0033004
+name: negative regulation of mast cell activation
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of mast cell activation." []
+is_a: GO:0002695 ! negative regulation of leukocyte activation
+is_a: GO:0033003 ! regulation of mast cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0045576 ! negatively regulates mast cell activation
+relationship: RO:0002212 GO:0045576 ! negatively regulates mast cell activation
+
+[Term]
+id: GO:0033005
+name: positive regulation of mast cell activation
+def: "Any process that activates or increases the frequency, rate, or extent of mast cell activation." []
+is_a: GO:0002696 ! positive regulation of leukocyte activation
+is_a: GO:0033003 ! regulation of mast cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0045576 ! positively regulates mast cell activation
+relationship: RO:0002213 GO:0045576 ! positively regulates mast cell activation
+
+[Term]
+id: GO:0033006
+name: regulation of mast cell activation involved in immune response
+def: "Any process that modulates the frequency, rate, or extent of mast cell activation as part of an immune response." []
+synonym: "regulation of mast cell activation during immune response" RELATED []
+is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0033003 ! regulation of mast cell activation
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0002279 ! regulates mast cell activation involved in immune response
+relationship: RO:0002211 GO:0002279 ! regulates mast cell activation involved in immune response
+
+[Term]
+id: GO:0033007
+name: negative regulation of mast cell activation involved in immune response
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of mast cell activation as part of an immune response." []
+synonym: "negative regulation of mast cell activation during immune response" RELATED []
+is_a: GO:0002698 ! negative regulation of immune effector process
+is_a: GO:0033004 ! negative regulation of mast cell activation
+is_a: GO:0033006 ! regulation of mast cell activation involved in immune response
+is_a: GO:0050777 ! negative regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0002279 ! negatively regulates mast cell activation involved in immune response
+relationship: RO:0002212 GO:0002279 ! negatively regulates mast cell activation involved in immune response
+
+[Term]
+id: GO:0033008
+name: positive regulation of mast cell activation involved in immune response
+def: "Any process that activates or increases the frequency, rate, or extent of mast cell activation as part of an immune response." []
+synonym: "positive regulation of mast cell activation during immune response" RELATED []
+is_a: GO:0033005 ! positive regulation of mast cell activation
+is_a: GO:0033006 ! regulation of mast cell activation involved in immune response
+is_a: GO:0050778 ! positive regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0002279 ! positively regulates mast cell activation involved in immune response
+relationship: RO:0002213 GO:0002279 ! positively regulates mast cell activation involved in immune response
+
+[Term]
 id: GO:0033013
 name: tetrapyrrole metabolic process
 def: "The chemical reactions and pathways involving tetrapyrroles, natural pigments containing four pyrrole rings joined by one-carbon units linking position 2 of one pyrrole ring to position 5 of the next." []
@@ -13346,6 +13435,12 @@ is_a: GO:0001894 ! tissue homeostasis
 relationship: BFO:0000050 GO:0046849 ! part of bone remodeling
 
 [Term]
+id: GO:0045576
+name: mast cell activation
+def: "The change in morphology and behavior of a mast cell resulting from exposure to a cytokine, chemokine, soluble factor, or to (at least in mammals) an antigen which the mast cell has specifically bound via IgE bound to Fc-epsilonRI receptors." []
+is_a: GO:0002274 ! myeloid leukocyte activation
+
+[Term]
 id: GO:0045580
 name: regulation of T cell differentiation
 def: "Any process that modulates the frequency, rate or extent of T cell differentiation." []
@@ -15026,6 +15121,16 @@ name: cellular transition metal ion homeostasis
 def: "Any process involved in the maintenance of an internal steady state of transition metal ions at the level of a cell. A transition metal is an element whose atom has an incomplete d-subshell of extranuclear electrons, or which gives rise to a cation or cations with an incomplete d-subshell. Transition metals often have more than one valency state. Biologically relevant transition metals include vanadium, manganese, iron, copper, cobalt, nickel, molybdenum and silver." []
 is_a: GO:0006875 ! cellular metal ion homeostasis
 is_a: GO:0055076 ! transition metal ion homeostasis
+
+[Term]
+id: GO:0046930
+name: pore complex
+def: "Any small opening in a membrane that allows the passage of gases and/or liquids." []
+synonym: "channel-forming toxin activity" RELATED []
+synonym: "pore" EXACT []
+synonym: "pore-forming toxin activity" RELATED []
+is_a: GO:0098796 ! membrane protein complex
+relationship: BFO:0000050 GO:0016021 ! part of integral component of membrane
 
 [Term]
 id: GO:0046939
