@@ -6,6 +6,7 @@
 OBO=http://purl.obolibrary.org/obo
 OIO=http://www.geneontology.org/formats/oboInOwl\#
 SKOS=http://www.w3.org/2004/02/skos/core\#
+EFO=http://www.ebi.ac.uk/efo
 ONT=mondo
 BASE=$(OBO)/$(ONT)
 SRC=$(ONT)-edit.obo
@@ -27,7 +28,20 @@ OWL2OBO = robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo >
 
 PV_CC0 = http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 
+# In converting to obo format, everything is assumed to have an OBO prefix.
+# This perl corrects this.
+# Longer term we need to eliminate passing through obo and/or fix the owlapi implementation to respect prefixes
 FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@g; s@$(OBO)/UMLS_@http://linkedlifedata.com/resource/umls/id/@g'
+
+# EFO uses different properties. The following command can be used on owltools
+EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
+           --rename-entity $(EFO)/alternative_term $(OIO)hasExactSynonym\
+           --rename-entity $(OBO)/ECO_0000218 $(OIO)source
+
+# EFO uses different prefixes in xrefs. We replace these with the following perl
+# intended to be used within a perl -npe loop.
+# In future we should use a more robust translation
+EFO2OBO_PERL = 's@NCIt:@NCIT:@; s@MSH:@MESH:@; s@SNOMEDCT:@SCTID:@;'
 
 # ----------------------------------------
 # Top-level targets
@@ -494,9 +508,9 @@ mirror/ncit-disease.uris: mirror/ncit.owl
 mirror/ncit-disease.ids: mirror/ncit-disease.uris
 	perl -npe 's@http://purl.obolibrary.org/obo/NCIT_@NCIT:@' $< > $@
 
-
+# Make a disease subset; ensure axioms are relaxed
 mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.uris
-	robot extract -i $< -T mirror/ncit-disease.uris --method BOT -o $@
+	robot extract -i $< -T mirror/ncit-disease.uris --method BOT relax -o $@
 
 mirror/ncit-%-xrefs.ttl: mirror/ncit.owl
 	robot query -c ../sparql/construct-$*-xrefs-from-ncit.sparql $@ -i $<
@@ -512,24 +526,23 @@ mirror/rdo.obo:
 	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@ && touch $@
 
 mirror/ordo_orphanet.owl.zip:
-	wget -nd -P mirror http://www.orphadata.org/data/ORDO/$@  && touch $@
+	wget --no-check-certificate -nd -P mirror http://www.orphadata.org/data/ORDO/ordo_orphanet.owl.zip  && touch $@
 
 mirror/ordo_orphanet.owl: mirror/ordo_orphanet.owl.zip
 	unzip  mirror/ordo_orphanet.owl.zip -d mirror
 	touch $@
 
+mirror/dipper-%.ttl:
+	wget --no-check-certificate https://data.monarchinitiative.org/ttl/$*.ttl -O $@
+
 # ~~~~~~~~
 # ORDO
 # ~~~~~~~~
-EFO=http://www.ebi.ac.uk/efo
 
 
 # STEP 1: DOWNLOAD
 mirror/obo_orphanet_1.owl: mirror/ordo_orphanet.owl
-	owltools $< --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
-           --rename-entity $(EFO)/alternative_term $(OIO)hasExactSynonym\
-           --rename-entity $(OBO)/ECO_0000218\
-           $(OIO)source -o $@.tmp && mv $@.tmp $@
+	owltools $< $(EFO2OBO_OPTS) -o $@.tmp && mv $@.tmp $@
 
 # STEP 2: Fix XREFs
 mirror/obo_orphanet_2.owl: mirror/obo_orphanet_1.owl
@@ -581,9 +594,19 @@ mirror/efo-src.owl:
 	wget --no-check-certificate http://www.ebi.ac.uk/efo/efo.owl -O $@ && touch $@
 
 mirror/efo.owl: mirror/efo-src.owl
-	cp $< $@
+	owltools $< $(EFO2OBO_OPTS) -o $@.tmp && perl -npe $(EFO2OBO_PERL) $@.tmp > $@
 
-mirror/efo.obo: mirror/efo-src.owl
+mirror/efo.obo: mirror/efo.owl
+	owltools $< -o -f obo --no-check $@.tmp && perl ../utils/fix-efo.pl $@.tmp > $@
+
+mirror/efo-disease.uris: mirror/efo.owl
+	robot query -i $< -s ../sparql/efo-subclass-of-disease.sparql $@
+
+# Make a disease subset; ensure axioms are relaxed
+mirror/efo-disease.owl: mirror/efo.owl mirror/efo-disease.uris
+	robot extract -i $< -T mirror/efo-disease.uris --method BOT relax -o $@
+
+mirror/efo-disease.obo: mirror/efo-disease.owl
 	owltools $< -o -f obo --no-check $@.tmp && perl ../utils/fix-efo.pl $@.tmp > $@
 
 # ----------------------------------------
@@ -655,7 +678,7 @@ testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
-	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
+	owltools --no-logging --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 debug2.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --merge-equivalence-sets -s MONDO 100 --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 
