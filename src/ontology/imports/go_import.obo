@@ -112,6 +112,13 @@ is_a: GO:0009057 ! macromolecule catabolic process
 is_a: GO:0016052 ! carbohydrate catabolic process
 
 [Term]
+id: GO:0000280
+name: nuclear division
+def: "The division of a cell nucleus into two nuclei, with DNA and other nuclear contents distributed between the daughter nuclei." []
+synonym: "karyokinesis" RELATED []
+is_a: GO:0048285 ! organelle fission
+
+[Term]
 id: GO:0000323
 name: lytic vacuole
 def: "A vacuole that is maintained at an acidic pH and which contains degradative enzymes, including a wide variety of acid hydrolases." []
@@ -437,6 +444,58 @@ id: GO:0001848
 name: complement binding
 def: "Interacting selectively and non-covalently with any component or product of the complement cascade." []
 is_a: GO:0005515 ! protein binding
+
+[Term]
+id: GO:0001867
+name: complement activation, lectin pathway
+def: "Any process involved in the activation of any of the steps of the lectin pathway of the complement cascade which allows for the direct killing of microbes and the regulation of other immune processes." []
+synonym: "complement cascade, lectin pathway" EXACT []
+is_a: GO:0006956 ! complement activation
+is_a: GO:0045087 ! innate immune response
+
+[Term]
+id: GO:0001868
+name: regulation of complement activation, lectin pathway
+def: "Any process that modulates the frequency, rate or extent of the lectin pathway of complement activation." []
+synonym: "regulation of complement cascade, lectin pathway" EXACT []
+is_a: GO:0030449 ! regulation of complement activation
+is_a: GO:0045088 ! regulation of innate immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0001867 ! regulates complement activation, lectin pathway
+relationship: RO:0002211 GO:0001867 ! regulates complement activation, lectin pathway
+
+[Term]
+id: GO:0001869
+name: negative regulation of complement activation, lectin pathway
+def: "Any process that stops, prevents, or reduces the rate of complement activation by the lectin pathway." []
+synonym: "down regulation of complement activation, lectin pathway" EXACT []
+synonym: "down-regulation of complement activation, lectin pathway" EXACT []
+synonym: "downregulation of complement activation, lectin pathway" EXACT []
+synonym: "inhibition of complement activation, lectin pathway" NARROW []
+synonym: "negative regulation of complement cascade, lectin pathway" EXACT []
+is_a: GO:0001868 ! regulation of complement activation, lectin pathway
+is_a: GO:0045824 ! negative regulation of innate immune response
+is_a: GO:0045916 ! negative regulation of complement activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0001867 ! negatively regulates complement activation, lectin pathway
+relationship: RO:0002212 GO:0001867 ! negatively regulates complement activation, lectin pathway
+
+[Term]
+id: GO:0001870
+name: positive regulation of complement activation, lectin pathway
+def: "Any process that activates or increases the frequency, rate or extent of complement activation by the lectin pathway." []
+synonym: "activation of complement activation, lectin pathway" NARROW []
+synonym: "positive regulation of complement cascade, lectin pathway" EXACT []
+synonym: "stimulation of complement activation, lectin pathway" NARROW []
+synonym: "up regulation of complement activation, lectin pathway" EXACT []
+synonym: "up-regulation of complement activation, lectin pathway" EXACT []
+synonym: "upregulation of complement activation, lectin pathway" EXACT []
+is_a: GO:0001868 ! regulation of complement activation, lectin pathway
+is_a: GO:0045089 ! positive regulation of innate immune response
+is_a: GO:0045917 ! positive regulation of complement activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0001867 ! positively regulates complement activation, lectin pathway
+relationship: RO:0002213 GO:0001867 ! positively regulates complement activation, lectin pathway
 
 [Term]
 id: GO:0001887
@@ -4314,6 +4373,26 @@ def: "The directed movement of substances into, out of or within a lysosome." []
 is_a: GO:0007034 ! vacuolar transport
 
 [Term]
+id: GO:0007049
+name: cell cycle
+def: "The progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events. Canonically, the cell cycle comprises the replication and segregation of genetic material followed by the division of the cell, but in endocycles or syncytial cells nuclear replication or nuclear division may not be followed by cell division." []
+synonym: "cell-division cycle" EXACT []
+is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0007140
+name: male meiotic nuclear division
+def: "A cell cycle process by which the cell nucleus divides as part of a meiotic cell cycle in the male germline." []
+synonym: "male meiosis" RELATED []
+synonym: "male nuclear division" BROAD []
+is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
+is_a: GO:0140013 ! meiotic nuclear division
+intersection_of: GO:0000280 ! nuclear division
+intersection_of: BFO:0000050 GO:0048232 ! part of male gamete generation
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+relationship: BFO:0000050 GO:0048232 ! part of male gamete generation
+
+[Term]
 id: GO:0007154
 name: cell communication
 def: "Any process that mediates interactions between a cell and its surroundings. Encompasses interactions such as signaling or attachment between one cell and another cell, between a cell and an extracellular matrix, or between a cell and any other aspect of its environment." []
@@ -6192,6 +6271,15 @@ intersection_of: RO:0002212 GO:0006793 ! negatively regulates phosphorus metabol
 relationship: RO:0002212 GO:0006793 ! negatively regulates phosphorus metabolic process
 
 [Term]
+id: GO:0010564
+name: regulation of cell cycle process
+def: "Any process that modulates a cellular process that is involved in the progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events." []
+is_a: GO:0051726 ! regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0022402 ! regulates cell cycle process
+relationship: RO:0002211 GO:0022402 ! regulates cell cycle process
+
+[Term]
 id: GO:0010565
 name: regulation of cellular ketone metabolic process
 def: "Any process that modulates the chemical reactions and pathways involving any of a class of organic compounds that contain the carbonyl group, CO, and in which the carbonyl group is bonded only to carbon atoms. The general formula for a ketone is RCOR, where R and R are alkyl or aryl groups." []
@@ -6308,6 +6396,51 @@ id: GO:0010669
 name: epithelial structure maintenance
 def: "A tissue homeostatic process required for the maintenance of epithelial structure." []
 is_a: GO:0001894 ! tissue homeostasis
+
+[Term]
+id: GO:0010672
+name: regulation of transcription from RNA polymerase II promoter involved in meiotic cell cycle
+def: "Any process that modulates the frequency, rate or extent of transcription from an RNA polymerase II promoter as part of the meiotic cell cycle." []
+synonym: "regulation of meiosis by regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "regulation of transcription from RNA polymerase II promoter, meiotic" EXACT []
+is_a: GO:0006357 ! regulation of transcription by RNA polymerase II
+is_a: GO:0051037 ! regulation of transcription involved in meiotic cell cycle
+intersection_of: GO:0006357 ! regulation of transcription by RNA polymerase II
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+
+[Term]
+id: GO:0010673
+name: positive regulation of transcription from RNA polymerase II promoter involved in meiotic cell cycle
+def: "Any process that increases the frequency, rate or extent of transcription from an RNA polymerase II promoter as part of the meiotic cell cycle." []
+synonym: "activation of meiosis by positive regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "positive regulation of meiosis by positive regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "positive regulation of transcription from RNA polymerase II promoter, meiotic" EXACT []
+synonym: "stimulation of meiosis by positive regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "up regulation of meiosis by positive regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "up-regulation of meiosis by positive regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "upregulation of meiosis by positive regulation of transcription from RNA polymerase II promoter" NARROW []
+is_a: GO:0010672 ! regulation of transcription from RNA polymerase II promoter involved in meiotic cell cycle
+is_a: GO:0045944 ! positive regulation of transcription by RNA polymerase II
+is_a: GO:0051039 ! positive regulation of transcription involved in meiotic cell cycle
+intersection_of: GO:0045944 ! positive regulation of transcription by RNA polymerase II
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+
+[Term]
+id: GO:0010674
+name: negative regulation of transcription from RNA polymerase II promoter involved in meiotic cell cycle
+def: "Any process that decreases the frequency, rate or extent of transcription from an RNA polymerase II promoter as part of the meiotic cell cycle." []
+synonym: "activation of meiosis by negative regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "negative regulation of transcription from RNA polymerase II promoter, meiotic" EXACT []
+synonym: "positive regulation of meiosis by negative regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "stimulation of meiosis by negative regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "up regulation of meiosis by negative regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "up-regulation of meiosis by negative regulation of transcription from RNA polymerase II promoter" NARROW []
+synonym: "upregulation of meiosis by negative regulation of transcription from RNA polymerase II promoter" NARROW []
+is_a: GO:0000122 ! negative regulation of transcription by RNA polymerase II
+is_a: GO:0010672 ! regulation of transcription from RNA polymerase II promoter involved in meiotic cell cycle
+is_a: GO:0051038 ! negative regulation of transcription involved in meiotic cell cycle
+intersection_of: GO:0000122 ! negative regulation of transcription by RNA polymerase II
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
 
 [Term]
 id: GO:0010675
@@ -6597,6 +6730,16 @@ is_a: GO:0043085 ! positive regulation of catalytic activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0016853 ! positively regulates isomerase activity
 relationship: RO:0002213 GO:0016853 ! positively regulates isomerase activity
+
+[Term]
+id: GO:0010948
+name: negative regulation of cell cycle process
+def: "Any process that decreases the rate, frequency or extent of a cellular process that is involved in the progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events." []
+is_a: GO:0010564 ! regulation of cell cycle process
+is_a: GO:0045786 ! negative regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0022402 ! negatively regulates cell cycle process
+relationship: RO:0002212 GO:0022402 ! negatively regulates cell cycle process
 
 [Term]
 id: GO:0010950
@@ -8053,6 +8196,15 @@ is_a: GO:0035295 ! tube development
 is_a: GO:0060429 ! epithelium development
 relationship: BFO:0000050 GO:0007399 ! part of nervous system development
 relationship: BFO:0000050 GO:0043009 ! part of chordate embryonic development
+
+[Term]
+id: GO:0022402
+name: cell cycle process
+def: "The cellular process that ensures successive accurate and complete genome replication and chromosome segregation." []
+is_a: GO:0009987 ! cellular process
+intersection_of: GO:0009987 ! cellular process
+intersection_of: BFO:0000050 GO:0007049 ! part of cell cycle
+relationship: BFO:0000050 GO:0007049 ! part of cell cycle
 
 [Term]
 id: GO:0022407
@@ -11232,6 +11384,18 @@ intersection_of: RO:0002213 GO:0009790 ! positively regulates embryo development
 relationship: RO:0002213 GO:0009790 ! positively regulates embryo development
 
 [Term]
+id: GO:0040020
+name: regulation of meiotic nuclear division
+def: "Any process that modulates the frequency, rate or extent of meiotic nuclear division, the process in which the nucleus of a diploid cell divides twice forming four haploid cells, one or more of which usually function as gametes." []
+synonym: "regulation of meiosis" BROAD []
+is_a: GO:0010564 ! regulation of cell cycle process
+is_a: GO:0051445 ! regulation of meiotic cell cycle
+is_a: GO:0051783 ! regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0140013 ! regulates meiotic nuclear division
+relationship: RO:0002211 GO:0140013 ! regulates meiotic nuclear division
+
+[Term]
 id: GO:0042060
 name: wound healing
 def: "The series of events that restore integrity to a damaged tissue, following an injury." []
@@ -13515,6 +13679,39 @@ intersection_of: RO:0002213 GO:0007155 ! positively regulates cell adhesion
 relationship: RO:0002213 GO:0007155 ! positively regulates cell adhesion
 
 [Term]
+id: GO:0045786
+name: negative regulation of cell cycle
+def: "Any process that stops, prevents or reduces the rate or extent of progression through the cell cycle." []
+synonym: "down regulation of progression through cell cycle" EXACT []
+synonym: "down-regulation of progression through cell cycle" EXACT []
+synonym: "downregulation of progression through cell cycle" EXACT []
+synonym: "inhibition of progression through cell cycle" NARROW []
+synonym: "negative regulation of cell cycle progression" EXACT []
+synonym: "negative regulation of progression through cell cycle" EXACT []
+is_a: GO:0048523 ! negative regulation of cellular process
+is_a: GO:0051726 ! regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007049 ! negatively regulates cell cycle
+relationship: RO:0002212 GO:0007049 ! negatively regulates cell cycle
+
+[Term]
+id: GO:0045787
+name: positive regulation of cell cycle
+def: "Any process that activates or increases the rate or extent of progression through the cell cycle." []
+synonym: "activation of progression through cell cycle" NARROW []
+synonym: "positive regulation of cell cycle progression" EXACT []
+synonym: "positive regulation of progression through cell cycle" EXACT []
+synonym: "stimulation of progression through cell cycle" NARROW []
+synonym: "up regulation of progression through cell cycle" EXACT []
+synonym: "up-regulation of progression through cell cycle" EXACT []
+synonym: "upregulation of progression through cell cycle" EXACT []
+is_a: GO:0048522 ! positive regulation of cellular process
+is_a: GO:0051726 ! regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007049 ! positively regulates cell cycle
+relationship: RO:0002213 GO:0007049 ! positively regulates cell cycle
+
+[Term]
 id: GO:0045806
 name: negative regulation of endocytosis
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of endocytosis." []
@@ -13691,6 +13888,41 @@ is_a: GO:0019216 ! regulation of lipid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006629 ! positively regulates lipid metabolic process
 relationship: RO:0002213 GO:0006629 ! positively regulates lipid metabolic process
+
+[Term]
+id: GO:0045835
+name: negative regulation of meiotic nuclear division
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of meiosis." []
+synonym: "down regulation of meiosis" EXACT []
+synonym: "down-regulation of meiosis" EXACT []
+synonym: "downregulation of meiosis" EXACT []
+synonym: "inhibition of meiosis" NARROW []
+synonym: "negative regulation of meiosis" EXACT []
+is_a: GO:0010948 ! negative regulation of cell cycle process
+is_a: GO:0040020 ! regulation of meiotic nuclear division
+is_a: GO:0051447 ! negative regulation of meiotic cell cycle
+is_a: GO:0051784 ! negative regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0140013 ! negatively regulates meiotic nuclear division
+relationship: RO:0002212 GO:0140013 ! negatively regulates meiotic nuclear division
+
+[Term]
+id: GO:0045836
+name: positive regulation of meiotic nuclear division
+def: "Any process that activates or increases the frequency, rate or extent of meiosis." []
+synonym: "activation of meiosis" NARROW []
+synonym: "positive regulation of meiosis" EXACT []
+synonym: "stimulation of meiosis" NARROW []
+synonym: "up regulation of meiosis" EXACT []
+synonym: "up-regulation of meiosis" EXACT []
+synonym: "upregulation of meiosis" EXACT []
+is_a: GO:0040020 ! regulation of meiotic nuclear division
+is_a: GO:0051446 ! positive regulation of meiotic cell cycle
+is_a: GO:0051785 ! positive regulation of nuclear division
+is_a: GO:0090068 ! positive regulation of cell cycle process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0140013 ! positively regulates meiotic nuclear division
+relationship: RO:0002213 GO:0140013 ! positively regulates meiotic nuclear division
 
 [Term]
 id: GO:0045861
@@ -14849,6 +15081,12 @@ def: "Generation of the male gamete; specialised haploid cells produced by meios
 is_a: GO:0007276 ! gamete generation
 
 [Term]
+id: GO:0048285
+name: organelle fission
+def: "The creation of two or more organelles by division of one organelle." []
+is_a: GO:0006996 ! organelle organization
+
+[Term]
 id: GO:0048468
 name: cell development
 def: "The process whose specific outcome is the progression of the cell over time, from its formation to the mature structure. Cell development does not include the steps involved in committing a cell to a specific fate." []
@@ -15900,6 +16138,50 @@ synonym: "tactition" EXACT []
 is_a: GO:0050954 ! sensory perception of mechanical stimulus
 
 [Term]
+id: GO:0051037
+name: regulation of transcription involved in meiotic cell cycle
+def: "Any process that modulates the frequency, rate or extent of transcription as part of a meiotic cell cycle." []
+synonym: "meiotic regulation of transcription" EXACT []
+synonym: "regulation of transcription, meiotic" EXACT []
+is_a: GO:0006355 ! regulation of transcription, DNA-templated
+is_a: GO:0022414 ! reproductive process
+intersection_of: GO:0006355 ! regulation of transcription, DNA-templated
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+relationship: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+
+[Term]
+id: GO:0051038
+name: negative regulation of transcription involved in meiotic cell cycle
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of transcription involved in the meiotic cell cycle." []
+synonym: "down regulation of transcription during meiosis" EXACT []
+synonym: "down-regulation of transcription during meiosis" EXACT []
+synonym: "downregulation of transcription during meiosis" EXACT []
+synonym: "inhibition of transcription during meiosis" NARROW []
+synonym: "meiotic repression of transcription" EXACT []
+synonym: "negative regulation of meiotic transcription" EXACT []
+synonym: "negative regulation of transcription, meiotic" EXACT []
+is_a: GO:0045892 ! negative regulation of transcription, DNA-templated
+is_a: GO:0051037 ! regulation of transcription involved in meiotic cell cycle
+intersection_of: GO:0045892 ! negative regulation of transcription, DNA-templated
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+
+[Term]
+id: GO:0051039
+name: positive regulation of transcription involved in meiotic cell cycle
+def: "Any process that activates or increases the frequency, rate or extent of transcription as part of a meiotic cell cycle." []
+synonym: "activation of transcription during meiosis" NARROW []
+synonym: "positive regulation of meiotic transcription" EXACT []
+synonym: "positive regulation of transcription, meiotic" EXACT []
+synonym: "stimulation of transcription during meiosis" NARROW []
+synonym: "up regulation of transcription during meiosis" EXACT []
+synonym: "up-regulation of transcription during meiosis" EXACT []
+synonym: "upregulation of transcription during meiosis" EXACT []
+is_a: GO:0045893 ! positive regulation of transcription, DNA-templated
+is_a: GO:0051037 ! regulation of transcription involved in meiotic cell cycle
+intersection_of: GO:0045893 ! positive regulation of transcription, DNA-templated
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+
+[Term]
 id: GO:0051046
 name: regulation of secretion
 def: "Any process that modulates the frequency, rate or extent of the controlled release of a substance from a cell or a tissue." []
@@ -16692,6 +16974,17 @@ intersection_of: RO:0002213 GO:0006928 ! positively regulates movement of cell o
 relationship: RO:0002213 GO:0006928 ! positively regulates movement of cell or subcellular component
 
 [Term]
+id: GO:0051321
+name: meiotic cell cycle
+def: "Progression through the phases of the meiotic cell cycle, in which canonically a cell replicates to produce four offspring with half the chromosomal content of the progenitor cell via two nuclear divisions." []
+synonym: "meiosis" RELATED []
+is_a: GO:0007049 ! cell cycle
+is_a: GO:0022414 ! reproductive process
+intersection_of: GO:0007049 ! cell cycle
+intersection_of: BFO:0000051 GO:0140013 ! has_part meiotic nuclear division
+relationship: BFO:0000051 GO:0140013 ! has_part meiotic nuclear division
+
+[Term]
 id: GO:0051336
 name: regulation of hydrolase activity
 def: "Any process that modulates the frequency, rate or extent of hydrolase activity, the catalysis of the hydrolysis of various bonds, e.g. C-O, C-N, C-C, phosphoric anhydride bonds, etc. Hydrolase is the systematic name for any enzyme of EC class 3." []
@@ -16925,6 +17218,57 @@ intersection_of: BFO:0000050 GO:0050957 ! part of equilibrioception
 relationship: BFO:0000050 GO:0050957 ! part of equilibrioception
 
 [Term]
+id: GO:0051445
+name: regulation of meiotic cell cycle
+def: "Any process that modulates the rate or extent of progression through the meiotic cell cycle." []
+synonym: "meiotic cell cycle modulation" EXACT []
+synonym: "meiotic cell cycle regulation" EXACT []
+synonym: "meiotic cell cycle regulator" RELATED []
+synonym: "modulation of meiotic cell cycle progression" EXACT []
+synonym: "regulation of meiotic cell cycle progression" EXACT []
+synonym: "regulation of progression through meiotic cell cycle" EXACT []
+is_a: GO:0051726 ! regulation of cell cycle
+is_a: GO:2000241 ! regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0051321 ! regulates meiotic cell cycle
+relationship: RO:0002211 GO:0051321 ! regulates meiotic cell cycle
+
+[Term]
+id: GO:0051446
+name: positive regulation of meiotic cell cycle
+def: "Any process that activates or increases the frequency, rate or extent of progression through the meiotic cell cycle." []
+synonym: "activation of progression through meiotic cell cycle" NARROW []
+synonym: "positive regulation of meiotic cell cycle progression" EXACT []
+synonym: "positive regulation of progression through meiotic cell cycle" EXACT []
+synonym: "stimulation of progression through meiotic cell cycle" NARROW []
+synonym: "up regulation of progression through meiotic cell cycle" EXACT []
+synonym: "up-regulation of progression through meiotic cell cycle" EXACT []
+synonym: "upregulation of progression through meiotic cell cycle" EXACT []
+is_a: GO:0045787 ! positive regulation of cell cycle
+is_a: GO:0051445 ! regulation of meiotic cell cycle
+is_a: GO:2000243 ! positive regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0051321 ! positively regulates meiotic cell cycle
+relationship: RO:0002213 GO:0051321 ! positively regulates meiotic cell cycle
+
+[Term]
+id: GO:0051447
+name: negative regulation of meiotic cell cycle
+def: "Any process that stops, prevents or reduces the rate or extent of progression through the meiotic cell cycle." []
+synonym: "down regulation of progression through meiotic cell cycle" EXACT []
+synonym: "down-regulation of progression through meiotic cell cycle" EXACT []
+synonym: "downregulation of progression through meiotic cell cycle" EXACT []
+synonym: "inhibition of progression through meiotic cell cycle" NARROW []
+synonym: "negative regulation of meiotic cell cycle progression" EXACT []
+synonym: "negative regulation of progression through meiotic cell cycle" EXACT []
+is_a: GO:0045786 ! negative regulation of cell cycle
+is_a: GO:0051445 ! regulation of meiotic cell cycle
+is_a: GO:2000242 ! negative regulation of reproductive process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0051321 ! negatively regulates meiotic cell cycle
+relationship: RO:0002212 GO:0051321 ! negatively regulates meiotic cell cycle
+
+[Term]
 id: GO:0051458
 name: corticotropin secretion
 def: "The regulated release of corticotropin by a cell. Corticotropin hormone is a polypeptide hormone synthesized and secreted from corticotropes in the anterior lobe of the pituitary gland in response to corticotropin-releasing hormone (CRH) released by the hypothalamus." []
@@ -17105,6 +17449,61 @@ name: cellular response to stimulus
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus. The process begins with detection of the stimulus by a cell and ends with a change in state or activity or the cell." []
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0051726
+name: regulation of cell cycle
+def: "Any process that modulates the rate or extent of progression through the cell cycle." []
+synonym: "cell cycle modulation" EXACT []
+synonym: "cell cycle regulation" EXACT []
+synonym: "cell cycle regulator" RELATED []
+synonym: "control of cell cycle progression" EXACT []
+synonym: "modulation of cell cycle progression" EXACT []
+synonym: "regulation of cell cycle progression" EXACT []
+synonym: "regulation of progression through cell cycle" EXACT []
+synonym: "tumor suppressor" RELATED []
+is_a: GO:0050794 ! regulation of cellular process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007049 ! regulates cell cycle
+relationship: RO:0002211 GO:0007049 ! regulates cell cycle
+
+[Term]
+id: GO:0051783
+name: regulation of nuclear division
+def: "Any process that modulates the frequency, rate or extent of nuclear division, the partitioning of the nucleus and its genetic information." []
+is_a: GO:0033043 ! regulation of organelle organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0000280 ! regulates nuclear division
+relationship: RO:0002211 GO:0000280 ! regulates nuclear division
+
+[Term]
+id: GO:0051784
+name: negative regulation of nuclear division
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of nuclear division, the partitioning of the nucleus and its genetic information." []
+synonym: "down regulation of nuclear division" EXACT []
+synonym: "down-regulation of nuclear division" EXACT []
+synonym: "downregulation of nuclear division" EXACT []
+synonym: "inhibition of nuclear division" NARROW []
+is_a: GO:0010639 ! negative regulation of organelle organization
+is_a: GO:0051783 ! regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0000280 ! negatively regulates nuclear division
+relationship: RO:0002212 GO:0000280 ! negatively regulates nuclear division
+
+[Term]
+id: GO:0051785
+name: positive regulation of nuclear division
+def: "Any process that activates or increases the frequency, rate or extent of nuclear division, the partitioning of the nucleus and its genetic information." []
+synonym: "activation of nuclear division" NARROW []
+synonym: "stimulation of nuclear division" NARROW []
+synonym: "up regulation of nuclear division" EXACT []
+synonym: "up-regulation of nuclear division" EXACT []
+synonym: "upregulation of nuclear division" EXACT []
+is_a: GO:0010638 ! positive regulation of organelle organization
+is_a: GO:0051783 ! regulation of nuclear division
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0000280 ! positively regulates nuclear division
+relationship: RO:0002213 GO:0000280 ! positively regulates nuclear division
 
 [Term]
 id: GO:0051924
@@ -18957,6 +19356,16 @@ def: "Any process that modulates the size of an anatomical structure." []
 is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
+id: GO:0090068
+name: positive regulation of cell cycle process
+def: "Any process that increases the rate, frequency or extent of a cellular process that is involved in the progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events." []
+is_a: GO:0010564 ! regulation of cell cycle process
+is_a: GO:0045787 ! positive regulation of cell cycle
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0022402 ! positively regulates cell cycle process
+relationship: RO:0002213 GO:0022402 ! positively regulates cell cycle process
+
+[Term]
 id: GO:0090087
 name: regulation of peptide transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of peptides, compounds of two or more amino acids where the alpha carboxyl group of one is bound to the alpha amino group of another, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
@@ -19876,6 +20285,15 @@ intersection_of: GO:0006366 ! transcription by RNA polymerase II
 intersection_of: RO:0002211 GO:0006826 ! regulates iron ion transport
 
 [Term]
+id: GO:0100023
+name: regulation of meiotic nuclear division by transcription from RNA polymerase II promoter
+def: "Any transcription from RNA polymerase II promoter process that regulates meiotic nuclear division" []
+is_a: GO:0006366 ! transcription by RNA polymerase II
+is_a: GO:0040020 ! regulation of meiotic nuclear division
+intersection_of: GO:0006366 ! transcription by RNA polymerase II
+intersection_of: RO:0002211 GO:0140013 ! regulates meiotic nuclear division
+
+[Term]
 id: GO:0100024
 name: regulation of carbohydrate metabolic process by transcription from RNA polymerase II promoter
 def: "Any transcription from RNA polymerase II promoter process that regulates carbohydrate metabolic process" []
@@ -19919,6 +20337,15 @@ is_a: GO:0006366 ! transcription by RNA polymerase II
 is_a: GO:1900373 ! positive regulation of purine nucleotide biosynthetic process
 intersection_of: GO:0006366 ! transcription by RNA polymerase II
 intersection_of: RO:0002213 GO:0006164 ! positively regulates purine nucleotide biosynthetic process
+
+[Term]
+id: GO:0100051
+name: positive regulation of meiotic nuclear division by transcription from RNA polymerase II promoter
+def: "Any transcription from RNA polymerase II promoter process that positively_regulates meiotic nuclear division" []
+is_a: GO:0045836 ! positive regulation of meiotic nuclear division
+is_a: GO:0100023 ! regulation of meiotic nuclear division by transcription from RNA polymerase II promoter
+intersection_of: GO:0006366 ! transcription by RNA polymerase II
+intersection_of: RO:0002213 GO:0140013 ! positively regulates meiotic nuclear division
 
 [Term]
 id: GO:0100070
@@ -20011,6 +20438,15 @@ is_a: GO:0097458 ! neuron part
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: BFO:0000050 GO:0043005 ! part of neuron projection
 relationship: BFO:0000050 GO:0043005 ! part of neuron projection
+
+[Term]
+id: GO:0140013
+name: meiotic nuclear division
+def: "One of the two nuclear divisions that occur as part of the meiotic cell cycle." []
+is_a: GO:0000280 ! nuclear division
+is_a: GO:1903046 ! meiotic cell cycle process
+intersection_of: GO:0000280 ! nuclear division
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
 
 [Term]
 id: GO:0140039
@@ -22144,6 +22580,16 @@ is_a: GO:1903037 ! regulation of leukocyte cell-cell adhesion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0007159 ! positively regulates leukocyte cell-cell adhesion
 relationship: RO:0002213 GO:0007159 ! positively regulates leukocyte cell-cell adhesion
+
+[Term]
+id: GO:1903046
+name: meiotic cell cycle process
+def: "A process that is part of the meiotic cell cycle." []
+is_a: GO:0022402 ! cell cycle process
+is_a: GO:0022414 ! reproductive process
+intersection_of: GO:0009987 ! cellular process
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+relationship: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
 
 [Term]
 id: GO:1903048

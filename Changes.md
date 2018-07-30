@@ -1,5 +1,7 @@
 ## 2018-07-16 Release
 
+This release includes more complete mappings to external ontologies and databases
+
  * [peripheral ischemia](http://purl.obolibrary.org/obo/MONDO_0041114)
  * [functional disorder of bladder neck and sphincter mechanism](http://purl.obolibrary.org/obo/MONDO_0041154)
  * [carcinoid crisis](http://purl.obolibrary.org/obo/MONDO_0041167)

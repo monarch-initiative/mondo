@@ -366,6 +366,17 @@ relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
+id: CHEBI:15841
+name: polypeptide
+def: "A peptide containing ten or more amino acid residues." []
+synonym: "polipeptido" RELATED []
+synonym: "Polypeptid" RELATED []
+synonym: "Polypeptide" EXACT []
+synonym: "polypeptides" EXACT []
+is_a: CHEBI:16670 ! peptide
+is_a: CHEBI:33839 ! macromolecule
+
+[Term]
 id: CHEBI:15956
 name: biotin
 def: "An organic heterobicyclic compound that consists of 2-oxohexahydro-1H-thieno[3,4-d]imidazole having a valeric acid substituent attached to the tetrahydrothiophene ring. The parent of the class of biotins." []
@@ -486,6 +497,16 @@ relationship: is_conjugate_acid_of CHEBI:77938 ! barbiturate(1-)
 relationship: RO:0000087 CHEBI:35703 ! xenobiotic
 
 [Term]
+id: CHEBI:16541
+name: protein polypeptide chain
+def: "A naturally occurring polypeptide synthesized at the ribosome." []
+synonym: "polypeptide chain" RELATED []
+synonym: "Protein" RELATED []
+synonym: "protein polypeptide chains" RELATED []
+is_a: CHEBI:15841 ! polypeptide
+relationship: BFO:0000051 CHEBI:33700 ! proteinogenic amino-acid residue
+
+[Term]
 id: CHEBI:16646
 name: carbohydrate
 def: "Any member of the class of organooxygen compounds that is a polyhydroxy-aldehyde or -ketone or a lactol resulting from their intramolecular condensation (monosaccharides); substances derived from these by reduction of the carbonyl group (alditols), by oxidation of one or more hydroxy groups to afford the corresponding aldehydes, ketones, or carboxylic acids, or by replacement of one or more hydroxy group(s) by a hydrogen atom; and polymeric products arising by intermolecular acetal formation between two or more such molecules (disaccharides, polysaccharides and oligosaccharides). Carbohydrates contain only carbon, hydrogen and oxygen atoms; prior to any oxidation or reduction, most have the empirical formula Cm(H2O)n. Compounds obtained from carbohydrates by substitution, etc., are known as carbohydrate derivatives and may contain other elements. Cyclitols are generally not regarded as carbohydrates." []
@@ -504,6 +525,20 @@ synonym: "saccharide" RELATED []
 synonym: "saccharides" RELATED []
 synonym: "saccharidum" RELATED []
 is_a: CHEBI:78616 ! carbohydrates and carbohydrate derivatives
+
+[Term]
+id: CHEBI:16670
+name: peptide
+def: "Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from alpha-amino acids, but it includes those derived from any amino carboxylic acid. X = OH, OR, NH2, NHR, etc." []
+synonym: "Peptid" RELATED []
+synonym: "Peptide" EXACT []
+synonym: "peptides" EXACT []
+synonym: "peptido" RELATED []
+synonym: "peptidos" RELATED []
+is_a: CHEBI:37622 ! carboxamide
+is_a: CHEBI:50047 ! organic amino compound
+relationship: BFO:0000051 CHEBI:33708 ! amino-acid residue
+relationship: is_tautomer_of CHEBI:60466 ! peptide zwitterion
 
 [Term]
 id: CHEBI:16705
@@ -1820,6 +1855,15 @@ synonym: "secondary metabolites" RELATED []
 is_a: CHEBI:52206 ! biochemical role
 
 [Term]
+id: CHEBI:25216
+name: metalloporphyrin
+synonym: "metalloporphyrins" RELATED []
+synonym: "metaloporphyrins" RELATED []
+is_a: CHEBI:26214 ! porphyrins
+is_a: CHEBI:33240 ! coordination entity
+is_a: CHEBI:33909 ! metallotetrapyrrole
+
+[Term]
 id: CHEBI:25248
 name: methyl ester
 def: "Any carboxylic ester resulting from the formal condensation of a carboxy group with methanol." []
@@ -2118,6 +2162,14 @@ name: polyol
 def: "A compound that contains two or more hydroxy groups." []
 synonym: "polyols" RELATED []
 is_a: CHEBI:33822 ! organic hydroxy compound
+
+[Term]
+id: CHEBI:26214
+name: porphyrins
+def: "Natural pigments containing a fundamental skeleton of four pyrrole nuclei united through the alpha-positions by four methine groups to form a macrocyclic structure." []
+synonym: "porphyrins" EXACT []
+is_a: CHEBI:36309 ! cyclic tetrapyrrole
+relationship: RO:0000087 CHEBI:23357 ! cofactor
 
 [Term]
 id: CHEBI:26348
@@ -2850,6 +2902,23 @@ is_a: CHEBI:23334 ! cobalamins
 relationship: RO:0000087 CHEBI:23357 ! cofactor
 relationship: RO:0000087 CHEBI:26348 ! prosthetic group
 relationship: RO:0000087 CHEBI:75769 ! B vitamin
+
+[Term]
+id: CHEBI:30413
+name: heme
+def: "A heme is any tetrapyrrolic chelate of iron." []
+synonym: "Haem" RELATED []
+synonym: "haem" RELATED []
+synonym: "haeme" RELATED []
+synonym: "hem" RELATED []
+synonym: "heme" EXACT []
+synonym: "hemes" EXACT []
+synonym: "hemos" RELATED []
+is_a: CHEBI:25216 ! metalloporphyrin
+is_a: CHEBI:33892 ! iron coordination entity
+is_a: CHEBI:33909 ! metallotetrapyrrole
+relationship: RO:0000087 CHEBI:25212 ! metabolite
+relationship: RO:0000087 CHEBI:26348 ! prosthetic group
 
 [Term]
 id: CHEBI:30436
@@ -4028,6 +4097,39 @@ is_a: CHEBI:33608 ! hydrogen molecular entity
 is_a: CHEBI:37577 ! heteroatomic molecular entity
 
 [Term]
+id: CHEBI:33694
+name: biomacromolecule
+def: "A macromolecule formed by a living organism." []
+synonym: "biomacromolecules" RELATED []
+synonym: "biopolymer" EXACT []
+synonym: "Biopolymere" RELATED []
+synonym: "biopolymers" RELATED []
+is_a: CHEBI:33839 ! macromolecule
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:33695
+name: information biomacromolecule
+synonym: "genetically encoded biomacromolecules" RELATED []
+synonym: "genetically encoded biopolymers" RELATED []
+synonym: "information biomacromolecules" RELATED []
+synonym: "information biopolymers" RELATED []
+synonym: "information macromolecule" RELATED []
+synonym: "information macromolecules" RELATED []
+is_a: CHEBI:33694 ! biomacromolecule
+
+[Term]
+id: CHEBI:33700
+name: proteinogenic amino-acid residue
+synonym: "canonical amino-acid residue" RELATED []
+synonym: "canonical amino-acid residues" RELATED []
+synonym: "common amino acid residues" RELATED []
+synonym: "proteinogenic amino-acid residues" RELATED []
+synonym: "standard amino acid residues" RELATED []
+synonym: "standard amino-acid residues" RELATED []
+is_a: CHEBI:33710 ! alpha-amino-acid residue
+
+[Term]
 id: CHEBI:33702
 name: polyatomic cation
 def: "A cation consisting of more than one atom." []
@@ -4057,6 +4159,16 @@ relationship: is_conjugate_acid_of CHEBI:33558 ! alpha-amino-acid anion
 relationship: is_tautomer_of CHEBI:78608 ! alpha-amino acid zwitterion
 
 [Term]
+id: CHEBI:33708
+name: amino-acid residue
+def: "When two or more amino acids combine to form a peptide, the elements of water are removed, and what remains of each amino acid is called an amino-acid residue." []
+synonym: "amino acid residue" RELATED []
+synonym: "amino-acid residue" EXACT []
+synonym: "amino-acid residues" RELATED []
+is_a: CHEBI:33247 ! organic group
+relationship: is_substituent_group_from CHEBI:33709 ! amino acid
+
+[Term]
 id: CHEBI:33709
 name: amino acid
 def: "A carboxylic acid containing one or more amino groups." []
@@ -4067,6 +4179,13 @@ synonym: "Aminosaeure" RELATED []
 is_a: CHEBI:33575 ! carboxylic acid
 is_a: CHEBI:50047 ! organic amino compound
 relationship: is_conjugate_acid_of CHEBI:37022 ! amino-acid anion
+
+[Term]
+id: CHEBI:33710
+name: alpha-amino-acid residue
+synonym: "alpha-amino-acid residues" RELATED []
+is_a: CHEBI:33708 ! amino-acid residue
+relationship: is_substituent_group_from CHEBI:33704 ! alpha-amino acid
 
 [Term]
 id: CHEBI:33719
@@ -4165,6 +4284,25 @@ is_a: CHEBI:33598 ! carbocyclic compound
 is_a: CHEBI:33659 ! organic aromatic compound
 
 [Term]
+id: CHEBI:33837
+name: conjugated protein
+def: "Conjugated protein is a protein that contains a non-peptide component, usually in stoichiometric proportion." []
+synonym: "complex protein" RELATED []
+synonym: "conjugated proteins" EXACT []
+is_a: CHEBI:36080 ! protein
+
+[Term]
+id: CHEBI:33839
+name: macromolecule
+def: "A macromolecule is a molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
+synonym: "macromolecule" EXACT []
+synonym: "macromolecules" RELATED []
+synonym: "polymer" RELATED []
+synonym: "polymer molecule" RELATED []
+synonym: "polymers" RELATED []
+is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
 id: CHEBI:33842
 name: aromatic annulene
 synonym: "aromatic annulenes" RELATED []
@@ -4250,6 +4388,15 @@ is_a: CHEBI:33861 ! transition element coordination entity
 is_a: CHEBI:33888 ! cobalt molecular entity
 
 [Term]
+id: CHEBI:33892
+name: iron coordination entity
+synonym: "iron coordination compounds" RELATED []
+synonym: "iron coordination entities" RELATED []
+synonym: "iron coordination entity" EXACT []
+is_a: CHEBI:24873 ! iron molecular entity
+is_a: CHEBI:33861 ! transition element coordination entity
+
+[Term]
 id: CHEBI:33893
 name: reagent
 def: "A substance used in a chemical reaction to detect, measure, examine, or produce other substances." []
@@ -4327,6 +4474,45 @@ name: azane
 def: "Saturated acyclic nitrogen hydrides having the general formula NnHn+2." []
 synonym: "azanes" RELATED []
 is_a: CHEBI:35106 ! nitrogen hydride
+
+[Term]
+id: CHEBI:35134
+name: metalloprotein
+synonym: "metalloprotein" EXACT []
+synonym: "metalloproteine" RELATED []
+synonym: "metalloproteins" RELATED []
+is_a: CHEBI:33837 ! conjugated protein
+
+[Term]
+id: CHEBI:35136
+name: iron protein
+synonym: "iron protein" EXACT []
+synonym: "iron proteins" RELATED []
+synonym: "iron-containing proteins" RELATED []
+is_a: CHEBI:35134 ! metalloprotein
+
+[Term]
+id: CHEBI:35137
+name: hemoprotein
+def: "Conjugated proteins containing heme as the prosthetic group." []
+synonym: "haem protein" RELATED []
+synonym: "Haemoprotein" RELATED []
+synonym: "haemoprotein" RELATED []
+synonym: "Haemprotein" RELATED []
+synonym: "heme protein" RELATED []
+synonym: "hemeproteins" RELATED []
+synonym: "hemoprotein" EXACT []
+synonym: "hemoproteins" RELATED []
+is_a: CHEBI:35136 ! iron protein
+relationship: BFO:0000051 CHEBI:30413 ! heme
+
+[Term]
+id: CHEBI:35143
+name: hemoglobin
+synonym: "haemoglobin" RELATED []
+synonym: "hemoglobin" EXACT []
+synonym: "vertebrate haemoglobin" RELATED []
+is_a: CHEBI:5386 ! globin
 
 [Term]
 id: CHEBI:35186
@@ -4883,6 +5069,14 @@ synonym: "hydroxy monocarboxylic acid anions" RELATED []
 synonym: "hydroxymonocarboxylic acid anion" RELATED []
 synonym: "hydroxymonocarboxylic acid anions" RELATED []
 is_a: CHEBI:35757 ! monocarboxylic acid anion
+
+[Term]
+id: CHEBI:36080
+name: protein
+def: "A biological macromolecule minimally consisting of one polypeptide chain synthesized at the ribosome." []
+synonym: "proteins" EXACT []
+is_a: CHEBI:33695 ! information biomacromolecule
+relationship: BFO:0000051 CHEBI:16541 ! protein polypeptide chain
 
 [Term]
 id: CHEBI:36132
@@ -6805,6 +6999,14 @@ is_a: CHEBI:36963 ! organooxygen compound
 relationship: has_functional_parent CHEBI:29202 ! isocyanic acid
 
 [Term]
+id: CHEBI:5386
+name: globin
+synonym: "Globin" EXACT []
+synonym: "globins" RELATED []
+synonym: "pentacoordinate globin" RELATED []
+is_a: CHEBI:35137 ! hemoprotein
+
+[Term]
 id: CHEBI:5686
 name: heterocyclic compound
 def: "A cyclic compound having as ring members atoms of at least two different elements." []
@@ -7084,6 +7286,14 @@ name: monovalent inorganic cation
 def: "An atom or small molecule with a positive charge that does not contain carbon in covalent linkage, with a valency of one." []
 synonym: "a monovalent cation" RELATED []
 is_a: CHEBI:36915 ! inorganic cation
+
+[Term]
+id: CHEBI:60466
+name: peptide zwitterion
+def: "Zwitterionic form of any peptide where the amino terminus is positively charged and the carboxy terminus is negatively charged." []
+synonym: "peptide zwitterions" RELATED []
+is_a: CHEBI:27369 ! zwitterion
+relationship: is_tautomer_of CHEBI:16670 ! peptide
 
 [Term]
 id: CHEBI:60531

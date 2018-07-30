@@ -25,6 +25,8 @@
 
 foo('0').
 
+mondo(C) :- owl:class(C), uri_prefix(C,'MONDO').
+
 
 % TODO: add to owl vocab
 dep(C) :- rdf(C,owl:deprecated,_).

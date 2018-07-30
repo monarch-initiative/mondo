@@ -15815,6 +15815,18 @@ intersection_of: RO:0002473 UBERON:0002481 ! composed primarily of bone tissue
 relationship: RO:0002202 UBERON:0013505 ! develops_from cervical vertebra cartilage element
 
 [Term]
+id: UBERON:0002414
+name: lumbar vertebra
+def: "Large vertebra of the movable part of the vertebral column, characterized by the absence of the foramen transversarium within the transverse process, and by the absence of facets on the sides of the body." []
+is_a: UBERON:0002412 ! vertebra
+is_a: UBERON:0003828 ! abdominal segment bone
+is_a: UBERON:0004247 ! bone of dorsum
+is_a: UBERON:0015009 ! lumbar vertebra endochondral element
+intersection_of: UBERON:0015009 ! lumbar vertebra endochondral element
+intersection_of: RO:0002473 UBERON:0002481 ! composed primarily of bone tissue
+relationship: RO:0002202 UBERON:0013509 ! develops_from lumbar vertebra cartilage element
+
+[Term]
 id: UBERON:0002415
 name: tail
 def: "An external caudal extension of the body. In chordates, the tail is post-anal, in other animals the anus ends in the tail" []
@@ -16917,6 +16929,21 @@ intersection_of: UBERON:0007418 ! neural decussation
 intersection_of: extends_fibers_into UBERON:0001644 ! trochlear nerve
 relationship: BFO:0000050 UBERON:0003023 ! part of pontine tegmentum
 relationship: extends_fibers_into UBERON:0001644 ! trochlear nerve
+
+[Term]
+id: UBERON:0002792
+name: lumbar spinal cord
+def: "." []
+synonym: "lumbar segment of spinal cord" EXACT []
+synonym: "lumbar segments of spinal cord [1-5]" EXACT []
+synonym: "lumbar spinal cord" EXACT []
+synonym: "pars lumbalis medullae spinalis" EXACT []
+synonym: "segmenta lumbalia medullae spinalis [1-5]" EXACT []
+synonym: "spinal cord lumbar segment" EXACT []
+is_a: UBERON:0005844 ! spinal cord segment
+intersection_of: UBERON:0005844 ! spinal cord segment
+intersection_of: BFO:0000050 UBERON:0005462 ! part of lower back
+relationship: BFO:0000050 UBERON:0005462 ! part of lower back
 
 [Term]
 id: UBERON:0002802
@@ -35767,6 +35794,26 @@ relationship: RO:0002372 UBERON:0001077 ! has_muscle_origin transverse process o
 relationship: RO:0002373 UBERON:0007174 ! has_muscle_insertion medial border of scapula
 
 [Term]
+id: UBERON:0005462
+name: lower back
+def: "Subdivision of abdominal segment of trunk which in humans is demarcated from the front of the abdomen by the posterior surface of the anterior layer of the thoracolumbar fascia and the anterior surface of the lumbar vertebral column; together with the front of the abdomen, it constitutes the abdomen[Modified from FMA]." []
+synonym: "abdominal back" EXACT []
+synonym: "back of abdomen" EXACT []
+synonym: "dorsum of abdomen" EXACT []
+synonym: "loin" RELATED []
+synonym: "lombus" RELATED []
+synonym: "lower back" EXACT []
+synonym: "lumbar part of back" EXACT []
+synonym: "lumbar region" BROAD []
+synonym: "lumbar region of back" EXACT []
+synonym: "lumbos" RELATED []
+synonym: "posterior part of abdomen" EXACT []
+synonym: "regio lumbalis" EXACT []
+is_a: UBERON:0009569 ! subdivision of trunk
+relationship: BFO:0000050 UBERON:0001137 ! part of dorsum
+relationship: BFO:0000050 UBERON:0002417 ! part of abdominal segment of trunk
+
+[Term]
 id: UBERON:0005463
 name: subcapsular sinus of lymph node
 def: "A space between the capsule and the cortex which allows the free movement of lymphatic fluid and so contains a sparsity of lymphocytes. It is continuous with the similar lymph sinuses that flank the trabeculae." []
@@ -37052,6 +37099,15 @@ intersection_of: BFO:0000050 UBERON:0002726 ! part of cervical spinal cord
 relationship: BFO:0000050 UBERON:0002726 ! part of cervical spinal cord
 
 [Term]
+id: UBERON:0005855
+name: lumbar spinal cord ventral column
+def: "A subdivision of spinal cord ventral column that is part of a lumbar spinal cord." []
+is_a: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: UBERON:0016551 ! subdivision of spinal cord ventral column
+intersection_of: BFO:0000050 UBERON:0002792 ! part of lumbar spinal cord
+relationship: BFO:0000050 UBERON:0002792 ! part of lumbar spinal cord
+
+[Term]
 id: UBERON:0005856
 name: developing mesenchymal condensation
 def: "A delimited region of dense mesenchyme within looser mesenchyme." []
@@ -37900,6 +37956,22 @@ intersection_of: subdivision_of UBERON:0000915 ! thoracic segment of trunk
 relationship: BFO:0000050 UBERON:0008231 ! part of dorsal thoracic segment of trunk
 relationship: BFO:0000050 UBERON:0014477 ! part of thoracic skeleton
 relationship: subdivision_of UBERON:0000915 ! thoracic segment of trunk
+
+[Term]
+id: UBERON:0006074
+name: lumbar region of vertebral column
+def: "Subdivision of vertebral column that corresponds to the lumbar subdivision of the body, containing the lumbar vertebrae." []
+synonym: "axial skeleton lumbar region" EXACT []
+synonym: "lumbar skeleton" EXACT []
+synonym: "lumbar spine" EXACT []
+synonym: "lumbar vertebrae series" EXACT []
+synonym: "lumbar vertebral column" EXACT []
+is_a: UBERON:0006077 ! subdivision of vertebral column
+intersection_of: UBERON:0006077 ! subdivision of vertebral column
+intersection_of: subdivision_of UBERON:0005462 ! lower back
+relationship: BFO:0000050 UBERON:0002090 ! part of postcranial axial skeleton
+relationship: BFO:0000050 UBERON:0005462 ! part of lower back
+relationship: subdivision_of UBERON:0005462 ! lower back
 
 [Term]
 id: UBERON:0006075
@@ -40982,6 +41054,19 @@ intersection_of: BFO:0000050 UBERON:0006073 ! part of thoracic region of vertebr
 relationship: BFO:0000050 UBERON:0006073 ! part of thoracic region of vertebral column
 
 [Term]
+id: UBERON:0007255
+name: intervertebral disk of lumbar vertebra
+def: "An intervertebral disk that is part of a lumbar region of vertebral column. A lumbar intervertebral disk connects at least one lumbar vertebra, either to another thoracic vertebra, or at one point on the vertebral colummn, to a sacral vertebra" []
+synonym: "intervertebral disc of lumbar region" EXACT []
+is_a: UBERON:0001066 ! intervertebral disk
+is_a: UBERON:0005173 ! abdominal segment element
+is_a: UBERON:0005174 ! dorsal region element
+is_a: UBERON:2001457 ! postcranial axial cartilage
+intersection_of: UBERON:0001066 ! intervertebral disk
+intersection_of: BFO:0000050 UBERON:0006074 ! part of lumbar region of vertebral column
+relationship: BFO:0000050 UBERON:0006074 ! part of lumbar region of vertebral column
+
+[Term]
 id: UBERON:0007257
 name: intervertebral disk of sacral vertebra
 def: "An intervertebral disk that is part of a sacral region of vertebral column. A sacral intervertebral disk connects at least one sacral vertebra, either to another thoracic vertebra, or at one point on the vertebral colummn, to a sacral vertebra" []
@@ -42465,6 +42550,16 @@ relationship: BFO:0000050 UBERON:0000915 ! part of thoracic segment of trunk
 relationship: BFO:0000050 UBERON:0011270 ! part of dorsal trunk
 
 [Term]
+id: UBERON:0008242
+name: lower back muscle
+def: "A muscle of back that is part of a lower back." []
+is_a: UBERON:0002324 ! muscle of back
+is_a: UBERON:0003833 ! abdominal segment muscle
+intersection_of: UBERON:0002324 ! muscle of back
+intersection_of: BFO:0000050 UBERON:0005462 ! part of lower back
+relationship: BFO:0000050 UBERON:0005462 ! part of lower back
+
+[Term]
 id: UBERON:0008243
 name: upper back muscle
 def: "A muscle of back that is part of a dorsal thoracic segment of trunk." []
@@ -42712,6 +42807,16 @@ is_a: UBERON:0005744 ! bone foramen
 intersection_of: UBERON:0001131 ! vertebral foramen
 intersection_of: BFO:0000050 UBERON:0002413 ! part of cervical vertebra
 relationship: BFO:0000050 UBERON:0002413 ! part of cervical vertebra
+
+[Term]
+id: UBERON:0008430
+name: lumbar vertebral foramen
+def: "A vertebral foramen that is part of a lumbar vertebra." []
+is_a: UBERON:0001131 ! vertebral foramen
+is_a: UBERON:0005744 ! bone foramen
+intersection_of: UBERON:0001131 ! vertebral foramen
+intersection_of: BFO:0000050 UBERON:0002414 ! part of lumbar vertebra
+relationship: BFO:0000050 UBERON:0002414 ! part of lumbar vertebra
 
 [Term]
 id: UBERON:0008431
@@ -43432,6 +43537,16 @@ intersection_of: UBERON:0000479 ! tissue
 intersection_of: RO:0002221 UBERON:0000057 ! surrounds urethra
 relationship: BFO:0000050 UBERON:0001556 ! part of lower urinary tract
 relationship: RO:0002221 UBERON:0000057 ! surrounds urethra
+
+[Term]
+id: UBERON:0009014
+name: lower back skin
+def: "A zone of skin that is part of a lower back." []
+is_a: UBERON:0001068 ! skin of back
+is_a: UBERON:0003836 ! abdominal segment skin
+intersection_of: UBERON:0000014 ! zone of skin
+intersection_of: BFO:0000050 UBERON:0005462 ! part of lower back
+relationship: BFO:0000050 UBERON:0005462 ! part of lower back
 
 [Term]
 id: UBERON:0009015
@@ -44542,6 +44657,18 @@ relationship: RO:0002433 UBERON:0001780 ! contributes to morphology of spinal ne
 relationship: RO:0002433 UBERON:0002240 ! contributes to morphology of spinal cord
 
 [Term]
+id: UBERON:0009624
+name: lumbar nerve
+def: "The lumbar nerves are the five spinal nerves emerging from the lumbar vertebrae. They are divided into posterior and anterior divisions." []
+synonym: "lumbar spinal nerve" EXACT []
+synonym: "nervi lumbales" RELATED []
+synonym: "nervus lumbalis" EXACT []
+is_a: UBERON:0001780 ! spinal nerve
+intersection_of: UBERON:0001780 ! spinal nerve
+intersection_of: extends_fibers_into UBERON:0002792 ! lumbar spinal cord
+relationship: extends_fibers_into UBERON:0002792 ! lumbar spinal cord
+
+[Term]
 id: UBERON:0009625
 name: sacral nerve
 def: "The five sacral nerves emerge from the sacrum. Although the vertebral components of the sacrum are fused into a single bone, the sacral vertebrae are still used to number the sacral nerves. Posteriorly, they emerge from the posterior sacral foramina, and form the posterior branches of sacral nerves. Anteriorly, they emerge from the anterior sacral foramina, and contribute to the sacral plexus (S1-S4) and coccygeal plexus." []
@@ -44564,6 +44691,18 @@ is_a: UBERON:0009623 ! spinal nerve root
 intersection_of: UBERON:0009623 ! spinal nerve root
 intersection_of: extends_fibers_into UBERON:0003726 ! thoracic nerve
 relationship: extends_fibers_into UBERON:0003726 ! thoracic nerve
+
+[Term]
+id: UBERON:0009631
+name: root of lumbar spinal nerve
+def: "A spinal nerve root that is part of a lumbar nerve." []
+synonym: "lumbar spinal nerve root" EXACT []
+synonym: "lumbar spinal neural root" EXACT []
+synonym: "nerve root part of lumbar spinal cord" EXACT []
+is_a: UBERON:0009623 ! spinal nerve root
+intersection_of: UBERON:0009623 ! spinal nerve root
+intersection_of: extends_fibers_into UBERON:0009624 ! lumbar nerve
+relationship: extends_fibers_into UBERON:0009624 ! lumbar nerve
 
 [Term]
 id: UBERON:0009632
@@ -52761,6 +52900,28 @@ intersection_of: UBERON:0015008 ! thoracic vertebra endochondral element
 intersection_of: RO:0002473 UBERON:0005866 ! composed primarily of pre-cartilage condensation
 
 [Term]
+id: UBERON:0013509
+name: lumbar vertebra cartilage element
+def: "A lumbar vertebra endochondral element that is composed primarily of cartilage tissue." []
+synonym: "lumbar vertebral cartilage condensation group" EXACT []
+is_a: UBERON:0011094 ! vertebra cartilage element
+is_a: UBERON:0015009 ! lumbar vertebra endochondral element
+is_a: UBERON:2001457 ! postcranial axial cartilage
+intersection_of: UBERON:0015009 ! lumbar vertebra endochondral element
+intersection_of: RO:0002473 UBERON:0002418 ! composed primarily of cartilage tissue
+relationship: RO:0002202 UBERON:0013510 ! develops_from lumbar vertebra pre-cartilage condensation
+relationship: RO:0002387 UBERON:0002414 ! has potential to develop into lumbar vertebra
+
+[Term]
+id: UBERON:0013510
+name: lumbar vertebra pre-cartilage condensation
+def: "A lumbar vertebra endochondral element that is composed primarily of a pre-cartilage condensation." []
+is_a: UBERON:0011095 ! vertebra pre-cartilage condensation
+is_a: UBERON:0015009 ! lumbar vertebra endochondral element
+intersection_of: UBERON:0015009 ! lumbar vertebra endochondral element
+intersection_of: RO:0002473 UBERON:0005866 ! composed primarily of pre-cartilage condensation
+
+[Term]
 id: UBERON:0013514
 name: space surrounding organism
 def: "The space that surrounds an organism." []
@@ -53802,6 +53963,16 @@ intersection_of: subdivision_of UBERON:0002726 ! cervical spinal cord
 relationship: subdivision_of UBERON:0002726 ! cervical spinal cord
 
 [Term]
+id: UBERON:0014543
+name: lumbar division of spinal cord central canal
+def: "Part of central canal lying within the lumbar spinal cord. It is continuous rostrally with the central canal of the thoracic spinal cord and caudally with the central canal of the sacral spinal cord." []
+synonym: "lumbar spinal cord central canal" EXACT []
+is_a: UBERON:0014538 ! subdivision of spinal cord central canal
+intersection_of: UBERON:0014538 ! subdivision of spinal cord central canal
+intersection_of: subdivision_of UBERON:0002792 ! lumbar spinal cord
+relationship: subdivision_of UBERON:0002792 ! lumbar spinal cord
+
+[Term]
 id: UBERON:0014547
 name: sacral division of spinal cord central canal
 def: "Part of spinal cord central canal contained in the sacral spinal cord. It is continuous rostrally with the spinal cord central canal of the lumbar cord." []
@@ -54623,6 +54794,22 @@ union_of: UBERON:0002347 ! thoracic vertebra
 union_of: UBERON:0013507 ! thoracic vertebra cartilage element
 union_of: UBERON:0013508 ! thoracic vertebra pre-cartilage condensation
 relationship: BFO:0000050 UBERON:0006073 ! part of thoracic region of vertebral column
+
+[Term]
+id: UBERON:0015009
+name: lumbar vertebra endochondral element
+def: "A lumbar vertebra bone or its cartilage or pre-cartilage precursor." []
+synonym: "lumbar vertebra element" EXACT []
+synonym: "lumbar vertebra skeletal element" BROAD []
+is_a: UBERON:0005173 ! abdominal segment element
+is_a: UBERON:0005174 ! dorsal region element
+is_a: UBERON:0010913 ! vertebral element
+intersection_of: UBERON:0010913 ! vertebral element
+intersection_of: BFO:0000050 UBERON:0006074 ! part of lumbar region of vertebral column
+union_of: UBERON:0002414 ! lumbar vertebra
+union_of: UBERON:0013509 ! lumbar vertebra cartilage element
+union_of: UBERON:0013510 ! lumbar vertebra pre-cartilage condensation
+relationship: BFO:0000050 UBERON:0006074 ! part of lumbar region of vertebral column
 
 [Term]
 id: UBERON:0015010
@@ -56780,6 +56967,26 @@ relationship: BFO:0000050 UBERON:0005434 ! part of cervical region
 relationship: RO:0002170 UBERON:0002413 ! connected to cervical vertebra
 
 [Term]
+id: UBERON:0018145
+name: lumbar rib
+def: "A rib that is attached to a lumbar vertebra." []
+is_a: UBERON:0002228 ! rib
+intersection_of: UBERON:0002228 ! rib
+intersection_of: RO:0002170 UBERON:0002414 ! connected to lumbar vertebra
+relationship: RO:0002170 UBERON:0002414 ! connected to lumbar vertebra
+
+[Term]
+id: UBERON:0018146
+name: transverse process of lumbar vertebra
+def: "A transverse process that is part of a lumbar vertebra" []
+synonym: "costa lumbalis" EXACT []
+synonym: "lumbar transverse process" EXACT []
+is_a: UBERON:0001077 ! transverse process of vertebra
+intersection_of: UBERON:0001077 ! transverse process of vertebra
+intersection_of: BFO:0000050 UBERON:0002414 ! part of lumbar vertebra
+relationship: BFO:0000050 UBERON:0002414 ! part of lumbar vertebra
+
+[Term]
 id: UBERON:0018149
 name: angle of oral opening
 synonym: "angle of mouth" EXACT []
@@ -57803,6 +58010,16 @@ disjoint_from: UBERON:0029503 ! sacral spinal cord gray matter
 relationship: BFO:0000050 UBERON:0005843 ! part of sacral spinal cord
 
 [Term]
+id: UBERON:0026386
+name: lumbar spinal cord white matter
+synonym: "lumbar spinal cord white matter" EXACT []
+is_a: UBERON:0002318 ! white matter of spinal cord
+intersection_of: UBERON:0002316 ! white matter
+intersection_of: BFO:0000050 UBERON:0002792 ! part of lumbar spinal cord
+disjoint_from: UBERON:0029636 ! lumbar spinal cord gray matter
+relationship: BFO:0000050 UBERON:0002792 ! part of lumbar spinal cord
+
+[Term]
 id: UBERON:0029503
 name: sacral spinal cord gray matter
 synonym: "sacral spinal cord gray matter" EXACT []
@@ -57810,6 +58027,25 @@ is_a: UBERON:0002315 ! gray matter of spinal cord
 intersection_of: UBERON:0002020 ! gray matter
 intersection_of: BFO:0000050 UBERON:0005843 ! part of sacral spinal cord
 relationship: BFO:0000050 UBERON:0005843 ! part of sacral spinal cord
+
+[Term]
+id: UBERON:0029636
+name: lumbar spinal cord gray matter
+synonym: "lumbar spinal cord gray matter" EXACT []
+is_a: UBERON:0002315 ! gray matter of spinal cord
+intersection_of: UBERON:0002020 ! gray matter
+intersection_of: BFO:0000050 UBERON:0002792 ! part of lumbar spinal cord
+relationship: BFO:0000050 UBERON:0002792 ! part of lumbar spinal cord
+
+[Term]
+id: UBERON:0030276
+name: lumbar spinal cord ventral horn
+synonym: "lumbar spinal cord anterior horn" RELATED []
+synonym: "lumbar spinal cord ventral horn" EXACT []
+is_a: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: UBERON:0002257 ! ventral horn of spinal cord
+intersection_of: BFO:0000050 UBERON:0002792 ! part of lumbar spinal cord
+relationship: BFO:0000050 UBERON:0029636 ! part of lumbar spinal cord gray matter
 
 [Term]
 id: UBERON:0032748
