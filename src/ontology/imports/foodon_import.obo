@@ -98,8 +98,11 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 [Term]
 id: FOODON:00001002
 name: foodon product type
-def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." [Wikipedia:Food]
+def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." []
+comment: The FoodOn product type class is provided as a food product category tree under which new food product categories and food products themselves can be placed.  This tree has upper level categories inspired from other product type schemes like the US Code of Federal Regulations.  However it has a much greater depth to it than the other product type schemes in an effort to group related products together.  The basis of this tree was inherited from the environment ontology (ENVO).
 is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food xsd:anyURI
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
@@ -118,6 +121,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 id: FOODON:00001046
 name: seafood product
 is_a: FOODON:00001092 ! vertebrate animal food product
+relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 
 [Term]
 id: FOODON:00001092
@@ -246,6 +250,7 @@ is_a: FOODON:00001046 ! seafood product
 id: FOODON:00002239
 name: shrimp food product
 is_a: FOODON:00001792 ! crustacean food product
+relationship: RO:0001000 FOODON:03411237 ! derives from shrimp (food source)
 
 [Term]
 id: FOODON:00002244

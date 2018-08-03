@@ -532,8 +532,13 @@ mirror/ordo_orphanet.owl: mirror/ordo_orphanet.owl.zip
 	unzip  mirror/ordo_orphanet.owl.zip -d mirror
 	touch $@
 
+mirror/medgen-disease-extract.owl: mirror/medgen-disease-extract.obo
+	owltools $< -o $@.tmp && perl -npe $(FIX_URI_EXPR) $@.tmp > $@
+
 mirror/dipper-%.ttl:
 	wget --no-check-certificate https://data.monarchinitiative.org/ttl/$*.ttl -O $@
+
+
 
 # ~~~~~~~~
 # ORDO
