@@ -160,3 +160,10 @@ simj_merge_candidates(C1,C2,S,N1,N2) :-
         C1 @< C2.
 
 
+proxy_merge(C,X1,X2,S) :-
+        owl_equivalent_class(C,X1),
+        mondo(C),
+        owl_equivalent_class(C,X2),
+        X1 @< X2,
+        uri_prefix(X1,S),
+        uri_prefix(X2,S).
