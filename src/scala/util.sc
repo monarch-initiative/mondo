@@ -12,12 +12,11 @@ def loadOnt(path : String): OWLOntology = {
   val manager = OWLManager.createOWLOntologyManager()
   val file = new File(path)
   var iri = IRI.create(file)
-  return manager.loadOntologyFromOntologyDocument(iri)
+  manager.loadOntologyFromOntologyDocument(iri)
 }
 
 def getReasoner(ontology : OWLOntology): OWLReasoner = {
-  val reasonerFactory = new ElkReasonerFactory()
-  return reasonerFactory.createReasoner(ontology)
+  new ElkReasonerFactory().reasonerFactory.createReasoner(ontology)
 }
 
 // axioms can be mapped to categories
@@ -31,12 +30,12 @@ object OwlUtil {
     val manager = OWLManager.createOWLOntologyManager()
     val file = new File(path)
     var iri = IRI.create(file)
-    return manager.loadOntologyFromOntologyDocument(iri)
+    manager.loadOntologyFromOntologyDocument(iri)
   }
   
   def loadOnts(paths: String*): OWLOntology = {
     val onts = paths.map(loadOnt)
-    return merge(onts)
+    merge(onts)
   }
   
   def merge(onts: Seq[OWLOntology]): OWLOntology = {
@@ -45,7 +44,7 @@ object OwlUtil {
     for (ont <- onts) {
       manager.addAxioms( ontology, ont.getAxioms(true) )
     }
-    return ontology
+    ontology
   }
 
   def hasPrefix(c : OWLClass, prefix: String) : Boolean = {
@@ -72,14 +71,14 @@ object AxiomChecker {
     val c = axiom.getSubClass()
     val p = axiom.getSuperClass()
     if (p.isAnonymous()) {
-      return AxiomCategory.Unknown
+      AxiomCategory.Unknown
     }
-    if (reasoner.getSuperClasses(c, false).containsEntity(p.asOWLClass())) {
+    else if (reasoner.getSuperClasses(c, false).containsEntity(p.asOWLClass())) {
       if (reasoner.getSuperClasses(c, true).containsEntity(p.asOWLClass())) {
-        return AxiomCategory.AxiomPresentDirect
+        AxiomCategory.AxiomPresentDirect
       }
       else {
-        return AxiomCategory.AxiomPresentIndirect        
+        AxiomCategory.AxiomPresentIndirect        
       }
     }
     else {
@@ -89,10 +88,10 @@ object AxiomChecker {
       m.removeAxiom(ont, axiom)
       reasoner.flush()
       if (unsats.size() > 0) {
-        return AxiomCategory.AxiomAbsentIncompatible
+        AxiomCategory.AxiomAbsentIncompatible
       }
       else {
-        return AxiomCategory.AxiomAbsentCompatible
+        AxiomCategory.AxiomAbsentCompatible
       }
     }
   }
@@ -113,10 +112,10 @@ case class AxiomMapper(val src: Set[OWLClass]) {
     val cx = mapExpression( axiom.getSubClass(), reasoner )
     val px = mapExpression( axiom.getSuperClass(), reasoner )
     if (cx.isDefined && px.isDefined) {
-      return Some(cx.get SubClassOf px.get)
+      Some(cx.get SubClassOf px.get)
     }
     else {
-      return None
+      None
     }
   }
 
@@ -128,11 +127,11 @@ case class AxiomMapper(val src: Set[OWLClass]) {
     val eqs = reasoner.getEquivalentClasses(x.asOWLClass()).getEntities().asScala
     val feqs = eqs.filter( x => src.contains(x) && !x.isAnonymous() )
     if (feqs.size == 0) {
-      return None
+      None
     }
     else {
       // TODO: define behavior where maps to >1
-      return Some(feqs.toSeq(0).asOWLClass())
+      Some(feqs.toSeq(0).asOWLClass())
     }
   }
 }
