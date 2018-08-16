@@ -13,6 +13,7 @@
 :- rdf_register_prefix('SCTID','http://purl.obolibrary.org/obo/SCTID_').
 :- rdf_register_prefix('UMLS','http://linkedlifedata.com/resource/umls/id/').
 :- rdf_register_prefix('MEDGEN','http://purl.obolibrary.org/obo/MEDGEN_').
+:- rdf_register_prefix('ONCOTREE','http://purl.obolibrary.org/obo/ONCOTREE_').
 :- rdf_register_prefix('EFO','http://www.ebi.ac.uk/efo/EFO_').
 :- rdf_register_prefix('ICD10','http://purl.obolibrary.org/obo/ICD10_').
 :- rdf_register_prefix('Orphanet','http://www.orpha.net/ORDO/Orphanet_').
@@ -52,7 +53,7 @@ xref_prefix_srcont(C,X,P,S) :-
         curie_prefix(SC,S).
 
 
-
+%!  curie_prefix(Literal:str, Pre:str)
 curie_prefix(Literal,Pre) :-
         str_before(Literal,":",Pre).
 
@@ -78,8 +79,10 @@ src_semantics("MONDO:superClassOf",(>)) :- !.
 src_semantics("MONDO:relatedTo",(~)) :- !.
 src_semantics(_,(-)) :- !.
 
-
-
+no_mondo_equivalent(X.P) :-
+        owl:class(X),
+        uri_prefix(X,P),
+        \+ mondo_equiv_xref(_,X,_).
 
 mondo_equiv_class_via_xref(C,XC,P) :-
         mondo_equiv_xref(C,X,P),
@@ -108,8 +111,15 @@ uri_curie(URI,Literal) :-
         concat_atom([Pre,Post],':',A),
         atom_string(A,Literal).
 
+%! uri_prefix(?URI:atom, ?Prefix:atom)
 uri_prefix(URI,Prefix) :-
         rdf_global_id(Prefix:_,URI).
+
+mondo_shared_xref(C,X,SharedX,XPre,SharedXPre) :-
+        mondo_equiv_xref(C,SharedX,SharedXPre),
+        has_dbxref(X,SharedX),
+        uri_prefix(X,XPre).
+
 
 ont_missing_xref(Ont,X) :-
         class(X),
@@ -167,3 +177,20 @@ proxy_merge(C,X1,X2,S) :-
         X1 @< X2,
         uri_prefix(X1,S),
         uri_prefix(X2,S).
+
+xref_relation_inferred(C,X,R) :-
+        has_dbxref(C,X),
+        owl:class(C),
+        \+ mondo_equiv_xref(C,X),
+        mondo_equiv_xref(D,X),
+        rel(C,R,D).
+
+rel(C,subClassOf,D) :- rdfs_subclass_of(C,D), !.
+rel(C,superClassOf,D) :- rdfs_subclass_of(D,C), !.
+rel(C,equivalentTo,D) :- owl_equivalent_class(C,D), !.
+rel(C,directSiblingOf,D) :- subClassOf(C,Z),subClassOf(D,Z), !.
+rel(_,relatedTo,_).
+
+
+
+

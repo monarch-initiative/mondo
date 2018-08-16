@@ -5,6 +5,7 @@
 
 OBO=http://purl.obolibrary.org/obo
 OIO=http://www.geneontology.org/formats/oboInOwl\#
+RDFS=http://www.w3.org/2000/01/rdf-schema#
 SKOS=http://www.w3.org/2004/02/skos/core\#
 EFO=http://www.ebi.ac.uk/efo
 ONT=mondo
@@ -35,6 +36,7 @@ FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@g; s@$(OBO)/UMLS_@ht
 
 # EFO uses different properties. The following command can be used on owltools
 EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
+           --rename-entity $(EFO)/reason_for_obsolescence $(RDFS)comment \
            --rename-entity $(EFO)/alternative_term $(OIO)hasExactSynonym\
            --rename-entity $(OBO)/ECO_0000218 $(OIO)source
 
@@ -111,7 +113,7 @@ osf_upload_direct:
 ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID):@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | grep -v 'relationship: disease_has_basis_in_dysfunction_of NCBIGene:' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | grep -v 'relationship: disease_has_basis_in_dysfunction_of NCBIGene:' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 skos.ttl: $(SRC)
@@ -503,6 +505,9 @@ mirror/neoplasm-core.owl:
 mirror/ncit.owl:
 	wget --no-check-certificate $(OBO)/ncit.owl -O $@ && touch $@
 
+mirror/cl.owl:
+	wget --no-check-certificate $(OBO)/cl/cl-base.owl -O $@ && touch $@
+
 mirror/ncit-disease.uris: mirror/ncit.owl
 	robot query -i $< -s ../sparql/ncit-subclass-of-disease.sparql $@
 
@@ -743,6 +748,8 @@ omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
 
 # NEW: uses rdf_matcher
+# remember to clear tmp/ dir for fresh start
+# mondo_queries requires for prefixes
 all_unique.tsv:
 	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all unique_match > $@
 

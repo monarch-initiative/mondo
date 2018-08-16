@@ -2010,6 +2010,23 @@ synonym: "short acyl amidoacylase activity" EXACT []
 is_a: GO:0016811 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides
 
 [Term]
+id: GO:0004092
+name: carnitine O-acetyltransferase activity
+def: "Catalysis of the reaction: acetyl-CoA + carnitine = (R)-O-acetylcarnitine + CoA." []
+synonym: "acetyl-CoA-carnitine O-acetyltransferase activity" EXACT []
+synonym: "acetyl-CoA:carnitine O-acetyltransferase activity" EXACT []
+synonym: "acetylcarnitine transferase activity" EXACT []
+synonym: "carnitine acetyl coenzyme A transferase activity" EXACT []
+synonym: "carnitine acetylase activity" EXACT []
+synonym: "carnitine acetyltransferase activity" EXACT []
+synonym: "carnitine O-acetyltransferase I activity" NARROW []
+synonym: "carnitine O-acetyltransferase II activity" NARROW []
+synonym: "carnitine-acetyl-CoA transferase activity" EXACT []
+synonym: "CATC" RELATED []
+is_a: GO:0016406 ! carnitine O-acyltransferase activity
+is_a: GO:0016413 ! O-acetyltransferase activity
+
+[Term]
 id: GO:0004175
 name: endopeptidase activity
 def: "Catalysis of the hydrolysis of internal, alpha-peptide bonds in a polypeptide chain." []
@@ -3775,6 +3792,18 @@ is_a: GO:0008610 ! lipid biosynthetic process
 is_a: GO:1901362 ! organic cyclic compound biosynthetic process
 
 [Term]
+id: GO:0006695
+name: cholesterol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of cholesterol, cholest-5-en-3 beta-ol, the principal sterol of vertebrates and the precursor of many steroids, including bile acids and steroid hormones." []
+synonym: "cholesterol anabolism" EXACT []
+synonym: "cholesterol biosynthesis" EXACT []
+synonym: "cholesterol formation" EXACT []
+synonym: "cholesterol synthesis" EXACT []
+is_a: GO:0008203 ! cholesterol metabolic process
+is_a: GO:0016126 ! sterol biosynthetic process
+is_a: GO:1902653 ! secondary alcohol biosynthetic process
+
+[Term]
 id: GO:0006699
 name: bile acid biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of bile acids, any of a group of steroid carboxylic acids occurring in bile." []
@@ -4885,6 +4914,14 @@ is_a: GO:0006629 ! lipid metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 
 [Term]
+id: GO:0008203
+name: cholesterol metabolic process
+def: "The chemical reactions and pathways involving cholesterol, cholest-5-en-3 beta-ol, the principal sterol of vertebrates and the precursor of many steroids, including bile acids and steroid hormones. It is a component of the plasma membrane lipid bilayer and of plasma lipoproteins and can be found in all animal tissues." []
+synonym: "cholesterol metabolism" EXACT []
+is_a: GO:0016125 ! sterol metabolic process
+is_a: GO:1902652 ! secondary alcohol metabolic process
+
+[Term]
 id: GO:0008206
 name: bile acid metabolic process
 def: "The chemical reactions and pathways involving bile acids, any of a group of steroid carboxylic acids occurring in bile, where they are present as the sodium salts of their amides with glycine or taurine." []
@@ -5001,6 +5038,12 @@ synonym: "cellular axon ensheathment" EXACT []
 synonym: "cellular nerve ensheathment" RELATED []
 synonym: "nerve ensheathment" RELATED []
 is_a: GO:0007272 ! ensheathment of neurons
+
+[Term]
+id: GO:0008374
+name: O-acyltransferase activity
+def: "Catalysis of the transfer of an acyl group to an oxygen atom on the acceptor molecule." []
+is_a: GO:0016747 ! transferase activity, transferring acyl groups other than amino-acyl groups
 
 [Term]
 id: GO:0008380
@@ -7340,6 +7383,12 @@ is_a: GO:0002009 ! morphogenesis of an epithelium
 is_a: GO:0048598 ! embryonic morphogenesis
 
 [Term]
+id: GO:0016406
+name: carnitine O-acyltransferase activity
+def: "Catalysis of the transfer of an acyl group to an oxygen atom on the carnitine molecule." []
+is_a: GO:0008374 ! O-acyltransferase activity
+
+[Term]
 id: GO:0016407
 name: acetyltransferase activity
 def: "Catalysis of the transfer of an acetyl group to an acceptor molecule." []
@@ -7351,6 +7400,13 @@ id: GO:0016410
 name: N-acyltransferase activity
 def: "Catalysis of the transfer of an acyl group to a nitrogen atom on the acceptor molecule." []
 is_a: GO:0016747 ! transferase activity, transferring acyl groups other than amino-acyl groups
+
+[Term]
+id: GO:0016413
+name: O-acetyltransferase activity
+def: "Catalysis of the transfer of an acetyl group to an oxygen atom on the acceptor molecule." []
+is_a: GO:0008374 ! O-acyltransferase activity
+is_a: GO:0016407 ! acetyltransferase activity
 
 [Term]
 id: GO:0016421
@@ -7439,6 +7495,12 @@ name: oxidoreductase activity, acting on the CH-CH group of donors
 def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-CH group acts as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." []
 synonym: "oxidoreductase activity, acting on the CH-CH group of donors, other acceptors" NARROW []
 is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
+id: GO:0016628
+name: oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-CH group acts as a hydrogen or electron donor and reduces NAD or NADP." []
+is_a: GO:0016627 ! oxidoreductase activity, acting on the CH-CH group of donors
 
 [Term]
 id: GO:0016645
@@ -11913,6 +11975,14 @@ synonym: "regulation of homeostatic process" RELATED []
 is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
+id: GO:0042632
+name: cholesterol homeostasis
+def: "Any process involved in the maintenance of an internal steady state of cholesterol within an organism or cell." []
+synonym: "positive regulation of cholesterol homeostasis" RELATED []
+synonym: "regulation of cholesterol homeostasis" RELATED []
+is_a: GO:0055092 ! sterol homeostasis
+
+[Term]
 id: GO:0042645
 name: mitochondrial nucleoid
 def: "The region of a mitochondrion to which the DNA is confined." []
@@ -13433,6 +13503,62 @@ name: bone resorption
 def: "The process in which specialized cells known as osteoclasts degrade the organic and inorganic portions of bone, and endocytose and transport the degradation products." []
 is_a: GO:0001894 ! tissue homeostasis
 relationship: BFO:0000050 GO:0046849 ! part of bone remodeling
+
+[Term]
+id: GO:0045540
+name: regulation of cholesterol biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of cholesterol." []
+synonym: "regulation of cholesterol anabolism" EXACT []
+synonym: "regulation of cholesterol biosynthesis" EXACT []
+synonym: "regulation of cholesterol formation" EXACT []
+synonym: "regulation of cholesterol synthesis" EXACT []
+is_a: GO:0050810 ! regulation of steroid biosynthetic process
+is_a: GO:0090181 ! regulation of cholesterol metabolic process
+is_a: GO:1902930 ! regulation of alcohol biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006695 ! regulates cholesterol biosynthetic process
+relationship: RO:0002211 GO:0006695 ! regulates cholesterol biosynthetic process
+
+[Term]
+id: GO:0045541
+name: negative regulation of cholesterol biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of cholesterol." []
+synonym: "down regulation of cholesterol biosynthetic process" EXACT []
+synonym: "down-regulation of cholesterol biosynthetic process" EXACT []
+synonym: "downregulation of cholesterol biosynthetic process" EXACT []
+synonym: "inhibition of cholesterol biosynthetic process" NARROW []
+synonym: "negative regulation of cholesterol anabolism" EXACT []
+synonym: "negative regulation of cholesterol biosynthesis" EXACT []
+synonym: "negative regulation of cholesterol formation" EXACT []
+synonym: "negative regulation of cholesterol synthesis" EXACT []
+is_a: GO:0010894 ! negative regulation of steroid biosynthetic process
+is_a: GO:0045540 ! regulation of cholesterol biosynthetic process
+is_a: GO:0090206 ! negative regulation of cholesterol metabolic process
+is_a: GO:1902931 ! negative regulation of alcohol biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006695 ! negatively regulates cholesterol biosynthetic process
+relationship: RO:0002212 GO:0006695 ! negatively regulates cholesterol biosynthetic process
+
+[Term]
+id: GO:0045542
+name: positive regulation of cholesterol biosynthetic process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of cholesterol." []
+synonym: "activation of cholesterol biosynthetic process" NARROW []
+synonym: "positive regulation of cholesterol anabolism" EXACT []
+synonym: "positive regulation of cholesterol biosynthesis" EXACT []
+synonym: "positive regulation of cholesterol formation" EXACT []
+synonym: "positive regulation of cholesterol synthesis" EXACT []
+synonym: "stimulation of cholesterol biosynthetic process" NARROW []
+synonym: "up regulation of cholesterol biosynthetic process" EXACT []
+synonym: "up-regulation of cholesterol biosynthetic process" EXACT []
+synonym: "upregulation of cholesterol biosynthetic process" EXACT []
+is_a: GO:0010893 ! positive regulation of steroid biosynthetic process
+is_a: GO:0045540 ! regulation of cholesterol biosynthetic process
+is_a: GO:0090205 ! positive regulation of cholesterol metabolic process
+is_a: GO:1902932 ! positive regulation of alcohol biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006695 ! positively regulates cholesterol biosynthetic process
+relationship: RO:0002213 GO:0006695 ! positively regulates cholesterol biosynthetic process
 
 [Term]
 id: GO:0045576
@@ -15168,6 +15294,16 @@ is_a: GO:0044282 ! small molecule catabolic process
 is_a: GO:0046950 ! cellular ketone body metabolic process
 is_a: GO:1901569 ! fatty acid derivative catabolic process
 is_a: GO:1902224 ! ketone body metabolic process
+
+[Term]
+id: GO:0047598
+name: 7-dehydrocholesterol reductase activity
+def: "Catalysis of the reaction: cholesterol + NADP+ = cholesta-5,7-dien-3-beta-ol + NADPH + H+." []
+synonym: "7-DHC reductase activity" EXACT []
+synonym: "cholesterol:NADP+ delta7-oxidoreductase activity" EXACT []
+synonym: "sterol Delta(7)-reductase activity" BROAD []
+synonym: "sterol delta7-reductase activity" EXACT []
+is_a: GO:0016628 ! oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0048018
@@ -17888,6 +18024,12 @@ def: "Any process involved in the maintenance of an internal steady state of cat
 is_a: GO:0050801 ! ion homeostasis
 
 [Term]
+id: GO:0055081
+name: anion homeostasis
+def: "Any process involved in the maintenance of an internal steady state of anions within an organism or cell." []
+is_a: GO:0050801 ! ion homeostasis
+
+[Term]
 id: GO:0055082
 name: cellular chemical homeostasis
 def: "Any biological process involved in the maintenance of an internal steady state of a chemical at the level of the cell." []
@@ -17909,6 +18051,18 @@ synonym: "nucleobase, nucleoside and nucleotide metabolic process" RELATED []
 synonym: "nucleobase, nucleoside and nucleotide metabolism" EXACT []
 is_a: GO:0006139 ! nucleobase-containing compound metabolic process
 is_a: GO:0044281 ! small molecule metabolic process
+
+[Term]
+id: GO:0055088
+name: lipid homeostasis
+def: "Any process involved in the maintenance of an internal steady state of lipid within an organism or cell." []
+is_a: GO:0048878 ! chemical homeostasis
+
+[Term]
+id: GO:0055092
+name: sterol homeostasis
+def: "Any process involved in the maintenance of an internal steady state of sterol within an organism or cell." []
+is_a: GO:0055088 ! lipid homeostasis
 
 [Term]
 id: GO:0055114
@@ -18499,6 +18653,15 @@ name: cardiac conduction
 def: "Transfer of an organized electrical impulse across the heart to coordinate the contraction of cardiac muscles. The process begins with generation of an action potential (in the sinoatrial node (SA) in humans) and ends with a change in the rate, frequency, or extent of the contraction of the heart muscles." []
 is_a: GO:0008016 ! regulation of heart contraction
 is_a: GO:0035637 ! multicellular organismal signaling
+
+[Term]
+id: GO:0061370
+name: testosterone biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of testosterone, an androgen having 17beta-hydroxy and 3-oxo groups, together with unsaturation at C-4 C-5." []
+is_a: GO:0006694 ! steroid biosynthetic process
+is_a: GO:0042181 ! ketone biosynthetic process
+is_a: GO:0042446 ! hormone biosynthetic process
+is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
 id: GO:0061615
@@ -19403,6 +19566,19 @@ intersection_of: RO:0002211 GO:0033554 ! regulates cellular response to stress
 relationship: RO:0002211 GO:0033554 ! regulates cellular response to stress
 
 [Term]
+id: GO:0080144
+name: amino acid homeostasis
+def: "Any process involved in the maintenance of an internal steady state of amino acid within an organism or cell." []
+is_a: GO:0055081 ! anion homeostasis
+
+[Term]
+id: GO:0080145
+name: cysteine homeostasis
+def: "Any process involved in the maintenance of an internal steady state of cysteine within an organism or cell." []
+is_a: GO:0055080 ! cation homeostasis
+is_a: GO:0080144 ! amino acid homeostasis
+
+[Term]
 id: GO:0080154
 name: regulation of fertilization
 def: "Any process that modulates the rate, frequency or extent of fertilization. Fertilization is the union of gametes of opposite sexes during the process of sexual reproduction to form a zygote. It involves the fusion of the gametic nuclei (karyogamy) and cytoplasm (plasmogamy)." []
@@ -19517,6 +19693,35 @@ is_a: GO:0090153 ! regulation of sphingolipid biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0030148 ! negatively regulates sphingolipid biosynthetic process
 relationship: RO:0002212 GO:0030148 ! negatively regulates sphingolipid biosynthetic process
+
+[Term]
+id: GO:0090181
+name: regulation of cholesterol metabolic process
+def: "Any process that modulates the rate, frequency, or extent of cholesterol metabolism, the chemical reactions and pathways involving cholesterol, cholest-5-en-3 beta-ol, the principal sterol of vertebrates and the precursor of many steroids, including bile acids and steroid hormones." []
+is_a: GO:0019218 ! regulation of steroid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0008203 ! regulates cholesterol metabolic process
+relationship: RO:0002211 GO:0008203 ! regulates cholesterol metabolic process
+
+[Term]
+id: GO:0090205
+name: positive regulation of cholesterol metabolic process
+def: "Any process that increases the rate, frequency, or extent of cholesterol metabolism, the chemical reactions and pathways involving cholesterol, cholest-5-en-3 beta-ol, the principal sterol of vertebrates and the precursor of many steroids, including bile acids and steroid hormones." []
+is_a: GO:0045940 ! positive regulation of steroid metabolic process
+is_a: GO:0090181 ! regulation of cholesterol metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0008203 ! positively regulates cholesterol metabolic process
+relationship: RO:0002213 GO:0008203 ! positively regulates cholesterol metabolic process
+
+[Term]
+id: GO:0090206
+name: negative regulation of cholesterol metabolic process
+def: "Any process that decreases the rate, frequency, or extent of cholesterol metabolism, the chemical reactions and pathways involving cholesterol, cholest-5-en-3 beta-ol, the principal sterol of vertebrates and the precursor of many steroids, including bile acids and steroid hormones." []
+is_a: GO:0045939 ! negative regulation of steroid metabolic process
+is_a: GO:0090181 ! regulation of cholesterol metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0008203 ! negatively regulates cholesterol metabolic process
+relationship: RO:0002212 GO:0008203 ! negatively regulates cholesterol metabolic process
 
 [Term]
 id: GO:0090276
@@ -22307,6 +22512,17 @@ name: secondary alcohol metabolic process
 def: "The chemical reactions and pathways involving secondary alcohol." []
 synonym: "secondary alcohol metabolism" EXACT []
 is_a: GO:0006066 ! alcohol metabolic process
+
+[Term]
+id: GO:1902653
+name: secondary alcohol biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of secondary alcohol." []
+synonym: "secondary alcohol anabolism" EXACT []
+synonym: "secondary alcohol biosynthesis" EXACT []
+synonym: "secondary alcohol formation" EXACT []
+synonym: "secondary alcohol synthesis" EXACT []
+is_a: GO:0046165 ! alcohol biosynthetic process
+is_a: GO:1902652 ! secondary alcohol metabolic process
 
 [Term]
 id: GO:1902679
@@ -25406,6 +25622,28 @@ is_a: GO:1901343 ! negative regulation of vasculature development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0048514 ! negatively regulates blood vessel morphogenesis
 relationship: RO:0002212 GO:0048514 ! negatively regulates blood vessel morphogenesis
+
+[Term]
+id: GO:2000224
+name: regulation of testosterone biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of testosterone biosynthetic process." []
+is_a: GO:0010566 ! regulation of ketone biosynthetic process
+is_a: GO:0046885 ! regulation of hormone biosynthetic process
+is_a: GO:0050810 ! regulation of steroid biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0061370 ! regulates testosterone biosynthetic process
+relationship: RO:0002211 GO:0061370 ! regulates testosterone biosynthetic process
+
+[Term]
+id: GO:2000225
+name: negative regulation of testosterone biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of testosterone biosynthetic process." []
+is_a: GO:0010894 ! negative regulation of steroid biosynthetic process
+is_a: GO:0032353 ! negative regulation of hormone biosynthetic process
+is_a: GO:2000224 ! regulation of testosterone biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0061370 ! negatively regulates testosterone biosynthetic process
+relationship: RO:0002212 GO:0061370 ! negatively regulates testosterone biosynthetic process
 
 [Term]
 id: GO:2000241

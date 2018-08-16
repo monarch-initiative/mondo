@@ -3844,6 +3844,18 @@ xref: UMLS:C1857108
 is_a: HP:0011729 ! Abnormality of joint mobility
 
 [Term]
+id: HP:0001384
+name: Abnormality of the hip joint
+namespace: human_phenotype
+def: "An abnormality of the hip joint." [HPO:probinson]
+synonym: "Abnormality of the hip joint" EXACT layperson []
+synonym: "Abnormality of the hip joints" RELATED layperson []
+xref: UMLS:C4020870
+is_a: HP:0003272 ! Abnormality of the hip bone
+is_a: HP:0005262 ! Abnormality of the synovia
+is_a: HP:0100491 ! Abnormality of lower limb joint
+
+[Term]
 id: HP:0001387
 name: Joint stiffness
 namespace: human_phenotype
@@ -6636,6 +6648,16 @@ xref: UMLS:C0042384
 is_a: HP:0025015 ! Abnormal vascular morphology
 
 [Term]
+id: HP:0002644
+name: Abnormality of pelvic girdle bone morphology
+namespace: human_phenotype
+def: "An abnormality of the bony pelvic girdle, which is a ring of bones connecting the vertebral column to the femurs." [HPO:probinson]
+synonym: "Abnormal shape of pelvic girdle bone" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Abnormality of the pelvic girdle" RELATED []
+xref: UMLS:C4020847
+is_a: HP:0011844 ! Abnormal appendicular skeleton morphology
+
+[Term]
 id: HP:0002651
 name: Spondyloepimetaphyseal dysplasia
 namespace: human_phenotype
@@ -7537,6 +7559,17 @@ xref: UMLS:C0042782
 is_a: HP:0001438 ! Abnormality of abdomen morphology
 
 [Term]
+id: HP:0003272
+name: Abnormality of the hip bone
+namespace: human_phenotype
+def: "An abnormality of the hip bone." [HPO:probinson]
+comment: The hip region comprises the vasculature of hip, skin of hip, superficial fascia of hip, the hip bone, hip joint, and musculature of hip. The hip is part of the pelvic girdle.
+synonym: "Abnormality of the hip bone" EXACT layperson []
+synonym: "Abnormality of the hips" EXACT layperson []
+xref: UMLS:C4021735
+is_a: HP:0002644 ! Abnormality of pelvic girdle bone morphology
+
+[Term]
 id: HP:0003307
 name: Hyperlordosis
 namespace: human_phenotype
@@ -7824,6 +7857,26 @@ xref: SNOMEDCT_US:73297009
 xref: UMLS:C0026850
 xref: UMLS:C1864711
 is_a: HP:0011805 ! Abnormality of muscle morphology
+
+[Term]
+id: HP:0003577
+name: Congenital onset
+namespace: human_phenotype
+alt_id: HP:0003595
+alt_id: HP:0003601
+alt_id: HP:0003624
+alt_id: HP:0003660
+alt_id: HP:0003666
+def: "A phenotypic abnormality that is present at birth." [HPO:probinson]
+comment: Congenital onset literally means present at birth. Congenital abnormalities are thus generally acquired during fetal development. Congenital abnormalities are often but not always hereditary in nature. Whether a disease manifestation is diagnosed to be intrauterine or congenital may depend on the time at which diagnostic procedures are performed. Thus, most congenital abnormalities are also intrauterine. This term should be used for phenotypic abnormalities or diseases initially observed at the time of birth. For abnormalities observed prior to (e.g., by fetal ultrasound), use the term Antenatal onset (HP:0030674).
+synonym: "Intrauterine onset" EXACT []
+synonym: "Onset at birth" EXACT []
+synonym: "Onset in utero" EXACT []
+synonym: "Prenatal onset" RELATED [HPO:curators]
+synonym: "Symptoms present at birth" EXACT layperson [orcid.org/0000-0002-6548-5200]
+xref: UMLS:C1836142
+xref: UMLS:C2752013
+is_a: HP:0003674 ! Onset
 
 [Term]
 id: HP:0003581
@@ -8540,6 +8593,15 @@ synonym: "Small chest" EXACT layperson []
 synonym: "Small thorax" EXACT layperson []
 xref: UMLS:C1837482
 is_a: HP:0000765 ! Abnormality of the thorax
+
+[Term]
+id: HP:0005262
+name: Abnormality of the synovia
+namespace: human_phenotype
+xref: UMLS:C4025225
+is_a: HP:0001367 ! Abnormal joint morphology
+created_by: peter
+creation_date: 2008-03-26T04:27:00Z
 
 [Term]
 id: HP:0005293
@@ -12339,6 +12401,15 @@ property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2016-12-18T14:51:16Z xsd:dateTime
 
 [Term]
+id: HP:0025278
+name: Cold-induced sweating
+namespace: human_phenotype
+def: "Sweating provoked by cold temperature rather than by heat." []
+is_a: HP:0025276 ! Abnormality of skin adnexa physiology
+property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2016-12-18T15:16:15Z xsd:dateTime
+
+[Term]
 id: HP:0025337
 name: Red eye
 namespace: human_phenotype
@@ -12540,6 +12611,15 @@ xref: UMLS:C4280755
 is_a: HP:0000157 ! Abnormality of the tongue
 
 [Term]
+id: HP:0030824
+name: Mizuo phenomenon
+namespace: human_phenotype
+def: "Change in the color of the fundus from red in the dark-adapted state to golden immediately or shortly after the onset of the light. The color of the fundus reflex in the light adapted state has also been described as golden-yellow, gray-white, and yellow-white. This reflex can appear either homogeneous or in streaks in the fundus. The retinal vessels appear to be protruding in contrast to the radiant background. Dark adaptation leads to disappearance of the unusual fundus coloration [Digital Journal of Ophthalmology 2008; Volume 14, Number 14]." [HPO:probinson]
+synonym: "Mizuo-Nakamura phenomenon" EXACT []
+xref: UMLS:C4280748
+is_a: HP:0001098 ! Abnormal fundus morphology
+
+[Term]
 id: HP:0030828
 name: Wheezing
 namespace: human_phenotype
@@ -12585,6 +12665,13 @@ synonym: "Abnormality of respiratory circulation" EXACT []
 xref: UMLS:C4280730
 is_a: HP:0002795 ! Functional respiratory abnormality
 is_a: HP:0030163 ! Abnormal vascular physiology
+
+[Term]
+id: HP:0030895
+name: Abnormal gastrointestinal motility
+namespace: human_phenotype
+def: "An anomaly of the muscular contractions that propel food though the gastrointestinal tract." [HPO:probinson]
+is_a: HP:0012719 ! Functional abnormality of the gastrointestinal tract
 
 [Term]
 id: HP:0030956
