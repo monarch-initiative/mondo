@@ -130,6 +130,7 @@ REMOVE_DECLARATIONS=
 filtered.owl: filtered.obo skos.ttl
 	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
 
+
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
 # note: robot will protect redundant annotated axioms
@@ -200,6 +201,19 @@ $(ONT)-merged.owl: $(ONT).owl
 # if this fails, the resolution is to look for two MONDO classes with equivalence to the same external class
 test_nomerge: mondo.owl
 	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@
+
+
+# ----------------------------------------
+# Inference comparison
+# ----------------------------------------
+filtered-nr.obo: filtered.owl
+	robot relax -i $< reduce -p false -r ELK annotate -O $(OBO)/mondo/$@ -o $@.owl && owltools --use-catalog $@.owl --remove-axiom-annotations -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp | obo-grep.pl -r MONDO: - > $@
+
+filtered-nr-reasoned.obo: filtered.owl
+	robot relax -i $< reduce -p false -r ELK reason -r ELK annotate -O $(OBO)/mondo/$@ -o $@.owl && owltools --use-catalog $@.owl --remove-axiom-annotations -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp | obo-grep.pl -r MONDO: - > $@
+
+reports/reasoner-diff.obo: filtered-nr.obo filtered-nr-reasoned.obo
+	obo-simple-diff.pl -l $^ > $@
 
 # ----------------------------------------
 # CC-0 MINIMAL
