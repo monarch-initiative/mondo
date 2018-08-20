@@ -1,6 +1,5 @@
 format-version: 1.2
 ontology: mondo/imports/cl_import
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001067>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0001909>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0005634>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0001405>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0001407>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0002505>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002215>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/CL_0001068> (<http://purl.obolibrary.org/obo/CL_0001068>)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/CL_0001068> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001067> ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0001909>))))\n\n\nEquivalentClasses(ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0005634>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0001405>))\nEquivalentClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0005634>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0002505>))\nSubClassOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0001407>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0005634>))\n)
 
 [Term]
 id: CL:0000000
@@ -2541,6 +2540,29 @@ def: "A cell of the monocyte, granulocyte, or mast cell lineage." [GOC:add]
 is_a: CL:0000738 {is_inferred="true"} ! leukocyte
 intersection_of: CL:0000738 ! leukocyte
 intersection_of: RO:0002202 CL:0000049 ! common myeloid progenitor
+
+[Term]
+id: CL:0000771
+name: eosinophil
+namespace: cell
+def: "Any of the immature or mature forms of a granular leukocyte with a nucleus that usually has two lobes connected by one or more slender threads of chromatin, and cytoplasm containing coarse, round granules that are uniform in size and which can be stained by the dye eosin. Eosinophils are CD9-positive, CD191-positive, and CD193-positive." [GOC:add, GOC:amm, GOC:dsd, GOC:tfm, ISBN:0721601464, PMCID:PMC2626675, PMID:10914487, PMID:1662676]
+comment: Eosinophils are also CD14-negative, CD32-positive, CD44-positive, CD48-positive, CD69-positive, CD192-negative, MBP1-positive, MBP2-positive, TLR2-negative, TLR4-negative, and lineage-negative (B220, CD2, CD14, CD19, CD56, CD71, CD117, CD123, CD235a (glycophorin A), and TER119). The cytokines IL-3, IL-5, and GM-CSF are involved in their development and differentiation. Usually considered CD16-negative, CD16 is observed on eosinophilic metamyelocyte.
+synonym: "eosinocyte" EXACT []
+synonym: "eosinophilic granulocyte" EXACT []
+synonym: "eosinophilic leucocyte" EXACT []
+synonym: "eosinophilic leukocyte" EXACT []
+synonym: "polymorphonuclear leucocyte" BROAD []
+synonym: "polymorphonuclear leukocyte" BROAD []
+xref: BTO:0000399
+xref: CALOHA:TS-0279
+xref: FMA:62861
+is_a: CL:0000094 {is_inferred="true"} ! granulocyte
+intersection_of: CL:0000094 ! granulocyte
+intersection_of: RO:0002104 PR:000001254
+intersection_of: RO:0002104 PR:000001255
+intersection_of: RO:0002104 PR:000001307
+intersection_of: RO:0002104 PR:000001343
+intersection_of: RO:0002104 PR:000005178
 
 [Term]
 id: CL:0000775

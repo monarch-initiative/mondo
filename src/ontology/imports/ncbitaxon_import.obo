@@ -1,6 +1,5 @@
 format-version: 1.2
 ontology: mondo/imports/ncbitaxon_import
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(AnnotationProperty(<http://purl.obolibrary.org/obo/ncbitaxon#has_rank>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))\n\n\nAnnotationAssertion(<http://purl.obolibrary.org/obo/ncbitaxon#has_rank> <http://purl.obolibrary.org/obo/NCBITaxon_11161> <http://purl.obolibrary.org/obo/NCBITaxon_species>)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"GC_ID:1\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"ncbi_taxonomy\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"NCBITaxon:11161\"^^xsd:string)\nAnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"Mumps virus\"^^xsd:string)\nAnnotationAssertion(<http://purl.obolibrary.org/obo/ncbitaxon#has_rank> <http://purl.obolibrary.org/obo/NCBITaxon_83553> <http://purl.obolibrary.org/obo/NCBITaxon_genus>)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/NCBITaxon_83553> \"GC_ID:11\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/NCBITaxon_83553> \"ncbi_taxonomy\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/NCBITaxon_83553> \"NCBITaxon:83553\"^^xsd:string)\nAnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCBITaxon_83553> \"Chlamydophila\"^^xsd:string)\n)
 
 [Term]
 id: NCBITaxon:1
@@ -1141,6 +1140,25 @@ xref: GC_ID:1
 is_a: NCBITaxon:11646 ! Lentivirus
 
 [Term]
+id: NCBITaxon:116704
+name: Eubrachyura
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:6795
+xref: GC_ID:1
+is_a: NCBITaxon:6752 ! Brachyura
+
+[Term]
+id: NCBITaxon:116706
+name: Heterotremata
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:29963
+alt_id: NCBITaxon:6773
+alt_id: NCBITaxon:6803
+synonym: "Brachyrhyncha" RELATED in_part []
+xref: GC_ID:1
+is_a: NCBITaxon:116704 ! Eubrachyura
+
+[Term]
 id: NCBITaxon:11673
 name: Feline immunodeficiency virus
 namespace: ncbi_taxonomy
@@ -2147,6 +2165,15 @@ is_a: NCBITaxon:8287 ! Sarcopterygii
 id: NCBITaxon:133894
 name: Penaeus
 namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6685 ! Penaeidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:133898
+name: Fenneropenaeus
+namespace: ncbi_taxonomy
+synonym: "Feneropenaeus" RELATED misspelling []
 xref: GC_ID:1
 is_a: NCBITaxon:6685 ! Penaeidae
 property_value: has_rank NCBITaxon:genus
@@ -4188,6 +4215,15 @@ xref: GC_ID:1
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
+id: NCBITaxon:207598
+name: Homininae
+namespace: ncbi_taxonomy
+synonym: "Homo/Pan/Gorilla group" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:9604 ! Hominidae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
 id: NCBITaxon:2085
 name: Mycoplasmatales
 namespace: ncbi_taxonomy
@@ -5007,6 +5043,17 @@ is_a: NCBITaxon:279271 ! Leptotrombidium
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:29960
+name: Fenneropenaeus indicus
+namespace: ncbi_taxonomy
+synonym: "Feneropenaeus indicus" RELATED misspelling []
+synonym: "Penaeus (Fenneropenaeus) indicus" RELATED synonym []
+synonym: "Penaeus indicus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:133898 ! Fenneropenaeus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:30005
 name: Anoplura
 namespace: ncbi_taxonomy
@@ -5092,6 +5139,25 @@ xref: PMID:11214319
 xref: PMID:12082125
 xref: PMID:15522813
 is_a: NCBITaxon:314146 ! Euarchontoglires
+
+[Term]
+id: NCBITaxon:314293
+name: Simiiformes
+namespace: ncbi_taxonomy
+synonym: "Anthropoidea" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:376913 ! Haplorrhini
+property_value: has_rank NCBITaxon:infraorder
+
+[Term]
+id: NCBITaxon:314295
+name: Hominoidea
+namespace: ncbi_taxonomy
+synonym: "ape" EXACT common_name []
+synonym: "apes" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9526 ! Catarrhini
+property_value: has_rank NCBITaxon:superfamily
 
 [Term]
 id: NCBITaxon:31604
@@ -6157,6 +6223,15 @@ is_a: NCBITaxon:91835 ! fabids
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:374468
+name: Nakaseomyces
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:14654427
+is_a: NCBITaxon:4893 ! Saccharomycetaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:3745
 name: Rosaceae
 namespace: ncbi_taxonomy
@@ -6232,6 +6307,14 @@ synonym: "Prunus persica var densa" RELATED misspelling []
 xref: GC_ID:1
 is_a: NCBITaxon:3754 ! Prunus
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:376913
+name: Haplorrhini
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9443 ! Primates
+property_value: has_rank NCBITaxon:suborder
 
 [Term]
 id: NCBITaxon:37727
@@ -7577,6 +7660,16 @@ is_a: NCBITaxon:4891 ! Saccharomycetes
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:4893
+name: Saccharomycetaceae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:221665
+alt_id: NCBITaxon:44280
+xref: GC_ID:1
+is_a: NCBITaxon:4892 ! Saccharomycetales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:49202
 name: Dermacentor marginatus
 namespace: ncbi_taxonomy
@@ -8117,6 +8210,18 @@ xref: GC_ID:11
 xref: PMID:26654112
 is_a: NCBITaxon:1783272 ! Terrabacteria group
 property_value: has_rank NCBITaxon:phylum
+
+[Term]
+id: NCBITaxon:5478
+name: [Candida] glabrata
+namespace: ncbi_taxonomy
+synonym: "Candida glabrata" RELATED genbank_synonym []
+synonym: "Cryptococcus glabratus" RELATED synonym []
+synonym: "Torulopsis glabrata" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:14654427
+is_a: NCBITaxon:600669 ! Nakaseomyces/Candida clade
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:548681
@@ -8888,6 +8993,13 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:431838 ! Intramacronucleata
 property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:600669
+name: Nakaseomyces/Candida clade
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:374468 ! Nakaseomyces
 
 [Term]
 id: NCBITaxon:6029
@@ -9894,6 +10006,25 @@ is_a: NCBITaxon:133894 ! Penaeus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:6690
+name: Farfantepenaeus aztecus
+namespace: ncbi_taxonomy
+synonym: "brown shrimp" EXACT genbank_common_name []
+synonym: "Penaeus (Farfantepenaeus) aztecus" RELATED synonym []
+synonym: "Penaeus aztecus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:85653 ! Farfantepenaeus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6692
+name: Pleocyemata
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6683 ! Decapoda
+property_value: has_rank NCBITaxon:suborder
+
+[Term]
 id: NCBITaxon:672
 name: Vibrio vulnificus
 namespace: ncbi_taxonomy
@@ -9903,6 +10034,43 @@ xref: PMID:1015934
 xref: PMID:8186099
 is_a: NCBITaxon:662 ! Vibrio
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6752
+name: Brachyura
+namespace: ncbi_taxonomy
+synonym: "short-tailed crabs" EXACT genbank_common_name []
+synonym: "true crabs" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6692 ! Pleocyemata
+property_value: has_rank NCBITaxon:infraorder
+
+[Term]
+id: NCBITaxon:6757
+name: Portunidae
+namespace: ncbi_taxonomy
+synonym: "swimming crabs" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6774 ! Portunoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:6760
+name: Scylla
+namespace: ncbi_taxonomy
+synonym: "mangrove crabs" EXACT genbank_common_name []
+synonym: "mud crabs" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6757 ! Portunidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:6774
+name: Portunoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:116706 ! Heterotremata
+property_value: has_rank NCBITaxon:superfamily
 
 [Term]
 id: NCBITaxon:68336
@@ -11416,11 +11584,28 @@ xref: GC_ID:1
 is_a: NCBITaxon:50557 ! Insecta
 
 [Term]
+id: NCBITaxon:85552
+name: Scylla paramamosain
+namespace: ncbi_taxonomy
+synonym: "green mud crab" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6760 ! Scylla
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:85604
 name: Amphiesmenoptera
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:33392 ! Holometabola
+
+[Term]
+id: NCBITaxon:85653
+name: Farfantepenaeus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6685 ! Penaeidae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:85819
@@ -11675,6 +11860,17 @@ is_a: NCBITaxon:942 ! Anaplasmataceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:9443
+name: Primates
+namespace: ncbi_taxonomy
+synonym: "Primata" RELATED synonym []
+synonym: "primate" EXACT equivalent_name []
+synonym: "primates" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:314146 ! Euarchontoglires
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:945
 name: Ehrlichia chaffeensis
 namespace: ncbi_taxonomy
@@ -11725,6 +11921,43 @@ is_a: NCBITaxon:33993 ! Neorickettsia
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:9526
+name: Catarrhini
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:314293 ! Simiiformes
+property_value: has_rank NCBITaxon:parvorder
+
+[Term]
+id: NCBITaxon:9604
+name: Hominidae
+namespace: ncbi_taxonomy
+synonym: "great apes" EXACT genbank_common_name []
+synonym: "Pongidae" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:314295 ! Hominoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:9605
+name: Homo
+namespace: ncbi_taxonomy
+synonym: "humans" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:207598 ! Homininae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:9606
+name: Homo sapiens
+namespace: ncbi_taxonomy
+synonym: "human" EXACT genbank_common_name []
+synonym: "man" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9605 ! Homo
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:967
 name: Spirillum
 namespace: ncbi_taxonomy
@@ -11768,6 +12001,37 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:35500 ! Pecora
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:9922
+name: Capra
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9963 ! Caprinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:9925
+name: Capra hircus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:57076
+synonym: "Capra aegagrus hircus" RELATED synonym []
+synonym: "Carpa hircus" RELATED misspelling []
+synonym: "domestic goat" EXACT common_name []
+synonym: "goat" EXACT genbank_common_name []
+synonym: "goats" EXACT common_name []
+synonym: "South African angora goat" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:9922 ! Capra
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:9963
+name: Caprinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9895 ! Bovidae
+property_value: has_rank NCBITaxon:subfamily
 
 [Term]
 id: NCBITaxon:9989

@@ -178,6 +178,15 @@ is_a: CHEBI:37022 ! amino-acid anion
 relationship: is_conjugate_base_of CHEBI:28616 ! carbamic acid
 
 [Term]
+id: CHEBI:15022
+name: electron donor
+def: "A molecular entity that can transfer an electron to another molecular entity." []
+synonym: "donneur d'electron" RELATED []
+synonym: "electron donor" EXACT []
+synonym: "Elektronendonator" RELATED []
+is_a: CHEBI:17891 ! donor
+
+[Term]
 id: CHEBI:15036
 name: retinoate
 synonym: "3,7-dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)nona-2,4,6,8-tetraenoate" EXACT []
@@ -286,6 +295,65 @@ relationship: RO:0000087 CHEBI:23354 ! coenzyme
 relationship: RO:0000087 CHEBI:26348 ! prosthetic group
 relationship: RO:0000087 CHEBI:50733 ! nutraceutical
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:15377
+name: water
+def: "An oxygen hydride consisting of an oxygen atom that is covalently bonded to two hydrogen atoms." []
+synonym: "[OH2]" RELATED []
+synonym: "acqua" RELATED []
+synonym: "agua" RELATED []
+synonym: "aqua" RELATED []
+synonym: "BOUND WATER" RELATED []
+synonym: "dihydridooxygen" RELATED []
+synonym: "dihydrogen oxide" RELATED []
+synonym: "eau" RELATED []
+synonym: "H2O" RELATED []
+synonym: "HOH" RELATED []
+synonym: "hydrogen hydroxide" RELATED []
+synonym: "oxidane" EXACT []
+synonym: "Wasser" RELATED []
+synonym: "WATER" EXACT []
+synonym: "Water" EXACT []
+synonym: "water" EXACT []
+is_a: CHEBI:33693 ! oxygen hydride
+is_a: CHEBI:37176 ! mononuclear parent hydride
+is_a: CHEBI:52625 ! inorganic hydroxy compound
+relationship: is_conjugate_acid_of CHEBI:16234 ! hydroxide
+relationship: is_conjugate_base_of CHEBI:29412 ! oxonium
+relationship: RO:0000087 CHEBI:48360 ! amphiprotic solvent
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:76413 ! greenhouse gas
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:15379
+name: dioxygen
+synonym: "[OO]" RELATED []
+synonym: "dioxygen" EXACT []
+synonym: "dioxygene" RELATED []
+synonym: "Disauerstoff" RELATED []
+synonym: "E 948" RELATED []
+synonym: "E-948" RELATED []
+synonym: "E948" RELATED []
+synonym: "molecular oxygen" RELATED []
+synonym: "O2" RELATED []
+synonym: "Oxygen" RELATED []
+synonym: "OXYGEN MOLECULE" RELATED []
+is_a: CHEBI:138675 ! gas molecular entity
+is_a: CHEBI:25362 ! elemental molecule
+is_a: CHEBI:33263 ! diatomic oxygen
+relationship: is_conjugate_base_of CHEBI:29793 ! hydridodioxygen(1+)
+relationship: RO:0000087 CHEBI:27027 ! micronutrient
+relationship: RO:0000087 CHEBI:33284 ! nutrient
+relationship: RO:0000087 CHEBI:33893 ! reagent
+relationship: RO:0000087 CHEBI:35472 ! anti-inflammatory drug
+relationship: RO:0000087 CHEBI:63248 ! oxidising agent
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+relationship: RO:0000087 CHEBI:77974 ! food packaging gas
 
 [Term]
 id: CHEBI:15705
@@ -409,6 +477,21 @@ relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
+id: CHEBI:16042
+name: halide anion
+def: "A monoatomic monoanion resulting from the addition of an electron to any halogen atom." []
+synonym: "a halide anion" RELATED []
+synonym: "Halide" RELATED []
+synonym: "halide anions" RELATED []
+synonym: "halide ions" EXACT []
+synonym: "halide(1-)" RELATED []
+synonym: "halides" RELATED []
+synonym: "halogen anion" RELATED []
+synonym: "HX" RELATED []
+is_a: CHEBI:33429 ! monoatomic monoanion
+is_a: CHEBI:79389 ! monovalent inorganic anion
+
+[Term]
 id: CHEBI:16134
 name: ammonia
 def: "An azane that consists of a single nitrogen atom covelently bonded to three hydrogen atoms." []
@@ -481,6 +564,30 @@ relationship: RO:0000087 CHEBI:77746 ! human metabolite
 relationship: RO:0000087 CHEBI:83056 ! Daphnia magna metabolite
 
 [Term]
+id: CHEBI:16234
+name: hydroxide
+synonym: "HO-" RELATED []
+synonym: "hydridooxygenate(1-)" EXACT []
+synonym: "hydroxide" EXACT []
+synonym: "HYDROXIDE ION" RELATED []
+synonym: "Hydroxide ion" RELATED []
+synonym: "OH(-)" RELATED []
+synonym: "OH-" RELATED []
+synonym: "oxidanide" EXACT []
+is_a: CHEBI:33693 ! oxygen hydride
+relationship: is_conjugate_base_of CHEBI:15377 ! water
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+
+[Term]
+id: CHEBI:16277
+name: haloacetic acid
+def: "A monocarboxylic acid that is acetic acid in which one of the methyl hydrogens has been replaced by a halogen atom." []
+is_a: CHEBI:25384 ! monocarboxylic acid
+is_a: CHEBI:36684 ! organohalogen compound
+relationship: has_functional_parent CHEBI:15366 ! acetic acid
+relationship: is_conjugate_acid_of CHEBI:85638 ! haloacetate(1-)
+
+[Term]
 id: CHEBI:16294
 name: barbituric acid
 def: "A barbiturate, the structure of which is that of perhydropyrimidine substituted at C-2, -4 and -6 by oxo groups.  Barbituric acid is the parent compound of barbiturate drugs, although it is not itself pharmacologically active." []
@@ -495,6 +602,69 @@ relationship: is_conjugate_acid_of CHEBI:29745 ! barbiturate
 relationship: is_conjugate_acid_of CHEBI:57718 ! barbiturate(2-)
 relationship: is_conjugate_acid_of CHEBI:77938 ! barbiturate(1-)
 relationship: RO:0000087 CHEBI:35703 ! xenobiotic
+
+[Term]
+id: CHEBI:16393
+name: sphingosine
+def: "A sphing-4-enine in which the double bond is trans." []
+synonym: "(2S,3R)-(E)-2-amino-1,3-dihydroxy-4-octadecene" RELATED []
+synonym: "(2S,3R,4E)-2-amino-3-hydroxyoctadec-4-ene-1-ol" RELATED []
+synonym: "(2S,3R,4E)-2-amino-4-octadecene-1,3-diol" RELATED []
+synonym: "(2S,3R,4E)-2-aminooctadec-4-ene-1,3-diol" EXACT []
+synonym: "(2S,3R,E)-2-aminooctadec-4-ene-1,3-diol" RELATED []
+synonym: "(4E)-sphing-4-enine" RELATED []
+synonym: "(4E)-sphingenine" RELATED []
+synonym: "(E)-2-amino-4-octadecan-1,3-diol" RELATED []
+synonym: "(E)-D-erythro-4-octadecene-1,3-diol" RELATED []
+synonym: "2-amino-4-octadecene-1,3-diol" RELATED []
+synonym: "C18 sphingosine" RELATED []
+synonym: "D-(+)-erythro-1,3-dihydroxy-2-amino-4-trans-octadecene" RELATED []
+synonym: "D-erythro-sphingosine" RELATED []
+synonym: "Sph" RELATED []
+synonym: "Sphing-4-enine" RELATED []
+synonym: "Sphingenine" RELATED []
+synonym: "Sphingoid" RELATED []
+synonym: "sphingosin" RELATED []
+synonym: "Sphingosine" EXACT []
+synonym: "Sphingosine d18:1" RELATED []
+synonym: "trans-4-sphingenine" RELATED []
+synonym: "trans-D-erythro-2-amino-4-octadecene-1,3-diol" RELATED []
+is_a: CHEBI:26743 ! sphing-4-enine
+relationship: is_conjugate_base_of CHEBI:57756 ! sphingosine(1+)
+relationship: is_enantiomer_of CHEBI:46967 ! L-erythro-sphingosine
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:16526
+name: carbon dioxide
+def: "A one-carbon compound with formula CO2 in which the carbon is attached to each oxygen atom by a double bond. A colourless, odourless gas under normal conditions, it is produced during respiration by all animals, fungi and microorganisms that depend directly or indirectly on living or decaying plants for food." []
+synonym: "[CO2]" RELATED []
+synonym: "CARBON DIOXIDE" EXACT []
+synonym: "Carbon dioxide" EXACT []
+synonym: "carbon dioxide" EXACT []
+synonym: "carbonic anhydride" RELATED []
+synonym: "CO2" RELATED []
+synonym: "dioxidocarbon" EXACT []
+synonym: "E 290" RELATED []
+synonym: "E-290" RELATED []
+synonym: "E290" RELATED []
+synonym: "R-744" RELATED []
+is_a: CHEBI:138675 ! gas molecular entity
+is_a: CHEBI:23014 ! carbon oxide
+is_a: CHEBI:64708 ! one-carbon compound
+relationship: RO:0000087 CHEBI:35620 ! vasodilator agent
+relationship: RO:0000087 CHEBI:38867 ! anaesthetic
+relationship: RO:0000087 CHEBI:46787 ! solvent
+relationship: RO:0000087 CHEBI:48706 ! antagonist
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:76413 ! greenhouse gas
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+relationship: RO:0000087 CHEBI:77974 ! food packaging gas
+relationship: RO:0000087 CHEBI:78017 ! food propellant
+relationship: RO:0000087 CHEBI:78433 ! refrigerant
 
 [Term]
 id: CHEBI:16541
@@ -623,6 +793,52 @@ synonym: "D-Amino acid" RELATED []
 is_a: CHEBI:83925 ! non-proteinogenic alpha-amino acid
 relationship: is_conjugate_acid_of CHEBI:60895 ! D-alpha-amino acid anion
 relationship: is_tautomer_of CHEBI:59871 ! D-alpha-amino acid zwitterion
+
+[Term]
+id: CHEBI:16842
+name: formaldehyde
+def: "An aldehyde resulting from the formal oxidation of methanol." []
+synonym: "Formaldehyd" RELATED []
+synonym: "FORMALDEHYDE" EXACT []
+synonym: "Formaldehyde" EXACT []
+synonym: "formaldehyde" EXACT []
+synonym: "FORMALIN" RELATED []
+synonym: "Formalin" RELATED []
+synonym: "Methanal" RELATED []
+synonym: "Methylene oxide" RELATED []
+synonym: "Oxomethane" RELATED []
+synonym: "Oxomethylene" RELATED []
+is_a: CHEBI:17478 ! aldehyde
+is_a: CHEBI:64708 ! one-carbon compound
+relationship: RO:0000087 CHEBI:48219 ! disinfectant
+relationship: RO:0000087 CHEBI:50903 ! carcinogenic agent
+relationship: RO:0000087 CHEBI:50904 ! allergen
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+relationship: RO:0000087 CHEBI:77941 ! EC 3.5.1.4 (amidase) inhibitor
+relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
+
+[Term]
+id: CHEBI:16874
+name: psychosine
+def: "A glycosylsphingoid consisting of sphingosine having a beta-D-galactosyl residue attached at the 1-position." []
+synonym: "(2S,3R,4E)-2-amino-1-(beta-D-galactopyranosyloxy)-3-hydroxyoctadec-4-ene" RELATED []
+synonym: "(2S,3R,4E)-2-amino-3-hydroxyoctadec-4-en-1-yl beta-D-galactopyranoside" EXACT []
+synonym: "1-beta-D-galactosphingosine" RELATED []
+synonym: "1-beta-D-galactosylsphingosine" RELATED []
+synonym: "1-O-beta-D-galactopyranosylsphingosine" RELATED []
+synonym: "1-O-beta-D-galactosylsphingosine" RELATED []
+synonym: "Galactosylsphingosine" RELATED []
+synonym: "O-Galactosylsphingosine" RELATED []
+synonym: "O-galactosylsphingosine" RELATED []
+synonym: "Psychosine" EXACT []
+synonym: "sphingosine galactoside" RELATED []
+is_a: CHEBI:36527 ! glycosylsphingoid
+relationship: has_functional_parent CHEBI:16393 ! sphingosine
+relationship: has_functional_parent CHEBI:26743 ! sphing-4-enine
+relationship: is_conjugate_base_of CHEBI:57934 ! psychosine(1+)
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
 id: CHEBI:16914
@@ -1001,6 +1217,31 @@ relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
+id: CHEBI:17883
+name: hydrogen chloride
+def: "A mononuclear parent hydride consisting of covalently bonded hydrogen and chlorine atoms." []
+synonym: "[HCl]" RELATED []
+synonym: "chlorane" EXACT []
+synonym: "chloridohydrogen" EXACT []
+synonym: "chlorure d'hydrogene" RELATED []
+synonym: "Chlorwasserstoff" RELATED []
+synonym: "cloruro de hidrogeno" RELATED []
+synonym: "HCl" RELATED []
+synonym: "hydrochloric acid" RELATED []
+synonym: "Hydrochloride" RELATED []
+synonym: "Hydrogen chloride" EXACT []
+synonym: "hydrogen chloride" EXACT []
+synonym: "Hydrogenchlorid" RELATED []
+synonym: "Wasserstoffchlorid" RELATED []
+is_a: CHEBI:138675 ! gas molecular entity
+is_a: CHEBI:18140 ! hydrogen halide
+is_a: CHEBI:23117 ! chlorine molecular entity
+is_a: CHEBI:37176 ! mononuclear parent hydride
+relationship: is_conjugate_acid_of CHEBI:17996 ! chloride
+relationship: is_conjugate_base_of CHEBI:50315 ! chloronium
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+
+[Term]
 id: CHEBI:17891
 name: donor
 def: "A molecular entity that can transfer (\"donate\") an electron, a pair of electrons, an atom or a group to another molecular entity." []
@@ -1043,6 +1284,41 @@ relationship: RO:0000087 CHEBI:64416 ! EC 1.3.1.43 (arogenate dehydrogenase) inh
 relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
 
 [Term]
+id: CHEBI:17996
+name: chloride
+def: "A halide anion formed when chlorine picks up an electron to form an an anion." []
+synonym: "Chloride" EXACT []
+synonym: "chloride" EXACT []
+synonym: "CHLORIDE ION" RELATED []
+synonym: "Chloride ion" RELATED []
+synonym: "Chloride(1-)" RELATED []
+synonym: "chloride(1-)" EXACT []
+synonym: "Chlorine anion" RELATED []
+synonym: "Cl(-)" RELATED []
+synonym: "Cl-" RELATED []
+is_a: CHEBI:16042 ! halide anion
+is_a: CHEBI:33432 ! monoatomic chlorine
+relationship: is_conjugate_base_of CHEBI:17883 ! hydrogen chloride
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:17997
+name: dinitrogen
+def: "An elemental molecule consisting of two trivalently-bonded nitrogen atoms." []
+synonym: "dinitrogen" EXACT []
+synonym: "molecular nitrogen" RELATED []
+synonym: "N#N" RELATED []
+synonym: "N2" RELATED []
+synonym: "Nitrogen" RELATED []
+is_a: CHEBI:138675 ! gas molecular entity
+is_a: CHEBI:25362 ! elemental molecule
+is_a: CHEBI:33266 ! diatomic nitrogen
+relationship: is_conjugate_base_of CHEBI:30102 ! diazynium
+relationship: RO:0000087 CHEBI:77974 ! food packaging gas
+relationship: RO:0000087 CHEBI:78017 ! food propellant
+
+[Term]
 id: CHEBI:18049
 name: piperidine
 def: "An azacycloalkane that is cyclohexane in which one of the carbons is replaced by a nitrogen. It is a metabolite of cadaverine, a polyamine found in the human intestine." []
@@ -1075,6 +1351,16 @@ def: "'Lipids' is a loosely defined term for substances of biological origin tha
 synonym: "Lipid" EXACT []
 synonym: "lipids" EXACT []
 is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:18140
+name: hydrogen halide
+synonym: "HX" RELATED []
+synonym: "hydrogen halide" EXACT []
+synonym: "hydrogen halides" EXACT []
+synonym: "hydrogen halides" RELATED []
+is_a: CHEBI:33405 ! hydracid
+relationship: RO:0000087 CHEBI:138103 ! inorganic acid
 
 [Term]
 id: CHEBI:18186
@@ -1216,6 +1502,14 @@ synonym: "groupe acyle" RELATED []
 is_a: CHEBI:33247 ! organic group
 
 [Term]
+id: CHEBI:22271
+name: aflatoxin
+def: "Any of a group of related and highly toxic secondary metabolites (mycotoxins) whose main structural feature is a fused coumarin-bis(dihydrofuran) ring system and which are produced by strains of the moulds Aspergillus flavus or A. parasiticus, together with further metabolites of these mycotoxins" []
+synonym: "aflatoxins" RELATED []
+is_a: CHEBI:48210 ! cyclopentafurofurochromene
+relationship: RO:0000087 CHEBI:25442 ! mycotoxin
+
+[Term]
 id: CHEBI:22313
 name: alkaline earth metal atom
 synonym: "alkaline earth metal" RELATED []
@@ -1233,6 +1527,21 @@ is_a: CHEBI:33521 ! metal atom
 is_a: CHEBI:33559 ! s-block element atom
 
 [Term]
+id: CHEBI:22314
+name: alkali metal atom
+synonym: "alkali metal" RELATED []
+synonym: "alkali metals" EXACT []
+synonym: "Alkalimetall" RELATED []
+synonym: "Alkalimetalle" RELATED []
+synonym: "metal alcalin" RELATED []
+synonym: "metal alcalino" RELATED []
+synonym: "metales alcalinos" RELATED []
+synonym: "metaux alcalins" RELATED []
+is_a: CHEBI:33318 ! main group element atom
+is_a: CHEBI:33521 ! metal atom
+is_a: CHEBI:33559 ! s-block element atom
+
+[Term]
 id: CHEBI:22315
 name: alkaloid
 def: "Any of the naturally occurring, basic nitrogen compounds (mostly heterocyclic) occurring mostly in the plant kingdom, but also found in bacteria, fungi, and animals. By extension, certain neutral compounds biogenetically related to basic alkaloids are also classed as alkaloids. Amino acids, peptides, proteins, nucleotides, nucleic acids, amino sugars and antibiotics are not normally regarded as alkaloids. Compounds in which the nitrogen is  exocyclic (dopamine, mescaline, serotonin, etc.) are usually classed as amines rather than alkaloids." []
@@ -1243,6 +1552,32 @@ synonym: "Alkaloide" RELATED []
 synonym: "alkaloids" EXACT []
 is_a: CHEBI:35352 ! organonitrogen compound
 relationship: RO:0000087 CHEBI:25212 ! metabolite
+
+[Term]
+id: CHEBI:22333
+name: alkylating agent
+def: "Highly reactive chemical that introduces alkyl radicals into biologically active molecules and thereby prevents their proper functioning. It could be used as an antineoplastic agent, but it might be very toxic, with carcinogenic, mutagenic, teratogenic, and immunosuppressant actions. It could also be used as a component of poison gases." []
+is_a: CHEBI:25435 ! mutagen
+
+[Term]
+id: CHEBI:22478
+name: amino alcohol
+def: "An alcohol containing an amino functional group in addition to the alcohol-defining hydroxy group." []
+synonym: "amino alcohols" RELATED []
+synonym: "aminoalcohol" RELATED []
+synonym: "aminoalcohols" RELATED []
+is_a: CHEBI:30879 ! alcohol
+is_a: CHEBI:50047 ! organic amino compound
+
+[Term]
+id: CHEBI:22501
+name: aminodiol
+def: "An amino alcohol having two hydroxy functional groups." []
+synonym: "amino diol" RELATED []
+synonym: "amino diols" RELATED []
+synonym: "aminodiols" RELATED []
+is_a: CHEBI:22478 ! amino alcohol
+is_a: CHEBI:23824 ! diol
 
 [Term]
 id: CHEBI:22562
@@ -1329,6 +1664,25 @@ name: biopterins
 is_a: CHEBI:26375 ! pterins
 
 [Term]
+id: CHEBI:22977
+name: cadmium atom
+synonym: "48Cd" RELATED []
+synonym: "cadmio" RELATED []
+synonym: "cadmium" EXACT []
+synonym: "cadmium" RELATED []
+synonym: "Cd" RELATED []
+synonym: "Kadmium" RELATED []
+is_a: CHEBI:33340 ! zinc group element atom
+
+[Term]
+id: CHEBI:22978
+name: cadmium molecular entity
+synonym: "cadmium compounds" RELATED []
+synonym: "cadmium molecular entities" RELATED []
+is_a: CHEBI:33673 ! zinc group molecular entity
+relationship: BFO:0000051 CHEBI:22977 ! cadmium atom
+
+[Term]
 id: CHEBI:23004
 name: carbamoyl group
 def: "The univalent carboacyl group formed by loss of -OH from the carboxy group of carbamic acid." []
@@ -1388,6 +1742,15 @@ synonym: "carbonyl group" EXACT []
 is_a: CHEBI:51422 ! organodiyl group
 
 [Term]
+id: CHEBI:23114
+name: chloride salt
+synonym: "chloride salts" RELATED []
+synonym: "chlorides" RELATED []
+is_a: CHEBI:23117 ! chlorine molecular entity
+is_a: CHEBI:33958 ! halide salt
+relationship: BFO:0000051 CHEBI:17996 ! chloride
+
+[Term]
 id: CHEBI:23116
 name: chlorine atom
 synonym: "17Cl" RELATED []
@@ -1407,6 +1770,21 @@ name: chlorine molecular entity
 def: "A halogen molecular entity containing one or more atoms of chlorine." []
 is_a: CHEBI:24471 ! halogen molecular entity
 relationship: BFO:0000051 CHEBI:23116 ! chlorine atom
+
+[Term]
+id: CHEBI:23123
+name: chloroacetate
+def: "A haloacetate(1-) resulting from the deprotonation of the carboxy group of chloroacetic acid." []
+synonym: "chloroacetate" EXACT []
+synonym: "chloroacetate anion" RELATED []
+synonym: "chloroacetate(1-)" RELATED []
+synonym: "Chloroacetic acid ion(1-)" RELATED []
+synonym: "mono-chloroacetate" RELATED []
+synonym: "monochloroacetate anion" RELATED []
+synonym: "monochloroacetic acid anion" RELATED []
+is_a: CHEBI:85638 ! haloacetate(1-)
+relationship: has_functional_parent CHEBI:30089 ! acetate
+relationship: is_conjugate_base_of CHEBI:27869 ! chloroacetic acid
 
 [Term]
 id: CHEBI:23132
@@ -1520,6 +1898,20 @@ synonym: "medicine" RELATED []
 is_a: CHEBI:52217 ! pharmaceutical
 
 [Term]
+id: CHEBI:23905
+name: monoatomic anion
+synonym: "monoatomic anions" RELATED []
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:24867 ! monoatomic ion
+
+[Term]
+id: CHEBI:23906
+name: monoatomic cation
+synonym: "monoatomic cations" RELATED []
+is_a: CHEBI:24867 ! monoatomic ion
+is_a: CHEBI:36916 ! cation
+
+[Term]
 id: CHEBI:23924
 name: enzyme inhibitor
 def: "A compound or agent that combines with an enzyme in such a manner as to prevent the normal substrate-enzyme combination and the catalytic reaction." []
@@ -1563,6 +1955,14 @@ synonym: "glycosides" RELATED []
 synonym: "O-glycoside" RELATED []
 synonym: "O-glycosides" RELATED []
 is_a: CHEBI:63161 ! glycosyl compound
+
+[Term]
+id: CHEBI:24402
+name: glycosphingolipid
+def: "A glycosphingolipid is a glycolipid that is a carbohydrate-containing derivative of a sphingoid or ceramide. It is understood that the carbohydrate residue is attached by a glycosidic linkage to O-1 of the sphingoid." []
+synonym: "glycosphingolipids" RELATED []
+is_a: CHEBI:26739 ! sphingolipid
+is_a: CHEBI:33563 ! glycolipid
 
 [Term]
 id: CHEBI:24431
@@ -1754,6 +2154,39 @@ is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:25741 ! oxide
 
 [Term]
+id: CHEBI:24839
+name: inorganic salt
+synonym: "anorganisches Salz" RELATED []
+synonym: "inorganic salts" RELATED []
+is_a: CHEBI:24835 ! inorganic molecular entity
+is_a: CHEBI:24866 ! salt
+
+[Term]
+id: CHEBI:24866
+name: salt
+def: "A salt is an assembly of cations and anions." []
+synonym: "ionic compound" RELATED []
+synonym: "ionic compounds" RELATED []
+synonym: "sal" RELATED []
+synonym: "sales" RELATED []
+synonym: "salt" EXACT []
+synonym: "salts" RELATED []
+synonym: "Salz" RELATED []
+synonym: "Salze" RELATED []
+synonym: "sel" RELATED []
+synonym: "sels" RELATED []
+is_a: CHEBI:37577 ! heteroatomic molecular entity
+relationship: BFO:0000051 CHEBI:22563 ! anion
+relationship: BFO:0000051 CHEBI:36916 ! cation
+
+[Term]
+id: CHEBI:24867
+name: monoatomic ion
+synonym: "monoatomic ions" RELATED []
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:33238 ! monoatomic entity
+
+[Term]
 id: CHEBI:24870
 name: ion
 def: "A molecular entity having a net electric charge." []
@@ -1855,6 +2288,14 @@ synonym: "secondary metabolites" RELATED []
 is_a: CHEBI:52206 ! biochemical role
 
 [Term]
+id: CHEBI:25213
+name: metal cation
+synonym: "a metal cation" RELATED []
+synonym: "metal cations" RELATED []
+is_a: CHEBI:23906 ! monoatomic cation
+is_a: CHEBI:36915 ! inorganic cation
+
+[Term]
 id: CHEBI:25216
 name: metalloporphyrin
 synonym: "metalloporphyrins" RELATED []
@@ -1885,6 +2326,15 @@ synonym: "mitochondrial electron transport chain inhibitors" RELATED []
 synonym: "mitochondrial electron-transport chain inhibitor" RELATED []
 synonym: "mitochondrial respiratory chain inhibitors" RELATED []
 is_a: CHEBI:38497 ! respiratory-chain inhibitor
+
+[Term]
+id: CHEBI:25362
+name: elemental molecule
+def: "A molecule all atoms of which have the same atomic number." []
+synonym: "homoatomic molecule" RELATED []
+synonym: "homoatomic molecules" RELATED []
+is_a: CHEBI:25367 ! molecule
+is_a: CHEBI:33259 ! elemental molecular entity
 
 [Term]
 id: CHEBI:25367
@@ -1921,11 +2371,47 @@ synonym: "monohydroxybenzoic acids" RELATED []
 is_a: CHEBI:24676 ! hydroxybenzoic acid
 
 [Term]
+id: CHEBI:25414
+name: monoatomic monocation
+synonym: "monoatomic monocations" RELATED []
+synonym: "monovalent cation" RELATED []
+synonym: "monovalent inorganic cations" RELATED []
+is_a: CHEBI:23906 ! monoatomic cation
+
+[Term]
+id: CHEBI:25435
+name: mutagen
+def: "An agent that increases the frequency of mutations above the normal background level, usually by interacting directly with DNA and causing it damage, including base substitution." []
+synonym: "mutagene" RELATED []
+synonym: "mutagenes" RELATED []
+synonym: "mutagenic agent" RELATED []
+synonym: "mutageno" RELATED []
+synonym: "mutagenos" RELATED []
+synonym: "mutagens" RELATED []
+is_a: CHEBI:50902 ! genotoxin
+
+[Term]
+id: CHEBI:25442
+name: mycotoxin
+def: "Poisonous substance produced by fungi." []
+synonym: "fungal toxins" RELATED []
+synonym: "mycotoxins" RELATED []
+is_a: CHEBI:27026 ! toxin
+is_a: CHEBI:76946 ! fungal metabolite
+
+[Term]
 id: CHEBI:25512
 name: neurotransmitter
 def: "An endogenous compound that is used to transmit information across the synapse between a neuron and another cell." []
 synonym: "neurotransmitters" RELATED []
 is_a: CHEBI:33280 ! molecular messenger
+
+[Term]
+id: CHEBI:25513
+name: neutral glycosphingolipid
+def: "Any glycosphingolipid containing unsubstituted glycosyl moieties." []
+synonym: "neutral glycosphingolipids" RELATED []
+is_a: CHEBI:24402 ! glycosphingolipid
 
 [Term]
 id: CHEBI:25555
@@ -2264,6 +2750,84 @@ is_a: CHEBI:35366 ! fatty acid
 relationship: is_conjugate_acid_of CHEBI:58951 ! short-chain fatty acid anion
 
 [Term]
+id: CHEBI:26708
+name: sodium atom
+synonym: "11Na" RELATED []
+synonym: "Na" RELATED []
+synonym: "Natrium" RELATED []
+synonym: "natrium" RELATED []
+synonym: "sodio" RELATED []
+synonym: "sodium" EXACT []
+synonym: "sodium" RELATED []
+is_a: CHEBI:22314 ! alkali metal atom
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+
+[Term]
+id: CHEBI:26710
+name: sodium chloride
+def: "An inorganic chloride salt having sodium(1+) as the counterion." []
+synonym: "chlorure de sodium" RELATED []
+synonym: "cloruro sodico" RELATED []
+synonym: "common salt" RELATED []
+synonym: "halite" RELATED []
+synonym: "Kochsalz" RELATED []
+synonym: "NaCl" RELATED []
+synonym: "natrii chloridum" RELATED []
+synonym: "Natriumchlorid" RELATED []
+synonym: "rock salt" RELATED []
+synonym: "salt" RELATED []
+synonym: "sodium chloride" EXACT []
+synonym: "table salt" RELATED []
+is_a: CHEBI:36093 ! inorganic chloride
+is_a: CHEBI:38702 ! inorganic sodium salt
+
+[Term]
+id: CHEBI:26712
+name: sodium molecular entity
+synonym: "sodium compounds" RELATED []
+synonym: "sodium molecular entities" RELATED []
+is_a: CHEBI:33296 ! alkali metal molecular entity
+relationship: BFO:0000051 CHEBI:26708 ! sodium atom
+
+[Term]
+id: CHEBI:26714
+name: sodium salt
+def: "Any alkali metal salt having sodium(1+) as the cation." []
+synonym: "Natriumsalz" RELATED []
+synonym: "Natriumsalze" RELATED []
+synonym: "sodium salts" RELATED []
+is_a: CHEBI:26712 ! sodium molecular entity
+is_a: CHEBI:35479 ! alkali metal salt
+relationship: BFO:0000051 CHEBI:29101 ! sodium(1+)
+
+[Term]
+id: CHEBI:26738
+name: sphingenine
+def: "A 2-aminooctadecene-1,3-diol having (2S,3R)-configuration." []
+synonym: "sphingenines" RELATED []
+is_a: CHEBI:46963 ! 2-aminooctadecene-1,3-diol
+
+[Term]
+id: CHEBI:26739
+name: sphingolipid
+def: "Sphingolipids are a complex family of compounds that share a common structural feature, a sphingoid base backbone." []
+synonym: "sphingolipids" RELATED []
+is_a: CHEBI:18059 ! lipid
+is_a: CHEBI:35352 ! organonitrogen compound
+is_a: CHEBI:36963 ! organooxygen compound
+
+[Term]
+id: CHEBI:26743
+name: sphing-4-enine
+def: "A sphingenine in which the C=C double bond is located at the 4-position." []
+synonym: "(2S,3R)-2-aminooctadec-4-ene-1,3-diol" EXACT []
+synonym: "4-sphingenine" RELATED []
+synonym: "sphing-4-enine" EXACT []
+is_a: CHEBI:26738 ! sphingenine
+is_a: CHEBI:46964 ! 2-aminooctadec-4-ene-1,3-diol
+relationship: is_enantiomer_of CHEBI:46965 ! (2R,3S)-2-aminooctadec-4-ene-1,3-diol
+
+[Term]
 id: CHEBI:26764
 name: steroid hormone
 def: "Any steroid that acts as hormone." []
@@ -2556,6 +3120,32 @@ relationship: RO:0000087 CHEBI:35498 ! diuretic
 relationship: RO:0000087 CHEBI:35623 ! anticonvulsant
 
 [Term]
+id: CHEBI:27869
+name: chloroacetic acid
+def: "A chlorocarboxylic acid that is acetic acid carrying a 2-chloro substituent." []
+synonym: "2-chloro-acetic acid" RELATED []
+synonym: "2-chloro-ethanoic acid" RELATED []
+synonym: "2-chloroacetic acid" RELATED []
+synonym: "Acide chloracetique" RELATED []
+synonym: "Acide chloroacetique" RELATED []
+synonym: "Acide monochloracetique" RELATED []
+synonym: "alpha-chloro-acetic acid" RELATED []
+synonym: "CAA" RELATED []
+synonym: "chloracetic acid" RELATED []
+synonym: "Chloroacetic acid" EXACT []
+synonym: "chloroacetic acid" EXACT []
+synonym: "Chloroethanoic acid" RELATED []
+synonym: "Monochloressigsaeure" RELATED []
+synonym: "monochloroacetic acid" RELATED []
+synonym: "monochloroethanoic acid" RELATED []
+is_a: CHEBI:16277 ! haloacetic acid
+is_a: CHEBI:36685 ! chlorocarboxylic acid
+relationship: has_functional_parent CHEBI:15366 ! acetic acid
+relationship: is_conjugate_acid_of CHEBI:23123 ! chloroacetate
+relationship: RO:0000087 CHEBI:22333 ! alkylating agent
+relationship: RO:0000087 CHEBI:24527 ! herbicide
+
+[Term]
 id: CHEBI:27933
 name: beta-lactam antibiotic
 def: "An organonitrogen heterocyclic antibiotic that contains a beta-lactam ring." []
@@ -2784,6 +3374,23 @@ is_a: CHEBI:35406 ! oxoanion
 relationship: is_conjugate_base_of CHEBI:33575 ! carboxylic acid
 
 [Term]
+id: CHEBI:29101
+name: sodium(1+)
+def: "A monoatomic monocation obtained from sodium." []
+synonym: "Na(+)" RELATED []
+synonym: "Na+" RELATED []
+synonym: "sodium cation" EXACT []
+synonym: "SODIUM ION" RELATED []
+synonym: "sodium(1+)" EXACT []
+synonym: "sodium(1+) ion" EXACT []
+synonym: "sodium(I) cation" EXACT []
+is_a: CHEBI:25414 ! monoatomic monocation
+is_a: CHEBI:33504 ! alkali metal cation
+is_a: CHEBI:37246 ! elemental sodium
+is_a: CHEBI:60242 ! monovalent inorganic cation
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
 id: CHEBI:29195
 name: cyanate
 synonym: "[C(N)O](-)" RELATED []
@@ -2866,6 +3473,21 @@ synonym: "monocarboxylic acid amides" RELATED []
 is_a: CHEBI:37622 ! carboxamide
 
 [Term]
+id: CHEBI:29412
+name: oxonium
+synonym: "[OH3](+)" RELATED []
+synonym: "aquahydrogen(1+)" EXACT []
+synonym: "H3O(+)" RELATED []
+synonym: "Hydronium cation" RELATED []
+synonym: "Hydronium ion" RELATED []
+synonym: "oxidanium" EXACT []
+synonym: "oxonium" EXACT []
+synonym: "trihydridooxygen(1+)" EXACT []
+is_a: CHEBI:33693 ! oxygen hydride
+is_a: CHEBI:50313 ! onium cation
+relationship: is_conjugate_acid_of CHEBI:15377 ! water
+
+[Term]
 id: CHEBI:29745
 name: barbiturate
 def: "Conjugate base of barbituric acid." []
@@ -2873,6 +3495,17 @@ synonym: "2,4,6-trioxotetrahydro-2H-pyrimidin-1-ide" EXACT []
 synonym: "barbiturate anion" RELATED []
 is_a: CHEBI:22691 ! barbiturate anion
 relationship: is_conjugate_base_of CHEBI:16294 ! barbituric acid
+
+[Term]
+id: CHEBI:29793
+name: hydridodioxygen(1+)
+synonym: "[HO2](+)" RELATED []
+synonym: "dioxidenium" EXACT []
+synonym: "HO2(+)" RELATED []
+synonym: "HOO(+)" RELATED []
+synonym: "hydridodioxygen(1+)" EXACT []
+is_a: CHEBI:33693 ! oxygen hydride
+relationship: is_conjugate_acid_of CHEBI:15379 ! dioxygen
 
 [Term]
 id: CHEBI:30089
@@ -2890,6 +3523,37 @@ is_a: CHEBI:35757 ! monocarboxylic acid anion
 relationship: is_conjugate_base_of CHEBI:15366 ! acetic acid
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:30099
+name: diazynediium
+synonym: "[HNNH](2+)" RELATED []
+synonym: "diazynediium" EXACT []
+synonym: "HNNH(2+)" RELATED []
+is_a: CHEBI:35106 ! nitrogen hydride
+relationship: is_conjugate_acid_of CHEBI:30102 ! diazynium
+
+[Term]
+id: CHEBI:30102
+name: diazynium
+synonym: "diazynium" EXACT []
+synonym: "HN2+" RELATED []
+synonym: "N#NH(+)" RELATED []
+is_a: CHEBI:35106 ! nitrogen hydride
+relationship: is_conjugate_acid_of CHEBI:17997 ! dinitrogen
+relationship: is_conjugate_base_of CHEBI:30099 ! diazynediium
+
+[Term]
+id: CHEBI:30217
+name: helium atom
+synonym: "2He" RELATED []
+synonym: "He" RELATED []
+synonym: "helio" RELATED []
+synonym: "Helium" RELATED []
+synonym: "helium" EXACT []
+synonym: "helium" RELATED []
+is_a: CHEBI:33309 ! noble gas atom
+is_a: CHEBI:33559 ! s-block element atom
 
 [Term]
 id: CHEBI:30411
@@ -3361,6 +4025,14 @@ synonym: "elementary particles" RELATED []
 is_a: CHEBI:36342 ! subatomic particle
 
 [Term]
+id: CHEBI:33238
+name: monoatomic entity
+def: "A monoatomic entity is a molecular entity consisting of a single atom." []
+synonym: "atomic entity" RELATED []
+synonym: "monoatomic entities" RELATED []
+is_a: CHEBI:33259 ! elemental molecular entity
+
+[Term]
 id: CHEBI:33240
 name: coordination entity
 def: "An assembly consisting of a central atom (usually metallic) to which is attached a surrounding array of other groups of atoms (ligands)." []
@@ -3469,6 +4141,15 @@ synonym: "primary amides" EXACT []
 is_a: CHEBI:32988 ! amide
 
 [Term]
+id: CHEBI:33259
+name: elemental molecular entity
+def: "A molecular entity all atoms of which have the same atomic number." []
+synonym: "homoatomic entity" RELATED []
+synonym: "homoatomic molecular entities" RELATED []
+synonym: "homoatomic molecular entity" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
 id: CHEBI:33261
 name: organosulfur compound
 def: "An organosulfur compound is a compound containing at least one carbon-sulfur bond." []
@@ -3476,6 +4157,29 @@ synonym: "organosulfur compound" EXACT []
 synonym: "organosulfur compounds" RELATED []
 is_a: CHEBI:26835 ! sulfur molecular entity
 is_a: CHEBI:36962 ! organochalcogen compound
+
+[Term]
+id: CHEBI:33262
+name: elemental oxygen
+is_a: CHEBI:24835 ! inorganic molecular entity
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:33259 ! elemental molecular entity
+
+[Term]
+id: CHEBI:33263
+name: diatomic oxygen
+is_a: CHEBI:33262 ! elemental oxygen
+
+[Term]
+id: CHEBI:33266
+name: diatomic nitrogen
+is_a: CHEBI:33267 ! elemental nitrogen
+
+[Term]
+id: CHEBI:33267
+name: elemental nitrogen
+is_a: CHEBI:33465 ! elemental pnictogen
+is_a: CHEBI:51143 ! nitrogen molecular entity
 
 [Term]
 id: CHEBI:33273
@@ -3551,6 +4255,16 @@ synonym: "fertilizers" RELATED []
 is_a: CHEBI:33286 ! agrochemical
 
 [Term]
+id: CHEBI:33290
+name: food
+def: "Any material that can be ingested by an organism." []
+synonym: "foods" RELATED []
+synonym: "foodstuff" RELATED []
+synonym: "foodstuffs" RELATED []
+is_a: CHEBI:52211 ! physiological role
+relationship: BFO:0000051 CHEBI:78295 ! food component
+
+[Term]
 id: CHEBI:33292
 name: fuel
 def: "An energy-rich substance that can be transformed with release of usable energy." []
@@ -3562,6 +4276,14 @@ name: diagnostic agent
 def: "A substance administered to aid diagnosis of a disease." []
 synonym: "diagnostic aid" RELATED []
 is_a: CHEBI:52217 ! pharmaceutical
+
+[Term]
+id: CHEBI:33296
+name: alkali metal molecular entity
+def: "A molecular entity containing one or more atoms of an alkali metal." []
+synonym: "alkali metal molecular entities" RELATED []
+is_a: CHEBI:33674 ! s-block molecular entity
+relationship: BFO:0000051 CHEBI:22314 ! alkali metal atom
 
 [Term]
 id: CHEBI:33299
@@ -3646,6 +4368,26 @@ synonym: "Carboxylic ester" EXACT []
 synonym: "carboxylic esters" EXACT []
 is_a: CHEBI:35701 ! ester
 is_a: CHEBI:36586 ! carbonyl compound
+
+[Term]
+id: CHEBI:33309
+name: noble gas atom
+synonym: "Edelgas" RELATED []
+synonym: "Edelgase" RELATED []
+synonym: "gas noble" RELATED []
+synonym: "gases nobles" RELATED []
+synonym: "gaz noble" RELATED []
+synonym: "gaz nobles" RELATED []
+synonym: "group 18 elements" RELATED []
+synonym: "group VIII elements" RELATED []
+synonym: "inert gases" RELATED []
+synonym: "noble gas" EXACT []
+synonym: "noble gas" RELATED []
+synonym: "noble gases" EXACT []
+synonym: "rare gases" RELATED []
+is_a: CHEBI:138675 ! gas molecular entity
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33318 ! main group element atom
 
 [Term]
 id: CHEBI:33318
@@ -3735,6 +4477,39 @@ is_a: CHEBI:26835 ! sulfur molecular entity
 is_a: CHEBI:33241 ! oxoacid derivative
 
 [Term]
+id: CHEBI:33429
+name: monoatomic monoanion
+synonym: "monoatomic monoanions" RELATED []
+is_a: CHEBI:23905 ! monoatomic anion
+is_a: CHEBI:36830 ! monoanion
+
+[Term]
+id: CHEBI:33431
+name: elemental chlorine
+is_a: CHEBI:23117 ! chlorine molecular entity
+is_a: CHEBI:33434 ! elemental halogen
+
+[Term]
+id: CHEBI:33432
+name: monoatomic chlorine
+synonym: "atomic chlorine" RELATED []
+is_a: CHEBI:33431 ! elemental chlorine
+is_a: CHEBI:33433 ! monoatomic halogen
+
+[Term]
+id: CHEBI:33433
+name: monoatomic halogen
+synonym: "monoatomic halogens" RELATED []
+is_a: CHEBI:33238 ! monoatomic entity
+
+[Term]
+id: CHEBI:33434
+name: elemental halogen
+synonym: "elemental halogen" EXACT []
+synonym: "elemental halogens" RELATED []
+is_a: CHEBI:33259 ! elemental molecular entity
+
+[Term]
 id: CHEBI:33452
 name: benzylic group
 def: "Arylmethyl groups and derivatives formed by substitution: ArCR2-." []
@@ -3774,6 +4549,15 @@ is_a: CHEBI:26082 ! phosphorus molecular entity
 is_a: CHEBI:33459 ! pnictogen oxoanion
 
 [Term]
+id: CHEBI:33465
+name: elemental pnictogen
+synonym: "elemental pnictogen" EXACT []
+synonym: "elemental pnictogens" RELATED []
+is_a: CHEBI:24835 ! inorganic molecular entity
+is_a: CHEBI:33259 ! elemental molecular entity
+is_a: CHEBI:33302 ! pnictogen molecular entity
+
+[Term]
 id: CHEBI:33482
 name: sulfur oxoanion
 synonym: "oxoanions of sulfur" RELATED []
@@ -3807,6 +4591,12 @@ synonym: "transition element molecular entities" RELATED []
 synonym: "transition metal molecular entity" RELATED []
 is_a: CHEBI:23367 ! molecular entity
 relationship: BFO:0000051 CHEBI:27081 ! transition element atom
+
+[Term]
+id: CHEBI:33504
+name: alkali metal cation
+synonym: "alkali metal cations" RELATED []
+is_a: CHEBI:25213 ! metal cation
 
 [Term]
 id: CHEBI:33521
@@ -3873,6 +4663,14 @@ is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33521 ! metal atom
 
 [Term]
+id: CHEBI:33563
+name: glycolipid
+def: "Any member of class of 1,2-di-O-acylglycerols joined at oxygen 3 by a glycosidic linkage to a carbohydrate part (usually a mono-, di- or tri-saccharide). Some substances classified as bacterial glycolipids have the sugar part acylated by one or more fatty acids and the glycerol part may be absent." []
+synonym: "Glycolipid" EXACT []
+synonym: "glycolipids" EXACT []
+is_a: CHEBI:35740 ! liposaccharide
+
+[Term]
 id: CHEBI:33575
 name: carboxylic acid
 def: "A carbon oxoacid acid carrying at least one -C(=O)OH group and having the structure RC(=O)OH, where R is any any monovalent functional group. Carboxylic acids are the most common type of organic acid." []
@@ -3908,6 +4706,16 @@ synonym: "carbon group molecular entities" RELATED []
 synonym: "carbon group molecular entity" EXACT []
 is_a: CHEBI:33675 ! p-block molecular entity
 relationship: BFO:0000051 CHEBI:33306 ! carbon group element atom
+
+[Term]
+id: CHEBI:33583
+name: noble gas molecular entity
+def: "A main group molecular entity containing one or more atoms of any noble gas." []
+synonym: "noble gas compounds" RELATED []
+synonym: "noble gas molecular entities" RELATED []
+synonym: "noble gas molecular entity" EXACT []
+is_a: CHEBI:33579 ! main group molecular entity
+relationship: BFO:0000051 CHEBI:33309 ! noble gas atom
 
 [Term]
 id: CHEBI:33595
@@ -4090,11 +4898,29 @@ is_a: CHEBI:33497 ! transition element molecular entity
 relationship: BFO:0000051 CHEBI:33561 ! d-block element atom
 
 [Term]
+id: CHEBI:33679
+name: helium molecular entity
+synonym: "helium compounds" RELATED []
+synonym: "helium molecular entities" RELATED []
+synonym: "helium molecular entity" EXACT []
+is_a: CHEBI:33583 ! noble gas molecular entity
+is_a: CHEBI:33674 ! s-block molecular entity
+relationship: BFO:0000051 CHEBI:30217 ! helium atom
+
+[Term]
 id: CHEBI:33692
 name: hydrides
 def: "Hydrides are chemical compounds of hydrogen with other chemical elements." []
 is_a: CHEBI:33608 ! hydrogen molecular entity
 is_a: CHEBI:37577 ! heteroatomic molecular entity
+
+[Term]
+id: CHEBI:33693
+name: oxygen hydride
+synonym: "hydrides of oxygen" RELATED []
+synonym: "oxygen hydride" EXACT []
+synonym: "oxygen hydrides" RELATED []
+is_a: CHEBI:36902 ! chalcogen hydride
 
 [Term]
 id: CHEBI:33694
@@ -4444,6 +5270,15 @@ synonym: "macronutrients" RELATED []
 is_a: CHEBI:33284 ! nutrient
 
 [Term]
+id: CHEBI:33958
+name: halide salt
+synonym: "halide salts" RELATED []
+synonym: "halides" RELATED []
+is_a: CHEBI:24866 ! salt
+is_a: CHEBI:37578 ! halide
+relationship: BFO:0000051 CHEBI:16042 ! halide anion
+
+[Term]
 id: CHEBI:34905
 name: paraquat
 def: "An organic cation that consists of 4,4'-bipyridine bearing two N-methyl substituents loctated at the 1- and 1'-positions." []
@@ -4725,6 +5560,13 @@ is_a: CHEBI:35472 ! anti-inflammatory drug
 is_a: CHEBI:35842 ! antirheumatic drug
 
 [Term]
+id: CHEBI:35479
+name: alkali metal salt
+synonym: "alkali metal salts" RELATED []
+is_a: CHEBI:24866 ! salt
+is_a: CHEBI:33296 ! alkali metal molecular entity
+
+[Term]
 id: CHEBI:35480
 name: analgesic
 def: "An agent capable of relieving pain without the loss of consciousness or without producing anaesthesia. In addition, analgesic is a role played by a compound which is exhibited by a capability to cause a reduction of pain symptoms." []
@@ -4985,6 +5827,13 @@ synonym: "antifungals" RELATED []
 is_a: CHEBI:33281 ! antimicrobial agent
 
 [Term]
+id: CHEBI:35740
+name: liposaccharide
+synonym: "liposaccharides" RELATED []
+is_a: CHEBI:18059 ! lipid
+is_a: CHEBI:63299 ! carbohydrate derivative
+
+[Term]
 id: CHEBI:35757
 name: monocarboxylic acid anion
 def: "A carboxylic acid anion formed when the carboxy group of a monocarboxylic acid is deprotonated." []
@@ -5006,6 +5855,18 @@ synonym: "Pi" RELATED []
 is_a: CHEBI:33461 ! phosphorus oxoanion
 relationship: is_conjugate_base_of CHEBI:26078 ! phosphoric acid
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:35785
+name: sphingoid
+def: "Sphinganine, its homologs and stereoisomers, and the hydroxy and unsaturated derivatives of these compounds." []
+synonym: "Spd" RELATED []
+synonym: "sphingoid" EXACT []
+synonym: "sphingoid base" RELATED []
+synonym: "sphingoid bases" RELATED []
+synonym: "sphingoids" RELATED []
+is_a: CHEBI:26739 ! sphingolipid
+relationship: is_conjugate_base_of CHEBI:83876 ! cationic sphingoid
 
 [Term]
 id: CHEBI:35842
@@ -5077,6 +5938,15 @@ def: "A biological macromolecule minimally consisting of one polypeptide chain s
 synonym: "proteins" EXACT []
 is_a: CHEBI:33695 ! information biomacromolecule
 relationship: BFO:0000051 CHEBI:16541 ! protein polypeptide chain
+
+[Term]
+id: CHEBI:36093
+name: inorganic chloride
+synonym: "inorganic chloride salt" RELATED []
+synonym: "inorganic chloride salts" RELATED []
+synonym: "inorganic chlorides" RELATED []
+is_a: CHEBI:23114 ! chloride salt
+is_a: CHEBI:24839 ! inorganic salt
 
 [Term]
 id: CHEBI:36132
@@ -5206,6 +6076,12 @@ is_a: CHEBI:25693 ! organic heteromonocyclic compound
 is_a: CHEBI:36388 ! saturated organic heterocyclic parent
 
 [Term]
+id: CHEBI:36527
+name: glycosylsphingoid
+synonym: "glycosylsphingoids" RELATED []
+is_a: CHEBI:25513 ! neutral glycosphingolipid
+
+[Term]
 id: CHEBI:36586
 name: carbonyl compound
 def: "Any compound containing the carbonyl group, C=O. The term is commonly used in the restricted sense of aldehydes and ketones, although it actually includes carboxylic acids and derivatives." []
@@ -5243,6 +6119,14 @@ def: "A compound containing at least one carbon-halogen bond." []
 synonym: "organohalogen compounds" RELATED []
 is_a: CHEBI:33285 ! heteroorganic entity
 is_a: CHEBI:37578 ! halide
+
+[Term]
+id: CHEBI:36685
+name: chlorocarboxylic acid
+def: "A carboxylic acid containing at least one chloro group." []
+synonym: "chlorocarboxylic acids" RELATED []
+is_a: CHEBI:33575 ! carboxylic acid
+is_a: CHEBI:36683 ! organochlorine compound
 
 [Term]
 id: CHEBI:36688
@@ -5304,6 +6188,23 @@ synonym: "nitriliomethanide" EXACT []
 is_a: CHEBI:33405 ! hydracid
 relationship: is_conjugate_acid_of CHEBI:17514 ! cyanide
 relationship: is_tautomer_of CHEBI:18407 ! hydrogen cyanide
+
+[Term]
+id: CHEBI:36902
+name: chalcogen hydride
+synonym: "chalcogen hydride" EXACT []
+synonym: "chalcogen hydrides" RELATED []
+is_a: CHEBI:33242 ! inorganic hydride
+is_a: CHEBI:33304 ! chalcogen molecular entity
+
+[Term]
+id: CHEBI:36908
+name: argon molecular entity
+synonym: "argon compounds" RELATED []
+synonym: "argon molecular entities" RELATED []
+synonym: "argon molecular entity" EXACT []
+is_a: CHEBI:33583 ! noble gas molecular entity
+relationship: BFO:0000051 CHEBI:49475 ! argon atom
 
 [Term]
 id: CHEBI:36914
@@ -5390,6 +6291,11 @@ synonym: "mononuclear hydride" RELATED []
 synonym: "mononuclear hydrides" RELATED []
 synonym: "mononuclear parent hydrides" EXACT []
 is_a: CHEBI:33692 ! hydrides
+
+[Term]
+id: CHEBI:37246
+name: elemental sodium
+is_a: CHEBI:26712 ! sodium molecular entity
 
 [Term]
 id: CHEBI:37323
@@ -5624,6 +6530,12 @@ synonym: "cardiotonic drugs" RELATED []
 is_a: CHEBI:35554 ! cardiovascular drug
 
 [Term]
+id: CHEBI:38164
+name: organic heteropentacyclic compound
+synonym: "organic heteropentacyclic compounds" RELATED []
+is_a: CHEBI:38166 ! organic heteropolycyclic compound
+
+[Term]
 id: CHEBI:38166
 name: organic heteropolycyclic compound
 synonym: "organic heteropolycyclic compounds" RELATED []
@@ -5783,6 +6695,13 @@ def: "An agent that inhibits sodium influx through cell membranes." []
 synonym: "Na channel blocker" RELATED []
 synonym: "sodium channel blockers" RELATED []
 is_a: CHEBI:39000 ! sodium channel modulator
+
+[Term]
+id: CHEBI:38702
+name: inorganic sodium salt
+synonym: "inorganic sodium salts" RELATED []
+is_a: CHEBI:24839 ! inorganic salt
+is_a: CHEBI:26714 ! sodium salt
 
 [Term]
 id: CHEBI:38867
@@ -6138,6 +7057,42 @@ synonym: "carboxyl group" RELATED []
 is_a: CHEBI:33249 ! organyl group
 
 [Term]
+id: CHEBI:46963
+name: 2-aminooctadecene-1,3-diol
+def: "An aminodiol composed of any octadecene having hydroxy functional groups at positions 1 and 3 and an amino substituent at position 2." []
+synonym: "2-aminooctadecene-1,3-diol" EXACT []
+synonym: "2-aminooctadecene-1,3-diols" RELATED []
+is_a: CHEBI:22501 ! aminodiol
+is_a: CHEBI:35785 ! sphingoid
+
+[Term]
+id: CHEBI:46964
+name: 2-aminooctadec-4-ene-1,3-diol
+def: "A 2-aminooctadecene-1,3-diol having its double bond at position 4." []
+synonym: "2-aminooctadec-4-ene-1,3-diol" EXACT []
+synonym: "2-aminooctadec-4-ene-1,3-diols" RELATED []
+is_a: CHEBI:46963 ! 2-aminooctadecene-1,3-diol
+
+[Term]
+id: CHEBI:46965
+name: (2R,3S)-2-aminooctadec-4-ene-1,3-diol
+def: "A 2-aminooctadec-4-ene-1,3-diol having (2R,3S)-configuration." []
+synonym: "(2R,3S)-2-aminooctadec-4-ene-1,3-diol" EXACT []
+is_a: CHEBI:46964 ! 2-aminooctadec-4-ene-1,3-diol
+relationship: is_enantiomer_of CHEBI:26743 ! sphing-4-enine
+
+[Term]
+id: CHEBI:46967
+name: L-erythro-sphingosine
+def: "A (2R,3S)-2-aminooctadec-4-ene-1,3-diol in which the double bond has E geochemistry." []
+synonym: "(2R,3S,4E)-2-aminooctadec-4-ene-1,3-diol" EXACT []
+synonym: "L-Erythro-c18-sphingosine" RELATED []
+synonym: "L-erythro-sphing-4-enine" RELATED []
+is_a: CHEBI:46965 ! (2R,3S)-2-aminooctadec-4-ene-1,3-diol
+relationship: is_conjugate_base_of CHEBI:77956 ! L-erythro-sphingosine(1+)
+relationship: is_enantiomer_of CHEBI:16393 ! sphingosine
+
+[Term]
 id: CHEBI:47622
 name: acetate ester
 def: "Any carboxylic ester where the carboxylic acid component is acetic acid." []
@@ -6195,6 +7150,23 @@ synonym: "Schwefeloxide" RELATED []
 synonym: "sulfur oxides" RELATED []
 is_a: CHEBI:24836 ! inorganic oxide
 is_a: CHEBI:26835 ! sulfur molecular entity
+
+[Term]
+id: CHEBI:48210
+name: cyclopentafurofurochromene
+synonym: "cyclopentafurofurochromenes" RELATED []
+is_a: CHEBI:38104 ! oxacycle
+is_a: CHEBI:38164 ! organic heteropentacyclic compound
+
+[Term]
+id: CHEBI:48219
+name: disinfectant
+def: "An antimicrobial agent that is applied to non-living objects to destroy harmful microorganisms or to inhibit their activity." []
+synonym: "desinfectant" RELATED []
+synonym: "Desinfektionsmittel" RELATED []
+synonym: "disinfectants" RELATED []
+synonym: "disinfecting agent" RELATED []
+is_a: CHEBI:33281 ! antimicrobial agent
 
 [Term]
 id: CHEBI:48278
@@ -6437,6 +7409,16 @@ is_a: CHEBI:84124 ! D-tyrosine derivative
 relationship: is_enantiomer_of CHEBI:15765 ! L-dopa
 
 [Term]
+id: CHEBI:49475
+name: argon atom
+synonym: "18Ar" RELATED []
+synonym: "Ar" RELATED []
+synonym: "argon" EXACT []
+synonym: "argon" RELATED []
+is_a: CHEBI:33309 ! noble gas atom
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
 id: CHEBI:49637
 name: hydrogen atom
 synonym: "1H" RELATED []
@@ -6549,6 +7531,16 @@ synonym: "onium cations" RELATED []
 synonym: "onium ion" RELATED []
 synonym: "onium ions" RELATED []
 is_a: CHEBI:50312 ! onium compound
+
+[Term]
+id: CHEBI:50315
+name: chloronium
+synonym: "[ClH2](+)" RELATED []
+synonym: "chloranium" EXACT []
+synonym: "chloronium" EXACT []
+synonym: "H2Cl(+)" RELATED []
+is_a: CHEBI:50313 ! onium cation
+relationship: is_conjugate_acid_of CHEBI:17883 ! hydrogen chloride
 
 [Term]
 id: CHEBI:50325
@@ -6736,6 +7728,15 @@ synonym: "organic entity" RELATED []
 synonym: "organic molecular entities" RELATED []
 is_a: CHEBI:33582 ! carbon group molecular entity
 relationship: BFO:0000051 CHEBI:27594 ! carbon atom
+
+[Term]
+id: CHEBI:50902
+name: genotoxin
+def: "A role played by a chemical compound to induce direct or indirect DNA damage. Such damage can potentially lead to the formation of a malignant tumour, but DNA damage does not lead inevitably to the creation of cancerous cells." []
+synonym: "genotoxic agent" RELATED []
+synonym: "genotoxic agents" RELATED []
+synonym: "genotoxins" RELATED []
+is_a: CHEBI:52209 ! aetiopathogenetic role
 
 [Term]
 id: CHEBI:50903
@@ -6981,6 +7982,13 @@ synonym: "pharmaceuticals" RELATED []
 is_a: CHEBI:33232 ! application
 
 [Term]
+id: CHEBI:52625
+name: inorganic hydroxy compound
+synonym: "inorganic hydroxides" RELATED []
+is_a: CHEBI:24651 ! hydroxides
+is_a: CHEBI:24835 ! inorganic molecular entity
+
+[Term]
 id: CHEBI:53000
 name: epitope
 def: "The biological role played by a material entity when bound by a receptor of the adaptive immune system. Specific site on an antigen to which an antibody binds." []
@@ -7049,6 +8057,17 @@ is_a: CHEBI:25696 ! organic anion
 relationship: is_conjugate_base_of CHEBI:16294 ! barbituric acid
 
 [Term]
+id: CHEBI:57756
+name: sphingosine(1+)
+def: "The cationic sphingoid resulting from the protonation of the amino group of sphingosine." []
+synonym: "(2S,3R,4E)-1,3-dihydroxyoctadec-4-en-2-aminium" EXACT []
+synonym: "sphing-4-enine" RELATED []
+is_a: CHEBI:84410 ! sphingoid base(1+)
+relationship: is_conjugate_acid_of CHEBI:16393 ! sphingosine
+relationship: is_enantiomer_of CHEBI:77956 ! L-erythro-sphingosine(1+)
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
 id: CHEBI:57869
 name: 6-aminopenicillanic acid zwitterion
 def: "Zwitterionic form of 6-aminopenicillanic acid arising from migration of a proton from the carboxy group to the 6-amino group; major species at pH 7.3." []
@@ -7058,6 +8077,17 @@ synonym: "6-azaniumyl-2,2-dimethylpenam-3alpha-carboxylate" EXACT []
 is_a: CHEBI:35238 ! amino acid zwitterion
 relationship: is_conjugate_acid_of CHEBI:30938 ! 6-aminopenicillanate
 relationship: is_tautomer_of CHEBI:16705 ! 6-aminopenicillanic acid
+
+[Term]
+id: CHEBI:57934
+name: psychosine(1+)
+def: "The ammonium ion resulting from the protonation of the amino group of psychosine." []
+synonym: "(2S,3R,4E)-1-(beta-D-galactopyranosyloxy)-3-hydroxyoctadec-4-en-2-aminium" EXACT []
+synonym: "(2S,3R,4E)-3-hydroxy-1-{[(2R,3R,4S,5R,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy}octadec-4-en-2-aminium" RELATED []
+synonym: "psychosine" RELATED []
+is_a: CHEBI:35274 ! ammonium ion
+relationship: is_conjugate_acid_of CHEBI:16874 ! psychosine
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
 id: CHEBI:57981
@@ -7492,6 +8522,21 @@ name: glycosyl compound
 def: "A carbohydrate derivative arising formally from the elimination of water from a glycosidic hydroxy group and an H atom bound to an oxygen, carbon, nitrogen or sulfur atom of a separate entity." []
 synonym: "glycosyl compounds" RELATED []
 is_a: CHEBI:63299 ! carbohydrate derivative
+
+[Term]
+id: CHEBI:63248
+name: oxidising agent
+def: "A substance that removes electrons from another reactant in a redox reaction." []
+synonym: "oxidant" RELATED []
+synonym: "oxidants" RELATED []
+synonym: "oxidiser" RELATED []
+synonym: "oxidisers" RELATED []
+synonym: "oxidising agents" RELATED []
+synonym: "oxidizer" RELATED []
+synonym: "oxidizers" RELATED []
+synonym: "oxidizing agent" RELATED []
+synonym: "oxidizing agents" RELATED []
+is_a: CHEBI:51086 ! chemical role
 
 [Term]
 id: CHEBI:63299
@@ -8051,6 +9096,20 @@ synonym: "xenobiotic metabolites" RELATED []
 is_a: CHEBI:25212 ! metabolite
 
 [Term]
+id: CHEBI:76413
+name: greenhouse gas
+def: "A gas in an atmosphere that absorbs and emits radiation within the thermal infrared range, so contributing to the 'greenhouse effect'." []
+synonym: "greenhouse gases" RELATED []
+is_a: CHEBI:51086 ! chemical role
+
+[Term]
+id: CHEBI:76414
+name: propellant
+def: "A compressed gas or liquid with a boiling point lower than room temperature which to used to propel and dispense liquids such as deodorants, insecticides, paints, etc. from aerosol cans." []
+synonym: "propellants" RELATED []
+is_a: CHEBI:33232 ! application
+
+[Term]
 id: CHEBI:76668
 name: EC 2.7.* (P-containing group transferase) inhibitor
 def: "A transferase inhibitor that inhibits the action of a phosphorus-containing group transferase (EC 2.7.*.*)." []
@@ -8563,6 +9622,32 @@ synonym: "N-acetylaminohydrolase inhibitors" RELATED []
 is_a: CHEBI:76807 ! EC 3.5.1.* (non-peptide linear amide C-N hydrolase) inhibitor
 
 [Term]
+id: CHEBI:77956
+name: L-erythro-sphingosine(1+)
+def: "A cationic sphingoid resulting from the protonation of the amino group of L-erythro-sphingosine; major species at pH 7.3." []
+synonym: "(2R,3S,4E)-1,3-dihydroxyoctadec-4-en-2-aminium" EXACT []
+synonym: "D-erythro-sphing-4-enine" RELATED []
+synonym: "L-erythro-sphing-4-enine(1+)" RELATED []
+is_a: CHEBI:83876 ! cationic sphingoid
+relationship: is_conjugate_acid_of CHEBI:46967 ! L-erythro-sphingosine
+relationship: is_enantiomer_of CHEBI:57756 ! sphingosine(1+)
+
+[Term]
+id: CHEBI:77974
+name: food packaging gas
+def: "A food additive that is a (generally inert) gas which is used to envelop foodstuffs during packing and so protect them from unwanted chemical reactions such as food spoilage or oxidation during subsequent transport and storage. The term includes propellant gases, used to expel foods from a container." []
+synonym: "food packaging gases" RELATED []
+is_a: CHEBI:64047 ! food additive
+
+[Term]
+id: CHEBI:78017
+name: food propellant
+def: "A propellant that is used to expel foods from an aerosol container." []
+synonym: "food propellants" RELATED []
+is_a: CHEBI:64047 ! food additive
+is_a: CHEBI:76414 ! propellant
+
+[Term]
 id: CHEBI:78113
 name: fatty acid anion 3:0
 def: "Any saturated fatty acid anion containing 3 carbons. Formed by deprotonation of the carboxylic acid moiety. Major species at pH 7.3." []
@@ -8760,6 +9845,17 @@ is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:83925 ! non-proteinogenic alpha-amino acid
 
 [Term]
+id: CHEBI:83876
+name: cationic sphingoid
+def: "An organic cation obtained by protonation of the amino function of any sphingoid" []
+synonym: "cationic sphingoids" RELATED []
+synonym: "sphingoid cation" RELATED []
+synonym: "sphingoid cations" RELATED []
+is_a: CHEBI:25697 ! organic cation
+is_a: CHEBI:35274 ! ammonium ion
+relationship: is_conjugate_acid_of CHEBI:35785 ! sphingoid
+
+[Term]
 id: CHEBI:83925
 name: non-proteinogenic alpha-amino acid
 def: "Any  alpha-amino acid which is not a member of the group of 23 proteinogenic amino acids." []
@@ -8807,6 +9903,14 @@ is_a: CHEBI:83811 ! proteinogenic amino acid derivative
 relationship: has_functional_parent CHEBI:17295 ! L-phenylalanine
 
 [Term]
+id: CHEBI:84410
+name: sphingoid base(1+)
+def: "A cationic sphingoid obtained by protonation of the amino group of any 2-amino-1,3-dihydroxysphingoid base." []
+synonym: "2-amino-1,3-dihydroxysphingoid base(1+)" RELATED []
+synonym: "a sphingoid base" RELATED []
+is_a: CHEBI:83876 ! cationic sphingoid
+
+[Term]
 id: CHEBI:84735
 name: algal metabolite
 def: "Any eukaryotic metabolite produced during a metabolic reaction in algae including unicellular organisms like chlorella and diatoms to multicellular organisms like giant kelps and brown algae." []
@@ -8819,6 +9923,16 @@ name: human blood serum metabolite
 def: "Any metabolite (endogenous or exogenous) found in human blood serum samples." []
 synonym: "human blood serum metabolites" RELATED []
 is_a: CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:85638
+name: haloacetate(1-)
+def: "A monocarboxylic acid anion resulting from the deprotonation of the carboxy group of a haloacetic acid." []
+synonym: "a haloacetate" RELATED []
+synonym: "haloacetate (1-)" RELATED []
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+relationship: has_functional_parent CHEBI:30089 ! acetate
+relationship: is_conjugate_base_of CHEBI:16277 ! haloacetic acid
 
 [Term]
 id: CHEBI:86327

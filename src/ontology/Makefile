@@ -54,7 +54,7 @@ all: test all_artefacts
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo foodon
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo ecto hgnc foodon
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -113,7 +113,7 @@ osf_upload_direct:
 ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalentTo@))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | grep -v 'relationship: disease_has_basis_in_dysfunction_of HGNC:' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 skos.ttl: $(SRC)
@@ -255,10 +255,11 @@ imports/%_import.owl: mirror/%.owl imports/%_terms.txt
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
 imports/%_import.obo: imports/%_import.owl
-	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && mv $@.tmp $@
+	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
-
-imports/%_terms.txt:  $(SRC)
+edit-merged.owl: $(SRC)
+	robot merge -c true -i $< -o $@
+imports/%_terms.txt:  edit-merged.owl
 	robot query -f tsv -i $< -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | perl -npe 's@^\<@@;s@>$$@@' | sort -u > $@
 
 # ----------------------------------------
@@ -300,11 +301,10 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-EDIT_CHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label
-
-MAIN_OWL_CHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label
-
-MAIN_OBO_CHECKS = subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label
+CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label 
+EDIT_CHECKS =     $(CORE_CHECKS)
+MAIN_OWL_CHECKS = $(CORE_CHECKS) no-superclass
+MAIN_OBO_CHECKS = $(CORE_CHECKS) no-superclass
 
 QSRC = $(SRC)-noimports.owl
 
@@ -531,58 +531,22 @@ mirror/ncit-disease.obo: mirror/ncit-disease.owl
 mirror/rdo.obo:
 	wget  --no-check-certificate ftp://ftp.rgd.mcw.edu/pub/ontology/disease/RDO.obo -O $@ && touch $@
 
-mirror/ordo_orphanet.owl.zip:
-	wget --no-check-certificate -nd -P mirror http://www.orphadata.org/data/ORDO/ordo_orphanet.owl.zip  && touch $@
-
-mirror/ordo_orphanet.owl: mirror/ordo_orphanet.owl.zip
-	unzip  mirror/ordo_orphanet.owl.zip -d mirror
-	touch $@
-
 mirror/medgen-disease-extract.owl: mirror/medgen-disease-extract.obo
 	owltools $< -o $@.tmp && perl -npe $(FIX_URI_EXPR) $@.tmp > $@
 
 mirror/dipper-%.ttl:
-	wget --no-check-certificate https://data.monarchinitiative.org/ttl/$*.ttl -O $@
+	wget --no-check-certificate https://data.monarchinitiative.org/ttl/$*.ttl -O $@.tmp && perl -npe 's@http://www.genenames.org/cgi-bin/gene_symbol_report\\?hgnc_id=@http://identifiers.org/hgnc/@g' $@.tmp > $@
 
+mirror/dipper-%.obo: mirror/dipper-%.ttl
+	robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
 
+mirror/hgnc.owl: mirror/dipper-hgnc.ttl
+	robot query --format ttl -c ../sparql/construct-hgnc.sparql $@ -i $<
+#	robot query construct
+#	owltools $< --remove-axioms -t EquivalentClasses -o $@
+#	owltools $< --remove-dangling -o $@
+#	owltools $< --merge-equivalence-sets -s http://identifiers.org/hgnc/ 20 -o $@
 
-# ~~~~~~~~
-# ORDO
-# ~~~~~~~~
-
-
-# STEP 1: DOWNLOAD
-mirror/obo_orphanet_1.owl: mirror/ordo_orphanet.owl
-	owltools $< $(EFO2OBO_OPTS) -o $@.tmp && mv $@.tmp $@
-
-# STEP 2: Fix XREFs
-mirror/obo_orphanet_2.owl: mirror/obo_orphanet_1.owl
-	perl -npe 's@MeSH:@MESH:@;s@ICD-10:@ICD10:@;' $< >  $@.tmp && mv $@.tmp $@
-
-# STEP 2b: Create is-a from part-of
-mirror/obo_orphanet_sc.owl: mirror/obo_orphanet_2.owl
-	robot query --format ttl -c ../sparql/construct-subclass-from-part-of.sparql $@ -i $<
-
-# STEP 2c: Create subsets based on subClass to sub-root level
-mirror/obo_orphanet_subsets.owl: mirror/obo_orphanet_2.owl
-	robot query --format ttl -c ../sparql/construct-ordo-subsets.sparql $@ -i $<
-
-# STEP 3: merge 2b and 2c in to 2
-mirror/obo_orphanet_3.owl: mirror/obo_orphanet_2.owl mirror/obo_orphanet_sc.owl mirror/obo_orphanet_subsets.owl
-	owltools $^ --merge-support-ontologies -o $@
-
-# STEP 3b: make an .obo file
-mirror/obo_orphanet_3.obo: mirror/obo_orphanet_3.owl
-	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
-
-# STEP 4: Remove part-ofs (see 2b, we have these as subClassOf now)
-mirror/obo_orphanet_4.obo: mirror/obo_orphanet_3.obo
-	grep -v '^relationship: BFO:0000050' $< > $@
-
-mirror/obo_orphanet.obo: mirror/obo_orphanet_4.obo
-	cp $< $@
-mirror/obo_orphanet.owl: mirror/obo_orphanet.obo
-	owltools $< -o $@.tmp && perl -npe 's@http://purl.obolibrary.org/obo/Orphanet_@http://www.orpha.net/ORDO/Orphanet_@g' $@.tmp > $@
 
 mirror/omia.ttl: 
 	wget --no-check-certificate http://data.monarchinitiative.org/ttl/omia.ttl -O $@ && touch $@
@@ -751,7 +715,24 @@ omim2medgen.obo: mim2gene_medgen
 # remember to clear tmp/ dir for fresh start
 # mondo_queries requires for prefixes
 all_unique.tsv:
-	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all unique_match > $@
+	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all -i skos.ttl unique_match > $@
+
+all_unique_fresh: clean_tmp all_unique.tsv
+clean_tmp:
+	rm tmp/*
+
+# ----------------------------------------
+# Metaclasses
+# ----------------------------------------
+disorder-by-%.tsv: mondo-edit.obo
+	blip-findall -r uberonp -r cell -r go -i $< "class_cdef(C,cdef('MONDO:0000001',[disease_has_location=A])),subclassRT(A,'$(subst _,:,$*)')" -select C-A -no_pred -use_tabs -label > $@.tmp && sort -u $@.tmp > $@
+
+disorder-by-anatomical-region.tsv: disorder-by-UBERON_0000475.tsv
+	cp $< $@
+disorder-by-anatomical-system.tsv: disorder-by-UBERON_0000467.tsv
+	cp $< $@
+disorder-by-cell.tsv: disorder-by-CL_0000000.tsv
+	cp $< $@
 
 # ----------------------------------------
 # Anns

@@ -55,7 +55,7 @@ lx-$(Ont)-$(P).tsv:
 #	blip-findall -r $(Ont) -r uberonp  -u odputil -i disease_patterns.pro -goal "load_onts($(P))" "write_tuple($(P))" -select C-V -no_pred -use_tabs -label > $@.tmp && mv $@.tmp $@
 
 ld-mondo-%.tsv: %.yaml
-	dosdp-tools  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$< --outfile=$@.tmp query && ./fix-tsvs.pl $@.tmp > $@
+	dosdp-tools --catalog=../ontology/catalog-v001.xml  --ontology=$(SRCM) --reasoner=elk --obo-prefixes=true --template=$< --outfile=$@.tmp query && ./fix-tsvs.pl $@.tmp > $@
 .PRECIOUS: ld-mondo-%.tsv
 
 roundtrip-mondo-%.owl: ld-mondo-%.tsv %.yaml

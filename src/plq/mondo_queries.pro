@@ -26,6 +26,9 @@
 
 foo('0').
 
+call_unique(G) :- setof(G,G,Gs),member(G,Gs).
+
+
 mondo(C) :- owl:class(C), uri_prefix(C,'MONDO').
 
 
@@ -37,6 +40,7 @@ solutions(X,G,L) :-
         !.
 solutions(_,_,[]).
 
+% P is str
 xref_prefix(C,X,P) :-
         has_dbxref(C,X),
         curie_prefix(X,P).

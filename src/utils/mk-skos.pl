@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 use strict;
 my $id;
+my %has_exact_map = ();
+my @triples = ();
 while (<>) {
     if (m@^id:@) {
         $id = undef;
@@ -13,6 +15,15 @@ while (<>) {
         my ($prefix, $x, $anns) = ($1,$2,$3);
         my $rel = 'closeMatch';
         if ($anns =~ m@equivalentTo@) {
+            $rel = 'exactMatch';
+        }
+        elsif ($anns =~ m@equivalentObsolete@) {
+            $rel = 'exactMatch';
+        }
+        elsif ($anns =~ m@obsoleteEquivalent@) {
+            $rel = 'exactMatch';
+        }
+        elsif ($anns =~ m@otherHierarchy@) {
             $rel = 'exactMatch';
         }
         elsif ($anns =~ m@subClassOf@) {
@@ -63,8 +74,20 @@ while (<>) {
         }
 
         if ($uri) {
-            print "<$id> <$rel> <$uri$x> .\n";
+            my $tgt = "$uri$x";
+            $has_exact_map{$tgt} = 1 if $rel =~ m@exactMatch@;
+            push(@triples, [$id, $rel, $tgt]);
         }
     }
     
+}
+
+foreach (@triples) {
+    my ($s,$rel,$o) = @$_;
+    if ($rel =~ m@exactMatch@ || !$has_exact_map{$o}) {
+        print "<$s> <$rel> <$o> .\n";
+    }
+    else {
+        print STDERR "MASKING: $s $rel $o\n";
+    }
 }
