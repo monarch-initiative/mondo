@@ -1,4 +1,4 @@
-## 2018-08-XX release
+## 2018-08-19 release
 
 ### Summary
 

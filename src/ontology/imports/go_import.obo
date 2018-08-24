@@ -3326,6 +3326,25 @@ is_a: GO:0016406 ! carnitine O-acyltransferase activity
 is_a: GO:0016413 ! O-acetyltransferase activity
 
 [Term]
+id: GO:0004155
+name: 6,7-dihydropteridine reductase activity
+def: "Catalysis of the reaction: NADP+ + 5,6,7,8-tetrahydropteridine = NADPH + H+ + 6,7-dihydropteridine." []
+synonym: "5,6,7,8-tetrahydropteridine:NAD(P)+ oxidoreductase activity" EXACT []
+synonym: "5,6,7,8-tetrahydropteridine:NAD(P)H+ oxidoreductase activity" EXACT []
+synonym: "6,7-dihydropteridine:NAD(P)H oxidoreductase activity" EXACT []
+synonym: "DHPR activity" EXACT []
+synonym: "dihydropteridine (reduced nicotinamide adenine dinucleotide) reductase activity" EXACT []
+synonym: "dihydropteridine reductase (NADH) activity" EXACT []
+synonym: "dihydropteridine reductase activity" EXACT []
+synonym: "dihydropteridine reduction" RELATED []
+synonym: "NAD(P)H(2):6,7-dihydropteridine oxidoreductase activity" EXACT []
+synonym: "NAD(P)H2:6,7-dihydropteridine oxidoreductase activity" EXACT []
+synonym: "NADH-dihydropteridine reductase activity" EXACT []
+synonym: "NADPH-dihydropteridine reductase activity" EXACT []
+synonym: "NADPH-specific dihydropteridine reductase activity" EXACT []
+is_a: GO:0016646 ! oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor
+
+[Term]
 id: GO:0004175
 name: endopeptidase activity
 def: "Catalysis of the hydrolysis of internal, alpha-peptide bonds in a polypeptide chain." []
@@ -3583,6 +3602,13 @@ synonym: "O-glucosyl hydrolase activity" EXACT []
 is_a: GO:0016798 ! hydrolase activity, acting on glycosyl bonds
 
 [Term]
+id: GO:0004555
+name: alpha,alpha-trehalase activity
+def: "Catalysis of the reaction: alpha,alpha-trehalose + H2O = 2 D-glucose." []
+synonym: "alpha,alpha-trehalose glucohydrolase activity" EXACT []
+is_a: GO:0015927 ! trehalase activity
+
+[Term]
 id: GO:0004557
 name: alpha-galactosidase activity
 def: "Catalysis of the hydrolysis of terminal, non-reducing alpha-D-galactose residues in alpha-D-galactosides, including galactose oligosaccharides, galactomannans and galactohydrolase." []
@@ -3592,6 +3618,19 @@ synonym: "alpha-galactosidase A" RELATED []
 synonym: "alpha-galactoside galactohydrolase activity" EXACT []
 synonym: "melibiase activity" EXACT []
 is_a: GO:0015925 ! galactosidase activity
+
+[Term]
+id: GO:0004559
+name: alpha-mannosidase activity
+def: "Catalysis of the hydrolysis of terminal, non-reducing alpha-D-mannose residues in alpha-D-mannosides." []
+synonym: "1,2-alpha-D-mannosidase activity" NARROW []
+synonym: "1,2-alpha-mannosidase" NARROW []
+synonym: "alpha-D-mannopyranosidase activity" EXACT []
+synonym: "alpha-D-mannosidase activity" EXACT []
+synonym: "alpha-D-mannoside mannohydrolase activity" EXACT []
+synonym: "exo-alpha-mannosidase activity" EXACT []
+synonym: "p-nitrophenyl-alpha-mannosidase activity" NARROW []
+is_a: GO:0015923 ! mannosidase activity
 
 [Term]
 id: GO:0004561
@@ -3801,6 +3840,13 @@ synonym: "ribose-phosphate pyrophosphokinase activity" EXACT []
 is_a: GO:0016778 ! diphosphotransferase activity
 
 [Term]
+id: GO:0004757
+name: sepiapterin reductase activity
+def: "Catalysis of the reaction: 7,8-dihydrobiopterin + NADP+ = sepiapterin + NADPH + H+." []
+synonym: "7,8-dihydrobiopterin:NADP+ oxidoreductase activity" EXACT []
+is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
+
+[Term]
 id: GO:0004758
 name: serine C-palmitoyltransferase activity
 def: "Catalysis of the reaction: L-serine + H(+) + palmitoyl-CoA = 3-dehydrosphinganine + CO(2) + CoA." []
@@ -3810,6 +3856,24 @@ synonym: "palmitoyl-CoA:L-serine C-palmitoyltransferase (decarboxylating) activi
 synonym: "serine palmitoyltransferase" BROAD []
 synonym: "SPT" RELATED []
 is_a: GO:0016454 ! C-palmitoyltransferase activity
+
+[Term]
+id: GO:0004773
+name: steryl-sulfatase activity
+def: "Catalysis of the reaction: 3-beta-hydroxyandrost-5-en-17-one 3-sulfate + H2O = 3-beta-hydroxyandrost-5-en-17-one + sulfate." []
+synonym: "3-beta-hydroxysteroid sulfate sulfatase activity" EXACT []
+synonym: "arylsulfatase C activity" EXACT []
+synonym: "dehydroepiandrosterone sulfatase activity" EXACT []
+synonym: "dehydroepiandrosterone sulfate sulfatase activity" EXACT []
+synonym: "phenolic steroid sulfatase activity" EXACT []
+synonym: "pregnenolone sulfatase activity" EXACT []
+synonym: "steroid 3-sulfatase activity" EXACT []
+synonym: "steroid sulfatase activity" EXACT []
+synonym: "steroid sulfate sulfohydrolase activity" EXACT []
+synonym: "sterol sulfatase activity" EXACT []
+synonym: "steryl-sulfate sulfohydrolase activity" EXACT []
+synonym: "steryl-sulphatase activity" EXACT []
+is_a: GO:0008484 ! sulfuric ester hydrolase activity
 
 [Term]
 id: GO:0004807
@@ -4502,6 +4566,14 @@ is_a: GO:0006073 ! cellular glucan metabolic process
 is_a: GO:0006112 ! energy reserve metabolic process
 
 [Term]
+id: GO:0005984
+name: disaccharide metabolic process
+def: "The chemical reactions and pathways involving any disaccharide, sugars composed of two monosaccharide units." []
+synonym: "disaccharide metabolism" EXACT []
+is_a: GO:0009311 ! oligosaccharide metabolic process
+is_a: GO:0044262 ! cellular carbohydrate metabolic process
+
+[Term]
 id: GO:0005996
 name: monosaccharide metabolic process
 def: "The chemical reactions and pathways involving monosaccharides, the simplest carbohydrates. They are polyhydric alcohols containing either an aldehyde or a keto group and between three to ten or more carbon atoms. They form the constitutional repeating units of oligo- and polysaccharides." []
@@ -5071,6 +5143,15 @@ synonym: "glutamine metabolism" EXACT []
 is_a: GO:0009064 ! glutamine family amino acid metabolic process
 
 [Term]
+id: GO:0006544
+name: glycine metabolic process
+def: "The chemical reactions and pathways involving glycine, aminoethanoic acid." []
+synonym: "glycine metabolism" EXACT []
+is_a: GO:0009069 ! serine family amino acid metabolic process
+is_a: GO:0017144 ! drug metabolic process
+is_a: GO:0042133 ! neurotransmitter metabolic process
+
+[Term]
 id: GO:0006547
 name: histidine metabolic process
 def: "The chemical reactions and pathways involving histidine, 2-amino-3-(1H-imidazol-4-yl)propanoic acid." []
@@ -5088,6 +5169,15 @@ synonym: "phenylalanine metabolism" BROAD []
 is_a: GO:0009072 ! aromatic amino acid family metabolic process
 is_a: GO:0017144 ! drug metabolic process
 is_a: GO:1902221 ! erythrose 4-phosphate/phosphoenolpyruvate family amino acid metabolic process
+
+[Term]
+id: GO:0006560
+name: proline metabolic process
+def: "The chemical reactions and pathways involving proline (pyrrolidine-2-carboxylic acid), a chiral, cyclic, nonessential alpha-amino acid found in peptide linkage in proteins." []
+synonym: "proline metabolism" EXACT []
+is_a: GO:0009064 ! glutamine family amino acid metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
 
 [Term]
 id: GO:0006563
@@ -5182,6 +5272,13 @@ is_a: GO:0006576 ! cellular biogenic amine metabolic process
 is_a: GO:0042430 ! indole-containing compound metabolic process
 
 [Term]
+id: GO:0006591
+name: ornithine metabolic process
+def: "The chemical reactions and pathways involving ornithine, an amino acid only rarely found in proteins, but which is important in living organisms as an intermediate in the reactions of the urea cycle and in arginine biosynthesis." []
+synonym: "ornithine metabolism" EXACT []
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0006600
 name: creatine metabolic process
 def: "The chemical reactions and pathways involving creatine (N-(aminoiminomethyl)-N-methylglycine), a compound synthesized from the amino acids arginine, glycine, and methionine that occurs in muscle." []
@@ -5189,6 +5286,18 @@ synonym: "creatine metabolism" EXACT []
 is_a: GO:0006575 ! cellular modified amino acid metabolic process
 is_a: GO:0017144 ! drug metabolic process
 is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006601
+name: creatine biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of creatine, N-[amino(imino)methyl]-N-methylglycine. Creatine is formed by a process beginning with amidino group transfer from L-arginine to glycine to form guanidinoacetate, followed by methyl group transfer from S-adenosyl-L-methionine to guanidinoacetate; it is then is phosphorylated to form a pool that stores high energy phosphate for the replenishment of ATP during periods of high, or fluctuating energy demand. In animals, most creatine is transported to and used in muscle." []
+synonym: "creatine anabolism" EXACT []
+synonym: "creatine biosynthesis" EXACT []
+synonym: "creatine formation" EXACT []
+synonym: "creatine synthesis" EXACT []
+is_a: GO:0006600 ! creatine metabolic process
+is_a: GO:0042398 ! cellular modified amino acid biosynthetic process
+is_a: GO:1901607 ! alpha-amino acid biosynthetic process
 
 [Term]
 id: GO:0006624
@@ -5344,6 +5453,28 @@ synonym: "glucocorticoid synthesis" EXACT []
 is_a: GO:0006694 ! steroid biosynthetic process
 is_a: GO:0008211 ! glucocorticoid metabolic process
 is_a: GO:0042446 ! hormone biosynthetic process
+
+[Term]
+id: GO:0006706
+name: steroid catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of steroids, compounds with a 1,2,cyclopentanoperhydrophenanthrene nucleus." []
+synonym: "steroid breakdown" EXACT []
+synonym: "steroid catabolism" EXACT []
+synonym: "steroid degradation" EXACT []
+is_a: GO:0008202 ! steroid metabolic process
+is_a: GO:0016042 ! lipid catabolic process
+is_a: GO:1901361 ! organic cyclic compound catabolic process
+
+[Term]
+id: GO:0006707
+name: cholesterol catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of cholesterol, cholest-5-en-3 beta-ol, the principal sterol of vertebrates and the precursor of many steroids, including bile acids and steroid hormones." []
+synonym: "cholesterol breakdown" EXACT []
+synonym: "cholesterol catabolism" EXACT []
+synonym: "cholesterol degradation" EXACT []
+is_a: GO:0008203 ! cholesterol metabolic process
+is_a: GO:0016127 ! sterol catabolic process
+is_a: GO:0046164 ! alcohol catabolic process
 
 [Term]
 id: GO:0006720
@@ -6654,6 +6785,14 @@ synonym: "single-organism metabolic process" RELATED []
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0008168
+name: methyltransferase activity
+def: "Catalysis of the transfer of a methyl group to an acceptor molecule." []
+synonym: "methylase" BROAD []
+is_a: GO:0016741 ! transferase activity, transferring one-carbon groups
+relationship: BFO:0000050 GO:0032259 ! part of methylation
+
+[Term]
 id: GO:0008202
 name: steroid metabolic process
 def: "The chemical reactions and pathways involving steroids, compounds with a 1,2,cyclopentanoperhydrophenanthrene nucleus." []
@@ -6880,6 +7019,28 @@ is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
 is_a: GO:0019200 ! carbohydrate kinase activity
 
 [Term]
+id: GO:0008456
+name: alpha-N-acetylgalactosaminidase activity
+def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-galactosamine residues in N-acetyl-alpha-D-galactosaminides." []
+synonym: "alpha-acetylgalactosaminidase activity" EXACT []
+synonym: "alpha-galactosidase B activity" RELATED []
+synonym: "alpha-N-acetyl-D-galactosaminide N-acetylgalactosaminohydrolase activity" EXACT []
+synonym: "alpha-NAGA activity" EXACT []
+synonym: "N-acetyl-alpha-D-galactosaminidase activity" EXACT []
+synonym: "N-acetyl-alpha-galactosaminidase activity" EXACT []
+is_a: GO:0015929 ! hexosaminidase activity
+
+[Term]
+id: GO:0008480
+name: sarcosine dehydrogenase activity
+def: "Catalysis of the reaction: sarcosine + H2O + electron-transfer flavoprotein = glycine + formaldehyde + reduced electron-transfer flavoprotein." []
+synonym: "monomethylglycine dehydrogenase activity" EXACT []
+synonym: "sarcosine N-demethylase activity" EXACT []
+synonym: "sarcosine:(acceptor) oxidoreductase (demethylating)" EXACT []
+synonym: "sarcosine:acceptor oxidoreductase (demethylating)" EXACT []
+is_a: GO:0046997 ! oxidoreductase activity, acting on the CH-NH group of donors, flavin as acceptor
+
+[Term]
 id: GO:0008482
 name: sulfite oxidase activity
 def: "Catalysis of the reaction: H(2)O + O(2) + sulfite = H(2)O(2) + H(+) + sulfate." []
@@ -6916,6 +7077,13 @@ name: organic anion transmembrane transporter activity
 def: "Enables the transfer of organic anions from one side of a membrane to the other. Organic anions are atoms or small molecules with a negative charge which contain carbon in covalent linkage." []
 is_a: GO:0008509 ! anion transmembrane transporter activity
 relationship: BFO:0000050 GO:0015711 ! part of organic anion transport
+
+[Term]
+id: GO:0008544
+name: epidermis development
+def: "The process whose specific outcome is the progression of the epidermis over time, from its formation to the mature structure. The epidermis is the outer epithelial layer of an animal, it may be a single layer that produces an extracellular material (e.g. the cuticle of arthropods) or a complex stratified squamous epithelium, as in the case of many vertebrate species." []
+synonym: "hypodermis development" RELATED []
+is_a: GO:0009888 ! tissue development
 
 [Term]
 id: GO:0008610
@@ -6994,6 +7162,14 @@ is_a: GO:0006644 ! phospholipid metabolic process
 is_a: GO:0008610 ! lipid biosynthetic process
 is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0090407 ! organophosphate biosynthetic process
+
+[Term]
+id: GO:0008757
+name: S-adenosylmethionine-dependent methyltransferase activity
+def: "Catalysis of the transfer of a methyl group from S-adenosyl-L-methionine to a substrate." []
+synonym: "S-adenosyl methionine-dependent methyltransferase activity" EXACT []
+synonym: "SAM-dependent methyltransferase activity" EXACT []
+is_a: GO:0008168 ! methyltransferase activity
 
 [Term]
 id: GO:0009056
@@ -7871,6 +8047,14 @@ is_a: GO:0009894 ! regulation of catabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0009056 ! positively regulates catabolic process
 relationship: RO:0002213 GO:0009056 ! positively regulates catabolic process
+
+[Term]
+id: GO:0009913
+name: epidermal cell differentiation
+def: "The process in which a relatively unspecialized cell acquires specialized features of an epidermal cell, any of the cells making up the epidermis." []
+synonym: "hypodermal cell differentiation" RELATED []
+is_a: GO:0030855 ! epithelial cell differentiation
+relationship: BFO:0000050 GO:0008544 ! part of epidermis development
 
 [Term]
 id: GO:0009914
@@ -8945,6 +9129,24 @@ is_a: GO:0015833 ! peptide transport
 is_a: GO:0045184 ! establishment of protein localization
 
 [Term]
+id: GO:0015067
+name: amidinotransferase activity
+def: "Catalysis of the reversible transfer of an amidino group to an acceptor." []
+synonym: "transamidinase activity" EXACT []
+is_a: GO:0016741 ! transferase activity, transferring one-carbon groups
+is_a: GO:0016769 ! transferase activity, transferring nitrogenous groups
+
+[Term]
+id: GO:0015068
+name: glycine amidinotransferase activity
+def: "Catalysis of the reaction: L-arginine + glycine = L-ornithine + guanidinoacetate." []
+synonym: "arginine-glycine amidinotransferase activity" EXACT []
+synonym: "arginine-glycine transamidinase activity" EXACT []
+synonym: "glycine transamidinase activity" EXACT []
+synonym: "L-arginine:glycine amidinotransferase activity" EXACT []
+is_a: GO:0015067 ! amidinotransferase activity
+
+[Term]
 id: GO:0015075
 name: ion transmembrane transporter activity
 def: "Enables the transfer of an ion from one side of a membrane to the other." []
@@ -9175,6 +9377,12 @@ is_a: GO:0006810 ! transport
 relationship: BFO:0000050 GO:0042493 ! part of response to drug
 
 [Term]
+id: GO:0015923
+name: mannosidase activity
+def: "Catalysis of the hydrolysis of mannosyl compounds, substances containing a group derived from a cyclic form of mannose or a mannose derivative." []
+is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
+
+[Term]
 id: GO:0015925
 name: galactosidase activity
 def: "Catalysis of the hydrolysis of galactosyl compounds, substances containing a group derived from a cyclic form of galactose or a galactose derivative." []
@@ -9184,6 +9392,12 @@ is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 id: GO:0015926
 name: glucosidase activity
 def: "Catalysis of the hydrolysis of glucosyl compounds, substances containing a group derived from a cyclic form of glucose or a glucose derivative." []
+is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
+
+[Term]
+id: GO:0015927
+name: trehalase activity
+def: "Catalysis of the hydrolysis of trehalose or a trehalose derivative." []
 is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
@@ -9406,6 +9620,17 @@ is_a: GO:0016125 ! sterol metabolic process
 is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
+id: GO:0016127
+name: sterol catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of sterols, steroids with one or more hydroxyl groups and a hydrocarbon side-chain in the molecule." []
+synonym: "sterol breakdown" EXACT []
+synonym: "sterol catabolism" EXACT []
+synonym: "sterol degradation" EXACT []
+is_a: GO:0006706 ! steroid catabolic process
+is_a: GO:0016125 ! sterol metabolic process
+is_a: GO:1901616 ! organic hydroxy compound catabolic process
+
+[Term]
 id: GO:0016175
 name: superoxide-generating NADPH oxidase activity
 def: "Catalysis of the reaction: NAD(P)H + O2 = NAD(P)H + O2-." []
@@ -9441,6 +9666,12 @@ is_a: GO:0003674 ! molecular_function
 intersection_of: GO:0003674 ! molecular_function
 intersection_of: BFO:0000050 GO:0098869 ! part of cellular oxidant detoxification
 relationship: BFO:0000050 GO:0098869 ! part of cellular oxidant detoxification
+
+[Term]
+id: GO:0016229
+name: steroid dehydrogenase activity
+def: "Catalysis of an oxidation-reduction (redox) reaction in which one substrate is a sterol derivative." []
+is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
 id: GO:0016250
@@ -9691,6 +9922,12 @@ id: GO:0016740
 name: transferase activity
 def: "Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." []
 is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016741
+name: transferase activity, transferring one-carbon groups
+def: "Catalysis of the transfer of a one-carbon group from one compound (donor) to another (acceptor)." []
+is_a: GO:0016740 ! transferase activity
 
 [Term]
 id: GO:0016746
@@ -11066,6 +11303,14 @@ is_a: GO:0019752 ! carboxylic acid metabolic process
 is_a: GO:1903510 ! mucopolysaccharide metabolic process
 
 [Term]
+id: GO:0030216
+name: keratinocyte differentiation
+def: "The process in which a relatively unspecialized cell acquires specialized features of a keratinocyte." []
+synonym: "keratinocyte cell differentiation" EXACT []
+is_a: GO:0009913 ! epidermal cell differentiation
+relationship: BFO:0000050 GO:0043588 ! part of skin development
+
+[Term]
 id: GO:0030217
 name: T cell differentiation
 def: "The process in which a precursor cell type acquires characteristics of a more mature T-cell. A T cell is a type of lymphocyte whose definin characteristic is the expression of a T cell receptor complex." []
@@ -11386,6 +11631,18 @@ synonym: "triglyceride sequestering" EXACT []
 synonym: "triglyceride sequestration" EXACT []
 synonym: "triglyceride storage" EXACT []
 is_a: GO:0019915 ! lipid storage
+
+[Term]
+id: GO:0030731
+name: guanidinoacetate N-methyltransferase activity
+def: "Catalysis of the reaction: S-adenosyl-L-methionine + guanidinoacetate = S-adenosyl-L-homocysteine + creatine + H(+)." []
+synonym: "GA methylpherase activity" EXACT []
+synonym: "guanidinoacetate methyltransferase activity" EXACT []
+synonym: "guanidinoacetate transmethylase activity" EXACT []
+synonym: "guanidoacetate methyltransferase activity" EXACT []
+synonym: "methionine-guanidinoacetic transmethylase activity" EXACT []
+synonym: "S-adenosyl-L-methionine:N-guanidinoacetate methyltransferase activity" EXACT []
+is_a: GO:0008757 ! S-adenosylmethionine-dependent methyltransferase activity
 
 [Term]
 id: GO:0030808
@@ -12142,6 +12399,13 @@ intersection_of: GO:0031982 ! vesicle
 intersection_of: BFO:0000050 GO:0005737 ! part of cytoplasm
 
 [Term]
+id: GO:0031424
+name: keratinization
+def: "The process in which the cytoplasm of the outermost cells of the vertebrate epidermis is replaced by keratin. Keratinization occurs in the stratum corneum, feathers, hair, claws, nails, hooves, and horns." []
+is_a: GO:0032501 ! multicellular organismal process
+relationship: BFO:0000050 GO:0030216 ! part of keratinocyte differentiation
+
+[Term]
 id: GO:0031503
 name: protein-containing complex localization
 def: "A localization process that acts on a protein complex; the complex is transported to, or maintained in, a specific location." []
@@ -12607,6 +12871,12 @@ is_a: GO:0015711 ! organic anion transport
 is_a: GO:0015893 ! drug transport
 is_a: GO:0051180 ! vitamin transport
 is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
+id: GO:0032259
+name: methylation
+def: "The process in which a methyl group is covalently attached to a molecule." []
+is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0032268
@@ -13599,6 +13869,16 @@ synonym: "protein localization in organelle" EXACT []
 is_a: GO:0034613 ! cellular protein localization
 
 [Term]
+id: GO:0033490
+name: cholesterol biosynthetic process via lathosterol
+def: "The chemical reactions and pathways resulting in the formation of cholesterol, cholest-5-en-3 beta-ol, via the intermediate lathosterol." []
+synonym: "cholesterol anabolism via lathosterol" EXACT []
+synonym: "cholesterol biosynthesis via lathosterol" EXACT []
+synonym: "cholesterol formation via lathosterol" EXACT []
+synonym: "cholesterol synthesis via lathosterol" EXACT []
+is_a: GO:0006695 ! cholesterol biosynthetic process
+
+[Term]
 id: GO:0033554
 name: cellular response to stress
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus indicating the organism is under stress. The stress is usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." []
@@ -13734,6 +14014,13 @@ intersection_of: BFO:0000050 GO:0006289 ! part of nucleotide-excision repair
 relationship: BFO:0000050 GO:0006289 ! part of nucleotide-excision repair
 
 [Term]
+id: GO:0033764
+name: steroid dehydrogenase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-OH group acts as a hydrogen or electron donor and reduces NAD+ or NADP, and in which one substrate is a sterol derivative." []
+is_a: GO:0016229 ! steroid dehydrogenase activity
+is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
+
+[Term]
 id: GO:0033844
 name: galactose-6-sulfurylase activity
 def: "Catalysis of the elimination of sulfate from the D-galactose 6-sulfate residues of porphyran, producing 3,6-anhydrogalactose residues." []
@@ -13856,6 +14143,14 @@ is_a: GO:1903314 ! regulation of nitrogen cycle metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0019627 ! regulates urea metabolic process
 relationship: RO:0002211 GO:0019627 ! regulates urea metabolic process
+
+[Term]
+id: GO:0034311
+name: diol metabolic process
+def: "The chemical reactions and pathways involving a diol, a compound that contains two hydroxy groups, generally assumed to be, but not necessarily, alcoholic." []
+synonym: "dihydric alcohol metabolic process" RELATED []
+synonym: "diol metabolism" EXACT []
+is_a: GO:0019751 ! polyol metabolic process
 
 [Term]
 id: GO:0034399
@@ -16077,6 +16372,13 @@ intersection_of: RO:0002211 GO:0007585 ! regulates respiratory gaseous exchange
 relationship: RO:0002211 GO:0007585 ! regulates respiratory gaseous exchange
 
 [Term]
+id: GO:0043588
+name: skin development
+def: "The process whose specific outcome is the progression of the skin over time, from its formation to the mature structure. The skin is the external membranous integument of an animal. In vertebrates the skin generally consists of two layers, an outer nonsensitive and nonvascular epidermis (cuticle or skarfskin) composed of cells which are constantly growing and multiplying in the deeper, and being thrown off in the superficial layers, as well as an inner vascular dermis (cutis, corium or true skin) composed mostly of connective tissue." []
+synonym: "animal skin development" EXACT []
+is_a: GO:0048513 ! animal organ development
+
+[Term]
 id: GO:0043603
 name: cellular amide metabolic process
 def: "The chemical reactions and pathways involving an amide, any derivative of an oxoacid in which an acidic hydroxy group has been replaced by an amino or substituted amino group, as carried out by individual cells." []
@@ -17310,6 +17612,90 @@ intersection_of: RO:0002213 GO:0045444 ! positively regulates fat cell different
 relationship: RO:0002213 GO:0045444 ! positively regulates fat cell differentiation
 
 [Term]
+id: GO:0045604
+name: regulation of epidermal cell differentiation
+def: "Any process that modulates the frequency, rate or extent of epidermal cell differentiation." []
+synonym: "regulation of hypodermal cell differentiation" RELATED []
+is_a: GO:0030856 ! regulation of epithelial cell differentiation
+is_a: GO:0045682 ! regulation of epidermis development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0009913 ! regulates epidermal cell differentiation
+relationship: RO:0002211 GO:0009913 ! regulates epidermal cell differentiation
+
+[Term]
+id: GO:0045605
+name: negative regulation of epidermal cell differentiation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of epidermal cell differentiation." []
+synonym: "down regulation of epidermal cell differentiation" EXACT []
+synonym: "down-regulation of epidermal cell differentiation" EXACT []
+synonym: "downregulation of epidermal cell differentiation" EXACT []
+synonym: "inhibition of epidermal cell differentiation" NARROW []
+synonym: "negative regulation of hypodermal cell differentiation" RELATED []
+is_a: GO:0030857 ! negative regulation of epithelial cell differentiation
+is_a: GO:0045604 ! regulation of epidermal cell differentiation
+is_a: GO:0045683 ! negative regulation of epidermis development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0009913 ! negatively regulates epidermal cell differentiation
+relationship: RO:0002212 GO:0009913 ! negatively regulates epidermal cell differentiation
+
+[Term]
+id: GO:0045606
+name: positive regulation of epidermal cell differentiation
+def: "Any process that activates or increases the frequency, rate or extent of epidermal cell differentiation." []
+synonym: "activation of epidermal cell differentiation" NARROW []
+synonym: "positive regulation of hypodermal cell differentiation" RELATED []
+synonym: "stimulation of epidermal cell differentiation" NARROW []
+synonym: "up regulation of epidermal cell differentiation" EXACT []
+synonym: "up-regulation of epidermal cell differentiation" EXACT []
+synonym: "upregulation of epidermal cell differentiation" EXACT []
+is_a: GO:0030858 ! positive regulation of epithelial cell differentiation
+is_a: GO:0045604 ! regulation of epidermal cell differentiation
+is_a: GO:0045684 ! positive regulation of epidermis development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0009913 ! positively regulates epidermal cell differentiation
+relationship: RO:0002213 GO:0009913 ! positively regulates epidermal cell differentiation
+
+[Term]
+id: GO:0045616
+name: regulation of keratinocyte differentiation
+def: "Any process that modulates the frequency, rate or extent of keratinocyte differentiation." []
+is_a: GO:0045604 ! regulation of epidermal cell differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0030216 ! regulates keratinocyte differentiation
+relationship: RO:0002211 GO:0030216 ! regulates keratinocyte differentiation
+
+[Term]
+id: GO:0045617
+name: negative regulation of keratinocyte differentiation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of keratinocyte differentiation." []
+synonym: "down regulation of keratinocyte differentiation" EXACT []
+synonym: "down-regulation of keratinocyte differentiation" EXACT []
+synonym: "downregulation of keratinocyte differentiation" EXACT []
+synonym: "inhibition of keratinocyte differentiation" NARROW []
+is_a: GO:0045605 ! negative regulation of epidermal cell differentiation
+is_a: GO:0045616 ! regulation of keratinocyte differentiation
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0030216 ! negatively regulates keratinocyte differentiation
+relationship: RO:0002212 GO:0030216 ! negatively regulates keratinocyte differentiation
+
+[Term]
+id: GO:0045618
+name: positive regulation of keratinocyte differentiation
+def: "Any process that activates or increases the frequency, rate or extent of keratinocyte differentiation." []
+synonym: "activation of keratinocyte differentiation" NARROW []
+synonym: "stimulation of keratinocyte differentiation" NARROW []
+synonym: "up regulation of keratinocyte differentiation" EXACT []
+synonym: "up-regulation of keratinocyte differentiation" EXACT []
+synonym: "upregulation of keratinocyte differentiation" EXACT []
+is_a: GO:0045606 ! positive regulation of epidermal cell differentiation
+is_a: GO:0045616 ! regulation of keratinocyte differentiation
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0030216 ! positively regulates keratinocyte differentiation
+relationship: RO:0002213 GO:0030216 ! positively regulates keratinocyte differentiation
+
+[Term]
 id: GO:0045619
 name: regulation of lymphocyte differentiation
 def: "Any process that modulates the frequency, rate or extent of lymphocyte differentiation." []
@@ -17707,6 +18093,50 @@ is_a: GO:0045670 ! regulation of osteoclast differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0030316 ! positively regulates osteoclast differentiation
 relationship: RO:0002213 GO:0030316 ! positively regulates osteoclast differentiation
+
+[Term]
+id: GO:0045682
+name: regulation of epidermis development
+def: "Any process that modulates the frequency, rate or extent of epidermis development." []
+synonym: "regulation of epidermal development" EXACT []
+synonym: "regulation of hypodermis development" RELATED []
+is_a: GO:0050793 ! regulation of developmental process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0008544 ! regulates epidermis development
+relationship: RO:0002211 GO:0008544 ! regulates epidermis development
+
+[Term]
+id: GO:0045683
+name: negative regulation of epidermis development
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of epidermis development." []
+synonym: "down regulation of epidermis development" EXACT []
+synonym: "down-regulation of epidermis development" EXACT []
+synonym: "downregulation of epidermis development" EXACT []
+synonym: "inhibition of epidermis development" NARROW []
+synonym: "negative regulation of epidermal development" EXACT []
+synonym: "negative regulation of hypodermis development" RELATED []
+is_a: GO:0045682 ! regulation of epidermis development
+is_a: GO:0051093 ! negative regulation of developmental process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0008544 ! negatively regulates epidermis development
+relationship: RO:0002212 GO:0008544 ! negatively regulates epidermis development
+
+[Term]
+id: GO:0045684
+name: positive regulation of epidermis development
+def: "Any process that activates or increases the frequency, rate or extent of epidermis development." []
+synonym: "activation of epidermis development" NARROW []
+synonym: "positive regulation of epidermal development" EXACT []
+synonym: "positive regulation of hypodermis development" RELATED []
+synonym: "stimulation of epidermis development" NARROW []
+synonym: "up regulation of epidermis development" EXACT []
+synonym: "up-regulation of epidermis development" EXACT []
+synonym: "upregulation of epidermis development" EXACT []
+is_a: GO:0045682 ! regulation of epidermis development
+is_a: GO:0051094 ! positive regulation of developmental process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0008544 ! positively regulates epidermis development
+relationship: RO:0002213 GO:0008544 ! positively regulates epidermis development
 
 [Term]
 id: GO:0045700
@@ -19032,6 +19462,28 @@ intersection_of: RO:0002212 GO:0006766 ! negatively regulates vitamin metabolic 
 relationship: RO:0002212 GO:0006766 ! negatively regulates vitamin metabolic process
 
 [Term]
+id: GO:0046146
+name: tetrahydrobiopterin metabolic process
+def: "The chemical reactions and pathways involving tetrahydrobiopterin, the reduced form of biopterin (2-amino-4-hydroxy-6-(1,2-dihydroxypropyl)-pteridine). It functions as a hydroxylation coenzyme, e.g. in the conversion of phenylalanine to tyrosine." []
+synonym: "5,6,7,8-tetrahydrobiopterin metabolic process" EXACT []
+synonym: "tetrahydrobiopterin metabolism" EXACT []
+is_a: GO:0006732 ! coenzyme metabolic process
+is_a: GO:0017144 ! drug metabolic process
+is_a: GO:0034311 ! diol metabolic process
+is_a: GO:0042558 ! pteridine-containing compound metabolic process
+
+[Term]
+id: GO:0046164
+name: alcohol catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of alcohols, any of a class of compounds containing one or more hydroxyl groups attached to a saturated carbon atom." []
+synonym: "alcohol breakdown" EXACT []
+synonym: "alcohol catabolism" EXACT []
+synonym: "alcohol degradation" EXACT []
+is_a: GO:0006066 ! alcohol metabolic process
+is_a: GO:0044282 ! small molecule catabolic process
+is_a: GO:1901616 ! organic hydroxy compound catabolic process
+
+[Term]
 id: GO:0046165
 name: alcohol biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of alcohols, any of a class of compounds containing one or more hydroxyl groups attached to a saturated carbon atom." []
@@ -19602,6 +20054,22 @@ is_a: GO:1901569 ! fatty acid derivative catabolic process
 is_a: GO:1902224 ! ketone body metabolic process
 
 [Term]
+id: GO:0046997
+name: oxidoreductase activity, acting on the CH-NH group of donors, flavin as acceptor
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-NH group acts as a hydrogen or electron donor and reduces a flavin." []
+is_a: GO:0016645 ! oxidoreductase activity, acting on the CH-NH group of donors
+
+[Term]
+id: GO:0047045
+name: testosterone 17-beta-dehydrogenase (NADP+) activity
+def: "Catalysis of the reaction: NADP+ + testosterone = NADPH + H+ + androst-4-ene-3,17-dione." []
+synonym: "17-ketoreductase activity" BROAD []
+synonym: "17beta-hydroxysteroid:NADP+ 17-oxidoreductase activity" EXACT []
+synonym: "NADP-dependent testosterone-17beta-oxidoreductase activity" EXACT []
+synonym: "testosterone 17beta-dehydrogenase (NADP+)" EXACT []
+is_a: GO:0033764 ! steroid dehydrogenase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
+
+[Term]
 id: GO:0047291
 name: lactosylceramide alpha-2,3-sialyltransferase activity
 def: "Catalysis of the reaction: cytolipin-H + CMP-N-acetylneuraminate = alpha-N-acetylneuraminyl-2,3-beta-D-galactosyl-1,4-beta-D-glucosylceramide + CMP. Alpha-N-acetylneuraminyl-2,3-beta-D-galactosyl-1,4-beta-D-glucosylceramide is also known as GM3." []
@@ -19627,6 +20095,15 @@ synonym: "cholesterol:NADP+ delta7-oxidoreductase activity" EXACT []
 synonym: "sterol Delta(7)-reductase activity" BROAD []
 synonym: "sterol delta7-reductase activity" EXACT []
 is_a: GO:0016628 ! oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor
+
+[Term]
+id: GO:0047865
+name: dimethylglycine dehydrogenase activity
+def: "Catalysis of the reaction: N,N-dimethylglycine + electron-transfer flavoprotein + H2O = sarcosine + formaldehyde + reduced electron-transfer flavoprotein." []
+synonym: "N,N-dimethylglycine oxidase activity" EXACT []
+synonym: "N,N-dimethylglycine:(acceptor) oxidoreductase (demethylating)" EXACT []
+synonym: "N,N-dimethylglycine:acceptor oxidoreductase (demethylating)" EXACT []
+is_a: GO:0046997 ! oxidoreductase activity, acting on the CH-NH group of donors, flavin as acceptor
 
 [Term]
 id: GO:0048018
@@ -25608,6 +26085,15 @@ intersection_of: RO:0002213 GO:0006568 ! positively regulates tryptophan metabol
 relationship: RO:0002213 GO:0006568 ! positively regulates tryptophan metabolic process
 
 [Term]
+id: GO:0090368
+name: regulation of ornithine metabolic process
+def: "Any process that modulates the rate, frequency, or extent of the chemical reactions and pathways involving ornithine, an amino acid only rarely found in proteins, but which is important in living organisms as an intermediate in the reactions of the urea cycle and in arginine biosynthesis." []
+is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006591 ! regulates ornithine metabolic process
+relationship: RO:0002211 GO:0006591 ! regulates ornithine metabolic process
+
+[Term]
 id: GO:0090394
 name: negative regulation of excitatory postsynaptic potential
 def: "Any process that prevents the establishment or decreases the extent of the excitatory postsynaptic potential (EPSP) which is a temporary increase in postsynaptic potential due to the flow of positively charged ions into the postsynaptic cell. The flow of ions that causes an EPSP is an excitatory postsynaptic current (EPSC) and makes it easier for the neuron to fire an action potential." []
@@ -26563,6 +27049,12 @@ is_a: GO:0006366 ! transcription by RNA polymerase II
 is_a: GO:0042304 ! regulation of fatty acid biosynthetic process
 intersection_of: GO:0006366 ! transcription by RNA polymerase II
 intersection_of: RO:0002211 GO:0006633 ! regulates fatty acid biosynthetic process
+
+[Term]
+id: GO:0102175
+name: 3-beta-hydroxysteroid dehydrogenase/C4-decarboxylase activity
+def: "Catalysis of the reaction: 4alpha-carboxy-4beta,14alpha-dimethyl-9beta,19-cyclo-5alpha-ergost-24(241)-en-3beta-ol + NAD <=> cycloeucalenone + NADH + carbon dioxide" []
+is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0104004
@@ -28061,6 +28553,16 @@ name: organic hydroxy compound metabolic process
 def: "The chemical reactions and pathways involving organic hydroxy compound." []
 synonym: "organic hydroxy compound metabolism" EXACT []
 is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:1901616
+name: organic hydroxy compound catabolic process
+def: "The chemical reactions and pathways resulting in the breakdown of organic hydroxy compound." []
+synonym: "organic hydroxy compound breakdown" EXACT []
+synonym: "organic hydroxy compound catabolism" EXACT []
+synonym: "organic hydroxy compound degradation" EXACT []
+is_a: GO:1901575 ! organic substance catabolic process
+is_a: GO:1901615 ! organic hydroxy compound metabolic process
 
 [Term]
 id: GO:1901617
@@ -33515,6 +34017,38 @@ is_a: GO:1901343 ! negative regulation of vasculature development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0048514 ! negatively regulates blood vessel morphogenesis
 relationship: RO:0002212 GO:0048514 ! negatively regulates blood vessel morphogenesis
+
+[Term]
+id: GO:2000214
+name: regulation of proline metabolic process
+def: "Any process that modulates the frequency, rate or extent of proline metabolic process." []
+synonym: "regulation of proline metabolism" EXACT []
+is_a: GO:0000820 ! regulation of glutamine family amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0006560 ! regulates proline metabolic process
+relationship: RO:0002211 GO:0006560 ! regulates proline metabolic process
+
+[Term]
+id: GO:2000215
+name: negative regulation of proline metabolic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of proline metabolic process." []
+synonym: "negative regulation of proline metabolism" EXACT []
+is_a: GO:0045763 ! negative regulation of cellular amino acid metabolic process
+is_a: GO:2000214 ! regulation of proline metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0006560 ! negatively regulates proline metabolic process
+relationship: RO:0002212 GO:0006560 ! negatively regulates proline metabolic process
+
+[Term]
+id: GO:2000216
+name: positive regulation of proline metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of proline metabolic process." []
+synonym: "positive regulation of proline metabolism" EXACT []
+is_a: GO:0045764 ! positive regulation of cellular amino acid metabolic process
+is_a: GO:2000214 ! regulation of proline metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0006560 ! positively regulates proline metabolic process
+relationship: RO:0002213 GO:0006560 ! positively regulates proline metabolic process
 
 [Term]
 id: GO:2000224
