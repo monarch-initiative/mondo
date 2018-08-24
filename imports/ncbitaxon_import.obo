@@ -1,6 +1,5 @@
 format-version: 1.2
 ontology: mondo/imports/ncbitaxon_import
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(AnnotationProperty(<http://purl.obolibrary.org/obo/ncbitaxon#has_rank>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))\n\n\nAnnotationAssertion(<http://purl.obolibrary.org/obo/ncbitaxon#has_rank> <http://purl.obolibrary.org/obo/NCBITaxon_11161> <http://purl.obolibrary.org/obo/NCBITaxon_species>)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"GC_ID:1\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"ncbi_taxonomy\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"NCBITaxon:11161\"^^xsd:string)\nAnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCBITaxon_11161> \"Mumps virus\"^^xsd:string)\n)
 
 [Term]
 id: NCBITaxon:1
@@ -337,16 +336,6 @@ is_a: NCBITaxon:103828 ! Thelaziidae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
-id: NCBITaxon:103827
-name: Thelazia callipaeda
-namespace: ncbi_taxonomy
-synonym: "eyeworm" EXACT common_name []
-synonym: "thelaziosis nematode" EXACT genbank_common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:103826 ! Thelazia
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:103828
 name: Thelaziidae
 namespace: ncbi_taxonomy
@@ -411,33 +400,14 @@ is_a: NCBITaxon:35237 ! dsDNA viruses, no RNA stage
 property_value: has_rank NCBITaxon:family
 
 [Term]
-id: NCBITaxon:10509
-name: Mastadenovirus
+id: NCBITaxon:10566
+name: Human papillomavirus
 namespace: ncbi_taxonomy
+synonym: "Human Papilloma Virus" RELATED synonym []
+synonym: "human papillomavirus HPV" RELATED synonym []
 xref: GC_ID:1
-is_a: NCBITaxon:10508 ! Adenoviridae
-property_value: has_rank NCBITaxon:genus
-
-[Term]
-id: NCBITaxon:10519
-name: Human adenovirus 7
-namespace: ncbi_taxonomy
-alt_id: NCBITaxon:44125
-alt_id: NCBITaxon:45660
-synonym: "Adenovirus 7" RELATED synonym []
-synonym: "Adenovirus type 7" RELATED synonym []
-synonym: "Human adenovirus B7" RELATED synonym []
-synonym: "Human adenovirus serotype 7" RELATED synonym []
-synonym: "Human adenovirus type 7" RELATED synonym []
-synonym: "human adenovirus type 7 Ad7" RELATED synonym []
-synonym: "Human adenoviruses type 7" RELATED synonym []
-synonym: "human adenoviruses type 7 Ad7" RELATED misnomer []
-synonym: "Humann adenovirus type 7" RELATED misnomer []
-synonym: "Mastadenovirus 7" RELATED synonym []
-synonym: "Mastadenovirus h7" RELATED synonym []
-synonym: "Mastadenovirus p7" RELATED synonym []
-xref: GC_ID:1
-is_a: NCBITaxon:565302 ! Human adenovirus B1
+is_a: NCBITaxon:173087 ! Human papillomavirus types
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:1056966
@@ -473,14 +443,15 @@ is_a: NCBITaxon:29258 ! ssDNA viruses
 property_value: has_rank NCBITaxon:family
 
 [Term]
-id: NCBITaxon:108098
-name: Human mastadenovirus B
+id: NCBITaxon:10798
+name: Human parvovirus B19
 namespace: ncbi_taxonomy
-synonym: "HAdV-B" BROAD genbank_acronym []
-synonym: "Human adenovirus B" RELATED synonym []
+synonym: "B19 virus" RELATED synonym []
+synonym: "Erythrovirus B19" RELATED synonym []
+synonym: "Human erythrovirus B19" RELATED synonym []
+synonym: "Parvovirus B19" RELATED synonym []
 xref: GC_ID:1
-is_a: NCBITaxon:10509 ! Mastadenovirus
-property_value: has_rank NCBITaxon:species
+is_a: NCBITaxon:1511900 ! Primate erythroparvovirus 1
 
 [Term]
 id: NCBITaxon:10880
@@ -496,6 +467,15 @@ name: Coltivirus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:689831 ! Spinareovirinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:10912
+name: Rotavirus
+namespace: ncbi_taxonomy
+synonym: "Rotaviruses" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:689832 ! Sedoreovirinae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -522,6 +502,16 @@ name: Barmah Forest virus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:11019 ! Alphavirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:11027
+name: O'nyong-nyong virus
+namespace: ncbi_taxonomy
+synonym: "o'nyong nyong virus" RELATED misspelling []
+synonym: "ONN" BROAD acronym []
+xref: GC_ID:1
+is_a: NCBITaxon:177875 ! SFV complex
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -573,6 +563,14 @@ is_a: NCBITaxon:11040 ! Rubivirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:11046
+name: Arterivirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:76803 ! Arteriviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:11050
 name: Flaviviridae
 namespace: ncbi_taxonomy
@@ -612,6 +610,15 @@ synonym: "Type 1 dengue virus" RELATED misnomer []
 synonym: "type 1 dengue virus DEN-1" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:12637 ! Dengue virus
+
+[Term]
+id: NCBITaxon:110618
+name: Nectriaceae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:307520
+xref: GC_ID:1
+is_a: NCBITaxon:5125 ! Hypocreales
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:11071
@@ -712,6 +719,16 @@ is_a: NCBITaxon:40005 ! Yellow fever virus group
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:11095
+name: Pestivirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:12832207
+xref: PMID:7747470
+is_a: NCBITaxon:11050 ! Flaviviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:11102
 name: Hepacivirus
 namespace: ncbi_taxonomy
@@ -775,6 +792,14 @@ is_a: NCBITaxon:32008 ! Burkholderia
 property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
 
 [Term]
+id: NCBITaxon:11155
+name: Torovirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:694017 ! Torovirinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:11157
 name: Mononegavirales
 namespace: ncbi_taxonomy
@@ -808,6 +833,24 @@ synonym: "Newcastle disease virus" RELATED synonym []
 synonym: "Newcastle disease virus NDV" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:260963 ! Avulavirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:11216
+name: Human respirovirus 3
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:11202
+synonym: "HPIV-3" BROAD genbank_acronym []
+synonym: "HPIV3" BROAD acronym []
+synonym: "Human parainfluenza 3 virus" RELATED synonym []
+synonym: "Human parainfluenza virus 3" RELATED synonym []
+synonym: "human parainfluenza virus 3 HPIV3" RELATED synonym []
+synonym: "Human parainfluenza virus type 3" RELATED synonym []
+synonym: "human parainfluenza virus type 3 PIV3" RELATED synonym []
+synonym: "Parainfluenza virus type 3" RELATED synonym []
+synonym: "parainfluenza virus type 3 PIV-3" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:186938 ! Respirovirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -908,6 +951,14 @@ is_a: NCBITaxon:35301 ! ssRNA negative-strand viruses
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:1131492
+name: Aspergillaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5042 ! Eurotiales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:11320
 name: Influenza A virus
 namespace: ncbi_taxonomy
@@ -937,15 +988,12 @@ is_a: NCBITaxon:780 ! Rickettsia
 property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
 
 [Term]
-id: NCBITaxon:11552
-name: Influenza C virus
+id: NCBITaxon:115425
+name: Cochliomyia hominivorax
 namespace: ncbi_taxonomy
-alt_id: NCBITaxon:186678
-synonym: "FLUCV" BROAD acronym []
-synonym: "Influenza C viruses" RELATED synonym []
-synonym: "Influenza virus type C" RELATED synonym []
+synonym: "primary screw-worm" EXACT genbank_common_name []
 xref: GC_ID:1
-is_a: NCBITaxon:197913 ! Influenzavirus C
+is_a: NCBITaxon:66360 ! Cochliomyia
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -1075,6 +1123,52 @@ xref: GC_ID:1
 is_a: NCBITaxon:11646 ! Lentivirus
 
 [Term]
+id: NCBITaxon:11653
+name: Ovine/caprine lentivirus group
+namespace: ncbi_taxonomy
+synonym: "Ovine/caprine lentivirus" RELATED synonym []
+synonym: "Ovine/caprine lentiviruses" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:11646 ! Lentivirus
+
+[Term]
+id: NCBITaxon:11655
+name: Feline lentivirus group
+namespace: ncbi_taxonomy
+synonym: "Feline lentiviruses" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:11646 ! Lentivirus
+
+[Term]
+id: NCBITaxon:116704
+name: Eubrachyura
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:6795
+xref: GC_ID:1
+is_a: NCBITaxon:6752 ! Brachyura
+
+[Term]
+id: NCBITaxon:116706
+name: Heterotremata
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:29963
+alt_id: NCBITaxon:6773
+alt_id: NCBITaxon:6803
+synonym: "Brachyrhyncha" RELATED in_part []
+xref: GC_ID:1
+is_a: NCBITaxon:116704 ! Eubrachyura
+
+[Term]
+id: NCBITaxon:11673
+name: Feline immunodeficiency virus
+namespace: ncbi_taxonomy
+synonym: "feline immunodeficiency virus FIV" RELATED synonym []
+synonym: "FIV" BROAD acronym []
+xref: GC_ID:1
+is_a: NCBITaxon:11655 ! Feline lentivirus group
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:11676
 name: Human immunodeficiency virus 1
 namespace: ncbi_taxonomy
@@ -1100,6 +1194,14 @@ synonym: "LAV-1" BROAD acronym []
 xref: GC_ID:1
 is_a: NCBITaxon:11652 ! Primate lentivirus group
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:116925
+name: Troglotremata
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:27871 ! Plagiorchiida
+property_value: has_rank NCBITaxon:suborder
 
 [Term]
 id: NCBITaxon:116926
@@ -1128,8 +1230,41 @@ is_a: NCBITaxon:11652 ! Primate lentivirus group
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:11723
+name: Simian immunodeficiency virus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:11677
+alt_id: NCBITaxon:11739
+alt_id: NCBITaxon:11740
+synonym: "Chimpanzee immunodeficiency virus" RELATED synonym []
+synonym: "Chimpanzee immunodeficiency virus (SIV(CPZ))" RELATED synonym []
+synonym: "CIV" BROAD acronym []
+synonym: "simian immunodeficiency virus SIV" RELATED synonym []
+synonym: "Simian immunodeficiency virus SIVcpz" RELATED synonym []
+synonym: "simian immunodeficiency virus, SIV" RELATED synonym []
+synonym: "simian immunodeficiency viruses SIV" RELATED synonym []
+synonym: "SIV" BROAD genbank_acronym []
+xref: GC_ID:1
+is_a: NCBITaxon:11652 ! Primate lentivirus group
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1173061
 alt_id: NCBITaxon:27317
+
+[Term]
+id: NCBITaxon:11741
+name: Visna/maedi virus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:31677
+synonym: "Maedi visna virus MVV" RELATED synonym []
+synonym: "Maedi-Visna virus" RELATED synonym []
+synonym: "Maedi/Visna virus" RELATED synonym []
+synonym: "Visna lentivirus" RELATED synonym []
+synonym: "Visna virus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:11653 ! Ovine/caprine lentivirus group
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:117570
@@ -1153,6 +1288,14 @@ name: Oropouche virus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:1933309 ! Oropouche orthobunyavirus
+
+[Term]
+id: NCBITaxon:118882
+name: Brucellaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:356 ! Rhizobiales
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:118968
@@ -1183,6 +1326,15 @@ synonym: "Burkholderia group" RELATED synonym []
 xref: GC_ID:11
 xref: PMID:16403855
 is_a: NCBITaxon:80840 ! Burkholderiales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:119068
+name: Spirillaceae
+namespace: ncbi_taxonomy
+synonym: "Spirillum group" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:32003 ! Nitrosomonadales
 property_value: has_rank NCBITaxon:family
 
 [Term]
@@ -1259,6 +1411,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:190765 ! Ochlerotatus <genus>
 property_value: has_rank NCBITaxon:subgenus
+
+[Term]
+id: NCBITaxon:11974
+name: Caliciviridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:35278 ! ssRNA positive-strand viruses, no DNA stage
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:12058
@@ -1390,6 +1550,15 @@ is_a: NCBITaxon:12091 ! Hepatovirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:12103
+name: Cardiovirus
+namespace: ncbi_taxonomy
+synonym: "Cardioviruses" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:12058 ! Picornaviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:121221
 name: Pediculidae
 namespace: ncbi_taxonomy
@@ -1512,6 +1681,16 @@ is_a: NCBITaxon:38946 ! Paracoccidioides
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:122277
+name: Pectobacterium
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:11155980
+xref: PMID:9779605
+is_a: NCBITaxon:1903410 ! Pectobacteriaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:122377
 name: Litopenaeus
 namespace: ncbi_taxonomy
@@ -1549,6 +1728,14 @@ xref: PMID:16280474
 xref: PMID:26654112
 is_a: NCBITaxon:2 ! Bacteria
 property_value: has_rank NCBITaxon:phylum
+
+[Term]
+id: NCBITaxon:1224679
+name: Diphyllobothriidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6200 ! Eucestoda
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:123365
@@ -1693,6 +1880,15 @@ is_a: NCBITaxon:29263 ! tick-borne encephalitis virus group
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:1257
+name: Peptostreptococcus
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:11491354
+is_a: NCBITaxon:186804 ! Peptostreptococcaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:1262365
 name: Tabanoidea
 namespace: ncbi_taxonomy
@@ -1731,11 +1927,13 @@ is_a: NCBITaxon:1399768 ! Basidiobolomycetes
 property_value: has_rank NCBITaxon:order
 
 [Term]
-id: NCBITaxon:127007
-name: Rhipicephalus pumilio
+id: NCBITaxon:12721
+name: Human immunodeficiency virus
 namespace: ncbi_taxonomy
+synonym: "AIDS virus" RELATED in_part []
+synonym: "HIV" BROAD acronym []
 xref: GC_ID:1
-is_a: NCBITaxon:426455 ! Rhipicephalus <subgenus>
+is_a: NCBITaxon:693660 ! unclassified Primate lentivirus group
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -1793,6 +1991,14 @@ xref: GC_ID:1
 is_a: NCBITaxon:5794 ! Apicomplexa
 
 [Term]
+id: NCBITaxon:12845
+name: Swine influenza virus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:35324 ! unclassified Orthomyxoviridae
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:128827
 name: Erysipelotrichaceae
 namespace: ncbi_taxonomy
@@ -1821,6 +2027,14 @@ synonym: "Anemia, the fern with tired blood" EXACT common_name []
 synonym: "Mohria" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:693766 ! Anemiaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:12967
+name: Blastocystis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33634 ! Stramenopiles
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -1866,6 +2080,16 @@ is_a: NCBITaxon:35493 ! Streptophyta
 property_value: has_rank NCBITaxon:subphylum
 
 [Term]
+id: NCBITaxon:1313
+name: Streptococcus pneumoniae
+namespace: ncbi_taxonomy
+synonym: "Diplococcus pneumoniae" RELATED synonym []
+synonym: "Micrococcus pneumoniae" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:1301 ! Streptococcus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1314
 name: Streptococcus pyogenes
 namespace: ncbi_taxonomy
@@ -1877,6 +2101,14 @@ synonym: "Streptococcus scarlatinae" RELATED synonym []
 xref: GC_ID:11
 is_a: NCBITaxon:1301 ! Streptococcus
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:1314886
+name: Neobalantidium
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:71583 ! Balantidiidae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:131567
@@ -1938,6 +2170,15 @@ is_a: NCBITaxon:6685 ! Penaeidae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:133898
+name: Fenneropenaeus
+namespace: ncbi_taxonomy
+synonym: "Feneropenaeus" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:6685 ! Penaeidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:134362
 name: Capnodiales
 namespace: ncbi_taxonomy
@@ -1954,12 +2195,60 @@ is_a: NCBITaxon:42414 ! Sigmodon
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:1350
+name: Enterococcus
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:8427810
+xref: PMID:9103648
+is_a: NCBITaxon:81852 ! Enterococcaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1351
+name: Enterococcus faecalis
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1219670
+alt_id: NCBITaxon:1796631
+synonym: "Enterococcus feacalis" RELATED misspelling []
+synonym: "Enterococcus proteiformis" RELATED synonym []
+synonym: "Enterocoque" RELATED synonym []
+synonym: "Micrococcus ovalis" RELATED synonym []
+synonym: "Micrococcus zymogenes" RELATED synonym []
+synonym: "Streptococcus faecalis" RELATED synonym []
+synonym: "Streptococcus glycerinaceus" RELATED synonym []
+synonym: "Streptococcus liquefaciens" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:1350 ! Enterococcus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:135621
 name: Pseudomonadaceae
 namespace: ncbi_taxonomy
 xref: GC_ID:11
 is_a: NCBITaxon:72274 ! Pseudomonadales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:135623
+name: Vibrionales
+namespace: ncbi_taxonomy
+synonym: "'Vibrionales'" RELATED synonym []
+synonym: "Vibrionaceae group" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:1236 ! Gammaproteobacteria
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:135624
+name: Aeromonadales
+namespace: ncbi_taxonomy
+synonym: "Aeromonadaceae/Succinivibrionaceae group" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:16280474
+is_a: NCBITaxon:1236 ! Gammaproteobacteria
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:135625
@@ -1984,6 +2273,14 @@ xref: PMID:1917844
 xref: PMID:23908650
 is_a: NCBITaxon:203692 ! Spirochaetia
 property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:136841
+name: Pseudomonas aeruginosa group
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:286 ! Pseudomonas
+property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
 
 [Term]
 id: NCBITaxon:137
@@ -2144,6 +2441,13 @@ is_a: NCBITaxon:1264859 ! Entomophthoromycotina
 property_value: has_rank NCBITaxon:class
 
 [Term]
+id: NCBITaxon:1402491
+name: Pseudomonas aeruginosa CF5
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:287 ! Pseudomonas aeruginosa
+
+[Term]
 id: NCBITaxon:140564
 name: Ornithodoros parkeri
 namespace: ncbi_taxonomy
@@ -2195,6 +2499,15 @@ xref: GC_ID:1
 is_a: NCBITaxon:91827 ! Gunneridae
 
 [Term]
+id: NCBITaxon:144051
+name: Cripavirus
+namespace: ncbi_taxonomy
+synonym: "Cricket paralysis-like viruses" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:232795 ! Dicistroviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:1457286
 name: Dorylaimia
 namespace: ncbi_taxonomy
@@ -2217,6 +2530,23 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:1648037 ! Poodae
 property_value: has_rank NCBITaxon:tribe
+
+[Term]
+id: NCBITaxon:147389
+name: Triticeae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:1648038 ! Triticodae
+property_value: has_rank NCBITaxon:tribe
+
+[Term]
+id: NCBITaxon:147537
+name: Saccharomycotina
+namespace: ncbi_taxonomy
+synonym: "true yeasts" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:716545 ! saccharomyceta
+property_value: has_rank NCBITaxon:subphylum
 
 [Term]
 id: NCBITaxon:147538
@@ -2268,6 +2598,30 @@ is_a: NCBITaxon:451866 ! Taphrinomycotina
 property_value: has_rank NCBITaxon:class
 
 [Term]
+id: NCBITaxon:147571
+name: Piedraiaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:134362 ! Capnodiales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:147572
+name: Piedraia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:147571 ! Piedraiaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:147573
+name: Piedraia hortae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:147572 ! Piedraia
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1485
 name: Clostridium
 namespace: ncbi_taxonomy
@@ -2278,6 +2632,14 @@ xref: PMID:26643615
 xref: PMID:27488356
 is_a: NCBITaxon:31979 ! Clostridiaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1485168
+name: Longamoebia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:555280 ! Discosea
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:1489341
@@ -2341,6 +2703,16 @@ is_a: NCBITaxon:1485 ! Clostridium
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:149546
+name: Histoplasma capsulatum var. duboisii
+namespace: ncbi_taxonomy
+synonym: "Ajellomyces capsulatus var. duboisii" RELATED misnomer []
+synonym: "Histoplasma duboisii" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:5037 ! Histoplasma capsulatum
+property_value: has_rank NCBITaxon:varietas
+
+[Term]
 id: NCBITaxon:1496
 name: Clostridioides difficile
 namespace: ncbi_taxonomy
@@ -2382,6 +2754,14 @@ is_a: NCBITaxon:310911 ! Amdoparvovirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:1511900
+name: Primate erythroparvovirus 1
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:40121 ! Erythroparvovirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1513
 name: Clostridium tetani
 namespace: ncbi_taxonomy
@@ -2416,6 +2796,30 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:327045 ! Orthoretrovirinae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1535325
+name: Candida/Lodderomyces clade
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:766764 ! Debaryomycetaceae
+
+[Term]
+id: NCBITaxon:1535326
+name: Candida <Debaryomycetaceae>
+namespace: ncbi_taxonomy
+synonym: "Candida" EXACT scientific_name []
+xref: GC_ID:1
+is_a: NCBITaxon:1535325 ! Candida/Lodderomyces clade
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1538075
+name: Malasseziomycetes
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:452284 ! Ustilaginomycotina
+property_value: has_rank NCBITaxon:class
 
 [Term]
 id: NCBITaxon:155616
@@ -2504,6 +2908,34 @@ is_a: NCBITaxon:15956 ! Phleum
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:160
+name: Treponema pallidum
+namespace: ncbi_taxonomy
+synonym: "Microspironema pallidum" RELATED synonym []
+synonym: "Spirillum pallidum" RELATED synonym []
+synonym: "Spirochaeta pallida" RELATED synonym []
+synonym: "Spironema pallidum" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:157 ! Treponema
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:160008
+name: Mesocestoides lineatus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:53467 ! Mesocestoides
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:162474
+name: Malasseziales
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:1538075 ! Malasseziomycetes
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:162997
 name: Culex annulirostris
 namespace: ncbi_taxonomy
@@ -2527,6 +2959,14 @@ synonym: "oriental rat flea" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:163158 ! Xenopsylla
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:163343
+name: Trichostomatia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5988 ! Litostomatea
+property_value: has_rank NCBITaxon:subclass
 
 [Term]
 id: NCBITaxon:1637
@@ -2618,8 +3058,23 @@ is_a: NCBITaxon:1647 ! Erysipelothrix
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:1648030
+name: Triticinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:147389 ! Triticeae
+property_value: has_rank NCBITaxon:subtribe
+
+[Term]
 id: NCBITaxon:1648037
 name: Poodae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:147368 ! Pooideae
+
+[Term]
+id: NCBITaxon:1648038
+name: Triticodae
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:147368 ! Pooideae
@@ -2640,6 +3095,17 @@ xref: GC_ID:1
 is_a: NCBITaxon:147387 ! Poeae
 
 [Term]
+id: NCBITaxon:1653
+name: Corynebacteriaceae
+namespace: ncbi_taxonomy
+synonym: "Coryneform bacteria" EXACT genbank_common_name []
+xref: GC_ID:11
+xref: PMID:19244447
+xref: PMID:27864136
+is_a: NCBITaxon:85007 ! Corynebacteriales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:1653394
 name: Mammarenavirus
 namespace: ncbi_taxonomy
@@ -2656,24 +3122,6 @@ synonym: "Discomyces" RELATED synonym []
 xref: GC_ID:11
 is_a: NCBITaxon:2049 ! Actinomycetaceae
 property_value: has_rank NCBITaxon:genus
-
-[Term]
-id: NCBITaxon:1655
-name: Actinomyces naeslundii
-namespace: ncbi_taxonomy
-xref: GC_ID:11
-xref: PMID:19244431
-is_a: NCBITaxon:1654 ! Actinomyces
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:1656
-name: Actinomyces viscosus
-namespace: ncbi_taxonomy
-synonym: "Odontomyces viscosus" RELATED synonym []
-xref: GC_ID:11
-is_a: NCBITaxon:1654 ! Actinomyces
-property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:1659
@@ -2693,12 +3141,19 @@ is_a: NCBITaxon:1654 ! Actinomyces
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:1660
-name: Actinomyces odontolyticus
+id: NCBITaxon:1678
+name: Bifidobacterium
 namespace: ncbi_taxonomy
+synonym: "Bifidibacterium" RELATED synonym []
+synonym: "Tissieria" RELATED synonym []
 xref: GC_ID:11
-is_a: NCBITaxon:1654 ! Actinomyces
-property_value: has_rank NCBITaxon:species
+xref: PMID:11594590
+xref: PMID:17158978
+xref: PMID:1742200
+xref: PMID:20061504
+xref: PMID:8573484
+is_a: NCBITaxon:31953 ! Bifidobacteriaceae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:1678141
@@ -2715,6 +3170,18 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:1678141 ! Orthohepevirus
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:168
+name: Treponema pallidum subsp. pertenue
+namespace: ncbi_taxonomy
+synonym: "Treponema pallidium subsp. pertenue" RELATED misspelling []
+synonym: "Treponema pallidum pertenue" EXACT equivalent_name []
+synonym: "Treponema pertenue" RELATED synonym []
+synonym: "yaws treponeme" EXACT genbank_common_name []
+xref: GC_ID:11
+is_a: NCBITaxon:160 ! Treponema pallidum
+property_value: has_rank NCBITaxon:subspecies
 
 [Term]
 id: NCBITaxon:169440
@@ -2779,6 +3246,27 @@ is_a: NCBITaxon:170 ! Leptospiraceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:171549
+name: Bacteroidales
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:200643 ! Bacteroidia
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:1716
+name: Corynebacterium
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:10425754
+xref: PMID:19661509
+xref: PMID:7547284
+xref: PMID:7547291
+xref: PMID:7547293
+is_a: NCBITaxon:1653 ! Corynebacteriaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:171637
 name: Maloideae
 namespace: ncbi_taxonomy
@@ -2789,6 +3277,21 @@ synonym: "Spiraeoideae" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:3745 ! Rosaceae
 property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:1717
+name: Corynebacterium diphtheriae
+namespace: ncbi_taxonomy
+synonym: "Bacillus diphtheriae" RELATED synonym []
+synonym: "Bacterium diphtheriae" RELATED synonym []
+synonym: "Microsporon diphthericum" RELATED synonym []
+synonym: "Microsporon diphtheriticum" RELATED synonym []
+synonym: "Mycobacterium diphtheriae" RELATED synonym []
+synonym: "Pacinia loeffleri" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:7729671
+is_a: NCBITaxon:1716 ! Corynebacterium
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:172148
@@ -2806,22 +3309,6 @@ name: Human papillomavirus types
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:333774 ! unclassified Papillomaviridae
-
-[Term]
-id: NCBITaxon:1750
-name: Pseudopropionibacterium propionicum
-namespace: ncbi_taxonomy
-synonym: "Actinomyces propionicus" RELATED synonym []
-synonym: "Arachnia propionica" RELATED synonym []
-synonym: "Propionibacterium propionicum" RELATED synonym []
-synonym: "Propionibacterium propionicus" RELATED synonym []
-synonym: "Propionicibacterium propionicum" EXACT equivalent_name []
-synonym: "Propionicibacterium propionicus" EXACT equivalent_name []
-xref: GC_ID:11
-xref: PMID:13874228
-xref: PMID:27488827
-is_a: NCBITaxon:1912217 ! Pseudopropionibacterium
-property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:1759442
@@ -2919,6 +3406,17 @@ xref: GC_ID:1
 is_a: NCBITaxon:11019 ! Alphavirus
 
 [Term]
+id: NCBITaxon:1781
+name: Mycobacterium marinum
+namespace: ncbi_taxonomy
+synonym: "Mycobacterium balnei" RELATED synonym []
+synonym: "Mycobacterium platypoecilus" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:12089250
+is_a: NCBITaxon:1763 ! Mycobacterium
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1783257
 name: PVC group
 namespace: ncbi_taxonomy
@@ -2927,6 +3425,17 @@ xref: GC_ID:11
 xref: PMID:16704931
 xref: PMID:23851394
 xref: PMID:24185849
+is_a: NCBITaxon:2 ! Bacteria
+
+[Term]
+id: NCBITaxon:1783270
+name: FCB group
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:131550
+synonym: "Fibrobacter/Acidobacteria group" RELATED in_part []
+synonym: "Fibrobacteres-Chlorobi-Bacteroidetes superphylum" RELATED synonym []
+synonym: "Fibrobacteres/Acidobacteria group" RELATED in_part []
+xref: GC_ID:11
 is_a: NCBITaxon:2 ! Bacteria
 
 [Term]
@@ -2946,6 +3455,16 @@ xref: GC_ID:1
 xref: PMID:25449305
 is_a: NCBITaxon:11157 ! Mononegavirales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:1789
+name: Mycobacterium xenopi
+namespace: ncbi_taxonomy
+synonym: "Mycobacterium xenopei" RELATED synonym []
+synonym: "Mycobacterium xenopii" RELATED misspelling []
+xref: GC_ID:11
+is_a: NCBITaxon:1763 ! Mycobacterium
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:1809
@@ -3155,6 +3674,14 @@ is_a: NCBITaxon:91061 ! Bacilli
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:186938
+name: Respirovirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:11158 ! Paramyxoviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:1870884
 name: Clostridioides
 namespace: ncbi_taxonomy
@@ -3165,10 +3692,90 @@ is_a: NCBITaxon:186804 ! Peptostreptococcaceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:1884633
+name: Cryptococcaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5234 ! Tremellales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:1884637
+name: Cryptococcus gattii species complex
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5206 ! Cryptococcus <Filobasidiella>
+
+[Term]
+id: NCBITaxon:188543
+name: Demodicidae
+namespace: ncbi_taxonomy
+synonym: "follicle mites" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:188547 ! Cheyletoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:188544
+name: Demodex
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:188543 ! Demodicidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:188547
+name: Cheyletoidea
+namespace: ncbi_taxonomy
+synonym: "Chelyetoidea" RELATED misspelling []
+synonym: "Chelytoidea" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:188550 ! Raphignathae
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:188550
+name: Raphignathae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:83145 ! Eleutherengona
+
+[Term]
+id: NCBITaxon:1891762
+alt_id: NCBITaxon:10629
+
+[Term]
+id: NCBITaxon:1897064
+name: Cryptococcus neoformans species complex
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5206 ! Cryptococcus <Filobasidiella>
+
+[Term]
+id: NCBITaxon:1903410
+name: Pectobacteriaceae
+namespace: ncbi_taxonomy
+synonym: "'Pectobacteriaceae'" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:27620848
+is_a: NCBITaxon:91347 ! Enterobacterales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:1903411
 name: Yersiniaceae
 namespace: ncbi_taxonomy
 synonym: "'Yersiniaceae'" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:27620848
+is_a: NCBITaxon:91347 ! Enterobacterales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:1903414
+name: Morganellaceae
+namespace: ncbi_taxonomy
+synonym: "'Morganellaceae'" RELATED synonym []
 xref: GC_ID:11
 xref: PMID:27620848
 is_a: NCBITaxon:91347 ! Enterobacterales
@@ -3182,15 +3789,6 @@ synonym: "Ochlerotatus" EXACT scientific_name []
 xref: GC_ID:1
 xref: PMID:15264635
 is_a: NCBITaxon:1056966 ! Aedini
-property_value: has_rank NCBITaxon:genus
-
-[Term]
-id: NCBITaxon:1912217
-name: Pseudopropionibacterium
-namespace: ncbi_taxonomy
-xref: GC_ID:11
-xref: PMID:27488827
-is_a: NCBITaxon:31957 ! Propionibacteriaceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -3213,14 +3811,6 @@ property_value: has_rank NCBITaxon:superorder
 [Term]
 id: NCBITaxon:1933187
 name: Rift Valley fever phlebovirus
-namespace: ncbi_taxonomy
-xref: GC_ID:1
-is_a: NCBITaxon:11584 ! Phlebovirus
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:1933189
-name: Sandfly fever Naples phlebovirus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:11584 ! Phlebovirus
@@ -3265,6 +3855,27 @@ is_a: NCBITaxon:153136 ! Deltaretrovirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:194924
+name: Desulfovibrionaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:16403855
+is_a: NCBITaxon:213115 ! Desulfovibrionales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:196
+name: Campylobacter fetus
+namespace: ncbi_taxonomy
+synonym: "Spirillum fetus" RELATED synonym []
+synonym: "Vibrio fetus" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11321120
+xref: PMID:1354478
+is_a: NCBITaxon:194 ! Campylobacter
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:1963758
 name: Myomorpha
 namespace: ncbi_taxonomy
@@ -3272,19 +3883,6 @@ synonym: "Sciurognathi" RELATED in_part []
 xref: GC_ID:1
 is_a: NCBITaxon:9989 ! Rodentia
 property_value: has_rank NCBITaxon:suborder
-
-[Term]
-id: NCBITaxon:197
-name: Campylobacter jejuni
-namespace: ncbi_taxonomy
-synonym: "Ampylobacter jejuni" RELATED misspelling []
-synonym: "Campylobacter fetus subsp. jejuni" RELATED synonym []
-synonym: "Vibrio hepaticus" RELATED synonym []
-synonym: "Vibrio jejuni" RELATED synonym []
-xref: GC_ID:11
-xref: PMID:11321120
-is_a: NCBITaxon:194 ! Campylobacter
-property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:197562
@@ -3397,6 +3995,14 @@ xref: GC_ID:1
 is_a: NCBITaxon:1980410 ! Bunyavirales
 
 [Term]
+id: NCBITaxon:198624
+name: Dermocystida
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:127916 ! Ichthyosporea
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:2
 name: Bacteria
 namespace: ncbi_taxonomy
@@ -3435,6 +4041,15 @@ xref: PMID:9103655
 xref: PMID:9336922
 is_a: NCBITaxon:131567 ! cellular organisms
 property_value: has_rank NCBITaxon:superkingdom
+
+[Term]
+id: NCBITaxon:200643
+name: Bacteroidia
+namespace: ncbi_taxonomy
+synonym: "Bacteroidetes" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:976 ! Bacteroidetes
+property_value: has_rank NCBITaxon:class
 
 [Term]
 id: NCBITaxon:201174
@@ -3480,6 +4095,14 @@ is_a: NCBITaxon:203490 ! Fusobacteriia
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:203492
+name: Fusobacteriaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:203491 ! Fusobacteriales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:203691
 name: Spirochaetes
 namespace: ncbi_taxonomy
@@ -3517,6 +4140,32 @@ is_a: NCBITaxon:1760 ! Actinobacteria <class>
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:2038
+name: Tropheryma
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:11491348
+xref: PMID:1377787
+is_a: NCBITaxon:577468 ! unclassified Micrococcales
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:2039
+name: Tropheryma whipplei
+namespace: ncbi_taxonomy
+synonym: "Tropheryma whippelii" RELATED synonym []
+synonym: "Whipple's bacillus" RELATED synonym []
+synonym: "Whipple's disease-associated bacterium" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:10555351
+xref: PMID:10843039
+xref: PMID:11491348
+xref: PMID:1377787
+xref: PMID:8863438
+is_a: NCBITaxon:2038 ! Tropheryma
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:204428
 name: Chlamydiae
 namespace: ncbi_taxonomy
@@ -3548,15 +4197,6 @@ is_a: NCBITaxon:2037 ! Actinomycetales
 property_value: has_rank NCBITaxon:family
 
 [Term]
-id: NCBITaxon:206160
-name: Sandfly fever Naples virus
-namespace: ncbi_taxonomy
-synonym: "SFNV" BROAD genbank_acronym []
-xref: GC_ID:1
-xref: PMID:24096318
-is_a: NCBITaxon:1933189 ! Sandfly fever Naples phlebovirus
-
-[Term]
 id: NCBITaxon:206351
 name: Neisseriales
 namespace: ncbi_taxonomy
@@ -3564,6 +4204,143 @@ xref: GC_ID:11
 xref: PMID:16403855
 xref: PMID:23575986
 is_a: NCBITaxon:28216 ! Betaproteobacteria
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:207245
+name: Fornicata
+namespace: ncbi_taxonomy
+synonym: "Diplomonadida group" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: NCBITaxon:207598
+name: Homininae
+namespace: ncbi_taxonomy
+synonym: "Homo/Pan/Gorilla group" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:9604 ! Hominidae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:2085
+name: Mycoplasmatales
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:2091
+synonym: "Borrelomycetales" RELATED synonym []
+synonym: "Mollicutales" RELATED synonym []
+synonym: "Mycoplasmas" RELATED synonym []
+synonym: "Paramycetales" RELATED synonym []
+synonym: "Pleuropneumoniales" RELATED synonym []
+synonym: "The Mycoplasmas" RELATED synonym []
+xref: GC_ID:4
+xref: PMID:16350067
+is_a: NCBITaxon:31969 ! Mollicutes
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:209
+name: Helicobacter
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:28203
+xref: GC_ID:11
+xref: PMID:11156001
+xref: PMID:15143020
+xref: PMID:1704793
+xref: PMID:17329766
+is_a: NCBITaxon:72293 ! Helicobacteraceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:2092
+name: Mycoplasmataceae
+namespace: ncbi_taxonomy
+synonym: "Borrelomycetaceae" RELATED synonym []
+synonym: "Parasitaceae" RELATED synonym []
+synonym: "Pleuropneumoniaceae" RELATED synonym []
+xref: GC_ID:4
+xref: PMID:13403276
+xref: PMID:16350067
+is_a: NCBITaxon:2085 ! Mycoplasmatales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:2093
+name: Mycoplasma
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:29500
+alt_id: NCBITaxon:57371
+synonym: "Asterococcus" RELATED synonym []
+synonym: "Asteromyces" RELATED synonym []
+synonym: "Borrelomyces" RELATED synonym []
+synonym: "Bovimyces" RELATED synonym []
+synonym: "Eperythrozoon" RELATED synonym []
+synonym: "Haemobartonella" RELATED synonym []
+synonym: "Pleuropneumonia" RELATED synonym []
+xref: GC_ID:4
+xref: PMID:10826816
+xref: PMID:11321109
+xref: PMID:11411711
+xref: PMID:11931184
+xref: PMID:13403276
+xref: PMID:15176735
+xref: PMID:16350067
+xref: PMID:16403858
+xref: PMID:25288662
+xref: PMID:8863441
+xref: PMID:8995799
+is_a: NCBITaxon:2092 ! Mycoplasmataceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:210
+name: Helicobacter pylori
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:219
+synonym: "Campylobacter pylori" RELATED synonym []
+synonym: "Campylobacter pylori subsp. pylori" RELATED synonym []
+synonym: "Campylobacter pyloridis" RELATED synonym []
+synonym: "Helicobacter nemestrinae" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11931154
+xref: PMID:1995031
+xref: PMID:8186097
+xref: PMID:8494747
+is_a: NCBITaxon:209 ! Helicobacter
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:2104
+name: Mycoplasma pneumoniae
+namespace: ncbi_taxonomy
+synonym: "Filterable agent of primary atypical pneumonia" RELATED synonym []
+synonym: "Schizoplasma pneumoniae" RELATED synonym []
+xref: GC_ID:4
+xref: PMID:19871393
+xref: PMID:4867945
+is_a: NCBITaxon:2093 ! Mycoplasma
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:2129
+name: Ureaplasma
+namespace: ncbi_taxonomy
+xref: GC_ID:4
+xref: PMID:11034506
+xref: PMID:1906731
+xref: PMID:2223597
+xref: PMID:8782697
+is_a: NCBITaxon:2092 ! Mycoplasmataceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:213115
+name: Desulfovibrionales
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:16403855
+is_a: NCBITaxon:28221 ! Deltaproteobacteria
 property_value: has_rank NCBITaxon:order
 
 [Term]
@@ -3610,6 +4387,15 @@ is_a: NCBITaxon:147550 ! Sordariomycetes
 property_value: has_rank NCBITaxon:subclass
 
 [Term]
+id: NCBITaxon:223472
+name: Psoroptidia
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:261182
+synonym: "Sarcoptidia" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:6951 ! Astigmata
+
+[Term]
 id: NCBITaxon:226665
 name: Rickettsia heilongjiangensis
 namespace: ncbi_taxonomy
@@ -3636,6 +4422,40 @@ xref: GC_ID:1
 is_a: NCBITaxon:694009 ! SARS-related coronavirus
 
 [Term]
+id: NCBITaxon:229219
+name: Blastomyces
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:299071 ! Ajellomycetaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:232795
+name: Dicistroviridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:464095 ! Picornavirales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:234
+name: Brucella
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:28066370
+xref: PMID:8573514
+is_a: NCBITaxon:118882 ! Brucellaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:236781
+name: Tineinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:41012 ! Tineidae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
 id: NCBITaxon:241475
 name: Dioctophymatoidea
 namespace: ncbi_taxonomy
@@ -3658,8 +4478,24 @@ is_a: NCBITaxon:78536 ! Euphyllophyta
 property_value: has_rank NCBITaxon:class
 
 [Term]
+id: NCBITaxon:242060
+name: Cystoisospora
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5809 ! Sarcocystidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:260963
 name: Avulavirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:11158 ! Paramyxoviridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:260964
+name: Henipavirus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:11158 ! Paramyxoviridae
@@ -3696,6 +4532,36 @@ is_a: NCBITaxon:114277 ! spotted fever group
 property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_subgroup
 
 [Term]
+id: NCBITaxon:2701
+name: Gardnerella
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+is_a: NCBITaxon:31953 ! Bifidobacteriaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:2702
+name: Gardnerella vaginalis
+namespace: ncbi_taxonomy
+synonym: "Corynebacterium vaginale" RELATED synonym []
+synonym: "Haemophilus hemolyticus vaginalis" RELATED synonym []
+synonym: "Haemophilus vaginalis" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:14361525
+xref: PMID:8782675
+is_a: NCBITaxon:2701 ! Gardnerella
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:272561
+name: Chlamydia trachomatis D/UW-3/CX
+namespace: ncbi_taxonomy
+synonym: "Chlamydia trachomatis str. D/UW-3/CX" EXACT equivalent_name []
+synonym: "Chlamydia trachomatis strain D/UW-3/CX" EXACT equivalent_name []
+xref: GC_ID:11
+is_a: NCBITaxon:813 ! Chlamydia trachomatis
+
+[Term]
 id: NCBITaxon:27458
 name: Chrysops
 namespace: ncbi_taxonomy
@@ -3703,6 +4569,15 @@ synonym: "deer flies" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:59848 ! Chrysopsini
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:27479
+name: Reduviidae
+namespace: ncbi_taxonomy
+synonym: "assassin bugs" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:33356 ! Reduvioidea
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:2759
@@ -3721,6 +4596,15 @@ is_a: NCBITaxon:131567 ! cellular organisms
 property_value: has_rank NCBITaxon:superkingdom
 
 [Term]
+id: NCBITaxon:27829
+name: Strongyloidea
+namespace: ncbi_taxonomy
+synonym: "Strongyloidae" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:6308 ! Strongylida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
 id: NCBITaxon:27841
 name: Echinostomata
 namespace: ncbi_taxonomy
@@ -3737,6 +4621,14 @@ is_a: NCBITaxon:6179 ! Digenea <flatworm>
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:27872
+name: Xiphidiata
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:27871 ! Plagiorchiida
+property_value: has_rank NCBITaxon:suborder
+
+[Term]
 id: NCBITaxon:279271
 name: Leptotrombidium
 namespace: ncbi_taxonomy
@@ -3751,6 +4643,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:6033 ! Encephalitozoon
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:27994
+name: Theileriidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5863 ! Piroplasmida
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:28211
@@ -3788,15 +4688,21 @@ is_a: NCBITaxon:1224 ! Proteobacteria
 property_value: has_rank NCBITaxon:class
 
 [Term]
-id: NCBITaxon:28292
-name: Sandfly fever Sicilian virus
+id: NCBITaxon:28221
+name: Deltaproteobacteria
 namespace: ncbi_taxonomy
-synonym: "sandfly fever virus" RELATED synonym []
-synonym: "SFS" BROAD acronym []
-synonym: "Sicilian sandfly fever virus" RELATED synonym []
-xref: GC_ID:1
-is_a: NCBITaxon:327794 ! unclassified Phlebovirus
-property_value: has_rank NCBITaxon:species
+alt_id: NCBITaxon:32015
+synonym: "d-proteobacteria" RELATED blast_name []
+synonym: "delta proteobacteria" RELATED synonym []
+synonym: "delta subdivision" RELATED synonym []
+synonym: "delta subgroup" RELATED synonym []
+synonym: "Proteobacteria delta subdivision" RELATED synonym []
+synonym: "Purple bacteria, delta subdivision" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11837318
+xref: PMID:16403855
+is_a: NCBITaxon:68525 ! delta/epsilon subdivisions
+property_value: has_rank NCBITaxon:class
 
 [Term]
 id: NCBITaxon:28314
@@ -3878,6 +4784,83 @@ is_a: NCBITaxon:135621 ! Pseudomonadaceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:287
+name: Pseudomonas aeruginosa
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1224290
+alt_id: NCBITaxon:1437768
+alt_id: NCBITaxon:1437769
+alt_id: NCBITaxon:1437770
+alt_id: NCBITaxon:1683559
+alt_id: NCBITaxon:1683561
+alt_id: NCBITaxon:1860124
+alt_id: NCBITaxon:931955
+alt_id: NCBITaxon:931956
+alt_id: NCBITaxon:931957
+alt_id: NCBITaxon:931958
+alt_id: NCBITaxon:932477
+synonym: "Bacillus aeruginosus" RELATED synonym []
+synonym: "Bacillus pyocyaneus" RELATED synonym []
+synonym: "Bacterium aeruginosum" RELATED synonym []
+synonym: "Bacterium pyocyaneum" RELATED synonym []
+synonym: "Micrococcus pyocyaneus" RELATED synonym []
+synonym: "Peudomonas aeruginosa" RELATED misspelling []
+synonym: "Pseudomonas polycolor" RELATED synonym []
+synonym: "Pseudomonas pyocyanea" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:136841 ! Pseudomonas aeruginosa group
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:28843
+name: Diphyllobothriidae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1256674
+alt_id: NCBITaxon:94843
+synonym: "Diphyllobothridae" RELATED misspelling []
+synonym: "Ligulidae" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1224679 ! Diphyllobothriidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:28844
+name: Diphyllobothrium
+namespace: ncbi_taxonomy
+synonym: "broad tapeworm" EXACT common_name []
+synonym: "broad tapeworms" EXACT genbank_common_name []
+synonym: "fish tapeworms" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:28843 ! Diphyllobothriidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:28845
+name: Diphyllobothrium dendriticum
+namespace: ncbi_taxonomy
+synonym: "Diphyllobothrium dentriticum" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:28844 ! Diphyllobothrium
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:28901
+name: Salmonella enterica
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:591
+synonym: "Bacillus cholerae-suis" RELATED synonym []
+synonym: "Salmonella cholerae-suis" RELATED synonym []
+synonym: "Salmonella choleraesuis" RELATED synonym []
+synonym: "Salmonella enterica ser. choleraesuis" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:10319519
+xref: PMID:10939679
+xref: PMID:15653929
+xref: PMID:15653930
+is_a: NCBITaxon:590 ! Salmonella
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:29031
 name: Phlebotomus papatasi
 namespace: ncbi_taxonomy
@@ -3918,6 +4901,22 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:35278 ! ssRNA positive-strand viruses, no DNA stage
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:29169
+name: Ancylostoma
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:53469 ! Ancylostomatinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:29171
+name: Dictyocaulus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33265 ! Dictyocaulinae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:29178
@@ -3962,6 +4961,16 @@ synonym: "Tick-borne encephalitis viruses" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:11051 ! Flavivirus
 property_value: has_rank NCBITaxon:subgenus
+
+[Term]
+id: NCBITaxon:29461
+name: Brucella suis
+namespace: ncbi_taxonomy
+synonym: "Brucella melitensis biovar Suis" RELATED genbank_synonym []
+synonym: "Brucella melitensis bv. Suis" EXACT equivalent_name []
+xref: GC_ID:11
+is_a: NCBITaxon:234 ! Brucella
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:29547
@@ -4034,6 +5043,17 @@ is_a: NCBITaxon:279271 ! Leptotrombidium
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:29960
+name: Fenneropenaeus indicus
+namespace: ncbi_taxonomy
+synonym: "Feneropenaeus indicus" RELATED misspelling []
+synonym: "Penaeus (Fenneropenaeus) indicus" RELATED synonym []
+synonym: "Penaeus indicus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:133898 ! Fenneropenaeus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:30005
 name: Anoplura
 namespace: ncbi_taxonomy
@@ -4043,13 +5063,13 @@ is_a: NCBITaxon:85819 ! Phthiraptera
 property_value: has_rank NCBITaxon:suborder
 
 [Term]
-id: NCBITaxon:30639
-name: Mastomys
+id: NCBITaxon:302011
+name: Rickettsia conorii subsp. caspia
 namespace: ncbi_taxonomy
-synonym: "multimammate rats" EXACT genbank_common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:39107 ! Murinae
-property_value: has_rank NCBITaxon:genus
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
 
 [Term]
 id: NCBITaxon:30727
@@ -4068,6 +5088,34 @@ synonym: "Amdovirus" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:40119 ! Parvovirinae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:31244
+name: Schistosomatoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6180 ! Strigeidida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:31245
+name: Schistosomatidae
+namespace: ncbi_taxonomy
+synonym: "blood flukes" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:31244 ! Schistosomatoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:314145
+name: Laurasiatheria
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:11214318
+xref: PMID:11214319
+xref: PMID:12878460
+is_a: NCBITaxon:1437010 ! Boreoeutheria
+property_value: has_rank NCBITaxon:superorder
 
 [Term]
 id: NCBITaxon:314146
@@ -4093,6 +5141,37 @@ xref: PMID:15522813
 is_a: NCBITaxon:314146 ! Euarchontoglires
 
 [Term]
+id: NCBITaxon:314293
+name: Simiiformes
+namespace: ncbi_taxonomy
+synonym: "Anthropoidea" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:376913 ! Haplorrhini
+property_value: has_rank NCBITaxon:infraorder
+
+[Term]
+id: NCBITaxon:314295
+name: Hominoidea
+namespace: ncbi_taxonomy
+synonym: "ape" EXACT common_name []
+synonym: "apes" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9526 ! Catarrhini
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:31604
+name: Small ruminant morbillivirus
+namespace: ncbi_taxonomy
+synonym: "peste des petits ruminants virus" RELATED misspelling []
+synonym: "Peste-des-petits-ruminants" RELATED synonym []
+synonym: "Peste-des-petits-ruminants virus" RELATED synonym []
+synonym: "Pseudorinderpest virus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:11229 ! Morbillivirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:31704
 name: Coxsackievirus A16
 namespace: ncbi_taxonomy
@@ -4102,6 +5181,43 @@ synonym: "Human coxsackievirus A16" RELATED synonym []
 synonym: "Human enterovirus CVA16" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:138948 ! Enterovirus A
+
+[Term]
+id: NCBITaxon:317865
+name: Rickettsia conorii subsp. indica
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
+
+[Term]
+id: NCBITaxon:318477
+name: Dracunculidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:55872 ! Dracunculoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:318478
+name: Dracunculus <nematode>
+namespace: ncbi_taxonomy
+synonym: "Dracunculus" EXACT scientific_name []
+xref: GC_ID:1
+is_a: NCBITaxon:318477 ! Dracunculidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:318479
+name: Dracunculus medinensis
+namespace: ncbi_taxonomy
+synonym: "dracunculiasis worm" EXACT common_name []
+synonym: "Guinea worm" EXACT genbank_common_name []
+synonym: "Guinea worm disease nematode" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:318478 ! Dracunculus <nematode>
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:3193
@@ -4115,17 +5231,41 @@ xref: GC_ID:1
 is_a: NCBITaxon:131221 ! Streptophytina
 
 [Term]
-id: NCBITaxon:31957
-name: Propionibacteriaceae
+id: NCBITaxon:31953
+name: Bifidobacteriaceae
 namespace: ncbi_taxonomy
-alt_id: NCBITaxon:31955
-alt_id: NCBITaxon:79914
-synonym: "Propionibacterium group" RELATED synonym []
-synonym: "Propionicibacteriaceae" EXACT equivalent_name []
 xref: GC_ID:11
 xref: PMID:19244447
-is_a: NCBITaxon:85009 ! Propionibacteriales
+is_a: NCBITaxon:85004 ! Bifidobacteriales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:319546
+name: Rickettsia conorii subsp. conorii
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
+
+[Term]
+id: NCBITaxon:31969
+name: Mollicutes
+namespace: ncbi_taxonomy
+synonym: "mycoplasmas" RELATED blast_name []
+synonym: "Mycoplasmas and walled relatives" RELATED synonym []
+synonym: "Paramycetes" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11321122
+xref: PMID:15143038
+xref: PMID:17978244
+xref: PMID:23606477
+xref: PMID:2592342
+xref: PMID:8123554
+xref: PMID:8863413
+xref: PMID:8863414
+is_a: NCBITaxon:544448 ! Tenericutes
+property_value: has_rank NCBITaxon:class
 
 [Term]
 id: NCBITaxon:31979
@@ -4134,6 +5274,19 @@ namespace: ncbi_taxonomy
 xref: GC_ID:11
 is_a: NCBITaxon:186802 ! Clostridiales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:32003
+name: Nitrosomonadales
+namespace: ncbi_taxonomy
+synonym: "Ammonia oxidizing bacteria" RELATED synonym []
+synonym: "Ammonia-oxidizing bacteria" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:10028253
+xref: PMID:11760943
+xref: PMID:16403855
+is_a: NCBITaxon:28216 ! Betaproteobacteria
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:32008
@@ -4200,6 +5353,14 @@ xref: GC_ID:1
 is_a: NCBITaxon:40674 ! Mammalia
 
 [Term]
+id: NCBITaxon:32594
+name: Babesiidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5863 ! Piroplasmida
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:327045
 name: Orthoretrovirinae
 namespace: ncbi_taxonomy
@@ -4208,11 +5369,13 @@ is_a: NCBITaxon:11632 ! Retroviridae
 property_value: has_rank NCBITaxon:subfamily
 
 [Term]
-id: NCBITaxon:327794
-name: unclassified Phlebovirus
+id: NCBITaxon:33084
+name: Entamoebidae
 namespace: ncbi_taxonomy
+synonym: "Entamoebida" RELATED synonym []
 xref: GC_ID:1
-is_a: NCBITaxon:11584 ! Phlebovirus
+is_a: NCBITaxon:555406 ! Archamoebae
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:33090
@@ -4277,6 +5440,57 @@ is_a: NCBITaxon:6249 ! Ascaridida
 property_value: has_rank NCBITaxon:superfamily
 
 [Term]
+id: NCBITaxon:33259
+name: Toxocaridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33256 ! Ascaridoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:33263
+name: Trichostrongylinae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:33262
+synonym: "Ostertagiinae" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:6315 ! Trichostrongylidae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:33264
+name: Dictyocaulidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6314 ! Trichostrongyloidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:33265
+name: Dictyocaulinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33264 ! Dictyocaulidae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:33277
+name: Ancylostomatoidea
+namespace: ncbi_taxonomy
+synonym: "hookworms" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6308 ! Strongylida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:33278
+name: Ancylostomatidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33277 ! Ancylostomatoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:33317
 name: Protostomia
 namespace: ncbi_taxonomy
@@ -4300,6 +5514,59 @@ synonym: "Hemipteroidea" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:33340 ! Neoptera
 property_value: has_rank NCBITaxon:cohort
+
+[Term]
+id: NCBITaxon:33343
+name: Prosorrhyncha
+namespace: ncbi_taxonomy
+synonym: "bugs" EXACT genbank_common_name []
+synonym: "Heteropterodea" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:7524 ! Hemiptera
+
+[Term]
+id: NCBITaxon:33345
+name: Heteroptera
+namespace: ncbi_taxonomy
+synonym: "true bugs" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:33343 ! Prosorrhyncha
+
+[Term]
+id: NCBITaxon:33347
+name: Euheteroptera
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33345 ! Heteroptera
+
+[Term]
+id: NCBITaxon:33349
+name: Neoheteroptera
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33347 ! Euheteroptera
+
+[Term]
+id: NCBITaxon:33351
+name: Panheteroptera
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33349 ! Neoheteroptera
+
+[Term]
+id: NCBITaxon:33354
+name: Cimicomorpha
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33351 ! Panheteroptera
+
+[Term]
+id: NCBITaxon:33356
+name: Reduvioidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33354 ! Cimicomorpha
+property_value: has_rank NCBITaxon:superfamily
 
 [Term]
 id: NCBITaxon:333774
@@ -4334,11 +5601,46 @@ xref: GC_ID:1
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
+id: NCBITaxon:33634
+name: Stramenopiles
+namespace: ncbi_taxonomy
+synonym: "Chromophyta" RELATED in_part []
+synonym: "Heterokonta" RELATED synonym []
+synonym: "heterokonts" EXACT genbank_common_name []
+synonym: "Straminipila" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: NCBITaxon:33677
+name: Acanthamoebidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:555407 ! Centramoebida
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:33682
+name: Euglenozoa
+namespace: ncbi_taxonomy
+synonym: "Euglenozoans" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
 id: NCBITaxon:33743
 name: Kyasanur forest disease virus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:29263 ! tick-borne encephalitis virus group
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:33758
+name: Echovirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:90010 ! unclassified Enterovirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -4367,6 +5669,15 @@ xref: GC_ID:1
 xref: PMID:15371245
 is_a: NCBITaxon:337677 ! Cricetidae
 property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:33833
+name: Vestibuliferida
+namespace: ncbi_taxonomy
+synonym: "Vestibulifera" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:163343 ! Trichostomatia
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:3398
@@ -4473,14 +5784,6 @@ is_a: NCBITaxon:451870 ! Chaetothyriomycetidae
 property_value: has_rank NCBITaxon:order
 
 [Term]
-id: NCBITaxon:34480
-name: Basidiobolus ranarum
-namespace: ncbi_taxonomy
-xref: GC_ID:1
-is_a: NCBITaxon:4859 ! Basidiobolus
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:34486
 name: Ancylistaceae
 namespace: ncbi_taxonomy
@@ -4497,6 +5800,32 @@ is_a: NCBITaxon:34486 ! Ancylistaceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:34502
+name: Troglotrematidae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:99728
+synonym: "Paragonimidae" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:116925 ! Troglotremata
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:34503
+name: Paragonimus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:34502 ! Troglotrematidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:34504
+name: Paragonimus westermani
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:34503 ! Paragonimus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:34607
 name: Amblyomma cajennense
 namespace: ncbi_taxonomy
@@ -4510,32 +5839,10 @@ is_a: NCBITaxon:6942 ! Amblyomma
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:34608
-name: Amblyomma hebraeum
-namespace: ncbi_taxonomy
-synonym: "African tick bite fever vector" EXACT common_name []
-synonym: "Amblyomma herbraeum" RELATED misspelling []
-synonym: "bont tick" EXACT genbank_common_name []
-synonym: "English bont tick" EXACT common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:6942 ! Amblyomma
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:34609
 name: Amblyomma maculatum
 namespace: ncbi_taxonomy
 synonym: "Gulf Coast tick" EXACT genbank_common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:6942 ! Amblyomma
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:34610
-name: Amblyomma variegatum
-namespace: ncbi_taxonomy
-synonym: "Amblyomma (Theileriella) variegatum" RELATED synonym []
-synonym: "tropical bont tick" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:6942 ! Amblyomma
 property_value: has_rank NCBITaxon:species
@@ -4617,6 +5924,16 @@ is_a: NCBITaxon:578835 ! Rhipicephalus sanguineus group
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:35082
+name: Cryptosporidiidae
+namespace: ncbi_taxonomy
+synonym: "Cryptosporidae" RELATED misspelling []
+synonym: "Cryptosporiidae" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:423054 ! Eimeriorina
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:35237
 name: dsDNA viruses, no RNA stage
 namespace: ncbi_taxonomy
@@ -4646,6 +5963,13 @@ xref: GC_ID:1
 is_a: NCBITaxon:439488 ! ssRNA viruses
 
 [Term]
+id: NCBITaxon:35324
+name: unclassified Orthomyxoviridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:11308 ! Orthomyxoviridae
+
+[Term]
 id: NCBITaxon:35325
 name: dsRNA viruses
 namespace: ncbi_taxonomy
@@ -4660,6 +5984,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:33090 ! Viridiplantae
 property_value: has_rank NCBITaxon:phylum
+
+[Term]
+id: NCBITaxon:35500
+name: Pecora
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9845 ! Ruminantia
+property_value: has_rank NCBITaxon:infraorder
 
 [Term]
 id: NCBITaxon:356
@@ -4758,6 +6090,10 @@ is_a: NCBITaxon:418103 ! Plasmodium (Plasmodium)
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:36362
+alt_id: NCBITaxon:10624
+
+[Term]
 id: NCBITaxon:36596
 name: Prunus armeniaca
 namespace: ncbi_taxonomy
@@ -4833,11 +6169,27 @@ is_a: NCBITaxon:5719 ! Parabasalia
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:37124
+name: Chikungunya virus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:177875 ! SFV complex
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:37162
 name: Mycobacterium avium complex
 namespace: ncbi_taxonomy
 xref: GC_ID:11
 is_a: NCBITaxon:120793 ! Mycobacterium avium complex (MAC)
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:372083
+name: Diphyllobothrium cordatum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:28844 ! Diphyllobothrium
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -4869,6 +6221,15 @@ alt_id: NCBITaxon:4266
 xref: GC_ID:1
 is_a: NCBITaxon:91835 ! fabids
 property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:374468
+name: Nakaseomyces
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:14654427
+is_a: NCBITaxon:4893 ! Saccharomycetaceae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:3745
@@ -4919,6 +6280,13 @@ is_a: NCBITaxon:721805 ! Amygdaleae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:37567
+name: Ditrysia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:41197 ! Heteroneura
+
+[Term]
 id: NCBITaxon:3758
 name: Prunus domestica
 namespace: ncbi_taxonomy
@@ -4939,6 +6307,14 @@ synonym: "Prunus persica var densa" RELATED misspelling []
 xref: GC_ID:1
 is_a: NCBITaxon:3754 ! Prunus
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:376913
+name: Haplorrhini
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9443 ! Primates
+property_value: has_rank NCBITaxon:suborder
 
 [Term]
 id: NCBITaxon:37727
@@ -5048,6 +6424,22 @@ is_a: NCBITaxon:10066 ! Muridae
 property_value: has_rank NCBITaxon:subfamily
 
 [Term]
+id: NCBITaxon:39700
+name: Trypanozoon
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5690 ! Trypanosoma
+property_value: has_rank NCBITaxon:subgenus
+
+[Term]
+id: NCBITaxon:39733
+name: Astroviridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:35278 ! ssRNA positive-strand viruses, no DNA stage
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:39744
 name: Rubulavirus
 namespace: ncbi_taxonomy
@@ -5098,6 +6490,15 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:10780 ! Parvoviridae
 property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:40121
+name: Erythroparvovirus
+namespace: ncbi_taxonomy
+synonym: "Erythrovirus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:40119 ! Parvovirinae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:40141
@@ -5183,6 +6584,34 @@ is_a: NCBITaxon:49274 ! Lycopersicon
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:41011
+name: Tineoidea
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:98969
+xref: GC_ID:1
+is_a: NCBITaxon:37567 ! Ditrysia
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:41012
+name: Tineidae
+namespace: ncbi_taxonomy
+synonym: "clothes moths" EXACT common_name []
+synonym: "clothes-moths" EXACT genbank_common_name []
+synonym: "fungus moths" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:41011 ! Tineoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:41013
+name: Tinea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:236781 ! Tineinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:4107
 name: Solanum
 namespace: ncbi_taxonomy
@@ -5199,6 +6628,31 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:5752 ! Heterolobosea
 property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:41191
+name: Glossata
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:7088 ! Lepidoptera
+property_value: has_rank NCBITaxon:suborder
+
+[Term]
+id: NCBITaxon:41196
+name: Neolepidoptera
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:41191 ! Glossata
+property_value: has_rank NCBITaxon:infraorder
+
+[Term]
+id: NCBITaxon:41197
+name: Heteroneura
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:37583
+xref: GC_ID:1
+is_a: NCBITaxon:41196 ! Neolepidoptera
+property_value: has_rank NCBITaxon:parvorder
 
 [Term]
 id: NCBITaxon:41283
@@ -5238,6 +6692,15 @@ id: NCBITaxon:418103
 name: Plasmodium (Plasmodium)
 namespace: ncbi_taxonomy
 synonym: "Plasmodium" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:5820 ! Plasmodium
+property_value: has_rank NCBITaxon:subgenus
+
+[Term]
+id: NCBITaxon:418107
+name: Plasmodium (Laverania)
+namespace: ncbi_taxonomy
+synonym: "Laverania" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:5820 ! Plasmodium
 property_value: has_rank NCBITaxon:subgenus
@@ -5295,6 +6758,31 @@ synonym: "Pneumocystis carinii hominis" RELATED misnomer []
 synonym: "Pneumocystis jiroveci" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:4753 ! Pneumocystis
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:42113
+name: Clitellata
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6340 ! Annelida
+property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:42230
+name: Mansonella
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6296 ! Onchocercidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:42231
+name: Mansonella perstans
+namespace: ncbi_taxonomy
+synonym: "Dipetalonema perstans" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:42230 ! Mansonella
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -5446,11 +6934,27 @@ is_a: NCBITaxon:114277 ! spotted fever group
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:43075
+name: Trichomonas tenax
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5721 ! Trichomonas
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:431037
 name: unclassified Roseolovirus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:40272 ! Roseolovirus
+
+[Term]
+id: NCBITaxon:431838
+name: Intramacronucleata
+namespace: ncbi_taxonomy
+xref: GC_ID:6
+is_a: NCBITaxon:5878 ! Ciliophora
+property_value: has_rank NCBITaxon:subphylum
 
 [Term]
 id: NCBITaxon:43219
@@ -5460,6 +6964,14 @@ alt_id: NCBITaxon:82104
 xref: GC_ID:1
 is_a: NCBITaxon:34395 ! Chaetothyriales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:43351
+name: Dientamoeba
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:740973 ! Dientamoebidae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:43733
@@ -5558,6 +7070,14 @@ is_a: NCBITaxon:7157 ! Culicidae
 property_value: has_rank NCBITaxon:subfamily
 
 [Term]
+id: NCBITaxon:43913
+name: Chrysomyinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:7371 ! Calliphoridae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
 id: NCBITaxon:43920
 name: Chrysopsinae
 namespace: ncbi_taxonomy
@@ -5588,6 +7108,14 @@ xref: GC_ID:11
 xref: PMID:434652
 is_a: NCBITaxon:118969 ! Legionellales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:44417
+name: Cyclospora
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5799 ! Eimeriidae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:4447
@@ -5756,6 +7284,14 @@ is_a: NCBITaxon:1653394 ! Mammarenavirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:452284
+name: Ustilaginomycotina
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5204 ! Basidiomycota
+property_value: has_rank NCBITaxon:subphylum
+
+[Term]
 id: NCBITaxon:452563
 name: Cladosporiaceae
 namespace: ncbi_taxonomy
@@ -5767,6 +7303,17 @@ is_a: NCBITaxon:134362 ! Capnodiales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:45258
+name: Rickettsia conorii subsp. israelensis
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:317864
+synonym: "Israeli tick typhus rickettsia" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:15766388
+is_a: NCBITaxon:781 ! Rickettsia conorii
+property_value: has_rank NCBITaxon:subspecies
+
+[Term]
 id: NCBITaxon:455381
 name: Capillariidae
 namespace: ncbi_taxonomy
@@ -5775,20 +7322,12 @@ is_a: NCBITaxon:6329 ! Trichocephalida
 property_value: has_rank NCBITaxon:family
 
 [Term]
-id: NCBITaxon:45659
-name: Human adenovirus B3
+id: NCBITaxon:4564
+name: Triticum
 namespace: ncbi_taxonomy
-alt_id: NCBITaxon:28283
-synonym: "Adenovirus 3" RELATED synonym []
-synonym: "Adenovirus type 3" RELATED synonym []
-synonym: "Human adenovirus 3" RELATED synonym []
-synonym: "Human adenovirus type 3" RELATED synonym []
-synonym: "Human adenoviruses type 3" RELATED misnomer []
-synonym: "human adenoviruses type 3 Ad3" RELATED misnomer []
-synonym: "Mastadenovirus 3" RELATED synonym []
-synonym: "Mastadenovirus h3" RELATED synonym []
 xref: GC_ID:1
-is_a: NCBITaxon:108098 ! Human mastadenovirus B
+is_a: NCBITaxon:1648030 ! Triticinae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:45709
@@ -5811,6 +7350,49 @@ is_a: NCBITaxon:35278 ! ssRNA positive-strand viruses, no DNA stage
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:46580
+name: Spirometra
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:28843 ! Diphyllobothriidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:46682
+name: Heterakoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6249 ! Ascaridida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:46683
+name: Ascaridiidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:46682 ! Heterakoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:46684
+name: Ascaridia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:46683 ! Ascaridiidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:468
+name: Moraxellaceae
+namespace: ncbi_taxonomy
+synonym: "Acinetobacteraceae" RELATED synonym []
+synonym: "Branhamaceae" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:9542079
+is_a: NCBITaxon:72274 ! Pseudomonadales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:46839
 name: Colorado tick fever virus
 namespace: ncbi_taxonomy
@@ -5818,6 +7400,19 @@ synonym: "CTFV" BROAD acronym []
 xref: GC_ID:1
 is_a: NCBITaxon:10911 ! Coltivirus
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:469
+name: Acinetobacter
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:10028249
+xref: PMID:7520730
+xref: PMID:8934907
+xref: PMID:9226915
+xref: PMID:9336926
+is_a: NCBITaxon:468 ! Moraxellaceae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:46919
@@ -5829,6 +7424,15 @@ is_a: NCBITaxon:1653394 ! Mammarenavirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:471472
+name: Chlamydia trachomatis 434/Bu
+namespace: ncbi_taxonomy
+synonym: "Chlamydia trachomatis str. 434/Bu" EXACT equivalent_name []
+synonym: "Chlamydia trachomatis strain 434/Bu" EXACT equivalent_name []
+xref: GC_ID:11
+is_a: NCBITaxon:813 ! Chlamydia trachomatis
+
+[Term]
 id: NCBITaxon:4734
 name: commelinids
 namespace: ncbi_taxonomy
@@ -5837,6 +7441,14 @@ synonym: "Commeliniflorae" RELATED synonym []
 xref: GC_ID:1
 xref: PMID:26350789
 is_a: NCBITaxon:1437197 ! Petrosaviidae
+
+[Term]
+id: NCBITaxon:474019
+name: Sarcoptinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:52281 ! Sarcoptidae
+property_value: has_rank NCBITaxon:subfamily
 
 [Term]
 id: NCBITaxon:4751
@@ -5857,6 +7469,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:44281 ! Pneumocystidaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:47570
+name: Schizotrypanum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5690 ! Trypanosoma
+property_value: has_rank NCBITaxon:subgenus
 
 [Term]
 id: NCBITaxon:476427
@@ -5881,6 +7501,16 @@ xref: GC_ID:1
 is_a: NCBITaxon:43733 ! Muscomorpha
 
 [Term]
+id: NCBITaxon:480418
+name: Mycobacterium lepromatosis
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:19019760
+xref: PMID:25831531
+is_a: NCBITaxon:1763 ! Mycobacterium
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:481
 name: Neisseriaceae
 namespace: ncbi_taxonomy
@@ -5894,6 +7524,14 @@ is_a: NCBITaxon:206351 ! Neisseriales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:481310
+name: Demodex folliculorum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:188544 ! Demodex
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:482
 name: Neisseria
 namespace: ncbi_taxonomy
@@ -5905,6 +7543,16 @@ xref: GC_ID:11
 xref: PMID:7520730
 is_a: NCBITaxon:481 ! Neisseriaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:482538
+name: Cystoisospora belli
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:59309
+synonym: "Isospora belli" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:242060 ! Cystoisospora
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:485
@@ -5964,6 +7612,23 @@ is_a: NCBITaxon:482 ! Neisseria
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:48791
+name: Setariidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6295 ! Filarioidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:48796
+name: Setaria <nematode>
+namespace: ncbi_taxonomy
+synonym: "Setaria" EXACT scientific_name []
+xref: GC_ID:1
+is_a: NCBITaxon:48791 ! Setariidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:4890
 name: Ascomycota
 namespace: ncbi_taxonomy
@@ -5974,6 +7639,35 @@ xref: GC_ID:1
 xref: PMID:17572334
 is_a: NCBITaxon:451864 ! Dikarya
 property_value: has_rank NCBITaxon:phylum
+
+[Term]
+id: NCBITaxon:4891
+name: Saccharomycetes
+namespace: ncbi_taxonomy
+synonym: "Hemiascomycetes" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:147537 ! Saccharomycotina
+property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:4892
+name: Saccharomycetales
+namespace: ncbi_taxonomy
+synonym: "budding yeasts" EXACT genbank_common_name []
+synonym: "Endomycetales" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:4891 ! Saccharomycetes
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:4893
+name: Saccharomycetaceae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:221665
+alt_id: NCBITaxon:44280
+xref: GC_ID:1
+is_a: NCBITaxon:4892 ! Saccharomycetales
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:49202
@@ -6011,6 +7705,37 @@ is_a: NCBITaxon:451867 ! Dothideomycetidae
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:5036
+name: Histoplasma
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:299071 ! Ajellomycetaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5037
+name: Histoplasma capsulatum
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:61255
+synonym: "Ajellomyces capsulata" RELATED synonym []
+synonym: "Ajellomyces capsulatas" RELATED misspelling []
+synonym: "Ajellomyces capsulatus" RELATED genbank_synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:5036 ! Histoplasma
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5039
+name: Blastomyces dermatitidis
+namespace: ncbi_taxonomy
+synonym: "Ajellomyces dermatitidis" RELATED genbank_synonym []
+synonym: "Blastomyces dermatididis" RELATED misspelling []
+synonym: "Blastomycoides dermatitidis" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:229219 ! Blastomyces
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:5042
 name: Eurotiales
 namespace: ncbi_taxonomy
@@ -6031,6 +7756,17 @@ is_a: NCBITaxon:8015 ! Salmonidae
 property_value: has_rank NCBITaxon:subfamily
 
 [Term]
+id: NCBITaxon:5052
+name: Aspergillus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:36632
+alt_id: NCBITaxon:37503
+synonym: "Petromyces" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1131492 ! Aspergillaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:50557
 name: Insecta
 namespace: ncbi_taxonomy
@@ -6048,12 +7784,63 @@ is_a: NCBITaxon:80840 ! Burkholderiales
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:5061
+name: Aspergillus niger
+namespace: ncbi_taxonomy
+synonym: "A. niger" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:5052 ! Aspergillus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:5094
 name: Talaromyces
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:28568 ! Trichocomaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:51025
+name: Oxyuroidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:70426 ! Oxyurida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:51026
+name: Oxyuridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:51025 ! Oxyuroidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:51027
+name: Enterobius
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:51026 ! Oxyuridae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:51028
+name: Enterobius vermicularis
+namespace: ncbi_taxonomy
+synonym: "human pinworm" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:51027 ! Enterobius
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5125
+name: Hypocreales
+namespace: ncbi_taxonomy
+synonym: "Pyrenomycetes" RELATED in_part []
+xref: GC_ID:1
+is_a: NCBITaxon:222543 ! Hypocreomycetidae
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:51291
@@ -6158,6 +7945,77 @@ is_a: NCBITaxon:451864 ! Dikarya
 property_value: has_rank NCBITaxon:phylum
 
 [Term]
+id: NCBITaxon:5206
+name: Cryptococcus <Filobasidiella>
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:192653
+synonym: "Cryptococcus" EXACT scientific_name []
+synonym: "Filobasidiella" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1884633 ! Cryptococcaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5207
+name: Cryptococcus neoformans
+namespace: ncbi_taxonomy
+synonym: "Blastomyces neoformans" RELATED synonym []
+synonym: "Debaryomyces neoformans" RELATED synonym []
+synonym: "Filobasidiella neoformans" RELATED teleomorph []
+synonym: "Filobasidiella neoformornans" RELATED misspelling []
+synonym: "Filobaxidiella neoformans" RELATED misspelling []
+synonym: "Lipomyces neoformans" RELATED synonym []
+synonym: "Saccharomyces neoformans" RELATED synonym []
+synonym: "Torula neoformans" RELATED synonym []
+synonym: "Torulopsis neoformans" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1897064 ! Cryptococcus neoformans species complex
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:52281
+name: Sarcoptidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:83158 ! Sarcoptoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:52282
+name: Sarcoptes
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:474019 ! Sarcoptinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:52283
+name: Sarcoptes scabiei
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:197185
+alt_id: NCBITaxon:198574
+alt_id: NCBITaxon:268761
+alt_id: NCBITaxon:268762
+alt_id: NCBITaxon:268763
+alt_id: NCBITaxon:337908
+synonym: "Sarcoptes scabiei type canis" RELATED synonym []
+synonym: "Sarcoptes scabiei type chimp" RELATED synonym []
+synonym: "Sarcoptes scabiei type hominis" RELATED synonym []
+synonym: "Sarcoptes scabiei type suis" RELATED synonym []
+synonym: "Sarcoptes scabiei type wallaby" RELATED synonym []
+synonym: "Sarcoptes scabiei type wombati" RELATED synonym []
+synonym: "Sarcoptes scabiei var. canis" RELATED synonym []
+synonym: "Sarcoptes scabiei var. chimp" RELATED synonym []
+synonym: "Sarcoptes scabiei var. hominis" RELATED synonym []
+synonym: "Sarcoptes scabiei var. nyctereutis" RELATED synonym []
+synonym: "Sarcoptes scabiei var. suis" RELATED synonym []
+synonym: "Sarcoptes scabiei var. wallaby" RELATED synonym []
+synonym: "Sarcoptes scabiei var. wombati" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:52282 ! Sarcoptes
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:523089
 name: Haemaphysalis concinna
 namespace: ncbi_taxonomy
@@ -6182,6 +8040,27 @@ is_a: NCBITaxon:5550 ! Trichophyton
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:5234
+name: Tremellales
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:106739
+alt_id: NCBITaxon:165809
+alt_id: NCBITaxon:34476
+synonym: "jelly fungi" EXACT genbank_common_name []
+xref: GC_ID:1
+xref: PMID:17572334
+is_a: NCBITaxon:155616 ! Tremellomycetes
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:52564
+name: Oesophagostomum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:63235 ! Cloacinidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:526524
 name: Erysipelotrichia
 namespace: ncbi_taxonomy
@@ -6202,25 +8081,6 @@ is_a: NCBITaxon:526524 ! Erysipelotrichia
 property_value: has_rank NCBITaxon:order
 
 [Term]
-id: NCBITaxon:52769
-name: Actinomyces gerencseriae
-namespace: ncbi_taxonomy
-synonym: "Actinomyces israelii serovar II" RELATED synonym []
-xref: GC_ID:11
-xref: PMID:2397195
-is_a: NCBITaxon:1654 ! Actinomyces
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:52773
-name: Actinomyces meyeri
-namespace: ncbi_taxonomy
-synonym: "Actinobacterium meyer" RELATED synonym []
-xref: GC_ID:11
-is_a: NCBITaxon:1654 ! Actinomyces
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:5302
 name: Agaricomycotina
 namespace: ncbi_taxonomy
@@ -6228,6 +8088,39 @@ synonym: "Hymenomycetes" EXACT equivalent_name []
 xref: GC_ID:1
 is_a: NCBITaxon:5204 ! Basidiomycota
 property_value: has_rank NCBITaxon:subphylum
+
+[Term]
+id: NCBITaxon:53436
+name: Treponema pallidum subsp. endemicum
+namespace: ncbi_taxonomy
+synonym: "Treponema pallidum endemicum" EXACT equivalent_name []
+xref: GC_ID:11
+is_a: NCBITaxon:160 ! Treponema pallidum
+property_value: has_rank NCBITaxon:subspecies
+
+[Term]
+id: NCBITaxon:53466
+name: Mesocestoididae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6201 ! Cyclophyllidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:53467
+name: Mesocestoides
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:53466 ! Mesocestoididae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:53469
+name: Ancylostomatinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33278 ! Ancylostomatidae
+property_value: has_rank NCBITaxon:subfamily
 
 [Term]
 id: NCBITaxon:53527
@@ -6261,6 +8154,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:53549 ! Sabethini
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:54281
+name: Chrysomyini
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:43913 ! Chrysomyinae
+property_value: has_rank NCBITaxon:tribe
 
 [Term]
 id: NCBITaxon:54285
@@ -6301,6 +8202,28 @@ xref: GC_ID:1
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
+id: NCBITaxon:544448
+name: Tenericutes
+namespace: ncbi_taxonomy
+synonym: "Mollicutaeota" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:26654112
+is_a: NCBITaxon:1783272 ! Terrabacteria group
+property_value: has_rank NCBITaxon:phylum
+
+[Term]
+id: NCBITaxon:5478
+name: [Candida] glabrata
+namespace: ncbi_taxonomy
+synonym: "Candida glabrata" RELATED genbank_synonym []
+synonym: "Cryptococcus glabratus" RELATED synonym []
+synonym: "Torulopsis glabrata" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:14654427
+is_a: NCBITaxon:600669 ! Nakaseomyces/Candida clade
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:548681
 name: Herpesvirales
 namespace: ncbi_taxonomy
@@ -6334,6 +8257,58 @@ is_a: NCBITaxon:5500 ! Coccidioides
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:5506
+name: Fusarium
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:5126
+synonym: "Gibberella" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:110618 ! Nectriaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:55193
+name: Malassezia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:742845 ! Malasseziaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:55194
+name: Malassezia furfur
+namespace: ncbi_taxonomy
+synonym: "Pityriasis (Tinea) versicolor infection agent" EXACT common_name []
+synonym: "Pityrosporum orbiculare" RELATED synonym []
+synonym: "Pityrosporum ovale" RELATED synonym []
+synonym: "Saccharomyces ovalis" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:55193 ! Malassezia
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:552467
+name: Cryptococcus gattii VGIII
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1450542
+synonym: "Cryptococcus bacillisporus" RELATED genbank_synonym []
+synonym: "Cryptococcus bacillisporus VGIII" RELATED synonym []
+synonym: "Filobasidiella bacillispora" RELATED synonym []
+synonym: "Filobasidiella neoformans var. bacillispora" RELATED synonym []
+synonym: "teleomorph of Cryptococcus bacillisporus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1884637 ! Cryptococcus gattii species complex
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:554915
+name: Amoebozoa
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:23020233
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
 id: NCBITaxon:5550
 name: Trichophyton
 namespace: ncbi_taxonomy
@@ -6354,11 +8329,50 @@ is_a: NCBITaxon:1759442 ! Trichosporonaceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:555280
+name: Discosea
+namespace: ncbi_taxonomy
+synonym: "Flabellinea" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:554915 ! Amoebozoa
+
+[Term]
+id: NCBITaxon:5553
+name: Trichosporon beigelii
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5552 ! Trichosporon
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:555406
+name: Archamoebae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:23020233
+is_a: NCBITaxon:554915 ! Amoebozoa
+
+[Term]
+id: NCBITaxon:555407
+name: Centramoebida
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:1485168 ! Longamoebia
+
+[Term]
 id: NCBITaxon:555864
 name: unclassified Bornaviridae
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:178830 ! Bornaviridae
+
+[Term]
+id: NCBITaxon:55746
+name: Panagrolaimoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6236 ! Rhabditida
+property_value: has_rank NCBITaxon:superfamily
 
 [Term]
 id: NCBITaxon:5579
@@ -6367,6 +8381,17 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:1570301 ! Aureobasidiaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:55824
+name: Hirudinea
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:6403
+synonym: "Hirudinida" RELATED synonym []
+synonym: "leeches" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:42113 ! Clitellata
+property_value: has_rank NCBITaxon:subclass
 
 [Term]
 id: NCBITaxon:5583
@@ -6388,6 +8413,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:43219 ! Herpotrichiellaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:55872
+name: Dracunculoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6274 ! Spirurida
+property_value: has_rank NCBITaxon:superfamily
 
 [Term]
 id: NCBITaxon:5592
@@ -6467,19 +8500,32 @@ is_a: NCBITaxon:29105 ! Calomys
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:56426
-name: Bartonella clarridgeiae
-namespace: ncbi_taxonomy
-xref: GC_ID:11
-is_a: NCBITaxon:773 ! Bartonella
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:565302
-name: Human adenovirus B1
+id: NCBITaxon:56251
+name: Plagiorchioidea
 namespace: ncbi_taxonomy
 xref: GC_ID:1
-is_a: NCBITaxon:108098 ! Human mastadenovirus B
+is_a: NCBITaxon:27872 ! Xiphidiata
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:5653
+name: Kinetoplastida
+namespace: ncbi_taxonomy
+synonym: "Kinetoplastea" RELATED synonym []
+synonym: "kinetoplastids" RELATED blast_name []
+synonym: "kinetoplasts" EXACT genbank_common_name []
+synonym: "Protomonadida" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:33682 ! Euglenozoa
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:5654
+name: Trypanosomatidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5653 ! Kinetoplastida
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:565995
@@ -6490,6 +8536,32 @@ synonym: "Bundibugyo virus" RELATED synonym []
 synonym: "Ebolavirus bundibugyo" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:186536 ! Ebolavirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5690
+name: Trypanosoma
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5654 ! Trypanosomatidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5691
+name: Trypanosoma brucei
+namespace: ncbi_taxonomy
+synonym: "Trypanosoma (Trypanozoon) brucei" RELATED synonym []
+synonym: "Trypanosoma brucei subgroup" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:39700 ! Trypanozoon
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5693
+name: Trypanosoma cruzi
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:47570 ! Schizotrypanum
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -6504,6 +8576,14 @@ xref: PMID:10555350
 xref: PMID:11411716
 xref: PMID:12635932
 is_a: NCBITaxon:543 ! Enterobacteriaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:57077
+name: Dicrocoelium
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:73421 ! Dicrocoeliidae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -6526,6 +8606,70 @@ is_a: NCBITaxon:181550 ! Trichomonadidae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:5722
+name: Trichomonas vaginalis
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:28848
+synonym: "Tritrichomonas vaginalis" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:5721 ! Trichomonas
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:573
+name: Klebsiella pneumoniae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1096019
+alt_id: NCBITaxon:1673140
+alt_id: NCBITaxon:1795825
+alt_id: NCBITaxon:692338
+alt_id: NCBITaxon:875801
+synonym: "'Klebsiella aerogenes' (Kruse) Taylor et al. 1956" RELATED synonym []
+synonym: "Bacillus pneumoniae" RELATED synonym []
+synonym: "Bacterium pneumoniae crouposae" RELATED synonym []
+synonym: "Hyalococcus pneumoniae" RELATED synonym []
+synonym: "Klebsiella pneumonia" RELATED misspelling []
+synonym: "Klebsiella pneumoniae aerogenes" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11411715
+xref: PMID:1581186
+is_a: NCBITaxon:570 ! Klebsiella
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5738
+name: Diplomonadida
+namespace: ncbi_taxonomy
+synonym: "diplomonads" EXACT common_name []
+synonym: "diplomonads" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:207245 ! Fornicata
+
+[Term]
+id: NCBITaxon:5739
+name: Hexamitidae
+namespace: ncbi_taxonomy
+xref: GC_ID:6
+is_a: NCBITaxon:5738 ! Diplomonadida
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:5740
+name: Giardia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:68459 ! Giardiinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:574145
+name: Demodex brevis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:188544 ! Demodex
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:5752
 name: Heterolobosea
 namespace: ncbi_taxonomy
@@ -6533,6 +8677,30 @@ synonym: "Lobosa" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:2759 ! Eukaryota
 property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:5754
+name: Acanthamoeba
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33677 ! Acanthamoebidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5758
+name: Entamoeba
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33084 ! Entamoebidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5759
+name: Entamoeba histolytica
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5758 ! Entamoeba
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:5761
@@ -6558,6 +8726,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:41165 ! Schizopyrenida
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:577468
+name: unclassified Micrococcales
+namespace: ncbi_taxonomy
+synonym: "unclassified Micrococcineae" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:85006 ! Micrococcales
 
 [Term]
 id: NCBITaxon:578835
@@ -6586,6 +8762,15 @@ is_a: NCBITaxon:1280412 ! Conoidasida
 property_value: has_rank NCBITaxon:class
 
 [Term]
+id: NCBITaxon:5799
+name: Eimeriidae
+namespace: ncbi_taxonomy
+synonym: "Eimeriids" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:423054 ! Eimeriorina
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:58023
 name: Tracheophyta
 namespace: ncbi_taxonomy
@@ -6602,6 +8787,22 @@ synonym: "seed plants" EXACT common_name []
 synonym: "seed plants" RELATED blast_name []
 xref: GC_ID:1
 is_a: NCBITaxon:78536 ! Euphyllophyta
+
+[Term]
+id: NCBITaxon:5806
+name: Cryptosporidium
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:35082 ! Cryptosporidiidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5807
+name: Cryptosporidium parvum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:5806 ! Cryptosporidium
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:5809
@@ -6655,6 +8856,70 @@ is_a: NCBITaxon:43801 ! Ceratopogoninae
 property_value: has_rank NCBITaxon:tribe
 
 [Term]
+id: NCBITaxon:583
+name: Proteus <enterobacteria>
+namespace: ncbi_taxonomy
+synonym: "Liquidobacterium" RELATED synonym []
+synonym: "Proteus" EXACT scientific_name []
+xref: GC_ID:11
+xref: PMID:26944634
+is_a: NCBITaxon:1903414 ! Morganellaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5833
+name: Plasmodium falciparum
+namespace: ncbi_taxonomy
+synonym: "malaria parasite P. falciparum" EXACT genbank_common_name []
+synonym: "Plasmodium (Laverania) falciparum" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:418107 ! Plasmodium (Laverania)
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5855
+name: Plasmodium vivax
+namespace: ncbi_taxonomy
+synonym: "malaria parasite P. vivax" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:418103 ! Plasmodium (Plasmodium)
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5863
+name: Piroplasmida
+namespace: ncbi_taxonomy
+synonym: "Piroplasmids" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:422676 ! Aconoidasida
+
+[Term]
+id: NCBITaxon:5864
+name: Babesia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:32594 ! Babesiidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5873
+name: Theileria
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:27994 ! Theileriidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:5878
+name: Ciliophora
+namespace: ncbi_taxonomy
+synonym: "Ciliata" RELATED synonym []
+synonym: "ciliates" EXACT genbank_common_name []
+synonym: "ciliates" RELATED blast_name []
+xref: GC_ID:6
+is_a: NCBITaxon:33630 ! Alveolata
+
+[Term]
 id: NCBITaxon:58839
 name: Encephalitozoon intestinalis
 namespace: ncbi_taxonomy
@@ -6696,6 +8961,14 @@ is_a: NCBITaxon:59140 ! Myzomyia
 property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
 
 [Term]
+id: NCBITaxon:59263
+name: Toxascaris
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6250 ! Ascarididae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:5970
 name: Exophiala dermatitidis
 namespace: ncbi_taxonomy
@@ -6712,6 +8985,21 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:43920 ! Chrysopsinae
 property_value: has_rank NCBITaxon:tribe
+
+[Term]
+id: NCBITaxon:5988
+name: Litostomatea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:431838 ! Intramacronucleata
+property_value: has_rank NCBITaxon:class
+
+[Term]
+id: NCBITaxon:600669
+name: Nakaseomyces/Candida clade
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:374468 ! Nakaseomyces
 
 [Term]
 id: NCBITaxon:6029
@@ -6762,6 +9050,15 @@ is_a: NCBITaxon:6033 ! Encephalitozoon
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:60516
+name: Diphyllobothrium latum
+namespace: ncbi_taxonomy
+synonym: "broad fish tapeworm" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:28844 ! Diphyllobothrium
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:6072
 name: Eumetazoa
 namespace: ncbi_taxonomy
@@ -6796,6 +9093,48 @@ synonym: "flukes" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:6178 ! Trematoda
 property_value: has_rank NCBITaxon:subclass
+
+[Term]
+id: NCBITaxon:6180
+name: Strigeidida
+namespace: ncbi_taxonomy
+synonym: "Streigida" RELATED misspelling []
+synonym: "Strigeida" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:6179 ! Digenea <flatworm>
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:6181
+name: Schistosoma
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:31245 ! Schistosomatidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:6182
+name: Schistosoma japonicum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6181 ! Schistosoma
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6183
+name: Schistosoma mansoni
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6181 ! Schistosoma
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6187
+name: Schistosoma intercalatum
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6181 ! Schistosoma
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:6193
@@ -6864,6 +9203,20 @@ is_a: NCBITaxon:6201 ! Cyclophyllidea
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:6209
+name: Echinococcus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:12377596
+xref: PMID:12964823
+xref: PMID:16352465
+xref: PMID:17156584
+xref: PMID:18180956
+xref: PMID:18338180
+is_a: NCBITaxon:6208 ! Taeniidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:621
 name: Shigella boydii
 namespace: ncbi_taxonomy
@@ -6873,28 +9226,29 @@ is_a: NCBITaxon:620 ! Shigella
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:622
-name: Shigella dysenteriae
+id: NCBITaxon:6210
+name: Echinococcus granulosus
 namespace: ncbi_taxonomy
-synonym: "Bacillus dysenteriae" RELATED synonym []
-synonym: "Bacillus dysentericus" RELATED synonym []
-synonym: "Bacillus shigae" RELATED synonym []
-synonym: "Eberthella dysenteriae" RELATED synonym []
-synonym: "Escherichia/Shigella dysenteriae" EXACT equivalent_name []
-synonym: "Shigella shigae" RELATED synonym []
-xref: GC_ID:11
-xref: PMID:12054222
-is_a: NCBITaxon:620 ! Shigella
+synonym: "Echinococcus granulosus buffalo strain" RELATED synonym []
+synonym: "Echinococcus granulosus s. s." RELATED synonym []
+synonym: "Echinococcus granulosus sensu stricto" RELATED synonym []
+synonym: "Echinococcus granulosus sheep strain" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:12377596
+xref: PMID:12964823
+xref: PMID:16352465
+xref: PMID:17156584
+xref: PMID:18180956
+xref: PMID:18338180
+is_a: NCBITaxon:6209 ! Echinococcus
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:623
-name: Shigella flexneri
+id: NCBITaxon:6211
+name: Echinococcus multilocularis
 namespace: ncbi_taxonomy
-synonym: "Escherichia/Shigella flexneri" EXACT equivalent_name []
-synonym: "Shigella paradysenteriae" RELATED synonym []
-xref: GC_ID:11
-is_a: NCBITaxon:620 ! Shigella
+xref: GC_ID:1
+is_a: NCBITaxon:6209 ! Echinococcus
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -6929,12 +9283,36 @@ is_a: NCBITaxon:62323 ! funestus subgroup
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:624
-name: Shigella sonnei
+id: NCBITaxon:6236
+name: Rhabditida
 namespace: ncbi_taxonomy
-synonym: "Bacterium sonnei" RELATED synonym []
-xref: GC_ID:11
-is_a: NCBITaxon:620 ! Shigella
+alt_id: NCBITaxon:33251
+xref: GC_ID:1
+is_a: NCBITaxon:119089 ! Chromadorea
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:6246
+name: Strongyloididae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:55746 ! Panagrolaimoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:6247
+name: Strongyloides
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6246 ! Strongyloididae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:6248
+name: Strongyloides stercoralis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6247 ! Strongyloides
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -6955,6 +9333,23 @@ is_a: NCBITaxon:33256 ! Ascaridoidea
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:6251
+name: Ascaris
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6250 ! Ascarididae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:6252
+name: Ascaris lumbricoides
+namespace: ncbi_taxonomy
+synonym: "common roundworm" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6251 ! Ascaris
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:6258
 name: Baylisascaris
 namespace: ncbi_taxonomy
@@ -6970,6 +9365,14 @@ synonym: "raccoon roundworm" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:6258 ! Baylisascaris
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6264
+name: Toxocara
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33259 ! Toxocaridae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:6267
@@ -6998,25 +9401,6 @@ is_a: NCBITaxon:644710 ! Anisakis simplex complex
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:6270
-name: Pseudoterranova
-namespace: ncbi_taxonomy
-xref: GC_ID:1
-is_a: NCBITaxon:6267 ! Anisakidae
-property_value: has_rank NCBITaxon:genus
-
-[Term]
-id: NCBITaxon:6271
-name: Pseudoterranova decipiens
-namespace: ncbi_taxonomy
-synonym: "codworm" EXACT genbank_common_name []
-synonym: "Phocanema decipiens" RELATED synonym []
-synonym: "sealworm" EXACT common_name []
-xref: GC_ID:1
-is_a: NCBITaxon:6270 ! Pseudoterranova
-property_value: has_rank NCBITaxon:species
-
-[Term]
 id: NCBITaxon:6274
 name: Spirurida
 namespace: ncbi_taxonomy
@@ -7026,12 +9410,96 @@ is_a: NCBITaxon:119089 ! Chromadorea
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:6281
+name: Onchocerca
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6296 ! Onchocercidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:6282
+name: Onchocerca volvulus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6281 ! Onchocerca
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6286
+name: Dirofilaria
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6296 ! Onchocercidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:629
 name: Yersinia <bacteria>
 namespace: ncbi_taxonomy
 synonym: "Yersinia" EXACT scientific_name []
 xref: GC_ID:11
 is_a: NCBITaxon:1903411 ! Yersiniaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:6295
+name: Filarioidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6274 ! Spirurida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:6296
+name: Onchocercidae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:33297
+alt_id: NCBITaxon:6297
+xref: GC_ID:1
+is_a: NCBITaxon:6295 ! Filarioidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:630
+name: Yersinia enterocolitica
+namespace: ncbi_taxonomy
+synonym: "Bacterium enterocoliticum" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:629 ! Yersinia <bacteria>
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6308
+name: Strongylida
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6236 ! Rhabditida
+property_value: has_rank NCBITaxon:suborder
+
+[Term]
+id: NCBITaxon:6314
+name: Trichostrongyloidea
+namespace: ncbi_taxonomy
+synonym: "Trichostrongyloidae" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:6308 ! Strongylida
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:6315
+name: Trichostrongylidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6314 ! Trichostrongyloidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:6318
+name: Trichostrongylus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33263 ! Trichostrongylinae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -7049,6 +9517,14 @@ is_a: NCBITaxon:1649845 ! Yersinia pseudotuberculosis complex
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:63235
+name: Cloacinidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:27829 ! Strongyloidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:6329
 name: Trichocephalida
 namespace: ncbi_taxonomy
@@ -7059,19 +9535,74 @@ is_a: NCBITaxon:1457286 ! Dorylaimia
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:633
+name: Yersinia pseudotuberculosis
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1161941
+synonym: "[Pasteurella] lymphangitidis" RELATED misspelling []
+synonym: "Bacillus pseudotuberkulosis" RELATED synonym []
+synonym: "Bacterium pseudotuberculosis" RELATED synonym []
+synonym: "Pasteurella lymphangitidis" RELATED synonym []
+synonym: "Pasteurella pseudotuberculosis" RELATED synonym []
+synonym: "Shigella pseudotuberculosis" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:2223608
+xref: PMID:23919959
+is_a: NCBITaxon:1649845 ! Yersinia pseudotuberculosis complex
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6332
+name: Trichinellidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6329 ! Trichocephalida
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:6333
+name: Trichinella
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6332 ! Trichinellidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:63330
+name: Hendra henipavirus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:45337
+synonym: "Equine morbillivirus" RELATED synonym []
+synonym: "Hendra virus" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:7701348
+is_a: NCBITaxon:260964 ! Henipavirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6334
+name: Trichinella spiralis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6333 ! Trichinella
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6340
+name: Annelida
+namespace: ncbi_taxonomy
+synonym: "annelid worms" EXACT genbank_common_name []
+synonym: "segmented worms" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:1206795 ! Lophotrochozoa
+property_value: has_rank NCBITaxon:phylum
+
+[Term]
 id: NCBITaxon:63417
 name: Trichophyton verrucosum
 namespace: ncbi_taxonomy
 synonym: "Ectotrichophyton verrucosum" RELATED synonym []
 synonym: "Favotrichophyton verrucosum" RELATED synonym []
-xref: GC_ID:1
-is_a: NCBITaxon:5550 ! Trichophyton
-property_value: has_rank NCBITaxon:species
-
-[Term]
-id: NCBITaxon:63418
-name: Trichophyton equinum
-namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:5550 ! Trichophyton
 property_value: has_rank NCBITaxon:species
@@ -7128,11 +9659,140 @@ is_a: NCBITaxon:1652081 ! Poeae Chloroplast Group 2 (Poeae type)
 property_value: has_rank NCBITaxon:subtribe
 
 [Term]
+id: NCBITaxon:641
+name: Vibrionaceae
+namespace: ncbi_taxonomy
+synonym: "gamma-3 proteobacteria" RELATED in_part []
+xref: GC_ID:11
+xref: PMID:15143042
+xref: PMID:4954820
+xref: PMID:8427811
+is_a: NCBITaxon:135623 ! Vibrionales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:642
+name: Aeromonas
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:11155981
+xref: PMID:12067377
+xref: PMID:12807216
+xref: PMID:1380286
+xref: PMID:1380289
+xref: PMID:15388703
+xref: PMID:16560691
+xref: PMID:17012583
+xref: PMID:17158971
+xref: PMID:19567585
+xref: PMID:7520733
+xref: PMID:8347521
+xref: PMID:8934910
+is_a: NCBITaxon:84642 ! Aeromonadaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:64279
+name: Drosophila C virus
+namespace: ncbi_taxonomy
+synonym: "DCV" BROAD acronym []
+xref: GC_ID:1
+is_a: NCBITaxon:144051 ! Cripavirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:64320
 name: Zika virus
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:11051 ! Flavivirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:644
+name: Aeromonas hydrophila
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1471787
+alt_id: NCBITaxon:1471788
+alt_id: NCBITaxon:582196
+alt_id: NCBITaxon:582198
+alt_id: NCBITaxon:582214
+alt_id: NCBITaxon:582215
+alt_id: NCBITaxon:582216
+alt_id: NCBITaxon:582217
+alt_id: NCBITaxon:582218
+alt_id: NCBITaxon:582219
+alt_id: NCBITaxon:582220
+alt_id: NCBITaxon:582221
+alt_id: NCBITaxon:582222
+alt_id: NCBITaxon:582223
+alt_id: NCBITaxon:582224
+alt_id: NCBITaxon:582225
+alt_id: NCBITaxon:582226
+alt_id: NCBITaxon:582228
+alt_id: NCBITaxon:582229
+alt_id: NCBITaxon:582231
+alt_id: NCBITaxon:582236
+alt_id: NCBITaxon:582237
+alt_id: NCBITaxon:582240
+alt_id: NCBITaxon:582250
+alt_id: NCBITaxon:582251
+alt_id: NCBITaxon:582253
+alt_id: NCBITaxon:582254
+alt_id: NCBITaxon:582265
+alt_id: NCBITaxon:582266
+alt_id: NCBITaxon:582267
+alt_id: NCBITaxon:582279
+alt_id: NCBITaxon:582282
+alt_id: NCBITaxon:582284
+alt_id: NCBITaxon:582286
+alt_id: NCBITaxon:582287
+alt_id: NCBITaxon:582289
+alt_id: NCBITaxon:582290
+alt_id: NCBITaxon:582291
+alt_id: NCBITaxon:582292
+alt_id: NCBITaxon:582295
+alt_id: NCBITaxon:582297
+alt_id: NCBITaxon:582299
+alt_id: NCBITaxon:582300
+alt_id: NCBITaxon:582302
+alt_id: NCBITaxon:582303
+alt_id: NCBITaxon:582304
+alt_id: NCBITaxon:582305
+alt_id: NCBITaxon:582306
+alt_id: NCBITaxon:582307
+alt_id: NCBITaxon:582308
+alt_id: NCBITaxon:582309
+alt_id: NCBITaxon:582310
+alt_id: NCBITaxon:582311
+alt_id: NCBITaxon:582312
+alt_id: NCBITaxon:582313
+alt_id: NCBITaxon:582314
+alt_id: NCBITaxon:582315
+alt_id: NCBITaxon:582316
+alt_id: NCBITaxon:582317
+alt_id: NCBITaxon:582318
+alt_id: NCBITaxon:582319
+alt_id: NCBITaxon:582320
+alt_id: NCBITaxon:582321
+alt_id: NCBITaxon:582322
+alt_id: NCBITaxon:582323
+alt_id: NCBITaxon:582324
+alt_id: NCBITaxon:98358
+synonym: "Aeromonas dourgesi" RELATED synonym []
+synonym: "Aeromonas hydrophilia" RELATED misspelling []
+synonym: "Aeromonas liquefaciens" RELATED synonym []
+synonym: "Bacillus hydrophilus fuscus" RELATED synonym []
+synonym: "Bacterium hydrophilum" RELATED synonym []
+synonym: "Proteus hydrophilus" RELATED synonym []
+synonym: "Proteus ichthyosmius" RELATED synonym []
+synonym: "Pseudomonas hydrophila" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:16560691
+xref: PMID:19965992
+xref: PMID:23485124
+xref: PMID:932684
+is_a: NCBITaxon:642 ! Aeromonas
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -7196,6 +9856,15 @@ is_a: NCBITaxon:1653394 ! Mammarenavirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:652611
+name: Pseudomonas aeruginosa PA14
+namespace: ncbi_taxonomy
+synonym: "Pseudomonas aeruginosa str. PA14" EXACT equivalent_name []
+synonym: "Pseudomonas aeruginosa strain PA14" EXACT equivalent_name []
+xref: GC_ID:11
+is_a: NCBITaxon:287 ! Pseudomonas aeruginosa
+
+[Term]
 id: NCBITaxon:65647
 name: Ixodes holocyclus
 namespace: ncbi_taxonomy
@@ -7205,11 +9874,40 @@ is_a: NCBITaxon:6944 ! Ixodes
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:662
+name: Vibrio
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:705
+synonym: "Beneckea" RELATED synonym []
+synonym: "Listonella" RELATED synonym []
+synonym: "Microspira" RELATED synonym []
+synonym: "Pacinia" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:1371064
+xref: PMID:17978204
+xref: PMID:21057054
+xref: PMID:21296930
+xref: PMID:24409173
+xref: PMID:4935323
+xref: PMID:7520733
+xref: PMID:8590667
+is_a: NCBITaxon:641 ! Vibrionaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:66225
 name: Phaeoannellomyces
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:156300 ! Chaetothyriales incertae sedis
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:66360
+name: Cochliomyia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:54281 ! Chrysomyini
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -7231,6 +9929,28 @@ synonym: "crustaceans" RELATED blast_name []
 xref: GC_ID:1
 is_a: NCBITaxon:197562 ! Pancrustacea
 property_value: has_rank NCBITaxon:subphylum
+
+[Term]
+id: NCBITaxon:666
+name: Vibrio cholerae
+namespace: ncbi_taxonomy
+synonym: "Bacillo virgola del Koch" RELATED synonym []
+synonym: "Bacillus cholerae" RELATED synonym []
+synonym: "Bacillus cholerae-asiaticae" RELATED synonym []
+synonym: "Kommabacillus" RELATED synonym []
+synonym: "Liquidivibrio cholerae" RELATED synonym []
+synonym: "Microspira comma" RELATED synonym []
+synonym: "Pacinia cholerae-asiaticae" RELATED synonym []
+synonym: "Spirillum cholerae" RELATED synonym []
+synonym: "Spirillum cholerae-asiaticae" RELATED synonym []
+synonym: "Vibrio choleae" RELATED misspelling []
+synonym: "Vibrio cholera" RELATED synonym []
+synonym: "Vibrio cholerae-asiaticae" RELATED synonym []
+synonym: "Vibrio comma" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:9272984
+is_a: NCBITaxon:662 ! Vibrio
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:6681
@@ -7286,6 +10006,83 @@ is_a: NCBITaxon:133894 ! Penaeus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:6690
+name: Farfantepenaeus aztecus
+namespace: ncbi_taxonomy
+synonym: "brown shrimp" EXACT genbank_common_name []
+synonym: "Penaeus (Farfantepenaeus) aztecus" RELATED synonym []
+synonym: "Penaeus aztecus" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:85653 ! Farfantepenaeus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6692
+name: Pleocyemata
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6683 ! Decapoda
+property_value: has_rank NCBITaxon:suborder
+
+[Term]
+id: NCBITaxon:672
+name: Vibrio vulnificus
+namespace: ncbi_taxonomy
+synonym: "Beneckea vulnifica" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:1015934
+xref: PMID:8186099
+is_a: NCBITaxon:662 ! Vibrio
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6752
+name: Brachyura
+namespace: ncbi_taxonomy
+synonym: "short-tailed crabs" EXACT genbank_common_name []
+synonym: "true crabs" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6692 ! Pleocyemata
+property_value: has_rank NCBITaxon:infraorder
+
+[Term]
+id: NCBITaxon:6757
+name: Portunidae
+namespace: ncbi_taxonomy
+synonym: "swimming crabs" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6774 ! Portunoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:6760
+name: Scylla
+namespace: ncbi_taxonomy
+synonym: "mangrove crabs" EXACT genbank_common_name []
+synonym: "mud crabs" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6757 ! Portunidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:6774
+name: Portunoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:116706 ! Heterotremata
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:68336
+name: Bacteroidetes/Chlorobi group
+namespace: ncbi_taxonomy
+synonym: "CFB/Chlorobi group" RELATED synonym []
+synonym: "CFB/Green sulfur bacteria group" RELATED synonym []
+synonym: "Cytophagales/Green sulfur bacteria group" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:1783270 ! FCB group
+
+[Term]
 id: NCBITaxon:6843
 name: Chelicerata
 namespace: ncbi_taxonomy
@@ -7293,6 +10090,14 @@ synonym: "chelicerates" EXACT common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:6656 ! Arthropoda
 property_value: has_rank NCBITaxon:subphylum
+
+[Term]
+id: NCBITaxon:68459
+name: Giardiinae
+namespace: ncbi_taxonomy
+xref: GC_ID:6
+is_a: NCBITaxon:5739 ! Hexamitidae
+property_value: has_rank NCBITaxon:subfamily
 
 [Term]
 id: NCBITaxon:68525
@@ -7325,6 +10130,14 @@ property_value: has_rank NCBITaxon:genus
 [Term]
 id: NCBITaxon:689831
 name: Spinareovirinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:10880 ! Reoviridae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:689832
+name: Sedoreovirinae
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:10880 ! Reoviridae
@@ -7375,6 +10188,13 @@ synonym: "softbacked ticks" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:297308 ! Ixodoidea
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:693660
+name: unclassified Primate lentivirus group
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:11652 ! Primate lentivirus group
 
 [Term]
 id: NCBITaxon:6937
@@ -7447,6 +10267,14 @@ is_a: NCBITaxon:694002 ! Betacoronavirus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:694017
+name: Torovirinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:11118 ! Coronaviridae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
 id: NCBITaxon:6942
 name: Amblyomma
 namespace: ncbi_taxonomy
@@ -7515,6 +10343,17 @@ is_a: NCBITaxon:33988 ! Rickettsieae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:6951
+name: Astigmata
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:41437
+alt_id: NCBITaxon:41440
+alt_id: NCBITaxon:41441
+xref: GC_ID:1
+is_a: NCBITaxon:83137 ! Sarcoptiformes
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:6960
 name: Hexapoda
 namespace: ncbi_taxonomy
@@ -7536,6 +10375,34 @@ synonym: "Ornithodoros pavimentosus" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:6937 ! Ornithodoros
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:70426
+name: Oxyurida
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:119089 ! Chromadorea
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:7088
+name: Lepidoptera
+namespace: ncbi_taxonomy
+synonym: "butterflies and moths" EXACT genbank_common_name []
+synonym: "moths" EXACT common_name []
+synonym: "moths" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:85604 ! Amphiesmenoptera
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:70999
+name: Triatominae
+namespace: ncbi_taxonomy
+synonym: "kissing bugs" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:27479 ! Reduviidae
+property_value: has_rank NCBITaxon:subfamily
 
 [Term]
 id: NCBITaxon:712
@@ -7629,6 +10496,32 @@ synonym: "mosquitos" RELATED blast_name []
 xref: GC_ID:1
 is_a: NCBITaxon:41827 ! Culicoidea
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:71583
+name: Balantidiidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33833 ! Vestibuliferida
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:71584
+name: Balantidium
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:71583 ! Balantidiidae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:71585
+name: Neobalantidium coli
+namespace: ncbi_taxonomy
+synonym: "Balantidium coli" RELATED synonym []
+synonym: "Paramecium coli" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1314886 ! Neobalantidium
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:715962
@@ -7806,6 +10699,16 @@ is_a: NCBITaxon:1236 ! Gammaproteobacteria
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:72293
+name: Helicobacteraceae
+namespace: ncbi_taxonomy
+synonym: "Helicobacter group" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:16403855
+is_a: NCBITaxon:213849 ! Campylobacterales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:72294
 name: Campylobacteraceae
 namespace: ncbi_taxonomy
@@ -7858,24 +10761,26 @@ is_a: NCBITaxon:724 ! Haemophilus
 property_value: has_rank NCBITaxon:species
 
 [Term]
-id: NCBITaxon:73229
-name: Emmonsia
+id: NCBITaxon:73421
+name: Dicrocoeliidae
 namespace: ncbi_taxonomy
 xref: GC_ID:1
-is_a: NCBITaxon:299071 ! Ajellomycetaceae
-property_value: has_rank NCBITaxon:genus
+is_a: NCBITaxon:56251 ! Plagiorchioidea
+property_value: has_rank NCBITaxon:family
 
 [Term]
-id: NCBITaxon:73230
-name: Emmonsia crescens
+id: NCBITaxon:7371
+name: Calliphoridae
 namespace: ncbi_taxonomy
-alt_id: NCBITaxon:1809711
-synonym: "Ajellomyces crescens" RELATED synonym []
-synonym: "Chrysosporium parvum var. crescens" RELATED synonym []
-synonym: "Emmonsia parva var. crescens" RELATED synonym []
+synonym: "blow flies" EXACT common_name []
+synonym: "blow flly" EXACT common_name []
+synonym: "blow-fly" EXACT common_name []
+synonym: "blowflies" EXACT genbank_common_name []
+synonym: "blowflly" EXACT common_name []
+synonym: "bottle flies" EXACT common_name []
 xref: GC_ID:1
-is_a: NCBITaxon:73229 ! Emmonsia
-property_value: has_rank NCBITaxon:species
+is_a: NCBITaxon:43755 ! Oestroidea
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:7387
@@ -7886,6 +10791,33 @@ synonym: "botflies" EXACT common_name []
 synonym: "warble flies" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:43755 ! Oestroidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:740972
+name: Tritrichomonadida
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:20093080
+is_a: NCBITaxon:5719 ! Parabasalia
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:740973
+name: Dientamoebidae
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:135586
+synonym: "Protrichomonadinae" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:740972 ! Tritrichomonadida
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:742845
+name: Malasseziaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:162474 ! Malasseziales
 property_value: has_rank NCBITaxon:family
 
 [Term]
@@ -7943,6 +10875,16 @@ is_a: NCBITaxon:129369 ! Pulicoidea
 property_value: has_rank NCBITaxon:family
 
 [Term]
+id: NCBITaxon:7524
+name: Hemiptera
+namespace: ncbi_taxonomy
+synonym: "bugs" RELATED blast_name []
+xref: GC_ID:1
+xref: PMID:7666451
+is_a: NCBITaxon:33342 ! Paraneoptera
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:75739
 name: Eucoccidiorida
 namespace: ncbi_taxonomy
@@ -7964,6 +10906,14 @@ is_a: NCBITaxon:28211 ! Alphaproteobacteria
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:766764
+name: Debaryomycetaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:4892 ! Saccharomycetales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:768
 name: Anaplasma
 namespace: ncbi_taxonomy
@@ -7971,6 +10921,14 @@ xref: GC_ID:11
 xref: PMID:11760958
 is_a: NCBITaxon:942 ! Anaplasmataceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:76803
+name: Arteriviridae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:76804 ! Nidovirales
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:76804
@@ -8089,6 +11047,23 @@ synonym: "Gnathostomata" EXACT scientific_name []
 synonym: "jawed vertebrates" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:7742 ! Vertebrata <Metazoa>
+
+[Term]
+id: NCBITaxon:779
+name: Ehrlichia ruminantium
+namespace: ncbi_taxonomy
+synonym: "Cowdria ruminantium" RELATED synonym []
+synonym: "heartwater rickettsia" EXACT genbank_common_name []
+synonym: "Kurlovia ruminantium" RELATED synonym []
+synonym: "Nicollea ruminantium" RELATED synonym []
+synonym: "Rickettsia ruminantium" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11414267
+xref: PMID:11760958
+xref: PMID:1380292
+xref: PMID:1581187
+is_a: NCBITaxon:106178 ! canis group
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:780
@@ -8413,6 +11388,34 @@ is_a: NCBITaxon:810 ! Chlamydia
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:815
+name: Bacteroidaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:8300528
+is_a: NCBITaxon:171549 ! Bacteroidales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:816
+name: Bacteroides
+namespace: ncbi_taxonomy
+synonym: "Capsularis" RELATED synonym []
+synonym: "Ristella" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:815 ! Bacteroidaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:81852
+name: Enterococcaceae
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:20212322
+is_a: NCBITaxon:186826 ! Lactobacillales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:82105
 name: Cladophialophora
 namespace: ncbi_taxonomy
@@ -8435,6 +11438,13 @@ xref: GC_ID:1
 is_a: NCBITaxon:6946 ! Acariformes
 
 [Term]
+id: NCBITaxon:83137
+name: Sarcoptiformes
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6946 ! Acariformes
+
+[Term]
 id: NCBITaxon:83138
 name: Anystina
 namespace: ncbi_taxonomy
@@ -8451,6 +11461,29 @@ synonym: "Parasitengonae" RELATED synonym []
 synonym: "velvet mites" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:83138 ! Anystina
+
+[Term]
+id: NCBITaxon:83145
+name: Eleutherengona
+namespace: ncbi_taxonomy
+synonym: "Eleutherengonides" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:6947 ! Prostigmata
+property_value: has_rank NCBITaxon:infraorder
+
+[Term]
+id: NCBITaxon:83158
+name: Sarcoptoidea
+namespace: ncbi_taxonomy
+synonym: "Listrophoroidea" RELATED synonym []
+synonym: "Psoroptoidea" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:223472 ! Psoroptidia
+property_value: has_rank NCBITaxon:superfamily
+
+[Term]
+id: NCBITaxon:83553
+is_a: NCBITaxon:1113537 ! Chlamydia/Chlamydophila group
 
 [Term]
 id: NCBITaxon:84526
@@ -8479,6 +11512,49 @@ is_a: NCBITaxon:84527 ! Metagonimus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:84642
+name: Aeromonadaceae
+namespace: ncbi_taxonomy
+synonym: "Aeromonas group" RELATED synonym []
+xref: GC_ID:11
+is_a: NCBITaxon:135624 ! Aeromonadales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:848
+name: Fusobacterium
+namespace: ncbi_taxonomy
+synonym: "Fusibacterium" EXACT equivalent_name []
+xref: GC_ID:11
+xref: PMID:11931161
+xref: PMID:1715737
+is_a: NCBITaxon:203492 ! Fusobacteriaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:85004
+name: Bifidobacteriales
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:19244447
+xref: PMID:27446019
+is_a: NCBITaxon:1760 ! Actinobacteria <class>
+property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:85006
+name: Micrococcales
+namespace: ncbi_taxonomy
+synonym: "Micrococcineae" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11837321
+xref: PMID:19244447
+xref: PMID:19542112
+xref: PMID:20190019
+is_a: NCBITaxon:1760 ! Actinobacteria <class>
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:85007
 name: Corynebacteriales
 namespace: ncbi_taxonomy
@@ -8487,17 +11563,6 @@ synonym: "Corynebacterineae" RELATED synonym []
 xref: GC_ID:11
 xref: PMID:11837321
 xref: PMID:1736962
-xref: PMID:19244447
-is_a: NCBITaxon:1760 ! Actinobacteria <class>
-property_value: has_rank NCBITaxon:order
-
-[Term]
-id: NCBITaxon:85009
-name: Propionibacteriales
-namespace: ncbi_taxonomy
-synonym: "Propionibacterineae" RELATED synonym []
-synonym: "Propionicibacterineae" EXACT equivalent_name []
-xref: GC_ID:11
 xref: PMID:19244447
 is_a: NCBITaxon:1760 ! Actinobacteria <class>
 property_value: has_rank NCBITaxon:order
@@ -8517,6 +11582,30 @@ name: Dicondylia
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:50557 ! Insecta
+
+[Term]
+id: NCBITaxon:85552
+name: Scylla paramamosain
+namespace: ncbi_taxonomy
+synonym: "green mud crab" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:6760 ! Scylla
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:85604
+name: Amphiesmenoptera
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33392 ! Holometabola
+
+[Term]
+id: NCBITaxon:85653
+name: Farfantepenaeus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6685 ! Penaeidae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:85819
@@ -8558,6 +11647,14 @@ is_a: NCBITaxon:1386 ! Bacillus <bacterium>
 property_value: has_rank http://purl.obolibrary.org/obo/NCBITaxon_species_group
 
 [Term]
+id: NCBITaxon:88456
+name: Cyclospora cayetanensis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:44417 ! Cyclospora
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:88770
 name: Panarthropoda
 namespace: ncbi_taxonomy
@@ -8592,6 +11689,22 @@ namespace: ncbi_taxonomy
 synonym: "unclassified Enteroviruses" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:12059 ! Enterovirus
+
+[Term]
+id: NCBITaxon:90338
+name: Rhinosporidium
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:198624 ! Dermocystida
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:90339
+name: Rhinosporidium seeberi
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:90338 ! Rhinosporidium
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:90964
@@ -8637,6 +11750,15 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:28556 ! Pleosporaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:91561
+name: Cetartiodactyla
+namespace: ncbi_taxonomy
+synonym: "even-toed ungulates" RELATED blast_name []
+synonym: "whales, hippos, ruminants, pigs, camels etc." EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:314145 ! Laurasiatheria
 
 [Term]
 id: NCBITaxon:91827
@@ -8738,6 +11860,17 @@ is_a: NCBITaxon:942 ! Anaplasmataceae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:9443
+name: Primates
+namespace: ncbi_taxonomy
+synonym: "Primata" RELATED synonym []
+synonym: "primate" EXACT equivalent_name []
+synonym: "primates" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:314146 ! Euarchontoglires
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:945
 name: Ehrlichia chaffeensis
 namespace: ncbi_taxonomy
@@ -8786,6 +11919,119 @@ xref: PMID:11760958
 xref: PMID:1736961
 is_a: NCBITaxon:33993 ! Neorickettsia
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:9526
+name: Catarrhini
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:314293 ! Simiiformes
+property_value: has_rank NCBITaxon:parvorder
+
+[Term]
+id: NCBITaxon:9604
+name: Hominidae
+namespace: ncbi_taxonomy
+synonym: "great apes" EXACT genbank_common_name []
+synonym: "Pongidae" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:314295 ! Hominoidea
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:9605
+name: Homo
+namespace: ncbi_taxonomy
+synonym: "humans" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:207598 ! Homininae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:9606
+name: Homo sapiens
+namespace: ncbi_taxonomy
+synonym: "human" EXACT genbank_common_name []
+synonym: "man" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9605 ! Homo
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:967
+name: Spirillum
+namespace: ncbi_taxonomy
+xref: GC_ID:11
+xref: PMID:19625415
+is_a: NCBITaxon:119068 ! Spirillaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:976
+name: Bacteroidetes
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:171554
+synonym: "Bacteroidaeota" RELATED synonym []
+synonym: "Bacteroides-Cytophaga-Flexibacter group" RELATED synonym []
+synonym: "BCF group" RELATED synonym []
+synonym: "CFB group" RELATED synonym []
+synonym: "CFB group bacteria" RELATED blast_name []
+synonym: "Cytophaga-Flexibacter-Bacteroides phylum" RELATED synonym []
+xref: GC_ID:11
+xref: PMID:11541229
+xref: PMID:11542017
+xref: PMID:26654112
+xref: PMID:28066339
+is_a: NCBITaxon:68336 ! Bacteroidetes/Chlorobi group
+property_value: has_rank NCBITaxon:phylum
+
+[Term]
+id: NCBITaxon:9845
+name: Ruminantia
+namespace: ncbi_taxonomy
+synonym: "Artiodactyla" RELATED in_part []
+xref: GC_ID:1
+is_a: NCBITaxon:91561 ! Cetartiodactyla
+property_value: has_rank NCBITaxon:suborder
+
+[Term]
+id: NCBITaxon:9895
+name: Bovidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:35500 ! Pecora
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:9922
+name: Capra
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9963 ! Caprinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:9925
+name: Capra hircus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:57076
+synonym: "Capra aegagrus hircus" RELATED synonym []
+synonym: "Carpa hircus" RELATED misspelling []
+synonym: "domestic goat" EXACT common_name []
+synonym: "goat" EXACT genbank_common_name []
+synonym: "goats" EXACT common_name []
+synonym: "South African angora goat" RELATED misspelling []
+xref: GC_ID:1
+is_a: NCBITaxon:9922 ! Capra
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:9963
+name: Caprinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9895 ! Bovidae
+property_value: has_rank NCBITaxon:subfamily
 
 [Term]
 id: NCBITaxon:9989

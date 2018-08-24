@@ -4,22 +4,60 @@ ontology: mondo/imports/foodon_import
 [Term]
 id: BFO:0000001
 name: entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
+is_a: BFO:0000002 ! continuant
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Term]
+id: BFO:0000017
+name: realizable entity
+def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Term]
+id: BFO:0000020
+name: specifically dependent continuant
+def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+is_a: BFO:0000002 ! continuant
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
 id: BFO:0000023
 name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
-is_a: BFO:0000001 ! entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+is_a: BFO:0000017 ! realizable entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Term]
+id: BFO:0000024
+name: fiat object
+name: fiat object part
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
-is_a: BFO:0000001 ! entity
+is_a: BFO:0000004 ! independent continuant
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
 id: CHEBI:24432
@@ -51,56 +89,192 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
 [Term]
 id: ENVO:00010483
 name: environmental material
+def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
 def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
-is_a: BFO:0000040 ! material entity
+is_a: BFO:0000024 ! fiat object part
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001002
 name: foodon product type
-def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." [Wikipedia:Food]
+def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." []
+comment: The FoodOn product type class is provided as a food product category tree under which new food product categories and food products themselves can be placed.  This tree has upper level categories inspired from other product type schemes like the US Code of Federal Regulations.  However it has a much greater depth to it than the other product type schemes in an effort to group related products together.  The basis of this tree was inherited from the environment ontology (ENVO).
 is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food xsd:anyURI
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: FOODON:00001015
+name: plant food product
+def: "This food product type includes food products which are derived from or produced by a plant." []
+is_a: FOODON:00002381 ! food product by organism
+is_a: FOODON:00002403 ! food material
+intersection_of: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03411347 ! derives from plant (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001046
 name: seafood product
-is_a: FOODON:00001092 ! animal food product
+is_a: FOODON:00001092 ! vertebrate animal food product
+relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 
 [Term]
 id: FOODON:00001092
-name: animal food product
+name: vertebrate animal food product
 def: "A food product which is derived from or produced by an animal." []
 is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
-intersection_of: RO:0001000 FOODON:03411297 ! derives from animal used as food source
+intersection_of: RO:0001000 FOODON:03411297 ! derives from vertebrate animal (food source)
+
+[Term]
+id: FOODON:00001093
+name: cereal grain food product
+is_a: FOODON:00001173 ! plant seed food product
+intersection_of: FOODON:00001173 ! plant seed food product
+intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant (food source)
+
+[Term]
+id: FOODON:00001107
+name: bovine dairy food product
+is_a: FOODON:00001256 ! dairy food product
+
+[Term]
+id: FOODON:00001109
+name: caprine dairy food product
+is_a: FOODON:00001107 ! bovine dairy food product
+
+[Term]
+id: FOODON:00001141
+name: wheat based food product
+is_a: FOODON:00001093 ! cereal grain food product
+
+[Term]
+id: FOODON:00001143
+name: fungal food product
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03411261 ! derives from fungus (food source)
+
+[Term]
+id: FOODON:00001145
+name: microbial food product
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03412846 ! derives from bacteria (food source)
+
+[Term]
+id: FOODON:00001173
+name: plant seed food product
+is_a: FOODON:00001015 ! plant food product
+intersection_of: FOODON:00001015 ! plant food product
+intersection_of: RO:0001000 FOODON:03420155 ! derives from seed (anatomical part)
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001176
-name: invertebrate food product
-is_a: FOODON:00001092 ! animal food product
+name: invertebrate animal food product
+is_a: FOODON:00002403 ! food material
+intersection_of: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:00002452 ! derives from
+
+[Term]
+id: FOODON:00001184
+name: algal food product
+def: "This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms." []
+subset: subset_siren
+xref: SUBSET_SIREN:F10419
+is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002403 ! food material
+intersection_of: RO:0001000 FOODON:03411301 ! derives from algae (food source)
+relationship: RO:0002350 FOODON:03400004 ! member of product type, other
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:00001248
+name: fish food product
+is_a: FOODON:00001092 ! vertebrate animal food product
+
+[Term]
+id: FOODON:00001256
+name: dairy food product
+def: "Food made from milk." []
+is_a: FOODON:00001092 ! vertebrate animal food product
+relationship: RO:0001000 UBERON:0001913 ! derives from milk (mammary secretion)
+
+[Term]
+id: FOODON:00001257
+name: milk or milk based food product
+is_a: FOODON:00001256 ! dairy food product
 
 [Term]
 id: FOODON:00001293
 name: shellfish food product
 is_a: FOODON:00001046 ! seafood product
-is_a: FOODON:00001176 ! invertebrate food product
+intersection_of: FOODON:00001046 ! seafood product
+intersection_of: FOODON:00001176 ! invertebrate animal food product
+intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish (food source)
+
+[Term]
+id: FOODON:00001771
+name: cow milk based food product
+is_a: FOODON:00001257 ! milk or milk based food product
+
+[Term]
+id: FOODON:00001792
+name: crustacean food product
+is_a: FOODON:00001046 ! seafood product
+
+[Term]
+id: FOODON:00001911
+name: goat milk or milk based food product
+is_a: FOODON:00001109 ! caprine dairy food product
+relationship: RO:0001000 FOODON:03305803 ! derives from goat milk (food product)
+relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
+
+[Term]
+id: FOODON:00002044
+name: molluscs food product
+is_a: FOODON:00001046 ! seafood product
+
+[Term]
+id: FOODON:00002239
+name: shrimp food product
+is_a: FOODON:00001792 ! crustacean food product
+relationship: RO:0001000 FOODON:03411237 ! derives from shrimp (food source)
+
+[Term]
+id: FOODON:00002244
+name: snail food product
+is_a: FOODON:00002044 ! molluscs food product
 
 [Term]
 id: FOODON:00002381
 name: food product by organism
 is_a: FOODON:00001002 ! foodon product type
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00002403
 name: food material
+is_a: ENVO:00010483 ! environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:03000003
 name: brown shrimp
 def: "Farfantepenaeus aztecus is a species of marine penaeid shrimps found around the east coast of the USA and Mexico" []
-is_a: FOODON:03411081 ! penaeid shrimp family as food source
+is_a: FOODON:03411081 ! penaeid shrimp family (food source)
 intersection_of: NCBITaxon:6690 ! Farfantepenaeus aztecus
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
@@ -108,7 +282,7 @@ intersection_of: RO:0000087 CHEBI:33290 ! has role food
 id: FOODON:03000004
 name: green mud crab
 def: "Scylla paramamosain is a mud crab commonly consumed in South-east Asia." []
-is_a: FOODON:03412215 ! mud crab family as food source
+is_a: FOODON:03412215 ! mud crab family (food source)
 intersection_of: NCBITaxon:85552 ! Scylla paramamosain
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
@@ -116,49 +290,201 @@ intersection_of: RO:0000087 CHEBI:33290 ! has role food
 id: FOODON:03000005
 name: Indian prawn
 def: "The Indian prawn (Fenneropenaeus indicus, formerly Penaeus indicus), is one of the major commercial prawn species of the world. It is found in the Indo-West Pacific from eastern and south-eastern Africa, through India, Malaysia and Indonesia to southern China and northern Australia" []
-is_a: FOODON:03411081 ! penaeid shrimp family as food source
+is_a: FOODON:03411081 ! penaeid shrimp family (food source)
 intersection_of: NCBITaxon:29960 ! Fenneropenaeus indicus
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
 [Term]
-id: FOODON:03315468
-name: shellfish
+id: FOODON:03304511
+name: seafood newburg (dish)
+comment: SIREN DB annotation:\n* has quality 'semiliquid with solid pieces' (http://purl.obolibrary.org/obo/FOODON_03430110)\n* has quality 'fully heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440014)\n* derives from 'skeletal meat part, without bone or shell' (http://purl.obolibrary.org/obo/FOODON_03420125)\n* formed as a result of 'alcoholated' (http://purl.obolibrary.org/obo/FOODON_03460160)\n* has substance added  'spice or herb added' (http://purl.obolibrary.org/obo/FOODON_03460151)\n* has substance added  http://purl.obolibrary.org/obo/FOODON_03460185\n* has substance added  'dairy product added' (http://purl.obolibrary.org/obo/FOODON_03460242)\n* immersed in  'packed in gravy or sauce' (http://purl.obolibrary.org/obo/FOODON_03480034)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F4511
 is_a: FOODON:00001293 ! shellfish food product
+intersection_of: FOODON:00001293 ! shellfish food product
+intersection_of: RO:0001000 FOODON:03411059 ! derives from shellfish or crustacean (food source)
+relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03305803
+name: goat milk (food product)
+comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F5803
+is_a: FOODON:00001911 ! goat milk or milk based food product
+intersection_of: UBERON:0001913 ! milk (mammary secretion)
+intersection_of: RO:0002225 FOODON:03412611 ! develops from part of doe (goat) (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03315468
+name: shellfish (whole or flesh)
+comment: SIREN DB annotation:\n* has quality 'solid' (http://purl.obolibrary.org/obo/FOODON_03430151)\n* derives from 'meat part of animal' (http://purl.obolibrary.org/obo/FOODON_03420103)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F15468
+is_a: FOODON:00001293 ! shellfish food product
+relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400004
+name: product type, other
+comment: LanguaL curation note: Used only if the product does not fall under any of the major product types listed. [FDA CFSAN 1995]
+xref: LANGUAL:A0004
+is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400148
+name: milk or milk product (us cfr)
+def: "Milk in all forms, milk-based beverage, cultured milk product, or milk or milk product analog. Index infant formula under *MEAL REPLACEMENT*." []
+xref: LANGUAL:A0148
+is_a: FOODON:03400164 ! dairy product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400164
+name: dairy product (us cfr)
+def: "Milk, a product derived from milk, or a dairy product analog; includes cheese and frozen dairy desserts. [FDA CFSAN 1995]" []
+xref: LANGUAL:A0164
+is_a: FOODON:03401270 ! product type,  u.s. code of federal regulations, title 21
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400217
+name: meat, poultry, seafood or related product (us cfr)
+def: "Products of the flesh of animals. [FDA CFSAN 1995]" []
+xref: LANGUAL:A0217
+is_a: FOODON:03401270 ! product type,  u.s. code of federal regulations, title 21
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400267
+name: seafood or seafood product (us cfr)
+def: "Flesh from fish or shellfish. Includes seafood product analogs and seafood-based sausage or luncheon meat as well as such products as squid ink and clam juice." []
+xref: LANGUAL:A0267
+is_a: FOODON:03400217 ! meat, poultry, seafood or related product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400289
+name: product type, usa
+def: "Food group having common consumption, functional or manufacturing characteristics, e.g. *FRUIT OR VEGETABLE PRODUCT*, *DAIRY PRODUCT*, *CONFECTIONARY*, *PREPARED FOOD PRODUCT*, etc. [FDA CFSAN 1995]" []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0289
+is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400352
+name: product type, international
+def: "Renamed from *PRODUCT TYPE, CODEX ALIMENTARIUS* in LanguaL 2008." []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0352
+is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400361
 name: food product type
+def: "A food product type is a class of food products that is differentiated by its food composition, processing and/or consumption characteristics. This does not include brand name products but it may include generic food dish categories." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: LANGUAL:A0361
 is_a: BFO:0000040 ! material entity
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
-id: FOODON:03411021
-name: fish or lower water animal as food source
-xref: LANGUAL:B1021
-is_a: FOODON:03411297 ! animal used as food source
-property_value: hasSynonym "invertebrate, water" xsd:string
+id: FOODON:03400643
+name: classification of food and feed commodities (codex alimentarius)
+def: "Codex Alimentarius, Volume 2 - 1993, Section 2:  Pesticide Residues in Food.\n\nThe Codex Classification of food and animal feed commodities moving in trade and the description of the various items and groups of food and animal feedstuffs included in the present document have been developed by the Codex Committee on Pesticide Residues. It was first adopted by the 18th Session of the Codex Alimentarius Commission, (1989).\n\nThe Codex Classification includes food commodities and animal feedstuffs for which Codex maximum residue limits will not necessarily be established. The Classification is intended to be as complete a listing of food commodities in trade as possible, classified into groups on the basis of the commodity's similar potential for pesticide residues.\n\nThe Classification may also be appropriate for other purposes such as setting maximum levels for other types of residues or for other contaminants in food. The Codex Classification should be consulted in order to obtain a precise description of the food or animal feed commodities and, especially, in cases where Codex maximum residue limits have been set for groups of food and groups of animal feedstuffs. The Codex Classification is intended to promote harmonization of the terms used to describe commodities which are subject to maximum residue limits and of the approach to grouping commodities with similar potential for residue for which a common group maximum residue limit can be set." []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0643
+is_a: FOODON:03400352 ! product type, international
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400644
+name: a.  primary food commodities of plant origin (ccpr)
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A0644
+is_a: FOODON:03400643 ! classification of food and feed commodities (codex alimentarius)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400652
+name: 04  nuts and seeds (ccpr)
+def: "TYPE 04  -  NUTS AND SEEDS\n\nNuts and seeds are derived from a large variety of trees, shrubs and herbaceous plants, mostly cultivated.\n\nThe mature seeds or nuts are used as human food, for the production of beverages or edible vegetable oils and for the production of seed meals and cakes for animal feed." []
+xref: LANGUAL:A0652
+is_a: FOODON:03400644 ! a.  primary food commodities of plant origin (ccpr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400685
+name: 022  tree nuts (tn) (ccpr)
+def: "Tree nuts are the seeds of a variety of trees and shrubs which are characterized by a hard inedible shell enclosing an oily seed.\nThe seed is protected from pesticides applied during the growing season by the shell and other parts of the fruit.\nThe edible portion of the nut is consumed in succulent, dried or processed forms." []
+xref: LANGUAL:A0685
+is_a: FOODON:03400652 ! 04  nuts and seeds (ccpr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03401270
+name: product type,  u.s. code of federal regulations, title 21
+def: "Food and Drugs, title 21, Code of Federal Regulations. Original  food classification in LanguaL." []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: LANGUAL:A1270
+is_a: FOODON:03400289 ! product type, usa
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411047
+name: grain or seed-producing plant (food source)
+xref: LANGUAL:B1047
+is_a: FOODON:03411347 ! plant (food source)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411059
-name: shellfish or crustacean as food source
+name: shellfish or crustacean (food source)
+def: "Shellfish is a food source and fisheries term for exoskeleton-bearing aquatic invertebrates used as food, including various species of molluscs, crustaceans, and echinoderms. Although most kinds of shellfish are harvested from saltwater environments, some kinds are found in freshwater. In addition, a few species of land crabs are eaten, for example *Cardisoma guanhumi* in the Caribbean. [https://en.wikipedia.org/wiki/Shellfish]" []
 xref: LANGUAL:B1059
-is_a: FOODON:03411021 ! fish or lower water animal as food source
-union_of: FOODON:03411374 ! crustacean as food source
-union_of: FOODON:03411433 ! shellfish as food source
+is_a: FOODON:00002452
+union_of: FOODON:03411374 ! crustacean (food source)
+union_of: FOODON:03411433 ! shellfish (food source)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411081
-name: penaeid shrimp family as food source
+name: penaeid shrimp family (food source)
+def: "*Penaeidae* is a family of marine crustacean in the suborder *Dendrobranchiata*, which are often referred to as penaeid shrimp or penaeid prawn. It contains many species of economic importance, such as the tiger prawn, whiteleg shrimp, Atlantic white shrimp and Indian prawn. Many prawns are the subject of commercial fishery, and farming, both in marine settings, and in freshwater farms. [https://en.wikipedia.org/wiki/Penaeidae]" []
+synonym: "Dendrobranchiata Bate, 1888" NARROW []
+synonym: "Natantia" NARROW []
+xref: EC:No 216/2009 DCP
 xref: http://eol.org/pages/7184
 xref: LANGUAL:B1081
-is_a: FOODON:03411237 ! shrimp as food source
+is_a: FOODON:03411237 ! shrimp (food source)
+property_value: hasSynonym "dendrobranchiata" xsd:string
+property_value: hasSynonym "natantia" xsd:string
+property_value: hasSynonym "natantian decapods" xsd:string
 property_value: hasSynonym "penaeid shrimps" xsd:string
 property_value: hasSynonym "penaeidae" xsd:string
 property_value: IAO:0000114 IAO:0000428
@@ -166,11 +492,27 @@ property_value: IAO:0000119 WIKIPEDIA:Penaeus xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411134
+name: animal (mammal) (food source)
+xref: LANGUAL:B1134
+is_a: FOODON:03411297 ! vertebrate animal (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411215
+name: algae, bacteria or fungus (food source)
+xref: LANGUAL:B1215
+disjoint_from: FOODON:03411297 ! vertebrate animal (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411237
-name: shrimp as food source
+name: shrimp (food source)
 xref: http://eol.org/pages/2602479
 xref: LANGUAL:B1237
-is_a: FOODON:03411998 ! decapod as food source
+is_a: FOODON:03411998 ! decapod (food source)
 property_value: hasSynonym "caridea" xsd:string
 property_value: hasSynonym "crangonidae" xsd:string
 property_value: hasSynonym "palaemondidae" xsd:string
@@ -180,8 +522,19 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411261
+name: fungus (food source)
+def: "A fungus (plural: fungi or funguses) is any member of the group of eukaryotic organisms that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms. These organisms are classified as a kingdom, *Fungi*, which is separate from the other eukaryotic life kingdoms of plants and animals.[https://en.wikipedia.org/wiki/Fungus]" []
+xref: LANGUAL:B1261
+is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+property_value: hasSynonym "fungi" xsd:string
+property_value: hasSynonym "funguses" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411297
-name: animal used as food source
+name: vertebrate animal (food source)
 def: "Multicellular animal, e.g., fish, meat animal or poultry." []
 comment: LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
 xref: LANGUAL:B1297
@@ -190,11 +543,45 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411301
+name: algae (food source)
+def: "Unicellular and multicellular algae." []
+xref: LANGUAL:B1301
+is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411324
+name: grain plant (food source)
+xref: LANGUAL:B1324
+is_a: FOODON:03411047 ! grain or seed-producing plant (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411328
+name: goat (food source)
+synonym: "Capra hircus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328660
+xref: ITIS:180715
+xref: LANGUAL:B1328
+xref: MSW3:14200776
+xref: NCBITaxon:9925
+is_a: FOODON:03411134 ! animal (mammal) (food source)
+intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
+intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
+property_value: hasSynonym "capra hircus" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411335
-name: crab as food source
+name: crab (food source)
+def: "Crabs are decapod crustaceans of the infraorder *Brachyura*, which typically have a very short projecting \"tail\", usually entirely hidden under the thorax. They live in all the world's oceans, in fresh water, and on land, are generally covered with a thick exoskeleton and have a single pair of claws. Many other animals with similar names - such as hermit crabs, king crabs, porcelain crabs, horseshoe crabs, and crab lice - are not true crabs. \n Crabs are generally covered with a thick exoskeleton, composed primarily of highly mineralized chitin, and armed with a single pair of chelae (claws). Crabs are found in all of the world's oceans, while many crabs live in fresh water and on land, particularly in tropical regions. [https://en.wikipedia.org/wiki/Crab]" []
 xref: http://eol.org/pages/2604866
 xref: LANGUAL:B1335
-is_a: FOODON:03411998 ! decapod as food source
+is_a: FOODON:03411998 ! decapod (food source)
 property_value: hasSynonym "brachyura" xsd:string
 property_value: hasSynonym "short-tailed crabs" xsd:string
 property_value: hasSynonym "true crabs" xsd:string
@@ -202,21 +589,33 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411347
+name: plant (food source)
+def: "Multicellular plants." []
+comment: LanguaL curation note: For unicellular plants as well as for algae, mushrooms and yeast, use the appropriate narrower term under *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
+xref: LANGUAL:B1347
+is_a: FOODON:03411564 ! food source
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411374
-name: crustacean as food source
+name: crustacean (food source)
+def: "Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]" []
 xref: http://eol.org/pages/2598871
 xref: LANGUAL:B1374
-is_a: FOODON:03411059 ! shellfish or crustacean as food source
-disjoint_from: FOODON:03411433 ! shellfish as food source
+is_a: FOODON:00002452
+disjoint_from: FOODON:03411433 ! shellfish (food source)
 property_value: hasSynonym "crustacea" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411433
-name: shellfish as food source
+name: shellfish (food source)
+def: "The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates. [https://en.wikipedia.org/wiki/Shellfish]" []
 xref: LANGUAL:B1433
-is_a: FOODON:03411059 ! shellfish or crustacean as food source
+is_a: FOODON:00002452
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -231,31 +630,114 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411998
-name: decapod as food source
+name: decapod (food source)
+def: "The Decapoda or decapods (literally \"ten-footed\") are an order of crustaceans within the class Malacostraca, including many familiar groups, such as crayfish, crabs, lobsters, prawns, and shrimp. Most decapods are scavengers. [https://en.wikipedia.org/wiki/Decapoda]" []
 xref: LANGUAL:B1998
-is_a: FOODON:03411374 ! crustacean as food source
+is_a: FOODON:03411374 ! crustacean (food source)
 property_value: hasSynonym "decapoda" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03412215
-name: mud crab family as food source
-xref: http://eol.org/pages/7229
+name: mud crab family (food source)
+def: "Mud crab may refer to any crab that lives in or near mud, such as: species from family *Portunidae*, such as *Scylla serrata*; *Scylla tranquebarica*; *Scylla paramamosain*; members of the family *Panopeidae*, such as *Panopeus herbstii*; members of the family *Xanthidae*; *Helice crassa*, the tunnelling mud crab. [https://en.wikipedia.org/wiki/Mud_crab]" []
+xref: http://eol.org/pages/7194
 xref: LANGUAL:B2215
-is_a: FOODON:03411335 ! crab as food source
+is_a: FOODON:03411335 ! crab (food source)
 property_value: hasSynonym "mud crabs" xsd:string
+property_value: hasSynonym "panopeidae" xsd:string
 property_value: hasSynonym "pebble crabs" xsd:string
+property_value: hasSynonym "portunidae" xsd:string
 property_value: hasSynonym "rubble crabs" xsd:string
+property_value: hasSynonym "scylla spp." xsd:string
 property_value: hasSynonym "xanthidae" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412345
+name: lichen (food source)
+def: "Lichens are composite organisms consisting of a symbiotic association of a fungus (the mycobiont) with a photosynthetic partner (the photobiont or phycobiont), usually either a green alga (commonly *Trebouxia*) or cyanobacterium (commonly *Nostoc*)." []
+xref: LANGUAL:B2345
+is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 WIKIPEDIA:Lichen xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412611
+name: doe (goat) (food source)
+synonym: "Capra hircus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328660
+xref: ITIS:180715
+xref: LANGUAL:B2611
+xref: MSW3:14200776
+xref: NCBITaxon:9925
+is_a: FOODON:03411328 ! goat (food source)
+intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
+intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
+property_value: hasSynonym "capra hircus" xsd:string
+property_value: hasSynonym "nanny goat" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412702
+name: kid (food source)
+synonym: "Capra hircus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328660
+xref: ITIS:180715
+xref: LANGUAL:B2702
+xref: MSW3:14200776
+xref: NCBITaxon:9925
+is_a: FOODON:03411328 ! goat (food source)
+intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
+intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03412846
+name: bacteria (food source)
+xref: LANGUAL:B2846
+is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+intersection_of: FOODON:00001303 NCBITaxon:2 ! has taxonomic identifier Bacteria
+intersection_of: FOODON:00001303 NCBITaxon:2 {all_only="true"} ! has taxonomic identifier Bacteria
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03420110
+name: peel, core or seed
+is_a: FOODON:03420167 ! fruit part
+union_of: FOODON:03420293 ! fruit core (anatomical part)
+union_of: FOODON:03420294 ! fruit peel (anatomical part)
+union_of: FOODON:03420295 ! fruit seed (anatomical part)
+
+[Term]
+id: FOODON:03420113
+name: milk or milk component
+def: "A broad term that includes milk and its components, cream, curd and whey; use the appropriate specific term when milk or a milk product is the principal ingredient. Use the appropriate term under *MEAT ANIMAL* to index the source of the milk (note: 21 CFR 131.110 defines milk as cow's milk)." []
+is_a: UBERON:0000463 ! organism substance
 
 [Term]
 id: FOODON:03420116
 name: part of plant or animal
 def: "Anatomical part of the plant or animal from which the food product or its major ingredient is derived, e.g., *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*." []
 is_a: BFO:0000040 ! material entity
+
+[Term]
+id: FOODON:03420122
+name: nonmeat part of animal
+def: "Bone, feathers, shell, skin or trim fat." []
+is_a: FOODON:03420127 ! animal body or body part
+
+[Term]
+id: FOODON:03420127
+name: animal body or body part
+def: "Includes carcass meat, organ meat, and nonmeat parts of animals, as well as the whole animal." []
+is_a: FOODON:03420164 ! part of animal
 
 [Term]
 id: FOODON:03420144
@@ -269,10 +751,27 @@ def: "The parts of a plant that are not fruit or seed." []
 is_a: FOODON:03420174 ! part of plant
 
 [Term]
+id: FOODON:03420155
+name: seed (anatomical part)
+def: "The main propagative part of a plant, especially the kernel of a grain or nut. The bulk of the seed is formed by the endosperm, which encloses the germ and is covered by skin (bran)." []
+is_a: FOODON:03420167 ! fruit part
+
+[Term]
 id: FOODON:03420164
 name: part of animal
 def: "Anatomical part of an animal; includes eggs and milk that, although separated from the animal, are prouced as integral parts and are affected by the animal's food intake and metabolism." []
 is_a: FOODON:03420116 ! part of plant or animal
+
+[Term]
+id: FOODON:03420165
+name: fruit or seed
+is_a: FOODON:03420174 ! part of plant
+
+[Term]
+id: FOODON:03420167
+name: fruit part
+def: "The fleshy fruit of any plant. *FRUIT* includes vegetables berries and pods as well. The bulk of a fruit is its fleshy part, which is covered by a peel (skin) and which encloses a core, pit or seeds." []
+is_a: FOODON:03420165 ! fruit or seed
 
 [Term]
 id: FOODON:03420174
@@ -316,6 +815,32 @@ name: pollen
 is_a: FOODON:03420310 ! stamen
 
 [Term]
+id: FOODON:03420293
+name: fruit core (anatomical part)
+def: "The hard, central part of an apple, pear, etc., that contains the seeds (Source: Webster's)" []
+is_a: FOODON:03420167 ! fruit part
+intersection_of: BFO:0000051 PO:0009085 ! has part exocarp
+intersection_of: BFO:0000051 PO:0009086 ! has part endocarp
+intersection_of: BFO:0000051 PO:0009087 ! has part mesocarp
+disjoint_from: FOODON:03420294 ! fruit peel (anatomical part)
+disjoint_from: FOODON:03420295 ! fruit seed (anatomical part)
+
+[Term]
+id: FOODON:03420294
+name: fruit peel (anatomical part)
+def: "The rind or skin of fruit (Source: Webster's)" []
+is_a: FOODON:03420167 ! fruit part
+disjoint_from: FOODON:03420295 ! fruit seed (anatomical part)
+
+[Term]
+id: FOODON:03420295
+name: fruit seed (anatomical part)
+def: "The part of a flowering plant that typically contains the embryo with its protective coat and stored food and that can develop into a new plant under the proper conditions; fertilised and mature ovule (Source: Webster's).  .Seeds and fruits commonly called seeds include: grain, kernel, berry, ear, corn, nut. (Source: Webster's Thesaurus)." []
+is_a: FOODON:03420167 ! fruit part
+intersection_of: FOODON:03420155 ! seed (anatomical part)
+intersection_of: RO:0001000 PO:0009001 ! derives from fruit
+
+[Term]
 id: FOODON:03420310
 name: stamen
 def: "A pollen-bearing organ in a flower, made up of a slender stalk (filament) and a pollen sac (anther) (Webster's)" []
@@ -324,7 +849,7 @@ is_a: FOODON:03420237 ! floret or flower
 [Term]
 id: NCBITaxon:111520
 name: Penaeoidea
-is_a: NCBITaxon:6683 ! Decapoda
+is_a: NCBITaxon:6684 ! Dendrobranchiata
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -340,15 +865,41 @@ is_a: NCBITaxon:116704 ! Eubrachyura
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:117571
+name: Euteleostomi
+synonym: "bony vertebrates" EXACT []
+is_a: NCBITaxon:7776 ! Gnathostomata <vertebrate>
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:1338369
+name: Dipnotetrapodomorpha
+is_a: NCBITaxon:117571 ! Euteleostomi
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:133898
 name: Fenneropenaeus
 is_a: NCBITaxon:6685 ! Penaeidae
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:1437010
+name: Boreoeutheria
+is_a: NCBITaxon:9347 ! Eutheria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:197562
 name: Pancrustacea
 is_a: NCBITaxon:33317 ! Protostomia
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:2
+name: Bacteria
+synonym: "eubacteria" EXACT []
+is_a: OBI:0100026 ! organism
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -363,6 +914,33 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 id: NCBITaxon:29960
 name: Fenneropenaeus indicus
 is_a: NCBITaxon:133898 ! Fenneropenaeus
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:314145
+name: Laurasiatheria
+is_a: NCBITaxon:1437010 ! Boreoeutheria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:32523
+name: Tetrapoda
+synonym: "tetrapods" EXACT []
+is_a: NCBITaxon:1338369 ! Dipnotetrapodomorpha
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:32524
+name: Amniota
+synonym: "amniotes" EXACT []
+is_a: NCBITaxon:32523 ! Tetrapoda
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:32525
+name: Theria <Mammalia>
+synonym: "Theria" EXACT []
+is_a: NCBITaxon:40674 ! Mammalia
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -384,6 +962,26 @@ is_a: NCBITaxon:33213 ! Bilateria
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:33511
+name: Deuterostomia
+synonym: "deuterostomes" EXACT []
+is_a: NCBITaxon:33213 ! Bilateria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:35500
+name: Pecora
+is_a: NCBITaxon:91561 ! Cetartiodactyla
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:40674
+name: Mammalia
+synonym: "mammals" EXACT []
+is_a: NCBITaxon:32524 ! Amniota
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:6657
 name: Crustacea
 synonym: "crustaceans" EXACT []
@@ -393,13 +991,19 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 [Term]
 id: NCBITaxon:6682
 name: Eucarida
-is_a: NCBITaxon:6657 ! Crustacea
+is_a: NCBITaxon:72041 ! Eumalacostraca
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:6683
 name: Decapoda
 is_a: NCBITaxon:6682 ! Eucarida
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6684
+name: Dendrobranchiata
+is_a: NCBITaxon:6683 ! Decapoda
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -438,16 +1042,53 @@ is_a: NCBITaxon:6774 ! Portunoidea
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:6760
+name: Scylla
+synonym: "mangrove crabs" EXACT []
+synonym: "mud crabs" EXACT []
+is_a: NCBITaxon:6757 ! Portunidae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:6774
 name: Portunoidea
 is_a: NCBITaxon:116706 ! Heterotremata
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:72041
+name: Eumalacostraca
+is_a: NCBITaxon:6657 ! Crustacea
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:7711
+name: Chordata
+synonym: "chordates" EXACT []
+is_a: NCBITaxon:33511 ! Deuterostomia
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:7742
+name: Vertebrata <Metazoa>
+synonym: "Vertebrata" EXACT []
+synonym: "vertebrates" EXACT []
+is_a: NCBITaxon:7711 ! Chordata
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:7776
+name: Gnathostomata <vertebrate>
+synonym: "Gnathostomata" EXACT []
+synonym: "jawed vertebrates" EXACT []
+is_a: NCBITaxon:7742 ! Vertebrata <Metazoa>
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:85552
 name: Scylla paramamosain
 synonym: "green mud crab" EXACT []
-is_a: NCBITaxon:6757 ! Portunidae
+is_a: NCBITaxon:6760 ! Scylla
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -457,26 +1098,423 @@ is_a: NCBITaxon:6685 ! Penaeidae
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:91561
+name: Cetartiodactyla
+synonym: "whales, hippos, ruminants, pigs, camels etc." EXACT []
+is_a: NCBITaxon:314145 ! Laurasiatheria
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9347
+name: Eutheria
+synonym: "eutherian mammals" EXACT []
+synonym: "placental mammals" EXACT []
+synonym: "placentals" EXACT []
+is_a: NCBITaxon:32525 ! Theria <Mammalia>
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9895
+name: Bovidae
+is_a: NCBITaxon:35500 ! Pecora
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9925
+name: Capra hircus
+synonym: "domestic goat" EXACT []
+synonym: "goat" EXACT []
+synonym: "goats" EXACT []
+is_a: NCBITaxon:9963 ! Caprinae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9963
+name: Caprinae
+is_a: NCBITaxon:9895 ! Bovidae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: OBI:0100026
 name: organism
 def: "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs." []
 is_a: BFO:0000040 ! material entity
 property_value: IAO:0000111 "organism" xsd:string
+property_value: IAO:0000112 "animal" xsd:string
+property_value: IAO:0000112 "fungus" xsd:string
+property_value: IAO:0000112 "plant" xsd:string
+property_value: IAO:0000112 "virus" xsd:string
 property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000116 "10/21/09: This is a placeholder term, that should ideally be imported from the NCBI taxonomy, but the high level hierarchy there does not suit our needs (includes plasmids and 'other organisms')" xsd:string
+property_value: IAO:0000116 "13-02-2009:\nOBI doesn't take position as to  when an organism starts or ends being an organism - e.g. sperm, foetus.\nThis issue is outside the scope of OBI." xsd:string
+property_value: IAO:0000117 "GROUP: OBI Biomaterial Branch" xsd:string
 property_value: IAO:0000119 "WEB: http://en.wikipedia.org/wiki/Organism" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+
+[Term]
+id: PO:0009001
+name: fruit
+def: "A multi-tissue plant structure (PO:0025496) that develops from a gynoecium (PO:0009062), or a single carpel (PO:0009030), and at maturity may have as parts one or more seeds (PO:0009010)." []
+is_a: PO:0025496 ! multi-tissue plant structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009007
+name: portion of plant tissue
+def: "A plant structure (PO:0009011) that consists predominantly of similarly specialized plant cells (PO:0009002) of one or more types." []
+is_a: PO:0009011 ! plant structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009011
+name: plant structure
+def: "An anatomical structure that is or was part of a plant, or was derived from a part of a plant." []
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009084
+name: pericarp
+def: "A portion of plant tissue (PO:0009007) that is the outer layer (wall) of a fruit (PO:0009001), and develops from a plant ovary (PO:0009072) or a carpel (PO:0009030) wall." []
+is_a: PO:0009007 ! portion of plant tissue
+intersection_of: BFO:0000051 PO:0009085 ! has part exocarp
+intersection_of: BFO:0000051 PO:0009086 ! has part endocarp
+intersection_of: BFO:0000051 PO:0009087 ! has part mesocarp
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009085
+name: exocarp
+def: "A portion of plant tissue (PO:0009007) that is the outer layer of a pericarp (PO:0009084)." []
+is_a: PO:0009007 ! portion of plant tissue
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009086
+name: endocarp
+def: "A portion of plant tissue (PO:0009007) that is the innermost differentiated layer of a pericarp (PO:0009084)." []
+is_a: PO:0009007 ! portion of plant tissue
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009087
+name: mesocarp
+def: "A portion of plant tissue (PO:0009007) that is the middle layer of a pericarp (PO:0009084)." []
+is_a: PO:0009007 ! portion of plant tissue
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0025496
+name: multi-tissue plant structure
+def: "A plant structure (PO:0009011) that has as parts two or more portions of plant tissue (PO:0009007) of at least two different types and which through specific morphogenetic processes forms a single structural unit demarcated by primarily bona-fide boundaries from other structural units of different types." []
+is_a: PO:0009011 ! plant structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0030108
+name: berry fruit
+def: "A fruit (PO:0009001) which at maturity comprises a fleshy endocarp (PO:0009086), fleshy mesocarp (PO:0009087), and fleshy exocarp (PO:0009085)." []
+is_a: PO:0009001 ! fruit
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0030109
+name: hesperidium fruit
+def: "A berry fruit (PO:0030108) which develops from a superior gynoecium (PO:0009062) and at maturity comprises a thickened exocarp (PO:0009085), thickened mesocarp (PO:0009087), and endocarp (PO:0009086), and has as parts juice sacs (PO:0006013) on a carpel adaxial epidermis (PO:0025618)." []
+is_a: PO:0030108 ! berry fruit
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: UBERON:0000463
+name: organism substance
+def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." []
+is_a: FOODON:03420122 ! nonmeat part of animal
+
+[Term]
+id: UBERON:0001913
+name: milk (mammary secretion)
+def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
+is_a: FOODON:03420113 ! milk or milk component
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Typedef]
+id: BFO:0000050
+name: part of
+def: "a core relation that holds between a part and its whole" []
+property_value: IAO:0000111 "is part of" xsd:string
+property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
+property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
+property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
+property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
+property_value: IAO:0000118 "part_of" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+property_value: seeAlso http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections
+property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartOf
+property_value: seeAlso http://www.obofoundry.org/ro/#OBO_REL:part_of xsd:string
+is_transitive: true
+is_a: RO:0002131 ! overlaps
+inverse_of: BFO:0000051 ! has part
+
+[Typedef]
+id: BFO:0000051
+name: has part
+name: has_part
+def: "a core relation that holds between a whole and its part" []
+property_value: IAO:0000111 "has part" xsd:string
+property_value: IAO:0000112 "my body has part my brain (continuant parthood, two material entities)" xsd:string
+property_value: IAO:0000112 "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)" xsd:string
+property_value: IAO:0000112 "this year has part this day (occurrent parthood)" xsd:string
+property_value: IAO:0000116 "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'." xsd:string
+property_value: IAO:0000118 "has_part" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+is_transitive: true
+is_a: RO:0002131 ! overlaps
+
+[Typedef]
+id: FOODON:00001303
+name: has taxonomic identifier
+
+[Typedef]
+id: FOODON:00002420
+holds_over_chain: BFO:0000051 RO:0001000
+
+[Typedef]
+id: RO:0000052
+name: inheres in
+def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
+property_value: IAO:0000111 "inheres in" xsd:string
+property_value: IAO:0000112 "this fragility inheres in this vase" xsd:string
+property_value: IAO:0000112 "this red color inheres in this apple" xsd:string
+property_value: IAO:0000116 "A dependent inheres in its bearer at all times for which the dependent exists." xsd:string
+property_value: IAO:0000118 "inheres_in" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+is_a: RO:0002314 ! inheres in part of
+inverse_of: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000053
+name: bearer of
+def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
+property_value: IAO:0000111 "bearer of" xsd:string
+property_value: IAO:0000112 "this apple is bearer of this red color" xsd:string
+property_value: IAO:0000112 "this vase is bearer of this fragility" xsd:string
+property_value: IAO:0000116 "A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist." xsd:string
+property_value: IAO:0000118 "bearer_of" xsd:string
+property_value: IAO:0000118 "is bearer of" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+range: BFO:0000020 ! specifically dependent continuant
 
 [Typedef]
 id: RO:0000087
 name: has role
 def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
+property_value: IAO:0000112 "this person has role this investigator role (more colloquially: this person has this role of investigator)" xsd:string
+property_value: IAO:0000116 "A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists." xsd:string
+property_value: IAO:0000118 "has_role" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000023 ! role
+is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+subset: ro-eco
+property_value: IAO:0000112 "this cell derives from this parent cell (cell division)" xsd:string
+property_value: IAO:0000112 "this nucleus derives from this parent nucleus (nuclear division)" xsd:string
 property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops from'." xsd:string
+property_value: IAO:0000118 "derives_from" xsd:string
+property_value: IAO:0000232 "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_reflexive: true
+inverse_of: RO:0001001 ! derives into
+
+[Typedef]
+id: RO:0001001
+name: derives into
+def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+subset: ro-eco
+property_value: IAO:0000112 "this parent cell derives into this cell (cell division)" xsd:string
+property_value: IAO:0000112 "this parent nucleus derives into this nucleus (nuclear division)" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops into'. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking 'derives from' rather than the forward-looking 'derives into'." xsd:string
+property_value: IAO:0000118 "derives_into" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
+id: RO:0002131
+name: overlaps
+def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+holds_over_chain: BFO:0000050 BFO:0000050
+holds_over_chain: BFO:0000051 BFO:0000050
+holds_over_chain: BFO:0000051 RO:0002131
+is_a: RO:0002323 ! mereotopologically related to
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
+
+[Typedef]
+id: RO:0002202
+name: develops from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_transitive: true
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002203 ! develops into
+
+[Typedef]
+id: RO:0002203
+name: develops into
+def: "inverse of develops from" []
+subset: RO:0002259
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_transitive: true
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002387 ! has potential to develop into
+is_a: RO:0002388 ! has potential to directly develop into
+
+[Typedef]
+id: RO:0002225
+name: develops from part of
+def: "x develops from part of y if and only if there exists some z such that x develops from z and z is part of y" []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002258
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "false" xsd:boolean
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
+is_a: RO:0002324 ! developmentally related to
+inverse_of: RO:0002286 ! developmentally succeeded by
+
+[Typedef]
+id: RO:0002286
+name: developmentally succeeded by
+def: "Inverse of developmentally preceded by" []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002314
+name: inheres in part of
+def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
+property_value: IAO:0000116 "Because part_of is transitive, inheres in is a sub-relation of inheres in part of" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+holds_over_chain: RO:0000052 BFO:0000050
+is_a: RO:0002502 ! depends on
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002323
+name: mereotopologically related to
+def: "A mereological relationship or a topological relationship" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+
+[Typedef]
+id: RO:0002324
+name: developmentally related to
+def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
+id: RO:0002350
+name: member of
+def: "is member of is a mereological relation between a item and a collection." []
+property_value: IAO:0000112 "An organism that is a member of a population of organisms" xsd:string
+property_value: IAO:0000118 "is member of" xsd:string
+property_value: IAO:0000118 "member part of" xsd:string
+property_value: IAO:0000119 "SIO" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+is_a: BFO:0000050 ! part of
+inverse_of: RO:0002351 ! has member
+
+[Typedef]
+id: RO:0002351
+name: has member
+def: "has member is a mereological relation between a collection and an item." []
+property_value: IAO:0000119 "SIO" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: RO:0001900 RO:0001901
+is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002384
+name: has developmental potential involving
+def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: RO:0002387
+name: has potential to develop into
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002388
+name: has potential to directly develop into
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002387 ! has potential to develop into
+
+[Typedef]
+id: RO:0002502
+name: depends on
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: seeAlso BFO:0000169
 

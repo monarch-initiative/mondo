@@ -96,6 +96,7 @@ test: debug.owl mondo-edit.owl sparql_test_edit sparql_test_main_owl sparql_test
 
 prepare_release: $(ARTEFACTS)
 	rsync -R $^ ../../target
+	rsync -R $^ ../..
 	cp ../../Changes.md ../../target
 
 all_includes: $(INCLUDES_OWL)
