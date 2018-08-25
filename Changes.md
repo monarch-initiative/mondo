@@ -1,3 +1,44 @@
+## 2018-08-24 release
+
+### New classes
+
+Addition of UBERON and GO grouping classes
+
+ * [nasolacrimal duct disease](http://purl.obolibrary.org/obo/MONDO_0044984)
+ * [face disease](http://purl.obolibrary.org/obo/MONDO_0044987)
+ * [lymphoid system disease](http://purl.obolibrary.org/obo/MONDO_0044986)
+ * [foot disease](http://purl.obolibrary.org/obo/MONDO_0044989)
+ * [hip disease](http://purl.obolibrary.org/obo/MONDO_0044988)
+ * [sympathetic nervous system disease](http://purl.obolibrary.org/obo/MONDO_0044993)
+ * [cerebral cortex disease](http://purl.obolibrary.org/obo/MONDO_0044996)
+ * [parasympathetic nervous system disease](http://purl.obolibrary.org/obo/MONDO_0044995)
+ * [hand disease](http://purl.obolibrary.org/obo/MONDO_0044990)
+ * [mouth mucosa disease](http://purl.obolibrary.org/obo/MONDO_0044992)
+ * [upper digestive tract disease](http://purl.obolibrary.org/obo/MONDO_0044991)
+ * [carpal region disease](http://purl.obolibrary.org/obo/MONDO_0044998)
+ * [midbrain disease](http://purl.obolibrary.org/obo/MONDO_0044997)
+ * [scalp disease](http://purl.obolibrary.org/obo/MONDO_0044999)
+ * [ligament disease](http://purl.obolibrary.org/obo/MONDO_0045004)
+ * [vertebral disease](http://purl.obolibrary.org/obo/MONDO_0045002)
+ * [scrotal disease](http://purl.obolibrary.org/obo/MONDO_0045003)
+ * [cardiac ventricle disease](http://purl.obolibrary.org/obo/MONDO_0045001)
+ * [cholesterol metabolism disease](http://purl.obolibrary.org/obo/MONDO_0045008)
+ * [glycoprotein metabolism disease](http://purl.obolibrary.org/obo/MONDO_0045010)
+ * [cholesterol biosynthetic process disease](http://purl.obolibrary.org/obo/MONDO_0045017)
+ * [creatine biosynthetic process disease](http://purl.obolibrary.org/obo/MONDO_0045018)
+ * [carbohydrate transport disease](http://purl.obolibrary.org/obo/MONDO_0045015)
+ * [cholesterol catabolic process disease](http://purl.obolibrary.org/obo/MONDO_0045016)
+ * [disease of extraembryonic membrane](http://purl.obolibrary.org/obo/MONDO_0045013)
+ * [tetrahydrobiopterin metabolic process disease](http://purl.obolibrary.org/obo/MONDO_0045014)
+ * [keratinization disease](http://purl.obolibrary.org/obo/MONDO_0045011)
+ * [steroid metabolism disease](http://purl.obolibrary.org/obo/MONDO_0045012)
+ * [lactation disease](http://purl.obolibrary.org/obo/MONDO_0045019)
+ * [glycine metabolic process disease](http://purl.obolibrary.org/obo/MONDO_0045020)
+ * [sucrose intolerance disease](http://purl.obolibrary.org/obo/MONDO_0045021)
+ * [disorder of organic acid metabolism](http://purl.obolibrary.org/obo/MONDO_0045022)
+ * [acquired adrenogenital syndrome](http://purl.obolibrary.org/obo/MONDO_0045023)
+
+
 ## 2018-08-19 release
 
 ### Summary
