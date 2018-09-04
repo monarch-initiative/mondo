@@ -1,0 +1,28 @@
+pattern_name: autoimmune
+
+classes:
+  disease: MONDO:0000001
+  autoimmunity: HP:0002960
+
+relations:
+  disease arises from feature: RO:0004022
+
+vars:
+  disease: "'disease'"
+
+name:
+  text: "autoimmune %s"
+  vars:
+   - disease
+   
+def:
+  text: "An autoimmune form of %s."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'disease arises from feature' some 'autoimmunity'"
+  vars:
+    - disease
+
+

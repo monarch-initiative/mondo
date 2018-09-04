@@ -1,0 +1,36 @@
+pattern_name: infantile
+
+classes:
+  infantile: HP:0003593
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "infantile %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "infantile onset %s"
+    vars:
+     - disease
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s of infancy"
+    vars:
+     - disease
+
+def:
+  text: "A %s that occurs between 28 days to one year of life.."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'infantile'"
+  vars:
+    - disease
+
