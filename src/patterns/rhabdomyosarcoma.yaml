@@ -1,0 +1,52 @@
+pattern_name: rhabdomyosarcoma (disease) disease has location X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/rhabdomyosarcoma_(disease)_disease_has_location_X
+
+description: >-
+  This is auto-generated. Add your description here
+
+  Examples: [rhabdomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016282), [breast rhabdomyosarcoma](http://purl.obolibrary.org/obo/MONDO_0002859), [testis rhabdomyosarcoma](http://purl.obolibrary.org/obo/MONDO_0002860) (15 total)
+
+classes: 
+  rhabdomyosarcoma (disease): "MONDO:0005212"
+
+
+relations: 
+  disease has location: "RO:0004026"
+
+
+vars:
+  v0: "owl:Thing"
+
+name:
+  # Induced, frequency=0.8, p=http://www.w3.org/2000/01/rdf-schema#label 
+  text: "%s rhabdomyosarcoma"
+  vars:
+    - v0
+
+def:
+  # Induced, frequency=0.4666666666666667, p=http://purl.obolibrary.org/obo/IAO_0000115 
+  text: "A malignant mesenchymal tumor with skeletal muscle differentiation affecting the %s."
+  vars:
+    - v0
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: %s rhabdomyosarcoma (disease)
+    vars:
+      - v0
+  - annotationProperty: related_synonym
+    # Induced p=related_synonym 
+    text: rhabdomyosarcoma of the %s
+    vars:
+      - v0
+
+
+equivalentTo:
+  text: "'rhabdomyosarcoma (disease)' and ('disease has location' some %s)"
+  vars:
+    - v0
