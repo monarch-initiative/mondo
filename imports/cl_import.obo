@@ -462,6 +462,20 @@ relationship: RO:0002220 UBERON:0001763
 relationship: RO:0003000 UBERON:0001752
 
 [Term]
+id: CL:0000062
+name: osteoblast
+namespace: cell
+def: "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell." [GO_REF:0000034, MESH:A11.329.629]
+comment: non-encoded relationships from VSAO - capable_of_producing VSAO:0000020
+xref: BTO:0001593
+xref: CALOHA:TS-0720
+xref: FMA:66780
+is_a: CL:0000055 ! non-terminally differentiated cell
+is_a: CL:0002320 ! connective tissue cell
+relationship: RO:0002202 CL:0007010 ! preosteoblast
+relationship: RO:0003000 UBERON:0008883
+
+[Term]
 id: CL:0000064
 name: ciliated cell
 namespace: cell
@@ -6165,6 +6179,19 @@ def: "Skeletogenic cell that has the potential to develop into a chondroblast; a
 is_a: CL:0000055 ! non-terminally differentiated cell
 created_by: haendel
 creation_date: 2012-06-27T10:44:01Z
+
+[Term]
+id: CL:0007010
+name: preosteoblast
+namespace: cell
+def: "Skeletogenic cell that has the potential to transform into an osteoblast, and develops from neural crest or mesodermal cells." [GO_REF:0000034]
+synonym: "osteoprogenitor cell" EXACT []
+is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: BFO:0000050 UBERON:0008883
+relationship: RO:0002202 CL:0000222 ! mesodermal cell
+relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
+created_by: haendel
+creation_date: 2012-06-27T10:57:21Z
 
 [Term]
 id: CL:0008000

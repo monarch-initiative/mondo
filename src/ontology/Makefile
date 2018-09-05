@@ -54,7 +54,7 @@ all: test all_artefacts
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo ecto hgnc foodon
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo hgnc foodon
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -64,13 +64,15 @@ SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
 
 
-MAIN_PRODUCTS = $(ONT) $(ONT)-component
+MAIN_PRODUCTS = $(ONT) $(ONT)-base
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
   $(IMPORT_FILES) \
   $(MAIN_FILES) \
   $(REPORT_FILES) \
   $(SUBSET_FILES)
+
+ASSETS = $(MAIN_FILES) $(SUBSET_FILES)
 
 list_artefacts:
 	echo $(ARTEFACTS)
@@ -87,7 +89,7 @@ all_artefacts: all_reports $(ARTEFACTS)
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
-test: debug.owl mondo-edit.owl sparql_test_edit sparql_test_main_owl sparql_test_main_obo test_nomerge
+test: roundtrip.obo debug.owl mondo-edit.owl sparql_test_edit sparql_test_main_owl sparql_test_main_obo test_nomerge
 
 
 # ----------------------------------------
@@ -106,6 +108,9 @@ osf_upload: prepare_release osf_upload_direct
 osf_upload_direct:
 	cd ../.. && $(OSF_UPLOAD) -f -r target/ current/ && $(OSF_UPLOAD) -f -r target/ releases/$(ISODATE)
 
+deploy_assets_direct:
+	ls -alt $(ASSETS)
+	../utils/make-release-assets.py --release v$(ISODATE) $(ASSETS)
 
 # ----------------------------------------
 # Main release targets
@@ -195,7 +200,7 @@ $(ONT)-merged.owl: $(ONT).owl
 #	owltools --use-catalog $<  -o -f obo $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 
 %.json: %.owl
-	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
+	owltools --use-catalog $< -o -f json  $@.json.tmp && mv $@.json.tmp $@
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
 
 # ensure that inference including equivalencies does not result in merging any classes in MONDO.
@@ -303,6 +308,9 @@ INF: mondo-edit.obo
 
 NORM: mondo-edit.obo
 	owltools-compat --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.tmp && mv $@.tmp $@
+
+roundtrip.obo: mondo-edit.obo
+	owltools-compat --use-catalog  mondo-edit.obo -o -f obo $@.tmp && mv $@.tmp $@
 
 
 
@@ -612,6 +620,10 @@ imports/tag-indirect.owl: mondo-edit.obo
 # Rewritten ext axioms
 # ----------------------------------------
 
+compare_all: compare_all_nd compare_all_d
+compare_all_nd: $(patsubst %, compare/axioms-%-nd.obo, $(XD))
+compare_all_d: $(patsubst %, compare/axioms-%-d.obo, $(XD))
+
 # Generates synonym from labels
 compare/lsyns-%.owl: mirror/%.owl
 	robot query -i $<  --format ttl -c ../sparql/construct-related-synonym-from-label.sparql $@
@@ -623,31 +635,32 @@ compare/%-plus-lsyns.owl: mirror/%.owl compare/lsyns-%.owl
 .PRECIOUS: compare/%-plus-lsyns.owl
 
 # logical merge, no duplicate axioms
-compare/axioms-%-nd.owl: compare/%-plus-lsyns.owl
+compare/axioms-%-nd.owl: compare/%-plus-lsyns.owl mondo-edit.obo
 	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # duplicate axioms, for provenance tagging
-compare/axioms-%-d.owl: compare/%-plus-lsyns.owl
+compare/axioms-%-d.owl: compare/%-plus-lsyns.owl mondo-edit.obo
 	owltools --use-catalog mondo-edit.obo --copy-axioms -I -D -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # bring in strictly new literals in annotation axioms
-compare/ann-axioms-%-new.owl: compare/%-plus-lsyns.owl
+compare/ann-axioms-%-new.owl: compare/%-plus-lsyns.owl mondo-edit.obo
 	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
-compare/ann-axioms-ncit-disease-new.owl: mirror/ncit-disease.owl
+compare/ann-axioms-ncit-disease-new.owl: mirror/ncit-disease.owl mondo-edit.obo
 	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # all axioms
-compare/axioms-%-all.owl: compare/%-plus-lsyns.owl
+compare/axioms-%-all.owl: compare/%-plus-lsyns.owl mondo-edit.obo
 	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
+# tag axioms that are asserted but could be inferred
 compare/entailed.obo: mondo-edit.obo
-	owltools --use-catalog $< --remove-axiom-annotations --reasoner elk --silence-elk --tag-entailed-axioms --set-ontology-id $(OBO)/mondo/$@ -o -f obo $@
+	owltools --use-catalog $< --remove-axiom-annotations --reasoner elk --silence-elk --tag-entailed-axioms --set-ontology-id $(OBO)/mondo/$@ -o -f obo $@.tmp && perl -npe 's@{source="direct"}@{source="MONDO:Redundant"}@' $@.tmp > $@
 
 #compare/axioms-%.owl:
 #	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@

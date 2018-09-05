@@ -78,6 +78,18 @@ is_a: NCBITaxon:39107 ! Murinae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:10232
+name: Acanthocephala
+namespace: ncbi_taxonomy
+synonym: "acanthocephalans" EXACT common_name []
+synonym: "spiny-headed worms" EXACT common_name []
+synonym: "thorny-headed worms" EXACT genbank_common_name []
+synonym: "thorny-headed worms" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:1206795 ! Lophotrochozoa
+property_value: has_rank NCBITaxon:phylum
+
+[Term]
 id: NCBITaxon:10239
 name: Viruses
 namespace: ncbi_taxonomy
@@ -2516,6 +2528,23 @@ is_a: NCBITaxon:119088 ! Enoplea
 property_value: has_rank NCBITaxon:subclass
 
 [Term]
+id: NCBITaxon:1463974
+name: Cryptostroma
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:189359 ! Xylariales incertae sedis
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1463975
+name: Cryptostroma corticale
+namespace: ncbi_taxonomy
+synonym: "Coniosporium corticale" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1463974 ! Cryptostroma
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:147368
 name: Pooideae
 namespace: ncbi_taxonomy
@@ -3745,6 +3774,14 @@ id: NCBITaxon:1891762
 alt_id: NCBITaxon:10629
 
 [Term]
+id: NCBITaxon:189359
+name: Xylariales incertae sedis
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:67607
+xref: GC_ID:1
+is_a: NCBITaxon:37989 ! Xylariales
+
+[Term]
 id: NCBITaxon:1897064
 name: Cryptococcus neoformans species complex
 namespace: ncbi_taxonomy
@@ -3790,6 +3827,15 @@ xref: GC_ID:1
 xref: PMID:15264635
 is_a: NCBITaxon:1056966 ! Aedini
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:1913637
+name: Mucoromycota
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+xref: PMID:27738200
+is_a: NCBITaxon:4751 ! Fungi
+property_value: has_rank NCBITaxon:phylum
 
 [Term]
 id: NCBITaxon:1913638
@@ -4381,6 +4427,14 @@ property_value: has_rank NCBITaxon:subclass
 [Term]
 id: NCBITaxon:222544
 name: Sordariomycetidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:147550 ! Sordariomycetes
+property_value: has_rank NCBITaxon:subclass
+
+[Term]
+id: NCBITaxon:222545
+name: Xylariomycetidae
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:147550 ! Sordariomycetes
@@ -6347,6 +6401,15 @@ is_a: NCBITaxon:147553 ! Pneumocystidomycetes
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:37989
+name: Xylariales
+namespace: ncbi_taxonomy
+synonym: "Sphaeriales" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:222545 ! Xylariomycetidae
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:38323
 name: Bartonella henselae
 namespace: ncbi_taxonomy
@@ -7216,6 +7279,20 @@ synonym: "grass family" EXACT common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:38820 ! Poales
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:451507
+name: Mucoromycotina
+namespace: ncbi_taxonomy
+synonym: "Zygomycota" RELATED in_part []
+xref: GC_ID:1
+xref: PMID:14715234
+xref: PMID:17010206
+xref: PMID:17051209
+xref: PMID:17572334
+xref: PMID:27738200
+is_a: NCBITaxon:1913637 ! Mucoromycota
+property_value: has_rank NCBITaxon:subphylum
 
 [Term]
 id: NCBITaxon:451864
@@ -9246,6 +9323,14 @@ property_value: has_rank NCBITaxon:species
 [Term]
 id: NCBITaxon:6211
 name: Echinococcus multilocularis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6209 ! Echinococcus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:6213
+name: Echinococcus vogeli
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:6209 ! Echinococcus
