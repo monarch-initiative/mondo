@@ -1319,6 +1319,16 @@ is_a: UBERON:0000062 ! organ
 relationship: BFO:0000050 UBERON:0001004 ! part of respiratory system
 
 [Term]
+id: UBERON:0000173
+name: amniotic fluid
+def: "Amniotic fluid is a bodily fluid consisting of watery liquid surrounding and cushioning a growing fetus within the amnion. It allows the fetus to move freely without the walls of the uterus being too tight against its body. Buoyancy is also provided. The composition of the fluid changes over the course of gestation. Initially, amniotic fluid is similar to maternal plasma, mainly water with electrolytes. As the fetus develops, proteins, carbohydrates, lipids, phospholipids originating from the lungs, fetal cells, and urea are deposited in the fluid." []
+synonym: "acqua amnii" RELATED []
+synonym: "liquor amnii" RELATED []
+is_a: UBERON:0000463 ! organism substance
+relationship: RO:0001025 UBERON:0000305 ! located_in amnion
+relationship: RO:0002221 UBERON:0000922 ! surrounds embryo
+
+[Term]
 id: UBERON:0000174
 name: excreta
 def: "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity" []
@@ -1406,6 +1416,18 @@ is_a: UBERON:0000062 ! organ
 relationship: BFO:0000051 UBERON:0002384 ! has part connective tissue
 
 [Term]
+id: UBERON:0000301
+name: amniotic cavity
+def: "A closed space between the embryo and the amnion which contains the amniotic fluid and is formed by the fusion of the parts of the anterior and posterior amniotic folds." []
+synonym: "cavitas amniotica" RELATED []
+is_a: UBERON:0012466 ! extraembryonic cavity
+is_a: UBERON:0012467 ! enclosed anatomical space
+relationship: RO:0001019 UBERON:0000173 ! contains amniotic fluid
+relationship: RO:0002202 UBERON:0000087 ! develops_from inner cell mass
+relationship: RO:0002202 UBERON:0009742 ! develops_from proamniotic cavity
+relationship: RO:0002219 UBERON:0005971 ! surrounded_by amniotic fold
+
+[Term]
 id: UBERON:0000304
 name: tendon sheath
 def: "A layer of membrane around a tendon. It has 2 layers: synovial sheath + fibrous tendon sheath" []
@@ -1417,6 +1439,20 @@ intersection_of: RO:0002007 UBERON:0000043 ! bounding layer of tendon
 relationship: BFO:0000051 UBERON:0011233 ! has part synovial membrane of synovial tendon sheath
 relationship: BFO:0000051 UBERON:0011234 ! has part fibrous membrane of synovial tendon sheath
 relationship: RO:0002007 UBERON:0000043 ! bounding layer of tendon
+
+[Term]
+id: UBERON:0000305
+name: amnion
+def: "the thin innermost layer of the extraembryonic membranes that contains the amniotic fluid; the membrane forms a closed sac in which the embryo and later, the fetus, is suspended and protected" []
+synonym: "amnios" EXACT []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005631 ! extraembryonic membrane
+relationship: BFO:0000051 UBERON:0003254 ! has part amniotic ectoderm
+relationship: BFO:0000051 UBERON:0003262 ! has part amniotic mesoderm
+relationship: RO:0002202 UBERON:0005971 ! develops_from amniotic fold
+relationship: RO:0002221 UBERON:0000922 ! surrounds embryo
+relationship: RO:0002254 UBERON:0000924 ! has developmental contribution from ectoderm
+relationship: RO:0002254 UBERON:0004871 ! has developmental contribution from somatic layer of lateral plate mesoderm
 
 [Term]
 id: UBERON:0000307
@@ -8290,6 +8326,21 @@ is_a: UBERON:0005173 ! abdominal segment element
 intersection_of: UBERON:0000029 ! lymph node
 intersection_of: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
 relationship: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+
+[Term]
+id: UBERON:0001543
+name: popliteal lymph node
+def: "the lymph nodes which drain the legs; contained in the popliteal fossa" []
+synonym: "popliteal glands" RELATED []
+synonym: "popliteal lymph glands" RELATED []
+synonym: "popliteal lymph node" RELATED []
+is_a: UBERON:0003968 ! peripheral lymph node
+is_a: UBERON:0016398 ! lymph node of lower limb
+intersection_of: UBERON:0000029 ! lymph node
+intersection_of: BFO:0000050 UBERON:0001485 ! part of knee joint
+intersection_of: RO:0001025 UBERON:0016400 ! located_in infrapatellar fat pad
+relationship: BFO:0000050 UBERON:0001485 ! part of knee joint
+relationship: RO:0001025 UBERON:0016400 ! located_in infrapatellar fat pad
 
 [Term]
 id: UBERON:0001549
@@ -16316,6 +16367,18 @@ relationship: RO:0002179 UBERON:0001255 ! drains urinary bladder
 relationship: RO:0002376 UBERON:0001317 ! tributary_of internal iliac vein
 
 [Term]
+id: UBERON:0002461
+name: anterior abdominal wall muscle
+def: "Any skeletal muscle organ that is part of a anterior abdominal wall. Examples: the obliques, pyramidalis and transversus abdominus" []
+synonym: "muscle of anterior abdominal wall" EXACT []
+synonym: "ventral abdominal wall muscle" EXACT []
+is_a: UBERON:0002378 ! muscle of abdomen
+intersection_of: UBERON:0014892 ! skeletal muscle organ
+intersection_of: BFO:0000050 UBERON:0006635 ! part of anterior abdominal wall
+relationship: BFO:0000050 UBERON:0006635 ! part of anterior abdominal wall
+relationship: RO:0002202 UBERON:0006210 ! develops_from body-wall mesenchyme
+
+[Term]
 id: UBERON:0002465
 name: lymphoid system
 def: "The lymphatic system in vertebrates is a network of conduits that carry a clear fluid called lymph. It also includes the lymphoid tissue through which the lymph travels. Lymphoid tissue is found in many organs, particularly the lymph nodes, and in the lymphoid follicles associated with the digestive system such as the tonsils. The system also includes all the structures dedicated to the circulation and production of lymphocytes, which includes the spleen, thymus, bone marrow and the lymphoid tissue associated with the digestive system[WP]." []
@@ -18493,6 +18556,19 @@ intersection_of: BFO:0000050 UBERON:0002228 ! part of rib
 relationship: BFO:0000050 UBERON:0010388 ! part of proximal segment of rib
 
 [Term]
+id: UBERON:0003254
+name: amniotic ectoderm
+synonym: "amnion ectoderm" EXACT []
+synonym: "amnion epithelium" RELATED []
+synonym: "amnionic ectoderm" EXACT []
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005292 ! extraembryonic tissue
+is_a: UBERON:0012275 ! meso-epithelium
+relationship: BFO:0000050 UBERON:0000305 ! part of amnion
+relationship: RO:0002202 UBERON:0002532 ! develops_from epiblast (generic)
+
+[Term]
 id: UBERON:0003257
 name: yolk sac endoderm
 def: "The portion of the yolk sac that is derived from endoderm and lines the yolk sac." []
@@ -18551,6 +18627,24 @@ intersection_of: UBERON:0000925 ! endoderm
 intersection_of: BFO:0000050 UBERON:0003091 ! part of thyroid primordium
 relationship: BFO:0000050 UBERON:0003091 ! part of thyroid primordium
 relationship: RO:0002202 UBERON:0007690 ! develops_from early pharyngeal endoderm
+
+[Term]
+id: UBERON:0003262
+name: amniotic mesoderm
+def: "A mesenchyme that is part of a amnion." []
+synonym: "amnion mesenchyme" EXACT []
+synonym: "amnion mesoderm" EXACT []
+synonym: "amnionic mesenchyme" RELATED []
+synonym: "amnionic mesoderm" EXACT []
+synonym: "amnionic mesoderm" RELATED []
+synonym: "mesenchyme of amnion" EXACT []
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0007524 ! dense mesenchyme tissue
+is_a: UBERON:0010333 ! extraembryonic membrane mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0000305 ! part of amnion
+relationship: BFO:0000050 UBERON:0000305 ! part of amnion
+relationship: RO:0002202 UBERON:0005728 ! develops_from extraembryonic mesoderm
 
 [Term]
 id: UBERON:0003265
@@ -20213,6 +20307,34 @@ is_a: UBERON:0001013 ! adipose tissue
 is_a: UBERON:0003585 ! dermis connective tissue
 intersection_of: UBERON:0001013 ! adipose tissue
 intersection_of: BFO:0000050 UBERON:0002067 ! part of dermis
+
+[Term]
+id: UBERON:0003427
+name: abdominal fat pad
+def: "The encapsulated adipose tissue in the abdomen." []
+synonym: "abdomen fat pad" EXACT []
+synonym: "abdominal fat depot" EXACT []
+synonym: "fat pad of abdomen" EXACT []
+is_a: UBERON:0003916 ! fat pad
+is_a: UBERON:0007808 ! adipose tissue of abdominal region
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0000916 ! part of abdomen
+
+[Term]
+id: UBERON:0003428
+name: gonadal fat pad
+def: "The encapsulated adipose tissue associated with the ovaries or testes." []
+synonym: "fat pad of gonad" EXACT []
+synonym: "fat pad of gonads" EXACT []
+synonym: "gonad fat pad" EXACT []
+synonym: "gonad-associated fat pad" EXACT []
+synonym: "gonadal fat depot" EXACT []
+synonym: "gonadal fat pad" EXACT []
+is_a: UBERON:0003916 ! fat pad
+is_a: UBERON:0005156 ! reproductive structure
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0000991 ! part of gonad
+relationship: BFO:0000050 UBERON:0000991 ! part of gonad
 
 [Term]
 id: UBERON:0003429
@@ -24752,6 +24874,13 @@ name: endothelial tube
 def: "Any endothelium that has the quality of being cylindrical [Automatically generated definition]." []
 is_a: UBERON:0001986 ! endothelium
 is_a: UBERON:0003914 ! epithelial tube
+
+[Term]
+id: UBERON:0003916
+name: fat pad
+def: "A mass of closely packed fat cells (adipose tissue) surrounded by fibrous tissue septa[TMD]." []
+synonym: "fat body" RELATED []
+is_a: UBERON:0001013 ! adipose tissue
 
 [Term]
 id: UBERON:0003918
@@ -39078,12 +39207,30 @@ intersection_of: RO:0002176 UBERON:0001637 {minCardinality="2", maxCardinality="
 relationship: RO:0002176 UBERON:0001637 ! connects artery
 
 [Term]
+id: UBERON:0006349
+name: epigastric artery
+def: "An external iliac artery branch that supplies blood to the anterior abdominal wall." []
+is_a: UBERON:0001637 ! artery
+intersection_of: UBERON:0001637 ! artery
+intersection_of: RO:0002178 UBERON:0006635 ! supplies anterior abdominal wall
+relationship: RO:0002178 UBERON:0006635 ! supplies anterior abdominal wall
+
+[Term]
 id: UBERON:0006355
 name: superior vesical vein
 is_a: UBERON:0002460 ! vesical vein
 intersection_of: UBERON:0001638 ! vein
 intersection_of: RO:0002179 UBERON:0000056 ! drains ureter
 relationship: RO:0002179 UBERON:0000056 ! drains ureter
+
+[Term]
+id: UBERON:0006356
+name: epigastric vein
+def: "A vein that drains the anterior abdominal wall." []
+is_a: UBERON:0001638 ! vein
+intersection_of: UBERON:0001638 ! vein
+intersection_of: RO:0002179 UBERON:0006635 ! drains anterior abdominal wall
+relationship: RO:0002179 UBERON:0006635 ! drains anterior abdominal wall
 
 [Term]
 id: UBERON:0006435
@@ -39587,6 +39734,14 @@ is_a: UBERON:0005913 ! zone of bone organ
 relationship: BFO:0000050 UBERON:0006849 ! part of scapula
 
 [Term]
+id: UBERON:0006635
+name: anterior abdominal wall
+def: "The abdominal wall represents the boundaries of the abdominal cavity. The abdominal wall is split into the posterior (back), lateral (sides) and anterior (front) walls. There is a common set of layers covering and forming all the walls: the deepest being the extraperitoneal fat, the parietal peritoneum, and a layer of fascia which has different names over where it covers (eg transversalis, psoas fascia). Superficial to these, but not present in the posterior wall are the three layers of muscle, the transversus abdominis (transverse abdominal muscle), the internal (obliquus internus) and the external oblique (obliquus externus)." []
+synonym: "ventral abdominal wall" EXACT []
+is_a: UBERON:0000475 ! organism subdivision
+relationship: BFO:0000050 UBERON:0003697 ! part of abdominal wall
+
+[Term]
 id: UBERON:0006642
 name: muscle layer of oviduct
 def: "A muscle layer that is part of a fallopian tube." []
@@ -39803,6 +39958,20 @@ is_a: UBERON:0003837 ! thoracic segment connective tissue
 relationship: BFO:0000050 UBERON:0001103 ! part of diaphragm
 relationship: RO:0002371 UBERON:0002359 ! attaches_to fibrous pericardium
 relationship: RO:0002495 UBERON:0006239 ! immediate transformation of future central tendon
+
+[Term]
+id: UBERON:0006671
+name: orbital fat pad
+def: "A fat pad that is part of a orbital region." []
+synonym: "intraorbital fat pad" EXACT []
+synonym: "orbital fat" EXACT []
+synonym: "orbital fat body" EXACT []
+synonym: "retrobulbar fat" EXACT []
+is_a: UBERON:0003566 ! head connective tissue
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0004088 ! part of orbital region
+relationship: BFO:0000050 UBERON:0035639 ! part of ocular adnexa
 
 [Term]
 id: UBERON:0006675
@@ -43774,6 +43943,16 @@ is_a: UBERON:0002365 ! exocrine gland
 disjoint_from: UBERON:0010243 ! merocrine gland
 
 [Term]
+id: UBERON:0008982
+name: fascia
+def: "A dense regular connective tissue that that connects muscles together[WP, modified]." []
+synonym: "fascia cluster" EXACT []
+is_a: UBERON:0007846 ! dense regular connective tissue
+relationship: BFO:0000050 UBERON:0002204 ! part of musculoskeletal system
+relationship: RO:0002176 UBERON:0001630 ! connects muscle organ
+relationship: RO:0002176 UBERON:0001630 {minCardinality="2", maxCardinality="2"} ! connects muscle organ
+
+[Term]
 id: UBERON:0008987
 name: renal parenchyma
 def: "The functional tissue of the kidney, consisting of the nephrons." []
@@ -45393,6 +45572,13 @@ is_a: UBERON:0015833 ! foregut epithelium
 relationship: BFO:0000050 UBERON:0003929 ! part of digestive tract epithelium
 relationship: BFO:0000050 UBERON:0008814 ! part of pharyngeal arch system
 relationship: RO:0002202 UBERON:0000925 ! develops_from endoderm
+
+[Term]
+id: UBERON:0009742
+name: proamniotic cavity
+def: "The cavity of the developing embryo that is formed within the epiblast tissue prior to the closing of the proamniotic canal by the amniotic folds" []
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: BFO:0000050 UBERON:0000922 ! part of embryo
 
 [Term]
 id: UBERON:0009744
@@ -47861,6 +48047,65 @@ is_a: UBERON:0000063 ! organ subunit
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0000019 ! part of camera-type eye
 relationship: BSPO:0000108 UBERON:0022288 ! superficial_to surface of eyeball
+
+[Term]
+id: UBERON:0010410
+name: inguinal fat pad
+def: "encapsulated adipose tissue found in the groin" []
+synonym: "fat depot of inguinal region" EXACT []
+synonym: "inguinal fat depot" EXACT []
+is_a: UBERON:0003838 ! abdominal segment connective tissue
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+relationship: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+
+[Term]
+id: UBERON:0010411
+name: retroperitoneal fat pad
+def: "encapsulated adipose tissue found on the dorsal side of the peritoneum" []
+synonym: "retroperitoneal fat depot" EXACT []
+is_a: UBERON:0003427 ! abdominal fat pad
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0002358 ! part of peritoneum
+relationship: BFO:0000050 UBERON:0002358 ! part of peritoneum
+relationship: RO:0001025 UBERON:0003693 ! located_in retroperitoneal space
+
+[Term]
+id: UBERON:0010412
+name: epididymal fat pad
+def: "encapsulated adipose tissue associated with the epididymis" []
+synonym: "periepididymal fat pad" EXACT []
+is_a: UBERON:0003916 ! fat pad
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005156 ! reproductive structure
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0001301 ! part of epididymis
+relationship: BFO:0000050 UBERON:0001301 ! part of epididymis
+
+[Term]
+id: UBERON:0010413
+name: parametrial fat pad
+def: "encapsulated adipose tissue associated with the extension of the subserous coat of the uterus laterally between the layers of the broad ligament" []
+synonym: "parametrial adipose tissue" RELATED []
+synonym: "parametrial fat" RELATED []
+synonym: "parametrial fat depot" EXACT []
+is_a: UBERON:0014394 ! uterine fat pad
+is_a: UBERON:0015143 ! mesenteric fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0010391 ! part of parametrium
+relationship: BFO:0000050 UBERON:0010391 ! part of parametrium
+
+[Term]
+id: UBERON:0010414
+name: omental fat pad
+def: "encapsulated adipose tissue associated with the fold of peritoneal tissue that extends from the stomach to the posterior abdominal wall after associating with the transverse colon" []
+synonym: "omental fat depot" EXACT []
+is_a: UBERON:0010411 ! retroperitoneal fat pad
+intersection_of: UBERON:0003427 ! abdominal fat pad
+intersection_of: BFO:0000050 UBERON:0003688 ! part of omentum
+relationship: BFO:0000050 UBERON:0003688 ! part of omentum
 
 [Term]
 id: UBERON:0010418
@@ -51508,6 +51753,18 @@ relationship: BFO:0000050 UBERON:0001445 ! part of skeleton of pes
 relationship: BFO:0000050 UBERON:0012142 ! part of pedal digitopodium region
 
 [Term]
+id: UBERON:0012167
+name: buccal fat pad
+def: "The Buccal fat pad is one of several encapsulated fat masses in the cheek. It is a deep fat pad located on either side of the face between the buccinator muscle and several more superficial muscles. It should not be confused with the malar fat pad, which is directly below the skin of the cheek. It should also not be confused with jowl fat pads. It is implicated in the formation of hollow cheeks and the nasolabial fold, but not in the formation of jowls." []
+synonym: "Bichat's fat pad" EXACT []
+synonym: "cheek fat pad" EXACT []
+is_a: UBERON:0003566 ! head connective tissue
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0001567 ! part of cheek
+relationship: BFO:0000050 UBERON:0001567 ! part of cheek
+
+[Term]
 id: UBERON:0012168
 name: umbilical cord blood
 def: "blood that remains in the placenta and in the attached umbilical cord after childbirth[WP]." []
@@ -51825,6 +52082,25 @@ intersection_of: UBERON:0001821 ! sebaceous gland
 intersection_of: BFO:0000050 UBERON:0011932 ! part of pilosebaceous unit
 intersection_of: BFO:0000050 UBERON:0012336 ! part of perianal skin
 relationship: BFO:0000050 UBERON:0012336 ! part of perianal skin
+
+[Term]
+id: UBERON:0012282
+name: mammary fat pad
+def: "encapsulated adipose tissue associated with the mammary gland" []
+is_a: UBERON:0003916 ! fat pad
+is_a: UBERON:0004180 ! mammary gland fat
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0001911 ! part of mammary gland
+
+[Term]
+id: UBERON:0012283
+name: femoral fat pad
+def: "encapsulated adipose tissue associated with the femur" []
+synonym: "femoral fat depot" EXACT []
+is_a: UBERON:0003916 ! fat pad
+is_a: UBERON:0004266 ! upper leg connective tissue
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0000376 ! part of hindlimb stylopod
 
 [Term]
 id: UBERON:0012287
@@ -52660,6 +52936,18 @@ intersection_of: BFO:0000050 UBERON:0012652 ! part of colorectum
 relationship: BFO:0000050 UBERON:0012652 ! part of colorectum
 
 [Term]
+id: UBERON:0013069
+name: popliteal area
+def: "A depression on the ventral side of the femur, at the knee joint, between the condyles." []
+synonym: "knee pit" RELATED []
+synonym: "popliteal fossa" EXACT []
+synonym: "popliteal region" RELATED []
+synonym: "popliteal space" RELATED []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005055 ! zone of long bone
+relationship: BFO:0000050 UBERON:0000981 ! part of femur
+
+[Term]
 id: UBERON:0013118
 name: sulcus of brain
 def: "A depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." []
@@ -53089,6 +53377,27 @@ intersection_of: UBERON:0004638 ! blood vessel endothelium
 intersection_of: BFO:0000050 UBERON:0002048 ! part of lung
 
 [Term]
+id: UBERON:0013491
+name: cervical fascia
+def: "Any fascia tissue that is part of the neck region." []
+synonym: "fascia of neck" EXACT []
+is_a: UBERON:0003568 ! neck connective tissue
+is_a: UBERON:0008982 ! fascia
+intersection_of: UBERON:0008982 ! fascia
+intersection_of: BFO:0000050 UBERON:0000974 ! part of neck
+
+[Term]
+id: UBERON:0013493
+name: abdominal fascia
+def: "A fascia that is part of a abdomen." []
+synonym: "endo-abdominopelvic fascia" EXACT []
+synonym: "fascia of abdomen" EXACT []
+is_a: UBERON:0003567 ! abdomen connective tissue
+is_a: UBERON:0008982 ! fascia
+intersection_of: UBERON:0008982 ! fascia
+intersection_of: BFO:0000050 UBERON:0000916 ! part of abdomen
+
+[Term]
 id: UBERON:0013498
 name: vestibulo-cochlear VIII ganglion complex
 synonym: "vestibular VIII ganglion complex" RELATED []
@@ -53496,6 +53805,60 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: UBERON:0004111 ! anatomical conduit
 intersection_of: BFO:0000050 UBERON:0006268 ! part of notochordal process
 relationship: BFO:0000050 UBERON:0006268 ! part of notochordal process
+
+[Term]
+id: UBERON:0013705
+name: fascia of Scarpa
+def: "The deep layer (fascia of Scarpa) is a layer of the anterior abdominal wall." []
+synonym: "Colles fascia" RELATED []
+synonym: "Colles' fascia" EXACT []
+synonym: "deep layer of superficial fascia of abdomen" EXACT []
+synonym: "fascia of Scarpa" RELATED []
+synonym: "membranous layer of subcutaneous tissue of abdomen" EXACT []
+synonym: "membranous layer of superficial fascia of abdomen" EXACT []
+synonym: "Scarpa's fascia" EXACT []
+synonym: "Scarpa's fascia" RELATED []
+synonym: "stratum membranosum telae subcutaneae abdominis" EXACT []
+is_a: UBERON:0003427 ! abdominal fat pad
+is_a: UBERON:0003916 ! fat pad
+relationship: BFO:0000050 UBERON:0006635 ! part of anterior abdominal wall
+
+[Term]
+id: UBERON:0013718
+name: dartos muscle
+def: "The dartos fascia is a fat-free layer of smooth muscular fiber outside the external spermatic fascia but below the skin. It is a continuation of Scarpa's Fascia which is a membranous layer of the subcutaneous tissue in the abdominal wall." []
+synonym: "dartos muscle" RELATED []
+synonym: "dartos tunic" RELATED []
+synonym: "tunica dartos" RELATED []
+is_a: UBERON:0008982 ! fascia
+relationship: RO:0002150 UBERON:0013705 ! continuous_with fascia of Scarpa
+
+[Term]
+id: UBERON:0013719
+name: dartos muscle of scrotum
+def: "A dartos muscle that is part of a male reproductive system." []
+synonym: "dartos layer of scrotum" EXACT []
+synonym: "dartos tunic" RELATED []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005156 ! reproductive structure
+is_a: UBERON:0013718 ! dartos muscle
+intersection_of: UBERON:0013718 ! dartos muscle
+intersection_of: BFO:0000050 UBERON:0000079 ! part of male reproductive system
+relationship: BFO:0000050 UBERON:0001300 ! part of scrotum
+
+[Term]
+id: UBERON:0013720
+name: dartos muscle of labia majora
+def: "A dartos muscle that is part of a female reproductive system." []
+synonym: "dartos layer of labia" EXACT []
+synonym: "dartos muliebris" RELATED []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005156 ! reproductive structure
+is_a: UBERON:0013718 ! dartos muscle
+intersection_of: UBERON:0013718 ! dartos muscle
+intersection_of: BFO:0000050 UBERON:0000474 ! part of female reproductive system
+relationship: BFO:0000050 UBERON:0004085 ! part of labium majora
 
 [Term]
 id: UBERON:0013727
@@ -53910,6 +54273,19 @@ intersection_of: RO:0003001 UBERON:0018232 ! produced_by axillary sweat gland
 relationship: RO:0003001 UBERON:0018232 ! produced_by axillary sweat gland
 
 [Term]
+id: UBERON:0014394
+name: uterine fat pad
+def: "Encapsulated adipose tissue associated with the uterus" []
+synonym: "peri-uterine fat pad" RELATED []
+synonym: "periuterine fat pad" RELATED []
+synonym: "uterine fat depot" EXACT []
+is_a: UBERON:0003916 ! fat pad
+is_a: UBERON:0005156 ! reproductive structure
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0000995 ! part of uterus
+relationship: BFO:0000050 UBERON:0000995 ! part of uterus
+
+[Term]
 id: UBERON:0014395
 name: proximal mesopodial bone
 def: "A proximal mesopodial endochondral element that is composed primarily of a bone tissue." []
@@ -54030,6 +54406,16 @@ is_a: UBERON:0001808 ! parasympathetic ganglion
 intersection_of: UBERON:0001808 ! parasympathetic ganglion
 intersection_of: extends_fibers_into UBERON:0002008 ! cardiac nerve plexus
 relationship: extends_fibers_into UBERON:0002008 ! cardiac nerve plexus
+
+[Term]
+id: UBERON:0014464
+name: renal fat pad
+def: "Encapsulated adipose tissue associated with the kidney" []
+synonym: "perirenal fat pad" RELATED []
+is_a: UBERON:0003427 ! abdominal fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0002113 ! part of kidney
+relationship: BFO:0000050 UBERON:0002113 ! part of kidney
 
 [Term]
 id: UBERON:0014466
@@ -55639,6 +56025,31 @@ intersection_of: BFO:0000050 UBERON:0002367 ! part of prostate gland
 relationship: BFO:0000050 UBERON:0002367 ! part of prostate gland
 
 [Term]
+id: UBERON:0015142
+name: falciform fat
+def: "A large fat pad that is located at the base of the abdominal wall, in the falciform ligament of the liver." []
+synonym: "falciform fat depot" RELATED []
+synonym: "falciform ligament fat pad" RELATED []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0003427 ! abdominal fat pad
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0015143 ! mesenteric fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0001247 ! part of falciform ligament
+relationship: BFO:0000050 UBERON:0001247 ! part of falciform ligament
+
+[Term]
+id: UBERON:0015143
+name: mesenteric fat pad
+def: "Encapsulated adipose tissue associated with the mesentery" []
+synonym: "mesenteric fat depot" EXACT []
+is_a: UBERON:0003916 ! fat pad
+is_a: UBERON:0004120 ! mesoderm-derived structure
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0002095 ! part of mesentery
+relationship: BFO:0000050 UBERON:0002095 ! part of mesentery
+
+[Term]
 id: UBERON:0015144
 name: autopod hair
 def: "A strand of hair that is part of a autopod region." []
@@ -55941,6 +56352,25 @@ intersection_of: BFO:0000050 UBERON:0002072 ! part of hypodermis
 relationship: BFO:0000050 UBERON:0002072 ! part of hypodermis
 
 [Term]
+id: UBERON:0015454
+name: pancreatic fat pad
+def: "A fat pad that is part of a pancreas." []
+is_a: UBERON:0003586 ! trunk connective tissue
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0001264 ! part of pancreas
+relationship: BFO:0000050 UBERON:0001264 ! part of pancreas
+
+[Term]
+id: UBERON:0015458
+name: mediastinal fat pad
+def: "A fat pad that is part of a mediastinum." []
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: RO:0001025 UBERON:0003728 ! located_in mediastinum
+relationship: RO:0001025 UBERON:0003728 ! located_in mediastinum
+
+[Term]
 id: UBERON:0015474
 name: axilla skin
 def: "A zone of skin that is part of a axilla." []
@@ -55962,6 +56392,15 @@ is_a: UBERON:1000021 ! skin of face
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: BFO:0000050 UBERON:0007827 ! part of external nose
 relationship: BFO:0000050 UBERON:0007827 ! part of external nose
+
+[Term]
+id: UBERON:0015477
+name: axillary fat pad
+def: "A fat pad that is part of a axilla." []
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0009472 ! part of axilla
+relationship: BFO:0000050 UBERON:0009472 ! part of axilla
 
 [Term]
 id: UBERON:0015479
@@ -56328,6 +56767,16 @@ is_a: UBERON:0000029 ! lymph node
 intersection_of: UBERON:0000029 ! lymph node
 intersection_of: BFO:0000050 UBERON:0002102 ! part of forelimb
 relationship: BFO:0000050 UBERON:0002102 ! part of forelimb
+
+[Term]
+id: UBERON:0016400
+name: infrapatellar fat pad
+def: "The infrapatellar fat pad, also known as Hoffa's fat pad, is a cylindrical piece of fat that is situated under and behind the patella bone within the knee." []
+is_a: UBERON:0003577 ! knee connective tissue
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0001465 ! part of knee
+relationship: RO:0001025 UBERON:0013069 ! located_in popliteal area
 
 [Term]
 id: UBERON:0016402
@@ -57189,6 +57638,16 @@ is_a: UBERON:0001224 ! renal pelvis
 intersection_of: UBERON:0001224 ! renal pelvis
 intersection_of: BFO:0000050 UBERON:0001222 ! part of right ureter
 relationship: BFO:0000050 UBERON:0001222 ! part of right ureter
+
+[Term]
+id: UBERON:0018132
+name: tail fat pad
+def: "Encapsulated adipose tissue that is part of a tail." []
+synonym: "tail fat depot" EXACT []
+is_a: UBERON:0003599 ! tail connective tissue
+is_a: UBERON:0003916 ! fat pad
+intersection_of: UBERON:0003916 ! fat pad
+intersection_of: BFO:0000050 UBERON:0007812 ! part of post-anal tail
 
 [Term]
 id: UBERON:0018135
@@ -59150,6 +59609,14 @@ is_a: UBERON:0003665 ! post-anal tail muscle
 intersection_of: UBERON:0003665 ! post-anal tail muscle
 intersection_of: RO:0002371 UBERON:0010742 ! attaches_to bone of pelvic complex
 relationship: RO:0002371 UBERON:0010742 ! attaches_to bone of pelvic complex
+
+[Term]
+id: UBERON:0035096
+name: fascia of tail
+is_a: UBERON:0003599 ! tail connective tissue
+is_a: UBERON:0008982 ! fascia
+intersection_of: UBERON:0008982 ! fascia
+intersection_of: BFO:0000050 UBERON:0007812 ! part of post-anal tail
 
 [Term]
 id: UBERON:0035102

@@ -1,3 +1,39 @@
+## 2018-09-04 release
+
+### New classes
+
+ * [osteogenic neoplasm](http://purl.obolibrary.org/obo/MONDO_0045053)
+ * [cancer-related condition](http://purl.obolibrary.org/obo/MONDO_0045054)
+ * [cortical cataract](http://purl.obolibrary.org/obo/MONDO_0045051)
+ * [benign osteogenic neoplasm](http://purl.obolibrary.org/obo/MONDO_0045052)
+ * [nuclear cataract](http://purl.obolibrary.org/obo/MONDO_0045050)
+ * [cribriform carcinoma of breast](http://purl.obolibrary.org/obo/MONDO_0045059)
+ * [delirium](http://purl.obolibrary.org/obo/MONDO_0045057)
+ * [ACTH-producing pituitary gland neoplasm](http://purl.obolibrary.org/obo/MONDO_0045058)
+ * [glycogen-rich carcinoma](http://purl.obolibrary.org/obo/MONDO_0045055)
+ * [grade II meningioma](http://purl.obolibrary.org/obo/MONDO_0045056)
+ * [intraductal cribriform breast adenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0045060)
+ * [infectious diarrheal disease](http://purl.obolibrary.org/obo/MONDO_0045031)
+ * [congenital secretory diarrhea](http://purl.obolibrary.org/obo/MONDO_0045032)
+ * [non-infectious diarrheal disease](http://purl.obolibrary.org/obo/MONDO_0045030)
+ * [systemic basidiobolomycosis](http://purl.obolibrary.org/obo/MONDO_0045039)
+ * [hyalohyphomycosis](http://purl.obolibrary.org/obo/MONDO_0045037)
+ * [cutaneous basidiobolomycosis](http://purl.obolibrary.org/obo/MONDO_0045038)
+ * [opportunistic infectious](http://purl.obolibrary.org/obo/MONDO_0045035)
+ * [primary infectious](http://purl.obolibrary.org/obo/MONDO_0045036)
+ * [opportunistic systemic mycosis](http://purl.obolibrary.org/obo/MONDO_0045033)
+ * [infectious disease characteristic](http://purl.obolibrary.org/obo/MONDO_0045034)
+ * [localized](http://purl.obolibrary.org/obo/MONDO_0045042)
+ * [disease of uterine broad ligament](http://purl.obolibrary.org/obo/MONDO_0045043)
+ * [locational disease characteristic](http://purl.obolibrary.org/obo/MONDO_0045040)
+ * [toxemia of pregnancy](http://purl.obolibrary.org/obo/MONDO_0045048)
+ * [hypermature cataract](http://purl.obolibrary.org/obo/MONDO_0045049)
+ * [inherited thyroid metabolism disease](http://purl.obolibrary.org/obo/MONDO_0045046)
+ * [neurosarcoidosis](http://purl.obolibrary.org/obo/MONDO_0045047)
+ * [ligament disease](http://purl.obolibrary.org/obo/MONDO_0045044)
+ * [selective IgG immunodeficiency](http://purl.obolibrary.org/obo/MONDO_0045045)
+ * [obsolete Deuteromycetes infectious disease](http://purl.obolibrary.org/obo/MONDO_0045029)
+
 ## 2018-08-24 release
 
 ### New classes
