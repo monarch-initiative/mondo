@@ -306,11 +306,14 @@ td:
 INF: mondo-edit.obo
 	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --keepRedundant --markIsInferred --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | perl -npe 's@is_inferred="true"@source="OWLReasoner:Elk-$(ISODATE)"@' | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
 
+# normalize obo file
+# note we use owltools-compat to ensure standard ordering
 NORM: mondo-edit.obo
 	owltools-compat --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.tmp && mv $@.tmp $@
 
+# tests roundtripping
 roundtrip.obo: mondo-edit.obo
-	owltools-compat --use-catalog  mondo-edit.obo -o -f obo $@.tmp && mv $@.tmp $@
+	owltools --use-catalog  mondo-edit.obo -o -f obo $@.tmp && mv $@.tmp $@
 
 
 
