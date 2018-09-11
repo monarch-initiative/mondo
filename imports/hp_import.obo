@@ -587,6 +587,19 @@ xref: UMLS:C0026633
 is_a: HP:0000271 ! Abnormality of the face
 
 [Term]
+id: HP:0000155
+name: Oral ulcer
+namespace: human_phenotype
+def: "Erosion of the mucous mebrane of the mouth with local excavation of the surface, resulting from the sloughing of inflammatory necrotic tissue." [HPO:probinson]
+subset: hposlim_core
+synonym: "Mouth sore" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Mouth ulcer" EXACT layperson [ORCID:0000-0001-5889-4463]
+xref: MSH:D019226
+xref: SNOMEDCT_US:26284000
+xref: UMLS:C0149745
+is_a: HP:0011830 ! Abnormal oral mucosa morphology
+
+[Term]
 id: HP:0000157
 name: Abnormality of the tongue
 namespace: human_phenotype
@@ -825,6 +838,26 @@ synonym: "Abnormality of head size" BROAD layperson [ORCID:0000-0001-5889-4463]
 synonym: "Abnormality of skull size" EXACT layperson []
 xref: UMLS:C4025874
 is_a: HP:0000929 ! Abnormality of the skull
+
+[Term]
+id: HP:0000243
+name: Trigonocephaly
+namespace: human_phenotype
+def: "Wedge-shaped, or triangular head, with the apex of the triangle at the midline of the forehead and the base of the triangle at the occiput." [pmid:19125436]
+comment: This shape should be assessed from above, with the examiner looking down on the head of the patient. Trigonocephaly can be caused by premature fusion of the metopic suture.
+subset: hposlim_core
+synonym: "Triangular cranium shape" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Triangular head shape" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Triangular skull shape" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Wedge shaped cranium" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Wedge shaped head" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Wedge shaped skull" EXACT layperson [ORCID:0000-0001-5889-4463]
+xref: MSH:D003398
+xref: SNOMEDCT_US:28740008
+xref: UMLS:C0265535
+xref: UMLS:C4280665
+xref: UMLS:C4280666
+is_a: HP:0002648 ! Abnormality of calvarial morphology
 
 [Term]
 id: HP:0000252
@@ -6396,6 +6429,17 @@ xref: UMLS:C0014038
 is_a: HP:0011450 ! CNS infection
 
 [Term]
+id: HP:0002410
+name: Aqueductal stenosis
+namespace: human_phenotype
+def: "Stenosis of the cerebral aqueduct (also known as the mesencephalic duct, aqueductus mesencephali, or aqueduct of Sylvius), which connects the third cerebral ventricle in the diencephalon to the fourth ventricle, which is between the pons and cerebellum." [HPO:curators]
+synonym: "Aqueduct of Sylvius stenosis" EXACT []
+synonym: "Aqueduct stenosis" EXACT []
+xref: MSH:D006849
+xref: UMLS:C2936786
+is_a: HP:0002118 ! Abnormality of the cerebral ventricles
+
+[Term]
 id: HP:0002414
 name: Spina bifida
 namespace: human_phenotype
@@ -6465,6 +6509,21 @@ xref: SNOMEDCT_US:203994003
 xref: SNOMEDCT_US:414667000
 xref: UMLS:C0025312
 is_a: HP:0002435 ! Meningocele
+
+[Term]
+id: HP:0002486
+name: Myotonia
+namespace: human_phenotype
+alt_id: HP:0003632
+alt_id: HP:0003754
+alt_id: HP:0003792
+def: "An involuntary and painless delay in the relaxation of skeletal muscle following contraction or electrical stimulation." [HPO:probinson]
+comment: Patients often describe myotonia as stiffness that is worse at the onset of activity and that improves with repeated muscle contractions. Myotonia tends to worsen in cold weather. Myotonia can be elicited by voluntary muscle contraction of by muscle percussion (e.g., by tapping the thenar eminence). During physical examination, myotonia may be elicited by asking the patient to make a tight fist and then quickly open the hand. Myotonia is caused by an abnormality in the muscle membrane, i.e., of the ion channels that control the contraction of muscle fibers.
+synonym: "Delayed relaxation of muscle fibers after contraction" EXACT []
+xref: MSH:D009222
+xref: SNOMEDCT_US:3434004
+xref: UMLS:C0027125
+is_a: HP:0011804 ! Abnormality of muscle physiology
 
 [Term]
 id: HP:0002493
@@ -6697,6 +6756,22 @@ xref: UMLS:C4020847
 is_a: HP:0011844 ! Abnormal appendicular skeleton morphology
 
 [Term]
+id: HP:0002648
+name: Abnormality of calvarial morphology
+namespace: human_phenotype
+def: "The presence of an abnormal shape of the calvaria (skullcap), that is, of that part of the skull that is made up of the superior portions of the frontal bone, occipital bone, and parietal bones and covers the cranial cavity that contains the brain." [DDD:awilkie, HPO:probinson]
+synonym: "Abnormal cranium morphology" EXACT []
+synonym: "Abnormality of cranial bone morphology" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of skull bone morphology" BROAD [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of the shape of calvarium" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of the shape of cranium" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of the shape of skull bones" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Abnormally shaped skull" EXACT layperson [ORCID:0000-0002-9353-5498]
+xref: UMLS:C4025692
+xref: UMLS:C4280260
+is_a: HP:0002683 ! Abnormality of the calvaria
+
+[Term]
 id: HP:0002651
 name: Spondyloepimetaphyseal dysplasia
 namespace: human_phenotype
@@ -6750,6 +6825,21 @@ xref: SNOMEDCT_US:363346000
 xref: UMLS:C0006826
 xref: UMLS:C0027651
 is_a: HP:0000118 ! Phenotypic abnormality
+
+[Term]
+id: HP:0002683
+name: Abnormality of the calvaria
+namespace: human_phenotype
+def: "Abnormality of the calvaria, which is the roof of the skull formed by the frontal bone, parietal bones, and occipital bone." [HPO:probinson]
+comment: The calvaria, or skull cap, is the upper part of the skull (cranium) and comprises the frontal, occipital and right and left parietal bones. Occasionally, calvaria is misspelled as 'calvarium' in the medical literature.
+synonym: "Abnormality of calvarium" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of cranial vault" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of cranium" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of the skull cap" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of the skullcap" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: UMLS:C4025691
+xref: UMLS:C4280561
+is_a: HP:0000929 ! Abnormality of the skull
 
 [Term]
 id: HP:0002693
@@ -12442,6 +12532,19 @@ synonym: "Bloody stool" BROAD layperson []
 is_a: HP:0002014 ! Diarrhea
 property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2016-10-15T13:58:14Z xsd:dateTime
+
+[Term]
+id: HP:0025132
+name: Abnormal circulating estrogen level
+namespace: human_phenotype
+def: "A deviation from normal concentration of the hormone estrogen in the blood circulation." []
+comment: Clinical estrogen tests measure one of three components: estrone (E1), estradiol (E2), or estriol (E3).
+synonym: "Abnormal circulating oestrogen level" EXACT []
+synonym: "Abnormal estrogen level" EXACT []
+is_a: HP:0003117 ! Abnormality of circulating hormone level
+is_a: HP:0008373 ! Puberty and gonadal disorders
+property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2016-11-27T13:46:29Z xsd:dateTime
 
 [Term]
 id: HP:0025142

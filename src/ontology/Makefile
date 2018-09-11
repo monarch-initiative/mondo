@@ -9,7 +9,8 @@ RDFS=http://www.w3.org/2000/01/rdf-schema#
 SKOS=http://www.w3.org/2004/02/skos/core\#
 EFO=http://www.ebi.ac.uk/efo
 ONT=mondo
-BASE=$(OBO)/$(ONT)
+ONTURI=$(OBO)/$(ONT)
+ONTBASE=$(ONT)-base
 SRC=$(ONT)-edit.obo
 RELEASEDIR=../../target/
 ROBOT= robot
@@ -110,13 +111,13 @@ osf_upload_direct:
 
 deploy_assets_direct:
 	ls -alt $(ASSETS)
-	../utils/make-release-assets.py --release v$(ISODATE) $(ASSETS)
+	../utils/make-release-assets.py --release $(GHVERSION) $(ASSETS)
 
 # ----------------------------------------
 # Main release targets
 # ----------------------------------------
 
-ANN = annotate -V $(BASE)/releases/`date +%Y-%m-%d`/$@.owl
+ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
@@ -155,7 +156,7 @@ merged.owl: reasoned.owl imports/equivalencies.owl
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
 $(ONT).owl: merged.owl
-	$(ROBOT) annotate -i $< -V $(BASE)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
 # obo is self-contained
 $(ONT).obo: reasoned.owl
@@ -183,9 +184,9 @@ $(ONT)-merged.owl: $(ONT).owl
 	owltools --use-catalog $< --merge-imports-closure --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
 
 #pre/$(ONT).%: $(ONT).%
-#	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
+#	$(ROBOT) annotate -i $< -V $(ONTURI)/pre/$(ONT).owl -o $@
 #pre/$(ONT).json: $(ONT).owl
-#	$(ROBOT) annotate -i $< -V $(BASE)/pre/$(ONT).owl -o $@
+#	$(ROBOT) annotate -i $< -V $(ONTURI)/pre/$(ONT).owl -o $@
 
 # CURRENT RELEASES: map back to clique leaders
 #extid/mondo.owl: mondo.owl
@@ -270,7 +271,7 @@ all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 
 # Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(BASE)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(ONTURI)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
@@ -289,19 +290,19 @@ imports/%_terms.txt:  edit-merged.owl
 release: $(ONT).owl $(ONT).obo
 	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
 
-$(ONT)-lastbuild.owl: $(ONT).owl
-	wget --no-check-certificate $(OBO)/$(ONT).owl -O $@.tmp && mv $@.tmp $@
-$(ONT)-lastbuild.obo: $(ONT).obo
-	wget --no-check-certificate $(OBO)/$(ONT).obo -O $@.tmp && mv $@.tmp $@
-$(ONT)-diff.md: $(ONT)-lastbuild.owl 
-	owljs-diff -o $@ $< $(ONT).owl
+$(ONTBASE)-lastbuild.owl: $(ONTBASE).owl
+	wget --no-check-certificate $(OBO)/$(ONTBASE).owl -O $@.tmp && mv $@.tmp $@
+$(ONTBASE)-lastbuild.obo: $(ONTBASE).obo
+	wget --no-check-certificate $(OBO)/$(ONTBASE).obo -O $@.tmp && mv $@.tmp $@
+$(ONTBASE)-diff.md: $(ONTBASE)-lastbuild.owl 
+	owljs-diff -o $@ $< $(ONTBASE).owl
 
 # ----------------------------------------
 # Editing
 # ----------------------------------------
 
 td:
-	echo '$(ISODATE)'
+	echo $(ISODATE)
 # NOTE: no longer removes redundant
 INF: mondo-edit.obo
 	owltools --use-catalog  mondo-edit.obo --assert-inferred-subclass-axioms --always-assert-super-classes --keepRedundant --markIsInferred --merge-axiom-annotations -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | perl -npe 's@is_inferred="true"@source="OWLReasoner:Elk-$(ISODATE)"@' | egrep -v '^relationship:.*is_inferred' | obo-grep.pl --neg -r 'id: (UBERON|CL|ENVO|NCBITaxon|HP|PATO|CHEBI):' -  > $@
@@ -488,7 +489,7 @@ mirror/omim-src.obo: mirror/omim-src.owl
 mirror/omim.obo: mirror/omim-src.obo
 	obo-grep.pl --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' $< | obo-grep.pl -r 'id: OMIM' -   > $@.tmp && mv $@.tmp $@
 mirror/omim.owl: mirror/omim.obo
-	owltools $< -o -f obo $@
+	owltools $< -o $@
 
 
 
@@ -743,7 +744,7 @@ omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
 
 # NEW: uses rdf_matcher
-# remember to clear tmp/ dir for fresh start
+# **IMPORTANT*: remember to clear tmp/ dir for fresh start
 # mondo_queries requires for prefixes
 all_unique.tsv:
 	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all -i skos.ttl unique_match > $@

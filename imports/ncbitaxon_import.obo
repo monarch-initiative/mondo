@@ -4650,6 +4650,14 @@ is_a: NCBITaxon:131567 ! cellular organisms
 property_value: has_rank NCBITaxon:superkingdom
 
 [Term]
+id: NCBITaxon:27592
+name: Bovinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9895 ! Bovidae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
 id: NCBITaxon:27829
 name: Strongyloidea
 namespace: ncbi_taxonomy
@@ -12086,6 +12094,32 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:35500 ! Pecora
 property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:9903
+name: Bos
+namespace: ncbi_taxonomy
+synonym: "oxen, cattle" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:27592 ! Bovinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:9913
+name: Bos taurus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:272461
+synonym: "Bos bovis" RELATED synonym []
+synonym: "Bos primigenius taurus" RELATED synonym []
+synonym: "Bos Tauurus" RELATED misspelling []
+synonym: "bovine" EXACT common_name []
+synonym: "cattle" EXACT genbank_common_name []
+synonym: "cow" EXACT common_name []
+synonym: "domestic cattle" EXACT common_name []
+synonym: "domestic cow" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9903 ! Bos
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:9922

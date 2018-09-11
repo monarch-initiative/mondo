@@ -13,6 +13,7 @@ name: reproduction
 def: "The production of new individuals that contain some portion of genetic material inherited from one or more parent organisms." []
 synonym: "reproductive physiological process" EXACT []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0000018
@@ -720,6 +721,7 @@ name: cell killing
 def: "Any process in an organism that results in the killing of its own cells or those of another organism, including in some cases the death of the other organism. Killing here refers to the induction of death in one cell by another cell, not cell-autonomous death due to internal or other environmental conditions." []
 synonym: "necrosis" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0001909
@@ -1312,6 +1314,7 @@ id: GO:0002376
 name: immune system process
 def: "Any process involved in the development or functioning of the immune system, an organismal system for calibrated responses to potential internal or invasive threats." []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0002377
@@ -3639,6 +3642,19 @@ synonym: "glutathione synthetase activity" EXACT []
 synonym: "GSH synthetase activity" EXACT []
 is_a: GO:0016881 ! acid-amino acid ligase activity
 relationship: BFO:0000050 GO:0006750 ! part of glutathione biosynthetic process
+
+[Term]
+id: GO:0004370
+name: glycerol kinase activity
+def: "Catalysis of the reaction: ATP + glycerol = sn-glycerol 3-phosphate + ADP + 2 H(+)." []
+synonym: "ATP:glycerol 3-phosphotransferase activity" EXACT []
+synonym: "ATP:glycerol-3-phosphotransferase activity" EXACT []
+synonym: "GK" RELATED []
+synonym: "glyceric kinase activity" EXACT []
+synonym: "glycerokinase activity" EXACT []
+synonym: "glycerol kinase (phosphorylating)" EXACT []
+is_a: GO:0016301 ! kinase activity
+is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
 
 [Term]
 id: GO:0004415
@@ -7141,6 +7157,7 @@ synonym: "metabolism resulting in cell growth" NARROW []
 synonym: "multicellular organism metabolic process" NARROW []
 synonym: "single-organism metabolic process" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0008168
@@ -8529,6 +8546,7 @@ synonym: "cell physiology" EXACT []
 synonym: "cellular physiological process" EXACT []
 synonym: "single-organism cellular process" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0009991
@@ -11415,6 +11433,7 @@ synonym: "single organism reproductive process" RELATED []
 is_a: GO:0008150 ! biological_process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: BFO:0000050 GO:0000003 ! part of reproduction
+disjoint_from: GO:0044848 ! biological phase
 relationship: BFO:0000050 GO:0000003 ! part of reproduction
 
 [Term]
@@ -11425,6 +11444,12 @@ is_a: GO:0003008 ! system process
 intersection_of: GO:0003008 ! system process
 intersection_of: BFO:0000050 GO:0007586 ! part of digestion
 relationship: BFO:0000050 GO:0007586 ! part of digestion
+
+[Term]
+id: GO:0022601
+name: menstrual cycle phase
+def: "The progression of physiological phases, occurring in the endometrium during the menstrual cycle that recur at regular intervals during the reproductive years. The menstrual cycle is an ovulation cycle where the endometrium is shed if pregnancy does not occur." []
+is_a: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0022603
@@ -11450,6 +11475,7 @@ id: GO:0022610
 name: biological adhesion
 def: "The attachment of a cell or organism to a substrate, another cell, or other organism. Biological adhesion includes intracellular attachment between membrane regions." []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0022613
@@ -11644,6 +11670,7 @@ synonym: "signalling" EXACT []
 synonym: "signalling process" RELATED []
 synonym: "single organism signaling" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0023056
@@ -11776,6 +11803,12 @@ is_a: GO:0060627 ! regulation of vesicle-mediated transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006897 ! regulates endocytosis
 relationship: RO:0002211 GO:0006897 ! regulates endocytosis
+
+[Term]
+id: GO:0030103
+name: vasopressin secretion
+def: "The regulated release of vasopressin from secretory granules into the blood." []
+is_a: GO:0030072 ! peptide hormone secretion
 
 [Term]
 id: GO:0030141
@@ -13892,6 +13925,7 @@ def: "Any biological process, occurring at the level of a multicellular organism
 synonym: "organismal physiological process" EXACT []
 synonym: "single-multicellular organism process" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0032502
@@ -13900,6 +13934,7 @@ def: "A biological process whose specific outcome is the progression of an integ
 synonym: "development" NARROW []
 synonym: "single-organism developmental process" RELATED []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0032504
@@ -15735,6 +15770,7 @@ id: GO:0040011
 name: locomotion
 def: "Self-propelled movement of a cell or organism from one location to another." []
 is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0040012
@@ -16472,6 +16508,13 @@ def: "The process in which a relatively unspecialized cell acquires specialized 
 synonym: "myogenesis" RELATED []
 is_a: GO:0030154 ! cell differentiation
 relationship: BFO:0000050 GO:0061061 ! part of muscle structure development
+
+[Term]
+id: GO:0042697
+name: menopause
+def: "Cessation of menstruation, occurring in (e.g.) the human female usually around the age of 50." []
+is_a: GO:0022601 ! menstrual cycle phase
+relationship: BFO:0000050 GO:0010259 ! part of multicellular organism aging
 
 [Term]
 id: GO:0042713
@@ -18018,6 +18061,11 @@ intersection_of: BFO:0000050 GO:0005623 ! part of cell
 relationship: BFO:0000050 GO:0005623 ! part of cell
 
 [Term]
+id: GO:0044699
+is_obsolete: true
+replaced_by: GO:0008150
+
+[Term]
 id: GO:0044703
 name: multi-organism reproductive process
 def: "A biological process that directly contributes to the process of producing new individuals, involving another organism." []
@@ -18032,12 +18080,34 @@ is_a: GO:0032501 ! multicellular organismal process
 is_a: GO:0051704 ! multi-organism process
 
 [Term]
+id: GO:0044710
+is_obsolete: true
+replaced_by: GO:0008152
+
+[Term]
+id: GO:0044763
+is_obsolete: true
+replaced_by: GO:0009987
+
+[Term]
 id: GO:0044782
 name: cilium organization
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a cilium, a specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface. Each cilium is bounded by an extrusion of the cytoplasmic membrane, and contains a regular longitudinal array of microtubules, anchored basally in a centriole." []
 synonym: "microtubule-based flagellum organization" EXACT []
 is_a: GO:0006996 ! organelle organization
 is_a: GO:0120036 ! plasma membrane bounded cell projection organization
+
+[Term]
+id: GO:0044848
+name: biological phase
+def: "A distinct period or stage in a biological process or cycle." []
+is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0046879 ! hormone secretion
+disjoint_from: GO:0048511 ! rhythmic process
+disjoint_from: GO:0050896 ! response to stimulus
+disjoint_from: GO:0051179 ! localization
+disjoint_from: GO:0051704 ! multi-organism process
+disjoint_from: GO:0071840 ! cellular component organization or biogenesis
 
 [Term]
 id: GO:0044853
