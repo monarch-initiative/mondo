@@ -99,9 +99,6 @@ merged-%.obo: merged-%.owl
 syns.json:
 	extract-obo-syns.pl -e $(HOME)/repos/ext.obo $(HOME)/repos/go-ontology/target/go.obo  > $@
 
-fooz:
-	lsaz ddddd
-	echo hi
 
 # first mkdir tmp
 patternize:

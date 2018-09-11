@@ -15,11 +15,26 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
+id: BFO:0000003
+name: occurrent
+def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Term]
 id: BFO:0000004
 name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
 is_a: BFO:0000002 ! continuant
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Term]
+id: BFO:0000015
+name: process
+def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
+is_a: BFO:0000003 ! occurrent
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
@@ -87,6 +102,25 @@ is_a: CHEBI:24432 ! biological role
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
 
 [Term]
+id: ECOCORE:00000008
+name: trophic interaction
+def: "A process during which a living entity acquires or generates food and energy from a living, dead, or non-living entity." []
+is_a: BFO:0000015 ! process
+relationship: BFO:0000051 GO:0045333 ! has part cellular respiration
+property_value: IAO:0000116 "All categories of interaction partners should be indentified in subclasses." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-2908-3327 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
+
+[Term]
+id: ECOCORE:00000011
+name: heterotrophy
+def: "A process during which a living entity acquires food and energy by consuming another organism or organism part, living or dead." []
+is_a: ECOCORE:00000008 ! trophic interaction
+property_value: IAO:0000116 "This should be axiomatised and made a defined class: any trophic interaction which has as input some organic material (living or dead) that is the only source of carbon or reducing equivalents source is a autotrophic process." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-2908-3327 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
+
+[Term]
 id: ENVO:00010483
 name: environmental material
 def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
@@ -149,6 +183,11 @@ name: caprine dairy food product
 is_a: FOODON:00001107 ! bovine dairy food product
 
 [Term]
+id: FOODON:00001118
+name: cattle dairy food product
+is_a: FOODON:00001107 ! bovine dairy food product
+
+[Term]
 id: FOODON:00001141
 name: wheat based food product
 is_a: FOODON:00001093 ! cereal grain food product
@@ -186,6 +225,12 @@ intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:00002452 ! derives from
 
 [Term]
+id: FOODON:00001180
+name: prepared food product
+def: "Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked." []
+is_a: FOODON:00001002 ! foodon product type
+
+[Term]
 id: FOODON:00001184
 name: algal food product
 def: "This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms." []
@@ -195,7 +240,6 @@ is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:03411301 ! derives from algae (food source)
-relationship: RO:0002350 FOODON:03400004 ! member of product type, other
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -206,9 +250,11 @@ is_a: FOODON:00001092 ! vertebrate animal food product
 [Term]
 id: FOODON:00001256
 name: dairy food product
-def: "Food made from milk." []
+def: "A dairy food product has mammilian milk or a milk component as an ingredient." []
 is_a: FOODON:00001092 ! vertebrate animal food product
 relationship: RO:0001000 UBERON:0001913 ! derives from milk (mammary secretion)
+relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
+relationship: RO:0002350 FOODON:03400164 ! member of dairy product (us cfr)
 
 [Term]
 id: FOODON:00001257
@@ -226,35 +272,42 @@ intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish (food sourc
 [Term]
 id: FOODON:00001771
 name: cow milk based food product
+is_a: FOODON:00001118 ! cattle dairy food product
 is_a: FOODON:00001257 ! milk or milk based food product
+intersection_of: FOODON:00001118 ! cattle dairy food product
+intersection_of: RO:0001000 FOODON:03307455 ! derives from cow milk (raw)
 
 [Term]
 id: FOODON:00001792
 name: crustacean food product
 is_a: FOODON:00001046 ! seafood product
+intersection_of: FOODON:00001046 ! seafood product
+intersection_of: RO:0001000 FOODON:03411374 ! derives from crustacean (food source)
 
 [Term]
 id: FOODON:00001911
-name: goat milk or milk based food product
+name: goat dairy food product
 is_a: FOODON:00001109 ! caprine dairy food product
-relationship: RO:0001000 FOODON:03305803 ! derives from goat milk (food product)
-relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
+intersection_of: FOODON:00001109 ! caprine dairy food product
+intersection_of: RO:0001000 FOODON:03305803 ! derives from goat milk (raw)
 
 [Term]
 id: FOODON:00002044
-name: molluscs food product
+name: mollusc food product
 is_a: FOODON:00001046 ! seafood product
+relationship: RO:0001000 FOODON:03412112 ! derives from molluscs (food source)
 
 [Term]
 id: FOODON:00002239
 name: shrimp food product
 is_a: FOODON:00001792 ! crustacean food product
-relationship: RO:0001000 FOODON:03411237 ! derives from shrimp (food source)
+intersection_of: FOODON:00001792 ! crustacean food product
+intersection_of: RO:0001000 FOODON:03411237 ! derives from shrimp (food source)
 
 [Term]
 id: FOODON:00002244
 name: snail food product
-is_a: FOODON:00002044 ! molluscs food product
+is_a: FOODON:00002044 ! mollusc food product
 
 [Term]
 id: FOODON:00002381
@@ -269,6 +322,12 @@ is_a: ENVO:00010483 ! environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: FOODON:00002471
+name: prepared seafood product
+is_a: FOODON:00001180 ! prepared food product
+relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 
 [Term]
 id: FOODON:03000003
@@ -295,27 +354,49 @@ intersection_of: NCBITaxon:29960 ! Fenneropenaeus indicus
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
 [Term]
+id: FOODON:03302116
+name: cow milk (fluid)
+comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F2116
+is_a: FOODON:00001771 ! cow milk based food product
+relationship: RO:0001000 FOODON:03411201 ! derives from cow (food source)
+relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03304511
 name: seafood newburg (dish)
 comment: SIREN DB annotation:\n* has quality 'semiliquid with solid pieces' (http://purl.obolibrary.org/obo/FOODON_03430110)\n* has quality 'fully heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440014)\n* derives from 'skeletal meat part, without bone or shell' (http://purl.obolibrary.org/obo/FOODON_03420125)\n* formed as a result of 'alcoholated' (http://purl.obolibrary.org/obo/FOODON_03460160)\n* has substance added  'spice or herb added' (http://purl.obolibrary.org/obo/FOODON_03460151)\n* has substance added  http://purl.obolibrary.org/obo/FOODON_03460185\n* has substance added  'dairy product added' (http://purl.obolibrary.org/obo/FOODON_03460242)\n* immersed in  'packed in gravy or sauce' (http://purl.obolibrary.org/obo/FOODON_03480034)\n        
 subset: subset_siren
 xref: SUBSET_SIREN:F4511
-is_a: FOODON:00001293 ! shellfish food product
-intersection_of: FOODON:00001293 ! shellfish food product
-intersection_of: RO:0001000 FOODON:03411059 ! derives from shellfish or crustacean (food source)
+is_a: FOODON:00002471 ! prepared seafood product
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03305803
-name: goat milk (food product)
+name: goat milk (raw)
 comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
 subset: subset_siren
 xref: SUBSET_SIREN:F5803
-is_a: FOODON:00001911 ! goat milk or milk based food product
+is_a: FOODON:00001911 ! goat dairy food product
 intersection_of: UBERON:0001913 ! milk (mammary secretion)
-intersection_of: RO:0002225 FOODON:03412611 ! develops from part of doe (goat) (food source)
+intersection_of: RO:0003001 FOODON:03412611 ! produced by doe (goat) (food source)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03307455
+name: cow milk (raw)
+comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n* has consumer 'not pasteurized claim or use' (http://purl.obolibrary.org/obo/FOODON_03510121)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F7455
+is_a: FOODON:03302116 ! cow milk (fluid)
+intersection_of: UBERON:0001913 ! milk (mammary secretion)
+intersection_of: RO:0003001 FOODON:03411201 ! produced by cow (food source)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -500,6 +581,41 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411161
+name: cattle (food source)
+def: "Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos taurus*... with three subspecies: *Bos taurus primigenius, Bos taurus indicus, Bos taurus taurus*. [https://en.wikipedia.org/wiki/Cattle]" []
+synonym: "Bos taurus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328699
+xref: ITIS:183838
+xref: LANGUAL:B1161
+xref: MSW3:14200687
+xref: NCBITaxon:9913
+is_a: FOODON:03414374 ! bovine (food source)
+intersection_of: FOODON:00001303 NCBITaxon:9913 ! has taxonomic identifier Bos taurus
+intersection_of: FOODON:00001303 NCBITaxon:9913 {all_only="true"} ! has taxonomic identifier Bos taurus
+property_value: hasSynonym "auroch" xsd:string
+property_value: hasSynonym "bos spp." xsd:string
+property_value: hasSynonym "bos taurus" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 WIKIPEDIA:Domestic_cattle xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03411201
+name: cow (food source)
+synonym: "Bos taurus Linnaeus, 1758" NARROW []
+xref: http://eol.org/pages/328699
+xref: ITIS:183838
+xref: LANGUAL:B1201
+xref: MSW3:14200687
+xref: NCBITaxon:9913
+is_a: FOODON:03411161 ! cattle (food source)
+property_value: hasSynonym "bos taurus" xsd:string
+property_value: hasSynonym "domesticated cattle" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03411215
 name: algae, bacteria or fungus (food source)
 xref: LANGUAL:B1215
@@ -639,6 +755,20 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03412112
+name: molluscs (food source)
+def: "*Mollusca* is a large phylum of invertebrate animals whose members are known as molluscs or mollusks. Molluscs are the largest marine phylum, comprising about 23% of all the named marine organisms. Numerous molluscs also live in freshwater and terrestrial habitats. [https://en.wikipedia.org/wiki/Mollusca]" []
+synonym: "Mollusca" NARROW []
+xref: EC:No 216/2009 MOL
+xref: FAO ASFIS:MOL
+xref: http://eol.org/pages/2195
+xref: LANGUAL:B2112
+is_a: FOODON:03411433 ! shellfish (food source)
+property_value: hasSynonym "mollusca" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03412215
 name: mud crab family (food source)
 def: "Mud crab may refer to any crab that lives in or near mud, such as: species from family *Portunidae*, such as *Scylla serrata*; *Scylla tranquebarica*; *Scylla paramamosain*; members of the family *Panopeidae*, such as *Panopeus herbstii*; members of the family *Xanthidae*; *Helice crassa*, the tunnelling mud crab. [https://en.wikipedia.org/wiki/Mud_crab]" []
@@ -705,6 +835,30 @@ is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
 intersection_of: FOODON:00001303 NCBITaxon:2 ! has taxonomic identifier Bacteria
 intersection_of: FOODON:00001303 NCBITaxon:2 {all_only="true"} ! has taxonomic identifier Bacteria
 property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03414374
+name: bovine (food source)
+def: "The biological subfamily *Bovinae* includes a diverse group of 10 genera of medium- to large-sized ungulates, including domestic cattle, the bison, African buffalo, the water buffalo, the yak, and the four-horned and spiral-horned antelopes. The evolutionary relationship between the members of the group is obscure, and their classification into loose tribes rather than formal subgroups reflects this uncertainty. General characteristics include cloven hoofs and usually at least one of the sexes of a species having true horns." []
+xref: http://eol.org/pages/2851454
+xref: LANGUAL:B4374
+is_a: FOODON:03414381 ! bovid (food source)
+property_value: hasSynonym "bovinae" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 WIKIPEDIA:Bovinae xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03414381
+name: bovid (food source)
+def: "A bovid (family *Bovidae*) is any of almost 140 species of cloven-hoofed, ruminant mammal which has males with characteristic unbranching horns covered in a permanent sheath of keratin.\n\nThe family is widespread, being native to Asia, Africa, Europe and North America, and diverse: members include bison, African buffalo, water buffalo, antelopes, gazelles, sheep, goats, muskoxen, and domestic cattle." []
+xref: http://eol.org/pages/7687
+xref: LANGUAL:B4381
+is_a: FOODON:03411134 ! animal (mammal) (food source)
+property_value: hasSynonym "bovidae" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 WIKIPEDIA:Bovidae xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -847,6 +1001,105 @@ def: "A pollen-bearing organ in a flower, made up of a slender stalk (filament) 
 is_a: FOODON:03420237 ! floret or flower
 
 [Term]
+id: FOODON:03510019
+name: cattle as consumer
+is_a: FOODON:03510021 ! animal as consumer
+intersection_of: FOODON:00001303 NCBITaxon:9913 ! has taxonomic identifier Bos taurus
+intersection_of: FOODON:00001303 NCBITaxon:9913 {all_only="true"} ! has taxonomic identifier Bos taurus
+
+[Term]
+id: FOODON:03510021
+name: animal as consumer
+is_a: FOODON:03510136 ! food consumer type
+
+[Term]
+id: FOODON:03510136
+name: food consumer type
+is_a: BFO:0000023 ! role
+
+[Term]
+id: GO:0006091
+name: generation of precursor metabolites and energy
+def: "The chemical reactions and pathways resulting in the formation of precursor metabolites, substances from which energy is derived, and any process involved in the liberation of energy from these substances." []
+is_a: GO:0044237 ! cellular metabolic process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0008150
+name: biological_process
+def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." []
+is_a: BFO:0000015 ! process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0008152
+name: metabolic process
+def: "The chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation." []
+is_a: GO:0008150 ! biological_process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0009987
+name: cellular process
+def: "Any process that is carried out at the cellular level, but not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." []
+is_a: GO:0008150 ! biological_process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0015980
+name: energy derivation by oxidation of organic compounds
+def: "The chemical reactions and pathways by which a cell derives energy from organic compounds; results in the oxidation of the compounds from which energy is released." []
+is_a: GO:0006091 ! generation of precursor metabolites and energy
+is_a: GO:0044763 ! single-organism cellular process
+is_a: GO:0055114 ! oxidation-reduction process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0044237
+name: cellular metabolic process
+def: "The chemical reactions and pathways by which individual cells transform chemical substances." []
+is_a: GO:0008152 ! metabolic process
+is_a: GO:0009987 ! cellular process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0044699
+name: single-organism process
+def: "A biological process that involves only one organism." []
+is_a: GO:0008150 ! biological_process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0044710
+name: single-organism metabolic process
+def: "A metabolic process - chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances - which involves a single organism." []
+is_a: GO:0008152 ! metabolic process
+is_a: GO:0044699 ! single-organism process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0044763
+name: single-organism cellular process
+def: "Any process that is carried out at the cellular level, occurring within a single organism." []
+is_a: GO:0009987 ! cellular process
+is_a: GO:0044699 ! single-organism process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0045333
+name: cellular respiration
+def: "The enzymatic release of energy from inorganic and organic compounds (especially carbohydrates and fats) which either requires oxygen (aerobic respiration) or does not (anaerobic respiration)." []
+is_a: GO:0015980 ! energy derivation by oxidation of organic compounds
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
+id: GO:0055114
+name: oxidation-reduction process
+def: "A metabolic process that results in the removal or addition of one or more electrons to or from a substance, with or without the concomitant removal or addition of a proton or protons." []
+is_a: GO:0044710 ! single-organism metabolic process
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+
+[Term]
 id: NCBITaxon:111520
 name: Penaeoidea
 is_a: NCBITaxon:6684 ! Dendrobranchiata
@@ -908,6 +1161,12 @@ name: Eukaryota
 synonym: "eucaryotes" EXACT []
 synonym: "eukaryotes" EXACT []
 is_a: OBI:0100026 ! organism
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:27592
+name: Bovinae
+is_a: NCBITaxon:9895 ! Bovidae
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1120,6 +1379,24 @@ is_a: NCBITaxon:35500 ! Pecora
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:9903
+name: Bos
+synonym: "oxen, cattle" EXACT []
+is_a: NCBITaxon:27592 ! Bovinae
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:9913
+name: Bos taurus
+synonym: "bovine" EXACT []
+synonym: "cattle" EXACT []
+synonym: "cow" EXACT []
+synonym: "domestic cattle" EXACT []
+synonym: "domestic cow" EXACT []
+is_a: NCBITaxon:9903 ! Bos
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:9925
 name: Capra hircus
 synonym: "domestic goat" EXACT []
@@ -1232,6 +1509,7 @@ is_a: FOODON:03420122 ! nonmeat part of animal
 
 [Term]
 id: UBERON:0001913
+name: milk
 name: milk (mammary secretion)
 def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
 is_a: FOODON:03420113 ! milk or milk component
@@ -1278,6 +1556,37 @@ is_transitive: true
 is_a: RO:0002131 ! overlaps
 
 [Typedef]
+id: BFO:0000054
+name: realized in
+comment: Paraphrase of elucidation: a relation between a realizable entity and a process, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
+property_value: IAO:0000111 "realized in" xsd:string
+property_value: IAO:0000112 "this disease is realized in this disease course" xsd:string
+property_value: IAO:0000112 "this fragility is realized in this shattering" xsd:string
+property_value: IAO:0000112 "this investigator role is realized in this investigation" xsd:string
+property_value: IAO:0000118 "is realized by" xsd:string
+property_value: IAO:0000118 "realized_in" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: IAO:0000600 "[copied from inverse property 'realizes'] to say that b realizes c at t is to assert that there is some material entity d & b is a process which has participant d at t & c is a disposition or role of which d is bearer_of at t& the type instantiated by b is correlated with the type instantiated by c. (axiom label in BFO2 Reference: [059-003])" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+domain: BFO:0000017 ! realizable entity
+range: BFO:0000015 ! process
+inverse_of: BFO:0000055 ! realizes
+
+[Typedef]
+id: BFO:0000055
+name: realizes
+comment: Paraphrase of elucidation: a relation between a process and a realizable entity, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
+property_value: IAO:0000111 "realizes" xsd:string
+property_value: IAO:0000112 "this disease course realizes this disease" xsd:string
+property_value: IAO:0000112 "this investigation realizes this investigator role" xsd:string
+property_value: IAO:0000112 "this shattering realizes this fragility" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: IAO:0000600 "to say that b realizes c at t is to assert that there is some material entity d & b is a process which has participant d at t & c is a disposition or role of which d is bearer_of at t& the type instantiated by b is correlated with the type instantiated by c. (axiom label in BFO2 Reference: [059-003])" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
+domain: BFO:0000015 ! process
+range: BFO:0000017 ! realizable entity
+
+[Typedef]
 id: FOODON:00001303
 name: has taxonomic identifier
 
@@ -1313,6 +1622,48 @@ property_value: IAO:0000118 "is bearer of" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 property_value: RO:0001900 RO:0001901
 range: BFO:0000020 ! specifically dependent continuant
+
+[Typedef]
+id: RO:0000056
+name: participates in
+def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
+property_value: IAO:0000111 "participates in" xsd:string
+property_value: IAO:0000112 "this blood clot participates in this blood coagulation" xsd:string
+property_value: IAO:0000112 "this input material (or this output material) participates in this process" xsd:string
+property_value: IAO:0000112 "this investigator participates in this investigation" xsd:string
+property_value: IAO:0000118 "participates_in" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000002 ! continuant
+range: BFO:0000003 ! occurrent
+inverse_of: RO:0000057 ! has participant
+
+[Typedef]
+id: RO:0000057
+name: has participant
+def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
+property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:has_participant xsd:string
+property_value: IAO:0000111 "has participant" xsd:string
+property_value: IAO:0000112 "this blood coagulation has participant this blood clot" xsd:string
+property_value: IAO:0000112 "this investigation has participant this investigator" xsd:string
+property_value: IAO:0000112 "this process has participant this input material (or this output material)" xsd:string
+property_value: IAO:0000116 "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time." xsd:string
+property_value: IAO:0000118 "has_participant" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000003 ! occurrent
+range: BFO:0000002 ! continuant
+holds_over_chain: BFO:0000051 RO:0000057
+
+[Typedef]
+id: RO:0000081
+name: role of
+def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
+property_value: IAO:0000112 "this investigator role is a role of this person" xsd:string
+property_value: IAO:0000116 "A role inheres in its bearer at all times for which the role exists, however the role need not be realized at all the times that the role exists." xsd:string
+property_value: IAO:0000118 "is role of" xsd:string
+property_value: IAO:0000118 "role_of" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0000052 ! inheres in
+inverse_of: RO:0000087 ! has role
 
 [Typedef]
 id: RO:0000087
@@ -1368,69 +1719,34 @@ is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
-id: RO:0002202
-name: develops from
-def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
-comment: This is the transitive form of the develops from relation
-property_value: IAO:0000114 IAO:0000125
+id: RO:0002215
+name: capable of
+def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
+subset: ro-eco
+property_value: IAO:0000112 "mechanosensory neuron capable of detection of mechanical stimulus involved in sensory perception (GO:0050974)" xsd:string
+property_value: IAO:0000112 "osteoclast SubClassOf 'capable of' some 'bone resorption'" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000117 "Melissa Haendel" xsd:string
-property_value: IAO:0000117 "Terry Meehan" xsd:string
+property_value: IAO:0000118 "has function realized in" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20123131
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/21208450
+property_value: IAO:0000232 "For compatibility with BFO, this relation has a shortcut definition in which the expression \"capable of some P\" expands to \"bearer_of (some realized_by only P)\"." xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 domain: BFO:0000004 ! independent continuant
-range: BFO:0000004 ! independent continuant
-is_transitive: true
-is_a: RO:0002258 ! developmentally preceded by
-inverse_of: RO:0002203 ! develops into
+range: BFO:0000015 ! process
+is_a: RO:0002216 ! capable of part of
+expand_expression_to: "RO_0000053 some (RO_0000054 only ?Y)" []
 
 [Typedef]
-id: RO:0002203
-name: develops into
-def: "inverse of develops from" []
-subset: RO:0002259
-property_value: IAO:0000114 IAO:0000125
+id: RO:0002216
+name: capable of part of
+def: "c stands in this relationship to p if and only if there exists some p' such that c is capable_of p', and p' is part_of p." []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000117 "Terry Meehan" xsd:string
+property_value: IAO:0000118 "has function in" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_transitive: true
-is_a: RO:0002286 ! developmentally succeeded by
-is_a: RO:0002387 ! has potential to develop into
-is_a: RO:0002388 ! has potential to directly develop into
-
-[Typedef]
-id: RO:0002225
-name: develops from part of
-def: "x develops from part of y if and only if there exists some z such that x develops from z and z is part of y" []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002202 ! develops from
-
-[Typedef]
-id: RO:0002258
-name: developmentally preceded by
-def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
-comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "false" xsd:boolean
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
-is_a: RO:0002324 ! developmentally related to
-inverse_of: RO:0002286 ! developmentally succeeded by
-
-[Typedef]
-id: RO:0002286
-name: developmentally succeeded by
-def: "Inverse of developmentally preceded by" []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002384 ! has developmental potential involving
+holds_over_chain: RO:0002215 BFO:0000050
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002500 ! causal agent in process
+expand_expression_to: "RO_0000053 some (RO_0000054 only (BFO_0000050 some ?Y))" []
 
 [Typedef]
 id: RO:0002314
@@ -1455,11 +1771,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 property_value: RO:0001900 RO:0001901
 
 [Typedef]
-id: RO:0002324
-name: developmentally related to
-def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+id: RO:0002328
+name: functionally related to
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" xsd:string
+property_value: IAO:0000232 "This is a grouping relation that collects relations used for the purpose of connecting structure and function" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
@@ -1485,31 +1800,24 @@ property_value: RO:0001900 RO:0001901
 is_a: BFO:0000051 ! has part
 
 [Typedef]
-id: RO:0002384
-name: has developmental potential involving
-def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+id: RO:0002410
+name: causally related to
+def: "This relation groups causal relations between material entities and causal relations between processes" []
 property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000116 "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002324 ! developmentally related to
+is_a: RO:0002609 ! related via dependence to
 
 [Typedef]
-id: RO:0002387
-name: has potential to develop into
-def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Chris Mungall" xsd:string
+id: RO:0002500
+name: causal agent in process
+def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002384 ! has developmental potential involving
-
-[Typedef]
-id: RO:0002388
-name: has potential to directly develop into
-def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002387 ! has potential to develop into
+is_a: RO:0002595 ! causal relation between material entity and a process
+inverse_of: RO:0002608 ! process has causal agent
 
 [Typedef]
 id: RO:0002502
@@ -1517,4 +1825,42 @@ name: depends on
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 property_value: seeAlso BFO:0000169
+
+[Typedef]
+id: RO:0002595
+name: causal relation between material entity and a process
+def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
+property_value: IAO:0000116 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000040 ! material entity
+range: BFO:0000015 ! process
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002608
+name: process has causal agent
+def: "Inverse of 'causal agent in process'" []
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002609
+name: related via dependence to
+def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
+id: RO:0003001
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
 

@@ -5,7 +5,7 @@ description: >-
   allergy classified according to allergic trigger.
 
 classes:
-  allergy: MONDO:0005271
+  allergic disease: MONDO:0005271
 
 relations:
   realized in response to stimulus:  RO:0004028
@@ -14,7 +14,7 @@ vars:
   substance: "owl:Thing"
 
 name:
-  text: "%s allergy"
+  text: "%s allergic disease"
   vars:
    - substance
 
@@ -25,12 +25,12 @@ annotations:
      - substance
 
 def:
-  text: "A allergy involving a %s."
+  text: "A allergic disease involving a %s."
   vars:
     - substance
 
 equivalentTo:
-  text: "'allergy' and 'realized in response to stimulus' some %s"
+  text: "'allergic disease' and 'realized in response to stimulus' some %s"
   vars:
     - substance
 
