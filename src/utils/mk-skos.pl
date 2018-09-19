@@ -88,6 +88,6 @@ foreach (@triples) {
         print "<$s> <$rel> <$o> .\n";
     }
     else {
-        print STDERR "MASKING: $s $rel $o\n";
+        #print STDERR "MASKING: $s $rel $o\n";
     }
 }
