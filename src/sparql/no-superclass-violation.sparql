@@ -1,0 +1,26 @@
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix disease: <http://purl.obolibrary.org/obo/MONDO_0000001>
+prefix disease_characteristic: <http://purl.obolibrary.org/obo/MONDO_0021125>
+prefix disease_stage: <http://purl.obolibrary.org/obo/MONDO_0021007>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?c ?n WHERE 
+{
+  ?c a owl:Class ;
+     rdfs:label ?n
+  FILTER (strstarts(str(?c),"http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (!isBlank(?c))
+  FILTER ( NOT EXISTS {?c owl:deprecated "true"^^xsd:boolean} )
+  FILTER ( NOT EXISTS
+    {
+      {?c rdfs:subClassOf* disease: }
+        UNION
+      {?c rdfs:subClassOf* disease_characteristic: }
+        UNION
+      {?c rdfs:subClassOf* disease_stage: }
+    } )
+
+}
