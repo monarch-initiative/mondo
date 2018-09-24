@@ -422,6 +422,9 @@ reports/release/mondo-owl-report.yaml: mondo.owl
 %-report.tsv: %
 	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
+common_map.tsv:
+	blip-findall -debug index -goal ix -i imports/equivalencies.obo -i d2p.pro  -r mondoe -c ../utils/all_genetic.pro common_to_mondo/2 -label -no_pred -use_tabs | cut -f1,3,4 > $@
+
 # ----------------------------------------
 # Sparql constructs
 # ----------------------------------------
@@ -457,6 +460,10 @@ mondo-premerge-%.owl: mondo.owl mirror/%.owl
 
 mondo-plus-%.owl: mondo-premerge-%.owl
 	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@.tmp && mv $@.tmp $@
+
+mondo-compat-%: mondo.owl mirror/%.owl
+	owltools --use-catalog $^ --add-imports-from-supports --run-reasoner -r elk -u -m $@-debug.owl && touch $@
+
 
 # ----------------------------------------
 # External ontologies
@@ -732,7 +739,6 @@ ptable-%.tsv: %-mappings.tsv
 
 unlikely.md: linked-rpt.md
 	./unlikely-axiom-report.pl $< | head -200 > $@
-
 
 modules/equiv-xrefs.obo: mondo-edit.obo
 	obo-filter-tags.pl -t id -t xref $<   | egrep '^($$|\[Term|id:|xref:.*equivalentTo)' > $@

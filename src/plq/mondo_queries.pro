@@ -15,6 +15,7 @@
 :- rdf_register_prefix('MEDGEN','http://purl.obolibrary.org/obo/MEDGEN_').
 :- rdf_register_prefix('ONCOTREE','http://purl.obolibrary.org/obo/ONCOTREE_').
 :- rdf_register_prefix('EFO','http://www.ebi.ac.uk/efo/EFO_').
+:- rdf_register_prefix('HGNC','http://identifiers.org/hgnc/').
 :- rdf_register_prefix('ICD10','http://purl.obolibrary.org/obo/ICD10_').
 :- rdf_register_prefix('Orphanet','http://www.orpha.net/ORDO/Orphanet_').
 :- rdf_register_ns(oio,'http://www.geneontology.org/formats/oboInOwl#').
@@ -188,6 +189,20 @@ xref_relation_inferred(C,X,R) :-
         \+ mondo_equiv_xref(C,X),
         mondo_equiv_xref(D,X),
         rel(C,R,D).
+
+mondo2hgnc(M,G) :-
+        subclass_of_some(M,_,G),
+        uri_prefix(G,'HGNC').
+
+mondo2hgnc_inf(M,G,M) :- mondo2hgnc(M,G).
+mondo2hgnc_inf(M,G,Z) :- rdf_path(M,zeroOrMore(rdfs:subClassOf),Z),mondo2hgnc(Z,G).
+
+mondo2hgnc_inf(M,G) :- mondo2hgnc_inf(M,G,_).
+
+mondo2hgnc_conflict(M,G1,G2,Z1,Z2) :- mondo2hgnc_inf(M,G1,Z1),mondo2hgnc_inf(M,G2,Z2),G1 \= G2.
+mondo2hgnc_conflict(M,G1,G2) :- mondo2hgnc_conflict(M,G1,G2,_,_).
+
+
 
 rel(C,subClassOf,D) :- rdfs_subclass_of(C,D), !.
 rel(C,superClassOf,D) :- rdfs_subclass_of(D,C), !.
