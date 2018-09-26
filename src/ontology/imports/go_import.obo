@@ -824,6 +824,14 @@ intersection_of: RO:0002213 GO:0006468 ! positively regulates protein phosphoryl
 relationship: RO:0002213 GO:0006468 ! positively regulates protein phosphorylation
 
 [Term]
+id: GO:0001942
+name: hair follicle development
+def: "The process whose specific outcome is the progression of the hair follicle over time, from its formation to the mature structure. A hair follicle is a tube-like opening in the epidermis where the hair shaft develops and into which the sebaceous glands open." []
+is_a: GO:0022405 ! hair cycle process
+is_a: GO:0048856 ! anatomical structure development
+relationship: BFO:0000050 GO:0098773 ! part of skin epidermis development
+
+[Term]
 id: GO:0001944
 name: vasculature development
 def: "The process whose specific outcome is the progression of the vasculature over time, from its formation to the mature structure. The vasculature is an interconnected tubular multi-tissue structure that contains fluid that is actively transported around the organism." []
@@ -11355,6 +11363,20 @@ intersection_of: BFO:0000050 GO:0007049 ! part of cell cycle
 relationship: BFO:0000050 GO:0007049 ! part of cell cycle
 
 [Term]
+id: GO:0022404
+name: molting cycle process
+def: "A multicellular organismal process involved in the periodic casting off and regeneration of an outer covering of cuticle, feathers, hair, horns, skin." []
+is_a: GO:0032501 ! multicellular organismal process
+relationship: BFO:0000050 GO:0042303 ! part of molting cycle
+
+[Term]
+id: GO:0022405
+name: hair cycle process
+def: "A multicellular organismal process involved in the cyclical phases of growth (anagen), regression (catagen), quiescence (telogen), and shedding (exogen) in the life of a hair; one of the collection or mass of filaments growing from the skin of an animal, and forming a covering for a part of the head or for any part or the whole of the body." []
+is_a: GO:0022404 ! molting cycle process
+relationship: BFO:0000050 GO:0042633 ! part of hair cycle
+
+[Term]
 id: GO:0022406
 name: membrane docking
 def: "The initial attachment of a membrane or protein to a target membrane. Docking requires only that the proteins come close enough to interact and adhere." []
@@ -16022,6 +16044,12 @@ synonym: "response to chemical substance" EXACT []
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
+id: GO:0042303
+name: molting cycle
+def: "The periodic casting off and regeneration of an outer covering of cuticle, feathers, hair, horns, skin, etc." []
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
 id: GO:0042304
 name: regulation of fatty acid biosynthetic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of fatty acids, any of the aliphatic monocarboxylic acids that can be liberated by hydrolysis from naturally occurring fats and oils." []
@@ -16489,6 +16517,58 @@ def: "Any process involved in the maintenance of an internal steady state of cho
 synonym: "positive regulation of cholesterol homeostasis" RELATED []
 synonym: "regulation of cholesterol homeostasis" RELATED []
 is_a: GO:0055092 ! sterol homeostasis
+
+[Term]
+id: GO:0042633
+name: hair cycle
+def: "The cyclical phases of growth (anagen), regression (catagen), quiescence (telogen), and shedding (exogen) in the life of a hair; one of the collection or mass of filaments growing from the skin of an animal, and forming a covering for a part of the head or for any part or the whole of the body." []
+is_a: GO:0042303 ! molting cycle
+
+[Term]
+id: GO:0042634
+name: regulation of hair cycle
+def: "Any process that modulates the frequency, rate or extent of the cyclical phases of growth (anagen), regression (catagen), quiescence (telogen), and shedding (exogen) in the life of a hair." []
+is_a: GO:0051239 ! regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042633 ! regulates hair cycle
+relationship: RO:0002211 GO:0042633 ! regulates hair cycle
+
+[Term]
+id: GO:0042635
+name: positive regulation of hair cycle
+def: "Any process that activates or increases the frequency, rate or extent of the cyclical phases of growth (anagen), regression (catagen), quiescence (telogen), and shedding (exogen) in the life of a hair." []
+synonym: "activation of hair cycle" NARROW []
+synonym: "stimulation of hair cycle" NARROW []
+synonym: "up regulation of hair cycle" EXACT []
+synonym: "up-regulation of hair cycle" EXACT []
+synonym: "upregulation of hair cycle" EXACT []
+is_a: GO:0042634 ! regulation of hair cycle
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042633 ! positively regulates hair cycle
+relationship: RO:0002213 GO:0042633 ! positively regulates hair cycle
+
+[Term]
+id: GO:0042636
+name: negative regulation of hair cycle
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the cyclical phases of growth (anagen), regression (catagen), quiescence (telogen), and shedding (exogen) in the life of a hair." []
+synonym: "down regulation of hair cycle" EXACT []
+synonym: "down-regulation of hair cycle" EXACT []
+synonym: "downregulation of hair cycle" EXACT []
+synonym: "inhibition of hair cycle" NARROW []
+is_a: GO:0042634 ! regulation of hair cycle
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042633 ! negatively regulates hair cycle
+relationship: RO:0002212 GO:0042633 ! negatively regulates hair cycle
+
+[Term]
+id: GO:0042640
+name: anagen
+def: "The growth phase of the hair cycle. Lasts, for example, about 3 to 6 years for human scalp hair." []
+synonym: "hair growth" RELATED []
+is_a: GO:0044851 ! hair cycle phase
+relationship: BFO:0000050 GO:0048820 ! part of hair follicle maturation
 
 [Term]
 id: GO:0042645
@@ -18108,6 +18188,12 @@ disjoint_from: GO:0050896 ! response to stimulus
 disjoint_from: GO:0051179 ! localization
 disjoint_from: GO:0051704 ! multi-organism process
 disjoint_from: GO:0071840 ! cellular component organization or biogenesis
+
+[Term]
+id: GO:0044851
+name: hair cycle phase
+def: "The cyclical periods of growth (anagen), regression (catagen), quiescence (telogen), and shedding (exogen) in the life of a hair; one of the collection or mass of filaments growing from the skin of an animal, and forming a covering for a part of the head or for any part or the whole of the body." []
+is_a: GO:0044848 ! biological phase
 
 [Term]
 id: GO:0044853
@@ -21872,6 +21958,52 @@ def: "The reorganization or renovation of existing tissues. This process can eit
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
+id: GO:0048817
+name: negative regulation of hair follicle maturation
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of hair follicle maturation." []
+synonym: "down regulation of hair follicle maturation" EXACT []
+synonym: "down-regulation of hair follicle maturation" EXACT []
+synonym: "downregulation of hair follicle maturation" EXACT []
+synonym: "inhibition of hair follicle maturation" NARROW []
+is_a: GO:0048819 ! regulation of hair follicle maturation
+is_a: GO:0051799 ! negative regulation of hair follicle development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0048820 ! negatively regulates hair follicle maturation
+relationship: RO:0002212 GO:0048820 ! negatively regulates hair follicle maturation
+
+[Term]
+id: GO:0048818
+name: positive regulation of hair follicle maturation
+def: "Any process that activates or increases the frequency, rate or extent of hair follicle maturation." []
+synonym: "activation of hair follicle maturation" NARROW []
+synonym: "stimulation of hair follicle maturation" NARROW []
+synonym: "up regulation of hair follicle maturation" EXACT []
+synonym: "up-regulation of hair follicle maturation" EXACT []
+synonym: "upregulation of hair follicle maturation" EXACT []
+is_a: GO:0048819 ! regulation of hair follicle maturation
+is_a: GO:0051798 ! positive regulation of hair follicle development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0048820 ! positively regulates hair follicle maturation
+relationship: RO:0002213 GO:0048820 ! positively regulates hair follicle maturation
+
+[Term]
+id: GO:0048819
+name: regulation of hair follicle maturation
+def: "Any process that modulates the frequency, rate or extent of hair follicle maturation." []
+is_a: GO:0051797 ! regulation of hair follicle development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0048820 ! regulates hair follicle maturation
+relationship: RO:0002211 GO:0048820 ! regulates hair follicle maturation
+
+[Term]
+id: GO:0048820
+name: hair follicle maturation
+def: "A developmental process, independent of morphogenetic (shape) change, that is required for a hair follicle to attain its fully functional state." []
+is_a: GO:0022405 ! hair cycle process
+is_a: GO:0071695 ! anatomical structure maturation
+relationship: BFO:0000050 GO:0001942 ! part of hair follicle development
+
+[Term]
 id: GO:0048844
 name: artery morphogenesis
 def: "The process in which the anatomical structures of arterial blood vessels are generated and organized. Arteries are blood vessels that transport blood from the heart to the body and its organs." []
@@ -24685,6 +24817,89 @@ intersection_of: RO:0002213 GO:0000280 ! positively regulates nuclear division
 relationship: RO:0002213 GO:0000280 ! positively regulates nuclear division
 
 [Term]
+id: GO:0051797
+name: regulation of hair follicle development
+def: "Any process that modulates the frequency, rate or extent of hair follicle development." []
+is_a: GO:0042634 ! regulation of hair cycle
+is_a: GO:0045682 ! regulation of epidermis development
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0001942 ! regulates hair follicle development
+relationship: RO:0002211 GO:0001942 ! regulates hair follicle development
+
+[Term]
+id: GO:0051798
+name: positive regulation of hair follicle development
+def: "Any process that activates or increases the frequency, rate or extent of hair follicle development." []
+synonym: "activation of hair follicle development" NARROW []
+synonym: "stimulation of hair follicle development" NARROW []
+synonym: "up regulation of hair follicle development" EXACT []
+synonym: "up-regulation of hair follicle development" EXACT []
+synonym: "upregulation of hair follicle development" EXACT []
+is_a: GO:0042635 ! positive regulation of hair cycle
+is_a: GO:0045684 ! positive regulation of epidermis development
+is_a: GO:0051797 ! regulation of hair follicle development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0001942 ! positively regulates hair follicle development
+relationship: RO:0002213 GO:0001942 ! positively regulates hair follicle development
+
+[Term]
+id: GO:0051799
+name: negative regulation of hair follicle development
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of hair follicle development." []
+synonym: "down regulation of hair follicle development" EXACT []
+synonym: "down-regulation of hair follicle development" EXACT []
+synonym: "downregulation of hair follicle development" EXACT []
+synonym: "inhibition of hair follicle development" NARROW []
+is_a: GO:0042636 ! negative regulation of hair cycle
+is_a: GO:0045683 ! negative regulation of epidermis development
+is_a: GO:0051797 ! regulation of hair follicle development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0001942 ! negatively regulates hair follicle development
+relationship: RO:0002212 GO:0001942 ! negatively regulates hair follicle development
+
+[Term]
+id: GO:0051884
+name: regulation of timing of anagen
+def: "Any process that modulates the frequency, rate or extent of timing of anagen, the growth phase of the hair cycle." []
+synonym: "regulation of anagen" RELATED []
+is_a: GO:0048819 ! regulation of hair follicle maturation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0042640 ! regulates anagen
+relationship: RO:0002211 GO:0042640 ! regulates anagen
+
+[Term]
+id: GO:0051885
+name: positive regulation of timing of anagen
+def: "Any process that activates or increases the frequency, rate or extent of timing of anagen, the growth phase of the hair cycle." []
+synonym: "activation of anagen" NARROW []
+synonym: "positive regulation of anagen" RELATED []
+synonym: "stimulation of anagen" NARROW []
+synonym: "up regulation of anagen" RELATED []
+synonym: "up-regulation of anagen" RELATED []
+synonym: "upregulation of anagen" RELATED []
+is_a: GO:0048818 ! positive regulation of hair follicle maturation
+is_a: GO:0051884 ! regulation of timing of anagen
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0042640 ! positively regulates anagen
+relationship: RO:0002213 GO:0042640 ! positively regulates anagen
+
+[Term]
+id: GO:0051886
+name: negative regulation of timing of anagen
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of timing of anagen, the growth phase of the hair cycle." []
+synonym: "down regulation of anagen" RELATED []
+synonym: "down-regulation of anagen" RELATED []
+synonym: "downregulation of anagen" RELATED []
+synonym: "inhibition of anagen" NARROW []
+synonym: "negative regulation of anagen" RELATED []
+is_a: GO:0048817 ! negative regulation of hair follicle maturation
+is_a: GO:0051884 ! regulation of timing of anagen
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0042640 ! negatively regulates anagen
+relationship: RO:0002212 GO:0042640 ! negatively regulates anagen
+
+[Term]
 id: GO:0051924
 name: regulation of calcium ion transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of calcium ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
@@ -26930,6 +27145,13 @@ synonym: "vocalisation behaviour" EXACT []
 is_a: GO:0007610 ! behavior
 
 [Term]
+id: GO:0071695
+name: anatomical structure maturation
+def: "A developmental process, independent of morphogenetic (shape) change, that is required for an anatomical structure to attain its fully functional state." []
+is_a: GO:0021700 ! developmental maturation
+relationship: BFO:0000050 GO:0048856 ! part of anatomical structure development
+
+[Term]
 id: GO:0071696
 name: ectodermal placode development
 def: "The progression of an ectodermal placode over time from its initial formation until its mature state. An ectodermal placode is a thickening of the ectoderm that is the primordium of many structures derived from the ectoderm." []
@@ -28204,6 +28426,14 @@ def: "A molecular function that modulates the activity of a gene product or comp
 is_a: GO:0003674 ! molecular_function
 relationship: BFO:0000050 GO:0065009 ! part of regulation of molecular function
 relationship: RO:0002211 GO:0003674 ! regulates molecular_function
+
+[Term]
+id: GO:0098773
+name: skin epidermis development
+def: "The process whose specific outcome is the progression of the skin epidermis over time, from its formation to the mature structure." []
+is_a: GO:0008544 ! epidermis development
+is_a: GO:0060429 ! epithelium development
+relationship: BFO:0000050 GO:0043588 ! part of skin development
 
 [Term]
 id: GO:0098793
