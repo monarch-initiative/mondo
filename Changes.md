@@ -1,3 +1,18 @@
+## 2018-09-26 release
+
+### New classes
+
+ * [Preeyasombat-Varavithya syndrome](http://purl.obolibrary.org/obo/MONDO_0060781)
+ * [vaginal fibroepithelial polyp](http://purl.obolibrary.org/obo/MONDO_0060774)
+ * [cervical fibroepithelial polyp](http://purl.obolibrary.org/obo/MONDO_0060777)
+ * [adult fanconi syndrome](http://purl.obolibrary.org/obo/MONDO_0060778)
+ * [acquired fanconi syndrome](http://purl.obolibrary.org/obo/MONDO_0060779)
+ * [fibroepithelial polyp](http://purl.obolibrary.org/obo/MONDO_0060765)
+ * [anal polyp](http://purl.obolibrary.org/obo/MONDO_0060766)
+ * [gingival fibroepithelial polyp](http://purl.obolibrary.org/obo/MONDO_0060768)
+ * [hypervalinemia and hyperleucine-isoleucinemia](http://purl.obolibrary.org/obo/MONDO_0100058)
+
+
 ## 2018-09-10 release
 
 ### New classes

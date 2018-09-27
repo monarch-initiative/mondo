@@ -171,12 +171,12 @@ $(ONT).json: $(ONT).owl
 # Component module.
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
-$(ONT)-component.owl: reasoned.owl
+$(ONT)-base.owl: reasoned.owl
 	$(OWLTOOLS) --use-catalog $< $(patsubst %,--remove-import-declaration $(OBO)/$(ONT)/imports/%_import.owl, $(ONTOLOGY_IMPORTS))  --merge-imports-closure $(REMOVE_DECLARATIONS) --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
 
-$(ONT)-component.obo: $(ONT)-component.owl
+$(ONT)-base.obo: $(ONT)-base.owl
 	$(OWL2OBO)
-$(ONT)-component.json: $(ONT)-component.owl
+$(ONT)-base.json: $(ONT)-base.owl
 	robot convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
 
@@ -228,7 +228,7 @@ reports/reasoner-diff.obo: filtered-nr.obo filtered-nr-reasoned.obo
 all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-minimal.json
 
 TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch 
-subsets/mondo-minimal.owl: mondo-component.owl imports/equivalencies.owl
+subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
 	owltools --use-catalog $< $(TRIM_MINIMAL) imports/equivalencies.owl --merge-support-ontologies --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
 	robot annotate -R true -i $@.tmp.owl -o $@.tmp2.owl &&\
 	owltools $@.tmp2.owl --add-ontology-annotation $(PV_CC0) -o $@
@@ -407,8 +407,8 @@ reports/release/%.tsv: mondo.owl
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # TODO: replace with sparql
-reports/release/semantic-xref-pairs.tsv: d2p.pro mondo-component.obo
-	blip-findall -i mondo-component.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
+reports/release/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
+	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
 reports/edit/report.yaml: $(SRC)
