@@ -15,6 +15,7 @@
 :- rdf_register_prefix('MEDGEN','http://purl.obolibrary.org/obo/MEDGEN_').
 :- rdf_register_prefix('ONCOTREE','http://purl.obolibrary.org/obo/ONCOTREE_').
 :- rdf_register_prefix('EFO','http://www.ebi.ac.uk/efo/EFO_').
+:- rdf_register_prefix('RO','http://www.ebi.ac.uk/efo/RO_').
 :- rdf_register_prefix('HGNC','http://identifiers.org/hgnc/').
 :- rdf_register_prefix('ICD10','http://purl.obolibrary.org/obo/ICD10_').
 :- rdf_register_prefix('Orphanet','http://www.orpha.net/ORDO/Orphanet_').
