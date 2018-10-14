@@ -175,14 +175,22 @@ simj_merge_candidates(C1,C2,S,N1,N2) :-
         S > 0.8,
         C1 @< C2.
 
+obsoletion_status(C,S) :-
+        (   deprecated(C)
+        ->  S=deprecated
+        ;   S=live).
 
-proxy_merge(C,X1,X2,S) :-
+
+proxy_merge(C,X1,X2,S,Ob1,Ob2) :-
         owl_equivalent_class(C,X1),
         mondo(C),
         owl_equivalent_class(C,X2),
         X1 @< X2,
         uri_prefix(X1,S),
-        uri_prefix(X2,S).
+        uri_prefix(X2,S),
+        obsoletion_status(X1,Ob1),
+        obsoletion_status(X2,Ob2).
+
 
 xref_relation_inferred(C,X,R) :-
         has_dbxref(C,X),
