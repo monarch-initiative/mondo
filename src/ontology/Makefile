@@ -109,6 +109,10 @@ osf_upload: prepare_release osf_upload_direct
 osf_upload_direct:
 	cd ../.. && $(OSF_UPLOAD) -f -r target/ current/ && $(OSF_UPLOAD) -f -r target/ releases/$(ISODATE)
 
+list_assets:
+	ls -alt $(ASSETS)
+	echo $(GHVERSION)
+
 deploy_assets_direct:
 	ls -alt $(ASSETS)
 	../utils/make-release-assets.py --release $(GHVERSION) $(ASSETS)
@@ -754,6 +758,14 @@ omim2medgen.obo: mim2gene_medgen
 # mondo_queries requires for prefixes
 all_unique.tsv:
 	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all -i skos.ttl unique_match > $@
+
+lexrules-%.pro:
+	test -d tmp-$* || mkdir -p tmp-$*
+	rdfmatch --ontA MONDO --ontB $(shell echo $* | tr a-z A-Z) -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl learn > $@
+.PRECIOUS: lexrules-%.pro
+
+match-%.tsv: lexrules-%.pro
+	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl classify $< > $@
 
 all_unique_fresh: clean_tmp all_unique.tsv
 clean_tmp:
