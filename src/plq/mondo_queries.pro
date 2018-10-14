@@ -178,6 +178,8 @@ simj_merge_candidates(C1,C2,S,N1,N2) :-
 obsoletion_status(C,S) :-
         (   deprecated(C)
         ->  S=deprecated
+        ;   \+ label(C,_)
+        ->  S=not_present
         ;   S=live).
 
 

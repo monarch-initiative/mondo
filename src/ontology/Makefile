@@ -375,7 +375,7 @@ reports/equiv-replaced-by-%.tsv:
 	pl2sparql -e -A void.ttl -i mondo_edit -i equivs -i mirror/$*.owl -c ../plq/mondo_queries.pro -l equivalent_to_replaced_by > $@
 
 reports/proxy-merge.tsv: mondo.owl
-	./mq -i all proxy_merge -f tsv -l > $@.tmp && mv $@.tmp $@
+	./mq -i all proxy_merge -f tsv -l > $@.tmp && sort -u $@.tmp > $@
 #	pl2sparql -f tsv -A void.ttl -e -i all -c ../plq/proxy_merge.pro proxy_merge > $@.tmp && mv $@.tmp $@
 
 # the main OWL file will have 'pseudo-roots' caused by the fact that external classes
