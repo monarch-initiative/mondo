@@ -1,13 +1,13 @@
-pattern_name: melanoma (disease) disease has location X
+pattern_name: melanoma disease has location X
 pattern_iri: http://purl.obolibrary.org/obo/mondo/melanoma_(disease)_disease_has_location_X
 
 description: >-
   This is auto-generated. Add your description here
 
-  Examples: [cutaneous melanoma (disease)](http://purl.obolibrary.org/obo/MONDO_0005012), [malignant breast melanoma](http://purl.obolibrary.org/obo/MONDO_0002975), [malignant melanoma of the mucosa](http://purl.obolibrary.org/obo/MONDO_0015694) (22 total)
+  Examples: [cutaneous melanoma](http://purl.obolibrary.org/obo/MONDO_0005012), [malignant breast melanoma](http://purl.obolibrary.org/obo/MONDO_0002975), [malignant melanoma of the mucosa](http://purl.obolibrary.org/obo/MONDO_0015694) (22 total)
 
 classes: 
-  melanoma (disease): "MONDO:0005105"
+  melanoma: "MONDO:0005105"
 
 
 relations: 
@@ -25,7 +25,7 @@ name:
 
 def:
   # Induced, frequency=0.18181818181818182, p=http://purl.obolibrary.org/obo/IAO_0000115 
-  text: "A melanoma (disease) that involves the %s."
+  text: "A melanoma that involves the %s."
   vars:
     - v0
 
@@ -36,12 +36,12 @@ annotationProperties:
 annotations:
   - annotationProperty: exact_synonym
     # Induced p=exact_synonym 
-    text: "%s melanoma (disease)"
+    text: "%s melanoma"
     vars:
       - v0
 
 
 equivalentTo:
-  text: "'melanoma (disease)' and ('disease has location' some %s)"
+  text: "'melanoma' and ('disease has location' some %s)"
   vars:
     - v0
