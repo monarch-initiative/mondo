@@ -1,3 +1,111 @@
+## 2018-10-14 release
+
+ * reclassified MONDO:0019079 ‘proximal spinal muscular atrophy’ a subclass of MONDO:0001516 ‘spinal muscular atrophy’ and fixed typos in def of MONDO:0001516 ‘s #350
+ * added new term MONDO_0100062 'developmental and epileptic encephalopathy' closes #332
+ * Fixes #271
+ * renamed MONDO_0015967 to monogenic diabetes closes #337
+ * added new term MONDO_0100061 'PRPS1 deficiency disorder' closes #358
+ * replaced superclass for 'Huntington disease' closes #358
+ * Performed sync with multiple sources
+ * added new monogenic diseases
+ * gap-filled neoplasm classes
+ * added new term: MONDO_0100059 'hypereosinophilia of undetermined sign…' #272
+ * merged terms  Ito hypomelanosis (MONDO:0010302) & incontinentia pigmenti achromians (MONDO:0006562). #351
+
+### Obsoletions
+
+ * [obsolete incontinentia pigmenti achromians](http://purl.obolibrary.org/obo/MONDO_0006562)
+ * [obsolete favism, susceptibility to](http://purl.obolibrary.org/obo/MONDO_0007602)
+ * [obsolete giant platelet syndrome with thrombocytopenia](http://purl.obolibrary.org/obo/MONDO_0007659)
+
+### New Classes
+
+ * [premalignant hematological system disease](http://purl.obolibrary.org/obo/MONDO_0060782)
+ * [classic congenital adrenal hyperplasia](http://purl.obolibrary.org/obo/MONDO_0060783)
+ * [hypereosinophilia of undetermined significance](http://purl.obolibrary.org/obo/MONDO_0100059)
+ * [PRPS1 deficiency disorder](http://purl.obolibrary.org/obo/MONDO_0100061)
+ * [developmental and epileptic encephalopathy](http://purl.obolibrary.org/obo/MONDO_0100062)
+ * [congenital anemia](http://purl.obolibrary.org/obo/MONDO_0000577)
+ * [congenital hematological disorder](http://purl.obolibrary.org/obo/MONDO_0009332)
+ * [oocyte maturation defect 5](http://purl.obolibrary.org/obo/MONDO_0020837)
+ * [methemoglobinemia, alpha type](http://purl.obolibrary.org/obo/MONDO_0020835)
+ * [spermatogenic failure 30](http://purl.obolibrary.org/obo/MONDO_0020851)
+ * [intellectual disability, autosomal recessive 65](http://purl.obolibrary.org/obo/MONDO_0020850)
+ * [mitochondrial complex 5 (ATP synthase) deficiency nuclear type 5](http://purl.obolibrary.org/obo/MONDO_0020858)
+ * [ovarian dysgenesis 7](http://purl.obolibrary.org/obo/MONDO_0020857)
+ * [bone marrow failure syndrome 4](http://purl.obolibrary.org/obo/MONDO_0020856)
+ * [spermatogenic failure 32](http://purl.obolibrary.org/obo/MONDO_0020855)
+ * [Liddle syndrome 2](http://purl.obolibrary.org/obo/MONDO_0020854)
+ * [encephalitis/encephalopathy, mild, with reversible myelin vacuolization](http://purl.obolibrary.org/obo/MONDO_0020853)
+ * [spermatogenic failure 31](http://purl.obolibrary.org/obo/MONDO_0020852)
+ * [pulmonary alveolar proteinosis with hypogammaglobulinemia](http://purl.obolibrary.org/obo/MONDO_0020840)
+ * [osteopetrosis, autosomal dominant 3](http://purl.obolibrary.org/obo/MONDO_0020848)
+ * [mental retardation, autosomal dominant 58](http://purl.obolibrary.org/obo/MONDO_0020847)
+ * [mental retardation, autosomal recessive 64](http://purl.obolibrary.org/obo/MONDO_0020846)
+ * [progressive external ophthalmoplegia with mitochondrial dna deletions, autosomal recessive 5](http://purl.obolibrary.org/obo/MONDO_0020845)
+ * [neurodevelopmental disorder with cerebellar atrophy and with or without seizures](http://purl.obolibrary.org/obo/MONDO_0020841)
+ * [immunodeficiency 57](http://purl.obolibrary.org/obo/MONDO_0020849)
+ * [obsolete blood group--ok](http://purl.obolibrary.org/obo/MONDO_0020617)
+ * [obsolete blood group, mn](http://purl.obolibrary.org/obo/MONDO_0020616)
+ * [obsolete blood group system, landsteiner-wiener](http://purl.obolibrary.org/obo/MONDO_0020615)
+ * [obsolete blood group--lutheran system](http://purl.obolibrary.org/obo/MONDO_0020614)
+ * [obsolete blood group--lke](http://purl.obolibrary.org/obo/MONDO_0020613)
+ * [obsolete blood group, kidd system](http://purl.obolibrary.org/obo/MONDO_0020612)
+ * [obsolete blood group--kell system](http://purl.obolibrary.org/obo/MONDO_0020611)
+ * [obsolete blood group, diego system](http://purl.obolibrary.org/obo/MONDO_0020610)
+ * [obsolete blood group, langereis system](http://purl.obolibrary.org/obo/MONDO_0020619)
+ * [obsolete blood group--private systems](http://purl.obolibrary.org/obo/MONDO_0020618)
+ * [sex-linked disease](http://purl.obolibrary.org/obo/MONDO_0020606)
+ * [X-linked recessive disease](http://purl.obolibrary.org/obo/MONDO_0020605)
+ * [X-linked dominant disease](http://purl.obolibrary.org/obo/MONDO_0020604)
+ * [X-linked chondrodysplasia punctata 2](http://purl.obolibrary.org/obo/MONDO_0020603)
+ * [Simpson-Golabi-Behmel syndrome type 1](http://purl.obolibrary.org/obo/MONDO_0020602)
+ * [mosquito-borne viral encephalitis](http://purl.obolibrary.org/obo/MONDO_0020601)
+ * [acute pharyngitis](http://purl.obolibrary.org/obo/MONDO_0020600)
+ * [obsolete blood group, colton system](http://purl.obolibrary.org/obo/MONDO_0020609)
+ * [obsolete blood group--ahonen](http://purl.obolibrary.org/obo/MONDO_0020608)
+ * [Liddle syndrome 1](http://purl.obolibrary.org/obo/MONDO_0020607)
+ * [epileptic encephalopathy, infantile or early childhood, 2](http://purl.obolibrary.org/obo/MONDO_0020631)
+ * [epileptic encephalopathy, infantile or early childhood, 1](http://purl.obolibrary.org/obo/MONDO_0020630)
+ * [epileptic encephalopathy, infantile or early childhood, 3](http://purl.obolibrary.org/obo/MONDO_0020632)
+ * [obsolete blood group, ss](http://purl.obolibrary.org/obo/MONDO_0020620)
+ * [microcephaly, growth restriction, and increased sister chromatid exchange 2](http://purl.obolibrary.org/obo/MONDO_0020628)
+ * [epileptic encephalopathy, infantile or early childhood](http://purl.obolibrary.org/obo/MONDO_0020627)
+ * [obsolete yt blood group antigen](http://purl.obolibrary.org/obo/MONDO_0020626)
+ * [obsolete blood group--wright antigen](http://purl.obolibrary.org/obo/MONDO_0020625)
+ * [obsolete blood group--waldner type](http://purl.obolibrary.org/obo/MONDO_0020624)
+ * [obsolete blood group--ul system](http://purl.obolibrary.org/obo/MONDO_0020623)
+ * [obsolete blood group--stoltzfus system](http://purl.obolibrary.org/obo/MONDO_0020622)
+ * [obsolete blood group--scianna system](http://purl.obolibrary.org/obo/MONDO_0020621)
+ * [microcephaly, growth restriction and increased sister chromatid exchange](http://purl.obolibrary.org/obo/MONDO_0020629)
+ * [cutaneous vasculitis](http://purl.obolibrary.org/obo/MONDO_0020576)
+ * [polymorphic ventricular tachycardia](http://purl.obolibrary.org/obo/MONDO_0020575)
+ * [central nervous system nongerminomatous germ cell tumor](http://purl.obolibrary.org/obo/MONDO_0020574)
+ * [mucositis](http://purl.obolibrary.org/obo/MONDO_0020579)
+ * [obsolete vitamin D deficiency](http://purl.obolibrary.org/obo/MONDO_0020578)
+ * [childhood gonadal germ cell tumor](http://purl.obolibrary.org/obo/MONDO_0020577)
+ * [mycobacterial infectious disease](http://purl.obolibrary.org/obo/MONDO_0020590)
+ * [malabsorption syndrome](http://purl.obolibrary.org/obo/MONDO_0020598)
+ * [angiokeratoma of scrotum](http://purl.obolibrary.org/obo/MONDO_0020597)
+ * [mucin-producing carcinoma](http://purl.obolibrary.org/obo/MONDO_0020596)
+ * [disease of retroperitoneum](http://purl.obolibrary.org/obo/MONDO_0020595)
+ * [abducens nerve disease](http://purl.obolibrary.org/obo/MONDO_0020594)
+ * [trichoblastoma](http://purl.obolibrary.org/obo/MONDO_0020593)
+ * [disease pf pharynx](http://purl.obolibrary.org/obo/MONDO_0020592)
+ * [disease of peritoneum](http://purl.obolibrary.org/obo/MONDO_0020591)
+ * [acquired coagulation factor deficiency](http://purl.obolibrary.org/obo/MONDO_0020599)
+ * [factor XI deficiency](http://purl.obolibrary.org/obo/MONDO_0020587)
+ * [factor V deficiency](http://purl.obolibrary.org/obo/MONDO_0020586)
+ * [anemia due to erythrocyte enzyme disorder](http://purl.obolibrary.org/obo/MONDO_0020585)
+ * [anemia due to enzyme disorder](http://purl.obolibrary.org/obo/MONDO_0020584)
+ * [chromosome 17 abnormality](http://purl.obolibrary.org/obo/MONDO_0020583)
+ * [benign uterine ligament neoplasm](http://purl.obolibrary.org/obo/MONDO_0020582)
+ * [benign pecoma](http://purl.obolibrary.org/obo/MONDO_0020581)
+ * [germinomatous germ cell tumor](http://purl.obolibrary.org/obo/MONDO_0020580)
+ * [cardiac germ cell tumor](http://purl.obolibrary.org/obo/MONDO_0020589)
+ * [lung pecoma](http://purl.obolibrary.org/obo/MONDO_0020588)
+
+
 ## 2018-09-26 release
 
 ### New classes

@@ -294,12 +294,10 @@ imports/%_terms.txt:  edit-merged.owl
 release: $(ONT).owl $(ONT).obo
 	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
 
-$(ONTBASE)-lastbuild.owl: $(ONTBASE).owl
-	wget --no-check-certificate $(OBO)/$(ONTBASE).owl -O $@.tmp && mv $@.tmp $@
-$(ONTBASE)-lastbuild.obo: $(ONTBASE).obo
-	wget --no-check-certificate $(OBO)/$(ONTBASE).obo -O $@.tmp && mv $@.tmp $@
-$(ONTBASE)-diff.md: $(ONTBASE)-lastbuild.owl 
-	owljs-diff -o $@ $< $(ONTBASE).owl
+mondo-lastbuild.owl:
+	wget --no-check-certificate $(OBO)/mondo.owl -O $@.tmp && mv $@.tmp $@
+mondo-diff.md: mondo-lastbuild.owl 
+	owljs-diff -o $@ $< mondo.owl
 
 # ----------------------------------------
 # Editing
