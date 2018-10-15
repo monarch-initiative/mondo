@@ -15,6 +15,7 @@
 :- rdf_register_prefix('MEDGEN','http://purl.obolibrary.org/obo/MEDGEN_').
 :- rdf_register_prefix('ONCOTREE','http://purl.obolibrary.org/obo/ONCOTREE_').
 :- rdf_register_prefix('EFO','http://www.ebi.ac.uk/efo/EFO_').
+:- rdf_register_prefix('RO','http://www.ebi.ac.uk/efo/RO_').
 :- rdf_register_prefix('HGNC','http://identifiers.org/hgnc/').
 :- rdf_register_prefix('ICD10','http://purl.obolibrary.org/obo/ICD10_').
 :- rdf_register_prefix('Orphanet','http://www.orpha.net/ORDO/Orphanet_').
@@ -174,14 +175,24 @@ simj_merge_candidates(C1,C2,S,N1,N2) :-
         S > 0.8,
         C1 @< C2.
 
+obsoletion_status(C,S) :-
+        (   deprecated(C)
+        ->  S=deprecated
+        ;   \+ label(C,_)
+        ->  S=not_present
+        ;   S=live).
 
-proxy_merge(C,X1,X2,S) :-
+
+proxy_merge(C,X1,X2,S,Ob1,Ob2) :-
         owl_equivalent_class(C,X1),
         mondo(C),
         owl_equivalent_class(C,X2),
         X1 @< X2,
         uri_prefix(X1,S),
-        uri_prefix(X2,S).
+        uri_prefix(X2,S),
+        obsoletion_status(X1,Ob1),
+        obsoletion_status(X2,Ob2).
+
 
 xref_relation_inferred(C,X,R) :-
         has_dbxref(C,X),
