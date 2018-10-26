@@ -413,16 +413,16 @@ reports/release/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
 	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
-reports/edit/report.yaml: $(SRC)
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
-reports/release/mondo-obo-report.yaml: mondo.obo
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
+reports/edit/report.tsv: $(SRC)
+	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
+reports/release/mondo-obo-report.tsv: mondo.obo
+	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
-reports/release/mondo-owl-report.yaml: mondo.owl
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
+reports/release/mondo-owl-report.tsv: mondo.owl
+	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 %-report.tsv: %
-	$(RR) -i $< report -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
+	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 common_map.tsv:
 	blip-findall -debug index -goal ix -i imports/equivalencies.obo -i d2p.pro  -r mondoe -c ../utils/all_genetic.pro common_to_mondo/2 -label -no_pred -use_tabs | cut -f1,3,4 > $@
