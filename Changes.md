@@ -1,3 +1,22 @@
+## 2018-10-26 release
+
+### New classes
+
+ * [uterine ligament adenosarcoma](http://purl.obolibrary.org/obo/MONDO_0200000)
+ * [monosomy](http://purl.obolibrary.org/obo/MONDO_0020639)
+ * [superficial spreading melanoma](http://purl.obolibrary.org/obo/MONDO_0020638)
+ * [mendelian susceptibility to mycobacterial diseases due to a partial deficiency](http://purl.obolibrary.org/obo/MONDO_0020637)
+ * [mendelian susceptibility to mycobacterial diseases due to a complete deficiency](http://purl.obolibrary.org/obo/MONDO_0020636)
+ * [anaplastic meningioma](http://purl.obolibrary.org/obo/MONDO_0020635)
+ * [grade III meningioma](http://purl.obolibrary.org/obo/MONDO_0020634)
+ * [anaplastic cancer](http://purl.obolibrary.org/obo/MONDO_0020633)
+ * [respiratory tract neoplasm](http://purl.obolibrary.org/obo/MONDO_0020641)
+ * [autoimmune encephalitis](http://purl.obolibrary.org/obo/MONDO_0020640)
+
+### Obsolete classes
+
+ [obsolete myotonia, potassium-aggravated](http://purl.obolibrary.org/obo/MONDO_0012026) replaced by: [MONDO:0018959](http://purl.obolibrary.org/obo/MONDO_0018959) ! potassium-aggravated myotonia
+
 ## 2018-10-14 release
 
  * reclassified MONDO:0019079 ‘proximal spinal muscular atrophy’ a subclass of MONDO:0001516 ‘spinal muscular atrophy’ and fixed typos in def of MONDO:0001516 ‘s #350

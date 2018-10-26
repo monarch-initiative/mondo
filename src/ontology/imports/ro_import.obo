@@ -20,6 +20,11 @@ is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 
 [Term]
+id: BFO:0000006
+name: spatial region
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
 id: BFO:0000015
 name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
@@ -431,6 +436,8 @@ property_value: IAO:0000116 "Location as a relation between instances: The primi
 property_value: IAO:0000116 "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000118 "located_in" xsd:string
 property_value: RO:0001900 RO:0001901
+domain: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
+range: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
 is_transitive: true
 
 [Typedef]
@@ -806,7 +813,6 @@ id: RO:0002222
 name: temporally related to
 comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Allen%27s_interval_algebra
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
