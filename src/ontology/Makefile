@@ -113,6 +113,7 @@ list_assets:
 	ls -alt $(ASSETS)
 	echo $(GHVERSION)
 
+# e.g. make deploy_assets_direct GHVERSION=v2018-10-26
 deploy_assets_direct:
 	ls -alt $(ASSETS)
 	../utils/make-release-assets.py --release $(GHVERSION) $(ASSETS)
