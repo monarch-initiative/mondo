@@ -3786,6 +3786,21 @@ xref: UMLS:C1854302
 is_a: HP:0004305 ! Involuntary movements
 
 [Term]
+id: HP:0001337
+name: Tremor
+namespace: human_phenotype
+alt_id: HP:0001295
+alt_id: HP:0001309
+def: "An unintentional, oscillating to-and-fro muscle movement about a joint axis." [HPO:probinson, pmid:16344298, PMID:20589866]
+comment: Tremor is differentiated from other involuntary movement disorders, such as chorea, athetosis, ballism, tics, and myoclonus, by its repetitive, stereotyped movements of a regular amplitude and frequency. Clonus, unlike tremor, represents a rhythmic movement, which is increased by muscle stretching.
+synonym: "Tremor" EXACT layperson []
+synonym: "Tremors" EXACT layperson []
+xref: MSH:D014202
+xref: SNOMEDCT_US:26079004
+xref: UMLS:C0040822
+is_a: HP:0004305 ! Involuntary movements
+
+[Term]
 id: HP:0001339
 name: Lissencephaly
 namespace: human_phenotype
@@ -5120,6 +5135,17 @@ created_by: peter
 creation_date: 2008-02-28T07:14:00Z
 
 [Term]
+id: HP:0001935
+name: Microcytic anemia
+namespace: human_phenotype
+def: "A kind of anemia in which the volume of the red blood cells is reduced." [HPO:probinson]
+comment: In normocytic anemia, the mean corpuscular volume (MCV) is below normal limits (>80 fl in adults).
+xref: MSH:C562385
+xref: SNOMEDCT_US:234349007
+xref: UMLS:C0085576
+is_a: HP:0010972 ! Anemia of inadequate production
+
+[Term]
 id: HP:0001939
 name: Abnormality of metabolism/homeostasis
 namespace: human_phenotype
@@ -6354,6 +6380,19 @@ synonym: "Progressive mental deterioration" EXACT []
 synonym: "Progressive neurodegeneration" EXACT []
 xref: UMLS:C1854838
 is_a: HP:0001268 ! Mental deterioration
+
+[Term]
+id: HP:0002345
+name: Action tremor
+namespace: human_phenotype
+def: "A tremor present when the limbs are active, either when outstretched in a certain position or throughout a voluntary movement." [HPO:curators]
+comment: Action tremor occurs with voluntary contraction of muscle. Subforms of action tremor include postural, isometric, and kinetic tremors
+synonym: "Ataxic tremor" RELATED []
+xref: MSH:D014202
+xref: SNOMEDCT_US:30721006
+xref: UMLS:C0234376
+xref: UMLS:C4020853
+is_a: HP:0001337 ! Tremor
 
 [Term]
 id: HP:0002350
@@ -12804,6 +12843,20 @@ def: "Abnormality of vascular function." [HPO:probinson]
 xref: UMLS:C4022603
 is_a: HP:0002597 ! Abnormality of the vasculature
 is_a: HP:0011025 ! Abnormality of cardiovascular system physiology
+
+[Term]
+id: HP:0030186
+name: Kinetic tremor
+namespace: human_phenotype
+def: "Tremor that occurs during any voluntary movement. It may include visually or non-visually guided movements. Tremor during target directed movement is called intention tremor." []
+synonym: "Essential tremor" EXACT [ORCID:0000-0001-6908-9849]
+xref: MSH:D014202
+xref: MSH:D020329
+xref: SNOMEDCT_US:30721006
+xref: SNOMEDCT_US:609558009
+xref: UMLS:C0234376
+xref: UMLS:C0270736
+is_a: HP:0002345 ! Action tremor
 
 [Term]
 id: HP:0030191
