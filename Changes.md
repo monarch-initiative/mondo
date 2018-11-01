@@ -1,3 +1,7 @@
+## FORTHCOMING release
+
+ - Fixed casing of multiple classes, using https://github.com/EBISPOT/efo/issues/274
+
 ## 2018-10-26 release
 
 ### New classes
