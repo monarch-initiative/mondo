@@ -1,7 +1,65 @@
-## FORTHCOMING release
+## 2018-11-01 release
 
- - Fixed casing of multiple classes, using https://github.com/EBISPOT/efo/issues/274
+ * relabeled MONDO:0011652 to Phelan McDermid syndrome fixes #442
+ * NT: microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome, fixes #444
+ * clarifying subtypes of congenital bilateral absence of vas deferens, fixes #426
+ * Adding additional equivalence axioms to other ontologies; improved ONCOTREE/NCIT/MONDO alignment
+ * Adding additional logical defs
+ * Fixed casing of multiple labels and synonyms, using https://github.com/EBISPOT/efo/issues/274
+ * Fixed scope of many syns, changed related->exact where appropriate
 
+## New Classes
+
+ * [biliary atresia disorder](http://purl.obolibrary.org/obo/MONDO_0028737)
+ * [dysostosis with brachydactyly with extraskeletal manifestations](http://purl.obolibrary.org/obo/MONDO_0028743)
+ * [dysostosis with brachydactyly without extraskeletal manifestations](http://purl.obolibrary.org/obo/MONDO_0028742)
+ * [overgrowth or tall stature syndrome with skeletal involvement](http://purl.obolibrary.org/obo/MONDO_0028741)
+ * [gastroenteric neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0028618)
+ * [autosomal recessive severe congenital neutropenia](http://purl.obolibrary.org/obo/MONDO_0028226)
+ * [extraoral halitosis due to methanethiol oxidase deficiency](http://purl.obolibrary.org/obo/MONDO_0029144)
+ * [intellectual developmental disorder with hypertelorism and distinctive facies](http://purl.obolibrary.org/obo/MONDO_0029143)
+ * [deafness, autosomal recessive 111](http://purl.obolibrary.org/obo/MONDO_0029142)
+ * [usher syndrome, type 4](http://purl.obolibrary.org/obo/MONDO_0029141)
+ * [spermatogenic failure 34](http://purl.obolibrary.org/obo/MONDO_0029148)
+ * [spermatogenic failure 33](http://purl.obolibrary.org/obo/MONDO_0029147)
+ * [Saul-Wilson syndrome](http://purl.obolibrary.org/obo/MONDO_0029146)
+ * [orofacial cleft 8](http://purl.obolibrary.org/obo/MONDO_0029145)
+ * [epileptic encephalopathy, early infantile, 67](http://purl.obolibrary.org/obo/MONDO_0029138)
+ * [muscular dystrophy, limb-girdle, autosomal dominant 4](http://purl.obolibrary.org/obo/MONDO_0029133)
+ * [liddle syndrome 3](http://purl.obolibrary.org/obo/MONDO_0029132)
+ * [peripheral neuropathy, autosomal recessive, with or without impaired intellectual development](http://purl.obolibrary.org/obo/MONDO_0029131)
+ * [polydactyly, postaxial, type A8](http://purl.obolibrary.org/obo/MONDO_0029130)
+ * [deafness, autosomal dominant 74](http://purl.obolibrary.org/obo/MONDO_0029137)
+ * [muscular dystrophy, limb-girdle, autosomal recessive 23](http://purl.obolibrary.org/obo/MONDO_0029136)
+ * [muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 8](http://purl.obolibrary.org/obo/MONDO_0029135)
+ * [immunodeficiency 58](http://purl.obolibrary.org/obo/MONDO_0029134)
+ * [glycosylphosphatidylinositol biosynthesis defect 18](http://purl.obolibrary.org/obo/MONDO_0029140)
+ * [vaginal adenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0020653)
+ * [immature teratoma of vulva](http://purl.obolibrary.org/obo/MONDO_0020652)
+ * [mixed germ cell tumor of vulva](http://purl.obolibrary.org/obo/MONDO_0020651)
+ * [germ cell tumor of the vulva](http://purl.obolibrary.org/obo/MONDO_0020650)
+ * [upper tract urothelial carcinoma](http://purl.obolibrary.org/obo/MONDO_0020659)
+ * [infiltrating ureter transitional cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0020658)
+ * [human papillomavirus-related squamous cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0020657)
+ * [human papillomavirus-related penile squamous cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0020656)
+ * [juvenile ankylosing spondylitis](http://purl.obolibrary.org/obo/MONDO_0020655)
+ * [renal pelvis/ureter urothelial carcinoma](http://purl.obolibrary.org/obo/MONDO_0020654)
+ * [polycystic kidney disease](http://purl.obolibrary.org/obo/MONDO_0020642)
+ * [warty carcinoma of the penis](http://purl.obolibrary.org/obo/MONDO_0020649)
+ * [rubella encephalitis](http://purl.obolibrary.org/obo/MONDO_0020648)
+ * [microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome](http://purl.obolibrary.org/obo/MONDO_0020647)
+ * [ocular adnexal lymphoma](http://purl.obolibrary.org/obo/MONDO_0020646)
+ * [autosomal dominant osteopetrosis](http://purl.obolibrary.org/obo/MONDO_0020645)
+ * [lung non-Hodgkin lymphoma](http://purl.obolibrary.org/obo/MONDO_0020644)
+ * [autism susceptibility 1](http://purl.obolibrary.org/obo/MONDO_0020643)
+
+## Obsoletions
+
+ * [http://purl.obolibrary.org/obo/MONDO_0017206](http://purl.obolibrary.org/obo/MONDO_0017206) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001)* [intraocular lymphoma](http://purl.obolibrary.org/obo/MONDO_0004351)
+ * [http://purl.obolibrary.org/obo/MONDO_0018732](http://purl.obolibrary.org/obo/MONDO_0018732) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001)* [primary central nervous system lymphoma](http://purl.obolibrary.org/obo/MONDO_0002571)
+ * [obsolete human papillomavirus type 18 integration site 2](http://purl.obolibrary.org/obo/MONDO_0008191) not a disease
+ * [obsolete human papillomavirus type 18 integration site 1](http://purl.obolibrary.org/obo/MONDO_0008190) not a disease
+ 
 ## 2018-10-26 release
 
 ### New classes
