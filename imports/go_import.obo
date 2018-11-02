@@ -244,6 +244,22 @@ intersection_of: RO:0002211 GO:0009064 ! regulates glutamine family amino acid m
 relationship: RO:0002211 GO:0009064 ! regulates glutamine family amino acid metabolic process
 
 [Term]
+id: GO:0000902
+name: cell morphogenesis
+def: "The developmental process in which the size or shape of a cell is generated and organized." []
+synonym: "cellular morphogenesis" EXACT []
+is_a: GO:0032989 ! cellular component morphogenesis
+
+[Term]
+id: GO:0000904
+name: cell morphogenesis involved in differentiation
+def: "The change in form (cell shape and size) that occurs when relatively unspecialized cells, e.g. embryonic or regenerative cells, acquire specialized structural and/or functional features that characterize the cells, tissues, or organs of the mature organism or some other relatively stable phase of the organism's life history." []
+is_a: GO:0000902 ! cell morphogenesis
+intersection_of: GO:0000902 ! cell morphogenesis
+intersection_of: BFO:0000050 GO:0048468 ! part of cell development
+relationship: BFO:0000050 GO:0048468 ! part of cell development
+
+[Term]
 id: GO:0000959
 name: mitochondrial RNA metabolic process
 def: "The chemical reactions and pathways involving RNA transcribed from the mitochondrial genome and occurring in the mitochondrion." []
@@ -398,6 +414,16 @@ name: neural crest cell migration
 def: "The characteristic movement of cells from the dorsal ridge of the neural tube to a variety of locations in a vertebrate embryo." []
 is_a: GO:0001667 ! ameboidal-type cell migration
 relationship: BFO:0000050 GO:0014032 ! part of neural crest cell development
+
+[Term]
+id: GO:0001764
+name: neuron migration
+def: "The characteristic movement of an immature neuron from germinal zones to specific positions where they will reside as they mature." []
+synonym: "neuron chemotaxis" EXACT []
+synonym: "neuron guidance" RELATED []
+synonym: "neuronal migration" EXACT []
+is_a: GO:0016477 ! cell migration
+relationship: BFO:0000050 GO:0048699 ! part of generation of neurons
 
 [Term]
 id: GO:0001773
@@ -6832,6 +6858,27 @@ synonym: "pan-neural process" RELATED []
 is_a: GO:0048731 ! system development
 
 [Term]
+id: GO:0007409
+name: axonogenesis
+def: "De novo generation of a long process of a neuron, including the terminal branched region. Refers to the morphogenesis or creation of shape or form of the developing axon, which carries efferent (outgoing) action potentials from the cell body towards target cells." []
+synonym: "axon growth" NARROW []
+synonym: "axon morphogenesis" EXACT []
+synonym: "neuron long process generation" EXACT []
+is_a: GO:0048812 ! neuron projection morphogenesis
+relationship: BFO:0000050 GO:0048667 ! part of cell morphogenesis involved in neuron differentiation
+relationship: BFO:0000050 GO:0061564 ! part of axon development
+
+[Term]
+id: GO:0007411
+name: axon guidance
+def: "The chemotaxis process that directs the migration of an axon growth cone to a specific target site in response to a combination of attractive and repulsive cues." []
+synonym: "axon chemotaxis" RELATED []
+synonym: "axon growth cone guidance" NARROW []
+synonym: "axon pathfinding" EXACT []
+is_a: GO:0097485 ! neuron projection guidance
+relationship: BFO:0000050 GO:0007409 ! part of axonogenesis
+
+[Term]
 id: GO:0007417
 name: central nervous system development
 def: "The process whose specific outcome is the progression of the central nervous system over time, from its formation to the mature structure. The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the brain and spinal cord. In those invertebrates with a central nervous system it typically consists of a brain, cerebral ganglia and a nerve cord." []
@@ -7102,6 +7149,16 @@ is_a: GO:1903522 ! regulation of blood circulation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0060047 ! regulates heart contraction
 relationship: RO:0002211 GO:0060047 ! regulates heart contraction
+
+[Term]
+id: GO:0008046
+name: axon guidance receptor activity
+def: "Combining with an extracellular messenger and transmitting the signal from one side of the membrane to the other to results in a change in cellular activity involved in axon guidance." []
+synonym: "receptor activity involved in axon guidance" EXACT []
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+intersection_of: GO:0004888 ! transmembrane signaling receptor activity
+intersection_of: BFO:0000050 GO:0007411 ! part of axon guidance
+relationship: BFO:0000050 GO:0007411 ! part of axon guidance
 
 [Term]
 id: GO:0008066
@@ -9080,6 +9137,38 @@ intersection_of: RO:0002212 GO:0048468 ! negatively regulates cell development
 relationship: RO:0002212 GO:0048468 ! negatively regulates cell development
 
 [Term]
+id: GO:0010769
+name: regulation of cell morphogenesis involved in differentiation
+def: "Any process that modulates the frequency, rate or extent of cell morphogenesis contributing to cell differentiation. Cell morphogenesis involved in differentiation is the change in form (cell shape and size) that occurs when relatively unspecialized cells acquire specialized structural and/or functional features that characterize the cells, tissues, or organs of the mature organism or some other relatively stable phase of the organism's life history." []
+is_a: GO:0022604 ! regulation of cell morphogenesis
+is_a: GO:0060284 ! regulation of cell development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0000904 ! regulates cell morphogenesis involved in differentiation
+relationship: RO:0002211 GO:0000904 ! regulates cell morphogenesis involved in differentiation
+
+[Term]
+id: GO:0010770
+name: positive regulation of cell morphogenesis involved in differentiation
+def: "Any process that increases the frequency, rate or extent of cell morphogenesis contributing to cell differentiation. Cell morphogenesis involved in differentiation is the change in form (cell shape and size) that occurs when relatively unspecialized cells acquire specialized structural and/or functional features that characterize the cells, tissues, or organs of the mature organism or some other relatively stable phase of the organism's life history." []
+is_a: GO:0010720 ! positive regulation of cell development
+is_a: GO:0010769 ! regulation of cell morphogenesis involved in differentiation
+is_a: GO:0051130 ! positive regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0000904 ! positively regulates cell morphogenesis involved in differentiation
+relationship: RO:0002213 GO:0000904 ! positively regulates cell morphogenesis involved in differentiation
+
+[Term]
+id: GO:0010771
+name: negative regulation of cell morphogenesis involved in differentiation
+def: "Any process that decreases the frequency, rate or extent of cell morphogenesis contributing to cell differentiation. Cell morphogenesis involved in differentiation is the change in form (cell shape and size) that occurs when relatively unspecialized cells acquire specialized structural and/or functional features that characterize the cells, tissues, or organs of the mature organism or some other relatively stable phase of the organism's life history." []
+is_a: GO:0010721 ! negative regulation of cell development
+is_a: GO:0010769 ! regulation of cell morphogenesis involved in differentiation
+is_a: GO:0051129 ! negative regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0000904 ! negatively regulates cell morphogenesis involved in differentiation
+relationship: RO:0002212 GO:0000904 ! negatively regulates cell morphogenesis involved in differentiation
+
+[Term]
 id: GO:0010795
 name: regulation of ubiquinone biosynthetic process
 def: "Any process that modulates the frequency, rate or extent of ubiquinone biosynthesis. Ubiquinone biosynthesis consists of the chemical reactions and pathways resulting in the formation of ubiquinone, a lipid-soluble electron-transporting coenzyme." []
@@ -9460,6 +9549,51 @@ synonym: "microtubule-based transport" BROAD []
 synonym: "movement along microtubule" EXACT []
 is_a: GO:0030705 ! cytoskeleton-dependent intracellular transport
 is_a: GO:0099111 ! microtubule-based transport
+
+[Term]
+id: GO:0010975
+name: regulation of neuron projection development
+def: "Any process that modulates the rate, frequency or extent of neuron projection development. Neuron projection development is the process whose specific outcome is the progression of a neuron projection over time, from its formation to the mature structure. A neuron projection is any process extending from a neural cell, such as axons or dendrites (collectively called neurites)." []
+synonym: "regulation of neurite biosynthesis" NARROW []
+synonym: "regulation of neurite development" NARROW []
+synonym: "regulation of neurite formation" NARROW []
+synonym: "regulation of neurite growth" NARROW []
+is_a: GO:0045664 ! regulation of neuron differentiation
+is_a: GO:0120035 ! regulation of plasma membrane bounded cell projection organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0031175 ! regulates neuron projection development
+relationship: RO:0002211 GO:0031175 ! regulates neuron projection development
+
+[Term]
+id: GO:0010976
+name: positive regulation of neuron projection development
+def: "Any process that increases the rate, frequency or extent of neuron projection development. Neuron projection development is the process whose specific outcome is the progression of a neuron projection over time, from its formation to the mature structure. A neuron projection is any process extending from a neural cell, such as axons or dendrites (collectively called neurites)." []
+synonym: "positive regulation of neurite biosynthesis" NARROW []
+synonym: "positive regulation of neurite development" NARROW []
+synonym: "positive regulation of neurite formation" NARROW []
+synonym: "positive regulation of neurite growth" NARROW []
+is_a: GO:0010975 ! regulation of neuron projection development
+is_a: GO:0031346 ! positive regulation of cell projection organization
+is_a: GO:0045666 ! positive regulation of neuron differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0031175 ! positively regulates neuron projection development
+relationship: RO:0002213 GO:0031175 ! positively regulates neuron projection development
+
+[Term]
+id: GO:0010977
+name: negative regulation of neuron projection development
+def: "Any process that decreases the rate, frequency or extent of neuron projection development. Neuron projection development is the process whose specific outcome is the progression of a neuron projection over time, from its formation to the mature structure. A neuron projection is any process extending from a neural cell, such as axons or dendrites (collectively called neurites)." []
+synonym: "growth cone collapse" RELATED []
+synonym: "negative regulation of neurite biosynthesis" NARROW []
+synonym: "negative regulation of neurite development" NARROW []
+synonym: "negative regulation of neurite formation" NARROW []
+synonym: "negative regulation of neurite growth" NARROW []
+is_a: GO:0010975 ! regulation of neuron projection development
+is_a: GO:0031345 ! negative regulation of cell projection organization
+is_a: GO:0045665 ! negative regulation of neuron differentiation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0031175 ! negatively regulates neuron projection development
+relationship: RO:0002212 GO:0031175 ! negatively regulates neuron projection development
 
 [Term]
 id: GO:0010984
@@ -10483,6 +10617,25 @@ synonym: "oxidoreductase activity, acting on paired donors, with incorporation o
 is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
+id: GO:0016712
+name: oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced flavin or flavoprotein as one donor, and incorporation of one atom of oxygen
+def: "Catalysis of an oxidation-reduction (redox) reaction in which hydrogen or electrons are transferred from reduced flavin or flavoprotein and one other donor, and one atom of oxygen is incorporated into one donor." []
+synonym: "aryl hydrocarbon hydroxylase activity" NARROW []
+synonym: "aryl-4-monooxygenase activity" NARROW []
+synonym: "cytochrome p450 activity" NARROW []
+synonym: "cytochrome P450 CYP19" NARROW []
+synonym: "flavoprotein monooxygenase activity" EXACT []
+synonym: "flavoprotein-linked monooxygenase activity" EXACT []
+synonym: "microsomal monooxygenase activity" NARROW []
+synonym: "microsomal P-450" RELATED []
+synonym: "microsomal p450 activity" NARROW []
+synonym: "substrate,reduced-flavoprotein:oxygen oxidoreductase (RH-hydroxylating or -epoxidizing)" EXACT []
+synonym: "unspecific monooxygenase activity" RELATED []
+synonym: "xenobiotic monooxygenase activity" RELATED []
+is_a: GO:0004497 ! monooxygenase activity
+is_a: GO:0016705 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen
+
+[Term]
 id: GO:0016740
 name: transferase activity
 def: "Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." []
@@ -10873,6 +11026,17 @@ def: "Catalysis of the reaction: ATP + biotin + protein = AMP + diphosphate + bi
 synonym: "biotin-apoprotein ligase activity" EXACT []
 is_a: GO:0016879 ! ligase activity, forming carbon-nitrogen bonds
 is_a: GO:0140096 ! catalytic activity, acting on a protein
+
+[Term]
+id: GO:0018549
+name: methanethiol oxidase activity
+def: "Catalysis of the reaction: methanethiol + O2 + H2O = formaldehyde + hydrogen sulfide + hydrogen peroxide." []
+synonym: "(MM)-oxidase activity" EXACT []
+synonym: "methanethiol:oxygen oxidoreductase activity" EXACT []
+synonym: "methyl mercaptan oxidase activity" EXACT []
+synonym: "methylmercaptan oxidase activity" EXACT []
+synonym: "MT-oxidase activity" EXACT []
+is_a: GO:0016670 ! oxidoreductase activity, acting on a sulfur group of donors, oxygen as acceptor
 
 [Term]
 id: GO:0018904
@@ -11482,6 +11646,19 @@ is_a: GO:0050793 ! regulation of developmental process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0009653 ! regulates anatomical structure morphogenesis
 relationship: RO:0002211 GO:0009653 ! regulates anatomical structure morphogenesis
+
+[Term]
+id: GO:0022604
+name: regulation of cell morphogenesis
+def: "Any process that modulates the frequency, rate or extent of cell morphogenesis. Cell morphogenesis is the developmental process in which the shape of a cell is generated and organized." []
+synonym: "negative regulation of cell shape and cell size" RELATED []
+synonym: "positive regulation of cell shape and cell size" RELATED []
+synonym: "regulation of cell shape and cell size" RELATED []
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
+is_a: GO:0051128 ! regulation of cellular component organization
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0000902 ! regulates cell morphogenesis
+relationship: RO:0002211 GO:0000902 ! regulates cell morphogenesis
 
 [Term]
 id: GO:0022607
@@ -12648,6 +12825,20 @@ is_a: GO:0032502 ! developmental process
 intersection_of: GO:0032502 ! developmental process
 intersection_of: BFO:0000051 GO:0045168 ! has_part cell-cell signaling involved in cell fate commitment
 relationship: BFO:0000051 GO:0045168 ! has_part cell-cell signaling involved in cell fate commitment
+
+[Term]
+id: GO:0031175
+name: neuron projection development
+def: "The process whose specific outcome is the progression of a neuron projection over time, from its formation to the mature structure. A neuron projection is any process extending from a neural cell, such as axons or dendrites (collectively called neurites)." []
+synonym: "neurite biosynthesis" NARROW []
+synonym: "neurite development" NARROW []
+synonym: "neurite formation" NARROW []
+synonym: "neurite growth" NARROW []
+synonym: "neurite outgrowth" NARROW []
+is_a: GO:0120036 ! plasma membrane bounded cell projection organization
+intersection_of: GO:0120036 ! plasma membrane bounded cell projection organization
+intersection_of: BFO:0000050 GO:0048666 ! part of neuron development
+relationship: BFO:0000050 GO:0048666 ! part of neuron development
 
 [Term]
 id: GO:0031224
@@ -14261,6 +14452,12 @@ synonym: "cellular structure morphogenesis" EXACT []
 is_a: GO:0009653 ! anatomical structure morphogenesis
 is_a: GO:0016043 ! cellular component organization
 is_a: GO:0048869 ! cellular developmental process
+
+[Term]
+id: GO:0032990
+name: cell part morphogenesis
+def: "The process in which the anatomical structures of a cell part are generated and organized." []
+is_a: GO:0032989 ! cellular component morphogenesis
 
 [Term]
 id: GO:0032991
@@ -21904,6 +22101,23 @@ is_a: GO:0032502 ! developmental process
 relationship: BFO:0000050 GO:0009653 ! part of anatomical structure morphogenesis
 
 [Term]
+id: GO:0048666
+name: neuron development
+def: "The process whose specific outcome is the progression of a neuron over time, from initial commitment of the cell to a specific fate, to the fully functional differentiated cell." []
+is_a: GO:0048468 ! cell development
+relationship: BFO:0000050 GO:0030182 ! part of neuron differentiation
+
+[Term]
+id: GO:0048667
+name: cell morphogenesis involved in neuron differentiation
+def: "The process in which the structures of a neuron are generated and organized. This process occurs while the initially relatively unspecialized cell is acquiring the specialized features of a neuron." []
+synonym: "neuron morphogenesis involved in differentiation" EXACT []
+is_a: GO:0000904 ! cell morphogenesis involved in differentiation
+intersection_of: GO:0000902 ! cell morphogenesis
+intersection_of: BFO:0000050 GO:0030182 ! part of neuron differentiation
+relationship: BFO:0000050 GO:0048666 ! part of neuron development
+
+[Term]
 id: GO:0048699
 name: generation of neurons
 def: "The process in which nerve cells are generated. This includes the production of neuroblasts and their differentiation into neurons." []
@@ -21956,6 +22170,17 @@ id: GO:0048771
 name: tissue remodeling
 def: "The reorganization or renovation of existing tissues. This process can either change the characteristics of a tissue such as in blood vessel remodeling, or result in the dynamic equilibrium of a tissue such as in bone remodeling." []
 is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0048812
+name: neuron projection morphogenesis
+def: "The process in which the anatomical structures of a neuron projection are generated and organized. A neuron projection is any process extending from a neural cell, such as axons or dendrites." []
+synonym: "neurite biosynthesis" NARROW []
+synonym: "neurite formation" NARROW []
+synonym: "neurite growth" NARROW []
+synonym: "neurite morphogenesis" RELATED []
+is_a: GO:0120039 ! plasma membrane bounded cell projection morphogenesis
+relationship: BFO:0000050 GO:0031175 ! part of neuron projection development
 
 [Term]
 id: GO:0048817
@@ -22027,6 +22252,14 @@ name: anatomical structure development
 def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." []
 synonym: "development of an anatomical structure" EXACT []
 is_a: GO:0032502 ! developmental process
+
+[Term]
+id: GO:0048858
+name: cell projection morphogenesis
+def: "The process in which the anatomical structures of a cell projection are generated and organized." []
+is_a: GO:0030030 ! cell projection organization
+is_a: GO:0032990 ! cell part morphogenesis
+relationship: BFO:0000050 GO:0000902 ! part of cell morphogenesis
 
 [Term]
 id: GO:0048863
@@ -22444,6 +22677,47 @@ is_a: GO:0051962 ! positive regulation of nervous system development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0022008 ! positively regulates neurogenesis
 relationship: RO:0002213 GO:0022008 ! positively regulates neurogenesis
+
+[Term]
+id: GO:0050770
+name: regulation of axonogenesis
+def: "Any process that modulates the frequency, rate or extent of axonogenesis, the generation of an axon, the long process of a neuron." []
+is_a: GO:0010769 ! regulation of cell morphogenesis involved in differentiation
+is_a: GO:0010975 ! regulation of neuron projection development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007409 ! regulates axonogenesis
+relationship: RO:0002211 GO:0007409 ! regulates axonogenesis
+
+[Term]
+id: GO:0050771
+name: negative regulation of axonogenesis
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of axonogenesis." []
+synonym: "down regulation of axonogenesis" EXACT []
+synonym: "down-regulation of axonogenesis" EXACT []
+synonym: "downregulation of axonogenesis" EXACT []
+synonym: "inhibition of axonogenesis" NARROW []
+is_a: GO:0010771 ! negative regulation of cell morphogenesis involved in differentiation
+is_a: GO:0010977 ! negative regulation of neuron projection development
+is_a: GO:0050770 ! regulation of axonogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007409 ! negatively regulates axonogenesis
+relationship: RO:0002212 GO:0007409 ! negatively regulates axonogenesis
+
+[Term]
+id: GO:0050772
+name: positive regulation of axonogenesis
+def: "Any process that activates or increases the frequency, rate or extent of axonogenesis." []
+synonym: "activation of axonogenesis" NARROW []
+synonym: "stimulation of axonogenesis" NARROW []
+synonym: "up regulation of axonogenesis" EXACT []
+synonym: "up-regulation of axonogenesis" EXACT []
+synonym: "upregulation of axonogenesis" EXACT []
+is_a: GO:0010770 ! positive regulation of cell morphogenesis involved in differentiation
+is_a: GO:0010976 ! positive regulation of neuron projection development
+is_a: GO:0050770 ! regulation of axonogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007409 ! positively regulates axonogenesis
+relationship: RO:0002213 GO:0007409 ! positively regulates axonogenesis
 
 [Term]
 id: GO:0050776
@@ -26221,6 +26495,12 @@ def: "Catalysis of the reaction: UDP-glucose + (1,4)-alpha-D-glucosyl(n) = UMP +
 is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
 
 [Term]
+id: GO:0061564
+name: axon development
+def: "The progression of an axon over time. Covers axonogenesis (de novo generation of an axon) and axon regeneration (regrowth), as well as processes pertaining to the progression of the axon over time (fasciculation and defasciculation)." []
+is_a: GO:0031175 ! neuron projection development
+
+[Term]
 id: GO:0061615
 name: glycolytic process through fructose-6-phosphate
 def: "The chemical reactions and pathways resulting in the breakdown of a monosaccharide into pyruvate, occurring through a fructose-6-phosphate intermediate, with the concomitant production of ATP and NADH." []
@@ -26616,6 +26896,13 @@ def: "The directed movement of thyroid hormone into, out of or within a cell, or
 synonym: "thyroxine transport" NARROW []
 synonym: "triiodothyronine transport" NARROW []
 is_a: GO:0009914 ! hormone transport
+
+[Term]
+id: GO:0070330
+name: aromatase activity
+def: "Catalysis of the reduction of an aliphatic ring to yield an aromatic ring." []
+synonym: "estrogen synthetase activity" NARROW []
+is_a: GO:0016712 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced flavin or flavoprotein as one donor, and incorporation of one atom of oxygen
 
 [Term]
 id: GO:0070469
@@ -28148,6 +28435,18 @@ def: "Any constituent part of a neuron, the basic cellular unit of nervous tissu
 is_a: GO:0044464 ! cell part
 
 [Term]
+id: GO:0097485
+name: neuron projection guidance
+def: "The process in which the migration of a neuron projection is directed to a specific target site in response to a combination of attractive and repulsive cues." []
+synonym: "neurite guidance" NARROW []
+synonym: "neuron process guidance" EXACT []
+synonym: "neuron protrusion guidance" EXACT []
+synonym: "neuronal cell projection guidance" EXACT []
+is_a: GO:0006928 ! movement of cell or subcellular component
+relationship: BFO:0000050 GO:0006935 ! part of chemotaxis
+relationship: BFO:0000050 GO:0048812 ! part of neuron projection morphogenesis
+
+[Term]
 id: GO:0097503
 name: sialylation
 def: "The covalent attachment of sialic acid to a substrate molecule." []
@@ -29144,6 +29443,12 @@ is_a: GO:0044463 ! cell projection part
 intersection_of: GO:0005575 ! cellular_component
 intersection_of: BFO:0000050 GO:0120025 ! part of plasma membrane bounded cell projection
 relationship: BFO:0000050 GO:0120025 ! part of plasma membrane bounded cell projection
+
+[Term]
+id: GO:0120039
+name: plasma membrane bounded cell projection morphogenesis
+def: "The process in which the anatomical structures of a plasma membrane bounded cell projection are generated and organized." []
+is_a: GO:0048858 ! cell projection morphogenesis
 
 [Term]
 id: GO:0120054
@@ -31722,6 +32027,82 @@ synonym: "secondary alcohol formation" EXACT []
 synonym: "secondary alcohol synthesis" EXACT []
 is_a: GO:0046165 ! alcohol biosynthetic process
 is_a: GO:1902652 ! secondary alcohol metabolic process
+
+[Term]
+id: GO:1902667
+name: regulation of axon guidance
+def: "Any process that modulates the frequency, rate or extent of axon guidance." []
+synonym: "regulation of axon chemotaxis" RELATED []
+synonym: "regulation of axon growth cone guidance" NARROW []
+synonym: "regulation of axon pathfinding" EXACT []
+is_a: GO:0050770 ! regulation of axonogenesis
+is_a: GO:0050920 ! regulation of chemotaxis
+is_a: GO:0051270 ! regulation of cellular component movement
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0007411 ! regulates axon guidance
+relationship: RO:0002211 GO:0007411 ! regulates axon guidance
+
+[Term]
+id: GO:1902668
+name: negative regulation of axon guidance
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of axon guidance." []
+synonym: "down regulation of axon chemotaxis" RELATED []
+synonym: "down regulation of axon growth cone guidance" NARROW []
+synonym: "down regulation of axon guidance" EXACT []
+synonym: "down regulation of axon pathfinding" EXACT []
+synonym: "down-regulation of axon chemotaxis" RELATED []
+synonym: "down-regulation of axon growth cone guidance" NARROW []
+synonym: "down-regulation of axon guidance" EXACT []
+synonym: "down-regulation of axon pathfinding" EXACT []
+synonym: "downregulation of axon chemotaxis" RELATED []
+synonym: "downregulation of axon growth cone guidance" NARROW []
+synonym: "downregulation of axon guidance" EXACT []
+synonym: "downregulation of axon pathfinding" EXACT []
+synonym: "inhibition of axon chemotaxis" RELATED []
+synonym: "inhibition of axon growth cone guidance" NARROW []
+synonym: "inhibition of axon guidance" NARROW []
+synonym: "inhibition of axon pathfinding" NARROW []
+synonym: "negative regulation of axon chemotaxis" RELATED []
+synonym: "negative regulation of axon growth cone guidance" NARROW []
+synonym: "negative regulation of axon pathfinding" EXACT []
+is_a: GO:0050771 ! negative regulation of axonogenesis
+is_a: GO:0050922 ! negative regulation of chemotaxis
+is_a: GO:0051271 ! negative regulation of cellular component movement
+is_a: GO:1902667 ! regulation of axon guidance
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0007411 ! negatively regulates axon guidance
+relationship: RO:0002212 GO:0007411 ! negatively regulates axon guidance
+
+[Term]
+id: GO:1902669
+name: positive regulation of axon guidance
+def: "Any process that activates or increases the frequency, rate or extent of axon guidance." []
+synonym: "activation of axon chemotaxis" RELATED []
+synonym: "activation of axon growth cone guidance" NARROW []
+synonym: "activation of axon guidance" NARROW []
+synonym: "activation of axon pathfinding" NARROW []
+synonym: "positive regulation of axon chemotaxis" RELATED []
+synonym: "positive regulation of axon growth cone guidance" NARROW []
+synonym: "positive regulation of axon pathfinding" EXACT []
+synonym: "up regulation of axon chemotaxis" RELATED []
+synonym: "up regulation of axon growth cone guidance" NARROW []
+synonym: "up regulation of axon guidance" EXACT []
+synonym: "up regulation of axon pathfinding" EXACT []
+synonym: "up-regulation of axon chemotaxis" RELATED []
+synonym: "up-regulation of axon growth cone guidance" NARROW []
+synonym: "up-regulation of axon guidance" EXACT []
+synonym: "up-regulation of axon pathfinding" EXACT []
+synonym: "upregulation of axon chemotaxis" RELATED []
+synonym: "upregulation of axon growth cone guidance" NARROW []
+synonym: "upregulation of axon guidance" EXACT []
+synonym: "upregulation of axon pathfinding" EXACT []
+is_a: GO:0050772 ! positive regulation of axonogenesis
+is_a: GO:0050921 ! positive regulation of chemotaxis
+is_a: GO:0051272 ! positive regulation of cellular component movement
+is_a: GO:1902667 ! regulation of axon guidance
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0007411 ! positively regulates axon guidance
+relationship: RO:0002213 GO:0007411 ! positively regulates axon guidance
 
 [Term]
 id: GO:1902679
@@ -37282,6 +37663,47 @@ is_a: GO:2001212 ! regulation of vasculogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001570 ! positively regulates vasculogenesis
 relationship: RO:0002213 GO:0001570 ! positively regulates vasculogenesis
+
+[Term]
+id: GO:2001222
+name: regulation of neuron migration
+def: "Any process that modulates the frequency, rate or extent of neuron migration." []
+synonym: "regulation of neuron chemotaxis" EXACT []
+synonym: "regulation of neuron guidance" RELATED []
+synonym: "regulation of neuronal migration" EXACT []
+is_a: GO:0030334 ! regulation of cell migration
+is_a: GO:0050767 ! regulation of neurogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0001764 ! regulates neuron migration
+relationship: RO:0002211 GO:0001764 ! regulates neuron migration
+
+[Term]
+id: GO:2001223
+name: negative regulation of neuron migration
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of neuron migration." []
+synonym: "negative regulation of neuron chemotaxis" EXACT []
+synonym: "negative regulation of neuron guidance" RELATED []
+synonym: "negative regulation of neuronal migration" EXACT []
+is_a: GO:0030336 ! negative regulation of cell migration
+is_a: GO:0050768 ! negative regulation of neurogenesis
+is_a: GO:2001222 ! regulation of neuron migration
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0001764 ! negatively regulates neuron migration
+relationship: RO:0002212 GO:0001764 ! negatively regulates neuron migration
+
+[Term]
+id: GO:2001224
+name: positive regulation of neuron migration
+def: "Any process that activates or increases the frequency, rate or extent of neuron migration." []
+synonym: "positive regulation of neuron chemotaxis" EXACT []
+synonym: "positive regulation of neuron guidance" RELATED []
+synonym: "positive regulation of neuronal migration" EXACT []
+is_a: GO:0030335 ! positive regulation of cell migration
+is_a: GO:0050769 ! positive regulation of neurogenesis
+is_a: GO:2001222 ! regulation of neuron migration
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0001764 ! positively regulates neuron migration
+relationship: RO:0002213 GO:0001764 ! positively regulates neuron migration
 
 [Term]
 id: GO:2001225

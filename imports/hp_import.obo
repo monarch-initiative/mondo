@@ -3162,6 +3162,18 @@ xref: UMLS:C4020878
 is_a: HP:0011121 ! Abnormality of skin morphology
 
 [Term]
+id: HP:0001080
+name: Biliary tract abnormality
+namespace: human_phenotype
+def: "An abnormality of the biliary tree." [HPO:probinson]
+synonym: "Biliary tract disease" RELATED []
+xref: MSH:D001660
+xref: SNOMEDCT_US:105997008
+xref: UMLS:C0005424
+xref: UMLS:C0549613
+is_a: HP:0004297 ! Abnormality of the biliary system
+
+[Term]
 id: HP:0001096
 name: Keratoconjunctivitis
 namespace: human_phenotype
@@ -3783,6 +3795,21 @@ xref: SNOMEDCT_US:127324008
 xref: SNOMEDCT_US:17450006
 xref: UMLS:C0027066
 xref: UMLS:C1854302
+is_a: HP:0004305 ! Involuntary movements
+
+[Term]
+id: HP:0001337
+name: Tremor
+namespace: human_phenotype
+alt_id: HP:0001295
+alt_id: HP:0001309
+def: "An unintentional, oscillating to-and-fro muscle movement about a joint axis." [HPO:probinson, pmid:16344298, PMID:20589866]
+comment: Tremor is differentiated from other involuntary movement disorders, such as chorea, athetosis, ballism, tics, and myoclonus, by its repetitive, stereotyped movements of a regular amplitude and frequency. Clonus, unlike tremor, represents a rhythmic movement, which is increased by muscle stretching.
+synonym: "Tremor" EXACT layperson []
+synonym: "Tremors" EXACT layperson []
+xref: MSH:D014202
+xref: SNOMEDCT_US:26079004
+xref: UMLS:C0040822
 is_a: HP:0004305 ! Involuntary movements
 
 [Term]
@@ -5120,6 +5147,17 @@ created_by: peter
 creation_date: 2008-02-28T07:14:00Z
 
 [Term]
+id: HP:0001935
+name: Microcytic anemia
+namespace: human_phenotype
+def: "A kind of anemia in which the volume of the red blood cells is reduced." [HPO:probinson]
+comment: In normocytic anemia, the mean corpuscular volume (MCV) is below normal limits (>80 fl in adults).
+xref: MSH:C562385
+xref: SNOMEDCT_US:234349007
+xref: UMLS:C0085576
+is_a: HP:0010972 ! Anemia of inadequate production
+
+[Term]
 id: HP:0001939
 name: Abnormality of metabolism/homeostasis
 namespace: human_phenotype
@@ -6356,6 +6394,19 @@ xref: UMLS:C1854838
 is_a: HP:0001268 ! Mental deterioration
 
 [Term]
+id: HP:0002345
+name: Action tremor
+namespace: human_phenotype
+def: "A tremor present when the limbs are active, either when outstretched in a certain position or throughout a voluntary movement." [HPO:curators]
+comment: Action tremor occurs with voluntary contraction of muscle. Subforms of action tremor include postural, isometric, and kinetic tremors
+synonym: "Ataxic tremor" RELATED []
+xref: MSH:D014202
+xref: SNOMEDCT_US:30721006
+xref: UMLS:C0234376
+xref: UMLS:C4020853
+is_a: HP:0001337 ! Tremor
+
+[Term]
 id: HP:0002350
 name: Cerebellar cyst
 namespace: human_phenotype
@@ -7272,6 +7323,17 @@ is_a: HP:0004341 ! Abnormality of vitamin B12 metabolism
 is_a: HP:0010995 ! Abnormality of dicarboxylic acid metabolism
 
 [Term]
+id: HP:0002917
+name: Hypomagnesemia
+namespace: human_phenotype
+alt_id: HP:0003284
+def: "An abnormally decreased magnesium concentration in the blood." [HPO:probinson]
+synonym: "Low blood magnesium levels" EXACT layperson [ORCID:0000-0001-6908-9849]
+xref: SNOMEDCT_US:190855004
+xref: UMLS:C0151723
+is_a: HP:0004921 ! Abnormality of magnesium homeostasis
+
+[Term]
 id: HP:0002921
 name: Abnormality of the cerebrospinal fluid
 namespace: human_phenotype
@@ -8073,6 +8135,27 @@ xref: UMLS:C1848924
 is_a: HP:0003674 ! Onset
 
 [Term]
+id: HP:0003621
+name: Juvenile onset
+namespace: human_phenotype
+alt_id: HP:0003578
+alt_id: HP:0003580
+alt_id: HP:0003582
+alt_id: HP:0003583
+alt_id: HP:0003589
+alt_id: HP:0003592
+alt_id: HP:0003604
+alt_id: HP:0003619
+alt_id: HP:0003620
+alt_id: HP:0003625
+alt_id: HP:0003659
+alt_id: HP:0003661
+alt_id: HP:0003670
+def: "Onset of signs or symptoms of disease between the age of 5 and 15 years." [HPO:probinson]
+xref: UMLS:C4025588
+is_a: HP:0003674 ! Onset
+
+[Term]
 id: HP:0003623
 name: Neonatal onset
 namespace: human_phenotype
@@ -8742,6 +8825,17 @@ xref: UMLS:C0042842
 is_a: HP:0008372 ! Abnormality of vitamin A metabolism
 
 [Term]
+id: HP:0004921
+name: Abnormality of magnesium homeostasis
+namespace: human_phenotype
+alt_id: HP:0008274
+def: "An abnormality of magnesium ion homeostasis." [HPO:probinson]
+synonym: "Abnormal magnesium metabolism" RELATED []
+xref: UMLS:C4020826
+xref: UMLS:C4025274
+is_a: HP:0010927 ! Abnormality of divalent inorganic cation homeostasis
+
+[Term]
 id: HP:0005132
 name: Pericardial constriction
 namespace: human_phenotype
@@ -8972,6 +9066,20 @@ def: "A type of dysharmonic skeletal maturation in which there is a delay in ske
 xref: UMLS:C1859444
 is_a: HP:0002750 ! Delayed skeletal maturation
 is_a: HP:0200000 ! Dysharmonic bone age
+
+[Term]
+id: HP:0005912
+name: Biliary atresia
+namespace: human_phenotype
+def: "Atresia in of the biliary tree." [HPO:probinson]
+synonym: "Biliary duct atresia" EXACT []
+xref: MSH:D001656
+xref: SNOMEDCT_US:77480004
+xref: SNOMEDCT_US:82821008
+xref: UMLS:C0005411
+is_a: HP:0012440 ! Abnormal biliary tract morphology
+created_by: peter
+creation_date: 2008-03-27T02:07:00Z
 
 [Term]
 id: HP:0006000
@@ -12178,6 +12286,17 @@ created_by: peter
 creation_date: 2013-11-07T07:47:22Z
 
 [Term]
+id: HP:0012440
+name: Abnormal biliary tract morphology
+namespace: human_phenotype
+def: "A structural abnormality of the biliary tree." [HPO:probinson]
+synonym: "Anomaly of the biliary tract" EXACT []
+xref: UMLS:C4021086
+is_a: HP:0001080 ! Biliary tract abnormality
+created_by: peter
+creation_date: 2013-11-23T02:15:33Z
+
+[Term]
 id: HP:0012443
 name: Abnormality of brain morphology
 namespace: human_phenotype
@@ -12804,6 +12923,20 @@ def: "Abnormality of vascular function." [HPO:probinson]
 xref: UMLS:C4022603
 is_a: HP:0002597 ! Abnormality of the vasculature
 is_a: HP:0011025 ! Abnormality of cardiovascular system physiology
+
+[Term]
+id: HP:0030186
+name: Kinetic tremor
+namespace: human_phenotype
+def: "Tremor that occurs during any voluntary movement. It may include visually or non-visually guided movements. Tremor during target directed movement is called intention tremor." []
+synonym: "Essential tremor" EXACT [ORCID:0000-0001-6908-9849]
+xref: MSH:D014202
+xref: MSH:D020329
+xref: SNOMEDCT_US:30721006
+xref: SNOMEDCT_US:609558009
+xref: UMLS:C0234376
+xref: UMLS:C0270736
+is_a: HP:0002345 ! Action tremor
 
 [Term]
 id: HP:0030191
