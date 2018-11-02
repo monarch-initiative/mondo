@@ -789,6 +789,9 @@ disorder-by-cell.tsv: disorder-by-CL_0000000.tsv
 phenotype_annotation.tab:
 	wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab -O $@ && touch $@
 
+phenotype_annotation_nu.tab:
+	wget http://compbio.charite.de/jenkins/job/hpo.annotations.2018/lastSuccessfulBuild/artifact/misc_2018/phenotype.hpoa -O $@ && touch $@
+
 g2p.tsv:
 	wget http://compbio.charite.de/jenkins/job/hpo.annotations.monthly/lastStableBuild/artifact/annotation/ALL_SOURCES_ALL_FREQUENCIES_genes_to_phenotype.txt -O $@ && touch $@
 
