@@ -1,0 +1,372 @@
+format-version: 1.2
+ontology: mondo/imports/ncit_import
+
+[Term]
+id: NCIT:C12913
+name: Abnormal Cell
+def: "An abnormal human cell type which can occur in either disease states or disease models." []
+synonym: "Abnormal Cell" EXACT []
+disjoint_from: NCIT:C17828 ! Biological Process
+disjoint_from: NCIT:C43431 ! Activity
+disjoint_from: NCIT:C7057 ! Disease, Disorder or Finding
+
+[Term]
+id: NCIT:C12917
+name: Malignant Cell
+def: "Cells of, or derived from, a malignant tumor." []
+synonym: "Cancer Cell" EXACT []
+synonym: "Malignant Cell" EXACT []
+is_a: NCIT:C12922 ! Neoplastic Cell
+
+[Term]
+id: NCIT:C12922
+name: Neoplastic Cell
+def: "Cells of, or derived from, a tumor." []
+synonym: "Neoplastic Cell" EXACT []
+synonym: "Tumor Cell" EXACT []
+is_a: NCIT:C12913 ! Abnormal Cell
+
+[Term]
+id: NCIT:C147564
+name: Hormone Resistance
+def: "A finding indicating decreased tissue sensitivity to a hormone." []
+synonym: "Hormone Resistance" EXACT []
+synonym: "Hormone Therapy Resistance" EXACT []
+is_a: NCIT:C36285 ! Endocrine System Finding
+
+[Term]
+id: NCIT:C15493
+name: Estrogen Receptor Negative
+def: "The absence of detectable estrogen receptor in a tissue sample." []
+synonym: "ER Negative" EXACT []
+synonym: "ER-" EXACT []
+synonym: "Estrogen Receptor Negative" EXACT []
+synonym: "estrogen receptor negative" EXACT []
+synonym: "Negative Estrogen Receptor" EXACT []
+is_a: NCIT:C16150 ! Estrogen Receptor Status
+is_a: NCIT:C35681 ! Negative Test Result
+
+[Term]
+id: NCIT:C15496
+name: Progesterone Receptor Positive
+synonym: "PGR Positive" EXACT []
+synonym: "PR+" EXACT []
+synonym: "Progesterone Receptor Positive" EXACT []
+synonym: "progesterone receptor positive" EXACT []
+is_a: NCIT:C16149 ! Progesterone Receptor Status
+is_a: NCIT:C35682 ! Positive Laboratory Test Result
+
+[Term]
+id: NCIT:C15497
+name: Progesterone Receptor Negative
+synonym: "PGR Negative" EXACT []
+synonym: "PR-" EXACT []
+synonym: "Progesterone Receptor Negative" EXACT []
+synonym: "progesterone receptor negative" EXACT []
+is_a: NCIT:C16149 ! Progesterone Receptor Status
+is_a: NCIT:C35681 ! Negative Test Result
+
+[Term]
+id: NCIT:C16149
+name: Progesterone Receptor Status
+def: "Indicates the progesterone receptor level measured in a primary tumor or in metastases. (>=10 is positive if measured in fmols/mg cytosol protein; Otherwise use institutional standards)" []
+synonym: "PgR Status" EXACT []
+synonym: "Progesterone Receptor Status" EXACT []
+is_a: NCIT:C94299 ! Receptor Status
+
+[Term]
+id: NCIT:C16150
+name: Estrogen Receptor Status
+def: "The estrogen receptor level measured in a primary tumor or in metastases.  There are essentially two distinct forms of breast cancer, one that tends to have an early onset and is characterized by an ER- status, and one that tends to have a late onset and is characterized by an ER+ status.  However, these two variants tend to overlap with respect to age, so it is possible for a young woman to have a \"late-onset\" form of breast cancer and for an older woman to have an \"early-onset\" variant of the disease." []
+synonym: "ER Status" EXACT []
+synonym: "Estrogen Receptor Status" EXACT []
+is_a: NCIT:C94299 ! Receptor Status
+
+[Term]
+id: NCIT:C16152
+name: HER2/Neu Status
+def: "The presence or absence of Her2/Neu on a tissue sample." []
+synonym: "ERBB2 Status" EXACT []
+synonym: "HER2/Neu Status" EXACT []
+synonym: "Her2/Neu Value" EXACT []
+is_a: NCIT:C94299 ! Receptor Status
+
+[Term]
+id: NCIT:C16273
+name: Alcohol Consumption
+def: "Consumption of liquids containing ethanol, including the behaviors associated with drinking the alcohol." []
+synonym: "Alcohol Consumption" EXACT []
+is_a: NCIT:C19683 ! Personal Behavior
+
+[Term]
+id: NCIT:C16326
+name: Behavior
+def: "The actions or reactions of an object or organism, usually in relation to the environment or surrounding world of stimuli." []
+synonym: "Behavior" EXACT []
+synonym: "Behavioral" EXACT []
+synonym: "Conduct" EXACT []
+is_a: NCIT:C43431 ! Activity
+
+[Term]
+id: NCIT:C16956
+name: Pathologic Process
+def: "A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level." []
+synonym: "Pathologic Process" EXACT []
+is_a: NCIT:C17828 ! Biological Process
+
+[Term]
+id: NCIT:C17214
+name: Disease Transmission
+def: "A passage or transfer, as of a disease from one individual to another." []
+synonym: "Disease Transmission" EXACT []
+synonym: "Transmission" EXACT []
+synonym: "Transmitted" EXACT []
+is_a: NCIT:C18264 ! Pathogenesis
+
+[Term]
+id: NCIT:C17828
+name: Biological Process
+def: "An activity occurring within an organism, between organisms or among organisms and the mechanisms underlying such events." []
+synonym: "Biological Function" EXACT []
+synonym: "Biological Process" EXACT []
+disjoint_from: NCIT:C43431 ! Activity
+disjoint_from: NCIT:C7057 ! Disease, Disorder or Finding
+
+[Term]
+id: NCIT:C18264
+name: Pathogenesis
+def: "The pathologic, physiologic, or biochemical mechanism resulting in the development of a disease or morbid process." []
+synonym: "Pathogenesis" EXACT []
+is_a: NCIT:C16956 ! Pathologic Process
+
+[Term]
+id: NCIT:C19085
+name: Sexual Transmission
+def: "Passage or transfer, as of a disease, from a donor individual to a recipient during or as a result of sexual activity. (NCI)" []
+synonym: "Sexual Transmission" EXACT []
+synonym: "Transmission, Sexual" EXACT []
+is_a: NCIT:C17214 ! Disease Transmission
+
+[Term]
+id: NCIT:C19683
+name: Personal Behavior
+def: "The observable response of a person." []
+synonym: "Personal Behavior" EXACT []
+synonym: "Personal Conduct" EXACT []
+is_a: NCIT:C16326 ! Behavior
+
+[Term]
+id: NCIT:C3367
+name: Finding
+def: "Clinical, laboratory or molecular evidence, or absence of evidence of disease." []
+synonym: "Finding" EXACT []
+synonym: "finding" EXACT []
+synonym: "Observable Entity" EXACT []
+is_a: NCIT:C7057 ! Disease, Disorder or Finding
+
+[Term]
+id: NCIT:C35681
+name: Negative Test Result
+def: "A test result that indicates that a specific disease, condition, or attribute being assessed is not present." []
+synonym: "Negative Test Result" EXACT []
+synonym: "negative test result" EXACT []
+is_a: NCIT:C77140 ! Clinical Test Result
+
+[Term]
+id: NCIT:C35682
+name: Positive Laboratory Test Result
+def: "A laboratory test result that indicates that a specific disease, condition, or attribute being assessed is present." []
+synonym: "Positive Laboratory Test Result" EXACT []
+synonym: "positive test result" EXACT []
+is_a: NCIT:C36292 ! Laboratory Test Result
+
+[Term]
+id: NCIT:C35867
+name: Morphologic Finding
+def: "A light microscopic finding that describes the cellular characteristics and architectural patterns of cell populations in a tissue sample." []
+synonym: "Morphologic Finding" EXACT []
+is_a: NCIT:C83490 ! Microscopic Finding
+
+[Term]
+id: NCIT:C35886
+name: Morphologic Architectural Pattern
+def: "A microscopic finding that relates to the architectural patterns of a normal or abnormal cellular population in a tissue specimen." []
+synonym: "Morphologic Architectural Pattern" EXACT []
+is_a: NCIT:C35867 ! Morphologic Finding
+
+[Term]
+id: NCIT:C35920
+name: Cribriform Pattern
+def: "A morphologic finding indicating the presence of sheets of malignant epithelial cells punctuated by gland-like spaces in a tissue sample." []
+synonym: "CRIBRIFORM CHANGE" EXACT []
+synonym: "Cribriform Pattern" EXACT []
+synonym: "Pseudoglandular Formation" EXACT []
+is_a: NCIT:C35886 ! Morphologic Architectural Pattern
+
+[Term]
+id: NCIT:C36278
+name: Finding by Site or System
+def: "A term that refers to the classification of a clinical or laboratory finding according to the anatomic site or system that is involved." []
+synonym: "Finding by Site or System" EXACT []
+is_a: NCIT:C3367 ! Finding
+
+[Term]
+id: NCIT:C36285
+name: Endocrine System Finding
+def: "Symptoms, physical examination results, and/or laboratory test results related to the endocrine system." []
+synonym: "ENDOCRINE SYSTEM" EXACT []
+synonym: "Endocrine System Finding" EXACT []
+is_a: NCIT:C36278 ! Finding by Site or System
+
+[Term]
+id: NCIT:C36292
+name: Laboratory Test Result
+def: "The outcome of a laboratory test." []
+synonym: "Lab Findings" EXACT []
+synonym: "Laboratory Finding" EXACT []
+synonym: "Laboratory Report" EXACT []
+synonym: "Laboratory Test Result" EXACT []
+synonym: "Labs" EXACT []
+synonym: "TEST RESULT" EXACT []
+synonym: "Test Result" EXACT []
+is_a: NCIT:C77140 ! Clinical Test Result
+
+[Term]
+id: NCIT:C36745
+name: Abnormal Epithelial Cell
+def: "An epithelial cell that occurs in human disease or in models of human disease." []
+synonym: "Abnormal Epithelial Cell" EXACT []
+is_a: NCIT:C12913 ! Abnormal Cell
+
+[Term]
+id: NCIT:C36753
+name: Neoplastic Epithelial Cell
+synonym: "Neoplastic Epithelial Cell" EXACT []
+is_a: NCIT:C12922 ! Neoplastic Cell
+is_a: NCIT:C36745 ! Abnormal Epithelial Cell
+
+[Term]
+id: NCIT:C36779
+name: Malignant Epithelial Cell
+synonym: "Carcinoma Cell" EXACT []
+synonym: "Malignant Epithelial Cell" EXACT []
+is_a: NCIT:C12917 ! Malignant Cell
+is_a: NCIT:C36807 ! Dysplastic Epithelial Cell
+
+[Term]
+id: NCIT:C36807
+name: Dysplastic Epithelial Cell
+synonym: "Dysplastic Epithelial Cell" EXACT []
+is_a: NCIT:C36753 ! Neoplastic Epithelial Cell
+
+[Term]
+id: NCIT:C36823
+name: Neoplastic Spindle Cell
+synonym: "Neoplastic Spindle Cell" EXACT []
+is_a: NCIT:C12922 ! Neoplastic Cell
+
+[Term]
+id: NCIT:C36849
+name: Neoplastic Epithelial Spindle Cell
+synonym: "Neoplastic Epithelial Spindle Cell" EXACT []
+is_a: NCIT:C36753 ! Neoplastic Epithelial Cell
+is_a: NCIT:C36823 ! Neoplastic Spindle Cell
+
+[Term]
+id: NCIT:C36862
+name: Neoplastic Melanocyte
+synonym: "Neoplastic Melanocyte" EXACT []
+is_a: NCIT:C12922 ! Neoplastic Cell
+
+[Term]
+id: NCIT:C36869
+name: Spindle Melanocyte
+synonym: "Spindle Melanocyte" EXACT []
+is_a: NCIT:C36823 ! Neoplastic Spindle Cell
+is_a: NCIT:C36862 ! Neoplastic Melanocyte
+
+[Term]
+id: NCIT:C37109
+name: Malignant Epithelial Spindle Cell
+synonym: "Malignant Epithelial Spindle Cell" EXACT []
+is_a: NCIT:C36779 ! Malignant Epithelial Cell
+is_a: NCIT:C36849 ! Neoplastic Epithelial Spindle Cell
+is_a: NCIT:C53637 ! Malignant Spindle Cell
+
+[Term]
+id: NCIT:C43431
+name: Activity
+def: "An active process; excludes processes and mechanisms which fulfill biological functions." []
+synonym: "Activity" EXACT []
+synonym: "General activity" EXACT []
+disjoint_from: NCIT:C7057 ! Disease, Disorder or Finding
+
+[Term]
+id: NCIT:C45980
+name: Absence of a Hormonal Syndrome
+synonym: "Absence of a Hormonal Syndrome" EXACT []
+is_a: NCIT:C36285 ! Endocrine System Finding
+
+[Term]
+id: NCIT:C45981
+name: Presence of a Hormonal Syndrome
+synonym: "Presence of a Hormonal Syndrome" EXACT []
+is_a: NCIT:C36285 ! Endocrine System Finding
+
+[Term]
+id: NCIT:C53637
+name: Malignant Spindle Cell
+synonym: "Malignant Spindle Cell" EXACT []
+is_a: NCIT:C36823 ! Neoplastic Spindle Cell
+
+[Term]
+id: NCIT:C68748
+name: HER2/Neu Positive
+def: "A laboratory test result indicating the presence of HER2/Neu in a tissue sample." []
+synonym: "ERBB2 Positive" EXACT []
+synonym: "HER-2 Positive" EXACT []
+synonym: "HER2 Positive" EXACT []
+synonym: "HER2/Neu Positive" EXACT []
+is_a: NCIT:C16152 ! HER2/Neu Status
+is_a: NCIT:C35682 ! Positive Laboratory Test Result
+
+[Term]
+id: NCIT:C68749
+name: HER2/Neu Negative
+def: "The absence of detectable HER2/Neu in a tissue sample." []
+synonym: "ERBB2 Negative" EXACT []
+synonym: "HER-2 Negative" EXACT []
+synonym: "HER2 Negative" EXACT []
+synonym: "HER2/Neu Negative" EXACT []
+is_a: NCIT:C16152 ! HER2/Neu Status
+is_a: NCIT:C35681 ! Negative Test Result
+
+[Term]
+id: NCIT:C7057
+name: Disease, Disorder or Finding
+def: "A condition that is relevant to human neoplasms and non-neoplastic disorders.  This includes observations, test results, history and other concepts relevant to the characterization of human pathologic conditions." []
+synonym: "Disease, Disorder or Finding" EXACT []
+
+[Term]
+id: NCIT:C77140
+name: Clinical Test Result
+def: "The result of a laboratory, radiologic, or other clinical test performed to determine the presence, absence, or degree of a condition." []
+synonym: "Clinical Test Result" EXACT []
+synonym: "Diagnostic Test Result" EXACT []
+synonym: "Test Result" EXACT []
+is_a: NCIT:C3367 ! Finding
+
+[Term]
+id: NCIT:C83490
+name: Microscopic Finding
+def: "A finding resulting from the examination of a tissue sample under light or electron microscopy." []
+synonym: "Microscopic Finding" EXACT []
+is_a: NCIT:C3367 ! Finding
+
+[Term]
+id: NCIT:C94299
+name: Receptor Status
+def: "Refers to the presence or absence of specific receptor molecules on the surface of a cells in a specimen." []
+synonym: "Receptor Status" EXACT []
+is_a: NCIT:C36292 ! Laboratory Test Result
+
