@@ -1,4 +1,146 @@
-## 2018-11-01 release
+# 2018-11-21 release
+
+## New Classes
+
+ * [Bowen disease of the skin](http://purl.obolibrary.org/obo/MONDO_0020761)
+ * [skin squamous cell carcinoma in situ](http://purl.obolibrary.org/obo/MONDO_0020760)
+ * [cauda equina syndrome with neurogenic bladder](http://purl.obolibrary.org/obo/MONDO_0020767)
+ * [carcinoma, Brown-Pearce](http://purl.obolibrary.org/obo/MONDO_0020764)
+ * [decompression sickness](http://purl.obolibrary.org/obo/MONDO_0020797)
+ * [chronic gingivitis](http://purl.obolibrary.org/obo/MONDO_0020782)
+ * [antithrombin deficiency type 2](http://purl.obolibrary.org/obo/MONDO_0020670)
+ * [spindle cell neoplasm](http://purl.obolibrary.org/obo/MONDO_0020664)
+ * [malignant spindle cell neoplasm](http://purl.obolibrary.org/obo/MONDO_0020663)
+ * [borderline ovarian serous tumor](http://purl.obolibrary.org/obo/MONDO_0020662)
+ * [undifferentiated round cell sarcoma](http://purl.obolibrary.org/obo/MONDO_0020661)
+ * [osteoblastic osteosarcoma](http://purl.obolibrary.org/obo/MONDO_0020660)
+ * [paranasal sinus cancer](http://purl.obolibrary.org/obo/MONDO_0020669)
+ * [Antley-Bixler syndrome without genital anomalies or disordered steroidogenesis](http://purl.obolibrary.org/obo/MONDO_0020667)
+ * [Löfgren syndrome](http://purl.obolibrary.org/obo/MONDO_0020666)
+ * [high grade malignant neoplasm](http://purl.obolibrary.org/obo/MONDO_0020665)
+ * [acute adenoiditis](http://purl.obolibrary.org/obo/MONDO_0020686)
+ * [acute disease](http://purl.obolibrary.org/obo/MONDO_0020683)
+ * [acute bronchiolitis](http://purl.obolibrary.org/obo/MONDO_0020680)
+ * [AIDS dementia complex](http://purl.obolibrary.org/obo/MONDO_0020689)
+ * [omphalitis](http://purl.obolibrary.org/obo/MONDO_0021562)
+ * [transverse myelitis](http://purl.obolibrary.org/obo/MONDO_0021553)
+ * [non-autoimmune hemolytic anemia](http://purl.obolibrary.org/obo/MONDO_0021559)
+ * [intertrigo](http://purl.obolibrary.org/obo/MONDO_0021340)
+ * [immunoproliferative disorder](http://purl.obolibrary.org/obo/MONDO_0021334)
+ * [leukemia, myeloid, accelerated-phase](http://purl.obolibrary.org/obo/MONDO_0021367)
+ * [hypertrophic lichen planus](http://purl.obolibrary.org/obo/MONDO_0021377)
+ * [HTLV-2 infection](http://purl.obolibrary.org/obo/MONDO_0021183)
+ * [deltaretrovirus infections](http://purl.obolibrary.org/obo/MONDO_0021184)
+ * [herpetic vulvovaginitis](http://purl.obolibrary.org/obo/MONDO_0021175)
+ * [herpes zoster with dermatitis of eyelid](http://purl.obolibrary.org/obo/MONDO_0021032)
+ * [herpes zoster dermatitis](http://purl.obolibrary.org/obo/MONDO_0021033)
+ * [traumatic myositis ossificans](http://purl.obolibrary.org/obo/MONDO_0021929)
+ * [tracheobronchitis](http://purl.obolibrary.org/obo/MONDO_0021925)
+ * [infection by Trypanosoma rhodesiense](http://purl.obolibrary.org/obo/MONDO_0021941)
+ * [tuberculoma](http://purl.obolibrary.org/obo/MONDO_0021943)
+ * [cutaneous tuberculosis](http://purl.obolibrary.org/obo/MONDO_0021948)
+ * [infection by Trypanosoma gambiense](http://purl.obolibrary.org/obo/MONDO_0021932)
+ * [ureteritis](http://purl.obolibrary.org/obo/MONDO_0021960)
+ * [tuberculous fibrosis of lung](http://purl.obolibrary.org/obo/MONDO_0021953)
+ * [silicotuberculosis](http://purl.obolibrary.org/obo/MONDO_0021804)
+ * [spirochaetales infections](http://purl.obolibrary.org/obo/MONDO_0021839)
+ * [temporomandibular joint dysfunction syndrome](http://purl.obolibrary.org/obo/MONDO_0021895)
+ * [polyneuritis](http://purl.obolibrary.org/obo/MONDO_0021718)
+ * [puerperal infection](http://purl.obolibrary.org/obo/MONDO_0021742)
+ * [pyelocystitis](http://purl.obolibrary.org/obo/MONDO_0021746)
+ * [proctosigmoiditis](http://purl.obolibrary.org/obo/MONDO_0021736)
+ * [prurigo](http://purl.obolibrary.org/obo/MONDO_0021739)
+ * [radiculitis](http://purl.obolibrary.org/obo/MONDO_0021765)
+ * [pyonephrosis](http://purl.obolibrary.org/obo/MONDO_0021750)
+ * [streptococcal sore throat](http://purl.obolibrary.org/obo/MONDO_0021783)
+ * [acute rheumatic heart disease](http://purl.obolibrary.org/obo/MONDO_0021777)
+ * [Pericytoma with t(7;12)](http://purl.obolibrary.org/obo/MONDO_0100063)
+ * [tyrosine hydroxylase deficiency](http://purl.obolibrary.org/obo/MONDO_0100064)
+ * [TH-deficient infantile parkinsonism and motor delay](http://purl.obolibrary.org/obo/MONDO_0100065)
+ * [TH-deficient progressive infantile encephalopathy](http://purl.obolibrary.org/obo/MONDO_0100066)
+ * [water intoxication](http://purl.obolibrary.org/obo/MONDO_0022007)
+ * [lentivirus infection](http://purl.obolibrary.org/obo/MONDO_0022034)
+ * [large-cell immunoblastic lymphoma](http://purl.obolibrary.org/obo/MONDO_0022037)
+ * [occupational lung disease](http://purl.obolibrary.org/obo/MONDO_0022736)
+ * [occupational asthma](http://purl.obolibrary.org/obo/MONDO_0022742)
+ * [mixed dust pneumoconiosis](http://purl.obolibrary.org/obo/MONDO_0022745)
+ * [non-neoplastic nevus](http://purl.obolibrary.org/obo/MONDO_0022749)
+ * [chromosome 8 deletion](http://purl.obolibrary.org/obo/MONDO_0022794)
+ * [autonomic facial cephalgia](http://purl.obolibrary.org/obo/MONDO_0022535)
+ * [leukoplakia of gingiva](http://purl.obolibrary.org/obo/MONDO_0022538)
+ * [Mauriac syndrome](http://purl.obolibrary.org/obo/MONDO_0022435)
+ * [cervical intraepithelial neoplasia](http://purl.obolibrary.org/obo/MONDO_0022394)
+ * [pustular psoriasis](http://purl.obolibrary.org/obo/MONDO_0022205)
+ * [crystal arthropathy](http://purl.obolibrary.org/obo/MONDO_0022208)
+ * [Parinaud syndrome](http://purl.obolibrary.org/obo/MONDO_0022220)
+ * [vascular disorder of penis](http://purl.obolibrary.org/obo/MONDO_0022293)
+ * [pyogenic granuloma](http://purl.obolibrary.org/obo/MONDO_0022096)
+ * [chronic prostatitis](http://purl.obolibrary.org/obo/MONDO_0022103)
+ * [pigmented dermatofibrosarcoma protuberans](http://purl.obolibrary.org/obo/MONDO_0023273)
+ * [pityriasis rotunda](http://purl.obolibrary.org/obo/MONDO_0023388)
+ * [viral myocarditis](http://purl.obolibrary.org/obo/MONDO_0023161)
+ * [viral pericarditis](http://purl.obolibrary.org/obo/MONDO_0023164)
+ * [tuberculous ascites](http://purl.obolibrary.org/obo/MONDO_0023153)
+ * [linear porokeratosis](http://purl.obolibrary.org/obo/MONDO_0023246)
+ * [polyarticular juvenile rheumatoid arthritis](http://purl.obolibrary.org/obo/MONDO_0023249)
+ * [klumpke's paralysis](http://purl.obolibrary.org/obo/MONDO_0023054)
+ * [infection due to clostridium perfringens](http://purl.obolibrary.org/obo/MONDO_0023149)
+ * [neonatal dacryocystitis](http://purl.obolibrary.org/obo/MONDO_0023023)
+ * [Wilson-Mikity syndrome](http://purl.obolibrary.org/obo/MONDO_0023011)
+ * [corneal infection](http://purl.obolibrary.org/obo/MONDO_0023865)
+ * [melanoma associated retinopathy](http://purl.obolibrary.org/obo/MONDO_0023868)
+ * [noonan-like/multiple giant cell lesion syndrome](http://purl.obolibrary.org/obo/MONDO_0023873)
+ * [hereditary connective tissue disorder](http://purl.obolibrary.org/obo/MONDO_0023603)
+ * [Weber syndrome](http://purl.obolibrary.org/obo/MONDO_0023642)
+ * [tympanic paraganglioma](http://purl.obolibrary.org/obo/MONDO_0023682)
+ * [hematohidrosis](http://purl.obolibrary.org/obo/MONDO_0023679)
+ * [C1q nephropathy](http://purl.obolibrary.org/obo/MONDO_0023551)
+ * [acquired testicular failure](http://purl.obolibrary.org/obo/MONDO_0023554)
+ * [infective vaginitis](http://purl.obolibrary.org/obo/MONDO_0023557)
+ * [congenital myotonic dystrophy](http://purl.obolibrary.org/obo/MONDO_0023595)
+ * [mesomelic dysplasia](http://purl.obolibrary.org/obo/MONDO_0023599)
+ * [congenital candidiasis](http://purl.obolibrary.org/obo/MONDO_0023415)
+ * [short stature contractures hypotonia](http://purl.obolibrary.org/obo/MONDO_0024421)
+ * [radio-digito-facial dysplasia](http://purl.obolibrary.org/obo/MONDO_0024171)
+ * [ovarian remnant syndrome](http://purl.obolibrary.org/obo/MONDO_0025956)
+ * [prurigo nodularis](http://purl.obolibrary.org/obo/MONDO_0026045)
+ * [HHV-6 encephalitis](http://purl.obolibrary.org/obo/MONDO_0027029)
+ * [Buschke Lowenstein tumor](http://purl.obolibrary.org/obo/MONDO_0027026)
+ * [xanthogranulomatous sialadenitis](http://purl.obolibrary.org/obo/MONDO_0027091)
+ * [escherichia coli infection](http://purl.obolibrary.org/obo/MONDO_0020920)
+ * [viral eye infection](http://purl.obolibrary.org/obo/MONDO_0020950)
+ * [Mansonella ozzardi infection](http://purl.obolibrary.org/obo/MONDO_0020959)
+ * [parasitic eye infection](http://purl.obolibrary.org/obo/MONDO_0020947)
+ * [fungal infection of eye](http://purl.obolibrary.org/obo/MONDO_0020944)
+ * [gonococcal urethritis](http://purl.obolibrary.org/obo/MONDO_0020971)
+ * [pilosebaceous hamartoma](http://purl.obolibrary.org/obo/MONDO_0020979)
+ * [granulomatous prostatitis](http://purl.obolibrary.org/obo/MONDO_0020977)
+ * [laryngeal granuloma](http://purl.obolibrary.org/obo/MONDO_0020974)
+ * [myocardial rupture](http://purl.obolibrary.org/obo/MONDO_0020983)
+ * [hair nevus](http://purl.obolibrary.org/obo/MONDO_0020980)
+ * [hereditary persistence of fetal hemoglobin](http://purl.obolibrary.org/obo/MONDO_0020989)
+ * [dentigerous cyst](http://purl.obolibrary.org/obo/MONDO_0020815)
+ * [exposure, dental pulp](http://purl.obolibrary.org/obo/MONDO_0020812)
+ * [secondary dentine](http://purl.obolibrary.org/obo/MONDO_0020818)
+ * [demyelinating disease of central nervous system](http://purl.obolibrary.org/obo/MONDO_0020800)
+ * [diaphragmitis](http://purl.obolibrary.org/obo/MONDO_0020830)
+ * [anterior nasal diphtheria](http://purl.obolibrary.org/obo/MONDO_0020838)
+ * [pseudomembranous diphtheritic conjunctivitis](http://purl.obolibrary.org/obo/MONDO_0020843)
+ * [faucial diphtheria](http://purl.obolibrary.org/obo/MONDO_0020860)
+ * [nasopharyngeal diphtheria](http://purl.obolibrary.org/obo/MONDO_0020866)
+ * [laryngeal diphtheria](http://purl.obolibrary.org/obo/MONDO_0020863)
+ * [amnionitis](http://purl.obolibrary.org/obo/MONDO_0020710)
+ * [arbovirus infection](http://purl.obolibrary.org/obo/MONDO_0020731)
+ * [anemia due to chronic disorder](http://purl.obolibrary.org/obo/MONDO_0020725)
+ * [cerebrospinal fluid rhinorrhea](http://purl.obolibrary.org/obo/MONDO_0020773)
+ * [cartilage development disorder](http://purl.obolibrary.org/obo/MONDO_0020779)
+ * [chlamydiaceae infections](http://purl.obolibrary.org/obo/MONDO_0020776)
+
+## Obsoletions
+
+ * [http://purl.obolibrary.org/obo/MONDO_0022267](congenital herpes simplex) merged into [http://purl.obolibrary.org/obo/MONDO_0017381](congenital herpes simplex virus infection)
+
+# 2018-11-01 release
 
  * relabeled MONDO:0011652 to Phelan McDermid syndrome fixes #442
  * NT: microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome, fixes #444
@@ -60,7 +202,7 @@
  * [obsolete human papillomavirus type 18 integration site 2](http://purl.obolibrary.org/obo/MONDO_0008191) not a disease
  * [obsolete human papillomavirus type 18 integration site 1](http://purl.obolibrary.org/obo/MONDO_0008190) not a disease
  
-## 2018-10-26 release
+# 2018-10-26 release
 
 ### New classes
 
@@ -79,7 +221,7 @@
 
  [obsolete myotonia, potassium-aggravated](http://purl.obolibrary.org/obo/MONDO_0012026) replaced by: [MONDO:0018959](http://purl.obolibrary.org/obo/MONDO_0018959) ! potassium-aggravated myotonia
 
-## 2018-10-14 release
+# 2018-10-14 release
 
  * reclassified MONDO:0019079 ‘proximal spinal muscular atrophy’ a subclass of MONDO:0001516 ‘spinal muscular atrophy’ and fixed typos in def of MONDO:0001516 ‘s #350
  * added new term MONDO_0100062 'developmental and epileptic encephalopathy' closes #332
@@ -187,7 +329,7 @@
  * [lung pecoma](http://purl.obolibrary.org/obo/MONDO_0020588)
 
 
-## 2018-09-26 release
+# 2018-09-26 release
 
 ### New classes
 
@@ -202,7 +344,7 @@
  * [hypervalinemia and hyperleucine-isoleucinemia](http://purl.obolibrary.org/obo/MONDO_0100058)
 
 
-## 2018-09-10 release
+# 2018-09-10 release
 
 ### New classes
 
@@ -422,7 +564,7 @@
  * [myopia 26, X-linked, female-limited](http://purl.obolibrary.org/obo/MONDO_0049221)
 
 
-## 2018-09-04 release
+# 2018-09-04 release
 
 ### New classes
 
@@ -458,7 +600,7 @@
  * [selective IgG immunodeficiency](http://purl.obolibrary.org/obo/MONDO_0045045)
  * [obsolete Deuteromycetes infectious disease](http://purl.obolibrary.org/obo/MONDO_0045029)
 
-## 2018-08-24 release
+# 2018-08-24 release
 
 ### New classes
 
@@ -499,7 +641,7 @@ Addition of UBERON and GO grouping classes
  * [acquired adrenogenital syndrome](http://purl.obolibrary.org/obo/MONDO_0045023)
 
 
-## 2018-08-19 release
+# 2018-08-19 release
 
 ### Summary
 
@@ -602,7 +744,7 @@ Addition of UBERON and GO grouping classes
  * [premature ovarian failure 14](http://purl.obolibrary.org/obo/MONDO_0044777)
 
 
-## 2018-08-03 Release
+# 2018-08-03 Release
 
 This release includes more complete mappings to UMLS/MEDGEN
 
@@ -832,7 +974,7 @@ This release includes more complete mappings to UMLS/MEDGEN
  * [lumbar disc degenerative disorder](http://purl.obolibrary.org/obo/MONDO_0044339)
 
 
-## 2018-07-16 Release
+# 2018-07-16 Release
 
 This release includes more complete mappings to external ontologies and databases
 
@@ -1147,7 +1289,7 @@ This release includes more complete mappings to external ontologies and database
  * [Pseudomonas aeruginosa infectious disease](http://purl.obolibrary.org/obo/MONDO_0040732)
 
 
-## 2018-07-02 Release
+# 2018-07-02 Release
 
  * [inherited auditory system disease](http://purl.obolibrary.org/obo/MONDO_0037940)
  * [pyrimidine metabolism disease](http://purl.obolibrary.org/obo/MONDO_0037937)
@@ -1176,7 +1318,7 @@ This release includes more complete mappings to external ontologies and database
  * [autosomal recessive ocular albinism](http://purl.obolibrary.org/obo/MONDO_0040653)
  * [inherited glutathione metabolism disease](http://purl.obolibrary.org/obo/MONDO_0040566)
 
-## 2018-06-29 Release
+# 2018-06-29 Release
 
  * [complex neurodevelopmental disorder](http://purl.obolibrary.org/obo/MONDO_0100038)
  * [CDKL5 disorder](http://purl.obolibrary.org/obo/MONDO_0100039)
@@ -1186,7 +1328,7 @@ This release includes more complete mappings to external ontologies and database
  * [malignant vaginal mixed epithelial and mesenchymal neoplasm](http://purl.obolibrary.org/obo/MONDO_0037746)
 
 
-## 2018-06-25 Release
+# 2018-06-25 Release
 
 New classes:
 
@@ -1359,7 +1501,7 @@ New classes:
  * [isocyanate induced asthma](http://purl.obolibrary.org/obo/MONDO_0025556)
 
 
-## 2018-06-22 Release
+# 2018-06-22 Release
 
  - Addition of many animal diseases
  - improved alignment with NCIT
@@ -1521,7 +1663,7 @@ New classes:
  * [dictyocaulus infections](http://purl.obolibrary.org/obo/MONDO_0025190)
 
 
-## 2018-06-15 Release
+# 2018-06-15 Release
 
 *  [bipolar depression](http://purl.obolibrary.org/obo/MONDO_0024613)
 *  [manic bipolar affective disorder](http://purl.obolibrary.org/obo/MONDO_0024612)
@@ -1550,7 +1692,7 @@ New classes:
 *  [phagocytic cell dysfunction](http://purl.obolibrary.org/obo/MONDO_0024627)
 *  [gastric neuroendocrine tumor G2](http://purl.obolibrary.org/obo/MONDO_0024642)
 
-## 2018-06-08 Release
+# 2018-06-08 Release
 
  * [orbit neoplasm](http://purl.obolibrary.org/obo/MONDO_0024611)
  * [parasitic skin disease](http://purl.obolibrary.org/obo/MONDO_0024610)
@@ -1563,7 +1705,7 @@ New classes:
  * [hernia](http://purl.obolibrary.org/obo/MONDO_0024583)
  * [male reproductive system neoplasm](http://purl.obolibrary.org/obo/MONDO_0024582)
 
-## 2018-06-01 Release
+# 2018-06-01 Release
 
  * [autoimmune retinopathy](http://purl.obolibrary.org/obo/MONDO_0100014)
  * [adult-onset segmental dystonia](http://purl.obolibrary.org/obo/MONDO_0100015)
@@ -1574,7 +1716,7 @@ New classes:
  * [immunodeficiency-related disorder](http://purl.obolibrary.org/obo/MONDO_0024572)
  * [AIDS-related disorder](http://purl.obolibrary.org/obo/MONDO_0024571)
 
-## 2018-05-29 Release
+# 2018-05-29 Release
 
 New classes:
 
@@ -1672,7 +1814,7 @@ New classes:
  * [tumor grade 4, general grading system](http://purl.obolibrary.org/obo/MONDO_0024494)
 
 
-## 2018-05-20 Release
+# 2018-05-20 Release
 
 New classes:
 
@@ -1691,7 +1833,7 @@ New classes:
  * [angiomatosis](http://purl.obolibrary.org/obo/MONDO_0024461)
 
 
-## 2018-05-18 Release
+# 2018-05-18 Release
 
 Highlights:
 
@@ -1769,7 +1911,7 @@ New classes:
  * [retinal neuroblastoma](http://purl.obolibrary.org/obo/MONDO_0024340)
 
 
-## 2018-04-15 Release
+# 2018-04-15 Release
 
 New classes
 
@@ -1834,7 +1976,7 @@ New classes
  * [retinal neuroblastoma](http://purl.obolibrary.org/obo/MONDO_0024340)
 
 
-## 2017-11-10 1.0 Release
+# 2017-11-10 1.0 Release
 
 This is the first release of MONDO with MONDO IDs as primary.
 
@@ -1869,7 +2011,7 @@ purls
 Note this support will not be maintained in perpetuity. You are
 recommended to use the main MONDO release.
 
-## 2017-10-18 Pre-release
+# 2017-10-18 Pre-release
 
 First release using new pipeline. kboom was used to combine orphanet,
 efo, omim and doid. Note ncit is slated for future incorporation.
