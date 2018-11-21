@@ -2,16 +2,9 @@ format-version: 1.2
 ontology: mondo/imports/foodon_import
 
 [Term]
-id: BFO:0000001
-name: entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
 id: BFO:0000002
 name: continuant
 def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
-is_a: BFO:0000001 ! entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
@@ -24,18 +17,14 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 id: BFO:0000004
 name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
-def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
 is_a: BFO:0000002 ! continuant
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
 id: BFO:0000015
 name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
-def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
 is_a: BFO:0000003 ! occurrent
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
@@ -60,18 +49,10 @@ is_a: BFO:0000017 ! realizable entity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
-id: BFO:0000024
-name: fiat object
-name: fiat object part
-is_a: BFO:0000040 ! material entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
 is_a: BFO:0000004 ! independent continuant
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Term]
@@ -125,7 +106,6 @@ id: ENVO:00010483
 name: environmental material
 def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
 def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." []
-is_a: BFO:0000024 ! fiat object part
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
@@ -136,19 +116,16 @@ comment: The FoodOn product type class is provided as a food product category tr
 is_a: FOODON:03400361 ! food product type
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food xsd:anyURI
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001015
 name: plant food product
 def: "This food product type includes food products which are derived from or produced by a plant." []
 is_a: FOODON:00002381 ! food product by organism
-is_a: FOODON:00002403 ! food material
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:03411347 ! derives from plant (food source)
 property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001046
@@ -214,7 +191,6 @@ name: plant seed food product
 is_a: FOODON:00001015 ! plant food product
 intersection_of: FOODON:00001015 ! plant food product
 intersection_of: RO:0001000 FOODON:03420155 ! derives from seed (anatomical part)
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001176
@@ -255,6 +231,8 @@ is_a: FOODON:00001092 ! vertebrate animal food product
 relationship: RO:0001000 UBERON:0001913 ! derives from milk (mammary secretion)
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
 relationship: RO:0002350 FOODON:03400164 ! member of dairy product (us cfr)
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001257
@@ -294,6 +272,7 @@ intersection_of: RO:0001000 FOODON:03305803 ! derives from goat milk (raw)
 [Term]
 id: FOODON:00002044
 name: mollusc food product
+name: mollusk food product
 is_a: FOODON:00001046 ! seafood product
 relationship: RO:0001000 FOODON:03412112 ! derives from molluscs (food source)
 
@@ -313,15 +292,12 @@ is_a: FOODON:00002044 ! mollusc food product
 id: FOODON:00002381
 name: food product by organism
 is_a: FOODON:00001002 ! foodon product type
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00002403
 name: food material
-is_a: ENVO:00010483 ! environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00002471
@@ -479,13 +455,11 @@ property_value: IAO:0000412 http://langual.org xsd:string
 [Term]
 id: FOODON:03400361
 name: food product type
-def: "A food product type is a class of food products that is differentiated by its food composition, processing and/or consumption characteristics. This does not include brand name products but it may include generic food dish categories." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0361
 is_a: BFO:0000040 ! material entity
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:03400643
@@ -1018,85 +992,9 @@ name: food consumer type
 is_a: BFO:0000023 ! role
 
 [Term]
-id: GO:0006091
-name: generation of precursor metabolites and energy
-def: "The chemical reactions and pathways resulting in the formation of precursor metabolites, substances from which energy is derived, and any process involved in the liberation of energy from these substances." []
-is_a: GO:0044237 ! cellular metabolic process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0008150
-name: biological_process
-def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." []
-is_a: BFO:0000015 ! process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0008152
-name: metabolic process
-def: "The chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation." []
-is_a: GO:0008150 ! biological_process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0009987
-name: cellular process
-def: "Any process that is carried out at the cellular level, but not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." []
-is_a: GO:0008150 ! biological_process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0015980
-name: energy derivation by oxidation of organic compounds
-def: "The chemical reactions and pathways by which a cell derives energy from organic compounds; results in the oxidation of the compounds from which energy is released." []
-is_a: GO:0006091 ! generation of precursor metabolites and energy
-is_a: GO:0044763 ! single-organism cellular process
-is_a: GO:0055114 ! oxidation-reduction process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0044237
-name: cellular metabolic process
-def: "The chemical reactions and pathways by which individual cells transform chemical substances." []
-is_a: GO:0008152 ! metabolic process
-is_a: GO:0009987 ! cellular process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0044699
-name: single-organism process
-def: "A biological process that involves only one organism." []
-is_a: GO:0008150 ! biological_process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0044710
-name: single-organism metabolic process
-def: "A metabolic process - chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances - which involves a single organism." []
-is_a: GO:0008152 ! metabolic process
-is_a: GO:0044699 ! single-organism process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0044763
-name: single-organism cellular process
-def: "Any process that is carried out at the cellular level, occurring within a single organism." []
-is_a: GO:0009987 ! cellular process
-is_a: GO:0044699 ! single-organism process
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
 id: GO:0045333
 name: cellular respiration
 def: "The enzymatic release of energy from inorganic and organic compounds (especially carbohydrates and fats) which either requires oxygen (aerobic respiration) or does not (anaerobic respiration)." []
-is_a: GO:0015980 ! energy derivation by oxidation of organic compounds
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-
-[Term]
-id: GO:0055114
-name: oxidation-reduction process
-def: "A metabolic process that results in the removal or addition of one or more electrons to or from a substance, with or without the concomitant removal or addition of a proton or protons." []
-is_a: GO:0044710 ! single-organism metabolic process
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
