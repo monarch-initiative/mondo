@@ -235,7 +235,7 @@ all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-m
 TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch 
 subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
 	owltools --use-catalog $< $(TRIM_MINIMAL) imports/equivalencies.owl --merge-support-ontologies --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
-	robot annotate -R true -i $@.tmp.owl -o $@.tmp2.owl &&\
+	robot annotate -R -i $@.tmp.owl -o $@.tmp2.owl &&\
 	owltools $@.tmp2.owl --add-ontology-annotation $(PV_CC0) -o $@
 
 subsets/%.json: subsets/%.owl
@@ -276,7 +276,7 @@ all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 
 # Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(ONTURI)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
+	ROBOT_JAVA_ARGS=-Xmx10G $(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(ONTURI)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
