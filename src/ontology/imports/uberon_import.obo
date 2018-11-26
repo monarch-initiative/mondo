@@ -8820,6 +8820,21 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 relationship: RO:0002380 UBERON:0001532 ! branching_part_of internal carotid artery
 
 [Term]
+id: UBERON:0001620
+name: central retinal artery
+def: "The central retinal artery (retinal artery) branches off the ophthalmic artery, running inferior to the optic nerve within its dural sheath to the eyeball. [WP,unvetted]." []
+synonym: "arteria centralis retinae" RELATED []
+synonym: "central artery of retina" EXACT []
+synonym: "central artery of the retina" RELATED []
+synonym: "retinal artery" EXACT []
+synonym: "Zinn's artery" EXACT []
+is_a: UBERON:0003501 ! retina blood vessel
+is_a: UBERON:0004573 ! systemic artery
+relationship: RO:0002178 UBERON:0000966 ! supplies retina
+relationship: RO:0002225 UBERON:0002270 ! develops_from_part_of hyaloid artery
+relationship: RO:0002380 UBERON:0001619 ! branching_part_of ophthalmic artery
+
+[Term]
 id: UBERON:0001621
 name: coronary artery
 def: "An artery that supplies the myocardium." []
@@ -14479,6 +14494,26 @@ synonym: "organ olfactus" RELATED []
 synonym: "organum olfactorium" RELATED []
 synonym: "primary olfactory organ" NARROW []
 is_a: UBERON:0000020 ! sense organ
+
+[Term]
+id: UBERON:0002270
+name: hyaloid artery
+def: "An artery that is part of the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens." []
+synonym: "arteria hyaloidea" EXACT []
+synonym: "central artery of retina" RELATED []
+synonym: "Cloquet's canal" RELATED []
+synonym: "Cloquets canal" RELATED []
+synonym: "hyaloid arteries" RELATED []
+is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003499 ! brain blood vessel
+is_a: UBERON:0005492 ! hyaloid vessel
+relationship: BFO:0000050 UBERON:0003098 ! part of optic stalk
+relationship: BFO:0000050 UBERON:0005492 ! part of hyaloid vessel
+relationship: RO:0001025 UBERON:0005412 ! located_in optic fissure
+relationship: RO:0001025 UBERON:0005606 ! located_in hyaloid cavity
+relationship: RO:0002178 UBERON:0000965 ! supplies lens of camera-type eye
+relationship: RO:0002202 UBERON:0001619 ! develops_from ophthalmic artery
+relationship: RO:0002387 UBERON:0006010 ! has potential to develop into hyaloid canal
 
 [Term]
 id: UBERON:0002275
@@ -35781,6 +35816,21 @@ relationship: BFO:0000050 UBERON:0001694 ! part of petrous part of temporal bone
 relationship: RO:0002202 UBERON:0005410 ! develops_from cartilaginous otic capsule
 
 [Term]
+id: UBERON:0005412
+name: optic fissure
+def: "Groove that is in the developing ventral optic cup and through which blood vessels pass to the enclosed mesenchyme[ZFA]. a ventral fissure in the developing optic cup through which blood vessels pass to the enclosed mesenchyme[Free online medical dictionary]." []
+synonym: "choroid fissure" RELATED []
+synonym: "choroid fissure - optic fissure" EXACT []
+synonym: "optic fissures" EXACT []
+synonym: "optic stalk fissure" EXACT []
+synonym: "ventral choroidal fissure" RELATED []
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0006846 ! surface groove
+disjoint_from: UBERON:0005745 ! optic foramen
+relationship: BFO:0000050 UBERON:0016855 ! part of ventral part of optic cup
+relationship: RO:0001025 UBERON:0003098 ! located_in optic stalk
+
+[Term]
 id: UBERON:0005417
 name: forelimb bud
 def: "A limb bud that develops into a forelimb." []
@@ -38136,6 +38186,21 @@ is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0010313 ! neural crest-derived structure
 relationship: BFO:0000050 UBERON:0000946 ! part of cardial valve
+
+[Term]
+id: UBERON:0006010
+name: hyaloid canal
+def: "A small transparent canal running through the vitreous body from the optical nerve disc to the lens. It is formed by an invagination of the hyaloid, a membrane which encloses the vitreous body[WP]." []
+synonym: "canal of Cloquet" EXACT []
+synonym: "canalis hyaloideus" EXACT []
+synonym: "Cloquet's canal" EXACT []
+synonym: "Stilling's canal" EXACT []
+is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010313 ! neural crest-derived structure
+relationship: BFO:0000050 UBERON:0001799 ! part of vitreous chamber of eyeball
+relationship: RO:0001025 UBERON:0001798 ! located_in vitreous body
+relationship: RO:0002202 UBERON:0002270 ! develops_from hyaloid artery
 
 [Term]
 id: UBERON:0006011
@@ -41842,6 +41907,17 @@ is_a: UBERON:0007367 ! surface of tongue
 intersection_of: UBERON:0007367 ! surface of tongue
 intersection_of: BSPO:0015101 UBERON:0001723 ! in_dorsal_side_of tongue
 relationship: BSPO:0015101 UBERON:0001723 ! in_dorsal_side_of tongue
+
+[Term]
+id: UBERON:0007373
+name: inferior surface of tongue
+def: "The lower (inferior) side of the tongue." []
+synonym: "ventral surface of tongue" EXACT []
+synonym: "ventrum linguae" EXACT []
+is_a: UBERON:0007367 ! surface of tongue
+intersection_of: UBERON:0007367 ! surface of tongue
+intersection_of: BSPO:0015102 UBERON:0001723 ! in_ventral_side_of tongue
+relationship: BSPO:0015102 UBERON:0001723 ! in_ventral_side_of tongue
 
 [Term]
 id: UBERON:0007375
@@ -51187,6 +51263,20 @@ relationship: BFO:0000050 UBERON:0001777 ! part of substantia propria of cornea
 relationship: RO:0002433 UBERON:0001777 ! contributes to morphology of substantia propria of cornea
 
 [Term]
+id: UBERON:0011877
+name: margin of tongue
+def: "The lateral border that separates the dorsum from the inferior surface of the tongue on each side, the two borders meeting anteriorly at the apex.." []
+synonym: "margo linguae" EXACT []
+synonym: "tongue margin" EXACT []
+is_a: UBERON:0006800 ! anatomical line
+intersection_of: UBERON:0006800 ! anatomical line
+intersection_of: RO:0002176 UBERON:0007371 ! connects superior surface of tongue
+intersection_of: RO:0002176 UBERON:0007373 ! connects inferior surface of tongue
+relationship: BFO:0000050 UBERON:0001723 ! part of tongue
+relationship: RO:0002176 UBERON:0007371 ! connects superior surface of tongue
+relationship: RO:0002176 UBERON:0007373 ! connects inferior surface of tongue
+
+[Term]
 id: UBERON:0011878
 name: muscle layer of esophagus
 def: "A muscle layer that is part of a wall of esophagus." []
@@ -53219,6 +53309,17 @@ is_a: UBERON:0011858 ! acinus of exocrine gland
 intersection_of: UBERON:0009842 ! glandular acinus
 intersection_of: BFO:0000050 UBERON:0000409 ! part of serous gland
 relationship: BFO:0000050 UBERON:0000409 ! part of serous gland
+
+[Term]
+id: UBERON:0013235
+name: ventrum
+def: "A major organism subdivisionthat is the entire part of an anatomical structure ventral to a horizontal plane and bounded on one side by the same horizontal plane." []
+synonym: "front" BROAD []
+synonym: "front of body proper" EXACT []
+synonym: "ventral part of organism" EXACT []
+synonym: "ventral region" BROAD []
+synonym: "ventral region of organism" EXACT []
+is_a: UBERON:0000475 ! organism subdivision
 
 [Term]
 id: UBERON:0013238
@@ -56106,6 +56207,16 @@ intersection_of: BFO:0000050 UBERON:0002415 ! part of tail
 relationship: BFO:0000050 UBERON:0002415 ! part of tail
 
 [Term]
+id: UBERON:0015149
+name: ventral hair
+def: "A strand of hair that is part of a ventrum." []
+synonym: "ventral coat hair" RELATED []
+is_a: UBERON:0001037 ! strand of hair
+intersection_of: UBERON:0001037 ! strand of hair
+intersection_of: BFO:0000050 UBERON:0013235 ! part of ventrum
+relationship: BFO:0000050 UBERON:0013235 ! part of ventrum
+
+[Term]
 id: UBERON:0015150
 name: dorsal hair
 def: "A strand of hair that is part of a dorsum." []
@@ -57388,6 +57499,18 @@ intersection_of: BSPO:0015101 UBERON:0003072 ! in_dorsal_side_of optic cup
 relationship: BSPO:0015101 UBERON:0003072 ! in_dorsal_side_of optic cup
 
 [Term]
+id: UBERON:0016855
+name: ventral part of optic cup
+def: "The ventral region of the optic cup that gives rise to the ventral part of the retina." []
+synonym: "ventral optic cup" EXACT []
+synonym: "ventral region of optic cup" EXACT []
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: BSPO:0015102 UBERON:0003072 ! in_ventral_side_of optic cup
+relationship: BSPO:0015102 UBERON:0003072 ! in_ventral_side_of optic cup
+
+[Term]
 id: UBERON:0016879
 name: future central nervous system
 def: "Primordium that develops into the central nervous system" []
@@ -57520,6 +57643,16 @@ intersection_of: BSPO:0000126 UBERON:0000033 ! in_lateral_side_of head
 relationship: BSPO:0000126 UBERON:0000033 ! in_lateral_side_of head
 
 [Term]
+id: UBERON:0017648
+name: ventral body wall
+def: "The ventral part of the body wall" []
+synonym: "anterior body wall" RELATED []
+is_a: UBERON:0000309 ! body wall
+intersection_of: UBERON:0000309 ! body wall
+intersection_of: BFO:0000050 UBERON:0013235 ! part of ventrum
+relationship: BFO:0000050 UBERON:0013235 ! part of ventrum
+
+[Term]
 id: UBERON:0017649
 name: dorsal body wall
 def: "The dorsal part of the body wall" []
@@ -57556,6 +57689,15 @@ is_a: UBERON:0000414 ! mucous gland
 intersection_of: UBERON:0000414 ! mucous gland
 intersection_of: BFO:0000050 UBERON:0001567 ! part of cheek
 relationship: BFO:0000050 UBERON:0001567 ! part of cheek
+
+[Term]
+id: UBERON:0017659
+name: ventral surface of penis
+synonym: "urethral surface of penis" EXACT []
+is_a: UBERON:0036215 ! anatomical surface region
+intersection_of: UBERON:0036215 ! anatomical surface region
+intersection_of: BSPO:0015102 UBERON:0000989 ! in_ventral_side_of penis
+relationship: BSPO:0015102 UBERON:0000989 ! in_ventral_side_of penis
 
 [Term]
 id: UBERON:0017672
@@ -58095,6 +58237,15 @@ is_a: UBERON:0006876 ! vasculature of organ
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: BFO:0000050 UBERON:0000948 ! part of heart
 relationship: BFO:0000050 UBERON:0000948 ! part of heart
+
+[Term]
+id: UBERON:0018691
+name: ventral side of post-anal tail
+is_a: UBERON:0034929 ! external soft tissue zone
+intersection_of: UBERON:0034929 ! external soft tissue zone
+intersection_of: BSPO:0015102 UBERON:0007812 ! in_ventral_side_of post-anal tail
+relationship: BFO:0000050 UBERON:0013235 ! part of ventrum
+relationship: BSPO:0015102 UBERON:0007812 ! in_ventral_side_of post-anal tail
 
 [Term]
 id: UBERON:0018692
@@ -61692,6 +61843,11 @@ is_a: RO:0002220 ! adjacent_to
 [Typedef]
 id: BSPO:0015101
 name: in_dorsal_side_of
+is_a: BFO:0000050 ! part of
+
+[Typedef]
+id: BSPO:0015102
+name: in_ventral_side_of
 is_a: BFO:0000050 ! part of
 
 [Typedef]

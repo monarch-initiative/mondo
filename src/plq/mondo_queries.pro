@@ -63,6 +63,7 @@ xref_prefix_srcont(C,X,P,S) :-
 curie_prefix(Literal,Pre) :-
         str_before(Literal,":",Pre).
 
+%!  mondo_equiv_xref(?Cls:atom, ?Xref:str, ?Prefix:str)
 mondo_equiv_xref(C,X) :-
         xref_src(C,X,_,"MONDO:equivalentTo").
 mondo_equiv_xref(C,X,P) :-
@@ -223,4 +224,7 @@ rel(_,relatedTo,_).
 
 
 
+non_leaf_omim(X) :-
+        mondo_equiv_xref(X,_,"OMIM"),
+        subClassOf(_,X).
 
