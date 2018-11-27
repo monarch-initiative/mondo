@@ -1,7 +1,7 @@
 pattern_name: rare_genetic
 
 classes:
-  constitutional: MONDO:0021140
+  genetic: MONDO:0021150
   rare: MONDO:0021136
 
 relations: 
@@ -27,12 +27,12 @@ annotations:
      - disease
 
 def:
-  text: "A form of %s that is both rare and inborn."
+  text: "A form of %s that is both rare and genetic."
   vars:
     - disease
 
 equivalentTo:
-  text: "%s and 'has modifier' some 'constitutional' and 'has modifier' some 'rare'"
+  text: "%s and 'has modifier' some 'genetic' and 'has modifier' some 'rare'"
   vars:
     - disease
 
