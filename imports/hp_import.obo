@@ -4197,6 +4197,19 @@ xref: UMLS:C0028754
 is_a: HP:0004324 ! Increased body weight
 
 [Term]
+id: HP:0001541
+name: Ascites
+namespace: human_phenotype
+def: "Accumulation of fluid in the peritoneal cavity." [HPO:probinson]
+comment: Ascites is commonly associated with liver disease that has resulted in portal hypertension and low serum albumin levels.
+subset: hposlim_core
+synonym: "Accumulation of fluid in the abdomen" EXACT layperson []
+xref: MSH:D001201
+xref: SNOMEDCT_US:389026000
+xref: UMLS:C0003962
+is_a: HP:0001438 ! Abnormality of abdomen morphology
+
+[Term]
 id: HP:0001548
 name: Overgrowth
 namespace: human_phenotype
@@ -5021,6 +5034,22 @@ xref: SNOMEDCT_US:271737000
 xref: UMLS:C0002871
 xref: UMLS:C0162119
 is_a: HP:0001877 ! Abnormal erythrocyte morphology
+
+[Term]
+id: HP:0001907
+name: Thromboembolism
+namespace: human_phenotype
+def: "The formation of a blood clot inside a blood vessel that subsequently travels through the blood stream from the site where it formed to another location in the body, generally leading to vascular occlusion at the distant site." [HPO:probinson]
+synonym: "Embolism and thrombosis" RELATED []
+synonym: "Thromboembolic disease" EXACT []
+synonym: "Thromboembolic events" EXACT []
+xref: MSH:D013923
+xref: MSH:D016769
+xref: SNOMEDCT_US:13713005
+xref: SNOMEDCT_US:371039008
+xref: UMLS:C0040038
+xref: UMLS:C0085307
+is_a: HP:0001977 ! Abnormal thrombosis
 
 [Term]
 id: HP:0001909
@@ -5966,6 +5995,15 @@ is_a: HP:0002134 ! Abnormality of the basal ganglia
 is_a: HP:0002514 ! Cerebral calcification
 
 [Term]
+id: HP:0002140
+name: Ischemic stroke
+namespace: human_phenotype
+xref: SNOMEDCT_US:422504002
+xref: UMLS:C0948008
+is_a: HP:0001297 ! Stroke
+is_a: HP:0002637 ! Cerebral ischemia
+
+[Term]
 id: HP:0002143
 name: Abnormality of the spinal cord
 namespace: human_phenotype
@@ -6821,6 +6859,20 @@ xref: UMLS:C0042384
 is_a: HP:0025015 ! Abnormal vascular morphology
 
 [Term]
+id: HP:0002637
+name: Cerebral ischemia
+namespace: human_phenotype
+synonym: "Brain ischemia" EXACT [ORCID:0000-0001-5208-3432]
+synonym: "Cerebrovascular ischemia" EXACT [ORCID:0000-0001-5208-3432]
+xref: MSH:D002545
+xref: SNOMEDCT_US:287731003
+xref: SNOMEDCT_US:389100007
+xref: UMLS:C0007786
+xref: UMLS:C0917798
+is_a: HP:0009145 ! Abnormal cerebral artery morphology
+is_a: HP:0100545 ! Arterial stenosis
+
+[Term]
 id: HP:0002644
 name: Abnormality of pelvic girdle bone morphology
 namespace: human_phenotype
@@ -6915,6 +6967,14 @@ synonym: "Abnormality of the skullcap" EXACT layperson [ORCID:0000-0001-5208-343
 xref: UMLS:C4025691
 xref: UMLS:C4280561
 is_a: HP:0000929 ! Abnormality of the skull
+
+[Term]
+id: HP:0002686
+name: Prenatal maternal abnormality
+namespace: human_phenotype
+synonym: "Maternal health problem" RELATED layperson []
+xref: UMLS:C4025690
+is_a: HP:0001197 ! Abnormality of prenatal development or birth
 
 [Term]
 id: HP:0002693
@@ -8464,6 +8524,18 @@ created_by: peter
 creation_date: 2008-02-27T03:23:00Z
 
 [Term]
+id: HP:0004327
+name: Abnormal vitreous humor morphology
+namespace: human_phenotype
+def: "Any structural anomaly of the vitreous body." [HPO:probinson]
+comment: The vitreous humor is the clear gel that fills the space between the lens and the retina.
+subset: hposlim_core
+xref: UMLS:C4025356
+is_a: HP:0004329 ! Abnormal morphology of the posterior segment of the globe
+created_by: peter
+creation_date: 2008-02-27T04:20:00Z
+
+[Term]
 id: HP:0004328
 name: Abnormal anterior segment morphology
 namespace: human_phenotype
@@ -9467,6 +9539,14 @@ is_a: HP:0000556 ! Retinal dystrophy
 is_a: HP:0001103 ! Abnormal macular morphology
 
 [Term]
+id: HP:0007773
+name: Vitreoretinopathy
+namespace: human_phenotype
+synonym: "Vitreoretinal abnormality" EXACT []
+xref: UMLS:C1850109
+is_a: HP:0004327 ! Abnormal vitreous humor morphology
+
+[Term]
 id: HP:0007858
 name: Chorioretinal lacunae
 namespace: human_phenotype
@@ -9620,6 +9700,15 @@ xref: UMLS:C1860844
 is_a: HP:0011357 ! Abnormality of hair density
 created_by: peter
 creation_date: 2008-04-02T04:11:00Z
+
+[Term]
+id: HP:0008071
+name: Maternal hypertension
+namespace: human_phenotype
+def: "Increased blood pressure during a pregnancy." [HPO:sdoelken]
+xref: SNOMEDCT_US:288250001
+xref: UMLS:C0565599
+is_a: HP:0100603 ! Toxemia of pregnancy
 
 [Term]
 id: HP:0008169
@@ -9914,6 +10003,19 @@ xref: UMLS:C0023787
 is_a: HP:0009124 ! Abnormal adipose tissue morphology
 created_by: peter
 creation_date: 2008-04-05T11:40:00Z
+
+[Term]
+id: HP:0009145
+name: Abnormal cerebral artery morphology
+namespace: human_phenotype
+def: "Any structural anomaly of a cerebral artery. The cerebral arteries comprise three main pairs of arteries and their branches, which supply the cerebrum of the brain. These are the anterior cerebral artery, the middle cerebral artery, and the posterior cerebral artery." [HPO:probinson]
+synonym: "Abnormality of cerebral artery" EXACT layperson []
+synonym: "Abnormality of the cerebral arteries" EXACT layperson []
+xref: UMLS:C4021520
+is_a: HP:0011004 ! Abnormal systemic arterial morphology
+is_a: HP:0100659 ! Abnormality of the cerebral vasculature
+created_by: peter
+creation_date: 2008-05-02T01:39:00Z
 
 [Term]
 id: HP:0009473
@@ -12032,6 +12134,17 @@ created_by: peter
 creation_date: 2012-07-16T12:25:35Z
 
 [Term]
+id: HP:0011974
+name: Myelofibrosis
+namespace: human_phenotype
+def: "Replacement of bone marrow by fibrous tissue." [HPO:probinson]
+xref: SNOMEDCT_US:52967002
+xref: UMLS:C0026987
+is_a: HP:0012145 ! Abnormality of multiple cell lineages in the bone marrow
+created_by: peter
+creation_date: 2012-07-18T08:51:57Z
+
+[Term]
 id: HP:0011996
 name: Elevated coagulation factor V activity
 namespace: human_phenotype
@@ -14013,6 +14126,20 @@ is_a: HP:0000969 ! Edema
 is_a: HP:0002088 ! Abnormal lung morphology
 created_by: doelkens
 creation_date: 2010-12-27T05:10:09Z
+
+[Term]
+id: HP:0100603
+name: Toxemia of pregnancy
+namespace: human_phenotype
+def: "Pregnancy-induced toxic reactions of the mother that can be as harmless as slight Maternal hypertension or as life threatening as Eclampsia." [HPO:sdoelken]
+synonym: "Hypertensive disorder of pregnancy" EXACT []
+xref: MSH:D011225
+xref: SNOMEDCT_US:15394000
+xref: SNOMEDCT_US:398254007
+xref: UMLS:C0032914
+is_a: HP:0002686 ! Prenatal maternal abnormality
+created_by: doelkens
+creation_date: 2010-12-27T05:27:41Z
 
 [Term]
 id: HP:0100606

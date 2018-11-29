@@ -102,6 +102,11 @@ prepare_release: $(ARTEFACTS)
 	rsync -R $^ ../..
 	cp ../../Changes.md ../../target
 
+prepare_release_direct: 
+	rsync -R $(ARTEFACTS) ../../target
+	rsync -R $(ARTEFACTS) ../..
+	cp ../../Changes.md ../../target
+
 all_includes: $(INCLUDES_OWL)
 
 OSF_UPLOAD = $(HOME)/repos/osf-cli/venv/bin/osf -p 2qk53 upload
