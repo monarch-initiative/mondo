@@ -4465,6 +4465,13 @@ def: "A collagen homotrimer of alpha1(II) chains; type II collagen triple helice
 is_a: GO:0005583 ! fibrillar collagen trimer
 
 [Term]
+id: GO:0005589
+name: collagen type VI trimer
+def: "A collagen heterotrimer containing type VI alpha chains in alpha1(VI)alpha2(VI)alpha3(VI) trimers; type VI collagen triple helices associate to form beaded fibrils." []
+is_a: GO:0005581 ! collagen trimer
+relationship: BFO:0000050 GO:0098647 ! part of collagen beaded filament
+
+[Term]
 id: GO:0005592
 name: collagen type XI trimer
 def: "A collagen heterotrimer containing type XI alpha chains in alpha1(XI)alpha2(XI)alpha3(XI) trimers; type XI collagen triple helices associate to form fibrils." []
@@ -21680,6 +21687,14 @@ synonym: "sterol delta7-reductase activity" EXACT []
 is_a: GO:0016628 ! oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor
 
 [Term]
+id: GO:0047708
+name: biotinidase activity
+def: "Catalysis of the reaction: biotin amide + H2O = biotin + NH3." []
+synonym: "amidohydrolase biotinidase activity" EXACT []
+synonym: "biotin-amide amidohydrolase activity" EXACT []
+is_a: GO:0016811 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides
+
+[Term]
 id: GO:0047865
 name: dimethylglycine dehydrogenase activity
 def: "Catalysis of the reaction: N,N-dimethylglycine + electron-transfer flavoprotein + H2O = sarcosine + formaldehyde + reduced electron-transfer flavoprotein." []
@@ -28636,6 +28651,13 @@ is_a: GO:0044420 ! extracellular matrix component
 is_a: GO:0099080 ! supramolecular complex
 relationship: BFO:0000050 GO:0005578 ! part of proteinaceous extracellular matrix
 relationship: BFO:0000051 GO:0005581 ! has_part collagen trimer
+
+[Term]
+id: GO:0098647
+name: collagen beaded filament
+def: "A supramolecular assembly of collagen trimers with a 'beads on a string'-like structure." []
+synonym: "beads on a string" RELATED []
+is_a: GO:0099512 ! supramolecular fiber
 
 [Term]
 id: GO:0098651

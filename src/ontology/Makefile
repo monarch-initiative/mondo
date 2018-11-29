@@ -75,6 +75,9 @@ ARTEFACTS = \
 
 ASSETS = $(MAIN_FILES) $(SUBSET_FILES)
 
+list_main_files:
+	echo $(MAIN_FILES)
+
 list_artefacts:
 	echo $(ARTEFACTS)
 	du -sh $(ARTEFACTS)

@@ -1,3 +1,52 @@
+# 2018-11-29 release
+
+## New Classes
+
+ * [autosomal dominant epidermolytic ichthyosis](http://purl.obolibrary.org/obo/MONDO_0020702)
+ * [brachydactyly type A1A](http://purl.obolibrary.org/obo/MONDO_0020701)
+ * [microcephaly, short stature, and impaired glucose metabolism](http://purl.obolibrary.org/obo/MONDO_0020700)
+ * [central hearing loss](http://purl.obolibrary.org/obo/MONDO_0020707)
+ * [ischemic bowel disease](http://purl.obolibrary.org/obo/MONDO_0020675)
+ * [vascular insufficiency disorder](http://purl.obolibrary.org/obo/MONDO_0020674)
+ * [arterial occlusion](http://purl.obolibrary.org/obo/MONDO_0020673)
+ * [vascular occlusion disorder](http://purl.obolibrary.org/obo/MONDO_0020672)
+ * [susceptibility to ischemic stroke](http://purl.obolibrary.org/obo/MONDO_0020671)
+ * [conductive hearing loss disorder](http://purl.obolibrary.org/obo/MONDO_0020679)
+ * [sensorineural hearing loss disorder](http://purl.obolibrary.org/obo/MONDO_0020678)
+ * [sudden hearing loss disorder](http://purl.obolibrary.org/obo/MONDO_0020677)
+ * [disease of central nervous system or retinal vasculature](http://purl.obolibrary.org/obo/MONDO_0020676)
+ * [lung epithelial-myoepithelial carcinoma](http://purl.obolibrary.org/obo/MONDO_0020697)
+ * [vitamin B12 deficiency](http://purl.obolibrary.org/obo/MONDO_0020696)
+ * [hypotonic cerebral palsy](http://purl.obolibrary.org/obo/MONDO_0020695)
+ * [salivary gland epithelial myoepithelial carcinoma](http://purl.obolibrary.org/obo/MONDO_0020694)
+ * [glycogen storage disease due to liver phosphorylase kinase deficiency](http://purl.obolibrary.org/obo/MONDO_0020693)
+ * [spondylocostal dysostosis 1, autosomal recessive](http://purl.obolibrary.org/obo/MONDO_0020692)
+ * [null](http://purl.obolibrary.org/obo/MONDO_0020691)
+ * [adult glioblastoma](http://purl.obolibrary.org/obo/MONDO_0020690)
+ * [biotin metabolic disease](http://purl.obolibrary.org/obo/MONDO_0020699)
+ * [inborn error of biotin metabolism](http://purl.obolibrary.org/obo/MONDO_0020698)
+ * [infratentorial ependymal tumor](http://purl.obolibrary.org/obo/MONDO_0020685)
+ * [Ehlers-Danlos syndrome, periodontal type 1](http://purl.obolibrary.org/obo/MONDO_0020684)
+ * [Ehlers-Danlos syndrome, progeroid type 1](http://purl.obolibrary.org/obo/MONDO_0020682)
+ * [Ehlers-Danlos syndrome, musculocontractural type 1](http://purl.obolibrary.org/obo/MONDO_0020681)
+ * [spinal cord ischemia](http://purl.obolibrary.org/obo/MONDO_0020688)
+ * [supratentorial ependymal tumor](http://purl.obolibrary.org/obo/MONDO_0020687)
+
+## Obsoletions
+
+ [obsolete Marfan syndrome type 2](http://purl.obolibrary.org/obo/MONDO_0017308) no replacement #563
+ [obsolete glycogen storage disease IX](http://purl.obolibrary.org/obo/MONDO_0000366) replaced by MONDO:0018251
+ [obsolete dyskinetic cerebral palsy](http://purl.obolibrary.org/obo/MONDO_0000399) replaced by MONDO:0022697
+ [obsolete thyroid cancer, nonmedullary](http://purl.obolibrary.org/obo/MONDO_0000201) replaced by MONDO:0017896
+ [http://purl.obolibrary.org/obo/MONDO_0000823](http://purl.obolibrary.org/obo/MONDO_0000823) merged into familial temporal lobe epilepsy 3
+
+## Main Tickets fixed
+
+ * Merged glycogen storage disease due to phosphorylase kinase deficiency + Glycogen Storage Disease Type IX, fixes #563
+ * obsoleting Marfan type 2, fixes #560
+ * Removing is-a overloading for EC disease, see #511
+
+
 # 2018-11-21 release
 
 ## New Classes
