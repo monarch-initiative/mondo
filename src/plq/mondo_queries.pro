@@ -224,7 +224,10 @@ rel(_,relatedTo,_).
 
 
 
-non_leaf_omim(X) :-
-        mondo_equiv_xref(X,_,"OMIM"),
-        subClassOf(_,X).
+non_leaf_omim(X,Y,C,CY,Subsets) :-
+        mondo_equiv_xref(X,Y,"OMIM"),
+        subClassOf(C,X),
+        mondo_equiv_xref(C,CY,"OMIM"),
+        findall(S,in_subset(C,S),Subsets).
+
 
