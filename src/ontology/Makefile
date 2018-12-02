@@ -293,8 +293,11 @@ imports/%_import.obo: imports/%_import.owl
 
 edit-merged.owl: $(SRC)
 	robot merge -c true -i $< -o $@
-imports/%_terms.txt:  edit-merged.owl
-	robot query -f tsv -i $< -s ../sparql/classes.sparql $@.tmp && grep -hi $* $@.tmp imports/$*_terms.txt | perl -npe 's@^\<@@;s@>$$@@' | sort -u > $@
+imports/seed.txt: edit-merged.owl
+	robot query -f tsv -i $< -s ../sparql/classes.sparql $@.tmp && perl -npe 's@^\<@@;s@>$$@@' $@.tmp | sort -u > $@
+
+imports/%_terms.txt: imports/seed.txt
+	grep -hi $* $< $@ | sort -u  > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Release
