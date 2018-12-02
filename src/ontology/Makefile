@@ -404,24 +404,31 @@ prefixes: mondo-edit.obo
 
 
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes synonyms class-stats root-classes superclass-count
-REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/release/$V.tsv)
-MAIN_REPORT_FILES = $(foreach V, $(REPORTS), reports/release/$V.tsv)
-ADDITIONAL_REPORT_FILES = reports/release/semantic-xref-pairs.tsv
+REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tmp.tsv)
+MAIN_REPORT_FILES = $(foreach V, $(REPORTS), reports/$V.tsv)
+ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 #ADDITIONAL_REPORT_FILES = reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml reports/release/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
-all_reports: mondo.owl $(ADDITIONAL_REPORT_FILES)
+all_reports: all_reports_1 fix_reports
+
+all_reports_1: mondo.owl $(ADDITIONAL_REPORT_FILES)
 	robot query -f tsv -i $< $(REPORT_ARGS) && touch $@
+
+# Will be retired when we have https://github.com/ontodev/robot/issues/176
+fix_reports: $(foreach V, $(REPORTS), fix-report-$V)
+fix-report-%:
+	../utils/tidy-sparql-output.pl reports/$*.tmp.tsv > reports/$*.tsv
 
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
-reports/edit/%.tsv: $(SRC) $(SPARQLDIR)/%.sparql
+reports-edit/%.tsv: $(SRC) $(SPARQLDIR)/%.sparql
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
-reports/release/%.tsv: mondo.owl
+reports/%.tsv: mondo.owl
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # TODO: replace with sparql
-reports/release/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
+reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
 	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
