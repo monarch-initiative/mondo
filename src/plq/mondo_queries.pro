@@ -231,3 +231,37 @@ non_leaf_omim(X,Y,C,CY,Subsets) :-
         findall(S,in_subset(C,S),Subsets).
 
 
+ordo_group(X) :-
+        rdf(X,oio:inSubset,'http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders').
+
+ordo_group_nox(C):-
+        ordo_group(C),
+        \+ ((xref_prefix(C,_,S),
+             S\="Orphanet",
+             S\="ICD10",
+             S\="UMLS")).
+
+ordo_group_nox_upper(C) :-
+        ordo_group_nox(C),
+        rdfs_subclass_of(C,D),
+        mondo_equiv_xref(D,_DX,S),
+        (   S="OMIMPS"
+        ;   
+            S="OMIM").
+
+ordo_group_noxp(C):-
+        ordo_group_nox(C),
+        \+ \+ ((owl:subClassOf(D,D),
+                ordo_group_nox(D))).
+
+syndrome_and_neoplasm(C,N1) :-
+        enlabel_of("neoplasm (disease)",N),
+        enlabel_of("syndromic disease",S),
+        rdfs_subclass_of(C,S),
+        rdfs_subclass_of(C,N1),
+        owl:subClassOf(N1,N).
+
+
+
+        
+        
