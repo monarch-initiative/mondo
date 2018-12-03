@@ -1,3 +1,38 @@
+# 2018-12-02 release
+
+## New Classes
+
+ * [inherited rippling muscle disease](http://purl.obolibrary.org/obo/MONDO_0020704)
+ * [erythroid neoplasm](http://purl.obolibrary.org/obo/MONDO_0020703)
+
+## Obsoleted classes
+
+ * [obsolete genetic characteristic](http://purl.obolibrary.org/obo/MONDO_0021150) **->** [MONDO:0021152](http://purl.obolibrary.org/obo/MONDO_0021152)
+ * [http://purl.obolibrary.org/obo/MONDO_0023070](http://purl.obolibrary.org/obo/MONDO_0023070) **->** [acrodermatitis enteropathica](http://purl.obolibrary.org/obo/MONDO_0008713)
+ * [obsolete genetic hyperaldosteronism](http://purl.obolibrary.org/obo/MONDO_0018300) **->** [MONDO:0016525](http://purl.obolibrary.org/obo/MONDO_0016525)
+ * [obsolete rare genetic dystonia](http://purl.obolibrary.org/obo/MONDO_0018331) **->** [MONDO:0044807](http://purl.obolibrary.org/obo/MONDO_0044807)
+ * [obsolete autosomal dominant limb-girdle muscular dystrophy type 1C](http://purl.obolibrary.org/obo/MONDO_0011910) **->** [MONDO:0019947](http://purl.obolibrary.org/obo/MONDO_0019947)
+ * [obsolete variable age at onset electroclinical syndrome](http://purl.obolibrary.org/obo/MONDO_0000416) **->** [MONDO:0100036](http://purl.obolibrary.org/obo/MONDO_0100036)
+ * [obsolete typhus-group rickettsiosis](http://purl.obolibrary.org/obo/MONDO_0015156) **->** [MONDO:0001246](http://purl.obolibrary.org/obo/MONDO_0001246)
+ * [obsolete genetic neurodegenerative disease](http://purl.obolibrary.org/obo/MONDO_0015952) **->** [MONDO:0024237](http://purl.obolibrary.org/obo/MONDO_0024237)
+ * [obsolete rare genetic coagulation disorder](http://purl.obolibrary.org/obo/MONDO_0015973) **->** [MONDO:0021181](http://purl.obolibrary.org/obo/MONDO_0021181)
+ * [obsolete other dermis disorder](http://purl.obolibrary.org/obo/MONDO_0019295) **consider** [MONDO:0021154](http://purl.obolibrary.org/obo/MONDO_0021154)
+
+### Highlights
+
+ * added synonyms to rippling muscle disease 2. addresses #480
+ * obsoleted MONDO_0011910. addresses #480
+ * merging typhus and typhus-group rickettsiosis fixes #441
+ * Tagging rare-X obsoletion candidates. See #254
+ * merged rare genetic coagulation disorder -> inherited blood coagulation disorder
+ * merged rare genetic dystonia -> inherited dystonia
+ * obsoleted other dermis disorder
+ * Fixing is-a overloading for some classes, see #566
+ * obsoleted superimposed infection, fixes #517
+ * fixed logdef for skeletal tuberculosis, fixes #552
+ * rheumatologic disorder is currently classified as a musculoskeletal disease, but should be its own primary disease class, since many of the rheumatologic diseases such as lupus have many non-musculo
+ * Removed false parent for  interstitial myocarditis, Fixes #546
+
 # 2018-11-29 release
 
 ## New Classes
