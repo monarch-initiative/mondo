@@ -21,6 +21,7 @@
 ### Highlights
 
  * added synonyms to rippling muscle disease 2. addresses #480
+ * added grouping for inherited forms of RMD
  * obsoleted MONDO_0011910. addresses #480
  * merging typhus and typhus-group rickettsiosis fixes #441
  * Tagging rare-X obsoletion candidates. See #254
