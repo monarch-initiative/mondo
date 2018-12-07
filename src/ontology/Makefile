@@ -331,7 +331,7 @@ INF: mondo-edit.obo
 # normalize obo file
 # note we use owltools-compat to ensure standard ordering
 NORM: mondo-edit.obo
-	owltools-compat --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.tmp && mv $@.tmp $@
+	owltools-compat --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.norm && robot convert -i $@.norm -o $@.tmp.obo && mv $@.tmp.obo $@
 
 # tests roundtripping
 roundtrip.obo: mondo-edit.obo
