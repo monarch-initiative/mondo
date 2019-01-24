@@ -12,6 +12,7 @@ before_script:
 script:
   - free -m
   - ./run.sh free -m
+  - ./run.sh env
   - ./run.sh make test
 
 # whitelist
