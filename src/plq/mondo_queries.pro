@@ -214,6 +214,12 @@ mondo2hgnc_inf(M,G) :- mondo2hgnc_inf(M,G,_).
 mondo2hgnc_conflict(M,G1,G2,Z1,Z2) :- mondo2hgnc_inf(M,G1,Z1),mondo2hgnc_inf(M,G2,Z2),G1 \= G2.
 mondo2hgnc_conflict(M,G1,G2) :- mondo2hgnc_conflict(M,G1,G2,_,_).
 
+% grep -i susc mim2gene_medgen | perl -npe 's@@OMIM:@' | cut -f1 | tbl2p -p s > susc.pro
+% ./mq -f tsv -l -c susc.pro mondo_susc > z
+mondo_susc(M) :-
+        s(X),
+        atom_string(X,Y),
+        mondo_equiv_xref(M,Y).
 
 
 rel(C,subClassOf,D) :- rdfs_subclass_of(C,D), !.
