@@ -18,6 +18,16 @@ name:
   vars:
    - agent
 
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "infection due to %s"
+    vars:
+     - agent
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s infection"
+    vars:
+     - agent
+   
    
 def:
   text: "A disease caused by infection with %s."
