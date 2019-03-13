@@ -227,7 +227,7 @@ $(ONT)-merged.owl: $(ONT).owl
 # ensure that inference including equivalencies does not result in merging any classes in MONDO.
 # if this fails, the resolution is to look for two MONDO classes with equivalence to the same external class
 test_nomerge: mondo.owl
-	owltools --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@
+	owltools  --log-error --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@
 
 
 # ----------------------------------------
@@ -331,7 +331,7 @@ INF: mondo-edit.obo
 # normalize obo file
 # note we use owltools-compat to ensure standard ordering
 NORM: mondo-edit.obo
-	owltools-compat --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.norm && robot convert -i $@.norm -o $@.tmp.obo && mv $@.tmp.obo $@
+	owltools --use-catalog  mondo-edit.obo --merge-axiom-annotations -o -f obo $@.norm && robot convert -i $@.norm -o $@.tmp.obo && mv $@.tmp.obo $@
 
 # tests roundtripping
 roundtrip.obo: mondo-edit.obo
