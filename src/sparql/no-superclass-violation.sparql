@@ -5,6 +5,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix disease: <http://purl.obolibrary.org/obo/MONDO_0000001>
 prefix disease_characteristic: <http://purl.obolibrary.org/obo/MONDO_0021125>
 prefix disease_stage: <http://purl.obolibrary.org/obo/MONDO_0021007>
+prefix disease_susceptibility: <http://purl.obolibrary.org/obo/MONDO_0042489>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?c ?n WHERE 
@@ -19,6 +20,8 @@ SELECT ?c ?n WHERE
       {?c rdfs:subClassOf* disease: }
         UNION
       {?c rdfs:subClassOf* disease_characteristic: }
+        UNION
+      {?c rdfs:subClassOf* disease_susceptibility: }
         UNION
       {?c rdfs:subClassOf* disease_stage: }
     } )
