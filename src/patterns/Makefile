@@ -14,7 +14,7 @@ basis_in_disruption_of_process disrupts_process \
 inborn_metabolic \
 environmental_stimulus \
 autoimmune allergy allergic_form_of_disease autoimmune_inflammation inflammatory_disease_by_site \
-infectious_disease_by_agent specific_infectious_disease_by_agent postinfectious_disease \
+infectious_disease_by_agent specific_infectious_disease_by_agent postinfectious_disease infectious_inflammation \
 rare genetic acquired rare_genetic hereditary \
 syndromic isolated \
 malignant benign \
