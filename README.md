@@ -14,7 +14,7 @@ Stable release versions
  * http://purl.obolibrary.org/obo/mondo.json
  * http://purl.obolibrary.org/obo/mondo.owl
 
-See [Changes.md](Changed.md) for more details
+See [Changes.md](Changes.md) for more details
 
 
 ## Editors' version

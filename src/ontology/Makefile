@@ -80,7 +80,7 @@ ARTEFACTS = \
   $(REPORT_FILES) \
   $(SUBSET_FILES)
 
-ASSETS = $(MAIN_FILES) $(SUBSET_FILES)
+ASSETS = $(MAIN_FILES) $(SUBSET_FILES) ../../README.md
 
 list_main_files:
 	echo $(MAIN_FILES)
@@ -120,19 +120,25 @@ prepare_release_direct:
 all_includes: $(INCLUDES_OWL)
 
 #OSF_UPLOAD = $(HOME)/repos/osf-cli/venv/bin/osf -p 2qk53 upload
-OSF_UPLOAD = osf -p 2qk53 upload
-osf_upload: prepare_release osf_upload_direct
-osf_upload_direct:
-	cd ../.. && $(OSF_UPLOAD) -f -r target/ current/ && $(OSF_UPLOAD) -f -r target/ releases/$(ISODATE)
+#osf_upload: prepare_release osf_upload_direct
+#osf_upload_direct:
+#	cd ../.. && $(OSF_UPLOAD) -f -r target/ current/ && $(OSF_UPLOAD) -f -r target/ releases/$(ISODATE)
 
 list_assets:
 	ls -alt $(ASSETS)
 	echo $(GHVERSION)
 
-# e.g. make deploy_assets_direct GHVERSION=v2018-10-26
+
+# e.g. make deploy_release GHVERSION=v2018-10-26
+deploy_release: deploy_assets_direct deploy_assets_current
+
 deploy_assets_direct:
 	ls -alt $(ASSETS)
-	../utils/make-release-assets.py --release $(GHVERSION) $(ASSETS)
+	../utils/make-release-assets.py -c --release $(GHVERSION) $(ASSETS)
+
+deploy_assets_current:
+	ls -alt $(ASSETS)
+	../utils/make-release-assets.py -c -f --release current $(ASSETS)
 
 # ----------------------------------------
 # Main release targets
