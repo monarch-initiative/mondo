@@ -905,6 +905,37 @@ is_a: HP:0007364 ! Aplasia/Hypoplasia of the cerebrum
 is_a: HP:0040195 ! Decreased head circumference
 
 [Term]
+id: HP:0000256
+name: Macrocephaly
+namespace: human_phenotype
+alt_id: HP:0005491
+alt_id: HP:0005496
+alt_id: HP:0200135
+def: "Occipitofrontal (head) circumference greater than 97th centile compared to appropriate, age matched, sex-matched normal standards. Alternatively, a apparently increased size of the cranium." [pmid:19125436]
+comment: Macrocephaly can be due to hydrocephalus (increased CFSF), megalencephaly (increased brain volume) or thickening of the skull. Head circumference is measured from just above the glabella (the most prominent point on the frontal bone above the root of the nose) to the most posterior prominent point of the occipital bone using a tape measure. Some standard charts are organized by centiles [Hall et al. [2007]], others by standard deviations [Farkas, [1981]]. It is important to add an indication of how far above the normal standard the head circumference is if an accurate assessment of this can be made. Macrocephaly is an absolute term. The term relative macrocephaly can be used when the head size centile exceeds the centile for height, for example, head size at the 75th centile with height at the 5th centile for age and sex.
+subset: hposlim_core
+synonym: "Big calvaria" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Big cranium" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Big head" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Big skull" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Increased size of cranium" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Increased size of head" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Increased size of skull" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Large calvaria" BROAD [ORCID:0000-0001-5889-4463]
+synonym: "Large cranium" BROAD [ORCID:0000-0001-5889-4463]
+synonym: "Large head" EXACT layperson []
+synonym: "Large head circumference" EXACT layperson []
+synonym: "Large skull" BROAD layperson [ORCID:0000-0001-5889-4463]
+synonym: "Macrocrania" EXACT []
+synonym: "Megacephaly" EXACT [ORCID:0000-0001-5208-3432]
+xref: Fyler:4335
+xref: UMLS:C4083076
+xref: UMLS:C4255213
+xref: UMLS:C4280663
+xref: UMLS:C4280664
+is_a: HP:0040194 ! Increased head circumference
+
+[Term]
 id: HP:0000271
 name: Abnormality of the face
 namespace: human_phenotype
@@ -13626,6 +13657,14 @@ synonym: "Abnormal serum cobalamin level" EXACT []
 xref: UMLS:C4021032
 is_a: HP:0004341 ! Abnormality of vitamin B12 metabolism
 created_by: HPO:skoehler
+
+[Term]
+id: HP:0040194
+name: Increased head circumference
+namespace: human_phenotype
+synonym: "Increased head circumference" EXACT layperson []
+xref: UMLS:C4083076
+is_a: HP:0000240 ! Abnormality of skull size
 
 [Term]
 id: HP:0040195

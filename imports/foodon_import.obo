@@ -124,30 +124,36 @@ def: "This food product type includes food products which are derived from or pr
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
-intersection_of: RO:0001000 FOODON:03411347 ! derives from plant (food source)
+intersection_of: RO:0001000 FOODON:03411347 ! derives from plant
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
 id: FOODON:00001046
 name: seafood product
-is_a: FOODON:00001092 ! vertebrate animal food product
+def: "A seafood product is a vertebrate or invertibrate organism from anaquatic environment." []
+is_a: FOODON:00002403 ! food material
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000116 "Some of the subclasses are currently freshwater organisms." xsd:string
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001092
 name: vertebrate animal food product
-def: "A food product which is derived from or produced by an animal." []
+def: "A food product which is derived from or produced by an animal that has a vertibrae." []
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
-intersection_of: RO:0001000 FOODON:03411297 ! derives from vertebrate animal (food source)
+intersection_of: RO:0001000 FOODON:03411297 ! derives from vertebrate animal
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001093
 name: cereal grain food product
 is_a: FOODON:00001173 ! plant seed food product
 intersection_of: FOODON:00001173 ! plant seed food product
-intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant (food source)
+intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant
 
 [Term]
 id: FOODON:00001107
@@ -172,18 +178,23 @@ is_a: FOODON:00001093 ! cereal grain food product
 [Term]
 id: FOODON:00001143
 name: fungal food product
+def: "Fungal food products include edible fungi, mushrooms, and yeast." []
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
-intersection_of: RO:0001000 FOODON:03411261 ! derives from fungus (food source)
+intersection_of: RO:0001000 FOODON:03411261 ! derives from fungus
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: seeAlso http://www.asmscience.org/content/journal/microbiolspec/10.1128/microbiolspec.FUNK-0030-2016 xsd:anyURI
 
 [Term]
 id: FOODON:00001145
 name: microbial food product
+def: "A food product derived from one or more microorganisms including bacteria, mold, and yeast." []
 is_a: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002403 ! food material
-intersection_of: RO:0001000 FOODON:03412846 ! derives from bacteria (food source)
+is_a: FOODON:00002403 ! food material
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001173
@@ -215,7 +226,7 @@ xref: SUBSET_SIREN:F10419
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002403 ! food material
-intersection_of: RO:0001000 FOODON:03411301 ! derives from algae (food source)
+intersection_of: RO:0001000 FOODON:03411301 ! derives from algae
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -228,7 +239,7 @@ id: FOODON:00001256
 name: dairy food product
 def: "A dairy food product has mammilian milk or a milk component as an ingredient." []
 is_a: FOODON:00001092 ! vertebrate animal food product
-relationship: RO:0001000 UBERON:0001913 ! derives from milk (mammary secretion)
+relationship: RO:0001000 UBERON:0001913 ! derives from milk
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
 relationship: RO:0002350 FOODON:03400164 ! member of dairy product (us cfr)
 property_value: IAO:0000114 IAO:0000122
@@ -245,7 +256,7 @@ name: shellfish food product
 is_a: FOODON:00001046 ! seafood product
 intersection_of: FOODON:00001046 ! seafood product
 intersection_of: FOODON:00001176 ! invertebrate animal food product
-intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish (food source)
+intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish
 
 [Term]
 id: FOODON:00001771
@@ -256,11 +267,18 @@ intersection_of: FOODON:00001118 ! cattle dairy food product
 intersection_of: RO:0001000 FOODON:03307455 ! derives from cow milk (raw)
 
 [Term]
+id: FOODON:00001785
+name: crab food product
+is_a: FOODON:00001792 ! crustacean food product
+intersection_of: FOODON:00001792 ! crustacean food product
+intersection_of: RO:0001000 FOODON:03411335 ! derives from crab
+
+[Term]
 id: FOODON:00001792
 name: crustacean food product
 is_a: FOODON:00001046 ! seafood product
 intersection_of: FOODON:00001046 ! seafood product
-intersection_of: RO:0001000 FOODON:03411374 ! derives from crustacean (food source)
+intersection_of: RO:0001000 FOODON:03411374 ! derives from crustacean
 
 [Term]
 id: FOODON:00001911
@@ -274,14 +292,15 @@ id: FOODON:00002044
 name: mollusc food product
 name: mollusk food product
 is_a: FOODON:00001046 ! seafood product
-relationship: RO:0001000 FOODON:03412112 ! derives from molluscs (food source)
+relationship: RO:0001000 FOODON:03412112 ! derives from molluscs
+property_value: IAO:0000116 "Note american/ gb english spelling variation" xsd:string
 
 [Term]
 id: FOODON:00002239
 name: shrimp food product
 is_a: FOODON:00001792 ! crustacean food product
 intersection_of: FOODON:00001792 ! crustacean food product
-intersection_of: RO:0001000 FOODON:03411237 ! derives from shrimp (food source)
+intersection_of: RO:0001000 FOODON:03411237 ! derives from shrimp
 
 [Term]
 id: FOODON:00002244
@@ -309,15 +328,15 @@ relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product 
 id: FOODON:03000003
 name: brown shrimp
 def: "Farfantepenaeus aztecus is a species of marine penaeid shrimps found around the east coast of the USA and Mexico" []
-is_a: FOODON:03411081 ! penaeid shrimp family (food source)
-intersection_of: NCBITaxon:6690 ! Farfantepenaeus aztecus
+is_a: FOODON:03411081 ! penaeid shrimp family
+intersection_of: NCBITaxon:6690 ! Penaeus aztecus
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
 [Term]
 id: FOODON:03000004
 name: green mud crab
 def: "Scylla paramamosain is a mud crab commonly consumed in South-east Asia." []
-is_a: FOODON:03412215 ! mud crab family (food source)
+is_a: FOODON:03412215 ! mud crab family
 intersection_of: NCBITaxon:85552 ! Scylla paramamosain
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
@@ -325,8 +344,8 @@ intersection_of: RO:0000087 CHEBI:33290 ! has role food
 id: FOODON:03000005
 name: Indian prawn
 def: "The Indian prawn (Fenneropenaeus indicus, formerly Penaeus indicus), is one of the major commercial prawn species of the world. It is found in the Indo-West Pacific from eastern and south-eastern Africa, through India, Malaysia and Indonesia to southern China and northern Australia" []
-is_a: FOODON:03411081 ! penaeid shrimp family (food source)
-intersection_of: NCBITaxon:29960 ! Fenneropenaeus indicus
+is_a: FOODON:03411081 ! penaeid shrimp family
+intersection_of: NCBITaxon:29960 ! Penaeus indicus
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
 [Term]
@@ -336,7 +355,7 @@ comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no vis
 subset: subset_siren
 xref: SUBSET_SIREN:F2116
 is_a: FOODON:00001771 ! cow milk based food product
-relationship: RO:0001000 FOODON:03411201 ! derives from cow (food source)
+relationship: RO:0001000 FOODON:03411201 ! derives from dairy cow
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -359,8 +378,8 @@ comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no vis
 subset: subset_siren
 xref: SUBSET_SIREN:F5803
 is_a: FOODON:00001911 ! goat dairy food product
-intersection_of: UBERON:0001913 ! milk (mammary secretion)
-intersection_of: RO:0003001 FOODON:03412611 ! produced by doe (goat) (food source)
+intersection_of: UBERON:0001913 ! milk
+intersection_of: RO:0003001 FOODON:03412611 ! produced by doe (goat)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -371,14 +390,14 @@ comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no vis
 subset: subset_siren
 xref: SUBSET_SIREN:F7455
 is_a: FOODON:03302116 ! cow milk (fluid)
-intersection_of: UBERON:0001913 ! milk (mammary secretion)
-intersection_of: RO:0003001 FOODON:03411201 ! produced by cow (food source)
+intersection_of: UBERON:0001913 ! milk
+intersection_of: RO:0003001 FOODON:03411201 ! produced by dairy cow
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03315468
-name: shellfish (whole or flesh)
+name: shellfish meat (whole or parts)
 comment: SIREN DB annotation:\n* has quality 'solid' (http://purl.obolibrary.org/obo/FOODON_03430151)\n* derives from 'meat part of animal' (http://purl.obolibrary.org/obo/FOODON_03420103)\n        
 subset: subset_siren
 xref: SUBSET_SIREN:F15468
@@ -510,33 +529,33 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411047
-name: grain or seed-producing plant (food source)
+name: grain or seed-producing plant
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1047
-is_a: FOODON:03411347 ! plant (food source)
+is_a: FOODON:03411347 ! plant
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411059
-name: shellfish or crustacean (food source)
+name: shellfish or crustacean
 def: "Shellfish is a food source and fisheries term for exoskeleton-bearing aquatic invertebrates used as food, including various species of molluscs, crustaceans, and echinoderms. Although most kinds of shellfish are harvested from saltwater environments, some kinds are found in freshwater. In addition, a few species of land crabs are eaten, for example *Cardisoma guanhumi* in the Caribbean. [https://en.wikipedia.org/wiki/Shellfish]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1059
 is_a: FOODON:00002452
-union_of: FOODON:03411374 ! crustacean (food source)
-union_of: FOODON:03411433 ! shellfish (food source)
+union_of: FOODON:03411374 ! crustacean
+union_of: FOODON:03411433 ! shellfish
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411081
-name: penaeid shrimp family (food source)
+name: penaeid shrimp family
 def: "*Penaeidae* is a family of marine crustacean in the suborder *Dendrobranchiata*, which are often referred to as penaeid shrimp or penaeid prawn. It contains many species of economic importance, such as the tiger prawn, whiteleg shrimp, Atlantic white shrimp and Indian prawn. Many prawns are the subject of commercial fishery, and farming, both in marine settings, and in freshwater farms. [https://en.wikipedia.org/wiki/Penaeidae]" []
 synonym: "Dendrobranchiata Bate, 1888" NARROW []
 synonym: "Natantia" NARROW []
 xref: EC:No 216/2009 DCP
 xref: http://eol.org/pages/7184
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1081
-is_a: FOODON:03411237 ! shrimp (food source)
+is_a: FOODON:03411237 ! shrimp
 property_value: hasSynonym "dendrobranchiata" xsd:string
 property_value: hasSynonym "natantia" xsd:string
 property_value: hasSynonym "natantian decapods" xsd:string
@@ -548,15 +567,15 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411134
-name: animal (mammal) (food source)
+name: animal (mammal)
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1134
-is_a: FOODON:03411297 ! vertebrate animal (food source)
+is_a: FOODON:03411297 ! vertebrate animal
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411161
-name: cattle (food source)
+name: cattle
 def: "Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos taurus*... with three subspecies: *Bos taurus primigenius, Bos taurus indicus, Bos taurus taurus*. [https://en.wikipedia.org/wiki/Cattle]" []
 synonym: "Bos taurus Linnaeus, 1758" NARROW []
 xref: http://eol.org/pages/328699
@@ -564,45 +583,38 @@ xref: http://www.langual.org/langual_thesaurus.asp?termid=B1161
 xref: ITIS:183838
 xref: MSW3:14200687
 xref: NCBITaxon:9913
-is_a: FOODON:03414374 ! bovine (food source)
+is_a: FOODON:03414374 ! bovine
 intersection_of: FOODON:00001303 NCBITaxon:9913 ! has taxonomic identifier Bos taurus
 intersection_of: FOODON:00001303 NCBITaxon:9913 {all_only="true"} ! has taxonomic identifier Bos taurus
 property_value: hasSynonym "auroch" xsd:string
 property_value: hasSynonym "bos spp." xsd:string
 property_value: hasSynonym "bos taurus" xsd:string
-property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 WIKIPEDIA:Domestic_cattle xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411201
-name: cow (food source)
-synonym: "Bos taurus Linnaeus, 1758" NARROW []
-xref: http://eol.org/pages/328699
+name: dairy cow
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1201
-xref: ITIS:183838
-xref: MSW3:14200687
-xref: NCBITaxon:9913
-is_a: FOODON:03411161 ! cattle (food source)
-property_value: hasSynonym "bos taurus" xsd:string
+is_a: FOODON:00002505
 property_value: hasSynonym "domesticated cattle" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411215
-name: algae, bacteria or fungus (food source)
+name: algae, bacteria or fungus (deprecated)
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1215
-disjoint_from: FOODON:03411297 ! vertebrate animal (food source)
-property_value: IAO:0000114 IAO:0000428
+disjoint_from: FOODON:03411297 ! vertebrate animal
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411237
-name: shrimp (food source)
+name: shrimp
 xref: http://eol.org/pages/2602479
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1237
-is_a: FOODON:03411998 ! decapod (food source)
+is_a: FOODON:03411998 ! decapod
 property_value: hasSynonym "caridea" xsd:string
 property_value: hasSynonym "crangonidae" xsd:string
 property_value: hasSynonym "palaemondidae" xsd:string
@@ -613,10 +625,10 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411261
-name: fungus (food source)
+name: fungus
 def: "A fungus (plural: fungi or funguses) is any member of the group of eukaryotic organisms that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms. These organisms are classified as a kingdom, *Fungi*, which is separate from the other eukaryotic life kingdoms of plants and animals.[https://en.wikipedia.org/wiki/Fungus]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1261
-is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+is_a: FOODON:03411564 ! food source
 property_value: hasSynonym "fungi" xsd:string
 property_value: hasSynonym "funguses" xsd:string
 property_value: IAO:0000114 IAO:0000428
@@ -624,7 +636,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411297
-name: vertebrate animal (food source)
+name: vertebrate animal
 def: "Multicellular animal, e.g., fish, meat animal or poultry." []
 comment: LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1297
@@ -634,31 +646,31 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411301
-name: algae (food source)
+name: algae
 def: "Unicellular and multicellular algae." []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1301
-is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+is_a: FOODON:03411564 ! food source
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411324
-name: grain plant (food source)
+name: grain plant
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1324
-is_a: FOODON:03411047 ! grain or seed-producing plant (food source)
+is_a: FOODON:03411047 ! grain or seed-producing plant
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411328
-name: goat (food source)
+name: goat
 synonym: "Capra hircus Linnaeus, 1758" NARROW []
 xref: http://eol.org/pages/328660
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1328
 xref: ITIS:180715
 xref: MSW3:14200776
 xref: NCBITaxon:9925
-is_a: FOODON:03411134 ! animal (mammal) (food source)
+is_a: FOODON:03411134 ! animal (mammal)
 intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
 intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
 property_value: hasSynonym "capra hircus" xsd:string
@@ -667,11 +679,11 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411335
-name: crab (food source)
+name: crab
 def: "Crabs are decapod crustaceans of the infraorder *Brachyura*, which typically have a very short projecting \"tail\", usually entirely hidden under the thorax. They live in all the world's oceans, in fresh water, and on land, are generally covered with a thick exoskeleton and have a single pair of claws. Many other animals with similar names - such as hermit crabs, king crabs, porcelain crabs, horseshoe crabs, and crab lice - are not true crabs. \n Crabs are generally covered with a thick exoskeleton, composed primarily of highly mineralized chitin, and armed with a single pair of chelae (claws). Crabs are found in all of the world's oceans, while many crabs live in fresh water and on land, particularly in tropical regions. [https://en.wikipedia.org/wiki/Crab]" []
 xref: http://eol.org/pages/2604866
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1335
-is_a: FOODON:03411998 ! decapod (food source)
+is_a: FOODON:03411998 ! decapod
 property_value: hasSynonym "brachyura" xsd:string
 property_value: hasSynonym "short-tailed crabs" xsd:string
 property_value: hasSynonym "true crabs" xsd:string
@@ -680,7 +692,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411347
-name: plant (food source)
+name: plant
 def: "Multicellular plants." []
 comment: LanguaL curation note: For unicellular plants as well as for algae, mushrooms and yeast, use the appropriate narrower term under *ALGAE OR FUNGUS USED AS FOOD SOURCE*.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1347
@@ -690,19 +702,19 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411374
-name: crustacean (food source)
+name: crustacean
 def: "Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]" []
 xref: http://eol.org/pages/2598871
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1374
 is_a: FOODON:00002452
-disjoint_from: FOODON:03411433 ! shellfish (food source)
+disjoint_from: FOODON:03411433 ! shellfish
 property_value: hasSynonym "crustacea" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411433
-name: shellfish (food source)
+name: shellfish
 def: "The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates. [https://en.wikipedia.org/wiki/Shellfish]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1433
 is_a: FOODON:00002452
@@ -720,35 +732,35 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03411998
-name: decapod (food source)
+name: decapod
 def: "The Decapoda or decapods (literally \"ten-footed\") are an order of crustaceans within the class Malacostraca, including many familiar groups, such as crayfish, crabs, lobsters, prawns, and shrimp. Most decapods are scavengers. [https://en.wikipedia.org/wiki/Decapoda]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1998
-is_a: FOODON:03411374 ! crustacean (food source)
+is_a: FOODON:03411374 ! crustacean
 property_value: hasSynonym "decapoda" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03412112
-name: molluscs (food source)
+name: molluscs
 def: "*Mollusca* is a large phylum of invertebrate animals whose members are known as molluscs or mollusks. Molluscs are the largest marine phylum, comprising about 23% of all the named marine organisms. Numerous molluscs also live in freshwater and terrestrial habitats. [https://en.wikipedia.org/wiki/Mollusca]" []
 synonym: "Mollusca" NARROW []
 xref: EC:No 216/2009 MOL
 xref: FAO ASFIS:MOL
 xref: http://eol.org/pages/2195
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B2112
-is_a: FOODON:03411433 ! shellfish (food source)
+is_a: FOODON:03411433 ! shellfish
 property_value: hasSynonym "mollusca" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03412215
-name: mud crab family (food source)
+name: mud crab family
 def: "Mud crab may refer to any crab that lives in or near mud, such as: species from family *Portunidae*, such as *Scylla serrata*; *Scylla tranquebarica*; *Scylla paramamosain*; members of the family *Panopeidae*, such as *Panopeus herbstii*; members of the family *Xanthidae*; *Helice crassa*, the tunnelling mud crab. [https://en.wikipedia.org/wiki/Mud_crab]" []
 xref: http://eol.org/pages/7194
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B2215
-is_a: FOODON:03411335 ! crab (food source)
+is_a: FOODON:03411335 ! crab
 property_value: hasSynonym "mud crabs" xsd:string
 property_value: hasSynonym "panopeidae" xsd:string
 property_value: hasSynonym "pebble crabs" xsd:string
@@ -761,24 +773,24 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03412345
-name: lichen (food source)
+name: lichen
 def: "Lichens are composite organisms consisting of a symbiotic association of a fungus (the mycobiont) with a photosynthetic partner (the photobiont or phycobiont), usually either a green alga (commonly *Trebouxia*) or cyanobacterium (commonly *Nostoc*)." []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B2345
-is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+is_a: FOODON:03411564 ! food source
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000119 WIKIPEDIA:Lichen xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03412611
-name: doe (goat) (food source)
+name: doe (goat)
 synonym: "Capra hircus Linnaeus, 1758" NARROW []
 xref: http://eol.org/pages/328660
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B2611
 xref: ITIS:180715
 xref: MSW3:14200776
 xref: NCBITaxon:9925
-is_a: FOODON:03411328 ! goat (food source)
+is_a: FOODON:03411328 ! goat
 intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
 intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
 property_value: hasSynonym "capra hircus" xsd:string
@@ -788,14 +800,14 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03412702
-name: kid (food source)
+name: kid
 synonym: "Capra hircus Linnaeus, 1758" NARROW []
 xref: http://eol.org/pages/328660
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B2702
 xref: ITIS:180715
 xref: MSW3:14200776
 xref: NCBITaxon:9925
-is_a: FOODON:03411328 ! goat (food source)
+is_a: FOODON:03411328 ! goat
 intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
 intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
 property_value: IAO:0000114 IAO:0000428
@@ -803,9 +815,9 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03412846
-name: bacteria (food source)
+name: bacteria
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B2846
-is_a: FOODON:03411215 ! algae, bacteria or fungus (food source)
+is_a: FOODON:03411564 ! food source
 intersection_of: FOODON:00001303 NCBITaxon:2 ! has taxonomic identifier Bacteria
 intersection_of: FOODON:00001303 NCBITaxon:2 {all_only="true"} ! has taxonomic identifier Bacteria
 property_value: IAO:0000114 IAO:0000428
@@ -813,11 +825,11 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03414374
-name: bovine (food source)
+name: bovine
 def: "The biological subfamily *Bovinae* includes a diverse group of 10 genera of medium- to large-sized ungulates, including domestic cattle, the bison, African buffalo, the water buffalo, the yak, and the four-horned and spiral-horned antelopes. The evolutionary relationship between the members of the group is obscure, and their classification into loose tribes rather than formal subgroups reflects this uncertainty. General characteristics include cloven hoofs and usually at least one of the sexes of a species having true horns." []
 xref: http://eol.org/pages/2851454
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B4374
-is_a: FOODON:03414381 ! bovid (food source)
+is_a: FOODON:03414381 ! bovid
 property_value: hasSynonym "bovinae" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000119 WIKIPEDIA:Bovinae xsd:string
@@ -825,11 +837,11 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03414381
-name: bovid (food source)
+name: bovid
 def: "A bovid (family *Bovidae*) is any of almost 140 species of cloven-hoofed, ruminant mammal which has males with characteristic unbranching horns covered in a permanent sheath of keratin.\n\nThe family is widespread, being native to Asia, Africa, Europe and North America, and diverse: members include bison, African buffalo, water buffalo, antelopes, gazelles, sheep, goats, muskoxen, and domestic cattle." []
 xref: http://eol.org/pages/7687
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B4381
-is_a: FOODON:03411134 ! animal (mammal) (food source)
+is_a: FOODON:03411134 ! animal (mammal)
 property_value: hasSynonym "bovidae" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000119 WIKIPEDIA:Bovidae xsd:string
@@ -1029,8 +1041,8 @@ is_a: NCBITaxon:117571 ! Euteleostomi
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
-id: NCBITaxon:133898
-name: Fenneropenaeus
+id: NCBITaxon:133894
+name: Penaeus
 is_a: NCBITaxon:6685 ! Penaeidae
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
@@ -1054,6 +1066,12 @@ is_a: OBI:0100026 ! organism
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
+id: NCBITaxon:2172821
+name: Multicrustacea
+is_a: NCBITaxon:6657 ! Crustacea
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
 id: NCBITaxon:2759
 name: Eukaryota
 synonym: "eucaryotes" EXACT []
@@ -1069,8 +1087,8 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:29960
-name: Fenneropenaeus indicus
-is_a: NCBITaxon:133898 ! Fenneropenaeus
+name: Penaeus indicus
+is_a: NCBITaxon:133894 ! Penaeus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1172,9 +1190,9 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:6690
-name: Farfantepenaeus aztecus
+name: Penaeus aztecus
 synonym: "brown shrimp" EXACT []
-is_a: NCBITaxon:85653 ! Farfantepenaeus
+is_a: NCBITaxon:133894 ! Penaeus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1215,7 +1233,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 [Term]
 id: NCBITaxon:72041
 name: Eumalacostraca
-is_a: NCBITaxon:6657 ! Crustacea
+is_a: NCBITaxon:2172821 ! Multicrustacea
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1246,12 +1264,6 @@ id: NCBITaxon:85552
 name: Scylla paramamosain
 synonym: "green mud crab" EXACT []
 is_a: NCBITaxon:6760 ! Scylla
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:85653
-name: Farfantepenaeus
-is_a: NCBITaxon:6685 ! Penaeidae
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1289,6 +1301,7 @@ name: Bos taurus
 synonym: "bovine" EXACT []
 synonym: "cattle" EXACT []
 synonym: "cow" EXACT []
+synonym: "dairy cow" EXACT []
 synonym: "domestic cattle" EXACT []
 synonym: "domestic cow" EXACT []
 is_a: NCBITaxon:9903 ! Bos

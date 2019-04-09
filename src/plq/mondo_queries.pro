@@ -228,6 +228,11 @@ rel(C,equivalentTo,D) :- owl_equivalent_class(C,D), !.
 rel(C,directSiblingOf,D) :- subClassOf(C,Z),subClassOf(D,Z), !.
 rel(_,relatedTo,_).
 
+multi_basis(D,B1,B2) :-
+        lmatch("disease has basis in dysfunction of",P),
+        owl_edge(D,P,B1),
+        owl_edge(D,P,B2),
+        B1 @< B2.
 
 
 non_leaf_omim(X,Y,C,CY,Subsets) :-
