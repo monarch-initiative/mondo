@@ -5,9 +5,13 @@ Requires: https://github.com/PyGithub/PyGithub
 
 Command line wrapper to make github assets
 
-No download, just list assets:
+No download (dry-run mode), just list assets:
 
-make-release-assets.py -k -r ontodev/robot -v v1.1.0
+    make-release-assets.py -k -r ontodev/robot -v v1.1.0
+
+Release files
+
+    make-release-assets.py -k -r foo/bar --release v2018-10-26 FILE1 FILE2 ... FILEn
 
 """
 
