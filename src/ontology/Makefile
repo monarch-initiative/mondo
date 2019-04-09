@@ -133,6 +133,10 @@ deploy_assets_direct:
 	ls -alt $(ASSETS)
 	../utils/make-release-assets.py --release $(GHVERSION) $(ASSETS)
 
+deploy_assets_current:
+	ls -alt $(ASSETS)
+	../utils/make-release-assets.py --release current $(ASSETS)
+
 # ----------------------------------------
 # Main release targets
 # ----------------------------------------
