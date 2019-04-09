@@ -45,6 +45,9 @@ def make_assets(dry_run, force, create, token, org, repo, release, paths):
     G_repo = G_org.get_repo(repo)
 
     if create:
+        message = ""
+        if release == 'current':
+            message = "Running current release. This will be re-created with each release"
         for r in G_repo.get_releases():
             if r.tag_name == release:
                 if force:
@@ -53,7 +56,7 @@ def make_assets(dry_run, force, create, token, org, repo, release, paths):
                 else:
                     logging.error("Release already exists!")
                 logging.info("Creating release")
-        G_repo.create_git_release(release, release, "", draft=False, prerelease=False)
+        G_repo.create_git_release(release, release, message, draft=False, prerelease=False)
     
     G_rel = G_repo.get_release(release)
 

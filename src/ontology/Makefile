@@ -80,7 +80,7 @@ ARTEFACTS = \
   $(REPORT_FILES) \
   $(SUBSET_FILES)
 
-ASSETS = $(MAIN_FILES) $(SUBSET_FILES)
+ASSETS = $(MAIN_FILES) $(SUBSET_FILES) ../../README.md
 
 list_main_files:
 	echo $(MAIN_FILES)
@@ -135,7 +135,7 @@ deploy_assets_direct:
 
 deploy_assets_current:
 	ls -alt $(ASSETS)
-	../utils/make-release-assets.py --release current $(ASSETS)
+	../utils/make-release-assets.py -c -f --release current $(ASSETS)
 
 # ----------------------------------------
 # Main release targets
