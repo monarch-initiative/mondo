@@ -1,3 +1,104 @@
+# 2019-04-03 release
+
+This major release includes two large changes:
+
+ * Most terms prefixed with "rare" have been obsoleted, see #254
+ * Moved many pre-dispositions out from under disease hierarchy
+
+## New Classes
+
+ * [MONDO:0020705](http://purl.obolibrary.org/obo/MONDO_0020705) neural tube defects, susceptibility to
+ * [MONDO:0020706](http://purl.obolibrary.org/obo/MONDO_0020706) Heberden's node
+ * [MONDO:0020708](http://purl.obolibrary.org/obo/MONDO_0020708) brachial amyotrophic diplegia
+ * [MONDO:0020709](http://purl.obolibrary.org/obo/MONDO_0020709) Majocchi granuloma
+ * [MONDO:0020719](http://purl.obolibrary.org/obo/MONDO_0020719) susceptibility to Hirschsprung disease
+ * [MONDO:0100053](http://purl.obolibrary.org/obo/MONDO_0100053) anaphylaxis
+ * [MONDO:0100054](http://purl.obolibrary.org/obo/MONDO_0100054) idiopathic anaphylaxis
+ * [MONDO:0100056](http://purl.obolibrary.org/obo/MONDO_0100056) exercise-induced anaphylaxis
+ * [MONDO:0100057](http://purl.obolibrary.org/obo/MONDO_0100057) food-dependent exercise-induced anaphylaxis
+ * [MONDO:0100068](http://purl.obolibrary.org/obo/MONDO_0100068) SLC10A7-CDG
+ * [MONDO:0100069](http://purl.obolibrary.org/obo/MONDO_0100069) hearing impairment and infertile male syndrome
+ * [MONDO:0100070](http://purl.obolibrary.org/obo/MONDO_0100070) neuroendocrine disease
+ * [MONDO:0100071](http://purl.obolibrary.org/obo/MONDO_0100071) cardiocutaneous syndrome
+ * [MONDO:0100072](http://purl.obolibrary.org/obo/MONDO_0100072) neonatal diabetes, congenital sensorineural hearing loss and congenital cataracts
+ * [MONDO:0100073](http://purl.obolibrary.org/obo/MONDO_0100073) methicillin-resistant staphylococcus aureus infectious disease
+ * [MONDO:0100074](http://purl.obolibrary.org/obo/MONDO_0100074) norovirus infectious disease
+ * [MONDO:0100075](http://purl.obolibrary.org/obo/MONDO_0100075) jaw fracture
+
+### Highlights
+
+ * revised superclass for MONDO_0022020. addresses #514
+ * obsolete Conjunctival disorder (MONDO_0006170). Closes #567
+ * reclassify olecranon bursitis, and revise logical def; obosolete specific bursitis often of occupational origin. Closes #505
+ * remove annotations from obsoleted class MONDO_0044630
+ * remove superclass from MONDO_0014857
+ * add dbxref to MONDO_0014857
+ * removed superclass from MONDO:0014857
+ * revise label for Chitty Hall Web syndrome. Closes #500
+ * add new class 'norovirus infectious disease' and add NCBI taxon, norovirus. Addresses #620
+ * obs rare nervous tumor
+ * add new term. addresses #620
+ * add superclass assertion to 'Legius syndrome'. Closes #625
+ * fixed space in PMID for MONDO_0100071.
+ * McCune-Albright/polyostotic fibrous dysplasia fixes #649
+ * obs rare genetic myoclonus
+ * removing rare qualifiers
+#254 * Obsoleting rare-X terms, step1, 
+ * removed incorrect xref from pathologic fracture and revised xref for femoral neck fracture. Closes #644
+ * Aligning infectious inflammatory diseases with pattern
+ * Fixing too weak def of infectious disease, fixes #547
+ * including disease susceptibility in allowed roots
+ * add excluded subClassOf annotation to nephrosclerosis. addresses #528
+ * Disease susceptibility no longer a subclass of disease, fixes #609
+ * Removed synonym from MONDO_0002708, MONDO_0003014, MONDO_0003619, MONDO_0043786, MONDO_0003937, MONDO_0004842, MONDO_0004855, MONDO_0005990, MONDO_0001732, MONDO_0024616, MONDO_0000739, MONDO_0004767, MONDO_0007018. Addresses #626
+ * Removed synonym from MONDO_0001040, MONDO_0001166, MONDO_0006877, MONDO_0002172, MONDO_0004982, MONDO_0006591, MONDO_0006887, MONDO_0005900, MONDO_0006900, MONDO_0005076, MONDO_0004522, MONDO_0001109, MONDO_0002258, MONDO_0004625, MONDO_0000986, MONDO_0043905, MONDO_0021164, MONDO_0005538, MONDO_0024278, MONDO_0006937, MONDO_0006938, MONDO_0000497. Addresses #626
+ * Removed synonym from MONDO_0002269, MONDO_0002508, MONDO_0006771, MONDO_0002251, MONDO_0002260, MONDO_0021156, MONDO_0003085, MONDO_0002008, MONDO_0002647, MONDO_0005832, MONDO_0006849, MONDO_0020579, MONDO_0002565, MONDO_0004496, MONDO_0021167. Addresses #626
+ * Removed synonym from MONDO_0006672, MONDO_0004785, MONDO_0003781, MONDO_0002471, MONDO_0002645, MONDO_0002102, MONDO_0004789, MONDO_0002155, MONDO_0000409, MONDO_0006032. Addresses #626
+ * Removed synonym from MONDO_0019838, MONDO_0005649, MONDO_0015304, MONDO_0043494, MONDO_0005578. Addresses #626
+ * Removed synonym from MONDO_0008538, MONDO_0004126, MONDO_0005297, MONDO_0020283, MONDO_0002234. Addresses #626
+ * Removed synonym from MONDO_0005904, MONDO_0004934, MONDO_0006918, MONDO_0005280, MONDO_0002400. Addresses #626
+ * Removed synonym from MONDO_0005292, MONDO_0005533, MONDO_0005025, MONDO_0001409, MONDO_0004830. Addresses #626
+ * Removed synonym from MONDO_0006656, MONDO_0003799, MONDO_0004551, MONDO_0015144, MONDO_0001277. Addresses #626
+ * removed synonym from MONDO_0021166. addresses #626
+ * added new term MONDO_0100072, jaw fracture. Addresses #620
+ * added ORCID to MONDO_0100069, addresses #583
+ * added comment to MONDO_0100069. addresses #583
+ * added new term MONDO_0100072 'neonatal diabetes, congenital sensorineural hearing loss and congenital cataracts'. closes #582
+ * updated comment for MONDO_0009753. Addresses #612
+ * added new term MONDO_0100071, and reclassified terms as children. Addresses #578
+ * Split incorrectly merged NCIT class, fixes #599
+ * removed subclassOf assertion for 'cerebral palsy'. addresses #528
+ * moved GARD dbxref to MONDO:0007931. addresses #564
+ * added superclass 'pituitary deficiency' back to MONDO:0015790 'central diabetes insiipidus'. addresses #438
+ * removed dbxef on term MONDO:0100038. addresses #595
+ * removed superclass from MONDO_0006044 nephrosclerosis, addresses #528
+ * added new class, neuroendocrine disease and reclassified central diabetes insipidus. closes #438
+ * obsoleted MONDO:0022566. Closes #564
+ * added additional attributions to term MONDO:0100038. Closes #561
+ * obsoleted class MONDO:0023663. Closes #538
+ * added new term MONDO:0100069 hearing impairment and infertile male syndrome, closes #583
+ * renamed MONDO:0100068 to be more consistent with other naming of similar classes. Addresses #478
+ * added new term SLC10A7 deficiency. Closes #478
+ * merged familial chronic mucocutaneous candidiasis -> chronic mucocutaneous candidiasis
+ * Removing multiple has-features to HPO see #574
+ * Removing incorrect Asthma features, fixes #574
+ * added superclass assertion to sulfhemoglobinemia, congenital. addresses #539
+ * revised label for MONDO:0005570, addresses #539
+ * removed parent collagenopathy from Ehlers-Danlos syndrome. addresses #520
+ * removed parent collagenopathy from osteogenesis imperfecta. addresses #520
+ * removed superclass 'immune system disease' from MONDO:0006988 sulfhemoglobinemia. Closes #539
+ * revised label for MONDO:0043707, closes #545
+ * fixed xrefs for major affective disorder 1-9, addresses #536
+ * fixed xrefs for dyslexia, suscpetibility to, 3-9, addresses #536
+ * fixed xrefs for stuttering, familial persistent, 2-4, addresses #536
+ * added synonyms back for specific language impairment 1-5, addresses #536
+ * added synonyms back for restless leg syndrome, susceptibility to, 2-8, addresses #536
+ * relabeled MONDO:0008187, addresses #536
+ * added synonyms back for narcolepsy, susceptibility to, 2,4,5,6 and narcolepsy 3, addresses #536
+ * added synonyms back for various disorders, 1-9, addresses #536
+ * relabled MONDO:0013844, MONDO:0013841, MONDO:0012232, MONDO: 0008483, and others addresses #536
+    
+
 # 2018-12-02 release
 
 ## New Classes
