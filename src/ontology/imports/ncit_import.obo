@@ -2,6 +2,56 @@ format-version: 1.2
 ontology: mondo/imports/ncit_import
 
 [Term]
+id: NCIT:C12219
+name: Anatomic Structure, System, or Substance
+def: "A human biological structure, fluid or other substance; excludes single molecular entities." []
+synonym: "Anatomic Structure, System, or Substance" EXACT []
+synonym: "Anatomic Structures and Systems" EXACT []
+disjoint_from: NCIT:C12913 ! Abnormal Cell
+disjoint_from: NCIT:C17828 ! Biological Process
+disjoint_from: NCIT:C43431 ! Activity
+disjoint_from: NCIT:C7057 ! Disease, Disorder or Finding
+
+[Term]
+id: NCIT:C12378
+name: Digestive System
+def: "The system that includes the esophagus, stomach, small and large intestine, anus, liver, biliary tract, and pancreas." []
+synonym: "Body System, Gastrointestinal" EXACT []
+synonym: "Digestive System" EXACT []
+synonym: "digestive system" EXACT []
+synonym: "Gastrointestinal Body System" EXACT []
+synonym: "Gastrointestinal Organ System" EXACT []
+synonym: "GASTROINTESTINAL SYSTEM" EXACT []
+synonym: "Gastrointestinal System" EXACT []
+synonym: "Organ System, Gastrointestinal" EXACT []
+is_a: NCIT:C12919 ! Organ System
+
+[Term]
+id: NCIT:C12664
+name: Abdomen
+def: "The portion of the body that lies between the thorax and the pelvis." []
+synonym: "Abdomen" EXACT []
+synonym: "abdomen" EXACT []
+synonym: "ABDOMINAL CAVITY" EXACT []
+synonym: "Abdominal Cavity" EXACT []
+synonym: "BODY CAVITY, ABDOMINAL" EXACT []
+is_a: NCIT:C25444 ! Body Cavity
+
+[Term]
+id: NCIT:C12736
+name: Intestine
+def: "The portion of the gastrointestinal tract between the stomach and the anus. It includes the small intestine and large intestine." []
+synonym: "Bowel" EXACT []
+synonym: "bowel" EXACT []
+synonym: "INTESTINE" EXACT []
+synonym: "Intestine" EXACT []
+synonym: "intestine" EXACT []
+synonym: "Intestines" EXACT []
+is_a: NCIT:C13018 ! Organ
+relationship: NCIT:R81 NCIT:C12664 ! Abdomen
+relationship: NCIT:R82 NCIT:C12378 ! Digestive System
+
+[Term]
 id: NCIT:C12913
 name: Abnormal Cell
 def: "An abnormal human cell type which can occur in either disease states or disease models." []
@@ -19,6 +69,15 @@ synonym: "Malignant Cell" EXACT []
 is_a: NCIT:C12922 ! Neoplastic Cell
 
 [Term]
+id: NCIT:C12919
+name: Organ System
+def: "An anatomical structure that consists of organs and organ subclasses responsible for certain body functions.  Representative examples are the gastrointestinal system, urinary system, and hematopoietic system." []
+synonym: "BODSYS" EXACT []
+synonym: "Body Systems" EXACT []
+synonym: "Organ System" EXACT []
+is_a: NCIT:C12219 ! Anatomic Structure, System, or Substance
+
+[Term]
 id: NCIT:C12922
 name: Neoplastic Cell
 def: "Cells of, or derived from, a tumor." []
@@ -27,12 +86,60 @@ synonym: "Tumor Cell" EXACT []
 is_a: NCIT:C12913 ! Abnormal Cell
 
 [Term]
+id: NCIT:C13018
+name: Organ
+def: "A unique macroscopic (gross) anatomic structure that performs specific functions. It is composed of various tissues.  An organ is part of an anatomic system or a body region. Representative examples include the heart, lung, liver, spleen, and uterus." []
+synonym: "Organ" EXACT []
+synonym: "organ" EXACT []
+is_a: NCIT:C12219 ! Anatomic Structure, System, or Substance
+
+[Term]
 id: NCIT:C147564
 name: Hormone Resistance
 def: "A finding indicating decreased tissue sensitivity to a hormone." []
 synonym: "Hormone Resistance" EXACT []
 synonym: "Hormone Therapy Resistance" EXACT []
 is_a: NCIT:C36285 ! Endocrine System Finding
+
+[Term]
+id: NCIT:C15290
+name: Ostomy
+def: "Surgical creation of an opening in an organ." []
+synonym: "Ostomy" EXACT []
+synonym: "ostomy" EXACT []
+synonym: "surgical construction of a stoma" EXACT []
+is_a: NCIT:C49165 ! Surgical Procedure by Method
+relationship: NCIT:R163 NCIT:C13018 ! Organ
+
+[Term]
+id: NCIT:C15329
+name: Surgical Procedure
+def: "A diagnostic or treatment procedure performed by manual and/or instrumental means, often involving an incision and the removal or replacement of a diseased organ or tissue; of or relating to or involving or used in surgery or requiring or amenable to treatment by surgery." []
+synonym: "Operation" EXACT []
+synonym: "Surgery" EXACT []
+synonym: "surgery" EXACT []
+synonym: "Surgical" EXACT []
+synonym: "Surgical Interventions" EXACT []
+synonym: "Surgical Procedure" EXACT []
+synonym: "Surgical Procedures" EXACT []
+synonym: "Surgically" EXACT []
+is_a: NCIT:C25218 ! Intervention or Procedure
+
+[Term]
+id: NCIT:C15330
+name: Digestive System Surgery
+def: "Surgery performed on any part of the digestive system." []
+synonym: "digestive system operative procedure" EXACT []
+synonym: "Digestive System Surgery" EXACT []
+synonym: "digestive system surgical procedure" EXACT []
+synonym: "gastrointestinal surgical procedure" EXACT []
+synonym: "gastrointestinal system operative procedure" EXACT []
+synonym: "operative procedure on the digestive system" EXACT []
+synonym: "operative procedure on the gastrointestinal system" EXACT []
+synonym: "Surgery, Digestive System" EXACT []
+synonym: "Surgery, Gastrointestinal" EXACT []
+is_a: NCIT:C49163 ! Surgical Procedure by Site or System
+relationship: NCIT:R163 NCIT:C12378 ! Digestive System
 
 [Term]
 id: NCIT:C15492
@@ -104,6 +211,13 @@ synonym: "Her2/Neu Value" EXACT []
 is_a: NCIT:C94299 ! Receptor Status
 
 [Term]
+id: NCIT:C16203
+name: Clinical or Research Activity
+def: "Any specific activity undertaken during the course of a clinical study or research protocol." []
+synonym: "Clinical or Research Activity" EXACT []
+is_a: NCIT:C43431 ! Activity
+
+[Term]
 id: NCIT:C16273
 name: Alcohol Consumption
 def: "Consumption of liquids containing ethanol, including the behaviors associated with drinking the alcohol." []
@@ -166,6 +280,29 @@ def: "The observable response of a person." []
 synonym: "Personal Behavior" EXACT []
 synonym: "Personal Conduct" EXACT []
 is_a: NCIT:C16326 ! Behavior
+
+[Term]
+id: NCIT:C25218
+name: Intervention or Procedure
+def: "An activity that produces an effect, or that is intended to alter the course of a disease in a patient or population. This is a general term that encompasses the medical, social, behavioral, and environmental acts that can have preventive, therapeutic, or palliative effects." []
+synonym: "Intervention" EXACT []
+synonym: "intervention" EXACT []
+synonym: "Intervention or Procedure" EXACT []
+synonym: "Intervention Strategies" EXACT []
+synonym: "Interventional" EXACT []
+synonym: "interventionDescription" EXACT []
+synonym: "Procedure" EXACT []
+is_a: NCIT:C16203 ! Clinical or Research Activity
+
+[Term]
+id: NCIT:C25444
+name: Body Cavity
+def: "A natural hollow or sinus within the body." []
+synonym: "BODY CAVITY" EXACT []
+synonym: "Body Cavity" EXACT []
+synonym: "Cavity" EXACT []
+synonym: "cavity" EXACT []
+is_a: NCIT:C12219 ! Anatomic Structure, System, or Substance
 
 [Term]
 id: NCIT:C3367
@@ -368,6 +505,27 @@ synonym: "Presence of a Hormonal Syndrome" EXACT []
 is_a: NCIT:C36285 ! Endocrine System Finding
 
 [Term]
+id: NCIT:C49163
+name: Surgical Procedure by Site or System
+synonym: "Surgical Procedure by Site or System" EXACT []
+is_a: NCIT:C15329 ! Surgical Procedure
+
+[Term]
+id: NCIT:C49165
+name: Surgical Procedure by Method
+synonym: "Surgical Procedure by Method" EXACT []
+is_a: NCIT:C15329 ! Surgical Procedure
+
+[Term]
+id: NCIT:C52005
+name: Enterostomy
+def: "Surgical creation of an opening in the intestine." []
+synonym: "Enterostomy" EXACT []
+is_a: NCIT:C15290 ! Ostomy
+is_a: NCIT:C15330 ! Digestive System Surgery
+relationship: NCIT:R163 NCIT:C12736 ! Intestine
+
+[Term]
 id: NCIT:C53637
 name: Malignant Spindle Cell
 synonym: "Malignant Spindle Cell" EXACT []
@@ -423,4 +581,30 @@ name: Receptor Status
 def: "Refers to the presence or absence of specific receptor molecules on the surface of a cells in a specimen." []
 synonym: "Receptor Status" EXACT []
 is_a: NCIT:C36292 ! Laboratory Test Result
+
+[Typedef]
+id: NCIT:R163
+name: Procedure_Has_Target_Anatomy
+def: "A role used to assert a relationship between a procedure and its target anatomy, specifically that a particular procedure always has an association with the target anatomy. This role should be used when a more specific role cannot be asserted, including procedures targeting blood and other fluids. The domain and range for this role are 'Clinical or Research Activity' and 'Anatomic Structure, System, or Substance', respectively." []
+synonym: "Procedure_Has_Target_Anatomy" EXACT []
+domain: NCIT:C43431 ! Activity
+range: NCIT:C12219 ! Anatomic Structure, System, or Substance
+
+[Typedef]
+id: NCIT:R81
+name: Anatomic_Structure_Has_Location
+def: "A role used to indicate the physical location of an anatomic structure in the body. Both the domain and range for this role are 'Anatomic Structure, System, or Substance'." []
+synonym: "Anatomic_Structure_Has_Location" EXACT []
+domain: NCIT:C12219 ! Anatomic Structure, System, or Substance
+range: NCIT:C12219 ! Anatomic Structure, System, or Substance
+is_transitive: true
+
+[Typedef]
+id: NCIT:R82
+name: Anatomic_Structure_Is_Physical_Part_Of
+def: "A role used to indicate that an anatomic structure has a physical association with a broader system or organ. Both the domain and range for this role are 'Anatomic Structure, System, or Substance'." []
+synonym: "Anatomic_Structure_Is_Physical_Part_Of" EXACT []
+domain: NCIT:C12219 ! Anatomic Structure, System, or Substance
+range: NCIT:C12219 ! Anatomic Structure, System, or Substance
+is_transitive: true
 

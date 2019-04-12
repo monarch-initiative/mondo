@@ -775,6 +775,13 @@ modules/equiv-xrefs.obo: mondo-edit.obo
 mim2gene_medgen:
 	wget ftp://ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen && touch $@
 
+# g2g
+mim2gene.txt:
+	curl -L -s https://omim.org/static/omim/data/mim2gene.txt  > $@.tmp && mv $@.tmp $@
+
+diseases_to_genes.txt:
+	curl -L -s http://compbio.charite.de/jenkins/job/hpo.annotations.monthly/lastSuccessfulBuild/artifact/annotation/diseases_to_genes.txt > $@.tmp && mv $@.tmp $@
+
 omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
 

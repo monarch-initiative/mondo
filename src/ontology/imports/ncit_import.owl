@@ -38,11 +38,136 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_R163 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_R163">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <obo:IAO_0000115>A role used to assert a relationship between a procedure and its target anatomy, specifically that a particular procedure always has an association with the target anatomy. This role should be used when a more specific role cannot be asserted, including procedures targeting blood and other fluids. The domain and range for this role are &apos;Clinical or Research Activity&apos; and &apos;Anatomic Structure, System, or Substance&apos;, respectively.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Procedure_Has_Target_Anatomy</oboInOwl:hasExactSynonym>
+        <rdfs:label>Procedure_Has_Target_Anatomy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_R81 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_R81">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <obo:IAO_0000115>A role used to indicate the physical location of an anatomic structure in the body. Both the domain and range for this role are &apos;Anatomic Structure, System, or Substance&apos;.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Anatomic_Structure_Has_Location</oboInOwl:hasExactSynonym>
+        <rdfs:label>Anatomic_Structure_Has_Location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_R82 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_R82">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <obo:IAO_0000115>A role used to indicate that an anatomic structure has a physical association with a broader system or organ. Both the domain and range for this role are &apos;Anatomic Structure, System, or Substance&apos;.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Anatomic_Structure_Is_Physical_Part_Of</oboInOwl:hasExactSynonym>
+        <rdfs:label>Anatomic_Structure_Is_Physical_Part_Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C12219 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12219">
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12913"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C17828"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C7057"/>
+        <obo:IAO_0000115>A human biological structure, fluid or other substance; excludes single molecular entities.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Anatomic Structure, System, or Substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Anatomic Structures and Systems</oboInOwl:hasExactSynonym>
+        <rdfs:label>Anatomic Structure, System, or Substance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C12378 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12378">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12919"/>
+        <obo:IAO_0000115>The system that includes the esophagus, stomach, small and large intestine, anus, liver, biliary tract, and pancreas.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Body System, Gastrointestinal</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Digestive System</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>GASTROINTESTINAL SYSTEM</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gastrointestinal Body System</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gastrointestinal Organ System</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Gastrointestinal System</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Organ System, Gastrointestinal</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>digestive system</oboInOwl:hasExactSynonym>
+        <rdfs:label>Digestive System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C12664 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12664">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25444"/>
+        <obo:IAO_0000115>The portion of the body that lies between the thorax and the pelvis.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>ABDOMINAL CAVITY</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abdomen</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abdominal Cavity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>BODY CAVITY, ABDOMINAL</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>abdomen</oboInOwl:hasExactSynonym>
+        <rdfs:label>Abdomen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C12736 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12736">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C13018"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NCIT_R81"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12664"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NCIT_R82"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12378"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The portion of the gastrointestinal tract between the stomach and the anus. It includes the small intestine and large intestine.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Bowel</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>INTESTINE</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Intestines</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>bowel</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>intestine</oboInOwl:hasExactSynonym>
+        <rdfs:label>Intestine</rdfs:label>
+    </owl:Class>
     
 
 
@@ -71,6 +196,19 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C12919 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12919">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <obo:IAO_0000115>An anatomical structure that consists of organs and organ subclasses responsible for certain body functions.  Representative examples are the gastrointestinal system, urinary system, and hematopoietic system.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>BODSYS</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Body Systems</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Organ System</oboInOwl:hasExactSynonym>
+        <rdfs:label>Organ System</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C12922 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12922">
@@ -83,6 +221,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C13018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C13018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <obo:IAO_0000115>A unique macroscopic (gross) anatomic structure that performs specific functions. It is composed of various tissues.  An organ is part of an anatomic system or a body region. Representative examples include the heart, lung, liver, spleen, and uterus.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Organ</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>organ</oboInOwl:hasExactSynonym>
+        <rdfs:label>Organ</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C147564 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C147564">
@@ -91,6 +241,68 @@
         <oboInOwl:hasExactSynonym>Hormone Resistance</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Hormone Therapy Resistance</oboInOwl:hasExactSynonym>
         <rdfs:label>Hormone Resistance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C15290 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15290">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C49165"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NCIT_R163"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C13018"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Surgical creation of an opening in an organ.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Ostomy</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ostomy</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>surgical construction of a stoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>Ostomy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C15329 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15329">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25218"/>
+        <obo:IAO_0000115>A diagnostic or treatment procedure performed by manual and/or instrumental means, often involving an incision and the removal or replacement of a diseased organ or tissue; of or relating to or involving or used in surgery or requiring or amenable to treatment by surgery.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Operation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgery</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgical</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgical Interventions</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgical Procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgical Procedures</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgically</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>surgery</oboInOwl:hasExactSynonym>
+        <rdfs:label>Surgical Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C15330 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15330">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C49163"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NCIT_R163"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12378"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Surgery performed on any part of the digestive system.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Digestive System Surgery</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgery, Digestive System</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Surgery, Gastrointestinal</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>digestive system operative procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>digestive system surgical procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>gastrointestinal surgical procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>gastrointestinal system operative procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>operative procedure on the digestive system</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>operative procedure on the gastrointestinal system</oboInOwl:hasExactSynonym>
+        <rdfs:label>Digestive System Surgery</rdfs:label>
     </owl:Class>
     
 
@@ -192,6 +404,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C16203 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16203">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
+        <obo:IAO_0000115>Any specific activity undertaken during the course of a clinical study or research protocol.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Clinical or Research Activity</oboInOwl:hasExactSynonym>
+        <rdfs:label>Clinical or Research Activity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C16273 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16273">
@@ -284,6 +507,37 @@
         <oboInOwl:hasExactSynonym>Personal Behavior</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Personal Conduct</oboInOwl:hasExactSynonym>
         <rdfs:label>Personal Behavior</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C25218 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C25218">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16203"/>
+        <obo:IAO_0000115>An activity that produces an effect, or that is intended to alter the course of a disease in a patient or population. This is a general term that encompasses the medical, social, behavioral, and environmental acts that can have preventive, therapeutic, or palliative effects.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Intervention</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Intervention Strategies</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Intervention or Procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Interventional</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>intervention</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>interventionDescription</oboInOwl:hasExactSynonym>
+        <rdfs:label>Intervention or Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C25444 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C25444">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12219"/>
+        <obo:IAO_0000115>A natural hollow or sinus within the body.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>BODY CAVITY</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Body Cavity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Cavity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>cavity</oboInOwl:hasExactSynonym>
+        <rdfs:label>Body Cavity</rdfs:label>
     </owl:Class>
     
 
@@ -592,6 +846,44 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C36285"/>
         <oboInOwl:hasExactSynonym>Presence of a Hormonal Syndrome</oboInOwl:hasExactSynonym>
         <rdfs:label>Presence of a Hormonal Syndrome</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C49163 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C49163">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15329"/>
+        <oboInOwl:hasExactSynonym>Surgical Procedure by Site or System</oboInOwl:hasExactSynonym>
+        <rdfs:label>Surgical Procedure by Site or System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C49165 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C49165">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15329"/>
+        <oboInOwl:hasExactSynonym>Surgical Procedure by Method</oboInOwl:hasExactSynonym>
+        <rdfs:label>Surgical Procedure by Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C52005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C52005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15290"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15330"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NCIT_R163"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12736"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Surgical creation of an opening in the intestine.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Enterostomy</oboInOwl:hasExactSynonym>
+        <rdfs:label>Enterostomy</rdfs:label>
     </owl:Class>
     
 
