@@ -945,3 +945,6 @@ bg-stop:
 
 bg-clean:
 	rm bg-data/*
+
+succeed:
+	echo make succeeded
