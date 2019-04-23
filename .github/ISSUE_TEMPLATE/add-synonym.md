@@ -7,7 +7,7 @@ assignees: nicolevasilevsky
 
 ---
 
-**Mondo term (ID and Label**
+**Mondo term (ID and Label)**
 
 
 **Synonym to be added**
