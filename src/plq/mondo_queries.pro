@@ -3,6 +3,7 @@
 %:- use_module(library(rdf_owl/owl)).
 
 :- use_module(library(sparqlprog/emulate_builtins)).
+:- use_module(library(index_util)).
 
 :- rdf_register_prefix('MONDO','http://purl.obolibrary.org/obo/MONDO_').
 :- rdf_register_prefix('HP','http://purl.obolibrary.org/obo/HP_').
@@ -27,6 +28,12 @@
 :- rdf_register_prefix('OMIMPS','http://purl.obolibrary.org/obo/OMIMPS_').
 
 foo('0').
+
+ix :-
+        materialize_index(owl_edge(_,_,_,_)),
+        materialize_index(mondo_equiv_class_via_xref(_,_)),
+        materialize_index(xref_prefix(_,_,_)).
+
 
 call_unique(G) :- setof(G,G,Gs),member(G,Gs).
 
@@ -228,11 +235,14 @@ rel(C,equivalentTo,D) :- owl_equivalent_class(C,D), !.
 rel(C,directSiblingOf,D) :- subClassOf(C,Z),subClassOf(D,Z), !.
 rel(_,relatedTo,_).
 
-multi_basis(D,B1,B2) :-
-        lmatch("disease has basis in dysfunction of",P),
-        owl_edge(D,P,B1),
-        owl_edge(D,P,B2),
-        B1 @< B2.
+
+% pl2sparql -d index -g ix -A ~/repos/onto-mirror/void.ttl -f tsv -i mondo-edit.owl -c ../plq/mondo_queries.pro  -e -i ordo  disease_modifier_gene -l
+disease_modifier_gene(D,Dx,P,Gx,G) :-
+        %lmatch("Modifying germline mutation in",P),
+        owl_edge(Gx,P,Dx),
+        xref_prefix(Gx,G,"HGNC"),
+        mondo_equiv_class_via_xref(D,Dx).
+
 
 
 non_leaf_omim(X,Y,C,CY,Subsets) :-
