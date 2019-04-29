@@ -59,7 +59,7 @@ node {
             sh 'git branch --no-list | egrep -v "(  master$|\\*)" | xargs -r git branch -D'
             sh 'git reset --hard origin/master'
             sh "git checkout -B ${BUILD_TAG}"
-            sh "git merge origin/${TRAVIS_BRANCH}"
+            sh "git merge origin/${TRAVIS_PULL_REQUEST_BRANCH}"
             tagPending('Merged!') 
         }
         catch (exc) {
