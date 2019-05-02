@@ -1,12 +1,16 @@
+dist: bionic
 sudo: required
 
 services:
   - docker
 
 before_install:
+  - sudo apt install jq
   - env | sort
   # The following triggers the Jenkis build. Shahim is managing this.
-  - >
+  - > 
+    export CMTMSG="$(jq -nc --arg str "${TRAVIS_COMMIT_MESSAGE}" '$str')";
+    echo "Commit message is: ${CMTMSG}";  
     curl -X 
     POST "https://monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/build" 
     -H "Jenkins-Crumb:${ShahimCSRFCrumb}" 
@@ -15,7 +19,7 @@ before_install:
     "parameter": [
        {"name":"TRAVIS_BRANCH", "value":"'"${TRAVIS_BRANCH}"'"},
        {"name":"TRAVIS_COMMIT", "value":"'"${TRAVIS_COMMIT}"'"},
-       {"name":"TRAVIS_COMMIT_MESSAGE", "value":"'"${TRAVIS_COMMIT_MESSAGE}"'"},
+       {"name":"TRAVIS_COMMIT_MESSAGE", "value":'"${CMTMSG}"'},
        {"name":"TRAVIS_PULL_REQUEST", "value":"'"${TRAVIS_PULL_REQUEST}"'"},
        {"name":"TRAVIS_PULL_REQUEST_BRANCH", "value":"'"${TRAVIS_PULL_REQUEST_BRANCH}"'"},
        {"name":"TRAVIS_PULL_REQUEST_SHA", "value":"'"${TRAVIS_PULL_REQUEST_SHA}"'"},
@@ -36,6 +40,7 @@ branches:
   only:
     - master
     - test-travis
+    - jenkins-setup
 
 ### UNCOMMENT THIS AND ADD YOUR DETAILS:
 #notifications:
