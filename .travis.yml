@@ -29,14 +29,13 @@ before_script:
   - cd src/ontology
 
 script:
-  - ./run.sh make succeed
+  - ./run.sh make test
 
 # whitelist
 branches:
   only:
     - master
     - test-travis
-    - jenkins-setup-next
 
 ### UNCOMMENT THIS AND ADD YOUR DETAILS:
 #notifications:

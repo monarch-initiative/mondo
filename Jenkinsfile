@@ -13,7 +13,7 @@ def testMondo(){
 	stage('make test') {
 		try {
 			docker.image('obolibrary/odkfull').inside('--memory=100g -e ROBOT_JAVA_ARGS=-Xmx64G'){
-				sh 'cd src/ontology; make succeed'
+				sh 'cd src/ontology; make test'
 			} 
 			callerScript.tagSuccess('Tests passed!')
 		} catch (exc) {
@@ -25,8 +25,9 @@ def testMondo(){
 
 return this
 
-/*
+
 // the following is added to a script pipeline build in Jenkins before this file is loaded and ran
+/*
 node {
     
     stage ('Checkout'){
