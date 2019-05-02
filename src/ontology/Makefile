@@ -321,7 +321,9 @@ release: $(ONT).owl $(ONT).obo
 	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
 
 mondo-lastbuild.owl:
-	wget --no-check-certificate $(OBO)/mondo.owl -O $@.tmp && mv $@.tmp $@
+	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@
+mondo-lastbuild.obo:
+	curl -L -s $(OBO)/mondo.obo > $@.tmp && mv $@.tmp $@
 mondo-diff.md: mondo-lastbuild.owl 
 	owljs-diff -o $@ $< mondo.owl
 

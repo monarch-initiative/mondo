@@ -1,3 +1,9 @@
+# 2019-04-29 release
+
+ * Fix invalid ISBN of `NORD Guide to Rare Disorders` [Martin Larralde]
+ * un-obsoleted 'monogenic diabetes'. Closes #337 [Nicole]
+ * Use HPO rather than MONDO qualifier for refractory see #671
+
 # 2019-04-03 release
 
 This major release includes two large changes:
