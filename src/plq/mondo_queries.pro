@@ -5,6 +5,8 @@
 :- use_module(library(sparqlprog/emulate_builtins)).
 :- use_module(library(index_util)).
 
+:- use_module(library(sparqlprog/dataframe)).
+
 :- rdf_register_prefix('MONDO','http://purl.obolibrary.org/obo/MONDO_').
 :- rdf_register_prefix('HP','http://purl.obolibrary.org/obo/HP_').
 :- rdf_register_prefix('NCIT','http://purl.obolibrary.org/obo/NCIT_').
@@ -221,9 +223,17 @@ mondo2hgnc_inf(M,G) :- mondo2hgnc_inf(M,G,_).
 mondo2hgnc_conflict(M,G1,G2,Z1,Z2) :- mondo2hgnc_inf(M,G1,Z1),mondo2hgnc_inf(M,G2,Z2),G1 \= G2.
 mondo2hgnc_conflict(M,G1,G2) :- mondo2hgnc_conflict(M,G1,G2,_,_).
 
+
+gene_level_nested(C,D,G) :-
+        mondo2hgnc(C,G),
+        rdfs_subclass_of(C,D),
+        D\=C,
+        mondo2hgnc(D,G).
+
+
 % grep -i susc mim2gene_medgen | perl -npe 's@@OMIM:@' | cut -f1 | tbl2p -p s > susc.pro
 % ./mq -f tsv -l -c susc.pro mondo_susc > z
-mondo_susc(M) :-
+xxxmondo_susc(M) :-
         s(X),
         atom_string(X,Y),
         mondo_equiv_xref(M,Y).
@@ -244,6 +254,45 @@ disease_modifier_gene(D,Dx,P,Gx,G) :-
         mondo_equiv_class_via_xref(D,Dx).
 
 
+dataframe:dataframe(susceptibility,
+                    [[class=C]-susc(C),
+                     [omim=X]-entity_xref_prefix(C,X,"OMIM"),
+                     [orphanet=X]-entity_xref_prefix(C,X,"Orphanet")],
+                    [
+                     description('Proposed obsoletions for susceptibility terms')
+                    ]).
+susc(X) :-
+        tsearch('susceptibility to',X).
+
+unique_isa(C,D,Prefix,CXs,DXs) :-
+        owl:subClassOf_axiom(C,D,A),
+        rdf(A,oio:source,S),
+        curie_prefix(S,Prefix),
+        \+ ((rdf(A,oio:source,S2),
+             S2\=S)),
+        solutions(X,mondo_equiv_class_via_xref(C,X),CXs),
+        solutions(X,mondo_equiv_class_via_xref(D,X),DXs).
+
+dataframe:dataframe(unique_isa,
+                    [[child=C,
+                      parent=D,
+                      source=Prefix]-(
+                                      owl:subClassOf_axiom(C,D,A),
+                                      rdf(A,oio:source,S),
+                                      curie_prefix(S,Prefix),
+                                      \+ ((rdf(A,oio:source,S2),
+                                           S2\=S))),
+                     [child_xrefs=X]-mondo_equiv_class_via_xref(C,X),
+                     [parent_xrefs=X]-mondo_equiv_class_via_xref(D,X)
+                    ],
+                    [
+                     description('is-a relationships with a single source'),
+                     entity(child),
+                     entity(parent),
+                     iri(child_xrefs),
+                     iri(parent_xrefs)
+                     ]).
+        
 
 non_leaf_omim(X,Y,C,CY,Subsets) :-
         mondo_equiv_xref(X,Y,"OMIM"),

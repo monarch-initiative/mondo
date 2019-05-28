@@ -704,6 +704,15 @@ compare/axioms-%-all.owl: compare/%-plus-lsyns.owl mondo-edit.obo
 compare/entailed.obo: mondo-edit.obo
 	owltools --use-catalog $< --remove-axiom-annotations --reasoner elk --silence-elk --tag-entailed-axioms --set-ontology-id $(OBO)/mondo/$@ -o -f obo $@.tmp && perl -npe 's@{source="direct"}@{source="MONDO:Redundant"}@' $@.tmp > $@
 
+compare/entailed-isa.obo: compare/entailed.obo
+	obo-filter-tags.pl -t is_a -t id  | obo-grep.pl -r is_a - | grep -v ^import > $@
+
+compare/unique-isa.tsv: compare/entailed-isa.owl
+	 ./mq -i $< report unique_isa > $@
+
+compare/main.obo: mondo-edit.obo
+	owltools --use-catalog $< --remove-axiom-annotations  --set-ontology-id $(OBO)/mondo/$@ -o -f obo $@.tmp && perl -npe 's@{source="direct"}@{source="MONDO:Redundant"}@' $@.tmp > $@
+
 #compare/axioms-%.owl:
 #	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 #.PRECIOUS: compare/axioms-%.owl
