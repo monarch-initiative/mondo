@@ -1,7 +1,7 @@
 ---
 name: Add term
 about: New term suggestion for Mondo
-title: '[NTR]'
+title: "[NTR]"
 labels: New term request
 assignees: cmungall
 
