@@ -322,10 +322,12 @@ release: $(ONT).owl $(ONT).obo
 
 mondo-lastbuild.owl:
 	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@
-mondo-lastbuild.obo:
+mondo-lastbuild.obo: 
 	curl -L -s $(OBO)/mondo.obo > $@.tmp && mv $@.tmp $@
-mondo-diff.md: mondo-lastbuild.owl 
-	owljs-diff -o $@ $< mondo.owl
+#mondo-diff.md: mondo-lastbuild.owl 
+#	owljs-diff -o $@ $< mondo.owl
+mondo-diff.txt: mondo-lastbuild.obo
+	obo-simple-diff.pl $< mondo.obo >  $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Editing
