@@ -658,21 +658,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0003001 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003001">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115>a produced_by b iff some process that occurs_in b has_output a.</obo:IAO_0000115>
-        <obo:IAO_0000117>Melissa Haendel</obo:IAO_0000117>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">produced by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
@@ -922,18 +907,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_00001092 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001092">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002381"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411297"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product which is derived from or produced by an animal that has a vertibrae.</obo:IAO_0000115>
@@ -946,17 +919,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_00001093 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001093">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001173"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411324"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
         <rdfs:label xml:lang="en">cereal grain food product</rdfs:label>
     </owl:Class>
@@ -1358,9 +1320,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FOODON_00002505 -->
+    <!-- http://purl.obolibrary.org/obo/FOODON_00002581 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002505"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002581"/>
     
 
 
@@ -1495,17 +1457,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_03305803 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03305803">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003001"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412611"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001911"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -1523,17 +1474,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_03307455 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03307455">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003001"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411201"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03302116"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -1758,18 +1698,6 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411047 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411047">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411347"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1047</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">grain or seed-producing plant</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FOODON_03411059 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411059">
@@ -1810,67 +1738,6 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
         <oboInOwl:hasSynonym xml:lang="en">penaeid shrimps</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">penaeidae</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">penaeid shrimp family</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411134 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411134">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411297"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1134</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">animal (mammal)</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411161 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411161">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9913"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9913"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414374"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos taurus*... with three subspecies: *Bos taurus primigenius, Bos taurus indicus, Bos taurus taurus*. [https://en.wikipedia.org/wiki/Cattle]</obo:IAO_0000115>
-        <obo:IAO_0000119>WIKIPEDIA:Domestic_cattle</obo:IAO_0000119>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9913"/>
-        <oboInOwl:hasDbXref>ITIS:183838</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MSW3:14200687</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/328699</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1161</oboInOwl:hasDbXref>
-        <oboInOwl:hasNarrowSynonym>Bos taurus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">auroch</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">bos spp.</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">bos taurus</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">cattle</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411201 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411201">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002505"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1201</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">domesticated cattle</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">dairy cow</rdfs:label>
     </owl:Class>
     
 
@@ -1920,87 +1787,19 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03411261 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411261">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">A fungus (plural: fungi or funguses) is any member of the group of eukaryotic organisms that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms. These organisms are classified as a kingdom, *Fungi*, which is separate from the other eukaryotic life kingdoms of plants and animals.[https://en.wikipedia.org/wiki/Fungus]</obo:IAO_0000115>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1261</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">fungi</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">funguses</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">fungus</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411261"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03411297 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411297">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Multicellular animal, e.g., fish, meat animal or poultry.</obo:IAO_0000115>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1297</oboInOwl:hasDbXref>
-        <rdfs:comment xml:lang="en">LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*.</rdfs:comment>
-        <rdfs:label xml:lang="en">vertebrate animal</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411297"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03411301 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411301">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Unicellular and multicellular algae.</obo:IAO_0000115>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1301</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">algae</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411324 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411324">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411047"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1324</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">grain plant</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411328 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411328">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411134"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-        <oboInOwl:hasDbXref>ITIS:180715</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MSW3:14200776</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/328660</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1328</oboInOwl:hasDbXref>
-        <oboInOwl:hasNarrowSynonym>Capra hircus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">capra hircus</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">goat</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411301"/>
     
 
 
@@ -2024,22 +1823,14 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03411347 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411347">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Multicellular plants.</obo:IAO_0000115>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1347</oboInOwl:hasDbXref>
-        <rdfs:comment xml:lang="en">LanguaL curation note: For unicellular plants as well as for algae, mushrooms and yeast, use the appropriate narrower term under *ALGAE OR FUNGUS USED AS FOOD SOURCE*.</rdfs:comment>
-        <rdfs:label xml:lang="en">plant</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411347"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03411374 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411374">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002452"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002581"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411433"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]</obo:IAO_0000115>
@@ -2133,79 +1924,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03412345 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412345">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Lichens are composite organisms consisting of a symbiotic association of a fungus (the mycobiont) with a photosynthetic partner (the photobiont or phycobiont), usually either a green alga (commonly *Trebouxia*) or cyanobacterium (commonly *Nostoc*).</obo:IAO_0000115>
-        <obo:IAO_0000119>WIKIPEDIA:Lichen</obo:IAO_0000119>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B2345</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">lichen</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03412611 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412611">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411328"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-        <oboInOwl:hasDbXref>ITIS:180715</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MSW3:14200776</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/328660</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B2611</oboInOwl:hasDbXref>
-        <oboInOwl:hasNarrowSynonym>Capra hircus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">capra hircus</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">nanny goat</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">doe (goat)</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03412702 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412702">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
-                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411328"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
-        <oboInOwl:hasDbXref>ITIS:180715</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MSW3:14200776</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/328660</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B2702</oboInOwl:hasDbXref>
-        <oboInOwl:hasNarrowSynonym>Capra hircus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
-        <rdfs:label xml:lang="en">kid</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412345"/>
     
 
 
@@ -2226,45 +1945,6 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B2846</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">bacteria</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03414374 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414374">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414381"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">The biological subfamily *Bovinae* includes a diverse group of 10 genera of medium- to large-sized ungulates, including domestic cattle, the bison, African buffalo, the water buffalo, the yak, and the four-horned and spiral-horned antelopes. The evolutionary relationship between the members of the group is obscure, and their classification into loose tribes rather than formal subgroups reflects this uncertainty. General characteristics include cloven hoofs and usually at least one of the sexes of a species having true horns.</obo:IAO_0000115>
-        <obo:IAO_0000119>WIKIPEDIA:Bovinae</obo:IAO_0000119>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://eol.org/pages/2851454</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B4374</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">bovinae</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">bovine</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03414381 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414381">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411134"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">A bovid (family *Bovidae*) is any of almost 140 species of cloven-hoofed, ruminant mammal which has males with characteristic unbranching horns covered in a permanent sheath of keratin.
-
-The family is widespread, being native to Asia, Africa, Europe and North America, and diverse: members include bison, African buffalo, water buffalo, antelopes, gazelles, sheep, goats, muskoxen, and domestic cattle.</obo:IAO_0000115>
-        <obo:IAO_0000119>WIKIPEDIA:Bovidae</obo:IAO_0000119>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://eol.org/pages/7687</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B4381</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">bovidae</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">bovid</rdfs:label>
     </owl:Class>
     
 
@@ -3085,29 +2765,6 @@ The family is widespread, being native to Asia, Africa, Europe and North America
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domestic cattle</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domestic cow</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bos taurus</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9925 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9925">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9963"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domestic goat</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goat</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goats</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Capra hircus</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9963 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9963">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9895"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caprinae</rdfs:label>
     </owl:Class>
     
 
