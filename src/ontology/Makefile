@@ -128,15 +128,19 @@ list_assets:
 	ls -alt $(ASSETS)
 	echo $(GHVERSION)
 
+check_version_set:
+	@test $(GHVERSION)
 
 # e.g. make deploy_release GHVERSION=v2018-10-26
 deploy_release: deploy_assets_direct deploy_assets_current
 
 deploy_assets_direct:
+	@test $(GHVERSION)
 	ls -alt $(ASSETS)
 	../utils/make-release-assets.py -c --release $(GHVERSION) $(ASSETS)
 
 deploy_assets_current:
+	@test $(GHVERSION)
 	ls -alt $(ASSETS)
 	../utils/make-release-assets.py -c -f --release current $(ASSETS)
 
