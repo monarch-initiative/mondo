@@ -1,3 +1,243 @@
+# 2019-05-28 release
+
+ * Fixed the names of many classes so abbreviation not in name; e.g.
+     * OPA6 --> optic atrophy 6
+     * immunodeficiency 47; IMD47 --> immunodeficiency 47
+ * Split out classic form of many diseases into own subclasses, e.g. X-linked sideroblastic anemia 1
+ * relabel MONDO_0013579. closes #669
+ * relabel MONDO_0009603. Closes #670
+ * fixed ISBNs [fix from @althonos]
+
+## New Classes
+
+ * [MONDO:0020711](http://purl.obolibrary.org/obo/MONDO_0020711) selective peripheral resistance to thyroid hormone
+ * [MONDO:0020712](http://purl.obolibrary.org/obo/MONDO_0020712) 46,XY sex reversal 1
+ * [MONDO:0020713](http://purl.obolibrary.org/obo/MONDO_0020713) pulmonary venoocclusive disease 1
+ * [MONDO:0020714](http://purl.obolibrary.org/obo/MONDO_0020714) mitochondrial myopathy, episodic, with optic atrophy and reversible leukoencephalopathy
+ * [MONDO:0020715](http://purl.obolibrary.org/obo/MONDO_0020715) Multiple system atrophy 1, susceptibility to
+ * [MONDO:0020716](http://purl.obolibrary.org/obo/MONDO_0020716) familial thyroid dyshormonogenesis 1
+ * [MONDO:0020717](http://purl.obolibrary.org/obo/MONDO_0020717) autosomal dominant woolly hair
+ * [MONDO:0020718](http://purl.obolibrary.org/obo/MONDO_0020718) congenital short bowel syndrome 1
+ * [MONDO:0020720](http://purl.obolibrary.org/obo/MONDO_0020720) X-linked hypophosphatemic rickets (recessive or dominant)
+ * [MONDO:0020721](http://purl.obolibrary.org/obo/MONDO_0020721) X-linked sideroblastic anemia 1
+ * [MONDO:0020722](http://purl.obolibrary.org/obo/MONDO_0020722) nephrolithiasis susceptibility caused by SLC26A1
+ * [MONDO:0020723](http://purl.obolibrary.org/obo/MONDO_0020723) vitamin D-dependent rickets, type 1A
+ * [MONDO:0020724](http://purl.obolibrary.org/obo/MONDO_0020724) familial cerebral cavernous malformation 1
+ * [MONDO:0020726](http://purl.obolibrary.org/obo/MONDO_0020726) medullary cystic kidney disease 1
+ * [MONDO:0020727](http://purl.obolibrary.org/obo/MONDO_0020727) combined oxidative phosphorylation deficiency 22
+ * [MONDO:0020728](http://purl.obolibrary.org/obo/MONDO_0020728) hypouricemia, renal 1
+ * [MONDO:0020729](http://purl.obolibrary.org/obo/MONDO_0020729) autosomal recessive agammaglobulinemia 1
+ * [MONDO:0020730](http://purl.obolibrary.org/obo/MONDO_0020730) carpal tunnel syndrome 1
+ * [MONDO:0020732](http://purl.obolibrary.org/obo/MONDO_0020732) progeria
+ * [MONDO:0020733](http://purl.obolibrary.org/obo/MONDO_0020733) proximal symphalangism 1A
+ * [MONDO:0020734](http://purl.obolibrary.org/obo/MONDO_0020734) erythrocyte AMP deaminase deficiency
+ * [MONDO:0020735](http://purl.obolibrary.org/obo/MONDO_0020735) ACTH-independent macronodular adrenal hyperplasia 1
+ * [MONDO:0020736](http://purl.obolibrary.org/obo/MONDO_0020736) uncombable hair syndrome 1
+ * [MONDO:0020737](http://purl.obolibrary.org/obo/MONDO_0020737) optic atrophy 10 with or without ataxia, mental retardation, and seizures
+ * [MONDO:0020738](http://purl.obolibrary.org/obo/MONDO_0020738) multiple benign circumferential skin creases on limbs 1
+ * [MONDO:0020739](http://purl.obolibrary.org/obo/MONDO_0020739) autosomal recessive infantile hypercalcemia 1
+ * [MONDO:0020740](http://purl.obolibrary.org/obo/MONDO_0020740) ectodermal dysplasia and immunodeficiency 1
+ * [MONDO:0020741](http://purl.obolibrary.org/obo/MONDO_0020741) pyridoxine-dependent epilepsy caused by ALDH7A1 mutant
+ * [MONDO:0300000](http://purl.obolibrary.org/obo/MONDO_0300000) SSR3-CDG
+
+## Renaming
+
+ * [MONDO:0000206](http://purl.obolibrary.org/obo/MONDO_0000206) obsolete cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy; CADASIL --> obsolete cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy
+ * [MONDO:0007538](http://purl.obolibrary.org/obo/MONDO_0007538) hypocalcified amelogenesis imperfecta --> amelogenesis imperfecta, type 3A
+ * [MONDO:0007796](http://purl.obolibrary.org/obo/MONDO_0007796) hypoparathyroidism, familial isolated; FIH --> hypoparathyroidism, familial isolated
+ * [MONDO:0007818](http://purl.obolibrary.org/obo/MONDO_0007818) autosomal dominant hyper-IgE syndrome --> Hyper-IgE recurrent infection syndrome 1
+ * [MONDO:0008133](http://purl.obolibrary.org/obo/MONDO_0008133) autosomal dominant optic atrophy and cataract --> optic atrophy 3
+ * [MONDO:0008310](http://purl.obolibrary.org/obo/MONDO_0008310) progeria --> Hutchinson-Gilford progeria syndrome
+ * [MONDO:0008686](http://purl.obolibrary.org/obo/MONDO_0008686) woolly hair (disease) --> isolated familial woolly hair disorder
+ * [MONDO:0009329](http://purl.obolibrary.org/obo/MONDO_0009329) pulmonary capillary hemangiomatosis --> pulmonary venoocclusive disease 2
+ * [MONDO:0009459](http://purl.obolibrary.org/obo/MONDO_0009459) channelopathy-associated congenital insensitivity to pain --> channelopathy-associated congenital insensitivity to pain, autosomal recessive
+ * [MONDO:0009603](http://purl.obolibrary.org/obo/MONDO_0009603) neurodegeneration due to 3-hydroxyisobutyryl-CoA hydrolase deficiency --> 3-hydroxyisobutyryl-CoA hydrolase deficiency
+ * [MONDO:0009637](http://purl.obolibrary.org/obo/MONDO_0009637) mitochondrial myopathy --> inborn mitochondrial myopathy
+ * [MONDO:0009786](http://purl.obolibrary.org/obo/MONDO_0009786) OPA6 --> optic atrophy 6
+ * [MONDO:0010176](http://purl.obolibrary.org/obo/MONDO_0010176) Joubert syndrome with orofaciodigital defect --> orofaciodigital syndrome type 6
+ * [MONDO:0010182](http://purl.obolibrary.org/obo/MONDO_0010182) hypercarotenemia and vitamin a deficiency, autosomal recessive --> hypercarotenemia and vitamin A deficiency, autosomal recessive
+ * [MONDO:0010502](http://purl.obolibrary.org/obo/MONDO_0010502) intellectual disability, X-linked 99, syndromic, female-restricted; MRXS99F --> intellectual disability, X-linked 99, syndromic, female-restricted
+ * [MONDO:0010504](http://purl.obolibrary.org/obo/MONDO_0010504) immunodeficiency 47; IMD47 --> immunodeficiency 47
+ * [MONDO:0010506](http://purl.obolibrary.org/obo/MONDO_0010506) intellectual disability, X-linked 61; MRX61 --> intellectual disability, X-linked 61
+ * [MONDO:0010508](http://purl.obolibrary.org/obo/MONDO_0010508) intellectual disability, X-linked 103; MRX103 --> intellectual disability, X-linked 103
+ * [MONDO:0010509](http://purl.obolibrary.org/obo/MONDO_0010509) intellectual disability, X-linked 104; MRX104 --> intellectual disability, X-linked 104
+ * [MONDO:0010510](http://purl.obolibrary.org/obo/MONDO_0010510) intellectual disability, X-linked 105; MRX105 --> intellectual disability, X-linked 105
+ * [MONDO:0010511](http://purl.obolibrary.org/obo/MONDO_0010511) vas deferens, congenital bilateral aplasia of, X-linked; CBAVDX --> vas deferens, congenital bilateral aplasia of, X-linked
+ * [MONDO:0010512](http://purl.obolibrary.org/obo/MONDO_0010512) intellectual disability, X-linked, syndromic, bain type; MRXSB --> intellectual disability, X-linked, syndromic, bain type
+ * [MONDO:0010513](http://purl.obolibrary.org/obo/MONDO_0010513) intellectual disability, X-linked, syndromic, Borck type; MRXSBRK --> intellectual disability, X-linked, syndromic, Borck type
+ * [MONDO:0010515](http://purl.obolibrary.org/obo/MONDO_0010515) Meester-Loeys syndrome; MRLS --> Meester-Loeys syndrome
+ * [MONDO:0010516](http://purl.obolibrary.org/obo/MONDO_0010516) midface hypoplasia, hearing impairment, elliptocytosis, and nephrocalcinosis; MFHIEN --> midface hypoplasia, hearing impairment, elliptocytosis, and nephrocalcinosis
+ * [MONDO:0010517](http://purl.obolibrary.org/obo/MONDO_0010517) ciliary dyskinesia, primary, 36, X-linked; CILD36 --> ciliary dyskinesia, primary, 36, X-linked
+ * [MONDO:0010619](http://purl.obolibrary.org/obo/MONDO_0010619) X-linked hypophosphatemic rickets --> X-linked dominant hypophosphatemic rickets
+ * [MONDO:0010698](http://purl.obolibrary.org/obo/MONDO_0010698) early-onset X-linked optic atrophy --> optic atrophy 2
+ * [MONDO:0011536](http://purl.obolibrary.org/obo/MONDO_0011536) OPA4 --> optic atrophy 4
+ * [MONDO:0012543](http://purl.obolibrary.org/obo/MONDO_0012543) OPA5 --> optic atrophy 5
+ * [MONDO:0012720](http://purl.obolibrary.org/obo/MONDO_0012720) Krabbe disease, atypical, due to saposin a deficiency --> Krabbe disease, atypical, due to saposin A deficiency
+ * [MONDO:0012806](http://purl.obolibrary.org/obo/MONDO_0012806) ectodermal dysplasia, anhidrotic, with T-cell immunodeficiency, autosomal dominant --> ectodermal dysplasia and immunodeficiency 2
+ * [MONDO:0012910](http://purl.obolibrary.org/obo/MONDO_0012910) ARHI1 --> age-related hearing impairment 1
+ * [MONDO:0013068](http://purl.obolibrary.org/obo/MONDO_0013068) ARHI2 --> age-related hearing impairment 2
+ * [MONDO:0013237](http://purl.obolibrary.org/obo/MONDO_0013237) mononeuropathy of the median nerve, mild --> susceptibility to mononeuropathy of the median nerve, mild
+ * [MONDO:0013579](http://purl.obolibrary.org/obo/MONDO_0013579) developmental delay due to methylmalonate semialdehyde dehydrogenase deficiency --> methylmalonate semialdehyde dehydrogenase deficiency
+ * [MONDO:0014571](http://purl.obolibrary.org/obo/MONDO_0014571) optic atrophy 8 --> optic atrophy 9
+ * [MONDO:0014712](http://purl.obolibrary.org/obo/MONDO_0014712) Senior-Loken syndrome 9; SLSN9 --> Senior-Loken syndrome 9
+ * [MONDO:0014713](http://purl.obolibrary.org/obo/MONDO_0014713) porokeratosis 9, multiple types; POROK9 --> porokeratosis 9, multiple types
+ * [MONDO:0014718](http://purl.obolibrary.org/obo/MONDO_0014718) epileptic encephalopathy, early infantile, 34; EIEE34 --> epileptic encephalopathy, early infantile, 34
+ * [MONDO:0014727](http://purl.obolibrary.org/obo/MONDO_0014727) immunodeficiency 45; IMD45 --> immunodeficiency 45
+ * [MONDO:0014730](http://purl.obolibrary.org/obo/MONDO_0014730) microcephaly 16, primary, autosomal recessive; MCPH16 --> microcephaly 16, primary, autosomal recessive
+ * [MONDO:0014734](http://purl.obolibrary.org/obo/MONDO_0014734) epilepsy, idiopathic generalized, susceptibility to, 14; EIG14 --> epilepsy, idiopathic generalized, susceptibility to, 14
+ * [MONDO:0014737](http://purl.obolibrary.org/obo/MONDO_0014737) dehydrated hereditary stomatocytosis 2; DHS2 --> dehydrated hereditary stomatocytosis 2
+ * [MONDO:0014742](http://purl.obolibrary.org/obo/MONDO_0014742) Parkinson disease 22, autosomal dominant; PARK22 --> Parkinson disease 22, autosomal dominant
+ * [MONDO:0014749](http://purl.obolibrary.org/obo/MONDO_0014749) tooth agenesis, selective, 7; STHAG7 --> tooth agenesis, selective, 7
+ * [MONDO:0014752](http://purl.obolibrary.org/obo/MONDO_0014752) nephrotic syndrome, type 11; NPHS11 --> nephrotic syndrome, type 11
+ * [MONDO:0014753](http://purl.obolibrary.org/obo/MONDO_0014753) autosomal recessive isolated optic atrophy --> autosomal recessive optic atrophy
+ * [MONDO:0014755](http://purl.obolibrary.org/obo/MONDO_0014755) skin creases, congenital symmetric circumferential, 2; CSCSC2 --> skin creases, congenital symmetric circumferential, 2
+ * [MONDO:0014756](http://purl.obolibrary.org/obo/MONDO_0014756) tremor, hereditary essential, 5; ETM5 --> tremor, hereditary essential, 5
+ * [MONDO:0014758](http://purl.obolibrary.org/obo/MONDO_0014758) radioulnar synostosis with amegakaryocytic thrombocytopenia 2; RUSAT2 --> radioulnar synostosis with amegakaryocytic thrombocytopenia 2
+ * [MONDO:0014759](http://purl.obolibrary.org/obo/MONDO_0014759) intellectual disability, autosomal recessive 51; MRT51 --> intellectual disability, autosomal recessive 51
+ * [MONDO:0014762](http://purl.obolibrary.org/obo/MONDO_0014762) heterotaxy, visceral, 7, autosomal; HTX7 --> heterotaxy, visceral, 7, autosomal
+ * [MONDO:0014774](http://purl.obolibrary.org/obo/MONDO_0014774) neuroblastoma, susceptibility to, 7; NBLST7 --> neuroblastoma, susceptibility to, 7
+ * [MONDO:0014777](http://purl.obolibrary.org/obo/MONDO_0014777) hypotonia, infantile, with psychomotor retardation and characteristic facies 2; IHPRF2 --> hypotonia, infantile, with psychomotor retardation and characteristic facies 2
+ * [MONDO:0014778](http://purl.obolibrary.org/obo/MONDO_0014778) lamb-Shaffer syndrome; LAMSHF --> Lamb-Shaffer syndrome
+ * [MONDO:0014779](http://purl.obolibrary.org/obo/MONDO_0014779) Wilms tumor 6; WT6 --> Wilms tumor 6
+ * [MONDO:0014780](http://purl.obolibrary.org/obo/MONDO_0014780) hyperphosphatasia with intellectual disability syndrome 6; HPMRS6 --> hyperphosphatasia with intellectual disability syndrome 6
+ * [MONDO:0014781](http://purl.obolibrary.org/obo/MONDO_0014781) combined oxidative phosphorylation deficiency 29; COXPD29 --> combined oxidative phosphorylation deficiency 29
+ * [MONDO:0014783](http://purl.obolibrary.org/obo/MONDO_0014783) preimplantation embryonic lethality 1; PREMBL1 --> preimplantation embryonic lethality 1
+ * [MONDO:0014785](http://purl.obolibrary.org/obo/MONDO_0014785) microcephaly, short stature, and impaired glucose metabolism 2; MSSGM2 --> microcephaly, short stature, and impaired glucose metabolism 2
+ * [MONDO:0014786](http://purl.obolibrary.org/obo/MONDO_0014786) IgA nephropathy, susceptibility to, 3; IGAN3 --> IgA nephropathy, susceptibility to, 3
+ * [MONDO:0014791](http://purl.obolibrary.org/obo/MONDO_0014791) Luscan-Lumish syndrome; LLs --> Luscan-Lumish syndrome
+ * [MONDO:0014792](http://purl.obolibrary.org/obo/MONDO_0014792) Paget disease of bone 6; PDB6 --> Paget disease of bone 6
+ * [MONDO:0014812](http://purl.obolibrary.org/obo/MONDO_0014812) metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration; MECRCN --> metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration
+ * [MONDO:0014817](http://purl.obolibrary.org/obo/MONDO_0014817) nephrotic syndrome, type 12; NPHS12 --> nephrotic syndrome, type 12
+ * [MONDO:0014818](http://purl.obolibrary.org/obo/MONDO_0014818) nephrotic syndrome, type 13; NPHS13 --> nephrotic syndrome, type 13
+ * [MONDO:0014820](http://purl.obolibrary.org/obo/MONDO_0014820) mitochondrial DNA depletion syndrome 14 (cardioencephalomyopathic type); MTDPS14 --> mitochondrial DNA depletion syndrome 14 (cardioencephalomyopathic type)
+ * [MONDO:0014826](http://purl.obolibrary.org/obo/MONDO_0014826) nucleoside diphosphate-linked moiety X Motif 15 deficiency; NUDT15D --> nucleoside diphosphate-linked moiety X Motif 15 deficiency
+ * [MONDO:0014833](http://purl.obolibrary.org/obo/MONDO_0014833) heart and brain malformation syndrome; HBMS --> heart and brain malformation syndrome
+ * [MONDO:0014834](http://purl.obolibrary.org/obo/MONDO_0014834) dyskinesia, limb and orofacial, infantile-onset; IOLOD --> dyskinesia, limb and orofacial, infantile-onset
+ * [MONDO:0014835](http://purl.obolibrary.org/obo/MONDO_0014835) striatal degeneration, autosomal dominant 2; ADSD2 --> striatal degeneration, autosomal dominant 2
+ * [MONDO:0014839](http://purl.obolibrary.org/obo/MONDO_0014839) chorea, childhood-onset, with psychomotor retardation; COCPMR --> chorea, childhood-onset, with psychomotor retardation
+ * [MONDO:0014840](http://purl.obolibrary.org/obo/MONDO_0014840) agammaglobulinemia 8, autosomal dominant; AGM8 --> agammaglobulinemia 8, autosomal dominant
+ * [MONDO:0014841](http://purl.obolibrary.org/obo/MONDO_0014841) trichothiodystrophy 6, nonphotosensitive; TTD6 --> trichothiodystrophy 6, nonphotosensitive
+ * [MONDO:0014842](http://purl.obolibrary.org/obo/MONDO_0014842) intellectual disability, autosomal dominant 41; MRD41 --> intellectual disability, autosomal dominant 41
+ * [MONDO:0014843](http://purl.obolibrary.org/obo/MONDO_0014843) premature ovarian failure 11; POF11 --> premature ovarian failure 11
+ * [MONDO:0014844](http://purl.obolibrary.org/obo/MONDO_0014844) premature ovarian failure 12; POF12 --> premature ovarian failure 12
+ * [MONDO:0014845](http://purl.obolibrary.org/obo/MONDO_0014845) spinocerebellar ataxia, autosomal recessive 22; SCAR22 --> spinocerebellar ataxia, autosomal recessive 22
+ * [MONDO:0014847](http://purl.obolibrary.org/obo/MONDO_0014847) spermatogenic failure 15; SPGF15 --> spermatogenic failure 15
+ * [MONDO:0014850](http://purl.obolibrary.org/obo/MONDO_0014850) retinitis pigmentosa and erythrocytic microcytosis; RPEM --> retinitis pigmentosa and erythrocytic microcytosis
+ * [MONDO:0014851](http://purl.obolibrary.org/obo/MONDO_0014851) hypercalcemia, infantile, 2; HCINF2 --> hypercalcemia, infantile 2
+ * [MONDO:0014852](http://purl.obolibrary.org/obo/MONDO_0014852) palmoplantar carcinoma, multiple self-healing; MSPC --> palmoplantar carcinoma, multiple self-healing
+ * [MONDO:0014857](http://purl.obolibrary.org/obo/MONDO_0014857) neurodevelopmental disorder with or without anomalies of the brain, eye, or heart; NEDBEH --> neurodevelopmental disorder with or without anomalies of the brain, eye, or heart
+ * [MONDO:0014859](http://purl.obolibrary.org/obo/MONDO_0014859) epileptic encephalopathy, early infantile, 37; EIEE37 --> epileptic encephalopathy, early infantile, 37
+ * [MONDO:0014860](http://purl.obolibrary.org/obo/MONDO_0014860) polycystic liver disease 2; PCLD2 --> polycystic liver disease 2
+ * [MONDO:0014861](http://purl.obolibrary.org/obo/MONDO_0014861) autoimmune disease, multisystem, infantile-onset, 2; ADMIO2 --> autoimmune disease, multisystem, infantile-onset, 2
+ * [MONDO:0014862](http://purl.obolibrary.org/obo/MONDO_0014862) cerebral palsy, spastic quadriplegic, 3; CPSQ3 --> cerebral palsy, spastic quadriplegic, 3
+ * [MONDO:0014863](http://purl.obolibrary.org/obo/MONDO_0014863) macrocephaly, dysmorphic facies, and psychomotor retardation; MDFPMR --> macrocephaly, dysmorphic facies, and psychomotor retardation
+ * [MONDO:0014864](http://purl.obolibrary.org/obo/MONDO_0014864) hypermanganesemia with dystonia 2; HMNDYT2 --> hypermanganesemia with dystonia 2
+ * [MONDO:0014867](http://purl.obolibrary.org/obo/MONDO_0014867) spinocerebellar ataxia 43; SCA43 --> spinocerebellar ataxia 43
+ * [MONDO:0014868](http://purl.obolibrary.org/obo/MONDO_0014868) epileptic encephalopathy, early infantile, 38; EIEE38 --> epileptic encephalopathy, early infantile, 38
+ * [MONDO:0014874](http://purl.obolibrary.org/obo/MONDO_0014874) pontocerebellar hypoplasia, type 2F; PCH2F --> pontocerebellar hypoplasia, type 2F
+ * [MONDO:0014875](http://purl.obolibrary.org/obo/MONDO_0014875) hyperaldosteronism, familial, type IV; HALD4 --> hyperaldosteronism, familial, type IV
+ * [MONDO:0014876](http://purl.obolibrary.org/obo/MONDO_0014876) intellectual disability, autosomal recessive 54; MRT54 --> intellectual disability, autosomal recessive 54
+ * [MONDO:0014877](http://purl.obolibrary.org/obo/MONDO_0014877) myopathy, distal, 5; MPD5 --> myopathy, distal, 5
+ * [MONDO:0014878](http://purl.obolibrary.org/obo/MONDO_0014878) patent ductus arteriosus 2; PDA2 --> patent ductus arteriosus 2
+ * [MONDO:0014884](http://purl.obolibrary.org/obo/MONDO_0014884) cholestasis, progressive familial intrahepatic, 5; PFIC5 --> cholestasis, progressive familial intrahepatic, 5
+ * [MONDO:0014885](http://purl.obolibrary.org/obo/MONDO_0014885) Hermansky-Pudlak syndrome 10; HPS10 --> Hermansky-Pudlak syndrome 10
+ * [MONDO:0014889](http://purl.obolibrary.org/obo/MONDO_0014889) striatonigral degeneration, childhood-onset; SNDC --> striatonigral degeneration, childhood-onset
+ * [MONDO:0014893](http://purl.obolibrary.org/obo/MONDO_0014893) Okur-Chung neurodevelopmental syndrome; OCNDS --> Okur-Chung neurodevelopmental syndrome
+ * [MONDO:0014894](http://purl.obolibrary.org/obo/MONDO_0014894) Meier-Gorlin syndrome 7; MGORS7 --> Meier-Gorlin syndrome 7
+ * [MONDO:0014895](http://purl.obolibrary.org/obo/MONDO_0014895) epileptic encephalopathy, early infantile, 40; EIEE40 --> epileptic encephalopathy, early infantile, 40
+ * [MONDO:0014897](http://purl.obolibrary.org/obo/MONDO_0014897) portal hypertension, noncirrhotic; NCPH --> portal hypertension, noncirrhotic
+ * [MONDO:0014898](http://purl.obolibrary.org/obo/MONDO_0014898) progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 3; PEOB3 --> progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 3
+ * [MONDO:0014901](http://purl.obolibrary.org/obo/MONDO_0014901) tooth agenesis, selective, 8; STHAG8 --> tooth agenesis, selective, 8
+ * [MONDO:0014902](http://purl.obolibrary.org/obo/MONDO_0014902) nasopharyngeal carcinoma, susceptibility to, 3; NPCA3 --> nasopharyngeal carcinoma, susceptibility to, 3
+ * [MONDO:0014903](http://purl.obolibrary.org/obo/MONDO_0014903) seizures, benign familial infantile, 5; BFIS5 --> seizures, benign familial infantile, 5
+ * [MONDO:0014904](http://purl.obolibrary.org/obo/MONDO_0014904) congenital disorder of glycosylation, type IAA; CDG1AA --> congenital disorder of glycosylation, type IAA
+ * [MONDO:0014907](http://purl.obolibrary.org/obo/MONDO_0014907) short-rib thoracic dysplasia 15 with polydactyly; SRTD15 --> short-rib thoracic dysplasia 15 with polydactyly
+ * [MONDO:0014908](http://purl.obolibrary.org/obo/MONDO_0014908) microcephaly 17, primary, autosomal recessive; MCPH17 --> microcephaly 17, primary, autosomal recessive
+ * [MONDO:0014911](http://purl.obolibrary.org/obo/MONDO_0014911) growth retardation, intellectual developmental disorder, hypotonia, and hepatopathy; GRIDHH --> growth retardation, intellectual developmental disorder, hypotonia, and hepatopathy
+ * [MONDO:0014914](http://purl.obolibrary.org/obo/MONDO_0014914) Dias-Logan syndrome; DILOS --> Dias-Logan syndrome
+ * [MONDO:0014915](http://purl.obolibrary.org/obo/MONDO_0014915) short-rib thoracic dysplasia 16 with or without polydactyly; SRTD16 --> short-rib thoracic dysplasia 16 with or without polydactyly
+ * [MONDO:0014916](http://purl.obolibrary.org/obo/MONDO_0014916) epileptic encephalopathy, early infantile, 41; EIEE41 --> epileptic encephalopathy, early infantile, 41
+ * [MONDO:0014917](http://purl.obolibrary.org/obo/MONDO_0014917) epileptic encephalopathy, early infantile, 42; EIEE42 --> epileptic encephalopathy, early infantile, 42
+ * [MONDO:0014919](http://purl.obolibrary.org/obo/MONDO_0014919) sessile serrated polyposis cancer syndrome; SSPCS --> sessile serrated polyposis cancer syndrome
+ * [MONDO:0014921](http://purl.obolibrary.org/obo/MONDO_0014921) epileptic encephalopathy, early infantile, 43; EIEE43 --> epileptic encephalopathy, early infantile, 43
+ * [MONDO:0014923](http://purl.obolibrary.org/obo/MONDO_0014923) peeling skin syndrome 5; PSS5 --> peeling skin syndrome 5
+ * [MONDO:0014924](http://purl.obolibrary.org/obo/MONDO_0014924) epilepsy, familial focal, with variable foci 2; FFEVF2 --> epilepsy, familial focal, with variable foci 2
+ * [MONDO:0014925](http://purl.obolibrary.org/obo/MONDO_0014925) epilepsy, familial focal, with variable foci 3; FFEVF3 --> epilepsy, familial focal, with variable foci 3
+ * [MONDO:0014926](http://purl.obolibrary.org/obo/MONDO_0014926) Bardet-Biedl syndrome 20; BBS20 --> Bardet-Biedl syndrome 20
+ * [MONDO:0014929](http://purl.obolibrary.org/obo/MONDO_0014929) retinitis pigmentosa 76; RP76 --> retinitis pigmentosa 76
+ * [MONDO:0014930](http://purl.obolibrary.org/obo/MONDO_0014930) intellectual disability, autosomal recessive 56; MRT56 --> intellectual disability, autosomal recessive 56
+ * [MONDO:0014931](http://purl.obolibrary.org/obo/MONDO_0014931) Alazami-Yuan syndrome; ALYUS --> Alazami-Yuan syndrome
+ * [MONDO:0014933](http://purl.obolibrary.org/obo/MONDO_0014933) epileptic encephalopathy, early infantile, 44; EIEE44 --> epileptic encephalopathy, early infantile, 44
+ * [MONDO:0014934](http://purl.obolibrary.org/obo/MONDO_0014934) spinocerebellar ataxia, autosomal recessive 24; SCAR24 --> spinocerebellar ataxia, autosomal recessive 24
+ * [MONDO:0014935](http://purl.obolibrary.org/obo/MONDO_0014935) frontometaphyseal dysplasia 2; FMD2 --> frontometaphyseal dysplasia 2
+ * [MONDO:0014937](http://purl.obolibrary.org/obo/MONDO_0014937) aniridia 2; AN2 --> aniridia 2
+ * [MONDO:0014938](http://purl.obolibrary.org/obo/MONDO_0014938) aniridia 3; AN3 --> aniridia 3
+ * [MONDO:0014940](http://purl.obolibrary.org/obo/MONDO_0014940) neurodegeneration with ataxia, dystonia, and gaze palsy, childhood-onset; NADGP --> neurodegeneration with ataxia, dystonia, and gaze palsy, childhood-onset
+ * [MONDO:0014941](http://purl.obolibrary.org/obo/MONDO_0014941) arthrogryposis, distal, with impaired proprioception and touch; DAIPT --> arthrogryposis, distal, with impaired proprioception and touch
+ * [MONDO:0014942](http://purl.obolibrary.org/obo/MONDO_0014942) epileptic encephalopathy, early infantile, 45; EIEE45 --> epileptic encephalopathy, early infantile, 45
+ * [MONDO:0014945](http://purl.obolibrary.org/obo/MONDO_0014945) myopathy, distal, with rimmed vacuoles; DMRV --> myopathy, distal, with rimmed vacuoles
+ * [MONDO:0014946](http://purl.obolibrary.org/obo/MONDO_0014946) Sifrim-Hitz-Weiss syndrome; SIHIWES --> Sifrim-Hitz-Weiss syndrome
+ * [MONDO:0014947](http://purl.obolibrary.org/obo/MONDO_0014947) epileptic encephalopathy, early infantile, 46; EIEE46 --> epileptic encephalopathy, early infantile, 46
+ * [MONDO:0014948](http://purl.obolibrary.org/obo/MONDO_0014948) short stature, rhizomelic, with microcephaly, micrognathia, and developmental delay; SRMMD --> short stature, rhizomelic, with microcephaly, micrognathia, and developmental delay
+ * [MONDO:0014949](http://purl.obolibrary.org/obo/MONDO_0014949) epileptic encephalopathy, early infantile, 47; EIEE47 --> epileptic encephalopathy, early infantile, 47
+ * [MONDO:0014953](http://purl.obolibrary.org/obo/MONDO_0014953) intellectual developmental disorder with cardiac arrhythmia; IDDCA --> intellectual developmental disorder with cardiac arrhythmia
+ * [MONDO:0014955](http://purl.obolibrary.org/obo/MONDO_0014955) retinal dystrophy with or without extraocular anomalies; RDEOA --> retinal dystrophy with or without extraocular anomalies
+ * [MONDO:0014956](http://purl.obolibrary.org/obo/MONDO_0014956) Chitayat syndrome; CHYTS --> Chitayat syndrome
+ * [MONDO:0014957](http://purl.obolibrary.org/obo/MONDO_0014957) language delay and attention deficit-hyperactivity disorder/cognitive impairment with or without cardiac arrhythmia; LADCI --> language delay and attention deficit-hyperactivity disorder/cognitive impairment with or without cardiac arrhythmia
+ * [MONDO:0014958](http://purl.obolibrary.org/obo/MONDO_0014958) Harel-Yoon syndrome; HAYOS --> Harel-Yoon syndrome
+ * [MONDO:0014959](http://purl.obolibrary.org/obo/MONDO_0014959) mitochondrial DNA depletion syndrome 12a (cardiomyopathic type), autosomal dominant; MTDPS12A --> mitochondrial DNA depletion syndrome 12a (cardiomyopathic type), autosomal dominant
+ * [MONDO:0014960](http://purl.obolibrary.org/obo/MONDO_0014960) encephalopathy, progressive, early-onset, with brain edema and/or leukoencephalopathy; PEBEL --> encephalopathy, progressive, early-onset, with brain edema and/or leukoencephalopathy
+ * [MONDO:0014961](http://purl.obolibrary.org/obo/MONDO_0014961) spermatogenic failure 16; SPGF16 --> spermatogenic failure 16
+ * [MONDO:0014962](http://purl.obolibrary.org/obo/MONDO_0014962) intellectual disability, autosomal recessive 57; MRT57 --> intellectual disability, autosomal recessive 57
+ * [MONDO:0014963](http://purl.obolibrary.org/obo/MONDO_0014963) Shashi-Pena syndrome; SHAPNS --> Shashi-Pena syndrome
+ * [MONDO:0014964](http://purl.obolibrary.org/obo/MONDO_0014964) encephalopathy, progressive, early-onset, with brain atrophy and thin corpus callosum; PEBAT --> encephalopathy, progressive, early-onset, with brain atrophy and thin corpus callosum
+ * [MONDO:0014965](http://purl.obolibrary.org/obo/MONDO_0014965) lethal congenital contracture syndrome 11; LCCS11 --> lethal congenital contracture syndrome 11
+ * [MONDO:0014966](http://purl.obolibrary.org/obo/MONDO_0014966) periventricular nodular heterotopia 7; PVNH7 --> periventricular nodular heterotopia 7
+ * [MONDO:0014967](http://purl.obolibrary.org/obo/MONDO_0014967) heterotaxy, visceral, 8, autosomal; HTX8 --> heterotaxy, visceral, 8, autosomal
+ * [MONDO:0014968](http://purl.obolibrary.org/obo/MONDO_0014968) encephalopathy, progressive, with amyotrophy and optic atrophy; PEAMO --> encephalopathy, progressive, with amyotrophy and optic atrophy
+ * [MONDO:0014970](http://purl.obolibrary.org/obo/MONDO_0014970) spermatogenic failure 17; SPGF17 --> spermatogenic failure 17
+ * [MONDO:0014971](http://purl.obolibrary.org/obo/MONDO_0014971) amelogenesis imperfecta, hypomaturation type, IIa6; AI2A6 --> amelogenesis imperfecta, hypomaturation type, IIa6
+ * [MONDO:0014973](http://purl.obolibrary.org/obo/MONDO_0014973) sudden cardiac failure, infantile; SCFI --> sudden cardiac failure, infantile
+ * [MONDO:0014974](http://purl.obolibrary.org/obo/MONDO_0014974) sudden cardiac failure, alcohol-induced; SCFAI --> sudden cardiac failure, alcohol-induced
+ * [MONDO:0014975](http://purl.obolibrary.org/obo/MONDO_0014975) spastic paraplegia 78, autosomal recessive; SPG78 --> spastic paraplegia 78, autosomal recessive
+ * [MONDO:0014978](http://purl.obolibrary.org/obo/MONDO_0014978) preimplantation embryonic lethality 2; PREMBL2 --> preimplantation embryonic lethality 2
+ * [MONDO:0014979](http://purl.obolibrary.org/obo/MONDO_0014979) myoclonus, intractable, neonatal; NEIMY --> myoclonus, intractable, neonatal
+ * [MONDO:0014980](http://purl.obolibrary.org/obo/MONDO_0014980) cone-rod dystrophy and hearing loss; CRDHL --> cone-rod dystrophy and hearing loss
+ * [MONDO:0014981](http://purl.obolibrary.org/obo/MONDO_0014981) immunodeficiency 49; IMD49 --> immunodeficiency 49
+ * [MONDO:0014982](http://purl.obolibrary.org/obo/MONDO_0014982) myopia 25, autosomal dominant; MYP25 --> myopia 25, autosomal dominant
+ * [MONDO:0014988](http://purl.obolibrary.org/obo/MONDO_0014988) 3-methylglutaconic aciduria, type VIII; MGCA8 --> 3-methylglutaconic aciduria, type VIII
+ * [MONDO:0014989](http://purl.obolibrary.org/obo/MONDO_0014989) uncombable hair syndrome 2; UHS2 --> uncombable hair syndrome 2
+ * [MONDO:0014990](http://purl.obolibrary.org/obo/MONDO_0014990) uncombable hair syndrome 3; UHS3 --> uncombable hair syndrome 3
+ * [MONDO:0014992](http://purl.obolibrary.org/obo/MONDO_0014992) lissencephaly 8; LIS8 --> lissencephaly 8
+ * [MONDO:0014994](http://purl.obolibrary.org/obo/MONDO_0014994) global developmental delay, absent or hypoplastic corpus callosum, and dysmorphic facies; GDACCF --> global developmental delay, absent or hypoplastic corpus callosum, and dysmorphic facies
+ * [MONDO:0014995](http://purl.obolibrary.org/obo/MONDO_0014995) neurodevelopmental disorder with hypotonia, seizures, and absent language; NDHSAL --> neurodevelopmental disorder with hypotonia, seizures, and absent language
+ * [MONDO:0014996](http://purl.obolibrary.org/obo/MONDO_0014996) intellectual disability, autosomal recessive 58; MRT58 --> intellectual disability, autosomal recessive 58
+ * [MONDO:0014998](http://purl.obolibrary.org/obo/MONDO_0014998) glaucoma 3, primary congenital, E; GLC3E --> glaucoma 3, primary congenital, E
+ * [MONDO:0014999](http://purl.obolibrary.org/obo/MONDO_0014999) tooth agenesis, selective, 9; STHAG9 --> tooth agenesis, selective, 9
+ * [MONDO:0015000](http://purl.obolibrary.org/obo/MONDO_0015000) epileptic encephalopathy, early infantile, 48; EIEE48 --> epileptic encephalopathy, early infantile, 48
+ * [MONDO:0015001](http://purl.obolibrary.org/obo/MONDO_0015001) atrial fibrillation, familial, 18; ATFB18 --> atrial fibrillation, familial, 18
+ * [MONDO:0015002](http://purl.obolibrary.org/obo/MONDO_0015002) epileptic encephalopathy, early infantile, 49; EIEE49 --> epileptic encephalopathy, early infantile, 49
+ * [MONDO:0015003](http://purl.obolibrary.org/obo/MONDO_0015003) dystonia, childhood-onset, with optic atrophy and basal ganglia abnormalities; DYTOABG --> dystonia, childhood-onset, with optic atrophy and basal ganglia abnormalities
+ * [MONDO:0015004](http://purl.obolibrary.org/obo/MONDO_0015004) dystonia 28, childhood-onset; DYT28 --> dystonia 28, childhood-onset
+ * [MONDO:0015005](http://purl.obolibrary.org/obo/MONDO_0015005) epilepsy, early-onset, vitamin B6-dependent; EPVB6D --> epilepsy, early-onset, vitamin B6-dependent
+ * [MONDO:0015006](http://purl.obolibrary.org/obo/MONDO_0015006) epidermolysis bullosa simplex, generalized, with scarring and hair loss; EBSSH --> epidermolysis bullosa simplex, generalized, with scarring and hair loss
+ * [MONDO:0015008](http://purl.obolibrary.org/obo/MONDO_0015008) amelogenesis imperfecta, type Ij; AI1J --> amelogenesis imperfecta, type 1J
+ * [MONDO:0015009](http://purl.obolibrary.org/obo/MONDO_0015009) hydrops fetalis, nonimmune, and/or atrial septal defect, susceptibility to; HFASD --> hydrops fetalis, nonimmune, and/or atrial septal defect, susceptibility to
+ * [MONDO:0015011](http://purl.obolibrary.org/obo/MONDO_0015011) optic atrophy 11; OPA11 --> optic atrophy 11
+ * [MONDO:0015014](http://purl.obolibrary.org/obo/MONDO_0015014) coloboma, osteopetrosis, microphthalmia, macrocephaly, albinism, and deafness; COMMAD --> coloboma, osteopetrosis, microphthalmia, macrocephaly, albinism, and deafness
+ * [MONDO:0015018](http://purl.obolibrary.org/obo/MONDO_0015018) ichthyosis, congenital, autosomal recessive 12; ARCI12 --> ichthyosis, congenital, autosomal recessive 12
+ * [MONDO:0015020](http://purl.obolibrary.org/obo/MONDO_0015020) intellectual disability, autosomal recessive 59; MRT59 --> intellectual disability, autosomal recessive 59
+ * [MONDO:0015021](http://purl.obolibrary.org/obo/MONDO_0015021) hypotonia, ataxia, and delayed development syndrome; HADDS --> hypotonia, ataxia, and delayed development syndrome
+ * [MONDO:0015022](http://purl.obolibrary.org/obo/MONDO_0015022) intellectual developmental disorder with dysmorphic facies and ptosis; IDDDFP --> intellectual developmental disorder with dysmorphic facies and ptosis
+ * [MONDO:0015024](http://purl.obolibrary.org/obo/MONDO_0015024) ectodermal dysplasia 12, hypohidrotic/hair/tooth/nail type; ECTD12 --> ectodermal dysplasia 12, hypohidrotic/hair/tooth/nail type
+ * [MONDO:0015025](http://purl.obolibrary.org/obo/MONDO_0015025) epileptic encephalopathy, early infantile, 51; EIEE51 --> epileptic encephalopathy, early infantile, 51
+ * [MONDO:0015047](http://purl.obolibrary.org/obo/MONDO_0015047) hypoplastic amelogenesis imperfecta --> amelogenesis imperfecta type 1
+ * [MONDO:0015048](http://purl.obolibrary.org/obo/MONDO_0015048) hypomaturation amelogenesis imperfecta --> amelogenesis imperfecta type 2
+ * [MONDO:0015921](http://purl.obolibrary.org/obo/MONDO_0015921) arx-related epileptic encephalopathy --> ARX-related epileptic encephalopathy
+ * [MONDO:0018496](http://purl.obolibrary.org/obo/MONDO_0018496) arx-related encephalopathy-brain malformation spectrum --> ARX-related encephalopathy-brain malformation spectrum
+ * [MONDO:0024569](http://purl.obolibrary.org/obo/MONDO_0024569) OPA8 --> optic atrophy 8
+ * [MONDO:0024891](http://purl.obolibrary.org/obo/MONDO_0024891) non-infective meningitis --> non-infectious meningitis
+
 # 2019-04-29 release
 
  * Fix invalid ISBN of `NORD Guide to Rare Disorders` [Martin Larralde]

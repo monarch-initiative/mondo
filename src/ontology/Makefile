@@ -140,7 +140,6 @@ deploy_assets_direct:
 	../utils/make-release-assets.py -c --release $(GHVERSION) $(ASSETS)
 
 deploy_assets_current:
-	@test $(GHVERSION)
 	ls -alt $(ASSETS)
 	../utils/make-release-assets.py -c -f --release current $(ASSETS)
 
