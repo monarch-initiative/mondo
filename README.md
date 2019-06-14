@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/monarch-initiative/mondo.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo)
 
+<img src="https://cdn-images-1.medium.com/max/1600/1*-iXbTp6grc9jUQNvvwItgA.jpeg"/>
+
 # Mondo
 
 This is the repository for managing the Mondo Disease Ontology (Mondo). Mondo aims to harmonizes disease definitions across the world. For more details on this ontology see the page on OBO:
