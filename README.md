@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/monarch-initiative/mondo.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo)
 
-<img src="https://cdn-images-1.medium.com/max/1600/1*-iXbTp6grc9jUQNvvwItgA.jpeg"/>
+<img src="https://github.com/jmcmurry/closed-illustrations/blob/master/logos/mondo-logos/mondo_logo_black-banner.png"/>
 
 # Mondo
 
