@@ -1,0 +1,1 @@
+This is the home page for Mondo documentation.
