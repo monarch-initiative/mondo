@@ -1,1 +1,1 @@
-This is the home page for Mondo documentation. The current content was copied from [the Google Doc](https://docs.google.com/document/d/19bp9MpCHCxbjMmbntB2e5gZNzzNlu06DnDB8xcoSXK8/edit?usp=sharing) and is in the process of being reorganized and updated as needed.
+This is the home page for Mondo documentation.
