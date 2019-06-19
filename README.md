@@ -25,7 +25,7 @@ Editors of this ontology should use the edit version, [src/ontology/mondo-edit.o
 
 Read the editors guide first!
 
-http://bit.ly/mondo-editors
+https://mondo.readthedocs.io/en/latest/
 
 Layout:
 
