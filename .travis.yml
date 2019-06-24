@@ -10,9 +10,8 @@ before_install:
     export CMTMSG="$(jq -nc --arg str "${TRAVIS_COMMIT_MESSAGE}" '$str')";
     echo "Commit message is: ${CMTMSG}";  
     curl -X 
-    POST "https://monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/build" 
+    POST "https://essaids:${ShahimAPIToken}@monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/build" 
     -H "Jenkins-Crumb:${ShahimCSRFCrumb}" 
-    --user "essaids:${ShahimAPIToken}" 
     --form json='{
     "parameter": [
        {"name":"TRAVIS_BRANCH", "value":"'"${TRAVIS_BRANCH}"'"},
