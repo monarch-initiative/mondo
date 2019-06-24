@@ -9,10 +9,10 @@ before_install:
   - > 
     export CMTMSG="$(jq -nc --arg str "${TRAVIS_COMMIT_MESSAGE}" '$str')";
     echo "Commit message is: ${CMTMSG}";  
-    sudo apt install traceroute
-    ping -c 10 monarch-jenkins.cgrb.oregonstate.edu
-    traceroute monarch-jenkins.cgrb.oregonstate.edu
-    traceroute -6 monarch-jenkins.cgrb.oregonstate.edu
+    sudo apt install traceroute ;
+    ping -c 10 monarch-jenkins.cgrb.oregonstate.edu ;
+    traceroute monarch-jenkins.cgrb.oregonstate.edu ;
+    traceroute -6 monarch-jenkins.cgrb.oregonstate.edu ;
     curl -X
     POST "https://monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/build" 
     -H "Jenkins-Crumb:${ShahimCSRFCrumb}" 
