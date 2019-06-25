@@ -1,0 +1,1 @@
+This directory contains copies of the theme files that are used during a build. There are copied here to help with viewing them, and then copying them to there actual positions under the root directory if any customization is needed. The files were copied from [Minimal Mistakes release 4.16.4](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.16.4)
