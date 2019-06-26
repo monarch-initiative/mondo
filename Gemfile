@@ -6,3 +6,4 @@ source "https://rubygems.org"
 
 #gem "minimal-mistakes-jekyll", '~>4.16'
 gem "github-pages", group: :jekyll_plugins
+gem "jekyll-include-cache", "0.2.0"
