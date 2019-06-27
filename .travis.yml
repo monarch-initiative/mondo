@@ -1,3 +1,5 @@
+  GNU nano 3.2                                                     .travis.yml                                                               
+
 dist: bionic
 sudo: required
 
@@ -5,8 +7,6 @@ services:
   - docker
 
 before_install:
-  - sudo apt install jq
-  - env | sort
   # The following triggers the Jenkis build. Shahim is managing this.
   - >
     export CMTMSG="$(jq -nc --arg str "${TRAVIS_COMMIT_MESSAGE}" '$str')";
@@ -40,10 +40,10 @@ script:
 branches:
   only:
     - master
-    - test-travis
-    - jenkins-setup
-
 ### UNCOMMENT THIS AND ADD YOUR DETAILS:
 #notifications:
 #  email:
 #    - YOURNAME@YOU.ORG
+
+
+
