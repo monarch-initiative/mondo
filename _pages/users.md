@@ -12,11 +12,11 @@
 
 Stable release versions: 
 
-- [http://purl.obolibrary.org/obo/mondo.obo](http://purl.obolibrary.org/obo/mondo.obo)
--[http://purl.obolibrary.org/obo/mondo.json](http://purl.obolibrary.org/obo/mondo.json)
+- [http://purl.obolibrary.org/obo/mondo.obo](http://purl.obolibrary.org/obo/mondo.obo)  
+- [http://purl.obolibrary.org/obo/mondo.json](http://purl.obolibrary.org/obo/mondo.json)
 - [http://purl.obolibrary.org/obo/mondo.owl](http://purl.obolibrary.org/obo/mondo.owl)  
 
-See Changes.md for more details
+See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) for more details
 
 ## View Mondo
 
