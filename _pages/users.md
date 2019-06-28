@@ -2,13 +2,13 @@
 ---
 # Users
 
-## Download Mondo
+## Download Mondo:
 
 **Download**: https://github.com/monarch-initiative/mondo  
 **Format**: OWL and OBO formats  
 **License**: CC BY 3.0  
 
-## Versions
+## Versions:
 
 Stable release versions: 
 
@@ -18,7 +18,7 @@ Stable release versions:
 
 See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) for more details
 
-## View Mondo
+## View Mondo:
 
 **OBO Foundry**: http://obofoundry.org/ontology/mondo.html  
 **Ontology Lookup Service**: https://www.ebi.ac.uk/ols/ontologies/mondo  
