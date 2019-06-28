@@ -4,12 +4,22 @@
 
 ### How often is Mondo released?
 
-Mondo is released around the first of each month. See the latest release [here](https://github.com/monarch-initiative/mondo/releases)
+Mondo is released around the first of each month. See the latest release [here](https://github.com/monarch-initiative/mondo/releases).
 
-### How can I report a bug/request a new term/request changes, etc.
+### Am I allowed to change the content in Mondo?
 
-Please submit an issue on our [GitHub tracker](https://github.com/monarch-initiative/mondo). Note, you will need sign up for a free GitHub account, if you do not already have one.
+Mondo is a community-driven project and we welcome your feedback and suggested changes. We request that all proposed changed be suggested on [GitHub issue tracker](https://github.com/monarch-initiative/mondo), so they can be seen and discussed by the Mondo community. Note, you will need sign up for a free GitHub account, if you do not already have one.
 
-### How can I get involved
+### How can I collaborate with Mondo?
 
-Join the Mondo users group [here](https://groups.google.com/forum/#!forum/mondo-users)
+We welcome the participation of interested colleagues. We anticipate that the structure of Mondo will continue to be refined and completed for some time to come. Groups or persons with expert knowledge in a particular domain of disease(s) are invited to contribute their knowledge on a collaborative basis. Please contact us to discuss details.
+
+Join the Mondo users group [here](https://groups.google.com/forum/#!forum/mondo-users). {% comment %} add more content here, see HPO:  {% endcomment %}
+
+### How is Mondo releated to the Monarch Initiative?
+
+Mondo is the disease ontology for the [Monarch Initiative](https://monarchinitiative.org/), which is an NIH supported project that integrates, aligns, and re-distributes cross-species gene, genotype, variant, disease, and phenotype data. The [Monarch Browser](https://monarchinitiative.org/) allows users to browse not only human diseases but to see their links to other organisms, genes, phenotypes, and pathways, which may be of especial interest to translational researchers.
+
+{% comment %} ### What is an ontology? {% endcomment %}
+
+{% comment %} Review this page and add some more FAQs {% endcomment %}
