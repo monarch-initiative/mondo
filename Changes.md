@@ -1,3 +1,27 @@
+# 2019-06-29 release
+
+ * removed xref on 'osteopetrosis (disease)'. Closes #746
+ * add synonym to 'oculocutaneous albinism'. Addresses # 641
+ * update definition for 'inflammatory disease'.
+ * fix typo. Closes #698
+ * #708 removed synonym from MONDO:0009054 and added it to MONDO_0013751.
+ * remove comment, closes #82
+ * add new term MONDO_0100078 'resistant hypertension'. closes #673
+ * fixed typo in MONDO:0002149. Closes #725
+ * removed synonym from MONDO:0009054 and added it to MONDO_0013751. Closes #70
+ * update definition for 'inflammatory disease'. Closes #717
+
+## New Classes
+
+ * [MONDO:0100078](http://purl.obolibrary.org/obo/MONDO_0100078) resistant hypertension
+
+## Renaming
+
+ * [MONDO:0002149](http://purl.obolibrary.org/obo/MONDO_0002149) reproductive systen cancer --> reproductive system cancer
+ * [MONDO:0006120](http://purl.obolibrary.org/obo/MONDO_0006120) C-cell yyperplasia --> C-cell hyperplasia
+ * [MONDO:0014624](http://purl.obolibrary.org/obo/MONDO_0014624) BRWNS --> Brown syndrome
+
+
 # 2019-05-28 release
 
  * Fixed the names of many classes so abbreviation not in name; e.g.

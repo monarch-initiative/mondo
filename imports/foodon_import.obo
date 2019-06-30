@@ -114,6 +114,8 @@ name: foodon product type
 def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." []
 comment: The FoodOn product type class is provided as a food product category tree under which new food product categories and food products themselves can be placed.  This tree has upper level categories inspired from other product type schemes like the US Code of Federal Regulations.  However it has a much greater depth to it than the other product type schemes in an effort to group related products together.  The basis of this tree was inherited from the environment ontology (ENVO).
 is_a: FOODON:03400361 ! food product type
+intersection_of: FOODON:00002403 ! food material
+intersection_of: FOODON:03400361 ! food product type
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food xsd:anyURI
 
@@ -123,7 +125,6 @@ name: plant food product
 def: "This food product type includes food products which are derived from or produced by a plant." []
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:03411347 ! derives from
 property_value: IAO:0000114 IAO:0000428
 
@@ -142,6 +143,8 @@ id: FOODON:00001092
 name: vertebrate animal food product
 def: "A food product which is derived from or produced by an animal that has a vertibrae." []
 is_a: FOODON:00002381 ! food product by organism
+intersection_of: FOODON:00002381 ! food product by organism
+intersection_of: RO:0001000 FOODON:03411297 ! derives from
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
@@ -176,7 +179,6 @@ name: fungal food product
 def: "Fungal food products include edible fungi, mushrooms, and yeast." []
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:03411261 ! derives from
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
@@ -203,7 +205,6 @@ id: FOODON:00001176
 name: invertebrate animal food product
 is_a: FOODON:00002403 ! food material
 intersection_of: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:00002452 ! derives from
 
 [Term]
@@ -220,7 +221,6 @@ subset: subset_siren
 xref: SUBSET_SIREN:F10419
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002403 ! food material
 intersection_of: RO:0001000 FOODON:03411301 ! derives from
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -228,6 +228,9 @@ property_value: IAO:0000412 http://langual.org xsd:string
 id: FOODON:00001248
 name: fish food product
 is_a: FOODON:00001092 ! vertebrate animal food product
+relationship: FOODON:00001301 FOODON:00001854 ! has food substance analog fish food product analog
+relationship: RO:0001000 FOODON:03411222 ! derives from
+relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 
 [Term]
 id: FOODON:00001256
@@ -254,6 +257,11 @@ intersection_of: FOODON:00001176 ! invertebrate animal food product
 intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish
 
 [Term]
+id: FOODON:00001714
+name: food component
+is_a: FOODON:00001002 ! foodon product type
+
+[Term]
 id: FOODON:00001771
 name: cow milk based food product
 is_a: FOODON:00001118 ! cattle dairy food product
@@ -276,6 +284,22 @@ intersection_of: FOODON:00001046 ! seafood product
 intersection_of: RO:0001000 FOODON:03411374 ! derives from crustacean
 
 [Term]
+id: FOODON:00001854
+name: fish food product analog
+is_a: FOODON:00001871 ! food product analog
+relationship: FOODON:00001301 FOODON:00001248 ! has food substance analog fish food product
+
+[Term]
+id: FOODON:00001871
+name: food product analog
+is_a: FOODON:00001002 ! foodon product type
+
+[Term]
+id: FOODON:00001907
+name: gluten refined food product
+is_a: FOODON:00002131 ! plant based refined or partially-refined food product
+
+[Term]
 id: FOODON:00001911
 name: goat dairy food product
 is_a: FOODON:00001109 ! caprine dairy food product
@@ -287,8 +311,17 @@ id: FOODON:00002044
 name: mollusc food product
 name: mollusk food product
 is_a: FOODON:00001046 ! seafood product
-relationship: RO:0001000 FOODON:03412112 ! derives from molluscs
 property_value: IAO:0000116 "Note american/ gb english spelling variation" xsd:string
+
+[Term]
+id: FOODON:00002131
+name: plant based refined or partially-refined food product
+is_a: FOODON:00002196 ! refined or partially-refined food product
+
+[Term]
+id: FOODON:00002196
+name: refined or partially-refined food product
+is_a: FOODON:03311737 ! processed food product
 
 [Term]
 id: FOODON:00002239
@@ -348,6 +381,7 @@ id: FOODON:03302116
 name: cow milk (fluid)
 comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
 subset: subset_siren
+synonym: "cow milk" EXACT []
 xref: SUBSET_SIREN:F2116
 is_a: FOODON:00001771 ! cow milk based food product
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
@@ -382,6 +416,17 @@ comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no vis
 subset: subset_siren
 xref: SUBSET_SIREN:F7455
 is_a: FOODON:03302116 ! cow milk (fluid)
+intersection_of: UBERON:0001913 ! milk
+intersection_of: RO:0003001 FOODON:03411201 ! produced by
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03311737
+name: processed food product
+subset: subset_siren
+xref: SUBSET_SIREN:F11737
+is_a: FOODON:00001002 ! foodon product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -398,10 +443,18 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400004
-name: product type, other
+name: product type, other (deprecated)
 comment: LanguaL curation note: Used only if the product does not fall under any of the major product types listed. [FDA CFSAN 1995]
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0004
-is_a: FOODON:03400361 ! food product type
+is_a: ObsoleteClass ! Obsolete Class
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400129
+name: refined or partially-refined food product (us cfr)
+def: "Extract, concentrate or isolate derived from a food source through one or more refining steps (see *EXTRACT, CONCENTRATE OR ISOLATE OF PLANT OR ANIMAL*) and marketed as such. [FDA CFSAN 1995]" []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=A0129
+is_a: FOODON:03401270 ! product type,  u.s. code of federal regulations, title 21
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -622,20 +675,6 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
-id: FOODON:03412112
-name: molluscs
-def: "*Mollusca* is a large phylum of invertebrate animals whose members are known as molluscs or mollusks. Molluscs are the largest marine phylum, comprising about 23% of all the named marine organisms. Numerous molluscs also live in freshwater and terrestrial habitats. [https://en.wikipedia.org/wiki/Mollusca]" []
-synonym: "Mollusca" NARROW []
-xref: EC:No 216/2009 MOL
-xref: FAO ASFIS:MOL
-xref: http://eol.org/pages/2195
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B2112
-is_a: FOODON:03411433 ! shellfish
-property_value: hasSynonym "mollusca" xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
 id: FOODON:03412215
 name: mud crab family
 def: "Mud crab may refer to any crab that lives in or near mud, such as: species from family *Portunidae*, such as *Scylla serrata*; *Scylla tranquebarica*; *Scylla paramamosain*; members of the family *Panopeidae*, such as *Panopeus herbstii*; members of the family *Xanthidae*; *Helice crassa*, the tunnelling mud crab. [https://en.wikipedia.org/wiki/Mud_crab]" []
@@ -734,6 +773,10 @@ id: FOODON:03420177
 name: gluten
 def: "Extract, concentrate or isolate high in gluten, the predominant protein of wheat or corn." []
 is_a: FOODON:03420236 ! protein extract, concentrate or isolate
+intersection_of: FOODON:00001907 ! gluten refined food product
+intersection_of: FOODON:03420236 ! protein extract, concentrate or isolate
+intersection_of: RO:0001000 FOODON:03411324 ! derives from
+relationship: RO:0002350 FOODON:03400129 ! member of refined or partially-refined food product (us cfr)
 
 [Term]
 id: FOODON:03420194
@@ -745,7 +788,12 @@ is_a: FOODON:03420164 ! part of animal
 id: FOODON:03420228
 name: extract, concentrate or isolate of plant or animal
 def: "A physical-chemical component separated from the food source or its parts by extraction, centrifugation, filtration, heat processing, expressing or a similar process. The separated component may be converted through further processing. If this is done, the final substance is indexed. A water-extracted component may remain in aqueous dispersion. The extract, concentrate or isolate is indexed in preference to the anatomic part from which it is derived. For example, peanut oil is indexed under *PEANUT* combined wih *FAT OR OIL* rather than with *SEED OR KERNEL*. On the other hand, fruit and vegetable juices can be indexed under *FRUIT JUICE OR NECTAR* or *VEGETABLE JUICE* (A. PRODUCT TYPE); therefore the anatomic part of the plant should be indexed." []
+comment: Damion Dooley's note: Items in this branch will be merged into foodon food product branch.
+xref: http://www.langual.org/langual_thesaurus.asp?termid=C0228
+is_a: FOODON:00001714 ! food component
 is_a: FOODON:03420116 ! part of plant or animal
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03420236
@@ -1135,6 +1183,11 @@ property_value: IAO:0000119 "WEB: http://en.wikipedia.org/wiki/Organism" xsd:str
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 
 [Term]
+id: ObsoleteClass
+name: Obsolete Class
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+
+[Term]
 id: PO:0009001
 name: fruit
 def: "A multi-tissue plant structure (PO:0025496) that develops from a gynoecium (PO:0009062), or a single carpel (PO:0009030), and at maturity may have as parts one or more seeds (PO:0009010)." []
@@ -1291,6 +1344,11 @@ property_value: IAO:0000600 "to say that b realizes c at t is to assert that the
 property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
 domain: BFO:0000015 ! process
 range: BFO:0000017 ! realizable entity
+
+[Typedef]
+id: FOODON:00001301
+name: has food substance analog
+is_symmetric: true
 
 [Typedef]
 id: FOODON:00001303
@@ -1558,4 +1616,15 @@ name: related via dependence to
 def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+
+[Typedef]
+id: RO:0003001
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
 
