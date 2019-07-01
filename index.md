@@ -11,9 +11,10 @@ The Mondo Disease Ontology (Mondo) aims to harmonize disease definitions across 
 
 One feature of Mondo is that it goes beyond loose xrefs. It curated precise 1:1 equivalence axioms connecting to other resources, validated by OWL reasoning. This means it is safe to propagate across these from OMIM, Orphanet, EFO, DOID (soon NCIT).
 
-These precise mappings are available in two ways depending on the format
+These precise mappings are available in three ways depending on the format:
 - the .owl edition uses OWL equivalence axioms directly in the ontology. Note this makes it harder to browse in some portals, but this edition may be preferable for computational use. The owl edition also includes axiomatization using CL, Uberon, GO, HP, RO, NCBITaxon.
 - the .obo versions are simpler, lacks inter-ontology axiomatization, and lack equivalence axioms to other databases; instead xrefs are used as the linking mechanism. If the ID is one of Orphanet, OMIM, DOID or EFO then the xref precisely shadows the equivalence axiom.
+- the json edition
 
 ## Stable release versions
 
