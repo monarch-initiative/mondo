@@ -8,13 +8,16 @@
 **Format**: OWL, OBO and json formats  
 **License**: CC BY 3.0  
 
-## Versions:
+## Products:
 
-Stable release versions: 
+Stable release versions 
 
-- [http://purl.obolibrary.org/obo/mondo.obo](http://purl.obolibrary.org/obo/mondo.obo)  
-- [http://purl.obolibrary.org/obo/mondo.json](http://purl.obolibrary.org/obo/mondo.json)
-- [http://purl.obolibrary.org/obo/mondo.owl](http://purl.obolibrary.org/obo/mondo.owl)  
+File | Link | Description
+--- | --- | ---
+Main OWL edition | [mondo.owl](http://purl.obolibrary.org/obo/mondo.owl)| Complete ontology, plus inter-ontology equivalence axioms. Uses Mondo IDs.
+obo-format edition | [mondo.obo](http://purl.obolibrary.org/obo/mondo.obo) | As OWL, but omits equivalence axioms. xrefs can be used as proxy for equivalence. Uses Mondo IDs.
+json edition | [mondo.json](http://purl.obolibrary.org/obo/mondo.json) | Equivalent to the OWL edition.
+ 
 
 See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) for more details
 
