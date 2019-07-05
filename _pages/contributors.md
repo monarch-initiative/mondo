@@ -13,50 +13,49 @@ Mondo is developed by members of the [Monarch Initiative](https://monarchinitiat
 
 # Contributors
 
-- Joanna Amberger, OMIM
-- Larry Babb, ClinGen
-- Samantha Baxter, Broad
-- Vanessa Boulanger, NORD
-- PJ Brooks, GARD
-- Leigh Carmody, Jax
-- Alice Chen, NIH/NCATS
-- Christopher G Chute, Hopkins
-- Mélanie Courtot, EBI
-- Maria Della Rocca, GARD
-- Marina DiStefano, ClinGen
-- Colin Ellis, CHOP
-- Gilberto Fragoso, NCI
-- robert fullem, NIH/NHGRI
-- Andrew Grant, Broad
-- Ada Hamosh, Hopkins
-- Marc Hanauer, Orphanet
-- Allison Heath, CHOP
-- Jessica Hekman, Broad
-- Ingo Helbig, CHOP
-- Madeline Hughes, Broad
-- Simon Jupp, EBI
-- Avi Kelman, CHOP
-- Bron Kisler, NCI
-- Austin Letcher, CORD-Sanford
-- Janine Lewis, GARD
-- Donna Maglott, NIH/NLM/NCBI
-- Julie McMurry, OSU
-- Kate Megquier, Broad
-- Moni Munoz-Torres, OSU
-- Annie Olry, Orphanet
-- David Osumi-Sutherland, EBI
-- Anne Pariser, GARD
-- Zoë Pendlington, EBI
-- Ana Rath, Orphanet
-- Heidi Rehm, ClinGen
-- Kathy Reinold, Broad
-- Erin Riggs, ClinGen
-- Eric Sid, NIH/NCATS
-- Rebecca Siegert, Broad
-- Morgan Similuk, NIH/NHGRI
-- Andrea Storm, GARD
-- Courtney Thaxton, ClinGen
-- Anne Thessen, OSU
-- Nicole Vasilevsky, OHSU
-- Matt Wright, ClinGen
-- Aaron Zhang, Jax
+- Joanna Amberger, [OMIM](https://omim.org/)
+- Larry Babb, [ClinGen](https://clinicalgenome.org/)
+- Samantha Baxter, [Broad Institute](https://www.broadinstitute.org/)
+- Vanessa Boulanger, [NORD](https://rarediseases.org/)
+- PJ Brooks, [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard)
+- Leigh Carmody, [Monarch Initiative](http://monarchinitiative.org/)
+- Alice Chen, [NIH National Center for Advancing Translational Sciences ](National Center for Advancing Translational Sciences )
+- Christopher G Chute, [Johns Hopkins](https://www.jhu.edu/)
+- Mélanie Courtot, [European Bioinformatics Institute](https://www.ebi.ac.uk/)
+- Maria Della Rocca, [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard)
+- Marina DiStefano, [ClinGen](https://clinicalgenome.org/)
+- Colin Ellis, [Children's Hospital of Philadelphia](https://www.chop.edu/)
+- Gilberto Fragoso, [National Cancer Institute](https://www.cancer.gov/)
+- Robert Fullem, [NIH National Human Genome Research Institute Home](https://www.genome.gov/)
+- Andrew Grant, [Broad Institute](https://www.broadinstitute.org/)
+- Ada Hamosh, [OMIM](https://omim.org/)
+- Marc Hanauer, [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php)
+- Allison Heath, [Kids First Data Resource Portal](https://portal.kidsfirstdrc.org/)
+- Jessica Hekman, [Broad Institute](https://www.broadinstitute.org/)
+- Ingo Helbig, [Children's Hospital of Philadelphia](https://www.chop.edu/)
+- Madeline Hughes, [Broad Institute](https://www.broadinstitute.org/)
+- Simon Jupp, [European Bioinformatics Institute](https://www.ebi.ac.uk/)
+- Avi Kelman, [Children's Hospital of Philadelphia](https://www.chop.edu/)
+- Bron Kisler, [National Cancer Institute](https://www.cancer.gov/)
+- Austin Letcher, [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/)
+- Janine Lewis, [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard)
+- Donna Maglott, [National Center for Biotechnology Information](National Center for Biotechnology Information)
+- Julie McMurry, [Monarch Initiative](http://monarchinitiative.org/)
+- Kate Megquier, [Broad Institute](https://www.broadinstitute.org/)
+- Moni Munoz-Torres, [Monarch Initiative](http://monarchinitiative.org/)
+- Annie Olry, [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php)
+- David Osumi-Sutherland, [European Bioinformatics Institute](https://www.ebi.ac.uk/)
+- Anne Pariser, [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard)
+- Zoë Pendlington, [European Bioinformatics Institute](https://www.ebi.ac.uk/)
+- Ana Rath, [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php)
+- Heidi Rehm, [ClinGen](https://clinicalgenome.org/)
+- Kathy Reinold, [Broad Institute](https://www.broadinstitute.org/)
+- Erin Riggs, [ClinGen](https://clinicalgenome.org/)
+- Eric Sid, [NIH National Center for Advancing Translational Sciences ](National Center for Advancing Translational Sciences )
+- Rebecca Siegert, [Broad Institute](https://www.broadinstitute.org/)
+- Morgan Similuk, [NIH National Human Genome Research Institute Home](https://www.genome.gov/)
+- Andrea Storm, [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard)
+- Courtney Thaxton, [ClinGen](https://clinicalgenome.org/)
+- Anne Thessen, [Monarch Initiative](http://monarchinitiative.org/)
+- Matt Wright, [ClinGen](https://clinicalgenome.org/)
+- Aaron Zhang, [Monarch Initiative](http://monarchinitiative.org/)
