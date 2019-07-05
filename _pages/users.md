@@ -5,7 +5,7 @@
 ## Download Mondo:
 
 **Download**: https://github.com/monarch-initiative/mondo  
-**Format**: OWL and OBO formats  
+**Format**: OWL, OBO and json formats  
 **License**: CC BY 3.0  
 
 ## Versions:
@@ -21,10 +21,13 @@ See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes
 
 ## View Mondo:
 
-**OBO Foundry**: http://obofoundry.org/ontology/mondo.html  
-**Ontology Lookup Service**: https://www.ebi.ac.uk/ols/ontologies/mondo  
-**Ontobee**: http://www.ontobee.org/ontology/MONDO  
-**BioPortal**: https://bioportal.bioontology.org/ontologies/MONDO  
+- **AberOWL**: [http://aber-owl.net/ontology/MONDO/#/](http://aber-owl.net/ontology/MONDO/#/)
+- **BioPortal**: [https://bioportal.bioontology.org/ontologies/MONDO](https://bioportal.bioontology.org/ontologies/MONDO)
+- **OBO Foundry**: [http://obofoundry.org/ontology/mondo.html](http://obofoundry.org/ontology/mondo.html)
+- **Ontobee**: [http://www.ontobee.org/ontology/MONDO](http://www.ontobee.org/ontology/MONDO)
+- **Ontology Lookup Service**: [https://www.ebi.ac.uk/ols/ontologies/mondo](https://www.ebi.ac.uk/ols/ontologies/mondo)
+- **Monarch Initiative**: [https://monarchinitiative.org/disease/MONDO:0000001](https://monarchinitiative.org/disease/MONDO:0000001)
+
 
 ## Report issues/bugs/new term requests, changes, etc.
 
