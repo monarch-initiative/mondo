@@ -18,13 +18,6 @@ Stable release versions:
 
 See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) for more details
 
-## Additional Products:
-
-Title | Description | Format | License
---- | --- | --- | --- | ---
-[Minimal OWL edition](mondo/subsets/mondo-minimal.owl) | Complete logical axioms, no textual definitions, subsets |owl-rdf/xml | [https://creativecommons.org/publicdomain/zero/1.0/](CC0 1.0)
-[Minimal OBO edition](mondo/subsets/mondo-minimal.obo) | Identical to Minimal OWL edition, in OBO Format | obo | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
-[Minimal JSON edition](mondo/subsets/mondo-minimal.json) | Identical to Minimal OWL edition, in OBO Graph JSON Format | json | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ## View Mondo:
 
