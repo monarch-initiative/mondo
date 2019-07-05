@@ -1,7 +1,5 @@
 ---
 ---
-# Users
-
 ## Download Mondo:
 
 **Download**: https://github.com/monarch-initiative/mondo  

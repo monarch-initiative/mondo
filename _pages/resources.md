@@ -1,7 +1,5 @@
 ---
 ---
-# Resources 
-
 ## Relevant Publications
 
 ### Manuscripts
