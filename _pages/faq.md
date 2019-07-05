@@ -20,6 +20,17 @@ Join the Mondo users group [here](https://groups.google.com/forum/#!forum/mondo-
 
 Mondo is the disease ontology for the [Monarch Initiative](https://monarchinitiative.org/), which is an NIH supported project that integrates, aligns, and re-distributes cross-species gene, genotype, variant, disease, and phenotype data. The [Monarch Browser](https://monarchinitiative.org/) allows users to browse not only human diseases but to see their links to other organisms, genes, phenotypes, and pathways, which may be of especial interest to translational researchers.
 
+### How do I cite Mondo?
+
+Please cite: Mungall, Christopher J., et al. 2017 [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Nucleic Acids Research 45 (D1): D712–22.
+
+
+### Why do we need Mondo?
+
+Please see our [blog post](https://medium.com/@MonarchInit/new-release-of-mondo-disease-ontology-9a48521353e3) that describes why we created Mondo.
+
+
+
 {% comment %} ### What is an ontology? {% endcomment %}
 
 {% comment %} Review this page and add some more FAQs {% endcomment %}
