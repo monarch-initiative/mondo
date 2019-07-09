@@ -131,14 +131,17 @@ list_assets:
 check_version_set:
 	@test $(GHVERSION)
 
+# REMEMBER TO COMMIT/PUSH
 # e.g. make deploy_release GHVERSION=v2018-10-26
 deploy_release: deploy_assets_direct deploy_assets_current
 
+# deploys to a versioned released
 deploy_assets_direct:
 	@test $(GHVERSION)
 	ls -alt $(ASSETS)
-	../utils/make-release-assets.py -c --release $(GHVERSION) $(ASSETS)
+	../utils/make-release-assets.py -c $(RELEASE_ASSETS_OPTS) --release $(GHVERSION) $(ASSETS)
 
+# deploys to https://github.com/monarch-initiative/mondo/releases/tag/current
 deploy_assets_current:
 	ls -alt $(ASSETS)
 	../utils/make-release-assets.py -c -f --release current $(ASSETS)
