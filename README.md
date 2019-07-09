@@ -34,6 +34,10 @@ Layout:
     * [patterns](src/patterns) templated design patterns
     * [sparql](src/sparql) SPARQL queries
 
+## Logo
+
+The Mondo logo is available here: https://github.com/jmcmurry/closed-illustrations/tree/master/logos/mondo-logos
+
 ## License
 [CC-BY](https://creativecommons.org/licenses/by/3.0/)
 
