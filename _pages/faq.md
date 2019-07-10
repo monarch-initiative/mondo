@@ -12,7 +12,7 @@ Mondo is a community-driven project and we welcome your feedback and suggested c
 
 ### How can I collaborate with Mondo?
 
-We welcome the participation of interested colleagues. We anticipate that the structure of Mondo will continue to be refined and completed for some time to come. Groups or persons with expert knowledge in a particular domain of disease(s) are invited to contribute their knowledge on a collaborative basis. Please contact us to discuss details.
+We welcome the participation of interested colleagues. We anticipate that the structure of Mondo will continue to be refined and completed for some time to come. Groups or persons with expert knowledge in a particular domain of disease(s) are invited to contribute their knowledge on a collaborative basis. See issues that need input from medical experts [here](https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed). Please contact us to discuss details.
 
 Join the Mondo users group [here](https://groups.google.com/forum/#!forum/mondo-users). {% comment %} add more content here, see HPO:  {% endcomment %}
 

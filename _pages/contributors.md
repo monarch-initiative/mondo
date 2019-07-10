@@ -1,5 +1,11 @@
 ---
 ---
+# How to contribute
+
+The best way to contribute is by addressing tickets or reporting issues on the [GitHub tracker](https://github.com/monarch-initiative/mondo/issues).
+
+Issues that need medical expertise are [here](https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed).
+
 # Developers
 
 Mondo is developed by members of the [Monarch Initiative](https://monarchinitiative.org/):
