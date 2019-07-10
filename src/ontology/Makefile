@@ -815,7 +815,10 @@ lexrules-%.pro:
 	rdfmatch --ontA MONDO --ontB $(shell echo $* | tr a-z A-Z) -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl learn > $@
 .PRECIOUS: lexrules-%.pro
 
-match-%.tsv: lexrules-%.pro
+match-%.tsv:
+	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl new_match $< > $@
+
+learnedmatch-%.tsv: lexrules-%.pro
 	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl classify $< > $@
 
 all_unique_fresh: clean_tmp all_unique.tsv
@@ -924,6 +927,13 @@ v-%.png:
 
 ncit-eq.obo: ncit-kboom-curated.obo
 	perl -npe 's@\{@{source="MONDO:equivalentTo", @' $< > $@
+
+# ----------------------------------------
+# AD-HOC CHECKS
+# ----------------------------------------
+omim-ps-equiv.obo: mondo-edit.obo
+	obo-grep.pl  -r 'xref: OMIM:.*equiv' $< | obo-grep.pl  -r 'xref: OMIMPS:.*equiv' - > $@
+
 
 # ----------------------------------------
 # BLAZEGRAPH
