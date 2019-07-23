@@ -300,6 +300,14 @@ non_leaf_omim(X,Y,C,CY,Subsets) :-
         mondo_equiv_xref(C,CY,"OMIM"),
         findall(S,in_subset(C,S),Subsets).
 
+steal_isa(C,P,CX,PX) :-
+        owl_equivalent_class_asserted_symm(C,CX),
+        rdf(CX,rdfs:subClassOf,PX),
+        owl_equivalent_class_asserted_symm(P,PX),
+        \+ deprecated(P).
+
+
+        
 
 ordo_group(X) :-
         rdf(X,oio:inSubset,'http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders').

@@ -120,12 +120,6 @@
     
 
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
-    
-
-
     <!-- http://www.geneontology.org/formats/oboInOwl#hasSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasSynonym"/>
@@ -1234,17 +1228,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_00001785 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001785">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001792"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411335"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001792"/>
         <rdfs:label xml:lang="en">crab food product</rdfs:label>
     </owl:Class>
@@ -1356,17 +1339,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_00002239 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002239">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001792"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411237"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001792"/>
         <rdfs:label xml:lang="en">shrimp food product</rdfs:label>
     </owl:Class>
@@ -1869,24 +1841,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03411081 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411081">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411237"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">*Penaeidae* is a family of marine crustacean in the suborder *Dendrobranchiata*, which are often referred to as penaeid shrimp or penaeid prawn. It contains many species of economic importance, such as the tiger prawn, whiteleg shrimp, Atlantic white shrimp and Indian prawn. Many prawns are the subject of commercial fishery, and farming, both in marine settings, and in freshwater farms. [https://en.wikipedia.org/wiki/Penaeidae]</obo:IAO_0000115>
-        <obo:IAO_0000119>WIKIPEDIA:Penaeus</obo:IAO_0000119>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>EC:No 216/2009 DCP</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/7184</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1081</oboInOwl:hasDbXref>
-        <oboInOwl:hasNarrowSynonym>Dendrobranchiata Bate, 1888</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>Natantia</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">dendrobranchiata</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">natantia</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">natantian decapods</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">penaeid shrimps</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">penaeidae</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">penaeid shrimp family</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411081"/>
     
 
 
@@ -1939,24 +1894,6 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411237 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411237">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411998"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://eol.org/pages/2602479</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1237</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">caridea</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">crangonidae</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">palaemondidae</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">penaeidae</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">prawn</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">shrimp</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FOODON_03411261 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411261"/>
@@ -1978,24 +1915,6 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03411324 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411324"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411335 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411335">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411998"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Crabs are decapod crustaceans of the infraorder *Brachyura*, which typically have a very short projecting &quot;tail&quot;, usually entirely hidden under the thorax. They live in all the world&apos;s oceans, in fresh water, and on land, are generally covered with a thick exoskeleton and have a single pair of claws. Many other animals with similar names - such as hermit crabs, king crabs, porcelain crabs, horseshoe crabs, and crab lice - are not true crabs. 
- Crabs are generally covered with a thick exoskeleton, composed primarily of highly mineralized chitin, and armed with a single pair of chelae (claws). Crabs are found in all of the world&apos;s oceans, while many crabs live in fresh water and on land, particularly in tropical regions. [https://en.wikipedia.org/wiki/Crab]</obo:IAO_0000115>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://eol.org/pages/2604866</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1335</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">brachyura</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">short-tailed crabs</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">true crabs</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">crab</rdfs:label>
-    </owl:Class>
     
 
 
@@ -2047,38 +1966,9 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FOODON_03411998 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411998">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411374"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">The Decapoda or decapods (literally &quot;ten-footed&quot;) are an order of crustaceans within the class Malacostraca, including many familiar groups, such as crayfish, crabs, lobsters, prawns, and shrimp. Most decapods are scavengers. [https://en.wikipedia.org/wiki/Decapoda]</obo:IAO_0000115>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1998</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">decapoda</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">decapod</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FOODON_03412215 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412215">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411335"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Mud crab may refer to any crab that lives in or near mud, such as: species from family *Portunidae*, such as *Scylla serrata*; *Scylla tranquebarica*; *Scylla paramamosain*; members of the family *Panopeidae*, such as *Panopeus herbstii*; members of the family *Xanthidae*; *Helice crassa*, the tunnelling mud crab. [https://en.wikipedia.org/wiki/Mud_crab]</obo:IAO_0000115>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>http://eol.org/pages/7194</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B2215</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">mud crabs</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">panopeidae</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">pebble crabs</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">portunidae</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">rubble crabs</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">scylla spp.</oboInOwl:hasSynonym>
-        <oboInOwl:hasSynonym xml:lang="en">xanthidae</oboInOwl:hasSynonym>
-        <rdfs:label xml:lang="en">mud crab family</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412215"/>
     
 
 

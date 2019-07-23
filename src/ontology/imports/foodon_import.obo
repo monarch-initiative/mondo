@@ -273,8 +273,6 @@ intersection_of: RO:0001000 FOODON:03307455 ! derives from cow milk (raw)
 id: FOODON:00001785
 name: crab food product
 is_a: FOODON:00001792 ! crustacean food product
-intersection_of: FOODON:00001792 ! crustacean food product
-intersection_of: RO:0001000 FOODON:03411335 ! derives from crab
 
 [Term]
 id: FOODON:00001792
@@ -327,8 +325,6 @@ is_a: FOODON:03311737 ! processed food product
 id: FOODON:00002239
 name: shrimp food product
 is_a: FOODON:00001792 ! crustacean food product
-intersection_of: FOODON:00001792 ! crustacean food product
-intersection_of: RO:0001000 FOODON:03411237 ! derives from shrimp
 
 [Term]
 id: FOODON:00002244
@@ -356,7 +352,7 @@ relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product 
 id: FOODON:03000003
 name: brown shrimp
 def: "Farfantepenaeus aztecus is a species of marine penaeid shrimps found around the east coast of the USA and Mexico" []
-is_a: FOODON:03411081 ! penaeid shrimp family
+is_a: FOODON:03411081
 intersection_of: NCBITaxon:6690 ! Penaeus aztecus
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
@@ -364,7 +360,7 @@ intersection_of: RO:0000087 CHEBI:33290 ! has role food
 id: FOODON:03000004
 name: green mud crab
 def: "Scylla paramamosain is a mud crab commonly consumed in South-east Asia." []
-is_a: FOODON:03412215 ! mud crab family
+is_a: FOODON:03412215
 intersection_of: NCBITaxon:85552 ! Scylla paramamosain
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
@@ -372,7 +368,7 @@ intersection_of: RO:0000087 CHEBI:33290 ! has role food
 id: FOODON:03000005
 name: Indian prawn
 def: "The Indian prawn (Fenneropenaeus indicus, formerly Penaeus indicus), is one of the major commercial prawn species of the world. It is found in the Indo-West Pacific from eastern and south-eastern Africa, through India, Malaysia and Indonesia to southern China and northern Australia" []
-is_a: FOODON:03411081 ! penaeid shrimp family
+is_a: FOODON:03411081
 intersection_of: NCBITaxon:29960 ! Penaeus indicus
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
 
@@ -582,56 +578,10 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
-id: FOODON:03411081
-name: penaeid shrimp family
-def: "*Penaeidae* is a family of marine crustacean in the suborder *Dendrobranchiata*, which are often referred to as penaeid shrimp or penaeid prawn. It contains many species of economic importance, such as the tiger prawn, whiteleg shrimp, Atlantic white shrimp and Indian prawn. Many prawns are the subject of commercial fishery, and farming, both in marine settings, and in freshwater farms. [https://en.wikipedia.org/wiki/Penaeidae]" []
-synonym: "Dendrobranchiata Bate, 1888" NARROW []
-synonym: "Natantia" NARROW []
-xref: EC:No 216/2009 DCP
-xref: http://eol.org/pages/7184
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1081
-is_a: FOODON:03411237 ! shrimp
-property_value: hasSynonym "dendrobranchiata" xsd:string
-property_value: hasSynonym "natantia" xsd:string
-property_value: hasSynonym "natantian decapods" xsd:string
-property_value: hasSynonym "penaeid shrimps" xsd:string
-property_value: hasSynonym "penaeidae" xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000119 WIKIPEDIA:Penaeus xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
 id: FOODON:03411215
 name: algae, bacteria or fungus (deprecated)
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1215
 disjoint_from: FOODON:03411297
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03411237
-name: shrimp
-xref: http://eol.org/pages/2602479
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1237
-is_a: FOODON:03411998 ! decapod
-property_value: hasSynonym "caridea" xsd:string
-property_value: hasSynonym "crangonidae" xsd:string
-property_value: hasSynonym "palaemondidae" xsd:string
-property_value: hasSynonym "penaeidae" xsd:string
-property_value: hasSynonym "prawn" xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03411335
-name: crab
-def: "Crabs are decapod crustaceans of the infraorder *Brachyura*, which typically have a very short projecting \"tail\", usually entirely hidden under the thorax. They live in all the world's oceans, in fresh water, and on land, are generally covered with a thick exoskeleton and have a single pair of claws. Many other animals with similar names - such as hermit crabs, king crabs, porcelain crabs, horseshoe crabs, and crab lice - are not true crabs. \n Crabs are generally covered with a thick exoskeleton, composed primarily of highly mineralized chitin, and armed with a single pair of chelae (claws). Crabs are found in all of the world's oceans, while many crabs live in fresh water and on land, particularly in tropical regions. [https://en.wikipedia.org/wiki/Crab]" []
-xref: http://eol.org/pages/2604866
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1335
-is_a: FOODON:03411998 ! decapod
-property_value: hasSynonym "brachyura" xsd:string
-property_value: hasSynonym "short-tailed crabs" xsd:string
-property_value: hasSynonym "true crabs" xsd:string
-property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -661,33 +611,6 @@ name: food source
 def: "Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995]." []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1564
 is_a: ENVO:00010483 ! environmental material
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03411998
-name: decapod
-def: "The Decapoda or decapods (literally \"ten-footed\") are an order of crustaceans within the class Malacostraca, including many familiar groups, such as crayfish, crabs, lobsters, prawns, and shrimp. Most decapods are scavengers. [https://en.wikipedia.org/wiki/Decapoda]" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1998
-is_a: FOODON:03411374 ! crustacean
-property_value: hasSynonym "decapoda" xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03412215
-name: mud crab family
-def: "Mud crab may refer to any crab that lives in or near mud, such as: species from family *Portunidae*, such as *Scylla serrata*; *Scylla tranquebarica*; *Scylla paramamosain*; members of the family *Panopeidae*, such as *Panopeus herbstii*; members of the family *Xanthidae*; *Helice crassa*, the tunnelling mud crab. [https://en.wikipedia.org/wiki/Mud_crab]" []
-xref: http://eol.org/pages/7194
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B2215
-is_a: FOODON:03411335 ! crab
-property_value: hasSynonym "mud crabs" xsd:string
-property_value: hasSynonym "panopeidae" xsd:string
-property_value: hasSynonym "pebble crabs" xsd:string
-property_value: hasSynonym "portunidae" xsd:string
-property_value: hasSynonym "rubble crabs" xsd:string
-property_value: hasSynonym "scylla spp." xsd:string
-property_value: hasSynonym "xanthidae" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
