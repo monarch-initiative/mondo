@@ -1,15 +1,89 @@
+# 2019-07-28 release
+
+ * renamed MONDO_0013308, added text def, revised superclass. Closes  https://github.com/monarch-initiative/mondo/issues/623
+ * add exclude annotatioin to synonym on 'infectious disease'. closes https://github.com/monarch-initiative/mondo/issues/750
+ * remove synonyms from 'infectious disease'. addresses https://github.com/monarch-initiative/mondo/issues/750
+ * remove 'root caused synonym from MONDO_0005550. addresses https://github.com/monarch-initiative/mondo/issues/750
+ * ordo xrefs
+ * Adding new ordo xrefs
+ * add new term MONDO:0100079 cardioectodermal syndrome. Closes https://github.com/monarch-initiative/mondo/issues/577
+ * rename term MONDO:0011581. addresses https://github.com/monarch-initiative/mondo/issues/577
+ * COFS syn AP fixes https://github.com/monarch-initiative/mondo/issues/761
+ * hgnc xref fixes
+ * add jenny's orcid. Addresses https://github.com/monarch-initiative/mondo/issues/735
+ * revise label for MONDO:0009607. Closes https://github.com/monarch-initiative/mondo/issues/735
+
+
+## New Classes
+
+ * [MONDO:0020742](http://purl.obolibrary.org/obo/MONDO_0020742) obsolete cataract, microcephaly, failure to thrive, kyphoscoliosis syndrome
+ * [MONDO:0020743](http://purl.obolibrary.org/obo/MONDO_0020743) mixed phenotype acute leukemia
+ * [MONDO:0020810](http://purl.obolibrary.org/obo/MONDO_0020810) congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome
+ * [MONDO:0020831](http://purl.obolibrary.org/obo/MONDO_0020831) congenital vertebral-cardiac-renal anomalies syndrome
+ * [MONDO:0020871](http://purl.obolibrary.org/obo/MONDO_0020871) obsolete name syndrome
+ * [MONDO:0022397](http://purl.obolibrary.org/obo/MONDO_0022397) retinal ciliopathy due to mutation in the retinitis pigmentosa-1 gene
+ * [MONDO:0022399](http://purl.obolibrary.org/obo/MONDO_0022399) retinal ciliopathy due to mutation in the rpgr gene
+ * [MONDO:0022400](http://purl.obolibrary.org/obo/MONDO_0022400) retinal ciliopathy due to mutation in the rpgrip gene
+ * [MONDO:0022404](http://purl.obolibrary.org/obo/MONDO_0022404) retinal ciliopathy due to mutation in usher gene
+ * [MONDO:0022405](http://purl.obolibrary.org/obo/MONDO_0022405) retinal ciliopathy due to mutation in nephronophthisis gene
+ * [MONDO:0022407](http://purl.obolibrary.org/obo/MONDO_0022407) retinal ciliopathy due to mutation in bardet-biedl gene
+ * [MONDO:0022409](http://purl.obolibrary.org/obo/MONDO_0022409) nephropathy-associated ciliopathy
+ * [MONDO:0022410](http://purl.obolibrary.org/obo/MONDO_0022410) retinal ciliopathy
+ * [MONDO:0100076](http://purl.obolibrary.org/obo/MONDO_0100076) juvenile idiopathic scoliosis
+ * [MONDO:0100079](http://purl.obolibrary.org/obo/MONDO_0100079) cardioectodermal syndrome
+
+## Obsoletions
+
+
+## Renaming
+
+ * [MONDO:0001032](http://purl.obolibrary.org/obo/MONDO_0001032) Mooren's ulcer --> Mooren ulcer
+ * [MONDO:0007253](http://purl.obolibrary.org/obo/MONDO_0007253) cancer, familial, with 1N vitro Radioresistance --> cancer, familial, with in vitro Radioresistance
+ * [MONDO:0007431](http://purl.obolibrary.org/obo/MONDO_0007431) dens 1N dente and palatal invaginations --> dens in dente and palatal invaginations
+ * [MONDO:0007643](http://purl.obolibrary.org/obo/MONDO_0007643) gamma-A-globulin, defect 1N assembly of --> gamma-A-globulin, defect in assembly of
+ * [MONDO:0007913](http://purl.obolibrary.org/obo/MONDO_0007913) low density lipoprotein, variation 1N molecular weight of --> low density lipoprotein, variation in molecular weight of
+ * [MONDO:0008088](http://purl.obolibrary.org/obo/MONDO_0008088) neuropathy, with paraprotein 1N serum, cerebrospinal fluid and urine --> neuropathy, with paraprotein in serum, cerebrospinal fluid and urine
+ * [MONDO:0008326](http://purl.obolibrary.org/obo/MONDO_0008326) pseudocholinesterase, increase 1N plasma level of --> pseudocholinesterase, increase in plasma level of
+ * [MONDO:0008790](http://purl.obolibrary.org/obo/MONDO_0008790) anemia, nonspherocytic hemolytic, possibly due to defect 1N porphyrin metabolism --> anemia, nonspherocytic hemolytic, possibly due to defect in porphyrin metabolism
+ * [MONDO:0009307](http://purl.obolibrary.org/obo/MONDO_0009307) granulomatous disease with defect 1N neutrophil chemotaxis --> granulomatous disease with defect in neutrophil chemotaxis
+ * [MONDO:0009389](http://purl.obolibrary.org/obo/MONDO_0009389) hyperlysinemia due to defect 1N lysine transport into mitochondria --> hyperlysinemia due to defect in lysine transport into mitochondria
+ * [MONDO:0009391](http://purl.obolibrary.org/obo/MONDO_0009391) hypermetabolism due to defect 1N mitochondria --> hypermetabolism due to defect in mitochondria
+ * [MONDO:0009436](http://purl.obolibrary.org/obo/MONDO_0009436) hypothalamic hamartomas --> congenital hypothalamic hamartoma syndrome
+ * [MONDO:0009457](http://purl.obolibrary.org/obo/MONDO_0009457) immunoglobulin d level 1N plasma, low --> immunoglobulin d level in plasma, low
+ * [MONDO:0009607](http://purl.obolibrary.org/obo/MONDO_0009607) brain demyelination due to methionine adenosyltransferase deficiency --> methionine adenosyltransferase deficiency
+ * [MONDO:0009638](http://purl.obolibrary.org/obo/MONDO_0009638) mitochondrial myopathy with a defect 1N mitochondrial-protein transport --> mitochondrial myopathy with a defect in mitochondrial-protein transport
+ * [MONDO:0009776](http://purl.obolibrary.org/obo/MONDO_0009776) SPGF1 --> spermatogenic failure 1
+ * [MONDO:0010276](http://purl.obolibrary.org/obo/MONDO_0010276) radioulnar synostosis, radial ray abnormalities, and severe malformations 1N the male --> radioulnar synostosis, radial ray abnormalities, and severe malformations in the male
+ * [MONDO:0010381](http://purl.obolibrary.org/obo/MONDO_0010381) Tn Polyagglutination syndrome --> Tn polyagglutination syndrome
+ * [MONDO:0010507](http://purl.obolibrary.org/obo/MONDO_0010507) Xq25 duplication syndrome --> Xq25 microduplication syndrome
+ * [MONDO:0010962](http://purl.obolibrary.org/obo/MONDO_0010962) palmoplantar keratoderma, nonepidermolytic --> diffuse nonepidermolytic palmoplantar keratoderma
+ * [MONDO:0010982](http://purl.obolibrary.org/obo/MONDO_0010982) ichthyosis-mental retardation syndrome with large keratohyalin granules 1N the skin --> ichthyosis-mental retardation syndrome with large keratohyalin granules in the skin
+ * [MONDO:0011111](http://purl.obolibrary.org/obo/MONDO_0011111) horns 1N sheep --> horns in sheep
+ * [MONDO:0011141](http://purl.obolibrary.org/obo/MONDO_0011141) folate level 1N erythrocytes --> folate level in erythrocytes
+ * [MONDO:0011310](http://purl.obolibrary.org/obo/MONDO_0011310) long chain fatty acids, defect 1N transport of --> long chain fatty acids, defect in transport of
+ * [MONDO:0011581](http://purl.obolibrary.org/obo/MONDO_0011581) dilated cardiomyopathy with woolly hair and keratoderma --> arrhythmogenic cardiomyopathy with woolly hair and keratoderma
+ * [MONDO:0013308](http://purl.obolibrary.org/obo/MONDO_0013308) Noonan syndrome-like disorder with juvenile myelomonocytic leukemia --> CBL-related disorder
+ * [MONDO:0014263](http://purl.obolibrary.org/obo/MONDO_0014263) Verheij syndrome --> 8q24.3 microdeletion syndrome
+ * [MONDO:0014869](http://purl.obolibrary.org/obo/MONDO_0014869) hydrops, lactic acidosis, and sideroblastic anemia --> hydrops-lactic acidosis-sideroblastic anemia-multisystemic failure syndrome
+ * [MONDO:0014975](http://purl.obolibrary.org/obo/MONDO_0014975) spastic paraplegia 78, autosomal recessive --> autosomal recessive spastic paraplegia type 78
+ * [MONDO:0015006](http://purl.obolibrary.org/obo/MONDO_0015006) epidermolysis bullosa simplex, generalized, with scarring and hair loss --> generalized basal epidermolysis bullosa simplex with skin atrophy, scarring and hair loss
+ * [MONDO:0019183](http://purl.obolibrary.org/obo/MONDO_0019183) rare genetic odontologic disease --> inherited odontologic disease
+ * [MONDO:0023204](http://purl.obolibrary.org/obo/MONDO_0023204) Fukuda Miyanomae Nakata syndrome --> Fukuda-Miyanomae-Nakata syndrome
+ * [MONDO:0029132](http://purl.obolibrary.org/obo/MONDO_0029132) liddle syndrome 3 --> Liddle syndrome 3
+ * [MONDO:0044304](http://purl.obolibrary.org/obo/MONDO_0044304) hyperphenylalaninemia, mild, non-bh4-deficient --> hyperphenylalaninemia due to DNAJC12 deficiency
+
 # 2019-06-29 release
 
- * removed xref on 'osteopetrosis (disease)'. Closes #746
- * add synonym to 'oculocutaneous albinism'. Addresses # 641
+ * removed xref on 'osteopetrosis (disease)'. Closes https://github.com/monarch-initiative/mondo/issues/746
+ * add synonym to 'oculocutaneous albinism'. Addresses https://github.com/monarch-initiative/mondo/issues/ 641
  * update definition for 'inflammatory disease'.
- * fix typo. Closes #698
- * #708 removed synonym from MONDO:0009054 and added it to MONDO_0013751.
- * remove comment, closes #82
- * add new term MONDO_0100078 'resistant hypertension'. closes #673
- * fixed typo in MONDO:0002149. Closes #725
- * removed synonym from MONDO:0009054 and added it to MONDO_0013751. Closes #70
- * update definition for 'inflammatory disease'. Closes #717
+ * fix typo. Closes https://github.com/monarch-initiative/mondo/issues/698
+ * https://github.com/monarch-initiative/mondo/issues/708 removed synonym from MONDO:0009054 and added it to MONDO_0013751.
+ * remove comment, closes https://github.com/monarch-initiative/mondo/issues/82
+ * add new term MONDO_0100078 'resistant hypertension'. closes https://github.com/monarch-initiative/mondo/issues/673
+ * fixed typo in MONDO:0002149. Closes https://github.com/monarch-initiative/mondo/issues/725
+ * removed synonym from MONDO:0009054 and added it to MONDO_0013751. Closes https://github.com/monarch-initiative/mondo/issues/70
+ * update definition for 'inflammatory disease'. Closes https://github.com/monarch-initiative/mondo/issues/717
 
 ## New Classes
 
@@ -28,8 +102,8 @@
      * OPA6 --> optic atrophy 6
      * immunodeficiency 47; IMD47 --> immunodeficiency 47
  * Split out classic form of many diseases into own subclasses, e.g. X-linked sideroblastic anemia 1
- * relabel MONDO_0013579. closes #669
- * relabel MONDO_0009603. Closes #670
+ * relabel MONDO_0013579. closes https://github.com/monarch-initiative/mondo/issues/669
+ * relabel MONDO_0009603. Closes https://github.com/monarch-initiative/mondo/issues/670
  * fixed ISBNs [fix from @althonos]
 
 ## New Classes
@@ -265,14 +339,14 @@
 # 2019-04-29 release
 
  * Fix invalid ISBN of `NORD Guide to Rare Disorders` [Martin Larralde]
- * un-obsoleted 'monogenic diabetes'. Closes #337 [Nicole]
- * Use HPO rather than MONDO qualifier for refractory see #671
+ * un-obsoleted 'monogenic diabetes'. Closes https://github.com/monarch-initiative/mondo/issues/337 [Nicole]
+ * Use HPO rather than MONDO qualifier for refractory see https://github.com/monarch-initiative/mondo/issues/671
 
 # 2019-04-03 release
 
 This major release includes two large changes:
 
- * Most terms prefixed with "rare" have been obsoleted, see #254
+ * Most terms prefixed with "rare" have been obsoleted, see https://github.com/monarch-initiative/mondo/issues/254
  * Moved many pre-dispositions out from under disease hierarchy
 
 ## New Classes
@@ -297,76 +371,76 @@ This major release includes two large changes:
 
 ### Highlights
 
- * revised superclass for MONDO_0022020. addresses #514
- * obsolete Conjunctival disorder (MONDO_0006170). Closes #567
- * reclassify olecranon bursitis, and revise logical def; obosolete specific bursitis often of occupational origin. Closes #505
+ * revised superclass for MONDO_0022020. addresses https://github.com/monarch-initiative/mondo/issues/514
+ * obsolete Conjunctival disorder (MONDO_0006170). Closes https://github.com/monarch-initiative/mondo/issues/567
+ * reclassify olecranon bursitis, and revise logical def; obosolete specific bursitis often of occupational origin. Closes https://github.com/monarch-initiative/mondo/issues/505
  * remove annotations from obsoleted class MONDO_0044630
  * remove superclass from MONDO_0014857
  * add dbxref to MONDO_0014857
  * removed superclass from MONDO:0014857
- * revise label for Chitty Hall Web syndrome. Closes #500
- * add new class 'norovirus infectious disease' and add NCBI taxon, norovirus. Addresses #620
+ * revise label for Chitty Hall Web syndrome. Closes https://github.com/monarch-initiative/mondo/issues/500
+ * add new class 'norovirus infectious disease' and add NCBI taxon, norovirus. Addresses https://github.com/monarch-initiative/mondo/issues/620
  * obs rare nervous tumor
- * add new term. addresses #620
- * add superclass assertion to 'Legius syndrome'. Closes #625
+ * add new term. addresses https://github.com/monarch-initiative/mondo/issues/620
+ * add superclass assertion to 'Legius syndrome'. Closes https://github.com/monarch-initiative/mondo/issues/625
  * fixed space in PMID for MONDO_0100071.
- * McCune-Albright/polyostotic fibrous dysplasia fixes #649
+ * McCune-Albright/polyostotic fibrous dysplasia fixes https://github.com/monarch-initiative/mondo/issues/649
  * obs rare genetic myoclonus
  * removing rare qualifiers
 #254 * Obsoleting rare-X terms, step1, 
- * removed incorrect xref from pathologic fracture and revised xref for femoral neck fracture. Closes #644
+ * removed incorrect xref from pathologic fracture and revised xref for femoral neck fracture. Closes https://github.com/monarch-initiative/mondo/issues/644
  * Aligning infectious inflammatory diseases with pattern
- * Fixing too weak def of infectious disease, fixes #547
+ * Fixing too weak def of infectious disease, fixes https://github.com/monarch-initiative/mondo/issues/547
  * including disease susceptibility in allowed roots
- * add excluded subClassOf annotation to nephrosclerosis. addresses #528
- * Disease susceptibility no longer a subclass of disease, fixes #609
- * Removed synonym from MONDO_0002708, MONDO_0003014, MONDO_0003619, MONDO_0043786, MONDO_0003937, MONDO_0004842, MONDO_0004855, MONDO_0005990, MONDO_0001732, MONDO_0024616, MONDO_0000739, MONDO_0004767, MONDO_0007018. Addresses #626
- * Removed synonym from MONDO_0001040, MONDO_0001166, MONDO_0006877, MONDO_0002172, MONDO_0004982, MONDO_0006591, MONDO_0006887, MONDO_0005900, MONDO_0006900, MONDO_0005076, MONDO_0004522, MONDO_0001109, MONDO_0002258, MONDO_0004625, MONDO_0000986, MONDO_0043905, MONDO_0021164, MONDO_0005538, MONDO_0024278, MONDO_0006937, MONDO_0006938, MONDO_0000497. Addresses #626
- * Removed synonym from MONDO_0002269, MONDO_0002508, MONDO_0006771, MONDO_0002251, MONDO_0002260, MONDO_0021156, MONDO_0003085, MONDO_0002008, MONDO_0002647, MONDO_0005832, MONDO_0006849, MONDO_0020579, MONDO_0002565, MONDO_0004496, MONDO_0021167. Addresses #626
- * Removed synonym from MONDO_0006672, MONDO_0004785, MONDO_0003781, MONDO_0002471, MONDO_0002645, MONDO_0002102, MONDO_0004789, MONDO_0002155, MONDO_0000409, MONDO_0006032. Addresses #626
- * Removed synonym from MONDO_0019838, MONDO_0005649, MONDO_0015304, MONDO_0043494, MONDO_0005578. Addresses #626
- * Removed synonym from MONDO_0008538, MONDO_0004126, MONDO_0005297, MONDO_0020283, MONDO_0002234. Addresses #626
- * Removed synonym from MONDO_0005904, MONDO_0004934, MONDO_0006918, MONDO_0005280, MONDO_0002400. Addresses #626
- * Removed synonym from MONDO_0005292, MONDO_0005533, MONDO_0005025, MONDO_0001409, MONDO_0004830. Addresses #626
- * Removed synonym from MONDO_0006656, MONDO_0003799, MONDO_0004551, MONDO_0015144, MONDO_0001277. Addresses #626
- * removed synonym from MONDO_0021166. addresses #626
- * added new term MONDO_0100072, jaw fracture. Addresses #620
- * added ORCID to MONDO_0100069, addresses #583
- * added comment to MONDO_0100069. addresses #583
- * added new term MONDO_0100072 'neonatal diabetes, congenital sensorineural hearing loss and congenital cataracts'. closes #582
- * updated comment for MONDO_0009753. Addresses #612
- * added new term MONDO_0100071, and reclassified terms as children. Addresses #578
- * Split incorrectly merged NCIT class, fixes #599
- * removed subclassOf assertion for 'cerebral palsy'. addresses #528
- * moved GARD dbxref to MONDO:0007931. addresses #564
- * added superclass 'pituitary deficiency' back to MONDO:0015790 'central diabetes insiipidus'. addresses #438
- * removed dbxef on term MONDO:0100038. addresses #595
- * removed superclass from MONDO_0006044 nephrosclerosis, addresses #528
- * added new class, neuroendocrine disease and reclassified central diabetes insipidus. closes #438
- * obsoleted MONDO:0022566. Closes #564
- * added additional attributions to term MONDO:0100038. Closes #561
- * obsoleted class MONDO:0023663. Closes #538
- * added new term MONDO:0100069 hearing impairment and infertile male syndrome, closes #583
- * renamed MONDO:0100068 to be more consistent with other naming of similar classes. Addresses #478
- * added new term SLC10A7 deficiency. Closes #478
+ * add excluded subClassOf annotation to nephrosclerosis. addresses https://github.com/monarch-initiative/mondo/issues/528
+ * Disease susceptibility no longer a subclass of disease, fixes https://github.com/monarch-initiative/mondo/issues/609
+ * Removed synonym from MONDO_0002708, MONDO_0003014, MONDO_0003619, MONDO_0043786, MONDO_0003937, MONDO_0004842, MONDO_0004855, MONDO_0005990, MONDO_0001732, MONDO_0024616, MONDO_0000739, MONDO_0004767, MONDO_0007018. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0001040, MONDO_0001166, MONDO_0006877, MONDO_0002172, MONDO_0004982, MONDO_0006591, MONDO_0006887, MONDO_0005900, MONDO_0006900, MONDO_0005076, MONDO_0004522, MONDO_0001109, MONDO_0002258, MONDO_0004625, MONDO_0000986, MONDO_0043905, MONDO_0021164, MONDO_0005538, MONDO_0024278, MONDO_0006937, MONDO_0006938, MONDO_0000497. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0002269, MONDO_0002508, MONDO_0006771, MONDO_0002251, MONDO_0002260, MONDO_0021156, MONDO_0003085, MONDO_0002008, MONDO_0002647, MONDO_0005832, MONDO_0006849, MONDO_0020579, MONDO_0002565, MONDO_0004496, MONDO_0021167. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0006672, MONDO_0004785, MONDO_0003781, MONDO_0002471, MONDO_0002645, MONDO_0002102, MONDO_0004789, MONDO_0002155, MONDO_0000409, MONDO_0006032. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0019838, MONDO_0005649, MONDO_0015304, MONDO_0043494, MONDO_0005578. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0008538, MONDO_0004126, MONDO_0005297, MONDO_0020283, MONDO_0002234. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0005904, MONDO_0004934, MONDO_0006918, MONDO_0005280, MONDO_0002400. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0005292, MONDO_0005533, MONDO_0005025, MONDO_0001409, MONDO_0004830. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * Removed synonym from MONDO_0006656, MONDO_0003799, MONDO_0004551, MONDO_0015144, MONDO_0001277. Addresses https://github.com/monarch-initiative/mondo/issues/626
+ * removed synonym from MONDO_0021166. addresses https://github.com/monarch-initiative/mondo/issues/626
+ * added new term MONDO_0100072, jaw fracture. Addresses https://github.com/monarch-initiative/mondo/issues/620
+ * added ORCID to MONDO_0100069, addresses https://github.com/monarch-initiative/mondo/issues/583
+ * added comment to MONDO_0100069. addresses https://github.com/monarch-initiative/mondo/issues/583
+ * added new term MONDO_0100072 'neonatal diabetes, congenital sensorineural hearing loss and congenital cataracts'. closes https://github.com/monarch-initiative/mondo/issues/582
+ * updated comment for MONDO_0009753. Addresses https://github.com/monarch-initiative/mondo/issues/612
+ * added new term MONDO_0100071, and reclassified terms as children. Addresses https://github.com/monarch-initiative/mondo/issues/578
+ * Split incorrectly merged NCIT class, fixes https://github.com/monarch-initiative/mondo/issues/599
+ * removed subclassOf assertion for 'cerebral palsy'. addresses https://github.com/monarch-initiative/mondo/issues/528
+ * moved GARD dbxref to MONDO:0007931. addresses https://github.com/monarch-initiative/mondo/issues/564
+ * added superclass 'pituitary deficiency' back to MONDO:0015790 'central diabetes insiipidus'. addresses https://github.com/monarch-initiative/mondo/issues/438
+ * removed dbxef on term MONDO:0100038. addresses https://github.com/monarch-initiative/mondo/issues/595
+ * removed superclass from MONDO_0006044 nephrosclerosis, addresses https://github.com/monarch-initiative/mondo/issues/528
+ * added new class, neuroendocrine disease and reclassified central diabetes insipidus. closes https://github.com/monarch-initiative/mondo/issues/438
+ * obsoleted MONDO:0022566. Closes https://github.com/monarch-initiative/mondo/issues/564
+ * added additional attributions to term MONDO:0100038. Closes https://github.com/monarch-initiative/mondo/issues/561
+ * obsoleted class MONDO:0023663. Closes https://github.com/monarch-initiative/mondo/issues/538
+ * added new term MONDO:0100069 hearing impairment and infertile male syndrome, closes https://github.com/monarch-initiative/mondo/issues/583
+ * renamed MONDO:0100068 to be more consistent with other naming of similar classes. Addresses https://github.com/monarch-initiative/mondo/issues/478
+ * added new term SLC10A7 deficiency. Closes https://github.com/monarch-initiative/mondo/issues/478
  * merged familial chronic mucocutaneous candidiasis -> chronic mucocutaneous candidiasis
- * Removing multiple has-features to HPO see #574
- * Removing incorrect Asthma features, fixes #574
- * added superclass assertion to sulfhemoglobinemia, congenital. addresses #539
- * revised label for MONDO:0005570, addresses #539
- * removed parent collagenopathy from Ehlers-Danlos syndrome. addresses #520
- * removed parent collagenopathy from osteogenesis imperfecta. addresses #520
- * removed superclass 'immune system disease' from MONDO:0006988 sulfhemoglobinemia. Closes #539
- * revised label for MONDO:0043707, closes #545
- * fixed xrefs for major affective disorder 1-9, addresses #536
- * fixed xrefs for dyslexia, suscpetibility to, 3-9, addresses #536
- * fixed xrefs for stuttering, familial persistent, 2-4, addresses #536
- * added synonyms back for specific language impairment 1-5, addresses #536
- * added synonyms back for restless leg syndrome, susceptibility to, 2-8, addresses #536
- * relabeled MONDO:0008187, addresses #536
- * added synonyms back for narcolepsy, susceptibility to, 2,4,5,6 and narcolepsy 3, addresses #536
- * added synonyms back for various disorders, 1-9, addresses #536
- * relabled MONDO:0013844, MONDO:0013841, MONDO:0012232, MONDO: 0008483, and others addresses #536
+ * Removing multiple has-features to HPO see https://github.com/monarch-initiative/mondo/issues/574
+ * Removing incorrect Asthma features, fixes https://github.com/monarch-initiative/mondo/issues/574
+ * added superclass assertion to sulfhemoglobinemia, congenital. addresses https://github.com/monarch-initiative/mondo/issues/539
+ * revised label for MONDO:0005570, addresses https://github.com/monarch-initiative/mondo/issues/539
+ * removed parent collagenopathy from Ehlers-Danlos syndrome. addresses https://github.com/monarch-initiative/mondo/issues/520
+ * removed parent collagenopathy from osteogenesis imperfecta. addresses https://github.com/monarch-initiative/mondo/issues/520
+ * removed superclass 'immune system disease' from MONDO:0006988 sulfhemoglobinemia. Closes https://github.com/monarch-initiative/mondo/issues/539
+ * revised label for MONDO:0043707, closes https://github.com/monarch-initiative/mondo/issues/545
+ * fixed xrefs for major affective disorder 1-9, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * fixed xrefs for dyslexia, suscpetibility to, 3-9, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * fixed xrefs for stuttering, familial persistent, 2-4, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * added synonyms back for specific language impairment 1-5, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * added synonyms back for restless leg syndrome, susceptibility to, 2-8, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * relabeled MONDO:0008187, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * added synonyms back for narcolepsy, susceptibility to, 2,4,5,6 and narcolepsy 3, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * added synonyms back for various disorders, 1-9, addresses https://github.com/monarch-initiative/mondo/issues/536
+ * relabled MONDO:0013844, MONDO:0013841, MONDO:0012232, MONDO: 0008483, and others addresses https://github.com/monarch-initiative/mondo/issues/536
     
 
 # 2018-12-02 release
@@ -391,19 +465,19 @@ This major release includes two large changes:
 
 ### Highlights
 
- * added synonyms to rippling muscle disease 2. addresses #480
+ * added synonyms to rippling muscle disease 2. addresses https://github.com/monarch-initiative/mondo/issues/480
  * added grouping for inherited forms of RMD
- * obsoleted MONDO_0011910. addresses #480
- * merging typhus and typhus-group rickettsiosis fixes #441
- * Tagging rare-X obsoletion candidates. See #254
+ * obsoleted MONDO_0011910. addresses https://github.com/monarch-initiative/mondo/issues/480
+ * merging typhus and typhus-group rickettsiosis fixes https://github.com/monarch-initiative/mondo/issues/441
+ * Tagging rare-X obsoletion candidates. See https://github.com/monarch-initiative/mondo/issues/254
  * merged rare genetic coagulation disorder -> inherited blood coagulation disorder
  * merged rare genetic dystonia -> inherited dystonia
  * obsoleted other dermis disorder
- * Fixing is-a overloading for some classes, see #566
- * obsoleted superimposed infection, fixes #517
- * fixed logdef for skeletal tuberculosis, fixes #552
+ * Fixing is-a overloading for some classes, see https://github.com/monarch-initiative/mondo/issues/566
+ * obsoleted superimposed infection, fixes https://github.com/monarch-initiative/mondo/issues/517
+ * fixed logdef for skeletal tuberculosis, fixes https://github.com/monarch-initiative/mondo/issues/552
  * rheumatologic disorder is currently classified as a musculoskeletal disease, but should be its own primary disease class, since many of the rheumatologic diseases such as lupus have many non-musculo
- * Removed false parent for  interstitial myocarditis, Fixes #546
+ * Removed false parent for  interstitial myocarditis, Fixes https://github.com/monarch-initiative/mondo/issues/546
 
 # 2018-11-29 release
 
@@ -441,7 +515,7 @@ This major release includes two large changes:
 
 ## Obsoletions
 
- [obsolete Marfan syndrome type 2](http://purl.obolibrary.org/obo/MONDO_0017308) no replacement #563
+ [obsolete Marfan syndrome type 2](http://purl.obolibrary.org/obo/MONDO_0017308) no replacement https://github.com/monarch-initiative/mondo/issues/563
  [obsolete glycogen storage disease IX](http://purl.obolibrary.org/obo/MONDO_0000366) replaced by MONDO:0018251
  [obsolete dyskinetic cerebral palsy](http://purl.obolibrary.org/obo/MONDO_0000399) replaced by MONDO:0022697
  [obsolete thyroid cancer, nonmedullary](http://purl.obolibrary.org/obo/MONDO_0000201) replaced by MONDO:0017896
@@ -449,9 +523,9 @@ This major release includes two large changes:
 
 ## Main Tickets fixed
 
- * Merged glycogen storage disease due to phosphorylase kinase deficiency + Glycogen Storage Disease Type IX, fixes #563
- * obsoleting Marfan type 2, fixes #560
- * Removing is-a overloading for EC disease, see #511
+ * Merged glycogen storage disease due to phosphorylase kinase deficiency + Glycogen Storage Disease Type IX, fixes https://github.com/monarch-initiative/mondo/issues/563
+ * obsoleting Marfan type 2, fixes https://github.com/monarch-initiative/mondo/issues/560
+ * Removing is-a overloading for EC disease, see https://github.com/monarch-initiative/mondo/issues/511
 
 
 # 2018-11-21 release
@@ -598,9 +672,9 @@ This major release includes two large changes:
 
 # 2018-11-01 release
 
- * relabeled MONDO:0011652 to Phelan McDermid syndrome fixes #442
- * NT: microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome, fixes #444
- * clarifying subtypes of congenital bilateral absence of vas deferens, fixes #426
+ * relabeled MONDO:0011652 to Phelan McDermid syndrome fixes https://github.com/monarch-initiative/mondo/issues/442
+ * NT: microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome, fixes https://github.com/monarch-initiative/mondo/issues/444
+ * clarifying subtypes of congenital bilateral absence of vas deferens, fixes https://github.com/monarch-initiative/mondo/issues/426
  * Adding additional equivalence axioms to other ontologies; improved ONCOTREE/NCIT/MONDO alignment
  * Adding additional logical defs
  * Fixed casing of multiple labels and synonyms, using https://github.com/EBISPOT/efo/issues/274
@@ -679,17 +753,17 @@ This major release includes two large changes:
 
 # 2018-10-14 release
 
- * reclassified MONDO:0019079 ‘proximal spinal muscular atrophy’ a subclass of MONDO:0001516 ‘spinal muscular atrophy’ and fixed typos in def of MONDO:0001516 ‘s #350
- * added new term MONDO_0100062 'developmental and epileptic encephalopathy' closes #332
- * Fixes #271
- * renamed MONDO_0015967 to monogenic diabetes closes #337
- * added new term MONDO_0100061 'PRPS1 deficiency disorder' closes #358
- * replaced superclass for 'Huntington disease' closes #358
+ * reclassified MONDO:0019079 ‘proximal spinal muscular atrophy’ a subclass of MONDO:0001516 ‘spinal muscular atrophy’ and fixed typos in def of MONDO:0001516 ‘s https://github.com/monarch-initiative/mondo/issues/350
+ * added new term MONDO_0100062 'developmental and epileptic encephalopathy' closes https://github.com/monarch-initiative/mondo/issues/332
+ * Fixes https://github.com/monarch-initiative/mondo/issues/271
+ * renamed MONDO_0015967 to monogenic diabetes closes https://github.com/monarch-initiative/mondo/issues/337
+ * added new term MONDO_0100061 'PRPS1 deficiency disorder' closes https://github.com/monarch-initiative/mondo/issues/358
+ * replaced superclass for 'Huntington disease' closes https://github.com/monarch-initiative/mondo/issues/358
  * Performed sync with multiple sources
  * added new monogenic diseases
  * gap-filled neoplasm classes
- * added new term: MONDO_0100059 'hypereosinophilia of undetermined sign…' #272
- * merged terms  Ito hypomelanosis (MONDO:0010302) & incontinentia pigmenti achromians (MONDO:0006562). #351
+ * added new term: MONDO_0100059 'hypereosinophilia of undetermined sign…' https://github.com/monarch-initiative/mondo/issues/272
+ * merged terms  Ito hypomelanosis (MONDO:0010302) & incontinentia pigmenti achromians (MONDO:0006562). https://github.com/monarch-initiative/mondo/issues/351
 
 ### Obsoletions
 
@@ -1103,7 +1177,7 @@ Addition of UBERON and GO grouping classes
 
  * The upper level has been refactored to provide a more intuitive top down view
  * Additional equivalence axioms to ONCOTREE
- * Filter redundant mapping from SKOS relationships, fixes #282
+ * Filter redundant mapping from SKOS relationships, fixes https://github.com/monarch-initiative/mondo/issues/282
 
 ### New classes
 
@@ -2293,16 +2367,16 @@ New classes:
 
 Highlights:
 
- * Fixed iridodysgenesis confusion, fixes #203
- * fixing danglers #156
- * fixing danglers #156
- * fixing obsoletes, #156
- * removing envo mireot #144
+ * Fixed iridodysgenesis confusion, fixes https://github.com/monarch-initiative/mondo/issues/203
+ * fixing danglers https://github.com/monarch-initiative/mondo/issues/156
+ * fixing danglers https://github.com/monarch-initiative/mondo/issues/156
+ * fixing obsoletes, https://github.com/monarch-initiative/mondo/issues/156
+ * removing envo mireot https://github.com/monarch-initiative/mondo/issues/144
  * changed label of MONDO_0022428 to aluminosis
- * addresses #79
+ * addresses https://github.com/monarch-initiative/mondo/issues/79
  * added synonym to MONDO_0007191
- * address #122
- * revised label and def, addresses #122
+ * address https://github.com/monarch-initiative/mondo/issues/122
+ * revised label and def, addresses https://github.com/monarch-initiative/mondo/issues/122
 
 New classes:
 
