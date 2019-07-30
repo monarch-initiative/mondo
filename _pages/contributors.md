@@ -61,6 +61,7 @@ Ana Rath | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [ana-rat
 Heidi Rehm | [ClinGen](https://clinicalgenome.org/) | [heidirehm](https://github.com/heidirehm)
 Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](https://github.com/kreinold)
 Erin Riggs | [ClinGen](https://clinicalgenome.org/) | [erinriggs](https://github.com/erinriggs)
+Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia)
 Eric Sid | [NIH NCATS](National Center for Advancing Translational Sciences ) | [ericsid](https://github.com/ericsid)
 Rebecca Siegert | [Broad Institute](https://www.broadinstitute.org/) | [rebecca-siegert](https://github.com/rebecca-siegert)
 Morgan Similuk | [NIH NHGRI](https://www.genome.gov/) | [MorganSimiluk](https://github.com/MorganSimiluk)
