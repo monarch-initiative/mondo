@@ -41,3 +41,6 @@ See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes
 - Mondo is used for disease annotations in [EBI resources](https://www.ebi.ac.uk/services), [Open Targets](https://www.opentargets.org/), and [Euro-Bioimaging](http://www.eurobioimaging.eu/)  
 - [ClinGen](https://clinicalgenome.org/)
 - [Gabriella Miller Kids First Data Resource Portal](https://kidsfirstdrc.org/)
+- [Fabric Genomics](https://fabricgenomics.com/)
+- [SunQuest](https://www.sunquestinfo.com/)
+- [Penn TURBO](http://upibi.org/turbo/)
