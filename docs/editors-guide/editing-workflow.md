@@ -1,6 +1,6 @@
 # Editing and Pull Request Workflow
 
-This documentation was modified from [Gene Ontology editors guide](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html).  
+This documentation was adapted from the [Gene Ontology editors guide](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html).  
 _Updated 2019-08-19 by Nicole Vasilevsky_
 
 ## Updating the local copy of the ontology with ‘git pull’
