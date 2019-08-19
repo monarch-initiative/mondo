@@ -1,1 +1,1 @@
-This is the home page for Mondo documentation.
+This is the home page for the Mondo editors guide and documentation.
