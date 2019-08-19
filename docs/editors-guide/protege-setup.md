@@ -23,7 +23,7 @@ As of August 2019, Mondo editors are using `Protege version 5.5.0`
 
 ### Obtaining your ID range
 - Curators and projects are assigned specific Mondo term ID ranges by senior editors.
-- These ID ranges are stored in the file: mondo-idranges.owl
+- These ID ranges are stored in the file: [mondo-idranges.owl](https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mondo-idranges.owl)
 - **NOTE:** You should only use IDs within your range.
 
 ### Setting ID range
@@ -42,7 +42,7 @@ In the resulting pop-up window, click on the New Entities tab and set the values
   - Prefix: "MONDO_"
   - Suffix: leave this blank
   - Digit Count: "7"
-  - Start and End: see mondo-idranges.owl. Only paste the number after the MONDO: prefix. Also, note that when you paste in your MONDO ID range, the number will automatically be converted to a standard number, e.g. pasting 0110001 will be converted to 110,001.)
+  - Start and End: see [mondo-idranges.owl](https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mondo-idranges.owl). Only paste the number after the MONDO: prefix. Also, note that when you paste in your MONDO ID range, the number will automatically be converted to a standard number, e.g. pasting 0110001 will be converted to 110,001.)
 4. Check the `Remember last ID between Protege sessions` box (Note: You want the ID to be remembered to prevent clashes when working in parallel on branches.)
 
 ## User details
