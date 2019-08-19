@@ -4,6 +4,7 @@ See [GO workflow](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html
 Guidelines that are specific to editing Mondo are available [here](https://docs.google.com/document/d/1qiIABd9zb1flv4e67MlVTNotl_j-4rj4RT5fLFrVtyc/edit#).
 
 **ALL CHANGES ARE DONE AS PULL REQUESTS**
+
 TODO: Document
 * What to do in the case of a conflict e.g [https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore)](https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore)) 
 * Checking your diffs
