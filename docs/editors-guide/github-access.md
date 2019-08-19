@@ -1,9 +1,29 @@
 # GitHub Access
-Repo is here: [https://github.com/monarch-initiative/mondo](https://github.com/monarch-initiative/mondo)
-Ontology structure is standard - e.g. src/ontology/ for source files for ontology
-
-Edit file is **mondo-edit.obo**
+- The GitHub repo is here: [https://github.com/monarch-initiative/mondo](https://github.com/monarch-initiative/mondo).
+- The ontology structure is standard - e.g. src/ontology/ for source files for ontology
+- Edit file is **mondo-edit.obo**
 
 We use obo format to enable meaningful diffs in pull requests. Complex axioms that cannot be expressed in obo are edited in a sub-module and imported (imports/axioms.owl).
 
 (the use of obo in combination with axiom annotation imposes some constraints that result in mild oddities, outlined later)
+
+# GitHub workflow
+
+**ALL CHANGES ARE DONE AS PULL REQUESTS.** No changes are to be committed to master. Make all changes on branches, and make Pull Requests.
+
+Guidelines that are specific to editing Mondo are available [here](https://mondo.readthedocs.io/en/latest/editors-guide/editing-workflow/). These guidelines were adopted from the [Gene Ontology](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html).
+
+## GitHub conflicts
+
+Sometimes a pull request will have a conflict with the base branch. These conflicts can be resolved by rebasing your branch. See more information about rebasing [here](https://git-scm.com/docs/git-rebase).
+
+### Rebase instructions:
+1. checkout branch that has conflicts
+2. `git rebase master`
+3. Make changes in file (open the mondo-edit.obo file in a text editor (like Sublime) and search for the conflicts. These are usually preceeded by <<<<<. Fix the conflicts, then save.) 
+4. `git add -A`
+5. `git rebase --continue`
+6. `git push -f`
+
+See additional documentation about what to do in case of a conflict here: [https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore)](https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore))
+
