@@ -1,4 +1,4 @@
-# Editing and Pull Request Workflow
+# GitHub Pull Request Workflow
 
 This documentation was adapted from the [Gene Ontology editors guide](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html).  
 _Updated 2019-08-19 by Nicole Vasilevsky_
