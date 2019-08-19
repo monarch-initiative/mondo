@@ -1,7 +1,7 @@
 # GitHub Flow
 
 See [GO workflow](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html). 
-Guidelines that are specific to editing Mondo are available [here](https://docs.google.com/document/d/1qiIABd9zb1flv4e67MlVTNotl_j-4rj4RT5fLFrVtyc/edit#).
+Guidelines that are specific to editing Mondo are available [here](https://mondo.readthedocs.io/en/latest/editors-guide/editing-workflow/).
 
 **ALL CHANGES ARE DONE AS PULL REQUESTS**
 
@@ -13,7 +13,7 @@ TODO: Document
 
 No changes are to be committed to master. **Make all changes on branches, and make Pull Requests**. See: 
 
-* [http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html)
+* [Editing and Pull Request workflow](https://mondo.readthedocs.io/en/latest/editors-guide/editing-workflow/)
 
 ## Excluded subclassOf
 
