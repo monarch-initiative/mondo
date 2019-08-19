@@ -52,7 +52,7 @@ In the resulting pop-up window, click on the New Entities tab and set the values
 
 ![UserDetails](images/UserDetails.png)
 
- ## Setting username and auto-adding creation date
+## Setting username and auto-adding creation date
 1. In the Protege menu, go to `Preferences` > `New Entities Metadata` tab
 2. Check `Annotate new entities with creator (user)` box
 3. `Creator property` Add http://www.geneontology.org/formats/oboInOwl#created_by
