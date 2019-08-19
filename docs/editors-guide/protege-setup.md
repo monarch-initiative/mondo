@@ -46,6 +46,7 @@ In the resulting pop-up window, click on the New Entities tab and set the values
 4. Check the `Remember last ID between Protege sessions` box (Note: You want the ID to be remembered to prevent clashes when working in parallel on branches.)
 
 ## User details
+
 1. `User name` Clcik `Use supplied user name:` add your name (ie nicolevasilevsky)
 2. Check `Use Git user name when available`
 3. Add `ORCID`. Add the ID number only, do not include https://, ie 0000-0001-5208-3432
@@ -53,6 +54,7 @@ In the resulting pop-up window, click on the New Entities tab and set the values
 ![UserDetails](images/UserDetails.png)
 
 ## Setting username and auto-adding creation date
+
 1. In the Protege menu, go to `Preferences` > `New Entities Metadata` tab
 2. Check `Annotate new entities with creator (user)` box
 3. `Creator property` Add http://www.geneontology.org/formats/oboInOwl#created_by
