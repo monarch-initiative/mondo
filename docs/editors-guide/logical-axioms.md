@@ -38,3 +38,9 @@ For more information, see the [Design Patterns](https://mondo.readthedocs.io/en/
 
 Currently we punt somewhat on semantics. We use ‘disease_has_location’ which has deferred some semantics, essentially to mean “should be classified under X disease”. We will have more discussion on this. We never over-describe with this relation, it is intended for primary location.
 
+For example, see MONDO_0021726 'abdominal cystic lymphangioma'
+
+Equivalent to:  
+`'cystic lymphangioma'`  
+` and ('disease has location' some abdomen)`  
+
