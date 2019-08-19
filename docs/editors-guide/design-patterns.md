@@ -1,6 +1,6 @@
 # Design Patterns
 
-## DP Docs
+## Design Pattern (DP) Docs
 
 The canonical design pattern documentation is in [https://github.com/monarch-initiative/mondo-build/tree/master/src/patterns](https://github.com/monarch-initiative/mondo-build/tree/master/src/patterns)
 
