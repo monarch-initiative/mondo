@@ -34,7 +34,7 @@ DPs are roughly:
 * GO
 * Rare X
 
-See further on this doc under Design Patterns for more info.
+See further on the [Design Patterns](https://mondo.readthedocs.io/en/latest/editors-guide/design-patterns/) page for more info.
 
 Currently we punt somewhat on semantics. We use ‘disease_has_location’ which has deferred some semantics, essentially to mean “should be classified under X disease”. We will have more discussion on this. We never over-describe with this relation, it is intended for primary location.
 
