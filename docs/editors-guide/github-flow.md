@@ -15,10 +15,5 @@ No changes are to be committed to master. **Make all changes on branches, and ma
 
 * [Editing and Pull Request workflow](https://mondo.readthedocs.io/en/latest/editors-guide/editing-workflow/)
 
-## Excluded subclassOf
 
-Rather than removing a subClassOf that comes from a trusted source (like ordo), we usually turn it into an excluded_subClassOf annotation.
-For an example, see MONDO_0020528 'ACTH-dependent Cushing syndrome'
-
-![Excluded subclassOf example](images/github-workflow-excluded-subclassof.png)
 
