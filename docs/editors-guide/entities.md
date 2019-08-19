@@ -62,7 +62,6 @@ Here the xref between MONDO:chondrocalcinosis and Orphanet:1416 as two axiom ann
     * MONDO:superClassOf and MONDO:subClassOf may be incomplete. The important one is equivalence, as they others can be inferred
     * Note: we could of course use OWL axioms directly, but this is awkward for various reasons, so the logical axioms are maintained as annotated xrefs for now.
     * We also use MONDO:obsoleteEquivalent and MONDO:equivalentObsolete for cases where we have exact 1:1 matches between an obsolete and a live class. We want to avoid making an equivalence axiom here.
-* We indicate the 
 
 ## Axiom Annotations on Logical Axioms
 
@@ -73,6 +72,10 @@ We aim to always state a reason why a subClassOf axiom exists. We currently use 
 * Name of ontology editor
 * PMIDs
 * GitHub URLs
+
+For example, see MONDO_0007113 'Angelman syndrome'
+
+![SubclassOf Axiom Annotation](images/SubclassOfAxiomAnnotation.png)
 
 ## Text definitions
 
