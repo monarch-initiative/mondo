@@ -29,7 +29,7 @@ As of August 2019, Mondo editors are using `Protege version 5.5.0`
 ### Setting ID range
 - Once you have your assigned ID range, you need to configure Protege so that your ID range is recorded in the Preferences menu. Protege does not read the mondo-idranges.owl file.
 - In the Protege menu, select Preferences.
-In the resulting pop-up window, click on the New Entities tab and set the values as described below.
+In the resulting pop-up window, click on the `New Entities` tab and set the values as described below.
 1. In the `Entity IRI` section:
   - `Start with`: Specified IRI: http://purl.obolibrary.org/obo
   - `Followed by` /
@@ -44,6 +44,8 @@ In the resulting pop-up window, click on the New Entities tab and set the values
   - Digit Count: "7"
   - Start and End: see [mondo-idranges.owl](https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mondo-idranges.owl). Only paste the number after the MONDO: prefix. Also, note that when you paste in your MONDO ID range, the number will automatically be converted to a standard number, e.g. pasting 0110001 will be converted to 110,001.)
 4. Check the `Remember last ID between Protege sessions` box (Note: You want the ID to be remembered to prevent clashes when working in parallel on branches.)
+
+![NewEntities](images/NewEntities.png)
 
 ## User details
 
