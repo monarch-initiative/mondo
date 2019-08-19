@@ -1,4 +1,4 @@
-# Mondo Workflow for Editing/Pull Requests
+# Editing and Pull Request Workflow
 
 1. Pull request workflow (modified from [http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html)
 
