@@ -1,7 +1,8 @@
 # Changelog
 
-This has now moved to a file in the top of the github repo
-[https://github.com/monarch-initiative/mondo/blob/master/Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) 
+As of **2017-10-18**, the changelog has moved to a file in the top of the github repo
+[https://github.com/monarch-initiative/mondo/blob/master/Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
+
 
 ## 2017-09-20
 
