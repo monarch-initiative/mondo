@@ -12,7 +12,7 @@ For normal ontology development we would avoid asserting axioms that can be infe
 
 If we want to remove a subClassOf axiom that has external evidence, we turn it into a excluded_subClassOf annotation (non-logical) axiom.
 
-## Excluded subclassOf
+### Excluded subclassOf
 
 Rather than removing a subClassOf that comes from a trusted source (like ordo), we usually turn it into an excluded_subClassOf annotation.
 For an example, see MONDO_0020528 'ACTH-dependent Cushing syndrome'
