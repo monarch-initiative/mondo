@@ -120,7 +120,7 @@ We follow a lot of the same rules as Uberon for text mining: [https://github.com
 
 Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release.
 
-For example, see MONDO_0008170 'ovarian cancer'
+For example, see MONDO_0002679 cerebral infarction or MONDO_0008170 'ovarian cancer'
 
 ![ovarian cancer](images/OvarianCancerNOS.png)
 
