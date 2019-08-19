@@ -72,6 +72,13 @@ These are disjoint [implemented as a GCI in the axioms.owl file]. This means tha
 We use ‘disease has major feature’ to connect a disease D to a feature F, where F is either a diseases or phenotype. In these cases, we may desire not to see D classified under F.
  
 This implicit DP is common in Orphanet.
+
+For example: MONDO_0020286 'aortic malformation'
+
+Equivalent To:  
+`'disease or disorder' and ('disease has major feature' some 'Abnormal aortic morphology')`
+
+Note: Abnormal aortic morphology comes from HPO (HP_0001679)
  
 ### Brachydactyly and Polydactyly
  
