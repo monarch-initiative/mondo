@@ -2,7 +2,7 @@
 
 ## Class IRIs
 
-Standard OBO purl, [consult GO docs on how to set up Protege](http://go-ontology.readthedocs.io/en/latest/InitialSetup.html).
+Standard OBO purl, [see page on how to set up Protege](https://mondo.readthedocs.io/en/latest/editors-guide/protege-setup/).
 
 All classes are in MONDO ID space
 
