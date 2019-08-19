@@ -3,8 +3,9 @@
 The following is intended to serve as a guide for anyone who would like to contribute to the Mondo project by making new term requests.
 
 ## Does the term you are looking for already exist?
-First, please look at the current Mondo and check whether the term is already there. There are several online browsers that you can use, and it is also possible to view the ontology in [Protege](http://protege.stanford.edu/).
-- BioPortal: [https://bioportal.bioontology.org/ontologies/mondo](https://bioportal.bioontology.org/ontologies/mondo)  
+First, please look at the current Mondo and check whether the term is already there. There are several online browsers that you can use, and it is also possible to view the ontology in [Protege](http://protege.stanford.edu/). 
+
+- BioPortal: [https://bioportal.bioontology.org/ontologies/MONDO](https://bioportal.bioontology.org/ontologies/MONDO)  
 - OBO Foundry: [http://obofoundry.org/ontology/mondo.html](http://obofoundry.org/ontology/mondo.html)  
 - Ontology Lookup Service: [https://www.ebi.ac.uk/ols/ontologies/mondo](https://www.ebi.ac.uk/ols/ontologies/mondo)  
 - Ontobee: [http://www.ontobee.org/ontology/mondo](http://www.ontobee.org/ontology/mondo)  
