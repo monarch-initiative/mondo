@@ -87,7 +87,7 @@ For example:
 6. Click on the green box ‘Pull request’ to generate a pull request.
 
 ## Merging 
-1. Chris Mungall will merge any pull requests for now
+1. **Chris Mungall will merge any pull requests for now**
 2. Wait for the Travis checks to complete (this can take several minutes. In some cases, it can take almost an hour). If the Travis checks failed, go back to your working copy and correct the reported errors.
 
 ## Merge instructions
