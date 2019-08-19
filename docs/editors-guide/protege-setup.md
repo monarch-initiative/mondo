@@ -49,6 +49,9 @@ In the resulting pop-up window, click on the New Entities tab and set the values
 1. `User name` Clcik `Use supplied user name:` add your name (ie nicolevasilevsky)
 2. Check `Use Git user name when available`
 3. Add `ORCID`. Add the ID number only, do not include https://, ie 0000-0001-5208-3432
+
+![UserDetails](images/UserDetails.png)
+
  ## Setting username and auto-adding creation date
 1. In the Protege menu, go to `Preferences` > `New Entities Metadata` tab
 2. Check `Annotate new entities with creator (user)` box
