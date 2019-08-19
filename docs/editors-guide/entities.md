@@ -102,25 +102,37 @@ Case rules:
 
 Uniqueness:
 
-We strive for uniqueness. **However, be careful when evaluating uniqueness**. Various OMIMs that are apparently distinct have names that are the same, except with different lexicalizations. Etc.
+We strive for uniqueness. **However, be careful when evaluating uniqueness**. Various OMIMs that are apparently distinct have names that are the same, except with different lexicalizations.
 
 TODO: Document ROBOT checks
 
 ## Synonyms
 
-Use lowercase, even for initial letter, except for proper names (note: many syns remain with leading capitalization, this is improving).
+Use lowercase, even for initial letter, except for proper names (note: many synonyms remain with leading capitalization, this is improving).
 
-Always annotate synonyms with xrefs. Many of these are currently DOID, Orphanet, GARD, etc IDs. We will add more directly referencing a publication (PMID CURIEs). Also add editor ID where appropriate (ORCID).
+Always annotate synonyms with xrefs. Many of these are currently DOID, Orphanet, GARD, etc IDs. We will add more directly referencing a publication (PMID CURIEs). Also add editor ID where appropriate (ORCID, in format with http://, for example: http://orcid.org/0000-0001-5208-3432).
 
 Always indicate synonym scope. These are incorrect in many places where they have been brought in externally. **Do not trust scope if there is no synonym xref other than DO**.
 
 We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining) 
 
-Some synonyms are annotated with EXCLUDE, e.g. “NOS” synonyms. It is useful to have these in the edit version, but these are filtered on release.
+### EXCLUDE synonyms
 
-We may also mark synons with DEPRECATED. E.g. all occurrences of “mental retardation” should be “intellectual disability”
+Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release.
 
-We try and avoid including things in this list: [https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations](https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations) but if it’s established (e.g. Wegener granulomatosis) may include as a syn and mark DEPRECATED
+For example, see MONDO_0008170 'ovarian cancer'
+
+![ovarian cancer](images/OvarianCancerNOS.png)
+
+
+### DEPRACATE synonyms
+
+We may also mark synonyms with DEPRECATED. E.g. all occurrences of “mental retardation” should be “intellectual disability”
+
+We try and avoid including things in this list: [https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations](https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations) but if it’s established (e.g. Wegener granulomatosis) may include as a synonym and mark DEPRECATED
+
+For example, see MONDO_0001071 'intellectual disability'
+![intellectual disability](images/IntellectualDisability.png)
 
 ## Subsets
 
