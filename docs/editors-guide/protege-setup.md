@@ -63,3 +63,5 @@ In the resulting pop-up window, click on the `New Entities` tab and set the valu
 3. `Creator value` Select Use ORCID
 4. `Date property` http://purl.org/dc/elements/1.1/date
 5. `Date value format` Select ISO-8601
+
+![NewEntitiesMetadata](images/NewEntitiesMetadata.png)
