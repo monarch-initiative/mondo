@@ -81,11 +81,11 @@ For example, see MONDO_0007113 'Angelman syndrome'
 
 We aim to write our own definitions following our standards, but for now we reuse roughly in order:
 
-EFO > {Orphanet,NCIT} > DesignPattern > doid
+EFO > {Orphanet,NCIT} > DesignPattern > DOID
 
 NCIT is generally favored over Orphanet, except for genetic non-cancer diseases.
 
-We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus. I will write up these guidelines later).
+We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus). More details on [how to write simple, concise, and clear operational text definitions is here](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/).
 
 ## Labels
 
