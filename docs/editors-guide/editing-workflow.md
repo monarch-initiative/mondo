@@ -79,6 +79,7 @@ Example:
 2. Navigate to the tab labeled as ‘Code’ (the [link](https://github.com/monarch-initiative/mondo) above should take you there). You should see your commit listed at the top of the page in a light yellow box. If you don’t see it, click on the ‘Branches’ link to reveal it in the list, and click on it.  
 
 For example:  
+![pull request](images/pullrequest.png)
 
 3. Click the green button ‘Compare & pull request’ on the right.
 4. You may now add comments and ask Chris to review your pull request. Ask Chris to review the ticket before closing it: select a reviewer for the ticket before you make the pull request by clicking on the ‘Reviewers’ list and entering a GitHub identifier (e.g. @cmungall). Chris will be notified when the pull request is submitted. Since the Pull Request is also a GitHub issue, the reviewer’s comments will show up in the dialog tab of the pull request, similarly to any other issue filed on the tracker.
