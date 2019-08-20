@@ -19,7 +19,7 @@ For an example, see MONDO_0020528 'ACTH-dependent Cushing syndrome'
 
 ![Excluded subclassOf example](images/github-workflow-excluded-subclassof.png)
 
-#### How to add an Excluded subclassOf in Protege
+#### How to add an Excluded subclassOf annotation in Protege
 
 1. Click on the subclass you wish to exclude
 2. Command + U, `show full URI`, copy the URI
