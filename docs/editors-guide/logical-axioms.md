@@ -22,12 +22,12 @@ For an example, see MONDO_0020528 'ACTH-dependent Cushing syndrome'
 #### How to add an Excluded subclassOf annotation in Protege
 
 1. Click on the subclass you wish to exclude
-2. Command + U, `show full URI`, copy the URI
+2. Command + U, `show full IRI`, copy the URI
 3. Navigate back to the class you wish to add the `excluded subClassOf` annotation to
 4. Add annotation to the class (click + in Annotations box)
 5. Click `excluded subClassOf`
 6. Click IRI Editor
-7. Paste URI, click OK
+7. Paste IRI, click OK
 8. Click the @ symbol on the annotation to add an annotation
 9. Add `source`, and add CURIE in literal tab
 10. Delete `SubClass Of` annotation (in Description box)
