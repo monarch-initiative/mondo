@@ -30,6 +30,7 @@ For an example, see MONDO_0020528 'ACTH-dependent Cushing syndrome'
 7. Paste URI, click OK
 8. Click the @ symbol on the annotation to add an annotation
 9. Add `source`, and add CURIE in literal tab
+10. Delete `SubClass Of` annotation (in Description box)
 
 ## Definitional Equivalence Axioms
 
