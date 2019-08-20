@@ -134,6 +134,18 @@ We try and avoid including things in this list: [https://en.wikipedia.org/wiki/L
 For example, see MONDO_0001071 'intellectual disability'
 ![intellectual disability](images/IntellectualDisability.png)
 
+#### How to add a synonym annotation in Protege
+
+1. Click on the synonym
+2. Click the @ symbol on the synonym
+3. Click `Annotations` +
+4. Click `has_synonym_type` on the left
+5. Click `Entity IRI` on the top of the box
+6. Click `Annotation properties` on the top of the box
+7. Scroll to bottom, and show annotation below `synonym_type_property` (click triangle)
+8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`)
+9. Click OK
+
 ## Subsets
 
 We use ORDO subClassOf as subset, thus we have subsets starting ordo_ for all their disease metaclassifications: group_of_disorders, etiological_subtype etc. We retain provenance as an axiom annotation.
