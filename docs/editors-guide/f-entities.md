@@ -21,7 +21,7 @@ The standard OBO properties are used:
 
 ## Axiom Annotations
 
-All axioms (logical and non-logical) **SHOULD** be annotated. We primarily annotate using the oio:source property. Synonyms and definitions are annotated using **has_database_xref** (from oboInOwl) in the usual way.
+All axioms (logical and non-logical) **SHOULD** be annotated. We primarily annotate using the oio:source property. Synonyms and definitions are annotated using **database_cross_reference** (from oboInOwl) in the usual way.
 
 The seed version of Mondo was created from external ontologies. We preserve both original axiom annotations where they are provided (e.g. DO) and we also stamp the originating ID.
 
