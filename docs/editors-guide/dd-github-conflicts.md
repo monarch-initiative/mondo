@@ -14,3 +14,7 @@ See additional documentation about what to do in case of a conflict here: [https
 
 Some examples of conflicts Nicole worked on are below:
 
+![Example1](images/FixGitHubConflicts/Slide1.jpeg)
+![Example2](images/FixGitHubConflicts/Slide2.jpeg)
+![Example3](images/FixGitHubConflicts/Slide3.jpeg)
+![Example4](images/FixGitHubConflicts/Slide4.jpeg)
