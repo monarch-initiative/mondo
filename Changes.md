@@ -1,3 +1,27 @@
+# 2019-08-28 release
+
+ * remove duplicate synonym from 'immune system disease'. Addresses https://github.com/monarch-initiative/mondo/issues/749
+ * remove superclass assertion for 'sensory system disease'. Addresses https://github.com/monarch-initiative/mondo/issues/747
+ * remove synonym from MONDO_0001071. Addresses https://github.com/monarch-initiative/mondo/issues/739
+ * Making UMLSs not found in medgen disease subset
+ * Adding equivalencies, see https://github.com/monarch-initiative/mondo/issues/796
+ * revise definition for MONDO_0100082. addresses https://github.com/monarch-initiative/mondo/issues/713
+ * add back dbxef and mark equivalentObsolete for MONDO_0005590. Closes https://github.com/monarch-initiative/mondo/issues/777
+ * add sublcassOf to Noonan syndrome and remove subclassOf, add excludedSubclassOf. Addresses https://github.com/monarch-initiative/mondo/issues/606
+ * ntr refeeding syndrome issue https://github.com/monarch-initiative/mondo/issues/770
+ * add new term MONDO_0100082 LEOPARD syndrome 1, addresses https://github.com/monarch-initiative/mondo/issues/713
+ * fix typo in def of MONDO:0009079, addresses https://github.com/monarch-initiative/mondo/issues/655
+ * revise def of MONDO:0009079, addresses https://github.com/monarch-initiative/mondo/issues/655
+ * revised equiv axioms for 'abdominal tuberculosis', 'eye allergy' and 'gastrointestinal tuberculosis'. Addresses https://github.com/monarch-initiative/mondo/issues/653
+ * change synonyms from exact to broad for MONDO_0005590. Addresses https://github.com/monarch-initiative/mondo/issues/777
+ * change dbxref for synonym for MONDO_0011581. Addresses https://github.com/monarch-initiative/mondo/issues/577
+
+## New Classes
+
+ * [MONDO:0100082](http://purl.obolibrary.org/obo/MONDO_0100082) LEOPARD syndrome 1
+ * [MONDO:0400005](http://purl.obolibrary.org/obo/MONDO_0400005) refeeding syndrome
+
+
 # 2019-07-28 release
 
  * renamed MONDO_0013308, added text def, revised superclass. Closes  https://github.com/monarch-initiative/mondo/issues/623
