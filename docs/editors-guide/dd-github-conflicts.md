@@ -1,4 +1,4 @@
-## GitHub conflicts
+# GitHub conflicts
 
 Sometimes a pull request will have a conflict with the base branch. These conflicts can be resolved by rebasing your branch. See more information about rebasing [here](https://git-scm.com/docs/git-rebase).
 
