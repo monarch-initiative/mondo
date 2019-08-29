@@ -11,3 +11,6 @@ Sometimes a pull request will have a conflict with the base branch. These confli
 6. `git push -f`
 
 See additional documentation about what to do in case of a conflict here: [https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore)](https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore))
+
+Some examples of conflicts Nicole worked on are below:
+
