@@ -132,7 +132,7 @@ property_value: IAO:0000114 IAO:0000428
 id: FOODON:00001046
 name: seafood product
 def: "A seafood product is a vertebrate or invertibrate organism from anaquatic environment." []
-is_a: FOODON:00002403 ! food material
+is_a: FOODON:00002381 ! food product by organism
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000116 "Some of the subclasses are currently freshwater organisms." xsd:string
@@ -152,6 +152,8 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 id: FOODON:00001093
 name: cereal grain food product
 is_a: FOODON:00001173 ! plant seed food product
+intersection_of: FOODON:00001173 ! plant seed food product
+intersection_of: RO:0001000 FOODON:03411324 ! derives from
 
 [Term]
 id: FOODON:00001107
@@ -167,6 +169,7 @@ is_a: FOODON:00001107 ! bovine dairy food product
 id: FOODON:00001118
 name: cattle dairy food product
 is_a: FOODON:00001107 ! bovine dairy food product
+relationship: RO:0001000 FOODON:03411201 ! derives from
 
 [Term]
 id: FOODON:00001141
@@ -189,9 +192,16 @@ id: FOODON:00001145
 name: microbial food product
 def: "A food product derived from one or more microorganisms including bacteria, mold, and yeast." []
 is_a: FOODON:00002381 ! food product by organism
-is_a: FOODON:00002403 ! food material
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Damion Dooley" xsd:string
+
+[Term]
+id: FOODON:00001172
+name: nut food product
+is_a: FOODON:00001173 ! plant seed food product
+is_a: FOODON:00001262 ! botanical fruit food product
+relationship: RO:0001000 FOODON:03411213 ! derives from
+relationship: RO:0002350 FOODON:03400260 ! member of nut or nut product (us cfr)
 
 [Term]
 id: FOODON:00001173
@@ -203,7 +213,7 @@ intersection_of: RO:0001000 FOODON:03420155 ! derives from seed (anatomical part
 [Term]
 id: FOODON:00001176
 name: invertebrate animal food product
-is_a: FOODON:00002403 ! food material
+is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: RO:0001000 FOODON:00002452 ! derives from
 
@@ -211,7 +221,10 @@ intersection_of: RO:0001000 FOODON:00002452 ! derives from
 id: FOODON:00001180
 name: prepared food product
 def: "Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked." []
+synonym: "prepared" BROAD []
 is_a: FOODON:00001002 ! foodon product type
+relationship: RO:0002350 FOODON:03400172 ! member of prepared food product (us cfr)
+property_value: IAO:0000119 langual:thesaurus.asp?termid=A0172
 
 [Term]
 id: FOODON:00001184
@@ -228,7 +241,6 @@ property_value: IAO:0000412 http://langual.org xsd:string
 id: FOODON:00001248
 name: fish food product
 is_a: FOODON:00001092 ! vertebrate animal food product
-relationship: FOODON:00001301 FOODON:00001854 ! has food substance analog fish food product analog
 relationship: RO:0001000 FOODON:03411222 ! derives from
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 
@@ -236,6 +248,8 @@ relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product 
 id: FOODON:00001256
 name: dairy food product
 def: "A dairy food product has mammilian milk or a milk component as an ingredient." []
+synonym: "dairy product" EXACT []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0242
 is_a: FOODON:00001092 ! vertebrate animal food product
 relationship: RO:0001000 UBERON:0001913 ! derives from milk
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
@@ -247,6 +261,13 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 id: FOODON:00001257
 name: milk or milk based food product
 is_a: FOODON:00001256 ! dairy food product
+relationship: RO:0001000 UBERON:0001913 ! derives from milk
+
+[Term]
+id: FOODON:00001262
+name: botanical fruit food product
+def: "Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits." [http://eurovoc.europa.eu/drupal/?q=request&amp;uri=http\://eurovoc.europa.eu/1115, http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119, http://www.fao.org/pollination/resources/glossary/en/, https://en.wikipedia.org/wiki/Fruit]
+is_a: FOODON:00001015 ! plant food product
 
 [Term]
 id: FOODON:00001293
@@ -305,6 +326,13 @@ intersection_of: FOODON:00001109 ! caprine dairy food product
 intersection_of: RO:0001000 FOODON:03305803 ! derives from goat milk (raw)
 
 [Term]
+id: FOODON:00001958
+name: human milk based food product
+is_a: FOODON:00001257 ! milk or milk based food product
+intersection_of: FOODON:00001257 ! milk or milk based food product
+intersection_of: RO:0001000 FOODON:03303918 ! derives from human milk (raw)
+
+[Term]
 id: FOODON:00002044
 name: mollusc food product
 name: mollusk food product
@@ -315,6 +343,8 @@ property_value: IAO:0000116 "Note american/ gb english spelling variation" xsd:s
 id: FOODON:00002131
 name: plant based refined or partially-refined food product
 is_a: FOODON:00002196 ! refined or partially-refined food product
+relationship: RO:0001000 FOODON:03411347 ! derives from
+relationship: RO:0002350 FOODON:03400129 ! member of refined or partially-refined food product (us cfr)
 
 [Term]
 id: FOODON:00002196
@@ -378,10 +408,25 @@ name: cow milk (fluid)
 comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
 subset: subset_siren
 synonym: "cow milk" EXACT []
+synonym: "milk" BROAD []
 xref: SUBSET_SIREN:F2116
 is_a: FOODON:00001771 ! cow milk based food product
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
 property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03303918
+name: human milk (raw)
+def: "Breast milk is the milk produced by the breasts (or mammary glands) of a human female to feed a child." []
+comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F3918
+is_a: FOODON:00001958 ! human milk based food product
+intersection_of: UBERON:0001913 ! milk
+intersection_of: RO:0003001 FOODON:03411087 ! produced by
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Breast_milk xsd:anyURI
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -402,6 +447,8 @@ comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no vis
 subset: subset_siren
 xref: SUBSET_SIREN:F5803
 is_a: FOODON:00001911 ! goat dairy food product
+intersection_of: UBERON:0001913 ! milk
+intersection_of: RO:0003001 FOODON:03412611 ! produced by
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -410,6 +457,8 @@ id: FOODON:03307455
 name: cow milk (raw)
 comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n* has consumer 'not pasteurized claim or use' (http://purl.obolibrary.org/obo/FOODON_03510121)\n        
 subset: subset_siren
+synonym: "milk" EXACT []
+synonym: "raw milk" BROAD []
 xref: SUBSET_SIREN:F7455
 is_a: FOODON:03302116 ! cow milk (fluid)
 intersection_of: UBERON:0001913 ! milk
@@ -423,6 +472,18 @@ name: processed food product
 subset: subset_siren
 xref: SUBSET_SIREN:F11737
 is_a: FOODON:00001002 ! foodon product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03315150
+name: mammalian milk product
+comment: SIREN DB annotation:\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F15150
+is_a: FOODON:00001257 ! milk or milk based food product
+intersection_of: FOODON:00001257 ! milk or milk based food product
+intersection_of: RO:0001000 UBERON:0001913 ! derives from milk
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -473,11 +534,30 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03400172
+name: prepared food product (us cfr)
+def: "Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked. Prepared foods often undergo several of the processes listed in *F. EXTENT OF HEAT TREATMENT* and *H. TREATMENT APPLIED*; these factors should be carefully considered in indexing. The classification of prepared food products emphasizes consumption characteristics. [FDA CFSAN 1995]" []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=A0172
+is_a: FOODON:03401270 ! product type,  u.s. code of federal regulations, title 21
+property_value: hasSynonym "prepared dish" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03400217
 name: meat, poultry, seafood or related product (us cfr)
 def: "Products of the flesh of animals. [FDA CFSAN 1995]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0217
 is_a: FOODON:03401270 ! product type,  u.s. code of federal regulations, title 21
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400260
+name: nut or nut product (us cfr)
+def: "Nuts in all forms, including nut butters and pastes." []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=A0260
+is_a: FOODON:03400306 ! nut or seed product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -497,6 +577,14 @@ def: "Food group having common consumption, functional or manufacturing characte
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0289
 is_a: FOODON:03400361 ! food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400306
+name: nut or seed product (us cfr)
+xref: http://www.langual.org/langual_thesaurus.asp?termid=A0306
+is_a: FOODON:03401270 ! product type,  u.s. code of federal regulations, title 21
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -578,6 +666,11 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03411134
+intersection_of: FOODON:00001092 ! vertebrate animal food product
+intersection_of: FOODON:03411297
+
+[Term]
 id: FOODON:03411215
 name: algae, bacteria or fungus (deprecated)
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1215
@@ -608,7 +701,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 [Term]
 id: FOODON:03411564
 name: food source
-def: "Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995]." []
+comment: This was LanguaL definition: Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995].
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1564
 is_a: ENVO:00010483 ! environmental material
 property_value: IAO:0000114 IAO:0000428
@@ -631,6 +724,7 @@ union_of: FOODON:03420295 ! fruit seed (anatomical part)
 id: FOODON:03420113
 name: milk or milk component
 def: "A broad term that includes milk and its components, cream, curd and whey; use the appropriate specific term when milk or a milk product is the principal ingredient. Use the appropriate term under *MEAT ANIMAL* to index the source of the milk (note: 21 CFR 131.110 defines milk as cow's milk)." []
+is_a: FOODON:03315150 ! mammalian milk product
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
@@ -695,11 +789,13 @@ is_a: FOODON:03420116 ! part of plant or animal
 id: FOODON:03420177
 name: gluten
 def: "Extract, concentrate or isolate high in gluten, the predominant protein of wheat or corn." []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=C0177
 is_a: FOODON:03420236 ! protein extract, concentrate or isolate
 intersection_of: FOODON:00001907 ! gluten refined food product
 intersection_of: FOODON:03420236 ! protein extract, concentrate or isolate
 intersection_of: RO:0001000 FOODON:03411324 ! derives from
-relationship: RO:0002350 FOODON:03400129 ! member of refined or partially-refined food product (us cfr)
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03420194
@@ -766,6 +862,36 @@ id: FOODON:03420310
 name: stamen
 def: "A pollen-bearing organ in a flower, made up of a slender stalk (filament) and a pollen sac (anther) (Webster's)" []
 is_a: FOODON:03420237 ! floret or flower
+
+[Term]
+id: FOODON:03460111
+name: food treatment process
+def: "Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation. Multiple values can be assigned." []
+is_a: BFO:0000015 ! process
+
+[Term]
+id: FOODON:03460177
+name: nut or seed added
+name: plant seed or nut food product
+comment: LanguaL curation note: With the exception of peanut (see *PEANUT OR PEANUT BUTTER ADDED*), used when a nut or seed ingredient is the second ingredient in order of predominance.
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0177
+is_a: FOODON:00001015 ! plant food product
+is_a: FOODON:03460180 ! food added
+union_of: FOODON:00001172 ! nut food product
+union_of: FOODON:00001173 ! plant seed food product
+property_value: IAO:0000116 "This disjunction is provided for food indexers who used the LanguaL category per guidelines.  Currently, by specifying the more specific nut or seed as ingredient instead, this category can be inferred." xsd:string
+property_value: IAO:0000118 "nut or seed added" xsd:string
+
+[Term]
+id: FOODON:03460180
+name: food added
+is_a: FOODON:03460225 ! ingredient added (TO BE REVISED)
+
+[Term]
+id: FOODON:03460225
+name: ingredient added (TO BE REVISED)
+def: "This class is subject to revision as it is inherited from LanguaL but is not according to FoodOn ontology design. Product ingredients are handled using 'has part', 'derives from', 'has substance added', etc. relations rather than through \"X added\" terms; these will likely be deprecated." []
+is_a: FOODON:03460111 ! food treatment process
 
 [Term]
 id: FOODON:03510019
@@ -1175,6 +1301,7 @@ name: berry fruit
 def: "A fruit (PO:0009001) which at maturity comprises a fleshy endocarp (PO:0009086), fleshy mesocarp (PO:0009087), and fleshy exocarp (PO:0009085)." []
 is_a: PO:0009001 ! fruit
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+property_value: seeAlso http://www.madaboutberries.com/types-of-berries.html
 
 [Term]
 id: PO:0030109
@@ -1194,6 +1321,7 @@ id: UBERON:0001913
 name: milk
 name: milk (mammary secretion)
 def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
+is_a: FOODON:03315150 ! mammalian milk product
 is_a: FOODON:03420113 ! milk or milk component
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 

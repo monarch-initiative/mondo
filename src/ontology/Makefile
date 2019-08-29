@@ -133,6 +133,7 @@ check_version_set:
 
 # REMEMBER TO COMMIT/PUSH
 # e.g. make deploy_release GHVERSION=v2018-10-26
+# this will create the GH repo. Use --no-create if repo already created.
 deploy_release: deploy_assets_direct deploy_assets_current
 
 # deploys to a versioned released

@@ -1,3 +1,6 @@
+:- use_module(library(semweb/rdf11)).
+:- use_module(library(semweb/rdfs)).
+:- use_module(library(semweb/rdf_turtle)).
 :- use_module(library(obo_metadata/oio)).
 :- use_module(library(obo_metadata/iao_metadata)).
 %:- use_module(library(rdf_owl/owl)).
@@ -7,27 +10,27 @@
 
 :- use_module(library(sparqlprog/dataframe)).
 
-:- rdf_register_prefix('MONDO','http://purl.obolibrary.org/obo/MONDO_').
-:- rdf_register_prefix('HP','http://purl.obolibrary.org/obo/HP_').
-:- rdf_register_prefix('NCIT','http://purl.obolibrary.org/obo/NCIT_').
-:- rdf_register_prefix('DOID','http://purl.obolibrary.org/obo/DOID_').
-:- rdf_register_prefix('MESH','http://purl.obolibrary.org/obo/MESH_').
-:- rdf_register_prefix('GARD','http://purl.obolibrary.org/obo/GARD_').
-:- rdf_register_prefix('SCTID','http://purl.obolibrary.org/obo/SCTID_').
-:- rdf_register_prefix('UMLS','http://linkedlifedata.com/resource/umls/id/').
-:- rdf_register_prefix('MEDGEN','http://purl.obolibrary.org/obo/MEDGEN_').
-:- rdf_register_prefix('ONCOTREE','http://purl.obolibrary.org/obo/ONCOTREE_').
-:- rdf_register_prefix('EFO','http://www.ebi.ac.uk/efo/EFO_').
-:- rdf_register_prefix('RO','http://www.ebi.ac.uk/efo/RO_').
-:- rdf_register_prefix('HGNC','http://identifiers.org/hgnc/').
-:- rdf_register_prefix('ICD10','http://purl.obolibrary.org/obo/ICD10_').
-:- rdf_register_prefix('Orphanet','http://www.orpha.net/ORDO/Orphanet_').
+:- rdf_register_ns('MONDO','http://purl.obolibrary.org/obo/MONDO_').
+:- rdf_register_ns('HP','http://purl.obolibrary.org/obo/HP_').
+:- rdf_register_ns('NCIT','http://purl.obolibrary.org/obo/NCIT_').
+:- rdf_register_ns('DOID','http://purl.obolibrary.org/obo/DOID_').
+:- rdf_register_ns('MESH','http://purl.obolibrary.org/obo/MESH_').
+:- rdf_register_ns('GARD','http://purl.obolibrary.org/obo/GARD_').
+:- rdf_register_ns('SCTID','http://purl.obolibrary.org/obo/SCTID_').
+:- rdf_register_ns('UMLS','http://linkedlifedata.com/resource/umls/id/').
+:- rdf_register_ns('MEDGEN','http://purl.obolibrary.org/obo/MEDGEN_').
+:- rdf_register_ns('ONCOTREE','http://purl.obolibrary.org/obo/ONCOTREE_').
+:- rdf_register_ns('EFO','http://www.ebi.ac.uk/efo/EFO_').
+:- rdf_register_ns('RO','http://www.ebi.ac.uk/efo/RO_').
+:- rdf_register_ns('HGNC','http://identifiers.org/hgnc/').
+:- rdf_register_ns('ICD10','http://purl.obolibrary.org/obo/ICD10_').
+:- rdf_register_ns('Orphanet','http://www.orpha.net/ORDO/Orphanet_').
 :- rdf_register_ns(oio,'http://www.geneontology.org/formats/oboInOwl#').
 
 % fake
-:- rdf_register_prefix('DC','http://purl.obolibrary.org/obo/DC_').
-:- rdf_register_prefix('COHD','http://purl.obolibrary.org/obo/COHD_').
-:- rdf_register_prefix('OMIMPS','http://purl.obolibrary.org/obo/OMIMPS_').
+:- rdf_register_ns('DC','http://purl.obolibrary.org/obo/DC_').
+:- rdf_register_ns('COHD','http://purl.obolibrary.org/obo/COHD_').
+:- rdf_register_ns('OMIMPS','http://purl.obolibrary.org/obo/OMIMPS_').
 
 foo('0').
 
@@ -54,7 +57,7 @@ solutions(_,_,[]).
 % P is str
 xref_prefix(C,X,P) :-
         has_dbxref(C,X),
-        curie_prefix(X,P).
+        curie_ns(X,P).
 
 xref_src(C,X,S) :-
         xref_src(C,X,_,S).
@@ -65,11 +68,11 @@ xref_src(C,X,A,S) :-
 xref_prefix_srcont(C,X,P,S) :-
         xref_prefix(C,X,P),
         xref_src(C,X,SC),
-        curie_prefix(SC,S).
+        curie_ns(SC,S).
 
 
-%!  curie_prefix(Literal:str, Pre:str)
-curie_prefix(Literal,Pre) :-
+%!  curie_ns(Literal:str, Pre:str)
+curie_ns(Literal,Pre) :-
         str_before(Literal,":",Pre).
 
 %!  mondo_equiv_xref(?Cls:atom, ?Xref:str, ?Prefix:str)
@@ -77,12 +80,12 @@ mondo_equiv_xref(C,X) :-
         xref_src(C,X,_,"MONDO:equivalentTo").
 mondo_equiv_xref(C,X,P) :-
         xref_src(C,X,_,"MONDO:equivalentTo"),
-        curie_prefix(X,P).
+        curie_ns(X,P).
 
 
 mondo_xref_semantics(C,X,Rel,P) :-
         xref_src(C,X,_,Src),
-        curie_prefix(X,P),
+        curie_ns(X,P),
         src_semantics(Src,Rel).
 mondo_xref_semantics(C,X,Rel) :-
         xref_src(C,X,_,Src),
@@ -107,6 +110,18 @@ mondo_equiv_class_via_xref(C,XC) :-
         mondo_equiv_xref(C,X),
         curie_uri(X,XC).
 
+mondo_equiv_xref_dangling(C,X,Rel,P) :-
+        mondo_xref_semantics(C,X,Rel,P),
+        curie_uri(X,XC),
+        \+ owl:class(XC).
+
+tag_mondo_equiv_xref_dangling(P) :-
+        mondo_equiv_xref_dangling(C,X,_Rel,P),
+        owl_assert_axiom_with_anns(rdf(C,oio:hasDbXref,X),xref,[annotation(oio:source,"MONDO:notFoundInSource")]),
+        fail.
+tag_mondo_equiv_xref_dangling(_) :-
+        rdf_assert(oio:source, rdf:type, owl:'AnnotationProperty', xref),
+        rdf_assert(oio:hasDbXref, rdf:type, owl:'AnnotationProperty', xref).
 
 rare_disease('MONDO:0021200').
 
@@ -162,8 +177,8 @@ ext_merged(X1,X2,C) :-
 ext_merged(XC1,XC2,C,P) :-
         mondo_equiv_xref(C,X1),
         mondo_equiv_xref(C,X2),
-        curie_prefix(X1,P),
-        curie_prefix(X2,P),
+        curie_ns(X1,P),
+        curie_ns(X2,P),
         curie_uri(X1,XC1),
         curie_uri(X2,XC2),
         X1 @< X2.
@@ -184,6 +199,7 @@ simj_merge_candidates(C1,C2,S,N1,N2) :-
         N1 > 3,
         S > 0.8,
         C1 @< C2.
+
 
 obsoletion_status(C,S) :-
         (   deprecated(C)
@@ -267,7 +283,7 @@ susc(X) :-
 unique_isa(C,D,Prefix,CXs,DXs) :-
         owl:subClassOf_axiom(C,D,A),
         rdf(A,oio:source,S),
-        curie_prefix(S,Prefix),
+        curie_ns(S,Prefix),
         \+ ((rdf(A,oio:source,S2),
              S2\=S)),
         solutions(X,mondo_equiv_class_via_xref(C,X),CXs),
@@ -279,7 +295,7 @@ dataframe:dataframe(unique_isa,
                       source=Prefix]-(
                                       owl:subClassOf_axiom(C,D,A),
                                       rdf(A,oio:source,S),
-                                      curie_prefix(S,Prefix),
+                                      curie_ns(S,Prefix),
                                       \+ ((rdf(A,oio:source,S2),
                                            S2\=S))),
                      [child_xrefs=X]-mondo_equiv_class_via_xref(C,X),
@@ -339,6 +355,7 @@ syndrome_and_neoplasm(C,N1) :-
         rdfs_subclass_of(C,N1),
         owl:subClassOf(N1,N).
 
+mqtest(foo).
 
 
         

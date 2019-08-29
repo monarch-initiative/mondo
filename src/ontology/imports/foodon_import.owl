@@ -108,6 +108,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
@@ -913,7 +919,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_00001046 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001046">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
@@ -955,6 +961,17 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_00001093 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001093">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001173"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411324"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
         <rdfs:label xml:lang="en">cereal grain food product</rdfs:label>
     </owl:Class>
@@ -983,6 +1000,12 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001118">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001107"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411201"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">cattle dairy food product</rdfs:label>
     </owl:Class>
     
@@ -1025,11 +1048,32 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001145">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">A food product derived from one or more microorganisms including bacteria, mold, and yeast.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
         <rdfs:label xml:lang="en">microbial food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001172 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001172">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001262"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411213"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400260"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">nut food product</rdfs:label>
     </owl:Class>
     
 
@@ -1068,7 +1112,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
         <rdfs:label xml:lang="en">invertebrate animal food product</rdfs:label>
     </owl:Class>
     
@@ -1078,7 +1122,15 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001180">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400172"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked.</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=A0172"/>
+        <oboInOwl:hasBroadSynonym xml:lang="en">prepared</oboInOwl:hasBroadSynonym>
         <rdfs:label xml:lang="en">prepared food product</rdfs:label>
     </owl:Class>
     
@@ -1112,12 +1164,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001248">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001301"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001854"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
@@ -1160,6 +1206,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A dairy food product has mammilian milk or a milk component as an ingredient.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.langual.org/langual_thesaurus.asp?termid=H0242</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym xml:lang="en">dairy product</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">dairy food product</rdfs:label>
     </owl:Class>
     
@@ -1169,8 +1217,33 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001257">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001256"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001913"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">milk or milk based food product</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001262 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001262">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001015"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">botanical fruit food product</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001262"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://eurovoc.europa.eu/drupal/?q=request&amp;amp;uri=http://eurovoc.europa.eu/1115</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.fao.org/pollination/resources/glossary/en/</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Fruit</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -1307,6 +1380,26 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001958 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001958">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001257"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03303918"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001257"/>
+        <rdfs:label xml:lang="en">human milk based food product</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00002044 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002044">
@@ -1322,6 +1415,18 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002131">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002196"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411347"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400129"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">plant based refined or partially-refined food product</rdfs:label>
     </owl:Class>
     
@@ -1484,6 +1589,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasBroadSynonym xml:lang="en">milk</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>SUBSET_SIREN:F2116</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym xml:lang="en">cow milk</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
@@ -1492,6 +1598,36 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 * derives from &apos;milk (mammary secretion)&apos; (http://purl.obolibrary.org/obo/UBERON_0001913)
         </rdfs:comment>
         <rdfs:label xml:lang="en">cow milk (fluid)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03303918 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03303918">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003001"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411087"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001958"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Breast milk is the milk produced by the breasts (or mammary glands) of a human female to feed a child.</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Breast_milk</obo:IAO_0000119>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F3918</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* has quality &apos;liquid, low viscosity, with no visible particles&apos; (http://purl.obolibrary.org/obo/FOODON_03430123)
+* derives from &apos;milk (mammary secretion)&apos; (http://purl.obolibrary.org/obo/UBERON_0001913)
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">human milk (raw)</rdfs:label>
     </owl:Class>
     
 
@@ -1541,6 +1677,17 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/FOODON_03305803 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03305803">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003001"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412611"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001911"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -1572,7 +1719,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03302116"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasBroadSynonym xml:lang="en">raw milk</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>SUBSET_SIREN:F7455</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym xml:lang="en">milk</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
         <rdfs:comment xml:lang="en">SIREN DB annotation:
 * has quality &apos;liquid, low viscosity, with no visible particles&apos; (http://purl.obolibrary.org/obo/FOODON_03430123)
@@ -1594,6 +1743,33 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:hasDbXref>SUBSET_SIREN:F11737</oboInOwl:hasDbXref>
         <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
         <rdfs:label xml:lang="en">processed food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03315150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315150">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001257"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001913"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001257"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F15150</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* derives from &apos;milk (mammary secretion)&apos; (http://purl.obolibrary.org/obo/UBERON_0001913)
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">mammalian milk product</rdfs:label>
     </owl:Class>
     
 
@@ -1672,6 +1848,20 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400172 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400172">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03401270"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked. Prepared foods often undergo several of the processes listed in *F. EXTENT OF HEAT TREATMENT* and *H. TREATMENT APPLIED*; these factors should be carefully considered in indexing. The classification of prepared food products emphasizes consumption characteristics. [FDA CFSAN 1995]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0172</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">prepared dish</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">prepared food product (us cfr)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03400217 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400217">
@@ -1681,6 +1871,19 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0217</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">meat, poultry, seafood or related product (us cfr)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400260 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400260">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400306"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Nuts in all forms, including nut butters and pastes.</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0260</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">nut or nut product (us cfr)</rdfs:label>
     </owl:Class>
     
 
@@ -1708,6 +1911,18 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0289</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.</rdfs:comment>
         <rdfs:label xml:lang="en">product type, usa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400306 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400306">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03401270"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0306</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">nut or seed product (us cfr)</rdfs:label>
     </owl:Class>
     
 
@@ -1818,6 +2033,12 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411047 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411047"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411059 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411059">
@@ -1845,9 +2066,24 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411087 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411087"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411134 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411134"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411134">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411297"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
     
 
 
@@ -1860,6 +2096,12 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03411201 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411201"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411213 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411213"/>
     
 
 
@@ -1958,9 +2200,9 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411564">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995].</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1564</oboInOwl:hasDbXref>
+        <rdfs:comment xml:lang="en">This was LanguaL definition: Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995].</rdfs:comment>
         <rdfs:label xml:lang="en">food source</rdfs:label>
     </owl:Class>
     
@@ -1975,6 +2217,12 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03412345 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412345"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03412611 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412611"/>
     
 
 
@@ -1999,6 +2247,12 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414374 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414374"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03420110 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420110">
@@ -2020,6 +2274,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03420113 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420113">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03315150"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
         <obo:IAO_0000115 xml:lang="en">A broad term that includes milk and its components, cream, curd and whey; use the appropriate specific term when milk or a milk product is the principal ingredient. Use the appropriate term under *MEAT ANIMAL* to index the source of the milk (note: 21 CFR 131.110 defines milk as cow&apos;s milk).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">milk or milk component</rdfs:label>
@@ -2147,13 +2402,10 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420236"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400129"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Extract, concentrate or isolate high in gluten, the predominant protein of wheat or corn.</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=C0177</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">gluten</rdfs:label>
     </owl:Class>
     
@@ -2297,6 +2549,58 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420237"/>
         <obo:IAO_0000115 xml:lang="en">A pollen-bearing organ in a flower, made up of a slender stalk (filament) and a pollen sac (anther) (Webster&apos;s)</obo:IAO_0000115>
         <rdfs:label xml:lang="en">stamen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03460111 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460111">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000115 xml:lang="en">Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation. Multiple values can be assigned.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">food treatment process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03460177 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460177">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001172"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001173"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001015"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03460180"/>
+        <obo:IAO_0000116 xml:lang="en">This disjunction is provided for food indexers who used the LanguaL category per guidelines.  Currently, by specifying the more specific nut or seed as ingredient instead, this category can be inferred.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">nut or seed added</obo:IAO_0000118>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=H0177</oboInOwl:hasDbXref>
+        <rdfs:comment xml:lang="en">LanguaL curation note: With the exception of peanut (see *PEANUT OR PEANUT BUTTER ADDED*), used when a nut or seed ingredient is the second ingredient in order of predominance.</rdfs:comment>
+        <rdfs:label xml:lang="en">nut or seed added</rdfs:label>
+        <rdfs:label xml:lang="en">plant seed or nut food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03460180 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460180">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03460225"/>
+        <rdfs:label xml:lang="en">food added</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03460225 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460225">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03460111"/>
+        <obo:IAO_0000115>This class is subject to revision as it is inherited from LanguaL but is not according to FoodOn ontology design. Product ingredients are handled using &apos;has part&apos;, &apos;derives from&apos;, &apos;has substance added&apos;, etc. relations rather than through &quot;X added&quot; terms; these will likely be deprecated.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">ingredient added (TO BE REVISED)</rdfs:label>
     </owl:Class>
     
 
@@ -2978,6 +3282,7 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A fruit (PO:0009001) which at maturity comprises a fleshy endocarp (PO:0009086), fleshy mesocarp (PO:0009087), and fleshy exocarp (PO:0009085).</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/po.owl"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">berry fruit</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.madaboutberries.com/types-of-berries.html"/>
     </owl:Class>
     
 
@@ -3006,6 +3311,7 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/UBERON_0001913 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03315150"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420113"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
