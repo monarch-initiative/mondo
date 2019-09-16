@@ -131,6 +131,7 @@ list_assets:
 check_version_set:
 	@test $(GHVERSION)
 
+# FIRST MAKE DIFFS AND CHANGELOG
 # REMEMBER TO COMMIT/PUSH
 # e.g. make deploy_release GHVERSION=v2018-10-26
 # this will create the GH repo. Use --no-create if repo already created.
@@ -450,7 +451,8 @@ reports/%.tsv: mondo.owl
 reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
 	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
-RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
+#RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
+RR= robot report --fail-on none -l true
 reports/edit/report.tsv: $(SRC)
 	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 reports/release/mondo-obo-report.tsv: mondo.obo
