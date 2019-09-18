@@ -978,8 +978,3 @@ bg-clean:
 
 succeed:
 	echo make succeeded
-
-# Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/foodon_import.owl: mirror/foodon.owl imports/foodon_terms.txt
-	echo "FOODON IMPORT CURRENTLY EXCLUDED"
-.PRECIOUS: imports/foodon_import.owl
