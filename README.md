@@ -4,9 +4,10 @@
 
 # Mondo
 
-This is the repository for managing the Mondo Disease Ontology (Mondo). Mondo aims to harmonizes disease definitions across the world. For more details on this ontology see the page on OBO:
+This is the repository for managing the Mondo Disease Ontology (Mondo). Mondo aims to harmonizes disease definitions across the world. For more details on this ontology see:
 
- * http://obofoundry.org/ontology/mondo.html
+ * **Mondo website**: https://monarch-initiative.github.io/mondo
+ * **OBO Foundry Mondo page**: http://obofoundry.org/ontology/mondo.html
 
 ## Versions
 
