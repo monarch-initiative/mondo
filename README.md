@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/monarch-initiative/mondo.svg?branch=master)](https://travis-ci.org/monarch-initiative/mondo)
+[![testing](https://monarch-jenkins.cgrb.oregonstate.edu/buildStatus/icon?subject=Jenkins%20master%20status&job=test-mondo&build=last:${params.MONDO_BRANCH=master})](https://monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/)
 
 <img src="https://github.com/jmcmurry/closed-illustrations/blob/master/logos/mondo-logos/mondo_logo_black-banner.png"/>
 
