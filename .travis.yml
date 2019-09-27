@@ -15,6 +15,7 @@ before_install:
     --user "essaids:${ShahimAPIToken}" 
     --form json='{
     "parameter": [
+       {"name":"MONDO_BRANCH", "value":"'"${TRAVIS_PULL_REQUEST_BRANCH:-${TRAVIS_BRANCH}}"'"},
        {"name":"TRAVIS_BRANCH", "value":"'"${TRAVIS_BRANCH}"'"},
        {"name":"TRAVIS_COMMIT", "value":"'"${TRAVIS_COMMIT}"'"},
        {"name":"TRAVIS_COMMIT_MESSAGE", "value":'"${CMTMSG}"'},
