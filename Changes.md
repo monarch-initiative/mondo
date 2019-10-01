@@ -1,3 +1,14 @@
+# 2019-09-30 release
+
+ * revise subclass assertions for hepatisis terms and relabel terms. Addresses #825
+ * ntr phrynoderma issue #773
+ * add new term MONDO:0100080 sleep disorder and move insomnia (disease)
+ * update defs for methylmalonic aciduria and homocystinuria type cblF
+ * revise defs for Stickler syndrome type 2 and 3. addresses #808
+ * update text def for angle-closure glaucoma #814
+ * revise def for MONDO:0004471 bacterial arthritis. Addresses #808
+ * revise subclass assertions for hepatisis terms and relabel terms. Addresses #825
+
 # 2019-08-28 release
 
  * remove duplicate synonym from 'immune system disease'. Addresses https://github.com/monarch-initiative/mondo/issues/749
