@@ -1,13 +1,35 @@
 # 2019-09-30 release
 
- * revise subclass assertions for hepatisis terms and relabel terms. Addresses #825
- * ntr phrynoderma issue #773
+ * revise subclass assertions for hepatisis terms and relabel terms. Addresses https://github.com/monarch-initiative/mondo/issues/825
+ * ntr phrynoderma issue https://github.com/monarch-initiative/mondo/issues/773
  * add new term MONDO:0100080 sleep disorder and move insomnia (disease)
  * update defs for methylmalonic aciduria and homocystinuria type cblF
- * revise defs for Stickler syndrome type 2 and 3. addresses #808
- * update text def for angle-closure glaucoma #814
- * revise def for MONDO:0004471 bacterial arthritis. Addresses #808
- * revise subclass assertions for hepatisis terms and relabel terms. Addresses #825
+ * revise defs for Stickler syndrome type 2 and 3. addresses https://github.com/monarch-initiative/mondo/issues/808
+ * update text def for angle-closure glaucoma https://github.com/monarch-initiative/mondo/issues/814
+ * revise def for MONDO:0004471 bacterial arthritis. Addresses https://github.com/monarch-initiative/mondo/issues/808
+ * revise subclass assertions for hepatisis terms and relabel terms. Addresses https://github.com/monarch-initiative/mondo/issues/825
+
+## New Classes
+
+ * [MONDO:0001227](http://purl.obolibrary.org/obo/MONDO_0001227) chronic tympanitis
+ * [MONDO:0100080](http://purl.obolibrary.org/obo/MONDO_0100080) cardioectodermal syndrome
+ * [MONDO:0100081](http://purl.obolibrary.org/obo/MONDO_0100081) sleep disorder
+ * [MONDO:0400004](http://purl.obolibrary.org/obo/MONDO_0400004) phrynoderma
+
+## Obsoletions
+
+None
+
+## Renaming
+
+ * [MONDO:0005231](http://purl.obolibrary.org/obo/MONDO_0005231) hepatitis C --> hepatitis C infection
+ * [MONDO:0005344](http://purl.obolibrary.org/obo/MONDO_0005344) hepatitis B --> hepatitis B infection
+ * [MONDO:0005354](http://purl.obolibrary.org/obo/MONDO_0005354) chronic hepatitis C --> chronic hepatitis C infection
+ * [MONDO:0005366](http://purl.obolibrary.org/obo/MONDO_0005366) chronic hepatitis B --> chronic hepatitis B infection
+ * [MONDO:0005788](http://purl.obolibrary.org/obo/MONDO_0005788) hepatitis E --> hepatitis E infection
+ * [MONDO:0005789](http://purl.obolibrary.org/obo/MONDO_0005789) hepatitis D --> hepatitis D infection
+ * [MONDO:0005790](http://purl.obolibrary.org/obo/MONDO_0005790) hepatitis A --> hepatitis A infection
+ * [MONDO:0100079](http://purl.obolibrary.org/obo/MONDO_0100079) cardioectodermal syndrome --> epileptic encephalopathy, early infantile, 6
 
 # 2019-08-28 release
 
