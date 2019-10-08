@@ -17,8 +17,8 @@
 - [Monkeying around with OWL: Musings on building and using ontologies](https://douroucouli.wordpress.com/). Posts by Chris Mungall
 
 ## Relevant Presentations
-- [Semantic integration across species for rare disease diagnostics](https://docs.google.com/presentation/d/1PADYOYOLmYjJh1k3lVR7j9TQHKpgJb6n_OERTgy5M6U/edit#slide=id.g61762ceb2f_0_0), Presentation by Melissa Haendel, Michigan CTSA, 2019.
-- [Mondo Disease Ontology: harmonizing disease concepts around the world](https://figshare.com/articles/Mondo_Disease_Ontology_harmonizing_disease_concepts_around_the_world/8980037), Poster presentation by Nicole Vasilevsky, Childhood Cancer Data Initiative Symposium, July 2019.
+- [Semantic integration across species for rare disease diagnostics](https://docs.google.com/presentation/d/1PADYOYOLmYjJh1k3lVR7j9TQHKpgJb6n_OERTgy5M6U/edit#slide=id.g61762ceb2f_0_0), presentation by Melissa Haendel, Michigan CTSA, 2019.
+- [Mondo Disease Ontology: harmonizing disease concepts around the world](https://figshare.com/articles/Mondo_Disease_Ontology_harmonizing_disease_concepts_around_the_world/8980037), poster presentation by Nicole Vasilevsky, Childhood Cancer Data Initiative Symposium, July 2019.
 - [Introduction to Mondo](https://docs.google.com/presentation/d/1P6UTsMPt-FYrdMTuUCiS2AsnLAeRAdqNQVcbVavXibM/edit#slide=id.p1), presentation by Chris Mungall, VICC Disease Harmonization call, May 2019
 - [A comprehensive disease ontology for human disease curation](https://figshare.com/articles/A_comprehensive_disease_ontology_for_human_disease_curation/6141551/1), presentation by Nicole Vasilevsky at the [Biocuration 2018 conference](http://biocuration2018.cn/biocuration2018/)
 - [OBO Tools and Workflows](https://docs.google.com/presentation/d/1JPAaDl6Nitxet9NVqWI30eIygcerYAjdMIGmxbRtIn0/edit#slide=id.p), presentation by Chris Mungall at ICBO 2017
