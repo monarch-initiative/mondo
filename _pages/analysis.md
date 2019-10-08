@@ -46,7 +46,6 @@ After considering only leaf nodes, we get `10394` as the final count of Mondo ra
 
 ## Results
 
-[all-mondo-disease-terms.tsv](https://github.com/monarch-initiative/mondo/blob/master/docs/artifacts/all-mondo-disease-terms.tsv): As part of our analysis, we generated a TSV containing 21633 Mondo disease terms, each with annotations that signifies whether the term is a rare disease term and whether that term is a leaf node in the ontology.
-
+[all-mondo-disease-terms.tsv:](https://github.com/monarch-initiative/mondo/blob/master/docs/artifacts/all-mondo-disease-terms.tsv) As part of our analysis, we generated a TSV containing 21633 Mondo disease terms, each with annotations that signifies whether the term is a rare disease term and whether that term is a leaf node in the ontology.
 
 
