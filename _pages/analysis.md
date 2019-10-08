@@ -1,7 +1,8 @@
+---
+---
 # Rare Disease analysis in Mondo
 
 To answer the question of 'How many rare diseases are there?' we analyzed terms in Mondo to get a total count of Rare Diseases as defined in Mondo Disease Ontology (Mondo).
-
 
 ## Methods
 
