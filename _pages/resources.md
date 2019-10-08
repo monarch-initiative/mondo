@@ -9,6 +9,7 @@
 ### Manuscripts
 
 - [k-BOOM: A Bayesian approach to ontology structure inference, with applications in disease ontology construction](https://www.biorxiv.org/content/10.1101/048843v3). Mungall C, et al. (2019) doi: https://doi.org/10.1101/048843
+- [A Census of Disease Ontologies.](https://www.annualreviews.org/doi/10.1146/annurev-biodatasci-080917-013459) Melissa A. Haendel, Julie A. McMurry, Rose Relevo, Christopher J. Mungall, Peter N. Robinson, and Christopher G. Chute (2018) Annual Review of Biomedical Data Science Vol. 1:305-331
 - [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Mungall, Christopher J., Julie A. McMurry, Sebastian Köhler, James P. Balhoff, Charles Borromeo, Matthew Brush, Seth Carbon, et al. 2017.  Nucleic Acids Research 45 (D1): D712–22.
 
 ### Blogs
