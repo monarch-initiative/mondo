@@ -1,5 +1,9 @@
 ---
 ---
+## Analyses
+
+[Rare Disease analysis in Mondo](https://github.com/monarch-initiative/mondo/blob/master/docs/analysis.md): This analysis is intended to answer the question of 'How many rare diseases are there?' we analyzed terms in Mondo to get a total count of Rare Diseases as defined in Mondo Disease Ontology (Mondo).
+
 ## Relevant Publications
 
 ### Manuscripts
