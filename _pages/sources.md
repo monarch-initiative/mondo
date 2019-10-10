@@ -22,8 +22,7 @@ Mental Functioning Ontology | MF | Source | [http://purl.obolibrary.org/obo/mf.o
 Columbia Open Health Data | COHD | xref/Alignments | [http://cohd.io/](http://cohd.io/)
 MedGen | MEDGEN |xref/Alignments | [https://www.ncbi.nlm.nih.gov/medgen/](https://www.ncbi.nlm.nih.gov/medgen/)
 Ontology for General Medical Science | OGMS | xref/Alignments | [https://github.com/OGMS/ogms](https://github.com/OGMS/ogms)
-Medical Dictionary for Regulatory Activities | MeDRA | xref/Alignments 
-| [https://www.meddra.org/](https://www.meddra.org/)
+Medical Dictionary for Regulatory Activities | MeDRA | xref/Alignments | [https://www.meddra.org/](https://www.meddra.org/)
 OncoTree | ONCOTREE | xref/Alignments | [http://oncotree.mskcc.org/#/home](http://oncotree.mskcc.org/#/home)
 
 *historic
