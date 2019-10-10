@@ -4,8 +4,8 @@ Mondo uses the following ontologies as sources or for cross-references (xrefs)/a
 
 Source | ID Space/URI Prefix | Role | Raw data or website
 --- | --- | --- | ---
-OMIM Phenotypes | OMIM | Source | [www.omim.org](www.omim.org/) 
-OMIM Phenotypic Series | OMIMPS | Source | [www.omim.org](www.omim.org/)
+OMIM Phenotypes | OMIM | Source | [www.omim.org](https://www.omim.org/) 
+OMIM Phenotypic Series | OMIMPS | Source | [www.omim.org](https://www.omim.org/)
 Orphanet | Orpha | Source | [http://www.orpha.net/ontology/orphanet.owl](http://www.orpha.net/ontology/orphanet.owl)
 SNOMED (disorder subset) | SCTID | xref/Alignments | [www.snomed.org](http://www.snomed.org/)
 National Cancer Institute Thesaurus (disease/disorder subset) | NCIT |Source | [http://purl.obolibrary.org/obo/ncit.owl](http://purl.obolibrary.org/obo/ncit.owl)
