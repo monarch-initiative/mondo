@@ -24,7 +24,7 @@ Medical Dictionary for Regulatory Activities | MeDRA | xref/Alignments
 | [https://www.meddra.org/](https://www.meddra.org/)
 OncoTree | ONCOTREE | xref/Alignments | [http://oncotree.mskcc.org/#/home](http://oncotree.mskcc.org/#/home)
 
-* historic
+*historic
 
 
 
