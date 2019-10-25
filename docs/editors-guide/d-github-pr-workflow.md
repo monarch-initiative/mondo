@@ -27,7 +27,7 @@ _Updated 2019-08-19 by Nicole Vasilevsky_
 
 ## Creating a New Working Branch with ‘git checkout’
 1. When starting to work on a ticket, you should create a new branch of the repository to edit the ontology file.
-2. Make sure you are on the master branch before creating a new branch. If the terminal window is not configured to display the branch name, type: `git status` to check which is the active branch. If necessary, go to master by typing `git checkout master`.
+2. Make sure you are on the master branch before creating a new branch. **Please do not create a new branch off of an existing branch (unless the situation explicitly calls for it).** If the terminal window is not configured to display the branch name, type: `git status` to check which is the active branch. If necessary, go to master by typing `git checkout master`.
 3. To create a new branch, type: `git checkout -b issue-NNNNN` in the terminal window. For naming branches, we recommend using the string ‘issue-‘ followed by the issue number. For instance, for this issue in the tracker: [https://github.com/monarch-initiative/mondo/issues/673](https://github.com/monarch-initiative/mondo/issues/673), you would create this branch: `git checkout -b issue-673`. Typing this command will automatically put you in the new branch. You will see this message in your terminal window:
 `BICB119:ontology vasilevs$ git checkout -b issue-5
 Switched to a new branch 'issue-5'
