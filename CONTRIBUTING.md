@@ -12,4 +12,12 @@
 
 4. **For updates to relationships:** Provide details of the current axioms, why you think they are wrong or not sufficient, and what exactly should be added or removed.
 
-On behalf of the tbn editorial team, Thanks!
+## Editors Guide
+
+For more details, please see the [Mondo Editors Guide](https://mondo.readthedocs.io/en/latest/)
+
+## Mondo website
+
+The [Mondo website](https://monarch-initiative.github.io/mondo/) contains additional information about Mondo users and contributors (and provides links to the [Editors Guide](https://mondo.readthedocs.io/en/latest/)).
+
+On behalf of the Mondo editorial team, Thanks!
