@@ -272,6 +272,16 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001563 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/FOODON_00001563">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002420"/>
+        <obo:IAO_0000115 xml:lang="en">A defining ingredient defines what a food is principally categorized as, rather than an ingredient listed by percentage of weight or volume. A food may have more than one defining ingredient.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has defining ingredient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00002420 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/FOODON_00002420">
@@ -1984,7 +1994,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00003004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <obo:IAO_0000115 xml:lang="en">Animals are multicellular eukaryotic organisms that form the biological kingdom Animalia. With few exceptions, animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a hollow sphere of cells, the blastula, during embryonic development.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">animal</rdfs:label>
     </owl:Class>
     
@@ -2170,7 +2179,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002471"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002420"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001563"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">

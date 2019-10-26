@@ -575,7 +575,6 @@ is_a: FOODON:00002452 ! invertebrate animal
 [Term]
 id: FOODON:00003004
 name: animal
-def: "Animals are multicellular eukaryotic organisms that form the biological kingdom Animalia. With few exceptions, animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a hollow sphere of cells, the blastula, during embryonic development." []
 is_a: FOODON:03411564 ! food source
 
 [Term]
@@ -1875,6 +1874,12 @@ is_symmetric: true
 [Typedef]
 id: FOODON:00001303
 name: has taxonomic identifier
+
+[Typedef]
+id: FOODON:00001563
+name: has defining ingredient
+def: "A defining ingredient defines what a food is principally categorized as, rather than an ingredient listed by percentage of weight or volume. A food may have more than one defining ingredient." []
+is_a: FOODON:00002420 ! has ingredient
 
 [Typedef]
 id: FOODON:00002420
