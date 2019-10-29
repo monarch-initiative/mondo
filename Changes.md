@@ -1,27 +1,27 @@
 # 2019-10-25 release
 
  * remove HP_0000010 'Recurrent urinary tract infections' as a dbxref fr…
- * Fixed id typo , see #890
- * obsoleting generic sucrose intolerance (a phenotype), fixes #886. Axiomatizing other intestinal malabsorbtion diseases
- * revise logical def of 'cystic fibrosis associated meconium ileum'. Addresses #685
- * fix typos. close #873
- * add new term MONDO:0100083 'hereditary thrombocytopenia and hematological cancer predisposition syndrome associated with RUNX1'. Closes #864
- * revise label, def and synonyms for MONDO_0011071. Closes #863
- * revise labels for hepatitis infection terms. Addresses #825
- * fix ID for 'sleep disorder' in superclass assertion for 'sleep-wake disorder'. Closes #866
- * obsolete MONDO:0005409 variant Creutzfeld Jacob disease. Closes #847
- * add superclass and def for LMNA-related cardiocutaneous progeria syndrome: Addresses #821
- * revise superclasses for 'Hallermann-Streiff syndrome'. addresses #821
- * revise parents and def for De Barsy syndrome. Addresses #821
- * add superclasses and def for acrogeria. Addresses #821
- * revise parent for 'premature aging'. Addresses #821
- * revise text def for 'subcorneal pustular dermatosis'. Addresses #808
- * remove HP: 0001941 as an dbxef to MONDO:0041261 'disorder of acid-base balance'. Addresses #841
- * move MONDO:0001650 'acute cystitis (disease)' to a child of MONDO:0005247 'urinary tract infection (disease)'. Addresses #841
- * remove HP_0000010 'Recurrent urinary tract infections' as a dbxref from MONDO:0001650 'acute cystitis (disease)' and MONDO:0005247 'urinary tract infection (disease)'. Addresses #841
- * add deprecated annotation to synonyms of 'intellectual disability, autosomal recessive 15'. addresses #73
- * delete SubClassOf assertion 'disease has location' some 'hepatobiliary system' (source:EFO:0006513). addresses #834
- * update def for MONDO:0016076. addresses #842
+ * Fixed id typo , see https://github.com/monarch-initiative/mondo/issues/890
+ * obsoleting generic sucrose intolerance (a phenotype), fixes https://github.com/monarch-initiative/mondo/issues/886. Axiomatizing other intestinal malabsorbtion diseases
+ * revise logical def of 'cystic fibrosis associated meconium ileum'. Addresses https://github.com/monarch-initiative/mondo/issues/685
+ * fix typos. close https://github.com/monarch-initiative/mondo/issues/873
+ * add new term MONDO:0100083 'hereditary thrombocytopenia and hematological cancer predisposition syndrome associated with RUNX1'. Closes https://github.com/monarch-initiative/mondo/issues/864
+ * revise label, def and synonyms for MONDO_0011071. Closes https://github.com/monarch-initiative/mondo/issues/863
+ * revise labels for hepatitis infection terms. Addresses https://github.com/monarch-initiative/mondo/issues/825
+ * fix ID for 'sleep disorder' in superclass assertion for 'sleep-wake disorder'. Closes https://github.com/monarch-initiative/mondo/issues/866
+ * obsolete MONDO:0005409 variant Creutzfeld Jacob disease. Closes https://github.com/monarch-initiative/mondo/issues/847
+ * add superclass and def for LMNA-related cardiocutaneous progeria syndrome: Addresses https://github.com/monarch-initiative/mondo/issues/821
+ * revise superclasses for 'Hallermann-Streiff syndrome'. addresses https://github.com/monarch-initiative/mondo/issues/821
+ * revise parents and def for De Barsy syndrome. Addresses https://github.com/monarch-initiative/mondo/issues/821
+ * add superclasses and def for acrogeria. Addresses https://github.com/monarch-initiative/mondo/issues/821
+ * revise parent for 'premature aging'. Addresses https://github.com/monarch-initiative/mondo/issues/821
+ * revise text def for 'subcorneal pustular dermatosis'. Addresses https://github.com/monarch-initiative/mondo/issues/808
+ * remove HP: 0001941 as an dbxef to MONDO:0041261 'disorder of acid-base balance'. Addresses https://github.com/monarch-initiative/mondo/issues/841
+ * move MONDO:0001650 'acute cystitis (disease)' to a child of MONDO:0005247 'urinary tract infection (disease)'. Addresses https://github.com/monarch-initiative/mondo/issues/841
+ * remove HP_0000010 'Recurrent urinary tract infections' as a dbxref from MONDO:0001650 'acute cystitis (disease)' and MONDO:0005247 'urinary tract infection (disease)'. Addresses https://github.com/monarch-initiative/mondo/issues/841
+ * add deprecated annotation to synonyms of 'intellectual disability, autosomal recessive 15'. addresses https://github.com/monarch-initiative/mondo/issues/73
+ * delete SubClassOf assertion 'disease has location' some 'hepatobiliary system' (source:EFO:0006513). addresses https://github.com/monarch-initiative/mondo/issues/834
+ * update def for MONDO:0016076. addresses https://github.com/monarch-initiative/mondo/issues/842
 
 ## New Classes
 
