@@ -864,8 +864,11 @@ mondox.obo: mondo-edit.obo
 check: mondo-edit.obo
 	$(HOME)/repos/go-ontology/src/util/check-obo-for-standard-release.pl --disable-xrf-abbs-check $<
 
+%-quickcheck: %.obo
+	 ../utils/quick-check.pl $<
+
 mondo-edit.owl: mondo-edit.obo
-	robot convert -i $< -o $@
+	../utils/quick-check.pl $< && robot convert -i $< -o $@
 
 d2taxon-wd.tsv:
 	pq-wd -f tsv  "has_cause(D,T),doid_id(D,DX),ncbitaxon_id(T,TX)" "x(DX,TX)" > $@.tmp && perl -npe 's@\t@\tNCBITaxon:@' $@.tmp > $@
