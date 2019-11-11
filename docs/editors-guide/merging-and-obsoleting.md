@@ -28,7 +28,7 @@ by Nicole Vasilevsky 08/31/18
 1. If one class should be merged with another class, first obsolete the class that will be merged.
 1. Search for the class to be obsoleted
 1. Rename label to: obsolete [class name]
-1. Add annotation **owl:deprecated** and indicated true (in literal)
+1. Add annotation **owl:deprecated** and indicate true (in literal)
 1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684).
 1. Remove superclass axioms
 1. If the class has children, remove the superclass assertion for the children 
@@ -42,6 +42,14 @@ Annotate the database_cross_reference annotation with **source** MONDO:obsoleteE
 
 Note: A Mondo obsolete class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
 
+## Obsolete a class (without merging)
+1. Search for the class to be obsoleted.
+1. Rename label to: obsolete [class name].
+1. Add annotation **owl:deprecated** and indicate true (in literal).
+1. Remove superclass axioms.
+1. If the class has children, remove the superclass assertions for the children.
+1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
+
 ## When to obsolete / merge
 
-TODO: document process for informing developers/users
+If a term is a candidate for obsoletion and/or merging, this should be reported on the [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues) and labeled 'obsolete'. Issues should remain open for at least two weeks to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
