@@ -56,6 +56,7 @@ Note: A Mondo obsolete class should not have an xref axiom tagged with "MONDO:eq
 If a term is a candidate for obsoletion and/or merging, this should be reported on the [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues) and labeled 'obsolete'. Click [here](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3Aobsolete) for potential terms to be obsoleted.
 
 Some examples of when to obsolete and/or merge a term are:  
+
 - **Duplicate terms** (for example MONDO:0019055 mitochondrial disease was obsoleted and replaced by MONDO:0004069 'inborn mitochondrial metabolism disorder')  
 - **Terms that are not truly diseases** (ie phenotype terms, such as MONDO:0007348 Colchicine resistance)  
 
