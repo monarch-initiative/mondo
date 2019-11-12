@@ -32,7 +32,7 @@ Please cite: Mungall, Christopher J., et al. 2017 [The Monarch Initiative: An In
 
 Please see our [blog post](https://medium.com/@MonarchInit/new-release-of-mondo-disease-ontology-9a48521353e3) that describes why we created Mondo.
 
-### Does the definition of 'equivalent-class' mapping require that the MONDO/Other relationship is strictly 1:1?
+### Does the definition of 'equivalent-class' mapping require that the Mondo/Other relationship is strictly 1:1?
 
 The semantics of owl equivalentClass are such that all concepts are strictly identical in meaning. This always translates to a 1:1 mapping, except when we do a 'proxy merge' - we decide that two concepts in an external resource mean the same thing. This is rare, and the numbers usually come down as we work with the upstream to resolve this. See [ticket](https://github.com/monarch-initiative/mondo/issues/936).
 
