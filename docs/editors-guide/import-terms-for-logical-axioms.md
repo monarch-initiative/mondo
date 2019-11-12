@@ -10,5 +10,5 @@
 1. open mondo-edit.obo in Protege
 1. File -> save as (obo format, save as mondo-edit.obo)
 1. Replace existing file 
-1. Check diff in GitHub desktop
+1. Check diff
 1. Commit/Push
