@@ -24,17 +24,17 @@ Mondo is the disease ontology for the [Monarch Initiative](https://monarchinitia
 
 Mondo is co-developed with [HPO](https://hpo.jax.org/app/), to ensure interoperability and alignment between the two ontologies and create a more holistic semantic disease resource. A subset of HPO classes are imported into Mondo. HPO terms are used in the logical definitions for the disease terms, where applicable. For example, [MONDO:0003337 'acute hemorrhagic encephalitis'](http://purl.obolibrary.org/obo/MONDO_0003337) is computationally defined as `encephalitis and ('disease has feature' some 'Abnormal bleeding')` ([Abnormal bleeding is an HPO term, HP:0001892](https://hpo.jax.org/app/browse/term/HP:0001892)).
 
-
 ### How do I cite Mondo?
 
 Please cite: Mungall, Christopher J., et al. 2017 [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Nucleic Acids Research 45 (D1): D712–22.
-
 
 ### Why do we need Mondo?
 
 Please see our [blog post](https://medium.com/@MonarchInit/new-release-of-mondo-disease-ontology-9a48521353e3) that describes why we created Mondo.
 
+### Does the definition of 'equivalent-class' mapping require that the MONDO/Other relationship is strictly 1:1?
 
+The semantics of owl equivalentClass are such that all concepts are strictly identical in meaning. This always translates to a 1:1 mapping, except when we do a 'proxy merge' - we decide that two concepts in an external resource mean the same thing. This is rare, and the numbers usually come down as we work with the upstream to resolve this. See [ticket](https://github.com/monarch-initiative/mondo/issues/936).
 
 {% comment %} ### What is an ontology? {% endcomment %}
 
