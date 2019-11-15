@@ -54,6 +54,38 @@ solutions(X,G,L) :-
         !.
 solutions(_,_,[]).
 
+exact_synonym_src(C,S,X) :-
+        has_exact_synonym_axiom(C,S,A),
+        has_dbxref(A,X).
+
+exact_synonym_srcs(C,S,Xs) :-
+        has_exact_synonym(C,S),
+        solutions(X,exact_synonym_src(C,S,X),Xs).
+
+exact_synonym_srcs(C,S,['PRIMARY_LABEL']) :-
+        label(C,S).
+
+clashing_exact_synonym_srcs(S,C,Xs,C2,Xs2) :-
+        exact_synonym_srcs(C,S,Xs),
+        exact_synonym_srcs(C2,S,Xs2),
+        C2\=C,
+        \+ deprecated(C),
+        \+ deprecated(C2).
+
+% ./mq report synclash
+dataframe:dataframe(synclash,
+                    [[syn=S,
+                      c1=C,
+                      xrefs1=Xs,
+                      c2=C2,
+                      xrefs2=Xs2]-clashing_exact_synonym_srcs(S,C,Xs,C2,Xs2)],
+                    [
+                     description('clashing synonyms'),
+                     entity(c1),
+                     entity(c2)
+                    ]).
+        
+
 % P is str
 xref_prefix(C,X,P) :-
         has_dbxref(C,X),
