@@ -1,0 +1,10 @@
+prefix omim: <http://identifiers.org/omim/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?c ?p ?xc ?xp {
+   ?c rdfs:subClassOf+ ?p .
+   ?c skos:exactMatch ?xc .
+   ?p skos:exactMatch ?xp .
+   STRSTARTS(STR(?xc), STR(omim:))
+   STRSTARTS(STR(?xp), STR(omim:))
+}

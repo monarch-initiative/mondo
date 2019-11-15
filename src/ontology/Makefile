@@ -369,7 +369,7 @@ NEWAXTEST: mondo-edit.owl new.owl
 # adding the name here will make the violation check live
 CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label 
 EDIT_CHECKS =     $(CORE_CHECKS)
-MAIN_OWL_CHECKS = $(CORE_CHECKS) no-superclass
+MAIN_OWL_CHECKS = $(CORE_CHECKS) no-superclass omim-subsumption
 MAIN_OBO_CHECKS = $(CORE_CHECKS) no-superclass
 
 QSRC = $(SRC)-noimports.owl
@@ -450,7 +450,7 @@ reports/%.tsv: mondo.owl
 reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
 	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
-RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
+RR=robot report --fail-on none -l true
 reports/edit/report.tsv: $(SRC)
 	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 reports/release/mondo-obo-report.tsv: mondo.obo
@@ -459,7 +459,7 @@ reports/release/mondo-obo-report.tsv: mondo.obo
 reports/release/mondo-owl-report.tsv: mondo.owl
 	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
-%-report.tsv: %
+%-report.tsv: %.owl
 	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 common_map.tsv:
