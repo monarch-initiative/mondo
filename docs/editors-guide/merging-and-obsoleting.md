@@ -33,10 +33,6 @@ by Nicole Vasilevsky 08/31/18
 1. Remove superclass axioms
 1. If the class has children, remove the superclass assertion for the children 
 1. Example: ![Manual merge example 1](images/github-workflow-manual-merge-1.png)
-1. Search for the replacement term
-1. Add annotation **database_cross_reference** and add the term ID
-Annotate the database_cross_reference annotation with **source** MONDO:obsoleteEquivalent (in the literal tab)
-1. Example: ![Manual merge example 2](images/github-workflow-manual-merge-2.png)
 1. Move all the synonyms to the new term. 
 1. Move all the **database_cross_references** to the new term.
 1. If applicable, to mark the synonym as deprecated, add an annotation to the synonym: has_synonym_type ‘A synonym that is historic and discouraged’. See granulomatosis with polyangiitis for examples of deprecated syn axiom annotations
