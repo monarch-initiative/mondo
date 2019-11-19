@@ -8,6 +8,8 @@
 
 ### Manuscripts
 
+- [How many rare diseases are there?](https://www.nature.com/articles/d41573-019-00180-y) Melissa Haendel, Nicole Vasilevsky, Deepak Unni, Cristian Bologa, Nomi Harris, Heidi Rehm, Ada Hamosh, Gareth Baynam, Tudor Groza, Julie McMurry, Hugh Dawkins, Ana Rath, Courtney Thaxon, Giovanni Bocci, Marcin P. Joachimiak, Sebastian Köhler, Peter N. Robinson, Chris Mungall & Tudor I. Oprea. Nature Reviews Drug Discovery, 05 November 2019
+- [The Monarch Initiative in 2019: an integrative data and analytic platform connecting phenotypes to genotypes across species.](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz997/5614574#170074726) Kent A Shefchek, Nomi L Harris, Michael Gargano, Nicolas Matentzoglu, Deepak Unni, Matthew Brush, Daniel Keith, Tom Conlin, Nicole Vasilevsky, et al. Nucleic Acids Research, gkz997, https://doi.org/10.1093/nar/gkz997. 
 - [k-BOOM: A Bayesian approach to ontology structure inference, with applications in disease ontology construction](https://www.biorxiv.org/content/10.1101/048843v3). Mungall C, et al. (2019) doi: https://doi.org/10.1101/048843
 - [A Census of Disease Ontologies.](https://www.annualreviews.org/doi/10.1146/annurev-biodatasci-080917-013459) Melissa A. Haendel, Julie A. McMurry, Rose Relevo, Christopher J. Mungall, Peter N. Robinson, and Christopher G. Chute (2018) Annual Review of Biomedical Data Science Vol. 1:305-331
 - [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Mungall, Christopher J., Julie A. McMurry, Sebastian Köhler, James P. Balhoff, Charles Borromeo, Matthew Brush, Seth Carbon, et al. 2017.  Nucleic Acids Research 45 (D1): D712–22.
