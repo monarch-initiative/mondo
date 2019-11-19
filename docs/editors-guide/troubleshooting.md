@@ -1,8 +1,8 @@
 ## Troubleshooting
 
-Below are some issues we have encountered and some solutions on how to fix them.
+This page is for documenting issues we have encountered and some solutions on how to fix them.
 
- ### Ontop OBDA Protege plugiin
+ ###Ontop OBDA Protege plugiin
  
 If you install the Ontop OBDA Protége plugin, it will cause problems with our ontologies (we were getting super big diffs, and it turned out the first line of the ontology was being changed). The fix was to go back into our preferences in Protégé/New Entities tab and fix the Specified IRI.
 
