@@ -2,10 +2,12 @@ prefix omim: <http://identifiers.org/omim/>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?c ?p ?xc ?xp {
+SELECT ?c ?cn ?p ?pm ?xc ?xp {
    ?c rdfs:subClassOf+ ?p .
    ?c skos:exactMatch ?xc .
    ?p skos:exactMatch ?xp .
-   STRSTARTS(STR(?xc), STR(omim:))
-   STRSTARTS(STR(?xp), STR(omim:))
+   ?c rdfs:label ?cn .
+   ?p rdfs:label ?pn .
+   FILTER (strstarts(STR(?xc), STR(omim:)))
+   FILTER (strstarts(STR(?xp), STR(omim:)))
 }
