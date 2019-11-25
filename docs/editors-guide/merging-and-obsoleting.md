@@ -29,13 +29,14 @@ by Nicole Vasilevsky 08/31/18
 1. Search for the class to be obsoleted
 1. Rename label to: obsolete [class name]
 1. Add annotation **owl:deprecated** and indicate true (in literal)
-1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684).
+1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684). If the disease term is being obsoleted and an HPO term should be used instead, do not use **term replaced by**, rather use the annotation **consider.** For example, see MONDO:0001445.
 1. Remove superclass axioms
 1. If the class has children, remove the superclass assertion for the children 
 1. Example: ![Manual merge example 1](images/github-workflow-manual-merge-1.png)
 1. Move all the synonyms to the new term. 
 1. Move all the **database_cross_references** to the new term.
 1. If applicable, to mark the synonym as deprecated, add an annotation to the synonym: has_synonym_type ‘A synonym that is historic and discouraged’. See granulomatosis with polyangiitis for examples of deprecated syn axiom annotations
+1. It is a good idea to add a reason for obsoletion to the class. This can be added as a **comment** or add **seeAlso** and add a link to the GitHub ticket.
 
 Note: A Mondo obsolete class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
 
