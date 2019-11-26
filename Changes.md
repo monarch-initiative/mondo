@@ -1,3 +1,144 @@
+# 2019-11-25 release
+
+ * reclasify paralysis terms - closes #622
+ * obsolete MONDO:0016076 - closes #842
+ * revise superclass for MONDO_0006685 - closes #580
+ * obsolete MONDO:0009651 - closes #816
+ * add comment to MONDO:0005259  closes #705 
+ * update annotations on MONDO:0006849  closes #989 
+ * revise superclasses for MONDO_0016823  closes #581 
+ * relabel MONDO:0019303  addresses #821 
+ * add subclassOf relations to MONDO_0008608 'Down syndrome'  closes #824 
+ * add superclassOf axiom to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  closes #692 
+ * add superclassOf relation to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  addresses #692 
+ * rename MONDO:0007750 hypercholesterolemia, familial, 1  closes #729. 
+ * obsolete 'sensory system disease'  closes #823 
+ * remove excluded subclass of from MONDO_0001202  closes #726 
+ * revise annotations for MONDO_0005305  addresses #924 
+ * obsolete MONDO:0001445 neurogenic bladder (disease)  closes #974 
+ * delete xref to obsolete EFO term  addresses #992 
+ * obsolete MONDO:0022460  closes #140 
+ * obsolete MONDO:0007563 and MONDO:0005305  closes #924 
+ * remove incorrect xref from MONDO:0016462 isolated agammaglobulinemia  closes #800 
+ * excluding DO syns that clash with other exact syns, see #808 
+ * excluding DO syns that clash with other label, see #808 
+ * update label and syn scope for Mungan syndrome  closes #887 
+ * relink excluded subclass of  closes #898 
+ * reclassiify 'Hinman syndrome'  and add equiv axiom to neurogenic bladder  addresses #885 
+ * obsolete MONDO:0009639 mitochondrial myopathy with lactic acidosis  closes #817 
+ * obsolete MONDO:0022314  closes #880 
+ * add def to MONDO:0013419  closes #959 
+ * revise superclass for MONDO_0010252  closes #926 
+ * add new term MONDO:0100085 cancer of long bone of upper limb  closes #899 
+ * merged dupes for nephropathic infantile cystinosis, fixes #960 
+ * changes for #960 
+ * add MONDO:0100086 perinatal disease  addresses #685 
+ * add new terms  MONDO:0100087 familial Alzheimber disease MONDO:0100088 late-onset familial alzheimer disease closes #921 
+ * obsolete MONDO:0006775  closes #877 
+ * remove superclasses for cystic fibrosis  addresses #685 
+ * reclassify MONDO_0004961 and MONDO:0004962  and revise text def for MONDO:0004962 per https://github.com/EBISPOT/efo/issues/329  closes #490 
+ * Revise classification of MONDO:0044013 'puerperal disorder'  closes #652 
+ * fix typo  closes #883 
+ * fix typo  address #926 
+ * revise de for MONDO:0000509  addresses #926 
+ * revise subclass for MONDO_0014224  addresses #926 
+ * change labels  addresses #926 
+ * add axiom to actinopathy  closes #942 
+ * update text def for MONDO:0013343  closes #939 
+ * revised synonym scope for 'C1Q deficiency'  closes #940 
+ * revise subclass assertions for MONDO:0009833  closes #859 
+ * add missing period in text def for MONDO:0005413  addresses #685 
+ * relabel MONDO:0005413 and change superclass  addresses #685 
+ * fixed issue subclassOf assertion for MONDO_0022968  addresses #841 
+ * obsoleted drug response terms  Obsoleted these classes: MONDO_0007348 Colchicine resistance MONDO_0008697 'acetophenetidin sensitivity' MONDO_0008906 Carbimazole sensitivity MONDO_0012294 CYP2C19-related poor drug metabolism MONDO_0012148 'drug metabolism, poor, CYP2D6-related' MONDO_0014330 'eculizumab, poor response to'  closes #860 
+ * obsolete class MONDO:0004823  addresses #841 
+ * obsolete MONDO:0019184  closes #836 
+ * update synonyms for MONDO:0060702  closes #875 
+ * remove dbxref from MONDO_0009290  closes #862 
+ * remove superclass assertions for MONDO:0009169  addresses #834 
+ * remove subclassof assertions  Removed subClass Of assertions and added execluded subclass of annotatiions for MONDO:0010631 and MONDO:0010568 closes #912 
+ * add new term MONDO:0100084 actinopathy  closes #900 
+ * remove incorrect xrefs and synonyms from endotheliitis  closes #904 
+ * fix issues with prion disease terms  addresses issues outlined in #908 
+ * remove subclass of assertioin for MONDO_0005772 (geotrichosis)  closes #909 
+ * add term replaced by annotation to 'obsolete Marfan syndrome type 2'  closes #913 
+ * Fixes gene URI issues fixes #905 also normalizes 
+
+## New Classes
+
+ * [MONDO:0020744](http://purl.obolibrary.org/obo/MONDO_0020744) Mobitz type I atrioventricular block
+ * [MONDO:0020745](http://purl.obolibrary.org/obo/MONDO_0020745) autosomal dominant cardiac arrhythmia (Kuhn)
+ * [MONDO:0020755](http://purl.obolibrary.org/obo/MONDO_0020755) heart block
+ * [MONDO:0020803](http://purl.obolibrary.org/obo/MONDO_0020803) bundle branch block
+ * [MONDO:0020806](http://purl.obolibrary.org/obo/MONDO_0020806) sinoatrial block
+ * [MONDO:0100084](http://purl.obolibrary.org/obo/MONDO_0100084) actinopathy
+ * [MONDO:0100085](http://purl.obolibrary.org/obo/MONDO_0100085) cancer of long bone of upper limb
+ * [MONDO:0100086](http://purl.obolibrary.org/obo/MONDO_0100086) perinatal disease
+ * [MONDO:0100087](http://purl.obolibrary.org/obo/MONDO_0100087) familial Alzheimber disease
+ * [MONDO:0100088](http://purl.obolibrary.org/obo/MONDO_0100088) late-onset familial alzheimer disease
+ * [MONDO:0400002](http://purl.obolibrary.org/obo/MONDO_0400002) calcium-alkali syndrome
+
+## Obsoletions
+
+ * [MONDO:0001445](http://purl.obolibrary.org/obo/MONDO_0001445) neurogenic bladder (disease) --> obsolete neurogenic bladder (disease)
+ * [MONDO:0004823](http://purl.obolibrary.org/obo/MONDO_0004823) dextrocardia --> obsolete dextrocardia
+ * [MONDO:0005128](http://purl.obolibrary.org/obo/MONDO_0005128) sensory system disease --> obsolete sensory system disease
+ * [MONDO:0005305](http://purl.obolibrary.org/obo/MONDO_0005305) epistaxis --> obsolete epistaxis
+ * [MONDO:0006775](http://purl.obolibrary.org/obo/MONDO_0006775) haemophilus influenzae meningitis --> obsolete haemophilus influenzae meningitis
+ * [MONDO:0007348](http://purl.obolibrary.org/obo/MONDO_0007348) colchicine resistance --> obsolete colchicine resistance
+ * [MONDO:0007563](http://purl.obolibrary.org/obo/MONDO_0007563) epistaxis, hereditary --> obsolete epistaxis, hereditary
+ * [MONDO:0008697](http://purl.obolibrary.org/obo/MONDO_0008697) acetophenetidin sensitivity --> obsolete acetophenetidin sensitivity
+ * [MONDO:0008906](http://purl.obolibrary.org/obo/MONDO_0008906) carbimazole sensitivity --> obsolete carbimazole sensitivity
+ * [MONDO:0009065](http://purl.obolibrary.org/obo/MONDO_0009065) cystinosis, nephropathic --> obsolete cystinosis, nephropathic
+ * [MONDO:0009639](http://purl.obolibrary.org/obo/MONDO_0009639) mitochondrial myopathy with lactic acidosis --> obsolete mitochondrial myopathy with lactic acidosis
+ * [MONDO:0009651](http://purl.obolibrary.org/obo/MONDO_0009651) pseudo-Hurler polydystrophy --> obsolete pseudo-Hurler polydystrophy
+ * [MONDO:0012148](http://purl.obolibrary.org/obo/MONDO_0012148) drug metabolism, poor, CYP2D6-related --> obsolete drug metabolism, poor, CYP2D6-related
+ * [MONDO:0012294](http://purl.obolibrary.org/obo/MONDO_0012294) drug metabolism, poor, Cyp2C19-related --> obsolete drug metabolism, poor, Cyp2C19-related
+ * [MONDO:0014330](http://purl.obolibrary.org/obo/MONDO_0014330) eculizumab, poor response to --> obsolete eculizumab, poor response to
+ * [MONDO:0016076](http://purl.obolibrary.org/obo/MONDO_0016076) lymphatic filariasis --> obsolete lymphatic filariasis
+ * [MONDO:0019184](http://purl.obolibrary.org/obo/MONDO_0019184) ankylostomiasis --> obsolete ankylostomiasis
+ * [MONDO:0021007](http://purl.obolibrary.org/obo/MONDO_0021007) stage of disease --> obsolete stage of disease
+ * [MONDO:0022314](http://purl.obolibrary.org/obo/MONDO_0022314) Hernandez Aguirre-Negrete syndrome --> obsolete Hernandez Aguirre-Negrete syndrome
+ * [MONDO:0022460](http://purl.obolibrary.org/obo/MONDO_0022460) anophthalmia cleft lip palate hypothalamic disorder --> obsolete anophthalmia cleft lip palate hypothalamic disorder
+
+## Renaming
+
+ * [MONDO:0000991](http://purl.obolibrary.org/obo/MONDO_0000991) left bundle branch hemiblock --> left bundle branch block
+ * [MONDO:0001445](http://purl.obolibrary.org/obo/MONDO_0001445) neurogenic bladder (disease) --> obsolete neurogenic bladder (disease)
+ * [MONDO:0004823](http://purl.obolibrary.org/obo/MONDO_0004823) dextrocardia --> obsolete dextrocardia
+ * [MONDO:0005128](http://purl.obolibrary.org/obo/MONDO_0005128) sensory system disease --> obsolete sensory system disease
+ * [MONDO:0005305](http://purl.obolibrary.org/obo/MONDO_0005305) epistaxis --> obsolete epistaxis
+ * [MONDO:0005413](http://purl.obolibrary.org/obo/MONDO_0005413) cystic fibrosis associated meconium ileum --> cystic fibrosis associated meconium ileus
+ * [MONDO:0006775](http://purl.obolibrary.org/obo/MONDO_0006775) haemophilus influenzae meningitis --> obsolete haemophilus influenzae meningitis
+ * [MONDO:0007175](http://purl.obolibrary.org/obo/MONDO_0007175) Pr interval, variation 1N --> PR interval, variation 1N
+ * [MONDO:0007348](http://purl.obolibrary.org/obo/MONDO_0007348) colchicine resistance --> obsolete colchicine resistance
+ * [MONDO:0007563](http://purl.obolibrary.org/obo/MONDO_0007563) epistaxis, hereditary --> obsolete epistaxis, hereditary
+ * [MONDO:0007750](http://purl.obolibrary.org/obo/MONDO_0007750) hypercholesterolemia, familial --> hypercholesterolemia, familial, 1
+ * [MONDO:0008697](http://purl.obolibrary.org/obo/MONDO_0008697) acetophenetidin sensitivity --> obsolete acetophenetidin sensitivity
+ * [MONDO:0008906](http://purl.obolibrary.org/obo/MONDO_0008906) carbimazole sensitivity --> obsolete carbimazole sensitivity
+ * [MONDO:0009065](http://purl.obolibrary.org/obo/MONDO_0009065) cystinosis, nephropathic --> obsolete cystinosis, nephropathic
+ * [MONDO:0009639](http://purl.obolibrary.org/obo/MONDO_0009639) mitochondrial myopathy with lactic acidosis --> obsolete mitochondrial myopathy with lactic acidosis
+ * [MONDO:0009651](http://purl.obolibrary.org/obo/MONDO_0009651) pseudo-Hurler polydystrophy --> obsolete pseudo-Hurler polydystrophy
+ * [MONDO:0012148](http://purl.obolibrary.org/obo/MONDO_0012148) drug metabolism, poor, CYP2D6-related --> obsolete drug metabolism, poor, CYP2D6-related
+ * [MONDO:0012294](http://purl.obolibrary.org/obo/MONDO_0012294) drug metabolism, poor, Cyp2C19-related --> obsolete drug metabolism, poor, Cyp2C19-related
+ * [MONDO:0012657](http://purl.obolibrary.org/obo/MONDO_0012657) MGS --> Mungan syndrome
+ * [MONDO:0014330](http://purl.obolibrary.org/obo/MONDO_0014330) eculizumab, poor response to --> obsolete eculizumab, poor response to
+ * [MONDO:0016076](http://purl.obolibrary.org/obo/MONDO_0016076) lymphatic filariasis --> obsolete lymphatic filariasis
+ * [MONDO:0016290](http://purl.obolibrary.org/obo/MONDO_0016290) Hern --> Hernández-Aguirre Negrete syndrome
+ * [MONDO:0019184](http://purl.obolibrary.org/obo/MONDO_0019184) ankylostomiasis --> obsolete ankylostomiasis
+ * [MONDO:0019303](http://purl.obolibrary.org/obo/MONDO_0019303) premature aging --> premature aging syndrome
+ * [MONDO:0021007](http://purl.obolibrary.org/obo/MONDO_0021007) stage of disease --> obsolete stage of disease
+ * [MONDO:0022020](http://purl.obolibrary.org/obo/MONDO_0022020) boudhina yedes khiari syndrome --> Boudhina Yedes Khiari syndrome
+ * [MONDO:0022094](http://purl.obolibrary.org/obo/MONDO_0022094) cartwright Nelson Fryns syndrome --> Cartwright Nelson Fryns syndrome
+ * [MONDO:0022314](http://purl.obolibrary.org/obo/MONDO_0022314) Hernandez Aguirre-Negrete syndrome --> obsolete Hernandez Aguirre-Negrete syndrome
+ * [MONDO:0022460](http://purl.obolibrary.org/obo/MONDO_0022460) anophthalmia cleft lip palate hypothalamic disorder --> obsolete anophthalmia cleft lip palate hypothalamic disorder
+ * [MONDO:0043069](http://purl.obolibrary.org/obo/MONDO_0043069) zerres rietschel majewski syndrome --> Zerres Rietschel Majewski syndrome
+ * [MONDO:0043071](http://purl.obolibrary.org/obo/MONDO_0043071) zazam sheriff phillips syndrome --> Zazam Sheriff Phillips syndrome
+ * [MONDO:0043099](http://purl.obolibrary.org/obo/MONDO_0043099) hordnes engebretsen knudtson syndrome --> Hordnes Engebretsen Knudtson syndrome
+ * [MONDO:0043174](http://purl.obolibrary.org/obo/MONDO_0043174) pfeiffer tietze welte syndrome --> Pfeiffer Tietze Welte syndrome
+
+
+
 # 2019-10-25 release
 
  * remove HP_0000010 'Recurrent urinary tract infections' as a dbxref fr…
