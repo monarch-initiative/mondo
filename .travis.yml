@@ -13,6 +13,7 @@ before_install:
     POST "https://monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/build" 
     -H "Jenkins-Crumb:${ShahimCSRFCrumb}" 
     --user "essaids:${ShahimAPIToken}" 
+    -f
     --form json='{
     "parameter": [
        {"name":"MONDO_BRANCH", "value":"'"${TRAVIS_PULL_REQUEST_BRANCH:-${TRAVIS_BRANCH}}"'"},
@@ -25,7 +26,8 @@ before_install:
        {"name":"TRAVIS_EVENT_TYPE", "value":"'"${TRAVIS_EVENT_TYPE}"'"},
        {"name":"TRAVIS_BUILD_WEB_URL", "value":"'"${TRAVIS_BUILD_WEB_URL}"'"},
        {"name":"TRAVIS_BUILD_NUMBER", "value":"'"${TRAVIS_BUILD_NUMBER}"'"}
-     ]}'
+     ]}';
+     sleep 300
   #- docker pull obolibrary/odkfull
 
 before_script:
