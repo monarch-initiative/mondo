@@ -1,68 +1,68 @@
 # 2019-11-25 release
 
- * reclasify paralysis terms - closes #622
- * obsolete MONDO:0016076 - closes #842
- * revise superclass for MONDO_0006685 - closes #580
- * obsolete MONDO:0009651 - closes #816
- * add comment to MONDO:0005259  closes #705 
- * update annotations on MONDO:0006849  closes #989 
- * revise superclasses for MONDO_0016823  closes #581 
- * relabel MONDO:0019303  addresses #821 
- * add subclassOf relations to MONDO_0008608 'Down syndrome'  closes #824 
- * add superclassOf axiom to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  closes #692 
- * add superclassOf relation to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  addresses #692 
- * rename MONDO:0007750 hypercholesterolemia, familial, 1  closes #729. 
- * obsolete 'sensory system disease'  closes #823 
- * remove excluded subclass of from MONDO_0001202  closes #726 
- * revise annotations for MONDO_0005305  addresses #924 
- * obsolete MONDO:0001445 neurogenic bladder (disease)  closes #974 
- * delete xref to obsolete EFO term  addresses #992 
- * obsolete MONDO:0022460  closes #140 
- * obsolete MONDO:0007563 and MONDO:0005305  closes #924 
- * remove incorrect xref from MONDO:0016462 isolated agammaglobulinemia  closes #800 
- * excluding DO syns that clash with other exact syns, see #808 
- * excluding DO syns that clash with other label, see #808 
- * update label and syn scope for Mungan syndrome  closes #887 
- * relink excluded subclass of  closes #898 
- * reclassiify 'Hinman syndrome'  and add equiv axiom to neurogenic bladder  addresses #885 
- * obsolete MONDO:0009639 mitochondrial myopathy with lactic acidosis  closes #817 
- * obsolete MONDO:0022314  closes #880 
- * add def to MONDO:0013419  closes #959 
- * revise superclass for MONDO_0010252  closes #926 
- * add new term MONDO:0100085 cancer of long bone of upper limb  closes #899 
- * merged dupes for nephropathic infantile cystinosis, fixes #960 
- * changes for #960 
- * add MONDO:0100086 perinatal disease  addresses #685 
- * add new terms  MONDO:0100087 familial Alzheimber disease MONDO:0100088 late-onset familial alzheimer disease closes #921 
- * obsolete MONDO:0006775  closes #877 
- * remove superclasses for cystic fibrosis  addresses #685 
- * reclassify MONDO_0004961 and MONDO:0004962  and revise text def for MONDO:0004962 per https://github.com/EBISPOT/efo/issues/329  closes #490 
- * Revise classification of MONDO:0044013 'puerperal disorder'  closes #652 
- * fix typo  closes #883 
- * fix typo  address #926 
- * revise de for MONDO:0000509  addresses #926 
- * revise subclass for MONDO_0014224  addresses #926 
- * change labels  addresses #926 
- * add axiom to actinopathy  closes #942 
- * update text def for MONDO:0013343  closes #939 
- * revised synonym scope for 'C1Q deficiency'  closes #940 
- * revise subclass assertions for MONDO:0009833  closes #859 
- * add missing period in text def for MONDO:0005413  addresses #685 
- * relabel MONDO:0005413 and change superclass  addresses #685 
- * fixed issue subclassOf assertion for MONDO_0022968  addresses #841 
- * obsoleted drug response terms  Obsoleted these classes: MONDO_0007348 Colchicine resistance MONDO_0008697 'acetophenetidin sensitivity' MONDO_0008906 Carbimazole sensitivity MONDO_0012294 CYP2C19-related poor drug metabolism MONDO_0012148 'drug metabolism, poor, CYP2D6-related' MONDO_0014330 'eculizumab, poor response to'  closes #860 
- * obsolete class MONDO:0004823  addresses #841 
- * obsolete MONDO:0019184  closes #836 
- * update synonyms for MONDO:0060702  closes #875 
- * remove dbxref from MONDO_0009290  closes #862 
- * remove superclass assertions for MONDO:0009169  addresses #834 
- * remove subclassof assertions  Removed subClass Of assertions and added execluded subclass of annotatiions for MONDO:0010631 and MONDO:0010568 closes #912 
- * add new term MONDO:0100084 actinopathy  closes #900 
- * remove incorrect xrefs and synonyms from endotheliitis  closes #904 
- * fix issues with prion disease terms  addresses issues outlined in #908 
- * remove subclass of assertioin for MONDO_0005772 (geotrichosis)  closes #909 
- * add term replaced by annotation to 'obsolete Marfan syndrome type 2'  closes #913 
- * Fixes gene URI issues fixes #905 also normalizes 
+ * reclasify paralysis terms - closes https://github.com/monarch-initiative/mondo/issues/622
+ * obsolete MONDO:0016076 - closes https://github.com/monarch-initiative/mondo/issues/842
+ * revise superclass for MONDO_0006685 - closes https://github.com/monarch-initiative/mondo/issues/580
+ * obsolete MONDO:0009651 - closes https://github.com/monarch-initiative/mondo/issues/816
+ * add comment to MONDO:0005259  closes https://github.com/monarch-initiative/mondo/issues/705 
+ * update annotations on MONDO:0006849  closes https://github.com/monarch-initiative/mondo/issues/989 
+ * revise superclasses for MONDO_0016823  closes https://github.com/monarch-initiative/mondo/issues/581 
+ * relabel MONDO:0019303  addresses https://github.com/monarch-initiative/mondo/issues/821 
+ * add subclassOf relations to MONDO_0008608 'Down syndrome'  closes https://github.com/monarch-initiative/mondo/issues/824 
+ * add superclassOf axiom to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  closes https://github.com/monarch-initiative/mondo/issues/692 
+ * add superclassOf relation to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  addresses https://github.com/monarch-initiative/mondo/issues/692 
+ * rename MONDO:0007750 hypercholesterolemia, familial, 1  closes https://github.com/monarch-initiative/mondo/issues/729. 
+ * obsolete 'sensory system disease'  closes https://github.com/monarch-initiative/mondo/issues/823 
+ * remove excluded subclass of from MONDO_0001202  closes https://github.com/monarch-initiative/mondo/issues/726 
+ * revise annotations for MONDO_0005305  addresses https://github.com/monarch-initiative/mondo/issues/924 
+ * obsolete MONDO:0001445 neurogenic bladder (disease)  closes https://github.com/monarch-initiative/mondo/issues/974 
+ * delete xref to obsolete EFO term  addresses https://github.com/monarch-initiative/mondo/issues/992 
+ * obsolete MONDO:0022460  closes https://github.com/monarch-initiative/mondo/issues/140 
+ * obsolete MONDO:0007563 and MONDO:0005305  closes https://github.com/monarch-initiative/mondo/issues/924 
+ * remove incorrect xref from MONDO:0016462 isolated agammaglobulinemia  closes https://github.com/monarch-initiative/mondo/issues/800 
+ * excluding DO syns that clash with other exact syns, see https://github.com/monarch-initiative/mondo/issues/808 
+ * excluding DO syns that clash with other label, see https://github.com/monarch-initiative/mondo/issues/808 
+ * update label and syn scope for Mungan syndrome  closes https://github.com/monarch-initiative/mondo/issues/887 
+ * relink excluded subclass of  closes https://github.com/monarch-initiative/mondo/issues/898 
+ * reclassiify 'Hinman syndrome'  and add equiv axiom to neurogenic bladder  addresses https://github.com/monarch-initiative/mondo/issues/885 
+ * obsolete MONDO:0009639 mitochondrial myopathy with lactic acidosis  closes https://github.com/monarch-initiative/mondo/issues/817 
+ * obsolete MONDO:0022314  closes https://github.com/monarch-initiative/mondo/issues/880 
+ * add def to MONDO:0013419  closes https://github.com/monarch-initiative/mondo/issues/959 
+ * revise superclass for MONDO_0010252  closes https://github.com/monarch-initiative/mondo/issues/926 
+ * add new term MONDO:0100085 cancer of long bone of upper limb  closes https://github.com/monarch-initiative/mondo/issues/899 
+ * merged dupes for nephropathic infantile cystinosis, fixes https://github.com/monarch-initiative/mondo/issues/960 
+ * changes for https://github.com/monarch-initiative/mondo/issues/960 
+ * add MONDO:0100086 perinatal disease  addresses https://github.com/monarch-initiative/mondo/issues/685 
+ * add new terms  MONDO:0100087 familial Alzheimber disease MONDO:0100088 late-onset familial alzheimer disease closes https://github.com/monarch-initiative/mondo/issues/921 
+ * obsolete MONDO:0006775  closes https://github.com/monarch-initiative/mondo/issues/877 
+ * remove superclasses for cystic fibrosis  addresses https://github.com/monarch-initiative/mondo/issues/685 
+ * reclassify MONDO_0004961 and MONDO:0004962  and revise text def for MONDO:0004962 per https://github.com/EBISPOT/efo/issues/329  closes https://github.com/monarch-initiative/mondo/issues/490 
+ * Revise classification of MONDO:0044013 'puerperal disorder'  closes https://github.com/monarch-initiative/mondo/issues/652 
+ * fix typo  closes https://github.com/monarch-initiative/mondo/issues/883 
+ * fix typo  address https://github.com/monarch-initiative/mondo/issues/926 
+ * revise de for MONDO:0000509  addresses https://github.com/monarch-initiative/mondo/issues/926 
+ * revise subclass for MONDO_0014224  addresses https://github.com/monarch-initiative/mondo/issues/926 
+ * change labels  addresses https://github.com/monarch-initiative/mondo/issues/926 
+ * add axiom to actinopathy  closes https://github.com/monarch-initiative/mondo/issues/942 
+ * update text def for MONDO:0013343  closes https://github.com/monarch-initiative/mondo/issues/939 
+ * revised synonym scope for 'C1Q deficiency'  closes https://github.com/monarch-initiative/mondo/issues/940 
+ * revise subclass assertions for MONDO:0009833  closes https://github.com/monarch-initiative/mondo/issues/859 
+ * add missing period in text def for MONDO:0005413  addresses https://github.com/monarch-initiative/mondo/issues/685 
+ * relabel MONDO:0005413 and change superclass  addresses https://github.com/monarch-initiative/mondo/issues/685 
+ * fixed issue subclassOf assertion for MONDO_0022968  addresses https://github.com/monarch-initiative/mondo/issues/841 
+ * obsoleted drug response terms  Obsoleted these classes: MONDO_0007348 Colchicine resistance MONDO_0008697 'acetophenetidin sensitivity' MONDO_0008906 Carbimazole sensitivity MONDO_0012294 CYP2C19-related poor drug metabolism MONDO_0012148 'drug metabolism, poor, CYP2D6-related' MONDO_0014330 'eculizumab, poor response to'  closes https://github.com/monarch-initiative/mondo/issues/860 
+ * obsolete class MONDO:0004823  addresses https://github.com/monarch-initiative/mondo/issues/841 
+ * obsolete MONDO:0019184  closes https://github.com/monarch-initiative/mondo/issues/836 
+ * update synonyms for MONDO:0060702  closes https://github.com/monarch-initiative/mondo/issues/875 
+ * remove dbxref from MONDO_0009290  closes https://github.com/monarch-initiative/mondo/issues/862 
+ * remove superclass assertions for MONDO:0009169  addresses https://github.com/monarch-initiative/mondo/issues/834 
+ * remove subclassof assertions  Removed subClass Of assertions and added execluded subclass of annotatiions for MONDO:0010631 and MONDO:0010568 closes https://github.com/monarch-initiative/mondo/issues/912 
+ * add new term MONDO:0100084 actinopathy  closes https://github.com/monarch-initiative/mondo/issues/900 
+ * remove incorrect xrefs and synonyms from endotheliitis  closes https://github.com/monarch-initiative/mondo/issues/904 
+ * fix issues with prion disease terms  addresses issues outlined in https://github.com/monarch-initiative/mondo/issues/908 
+ * remove subclass of assertioin for MONDO_0005772 (geotrichosis)  closes https://github.com/monarch-initiative/mondo/issues/909 
+ * add term replaced by annotation to 'obsolete Marfan syndrome type 2'  closes https://github.com/monarch-initiative/mondo/issues/913 
+ * Fixes gene URI issues fixes https://github.com/monarch-initiative/mondo/issues/905 also normalizes 
 
 ## New Classes
 
