@@ -1,4 +1,18 @@
 # ----------------------------------------
+# Instructions
+# ----------------------------------------
+#
+# This needs to be simplified!
+#
+# ```
+# make all
+# rm mondo-lastbuild.obo
+# make mondo-diff.txt
+# ./get-new-classes.sh
+# [manually edit ../../Changes.md using output of previous command and "git log mondo-edit.obo"]
+# ```
+
+# ----------------------------------------
 # Standard Constants
 # ----------------------------------------
 # these can be overwritten on the command line
@@ -12,7 +26,7 @@ ONT=mondo
 ONTURI=$(OBO)/$(ONT)
 ONTBASE=$(ONT)-base
 SRC=$(ONT)-edit.obo
-RELEASEDIR=../../target/
+#RELEASEDIR=../../target/
 ROBOT= robot
 OWLTOOLS= owltools
 USECAT= --use-catalog
@@ -108,14 +122,11 @@ test: roundtrip.obo debug.owl mondo-edit.owl sparql_test_edit sparql_test_main_o
 # ----------------------------------------
 
 prepare_release: $(ARTEFACTS)
-	rsync -R $^ ../../target
 	rsync -R $^ ../..
-	cp ../../Changes.md ../../target
 
+# note: only reports, imports
 prepare_release_direct: 
-	rsync -R $(ARTEFACTS) ../../target
 	rsync -R $(ARTEFACTS) ../..
-	cp ../../Changes.md ../../target
 
 all_includes: $(INCLUDES_OWL)
 
@@ -134,7 +145,7 @@ check_version_set:
 # REMEMBER TO COMMIT/PUSH
 # e.g. make deploy_release GHVERSION=v2018-10-26
 # this will create the GH repo. Use --no-create if repo already created.
-deploy_release: deploy_assets_direct deploy_assets_current
+deploy_release: prepare_release_direct deploy_assets_direct deploy_assets_current
 
 # deploys to a versioned released
 deploy_assets_direct:
@@ -324,8 +335,8 @@ imports/%_terms.txt: imports/seed.txt
 # Release
 # ----------------------------------------
 # copy from staging area (this directory) to top-level
-release: $(ONT).owl $(ONT).obo
-	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
+#release: $(ONT).owl $(ONT).obo
+#	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports && cp subsets/* $(RELEASEDIR)/subsets
 
 mondo-lastbuild.owl:
 	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@

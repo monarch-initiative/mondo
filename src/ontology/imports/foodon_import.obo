@@ -413,6 +413,7 @@ id: FOODON:00001257
 name: milk or milk based food product
 is_a: FOODON:00001256 ! dairy food product
 relationship: RO:0001000 UBERON:0001913 ! derives from milk
+property_value: seeAlso https://en.wikipedia.org/wiki/Fat_content_of_milk#/media/File:Milkproducts.svg
 
 [Term]
 id: FOODON:00001262
@@ -620,7 +621,7 @@ intersection_of: FOODON:00001303 NCBITaxon:29960 {all_only="true"} ! has taxonom
 
 [Term]
 id: FOODON:03302116
-name: cow milk (fluid)
+name: cow milk (liquid)
 comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
 subset: subset_siren
 synonym: "cow milk" EXACT []
@@ -676,7 +677,7 @@ subset: subset_siren
 synonym: "milk" EXACT []
 synonym: "raw milk" BROAD []
 xref: SUBSET_SIREN:F7455
-is_a: FOODON:03302116 ! cow milk (fluid)
+is_a: FOODON:03302116 ! cow milk (liquid)
 intersection_of: UBERON:0001913 ! milk
 intersection_of: RO:0003001 FOODON:03411201 ! produced by dairy cow
 property_value: IAO:0000114 IAO:0000428
@@ -828,7 +829,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400643
-name: classification of food and feed commodities (codex alimentarius)
+name: Codex Alimentarius classification of food and feed commodities
 def: "Codex Alimentarius, Volume 2 - 1993, Section 2:  Pesticide Residues in Food.\n\nThe Codex Classification of food and animal feed commodities moving in trade and the description of the various items and groups of food and animal feedstuffs included in the present document have been developed by the Codex Committee on Pesticide Residues. It was first adopted by the 18th Session of the Codex Alimentarius Commission, (1989).\n\nThe Codex Classification includes food commodities and animal feedstuffs for which Codex maximum residue limits will not necessarily be established. The Classification is intended to be as complete a listing of food commodities in trade as possible, classified into groups on the basis of the commodity's similar potential for pesticide residues.\n\nThe Classification may also be appropriate for other purposes such as setting maximum levels for other types of residues or for other contaminants in food. The Codex Classification should be consulted in order to obtain a precise description of the food or animal feed commodities and, especially, in cases where Codex maximum residue limits have been set for groups of food and groups of animal feedstuffs. The Codex Classification is intended to promote harmonization of the terms used to describe commodities which are subject to maximum residue limits and of the approach to grouping commodities with similar potential for residue for which a common group maximum residue limit can be set." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0643
@@ -841,7 +842,7 @@ id: FOODON:03400644
 name: a.  primary food commodities of plant origin (ccpr)
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0644
-is_a: FOODON:03400643 ! classification of food and feed commodities (codex alimentarius)
+is_a: FOODON:03400643 ! Codex Alimentarius classification of food and feed commodities
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -1326,7 +1327,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 id: NCBITaxon:117571
 name: Euteleostomi
 synonym: "bony vertebrates" EXACT []
-is_a: NCBITaxon:7776 ! Gnathostomata <vertebrate>
+is_a: NCBITaxon:7776 ! Gnathostomata <vertebrates>
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1426,7 +1427,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:32525
-name: Theria <Mammalia>
+name: Theria <mammals>
 synonym: "Theria" EXACT []
 is_a: NCBITaxon:40674 ! Mammalia
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
@@ -1558,7 +1559,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:7742
-name: Vertebrata <Metazoa>
+name: Vertebrata <vertebrates>
 synonym: "Vertebrata" EXACT []
 synonym: "vertebrates" EXACT []
 is_a: NCBITaxon:7711 ! Chordata
@@ -1566,10 +1567,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:7776
-name: Gnathostomata <vertebrate>
+name: Gnathostomata <vertebrates>
 synonym: "Gnathostomata" EXACT []
 synonym: "jawed vertebrates" EXACT []
-is_a: NCBITaxon:7742 ! Vertebrata <Metazoa>
+is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1592,7 +1593,7 @@ name: Eutheria
 synonym: "eutherian mammals" EXACT []
 synonym: "placental mammals" EXACT []
 synonym: "placentals" EXACT []
-is_a: NCBITaxon:32525 ! Theria <Mammalia>
+is_a: NCBITaxon:32525 ! Theria <mammals>
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
