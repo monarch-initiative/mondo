@@ -1,5 +1,5 @@
 ---
-name: Revise term label
+name: Relabel term
 about: Suggested revised label for a Mondo term.
 title: ''
 labels: relabel term
