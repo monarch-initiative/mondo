@@ -2,7 +2,7 @@
 name: Revise term label
 about: Suggested revised label for a Mondo term.
 title: ''
-labels: revise label
+labels: relabel term
 assignees: nicolevasilevsky
 
 ---
