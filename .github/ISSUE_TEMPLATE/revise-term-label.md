@@ -13,4 +13,4 @@ Mondo term (ID and Label):
 Suggested new label:
 
 
-Optioinal: Any additional information (like supporting evidence, PubMed ID, etc.)
+Optional: Any additional information (like supporting evidence, PubMed ID, etc.)
