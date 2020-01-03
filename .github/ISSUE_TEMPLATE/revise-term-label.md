@@ -7,10 +7,8 @@ assignees: nicolevasilevsky
 
 ---
 
-Mondo term (ID and Label):
+**Mondo term (ID and Label):**
 
+**Suggested new label:**
 
-Suggested new label:
-
-
-Optional: Any additional information (like supporting evidence, PubMed ID, etc.)
+**_Optional_: Any additional information (like supporting evidence, PubMed ID, etc.)**
