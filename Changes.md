@@ -1,3 +1,149 @@
+# 2020-01-27 release
+
+ * revise text def for MONDO:0001973
+ * update label for MONDO:0014510
+ * relabel MONDO:0014510; fixes #811
+ * remove superclass assertion to inherited genetic disease
+ * revise text def for MONDO:0001973
+ * edit MONDO_0016063
+ * add metadata to MONDO:0010778; addresses #1085
+ * rename MONDO:0009796
+ * fix typos; fixes #1103
+ * obsolete MONDO:0022469; fixes #141
+ * obsolete terms that have been obsoleted in GARD; addresses #141
+ * remove xref to OMIM:101900
+ * I don't think 'Darier disease' is considered a subclass of OMIM:101900 ACROKERATOSIS VERRUCIFORMIS
+ * remove xrefs to EFO:0004124 from 'Darier disease'; fixes #10
+ * EFO:0004124 no longer exists in EFO
+ * rename MONDO:0009796; fixes #724
+ * add new term MONDO:0100095; fixes #801
+ * revise synonym; fixes #884
+ * obsolete MONDO:0012647; fixes #1062
+ * revise xrefs for Meige disease; fixes #1087
+ * fix typo; fixes #1083
+ * add axiom to MONDO_0010778; addresses #1085
+ * add new term MONDO:0100094; addresses #1084
+ * remove comment from MONDO:0016747; fixes #424
+ * add synonym to MONDO:0014558; fixes #1052
+ * edit MONDO_0016063
+ * move synonyms to MONDO:0024542; fixes #1059
+ * obsolete MONDO:0010394; fixes #1019
+ * edit MONDO_0013981
+ * added synonym: familial myoclonus
+ * replaced dbxref OMIM:614937 with OMIM:PS614937
+ * added new subclasses: - MYOCLONUS, FAMILIAL, 2; - myoclonus, familial, 1; fixes #1061
+ * add xref and seeAlso; addresses #1054
+ * revise superclass for 'Kleefstra syndrome due to 9q34 microdeletion'; fixes #1063
+ * remove comment from MONDO:0016248; fixes #434
+ * fix def for MONDO:0016249; addresses #434
+ * obsolete Leigh disease; fixes #675
+ * remove new superclass from MONDO_0024308
+ * 'pseudoxanthoma elasticum (inherited or acquired)'; addresses #1015
+ * add  axiom linking to ncbitaxon to MONDO_0001973; fixes #809
+ * revise definition for MONDO:0001973; addresses #809
+ * add superclass and additional annotations to MONDO:0024308; fixes #1015
+ * obsolete MONDO:0007613; fixes #1029
+ * remove comment from MONDO_0005094; closes #433
+ * obsolete MONDO:0022418; fixes #431
+ * add synonyms to MONDO_0014812; addresses #1054
+ * obsolete MONDO:0009834 pancreatic insufficiency, combined exocrine; fixes #710
+ * rename MONDO:0004819; fixes #423
+ * add term replaced by to MONDO_0009289
+ * remove comment from MONDO_0018065; fixes #427
+ * relabel MONDO_0001083
+ * and remove comment on MONDO_0007600 'primary Fanconi syndrome'; fixes #428
+ * obsolete MONDO:0005403 neonatal systemic lupus erthematosus; fixes #986
+ * obsolete MONDO:0009289 glycogen storage disease IC; fixes #430
+ * Minor BBS and PXE changes
+ * PXE minor changes (see also #1046 for other PXE changes)
+ * reclassified 'ischemia reperfusion injury'; fixes #1040
+ * revise superclass for MONDO_0006761; addresses #1029
+ * revise label for MONDO_0000595 'sexual disorder'
+ * reclassify MONDO_0002134 'physiological sexual disorder'; addresses #723
+ * revise label for MONDO:0016644
+ * revise superclass for MONDO_0005079
+ * add axiom to MONDO_0006625
+ * revise superclass for MONDO_0006625; addresses #1013
+ * revise superclass for MONDO_0005079; fixes #1014
+ * revise text def and synonym; fixes #1032
+ * update superclass and label for MONDO_0005468; fixes #1030
+ * remove incorrect superclass and annotations for MONDO_0016644; fixes #1028
+ * moved PMID in xref to dbxef on text def for MONDO_0004977
+ * add superclass to MONDO_0005688
+ * revise superclass assertions for MONDO_0005219 and MONDO_0021154; fixes #1016
+ * add superclass to MONDO_0005688; fixes #1017
+ * revise synonym annotations for MONDO_0008564; fixes #1006
+ * remove superclass assertions for MONDO_0008608; fixes #824
+ * add superclass assertion to MONDO_0015967; fixes #1022
+ * BBS text def, see https://github.com/monarch-initiative/hpo-annotation-data/issues/402
+ * revise superclasses; fixes #990
+ * revise label and superclass for MONDO_0002436
+ * and add synonym to MONDO_0024623; addresses #525
+ * update annotation on MONDO:0005158; fixes #991
+ * revise superclasses for MONDO:0018982 'Niemann-Pick disease type C'; fixes #565
+ * fix dbxrefs; addresses #1002
+ * moved OMIM xref to new terem; fixes #1004
+ * added def to anotia facial palsy cardiac defect'
+ * added def to Anophthalmia megalocornea cardiopathy skeletal anomalies; Note - this was in Orphanet, but not xref'd in MONDO
+ * added def to anophthalmia esophageal atresia cryptorchidism'
+ * added def to annular constricting bands'
+ * added def to angiomyomatous hamartoma'
+ * added def to amyloidosis bronchopulmonary'
+ * added def to alopecia universalis onychodystrophy vitiligo'
+
+## New Classes
+
+ * [MONDO:0100092](http://purl.obolibrary.org/obo/MONDO_0100092) myoclonus, familial, 2
+ * [MONDO:0100093](http://purl.obolibrary.org/obo/MONDO_0100093) myoclonus, familial, 1
+ * [MONDO:0100094](http://purl.obolibrary.org/obo/MONDO_0100094) cannabinoid hyperemesis syndrome
+ * [MONDO:0100095](http://purl.obolibrary.org/obo/MONDO_0100095) neurodegeneration, childhood-onset, stress-induced, with variable ataxia and seizures
+
+## Obsoletions
+
+ * [MONDO:0005403](http://purl.obolibrary.org/obo/MONDO_0005403) neonatal systemic lupus erthematosus --> obsolete neonatal systemic lupus erthematosus
+ * [MONDO:0007613](http://purl.obolibrary.org/obo/MONDO_0007613) fibromuscular dysplasia of arteries --> obsolete fibromuscular dysplasia of arteries
+ * [MONDO:0009289](http://purl.obolibrary.org/obo/MONDO_0009289) glycogen storage disease IC --> obsolete glycogen storage disease IC
+ * [MONDO:0009834](http://purl.obolibrary.org/obo/MONDO_0009834) pancreatic insufficiency, combined exocrine --> obsolete pancreatic insufficiency, combined exocrine
+ * [MONDO:0010394](http://purl.obolibrary.org/obo/MONDO_0010394) leukoencephalopathy-metaphyseal chondrodysplasia syndrome --> obsolete leukoencephalopathy-metaphyseal chondrodysplasia syndrome
+ * [MONDO:0012647](http://purl.obolibrary.org/obo/MONDO_0012647) generalized epilepsy with febrile seizures plus, type 3 --> obsolete generalized epilepsy with febrile seizures plus, type 3
+ * [MONDO:0018859](http://purl.obolibrary.org/obo/MONDO_0018859) Leigh disease --> obsolete Leigh disease
+ * [MONDO:0021909](http://purl.obolibrary.org/obo/MONDO_0021909) aplasia cutis congenita recessive --> obsolete aplasia cutis congenita recessive
+ * [MONDO:0022418](http://purl.obolibrary.org/obo/MONDO_0022418) alopecia immunodeficiency --> obsolete alopecia immunodeficiency
+ * [MONDO:0022464](http://purl.obolibrary.org/obo/MONDO_0022464) anophthalmia microcephaly hypogonadism --> obsolete anophthalmia microcephaly hypogonadism
+ * [MONDO:0022469](http://purl.obolibrary.org/obo/MONDO_0022469) aortic arches defect --> obsolete aortic arches defect
+ * [MONDO:0022495](http://purl.obolibrary.org/obo/MONDO_0022495) arthritis short stature deafness --> obsolete arthritis short stature deafness
+ * [MONDO:0023141](http://purl.obolibrary.org/obo/MONDO_0023141) antihypertensive drugs antenatal exposure syndrome --> obsolete antihypertensive drugs antenatal exposure syndrome
+
+## Renaming
+
+ * [MONDO:0000595](http://purl.obolibrary.org/obo/MONDO_0000595) sexual disorder --> sexual and gender identity disorders
+ * [MONDO:0001083](http://purl.obolibrary.org/obo/MONDO_0001083) Fanconi syndrome --> Fanconi renotubular syndrome
+ * [MONDO:0002436](http://purl.obolibrary.org/obo/MONDO_0002436) nose disease --> nasal disorder
+ * [MONDO:0004819](http://purl.obolibrary.org/obo/MONDO_0004819) indolent myeloma --> indolent plasma cell myeloma
+ * [MONDO:0005403](http://purl.obolibrary.org/obo/MONDO_0005403) neonatal systemic lupus erthematosus --> obsolete neonatal systemic lupus erthematosus
+ * [MONDO:0005468](http://purl.obolibrary.org/obo/MONDO_0005468) hypotension (disease) --> hypotensive disorder
+ * [MONDO:0007613](http://purl.obolibrary.org/obo/MONDO_0007613) fibromuscular dysplasia of arteries --> obsolete fibromuscular dysplasia of arteries
+ * [MONDO:0009289](http://purl.obolibrary.org/obo/MONDO_0009289) glycogen storage disease IC --> obsolete glycogen storage disease IC
+ * [MONDO:0009796](http://purl.obolibrary.org/obo/MONDO_0009796) gyrate atrophy --> ornithine aminotransferase deficiency
+ * [MONDO:0009834](http://purl.obolibrary.org/obo/MONDO_0009834) pancreatic insufficiency, combined exocrine --> obsolete pancreatic insufficiency, combined exocrine
+ * [MONDO:0010394](http://purl.obolibrary.org/obo/MONDO_0010394) leukoencephalopathy-metaphyseal chondrodysplasia syndrome --> obsolete leukoencephalopathy-metaphyseal chondrodysplasia syndrome
+ * [MONDO:0011891](http://purl.obolibrary.org/obo/MONDO_0011891) epilepsy, childhood absence, susceptibility to, 2 --> febrile seizures, familial, 8
+ * [MONDO:0012647](http://purl.obolibrary.org/obo/MONDO_0012647) generalized epilepsy with febrile seizures plus, type 3 --> obsolete generalized epilepsy with febrile seizures plus, type 3
+ * [MONDO:0014510](http://purl.obolibrary.org/obo/MONDO_0014510) severe intellectual disability-epilepsy-cataract syndrome due to fatty acyl-CoA reductase 1 deficiency --> fatty acyl-CoA reductase 1 deficiency
+ * [MONDO:0014761](http://purl.obolibrary.org/obo/MONDO_0014761) hereditary pediatric BehC'et-like disease --> hereditary pediatric Behçet-like disease
+ * [MONDO:0016644](http://purl.obolibrary.org/obo/MONDO_0016644) Logopenic progressive aphasia --> logopenic progressive aphasia
+ * [MONDO:0018859](http://purl.obolibrary.org/obo/MONDO_0018859) Leigh disease --> obsolete Leigh disease
+ * [MONDO:0021909](http://purl.obolibrary.org/obo/MONDO_0021909) aplasia cutis congenita recessive --> obsolete aplasia cutis congenita recessive
+ * [MONDO:0022418](http://purl.obolibrary.org/obo/MONDO_0022418) alopecia immunodeficiency --> obsolete alopecia immunodeficiency
+ * [MONDO:0022464](http://purl.obolibrary.org/obo/MONDO_0022464) anophthalmia microcephaly hypogonadism --> obsolete anophthalmia microcephaly hypogonadism
+ * [MONDO:0022469](http://purl.obolibrary.org/obo/MONDO_0022469) aortic arches defect --> obsolete aortic arches defect
+ * [MONDO:0022495](http://purl.obolibrary.org/obo/MONDO_0022495) arthritis short stature deafness --> obsolete arthritis short stature deafness
+ * [MONDO:0023141](http://purl.obolibrary.org/obo/MONDO_0023141) antihypertensive drugs antenatal exposure syndrome --> obsolete antihypertensive drugs antenatal exposure syndrome
+ * [MONDO:0054701](http://purl.obolibrary.org/obo/MONDO_0054701) kleefstra syndrome 2 --> Kleefstra syndrome 2
+ * [MONDO:0100087](http://purl.obolibrary.org/obo/MONDO_0100087) familial Alzheimber disease --> familial Alzheimer disease
+
+
+
 # 2019-11-25 release
 
  * reclasify paralysis terms - closes https://github.com/monarch-initiative/mondo/issues/622

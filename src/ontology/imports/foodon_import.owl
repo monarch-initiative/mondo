@@ -84,6 +84,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000231 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000231"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
@@ -376,6 +382,22 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <obo:IAO_0000112 xml:lang="en">this red color is a quality of this apple</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">A quality inheres in its bearer at all times for which the quality exists.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">is quality of</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">quality_of</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label xml:lang="en">quality of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000081 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000081">
@@ -388,6 +410,21 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000118 xml:lang="en">role_of</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
         <rdfs:label xml:lang="en">role of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000086 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <obo:IAO_0000112 xml:lang="en">this apple has quality this red color</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">A bearer can have many qualities, and its qualities can exist for different periods of time, but none of its qualities can exist when the bearer does not exist.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">has_quality</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label xml:lang="en">has quality</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -955,6 +992,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <obo:BFO_0000179>realizable</obo:BFO_0000179>
         <obo:BFO_0000180>RealizableEntity</obo:BFO_0000180>
         <obo:IAO_0000112 xml:lang="en">the disposition of this piece of metal to conduct electricity.</obo:IAO_0000112>
@@ -994,6 +1032,53 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
         <owl:annotatedTarget>(forall (x) (if (RealizableEntity x) (and (SpecificallyDependentContinuant x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (inheresIn x y)))))) // axiom label in BFO2 CLIF: [058-002] </owl:annotatedTarget>
         <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/058-002"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <obo:BFO_0000179>quality</obo:BFO_0000179>
+        <obo:BFO_0000180>Quality</obo:BFO_0000180>
+        <obo:IAO_0000112 xml:lang="en">the ambient temperature of this portion of air</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the color of a tomato</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the length of the circumference of your waist</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the mass of this piece of gold.</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the shape of your nose</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the shape of your nostril</obo:IAO_0000112>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <obo:IAO_0000600 xml:lang="en">a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])</obo:IAO_0000600>
+        <obo:IAO_0000601 xml:lang="en">If an entity is a quality at any time that it exists, then it is a quality at every time that it exists. (axiom label in BFO2 Reference: [105-001])</obo:IAO_0000601>
+        <obo:IAO_0000602>(forall (x) (if (Quality x) (SpecificallyDependentContinuant x))) // axiom label in BFO2 CLIF: [055-001] </obo:IAO_0000602>
+        <obo:IAO_0000602>(forall (x) (if (exists (t) (and (existsAt x t) (Quality x))) (forall (t_1) (if (existsAt x t_1) (Quality x))))) // axiom label in BFO2 CLIF: [105-001] </obo:IAO_0000602>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
+        <rdfs:label xml:lang="en">quality</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000600"/>
+        <owl:annotatedTarget xml:lang="en">a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/055-001"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000601"/>
+        <owl:annotatedTarget xml:lang="en">If an entity is a quality at any time that it exists, then it is a quality at every time that it exists. (axiom label in BFO2 Reference: [105-001])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/105-001"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x) (if (Quality x) (SpecificallyDependentContinuant x))) // axiom label in BFO2 CLIF: [055-001] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/055-001"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x) (if (exists (t) (and (existsAt x t) (Quality x))) (forall (t_1) (if (existsAt x t_1) (Quality x))))) // axiom label in BFO2 CLIF: [105-001] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/105-001"/>
     </owl:Axiom>
     
 
@@ -1296,7 +1381,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">A seafood product is a vertebrate or invertibrate organism from anaquatic environment.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A seafood product is a vertebrate or invertibrate organism from an aquatic environment.</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">Some of the subclasses are currently freshwater organisms.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
         <rdfs:label xml:lang="en">seafood product</rdfs:label>
@@ -1428,7 +1513,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/FOODON_00001172 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001172">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001262"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1442,7 +1526,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400260"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000116 xml:lang="en">The default nut product is a whole, raw nut - meaning that the kernel is whole, and moderately or significantly dried, but not baked.  Normally a reference to a nut leaves ambiguous whether the shell is on or off.</obo:IAO_0000116>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000116 xml:lang="en">The default nut product is a whole, raw nut - meaning that the kernel is whole, and moderately or significantly dried, but not baked.  Minimal references to nuts often leave ambiguous whether the shell is on or off. &quot;I ate a peanut&quot; doesn&apos;t clarify whether I ate a shell-off nut or whether I did the shelling.</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
         <oboInOwl:hasDbXref>SUBSET_SIREN:F16972</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">nut food product</rdfs:label>
@@ -1707,7 +1792,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001046"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001293"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411374"/>
@@ -1715,7 +1800,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001046"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001293"/>
         <rdfs:label xml:lang="en">crustacean food product</rdfs:label>
     </owl:Class>
     
@@ -1797,7 +1882,18 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/FOODON_00002044 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002044">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001046"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001293"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412112"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001293"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
@@ -1927,6 +2023,18 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115 xml:lang="en">Invertebrates are animals that neither possess nor develop a vertebral column (commonly known as a backbone or spine), derived from the notochord. This includes all animals apart from the subphylum Vertebrata.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym xml:lang="en">animal</oboInOwl:hasBroadSynonym>
         <rdfs:label xml:lang="en">invertebrate animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00002454 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002454">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The food product by quality class provides descriptors for describing food visually or via other senses, which is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like &quot;food (frozen)&quot; are both a quality descriptor and the output of a process.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">food product by quality</rdfs:label>
     </owl:Class>
     
 
@@ -2123,6 +2231,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03302116">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001771"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03430130"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
@@ -2347,7 +2456,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0100001 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/FOODON_00001002</obo:IAO_0100001>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0004</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">LanguaL curation note: Used only if the product does not fall under any of the major product types listed. [FDA CFSAN 1995]</rdfs:comment>
-        <rdfs:label xml:lang="en">product type, other (deprecated)</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete: product type, other</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -2591,7 +2700,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03411059 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411059">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002452"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002581"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Shellfish is a food source and fisheries term for exoskeleton-bearing aquatic invertebrates used as food, including various species of molluscs, crustaceans, and echinoderms. Although most kinds of shellfish are harvested from saltwater environments, some kinds are found in freshwater. In addition, a few species of land crabs are eaten, for example *Cardisoma guanhumi* in the Caribbean. [https://en.wikipedia.org/wiki/Shellfish]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -2712,9 +2821,10 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411215">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <obo:IAO_0000231 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</obo:IAO_0000231>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1215</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">algae, bacteria or fungus (deprecated)</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete: algae, bacteria or fungus</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -2830,7 +2940,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03411374 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411374">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411433"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -2849,11 +2959,11 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001293"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002452"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002581"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002452"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002581"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates. [https://en.wikipedia.org/wiki/Shellfish]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -3336,6 +3446,31 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03430130 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03430130">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002454"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001548"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002454"/>
+        <obo:IAO_0000115 xml:lang="en">A state of matter between a solid and a gas, in which a substance has the capacity to flow and conforms to the shape of the container. Liquids range from water to honey, corresponding to a range in viscosity (or apparent viscosity) from 1 to 500 centipoise (viscosity is a measure of a liquid&apos;s resistance to flow). Products that are pourable but have a higher viscosity are *SEMILIQUID*.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F5105</oboInOwl:hasDbXref>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* has quality &apos;liquid&apos; (http://purl.obolibrary.org/obo/FOODON_03430130)
+                </rdfs:comment>
+        <rdfs:label xml:lang="en">food (liquid)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03460111 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460111">
@@ -3389,7 +3524,13 @@ The family is widespread, being native to Asia, Africa, Europe and North America
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460180">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000231 xml:lang="en">&quot;Food added&quot; and its subclasses referenced existing ingredients / food products.  FoodOn uses relations like &quot;has ingredient&quot; to do the same. If needed, these relations can be annotated with proportions.</obo:IAO_0000231>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=H0180</oboInOwl:hasDbXref>
+        <rdfs:comment xml:lang="en">LanguaL curation note: When not otherwise indicated in the scope note, *FOOD ADDED* factor terms are applied when the specified food is the second ingredient in order of predominance, excluding water. Always used for fillings and when the added food is part of the product name (e.g., raisin bread).</rdfs:comment>
         <rdfs:label xml:lang="en">food added (deprecated)</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete: food added</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
@@ -4050,6 +4191,17 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pato.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001241 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001241">
@@ -4057,6 +4209,28 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in a continuant.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pato.owl"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical object quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001548 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001548">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002198"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pato.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a liquid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002198 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002198">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of its constitution.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/pato.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a substance</rdfs:label>
     </owl:Class>
     
 
