@@ -107,6 +107,7 @@ id: BFO:0000017
 name: realizable entity
 def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
 is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
 property_value: BFO:0000179 "realizable" xsd:string
 property_value: BFO:0000180 "RealizableEntity" xsd:string
 property_value: IAO:0000112 "the disposition of this piece of metal to conduct electricity." xsd:string
@@ -119,6 +120,25 @@ property_value: IAO:0000600 "To say that b is a realizable entity is to say that
 property_value: IAO:0000601 "All realizable dependent continuants have independent continuants that are not spatial regions as their bearers. (axiom label in BFO2 Reference: [060-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/060-002"}
 property_value: IAO:0000602 "(forall (x t) (if (RealizableEntity x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (bearerOfAt y x t))))) // axiom label in BFO2 CLIF: [060-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/060-002"}
 property_value: IAO:0000602 "(forall (x) (if (RealizableEntity x) (and (SpecificallyDependentContinuant x) (exists (y) (and (IndependentContinuant y) (not (SpatialRegion y)) (inheresIn x y)))))) // axiom label in BFO2 CLIF: [058-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/058-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+
+[Term]
+id: BFO:0000019
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+property_value: BFO:0000179 "quality" xsd:string
+property_value: BFO:0000180 "Quality" xsd:string
+property_value: IAO:0000112 "the ambient temperature of this portion of air" xsd:string
+property_value: IAO:0000112 "the color of a tomato" xsd:string
+property_value: IAO:0000112 "the length of the circumference of your waist" xsd:string
+property_value: IAO:0000112 "the mass of this piece of gold." xsd:string
+property_value: IAO:0000112 "the shape of your nose" xsd:string
+property_value: IAO:0000112 "the shape of your nostril" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+property_value: IAO:0000600 "a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/055-001"}
+property_value: IAO:0000601 "If an entity is a quality at any time that it exists, then it is a quality at every time that it exists. (axiom label in BFO2 Reference: [105-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/105-001"}
+property_value: IAO:0000602 "(forall (x) (if (exists (t) (and (existsAt x t) (Quality x))) (forall (t_1) (if (existsAt x t_1) (Quality x))))) // axiom label in BFO2 CLIF: [105-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/105-001"}
+property_value: IAO:0000602 "(forall (x) (if (Quality x) (SpecificallyDependentContinuant x))) // axiom label in BFO2 CLIF: [055-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/055-001"}
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
@@ -273,7 +293,7 @@ property_value: IAO:0000114 IAO:0000428
 [Term]
 id: FOODON:00001046
 name: seafood product
-def: "A seafood product is a vertebrate or invertibrate organism from anaquatic environment." []
+def: "A seafood product is a vertebrate or invertibrate organism from an aquatic environment." []
 is_a: FOODON:00002381 ! food product by organism
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 property_value: IAO:0000114 IAO:0000428
@@ -341,11 +361,11 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 id: FOODON:00001172
 name: nut food product
 xref: SUBSET_SIREN:F16972
-is_a: FOODON:00001173 ! plant seed food product
 is_a: FOODON:00001262 ! botanical fruit food product
 relationship: RO:0001000 FOODON:03411213 ! derives from nut producing plant
 relationship: RO:0002350 FOODON:03400260 ! member of nut or nut product (us cfr)
-property_value: IAO:0000116 "The default nut product is a whole, raw nut - meaning that the kernel is whole, and moderately or significantly dried, but not baked.  Normally a reference to a nut leaves ambiguous whether the shell is on or off." xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000116 "The default nut product is a whole, raw nut - meaning that the kernel is whole, and moderately or significantly dried, but not baked.  Minimal references to nuts often leave ambiguous whether the shell is on or off. \"I ate a peanut\" doesn't clarify whether I ate a shell-off nut or whether I did the shelling." xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
@@ -452,8 +472,8 @@ intersection_of: RO:0001000 FOODON:03411335 ! derives from crab
 [Term]
 id: FOODON:00001792
 name: crustacean food product
-is_a: FOODON:00001046 ! seafood product
-intersection_of: FOODON:00001046 ! seafood product
+is_a: FOODON:00001293 ! shellfish food product
+intersection_of: FOODON:00001293 ! shellfish food product
 intersection_of: RO:0001000 FOODON:03411374 ! derives from crustacean
 
 [Term]
@@ -490,7 +510,9 @@ intersection_of: RO:0001000 FOODON:03303918 ! derives from human milk (raw)
 id: FOODON:00002044
 name: mollusc food product
 name: mollusk food product
-is_a: FOODON:00001046 ! seafood product
+is_a: FOODON:00001293 ! shellfish food product
+intersection_of: FOODON:00001293 ! shellfish food product
+intersection_of: RO:0001000 FOODON:03412112 ! derives from molluscs
 relationship: RO:0001000 FOODON:03412112 ! derives from molluscs
 property_value: IAO:0000116 "Note american/ gb english spelling variation" xsd:string
 
@@ -543,6 +565,14 @@ name: invertebrate animal
 def: "Invertebrates are animals that neither possess nor develop a vertebral column (commonly known as a backbone or spine), derived from the notochord. This includes all animals apart from the subphylum Vertebrata." []
 synonym: "animal" BROAD []
 is_a: FOODON:00003004 ! animal
+
+[Term]
+id: FOODON:00002454
+name: food product by quality
+def: "The food product by quality class provides descriptors for describing food visually or via other senses, which is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like \"food (frozen)\" are both a quality descriptor and the output of a process." []
+is_a: FOODON:00001002 ! foodon product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002470
@@ -628,6 +658,7 @@ synonym: "cow milk" EXACT []
 synonym: "milk" BROAD []
 xref: SUBSET_SIREN:F2116
 is_a: FOODON:00001771 ! cow milk based food product
+is_a: FOODON:03430130 ! food (liquid)
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -717,7 +748,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400004
-name: product type, other (deprecated)
+name: obsolete: product type, other
 comment: LanguaL curation note: Used only if the product does not fall under any of the major product types listed. [FDA CFSAN 1995]
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0004
 is_a: ObsoleteClass ! Obsolete Class
@@ -885,7 +916,7 @@ id: FOODON:03411059
 name: shellfish or crustacean
 def: "Shellfish is a food source and fisheries term for exoskeleton-bearing aquatic invertebrates used as food, including various species of molluscs, crustaceans, and echinoderms. Although most kinds of shellfish are harvested from saltwater environments, some kinds are found in freshwater. In addition, a few species of land crabs are eaten, for example *Cardisoma guanhumi* in the Caribbean. [https://en.wikipedia.org/wiki/Shellfish]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1059
-is_a: FOODON:00002452 ! invertebrate animal
+is_a: FOODON:00002581 ! aquatic invertebrate
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -938,9 +969,10 @@ is_a: FOODON:03411607 ! nut or edible seed producing plant
 
 [Term]
 id: FOODON:03411215
-name: algae, bacteria or fungus (deprecated)
+name: obsolete: algae, bacteria or fungus
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1215
 is_a: ObsoleteClass ! Obsolete Class
+property_value: IAO:0000231 "false" xsd:boolean
 property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 
@@ -1008,7 +1040,7 @@ name: crustacean
 def: "Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]" []
 xref: http://eol.org/pages/2598871
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1374
-is_a: FOODON:00002581 ! aquatic invertebrate
+is_a: FOODON:03411433 ! shellfish
 property_value: hasSynonym "crustacea" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -1018,9 +1050,9 @@ id: FOODON:03411433
 name: shellfish
 def: "The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates. [https://en.wikipedia.org/wiki/Shellfish]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1433
-is_a: FOODON:00002452 ! invertebrate animal
+is_a: FOODON:00002581 ! aquatic invertebrate
 union_of: FOODON:00001293 ! shellfish food product
-union_of: FOODON:00002452 ! invertebrate animal
+union_of: FOODON:00002581 ! aquatic invertebrate
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -1251,6 +1283,16 @@ def: "A pollen-bearing organ in a flower, made up of a slender stalk (filament) 
 is_a: FOODON:03420237 ! floret or flower
 
 [Term]
+id: FOODON:03430130
+name: food (liquid)
+def: "A state of matter between a solid and a gas, in which a substance has the capacity to flow and conforms to the shape of the container. Liquids range from water to honey, corresponding to a range in viscosity (or apparent viscosity) from 1 to 500 centipoise (viscosity is a measure of a liquid's resistance to flow). Products that are pourable but have a higher viscosity are *SEMILIQUID*." []
+comment: SIREN DB annotation:\n* has quality 'liquid' (http://purl.obolibrary.org/obo/FOODON_03430130)\n                
+xref: SUBSET_SIREN:F5105
+is_a: FOODON:00002454 ! food product by quality
+intersection_of: FOODON:00002454 ! food product by quality
+intersection_of: RO:0000086 PATO:0001548 ! has quality quality of a liquid
+
+[Term]
 id: FOODON:03460111
 name: food treatment process
 def: "Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation. Multiple values can be assigned." []
@@ -1280,7 +1322,13 @@ property_value: IAO:0000118 "nut or seed added" xsd:string
 [Term]
 id: FOODON:03460180
 name: food added (deprecated)
+name: obsolete: food added
+comment: LanguaL curation note: When not otherwise indicated in the scope note, *FOOD ADDED* factor terms are applied when the specified food is the second ingredient in order of predominance, excluding water. Always used for fillings and when the added food is part of the product name (e.g., raisin bread).
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0180
 is_a: ObsoleteClass ! Obsolete Class
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000231 "\"Food added\" and its subclasses referenced existing ingredients / food products.  FoodOn uses relations like \"has ingredient\" to do the same. If needed, these relations can be annotated with proportions." xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 
 [Term]
@@ -1693,10 +1741,31 @@ is_a: BFO:0000020 ! specifically dependent continuant
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
+id: PATO:0001018
+name: physical quality
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." []
+is_a: PATO:0001241 ! physical object quality
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
+
+[Term]
 id: PATO:0001241
 name: physical object quality
 def: "A quality which inheres in a continuant." []
 is_a: PATO:0000001 ! quality
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
+
+[Term]
+id: PATO:0001548
+name: quality of a liquid
+def: "A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape." []
+is_a: PATO:0002198 ! quality of a substance
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
+
+[Term]
+id: PATO:0002198
+name: quality of a substance
+def: "A quality inhering in a bearer by virtue of its constitution." []
+is_a: PATO:0001018 ! physical quality
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
@@ -1949,6 +2018,18 @@ range: BFO:0000002 ! continuant
 holds_over_chain: BFO:0000051 RO:0000057
 
 [Typedef]
+id: RO:0000080
+name: quality of
+def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
+property_value: IAO:0000112 "this red color is a quality of this apple" xsd:string
+property_value: IAO:0000116 "A quality inheres in its bearer at all times for which the quality exists." xsd:string
+property_value: IAO:0000118 "is quality of" xsd:string
+property_value: IAO:0000118 "quality_of" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0000052 ! inheres in
+inverse_of: RO:0000086 ! has quality
+
+[Typedef]
 id: RO:0000081
 name: role of
 def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
@@ -1959,6 +2040,17 @@ property_value: IAO:0000118 "role_of" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0000052 ! inheres in
 inverse_of: RO:0000087 ! has role
+
+[Typedef]
+id: RO:0000086
+name: has quality
+def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
+property_value: IAO:0000112 "this apple has quality this red color" xsd:string
+property_value: IAO:0000116 "A bearer can have many qualities, and its qualities can exist for different periods of time, but none of its qualities can exist when the bearer does not exist." xsd:string
+property_value: IAO:0000118 "has_quality" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+range: BFO:0000019 ! quality
+is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000087
