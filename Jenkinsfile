@@ -12,7 +12,7 @@ def setCaller(caller){
 def testMondo(){
 	stage('make test') {
 		try {
-			docker.image('obolibrary/odkfull').inside('--memory=100g -e ROBOT_JAVA_ARGS=-Xmx64G'){
+			docker.image('obolibrary/odkfull').inside('--memory=100g -e ROBOT_JAVA_ARGS=-Xmx128G'){
 				sh 'cd src/ontology; make test'
 			} 
 			callerScript.tagSuccess('Tests passed!')
