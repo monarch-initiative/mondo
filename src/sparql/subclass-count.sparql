@@ -1,0 +1,15 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?cls ?clsLabel (count(?subCls) as ?numSubCls) WHERE 
+{
+  ?cls a owl:Class ;
+  ?subCls a owl:Class ;
+       rdfs:subClassOf ?cls .
+  OPTIONAL { ?cls rdfs:label ?clsLabel } .
+  FILTER (!isBlank(?cls))
+  FILTER (!isBlank(?subCls))
+}
+GROUP BY ?cls ?clsLabel

@@ -1,0 +1,13 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+ ?c a owl:Class ;
+    rdfs:label ?l
+}
+WHERE {
+ ?c a owl:Class ;
+    rdfs:label ?l
+}
+
+

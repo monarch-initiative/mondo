@@ -1,0 +1,18 @@
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?a rdfs:subClassOf ?b .
+  ?a a owl:Class .
+  ?b a owl:Class .
+  [ a owl:Axiom ;
+    owl:annotatedSource ?a ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedTarget ?a ;
+    oboInOwl:source "OWLReasoner:Indirect"
+  ]
+}
+WHERE {
+  ?a rdfs:subClassOf [ rdfs:subClassOf+ ?b ]
+}

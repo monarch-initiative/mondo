@@ -1,0 +1,7 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?cls ?clsLabel ?score WHERE {
+ ?cls <http://purl.obolibrary.org/obo/mondo#confidence> ?score ;
+      rdfs:label ?clsLabel
+}
+ORDER BY ?score

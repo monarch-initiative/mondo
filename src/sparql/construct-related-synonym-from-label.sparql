@@ -1,0 +1,9 @@
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?c oboInOwl:hasRelatedSynonym ?s
+}
+WHERE {
+  ?c rdfs:label ?s
+}
