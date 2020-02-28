@@ -24,3 +24,8 @@ diff -u mondo-edit.obo mondo-edit-repaired.obo
 If the changes that were made look good then you can simply replace the source file with the repaired file (`mv results/repaired.owl need-of-repair.owl`).
 
 By default, annotation axioms are not migrated to replacement classes. However, this can be enabled for a list of annotation properties passed either as arguments to `--annotation-property` or in a term file `--annotation-properties-file`:
+
+# Run ROBOT report
+
+`cd git/mondo/src/ontology`
+`./run.sh make reports/release/mondo-owl-report.tsv`
