@@ -13,7 +13,14 @@ To repair the Mondo ontology (with the name `need-of-repair.owl`) run the follow
 
 `robot repair -i mondo-edit.obo -o mondo-edit-repaired.obo`
 
+**Diff:**
+You can compare this with the original file by running this command:
+diff mondo-edit.obo mondo-edit-repaired.obo
 
-This will generate a new file `mondo-edit-repaired.obo`. You can compare this with the original file (either using unix `diff` or [robot diff](diff)). If the changes that were made look good then you can simply replace the source file with the repaired file (`mv results/repaired.owl need-of-repair.owl`).
+or this command:
+diff -u mondo-edit.obo mondo-edit-repaired.obo
+
+
+If the changes that were made look good then you can simply replace the source file with the repaired file (`mv results/repaired.owl need-of-repair.owl`).
 
 By default, annotation axioms are not migrated to replacement classes. However, this can be enabled for a list of annotation properties passed either as arguments to `--annotation-property` or in a term file `--annotation-properties-file`:
