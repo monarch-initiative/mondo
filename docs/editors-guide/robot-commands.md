@@ -2,7 +2,7 @@
 
 Generic instructions are [here](http://robot.obolibrary.org/repair).
 
-ROBOT can repair certain problems encountered in ontologies. So far, this is limited to updating axioms pointing to deprecated classes with their replacement class (indicated using [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001)).
+These instructions are for updating axioms pointing to deprecated classes with their replacement class (indicated using [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001)).
 
 This situation can arise in a number of different ways:
 
@@ -27,7 +27,4 @@ If the changes that were made look good then you can simply replace the source f
 
 By default, annotation axioms are not migrated to replacement classes. However, this can be enabled for a list of annotation properties passed either as arguments to `--annotation-property` or in a term file `--annotation-properties-file`:
 
-# Run ROBOT report
 
-`cd git/mondo/src/ontology`
-`./run.sh make reports/release/mondo-owl-report.tsv`
