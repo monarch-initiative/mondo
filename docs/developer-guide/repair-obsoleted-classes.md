@@ -53,7 +53,7 @@ By default, annotation axioms are not migrated to replacement classes. However, 
   
 `robot repair \
   --input mondo-edit.obo \
-  --annotation-property rdf:schema:seeAlso \
+  --annotation-property rdfs:seeAlso \
   --output mondo-edit-repaired.obo`  
   
 `robot repair \
@@ -61,4 +61,6 @@ By default, annotation axioms are not migrated to replacement classes. However, 
   --annotation-property oboInOwl:inSubset \
   --output mondo-edit-repaired.obo`    
   
-Note - the prefixes here may not accurate, please consult [Robot documentation on prefixes](http://robot.obolibrary.org/global#prefixes).  
+[Robot documentation on prefixes](http://robot.obolibrary.org/global#prefixes)  
+[Default/built in Robot prefixes](https://github.com/ontodev/robot/blob/master/robot-core/src/main/resources/obo_context.jsonld) 
+
