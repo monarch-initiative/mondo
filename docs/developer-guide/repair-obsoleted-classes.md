@@ -1,10 +1,8 @@
-# Repair obsoleted classes 
+# Repair axioms pointing to deprecated classes 
 
-## Repair axioms pointing to deprecated classes with their replacement class using Robot
+## Introduction: 
 
-Generic instructions for ROBOT repair are [here](http://robot.obolibrary.org/repair).
-
-If an equivalent axiom uses a class that has been obsoleted, this workflow allows you to update the obsoleted class with the replacement class (indicated using the [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001). 
+If an equivalent axiom uses a class that has been obsoleted, this workflow allows you to update the obsoleted class with the replacement class (indicated using the [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001). Generic instructions for ROBOT repair are [here](http://robot.obolibrary.org/repair).
 
 This situation can arise in a number of different ways, such as:
 
@@ -19,12 +17,14 @@ For more on obsoletion workflows, see the [obsoletion guide](https://mondo.readt
 
 `robot repair -i mondo-edit.obo -o mondo-edit-repaired.obo`
 
-2. Diff: You can compare this with the original file by running this command:
+2. Diff: You can compare this with the original file by running this command:  
+
 `diff -u mondo-edit.obo mondo-edit-repaired.obo`
 
 - For help understanding the diff output, see this [stack exchange article](https://unix.stackexchange.com/questions/81998/understanding-of-diff-output).
 
-3. If the changes that were made look good then you can simply replace the source file with the repaired file using this command:
+3. If the changes that were made look good then you can simply replace the source file with the repaired file using this command:  
+
 `mv mondo-edit-repaired.obo mondo-edit.obo`
 
 4. By default, annotation axioms are not migrated to replacement classes. However, this can be enabled for a list of annotation properties passed either as arguments to `--annotation-property`. The make file will be enhanced in the future to include all of these commands. For now, here are the commands to use on the command line.
