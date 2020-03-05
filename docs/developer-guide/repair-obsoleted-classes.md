@@ -1,6 +1,6 @@
 # Repair axioms pointing to deprecated classes 
 
-## Introduction: 
+## Introduction
 
 If an equivalent axiom uses a class that has been obsoleted, this workflow allows you to update the obsoleted class with the replacement class (indicated using the [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001). Generic instructions for ROBOT repair are [here](http://robot.obolibrary.org/repair).
 
@@ -11,7 +11,7 @@ This situation can arise in a number of different ways, such as:
 
 For more on obsoletion workflows, see the [obsoletion guide](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/).
 
-## Instructions:
+## Instructions
 
 1. To repair the Mondo ontology (with the name `mondo-edit.obo`) run the following command:
 
