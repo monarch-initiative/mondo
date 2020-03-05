@@ -19,9 +19,11 @@ If you have Docker installed:
 4. Do the diff on ncbitaxon_import. We expect new classes and some subClassOf changes. A new ncbitaxon_import.owl file will be created in the imports folder. Run command:  
 
 `git diff`  
+
 5. If you are expecting new classes to be added, check to see if those were added. For example: check the coronovirus shows up in the new import
     1. `grep 2697049 imports/ncbitaxon_import.owl`
-    2. 2697049 = ID for class I am trying to import.
+    2. 2697049 = ID for class I am trying to import.  
+    
 6. Commit ncbitaxon_import.owl file (if you see changes on any other files, discard the changes on the other files):  
 
    `git add imports/ncbitaxon_import.owl`  
