@@ -6,14 +6,13 @@ If you have Docker installed:
 
 1. Navigate to your local ontology directory, for example:
 ` cd src/ontology`
-1. Work on a branch
-1. Run command
+1. Work on a branch.
+1. Run command:
 `./run.sh make imports/ncbitaxon_import.owl`  
- Note - if you don't have Docker installed but have Robot installed, run this command:  
+ - Note - if you don't have Docker installed but have Robot installed, run this command:  
 `make imports/ncbitaxon_import.owl`
-
-1. Note - this can take a while to run.
-1. Note - if it failed with a message saying the source ontology is not available, try again later.
+- Note - this can take a while to run.
+- Note - if it failed with a message saying the source ontology is not available, try again later.
 1. Do the diff on ncbitaxon_import. We expect new classes and some subClassOf changes. A new ncbitaxon_import.owl file will be created in the imports folder.
 `git diff`
 1. If you are expecting new classes to be added, check to see if those were added. For example: check the coronovirus shows up in the new import
