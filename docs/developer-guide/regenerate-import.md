@@ -1,6 +1,6 @@
 # Regenerate import file
 
-These instructions are specific to regenerating the NCBITaxom import.
+These instructions are specific to regenerating the NCBITaxom import but can be applied to other import files.
 
 If you have Docker installed: 
 
