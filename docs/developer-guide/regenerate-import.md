@@ -15,6 +15,7 @@ If you have Docker installed:
   `make imports/ncbitaxon_import.owl`  
   - Note - this can take a while to run.  
   - Note - if it failed with a message saying the source ontology is not available, try again later.  
+
 4. Do the diff on ncbitaxon_import. We expect new classes and some subClassOf changes. A new ncbitaxon_import.owl file will be created in the imports folder. Run command:  
 
 `git diff`  
