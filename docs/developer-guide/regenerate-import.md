@@ -21,4 +21,4 @@ If you have Docker installed:
      `git status` should only this file is to be committed.  
      `git commit`  
      `git push`  
-7. Once you regenerated the new import, it could contain newly deprecatecd classes from the source ontology and this could affect the Mondo ontology by creating danglers/obsolete references. To fix this, follow the instructions in [repair obsolete classes](developer-guide/repair-obsoleted-classes.md).
+7. Once you regenerated the new import, it could contain newly deprecatecd classes from the source ontology and this could affect the Mondo ontology by creating danglers/obsolete references. To fix this, follow the instructions in [Repair axioms pointing to deprecated classes](https://mondo.readthedocs.io/en/latest/developer-guide/repair-obsoleted-classes/).
