@@ -8,9 +8,8 @@ If you have Docker installed:
 ` cd src/ontology`
 1. Work on a branch
 1. Run command
-`./run.sh make imports/ncbitaxon_import.owl`
-
-(if you don't have Docker installed but have Robot installed, run this command:
+`./run.sh make imports/ncbitaxon_import.owl`  
+ Note - if you don't have Docker installed but have Robot installed, run this command:  
 `make imports/ncbitaxon_import.owl`
 
 1. Note - this can take a while to run.
