@@ -1,3 +1,58 @@
+# 2020-03-05 release
+
+## New Classes
+
+ * [MONDO:0100096](http://purl.obolibrary.org/obo/MONDO_0100096) 2019 novel coronavirus infection
+ * [MONDO:0100100](http://purl.obolibrary.org/obo/MONDO_0100100) SELENON-related myopathy
+ * [MONDO:0100101](http://purl.obolibrary.org/obo/MONDO_0100101) Fetal akinesia deformation sequence 1
+ * [MONDO:0100102](http://purl.obolibrary.org/obo/MONDO_0100102) Fetal akinesia deformation sequence 2
+ * [MONDO:0100103](http://purl.obolibrary.org/obo/MONDO_0100103) Fetal akinesia deformation sequence 3
+ * [MONDO:0100104](http://purl.obolibrary.org/obo/MONDO_0100104) Fetal akinesia deformation sequence 4
+ * [MONDO:0100107](http://purl.obolibrary.org/obo/MONDO_0100107) non-neonatal early infantile epileptic encephalopathy
+ * [MONDO:0100108](http://purl.obolibrary.org/obo/MONDO_0100108) TPM3-related myopathy
+ * [MONDO:0100110](http://purl.obolibrary.org/obo/MONDO_0100110) adenovirus renal infection
+
+## Obsoletions
+
+ * [MONDO:0000024](http://purl.obolibrary.org/obo/MONDO_0000024) exostoses, multiple --> obsolete exostoses, multiple
+ * [MONDO:0006697](http://purl.obolibrary.org/obo/MONDO_0006697) Chlamydophila infectious disease --> obsolete Chlamydophila infectious disease
+ * [MONDO:0007065](http://purl.obolibrary.org/obo/MONDO_0007065) adenosine deaminase, elevated, hemolytic anemia due to --> obsolete adenosine deaminase, elevated, hemolytic anemia due to
+ * [MONDO:0008033](http://purl.obolibrary.org/obo/MONDO_0008033) autosomal dominant limb-girdle muscular dystrophy type 1B --> obsolete autosomal dominant limb-girdle muscular dystrophy type 1B
+ * [MONDO:0011809](http://purl.obolibrary.org/obo/MONDO_0011809) Mammographic density --> obsolete mammographic density
+ * [MONDO:0012372](http://purl.obolibrary.org/obo/MONDO_0012372) hypertrichosis, hyperkeratosis, mental retardation, and distinctive facial features --> obsolete hypertrichosis, hyperkeratosis, mental retardation, and distinctive facial features
+ * [MONDO:0060722](http://purl.obolibrary.org/obo/MONDO_0060722) neurodevelopmental disorder with brain, liver, and lung abnormalities --> obsolete neurodevelopmental disorder with brain, liver, and lung abnormalities
+
+## Renaming
+
+ * [MONDO:0000024](http://purl.obolibrary.org/obo/MONDO_0000024) exostoses, multiple --> obsolete exostoses, multiple
+ * [MONDO:0005775](http://purl.obolibrary.org/obo/MONDO_0005775) glucosephosphate dehydrogenase deficiency --> G6PD deficiency
+ * [MONDO:0006697](http://purl.obolibrary.org/obo/MONDO_0006697) Chlamydophila infectious disease --> obsolete Chlamydophila infectious disease
+ * [MONDO:0007065](http://purl.obolibrary.org/obo/MONDO_0007065) adenosine deaminase, elevated, hemolytic anemia due to --> obsolete adenosine deaminase, elevated, hemolytic anemia due to
+ * [MONDO:0008033](http://purl.obolibrary.org/obo/MONDO_0008033) autosomal dominant limb-girdle muscular dystrophy type 1B --> obsolete autosomal dominant limb-girdle muscular dystrophy type 1B
+ * [MONDO:0010433](http://purl.obolibrary.org/obo/MONDO_0010433) SLEB15 --> systemic lupus erythematosus, susceptibility to, 15
+ * [MONDO:0010624](http://purl.obolibrary.org/obo/MONDO_0010624) ichthyosis follicularis-alopecia-photophobia syndrome --> IFAP/Breshek syndrome
+ * [MONDO:0010898](http://purl.obolibrary.org/obo/MONDO_0010898) familial temporal lobe epilepsy 1 --> Autosomal dominant epilepsy with auditory features
+ * [MONDO:0011560](http://purl.obolibrary.org/obo/MONDO_0011560) SLEB3 --> systemic lupus erythematosus, susceptibility to, 3
+ * [MONDO:0011807](http://purl.obolibrary.org/obo/MONDO_0011807) SLEH1 --> systemic lupus erythematosus with hemolytic anemia, susceptibility to, 1
+ * [MONDO:0011809](http://purl.obolibrary.org/obo/MONDO_0011809) Mammographic density --> obsolete mammographic density
+ * [MONDO:0011942](http://purl.obolibrary.org/obo/MONDO_0011942) SLEN1 --> systemic lupus erythematosus with nephritis, susceptibility to, 1
+ * [MONDO:0011943](http://purl.obolibrary.org/obo/MONDO_0011943) SLEN2 --> systemic lupus erythematosus with nephritis, susceptibility to, 2
+ * [MONDO:0011944](http://purl.obolibrary.org/obo/MONDO_0011944) SLEN3 --> systemic lupus erythematosus with nephritis, susceptibility to, 3
+ * [MONDO:0012036](http://purl.obolibrary.org/obo/MONDO_0012036) SLEB4 --> systemic lupus erythematosus, susceptibility to, 4
+ * [MONDO:0012361](http://purl.obolibrary.org/obo/MONDO_0012361) SLEB5 --> systemic lupus erythematosus, susceptibility to, 5
+ * [MONDO:0012369](http://purl.obolibrary.org/obo/MONDO_0012369) SLEB6 --> systemic lupus erythematosus, susceptibility to, 6
+ * [MONDO:0012372](http://purl.obolibrary.org/obo/MONDO_0012372) hypertrichosis, hyperkeratosis, mental retardation, and distinctive facial features --> obsolete hypertrichosis, hyperkeratosis, mental retardation, and distinctive facial features
+ * [MONDO:0012403](http://purl.obolibrary.org/obo/MONDO_0012403) SLEB7 --> systemic lupus erythematosus, susceptibility to, 7
+ * [MONDO:0012404](http://purl.obolibrary.org/obo/MONDO_0012404) SLEB8 --> systemic lupus erythematosus, susceptibility to, 8
+ * [MONDO:0012836](http://purl.obolibrary.org/obo/MONDO_0012836) SLEB12 --> systemic lupus erythematosus, susceptibility to, 12
+ * [MONDO:0012884](http://purl.obolibrary.org/obo/MONDO_0012884) SLEB13 --> systemic lupus erythematosus, susceptibility to, 13
+ * [MONDO:0013152](http://purl.obolibrary.org/obo/MONDO_0013152) SLEB14 --> systemic lupus erythematosus, susceptibility to, 14
+ * [MONDO:0013731](http://purl.obolibrary.org/obo/MONDO_0013731) early-onset myopathy-areflexia-respiratory distress-dysphagia syndrome --> MEGF10-Related Myopathy
+ * [MONDO:0013743](http://purl.obolibrary.org/obo/MONDO_0013743) autosomal systemic lupus erythematosus --> autosomal systemic lupus erythematosus type 16
+ * [MONDO:0020135](http://purl.obolibrary.org/obo/MONDO_0020135) non-syndromic pontocerebellar hypoplasia --> pontocerebellar hypoplasia
+ * [MONDO:0060722](http://purl.obolibrary.org/obo/MONDO_0060722) neurodevelopmental disorder with brain, liver, and lung abnormalities --> obsolete neurodevelopmental disorder with brain, liver, and lung abnormalities
+
+
 # 2020-01-27 release
 
  * revise text def for MONDO:0001973

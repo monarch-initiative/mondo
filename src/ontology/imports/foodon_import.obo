@@ -287,7 +287,7 @@ name: plant food product
 def: "This food product type includes food products which are derived from or produced by a plant." []
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
-intersection_of: RO:0001000 FOODON:03411347 ! derives from plant
+intersection_of: RO:0001000 PO:0000003 ! derives from whole plant
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -520,7 +520,7 @@ property_value: IAO:0000116 "Note american/ gb english spelling variation" xsd:s
 id: FOODON:00002131
 name: plant based refined or partially-refined food product
 is_a: FOODON:00002196 ! refined or partially-refined food product
-relationship: RO:0001000 FOODON:03411347 ! derives from plant
+relationship: RO:0001000 PO:0000003 ! derives from whole plant
 relationship: RO:0002350 FOODON:03400129 ! member of refined or partially-refined food product (us cfr)
 
 [Term]
@@ -1050,9 +1050,8 @@ id: FOODON:03411433
 name: shellfish
 def: "The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates. [https://en.wikipedia.org/wiki/Shellfish]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1433
+is_a: FOODON:00001293 ! shellfish food product
 is_a: FOODON:00002581 ! aquatic invertebrate
-union_of: FOODON:00001293 ! shellfish food product
-union_of: FOODON:00002581 ! aquatic invertebrate
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -1769,6 +1768,14 @@ is_a: PATO:0001018 ! physical quality
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
+id: PO:0000003
+name: whole plant
+def: "A plant structure (PO:0005679) which is a whole organism." []
+is_a: FOODON:03411564 ! food source
+is_a: PO:0009011 ! plant structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
 id: PO:0009001
 name: fruit
 def: "A multi-tissue plant structure (PO:0025496) that develops from a gynoecium (PO:0009062), or a single carpel (PO:0009030), and at maturity may have as parts one or more seeds (PO:0009010)." []
@@ -1833,7 +1840,6 @@ name: berry fruit
 def: "A fruit (PO:0009001) which at maturity comprises a fleshy endocarp (PO:0009086), fleshy mesocarp (PO:0009087), and fleshy exocarp (PO:0009085)." []
 is_a: PO:0009001 ! fruit
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-property_value: seeAlso http://www.madaboutberries.com/types-of-berries.html
 
 [Term]
 id: PO:0030109

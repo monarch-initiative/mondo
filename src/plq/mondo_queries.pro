@@ -86,7 +86,7 @@ dataframe:dataframe(synclash,
                     ]).
         
 
-% P is str
+%! xref_prefix(?Cls, ?Xref, ?Prefix:str) is nondet.
 xref_prefix(C,X,P) :-
         has_dbxref(C,X),
         curie_ns(X,P).
@@ -103,7 +103,7 @@ xref_prefix_srcont(C,X,P,S) :-
         curie_ns(SC,S).
 
 
-%!  curie_ns(Literal:str, Pre:str)
+%! curie_ns(XrefLiteral:str, Pre:str)
 curie_ns(Literal,Pre) :-
         str_before(Literal,":",Pre).
 
