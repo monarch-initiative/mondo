@@ -1,6 +1,6 @@
 # Mondo release workflow
 
-Check back soon for instructions on creating the Mondo release.
+_Check back soon for documntation on creating the Mondo release._
 
 ## Write a description of the release
 
