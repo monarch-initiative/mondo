@@ -6,6 +6,10 @@
 
 Mondo is released around the first of each month. See the latest release [here](https://github.com/monarch-initiative/mondo/releases).
 
+### When will I see the latest release of Mondo in [OLS](https://www.ebi.ac.uk/ols/ontologies/mondo)?
+
+A new release can be expected in [OLS](https://www.ebi.ac.uk/ols/ontologies/mondo) within 7 business days usually.  
+
 ### Am I allowed to change the content in Mondo?
 
 Mondo is a community-driven project and we welcome your feedback and suggested changes. We request that all proposed changed be suggested on [GitHub issue tracker](https://github.com/monarch-initiative/mondo), so they can be seen and discussed by the Mondo community. Note, you will need sign up for a free GitHub account, if you do not already have one.
