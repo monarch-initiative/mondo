@@ -542,7 +542,7 @@ mirror/omim-src.ttl:
 mirror/omim-src.owl: mirror/omim-src.ttl
 	owltools $< --set-ontology-id $(OBO)/mondo/$@ -o $@
 mirror/omim-src.obo: mirror/omim-src.owl
-	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | ../utils/fix-omim.pl  > $@
+	robot convert -i $< -c false -f obo -o $@.tmp && grep -v ^owl-axioms $@.tmp | ../utils/fix-omim.pl  > $@
 
 mirror/omim.obo: mirror/omim-src.obo
 	obo-grep.pl --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' $< | obo-grep.pl -r 'id: OMIM' -   > $@.tmp && mv $@.tmp $@
