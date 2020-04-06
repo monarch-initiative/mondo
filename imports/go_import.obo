@@ -10875,6 +10875,13 @@ synonym: "other isomerase activity" NARROW []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
+id: GO:0016854
+name: racemase and epimerase activity
+def: "Catalysis of a reaction that alters the configuration of one or more chiral centers in a molecule." []
+synonym: "racemase and epimerase activity, acting on other compounds" NARROW []
+is_a: GO:0016853 ! isomerase activity
+
+[Term]
 id: GO:0016860
 name: intramolecular oxidoreductase activity
 def: "Catalysis of an oxidation-reduction (redox) reaction in which the hydrogen donor and acceptor are the same molecule, and no oxidized product appears." []
@@ -21693,6 +21700,17 @@ synonym: "SAT 1" RELATED []
 is_a: GO:0008373 ! sialyltransferase activity
 
 [Term]
+id: GO:0047453
+name: ATP-dependent NAD(P)H-hydrate dehydratase activity
+def: "Catalysis of the reaction: (6S)-6beta-hydroxy-1,4,5,6-tetrahydronicotinamide adenine dinucleotide + ATP = ADP + 3 H(+) + NADH + phosphate." []
+synonym: "(6S)-beta-6-hydroxy-1,4,5,6-tetrahydronicotinamide-adenine-dinucleotide hydro-lyase (ATP-hydrolysing)" EXACT []
+synonym: "(6S)-beta-6-hydroxy-1,4,5,6-tetrahydronicotinamide-adenine-dinucleotide hydro-lyase(ATP-hydrolysing; NADH-forming)" RELATED []
+synonym: "ATP-dependent H(4)NAD(P)OH dehydratase activity" EXACT []
+synonym: "ATP-dependent H4NAD(P)OH dehydratase activity" EXACT []
+synonym: "reduced nicotinamide adenine dinucleotide hydrate dehydratase activity" BROAD []
+is_a: GO:0016836 ! hydro-lyase activity
+
+[Term]
 id: GO:0047598
 name: 7-dehydrocholesterol reductase activity
 def: "Catalysis of the reaction: cholesterol + NADP+ = cholesta-5,7-dien-3-beta-ol + NADPH + H+." []
@@ -25510,6 +25528,12 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 is_a: GO:0046483 ! heterocycle metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
+id: GO:0052856
+name: NADHX epimerase activity
+def: "Catalysis of the reaction: (R)-NADHX = (S)-NADHX." []
+is_a: GO:0016854 ! racemase and epimerase activity
 
 [Term]
 id: GO:0055007

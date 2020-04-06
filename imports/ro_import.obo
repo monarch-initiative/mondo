@@ -1669,6 +1669,31 @@ domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
 
 [Typedef]
+id: RO:0004000
+name: condition has genetic basis in
+domain: BFO:0000017 ! realizable entity
+is_a: RO:0002410 ! causally related to
+inverse_of: RO:0004010 ! is genetic basis for condition
+
+[Typedef]
+id: RO:0004001
+name: has material basis in gain of function germline mutation in
+is_a: RO:0004000 ! condition has genetic basis in
+inverse_of: RO:0004011 ! is causal gain of function germline mutation of in
+
+[Typedef]
+id: RO:0004010
+name: is genetic basis for condition
+range: BFO:0000017 ! realizable entity
+is_a: RO:0004018 ! is basis for realizable
+
+[Typedef]
+id: RO:0004011
+name: is causal gain of function germline mutation of in
+def: "Relates a gene to condition, such that a mutation in this gene in a germ cell provides a new function of the corresponding product and that is sufficient to produce the condition and that can be passed on to offspring[modified from orphanet]." []
+is_a: RO:0004010 ! is genetic basis for condition
+
+[Typedef]
 id: RO:0004017
 name: realizable has basis in
 is_a: RO:0002410 ! causally related to

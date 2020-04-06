@@ -95,6 +95,13 @@ synonym: "Tca DNA polymerase inhibitors" RELATED []
 is_a: CHEBI:38234 ! DNA polymerase inhibitor
 
 [Term]
+id: CHEBI:131927
+name: dicarboxylic acids and O-substituted derivatives
+def: "A class of carbonyl compound encompassing dicarboxylic acids and any derivatives obtained by substitution of either one or both of the carboxy hydrogens." []
+synonym: "dicarboxylic acids and derivatives" RELATED []
+is_a: CHEBI:36586 ! carbonyl compound
+
+[Term]
 id: CHEBI:132233
 name: 1-phenylpropan-2-amine
 def: "A primary amine that is isopropylamine in which a hydrogen attached to one of the methyl grops has been replaced by a phenyl group." []
@@ -176,6 +183,20 @@ synonym: "carbamic acid, ion(1-)" RELATED []
 synonym: "Karbamat" RELATED []
 is_a: CHEBI:37022 ! amino-acid anion
 relationship: is_conjugate_base_of CHEBI:28616 ! carbamic acid
+
+[Term]
+id: CHEBI:14321
+name: glutamate(1-)
+def: "An alpha-amino-acid anion that is the conjugate base of glutamic acid, having anionic carboxy groups and a cationic amino group" []
+synonym: "2-ammoniopentanedioate" RELATED []
+synonym: "glutamate" RELATED []
+synonym: "glutamate(1-)" EXACT []
+synonym: "glutamic acid monoanion" RELATED []
+synonym: "hydrogen glutamate" EXACT []
+is_a: CHEBI:33558 ! alpha-amino-acid anion
+relationship: is_conjugate_acid_of CHEBI:29987 ! glutamate(2-)
+relationship: is_conjugate_base_of CHEBI:18237 ! glutamic acid
+relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
 
 [Term]
 id: CHEBI:15022
@@ -475,6 +496,58 @@ relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:15966
+name: D-glutamic acid
+def: "An optically active form of glutamic acid having D-configuration." []
+synonym: "(2R)-2-aminopentanedioic acid" EXACT []
+synonym: "(R)-2-aminopentanedioic acid" RELATED []
+synonym: "D-2-Aminoglutaric acid" RELATED []
+synonym: "D-Glutamic acid" EXACT []
+synonym: "D-glutamic acid" EXACT []
+synonym: "D-Glutaminic acid" RELATED []
+synonym: "D-Glutaminsaeure" RELATED []
+synonym: "DGL" RELATED []
+synonym: "glutamic acid D-form" RELATED []
+is_a: CHEBI:16733 ! D-alpha-amino acid
+is_a: CHEBI:18237 ! glutamic acid
+relationship: is_conjugate_acid_of CHEBI:29986 ! D-glutamate(1-)
+relationship: is_enantiomer_of CHEBI:16015 ! L-glutamic acid
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+
+[Term]
+id: CHEBI:16015
+name: L-glutamic acid
+def: "An optically active form of glutamic acid having L-configuration." []
+synonym: "(2S)-2-aminopentanedioic acid" EXACT []
+synonym: "(S)-2-aminopentanedioic acid" RELATED []
+synonym: "(S)-glutamic acid" RELATED []
+synonym: "acide glutamique" RELATED []
+synonym: "acido glutamico" RELATED []
+synonym: "acidum glutamicum" RELATED []
+synonym: "E" RELATED []
+synonym: "Glu" RELATED []
+synonym: "Glutamate" RELATED []
+synonym: "GLUTAMIC ACID" RELATED []
+synonym: "glutamic acid" RELATED []
+synonym: "L-Glu" RELATED []
+synonym: "L-Glutamic acid" EXACT []
+synonym: "L-glutamic acid" EXACT []
+synonym: "L-Glutaminic acid" RELATED []
+synonym: "L-Glutaminsaeure" RELATED []
+is_a: CHEBI:15705 ! L-alpha-amino acid
+is_a: CHEBI:18237 ! glutamic acid
+is_a: CHEBI:24318 ! glutamine family amino acid
+is_a: CHEBI:83813 ! proteinogenic amino acid
+relationship: is_conjugate_acid_of CHEBI:29985 ! L-glutamate(1-)
+relationship: is_enantiomer_of CHEBI:15966 ! D-glutamic acid
+relationship: RO:0000087 CHEBI:25512 ! neurotransmitter
+relationship: RO:0000087 CHEBI:27027 ! micronutrient
+relationship: RO:0000087 CHEBI:50733 ! nutraceutical
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 
 [Term]
 id: CHEBI:16042
@@ -1384,6 +1457,26 @@ relationship: is_conjugate_base_of CHEBI:32786 ! tyrosinium
 relationship: RO:0000087 CHEBI:83056 ! Daphnia magna metabolite
 
 [Term]
+id: CHEBI:18237
+name: glutamic acid
+def: "An alpha-amino acid that is glutaric acid bearing a single amino substituent at position 2." []
+synonym: "2-Aminoglutaric acid" RELATED []
+synonym: "2-aminopentanedioic acid" EXACT []
+synonym: "DL-Glutamic acid" RELATED []
+synonym: "DL-Glutaminic acid" RELATED []
+synonym: "E" RELATED []
+synonym: "Glu" RELATED []
+synonym: "Glutamate" RELATED []
+synonym: "Glutamic acid" EXACT []
+synonym: "glutamic acid" EXACT []
+synonym: "Glutaminic acid" RELATED []
+synonym: "Glutaminsaeure" RELATED []
+is_a: CHEBI:33704 ! alpha-amino acid
+relationship: BFO:0000051 CHEBI:50329 ! 2-carboxyethyl group
+relationship: is_conjugate_acid_of CHEBI:14321 ! glutamate(1-)
+relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
+
+[Term]
 id: CHEBI:18248
 name: iron atom
 def: "An iron group element atom that has atomic number 26." []
@@ -1945,6 +2038,35 @@ name: glucocorticoid
 def: "Glucocorticoids are a class of steroid hormones that regulate a variety of physiological processes, in particular control of the concentration of glucose in blood." []
 synonym: "glucocorticoids" RELATED []
 is_a: CHEBI:36699 ! corticosteroid hormone
+
+[Term]
+id: CHEBI:24318
+name: glutamine family amino acid
+def: "An L-alpha-amino acid which is L-glutamic acid or any of the essential amino acids biosynthesised from it (glutamine, proline and arginine). A closed class." []
+synonym: "glutamine family amino acids" RELATED []
+is_a: CHEBI:15705 ! L-alpha-amino acid
+is_a: CHEBI:83813 ! proteinogenic amino acid
+
+[Term]
+id: CHEBI:24319
+name: EC 6.3.1.2 (glutamate--ammonia ligase) inhibitor
+def: "An EC 6.3.* (C-N bond-forming ligase) inhibitor that interferes with the action of glutamate--ammonia ligase (EC 6.3.1.2)." []
+synonym: "EC 6.3.1.2 (glutamate--ammonia ligase) inhibitors" RELATED []
+synonym: "EC 6.3.1.2 inhibitor" RELATED []
+synonym: "EC 6.3.1.2 inhibitors" RELATED []
+synonym: "glutamate--ammonia ligase (EC 6.3.1.2) inhibitor" RELATED []
+synonym: "glutamate--ammonia ligase (EC 6.3.1.2) inhibitors" RELATED []
+synonym: "glutamate--ammonia ligase inhibitor" RELATED []
+synonym: "glutamate--ammonia ligase inhibitors" RELATED []
+synonym: "glutamine synthetase inhibitor" RELATED []
+synonym: "glutamine synthetase inhibitors" RELATED []
+synonym: "glutamylhydroxamic synthetase inhibitor" RELATED []
+synonym: "glutamylhydroxamic synthetase inhibitors" RELATED []
+synonym: "L-glutamate:ammonia ligase (ADP-forming) inhibitor" RELATED []
+synonym: "L-glutamate:ammonia ligase (ADP-forming) inhibitors" RELATED []
+synonym: "L-glutamine synthetase inhibitor" RELATED []
+synonym: "L-glutamine synthetase inhibitors" RELATED []
+is_a: CHEBI:76823 ! EC 6.3.1.* (acid-ammonia/amine ligase) inhibitor
 
 [Term]
 id: CHEBI:24400
@@ -2641,6 +2763,13 @@ name: plant growth regulator
 def: "A chemical, natural or artificial, that can affect the rate of growth of a plant." []
 synonym: "plant growth regulators" RELATED []
 is_a: CHEBI:39317 ! growth regulator
+
+[Term]
+id: CHEBI:26167
+name: polar amino acid
+synonym: "Polar amino acid" EXACT []
+synonym: "polar amino acids" RELATED []
+is_a: CHEBI:33709 ! amino acid
 
 [Term]
 id: CHEBI:26191
@@ -3348,6 +3477,18 @@ relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
+id: CHEBI:28965
+name: dicarboxylic acid dianion
+def: "A carboxylic acid dianion obtained by deprotonation of both carboxy groups of any dicarboxylic acid." []
+synonym: "a dicarboxylate" RELATED []
+synonym: "dicarboxylate" RELATED []
+synonym: "dicarboxylates" RELATED []
+synonym: "dicarboxylic acid dianion" EXACT []
+synonym: "dicarboxylic acid dianions" RELATED []
+is_a: CHEBI:35693 ! dicarboxylic acid anion
+is_a: CHEBI:38716 ! carboxylic acid dianion
+
+[Term]
 id: CHEBI:28976
 name: carbonic acid
 synonym: "[CO(OH)2]" RELATED []
@@ -3506,6 +3647,75 @@ synonym: "HOO(+)" RELATED []
 synonym: "hydridodioxygen(1+)" EXACT []
 is_a: CHEBI:33693 ! oxygen hydride
 relationship: is_conjugate_acid_of CHEBI:15379 ! dioxygen
+
+[Term]
+id: CHEBI:29985
+name: L-glutamate(1-)
+def: "An alpha-amino-acid anion that is the conjugate base of L-glutamic acid, having anionic carboxy groups and a cationic amino group" []
+synonym: "(2S)-2-ammoniopentanedioate" RELATED []
+synonym: "hydrogen L-glutamate" EXACT []
+synonym: "L-glutamate" RELATED []
+synonym: "L-glutamate(1-)" EXACT []
+synonym: "L-glutamic acid monoanion" RELATED []
+synonym: "L-glutamic acid, ion(1-)" RELATED []
+is_a: CHEBI:14321 ! glutamate(1-)
+is_a: CHEBI:62031 ! polar amino acid zwitterion
+relationship: is_conjugate_acid_of CHEBI:29988 ! L-glutamate(2-)
+relationship: is_conjugate_base_of CHEBI:16015 ! L-glutamic acid
+relationship: is_enantiomer_of CHEBI:29986 ! D-glutamate(1-)
+relationship: RO:0000087 CHEBI:24319 ! EC 6.3.1.2 (glutamate--ammonia ligase) inhibitor
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:29986
+name: D-glutamate(1-)
+def: "An alpha-amino-acid anion that is the conjugate base of D-glutamic acid, having anionic carboxy groups and a cationic amino group" []
+synonym: "(2R)-2-ammoniopentanedioate" RELATED []
+synonym: "D-glutamate" RELATED []
+synonym: "D-glutamate(1-)" EXACT []
+synonym: "D-glutamic acid monoanion" RELATED []
+synonym: "hydrogen D-glutamate" EXACT []
+is_a: CHEBI:14321 ! glutamate(1-)
+relationship: is_conjugate_acid_of CHEBI:29989 ! D-glutamate(2-)
+relationship: is_conjugate_base_of CHEBI:15966 ! D-glutamic acid
+relationship: is_enantiomer_of CHEBI:29985 ! L-glutamate(1-)
+
+[Term]
+id: CHEBI:29987
+name: glutamate(2-)
+def: "A dicarboxylic acid dianion that is the conjugate base of glutamate(1-)." []
+synonym: "2-aminopentanedioate" EXACT []
+synonym: "glutamate" EXACT []
+synonym: "glutamate(2-)" EXACT []
+synonym: "glutamic acid dianion" RELATED []
+is_a: CHEBI:28965 ! dicarboxylic acid dianion
+relationship: is_conjugate_base_of CHEBI:14321 ! glutamate(1-)
+relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
+
+[Term]
+id: CHEBI:29988
+name: L-glutamate(2-)
+def: "An L-alpha-amino acid anion that is the dianion obtained by the deprotonation of the both the carboxy groups of L-glutamic acid." []
+synonym: "(2S)-2-aminopentanedioate" EXACT []
+synonym: "L-glutamate" EXACT []
+synonym: "L-glutamate(2-)" EXACT []
+synonym: "L-glutamic acid dianion" RELATED []
+is_a: CHEBI:29987 ! glutamate(2-)
+is_a: CHEBI:59814 ! L-alpha-amino acid anion
+relationship: is_conjugate_base_of CHEBI:29985 ! L-glutamate(1-)
+relationship: is_enantiomer_of CHEBI:29989 ! D-glutamate(2-)
+
+[Term]
+id: CHEBI:29989
+name: D-glutamate(2-)
+synonym: "(2R)-2-aminopentanedioate" EXACT []
+synonym: "D-glutamate" EXACT []
+synonym: "D-glutamate(2-)" EXACT []
+synonym: "D-glutamic acid dianion" RELATED []
+is_a: CHEBI:29987 ! glutamate(2-)
+relationship: is_conjugate_base_of CHEBI:29986 ! D-glutamate(1-)
+relationship: is_enantiomer_of CHEBI:29988 ! L-glutamate(2-)
 
 [Term]
 id: CHEBI:30089
@@ -5382,6 +5592,14 @@ synonym: "plant growth retardants" RELATED []
 is_a: CHEBI:26155 ! plant growth regulator
 
 [Term]
+id: CHEBI:35221
+name: antimetabolite
+def: "A substance which is structurally similar to a metabolite but which competes with it or replaces it, and so prevents or reduces its normal utilization." []
+synonym: "antimetabolite" EXACT []
+synonym: "antimetabolites" RELATED []
+is_a: CHEBI:52206 ! biochemical role
+
+[Term]
 id: CHEBI:35222
 name: inhibitor
 def: "A substance that diminishes the rate of a chemical reaction." []
@@ -5798,6 +6016,31 @@ synonym: "NRI" RELATED []
 is_a: CHEBI:37962 ! adrenergic agent
 
 [Term]
+id: CHEBI:35692
+name: dicarboxylic acid
+def: "Any carboxylic acid containing two carboxy groups." []
+synonym: "Dicarboxylic acid" EXACT []
+synonym: "dicarboxylic acids" RELATED []
+is_a: CHEBI:131927 ! dicarboxylic acids and O-substituted derivatives
+is_a: CHEBI:33575 ! carboxylic acid
+relationship: is_conjugate_acid_of CHEBI:35693 ! dicarboxylic acid anion
+
+[Term]
+id: CHEBI:35693
+name: dicarboxylic acid anion
+synonym: "dicarboxylic acid anion" EXACT []
+synonym: "dicarboxylic acid anions" RELATED []
+is_a: CHEBI:29067 ! carboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:35692 ! dicarboxylic acid
+
+[Term]
+id: CHEBI:35695
+name: dicarboxylic acid monoanion
+def: "Any dicarboxylic acid anion that is a monoanion obtained by the deprotonation of only one of the carboxy groups of the dicarboxylic acid." []
+synonym: "dicarboxylic acid monoanions" RELATED []
+is_a: CHEBI:35693 ! dicarboxylic acid anion
+
+[Term]
 id: CHEBI:35701
 name: ester
 def: "A compound formally derived from an oxoacid RkE(=O)l(OH)m (l > 0) and an alcohol, phenol, heteroarenol, or enol by linking with formal loss of water from an acidic hydroxy group of the former and a hydroxy group of the latter." []
@@ -5814,6 +6057,15 @@ synonym: "xenobiotic" EXACT []
 synonym: "xenobiotic compounds" RELATED []
 synonym: "xenobiotics" EXACT []
 is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:35705
+name: immunosuppressive agent
+def: "An agent that suppresses immune function by one of several mechanisms of action. Classical cytotoxic immunosuppressants act by inhibiting DNA synthesis. Others may act through activation of T-cells or by inhibiting the activation of helper cells. In addition, an immunosuppressive agent is a role played by a compound which is exhibited by a capability to diminish the extent and/or voracity of an immune response." []
+synonym: "immunosuppressant" RELATED []
+synonym: "immunosuppressive agents" RELATED []
+synonym: "inmunosupresor" RELATED []
+is_a: CHEBI:50846 ! immunomodulator
 
 [Term]
 id: CHEBI:35718
@@ -6704,6 +6956,14 @@ is_a: CHEBI:24839 ! inorganic salt
 is_a: CHEBI:26714 ! sodium salt
 
 [Term]
+id: CHEBI:38716
+name: carboxylic acid dianion
+def: "Any dianion containing at least one carboxy group." []
+synonym: "carboxylic acid dianion" EXACT []
+synonym: "carboxylic acid dianions" RELATED []
+is_a: CHEBI:29067 ! carboxylic acid anion
+
+[Term]
 id: CHEBI:38867
 name: anaesthetic
 def: "Substance which produces loss of feeling or sensation." []
@@ -6927,6 +7187,37 @@ is_a: CHEBI:79388 ! divalent inorganic anion
 relationship: is_conjugate_acid_of CHEBI:18367 ! phosphate(3-)
 relationship: is_conjugate_base_of CHEBI:39745 ! dihydrogenphosphate
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+
+[Term]
+id: CHEBI:44185
+name: methotrexate
+synonym: "4-amino-10-methylfolic acid" RELATED []
+synonym: "4-amino-N(10)-methylpteroylglutamic acid" RELATED []
+synonym: "Emtexate" RELATED []
+synonym: "Ledertrexate" RELATED []
+synonym: "METHOTREXATE" EXACT []
+synonym: "Methotrexate" EXACT []
+synonym: "methotrexate" RELATED []
+synonym: "methotrexatum" RELATED []
+synonym: "metotrexato" RELATED []
+synonym: "MTX" RELATED []
+synonym: "N-(4-{[(2,4-diaminopteridin-6-yl)methyl](methyl)amino}benzoyl)-L-glutamic acid" EXACT []
+synonym: "N-[4-[[(2,4-diamino-6-pteridinyl)methyl]methylamino]benzoyl]-L-glutamic acid" RELATED []
+synonym: "Rheumatrex" RELATED []
+synonym: "Trexall" RELATED []
+is_a: CHEBI:26373 ! pteridines
+is_a: CHEBI:29347 ! monocarboxylic acid amide
+is_a: CHEBI:35692 ! dicarboxylic acid
+relationship: has_functional_parent CHEBI:16015 ! L-glutamic acid
+relationship: is_conjugate_acid_of CHEBI:50680 ! methotrexate(1-)
+relationship: RO:0000087 CHEBI:35221 ! antimetabolite
+relationship: RO:0000087 CHEBI:35610 ! antineoplastic agent
+relationship: RO:0000087 CHEBI:35705 ! immunosuppressive agent
+relationship: RO:0000087 CHEBI:35842 ! antirheumatic drug
+relationship: RO:0000087 CHEBI:50177 ! dermatologic drug
+relationship: RO:0000087 CHEBI:50683 ! EC 1.5.1.3 (dihydrofolate reductase) inhibitor
+relationship: RO:0000087 CHEBI:50691 ! abortifacient
+relationship: RO:0000087 CHEBI:59517 ! DNA synthesis inhibitor
 
 [Term]
 id: CHEBI:4469
@@ -7554,6 +7845,13 @@ synonym: "proteinogenic amino-acid side-chains" RELATED []
 is_a: CHEBI:33249 ! organyl group
 
 [Term]
+id: CHEBI:50329
+name: 2-carboxyethyl group
+synonym: "2-carboxyethyl" EXACT []
+synonym: "glutamic acid side-chain" RELATED []
+is_a: CHEBI:50325 ! proteinogenic amino-acid side-chain group
+
+[Term]
 id: CHEBI:50334
 name: pyridinium ion
 synonym: "pyridinium ions" RELATED []
@@ -7664,6 +7962,71 @@ is_a: CHEBI:25696 ! organic anion
 relationship: is_conjugate_base_of CHEBI:27690 ! acetazolamide
 
 [Term]
+id: CHEBI:50680
+name: methotrexate(1-)
+synonym: "(2S)-4-carboxy-2-(4-{[(2,4-diaminopteridin-6-yl)methyl](methyl)amino}benzamido)butanoate" EXACT []
+is_a: CHEBI:35695 ! dicarboxylic acid monoanion
+relationship: is_conjugate_acid_of CHEBI:50681 ! methotrexate(2-)
+relationship: is_conjugate_base_of CHEBI:44185 ! methotrexate
+
+[Term]
+id: CHEBI:50681
+name: methotrexate(2-)
+synonym: "(2S)-2-(4-{[(2,4-diaminopteridin-6-yl)methyl](methyl)amino}benzamido)pentanedioate" EXACT []
+synonym: "methotrexate" RELATED []
+is_a: CHEBI:28965 ! dicarboxylic acid dianion
+relationship: is_conjugate_base_of CHEBI:50680 ! methotrexate(1-)
+
+[Term]
+id: CHEBI:50683
+name: EC 1.5.1.3 (dihydrofolate reductase) inhibitor
+def: "An EC 1.5.1.* (oxidoreductase acting on donor CH-NH group, NAD(+) or NADP(+) as acceptor) inhibitor that interferes with the action of dihydrofolate reductase (EC 1.5.1.3)." []
+synonym: "7,8-dihydrofolate reductase inhibitor" RELATED []
+synonym: "7,8-dihydrofolate reductase inhibitors" RELATED []
+synonym: "DHFR inhibitor" RELATED []
+synonym: "DHFR inhibitors" RELATED []
+synonym: "dihydrofolate reductase (EC 1.5.1.3) inhibitor" RELATED []
+synonym: "dihydrofolate reductase (EC 1.5.1.3) inhibitors" RELATED []
+synonym: "dihydrofolate reductase inhibitor" RELATED []
+synonym: "dihydrofolate reductase inhibitors" RELATED []
+synonym: "dihydrofolic acid reductase inhibitor" RELATED []
+synonym: "dihydrofolic acid reductase inhibitors" RELATED []
+synonym: "dihydrofolic reductase inhibitor" RELATED []
+synonym: "dihydrofolic reductase inhibitors" RELATED []
+synonym: "EC 1.5.1.3 (dihydrofolate reductase) inhibitors" RELATED []
+synonym: "EC 1.5.1.3 inhibitor" RELATED []
+synonym: "EC 1.5.1.3 inhibitors" RELATED []
+synonym: "folic acid reductase inhibitor" RELATED []
+synonym: "folic acid reductase inhibitors" RELATED []
+synonym: "folic reductase inhibitor" RELATED []
+synonym: "folic reductase inhibitors" RELATED []
+synonym: "NADPH-dihydrofolate reductase inhibitor" RELATED []
+synonym: "NADPH-dihydrofolate reductase inhibitors" RELATED []
+synonym: "tetrahydrofolate dehydrogenase inhibitor" RELATED []
+synonym: "tetrahydrofolate dehydrogenase inhibitors" RELATED []
+is_a: CHEBI:73913 ! antifolate
+is_a: CHEBI:76863 ! EC 1.5.1.* (oxidoreductase acting on donor CH-NH group, NAD(+) or NADP(+) as acceptor) inhibitor
+
+[Term]
+id: CHEBI:50689
+name: reproductive control drug
+def: "A substance used either in the prevention or facilitation of pregnancy." []
+synonym: "reproductive control agent" RELATED []
+synonym: "reproductive control drugs" RELATED []
+is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:50691
+name: abortifacient
+def: "A chemical substance that interrupts pregnancy after implantation." []
+synonym: "abortifacient agent" RELATED []
+synonym: "abortifacient agents" RELATED []
+synonym: "abortifacient drug" RELATED []
+synonym: "abortifacient drugs" RELATED []
+synonym: "abortifacients" RELATED []
+is_a: CHEBI:50689 ! reproductive control drug
+
+[Term]
 id: CHEBI:50733
 name: nutraceutical
 def: "A product in capsule, tablet or liquid form that provide essential nutrients, such as a vitamin, an essential mineral, a protein, an herb, or similar nutritional substance." []
@@ -7709,6 +8072,18 @@ synonym: "iron trioxide" RELATED []
 synonym: "iron(3+) oxide" EXACT []
 synonym: "iron(III) oxide" EXACT []
 is_a: CHEBI:50816 ! iron oxide
+
+[Term]
+id: CHEBI:50846
+name: immunomodulator
+def: "Biologically active substance whose activity affects or plays a role in the functioning of the immune system." []
+synonym: "Biomodulator" RELATED []
+synonym: "Immune factor" RELATED []
+synonym: "Immunologic factor" RELATED []
+synonym: "Immunological factor" RELATED []
+synonym: "immunomodulators" RELATED []
+is_a: CHEBI:23888 ! drug
+is_a: CHEBI:24432 ! biological role
 
 [Term]
 id: CHEBI:50858
@@ -8206,6 +8581,13 @@ synonym: "haptens" RELATED []
 is_a: CHEBI:24432 ! biological role
 
 [Term]
+id: CHEBI:59517
+name: DNA synthesis inhibitor
+def: "Any substance that inhibits the synthesis of DNA." []
+synonym: "DNA synthesis inhibitors" RELATED []
+is_a: CHEBI:76932 ! pathway inhibitor
+
+[Term]
 id: CHEBI:59560
 name: sapropterin
 def: "A tetrahydropterin that is 2-amino-5,6,7,8-tetrahydropteridin-4(3H)-one in which a hydrogen at position 6 is substituted by a 1,2-dihydroxypropyl group (6R,1'R,2'S-enantiomer)." []
@@ -8472,6 +8854,15 @@ synonym: "microtubule-destabilizing agent" RELATED []
 synonym: "microtubule-destabilizing agents" RELATED []
 is_a: CHEBI:60832 ! tubulin modulator
 is_a: CHEBI:64911 ! antimitotic
+
+[Term]
+id: CHEBI:62031
+name: polar amino acid zwitterion
+def: "Zwitterionic form of a polar amino acid having an anionic carboxy group and a protonated amino group." []
+synonym: "a polar amino acid" RELATED []
+is_a: CHEBI:26167 ! polar amino acid
+is_a: CHEBI:35238 ! amino acid zwitterion
+is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
 id: CHEBI:62215
@@ -8972,6 +9363,15 @@ is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:83813 ! proteinogenic amino acid
 
 [Term]
+id: CHEBI:73913
+name: antifolate
+def: "An antimetabolite that impairs the action of folic acids" []
+synonym: "antifolates" RELATED []
+synonym: "folic acid antagonist" RELATED []
+synonym: "folic acid antagonists" RELATED []
+is_a: CHEBI:35221 ! antimetabolite
+
+[Term]
 id: CHEBI:74634
 name: cardenolides
 def: "Any steroid lactone that is a  C23 steroid with a five-membered lactone ring at C-17 and its substituted derivatives. They form the aglycone constituents of cardiac glycosides." []
@@ -9014,6 +9414,36 @@ synonym: "inhibitor of peroxidases" RELATED []
 synonym: "inhibitors of peroxidases" RELATED []
 synonym: "peroxidases inhibitors" RELATED []
 is_a: CHEBI:76738 ! EC 1.11.* (oxidoreductase acting on peroxide as donors) inhibitor
+
+[Term]
+id: CHEBI:75600
+name: EC 6.3.* (C-N bond-forming ligase) inhibitor
+def: "A ligase inhibitor that interferes with the action of a C-N bond-forming ligase (EC 6.3.*.*)." []
+synonym: "C--N bond-forming ligase inhibitor" RELATED []
+synonym: "C--N bond-forming ligase inhibitors" RELATED []
+synonym: "C-N bond-forming ligase (EC 6.3.*) inhibitor" RELATED []
+synonym: "C-N bond-forming ligase (EC 6.3.*) inhibitors" RELATED []
+synonym: "C-N bond-forming ligase inhibitor" RELATED []
+synonym: "C-N bond-forming ligase inhibitors" RELATED []
+synonym: "EC 6.3.* (C-N bond-forming ligase) inhibitorS" RELATED []
+synonym: "EC 6.3.* inhibitor" RELATED []
+synonym: "EC 6.3.* inhibitors" RELATED []
+synonym: "EC 6.3.*.* inhibitor" RELATED []
+synonym: "EC 6.3.*.* inhibitors" RELATED []
+is_a: CHEBI:75603 ! EC 6.* (ligase) inhibitor
+
+[Term]
+id: CHEBI:75603
+name: EC 6.* (ligase) inhibitor
+def: "Any enzyme inhibitor that interferes with the action of a ligase (EC 6.*.*.*). Ligases are enzymes that catalyse the joining of two molecules with concomitant hydrolysis of the diphosphate bond in ATP or a similar triphosphate." []
+synonym: "EC 6.* (ligase) inhibitors" RELATED []
+synonym: "EC 6.* inhibitor" RELATED []
+synonym: "EC 6.* inhibitors" RELATED []
+synonym: "EC 6.*.*.* inhibitor" RELATED []
+synonym: "EC 6.*.*.* inhibitors" RELATED []
+synonym: "ligase inhibitor" RELATED []
+synonym: "ligase inhibitors" RELATED []
+is_a: CHEBI:23924 ! enzyme inhibitor
 
 [Term]
 id: CHEBI:75763
@@ -9200,6 +9630,21 @@ synonym: "oxidoreductase acting on donor CH-CH group inhibitors" RELATED []
 is_a: CHEBI:76725 ! EC 1.* (oxidoreductase) inhibitor
 
 [Term]
+id: CHEBI:76731
+name: EC 1.5.* (oxidoreductase acting on donor CH-NH group) inhibitor
+def: "An oxidoreductase inhibitor which interferes with the action of an oxidoreductase acting on the CH-NH group of donors (EC 1.5.*.*)." []
+synonym: "EC 1.5.* (oxidoreductase acting on donor CH-NH group) inhibitors" RELATED []
+synonym: "EC 1.5.* inhibitor" RELATED []
+synonym: "EC 1.5.* inhibitors" RELATED []
+synonym: "inhibitor of oxidoreductase acting on CH-NH group of donor" RELATED []
+synonym: "inhibitor of oxidoreductase acting on CH-NH group of donors" RELATED []
+synonym: "inhibitors of oxidoreductase acting on CH-NH group of donor" RELATED []
+synonym: "inhibitors of oxidoreductase acting on CH-NH group of donors" RELATED []
+synonym: "oxidoreductase acting on donor CH-NH group (EC 1.5.*) inhibitor" RELATED []
+synonym: "oxidoreductase acting on donor CH-NH group (EC 1.5.*) inhibitors" RELATED []
+is_a: CHEBI:76725 ! EC 1.* (oxidoreductase) inhibitor
+
+[Term]
 id: CHEBI:76736
 name: EC 1.9.* (oxidoreductase acting on donor heme group) inhibitor
 def: "An oxidoreductase inhibitor which interferes with the action of an oxidoreductase acting on a heme group of donors (EC 1.9.*.*)." []
@@ -9353,6 +9798,17 @@ synonym: "nucleotidyltransferase inhibitors" RELATED []
 is_a: CHEBI:76668 ! EC 2.7.* (P-containing group transferase) inhibitor
 
 [Term]
+id: CHEBI:76823
+name: EC 6.3.1.* (acid-ammonia/amine ligase) inhibitor
+def: "An EC 6.3.* (C-N bond-forming ligase) inhibitor that interferes with the action of any acid-ammonia (or amine) ligase (EC 6.3.1.*)." []
+synonym: "acid-ammonia (or amine) ligase inhibitor" RELATED []
+synonym: "acid-ammonia (or amine) ligase inhibitors" RELATED []
+synonym: "EC 6.3.1.* (acid-ammonia/amine ligase) inhibitors" RELATED []
+synonym: "EC 6.3.1.* inhibitor" RELATED []
+synonym: "EC 6.3.1.* inhibitors" RELATED []
+is_a: CHEBI:75600 ! EC 6.3.* (C-N bond-forming ligase) inhibitor
+
+[Term]
 id: CHEBI:76835
 name: EC 1.1.1.* (oxidoreductase acting on donor CH-OH group, NAD(+) or NADP(+) acceptor) inhibitor
 def: "An EC 1.1.* (oxidoreductase acting on donor CH-OH group) inhibitor that uses NAD(+) or NADP(+) as acceptor (EC 1.1.1.*)." []
@@ -9414,6 +9870,17 @@ synonym: "EC 1.3.1.* inhibitors" RELATED []
 synonym: "oxidoreductase acting on CH-CH group of donor with NAD(+) or NADP(+) as acceptor (EC 1.3.1.*) inhibitor" RELATED []
 synonym: "oxidoreductase acting on CH-CH group of donor with NAD(+) or NADP(+) as acceptor (EC 1.3.1.*) inhibitors" RELATED []
 is_a: CHEBI:76729 ! EC 1.3.* (oxidoreductase acting on donor CH-CH group) inhibitor
+
+[Term]
+id: CHEBI:76863
+name: EC 1.5.1.* (oxidoreductase acting on donor CH-NH group, NAD(+) or NADP(+) as acceptor) inhibitor
+def: "An EC 1.5.* (oxidoreductase acting on donor CH-NH group) inhibitor that interferes with the action of any such enzyme using NAD(+) or NADP(+) as acceptor (EC 1.5.1.*)." []
+synonym: "EC 1.5.1.* (oxidoreductase acting on donor CH-NH group, NAD(+) or NADP(+) as acceptor) inhibitors" RELATED []
+synonym: "EC 1.5.1.* inhibitor" RELATED []
+synonym: "EC 1.5.1.* inhibitors" RELATED []
+synonym: "oxidoreductase acting on donor CH-NH group, NAD(+) or NADP(+) as acceptor (EC 1.5.1.*) inhibitor" RELATED []
+synonym: "oxidoreductase acting on donor CH-NH group, NAD(+) or NADP(+) as acceptor (EC 1.5.1.*) inhibitors" RELATED []
+is_a: CHEBI:76731 ! EC 1.5.* (oxidoreductase acting on donor CH-NH group) inhibitor
 
 [Term]
 id: CHEBI:76870
