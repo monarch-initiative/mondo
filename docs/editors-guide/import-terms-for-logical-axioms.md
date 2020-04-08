@@ -24,4 +24,4 @@ These workflows for adding classes from external ontologies (i.e., GO or CHEBI),
 paste the full iri in the 'Name:' field, for example, http://purl.obolibrary.org/obo/CHEBI_50906.
 1. hit 'OK'
 1. Now you can use this term, for example to construct logical axioms. The next time the imports are refreshed, the metadata (labels, definitions, etc) for this term is imported from the respective external source ontology and becomes visible in mondo-edit.obo.
-1. See instructions on how to remake the imports file [here](developer-guide/imports/).
+1. See instructions on how to remake the imports file [here](../developer-guide/imports/).
