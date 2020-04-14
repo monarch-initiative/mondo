@@ -1,0 +1,1 @@
+sh run.sh amm test.sc
