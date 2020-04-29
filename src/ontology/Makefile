@@ -114,7 +114,7 @@ all_artefacts: all_reports $(ARTEFACTS)
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
-test: roundtrip.obo debug.owl mondo-edit.owl sparql_test_edit sparql_test_main_owl sparql_test_main_obo test_nomerge
+test: sparql_test_edit roundtrip.obo debug.owl mondo-edit.owl sparql_test_main_owl sparql_test_main_obo test_nomerge
 
 
 # ----------------------------------------
@@ -461,7 +461,8 @@ reports/%.tsv: mondo.owl
 reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
 	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
-RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
+#RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
+RR= robot report --fail-on none
 reports/edit/report.tsv: $(SRC)
 	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 reports/release/mondo-obo-report.tsv: mondo.obo
