@@ -11976,6 +11976,22 @@ relationship: BFO:0000050 UBERON:0002421 ! part of hippocampal formation
 relationship: BFO:0000050 UBERON:0002600 ! part of limbic lobe
 
 [Term]
+id: UBERON:0001955
+name: epithelium of respiratory bronchiole
+def: "An epithelium that is part of a respiratory bronchiole [Automatically generated definition]." []
+synonym: "bronchiolus respiratorius epithelial tissue" EXACT []
+synonym: "bronchiolus respiratorius epithelium" EXACT []
+synonym: "epithelial tissue of bronchiolus respiratorius" EXACT []
+synonym: "epithelial tissue of respiratory bronchiole" EXACT []
+synonym: "epithelium of bronchiolus respiratorius" EXACT []
+synonym: "respiratory bronchiole epithelial tissue" EXACT []
+synonym: "respiratory bronchiole epithelium" EXACT []
+is_a: UBERON:0002051 ! epithelium of bronchiole
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0002188 ! part of respiratory bronchiole
+relationship: BFO:0000050 UBERON:0002188 ! part of respiratory bronchiole
+
+[Term]
 id: UBERON:0001956
 name: cartilage of bronchus
 def: "The hyaline cartilaginous structures that support the bronchi, present as irregular rings in the larger bronchi (and not as regular as in the trachea), and as small plates and islands in the smaller bronchi; as the branching continues through the bronchial tree, the amount of hyaline cartilage in the walls decreases until it is absent in the smallest bronchioles[MP]." []
@@ -13874,6 +13890,16 @@ relationship: BFO:0000050 UBERON:0008874 ! part of pulmonary acinus
 relationship: RO:0002433 UBERON:0008874 ! contributes to morphology of pulmonary acinus
 
 [Term]
+id: UBERON:0002173
+name: pulmonary alveolar duct
+def: "the respiratory conducting tubes distal to the respiratory bronchiole that lead to the alveolar sacs and the alveoli" []
+synonym: "alveolar duct" EXACT []
+synonym: "ductus alveolaris" EXACT []
+synonym: "respiratory alveolar duct" EXACT []
+is_a: UBERON:0000117 ! respiratory tube
+relationship: BFO:0000050 UBERON:0006524 ! part of alveolar system
+
+[Term]
 id: UBERON:0002177
 name: right main bronchus
 def: "The main bronchus on the right side." []
@@ -13984,6 +14010,18 @@ synonym: "bronchioli terminalis" RELATED []
 synonym: "bronchiolus terminalis" EXACT []
 synonym: "terminal bronchiole tube" RELATED []
 is_a: UBERON:0002186 ! bronchiole
+
+[Term]
+id: UBERON:0002188
+name: respiratory bronchiole
+def: "A bronchiole that is the first segment of the respiratory zone." []
+synonym: "bronchiolus respiratorii" EXACT []
+synonym: "bronchiolus respiratorius" EXACT []
+is_a: UBERON:0002186 ! bronchiole
+relationship: BFO:0000050 UBERON:0008874 ! part of pulmonary acinus
+relationship: distally_connected_to UBERON:0002173 ! pulmonary alveolar duct
+relationship: proximally_connected_to UBERON:0002187 ! terminal bronchiole
+relationship: RO:0002433 UBERON:0008874 ! contributes to morphology of pulmonary acinus
 
 [Term]
 id: UBERON:0002190
@@ -21691,6 +21729,26 @@ intersection_of: BFO:0000050 UBERON:0007812 ! part of post-anal tail
 relationship: BFO:0000050 UBERON:0007812 ! part of post-anal tail
 
 [Term]
+id: UBERON:0003536
+name: right lung alveolar duct
+def: "An alveolar duct that is part of a right lung [Automatically generated definition]." []
+synonym: "alveolar duct of right lung" EXACT []
+is_a: UBERON:0002173 ! pulmonary alveolar duct
+intersection_of: UBERON:0002173 ! pulmonary alveolar duct
+intersection_of: BFO:0000050 UBERON:0002167 ! part of right lung
+relationship: BFO:0000050 UBERON:0006526 ! part of right lung alveolar system
+
+[Term]
+id: UBERON:0003537
+name: left lung alveolar duct
+def: "An alveolar duct that is part of a left lung [Automatically generated definition]." []
+synonym: "alveolar duct of left lung" EXACT []
+is_a: UBERON:0002173 ! pulmonary alveolar duct
+intersection_of: UBERON:0002173 ! pulmonary alveolar duct
+intersection_of: BFO:0000050 UBERON:0002168 ! part of left lung
+relationship: BFO:0000050 UBERON:0006525 ! part of left lung alveolar system
+
+[Term]
 id: UBERON:0003538
 name: right lung bronchiole
 def: "A bronchiole that is part of a right lung [Automatically generated definition]." []
@@ -21736,6 +21794,30 @@ synonym: "terminal bronchiole of left lung" EXACT []
 is_a: UBERON:0002187 ! terminal bronchiole
 is_a: UBERON:0003539 ! left lung bronchiole
 intersection_of: UBERON:0002187 ! terminal bronchiole
+intersection_of: BFO:0000050 UBERON:0002168 ! part of left lung
+
+[Term]
+id: UBERON:0003542
+name: right lung respiratory bronchiole
+def: "A respiratory bronchiole that is part of a right lung [Automatically generated definition]." []
+synonym: "bronchiolus respiratorius of right lung" EXACT []
+synonym: "respiratory bronchiole of right lung" EXACT []
+synonym: "right lung bronchiolus respiratorius" EXACT []
+is_a: UBERON:0002188 ! respiratory bronchiole
+is_a: UBERON:0003538 ! right lung bronchiole
+intersection_of: UBERON:0002188 ! respiratory bronchiole
+intersection_of: BFO:0000050 UBERON:0002167 ! part of right lung
+
+[Term]
+id: UBERON:0003543
+name: left lung respiratory bronchiole
+def: "A respiratory bronchiole that is part of a left lung [Automatically generated definition]." []
+synonym: "bronchiolus respiratorius of left lung" EXACT []
+synonym: "left lung bronchiolus respiratorius" EXACT []
+synonym: "respiratory bronchiole of left lung" EXACT []
+is_a: UBERON:0002188 ! respiratory bronchiole
+is_a: UBERON:0003539 ! left lung bronchiole
+intersection_of: UBERON:0002188 ! respiratory bronchiole
 intersection_of: BFO:0000050 UBERON:0002168 ! part of left lung
 
 [Term]
@@ -29225,6 +29307,15 @@ intersection_of: BFO:0000050 UBERON:0002187 ! part of terminal bronchiole
 relationship: BFO:0000050 UBERON:0002187 ! part of terminal bronchiole
 
 [Term]
+id: UBERON:0004517
+name: smooth muscle tissue of respiratory bronchiole
+def: "A portion of smooth muscle tissue that is part of a respiratory bronchiole [Automatically generated definition]." []
+is_a: UBERON:0004515 ! smooth muscle tissue of bronchiole
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: BFO:0000050 UBERON:0002188 ! part of respiratory bronchiole
+relationship: BFO:0000050 UBERON:0002188 ! part of respiratory bronchiole
+
+[Term]
 id: UBERON:0004518
 name: muscle of vertebral column
 def: "A muscle that is attached to a vertebra of the vertebral column." []
@@ -33705,6 +33796,30 @@ is_a: UBERON:0005039 ! mucosa of bronchiole
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: BFO:0000050 UBERON:0002187 ! part of terminal bronchiole
 relationship: BFO:0000050 UBERON:0002187 ! part of terminal bronchiole
+
+[Term]
+id: UBERON:0005041
+name: mucosa of respiratory bronchiole
+def: "A mucosa that is part of a respiratory bronchiole [Automatically generated definition]." []
+synonym: "bronchiolus respiratorius mucosa" EXACT []
+synonym: "bronchiolus respiratorius mucosa of organ" EXACT []
+synonym: "bronchiolus respiratorius mucous membrane" EXACT []
+synonym: "bronchiolus respiratorius organ mucosa" EXACT []
+synonym: "mucosa of bronchiolus respiratorius" EXACT []
+synonym: "mucosa of organ of bronchiolus respiratorius" EXACT []
+synonym: "mucosa of organ of respiratory bronchiole" EXACT []
+synonym: "mucous membrane of bronchiolus respiratorius" EXACT []
+synonym: "mucous membrane of respiratory bronchiole" EXACT []
+synonym: "organ mucosa of bronchiolus respiratorius" EXACT []
+synonym: "organ mucosa of respiratory bronchiole" EXACT []
+synonym: "respiratory bronchiole mucosa" EXACT []
+synonym: "respiratory bronchiole mucosa of organ" EXACT []
+synonym: "respiratory bronchiole mucous membrane" EXACT []
+synonym: "respiratory bronchiole organ mucosa" EXACT []
+is_a: UBERON:0005039 ! mucosa of bronchiole
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:0002188 ! part of respiratory bronchiole
+relationship: BFO:0000050 UBERON:0002188 ! part of respiratory bronchiole
 
 [Term]
 id: UBERON:0005042
