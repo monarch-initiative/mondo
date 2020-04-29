@@ -1367,6 +1367,18 @@ is_a: HP:0000366 ! Abnormality of the nose
 is_a: HP:0001892 ! Abnormal bleeding
 
 [Term]
+id: HP:0000458
+name: Anosmia
+namespace: human_phenotype
+def: "An inability to perceive odors. This is a general term describing inability to smell arising in any part of the process of smelling from absorption of odorants into the nasal mucous overlying the olfactory epithelium, diffusion to the cilia, binding to olfactory receptor sites, generation of action potentials in olfactory neurons, and perception of a smell." [HPO:probinson]
+subset: hposlim_core
+synonym: "Lost smell" EXACT layperson []
+xref: MSH:D000857
+xref: SNOMEDCT_US:44169009
+xref: UMLS:C0003126
+is_a: HP:0004408 ! Abnormality of the sense of smell
+
+[Term]
 id: HP:0000478
 name: Abnormality of the eye
 namespace: human_phenotype
@@ -1831,6 +1843,19 @@ synonym: "optic nerve abnormalities" EXACT []
 synonym: "Optic nerve issue" EXACT layperson []
 xref: UMLS:C0029131
 is_a: HP:0001098 ! Abnormal fundus morphology
+
+[Term]
+id: HP:0000593
+name: Abnormal anterior chamber morphology
+namespace: human_phenotype
+def: "Abnormality of the anterior chamber, which is the space in the eye that is behind the cornea and in front of the iris." [HPO:probinson]
+subset: hposlim_core
+synonym: "Abnormality of the anterior chamber" EXACT []
+synonym: "Anterior chamber anomalies" EXACT []
+synonym: "Ocular anterior chamber abnormality" EXACT []
+xref: SNOMEDCT_US:204142009
+xref: UMLS:C3152182
+is_a: HP:0004328 ! Abnormal anterior segment morphology
 
 [Term]
 id: HP:0000598
@@ -5308,6 +5333,13 @@ xref: UMLS:C0015967
 is_a: HP:0004370 ! Abnormality of temperature regulation
 
 [Term]
+id: HP:0001952
+name: Abnormal glucose tolerance
+namespace: human_phenotype
+xref: UMLS:C0235401
+is_a: HP:0011014 ! Abnormal glucose homeostasis
+
+[Term]
 id: HP:0001959
 name: Polydipsia
 namespace: human_phenotype
@@ -6093,6 +6125,19 @@ xref: MSH:D053565
 xref: SNOMEDCT_US:71938000
 xref: UMLS:C0020438
 is_a: HP:0011280 ! Abnormality of urine calcium concentration
+
+[Term]
+id: HP:0002153
+name: Hyperkalemia
+namespace: human_phenotype
+def: "An abnormally increased potassium concentration in the blood." [HPO:probinson]
+synonym: "Elevated serum potassium levels" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: MSH:D006947
+xref: SNOMEDCT_US:14140009
+xref: SNOMEDCT_US:166689004
+xref: SNOMEDCT_US:238142003
+xref: UMLS:C0020461
+is_a: HP:0011042 ! Abnormality of potassium homeostasis
 
 [Term]
 id: HP:0002156
@@ -7654,6 +7699,15 @@ xref: UMLS:C4025654
 is_a: HP:0001939 ! Abnormality of metabolism/homeostasis
 
 [Term]
+id: HP:0003112
+name: Abnormality of serum amino acid levels
+namespace: human_phenotype
+def: "The presence of an abnormal decrease or increase of one or more amino acids in the blood circulation." [HPO:curators]
+synonym: "Abnormality of serum amino acid levels" EXACT layperson []
+xref: UMLS:C4025653
+is_a: HP:0004337 ! Abnormality of amino acid metabolism
+
+[Term]
 id: HP:0003117
 name: Abnormality of circulating hormone level
 namespace: human_phenotype
@@ -8082,6 +8136,17 @@ xref: SNOMEDCT_US:398026008
 xref: SNOMEDCT_US:59073000
 xref: UMLS:C0020580
 is_a: HP:0009830 ! Peripheral neuropathy
+
+[Term]
+id: HP:0003496
+name: Increased IgM level
+namespace: human_phenotype
+alt_id: HP:0002962
+def: "An abnormally increased level of immunoglobulin M in blood." [HPO:probinson]
+synonym: "Increased IgM levels" EXACT []
+synonym: "Increased levels of IgM" EXACT []
+xref: UMLS:C1839972
+is_a: HP:0010702 ! Increased antibody level in blood
 
 [Term]
 id: HP:0003498
@@ -8848,6 +8913,23 @@ created_by: peter
 creation_date: 2008-03-18T09:11:00Z
 
 [Term]
+id: HP:0004408
+name: Abnormality of the sense of smell
+namespace: human_phenotype
+alt_id: HP:0004410
+def: "An anomaly in the ability to perceive and distinguish scents (odors)." []
+subset: hposlim_core
+synonym: "Abnormal sense of smell" EXACT layperson [HPO:skoehler]
+synonym: "Abnormality of olfaction" EXACT []
+synonym: "Abnormality of the sense of smell" EXACT layperson []
+synonym: "Smell defect" EXACT layperson []
+xref: UMLS:C4021655
+is_a: HP:0000366 ! Abnormality of the nose
+is_a: HP:0012638 ! Abnormality of nervous system physiology
+created_by: peter
+creation_date: 2008-03-18T09:21:00Z
+
+[Term]
 id: HP:0004430
 name: Severe combined immunodeficiency
 namespace: human_phenotype
@@ -9544,6 +9626,25 @@ synonym: "Poor visual acuity" EXACT []
 xref: SNOMEDCT_US:13164000
 xref: UMLS:C0234632
 is_a: HP:0000504 ! Abnormality of vision
+
+[Term]
+id: HP:0007700
+name: Anterior segment dysgenesis
+namespace: human_phenotype
+alt_id: HP:0007696
+alt_id: HP:0007699
+alt_id: HP:0008040
+def: "Abnormal development (dysgenesis) of the anterior segment of the eye globe. These structures are mainly of mesenchymal origin." [DDD:ncarter]
+comment: In anterior segment mesenchymal ocular dysgenesis (ASMOD), multiple tissues are affected, including the iris, cornea, and lens as well as the Schlemm's canal and trabecular meshwork drainage structures located at the anterior segment angle where the iris and cornea meet. These abnormalities may result from a primary defect in the migration and/or differentiation of the mesenchymal cells that contribute to development of the cornea, iris, and drainage structures.
+synonym: "Anterior chamber cleavage defect" EXACT []
+synonym: "Anterior chamber cleavage disorder" EXACT []
+synonym: "Anterior chamber malformation" EXACT []
+synonym: "Anterior chamber mesodermal anomalies" EXACT []
+synonym: "Anterior segment mesencyhmal dysgenesis" EXACT []
+synonym: "Anterior segment ocular dysgenesis" EXACT []
+xref: SNOMEDCT_US:65075004
+xref: UMLS:C0266525
+is_a: HP:0000593 ! Abnormal anterior chamber morphology
 
 [Term]
 id: HP:0007707
@@ -12412,6 +12513,17 @@ created_by: peter
 creation_date: 2013-09-13T07:53:55Z
 
 [Term]
+id: HP:0012337
+name: Abnormal homeostasis
+namespace: human_phenotype
+def: "An anomaly in the processes involved in the maintenance of an internal equilibrium." [HPO:probinson]
+xref: MP:0001764 "Abnormal homeostasis"
+xref: UMLS:C4022950
+is_a: HP:0001939 ! Abnormality of metabolism/homeostasis
+created_by: peter
+creation_date: 2013-09-13T09:23:23Z
+
+[Term]
 id: HP:0012369
 name: Abnormality of malar bones
 namespace: human_phenotype
@@ -13079,6 +13191,15 @@ property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2017-02-12T12:27:39Z xsd:dateTime
 
 [Term]
+id: HP:0025354
+name: Abnormal cellular phenotype
+namespace: human_phenotype
+def: "An anomaly of cellular morphology or physiology." []
+is_a: HP:0000118 ! Phenotypic abnormality
+property_value: http://purl.org/dc/elements/1.1/creator HPO:probinson xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2017-02-13T00:29:35Z xsd:dateTime
+
+[Term]
 id: HP:0025408
 name: Abnormal spleen morphology
 namespace: human_phenotype
@@ -13521,6 +13642,15 @@ property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2017-09-02T01:54:32Z xsd:dateTime
 
 [Term]
+id: HP:0031409
+name: Abnormal lymphocyte physiology
+namespace: human_phenotype
+def: "Any anomaly of lymphocyte function." []
+is_a: HP:0010978 ! Abnormality of immune system physiology
+property_value: http://purl.org/dc/elements/1.1/creator "peter" xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2017-09-04T12:08:45Z xsd:dateTime
+
+[Term]
 id: HP:0031466
 name: Impairment in personality functioning
 namespace: human_phenotype
@@ -13724,6 +13854,22 @@ is_a: HP:0000847 ! Abnormality of renin-angiotensin system
 created_by: HPO:skoehler
 
 [Term]
+id: HP:0040088
+name: Abnormal lymphocyte count
+namespace: human_phenotype
+def: "Any abnormality in the total number of lymphocytes in the blood." []
+synonym: "Abnormal lymphocyte count" EXACT layperson []
+synonym: "Abnormal lymphocyte counts" EXACT layperson [HPO:skoehler]
+synonym: "Abnormal number of lymphocytes" EXACT layperson [HPO:skoehler]
+synonym: "Abnormal numbers of lymphocytes" EXACT layperson []
+synonym: "Abnormality of lymphocyte number" EXACT layperson [HPO:skoehler]
+xref: SNOMEDCT_US:165534000
+xref: UMLS:C0580550
+is_a: HP:0004332 ! Abnormal lymphocyte morphology
+is_a: HP:0011893 ! Abnormal leukocyte count
+created_by: HPO:skoehler
+
+[Term]
 id: HP:0040126
 name: Abnormal vitamin B12 level
 namespace: human_phenotype
@@ -13788,6 +13934,12 @@ id: HP:0040290
 name: Abnormality of skeletal muscles
 namespace: human_phenotype
 is_a: HP:0003011 ! Abnormality of the musculature
+
+[Term]
+id: HP:0040307
+name: Male sexual dysfunction
+namespace: human_phenotype
+is_a: HP:0012874 ! Abnormal male reproductive system physiology
 
 [Term]
 id: HP:0045005
