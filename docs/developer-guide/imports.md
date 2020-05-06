@@ -6,7 +6,7 @@ These work in the usual way, see OBO docs for details. See [Design Pattern](http
 
 If you need to remake the import "foo":
 
-1. Navigate to mondo/src/ontology on your loccal machine
+1. Navigate to mondo/src/ontology on your local machine
 2. `./run.sh make imports/foo_import.obo`  
 
 - Note- you will need to replace 'foo' with the file name you are trying to import, such as:  
