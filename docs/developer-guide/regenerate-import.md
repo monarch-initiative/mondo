@@ -4,6 +4,8 @@ See the [imports/ folder](https://github.com/monarch-initiative/mondo/tree/maste
 
 These work in the usual way, see OBO docs for details. See [Design Pattern](https://mondo.readthedocs.io/en/latest/editors-guide/e-design-patterns/) section for more details on how these are used.
 
+## Instructions
+
 If you need to remake the import "foo" (replace "foo" with the name of your file, for example ncbitaxon_import):
 
 If you have Docker installed (note - you may need to increase your memory in Docker to 24GB): 
