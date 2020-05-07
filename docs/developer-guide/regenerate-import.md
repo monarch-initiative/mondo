@@ -25,9 +25,9 @@ If you have Docker installed (note - you may need to increase your memory in Doc
 6. If you are expecting new classes to be added, check to see if those were added. For example: check the coronovirus shows up in the new import
     1. `grep 2697049 imports/ncbitaxon_import.obo`
     2. 2697049 = ID for class I am trying to import.  
-7. Commit the foo_import.* file (for example: ncbitaxon_import.obo and ncbitaxon_import.owl) (if you see changes on any other files, discard the changes on the other files):  
+7. Commit the foo_import.* file (for example: `ncbitaxon_import.obo` and `ncbitaxon_import.owl`) (if you see changes on any other files, discard the changes on the other files):  
      `git add imports/foo_import.obo`  
-     `git add imports/foo_import.owl`
+     `git add imports/foo_import.owl`  
      `git status` - only those two files should be added and ready to be committed. There will be some untracked files as well, which should not be added or committed.  
      `git commit`  
      `git push`  
