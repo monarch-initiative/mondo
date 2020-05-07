@@ -2,7 +2,7 @@
 
 See the [imports/ folder](https://github.com/monarch-initiative/mondo/tree/master/imports).
 
-These work in the usual way, see OBO docs for details. See [Design Pattern](https://mondo.readthedocs.io/en/latest/editors-guide/e-design-patterns/) section for more details on how these are used.
+See [Design Pattern](https://mondo.readthedocs.io/en/latest/editors-guide/e-design-patterns/) section for more details on how these are used.
 
 ## Instructions
 
