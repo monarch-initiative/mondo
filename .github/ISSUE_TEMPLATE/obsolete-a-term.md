@@ -13,4 +13,4 @@ assignees: nicolevasilevsky
 **Reason for deprecation**
 
 
-**Suggested replacement or term to consider**
+**Suggested term to consider**
