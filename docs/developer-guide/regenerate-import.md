@@ -13,7 +13,7 @@ If you have Docker installed (note - you may need to increase your memory in Doc
 1. Navigate to your local ontology directory, for example:
 ` cd src/ontology`
 2. Work on a branch.
-3. Make a mirror directory: `mkdir mirror`
+3. If the mirror directory exists, make sure it's empty or just delete it with `rm -rf mirror` and recreate it with `mkdir mirror`. If the mirror directory exists and it contains the ontology being reimported the generated import will be made from an outdated mirroring of the source ontology and will not contain the latest content from the source ontology. If the mirror directory does noot exist, make a mirror directory with `mkdir mirror`
 4. Run command: `./run.sh make imports/foo_import.obo` 
     1. For example: `./run.sh make imports/ncbitaxon_import.obo`  
     1. Note - if you don't have Docker installed but have Robot installed, run this command:  
@@ -33,7 +33,7 @@ If you have Docker installed (note - you may need to increase your memory in Doc
      `git push`  
 8. Once you regenerated the new import, it could contain newly deprecatecd classes from the source ontology and this could affect the Mondo ontology by creating danglers/obsolete references. To fix this, follow the instructions in [Repair axioms pointing to deprecated classes](https://mondo.readthedocs.io/en/latest/developer-guide/repair-obsoleted-classes/).
 
-## Increase memory in Docker
+## Increase memory in Docker (Mac specific instructions)
 
 1. Open Docker preferences
 2. Click Resources
