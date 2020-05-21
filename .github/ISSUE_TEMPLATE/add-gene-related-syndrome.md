@@ -1,5 +1,5 @@
 ---
-name: Add diseases defined entirely by gene
+name: Add term - gene related syndrome
 about: New term suggestion for a term that is defined by a gene, such as NAA10-related syndrome
 title: "[NTR/gene]"
 labels: New term request
