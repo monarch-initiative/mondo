@@ -18,5 +18,7 @@ assignees: nicolevasilevsky
 
 **Parent term (use [OLS](https://www.ebi.ac.uk/ols/ontologies/mondo), or your favorite ontology browser)**
 
+**Children terms (if applicable)** Should any existing terms that should be moved underneath this new proposed term?
+
 
 **Your nano-attribution (ORCID)**
