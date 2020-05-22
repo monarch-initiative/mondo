@@ -1,0 +1,31 @@
+pattern_name: primary infectious
+
+description: >-
+  
+  Pattern for extending a disease class to a primary infectious form, a characteristic of an infectious disease in which the disease affects an immunologically normal host. Example: MONDO_0000308 'primary systemic mycosis'.
+
+classes:
+  primary infectious: MONDO:0045036
+
+relations:
+  has modifier: RO:0002573
+
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "primary %s"
+  vars:
+   - disease
+
+def:
+  text: "A %s that arises from infection in an immunologically normal host."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'primary infectious'"
+  vars:
+    - disease
+
+
