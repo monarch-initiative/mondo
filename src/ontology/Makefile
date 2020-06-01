@@ -817,11 +817,20 @@ diseases_to_genes.txt:
 omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
 
+reports/mondo-equivs.tsv:
+	robot query -i mondo.owl -q ../sparql/sssom-mappings.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
+
 # NEW: uses rdf_matcher
 # **IMPORTANT*: remember to clear tmp/ dir for fresh start
 # mondo_queries requires for prefixes
 all_unique.tsv:
-	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all -i skos.ttl unique_match > $@
+	rdfmatch -p MONDO -f sssom  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f tsv -v -i all -i skos.ttl unique_match > $@
+
+all_matches.tsv:
+	rdfmatch -T --debug rdf_matcher -i prefixes.ttl -p MONDO -f sssom -X tmp -A void.ttl -w obo_weights -v -i all2 match > $@
+
+matches-to-%.tsv:
+	rdfmatch -T --debug rdf_matcher -i prefixes.ttl -p MONDO -f sssom -X tmp -A void.ttl  -v -i mondo -i $* match > $@
 
 lexrules-%.pro:
 	test -d tmp-$* || mkdir -p tmp-$*

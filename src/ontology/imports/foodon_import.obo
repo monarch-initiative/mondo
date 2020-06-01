@@ -22,7 +22,6 @@ name: continuant
 def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
 is_a: BFO:0000001 ! entity
 disjoint_from: BFO:0000003 ! occurrent
-relationship: BFO:0000050 BFO:0000002 ! part of continuant
 property_value: BFO:0000179 "continuant" xsd:string
 property_value: BFO:0000180 "Continuant" xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
@@ -66,7 +65,6 @@ def: "b is an independent continuant = Def. b is a continuant which is such that
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000031 ! generically dependent continuant
-relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
 property_value: BFO:0000179 "ic" xsd:string
 property_value: BFO:0000180 "IndependentContinuant" xsd:string
 property_value: IAO:0000112 "a chair" xsd:string
@@ -894,7 +892,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 [Term]
 id: FOODON:03401270
 name: product type, U.S. code of federal regulations, title 21
-def: "Food and Drugs, title 21, Code of Federal Regulations. Original  food classification in LanguaL." []
+def: "Food and Drugs, title 21, Code of Federal Regulations. Original food classification in LanguaL." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A1270
 is_a: FOODON:03400289 ! product type, USA
@@ -1934,45 +1932,17 @@ id: BFO:0000050
 name: part of
 def: "a core relation that holds between a part and its whole" []
 property_value: IAO:0000111 "is part of" xsd:string
-property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
-property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
-property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
-property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
-property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
-property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
-property_value: IAO:0000118 "part_of" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
-property_value: RO:0040042 BFO:0000002
-property_value: RO:0040042 BFO:0000003
-property_value: RO:0040042 BFO:0000004
-property_value: RO:0040042 BFO:0000017
-property_value: RO:0040042 BFO:0000019
-property_value: RO:0040042 BFO:0000020
-property_value: RO:0040042 BFO:0000031
-property_value: seeAlso http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections
-property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartOf
-property_value: seeAlso http://www.obofoundry.org/ro/#OBO_REL:part_of xsd:string
 is_transitive: true
 is_a: RO:0002131 ! overlaps
-inverse_of: BFO:0000051 ! has part
 
 [Typedef]
 id: BFO:0000051
 name: has part
-name: has_part
 def: "a core relation that holds between a whole and its part" []
 property_value: IAO:0000111 "has part" xsd:string
-property_value: IAO:0000112 "my body has part my brain (continuant parthood, two material entities)" xsd:string
-property_value: IAO:0000112 "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)" xsd:string
-property_value: IAO:0000112 "this year has part this day (occurrent parthood)" xsd:string
-property_value: IAO:0000116 "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part." xsd:string
-property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
-property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)\n\nA continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'." xsd:string
-property_value: IAO:0000118 "has_part" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
 is_transitive: true
 is_a: RO:0002131 ! overlaps
 
@@ -2003,89 +1973,35 @@ id: RO:0000052
 name: inheres in
 def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
 property_value: IAO:0000111 "inheres in" xsd:string
-property_value: IAO:0000112 "this fragility inheres in this vase" xsd:string
-property_value: IAO:0000112 "this red color inheres in this apple" xsd:string
-property_value: IAO:0000116 "A dependent inheres in its bearer at all times for which the dependent exists." xsd:string
-property_value: IAO:0000118 "inheres_in" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
 is_a: RO:0002314 ! inheres in part of
-inverse_of: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000053
 name: bearer of
 def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
 property_value: IAO:0000111 "bearer of" xsd:string
-property_value: IAO:0000112 "this apple is bearer of this red color" xsd:string
-property_value: IAO:0000112 "this vase is bearer of this fragility" xsd:string
-property_value: IAO:0000116 "A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist." xsd:string
-property_value: IAO:0000118 "bearer_of" xsd:string
-property_value: IAO:0000118 "is bearer of" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
 
 [Typedef]
 id: RO:0000056
 name: participates in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
 property_value: IAO:0000111 "participates in" xsd:string
-property_value: IAO:0000112 "this blood clot participates in this blood coagulation" xsd:string
-property_value: IAO:0000112 "this input material (or this output material) participates in this process" xsd:string
-property_value: IAO:0000112 "this investigator participates in this investigation" xsd:string
-property_value: IAO:0000118 "participates_in" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-domain: BFO:0000002 ! continuant
-inverse_of: RO:0000057 ! has participant
 
 [Typedef]
 id: RO:0000057
 name: has participant
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
-property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:has_participant xsd:string
 property_value: IAO:0000111 "has participant" xsd:string
-property_value: IAO:0000112 "this blood coagulation has participant this blood clot" xsd:string
-property_value: IAO:0000112 "this investigation has participant this investigator" xsd:string
-property_value: IAO:0000112 "this process has participant this input material (or this output material)" xsd:string
-property_value: IAO:0000116 "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time." xsd:string
-property_value: IAO:0000118 "has_participant" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-domain: BFO:0000003 ! occurrent
-range: BFO:0000002 ! continuant
-holds_over_chain: BFO:0000051 RO:0000057
-
-[Typedef]
-id: RO:0000080
-name: quality of
-def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
-property_value: IAO:0000112 "this red color is a quality of this apple" xsd:string
-property_value: IAO:0000116 "A quality inheres in its bearer at all times for which the quality exists." xsd:string
-property_value: IAO:0000118 "is quality of" xsd:string
-property_value: IAO:0000118 "quality_of" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000052 ! inheres in
-inverse_of: RO:0000086 ! has quality
-
-[Typedef]
-id: RO:0000081
-name: role of
-def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
-property_value: IAO:0000112 "this investigator role is a role of this person" xsd:string
-property_value: IAO:0000116 "A role inheres in its bearer at all times for which the role exists, however the role need not be realized at all the times that the role exists." xsd:string
-property_value: IAO:0000118 "is role of" xsd:string
-property_value: IAO:0000118 "role_of" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000052 ! inheres in
-inverse_of: RO:0000087 ! has role
 
 [Typedef]
 id: RO:0000086
 name: has quality
 def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
-property_value: IAO:0000112 "this apple has quality this red color" xsd:string
-property_value: IAO:0000116 "A bearer can have many qualities, and its qualities can exist for different periods of time, but none of its qualities can exist when the bearer does not exist." xsd:string
-property_value: IAO:0000118 "has_quality" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0000053 ! bearer of
 
@@ -2093,109 +2009,58 @@ is_a: RO:0000053 ! bearer of
 id: RO:0000087
 name: has role
 def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
-property_value: IAO:0000112 "this person has role this investigator role (more colloquially: this person has this role of investigator)" xsd:string
-property_value: IAO:0000116 "A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists." xsd:string
-property_value: IAO:0000118 "has_role" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-domain: BFO:0000004 ! independent continuant
 is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
-subset: ro-eco
-property_value: IAO:0000112 "this cell derives from this parent cell (cell division)" xsd:string
-property_value: IAO:0000112 "this nucleus derives from this parent nucleus (nuclear division)" xsd:string
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops from'." xsd:string
-property_value: IAO:0000118 "derives_from" xsd:string
-property_value: IAO:0000232 "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-inverse_of: RO:0001001 ! derives into
-
-[Typedef]
-id: RO:0001001
-name: derives into
-def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
-subset: ro-eco
-property_value: IAO:0000112 "this parent cell derives into this cell (cell division)" xsd:string
-property_value: IAO:0000112 "this parent nucleus derives into this nucleus (nuclear division)" xsd:string
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops into'. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking 'derives from' rather than the forward-looking 'derives into'." xsd:string
-property_value: IAO:0000118 "derives_into" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0002131
 name: overlaps
 def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
-subset: ro-eco
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
-holds_over_chain: BFO:0000050 BFO:0000050
-holds_over_chain: BFO:0000051 BFO:0000050
-holds_over_chain: BFO:0000051 RO:0002131
 is_a: RO:0002323 ! mereotopologically related to
-transitive_over: BFO:0000050 ! part of
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
 id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
-subset: ro-eco
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000118 "consumes" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-domain: BFO:0000015 ! process
-range: BFO:0000040 ! material entity
 is_a: RO:0000057 ! has participant
-inverse_of: RO:0002352 ! input of
 
 [Typedef]
 id: RO:0002234
 name: has output
 def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p." []
-subset: ro-eco
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000118 "produces" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0000057 ! has participant
-inverse_of: RO:0002353 ! output of
 
 [Typedef]
 id: RO:0002314
 name: inheres in part of
 def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
-property_value: IAO:0000116 "Because part_of is transitive, inheres in is a sub-relation of inheres in part of" xsd:string
-property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
-property_value: seeAlso "defining-property-chains-involving-reflexivity"
-holds_over_chain: RO:0000052 BFO:0000050
 is_a: RO:0002502 ! depends on
-transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002323
 name: mereotopologically related to
 def: "A mereological relationship or a topological relationship" []
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
 
 [Typedef]
 id: RO:0002328
 name: functionally related to
 def: "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." []
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "This is a grouping relation that collects relations used for the purpose of connecting structure and function" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
@@ -2217,27 +2082,12 @@ name: has member
 def: "has member is a mereological relation between a collection and an item." []
 property_value: IAO:0000119 "SIO" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
 is_a: BFO:0000051 ! has part
-
-[Typedef]
-id: RO:0002352
-name: input of
-def: "inverse of has input" []
-subset: ro-eco
-subset: RO:0002259
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000056 ! participates in
-is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002353
 name: output of
 def: "inverse of has output" []
-subset: ro-eco
-subset: RO:0002259
-property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0000056 ! participates in
 is_a: RO:0002328 ! functionally related to
@@ -2245,30 +2095,19 @@ is_a: RO:0002328 ! functionally related to
 [Typedef]
 id: RO:0002502
 name: depends on
-property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: seeAlso BFO:0000169
 
 [Typedef]
 id: RO:0003001
 name: produced by
 def: "a produced_by b iff some process that occurs_in b has_output a." []
-subset: ro-eco
 property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Melissa Haendel" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 
 [Typedef]
 id: RO:0009001
 name: has substance added
 def: "\"has substance added\" is a relation existing between a (physical) entity and a substance in which the entity has had the substance added to it at some point in time." []
-property_value: IAO:0000112 "muffin 'has substance added' some 'baking soda'" xsd:string
 property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "The relation X 'has substance added' some Y doesn't imply that X still has Y in any detectable fashion subsequent to the addition. Water in dehydrated food or ice cubes are examples, as is food that undergoes chemical transformation. This definition should encompass recipe ingredients." xsd:string
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 

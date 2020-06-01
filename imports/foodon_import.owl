@@ -90,21 +90,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000424 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000424"/>
     
 
 
@@ -144,21 +132,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0040042 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0040042"/>
-    
-
-
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/source -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
     
 
 
@@ -213,33 +189,12 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000111 xml:lang="en">is part of</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">my brain is part of my body (continuant parthood, two material entities)</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this day is part of this year (occurrent parthood)</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
-
-A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">part_of</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
-        <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
-        <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
-        <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
-        <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <rdfs:label xml:lang="en">part of</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections"/>
-        <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:PartOf"/>
-        <rdfs:seeAlso>http://www.obofoundry.org/ro/#OBO_REL:part_of</rdfs:seeAlso>
     </owl:ObjectProperty>
     
 
@@ -250,20 +205,9 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000111 xml:lang="en">has part</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">my body has part my brain (continuant parthood, two material entities)</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this year has part this day (occurrent parthood)</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part.</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
-
-A continuant cannot have an occurrent as part: use &apos;participates in&apos;. An occurrent cannot have a continuant as part: use &apos;has participant&apos;. An immaterial entity cannot have a material entity as part: use &apos;location of&apos;. An independent continuant cannot have a specifically dependent continuant as part: use &apos;bearer of&apos;. A specifically dependent continuant cannot have an independent continuant as part: use &apos;inheres in&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">has_part</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <rdfs:label xml:lang="en">has part</rdfs:label>
-        <rdfs:label>has_part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -311,16 +255,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002314"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
         <obo:IAO_0000111 xml:lang="en">inheres in</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">this fragility inheres in this vase</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this red color inheres in this apple</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">A dependent inheres in its bearer at all times for which the dependent exists.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">inheres_in</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <rdfs:label xml:lang="en">inheres in</rdfs:label>
     </owl:ObjectProperty>
     
@@ -330,14 +268,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053">
         <obo:IAO_0000111 xml:lang="en">bearer of</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">this apple is bearer of this red color</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this vase is bearer of this fragility</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">bearer_of</obo:IAO_0000118>
-        <obo:IAO_0000118 xml:lang="en">is bearer of</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <rdfs:label xml:lang="en">bearer of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -346,14 +278,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000056">
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <obo:IAO_0000111 xml:lang="en">participates in</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">this blood clot participates in this blood coagulation</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this input material (or this output material) participates in this process</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this investigator participates in this investigation</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a relation between a continuant and a process, in which the continuant is somehow involved in the process</obo:IAO_0000115>
-        <obo:IAO_0000118 xml:lang="en">participates_in</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
         <rdfs:label xml:lang="en">participates in</rdfs:label>
     </owl:ObjectProperty>
@@ -363,54 +289,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/RO_0000057 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000057">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000057"/>
-        </owl:propertyChainAxiom>
         <obo:IAO_0000111 xml:lang="en">has participant</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">this blood coagulation has participant this blood clot</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this investigation has participant this investigator</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this process has participant this input material (or this output material)</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a relation between a process and a continuant, in which the continuant is somehow involved in the process</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">has_participant</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <dc:source>http://www.obofoundry.org/ro/#OBO_REL:has_participant</dc:source>
         <rdfs:label xml:lang="en">has participant</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-        <obo:IAO_0000112 xml:lang="en">this red color is a quality of this apple</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">A quality inheres in its bearer at all times for which the quality exists.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">is quality of</obo:IAO_0000118>
-        <obo:IAO_0000118 xml:lang="en">quality_of</obo:IAO_0000118>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <rdfs:label xml:lang="en">quality of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0000081 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000081">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-        <obo:IAO_0000112 xml:lang="en">this investigator role is a role of this person</obo:IAO_0000112>
-        <obo:IAO_0000115 xml:lang="en">a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">A role inheres in its bearer at all times for which the role exists, however the role need not be realized at all the times that the role exists.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">is role of</obo:IAO_0000118>
-        <obo:IAO_0000118 xml:lang="en">role_of</obo:IAO_0000118>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <rdfs:label xml:lang="en">role of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -419,10 +301,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-        <obo:IAO_0000112 xml:lang="en">this apple has quality this red color</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">A bearer can have many qualities, and its qualities can exist for different periods of time, but none of its qualities can exist when the bearer does not exist.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">has_quality</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
         <rdfs:label xml:lang="en">has quality</rdfs:label>
     </owl:ObjectProperty>
@@ -433,11 +312,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000087">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <obo:IAO_0000112 xml:lang="en">this person has role this investigator role (more colloquially: this person has this role of investigator)</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">has_role</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
         <rdfs:label xml:lang="en">has role</rdfs:label>
     </owl:ObjectProperty>
@@ -447,33 +322,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/RO_0001000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001000">
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001001"/>
-        <obo:IAO_0000112 xml:lang="en">this cell derives from this parent cell (cell division)</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this nucleus derives from this parent nucleus (nuclear division)</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115 xml:lang="en">a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">This is a very general relation. More specific relations are preferred when applicable, such as &apos;directly develops from&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">derives_from</obo:IAO_0000118>
-        <obo:IAO_0000232>This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the &apos;develops from&apos; family of relations.</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
         <rdfs:label xml:lang="en">derives from</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0001001 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001001">
-        <obo:IAO_0000112 xml:lang="en">this parent cell derives into this cell (cell division)</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">this parent nucleus derives into this nucleus (nuclear division)</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">This is a very general relation. More specific relations are preferred when applicable, such as &apos;directly develops into&apos;. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking &apos;derives from&apos; rather than the forward-looking &apos;derives into&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118 xml:lang="en">derives_into</obo:IAO_0000118>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">derives into</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -482,28 +334,9 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115>x overlaps y if and only if there exists some z such that x has part z and z part of y</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:IAO_0000424>http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)</obo:IAO_0000424>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
         <rdfs:label xml:lang="en">overlaps</rdfs:label>
     </owl:ObjectProperty>
     
@@ -513,15 +346,9 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002233">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002352"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115>p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p.</obo:IAO_0000115>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <obo:IAO_0000118>consumes</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
         <rdfs:label xml:lang="en">has input</rdfs:label>
     </owl:ObjectProperty>
     
@@ -531,13 +358,9 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002234">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115>p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p.</obo:IAO_0000115>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <obo:IAO_0000118>produces</obo:IAO_0000118>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
         <rdfs:label xml:lang="en">has output</rdfs:label>
     </owl:ObjectProperty>
     
@@ -547,22 +370,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002314">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002502"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002314"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
         <obo:IAO_0000115>q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w.</obo:IAO_0000115>
-        <obo:IAO_0000116>Because part_of is transitive, inheres in is a sub-relation of inheres in part of</obo:IAO_0000116>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20064205"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <rdfs:label xml:lang="en">inheres in part of</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://github.com/oborel/obo-relations/wiki/ROGuide#defining-property-chains-involving-reflexivity"/>
     </owl:ObjectProperty>
     
 
@@ -571,10 +382,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002323">
         <obo:IAO_0000115>A mereological relationship or a topological relationship</obo:IAO_0000115>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <obo:IAO_0000232>Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <rdfs:label xml:lang="en">mereotopologically related to</rdfs:label>
     </owl:ObjectProperty>
     
@@ -584,8 +392,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002328">
         <obo:IAO_0000115>A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities.</obo:IAO_0000115>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <obo:IAO_0000232>This is a grouping relation that collects relations used for the purpose of connecting structure and function</obo:IAO_0000232>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
         <rdfs:label xml:lang="en">functionally related to</rdfs:label>
     </owl:ObjectProperty>
@@ -617,23 +423,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115>has member is a mereological relation between a collection and an item.</obo:IAO_0000115>
         <obo:IAO_0000119>SIO</obo:IAO_0000119>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <rdfs:label xml:lang="en">has member</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002352 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002352">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
-        <obo:IAO_0000115>inverse of has input</obo:IAO_0000115>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/RO_0002259"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">input of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -644,10 +434,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
         <obo:IAO_0000115>inverse of has output</obo:IAO_0000115>
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/RO_0002259"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
         <rdfs:label xml:lang="en">output of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -656,10 +443,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/RO_0002502 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002502">
-        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
         <rdfs:label>depends on</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000169"/>
     </owl:ObjectProperty>
     
 
@@ -667,13 +452,9 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/RO_0003001 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003001">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115>a produced_by b iff some process that occurs_in b has_output a.</obo:IAO_0000115>
-        <obo:IAO_0000117>Melissa Haendel</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#ro-eco"/>
         <rdfs:label xml:lang="en">produced by</rdfs:label>
     </owl:ObjectProperty>
     
@@ -683,13 +464,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0009001">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000112 xml:lang="en">muffin &apos;has substance added&apos; some &apos;baking soda&apos;</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">&quot;has substance added&quot; is a relation existing between a (physical) entity and a substance in which the entity has had the substance added to it at some point in time.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">The relation X &apos;has substance added&apos; some Y doesn&apos;t imply that X still has Y in any detectable fashion subsequent to the addition. Water in dehydrated food or ice cubes are examples, as is food that undergoes chemical transformation. This definition should encompass recipe ingredients.</obo:IAO_0000116>
-        <obo:IAO_0000117>Damion Dooley</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
         <rdfs:label xml:lang="en">has substance added</rdfs:label>
     </owl:ObjectProperty>
@@ -752,12 +528,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <obo:BFO_0000179>continuant</obo:BFO_0000179>
         <obo:BFO_0000180>Continuant</obo:BFO_0000180>
@@ -777,6 +547,18 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <rdfs:label xml:lang="en">continuant</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/008-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/011-002"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000116"/>
@@ -818,18 +600,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
         <owl:annotatedTarget>(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] </owl:annotatedTarget>
         <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/126-001"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
-        <owl:annotatedTarget>(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] </owl:annotatedTarget>
-        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/008-002"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
-        <owl:annotatedTarget>(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] </owl:annotatedTarget>
-        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/011-002"/>
     </owl:Axiom>
     
 
@@ -904,12 +674,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <obo:BFO_0000179>ic</obo:BFO_0000179>
@@ -2679,7 +2443,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03401270">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400289"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Food and Drugs, title 21, Code of Federal Regulations. Original  food classification in LanguaL.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Food and Drugs, title 21, Code of Federal Regulations. Original food classification in LanguaL.</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A1270</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.</rdfs:comment>
@@ -4618,5 +4382,5 @@ The family is widespread, being native to Asia, Africa, Europe and North America
 
 
 
-<!-- Generated by the OWL API (version 4.5.9) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
 

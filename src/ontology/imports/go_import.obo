@@ -3252,6 +3252,14 @@ intersection_of: RO:0002212 GO:0070278 ! negatively regulates extracellular matr
 relationship: RO:0002212 GO:0070278 ! negatively regulates extracellular matrix constituent secretion
 
 [Term]
+id: GO:0003333
+name: amino acid transmembrane transport
+def: "The process in which an amino acid is transported across a membrane." []
+synonym: "amino acid membrane transport" EXACT []
+is_a: GO:0006865 ! amino acid transport
+is_a: GO:1905039 ! carboxylic acid transmembrane transport
+
+[Term]
 id: GO:0003411
 name: cell motility involved in camera-type eye morphogenesis
 def: "Any process involved in the controlled self-propelled movement of a cell that results in translocation of the cell from one place to another and contributes to the physical shaping or formation of the camera-type eye." []
@@ -4366,6 +4374,16 @@ name: organic acid transmembrane transporter activity
 def: "Enables the transfer of organic acids from one side of a membrane to the other. Organic acids are acidic compound containing carbon in covalent linkage," []
 is_a: GO:0022857 ! transmembrane transporter activity
 relationship: BFO:0000050 GO:1903825 ! part of organic acid transmembrane transport
+
+[Term]
+id: GO:0005355
+name: glucose transmembrane transporter activity
+def: "Enables the transfer of the hexose monosaccharide glucose from one side of a membrane to the other." []
+synonym: "galactose/glucose (methylgalactoside) porter activity" RELATED []
+synonym: "glucose permease activity" EXACT []
+synonym: "lactose/glucose efflux transporter activity" NARROW []
+is_a: GO:0015149 ! hexose transmembrane transporter activity
+relationship: BFO:0000050 GO:1904659 ! part of glucose transmembrane transport
 
 [Term]
 id: GO:0005381
@@ -9851,11 +9869,46 @@ is_a: GO:1901505 ! carbohydrate derivative transmembrane transporter activity
 relationship: BFO:0000050 GO:0015739 ! part of sialic acid transport
 
 [Term]
+id: GO:0015144
+name: carbohydrate transmembrane transporter activity
+def: "Enables the transfer of carbohydrate from one side of a membrane to the other." []
+synonym: "carbohydrate transporter activity" RELATED []
+synonym: "sugar transporter" NARROW []
+is_a: GO:0022857 ! transmembrane transporter activity
+relationship: BFO:0000050 GO:0034219 ! part of carbohydrate transmembrane transport
+
+[Term]
+id: GO:0015145
+name: monosaccharide transmembrane transporter activity
+def: "Enables the transfer of a monosaccharide from one side of a membrane to the other." []
+is_a: GO:0051119 ! sugar transmembrane transporter activity
+relationship: BFO:0000050 GO:0015749 ! part of monosaccharide transmembrane transport
+
+[Term]
+id: GO:0015149
+name: hexose transmembrane transporter activity
+def: "Enables the transfer of a hexose sugar, a monosaccharide with 6 carbon atoms, from one side of a membrane to the other." []
+is_a: GO:0015145 ! monosaccharide transmembrane transporter activity
+relationship: BFO:0000050 GO:0008645 ! part of hexose transmembrane transport
+
+[Term]
 id: GO:0015152
 name: glucose-6-phosphate transmembrane transporter activity
 def: "Enables the transfer of glucose-6-phosphate from one side of a membrane to the other. Glucose-6-phosphate is a monophosphorylated derivative of glucose with the phosphate group attached to C-6." []
 is_a: GO:0022857 ! transmembrane transporter activity
 relationship: BFO:0000050 GO:0015760 ! part of glucose-6-phosphate transport
+
+[Term]
+id: GO:0015171
+name: amino acid transmembrane transporter activity
+def: "Enables the transfer of amino acids from one side of a membrane to the other. Amino acids are organic molecules that contain an amino group and a carboxyl group." []
+synonym: "amino acid permease activity" EXACT []
+synonym: "amino acid transporter activity" BROAD []
+synonym: "amino acid/choline transmembrane transporter activity" NARROW []
+synonym: "general amino acid permease activity" RELATED []
+synonym: "hydroxy/aromatic amino acid permease activity" RELATED []
+is_a: GO:0046943 ! carboxylic acid transmembrane transporter activity
+relationship: BFO:0000050 GO:0003333 ! part of amino acid transmembrane transport
 
 [Term]
 id: GO:0015238
@@ -23723,6 +23776,13 @@ intersection_of: RO:0002211 GO:0003677 ! regulates DNA binding
 relationship: RO:0002211 GO:0003677 ! regulates DNA binding
 
 [Term]
+id: GO:0051119
+name: sugar transmembrane transporter activity
+def: "Enables the transfer of a sugar from one side of a membrane to the other. A sugar is any member of a class of sweet, water-soluble, crystallizable carbohydrates, which are the monosaccharides and smaller oligosaccharides." []
+synonym: "sugar/polyol channel activity" NARROW []
+is_a: GO:0015144 ! carbohydrate transmembrane transporter activity
+
+[Term]
 id: GO:0051128
 name: regulation of cellular component organization
 def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of cell structures, including the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." []
@@ -34046,6 +34106,17 @@ is_a: GO:1903786 ! regulation of glutathione biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006750 ! positively regulates glutathione biosynthetic process
 relationship: RO:0002213 GO:0006750 ! positively regulates glutathione biosynthetic process
+
+[Term]
+id: GO:1903789
+name: regulation of amino acid transmembrane transport
+def: "Any process that modulates the frequency, rate or extent of amino acid transmembrane transport." []
+synonym: "regulation of amino acid membrane transport" EXACT []
+is_a: GO:0051955 ! regulation of amino acid transport
+is_a: GO:1903959 ! regulation of anion transmembrane transport
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0003333 ! regulates amino acid transmembrane transport
+relationship: RO:0002211 GO:0003333 ! regulates amino acid transmembrane transport
 
 [Term]
 id: GO:1903792

@@ -1,3 +1,79 @@
+# 2020-06-01 release
+
+## New Classes
+
+ * [MONDO:0020789](http://purl.obolibrary.org/obo/MONDO_0020789) pseudo-TORCH syndrome 1
+ * [MONDO:0020790](http://purl.obolibrary.org/obo/MONDO_0020790) gaze palsy, familial horizontal, with progressive scoliosis 1
+ * [MONDO:0020791](http://purl.obolibrary.org/obo/MONDO_0020791) corneal dystrophy, meesmann, 1
+ * [MONDO:0020792](http://purl.obolibrary.org/obo/MONDO_0020792) dwarfism with tall vertebrae
+ * [MONDO:0100125](http://purl.obolibrary.org/obo/MONDO_0100125) hallucinogen-persisting perception disorder
+ * [MONDO:0100130](http://purl.obolibrary.org/obo/MONDO_0100130) adult acute respiratory distress syndrome
+ * [MONDO:0100131](http://purl.obolibrary.org/obo/MONDO_0100131) pediatric acute respiratory distress syndrome
+
+## Obsoletions
+
+ * [MONDO:0001012](http://purl.obolibrary.org/obo/MONDO_0001012) breast fibroadenosis --> obsolete breast fibroadenosis
+ * [MONDO:0010249](http://purl.obolibrary.org/obo/MONDO_0010249) X-linked B cell surface antigen, mouse, homolog-like 1 --> obsolete X-linked B cell surface antigen, mouse, homolog-like 1
+ * [MONDO:0013596](http://purl.obolibrary.org/obo/MONDO_0013596) nonsyndromic congenital nail disorder 10 --> obsolete nonsyndromic congenital nail disorder 10
+ * [MONDO:0015963](http://purl.obolibrary.org/obo/MONDO_0015963) inherited renal tumor --> obsolete inherited renal tumor
+ * [MONDO:0015966](http://purl.obolibrary.org/obo/MONDO_0015966) hereditary eye tumor --> obsolete hereditary eye tumor
+ * [MONDO:0015981](http://purl.obolibrary.org/obo/MONDO_0015981) inherited gynecological tumor --> obsolete inherited gynecological tumor
+ * [MONDO:0021062](http://purl.obolibrary.org/obo/MONDO_0021062) hereditary acrokeratotic poikiloderma of Kindler-Weary --> obsolete hereditary acrokeratotic poikiloderma of Kindler-Weary
+ * [MONDO:0023310](http://purl.obolibrary.org/obo/MONDO_0023310) hemiplegic migraine --> obsolete hemiplegic migraine
+ * [MONDO:0023873](http://purl.obolibrary.org/obo/MONDO_0023873) noonan-like/multiple giant cell lesion syndrome --> obsolete Noonan-like/multiple giant cell lesion syndrome
+ * [MONDO:0024597](http://purl.obolibrary.org/obo/MONDO_0024597) CD3epsilon deficiency --> obsolete CD3epsilon deficiency
+
+## Renaming
+
+ * [MONDO:0001012](http://purl.obolibrary.org/obo/MONDO_0001012) breast fibroadenosis --> obsolete breast fibroadenosis
+ * [MONDO:0001627](http://purl.obolibrary.org/obo/MONDO_0001627) dementia --> dementia (disease)
+ * [MONDO:0006502](http://purl.obolibrary.org/obo/MONDO_0006502) adult respiratory distress syndrome --> acute respiratory distress syndrome
+ * [MONDO:0008319](http://purl.obolibrary.org/obo/MONDO_0008319) protoporphyria, erythropoietic --> protoporphyria, erythropoietic, 1
+ * [MONDO:0010249](http://purl.obolibrary.org/obo/MONDO_0010249) X-linked B cell surface antigen, mouse, homolog-like 1 --> obsolete X-linked B cell surface antigen, mouse, homolog-like 1
+ * [MONDO:0013596](http://purl.obolibrary.org/obo/MONDO_0013596) nonsyndromic congenital nail disorder 10 --> obsolete nonsyndromic congenital nail disorder 10
+ * [MONDO:0014006](http://purl.obolibrary.org/obo/MONDO_0014006) intellectual disability-craniofacial dysmorphism-cryptorchidism syndrome --> Schuurs-Hoeijmakers syndrome
+ * [MONDO:0015023](http://purl.obolibrary.org/obo/MONDO_0015023) nemaline myopathy 11 --> MYPN-related myopathy
+ * [MONDO:0015653](http://purl.obolibrary.org/obo/MONDO_0015653) monogenic disease with epilepsy --> monogenic epilepsy
+ * [MONDO:0015951](http://purl.obolibrary.org/obo/MONDO_0015951) genetic photodermatosis --> hereditary photodermatosis
+ * [MONDO:0015963](http://purl.obolibrary.org/obo/MONDO_0015963) inherited renal tumor --> obsolete inherited renal tumor
+ * [MONDO:0015966](http://purl.obolibrary.org/obo/MONDO_0015966) hereditary eye tumor --> obsolete hereditary eye tumor
+ * [MONDO:0015981](http://purl.obolibrary.org/obo/MONDO_0015981) inherited gynecological tumor --> obsolete inherited gynecological tumor
+ * [MONDO:0021062](http://purl.obolibrary.org/obo/MONDO_0021062) hereditary acrokeratotic poikiloderma of Kindler-Weary --> obsolete hereditary acrokeratotic poikiloderma of Kindler-Weary
+ * [MONDO:0023310](http://purl.obolibrary.org/obo/MONDO_0023310) hemiplegic migraine --> obsolete hemiplegic migraine
+ * [MONDO:0023873](http://purl.obolibrary.org/obo/MONDO_0023873) noonan-like/multiple giant cell lesion syndrome --> obsolete Noonan-like/multiple giant cell lesion syndrome
+ * [MONDO:0024597](http://purl.obolibrary.org/obo/MONDO_0024597) CD3epsilon deficiency --> obsolete CD3epsilon deficiency
+ * [MONDO:0025481](http://purl.obolibrary.org/obo/MONDO_0025481) zoonoses --> zoonosis
+ * [MONDO:0026733](http://purl.obolibrary.org/obo/MONDO_0026733) intellectual developmental disorder, x-linked, syndromic, hackmann-di donato type --> intellectual developmental disorder, x-linked, syndromic, Hackmann-Di Donato type
+ * [MONDO:0032668](http://purl.obolibrary.org/obo/MONDO_0032668) diamond-blackfan anemia 18 --> Diamond-Blackfan anemia 18
+ * [MONDO:0032669](http://purl.obolibrary.org/obo/MONDO_0032669) diamond-blackfan anemia 19 --> Diamond-Blackfan anemia 19
+ * [MONDO:0032670](http://purl.obolibrary.org/obo/MONDO_0032670) diamond-blackfan anemia 20 --> Diamond-Blackfan anemia 20
+ * [MONDO:0032791](http://purl.obolibrary.org/obo/MONDO_0032791) coffin-siris syndrome 10 --> Coffin-Siris syndrome 10
+ * [MONDO:0032793](http://purl.obolibrary.org/obo/MONDO_0032793) o'donnell-luria-rodan syndrome --> O'Donnell-Luria-Rodan syndrome
+ * [MONDO:0032841](http://purl.obolibrary.org/obo/MONDO_0032841) usher syndrome, type 1m --> Usher syndrome, type 1M
+ * [MONDO:0032882](http://purl.obolibrary.org/obo/MONDO_0032882) heyn-sproul-jackson syndrome --> Heyn-Sproul-Jackson syndrome
+ * [MONDO:0032885](http://purl.obolibrary.org/obo/MONDO_0032885) spondyloepimetaphyseal dysplasia, isidor-toutain type --> spondyloepimetaphyseal dysplasia, Isidor-Toutain type
+ * [MONDO:0032886](http://purl.obolibrary.org/obo/MONDO_0032886) liang-wang syndrome --> Liang-Wang syndrome
+ * [MONDO:0032889](http://purl.obolibrary.org/obo/MONDO_0032889) poirier-bienvenu neurodevelopmental syndrome --> Poirier-Bienvenu neurodevelopmental syndrome
+ * [MONDO:0032901](http://purl.obolibrary.org/obo/MONDO_0032901) catifa syndrome --> Catifa syndrome
+ * [MONDO:0032902](http://purl.obolibrary.org/obo/MONDO_0032902) joubert syndrome 36 --> Joubert syndrome 36
+ * [MONDO:0032904](http://purl.obolibrary.org/obo/MONDO_0032904) corneal dystrophy, meesmann, 2 --> corneal dystrophy, Meesmann, 2
+ * [MONDO:0032908](http://purl.obolibrary.org/obo/MONDO_0032908) cebalid syndrome --> CEBALID syndrome
+ * [MONDO:0032912](http://purl.obolibrary.org/obo/MONDO_0032912) coffin-siris syndrome 11 --> Coffin-Siris syndrome 11
+ * [MONDO:0032915](http://purl.obolibrary.org/obo/MONDO_0032915) long qt syndrome 16 --> long QT syndrome 16
+ * [MONDO:0032916](http://purl.obolibrary.org/obo/MONDO_0032916) imagawa-matsumoto syndrome --> Imagawa-Matsumoto syndrome
+ * [MONDO:0032922](http://purl.obolibrary.org/obo/MONDO_0032922) beck-fahrner syndrome --> Beck-Fahrner syndrome
+ * [MONDO:0044309](http://purl.obolibrary.org/obo/MONDO_0044309) diamond-blackfan anemia 16 --> Diamond-Blackfan anemia 16
+ * [MONDO:0044310](http://purl.obolibrary.org/obo/MONDO_0044310) diamond-blackfan anemia 17 --> Diamond-Blackfan anemia 17
+ * [MONDO:0054588](http://purl.obolibrary.org/obo/MONDO_0054588) noonan syndrome-like disorder with loose anagen hair 2 --> Noonan syndrome-like disorder with loose anagen hair 2
+ * [MONDO:0100101](http://purl.obolibrary.org/obo/MONDO_0100101) Fetal akinesia deformation sequence 1 --> fetal akinesia deformation sequence 1
+ * [MONDO:0100102](http://purl.obolibrary.org/obo/MONDO_0100102) Fetal akinesia deformation sequence 2 --> fetal akinesia deformation sequence 2
+ * [MONDO:0100103](http://purl.obolibrary.org/obo/MONDO_0100103) Fetal akinesia deformation sequence 3 --> fetal akinesia deformation sequence 3
+ * [MONDO:0100104](http://purl.obolibrary.org/obo/MONDO_0100104) Fetal akinesia deformation sequence 4 --> fetal akinesia deformation sequence 4
+
+# 2020-05
+
+TODO
+
 # 2020-04-05 release
 
 ## New Classes
