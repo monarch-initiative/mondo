@@ -9,6 +9,7 @@ SELECT  ?cls ?clsLabel
 WHERE 
 {
   ?cls inSubset: mondoSubset:obsoletion_candidate ;
-       rdfs:label ?clsLabel 
+       rdfs:label ?clsLabel .
+  FILTER NOT EXISTS { ?cls owl:deprecated "true"^^xsd:boolean }
 }
 ORDER BY ?cls
