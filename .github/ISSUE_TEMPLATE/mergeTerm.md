@@ -11,6 +11,6 @@ assignees: nicolevasilevsky
 
 
 **Reason for deprecation**
-
+OMIM merged these
 
 **Term to be merged with**
