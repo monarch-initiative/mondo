@@ -1,3 +1,35 @@
+# 2020-06-30 release
+
+## New Classes
+
+ * [MONDO:0100120](http://purl.obolibrary.org/obo/MONDO_0100120) vector-borne disease
+ * [MONDO:0100135](http://purl.obolibrary.org/obo/MONDO_0100135) Dravet syndrome
+ * [MONDO:0100139](http://purl.obolibrary.org/obo/MONDO_0100139) asymptomatic COVID-19 infection
+ * [MONDO:0100140](http://purl.obolibrary.org/obo/MONDO_0100140) mild COVID-19 infection
+ * [MONDO:0100141](http://purl.obolibrary.org/obo/MONDO_0100141) moderate COVID-19 infection
+ * [MONDO:0100142](http://purl.obolibrary.org/obo/MONDO_0100142) severe COVID-19 infection
+ * [MONDO:0100143](http://purl.obolibrary.org/obo/MONDO_0100143) critical COVID-19 infection
+
+## Obsoletions
+
+ * [MONDO:0000312](http://purl.obolibrary.org/obo/MONDO_0000312) enlarged vestibular aqueduct --> obsolete enlarged vestibular aqueduct
+ * [MONDO:0002144](http://purl.obolibrary.org/obo/MONDO_0002144) hyperuricemia (disease) --> obsolete hyperuricemia (disease)
+ * [MONDO:0003794](http://purl.obolibrary.org/obo/MONDO_0003794) mediastinal neurilemmoma --> obsolete mediastinal neurilemmoma
+ * [MONDO:0011794](http://purl.obolibrary.org/obo/MONDO_0011794) Dravet syndrome --> obsolete Dravet syndrome
+
+## Renaming
+
+ * [MONDO:0000312](http://purl.obolibrary.org/obo/MONDO_0000312) enlarged vestibular aqueduct --> obsolete enlarged vestibular aqueduct
+ * [MONDO:0002144](http://purl.obolibrary.org/obo/MONDO_0002144) hyperuricemia (disease) --> obsolete hyperuricemia (disease)
+ * [MONDO:0003794](http://purl.obolibrary.org/obo/MONDO_0003794) mediastinal neurilemmoma --> obsolete mediastinal neurilemmoma
+ * [MONDO:0009191](http://purl.obolibrary.org/obo/MONDO_0009191) Lowry-wood syndrome --> Lowry-Wood syndrome
+ * [MONDO:0010916](http://purl.obolibrary.org/obo/MONDO_0010916) polycystic kidney disease 3 --> polycystic kidney disease 3 with or without polycystic liver disease
+ * [MONDO:0011010](http://purl.obolibrary.org/obo/MONDO_0011010) Matthew-wood syndrome --> Matthew-Wood syndrome
+ * [MONDO:0011794](http://purl.obolibrary.org/obo/MONDO_0011794) Dravet syndrome --> obsolete Dravet syndrome
+ * [MONDO:0018858](http://purl.obolibrary.org/obo/MONDO_0018858) Graham little-Piccardi-Lassueur syndrome --> Graham Little-Piccardi-Lassueur syndrome
+ * [MONDO:0020791](http://purl.obolibrary.org/obo/MONDO_0020791) corneal dystrophy, meesmann, 1 --> corneal dystrophy, Meesmann, 1
+
+
 # 2020-06-01 release
 
 ## New Classes

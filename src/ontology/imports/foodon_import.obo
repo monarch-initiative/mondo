@@ -934,8 +934,6 @@ id: FOODON:03411134
 name: mammal
 def: "Mammals (from Latin mamma \"breast\") are vertebrate animals constituting the class Mammalia, and characterized by the presence of mammary glands which in females produce milk for feeding (nursing) their young, a neocortex (a region of the brain), fur or hair, and three middle ear bones." []
 is_a: FOODON:03411297 ! vertebrate animal
-intersection_of: FOODON:00001092 ! vertebrate animal food product
-intersection_of: FOODON:03411297 ! vertebrate animal
 
 [Term]
 id: FOODON:03411161
@@ -1749,7 +1747,7 @@ def: "A material entity that is an individual living system, such as animal, pla
 is_a: BFO:0000040 ! material entity
 property_value: IAO:0000111 "organism" xsd:string
 property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000119 "WEB: http://en.wikipedia.org/wiki/Organism" xsd:string
+property_value: IAO:0000119 http://en.wikipedia.org/wiki/Organism
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 
 [Term]
