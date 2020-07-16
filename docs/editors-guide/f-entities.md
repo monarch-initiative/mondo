@@ -153,17 +153,17 @@ MONDO:directSiblingOf   |   The term that is xref'd is a direct sibling of term.
 MONDO:entailed  |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   Y   |   MONDO:0001594 'Achilles bursitis'
 MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology.We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease'
 MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom.   |   xrefs   |   N   |   MONDO:0100087 'familial Alzheimer disease'
-MONDO:kboom-pr-[number]     |   These are the probability scores from the kBoom algorithm.  |       |   Y   |   MONDO:0008966 'Aagenaes syndrome'
+MONDO:kboom-pr-[number]     |   These are the probability scores from the kBoom algorithm.  |  xrefs   |   Y   |   MONDO:0008966 'Aagenaes syndrome'
 MONDO:Lexical   |   Same as design_pattern. Should be replaced with specific design_pattern.    |   synonyms    |   N   |   MONDO:0010278 'Christianson syndrome'
-MONDO:LexicalVariant    |   Similar to design_pattern, should be replaced with specific documentation about variant documentation.  |       |   N   |   MONDO:0006018 'Wissler syndrome'
+MONDO:LexicalVariant    |   Similar to design_pattern, should be replaced with specific documentation about variant documentation.  |  synonyms   |   N   |   MONDO:0006018 'Wissler syndrome'
 MONDO:notFoundInDiseaseSubset   |   This annotation is typically added to dbxefs from UMLS or NCIt, to indicate the term is not from the disease branch.    |   dbxef   |   N   |   MONDO_0015350 '17q11.2 microduplication syndrome'
-MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |       |   N   |   MONDO:0008858 'Behr syndrome'
+MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   MONDO:0008858 'Behr syndrome'
 MONDO:ontobio   |   Lexical matching method |   subclassOf  |   N   |   MONDO:0012176 'Emanuel syndrome'
 MONDO:patterns....  |   A pattern was used to define the term or synonym, see: https://github.com/monarch-initiative/mondo/tree/master/src/patterns |   definitions, synonyms   |   N   |   MONDO:0016593 'acquired ataxia'
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'
 MONDO:relatedTo     |   Used when a term is not equivalent but similar. |   xrefs   |   N   |   MONDO:0015350 '17q11.2 microduplication syndrome'
-MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   |       |   N   |   MONDO:0017781 '12p12.1 microdeletion syndrome'
-MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom.     |       |   N   |   MONDO:0017806 '15q overgrowth syndrome'
+MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   | xrefs   |   N   |   MONDO:0017781 '12p12.1 microdeletion syndrome'
+MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom.     |  xrefs  |   N   |   MONDO:0017806 '15q overgrowth syndrome'
 
 ## Subsets
 
