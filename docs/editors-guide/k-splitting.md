@@ -17,12 +17,10 @@ Sometimes one class should be split into two classes. For example, OMIM may rena
 1. If you have a term in Mondo, such as FOO1, and there is now a more general grouping class, create a new class for the new parent term.
 1. Make the more specific class, FOO1 a child term.
 1. Make sure the appropriate annotations are associated with the correct class. Use your judgment in moving these annotations, such as the synonyms and dbxrefs. E.g. Orphanet tends to represent the generic form of diseases but their text definition may mention a specific gene that should actually be associated with the child (more specific class).
-1. In the case of OMIM, the Phenotypic Series (PS) ID should be associated with the parent/grouping class (use the format OMIMPS:XXXXX {source="MONDO:equivalentTo"}.
 
 **_Splitting a more generic term into a more specific term_**
 1. If you have a term in Mondo, such as FOO, and there are now more specific subtypes, such as FOO1, FOO2 (which could be new diseases with specific gene mutations), create the new class for the child(ren) term(s).
 1. Make sure the appropriate annotations are associated with the correct class. Use your judgment in moving these annotations, such as the synonyms and dbxrefs. E.g. Orphanet tends to represent the generic form of diseaases but their text definition may mention a specific gene that should actually be associated with the child (more specific class).
-1. In the case of OMIM, the OMIM ID should be associated with the child class (use the format OMIM:XXXXX {source="MONDO:equivalentTo"}.
 
 ### Splitting OMIM Phenotypic Series (PS) terms
 
@@ -33,8 +31,8 @@ In Mondo, we assign new Mondo IDs to the OMIM PS terms, and add equivalence axio
 **_Splitting a more specific term into a more generic term_**
 1. If you have a term in Mondo, such as FOO1, and there is now a more general grouping class, create a new class for the new parent term. _For example: [OMIM:606176 Diabetes mellitus, permanent neonatal 1](https://www.omim.org/entry/606176) is now part of the PS [PS606176 Diabetes mellitus, permanent neonatal](https://www.omim.org/phenotypicSeries/PS606176)._
 1. Add a new class for the more general grouping class and add the OMIMPS ID as a dbxref and add the equivalent axiom, MONDO:equivalentTo, to the dbxref. _For example, create a new class Diabetes mellitus, permanent neonatal and add: `xref: OMIMPS:606176 {source="MONDO:equivalentTo"} ! diabetes mellitus, permanent neonatal`.
-1. Make the more specific class, FOO1 a child term.
-1. Make sure the appropriate annotations are associated with the correct class. Use your judgment in moving these annotations, such as the synonyms and dbxrefs. E.g. Orphanet tends to represent the generic form of diseases but their text definition may mention a specific gene that should actually be associated with the child (more specific class).
+1. Make the more specific class, FOO1 a child term. _For example, OMIM:606176 Diabetes mellitus, permanent neonatal 1 would be the child class and it would have the xref: `xref: OMIM:606176 {source="MONDO:equivalentTo"} ! diabetes mellitus, permanent neonatal`
+1. Make sure the appropriate annotations are associated with the correct class. Use your judgment in moving these annotations, such as the synonyms and dbxrefs. E.g. Orphanet tends to represent the generic form of diseases but their text definition may mention a specific gene that should actually be associated with the child (more specific class). _In the example above, Orphanet:99885 should be xref'd on the parent class, 'permanent neonatal diabetes mellitus'.
 1. In the case of OMIM, the Phenotypic Series (PS) ID should be associated with the parent/grouping class (use the format OMIMPS:XXXXX {source="MONDO:equivalentTo"}.
 
 **_Splitting a more generic term into a more specific term_**
