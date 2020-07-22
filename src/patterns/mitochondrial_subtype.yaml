@@ -1,1 +1,27 @@
+pattern_name: mitochondriaal_subtype
+description: A mitochondrial subtype of a disease, such as MONDO:0100134 'mitochondrial complex I deficiency, mitochondrial type'.
+
+classes:
+  mitochondrion: GO:0005739
+
+relations:
+  disease has location: RO:0004026
+
+vars:
+  disease: MONDO:0000001
+
+name:
+  text: "%s, mitochondrial type"
+  vars:
+   - disease
+   
+def:
+  text: "A %s that is a mitochondrial subtype."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'disease has location' some 'mitochondrion'"
+  vars:
+    - disease
 
