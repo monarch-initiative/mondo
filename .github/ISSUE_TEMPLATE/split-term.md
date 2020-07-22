@@ -7,8 +7,8 @@ assignees: nicolevasilevsky
 
 ---
 
-Term to split:
+**Term to split:**
 
-Name for new term:
+**Name for new terms:** Note - when a term should be split, there should be 2+ new terms. Please list the new labels below. 
 
-List properties that should be moved to new term
+**List properties that should be moved to new term:** Note- ORDO tends to represent the generic class. Most properties (such as synonyms and database cross references) will move to the generic term. Synonynms that end in "1", "2", etc. should move to subclass.
