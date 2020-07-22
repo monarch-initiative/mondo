@@ -33,12 +33,11 @@ In Mondo, we assign new Mondo IDs to the OMIM PS terms, and add equivalence axio
 1. Add a new class for the more general grouping class and add the OMIMPS ID as a dbxref and add the equivalent axiom, MONDO:equivalentTo, to the dbxref. _For example, create a new class Diabetes mellitus, permanent neonatal and add: `xref: OMIMPS:606176 {source="MONDO:equivalentTo"} ! diabetes mellitus, permanent neonatal`.
 1. Make the more specific class, FOO1 a child term. _For example, OMIM:606176 Diabetes mellitus, permanent neonatal 1 would be the child class and it would have the xref: `xref: OMIM:606176 {source="MONDO:equivalentTo"} ! diabetes mellitus, permanent neonatal`
 1. Make sure the appropriate annotations are associated with the correct class. Use your judgment in moving these annotations, such as the synonyms and dbxrefs. E.g. Orphanet tends to represent the generic form of diseases but their text definition may mention a specific gene that should actually be associated with the child (more specific class). _In the example above, Orphanet:99885 should be xref'd on the parent class, 'permanent neonatal diabetes mellitus'.
-1. In the case of OMIM, the Phenotypic Series (PS) ID should be associated with the parent/grouping class (use the format OMIMPS:XXXXX {source="MONDO:equivalentTo"}.
 
 **_Splitting a more generic term into a more specific term_**
-1. If you have a term in Mondo, such as FOO, and there are now more specific subtypes, such as FOO1, FOO2 (which could be new diseases with specific gene mutations), create the new class for the child(ren) term(s).
+1. If you have a term in Mondo, such as FOO, and there are now more specific subtypes, such as FOO1, FOO2 (which could be new diseases with specific gene mutations), create the new class for the child(ren) term(s). _For example, MONDO:0009853 Imerslund-Grasbeck syndrome, which is equivalent to [OMIMPS:PS261100](https://www.omim.org/phenotypicSeries/PS261100). The children terms are MONDO:0009853 Imerslund-Grasbeck syndrome 1 (which is equivalent to [OMIM:261100](https://www.omim.org/entry/261100) and MONDO:0100127 Imerslund-Grasbeck syndrome 2 (which is equivalent to [OMIM:618882](https://www.omim.org/entry/618882).
+1. Add the OMIM ID as a dbxref and add the equivalent axiom, MONDO:equivalentTo, to the dbxref. _For example, create a new class Imerslund-Grasbeck syndrome 1 and add: `xref: OMIM:261100 {source="MONDO:equivalentTo"} ! Imerslund-Grasbeck syndrome 1`.
 1. Make sure the appropriate annotations are associated with the correct class. Use your judgment in moving these annotations, such as the synonyms and dbxrefs. E.g. Orphanet tends to represent the generic form of diseaases but their text definition may mention a specific gene that should actually be associated with the child (more specific class).
-1. In the case of OMIM, the OMIM ID should be associated with the child class (use the format OMIM:XXXXX {source="MONDO:equivalentTo"}.
 
 
 
