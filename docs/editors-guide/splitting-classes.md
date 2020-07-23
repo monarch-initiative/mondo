@@ -5,7 +5,7 @@ by Nicole Vasilevsky 07/22/20
 
 **Objective:** 
 
-Sometimes one class should be split into two classes. 
+Sometimes one class should be split into two (or more) classes. 
 
 There are two use cases:
 
