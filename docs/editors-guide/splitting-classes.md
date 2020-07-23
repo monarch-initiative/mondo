@@ -1,7 +1,7 @@
 
 ## Splitting Classes
 
-by Nicole Vasilevsky 
+by Nicole Vasilevsky     
 _updated 07/23/20_
 
 **Objective:** 
