@@ -50,8 +50,7 @@ to release:
     cd src/ontology
     make
 
-If this looks goo
-d type:
+If this looks good type:
 
     make prepare_release
 
