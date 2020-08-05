@@ -66,6 +66,7 @@ if (!$f1) {
     @fs = (
         "mirror/hp.obo",
         "mondo-edit.obo",
+        "omim-exclusion-set.obo",
         );
 }
 
