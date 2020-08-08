@@ -316,7 +316,7 @@ all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 
 # Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	ROBOT_JAVA_ARGS=-Xmx10G $(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(ONTURI)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(ONTURI)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
@@ -1002,3 +1002,21 @@ bg-clean:
 
 succeed:
 	echo make succeeded
+	
+
+###### NICO MIGRATION: overwriting unsuccessful goals!
+
+../sparql/construct-ecs-from-xrefs.sparql:
+	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
+	
+d2p.pro:
+	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
+	
+reports/semantic-xref-pairs.tsv:
+	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
+	
+imports/ncbitaxon_import.owl:
+	echo "STRONG WARNING STRONG WARNING make $@ is skipped, because of out of memory errors with 16GB memory!" && touch $@
+	
+imports/hgnc_import.owl:
+	echo "STRONG WARNING STRONG WARNING make $@ is skipped, because of broken HGNC IRI syntax in the HGNC dipper ingest (see slack discussing in dipper-n-data)!" && touch $@
