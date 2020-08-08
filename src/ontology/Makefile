@@ -1014,6 +1014,4 @@ d2p.pro:
 	
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
-	
-imports/ncbitaxon_import.owl:
-	echo "STRONG WARNING STRONG WARNING make $@ is skipped, because of out of memory errors with 16GB memory!" && touch $@
+
