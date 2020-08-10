@@ -506,8 +506,7 @@ name: mollusc food product
 name: mollusk food product
 is_a: FOODON:00001293 ! shellfish food product
 intersection_of: FOODON:00001293 ! shellfish food product
-intersection_of: RO:0001000 FOODON:03412112 ! derives from molluscs
-relationship: RO:0001000 FOODON:03412112 ! derives from molluscs
+intersection_of: RO:0001000 FOODON:03412112 ! derives from mollusc
 property_value: IAO:0000116 "Note american/ gb english spelling variation" xsd:string
 
 [Term]
@@ -600,6 +599,7 @@ is_a: FOODON:00002452 ! invertebrate animal
 [Term]
 id: FOODON:00003004
 name: animal
+def: "A multicellular eukaryotic heterotrophic organism within the kingdom Animalia." []
 is_a: FOODON:03411564 ! food source
 
 [Term]
@@ -624,24 +624,21 @@ id: FOODON:03000003
 name: brown shrimp
 def: "Farfantepenaeus aztecus is a species of marine penaeid shrimps found around the east coast of the USA and Mexico" []
 is_a: FOODON:03411081 ! penaeid shrimp family
-intersection_of: FOODON:00001303 NCBITaxon:6690 ! has taxonomic identifier Penaeus aztecus
-intersection_of: FOODON:00001303 NCBITaxon:6690 {all_only="true"} ! has taxonomic identifier Penaeus aztecus
+relationship: RO:0002162 NCBITaxon:6690 ! in taxon Penaeus aztecus
 
 [Term]
 id: FOODON:03000004
 name: green mud crab
 def: "Scylla paramamosain is a mud crab commonly consumed in South-east Asia." []
 is_a: FOODON:03412215 ! mud crab family
-intersection_of: FOODON:00001303 NCBITaxon:85552 ! has taxonomic identifier Scylla paramamosain
-intersection_of: FOODON:00001303 NCBITaxon:85552 {all_only="true"} ! has taxonomic identifier Scylla paramamosain
+relationship: RO:0002162 NCBITaxon:85552 ! in taxon Scylla paramamosain
 
 [Term]
 id: FOODON:03000005
 name: Indian prawn
 def: "The Indian prawn (Fenneropenaeus indicus, formerly Penaeus indicus), is one of the major commercial prawn species of the world. It is found in the Indo-West Pacific from eastern and south-eastern Africa, through India, Malaysia and Indonesia to southern China and northern Australia" []
 is_a: FOODON:03411081 ! penaeid shrimp family
-intersection_of: FOODON:00001303 NCBITaxon:29960 ! has taxonomic identifier Penaeus indicus
-intersection_of: FOODON:00001303 NCBITaxon:29960 {all_only="true"} ! has taxonomic identifier Penaeus indicus
+relationship: RO:0002162 NCBITaxon:29960 ! in taxon Penaeus indicus
 
 [Term]
 id: FOODON:03302116
@@ -903,7 +900,8 @@ property_value: seeAlso https://www.ecfr.gov/cgi-bin/text-idx?SID=87f720ce0d0b6c
 [Term]
 id: FOODON:03411047
 name: grain or seed-producing plant
-is_a: FOODON:03411347 ! plant
+is_a: FOODON:03411347 ! obsolete: plant
+is_a: PO:0000003 ! whole plant
 
 [Term]
 id: FOODON:03411059
@@ -926,13 +924,13 @@ is_a: FOODON:03411237 ! shrimp
 id: FOODON:03411087
 name: human as milk source
 is_a: FOODON:03411134 ! mammal
-intersection_of: FOODON:00001303 NCBITaxon:9606 ! has taxonomic identifier Homo sapiens
-intersection_of: FOODON:00001303 NCBITaxon:9606 {all_only="true"} ! has taxonomic identifier Homo sapiens
+relationship: RO:0002162 NCBITaxon:9606 ! in taxon Homo sapiens
 
 [Term]
 id: FOODON:03411134
 name: mammal
 def: "Mammals (from Latin mamma \"breast\") are vertebrate animals constituting the class Mammalia, and characterized by the presence of mammary glands which in females produce milk for feeding (nursing) their young, a neocortex (a region of the brain), fur or hair, and three middle ear bones." []
+is_a: FOODON:00001092 ! vertebrate animal food product
 is_a: FOODON:03411297 ! vertebrate animal
 
 [Term]
@@ -942,8 +940,7 @@ def: "Cattle (colloquially cows) are the most common type of large domesticated 
 synonym: "Bos taurus Linnaeus, 1758" NARROW []
 synonym: "cow" NARROW []
 is_a: FOODON:03414374 ! bovine
-intersection_of: FOODON:00001303 NCBITaxon:9913 ! has taxonomic identifier Bos taurus
-intersection_of: FOODON:00001303 NCBITaxon:9913 {all_only="true"} ! has taxonomic identifier Bos taurus
+relationship: RO:0002162 NCBITaxon:9913 ! in taxon Bos taurus
 
 [Term]
 id: FOODON:03411201
@@ -983,7 +980,8 @@ is_a: FOODON:03411998 ! decapod
 [Term]
 id: FOODON:03411261
 name: fungus
-def: "A fungus (plural: fungi or funguses) is any member of the group of eukaryotic organisms that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms. These organisms are classified as a kingdom, *Fungi*, which is separate from the other eukaryotic life kingdoms of plants and animals.[https://en.wikipedia.org/wiki/Fungus]" []
+def: "A member of the group of eukaryotic organisms in the kingdom Fungi that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms." []
+synonym: "fungi" EXACT []
 is_a: FOODON:03411564 ! food source
 
 [Term]
@@ -996,7 +994,7 @@ is_a: FOODON:00003004 ! animal
 [Term]
 id: FOODON:03411301
 name: algae
-def: "Unicellular and multicellular algae." []
+def: "An informal term for a large, diverse group of photosynthetic eukaryotic organisms that are not necessarily closely related, and is thus polyphyletic." []
 is_a: FOODON:03411564 ! food source
 
 [Term]
@@ -1010,8 +1008,7 @@ name: goat
 synonym: "Capra hircus Linnaeus, 1758" NARROW []
 synonym: "caprine" EXACT []
 is_a: FOODON:03411134 ! mammal
-intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
-intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
+relationship: RO:0002162 NCBITaxon:9925 ! in taxon Capra hircus
 
 [Term]
 id: FOODON:03411335
@@ -1022,9 +1019,11 @@ is_a: FOODON:03411998 ! decapod
 
 [Term]
 id: FOODON:03411347
-name: plant
-def: "Multicellular plants." []
+name: obsolete: plant
+def: "A multicellular eukaryote organism of the kingdom Plantae." []
 is_a: FOODON:03411564 ! food source
+is_obsolete: true
+replaced_by: PO:0000003
 
 [Term]
 id: FOODON:03411374
@@ -1070,7 +1069,7 @@ is_a: FOODON:03411374 ! crustacean
 
 [Term]
 id: FOODON:03412112
-name: molluscs
+name: mollusc
 def: "*Mollusca* is a large phylum of invertebrate animals whose members are known as molluscs or mollusks. Molluscs are the largest marine phylum, comprising about 23% of all the named marine organisms. Numerous molluscs also live in freshwater and terrestrial habitats. [https://en.wikipedia.org/wiki/Mollusca]" []
 synonym: "Mollusca" EXACT []
 synonym: "mollusks" EXACT []
@@ -1085,7 +1084,7 @@ is_a: FOODON:03411335 ! crab
 [Term]
 id: FOODON:03412345
 name: lichen
-def: "Lichens are composite organisms consisting of a symbiotic association of a fungus (the mycobiont) with a photosynthetic partner (the photobiont or phycobiont), usually either a green alga (commonly *Trebouxia*) or cyanobacterium (commonly *Nostoc*)." []
+def: "A composite organism that arises from algae or cyanobacteria living among filaments of multiple fungi species in a mutualistic relationship." []
 is_a: FOODON:03411564 ! food source
 
 [Term]
@@ -1093,23 +1092,19 @@ id: FOODON:03412611
 name: doe (goat)
 synonym: "Capra hircus Linnaeus, 1758" NARROW []
 is_a: FOODON:03411328 ! goat
-intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
-intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
 
 [Term]
 id: FOODON:03412702
 name: kid
 synonym: "Capra hircus Linnaeus, 1758" NARROW []
 is_a: FOODON:03411328 ! goat
-intersection_of: FOODON:00001303 NCBITaxon:9925 ! has taxonomic identifier Capra hircus
-intersection_of: FOODON:00001303 NCBITaxon:9925 {all_only="true"} ! has taxonomic identifier Capra hircus
 
 [Term]
 id: FOODON:03412846
 name: bacteria
+def: "A unicellular prokaryotic organism in the Domain Bacteria." []
 is_a: FOODON:03411564 ! food source
-intersection_of: FOODON:00001303 NCBITaxon:2 ! has taxonomic identifier Bacteria
-intersection_of: FOODON:00001303 NCBITaxon:2 {all_only="true"} ! has taxonomic identifier Bacteria
+relationship: RO:0002162 NCBITaxon:2 ! in taxon Bacteria
 
 [Term]
 id: FOODON:03414374
@@ -1140,7 +1135,7 @@ is_a: FOODON:03315150 ! mammalian milk product
 [Term]
 id: FOODON:03420116
 name: part of plant or animal
-def: "Anatomical part of the plant or animal from which the food product or its major ingredient is derived, e.g., *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*." []
+def: "Anatomical part of the plant or animal from which the food product or its major ingredient is derived." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -1176,7 +1171,7 @@ is_a: FOODON:03420167 ! fruit part
 [Term]
 id: FOODON:03420164
 name: part of animal
-def: "Anatomical part of an animal; includes eggs and milk that, although separated from the animal, are prouced as integral parts and are affected by the animal's food intake and metabolism." []
+def: "Anatomical part of an animal; includes eggs and milk that, although separated from the animal, are produced as integral parts and are affected by the animal's food intake and metabolism." []
 is_a: FOODON:03420116 ! part of plant or animal
 
 [Term]
@@ -1201,9 +1196,9 @@ id: FOODON:03420177
 name: gluten
 def: "Extract, concentrate or isolate high in gluten, the predominant protein of wheat or corn." []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=C0177
-is_a: FOODON:03420236 ! protein
+is_a: FOODON:03420236 ! protein extract, concentrate or isolate
 intersection_of: FOODON:00001907 ! gluten refined food product
-intersection_of: FOODON:03420236 ! protein
+intersection_of: FOODON:03420236 ! protein extract, concentrate or isolate
 intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -1226,8 +1221,8 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03420236
-name: protein
-def: "Extract, concentrate or isolate high in protein; may contain amino acids, polypeptides and enzymes. Includes casein, gelatin, and gluten." []
+name: protein extract, concentrate or isolate
+def: "Extract, concentrate or isolate high in protein; may contain amino acids, polypeptides and enzymes." []
 is_a: FOODON:03420228 ! extract, concentrate or isolate of plant or animal
 
 [Term]
@@ -1246,16 +1241,13 @@ id: FOODON:03420293
 name: fruit core (anatomical part)
 def: "The hard, central part of an apple, pear, etc., that contains the seeds (Source: Webster's)" []
 is_a: FOODON:03420167 ! fruit part
-intersection_of: BFO:0000051 PO:0009085 ! has part exocarp
-intersection_of: BFO:0000051 PO:0009086 ! has part endocarp
-intersection_of: BFO:0000051 PO:0009087 ! has part mesocarp
 disjoint_from: FOODON:03420294 ! fruit peel (anatomical part)
 disjoint_from: FOODON:03420295 ! fruit seed (anatomical part)
 
 [Term]
 id: FOODON:03420294
 name: fruit peel (anatomical part)
-def: "The rind or skin of fruit (Source: Webster's)" []
+def: "The rind or skin of fruit" []
 is_a: FOODON:03420167 ! fruit part
 disjoint_from: FOODON:03420295 ! fruit seed (anatomical part)
 
@@ -1312,7 +1304,6 @@ property_value: IAO:0000118 "nut or seed added" xsd:string
 
 [Term]
 id: FOODON:03460180
-name: food added (deprecated)
 name: obsolete: food added
 comment: LanguaL curation note: When not otherwise indicated in the scope note, *FOOD ADDED* factor terms are applied when the specified food is the second ingredient in order of predominance, excluding water. Always used for fillings and when the added food is part of the product name (e.g., raisin bread).
 xref: http://www.langual.org/langual_thesaurus.asp?termid=H0180
@@ -1331,7 +1322,7 @@ is_a: FOODON:03460111 ! food treatment process
 id: FOODON:03510019
 name: cattle as consumer
 is_a: FOODON:03510021 ! animal as food consumer
-relationship: FOODON:00001303 NCBITaxon:9913 ! has taxonomic identifier Bos taurus
+relationship: RO:0002162 NCBITaxon:9913 ! in taxon Bos taurus
 
 [Term]
 id: FOODON:03510021
@@ -1820,26 +1811,9 @@ is_a: BFO:0000040 ! material entity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
-id: PO:0009084
-name: pericarp
-def: "A portion of plant tissue (PO:0009007) that is the outer layer (wall) of a fruit (PO:0009001), and develops from a plant ovary (PO:0009072) or a carpel (PO:0009030) wall." []
-is_a: PO:0009007 ! portion of plant tissue
-intersection_of: BFO:0000051 PO:0009085 ! has part exocarp
-intersection_of: BFO:0000051 PO:0009086 ! has part endocarp
-intersection_of: BFO:0000051 PO:0009087 ! has part mesocarp
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-
-[Term]
 id: PO:0009085
 name: exocarp
 def: "A portion of plant tissue (PO:0009007) that is the outer layer of a pericarp (PO:0009084)." []
-is_a: PO:0009007 ! portion of plant tissue
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-
-[Term]
-id: PO:0009086
-name: endocarp
-def: "A portion of plant tissue (PO:0009007) that is the innermost differentiated layer of a pericarp (PO:0009084)." []
 is_a: PO:0009007 ! portion of plant tissue
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
@@ -1951,7 +1925,9 @@ is_symmetric: true
 
 [Typedef]
 id: FOODON:00001303
-name: has taxonomic identifier
+name: obsolete - has taxonomic identifier
+is_obsolete: true
+replaced_by: RO:0002160
 
 [Typedef]
 id: FOODON:00001563
@@ -1965,15 +1941,6 @@ name: has ingredient
 domain: FOODON:00002403 ! food material
 range: FOODON:00001002 ! foodon product type
 is_a: RO:0009001 ! has substance added
-
-[Typedef]
-id: RO:0000052
-name: inheres in
-def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
-property_value: IAO:0000111 "inheres in" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002314 ! inheres in part of
 
 [Typedef]
 id: RO:0000053
@@ -2026,6 +1993,16 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
+id: RO:0002162
+name: in taxon
+def: "x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed." []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_a: RO:0002320 ! evolutionarily related to
+
+[Typedef]
 id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
@@ -2042,12 +2019,10 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0000057 ! has participant
 
 [Typedef]
-id: RO:0002314
-name: inheres in part of
-def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
-property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
+id: RO:0002320
+name: evolutionarily related to
+def: "A relationship that holds via some environmental process" []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002502 ! depends on
 
 [Typedef]
 id: RO:0002323
@@ -2089,11 +2064,6 @@ def: "inverse of has output" []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0000056 ! participates in
 is_a: RO:0002328 ! functionally related to
-
-[Typedef]
-id: RO:0002502
-name: depends on
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0003001
