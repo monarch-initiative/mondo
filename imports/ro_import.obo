@@ -6,11 +6,13 @@ id: BFO:0000002
 name: continuant
 def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
 disjoint_from: BFO:0000003 ! occurrent
+relationship: BFO:0000050 BFO:0000002 ! part of continuant
 
 [Term]
 id: BFO:0000003
 name: occurrent
 def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+relationship: BFO:0000050 BFO:0000003 ! part of occurrent
 
 [Term]
 id: BFO:0000004
@@ -18,6 +20,8 @@ name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
+relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
 
 [Term]
 id: BFO:0000006
@@ -42,23 +46,34 @@ name: realizable entity
 def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
 is_a: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000019 ! quality
+relationship: BFO:0000050 BFO:0000017 ! part of realizable entity
 
 [Term]
 id: BFO:0000019
 name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
+relationship: BFO:0000050 BFO:0000019 ! part of quality
 
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
 def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
+relationship: BFO:0000050 BFO:0000020 ! part of specifically dependent continuant
 
 [Term]
 id: BFO:0000023
 name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
 is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000031
+name: generically dependent continuant
+def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
+is_a: BFO:0000002 ! continuant
+relationship: BFO:0000050 BFO:0000031 ! part of generically dependent continuant
 
 [Term]
 id: BFO:0000040
@@ -73,50 +88,82 @@ name: immaterial entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
+id: CARO:0000000
+name: anatomical entity
+is_a: CARO:0030000 ! biological entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
+
+[Term]
 id: CARO:0000003
-name: anatomical structure
+name: connected anatomical structure
 is_a: CARO:0000006 ! material anatomical entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
 
 [Term]
 id: CARO:0000006
 name: material anatomical entity
 is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
+relationship: RO:0002179 CARO:0000003 ! drains connected anatomical structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
+
+[Term]
+id: CARO:0000007
+name: immaterial anatomical entity
+is_a: BFO:0000141 ! immaterial entity
 
 [Term]
 id: CARO:0001000
 name: multi-cell-part structure
-is_a: CARO:0000003 ! anatomical structure
+is_a: CARO:0000003 ! connected anatomical structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
 
 [Term]
 id: CARO:0001001
 name: neuron projection bundle
 is_a: CARO:0001000 ! multi-cell-part structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
+
+[Term]
+id: CARO:0001010
+name: organism or virus or viroid
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: CARO:0010000
 name: multicellular anatomical structure
-is_a: CARO:0000003 ! anatomical structure
+is_a: CARO:0000003 ! connected anatomical structure
 relationship: RO:0002207 CARO:0010000 ! directly develops from multicellular anatomical structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
+
+[Term]
+id: CARO:0030000
+name: biological entity
+is_a: BFO:0000004 ! independent continuant
 
 [Term]
 id: CL:0000000
 name: cell
-is_a: CARO:0000003 ! anatomical structure
+is_a: CARO:0000003 ! connected anatomical structure
 relationship: RO:0002207 CL:0000000 ! directly develops from cell
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 
 [Term]
 id: CL:0000540
 name: neuron
 is_a: CL:0000000 ! cell
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 
 [Term]
 id: GO:0003674
 name: molecular_function
 is_a: BFO:0000015 ! process
+property_value: IAO:0000589 "molecular process" xsd:string
 
 [Term]
-id: GO:0004872
-name: receptor activity
+id: GO:0003824
+name: catalytic activity
+is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:0008150
@@ -124,9 +171,31 @@ name: biological_process
 is_a: BFO:0000015 ! process
 
 [Term]
+id: GO:0016301
+name: kinase activity
+is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
+
+[Term]
+id: GO:0016740
+name: transferase activity
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016772
+name: transferase activity, transferring phosphorus-containing groups
+is_a: GO:0016740 ! transferase activity
+
+[Term]
+id: OGMS:0000031
+name: disease
+def: "A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism." []
+is_a: BFO:0000016 ! disposition
+
+[Term]
 id: PATO:0000001
 name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
+property_value: IAO:0000589 "quality (PATO)" xsd:string
 
 [Term]
 id: PATO:0000051
@@ -175,6 +244,11 @@ id: RO:0002577
 name: system
 def: "A material entity consisting of multiple components that are causally integrated." []
 is_a: BFO:0000040 ! material entity
+
+[Term]
+id: UPHENO:0001001
+name: phenotype
+is_a: PATO:0000001 ! quality
 
 [Typedef]
 id: BFO:0000050
@@ -359,26 +433,6 @@ range: BFO:0000023 ! role
 is_a: RO:0000053 ! bearer of
 
 [Typedef]
-id: RO:0000300
-name: in neural circuit with
-def: "A relation that holds between two neurons connected directly via a synapse, or indirectly via a series of synaptically connected neurons." []
-is_transitive: true
-
-[Typedef]
-id: RO:0000301
-name: upstream in neural circuit with
-def: "A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next." []
-is_transitive: true
-is_a: RO:0000300 ! in neural circuit with
-
-[Typedef]
-id: RO:0000302
-name: downstream in neural circuit with
-def: "A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next." []
-is_transitive: true
-is_a: RO:0000300 ! in neural circuit with
-
-[Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
@@ -439,6 +493,7 @@ property_value: RO:0001900 RO:0001901
 domain: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
 range: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
 is_transitive: true
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002000
@@ -472,6 +527,8 @@ is_a: RO:0002323 ! mereotopologically related to
 [Typedef]
 id: RO:0002005
 name: innervated_by
+domain: CARO:0000003 ! connected anatomical structure
+range: CARO:0001001 ! neuron projection bundle
 inverse_of: RO:0002134 ! innervates
 
 [Typedef]
@@ -511,14 +568,9 @@ is_a: RO:0002018 ! has component process
 id: RO:0002018
 name: has component process
 def: "w 'has process component' p if p and w are processes,  w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
+domain: BFO:0000015 ! process
+range: BFO:0000015 ! process
 is_a: RO:0002180 ! has component
-
-[Typedef]
-id: RO:0002019
-name: has ligand
-def: "A relationship that holds between between a receptor and an chemical entity, typically a small molecule or peptide, that carries information between cells or compartments of a cell and which binds the receptor and regulates its effector function." []
-domain: GO:0004872 ! receptor activity
-is_a: RO:0002233 ! has input
 
 [Typedef]
 id: RO:0002022
@@ -546,7 +598,6 @@ name: has effector activity
 def: "A 'has effector activity' B if A and B are GO molecular functions (GO_0003674),  A 'has component activity' B and B is the effector (output function) of B.  Each compound function has only one effector activity." []
 is_functional: true
 is_a: RO:0002017 ! has component activity
-is_a: RO:0002211 ! regulates
 
 [Typedef]
 id: RO:0002086
@@ -580,20 +631,22 @@ is_a: BFO:0000063 ! precedes
 id: RO:0002103
 name: synapsed by
 def: "Relation between an anatomical structure (including cells) and a neuron that chemically synapses to it. " []
-is_a: RO:0000301 ! upstream in neural circuit with
+is_a: RO:0002485 ! receives input from
 inverse_of: RO:0002120 ! synapsed to
 
 [Typedef]
 id: RO:0002104
 name: has plasma membrane part
 def: "Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part." []
+domain: CARO:0000006 ! material anatomical entity
+range: CARO:0000006 ! material anatomical entity
 is_a: BFO:0000051 ! has part
 
 [Typedef]
 id: RO:0002120
 name: synapsed to
 def: " Relation between a neuron and an anatomical structure (including cells) that it chemically synapses to.\n        " []
-is_a: RO:0000302 ! downstream in neural circuit with
+is_a: RO:0002486 ! sends output to
 
 [Typedef]
 id: RO:0002131
@@ -603,6 +656,7 @@ holds_over_chain: BFO:0000050 BFO:0000050
 holds_over_chain: BFO:0000051 BFO:0000050
 holds_over_chain: BFO:0000051 RO:0002131
 is_a: RO:0002323 ! mereotopologically related to
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002134
@@ -620,15 +674,38 @@ range: BFO:0000004 ! independent continuant
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
+id: RO:0002156
+name: derived by descent from
+def: "d derived_by_descent_from a if d is specified by some genetic program that is sequence-inherited-from a genetic program that specifies a." []
+is_transitive: true
+is_a: RO:0002320 ! evolutionarily related to
+inverse_of: RO:0002157 ! has derived by descendant
+
+[Typedef]
+id: RO:0002157
+name: has derived by descendant
+def: "inverse of derived by descent from" []
+is_transitive: true
+is_a: RO:0002320 ! evolutionarily related to
+
+[Typedef]
+id: RO:0002158
+name: shares ancestor with
+def: "two individual entities d1 and d2 stand in a shares_ancestor_with relation if and only if there exists some a such that d1 derived_by_descent_from a and d2 derived_by_descent_from a." []
+holds_over_chain: RO:0002156 RO:0002157
+is_symmetric: true
+is_transitive: true
+is_a: RO:0002320 ! evolutionarily related to
+
+[Typedef]
 id: RO:0002162
 name: in taxon
 def: "x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed." []
-range: BFO:0000004 ! independent continuant
+range: CARO:0001010 ! organism or virus or viroid
 holds_over_chain: BFO:0000050 RO:0002162
 holds_over_chain: BFO:0000051 RO:0002162
 holds_over_chain: RO:0002202 RO:0002162
 holds_over_chain: RO:0002215 RO:0002162
-holds_over_chain: RO:0002217 RO:0002162
 holds_over_chain: RO:0002225 RO:0002162
 holds_over_chain: RO:0002254 RO:0002162
 holds_over_chain: RO:0002295 RO:0002162
@@ -657,8 +734,8 @@ is_a: RO:0002323 ! mereotopologically related to
 id: RO:0002177
 name: attached to part of
 def: "a is attached to part of b if a is attached to b, or a is attached to some p, where p is part of b." []
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
+domain: CARO:0000003 ! connected anatomical structure
+range: CARO:0000003 ! connected anatomical structure
 holds_over_chain: RO:0002371 BFO:0000050
 is_a: RO:0002323 ! mereotopologically related to
 is_a: RO:0002567 ! biomechanically related to
@@ -685,7 +762,7 @@ is_a: BFO:0000051 ! has part
 id: RO:0002200
 name: has phenotype
 def: "A relationship that holds between a biological entity and a phenotype. Here a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). The subject of this relationship can be an organism (where the organism has the phenotype, i.e. the qualities inhere in parts of this organism), a genomic entity such as a gene or genotype (if modifications of the gene or the genotype causes the phenotype), or a condition such as a disease (such that if the condition inheres in an organism, then the organism has the phenotype)." []
-domain: BFO:0000002 ! continuant
+range: UPHENO:0001001 ! phenotype
 inverse_of: RO:0002201 ! phenotype of
 
 [Typedef]
@@ -716,7 +793,7 @@ is_a: RO:0002388 ! has potential to directly develop into
 [Typedef]
 id: RO:0002207
 name: directly develops from
-def: "Candidate definition: x directly_develops from y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p, and a substantial portion of the matter of y comes from x, and the start of x is coincident with or after the end of y" []
+def: "Candidate definition: x directly_develops from y if and only if there exists some developmental process (GO:0032502) p such that x and y both participate in p, and x is the output of p and y is the input of p, and a substantial portion of the matter of x comes from y, and the start of x is coincident with or after the end of y." []
 is_a: RO:0002202 ! develops from
 inverse_of: RO:0002210 ! directly develops into
 
@@ -737,6 +814,7 @@ holds_over_chain: RO:0002578 RO:0002578
 is_transitive: true
 is_a: RO:0002411 ! causally upstream of
 inverse_of: RO:0002334 ! regulated by
+transitive_over: RO:0002025 ! has effector activity
 
 [Typedef]
 id: RO:0002212
@@ -775,17 +853,11 @@ is_a: RO:0002328 ! functionally related to
 is_a: RO:0002500 ! causal agent in process
 
 [Typedef]
-id: RO:0002217
-name: actively participates in
-def: "x actively participates in y if and only if x participates in y and x realizes some active role" []
-is_a: RO:0000056 ! participates in
-inverse_of: RO:0002218 ! has active participant
-
-[Typedef]
 id: RO:0002218
-name: has active participant
+name: obsolete has active participant
 def: "x has participant y if and only if x realizes some active role that inheres in y" []
 is_a: RO:0000057 ! has participant
+is_obsolete: true
 
 [Typedef]
 id: RO:0002219
@@ -851,7 +923,7 @@ is_a: RO:0002202 ! develops from
 id: RO:0002226
 name: develops in
 def: "x develops_in y if x is located in y whilst x is developing" []
-domain: CARO:0000003 ! anatomical structure
+domain: CARO:0000000 ! anatomical entity
 holds_over_chain: RO:0002207 RO:0001025
 is_a: RO:0002258 ! developmentally preceded by
 
@@ -923,8 +995,8 @@ is_a: RO:0002410 ! causally related to
 id: RO:0002254
 name: has developmental contribution from
 def: "x has developmental contribution from y iff x has some part z such that z develops from y" []
-domain: BFO:0000004 ! independent continuant
-range: CARO:0000003 ! anatomical structure
+domain: CARO:0000000 ! anatomical entity
+range: CARO:0000000 ! anatomical entity
 holds_over_chain: BFO:0000051 RO:0002202
 is_a: RO:0002258 ! developmentally preceded by
 inverse_of: RO:0002255 ! developmentally contributes to
@@ -941,8 +1013,8 @@ is_a: RO:0002385 ! has potential to developmentally contribute to
 id: RO:0002256
 name: developmentally induced by
 def: "t1 induced_by t2 if there is a process of developmental induction (GO:0031128) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor anatomical structure type T to T', where T' develops_from T" []
-domain: CARO:0000003 ! anatomical structure
-range: CARO:0000003 ! anatomical structure
+domain: CARO:0000003 ! connected anatomical structure
+range: CARO:0000003 ! connected anatomical structure
 is_a: RO:0002258 ! developmentally preceded by
 inverse_of: RO:0002257 ! developmentally induces
 
@@ -965,7 +1037,7 @@ inverse_of: RO:0002286 ! developmentally succeeded by
 [Typedef]
 id: RO:0002263
 name: acts upstream of
-def: "c involved in regulation of p if c enables f and f causally upstream of p" []
+def: "c acts upstream of p if and only if c enables some f that is involved in p' and p' occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p' are processes." []
 holds_over_chain: RO:0002327 RO:0002411
 is_a: RO:0002264 ! acts upstream of or within
 
@@ -1000,7 +1072,7 @@ id: RO:0002295
 name: results in developmental progression of
 def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
 domain: GO:0008150 ! biological_process
-range: CARO:0000003 ! anatomical structure
+range: CARO:0000003 ! connected anatomical structure
 is_a: RO:0002324 ! developmentally related to
 
 [Typedef]
@@ -1067,6 +1139,7 @@ transitive_over: RO:0002017 ! has component activity
 [Typedef]
 id: RO:0002328
 name: functionally related to
+def: "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." []
 
 [Typedef]
 id: RO:0002329
@@ -1080,6 +1153,7 @@ id: RO:0002331
 name: involved in
 def: "c involved_in p if and only if c enables some process p', and p' is part of p" []
 holds_over_chain: RO:0002327 BFO:0000050
+is_a: RO:0000056 ! participates in
 is_a: RO:0002431 ! involved in or involved in regulation of
 transitive_over: BFO:0000050 ! part of
 
@@ -1087,6 +1161,7 @@ transitive_over: BFO:0000050 ! part of
 id: RO:0002333
 name: enabled by
 def: "inverse of enables" []
+is_a: RO:0000057 ! has participant
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]
@@ -1161,6 +1236,7 @@ is_a: RO:0002177 ! attached to part of
 id: RO:0002372
 name: has muscle origin
 def: "m has_muscle_origin s iff m is attached_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to." []
+domain: CARO:0000003 ! connected anatomical structure
 is_a: RO:0002371 ! attached to
 is_a: RO:0002567 ! biomechanically related to
 
@@ -1168,14 +1244,16 @@ is_a: RO:0002567 ! biomechanically related to
 id: RO:0002373
 name: has muscle insertion
 def: "m has_muscle_insertion s iff m is attaches_to s, and it is the case that when m contracts, s moves. Insertions are usually connections of muscle via tendon to bone." []
+domain: CARO:0000003 ! connected anatomical structure
 is_a: RO:0002371 ! attached to
 is_a: RO:0002567 ! biomechanically related to
 
 [Typedef]
 id: RO:0002374
-name: has fused element
+name: derived from ancestral fusion of
 def: "x has_fused_element y iff: there exists some z : x has_part z, z homologous_to y, and y is a distinct element, the boundary between x and z is largely fiat" []
-is_a: RO:0002320 ! evolutionarily related to
+synonym: "has fused element" BROAD []
+is_a: RO:0002156 ! derived by descent from
 
 [Typedef]
 id: RO:0002375
@@ -1210,6 +1288,8 @@ inverse_of: RO:0002569 ! has branching part
 id: RO:0002384
 name: has developmental potential involving
 def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+domain: CARO:0000000 ! anatomical entity
+range: CARO:0000000 ! anatomical entity
 is_a: RO:0002324 ! developmentally related to
 
 [Typedef]
@@ -1255,7 +1335,6 @@ inverse_of: RO:0002412 ! immediately causally upstream of
 id: RO:0002410
 name: causally related to
 def: "This relation groups causal relations between material entities and causal relations between processes" []
-is_a: RO:0002609 ! related via dependence to
 
 [Typedef]
 id: RO:0002411
@@ -1300,6 +1379,7 @@ is_a: RO:0002431 ! involved in or involved in regulation of
 [Typedef]
 id: RO:0002429
 name: involved in positive regulation of
+def: "c involved in regulation of p if c is involved in some p' and p' positively regulates some p" []
 holds_over_chain: RO:0002327 RO:0002213
 holds_over_chain: RO:0002331 RO:0002213
 is_a: RO:0002428 ! involved in regulation of
@@ -1307,6 +1387,7 @@ is_a: RO:0002428 ! involved in regulation of
 [Typedef]
 id: RO:0002430
 name: involved in negative regulation of
+def: "c involved in regulation of p if c is involved in some p' and p' negatively regulates some p" []
 holds_over_chain: RO:0002327 RO:0002212
 holds_over_chain: RO:0002331 RO:0002212
 is_a: RO:0002428 ! involved in regulation of
@@ -1351,26 +1432,37 @@ is_symmetric: true
 is_a: RO:0002434 ! interacts with
 
 [Typedef]
-id: RO:0002448
-name: activity directly regulates activity of
-def: "Holds between molecular entities A and B where A can physically interact with B and in doing so regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A regulates the kinase activity of B." []
-synonym: "molecularly controls" EXACT []
+id: RO:0002447
+name: phosphorylates
 is_a: RO:0002436 ! molecularly interacts with
-is_a: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0002448
+name: directly regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that regulates an activity performed by B. For example, A and B may be gene products and binding of B by A regulates the kinase activity of B.\n\nA and B can be physically interacting but not necessarily. Immediately upstream means there are no intermediate entity between A and B." []
+synonym: "molecularly controls" EXACT []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002436 ! molecularly interacts with
+is_a: RO:0011002 ! regulates activity of
 
 [Typedef]
 id: RO:0002449
-name: activity directly negatively regulates activity of
-def: "Holds between molecular entities A and B where A can physically interact with B and in doing so negatively regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B." []
+name: directly negatively regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that negatively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B." []
 synonym: "molecularly decreases activity of" EXACT []
-is_a: RO:0002448 ! activity directly regulates activity of
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002448 ! directly regulates activity of
 
 [Typedef]
 id: RO:0002450
-name: activity directly positively regulates activity of
-def: "Holds between molecular entities A and B where A can physically interact with B and in doing so positively regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B." []
+name: directly positively regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that positively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B." []
 synonym: "molecularly increases activity of" EXACT []
-is_a: RO:0002448 ! activity directly regulates activity of
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002448 ! directly regulates activity of
 
 [Typedef]
 id: RO:0002451
@@ -1379,9 +1471,15 @@ def: "A relationship that holds between a disease and organism" []
 is_a: RO:0002321 ! ecologically related to
 
 [Typedef]
+id: RO:0002464
+name: helper property (not for use in curation)
+
+[Typedef]
 id: RO:0002473
 name: composed primarily of
 def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
 is_a: BFO:0000051 ! has part
 
 [Typedef]
@@ -1393,9 +1491,25 @@ range: BFO:0000004 ! independent continuant
 holds_over_chain: BFO:0000051 BFO:0000066
 
 [Typedef]
+id: RO:0002481
+name: is kinase activity
+is_a: RO:0002564 ! molecular interaction relation helper property
+
+[Typedef]
+id: RO:0002485
+name: receives input from
+is_a: RO:0002170 ! connected to
+inverse_of: RO:0002486 ! sends output to
+
+[Typedef]
+id: RO:0002486
+name: sends output to
+is_a: RO:0002170 ! connected to
+
+[Typedef]
 id: RO:0002487
-name: relation between structure and stage
-domain: BFO:0000002 ! continuant
+name: relation between physical entity and a process or stage
+domain: BFO:0000004 ! independent continuant
 range: BFO:0000003 ! occurrent
 
 [Typedef]
@@ -1416,7 +1530,7 @@ is_a: RO:0002488 ! existence starts during
 id: RO:0002490
 name: existence overlaps
 def: "x existence overlaps y if and only if either (a) the start of x is part of y or (b) the end of x is part of y. Formally: x existence starts and ends during y iff (α(x) >= α(y) & α(x) <= ω(y)) OR (ω(x) <= ω(y) & ω(x) >= α(y))" []
-is_a: RO:0002487 ! relation between structure and stage
+is_a: RO:0002487 ! relation between physical entity and a process or stage
 
 [Typedef]
 id: RO:0002492
@@ -1452,7 +1566,7 @@ name: existence starts during or after
 def: "x existence starts during or after y if and only if the time point at which x starts is after or equivalent to the time point at which y starts. Formally: x existence starts during or after y iff α (x) >= α (y)." []
 holds_over_chain: BFO:0000050 RO:0002496
 holds_over_chain: RO:0002258 RO:0002496
-is_a: RO:0002487 ! relation between structure and stage
+is_a: RO:0002487 ! relation between physical entity and a process or stage
 transitive_over: BFO:0000050 ! part of
 transitive_over: BFO:0000062 ! preceded by
 
@@ -1462,7 +1576,7 @@ name: existence ends during or before
 def: "x existence ends during or before y if and only if the time point at which x ends is before or equivalent to the time point at which y ends." []
 holds_over_chain: BFO:0000050 RO:0002497
 holds_over_chain: RO:0002286 RO:0002497
-is_a: RO:0002487 ! relation between structure and stage
+is_a: RO:0002487 ! relation between physical entity and a process or stage
 transitive_over: BFO:0000050 ! part of
 transitive_over: BFO:0000063 ! precedes
 
@@ -1487,9 +1601,9 @@ name: depends on
 
 [Typedef]
 id: RO:0002506
-name: causal relation between material entities
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
+name: causal relation between entities
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
@@ -1517,31 +1631,48 @@ domain: RO:0002577 ! system
 range: BFO:0000040 ! material entity
 holds_over_chain: RO:0002507 BFO:0000050
 is_a: RO:0002131 ! overlaps
-is_a: RO:0002506 ! causal relation between material entities
+is_a: RO:0002506 ! causal relation between entities
 
 [Typedef]
 id: RO:0002551
 name: has skeleton
 def: "A relation between a segment or subdivision of an organism and the maximal subdivision of material entities that provides structural support for that segment or subdivision." []
+domain: CARO:0000003 ! connected anatomical structure
+range: CARO:0000006 ! material anatomical entity
 is_a: BFO:0000051 ! has part
 inverse_of: RO:0002576 ! skeleton of
+is_asymmetric: true
 
 [Typedef]
 id: RO:0002559
 name: causally influenced by
-is_a: RO:0002506 ! causal relation between material entities
+is_a: RO:0002506 ! causal relation between entities
 inverse_of: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0002563
+name: interaction relation helper property
+is_a: RO:0002464 ! helper property (not for use in curation)
+
+[Typedef]
+id: RO:0002564
+name: molecular interaction relation helper property
+is_a: RO:0002563 ! interaction relation helper property
 
 [Typedef]
 id: RO:0002566
 name: causally influences
-def: "Holds between materal entities a and b if the activity of a is causally upstream of the activity of b, or causally upstream of a an activity that modifies b" []
-is_a: RO:0002506 ! causal relation between material entities
+def: "The entity or characteristic A is causally upstream of the entity or characteristic B, A having an effect on B. An entity corresponds to any biological type of entity as long as a mass is measurable. A characteristic corresponds to a particular specificity of an entity (e.g., phenotype, shape, size)." []
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
+is_a: RO:0002506 ! causal relation between entities
 
 [Typedef]
 id: RO:0002567
 name: biomechanically related to
 def: "A relation that holds between elements of a musculoskeletal system or its analogs." []
+domain: CARO:0000003 ! connected anatomical structure
+range: CARO:0000003 ! connected anatomical structure
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]
@@ -1575,13 +1706,14 @@ id: RO:0002573
 name: has modifier
 def: "A relation that holds between an attribute or a qualifier and another attribute." []
 domain: BFO:0000020 ! specifically dependent continuant
+range: BFO:0000020 ! specifically dependent continuant
 
 [Typedef]
 id: RO:0002576
 name: skeleton of
 def: "inverse of has skeleton" []
-domain: CARO:0000003 ! anatomical structure
-range: CARO:0000003 ! anatomical structure
+domain: CARO:0000003 ! connected anatomical structure
+range: CARO:0000003 ! connected anatomical structure
 is_a: BFO:0000050 ! part of
 
 [Typedef]
@@ -1633,11 +1765,6 @@ id: RO:0002608
 name: process has causal agent
 def: "Inverse of 'causal agent in process'" []
 is_a: RO:0002410 ! causally related to
-
-[Typedef]
-id: RO:0002609
-name: related via dependence to
-def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
 
 [Typedef]
 id: RO:0002629
@@ -1707,7 +1834,7 @@ is_a: RO:0002410 ! causally related to
 [Typedef]
 id: RO:0004019
 name: disease has basis in
-domain: BFO:0000016 ! disposition
+domain: OGMS:0000031 ! disease
 is_a: RO:0004017 ! realizable has basis in
 is_a: RO:0004023 ! causal relationship with disease as subject
 
@@ -1715,7 +1842,7 @@ is_a: RO:0004023 ! causal relationship with disease as subject
 id: RO:0004020
 name: disease has basis in dysfunction of
 def: "A relation that holds between the disease and a material entity where the physical basis of the disease is a disorder of that material entity that affects its function." []
-range: BFO:0000040 ! material entity
+range: CARO:0000006 ! material anatomical entity
 is_a: RO:0004019 ! disease has basis in
 
 [Typedef]
@@ -1729,27 +1856,32 @@ is_a: RO:0004019 ! disease has basis in
 id: RO:0004022
 name: disease has basis in feature
 def: "A relation that holds between the disease and a feature (a phenotype or other disease) where the physical basis of the disease is the feature." []
+domain: OGMS:0000031 ! disease
 is_a: RO:0002200 ! has phenotype
 is_a: RO:0004019 ! disease has basis in
 
 [Typedef]
 id: RO:0004023
 name: causal relationship with disease as subject
-domain: BFO:0000016 ! disposition
+domain: OGMS:0000031 ! disease
 is_a: RO:0002410 ! causally related to
+is_a: RO:0040035 ! disease relationship
 
 [Typedef]
 id: RO:0004024
 name: disease causes disruption of
 def: "A relationship between a disease and a process where the disease process disrupts the execution of the process." []
+domain: OGMS:0000031 ! disease
 range: BFO:0000015 ! process
+holds_over_chain: RO:0004025 RO:0002215
 is_a: RO:0004023 ! causal relationship with disease as subject
 transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0004025
 name: disease causes dysfunction of
-range: BFO:0000004 ! independent continuant
+domain: OGMS:0000031 ! disease
+range: CARO:0000006 ! material anatomical entity
 is_a: RO:0004023 ! causal relationship with disease as subject
 transitive_over: BFO:0000050 ! part of
 
@@ -1757,13 +1889,16 @@ transitive_over: BFO:0000050 ! part of
 id: RO:0004026
 name: disease has location
 def: "A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity." []
+domain: OGMS:0000031 ! disease
 range: BFO:0000004 ! independent continuant
-is_a: RO:0004023 ! causal relationship with disease as subject
+is_a: RO:0040035 ! disease relationship
 
 [Typedef]
 id: RO:0004027
 name: disease has inflammation site
 def: "A relationship between a disease and an anatomical entity where the disease is triggered by an inflammatory response to stimuli occurring in the anatomical entity" []
+domain: OGMS:0000031 ! disease
+range: CARO:0000003 ! connected anatomical structure
 is_a: RO:0004026 ! disease has location
 
 [Typedef]
@@ -1779,13 +1914,14 @@ is_a: RO:0002410 ! causally related to
 id: RO:0004029
 name: disease has feature
 def: "A relationship between a disease and some feature of that disease, where the feature is either a phenotype or an isolated disease." []
-is_a: RO:0004023 ! causal relationship with disease as subject
+domain: OGMS:0000031 ! disease
+is_a: RO:0040035 ! disease relationship
 
 [Typedef]
 id: RO:0004030
 name: disease arises from structure
 def: "A relationship between a disease and an anatomical structure where the material basis of the disease is some pathological change in the structure." []
-range: CARO:0000003 ! anatomical structure
+range: CARO:0000003 ! connected anatomical structure
 is_a: RO:0004019 ! disease has basis in
 
 [Typedef]
@@ -1841,4 +1977,17 @@ synonym: "triggered by process" EXACT []
 domain: BFO:0000017 ! realizable entity
 range: BFO:0000015 ! process
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0011002
+name: regulates activity of
+def: "The entity A has an activity that regulates an activity of the entity B. For example, A and B are gene products where the catalytic activity of A regulates the kinase activity of B." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0040035
+name: disease relationship
+def: "This relation groups  relations between diseases and any other kind of entity." []
 

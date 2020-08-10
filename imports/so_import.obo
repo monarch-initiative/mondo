@@ -1,0 +1,587 @@
+format-version: 1.2
+ontology: mondo/imports/so_import
+
+[Term]
+id: SO:0000001
+name: region
+def: "A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids." []
+synonym: "sequence" EXACT []
+is_a: SO:0000110 ! sequence_feature
+
+[Term]
+id: SO:0000010
+name: protein_coding
+def: "A gene which, when transcribed, can be translated into a protein." []
+synonym: "protein-coding" EXACT []
+is_a: SO:0000401 ! gene_attribute
+
+[Term]
+id: SO:0000011
+name: non_protein_coding
+def: "A gene which can be transcribed, but will not be translated into a protein." []
+synonym: "non protein-coding" EXACT []
+is_a: SO:0000401 ! gene_attribute
+
+[Term]
+id: SO:0000110
+name: sequence_feature
+def: "Any extent of continuous biological sequence." []
+synonym: "INSDC_feature:misc_feature" EXACT []
+synonym: "INSDC_note:other" EXACT []
+synonym: "INSDC_note:sequence_feature" EXACT []
+synonym: "located sequence feature" RELATED []
+synonym: "located_sequence_feature" EXACT []
+synonym: "sequence feature" EXACT []
+disjoint_from: SO:0000400 ! sequence_attribute
+
+[Term]
+id: SO:0000159
+name: deletion
+def: "The point at which one or more contiguous nucleotides were excised." []
+synonym: "deleted_sequence" EXACT []
+synonym: "nucleotide deletion" EXACT []
+synonym: "nucleotide_deletion" EXACT []
+is_a: SO:0001059 ! sequence_alteration
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000185
+name: primary_transcript
+def: "A transcript that in its initial state requires modification to be functional." []
+synonym: "INSDC_feature:precursor_RNA" EXACT []
+synonym: "INSDC_feature:prim_transcript" EXACT []
+synonym: "precursor RNA" EXACT []
+synonym: "primary transcript" EXACT []
+is_a: SO:0000673 ! transcript
+
+[Term]
+id: SO:0000209
+name: rRNA_primary_transcript
+def: "A primary transcript encoding a ribosomal RNA." []
+synonym: "ribosomal RNA primary transcript" EXACT []
+synonym: "rRNA primary transcript" EXACT []
+is_a: SO:0000483 ! nc_primary_transcript
+
+[Term]
+id: SO:0000233
+name: mature_transcript
+def: "A transcript which has undergone the necessary modifications, if any, for its function. In eukaryotes this includes, for example, processing of introns, cleavage, base modification, and modifications to the 5' and/or the 3' ends, other than addition of bases. In bacteria functional mRNAs are usually not modified." []
+synonym: "mature transcript" EXACT []
+is_a: SO:0000673 ! transcript
+relationship: derives_from SO:0000185 ! primary_transcript
+
+[Term]
+id: SO:0000240
+name: chromosome_variation
+def: "A deviation in chromosome structure or number." []
+synonym: "chromosome variation" EXACT []
+is_a: SO:0001507 ! variant_collection
+relationship: part_of SO:0001524 ! chromosomally_aberrant_genome
+
+[Term]
+id: SO:0000248
+name: sequence_length_alteration
+def: "A kind of kind of sequence alteration where the copies of a region present varies across a population." []
+synonym: "sequence length alteration" EXACT []
+is_a: SO:0001059 ! sequence_alteration
+
+[Term]
+id: SO:0000252
+name: rRNA
+def: "RNA that comprises part of a ribosome, and that can provide both structural scaffolding and catalytic activity." []
+synonym: "INSDC_feature:rRNA" EXACT []
+synonym: "INSDC_qualifier:unknown" BROAD []
+synonym: "ribosomal ribonucleic acid" EXACT []
+synonym: "ribosomal RNA" EXACT []
+is_a: SO:0000655 ! ncRNA
+relationship: derives_from SO:0000209 ! rRNA_primary_transcript
+
+[Term]
+id: SO:0000298
+name: recombination_feature
+def: "A feature where there has been exchange of genetic material in the event of mitosis or meiosis" []
+synonym: "INSDC_feature:misc_recomb" BROAD []
+synonym: "INSDC_qualifier:other" EXACT []
+synonym: "recombination feature" EXACT []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0000299
+name: specific_recombination_site
+def: "A location where recombination or occurs during mitosis or meiosis." []
+synonym: "specific recombination site" EXACT []
+is_a: SO:0000669 ! sequence_rearrangement_feature
+
+[Term]
+id: SO:0000300
+name: recombination_feature_of_rearranged_gene
+def: "A location where a gene is rearranged due to recombination during mitosis or meiosis." []
+synonym: "recombination feature of rearranged gene" EXACT []
+is_a: SO:0000299 ! specific_recombination_site
+
+[Term]
+id: SO:0000301
+name: vertebrate_immune_system_gene_recombination_feature
+def: "A feature where recombination has occurred for the purpose of generating a diversity in the immune system." []
+synonym: "vertebrate immune system gene recombination feature" EXACT []
+is_a: SO:0000300 ! recombination_feature_of_rearranged_gene
+
+[Term]
+id: SO:0000325
+name: rRNA_large_subunit_primary_transcript
+def: "A primary transcript encoding a large ribosomal subunit RNA." []
+synonym: "35S rRNA primary transcript" EXACT []
+synonym: "rRNA large subunit primary transcript" EXACT []
+is_a: SO:0000209 ! rRNA_primary_transcript
+
+[Term]
+id: SO:0000342
+name: site_specific_recombination_target_region
+def: "A region specifically recognised by a recombinase where recombination can occur during mitosis or meiosis." []
+synonym: "site specific recombination target region" EXACT []
+is_a: SO:0000299 ! specific_recombination_site
+
+[Term]
+id: SO:0000400
+name: sequence_attribute
+def: "An attribute describes a quality of sequence." []
+synonym: "sequence attribute" EXACT []
+
+[Term]
+id: SO:0000401
+name: gene_attribute
+def: "An attribute describing a gene." []
+synonym: "gene attribute" EXACT []
+is_a: SO:0000733 ! feature_attribute
+
+[Term]
+id: SO:0000460
+name: vertebrate_immunoglobulin_T_cell_receptor_segment
+def: "Germline genomic DNA with the sequence for a V, D, C, or J portion of an immunoglobulin/T-cell receptor." []
+synonym: "vertebrate immunoglobulin T cell receptor segment" EXACT []
+synonym: "vertebrate_immunoglobulin/T-cell receptor gene" EXACT []
+is_a: SO:0000301 ! vertebrate_immune_system_gene_recombination_feature
+
+[Term]
+id: SO:0000483
+name: nc_primary_transcript
+def: "A primary transcript that is never translated into a protein." []
+synonym: "nc primary transcript" EXACT []
+synonym: "noncoding primary transcript" EXACT []
+is_a: SO:0000185 ! primary_transcript
+
+[Term]
+id: SO:0000571
+name: miRNA_encoding
+def: "A region that can be transcribed into a microRNA (miRNA)." []
+synonym: "miRNA encoding" EXACT []
+is_a: SO:0000011 ! non_protein_coding
+
+[Term]
+id: SO:0000578
+name: snoRNA_encoding
+def: "A region that can be transcribed into a small nucleolar RNA (snoRNA)." []
+synonym: "snoRNA encoding" EXACT []
+is_a: SO:0000011 ! non_protein_coding
+
+[Term]
+id: SO:0000651
+name: large_subunit_rRNA
+def: "Ribosomal RNA transcript that structures the large subunit of the ribosome." []
+synonym: "large subunit rRNA" EXACT []
+synonym: "LSU RNA" EXACT []
+synonym: "LSU rRNA" EXACT []
+is_a: SO:0000252 ! rRNA
+relationship: derives_from SO:0000325 ! rRNA_large_subunit_primary_transcript
+
+[Term]
+id: SO:0000655
+name: ncRNA
+def: "An RNA transcript that does not encode for a protein rather the RNA molecule is the gene product." []
+synonym: "INSDC_qualifier:other" BROAD []
+synonym: "known_ncrna" EXACT []
+synonym: "noncoding RNA" EXACT []
+is_a: SO:0000233 ! mature_transcript
+
+[Term]
+id: SO:0000656
+name: stRNA_encoding
+def: "A region that can be transcribed into a small temporal RNA (stRNA). Found in roundworm development." []
+synonym: "stRNA encoding" EXACT []
+is_a: SO:0000011 ! non_protein_coding
+
+[Term]
+id: SO:0000663
+name: tRNA_encoding
+def: "A region that can be transcribed into a  transfer RNA (tRNA)." []
+synonym: "tRNA encoding" EXACT []
+is_a: SO:0000011 ! non_protein_coding
+
+[Term]
+id: SO:0000669
+name: sequence_rearrangement_feature
+def: "A feature where a segment of DNA has been rearranged from what it was in the parent cell." []
+synonym: "sequence rearrangement feature" EXACT []
+is_a: SO:0000298 ! recombination_feature
+
+[Term]
+id: SO:0000673
+name: transcript
+def: "An RNA synthesized on a DNA or RNA template by an RNA polymerase." []
+synonym: "INSDC_feature:misc_RNA" BROAD []
+is_a: SO:0000831 ! gene_member_region
+relationship: overlaps SO:0002300 ! unit_of_gene_expression
+
+[Term]
+id: SO:0000704
+name: gene
+def: "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions." []
+synonym: "INSDC_feature:gene" EXACT []
+is_a: SO:0001411 ! biological_region
+relationship: member_of SO:0005855 ! gene_group
+
+[Term]
+id: SO:0000733
+name: feature_attribute
+def: "An attribute describing a located_sequence_feature." []
+synonym: "feature attribute" EXACT []
+is_a: SO:0000400 ! sequence_attribute
+
+[Term]
+id: SO:0000831
+name: gene_member_region
+def: "A region of a gene." []
+synonym: "gene member region" EXACT []
+is_a: SO:0001411 ! biological_region
+relationship: member_of SO:0000704 ! gene
+
+[Term]
+id: SO:0000946
+name: integration_excision_site
+def: "A region specifically recognised by a recombinase, which inserts or removes another region marked by a distinct cognate integration/excision site." []
+synonym: "attachment site" RELATED []
+synonym: "integration excision site" EXACT []
+is_a: SO:0000342 ! site_specific_recombination_target_region
+
+[Term]
+id: SO:0001019
+name: copy_number_variation
+def: "A variation that increases or decreases the copy number of a given region." []
+synonym: "CNP" EXACT []
+synonym: "CNV" EXACT []
+synonym: "copy number polymorphism" EXACT []
+synonym: "copy number variation" EXACT []
+is_a: SO:0000248 ! sequence_length_alteration
+
+[Term]
+id: SO:0001026
+name: genome
+def: "A genome is the sum of genetic material within a cell or virion." []
+is_a: SO:0001260 ! sequence_collection
+intersection_of: SO:0001260 ! sequence_collection
+intersection_of: has_part SO:0001235 ! replicon
+relationship: has_part SO:0001235 ! replicon
+
+[Term]
+id: SO:0001059
+name: sequence_alteration
+def: "A sequence_alteration is a sequence_feature whose extent is the deviation from another sequence." []
+synonym: "INSDC_feature:misc_feature" BROAD []
+synonym: "INSDC_feature:variation" EXACT []
+synonym: "INSDC_note:sequence_alteration" EXACT []
+synonym: "partially characterised change in DNA sequence" NARROW []
+synonym: "partially_characterised_change_in_DNA_sequence" NARROW []
+synonym: "sequence alteration" EXACT []
+synonym: "sequence variation" RELATED []
+synonym: "uncharacterised_change_in_nucleotide_sequence" NARROW []
+is_a: SO:0002072 ! sequence_comparison
+
+[Term]
+id: SO:0001217
+name: protein_coding_gene
+def: "A gene that codes for an RNA that can be translated into a protein." []
+synonym: "protein coding gene" EXACT []
+is_a: SO:0000704 ! gene
+intersection_of: SO:0000704 ! gene
+intersection_of: has_quality SO:0000010 ! protein_coding
+relationship: has_quality SO:0000010 ! protein_coding
+
+[Term]
+id: SO:0001235
+name: replicon
+def: "A region containing at least one unique origin of replication and a unique termination site." []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0001260
+name: sequence_collection
+def: "A collection of discontinuous sequences." []
+synonym: "sequence collection" EXACT []
+
+[Term]
+id: SO:0001263
+name: ncRNA_gene
+def: "A gene that encodes a non-coding RNA." []
+synonym: "ncRNA gene" EXACT []
+synonym: "non-coding RNA gene" EXACT []
+is_a: SO:0000704 ! gene
+
+[Term]
+id: SO:0001265
+name: miRNA_gene
+def: "A small noncoding RNA of approximately 22 nucleotides in length which may be involved in regulation of gene expression." []
+synonym: "miRNA gene" EXACT []
+synonym: "stRNA gene" EXACT []
+synonym: "stRNA_gene" EXACT []
+is_a: SO:0001263 ! ncRNA_gene
+intersection_of: SO:0001263 ! ncRNA_gene
+intersection_of: has_quality SO:0000571 ! miRNA_encoding
+intersection_of: has_quality SO:0000656 ! stRNA_encoding
+relationship: has_quality SO:0000571 ! miRNA_encoding
+relationship: has_quality SO:0000656 ! stRNA_encoding
+
+[Term]
+id: SO:0001267
+name: snoRNA_gene
+def: "A small noncoding RNA that guides chemical modification of other RNAs." []
+synonym: "snoRNA gene" EXACT []
+is_a: SO:0001263 ! ncRNA_gene
+intersection_of: SO:0001263 ! ncRNA_gene
+intersection_of: has_quality SO:0000578 ! snoRNA_encoding
+relationship: has_quality SO:0000578 ! snoRNA_encoding
+
+[Term]
+id: SO:0001268
+name: snRNA_gene
+def: "A gene that encodes a small nuclear RNA." []
+synonym: "small nuclear RNA gene" EXACT []
+synonym: "snRNA gene" EXACT []
+is_a: SO:0001263 ! ncRNA_gene
+
+[Term]
+id: SO:0001272
+name: tRNA_gene
+def: "A noncoding RNA that binds to a specific amino acid to allow that amino acid to be used by the ribosome during translation of RNA." []
+synonym: "tRNA gene" EXACT []
+is_a: SO:0001263 ! ncRNA_gene
+intersection_of: SO:0001263 ! ncRNA_gene
+intersection_of: has_quality SO:0000663 ! tRNA_encoding
+relationship: has_quality SO:0000663 ! tRNA_encoding
+
+[Term]
+id: SO:0001411
+name: biological_region
+def: "A region defined by its disposition to be involved in a biological process." []
+synonym: "biological region" EXACT []
+synonym: "INSDC_misc_feature" BROAD []
+synonym: "INSDC_note:biological_region" EXACT []
+is_a: SO:0000001 ! region
+
+[Term]
+id: SO:0001483
+name: SNV
+def: "SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist." []
+synonym: "single nucleotide variant" EXACT []
+is_a: SO:1000002 ! substitution
+
+[Term]
+id: SO:0001500
+name: heritable_phenotypic_marker
+def: "A biological_region characterized as a single heritable trait in a phenotype screen. The heritable phenotype may be mapped to a chromosome but generally has not been characterized to a specific gene locus." []
+synonym: "heritable phenotypic marker" EXACT []
+synonym: "phenotypic marker" EXACT []
+is_a: SO:0001645 ! genetic_marker
+
+[Term]
+id: SO:0001506
+name: variant_genome
+def: "A collection of sequences (often chromosomes) of an individual." []
+synonym: "variant genome" RELATED []
+is_a: SO:0001026 ! genome
+
+[Term]
+id: SO:0001507
+name: variant_collection
+def: "A collection of one or more sequences of an individual." []
+synonym: "variant collection" RELATED []
+is_a: SO:0001260 ! sequence_collection
+intersection_of: SO:0001260 ! sequence_collection
+intersection_of: has_part SO:0001059 ! sequence_alteration
+relationship: has_part SO:0001059 ! sequence_alteration
+
+[Term]
+id: SO:0001508
+name: alteration_attribute
+def: "An attribute of alteration of one or more chromosomes." []
+synonym: "alteration attribute" EXACT []
+is_a: SO:0000733 ! feature_attribute
+
+[Term]
+id: SO:0001509
+name: chromosomal_variation_attribute
+def: "An attribute of a change in the structure or number of a chromosomes." []
+synonym: "chromosomal variation attribute" EXACT []
+is_a: SO:0001508 ! alteration_attribute
+
+[Term]
+id: SO:0001510
+name: intrachromosomal
+def: "A change in chromosomes that occurs between two separate chromosomes." []
+is_a: SO:0001509 ! chromosomal_variation_attribute
+
+[Term]
+id: SO:0001524
+name: chromosomally_aberrant_genome
+def: "When a genome contains an abnormal amount of chromosomes." []
+synonym: "chromosomally aberrant genome" RELATED []
+is_a: SO:0001506 ! variant_genome
+
+[Term]
+id: SO:0001637
+name: rRNA_gene
+def: "A gene that encodes for ribosomal RNA." []
+synonym: "rDNA" EXACT []
+synonym: "rRNA gene" EXACT []
+is_a: SO:0001263 ! ncRNA_gene
+
+[Term]
+id: SO:0001645
+name: genetic_marker
+def: "A measurable sequence feature that varies within a population." []
+synonym: "genetic marker" RELATED []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0001877
+name: lnc_RNA
+def: "A non-coding RNA over 200nucleotides in length." []
+synonym: "INSDC_feature:ncRNA" BROAD []
+synonym: "INSDC_qualifier:lncRNA" EXACT []
+synonym: "lncRNA_transcript" EXACT []
+synonym: "long non-coding RNA" EXACT []
+is_a: SO:0000655 ! ncRNA
+
+[Term]
+id: SO:0002072
+name: sequence_comparison
+def: "A position or feature where two sequences have been compared." []
+synonym: "INSDC_feature:misc_feature" BROAD []
+synonym: "INSDC_note:sequence_comparison" EXACT []
+synonym: "sequence comparison" EXACT []
+is_a: SO:0000110 ! sequence_feature
+
+[Term]
+id: SO:0002121
+name: vertebrate_immune_system_gene
+def: "The configuration of the  IG and TR variable (V), diversity (D) and joining (J) germline genes before DNA rearrangements  (with or without constant (C) genes in undefined configuration. (germline, non rearranged regions of the IG DNA loci)." []
+synonym: "immune_gene" EXACT []
+is_a: SO:0000704 ! gene
+
+[Term]
+id: SO:0002122
+name: immunoglobulin_gene
+def: "A germline immunoglobulin  gene." []
+synonym: "All_IG_genes" EXACT []
+synonym: "IG_genes" EXACT []
+is_a: SO:0002121 ! vertebrate_immune_system_gene
+
+[Term]
+id: SO:0002300
+name: unit_of_gene_expression
+def: "Transcription units or transcribed coding sequences." []
+synonym: "unit of gene expression" EXACT []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:0005855
+name: gene_group
+def: "A collection of related genes." []
+synonym: "gene group" EXACT []
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:1000002
+name: substitution
+def: "A sequence alteration where the length of the change in the variant is the same as that of the reference." []
+is_a: SO:0001059 ! sequence_alteration
+is_a: SO:0001411 ! biological_region
+
+[Term]
+id: SO:1000008
+name: point_mutation
+def: "A single nucleotide change which has occurred at the same position of a corresponding nucleotide in a reference sequence." []
+synonym: "point mutation" EXACT []
+is_a: SO:0001483 ! SNV
+
+[Term]
+id: SO:1000028
+name: intrachromosomal_mutation
+def: "A chromosomal structure variation within a single chromosome." []
+synonym: "intrachromosomal mutation" EXACT []
+is_a: SO:1000183 ! chromosome_structure_variation
+intersection_of: SO:1000183 ! chromosome_structure_variation
+intersection_of: has_quality SO:0001510 ! intrachromosomal
+relationship: has_quality SO:0001510 ! intrachromosomal
+
+[Term]
+id: SO:1000029
+name: chromosomal_deletion
+def: "An incomplete chromosome." []
+synonym: "(bacteria)&ampDgr;" RELATED []
+synonym: "(Drosophila)Df" RELATED []
+synonym: "(fungi)D" RELATED []
+synonym: "chromosomal deletion" EXACT []
+synonym: "deficiency" EXACT []
+is_a: SO:1000028 ! intrachromosomal_mutation
+intersection_of: SO:1000028 ! intrachromosomal_mutation
+intersection_of: has_part SO:0000159 ! deletion
+relationship: has_part SO:0000159 ! deletion
+
+[Term]
+id: SO:1000037
+name: chromosomal_duplication
+def: "An extra chromosome." []
+synonym: "(Drosophila)Dp" RELATED []
+synonym: "(fungi)Dp" RELATED []
+synonym: "chromosomal duplication" EXACT []
+is_a: SO:1000183 ! chromosome_structure_variation
+
+[Term]
+id: SO:1000183
+name: chromosome_structure_variation
+def: "An alteration of the genome that leads to a change in the structure or number of one or more chromosomes." []
+synonym: "chromosome structure variation" EXACT []
+synonym: "snpEff:CHROMOSOME_LARGE_DELETION" EXACT []
+is_a: SO:0000240 ! chromosome_variation
+
+[Typedef]
+id: derives_from
+name: derives_from
+is_transitive: true
+
+[Typedef]
+id: has_part
+name: has_part
+def: "Inverse of part_of." []
+
+[Typedef]
+id: has_quality
+name: has_quality
+
+[Typedef]
+id: member_of
+name: member_of
+is_transitive: true
+is_a: part_of ! part_of
+
+[Typedef]
+id: overlaps
+name: overlaps
+def: "X overlaps Y iff there exists some Z such that Z contained_by X and Z contained_by Y." []
+
+[Typedef]
+id: part_of
+name: part_of
+def: "X part_of Y if X is a subregion of Y." []
+is_transitive: true
+

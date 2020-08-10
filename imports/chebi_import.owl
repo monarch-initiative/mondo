@@ -29,6 +29,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0100001 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0100001"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -129,6 +135,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36338"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Elementary particle not affected by the strong force having a spin 1/2, a negative elementary charge and a rest mass of 0.000548579903(13) u, or 0.51099906(15) MeV.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electron</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Elektron</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta(-)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta-particle</oboInOwl:hasRelatedSynonym>
@@ -252,7 +259,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_132233">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_32877"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary amine that is isopropylamine in which a hydrogen attached to one of the methyl grops has been replaced by a phenyl group.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary amine that is isopropylamine in which a hydrogen attached to one of the methyl groups has been replaced by a phenyl group.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-phenylpropan-2-amine</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-phenylpropan-2-amine</rdfs:label>
     </owl:Class>
@@ -279,7 +286,6 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A diol in which the two hydroxy groups are on different carbon atoms, usually but not necessarily adjacent.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glycols</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glykol</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a glycol</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glycol</rdfs:label>
     </owl:Class>
     
@@ -333,10 +339,29 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_32863"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organic cation obtained by protonation of any secondary amine; major species at pH 7.3.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organic cation obtained by protonation of any secondary amino compound; major species at pH 7.3.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a secondary amine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary amine(1+)</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary ammonium ion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_137982 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_137982">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25697"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50996"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organic cation obtained by protonation of the amino group of any tertiary amino compound.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a tertiary amine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tertiary amine(1+)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tertiary ammonium ions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tertiary ammonium ion</rdfs:label>
     </owl:Class>
     
 
@@ -387,6 +412,56 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_139589 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_139589">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29067"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A carboxylic acid anion obtained by deprotonation of any retinoid carboxy group.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoates</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoid anions</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoid carboxylate anion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoid carboxylate anions</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoid carboxylic acid anion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoid carboxylic acid anions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">retinoid anion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_140310 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_140310">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22712"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_47622"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An acetate ester obtained by formal condensation of the carboxy group of acetic acid with the hydroxy group of any phenol.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a phenyl acetate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenyl acetate derivative</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenyl acetate derivatives</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenyl acetates</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_141668 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_141668">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_65296"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46209"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary ammonium ion resulting from the protonation of the amino group of L-tyrosinal.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S)-1-(4-hydroxyphenyl)-3-oxopropan-2-aminium</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S)-1-(p-hydroxyphenyl)-3-oxopropan-2-aminium</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-tyrosinal</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-tyrosinal(1+)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_14321 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_14321">
@@ -420,6 +495,61 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_145795 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_145795">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25696"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_4551"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organic anion that is the conjugate base of digoxin resulting from the deprotonation of furanone moiety; major species at pH 7.3.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12beta,14-dihydroxy-17beta-(5-oxo-2,5-dihydrofuran-2-id-3-yl)-5beta,14beta-androstan-3beta-yl 2,6-dideoxy-beta-D-ribo-hexopyranosyl-(1-&gt;4)-2,6-dideoxy-beta-D-ribo-hexopyranosyl-(1-&gt;4)-2,6-dideoxy-beta-D-ribo-hexopyranoside</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">digoxin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">digoxin anion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">digoxin(1-)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_149552 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_149552">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23888"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any agent that induces nausea and vomiting.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">emetics</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">emetic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_149689 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_149689">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35238"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_enantiomer_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_57504"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_tautomer_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_49169"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An amino acid zwitterion obtained from the transfer of a proton from the carboxy group to the amino group of D-dopa. Major microspecies at pH 7.3.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2R)-2-azaniumyl-3-(3,4-dihydroxyphenyl)propanoate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2R)-2-ammonio-3-(3,4-dihydroxyphenyl)propanoate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D-dopa</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D-dopa zwitterion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_15022 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_15022">
@@ -436,7 +566,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_15036 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_15036">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26537"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_139589"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35757"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -457,7 +587,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51086"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A molecular entity that can accept an electron, a pair of electrons, an atom or a group from another molecular entity.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acceptor</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acceptor</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akzeptor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hydrogen-acceptor</oboInOwl:hasRelatedSynonym>
@@ -471,9 +600,9 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_15365 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_15365">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_140310"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22723"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26596"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_47622"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -675,6 +804,7 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-amino-6-(1,2-dihydroxypropyl)-5,6,7,8-tetrahydropteridin-4(3H)-one</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5,6,7,8-TETRAHYDROBIOPTERIN</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5,6,7,8-Tetrahydrobiopterin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5,6,7,8-tetrahydrobiopterin</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-Amino-6-(1,2-dihydroxypropyl)-5,6,7,8-tetrahydoro-4(1H)-pteridinone</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BH4</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tetrahydrobiopterin</oboInOwl:hasRelatedSynonym>
@@ -981,6 +1111,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76924"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77746"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1047,6 +1183,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23354"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1424,6 +1566,7 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UREA</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Urea</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">urea</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1728</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carbamide</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E927b</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H2NC(O)NH2</oboInOwl:hasRelatedSynonym>
@@ -1470,8 +1613,8 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_16277 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16277">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17792"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25384"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36684"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
@@ -1498,6 +1641,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35703"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50904"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1669,6 +1818,7 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carbon dioxide</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carbon dioxide</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dioxidocarbon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">methanedione</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CO2</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E 290</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E-290</oboInOwl:hasRelatedSynonym>
@@ -1756,6 +1906,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16705">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25865"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50904"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
@@ -2025,6 +2181,7 @@
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Galactosylsphingosine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O-Galactosylsphingosine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O-galactosylsphingosine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta-psychosine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sphingosine galactoside</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psychosine</rdfs:label>
     </owl:Class>
@@ -2143,6 +2300,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_30527"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -2581,6 +2744,12 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25865"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50904"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16705"/>
             </owl:Restriction>
@@ -2612,7 +2781,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17137"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sulfite is an inorganic anion, which is the conjugate base of hydrogen sulfite.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sulfur oxoanion that is the conjugate base of hydrogen sulfite (H2SO3).</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sulfite</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trioxidosulfate(2-)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trioxosulfate(2-)</oboInOwl:hasExactSynonym>
@@ -2697,6 +2866,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75771"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2744,6 +2919,7 @@
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HCO3(-)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HCO3-</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[CO2(OH)](-)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrogen carbonate</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrogencarbonate</rdfs:label>
     </owl:Class>
     
@@ -2802,6 +2978,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25212"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50904"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An amino phenol (one of the three possible isomers) which has the single amino substituent located para to the phenolic -OH group.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4-AMINOPHENOL</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4-Aminophenol</oboInOwl:hasExactSynonym>
@@ -2851,6 +3033,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_17790 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17790">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_134179"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_15734"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50584"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_64708"/>
@@ -2914,6 +3097,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_17792 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17792">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33285"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37578"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A compound containing at least one carbon-halogen bond (where X is a halogen atom).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RX</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic halide</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic halides</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organohalogen compounds</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organohalogen compound</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_17883 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17883">
@@ -2964,7 +3162,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51086"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A molecular entity that can transfer (&quot;donate&quot;) an electron, a pair of electrons, an atom or a group to another molecular entity.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Donor</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">donor</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Donator</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">donneur</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">donor</rdfs:label>
@@ -3001,6 +3198,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_78675"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46209"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3053,6 +3256,12 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17996">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16042"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33432"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -3149,6 +3358,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48355"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48356"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3220,6 +3435,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_18186 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_18186">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26167"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33704"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33856"/>
         <rdfs:subClassOf>
@@ -3270,6 +3486,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_18237 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_18237">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26167"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33704"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -3409,6 +3626,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23354"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3644,6 +3867,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_22492 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22492">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17478"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any aldehyde which contains an amino group.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino aldehyde</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_22501 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22501">
@@ -3688,8 +3921,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22691">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22693"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">barbiturate anions</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">barbiturates</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">barbiturate anion</rdfs:label>
     </owl:Class>
     
@@ -4005,7 +4236,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23334">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23341"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cobalamins</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cobalamins</rdfs:label>
     </owl:Class>
     
@@ -4015,7 +4245,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23341">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23390"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cobamides</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cobamides</rdfs:label>
     </owl:Class>
     
@@ -4091,8 +4320,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23390">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33906"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cobalt-corrinoid hexaamides</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">corrinoid hexaamides</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cobalt-corrinoid hexaamide</rdfs:label>
     </owl:Class>
     
@@ -4102,8 +4329,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23423">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24833"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pseudohalogen oxoacid</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pseudohalogen oxoacids</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pseudohalogen oxoacid</rdfs:label>
     </owl:Class>
     
@@ -4413,7 +4638,6 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33281"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heterocyclic antibiotics</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heterocyclic antibiotic</rdfs:label>
     </owl:Class>
     
@@ -4539,7 +4763,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24734">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24662"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25985"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydroxyphenylalanines</oboInOwl:hasRelatedSynonym>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33856"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydroxyphenylalanine</rdfs:label>
     </owl:Class>
     
@@ -4928,7 +5152,6 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An oxoacid containing a single carboxy group.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monocarboxylic acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monocarboxylic acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monocarboxylic acid</rdfs:label>
     </owl:Class>
@@ -4962,7 +5185,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25414">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23906"/>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monoatomic monocations</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monovalent cation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monovalent inorganic cations</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monoatomic monocation</rdfs:label>
     </owl:Class>
@@ -5331,7 +5553,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_39745"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A phosphorus oxoacid that consits of one oxo and three hydroxy groups joined covalently to a central phosphorus atom.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A phosphorus oxoacid that consists of one oxo and three hydroxy groups joined covalently to a central phosphorus atom.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phosphoric acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphoric acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetraoxophosphoric acid</oboInOwl:hasExactSynonym>
@@ -5361,8 +5583,6 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26078"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphoric acid derivatives</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphoric acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphoric acid derivative</rdfs:label>
     </owl:Class>
     
@@ -5409,8 +5629,17 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26167">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33709"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polar amino acid</oboInOwl:hasExactSynonym>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_tautomer_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_62031"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any amino acid whose side chain is capable of forming one or more hydrogen bonds.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polar amino acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polar amino acids</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polar amino-acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polar amino-acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polar amino acid</rdfs:label>
     </owl:Class>
     
@@ -5632,6 +5861,18 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26710">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36093"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38702"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_149552"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_79314"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inorganic chloride salt having sodium(1+) as the counterion.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sodium chloride</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kochsalz</oboInOwl:hasRelatedSynonym>
@@ -6671,9 +6912,14 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_28938">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35106"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35274"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50313"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60242"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -6701,11 +6947,12 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An onium cation obtained by protonation of ammonia.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">azanium</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AMMONIUM ION</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ammonium(1+)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NH4(+)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NH4+</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[NH4](+)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium cation</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium ion</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium</rdfs:label>
     </owl:Class>
     
@@ -6783,6 +7030,12 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33504"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37246"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60242"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -7344,7 +7597,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_30436">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26375"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a 5,6,7,8-tetrahydropteridine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrahydropteridines</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrahydropterins</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrahydropterin</rdfs:label>
@@ -8193,12 +8445,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_32877">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_32952"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50994"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_65296"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A compound formally derived from ammonia by replacing one hydrogen atom by a hydrocarbyl group.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Primary amine</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary amines</oboInOwl:hasExactSynonym>
@@ -8577,7 +8823,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33282">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33281"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A substance that kills or slows the growth of bacteria.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A substance (or active part thereof) that kills or slows the growth of bacteria.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">antibacterial agents</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">antibacterials</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bactericide</oboInOwl:hasRelatedSynonym>
@@ -8647,6 +8893,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any material that can be ingested by an organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">food material</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">food materials</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">food role</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foods</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foodstuff</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foodstuffs</oboInOwl:hasRelatedSynonym>
@@ -9581,6 +9830,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33671">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33635"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_5686"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A polycyclic compound in which at least one of the rings contains at least one non-carbon atom.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heteropolycyclic compounds</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyheterocyclic compounds</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heteropolycyclic compound</rdfs:label>
@@ -10094,8 +10344,8 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organic aromatic compounds having one or more hydroxy groups attached to a benzene or other arene ring.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenols</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aryl alcohol</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a phenol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arenols</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aryl alcohol</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenols</rdfs:label>
     </owl:Class>
     
@@ -10118,9 +10368,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76042"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An amino acid whose structure includes an aromatic ring.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aromatic amino acid</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aromatic amino acid</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aromatic L-amino acid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aromatic amino acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aromatic amino acid</rdfs:label>
     </owl:Class>
@@ -10261,6 +10510,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33913">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36309"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A derivative of the corrin nucleus, which contains four reduced or partly reduced pyrrole rings joined in a macrocycle by three =C- groups and one direct carbon-carbon bond linking alpha positions.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corrinoid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">corrinoid</oboInOwl:hasExactSynonym>
@@ -10279,7 +10534,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33937">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33284"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macronutrients</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macronutrient</rdfs:label>
     </owl:Class>
     
@@ -10517,10 +10771,17 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35274">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33702"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51143"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ammonium, NH4(+), and derivatives formed by substitution by univalent groups.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium ions</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">azanium ions</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium ion</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_parent_hydride"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28938"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A derivative of ammonium, NH4(+), in which one (or more) of the hydrogens bonded to the nitrogen have been replaced with univalent organyl groups. The substituting carbon of the organyl group must not itself be directly attached to a heteroatom (thereby excluding protonated amides, hemiaminals, etc).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium ion derivatives</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">azanium ion derivative</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">azanium ion derivatives</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ammonium ion derivative</rdfs:label>
     </owl:Class>
     
 
@@ -10613,6 +10874,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35358">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33256"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33261"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33552"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An amide of a sulfonic acid RS(=O)2NR&apos;2.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sulfonamides</oboInOwl:hasExactSynonym>
@@ -11043,6 +11305,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24995"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lactam in which the amide bond is contained within a four-membered ring, which includes the amide nitrogen and the carbonyl carbon.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta-Lactam</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a beta-lactam</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta-lactams</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta-lactam</rdfs:label>
     </owl:Class>
@@ -11547,7 +11810,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36360">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26082"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphorus oxoacids and derivatives</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphorus oxoacids and derivatives</rdfs:label>
     </owl:Class>
     
@@ -11582,7 +11844,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36527">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25513"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glycosylsphingoids</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glycosylsphingoid</rdfs:label>
     </owl:Class>
     
@@ -11627,14 +11888,17 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_36683 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36683">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17792"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23117"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36684"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organochlorine compound is a compound containing at least one carbon-chlorine bond.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organochlorine compound</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an organochlorine molecule</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chloroorganic compounds</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chlororganische Verbindungen</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organochloride</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organochloride compound</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organochloride compounds</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organochlorides</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organochlorine compounds</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organochlorine compound</rdfs:label>
     </owl:Class>
@@ -11644,11 +11908,8 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_36684 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36684">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33285"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37578"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A compound containing at least one carbon-halogen bond.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organohalogen compounds</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organohalogen compound</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17792"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -12040,7 +12301,6 @@
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acide</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acido</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acids</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an acid</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acid</rdfs:label>
     </owl:Class>
     
@@ -12114,8 +12374,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_37734">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26079"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35701"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphate esters</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphoric esters</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphoric ester</rdfs:label>
     </owl:Class>
     
@@ -12214,6 +12472,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_38070">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35554"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A drug used for the treatment or prevention of cardiac arrhythmias. Anti-arrhythmia drugs may affect the polarisation-repolarisation phase of the action potential, its excitability or refractoriness, or impulse conduction or membrane responsiveness within cardiac fibres.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anti-arrhythmia agent</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">antiarrhythmic agent</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anti-arrhythmia drug</rdfs:label>
     </owl:Class>
@@ -12452,8 +12711,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_38418">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48901"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1,3-thiazoles</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1,3-thiazole</rdfs:label>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1,3-thiazoles</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1,3-thiazoles</rdfs:label>
     </owl:Class>
     
 
@@ -12462,8 +12721,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_38496">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76932"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ETC inhibitor</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electron transport chain inhibitors</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electron-transport chain inhibitor</rdfs:label>
     </owl:Class>
     
@@ -12473,9 +12730,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_38497">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38496"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">respiratory chain inhibitor</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">respiratory electron-transport chain inhibitor</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">respiratory-chain inhibitors</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">respiratory-chain inhibitor</rdfs:label>
     </owl:Class>
     
@@ -12875,7 +13129,6 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HYDROXY GROUP</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydroxy</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydroxy group</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oxidanyl</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-OH</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydroxyl</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydroxyl group</oboInOwl:hasRelatedSynonym>
@@ -12889,6 +13142,12 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_43474">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35780"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_79388"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -13106,6 +13365,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63510"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_145795"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A  cardenolide glycoside that is digitoxin beta-hydroxylated at C-12. A cardiac glycoside extracted from the foxglove plant, Digitalis lanata, it is used to control ventricular rate in atrial fibrillation and in the management of congestive heart failure with atrial fibrillation, but the margin between toxic and therapeutic doses is small.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(3beta,5beta,12beta)-3-{[2,6-dideoxy-beta-D-ribo-hexopyranosyl-(1-&gt;4)-2,6-dideoxy-beta-D-ribo-hexopyranosyl-(1-&gt;4)-2,6-dideoxy-beta-D-ribo-hexopyranosyl]oxy}-12,14-dihydroxycard-20(22)-enolide</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12beta-hydroxydigitoxin</oboInOwl:hasRelatedSynonym>
@@ -13209,6 +13474,28 @@
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paracetamol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paracetamolum</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paracetamol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_46209 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_46209">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22492"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33853"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50994"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_141668"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An amino aldehyde that is L-tyrosine in which the carboxy group has undergone formal redution to give the corrresponding aldehyde</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S)-2-amino-3-(4-hydroxyphenyl)propanal</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S)-2-amino-3-(p-hydroxyphenyl)propanal</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-tyr aldehyde</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TYROSINAL</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-tyrosinal</rdfs:label>
     </owl:Class>
     
 
@@ -13497,7 +13784,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_48355">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46787"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-polar solvents</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-polar solvent</rdfs:label>
     </owl:Class>
     
@@ -13520,9 +13806,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_48359">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_39142"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48354"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protophilic solvent</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HBA solvent</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrogen bond acceptor solvent</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protophilic solvent</rdfs:label>
     </owl:Class>
     
@@ -13533,7 +13816,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_48360">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48356"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48359"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphiprotic solvent</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphiprotic solvent</rdfs:label>
     </owl:Class>
     
@@ -13720,6 +14002,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38106"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_68452"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An azole in which the five-membered heterocyclic aromatic skeleton contains a N atom and one S atom.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thiazole</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thiazoles</rdfs:label>
     </owl:Class>
     
@@ -13811,6 +14094,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_15765"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_tautomer_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_149689"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The D-enantiomer of dopa.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2R)-2-amino-3-(3,4-dihydroxyphenyl)propanoic acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D-dopa</oboInOwl:hasExactSynonym>
@@ -13869,6 +14158,12 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50047">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35352"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50860"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_39142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_parent_hydride"/>
@@ -13990,9 +14285,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50312">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37577"/>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">onium compound</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">onium compounds</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">onium compounds</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">onium compound</rdfs:label>
     </owl:Class>
     
@@ -14333,7 +14625,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50816">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24873"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iron oxides</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iron oxide</rdfs:label>
     </owl:Class>
     
@@ -14466,7 +14757,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50904">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52209"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical compound which causes the onset of an allergic reaction by interacting with any of the molecular pathways involved in an allergy.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical compound, or part thereof, which causes the onset of an allergic reaction by interacting with any of the molecular pathways involved in an allergy.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alergeno</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergene</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergenic agent</oboInOwl:hasRelatedSynonym>
@@ -14503,7 +14794,11 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52209"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A role played by a chemical compound exihibiting itself through the ability to induce damage to the liver in animals.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agente hepatotoxico</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatotoxic agents</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatotoxicant</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatotoxicants</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatotoxin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatotoxins</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatoxic agent</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatoxicant</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hepatotoxic agent</rdfs:label>
@@ -14545,6 +14840,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50994">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50047"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_65296"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A compound formally derived from ammonia by replacing one hydrogen atom by an organyl group.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary amino compounds</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary amino compound</rdfs:label>
@@ -14567,6 +14868,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50996">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50047"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_137982"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A compound formally derived from ammonia by replacing three hydrogen atoms by organyl groups.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tertiary amino compounds</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tertiary amino compound</rdfs:label>
@@ -14694,7 +15001,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_51447">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33247"/>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic monovalent group</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic univalent group</rdfs:label>
     </owl:Class>
     
@@ -14906,10 +15212,17 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35238"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_enantiomer_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_149689"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_tautomer_of"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_15765"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An amino acid zwitterion obtained from the transfer of a proton from the carboxy group to the amino group of L-dopa. Major microspecies at pH 7.3.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S)-2-azaniumyl-3-(3,4-dihydroxyphenyl)propanoate</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S)-2-ammonio-3-(3,4-dihydroxyphenyl)propanoate</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-dopa</oboInOwl:hasRelatedSynonym>
@@ -14922,6 +15235,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_57586">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35757"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -15042,7 +15361,7 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ammonium ion resulting from the protonation of the amino group of psychosine.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S,3R,4E)-1-(beta-D-galactopyranosyloxy)-3-hydroxyoctadec-4-en-2-aminium</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(2S,3R,4E)-3-hydroxy-1-{[(2R,3R,4S,5R,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy}octadec-4-en-2-aminium</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psychosine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beta-D-galactosyl-(1&lt;-&gt;1)-sphing-4-enine</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psychosine(1+)</rdfs:label>
     </owl:Class>
     
@@ -15077,6 +15396,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_57986">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25696"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -15227,7 +15552,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_58953">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28868"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any fatty acid anion in which there is no C-C unsaturation.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a saturated fatty acid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">saturated fatty acid anions</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">saturated fatty acid anion</rdfs:label>
     </owl:Class>
@@ -15301,6 +15625,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33295"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -15344,6 +15674,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_597326">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_58945"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -15434,7 +15770,7 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zwitterionic form of a D-alpha-amino acid having an anionic carboxy group and a protonated amino group.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D-alpha-amino acid zwitterions</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a D-amino acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a D-alpha-amino acid</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D-alpha-amino acid zwitterion</rdfs:label>
     </owl:Class>
     
@@ -15509,7 +15845,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16670"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zwitterionic form of any peptide where the amino terminus is positively charged and the carboxy terminus is negatively charged.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zwitterionic form of any peptide where, in general, the amino terminus is positively charged and the carboxy terminus is negatively charged.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptide zwitterions</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptide zwitterion</rdfs:label>
     </owl:Class>
@@ -15766,9 +16102,13 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_62031 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_62031">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26167"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35238"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50860"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_tautomer_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26167"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zwitterionic form of a polar amino acid having an anionic carboxy group and a protonated amino group.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a polar amino acid</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polar amino acid zwitterion</rdfs:label>
@@ -16246,10 +16586,10 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_32877"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50994"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ammonium ion resulting from the protonation of the nitrogen atom of a primary amine. Major species at pH 7.3.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ammonium ion derivative resulting from the protonation of the nitrogen atom of a primary amino compound. Major species at pH 7.3.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a primary amine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substituted ammonium</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary ammonium ion</rdfs:label>
@@ -16359,7 +16699,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_73181">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75381"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An  EC 1.11.1.* (peroxidases) inhibitor that inhibits the action of L-ascorbate peroxidase (EC 1.11.1.11).</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC 1.11.1.11 (L-ascorbate peroxidase) inhibitors</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC 1.11.1.11 (L-ascorbate peroxidase) inhibitors</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC 1.11.1.11 inhibitor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC 1.11.1.11 inhibitors</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L-ascorbate peroxidase (EC 1.11.1.11) inhibitor</oboInOwl:hasRelatedSynonym>
@@ -16376,7 +16716,7 @@
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ascorbate peroxidase inhibitors</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ascorbic acid peroxidase inhibitor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ascorbic acid peroxidase inhibitors</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC 1.11.1.11 (L-ascorbate peroxidase) inhibitors</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC 1.11.1.11 (L-ascorbate peroxidase) inhibitor</rdfs:label>
     </owl:Class>
     
 
@@ -17566,6 +17906,17 @@
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2,3-unsaturated monocarboxylic acids</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alpha,beta-unsaturated monocarboxylic acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alpha,beta-unsaturated monocarboxylic acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_79314 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_79314">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33232"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any compound that is added to manufactured materials to inhibit, suppress, or delay the production of flames and so prevent the spread of fire.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flame retardants</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flame retardant</rdfs:label>
     </owl:Class>
     
 
