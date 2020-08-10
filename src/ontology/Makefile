@@ -621,7 +621,7 @@ mirror/medgen-disease-extract.owl: mirror/medgen-disease-extract.obo
 	owltools $< -o $@.tmp && perl -npe $(FIX_URI_EXPR) $@.tmp > $@
 
 mirror/dipper-%.ttl:
-	wget --no-check-certificate https://data.monarchinitiative.org/ttl/$*.ttl -O $@.tmp && perl -npe 's@http://www.genenames.org/cgi-bin/gene_symbol_report\\?hgnc_id=@http://identifiers.org/hgnc/@g' $@.tmp > $@
+	wget --no-check-certificate https://data.monarchinitiative.org/ttl/$*.ttl -O $@.tmp && perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@
 
 mirror/dipper-%.obo: mirror/dipper-%.ttl
 	robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
@@ -1014,9 +1014,4 @@ d2p.pro:
 	
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
-	
-imports/ncbitaxon_import.owl:
-	echo "STRONG WARNING STRONG WARNING make $@ is skipped, because of out of memory errors with 16GB memory!" && touch $@
-	
-imports/hgnc_import.owl:
-	echo "STRONG WARNING STRONG WARNING make $@ is skipped, because of broken HGNC IRI syntax in the HGNC dipper ingest (see slack discussing in dipper-n-data)!" && touch $@
+
