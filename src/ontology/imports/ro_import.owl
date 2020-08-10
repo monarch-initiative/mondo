@@ -77,6 +77,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000589 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0001900 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001900"/>
@@ -86,6 +98,12 @@
     <!-- http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
     
 
 
@@ -369,38 +387,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0000300 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000300">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115 xml:lang="en">A relation that holds between two neurons connected directly via a synapse, or indirectly via a series of synaptically connected neurons.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">in neural circuit with</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0000301 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000301">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000300"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115 xml:lang="en">A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">upstream in neural circuit with</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0000302 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000302">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000300"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115 xml:lang="en">A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">downstream in neural circuit with</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0001000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001000">
@@ -496,6 +482,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0001025"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
         <obo:IAO_0000111 xml:lang="en">located in</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">my brain is located in my head</obo:IAO_0000112>
         <obo:IAO_0000112 xml:lang="en">this rat is located in this cage</obo:IAO_0000112>
@@ -563,6 +553,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002005">
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002134"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0001001"/>
         <rdfs:label xml:lang="en">innervated_by</rdfs:label>
     </owl:ObjectProperty>
     
@@ -644,19 +636,10 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002018">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <obo:IAO_0000115>w &apos;has process component&apos; p if p and w are processes,  w &apos;has part&apos; p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type.</obo:IAO_0000115>
         <rdfs:label>has component process</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002019 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002019">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GO_0004872"/>
-        <obo:IAO_0000115>A relationship that holds between between a receptor and an chemical entity, typically a small molecule or peptide, that carries information between cells or compartments of a cell and which binds the receptor and regulates its effector function.</obo:IAO_0000115>
-        <rdfs:label>has ligand</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -697,7 +680,6 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002025">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002017"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <obo:IAO_0000115>A &apos;has effector activity&apos; B if A and B are GO molecular functions (GO_0003674),  A &apos;has component activity&apos; B and B is the effector (output function) of B.  Each compound function has only one effector activity.</obo:IAO_0000115>
         <rdfs:label>has effector activity</rdfs:label>
@@ -754,7 +736,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002103 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002103">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000301"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002485"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002120"/>
         <rdfs:range>
             <owl:Class>
@@ -777,6 +759,8 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002104">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <obo:IAO_0000115>Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has plasma membrane part</rdfs:label>
     </owl:ObjectProperty>
@@ -786,7 +770,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002120 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002120">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000302"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002486"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -820,6 +804,10 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>x overlaps y if and only if there exists some z such that x has part z and z part of y</obo:IAO_0000115>
         <rdfs:label xml:lang="en">overlaps</rdfs:label>
@@ -856,11 +844,50 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002156 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002156">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002157"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d derived_by_descent_from a if d is specified by some genetic program that is sequence-inherited-from a genetic program that specifies a.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derived by descent from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002157 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002157">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <obo:IAO_0000115>inverse of derived by descent from</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has derived by descendant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002158 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002158">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002156"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002157"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">two individual entities d1 and d2 stand in a shares_ancestor_with relation if and only if there exists some a such that d1 derived_by_descent_from a and d2 derived_by_descent_from a.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shares ancestor with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0001010"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
@@ -875,10 +902,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002215"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002217"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -959,8 +982,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002177">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002567"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002371"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1006,7 +1029,16 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002200">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002201"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000006"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <obo:IAO_0000115>A relationship that holds between a biological entity and a phenotype. Here a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). The subject of this relationship can be an organism (where the organism has the phenotype, i.e. the qualities inhere in parts of this organism), a genomic entity such as a gene or genotype (if modifications of the gene or the genotype causes the phenotype), or a condition such as a disease (such that if the condition inheres in an organism, then the organism has the phenotype).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has phenotype</rdfs:label>
     </owl:ObjectProperty>
@@ -1072,7 +1104,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <obo:IAO_0000115>Candidate definition: x directly_develops from y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p, and a substantial portion of the matter of y comes from x, and the start of x is coincident with or after the end of y</obo:IAO_0000115>
+        <obo:IAO_0000115>Candidate definition: x directly_develops from y if and only if there exists some developmental process (GO:0032502) p such that x and y both participate in p, and x is the output of p and y is the input of p, and a substantial portion of the matter of x comes from y, and the start of x is coincident with or after the end of y.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">directly develops from</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1096,6 +1128,10 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002211"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002025"/>
+        </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002230"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002211"/>
@@ -1174,23 +1210,13 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002217 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002217">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002218"/>
-        <obo:IAO_0000115>x actively participates in y if and only if x participates in y and x realizes some active role</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">actively participates in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0002218 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002218">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <obo:IAO_0000115>x has participant y if and only if x realizes some active role that inheres in y</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has active participant</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete has active participant</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -1290,7 +1316,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002226">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002258"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002207"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0001025"/>
@@ -1410,8 +1436,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002254">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002258"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002255"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -1482,7 +1508,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002327"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002411"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>c involved in regulation of p if c enables f and f causally upstream of p</obo:IAO_0000115>
+        <obo:IAO_0000115>c acts upstream of p if and only if c enables some f that is involved in p&apos; and p&apos; occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p&apos; are processes.</obo:IAO_0000115>
         <rdfs:label>acts upstream of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1664,6 +1690,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002328 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002328">
+        <obo:IAO_0000115>A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">functionally related to</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1686,6 +1713,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002331 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002331">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002431"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002327"/>
@@ -1704,12 +1732,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002333 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002333">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <obo:IAO_0000115>inverse of enables</obo:IAO_0000115>
         <rdfs:label xml:lang="en">enabled by</rdfs:label>
     </owl:ObjectProperty>
@@ -1826,6 +1850,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002372">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002371"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002567"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <obo:IAO_0000115 xml:lang="en">m has_muscle_origin s iff m is attached_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has muscle origin</rdfs:label>
     </owl:ObjectProperty>
@@ -1837,6 +1862,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002373">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002371"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002567"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <obo:IAO_0000115 xml:lang="en">m has_muscle_insertion s iff m is attaches_to s, and it is the case that when m contracts, s moves. Insertions are usually connections of muscle via tendon to bone.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has muscle insertion</rdfs:label>
     </owl:ObjectProperty>
@@ -1846,9 +1872,10 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002374 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002374">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002156"/>
         <obo:IAO_0000115 xml:lang="en">x has_fused_element y iff: there exists some z : x has_part z, z homologous_to y, and y is a distinct element, the boundary between x and z is largely fiat</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has fused element</rdfs:label>
+        <oboInOwl:hasBroadSynonym>has fused element</oboInOwl:hasBroadSynonym>
+        <rdfs:label xml:lang="en">derived from ancestral fusion of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1914,6 +1941,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002384">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002324"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <obo:IAO_0000115 xml:lang="en">x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has developmental potential involving</rdfs:label>
     </owl:ObjectProperty>
@@ -1986,7 +2015,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002410 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002410">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002609"/>
         <obo:IAO_0000115>This relation groups causal relations between material entities and causal relations between processes</obo:IAO_0000115>
         <rdfs:label xml:lang="en">causally related to</rdfs:label>
     </owl:ObjectProperty>
@@ -2071,6 +2099,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002331"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002213"/>
         </owl:propertyChainAxiom>
+        <obo:IAO_0000115>c involved in regulation of p if c is involved in some p&apos; and p&apos; positively regulates some p</obo:IAO_0000115>
         <rdfs:label>involved in positive regulation of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2088,6 +2117,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002331"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002212"/>
         </owl:propertyChainAxiom>
+        <obo:IAO_0000115>c involved in regulation of p if c is involved in some p&apos; and p&apos; negatively regulates some p</obo:IAO_0000115>
         <rdfs:label>involved in negative regulation of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2155,19 +2185,32 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002447 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002447">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002436"/>
+        <rdfs:label>phosphorylates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002448 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002448">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002436"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002566"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0011002"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002327"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002211"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002333"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Holds between molecular entities A and B where A can physically interact with B and in doing so regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A regulates the kinase activity of B.</obo:IAO_0000115>
+        <obo:IAO_0000115>The entity A, immediately upstream of the entity B, has an activity that regulates an activity performed by B. For example, A and B may be gene products and binding of B by A regulates the kinase activity of B.
+
+A and B can be physically interacting but not necessarily. Immediately upstream means there are no intermediate entity between A and B.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>molecularly controls</oboInOwl:hasExactSynonym>
-        <rdfs:label>activity directly regulates activity of</rdfs:label>
+        <rdfs:label>directly regulates activity of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2176,14 +2219,17 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002449">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002448"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002327"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002630"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002333"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Holds between molecular entities A and B where A can physically interact with B and in doing so negatively regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B.</obo:IAO_0000115>
+        <obo:IAO_0000115>The entity A, immediately upstream of the entity B, has an activity that negatively regulates an activity performed by B. 
+For example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>molecularly decreases activity of</oboInOwl:hasExactSynonym>
-        <rdfs:label>activity directly negatively regulates activity of</rdfs:label>
+        <rdfs:label>directly negatively regulates activity of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2192,14 +2238,17 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002450">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002448"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002327"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002629"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002333"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Holds between molecular entities A and B where A can physically interact with B and in doing so positively regulates a process that B is capable of.  For example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B.</obo:IAO_0000115>
+        <obo:IAO_0000115>The entity A, immediately upstream of the entity B, has an activity that positively regulates an activity performed by B. 
+For example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>molecularly increases activity of</oboInOwl:hasExactSynonym>
-        <rdfs:label>activity directly positively regulates activity of</rdfs:label>
+        <rdfs:label>directly positively regulates activity of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2214,10 +2263,20 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002464 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002464">
+        <rdfs:label>helper property (not for use in curation)</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002473 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002473">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115>x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y.</obo:IAO_0000115>
         <rdfs:label>composed primarily of</rdfs:label>
     </owl:ObjectProperty>
@@ -2239,12 +2298,48 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002481 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002481">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002564"/>
+        <rdfs:label>is kinase activity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002485 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002485">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002486"/>
+        <rdfs:label>receives input from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002486 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002486">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+        <rdfs:label>sends output to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002487 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002487">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000006"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000007"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <rdfs:label>relation between structure and stage</rdfs:label>
+        <rdfs:label>relation between physical entity and a process or stage</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2418,9 +2513,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002506">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:label>causal relation between material entities</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:label>causal relation between entities</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2472,6 +2567,10 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002551">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002576"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <obo:IAO_0000115>A relation between a segment or subdivision of an organism and the maximal subdivision of material entities that provides structural support for that segment or subdivision.</obo:IAO_0000115>
         <rdfs:label>has skeleton</rdfs:label>
     </owl:ObjectProperty>
@@ -2488,10 +2587,30 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002563 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002563">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002464"/>
+        <rdfs:label>interaction relation helper property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002564 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002564">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002563"/>
+        <rdfs:label>molecular interaction relation helper property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002566 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002566">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002506"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002327"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002411"/>
@@ -2502,7 +2621,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002411"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002333"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Holds between materal entities a and b if the activity of a is causally upstream of the activity of b, or causally upstream of a an activity that modifies b</obo:IAO_0000115>
+        <obo:IAO_0000115>The entity or characteristic A is causally upstream of the entity or characteristic B, A having an effect on B. An entity corresponds to any biological type of entity as long as a mass is measurable. A characteristic corresponds to a particular specificity of an entity (e.g., phenotype, shape, size).</obo:IAO_0000115>
         <rdfs:label>causally influences</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2512,6 +2631,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002567">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <obo:IAO_0000115>A relation that holds between elements of a musculoskeletal system or its analogs.</obo:IAO_0000115>
         <rdfs:label>biomechanically related to</rdfs:label>
     </owl:ObjectProperty>
@@ -2564,6 +2685,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002573">
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <obo:IAO_0000115>A relation that holds between an attribute or a qualifier and another attribute.</obo:IAO_0000115>
         <rdfs:label>has modifier</rdfs:label>
     </owl:ObjectProperty>
@@ -2668,15 +2790,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
         <obo:IAO_0000115>Inverse of &apos;causal agent in process&apos;</obo:IAO_0000115>
         <rdfs:label>process has causal agent</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002609 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002609">
-        <obo:IAO_0000115>A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes.</obo:IAO_0000115>
-        <rdfs:label>related via dependence to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2806,7 +2919,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004019">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004017"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:label>disease has basis in</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2816,7 +2929,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004020">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004019"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <obo:IAO_0000115>A relation that holds between the disease and a material entity where the physical basis of the disease is a disorder of that material entity that affects its function.</obo:IAO_0000115>
         <rdfs:label>disease has basis in dysfunction of</rdfs:label>
     </owl:ObjectProperty>
@@ -2839,6 +2952,15 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004022">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002200"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004019"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <obo:IAO_0000115>A relation that holds between the disease and a feature (a phenotype or other disease) where the physical basis of the disease is the feature.</obo:IAO_0000115>
         <rdfs:label>disease has basis in feature</rdfs:label>
     </owl:ObjectProperty>
@@ -2849,7 +2971,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004023">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0040035"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:label>causal relationship with disease as subject</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2859,10 +2982,15 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004024">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0004024"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0004025"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002215"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>A relationship between a disease and a process where the disease process disrupts the execution of the process.</obo:IAO_0000115>
         <rdfs:label>disease causes disruption of</rdfs:label>
@@ -2874,7 +3002,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004025">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0004025"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -2887,8 +3016,17 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0004026 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004026">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0040035"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000006"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000007"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <obo:IAO_0000115>A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity.</obo:IAO_0000115>
         <rdfs:label>disease has location</rdfs:label>
     </owl:ObjectProperty>
@@ -2899,6 +3037,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004027">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004026"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <obo:IAO_0000115>A relationship between a disease and an anatomical entity where the disease is triggered by an inflammatory response to stimuli occurring in the anatomical entity</obo:IAO_0000115>
         <rdfs:label>disease has inflammation site</rdfs:label>
     </owl:ObjectProperty>
@@ -2924,12 +3064,13 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0004029 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004029">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0040035"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000016"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000019"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -3051,6 +3192,27 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0011002 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0011002">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002566"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <obo:IAO_0000115>The entity A has an activity that regulates an activity of the entity B. For example, A and B are gene products where the catalytic activity of A regulates the kinase activity of B.</obo:IAO_0000115>
+        <rdfs:label>regulates activity of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0040035 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0040035">
+        <obo:IAO_0000115>This relation groups  relations between diseases and any other kind of entity.</obo:IAO_0000115>
+        <rdfs:label>disease relationship</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
@@ -3071,6 +3233,12 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <owl:disjointWith>
             <owl:Restriction>
@@ -3087,6 +3255,12 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -3103,7 +3277,14 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <obo:IAO_0000115 xml:lang="en">A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">independent continuant</rdfs:label>
     </owl:Class>
@@ -3143,6 +3324,12 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <obo:IAO_0000115 xml:lang="en">A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">realizable entity</rdfs:label>
@@ -3154,6 +3341,12 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">quality</rdfs:label>
     </owl:Class>
     
@@ -3163,6 +3356,13 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <obo:IAO_0000115 xml:lang="en">A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
     </owl:Class>
@@ -3175,6 +3375,22 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
         <obo:IAO_0000115 xml:lang="en">A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">generically dependent continuant</rdfs:label>
     </owl:Class>
     
 
@@ -3211,11 +3427,22 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CARO_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0030000"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
+        <rdfs:label xml:lang="en">anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CARO_0000003 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000003">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
-        <rdfs:label xml:lang="en">anatomical structure</rdfs:label>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
+        <rdfs:label xml:lang="en">connected anatomical structure</rdfs:label>
     </owl:Class>
     
 
@@ -3224,7 +3451,24 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000006">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002179"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
         <rdfs:label xml:lang="en">material anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:label>immaterial anatomical entity</rdfs:label>
     </owl:Class>
     
 
@@ -3233,6 +3477,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0001000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
         <rdfs:label xml:lang="en">multi-cell-part structure</rdfs:label>
     </owl:Class>
     
@@ -3242,7 +3487,17 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0001001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0001000"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
         <rdfs:label xml:lang="en">neuron projection bundle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0001010 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0001010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organism or virus or viroid</rdfs:label>
     </owl:Class>
     
 
@@ -3257,7 +3512,17 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CARO_0010000"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multicellular anatomical structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0030000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0030000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological entity</rdfs:label>
     </owl:Class>
     
 
@@ -3272,6 +3537,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                 <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label xml:lang="en">cell</rdfs:label>
     </owl:Class>
     
@@ -3281,6 +3547,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000540">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label xml:lang="en">neuron</rdfs:label>
     </owl:Class>
     
@@ -3290,15 +3557,17 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000589>molecular process</obo:IAO_0000589>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular_function</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0004872 -->
+    <!-- http://purl.obolibrary.org/obo/GO_0003824 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0004872">
-        <rdfs:label>receptor activity</rdfs:label>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003824">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">catalytic activity</rdfs:label>
     </owl:Class>
     
 
@@ -3312,9 +3581,46 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0048018 -->
+    <!-- http://purl.obolibrary.org/obo/GO_0016301 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0048018"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016301">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016772"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002481"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kinase activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0016740 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016740">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003824"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transferase activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0016772 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016772">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016740"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transferase activity, transferring phosphorus-containing groups</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <obo:IAO_0000115 xml:lang="en">A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism.</obo:IAO_0000115>
+        <rdfs:label>disease</rdfs:label>
+    </owl:Class>
     
 
 
@@ -3322,6 +3628,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <obo:IAO_0000589>quality (PATO)</obo:IAO_0000589>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
     </owl:Class>
     
@@ -3411,6 +3718,15 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UPHENO_0001001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <rdfs:label xml:lang="en">phenotype</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -3463,6 +3779,12 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="urn:swrl#w">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ro.owl#z">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -3479,6 +3801,18 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#a1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#a2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#g1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#g2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#B">
@@ -3504,6 +3838,61 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#mf2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#w"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#w"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002018"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#w"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -3693,9 +4082,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002327"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002578"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#a2"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -3703,10 +4092,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                         <rdf:first>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002578"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                <swrl:argument2 rdf:resource="urn:swrl#x"/>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/GO_0016301"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#a1"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -3714,12 +4102,26 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                 <rdf:first>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/GO_0048018"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002333"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#a1"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#g1"/>
                                     </rdf:Description>
                                 </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002333"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#a2"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl#g2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
                             </rdf:Description>
                         </rdf:rest>
                     </rdf:Description>
@@ -3732,9 +4134,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002019"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002447"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#g1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#g2"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -3964,62 +4366,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002019"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002327"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002578"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#x"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/GO_0048018"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002025"/>
                         <swrl:argument1 rdf:resource="urn:swrl#mf"/>
                         <swrl:argument2 rdf:resource="urn:swrl#eff"/>
@@ -4229,6 +4575,116 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002404"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>

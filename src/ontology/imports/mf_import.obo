@@ -116,6 +116,7 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 id: BFO:0000017
 name: realizable entity
 is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
 property_value: BFO:0000179 "realizable" xsd:string
 property_value: BFO:0000180 "RealizableEntity" xsd:string
 property_value: IAO:0000112 "the disposition of this piece of metal to conduct electricity." xsd:string
@@ -130,10 +131,29 @@ property_value: IAO:0000602 "(forall (x) (if (RealizableEntity x) (and (Specific
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
+id: BFO:0000019
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+property_value: BFO:0000179 "quality" xsd:string
+property_value: BFO:0000180 "Quality" xsd:string
+property_value: IAO:0000112 "the ambient temperature of this portion of air" xsd:string
+property_value: IAO:0000112 "the color of a tomato" xsd:string
+property_value: IAO:0000112 "the length of the circumference of your waist" xsd:string
+property_value: IAO:0000112 "the mass of this piece of gold." xsd:string
+property_value: IAO:0000112 "the shape of your nose" xsd:string
+property_value: IAO:0000112 "the shape of your nostril" xsd:string
+property_value: IAO:0000600 "a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/055-001"}
+property_value: IAO:0000601 "If an entity is a quality at any time that it exists, then it is a quality at every time that it exists. (axiom label in BFO2 Reference: [105-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/105-001"}
+property_value: IAO:0000602 "(forall (x) (if (exists (t) (and (existsAt x t) (Quality x))) (forall (t_1) (if (existsAt x t_1) (Quality x))))) // axiom label in BFO2 CLIF: [105-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/105-001"}
+property_value: IAO:0000602 "(forall (x) (if (Quality x) (SpecificallyDependentContinuant x))) // axiom label in BFO2 CLIF: [055-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/055-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+
+[Term]
 id: BFO:0000020
 name: specifically dependent continuant
 def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
 is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
 property_value: BFO:0000179 "sdc" xsd:string
 property_value: BFO:0000180 "SpecificallyDependentContinuant" xsd:string
 property_value: IAO:0000112 "of one-sided specifically dependent continuants: the mass of this tomato" xsd:string
@@ -212,11 +232,13 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 id: IAO:0000027
 name: data item
 is_a: IAO:0000030 ! information content entity
+property_value: IAO:0000111 "data item" xsd:string
 
 [Term]
 id: IAO:0000030
 name: information content entity
 is_a: BFO:0000031 ! generically dependent continuant
+property_value: IAO:0000111 "information content entity" xsd:string
 
 [Term]
 id: IAO:0000078
@@ -233,8 +255,11 @@ property_value: IAO:0000119 "OBI_0000266" xsd:string
 [Term]
 id: IAO:0000102
 name: data about an ontology part
+def: "Data about an ontology part is a data item about a part of an ontology, for example a term" []
 def: "data about an ontology part is a data item about a part of an ontology, for example a term" []
 is_a: IAO:0000027 ! data item
+property_value: IAO:0000111 "data about an ontology part" xsd:string
+property_value: IAO:0000117 "Person:Alan Ruttenberg" xsd:string
 property_value: IAO:0000117 "Person:Alan Ruttenberg" xsd:string
 
 [Term]
@@ -253,8 +278,12 @@ id: IAO:0000409
 name: denotator type
 def: "A denotator type indicates how a term should be interpreted from an ontological perspective." []
 is_a: IAO:0000102 ! data about an ontology part
+property_value: IAO:0000111 "denotator type" xsd:string
+property_value: IAO:0000112 "The Basic Formal Ontology ontology makes a distinction between Universals and defined classes, where the formal are \"natural kinds\" and the latter arbitrary collections of entities." xsd:string
 property_value: IAO:0000112 "The Basic Formal Ontology ontology makes a distinction between Universals and defined classes, where the formal are \"natural kinds\" and the latter arbitrary collections of entities." xsd:string
 property_value: IAO:0000117 "Alan Ruttenberg" xsd:string
+property_value: IAO:0000117 "Alan Ruttenberg" xsd:string
+property_value: IAO:0000119 "Barry Smith, Werner Ceusters" xsd:string
 property_value: IAO:0000119 "Barry Smith, Werner Ceusters" xsd:string
 
 [Term]
@@ -270,6 +299,7 @@ id: MF:0000013
 name: thinking
 def: "a mental process that involves the manipulation of mental language and/or mental images" []
 is_a: MF:0000020 ! mental process
+property_value: IAO:0000118 "act of thinking" xsd:string
 
 [Term]
 id: MF:0000017
@@ -277,7 +307,8 @@ name: consciousness
 def: "Consciousness is an inseparable part of all mental processes. It is that part of the mental process that:\na) confers a subjective perspective, a phenomenology, an experience of the mental process of which it is a part; and\nb) intends the object or event that the mental process is about, should such exist; i.e., it confers intentionality on the mental process." []
 comment: Note that while there are different modes of consciousness corresponding to the different senses, the whole of conscious experience at any one time is largely experienced as a unity, that is, as a fused whole. Mental processes which are simultaneously ongoing are separable only in fiat, not in essence. 
 is_a: BFO:0000144 ! process profile
-is_a: MF:0000020 ! mental process
+relationship: BFO:0000055 MF:0000076 ! realizes intentional modality
+relationship: BFO:0000167 MF:0000073 ! has participant at all times intentionality
 
 [Term]
 id: MF:0000020
@@ -300,7 +331,6 @@ property_value: IAO:0000119 http://www.jbiomedsem.com/content/1/1/10 xsd:string
 id: MF:0000031
 name: cognitive representation
 def: "A representation which specifically depends on an anatomical structure in the cognitive system of an organism." []
-is_a: BFO:0000020 ! specifically dependent continuant
 is_a: MF:0000030 ! representation
 property_value: IAO:0000119 http://www.jbiomedsem.com/content/1/1/10 xsd:string
 
@@ -323,6 +353,33 @@ def: "Orgasm is the sudden discharge of accumulated sexual tension during the se
 is_a: MF:0000020 ! mental process
 property_value: IAO:0000118 "sexual climax" xsd:string
 property_value: owl:priorVersion "MFOMD_0000207" xsd:string
+
+[Term]
+id: MF:0000073
+name: intentionality
+def: "Intentionality is the fundamental quality of conscious mental processes of always having content, of being directed towards, or about something." []
+is_a: MF:0000075 ! mental quality
+
+[Term]
+id: MF:0000074
+name: bodily quality
+def: "A bodily quality is a quality that inheres in some extended organism." []
+is_a: BFO:0000019 ! quality
+
+[Term]
+id: MF:0000075
+name: mental quality
+def: "A mental quality is a bodily quality that inheres in those structures of the extended organism that are essential for mental functioning." []
+is_a: MF:0000074 ! bodily quality
+
+[Term]
+id: MF:0000076
+name: intentional modality
+def: "A structural capacity that shapes how an object of intentionality is represented for the subject." []
+is_a: MF:0000033 ! mental disposition
+property_value: IAO:0000112 "An example of an intentional modality is the capacity to represent objects of intentionality as unfolding in time or being time contingent." xsd:string
+property_value: IAO:0000118 "intentional mode" xsd:string
+property_value: IAO:0000118 "intentional structure" xsd:string
 
 [Term]
 id: OGMS:0000060

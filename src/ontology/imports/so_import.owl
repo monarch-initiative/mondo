@@ -207,6 +207,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/SO_0000209 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000209">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000483"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary transcript encoding a ribosomal RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA primary transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA primary transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA_primary_transcript</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/SO_0000233 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000233">
@@ -248,6 +260,26 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A kind of kind of sequence alteration where the copies of a region present varies across a population.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence length alteration</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_length_alteration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000252 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000252">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000655"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/so#derives_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000209"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RNA that comprises part of a ribosome, and that can provide both structural scaffolding and catalytic activity.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_qualifier:unknown</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:rRNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal ribonucleic acid</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA</rdfs:label>
     </owl:Class>
     
 
@@ -298,6 +330,29 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/SO_0000325 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000325">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000209"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary transcript encoding a large ribosomal subunit RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35S rRNA primary transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA large subunit primary transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA_large_subunit_primary_transcript</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000342 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000342">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000299"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region specifically recognised by a recombinase where recombination can occur during mitosis or meiosis.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">site specific recombination target region</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">site_specific_recombination_target_region</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/SO_0000400 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000400">
@@ -331,6 +386,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/SO_0000483 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000483">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000185"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary transcript that is never translated into a protein.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nc primary transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">noncoding primary transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nc_primary_transcript</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/SO_0000571 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000571">
@@ -349,6 +416,25 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region that can be transcribed into a small nucleolar RNA (snoRNA).</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snoRNA encoding</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snoRNA_encoding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000651 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000651">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000252"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/so#derives_from"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000325"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ribosomal RNA transcript that structures the large subunit of the ribosome.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LSU RNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LSU rRNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large subunit rRNA</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large_subunit_rRNA</rdfs:label>
     </owl:Class>
     
 
@@ -457,6 +543,18 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region of a gene.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene member region</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene_member_region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000946 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000946">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000342"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region specifically recognised by a recombinase, which inserts or removes another region marked by a distinct cognate integration/excision site.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integration excision site</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attachment site</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integration_excision_site</rdfs:label>
     </owl:Class>
     
 
@@ -852,6 +950,29 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_note:sequence_comparison</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence comparison</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_comparison</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0002121 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0002121">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The configuration of the  IG and TR variable (V), diversity (D) and joining (J) germline genes before DNA rearrangements  (with or without constant (C) genes in undefined configuration. (germline, non rearranged regions of the IG DNA loci).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immune_gene</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrate_immune_system_gene</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0002122 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0002122">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0002121"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A germline immunoglobulin  gene.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All_IG_genes</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IG_genes</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immunoglobulin_gene</rdfs:label>
     </owl:Class>
     
 
