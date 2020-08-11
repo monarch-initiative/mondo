@@ -1,8 +1,8 @@
 pattern_name: mitochondriaal_subtype
-description: A mitochondrial subtype of a disease, such as MONDO:0100134 'mitochondrial complex I deficiency, mitochondrial type'.
+description: A disease that is classified a mitochondrial subtype, due to a defect in a mitochondrial gene, such as MONDO:0100134 'mitochondrial complex I deficiency, mitochondrial type'.
 
 classes:
-  mitochondrion: GO:0005739
+  mt_gene: SO:0000088
 
 relations:
   disease has basis in dysfunction of: RO:0004020
@@ -16,12 +16,12 @@ name:
    - disease
    
 def:
-  text: "A %s that is a mitochondrial subtype."
+  text: "A %s that has a defect in a mitochondrial gene."
   vars:
     - disease
 
 equivalentTo:
-  text: "%s and 'disease has basis in dysfunction of' some 'mitochondrion'"
+  text: "%s and 'disease has basis in dysfunction of' some 'mt_gene'"
   vars:
     - disease
 
