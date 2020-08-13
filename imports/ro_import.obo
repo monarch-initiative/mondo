@@ -155,6 +155,11 @@ is_a: CL:0000000 ! cell
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
 
 [Term]
+id: ENVO:01000254
+name: environmental system
+is_a: RO:0002577 ! system
+
+[Term]
 id: GO:0003674
 name: molecular_function
 is_a: BFO:0000015 ! process
@@ -600,10 +605,19 @@ is_functional: true
 is_a: RO:0002017 ! has component activity
 
 [Typedef]
+id: RO:0002084
+name: during which ends
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002122 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+is_a: RO:0002222 ! temporally related to
+inverse_of: RO:0002093 ! ends during
+
+[Typedef]
 id: RO:0002086
 name: ends after
 comment: X ends_after Y iff: end(Y) before_or_simultaneous_with end(X)
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+holds_over_chain: RO:0002093 BFO:0000062
 is_transitive: true
 is_a: RO:0002222 ! temporally related to
 
@@ -626,6 +640,15 @@ property_value: IAO:0000118 "ends_at_start_of" xsd:string
 property_value: IAO:0000118 "meets" xsd:string
 holds_over_chain: RO:0002230 RO:0002224
 is_a: BFO:0000063 ! precedes
+
+[Typedef]
+id: RO:0002093
+name: ends during
+comment: X ends_during Y iff: ((start(Y) before_or_simultaneous_with end(X)) AND end(X) before_or_simultaneous_with end(Y). 
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "o" xsd:string
+property_value: IAO:0000118 "overlaps" xsd:string
+is_a: RO:0002222 ! temporally related to
 
 [Typedef]
 id: RO:0002103
@@ -696,6 +719,12 @@ holds_over_chain: RO:0002156 RO:0002157
 is_symmetric: true
 is_transitive: true
 is_a: RO:0002320 ! evolutionarily related to
+
+[Typedef]
+id: RO:0002160
+name: only in taxon
+def: "x only in taxon y if and only if x is in taxon y, and there is no other organism z such that y!=z a and x is in taxon z." []
+is_a: RO:0002162 ! in taxon
 
 [Typedef]
 id: RO:0002162
@@ -1081,6 +1110,14 @@ name: results in formation of
 is_a: RO:0002234 ! has output
 is_a: RO:0002295 ! results in developmental progression of
 inverse_of: RO:0002354 ! formed as result of
+
+[Typedef]
+id: RO:0002303
+name: has habitat
+def: "x 'has habitat' y if and only if: x is an organism, y is a habitat, and y can sustain and allow the growth of a population of xs." []
+domain: CARO:0001010 ! organism or virus or viroid
+range: ENVO:01000254 ! environmental system
+is_a: RO:0002321 ! ecologically related to
 
 [Typedef]
 id: RO:0002304

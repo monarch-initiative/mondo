@@ -4913,7 +4913,7 @@ is_a: GO:0042579 ! microbody
 [Term]
 id: GO:0005794
 name: Golgi apparatus
-def: "A compound membranous cytoplasmic organelle of eukaryotic cells, consisting of flattened, ribosome-free vesicles arranged in a more or less regular stack. The Golgi apparatus differs from the endoplasmic reticulum in often having slightly thicker membranes, appearing in sections as a characteristic shallow semicircle so that the convex side (cis or entry face) abuts the endoplasmic reticulum, secretory vesicles emerging from the concave side (trans or exit face). In vertebrate cells there is usually one such organelle, while in invertebrates and plants, where they are known usually as dictyosomes, there may be several scattered in the cytoplasm. The Golgi apparatus processes proteins produced on the ribosomes of the rough endoplasmic reticulum; such processing includes modification of the core oligosaccharides of glycoproteins, and the sorting and packaging of proteins for transport to a variety of cellular locations. Three different regions of the Golgi are now recognized both in terms of structure and function: cis, in the vicinity of the cis face, trans, in the vicinity of the trans face, and medial, lying between the cis and trans regions." []
+def: "A membrane-bound cytoplasmic organelle of the endomembrane system that further processes the core oligosaccharides (e.g. N-glycans) added to proteins in the endoplasmic reticulum and packages them into membrane-bound vesicles. The Golgi apparatus operates at the intersection of the secretory, lysosomal, and endocytic pathways." []
 synonym: "Golgi" BROAD []
 synonym: "Golgi complex" EXACT []
 synonym: "Golgi ribbon" NARROW []
@@ -10012,6 +10012,7 @@ id: GO:0015085
 name: calcium ion transmembrane transporter activity
 def: "Enables the transfer of calcium (Ca) ions from one side of a membrane to the other." []
 is_a: GO:0046873 ! metal ion transmembrane transporter activity
+is_a: GO:0072509 ! divalent inorganic cation transmembrane transporter activity
 relationship: BFO:0000050 GO:0070588 ! part of calcium ion transmembrane transport
 
 [Term]
@@ -11263,7 +11264,7 @@ is_a: GO:0016812 ! hydrolase activity, acting on carbon-nitrogen (but not peptid
 id: GO:0017171
 name: serine hydrolase activity
 def: "Catalysis of the hydrolysis of a substrate by a catalytic mechanism that involves a catalytic triad consisting of a serine nucleophile that is activated by a proton relay involving an acidic residue (e.g. aspartate or glutamate) and a basic residue (usually histidine)." []
-is_a: GO:0016825 ! hydrolase activity, acting on acid phosphorus-nitrogen bonds
+is_a: GO:0016787 ! hydrolase activity
 
 [Term]
 id: GO:0018130
@@ -28207,6 +28208,13 @@ name: divalent inorganic cation homeostasis
 def: "Any process involved in the maintenance of an internal steady state of divalent cations within an organism or cell." []
 is_a: GO:0055080 ! cation homeostasis
 is_a: GO:0098771 ! inorganic ion homeostasis
+
+[Term]
+id: GO:0072509
+name: divalent inorganic cation transmembrane transporter activity
+def: "Enables the transfer of inorganic cations with a valency of two from one side of a membrane to the other. Inorganic cations are atoms or small molecules with a positive charge that do not contain carbon in covalent linkage." []
+is_a: GO:0022890 ! inorganic cation transmembrane transporter activity
+relationship: BFO:0000050 GO:0072511 ! part of divalent inorganic cation transport
 
 [Term]
 id: GO:0072511

@@ -2265,7 +2265,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0000233">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000159"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reduced width of the skin of vermilion border region of upper lip.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Height of the vermilion of the medial part of the lip more than 2 SD below the mean, or apparently reduced height of the vermilion of the lip in the frontal view. The vermilion is the red part of the lips (and confusingly, the vermilion itself is also often referred to as being equivalent the lips).</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0000213</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:301348000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0578038</oboInOwl:hasDbXref>
@@ -2282,8 +2282,9 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000233"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reduced width of the skin of vermilion border region of upper lip.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Height of the vermilion of the medial part of the lip more than 2 SD below the mean, or apparently reduced height of the vermilion of the lip in the frontal view. The vermilion is the red part of the lips (and confusingly, the vermilion itself is also often referred to as being equivalent the lips).</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19125428</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000233"/>
@@ -6432,7 +6433,10 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:277521002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0456814</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diminished motivation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lack of initiative</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lack of motivation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lacking in initiative</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lacks initiative</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0000745</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diminished motivation</rdfs:label>
@@ -6453,7 +6457,25 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000745"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lack of initiative</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000745"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lack of motivation</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000745"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lacking in initiative</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000745"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lacks initiative</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -6676,7 +6698,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:42658009</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0031117</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C4025831</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal peripheral nervous system morphology</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal peripheral nervous system structure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peripheral nervous system disease</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0000759</oboInOwl:id>
@@ -6692,7 +6714,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000759"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal peripheral nervous system morphology</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal peripheral nervous system structure</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -9801,7 +9823,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001251">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0011443"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cerebellar ataxia refers to ataxia due to dysfunction of the cerebellum. This causes a variety of elementary neurological deficits including asynergy (lack of coordination between muscles, limbs and joints), dysmetria (lack of ability to judge distances that can lead to under- oder overshoot in grasping movements), and dysdiadochokinesia (inability to perform rapid movements requiring antagonizing muscle groups to be switched on and off repeatedly).</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cerebellar ataxia refers to ataxia due to dysfunction of the cerebellum. This causes a variety of elementary neurological deficits including asynergy (lack of coordination between muscles, limbs and joints), dysmetria (lack of ability to judge distances that can lead to under- or overshoot in grasping movements), and dysdiadochokinesia (inability to perform rapid movements requiring antagonizing muscle groups to be switched on and off repeatedly).</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001253</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0002513</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0007050</oboInOwl:hasAlternativeId>
@@ -9818,7 +9840,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001251"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cerebellar ataxia refers to ataxia due to dysfunction of the cerebellum. This causes a variety of elementary neurological deficits including asynergy (lack of coordination between muscles, limbs and joints), dysmetria (lack of ability to judge distances that can lead to under- oder overshoot in grasping movements), and dysdiadochokinesia (inability to perform rapid movements requiring antagonizing muscle groups to be switched on and off repeatedly).</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cerebellar ataxia refers to ataxia due to dysfunction of the cerebellum. This causes a variety of elementary neurological deficits including asynergy (lack of coordination between muscles, limbs and joints), dysmetria (lack of ability to judge distances that can lead to under- or overshoot in grasping movements), and dysdiadochokinesia (inability to perform rapid movements requiring antagonizing muscle groups to be switched on and off repeatedly).</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -9828,7 +9850,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001252">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003808"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muscular hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle), often involving reduced muscle strength. Hypotonia is characterized by a diminished resistance to passive stretching.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muscular hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle), often involving reduced muscle strength. Hypotonia is characterized by a diminished resistance to passive stretching. Muscular hypotonia may be related to defects in skeletal muscle, neuromuscular junction, or peripheral nerve.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001318</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D009123</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:398151007</oboInOwl:hasDbXref>
@@ -9843,7 +9865,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001252"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muscular hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle), often involving reduced muscle strength. Hypotonia is characterized by a diminished resistance to passive stretching.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muscular hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle), often involving reduced muscle strength. Hypotonia is characterized by a diminished resistance to passive stretching. Muscular hypotonia may be related to defects in skeletal muscle, neuromuscular junction, or peripheral nerve.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:curators</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -9988,14 +10010,22 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002360"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0004372"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A state of abnormally strong desire for sleep during the daytime.</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0002189</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:271782001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:79519003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C2830004</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Excessive daytime sleepiness</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">More than typical sleepiness during day</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001262</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Excessive daytime somnolence</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001262"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Excessive daytime sleepiness</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001262"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -10651,7 +10681,7 @@
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Involuntary jerking movements</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001336</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myoclonus may be synchronous (several muscle contracting simultaneously), spreading (several muscles contracting in sequence), or asynchronous (several muscles contracting with varying and unpredictable relative timing). Myoclonus is characterized by sudden unidirectional movement due to muscle contraction (positive myoclonus) or due to sudden brief muscle relaxation (negative myoclonus).</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myoclonus may be synchronous (several muscle contracting simultaneously), spreading (several muscles contracting in sequence), or asynchronous (several muscles contracting with varying and unpredictable relative timing). Myoclonus is characterized by sudden unidirectional movement due to muscle contraction (positive myoclonus) or due to sudden brief muscle relaxation (negative myoclonus). Electrophysiological tests are very helpful in determining whether myoclonus is cortical, subcortical or spinal.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myoclonus</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -11385,11 +11415,12 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural abnormality of the abdomen (&apos;belly&apos;), that is, the part of the body between the pelvis and the thorax.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C4020869</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of abdomen morphology</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of abdomen structure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the abdomen</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abdomen abnormality</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001438</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of abdomen morphology</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal abdomen morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001438"/>
@@ -11400,7 +11431,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001438"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of abdomen morphology</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of abdomen structure</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -12919,16 +12950,16 @@
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001733"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The presence of inflammation in the pancreas.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001733"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pancreatic inflammation</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001733"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The presence of inflammation in the pancreas.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13058,7 +13089,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D005530</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:229844004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0016506</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal feet morphology</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal feet structure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the feet</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the foot</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foot deformities</oboInOwl:hasExactSynonym>
@@ -13066,7 +13097,7 @@
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001760</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disorder of the foot that can either be congenital or acquired. Such deformities can include hammer toe, club foot deformity, flat feet, pes cavus, congenital vertical talus (rocker bottom foot), and many others.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the foot</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal foot morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001760"/>
@@ -13077,7 +13108,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001760"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal feet morphology</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal feet structure</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -14241,7 +14272,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001942">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001941"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acid accumulation or depletion of base in the body due to buildup of metabolic acids.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic acidosis (MA) is characterized by a fall in blood pH due to a reduction of serum bicarbonate concentration. This can occur as a result of either the accumulation of acids (high anion gap MA) or the loss of bicarbonate from the gastrointestinal tract or the kidney (hyperchloremic MA). By definition, MA is not due to a respirary cause.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0004895</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0004907</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D000138</oboInOwl:hasDbXref>
@@ -14249,13 +14280,16 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0220981</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001942</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Henderson-Hasselbalch method defines metabolic acidosis by the presence of an acid-base imbalance associated with a plasma bicarbonate concentration below 20 mmol/L. The association of this imbalance with decreased pH is called acidemia, which is often described as severe when the pH is equal to or below 7.20. Arterial blood gas measurements can be performed in patients with a decreased plasma bicarbonate level so as to eliminate respiratory alkalosis, confirm the diagnosis of metabolic acidosis, and test for mixed acidosis.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic acidosis</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001942"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acid accumulation or depletion of base in the body due to buildup of metabolic acids.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Metabolic acidosis (MA) is characterized by a fall in blood pH due to a reduction of serum bicarbonate concentration. This can occur as a result of either the accumulation of acids (high anion gap MA) or the loss of bicarbonate from the gastrointestinal tract or the kidney (hyperchloremic MA). By definition, MA is not due to a respirary cause.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17936961</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31418093</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -14352,8 +14386,8 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0011014"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glucose intolerance (GI) can be defined as dysglycemia that comprises both prediabetes and diabetes. It includes the conditions of impaired fasting glucose (IFG) and impaired glucose tolerance (IGT) and diabetes mellitus (DM).</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0000833</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal glucose tolerance</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0235401</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal glucose tolerance</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glucose intolerance</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001952</oboInOwl:id>
@@ -14452,7 +14486,7 @@
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001965</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The scalp of the head has the following five layers: 1) skin and head hair; 2) connective tissue; 3) the aponeurosis (a layer of dense fibrous tissue); 4) loose areolar connective tissue; and 5) the periosteum of the skull bones.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the scalp</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal scalp morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001965"/>
@@ -14968,6 +15002,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002017">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0011458"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nausea is a commonly encountered symptom that has been defined as an unpleasant painless subjective feeling that one will imminently vomit. Vomiting has been defined as the forceful expulsion of the contents of the stomach, duodenum, or jejunum through the oral cavity. While nausea and vomiting are often thought to exist on a temporal continuum, this is not always the case. There are situations when severe nausea may be present without emesis and less frequently, when emesis may be present without preceding nausea.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:16932000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0027498</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nausea and vomiting</oboInOwl:hasExactSynonym>
@@ -14975,6 +15010,12 @@
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0002017</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nausea and vomiting</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002017"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nausea is a commonly encountered symptom that has been defined as an unpleasant painless subjective feeling that one will imminently vomit. Vomiting has been defined as the forceful expulsion of the contents of the stomach, duodenum, or jejunum through the oral cavity. While nausea and vomiting are often thought to exist on a temporal continuum, this is not always the case. There are situations when severe nausea may be present without emesis and less frequently, when emesis may be present without preceding nausea.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26770271</oboInOwl:hasDbXref>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002017"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -15633,7 +15674,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:19829001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0024115</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C4021760</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of lung morphology</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of lung structure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the lungs</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormally shaped lung</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unusal lung shape</oboInOwl:hasExactSynonym>
@@ -15651,7 +15692,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002088"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of lung morphology</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of lung structure</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -16024,7 +16065,7 @@
     <!-- http://purl.obolibrary.org/obo/HP_0002113 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002113">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002088"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0031983"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0235896</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lung infiltrates</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pulmonic infiltration</oboInOwl:hasExactSynonym>
@@ -18189,10 +18230,11 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0012718"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An abnormality of the stomach.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C4025699</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the stomach</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0002577</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The stomach the hollow, muscular organ of the gastrointestinal tract between the esophagus and the small intestine.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the stomach</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The stomach is the hollow, muscular organ of the gastrointestinal tract between the esophagus and the small intestine.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal stomach morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002577"/>
@@ -18669,7 +18711,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C4280567</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0002652</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The word skeletal dysplasia is most often used to describe a group of over 380 inherited conditions that involve abnormal development of bones and connective tissues. However, the word can also be used to describe the presence of a congenital defects of bones or connective tissues that are found in one or more of the diseases, especially on prenatal ultrasound, i.e., a situation in which it is often not yet possible to make an exact etiological diagnosis. This is the sense of the phrase we use in the HPO. It is, however, preferable to annotate the observed abnormalities.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The word skeletal dysplasia is most often used to describe a group of over 380 inherited conditions that involve abnormal development of bones and connective tissues. However, the word can also be used to describe the presence of congenital defects of bones or connective tissues that are found in one or more of the diseases, especially on prenatal ultrasound, i.e., a situation in which it is often not yet possible to make an exact etiological diagnosis. This is the sense of the phrase we use in the HPO. It is, however, preferable to annotate the observed abnormalities.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Skeletal dysplasia</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -19945,6 +19987,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:C537358</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:42393006</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0268583</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Elevated circulating methylmalonic acid concentration</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0002912</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Methylmalonic aciduria is a genetically heterogeneous disorder of methylmalonate and cobalamin (cbl; vitamin B12) metabolism.</rdfs:comment>
@@ -19955,6 +19998,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Increased concentration of methylmalonic acid in the blood.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26101005</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -24271,20 +24315,26 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0006517 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0006517">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002088"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal accumulation of surfactant-like, periodic acid-schiff-positive lipoproteinaceous material in macrophages within the alveolar spaces and distal bronchioles. This results in gas exchange impairment leading to dyspnea and alveolar infiltrates.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0032973"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accumulation of amorphous PAS-positive material in the space betweem alveolar macrophages, sometimes as condensed form (oval bodies) are typically found in alveolar proteinosis.</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0032982</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D011649</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:10501004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0034050</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alveolar proteinosis</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Detection of PAS-positive extracellular material in broncho-alveolar lavage</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pulmonary alveolar proteinosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0006517</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alveolar proteinosis</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The periodic acid Schiff (PAS) staining is a staining method that detects polysaccharidese and mucosubstances, for example: glycogen, glyolipids, glyoproteins and mucins. It is one of the commonly used procedures in the histophathology laboratory and is easy to perfom. It may help in discriminating different forms of interstitial lung disease (ILD), especially pulmonary alveolar proteinosis (PAP).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intraalveolar phospholipid accumulation</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0006517"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal accumulation of surfactant-like, periodic acid-schiff-positive lipoproteinaceous material in macrophages within the alveolar spaces and distal bronchioles. This results in gas exchange impairment leading to dyspnea and alveolar infiltrates.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accumulation of amorphous PAS-positive material in the space betweem alveolar macrophages, sometimes as condensed form (oval bodies) are typically found in alveolar proteinosis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:21900000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22891182</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -24300,6 +24350,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D017563</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:233703007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0206062</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal lung parenchyma morphology</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality in area between air sacs in lung</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interstitial lung disease</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interstitial pulmonary disease</oboInOwl:hasExactSynonym>
@@ -30587,9 +30638,10 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-04-22T05:54:57Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C4023195</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal shape of thyroid gland</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of thyroid morphology</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0011772</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of thyroid morphology</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal thyroid morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011772"/>
@@ -31006,7 +31058,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/HP_0011858 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0011858">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0010989"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033062"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decreased activity of coagulation factor IX. Factor IX, which itself is activated by factor Xa or factor VIIa to form factor IXa, activates factor X into factor Xa.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peter</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-05-26T11:35:57Z</oboInOwl:creation_date>
@@ -31761,7 +31813,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0012374</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fyler:4863</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C4022925</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal eye morphology</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal eye structure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormality of the globe</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormally shaped eye</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
@@ -31778,7 +31830,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0012372"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal eye morphology</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal eye structure</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -33262,10 +33314,24 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reddish appearance over the white part (sclera) of the eye ranging from a few enlarged blood vessels appearing as wiggly lines over the sclera to a bright red color completely covering to sclera.</obo:IAO_0000115>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-12T12:27:39Z</dc:date>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red eye</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red eyes</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0025337</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red eye</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0025337"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red eye</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0025337"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red eyes</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#plural_form"/>
+    </owl:Axiom>
     
 
 
@@ -33806,7 +33872,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0030764">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0011121"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brown or blue-gray discoloration of the skin tha can present on the axillary and inguinal areas, face, palms or soles. In addition, blue-black discoloration can be apparent on skin overlying cartilage in which the pigment is deposited, such as the ears. This is a characteristic manifestation of alkaptonuria, which is an autosomal recessively inherited deficiency of homogentisic acid oxidase that results in accumulation of homogentisic acid in collagenous structures. The sclerae are also typically involved.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brown or blue-gray discoloration of the skin that can present on the axillary and inguinal areas, face, palms or soles. In addition, blue-black discoloration can be apparent on skin overlying cartilage in which the pigment is deposited, such as the ears. This is a characteristic manifestation of alkaptonuria, which is an autosomal recessively inherited deficiency of homogentisic acid oxidase that results in accumulation of homogentisic acid in collagenous structures. The sclerae are also typically involved.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D009794</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:410042009</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0028817</oboInOwl:hasDbXref>
@@ -33817,7 +33883,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0030764"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brown or blue-gray discoloration of the skin tha can present on the axillary and inguinal areas, face, palms or soles. In addition, blue-black discoloration can be apparent on skin overlying cartilage in which the pigment is deposited, such as the ears. This is a characteristic manifestation of alkaptonuria, which is an autosomal recessively inherited deficiency of homogentisic acid oxidase that results in accumulation of homogentisic acid in collagenous structures. The sclerae are also typically involved.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brown or blue-gray discoloration of the skin that can present on the axillary and inguinal areas, face, palms or soles. In addition, blue-black discoloration can be apparent on skin overlying cartilage in which the pigment is deposited, such as the ears. This is a characteristic manifestation of alkaptonuria, which is an autosomal recessively inherited deficiency of homogentisic acid oxidase that results in accumulation of homogentisic acid in collagenous structures. The sclerae are also typically involved.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24447956</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26929770</oboInOwl:hasDbXref>
@@ -34539,6 +34605,21 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/HP_0031983 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0031983">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002088"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This term groups terms representing abnormal findings derived from chest X-ray investigation of the lung. In general, lung abnormalities can manifest as opacities (areas of increased density) or as regions with decreased density.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-07-08T13:38:01Z</dc:date>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peter</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal chest radiograph finding (lung)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0031983</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal pulmonary thoracic imaging finding</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/HP_0032016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0032016">
@@ -34798,8 +34879,41 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peter</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0032943</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Urine pH typically is 5 as a result of daily net acid excretion. Any urine pH can be normal.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Urine pH typically is 5 as a result of daily net acid excretion. The interpretation of the urine pH depends on the medical context.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal urine pH</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0032973 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0032973">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002088"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal type or counts of nucleated immune cells and acellular components in bronchoalveolar lavage (BAL) fluid. BAL us performed with a fiberoptic bronchoscope in the wedged position within a selected bronchopulmonary segment. BAL is commonly used to inform the differential diagnosis of interstitial lung disease or to monitor therapeutic interventions.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peter</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0032973</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red blood cells in the BAL fluid are noted (e.g. present in pulmonary hemorrhage syndromes), but not counted, Similarly epithelial cells are only noted, not included numerically into cell differential.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal bronchoalveolar lavage fluid morphology</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0032973"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal type or counts of nucleated immune cells and acellular components in bronchoalveolar lavage (BAL) fluid. BAL us performed with a fiberoptic bronchoscope in the wedged position within a selected bronchopulmonary segment. BAL is commonly used to inform the differential diagnosis of interstitial lung disease or to monitor therapeutic interventions.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LMU:mgriese</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0033062 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033062">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0010989"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal activity of coagulation factor IX. Factor IX, which itself is activated by factor Xa or factor VIIa to form factor IXa, activates factor X into factor Xa.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peter</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0033062</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abnormal factor IX activity</rdfs:label>
     </owl:Class>
     
 

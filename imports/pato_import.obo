@@ -153,6 +153,12 @@ def: "A morphology quality inhering in a bearer by virtue of the bearer's physic
 is_a: PATO:0000051 ! morphology
 
 [Term]
+id: PATO:0000125
+name: mass
+def: "A physical quality that inheres in a bearer by virtue of the proportion of the bearer's amount of matter." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0000140
 name: position
 def: "A spatial quality inhering in a bearer by virtue of the bearer's spatial location relative to other objects in the vicinity." []
@@ -347,11 +353,29 @@ def: "A porosity quality inhering in a bearer by virtue of the bearer's being ca
 is_a: PATO:0000973 ! porosity
 
 [Term]
+id: PATO:0000992
+name: viscosity
+def: "A physical quality of a liquid inhering in a bearer by virtue of the bearer's disposition to internal resistance to flow." []
+is_a: PATO:0001548 ! quality of a liquid
+
+[Term]
+id: PATO:0000998
+name: viscous
+def: "A viscosity quality inhering in a bearer by virtue of the bearer's having viscosity." []
+is_a: PATO:0000992 ! viscosity
+
+[Term]
 id: PATO:0001018
 name: physical quality
 def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." []
 synonym: "relational physical quality" EXACT []
 is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001154
+name: elongated
+def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." []
+is_a: PATO:0000052 ! shape
 
 [Term]
 id: PATO:0001236
@@ -419,6 +443,12 @@ def: "A process quality inhering in a bearer by virtue of the bearer's magnitude
 synonym: "period" EXACT []
 synonym: "time" RELATED []
 is_a: PATO:0002062 ! physical quality of a process
+
+[Term]
+id: PATO:0001332
+name: amorphous
+def: "A morphology quality inhering in a bearer by virtue of the bearer's lack of distinct morphology." []
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: PATO:0001374
@@ -493,6 +523,12 @@ def: "A nucleate quality inhering in a bearer by virtue of the bearer's having o
 is_a: PATO:0002505 ! nucleated
 
 [Term]
+id: PATO:0001412
+name: unstructured
+def: "A structural quality inhering in a bearer by virtue of the bearer's lacking distinct structure." []
+is_a: PATO:0000141 ! structure
+
+[Term]
 id: PATO:0001414
 name: catalytic activity
 def: "A physical quality inhering in a catalyst by virtue of the amount of the catalyst's action." []
@@ -519,11 +555,31 @@ intersection_of: PATO:0000140 ! position
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0001481
+name: sloped
+def: "A shape quality inhering in a bearer by virtue of the bearer's having an oblique or slanted direction." []
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0001501
 name: immature
 def: "A quality inhering in a bearer by virtue of the bearer's lacking complete growth, differentiation, or development." []
 synonym: "underdeveloped" RELATED []
 is_a: PATO:0000261 ! maturity
+
+[Term]
+id: PATO:0001543
+name: flexibility
+def: "A physical quality inhering in a bearer by virtue of the bearer's disposition to being turned, bowed, or twisted without breaking." []
+is_a: PATO:0001546 ! quality of a solid
+
+[Term]
+id: PATO:0001545
+name: inflexible
+def: "A physical quality inhering in a bearer by virtue of the bearer's inability of being turned, bowed, or twisted without breaking." []
+synonym: "stiff" EXACT []
+synonym: "stiffness" RELATED []
+is_a: PATO:0001543 ! flexibility
 
 [Term]
 id: PATO:0001546
@@ -545,6 +601,28 @@ name: quality of a liquid
 def: "A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape." []
 synonym: "liquidity" EXACT []
 is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0001562
+name: decreased mass
+def: "A mass which is lower than normal or average." []
+synonym: "low mass" EXACT []
+synonym: "small mass" EXACT []
+is_a: PATO:0000125 ! mass
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0000125 ! mass
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001563
+name: increased mass
+def: "A mass which is higher than normal or average." []
+synonym: "high mass" EXACT []
+synonym: "large mass" EXACT []
+is_a: PATO:0000125 ! mass
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0000125 ! mass
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
 id: PATO:0001566
@@ -608,6 +686,53 @@ synonym: "cysts" NARROW []
 is_a: PATO:0002014 ! structure, cavities
 
 [Term]
+id: PATO:0001687
+name: elevation
+def: "A positional quality inhering in a bearer by virtue of the bearer's vertical distance of a point above or below a reference surface." []
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0001688
+name: increased elevation
+def: "An elevation which is relatively high." []
+synonym: "elevated" RELATED []
+synonym: "high elevation" EXACT []
+is_a: PATO:0001475 ! increased position
+is_a: PATO:0001687 ! elevation
+intersection_of: PATO:0001687 ! elevation
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001689
+name: decreased elevation
+def: "An elevation which is relatively low." []
+synonym: "low elevation" EXACT []
+is_a: PATO:0001476 ! decreased position
+is_a: PATO:0001687 ! elevation
+intersection_of: PATO:0001687 ! elevation
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001693
+name: increased viscosity
+def: "A viscosity which relatively high." []
+synonym: "high viscosity" EXACT []
+is_a: PATO:0000998 ! viscous
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0000998 ! viscous
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001694
+name: decreased viscosity
+def: "A viscosity which relatively low." []
+synonym: "low viscosity" EXACT []
+is_a: PATO:0000998 ! viscous
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0000998 ! viscous
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
 id: PATO:0001739
 name: radiation quality
 def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
@@ -618,6 +743,18 @@ id: PATO:0001759
 name: granular
 def: "A composition quality inhering in a bearer by virtue of the bearer's containing granules." []
 is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0001822
+name: wetness
+def: "A quality inhering in a bearer by virtue of whether the bearer's being covered by a liquid." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001824
+name: dry
+def: "A wetness quality inhering in a bearer by virtue of the bearer's not being covered by a liquid." []
+is_a: PATO:0001822 ! wetness
 
 [Term]
 id: PATO:0001857
@@ -797,6 +934,17 @@ id: PATO:0002132
 name: neoplastic, non-invasive
 def: "A disposition inhering in a tumour by virtue of the bearer's disposition not to invade surrounding tissues." []
 is_a: PATO:0002011 ! neoplastic
+
+[Term]
+id: PATO:0002143
+name: sloped downward
+is_a: PATO:0001481 ! sloped
+
+[Term]
+id: PATO:0002181
+name: displaced
+def: "A positional quality inhering in a bearer by virtue the bearer's being changed in position." []
+is_a: PATO:0000140 ! position
 
 [Term]
 id: PATO:0002182

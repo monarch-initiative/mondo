@@ -156,6 +156,14 @@ is_a: CHEBI:35274 ! ammonium ion derivative
 relationship: is_conjugate_acid_of CHEBI:32863 ! secondary amine
 
 [Term]
+id: CHEBI:137980
+name: metalloid atom
+def: "An atom of an element that exhibits properties that are between those of metals and nonmetals, or that has a mixture of them. The term generally includes boron, silicon, germanium, arsenic, antimony, and tellurium, while carbon, aluminium, selenium, polonium, and astatine are less commonly included." []
+synonym: "metalloid" RELATED []
+synonym: "metalloids" RELATED []
+is_a: CHEBI:33250 ! atom
+
+[Term]
 id: CHEBI:137982
 name: tertiary ammonium ion
 def: "An organic cation obtained by protonation of the amino group of any tertiary amino compound." []
@@ -216,6 +224,26 @@ synonym: "phenyl acetate derivative" RELATED []
 synonym: "phenyl acetate derivatives" RELATED []
 is_a: CHEBI:22712 ! benzenes
 is_a: CHEBI:47622 ! acetate ester
+
+[Term]
+id: CHEBI:140499
+name: kaolinite
+def: "An aluminosilicate mineral with approximate chemical composition H2Al2Si2O8.H2O. Rocks that are rich in kaolinite are known as kaolin or china clay." []
+is_a: CHEBI:48730 ! aluminosilicate mineral
+
+[Term]
+id: CHEBI:140503
+name: kaolin
+def: "A mixture consisting principally of the mineral kaolinite and containing varying amounts of other minerals such as muscovite, quartz, feldspar, and anatase. Also known as china clay, kaolin is a soft white clay that is an essential ingredient in the manufacture of china and porcelain and is widely used in the making of paper, rubber, paint, drying agents, and many other products." []
+synonym: "argilla" RELATED []
+synonym: "Bolus alba" RELATED []
+synonym: "China clay" RELATED []
+synonym: "porcelain clay" RELATED []
+synonym: "white bole" RELATED []
+is_a: CHEBI:60004 ! mixture
+relationship: BFO:0000051 CHEBI:140499 ! kaolinite
+relationship: RO:0000087 CHEBI:55323 ! antidiarrhoeal drug
+relationship: RO:0000087 CHEBI:75324 ! excipient
 
 [Term]
 id: CHEBI:141668
@@ -2976,6 +3004,15 @@ is_a: CHEBI:35366 ! fatty acid
 relationship: is_conjugate_acid_of CHEBI:58951 ! short-chain fatty acid anion
 
 [Term]
+id: CHEBI:26677
+name: silicon molecular entity
+synonym: "silicon compounds" RELATED []
+synonym: "silicon molecular entities" RELATED []
+synonym: "silicon molecular entity" EXACT []
+is_a: CHEBI:33582 ! carbon group molecular entity
+relationship: BFO:0000051 CHEBI:27573 ! silicon atom
+
+[Term]
 id: CHEBI:26708
 name: sodium atom
 synonym: "11Na" RELATED []
@@ -3287,6 +3324,21 @@ synonym: "zwitteriones" RELATED []
 synonym: "zwitterionic compounds" RELATED []
 synonym: "zwitterions" EXACT []
 is_a: CHEBI:51151 ! dipolar compound
+
+[Term]
+id: CHEBI:27573
+name: silicon atom
+synonym: "14Si" RELATED []
+synonym: "Si" RELATED []
+synonym: "silicio" RELATED []
+synonym: "silicium" RELATED []
+synonym: "Silicon" RELATED []
+synonym: "silicon" EXACT []
+synonym: "silicon" RELATED []
+synonym: "Silizium" RELATED []
+is_a: CHEBI:137980 ! metalloid atom
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33306 ! carbon group element atom
 
 [Term]
 id: CHEBI:27594
@@ -3929,6 +3981,22 @@ relationship: has_functional_parent CHEBI:37323 ! 7,8-dimethylisoalloxazine
 relationship: is_conjugate_acid_of CHEBI:60531 ! flavin(1-)
 
 [Term]
+id: CHEBI:30563
+name: silicon dioxide
+def: "A silicon oxide made up of linear triatomic molecules in which a silicon atom is covalently bonded to two oxygens." []
+synonym: "(SiO2)n" RELATED []
+synonym: "[SiO2]" RELATED []
+synonym: "Kieselsaeureanhydrid" RELATED []
+synonym: "silica" RELATED []
+synonym: "Silica, amorphous" RELATED []
+synonym: "silicic anhydride" RELATED []
+synonym: "silicon dioxide" EXACT []
+synonym: "silicon(IV) oxide" EXACT []
+synonym: "Siliziumdioxid" RELATED []
+synonym: "SiO2" RELATED []
+is_a: CHEBI:33327 ! silicon oxide
+
+[Term]
 id: CHEBI:30742
 name: ethylene glycol
 def: "A 1,2-glycol compound produced via reaction of ethylene oxide with water." []
@@ -4077,6 +4145,12 @@ synonym: "gamma,gamma'-dipyridyl" RELATED []
 is_a: CHEBI:35545 ! bipyridine
 
 [Term]
+id: CHEBI:32178
+name: Talc
+synonym: "Talc" EXACT []
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
 id: CHEBI:32486
 name: L-phenylalaninate
 def: "An optically active form of phenylalaninate having L-configuration." []
@@ -4147,6 +4221,18 @@ synonym: "phenylalanine cation" RELATED []
 synonym: "phenylalaninium" EXACT []
 is_a: CHEBI:33719 ! alpha-amino-acid cation
 relationship: is_conjugate_acid_of CHEBI:28044 ! phenylalanine
+
+[Term]
+id: CHEBI:32594
+name: barium atom
+synonym: "56Ba" RELATED []
+synonym: "Ba" RELATED []
+synonym: "bario" RELATED []
+synonym: "Barium" RELATED []
+synonym: "barium" EXACT []
+synonym: "barium" RELATED []
+synonym: "baryum" RELATED []
+is_a: CHEBI:22313 ! alkaline earth metal atom
 
 [Term]
 id: CHEBI:32760
@@ -4710,6 +4796,14 @@ synonym: "Hauptgruppenelemente" RELATED []
 synonym: "main group element" RELATED []
 synonym: "main group elements" EXACT []
 is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33327
+name: silicon oxide
+synonym: "oxides of silicon" RELATED []
+synonym: "silicon oxides" RELATED []
+is_a: CHEBI:24836 ! inorganic oxide
+is_a: CHEBI:26677 ! silicon molecular entity
 
 [Term]
 id: CHEBI:33340
@@ -5722,6 +5816,13 @@ synonym: "Katalysator" RELATED []
 is_a: CHEBI:51086 ! chemical role
 
 [Term]
+id: CHEBI:35230
+name: fossil fuel
+def: "A fuel such as coal, oil and natural gas which has formed over many years through the decomposition of deposited vegetation which was under extreme pressure of an overburden of earth." []
+synonym: "fossil fuel" EXACT []
+is_a: CHEBI:33292 ! fuel
+
+[Term]
 id: CHEBI:35238
 name: amino acid zwitterion
 def: "The zwitterionic form of an amino acid having a negatively charged carboxyl group and a positively charged amino group." []
@@ -6635,6 +6736,20 @@ is_a: CHEBI:35352 ! organonitrogen compound
 relationship: is_conjugate_base_of CHEBI:33709 ! amino acid
 
 [Term]
+id: CHEBI:37133
+name: barium molecular entity
+synonym: "barium compounds" RELATED []
+synonym: "barium molecular entities" RELATED []
+synonym: "barium molecular entity" EXACT []
+is_a: CHEBI:33299 ! alkaline earth molecular entity
+relationship: BFO:0000051 CHEBI:32594 ! barium atom
+
+[Term]
+id: CHEBI:37134
+name: elemental barium
+is_a: CHEBI:37133 ! barium molecular entity
+
+[Term]
 id: CHEBI:37175
 name: organic hydride
 synonym: "organic hydrides" RELATED []
@@ -7420,6 +7535,15 @@ synonym: "OXO GROUP" EXACT []
 is_a: CHEBI:33246 ! inorganic group
 
 [Term]
+id: CHEBI:46661
+name: asbestos
+def: "Fibrous incombustible mineral composed of magnesium and calcium silicates with or without other elements." []
+synonym: "Asbest" RELATED []
+synonym: "asbesto" RELATED []
+synonym: "asbestos" EXACT []
+is_a: CHEBI:46663 ! silicate mineral
+
+[Term]
 id: CHEBI:46662
 name: mineral
 def: "In general, a mineral is a chemical substance that is normally crystalline formed and has been formed as a result of geological processes. The term also includes metamict substances (naturally occurring, formerly crystalline substances whose crystallinity has been destroyed by ionising radiation) and can include naturally occurring amorphous substances that have never been crystalline ('mineraloids') such as georgite and calciouranoite as well as substances formed by the action of geological processes on bigenic compounds ('biogenic minerals')." []
@@ -7429,6 +7553,18 @@ synonym: "minerales" RELATED []
 synonym: "minerals" RELATED []
 synonym: "mineraux" RELATED []
 is_a: CHEBI:59999 ! chemical substance
+
+[Term]
+id: CHEBI:46663
+name: silicate mineral
+synonym: "silicate minerals" RELATED []
+synonym: "silicates" RELATED []
+synonym: "silicato" RELATED []
+synonym: "silicatos" RELATED []
+synonym: "Silikat" RELATED []
+synonym: "Silikate" RELATED []
+synonym: "Silikatminerale" RELATED []
+is_a: CHEBI:46662 ! mineral
 
 [Term]
 id: CHEBI:46725
@@ -7692,6 +7828,16 @@ synonym: "antagonista" RELATED []
 synonym: "antagoniste" RELATED []
 synonym: "antagonists" RELATED []
 is_a: CHEBI:52210 ! pharmacological role
+
+[Term]
+id: CHEBI:48730
+name: aluminosilicate mineral
+def: "Silicate minerals that contain aluminium, silicon, and oxygen, together with other ions. They are a major component of clay minerals." []
+synonym: "aluminosilicates" RELATED []
+synonym: "aluminosilicato" RELATED []
+synonym: "Alumosilikat" RELATED []
+synonym: "Alumosilikate" RELATED []
+is_a: CHEBI:46663 ! silicate mineral
 
 [Term]
 id: CHEBI:48854
@@ -8498,6 +8644,38 @@ synonym: "Globin" EXACT []
 synonym: "globins" RELATED []
 synonym: "pentacoordinate globin" RELATED []
 is_a: CHEBI:35137 ! hemoprotein
+
+[Term]
+id: CHEBI:55323
+name: antidiarrhoeal drug
+def: "Any drug found useful in the symptomatic treatment of diarrhoea." []
+synonym: "antidiarrheal" RELATED []
+synonym: "antidiarrheal agent" RELATED []
+synonym: "antidiarrheal agents" RELATED []
+synonym: "antidiarrheal drug" RELATED []
+synonym: "antidiarrheal drugs" RELATED []
+synonym: "antidiarrheals" RELATED []
+synonym: "antidiarrhoeal" RELATED []
+synonym: "antidiarrhoeal agent" RELATED []
+synonym: "antidiarrhoeal agents" RELATED []
+synonym: "antidiarrhoeal drugs" RELATED []
+synonym: "antidiarrhoeals" RELATED []
+synonym: "antiperistaltic" RELATED []
+synonym: "antiperistaltic agent" RELATED []
+synonym: "antiperistaltic agents" RELATED []
+synonym: "antiperistaltic drug" RELATED []
+synonym: "antiperistaltic drugs" RELATED []
+synonym: "antiperistaltics" RELATED []
+is_a: CHEBI:55324 ! gastrointestinal drug
+
+[Term]
+id: CHEBI:55324
+name: gastrointestinal drug
+def: "A drug used for its effects on the gastrointestinal system, e.g. controlling gastric acidity, regulating gastrointestinal motility and water flow, and improving digestion." []
+synonym: "gastrointestinal agent" RELATED []
+synonym: "gastrointestinal agents" RELATED []
+synonym: "gastrointestinal drugs" RELATED []
+is_a: CHEBI:23888 ! drug
 
 [Term]
 id: CHEBI:5686
@@ -9512,6 +9690,17 @@ synonym: "heteroaromatic hydroxy compounds" RELATED []
 synonym: "heteroaryl hydroxy compounds" RELATED []
 is_a: CHEBI:33659 ! organic aromatic compound
 is_a: CHEBI:33822 ! organic hydroxy compound
+
+[Term]
+id: CHEBI:75324
+name: excipient
+def: "A generally pharmacologically inactive substance that is formulated with the active ingredient of a medication." []
+synonym: "bulking agent" RELATED []
+synonym: "bulking agents" RELATED []
+synonym: "excipient" EXACT []
+synonym: "filler" RELATED []
+synonym: "fillers" RELATED []
+is_a: CHEBI:33232 ! application
 
 [Term]
 id: CHEBI:75381
