@@ -1015,3 +1015,5 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
+slurp:
+	cat mirror/omim.obo | ./add-to-tbd.pl | ./obo-grep.pl --neg -r ALREADY - 
