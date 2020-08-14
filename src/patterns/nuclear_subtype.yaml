@@ -1,8 +1,8 @@
 pattern_name: nuclear_subtype
-description: A nuclear subtype of a disease, such as MONDO:0009640 'mitochondrial complex I deficiency, nuclear type'.
+description: A disease that is classified as a nuclear subtype, due to a defect in a nuclear gene, such as MONDO:0009640 'mitochondrial complex I deficiency, nuclear type'.
 
 classes:
-  nucleus: GO:0005634
+  nuclear_gene: SO:0000087
 
 relations:
   disease has basis in dysfunction of: RO:0004020
@@ -16,11 +16,11 @@ name:
    - disease
    
 def:
-  text: "A %s that is a nuclear subtype."
+  text: "A %s that has a defect in a nuclear gene."
   vars:
     - disease
 
 equivalentTo:
-  text: "%s and 'disease has basis in dysfunction of' some 'nucleus'"
+  text: "%s and 'disease has basis in dysfunction of' some 'nuclear_gene'"
   vars:
     - disease
