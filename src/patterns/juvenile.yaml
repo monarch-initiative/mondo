@@ -1,0 +1,32 @@
+pattern_name: juvenile
+
+classes:
+  juvenile: HP:0003621
+
+relations:
+  has modifier: RO:0002573
+  
+vars:
+  disease: "owl:Thing"
+
+name:
+  text: "juvenile %s"
+  vars:
+   - disease
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "juvenile %s"
+    vars:
+     - disease
+
+def:
+  text: "An instance of %s that has a juvenile onset."
+  vars:
+    - disease
+
+equivalentTo:
+  text: "%s and 'has modifier' some 'juvenile'"
+  vars:
+    - disease
+

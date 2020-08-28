@@ -1,0 +1,35 @@
+pattern_name: consequence_of_infectious_disease
+
+classes:
+  disease: MONDO:0000001
+  infectious disease: MONDO:0005550
+  
+
+relations:
+  disease arises from feature: RO:0004022
+
+vars:
+  parent: disease
+  cause: "'infectious disease'"
+
+name:
+  text: "%s %s"
+  vars:
+   - cause
+   - parent
+
+   
+def:
+  text: "A %s that arises as a consequence of %s."
+  vars:
+    - parent
+    - cause
+
+equivalentTo:
+  text: "%s and 'disease arises from feature' some %s"
+  vars:
+    - parent
+    - cause
+
+
+
