@@ -1,0 +1,35 @@
+pattern_name: susceptibility_by_gene
+
+description: >-
+  TODO
+  
+classes: 
+  disease or disorder: "MONDO:0000001"
+  inherited disease susceptibility: "MONDO:0020573"
+
+
+relations: 
+  predisposes towards: "http://purl.obolibrary.org/obo/mondo#predisposes_towards"
+
+
+vars:
+  disease: "'disease or disorder'"
+
+name:
+  text: "%s susceptibility"
+  vars:
+    - disease
+
+def:
+  text: "Any %s in which the cause of the disease is a mutation in a gene."
+  vars:
+    - disease
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+equivalentTo:
+  text: "('inherited disease susceptibility' and ('predisposes towards' some %s))"
+  vars:
+    - disease

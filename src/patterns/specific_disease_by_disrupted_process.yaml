@@ -1,0 +1,53 @@
+# options: [min(15),dir(tmp),trim(true),max_and_cardinality(4),base('http://purl.obolibrary.org/obo/mondo'),exclude_prefixes(['UBERON']),load_import_closure(false),annotations([ann(exact_synonym,oio:hasExactSynonym,0.05),ann(related_synonym,oio:hasRelatedSynonym,0.05)])]
+pattern_name: X disease disrupts X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X
+
+description: >-
+  This is auto-generated. Add your description here
+
+  Examples: [disease of catalytic activity](http://purl.obolibrary.org/obo/MONDO_0044976), [disease of transporter activity](http://purl.obolibrary.org/obo/MONDO_0044975), [phagocytic cell dysfunction](http://purl.obolibrary.org/obo/MONDO_0024627) (49 total)
+
+classes: 
+  owl:Thing: "owl:Thing"
+
+
+relations: 
+  disease disrupts: "RO:0004024"
+
+
+vars:
+  v0: "'mineral metabolism disease' or 'bone remodeling disease' or 'dissociative disorder' or 'anemia (disease)' or 'sleep-wake disorder' or 'inborn mitochondrial metabolism disorder' or 'peripheral neuropathy' or 'heart disease' or 'bone development disease' or 'neurodegenerative disease' or 'rare genetic primary immunodeficiency' or 'rare genetic developmental defect during embryogenesis' or 'inborn disorder of amino acid and other organic acid metabolism' or 'immunodeficiency syndrome' or 'phagocytic cell dysfunction'"
+  v1: "'owl:Thing'"
+
+name:
+  # Induced, frequency=0.14285714285714285, p=http://www.w3.org/2000/01/rdf-schema#label 
+  text: "%s %s"
+  vars:
+    - v1
+    - v0
+
+def:
+  # Could not induce def, using default
+  text: "Any %s that disrupts %s"
+  vars:
+    - v0
+    - v1
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: "%s %s"
+    vars:
+      - v1
+      - v0
+
+
+equivalentTo:
+  text: "%s and ('disease disrupts' some %s)"
+  vars:
+    - v0
+    - v1
