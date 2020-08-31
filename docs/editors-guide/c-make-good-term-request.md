@@ -12,7 +12,7 @@ First, please look at the current Mondo and check whether the term is already th
 
 ## Create a GitHub account
 
-1. If you do not already have a GitHub account, create a free account at: [www.github.com](www.github.com)
+1. If you do not already have a GitHub account, create a free account at: [https://github.com/](https://github.com/)
 
 ## Request a new Mondo term
 If the term you need is not already present in Mondo, please follow the instructions below:
