@@ -24,7 +24,9 @@ SKOS=http://www.w3.org/2004/02/skos/core\#
 EFO=http://www.ebi.ac.uk/efo
 ONT=mondo
 ONTURI=$(OBO)/$(ONT)
-ONTBASE=$(ONT)-base
+ONTBASE=$(OBO)/$(ONT)
+
+
 SRC=$(ONT)-edit.obo
 #RELEASEDIR=../../target/
 ROBOT= robot
@@ -35,6 +37,8 @@ SPARQLDIR = ../sparql
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 ISODATE:=`date +%Y-%m-%d`
+TODAY ?= $(shell date +%Y-%m-%d)
+OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
 
 FMTS = obo owl json
 
@@ -216,8 +220,15 @@ $(ONT).json: $(ONT).owl
 # Component module.
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
+
+OTHER_SRC=imports/axioms.owl imports/ecto_import.owl
+
 $(ONT)-base.owl: reasoned.owl
-	$(OWLTOOLS) --use-catalog $< $(patsubst %,--remove-import-declaration $(OBO)/$(ONT)/imports/%_import.owl, $(ONTOLOGY_IMPORTS))  --merge-imports-closure $(REMOVE_DECLARATIONS) --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+	$(ROBOT) remove --input $< --select imports --trim false \
+		merge $(patsubst %, -i %, $(OTHER_SRC)) \
+		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
 
 $(ONT)-base.obo: $(ONT)-base.owl
 	$(OWL2OBO)
