@@ -43,3 +43,8 @@ pattern_readmes: ../patterns/dosdp-patterns/README.md
 
 .PHONY: pattern_docs
 pattern_docs: pattern_ontology pattern_readmes
+	
+	
+no-subclass-between-genetic-disease.txt:
+	robot query -f tsv -i mondo-edit.obo -s $(SPARQLDIR)/no-subclass-between-genetic-disease.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
+
