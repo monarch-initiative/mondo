@@ -65,6 +65,9 @@ for pattern_doc in pattern_docs:
             annotations.append(annotation)
         pattern['annotations']=annotations
 
+    contributors = []
+    contributors.append("https://orcid.org/0000-0002-6601-2165")
+    pattern['contributors']=contributors
 
     outfile = Path(os.path.join(patterndirout,fn))
     print(outfile)
