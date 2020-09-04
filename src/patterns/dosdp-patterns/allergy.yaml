@@ -1,0 +1,44 @@
+pattern_name: allergy
+
+description: >4-
+
+    allergy classified according to allergic trigger.
+
+classes:
+    allergic disease: MONDO:0005271
+
+    owl_thing: owl:Thing
+relations:
+    realized in response to stimulus: RO:0004028
+
+vars:
+    substance: owl_thing
+
+name:
+    text: '%s allergic disease'
+    vars:
+      - substance
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: allergy of %s
+    vars:
+      - substance
+
+def:
+    text: A allergic disease involving a %s.
+    vars:
+      - substance
+
+equivalentTo:
+    text: "'allergic disease' and 'realized in response to stimulus' some %s"
+    vars:
+      - substance
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/allergy.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

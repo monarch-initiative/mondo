@@ -1,0 +1,45 @@
+pattern_name: location_top
+
+classes:
+    disease: MONDO:0000001
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+vars:
+    location: owl_thing
+
+name:
+    text: '%s disease'
+    vars:
+      - location
+
+annotations:
+  - annotationProperty: related_synonym
+    text: disorder of %s
+    vars:
+      - location
+  - annotationProperty: exact_synonym
+    text: disease of %s
+    vars:
+      - location
+
+def:
+    text: A disease involving the %s.
+    vars:
+      - location
+
+equivalentTo:
+    text: "'disease' and 'disease has location' some %s"
+    vars:
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

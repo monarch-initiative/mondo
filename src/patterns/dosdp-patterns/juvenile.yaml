@@ -1,0 +1,40 @@
+pattern_name: juvenile
+
+classes:
+    juvenile: HP:0003621
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: juvenile %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: juvenile %s
+    vars:
+      - disease
+
+def:
+    text: An instance of %s that has a juvenile onset.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'juvenile'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/juvenile.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

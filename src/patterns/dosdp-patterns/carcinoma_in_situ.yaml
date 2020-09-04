@@ -1,0 +1,49 @@
+pattern_name: carcinoma_in_situ
+
+classes:
+    carcinoma in situ: MONDO:0004647
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+vars:
+    location: owl_thing
+
+name:
+    text: '%s carcinoma in situ'
+    vars:
+      - location
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: carcinoma in situ of %s
+    vars:
+      - location
+  - annotationProperty: exact_synonym
+    text: non-invasic %s carcinoma
+    vars:
+      - location
+  - annotationProperty: exact_synonym
+    text: stage 0 %s carcinoma
+    vars:
+      - location
+
+def:
+    text: A carcinoma in situ involving a %s.
+    vars:
+      - location
+
+equivalentTo:
+    text: "'carcinoma in situ' and 'disease has location' some %s"
+    vars:
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/carcinoma_in_situ.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

@@ -1,0 +1,53 @@
+pattern_name: disease or disorder disease caused by disruption of X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disrupts_process.yaml
+
+description: >-
+    This is auto-generated. Add your description here
+
+    Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0007004),
+    [type IV hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0002459),
+    [neural tube closure defect](http://purl.obolibrary.org/obo/MONDO_0017059) (55
+    total)
+
+classes:
+    disease or disorder: MONDO:0000001
+
+
+    owl_thing: owl:Thing
+relations:
+    disease caused by disruption of: RO:0004021
+
+
+vars:
+    v0: owl_thing
+
+name:
+  # Induced, frequency=0.38181818181818183, p=http://www.w3.org/2000/01/rdf-schema#label 
+    text: '%s disease'
+    vars:
+      - v0
+
+def:
+  # Induced, frequency=0.38181818181818183, p=http://purl.obolibrary.org/obo/IAO_0000115 
+    text: A disease that has its basis in the disruption of %s.
+    vars:
+      - v0
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: disorder of %s
+    vars:
+      - v0
+
+
+equivalentTo:
+    text: "'disease or disorder' and ('disease caused by disruption of' some %s)"
+    vars:
+      - v0
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

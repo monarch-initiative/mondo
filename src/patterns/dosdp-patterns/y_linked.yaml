@@ -1,0 +1,40 @@
+pattern_name: y_linked
+
+classes:
+    y_linked_inheritance: HP:0001450
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: Y-linked %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s, Y-linked'
+    vars:
+      - disease
+
+def:
+    text: Y-linked form of %s.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'y_linked_inheritance'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

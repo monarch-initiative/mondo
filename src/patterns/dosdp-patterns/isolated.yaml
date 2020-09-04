@@ -1,0 +1,41 @@
+pattern_name: isolated
+
+classes:
+    isolated: MONDO:0021128
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: isolated %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: nonsyndromic %s
+    vars:
+      - disease
+
+def:
+    text: A %s that is not part of a larger syndrome.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'isolated'"
+    vars:
+      - disease
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

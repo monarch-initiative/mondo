@@ -1,0 +1,46 @@
+pattern_name: disease_by_dysfunctional_structure
+
+description: >4-
+
+    Diseases classified by a perturbation in an anatomical structure
+    (such as a subcellular component, or an organ)
+
+classes:
+    disease: MONDO:0000001
+    anatomical structure: UBERON:0000061
+
+relations:
+    disease has basis in dysfunction of: RO:0004020
+
+vars:
+    structure: "'anatomical structure'"
+
+name:
+    text: '%s disease'
+    vars:
+      - structure
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: disease of %s
+    vars:
+      - structure
+
+def:
+    text: Any disease in which the causes of the disease is a perturbation of the
+        %s leading to its dysfunction.
+    vars:
+      - structure
+
+equivalentTo:
+    text: "'disease' and 'disease has basis in dysfunction of' some %s"
+    vars:
+      - structure
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_by_dysfunctional_structure.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

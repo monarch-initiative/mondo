@@ -31,6 +31,7 @@ ROBOT= robot
 OWLTOOLS= owltools
 USECAT= --use-catalog
 SPARQLDIR = ../sparql
+PATTERNDIR = ../patterns
 
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
@@ -63,7 +64,7 @@ EFO2OBO_PERL = 's@NCIt:@NCIT:@; s@MSH:@MESH:@; s@SNOMEDCT:@SCTID:@;'
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
-
+.PHONY: .FORCE
 all: test all_artefacts
 
 # ----------------------------------------
@@ -295,7 +296,6 @@ modules/%.tsv: modules/%.csv
 
 modules/%.owl: modules/%.tsv
 	dosdp-tools  --obo-prefixes --ontology=../ontology/mondo-edit.obo  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
-
 
 # ----------------------------------------
 # Import modules
@@ -1014,4 +1014,5 @@ d2p.pro:
 	
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
-
+	
+include mondo.Makefile

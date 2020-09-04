@@ -1,0 +1,54 @@
+# options: [min(15),dir(tmp),trim(true),max_and_cardinality(4),base('http://purl.obolibrary.org/obo/mondo'),exclude_prefixes(['UBERON']),load_import_closure(false),annotations([ann(exact_synonym,oio:hasExactSynonym,0.05),ann(related_synonym,oio:hasRelatedSynonym,0.05)])]
+pattern_name: mucoepidermoid carcinoma disease has location X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/mucoepidermoid_carcinoma.yaml
+
+description: >-
+    This is auto-generated. Add your description here
+
+    Examples: [cutaneous mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MONDO_0003091),
+    [oral cavity mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MONDO_0044964),
+    [mucoepidermoid breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003087)
+    (18 total)
+
+classes:
+    mucoepidermoid carcinoma: MONDO:0003036
+    anatomical entity: UBERON:0001062
+
+
+relations:
+    disease has location: RO:0004026
+
+
+vars:
+    v0: "'anatomical entity'"
+
+name:
+  # Induced, frequency=0.5555555555555556, p=http://www.w3.org/2000/01/rdf-schema#label 
+    text: '%s mucoepidermoid carcinoma'
+    vars:
+      - v0
+
+def:
+  # Induced, frequency=0.2777777777777778, p=http://purl.obolibrary.org/obo/IAO_0000115 
+    text: A mucoepidermoid carcinoma that involves the %s.
+    vars:
+      - v0
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: '%s mucoepidermoid carcinoma'
+    vars:
+      - v0
+
+
+equivalentTo:
+    text: "'mucoepidermoid carcinoma' and ('disease has location' some %s)"
+    vars:
+      - v0
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
