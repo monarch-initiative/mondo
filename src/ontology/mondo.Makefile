@@ -11,10 +11,6 @@ pattern_schema_checks:
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
 	$(DOSDPT) prototype --obo-prefixes --template=../patterns/dosdp-patterns --outfile=$@
 
-xx:
-	ls ../patterns/dosdp-patterns
-	cat /tools/simple_pattern_tester.py
-
 ../patterns/pattern-merged.owl: ../patterns/dosdp-pattern.owl
 	$(ROBOT) merge -i ../patterns/dosdp-pattern.owl annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$(ONT)-pattern.owl annotate --ontology-iri $(ONTBASE)/$(ONT)-pattern.owl -o $@
 
