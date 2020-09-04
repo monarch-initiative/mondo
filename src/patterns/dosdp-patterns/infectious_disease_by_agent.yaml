@@ -1,0 +1,47 @@
+pattern_name: infectious_disease_by_agent
+
+classes:
+    disease: MONDO:0000001
+    organism: NCBITaxon:1
+    infectious disease: MONDO:0005550
+
+
+# NOTE: this may change in future
+relations:
+    realized in response to stimulus: RO:0004028
+
+vars:
+    agent: "'organism'"
+
+name:
+    text: '%s infectious disease'
+    vars:
+      - agent
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: infection due to %s
+    vars:
+      - agent
+  - annotationProperty: exact_synonym
+    text: '%s infection'
+    vars:
+      - agent
+
+
+def:
+    text: A disease caused by infection with %s.
+    vars:
+      - agent
+
+equivalentTo:
+    text: "'infectious disease' and 'realized in response to stimulus' some %s"
+    vars:
+      - agent
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.

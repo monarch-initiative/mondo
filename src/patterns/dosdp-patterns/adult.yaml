@@ -1,0 +1,38 @@
+pattern_name: adult
+
+classes:
+    adult: HP:0003581
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: adult %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s of adults'
+    vars:
+      - disease
+
+def:
+    text: A %s that occurs in an adult.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'adult'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/adult.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.

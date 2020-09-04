@@ -1,0 +1,46 @@
+pattern_name: benign
+
+description: >4-
+
+    This is a design pattern for classes representing benign neoplasms, extending
+    a generic neoplasm class. For example, a benign adrenal gland pheochromocytoma,
+    defined as being the benign form of the more general adrenal gland pheochromocytoma.
+
+    TODO: encode alternate way of representing
+
+classes:
+    neoplasm: MONDO:0005070
+    neoplastic, non-malignant: PATO:0002096
+
+relations:
+    has modifier: RO:0002573
+
+vars:
+    neoplasm: "'neoplasm'"
+
+name:
+    text: benign %s
+    vars:
+      - neoplasm
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s, benign'
+    vars:
+      - neoplasm
+
+def:
+    text: A form of %s without malignant characteristics.
+    vars:
+      - neoplasm
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'neoplastic, non-malignant'"
+    vars:
+      - neoplasm
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/benign.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym

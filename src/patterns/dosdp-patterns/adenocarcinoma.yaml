@@ -1,0 +1,55 @@
+pattern_name: adenocarcinoma disease has location X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/adenocarcinoma.yaml
+
+description: >-
+    This is auto-generated. Add your description here
+
+    Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016275),
+    [pituitary adenocarcinoma (disease)](http://purl.obolibrary.org/obo/MONDO_0017582),
+    [ureter adenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0003216) (56 total)
+
+classes:
+    adenocarcinoma: MONDO:0004970
+
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+
+vars:
+    v0: owl_thing
+
+name:
+  # Induced, frequency=0.5714285714285714, p=http://www.w3.org/2000/01/rdf-schema#label 
+    text: '%s adenocarcinoma'
+    vars:
+      - v0
+
+def:
+  # Induced, frequency=0.35714285714285715, p=http://purl.obolibrary.org/obo/IAO_0000115 
+    text: A carcinoma that arises from glandular epithelial cells of the %s
+    vars:
+      - v0
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: '%s adenocarcinoma'
+    vars:
+      - v0
+  - annotationProperty: related_synonym
+    # Induced p=related_synonym 
+    text: adenocarcinoma of %s
+    vars:
+      - v0
+
+
+equivalentTo:
+    text: "'adenocarcinoma' and ('disease has location' some %s)"
+    vars:
+      - v0

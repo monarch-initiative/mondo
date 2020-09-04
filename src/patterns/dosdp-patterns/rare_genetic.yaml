@@ -1,0 +1,46 @@
+pattern_name: rare_genetic
+
+classes:
+    genetic: MONDO:0021150
+    rare: MONDO:0021136
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: rare genetic %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: rare inborn %s
+    vars:
+      - disease
+
+  - annotationProperty: exact_synonym
+    text: rare constitutional %s
+    vars:
+      - disease
+
+def:
+    text: A form of %s that is both rare and genetic.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'genetic' and 'has modifier' some 'rare'"
+    vars:
+      - disease
+
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/rare_genetic.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.

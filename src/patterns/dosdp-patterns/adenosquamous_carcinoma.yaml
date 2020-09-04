@@ -1,0 +1,52 @@
+# options: [min(15),dir(tmp),trim(true),max_and_cardinality(4),base('http://purl.obolibrary.org/obo/mondo'),exclude_prefixes(['UBERON']),load_import_closure(false),annotations([ann(exact_synonym,oio:hasExactSynonym,0.05),ann(related_synonym,oio:hasRelatedSynonym,0.05)])]
+pattern_name: adenosquamous carcinoma disease has location X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/adenosquamous_carcinoma.yaml
+
+description: >-
+    This is auto-generated. Add your description here
+
+    Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003548),
+    [Bartholin's gland adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0003555),
+    [gastric adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006034)
+    (16 total)
+
+classes:
+    adenosquamous carcinoma: MONDO:0006074
+    multicellular anatomical structure: UBERON:0010000
+
+
+relations:
+    disease has location: RO:0004026
+
+
+vars:
+    v0: "'multicellular anatomical structure'"
+
+name:
+  # Induced, frequency=0.3125, p=http://www.w3.org/2000/01/rdf-schema#label 
+    text: '%s adenosquamous carcinoma'
+    vars:
+      - v0
+
+def:
+    text: Any carcinoma that that involves the %s and is characterized by the presence
+        of glandular and squamous malignant epithelial components.
+    vars:
+      - v0
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: adenosquamous %s carcinoma
+    vars:
+      - v0
+
+
+equivalentTo:
+    text: "'adenosquamous carcinoma' and ('disease has location' some %s)"
+    vars:
+      - v0

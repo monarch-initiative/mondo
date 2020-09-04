@@ -1,0 +1,44 @@
+pattern_name: allergic_form_of_disease
+
+description: >4-
+
+    an etiological pattern that extends an etiology-generic disease to
+    an allergic form (i.e. caused by pathological type I
+    hypersensitivity reaction)
+
+classes:
+    disease: MONDO:0000001
+    type I hypersensitivity: GO:0016068
+
+relations:
+    disease has basis in disruption of: RO:0004021
+
+vars:
+    disease: "'disease'"
+
+name:
+    text: allergic %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: allergic form of %s
+    vars:
+      - disease
+
+def:
+    text: A %s with a basis in a pathological type I hypersensitivity reaction.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'disease has basis in disruption of' some 'type I hypersensitivity'"
+    vars:
+      - disease
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/allergic_form_of_disease.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym

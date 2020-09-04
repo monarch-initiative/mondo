@@ -1,0 +1,43 @@
+pattern_name: syndromic
+
+classes:
+    syndromic: MONDO:0021127
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: syndromic %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: syndromic %s
+    vars:
+      - disease
+  - annotationProperty: related_synonym
+    text: syndrome associated with %s
+    vars:
+      - disease
+
+def:
+    text: A %s that is part of a larger syndrome.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'syndromic'"
+    vars:
+      - disease
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.

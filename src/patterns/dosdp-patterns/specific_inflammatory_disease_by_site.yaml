@@ -1,0 +1,47 @@
+pattern_name: specific_inflammatory_disease_by_site
+
+description: >4-
+
+    as for inflammatory_disease_by_site, but refining a specific disease
+
+classes:
+    disease: MONDO:0000001
+    anatomical structure: UBERON:0000061
+
+relations:
+    disease has inflammation site: RO:0004027
+
+vars:
+    disease: "'disease'"
+    location: "'anatomical structure'"
+
+name:
+    text: '%s %s'
+    vars:
+      - location
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s %sitis'
+    vars:
+      - disease
+      - location
+
+def:
+    text: An %s involving a pathogenic inflammatory response in the %s.
+    vars:
+      - disease
+      - location
+
+equivalentTo:
+    text: "%s and 'disease has inflammation site' some %s"
+    vars:
+      - disease
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/specific_inflammatory_disease_by_site.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym

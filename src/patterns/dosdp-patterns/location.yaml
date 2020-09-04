@@ -1,0 +1,44 @@
+pattern_name: location
+
+classes:
+    disease: MONDO:0000001
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+vars:
+    disease: "'disease'"
+    location: owl_thing
+
+name:
+    text: '%s of %s'
+    vars:
+      - disease
+      - location
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s %s'
+    vars:
+      - location
+      - disease
+
+def:
+    text: A %s that involves the %s.
+    vars:
+      - disease
+      - location
+
+equivalentTo:
+    text: "%s and 'disease has location' some %s"
+    vars:
+      - disease
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/location.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.

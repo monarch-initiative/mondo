@@ -1,0 +1,50 @@
+pattern_name: melanoma disease has location X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/melanoma.yaml
+
+description: >-
+    This is auto-generated. Add your description here
+
+    Examples: [cutaneous melanoma](http://purl.obolibrary.org/obo/MONDO_0005012),
+    [malignant breast melanoma](http://purl.obolibrary.org/obo/MONDO_0002975), [malignant
+    melanoma of the mucosa](http://purl.obolibrary.org/obo/MONDO_0015694) (22 total)
+
+classes:
+    melanoma: MONDO:0005105
+
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+
+vars:
+    v0: owl_thing
+
+name:
+  # Induced, frequency=0.22727272727272727, p=http://www.w3.org/2000/01/rdf-schema#label 
+    text: '%s melanoma'
+    vars:
+      - v0
+
+def:
+  # Induced, frequency=0.18181818181818182, p=http://purl.obolibrary.org/obo/IAO_0000115 
+    text: A melanoma that involves the %s.
+    vars:
+      - v0
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: '%s melanoma'
+    vars:
+      - v0
+
+
+equivalentTo:
+    text: "'melanoma' and ('disease has location' some %s)"
+    vars:
+      - v0

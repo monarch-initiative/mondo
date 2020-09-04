@@ -1,0 +1,66 @@
+pattern_name: neoplasm
+
+description: >4-
+
+    Neoplasms are benign or malignant tissue growths resulting from
+    uncontrolled cell proliferation cell types.
+
+    This is a design pattern for classes representing neoplasms based on
+    their location. This may be the site of origin, but it can also
+    represent a secondary site for malignant neoplasms that have
+    metastasized.
+
+    We use the generic 'disease has location' relation, which
+    generalized over primary and secondary sites.
+
+    Note that tumor is typically a synonym for neoplasm, although this
+    can be context dependent. For NETs, NCIT uses the nomenclature 'tumor'
+    to indicate 'well differentiated, low or intermediate grade tumor'.
+    This can also be called carcinoid, see
+    https://www.cancer.org/cancer/gastrointestinal-carcinoid-tumor/about/what-is-gastrointestinal-carcinoid.html
+    We attempt to spell this out in our labels.
+
+classes:
+    neoplasm: MONDO:0005070
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+vars:
+    location: owl_thing
+
+name:
+    text: '%s neoplasm'
+    vars:
+      - location
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: neoplasm of %s
+    vars:
+      - location
+  - annotationProperty: exact_synonym
+    text: '%s tumor'
+    vars:
+      - location
+  - annotationProperty: exact_synonym
+    text: tumor of %s
+    vars:
+      - location
+
+def:
+    text: A neoplasm involving a %s.
+    vars:
+      - location
+
+equivalentTo:
+    text: "'neoplasm' and 'disease has location' some %s"
+    vars:
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/neoplasm.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
