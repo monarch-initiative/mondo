@@ -1,0 +1,10 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?cls (COUNT(*) AS ?total)
+WHERE {
+    ?child rdfs:subClassOf ?cls .
+    FILTER ( regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER ( regex(str(?child), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
+GROUP BY ?cls
+HAVING (?total = 1)
