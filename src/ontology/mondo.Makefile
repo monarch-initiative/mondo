@@ -43,8 +43,20 @@ pattern_readmes: ../patterns/dosdp-patterns/README.md
 
 .PHONY: pattern_docs
 pattern_docs: pattern_ontology pattern_readmes
-	
-	
-no-subclass-between-genetic-disease.txt:
-	robot query -f tsv -i mondo-edit.obo -s $(SPARQLDIR)/no-subclass-between-genetic-disease.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
+
+mondo-qc.owl:
+	$(ROBOT) merge -i $(SRC) reason relax reduce -o $@
+
+spar_ql_%: mondo-qc.owl
+	date && robot query -f tsv --use-graphs true -i mondo-qc.owl -s $(SPARQLDIR)/$*.sparql reports/$*.tsv && date
+
+#.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
+
+s: spar_ql_single-child-warning spar_ql_two-label-violation spar_ql_no-subclass-between-genetic-disease-warning spar_ql_related-exact-synonym-warning spar_ql_excluded-subsumption-is-inferred
+
+qc:
+	$(ROBOT) report -i mondo-qc.owl --fail-on none --print 5 -o reports/obo-report.tsv
+
+x:
+	robot merge -i mondo-qc.owl convert -f obo --check false -o mondo-qc.obo
