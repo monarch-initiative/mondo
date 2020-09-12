@@ -2,18 +2,20 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?d1 ?d2 WHERE 
+SELECT ?d1 ?d1_label ?d2 ?d2_label WHERE 
 {
 
 ?d1 rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . 
+?d1 rdfs:label ?d1_label .
 
 ?d1 rdfs:subClassOf* ?d2 .
 
 ?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene2 ] .
+?d2 rdfs:label ?d2_label .
 
 FILTER ( isIRI(?d1) && regex(str(?d1), "^http://purl.obolibrary.org/obo/MONDO_"))
 FILTER ( isIRI(?d2) && regex(str(?d2), "^http://purl.obolibrary.org/obo/MONDO_"))
