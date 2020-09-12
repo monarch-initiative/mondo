@@ -326,8 +326,14 @@ all_imports_owl_roots: $(ONTOLOGY_IMPORTS_OWL_ROOTS)
 all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 
 # Use ROBOT, driven entirely by terms lists NOT from source ontology
+IMP=true
+
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(ONTURI)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		remove -T imports/removeseed.txt \
+		reason --exclude-tautologies structural \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
