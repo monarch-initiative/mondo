@@ -55,7 +55,7 @@ spar_ql_%: mondo-qc.owl
 
 s: spar_ql_single-child-warning spar_ql_two-label-violation spar_ql_no-subclass-between-genetic-disease-warning spar_ql_related-exact-synonym-warning spar_ql_excluded-subsumption-is-inferred
 
-qc:
+qc: s
 	$(ROBOT) report -i mondo-qc.owl --fail-on none --print 5 -o reports/obo-report.tsv
 
 x:
