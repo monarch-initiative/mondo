@@ -1,4 +1,5 @@
 format-version: 1.2
+data-version: mondo/releases/2020-09-14/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -638,10 +639,8 @@ synonym: "L-Glutamic acid" EXACT []
 synonym: "L-glutamic acid" EXACT []
 synonym: "L-Glutaminic acid" RELATED []
 synonym: "L-Glutaminsaeure" RELATED []
-is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:18237 ! glutamic acid
 is_a: CHEBI:24318 ! glutamine family amino acid
-is_a: CHEBI:83813 ! proteinogenic amino acid
 relationship: is_conjugate_acid_of CHEBI:29985 ! L-glutamate(1-)
 relationship: is_enantiomer_of CHEBI:15966 ! D-glutamic acid
 relationship: RO:0000087 CHEBI:25512 ! neurotransmitter
@@ -1194,10 +1193,8 @@ synonym: "L-Phenylalanine" EXACT []
 synonym: "L-phenylalanine" EXACT []
 synonym: "Phe" RELATED []
 synonym: "PHENYLALANINE" RELATED []
-is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:28044 ! phenylalanine
 is_a: CHEBI:73690 ! erythrose 4-phosphate/phosphoenolpyruvate family amino acid
-is_a: CHEBI:83813 ! proteinogenic amino acid
 relationship: is_conjugate_acid_of CHEBI:32486 ! L-phenylalaninate
 relationship: is_conjugate_base_of CHEBI:32487 ! L-phenylalaninium
 relationship: is_enantiomer_of CHEBI:16998 ! D-phenylalanine
@@ -1465,10 +1462,8 @@ synonym: "Tyr" RELATED []
 synonym: "TYROSINE" RELATED []
 synonym: "Tyrosine" RELATED []
 synonym: "Y" RELATED []
-is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:18186 ! tyrosine
 is_a: CHEBI:73690 ! erythrose 4-phosphate/phosphoenolpyruvate family amino acid
-is_a: CHEBI:83813 ! proteinogenic amino acid
 relationship: has_functional_parent CHEBI:46209 ! L-tyrosinal
 relationship: is_conjugate_acid_of CHEBI:32760 ! L-tyrosinate(1-)
 relationship: is_conjugate_base_of CHEBI:32762 ! L-tyrosinium
@@ -2461,7 +2456,6 @@ synonym: "isoprenoid" EXACT []
 synonym: "isoprenoids" EXACT []
 synonym: "isoprenoids" RELATED []
 is_a: CHEBI:18059 ! lipid
-is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
 id: CHEBI:24995
@@ -2488,7 +2482,6 @@ synonym: "lactones" EXACT []
 synonym: "Lakton" RELATED []
 synonym: "Laktone" RELATED []
 is_a: CHEBI:33308 ! carboxylic ester
-is_a: CHEBI:35701 ! ester
 is_a: CHEBI:38104 ! oxacycle
 
 [Term]
@@ -2751,7 +2744,6 @@ synonym: "organophosphate ester" RELATED []
 synonym: "organophosphate esters" RELATED []
 is_a: CHEBI:25710 ! organophosphorus compound
 is_a: CHEBI:26020 ! phosphate
-is_a: CHEBI:26079 ! phosphoric acid derivative
 
 [Term]
 id: CHEBI:2571
@@ -3268,7 +3260,6 @@ name: L-tyrosine derivative
 def: "A proteinogenic amino acid derivative resulting from reaction of L-tyrosine at the amino group or the carboxy group, or from the replacement of any hydrogen of L-tyrosine by a heteroatom." []
 synonym: "L-tyrosine derivatives" RELATED []
 is_a: CHEBI:62761 ! tyrosine derivative
-is_a: CHEBI:83811 ! proteinogenic amino acid derivative
 is_a: CHEBI:84144 ! L-phenylalanine derivative
 relationship: has_functional_parent CHEBI:17895 ! L-tyrosine
 
@@ -3943,7 +3934,6 @@ synonym: "hemes" EXACT []
 synonym: "hemos" RELATED []
 is_a: CHEBI:25216 ! metalloporphyrin
 is_a: CHEBI:33892 ! iron coordination entity
-is_a: CHEBI:33909 ! metallotetrapyrrole
 relationship: RO:0000087 CHEBI:25212 ! metabolite
 relationship: RO:0000087 CHEBI:26348 ! prosthetic group
 
@@ -4819,7 +4809,6 @@ name: manganese group element atom
 synonym: "group 7 elements" EXACT []
 synonym: "manganese group element" RELATED []
 synonym: "manganese group elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4828,7 +4817,6 @@ name: iron group element atom
 synonym: "group 8 elements" EXACT []
 synonym: "iron group element" RELATED []
 synonym: "iron group elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4837,7 +4825,6 @@ name: cobalt group element atom
 synonym: "cobalt group element" RELATED []
 synonym: "cobalt group elements" RELATED []
 synonym: "group 9 elements" EXACT []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4846,7 +4833,6 @@ name: nickel group element atom
 synonym: "group 10 elements" EXACT []
 synonym: "nickel group element" RELATED []
 synonym: "nickel group elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4978,7 +4964,6 @@ name: chalcogen oxoacid
 synonym: "chalcogen oxoacid" EXACT []
 synonym: "chalcogen oxoacids" RELATED []
 is_a: CHEBI:24833 ! oxoacid
-is_a: CHEBI:33304 ! chalcogen molecular entity
 relationship: RO:0000087 CHEBI:138103 ! inorganic acid
 
 [Term]
@@ -4986,7 +4971,6 @@ id: CHEBI:33485
 name: chalcogen oxoanion
 synonym: "chalcogen oxoanion" EXACT []
 synonym: "chalcogen oxoanions" RELATED []
-is_a: CHEBI:33304 ! chalcogen molecular entity
 is_a: CHEBI:35406 ! oxoanion
 
 [Term]
@@ -5066,7 +5050,6 @@ name: d-block element atom
 synonym: "d-block element" RELATED []
 synonym: "d-block elements" RELATED []
 is_a: CHEBI:27081 ! transition element atom
-is_a: CHEBI:33521 ! metal atom
 
 [Term]
 id: CHEBI:33563
@@ -5433,7 +5416,6 @@ id: CHEBI:33743
 name: manganese group molecular entity
 synonym: "manganese group molecular entities" RELATED []
 synonym: "manganese group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33352 ! manganese group element atom
 
@@ -5442,7 +5424,6 @@ id: CHEBI:33744
 name: iron group molecular entity
 synonym: "iron group molecular entities" RELATED []
 synonym: "iron group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33356 ! iron group element atom
 
@@ -5451,7 +5432,6 @@ id: CHEBI:33747
 name: nickel group molecular entity
 synonym: "nickel group molecular entities" RELATED []
 synonym: "nickel group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33362 ! nickel group element atom
 
@@ -5469,7 +5449,6 @@ id: CHEBI:33767
 name: cobalt group molecular entity
 synonym: "cobalt group molecular entities" RELATED []
 synonym: "cobalt group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33358 ! cobalt group element atom
 
@@ -6367,7 +6346,6 @@ def: "Natural and synthetic antibiotics containing the 4-thia-1-azabicyclo[3.2.0
 synonym: "penams" EXACT []
 is_a: CHEBI:27171 ! organic heterobicyclic compound
 is_a: CHEBI:27933 ! beta-lactam antibiotic
-is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
 is_a: CHEBI:38106 ! organosulfur heterocyclic compound
 
 [Term]
@@ -7932,7 +7910,6 @@ synonym: "DL-dioxyphenylalanine" RELATED []
 synonym: "dopa" EXACT []
 is_a: CHEBI:24734 ! hydroxyphenylalanine
 is_a: CHEBI:62761 ! tyrosine derivative
-is_a: CHEBI:83925 ! non-proteinogenic alpha-amino acid
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
@@ -7984,7 +7961,6 @@ name: organic amino compound
 def: "A compound formally derived from ammonia by replacing one, two or three hydrogen atoms by organyl groups." []
 synonym: "organic amino compounds" RELATED []
 is_a: CHEBI:35352 ! organonitrogen compound
-is_a: CHEBI:50860 ! organic molecular entity
 relationship: has_parent_hydride CHEBI:16134 ! ammonia
 relationship: RO:0000087 CHEBI:39142 ! Bronsted base
 
@@ -8476,7 +8452,6 @@ id: CHEBI:51061
 name: hormone receptor modulator
 def: "A drug that modulates the function of the endocrine glands, the biosynthesis of their secreted hormones, or the action of hormones upon their specific sites." []
 synonym: "hormone receptor modulators" RELATED []
-is_a: CHEBI:23888 ! drug
 is_a: CHEBI:90710 ! receptor modulator
 
 [Term]
@@ -8508,7 +8483,6 @@ def: "Any anion formed by loss of a proton from the carboxy group of a penicilli
 synonym: "penicillin" RELATED []
 synonym: "penicillin anion" RELATED []
 synonym: "penicillin anions" RELATED []
-is_a: CHEBI:35757 ! monocarboxylic acid anion
 is_a: CHEBI:47811 ! penamcarboxylate
 relationship: is_conjugate_base_of CHEBI:17334 ! penicillin
 
@@ -9188,7 +9162,6 @@ name: tyrosine derivative
 def: "An amino acid derivative resulting from reaction of tyrosine at the amino group or the carboxy group, any substitution of phenyl hydrogens, or from the replacement of any hydrogen of tyrosine by a heteroatom. The definition normally excludes peptides containing tyrosine residues." []
 synonym: "tyrosine derivatives" RELATED []
 is_a: CHEBI:25985 ! phenylalanine derivative
-is_a: CHEBI:83821 ! amino acid derivative
 relationship: has_functional_parent CHEBI:18186 ! tyrosine
 
 [Term]
@@ -9413,7 +9386,6 @@ synonym: "linoleic acid omega(6)-lipoxygenase inhibitors" RELATED []
 synonym: "omega(6) lipoxygenase inhibitor" RELATED []
 synonym: "omega(6) lipoxygenase inhibitors" RELATED []
 is_a: CHEBI:35856 ! lipoxygenase inhibitor
-is_a: CHEBI:76837 ! EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 O atoms) inhibitor
 
 [Term]
 id: CHEBI:65001
@@ -10657,7 +10629,6 @@ name: D-tyrosine derivative
 def: "A non-proteinogenic amino acid derivative resulting from reaction of D-tyrosine at the amino group or the carboxy group, or from the replacement of any hydrogen of D-tyrosine by a heteroatom." []
 synonym: "D-tyrosine derivatives" RELATED []
 is_a: CHEBI:62761 ! tyrosine derivative
-is_a: CHEBI:83812 ! non-proteinogenic amino acid derivative
 is_a: CHEBI:84143 ! D-phenylalanine derivative
 relationship: has_functional_parent CHEBI:28479 ! D-tyrosine
 
@@ -10724,7 +10695,6 @@ synonym: "antifungal medication" RELATED []
 synonym: "antifungal medications" RELATED []
 synonym: "pharmaceutical fungicide" RELATED []
 synonym: "pharmaceutical fungicides" RELATED []
-is_a: CHEBI:23888 ! drug
 is_a: CHEBI:35441 ! antiinfective agent
 is_a: CHEBI:35718 ! antifungal agent
 
