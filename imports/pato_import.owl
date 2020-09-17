@@ -10,7 +10,9 @@
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-09-14/imports/pato_import.owl"/>
+    </owl:Ontology>
     
 
 
@@ -75,7 +77,7 @@
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
         <rdfs:label>part of</rdfs:label>
         <rdfs:label xml:lang="en">part of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</rdfs:label>
+        <rdfs:label>part_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -85,11 +87,11 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2.</obo:IAO_0000115>
+        <obo:IAO_0000115>Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
         <rdfs:label>has part</rdfs:label>
         <rdfs:label xml:lang="en">has part</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
+        <rdfs:label>has_part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1207,8 +1209,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) &lt; magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased_in_magnitude_relative_to</rdfs:label>
+        <obo:IAO_0000115>q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) &lt; magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale.</obo:IAO_0000115>
+        <rdfs:label>decreased_in_magnitude_relative_to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1218,8 +1220,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/pato#different_in_magnitude_relative_to">
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">different_in_magnitude_relative_to</rdfs:label>
+        <obo:IAO_0000115>q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale.</obo:IAO_0000115>
+        <rdfs:label>different_in_magnitude_relative_to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1227,8 +1229,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <!-- http://purl.obolibrary.org/obo/pato#has_cross_section -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/pato#has_cross_section">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_cross_section</rdfs:label>
+        <obo:IAO_0000115>s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2.</obo:IAO_0000115>
+        <rdfs:label>has_cross_section</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1240,8 +1242,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) &gt; magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased_in_magnitude_relative_to</rdfs:label>
+        <obo:IAO_0000115>q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) &gt; magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale.</obo:IAO_0000115>
+        <rdfs:label>increased_in_magnitude_relative_to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1437,8 +1439,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
+        <obo:IAO_0000115>A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities</obo:IAO_0000115>
+        <rdfs:label>quality</rdfs:label>
     </owl:Class>
     
 
@@ -1447,12 +1449,12 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000025">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A single physical entity inhering in an bearer by virtue of the bearer&apos;s quantities or relative ratios of subparts.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed of</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compositionality</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">content</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure, composition</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composition</rdfs:label>
+        <obo:IAO_0000115>A single physical entity inhering in an bearer by virtue of the bearer&apos;s quantities or relative ratios of subparts.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>composed of</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>compositionality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>content</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>structure, composition</oboInOwl:hasExactSynonym>
+        <rdfs:label>composition</rdfs:label>
     </owl:Class>
     
 
@@ -1461,9 +1463,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000033">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002182"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a substance by virtue of the amount of the bearer&apos;s there is mixed with another substance.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentration</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentration of</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a substance by virtue of the amount of the bearer&apos;s there is mixed with another substance.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>concentration</oboInOwl:hasExactSynonym>
+        <rdfs:label>concentration of</rdfs:label>
     </owl:Class>
     
 
@@ -1472,10 +1474,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000048">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001546"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s resistance to pressure, being broken, or pierced</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impenetrability</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toughness</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hardness</rdfs:label>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s resistance to pressure, being broken, or pierced</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>impenetrability</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>toughness</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hardness</rdfs:label>
     </owl:Class>
     
 
@@ -1485,8 +1487,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000051">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single physical entity inhering in the bearer by virtue of the bearer&apos;s size or shape or structure.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">morphology</rdfs:label>
+        <obo:IAO_0000115>A quality of a single physical entity inhering in the bearer by virtue of the bearer&apos;s size or shape or structure.</obo:IAO_0000115>
+        <rdfs:label>morphology</rdfs:label>
     </owl:Class>
     
 
@@ -1495,9 +1497,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000052">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphological quality inhering in a bearer by virtue of the bearer&apos;s ratios of distances between its features (points, edges, surfaces and also holes etc).</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational shape quality</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shape</rdfs:label>
+        <obo:IAO_0000115>A morphological quality inhering in a bearer by virtue of the bearer&apos;s ratios of distances between its features (points, edges, surfaces and also holes etc).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>relational shape quality</oboInOwl:hasExactSynonym>
+        <rdfs:label>shape</rdfs:label>
     </owl:Class>
     
 
@@ -1506,10 +1508,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000060">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial quality inhering in a bearer by virtue of the bearer&apos;s exhibiting repetition of placement of its parts.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distribution</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pattern</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatial pattern</rdfs:label>
+        <obo:IAO_0000115>A spatial quality inhering in a bearer by virtue of the bearer&apos;s exhibiting repetition of placement of its parts.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>distribution</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pattern</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>spatial pattern</rdfs:label>
     </owl:Class>
     
 
@@ -1518,7 +1520,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000068">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qualitative</rdfs:label>
+        <rdfs:label>qualitative</rdfs:label>
     </owl:Class>
     
 
@@ -1527,8 +1529,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000069">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000068"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deviation (from_normal)</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average.</obo:IAO_0000115>
+        <rdfs:label>deviation (from_normal)</rdfs:label>
     </owl:Class>
     
 
@@ -1537,8 +1539,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000117">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphology quality inhering in a bearer by virtue of the bearer&apos;s physical magnitude.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">size</rdfs:label>
+        <obo:IAO_0000115>A morphology quality inhering in a bearer by virtue of the bearer&apos;s physical magnitude.</obo:IAO_0000115>
+        <rdfs:label>size</rdfs:label>
     </owl:Class>
     
 
@@ -1547,8 +1549,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000125">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality that inheres in a bearer by virtue of the proportion of the bearer&apos;s amount of matter.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</rdfs:label>
+        <obo:IAO_0000115>A physical quality that inheres in a bearer by virtue of the proportion of the bearer&apos;s amount of matter.</obo:IAO_0000115>
+        <rdfs:label>mass</rdfs:label>
     </owl:Class>
     
 
@@ -1557,11 +1559,11 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000140">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial quality inhering in a bearer by virtue of the bearer&apos;s spatial location relative to other objects in the vicinity.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">placement</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational spatial quality</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position</rdfs:label>
+        <obo:IAO_0000115>A spatial quality inhering in a bearer by virtue of the bearer&apos;s spatial location relative to other objects in the vicinity.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>location</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>placement</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>relational spatial quality</oboInOwl:hasExactSynonym>
+        <rdfs:label>position</rdfs:label>
     </owl:Class>
     
 
@@ -1570,10 +1572,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000141">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphology quality inhering in a bearer by virtue of the bearer&apos;s relative position, shape, arrangements and connectivity of an organism&apos;s various parts; the pattern underlying its form.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">conformation</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational structural quality</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure</rdfs:label>
+        <obo:IAO_0000115>A morphology quality inhering in a bearer by virtue of the bearer&apos;s relative position, shape, arrangements and connectivity of an organism&apos;s various parts; the pattern underlying its form.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>conformation</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>relational structural quality</oboInOwl:hasExactSynonym>
+        <rdfs:label>structure</rdfs:label>
     </owl:Class>
     
 
@@ -1582,8 +1584,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000146">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality of the thermal energy of a system.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperature</rdfs:label>
+        <obo:IAO_0000115>A physical quality of the thermal energy of a system.</obo:IAO_0000115>
+        <rdfs:label>temperature</rdfs:label>
     </owl:Class>
     
 
@@ -1592,8 +1594,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000261">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single physical entity which is held by a bearer when the latter exhibits a state of growth, differentiation, or development.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maturity</rdfs:label>
+        <obo:IAO_0000115>A quality of a single physical entity which is held by a bearer when the latter exhibits a state of growth, differentiation, or development.</obo:IAO_0000115>
+        <rdfs:label>maturity</rdfs:label>
     </owl:Class>
     
 
@@ -1614,11 +1616,11 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000048"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardness quality of being rigid and resistant to pressure.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">firm</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impenetrable</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tough</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hard</rdfs:label>
+        <obo:IAO_0000115>A hardness quality of being rigid and resistant to pressure.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>firm</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>impenetrable</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tough</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hard</rdfs:label>
     </owl:Class>
     
 
@@ -1639,8 +1641,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000048"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardness quality of giving little resistance to pressure.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">soft</rdfs:label>
+        <obo:IAO_0000115>A hardness quality of giving little resistance to pressure.</obo:IAO_0000115>
+        <rdfs:label>soft</rdfs:label>
     </owl:Class>
     
 
@@ -1649,8 +1651,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000389">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001309"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a process inhering in a bearer by virtue of the bearer&apos;s having a sudden onset, sharp rise, and short course.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acute</rdfs:label>
+        <obo:IAO_0000115>A quality of a process inhering in a bearer by virtue of the bearer&apos;s having a sudden onset, sharp rise, and short course.</obo:IAO_0000115>
+        <rdfs:label>acute</rdfs:label>
     </owl:Class>
     
 
@@ -1659,10 +1661,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000402">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002009"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A branchiness quality inhering in a bearer by virtue of the bearer&apos;s having branches.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ramified</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ramiform</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branched</rdfs:label>
+        <obo:IAO_0000115>A branchiness quality inhering in a bearer by virtue of the bearer&apos;s having branches.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>ramified</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ramiform</oboInOwl:hasExactSynonym>
+        <rdfs:label>branched</rdfs:label>
     </owl:Class>
     
 
@@ -1671,10 +1673,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000411">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000947"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s being such that every part of the surface or the circumference is equidistant from the center.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">round</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rounded</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circular</rdfs:label>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the bearer&apos;s being such that every part of the surface or the circumference is equidistant from the center.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>round</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>rounded</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>circular</rdfs:label>
     </owl:Class>
     
 
@@ -1683,9 +1685,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000461">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000068"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s exhibiting no deviation from normal or average.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">average</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">normal</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s exhibiting no deviation from normal or average.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>average</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>normal</rdfs:label>
     </owl:Class>
     
 
@@ -1706,14 +1708,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001309"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002304"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A duration quality of a process which is relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high time</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased period</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased time</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chronic</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prolonged period</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slow time</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased duration</rdfs:label>
+        <obo:IAO_0000115>A duration quality of a process which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high time</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>increased period</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>increased time</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>chronic</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>prolonged period</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>slow time</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>increased duration</rdfs:label>
     </owl:Class>
     
 
@@ -1734,13 +1736,13 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001309"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002302"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A duration quality of a process which is relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased period</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased time</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low period</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shortened period</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fast time</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased duration</rdfs:label>
+        <obo:IAO_0000115>A duration quality of a process which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>decreased period</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>decreased time</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>low period</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>shortened period</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>fast time</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>decreased duration</rdfs:label>
     </owl:Class>
     
 
@@ -1761,13 +1763,13 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A size quality which is relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">big</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enlarged</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expanded</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">great</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased size</rdfs:label>
+        <obo:IAO_0000115>A size quality which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>big</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>enlarged</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>expanded</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>great</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>large</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>increased size</rdfs:label>
     </owl:Class>
     
 
@@ -1788,13 +1790,13 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A size quality which is relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hypoplasia</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">underdeveloped</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reduced</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tiny</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased size</rdfs:label>
+        <obo:IAO_0000115>A size quality which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>hypoplasia</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>underdeveloped</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>reduced</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>small</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tiny</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>decreased size</rdfs:label>
     </owl:Class>
     
 
@@ -1803,10 +1805,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000627">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern quality inhering in a bearer by virtue of the bearer&apos;s being confined or restricted to a particular location.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">focal</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">localised</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">localized</rdfs:label>
+        <obo:IAO_0000115>A spatial pattern quality inhering in a bearer by virtue of the bearer&apos;s being confined or restricted to a particular location.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>focal</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>localised</oboInOwl:hasExactSynonym>
+        <rdfs:label>localized</rdfs:label>
     </owl:Class>
     
 
@@ -1815,8 +1817,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000647">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s undergoing unprogrammed cell death.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">necrotic</rdfs:label>
+        <obo:IAO_0000115>A structural quality inhering in a bearer by virtue of the bearer&apos;s undergoing unprogrammed cell death.</obo:IAO_0000115>
+        <rdfs:label>necrotic</rdfs:label>
     </owl:Class>
     
 
@@ -1825,13 +1827,13 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000947">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002318"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spheroid quality inhering in a bearer by virtue of the bearer&apos;s being oval with two axes of symmetry, as produced by a conical section.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ellipse-shaped</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ellipsoid</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elliptical</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oval</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ovoid</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elliptic</rdfs:label>
+        <obo:IAO_0000115>A spheroid quality inhering in a bearer by virtue of the bearer&apos;s being oval with two axes of symmetry, as produced by a conical section.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>ellipse-shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ellipsoid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>elliptical</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>oval</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>ovoid</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>elliptic</rdfs:label>
     </owl:Class>
     
 
@@ -1840,8 +1842,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000957">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001300"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An optical quality which obtains by virtue of the ability of the bearer to absorb visible light.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opacity</rdfs:label>
+        <obo:IAO_0000115>An optical quality which obtains by virtue of the ability of the bearer to absorb visible light.</obo:IAO_0000115>
+        <rdfs:label>opacity</rdfs:label>
     </owl:Class>
     
 
@@ -1850,11 +1852,11 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000963">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000957"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A optical quality inhering in a bearer by virtue of the bearer&apos;s not being clear; not transmitting or reflecting light or radiant energy.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-transparent</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clouding</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cloudy</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opaque</rdfs:label>
+        <obo:IAO_0000115>A optical quality inhering in a bearer by virtue of the bearer&apos;s not being clear; not transmitting or reflecting light or radiant energy.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>non-transparent</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>clouding</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cloudy</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>opaque</rdfs:label>
     </owl:Class>
     
 
@@ -1863,8 +1865,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000970">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s disposition to being permeated or pervaded by a gas or liquid (as by osmosis or diffusion).</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">permeability</rdfs:label>
+        <obo:IAO_0000115>A structural quality inhering in a bearer by virtue of the bearer&apos;s disposition to being permeated or pervaded by a gas or liquid (as by osmosis or diffusion).</obo:IAO_0000115>
+        <rdfs:label>permeability</rdfs:label>
     </owl:Class>
     
 
@@ -1873,8 +1875,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000973">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structure quality inhering in a bearer by virtue of the bearer&apos;s disposition to admit the passage of gas or liquid through pores or interstices.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porosity</rdfs:label>
+        <obo:IAO_0000115>A structure quality inhering in a bearer by virtue of the bearer&apos;s disposition to admit the passage of gas or liquid through pores or interstices.</obo:IAO_0000115>
+        <rdfs:label>porosity</rdfs:label>
     </owl:Class>
     
 
@@ -1883,8 +1885,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000984">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000973"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A porosity quality inhering in a bearer by virtue of the bearer&apos;s being capable of admitting the passage of gas or liquid through pores or interstices.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porous</rdfs:label>
+        <obo:IAO_0000115>A porosity quality inhering in a bearer by virtue of the bearer&apos;s being capable of admitting the passage of gas or liquid through pores or interstices.</obo:IAO_0000115>
+        <rdfs:label>porous</rdfs:label>
     </owl:Class>
     
 
@@ -1893,8 +1895,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000992">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001548"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality of a liquid inhering in a bearer by virtue of the bearer&apos;s disposition to internal resistance to flow.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viscosity</rdfs:label>
+        <obo:IAO_0000115>A physical quality of a liquid inhering in a bearer by virtue of the bearer&apos;s disposition to internal resistance to flow.</obo:IAO_0000115>
+        <rdfs:label>viscosity</rdfs:label>
     </owl:Class>
     
 
@@ -1903,8 +1905,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000998">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000992"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A viscosity quality inhering in a bearer by virtue of the bearer&apos;s having viscosity.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viscous</rdfs:label>
+        <obo:IAO_0000115>A viscosity quality inhering in a bearer by virtue of the bearer&apos;s having viscosity.</obo:IAO_0000115>
+        <rdfs:label>viscous</rdfs:label>
     </owl:Class>
     
 
@@ -1913,9 +1915,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001018">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational physical quality</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality</rdfs:label>
+        <obo:IAO_0000115>A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>relational physical quality</oboInOwl:hasExactSynonym>
+        <rdfs:label>physical quality</rdfs:label>
     </owl:Class>
     
 
@@ -1924,8 +1926,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001154">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s length being notably higher than its width.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elongated</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s length being notably higher than its width.</obo:IAO_0000115>
+        <rdfs:label>elongated</rdfs:label>
     </owl:Class>
     
 
@@ -1935,12 +1937,12 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001236">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in an process.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a process</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of occurrent</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of process</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational quality of occurrent</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process quality</rdfs:label>
+        <obo:IAO_0000115>A quality which inheres in an process.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>quality of a process</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quality of occurrent</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quality of process</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>relational quality of occurrent</oboInOwl:hasExactSynonym>
+        <rdfs:label>process quality</rdfs:label>
     </owl:Class>
     
 
@@ -1949,16 +1951,16 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001241">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in a continuant.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monadic quality of a continuant</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multiply inhering quality of a physical entity</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a continuant</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a single physical entity</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of an object</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of continuant</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monadic quality of an object</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monadic quality of continuant</oboInOwl:hasNarrowSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical object quality</rdfs:label>
+        <obo:IAO_0000115>A quality which inheres in a continuant.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>monadic quality of a continuant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>multiply inhering quality of a physical entity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quality of a continuant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quality of a single physical entity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quality of an object</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quality of continuant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>monadic quality of an object</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>monadic quality of continuant</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>physical object quality</rdfs:label>
     </owl:Class>
     
 
@@ -1967,8 +1969,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001291">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001739"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electromagnetic (EM) radiation quality</rdfs:label>
+        <obo:IAO_0000115>A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation.</obo:IAO_0000115>
+        <rdfs:label>electromagnetic (EM) radiation quality</rdfs:label>
     </owl:Class>
     
 
@@ -1977,8 +1979,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001300">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001291"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">optical quality</rdfs:label>
+        <obo:IAO_0000115>An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light.</obo:IAO_0000115>
+        <rdfs:label>optical quality</rdfs:label>
     </owl:Class>
     
 
@@ -1999,10 +2001,10 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000146"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A temperature which is relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high temperature</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hot</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased temperature</rdfs:label>
+        <obo:IAO_0000115>A temperature which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high temperature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hot</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased temperature</rdfs:label>
     </owl:Class>
     
 
@@ -2023,10 +2025,10 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000146"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A temperature which is relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cold</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low temperature</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased temperature</rdfs:label>
+        <obo:IAO_0000115>A temperature which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>cold</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>low temperature</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased temperature</rdfs:label>
     </owl:Class>
     
 
@@ -2035,10 +2037,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001309">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002062"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process quality inhering in a bearer by virtue of the bearer&apos;s magnitude of the temporal extent between the starting and ending point.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">period</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">duration</rdfs:label>
+        <obo:IAO_0000115>A process quality inhering in a bearer by virtue of the bearer&apos;s magnitude of the temporal extent between the starting and ending point.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>period</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>time</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>duration</rdfs:label>
     </owl:Class>
     
 
@@ -2047,8 +2049,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001332">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphology quality inhering in a bearer by virtue of the bearer&apos;s lack of distinct morphology.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amorphous</rdfs:label>
+        <obo:IAO_0000115>A morphology quality inhering in a bearer by virtue of the bearer&apos;s lack of distinct morphology.</obo:IAO_0000115>
+        <rdfs:label>amorphous</rdfs:label>
     </owl:Class>
     
 
@@ -2057,8 +2059,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001374">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001396"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cellular quality inhering in a bearer by virtue of the bearer&apos;s number of homologous sets of chromosomes in the nucleus or primary chromosome-containing compartment of the cell, each set essentially coding for all the biological traits of the organism.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ploidy</rdfs:label>
+        <obo:IAO_0000115>A cellular quality inhering in a bearer by virtue of the bearer&apos;s number of homologous sets of chromosomes in the nucleus or primary chromosome-containing compartment of the cell, each set essentially coding for all the biological traits of the organism.</obo:IAO_0000115>
+        <rdfs:label>ploidy</rdfs:label>
     </owl:Class>
     
 
@@ -2067,8 +2069,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001375">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001393"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ploidy quality inhering in a bearer by virtue of the bearer&apos;s containing a single set of homologous chromosomes.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">haploid</rdfs:label>
+        <obo:IAO_0000115>A ploidy quality inhering in a bearer by virtue of the bearer&apos;s containing a single set of homologous chromosomes.</obo:IAO_0000115>
+        <rdfs:label>haploid</rdfs:label>
     </owl:Class>
     
 
@@ -2077,8 +2079,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001393">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001374"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ploidy quality inhering in a bearer by virtue of the bearer&apos;s containing an integral multiple of the monoploid number, possibly excluding the sex-determining chromosomes.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">euploid</rdfs:label>
+        <obo:IAO_0000115>A ploidy quality inhering in a bearer by virtue of the bearer&apos;s containing an integral multiple of the monoploid number, possibly excluding the sex-determining chromosomes.</obo:IAO_0000115>
+        <rdfs:label>euploid</rdfs:label>
     </owl:Class>
     
 
@@ -2087,8 +2089,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001394">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001393"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A ploidy quality inhering in a bearer by virtue of the bearer&apos;s having two copies (homologs) of each chromosome, usually one from the mother and one from the father.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diploid</rdfs:label>
+        <obo:IAO_0000115>A ploidy quality inhering in a bearer by virtue of the bearer&apos;s having two copies (homologs) of each chromosome, usually one from the mother and one from the father.</obo:IAO_0000115>
+        <rdfs:label>diploid</rdfs:label>
     </owl:Class>
     
 
@@ -2097,8 +2099,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001396">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A monadic quality of continuant that exists at the cellular level of organisation.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular quality</rdfs:label>
+        <obo:IAO_0000115>A monadic quality of continuant that exists at the cellular level of organisation.</obo:IAO_0000115>
+        <rdfs:label>cellular quality</rdfs:label>
     </owl:Class>
     
 
@@ -2107,8 +2109,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001397">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001396"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cellular quality that arises by virtue of whether the bearer&apos;s disposition to differentiate into one or more mature cell types.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular potency</rdfs:label>
+        <obo:IAO_0000115>A cellular quality that arises by virtue of whether the bearer&apos;s disposition to differentiate into one or more mature cell types.</obo:IAO_0000115>
+        <rdfs:label>cellular potency</rdfs:label>
     </owl:Class>
     
 
@@ -2117,8 +2119,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001400">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001397"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cellular potency that is the capacity to produce only one differentiated cell type.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unipotent</rdfs:label>
+        <obo:IAO_0000115>A cellular potency that is the capacity to produce only one differentiated cell type.</obo:IAO_0000115>
+        <rdfs:label>unipotent</rdfs:label>
     </owl:Class>
     
 
@@ -2127,8 +2129,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001401">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001397"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cellular potency that is the capacity to form multiple differentiated cell types of a specific lineage and lack self renewing capacity.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oligopotent</rdfs:label>
+        <obo:IAO_0000115>A cellular potency that is the capacity to form multiple differentiated cell types of a specific lineage and lack self renewing capacity.</obo:IAO_0000115>
+        <rdfs:label>oligopotent</rdfs:label>
     </owl:Class>
     
 
@@ -2137,8 +2139,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001402">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001397"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cellular potency that is the capacity to form multiple differentiated cell types.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multipotent</rdfs:label>
+        <obo:IAO_0000115>A cellular potency that is the capacity to form multiple differentiated cell types.</obo:IAO_0000115>
+        <rdfs:label>multipotent</rdfs:label>
     </owl:Class>
     
 
@@ -2147,8 +2149,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001404">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001396"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cellular quality inhering in a bearer by virtue of bearer&apos;s number of nuclei.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleate quality</rdfs:label>
+        <obo:IAO_0000115>A cellular quality inhering in a bearer by virtue of bearer&apos;s number of nuclei.</obo:IAO_0000115>
+        <rdfs:label>nucleate quality</rdfs:label>
     </owl:Class>
     
 
@@ -2157,8 +2159,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001405">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001404"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having no nucleus.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anucleate</rdfs:label>
+        <obo:IAO_0000115>A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having no nucleus.</obo:IAO_0000115>
+        <rdfs:label>anucleate</rdfs:label>
     </owl:Class>
     
 
@@ -2167,8 +2169,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001407">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having one nucleus.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mononucleate</rdfs:label>
+        <obo:IAO_0000115>A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having one nucleus.</obo:IAO_0000115>
+        <rdfs:label>mononucleate</rdfs:label>
     </owl:Class>
     
 
@@ -2177,8 +2179,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001412">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s lacking distinct structure.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unstructured</rdfs:label>
+        <obo:IAO_0000115>A structural quality inhering in a bearer by virtue of the bearer&apos;s lacking distinct structure.</obo:IAO_0000115>
+        <rdfs:label>unstructured</rdfs:label>
     </owl:Class>
     
 
@@ -2187,8 +2189,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001414">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a catalyst by virtue of the amount of the catalyst&apos;s action.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">catalytic activity</rdfs:label>
+        <obo:IAO_0000115>A physical quality inhering in a catalyst by virtue of the amount of the catalyst&apos;s action.</obo:IAO_0000115>
+        <rdfs:label>catalytic activity</rdfs:label>
     </owl:Class>
     
 
@@ -2209,9 +2211,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A position which is relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high position</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased position</rdfs:label>
+        <obo:IAO_0000115>A position which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>high position</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>increased position</rdfs:label>
     </owl:Class>
     
 
@@ -2232,9 +2234,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional which is relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low position</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased position</rdfs:label>
+        <obo:IAO_0000115>A positional which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>low position</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>decreased position</rdfs:label>
     </owl:Class>
     
 
@@ -2243,8 +2245,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001481">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s having an oblique or slanted direction.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sloped</rdfs:label>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the bearer&apos;s having an oblique or slanted direction.</obo:IAO_0000115>
+        <rdfs:label>sloped</rdfs:label>
     </owl:Class>
     
 
@@ -2253,9 +2255,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001501">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000261"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s lacking complete growth, differentiation, or development.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">underdeveloped</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immature</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s lacking complete growth, differentiation, or development.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>underdeveloped</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>immature</rdfs:label>
     </owl:Class>
     
 
@@ -2264,8 +2266,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001543">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001546"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexibility</rdfs:label>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
+        <rdfs:label>flexibility</rdfs:label>
     </owl:Class>
     
 
@@ -2274,10 +2276,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001545">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001543"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s inability of being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stiff</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stiffness</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflexible</rdfs:label>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s inability of being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>stiff</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>stiffness</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>inflexible</rdfs:label>
     </owl:Class>
     
 
@@ -2286,9 +2288,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001546">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002198"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s exhibiting the physical characteristics of an entity characterized by particles arranged such that their shape and volume are relatively stable.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solidity</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a solid</rdfs:label>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s exhibiting the physical characteristics of an entity characterized by particles arranged such that their shape and volume are relatively stable.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>solidity</oboInOwl:hasExactSynonym>
+        <rdfs:label>quality of a solid</rdfs:label>
     </owl:Class>
     
 
@@ -2297,9 +2299,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001547">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002198"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s exhibiting the physical characteristics of an entity consisting of particles that have neither a defined volume nor defined shape.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gaseous</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a gas</rdfs:label>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s exhibiting the physical characteristics of an entity consisting of particles that have neither a defined volume nor defined shape.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>gaseous</oboInOwl:hasExactSynonym>
+        <rdfs:label>quality of a gas</rdfs:label>
     </owl:Class>
     
 
@@ -2308,9 +2310,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001548">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002198"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">liquidity</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a liquid</rdfs:label>
+        <obo:IAO_0000115>A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>liquidity</oboInOwl:hasExactSynonym>
+        <rdfs:label>quality of a liquid</rdfs:label>
     </owl:Class>
     
 
@@ -2331,10 +2333,10 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass which is lower than normal or average.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low mass</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small mass</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased mass</rdfs:label>
+        <obo:IAO_0000115>A mass which is lower than normal or average.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low mass</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>small mass</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased mass</rdfs:label>
     </owl:Class>
     
 
@@ -2355,10 +2357,10 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass which is higher than normal or average.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high mass</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large mass</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased mass</rdfs:label>
+        <obo:IAO_0000115>A mass which is higher than normal or average.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high mass</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>large mass</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased mass</rdfs:label>
     </owl:Class>
     
 
@@ -2367,10 +2369,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001566">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s being spread out or scattered about or divided up.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diffuse</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scattered</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distributed</rdfs:label>
+        <obo:IAO_0000115>A spatial pattern inhering in a bearer by virtue of the bearer&apos;s being spread out or scattered about or divided up.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>diffuse</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>scattered</oboInOwl:hasExactSynonym>
+        <rdfs:label>distributed</rdfs:label>
     </owl:Class>
     
 
@@ -2379,8 +2381,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001655">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concentration quality inhering in a bearer by virtue of the bearer&apos;s amount of osmoles of solute per liter of solution.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">osmolarity</rdfs:label>
+        <obo:IAO_0000115>A concentration quality inhering in a bearer by virtue of the bearer&apos;s amount of osmoles of solute per liter of solution.</obo:IAO_0000115>
+        <rdfs:label>osmolarity</rdfs:label>
     </owl:Class>
     
 
@@ -2401,9 +2403,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001655"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A osmolarity which is relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low osmolarity</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased osmolarity</rdfs:label>
+        <obo:IAO_0000115>A osmolarity which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low osmolarity</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased osmolarity</rdfs:label>
     </owl:Class>
     
 
@@ -2424,9 +2426,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001655"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A osmolarity which is relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high osmolarity</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased osmolarity</rdfs:label>
+        <obo:IAO_0000115>A osmolarity which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high osmolarity</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased osmolarity</rdfs:label>
     </owl:Class>
     
 
@@ -2447,9 +2449,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001475"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001566"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A distribution which is relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high distribution</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased distribution</rdfs:label>
+        <obo:IAO_0000115>A distribution which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high distribution</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased distribution</rdfs:label>
     </owl:Class>
     
 
@@ -2470,9 +2472,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001476"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001566"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A distribution which is relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low distribution</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased distribution</rdfs:label>
+        <obo:IAO_0000115>A distribution which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low distribution</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased distribution</rdfs:label>
     </owl:Class>
     
 
@@ -2481,9 +2483,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001673">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002014"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structure quality that is the presence of closed epithelium bounded capsules containing one or more liquid or solid organism substances.</obo:IAO_0000115>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cysts</oboInOwl:hasNarrowSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cystic</rdfs:label>
+        <obo:IAO_0000115>Structure quality that is the presence of closed epithelium bounded capsules containing one or more liquid or solid organism substances.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>cysts</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>cystic</rdfs:label>
     </owl:Class>
     
 
@@ -2492,8 +2494,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001687">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional quality inhering in a bearer by virtue of the bearer&apos;s vertical distance of a point above or below a reference surface.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elevation</rdfs:label>
+        <obo:IAO_0000115>A positional quality inhering in a bearer by virtue of the bearer&apos;s vertical distance of a point above or below a reference surface.</obo:IAO_0000115>
+        <rdfs:label>elevation</rdfs:label>
     </owl:Class>
     
 
@@ -2514,10 +2516,10 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001475"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001687"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elevation which is relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high elevation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elevated</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased elevation</rdfs:label>
+        <obo:IAO_0000115>An elevation which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high elevation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>elevated</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>increased elevation</rdfs:label>
     </owl:Class>
     
 
@@ -2538,9 +2540,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001476"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001687"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elevation which is relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low elevation</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased elevation</rdfs:label>
+        <obo:IAO_0000115>An elevation which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low elevation</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased elevation</rdfs:label>
     </owl:Class>
     
 
@@ -2561,9 +2563,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000998"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A viscosity which relatively high.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high viscosity</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased viscosity</rdfs:label>
+        <obo:IAO_0000115>A viscosity which relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high viscosity</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased viscosity</rdfs:label>
     </owl:Class>
     
 
@@ -2584,9 +2586,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000998"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A viscosity which relatively low.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low viscosity</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased viscosity</rdfs:label>
+        <obo:IAO_0000115>A viscosity which relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low viscosity</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased viscosity</rdfs:label>
     </owl:Class>
     
 
@@ -2595,8 +2597,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001739">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that inheres in an bearer by virtue of how that bearer interacts with radiation.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiation quality</rdfs:label>
+        <obo:IAO_0000115>A quality that inheres in an bearer by virtue of how that bearer interacts with radiation.</obo:IAO_0000115>
+        <rdfs:label>radiation quality</rdfs:label>
     </owl:Class>
     
 
@@ -2605,8 +2607,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001759">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A composition quality inhering in a bearer by virtue of the bearer&apos;s containing granules.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granular</rdfs:label>
+        <obo:IAO_0000115>A composition quality inhering in a bearer by virtue of the bearer&apos;s containing granules.</obo:IAO_0000115>
+        <rdfs:label>granular</rdfs:label>
     </owl:Class>
     
 
@@ -2615,8 +2617,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001822">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of whether the bearer&apos;s being covered by a liquid.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wetness</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of whether the bearer&apos;s being covered by a liquid.</obo:IAO_0000115>
+        <rdfs:label>wetness</rdfs:label>
     </owl:Class>
     
 
@@ -2625,8 +2627,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001824">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001822"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A wetness quality inhering in a bearer by virtue of the bearer&apos;s not being covered by a liquid.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dry</rdfs:label>
+        <obo:IAO_0000115>A wetness quality inhering in a bearer by virtue of the bearer&apos;s not being covered by a liquid.</obo:IAO_0000115>
+        <rdfs:label>dry</rdfs:label>
     </owl:Class>
     
 
@@ -2635,8 +2637,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001857">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002005"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality in a bearer by virtue of the bearer&apos;s curving inward.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concave</rdfs:label>
+        <obo:IAO_0000115>A shape quality in a bearer by virtue of the bearer&apos;s curving inward.</obo:IAO_0000115>
+        <rdfs:label>concave</rdfs:label>
     </owl:Class>
     
 
@@ -2645,8 +2647,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001863">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001309"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A duration quality of a process inhering in a bearer by virtue of the bearer&apos;s having slow progressive course of indefinite duration.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chronic</rdfs:label>
+        <obo:IAO_0000115>A duration quality of a process inhering in a bearer by virtue of the bearer&apos;s having slow progressive course of indefinite duration.</obo:IAO_0000115>
+        <rdfs:label>chronic</rdfs:label>
     </owl:Class>
     
 
@@ -2661,11 +2663,11 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000411"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A convex 3-D shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting a consistently-sized round cross section.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rod-like</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rod-shaped</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tubulate</oboInOwl:hasNarrowSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cylindrical</rdfs:label>
+        <obo:IAO_0000115>A convex 3-D shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting a consistently-sized round cross section.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>rod-like</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>rod-shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>tubulate</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>cylindrical</rdfs:label>
     </owl:Class>
     
 
@@ -2674,10 +2676,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001874">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001873"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s being cylindrical, in which the height is less than the diameter.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disc-shaped</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disk-shaped</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">discoid</rdfs:label>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the bearer&apos;s being cylindrical, in which the height is less than the diameter.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>disc-shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>disk-shaped</oboInOwl:hasExactSynonym>
+        <rdfs:label>discoid</rdfs:label>
     </owl:Class>
     
 
@@ -2686,8 +2688,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001985">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000146"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s being kept below its freezing point.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frozen</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s being kept below its freezing point.</obo:IAO_0000115>
+        <rdfs:label>frozen</rdfs:label>
     </owl:Class>
     
 
@@ -2696,8 +2698,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001995">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that inheres in an entire organism or part of an organism.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organismal quality</rdfs:label>
+        <obo:IAO_0000115>A quality that inheres in an entire organism or part of an organism.</obo:IAO_0000115>
+        <rdfs:label>organismal quality</rdfs:label>
     </owl:Class>
     
 
@@ -2706,8 +2708,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002005">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface shape that refers to the inward or outward curvature of the surface.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concavity</rdfs:label>
+        <obo:IAO_0000115>Surface shape that refers to the inward or outward curvature of the surface.</obo:IAO_0000115>
+        <rdfs:label>concavity</rdfs:label>
     </owl:Class>
     
 
@@ -2716,10 +2718,10 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002006">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape that inheres in a 2 dimensional entity, such as a cross section or projection of a 3 dimensional entity.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D projection</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cross-sectional</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D shape</rdfs:label>
+        <obo:IAO_0000115>A shape that inheres in a 2 dimensional entity, such as a cross section or projection of a 3 dimensional entity.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>2-D projection</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cross-sectional</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>2-D shape</rdfs:label>
     </owl:Class>
     
 
@@ -2734,8 +2736,8 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A complete three dimensional shape in which for every line connecting pair of points on the object is within the object. Or: a shape lacking cavities. Contrast: concave.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">convex 3-D shape</rdfs:label>
+        <obo:IAO_0000115>A complete three dimensional shape in which for every line connecting pair of points on the object is within the object. Or: a shape lacking cavities. Contrast: concave.</obo:IAO_0000115>
+        <rdfs:label>convex 3-D shape</rdfs:label>
     </owl:Class>
     
 
@@ -2744,8 +2746,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002009">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the degree to which there are subdivisions or offshoots in a bearer entity.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branchiness</rdfs:label>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the degree to which there are subdivisions or offshoots in a bearer entity.</obo:IAO_0000115>
+        <rdfs:label>branchiness</rdfs:label>
     </owl:Class>
     
 
@@ -2754,9 +2756,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002011">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality which is held by a bearer when the latter&apos;s disposition the presence of abnormally proliferating masses of cells.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tumorous</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic</rdfs:label>
+        <obo:IAO_0000115>A structural quality which is held by a bearer when the latter&apos;s disposition the presence of abnormally proliferating masses of cells.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>tumorous</oboInOwl:hasExactSynonym>
+        <rdfs:label>neoplastic</rdfs:label>
     </owl:Class>
     
 
@@ -2765,8 +2767,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002014">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality that inheres in a bearer by virtue of the bearer&apos;s containing hollow areas.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure, cavities</rdfs:label>
+        <obo:IAO_0000115>A structural quality that inheres in a bearer by virtue of the bearer&apos;s containing hollow areas.</obo:IAO_0000115>
+        <rdfs:label>structure, cavities</rdfs:label>
     </owl:Class>
     
 
@@ -2775,8 +2777,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002039">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001857"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concave quality inhering in a bearer by virtue of the bearer&apos;s curving inward on both sides or surfaces.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biconcave</rdfs:label>
+        <obo:IAO_0000115>A concave quality inhering in a bearer by virtue of the bearer&apos;s curving inward on both sides or surfaces.</obo:IAO_0000115>
+        <rdfs:label>biconcave</rdfs:label>
     </owl:Class>
     
 
@@ -2785,7 +2787,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002062">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001236"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality of a process</rdfs:label>
+        <rdfs:label>physical quality of a process</rdfs:label>
     </owl:Class>
     
 
@@ -2794,8 +2796,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002070">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002182"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A molecular quality that arises from the molecular attraction exerted between two atoms or compounds.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">affinity</rdfs:label>
+        <obo:IAO_0000115>A molecular quality that arises from the molecular attraction exerted between two atoms or compounds.</obo:IAO_0000115>
+        <rdfs:label>affinity</rdfs:label>
     </owl:Class>
     
 
@@ -2816,8 +2818,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002070"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An affinity which is relatively high.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased affinity</rdfs:label>
+        <obo:IAO_0000115>An affinity which is relatively high.</obo:IAO_0000115>
+        <rdfs:label>increased affinity</rdfs:label>
     </owl:Class>
     
 
@@ -2838,8 +2840,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002070"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An affinity which is relatively low.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased affinity</rdfs:label>
+        <obo:IAO_0000115>An affinity which is relatively low.</obo:IAO_0000115>
+        <rdfs:label>decreased affinity</rdfs:label>
     </owl:Class>
     
 
@@ -2848,8 +2850,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002092">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphology quality inhering in a neoplastic cell by virtue of the bearer&apos;s exhibiting breakdown of cell-cell interaction maintaining tissue architecture, proliferative dysregulation and bizarre modification to nucleus size and shape.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anaplastic</rdfs:label>
+        <obo:IAO_0000115>A morphology quality inhering in a neoplastic cell by virtue of the bearer&apos;s exhibiting breakdown of cell-cell interaction maintaining tissue architecture, proliferative dysregulation and bizarre modification to nucleus size and shape.</obo:IAO_0000115>
+        <rdfs:label>anaplastic</rdfs:label>
     </owl:Class>
     
 
@@ -2858,8 +2860,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002094">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002070"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific ph conditions.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basophilic</rdfs:label>
+        <obo:IAO_0000115>An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific ph conditions.</obo:IAO_0000115>
+        <rdfs:label>basophilic</rdfs:label>
     </owl:Class>
     
 
@@ -2871,9 +2873,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002097"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002098"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002129"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition not to progress, invade surrounding tissues or metastasize.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benign</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic, non-malignant</rdfs:label>
+        <obo:IAO_0000115>A disposition inhering in a tumour by virtue of the bearer&apos;s disposition not to progress, invade surrounding tissues or metastasize.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>benign</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>neoplastic, non-malignant</rdfs:label>
     </owl:Class>
     
 
@@ -2883,8 +2885,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002097">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002132"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to progress, invade surrounding tissues or metastasize.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic, malignant</rdfs:label>
+        <obo:IAO_0000115>A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to progress, invade surrounding tissues or metastasize.</obo:IAO_0000115>
+        <rdfs:label>neoplastic, malignant</rdfs:label>
     </owl:Class>
     
 
@@ -2894,8 +2896,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002098">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002132"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to spread and invade distant tissues.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic, metastatic</rdfs:label>
+        <obo:IAO_0000115>A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to spread and invade distant tissues.</obo:IAO_0000115>
+        <rdfs:label>neoplastic, metastatic</rdfs:label>
     </owl:Class>
     
 
@@ -2904,9 +2906,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002103">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s penetrating or permeating another substance or area.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infiltrating</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infiltrative</rdfs:label>
+        <obo:IAO_0000115>A structural quality inhering in a bearer by virtue of the bearer&apos;s penetrating or permeating another substance or area.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>infiltrating</oboInOwl:hasExactSynonym>
+        <rdfs:label>infiltrative</rdfs:label>
     </owl:Class>
     
 
@@ -2915,8 +2917,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002124">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s processing the form of a thin plate sheet or layer.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">laminar</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s processing the form of a thin plate sheet or layer.</obo:IAO_0000115>
+        <rdfs:label>laminar</rdfs:label>
     </owl:Class>
     
 
@@ -2926,8 +2928,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002129">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002132"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to invade surrounding tissues.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic, invasive</rdfs:label>
+        <obo:IAO_0000115>A disposition inhering in a tumour by virtue of the bearer&apos;s disposition to invade surrounding tissues.</obo:IAO_0000115>
+        <rdfs:label>neoplastic, invasive</rdfs:label>
     </owl:Class>
     
 
@@ -2936,8 +2938,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002132">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition inhering in a tumour by virtue of the bearer&apos;s disposition not to invade surrounding tissues.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplastic, non-invasive</rdfs:label>
+        <obo:IAO_0000115>A disposition inhering in a tumour by virtue of the bearer&apos;s disposition not to invade surrounding tissues.</obo:IAO_0000115>
+        <rdfs:label>neoplastic, non-invasive</rdfs:label>
     </owl:Class>
     
 
@@ -2946,7 +2948,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002143">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001481"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sloped downward</rdfs:label>
+        <rdfs:label>sloped downward</rdfs:label>
     </owl:Class>
     
 
@@ -2955,8 +2957,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002181">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional quality inhering in a bearer by virtue the bearer&apos;s being changed in position.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">displaced</rdfs:label>
+        <obo:IAO_0000115>A positional quality inhering in a bearer by virtue the bearer&apos;s being changed in position.</obo:IAO_0000115>
+        <rdfs:label>displaced</rdfs:label>
     </owl:Class>
     
 
@@ -2965,9 +2967,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002182">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in a molecular entity, a single molecule, atom, ion, radical etc.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational molecular quality</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular quality</rdfs:label>
+        <obo:IAO_0000115>A quality which inheres in a molecular entity, a single molecule, atom, ion, radical etc.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>relational molecular quality</oboInOwl:hasExactSynonym>
+        <rdfs:label>molecular quality</rdfs:label>
     </owl:Class>
     
 
@@ -2976,8 +2978,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002198">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of its constitution.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a substance</rdfs:label>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of its constitution.</obo:IAO_0000115>
+        <rdfs:label>quality of a substance</rdfs:label>
     </owl:Class>
     
 
@@ -2986,8 +2988,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002266">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape that inheres in a 3 dimensional entity.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3-D shape</rdfs:label>
+        <obo:IAO_0000115>A shape that inheres in a 3 dimensional entity.</obo:IAO_0000115>
+        <rdfs:label>3-D shape</rdfs:label>
     </owl:Class>
     
 
@@ -3013,8 +3015,8 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that has a value that is increased compared to normal or average.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased quality</rdfs:label>
+        <obo:IAO_0000115>A quality that has a value that is increased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label>increased quality</rdfs:label>
     </owl:Class>
     
 
@@ -3040,8 +3042,8 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased quality</rdfs:label>
+        <obo:IAO_0000115>A quality that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label>decreased quality</rdfs:label>
     </owl:Class>
     
 
@@ -3062,8 +3064,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001236"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002301"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a process that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased process quality</rdfs:label>
+        <obo:IAO_0000115>A quality of a process that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label>decreased process quality</rdfs:label>
     </owl:Class>
     
 
@@ -3084,8 +3086,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002301"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of an object that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased object quality</rdfs:label>
+        <obo:IAO_0000115>A quality of an object that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label>decreased object quality</rdfs:label>
     </owl:Class>
     
 
@@ -3106,8 +3108,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001236"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002300"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a process that has a value that is increased compared to normal or average.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased process quality</rdfs:label>
+        <obo:IAO_0000115>A quality of a process that has a value that is increased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label>increased process quality</rdfs:label>
     </owl:Class>
     
 
@@ -3128,8 +3130,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002300"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of an object that has a value that is increased compared to normal or average.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased object quality</rdfs:label>
+        <obo:IAO_0000115>A quality of an object that has a value that is increased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label>increased object quality</rdfs:label>
     </owl:Class>
     
 
@@ -3138,9 +3140,9 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002318">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002006"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape constituting a transition between a rectangle and a circle; a closed curve, of which the circle and ellipse are special cases, whose parametric equation is x = a.cos2/rt, y = b.cos2/rt</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lamé curve</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superelliptic</rdfs:label>
+        <obo:IAO_0000115>A shape constituting a transition between a rectangle and a circle; a closed curve, of which the circle and ellipse are special cases, whose parametric equation is x = a.cos2/rt, y = b.cos2/rt</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Lamé curve</oboInOwl:hasExactSynonym>
+        <rdfs:label>superelliptic</rdfs:label>
     </owl:Class>
     
 
@@ -3149,8 +3151,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002505">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001404"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having one or more nucleus.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleated</rdfs:label>
+        <obo:IAO_0000115>A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having one or more nucleus.</obo:IAO_0000115>
+        <rdfs:label>nucleated</rdfs:label>
     </owl:Class>
     
 
@@ -3159,8 +3161,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0015021">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The propensity of a material to undergo combustion. Combustion encompasses smouldering and flaming combustion. Combustibility is usually applied to solids.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combustibility</rdfs:label>
+        <obo:IAO_0000115>The propensity of a material to undergo combustion. Combustion encompasses smouldering and flaming combustion. Combustibility is usually applied to solids.</obo:IAO_0000115>
+        <rdfs:label>combustibility</rdfs:label>
     </owl:Class>
     
 
@@ -3181,9 +3183,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0015021"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An increase in combustibility.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combustible</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased combustibility</rdfs:label>
+        <obo:IAO_0000115>An increase in combustibility.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>combustible</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased combustibility</rdfs:label>
     </owl:Class>
     
 
@@ -3204,9 +3206,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0015021"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An decrease in combustibility.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">noncombustible</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased combustibility</rdfs:label>
+        <obo:IAO_0000115>An decrease in combustibility.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>noncombustible</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>decreased combustibility</rdfs:label>
     </owl:Class>
     
 
@@ -3227,8 +3229,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000973"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An increase in porosity.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased porosity</rdfs:label>
+        <obo:IAO_0000115>An increase in porosity.</obo:IAO_0000115>
+        <rdfs:label>increased porosity</rdfs:label>
     </owl:Class>
     
 
@@ -3249,8 +3251,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000973"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An decrease in porosity.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased porosity</rdfs:label>
+        <obo:IAO_0000115>An decrease in porosity.</obo:IAO_0000115>
+        <rdfs:label>decreased porosity</rdfs:label>
     </owl:Class>
     
 

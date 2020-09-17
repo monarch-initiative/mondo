@@ -1,4 +1,7 @@
 format-version: 1.2
+data-version: mondo/releases/2020-09-14/imports/hp_import.owl
+subsetdef: hposlim_core ""
+subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
 
 [Term]
@@ -115,6 +118,19 @@ comment: The internal genital structures of the male including the testis, epidi
 xref: UMLS:C4025899
 is_a: HP:0000812 ! Abnormal internal genitalia
 is_a: HP:0010461 ! Abnormality of the male genitalia
+
+[Term]
+id: HP:0000023
+name: Inguinal hernia
+namespace: human_phenotype
+def: "Protrusion of the contents of the abdominal cavity through the inguinal canal." [HPO:probinson]
+comment: Inguinal hernia appears as a bulge in the groin.
+subset: hposlim_core
+xref: MEDDRA:10022016 "Inguinal hernia"
+xref: MSH:D006552
+xref: SNOMEDCT_US:396232000
+xref: UMLS:C0019294
+is_a: HP:0004299 ! Hernia of the abdominal wall
 
 [Term]
 id: HP:0000025
@@ -8727,6 +8743,36 @@ created_by: peter
 creation_date: 2008-02-20T11:34:00Z
 
 [Term]
+id: HP:0004298
+name: Abnormality of the abdominal wall
+namespace: human_phenotype
+alt_id: HP:0001462
+def: "The presence of any abnormality affecting the abdominal wall." [HPO:probinson]
+subset: hposlim_core
+synonym: "Abnormality of external features of the abdomen" EXACT []
+synonym: "Abnormality of the abdominal wall" EXACT layperson []
+xref: UMLS:C4021664
+is_a: HP:0025031 ! Abnormality of the digestive system
+created_by: peter
+creation_date: 2008-02-20T11:40:00Z
+
+[Term]
+id: HP:0004299
+name: Hernia of the abdominal wall
+namespace: human_phenotype
+def: "The presence of a hernia in the abdominal wall." [HPO:probinson]
+comment: A hernia refers to a sac formed by the lining of the abdominal cavity (peritoneum). The sac can protrude through a hole or weak area in the abdominal fascia.
+subset: hposlim_core
+synonym: "Herniated abdominal wall" EXACT [ORCID:0000-0001-5208-3432]
+xref: Fyler:4414
+xref: SNOMEDCT_US:128545000
+xref: UMLS:C1442978
+is_a: HP:0010866 ! Abdominal wall defect
+is_a: HP:0100790 ! Hernia
+created_by: peter
+creation_date: 2008-02-20T11:42:00Z
+
+[Term]
 id: HP:0004303
 name: Abnormal muscle fiber morphology
 namespace: human_phenotype
@@ -11313,6 +11359,18 @@ xref: UMLS:C0036857
 is_a: HP:0001249 ! Intellectual disability
 created_by: peter
 creation_date: 2010-08-03T06:29:35Z
+
+[Term]
+id: HP:0010866
+name: Abdominal wall defect
+namespace: human_phenotype
+def: "An incomplete closure of the abdominal wall." [HPO:probinson]
+synonym: "Abdominal wall defect" EXACT layperson []
+synonym: "Congenital anterior abdominal wall defect" EXACT []
+xref: UMLS:C0238577
+is_a: HP:0004298 ! Abnormality of the abdominal wall
+created_by: peter
+creation_date: 2010-08-03T09:55:15Z
 
 [Term]
 id: HP:0010876
@@ -15386,6 +15444,19 @@ xref: UMLS:C0917799
 is_a: HP:0002360 ! Sleep disturbance
 created_by: doelkens
 creation_date: 2011-06-07T06:15:07Z
+
+[Term]
+id: HP:0100790
+name: Hernia
+namespace: human_phenotype
+synonym: "Hernias" RELATED [HPO:skoehler]
+xref: MSH:D006547
+xref: SNOMEDCT_US:414403008
+xref: SNOMEDCT_US:52515009
+xref: UMLS:C0019270
+is_a: HP:0003549 ! Abnormality of connective tissue
+created_by: doelkens
+creation_date: 2011-06-08T02:33:37Z
 
 [Term]
 id: HP:0100799

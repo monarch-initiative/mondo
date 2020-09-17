@@ -11,7 +11,9 @@
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/ro_import.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/ro_import.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-09-14/imports/ro_import.owl"/>
+    </owl:Ontology>
     
 
 
@@ -867,7 +869,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X continuous_with Y if and only if X and Y share a fiat boundary.</obo:IAO_0000115>
+        <obo:IAO_0000115>X continuous_with Y if and only if X and Y share a fiat boundary.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">continuous with</rdfs:label>
     </owl:ObjectProperty>
     
@@ -879,8 +881,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002157"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d derived_by_descent_from a if d is specified by some genetic program that is sequence-inherited-from a genetic program that specifies a.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derived by descent from</rdfs:label>
+        <obo:IAO_0000115>d derived_by_descent_from a if d is specified by some genetic program that is sequence-inherited-from a genetic program that specifies a.</obo:IAO_0000115>
+        <rdfs:label>derived by descent from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -891,7 +893,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000115>inverse of derived by descent from</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has derived by descendant</rdfs:label>
+        <rdfs:label>has derived by descendant</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -906,8 +908,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002156"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002157"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">two individual entities d1 and d2 stand in a shares_ancestor_with relation if and only if there exists some a such that d1 derived_by_descent_from a and d2 derived_by_descent_from a.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shares ancestor with</rdfs:label>
+        <obo:IAO_0000115>two individual entities d1 and d2 stand in a shares_ancestor_with relation if and only if there exists some a such that d1 derived_by_descent_from a and d2 derived_by_descent_from a.</obo:IAO_0000115>
+        <rdfs:label>shares ancestor with</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -917,7 +919,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
         <obo:IAO_0000115>x only in taxon y if and only if x is in taxon y, and there is no other organism z such that y!=z a and x is in taxon z.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only in taxon</rdfs:label>
+        <rdfs:label>only in taxon</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -956,7 +958,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in taxon</rdfs:label>
+        <rdfs:label>in taxon</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -966,7 +968,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002163">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
         <obo:IAO_0000115>A is spatially_disjoint_from B if and only if they have no parts in common</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatially disjoint from</rdfs:label>
+        <rdfs:label>spatially disjoint from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1068,15 +1070,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002200">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002201"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000006"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <obo:IAO_0000115>A relationship that holds between a biological entity and a phenotype. Here a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). The subject of this relationship can be an organism (where the organism has the phenotype, i.e. the qualities inhere in parts of this organism), a genomic entity such as a gene or genotype (if modifications of the gene or the genotype causes the phenotype), or a condition such as a disease (such that if the condition inheres in an organism, then the organism has the phenotype).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has phenotype</rdfs:label>
@@ -1254,7 +1247,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002218">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <obo:IAO_0000115>x has participant y if and only if x realizes some active role that inheres in y</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete has active participant</rdfs:label>
+        <rdfs:label>obsolete has active participant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
@@ -2879,7 +2872,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </rdf:Description>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002234"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix.</obo:IAO_0000115>
+        <obo:IAO_0000115>a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">produces</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2970,7 +2963,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004019">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004017"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:label>disease has basis in</rdfs:label>
     </owl:ObjectProperty>
     
@@ -3003,15 +2995,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004022">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002200"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004019"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <obo:IAO_0000115>A relation that holds between the disease and a feature (a phenotype or other disease) where the physical basis of the disease is the feature.</obo:IAO_0000115>
         <rdfs:label>disease has basis in feature</rdfs:label>
     </owl:ObjectProperty>
@@ -3023,7 +3006,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004023">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0040035"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:label>causal relationship with disease as subject</rdfs:label>
     </owl:ObjectProperty>
     
@@ -3033,7 +3015,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004024">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0004024"/>
@@ -3053,7 +3034,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004025">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004023"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0004025"/>
@@ -3068,7 +3048,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004026">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0040035"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range>
             <owl:Class>
@@ -3088,7 +3067,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004027">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004026"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <obo:IAO_0000115>A relationship between a disease and an anatomical entity where the disease is triggered by an inflammatory response to stimuli occurring in the anatomical entity</obo:IAO_0000115>
         <rdfs:label>disease has inflammation site</rdfs:label>
@@ -3116,15 +3094,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004029">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0040035"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <obo:IAO_0000115>A relationship between a disease and some feature of that disease, where the feature is either a phenotype or an isolated disease.</obo:IAO_0000115>
         <rdfs:label>disease has feature</rdfs:label>
     </owl:ObjectProperty>
@@ -3548,7 +3517,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0001010">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organism or virus or viroid</rdfs:label>
+        <rdfs:label>organism or virus or viroid</rdfs:label>
     </owl:Class>
     
 
@@ -3564,7 +3533,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multicellular anatomical structure</rdfs:label>
+        <rdfs:label>multicellular anatomical structure</rdfs:label>
     </owl:Class>
     
 
@@ -3573,7 +3542,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0030000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological entity</rdfs:label>
+        <rdfs:label>biological entity</rdfs:label>
     </owl:Class>
     
 
@@ -3608,7 +3577,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000254">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002577"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmental system</rdfs:label>
+        <rdfs:label>environmental system</rdfs:label>
     </owl:Class>
     
 
@@ -3618,7 +3587,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <obo:IAO_0000589>molecular process</obo:IAO_0000589>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular_function</rdfs:label>
+        <rdfs:label>molecular_function</rdfs:label>
     </owl:Class>
     
 
@@ -3627,7 +3596,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003824">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">catalytic activity</rdfs:label>
+        <rdfs:label>catalytic activity</rdfs:label>
     </owl:Class>
     
 
@@ -3636,7 +3605,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</rdfs:label>
+        <rdfs:label>biological_process</rdfs:label>
     </owl:Class>
     
 
@@ -3651,7 +3620,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kinase activity</rdfs:label>
+        <rdfs:label>kinase activity</rdfs:label>
     </owl:Class>
     
 
@@ -3660,7 +3629,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016740">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003824"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transferase activity</rdfs:label>
+        <rdfs:label>transferase activity</rdfs:label>
     </owl:Class>
     
 
@@ -3669,17 +3638,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016772">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016740"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transferase activity, transferring phosphorus-containing groups</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OGMS_0000031 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
-        <obo:IAO_0000115 xml:lang="en">A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism.</obo:IAO_0000115>
-        <rdfs:label>disease</rdfs:label>
+        <rdfs:label>transferase activity, transferring phosphorus-containing groups</rdfs:label>
     </owl:Class>
     
 
@@ -3689,7 +3648,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <obo:IAO_0000589>quality (PATO)</obo:IAO_0000589>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
+        <rdfs:label>quality</rdfs:label>
     </owl:Class>
     
 
@@ -3699,7 +3658,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000051">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">morphology</rdfs:label>
+        <rdfs:label>morphology</rdfs:label>
     </owl:Class>
     
 
@@ -3708,7 +3667,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000052">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shape</rdfs:label>
+        <rdfs:label>shape</rdfs:label>
     </owl:Class>
     
 
@@ -3717,7 +3676,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000141">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure</rdfs:label>
+        <rdfs:label>structure</rdfs:label>
     </owl:Class>
     
 
@@ -3726,7 +3685,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000402">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002009"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branched</rdfs:label>
+        <rdfs:label>branched</rdfs:label>
     </owl:Class>
     
 
@@ -3735,7 +3694,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001241">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical object quality</rdfs:label>
+        <rdfs:label>physical object quality</rdfs:label>
     </owl:Class>
     
 
@@ -3744,7 +3703,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002009">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branchiness</rdfs:label>
+        <rdfs:label>branchiness</rdfs:label>
     </owl:Class>
     
 
@@ -3753,7 +3712,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002124">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">laminar</rdfs:label>
+        <rdfs:label>laminar</rdfs:label>
     </owl:Class>
     
 

@@ -1207,6 +1207,26 @@ synonym: "exposure to decreased temperature of portion of environmental material
 is_a: ECTO:0000979 ! exposure to temperature of surroundings
 
 [Term]
+id: ECTO:0001081
+name: personal behavior related exposure
+def: "A exposure event arising as a result of personal behavior." []
+synonym: "personal behavior" NARROW []
+synonym: "personal behavior exposure" EXACT []
+is_a: ECTO:0001974 ! behavior related exposure
+intersection_of: ExO:0000002
+intersection_of: RO:0002418 NCIT:C19683
+
+[Term]
+id: ECTO:0001082
+name: alcohol consumption related exposure
+def: "A exposure event arising as a result of alcohol consumption." []
+synonym: "alcohol consumption" NARROW []
+synonym: "alcohol consumption exposure" EXACT []
+is_a: ECTO:0001081 ! personal behavior related exposure
+intersection_of: ExO:0000002
+intersection_of: RO:0002418 NCIT:C16273
+
+[Term]
 id: ECTO:0001108
 name: exposure to aflatoxin
 def: "A exposure event involving the interaction of an exposure receptor to aflatoxin. Exposure may be through a variety of means, including through the air or surrounding medium, or through ingestion." []
@@ -1293,6 +1313,16 @@ intersection_of: RO:0002309 CHEBI:27869
 property_value: http://purl.org/dc/terms/description "chloroacetic acid: A chlorocarboxylic acid that is acetic acid carrying a 2-chloro substituent." xsd:string
 
 [Term]
+id: ECTO:0001974
+name: behavior related exposure
+def: "A exposure event arising as a result of behavior." []
+synonym: "behavior" NARROW []
+synonym: "behavior exposure" EXACT []
+is_a: ECTO:0002032 ! activity related exposure
+intersection_of: ExO:0000002
+intersection_of: RO:0002418 NCIT:C16326
+
+[Term]
 id: ECTO:0002002
 name: exposure to steroid
 def: "A exposure event involving the interaction of an exposure receptor to steroid. Exposure may be through a variety of means, including through the air or surrounding medium, or through ingestion." []
@@ -1308,6 +1338,19 @@ intersection_of: RO:0002309 CHEBI:35341
 property_value: http://purl.org/dc/terms/description "steroid: Any of naturally occurring compounds and synthetic analogues, based on the cyclopenta[a]phenanthrene carbon skeleton, partially or completely hydrogenated; there are usually methyl groups at C-10 and C-13, and often an alkyl group at C-17. By extension, one or more bond scissions, ring expansions and/or ring contractions of the skeleton may have occurred. Natural steroids are derived biogenetically from squalene, so may be considered as triterpenoids." xsd:string
 
 [Term]
+id: ECTO:0002032
+name: activity related exposure
+def: "A exposure event arising as a result of activity." []
+subset: mrex
+synonym: "activity" NARROW []
+synonym: "activity exposure" EXACT []
+xref: http://www.wikidata.org/entity/Q1914636
+is_a: BFO:0000003
+is_a: ExO:0000002
+intersection_of: ExO:0000002
+intersection_of: RO:0002418 NCIT:C43431
+
+[Term]
 id: ENVO:00002005
 is_a: ENVO:01000797
 
@@ -1318,6 +1361,22 @@ is_a: BFO:0000040
 [Term]
 id: ENVO:01000797
 is_a: ENVO:00010483
+
+[Term]
+id: NCIT:C16273
+is_a: NCIT:C19683
+
+[Term]
+id: NCIT:C16326
+is_a: NCIT:C43431
+
+[Term]
+id: NCIT:C19683
+is_a: NCIT:C16326
+
+[Term]
+id: NCIT:C43431
+is_a: BFO:0000015
 
 [Term]
 id: NPO:1731

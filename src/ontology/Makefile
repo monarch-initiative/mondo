@@ -74,7 +74,7 @@ all: test all_artefacts
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -222,7 +222,7 @@ $(ONT).json: $(ONT).owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 
-OTHER_SRC=imports/axioms.owl imports/ecto_import.owl
+OTHER_SRC=imports/axioms.owl
 
 $(ONT)-base.owl: reasoned.owl
 	$(ROBOT) remove --input $< --select imports --trim false \
@@ -335,6 +335,10 @@ imports/%_import.owl: mirror/%.owl imports/%_terms.txt
 		reason --exclude-tautologies structural \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
+	
+imports/ecto_import.owl: mirror/ecto.owl imports/ecto_terms.txt
+	echo "WARNING: ECTO import currently skipped. Old version being used with no signature overlap."
+.PRECIOUS: imports/ecto_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
 imports/%_import.obo: imports/%_import.owl
@@ -644,7 +648,10 @@ mirror/dipper-%.obo: mirror/dipper-%.ttl
 	robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
 
 mirror/hgnc.owl: mirror/dipper-hgnc.ttl
-	robot query --format ttl -c ../sparql/construct-hgnc.sparql $@ -i $<
+	robot query -i $< --format ttl -c ../sparql/construct-hgnc.sparql $@ \
+		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
 #	robot query construct
 #	owltools $< --remove-axioms -t EquivalentClasses -o $@
 #	owltools $< --remove-dangling -o $@
