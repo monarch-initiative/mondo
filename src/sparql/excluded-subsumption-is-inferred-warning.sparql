@@ -13,4 +13,5 @@ WHERE
   }
   FILTER (isIRI(?excluded) && regex(str(?excluded), "^http://purl.obolibrary.org/obo/MONDO_"))
   FILTER (isIRI(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER( ?cls=?excluded)
 } LIMIT 500

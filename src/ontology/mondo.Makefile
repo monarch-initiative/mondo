@@ -53,10 +53,25 @@ spar_ql_%: mondo-qc.owl
 
 #.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
-s: spar_ql_single-child-warning spar_ql_two-label-violation spar_ql_no-subclass-between-genetic-disease-warning spar_ql_related-exact-synonym-warning spar_ql_excluded-subsumption-is-inferred
+
+s: spar_ql_single-child-warning \
+	spar_ql_two-label-violation \
+	spar_ql_no-subclass-between-genetic-disease-warning \
+	spar_ql_related-exact-synonym-warning \
+	spar_ql_excluded-subsumption-is-inferred-warning
 
 qc: s
 	$(ROBOT) report -i mondo-qc.owl --fail-on none --print 5 -o reports/obo-report.tsv
 
-x:
-	robot merge -i mondo-qc.owl convert -f obo --check false -o mondo-qc.obo
+SPARQL_WARNINGS_CHECKS=single-child no-subclass-between-genetic-disease related-exact-synonym excluded-subsumption-is-inferred-warning
+
+.PHONY: sparql_qc_violation
+sparql_qc_violation: mondo-qc.owl
+	robot verify -i $< --queries $(foreach V,$(CORE_CHECKS),$(SPARQLDIR)/$V-violation.sparql) -O reports/edit/
+
+.PHONY: sparql_qc_warning
+sparql_qc_warning: mondo-qc.owl
+	robot verify -i $< --queries $(foreach V,$(SPARQL_WARNINGS_CHECKS),$(SPARQLDIR)/$V-warning.sparql) -O reports/edit/
+
+travis_test: sparql_qc_violation sparql_qc_warning
+	$(ROBOT) report -i mondo-qc.owl --fail-on none --print 5 -o reports/obo-report.tsv
