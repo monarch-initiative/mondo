@@ -2,6 +2,12 @@
 ---
 # FAQs
 
+### I want to Request a new term or request a change to Mondo, how do I do so?
+All requests should go on our [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues). You will need to create a free [GitHub](https://github.com/) account if you do not already have one.
+
+### What kind of information should I include when I create a ticket on the GitHub tracker?
+We have [guidelines](https://mondo.readthedocs.io/en/latest/editors-guide/c-make-good-term-request/) on how to make a good term request. Also note, when you click [New Issue](https://github.com/monarch-initiative/mondo/issues/new/choose) on our issue tracker, it will give you options to chose a pre-formatted template that will suggest the type of information to include on a ticket. If none of the templates fit your issue, you can [open a blank issue](https://github.com/monarch-initiative/mondo/issues/new).
+
 ### How often is Mondo released?
 
 Mondo is released around the first of each month. See the latest release [here](https://github.com/monarch-initiative/mondo/releases).
