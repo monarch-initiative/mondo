@@ -32,7 +32,7 @@ Mondo is the disease ontology for the [Monarch Initiative](https://monarchinitia
 
 ### Is the latest version of Mondo displayed in the Monarch Initiative website?
 
-The latest release of Mondo is not always displayed in the Monarch website, the release cycles are not in sync. To see the latest version of Mondo online, we recommend using the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/ontologies/mondo).
+The latest release of Mondo is not always displayed in the Monarch website, as the release cycles are not in sync. To see the latest version of Mondo online, we recommend using the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/ontologies/mondo).
 
 ### How is the Human Phenotype Ontology (HPO) related to Mondo?
 
