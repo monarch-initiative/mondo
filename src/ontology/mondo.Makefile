@@ -44,34 +44,12 @@ pattern_readmes: ../patterns/dosdp-patterns/README.md
 .PHONY: pattern_docs
 pattern_docs: pattern_ontology pattern_readmes
 
-
-mondo-qc.owl:
-	$(ROBOT) merge -i $(SRC) reason relax reduce -o $@
-
-spar_ql_%: mondo-qc.owl
-	date && robot query -f tsv --use-graphs true -i mondo-qc.owl -s $(SPARQLDIR)/$*.sparql reports/$*.tsv && date
-
-#.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
-
-
-s: spar_ql_single-child-warning \
-	spar_ql_two-label-violation \
-	spar_ql_no-subclass-between-genetic-disease-warning \
-	spar_ql_related-exact-synonym-warning \
-	spar_ql_excluded-subsumption-is-inferred-warning
-
-qc: s
-	$(ROBOT) report -i mondo-qc.owl --fail-on none --print 5 -o reports/obo-report.tsv
-
-SPARQL_WARNINGS_CHECKS=single-child no-subclass-between-genetic-disease related-exact-synonym excluded-subsumption-is-inferred-warning
-
-.PHONY: sparql_qc_violation
-sparql_qc_violation: mondo-qc.owl
-	robot verify -i $< --queries $(foreach V,$(CORE_CHECKS),$(SPARQLDIR)/$V-violation.sparql) -O reports/edit/
+SPARQL_WARNINGS_CHECKS=single-child no-subclass-between-genetic-disease related-exact-synonym excluded-subsumption-is-inferred
 
 .PHONY: sparql_qc_warning
-sparql_qc_warning: mondo-qc.owl
-	robot verify -i $< --queries $(foreach V,$(SPARQL_WARNINGS_CHECKS),$(SPARQLDIR)/$V-warning.sparql) -O reports/edit/
+sparql_qc_warning: mondo.owl
+	# the || true is necessary unil https://github.com/ontodev/robot/issues/731 is implemented
+	robot verify -i $< --queries $(foreach V,$(SPARQL_WARNINGS_CHECKS),$(SPARQLDIR)/$V-warning.sparql) -O reports/edit/ || true
 
-travis_test: sparql_qc_violation sparql_qc_warning
+travis_test: sparql_qc_warning sparql_test_main_owl
 	$(ROBOT) report -i mondo-qc.owl --fail-on none --print 5 -o reports/obo-report.tsv
