@@ -2,6 +2,9 @@
 ---
 # FAQs
 
+### What is an ontology?
+An ontology is a formal, computational representation of knowledge in a particular domain or area of knowledge, such as diseases or anatomy. Terms are arranged in a hierarchy, and the terms and relationships between them are defined using both human readable and machine readable definitions, allowing logical inference and sophisticated queries. They are expressed in a knowledge representation language like RDF or OWL.
+
 ### I want to request a new term or request a change to Mondo, how do I do so?
 All requests should go on our [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues). You will need to create a free [GitHub](https://github.com/) account if you do not already have one.
 
@@ -48,8 +51,6 @@ Please see our [blog post](https://medium.com/@MonarchInit/new-release-of-mondo-
 
 ### Does the definition of 'equivalent-class' mapping require that the Mondo/Other relationship is strictly 1:1?
 
-The semantics of owl equivalentClass are such that all concepts are strictly identical in meaning. This always translates to a 1:1 mapping, except when we do a 'proxy merge' - we decide that two concepts in an external resource mean the same thing. This is rare, and the numbers usually come down as we work with the upstream to resolve this. See [ticket](https://github.com/monarch-initiative/mondo/issues/936).
-
-{% comment %} ### What is an ontology? {% endcomment %}
+The semantics of owl equivalentClass are such that all concepts are strictly identical in meaning. This always translates to a 1:1 mapping, except when we do a 'proxy merge' - we decide that two concepts in an external resource mean the same thing. This is not very common, and the numbers usually come down as we work with the source ontologies to resolve this. See [ticket](https://github.com/monarch-initiative/mondo/issues/936).
 
 {% comment %} Review this page and add some more FAQs {% endcomment %}
