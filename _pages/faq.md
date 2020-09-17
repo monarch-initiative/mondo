@@ -2,7 +2,7 @@
 ---
 # FAQs
 
-### I want to Request a new term or request a change to Mondo, how do I do so?
+### I want to request a new term or request a change to Mondo, how do I do so?
 All requests should go on our [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues). You will need to create a free [GitHub](https://github.com/) account if you do not already have one.
 
 ### What kind of information should I include when I create a ticket on the GitHub tracker?
