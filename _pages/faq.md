@@ -30,6 +30,10 @@ Join the Mondo users group [here](https://groups.google.com/forum/#!forum/mondo-
 
 Mondo is the disease ontology for the [Monarch Initiative](https://monarchinitiative.org/), which is an NIH supported project that integrates, aligns, and re-distributes cross-species gene, genotype, variant, disease, and phenotype data. The [Monarch Browser](https://monarchinitiative.org/) allows users to browse not only human diseases but to see their links to other organisms, genes, phenotypes, and pathways, which may be of special interest to translational researchers.
 
+### Is the latest version of Mondo displayed in the Monarch Initiative website?
+
+The latest release of Mondo is not always displayed in the Monarch website, the release cycles are not in sync. To see the latest version of Mondo online, we recommend using the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/ontologies/mondo).
+
 ### How is the Human Phenotype Ontology (HPO) related to Mondo?
 
 Mondo is co-developed with [HPO](https://hpo.jax.org/app/), to ensure interoperability and alignment between the two ontologies and create a more holistic semantic disease resource. A subset of HPO classes are imported into Mondo. HPO terms are used in the logical definitions for the disease terms, where applicable. For example, [MONDO:0003337 'acute hemorrhagic encephalitis'](http://purl.obolibrary.org/obo/MONDO_0003337) is computationally defined as `encephalitis and ('disease has feature' some 'Abnormal bleeding')` ([Abnormal bleeding is an HPO term, HP:0001892](https://hpo.jax.org/app/browse/term/HP:0001892)).
