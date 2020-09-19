@@ -6,7 +6,7 @@ SELECT ?cls ?label ?excluded ?excluded_label
 WHERE 
 { 
   ?cls <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> ?excluded ;
-      rdfs:subClassOf* ?excluded ;
+      rdfs:subClassOf ?excluded ;
       rdfs:label ?label .
   OPTIONAL {
     ?excluded rdfs:label ?excluded_label .

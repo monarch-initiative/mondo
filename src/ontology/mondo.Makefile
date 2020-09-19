@@ -52,4 +52,5 @@ sparql_qc_warning: mondo.owl
 	robot verify -i $< --queries $(foreach V,$(SPARQL_WARNINGS_CHECKS),$(SPARQLDIR)/$V-warning.sparql) -O reports/edit/ || true
 
 travis_test: sparql_qc_warning sparql_test_main_owl
-	$(ROBOT) report -i mondo-qc.owl --fail-on none --print 5 -o reports/obo-report.tsv
+	$(ROBOT) report -i mondo.owl --fail-on none --print 5 -o reports/obo-report.tsv
+
