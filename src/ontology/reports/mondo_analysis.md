@@ -45,7 +45,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid312398</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312398</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -54,7 +54,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid312402</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312402</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -63,7 +63,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid339146</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339146</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -72,7 +72,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid339150</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339150</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -298,7 +298,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid312398</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312398</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -306,7 +306,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid312402</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312402</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -314,7 +314,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid339146</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339146</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -322,7 +322,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>ee3c0de2-7e9a-42ee-b351-bfc17e83205dgenid339150</td>
+      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339150</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -1153,7 +1153,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0000009</td>
       <td>owl:equivalentClass</td>
-      <td>673cc3db-f2f5-422b-ad11-8b54fa787dccgenid61</td>
+      <td>40b46731-0b24-4fde-9acc-ecd3c750fc75genid61</td>
       <td>mondo_current_release.owl</td>
       <td>ERROR</td>
     </tr>
@@ -1169,7 +1169,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0000044</td>
       <td>owl:equivalentClass</td>
-      <td>673cc3db-f2f5-422b-ad11-8b54fa787dccgenid119</td>
+      <td>40b46731-0b24-4fde-9acc-ecd3c750fc75genid119</td>
       <td>mondo_current_release.owl</td>
       <td>ERROR</td>
     </tr>
@@ -2144,7 +2144,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0000009</td>
       <td>owl:equivalentClass</td>
-      <td>db9e4a4d-90fc-45d3-b291-423eea0e3cffgenid61</td>
+      <td>236397e2-5352-413a-9621-7ed37e8818cfgenid61</td>
       <td>mondo.owl</td>
       <td>ERROR</td>
     </tr>
@@ -2160,7 +2160,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0000044</td>
       <td>owl:equivalentClass</td>
-      <td>db9e4a4d-90fc-45d3-b291-423eea0e3cffgenid119</td>
+      <td>236397e2-5352-413a-9621-7ed37e8818cfgenid119</td>
       <td>mondo.owl</td>
       <td>ERROR</td>
     </tr>
@@ -3110,52 +3110,10 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
   </thead>
   <tbody>
     <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014107</td>
-      <td>hypogonadotropic hypogonadism 21 with or without anosmia</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014105</td>
-      <td>hypogonadotropic hypogonadism 19 with or without anosmia</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0013926</td>
-      <td>hypogonadotropic hypogonadism 14 with or without anosmia</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014106</td>
-      <td>hypogonadotropic hypogonadism 20 with or without anosmia</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014103</td>
-      <td>hypogonadotropic hypogonadism 18 with or without anosmia</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014102</td>
-      <td>hypogonadotropic hypogonadism 17 with or without anosmia</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014461</td>
-      <td>hypogonadotropic hypogonadism 22 with or without anosmia</td>
+      <td>MONDO:0011211</td>
+      <td>axial spondylometaphyseal dysplasia</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
       <td>mondo_current_release.owl</td>
     </tr>
     <tr>
@@ -3208,10 +3166,52 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo_current_release.owl</td>
     </tr>
     <tr>
+      <td>MONDO:0012762</td>
+      <td>catecholaminergic polymorphic ventricular tachycardia 2</td>
+      <td>MONDO:0008648</td>
+      <td>ventricular tachycardia, familial</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
       <td>MONDO:0007794</td>
       <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
       <td>MONDO:0014107</td>
       <td>hypogonadotropic hypogonadism 21 with or without anosmia</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014105</td>
+      <td>hypogonadotropic hypogonadism 19 with or without anosmia</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0013926</td>
+      <td>hypogonadotropic hypogonadism 14 with or without anosmia</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014106</td>
+      <td>hypogonadotropic hypogonadism 20 with or without anosmia</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014103</td>
+      <td>hypogonadotropic hypogonadism 18 with or without anosmia</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014102</td>
+      <td>hypogonadotropic hypogonadism 17 with or without anosmia</td>
       <td>mondo_current_release.owl</td>
     </tr>
   </tbody>
@@ -3242,20 +3242,6 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
-      <td>MONDO:0007983</td>
-      <td>Schmid metaphyseal chondrodysplasia</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009597</td>
-      <td>metaphyseal chondrodysplasia, Spahr type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
       <td>MONDO:0009711</td>
       <td>congenital fiber-type disproportion myopathy</td>
       <td>MONDO:0100084</td>
@@ -3270,15 +3256,43 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
-      <td>MONDO:0012160</td>
-      <td>spondylometaphyseal dysplasia-cone-rod dystrophy syndrome</td>
+      <td>MONDO:0044304</td>
+      <td>hyperphenylalaninemia due to DNAJC12 deficiency</td>
+      <td>MONDO:0009861</td>
+      <td>phenylketonuria</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007982</td>
+      <td>metaphyseal chondrodysplasia, Jansen type</td>
       <td>MONDO:0009943</td>
       <td>Pyle disease</td>
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
-      <td>MONDO:0009593</td>
-      <td>spondylometaphyseal dysplasia, Sedaghatian type</td>
+      <td>MONDO:0009597</td>
+      <td>metaphyseal chondrodysplasia, Spahr type</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0009652</td>
+      <td>mucolipidosis type III gamma</td>
+      <td>MONDO:0018931</td>
+      <td>mucolipidosis type III</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0008477</td>
+      <td>spondylometaphyseal dysplasia, Kozlowski type</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007983</td>
+      <td>Schmid metaphyseal chondrodysplasia</td>
       <td>MONDO:0009943</td>
       <td>Pyle disease</td>
       <td>mondo-edit.obo</td>
@@ -3291,38 +3305,24 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
-      <td>MONDO:0044304</td>
-      <td>hyperphenylalaninemia due to DNAJC12 deficiency</td>
-      <td>MONDO:0009861</td>
-      <td>phenylketonuria</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009652</td>
-      <td>mucolipidosis type III gamma</td>
-      <td>MONDO:0018931</td>
-      <td>mucolipidosis type III</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007982</td>
-      <td>metaphyseal chondrodysplasia, Jansen type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0008477</td>
-      <td>spondylometaphyseal dysplasia, Kozlowski type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
       <td>MONDO:0010486</td>
       <td>palmoplantar keratoderma, mutilating, with periorificial keratotic plaques, X-linked</td>
       <td>MONDO:0019014</td>
       <td>mutilating palmoplantar keratoderma with periorificial keratotic plaques</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0009593</td>
+      <td>spondylometaphyseal dysplasia, Sedaghatian type</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0012160</td>
+      <td>spondylometaphyseal dysplasia-cone-rod dystrophy syndrome</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
       <td>mondo-edit.obo</td>
     </tr>
   </tbody>
@@ -3346,17 +3346,52 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
   </thead>
   <tbody>
     <tr>
-      <td>MONDO:0008477</td>
-      <td>spondylometaphyseal dysplasia, Kozlowski type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014107</td>
+      <td>hypogonadotropic hypogonadism 21 with or without anosmia</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0007983</td>
-      <td>Schmid metaphyseal chondrodysplasia</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014105</td>
+      <td>hypogonadotropic hypogonadism 19 with or without anosmia</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0013926</td>
+      <td>hypogonadotropic hypogonadism 14 with or without anosmia</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014106</td>
+      <td>hypogonadotropic hypogonadism 20 with or without anosmia</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014103</td>
+      <td>hypogonadotropic hypogonadism 18 with or without anosmia</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014102</td>
+      <td>hypogonadotropic hypogonadism 17 with or without anosmia</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014461</td>
+      <td>hypogonadotropic hypogonadism 22 with or without anosmia</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
@@ -3367,38 +3402,10 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0012762</td>
-      <td>catecholaminergic polymorphic ventricular tachycardia 2</td>
-      <td>MONDO:0008648</td>
-      <td>ventricular tachycardia, familial</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007982</td>
-      <td>metaphyseal chondrodysplasia, Jansen type</td>
+      <td>MONDO:0009593</td>
+      <td>spondylometaphyseal dysplasia, Sedaghatian type</td>
       <td>MONDO:0009943</td>
       <td>Pyle disease</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0044304</td>
-      <td>hyperphenylalaninemia due to DNAJC12 deficiency</td>
-      <td>MONDO:0009861</td>
-      <td>phenylketonuria</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0014418</td>
-      <td>myopathy, centronuclear, 5</td>
-      <td>MONDO:0100175</td>
-      <td>TTN-related myopathy</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0013529</td>
-      <td>catecholaminergic polymorphic ventricular tachycardia 3</td>
-      <td>MONDO:0008648</td>
-      <td>ventricular tachycardia, familial</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
@@ -3406,27 +3413,6 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>catecholaminergic polymorphic ventricular tachycardia 4</td>
       <td>MONDO:0008648</td>
       <td>ventricular tachycardia, familial</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0014191</td>
-      <td>catecholaminergic polymorphic ventricular tachycardia 5</td>
-      <td>MONDO:0008648</td>
-      <td>ventricular tachycardia, familial</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0010486</td>
-      <td>palmoplantar keratoderma, mutilating, with periorificial keratotic plaques, X-linked</td>
-      <td>MONDO:0019014</td>
-      <td>mutilating palmoplantar keratoderma with periorificial keratotic plaques</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0020746</td>
-      <td>contractures, pterygia, and variable skeletal fusions syndrome 1B</td>
-      <td>MONDO:0009926</td>
-      <td>autosomal recessive multiple pterygium syndrome</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
@@ -3448,6 +3434,20 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
       <td>MONDO:0013926</td>
       <td>hypogonadotropic hypogonadism 14 with or without anosmia</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014106</td>
+      <td>hypogonadotropic hypogonadism 20 with or without anosmia</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007794</td>
+      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
+      <td>MONDO:0014103</td>
+      <td>hypogonadotropic hypogonadism 18 with or without anosmia</td>
       <td>mondo.owl</td>
     </tr>
   </tbody>

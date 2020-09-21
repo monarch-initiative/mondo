@@ -65,11 +65,11 @@ mondo_current_release.owl:
 # This combines all into one single command
 .PHONY: all_reports_warnings_%
 all_reports_warnings_%: %
-	$(ROBOT) query -f tsv -i $< $(foreach V,$(SPARQL_WARNINGS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_WARNINGS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
 
 .PHONY: all_reports_stats_%
 all_reports_stats_%: %
-	$(ROBOT) query -f tsv -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
 
 
 reports/%-robot-report-obo.tsv: %
@@ -115,7 +115,7 @@ tmp/mondo-tags-dosdp.owl: tmp/mondo-tags-dosdp.tsv | dirs
 	$(ROBOT) merge -i $(SRC) template --template $< --prefix "MONDO: http://purl.obolibrary.org/obo/MONDO_" --output $@
 
 tmp/mondo-tags-sparql.ttl: $(SRC) | dirs
-	$(ROBOT) -vv query -f ttl -i $< --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/$V.sparql) --output-dir tmp/
+	$(ROBOT) query -f ttl -i $< --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/$V.sparql) --output-dir tmp/
 	$(ROBOT) merge $(addprefix -i , $(foreach V,$(SPARQL_TAGS),tmp/$V.ttl)) -o $@
 
 components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl tmp/mondo-tags-sparql.ttl | dirs
