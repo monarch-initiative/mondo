@@ -59,7 +59,10 @@ run_notebook:
 	jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
 	
 
-nb_markdown:
-	jupyter nbconvert --to markdown --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
-	
+reports/mondo_analysis.md:
+	jupyter nbconvert --execute --to markdown --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
+	#sed -i 's/<style.*<[/]style>//g' $@
+	perl -0777 -i.original -pe 's#<style[^<]*<\/style>##igs' $@
+
+
 
