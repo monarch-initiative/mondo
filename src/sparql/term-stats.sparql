@@ -1,0 +1,9 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?term ?property ?value WHERE 
+{
+	?term ?property ?value .
+  FILTER(isIRI(?term) && regex(str(?term), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]MONDO[_]"))
+  FILTER(!isBlank(?value))
+}

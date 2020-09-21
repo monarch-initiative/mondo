@@ -46,31 +46,27 @@ This breaks down the errors in the generic ROBOT report.
   </thead>
   <tbody>
     <tr>
-      <th rowspan="2" valign="top">ERROR</th>
-      <th>deprecated_class_reference</th>
-      <td>54</td>
-    </tr>
-    <tr>
+      <th>ERROR</th>
       <th>multiple_equivalent_classes</th>
-      <td>37563</td>
+      <td>4</td>
     </tr>
     <tr>
-      <th>INFO</th>
+      <th rowspan="2" valign="top">INFO</th>
       <th>lowercase_definition</th>
       <td>300</td>
     </tr>
     <tr>
-      <th rowspan="4" valign="top">WARN</th>
+      <th>missing_superclass</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">WARN</th>
       <th>duplicate_exact_synonym</th>
       <td>1655</td>
     </tr>
     <tr>
       <th>duplicate_scoped_synonym</th>
       <td>1595</td>
-    </tr>
-    <tr>
-      <th>equivalent_pair</th>
-      <td>37603</td>
     </tr>
     <tr>
       <th>missing_definition</th>
@@ -100,162 +96,30 @@ This breaks down the errors in the generic ROBOT report.
   <tbody>
     <tr>
       <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000001</td>
+      <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>NCIT:C2991</td>
+      <td>9a7b67ab-165d-4af7-a367-eb61b0f1990bgenid312398</td>
       <td>ERROR</td>
     </tr>
     <tr>
       <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000001</td>
+      <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>OGMS:0000031</td>
+      <td>9a7b67ab-165d-4af7-a367-eb61b0f1990bgenid312402</td>
       <td>ERROR</td>
     </tr>
     <tr>
       <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000001</td>
+      <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>SCTID:64572001</td>
+      <td>9a7b67ab-165d-4af7-a367-eb61b0f1990bgenid339146</td>
       <td>ERROR</td>
     </tr>
     <tr>
       <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000001</td>
+      <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>http://www.ebi.ac.uk/efo/EFO_0000408</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000001</td>
-      <td>owl:equivalentClass</td>
-      <td>http://www.orpha.net/ORDO/Orphanet_377788</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000004</td>
-      <td>owl:equivalentClass</td>
-      <td>NCIT:C26691</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000004</td>
-      <td>owl:equivalentClass</td>
-      <td>SCTID:386584007</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000009</td>
-      <td>owl:equivalentClass</td>
-      <td>58ccc7dd-9800-43e6-8056-66fa132bd860genid61</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000009</td>
-      <td>owl:equivalentClass</td>
-      <td>OMIMPS:231200</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>multiple_equivalent_classes</td>
-      <td>MONDO:0000044</td>
-      <td>owl:equivalentClass</td>
-      <td>58ccc7dd-9800-43e6-8056-66fa132bd860genid119</td>
-      <td>ERROR</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-#### deprecated_class_reference
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Rule Name</th>
-      <th>Subject</th>
-      <th>Property</th>
-      <th>Value</th>
-      <th>Level</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>http://linkedlifedata.com/resource/umls/id/C0019322</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>COHD:4245842</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>DOID:0060321</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>ICD9:553.1</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>MESH:D006554</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000911</td>
-      <td>owl:equivalentClass</td>
-      <td>http://linkedlifedata.com/resource/umls/id/C3151039</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000911</td>
-      <td>owl:equivalentClass</td>
-      <td>DOID:0110452</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000911</td>
-      <td>owl:equivalentClass</td>
-      <td>MESH:C566052</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001445</td>
-      <td>owl:equivalentClass</td>
-      <td>http://linkedlifedata.com/resource/umls/id/C0005697</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001445</td>
-      <td>owl:equivalentClass</td>
-      <td>DOID:12143</td>
+      <td>9a7b67ab-165d-4af7-a367-eb61b0f1990bgenid339150</td>
       <td>ERROR</td>
     </tr>
   </tbody>
@@ -346,96 +210,6 @@ This breaks down the errors in the generic ROBOT report.
       <td>MONDO:0018106</td>
       <td>oboInOwl:hasExactSynonym</td>
       <td>xanthine oxidase deficiency</td>
-      <td>WARN</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-#### equivalent_pair
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Rule Name</th>
-      <th>Subject</th>
-      <th>Property</th>
-      <th>Value</th>
-      <th>Level</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000001</td>
-      <td>owl:equivalentClass</td>
-      <td>NCIT:C2991</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000001</td>
-      <td>owl:equivalentClass</td>
-      <td>OGMS:0000031</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000001</td>
-      <td>owl:equivalentClass</td>
-      <td>SCTID:64572001</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000001</td>
-      <td>owl:equivalentClass</td>
-      <td>http://www.ebi.ac.uk/efo/EFO_0000408</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000001</td>
-      <td>owl:equivalentClass</td>
-      <td>http://www.orpha.net/ORDO/Orphanet_377788</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000004</td>
-      <td>owl:equivalentClass</td>
-      <td>NCIT:C26691</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000004</td>
-      <td>owl:equivalentClass</td>
-      <td>SCTID:386584007</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000005</td>
-      <td>owl:equivalentClass</td>
-      <td>OMIMPS:203655</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000009</td>
-      <td>owl:equivalentClass</td>
-      <td>OMIMPS:231200</td>
-      <td>WARN</td>
-    </tr>
-    <tr>
-      <td>equivalent_pair</td>
-      <td>MONDO:0000015</td>
-      <td>owl:equivalentClass</td>
-      <td>SCTID:363009005</td>
       <td>WARN</td>
     </tr>
   </tbody>
@@ -712,6 +486,96 @@ This breaks down the errors in the generic ROBOT report.
 </table>
 
 
+
+#### missing_superclass
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000065</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000070</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000162</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000224</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000252</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000261</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000263</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000266</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000405</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>MONDO:0000421</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>INFO</td>
+    </tr>
+  </tbody>
+</table>
+
+
 # Other checks analyses
 
 
@@ -728,7 +592,19 @@ This breaks down the errors in the generic ROBOT report.
   </thead>
   <tbody>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0016094&gt;</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0005594&gt;</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0027407&gt;</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0019383&gt;</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0000307&gt;</td>
       <td>1</td>
     </tr>
     <tr>
@@ -736,35 +612,23 @@ This breaks down the errors in the generic ROBOT report.
       <td>1</td>
     </tr>
     <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0002834&gt;</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0002836&gt;</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0003067&gt;</td>
+      <td>1</td>
+    </tr>
+    <tr>
       <td>&lt;http://purl.obolibrary.org/obo/MONDO_0016093&gt;</td>
       <td>1</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0008882&gt;</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0006224&gt;</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0021394&gt;</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0018848&gt;</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0024249&gt;</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0000872&gt;</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0003729&gt;</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0017822&gt;</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -787,28 +651,10 @@ This breaks down the errors in the generic ROBOT report.
   </thead>
   <tbody>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0013529&gt;</td>
-      <td>catecholaminergic polymorphic ventricular tachycardia 3</td>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0008648&gt;</td>
-      <td>ventricular tachycardia, familial</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0013966&gt;</td>
-      <td>catecholaminergic polymorphic ventricular tachycardia 4</td>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0008648&gt;</td>
-      <td>ventricular tachycardia, familial</td>
-    </tr>
-    <tr>
       <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009597&gt;</td>
       <td>metaphyseal chondrodysplasia, Spahr type</td>
       <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009943&gt;</td>
       <td>Pyle disease</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0012762&gt;</td>
-      <td>catecholaminergic polymorphic ventricular tachycardia 2</td>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0008648&gt;</td>
-      <td>ventricular tachycardia, familial</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/MONDO_0011211&gt;</td>
@@ -817,22 +663,28 @@ This breaks down the errors in the generic ROBOT report.
       <td>Pyle disease</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0014418&gt;</td>
-      <td>myopathy, centronuclear, 5</td>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0100175&gt;</td>
-      <td>TTN-related myopathy</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009709&gt;</td>
-      <td>myopathy, centronuclear, 2</td>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0100175&gt;</td>
-      <td>TTN-related myopathy</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0007983&gt;</td>
-      <td>Schmid metaphyseal chondrodysplasia</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0007982&gt;</td>
+      <td>metaphyseal chondrodysplasia, Jansen type</td>
       <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009943&gt;</td>
       <td>Pyle disease</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0012160&gt;</td>
+      <td>spondylometaphyseal dysplasia-cone-rod dystrophy syndrome</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009943&gt;</td>
+      <td>Pyle disease</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009711&gt;</td>
+      <td>congenital fiber-type disproportion myopathy</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0100084&gt;</td>
+      <td>actinopathy</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0044304&gt;</td>
+      <td>hyperphenylalaninemia due to DNAJC12 deficiency</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009861&gt;</td>
+      <td>phenylketonuria</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009593&gt;</td>
@@ -841,10 +693,22 @@ This breaks down the errors in the generic ROBOT report.
       <td>Pyle disease</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0007982&gt;</td>
-      <td>metaphyseal chondrodysplasia, Jansen type</td>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009943&gt;</td>
-      <td>Pyle disease</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009711&gt;</td>
+      <td>congenital fiber-type disproportion myopathy</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0100084&gt;</td>
+      <td>actinopathy</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009711&gt;</td>
+      <td>congenital fiber-type disproportion myopathy</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0100084&gt;</td>
+      <td>actinopathy</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0010486&gt;</td>
+      <td>palmoplantar keratoderma, mutilating, with periorificial keratotic plaques, X-linked</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0019014&gt;</td>
+      <td>mutilating palmoplantar keratoderma with periorificial keratotic plaques</td>
     </tr>
   </tbody>
 </table>
@@ -865,54 +729,54 @@ This breaks down the errors in the generic ROBOT report.
   </thead>
   <tbody>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0014756&gt;</td>
-      <td>tremor, hereditary essential, 5</td>
-      <td>ETM5</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0021010&gt;</td>
+      <td>skin lymphangiosarcoma</td>
+      <td>lymphangiosarcoma of Stewart and Treves</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0006999&gt;</td>
-      <td>tooth disease</td>
-      <td>disorder of calcareous tooth</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0000270&gt;</td>
+      <td>lower respiratory tract disease</td>
+      <td>disorder of lower respiratory tract</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0009424&gt;</td>
-      <td>Bartter disease type 2</td>
-      <td>hyperprostaglandin E syndrome 2</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0008738&gt;</td>
+      <td>aganglionosis, total intestinal</td>
+      <td>total intestinal aganglionosis</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0017686&gt;</td>
-      <td>inborn aminoacylase deficiency</td>
-      <td>rare inborn error of aminoacylase activity</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0021534&gt;</td>
+      <td>rectal neuroendocrine tumor G1</td>
+      <td>rectum carcinoid tumor</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0020680&gt;</td>
-      <td>acute bronchiolitis</td>
-      <td>acute bronchiolitis</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0015564&gt;</td>
+      <td>Castleman disease</td>
+      <td>angiofollicular lymph node hyperplasia</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0000651&gt;</td>
-      <td>thoracic disease</td>
-      <td>disorder of thoracic segment of trunk</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0005289&gt;</td>
+      <td>paranasal sinus neoplasm (disease)</td>
+      <td>tumor of paranasal sinus</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0003832&gt;</td>
-      <td>complement deficiency</td>
-      <td>disorder of complement activation</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0006266&gt;</td>
+      <td>Leydig cell tumor</td>
+      <td>interstitial cell neoplasm</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0002031&gt;</td>
-      <td>cecal disease</td>
-      <td>disorder of caecum</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0024467&gt;</td>
+      <td>apocrine sweat gland disease</td>
+      <td>disorder of apocrine sweat gland</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0011018&gt;</td>
-      <td>brachyolmia-amelogenesis imperfecta syndrome</td>
-      <td>DASS</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0002540&gt;</td>
+      <td>childhood oligodendroglioma</td>
+      <td>pediatric oligodendroglioma</td>
     </tr>
     <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0011012&gt;</td>
-      <td>African iron overload</td>
-      <td>iron overload in Africa</td>
+      <td>&lt;http://purl.obolibrary.org/obo/MONDO_0002485&gt;</td>
+      <td>breast neuroendocrine neoplasm</td>
+      <td>breast neuroendocrine tumor</td>
     </tr>
   </tbody>
 </table>
@@ -920,3 +784,5 @@ This breaks down the errors in the generic ROBOT report.
 
     WARNING!  excluded-subsumption-is-inferred-warning  is empty and has been skipped.
 
+
+## Mondo Statistics
