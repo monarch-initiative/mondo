@@ -22,9 +22,9 @@ g.parse("../mondo-qc.owl", format="xml")
 
 ## Robot report analysis
 
-
 ### Overview of errors
 
+This section aims 
 
 
 

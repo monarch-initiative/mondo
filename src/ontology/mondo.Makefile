@@ -58,3 +58,8 @@ run_notebook:
 	# https://github.com/jupyter/notebook/issues/2254
 	jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
 	
+
+nb_markdown:
+	jupyter nbconvert --to markdown --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
+	
+
