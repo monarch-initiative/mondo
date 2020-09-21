@@ -5,7 +5,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 CONSTRUCT { ?term <http://purl.org/dc/terms/conformsTo> <http://purl.obolibrary.org/obo/mondo/sparql/single-child-tags.sparql> ;
  rdf:type owl:Class . }
 WHERE {
-  SELECT DISTINCT ?term
+  SELECT ?term (COUNT(*) AS ?total)
   WHERE {
       ?child rdfs:subClassOf ?term .
       FILTER ( regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
