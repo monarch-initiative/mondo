@@ -2,15 +2,15 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?d1 ?d1_label ?d2 ?d2_label WHERE 
+SELECT ?term ?term_label ?d2 ?d2_label WHERE 
 {
 
-?d1 rdfs:subClassOf [ rdf:type owl:Restriction ;
+?term rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . 
-?d1 rdfs:label ?d1_label .
+?term rdfs:label ?term_label .
 
-?d1 rdfs:subClassOf* ?d2 .
+?term rdfs:subClassOf* ?d2 .
 
 ?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
@@ -21,11 +21,11 @@ FILTER NOT EXISTS { ?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . }
 
-FILTER ( isIRI(?d1) && regex(str(?d1), "^http://purl.obolibrary.org/obo/MONDO_"))
+FILTER ( isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
 FILTER ( isIRI(?d2) && regex(str(?d2), "^http://purl.obolibrary.org/obo/MONDO_"))
 FILTER ( isIRI(?gene1) && regex(str(?gene1), "^http://identifiers.org/hgnc/"))
 FILTER ( isIRI(?gene2) && regex(str(?gene2), "^http://identifiers.org/hgnc/"))
-FILTER ( ?d1!=?d2 )
+FILTER ( ?term!=?d2 )
 FILTER ( ?gene1!=?gene2 )
 
 }

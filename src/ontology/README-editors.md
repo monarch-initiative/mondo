@@ -101,3 +101,30 @@ Check the build status here: [![Build Status](https://travis-ci.org/monarch-init
 
 Note: if you have only just created this project you will need to authorize travis for this repo. Go to [https://travis-ci.org/profile/monarch-initiative](https://travis-ci.org/profile/monarch-initiative) for details
 
+# Mondo QC report and metrics
+
+Mondo QC is split into two conceptual parts:
+
+1. Violations
+2. Warnings
+
+Violations _have to be fixed_ and are executed every time a pull request is created. They are implemented as sparql queries with a postfix "violation", like `no-label-violation.sparql`. To create a new violation, we create a new SPARQL SELECT query that queries for the violation, and name it including the `-violation` postfix. The violation query is executed using ROBOT verify, which will make the CI (Travis/Jenkins) pipeline fail if the query has more than `0` results.
+
+_Warnings_ do not have to be fixed, but are indications of something going wrong. Warnings are implemented in the same way as `violation` queries with a SPARQL Select query, named with a postfix (example: `single-child-warning.sparql`).
+
+Warnings generate a report in the `src/ontology/reports/` directory, with that name scheme:
+`src/ontology/reports/ontologyname.owl-sparql-check-name.tsv`, for example: `src/ontology/reports/mondo.owl-single-child-warning.tsv`. The same logic is used for ROBOT reports. 
+
+There now is a jupyter notebook (`src/ontology/reports/mondo_analysis.ipynb`) that automatically reads all files following the above naming schemes (and some more) and generating overviews. The notebook can be edited using:
+
+```
+sh run.sh make run_notebook
+```
+
+But usually, the only thing you would want to do is generating a markdown overview like so:
+
+```
+sh run.sh make reports/mondo_analysis.md
+```
+
+

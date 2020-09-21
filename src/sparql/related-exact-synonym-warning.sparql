@@ -2,34 +2,34 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?cls ?label ?related
+SELECT ?term ?term_label ?related
 WHERE 
 { 
   { 
     
-    ?cls oboInOwl:hasRelatedSynonym ?related ;
+    ?term oboInOwl:hasRelatedSynonym ?related ;
       oboInOwl:hasExactSynonym ?exact ;
       a owl:Class .
     
-    ?cls rdfs:label ?label .
+    ?term rdfs:label ?term_label .
     
     FILTER (str(?related)=str(?exact))
-    FILTER (isIRI(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
   }
   #UNION 
   # { 
   # ASK CHRIS: IS THIS REDUNDANT? -> REDUNDANT..
   #  ?x owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
-  #    owl:annotatedSource ?cls ;
+  #    owl:annotatedSource ?term ;
   #    owl:annotatedTarget ?related .
   #    
   # ?y owl:annotatedProperty oboInOwl:hasExactSynonym ;
-  #    owl:annotatedSource ?cls ;
+  #    owl:annotatedSource ?term ;
   #    owl:annotatedTarget ?exact .
   #    
-  # ?cls rdfs:label ?label .
+  # ?term rdfs:label ?term_label .
   #
   # FILTER (str(?related)=str(?exact))
-  # FILTER (isIRI(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+  # FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
   # }
 } LIMIT 200

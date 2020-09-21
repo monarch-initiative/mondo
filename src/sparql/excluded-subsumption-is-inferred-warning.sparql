@@ -2,16 +2,16 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?cls ?label ?excluded ?excluded_label
+SELECT ?term ?term_label ?excluded ?excluded_label
 WHERE 
 { 
-  ?cls <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> ?excluded ;
+  ?term <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> ?excluded ;
       rdfs:subClassOf ?excluded ;
-      rdfs:label ?label .
+      rdfs:label ?term_label .
   OPTIONAL {
     ?excluded rdfs:label ?excluded_label .
   }
   FILTER (isIRI(?excluded) && regex(str(?excluded), "^http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER (isIRI(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER( ?cls=?excluded)
+  FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER( ?term=?excluded)
 } LIMIT 500

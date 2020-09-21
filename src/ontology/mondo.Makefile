@@ -58,23 +58,30 @@ pattern_docs: pattern_ontology pattern_readmes
 SPARQL_WARNINGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-warning.sparql)))
 SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-stats.sparql)))
 
-current-release-%:
-	$(ROBOT) merge -I $(OBO)/$* -o $@
+mondo_current_release.owl:
+	$(ROBOT) convert -I $(OBO)/mondo.owl -o $@
 
 # This combines all into one single command
+.PHONY: all_reports_warnings_%
 all_reports_warnings_%: %
 	$(ROBOT) query -f tsv -i $< $(foreach V,$(SPARQL_WARNINGS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
 
+.PHONY: all_reports_stats_%
 all_reports_stats_%: %
 	$(ROBOT) query -f tsv -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
 
-reports/robot-report-%.tsv: %
+reports/%-robot-report-obo.tsv: %
 	$(ROBOT) report -i $< --fail-on none --print 5 -o $@
+.PRECIOUS: reports/%-robot-report-obo.tsv
 
-QC_BASE_FILES=mondo-edit.obo mondo.owl current-release-mondo.owl
+QC_BASE_FILES=mondo-edit.obo mondo.owl mondo_current_release.owl
 QC_REPORTS=$(foreach V,$(QC_BASE_FILES), qc_reports_$V)
+QC_REPORTS_RM=$(foreach V,$(QC_BASE_FILES), reports/$V*)
 
-qc_reports_%: all_reports_warnings_% all_reports_stats_% reports/robot-report-%.tsv
+clean_qc:
+	rm $(QC_REPORTS_RM)
+
+qc_reports_%: all_reports_stats_% reports/%-robot-report-obo.tsv all_reports_warnings_%
 	echo $^
 
 travis_test: mondo.owl sparql_test_main_owl
@@ -89,6 +96,9 @@ reports/mondo_analysis.md: $(QC_REPORTS)
 	#sed -i 's/<style.*<[/]style>//g' $@
 	# This is a hack to get rid of <style> tags that are rendered very ugly by github.
 	perl -0777 -i.original -pe 's#<style[^<]*<\/style>##igs' $@
+	
+reports/mondo_analysis.pdf: $(QC_REPORTS)
+	jupyter nbconvert --execute --to pdf --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
 
 ##############################################################
 ###### Pipeline for adding a compoment with tagging ##########

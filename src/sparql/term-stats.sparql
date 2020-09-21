@@ -5,5 +5,4 @@ SELECT ?term ?property ?value WHERE
 {
 	?term ?property ?value .
   FILTER(isIRI(?term) && regex(str(?term), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]MONDO[_]"))
-  FILTER(!isBlank(?value))
 }
