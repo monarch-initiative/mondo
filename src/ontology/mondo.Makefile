@@ -54,3 +54,7 @@ sparql_qc_warning: mondo.owl
 travis_test: sparql_qc_warning sparql_test_main_owl
 	$(ROBOT) report -i mondo.owl --fail-on none --print 5 -o reports/obo-report.tsv
 
+run_notebook:
+	# https://github.com/jupyter/notebook/issues/2254
+	jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
+	
