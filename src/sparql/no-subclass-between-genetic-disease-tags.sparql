@@ -1,0 +1,42 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+CONSTRUCT { ?term <http://purl.org/dc/terms/conformsTo> <http://purl.obolibrary.org/obo/mondo/sparql/no-subclass-between-genetic-disease-tags.sparql> ;
+ rdf:type owl:Class . }
+WHERE
+{
+  SELECT DISTINCT ?term WHERE 
+  {
+  ?term rdfs:subClassOf [ rdf:type owl:Restriction ;
+  owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
+  owl:someValuesFrom ?gene1 ] . 
+  ?term rdfs:label ?term_label .
+
+  ?term rdfs:subClassOf* ?d2 .
+
+  ?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
+  owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
+  owl:someValuesFrom ?gene2 ] .
+  ?d2 rdfs:label ?d2_label .
+
+  FILTER NOT EXISTS { ?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
+  owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
+  owl:someValuesFrom ?gene1 ] . }
+
+  FILTER ( isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER ( isIRI(?d2) && regex(str(?d2), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER ( isIRI(?gene1) && regex(str(?gene1), "^http://identifiers.org/hgnc/"))
+  FILTER ( isIRI(?gene2) && regex(str(?gene2), "^http://identifiers.org/hgnc/"))
+  FILTER ( ?term!=?d2 )
+  FILTER ( ?gene1!=?gene2 )
+
+  }
+}
+
+# FILTER ( ?gene1!=?gene2 ) this is a hack to circumvent the case that a disease pertains to the same gene but is further specified.
+
+# Using the subclass selector turned out way too costly computationally:
+# ?gene rdfs:subClassOf* <http://purl.obolibrary.org/obo/SO_0001217> .
+# ?gene2 rdfs:subClassOf* <http://purl.obolibrary.org/obo/SO_0001217> .

@@ -127,4 +127,9 @@ But usually, the only thing you would want to do is generating a markdown overvi
 sh run.sh make reports/mondo_analysis.md
 ```
 
+# Mondo tagging system
 
+All tags are embedded into `components/mondo-tags.owl`. The way it works:
+
+1. All DOSDP matches are tagged with their corresponding pattern(s), using `dc:conformsTo`.
+2. All SPARQL queries with `-tags.sparql` in the name are expected to be CONSTRUCT queries (example: `src/sparql/single-child-tags.sparql`). They will match a pattern, and set a tag using `dc:conformsTo`.

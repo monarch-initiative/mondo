@@ -57,6 +57,7 @@ pattern_docs: pattern_ontology pattern_readmes
 
 SPARQL_WARNINGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-warning.sparql)))
 SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-stats.sparql)))
+SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-tags.sparql)))
 
 mondo_current_release.owl:
 	$(ROBOT) convert -I $(OBO)/mondo.owl -o $@
@@ -69,6 +70,7 @@ all_reports_warnings_%: %
 .PHONY: all_reports_stats_%
 all_reports_stats_%: %
 	$(ROBOT) query -f tsv -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
+
 
 reports/%-robot-report-obo.tsv: %
 	$(ROBOT) report -i $< --fail-on none --print 5 -o $@
@@ -106,12 +108,15 @@ reports/mondo_analysis.pdf: $(QC_REPORTS)
 
 MATCHED_TSVs=$(foreach V,$(notdir $(wildcard ../patterns/data/matches/*.tsv)),../patterns/data/matches/$V)
 
-tmp/mondo-tags-dosdp.tsv:
+tmp/mondo-tags-dosdp.tsv: | dirs
 	python ../scripts/dosdp-matches-tags.py $(addprefix -d , $(MATCHED_TSVs)) -o $@
 
 tmp/mondo-tags-dosdp.owl: tmp/mondo-tags-dosdp.tsv | dirs
-	$(ROBOT) merge -i $(SRC) template --template $< --prefix "MONDO: http://purl.obolibrary.org/obo/MONDO_" --output $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+	$(ROBOT) merge -i $(SRC) template --template $< --prefix "MONDO: http://purl.obolibrary.org/obo/MONDO_" --output $@
 
-components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl | dirs
-	$(ROBOT) merge $(addprefix -i , $^) -o $@
+tmp/mondo-tags-sparql.ttl: $(SRC) | dirs
+	$(ROBOT) -vv query -f ttl -i $< --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/$V.sparql) --output-dir tmp/
+	$(ROBOT) merge $(addprefix -i , $(foreach V,$(SPARQL_TAGS),tmp/$V.ttl)) -o $@
+
+components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl tmp/mondo-tags-sparql.ttl | dirs
+	$(ROBOT) merge $(addprefix -i , $^) annotate --ontology-iri $(ONTBASE)/$@ -o $@

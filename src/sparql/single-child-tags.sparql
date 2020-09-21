@@ -1,0 +1,16 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+CONSTRUCT { ?term <http://purl.org/dc/terms/conformsTo> <http://purl.obolibrary.org/obo/mondo/sparql/single-child-tags.sparql> ;
+ rdf:type owl:Class . }
+WHERE {
+  SELECT DISTINCT ?term
+  WHERE {
+      ?child rdfs:subClassOf ?term .
+      FILTER ( regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+      FILTER ( regex(str(?child), "^http://purl.obolibrary.org/obo/MONDO_"))
+  }
+  GROUP BY ?term
+  HAVING (?total = 1)
+}
