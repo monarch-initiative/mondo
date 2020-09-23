@@ -45,7 +45,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312398</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid312399</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -54,7 +54,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312402</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid312403</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -63,7 +63,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339146</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid339152</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -72,7 +72,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339150</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid339156</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -95,7 +95,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>...</td>
     </tr>
     <tr>
-      <th>271725</th>
+      <th>271584</th>
       <td>lowercase_definition</td>
       <td>MONDO:0025085</td>
       <td>IAO:0000115</td>
@@ -104,7 +104,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>INFO</td>
     </tr>
     <tr>
-      <th>271726</th>
+      <th>271585</th>
       <td>lowercase_definition</td>
       <td>MONDO:0025100</td>
       <td>IAO:0000115</td>
@@ -113,7 +113,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>INFO</td>
     </tr>
     <tr>
-      <th>271727</th>
+      <th>271586</th>
       <td>lowercase_definition</td>
       <td>MONDO:0044255</td>
       <td>IAO:0000115</td>
@@ -122,7 +122,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>INFO</td>
     </tr>
     <tr>
-      <th>271728</th>
+      <th>271587</th>
       <td>lowercase_definition</td>
       <td>MONDO:0044266</td>
       <td>IAO:0000115</td>
@@ -131,7 +131,7 @@ g.parse("../mondo-qc.owl", format="xml")
       <td>INFO</td>
     </tr>
     <tr>
-      <th>271729</th>
+      <th>271588</th>
       <td>lowercase_definition</td>
       <td>MONDO:0044621</td>
       <td>IAO:0000115</td>
@@ -141,7 +141,7 @@ g.parse("../mondo-qc.owl", format="xml")
     </tr>
   </tbody>
 </table>
-<p>271730 rows × 6 columns</p>
+<p>271589 rows × 6 columns</p>
 </div>
 
 
@@ -189,7 +189,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
     <tr>
       <th rowspan="3" valign="top">WARN</th>
       <th>duplicate_exact_synonym</th>
-      <td>1655</td>
+      <td>1657</td>
     </tr>
     <tr>
       <th>duplicate_scoped_synonym</th>
@@ -203,11 +203,11 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <th rowspan="7" valign="top">mondo.owl</th>
       <th rowspan="2" valign="top">ERROR</th>
       <th>deprecated_class_reference</th>
-      <td>54</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>multiple_equivalent_classes</th>
-      <td>37563</td>
+      <td>37553</td>
     </tr>
     <tr>
       <th>INFO</th>
@@ -217,7 +217,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
     <tr>
       <th rowspan="4" valign="top">WARN</th>
       <th>duplicate_exact_synonym</th>
-      <td>1655</td>
+      <td>1657</td>
     </tr>
     <tr>
       <th>duplicate_scoped_synonym</th>
@@ -225,7 +225,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
     </tr>
     <tr>
       <th>equivalent_pair</th>
-      <td>37603</td>
+      <td>37576</td>
     </tr>
     <tr>
       <th>missing_definition</th>
@@ -298,7 +298,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312398</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid312399</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -306,7 +306,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid312402</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid312403</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -314,7 +314,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339146</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid339152</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -322,7 +322,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>bdbdd81a-b42d-47d1-ad1d-5e9192e22167genid339150</td>
+      <td>ffad2d8d-2c04-4db5-a3f9-b5fbffb8f04dgenid339156</td>
       <td>mondo-edit.obo</td>
       <td>ERROR</td>
     </tr>
@@ -2144,7 +2144,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0000009</td>
       <td>owl:equivalentClass</td>
-      <td>236397e2-5352-413a-9621-7ed37e8818cfgenid61</td>
+      <td>292e5240-a6da-42ef-b41c-ba55ed367d34genid61</td>
       <td>mondo.owl</td>
       <td>ERROR</td>
     </tr>
@@ -2160,7 +2160,7 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0000044</td>
       <td>owl:equivalentClass</td>
-      <td>236397e2-5352-413a-9621-7ed37e8818cfgenid119</td>
+      <td>292e5240-a6da-42ef-b41c-ba55ed367d34genid119</td>
       <td>mondo.owl</td>
       <td>ERROR</td>
     </tr>
@@ -2227,121 +2227,9 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
   <tbody>
     <tr>
       <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
+      <td>MONDO:0012148</td>
       <td>owl:equivalentClass</td>
-      <td>http://linkedlifedata.com/resource/umls/id/C0019322</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>COHD:4245842</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>DOID:0060321</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>ICD9:553.1</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000747</td>
-      <td>owl:equivalentClass</td>
-      <td>MESH:D006554</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000911</td>
-      <td>owl:equivalentClass</td>
-      <td>http://linkedlifedata.com/resource/umls/id/C3151039</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000911</td>
-      <td>owl:equivalentClass</td>
-      <td>DOID:0110452</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0000911</td>
-      <td>owl:equivalentClass</td>
-      <td>MESH:C566052</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001445</td>
-      <td>owl:equivalentClass</td>
-      <td>http://linkedlifedata.com/resource/umls/id/C0005697</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001445</td>
-      <td>owl:equivalentClass</td>
-      <td>DOID:12143</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001445</td>
-      <td>owl:equivalentClass</td>
-      <td>MESH:D001750</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001467</td>
-      <td>owl:equivalentClass</td>
-      <td>http://linkedlifedata.com/resource/umls/id/C0158332</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001467</td>
-      <td>owl:equivalentClass</td>
-      <td>COHD:137652</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001467</td>
-      <td>owl:equivalentClass</td>
-      <td>DOID:12223</td>
-      <td>mondo.owl</td>
-      <td>ERROR</td>
-    </tr>
-    <tr>
-      <td>deprecated_class_reference</td>
-      <td>MONDO:0001467</td>
-      <td>owl:equivalentClass</td>
-      <td>ICD9:727.2</td>
+      <td>http://linkedlifedata.com/resource/umls/id/C1837154</td>
       <td>mondo.owl</td>
       <td>ERROR</td>
     </tr>
@@ -3110,10 +2998,24 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
   </thead>
   <tbody>
     <tr>
-      <td>MONDO:0011211</td>
-      <td>axial spondylometaphyseal dysplasia</td>
+      <td>MONDO:0012762</td>
+      <td>catecholaminergic polymorphic ventricular tachycardia 2</td>
+      <td>MONDO:0008648</td>
+      <td>ventricular tachycardia, familial</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007982</td>
+      <td>metaphyseal chondrodysplasia, Jansen type</td>
       <td>MONDO:0009943</td>
       <td>Pyle disease</td>
+      <td>mondo_current_release.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0013966</td>
+      <td>catecholaminergic polymorphic ventricular tachycardia 4</td>
+      <td>MONDO:0008648</td>
+      <td>ventricular tachycardia, familial</td>
       <td>mondo_current_release.owl</td>
     </tr>
     <tr>
@@ -3166,13 +3068,6 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo_current_release.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0012762</td>
-      <td>catecholaminergic polymorphic ventricular tachycardia 2</td>
-      <td>MONDO:0008648</td>
-      <td>ventricular tachycardia, familial</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
-    <tr>
       <td>MONDO:0007794</td>
       <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
       <td>MONDO:0014107</td>
@@ -3207,13 +3102,6 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>hypogonadotropic hypogonadism 18 with or without anosmia</td>
       <td>mondo_current_release.owl</td>
     </tr>
-    <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014102</td>
-      <td>hypogonadotropic hypogonadism 17 with or without anosmia</td>
-      <td>mondo_current_release.owl</td>
-    </tr>
   </tbody>
 </table>
 
@@ -3235,36 +3123,8 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
   </thead>
   <tbody>
     <tr>
-      <td>MONDO:0009711</td>
-      <td>congenital fiber-type disproportion myopathy</td>
-      <td>MONDO:0100084</td>
-      <td>actinopathy</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009711</td>
-      <td>congenital fiber-type disproportion myopathy</td>
-      <td>MONDO:0100084</td>
-      <td>actinopathy</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0011211</td>
-      <td>axial spondylometaphyseal dysplasia</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0044304</td>
-      <td>hyperphenylalaninemia due to DNAJC12 deficiency</td>
-      <td>MONDO:0009861</td>
-      <td>phenylketonuria</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007982</td>
-      <td>metaphyseal chondrodysplasia, Jansen type</td>
+      <td>MONDO:0012160</td>
+      <td>spondylometaphyseal dysplasia-cone-rod dystrophy syndrome</td>
       <td>MONDO:0009943</td>
       <td>Pyle disease</td>
       <td>mondo-edit.obo</td>
@@ -3277,22 +3137,15 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
-      <td>MONDO:0009652</td>
-      <td>mucolipidosis type III gamma</td>
-      <td>MONDO:0018931</td>
-      <td>mucolipidosis type III</td>
+      <td>MONDO:0009711</td>
+      <td>congenital fiber-type disproportion myopathy</td>
+      <td>MONDO:0100084</td>
+      <td>actinopathy</td>
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
       <td>MONDO:0008477</td>
       <td>spondylometaphyseal dysplasia, Kozlowski type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>mondo-edit.obo</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007983</td>
-      <td>Schmid metaphyseal chondrodysplasia</td>
       <td>MONDO:0009943</td>
       <td>Pyle disease</td>
       <td>mondo-edit.obo</td>
@@ -3305,10 +3158,10 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
-      <td>MONDO:0010486</td>
-      <td>palmoplantar keratoderma, mutilating, with periorificial keratotic plaques, X-linked</td>
-      <td>MONDO:0019014</td>
-      <td>mutilating palmoplantar keratoderma with periorificial keratotic plaques</td>
+      <td>MONDO:0009711</td>
+      <td>congenital fiber-type disproportion myopathy</td>
+      <td>MONDO:0100084</td>
+      <td>actinopathy</td>
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
@@ -3319,8 +3172,43 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo-edit.obo</td>
     </tr>
     <tr>
-      <td>MONDO:0012160</td>
-      <td>spondylometaphyseal dysplasia-cone-rod dystrophy syndrome</td>
+      <td>MONDO:0007983</td>
+      <td>Schmid metaphyseal chondrodysplasia</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0044304</td>
+      <td>hyperphenylalaninemia due to DNAJC12 deficiency</td>
+      <td>MONDO:0009861</td>
+      <td>phenylketonuria</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0010486</td>
+      <td>palmoplantar keratoderma, mutilating, with periorificial keratotic plaques, X-linked</td>
+      <td>MONDO:0019014</td>
+      <td>mutilating palmoplantar keratoderma with periorificial keratotic plaques</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0011211</td>
+      <td>axial spondylometaphyseal dysplasia</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0009652</td>
+      <td>mucolipidosis type III gamma</td>
+      <td>MONDO:0018931</td>
+      <td>mucolipidosis type III</td>
+      <td>mondo-edit.obo</td>
+    </tr>
+    <tr>
+      <td>MONDO:0007982</td>
+      <td>metaphyseal chondrodysplasia, Jansen type</td>
       <td>MONDO:0009943</td>
       <td>Pyle disease</td>
       <td>mondo-edit.obo</td>
@@ -3395,17 +3283,10 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0009652</td>
-      <td>mucolipidosis type III gamma</td>
-      <td>MONDO:0018931</td>
-      <td>mucolipidosis type III</td>
-      <td>mondo.owl</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009593</td>
-      <td>spondylometaphyseal dysplasia, Sedaghatian type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
+      <td>MONDO:0014418</td>
+      <td>myopathy, centronuclear, 5</td>
+      <td>MONDO:0100175</td>
+      <td>TTN-related myopathy</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
@@ -3416,38 +3297,45 @@ This breaks down the errors in the generic ROBOT report. _Note that the whole re
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014107</td>
-      <td>hypogonadotropic hypogonadism 21 with or without anosmia</td>
+      <td>MONDO:0007982</td>
+      <td>metaphyseal chondrodysplasia, Jansen type</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014105</td>
-      <td>hypogonadotropic hypogonadism 19 with or without anosmia</td>
+      <td>MONDO:0008477</td>
+      <td>spondylometaphyseal dysplasia, Kozlowski type</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0013926</td>
-      <td>hypogonadotropic hypogonadism 14 with or without anosmia</td>
+      <td>MONDO:0009652</td>
+      <td>mucolipidosis type III gamma</td>
+      <td>MONDO:0018931</td>
+      <td>mucolipidosis type III</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014106</td>
-      <td>hypogonadotropic hypogonadism 20 with or without anosmia</td>
+      <td>MONDO:0012160</td>
+      <td>spondylometaphyseal dysplasia-cone-rod dystrophy syndrome</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
       <td>mondo.owl</td>
     </tr>
     <tr>
-      <td>MONDO:0007794</td>
-      <td>hypogonadotropic hypogonadism 7 with or without anosmia</td>
-      <td>MONDO:0014103</td>
-      <td>hypogonadotropic hypogonadism 18 with or without anosmia</td>
+      <td>MONDO:0011211</td>
+      <td>axial spondylometaphyseal dysplasia</td>
+      <td>MONDO:0009943</td>
+      <td>Pyle disease</td>
+      <td>mondo.owl</td>
+    </tr>
+    <tr>
+      <td>MONDO:0010737</td>
+      <td>spondyloepiphyseal dysplasia tarda, X-linked</td>
+      <td>MONDO:0010248</td>
+      <td>X-linked spondyloepimetaphyseal dysplasia</td>
       <td>mondo.owl</td>
     </tr>
   </tbody>
@@ -4239,26 +4127,26 @@ Table: Breakdown of the number of relationships in Mondo.
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasExactSynonym</td>
-      <td>64369.0</td>
-      <td>64369.0</td>
+      <td>64371.0</td>
+      <td>64371.0</td>
       <td>64352.0</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2000/01/rdf-schema#subClassOf</td>
-      <td>46999.0</td>
+      <td>47000.0</td>
       <td>47546.0</td>
       <td>47538.0</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2002/07/owl#equivalentClass</td>
       <td>7403.0</td>
-      <td>45006.0</td>
+      <td>44979.0</td>
       <td>45007.0</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym</td>
-      <td>37874.0</td>
-      <td>37874.0</td>
+      <td>37876.0</td>
+      <td>37876.0</td>
       <td>37872.0</td>
     </tr>
     <tr>
@@ -4299,20 +4187,20 @@ Table: Breakdown of the number of relationships in Mondo.
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2000/01/rdf-schema#seeAlso</td>
-      <td>3137.0</td>
-      <td>3137.0</td>
+      <td>3138.0</td>
+      <td>3138.0</td>
       <td>3136.0</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2002/07/owl#deprecated</td>
-      <td>1942.0</td>
-      <td>1942.0</td>
+      <td>1943.0</td>
+      <td>1943.0</td>
       <td>1941.0</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/IAO_0100001</td>
-      <td>1666.0</td>
-      <td>1666.0</td>
+      <td>1667.0</td>
+      <td>1667.0</td>
       <td>1665.0</td>
     </tr>
     <tr>
@@ -4446,15 +4334,21 @@ Table: Breakdown of the number of relationships in Mondo.
   <tbody>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasExactSynonym</td>
-      <td>64369</td>
+      <td>64371</td>
       <td>64352</td>
-      <td>17</td>
+      <td>19</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2000/01/rdf-schema#subClassOf</td>
       <td>47546</td>
       <td>47538</td>
       <td>8</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym</td>
+      <td>37876</td>
+      <td>37872</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym</td>
@@ -4466,12 +4360,6 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasDbXref</td>
       <td>99967</td>
       <td>99965</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym</td>
-      <td>37874</td>
-      <td>37872</td>
       <td>2</td>
     </tr>
     <tr>
@@ -4493,6 +4381,24 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>2</td>
     </tr>
     <tr>
+      <td>&lt;http://www.w3.org/2000/01/rdf-schema#seeAlso</td>
+      <td>3138</td>
+      <td>3136</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2002/07/owl#deprecated</td>
+      <td>1943</td>
+      <td>1941</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/IAO_0100001</td>
+      <td>1667</td>
+      <td>1665</td>
+      <td>2</td>
+    </tr>
+    <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#created_by</td>
       <td>65</td>
       <td>63</td>
@@ -4502,24 +4408,6 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>&lt;http://www.w3.org/2004/02/skos/core#exactMatch</td>
       <td>70551</td>
       <td>70550</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2000/01/rdf-schema#seeAlso</td>
-      <td>3137</td>
-      <td>3136</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2002/07/owl#deprecated</td>
-      <td>1942</td>
-      <td>1941</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/IAO_0100001</td>
-      <td>1666</td>
-      <td>1665</td>
       <td>1</td>
     </tr>
     <tr>
@@ -4536,9 +4424,9 @@ Table: Breakdown of the number of relationships in Mondo.
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2002/07/owl#equivalentClass</td>
-      <td>45006</td>
+      <td>44979</td>
       <td>45007</td>
-      <td>-1</td>
+      <td>-28</td>
     </tr>
   </tbody>
 </table>
