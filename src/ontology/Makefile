@@ -217,6 +217,10 @@ $(ONT).json: $(ONT).owl
 $(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
 	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
+$(ONT)-with-equivalents.obo: $(ONT)-with-equivalents.owl
+	$(OWL2OBO)
+$(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
+	robot convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
 #$(ONT)-atomic.owl: $(ONT).owl
 #	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
@@ -234,10 +238,15 @@ $(ONT)-base.owl: reasoned.owl
 		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
 
-$(ONT)-%.obo: $(ONT)-%.owl
+$(ONT)-base.obo: $(ONT)-base.owl
 	$(OWL2OBO)
-$(ONT)-%.json: $(ONT)-%.owl
+$(ONT)-base.json: $(ONT)-base.owl
 	robot convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
+
+
+
+xx:
+	$(ROBOT) report -i mondo.owl --fail-on None -o reports/adhoc-report.tsv
 
 #$(ONT)-merged.owl: $(ONT).owl
 #	owltools --use-catalog $< --merge-imports-closure --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
