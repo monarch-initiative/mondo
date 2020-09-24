@@ -43,3 +43,11 @@ pattern_readmes: ../patterns/dosdp-patterns/README.md
 
 .PHONY: pattern_docs
 pattern_docs: pattern_ontology pattern_readmes
+	
+	
+clean:
+	rm -rf mondo-base.* mondo.json mondo.obo mondo.owl mondo-qc.* \
+		mondo_current_release* all_reports_1 filtered.* mondo-with-equivalents.* \
+		*.tmp *.tmp.obo merged.owl *merged.owl reasoned.obo skos.ttl \
+		debug.owl roundtrip.obo test_nomerge sparql_test_* disjoint_sibs.obo \
+		reasoned-plus-equivalents.owl reasoned.owl tmp/*
