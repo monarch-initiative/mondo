@@ -120,3 +120,10 @@ tmp/mondo-tags-sparql.ttl: $(SRC) | dirs
 
 components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl tmp/mondo-tags-sparql.ttl | dirs
 	$(ROBOT) merge $(addprefix -i , $^) annotate --ontology-iri $(ONTBASE)/$@ -o $@
+	
+clean:
+	rm -rf mondo-base.* mondo.json mondo.obo mondo.owl mondo-qc.* \
+		mondo_current_release* all_reports_1 filtered.* mondo-with-equivalents.* \
+		*.tmp *.tmp.obo merged.owl *merged.owl reasoned.obo skos.ttl \
+		debug.owl roundtrip.obo test_nomerge sparql_test_* disjoint_sibs.obo \
+		reasoned-plus-equivalents.owl reasoned.owl tmp/*
