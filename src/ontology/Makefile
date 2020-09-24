@@ -91,7 +91,7 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
-MAIN_PRODUCTS = $(ONT) $(ONT)-base
+MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents.owl
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
   $(IMPORT_FILES) \
@@ -195,8 +195,7 @@ reasoned.owl: filtered.owl
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
 # merged = reasoned + equivalencies
-# TODO: rename this -plus-equivs
-merged.owl: reasoned.owl imports/equivalencies.owl
+reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
 
 
@@ -205,7 +204,10 @@ merged.owl: reasoned.owl imports/equivalencies.owl
 #
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-$(ONT).owl: merged.owl
+$(ONT).owl: reasoned.owl
+	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+
+$(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
 	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
 # obo is self-contained
