@@ -59,41 +59,52 @@ SPARQL_WARNINGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-warni
 SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-stats.sparql)))
 SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-tags.sparql)))
 
-mondo_current_release.owl:
-	$(ROBOT) convert -I $(OBO)/mondo.owl -o $@
+tmp/mondo-version_edit.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+	
+tmp/mondo-version_edit-owl.owl: mondo.owl
+	$(ROBOT) merge -i $< -o $@
+
+tmp/mondo-version_current.owl:
+	$(ROBOT) merge -I $(OBO)/mondo.owl -o $@
+
+tmp/mondo-version_2019.owl:
+	$(ROBOT) merge -I http://purl.obolibrary.org/obo/mondo/releases/2019-04-29/mondo.owl -o $@
+
+tmp/mondo-version_2020.owl:
+	$(ROBOT) merge -I http://purl.obolibrary.org/obo/mondo/releases/2020-01-27/mondo.owl -o $@
 
 # This combines all into one single command
 .PHONY: all_reports_warnings_%
-all_reports_warnings_%: %
-	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_WARNINGS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
+all_reports_warnings_%: tmp/mondo-version_%.owl
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_WARNINGS),-s $(SPARQLDIR)/$V.sparql reports/mondo-qc-$*-$V.tsv)
 
 .PHONY: all_reports_stats_%
-all_reports_stats_%: %
-	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/$*-$V.tsv)
+all_reports_stats_%: tmp/mondo-version_%.owl
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/mondo-qc-$*-$V.tsv)
 
-
-reports/%-robot-report-obo.tsv: %
+reports/mondo-qc-%-robot-report-obo.tsv: tmp/mondo-version_%.owl
 	$(ROBOT) report -i $< --fail-on none --print 5 -o $@
-.PRECIOUS: reports/%-robot-report-obo.tsv
+.PRECIOUS: reports/mondo-qc-%-robot-report-obo.tsv
 
-QC_BASE_FILES=mondo-edit.obo mondo.owl mondo_current_release.owl
+QC_BASE_FILES=edit edit-owl mondo-owl current 2019 2020
 QC_REPORTS=$(foreach V,$(QC_BASE_FILES), qc_reports_$V)
 QC_REPORTS_RM=$(foreach V,$(QC_BASE_FILES), reports/$V*)
 
 clean_qc:
-	rm $(QC_REPORTS_RM)
+	rm report/mondo-qc-*
 
-qc_reports_%: all_reports_stats_% reports/%-robot-report-obo.tsv all_reports_warnings_%
+qc_reports_%: all_reports_stats_% reports/mondo-qc-%-robot-report-obo.tsv all_reports_warnings_%
 	echo $^
 
-travis_test: mondo.owl sparql_test_main_owl
+travis_test: mondo.owl sparql_test_main_obo
 	$(ROBOT) report -i mondo.owl --fail-on none --print 5 -o reports/obo-report.tsv
 
 run_notebook:
 	# https://github.com/jupyter/notebook/issues/2254
 	jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
 
-reports/mondo_analysis.md: $(QC_REPORTS)
+reports/mondo_analysis.md: #$(QC_REPORTS)
 	jupyter nbconvert --execute --to markdown --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
 	#sed -i 's/<style.*<[/]style>//g' $@
 	# This is a hack to get rid of <style> tags that are rendered very ugly by github.
