@@ -62,7 +62,7 @@ SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-tags.spar
 tmp/mondo-version_edit.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
 	
-tmp/mondo-version_edit-owl.owl: mondo.owl
+tmp/mondo-version_mondo-owl.owl: mondo.owl
 	$(ROBOT) merge -i $< -o $@
 
 tmp/mondo-version_current.owl:
@@ -73,6 +73,14 @@ tmp/mondo-version_2019.owl:
 
 tmp/mondo-version_2020.owl:
 	$(ROBOT) merge -I http://purl.obolibrary.org/obo/mondo/releases/2020-01-27/mondo.owl -o $@
+
+tmp/mondo-version_2018.owl:
+	wget "https://osf.io/bqpjm/download?version=5&displayName=mondo-2018-01-06T03%3A29%3A32.300263%2B00%3A00.owl" -O $@
+	$(ROBOT) merge -i $@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	
+tmp/mondo-version_2017.owl:
+	wget "https://osf.io/bqpjm/download?version=1&displayName=mondo-2017-10-19T06%3A08%3A40.163682%2B00%3A00.owl" -O $@	
+	$(ROBOT) merge -i $@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 # This combines all into one single command
 .PHONY: all_reports_warnings_%
@@ -87,7 +95,7 @@ reports/mondo-qc-%-robot-report-obo.tsv: tmp/mondo-version_%.owl
 	$(ROBOT) report -i $< --fail-on none --print 5 -o $@
 .PRECIOUS: reports/mondo-qc-%-robot-report-obo.tsv
 
-QC_BASE_FILES=edit edit-owl mondo-owl current 2019 2020
+QC_BASE_FILES=edit mondo-owl current 2017 2018 2019 2020
 QC_REPORTS=$(foreach V,$(QC_BASE_FILES), qc_reports_$V)
 QC_REPORTS_RM=$(foreach V,$(QC_BASE_FILES), reports/$V*)
 
