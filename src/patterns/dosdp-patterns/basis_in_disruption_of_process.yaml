@@ -1,0 +1,48 @@
+pattern_name: basis_in_disruption_of_process
+
+description: >4-
+
+    A pattern for generic groupings of diseases based around the molecular basis
+    for the disease in terms of a GO molecular function or cellular process.
+
+    For example: DNA repair or RAS signaling
+
+classes:
+    disease: MONDO:0000001
+    process: BFO:0000015
+
+relations:
+    disease has basis in disruption of: RO:0004021
+
+vars:
+    process: "'process'"
+
+name:
+    text: '%s disease'
+    vars:
+      - process
+
+annotations:
+  - annotationProperty: related_synonym
+    text: disorder of %s
+    vars:
+      - process
+
+def:
+    text: A disease that has its basis in the disruption of %s.
+    vars:
+      - process
+
+equivalentTo:
+    text: "'disease' and 'disease has basis in disruption of' some %s"
+    vars:
+      - process
+
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/basis_in_disruption_of_process.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

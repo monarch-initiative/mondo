@@ -1,4 +1,5 @@
 format-version: 1.2
+data-version: mondo/releases/2020-09-14/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -2658,6 +2659,7 @@ is_a: ENVO:03000009 ! material accumulation process
 id: ENVO:01001619
 name: snow and ice accumulation process
 def: "A material accumulation process during which a accumulation of snow and ice forms or increases in mass." []
+is_a: ENVO:01001617 ! snow accumulation process
 intersection_of: ENVO:03000009 ! material accumulation process
 intersection_of: RO:0002297 ENVO:01001620 ! results in formation of mass of ice and snow
 relationship: RO:0002297 ENVO:01001620 ! results in formation of mass of ice and snow
@@ -2667,6 +2669,7 @@ id: ENVO:01001620
 name: mass of ice and snow
 def: "A object which is composed primarily of water-based snow and ice." []
 is_a: ENVO:01000293 ! ice mass
+is_a: ENVO:03000111 ! snow mass
 relationship: RO:0002354 ENVO:01001619 ! formed as result of snow and ice accumulation process
 
 [Term]

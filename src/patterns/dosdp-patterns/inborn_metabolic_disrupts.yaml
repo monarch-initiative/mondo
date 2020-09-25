@@ -1,0 +1,61 @@
+# options: [min(15),dir(tmp),trim(true),max_and_cardinality(4),base('http://purl.obolibrary.org/obo/mondo'),exclude_prefixes(['UBERON']),load_import_closure(false),annotations([ann(exact_synonym,oio:hasExactSynonym,0.05),ann(related_synonym,oio:hasRelatedSynonym,0.05)])]
+pattern_name: inborn errors of metabolism disease caused by disruption of X
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic_disrupts.yaml
+
+description: >-
+    This is auto-generated. Add your description here
+
+    Examples: [mitochondrial DNA maintenance syndrome](http://purl.obolibrary.org/obo/MONDO_0018121),
+    [inborn disorder of methionine cycle and sulfur amino acid metabolism](http://purl.obolibrary.org/obo/MONDO_0019222),
+    [inborn aminoacylase deficiency](http://purl.obolibrary.org/obo/MONDO_0017686)
+    (51 total)
+
+classes:
+    inborn errors of metabolism: MONDO:0019052
+    owl:Thing: owl:Thing
+
+
+relations:
+    disease caused by disruption of: RO:0004021
+
+
+vars:
+    v0: "'owl:Thing'"
+
+name:
+  # Induced, frequency=0.23529411764705882, p=http://www.w3.org/2000/01/rdf-schema#label 
+    text: inborn disorder of %s
+    vars:
+      - v0
+
+def:
+  # Induced, frequency=0.5098039215686274, p=http://purl.obolibrary.org/obo/IAO_0000115 
+    text: An acquired metabolic disease that is has its basis in the disruption of
+        %s.
+    vars:
+      - v0
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: inborn error of %s
+    vars:
+      - v0
+  - annotationProperty: related_synonym
+    # Induced p=related_synonym 
+    text: rare inborn error of %s
+    vars:
+      - v0
+
+
+equivalentTo:
+    text: "'inborn errors of metabolism' and ('disease caused by disruption of' some\
+        \ %s)"
+    vars:
+      - v0
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

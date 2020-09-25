@@ -1,0 +1,40 @@
+pattern_name: acute
+
+classes:
+    acute: PATO:0000389
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: acute %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s, acute'
+    vars:
+      - disease
+
+def:
+    text: Acute form of %s.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'acute'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/acute.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

@@ -1,0 +1,45 @@
+pattern_name: neoplasm
+
+classes:
+    neoplasm: MONDO:0005070
+
+    owl_thing: owl:Thing
+relations:
+    disease arises from structure: RO:0004022
+
+vars:
+    structure: owl_thing
+
+name:
+    text: '%s neoplasm'
+    vars:
+      - structure
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: malignant %s neoplasm
+    vars:
+      - structure
+  - annotationProperty: exact_synonym
+    text: neoplasm of %s
+    vars:
+      - structure
+
+def:
+    text: A neoplasm involving a %s.
+    vars:
+      - structure
+
+equivalentTo:
+    text: "'neoplasm' and 'disease arises from structure' some %s"
+    vars:
+      - structure
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/neoplasm_by_origin.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

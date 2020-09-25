@@ -24,17 +24,22 @@ SKOS=http://www.w3.org/2004/02/skos/core\#
 EFO=http://www.ebi.ac.uk/efo
 ONT=mondo
 ONTURI=$(OBO)/$(ONT)
-ONTBASE=$(ONT)-base
+ONTBASE=$(OBO)/$(ONT)
+
+
 SRC=$(ONT)-edit.obo
 #RELEASEDIR=../../target/
 ROBOT= robot
 OWLTOOLS= owltools
 USECAT= --use-catalog
 SPARQLDIR = ../sparql
+PATTERNDIR = ../patterns
 
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
 ISODATE:=`date +%Y-%m-%d`
+TODAY ?= $(shell date +%Y-%m-%d)
+OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
 
 FMTS = obo owl json
 
@@ -63,13 +68,13 @@ EFO2OBO_PERL = 's@NCIt:@NCIT:@; s@MSH:@MESH:@; s@SNOMEDCT:@SCTID:@;'
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
-
+.PHONY: .FORCE
 all: test all_artefacts
 
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -216,8 +221,15 @@ $(ONT).json: $(ONT).owl
 # Component module.
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
+
+OTHER_SRC=imports/axioms.owl
+
 $(ONT)-base.owl: reasoned.owl
-	$(OWLTOOLS) --use-catalog $< $(patsubst %,--remove-import-declaration $(OBO)/$(ONT)/imports/%_import.owl, $(ONTOLOGY_IMPORTS))  --merge-imports-closure $(REMOVE_DECLARATIONS) --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
+	$(ROBOT) remove --input $< --select imports --trim false \
+		merge $(patsubst %, -i %, $(OTHER_SRC)) \
+		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
 
 $(ONT)-base.obo: $(ONT)-base.owl
 	$(OWL2OBO)
@@ -296,7 +308,6 @@ modules/%.tsv: modules/%.csv
 modules/%.owl: modules/%.tsv
 	dosdp-tools  --obo-prefixes --ontology=../ontology/mondo-edit.obo  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
 
-
 # ----------------------------------------
 # Import modules
 # ----------------------------------------
@@ -315,8 +326,14 @@ all_imports_owl_roots: $(ONTOLOGY_IMPORTS_OWL_ROOTS)
 all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 
 # Use ROBOT, driven entirely by terms lists NOT from source ontology
+IMP=true
+
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	$(ROBOT) extract -i $< -T imports/$*_terms.txt --method BOT -O $(ONTURI)/$@ -o $@.tmp.owl && robot reason -i $@.tmp.owl && mv $@.tmp.owl $@
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		remove -T imports/removeseed.txt \
+		reason --exclude-tautologies structural \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
@@ -627,7 +644,10 @@ mirror/dipper-%.obo: mirror/dipper-%.ttl
 	robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
 
 mirror/hgnc.owl: mirror/dipper-hgnc.ttl
-	robot query --format ttl -c ../sparql/construct-hgnc.sparql $@ -i $<
+	robot query -i $< --format ttl -c ../sparql/construct-hgnc.sparql $@ \
+		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
 #	robot query construct
 #	owltools $< --remove-axioms -t EquivalentClasses -o $@
 #	owltools $< --remove-dangling -o $@
@@ -1017,3 +1037,5 @@ reports/semantic-xref-pairs.tsv:
 
 slurp:
 	cat mirror/omim.obo | ./add-to-tbd.pl | ./obo-grep.pl --neg -r ALREADY - 
+
+include mondo.Makefile

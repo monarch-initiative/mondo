@@ -1,6 +1,14 @@
 # Mondo release workflow
 
-_Check back soon for documentation on creating the Mondo release._
+1. Pull master
+2. `cd git/mondo/src/ontology/`
+3. `sh run.sh make all -B` - note, this takes about 2-3 hours
+4. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
+5. `cp ~/.token .token`  
+6. `sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
+Note- the date should be the date of the release in the format sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release (for example, v2020-08-10)  (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
+7. When this is done, follow instructions for the change log
+8. Commit all of the changed import and report files (ignore or discard diff files, change log)
 
 ## Generate Change Log
 

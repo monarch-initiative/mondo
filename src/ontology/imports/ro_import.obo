@@ -1,4 +1,5 @@
 format-version: 1.2
+data-version: mondo/releases/2020-09-14/imports/ro_import.owl
 ontology: mondo/imports/ro_import
 
 [Term]
@@ -189,12 +190,6 @@ is_a: GO:0003824 ! catalytic activity
 id: GO:0016772
 name: transferase activity, transferring phosphorus-containing groups
 is_a: GO:0016740 ! transferase activity
-
-[Term]
-id: OGMS:0000031
-name: disease
-def: "A disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism." []
-is_a: BFO:0000016 ! disposition
 
 [Term]
 id: PATO:0000001
@@ -1871,7 +1866,6 @@ is_a: RO:0002410 ! causally related to
 [Typedef]
 id: RO:0004019
 name: disease has basis in
-domain: OGMS:0000031 ! disease
 is_a: RO:0004017 ! realizable has basis in
 is_a: RO:0004023 ! causal relationship with disease as subject
 
@@ -1893,14 +1887,12 @@ is_a: RO:0004019 ! disease has basis in
 id: RO:0004022
 name: disease has basis in feature
 def: "A relation that holds between the disease and a feature (a phenotype or other disease) where the physical basis of the disease is the feature." []
-domain: OGMS:0000031 ! disease
 is_a: RO:0002200 ! has phenotype
 is_a: RO:0004019 ! disease has basis in
 
 [Typedef]
 id: RO:0004023
 name: causal relationship with disease as subject
-domain: OGMS:0000031 ! disease
 is_a: RO:0002410 ! causally related to
 is_a: RO:0040035 ! disease relationship
 
@@ -1908,7 +1900,6 @@ is_a: RO:0040035 ! disease relationship
 id: RO:0004024
 name: disease causes disruption of
 def: "A relationship between a disease and a process where the disease process disrupts the execution of the process." []
-domain: OGMS:0000031 ! disease
 range: BFO:0000015 ! process
 holds_over_chain: RO:0004025 RO:0002215
 is_a: RO:0004023 ! causal relationship with disease as subject
@@ -1917,7 +1908,6 @@ transitive_over: BFO:0000050 ! part of
 [Typedef]
 id: RO:0004025
 name: disease causes dysfunction of
-domain: OGMS:0000031 ! disease
 range: CARO:0000006 ! material anatomical entity
 is_a: RO:0004023 ! causal relationship with disease as subject
 transitive_over: BFO:0000050 ! part of
@@ -1926,7 +1916,6 @@ transitive_over: BFO:0000050 ! part of
 id: RO:0004026
 name: disease has location
 def: "A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity." []
-domain: OGMS:0000031 ! disease
 range: BFO:0000004 ! independent continuant
 is_a: RO:0040035 ! disease relationship
 
@@ -1934,7 +1923,6 @@ is_a: RO:0040035 ! disease relationship
 id: RO:0004027
 name: disease has inflammation site
 def: "A relationship between a disease and an anatomical entity where the disease is triggered by an inflammatory response to stimuli occurring in the anatomical entity" []
-domain: OGMS:0000031 ! disease
 range: CARO:0000003 ! connected anatomical structure
 is_a: RO:0004026 ! disease has location
 
@@ -1951,7 +1939,6 @@ is_a: RO:0002410 ! causally related to
 id: RO:0004029
 name: disease has feature
 def: "A relationship between a disease and some feature of that disease, where the feature is either a phenotype or an isolated disease." []
-domain: OGMS:0000031 ! disease
 is_a: RO:0040035 ! disease relationship
 
 [Typedef]

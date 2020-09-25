@@ -1,0 +1,40 @@
+pattern_name: congenital
+
+classes:
+    congenital: MONDO:0021140
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: congenital %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: congenital %s
+    vars:
+      - disease
+
+def:
+    text: An instance of %s that is present from birth.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'congenital'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/congenital.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

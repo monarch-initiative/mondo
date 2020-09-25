@@ -1,0 +1,46 @@
+pattern_name: environmental_stimulus
+
+classes:
+    disease: MONDO:0000001
+    environmental material: ENVO:00010483
+
+relations:
+    realized in response to stimulus: RO:0004028
+
+vars:
+    disease: "'disease'"
+    stimulus: "'environmental material'"
+
+name:
+    text: '%s from %s'
+    vars:
+      - disease
+      - stimulus
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s %s'
+    vars:
+      - stimulus
+      - disease
+
+def:
+    text: A %s that is caused by exposure to %s.
+    vars:
+      - disease
+      - stimulus
+
+equivalentTo:
+    text: "%s and 'realized in response to stimulus' some %s"
+    vars:
+      - disease
+      - stimulus
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

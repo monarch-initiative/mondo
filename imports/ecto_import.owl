@@ -48,6 +48,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
@@ -92,6 +98,12 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002309 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002309"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002418 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002418"/>
     
 
 
@@ -2931,6 +2943,52 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ECTO_0001081 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECTO_0001081">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ExO_0000002"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19683"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ECTO_0001974"/>
+        <obo:IAO_0000115>A exposure event arising as a result of personal behavior.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>personal behavior exposure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>personal behavior</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>personal behavior related exposure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ECTO_0001082 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECTO_0001082">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ExO_0000002"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16273"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ECTO_0001081"/>
+        <obo:IAO_0000115>A exposure event arising as a result of alcohol consumption.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>alcohol consumption exposure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>alcohol consumption</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>alcohol consumption related exposure</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ECTO_0001108 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECTO_0001108">
@@ -3082,6 +3140,29 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ECTO_0001974 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECTO_0001974">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ExO_0000002"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ECTO_0002032"/>
+        <obo:IAO_0000115>A exposure event arising as a result of behavior.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>behavior exposure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>behavior</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>behavior related exposure</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ECTO_0002002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECTO_0002002">
@@ -3106,6 +3187,32 @@
         <oboInOwl:hasRelatedSynonym>exposure to a steroid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>exposure to steroids</oboInOwl:hasRelatedSynonym>
         <rdfs:label>exposure to steroid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ECTO_0002032 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ECTO_0002032">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ExO_0000002"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000002"/>
+        <obo:IAO_0000115>A exposure event arising as a result of activity.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.wikidata.org/entity/Q1914636</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>activity exposure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>activity</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ecto#mrex"/>
+        <rdfs:label>activity related exposure</rdfs:label>
     </owl:Class>
     
 
@@ -3137,6 +3244,38 @@
     <!-- http://purl.obolibrary.org/obo/ExO_0000002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ExO_0000002"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C16273 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16273">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19683"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C16326 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16326">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C19683 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C19683">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C43431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C43431">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    </owl:Class>
     
 
 
