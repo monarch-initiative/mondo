@@ -335,10 +335,6 @@ imports/%_import.owl: mirror/%.owl imports/%_terms.txt
 		reason --exclude-tautologies structural \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
-	
-imports/ecto_import.owl: mirror/ecto.owl imports/ecto_terms.txt
-	echo "WARNING: ECTO import currently skipped. Old version being used with no signature overlap."
-.PRECIOUS: imports/ecto_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
 imports/%_import.obo: imports/%_import.owl
