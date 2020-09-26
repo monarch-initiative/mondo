@@ -64,6 +64,9 @@ EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
 # intended to be used within a perl -npe loop.
 # In future we should use a more robust translation
 EFO2OBO_PERL = 's@NCIt:@NCIT:@; s@MSH:@MESH:@; s@SNOMEDCT:@SCTID:@;'
+OBOGREPL=../scripts/obo-grepl.pl
+OBOGREP=../scripts/obo-grep.pl
+ADDTOTBD=../scripts/add-to-tbd.pl
 
 # ----------------------------------------
 # Top-level targets
@@ -553,8 +556,14 @@ mirror/%-labels.owl: mirror/%.owl
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v 
 
+OMIM_URL=https://data.monarchinitiative.org/experimental/omim.ttl
+
+# You could trigger this upstream to get the very latest results:
+# https://ci.monarchinitiative.org/view/dipper/job/build-omim
+
 mirror/omim-src.ttl: 
-	wget --no-check-certificate http://data.monarchinitiative.org/ttl/omim.ttl -O $@
+	wget --no-check-certificate $(OMIM_URL) -O $@
+	#echo "ERROREROORSkipping $@!!!"
 .PRECIOUS: mirror/omim.ttl
 
 mirror/omim-src.owl: mirror/omim-src.ttl
@@ -563,7 +572,8 @@ mirror/omim-src.obo: mirror/omim-src.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | ../utils/fix-omim.pl  > $@
 
 mirror/omim.obo: mirror/omim-src.obo
-	obo-grep.pl --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' $< | obo-grep.pl -r 'id: OMIM' -   > $@.tmp && mv $@.tmp $@
+	$(OBOGREPL) --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' mirror/omim-src.obo | perl -npe 's@http://omim.org/entry/@OMIM:@g;s@http://www.omim.org/phenotypicSeries/PS@OMIMPS:@g' |  $(OBOGREPL) -r 'id: OMIM' -   > $@.tmp.obo
+	owltools $@.tmp.obo --set-ontology-id http://purl.obolibrary.org/obo/omim.owl -o -f obo $@ && rm $@.tmp.obo
 mirror/omim.owl: mirror/omim.obo
 	owltools $< -o $@
 
@@ -747,6 +757,7 @@ compare/entailed.obo: mondo-edit.obo
 
 compare/entailed-isa.obo: compare/entailed.obo
 	obo-filter-tags.pl -t is_a -t id  | obo-grep.pl -r is_a - | grep -v ^import > $@
+	obo-filter-tags.pl -t is_a -t id  | $(OBOGREP) -r is_a - | grep -v ^import > $@
 
 compare/unique-isa.tsv: compare/entailed-isa.owl
 	 ./mq -i $< report unique_isa > $@
@@ -1035,7 +1046,11 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-slurp:
-	cat mirror/omim.obo | ./add-to-tbd.pl | ./obo-grep.pl --neg -r ALREADY - 
+tmp/slurp.obo:
+	cat mirror/omim.obo | perl add-to-tbd.pl | perl obo-grep.pl --neg -r ALREADY - > $@
+
+#tmp/slurp-complete.obo:
+#	robot merge --input tmp/slurp.obo \
+#  unmerge --input mondo-edit.obo -o $@
 
 include mondo.Makefile
