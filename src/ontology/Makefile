@@ -563,7 +563,6 @@ OMIM_URL=https://data.monarchinitiative.org/experimental/omim.ttl
 
 mirror/omim-src.ttl: 
 	wget --no-check-certificate $(OMIM_URL) -O $@
-	#echo "ERROREROORSkipping $@!!!"
 .PRECIOUS: mirror/omim.ttl
 
 mirror/omim-src.owl: mirror/omim-src.ttl
@@ -1046,7 +1045,7 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-tmp/slurp.obo:
+tmp/slurp.obo: mirror/omim.obo
 	cat mirror/omim.obo | perl add-to-tbd.pl | perl obo-grep.pl --neg -r ALREADY - > $@
 
 #tmp/slurp-complete.obo:
