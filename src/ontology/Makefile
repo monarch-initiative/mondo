@@ -1046,7 +1046,8 @@ reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
 tmp/slurp.obo: mirror/omim.obo
-	cat mirror/omim.obo | perl add-to-tbd.pl | perl obo-grep.pl --neg -r ALREADY - > $@
+	cat mirror/omim.obo | perl $(ADDTOTBD) | perl $(OBOGREP) --neg -r ALREADY - > $@
+
 
 #tmp/slurp-complete.obo:
 #	robot merge --input tmp/slurp.obo \
