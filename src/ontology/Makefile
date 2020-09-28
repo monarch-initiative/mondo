@@ -1045,10 +1045,11 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-tmp/slurp.obo: mirror/omim.obo
+tmp/slurp.obo: #mirror/omim.obo
 	cat mirror/omim.obo | perl $(ADDTOTBD) | perl $(OBOGREP) --neg -r ALREADY - > $@
 
-
+xx:
+	cat tmp/slurp.obo | perl $(OBOGREP) --neg -r is_obsol - > tmp/slurp_ops.obo
 #tmp/slurp-complete.obo:
 #	robot merge --input tmp/slurp.obo \
 #  unmerge --input mondo-edit.obo -o $@
