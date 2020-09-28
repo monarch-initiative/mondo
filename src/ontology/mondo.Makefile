@@ -146,3 +146,80 @@ clean:
 		*.tmp *.tmp.obo merged.owl *merged.owl reasoned.obo skos.ttl \
 		debug.owl roundtrip.obo test_nomerge sparql_test_* disjoint_sibs.obo \
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
+
+#############################################
+##### Mondo analysis ########################
+#############################################
+
+# Makefile for mondo analysis
+
+all: sources/merged.json all_json
+
+## SOURCES
+DOID = doid-2018-07-05
+NCIT = ncit-disease-2018-06-08
+MONDO = mondo-component
+ORDO = ordo-2_6-2018-07-12
+MG = medgen-disease-extract
+CTD = ctd_diseases-2018-06-25
+
+SOURCES = $(DOID) $(NCIT) $(MONDO) $(ORDO) $(MG) $(CTD)
+SOURCE_IDS = doid ncit mondo ordo mg
+SOURCE_FILES = $(patsubst %, sources/%.owl.gz, $(SOURCES))
+
+#all_json: $(patsubst %, sources/%.json, $(SOURCE_IDS))
+all_json: $(patsubst %, sources/%.json, $(SOURCES))
+all_json_gz: $(patsubst %, sources/%.json.gz, $(SOURCES))
+
+sources/%.json: sources/%.owl.gz
+	owltools $< -o -f json $@
+#	robot convert -i $< -f json -o $@
+
+sources/%.json.gz: sources/%.json
+	gzip -c $< > $@
+sources/%.owl.gz: sources/%.owl
+	gzip -c $< > $@
+
+sources/mondo.json: $(patsubst %, sources/%.owl.gz, $(MONDO))
+	owltools $< -o -f json $@
+
+sources/doid.json: $(DOID)
+	owltools $< -o -f json $@
+
+sources/medgen.json: $(MG)
+	owltools $< -o -f json $@
+
+sources/ordo.json: $(ORDO)
+	owltools $< -o -f json $@
+
+sources/ncit.json: $(NCIT)
+	owltools $< -o -f json $@
+
+sources/mondo.owl:
+	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@
+
+sources/merged.json: $(SOURCE_FILES)
+	owltools $(SOURCE_FILES) --merge-support-ontologies -o -f json $@
+#	robot merge $(patsubst %, -i %, $(SOURCE_FILES))  -o $@
+
+sources/CTD_diseases.obo:
+	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
+
+##################################################
+################## Old diseases2owl code #########
+
+
+#### Download and preprocess upstream Mondo sources.
+
+MONDO_SOURCES = omim medgen medic orphanet
+TARGET=sources/target
+all: build_sources
+
+build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
+
+$(TARGET):
+	mkdir -p $@
+
+build-%: $(TARGET)
+	cd sources/$* && make
+

@@ -1,0 +1,15 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix Orphanet: <http://www.orpha.net/ORDO/Orphanet_>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?disease ?diseaseLabel ?rel ?xref ?gene ?geneLabel  WHERE {
+  ?gene rdfs:subClassOf [
+               owl:onProperty ?rel ;
+               owl:someValuesFrom ?disease ] ;
+        rdfs:label ?geneLabel ;
+        oio:hasDbXref ?xref ;
+        rdfs:subClassOf+ Orphanet:C010 .
+  ?disease rdfs:label ?diseaseLabel ;
+           rdfs:subClassOf+ Orphanet:C001 .
+}
