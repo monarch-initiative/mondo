@@ -19,3 +19,5 @@ For example: NAA10-related syndrome
 **Children terms (if applicable)** Should any existing terms be re-classified as children underneath this new proposed term?
 
 **Your nano-attribution (ORCID) or URL for a working group**
+If you don't have an ORCID, you can sign up for one [here](https://orcid.org/)
+
