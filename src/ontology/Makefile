@@ -244,13 +244,6 @@ $(ONT)-base.json: $(ONT)-base.owl
 	robot convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
 
-
-xx:
-	$(ROBOT) report -i mondo.owl --fail-on None -o reports/adhoc-report.tsv
-
-#$(ONT)-merged.owl: $(ONT).owl
-#	owltools --use-catalog $< --merge-imports-closure --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
-
 #pre/$(ONT).%: $(ONT).%
 #	$(ROBOT) annotate -i $< -V $(ONTURI)/pre/$(ONT).owl -o $@
 #pre/$(ONT).json: $(ONT).owl
