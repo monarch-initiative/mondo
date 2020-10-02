@@ -94,7 +94,7 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
-MAIN_PRODUCTS = $(ONT) $(ONT)-base
+MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
   $(IMPORT_FILES) \
@@ -122,7 +122,7 @@ all_artefacts: all_reports $(ARTEFACTS)
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
-test: sparql_test_edit roundtrip.obo debug.owl mondo-edit.owl sparql_test_main_owl sparql_test_main_obo test_nomerge
+test: sparql_test_edit roundtrip.obo debug.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 
 
 # ----------------------------------------
@@ -198,8 +198,7 @@ reasoned.owl: filtered.owl
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
 # merged = reasoned + equivalencies
-# TODO: rename this -plus-equivs
-merged.owl: reasoned.owl imports/equivalencies.owl
+reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
 
 
@@ -208,8 +207,8 @@ merged.owl: reasoned.owl imports/equivalencies.owl
 #
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-$(ONT).owl: merged.owl
-	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+$(ONT).owl: reasoned.owl
+	$(ROBOT) merge -i $< annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
 # obo is self-contained
 $(ONT).obo: reasoned.owl
@@ -217,6 +216,14 @@ $(ONT).obo: reasoned.owl
 $(ONT).json: $(ONT).owl
 	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+
+$(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
+	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+
+$(ONT)-with-equivalents.obo: $(ONT)-with-equivalents.owl
+	$(OWL2OBO)
+$(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
+	robot convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
 #$(ONT)-atomic.owl: $(ONT).owl
 #	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
@@ -239,9 +246,6 @@ $(ONT)-base.obo: $(ONT)-base.owl
 $(ONT)-base.json: $(ONT)-base.owl
 	robot convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
-
-$(ONT)-merged.owl: $(ONT).owl
-	owltools --use-catalog $< --merge-imports-closure --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
 
 #pre/$(ONT).%: $(ONT).%
 #	$(ROBOT) annotate -i $< -V $(ONTURI)/pre/$(ONT).owl -o $@
@@ -1046,10 +1050,9 @@ reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
 tmp/slurp.obo: #mirror/omim.obo
-	cat mirror/omim.obo | perl $(ADDTOTBD) | perl $(OBOGREP) --neg -r ALREADY - > $@
+	cat mirror/omim.obo | perl $(ADDTOTBD) | perl $(OBOGREP) --neg -r ALREADY - | perl $(OBOGREP) --neg -r is_obsol - | perl $(OBOGREP) --neg -r is_a -  > $@
 
-xx:
-	cat tmp/slurp.obo | perl $(OBOGREP) --neg -r is_obsol - > tmp/slurp_ops.obo
+
 #tmp/slurp-complete.obo:
 #	robot merge --input tmp/slurp.obo \
 #  unmerge --input mondo-edit.obo -o $@
