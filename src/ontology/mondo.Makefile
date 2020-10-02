@@ -51,3 +51,9 @@ clean:
 		*.tmp *.tmp.obo merged.owl *merged.owl reasoned.obo skos.ttl \
 		debug.owl roundtrip.obo test_nomerge sparql_test_* disjoint_sibs.obo \
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
+		
+mirror/foodon.owl:
+	echo "FOODON skipped"
+	
+imports/foodon_import.owl:
+	echo "FOODON skipped"
