@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/pato_import.owl
+data-version: mondo/releases/2020-10-02/imports/pato_import.owl
 ontology: mondo/imports/pato_import
 
 [Term]
@@ -148,6 +148,18 @@ def: "A quality inhering in a bearer by virtue of the whether the bearer differs
 is_a: PATO:0000068 ! qualitative
 
 [Term]
+id: PATO:0000070
+name: amount
+def: "The number of entities of this type that are part of the whole organism." []
+synonym: "count in organism" RELATED []
+synonym: "number" RELATED []
+synonym: "presence" RELATED []
+synonym: "presence or absence in organism" EXACT []
+synonym: "quantitative" EXACT []
+is_a: PATO:0000068 ! qualitative
+relationship: reciprocal_of PATO:0001555 ! has number of
+
+[Term]
 id: PATO:0000117
 name: size
 def: "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude." []
@@ -237,6 +249,27 @@ name: normal
 def: "A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average." []
 synonym: "average" RELATED []
 is_a: PATO:0000068 ! qualitative
+
+[Term]
+id: PATO:0000467
+name: present
+def: "A quality inhering in a bearer by virtue of the bearer's existence." []
+synonym: "present in organism" RELATED []
+is_a: PATO:0000070 ! amount
+
+[Term]
+id: PATO:0000470
+name: increased amount
+def: "An amount which is relatively high." []
+synonym: "accessory" RELATED []
+synonym: "increased" RELATED []
+synonym: "increased number" EXACT []
+synonym: "present in greater numbers in organism" EXACT []
+synonym: "supernumerary" EXACT []
+is_a: PATO:0000467 ! present
+is_a: PATO:0002300 ! increased quality
+intersection_of: PATO:0000070 ! amount
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
 id: PATO:0000498
@@ -604,6 +637,19 @@ synonym: "liquidity" EXACT []
 is_a: PATO:0002198 ! quality of a substance
 
 [Term]
+id: PATO:0001555
+name: has number of
+def: "The number of parts of a particular type that the bearer entity has. This is a relational quality, and thus holds between two entities: the bearer of the quality, and the type of parts." []
+synonym: "cardinality" RELATED []
+synonym: "extra or missing physical or functional parts" EXACT []
+synonym: "has or lacks parts of type" EXACT []
+synonym: "mereological quality" EXACT []
+synonym: "number" RELATED []
+synonym: "number of" EXACT []
+is_a: PATO:0001241 ! physical object quality
+relationship: reciprocal_of PATO:0000070 ! amount
+
+[Term]
 id: PATO:0001562
 name: decreased mass
 def: "A mass which is lower than normal or average." []
@@ -798,6 +844,20 @@ id: PATO:0001995
 name: organismal quality
 def: "A quality that inheres in an entire organism or part of an organism." []
 is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001997
+name: decreased amount
+def: "An amount which is relatively low." []
+synonym: "decreased" RELATED []
+synonym: "decreased number" EXACT []
+synonym: "present in fewer numbers in organism" EXACT []
+synonym: "reduced" RELATED []
+synonym: "subnumerary" RELATED []
+is_a: PATO:0000467 ! present
+is_a: PATO:0002301 ! decreased quality
+intersection_of: PATO:0000070 ! amount
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
 id: PATO:0002005
@@ -1749,4 +1809,9 @@ domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
 is_transitive: true
 is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
+
+[Typedef]
+id: reciprocal_of
+name: reciprocal_of
+def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." []
 

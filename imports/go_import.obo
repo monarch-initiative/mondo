@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/go_import.owl
+data-version: mondo/releases/2020-10-02/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -10570,7 +10570,7 @@ is_a: GO:1901616 ! organic hydroxy compound catabolic process
 
 [Term]
 id: GO:0016175
-name: superoxide-generating NADPH oxidase activity
+name: superoxide-generating NAD(P)H oxidase activity
 def: "Catalysis of the reaction: NAD(P)H + O2 = NAD(P)H + O2-." []
 synonym: "cytochrome B-245" RELATED []
 is_a: GO:0050664 ! oxidoreductase activity, acting on NAD(P)H, oxygen as acceptor
@@ -15586,6 +15586,7 @@ synonym: "cortisol metabolism" EXACT []
 is_a: GO:0008211 ! glucocorticoid metabolic process
 is_a: GO:0034308 ! primary alcohol metabolic process
 is_a: GO:0042180 ! cellular ketone metabolic process
+is_a: GO:0120254 ! olefinic compound metabolic process
 is_a: GO:1902644 ! tertiary alcohol metabolic process
 
 [Term]
@@ -15600,6 +15601,7 @@ is_a: GO:0006704 ! glucocorticoid biosynthetic process
 is_a: GO:0034309 ! primary alcohol biosynthetic process
 is_a: GO:0034650 ! cortisol metabolic process
 is_a: GO:0042181 ! ketone biosynthetic process
+is_a: GO:0120255 ! olefinic compound biosynthetic process
 is_a: GO:1902645 ! tertiary alcohol biosynthetic process
 
 [Term]
@@ -16937,7 +16939,7 @@ is_a: GO:1901564 ! organonitrogen compound metabolic process
 [Term]
 id: GO:0042562
 name: hormone binding
-def: "Interacting selectively and non-covalently with any hormone, naturally occurring substances secreted by specialized cells that affect the metabolism or behavior of other cells possessing functional receptors for the hormone." []
+def: "Interacting selectively and non-covalently with any hormone, naturally occurring substances secreted by specialized cells that affect the metabolism or behavior of cells possessing functional receptors for the hormone. Hormones may be produced by the same, or different, cell as express the receptor." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -18241,7 +18243,6 @@ synonym: "development during symbiotic interaction" RELATED []
 synonym: "development on or near surface of other organism during symbiotic interaction" RELATED []
 synonym: "development on or near surface of other organism involved in symbiotic interaction" NARROW []
 is_a: GO:0032502 ! developmental process
-is_a: GO:0051704 ! multi-organism process
 intersection_of: GO:0032502 ! developmental process
 intersection_of: BFO:0000050 GO:0044419 ! part of interspecies interaction between organisms
 relationship: BFO:0000050 GO:0044419 ! part of interspecies interaction between organisms
@@ -26821,6 +26822,7 @@ name: testosterone biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of testosterone, an androgen having 17beta-hydroxy and 3-oxo groups, together with unsaturation at C-4 C-5." []
 is_a: GO:0006694 ! steroid biosynthetic process
 is_a: GO:0042181 ! ketone biosynthetic process
+is_a: GO:0120255 ! olefinic compound biosynthetic process
 is_a: GO:1901617 ! organic hydroxy compound biosynthetic process
 
 [Term]
@@ -29770,7 +29772,7 @@ is_obsolete: true
 [Term]
 id: GO:0102175
 name: 3-beta-hydroxysteroid dehydrogenase/C4-decarboxylase activity
-def: "Catalysis of the reaction: 4alpha-carboxy-4beta,14alpha-dimethyl-9beta,19-cyclo-5alpha-ergost-24(241)-en-3beta-ol + NAD <=> cycloeucalenone + NADH + carbon dioxide." []
+def: "Catalysis of the reaction: a 3beta-hydroxysteroid-4alpha-carboxylate + NAD(+) = a 3-oxosteroid + CO2 + NADH." []
 is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
 
 [Term]
@@ -29992,9 +29994,30 @@ intersection_of: BFO:0000050 GO:0043005 ! part of neuron projection
 relationship: BFO:0000050 GO:0043005 ! part of neuron projection
 
 [Term]
+id: GO:0120254
+name: olefinic compound metabolic process
+def: "The chemical reactions and pathways involving an olefinic compound, any compound which contains a carbon-carbon double bond (aka C=C)." []
+synonym: "alkene substituted compound metabolic process" EXACT []
+synonym: "alkene substituted compound metabolism" EXACT []
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:0120255
+name: olefinic compound biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of an olefinic compound, any compound which contains a carbon-carbon double bond (aka C=C)." []
+synonym: "alkene substituted compound anabolic process" EXACT []
+synonym: "alkene substituted compound anabolism" EXACT []
+synonym: "alkene substituted compound biosynthesis" EXACT []
+synonym: "alkene substituted compound biosynthetic process" EXACT []
+synonym: "alkene substituted compound synthesis" EXACT []
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0120254 ! olefinic compound metabolic process
+
+[Term]
 id: GO:0140013
 name: meiotic nuclear division
 def: "One of the two nuclear divisions that occur as part of the meiotic cell cycle." []
+synonym: "meiosis" EXACT []
 is_a: GO:0000280 ! nuclear division
 is_a: GO:1903046 ! meiotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
@@ -30004,6 +30027,7 @@ intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
 id: GO:0140014
 name: mitotic nuclear division
 def: "A mitotic cell cycle process comprising the steps by which the nucleus of a eukaryotic cell divides; the process involves condensation of chromosomal DNA into a highly compacted form. Canonically, mitosis produces two daughter nuclei whose chromosome complement is identical to that of the mother cell." []
+synonym: "mitosis" EXACT []
 is_a: GO:0000280 ! nuclear division
 is_a: GO:1903047 ! mitotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
