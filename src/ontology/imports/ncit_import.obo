@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/ncit_import.owl
+data-version: mondo/releases/2020-10-02/imports/ncit_import.owl
 subsetdef: NCIT:C105551 ""
 subsetdef: NCIT:C116977 ""
 subsetdef: NCIT:C118169 ""
@@ -28,7 +28,6 @@ subsetdef: NCIT:C159008 ""
 subsetdef: NCIT:C159072 ""
 subsetdef: NCIT:C159093 ""
 subsetdef: NCIT:C159100 ""
-subsetdef: NCIT:C159106 ""
 subsetdef: NCIT:C159111 ""
 subsetdef: NCIT:C159116 ""
 subsetdef: NCIT:C159117 ""
@@ -688,49 +687,6 @@ property_value: NCIT:P207 "C1516654" xsd:string
 property_value: NCIT:P366 "Clinical_or_Research_Activity" xsd:string
 
 [Term]
-id: NCIT:C16273
-name: Alcohol Consumption
-def: "Consumption of liquids containing ethanol, including the behaviors associated with drinking the alcohol." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
-subset: NCIT:C156952
-subset: NCIT:C156953
-subset: NCIT:C156954
-subset: NCIT:C157529
-subset: NCIT:C157711
-subset: NCIT:C159106
-synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
-synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
-is_a: NCIT:C19683 ! Personal Behavior
-property_value: NCIT:NHC0 "C16273" xsd:string
-property_value: NCIT:P106 "Individual Behavior" xsd:string
-property_value: NCIT:P108 "Alcohol Consumption" xsd:string
-property_value: NCIT:P207 "C0001948" xsd:string
-property_value: NCIT:P322 "CPTAC" xsd:string
-property_value: NCIT:P322 "GDC" xsd:string
-property_value: NCIT:P366 "Alcohol_Consumption" xsd:string
-property_value: NCIT:P375 "Alcohol Consumption" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="RF", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-
-[Term]
-id: NCIT:C16326
-name: Behavior
-def: "The actions or reactions of an object or organism, usually in relation to the environment or surrounding world of stimuli." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
-subset: NCIT:C90259
-synonym: "Behavior" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Behavior" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
-synonym: "Behavioral" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Conduct" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-is_a: NCIT:C43431 ! Activity
-property_value: NCIT:A11 NCIT:C19988
-property_value: NCIT:NHC0 "C16326" xsd:string
-property_value: NCIT:P106 "Behavior" xsd:string
-property_value: NCIT:P108 "Behavior" xsd:string
-property_value: NCIT:P207 "C0004927" xsd:string
-property_value: NCIT:P322 "NICHD" xsd:string
-property_value: NCIT:P366 "Behavior" xsd:string
-property_value: NCIT:P371 "Behavior" xsd:string
-
-[Term]
 id: NCIT:C165233
 name: Expression Negative
 def: "An indication that expression of a gene, RNA species or protein is not detected in a sample." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
@@ -821,19 +777,6 @@ property_value: NCIT:P207 "C1519279" xsd:string
 property_value: NCIT:P366 "Sexual_Transmission" xsd:string
 
 [Term]
-id: NCIT:C19683
-name: Personal Behavior
-def: "The observable response of a person." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
-synonym: "Personal Behavior" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Personal Conduct" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-is_a: NCIT:C16326 ! Behavior
-property_value: NCIT:NHC0 "C19683" xsd:string
-property_value: NCIT:P106 "Individual Behavior" xsd:string
-property_value: NCIT:P108 "Personal Behavior" xsd:string
-property_value: NCIT:P207 "C1519022" xsd:string
-property_value: NCIT:P366 "Personal_Behavior" xsd:string
-
-[Term]
 id: NCIT:C25218
 name: Intervention or Procedure
 def: "An activity that produces an effect, or that is intended to alter the course of a disease in a patient or population. This is a general term that encompasses the medical, social, behavioral, and environmental acts that can have preventive, therapeutic, or palliative effects." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
@@ -853,8 +796,8 @@ synonym: "Intervention or Procedure" EXACT [] {http://purl.obolibrary.org/obo/NC
 synonym: "Intervention or Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Intervention Strategies" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Interventional" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "interventionDescription" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 5.3"}
 synonym: "interventionDescription" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 3.0.3"}
+synonym: "interventionDescription" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 5.3"}
 synonym: "Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 synonym: "Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICDC", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
@@ -1268,8 +1211,8 @@ subset: NCIT:C159501
 subset: NCIT:C159503
 synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P385="MPN-SAF", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 5.3"}
 synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 3.0.3"}
+synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 5.3"}
 synonym: "General activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI", http://purl.obolibrary.org/obo/NCIT_P385="MDASI-HN"}
 disjoint_from: NCIT:C7057 ! Disease, Disorder or Finding
 property_value: NCIT:NHC0 "C43431" xsd:string
