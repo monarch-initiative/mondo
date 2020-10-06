@@ -25,11 +25,11 @@ Mondo is a semi-automatically constructed ontology that merges in multiple disea
 
 One feature of Mondo is that it goes beyond loose xrefs. It curated precise 1:1 equivalence axioms connecting to other resources, validated by OWL reasoning. This means it is safe to propagate across these from OMIM, Orphanet, EFO, DOID (soon NCIT).
 
-**These precise mappings are available as stable release versoins in three formats:**  
+**These precise mappings are available as stable release versions in three formats:**  
 
-- the **[.owl edition](http://purl.obolibrary.org/obo/mondo.owl)** uses OWL equivalence axioms directly in the ontology. Note this makes it harder to browse in some portals, but this edition may be preferable for computational use. The owl edition also includes axiomatization using CL, Uberon, GO, HP, RO, NCBITaxon.
+- the **[mondo-with-equivalent](http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl)** edition uses OWL equivalence axioms directly in the ontology. Note this makes it harder to browse in some portals, but this edition may be preferable for computational use. The owl edition also includes axiomatization using CL, Uberon, GO, HP, RO, NCBITaxon.
 - the **[.obo version](http://purl.obolibrary.org/obo/mondo.obo)** is simpler, lacks inter-ontology axiomatization, and lacks equivalence axioms to other databases; instead xrefs are used as the linking mechanism. If the ID is one of Orphanet, OMIM, DOID or EFO then the xref precisely shadows the equivalence axiom.
-- the **[json edition](http://purl.obolibrary.org/obo/mondo.json)** is equivalent to the OWL edition
+- the **[json edition](http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.json)** is equivalent to the OWL edition.
 
 The **Mondo GitHub repository** is available here: [https://github.com/monarch-initiative/mondo](https://github.com/monarch-initiative/mondo).
 
