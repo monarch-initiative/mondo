@@ -2,7 +2,7 @@
 
 See the [imports/ folder](https://github.com/monarch-initiative/mondo/tree/master/imports).
 
-These work in the usual way, see OBO docs for details. See [Design Pattern](https://mondo.readthedocs.io/en/latest/editors-guide/e-design-patterns/) section for more details on how these are used.
+Updating imoprts is needed whenever logical axioms that reference exgtenal ontologies are added but the classes being referenced have no labels or other logical definitions. Updating an import for those classes will bring in the labels, annotations, and logical axioms into the import file, and therefore into the Mondo ontology. See [Design Pattern](https://mondo.readthedocs.io/en/latest/editors-guide/e-design-patterns/) section for more details patterns that reference external ontologies.
 
 If you need to remake the import "foo":
 
