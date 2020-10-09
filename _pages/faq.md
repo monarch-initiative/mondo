@@ -41,6 +41,17 @@ The latest release of Mondo is not always displayed in the Monarch website, as t
 
 Mondo is co-developed with [HPO](https://hpo.jax.org/app/), to ensure interoperability and alignment between the two ontologies and create a more holistic semantic disease resource. A subset of HPO classes are imported into Mondo. HPO terms are used in the logical definitions for the disease terms, where applicable. For example, [MONDO:0003337 'acute hemorrhagic encephalitis'](http://purl.obolibrary.org/obo/MONDO_0003337) is computationally defined as `encephalitis and ('disease has feature' some 'Abnormal bleeding')` ([Abnormal bleeding is an HPO term, HP:0001892](https://hpo.jax.org/app/browse/term/HP:0001892)).
 
+### What is the difference between a disease and a phenotype?
+
+There is a lot of overlap between diseases and phenotypes. Mondo and Human Phenotype Ontology (HPO) define a disease as an entity that has all four of the following features:
+
+- an etiology (whether identified or as yet unknown)
+- a time course
+- a set of phenotypic features
+- if treatments exist, there is a characteristic response to them
+
+A phenotype (or a phenotypic feature) is a component of a disease, and HPO terms can be used to describe the set of phenotypic features that characterize a disease. There is a grey zone between diseases and phenotypic features. For instance, diabetes mellitus can be conceptualized as a disease, but it is also a feature of other diseases such as Bardet Biedl syndrome. In some cases like this, Mondo may label the disease entity with (disease) after the disease name, to distinguish it from the HPO phenotype term (for example, MONDO_0005466 'hypersomnia (disease)' and HP:0100786 Hypersomnia).
+
 ### How do I cite Mondo?
 
 Please cite: Mungall, Christopher J., et al. 2017 [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Nucleic Acids Research 45 (D1): D712–22.
