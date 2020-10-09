@@ -50,7 +50,7 @@ There is a lot of overlap between diseases and phenotypes. Mondo and Human Pheno
 - a set of phenotypic features
 - if treatments exist, there is a characteristic response to them
 
-A phenotype (or a phenotypic feature) is a component of a disease, and HPO terms can be used to describe the set of phenotypic features that characterize a disease. There is a grey zone between diseases and phenotypic features. For instance, diabetes mellitus can be conceptualized as a disease, but it is also a feature of other diseases such as Bardet Biedl syndrome. In some cases like this, Mondo may label the disease entity with (disease) after the disease name, to distinguish it from the HPO phenotype term (for example, MONDO_0005466 'hypersomnia (disease)' and HP:0100786 Hypersomnia).
+A phenotype (or a phenotypic feature) is a component of a disease, and HPO terms can be used to describe the set of phenotypic features that characterize a disease. There is a grey zone between diseases and phenotypic features. For instance, diabetes mellitus can be conceptualized as a disease, but it is also a feature of other diseases such as Bardet Biedl syndrome. In some cases like this, Mondo may label the disease entity with (disease) after the disease name, to distinguish it from the HPO phenotype term (for example, [MONDO:0005466 'hypersomnia (disease)'](http://www.ontobee.org/ontology/MONDO?iri=http://purl.obolibrary.org/obo/MONDO_0005466) and [HP:0100786 Hypersomnia](https://hpo.jax.org/app/browse/term/HP:0100786)).
 
 ### How do I cite Mondo?
 
