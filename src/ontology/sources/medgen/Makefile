@@ -1,5 +1,6 @@
 OBO=http://purl.obolibrary.org/obo
-TGT=../../target/
+TODAY ?= $(shell date +%Y-%m-%d)
+TGT=../../releases/v$(TODAY)
 PRODUCTS = medgen-disease-extract.obo medgen-disease-extract.owl
 
 all:  build stage
@@ -8,6 +9,9 @@ stage: $(patsubst %, stage-%, $(PRODUCTS))
 stage-%: %
 	cp $< $(TGT)
 
+$(TGT):
+	mkdir -p $@
+
 # ----------------------------------------
 # ETL
 # ----------------------------------------
@@ -15,14 +19,14 @@ fetch:
 	wget -r -np ftp://ftp.ncbi.nlm.nih.gov/pub/medgen/ && touch $@
 
 uid2cui.tsv:
-	./bin/make_uid2cui.pl > $@
+	perl ./bin/make_uid2cui.pl > $@
 
 # ----------------------------------------
 # Hacky conversion to obo
 # ----------------------------------------
 # relies on MGCONSO.RRF.gz etc being made by 'fetch' step
 medgen.obo: fetch uid2cui.tsv
-	./bin/medgen2obo.pl > $@.tmp && mv $@.tmp $@
+	perl ./bin/medgen2obo.pl > $@.tmp && mv $@.tmp $@
 
 # we only care about diseases for now
 # NOTE: some cancers seem to appear under Neoplastic-Process

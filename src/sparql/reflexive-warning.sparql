@@ -1,0 +1,7 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?term ?p
+WHERE {
+    ?term ?p ?term .
+    FILTER ( regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
