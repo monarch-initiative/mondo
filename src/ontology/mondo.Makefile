@@ -112,7 +112,7 @@ run_notebook:
 	# https://github.com/jupyter/notebook/issues/2254
 	jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
 
-reports/mondo_analysis.md: #$(QC_REPORTS)
+reports/mondo_analysis.md: $(QC_REPORTS)
 	jupyter nbconvert --execute --to markdown --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
 	#sed -i 's/<style.*<[/]style>//g' $@
 	# This is a hack to get rid of <style> tags that are rendered very ugly by github.
@@ -210,16 +210,16 @@ sources/CTD_diseases.obo:
 
 
 #### Download and preprocess upstream Mondo sources.
-
+# MONDO_SOURCES = omim medgen medic orphanet
 MONDO_SOURCES = omim medgen medic orphanet
-TARGET=sources/target
 all: build_sources
+
+.PHONY: release_dir
 
 build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
 
-$(TARGET):
-	mkdir -p $@
-
-build-%: $(TARGET)
+build-%:
 	cd sources/$* && make
 
+xxx:
+	$(ROBOT) query -f tsv --use-graphs true -i $(SRC) --query $(SPARQLDIR)/reflexive-warning.sparql reports/reflexive-warning.tsv
