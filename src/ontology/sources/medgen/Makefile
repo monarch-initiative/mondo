@@ -1,12 +1,12 @@
 OBO=http://purl.obolibrary.org/obo
 TODAY ?= $(shell date +%Y-%m-%d)
-TGT=../../releases/v$(TODAY)
+TGT=../releases/v$(TODAY)
 PRODUCTS = medgen-disease-extract.obo medgen-disease-extract.owl
 
 all:  build stage
 build:  $(PRODUCTS)
 stage: $(patsubst %, stage-%, $(PRODUCTS))
-stage-%: %
+stage-%: % | $(TGT)
 	cp $< $(TGT)
 
 $(TGT):

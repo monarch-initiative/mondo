@@ -1,5 +1,5 @@
 TODAY ?= $(shell date +%Y-%m-%d)
-TGT=../../releases/v$(TODAY)
+TGT=../releases/v$(TODAY)
 PRODUCTS = omim.owl
 OMIM_URL=https://data.monarchinitiative.org/experimental/omim.ttl
 OBOGREPL=perl ../../obo-grep.pl

@@ -3,15 +3,19 @@
 # ~~~~~~~~
 
 OBO=http://purl.obolibrary.org/obo
-TGT=../../target/
+TODAY ?= $(shell date +%Y-%m-%d)
+TGT=../releases/v$(TODAY)
 PRODUCTS = obo_orphanet.owl obo_orphanet.obo
 OIO = http://www.geneontology.org/formats/oboInOwl#
 
 all:  build stage
 build:  $(PRODUCTS)
 stage: $(patsubst %, stage-%, $(PRODUCTS))
-stage-%: %
+stage-%: % | $(TGT)
 	cp $< $(TGT)
+
+$(TGT):
+	mkdir -p $@
 
 EFO=http://www.ebi.ac.uk/efo
 
@@ -27,7 +31,7 @@ EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
            --rename-entity $(OBO)/ECO_0000218 $(OIO)source
 
 
-V=2.9.1
+V=3.0
 
 # STEP 0: DOWNLOAD
 #ordo_orphanet.owl.zip:
