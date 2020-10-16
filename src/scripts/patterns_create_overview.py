@@ -109,7 +109,7 @@ for pattern_dir in pattern_dirs.split("|"):
                 if sample_table:
                     lines.append("#### Data preview: ")
                     oboiri="http://purl.obolibrary.org/obo/"
-                    lines.append(sample_table.replace(oboiri,"MONDO:").replace("_",":"))
+                    lines.append(sample_table.replace(oboiri,"").replace("_",":"))
                     lines.append("")
                     lines.append("See full table [here]({})".format(example))
 
