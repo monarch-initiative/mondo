@@ -7,7 +7,7 @@ There are two kinds of files in this repo
  * `*.yaml` design pattern specification [DOSDP spec](https://github.com/dosumis/dead_simple_owl_design_patterns)
  * `*.csv` tsv reverse engineered from ontology following DP (uses [dosdp-tools](https://github.com/INCATools/dosdp-tools) )
 
-The overall philosophy is to split rather than lump; so for example, we have distinct DPs for [carcinoma](carcinoma.yaml) and [cancer](cancer.yaml)
+The overall philosophy is to split rather than lump; so for example, we have distinct DPs for [carcinoma](https://github.com/monarch-initiative/mondo/tree/master/src/patterns/dosdp-patterns/carcinoma.yaml) and [cancer](https://github.com/monarch-initiative/mondo/tree/master/src/patterns/dosdp-patterns/cancer.yaml)
 
 Consult each yaml for documentation.
 
