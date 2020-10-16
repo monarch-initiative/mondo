@@ -85,7 +85,7 @@ for pattern_dir in pattern_dirs.split("|"):
                             examples.append('[mondo]({})'.format(ghurl))
                             example = '[mondo]({})'.format(ghurl)
                             dfh = df.head()
-                            sample_table = dfh.to_markdown()
+                            sample_table = dfh.to_markdown(index=False)
                             i = i +1
                         else:
                             print("No matches!")
@@ -110,6 +110,7 @@ for pattern_dir in pattern_dirs.split("|"):
                     lines.append("#### Data preview: ")
                     oboiri="http://purl.obolibrary.org/obo/"
                     lines.append(sample_table.replace(oboiri,"MONDO:").replace("_",":"))
+                    lines.append("")
                     lines.append("See full table [here]({})".format(example))
 
             except yaml.YAMLError as exc:
