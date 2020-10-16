@@ -222,4 +222,7 @@ build-%:
 	cd sources/$* && make
 
 xxx:
-	$(ROBOT) query -f tsv --use-graphs true -i $(SRC) --query $(SPARQLDIR)/reflexive-warning.sparql reports/reflexive-warning.tsv
+	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/excluded-subsumption-is-inferred-violation.sparql reports/excluded-subsumption-is-inferred-violation.tsv
+
+yyy:
+	$(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
