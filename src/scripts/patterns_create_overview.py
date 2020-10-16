@@ -83,7 +83,7 @@ for pattern_dir in pattern_dirs.split("|"):
                         df=pd.read_csv(tsv,sep="\t")
                         if not df.empty:
                             examples.append('[mondo]({})'.format(ghurl))
-                            example = '[mondo]({})'.format(ghurl)
+                            example = '{}'.format(ghurl)
                             dfh = df.head()
                             sample_table = dfh.to_markdown(index=False)
                             i = i +1
