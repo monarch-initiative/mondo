@@ -3,7 +3,7 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?entity ?property ?value WHERE {
+SELECT DISTINCT ?term ?property ?value WHERE {
  VALUES ?property {
    obo:IAO_0000118
    oboInOwl:hasExactSynonym
@@ -11,10 +11,10 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
    oboInOwl:hasNarrowSynonym
    oboInOwl:hasBroadSynonym
  }
- FILTER NOT EXISTS { ?entity owl:deprecated true }
+ FILTER NOT EXISTS { ?term owl:deprecated true }
  FILTER NOT EXISTS { ?entity2 owl:deprecated true }
  ?term rdfs:label ?label .
- ?entity oboInOwl:hasExactSynonym ?value .
- ?entity oboInOwl:hasExactSynonym ?value .
+ ?term oboInOwl:hasExactSynonym ?value .
+ ?entity2 oboInOwl:hasExactSynonym ?value .
 }
-ORDER BY ?entity
+ORDER BY ?term
