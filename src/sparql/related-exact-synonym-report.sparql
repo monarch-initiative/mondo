@@ -13,7 +13,17 @@ WHERE
     
     ?term rdfs:label ?term_label .
     
+    FILTER NOT EXISTS {
+      ?a owl:annotatedSource ?term ;
+         owl:annotatedProperty oboInOwl:hasExactSynonym ;
+         owl:annotatedTarget ?exact_t ;
+         oboInOwl:hasDbXref ?xref .
+         FILTER (str(?exact_t)=str(?exact))
+         FILTER (regex(str(?xref), "(NCIT|GARD|Orphanet)"))
+    }
+    
     FILTER (str(?related)=str(?exact))
+    FILTER (str(?term_label)!=str(?exact))
     FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
   }
 }

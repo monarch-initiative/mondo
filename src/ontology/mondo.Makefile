@@ -226,3 +226,9 @@ xxx:
 
 yyy:
 	$(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
+
+aa:
+	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
+
+ab:
+	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv

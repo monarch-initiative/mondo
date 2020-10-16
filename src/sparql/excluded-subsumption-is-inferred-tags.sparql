@@ -4,8 +4,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 
-INSERT {
-  ?term mondo:excluded_from_qc_check mondoSparql:excluded-subsumption-is-inferred-violation.sparql
+CONSTRUCT {
+  ?term mondo:excluded_from_qc_check mondoSparql:excluded-subsumption-is-inferred-violation.sparql ;
+  rdf:type owl:Class .
 }
 WHERE 
 { 
