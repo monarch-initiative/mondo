@@ -675,7 +675,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infantile.tsv)
 ### Infectious disease by agent
-*TBD.*
+*Infectious diseases can be classified by the infectioos agent, such as bacteria, coronavirus, etc, that causes the disease.
+Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](http://purl.obolibrary.org/obo/MONDO_0015766)*
 
 | Attribute | Info |
 |----------|----------|
@@ -683,7 +684,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | infectious_disease_by_agent |
 | Classes | MONDO:0000001, NCBITaxon:1, MONDO:0005550,  |
 | Variables | organism (NCBITaxon:1),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv) |
 
 #### Data preview: 
@@ -877,7 +878,8 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv)
 ### Location
-*TBD.*
+*A disease that is located in a specific anatomical location.
+Examples: ['abdominal cystic lymphangioma'](http://purl.obolibrary.org/obo/MONDO_0021726), ['articular cartilage disease'](http://purl.obolibrary.org/obo/MONDO_0003816), ['urethral disease'](http://purl.obolibrary.org/obo/MONDO_0004184)*
 
 | Attribute | Info |
 |----------|----------|
@@ -885,7 +887,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | location |
 | Classes | MONDO:0000001, owl:Thing,  |
 | Variables | disease (MONDO:0000001), owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location.tsv) |
 
 #### Data preview: 
