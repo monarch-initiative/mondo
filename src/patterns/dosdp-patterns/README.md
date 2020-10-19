@@ -743,7 +743,8 @@ For inflammatory diseases caused by infection, this may be the site of infection
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inflammatory_disease_by_site.tsv)
 ### Inherited susceptibility
-*This pattern should be used with OMIM phenotypic series (OMIMPS) for which the members are susceptibilities.*
+*This pattern should be used with OMIM phenotypic series (OMIMPS) for which the subclasses are susceptibilities. Note, this pattern should not have an asserted causative gene as logical axiom (and no single causative gene in text definition). The children should have asserted causative genes in the text definitions and in the logical axioms.
+Examples: ['migraine disorder'](http://purl.obolibrary.org/obo/MONDO_0005277), ['microvascular complications of diabetes, susceptibility'](http://purl.obolibrary.org/obo/MONDO_0000065), ['epilepsy, idiopathic generalized'](http://purl.obolibrary.org/obo/MONDO_0005579).*
 
 | Attribute | Info |
 |----------|----------|
@@ -751,7 +752,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | susceptibility_by_gene |
 | Classes | MONDO:0000001, MONDO:0020573,  |
 | Variables | disease or disorder (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv) |
 
 #### Data preview: 
@@ -787,7 +788,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv)
 ### Juvenile
-*TBD.*
+*An instance of a disease that has an onset of signs or symptoms of disease between the age of 5 and 15 years (juvenile onset).
+Examples: [juvenile-onset Parkinson disease](http://purl.obolibrary.org/obo/MONDO_0000828), ['juvenile idiopathic scoliosis'](http://purl.obolibrary.org/obo/MONDO_0100076)*
 
 | Attribute | Info |
 |----------|----------|
@@ -795,7 +797,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | juvenile |
 | Classes | HP:0003621, owl:Thing,  |
 | Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv) |
 
 #### Data preview: 
@@ -809,7 +811,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv)
 ### Leiomyoma
-*This is auto-generated. Add your description here
+*A leiomyoma (a well-circumscribed benign smooth muscle neoplasm characterized by the presence of spindle cells with cigar-shaped nuclei, interlacing fascicles, and a whorled pattern) that is located in a specific anatomical entity.
 Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [ureter leiomyoma](http://purl.obolibrary.org/obo/MONDO_0001399), [urethra leiomyoma](http://purl.obolibrary.org/obo/MONDO_0002222) (30 total)*
 
 | Attribute | Info |
@@ -818,7 +820,7 @@ Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [uret
 | Name | leiomyoma disease has location X |
 | Classes | MONDO:0001572, UBERON:0001062,  |
 | Variables | anatomical entity (UBERON:0001062),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyoma.tsv) |
 
 #### Data preview: 
@@ -855,7 +857,7 @@ Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MO
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyosarcoma.tsv)
 ### Lipoma
-*This is auto-generated. Add your description here
+*A benign, usually painless, well-circumscribed lipomatous tumor composed of adipose tissue that is located in a specific anatomical location.
 Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorectal lipoma](http://purl.obolibrary.org/obo/MONDO_0003885), [tendon sheath lipoma](http://purl.obolibrary.org/obo/MONDO_0004076) (28 total)*
 
 | Attribute | Info |
@@ -864,7 +866,7 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 | Name | lipoma disease has location X |
 | Classes | MONDO:0005106, owl:Thing,  |
 | Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv) |
 
 #### Data preview: 
@@ -923,7 +925,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location_top.tsv)
 ### Lymphoma
-*This is auto-generated. Add your description here
+*A malignant (clonal) proliferation of B- lymphocytes or T- lymphocytes which involves the lymph nodes, bone marrow and/or extranodal sites. This category includes Non-Hodgkin lymphomas and Hodgkin lymphomas.
 Examples: [marginal zone lymphoma](http://purl.obolibrary.org/obo/MONDO_0017604), [ureteral lymphoma](http://purl.obolibrary.org/obo/MONDO_0001977), [colorectal lymphoma](http://purl.obolibrary.org/obo/MONDO_0024656) (37 total)*
 
 | Attribute | Info |
@@ -932,7 +934,7 @@ Examples: [marginal zone lymphoma](http://purl.obolibrary.org/obo/MONDO_0017604)
 | Name | lymphoma disease has location X |
 | Classes | MONDO:0005062, owl:Thing,  |
 | Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lymphoma.tsv) |
 
 #### Data preview: 
