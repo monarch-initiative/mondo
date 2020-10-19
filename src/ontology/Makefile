@@ -96,13 +96,17 @@ REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
+EQUIVALENTS_FILES=imports/equivalencies
+EQUIVALENTS = $(foreach n, $(EQUIVALENTS_FILES), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
   $(IMPORT_FILES) \
   $(MAIN_FILES) \
+  $(EQUIVALENTS) \
   $(REPORT_FILES) \
   $(SUBSET_FILES)
 
-ASSETS = $(MAIN_FILES) $(SUBSET_FILES) ../../README.md
+
+ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) ../../README.md 
 
 list_main_files:
 	echo $(MAIN_FILES)

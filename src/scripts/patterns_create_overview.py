@@ -25,8 +25,8 @@ md_file = sys.argv[3]
 
 #pattern_dir="/ws/upheno/src/patterns/dosdp-dev"
 #md_file=pattern_dir+"/README.md"
-pattern_matches_location = "https://raw.githubusercontent.com/obophenotype/upheno-dev/master/src/patterns/data/matches"
-pattern_matches_location_gh = "https://github.com/obophenotype/upheno-dev/tree/master/src/patterns/data/matches"
+pattern_matches_location = "https://raw.githubusercontent.com/monarch-initiative/mondo/master/src/patterns/data/matches"
+pattern_matches_location_gh = "https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches"
 
 lines = []
 
@@ -76,11 +76,16 @@ for pattern_dir in pattern_dirs.split("|"):
                 ghurl = "{}/{}".format(pattern_matches_location_gh,fn_yaml)
                 print(url)
                 print(tsv)
+                sample_table=""
+                example=""
                 if os.path.isfile(tsv):
                     try:
                         df=pd.read_csv(tsv,sep="\t")
                         if not df.empty:
                             examples.append('[mondo]({})'.format(ghurl))
+                            example = '{}'.format(ghurl)
+                            dfh = df.head()
+                            sample_table = dfh.to_markdown(index=False)
                             i = i +1
                         else:
                             print("No matches!")
@@ -89,7 +94,7 @@ for pattern_dir in pattern_dirs.split("|"):
                 else:
                     print(tsv + " does not exist!")
                 
-                lines.append("### "+splitted)
+                lines.append("### "+splitted.replace("_"," "))
                 lines.append("*" + y['description'].strip()+"*")
                 lines.append("")
                 lines.append("| Attribute | Info |")
@@ -101,6 +106,12 @@ for pattern_dir in pattern_dirs.split("|"):
                 lines.append("| Contributors | "+contributors+" |")
                 lines.append("| Examples | "+' '.join(examples)+" |")
                 lines.append("")
+                if sample_table:
+                    lines.append("#### Data preview: ")
+                    oboiri="http://purl.obolibrary.org/obo/"
+                    lines.append(sample_table.replace(oboiri,"").replace("_",":"))
+                    lines.append("")
+                    lines.append("See full table [here]({})".format(example))
 
             except yaml.YAMLError as exc:
                 print(exc)
