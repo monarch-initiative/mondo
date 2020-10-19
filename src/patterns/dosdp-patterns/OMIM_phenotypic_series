@@ -1,7 +1,8 @@
 pattern_name: OMIM_phenotypic_series
 
-description: This patterrn is meant to be used for OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. 
-Examples: MONDO:0016296 holoprosencephaly (OMIMPS:236100), MONDO_0007477 '3-M syndrome' (OMIMPS:273750). Note: 
+description: >-
+
+This patterrn is meant to be used for OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. Note: 
 - every instance of this metaclass should be equivalent to (via annotated xref) to something in OMIMPS namespace
 - it will never have an asserted causative gene as logical axiom (and no single causative gene in text def)
 - it must never be equivalent to an OMIM:nnnnnn (often redundant with the above rule)
@@ -14,46 +15,22 @@ Examples: MONDO:0016296 holoprosencephaly (OMIMPS:236100), MONDO_0007477 '3-M sy
 - the first member in OMIM usually has documentation that is pertinent to the parent PS
 - the members may(?) generally share high semantic similarity
 
+Examples: 
+[holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS236100), '3-M syndrome'(http://purl.obolibrary.org/obo/MONDO_0007477) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS273750). 
+
 classes:
     disease: MONDO:0000001
-    gene: SO:0001217
-
-relations:
-    disease has basis in dysfunction of: RO:0004020
 
 vars:
     disease: "'disease'"
-    gene: "'gene'"
 
 name:
-    text: '%s caused by mutation in %s'
+    text: '%s'
     vars:
       - disease
-      - gene
 
-annotations:
-  - annotationProperty: exact_synonym
-    text: '%s %s'
-    vars:
-      - gene
-      - disease
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml
 
-def:
-    text: Any %s in which the cause of the disease is a mutation in the %s gene.
-    vars:
-      - disease
-      - gene
-
-equivalentTo:
-    text: "%s and 'disease has basis in dysfunction of' some %s"
-    vars:
-      - disease
-      - gene
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
 contributors:
   - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432
