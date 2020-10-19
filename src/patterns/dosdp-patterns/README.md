@@ -832,7 +832,7 @@ Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [uret
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyoma.tsv)
 ### Leiomyosarcoma
-*This is auto-generated. Add your description here
+*An uncommon, aggressive malignant smooth muscle neoplasm, usually occurring in post-menopausal women that is characterized by a proliferation of neoplastic spindle cells that is located in a specific anatomical location.
 Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016283), [cutaneous leiomyosarcoma (disease)](http://purl.obolibrary.org/obo/MONDO_0003362), [breast leiomyosarcoma](http://purl.obolibrary.org/obo/MONDO_0003371) (29 total)*
 
 | Attribute | Info |
