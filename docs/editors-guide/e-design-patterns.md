@@ -42,8 +42,8 @@ Aarskog is typically classified as X-linked, but there are AD forms, leading to 
 This is not correct.
  
 To avoid naming confusion we call the X-linked form ‘Aarskog syndrome, X-linked’ and the disease corresponding to the DO class above as ‘Aarskog syndrome, AD’. We place both under a new grouping class ‘Aarskog-like’
-S
-### peculative diseases and N=1s
+
+### Speculative diseases and N=1s
 
 For a full discussion see [https://github.com/monarch-initiative/monarch-disease-ontology/issues/400](https://github.com/monarch-initiative/monarch-disease-ontology/issues/400)
 
@@ -62,8 +62,8 @@ On examination it was apparent that the AR form was speculative. This may be sla
  
 We use two different modifiers to indicate syndromic vs isolated
 
-* [https://github.com/monarch-initiative/mondo-build/blob/master/src/patterns/syndromic.yaml](https://github.com/monarch-initiative/mondo-build/blob/master/src/patterns/syndromic.yaml)
-* [https://github.com/monarch-initiative/mondo-build/blob/master/src/patterns/isolated.yaml](https://github.com/monarch-initiative/mondo-build/blob/master/src/patterns/isolated.yaml)
+* [https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/syndromic.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/syndromic.yaml)
+* [https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/isolated.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/isolated.yaml)
 
 These are disjoint [implemented as a GCI in the axioms.owl file]. This means that they cannot be conflated via SubClassOf
  
