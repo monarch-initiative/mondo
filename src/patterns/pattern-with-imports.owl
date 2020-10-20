@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/mondo-pattern.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-10-16/mondo-pattern.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-10-20/mondo-pattern.owl"/>
     </owl:Ontology>
     
 
@@ -2754,6 +2754,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease_series_by_gene</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; related &apos;disease&apos;</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by mutation in &apos;gene&apos;</rdfs:label>
     </owl:Class>
     
@@ -2994,7 +2995,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0000001"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002573"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0021128"/>
@@ -3002,10 +3003,10 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A owl_thing that is not part of a larger syndrome.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that is not part of a larger syndrome.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isolated</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonsyndromic owl_thing</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isolated owl_thing</rdfs:label>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonsyndromic &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isolated &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3739,7 +3740,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0000001"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002573"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0021127"/>
@@ -3747,11 +3748,11 @@ For example, A and B may be gene products and binding of B by A positively regul
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A owl_thing that is part of a larger syndrome.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease or disorder&apos; that is part of a larger syndrome.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndrome associated with owl_thing</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic owl_thing</rdfs:label>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic &apos;disease or disorder&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndrome associated with &apos;disease or disorder&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic &apos;disease or disorder&apos;</rdfs:label>
     </owl:Class>
     
 

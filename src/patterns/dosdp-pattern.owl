@@ -357,6 +357,7 @@ EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/disease_by_dysf
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "Any 'disease' in which the cause of the disease is a mutation in the 'gene' gene."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "disease_series_by_gene"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "'gene' 'disease'"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "'gene' related 'disease'"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "'disease' caused by mutation in 'gene'"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004020> <http://purl.obolibrary.org/obo/SO_0001217>)))
 
@@ -445,13 +446,13 @@ AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml> "'disease or disorder' susceptibility"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0020573> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/mondo#predisposes_towards> <http://purl.obolibrary.org/obo/MONDO_0000001>)))
 
-# Class: <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> (isolated owl_thing)
+# Class: <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> (isolated 'disease')
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> "A owl_thing that is not part of a larger syndrome."^^xsd:string)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> "A 'disease' that is not part of a larger syndrome."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> "isolated"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> "nonsyndromic owl_thing"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> "isolated owl_thing"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> ObjectIntersectionOf(owl:Thing ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002573> <http://purl.obolibrary.org/obo/MONDO_0021128>)))
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> "nonsyndromic 'disease'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> "isolated 'disease'"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002573> <http://purl.obolibrary.org/obo/MONDO_0021128>)))
 
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/juvenile.yaml> (juvenile owl_thing)
 
@@ -716,14 +717,14 @@ AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> "'disease or disorder' susceptibility, 'gene' form"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0020573> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004020> <http://purl.obolibrary.org/obo/SO_0001217>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/mondo#predisposes_towards> <http://purl.obolibrary.org/obo/MONDO_0000001>)))
 
-# Class: <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> (syndromic owl_thing)
+# Class: <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> (syndromic 'disease or disorder')
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "A owl_thing that is part of a larger syndrome."^^xsd:string)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "A 'disease or disorder' that is part of a larger syndrome."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "syndromic"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "syndromic owl_thing"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "syndrome associated with owl_thing"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "syndromic owl_thing"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> ObjectIntersectionOf(owl:Thing ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002573> <http://purl.obolibrary.org/obo/MONDO_0021127>)))
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "syndromic 'disease or disorder'"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "syndrome associated with 'disease or disorder'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> "syndromic 'disease or disorder'"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002573> <http://purl.obolibrary.org/obo/MONDO_0021127>)))
 
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/vectorBorneDisease.yaml> ('infectious disease' transmitted by 'organism')
 
