@@ -630,8 +630,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv)
 ### Inborn metabolic disrupts
-*This is auto-generated. Add your description here
-Examples: [mitochondrial DNA maintenance syndrome](http://purl.obolibrary.org/obo/MONDO_0018121), [inborn disorder of methionine cycle and sulfur amino acid metabolism](http://purl.obolibrary.org/obo/MONDO_0019222), [inborn aminoacylase deficiency](http://purl.obolibrary.org/obo/MONDO_0017686) (51 total)*
+*This pattern is used for inborn errors of metabolism that cause disruption of a specific biological process, such as enzyme activity or ion transport. 
+Examples: ['5-oxoprolinase deficiency (disease)'](http://purl.obolibrary.org/obo/MONDO_0009825), [inborn disorder of methionine cycle and sulfur amino acid metabolism](http://purl.obolibrary.org/obo/MONDO_0019222), [inborn aminoacylase deficiency](http://purl.obolibrary.org/obo/MONDO_0017686) (51 total)*
 
 | Attribute | Info |
 |----------|----------|
@@ -639,7 +639,7 @@ Examples: [mitochondrial DNA maintenance syndrome](http://purl.obolibrary.org/ob
 | Name | inborn errors of metabolism disease caused by disruption of X |
 | Classes | MONDO:0019052, owl:Thing,  |
 | Variables | owlThing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv) |
 
 #### Data preview: 
@@ -698,7 +698,8 @@ Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](ht
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv)
 ### Infectious inflammation
-*This combines the infectious disease by agent pattern and the inflammation site patterm*
+*This combines the [infectious disease by agent pattern](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/infectious_disease_by_agent.yaml) and the [inflammatory disease by site](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inflammatory_disease_by_site.yaml) pattern.
+Examples: [bacterial endocarditis (disease)](http://purl.obolibrary.org/obo/MONDO_0006669), [fungal gastritis](http://purl.obolibrary.org/obo/MONDO_0002843)*
 
 | Attribute | Info |
 |----------|----------|
@@ -706,7 +707,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | infectious_inflammation |
 | Classes | MONDO:0000001, NCBITaxon:1, UBERON:0000061, MONDO:0005550,  |
 | Variables | anatomical structure (UBERON:0000061), organism (NCBITaxon:1),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_inflammation.tsv) |
 
 #### Data preview: 
@@ -721,7 +722,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_inflammation.tsv)
 ### Inflammatory disease by site
 *Inflammatory diseases can be classified by the location in which the pathological inflammatory process occurs.
-For inflammatory diseases caused by infection, this may be the site of infection*
+For inflammatory diseases caused by infection, this may be the site of infection.
+Examples: ['Achilles bursitis'](http://purl.obolibrary.org/obo/MONDO_0001594), [blepharitis](http://purl.obolibrary.org/obo/MONDO_0004785), [epiglottitis](http://purl.obolibrary.org/obo/MONDO_0005753)*
 
 | Attribute | Info |
 |----------|----------|
@@ -729,7 +731,7 @@ For inflammatory diseases caused by infection, this may be the site of infection
 | Name | inflammatory_disease_by_site |
 | Classes | MONDO:0000001, UBERON:0000061,  |
 | Variables | anatomical structure (UBERON:0000061),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inflammatory_disease_by_site.tsv) |
 
 #### Data preview: 
@@ -766,7 +768,8 @@ Examples: ['migraine disorder'](http://purl.obolibrary.org/obo/MONDO_0005277), [
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv)
 ### Isolated
-*TBD.*
+*A disease that has an isolated presentation, that is not part of a larger syndrome.
+Examples: ['isolated aniridia'](http://purl.obolibrary.org/obo/MONDO_0007119), ['isolated dystonia'](http://purl.obolibrary.org/obo/MONDO_0015494), ['isolated focal palmoplantar keratoderma'](http://purl.obolibrary.org/obo/MONDO_0017673)*
 
 | Attribute | Info |
 |----------|----------|
@@ -774,7 +777,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | isolated |
 | Classes | MONDO:0021128, owl:Thing,  |
 | Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv) |
 
 #### Data preview: 
