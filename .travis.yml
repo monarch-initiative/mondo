@@ -41,8 +41,7 @@ before_script:
   - cd src/ontology
 
 script:
-  - echo "SKIPPING TRAVIS REAL BUILD TO FORCE SUCCESS"
-  #- ./run.sh make test
+  - ./run.sh make test
 
 # whitelist
 branches:
