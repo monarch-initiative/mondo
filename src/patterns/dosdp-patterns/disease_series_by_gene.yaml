@@ -1,8 +1,7 @@
 pattern_name: disease_series_by_gene
 
 description: >-
-
-A disease that is caused by a mutation in a single gene. This pattern is often used for terms that are children of an OMIM Phenotypic Series (OMIMPS) class, or for diseases with a single mutation in a gene, that have gene-based names like MED12-related intellectual disability syndrome. 
+This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like like MED12-related intellectual disability syndrome. 
 
     Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)
 
@@ -30,11 +29,19 @@ annotations:
       - gene
       - disease
 
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s related %s'
+    vars:
+      - gene
+      - disease
+      
 def:
     text: Any %s in which the cause of the disease is a mutation in the %s gene.
     vars:
       - disease
       - gene
+
 
 equivalentTo:
     text: "%s and 'disease has basis in dysfunction of' some %s"
@@ -47,6 +54,7 @@ pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gen
 annotationProperties:
     exact_synonym: oio:hasExactSynonym
     related_synonym: oio:hasRelatedSynonym
+
 contributors:
   - https://orcid.org/0000-0002-6601-2165
   - https://orcid.org/0000-0001-5208-3432
