@@ -562,30 +562,8 @@ Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MON
 | MONDO:0005271 | allergic disease        | GO:0016068 | type I hypersensitivity                               |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disrupts_process.tsv)
-### Environmental stimulus
-*TBD.*
-
-| Attribute | Info |
-|----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml |
-| Name | environmental_stimulus |
-| Classes | MONDO:0000001, ENVO:00010483,  |
-| Variables | disease (MONDO:0000001), environmental material (ENVO:00010483),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) |
-
-#### Data preview: 
-| defined:class                                | defined:class:label   | disease                                      | disease:label                 | stimulus                                       | stimulus:label   |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:------------------------------|:-----------------------------------------------|:-----------------|
-| MONDO:0000802 | Indian prawn allergy  | MONDO:0005271 | allergic disease              | FOODON:03000005 | Indian prawn     |
-| MONDO:0006654 | anthracosis           | MONDO:0015926 | pneumoconiosis                | ENVO:02000099   | coal dust        |
-| MONDO:0016466 | asbestosis            | MONDO:0015926 | pneumoconiosis                | ENVO:02000106   | asbestos dust    |
-| MONDO:0001540 | bagassosis            | MONDO:0004553 | extrinsic allergic alveolitis | ENVO:00002872   | bagasse          |
-| MONDO:0001001 | baritosis             | MONDO:0015926 | pneumoconiosis                | ENVO:01001284   | barium dust      |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv)
 ### Hemangioma
-*This is auto-generated. Add your description here
+*A hemangioma (a benign vascular lesion characterized by the formation of capillary-sized or cavernous vascular channels) that is located in a specific anatomical site.
 Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [breast hemangioma](http://purl.obolibrary.org/obo/MONDO_0003126), [gastric hemangioma](http://purl.obolibrary.org/obo/MONDO_0002414) (20 total)*
 
 | Attribute | Info |
@@ -594,7 +572,7 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 | Name | hemangioma disease has location X |
 | Classes | MONDO:0006500, UBERON:0001062,  |
 | Variables | anatomical entity (UBERON:0001062),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv) |
 
 #### Data preview: 
@@ -608,7 +586,7 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv)
 ### Inborn metabolic
-*TBD.*
+*An acquired metabolic disease that causes disruption of a process.*
 
 | Attribute | Info |
 |----------|----------|
@@ -616,7 +594,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | inborn_metabolic |
 | Classes | MONDO:0019052, BFO:0000015,  |
 | Variables | process (BFO:0000015),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv) |
 
 #### Data preview: 
