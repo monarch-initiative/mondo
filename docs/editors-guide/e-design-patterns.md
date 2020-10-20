@@ -4,7 +4,7 @@
 
 The canonical design pattern documentation is in [https://github.com/monarch-initiative/mondo-build/tree/master/src/patterns](https://github.com/monarch-initiative/mondo-build/tree/master/src/patterns)
 
-For now you have to browse the YAML files and understand the underlying principles of DOSDP. Some DPs are not yet fully documented, this is ongoing.
+For now you have to browse the YAML files and understand the underlying principles of Dead Simple Ontology Design Patterns (DOSDP). Further reading is available [here](https://jbiomedsem.biomedcentral.com/articles/10.1186/s13326-017-0126-0).  Some DPs are not yet fully documented, this is ongoing work.
 
 ## Modes of inheritance
 
@@ -18,20 +18,20 @@ For background see: [https://github.com/monarch-initiative/monarch-disease-ontol
 
 * [https://github.com/monarch-initiative/mondo-build/blob/master/src/patterns/x_linked.yaml](https://github.com/monarch-initiative/mondo-build/blob/master/src/patterns/x_linked.yaml)
  
-These are axiomatized using HPO classes (AD, AR, X-linked, ..). Note that care must be taken here. E.g. some diseases are named deceptively. E.g. We have SCA types, 1, 2, 3 etc, and also classes ‘AR SCA 1, …’. It may seem that the ones named SCA are inheritance-neutral but in fact these are AD. Thus an axiomatization (SCAR1 = SCA1 and AR) would be wrong (and the reasoner will detect this).
+These are axiomatized using HPO classes (autosomal dominant (AD), autosomal recessive (AR), X-linked, ..). Note that care must be taken here. E.g. some diseases are named deceptively. E.g. We have SCA types, 1, 2, 3 etc, and also classes ‘AR SCA 1, …’. It may seem that the ones named SCA are inheritance-neutral but in fact these are AD. Thus an axiomatization (SCAR1 = SCA1 and AR) would be wrong (and the reasoner will detect this).
  
-Note there are many cases where ORDO classifies simultaneously as **both** AD and AR (or inherited and not-inherited). The reasoner will detect this if we mirror these axioms. All these are placed in the ordo_inheritance_inconsistent subset [update: do we still do this?]. In most cases these were manually resolved by treating the Ordo class as more generic.
+Note there are many cases where Orphanet classifies simultaneously as **both** AD and AR (or inherited and not-inherited). The reasoner will detect this if we mirror these axioms. Some of these are placed in the ordo_inheritance_inconsistent subset. In most cases these were manually resolved by treating the Orphanet class as more generic.
  
 Disjointness axioms are added such that no disease has > 1 mode of inheritance states in an all-some axiom.
  
 ### Case Study: Thalassemia
  
-The DO adopts a standard classification of this disease, placing it as AR:
+The Disease Ontology (DO) adopts a standard classification of this disease, placing it as AR:
 
 ![thalassemia case study](images/thalassemia-case.png)
  
 However, note that DO includes an X-linked syndrome that has alpha-thalassemia as a feature as a subclass. The reasoner detects this mistake.
-We avoid this as we adopt the ORDO classification where we have a separate bucket for diseases with AT as a feature.
+We avoid this as we adopt the Orphanet classification where we have a separate bucket for diseases with AR as a feature.
  
 ### Case Study: Aarskog
  
@@ -60,12 +60,12 @@ On examination it was apparent that the AR form was speculative. This may be sla
 
 ### Isolated vs syndromic diseases
  
-We use two different modifiers to indicate syndromic vs isolated
+We use two different modifiers to indicate syndromic vs isolated:
 
 * [https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/syndromic.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/syndromic.yaml)
 * [https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/isolated.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/isolated.yaml)
 
-These are disjoint [implemented as a GCI in the axioms.owl file]. This means that they cannot be conflated via SubClassOf
+These are disjoint [implemented as a GCI in the axioms.owl file]. This means that they cannot be conflated via SubClassOf.
  
 ### Diseases with diseases or phenotypes as major features
  
