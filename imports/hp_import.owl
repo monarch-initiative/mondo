@@ -11,7 +11,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/hp_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-10-02/imports/hp_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-10-21/imports/hp_import.owl"/>
     </owl:Ontology>
     
 
@@ -469,7 +469,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Absence of any measurable level of sperm in his semen.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20514278</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20514278</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000027"/>
@@ -3886,11 +3886,10 @@
         <oboInOwl:hasDbXref>UMLS:C0018772</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0339789</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C1384666</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>Congenital deafness</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Congenital hearing loss</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Deafness</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Hearing defect</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Hearing impairment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Hypacusis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Hearing loss</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Hypoacusis</oboInOwl:hasRelatedSynonym>
@@ -5727,7 +5726,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Blindness is the condition of lacking visual perception defined as visual perception below 3/60 and/or a visual field of no greater than 10 degress in radius around central fixation.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDD:gblack</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:28779882</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28779882</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000618"/>
@@ -6713,7 +6712,7 @@
     <!-- http://purl.obolibrary.org/obo/HP_0000752 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0000752">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0100022"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000708"/>
         <obo:IAO_0000115>Hyperactivity is a state of constantly being unusually or abnormally active, including in situations in which it is not appropriate.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0008764</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>MSH:D006948</oboInOwl:hasDbXref>
@@ -6817,15 +6816,17 @@
         <oboInOwl:hasAlternativeId>HP:0100655</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>UMLS:C4021797</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormality of the chest</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormality of the thorax</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Structural abnormality of the chest wall</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000765</oboInOwl:id>
-        <rdfs:label>Abnormality of the thorax</rdfs:label>
+        <rdfs:label>Abnormal thorax morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000765"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Any abnormality of the thorax (the region of the body formed by the sternum, the thoracic vertebrae and the ribs).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:curators</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000765"/>
@@ -6859,7 +6860,7 @@
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000766</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/hp.obo#hposlim_core"/>
-        <rdfs:label>Abnormality of the sternum</rdfs:label>
+        <rdfs:label>Abnormal sternum morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000766"/>
@@ -6997,7 +6998,6 @@
         <oboInOwl:hasDbXref>UMLS:C0262650</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0685891</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormality of the thymus</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Thymic hypoplasia</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000777</oboInOwl:id>
         <rdfs:label>Abnormality of the thymus</rdfs:label>
@@ -7724,7 +7724,7 @@
     <!-- http://purl.obolibrary.org/obo/HP_0000924 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0000924">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000118"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033127"/>
         <obo:IAO_0000115>An abnormality of the skeletal system.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C4021790</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormality of the skeletal system</oboInOwl:hasExactSynonym>
@@ -7924,18 +7924,21 @@
         <obo:IAO_0000115>An abnormality of the fossa cranii posterior (the posterior fossa), which is made up primarily of the occipital bone and which surrounds to the foramen magnum.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0007306</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>UMLS:C3280768</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Abnormality of the posterior cranial fossa</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Abnormality of the posterior fossa</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Posterior fossa anomaly</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000932</oboInOwl:id>
-        <rdfs:comment>This finding can be demonstrated by cerebral magnetic resonance imaging or computer tomography.</rdfs:comment>
-        <rdfs:label>Abnormality of the posterior cranial fossa</rdfs:label>
+        <rdfs:comment>The floor of the cranial cavity is divided into three distinct depressions called the anterior, middle, and posterior cranial fossa. The posterior cranial fossa, the most posterior and deep of the three cranial fossae, accommodates the brainstem and cerebellum. Abnormalities of the posterier cranial fossa can be demonstrated by cerebral magnetic resonance imaging or computer tomography.</rdfs:comment>
+        <rdfs:label>Abnormal posterior cranial fossa morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000932"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An abnormality of the fossa cranii posterior (the posterior fossa), which is made up primarily of the occipital bone and which surrounds to the foramen magnum.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:curators</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:25970099</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:28295149</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8418,7 +8421,7 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Lack of sweating</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.medicalnewstoday.com/articles/266427.php</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://www.medicalnewstoday.com/articles/266427.php</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -8426,14 +8429,14 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Sudomotor dysfunction</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.medicalnewstoday.com/articles/266427.php</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://www.medicalnewstoday.com/articles/266427.php</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000970"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Sweating dysfunction</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.medicalnewstoday.com/articles/266427.php</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://www.medicalnewstoday.com/articles/266427.php</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -10171,7 +10174,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Loss of strength in the arm, leg, and sometimes face on one side of the body. Hemiplegia refers to a complete loss of strength, whereas hemiparesis refers to an incomplete loss of strength.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UKB:tklockgether</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UKB:tklockgether</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001269"/>
@@ -10204,7 +10207,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Abnormality of the corpus callosum.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:21263138</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:21263138</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10533,6 +10536,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A congenital brain malformation typically characterized by incomplete formation of the cerebellar vermis, dilation of the fourth ventricle, and enlargement of the posterior fossa. In layman&apos;s terms, Dandy Walker malformation is a cyst in the cerebellum (typically symmetrical) that is involved with the fourth ventricle. This may interfere with the ability to drain cerebrospinal fluid from the brain, resulting in hydrocephalus. Dandy Walker cysts are formed during early embryonic development, while the brain forms. The cyst in the cerebellum typically has several blood vessels running through it connecting to the brain, thereby prohibiting surgical removal.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:26246090</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10559,7 +10563,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Any structural abnormality of the cerebellum.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27160001</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:27160001</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001317"/>
@@ -11311,7 +11315,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001397">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0006561"/>
-        <obo:IAO_0000115>The presence of steatosis in the liver.</obo:IAO_0000115>
+        <obo:IAO_0000115>Steatosis is a term used to denote lipid accumulation within hepatocytes.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0002252</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>HP:0200121</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>MSH:D005234</oboInOwl:hasDbXref>
@@ -11324,15 +11328,15 @@
         <oboInOwl:hasExactSynonym>Steatosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0001397</oboInOwl:id>
-        <rdfs:comment>Steatosis refers to an abnormal accumulation of lipids within a cell or tissue.</rdfs:comment>
+        <rdfs:comment>Although steatosis is the hallmark of the fatty liver disease, it is not a specific feature because it can be seen as part of other disease processes, such as drug injury, Wilson disease, or hepatitis C virus infection (especially genotype-3). Involvement of less than 5% of the hepatocytes by steatosis is considered clinically insignificant and within reference range. Based on the morphologic appearance and the size of the lipid droplets within the cytoplasm of the hepatocytes, steatosis is characterized as macrovesicular or microvesicular. Macrovesicular steatosis is characterized by large lipid droplets occupying the cytoplasm, displacing the nucleus to the periphery (large droplet macrovesicular steatosis) or multiple small lipid droplets of variable size occupying the cytoplasm with the nucleus maintaining its central location (small droplet macrovesicular steatosis). Microvesicular steatosis is characterized by innumerable tiny, relatively uniform lipid vacuoles that result in a bubbly appearance of the hepatocytes.</rdfs:comment>
         <rdfs:label>Hepatic steatosis</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001397"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The presence of steatosis in the liver.</owl:annotatedTarget>
+        <owl:annotatedTarget>Steatosis is a term used to denote lipid accumulation within hepatocytes.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>eMedicine:175472</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:31603713</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001397"/>
@@ -14390,6 +14394,7 @@
         <oboInOwl:hasDbXref>SNOMEDCT_US:34095006</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0011175</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Dehydration</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Exsiccosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0001944</oboInOwl:id>
         <rdfs:label>Dehydration</rdfs:label>
@@ -15284,7 +15289,7 @@
         <oboInOwl:hasExactSynonym>Anomaly of the rectum</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0002034</oboInOwl:id>
-        <rdfs:label>Abnormality of the rectum</rdfs:label>
+        <rdfs:label>Abnormal rectum morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002034"/>
@@ -15506,7 +15511,7 @@
     <!-- http://purl.obolibrary.org/obo/HP_0002069 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002069">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0020219"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001250"/>
         <obo:IAO_0000115>A bilateral tonic-clonic seizure is a seizure defined by a tonic (bilateral increased tone, lasting seconds to minutes) and then a clonic (bilateral sustained rhythmic jerking) phase.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0001306</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>HP:0002407</oboInOwl:hasAlternativeId>
@@ -15638,7 +15643,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Migraine is a chronic neurological disorder characterized by episodic attacks of headache and associated symptoms.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:15304572</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15304572</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002076"/>
@@ -16221,7 +16226,7 @@
         <owl:annotatedTarget>A generalized non-motor (absence) seizure is a type of a type of dialeptic seizure that is of electrographically generalized onset. It is a generalized seizure characterised by an interruption of activities, a blank stare, and usually the person will be unresponsive when spoken to. Any ictal motor phenomena are minor in comparison to these non-motor features.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276060</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:28276062</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276062</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276064</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -16422,7 +16427,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002149">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002157"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0004368"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0010932"/>
         <obo:IAO_0000115>An abnormally high level of uric acid in the blood.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>MSH:D033461</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:35885006</oboInOwl:hasDbXref>
@@ -16506,7 +16511,7 @@
     <!-- http://purl.obolibrary.org/obo/HP_0002156 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002156">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003355"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033095"/>
         <obo:IAO_0000115>An increased concentration of homocystine in the urine.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>MSH:D006712</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:11282001</oboInOwl:hasDbXref>
@@ -16734,8 +16739,8 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A generalized-onset seizure is a type of seizure originating at some point within, and rapidly engaging, bilaterally distributed networks. The networks may include cortical and subcortical structures but not necessarily the entire cortex.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20196795</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:23739099</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20196795</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23739099</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276060</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276064</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:6790275</oboInOwl:hasDbXref>
@@ -17489,7 +17494,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Cephalgia, or pain sensed in various parts of the head, not confined to the area of distribution of any nerve.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:15304572</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15304572</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002315"/>
@@ -18318,7 +18323,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002584"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Bleeding from the intestines.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>DDD:akelly</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDD:akelly</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002584"/>
@@ -20359,7 +20364,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0003011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0003011">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000118"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033127"/>
         <obo:IAO_0000115>Abnormality originating in one or more muscles, i.e., of the set of muscles of body.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0003197</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>HP:0003708</oboInOwl:hasAlternativeId>
@@ -20689,10 +20694,11 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0004354"/>
         <obo:IAO_0000115>The presence of an abnormal decrease or increase of one or more amino acids in the blood circulation.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C4025653</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Abnormality of serum amino acid level</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Abnormality of serum amino acid levels</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0003112</oboInOwl:id>
-        <rdfs:label>Abnormality of serum amino acid level</rdfs:label>
+        <rdfs:label>Abnormal circulating amino acid concentration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003112"/>
@@ -20739,7 +20745,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0003119">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0032180"/>
-        <obo:IAO_0000115>An abnormality in the of lipid metabolism.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any deviation from the normal concentration of a lipid in the blood circulation.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0003611</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>MSH:D050171</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:370992007</oboInOwl:hasDbXref>
@@ -20754,7 +20760,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003119"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An abnormality in the of lipid metabolism.</owl:annotatedTarget>
+        <owl:annotatedTarget>Any deviation from the normal concentration of a lipid in the blood circulation.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -21324,9 +21330,10 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0003355 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0003355">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0012072"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003110"/>
         <obo:IAO_0000115>An increased concentration of an amino acid in the urine.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0002903</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0008335</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>HP:0200014</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>SNOMEDCT_US:35912001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0238621</oboInOwl:hasDbXref>
@@ -21374,9 +21381,10 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002823"/>
         <oboInOwl:hasDbXref>UMLS:C4025622</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormal neck or head of thigh bone</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormality of the femoral neck or head region</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0003366</oboInOwl:id>
-        <rdfs:label>Abnormality of the femoral neck or head region</rdfs:label>
+        <rdfs:label>Abnormal femoral neck/head morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003366"/>
@@ -21395,9 +21403,10 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <obo:IAO_0000115>An abnormality of the femoral neck (which is the process of bone, connecting the femoral head with the femoral shaft).</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C4025621</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormal neck of thigh bone</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormality of the femoral neck</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0003367</oboInOwl:id>
-        <rdfs:label>Abnormality of the femoral neck</rdfs:label>
+        <rdfs:label>Abnormal femoral neck morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003367"/>
@@ -21837,7 +21846,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0003549 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0003549">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000118"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033127"/>
         <obo:IAO_0000115>Any abnormality of the soft tissues, including both connective tissue (tendons, ligaments, fascia, fibrous tissues, and fat).</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C4025596</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
@@ -21897,7 +21906,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The term dystrophy means abnormal growth. However, muscular dystrophy is used to describe primary myopathies with a genetic basis and a progressive course characterized by progressive skeletal muscle weakness and wasting, defects in muscle proteins, and histological features of muscle fiber degeneration (necrosis) and regeneration. If possible, it is preferred to use other HPO terms to describe the precise phenotypic abnormalities.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Neuromics:vstraub</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neuromics:vstraub</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003560"/>
@@ -22894,7 +22903,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0004338 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0004338">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003112"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033107"/>
         <obo:IAO_0000115>Any deviation from the normal concentration of a aromatic amino acid in the blood circulation.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2008-03-08T07:55:00Z</oboInOwl:creation_date>
@@ -22916,7 +22925,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0004339 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0004339">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003112"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033107"/>
         <obo:IAO_0000115>Any deviation from the normal concentration of a sulfur amino acid in the blood circulation.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2008-03-08T08:01:00Z</oboInOwl:creation_date>
@@ -23194,13 +23203,15 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0004368">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0004352"/>
+        <obo:IAO_0000115>Abnormally elevated concentration of a purine compound. Purine compounds are aromatic heterocyclic compounds containing a purine moiety, which is formed a pyrimidine-ring ring fused to an imidazole ring.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2008-03-18T06:31:00Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>UMLS:C4025332</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Increased purine level</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Increased purine levels</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0004368</oboInOwl:id>
-        <rdfs:label>Increased purine level</rdfs:label>
+        <rdfs:label>Increased circulating purine concentration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0004368"/>
@@ -23970,11 +23981,19 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0005445">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000932"/>
+        <obo:IAO_0000115>Abnormal increased size of the posterior cranial fossa.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C1855889</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Widened posterior fossa</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0005445</oboInOwl:id>
-        <rdfs:label>Widened posterior fossa</rdfs:label>
+        <rdfs:label>Enlarged posterior fossa</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0005445"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Abnormal increased size of the posterior cranial fossa.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:28295149</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -24454,7 +24473,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedTarget>Accumulation of amorphous PAS-positive material in the space betweem alveolar macrophages, sometimes as condensed form (oval bodies) are typically found in alveolar proteinosis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:21900000</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22891182</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:22891182</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -26923,7 +26942,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Stridor is a high pitched sound resulting from turbulent air flow in the upper airway.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26229557</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:26229557</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0010307"/>
@@ -28176,7 +28195,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0010892 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0010892">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003112"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033107"/>
         <obo:IAO_0000115>Any deviation from the normal concentration of a branched chain family amino acid in the blood circulation.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-11-11T02:53:04Z</oboInOwl:creation_date>
@@ -28389,7 +28408,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0010932 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0010932">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001939"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0004364"/>
         <obo:IAO_0000115>An abnormality of a nucleobase metabolic process.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2011-01-06T10:46:17Z</oboInOwl:creation_date>
@@ -28543,16 +28562,58 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     
 
 
+    <!-- http://purl.obolibrary.org/obo/HP_0010975 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0010975">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002846"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0040088"/>
+        <obo:IAO_0000115>A deviation from the normal count of B cells, i.e., the cells that are formed in the bone marrow, migrate to the peripheral lymphatic system, and mature into plasma cells or memory cells.</obo:IAO_0000115>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:creation_date>2011-02-06T09:38:18Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>UMLS:C4021208</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Abnormal number of B cells</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormal numbers of B cells</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormality of B cell count</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormality of B cell numbers</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0010975</oboInOwl:id>
+        <rdfs:label>Abnormal B cell count</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0010975"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A deviation from the normal count of B cells, i.e., the cells that are formed in the bone marrow, migrate to the peripheral lymphatic system, and mature into plasma cells or memory cells.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0002458</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0010975"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Abnormal number of B cells</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:skoehler</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0010975"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Abnormal numbers of B cells</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:skoehler</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/HP_0010976 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0010976">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001888"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0010975"/>
         <obo:IAO_0000115>An abnormal decrease from the normal count of B cells.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2011-02-06T09:44:11Z</oboInOwl:creation_date>
         <oboInOwl:hasAlternativeId>HP:0002956</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>UMLS:C1855067</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>B cell deficiency</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>B cell lymphopenia</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Decreased B cell count</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Low B cell count</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Reduction in B cell number</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
@@ -29358,6 +29419,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref>UMLS:C0038363</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C2937365</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Recurrent canker sores</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Recurrent oral aphthae</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Aphthous stomatitis</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Buccal aphthous ulcers</oboInOwl:hasRelatedSynonym>
@@ -29598,7 +29660,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedTarget>A typical absence seizure is a type of generalised non-motor (absence) seizure characterised by its sudden onset, interruption of ongoing activities, a blank stare, possibly a brief upward deviation of the eyes. Usually the patient will be unresponsive when spoken to. Duration is a few seconds to half a minute with very rapid recovery. Although not always available, an EEG would usually show 3 Hz generalized epileptiform discharges during the event.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:jalbers</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276060</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:28276062</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276062</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276064</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:6790275</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -30403,19 +30465,20 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0011461">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0030674"/>
-        <obo:IAO_0000115>Onset prior to birth but after 8 weeks of gestation.</obo:IAO_0000115>
+        <obo:IAO_0000115>Onset prior to birth but after 8 weeks of embryonic development (corresponding to a gestational age of 10 weeks).</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2012-03-25T06:58:21Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>UMLS:C4023347</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Foetal onset</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0011461</oboInOwl:id>
+        <rdfs:comment>The time interval of a gestation is called the gestation period. In human obstetrics, gestational age refers to the fertilization age plus two weeks. This is approximately the duration since the woman&apos;s last menstrual period began.</rdfs:comment>
         <rdfs:label>Fetal onset</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011461"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Onset prior to birth but after 8 weeks of gestation.</owl:annotatedTarget>
+        <owl:annotatedTarget>Onset prior to birth but after 8 weeks of embryonic development (corresponding to a gestational age of 10 weeks).</owl:annotatedTarget>
         <oboInOwl:hasDbXref>DDD:whouwehand</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -31132,7 +31195,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:hasDbXref>UMLS:C4023164</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0011843</oboInOwl:id>
-        <rdfs:label>Abnormality of skeletal physiology</rdfs:label>
+        <rdfs:label>Abnormality of musculoskeletal physiology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011843"/>
@@ -31243,7 +31306,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011873"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Abnormal number of platelets per volume of blood. In a healthy adult, a normal platelet count is between 150,000 and 450,000 per microliter of blood.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDD:kfreson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>DDD:kfreson</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -31295,7 +31358,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011895"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A type of anemia related to a reduction in the average life span of red blood cells in the peripheral circulation, which is normally around 120 days.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>DDD:akelly</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDD:akelly</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -31400,7 +31463,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Absence of any measurable level of sperm in his semen, resulting from post-testicular obstruction or retrograde ejaculation. This can be differentiated from obstructive azoospermia on the basis of testicular biopsy.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20514278</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20514278</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -33807,7 +33870,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0030222"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Difficulty in recognizing objects by visual input in absence of sensorial visual impairment.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ICM:PCaroppo</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICM:PCaroppo</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -33827,7 +33890,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0030236"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Abnormalities of the overall muscle bulk based on clinical observation.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Neuromics:vstraub</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neuromics:vstraub</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0030236"/>
@@ -34123,7 +34186,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A high-pitched whistling sound associated with labored breathing.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26229557</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:26229557</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0030828"/>
@@ -35062,6 +35125,68 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0033062</oboInOwl:id>
         <rdfs:label>Abnormal factor IX activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0033095 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033095">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033100"/>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>An elevated level of a sulfur-containing amino acid in the urine.</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Increased sulfur-containing amino acid level in urine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Increased sulphur amino acid level in urine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0033095</oboInOwl:id>
+        <rdfs:label>Increased sulfur amino acid level in urine</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0033095"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Increased sulphur amino acid level in urine</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#uk_spelling"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0033100 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033100">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003355"/>
+        <obo:IAO_0000115>An elevated level of a proteinogenic amino acid in the urine. These are the 23 alpha-amino acids that are precursors to proteins, and are incorporated into proteins during translation. The group includes the 20 amino acids encoded by the nuclear genes of eukaryotes together with selenocysteine, pyrrolysine, and N-formylmethionine.</obo:IAO_0000115>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0033100</oboInOwl:id>
+        <rdfs:label>Increased proteinogenic amino acid level in urine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0033107 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033107">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003112"/>
+        <obo:IAO_0000115>An elevated level of a proteinogenic amino acid in the blood circulation. These are the 23 alpha-amino acids that are precursors to proteins, and are incorporated into proteins during translation. The group includes the 20 amino acids encoded by the nuclear genes of eukaryotes together with selenocysteine, pyrrolysine, and N-formylmethionine.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-08-29T11:59:15Z</dc:date>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0033107</oboInOwl:id>
+        <rdfs:label>Abnormal circulating proteinogenic amino acid concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0033127 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033127">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000118"/>
+        <obo:IAO_0000115>An anomaly of the musculoskeletal system, which consists of the bones of the skeleton, muscles, cartilage, tendons, ligaments, joints, and other connective tissue. The musculoskeletal system supports the weight of the body, maintains body position and produces movements of the body or of parts of the body.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-09-05T13:35:03Z</dc:date>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0033127</oboInOwl:id>
+        <rdfs:label>Abnormality of the musculoskeletal system</rdfs:label>
     </owl:Class>
     
 
