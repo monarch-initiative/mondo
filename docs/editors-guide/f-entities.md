@@ -89,7 +89,9 @@ For example, MONDO:0012996 `AGAT deficiency` has the related synonym `disorder o
 
 We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining) 
 
-### EXCLUDE synonyms
+### Synonym type:
+
+#### EXCLUDE synonyms
 
 Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release.
 
@@ -97,7 +99,7 @@ For example, see MONDO_0002679 cerebral infarction or MONDO_0008170 'ovarian can
 
 ![ovarian cancer](images/OvarianCancerNOS.png)
 
-### DEPRACATE synonyms
+#### DEPRACATE synonyms
 
 We may also mark synonyms with DEPRECATED. E.g. all occurrences of “mental retardation” should be “intellectual disability”
 
