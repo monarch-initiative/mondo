@@ -72,7 +72,7 @@ Please see our [blog post](https://medium.com/@MonarchInit/new-release-of-mondo-
 
 The semantics of owl equivalentClass are such that all concepts are strictly identical in meaning. This always translates to a 1:1 mapping, except when we do a 'proxy merge' - we decide that two concepts in an external resource mean the same thing. This is not very common, and the numbers usually come down as we work with the source ontologies to resolve this. See [ticket](https://github.com/monarch-initiative/mondo/issues/936).
 
-### Since there are several source ontologies, how does Mondo manage the mappings? Is there a resource that contains all of the mappings?
+### Since there are several source ontologies, how does Mondo manage the mappings? Is there a resource that contains all of the mappings ?
 
 We use semi-automated process to map the sources, but these are always manually evaluated by a curator. The mappings are distributed with the ontology (see [releases](https://github.com/monarch-initiative/mondo/releases) and we will soon be releasing these using a new format called [A Simple Standard for Sharing Ontology Mappings, SSSOM](https://github.com/OBOFoundry/SSSOM). We are also working with the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) developers on the [OxO mapping visualization tool](https://www.ebi.ac.uk/spot/oxo/).
 
