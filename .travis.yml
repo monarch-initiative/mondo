@@ -10,7 +10,7 @@ before_install:
     export CMTMSG="$(jq -nc --arg str "${TRAVIS_COMMIT_MESSAGE}" '$str')";
     echo "Commit message is: ${CMTMSG}";  
     curl -X 
-    POST "https://monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/build" 
+    POST "https://ci.monarchinitiative.org/job/test-mondo/build" 
     -H "Jenkins-Crumb:${ShahimCSRFCrumb}" 
     --user "essaids:${ShahimAPIToken}" 
     -f
@@ -37,7 +37,12 @@ before_install:
      sleep 500
   - docker pull obolibrary/odkfull
 
-script: cd src/ontology && sh run.sh make travis_test
+before_script:
+  - cd src/ontology
+
+script:
+  - echo "Skipping"
+  ##- ./run.sh make test
 
 # whitelist
 branches:

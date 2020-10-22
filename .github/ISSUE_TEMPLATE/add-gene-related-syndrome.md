@@ -15,7 +15,8 @@ For example: NAA10-related syndrome
 **Parent term (use [OLS](https://www.ebi.ac.uk/ols/ontologies/mondo), or your favorite ontology browser)**
 
 **Definition**
-Please write the definition in the format: [Parent class] caused by mutation in [gene name]. For example: A congenital myopathy caused by mutation in TPM3.
+Please write the definition in the format: Any [parent class] in which the cause of the disease is a mutation in the [gene name] gene. For example: Any congenital myopathy in which the cause of the disease is a mutation in the TPM3 gene.
+
 
 **Definition source (Please give PubMed ID, if applicable, in format PMID:#######)
 

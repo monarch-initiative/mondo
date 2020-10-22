@@ -1,20 +1,21 @@
 pattern_name: location
 
 description: >-
-    A disease that is located in a specific anatomical location.
+    A disease that is located in a specific anatomical site.
 
     Examples: ['abdominal cystic lymphangioma'](http://purl.obolibrary.org/obo/MONDO_0021726), ['articular cartilage disease'](http://purl.obolibrary.org/obo/MONDO_0003816), ['urethral disease'](http://purl.obolibrary.org/obo/MONDO_0004184)
     
 classes:
     disease: MONDO:0000001
+    anatomical entity: UBERON:0001062
+    cell: CL:0000000
 
-    owl_thing: owl:Thing
 relations:
     disease has location: RO:0004026
 
 vars:
     disease: "'disease'"
-    location: owl_thing
+    location: "'anatomical entity' or 'cell'"
 
 name:
     text: '%s of %s'

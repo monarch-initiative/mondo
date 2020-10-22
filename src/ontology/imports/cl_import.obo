@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-10-02/imports/cl_import.owl
+data-version: mondo/releases/2020-10-21/imports/cl_import.owl
 subsetdef: ubprop:upper_level ""
 ontology: mondo/imports/cl_import
 
@@ -1911,7 +1911,7 @@ xref: WBbt:0003679
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
-relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
+relationship: RO:0002202 CL:0000031 {gci_filler="NCBITaxon:7742", gci_relation="RO:0002162", xref="https://github.com/obophenotype/cell-ontology/issues/757"} ! neuroblast (sensu Vertebrata)
 relationship: RO:0002215 GO:0019226
 
 [Term]
@@ -6300,7 +6300,7 @@ creation_date: 2012-01-12T05:21:09Z
 [Term]
 id: CL:0005026
 name: hepatoblast
-def: "Multi fate stem cell that gives rise to to both hepatocytes and cholangiocytes as descendants." [GOC:CVS, PMID:18356246, PMID:20483998]
+def: "Multi fate stem cell that gives rise to both hepatocytes and cholangiocytes as descendants." [GOC:CVS, PMID:18356246, PMID:20483998]
 is_a: CL:0000048 ! multi fate stem cell
 
 [Term]

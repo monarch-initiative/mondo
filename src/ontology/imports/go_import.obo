@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-10-02/imports/go_import.owl
+data-version: mondo/releases/2020-10-21/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -109,7 +109,7 @@ synonym: "glycopeptidase activity" BROAD []
 synonym: "glycopeptide N-glycosidase activity" BROAD []
 synonym: "jack-bean glycopeptidase" NARROW []
 synonym: "N-glycanase activity" RELATED []
-synonym: "N-linked-glycopeptide-(N-acetyl-beta-D-glucosaminyl)-L-asparagine amidohydrolase activity" EXACT []
+synonym: "N-linked-glycopeptide-(N-acetyl-beta-D-glucosaminyl)-L-asparagine amidohydrolase activity" RELATED []
 synonym: "N-oligosaccharide glycopeptidase activity" RELATED []
 synonym: "peptide:N-glycanase" RELATED []
 synonym: "PNGase" EXACT []
@@ -1855,7 +1855,6 @@ id: GO:0002643
 name: regulation of tolerance induction
 def: "Any process that modulates the frequency, rate, or extent of tolerance induction." []
 is_a: GO:0002682 ! regulation of immune system process
-is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0002507 ! regulates tolerance induction
 relationship: RO:0002211 GO:0002507 ! regulates tolerance induction
@@ -1887,7 +1886,6 @@ synonym: "up-regulation of tolerance induction" EXACT []
 synonym: "upregulation of tolerance induction" EXACT []
 is_a: GO:0002643 ! regulation of tolerance induction
 is_a: GO:0002684 ! positive regulation of immune system process
-is_a: GO:0051094 ! positive regulation of developmental process
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0002507 ! positively regulates tolerance induction
@@ -2508,7 +2506,6 @@ synonym: "regulation of cytokine production during immune response" RELATED []
 synonym: "regulation of cytokine secretion involved in immune response" NARROW []
 is_a: GO:0001817 ! regulation of cytokine production
 is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
-is_a: GO:0050776 ! regulation of immune response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0002367 ! regulates cytokine production involved in immune response
 relationship: RO:0002211 GO:0002367 ! regulates cytokine production involved in immune response
@@ -2547,7 +2544,6 @@ synonym: "upregulation of cytokine production during immune response" RELATED []
 is_a: GO:0001819 ! positive regulation of cytokine production
 is_a: GO:0002702 ! positive regulation of production of molecular mediator of immune response
 is_a: GO:0002718 ! regulation of cytokine production involved in immune response
-is_a: GO:0050778 ! positive regulation of immune response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0002367 ! positively regulates cytokine production involved in immune response
 relationship: RO:0002213 GO:0002367 ! positively regulates cytokine production involved in immune response
@@ -3472,10 +3468,10 @@ def: "Catalysis of the reaction: protein glutamine + alkylamine = protein N5-alk
 synonym: "factor XIIIa" RELATED []
 synonym: "fibrin stabilizing factor" RELATED []
 synonym: "fibrinoligase activity" EXACT []
-synonym: "glutaminylpeptide gamma-glutamyltransferase activity" EXACT []
+synonym: "glutaminylpeptide gamma-glutamyltransferase activity" RELATED []
 synonym: "polyamine transglutaminase activity" RELATED []
-synonym: "protein-glutamine:amine gamma-glutamyltransferase" EXACT []
-synonym: "R-glutaminyl-peptide:amine gamma-glutamyl transferase activity" EXACT []
+synonym: "protein-glutamine:amine gamma-glutamyltransferase" RELATED []
+synonym: "R-glutaminyl-peptide:amine gamma-glutamyl transferase activity" RELATED []
 synonym: "TGase activity" EXACT []
 synonym: "tissue transglutaminase" NARROW []
 synonym: "transglutaminase activity" EXACT []
@@ -3493,23 +3489,23 @@ id: GO:0003842
 name: 1-pyrroline-5-carboxylate dehydrogenase activity
 def: "Catalysis of the reaction: 1-pyrroline-5-carboxylate + NAD+ + H2O = L-glutamate + NADH + H(+)." []
 synonym: "1-pyrroline dehydrogenase" BROAD []
-synonym: "1-pyrroline-5-carboxylate:NAD+ oxidoreductase activity" EXACT []
-synonym: "delta1-pyrroline-5-carboxylate dehydrogenase activity" EXACT []
+synonym: "1-pyrroline-5-carboxylate:NAD+ oxidoreductase activity" RELATED []
+synonym: "delta1-pyrroline-5-carboxylate dehydrogenase activity" RELATED []
 synonym: "L-pyrroline-5-carboxylate-NAD+ oxidoreductase activity" RELATED []
-synonym: "pyrroline-5-carboxylate dehydrogenase activity" EXACT []
-synonym: "pyrroline-5-carboxylic acid dehydrogenase activity" EXACT []
+synonym: "pyrroline-5-carboxylate dehydrogenase activity" RELATED []
+synonym: "pyrroline-5-carboxylic acid dehydrogenase activity" RELATED []
 is_a: GO:0016646 ! oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0003845
 name: 11-beta-hydroxysteroid dehydrogenase [NAD(P)] activity
 def: "Catalysis of the reaction: an 11-beta-hydroxysteroid + NAD(P)+ = an 11-oxosteroid + NAD(P)H + H(+)." []
-synonym: "11beta-hydroxy steroid dehydrogenase" EXACT []
-synonym: "11beta-hydroxysteroid dehydrogenase" EXACT []
+synonym: "11beta-hydroxy steroid dehydrogenase" RELATED []
+synonym: "11beta-hydroxysteroid dehydrogenase" RELATED []
 synonym: "beta-hydroxysteroid dehydrogenase" BROAD []
 synonym: "corticosteroid 11-reductase" RELATED []
 synonym: "corticosteroid 11beta-dehydrogenase" RELATED []
-synonym: "dehydrogenase, 11beta-hydroxy steroid" EXACT []
+synonym: "dehydrogenase, 11beta-hydroxy steroid" RELATED []
 is_a: GO:0033764 ! steroid dehydrogenase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
 
 [Term]
@@ -3539,17 +3535,17 @@ id: GO:0003872
 name: 6-phosphofructokinase activity
 def: "Catalysis of the reaction: ATP + D-fructose-6-phosphate = ADP + D-fructose 1,6-bisphosphate." []
 synonym: "6-phosphofructokinase reduction" EXACT []
-synonym: "6-phosphofructose 1-kinase activity" EXACT []
-synonym: "ATP-dependent phosphofructokinase activity" EXACT []
-synonym: "ATP:D-fructose-6-phosphate 1-phosphotransferase activity" EXACT []
-synonym: "D-fructose-6-phosphate 1-phosphotransferase activity" EXACT []
-synonym: "fructose 6-phosphate kinase activity" EXACT []
-synonym: "fructose 6-phosphokinase activity" EXACT []
-synonym: "nucleotide triphosphate-dependent phosphofructokinase activity" EXACT []
+synonym: "6-phosphofructose 1-kinase activity" RELATED []
+synonym: "ATP-dependent phosphofructokinase activity" RELATED []
+synonym: "ATP:D-fructose-6-phosphate 1-phosphotransferase activity" RELATED []
+synonym: "D-fructose-6-phosphate 1-phosphotransferase activity" RELATED []
+synonym: "fructose 6-phosphate kinase activity" RELATED []
+synonym: "fructose 6-phosphokinase activity" RELATED []
+synonym: "nucleotide triphosphate-dependent phosphofructokinase activity" RELATED []
 synonym: "PFK" RELATED []
-synonym: "phospho-1,6-fructokinase activity" EXACT []
-synonym: "phosphofructokinase (phosphorylating)" EXACT []
-synonym: "phosphofructokinase I activity" EXACT []
+synonym: "phospho-1,6-fructokinase activity" RELATED []
+synonym: "phosphofructokinase (phosphorylating)" RELATED []
+synonym: "phosphofructokinase I activity" RELATED []
 synonym: "phosphohexokinase activity" BROAD []
 is_a: GO:0008443 ! phosphofructokinase activity
 relationship: BFO:0000050 GO:0061615 ! part of glycolytic process through fructose-6-phosphate
@@ -3558,19 +3554,19 @@ relationship: BFO:0000050 GO:0061615 ! part of glycolytic process through fructo
 id: GO:0003940
 name: L-iduronidase activity
 def: "Catalysis of the hydrolysis of alpha-L-iduronosidic linkages in dermatan sulfate." []
-synonym: "alpha-L-iduronidase activity" EXACT []
-synonym: "glycosaminoglycan alpha-L-iduronohydrolase activity" EXACT []
+synonym: "alpha-L-iduronidase activity" RELATED []
+synonym: "glycosaminoglycan alpha-L-iduronohydrolase activity" RELATED []
 is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
 id: GO:0003943
 name: N-acetylgalactosamine-4-sulfatase activity
 def: "Catalysis of the hydrolysis of the 4-sulfate groups of the N-acetyl-D-galactosamine 4-sulfate units of chondroitin sulfate and dermatan sulfate." []
-synonym: "acetylgalactosamine 4-sulfatase activity" EXACT []
+synonym: "acetylgalactosamine 4-sulfatase activity" RELATED []
 synonym: "arylsulfatase B" EXACT []
 synonym: "chondroitinsulfatase" BROAD []
-synonym: "N-acetyl-D-galactosamine-4-sulfate 4-sulfohydrolase activity" EXACT []
-synonym: "N-acetylgalactosamine 4-sulfate sulfohydrolase activity" EXACT []
+synonym: "N-acetyl-D-galactosamine-4-sulfate 4-sulfohydrolase activity" RELATED []
+synonym: "N-acetylgalactosamine 4-sulfate sulfohydrolase activity" RELATED []
 synonym: "N-acetylgalactosamine-4-sulphatase activity" EXACT []
 is_a: GO:0008484 ! sulfuric ester hydrolase activity
 
@@ -3578,26 +3574,26 @@ is_a: GO:0008484 ! sulfuric ester hydrolase activity
 id: GO:0003995
 name: acyl-CoA dehydrogenase activity
 def: "Catalysis of the reaction: acyl-CoA + acceptor = 2,3-dehydroacyl-CoA + reduced acceptor." []
-synonym: "acyl CoA dehydrogenase activity" EXACT []
-synonym: "acyl coenzyme A dehydrogenase activity" EXACT []
-synonym: "acyl dehydrogenase activity" EXACT []
+synonym: "acyl CoA dehydrogenase activity" RELATED []
+synonym: "acyl coenzyme A dehydrogenase activity" RELATED []
+synonym: "acyl dehydrogenase activity" RELATED []
 synonym: "acyl-CoA reductase activity" EXACT []
-synonym: "acyl-CoA:(acceptor) 2,3-oxidoreductase activity" EXACT []
-synonym: "acyl-CoA:acceptor 2,3-oxidoreductase activity" EXACT []
-synonym: "fatty acyl coenzyme A dehydrogenase activity" EXACT []
-synonym: "fatty-acyl-CoA dehydrogenase activity" EXACT []
-synonym: "general acyl CoA dehydrogenase activity" EXACT []
-synonym: "long-chain acyl coenzyme A dehydrogenase activity" EXACT []
-synonym: "long-chain acyl-CoA dehydrogenase activity" EXACT []
+synonym: "acyl-CoA:(acceptor) 2,3-oxidoreductase activity" RELATED []
+synonym: "acyl-CoA:acceptor 2,3-oxidoreductase activity" RELATED []
+synonym: "fatty acyl coenzyme A dehydrogenase activity" RELATED []
+synonym: "fatty-acyl-CoA dehydrogenase activity" RELATED []
+synonym: "general acyl CoA dehydrogenase activity" RELATED []
+synonym: "long-chain acyl coenzyme A dehydrogenase activity" RELATED []
+synonym: "long-chain acyl-CoA dehydrogenase activity" RELATED []
 synonym: "medium-chain acyl-CoA dehydrogenase activity" NARROW []
-synonym: "medium-chain acyl-coenzyme A dehydrogenase activity" EXACT []
+synonym: "medium-chain acyl-coenzyme A dehydrogenase activity" RELATED []
 is_a: GO:0016627 ! oxidoreductase activity, acting on the CH-CH group of donors
 
 [Term]
 id: GO:0004000
 name: adenosine deaminase activity
 def: "Catalysis of the reaction: adenosine + H2O = inosine + NH3." []
-synonym: "adenosine aminohydrolase activity" EXACT []
+synonym: "adenosine aminohydrolase activity" RELATED []
 synonym: "adenosine deaminase reaction" EXACT []
 is_a: GO:0016814 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines
 is_a: GO:0019239 ! deaminase activity
@@ -3606,22 +3602,22 @@ is_a: GO:0019239 ! deaminase activity
 id: GO:0004029
 name: aldehyde dehydrogenase (NAD+) activity
 def: "Catalysis of the reaction: an aldehyde + NAD+ + H2O = an acid + NADH + H+." []
-synonym: "aldehyde dehydrogenase (NAD+)" EXACT []
-synonym: "aldehyde:NAD+ oxidoreductase activity" EXACT []
-synonym: "CoA-independent aldehyde dehydrogenase activity" EXACT []
-synonym: "m-methylbenzaldehyde dehydrogenase activity" EXACT []
-synonym: "NAD-aldehyde dehydrogenase activity" EXACT []
-synonym: "NAD-dependent 4-hydroxynonenal dehydrogenase activity" EXACT []
-synonym: "NAD-dependent aldehyde dehydrogenase activity" EXACT []
-synonym: "NAD-linked aldehyde dehydrogenase activity" EXACT []
-synonym: "propionaldehyde dehydrogenase activity" EXACT []
+synonym: "aldehyde dehydrogenase (NAD+)" RELATED []
+synonym: "aldehyde:NAD+ oxidoreductase activity" RELATED []
+synonym: "CoA-independent aldehyde dehydrogenase activity" RELATED []
+synonym: "m-methylbenzaldehyde dehydrogenase activity" RELATED []
+synonym: "NAD-aldehyde dehydrogenase activity" RELATED []
+synonym: "NAD-dependent 4-hydroxynonenal dehydrogenase activity" RELATED []
+synonym: "NAD-dependent aldehyde dehydrogenase activity" RELATED []
+synonym: "NAD-linked aldehyde dehydrogenase activity" RELATED []
+synonym: "propionaldehyde dehydrogenase activity" RELATED []
 is_a: GO:0004030 ! aldehyde dehydrogenase [NAD(P)+] activity
 
 [Term]
 id: GO:0004030
 name: aldehyde dehydrogenase [NAD(P)+] activity
 def: "Catalysis of the reaction: an aldehyde + NAD(P)+ + H2O = an acid + NAD(P)H + H+." []
-synonym: "aldehyde:NAD(P)+ oxidoreductase activity" EXACT []
+synonym: "aldehyde:NAD(P)+ oxidoreductase activity" RELATED []
 synonym: "ALDH" RELATED []
 is_a: GO:0016620 ! oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor
 
@@ -3630,33 +3626,33 @@ id: GO:0004046
 name: aminoacylase activity
 def: "Catalysis of the reaction: an N-acyl-L-amino acid + H2O = a carboxylate + an L-amino acid." []
 synonym: "acylase I activity" NARROW []
-synonym: "alpha-N-acylaminoacid hydrolase activity" EXACT []
-synonym: "amido acid deacylase activity" EXACT []
+synonym: "alpha-N-acylaminoacid hydrolase activity" RELATED []
+synonym: "amido acid deacylase activity" RELATED []
 synonym: "aminoacylase I activity" NARROW []
 synonym: "benzamidase activity" RELATED []
 synonym: "dehydropeptidase II activity" NARROW []
-synonym: "hippurase activity" EXACT []
+synonym: "hippurase activity" RELATED []
 synonym: "histozyme activity" RELATED []
-synonym: "L-amino-acid acylase activity" EXACT []
-synonym: "L-aminoacylase activity" EXACT []
-synonym: "long acyl amidoacylase activity" EXACT []
-synonym: "N-acyl-L-amino-acid amidohydrolase activity" EXACT []
-synonym: "short acyl amidoacylase activity" EXACT []
+synonym: "L-amino-acid acylase activity" RELATED []
+synonym: "L-aminoacylase activity" RELATED []
+synonym: "long acyl amidoacylase activity" RELATED []
+synonym: "N-acyl-L-amino-acid amidohydrolase activity" RELATED []
+synonym: "short acyl amidoacylase activity" RELATED []
 is_a: GO:0016811 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides
 
 [Term]
 id: GO:0004092
 name: carnitine O-acetyltransferase activity
 def: "Catalysis of the reaction: acetyl-CoA + carnitine = (R)-O-acetylcarnitine + CoA." []
-synonym: "acetyl-CoA-carnitine O-acetyltransferase activity" EXACT []
-synonym: "acetyl-CoA:carnitine O-acetyltransferase activity" EXACT []
-synonym: "acetylcarnitine transferase activity" EXACT []
-synonym: "carnitine acetyl coenzyme A transferase activity" EXACT []
-synonym: "carnitine acetylase activity" EXACT []
-synonym: "carnitine acetyltransferase activity" EXACT []
+synonym: "acetyl-CoA-carnitine O-acetyltransferase activity" RELATED []
+synonym: "acetyl-CoA:carnitine O-acetyltransferase activity" RELATED []
+synonym: "acetylcarnitine transferase activity" RELATED []
+synonym: "carnitine acetyl coenzyme A transferase activity" RELATED []
+synonym: "carnitine acetylase activity" RELATED []
+synonym: "carnitine acetyltransferase activity" RELATED []
 synonym: "carnitine O-acetyltransferase I activity" NARROW []
 synonym: "carnitine O-acetyltransferase II activity" NARROW []
-synonym: "carnitine-acetyl-CoA transferase activity" EXACT []
+synonym: "carnitine-acetyl-CoA transferase activity" RELATED []
 synonym: "CATC" RELATED []
 is_a: GO:0016406 ! carnitine O-acyltransferase activity
 is_a: GO:0016413 ! O-acetyltransferase activity
@@ -3665,19 +3661,19 @@ is_a: GO:0016413 ! O-acetyltransferase activity
 id: GO:0004155
 name: 6,7-dihydropteridine reductase activity
 def: "Catalysis of the reaction: NADP+ + 5,6,7,8-tetrahydropteridine = NADPH + H+ + 6,7-dihydropteridine." []
-synonym: "5,6,7,8-tetrahydropteridine:NAD(P)+ oxidoreductase activity" EXACT []
-synonym: "5,6,7,8-tetrahydropteridine:NAD(P)H+ oxidoreductase activity" EXACT []
-synonym: "6,7-dihydropteridine:NAD(P)H oxidoreductase activity" EXACT []
-synonym: "DHPR activity" EXACT []
-synonym: "dihydropteridine (reduced nicotinamide adenine dinucleotide) reductase activity" EXACT []
-synonym: "dihydropteridine reductase (NADH) activity" EXACT []
+synonym: "5,6,7,8-tetrahydropteridine:NAD(P)+ oxidoreductase activity" RELATED []
+synonym: "5,6,7,8-tetrahydropteridine:NAD(P)H+ oxidoreductase activity" RELATED []
+synonym: "6,7-dihydropteridine:NAD(P)H oxidoreductase activity" RELATED []
+synonym: "DHPR activity" RELATED []
+synonym: "dihydropteridine (reduced nicotinamide adenine dinucleotide) reductase activity" RELATED []
+synonym: "dihydropteridine reductase (NADH) activity" RELATED []
 synonym: "dihydropteridine reductase activity" EXACT []
 synonym: "dihydropteridine reduction" RELATED []
-synonym: "NAD(P)H(2):6,7-dihydropteridine oxidoreductase activity" EXACT []
-synonym: "NAD(P)H2:6,7-dihydropteridine oxidoreductase activity" EXACT []
-synonym: "NADH-dihydropteridine reductase activity" EXACT []
-synonym: "NADPH-dihydropteridine reductase activity" EXACT []
-synonym: "NADPH-specific dihydropteridine reductase activity" EXACT []
+synonym: "NAD(P)H(2):6,7-dihydropteridine oxidoreductase activity" RELATED []
+synonym: "NAD(P)H2:6,7-dihydropteridine oxidoreductase activity" RELATED []
+synonym: "NADH-dihydropteridine reductase activity" RELATED []
+synonym: "NADPH-dihydropteridine reductase activity" RELATED []
+synonym: "NADPH-specific dihydropteridine reductase activity" RELATED []
 is_a: GO:0016646 ! oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor
 
 [Term]
@@ -3709,42 +3705,42 @@ is_a: GO:0008236 ! serine-type peptidase activity
 id: GO:0004332
 name: fructose-bisphosphate aldolase activity
 def: "Catalysis of the reaction: D-fructose 1,6-bisphosphate = glycerone phosphate + D-glyceraldehyde-3-phosphate." []
-synonym: "1,6-diphosphofructose aldolase activity" EXACT []
+synonym: "1,6-diphosphofructose aldolase activity" RELATED []
 synonym: "aldolase activity" BROAD []
-synonym: "D-fructose-1,6-bisphosphate D-glyceraldehyde-3-phosphate-lyase (glycerone-phosphate-forming)" EXACT []
-synonym: "D-fructose-1,6-bisphosphate D-glyceraldehyde-3-phosphate-lyase activity" EXACT []
-synonym: "diphosphofructose aldolase activity" EXACT []
-synonym: "fructoaldolase activity" EXACT []
-synonym: "fructose 1,6-diphosphate aldolase activity" EXACT []
-synonym: "fructose 1-monophosphate aldolase activity" EXACT []
-synonym: "fructose 1-phosphate aldolase activity" EXACT []
-synonym: "fructose diphosphate aldolase activity" EXACT []
-synonym: "fructose-1,6-bisphosphate triosephosphate-lyase activity" EXACT []
-synonym: "ketose 1-phosphate aldolase activity" EXACT []
-synonym: "phosphofructoaldolase activity" EXACT []
+synonym: "D-fructose-1,6-bisphosphate D-glyceraldehyde-3-phosphate-lyase (glycerone-phosphate-forming)" RELATED []
+synonym: "D-fructose-1,6-bisphosphate D-glyceraldehyde-3-phosphate-lyase activity" RELATED []
+synonym: "diphosphofructose aldolase activity" RELATED []
+synonym: "fructoaldolase activity" RELATED []
+synonym: "fructose 1,6-diphosphate aldolase activity" RELATED []
+synonym: "fructose 1-monophosphate aldolase activity" RELATED []
+synonym: "fructose 1-phosphate aldolase activity" RELATED []
+synonym: "fructose diphosphate aldolase activity" RELATED []
+synonym: "fructose-1,6-bisphosphate triosephosphate-lyase activity" RELATED []
+synonym: "ketose 1-phosphate aldolase activity" RELATED []
+synonym: "phosphofructoaldolase activity" RELATED []
 synonym: "SMALDO" RELATED []
-synonym: "zymohexase activity" EXACT []
+synonym: "zymohexase activity" RELATED []
 is_a: GO:0016832 ! aldehyde-lyase activity
 
 [Term]
 id: GO:0004336
 name: galactosylceramidase activity
 def: "Catalysis of the reaction: D-galactosyl-N-acylsphingosine + H2O = D-galactose + N-acylsphingosine." []
-synonym: "beta-galactocerebrosidase activity" EXACT []
-synonym: "beta-galactosylceramidase activity" EXACT []
-synonym: "ceramide galactosidase activity" EXACT []
-synonym: "cerebroside beta-galactosidase activity" EXACT []
-synonym: "cerebroside galactosidase activity" EXACT []
-synonym: "D-galactosyl-N-acylsphingosine galactohydrolase activity" EXACT []
-synonym: "galactocerebrosidase activity" EXACT []
-synonym: "galactocerebroside beta-galactosidase activity" EXACT []
-synonym: "galactocerebroside galactosidase activity" EXACT []
-synonym: "galactocerebroside-beta-D-galactosidase activity" EXACT []
+synonym: "beta-galactocerebrosidase activity" RELATED []
+synonym: "beta-galactosylceramidase activity" RELATED []
+synonym: "ceramide galactosidase activity" RELATED []
+synonym: "cerebroside beta-galactosidase activity" RELATED []
+synonym: "cerebroside galactosidase activity" RELATED []
+synonym: "D-galactosyl-N-acylsphingosine galactohydrolase activity" RELATED []
+synonym: "galactocerebrosidase activity" RELATED []
+synonym: "galactocerebroside beta-galactosidase activity" RELATED []
+synonym: "galactocerebroside galactosidase activity" RELATED []
+synonym: "galactocerebroside-beta-D-galactosidase activity" RELATED []
 synonym: "galactosylceramidase I" RELATED []
-synonym: "galactosylceramide beta-galactosidase activity" EXACT []
-synonym: "galactosylcerebrosidase activity" EXACT []
-synonym: "galcerase activity" EXACT []
-synonym: "lactosylceramidase activity" EXACT []
+synonym: "galactosylceramide beta-galactosidase activity" RELATED []
+synonym: "galactosylcerebrosidase activity" RELATED []
+synonym: "galcerase activity" RELATED []
+synonym: "lactosylceramidase activity" RELATED []
 synonym: "lactosylceramidase I" RELATED []
 is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
@@ -3752,13 +3748,13 @@ is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 id: GO:0004339
 name: glucan 1,4-alpha-glucosidase activity
 def: "Catalysis of the hydrolysis of terminal (1->4)-linked alpha-D-glucose residues successively from non-reducing ends of the chains with release of beta-D-glucose." []
-synonym: "1,4-alpha-D-glucan glucohydrolase activity" EXACT []
-synonym: "amyloglucosidase activity" EXACT []
-synonym: "exo-1,4-alpha-glucosidase activity" EXACT []
-synonym: "gamma-1,4-glucan glucohydrolase activity" EXACT []
-synonym: "gamma-amylase activity" EXACT []
+synonym: "1,4-alpha-D-glucan glucohydrolase activity" RELATED []
+synonym: "amyloglucosidase activity" RELATED []
+synonym: "exo-1,4-alpha-glucosidase activity" RELATED []
+synonym: "gamma-1,4-glucan glucohydrolase activity" RELATED []
+synonym: "gamma-amylase activity" RELATED []
 synonym: "glucoamylase activity" EXACT []
-synonym: "glucose amylase activity" EXACT []
+synonym: "glucose amylase activity" RELATED []
 synonym: "lysosomal alpha-glucosidase activity" BROAD []
 is_a: GO:0015926 ! glucosidase activity
 
@@ -3769,9 +3765,9 @@ def: "Catalysis of the reaction: D-glucose 6-phosphate + NADP+ = D-glucono-1,5-l
 synonym: "6-phosphoglucose dehydrogenas" RELATED []
 synonym: "6-phosphoglucose dehydrogenase activity" EXACT []
 synonym: "D-glucose 6-phosphate dehydrogenase activity" EXACT []
-synonym: "D-glucose-6-phosphate:NADP+ 1-oxidoreductase activity" EXACT []
+synonym: "D-glucose-6-phosphate:NADP+ 1-oxidoreductase activity" RELATED []
 synonym: "Entner-doudoroff enzyme" RELATED []
-synonym: "G6PD activity" EXACT []
+synonym: "G6PD activity" RELATED []
 synonym: "G6PDH" EXACT []
 synonym: "GDH" RELATED []
 synonym: "glucose 6-phosphate dehydrogenase (NADP) activity" EXACT []
@@ -3786,23 +3782,23 @@ is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors,
 id: GO:0004346
 name: glucose-6-phosphatase activity
 def: "Catalysis of the reaction: D-glucopyranose 6-phosphate + H2O = D-glucose + phosphate. D-glucopyranose is also known as D-glucose 6-phosphate." []
-synonym: "D-glucose-6-phosphate phosphohydrolase activity" EXACT []
-synonym: "glucose 6-phosphate phosphatase activity" EXACT []
+synonym: "D-glucose-6-phosphate phosphohydrolase activity" RELATED []
+synonym: "glucose 6-phosphate phosphatase activity" RELATED []
 is_a: GO:0050309 ! sugar-terminal-phosphatase activity
 
 [Term]
 id: GO:0004347
 name: glucose-6-phosphate isomerase activity
 def: "Catalysis of the reaction: D-glucose 6-phosphate = D-fructose 6-phosphate." []
-synonym: "D-glucose-6-phosphate aldose-ketose-isomerase activity" EXACT []
-synonym: "D-glucose-6-phosphate ketol-isomerase activity" EXACT []
-synonym: "glucose phosphate isomerase activity" EXACT []
+synonym: "D-glucose-6-phosphate aldose-ketose-isomerase activity" RELATED []
+synonym: "D-glucose-6-phosphate ketol-isomerase activity" RELATED []
+synonym: "glucose phosphate isomerase activity" RELATED []
 synonym: "hexose monophosphate isomerase activity" BROAD []
-synonym: "hexose phosphate isomerase activity" EXACT []
+synonym: "hexose phosphate isomerase activity" RELATED []
 synonym: "hexosephosphate isomerase activity" BROAD []
 synonym: "oxoisomerase activity" RELATED []
-synonym: "phosphoglucoisomerase activity" EXACT []
-synonym: "phosphoglucose isomerase activity" EXACT []
+synonym: "phosphoglucoisomerase activity" RELATED []
+synonym: "phosphoglucose isomerase activity" RELATED []
 synonym: "phosphohexoisomerase activity" BROAD []
 synonym: "phosphohexomutase activity" BROAD []
 synonym: "phosphohexose isomerase activity" BROAD []
@@ -3813,19 +3809,19 @@ is_a: GO:0016861 ! intramolecular oxidoreductase activity, interconverting aldos
 id: GO:0004348
 name: glucosylceramidase activity
 def: "Catalysis of the reaction: D-glucosyl-N-acylsphingosine + H2O = D-glucose + N-acylsphingosine." []
-synonym: "acid beta-glucosidase activity" EXACT []
-synonym: "beta-D-glucocerebrosidase activity" EXACT []
-synonym: "beta-glucocerebrosidase activity" EXACT []
-synonym: "beta-glucosylceramidase activity" EXACT []
-synonym: "ceramide glucosidase activity" EXACT []
-synonym: "D-glucosyl-N-acylsphingosine glucohydrolase activity" EXACT []
-synonym: "GlcCer-beta-glucosidase activity" EXACT []
-synonym: "glucocerebrosidase activity" EXACT []
-synonym: "glucosphingosine glucosylhydrolase activity" EXACT []
-synonym: "glucosylcerebrosidase activity" EXACT []
-synonym: "glucosylsphingosine beta-D-glucosidase activity" EXACT []
-synonym: "glucosylsphingosine beta-glucosidase activity" EXACT []
-synonym: "psychosine hydrolase activity" EXACT []
+synonym: "acid beta-glucosidase activity" RELATED []
+synonym: "beta-D-glucocerebrosidase activity" RELATED []
+synonym: "beta-glucocerebrosidase activity" RELATED []
+synonym: "beta-glucosylceramidase activity" RELATED []
+synonym: "ceramide glucosidase activity" RELATED []
+synonym: "D-glucosyl-N-acylsphingosine glucohydrolase activity" RELATED []
+synonym: "GlcCer-beta-glucosidase activity" RELATED []
+synonym: "glucocerebrosidase activity" RELATED []
+synonym: "glucosphingosine glucosylhydrolase activity" RELATED []
+synonym: "glucosylcerebrosidase activity" RELATED []
+synonym: "glucosylsphingosine beta-D-glucosidase activity" RELATED []
+synonym: "glucosylsphingosine beta-glucosidase activity" RELATED []
+synonym: "psychosine hydrolase activity" RELATED []
 is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
@@ -3833,33 +3829,33 @@ id: GO:0004351
 name: glutamate decarboxylase activity
 def: "Catalysis of the reaction: L-glutamate = 4-aminobutanoate + CO2." []
 synonym: "aspartic alpha-decarboxylase" BROAD []
-synonym: "cysteic acid decarboxylase activity" EXACT []
-synonym: "gamma-glutamate decarboxylase activity" EXACT []
-synonym: "L-aspartate-alpha-decarboxylase activity" EXACT []
-synonym: "L-glutamate 1-carboxy-lyase (4-aminobutanoate-forming)" EXACT []
-synonym: "L-glutamate 1-carboxy-lyase activity" EXACT []
-synonym: "L-glutamate alpha-decarboxylase activity" EXACT []
-synonym: "L-glutamic acid decarboxylase activity" EXACT []
-synonym: "L-glutamic decarboxylase activity" EXACT []
+synonym: "cysteic acid decarboxylase activity" RELATED []
+synonym: "gamma-glutamate decarboxylase activity" RELATED []
+synonym: "L-aspartate-alpha-decarboxylase activity" RELATED []
+synonym: "L-glutamate 1-carboxy-lyase (4-aminobutanoate-forming)" RELATED []
+synonym: "L-glutamate 1-carboxy-lyase activity" RELATED []
+synonym: "L-glutamate alpha-decarboxylase activity" RELATED []
+synonym: "L-glutamic acid decarboxylase activity" RELATED []
+synonym: "L-glutamic decarboxylase activity" RELATED []
 is_a: GO:0016831 ! carboxy-lyase activity
 
 [Term]
 id: GO:0004357
 name: glutamate-cysteine ligase activity
 def: "Catalysis of the reaction: L-cysteine + L-glutamate + ATP = L-gamma-glutamyl-L-cysteine + ADP + 2 H(+) + phosphate." []
-synonym: "gamma-glutamyl-L-cysteine synthetase activity" EXACT []
-synonym: "gamma-glutamylcysteine synthetase activity" EXACT []
-synonym: "gamma-glutamylcysteinyl synthetase activity" EXACT []
-synonym: "L-glutamate:L-cysteine gamma-ligase (ADP-forming) activity" EXACT []
+synonym: "gamma-glutamyl-L-cysteine synthetase activity" RELATED []
+synonym: "gamma-glutamylcysteine synthetase activity" RELATED []
+synonym: "gamma-glutamylcysteinyl synthetase activity" RELATED []
+synonym: "L-glutamate:L-cysteine gamma-ligase (ADP-forming) activity" RELATED []
 is_a: GO:0016881 ! acid-amino acid ligase activity
 
 [Term]
 id: GO:0004363
 name: glutathione synthase activity
 def: "Catalysis of the reaction: L-gamma-glutamyl-L-cysteine + ATP + glycine = ADP + glutathione + 2 H(+) + phosphate." []
-synonym: "gamma-L-glutamyl-L-cysteine:glycine ligase (ADP-forming)" EXACT []
-synonym: "glutathione synthetase activity" EXACT []
-synonym: "GSH synthetase activity" EXACT []
+synonym: "gamma-L-glutamyl-L-cysteine:glycine ligase (ADP-forming)" RELATED []
+synonym: "glutathione synthetase activity" RELATED []
+synonym: "GSH synthetase activity" RELATED []
 is_a: GO:0016881 ! acid-amino acid ligase activity
 relationship: BFO:0000050 GO:0006750 ! part of glutathione biosynthetic process
 
@@ -3867,12 +3863,12 @@ relationship: BFO:0000050 GO:0006750 ! part of glutathione biosynthetic process
 id: GO:0004370
 name: glycerol kinase activity
 def: "Catalysis of the reaction: ATP + glycerol = sn-glycerol 3-phosphate + ADP + 2 H(+)." []
-synonym: "ATP:glycerol 3-phosphotransferase activity" EXACT []
-synonym: "ATP:glycerol-3-phosphotransferase activity" EXACT []
+synonym: "ATP:glycerol 3-phosphotransferase activity" RELATED []
+synonym: "ATP:glycerol-3-phosphotransferase activity" RELATED []
 synonym: "GK" RELATED []
-synonym: "glyceric kinase activity" EXACT []
-synonym: "glycerokinase activity" EXACT []
-synonym: "glycerol kinase (phosphorylating)" EXACT []
+synonym: "glyceric kinase activity" RELATED []
+synonym: "glycerokinase activity" RELATED []
+synonym: "glycerol kinase (phosphorylating)" RELATED []
 is_a: GO:0016301 ! kinase activity
 is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
 
@@ -3881,31 +3877,31 @@ id: GO:0004415
 name: hyalurononglucosaminidase activity
 def: "Catalysis of the random hydrolysis of (1->4) linkages between N-acetyl-beta-D-glucosamine and D-glucuronate residues in hyaluronate." []
 synonym: "chondroitinase activity" BROAD []
-synonym: "chondroitinase I activity" EXACT []
-synonym: "hyaluronate 4-glycanohydrolase activity" EXACT []
+synonym: "chondroitinase I activity" RELATED []
+synonym: "hyaluronate 4-glycanohydrolase activity" RELATED []
 synonym: "hyaluronidase activity" BROAD []
 synonym: "hyaluronoglucosaminidase activity" EXACT []
-synonym: "hyaluronoglucosidase activity" EXACT []
+synonym: "hyaluronoglucosidase activity" RELATED []
 is_a: GO:0015929 ! hexosaminidase activity
 
 [Term]
 id: GO:0004423
 name: iduronate-2-sulfatase activity
 def: "Catalysis of the hydrolysis of the 2-sulfate groups of the L-iduronate 2-sulfate units of dermatan sulfate, heparan sulfate and heparin." []
-synonym: "2-sulfo-L-iduronate 2-sulfatase activity" EXACT []
+synonym: "2-sulfo-L-iduronate 2-sulfatase activity" RELATED []
 synonym: "chondroitinsulfatase" BROAD []
-synonym: "iduronate sulfatase activity" EXACT []
-synonym: "iduronate sulfate sulfatase activity" EXACT []
-synonym: "iduronate-2-sulfate sulfatase activity" EXACT []
+synonym: "iduronate sulfatase activity" RELATED []
+synonym: "iduronate sulfate sulfatase activity" RELATED []
+synonym: "iduronate-2-sulfate sulfatase activity" RELATED []
 synonym: "iduronate-2-sulphatase activity" EXACT []
-synonym: "iduronide-2-sulfate sulfatase activity" EXACT []
-synonym: "idurono-2-sulfatase activity" EXACT []
-synonym: "L-iduronate 2-sulfate sulfatase activity" EXACT []
-synonym: "L-iduronate-2-sulfate 2-sulfohydrolase activity" EXACT []
-synonym: "L-idurono sulfate sulfatase activity" EXACT []
-synonym: "L-iduronosulfatase activity" EXACT []
-synonym: "sulfo-L-iduronate sulfatase activity" EXACT []
-synonym: "sulfoiduronate sulfohydrolase activity" EXACT []
+synonym: "iduronide-2-sulfate sulfatase activity" RELATED []
+synonym: "idurono-2-sulfatase activity" RELATED []
+synonym: "L-iduronate 2-sulfate sulfatase activity" RELATED []
+synonym: "L-iduronate-2-sulfate 2-sulfohydrolase activity" RELATED []
+synonym: "L-idurono sulfate sulfatase activity" RELATED []
+synonym: "L-iduronosulfatase activity" RELATED []
+synonym: "sulfo-L-iduronate sulfatase activity" RELATED []
+synonym: "sulfoiduronate sulfohydrolase activity" RELATED []
 is_a: GO:0008484 ! sulfuric ester hydrolase activity
 
 [Term]
@@ -3918,24 +3914,24 @@ is_a: GO:0016614 ! oxidoreductase activity, acting on CH-OH group of donors
 id: GO:0004466
 name: long-chain-acyl-CoA dehydrogenase activity
 def: "Catalysis of the reaction: acyl-CoA + ETF = 2,3-dehydroacyl-CoA + reduced ETF." []
-synonym: "long-chain acyl-coenzyme A dehydrogenase activity" EXACT []
-synonym: "long-chain-acyl-CoA:(acceptor) 2,3-oxidoreductase activity" EXACT []
-synonym: "long-chain-acyl-CoA:acceptor 2,3-oxidoreductase activity" EXACT []
-synonym: "palmitoyl-CoA dehydrogenase activity" EXACT []
-synonym: "palmitoyl-coenzyme A dehydrogenase activity" EXACT []
+synonym: "long-chain acyl-coenzyme A dehydrogenase activity" RELATED []
+synonym: "long-chain-acyl-CoA:(acceptor) 2,3-oxidoreductase activity" RELATED []
+synonym: "long-chain-acyl-CoA:acceptor 2,3-oxidoreductase activity" RELATED []
+synonym: "palmitoyl-CoA dehydrogenase activity" RELATED []
+synonym: "palmitoyl-coenzyme A dehydrogenase activity" RELATED []
 is_a: GO:0003995 ! acyl-CoA dehydrogenase activity
 
 [Term]
 id: GO:0004485
 name: methylcrotonoyl-CoA carboxylase activity
 def: "Catalysis of the reaction: 3-methylbut-2-enoyl-CoA + ATP + bicarbonate = trans-3-methylglutaconyl-CoA + ADP + 2 H(+) + phosphate." []
-synonym: "3-methylcrotonoyl-CoA:carbon-dioxide ligase (ADP-forming)" EXACT []
-synonym: "beta-methylcrotonyl CoA carboxylase activity" EXACT []
-synonym: "beta-methylcrotonyl coenzyme A carboxylase activity" EXACT []
-synonym: "beta-methylcrotonyl-CoA carboxylase activity" EXACT []
+synonym: "3-methylcrotonoyl-CoA:carbon-dioxide ligase (ADP-forming)" RELATED []
+synonym: "beta-methylcrotonyl CoA carboxylase activity" RELATED []
+synonym: "beta-methylcrotonyl coenzyme A carboxylase activity" RELATED []
+synonym: "beta-methylcrotonyl-CoA carboxylase activity" RELATED []
 synonym: "MCCC activity" EXACT []
-synonym: "methylcrotonyl coenzyme A carboxylase activity" EXACT []
-synonym: "methylcrotonyl-CoA carboxylase activity" EXACT []
+synonym: "methylcrotonyl coenzyme A carboxylase activity" RELATED []
+synonym: "methylcrotonyl-CoA carboxylase activity" RELATED []
 is_a: GO:0016421 ! CoA carboxylase activity
 
 [Term]
@@ -3948,12 +3944,12 @@ is_a: GO:0016491 ! oxidoreductase activity
 [Term]
 id: GO:0004509
 name: steroid 21-monooxygenase activity
-def: "Catalysis of the reaction: a steroid + donor-H2 + O2 = a 21-hydroxysteroid + acceptor + H2O." []
-synonym: "21-hydroxylase activity" EXACT []
+def: "Catalysis of the reaction: A C(21) steroid + [reduced NADPH--hemoprotein reductase] + O(2) = a 21-hydroxy-C(21)-steroid + [oxidized NADPH--hemoprotein reductase] + H(2)O." []
+synonym: "21-hydroxylase activity" RELATED []
 synonym: "cytochrome P450 CYP21A1" NARROW []
 synonym: "cytochrome p450 XXIA1 activity" NARROW []
 synonym: "steroid 21-hydroxylase activity" EXACT []
-synonym: "steroid,hydrogen-donor:oxygen oxidoreductase (21-hydroxylating)" EXACT []
+synonym: "steroid,hydrogen-donor:oxygen oxidoreductase (21-hydroxylating)" RELATED []
 is_a: GO:0008395 ! steroid hydroxylase activity
 is_a: GO:0016705 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen
 
@@ -3968,17 +3964,17 @@ is_a: GO:0016798 ! hydrolase activity, acting on glycosyl bonds
 id: GO:0004555
 name: alpha,alpha-trehalase activity
 def: "Catalysis of the reaction: alpha,alpha-trehalose + H2O = 2 D-glucose." []
-synonym: "alpha,alpha-trehalose glucohydrolase activity" EXACT []
+synonym: "alpha,alpha-trehalose glucohydrolase activity" RELATED []
 is_a: GO:0015927 ! trehalase activity
 
 [Term]
 id: GO:0004557
 name: alpha-galactosidase activity
 def: "Catalysis of the hydrolysis of terminal, non-reducing alpha-D-galactose residues in alpha-D-galactosides, including galactose oligosaccharides, galactomannans and galactohydrolase." []
-synonym: "alpha-D-galactosidase activity" EXACT []
-synonym: "alpha-D-galactoside galactohydrolase activity" EXACT []
+synonym: "alpha-D-galactosidase activity" RELATED []
+synonym: "alpha-D-galactoside galactohydrolase activity" RELATED []
 synonym: "alpha-galactosidase A" RELATED []
-synonym: "alpha-galactoside galactohydrolase activity" EXACT []
+synonym: "alpha-galactoside galactohydrolase activity" RELATED []
 synonym: "melibiase activity" EXACT []
 is_a: GO:0015925 ! galactosidase activity
 
@@ -3988,10 +3984,10 @@ name: alpha-mannosidase activity
 def: "Catalysis of the hydrolysis of terminal, non-reducing alpha-D-mannose residues in alpha-D-mannosides." []
 synonym: "1,2-alpha-D-mannosidase activity" NARROW []
 synonym: "1,2-alpha-mannosidase" NARROW []
-synonym: "alpha-D-mannopyranosidase activity" EXACT []
-synonym: "alpha-D-mannosidase activity" EXACT []
-synonym: "alpha-D-mannoside mannohydrolase activity" EXACT []
-synonym: "exo-alpha-mannosidase activity" EXACT []
+synonym: "alpha-D-mannopyranosidase activity" RELATED []
+synonym: "alpha-D-mannosidase activity" RELATED []
+synonym: "alpha-D-mannoside mannohydrolase activity" RELATED []
+synonym: "exo-alpha-mannosidase activity" RELATED []
 synonym: "p-nitrophenyl-alpha-mannosidase activity" NARROW []
 is_a: GO:0015923 ! mannosidase activity
 
@@ -3999,41 +3995,41 @@ is_a: GO:0015923 ! mannosidase activity
 id: GO:0004561
 name: alpha-N-acetylglucosaminidase activity
 def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-glucosamine residues in N-acetyl-alpha-D-glucosaminides." []
-synonym: "alpha-acetylglucosaminidase activity" EXACT []
-synonym: "alpha-D-2-acetamido-2-deoxyglucosidase activity" EXACT []
-synonym: "alpha-N-acetyl-D-glucosaminide N-acetylglucosaminohydrolase activity" EXACT []
-synonym: "N-acetyl-alpha-D-glucosaminidase activity" EXACT []
-synonym: "N-acetyl-alpha-glucosaminidase activity" EXACT []
-synonym: "NAG activity" EXACT []
+synonym: "alpha-acetylglucosaminidase activity" RELATED []
+synonym: "alpha-D-2-acetamido-2-deoxyglucosidase activity" RELATED []
+synonym: "alpha-N-acetyl-D-glucosaminide N-acetylglucosaminohydrolase activity" RELATED []
+synonym: "N-acetyl-alpha-D-glucosaminidase activity" RELATED []
+synonym: "N-acetyl-alpha-glucosaminidase activity" RELATED []
+synonym: "NAG activity" RELATED []
 is_a: GO:0015929 ! hexosaminidase activity
 
 [Term]
 id: GO:0004563
 name: beta-N-acetylhexosaminidase activity
 def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-hexosamine residues in N-acetyl-beta-D-hexosaminides." []
-synonym: "beta-acetylaminodeoxyhexosidase activity" EXACT []
-synonym: "beta-acetylhexosaminidinase activity" EXACT []
-synonym: "beta-D-hexosaminidase activity" EXACT []
-synonym: "beta-D-N-acetylhexosaminidase activity" EXACT []
-synonym: "beta-hexosaminidase activity" EXACT []
-synonym: "beta-N-acetyl-D-hexosaminidase activity" EXACT []
-synonym: "beta-N-acetyl-D-hexosaminide N-acetylhexosaminohydrolase activity" EXACT []
+synonym: "beta-acetylaminodeoxyhexosidase activity" RELATED []
+synonym: "beta-acetylhexosaminidinase activity" RELATED []
+synonym: "beta-D-hexosaminidase activity" RELATED []
+synonym: "beta-D-N-acetylhexosaminidase activity" RELATED []
+synonym: "beta-hexosaminidase activity" RELATED []
+synonym: "beta-N-acetyl-D-hexosaminidase activity" RELATED []
+synonym: "beta-N-acetyl-D-hexosaminide N-acetylhexosaminohydrolase activity" RELATED []
 synonym: "hexosaminidase A" RELATED []
-synonym: "N-acetyl-beta-D-hexosaminidase activity" EXACT []
-synonym: "N-acetyl-beta-glucosaminidase activity" EXACT []
-synonym: "N-acetyl-beta-hexosaminidase activity" EXACT []
-synonym: "N-acetylhexosaminidase activity" EXACT []
+synonym: "N-acetyl-beta-D-hexosaminidase activity" RELATED []
+synonym: "N-acetyl-beta-glucosaminidase activity" RELATED []
+synonym: "N-acetyl-beta-hexosaminidase activity" RELATED []
+synonym: "N-acetylhexosaminidase activity" RELATED []
 is_a: GO:0015929 ! hexosaminidase activity
 
 [Term]
 id: GO:0004565
 name: beta-galactosidase activity
 def: "Catalysis of the hydrolysis of terminal, non-reducing beta-D-galactose residues in beta-D-galactosides." []
-synonym: "beta-D-galactanase activity" EXACT []
-synonym: "beta-D-galactoside galactohydrolase activity" EXACT []
-synonym: "beta-D-lactosidase activity" EXACT []
-synonym: "beta-lactosidase activity" EXACT []
-synonym: "exo-(1->4)-beta-D-galactanase activity" EXACT []
+synonym: "beta-D-galactanase activity" RELATED []
+synonym: "beta-D-galactoside galactohydrolase activity" RELATED []
+synonym: "beta-D-lactosidase activity" RELATED []
+synonym: "beta-lactosidase activity" RELATED []
+synonym: "exo-(1->4)-beta-D-galactanase activity" RELATED []
 synonym: "hydrolact" RELATED []
 synonym: "lactose hydrolysis" RELATED []
 synonym: "lactozym" RELATED []
@@ -4041,18 +4037,18 @@ synonym: "maxilact" RELATED []
 synonym: "oryzatym" RELATED []
 synonym: "S 2107" RELATED []
 synonym: "sumiklat" RELATED []
-synonym: "trilactase activity" EXACT []
+synonym: "trilactase activity" RELATED []
 is_a: GO:0015925 ! galactosidase activity
 
 [Term]
 id: GO:0004566
 name: beta-glucuronidase activity
 def: "Catalysis of the reaction: a beta-D-glucuronoside + H2O = an alcohol + D-glucuronate." []
-synonym: "beta-D-glucuronoside glucuronosohydrolase activity" EXACT []
-synonym: "beta-glucuronide glucuronohydrolase activity" EXACT []
-synonym: "exo-beta-D-glucuronidase activity" EXACT []
-synonym: "glucuronidase activity" EXACT []
-synonym: "ketodase activity" EXACT []
+synonym: "beta-D-glucuronoside glucuronosohydrolase activity" RELATED []
+synonym: "beta-glucuronide glucuronohydrolase activity" RELATED []
+synonym: "exo-beta-D-glucuronidase activity" RELATED []
+synonym: "glucuronidase activity" RELATED []
+synonym: "ketodase activity" RELATED []
 is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
@@ -4060,7 +4056,7 @@ id: GO:0004601
 name: peroxidase activity
 def: "Catalysis of the reaction: donor + hydrogen peroxide = oxidized donor + 2 H2O." []
 synonym: "bacterial catalase-peroxidase activity" NARROW []
-synonym: "donor:hydrogen-peroxide oxidoreductase activity" EXACT []
+synonym: "donor:hydrogen-peroxide oxidoreductase activity" RELATED []
 synonym: "eosinophil peroxidase activity" NARROW []
 synonym: "extensin peroxidase" NARROW []
 synonym: "guaiacol peroxidase" NARROW []
@@ -4070,7 +4066,7 @@ synonym: "japanese radish peroxidase" NARROW []
 synonym: "lactoperoxidase activity" NARROW []
 synonym: "MPO" RELATED []
 synonym: "myeloperoxidase activity" NARROW []
-synonym: "oxyperoxidase activity" EXACT []
+synonym: "oxyperoxidase activity" RELATED []
 synonym: "peroxidase reaction" EXACT []
 synonym: "protoheme peroxidase" NARROW []
 synonym: "pyrocatechol peroxidase" NARROW []
@@ -4085,20 +4081,20 @@ is_a: GO:0016684 ! oxidoreductase activity, acting on peroxide as acceptor
 id: GO:0004602
 name: glutathione peroxidase activity
 def: "Catalysis of the reaction: 2 glutathione + hydrogen peroxide = oxidized glutathione + 2 H2O." []
-synonym: "glutathione:hydrogen-peroxide oxidoreductase activity" EXACT []
-synonym: "GSH peroxidase activity" EXACT []
+synonym: "glutathione:hydrogen-peroxide oxidoreductase activity" RELATED []
+synonym: "GSH peroxidase activity" RELATED []
 synonym: "non-selenium glutathione peroxidase activity" NARROW []
-synonym: "reduced glutathione peroxidase activity" EXACT []
-synonym: "selenium-glutathione peroxidase activity" EXACT []
+synonym: "reduced glutathione peroxidase activity" RELATED []
+synonym: "selenium-glutathione peroxidase activity" RELATED []
 is_a: GO:0004601 ! peroxidase activity
 
 [Term]
 id: GO:0004614
 name: phosphoglucomutase activity
 def: "Catalysis of the reaction: alpha-D-glucose 1-phosphate = alpha-D-glucose 6-phosphate." []
-synonym: "alpha-D-glucose 1,6-phosphomutase activity" EXACT []
-synonym: "glucose phosphomutase activity" EXACT []
-synonym: "phosphoglucose mutase activity" EXACT []
+synonym: "alpha-D-glucose 1,6-phosphomutase activity" RELATED []
+synonym: "glucose phosphomutase activity" RELATED []
+synonym: "phosphoglucose mutase activity" RELATED []
 is_a: GO:0016868 ! intramolecular transferase activity, phosphotransferases
 
 [Term]
@@ -4106,20 +4102,20 @@ id: GO:0004618
 name: phosphoglycerate kinase activity
 def: "Catalysis of the reaction: 3-phospho-D-glycerate + ATP = 3-phospho-D-glyceroyl phosphate + ADP + H(+)." []
 synonym: "3-PGK" RELATED []
-synonym: "3-phosphoglycerate kinase activity" EXACT []
-synonym: "3-phosphoglycerate phosphokinase activity" EXACT []
-synonym: "3-phosphoglyceric acid kinase activity" EXACT []
-synonym: "3-phosphoglyceric acid phosphokinase activity" EXACT []
-synonym: "3-phosphoglyceric kinase activity" EXACT []
-synonym: "ATP-3-phospho-D-glycerate-1-phosphotransferase activity" EXACT []
-synonym: "ATP:3-phospho-D-glycerate 1-phosphotransferase activity" EXACT []
-synonym: "ATP:D-3-phosphoglycerate 1-phosphotransferase activity" EXACT []
-synonym: "glycerate 3-phosphate kinase activity" EXACT []
-synonym: "glycerophosphate kinase activity" EXACT []
+synonym: "3-phosphoglycerate kinase activity" RELATED []
+synonym: "3-phosphoglycerate phosphokinase activity" RELATED []
+synonym: "3-phosphoglyceric acid kinase activity" RELATED []
+synonym: "3-phosphoglyceric acid phosphokinase activity" RELATED []
+synonym: "3-phosphoglyceric kinase activity" RELATED []
+synonym: "ATP-3-phospho-D-glycerate-1-phosphotransferase activity" RELATED []
+synonym: "ATP:3-phospho-D-glycerate 1-phosphotransferase activity" RELATED []
+synonym: "ATP:D-3-phosphoglycerate 1-phosphotransferase activity" RELATED []
+synonym: "glycerate 3-phosphate kinase activity" RELATED []
+synonym: "glycerophosphate kinase activity" RELATED []
 synonym: "PGK" RELATED []
-synonym: "phosphoglyceric acid kinase activity" EXACT []
-synonym: "phosphoglyceric kinase activity" EXACT []
-synonym: "phosphoglycerokinase activity" EXACT []
+synonym: "phosphoglyceric acid kinase activity" RELATED []
+synonym: "phosphoglyceric kinase activity" RELATED []
+synonym: "phosphoglycerokinase activity" RELATED []
 is_a: GO:0016301 ! kinase activity
 is_a: GO:0016774 ! phosphotransferase activity, carboxyl group as acceptor
 
@@ -4128,17 +4124,17 @@ id: GO:0004619
 name: phosphoglycerate mutase activity
 def: "Catalysis of the reaction: 2-phospho-D-glycerate = 3-phospho-D-glycerate." []
 synonym: "bisphosphoglyceromutase" RELATED []
-synonym: "D-phosphoglycerate 2,3-phosphomutase activity" EXACT []
+synonym: "D-phosphoglycerate 2,3-phosphomutase activity" RELATED []
 synonym: "diphosphoglycomutase" RELATED []
 synonym: "GriP mutase" NARROW []
-synonym: "monophosphoglycerate mutase activity" EXACT []
-synonym: "monophosphoglyceromutase activity" EXACT []
+synonym: "monophosphoglycerate mutase activity" RELATED []
+synonym: "monophosphoglyceromutase activity" RELATED []
 synonym: "MPGM" RELATED []
-synonym: "PGA mutase activity" EXACT []
-synonym: "PGAM activity" EXACT []
+synonym: "PGA mutase activity" RELATED []
+synonym: "PGAM activity" RELATED []
 synonym: "PGM" EXACT []
-synonym: "phosphoglycerate phosphomutase activity" EXACT []
-synonym: "phosphoglyceromutase activity" EXACT []
+synonym: "phosphoglycerate phosphomutase activity" RELATED []
+synonym: "phosphoglyceromutase activity" RELATED []
 is_a: GO:0016868 ! intramolecular transferase activity, phosphotransferases
 
 [Term]
@@ -4146,16 +4142,16 @@ id: GO:0004634
 name: phosphopyruvate hydratase activity
 def: "Catalysis of the reaction: 2-phospho-D-glycerate = phosphoenolpyruvate + H2O." []
 synonym: "14-3-2-protein" RELATED []
-synonym: "2-phospho-D-glycerate hydro-lyase (phosphoenolpyruvate-forming)" EXACT []
-synonym: "2-phospho-D-glycerate hydro-lyase activity" EXACT []
+synonym: "2-phospho-D-glycerate hydro-lyase (phosphoenolpyruvate-forming)" RELATED []
+synonym: "2-phospho-D-glycerate hydro-lyase activity" RELATED []
 synonym: "2-phospho-D-glycerate-hydrolase activity" EXACT []
-synonym: "2-phosphoglycerate dehydratase activity" EXACT []
-synonym: "2-phosphoglycerate enolase activity" EXACT []
-synonym: "2-phosphoglyceric dehydratase activity" EXACT []
-synonym: "enolase activity" EXACT []
-synonym: "gamma-enolase activity" EXACT []
+synonym: "2-phosphoglycerate dehydratase activity" RELATED []
+synonym: "2-phosphoglycerate enolase activity" RELATED []
+synonym: "2-phosphoglyceric dehydratase activity" RELATED []
+synonym: "enolase activity" RELATED []
+synonym: "gamma-enolase activity" RELATED []
 synonym: "nervous-system specific enolase" NARROW []
-synonym: "phosphoenolpyruvate hydratase activity" EXACT []
+synonym: "phosphoenolpyruvate hydratase activity" RELATED []
 is_a: GO:0016836 ! hydro-lyase activity
 
 [Term]
@@ -4175,13 +4171,13 @@ def: "Catalysis of the reactions: ATP + protein serine = ADP + protein serine ph
 synonym: "protein kinase (phosphorylating) activity" NARROW []
 synonym: "protein phosphokinase activity" NARROW []
 synonym: "protein serine kinase activity" NARROW []
-synonym: "protein serine-threonine kinase activity" EXACT []
+synonym: "protein serine-threonine kinase activity" RELATED []
 synonym: "protein-serine kinase activity" NARROW []
 synonym: "serine kinase activity" NARROW []
 synonym: "serine protein kinase activity" NARROW []
-synonym: "serine(threonine) protein kinase activity" EXACT []
+synonym: "serine(threonine) protein kinase activity" RELATED []
 synonym: "serine-specific protein kinase activity" NARROW []
-synonym: "serine/threonine protein kinase activity" EXACT []
+synonym: "serine/threonine protein kinase activity" RELATED []
 synonym: "threonine-specific protein kinase activity" NARROW []
 is_a: GO:0004672 ! protein kinase activity
 
@@ -4190,26 +4186,26 @@ id: GO:0004683
 name: calmodulin-dependent protein kinase activity
 def: "Catalysis of the reactions: ATP + a protein serine = ADP + protein serine phosphate; and ATP + a protein threonine = ADP + protein threonine phosphate. These reactions require the presence of calcium-bound calmodulin." []
 synonym: "ATP:caldesmon O-phosphotransferase activity" NARROW []
-synonym: "ATP:protein phosphotransferase (Ca2+/calmodulin-dependent) activity" EXACT []
+synonym: "ATP:protein phosphotransferase (Ca2+/calmodulin-dependent) activity" RELATED []
 synonym: "Ca2+/calmodulin-dependent microtubule-associated protein 2 kinase activity" NARROW []
 synonym: "Ca2+/calmodulin-dependent protein kinase 1 activity" NARROW []
-synonym: "Ca2+/calmodulin-dependent protein kinase activity" EXACT []
+synonym: "Ca2+/calmodulin-dependent protein kinase activity" RELATED []
 synonym: "Ca2+/calmodulin-dependent protein kinase II activity" NARROW []
 synonym: "Ca2+/calmodulin-dependent protein kinase IV activity" NARROW []
 synonym: "Ca2+/calmodulin-dependent protein kinase kinase activity" NARROW []
 synonym: "Ca2+/calmodulin-dependent protein kinase kinase beta activity" NARROW []
 synonym: "Ca2+/CaM-dependent kinase activity" EXACT []
 synonym: "calcium- and calmodulin-dependent protein kinase activity" EXACT []
-synonym: "calcium/calmodulin-dependent protein kinase activity" EXACT []
+synonym: "calcium/calmodulin-dependent protein kinase activity" RELATED []
 synonym: "calcium/calmodulin-dependent protein kinase type II activity" NARROW []
 synonym: "caldesmon kinase (phosphorylating) activity" NARROW []
 synonym: "calmodulin regulated protein kinase activity" EXACT []
 synonym: "calmodulin-dependent kinase II activity" NARROW []
 synonym: "calmodulin-dependent protein kinase I activity" NARROW []
-synonym: "CaM kinase activity" EXACT []
+synonym: "CaM kinase activity" RELATED []
 synonym: "CaM kinase II activity" NARROW []
 synonym: "CAM PKII" RELATED []
-synonym: "CaM-regulated serine/threonine kinase activity" EXACT []
+synonym: "CaM-regulated serine/threonine kinase activity" RELATED []
 synonym: "CaMKI" RELATED []
 synonym: "CaMKII" RELATED []
 synonym: "CaMKIV" RELATED []
@@ -4225,12 +4221,12 @@ is_a: GO:0004674 ! protein serine/threonine kinase activity
 id: GO:0004689
 name: phosphorylase kinase activity
 def: "Catalysis of the reaction: 4 ATP + 2 phosphorylase b = 4 ADP + phosphorylase a." []
-synonym: "ATP:phosphorylase-b phosphotransferase activity" EXACT []
-synonym: "dephosphophosphorylase kinase activity" EXACT []
-synonym: "glycogen phosphorylase kinase activity" EXACT []
+synonym: "ATP:phosphorylase-b phosphotransferase activity" RELATED []
+synonym: "dephosphophosphorylase kinase activity" RELATED []
+synonym: "glycogen phosphorylase kinase activity" RELATED []
 synonym: "PHK" RELATED []
-synonym: "phosphorylase B kinase activity" EXACT []
-synonym: "phosphorylase kinase (phosphorylating) activity" EXACT []
+synonym: "phosphorylase B kinase activity" RELATED []
+synonym: "phosphorylase kinase (phosphorylating) activity" RELATED []
 synonym: "phosphorylase kinase, intrinsic catalyst activity" EXACT []
 synonym: "STK17" RELATED []
 is_a: GO:0004683 ! calmodulin-dependent protein kinase activity
@@ -4239,20 +4235,20 @@ is_a: GO:0004683 ! calmodulin-dependent protein kinase activity
 id: GO:0004737
 name: pyruvate decarboxylase activity
 def: "Catalysis of the reaction: a 2-oxo acid = an aldehyde + CO2." []
-synonym: "2-oxo-acid carboxy-lyase (aldehyde-forming)" EXACT []
-synonym: "2-oxo-acid carboxy-lyase activity" EXACT []
-synonym: "alpha-carboxylase activity" EXACT []
-synonym: "alpha-ketoacid carboxylase activity" EXACT []
-synonym: "pyruvic decarboxylase activity" EXACT []
+synonym: "2-oxo-acid carboxy-lyase (aldehyde-forming)" RELATED []
+synonym: "2-oxo-acid carboxy-lyase activity" RELATED []
+synonym: "alpha-carboxylase activity" RELATED []
+synonym: "alpha-ketoacid carboxylase activity" RELATED []
+synonym: "pyruvic decarboxylase activity" RELATED []
 is_a: GO:0016831 ! carboxy-lyase activity
 
 [Term]
 id: GO:0004743
 name: pyruvate kinase activity
 def: "Catalysis of the reaction: = ADP + H(+) + phosphoenolpyruvate => ATP + pyruvate." []
-synonym: "ATP:pyruvate 2-O-phosphotransferase activity" EXACT []
-synonym: "phosphoenol transphosphorylase activity" EXACT []
-synonym: "phosphoenolpyruvate kinase activity" EXACT []
+synonym: "ATP:pyruvate 2-O-phosphotransferase activity" RELATED []
+synonym: "phosphoenol transphosphorylase activity" RELATED []
+synonym: "phosphoenolpyruvate kinase activity" RELATED []
 is_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor
 relationship: BFO:0000050 GO:0006096 ! part of glycolytic process
 
@@ -4260,22 +4256,22 @@ relationship: BFO:0000050 GO:0006096 ! part of glycolytic process
 id: GO:0004749
 name: ribose phosphate diphosphokinase activity
 def: "Catalysis of the reaction: D-ribose 5-phosphate + ATP = 5-phospho-alpha-D-ribose 1-diphosphate + AMP + 2 H(+)." []
-synonym: "5-phosphoribose pyrophosphorylase activity" EXACT []
-synonym: "5-phosphoribosyl-1-pyrophosphate synthetase activity" EXACT []
-synonym: "5-phosphoribosyl-alpha-1-pyrophosphate synthetase activity" EXACT []
-synonym: "ATP:D-ribose-5-phosphate diphosphotransferase activity" EXACT []
-synonym: "phosphoribosyl diphosphate synthetase activity" EXACT []
-synonym: "phosphoribosyl pyrophosphate synthetase activity" EXACT []
-synonym: "phosphoribosyl-diphosphate synthetase activity" EXACT []
-synonym: "phosphoribosylpyrophosphate synthase activity" EXACT []
-synonym: "phosphoribosylpyrophosphate synthetase activity" EXACT []
-synonym: "PP-ribose P synthetase activity" EXACT []
-synonym: "PPRibP synthetase activity" EXACT []
-synonym: "PRPP synthetase activity" EXACT []
-synonym: "pyrophosphoribosylphosphate synthetase activity" EXACT []
-synonym: "ribophosphate pyrophosphokinase activity" EXACT []
-synonym: "ribose-5-phosphate pyrophosphokinase activity" EXACT []
-synonym: "ribose-phosphate diphosphokinase activity" EXACT []
+synonym: "5-phosphoribose pyrophosphorylase activity" RELATED []
+synonym: "5-phosphoribosyl-1-pyrophosphate synthetase activity" RELATED []
+synonym: "5-phosphoribosyl-alpha-1-pyrophosphate synthetase activity" RELATED []
+synonym: "ATP:D-ribose-5-phosphate diphosphotransferase activity" RELATED []
+synonym: "phosphoribosyl diphosphate synthetase activity" RELATED []
+synonym: "phosphoribosyl pyrophosphate synthetase activity" RELATED []
+synonym: "phosphoribosyl-diphosphate synthetase activity" RELATED []
+synonym: "phosphoribosylpyrophosphate synthase activity" RELATED []
+synonym: "phosphoribosylpyrophosphate synthetase activity" RELATED []
+synonym: "PP-ribose P synthetase activity" RELATED []
+synonym: "PPRibP synthetase activity" RELATED []
+synonym: "PRPP synthetase activity" RELATED []
+synonym: "pyrophosphoribosylphosphate synthetase activity" RELATED []
+synonym: "ribophosphate pyrophosphokinase activity" RELATED []
+synonym: "ribose-5-phosphate pyrophosphokinase activity" RELATED []
+synonym: "ribose-phosphate diphosphokinase activity" RELATED []
 synonym: "ribose-phosphate pyrophosphokinase activity" EXACT []
 is_a: GO:0016778 ! diphosphotransferase activity
 
@@ -4283,16 +4279,16 @@ is_a: GO:0016778 ! diphosphotransferase activity
 id: GO:0004757
 name: sepiapterin reductase activity
 def: "Catalysis of the reaction: 7,8-dihydrobiopterin + NADP+ = sepiapterin + NADPH + H+." []
-synonym: "7,8-dihydrobiopterin:NADP+ oxidoreductase activity" EXACT []
+synonym: "7,8-dihydrobiopterin:NADP+ oxidoreductase activity" RELATED []
 is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0004758
 name: serine C-palmitoyltransferase activity
 def: "Catalysis of the reaction: L-serine + H(+) + palmitoyl-CoA = 3-dehydrosphinganine + CO(2) + CoA." []
-synonym: "3-oxosphinganine synthetase activity" EXACT []
+synonym: "3-oxosphinganine synthetase activity" RELATED []
 synonym: "acyl-CoA:serine C-2 acyltransferase decarboxylating" RELATED []
-synonym: "palmitoyl-CoA:L-serine C-palmitoyltransferase (decarboxylating) activity" EXACT []
+synonym: "palmitoyl-CoA:L-serine C-palmitoyltransferase (decarboxylating) activity" RELATED []
 synonym: "serine palmitoyltransferase" BROAD []
 synonym: "SPT" RELATED []
 is_a: GO:0016454 ! C-palmitoyltransferase activity
@@ -4301,17 +4297,17 @@ is_a: GO:0016454 ! C-palmitoyltransferase activity
 id: GO:0004773
 name: steryl-sulfatase activity
 def: "Catalysis of the reaction: 3-beta-hydroxyandrost-5-en-17-one 3-sulfate + H2O = 3-beta-hydroxyandrost-5-en-17-one + sulfate." []
-synonym: "3-beta-hydroxysteroid sulfate sulfatase activity" EXACT []
-synonym: "arylsulfatase C activity" EXACT []
-synonym: "dehydroepiandrosterone sulfatase activity" EXACT []
-synonym: "dehydroepiandrosterone sulfate sulfatase activity" EXACT []
-synonym: "phenolic steroid sulfatase activity" EXACT []
-synonym: "pregnenolone sulfatase activity" EXACT []
-synonym: "steroid 3-sulfatase activity" EXACT []
-synonym: "steroid sulfatase activity" EXACT []
-synonym: "steroid sulfate sulfohydrolase activity" EXACT []
-synonym: "sterol sulfatase activity" EXACT []
-synonym: "steryl-sulfate sulfohydrolase activity" EXACT []
+synonym: "3-beta-hydroxysteroid sulfate sulfatase activity" RELATED []
+synonym: "arylsulfatase C activity" RELATED []
+synonym: "dehydroepiandrosterone sulfatase activity" RELATED []
+synonym: "dehydroepiandrosterone sulfate sulfatase activity" RELATED []
+synonym: "phenolic steroid sulfatase activity" RELATED []
+synonym: "pregnenolone sulfatase activity" RELATED []
+synonym: "steroid 3-sulfatase activity" RELATED []
+synonym: "steroid sulfatase activity" RELATED []
+synonym: "steroid sulfate sulfohydrolase activity" RELATED []
+synonym: "sterol sulfatase activity" RELATED []
+synonym: "steryl-sulfate sulfohydrolase activity" RELATED []
 synonym: "steryl-sulphatase activity" EXACT []
 is_a: GO:0008484 ! sulfuric ester hydrolase activity
 
@@ -4319,13 +4315,13 @@ is_a: GO:0008484 ! sulfuric ester hydrolase activity
 id: GO:0004807
 name: triose-phosphate isomerase activity
 def: "Catalysis of the reaction: D-glyceraldehyde 3-phosphate = glycerone phosphate." []
-synonym: "D-glyceraldehyde-3-phosphate aldose-ketose-isomerase activity" EXACT []
-synonym: "D-glyceraldehyde-3-phosphate ketol-isomerase activity" EXACT []
-synonym: "phosphotriose isomerase activity" EXACT []
-synonym: "triose phosphate mutase activity" EXACT []
-synonym: "triose phosphoisomerase activity" EXACT []
-synonym: "triosephosphate isomerase activity" EXACT []
-synonym: "triosephosphate mutase activity" EXACT []
+synonym: "D-glyceraldehyde-3-phosphate aldose-ketose-isomerase activity" RELATED []
+synonym: "D-glyceraldehyde-3-phosphate ketol-isomerase activity" RELATED []
+synonym: "phosphotriose isomerase activity" RELATED []
+synonym: "triose phosphate mutase activity" RELATED []
+synonym: "triose phosphoisomerase activity" RELATED []
+synonym: "triosephosphate isomerase activity" RELATED []
+synonym: "triosephosphate mutase activity" RELATED []
 is_a: GO:0016861 ! intramolecular oxidoreductase activity, interconverting aldoses and ketoses
 
 [Term]
@@ -4710,13 +4706,14 @@ relationship: BFO:0000050 GO:0005576 ! part of extracellular region
 
 [Term]
 id: GO:0005622
-name: intracellular
-def: "The living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." []
+name: intracellular anatomical structure
+def: "A component of a cell contained within (but not including) the plasma membrane. In eukaryotes it includes the nucleus and cytoplasm." []
 synonym: "internal to cell" EXACT []
+synonym: "intracellular" EXACT []
 synonym: "nucleocytoplasm" RELATED []
 synonym: "protoplasm" EXACT []
 synonym: "protoplast" RELATED []
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0005623
@@ -4778,7 +4775,7 @@ id: GO:0005737
 name: cytoplasm
 def: "All of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." []
 is_a: GO:0110165 ! cellular anatomical entity
-relationship: BFO:0000050 GO:0005622 ! part of intracellular
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0005739
@@ -7413,10 +7410,10 @@ is_a: GO:0033036 ! macromolecule localization
 id: GO:0008119
 name: thiopurine S-methyltransferase activity
 def: "Catalysis of the reaction: S-adenosyl-L-methionine + a thiopurine = S-adenosyl-L-homocysteine + a thiopurine S-methylether." []
-synonym: "6-thiopurine transmethylase activity" EXACT []
-synonym: "mercaptopurine methyltransferase activity" EXACT []
-synonym: "S-adenosyl-L-methionine:thiopurine S-methyltransferase activity" EXACT []
-synonym: "thiopurine methyltransferase activity" EXACT []
+synonym: "6-thiopurine transmethylase activity" RELATED []
+synonym: "mercaptopurine methyltransferase activity" RELATED []
+synonym: "S-adenosyl-L-methionine:thiopurine S-methyltransferase activity" RELATED []
+synonym: "thiopurine methyltransferase activity" RELATED []
 synonym: "TPMT" RELATED []
 is_a: GO:0008172 ! S-methyltransferase activity
 is_a: GO:0008757 ! S-adenosylmethionine-dependent methyltransferase activity
@@ -7682,29 +7679,29 @@ is_a: GO:0019200 ! carbohydrate kinase activity
 id: GO:0008456
 name: alpha-N-acetylgalactosaminidase activity
 def: "Catalysis of the hydrolysis of terminal non-reducing N-acetyl-D-galactosamine residues in N-acetyl-alpha-D-galactosaminides." []
-synonym: "alpha-acetylgalactosaminidase activity" EXACT []
+synonym: "alpha-acetylgalactosaminidase activity" RELATED []
 synonym: "alpha-galactosidase B activity" RELATED []
-synonym: "alpha-N-acetyl-D-galactosaminide N-acetylgalactosaminohydrolase activity" EXACT []
-synonym: "alpha-NAGA activity" EXACT []
-synonym: "N-acetyl-alpha-D-galactosaminidase activity" EXACT []
-synonym: "N-acetyl-alpha-galactosaminidase activity" EXACT []
+synonym: "alpha-N-acetyl-D-galactosaminide N-acetylgalactosaminohydrolase activity" RELATED []
+synonym: "alpha-NAGA activity" RELATED []
+synonym: "N-acetyl-alpha-D-galactosaminidase activity" RELATED []
+synonym: "N-acetyl-alpha-galactosaminidase activity" RELATED []
 is_a: GO:0015929 ! hexosaminidase activity
 
 [Term]
 id: GO:0008480
 name: sarcosine dehydrogenase activity
 def: "Catalysis of the reaction: sarcosine + H2O + electron-transfer flavoprotein = glycine + formaldehyde + reduced electron-transfer flavoprotein." []
-synonym: "monomethylglycine dehydrogenase activity" EXACT []
-synonym: "sarcosine N-demethylase activity" EXACT []
-synonym: "sarcosine:(acceptor) oxidoreductase (demethylating)" EXACT []
-synonym: "sarcosine:acceptor oxidoreductase (demethylating)" EXACT []
+synonym: "monomethylglycine dehydrogenase activity" RELATED []
+synonym: "sarcosine N-demethylase activity" RELATED []
+synonym: "sarcosine:(acceptor) oxidoreductase (demethylating)" RELATED []
+synonym: "sarcosine:acceptor oxidoreductase (demethylating)" RELATED []
 is_a: GO:0046997 ! oxidoreductase activity, acting on the CH-NH group of donors, flavin as acceptor
 
 [Term]
 id: GO:0008482
 name: sulfite oxidase activity
 def: "Catalysis of the reaction: H(2)O + O(2) + sulfite = H(2)O(2) + H(+) + sulfate." []
-synonym: "sulfite:oxygen oxidoreductase activity" EXACT []
+synonym: "sulfite:oxygen oxidoreductase activity" RELATED []
 synonym: "sulphite oxidase activity" EXACT []
 is_a: GO:0016670 ! oxidoreductase activity, acting on a sulfur group of donors, oxygen as acceptor
 
@@ -8912,7 +8909,8 @@ is_a: GO:0061024 ! membrane organization
 id: GO:0010453
 name: regulation of cell fate commitment
 def: "Any process that modulates the frequency, rate or extent of cell fate commitment. Cell fate commitment is the commitment of cells to specific cell fates and their capacity to differentiate into particular kinds of cells. Positional information is established through protein signals that emanate from a localized source within a cell (the initial one-cell zygote) or within a developmental field." []
-is_a: GO:0045595 ! regulation of cell differentiation
+is_a: GO:0050793 ! regulation of developmental process
+is_a: GO:0050794 ! regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0045165 ! regulates cell fate commitment
 relationship: RO:0002211 GO:0045165 ! regulates cell fate commitment
@@ -9350,7 +9348,6 @@ id: GO:0010769
 name: regulation of cell morphogenesis involved in differentiation
 def: "Any process that modulates the frequency, rate or extent of cell morphogenesis contributing to cell differentiation. Cell morphogenesis involved in differentiation is the change in form (cell shape and size) that occurs when relatively unspecialized cells acquire specialized structural and/or functional features that characterize the cells, tissues, or organs of the mature organism or some other relatively stable phase of the organism's life history." []
 is_a: GO:0022604 ! regulation of cell morphogenesis
-is_a: GO:0060284 ! regulation of cell development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0000904 ! regulates cell morphogenesis involved in differentiation
 relationship: RO:0002211 GO:0000904 ! regulates cell morphogenesis involved in differentiation
@@ -9475,8 +9472,8 @@ id: GO:0010883
 name: regulation of lipid storage
 def: "Any process that modulates the rate, frequency or extent of lipid storage. Lipid storage is the accumulation and maintenance in cells or tissues of lipids, compounds soluble in organic solvents but insoluble or sparingly soluble in aqueous solvents. Lipid reserves can be accumulated during early developmental stages for mobilization and utilization at later stages of development." []
 synonym: "regulation of lipid sequestration" NARROW []
+is_a: GO:0032879 ! regulation of localization
 is_a: GO:0065008 ! regulation of biological quality
-is_a: GO:1905952 ! regulation of lipid localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0019915 ! regulates lipid storage
 relationship: RO:0002211 GO:0019915 ! regulates lipid storage
@@ -9766,7 +9763,6 @@ synonym: "regulation of neurite biosynthesis" NARROW []
 synonym: "regulation of neurite development" NARROW []
 synonym: "regulation of neurite formation" NARROW []
 synonym: "regulation of neurite growth" NARROW []
-is_a: GO:0045664 ! regulation of neuron differentiation
 is_a: GO:0120035 ! regulation of plasma membrane bounded cell projection organization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0031175 ! regulates neuron projection development
@@ -9782,7 +9778,6 @@ synonym: "positive regulation of neurite formation" NARROW []
 synonym: "positive regulation of neurite growth" NARROW []
 is_a: GO:0010975 ! regulation of neuron projection development
 is_a: GO:0031346 ! positive regulation of cell projection organization
-is_a: GO:0045666 ! positive regulation of neuron differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0031175 ! positively regulates neuron projection development
 relationship: RO:0002213 GO:0031175 ! positively regulates neuron projection development
@@ -9798,7 +9793,6 @@ synonym: "negative regulation of neurite formation" NARROW []
 synonym: "negative regulation of neurite growth" NARROW []
 is_a: GO:0010975 ! regulation of neuron projection development
 is_a: GO:0031345 ! negative regulation of cell projection organization
-is_a: GO:0045665 ! negative regulation of neuron differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0031175 ! negatively regulates neuron projection development
 relationship: RO:0002212 GO:0031175 ! negatively regulates neuron projection development
@@ -9903,8 +9897,6 @@ is_a: GO:0050432 ! catecholamine secretion
 id: GO:0014059
 name: regulation of dopamine secretion
 def: "Any process that modulates the frequency, rate or extent of the regulated release of dopamine." []
-is_a: GO:0010646 ! regulation of cell communication
-is_a: GO:0023051 ! regulation of signaling
 is_a: GO:0043269 ! regulation of ion transport
 is_a: GO:0050433 ! regulation of catecholamine secretion
 intersection_of: GO:0008150 ! biological_process
@@ -9916,8 +9908,6 @@ id: GO:0014062
 name: regulation of serotonin secretion
 def: "Any process that modulates the frequency, rate or extent of the regulated release of serotonin." []
 synonym: "regulation of serotonin release" RELATED []
-is_a: GO:0010646 ! regulation of cell communication
-is_a: GO:0023051 ! regulation of signaling
 is_a: GO:0043269 ! regulation of ion transport
 is_a: GO:1903530 ! regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
@@ -9933,9 +9923,7 @@ synonym: "down-regulation of serotonin secretion" EXACT []
 synonym: "downregulation of serotonin secretion" EXACT []
 synonym: "inhibition of serotonin secretion" NARROW []
 synonym: "positive regulation of serotonin release" RELATED []
-is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0014062 ! regulation of serotonin secretion
-is_a: GO:0023057 ! negative regulation of signaling
 is_a: GO:0043271 ! negative regulation of ion transport
 is_a: GO:1903531 ! negative regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
@@ -9952,9 +9940,7 @@ synonym: "stimulation of serotonin secretion" NARROW []
 synonym: "up regulation of serotonin secretion" EXACT []
 synonym: "up-regulation of serotonin secretion" EXACT []
 synonym: "upregulation of serotonin secretion" EXACT []
-is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0014062 ! regulation of serotonin secretion
-is_a: GO:0023056 ! positive regulation of signaling
 is_a: GO:0043270 ! positive regulation of ion transport
 is_a: GO:1903532 ! positive regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
@@ -9994,10 +9980,10 @@ is_a: GO:0016769 ! transferase activity, transferring nitrogenous groups
 id: GO:0015068
 name: glycine amidinotransferase activity
 def: "Catalysis of the reaction: L-arginine + glycine = L-ornithine + guanidinoacetate." []
-synonym: "arginine-glycine amidinotransferase activity" EXACT []
-synonym: "arginine-glycine transamidinase activity" EXACT []
-synonym: "glycine transamidinase activity" EXACT []
-synonym: "L-arginine:glycine amidinotransferase activity" EXACT []
+synonym: "arginine-glycine amidinotransferase activity" RELATED []
+synonym: "arginine-glycine transamidinase activity" RELATED []
+synonym: "glycine transamidinase activity" RELATED []
+synonym: "L-arginine:glycine amidinotransferase activity" RELATED []
 is_a: GO:0015067 ! amidinotransferase activity
 
 [Term]
@@ -10395,6 +10381,9 @@ relationship: BFO:0000050 GO:0016011 ! part of dystroglycan complex
 id: GO:0016020
 name: membrane
 def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." []
+synonym: "membrane region" NARROW []
+synonym: "region of membrane" NARROW []
+synonym: "whole membrane" NARROW []
 is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
@@ -10616,12 +10605,12 @@ is_a: GO:0016491 ! oxidoreductase activity
 id: GO:0016250
 name: N-sulfoglucosamine sulfohydrolase activity
 def: "Catalysis of the reaction: N-sulfo-D-glucosamine + H2O = D-glucosamine + sulfate." []
-synonym: "2-desoxy-D-glucoside-2-sulphamate sulphohydrolase (sulphamate sulphohydrolase)" EXACT []
-synonym: "heparin sulfamidase activity" EXACT []
-synonym: "N-sulfo-D-glucosamine sulfohydrolase activity" EXACT []
+synonym: "2-desoxy-D-glucoside-2-sulphamate sulphohydrolase (sulphamate sulphohydrolase)" RELATED []
+synonym: "heparin sulfamidase activity" RELATED []
+synonym: "N-sulfo-D-glucosamine sulfohydrolase activity" RELATED []
 synonym: "N-sulphoglucosamine sulphohydrolase activity" EXACT []
-synonym: "sulfoglucosamine sulfamidase activity" EXACT []
-synonym: "sulphamidase activity" EXACT []
+synonym: "sulfoglucosamine sulfamidase activity" RELATED []
+synonym: "sulphamidase activity" RELATED []
 is_a: GO:0016826 ! hydrolase activity, acting on acid sulfur-nitrogen bonds
 
 [Term]
@@ -10870,12 +10859,12 @@ synonym: "aryl hydrocarbon hydroxylase activity" NARROW []
 synonym: "aryl-4-monooxygenase activity" NARROW []
 synonym: "cytochrome p450 activity" NARROW []
 synonym: "cytochrome P450 CYP19" NARROW []
-synonym: "flavoprotein monooxygenase activity" EXACT []
-synonym: "flavoprotein-linked monooxygenase activity" EXACT []
+synonym: "flavoprotein monooxygenase activity" RELATED []
+synonym: "flavoprotein-linked monooxygenase activity" RELATED []
 synonym: "microsomal monooxygenase activity" NARROW []
 synonym: "microsomal P-450" RELATED []
 synonym: "microsomal p450 activity" NARROW []
-synonym: "substrate,reduced-flavoprotein:oxygen oxidoreductase (RH-hydroxylating or -epoxidizing)" EXACT []
+synonym: "substrate,reduced-flavoprotein:oxygen oxidoreductase (RH-hydroxylating or -epoxidizing)" RELATED []
 synonym: "unspecific monooxygenase activity" RELATED []
 synonym: "xenobiotic monooxygenase activity" RELATED []
 is_a: GO:0004497 ! monooxygenase activity
@@ -10904,7 +10893,7 @@ is_a: GO:0016740 ! transferase activity
 id: GO:0016747
 name: transferase activity, transferring acyl groups other than amino-acyl groups
 def: "Catalysis of the transfer of an acyl group, other than amino-acyl, from one compound (donor) to another (acceptor)." []
-synonym: "transferase activity, transferring groups other than amino-acyl groups" EXACT []
+synonym: "transferase activity, transferring groups other than amino-acyl groups" RELATED []
 is_a: GO:0016746 ! transferase activity, transferring acyl groups
 
 [Term]
@@ -11247,18 +11236,18 @@ relationship: RO:0002212 GO:0006412 ! negatively regulates translation
 id: GO:0017168
 name: 5-oxoprolinase (ATP-hydrolyzing) activity
 def: "Catalysis of the reaction: 5-oxo-L-proline + ATP + 2 H(2)O = L-glutamate + ADP + 2 H(+) + phosphate." []
-synonym: "5-OPase activity" EXACT []
-synonym: "5-oxo-L-prolinase activity" EXACT []
-synonym: "5-oxo-L-proline amidohydrolase (ATP-hydrolysing)" EXACT []
-synonym: "5-oxoprolinase (ATP-hydrolysing)" EXACT []
-synonym: "5-oxoprolinase activity" EXACT []
-synonym: "L-pyroglutamate hydrolase activity" EXACT []
-synonym: "oxoprolinase activity" EXACT []
-synonym: "pyroglutamase (ATP-hydrolysing)" EXACT []
-synonym: "pyroglutamase (ATP-hydrolyzing) activity" EXACT []
-synonym: "pyroglutamase activity" EXACT []
-synonym: "pyroglutamate hydrolase activity" EXACT []
-synonym: "pyroglutamic hydrolase activity" EXACT []
+synonym: "5-OPase activity" RELATED []
+synonym: "5-oxo-L-prolinase activity" RELATED []
+synonym: "5-oxo-L-proline amidohydrolase (ATP-hydrolysing)" RELATED []
+synonym: "5-oxoprolinase (ATP-hydrolysing)" RELATED []
+synonym: "5-oxoprolinase activity" RELATED []
+synonym: "L-pyroglutamate hydrolase activity" RELATED []
+synonym: "oxoprolinase activity" RELATED []
+synonym: "pyroglutamase (ATP-hydrolysing)" RELATED []
+synonym: "pyroglutamase (ATP-hydrolyzing) activity" RELATED []
+synonym: "pyroglutamase activity" RELATED []
+synonym: "pyroglutamate hydrolase activity" RELATED []
+synonym: "pyroglutamic hydrolase activity" RELATED []
 is_a: GO:0016812 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amides
 
 [Term]
@@ -11290,11 +11279,11 @@ is_a: GO:0140096 ! catalytic activity, acting on a protein
 id: GO:0018549
 name: methanethiol oxidase activity
 def: "Catalysis of the reaction: methanethiol + O2 + H2O = formaldehyde + hydrogen sulfide + hydrogen peroxide." []
-synonym: "(MM)-oxidase activity" EXACT []
-synonym: "methanethiol:oxygen oxidoreductase activity" EXACT []
-synonym: "methyl mercaptan oxidase activity" EXACT []
-synonym: "methylmercaptan oxidase activity" EXACT []
-synonym: "MT-oxidase activity" EXACT []
+synonym: "(MM)-oxidase activity" RELATED []
+synonym: "methanethiol:oxygen oxidoreductase activity" RELATED []
+synonym: "methyl mercaptan oxidase activity" RELATED []
+synonym: "methylmercaptan oxidase activity" RELATED []
+synonym: "MT-oxidase activity" RELATED []
 is_a: GO:0016670 ! oxidoreductase activity, acting on a sulfur group of donors, oxygen as acceptor
 
 [Term]
@@ -12720,7 +12709,6 @@ def: "The lipid bilayer surrounding a secretory granule." []
 synonym: "secretory vesicle membrane" BROAD []
 is_a: GO:0030659 ! cytoplasmic vesicle membrane
 is_a: GO:0098588 ! bounding membrane of organelle
-is_a: GO:0098805 ! whole membrane
 relationship: BFO:0000050 GO:0030141 ! part of secretory granule
 
 [Term]
@@ -12754,12 +12742,12 @@ is_a: GO:0019915 ! lipid storage
 id: GO:0030731
 name: guanidinoacetate N-methyltransferase activity
 def: "Catalysis of the reaction: S-adenosyl-L-methionine + guanidinoacetate = S-adenosyl-L-homocysteine + creatine + H(+)." []
-synonym: "GA methylpherase activity" EXACT []
-synonym: "guanidinoacetate methyltransferase activity" EXACT []
-synonym: "guanidinoacetate transmethylase activity" EXACT []
-synonym: "guanidoacetate methyltransferase activity" EXACT []
-synonym: "methionine-guanidinoacetic transmethylase activity" EXACT []
-synonym: "S-adenosyl-L-methionine:N-guanidinoacetate methyltransferase activity" EXACT []
+synonym: "GA methylpherase activity" RELATED []
+synonym: "guanidinoacetate methyltransferase activity" RELATED []
+synonym: "guanidinoacetate transmethylase activity" RELATED []
+synonym: "guanidoacetate methyltransferase activity" RELATED []
+synonym: "methionine-guanidinoacetic transmethylase activity" RELATED []
+synonym: "S-adenosyl-L-methionine:N-guanidinoacetate methyltransferase activity" RELATED []
 is_a: GO:0008757 ! S-adenosylmethionine-dependent methyltransferase activity
 
 [Term]
@@ -13609,7 +13597,6 @@ synonym: "inhibition of myelination" NARROW []
 is_a: GO:0031641 ! regulation of myelination
 is_a: GO:0031645 ! negative regulation of nervous system process
 is_a: GO:0048523 ! negative regulation of cellular process
-is_a: GO:0051961 ! negative regulation of nervous system development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0042552 ! negatively regulates myelination
 relationship: RO:0002212 GO:0042552 ! negatively regulates myelination
@@ -13626,7 +13613,6 @@ synonym: "upregulation of myelination" EXACT []
 is_a: GO:0031641 ! regulation of myelination
 is_a: GO:0031646 ! positive regulation of nervous system process
 is_a: GO:0048522 ! positive regulation of cellular process
-is_a: GO:0051962 ! positive regulation of nervous system development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0042552 ! positively regulates myelination
 relationship: RO:0002213 GO:0042552 ! positively regulates myelination
@@ -14891,7 +14877,6 @@ relationship: RO:0002212 GO:0000819 ! negatively regulates sister chromatid segr
 id: GO:0033047
 name: regulation of mitotic sister chromatid segregation
 def: "Any process that modulates the frequency, rate or extent of sister chromatid segregation during mitosis." []
-is_a: GO:0007088 ! regulation of mitotic nuclear division
 is_a: GO:0033045 ! regulation of sister chromatid segregation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0000070 ! regulates mitotic sister chromatid segregation
@@ -14903,7 +14888,6 @@ name: negative regulation of mitotic sister chromatid segregation
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of sister chromatid segregation during mitosis." []
 is_a: GO:0033046 ! negative regulation of sister chromatid segregation
 is_a: GO:0033047 ! regulation of mitotic sister chromatid segregation
-is_a: GO:0045839 ! negative regulation of mitotic nuclear division
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0000070 ! negatively regulates mitotic sister chromatid segregation
 relationship: RO:0002212 GO:0000070 ! negatively regulates mitotic sister chromatid segregation
@@ -15224,9 +15208,7 @@ synonym: "down regulation of dopamine secretion" EXACT []
 synonym: "down-regulation of dopamine secretion" EXACT []
 synonym: "downregulation of dopamine secretion" EXACT []
 synonym: "inhibition of dopamine secretion" NARROW []
-is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0014059 ! regulation of dopamine secretion
-is_a: GO:0023057 ! negative regulation of signaling
 is_a: GO:0033604 ! negative regulation of catecholamine secretion
 is_a: GO:0043271 ! negative regulation of ion transport
 intersection_of: GO:0008150 ! biological_process
@@ -15242,9 +15224,7 @@ synonym: "stimulation of dopamine secretion" NARROW []
 synonym: "up regulation of dopamine secretion" EXACT []
 synonym: "up-regulation of dopamine secretion" EXACT []
 synonym: "upregulation of dopamine secretion" EXACT []
-is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0014059 ! regulation of dopamine secretion
-is_a: GO:0023056 ! positive regulation of signaling
 is_a: GO:0033605 ! positive regulation of catecholamine secretion
 is_a: GO:0043270 ! positive regulation of ion transport
 intersection_of: GO:0008150 ! biological_process
@@ -15336,10 +15316,10 @@ is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors,
 id: GO:0033844
 name: galactose-6-sulfurylase activity
 def: "Catalysis of the elimination of sulfate from the D-galactose 6-sulfate residues of porphyran, producing 3,6-anhydrogalactose residues." []
-synonym: "D-galactose-6-sulfate:alkyltransferase (cyclizing) activity" EXACT []
-synonym: "galactose 6-sulfatase activity" EXACT []
-synonym: "galactose-6-sulfatase activity" EXACT []
-synonym: "porphyran sulfatase activity" EXACT []
+synonym: "D-galactose-6-sulfate:alkyltransferase (cyclizing) activity" RELATED []
+synonym: "galactose 6-sulfatase activity" RELATED []
+synonym: "galactose-6-sulfatase activity" RELATED []
+synonym: "porphyran sulfatase activity" RELATED []
 is_a: GO:0016765 ! transferase activity, transferring alkyl or aryl (other than methyl) groups
 
 [Term]
@@ -16037,8 +16017,8 @@ synonym: "signal transduction via intracellular signaling cascade" RELATED []
 synonym: "signal transmission via intracellular cascade" NARROW []
 is_a: GO:0007165 ! signal transduction
 intersection_of: GO:0007165 ! signal transduction
-intersection_of: BFO:0000066 GO:0005622 ! occurs in intracellular
-relationship: BFO:0000066 GO:0005622 ! occurs in intracellular
+intersection_of: BFO:0000066 GO:0005622 ! occurs in intracellular anatomical structure
+relationship: BFO:0000066 GO:0005622 ! occurs in intracellular anatomical structure
 
 [Term]
 id: GO:0035592
@@ -16086,7 +16066,6 @@ name: positive regulation of insulin secretion involved in cellular response to 
 def: "Any process that increases the frequency, rate or extent of the regulated release of insulin that contributes to the response of a cell to glucose." []
 synonym: "positive regulation of insulin secretion in response to glucose" EXACT []
 is_a: GO:0032024 ! positive regulation of insulin secretion
-is_a: GO:0048584 ! positive regulation of response to stimulus
 is_a: GO:0061178 ! regulation of insulin secretion involved in cellular response to glucose stimulus
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0035773 ! positively regulates insulin secretion involved in cellular response to glucose stimulus
@@ -16218,8 +16197,8 @@ is_a: GO:0043412 ! macromolecule modification
 id: GO:0036374
 name: glutathione hydrolase activity
 def: "Catalysis of the reaction: glutathione + H2O = L-cysteinylglycine + L-glutamate." []
-synonym: "gamma-glutamyltranspeptidase activity" EXACT []
-synonym: "glutathionase activity" EXACT []
+synonym: "gamma-glutamyltranspeptidase activity" RELATED []
+synonym: "glutathionase activity" RELATED []
 is_a: GO:0008242 ! omega peptidase activity
 is_a: GO:0070003 ! threonine-type peptidase activity
 
@@ -17632,8 +17611,8 @@ name: intracellular organelle
 def: "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." []
 is_a: GO:0043226 ! organelle
 intersection_of: GO:0043226 ! organelle
-intersection_of: BFO:0000050 GO:0005622 ! part of intracellular
-relationship: BFO:0000050 GO:0005622 ! part of intracellular
+intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0043230
@@ -17660,7 +17639,7 @@ synonym: "intracellular non-membrane-enclosed organelle" EXACT []
 is_a: GO:0043228 ! non-membrane-bounded organelle
 is_a: GO:0043229 ! intracellular organelle
 intersection_of: GO:0043228 ! non-membrane-bounded organelle
-intersection_of: BFO:0000050 GO:0005622 ! part of intracellular
+intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0043233
@@ -17898,7 +17877,6 @@ synonym: "negative regulation of sequence-specific DNA binding transcription fac
 synonym: "negative regulation of thyroid hormone receptor activity" NARROW []
 synonym: "negative regulation of transcription factor activity" BROAD []
 is_a: GO:0044092 ! negative regulation of molecular function
-is_a: GO:0048519 ! negative regulation of biological process
 is_a: GO:0051090 ! regulation of DNA-binding transcription factor activity
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0003700 ! negatively regulates DNA-binding transcription factor activity
@@ -18047,9 +18025,9 @@ name: glyceraldehyde-3-phosphate dehydrogenase (NAD(P)+) (phosphorylating) activ
 def: "Catalysis of the reaction: D-glyceraldehyde 3-phosphate + phosphate + NAD(P)+ = 3-phospho-D-glyceroyl phosphate + NAD(P)H + H+." []
 synonym: "D-glyceraldehyde 3-phosphate:NAD(P)+ oxidoreductase (phosphorylating)" EXACT []
 synonym: "glyceraldehyde-3-phosphate dehydrogenase (NAD(P)) (phosphorylating)" EXACT []
-synonym: "NAD(P)-dependent glyceraldehyde-3-phosphate dehydrogenase activity" EXACT []
+synonym: "NAD(P)-dependent glyceraldehyde-3-phosphate dehydrogenase activity" RELATED []
 synonym: "triosephosphate dehydrogenase (NAD(P))" EXACT []
-synonym: "triosephosphate dehydrogenase (NAD(P)+)" EXACT []
+synonym: "triosephosphate dehydrogenase (NAD(P)+)" RELATED []
 is_a: GO:0016620 ! oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor
 
 [Term]
@@ -18885,7 +18863,6 @@ is_a: GO:0000018 ! regulation of DNA recombination
 is_a: GO:0002637 ! regulation of immunoglobulin production
 is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
 is_a: GO:0050864 ! regulation of B cell activation
-is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0045190 ! regulates isotype switching
 relationship: RO:0002211 GO:0045190 ! regulates isotype switching
@@ -18935,7 +18912,7 @@ synonym: "hydrogen-translocating F-type ATPase complex" EXACT []
 synonym: "hydrogen-transporting ATP synthase complex" EXACT []
 synonym: "proton-transporting F-type ATPase complex" RELATED []
 is_a: GO:0016469 ! proton-transporting two-sector ATPase complex
-relationship: BFO:0000050 GO:0005622 ! part of intracellular
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0045260
@@ -18989,7 +18966,7 @@ synonym: "ubiquinol-cytochrome-c reductase complex" EXACT []
 is_a: GO:0070069 ! cytochrome complex
 is_a: GO:0098803 ! respiratory chain complex
 is_a: GO:1990204 ! oxidoreductase complex
-relationship: BFO:0000050 GO:0005622 ! part of intracellular
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0045276
@@ -19444,7 +19421,6 @@ synonym: "downregulation of myeloid cell differentiation" EXACT []
 synonym: "inhibition of myeloid cell differentiation" NARROW []
 is_a: GO:0045596 ! negative regulation of cell differentiation
 is_a: GO:0045637 ! regulation of myeloid cell differentiation
-is_a: GO:1903707 ! negative regulation of hemopoiesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0030099 ! negatively regulates myeloid cell differentiation
 relationship: RO:0002212 GO:0030099 ! negatively regulates myeloid cell differentiation
@@ -19460,7 +19436,6 @@ synonym: "up-regulation of myeloid cell differentiation" EXACT []
 synonym: "upregulation of myeloid cell differentiation" EXACT []
 is_a: GO:0045597 ! positive regulation of cell differentiation
 is_a: GO:0045637 ! regulation of myeloid cell differentiation
-is_a: GO:1903708 ! positive regulation of hemopoiesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0030099 ! positively regulates myeloid cell differentiation
 relationship: RO:0002213 GO:0030099 ! positively regulates myeloid cell differentiation
@@ -19510,7 +19485,6 @@ def: "Any process that modulates the frequency, rate or extent of erythrocyte di
 synonym: "regulation of RBC differentiation" EXACT []
 synonym: "regulation of red blood cell differentiation" EXACT []
 is_a: GO:0045637 ! regulation of myeloid cell differentiation
-is_a: GO:0065008 ! regulation of biological quality
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0030218 ! regulates erythrocyte differentiation
 relationship: RO:0002211 GO:0030218 ! regulates erythrocyte differentiation
@@ -19666,7 +19640,7 @@ relationship: RO:0002213 GO:0030224 ! positively regulates monocyte differentiat
 id: GO:0045664
 name: regulation of neuron differentiation
 def: "Any process that modulates the frequency, rate or extent of neuron differentiation." []
-is_a: GO:0050767 ! regulation of neurogenesis
+is_a: GO:0045595 ! regulation of cell differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0030182 ! regulates neuron differentiation
 relationship: RO:0002211 GO:0030182 ! regulates neuron differentiation
@@ -19679,8 +19653,8 @@ synonym: "down regulation of neuron differentiation" EXACT []
 synonym: "down-regulation of neuron differentiation" EXACT []
 synonym: "downregulation of neuron differentiation" EXACT []
 synonym: "inhibition of neuron differentiation" NARROW []
+is_a: GO:0045596 ! negative regulation of cell differentiation
 is_a: GO:0045664 ! regulation of neuron differentiation
-is_a: GO:0050768 ! negative regulation of neurogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0030182 ! negatively regulates neuron differentiation
 relationship: RO:0002212 GO:0030182 ! negatively regulates neuron differentiation
@@ -19694,8 +19668,8 @@ synonym: "stimulation of neuron differentiation" NARROW []
 synonym: "up regulation of neuron differentiation" EXACT []
 synonym: "up-regulation of neuron differentiation" EXACT []
 synonym: "upregulation of neuron differentiation" EXACT []
+is_a: GO:0045597 ! positive regulation of cell differentiation
 is_a: GO:0045664 ! regulation of neuron differentiation
-is_a: GO:0050769 ! positive regulation of neurogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0030182 ! positively regulates neuron differentiation
 relationship: RO:0002213 GO:0030182 ! positively regulates neuron differentiation
@@ -19704,7 +19678,6 @@ relationship: RO:0002213 GO:0030182 ! positively regulates neuron differentiatio
 id: GO:0045667
 name: regulation of osteoblast differentiation
 def: "Any process that modulates the frequency, rate or extent of osteoblast differentiation." []
-is_a: GO:0030278 ! regulation of ossification
 is_a: GO:0045595 ! regulation of cell differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0001649 ! regulates osteoblast differentiation
@@ -19718,7 +19691,6 @@ synonym: "down regulation of osteoblast differentiation" EXACT []
 synonym: "down-regulation of osteoblast differentiation" EXACT []
 synonym: "downregulation of osteoblast differentiation" EXACT []
 synonym: "inhibition of osteoblast differentiation" NARROW []
-is_a: GO:0030279 ! negative regulation of ossification
 is_a: GO:0045596 ! negative regulation of cell differentiation
 is_a: GO:0045667 ! regulation of osteoblast differentiation
 intersection_of: GO:0008150 ! biological_process
@@ -19736,7 +19708,6 @@ synonym: "up-regulation of osteoblast differentiation" EXACT []
 synonym: "upregulation of osteoblast differentiation" EXACT []
 is_a: GO:0045597 ! positive regulation of cell differentiation
 is_a: GO:0045667 ! regulation of osteoblast differentiation
-is_a: GO:0045778 ! positive regulation of ossification
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001649 ! positively regulates osteoblast differentiation
 relationship: RO:0002213 GO:0001649 ! positively regulates osteoblast differentiation
@@ -19827,9 +19798,7 @@ relationship: RO:0002213 GO:0008544 ! positively regulates epidermis development
 id: GO:0045700
 name: regulation of spermatid nuclear differentiation
 def: "Any process that modulates the frequency, rate or extent of spermatid nuclear differentiation." []
-is_a: GO:0043900 ! regulation of multi-organism process
 is_a: GO:0051239 ! regulation of multicellular organismal process
-is_a: GO:0060284 ! regulation of cell development
 is_a: GO:1903353 ! regulation of nucleus organization
 is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
@@ -19845,8 +19814,7 @@ synonym: "down-regulation of spermatid nuclear differentiation" EXACT []
 synonym: "downregulation of spermatid nuclear differentiation" EXACT []
 synonym: "inhibition of spermatid nuclear differentiation" NARROW []
 is_a: GO:0010639 ! negative regulation of organelle organization
-is_a: GO:0010721 ! negative regulation of cell development
-is_a: GO:0043901 ! negative regulation of multi-organism process
+is_a: GO:0045596 ! negative regulation of cell differentiation
 is_a: GO:0045700 ! regulation of spermatid nuclear differentiation
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:2000242 ! negative regulation of reproductive process
@@ -19864,10 +19832,8 @@ synonym: "up regulation of spermatid nuclear differentiation" EXACT []
 synonym: "up-regulation of spermatid nuclear differentiation" EXACT []
 synonym: "upregulation of spermatid nuclear differentiation" EXACT []
 is_a: GO:0010638 ! positive regulation of organelle organization
-is_a: GO:0010720 ! positive regulation of cell development
-is_a: GO:0043902 ! positive regulation of multi-organism process
+is_a: GO:0045597 ! positive regulation of cell differentiation
 is_a: GO:0045700 ! regulation of spermatid nuclear differentiation
-is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:2000243 ! positive regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0007289 ! positively regulates spermatid nucleus differentiation
@@ -20122,7 +20088,7 @@ synonym: "up regulation of bone resorption" EXACT []
 synonym: "up-regulation of bone resorption" EXACT []
 synonym: "upregulation of bone resorption" EXACT []
 is_a: GO:0045124 ! regulation of bone resorption
-is_a: GO:0046852 ! positive regulation of bone remodeling
+is_a: GO:0048518 ! positive regulation of biological process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0045453 ! positively regulates bone resorption
 relationship: RO:0002213 GO:0045453 ! positively regulates bone resorption
@@ -20464,7 +20430,6 @@ synonym: "up regulation of mitosis" EXACT []
 synonym: "up-regulation of mitosis" EXACT []
 synonym: "upregulation of mitosis" EXACT []
 is_a: GO:0007088 ! regulation of mitotic nuclear division
-is_a: GO:0045931 ! positive regulation of mitotic cell cycle
 is_a: GO:0051785 ! positive regulation of nuclear division
 is_a: GO:0090068 ! positive regulation of cell cycle process
 intersection_of: GO:0008150 ! biological_process
@@ -20709,8 +20674,8 @@ synonym: "down-regulation of vasoconstriction" EXACT []
 synonym: "downregulation of vasoconstriction" EXACT []
 synonym: "inhibition of vasoconstriction" NARROW []
 is_a: GO:0019229 ! regulation of vasoconstriction
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:0097755 ! positive regulation of blood vessel diameter
-is_a: GO:1903523 ! negative regulation of blood circulation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0042310 ! negatively regulates vasoconstriction
 relationship: RO:0002212 GO:0042310 ! negatively regulates vasoconstriction
@@ -20725,7 +20690,7 @@ synonym: "up regulation of vasoconstriction" EXACT []
 synonym: "up-regulation of vasoconstriction" EXACT []
 synonym: "upregulation of vasoconstriction" EXACT []
 is_a: GO:0019229 ! regulation of vasoconstriction
-is_a: GO:1903524 ! positive regulation of blood circulation
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0042310 ! positively regulates vasoconstriction
 relationship: RO:0002213 GO:0042310 ! positively regulates vasoconstriction
@@ -21853,8 +21818,8 @@ is_a: GO:0006810 ! transport
 is_a: GO:0051641 ! cellular localization
 is_a: GO:0051649 ! establishment of localization in cell
 intersection_of: GO:0006810 ! transport
-intersection_of: BFO:0000066 GO:0005622 ! occurs in intracellular
-relationship: BFO:0000066 GO:0005622 ! occurs in intracellular
+intersection_of: BFO:0000066 GO:0005622 ! occurs in intracellular anatomical structure
+relationship: BFO:0000066 GO:0005622 ! occurs in intracellular anatomical structure
 
 [Term]
 id: GO:0046915
@@ -21936,9 +21901,9 @@ id: GO:0047045
 name: testosterone 17-beta-dehydrogenase (NADP+) activity
 def: "Catalysis of the reaction: NADP+ + testosterone = NADPH + H+ + androst-4-ene-3,17-dione." []
 synonym: "17-ketoreductase activity" BROAD []
-synonym: "17beta-hydroxysteroid:NADP+ 17-oxidoreductase activity" EXACT []
-synonym: "NADP-dependent testosterone-17beta-oxidoreductase activity" EXACT []
-synonym: "testosterone 17beta-dehydrogenase (NADP+)" EXACT []
+synonym: "17beta-hydroxysteroid:NADP+ 17-oxidoreductase activity" RELATED []
+synonym: "NADP-dependent testosterone-17beta-oxidoreductase activity" RELATED []
+synonym: "testosterone 17beta-dehydrogenase (NADP+)" RELATED []
 is_a: GO:0033764 ! steroid dehydrogenase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
 
 [Term]
@@ -21946,15 +21911,15 @@ id: GO:0047291
 name: lactosylceramide alpha-2,3-sialyltransferase activity
 def: "Catalysis of the reaction: cytolipin-H + CMP-N-acetylneuraminate = alpha-N-acetylneuraminyl-2,3-beta-D-galactosyl-1,4-beta-D-glucosylceramide + CMP. Alpha-N-acetylneuraminyl-2,3-beta-D-galactosyl-1,4-beta-D-glucosylceramide is also known as GM3." []
 synonym: "CMP-acetylneuraminate-lactosylceramide-sialyltransferase" BROAD []
-synonym: "CMP-acetylneuraminic acid:lactosylceramide sialyltransferase activity" EXACT []
-synonym: "CMP-N-acetylneuraminate:lactosylceramide alpha-2,3-N-acetylneuraminyltransferase activity" EXACT []
-synonym: "CMP-sialic acid:lactosylceramide-sialyltransferase activity" EXACT []
-synonym: "cytidine monophosphoacetylneuraminate-lactosylceramide alpha2,3- sialyltransferase activity" EXACT []
+synonym: "CMP-acetylneuraminic acid:lactosylceramide sialyltransferase activity" RELATED []
+synonym: "CMP-N-acetylneuraminate:lactosylceramide alpha-2,3-N-acetylneuraminyltransferase activity" RELATED []
+synonym: "CMP-sialic acid:lactosylceramide-sialyltransferase activity" RELATED []
+synonym: "cytidine monophosphoacetylneuraminate-lactosylceramide alpha2,3- sialyltransferase activity" RELATED []
 synonym: "cytidine monophosphoacetylneuraminate-lactosylceramide sialyltransferase" BROAD []
-synonym: "ganglioside GM3 synthase activity" EXACT []
-synonym: "ganglioside GM3 synthetase activity" EXACT []
-synonym: "GM3 synthase activity" EXACT []
-synonym: "GM3 synthetase activity" EXACT []
+synonym: "ganglioside GM3 synthase activity" RELATED []
+synonym: "ganglioside GM3 synthetase activity" RELATED []
+synonym: "GM3 synthase activity" RELATED []
+synonym: "GM3 synthetase activity" RELATED []
 synonym: "SAT 1" RELATED []
 is_a: GO:0008373 ! sialyltransferase activity
 
@@ -21962,7 +21927,7 @@ is_a: GO:0008373 ! sialyltransferase activity
 id: GO:0047453
 name: ATP-dependent NAD(P)H-hydrate dehydratase activity
 def: "Catalysis of the reaction: (6S)-6beta-hydroxy-1,4,5,6-tetrahydronicotinamide adenine dinucleotide + ATP = ADP + 3 H(+) + NADH + phosphate." []
-synonym: "(6S)-beta-6-hydroxy-1,4,5,6-tetrahydronicotinamide-adenine-dinucleotide hydro-lyase (ATP-hydrolysing)" EXACT []
+synonym: "(6S)-beta-6-hydroxy-1,4,5,6-tetrahydronicotinamide-adenine-dinucleotide hydro-lyase (ATP-hydrolysing)" RELATED []
 synonym: "(6S)-beta-6-hydroxy-1,4,5,6-tetrahydronicotinamide-adenine-dinucleotide hydro-lyase(ATP-hydrolysing; NADH-forming)" RELATED []
 synonym: "ATP-dependent H(4)NAD(P)OH dehydratase activity" EXACT []
 synonym: "ATP-dependent H4NAD(P)OH dehydratase activity" EXACT []
@@ -21973,27 +21938,27 @@ is_a: GO:0016836 ! hydro-lyase activity
 id: GO:0047598
 name: 7-dehydrocholesterol reductase activity
 def: "Catalysis of the reaction: cholesterol + NADP+ = cholesta-5,7-dien-3-beta-ol + NADPH + H+." []
-synonym: "7-DHC reductase activity" EXACT []
-synonym: "cholesterol:NADP+ delta7-oxidoreductase activity" EXACT []
+synonym: "7-DHC reductase activity" RELATED []
+synonym: "cholesterol:NADP+ delta7-oxidoreductase activity" RELATED []
 synonym: "sterol Delta(7)-reductase activity" BROAD []
-synonym: "sterol delta7-reductase activity" EXACT []
+synonym: "sterol delta7-reductase activity" RELATED []
 is_a: GO:0016628 ! oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0047708
 name: biotinidase activity
 def: "Catalysis of the reaction: biotin amide + H2O = biotin + NH3." []
-synonym: "amidohydrolase biotinidase activity" EXACT []
-synonym: "biotin-amide amidohydrolase activity" EXACT []
+synonym: "amidohydrolase biotinidase activity" RELATED []
+synonym: "biotin-amide amidohydrolase activity" RELATED []
 is_a: GO:0016811 ! hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides
 
 [Term]
 id: GO:0047865
 name: dimethylglycine dehydrogenase activity
 def: "Catalysis of the reaction: N,N-dimethylglycine + electron-transfer flavoprotein + H2O = sarcosine + formaldehyde + reduced electron-transfer flavoprotein." []
-synonym: "N,N-dimethylglycine oxidase activity" EXACT []
-synonym: "N,N-dimethylglycine:(acceptor) oxidoreductase (demethylating)" EXACT []
-synonym: "N,N-dimethylglycine:acceptor oxidoreductase (demethylating)" EXACT []
+synonym: "N,N-dimethylglycine oxidase activity" RELATED []
+synonym: "N,N-dimethylglycine:(acceptor) oxidoreductase (demethylating)" RELATED []
+synonym: "N,N-dimethylglycine:acceptor oxidoreductase (demethylating)" RELATED []
 is_a: GO:0046997 ! oxidoreductase activity, acting on the CH-NH group of donors, flavin as acceptor
 
 [Term]
@@ -22047,7 +22012,6 @@ name: regulation of vesicle targeting, to, from or within Golgi
 def: "Any process that modulates the frequency, rate, or destination of vesicle-mediated transport to, from or within the Golgi apparatus." []
 synonym: "regulation of Golgi vesicle targeting" EXACT []
 is_a: GO:0060341 ! regulation of cellular localization
-is_a: GO:0060627 ! regulation of vesicle-mediated transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0048199 ! regulates vesicle targeting, to, from or within Golgi
 relationship: RO:0002211 GO:0048199 ! regulates vesicle targeting, to, from or within Golgi
@@ -22366,7 +22330,7 @@ relationship: BFO:0000050 GO:0032504 ! part of multicellular organism reproducti
 id: GO:0048634
 name: regulation of muscle organ development
 def: "Any process that modulates the frequency, rate or extent of muscle development." []
-is_a: GO:2000026 ! regulation of multicellular organismal development
+is_a: GO:0050793 ! regulation of developmental process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0007517 ! regulates muscle organ development
 relationship: RO:0002211 GO:0007517 ! regulates muscle organ development
@@ -22525,7 +22489,8 @@ relationship: RO:0002213 GO:0048820 ! positively regulates hair follicle maturat
 id: GO:0048819
 name: regulation of hair follicle maturation
 def: "Any process that modulates the frequency, rate or extent of hair follicle maturation." []
-is_a: GO:0051797 ! regulation of hair follicle development
+is_a: GO:0050793 ! regulation of developmental process
+is_a: GO:0051239 ! regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0048820 ! regulates hair follicle maturation
 relationship: RO:0002211 GO:0048820 ! regulates hair follicle maturation
@@ -23000,8 +22965,8 @@ relationship: RO:0002213 GO:0022008 ! positively regulates neurogenesis
 id: GO:0050770
 name: regulation of axonogenesis
 def: "Any process that modulates the frequency, rate or extent of axonogenesis, the generation of an axon, the long process of a neuron." []
-is_a: GO:0010769 ! regulation of cell morphogenesis involved in differentiation
 is_a: GO:0010975 ! regulation of neuron projection development
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0007409 ! regulates axonogenesis
 relationship: RO:0002211 GO:0007409 ! regulates axonogenesis
@@ -23014,8 +22979,8 @@ synonym: "down regulation of axonogenesis" EXACT []
 synonym: "down-regulation of axonogenesis" EXACT []
 synonym: "downregulation of axonogenesis" EXACT []
 synonym: "inhibition of axonogenesis" NARROW []
-is_a: GO:0010771 ! negative regulation of cell morphogenesis involved in differentiation
 is_a: GO:0010977 ! negative regulation of neuron projection development
+is_a: GO:0050768 ! negative regulation of neurogenesis
 is_a: GO:0050770 ! regulation of axonogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0007409 ! negatively regulates axonogenesis
@@ -23030,8 +22995,8 @@ synonym: "stimulation of axonogenesis" NARROW []
 synonym: "up regulation of axonogenesis" EXACT []
 synonym: "up-regulation of axonogenesis" EXACT []
 synonym: "upregulation of axonogenesis" EXACT []
-is_a: GO:0010770 ! positive regulation of cell morphogenesis involved in differentiation
-is_a: GO:0010976 ! positive regulation of neuron projection development
+is_a: GO:0031346 ! positive regulation of cell projection organization
+is_a: GO:0050769 ! positive regulation of neurogenesis
 is_a: GO:0050770 ! regulation of axonogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0007409 ! positively regulates axonogenesis
@@ -23912,7 +23877,6 @@ synonym: "up regulation of transcription factor activity" EXACT []
 synonym: "up-regulation of transcription factor activity" EXACT []
 synonym: "upregulation of transcription factor activity" EXACT []
 is_a: GO:0044093 ! positive regulation of molecular function
-is_a: GO:0048518 ! positive regulation of biological process
 is_a: GO:0051090 ! regulation of DNA-binding transcription factor activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0003700 ! positively regulates DNA-binding transcription factor activity
@@ -24707,7 +24671,6 @@ id: GO:0051341
 name: regulation of oxidoreductase activity
 def: "Any process that modulates the frequency, rate or extent of oxidoreductase activity, the catalysis of an oxidation-reduction (redox) reaction, a reversible chemical reaction in which the oxidation state of an atom or atoms within a molecule is altered. One substrate acts as a hydrogen or electron donor and becomes oxidized, while the other acts as hydrogen or electron acceptor and becomes reduced." []
 synonym: "oxidoreductase regulator" EXACT []
-is_a: GO:0019222 ! regulation of metabolic process
 is_a: GO:0050790 ! regulation of catalytic activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0016491 ! regulates oxidoreductase activity
@@ -24848,7 +24811,6 @@ synonym: "stimulation of oxidoreductase activity" NARROW []
 synonym: "up regulation of oxidoreductase activity" EXACT []
 synonym: "up-regulation of oxidoreductase activity" EXACT []
 synonym: "upregulation of oxidoreductase activity" EXACT []
-is_a: GO:0009893 ! positive regulation of metabolic process
 is_a: GO:0043085 ! positive regulation of catalytic activity
 is_a: GO:0051341 ! regulation of oxidoreductase activity
 intersection_of: GO:0008150 ! biological_process
@@ -24864,7 +24826,6 @@ synonym: "down-regulation of oxidoreductase activity" EXACT []
 synonym: "downregulation of oxidoreductase activity" EXACT []
 synonym: "inhibition of oxidoreductase activity" NARROW []
 synonym: "oxidoreductase inhibitor" EXACT []
-is_a: GO:0009892 ! negative regulation of metabolic process
 is_a: GO:0043086 ! negative regulation of catalytic activity
 is_a: GO:0051341 ! regulation of oxidoreductase activity
 intersection_of: GO:0008150 ! biological_process
@@ -25393,7 +25354,6 @@ id: GO:0051797
 name: regulation of hair follicle development
 def: "Any process that modulates the frequency, rate or extent of hair follicle development." []
 is_a: GO:0042634 ! regulation of hair cycle
-is_a: GO:0045682 ! regulation of epidermis development
 is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0001942 ! regulates hair follicle development
@@ -25408,8 +25368,8 @@ synonym: "stimulation of hair follicle development" NARROW []
 synonym: "up regulation of hair follicle development" EXACT []
 synonym: "up-regulation of hair follicle development" EXACT []
 synonym: "upregulation of hair follicle development" EXACT []
-is_a: GO:0042635 ! positive regulation of hair cycle
-is_a: GO:0045684 ! positive regulation of epidermis development
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:0051797 ! regulation of hair follicle development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001942 ! positively regulates hair follicle development
@@ -25423,8 +25383,8 @@ synonym: "down regulation of hair follicle development" EXACT []
 synonym: "down-regulation of hair follicle development" EXACT []
 synonym: "downregulation of hair follicle development" EXACT []
 synonym: "inhibition of hair follicle development" NARROW []
-is_a: GO:0042636 ! negative regulation of hair cycle
-is_a: GO:0045683 ! negative regulation of epidermis development
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:0051797 ! regulation of hair follicle development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0001942 ! negatively regulates hair follicle development
@@ -26760,7 +26720,6 @@ id: GO:0061178
 name: regulation of insulin secretion involved in cellular response to glucose stimulus
 def: "Any process that modulates the frequency, rate or extent of the regulated release of insulin that contributes to the response of a cell to glucose." []
 synonym: "regulation of insulin secretion in response to glucose" EXACT []
-is_a: GO:0048583 ! regulation of response to stimulus
 is_a: GO:0050796 ! regulation of insulin secretion
 is_a: GO:0060341 ! regulation of cellular localization
 intersection_of: GO:0008150 ! biological_process
@@ -26952,8 +26911,8 @@ id: GO:0062033
 name: positive regulation of mitotic sister chromatid segregation
 def: "Any process that starts or increases the frequency, rate or extent of sister chromatid segregation during mitosis." []
 is_a: GO:0033047 ! regulation of mitotic sister chromatid segregation
-is_a: GO:0045840 ! positive regulation of mitotic nuclear division
 is_a: GO:0051984 ! positive regulation of chromosome segregation
+is_a: GO:0090068 ! positive regulation of cell cycle process
 is_a: GO:2001252 ! positive regulation of chromosome organization
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0000070 ! positively regulates mitotic sister chromatid segregation
@@ -27405,7 +27364,6 @@ synonym: "negative regulation of VDR signaling pathway" EXACT []
 synonym: "negative regulation of VDR signalling pathway" EXACT []
 synonym: "negative regulation vitamin D receptor signalling pathway" EXACT []
 is_a: GO:0009968 ! negative regulation of signal transduction
-is_a: GO:0032108 ! negative regulation of response to nutrient levels
 is_a: GO:0070562 ! regulation of vitamin D receptor signaling pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0070561 ! negatively regulates vitamin D receptor signaling pathway
@@ -27423,7 +27381,6 @@ synonym: "up regulation of vitamin D receptor signaling pathway" EXACT []
 synonym: "up-regulation of vitamin D receptor signaling pathway" EXACT []
 synonym: "upregulation of vitamin D receptor signaling pathway" EXACT []
 is_a: GO:0009967 ! positive regulation of signal transduction
-is_a: GO:0032109 ! positive regulation of response to nutrient levels
 is_a: GO:0070562 ! regulation of vitamin D receptor signaling pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0070561 ! positively regulates vitamin D receptor signaling pathway
@@ -28644,7 +28601,6 @@ def: "Any process that activates or increases the frequency, rate or extent of t
 is_a: GO:0032388 ! positive regulation of intracellular transport
 is_a: GO:0033157 ! regulation of intracellular protein transport
 is_a: GO:0051222 ! positive regulation of protein transport
-is_a: GO:1903829 ! positive regulation of cellular protein localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006886 ! positively regulates intracellular protein transport
 relationship: RO:0002213 GO:0006886 ! positively regulates intracellular protein transport
@@ -28710,7 +28666,6 @@ synonym: "negative regulation of EPSP" RELATED []
 synonym: "negative regulation of excitatory post-synaptic membrane potential" EXACT []
 synonym: "reduction of excitatory postsynaptic membrane potential" EXACT []
 is_a: GO:0009968 ! negative regulation of signal transduction
-is_a: GO:0031645 ! negative regulation of nervous system process
 is_a: GO:0050805 ! negative regulation of synaptic transmission
 is_a: GO:0098815 ! modulation of excitatory postsynaptic potential
 intersection_of: GO:0050789 ! regulation of biological process
@@ -28916,7 +28871,7 @@ def: "Any vesicle that is part of the intracellular region." []
 is_a: GO:0031982 ! vesicle
 is_a: GO:0043229 ! intracellular organelle
 intersection_of: GO:0031982 ! vesicle
-intersection_of: BFO:0000050 GO:0005622 ! part of intracellular
+intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0097711
@@ -29011,14 +28966,8 @@ is_a: GO:0031090 ! organelle membrane
 
 [Term]
 id: GO:0098589
-name: membrane region
-def: "A membrane that is a part of a larger membrane.  Examples include the apical region of the plasma membrane of an epithelial cell and the various regions of the endoplasmic reticulum membrane." []
-synonym: "region of membrane" EXACT []
-is_a: GO:0016020 ! membrane
-intersection_of: GO:0016020 ! membrane
-intersection_of: BFO:0000050 GO:0098805 ! part of whole membrane
-disjoint_from: GO:0098805 ! whole membrane
-relationship: BFO:0000050 GO:0098805 ! part of whole membrane
+is_obsolete: true
+replaced_by: GO:0016020
 
 [Term]
 id: GO:0098590
@@ -29264,9 +29213,8 @@ relationship: BFO:0000050 GO:0070469 ! part of respirasome
 
 [Term]
 id: GO:0098805
-name: whole membrane
-def: "Any lipid bilayer that completely encloses some structure, and all the proteins embedded in it or attached to it.  Examples include the plasma membrane and most organelle membranes." []
-is_a: GO:0016020 ! membrane
+is_obsolete: true
+replaced_by: GO:0016020
 
 [Term]
 id: GO:0098813
@@ -29307,7 +29255,7 @@ is_a: GO:0050892 ! intestinal absorption
 id: GO:0098857
 name: membrane microdomain
 def: "A membrane region with a lipid composition that is distinct from that of the membrane regions that surround it." []
-is_a: GO:0098589 ! membrane region
+is_a: GO:0016020 ! membrane
 
 [Term]
 id: GO:0098869
@@ -30283,7 +30231,6 @@ synonym: "down regulation of cytokine production involved in acute inflammatory 
 synonym: "down regulation of cytokine production involved in inflammatory response" RELATED []
 synonym: "negative regulation of cytokine production involved in acute inflammatory response" NARROW []
 is_a: GO:0001818 ! negative regulation of cytokine production
-is_a: GO:0050728 ! negative regulation of inflammatory response
 is_a: GO:1900015 ! regulation of cytokine production involved in inflammatory response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0002534 ! negatively regulates cytokine production involved in inflammatory response
@@ -30449,7 +30396,7 @@ intersection_of: BFO:0000066 GO:0005576 ! occurs in extracellular region
 id: GO:1900117
 name: regulation of execution phase of apoptosis
 def: "Any process that modulates the frequency, rate or extent of execution phase of apoptosis." []
-is_a: GO:0042981 ! regulation of apoptotic process
+is_a: GO:0050794 ! regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0097194 ! regulates execution phase of apoptosis
 relationship: RO:0002211 GO:0097194 ! regulates execution phase of apoptosis
@@ -30563,7 +30510,6 @@ id: GO:1900247
 name: regulation of cytoplasmic translational elongation
 def: "Any process that modulates the frequency, rate or extent of cytoplasmic translational elongation." []
 is_a: GO:0006448 ! regulation of translational elongation
-is_a: GO:2000765 ! regulation of cytoplasmic translation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0002182 ! regulates cytoplasmic translational elongation
 relationship: RO:0002211 GO:0002182 ! regulates cytoplasmic translational elongation
@@ -30593,7 +30539,6 @@ synonym: "up-regulation of cytoplasmic translational elongation" EXACT []
 synonym: "upregulation of cytoplasmic translational elongation" EXACT []
 is_a: GO:0045901 ! positive regulation of translational elongation
 is_a: GO:1900247 ! regulation of cytoplasmic translational elongation
-is_a: GO:2000767 ! positive regulation of cytoplasmic translation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0002182 ! positively regulates cytoplasmic translational elongation
 relationship: RO:0002213 GO:0002182 ! positively regulates cytoplasmic translational elongation
@@ -31067,7 +31012,6 @@ id: GO:1901190
 name: regulation of formation of translation initiation ternary complex
 def: "Any process that modulates the frequency, rate or extent of formation of translation initiation ternary complex." []
 synonym: "regulation of translation initiation ternary complex assembly" EXACT []
-is_a: GO:0006446 ! regulation of translational initiation
 is_a: GO:0043254 ! regulation of protein-containing complex assembly
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0001677 ! regulates formation of translation initiation ternary complex
@@ -31107,7 +31051,6 @@ synonym: "up-regulation of translation initiation ternary complex assembly" EXAC
 synonym: "upregulation of formation of translation initiation ternary complex" EXACT []
 synonym: "upregulation of translation initiation ternary complex assembly" EXACT []
 is_a: GO:0031334 ! positive regulation of protein-containing complex assembly
-is_a: GO:0045948 ! positive regulation of translational initiation
 is_a: GO:1901190 ! regulation of formation of translation initiation ternary complex
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001677 ! positively regulates formation of translation initiation ternary complex
@@ -31461,7 +31404,6 @@ synonym: "regulation of haematopoietic progenitor cell differentiation" EXACT []
 synonym: "regulation of haemopoietic progenitor cell differentiation" EXACT []
 synonym: "regulation of hemopoietic progenitor cell differentiation" EXACT []
 is_a: GO:0045595 ! regulation of cell differentiation
-is_a: GO:1903706 ! regulation of hemopoiesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0002244 ! regulates hematopoietic progenitor cell differentiation
 relationship: RO:0002211 GO:0002244 ! regulates hematopoietic progenitor cell differentiation
@@ -31491,7 +31433,6 @@ synonym: "negative regulation of haemopoietic progenitor cell differentiation" E
 synonym: "negative regulation of hemopoietic progenitor cell differentiation" EXACT []
 is_a: GO:0045596 ! negative regulation of cell differentiation
 is_a: GO:1901532 ! regulation of hematopoietic progenitor cell differentiation
-is_a: GO:1903707 ! negative regulation of hemopoiesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0002244 ! negatively regulates hematopoietic progenitor cell differentiation
 relationship: RO:0002212 GO:0002244 ! negatively regulates hematopoietic progenitor cell differentiation
@@ -31521,7 +31462,6 @@ synonym: "upregulation of hematopoietic progenitor cell differentiation" RELATED
 synonym: "upregulation of hemopoietic progenitor cell differentiation" EXACT []
 is_a: GO:0045597 ! positive regulation of cell differentiation
 is_a: GO:1901532 ! regulation of hematopoietic progenitor cell differentiation
-is_a: GO:1903708 ! positive regulation of hemopoiesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0002244 ! positively regulates hematopoietic progenitor cell differentiation
 relationship: RO:0002213 GO:0002244 ! positively regulates hematopoietic progenitor cell differentiation
@@ -31952,7 +31892,6 @@ def: "Any process that modulates the frequency, rate or extent of mitochondrial 
 synonym: "regulation of mitochondrial DNA metabolism" EXACT []
 synonym: "regulation of mtDNA metabolic process" EXACT []
 synonym: "regulation of mtDNA metabolism" EXACT []
-is_a: GO:0010821 ! regulation of mitochondrion organization
 is_a: GO:0051052 ! regulation of DNA metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0032042 ! regulates mitochondrial DNA metabolic process
@@ -31981,7 +31920,6 @@ synonym: "inhibition of mtDNA metabolism" EXACT []
 synonym: "negative regulation of mitochondrial DNA metabolism" EXACT []
 synonym: "negative regulation of mtDNA metabolic process" EXACT []
 synonym: "negative regulation of mtDNA metabolism" EXACT []
-is_a: GO:0010823 ! negative regulation of mitochondrion organization
 is_a: GO:0051053 ! negative regulation of DNA metabolic process
 is_a: GO:1901858 ! regulation of mitochondrial DNA metabolic process
 intersection_of: GO:0008150 ! biological_process
@@ -32338,7 +32276,6 @@ def: "Any process that modulates the frequency, rate or extent of apoptotic proc
 synonym: "regulation of apoptosis involved in development" RELATED []
 synonym: "regulation of apoptosis involved in morphogenesis" NARROW []
 synonym: "regulation of morphogenetic apoptosis" RELATED []
-is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
 is_a: GO:1904748 ! regulation of apoptotic process involved in development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0060561 ! regulates apoptotic process involved in morphogenesis
@@ -32746,7 +32683,6 @@ def: "Any process that modulates the frequency, rate or extent of axon guidance.
 synonym: "regulation of axon chemotaxis" RELATED []
 synonym: "regulation of axon growth cone guidance" NARROW []
 synonym: "regulation of axon pathfinding" EXACT []
-is_a: GO:0050770 ! regulation of axonogenesis
 is_a: GO:0050920 ! regulation of chemotaxis
 is_a: GO:0051270 ! regulation of cellular component movement
 intersection_of: GO:0008150 ! biological_process
@@ -32776,7 +32712,6 @@ synonym: "inhibition of axon pathfinding" NARROW []
 synonym: "negative regulation of axon chemotaxis" RELATED []
 synonym: "negative regulation of axon growth cone guidance" NARROW []
 synonym: "negative regulation of axon pathfinding" EXACT []
-is_a: GO:0050771 ! negative regulation of axonogenesis
 is_a: GO:0050922 ! negative regulation of chemotaxis
 is_a: GO:0051271 ! negative regulation of cellular component movement
 is_a: GO:1902667 ! regulation of axon guidance
@@ -32807,8 +32742,6 @@ synonym: "upregulation of axon chemotaxis" RELATED []
 synonym: "upregulation of axon growth cone guidance" NARROW []
 synonym: "upregulation of axon guidance" EXACT []
 synonym: "upregulation of axon pathfinding" EXACT []
-is_a: GO:0050772 ! positive regulation of axonogenesis
-is_a: GO:0050921 ! positive regulation of chemotaxis
 is_a: GO:0051272 ! positive regulation of cellular component movement
 is_a: GO:1902667 ! regulation of axon guidance
 intersection_of: GO:0008150 ! biological_process
@@ -33141,7 +33074,6 @@ id: GO:1903027
 name: regulation of opsonization
 def: "Any process that modulates the frequency, rate or extent of opsonization." []
 is_a: GO:0002697 ! regulation of immune effector process
-is_a: GO:0050764 ! regulation of phagocytosis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0008228 ! regulates opsonization
 relationship: RO:0002211 GO:0008228 ! regulates opsonization
@@ -33307,7 +33239,6 @@ synonym: "down regulation of acetylcholine-gated cation channel activity" EXACT 
 synonym: "down-regulation of acetylcholine-gated cation channel activity" EXACT []
 synonym: "downregulation of acetylcholine-gated cation channel activity" EXACT []
 synonym: "inhibition of acetylcholine-gated cation channel activity" NARROW []
-is_a: GO:0090394 ! negative regulation of excitatory postsynaptic potential
 is_a: GO:1903048 ! regulation of acetylcholine-gated cation channel activity
 is_a: GO:2000272 ! negative regulation of signaling receptor activity
 is_a: GO:2001258 ! negative regulation of cation channel activity
@@ -33431,7 +33362,6 @@ synonym: "up-regulation of protein lipidation" EXACT []
 synonym: "upregulation of lipid:protein modification" EXACT []
 synonym: "upregulation of protein amino acid lipidation" EXACT []
 synonym: "upregulation of protein lipidation" EXACT []
-is_a: GO:0010557 ! positive regulation of macromolecule biosynthetic process
 is_a: GO:0031401 ! positive regulation of protein modification process
 is_a: GO:0050747 ! positive regulation of lipoprotein metabolic process
 is_a: GO:1903059 ! regulation of protein lipidation
@@ -33614,7 +33544,6 @@ def: "Any process that modulates the frequency, rate or extent of pyruvate kinas
 synonym: "regulation of ATP:pyruvate 2-O-phosphotransferase activity" EXACT []
 synonym: "regulation of phosphoenol transphosphorylase activity" EXACT []
 synonym: "regulation of phosphoenolpyruvate kinase activity" EXACT []
-is_a: GO:0006110 ! regulation of glycolytic process
 is_a: GO:0051338 ! regulation of transferase activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0004743 ! regulates pyruvate kinase activity
@@ -33673,7 +33602,6 @@ synonym: "upregulation of ATP:pyruvate 2-O-phosphotransferase activity" EXACT []
 synonym: "upregulation of phosphoenol transphosphorylase activity" EXACT []
 synonym: "upregulation of phosphoenolpyruvate kinase activity" EXACT []
 synonym: "upregulation of pyruvate kinase activity" EXACT []
-is_a: GO:0045821 ! positive regulation of glycolytic process
 is_a: GO:0051347 ! positive regulation of transferase activity
 is_a: GO:1903302 ! regulation of pyruvate kinase activity
 intersection_of: GO:0008150 ! biological_process
@@ -33815,7 +33743,7 @@ relationship: RO:0002211 GO:0006997 ! regulates nucleus organization
 id: GO:1903379
 name: regulation of mitotic chromosome condensation
 def: "Any process that modulates the frequency, rate or extent of mitotic chromosome condensation." []
-is_a: GO:0033047 ! regulation of mitotic sister chromatid segregation
+is_a: GO:0010564 ! regulation of cell cycle process
 is_a: GO:0060623 ! regulation of chromosome condensation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0007076 ! regulates mitotic chromosome condensation
@@ -33829,7 +33757,7 @@ synonym: "activation of mitotic chromosome condensation" NARROW []
 synonym: "up regulation of mitotic chromosome condensation" EXACT []
 synonym: "up-regulation of mitotic chromosome condensation" EXACT []
 synonym: "upregulation of mitotic chromosome condensation" EXACT []
-is_a: GO:0062033 ! positive regulation of mitotic sister chromatid segregation
+is_a: GO:0090068 ! positive regulation of cell cycle process
 is_a: GO:1903379 ! regulation of mitotic chromosome condensation
 is_a: GO:1905821 ! positive regulation of chromosome condensation
 intersection_of: GO:0008150 ! biological_process
@@ -36391,7 +36319,6 @@ synonym: "inhibition of NMDA glutamate receptor activity" NARROW []
 synonym: "inhibition of NMDA receptor" NARROW []
 synonym: "negative regulation of N-methyl-D-aspartate selective glutamate receptor activity" EXACT []
 synonym: "negative regulation of NMDA receptor" EXACT []
-is_a: GO:1900450 ! negative regulation of glutamate receptor signaling pathway
 is_a: GO:2000272 ! negative regulation of signaling receptor activity
 is_a: GO:2000310 ! regulation of NMDA receptor activity
 is_a: GO:2001258 ! negative regulation of cation channel activity
@@ -36417,7 +36344,6 @@ synonym: "up-regulation of NMDA receptor" EXACT []
 synonym: "upregulation of N-methyl-D-aspartate selective glutamate receptor activity" EXACT []
 synonym: "upregulation of NMDA glutamate receptor activity" EXACT []
 synonym: "upregulation of NMDA receptor" EXACT []
-is_a: GO:1900451 ! positive regulation of glutamate receptor signaling pathway
 is_a: GO:2000273 ! positive regulation of signaling receptor activity
 is_a: GO:2000310 ! regulation of NMDA receptor activity
 is_a: GO:2001259 ! positive regulation of cation channel activity
@@ -36539,7 +36465,6 @@ name: regulation of mitochondrial translational elongation
 def: "Any process that modulates the frequency, rate or extent of mitochondrial translational elongation." []
 synonym: "regulation of mitochondrial translation elongation" EXACT []
 is_a: GO:0006448 ! regulation of translational elongation
-is_a: GO:0070129 ! regulation of mitochondrial translation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0070125 ! regulates mitochondrial translational elongation
 relationship: RO:0002211 GO:0070125 ! regulates mitochondrial translational elongation
@@ -36578,7 +36503,6 @@ synonym: "up-regulation of mitochondrial translational elongation" EXACT []
 synonym: "upregulation of mitochondrial translation elongation" EXACT []
 synonym: "upregulation of mitochondrial translational elongation" EXACT []
 is_a: GO:0045901 ! positive regulation of translational elongation
-is_a: GO:0070131 ! positive regulation of mitochondrial translation
 is_a: GO:1905082 ! regulation of mitochondrial translational elongation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0070125 ! positively regulates mitochondrial translational elongation
@@ -36827,7 +36751,6 @@ def: "Any process that modulates the frequency, rate or extent of cardiocyte dif
 synonym: "regulation of cardiac cell differentiation" EXACT []
 synonym: "regulation of heart cell differentiation" EXACT []
 is_a: GO:0045595 ! regulation of cell differentiation
-is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0035051 ! regulates cardiocyte differentiation
 relationship: RO:0002211 GO:0035051 ! regulates cardiocyte differentiation
@@ -36886,7 +36809,7 @@ relationship: RO:0002213 GO:0035051 ! positively regulates cardiocyte differenti
 id: GO:1905213
 name: negative regulation of mitotic chromosome condensation
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of mitotic chromosome condensation." []
-is_a: GO:0033048 ! negative regulation of mitotic sister chromatid segregation
+is_a: GO:0010948 ! negative regulation of cell cycle process
 is_a: GO:1902340 ! negative regulation of chromosome condensation
 is_a: GO:1903379 ! regulation of mitotic chromosome condensation
 intersection_of: GO:0008150 ! biological_process
@@ -36974,7 +36897,6 @@ relationship: RO:0002213 GO:0072175 ! positively regulates epithelial tube forma
 id: GO:1905292
 name: regulation of neural crest cell differentiation
 def: "Any process that modulates the frequency, rate or extent of neural crest cell differentiation." []
-is_a: GO:2000026 ! regulation of multicellular organismal development
 is_a: GO:2000736 ! regulation of stem cell differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0014033 ! regulates neural crest cell differentiation
@@ -37111,7 +37033,6 @@ def: "Any process that modulates the frequency, rate or extent of artery morphog
 synonym: "regulation of arterial morphogenesis" EXACT []
 synonym: "regulation of arteriogenesis" EXACT []
 is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
-is_a: GO:1901342 ! regulation of vasculature development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0048844 ! regulates artery morphogenesis
 relationship: RO:0002211 GO:0048844 ! regulates artery morphogenesis
@@ -37158,7 +37079,7 @@ synonym: "up-regulation of artery morphogenesis" EXACT []
 synonym: "upregulation of arterial morphogenesis" EXACT []
 synonym: "upregulation of arteriogenesis" EXACT []
 synonym: "upregulation of artery morphogenesis" EXACT []
-is_a: GO:1904018 ! positive regulation of vasculature development
+is_a: GO:0051094 ! positive regulation of developmental process
 is_a: GO:1905651 ! regulation of artery morphogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0048844 ! positively regulates artery morphogenesis
@@ -37363,7 +37284,6 @@ name: regulation of animal organ morphogenesis
 def: "Any process that modulates the frequency, rate or extent of animal organ morphogenesis." []
 synonym: "regulation of histogenesis and organogenesis" RELATED []
 is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
-is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0009887 ! regulates animal organ morphogenesis
 relationship: RO:0002211 GO:0009887 ! regulates animal organ morphogenesis
@@ -37772,7 +37692,6 @@ name: regulation of NMDA receptor activity
 def: "Any process that modulates the frequency, rate or extent of N-methyl-D-aspartate selective glutamate receptor activity." []
 synonym: "regulation of N-methyl-D-aspartate selective glutamate receptor activity" EXACT []
 is_a: GO:0099601 ! regulation of neurotransmitter receptor activity
-is_a: GO:1900449 ! regulation of glutamate receptor signaling pathway
 is_a: GO:2001257 ! regulation of cation channel activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0004972 ! regulates NMDA glutamate receptor activity
@@ -37846,8 +37765,6 @@ def: "Any process that enhances the establishment or increases the extent of the
 synonym: "positive regulation of EPSP" RELATED []
 synonym: "positive regulation of excitatory post-synaptic membrane potential" EXACT []
 is_a: GO:0009967 ! positive regulation of signal transduction
-is_a: GO:0031646 ! positive regulation of nervous system process
-is_a: GO:0050806 ! positive regulation of synaptic transmission
 is_a: GO:0098815 ! modulation of excitatory postsynaptic potential
 intersection_of: GO:0050789 ! regulation of biological process
 intersection_of: RO:0002213 GO:0060079 ! positively regulates excitatory postsynaptic potential
@@ -37860,8 +37777,6 @@ def: "Any process that modulates the frequency, rate or extent of peroxidase act
 synonym: "regulation of donor:hydrogen-peroxide oxidoreductase activity" EXACT []
 synonym: "regulation of oxyperoxidase activity" EXACT []
 synonym: "regulation of peroxidase reaction" EXACT []
-is_a: GO:0048583 ! regulation of response to stimulus
-is_a: GO:0050794 ! regulation of cellular process
 is_a: GO:0051341 ! regulation of oxidoreductase activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0004601 ! regulates peroxidase activity
@@ -37875,7 +37790,6 @@ synonym: "negative regulation of donor:hydrogen-peroxide oxidoreductase activity
 synonym: "negative regulation of oxyperoxidase activity" EXACT []
 synonym: "negative regulation of peroxidase reaction" EXACT []
 is_a: GO:0048523 ! negative regulation of cellular process
-is_a: GO:0048585 ! negative regulation of response to stimulus
 is_a: GO:0051354 ! negative regulation of oxidoreductase activity
 is_a: GO:2000468 ! regulation of peroxidase activity
 intersection_of: GO:0008150 ! biological_process
@@ -37890,7 +37804,6 @@ synonym: "positive regulation of donor:hydrogen-peroxide oxidoreductase activity
 synonym: "positive regulation of oxyperoxidase activity" EXACT []
 synonym: "positive regulation of peroxidase reaction" EXACT []
 is_a: GO:0048522 ! positive regulation of cellular process
-is_a: GO:0048584 ! positive regulation of response to stimulus
 is_a: GO:0051353 ! positive regulation of oxidoreductase activity
 is_a: GO:2000468 ! regulation of peroxidase activity
 intersection_of: GO:0008150 ! biological_process
@@ -37939,7 +37852,6 @@ def: "Any process that modulates the frequency, rate or extent of cardiac muscle
 synonym: "regulation of cardiomyocyte differentiation" EXACT []
 synonym: "regulation of heart muscle cell differentiation" RELATED []
 is_a: GO:0051153 ! regulation of striated muscle cell differentiation
-is_a: GO:0055024 ! regulation of cardiac muscle tissue development
 is_a: GO:1905207 ! regulation of cardiocyte differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0055007 ! regulates cardiac muscle cell differentiation
@@ -37952,7 +37864,6 @@ def: "Any process that stops, prevents or reduces the frequency, rate or extent 
 synonym: "negative regulation of cardiomyocyte differentiation" EXACT []
 synonym: "negative regulation of heart muscle cell differentiation" RELATED []
 is_a: GO:0051154 ! negative regulation of striated muscle cell differentiation
-is_a: GO:0055026 ! negative regulation of cardiac muscle tissue development
 is_a: GO:1905208 ! negative regulation of cardiocyte differentiation
 is_a: GO:2000725 ! regulation of cardiac muscle cell differentiation
 intersection_of: GO:0008150 ! biological_process
@@ -37966,7 +37877,6 @@ def: "Any process that activates or increases the frequency, rate or extent of c
 synonym: "positive regulation of cardiomyocyte differentiation" EXACT []
 synonym: "positive regulation of heart muscle cell differentiation" RELATED []
 is_a: GO:0051155 ! positive regulation of striated muscle cell differentiation
-is_a: GO:0055025 ! positive regulation of cardiac muscle tissue development
 is_a: GO:1905209 ! positive regulation of cardiocyte differentiation
 is_a: GO:2000725 ! regulation of cardiac muscle cell differentiation
 intersection_of: GO:0008150 ! biological_process
@@ -38059,7 +37969,6 @@ id: GO:2000825
 name: positive regulation of androgen receptor activity
 def: "Any process that activates or increases the frequency, rate or extent of androgen receptor activity." []
 is_a: GO:0006357 ! regulation of transcription by RNA polymerase II
-is_a: GO:0009967 ! positive regulation of signal transduction
 is_a: GO:0051091 ! positive regulation of DNA-binding transcription factor activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0004879 ! positively regulates nuclear receptor activity
@@ -38463,9 +38372,7 @@ id: GO:2001212
 name: regulation of vasculogenesis
 def: "Any process that modulates the frequency, rate or extent of vasculogenesis." []
 synonym: "regulation of vascular morphogenesis" EXACT []
-is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
 is_a: GO:0045595 ! regulation of cell differentiation
-is_a: GO:1901342 ! regulation of vasculature development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0001570 ! regulates vasculogenesis
 relationship: RO:0002211 GO:0001570 ! regulates vasculogenesis
@@ -38476,7 +38383,6 @@ name: negative regulation of vasculogenesis
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of vasculogenesis." []
 synonym: "negative regulation of vascular morphogenesis" EXACT []
 is_a: GO:0045596 ! negative regulation of cell differentiation
-is_a: GO:2000181 ! negative regulation of blood vessel morphogenesis
 is_a: GO:2001212 ! regulation of vasculogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0001570 ! negatively regulates vasculogenesis
@@ -38488,7 +38394,6 @@ name: positive regulation of vasculogenesis
 def: "Any process that activates or increases the frequency, rate or extent of vasculogenesis." []
 synonym: "positive regulation of vascular morphogenesis" EXACT []
 is_a: GO:0045597 ! positive regulation of cell differentiation
-is_a: GO:1904018 ! positive regulation of vasculature development
 is_a: GO:2001212 ! regulation of vasculogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001570 ! positively regulates vasculogenesis
@@ -38502,7 +38407,6 @@ synonym: "regulation of neuron chemotaxis" EXACT []
 synonym: "regulation of neuron guidance" RELATED []
 synonym: "regulation of neuronal migration" EXACT []
 is_a: GO:0030334 ! regulation of cell migration
-is_a: GO:0050767 ! regulation of neurogenesis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0001764 ! regulates neuron migration
 relationship: RO:0002211 GO:0001764 ! regulates neuron migration
@@ -38515,7 +38419,6 @@ synonym: "negative regulation of neuron chemotaxis" EXACT []
 synonym: "negative regulation of neuron guidance" RELATED []
 synonym: "negative regulation of neuronal migration" EXACT []
 is_a: GO:0030336 ! negative regulation of cell migration
-is_a: GO:0050768 ! negative regulation of neurogenesis
 is_a: GO:2001222 ! regulation of neuron migration
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0001764 ! negatively regulates neuron migration
@@ -38529,7 +38432,6 @@ synonym: "positive regulation of neuron chemotaxis" EXACT []
 synonym: "positive regulation of neuron guidance" RELATED []
 synonym: "positive regulation of neuronal migration" EXACT []
 is_a: GO:0030335 ! positive regulation of cell migration
-is_a: GO:0050769 ! positive regulation of neurogenesis
 is_a: GO:2001222 ! regulation of neuron migration
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001764 ! positively regulates neuron migration

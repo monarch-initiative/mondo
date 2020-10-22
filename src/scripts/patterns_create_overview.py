@@ -59,7 +59,7 @@ for pattern_dir in pattern_dirs.split("|"):
                 for v in y['vars']:
                     vs = re.sub("[^0-9a-zA-Z _]", "", y['vars'][v])
                     vsv = re.sub("[']", "", y['vars'][v])
-                    variables = variables+vs+" ("+y['classes'][vsv]+"), "
+                    variables = variables+v+" ("+y['classes'][vsv]+"), "
                 
                 for v in y['classes']:
                     cid = y['classes'][v]

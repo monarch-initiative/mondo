@@ -10,7 +10,7 @@ This is a listing of all the patterns hosted as part of this directory
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml |
 | Name | acquired |
 | Classes | MONDO:0021141, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acquired.tsv) |
 
@@ -32,7 +32,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/acute.yaml |
 | Name | acute |
 | Classes | PATO:0000389, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acute.tsv) |
 
@@ -55,7 +55,7 @@ Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adenocarcinoma.yaml |
 | Name | adenocarcinoma disease has location X |
 | Classes | MONDO:0004970, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenocarcinoma.tsv) |
 
@@ -78,7 +78,7 @@ Examples: [pituitary gland adenoma](http://purl.obolibrary.org/obo/MONDO_0006373
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adenoma.yaml |
 | Name | adenoma disease has location X |
 | Classes | MONDO:0004972, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenoma.tsv) |
 
@@ -101,7 +101,7 @@ Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adenosquamous_carcinoma.yaml |
 | Name | adenosquamous carcinoma disease has location X |
 | Classes | MONDO:0006074, UBERON:0010000,  |
-| Variables | multicellular anatomical structure (UBERON:0010000),  |
+| Variables | v0 (UBERON:0010000),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenosquamous_carcinoma.tsv) |
 
@@ -123,7 +123,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adult.yaml |
 | Name | adult |
 | Classes | HP:0003581, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adult.tsv) |
 
@@ -167,7 +167,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/allergy.yaml |
 | Name | allergy |
 | Classes | MONDO:0005271, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | substance (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergy.tsv) |
 
@@ -211,7 +211,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/autoimmune_inflammation.yaml |
 | Name | autoimmune_inflammation |
 | Classes | MONDO:0007179, UBERON:0000061,  |
-| Variables | anatomical structure (UBERON:0000061),  |
+| Variables | location (UBERON:0000061),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autoimmune_inflammation.tsv) |
 
@@ -229,7 +229,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/autosomal_dominant.yaml |
 | Name | autosomal_dominant |
 | Classes | HP:0000006, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_dominant.tsv) |
 
@@ -251,7 +251,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml |
 | Name | autosomal_recessive |
 | Classes | HP:0000007, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_recessive.tsv) |
 
@@ -321,7 +321,7 @@ See also: benign.yaml TODO: choose one over another*
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/benign_neoplasm.yaml |
 | Name | benign_neoplasm |
 | Classes | MONDO:0005165, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/benign_neoplasm.tsv) |
 
@@ -345,7 +345,7 @@ We use the generic 'disease has location' relation, which generalized over prima
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/cancer.yaml |
 | Name | cancer |
 | Classes | MONDO:0004992, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/cancer.tsv) |
 
@@ -369,7 +369,7 @@ We use the generic 'disease has location' relation, which generalized over prima
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/carcinoma.yaml |
 | Name | carcinoma |
 | Classes | MONDO:0004993, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/carcinoma.tsv) |
 
@@ -391,7 +391,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/carcinoma_in_situ.yaml |
 | Name | carcinoma_in_situ |
 | Classes | MONDO:0004647, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/carcinoma_in_situ.tsv) |
 
@@ -413,7 +413,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/childhood.yaml |
 | Name | childhood |
 | Classes | HP:0011463, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/childhood.tsv) |
 
@@ -435,7 +435,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/chronic.yaml |
 | Name | chronic |
 | Classes | PATO:0001863, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/chronic.tsv) |
 
@@ -457,7 +457,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/congenital.yaml |
 | Name | congenital |
 | Classes | MONDO:0021140, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/congenital.tsv) |
 
@@ -479,7 +479,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/consequence_of_infectious_disease.yaml |
 | Name | consequence_of_infectious_disease |
 | Classes | MONDO:0000001, MONDO:0005550,  |
-| Variables | disease (MONDO:0000001), infectious disease (MONDO:0005550),  |
+| Variables | parent (MONDO:0000001), cause (MONDO:0005550),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/consequence_of_infectious_disease.tsv) |
 
@@ -501,7 +501,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease_by_dysfunctional_structure.yaml |
 | Name | disease_by_dysfunctional_structure |
 | Classes | MONDO:0000001, UBERON:0000061,  |
-| Variables | anatomical structure (UBERON:0000061),  |
+| Variables | structure (UBERON:0000061),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_by_dysfunctional_structure.tsv) |
 
@@ -514,11 +514,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_by_dysfunctional_structure.tsv)
 ### Disease series by gene
-*Examples: 
-
-  * MONDO:0100000  MED12-related intellectual disability syndrome is defined in
-OWL as a 'X-linked syndromic intellectual disability' that disease_has_basis_in_dysfunction_of HGNC:11957 (MED12).
-  * Bardet-Biedl type N is defined by gene involved.*
+*This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like like MED12-related intellectual disability syndrome.  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)*
 
 | Attribute | Info |
 |----------|----------|
@@ -526,7 +522,7 @@ OWL as a 'X-linked syndromic intellectual disability' that disease_has_basis_in_
 | Name | disease_series_by_gene |
 | Classes | MONDO:0000001, SO:0001217,  |
 | Variables | disease (MONDO:0000001), gene (SO:0001217),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene.tsv) |
 
 #### Data preview: 
@@ -540,7 +536,7 @@ OWL as a 'X-linked syndromic intellectual disability' that disease_has_basis_in_
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene.tsv)
 ### Disrupts process
-*This is auto-generated. Add your description here
+*A disease that disrupts a process, like immune system function, or early development.
 Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0007004), [type IV hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0002459), [neural tube closure defect](http://purl.obolibrary.org/obo/MONDO_0017059) (55 total)*
 
 | Attribute | Info |
@@ -548,7 +544,7 @@ Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MON
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/disrupts_process.yaml |
 | Name | disease or disorder disease caused by disruption of X |
 | Classes | MONDO:0000001, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disrupts_process.tsv) |
 
@@ -563,15 +559,15 @@ Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MON
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disrupts_process.tsv)
 ### Environmental stimulus
-*TBD.*
+*A disease that is caused by exposure to an environmental stimulus, like the sun or pesticides.  Examples: [carbon monoxide-induced parkinsonism](http://purl.obolibrary.org/obo/MONDO_0017639), [cocaine intoxication](http://purl.obolibrary.org/obo/MONDO_0019544), [Colorado tick fever](http://purl.obolibrary.org/obo/MONDO_0005708)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml |
 | Name | environmental_stimulus |
 | Classes | MONDO:0000001, ENVO:00010483,  |
-| Variables | disease (MONDO:0000001), environmental material (ENVO:00010483),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | disease (MONDO:0000001), stimulus (ENVO:00010483),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) |
 
 #### Data preview: 
@@ -585,7 +581,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv)
 ### Hemangioma
-*This is auto-generated. Add your description here
+*A hemangioma (a benign vascular lesion characterized by the formation of capillary-sized or cavernous vascular channels) that is located in a specific anatomical site.
 Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [breast hemangioma](http://purl.obolibrary.org/obo/MONDO_0003126), [gastric hemangioma](http://purl.obolibrary.org/obo/MONDO_0002414) (20 total)*
 
 | Attribute | Info |
@@ -593,8 +589,8 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/hemangioma.yaml |
 | Name | hemangioma disease has location X |
 | Classes | MONDO:0006500, UBERON:0001062,  |
-| Variables | anatomical entity (UBERON:0001062),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | v0 (UBERON:0001062),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv) |
 
 #### Data preview: 
@@ -608,7 +604,7 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv)
 ### Inborn metabolic
-*TBD.*
+*An acquired metabolic disease that causes disruption of a process.*
 
 | Attribute | Info |
 |----------|----------|
@@ -616,7 +612,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | inborn_metabolic |
 | Classes | MONDO:0019052, BFO:0000015,  |
 | Variables | process (BFO:0000015),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv) |
 
 #### Data preview: 
@@ -630,16 +626,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv)
 ### Inborn metabolic disrupts
-*This is auto-generated. Add your description here
-Examples: [mitochondrial DNA maintenance syndrome](http://purl.obolibrary.org/obo/MONDO_0018121), [inborn disorder of methionine cycle and sulfur amino acid metabolism](http://purl.obolibrary.org/obo/MONDO_0019222), [inborn aminoacylase deficiency](http://purl.obolibrary.org/obo/MONDO_0017686) (51 total)*
+*This pattern is used for inborn errors of metabolism that cause disruption of a specific biological process, such as enzyme activity or ion transport. 
+Examples: ['5-oxoprolinase deficiency (disease)'](http://purl.obolibrary.org/obo/MONDO_0009825), [inborn disorder of methionine cycle and sulfur amino acid metabolism](http://purl.obolibrary.org/obo/MONDO_0019222), [inborn aminoacylase deficiency](http://purl.obolibrary.org/obo/MONDO_0017686) (51 total)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic_disrupts.yaml |
 | Name | inborn errors of metabolism disease caused by disruption of X |
 | Classes | MONDO:0019052, owl:Thing,  |
-| Variables | owlThing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | v0 (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv) |
 
 #### Data preview: 
@@ -653,15 +649,16 @@ Examples: [mitochondrial DNA maintenance syndrome](http://purl.obolibrary.org/ob
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv)
 ### Infantile
-*TBD.*
+*An instance of a disease that has an onset of signs or symptoms of disease within the first 12 months of life (infantile onset).
+Examples: [infant botulism](http://purl.obolibrary.org/obo/MONDO_0015804), [infantile glycine encephalopathy](http://purl.obolibrary.org/obo/MONDO_0017354)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/infantile.yaml |
 | Name | infantile |
 | Classes | HP:0003593, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | disease (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infantile.tsv) |
 
 #### Data preview: 
@@ -675,15 +672,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infantile.tsv)
 ### Infectious disease by agent
-*TBD.*
+*Infectious diseases can be classified by the infectioos agent, such as bacteria, coronavirus, etc, that causes the disease.
+Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](http://purl.obolibrary.org/obo/MONDO_0015766)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml |
 | Name | infectious_disease_by_agent |
 | Classes | MONDO:0000001, NCBITaxon:1, MONDO:0005550,  |
-| Variables | organism (NCBITaxon:1),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | agent (NCBITaxon:1),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv) |
 
 #### Data preview: 
@@ -697,15 +695,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv)
 ### Infectious inflammation
-*This combines the infectious disease by agent pattern and the inflammation site patterm*
+*This combines the [infectious disease by agent pattern](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/infectious_disease_by_agent.yaml) and the [inflammatory disease by site](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inflammatory_disease_by_site.yaml) pattern.
+Examples: [bacterial endocarditis (disease)](http://purl.obolibrary.org/obo/MONDO_0006669), [fungal gastritis](http://purl.obolibrary.org/obo/MONDO_0002843)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/infectious_inflammation.yaml |
 | Name | infectious_inflammation |
 | Classes | MONDO:0000001, NCBITaxon:1, UBERON:0000061, MONDO:0005550,  |
-| Variables | anatomical structure (UBERON:0000061), organism (NCBITaxon:1),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | location (UBERON:0000061), agent (NCBITaxon:1),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_inflammation.tsv) |
 
 #### Data preview: 
@@ -720,15 +719,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_inflammation.tsv)
 ### Inflammatory disease by site
 *Inflammatory diseases can be classified by the location in which the pathological inflammatory process occurs.
-For inflammatory diseases caused by infection, this may be the site of infection*
+For inflammatory diseases caused by infection, this may be the site of infection.
+Examples: ['Achilles bursitis'](http://purl.obolibrary.org/obo/MONDO_0001594), [blepharitis](http://purl.obolibrary.org/obo/MONDO_0004785), [epiglottitis](http://purl.obolibrary.org/obo/MONDO_0005753)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/inflammatory_disease_by_site.yaml |
 | Name | inflammatory_disease_by_site |
 | Classes | MONDO:0000001, UBERON:0000061,  |
-| Variables | anatomical structure (UBERON:0000061),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | location (UBERON:0000061),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inflammatory_disease_by_site.tsv) |
 
 #### Data preview: 
@@ -742,15 +742,16 @@ For inflammatory diseases caused by infection, this may be the site of infection
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inflammatory_disease_by_site.tsv)
 ### Inherited susceptibility
-*This pattern should be used with OMIM phenotypic series (OMIMPS) for which the members are susceptibilities.*
+*This pattern should be used with OMIM phenotypic series (OMIMPS) for which the subclasses are susceptibilities. Note, this pattern should not have an asserted causative gene as logical axiom (and no single causative gene in text definition). The children should have asserted causative genes in the text definitions and in the logical axioms.
+Examples: ['migraine disorder'](http://purl.obolibrary.org/obo/MONDO_0005277), ['microvascular complications of diabetes, susceptibility'](http://purl.obolibrary.org/obo/MONDO_0000065), ['epilepsy, idiopathic generalized'](http://purl.obolibrary.org/obo/MONDO_0005579).*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml |
 | Name | susceptibility_by_gene |
 | Classes | MONDO:0000001, MONDO:0020573,  |
-| Variables | disease or disorder (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv) |
 
 #### Data preview: 
@@ -764,15 +765,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv)
 ### Isolated
-*TBD.*
+*Some diseases exist in both isolated and syndromic forms. For example, aniridia ([MONDO_0019172 aniridia](http://purl.obolibrary.org/obo/MONDO_0019172), [MONDO_0020148'syndromic aniridia'](http://purl.obolibrary.org/obo/MONDO_0020148) and [MONDO_0007119 'isolated aniridia'](http://purl.obolibrary.org/obo/MONDO_0007119). Use this pattern to define the isolated form of a disease when a term exists for the isolated/syndromic-neutral version. In general, this pattern should be used in parallel with syndromic. E.g. if you make a term 'syndromic disease, you should also have 'isolated disease' [see pattern here(https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/syndromic.yaml).  Note that the isolated and syndromic forms will be inferred to be disjoint due to the GCI pattern.
+Examples: ['isolated aniridia'](http://purl.obolibrary.org/obo/MONDO_0007119), ['isolated dystonia'](http://purl.obolibrary.org/obo/MONDO_0015494), ['isolated focal palmoplantar keratoderma'](http://purl.obolibrary.org/obo/MONDO_0017673)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml |
 | Name | isolated |
-| Classes | MONDO:0021128, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Classes | MONDO:0021128, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv) |
 
 #### Data preview: 
@@ -786,15 +788,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv)
 ### Juvenile
-*TBD.*
+*An instance of a disease that has an onset of signs or symptoms of disease between the age of 5 and 15 years (juvenile onset).
+Examples: [juvenile-onset Parkinson disease](http://purl.obolibrary.org/obo/MONDO_0000828), ['juvenile idiopathic scoliosis'](http://purl.obolibrary.org/obo/MONDO_0100076)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/juvenile.yaml |
 | Name | juvenile |
 | Classes | HP:0003621, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | disease (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv) |
 
 #### Data preview: 
@@ -808,7 +811,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv)
 ### Leiomyoma
-*This is auto-generated. Add your description here
+*A leiomyoma (a well-circumscribed benign smooth muscle neoplasm characterized by the presence of spindle cells with cigar-shaped nuclei, interlacing fascicles, and a whorled pattern) that is located in a specific anatomical entity.
 Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [ureter leiomyoma](http://purl.obolibrary.org/obo/MONDO_0001399), [urethra leiomyoma](http://purl.obolibrary.org/obo/MONDO_0002222) (30 total)*
 
 | Attribute | Info |
@@ -816,8 +819,8 @@ Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [uret
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/leiomyoma.yaml |
 | Name | leiomyoma disease has location X |
 | Classes | MONDO:0001572, UBERON:0001062,  |
-| Variables | anatomical entity (UBERON:0001062),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | v0 (UBERON:0001062),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyoma.tsv) |
 
 #### Data preview: 
@@ -831,7 +834,7 @@ Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [uret
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyoma.tsv)
 ### Leiomyosarcoma
-*This is auto-generated. Add your description here
+*An uncommon, aggressive malignant smooth muscle neoplasm, usually occurring in post-menopausal women that is characterized by a proliferation of neoplastic spindle cells that is located in a specific anatomical location.
 Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016283), [cutaneous leiomyosarcoma (disease)](http://purl.obolibrary.org/obo/MONDO_0003362), [breast leiomyosarcoma](http://purl.obolibrary.org/obo/MONDO_0003371) (29 total)*
 
 | Attribute | Info |
@@ -839,7 +842,7 @@ Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MO
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/leiomyosarcoma.yaml |
 | Name | leiomyosarcoma disease has location X |
 | Classes | MONDO:0005058, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyosarcoma.tsv) |
 
@@ -854,7 +857,7 @@ Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MO
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyosarcoma.tsv)
 ### Lipoma
-*This is auto-generated. Add your description here
+*A benign, usually painless, well-circumscribed lipomatous tumor composed of adipose tissue that is located in a specific anatomical location.
 Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorectal lipoma](http://purl.obolibrary.org/obo/MONDO_0003885), [tendon sheath lipoma](http://purl.obolibrary.org/obo/MONDO_0004076) (28 total)*
 
 | Attribute | Info |
@@ -862,8 +865,8 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/lipoma.yaml |
 | Name | lipoma disease has location X |
 | Classes | MONDO:0005106, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | v0 (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv) |
 
 #### Data preview: 
@@ -877,15 +880,16 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv)
 ### Location
-*TBD.*
+*A disease that is located in a specific anatomical site.
+Examples: ['abdominal cystic lymphangioma'](http://purl.obolibrary.org/obo/MONDO_0021726), ['articular cartilage disease'](http://purl.obolibrary.org/obo/MONDO_0003816), ['urethral disease'](http://purl.obolibrary.org/obo/MONDO_0004184)*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/location.yaml |
 | Name | location |
 | Classes | MONDO:0000001, owl:Thing,  |
-| Variables | disease (MONDO:0000001), owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | disease (MONDO:0000001), location (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location.tsv) |
 
 #### Data preview: 
@@ -906,7 +910,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml |
 | Name | location_top |
 | Classes | MONDO:0000001, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location_top.tsv) |
 
@@ -921,7 +925,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location_top.tsv)
 ### Lymphoma
-*This is auto-generated. Add your description here
+*A malignant (clonal) proliferation of B- lymphocytes or T- lymphocytes which involves the lymph nodes, bone marrow and/or extranodal sites. This category includes Non-Hodgkin lymphomas and Hodgkin lymphomas.
 Examples: [marginal zone lymphoma](http://purl.obolibrary.org/obo/MONDO_0017604), [ureteral lymphoma](http://purl.obolibrary.org/obo/MONDO_0001977), [colorectal lymphoma](http://purl.obolibrary.org/obo/MONDO_0024656) (37 total)*
 
 | Attribute | Info |
@@ -929,8 +933,8 @@ Examples: [marginal zone lymphoma](http://purl.obolibrary.org/obo/MONDO_0017604)
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/lymphoma.yaml |
 | Name | lymphoma disease has location X |
 | Classes | MONDO:0005062, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Variables | v0 (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lymphoma.tsv) |
 
 #### Data preview: 
@@ -951,7 +955,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/malignant.yaml |
 | Name | malignant |
 | Classes | MONDO:0005070, PATO:0002097, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | neoplasm (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/malignant.tsv) |
 
@@ -974,7 +978,7 @@ Examples: [cutaneous melanoma](http://purl.obolibrary.org/obo/MONDO_0005012), [m
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/melanoma.yaml |
 | Name | melanoma disease has location X |
 | Classes | MONDO:0005105, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/melanoma.tsv) |
 
@@ -997,7 +1001,7 @@ Examples: [skin meningioma](http://purl.obolibrary.org/obo/MONDO_0004429), [brai
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/meningioma.yaml |
 | Name | meningioma disease has location X |
 | Classes | MONDO:0016642, UBERON:0001062,  |
-| Variables | anatomical entity (UBERON:0001062),  |
+| Variables | v0 (UBERON:0001062),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/meningioma.tsv) |
 
@@ -1032,7 +1036,7 @@ Examples: [cutaneous mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MO
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/mucoepidermoid_carcinoma.yaml |
 | Name | mucoepidermoid carcinoma disease has location X |
 | Classes | MONDO:0003036, UBERON:0001062,  |
-| Variables | anatomical entity (UBERON:0001062),  |
+| Variables | v0 (UBERON:0001062),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/mucoepidermoid_carcinoma.tsv) |
 
@@ -1057,7 +1061,7 @@ Note that tumor is typically a synonym for neoplasm, although this can be contex
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/neoplasm.yaml |
 | Name | neoplasm |
 | Classes | MONDO:0005070, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neoplasm.tsv) |
 
@@ -1079,7 +1083,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/neoplasm_by_origin.yaml |
 | Name | neoplasm |
 | Classes | MONDO:0005070, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | structure (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neoplasm_by_origin.tsv) |
 
@@ -1098,7 +1102,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm.yaml |
 | Name | neoendocrine_neoplasm |
 | Classes | MONDO:0019496, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm.tsv) |
 
@@ -1120,7 +1124,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm_grade1.yaml |
 | Name | neoendocrine_neoplasm_grade1 |
 | Classes | MONDO:0019496, MONDO:0024491, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm_grade1.tsv) |
 
@@ -1155,7 +1159,7 @@ TODO: write better guidelines on what constitutes a secondary disease vs primary
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/postinfectious_disease.yaml |
 | Name | postinfectious_disease |
 | Classes | MONDO:0000001, MONDO:0005550, NCBITaxon:1,  |
-| Variables | organism (NCBITaxon:1), infectious disease (MONDO:0005550),  |
+| Variables | disease (NCBITaxon:1), feature (MONDO:0005550),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
@@ -1167,7 +1171,7 @@ TODO: write better guidelines on what constitutes a secondary disease vs primary
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/primary_infectious.yaml |
 | Name | primary infectious |
 | Classes | MONDO:0045036, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/primary_infectious.tsv) |
 
@@ -1186,7 +1190,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/rare.yaml |
 | Name | rare |
 | Classes | MONDO:0021136, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
@@ -1198,7 +1202,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/rare_genetic.yaml |
 | Name | rare_genetic |
 | Classes | MONDO:0021150, MONDO:0021136, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
@@ -1211,7 +1215,7 @@ Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_002
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to.yaml |
 | Name | X realized in response to X |
 | Classes | owl:Thing,  |
-| Variables | owl_thing (owl:Thing), owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing), v1 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
@@ -1246,7 +1250,7 @@ Examples: [rhabdomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/rhabdomyosarcoma.yaml |
 | Name | rhabdomyosarcoma disease has location X |
 | Classes | MONDO:0005212, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/rhabdomyosarcoma.tsv) |
 
@@ -1270,7 +1274,7 @@ We use the generic 'disease has location' relation, which generalized over prima
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/sarcoma.yaml |
 | Name | sarcoma |
 | Classes | MONDO:0005089, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/sarcoma.tsv) |
 
@@ -1293,7 +1297,7 @@ Examples: [cervical small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/small_cell_carcinoma.yaml |
 | Name | small cell carcinoma disease has location X |
 | Classes | MONDO:0000402, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/small_cell_carcinoma.tsv) |
 
@@ -1316,7 +1320,7 @@ Examples: [collagenopathy type 2 alpha 1](http://purl.obolibrary.org/obo/MONDO_0
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml |
 | Name | X disease has basis in dysfunction of X |
 | Classes | owl:Thing,  |
-| Variables | owlThing (owl:Thing), owlThing (owl:Thing),  |
+| Variables | v0 (owl:Thing), v1 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_dysfunctional_structure.tsv) |
 
@@ -1338,7 +1342,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml |
 | Name | specific_inflammatory_disease_by_site |
 | Classes | MONDO:0000001, NCBITaxon:1,  |
-| Variables | disease (MONDO:0000001), organism (NCBITaxon:1),  |
+| Variables | disease (MONDO:0000001), agent (NCBITaxon:1),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_infectious_disease_by_agent.tsv) |
 
@@ -1360,7 +1364,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml |
 | Name | specific_infectious_disease_by_location |
 | Classes | MONDO:0000001, UBERON:0000061,  |
-| Variables | disease (MONDO:0000001), anatomical structure (UBERON:0000061),  |
+| Variables | disease (MONDO:0000001), location (UBERON:0000061),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_infectious_disease_by_location.tsv) |
 
@@ -1382,7 +1386,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/specific_inflammatory_disease_by_site.yaml |
 | Name | specific_inflammatory_disease_by_site |
 | Classes | MONDO:0000001, UBERON:0000061,  |
-| Variables | disease (MONDO:0000001), anatomical structure (UBERON:0000061),  |
+| Variables | disease (MONDO:0000001), location (UBERON:0000061),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_inflammatory_disease_by_site.tsv) |
 
@@ -1405,7 +1409,7 @@ Examples: [cervical squamous cell carcinoma](http://purl.obolibrary.org/obo/MOND
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/squamous_cell_carcinoma.yaml |
 | Name | squamous cell carcinoma disease has location X |
 | Classes | MONDO:0005096, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | v0 (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/squamous_cell_carcinoma.tsv) |
 
@@ -1427,7 +1431,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml |
 | Name | susceptibility_by_gene |
 | Classes | MONDO:0000001, MONDO:0020573, SO:0001217,  |
-| Variables | gene (SO:0001217), disease or disorder (MONDO:0000001),  |
+| Variables | gene (SO:0001217), disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/susceptibility_by_gene.tsv) |
 
@@ -1442,15 +1446,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/susceptibility_by_gene.tsv)
 ### Syndromic
-*TBD.*
+*Some diseases exist in both isolated and syndromic forms. For example, aniridia ([MONDO_0019172 aniridia](http://purl.obolibrary.org/obo/MONDO_0019172), [MONDO_0020148'syndromic aniridia'](http://purl.obolibrary.org/obo/MONDO_0020148) and [MONDO_0007119 'isolated aniridia'](http://purl.obolibrary.org/obo/MONDO_0007119). Use this pattern to define the syndromic form of a disease when a term exists for the isolated/syndromic-neutral version. In general, this pattern should be used in parallel with isolated. E.g. if you make a term 'syndromic disease, you should also have 'isolated disease' [see pattern here(https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/isolated.yaml). 
+Note that the isolated and syndromic forms will be inferred to be disjoint due to the GCI pattern.*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml |
 | Name | syndromic |
-| Classes | MONDO:0021127, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Classes | MONDO:0021127, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/syndromic.tsv) |
 
 #### Data preview: 
@@ -1471,7 +1476,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/vectorBorneDisease.yaml |
 | Name | vectorBorneDisease |
 | Classes | MONDO:0005550, OBI:0100026,  |
-| Variables | infectious disease (MONDO:0005550), organism (OBI:0100026),  |
+| Variables | infectious_disease (MONDO:0005550), vector (OBI:0100026),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/vectorBorneDisease.tsv) |
 
@@ -1493,7 +1498,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/x_linked.yaml |
 | Name | x_linked |
 | Classes | HP:0001417, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/x_linked.tsv) |
 
@@ -1515,7 +1520,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml |
 | Name | y_linked |
 | Classes | HP:0001450, owl:Thing,  |
-| Variables | owl_thing (owl:Thing),  |
+| Variables | disease (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/y_linked.tsv) |
 
