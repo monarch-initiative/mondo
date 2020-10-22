@@ -21,11 +21,11 @@ A new release can be expected in [OLS](https://www.ebi.ac.uk/ols/ontologies/mond
 
 ### Am I allowed to change the content in Mondo?
 
-Mondo is a community-driven project and we welcome your feedback and suggested changes. We request that all proposed changed be suggested on [GitHub issue tracker](https://github.com/monarch-initiative/mondo), so they can be seen and discussed by the Mondo community. Note, you will need sign up for a free GitHub account, if you do not already have one.
+Mondo is a community-driven project and we welcome your feedback and suggested changes. We request that all proposed changed be suggested on the [GitHub issue tracker](https://github.com/monarch-initiative/mondo), so they can be seen and discussed by the Mondo community. Note, you will need sign up for a free GitHub account, if you do not already have one.
 
 ### How can I collaborate with Mondo?
 
-We welcome the participation of interested colleagues. We anticipate that the structure of Mondo will continue to be refined and completed for some time to come. Groups or persons with expert knowledge in a particular domain of disease(s) are invited to contribute their knowledge on a collaborative basis. See issues that need input from medical experts [here](https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed). Please contact us to discuss details.
+We welcome the participation of interested colleagues. The structure of Mondo will continue to be refined and completed for some time to come. Groups or persons with expert knowledge in a particular domain of disease(s) are invited to contribute their knowledge on a collaborative basis. See issues that need input from medical experts [here](https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed). Please contact us to discuss details.
 
 Join the Mondo users group [here](https://groups.google.com/forum/#!forum/mondo-users). {% comment %} add more content here, see HPO:  {% endcomment %}
 
@@ -52,6 +52,14 @@ There is a lot of overlap between diseases and phenotypes. Mondo and Human Pheno
 
 A phenotype (or a phenotypic feature) is a component of a disease, and HPO terms can be used to describe the set of phenotypic features that characterize a disease. There is a grey zone between diseases and phenotypic features. For instance, diabetes mellitus can be conceptualized as a disease, but it is also a feature of other diseases such as Bardet Biedl syndrome. In some cases like this, Mondo may label the disease entity with (disease) after the disease name, to distinguish it from the HPO phenotype term (for example, [MONDO:0005466 'hypersomnia (disease)'](http://www.ontobee.org/ontology/MONDO?iri=http://purl.obolibrary.org/obo/MONDO_0005466) and [HP:0100786 Hypersomnia](https://hpo.jax.org/app/browse/term/HP:0100786)).
 
+### How can we know what’s in OMIM/NCIt/Orphanet/Disease Ontology that’s not in MONDO or what’s in MONDO that is not in OMIM/NCIt/Orphanet/Disease Ontology? Is there an easy way to know this? 
+
+Mondo IDs are mapped to OMIM, NCIt, Orphanet and DOIDs, so this can be used to compare coverage. 
+
+### How do Mondo and Disease Ontology (DO) differ in terms of their classifications of cancer?
+
+Mondo and DO have slightly different approaches to classifying cancer, mondo’s approach is based on NCIT’s, and mondo is more closely aligned with NCIT when it comes to cancer.
+
 ### How do I cite Mondo?
 
 Please cite: Mungall, Christopher J., et al. 2017 [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Nucleic Acids Research 45 (D1): D712–22.
@@ -63,5 +71,9 @@ Please see our [blog post](https://medium.com/@MonarchInit/new-release-of-mondo-
 ### Does the definition of 'equivalent-class' mapping require that the Mondo/Other relationship is strictly 1:1?
 
 The semantics of owl equivalentClass are such that all concepts are strictly identical in meaning. This always translates to a 1:1 mapping, except when we do a 'proxy merge' - we decide that two concepts in an external resource mean the same thing. This is not very common, and the numbers usually come down as we work with the source ontologies to resolve this. See [ticket](https://github.com/monarch-initiative/mondo/issues/936).
+
+### Since there are several source ontologies, how does Mondo manage the mappings? Is there a resource that contains all of the mappings?
+
+We use semi-automated process to map the sources, but these are always manually evaluated by a curator. The mappings are distributed with the ontology (see [releases](https://github.com/monarch-initiative/mondo/releases) and we will soon be releasing these using a new format called [A Simple Standard for Sharing Ontology Mappings, SSSOM](https://github.com/OBOFoundry/SSSOM). We are also working with the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/index) developers on the [OxO mapping visualization tool](https://www.ebi.ac.uk/spot/oxo/).
 
 {% comment %} Review this page and add some more FAQs {% endcomment %}
