@@ -73,7 +73,7 @@ For example, MONDO:0003321 `hereditary Wilms' tumor` and `familial Wilms' tumor`
 
 The definition of the synonym is the same as the primary definition, but has additional qualifiers. 
 
-For example, MONDO:0004979 'asthma and 'exercise-induced asthma'
+For example, MONDO:0004979 `asthma` and `exercise-induced asthma`
 
 #### Broad
 
