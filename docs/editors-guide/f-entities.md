@@ -52,7 +52,14 @@ Use lowercase, even for initial letter, except for proper names (note: many syno
 
 Always annotate synonyms with xrefs. Many of these are currently DOID, Orphanet, GARD, etc IDs. We will add more directly referencing a publication (PMID CURIEs in the format PMID:XXXXXXX). Also add editor ID where appropriate (ORCID, in format with http://, for example: http://orcid.org/0000-0001-5208-3432).
 
-Always indicate synonym scope (see below). These are incorrect in many places where they have been brought in externally. **Do not trust scope if there is no synonym xref other than DO**.
+Always indicate synonym scope (see below). Currently the following annotation properties are used:
+
+- hasExactSynonym
+- hasBroadSynonym
+- hasNarrowSynonym
+- hasRelatedSynonym
+
+These are incorrect in many places where they have been brought in externally. **Do not trust scope if there is no synonym xref other than DO**.
 
 ### Synonym scope:
 
