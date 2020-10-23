@@ -27,7 +27,7 @@ Gioconda Alyea | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/ab
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
 Larry Babb | [ClinGen](https://clinicalgenome.org/) |
 Samantha Baxter | [Broad Institute](https://www.broadinstitute.org/) | [sambaxter](https://github.com/sambaxter)
-Taylor Bingaman | ClinGen](https://clinicalgenome.org/) | [tibingaman](https://github.com/tibingaman)
+Taylor Bingaman | [ClinGen](https://clinicalgenome.org/) | [tibingaman](https://github.com/tibingaman)
 Vanessa Boulanger | [NORD](https://rarediseases.org/) | [vanessaboulanger](https://github.com/vanessaboulanger)
 PJ Brooks | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [pjbrooksphd](https://github.com/pjbrooksphd)
 Tiffany Callahan | [University of Colorado School of Medicine](https://medschool.cuanschutz.edu/) | [callahantiff](https://github.com/callahantiff)
