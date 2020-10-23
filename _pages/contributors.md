@@ -23,11 +23,14 @@ Shahim Essaid | Oregon Health & Science University | [ShahimEssaid](https://gith
 
 Name | Affiliation | GitHub
 --- | --- | ---
+Gioconda Alyea | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [galyea-gard](https://github.com/galyea-gard )
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
 Larry Babb | [ClinGen](https://clinicalgenome.org/) |
 Samantha Baxter | [Broad Institute](https://www.broadinstitute.org/) | [sambaxter](https://github.com/sambaxter)
+Taylor Bingaman | ClinGen](https://clinicalgenome.org/) | [tibingaman](https://github.com/tibingaman)
 Vanessa Boulanger | [NORD](https://rarediseases.org/) | [vanessaboulanger](https://github.com/vanessaboulanger)
 PJ Brooks | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [pjbrooksphd](https://github.com/pjbrooksphd)
+Tiffany Callahan | [University of Colorado School of Medicine](https://medschool.cuanschutz.edu/) | [callahantiff](https://github.com/callahantiff)
 Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody](https://github.com/LCCarmody)
 Alice Chen | [NIH NCATS](National Center for Advancing Translational Sciences ) | [achenNCATS](https://github.com/achenNCATS)
 Christopher G Chute | [Johns Hopkins](https://www.jhu.edu/) | [chute](https://github.com/chute)
@@ -37,6 +40,7 @@ Marina DiStefano | [ClinGen](https://clinicalgenome.org/) | [marinadistefano](ht
 Colin Ellis | [CHOP](https://www.chop.edu/) | [colinellis1](https://github.com/colinellis1)
 Gilberto Fragoso | [NCI](https://www.cancer.gov/) | [NCIEVS](https://github.com/NCIEVS)
 Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.com/melluf)
+Jenny Goldstein | ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
 Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
 Ada Hamosh | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
@@ -55,6 +59,7 @@ Kate Megquier | [Broad Institute](https://www.broadinstitute.org/) | [kmegquier]
 Moni Munoz-Torres | [Monarch Initiative](http://monarchinitiative.org/) | [monicacecilia](https://github.com/monicacecilia)
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
 David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://github.com/dosumis)
+Brooke Palus | [ClinGen](https://clinicalgenome.org/) | 
 Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
 Ana Rath | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [ana-rath-orphanet](https://github.com/ana-rath-orphanet)
@@ -65,7 +70,8 @@ Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://githu
 Eric Sid | [NIH NCATS](National Center for Advancing Translational Sciences ) | [ericsid](https://github.com/ericsid)
 Rebecca Siegert | [Broad Institute](https://www.broadinstitute.org/) | [rebecca-siegert](https://github.com/rebecca-siegert)
 Morgan Similuk | [NIH NHGRI](https://www.genome.gov/) | [MorganSimiluk](https://github.com/MorganSimiluk)
-Andrea Storm | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [GARDInfoCenter](https://github.com/GARDInfoCenter)
+Tam Sneddon | [ClinGen](https://clinicalgenome.org/) | [tsneddon](https://github.com/tsneddon)
+Andrea Storm |[GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [GARDInfoCenter](https://github.com/GARDInfoCenter)
 Courtney Thaxton | [ClinGen](https://clinicalgenome.org/) | [courtneythaxton](https://github.com/courtneythaxton)
 Anne Thessen | [Monarch Initiative](http://monarchinitiative.org/) | [diatomsRcool](https://github.com/diatomsRcool)
 Matt Wright | [ClinGen](https://clinicalgenome.org/) | [wrightmw](https://github.com/wrightmw)
