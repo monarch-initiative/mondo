@@ -40,7 +40,7 @@ Marina DiStefano | [ClinGen](https://clinicalgenome.org/) | [marinadistefano](ht
 Colin Ellis | [CHOP](https://www.chop.edu/) | [colinellis1](https://github.com/colinellis1)
 Gilberto Fragoso | [NCI](https://www.cancer.gov/) | [NCIEVS](https://github.com/NCIEVS)
 Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.com/melluf)
-Jenny Goldstein | ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
+Jenny Goldstein | [ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
 Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
 Ada Hamosh | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
