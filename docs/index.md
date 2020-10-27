@@ -1,7 +1,5 @@
 # About Mondo
 
-Mondo is a multi-purpose ontology of diseases constructed originally to merge OMIM, Orphanet, NCIT, MESH, UMLS, DOID into a single coherent structure. Mondo aims to harmonize disease definitions across the world.
+he Mondo Disease Ontology (Mondo) aims to harmonize disease definitions across the world. It is a semi-automatically constructed ontology that merges in multiple disease resources to yield a coherent merged ontology. Original versions of Mondo were constructed entirely automatically and used the IDs of source databases and ontologies. Later, additional manually curated cross-ontology axioms were added, and a native Mondo ID system was used to avoid confusion with source databases.
 
-Originally Mondo used IDs from these source ontologies as clique leaders. With the new Mondo, we are minting our own IDs, as we are making substantial edits on top of merging. We retain both provenance and equivalence axioms pointing back to source ontologies. However, we frequently drop or modify axioms brought in from sources.
-
-This site contains the Mondo editors guide and documentation.
+One feature of Mondo is that it goes beyond loose xrefs. It curated precise 1:1 equivalence axioms connecting to other resources, validated by OWL reasoning. This means it is safe to propagate across these from Online Mendelian Inheritance in Man (OMIM), Orphanet, Experimental Factor Ontology (EFO), Disease Ontology (DOID) and the neoplasm branch of National Cancer Institute Thesaurus (NCIt).
