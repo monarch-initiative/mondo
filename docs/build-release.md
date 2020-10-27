@@ -38,7 +38,5 @@ The release mondo.owl will look like this in Protege:
 
 ## Release process:
 
-Currently Chris makes releases, but top priority is Dockerizing this so anyone can run it
-
-The size of the OWL file causes some problems with standard GH-based release management. We are currently using OSF.io but this is a pain. We also make GH releases with all main artefacts, we may switch to this mechanism.
+Mondo is released on a monthly basis around the first of the month. Additional releases are run ad hoc.
 
