@@ -52,6 +52,18 @@ There is a lot of overlap between diseases and phenotypes. Mondo and Human Pheno
 
 A phenotype (or a phenotypic feature) is a component of a disease, and HPO terms can be used to describe the set of phenotypic features that characterize a disease. There is a grey zone between diseases and phenotypic features. For instance, diabetes mellitus can be conceptualized as a disease, but it is also a feature of other diseases such as Bardet Biedl syndrome. In some cases like this, Mondo may label the disease entity with (disease) after the disease name, to distinguish it from the HPO phenotype term (for example, [MONDO:0005466 'hypersomnia (disease)'](http://www.ontobee.org/ontology/MONDO?iri=http://purl.obolibrary.org/obo/MONDO_0005466) and [HP:0100786 Hypersomnia](https://hpo.jax.org/app/browse/term/HP:0100786)).
 
+### How can we know what’s in OMIM/NCIt/Orphanet/Disease Ontology that’s not in Mondo or what’s in Mondo that is not in OMIM/NCIt/Orphanet/Disease Ontology? Is there an easy way to know this?
+
+Mondo IDs are mapped to OMIM, NCIt, Orphanet and DOIDs, so this can be used to compare coverage.
+
+### Since there are several source ontologies, how does Mondo manage the mappings? Is there a resource that contains all of the mappings?
+
+We use semi-automated process to map the sources, but these are always manually evaluated by a curator. The mappings are distributed with the ontology (see [releases](https://github.com/monarch-initiative/mondo/releases) and we will soon be releasing these using a new format called [A Simple Standard for Sharing Ontology Mappings, SSSOM](https://github.com/OBOFoundry/SSSOM).
+
+### How do Mondo and Disease Ontology (DO) differ in terms of their classifications of cancer?
+
+Mondo and DO have slightly different approaches to classifying cancer; Mondo’s approach is based on NCIT’s, and Mondo is more closely aligned with NCIT when it comes to cancer.
+
 ### How do I cite Mondo?
 
 Please cite: Mungall, Christopher J., et al. 2017 [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Nucleic Acids Research 45 (D1): D712–22.
