@@ -1,4 +1,4 @@
-import $ivy.`org.phenoscape::scowl:1.3`
+import $ivy.`org.phenoscape::scowl:1.3.4`
 import $ivy.`org.semanticweb.elk:elk-owlapi:0.4.3`
 
 import org.phenoscape.scowl._
@@ -7,6 +7,7 @@ import org.semanticweb.owlapi.model._
 import java.io._
 import org.semanticweb.owlapi.reasoner._
 import org.semanticweb.elk.owlapi._
+import scala.collection.JavaConverters._
 
 def loadOnt(path : String): OWLOntology = {
   val manager = OWLManager.createOWLOntologyManager()
@@ -16,7 +17,7 @@ def loadOnt(path : String): OWLOntology = {
 }
 
 def getReasoner(ontology : OWLOntology): OWLReasoner = {
-  new ElkReasonerFactory().reasonerFactory.createReasoner(ontology)
+  new ElkReasonerFactory().createReasoner(ontology)
 }
 
 // axioms can be mapped to categories
@@ -155,6 +156,6 @@ def compareAxioms(reasoner : OWLReasoner, ont : OWLOntology) = {
   }  
 }
 
-def t1 = {
-  compareAxioms(reasoner, doid)
-}
+//def t1 = {
+  //compareAxioms(reasoner, doid)
+//}

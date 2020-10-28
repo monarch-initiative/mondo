@@ -1,4 +1,7 @@
 format-version: 1.2
+data-version: mondo/releases/2020-10-21/imports/hp_import.owl
+subsetdef: hposlim_core ""
+subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
 
 [Term]
@@ -115,6 +118,19 @@ comment: The internal genital structures of the male including the testis, epidi
 xref: UMLS:C4025899
 is_a: HP:0000812 ! Abnormal internal genitalia
 is_a: HP:0010461 ! Abnormality of the male genitalia
+
+[Term]
+id: HP:0000023
+name: Inguinal hernia
+namespace: human_phenotype
+def: "Protrusion of the contents of the abdominal cavity through the inguinal canal." [HPO:probinson]
+comment: Inguinal hernia appears as a bulge in the groin.
+subset: hposlim_core
+xref: MEDDRA:10022016 "Inguinal hernia"
+xref: MSH:D006552
+xref: SNOMEDCT_US:396232000
+xref: UMLS:C0019294
+is_a: HP:0004299 ! Hernia of the abdominal wall
 
 [Term]
 id: HP:0000025
@@ -1273,12 +1289,11 @@ alt_id: HP:0008560
 alt_id: HP:0008563
 def: "A decreased magnitude of the sensory perception of sound." [HPO:probinson]
 comment: Hearing loss can be categorized by which part of the auditory system is damaged, as conductive hearing loss, sensorineural hearing loss, and mixed hearing loss. Another axis of classification uses the degree of hearing impairment. The degree of hearing loss is computed by using a three frequency average taken at 500 Hz, 1,000 Hz and 2,000 Hz. The average of these three frequencies is called the Pure Tone Average (PTA). 0-20 dB is considered normal, 21-40 dB mild loss, 41-60 dB moderate loss, 61-70 dB moderately severe loss,71-90 dB severe loss, and greater than 90 dB profound loss. Note that the word deafness is occasionally used to describe partial hearing loss. The World Health Organization uses the word deafness to refer to complete loss of the ability to hear, and hearing impairment to refer to any degree of reduced hearing.
-synonym: "Congenital deafness" EXACT []
-synonym: "Congenital hearing loss" EXACT []
 synonym: "Deafness" EXACT layperson []
 synonym: "Hearing defect" EXACT layperson []
 synonym: "Hearing impairment" EXACT layperson []
 synonym: "Hearing loss" RELATED layperson []
+synonym: "Hypacusis" EXACT []
 synonym: "Hypoacusis" RELATED []
 xref: Fyler:4868
 xref: MSH:D003638
@@ -2334,7 +2349,7 @@ synonym: "More active than typical" EXACT layperson [https://orcid.org/0000-0001
 xref: MSH:D006948
 xref: SNOMEDCT_US:44548000
 xref: UMLS:C0424295
-is_a: HP:0100022 ! Abnormality of movement
+is_a: HP:0000708 ! Behavioral abnormality
 
 [Term]
 id: HP:0000759
@@ -2369,17 +2384,19 @@ is_a: HP:0009830 ! Peripheral neuropathy
 
 [Term]
 id: HP:0000765
-name: Abnormality of the thorax
+name: Abnormal thorax morphology
 namespace: human_phenotype
 alt_id: HP:0100655
-def: "Any abnormality of the thorax (the region of the body formed by the sternum, the thoracic vertebrae and the ribs)." [HPO:curators]
+def: "Any abnormality of the thorax (the region of the body formed by the sternum, the thoracic vertebrae and the ribs)." [HPO:probinson]
 synonym: "Abnormality of the chest" EXACT layperson []
+synonym: "Abnormality of the thorax" EXACT []
+synonym: "Structural abnormality of the chest wall" EXACT []
 xref: UMLS:C4021797
 is_a: HP:0009121 ! Abnormal axial skeleton morphology
 
 [Term]
 id: HP:0000766
-name: Abnormality of the sternum
+name: Abnormal sternum morphology
 namespace: human_phenotype
 alt_id: HP:0000780
 alt_id: HP:0006586
@@ -2398,7 +2415,7 @@ synonym: "Pectus excavatum or pectus carinatum" EXACT []
 synonym: "Pectus excavatum/carinatum" EXACT []
 synonym: "Sternal anomalies" EXACT layperson []
 xref: UMLS:C1860493
-is_a: HP:0000765 ! Abnormality of the thorax
+is_a: HP:0000765 ! Abnormal thorax morphology
 
 [Term]
 id: HP:0000768
@@ -2411,7 +2428,7 @@ synonym: "Pigeon chest" EXACT layperson [https://en.wikipedia.org/wiki/pectus_ca
 xref: MSH:D066166
 xref: SNOMEDCT_US:205101001
 xref: UMLS:C0158731
-is_a: HP:0000766 ! Abnormality of the sternum
+is_a: HP:0000766 ! Abnormal sternum morphology
 
 [Term]
 id: HP:0000769
@@ -2446,7 +2463,6 @@ name: Abnormality of the thymus
 namespace: human_phenotype
 def: "Abnormality of the thymus, an organ located in the upper anterior portion of the chest cavity just behind the sternum and whose main function is to provide an environment for T lymphocyte maturation." [HPO:probinson]
 synonym: "Abnormality of the thymus" EXACT layperson []
-synonym: "Thymic hypoplasia" EXACT []
 xref: SNOMEDCT_US:93297002
 xref: UMLS:C0262650
 xref: UMLS:C0685891
@@ -2761,7 +2777,7 @@ synonym: "Abnormality of the skeletal system" EXACT layperson []
 synonym: "Skeletal abnormalities" EXACT layperson []
 synonym: "Skeletal anomalies" EXACT layperson []
 xref: UMLS:C4021790
-is_a: HP:0000118 ! Phenotypic abnormality
+is_a: HP:0033127 ! Abnormality of the musculoskeletal system
 
 [Term]
 id: HP:0000925
@@ -2805,7 +2821,7 @@ namespace: human_phenotype
 def: "The bones of the skeleton undergo a series of characteristic changes in size, shape, and calcification from fetal life until puberty. An abnormality of this process can include delayed or accelerated skeletal maturation, or deviation of some, but not all bones from the expected patterns of maturation." [HPO:probinson]
 synonym: "Abnormality of skeletal maturation" EXACT layperson []
 xref: UMLS:C4025818
-is_a: HP:0011843 ! Abnormality of skeletal physiology
+is_a: HP:0011843 ! Abnormality of musculoskeletal physiology
 
 [Term]
 id: HP:0000929
@@ -2820,11 +2836,12 @@ is_a: HP:0009121 ! Abnormal axial skeleton morphology
 
 [Term]
 id: HP:0000932
-name: Abnormality of the posterior cranial fossa
+name: Abnormal posterior cranial fossa morphology
 namespace: human_phenotype
 alt_id: HP:0007306
-def: "An abnormality of the fossa cranii posterior (the posterior fossa), which is made up primarily of the occipital bone and which surrounds to the foramen magnum." [HPO:curators]
-comment: This finding can be demonstrated by cerebral magnetic resonance imaging or computer tomography.
+def: "An abnormality of the fossa cranii posterior (the posterior fossa), which is made up primarily of the occipital bone and which surrounds to the foramen magnum." [HPO:probinson, PMID:25970099, PMID:28295149]
+comment: The floor of the cranial cavity is divided into three distinct depressions called the anterior, middle, and posterior cranial fossa. The posterior cranial fossa, the most posterior and deep of the three cranial fossae, accommodates the brainstem and cerebellum. Abnormalities of the posterier cranial fossa can be demonstrated by cerebral magnetic resonance imaging or computer tomography.
+synonym: "Abnormality of the posterior cranial fossa" EXACT []
 synonym: "Abnormality of the posterior fossa" EXACT []
 synonym: "Posterior fossa anomaly" EXACT []
 xref: UMLS:C3280768
@@ -3883,7 +3900,7 @@ name: Dandy-Walker malformation
 namespace: human_phenotype
 alt_id: HP:0001313
 alt_id: HP:0006809
-def: "A congenital brain malformation typically characterized by incomplete formation of the cerebellar vermis, dilation of the fourth ventricle, and enlargement of the posterior fossa. In layman's terms, Dandy Walker malformation is a cyst in the cerebellum (typically symmetrical) that is involved with the fourth ventricle. This may interfere with the ability to drain cerebrospinal fluid from the brain, resulting in hydrocephalus. Dandy Walker cysts are formed during early embryonic development, while the brain forms. The cyst in the cerebellum typically has several blood vessels running through it connecting to the brain, thereby prohibiting surgical removal." [HPO:probinson]
+def: "A congenital brain malformation typically characterized by incomplete formation of the cerebellar vermis, dilation of the fourth ventricle, and enlargement of the posterior fossa. In layman's terms, Dandy Walker malformation is a cyst in the cerebellum (typically symmetrical) that is involved with the fourth ventricle. This may interfere with the ability to drain cerebrospinal fluid from the brain, resulting in hydrocephalus. Dandy Walker cysts are formed during early embryonic development, while the brain forms. The cyst in the cerebellum typically has several blood vessels running through it connecting to the brain, thereby prohibiting surgical removal." [HPO:probinson, PMID:26246090]
 synonym: "Dandy-walker anomaly" EXACT []
 synonym: "Dandy-Walker cyst" EXACT []
 xref: MSH:D003616
@@ -3892,7 +3909,7 @@ xref: UMLS:C0010964
 is_a: HP:0001320 ! Cerebellar vermis hypoplasia
 is_a: HP:0002198 ! Dilated fourth ventricle
 is_a: HP:0002350 ! Cerebellar cyst
-is_a: HP:0005445 ! Widened posterior fossa
+is_a: HP:0005445 ! Enlarged posterior fossa
 
 [Term]
 id: HP:0001317
@@ -4187,8 +4204,8 @@ name: Hepatic steatosis
 namespace: human_phenotype
 alt_id: HP:0002252
 alt_id: HP:0200121
-def: "The presence of steatosis in the liver." [eMedicine:175472, HPO:probinson]
-comment: Steatosis refers to an abnormal accumulation of lipids within a cell or tissue.
+def: "Steatosis is a term used to denote lipid accumulation within hepatocytes." [HPO:probinson, PMID:31603713]
+comment: Although steatosis is the hallmark of the fatty liver disease, it is not a specific feature because it can be seen as part of other disease processes, such as drug injury, Wilson disease, or hepatitis C virus infection (especially genotype-3). Involvement of less than 5% of the hepatocytes by steatosis is considered clinically insignificant and within reference range. Based on the morphologic appearance and the size of the lipid droplets within the cytoplasm of the hepatocytes, steatosis is characterized as macrovesicular or microvesicular. Macrovesicular steatosis is characterized by large lipid droplets occupying the cytoplasm, displacing the nucleus to the periphery (large droplet macrovesicular steatosis) or multiple small lipid droplets of variable size occupying the cytoplasm with the nucleus maintaining its central location (small droplet macrovesicular steatosis). Microvesicular steatosis is characterized by innumerable tiny, relatively uniform lipid vacuoles that result in a bubbly appearance of the hepatocytes.
 synonym: "Fatty infiltration of liver" EXACT layperson []
 synonym: "Fatty liver" EXACT layperson []
 synonym: "Liver steatosis" EXACT []
@@ -5499,6 +5516,7 @@ id: HP:0001944
 name: Dehydration
 namespace: human_phenotype
 synonym: "Dehydration" EXACT layperson []
+synonym: "Exsiccosis" EXACT []
 xref: MSH:D003681
 xref: SNOMEDCT_US:34095006
 xref: UMLS:C0011175
@@ -5839,7 +5857,7 @@ is_a: HP:0012531 ! Pain
 
 [Term]
 id: HP:0002034
-name: Abnormality of the rectum
+name: Abnormal rectum morphology
 namespace: human_phenotype
 def: "An abnormaltiy of the rectum, the final segment of the large intestine that stores solid waste until it passes through the anus." [HPO:probinson]
 synonym: "Abnormality of the rectum" EXACT layperson []
@@ -5861,7 +5879,7 @@ xref: MEDDRA:10038077 "Rectal prolapse"
 xref: MSH:D012005
 xref: SNOMEDCT_US:57773001
 xref: UMLS:C0034888
-is_a: HP:0002034 ! Abnormality of the rectum
+is_a: HP:0002034 ! Abnormal rectum morphology
 
 [Term]
 id: HP:0002047
@@ -5953,7 +5971,7 @@ synonym: "Tonic-clonic convulsions" EXACT plural_form [HPO:skoehler]
 xref: MSH:D012640
 xref: SNOMEDCT_US:54200006
 xref: UMLS:C0494475
-is_a: HP:0020219 ! Motor seizure
+is_a: HP:0001250 ! Seizure
 
 [Term]
 id: HP:0002071
@@ -6330,7 +6348,7 @@ xref: MSH:D033461
 xref: SNOMEDCT_US:35885006
 xref: UMLS:C0740394
 is_a: HP:0002157 ! Azotemia
-is_a: HP:0004368 ! Increased purine level
+is_a: HP:0010932 ! Abnormal circulating nucleobase concentration
 
 [Term]
 id: HP:0002150
@@ -6366,7 +6384,7 @@ synonym: "High urine homocystine levels" EXACT layperson [ORCID:0000-0001-5208-3
 xref: MSH:D006712
 xref: SNOMEDCT_US:11282001
 xref: UMLS:C0019880
-is_a: HP:0003355 ! Aminoaciduria
+is_a: HP:0033095 ! Increased sulfur amino acid level in urine
 
 [Term]
 id: HP:0002157
@@ -7285,7 +7303,7 @@ def: "An unpleasant sensation characterized by physical discomfort (such as pric
 synonym: "Bone pain" EXACT layperson []
 xref: SNOMEDCT_US:12584003
 xref: UMLS:C0151825
-is_a: HP:0011843 ! Abnormality of skeletal physiology
+is_a: HP:0011843 ! Abnormality of musculoskeletal physiology
 is_a: HP:0012531 ! Pain
 
 [Term]
@@ -7505,7 +7523,7 @@ xref: SNOMEDCT_US:111253001
 xref: SNOMEDCT_US:60168000
 xref: UMLS:C0029443
 xref: UMLS:C2242472
-is_a: HP:0011843 ! Abnormality of skeletal physiology
+is_a: HP:0011843 ! Abnormality of musculoskeletal physiology
 is_a: HP:0012649 ! Increased inflammatory response
 
 [Term]
@@ -7571,7 +7589,7 @@ comment: The Latin word 'coxa' refers to the hip, and varus is a term for the in
 xref: MSH:D060905
 xref: SNOMEDCT_US:74820003
 xref: UMLS:C0239138
-is_a: HP:0003367 ! Abnormality of the femoral neck
+is_a: HP:0003367 ! Abnormal femoral neck morphology
 
 [Term]
 id: HP:0002813
@@ -7880,7 +7898,7 @@ alt_id: HP:0040290
 def: "Abnormality originating in one or more muscles, i.e., of the set of muscles of body." [HPO:probinson]
 synonym: "Muscular abnormality" EXACT layperson []
 xref: UMLS:C4021745
-is_a: HP:0000118 ! Phenotypic abnormality
+is_a: HP:0033127 ! Abnormality of the musculoskeletal system
 
 [Term]
 id: HP:0003027
@@ -8004,9 +8022,10 @@ is_a: HP:0032180 ! Abnormal circulating metabolite concentration
 
 [Term]
 id: HP:0003112
-name: Abnormality of serum amino acid level
+name: Abnormal circulating amino acid concentration
 namespace: human_phenotype
 def: "The presence of an abnormal decrease or increase of one or more amino acids in the blood circulation." [HPO:curators]
+synonym: "Abnormality of serum amino acid level" EXACT []
 synonym: "Abnormality of serum amino acid levels" EXACT layperson []
 xref: UMLS:C4025653
 is_a: HP:0004354 ! Abnormal circulating carboxylic acid concentration
@@ -8025,7 +8044,7 @@ id: HP:0003119
 name: Abnormal circulating lipid concentration
 namespace: human_phenotype
 alt_id: HP:0003611
-def: "An abnormality in the of lipid metabolism." [HPO:probinson]
+def: "Any deviation from the normal concentration of a lipid in the blood circulation." [HPO:probinson]
 comment: According to CHEBI:18059 'Lipids' is a loosely defined term for substances of biological origin that are soluble in nonpolar solvents. They consist of saponifiable lipids, such as glycerides (fats and oils) and phospholipids, as well as nonsaponifiable lipids, principally steroids.
 synonym: "Dyslipidemia" RELATED []
 xref: MSH:D050171
@@ -8300,6 +8319,7 @@ id: HP:0003355
 name: Aminoaciduria
 namespace: human_phenotype
 alt_id: HP:0002903
+alt_id: HP:0008335
 alt_id: HP:0200014
 def: "An increased concentration of an amino acid in the urine." [HPO:SKOEHLER]
 synonym: "Abnormal urinary amino-acid findings" RELATED layperson []
@@ -8309,24 +8329,26 @@ synonym: "Increased levels of animo acids in urine" EXACT layperson [orcid.org/0
 xref: SNOMEDCT_US:35912001
 xref: UMLS:C0238621
 xref: UMLS:C4020843
-is_a: HP:0012072 ! Aciduria
+is_a: HP:0003110 ! Abnormality of urine homeostasis
 
 [Term]
 id: HP:0003366
-name: Abnormality of the femoral neck or head region
+name: Abnormal femoral neck/head morphology
 namespace: human_phenotype
 synonym: "Abnormal neck or head of thigh bone" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Abnormality of the femoral neck or head region" EXACT []
 xref: UMLS:C4025622
 is_a: HP:0002823 ! Abnormality of femur morphology
 
 [Term]
 id: HP:0003367
-name: Abnormality of the femoral neck
+name: Abnormal femoral neck morphology
 namespace: human_phenotype
 def: "An abnormality of the femoral neck (which is the process of bone, connecting the femoral head with the femoral shaft)." [HPO:probinson]
 synonym: "Abnormal neck of thigh bone" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Abnormality of the femoral neck" EXACT []
 xref: UMLS:C4025621
-is_a: HP:0003366 ! Abnormality of the femoral neck or head region
+is_a: HP:0003366 ! Abnormal femoral neck/head morphology
 
 [Term]
 id: HP:0003398
@@ -8524,7 +8546,7 @@ name: Abnormality of connective tissue
 namespace: human_phenotype
 def: "Any abnormality of the soft tissues, including both connective tissue (tendons, ligaments, fascia, fibrous tissues, and fat)." [HPO:curators]
 xref: UMLS:C4025596
-is_a: HP:0000118 ! Phenotypic abnormality
+is_a: HP:0033127 ! Abnormality of the musculoskeletal system
 
 [Term]
 id: HP:0003552
@@ -8725,6 +8747,36 @@ xref: UMLS:C0940767
 is_a: HP:0001392 ! Abnormality of the liver
 created_by: peter
 creation_date: 2008-02-20T11:34:00Z
+
+[Term]
+id: HP:0004298
+name: Abnormality of the abdominal wall
+namespace: human_phenotype
+alt_id: HP:0001462
+def: "The presence of any abnormality affecting the abdominal wall." [HPO:probinson]
+subset: hposlim_core
+synonym: "Abnormality of external features of the abdomen" EXACT []
+synonym: "Abnormality of the abdominal wall" EXACT layperson []
+xref: UMLS:C4021664
+is_a: HP:0025031 ! Abnormality of the digestive system
+created_by: peter
+creation_date: 2008-02-20T11:40:00Z
+
+[Term]
+id: HP:0004299
+name: Hernia of the abdominal wall
+namespace: human_phenotype
+def: "The presence of a hernia in the abdominal wall." [HPO:probinson]
+comment: A hernia refers to a sac formed by the lining of the abdominal cavity (peritoneum). The sac can protrude through a hole or weak area in the abdominal fascia.
+subset: hposlim_core
+synonym: "Herniated abdominal wall" EXACT [ORCID:0000-0001-5208-3432]
+xref: Fyler:4414
+xref: SNOMEDCT_US:128545000
+xref: UMLS:C1442978
+is_a: HP:0010866 ! Abdominal wall defect
+is_a: HP:0100790 ! Hernia
+created_by: peter
+creation_date: 2008-02-20T11:42:00Z
 
 [Term]
 id: HP:0004303
@@ -9009,7 +9061,7 @@ namespace: human_phenotype
 def: "Any deviation from the normal concentration of a aromatic amino acid in the blood circulation." [HPO:probinson]
 synonym: "Abnormality of aromatic amino acid family metabolism" EXACT []
 xref: UMLS:C4025352
-is_a: HP:0003112 ! Abnormality of serum amino acid level
+is_a: HP:0033107 ! Abnormal circulating proteinogenic amino acid concentration
 created_by: peter
 creation_date: 2008-03-08T07:55:00Z
 
@@ -9022,7 +9074,7 @@ comment: Cysteine and methionine contain a sulfur atom.
 synonym: "Abnormal circulating sulphur amino acid concentration" EXACT uk_spelling []
 synonym: "Abnormality of sulfur-containing amino acids" EXACT []
 xref: UMLS:C4021660
-is_a: HP:0003112 ! Abnormality of serum amino acid level
+is_a: HP:0033107 ! Abnormal circulating proteinogenic amino acid concentration
 created_by: peter
 creation_date: 2008-03-08T08:01:00Z
 
@@ -9142,8 +9194,10 @@ creation_date: 2008-03-17T04:51:00Z
 
 [Term]
 id: HP:0004368
-name: Increased purine level
+name: Increased circulating purine concentration
 namespace: human_phenotype
+def: "Abnormally elevated concentration of a purine compound. Purine compounds are aromatic heterocyclic compounds containing a purine moiety, which is formed a pyrimidine-ring ring fused to an imidazole ring." []
+synonym: "Increased purine level" EXACT []
 synonym: "Increased purine levels" EXACT layperson []
 xref: UMLS:C4025332
 is_a: HP:0004352 ! Abnormal circulating purine concentration
@@ -9397,7 +9451,7 @@ alt_id: HP:0001590
 synonym: "Small chest" EXACT layperson []
 synonym: "Small thorax" EXACT layperson []
 xref: UMLS:C1837482
-is_a: HP:0000765 ! Abnormality of the thorax
+is_a: HP:0000765 ! Abnormal thorax morphology
 
 [Term]
 id: HP:0005262
@@ -9488,10 +9542,12 @@ is_a: HP:0002718 ! Recurrent bacterial infections
 
 [Term]
 id: HP:0005445
-name: Widened posterior fossa
+name: Enlarged posterior fossa
 namespace: human_phenotype
+def: "Abnormal increased size of the posterior cranial fossa." [PMID:28295149]
+synonym: "Widened posterior fossa" EXACT []
 xref: UMLS:C1855889
-is_a: HP:0000932 ! Abnormality of the posterior cranial fossa
+is_a: HP:0000932 ! Abnormal posterior cranial fossa morphology
 
 [Term]
 id: HP:0005506
@@ -10624,7 +10680,7 @@ synonym: "Limb pain" EXACT layperson []
 synonym: "Pain in extremities" RELATED layperson []
 xref: SNOMEDCT_US:90834002
 xref: UMLS:C0030196
-is_a: HP:0011843 ! Abnormality of skeletal physiology
+is_a: HP:0011843 ! Abnormality of musculoskeletal physiology
 is_a: HP:0012531 ! Pain
 created_by: peter
 creation_date: 2009-02-01T03:55:10Z
@@ -11315,6 +11371,18 @@ created_by: peter
 creation_date: 2010-08-03T06:29:35Z
 
 [Term]
+id: HP:0010866
+name: Abdominal wall defect
+namespace: human_phenotype
+def: "An incomplete closure of the abdominal wall." [HPO:probinson]
+synonym: "Abdominal wall defect" EXACT layperson []
+synonym: "Congenital anterior abdominal wall defect" EXACT []
+xref: UMLS:C0238577
+is_a: HP:0004298 ! Abnormality of the abdominal wall
+created_by: peter
+creation_date: 2010-08-03T09:55:15Z
+
+[Term]
 id: HP:0010876
 name: Abnormal circulating protein level
 namespace: human_phenotype
@@ -11361,7 +11429,7 @@ xref: UMLS:C0029445
 xref: UMLS:C0085660
 xref: UMLS:C0520474
 xref: UMLS:C0877326
-is_a: HP:0011843 ! Abnormality of skeletal physiology
+is_a: HP:0011843 ! Abnormality of musculoskeletal physiology
 created_by: sdoelken
 creation_date: 2010-09-24T10:11:05Z
 
@@ -11371,7 +11439,7 @@ name: Abnormal circulating branched chain amino acid concentration
 namespace: human_phenotype
 def: "Any deviation from the normal concentration of a branched chain family amino acid in the blood circulation." [HPO:probinson]
 xref: UMLS:C4023673
-is_a: HP:0003112 ! Abnormality of serum amino acid level
+is_a: HP:0033107 ! Abnormal circulating proteinogenic amino acid concentration
 created_by: peter
 creation_date: 2010-11-11T02:53:04Z
 
@@ -11474,7 +11542,7 @@ comment: This term is used to refers to abnormality in chemical reactions and pa
 synonym: "Abnormal nucleoside levels" RELATED []
 xref: UMLS:C4020762
 xref: UMLS:C4023643
-is_a: HP:0001939 ! Abnormality of metabolism/homeostasis
+is_a: HP:0004364 ! Abnormal circulating nitrogen compound concentration
 created_by: peter
 creation_date: 2011-01-06T10:46:17Z
 
@@ -11545,17 +11613,35 @@ created_by: peter
 creation_date: 2011-02-06T09:24:46Z
 
 [Term]
+id: HP:0010975
+name: Abnormal B cell count
+namespace: human_phenotype
+def: "A deviation from the normal count of B cells, i.e., the cells that are formed in the bone marrow, migrate to the peripheral lymphatic system, and mature into plasma cells or memory cells." [HPO:probinson, MP:0002458]
+synonym: "Abnormal number of B cells" EXACT [HPO:skoehler]
+synonym: "Abnormal numbers of B cells" EXACT [HPO:skoehler]
+synonym: "Abnormality of B cell count" EXACT []
+synonym: "Abnormality of B cell numbers" EXACT []
+xref: UMLS:C4021208
+is_a: HP:0002846 ! Abnormal B cell morphology
+is_a: HP:0040088 ! Abnormal lymphocyte count
+created_by: peter
+creation_date: 2011-02-06T09:38:18Z
+
+[Term]
 id: HP:0010976
 name: B lymphocytopenia
 namespace: human_phenotype
 alt_id: HP:0002956
 def: "An abnormal decrease from the normal count of B cells." [HPO:probinson]
 comment: Plasma B cells differentiate from B cells and secrete large amounts of antibodies.
+synonym: "B cell deficiency" EXACT []
 synonym: "B cell lymphopenia" EXACT []
+synonym: "Decreased B cell count" EXACT []
 synonym: "Low B cell count" EXACT layperson []
 synonym: "Reduction in B cell number" EXACT []
 xref: UMLS:C1855067
 is_a: HP:0001888 ! Lymphopenia
+is_a: HP:0010975 ! Abnormal B cell count
 created_by: peter
 creation_date: 2011-02-06T09:44:11Z
 
@@ -11935,6 +12021,7 @@ synonym: "Aphthous stomatitis" RELATED []
 synonym: "Buccal aphthous ulcers" RELATED []
 synonym: "Recurrent aphthous ulcers" RELATED []
 synonym: "Recurrent canker sores" EXACT layperson [ORCID:0000-0002-6548-5200]
+synonym: "Recurrent oral aphthae" EXACT []
 xref: MSH:D013281
 xref: SNOMEDCT_US:110426005
 xref: SNOMEDCT_US:398870000
@@ -12382,7 +12469,8 @@ creation_date: 2012-03-25T05:35:45Z
 id: HP:0011461
 name: Fetal onset
 namespace: human_phenotype
-def: "Onset prior to birth but after 8 weeks of gestation." [DDD:whouwehand]
+def: "Onset prior to birth but after 8 weeks of embryonic development (corresponding to a gestational age of 10 weeks)." [DDD:whouwehand]
+comment: The time interval of a gestation is called the gestation period. In human obstetrics, gestational age refers to the fertilization age plus two weeks. This is approximately the duration since the woman's last menstrual period began.
 synonym: "Foetal onset" EXACT uk_spelling []
 xref: UMLS:C4023347
 is_a: HP:0030674 ! Antenatal onset
@@ -12502,7 +12590,7 @@ name: Abnormality of joint mobility
 namespace: human_phenotype
 def: "An abnormality in the range and ease of motion of joints across their normal range." [HPO:probinson]
 xref: UMLS:C4023216
-is_a: HP:0011843 ! Abnormality of skeletal physiology
+is_a: HP:0011843 ! Abnormality of musculoskeletal physiology
 created_by: peter
 creation_date: 2012-04-18T07:09:28Z
 
@@ -12674,7 +12762,7 @@ creation_date: 2012-05-07T08:08:37Z
 
 [Term]
 id: HP:0011843
-name: Abnormality of skeletal physiology
+name: Abnormality of musculoskeletal physiology
 namespace: human_phenotype
 def: "An abnormality of the function of the skeletal system." [HPO:probinson]
 xref: UMLS:C4023164
@@ -14564,6 +14652,42 @@ is_a: HP:0010989 ! Abnormality of the intrinsic pathway
 created_by: peter
 
 [Term]
+id: HP:0033095
+name: Increased sulfur amino acid level in urine
+namespace: human_phenotype
+synonym: "An elevated level of a sulfur-containing amino acid in the urine." EXACT []
+synonym: "Increased sulfur-containing amino acid level in urine" EXACT []
+synonym: "Increased sulphur amino acid level in urine" EXACT uk_spelling []
+is_a: HP:0033100 ! Increased proteinogenic amino acid level in urine
+created_by: peter
+
+[Term]
+id: HP:0033100
+name: Increased proteinogenic amino acid level in urine
+namespace: human_phenotype
+def: "An elevated level of a proteinogenic amino acid in the urine. These are the 23 alpha-amino acids that are precursors to proteins, and are incorporated into proteins during translation. The group includes the 20 amino acids encoded by the nuclear genes of eukaryotes together with selenocysteine, pyrrolysine, and N-formylmethionine." []
+is_a: HP:0003355 ! Aminoaciduria
+created_by: peter
+
+[Term]
+id: HP:0033107
+name: Abnormal circulating proteinogenic amino acid concentration
+namespace: human_phenotype
+def: "An elevated level of a proteinogenic amino acid in the blood circulation. These are the 23 alpha-amino acids that are precursors to proteins, and are incorporated into proteins during translation. The group includes the 20 amino acids encoded by the nuclear genes of eukaryotes together with selenocysteine, pyrrolysine, and N-formylmethionine." []
+is_a: HP:0003112 ! Abnormal circulating amino acid concentration
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-29T11:59:15Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033127
+name: Abnormality of the musculoskeletal system
+namespace: human_phenotype
+def: "An anomaly of the musculoskeletal system, which consists of the bones of the skeleton, muscles, cartilage, tendons, ligaments, joints, and other connective tissue. The musculoskeletal system supports the weight of the body, maintains body position and produces movements of the body or of parts of the body." []
+is_a: HP:0000118 ! Phenotypic abnormality
+property_value: http://purl.org/dc/elements/1.1/date 2020-09-05T13:35:03Z xsd:dateTime
+created_by: peter
+
+[Term]
 id: HP:0040006
 name: Mortality/Aging
 namespace: human_phenotype
@@ -15386,6 +15510,19 @@ xref: UMLS:C0917799
 is_a: HP:0002360 ! Sleep disturbance
 created_by: doelkens
 creation_date: 2011-06-07T06:15:07Z
+
+[Term]
+id: HP:0100790
+name: Hernia
+namespace: human_phenotype
+synonym: "Hernias" RELATED [HPO:skoehler]
+xref: MSH:D006547
+xref: SNOMEDCT_US:414403008
+xref: SNOMEDCT_US:52515009
+xref: UMLS:C0019270
+is_a: HP:0003549 ! Abnormality of connective tissue
+created_by: doelkens
+creation_date: 2011-06-08T02:33:37Z
 
 [Term]
 id: HP:0100799

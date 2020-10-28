@@ -1,0 +1,51 @@
+pattern_name: sarcoma
+
+description: >4-
+
+    Sarcomas are malignant neoplasms arising from soft tissue or bone.
+
+    This is a design pattern for classes representing sarcomas based
+    on their location. This may be the site of origin, but it can also
+    represent a secondary site for metastatized sarcma.
+
+    We use the generic 'disease has location' relation, which
+    generalized over primary and secondary sites.
+
+classes:
+    sarcoma: MONDO:0005089
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+vars:
+    location: owl_thing
+
+name:
+    text: '%s sarcoma'
+    vars:
+      - location
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: sarcoma of %s
+    vars:
+      - location
+
+def:
+    text: A sarcoma involving a %s.
+    vars:
+      - location
+
+equivalentTo:
+    text: "'sarcoma' and 'disease has location' some %s"
+    vars:
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/sarcoma.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

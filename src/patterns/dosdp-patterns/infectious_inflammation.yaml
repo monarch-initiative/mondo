@@ -1,0 +1,57 @@
+pattern_name: infectious_inflammation
+
+description: >-
+
+    This combines the [infectious disease by agent pattern](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/infectious_disease_by_agent.yaml) and the [inflammatory disease by site](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inflammatory_disease_by_site.yaml) pattern.
+    
+    Examples: [bacterial endocarditis (disease)](http://purl.obolibrary.org/obo/MONDO_0006669), [fungal gastritis](http://purl.obolibrary.org/obo/MONDO_0002843)
+
+classes:
+    disease: MONDO:0000001
+    organism: NCBITaxon:1
+    anatomical structure: UBERON:0000061
+    infectious disease: MONDO:0005550
+
+relations:
+    disease has inflammation site: RO:0004027
+    realized in response to stimulus: RO:0004028
+
+vars:
+    location: "'anatomical structure'"
+    agent: "'organism'"
+
+name:
+    text: inflammation of %s due to %s
+    vars:
+      - location
+      - agent
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s %s inflammation'
+    vars:
+      - location
+      - agent
+
+def:
+    text: An inflammatory disease involving a pathogenic inflammatory response in
+        the %s caused by infection with %s.
+    vars:
+      - location
+      - agent
+
+equivalentTo:
+    text: "'infectious disease' and 'disease has inflammation site' some %s and 'realized\
+        \ in response to stimulus' some %s"
+    vars:
+      - location
+      - agent
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/infectious_inflammation.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432

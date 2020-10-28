@@ -1,0 +1,57 @@
+pattern_name: disease_series_by_gene
+
+description: >-
+  This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome. 
+  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)
+
+classes:
+    disease: MONDO:0000001
+    gene: SO:0001217
+
+relations:
+    disease has basis in dysfunction of: RO:0004020
+
+vars:
+    disease: "'disease'"
+    gene: "'gene'"
+
+name:
+    text: '%s caused by mutation in %s'
+    vars:
+      - disease
+      - gene
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s %s'
+    vars:
+      - gene
+      - disease
+  - annotationProperty: exact_synonym
+    text: '%s related %s'
+    vars:
+      - gene
+      - disease
+      
+def:
+    text: Any %s in which the cause of the disease is a mutation in the %s gene.
+    vars:
+      - disease
+      - gene
+
+
+equivalentTo:
+    text: "%s and 'disease has basis in dysfunction of' some %s"
+    vars:
+      - disease
+      - gene
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432

@@ -8,7 +8,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/so_import.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/so_import.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-10-21/imports/so_import.owl"/>
+    </owl:Ontology>
     
 
 
@@ -68,7 +70,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/so#derives_from">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives_from</rdfs:label>
+        <rdfs:label>derives_from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -76,8 +78,8 @@
     <!-- http://purl.obolibrary.org/obo/so#has_part -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/so#has_part">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inverse of part_of.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
+        <obo:IAO_0000115>Inverse of part_of.</obo:IAO_0000115>
+        <rdfs:label>has_part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -85,7 +87,7 @@
     <!-- http://purl.obolibrary.org/obo/so#has_quality -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/so#has_quality">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_quality</rdfs:label>
+        <rdfs:label>has_quality</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -95,7 +97,7 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/so#member_of">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/so#part_of"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">member_of</rdfs:label>
+        <rdfs:label>member_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -103,8 +105,8 @@
     <!-- http://purl.obolibrary.org/obo/so#overlaps -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/so#overlaps">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X overlaps Y iff there exists some Z such that Z contained_by X and Z contained_by Y.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">overlaps</rdfs:label>
+        <obo:IAO_0000115>X overlaps Y iff there exists some Z such that Z contained_by X and Z contained_by Y.</obo:IAO_0000115>
+        <rdfs:label>overlaps</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -113,8 +115,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/so#part_of">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X part_of Y if X is a subregion of Y.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</rdfs:label>
+        <obo:IAO_0000115>X part_of Y if X is a subregion of Y.</obo:IAO_0000115>
+        <rdfs:label>part_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -134,9 +136,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">region</rdfs:label>
+        <obo:IAO_0000115>A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sequence</oboInOwl:hasExactSynonym>
+        <rdfs:label>region</rdfs:label>
     </owl:Class>
     
 
@@ -145,9 +147,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000010">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000401"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gene which, when transcribed, can be translated into a protein.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein-coding</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein_coding</rdfs:label>
+        <obo:IAO_0000115>A gene which, when transcribed, can be translated into a protein.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>protein-coding</oboInOwl:hasExactSynonym>
+        <rdfs:label>protein_coding</rdfs:label>
     </owl:Class>
     
 
@@ -156,9 +158,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000011">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000401"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gene which can be transcribed, but will not be translated into a protein.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non protein-coding</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non_protein_coding</rdfs:label>
+        <obo:IAO_0000115>A gene which can be transcribed, but will not be translated into a protein.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>non protein-coding</oboInOwl:hasExactSynonym>
+        <rdfs:label>non_protein_coding</rdfs:label>
     </owl:Class>
     
 
@@ -167,14 +169,14 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/SO_0000400"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any extent of continuous biological sequence.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:misc_feature</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_note:other</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_note:sequence_feature</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">located_sequence_feature</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence feature</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">located sequence feature</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_feature</rdfs:label>
+        <obo:IAO_0000115>Any extent of continuous biological sequence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>INSDC_feature:misc_feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:other</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:sequence_feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>located_sequence_feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>sequence feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>located sequence feature</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sequence_feature</rdfs:label>
     </owl:Class>
     
 
@@ -184,11 +186,11 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000159">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The point at which one or more contiguous nucleotides were excised.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deleted_sequence</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide deletion</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide_deletion</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deletion</rdfs:label>
+        <obo:IAO_0000115>The point at which one or more contiguous nucleotides were excised.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>deleted_sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>nucleotide deletion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>nucleotide_deletion</oboInOwl:hasExactSynonym>
+        <rdfs:label>deletion</rdfs:label>
     </owl:Class>
     
 
@@ -197,12 +199,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000185">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000673"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transcript that in its initial state requires modification to be functional.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:precursor_RNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:prim_transcript</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">precursor RNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary transcript</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary_transcript</rdfs:label>
+        <obo:IAO_0000115>A transcript that in its initial state requires modification to be functional.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>INSDC_feature:precursor_RNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_feature:prim_transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>precursor RNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>primary transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label>primary_transcript</rdfs:label>
     </owl:Class>
     
 
@@ -211,10 +213,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000209">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000483"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary transcript encoding a ribosomal RNA.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA primary transcript</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA primary transcript</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA_primary_transcript</rdfs:label>
+        <obo:IAO_0000115>A primary transcript encoding a ribosomal RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>rRNA primary transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ribosomal RNA primary transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label>rRNA_primary_transcript</rdfs:label>
     </owl:Class>
     
 
@@ -229,9 +231,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000185"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transcript which has undergone the necessary modifications, if any, for its function. In eukaryotes this includes, for example, processing of introns, cleavage, base modification, and modifications to the 5&apos; and/or the 3&apos; ends, other than addition of bases. In bacteria functional mRNAs are usually not modified.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mature transcript</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mature_transcript</rdfs:label>
+        <obo:IAO_0000115>A transcript which has undergone the necessary modifications, if any, for its function. In eukaryotes this includes, for example, processing of introns, cleavage, base modification, and modifications to the 5&apos; and/or the 3&apos; ends, other than addition of bases. In bacteria functional mRNAs are usually not modified.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>mature transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label>mature_transcript</rdfs:label>
     </owl:Class>
     
 
@@ -246,9 +248,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001524"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A deviation in chromosome structure or number.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosome variation</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosome_variation</rdfs:label>
+        <obo:IAO_0000115>A deviation in chromosome structure or number.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>chromosome variation</oboInOwl:hasExactSynonym>
+        <rdfs:label>chromosome_variation</rdfs:label>
     </owl:Class>
     
 
@@ -257,9 +259,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000248">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A kind of kind of sequence alteration where the copies of a region present varies across a population.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence length alteration</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_length_alteration</rdfs:label>
+        <obo:IAO_0000115>A kind of kind of sequence alteration where the copies of a region present varies across a population.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sequence length alteration</oboInOwl:hasExactSynonym>
+        <rdfs:label>sequence_length_alteration</rdfs:label>
     </owl:Class>
     
 
@@ -274,12 +276,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000209"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RNA that comprises part of a ribosome, and that can provide both structural scaffolding and catalytic activity.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_qualifier:unknown</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:rRNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal RNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ribosomal ribonucleic acid</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA</rdfs:label>
+        <obo:IAO_0000115>RNA that comprises part of a ribosome, and that can provide both structural scaffolding and catalytic activity.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_qualifier:unknown</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_feature:rRNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ribosomal RNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ribosomal ribonucleic acid</oboInOwl:hasExactSynonym>
+        <rdfs:label>rRNA</rdfs:label>
     </owl:Class>
     
 
@@ -288,11 +290,11 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000298">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A feature where there has been exchange of genetic material in the event of mitosis or meiosis</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:misc_recomb</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_qualifier:other</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">recombination feature</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">recombination_feature</rdfs:label>
+        <obo:IAO_0000115>A feature where there has been exchange of genetic material in the event of mitosis or meiosis</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_feature:misc_recomb</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_qualifier:other</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>recombination feature</oboInOwl:hasExactSynonym>
+        <rdfs:label>recombination_feature</rdfs:label>
     </owl:Class>
     
 
@@ -301,9 +303,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000299">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000669"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where recombination or occurs during mitosis or meiosis.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific recombination site</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific_recombination_site</rdfs:label>
+        <obo:IAO_0000115>A location where recombination or occurs during mitosis or meiosis.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>specific recombination site</oboInOwl:hasExactSynonym>
+        <rdfs:label>specific_recombination_site</rdfs:label>
     </owl:Class>
     
 
@@ -312,9 +314,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000300">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000299"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A location where a gene is rearranged due to recombination during mitosis or meiosis.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">recombination feature of rearranged gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">recombination_feature_of_rearranged_gene</rdfs:label>
+        <obo:IAO_0000115>A location where a gene is rearranged due to recombination during mitosis or meiosis.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>recombination feature of rearranged gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>recombination_feature_of_rearranged_gene</rdfs:label>
     </owl:Class>
     
 
@@ -323,9 +325,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000301">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000300"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A feature where recombination has occurred for the purpose of generating a diversity in the immune system.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrate immune system gene recombination feature</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrate_immune_system_gene_recombination_feature</rdfs:label>
+        <obo:IAO_0000115>A feature where recombination has occurred for the purpose of generating a diversity in the immune system.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>vertebrate immune system gene recombination feature</oboInOwl:hasExactSynonym>
+        <rdfs:label>vertebrate_immune_system_gene_recombination_feature</rdfs:label>
     </owl:Class>
     
 
@@ -334,10 +336,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000325">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000209"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary transcript encoding a large ribosomal subunit RNA.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35S rRNA primary transcript</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA large subunit primary transcript</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA_large_subunit_primary_transcript</rdfs:label>
+        <obo:IAO_0000115>A primary transcript encoding a large ribosomal subunit RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>35S rRNA primary transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>rRNA large subunit primary transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label>rRNA_large_subunit_primary_transcript</rdfs:label>
     </owl:Class>
     
 
@@ -346,9 +348,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000342">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000299"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region specifically recognised by a recombinase where recombination can occur during mitosis or meiosis.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">site specific recombination target region</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">site_specific_recombination_target_region</rdfs:label>
+        <obo:IAO_0000115>A region specifically recognised by a recombinase where recombination can occur during mitosis or meiosis.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>site specific recombination target region</oboInOwl:hasExactSynonym>
+        <rdfs:label>site_specific_recombination_target_region</rdfs:label>
     </owl:Class>
     
 
@@ -356,9 +358,9 @@
     <!-- http://purl.obolibrary.org/obo/SO_0000400 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000400">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An attribute describes a quality of sequence.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence attribute</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_attribute</rdfs:label>
+        <obo:IAO_0000115>An attribute describes a quality of sequence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sequence attribute</oboInOwl:hasExactSynonym>
+        <rdfs:label>sequence_attribute</rdfs:label>
     </owl:Class>
     
 
@@ -367,9 +369,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000401">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000733"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An attribute describing a gene.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene attribute</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene_attribute</rdfs:label>
+        <obo:IAO_0000115>An attribute describing a gene.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>gene attribute</oboInOwl:hasExactSynonym>
+        <rdfs:label>gene_attribute</rdfs:label>
     </owl:Class>
     
 
@@ -378,10 +380,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000460">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000301"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Germline genomic DNA with the sequence for a V, D, C, or J portion of an immunoglobulin/T-cell receptor.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrate immunoglobulin T cell receptor segment</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrate_immunoglobulin/T-cell receptor gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrate_immunoglobulin_T_cell_receptor_segment</rdfs:label>
+        <obo:IAO_0000115>Germline genomic DNA with the sequence for a V, D, C, or J portion of an immunoglobulin/T-cell receptor.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>vertebrate immunoglobulin T cell receptor segment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>vertebrate_immunoglobulin/T-cell receptor gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>vertebrate_immunoglobulin_T_cell_receptor_segment</rdfs:label>
     </owl:Class>
     
 
@@ -390,10 +392,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000483">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000185"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A primary transcript that is never translated into a protein.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nc primary transcript</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">noncoding primary transcript</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nc_primary_transcript</rdfs:label>
+        <obo:IAO_0000115>A primary transcript that is never translated into a protein.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>nc primary transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>noncoding primary transcript</oboInOwl:hasExactSynonym>
+        <rdfs:label>nc_primary_transcript</rdfs:label>
     </owl:Class>
     
 
@@ -402,9 +404,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000571">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000011"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region that can be transcribed into a microRNA (miRNA).</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">miRNA encoding</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">miRNA_encoding</rdfs:label>
+        <obo:IAO_0000115>A region that can be transcribed into a microRNA (miRNA).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>miRNA encoding</oboInOwl:hasExactSynonym>
+        <rdfs:label>miRNA_encoding</rdfs:label>
     </owl:Class>
     
 
@@ -413,9 +415,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000578">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000011"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region that can be transcribed into a small nucleolar RNA (snoRNA).</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snoRNA encoding</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snoRNA_encoding</rdfs:label>
+        <obo:IAO_0000115>A region that can be transcribed into a small nucleolar RNA (snoRNA).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>snoRNA encoding</oboInOwl:hasExactSynonym>
+        <rdfs:label>snoRNA_encoding</rdfs:label>
     </owl:Class>
     
 
@@ -430,11 +432,11 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000325"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ribosomal RNA transcript that structures the large subunit of the ribosome.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LSU RNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LSU rRNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large subunit rRNA</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large_subunit_rRNA</rdfs:label>
+        <obo:IAO_0000115>Ribosomal RNA transcript that structures the large subunit of the ribosome.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>LSU RNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>LSU rRNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>large subunit rRNA</oboInOwl:hasExactSynonym>
+        <rdfs:label>large_subunit_rRNA</rdfs:label>
     </owl:Class>
     
 
@@ -443,11 +445,11 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000655">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000233"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An RNA transcript that does not encode for a protein rather the RNA molecule is the gene product.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_qualifier:other</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">known_ncrna</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">noncoding RNA</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncRNA</rdfs:label>
+        <obo:IAO_0000115>An RNA transcript that does not encode for a protein rather the RNA molecule is the gene product.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_qualifier:other</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>known_ncrna</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>noncoding RNA</oboInOwl:hasExactSynonym>
+        <rdfs:label>ncRNA</rdfs:label>
     </owl:Class>
     
 
@@ -456,9 +458,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000656">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000011"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region that can be transcribed into a small temporal RNA (stRNA). Found in roundworm development.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stRNA encoding</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stRNA_encoding</rdfs:label>
+        <obo:IAO_0000115>A region that can be transcribed into a small temporal RNA (stRNA). Found in roundworm development.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>stRNA encoding</oboInOwl:hasExactSynonym>
+        <rdfs:label>stRNA_encoding</rdfs:label>
     </owl:Class>
     
 
@@ -467,9 +469,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000663">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000011"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region that can be transcribed into a  transfer RNA (tRNA).</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tRNA encoding</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tRNA_encoding</rdfs:label>
+        <obo:IAO_0000115>A region that can be transcribed into a  transfer RNA (tRNA).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>tRNA encoding</oboInOwl:hasExactSynonym>
+        <rdfs:label>tRNA_encoding</rdfs:label>
     </owl:Class>
     
 
@@ -478,9 +480,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000669">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000298"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A feature where a segment of DNA has been rearranged from what it was in the parent cell.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence rearrangement feature</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_rearrangement_feature</rdfs:label>
+        <obo:IAO_0000115>A feature where a segment of DNA has been rearranged from what it was in the parent cell.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sequence rearrangement feature</oboInOwl:hasExactSynonym>
+        <rdfs:label>sequence_rearrangement_feature</rdfs:label>
     </owl:Class>
     
 
@@ -495,9 +497,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0002300"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An RNA synthesized on a DNA or RNA template by an RNA polymerase.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:misc_RNA</oboInOwl:hasBroadSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transcript</rdfs:label>
+        <obo:IAO_0000115>An RNA synthesized on a DNA or RNA template by an RNA polymerase.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_feature:misc_RNA</oboInOwl:hasBroadSynonym>
+        <rdfs:label>transcript</rdfs:label>
     </owl:Class>
     
 
@@ -512,9 +514,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0005855"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene</rdfs:label>
+        <obo:IAO_0000115>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>INSDC_feature:gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>gene</rdfs:label>
     </owl:Class>
     
 
@@ -523,9 +525,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000733">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000400"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An attribute describing a located_sequence_feature.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">feature attribute</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">feature_attribute</rdfs:label>
+        <obo:IAO_0000115>An attribute describing a located_sequence_feature.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>feature attribute</oboInOwl:hasExactSynonym>
+        <rdfs:label>feature_attribute</rdfs:label>
     </owl:Class>
     
 
@@ -540,9 +542,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region of a gene.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene member region</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene_member_region</rdfs:label>
+        <obo:IAO_0000115>A region of a gene.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>gene member region</oboInOwl:hasExactSynonym>
+        <rdfs:label>gene_member_region</rdfs:label>
     </owl:Class>
     
 
@@ -551,10 +553,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000946">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000342"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region specifically recognised by a recombinase, which inserts or removes another region marked by a distinct cognate integration/excision site.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integration excision site</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attachment site</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integration_excision_site</rdfs:label>
+        <obo:IAO_0000115>A region specifically recognised by a recombinase, which inserts or removes another region marked by a distinct cognate integration/excision site.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>integration excision site</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>attachment site</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>integration_excision_site</rdfs:label>
     </owl:Class>
     
 
@@ -563,12 +565,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001019">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000248"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A variation that increases or decreases the copy number of a given region.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNP</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNV</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy number polymorphism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy number variation</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">copy_number_variation</rdfs:label>
+        <obo:IAO_0000115>A variation that increases or decreases the copy number of a given region.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>CNP</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>CNV</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>copy number polymorphism</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>copy number variation</oboInOwl:hasExactSynonym>
+        <rdfs:label>copy_number_variation</rdfs:label>
     </owl:Class>
     
 
@@ -594,8 +596,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001235"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A genome is the sum of genetic material within a cell or virion.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genome</rdfs:label>
+        <obo:IAO_0000115>A genome is the sum of genetic material within a cell or virion.</obo:IAO_0000115>
+        <rdfs:label>genome</rdfs:label>
     </owl:Class>
     
 
@@ -604,16 +606,16 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001059">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0002072"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence_alteration is a sequence_feature whose extent is the deviation from another sequence.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:misc_feature</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:variation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_note:sequence_alteration</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence alteration</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">partially characterised change in DNA sequence</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">partially_characterised_change_in_DNA_sequence</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uncharacterised_change_in_nucleotide_sequence</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence variation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_alteration</rdfs:label>
+        <obo:IAO_0000115>A sequence_alteration is a sequence_feature whose extent is the deviation from another sequence.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_feature:misc_feature</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_feature:variation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:sequence_alteration</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>sequence alteration</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>partially characterised change in DNA sequence</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>partially_characterised_change_in_DNA_sequence</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>uncharacterised_change_in_nucleotide_sequence</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>sequence variation</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sequence_alteration</rdfs:label>
     </owl:Class>
     
 
@@ -639,9 +641,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000010"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gene that codes for an RNA that can be translated into a protein.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein coding gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein_coding_gene</rdfs:label>
+        <obo:IAO_0000115>A gene that codes for an RNA that can be translated into a protein.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>protein coding gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>protein_coding_gene</rdfs:label>
     </owl:Class>
     
 
@@ -650,8 +652,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001235">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region containing at least one unique origin of replication and a unique termination site.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">replicon</rdfs:label>
+        <obo:IAO_0000115>A region containing at least one unique origin of replication and a unique termination site.</obo:IAO_0000115>
+        <rdfs:label>replicon</rdfs:label>
     </owl:Class>
     
 
@@ -659,9 +661,9 @@
     <!-- http://purl.obolibrary.org/obo/SO_0001260 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001260">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of discontinuous sequences.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence collection</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_collection</rdfs:label>
+        <obo:IAO_0000115>A collection of discontinuous sequences.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sequence collection</oboInOwl:hasExactSynonym>
+        <rdfs:label>sequence_collection</rdfs:label>
     </owl:Class>
     
 
@@ -670,10 +672,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001263">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gene that encodes a non-coding RNA.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncRNA gene</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-coding RNA gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncRNA_gene</rdfs:label>
+        <obo:IAO_0000115>A gene that encodes a non-coding RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>ncRNA gene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>non-coding RNA gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>ncRNA_gene</rdfs:label>
     </owl:Class>
     
 
@@ -709,11 +711,11 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000656"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A small noncoding RNA of approximately 22 nucleotides in length which may be involved in regulation of gene expression.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">miRNA gene</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stRNA gene</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stRNA_gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">miRNA_gene</rdfs:label>
+        <obo:IAO_0000115>A small noncoding RNA of approximately 22 nucleotides in length which may be involved in regulation of gene expression.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>miRNA gene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>stRNA gene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>stRNA_gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>miRNA_gene</rdfs:label>
     </owl:Class>
     
 
@@ -739,9 +741,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000578"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A small noncoding RNA that guides chemical modification of other RNAs.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snoRNA gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snoRNA_gene</rdfs:label>
+        <obo:IAO_0000115>A small noncoding RNA that guides chemical modification of other RNAs.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>snoRNA gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>snoRNA_gene</rdfs:label>
     </owl:Class>
     
 
@@ -750,10 +752,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001268">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001263"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gene that encodes a small nuclear RNA.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small nuclear RNA gene</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snRNA gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snRNA_gene</rdfs:label>
+        <obo:IAO_0000115>A gene that encodes a small nuclear RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>small nuclear RNA gene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>snRNA gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>snRNA_gene</rdfs:label>
     </owl:Class>
     
 
@@ -779,9 +781,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000663"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A noncoding RNA that binds to a specific amino acid to allow that amino acid to be used by the ribosome during translation of RNA.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tRNA gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tRNA_gene</rdfs:label>
+        <obo:IAO_0000115>A noncoding RNA that binds to a specific amino acid to allow that amino acid to be used by the ribosome during translation of RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>tRNA gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>tRNA_gene</rdfs:label>
     </owl:Class>
     
 
@@ -790,11 +792,11 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001411">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A region defined by its disposition to be involved in a biological process.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_misc_feature</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_note:biological_region</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological region</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_region</rdfs:label>
+        <obo:IAO_0000115>A region defined by its disposition to be involved in a biological process.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_misc_feature</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:biological_region</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>biological region</oboInOwl:hasExactSynonym>
+        <rdfs:label>biological_region</rdfs:label>
     </owl:Class>
     
 
@@ -803,9 +805,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001483">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000002"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single nucleotide variant</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNV</rdfs:label>
+        <obo:IAO_0000115>SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>single nucleotide variant</oboInOwl:hasExactSynonym>
+        <rdfs:label>SNV</rdfs:label>
     </owl:Class>
     
 
@@ -814,10 +816,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001500">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001645"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A biological_region characterized as a single heritable trait in a phenotype screen. The heritable phenotype may be mapped to a chromosome but generally has not been characterized to a specific gene locus.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heritable phenotypic marker</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenotypic marker</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">heritable_phenotypic_marker</rdfs:label>
+        <obo:IAO_0000115>A biological_region characterized as a single heritable trait in a phenotype screen. The heritable phenotype may be mapped to a chromosome but generally has not been characterized to a specific gene locus.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>heritable phenotypic marker</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>phenotypic marker</oboInOwl:hasExactSynonym>
+        <rdfs:label>heritable_phenotypic_marker</rdfs:label>
     </owl:Class>
     
 
@@ -826,9 +828,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001506">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001026"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of sequences (often chromosomes) of an individual.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variant genome</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variant_genome</rdfs:label>
+        <obo:IAO_0000115>A collection of sequences (often chromosomes) of an individual.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>variant genome</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>variant_genome</rdfs:label>
     </owl:Class>
     
 
@@ -854,9 +856,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of one or more sequences of an individual.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variant collection</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variant_collection</rdfs:label>
+        <obo:IAO_0000115>A collection of one or more sequences of an individual.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>variant collection</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>variant_collection</rdfs:label>
     </owl:Class>
     
 
@@ -865,9 +867,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001508">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000733"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An attribute of alteration of one or more chromosomes.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alteration attribute</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alteration_attribute</rdfs:label>
+        <obo:IAO_0000115>An attribute of alteration of one or more chromosomes.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>alteration attribute</oboInOwl:hasExactSynonym>
+        <rdfs:label>alteration_attribute</rdfs:label>
     </owl:Class>
     
 
@@ -876,9 +878,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001509">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001508"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An attribute of a change in the structure or number of a chromosomes.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal variation attribute</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal_variation_attribute</rdfs:label>
+        <obo:IAO_0000115>An attribute of a change in the structure or number of a chromosomes.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>chromosomal variation attribute</oboInOwl:hasExactSynonym>
+        <rdfs:label>chromosomal_variation_attribute</rdfs:label>
     </owl:Class>
     
 
@@ -887,8 +889,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001510">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001509"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A change in chromosomes that occurs between two separate chromosomes.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intrachromosomal</rdfs:label>
+        <obo:IAO_0000115>A change in chromosomes that occurs between two separate chromosomes.</obo:IAO_0000115>
+        <rdfs:label>intrachromosomal</rdfs:label>
     </owl:Class>
     
 
@@ -897,9 +899,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001506"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">When a genome contains an abnormal amount of chromosomes.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomally aberrant genome</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomally_aberrant_genome</rdfs:label>
+        <obo:IAO_0000115>When a genome contains an abnormal amount of chromosomes.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>chromosomally aberrant genome</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>chromosomally_aberrant_genome</rdfs:label>
     </owl:Class>
     
 
@@ -908,10 +910,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001637">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001263"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gene that encodes for ribosomal RNA.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rDNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rRNA_gene</rdfs:label>
+        <obo:IAO_0000115>A gene that encodes for ribosomal RNA.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>rDNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>rRNA gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>rRNA_gene</rdfs:label>
     </owl:Class>
     
 
@@ -920,9 +922,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001645">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A measurable sequence feature that varies within a population.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genetic marker</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genetic_marker</rdfs:label>
+        <obo:IAO_0000115>A measurable sequence feature that varies within a population.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>genetic marker</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>genetic_marker</rdfs:label>
     </owl:Class>
     
 
@@ -931,12 +933,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001877">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000655"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A non-coding RNA over 200nucleotides in length.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:ncRNA</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_qualifier:lncRNA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lncRNA_transcript</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">long non-coding RNA</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lnc_RNA</rdfs:label>
+        <obo:IAO_0000115>A non-coding RNA over 200nucleotides in length.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_feature:ncRNA</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_qualifier:lncRNA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>lncRNA_transcript</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>long non-coding RNA</oboInOwl:hasExactSynonym>
+        <rdfs:label>lnc_RNA</rdfs:label>
     </owl:Class>
     
 
@@ -945,11 +947,11 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0002072">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A position or feature where two sequences have been compared.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_feature:misc_feature</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">INSDC_note:sequence_comparison</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence comparison</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence_comparison</rdfs:label>
+        <obo:IAO_0000115>A position or feature where two sequences have been compared.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_feature:misc_feature</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:sequence_comparison</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>sequence comparison</oboInOwl:hasExactSynonym>
+        <rdfs:label>sequence_comparison</rdfs:label>
     </owl:Class>
     
 
@@ -958,9 +960,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0002121">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The configuration of the  IG and TR variable (V), diversity (D) and joining (J) germline genes before DNA rearrangements  (with or without constant (C) genes in undefined configuration. (germline, non rearranged regions of the IG DNA loci).</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immune_gene</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebrate_immune_system_gene</rdfs:label>
+        <obo:IAO_0000115>The configuration of the  IG and TR variable (V), diversity (D) and joining (J) germline genes before DNA rearrangements  (with or without constant (C) genes in undefined configuration. (germline, non rearranged regions of the IG DNA loci).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>immune_gene</oboInOwl:hasExactSynonym>
+        <rdfs:label>vertebrate_immune_system_gene</rdfs:label>
     </owl:Class>
     
 
@@ -969,10 +971,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0002122">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0002121"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A germline immunoglobulin  gene.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All_IG_genes</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IG_genes</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immunoglobulin_gene</rdfs:label>
+        <obo:IAO_0000115>A germline immunoglobulin  gene.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>All_IG_genes</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>IG_genes</oboInOwl:hasExactSynonym>
+        <rdfs:label>immunoglobulin_gene</rdfs:label>
     </owl:Class>
     
 
@@ -981,9 +983,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0002300">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transcription units or transcribed coding sequences.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit of gene expression</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit_of_gene_expression</rdfs:label>
+        <obo:IAO_0000115>Transcription units or transcribed coding sequences.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>unit of gene expression</oboInOwl:hasExactSynonym>
+        <rdfs:label>unit_of_gene_expression</rdfs:label>
     </owl:Class>
     
 
@@ -992,9 +994,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0005855">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of related genes.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene group</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene_group</rdfs:label>
+        <obo:IAO_0000115>A collection of related genes.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>gene group</oboInOwl:hasExactSynonym>
+        <rdfs:label>gene_group</rdfs:label>
     </owl:Class>
     
 
@@ -1004,8 +1006,8 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001059"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence alteration where the length of the change in the variant is the same as that of the reference.</obo:IAO_0000115>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substitution</rdfs:label>
+        <obo:IAO_0000115>A sequence alteration where the length of the change in the variant is the same as that of the reference.</obo:IAO_0000115>
+        <rdfs:label>substitution</rdfs:label>
     </owl:Class>
     
 
@@ -1014,9 +1016,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000008">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001483"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A single nucleotide change which has occurred at the same position of a corresponding nucleotide in a reference sequence.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">point mutation</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">point_mutation</rdfs:label>
+        <obo:IAO_0000115>A single nucleotide change which has occurred at the same position of a corresponding nucleotide in a reference sequence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>point mutation</oboInOwl:hasExactSynonym>
+        <rdfs:label>point_mutation</rdfs:label>
     </owl:Class>
     
 
@@ -1042,9 +1044,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0001510"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal structure variation within a single chromosome.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intrachromosomal mutation</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intrachromosomal_mutation</rdfs:label>
+        <obo:IAO_0000115>A chromosomal structure variation within a single chromosome.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>intrachromosomal mutation</oboInOwl:hasExactSynonym>
+        <rdfs:label>intrachromosomal_mutation</rdfs:label>
     </owl:Class>
     
 
@@ -1070,13 +1072,13 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000159"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An incomplete chromosome.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal deletion</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deficiency</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(Drosophila)Df</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(bacteria)&amp;ampDgr;</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(fungi)D</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal_deletion</rdfs:label>
+        <obo:IAO_0000115>An incomplete chromosome.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>chromosomal deletion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>deficiency</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>(Drosophila)Df</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>(bacteria)&amp;ampDgr;</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>(fungi)D</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>chromosomal_deletion</rdfs:label>
     </owl:Class>
     
 
@@ -1085,11 +1087,11 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000037">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_1000183"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An extra chromosome.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal duplication</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(Drosophila)Dp</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(fungi)Dp</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal_duplication</rdfs:label>
+        <obo:IAO_0000115>An extra chromosome.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>chromosomal duplication</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>(Drosophila)Dp</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>(fungi)Dp</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>chromosomal_duplication</rdfs:label>
     </owl:Class>
     
 
@@ -1098,10 +1100,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_1000183">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000240"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An alteration of the genome that leads to a change in the structure or number of one or more chromosomes.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosome structure variation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snpEff:CHROMOSOME_LARGE_DELETION</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosome_structure_variation</rdfs:label>
+        <obo:IAO_0000115>An alteration of the genome that leads to a change in the structure or number of one or more chromosomes.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>chromosome structure variation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>snpEff:CHROMOSOME_LARGE_DELETION</oboInOwl:hasExactSynonym>
+        <rdfs:label>chromosome_structure_variation</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

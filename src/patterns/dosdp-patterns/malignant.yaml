@@ -1,0 +1,42 @@
+pattern_name: malignant
+
+classes:
+    neoplasm: MONDO:0005070
+    malignant: PATO:0002097
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    neoplasm: owl_thing
+
+name:
+    text: malignant %s
+    vars:
+      - neoplasm
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s, malignant'
+    vars:
+      - neoplasm
+
+def:
+    text: A malignant form of %s.
+    vars:
+      - neoplasm
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'malignant'"
+    vars:
+      - neoplasm
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/malignant.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

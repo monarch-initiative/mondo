@@ -1,0 +1,51 @@
+pattern_name: carcinoma
+
+description: >4-
+
+    Carcinomas are malignant neoplasms arising from epithelial cells.
+
+    This is a Design pattern for classes representing carcinomas based
+    on their location. This may be the site of origin, but it can also
+    represent a secondary site for metastatized cancer.
+
+    We use the generic 'disease has location' relation, which
+    generalized over primary and secondary sites.
+
+classes:
+    carcinoma: MONDO:0004993
+
+    owl_thing: owl:Thing
+relations:
+    disease has location: RO:0004026
+
+vars:
+    location: owl_thing
+
+name:
+    text: '%s carcinoma'
+    vars:
+      - location
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: carcinoma of %s
+    vars:
+      - location
+
+def:
+    text: A carcinoma involving a %s.
+    vars:
+      - location
+
+equivalentTo:
+    text: "'carcinoma' and 'disease has location' some %s"
+    vars:
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/carcinoma.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

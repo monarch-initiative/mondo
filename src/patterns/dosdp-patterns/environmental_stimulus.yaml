@@ -1,0 +1,51 @@
+pattern_name: environmental_stimulus
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml
+
+description: >-
+    A disease that is caused by exposure to an environmental stimulus, like the sun or pesticides. 
+    Examples: [carbon monoxide-induced parkinsonism](http://purl.obolibrary.org/obo/MONDO_0017639), [cocaine intoxication](http://purl.obolibrary.org/obo/MONDO_0019544), [Colorado tick fever](http://purl.obolibrary.org/obo/MONDO_0005708)
+
+classes:
+    disease: MONDO:0000001
+    environmental material: ENVO:00010483
+
+relations:
+    realized in response to stimulus: RO:0004028
+
+vars:
+    disease: "'disease'"
+    stimulus: "'environmental material'"
+
+name:
+    text: '%s from %s'
+    vars:
+      - disease
+      - stimulus
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s %s'
+    vars:
+      - stimulus
+      - disease
+
+def:
+    text: A %s that is caused by exposure to %s.
+    vars:
+      - disease
+      - stimulus
+
+equivalentTo:
+    text: "%s and 'realized in response to stimulus' some %s"
+    vars:
+      - disease
+      - stimulus
+
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432

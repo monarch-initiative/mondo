@@ -1,0 +1,51 @@
+pattern_name: inborn_metabolic
+
+description: >-
+    An acquired metabolic disease that causes disruption of a process.
+
+classes:
+    ieom: MONDO:0019052
+    process: BFO:0000015
+
+relations:
+    disease has basis in disruption of: RO:0004021
+
+vars:
+    process: "'process'"
+
+name:
+    text: inborn %s disorder
+    vars:
+      - process
+
+annotations:
+  - annotationProperty: related_synonym
+    text: rare inborn error of %s
+    vars:
+      - process
+  - annotationProperty: exact_synonym
+    text: inborn error of %s
+    vars:
+      - process
+
+def:
+    text: An acquired metabolic disease that is has its basis in the disruption of
+        %s.
+    vars:
+      - process
+
+equivalentTo:
+    text: "'ieom' and 'disease has basis in disruption of' some %s"
+    vars:
+      - process
+
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432

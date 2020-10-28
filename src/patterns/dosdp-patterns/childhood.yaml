@@ -1,0 +1,44 @@
+pattern_name: childhood
+
+classes:
+    childhood: HP:0011463
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: childhood %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s of childhood'
+    vars:
+      - disease
+  - annotationProperty: related_synonym
+    text: pediatric %s
+    vars:
+      - disease
+
+def:
+    text: A %s that occurs during childhood.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'childhood'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/childhood.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

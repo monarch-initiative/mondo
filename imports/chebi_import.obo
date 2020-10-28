@@ -1,4 +1,5 @@
 format-version: 1.2
+data-version: mondo/releases/2020-10-21/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -127,6 +128,13 @@ synonym: "Glykol" RELATED []
 is_a: CHEBI:23824 ! diol
 
 [Term]
+id: CHEBI:136849
+name: 3-oxo-Delta(4)-steroid group
+def: "An organic group derived from any 3-oxo-Delta(4)-steroid." []
+synonym: "a 3-oxo-Delta4-steroid group" RELATED []
+is_a: CHEBI:33247 ! organic group
+
+[Term]
 id: CHEBI:136859
 name: pro-agent
 def: "A compound that, on administration, undergoes conversion by biochemical (enzymatic), chemical (possibly following an enzymatic step), or physical (e.g. photochemical) activation processes before becoming the active agent for which it is a pro-agent." []
@@ -203,6 +211,18 @@ is_a: CHEBI:37022 ! amino-acid anion
 relationship: is_conjugate_base_of CHEBI:28616 ! carbamic acid
 
 [Term]
+id: CHEBI:139588
+name: alpha-hydroxy ketone
+def: "An alpha-oxyketone that has a hydroxy group as the alpha-oxy moiety." []
+synonym: "alpha-hydroxy ketones" RELATED []
+synonym: "alpha-hydroxy-ketone" RELATED []
+synonym: "alpha-hydroxy-ketones" RELATED []
+synonym: "alpha-hydroxyketone" RELATED []
+synonym: "alpha-hydroxyketones" RELATED []
+is_a: CHEBI:30879 ! alcohol
+is_a: CHEBI:52396 ! alpha-oxyketone
+
+[Term]
 id: CHEBI:139589
 name: retinoid anion
 def: "A carboxylic acid anion obtained by deprotonation of any retinoid carboxy group." []
@@ -214,6 +234,18 @@ synonym: "retinoid carboxylate anions" RELATED []
 synonym: "retinoid carboxylic acid anion" RELATED []
 synonym: "retinoid carboxylic acid anions" RELATED []
 is_a: CHEBI:29067 ! carboxylic acid anion
+
+[Term]
+id: CHEBI:139590
+name: primary alpha-hydroxy ketone
+def: "An alpha-hydroxy ketone in which the carbonyl group and the hydroxy group are linked by a -CH2 (methylene) group." []
+synonym: "primary alpha-hydroxy ketones" RELATED []
+synonym: "primary alpha-hydroxy-ketone" RELATED []
+synonym: "primary alpha-hydroxy-ketones" RELATED []
+synonym: "primary alpha-hydroxyketone" RELATED []
+synonym: "primary alpha-hydroxyketones" RELATED []
+is_a: CHEBI:139588 ! alpha-hydroxy ketone
+is_a: CHEBI:15734 ! primary alcohol
 
 [Term]
 id: CHEBI:140310
@@ -234,12 +266,13 @@ is_a: CHEBI:48730 ! aluminosilicate mineral
 [Term]
 id: CHEBI:140503
 name: kaolin
-def: "A mixture consisting principally of the mineral kaolinite and containing varying amounts of other minerals such as muscovite, quartz, feldspar, and anatase. Also known as china clay, kaolin is a soft white clay that is an essential ingredient in the manufacture of china and porcelain and is widely used in the making of paper, rubber, paint, drying agents, and many other products." []
+def: "An aluminosilicate soft white mineral named after the hill in China (Kao-ling) from which it was mined for centuries. In its natural state kaolin is a white, soft powder consisting principally of the mineral kaolinite, and varying amounts of other minerals such as muscovite, quartz, feldspar, and anatase. It is used in the manufacture of china and porcelain and also widely used in the production of paper, rubber, paint, drying agents, and many other products." []
 synonym: "argilla" RELATED []
 synonym: "Bolus alba" RELATED []
 synonym: "China clay" RELATED []
 synonym: "porcelain clay" RELATED []
 synonym: "white bole" RELATED []
+is_a: CHEBI:48730 ! aluminosilicate mineral
 is_a: CHEBI:60004 ! mixture
 relationship: BFO:0000051 CHEBI:140499 ! kaolinite
 relationship: RO:0000087 CHEBI:55323 ! antidiarrhoeal drug
@@ -487,7 +520,6 @@ synonym: "L-Amino acid" RELATED []
 is_a: CHEBI:33704 ! alpha-amino acid
 relationship: is_conjugate_acid_of CHEBI:59814 ! L-alpha-amino acid anion
 relationship: is_tautomer_of CHEBI:59869 ! L-alpha-amino acid zwitterion
-relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 
 [Term]
 id: CHEBI:15734
@@ -638,10 +670,8 @@ synonym: "L-Glutamic acid" EXACT []
 synonym: "L-glutamic acid" EXACT []
 synonym: "L-Glutaminic acid" RELATED []
 synonym: "L-Glutaminsaeure" RELATED []
-is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:18237 ! glutamic acid
 is_a: CHEBI:24318 ! glutamine family amino acid
-is_a: CHEBI:83813 ! proteinogenic amino acid
 relationship: is_conjugate_acid_of CHEBI:29985 ! L-glutamate(1-)
 relationship: is_enantiomer_of CHEBI:15966 ! D-glutamic acid
 relationship: RO:0000087 CHEBI:25512 ! neurotransmitter
@@ -973,6 +1003,31 @@ relationship: is_conjugate_acid_of CHEBI:60895 ! D-alpha-amino acid anion
 relationship: is_tautomer_of CHEBI:59871 ! D-alpha-amino acid zwitterion
 
 [Term]
+id: CHEBI:16827
+name: corticosterone
+def: "A 21-hydroxy steroid that consists of pregn-4-ene substituted by hydroxy groups at positions 11 and 21 and oxo groups at positions 3 and 20. Corticosterone is a 21-carbon steroid hormone of the corticosteroid type produced in the cortex of the adrenal glands." []
+synonym: "(11beta)-11,21-dihydroxypregn-4-ene-3,20-dione" RELATED []
+synonym: "11beta,21-Dihydroxy-4-pregnene-3,20-dione" RELATED []
+synonym: "11beta,21-dihydroxypregn-4-ene-3,20-dione" EXACT []
+synonym: "11beta,21-dihydroxyprogesterone" RELATED []
+synonym: "17-deoxycortisol" RELATED []
+synonym: "CORTICOSTERONE" EXACT []
+synonym: "Corticosterone" EXACT []
+synonym: "corticosterone" EXACT []
+synonym: "Kendall's compound B" RELATED []
+synonym: "Reichstein's substance H" RELATED []
+is_a: CHEBI:139590 ! primary alpha-hydroxy ketone
+is_a: CHEBI:24261 ! glucocorticoid
+is_a: CHEBI:35344 ! 21-hydroxy steroid
+is_a: CHEBI:35346 ! 11beta-hydroxy steroid
+is_a: CHEBI:36885 ! 20-oxo steroid
+is_a: CHEBI:47909 ! 3-oxo-Delta(4) steroid
+is_a: CHEBI:61313 ! C21-steroid
+relationship: has_parent_hydride CHEBI:8386 ! pregnane
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
 id: CHEBI:16842
 name: formaldehyde
 def: "An aldehyde resulting from the formal oxidation of methanol." []
@@ -1194,10 +1249,8 @@ synonym: "L-Phenylalanine" EXACT []
 synonym: "L-phenylalanine" EXACT []
 synonym: "Phe" RELATED []
 synonym: "PHENYLALANINE" RELATED []
-is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:28044 ! phenylalanine
 is_a: CHEBI:73690 ! erythrose 4-phosphate/phosphoenolpyruvate family amino acid
-is_a: CHEBI:83813 ! proteinogenic amino acid
 relationship: is_conjugate_acid_of CHEBI:32486 ! L-phenylalaninate
 relationship: is_conjugate_base_of CHEBI:32487 ! L-phenylalaninium
 relationship: is_enantiomer_of CHEBI:16998 ! D-phenylalanine
@@ -1465,10 +1518,8 @@ synonym: "Tyr" RELATED []
 synonym: "TYROSINE" RELATED []
 synonym: "Tyrosine" RELATED []
 synonym: "Y" RELATED []
-is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:18186 ! tyrosine
 is_a: CHEBI:73690 ! erythrose 4-phosphate/phosphoenolpyruvate family amino acid
-is_a: CHEBI:83813 ! proteinogenic amino acid
 relationship: has_functional_parent CHEBI:46209 ! L-tyrosinal
 relationship: is_conjugate_acid_of CHEBI:32760 ! L-tyrosinate(1-)
 relationship: is_conjugate_base_of CHEBI:32762 ! L-tyrosinium
@@ -2461,7 +2512,6 @@ synonym: "isoprenoid" EXACT []
 synonym: "isoprenoids" EXACT []
 synonym: "isoprenoids" RELATED []
 is_a: CHEBI:18059 ! lipid
-is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
 id: CHEBI:24995
@@ -2488,7 +2538,6 @@ synonym: "lactones" EXACT []
 synonym: "Lakton" RELATED []
 synonym: "Laktone" RELATED []
 is_a: CHEBI:33308 ! carboxylic ester
-is_a: CHEBI:35701 ! ester
 is_a: CHEBI:38104 ! oxacycle
 
 [Term]
@@ -2751,7 +2800,6 @@ synonym: "organophosphate ester" RELATED []
 synonym: "organophosphate esters" RELATED []
 is_a: CHEBI:25710 ! organophosphorus compound
 is_a: CHEBI:26020 ! phosphate
-is_a: CHEBI:26079 ! phosphoric acid derivative
 
 [Term]
 id: CHEBI:2571
@@ -3268,7 +3316,6 @@ name: L-tyrosine derivative
 def: "A proteinogenic amino acid derivative resulting from reaction of L-tyrosine at the amino group or the carboxy group, or from the replacement of any hydrogen of L-tyrosine by a heteroatom." []
 synonym: "L-tyrosine derivatives" RELATED []
 is_a: CHEBI:62761 ! tyrosine derivative
-is_a: CHEBI:83811 ! proteinogenic amino acid derivative
 is_a: CHEBI:84144 ! L-phenylalanine derivative
 relationship: has_functional_parent CHEBI:17895 ! L-tyrosine
 
@@ -3943,7 +3990,6 @@ synonym: "hemes" EXACT []
 synonym: "hemos" RELATED []
 is_a: CHEBI:25216 ! metalloporphyrin
 is_a: CHEBI:33892 ! iron coordination entity
-is_a: CHEBI:33909 ! metallotetrapyrrole
 relationship: RO:0000087 CHEBI:25212 ! metabolite
 relationship: RO:0000087 CHEBI:26348 ! prosthetic group
 
@@ -4394,7 +4440,7 @@ is_a: CHEBI:51143 ! nitrogen molecular entity
 [Term]
 id: CHEBI:33229
 name: vitamin
-def: "Any micronutrient that is an organic compound. The term \"vitamines\" (from vita + amines) was coined in 1912 by Casimir Funk, who believed that these compounds were amines." []
+def: "A biochemical role played by any micronutrient that is an organic compound. Vitamins are present in foods in small amounts and are essential to normal metabolism and biochemical functions, usually as coenzymes. The term \"vitamines\" (from vita + amines) was coined in 1912 by Casimir Funk, who believed that these compounds were amines." []
 synonym: "Vitamin" EXACT []
 synonym: "vitamina" RELATED []
 synonym: "vitaminas" RELATED []
@@ -4652,7 +4698,7 @@ is_a: CHEBI:33286 ! agrochemical
 [Term]
 id: CHEBI:33290
 name: food
-def: "Any material that can be ingested by an organism." []
+def: "A physiological role played by any substance of either plant, animal or artificial origin which contains essential body nutrients that can be ingested by an organism to provide energy, promote growth, and maintain the processes of life." []
 synonym: "food material" RELATED []
 synonym: "food materials" RELATED []
 synonym: "food role" RELATED []
@@ -4819,7 +4865,6 @@ name: manganese group element atom
 synonym: "group 7 elements" EXACT []
 synonym: "manganese group element" RELATED []
 synonym: "manganese group elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4828,7 +4873,6 @@ name: iron group element atom
 synonym: "group 8 elements" EXACT []
 synonym: "iron group element" RELATED []
 synonym: "iron group elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4837,7 +4881,6 @@ name: cobalt group element atom
 synonym: "cobalt group element" RELATED []
 synonym: "cobalt group elements" RELATED []
 synonym: "group 9 elements" EXACT []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4846,7 +4889,6 @@ name: nickel group element atom
 synonym: "group 10 elements" EXACT []
 synonym: "nickel group element" RELATED []
 synonym: "nickel group elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
@@ -4978,7 +5020,6 @@ name: chalcogen oxoacid
 synonym: "chalcogen oxoacid" EXACT []
 synonym: "chalcogen oxoacids" RELATED []
 is_a: CHEBI:24833 ! oxoacid
-is_a: CHEBI:33304 ! chalcogen molecular entity
 relationship: RO:0000087 CHEBI:138103 ! inorganic acid
 
 [Term]
@@ -4986,7 +5027,6 @@ id: CHEBI:33485
 name: chalcogen oxoanion
 synonym: "chalcogen oxoanion" EXACT []
 synonym: "chalcogen oxoanions" RELATED []
-is_a: CHEBI:33304 ! chalcogen molecular entity
 is_a: CHEBI:35406 ! oxoanion
 
 [Term]
@@ -5066,7 +5106,6 @@ name: d-block element atom
 synonym: "d-block element" RELATED []
 synonym: "d-block elements" RELATED []
 is_a: CHEBI:27081 ! transition element atom
-is_a: CHEBI:33521 ! metal atom
 
 [Term]
 id: CHEBI:33563
@@ -5433,7 +5472,6 @@ id: CHEBI:33743
 name: manganese group molecular entity
 synonym: "manganese group molecular entities" RELATED []
 synonym: "manganese group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33352 ! manganese group element atom
 
@@ -5442,7 +5480,6 @@ id: CHEBI:33744
 name: iron group molecular entity
 synonym: "iron group molecular entities" RELATED []
 synonym: "iron group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33356 ! iron group element atom
 
@@ -5451,7 +5488,6 @@ id: CHEBI:33747
 name: nickel group molecular entity
 synonym: "nickel group molecular entities" RELATED []
 synonym: "nickel group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33362 ! nickel group element atom
 
@@ -5469,7 +5505,6 @@ id: CHEBI:33767
 name: cobalt group molecular entity
 synonym: "cobalt group molecular entities" RELATED []
 synonym: "cobalt group molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
 is_a: CHEBI:33676 ! d-block molecular entity
 relationship: BFO:0000051 CHEBI:33358 ! cobalt group element atom
 
@@ -5887,6 +5922,33 @@ is_a: CHEBI:18059 ! lipid
 is_a: CHEBI:51958 ! organic polycyclic compound
 
 [Term]
+id: CHEBI:35344
+name: 21-hydroxy steroid
+synonym: "21-hydroxy steroids" RELATED []
+synonym: "21-Hydroxysteroid" RELATED []
+synonym: "21-hydroxysteroids" RELATED []
+is_a: CHEBI:35350 ! hydroxy steroid
+
+[Term]
+id: CHEBI:35346
+name: 11beta-hydroxy steroid
+def: "Any 11-hydroxy steroid in which the hydroxy group at position 11 has beta- configuration." []
+synonym: "11beta-hydroxy steroids" RELATED []
+synonym: "11beta-Hydroxysteroid" RELATED []
+synonym: "11beta-hydroxysteroids" RELATED []
+synonym: "an 11beta-hydroxysteroid" RELATED []
+is_a: CHEBI:36841 ! 11-hydroxy steroid
+
+[Term]
+id: CHEBI:35350
+name: hydroxy steroid
+synonym: "hydroxy steroids" RELATED []
+synonym: "Hydroxysteroid" RELATED []
+synonym: "hydroxysteroids" RELATED []
+is_a: CHEBI:33822 ! organic hydroxy compound
+is_a: CHEBI:35341 ! steroid
+
+[Term]
 id: CHEBI:35352
 name: organonitrogen compound
 def: "Any heteroorganic entity containing at least one carbon-nitrogen bond." []
@@ -6024,6 +6086,19 @@ name: diuretic
 def: "An agent that promotes the excretion of urine through its effects on kidney function." []
 synonym: "diuretics" RELATED []
 is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:35507
+name: natural product fundamental parent
+synonym: "natural product fundamental parents" EXACT []
+is_a: CHEBI:33245 ! organic fundamental parent
+
+[Term]
+id: CHEBI:35508
+name: steroid fundamental parent
+synonym: "steroid fundamental parents" RELATED []
+is_a: CHEBI:35341 ! steroid
+is_a: CHEBI:35507 ! natural product fundamental parent
 
 [Term]
 id: CHEBI:35523
@@ -6328,6 +6403,16 @@ is_a: CHEBI:26739 ! sphingolipid
 relationship: is_conjugate_base_of CHEBI:83876 ! cationic sphingoid
 
 [Term]
+id: CHEBI:35789
+name: oxo steroid
+synonym: "keto steroids" RELATED []
+synonym: "ketosteroids" RELATED []
+synonym: "oxo steroids" RELATED []
+synonym: "oxosteroids" RELATED []
+is_a: CHEBI:17087 ! ketone
+is_a: CHEBI:35341 ! steroid
+
+[Term]
 id: CHEBI:35842
 name: antirheumatic drug
 def: "A drug used to treat rheumatoid arthritis." []
@@ -6367,7 +6452,6 @@ def: "Natural and synthetic antibiotics containing the 4-thia-1-azabicyclo[3.2.0
 synonym: "penams" EXACT []
 is_a: CHEBI:27171 ! organic heterobicyclic compound
 is_a: CHEBI:27933 ! beta-lactam antibiotic
-is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
 is_a: CHEBI:38106 ! organosulfur heterocyclic compound
 
 [Term]
@@ -6634,6 +6718,12 @@ synonym: "monoanions" RELATED []
 is_a: CHEBI:22563 ! anion
 
 [Term]
+id: CHEBI:36841
+name: 11-hydroxy steroid
+synonym: "11-hydroxy steroids" RELATED []
+is_a: CHEBI:35350 ! hydroxy steroid
+
+[Term]
 id: CHEBI:36856
 name: hydrogen isocyanide
 synonym: "CNH" RELATED []
@@ -6645,6 +6735,13 @@ synonym: "nitriliomethanide" EXACT []
 is_a: CHEBI:33405 ! hydracid
 relationship: is_conjugate_acid_of CHEBI:17514 ! cyanide
 relationship: is_tautomer_of CHEBI:18407 ! hydrogen cyanide
+
+[Term]
+id: CHEBI:36885
+name: 20-oxo steroid
+def: "An oxo steroid carrying an oxo group at position 20." []
+synonym: "20-oxo steroids" RELATED []
+is_a: CHEBI:35789 ! oxo steroid
 
 [Term]
 id: CHEBI:36902
@@ -7645,6 +7742,17 @@ is_a: CHEBI:33308 ! carboxylic ester
 relationship: has_functional_parent CHEBI:15366 ! acetic acid
 
 [Term]
+id: CHEBI:47788
+name: 3-oxo steroid
+def: "Any oxo steroid where an oxo substituent is located at position 3." []
+synonym: "3-oxo steroids" RELATED []
+synonym: "3-Oxosteroid" RELATED []
+synonym: "3-oxosteroids" RELATED []
+synonym: "a 3-oxosteroid" RELATED []
+is_a: CHEBI:35789 ! oxo steroid
+is_a: CHEBI:3992 ! cyclic ketone
+
+[Term]
 id: CHEBI:47811
 name: penamcarboxylate
 synonym: "penamcarboxylates" RELATED []
@@ -7679,6 +7787,19 @@ synonym: "cyclic polypyrroles" RELATED []
 synonym: "macrocyclic polypyrroles" EXACT []
 synonym: "polypyrrole macrocycles" RELATED []
 is_a: CHEBI:38077 ! polypyrrole
+
+[Term]
+id: CHEBI:47909
+name: 3-oxo-Delta(4) steroid
+def: "A 3-oxo steroid conjugated to a C=C double bond at the alpha,beta position." []
+synonym: "3-oxo Delta(4)-steroid" RELATED []
+synonym: "3-oxo Delta(4)-steroids" RELATED []
+synonym: "3-oxo-Delta(4) steroids" RELATED []
+synonym: "3-Oxo-delta4-steroid" RELATED []
+synonym: "a 3-oxo-Delta(4)-steroid" RELATED []
+is_a: CHEBI:47788 ! 3-oxo steroid
+is_a: CHEBI:51689 ! enone
+relationship: BFO:0000051 CHEBI:136849 ! 3-oxo-Delta(4)-steroid group
 
 [Term]
 id: CHEBI:48154
@@ -7738,12 +7859,18 @@ is_a: CHEBI:48354 ! polar solvent
 [Term]
 id: CHEBI:48359
 name: protophilic solvent
+def: "Solvent that is capable of acting as a hydron (proton) acceptor." []
+synonym: "HBA solvent" RELATED []
+synonym: "hydrogen bond acceptor solvent" RELATED []
+synonym: "protophilic solvent" EXACT []
 is_a: CHEBI:39142 ! Bronsted base
 is_a: CHEBI:48354 ! polar solvent
 
 [Term]
 id: CHEBI:48360
 name: amphiprotic solvent
+def: "Self-ionizing solvent possessing both characteristics of Bronsted acids and bases." []
+synonym: "amphiprotic solvent" EXACT []
 is_a: CHEBI:48356 ! protic solvent
 is_a: CHEBI:48359 ! protophilic solvent
 
@@ -7932,7 +8059,6 @@ synonym: "DL-dioxyphenylalanine" RELATED []
 synonym: "dopa" EXACT []
 is_a: CHEBI:24734 ! hydroxyphenylalanine
 is_a: CHEBI:62761 ! tyrosine derivative
-is_a: CHEBI:83925 ! non-proteinogenic alpha-amino acid
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
@@ -7984,7 +8110,6 @@ name: organic amino compound
 def: "A compound formally derived from ammonia by replacing one, two or three hydrogen atoms by organyl groups." []
 synonym: "organic amino compounds" RELATED []
 is_a: CHEBI:35352 ! organonitrogen compound
-is_a: CHEBI:50860 ! organic molecular entity
 relationship: has_parent_hydride CHEBI:16134 ! ammonia
 relationship: RO:0000087 CHEBI:39142 ! Bronsted base
 
@@ -8476,7 +8601,6 @@ id: CHEBI:51061
 name: hormone receptor modulator
 def: "A drug that modulates the function of the endocrine glands, the biosynthesis of their secreted hormones, or the action of hormones upon their specific sites." []
 synonym: "hormone receptor modulators" RELATED []
-is_a: CHEBI:23888 ! drug
 is_a: CHEBI:90710 ! receptor modulator
 
 [Term]
@@ -8508,7 +8632,6 @@ def: "Any anion formed by loss of a proton from the carboxy group of a penicilli
 synonym: "penicillin" RELATED []
 synonym: "penicillin anion" RELATED []
 synonym: "penicillin anions" RELATED []
-is_a: CHEBI:35757 ! monocarboxylic acid anion
 is_a: CHEBI:47811 ! penamcarboxylate
 relationship: is_conjugate_base_of CHEBI:17334 ! penicillin
 
@@ -8543,6 +8666,21 @@ is_a: CHEBI:25384 ! monocarboxylic acid
 is_a: CHEBI:38295 ! azabicycloalkane
 is_a: CHEBI:38297 ! thiabicycloalkane
 is_a: CHEBI:47857 ! ureas
+
+[Term]
+id: CHEBI:51689
+name: enone
+def: "An alpha,beta-unsaturated ketone of general formula R(1)R(2)C=CR(3)-C(=O)R(4) (R(4) =/= H) in which the C=O function is conjugated to a C=C double bond at the alpha,beta position." []
+synonym: "enones" RELATED []
+is_a: CHEBI:51721 ! alpha,beta-unsaturated ketone
+is_a: CHEBI:78840 ! olefinic compound
+
+[Term]
+id: CHEBI:51721
+name: alpha,beta-unsaturated ketone
+def: "A ketone of general formula R(1)R(2)C=CR(3)-C(=O)R(4) (R(4) =/= H) or R(1)C#C-C(=O)R(2) (R(2) =/= H) in which the ketonic C=O function is conjugated to an unsaturated C-C bond at the alpha,beta position." []
+synonym: "alpha,beta-unsaturated ketones" RELATED []
+is_a: CHEBI:17087 ! ketone
 
 [Term]
 id: CHEBI:51958
@@ -8611,6 +8749,20 @@ synonym: "farmaco" RELATED []
 synonym: "medicament" RELATED []
 synonym: "pharmaceuticals" RELATED []
 is_a: CHEBI:33232 ! application
+
+[Term]
+id: CHEBI:52395
+name: oxyketone
+def: "A compound with the general formula R2C=O (R=/=H) where one or more of the R groups contains an oxy (-O-) group." []
+synonym: "oxyketones" RELATED []
+is_a: CHEBI:17087 ! ketone
+
+[Term]
+id: CHEBI:52396
+name: alpha-oxyketone
+def: "An oxyketone with the general formula R2C(=O) (R=/=H) where one or more of the R groups contains an oxy (-O-) group and the oxy and carbonyl groups are bonded to the same carbon atom." []
+synonym: "alpha-oxyketones" RELATED []
+is_a: CHEBI:52395 ! oxyketone
 
 [Term]
 id: CHEBI:52625
@@ -9115,6 +9267,13 @@ relationship: RO:0000087 CHEBI:60643 ! NMDA receptor antagonist
 relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
 
 [Term]
+id: CHEBI:61313
+name: C21-steroid
+def: "A steroid that has a structure based on a 21-carbon (pregnane) skeleton. Note that individual examples may have ring substituents at other positions and/or contain double bonds, aromatic A-rings, expanded/contracted rings etc., so the formula and mass may vary from that given for the generic structure." []
+synonym: "a C21-steroid" RELATED []
+is_a: CHEBI:35341 ! steroid
+
+[Term]
 id: CHEBI:61655
 name: steroid saponin
 def: "Any saponin derived from a hydroxysteroid." []
@@ -9188,7 +9347,6 @@ name: tyrosine derivative
 def: "An amino acid derivative resulting from reaction of tyrosine at the amino group or the carboxy group, any substitution of phenyl hydrogens, or from the replacement of any hydrogen of tyrosine by a heteroatom. The definition normally excludes peptides containing tyrosine residues." []
 synonym: "tyrosine derivatives" RELATED []
 is_a: CHEBI:25985 ! phenylalanine derivative
-is_a: CHEBI:83821 ! amino acid derivative
 relationship: has_functional_parent CHEBI:18186 ! tyrosine
 
 [Term]
@@ -9413,7 +9571,6 @@ synonym: "linoleic acid omega(6)-lipoxygenase inhibitors" RELATED []
 synonym: "omega(6) lipoxygenase inhibitor" RELATED []
 synonym: "omega(6) lipoxygenase inhibitors" RELATED []
 is_a: CHEBI:35856 ! lipoxygenase inhibitor
-is_a: CHEBI:76837 ! EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 O atoms) inhibitor
 
 [Term]
 id: CHEBI:65001
@@ -9772,7 +9929,7 @@ is_a: CHEBI:75767 ! animal metabolite
 [Term]
 id: CHEBI:75769
 name: B vitamin
-def: "Any of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises vitamin B1, B2, B3, B5, B6, B7, B9, and B12. (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such.)" []
+def: "A role played by any of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B). The group comprises of vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such). B vitamins play important roles in cell metabolism." []
 synonym: "B vitamins" RELATED []
 synonym: "B-group vitamin" RELATED []
 synonym: "B-group vitamins" RELATED []
@@ -10428,7 +10585,7 @@ is_a: CHEBI:58953 ! saturated fatty acid anion
 [Term]
 id: CHEBI:78295
 name: food component
-def: "Any substance that is distributed in foodstuffs. It includes materials derived from plants or animals, such as vitamins or minerals, as well as environmental contaminants." []
+def: "A physiological role played by any substance that is distributed in foodstuffs. It includes materials derived from plants or animals, such as vitamins or minerals, as well as environmental contaminants." []
 synonym: "dietary component" RELATED []
 synonym: "dietary components" RELATED []
 synonym: "food components" RELATED []
@@ -10472,6 +10629,13 @@ synonym: "essential metabolite" RELATED []
 synonym: "essential metabolites" RELATED []
 synonym: "fundamental metabolites" RELATED []
 is_a: CHEBI:25212 ! metabolite
+
+[Term]
+id: CHEBI:78840
+name: olefinic compound
+def: "Any organic molecular entity that contains at least one C=C bond." []
+synonym: "olefinic compounds" RELATED []
+is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
 id: CHEBI:79020
@@ -10622,6 +10786,12 @@ is_a: CHEBI:15705 ! L-alpha-amino acid
 is_a: CHEBI:83925 ! non-proteinogenic alpha-amino acid
 
 [Term]
+id: CHEBI:8386
+name: pregnane
+synonym: "pregnane" EXACT []
+is_a: CHEBI:35508 ! steroid fundamental parent
+
+[Term]
 id: CHEBI:83876
 name: cationic sphingoid
 def: "An organic cation obtained by protonation of the amino function of any sphingoid" []
@@ -10657,7 +10827,6 @@ name: D-tyrosine derivative
 def: "A non-proteinogenic amino acid derivative resulting from reaction of D-tyrosine at the amino group or the carboxy group, or from the replacement of any hydrogen of D-tyrosine by a heteroatom." []
 synonym: "D-tyrosine derivatives" RELATED []
 is_a: CHEBI:62761 ! tyrosine derivative
-is_a: CHEBI:83812 ! non-proteinogenic amino acid derivative
 is_a: CHEBI:84143 ! D-phenylalanine derivative
 relationship: has_functional_parent CHEBI:28479 ! D-tyrosine
 
@@ -10724,7 +10893,6 @@ synonym: "antifungal medication" RELATED []
 synonym: "antifungal medications" RELATED []
 synonym: "pharmaceutical fungicide" RELATED []
 synonym: "pharmaceutical fungicides" RELATED []
-is_a: CHEBI:23888 ! drug
 is_a: CHEBI:35441 ! antiinfective agent
 is_a: CHEBI:35718 ! antifungal agent
 

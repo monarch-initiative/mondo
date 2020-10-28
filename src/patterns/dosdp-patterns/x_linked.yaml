@@ -1,0 +1,40 @@
+pattern_name: x_linked
+
+classes:
+    x_linked_inheritance: HP:0001417
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: X-linked %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s, X-linked'
+    vars:
+      - disease
+
+def:
+    text: X-linked form of %s.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'x_linked_inheritance'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/x_linked.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

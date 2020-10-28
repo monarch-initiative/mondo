@@ -1,0 +1,39 @@
+pattern_name: susceptibility_by_gene
+
+description: >-
+    This pattern should be used with OMIM phenotypic series (OMIMPS) for which the subclasses are susceptibilities. Note, this pattern should not have an asserted causative gene as logical axiom (and no single causative gene in text definition). The children should have asserted causative genes in the text definitions and in the logical axioms.
+    
+    Examples: ['migraine disorder'](http://purl.obolibrary.org/obo/MONDO_0005277), ['microvascular complications of diabetes, susceptibility'](http://purl.obolibrary.org/obo/MONDO_0000065), ['epilepsy, idiopathic generalized'](http://purl.obolibrary.org/obo/MONDO_0005579).
+
+classes:
+    disease or disorder: MONDO:0000001
+    inherited disease susceptibility: MONDO:0020573
+
+relations:
+    predisposes towards: http://purl.obolibrary.org/obo/mondo#predisposes_towards
+    
+vars:
+    disease: "'disease or disorder'"
+
+name:
+    text: '%s susceptibility'
+    vars:
+      - disease
+
+def:
+    text: Any %s in which the cause of the disease is a mutation in a gene.
+    vars:
+      - disease
+
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+equivalentTo:
+    text: ('inherited disease susceptibility' and ('predisposes towards' some %s))
+    vars:
+      - disease
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432

@@ -1,0 +1,55 @@
+pattern_name: inflammatory_disease_by_site
+
+description: >-
+
+    Inflammatory diseases can be classified by the location in which the pathological inflammatory process occurs.
+
+    For inflammatory diseases caused by infection, this may be the site of infection.
+    
+    Examples: ['Achilles bursitis'](http://purl.obolibrary.org/obo/MONDO_0001594), [blepharitis](http://purl.obolibrary.org/obo/MONDO_0004785), [epiglottitis](http://purl.obolibrary.org/obo/MONDO_0005753)
+
+classes:
+    disease: MONDO:0000001
+    anatomical structure: UBERON:0000061
+
+relations:
+    disease has inflammation site: RO:0004027
+
+vars:
+    location: "'anatomical structure'"
+
+name:
+    text: inflammation of %s
+    vars:
+      - location
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%sitis'
+    vars:
+      - location
+  - annotationProperty: exact_synonym
+    text: '%s inflammation'
+    vars:
+      - location
+
+def:
+    text: An inflammatory disease involving a pathogenic inflammatory response in
+        the %s.
+    vars:
+      - location
+
+equivalentTo:
+    text: "'disease' and 'disease has inflammation site' some %s"
+    vars:
+      - location
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/inflammatory_disease_by_site.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432

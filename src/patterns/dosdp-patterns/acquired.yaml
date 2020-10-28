@@ -1,0 +1,46 @@
+pattern_name: acquired
+
+description: >-
+    Pattern for extending a etiology-generic disease class to an
+    acquired form.  Here acquired means that basis for the disease
+    is acquired during the individuals lifetime. It need not exclude
+    genetic etiology, but it excludes inherited.
+
+classes:
+    acquired: MONDO:0021141
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: acquired %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: acquired %s
+    vars:
+      - disease
+
+def:
+    text: An instance of %s that is acquired during the lifetime of the individual.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'acquired'"
+    vars:
+      - disease
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+contributors:
+  - https://orcid.org/0000-0002-6601-2165

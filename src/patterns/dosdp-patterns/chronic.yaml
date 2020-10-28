@@ -1,0 +1,40 @@
+pattern_name: chronic
+
+classes:
+    chronic: PATO:0001863
+
+    owl_thing: owl:Thing
+relations:
+    has modifier: RO:0002573
+
+vars:
+    disease: owl_thing
+
+name:
+    text: chronic %s
+    vars:
+      - disease
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s, chronic'
+    vars:
+      - disease
+
+def:
+    text: Chronic form of %s.
+    vars:
+      - disease
+
+equivalentTo:
+    text: "%s and 'has modifier' some 'chronic'"
+    vars:
+      - disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/chronic.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+description: TBD.
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
