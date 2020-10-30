@@ -1,0 +1,69 @@
+pattern_name: disease_series_by_gene_and_inheritance
+
+description: >-
+  This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, and are inherited by a specific mechanism, succh as autosomal dominant and autosomal recessive. 
+  
+  Examples: [Growth hormone insensitivity syndrome with immune dysregulation](https://omim.org/phenotypicSeries/PS245590), Growth hormone insensitivity with immune dysregulation 1, autosomal recessive and Growth hormone insensitivity with immune dysregulation 2, autosomal dominant
+
+classes:
+    disease: MONDO:0000001
+    gene: SO:0000704
+    Mode of inheritance: HP:0000005
+
+relations:
+    disease has basis in dysfunction of: RO:0004020
+    has modifier: RO:0002573
+
+vars:
+    disease: "'disease'"
+    gene: "'gene'"
+    mode of inheritance: "'Mode of inheritance'"
+
+name:
+    text: '%s caused by mutation in %s, %s'
+    vars:
+      - disease
+      - gene
+      - mode of inheritance
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s %s, %s'
+    vars:
+      - gene
+      - disease
+      - inheritance
+      
+  - annotationProperty: exact_synonym
+    text: '%s related %s, %s'
+    vars:
+      - gene
+      - disease
+      - inheritance
+      
+def:
+    text: Any %s in which the cause of the disease is a mutation in the %s gene, and has %s.
+    vars:
+      - disease
+      - gene
+      - inheritance
+
+
+equivalentTo:
+    text: "%s and 'disease has basis in dysfunction of' some %s and 'has modifier' some %s"
+    vars:
+      - disease
+      - gene
+      - inheritance
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-7356-1779
+  
