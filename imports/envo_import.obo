@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/envo_import.owl
+data-version: mondo/releases/2020-10-21/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -149,6 +149,12 @@ is_a: CHEBI:25362 ! elemental molecule
 is_a: CHEBI:33263 ! diatomic oxygen
 
 [Term]
+id: CHEBI:16042
+name: halide anion
+is_a: CHEBI:33429 ! monoatomic monoanion
+is_a: CHEBI:79389 ! monovalent inorganic anion
+
+[Term]
 id: CHEBI:16526
 name: carbon dioxide
 is_a: CHEBI:138675 ! gas molecular entity
@@ -161,11 +167,22 @@ name: donor
 is_a: CHEBI:51086 ! chemical role
 
 [Term]
+id: CHEBI:17996
+name: chloride
+is_a: CHEBI:16042 ! halide anion
+is_a: CHEBI:33432 ! monoatomic chlorine
+
+[Term]
 id: CHEBI:17997
 name: dinitrogen
 is_a: CHEBI:138675 ! gas molecular entity
 is_a: CHEBI:25362 ! elemental molecule
 is_a: CHEBI:33266 ! diatomic nitrogen
+
+[Term]
+id: CHEBI:22563
+name: anion
+is_a: CHEBI:24870 ! ion
 
 [Term]
 id: CHEBI:23014
@@ -190,6 +207,12 @@ name: molecular entity
 is_a: CHEBI:24431 ! chemical entity
 
 [Term]
+id: CHEBI:23905
+name: monoatomic anion
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:24867 ! monoatomic ion
+
+[Term]
 id: CHEBI:24431
 name: chemical entity
 is_a: BFO:0000040 ! material entity
@@ -210,6 +233,12 @@ name: hydroxides
 is_a: CHEBI:25806 ! oxygen molecular entity
 is_a: CHEBI:33608 ! hydrogen molecular entity
 is_a: CHEBI:37577 ! heteroatomic molecular entity
+
+[Term]
+id: CHEBI:24834
+name: inorganic anion
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:36914 ! inorganic ion
 
 [Term]
 id: CHEBI:24835
@@ -234,6 +263,17 @@ name: salt
 is_a: CHEBI:37577 ! heteroatomic molecular entity
 
 [Term]
+id: CHEBI:24867
+name: monoatomic ion
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:33238 ! monoatomic entity
+
+[Term]
+id: CHEBI:24870
+name: ion
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
 id: CHEBI:25362
 name: elemental molecule
 is_a: CHEBI:25367 ! molecule
@@ -243,6 +283,17 @@ is_a: CHEBI:33259 ! elemental molecular entity
 id: CHEBI:25367
 name: molecule
 is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
+id: CHEBI:25555
+name: nitrogen atom
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33300 ! pnictogen
+
+[Term]
+id: CHEBI:25585
+name: nonmetal atom
+is_a: CHEBI:33250 ! atom
 
 [Term]
 id: CHEBI:25701
@@ -284,6 +335,12 @@ is_a: CHEBI:26712 ! sodium molecular entity
 is_a: CHEBI:35479 ! alkali metal salt
 
 [Term]
+id: CHEBI:27594
+name: carbon atom
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33306 ! carbon group element atom
+
+[Term]
 id: CHEBI:30563
 name: silicon dioxide
 is_a: CHEBI:33327 ! silicon oxide
@@ -297,6 +354,11 @@ is_a: CHEBI:50860 ! organic molecular entity
 id: CHEBI:33232
 name: application
 is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:33238
+name: monoatomic entity
+is_a: CHEBI:33259 ! elemental molecular entity
 
 [Term]
 id: CHEBI:33242
@@ -363,6 +425,11 @@ name: alkaline earth molecular entity
 is_a: CHEBI:33674 ! s-block molecular entity
 
 [Term]
+id: CHEBI:33300
+name: pnictogen
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
 id: CHEBI:33302
 name: pnictogen molecular entity
 is_a: CHEBI:33675 ! p-block molecular entity
@@ -373,10 +440,48 @@ name: chalcogen molecular entity
 is_a: CHEBI:33675 ! p-block molecular entity
 
 [Term]
+id: CHEBI:33306
+name: carbon group element atom
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33318
+name: main group element atom
+is_a: CHEBI:33250 ! atom
+
+[Term]
 id: CHEBI:33327
 name: silicon oxide
 is_a: CHEBI:24836 ! inorganic oxide
 is_a: CHEBI:26677 ! silicon molecular entity
+
+[Term]
+id: CHEBI:33429
+name: monoatomic monoanion
+is_a: CHEBI:23905 ! monoatomic anion
+is_a: CHEBI:36830 ! monoanion
+
+[Term]
+id: CHEBI:33431
+name: elemental chlorine
+is_a: CHEBI:23117 ! chlorine molecular entity
+is_a: CHEBI:33434 ! elemental halogen
+
+[Term]
+id: CHEBI:33432
+name: monoatomic chlorine
+is_a: CHEBI:33431 ! elemental chlorine
+is_a: CHEBI:33433 ! monoatomic halogen
+
+[Term]
+id: CHEBI:33433
+name: monoatomic halogen
+is_a: CHEBI:33238 ! monoatomic entity
+
+[Term]
+id: CHEBI:33434
+name: elemental halogen
+is_a: CHEBI:33259 ! elemental molecular entity
 
 [Term]
 id: CHEBI:33465
@@ -389,6 +494,11 @@ is_a: CHEBI:33302 ! pnictogen molecular entity
 id: CHEBI:33521
 name: metal atom
 is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33560
+name: p-block element atom
+is_a: CHEBI:33318 ! main group element atom
 
 [Term]
 id: CHEBI:33579
@@ -482,6 +592,11 @@ name: polyatomic entity
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
+id: CHEBI:36830
+name: monoanion
+is_a: CHEBI:22563 ! anion
+
+[Term]
 id: CHEBI:36902
 name: chalcogen hydride
 is_a: CHEBI:33242 ! inorganic hydride
@@ -491,6 +606,12 @@ is_a: CHEBI:33304 ! chalcogen molecular entity
 id: CHEBI:36908
 name: argon molecular entity
 is_a: CHEBI:33583 ! noble gas molecular entity
+
+[Term]
+id: CHEBI:36914
+name: inorganic ion
+is_a: CHEBI:24835 ! inorganic molecular entity
+is_a: CHEBI:24870 ! ion
 
 [Term]
 id: CHEBI:36962
@@ -611,6 +732,16 @@ is_a: CHEBI:51086 ! chemical role
 id: CHEBI:78295
 name: food component
 is_a: CHEBI:52211 ! physiological role
+
+[Term]
+id: CHEBI:78298
+name: environmental contaminant
+is_a: CHEBI:51086 ! chemical role
+
+[Term]
+id: CHEBI:79389
+name: monovalent inorganic anion
+is_a: CHEBI:24834 ! inorganic anion
 
 [Term]
 id: ENVO:00000000
@@ -1016,6 +1147,12 @@ def: "Water which has physicochemical properties that have been determined by th
 synonym: "ocean water" EXACT []
 synonym: "seawater" EXACT []
 is_a: ENVO:00002010 ! saline water
+
+[Term]
+id: ENVO:00002186
+name: contaminated water
+synonym: "polluted water" EXACT []
+is_a: ENVO:00002006 ! liquid water
 
 [Term]
 id: ENVO:00002202
@@ -1660,6 +1797,21 @@ id: ENVO:01000665
 name: waste role
 def: "A role that is realized in some process wherein the bearer is discarded or not utilized further." []
 is_a: BFO:0000023 ! role
+
+[Term]
+id: ENVO:01000676
+name: contaminated air
+def: "Contaminated air is air which has sufficient concentrations of environmental pollutants such that it may adversely affect a given ecosystem." []
+is_a: ENVO:00002005 ! air
+
+[Term]
+id: ENVO:01000680
+name: polluted lake
+def: "A lake which has concentrations of environmental contaminants high enough to harm the ecosystems associated with it." []
+is_a: ENVO:00000020 ! lake
+intersection_of: ENVO:00000020 ! lake
+intersection_of: RO:0002473 ENVO:00002186 ! composed primarily of contaminated water
+relationship: RO:0002473 ENVO:00002186 ! composed primarily of contaminated water
 
 [Term]
 id: ENVO:01000685
@@ -2312,6 +2464,27 @@ intersection_of: RO:0002608 ENVO:01000801 ! process has causal agent star
 relationship: RO:0002608 ENVO:01000801 ! process has causal agent star
 
 [Term]
+id: ENVO:01001215
+name: visible spectrum stellar radiation
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths between 380 nm and 760 nm." []
+synonym: "optical stellar radiation" EXACT []
+synonym: "visible spectrum solar radiation" NARROW []
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001215 ! visible spectrum radiation
+intersection_of: ENVO:21001215 ! visible spectrum radiation
+intersection_of: RO:0002608 ENVO:01000801 ! process has causal agent star
+
+[Term]
+id: ENVO:01001216
+name: ultraviolet stellar radiation
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths between 10 nm and 400 nm." []
+synonym: "ultraviolet solar radiation" NARROW []
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001216 ! ultraviolet radiation
+intersection_of: ENVO:21001216 ! ultraviolet radiation
+intersection_of: RO:0002608 ENVO:01000801 ! process has causal agent star
+
+[Term]
 id: ENVO:01001226
 name: terrestrial natural environment
 def: "A natural environment which is located on a land mass." []
@@ -2926,6 +3099,17 @@ def: "A material entity which has been assembled through the intentional, instin
 is_a: BFO:0000040 ! material entity
 
 [Term]
+id: ENVO:01001814
+name: organic object
+def: "An object which is formed as a result of one or more biological processes and is composed primarily of organic material." []
+is_a: ENVO:01001686 ! mass of environmental material
+intersection_of: BFO:0000030 ! object
+intersection_of: RO:0002354 GO:0008150 ! formed as result of biological_process
+intersection_of: RO:0002473 ENVO:01000155 ! composed primarily of organic material
+relationship: RO:0002354 GO:0008150 ! formed as result of biological_process
+relationship: RO:0002473 ENVO:01000155 ! composed primarily of organic material
+
+[Term]
 id: ENVO:01001836
 name: montane biome
 def: "A biome which is subject to montane altitudinal conditions." []
@@ -3063,6 +3247,17 @@ intersection_of: BFO:0000066 ENVO:01000267 ! occurs in atmosphere
 relationship: BFO:0000066 ENVO:01000267 ! occurs in atmosphere
 
 [Term]
+id: ENVO:02500026
+name: anthropogenic modulatory intervention process
+def: "A process during which humans apply technology to alter the magnitude, duration, rate, or impact of an environmental process." []
+is_a: OBI:0000011 ! planned process
+intersection_of: OBI:0000011 ! planned process
+intersection_of: RO:0002211 ENVO:02500000 ! regulates (processual) environmental system process
+intersection_of: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
+relationship: RO:0002211 ENVO:02500000 ! regulates (processual) environmental system process
+relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
+
+[Term]
 id: ENVO:02500027
 name: anthropogenic environmental process
 def: "An environmental process which is driven by the action of humans." []
@@ -3178,6 +3373,97 @@ relationship: BFO:0000050 ENVO:01000820 ! part of pedosphere
 relationship: RO:0002473 ENVO:00001998 ! composed primarily of soil
 
 [Term]
+id: ENVO:09000004
+name: amount of carbon atom in environmental material
+def: "The amount of a carbon atom when measured in environmental material." []
+synonym: "environmental material carbon atom amount" EXACT []
+is_a: PATO:0000070 ! amount
+
+[Term]
+id: ENVO:09000005
+name: amount of carbon atom in soil
+def: "The amount of a carbon atom when measured in soil." []
+synonym: "soil carbon atom amount" EXACT []
+is_a: ENVO:09000004 ! amount of carbon atom in environmental material
+
+[Term]
+id: ENVO:09000006
+name: amount of carbon atom in water
+def: "The amount of a carbon atom when measured in water." []
+synonym: "water carbon atom amount" EXACT []
+is_a: ENVO:09000004 ! amount of carbon atom in environmental material
+
+[Term]
+id: ENVO:09000007
+name: concentration of carbon atom in environmental material
+def: "The concentration of a carbon atom when measured in environmental material." []
+synonym: "environmental material carbon atom concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:09000008
+name: concentration of carbon atom in soil
+def: "The concentration of a carbon atom when measured in soil." []
+synonym: "soil carbon atom concentration" EXACT []
+is_a: ENVO:09000007 ! concentration of carbon atom in environmental material
+
+[Term]
+id: ENVO:09000009
+name: concentration of carbon atom in water
+def: "The concentration of a carbon atom when measured in water." []
+synonym: "water carbon atom concentration" EXACT []
+is_a: ENVO:09000007 ! concentration of carbon atom in environmental material
+
+[Term]
+id: ENVO:09000013
+name: amount of nitrogen atom in environmental material
+def: "The amount of a nitrogen atom when measured in environmental material." []
+synonym: "environmental material nitrogen atom amount" EXACT []
+is_a: PATO:0000070 ! amount
+
+[Term]
+id: ENVO:09000014
+name: amount of nitrogen atom in soil
+def: "The amount of a nitrogen atom when measured in soil." []
+synonym: "soil nitrogen atom amount" EXACT []
+is_a: ENVO:09000013 ! amount of nitrogen atom in environmental material
+
+[Term]
+id: ENVO:09000015
+name: amount of nitrogen atom in water
+def: "The amount of a nitrogen atom when measured in water." []
+synonym: "water nitrogen atom amount" EXACT []
+is_a: ENVO:09000013 ! amount of nitrogen atom in environmental material
+
+[Term]
+id: ENVO:09000016
+name: concentration of nitrogen atom in environmental material
+def: "The concentration of a nitrogen atom when measured in environmental material." []
+synonym: "environmental material nitrogen atom concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:09000017
+name: concentration of nitrogen atom in soil
+def: "The concentration of a nitrogen atom when measured in soil." []
+synonym: "soil nitrogen atom concentration" EXACT []
+is_a: ENVO:09000016 ! concentration of nitrogen atom in environmental material
+
+[Term]
+id: ENVO:09000018
+name: concentration of nitrogen atom in water
+def: "The concentration of a nitrogen atom when measured in water." []
+synonym: "water nitrogen atom concentration" EXACT []
+is_a: ENVO:09000016 ! concentration of nitrogen atom in environmental material
+
+[Term]
+id: ENVO:09000019
+name: concentration of chloride in water
+def: "The concentration of a chloride when measured in water." []
+synonym: "water chloride concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
 id: ENVO:09200000
 name: temperature of environmental material
 def: "The temperature of some environmental material." []
@@ -3278,11 +3564,36 @@ relationship: BFO:0000050 ENVO:01001000 ! part of environmental system determine
 relationship: RO:0002509 UBERON:0001062 ! determined by part of anatomical entity
 
 [Term]
+id: ENVO:21001215
+name: visible spectrum radiation
+def: "A radiation process during which electromagnetic waves or their quanta are emitted at wavelengths between 380 nm and 760 nm." []
+synonym: "optical radiation" EXACT []
+synonym: "visible light" RELATED []
+is_a: ENVO:01001026 ! electromagnetic radiation
+
+[Term]
+id: ENVO:21001216
+name: ultraviolet radiation
+def: "A radiation process during which electromagnetic waves or their quanta are emitted at wavelengths between 10 nm and 400 nm." []
+synonym: "UV radiation" EXACT []
+is_a: ENVO:01001026 ! electromagnetic radiation
+
+[Term]
 id: ENVO:3100011
 name: concentration of dioxygen in liquid water
 def: "The concentration of dioxygen when measured in liquid water." []
 synonym: "liquid water dioxygen concentration" EXACT []
 is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: GO:0008150
+name: biological_process
+def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
+synonym: "biological process" EXACT []
+synonym: "physiological process" EXACT []
+synonym: "single organism process" RELATED []
+synonym: "single-organism process" RELATED []
+is_a: BFO:0000015 ! process
 
 [Term]
 id: NCBITaxon:1
@@ -3597,6 +3908,17 @@ is_a: PATO:0000001 ! quality
 id: PATO:0000069
 name: deviation (from_normal)
 def: "A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average." []
+is_a: PATO:0000068 ! qualitative
+
+[Term]
+id: PATO:0000070
+name: amount
+def: "The number of entities of this type that are part of the whole organism." []
+synonym: "count in organism" RELATED []
+synonym: "number" RELATED []
+synonym: "presence" RELATED []
+synonym: "presence or absence in organism" EXACT []
+synonym: "quantitative" EXACT []
 is_a: PATO:0000068 ! qualitative
 
 [Term]
@@ -4069,6 +4391,12 @@ is_transitive: true
 is_a: RO:0002131 ! overlaps
 
 [Typedef]
+id: BFO:0000063
+name: precedes
+def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
 id: BFO:0000066
 name: occurs in
 def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
@@ -4148,6 +4476,13 @@ id: RO:0002163
 name: spatially disjoint from
 def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
 is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
+id: RO:0002211
+name: regulates
+name: regulates (processual)
+def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
+is_a: RO:0002411 ! causally upstream of
 
 [Typedef]
 id: RO:0002219
@@ -4247,6 +4582,20 @@ name: causally related to
 def: "This relation groups causal relations between material entities and causal relations between processes" []
 
 [Typedef]
+id: RO:0002411
+name: causally upstream of
+def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+is_a: BFO:0000063 ! precedes
+is_a: RO:0002418 ! causally upstream of or within
+
+[Typedef]
+id: RO:0002418
+name: causally upstream of or within
+def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
+synonym: "affects" RELATED []
+is_a: RO:0002501 ! causal relation between processes
+
+[Typedef]
 id: RO:0002473
 name: composed primarily of
 def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
@@ -4257,6 +4606,12 @@ id: RO:0002500
 name: causal agent in process
 def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
 is_a: RO:0002595 ! causal relation between material entity and a process
+
+[Typedef]
+id: RO:0002501
+name: causal relation between processes
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+is_a: RO:0002410 ! causally related to
 
 [Typedef]
 id: RO:0002502

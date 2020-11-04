@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/ro_import.owl
+data-version: mondo/releases/2020-10-21/imports/ro_import.owl
 ontology: mondo/imports/ro_import
 
 [Term]
@@ -1563,6 +1563,13 @@ id: RO:0002490
 name: existence overlaps
 def: "x existence overlaps y if and only if either (a) the start of x is part of y or (b) the end of x is part of y. Formally: x existence starts and ends during y iff (α(x) >= α(y) & α(x) <= ω(y)) OR (ω(x) <= ω(y) & ω(x) >= α(y))" []
 is_a: RO:0002487 ! relation between physical entity and a process or stage
+
+[Typedef]
+id: RO:0002491
+name: existence starts and ends during
+def: "x existence starts and ends during y if and only if the start of x is part of y and the end of x is part of y. Formally: x existence starts and ends during y iff α(x) >= α(y) & α(x) <= ω(y) & ω(x) <= ω(y) & ω(x) >= α(y)" []
+is_a: RO:0002488 ! existence starts during
+is_a: RO:0002492 ! existence ends during
 
 [Typedef]
 id: RO:0002492

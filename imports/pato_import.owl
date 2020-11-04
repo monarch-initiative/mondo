@@ -11,7 +11,7 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-09-14/imports/pato_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-10-21/imports/pato_import.owl"/>
     </owl:Ontology>
     
 
@@ -1248,6 +1248,15 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/pato#reciprocal_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/pato#reciprocal_of">
+        <obo:IAO_0000115>q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e.</obo:IAO_0000115>
+        <rdfs:label>reciprocal_of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1535,6 +1544,27 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0000070 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000070">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000068"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#reciprocal_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001555"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The number of entities of this type that are part of the whole organism.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>presence or absence in organism</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quantitative</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>count in organism</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>number</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>presence</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>amount</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0000117 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000117">
@@ -1688,6 +1718,44 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s exhibiting no deviation from normal or average.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>average</oboInOwl:hasRelatedSynonym>
         <rdfs:label>normal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000467 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000467">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000070"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s existence.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>present in organism</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>present</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000470 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000470">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000467"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002300"/>
+        <obo:IAO_0000115>An amount which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>increased number</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>present in greater numbers in organism</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>supernumerary</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>accessory</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>increased</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>increased amount</rdfs:label>
     </owl:Class>
     
 
@@ -2317,6 +2385,28 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001555 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001555">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#reciprocal_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000070"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The number of parts of a particular type that the bearer entity has. This is a relational quality, and thus holds between two entities: the bearer of the quality, and the type of parts.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>extra or missing physical or functional parts</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>has or lacks parts of type</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mereological quality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>number of</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>cardinality</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>number</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has number of</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001562 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001562">
@@ -2700,6 +2790,33 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
         <obo:IAO_0000115>A quality that inheres in an entire organism or part of an organism.</obo:IAO_0000115>
         <rdfs:label>organismal quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001997 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001997">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0000070"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000467"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002301"/>
+        <obo:IAO_0000115>An amount which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>decreased number</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>present in fewer numbers in organism</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>decreased</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>reduced</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>subnumerary</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>decreased amount</rdfs:label>
     </owl:Class>
     
 

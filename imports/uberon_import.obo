@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/uberon_import.owl
+data-version: mondo/releases/2020-10-21/imports/uberon_import.owl
 ontology: mondo/imports/uberon_import
 
 [Term]
@@ -1468,9 +1468,9 @@ synonym: "blastosphere" RELATED []
 synonym: "blastula embryo" EXACT []
 is_a: UBERON:0000922 ! embryo
 intersection_of: UBERON:0000468 ! multicellular organism
-intersection_of: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
-relationship: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
+intersection_of: RO:0002491 UBERON:0000108 ! existence starts and ends during blastula stage
 relationship: RO:0002202 UBERON:0007010 ! develops_from cleaving embryo
+relationship: RO:0002491 UBERON:0000108 ! existence starts and ends during blastula stage
 
 [Term]
 id: UBERON:0000309
@@ -1604,8 +1604,8 @@ synonym: "embryo late stage" RELATED []
 synonym: "fetus" NARROW []
 is_a: UBERON:0000922 ! embryo
 intersection_of: UBERON:0000922 ! embryo
-intersection_of: existence_starts_and_ends_during UBERON:0007220 ! late embryonic stage
-relationship: existence_starts_and_ends_during UBERON:0007220 ! late embryonic stage
+intersection_of: RO:0002491 UBERON:0007220 ! existence starts and ends during late embryonic stage
+relationship: RO:0002491 UBERON:0007220 ! existence starts and ends during late embryonic stage
 
 [Term]
 id: UBERON:0000325
@@ -1818,8 +1818,8 @@ is_a: UBERON:0002050 ! embryonic structure
 relationship: BFO:0000050 UBERON:0000307 ! part of blastula
 relationship: BFO:0000051 UBERON:0000087 ! has part inner cell mass
 relationship: BFO:0000051 UBERON:0000088 ! has part trophoblast
-relationship: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
 relationship: RO:0002202 UBERON:0000085 ! develops_from morula
+relationship: RO:0002491 UBERON:0000108 ! existence starts and ends during blastula stage
 
 [Term]
 id: UBERON:0000362
@@ -2580,7 +2580,7 @@ is_a: UBERON:0005423 ! developing anatomical structure
 intersection_of: UBERON:0005423 ! developing anatomical structure
 intersection_of: BFO:0000050 UBERON:0016887 ! part of entire extraembryonic component
 relationship: BFO:0000050 UBERON:0016887 ! part of entire extraembryonic component
-relationship: existence_starts_and_ends_during UBERON:0000068 ! embryo stage
+relationship: RO:0002491 UBERON:0000068 ! existence starts and ends during embryo stage
 
 [Term]
 id: UBERON:0000479
@@ -18064,14 +18064,13 @@ is_a: UBERON:0000062 ! organ
 [Term]
 id: UBERON:0003104
 name: mesenchyme
-def: "Portion of tissue consisting of loosely organized undifferentiated mesodermal cells that give rise to such structures as connective tissues, blood, lymphatics, bone, and cartilage[XAO]. A mesh-like cell arrangement, less compact than an epithelium[ZFA]. The part of the embryonic mesoderm, consisting of loosely packed, unspecialized cells set in a gelatinous ground substance, from which connective tissue, bone, cartilage, and the circulatory and lymphatic systems develop[BTO]." []
+def: "Portion of tissue composed of mesenchymal cells (motile cells that develop from epthelia via an epithelial to mesenchymal transition) and surrounding extracellular material. Mesenchyme has different embryological origins in different metazoan taxa - in many invertebrates it derives in whole or part from ectoderm. In vertebrates it derives largely from mesoderm, and sometimes the terms are used interchangeably, e.g. lateral plate mesoderm/mesenchyme." []
 synonym: "mesenchyma" RELATED []
 synonym: "mesenchymal tissue" EXACT []
 synonym: "mesenchyme tissue" EXACT []
 synonym: "portion of mesenchymal tissue" EXACT []
 synonym: "portion of mesenchyme tissue" EXACT []
 is_a: UBERON:0000479 ! tissue
-relationship: RO:0002254 UBERON:0000926 ! has developmental contribution from mesoderm
 
 [Term]
 id: UBERON:0003110
@@ -28926,9 +28925,9 @@ def: "An embryo at the neurula stage." []
 synonym: "neurula" EXACT []
 is_a: UBERON:0000922 ! embryo
 intersection_of: UBERON:0000468 ! multicellular organism
-intersection_of: existence_starts_and_ends_during UBERON:0000110 ! neurula stage
-relationship: existence_starts_and_ends_during UBERON:0000110 ! neurula stage
+intersection_of: RO:0002491 UBERON:0000110 ! existence starts and ends during neurula stage
 relationship: RO:0002202 UBERON:0004734 ! develops_from gastrula
+relationship: RO:0002491 UBERON:0000110 ! existence starts and ends during neurula stage
 
 [Term]
 id: UBERON:0004456
@@ -30354,9 +30353,9 @@ synonym: "trilaminar disk" RELATED []
 synonym: "trilaminar germ" RELATED []
 is_a: UBERON:0000922 ! embryo
 intersection_of: UBERON:0000468 ! multicellular organism
-intersection_of: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
-relationship: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
+intersection_of: RO:0002491 UBERON:0000109 ! existence starts and ends during gastrula stage
 relationship: RO:0002202 UBERON:0000307 ! develops_from blastula
+relationship: RO:0002491 UBERON:0000109 ! existence starts and ends during gastrula stage
 
 [Term]
 id: UBERON:0004736
@@ -57674,8 +57673,8 @@ synonym: "extra-embryonic component" EXACT []
 synonym: "extraembryonic component" EXACT []
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: BFO:0000050 UBERON:0004716 ! part of conceptus
-relationship: existence_starts_and_ends_during UBERON:0000068 ! embryo stage
 relationship: RO:0002220 UBERON:0002050 ! adjacent_to embryonic structure
+relationship: RO:0002491 UBERON:0000068 ! existence starts and ends during embryo stage
 
 [Term]
 id: UBERON:0016888
@@ -62753,9 +62752,13 @@ transitive_over: BFO:0000050 ! part of
 id: RO:0002489
 name: existence starts with
 def: "Relation between continuant and occurrent, such that c comes into existence at the start of p." []
-domain: UBERON:0001062 ! anatomical entity
-range: UBERON:0000105 ! life cycle stage
 is_a: RO:0002488 ! existence starts during
+
+[Typedef]
+id: RO:0002491
+name: existence starts and ends during
+is_a: RO:0002488 ! existence starts during
+is_a: RO:0002492 ! existence ends during
 
 [Typedef]
 id: RO:0002492
@@ -62769,8 +62772,6 @@ transitive_over: BFO:0000050 ! part of
 id: RO:0002493
 name: existence ends with
 def: "Relation between continuant and occurrent, such that c ceases to exist at the end of p." []
-domain: UBERON:0001062 ! anatomical entity
-range: UBERON:0000105 ! life cycle stage
 is_a: RO:0002492 ! existence ends during
 
 [Typedef]
@@ -62883,14 +62884,6 @@ is_a: BSPO:0000100 ! proximal_to
 is_a: RO:0002170 ! connected to
 is_a: transitively_distally_connected_to ! transitively distally connected to
 inverse_of: proximally_connected_to ! proximally connected to
-
-[Typedef]
-id: existence_starts_and_ends_during
-name: existence starts and ends during
-domain: UBERON:0001062 ! anatomical entity
-range: UBERON:0000105 ! life cycle stage
-is_a: RO:0002488 ! existence starts during
-is_a: RO:0002492 ! existence ends during
 
 [Typedef]
 id: extends_fibers_into

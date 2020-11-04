@@ -50,13 +50,48 @@ We have overwitten some with our own. We aim for genus-differentia (but not in t
 
 Use lowercase, even for initial letter, except for proper names (note: many synonyms remain with leading capitalization, this is improving).
 
-Always annotate synonyms with xrefs. Many of these are currently DOID, Orphanet, GARD, etc IDs. We will add more directly referencing a publication (PMID CURIEs). Also add editor ID where appropriate (ORCID, in format with http://, for example: http://orcid.org/0000-0001-5208-3432).
+Always annotate synonyms with xrefs. Many of these are currently DOID, Orphanet, GARD, etc IDs. We will add more directly referencing a publication (PMID CURIEs in the format PMID:XXXXXXX). Also add editor ID where appropriate (ORCID, in format with http://, for example: http://orcid.org/0000-0001-5208-3432).
 
-Always indicate synonym scope. These are incorrect in many places where they have been brought in externally. **Do not trust scope if there is no synonym xref other than DO**.
+Always indicate synonym scope (see below). Currently the following annotation properties are used:
+
+- hasExactSynonym
+- hasBroadSynonym
+- hasNarrowSynonym
+- hasRelatedSynonym
+
+These are incorrect in many places where they have been brought in externally. **Do not trust scope if there is no synonym xref other than DO**.
+
+### Synonym scope:
+
+#### Exact
+
+The definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name. 
+
+For example, MONDO:0003321 `hereditary Wilms' tumor` and `familial Wilms' tumor`.
+
+#### Narrow 
+
+The definition of the synonym is the same as the primary definition, but has additional qualifiers. 
+
+For example, MONDO:0004979 `asthma` and `exercise-induced asthma`
+
+#### Broad
+
+The primary definition accurately describes the synonym, but the definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term.
+
+For example, MONDO:0016264 `autoimmune hepatitis` and `autoimmune liver disease`
+
+#### Related 
+
+This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included. 
+
+For example, MONDO:0012996 `AGAT deficiency` has the related synonym `disorder of glycine amidinotransferase activity`.
 
 We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining) 
 
-### EXCLUDE synonyms
+### Synonym type:
+
+#### EXCLUDE synonyms
 
 Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release.
 
@@ -64,7 +99,7 @@ For example, see MONDO_0002679 cerebral infarction or MONDO_0008170 'ovarian can
 
 ![ovarian cancer](images/OvarianCancerNOS.png)
 
-### DEPRACATE synonyms
+#### DEPRACATE synonyms
 
 We may also mark synonyms with DEPRECATED. E.g. all occurrences of “mental retardation” should be “intellectual disability”
 
@@ -84,7 +119,6 @@ For example, see MONDO_0001071 'intellectual disability'
 7. Scroll to bottom, and show annotation below `synonym_type_property` (click triangle)
 8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`)
 9. Click OK
-
 
 ## Axiom Annotations
 

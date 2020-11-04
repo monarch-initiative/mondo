@@ -10,7 +10,7 @@ before_install:
     export CMTMSG="$(jq -nc --arg str "${TRAVIS_COMMIT_MESSAGE}" '$str')";
     echo "Commit message is: ${CMTMSG}";  
     curl -X 
-    POST "https://monarch-jenkins.cgrb.oregonstate.edu/job/test-mondo/build" 
+    POST "https://ci.monarchinitiative.org/job/test-mondo/build" 
     -H "Jenkins-Crumb:${ShahimCSRFCrumb}" 
     --user "essaids:${ShahimAPIToken}" 
     -f
@@ -41,8 +41,8 @@ before_script:
   - cd src/ontology
 
 script:
-  - echo "SKIPPING TRAVIS REAL BUILD TO FORCE SUCCESS"
-  #- ./run.sh make test
+  - echo "Skipping"
+  ##- ./run.sh make test
 
 # whitelist
 branches:

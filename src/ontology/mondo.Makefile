@@ -37,6 +37,7 @@ pattern_ontology: ../patterns/pattern.owl
 	filter --select "<http://purl.obolibrary.org/obo/mondo/patterns*>" --select "self annotations" --signature true --trim true -o ../patterns/pattern-simple.owl
 	
 ../patterns/dosdp-patterns/README.md: .FORCE
+	pip install tabulate
 	python ../scripts/patterns_create_overview.py "../patterns/dosdp-patterns" "../patterns/data/matches" $@
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
@@ -51,3 +52,9 @@ clean:
 		*.tmp *.tmp.obo merged.owl *merged.owl reasoned.obo skos.ttl \
 		debug.owl roundtrip.obo test_nomerge sparql_test_* disjoint_sibs.obo \
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
+		
+mirror/foodon.owl:
+	echo "FOODON skipped"
+	
+imports/foodon_import.owl:
+	echo "FOODON skipped"

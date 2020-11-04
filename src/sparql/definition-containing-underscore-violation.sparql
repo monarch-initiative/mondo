@@ -1,0 +1,11 @@
+# home: hp/sparql/trailing-whitespace-violation.sparql
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+
+SELECT ?term ?x WHERE 
+{
+  ?term IAO:0000115 ?x .
+  FILTER( regex(STR(?x), "_"))
+  FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+}

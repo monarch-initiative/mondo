@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/cl_import.owl
+data-version: mondo/releases/2020-10-21/imports/cl_import.owl
 subsetdef: ubprop:upper_level ""
 ontology: mondo/imports/cl_import
 
@@ -17,7 +17,7 @@ xref: KUPO:0000002
 xref: VHOG:0001533
 xref: WBbt:0004017
 xref: XAO:0003012
-equivalent_to: GO:0005623
+relationship: RO:0002160 NCBITaxon:131567
 
 [Term]
 id: CL:0000003
@@ -29,7 +29,6 @@ subset: ubprop:upper_level
 synonym: "cell in vivo" NARROW []
 xref: CARO:0000013
 is_a: CL:0000000 ! cell
-is_a: GO:0005623
 
 [Term]
 id: CL:0000005
@@ -47,8 +46,8 @@ name: neuronal receptor cell
 namespace: cell
 synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
 is_a: CL:0000101 ! sensory neuron
-is_a: CL:0000197 ! receptor cell
-intersection_of: CL:0000197 ! receptor cell
+is_a: CL:0000197 ! sensory receptor cell
+intersection_of: CL:0000197 ! sensory receptor cell
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002215 GO:0050906
 
@@ -195,6 +194,7 @@ synonym: "neuroblast" EXACT []
 xref: BTO:0000930
 xref: FMA:70563
 is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: RO:0002160 NCBITaxon:7742
 
 [Term]
 id: CL:0000034
@@ -631,7 +631,6 @@ xref: VHOG:0001479
 is_a: CL:0000542 {is_inferred="true"} ! lymphocyte
 intersection_of: CL:0000542 ! lymphocyte
 intersection_of: RO:0002215 GO:0002456
-disjoint_from: CL:0000623 ! natural killer cell
 disjoint_from: CL:0000945 ! lymphocyte of B lineage
 relationship: RO:0002202 CL:0000827 ! pro-T cell
 
@@ -706,7 +705,7 @@ comment: The term "neuroepithelial cell" is used to describe both this cell type
 synonym: "neuroepithelial cell" BROAD []
 xref: BTO:0004301
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0000197 ! receptor cell
+is_a: CL:0000197 ! sensory receptor cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: RO:0002215 GO:0050906
@@ -716,13 +715,11 @@ id: CL:0000100
 name: motor neuron
 namespace: cell
 def: "An efferent neuron that passes from the central nervous system or a ganglion toward or to a muscle and conducts an impulse that causes or inhibits movement." [MESH:A08.663.655.500, PMID:16875686]
-synonym: "anterior horn cell" NARROW []
 synonym: "motoneuron" EXACT []
 xref: BTO:0000312
 xref: FMA:83617
 xref: WBbt:0005409
 is_a: CL:0000527 ! efferent neuron
-relationship: RO:0002120 CL:0000187 ! muscle cell
 
 [Term]
 id: CL:0000101
@@ -764,6 +761,7 @@ id: CL:0000123
 name: neuron associated cell (sensu Vertebrata)
 namespace: cell
 is_a: CL:0000095 ! neuron associated cell
+relationship: RO:0002160 NCBITaxon:7742
 relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -788,7 +786,7 @@ synonym: "macrogliocyte" EXACT []
 xref: BTO:0000771
 xref: CALOHA:TS-2027
 xref: FMA:54538
-is_a: CL:0000243 ! glial cell (sensu Vertebrata)
+is_a: CL:0000125 ! glial cell
 relationship: RO:0002202 CL:0000339 ! glioblast (sensu Vertebrata)
 
 [Term]
@@ -816,7 +814,7 @@ id: CL:0000134
 name: mesenchymal stem cell
 namespace: cell
 alt_id: CL:0002452
-def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. This cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
+def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. In humans, this cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
 comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
 synonym: "BMSC" NARROW []
 synonym: "bone marrow stromal cells" NARROW []
@@ -835,20 +833,7 @@ xref: BTO:0003298
 xref: FMA:70546
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002320 {is_inferred="true"} ! connective tissue cell
-intersection_of: CL:0002320 ! connective tissue cell
-intersection_of: lacks_plasma_membrane_part GO:0042613
-intersection_of: lacks_plasma_membrane_part PR:000001003
-intersection_of: lacks_plasma_membrane_part PR:000001006
-intersection_of: RO:0002104 PR:000001345
-intersection_of: RO:0002104 PR:000001800
-intersection_of: RO:0002104 PR:000001843
-intersection_of: RO:0002215 GO:0001649
-intersection_of: RO:0002215 GO:0016477
-intersection_of: RO:0002215 GO:0030182
-intersection_of: RO:0002215 GO:0030855
-intersection_of: RO:0002215 GO:0045444
-intersection_of: RO:0002215 GO:0055007
-intersection_of: RO:0002215 GO:0060591
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/474 xsd:string
 
 [Term]
 id: CL:0000136
@@ -1121,10 +1106,12 @@ intersection_of: RO:0002215 GO:0035929
 
 [Term]
 id: CL:0000181
-name: metabolising cell
+name: obsolete metabolising cell
 namespace: cell
 def: "A cell whose primary function is intermediary metabolism." [FB:ma]
-is_a: CL:0000003 ! native cell
+comment: Removing this grouping class, because the groupings are incomplete and too hard to maintain.
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/720 xsd:string
+is_obsolete: true
 
 [Term]
 id: CL:0000182
@@ -1136,7 +1123,6 @@ xref: BTO:0000575
 xref: CALOHA:TS-0454
 xref: FMA:14515
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0000181 ! metabolising cell
 is_a: CL:0000417 ! endopolyploid cell
 is_a: CL:0002371 ! somatic cell
 relationship: BFO:0000050 UBERON:0002107
@@ -1216,9 +1202,14 @@ relationship: RO:0002202 CL:0000514 ! smooth muscle myoblast
 
 [Term]
 id: CL:0000197
-name: receptor cell
+name: sensory receptor cell
 namespace: cell
+def: "A cell that is capable of detection of a stimulus involved in sensory perception." []
+synonym: "receptor cell" EXACT []
 is_a: CL:0000003 ! native cell
+intersection_of: CL:0000000 ! cell
+intersection_of: BFO:0000050 UBERON:0001032
+intersection_of: RO:0002215 GO:0050906
 
 [Term]
 id: CL:0000210
@@ -1449,17 +1440,18 @@ def: "A modified epidermal cell located in the stratum basale. They are found mo
 synonym: "Merkel's cell" EXACT []
 xref: FMA:70548
 is_a: CL:0000123 ! neuron associated cell (sensu Vertebrata)
-is_a: CL:0000312 {source="PMID:19782676"} ! keratinocyte
+is_a: CL:0000312 {xref="PMID:19782676"} ! keratinocyte
 is_a: CL:0000710 ! neurecto-epithelial cell
 relationship: BFO:0000050 UBERON:0002025
 
 [Term]
 id: CL:0000243
-name: glial cell (sensu Vertebrata)
+name: obsolete glial cell (sensu Vertebrata)
 namespace: cell
 def: "A non-neuronal cell of the nervous system. They not only provide physical support, but also respond to injury, regulate the ionic and chemical composition of the extracellular milieu. Form the myelin insulation of nervous pathways, guide neuronal migration during development, and exchange metabolites with neurons. Neuroglia have high-affinity transmitter uptake systems, voltage-dependent and transmitter-gated ion channels, and can release transmitters, but their role in signaling (as in many other functions) is unclear." [MESH:A08.637]
-is_a: CL:0000125 ! glial cell
-relationship: RO:0002202 CL:0000339 ! glioblast (sensu Vertebrata)
+comment: This is a grouping class that is no longer needed or wanted.
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/715 xsd:string
+is_obsolete: true
 
 [Term]
 id: CL:0000244
@@ -1475,6 +1467,7 @@ id: CL:0000255
 name: eukaryotic cell
 namespace: cell
 is_a: CL:0000003 ! native cell
+relationship: RO:0002160 NCBITaxon:2759
 
 [Term]
 id: CL:0000295
@@ -1597,6 +1590,7 @@ def: "A cell derived from the specialized ectoderm flanking each side of the emb
 xref: FMA:86667
 is_a: CL:0000219 ! motile cell
 is_a: CL:0011012 ! neural crest cell
+is_a: CL:0011026 ! progenitor cell
 relationship: RO:0002202 CL:0007004 ! premigratory neural crest cell
 
 [Term]
@@ -1623,6 +1617,8 @@ synonym: "spongioblast" EXACT []
 xref: FMA:70564
 is_a: CL:0000030 ! glioblast
 is_a: CL:0000123 ! neuron associated cell (sensu Vertebrata)
+is_a: CL:0011026 ! progenitor cell
+relationship: RO:0002160 NCBITaxon:7742
 
 [Term]
 id: CL:0000354
@@ -1915,7 +1911,7 @@ xref: WBbt:0003679
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
-relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
+relationship: RO:0002202 CL:0000031 {gci_filler="NCBITaxon:7742", gci_relation="RO:0002162", xref="https://github.com/obophenotype/cell-ontology/issues/757"} ! neuroblast (sensu Vertebrata)
 relationship: RO:0002215 GO:0019226
 
 [Term]
@@ -1928,6 +1924,7 @@ xref: BTO:0003217
 xref: FMA:83377
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002371 ! somatic cell
+is_a: CL:0011026 ! progenitor cell
 relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -1985,6 +1982,7 @@ name: animal cell
 namespace: cell
 subset: ubprop:upper_level
 is_a: CL:0000255 ! eukaryotic cell
+relationship: RO:0002160 NCBITaxon:33208
 
 [Term]
 id: CL:0000549
@@ -2185,6 +2183,7 @@ comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive
 synonym: "angioblast" EXACT []
 synonym: "chondroplast" EXACT []
 is_a: CL:0000134 {is_inferred="true"} ! mesenchymal stem cell
+is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0000134 ! mesenchymal stem cell
 intersection_of: RO:0002104 PR:000001444
 intersection_of: RO:0002104 PR:000002112
@@ -2345,7 +2344,7 @@ xref: CALOHA:TS-0664
 xref: FMA:63147
 xref: FMA:83601
 xref: VHOG:0001697
-is_a: CL:0001067 {is_inferred="true"} ! group 1 innate lymphoid cell
+is_a: CL:0001067 ! group 1 innate lymphoid cell
 intersection_of: CL:0001067 ! group 1 innate lymphoid cell
 intersection_of: lacks_plasma_membrane_part PR:000001002
 intersection_of: lacks_plasma_membrane_part PR:000001020
@@ -3096,7 +3095,8 @@ def: "A natural killer cell that is developmentally immature and expresses natur
 comment: In mouse the NKR are Ly49 molecules and in human these cells express KIR molecules.
 synonym: "immature NK cell" EXACT []
 synonym: "p-NK" RELATED [PMID:12457618]
-is_a: CL:0000623 {is_inferred="true"} ! natural killer cell
+is_a: CL:0000623 ! natural killer cell
+is_a: CL:0001082 ! immature innate lymphoid cell
 intersection_of: CL:0000623 ! natural killer cell
 intersection_of: RO:0000053 PATO:0001501
 disjoint_from: CL:0000937 ! pre-natural killer cell
@@ -3519,13 +3519,11 @@ namespace: cell
 def: "Cell committed to natural killer cell lineage that has the phenotype CD122-positive, CD34-positive, and CD117-positive. This cell type lacks expression of natural killer receptor proteins." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:pam, GOC:tfm, PMID:16551251, PMID:17100874]
 comment: These cells are also reportedly CD7-low, CD10-negative, CD45RA-positive, alpha-4-beta-7 integrin-high.
 synonym: "pre-NK cell" EXACT []
-is_a: CL:0000623 {is_inferred="true"} ! natural killer cell
+is_a: CL:0000623 ! natural killer cell
 intersection_of: CL:0000623 ! natural killer cell
 intersection_of: RO:0002104 PR:000001003
 intersection_of: RO:0002104 PR:000001381
 intersection_of: RO:0002104 PR:000002065
-disjoint_from: CL:0002338 ! CD56-positive, CD161-positive immature natural killer cell
-disjoint_from: CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
 
 [Term]
 id: CL:0000941
@@ -4167,6 +4165,15 @@ def: "A group 1 innate lymphoid cell that is non-cytotoxic." [GOC:add, GOC:dsd, 
 is_a: CL:0001067 ! group 1 innate lymphoid cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T20:54:12Z xsd:dateTime
+
+[Term]
+id: CL:0001082
+name: immature innate lymphoid cell
+def: "An innate lyphoid cell with an immature phenotype." [GOC:add]
+synonym: "immature ILC" EXACT []
+is_a: CL:0001065 ! innate lymphoid cell
+intersection_of: CL:0001065 ! innate lymphoid cell
+intersection_of: RO:0000053 PATO:0001501
 
 [Term]
 id: CL:0001200
@@ -5304,6 +5311,7 @@ def: "A basally situated, mitotically active, columnar-shaped keratinocyte attac
 xref: FMA:70571
 is_a: CL:0000312 ! keratinocyte
 is_a: CL:0000646 {is_inferred="true"} ! basal cell
+is_a: CL:0011026 ! progenitor cell
 is_a: CL:1000428 ! stem cell of epidermis
 intersection_of: CL:0000646 ! basal cell
 intersection_of: BFO:0000050 UBERON:0001003
@@ -5559,36 +5567,38 @@ creation_date: 2010-09-20T02:25:25Z
 
 [Term]
 id: CL:0002338
-name: CD56-positive, CD161-positive immature natural killer cell
+name: CD56-positive, CD161-positive immature natural killer cell, human
 namespace: cell
-def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-positive, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, https://orcid.org/0000-0001-5208-3432, ISBN:0781735149, PMID:12457618]
+def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-positive, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, ISBN:0781735149, PMID:12457618]
 comment: Human markers; killer cell immunoglobulin-like receptor 2DL1 is used as a representative example (PRO at this time lacks a KIR superfamily).
 synonym: "p-NK" RELATED [PMID:12457618]
-is_a: CL:0000823 {is_inferred="true"} ! immature natural killer cell
+is_a: CL:0000823 ! immature natural killer cell
 intersection_of: CL:0000823 ! immature natural killer cell
 intersection_of: lacks_plasma_membrane_part PR:000001003
 intersection_of: RO:0002104 PR:000001024
 intersection_of: RO:0002104 PR:000001381
 intersection_of: RO:0002104 PR:000001874
 intersection_of: RO:0002104 PR:000002065
-relationship: RO:0002202 CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
+intersection_of: RO:0002162 NCBITaxon:9606
+relationship: RO:0002202 CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell, human
 created_by: tmeehan
 creation_date: 2010-09-21T10:06:53Z
 
 [Term]
 id: CL:0002344
-name: CD56-negative, CD161-positive immature natural killer cell
+name: CD56-negative, CD161-positive immature natural killer cell, human
 namespace: cell
 def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-negative, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, ISBN:0781735149, PMID:12457618]
 comment: Human markers; killer cell immunoglobulin-like receptor 2DL1 is used as a representative example (PRO at this time lacks a KIR superfamily).
 synonym: "p-NK" RELATED [PMID:12457618]
-is_a: CL:0000823 {is_inferred="true"} ! immature natural killer cell
+is_a: CL:0000823 ! immature natural killer cell
 intersection_of: CL:0000823 ! immature natural killer cell
 intersection_of: lacks_plasma_membrane_part PR:000001003
 intersection_of: lacks_plasma_membrane_part PR:000001024
 intersection_of: RO:0002104 PR:000001381
 intersection_of: RO:0002104 PR:000001874
 intersection_of: RO:0002104 PR:000002065
+intersection_of: RO:0002162 NCBITaxon:9606
 created_by: tmeehan
 creation_date: 2010-09-20T04:33:11Z
 
@@ -6118,8 +6128,8 @@ namespace: cell
 def: "A glial cell that ensheathes axons of neuron in the peripheral nervous system and are necessary for their maintainance and function." [GOC:tfm]
 xref: BTO:0001220
 xref: CALOHA:TS-0898
-is_a: CL:0000243 {is_inferred="true"} ! glial cell (sensu Vertebrata)
-intersection_of: CL:0000243 ! glial cell (sensu Vertebrata)
+is_a: CL:0000125 ! glial cell
+intersection_of: CL:0000125 ! glial cell
 intersection_of: BFO:0000050 UBERON:0000010
 created_by: tmeehan
 creation_date: 2011-03-02T01:19:27Z
@@ -6230,6 +6240,7 @@ name: neural crest derived neuroblast
 namespace: cell
 def: "A neuroblast derived from a neural crest cell." [GOC:tfm, PMID:17407019]
 is_a: CL:0000031 ! neuroblast (sensu Vertebrata)
+is_a: CL:0011026 ! progenitor cell
 relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2011-08-22T09:24:15Z
@@ -6289,7 +6300,7 @@ creation_date: 2012-01-12T05:21:09Z
 [Term]
 id: CL:0005026
 name: hepatoblast
-def: "Multi fate stem cell that gives rise to to both hepatocytes and cholangiocytes as descendants." [GOC:CVS, PMID:18356246, PMID:20483998]
+def: "Multi fate stem cell that gives rise to both hepatocytes and cholangiocytes as descendants." [GOC:CVS, PMID:18356246, PMID:20483998]
 is_a: CL:0000048 ! multi fate stem cell
 
 [Term]
@@ -6332,6 +6343,7 @@ namespace: cell
 def: "Skeletogenic cell that has the potential to transform into an osteoblast, and develops from neural crest or mesodermal cells." [GO_REF:0000034]
 synonym: "osteoprogenitor cell" EXACT []
 is_a: CL:0000055 ! non-terminally differentiated cell
+is_a: CL:0011026 ! progenitor cell
 relationship: BFO:0000050 UBERON:0008883
 relationship: RO:0002202 CL:0000222 ! mesodermal cell
 relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
@@ -6410,7 +6422,6 @@ synonym: "camera type eye photoreceptor cell" EXACT []
 is_a: CL:0000210 ! photoreceptor cell
 intersection_of: CL:0000210 ! photoreceptor cell
 intersection_of: BFO:0000050 UBERON:0000019
-relationship: BFO:0000050 UBERON:0000966 {editor="GOC:cjm"}
 
 [Term]
 id: CL:0011012
@@ -6419,6 +6430,15 @@ namespace: cell
 def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-9900-7880]
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002321 ! embryonic cell
+
+[Term]
+id: CL:0011026
+name: progenitor cell
+def: "A precursor cell that has a tendency to differentiate into a specific type of cell. They are descendants of stem cells, only they are more constrained in their differentiation potential or capacity for self-renewal, and are often more limited in both senses." [https://doi.org/10.1016/B978-0-12-409503-8.00002-0, ISBN:978-1-62808-994-3]
+is_a: CL:0011115 ! precursor cell
+intersection_of: CL:0011115 ! precursor cell
+intersection_of: RO:0002202 CL:0000034 ! stem cell
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: CL:0011115
@@ -6462,6 +6482,28 @@ intersection_of: CL:0000160 ! goblet cell
 intersection_of: BFO:0000050 UBERON:0007196
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
 property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T18:14:52Z xsd:dateTime
+
+[Term]
+id: CL:0019017
+name: lymphatic vessel smooth muscle cell
+def: "A smooth muscle cell that is part of any lymphatic vessel." [PMID:15109561]
+synonym: "smooth muscle cell of lymphatic vessel" EXACT []
+is_a: CL:0000192 ! smooth muscle cell
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0001473
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:29:51Z xsd:dateTime
+
+[Term]
+id: CL:0019019
+name: tracheobronchial smooth muscle cell
+def: "A smooth muscle cell that is part of the tracheobronchial tree." [PMID:10853867]
+synonym: "smooth muscle cell of tracheobronchial tree" EXACT []
+is_a: CL:0000192 ! smooth muscle cell
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0007196
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:50:22Z xsd:dateTime
 
 [Term]
 id: CL:1000312
@@ -6604,7 +6646,7 @@ creation_date: 2014-10-06T19:16:11Z
 id: CP:0000000
 name: neutrophillic cytoplasm
 namespace: cell
-def: "Cytoplasm that exhibits molecular interaction for acidic dyes under specific pH conditions." [GOC:tfm]
+def: "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain." [GOC:add]
 is_a: GO:0005737
 created_by: tmeehan
 creation_date: 2010-05-25T01:36:34Z
@@ -6613,7 +6655,7 @@ creation_date: 2010-05-25T01:36:34Z
 id: CP:0000027
 name: acidophilic cytoplasm
 namespace: cell
-def: "Cytoplasm that exhibits molecular interaction for acidic dyes under specific pH conditions." [GOC:tfm]
+def: "Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain." [GOC:add]
 synonym: "eosinophilic" NARROW []
 is_a: GO:0005737
 created_by: tmeehan

@@ -1,12 +1,8 @@
 pattern_name: disease_series_by_gene
 
 description: >-
-    Examples: 
-
-      * MONDO:0100000  MED12-related intellectual disability syndrome is defined in
-    OWL as a 'X-linked syndromic intellectual disability' that disease_has_basis_in_dysfunction_of
-    HGNC:11957 (MED12).
-      * Bardet-Biedl type N is defined by gene involved.
+  This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome. 
+  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)
 
 classes:
     disease: MONDO:0000001
@@ -31,12 +27,18 @@ annotations:
     vars:
       - gene
       - disease
-
+  - annotationProperty: exact_synonym
+    text: '%s related %s'
+    vars:
+      - gene
+      - disease
+      
 def:
     text: Any %s in which the cause of the disease is a mutation in the %s gene.
     vars:
       - disease
       - gene
+
 
 equivalentTo:
     text: "%s and 'disease has basis in dysfunction of' some %s"
@@ -49,5 +51,7 @@ pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gen
 annotationProperties:
     exact_synonym: oio:hasExactSynonym
     related_synonym: oio:hasRelatedSynonym
+
 contributors:
   - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432

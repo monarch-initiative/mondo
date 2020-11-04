@@ -1,15 +1,23 @@
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix dc: <http://purl.org/dc/elements/1.1/>
 
 CONSTRUCT {
-  ?c a owl:Class ;
-     rdfs:subClassOf ?type ;
-     rdfs:label ?label
+  ?gene a owl:Class ;
+     rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000704> ;
+     rdfs:label ?label ;
+     <http://purl.org/dc/elements/1.1/description> ?description . 
 }
 WHERE {
- ?c rdfs:subClassOf ?type .
- ?c rdfs:label ?label .
+ ?gene rdfs:label ?label .
+
+ OPTIONAL {
+  ?gene <http://purl.org/dc/elements/1.1/description> ?description .
+ }
+ 
+ FILTER (!isBlank(?gene))
+ FILTER ( regex(str(?gene), "^http://identifiers.org/hgnc/"))
 }
 
 
