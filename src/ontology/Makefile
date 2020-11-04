@@ -1053,14 +1053,14 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-tmp/tbd_omim.tbd: #mirror/omim.obo
+tmp/tbd_omim.tbd: $(SRC) mirror/omim.obo
 	cat mirror/omim.obo | perl $(ADDTOTBD) > $@
 
 tmp/rest_slurp.obo: tmp/tbd_omim.tbd
 	cat tmp/tbd_omim.tbd | perl $(OBOGREP) --neg -r ALREADY - | perl $(OBOGREP) --neg -r is_obsol - | perl $(OBOGREP) -r is_a - | perl $(OBOGREP) --neg -r "no mapping" - > $@
 	sed -i -E 's/is_a[:][ ]MONDO[:]0000001[ ][{]source[=]["]OMIM[:][0-9]+["][}][ ][!][ ]disease[ ]or[ ]disorder/is_a: MONDO:0003847/g' tmp/rest_slurp.obo
 
-tmp/ps_slurp.obo: #tmp/tbd_omim.tbd
+tmp/ps_slurp.obo: tmp/tbd_omim.tbd
 	cat tmp/tbd_omim.tbd | perl $(OBOGREP) --neg -r ALREADY - | perl $(OBOGREP) --neg -r is_obsol - | perl $(OBOGREP) -r "xref: OMIMPS" - > $@
 
 slurp: tmp/rest_slurp.obo tmp/ps_slurp.obo
