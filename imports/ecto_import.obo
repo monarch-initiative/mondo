@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-10-21/imports/ecto_import.owl
+data-version: mondo/releases/2020-11-06/imports/ecto_import.owl
 ontology: mondo/imports/ecto_import
 
 [Term]
@@ -152,6 +152,21 @@ synonym: "a 3-oxo-Delta4-steroid group" RELATED []
 is_a: CHEBI:33247 ! organic group
 
 [Term]
+id: CHEBI:138015
+name: endocrine disruptor
+def: "Any compound that can disrupt the functions of the endocrine (hormone) system" []
+synonym: "endocrine disrupting chemical" RELATED []
+synonym: "endocrine disrupting chemicals" RELATED []
+synonym: "endocrine disrupting compound" RELATED []
+synonym: "endocrine disrupting compounds" RELATED []
+synonym: "endocrine disruptors" RELATED []
+synonym: "endocrine-disrupting chemical" RELATED []
+synonym: "endocrine-disrupting chemicals" RELATED []
+synonym: "hormonally active agent" RELATED []
+synonym: "hormonally active agents" RELATED []
+is_a: CHEBI:51061 ! hormone receptor modulator
+
+[Term]
 id: CHEBI:138103
 name: inorganic acid
 def: "A Bronsted acid derived from one or more inorganic compounds. Inorganic acids (also known as mineral acids) form hydrons and conjugate base ions when dissolved in water." []
@@ -192,6 +207,24 @@ synonym: "primary alpha-hydroxyketone" RELATED []
 synonym: "primary alpha-hydroxyketones" RELATED []
 is_a: CHEBI:139588 ! alpha-hydroxy ketone
 is_a: CHEBI:15734 ! primary alcohol
+
+[Term]
+id: CHEBI:139592
+name: tertiary alpha-hydroxy ketone
+def: "An alpha-hydroxy ketone in which the carbonyl group and the hydroxy group are linked by a carbon bearing two organyl groups." []
+synonym: "tertiary alpha-hydroxy ketones" RELATED []
+synonym: "tertiary alpha-hydroxy-ketone" RELATED []
+synonym: "tertiary alpha-hydroxy-ketones" RELATED []
+synonym: "tertiary alpha-hydroxyketone" RELATED []
+synonym: "tertiary alpha-hydroxyketones" RELATED []
+is_a: CHEBI:139588 ! alpha-hydroxy ketone
+is_a: CHEBI:26878 ! tertiary alcohol
+
+[Term]
+id: CHEBI:144644
+name: a tetracycline zwittterion
+synonym: "a tetracycline" RELATED []
+is_a: CHEBI:26895 ! tetracyclines
 
 [Term]
 id: CHEBI:149552
@@ -902,6 +935,19 @@ is_a: CHEBI:33280 ! molecular messenger
 is_a: CHEBI:48705 ! agonist
 
 [Term]
+id: CHEBI:24632
+name: hydrocarbon
+def: "A compound consisting of carbon and hydrogen only." []
+synonym: "hidrocarburo" RELATED []
+synonym: "hidrocarburos" RELATED []
+synonym: "hydrocarbon" EXACT []
+synonym: "hydrocarbons" EXACT []
+synonym: "hydrocarbure" RELATED []
+synonym: "Kohlenwasserstoff" RELATED []
+synonym: "Kohlenwasserstoffe" RELATED []
+is_a: CHEBI:33245 ! organic fundamental parent
+
+[Term]
 id: CHEBI:24651
 name: hydroxides
 def: "Hydroxides are chemical compounds containing a hydroxy group or salts containing hydroxide (OH(-))." []
@@ -1200,6 +1246,14 @@ synonym: "Pestizide" RELATED []
 is_a: CHEBI:33232 ! application
 
 [Term]
+id: CHEBI:26188
+name: polyketide
+def: "Natural and synthetic compounds containing alternating carbonyl and methylene groups ('beta-polyketones'), biogenetically derived from repeated condensation of acetyl coenzyme A (via malonyl coenzyme A), and usually the compounds derived from them by further condensations, etc. Considered by many to be synonymous with the less frequently used terms acetogenins and ketides." []
+synonym: "polyketide" EXACT []
+synonym: "polyketides" RELATED []
+is_a: CHEBI:36963 ! organooxygen compound
+
+[Term]
 id: CHEBI:26708
 name: sodium atom
 synonym: "11Na" RELATED []
@@ -1267,6 +1321,24 @@ is_a: CHEBI:35341 ! steroid
 relationship: RO:0000087 CHEBI:24621 ! has role hormone
 
 [Term]
+id: CHEBI:26878
+name: tertiary alcohol
+def: "A tertiary alcohol is a compound in which a hydroxy group, -OH, is attached to a saturated carbon atom which has three other carbon atoms attached to it." []
+synonym: "tertiary alcohol" EXACT []
+synonym: "tertiary alcohols" RELATED []
+is_a: CHEBI:30879 ! alcohol
+
+[Term]
+id: CHEBI:26895
+name: tetracyclines
+def: "A subclass of polyketides having an octahydrotetracene-2-carboxamide skeleton, substituted with many hydroxy and other groups." []
+is_a: CHEBI:26188 ! polyketide
+relationship: has_parent_hydride CHEBI:32600 ! tetracene
+relationship: RO:0000087 CHEBI:25212 ! has role metabolite
+is_obsolete: true
+replaced_by: XCO:0000672
+
+[Term]
 id: CHEBI:27026
 name: toxin
 def: "Poisonous substance produced by a biological organism such as a microbe, animal or plant." []
@@ -1310,6 +1382,18 @@ synonym: "univalent carboxylic acyl groups" RELATED []
 is_a: CHEBI:37838 ! carboacyl group
 
 [Term]
+id: CHEBI:27369
+name: zwitterion
+def: "A neutral compound having formal unit electrical charges of opposite sign on non-adjacent atoms. Sometimes referred to as inner salts, dipolar ions (a misnomer)." []
+synonym: "compose zwitterionique" RELATED []
+synonym: "compuestos zwitterionicos" RELATED []
+synonym: "zwitterion" EXACT []
+synonym: "zwitteriones" RELATED []
+synonym: "zwitterionic compounds" RELATED []
+synonym: "zwitterions" EXACT []
+is_a: CHEBI:51151 ! dipolar compound
+
+[Term]
 id: CHEBI:27594
 name: carbon atom
 synonym: "6C" RELATED []
@@ -1349,6 +1433,34 @@ is_a: CHEBI:36685 ! chlorocarboxylic acid
 relationship: is_conjugate_acid_of CHEBI:23123 ! chloroacetate
 relationship: RO:0000087 CHEBI:22333 ! has role alkylating agent
 relationship: RO:0000087 CHEBI:24527 ! has role herbicide
+
+[Term]
+id: CHEBI:27902
+name: tetracycline
+def: "A broad-spectrum polyketide antibiotic produced by the Streptomyces genus of actinobacteria." []
+synonym: "(4S,4aS,5aS,12aS)-4-(Dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-2-naphthacenecarboxamide" RELATED []
+synonym: "(4S,4aS,5aS,6S,12aS)-4-(dimethylamino)-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-1,4,4a,5,5a,6,11,12a-octahydrotetracene-2-carboxamide" EXACT []
+synonym: "Abramycin" RELATED []
+synonym: "Achromycin" RELATED []
+synonym: "Anhydrotetracycline" RELATED []
+synonym: "Deschlorobiomycin" RELATED []
+synonym: "Liquamycin" RELATED []
+synonym: "Tetracyclin" RELATED []
+synonym: "TETRACYCLINE" EXACT []
+synonym: "Tetracycline" EXACT []
+synonym: "tetracycline" EXACT []
+synonym: "tetracycline" RELATED []
+synonym: "tetracyclinum" RELATED []
+synonym: "Tetrazyklin" RELATED []
+synonym: "Tsiklomitsin" RELATED []
+is_a: CHEBI:139592 ! tertiary alpha-hydroxy ketone
+is_a: CHEBI:26895 ! tetracyclines
+relationship: is_conjugate_acid_of CHEBI:71392 ! tetracycline(1-)
+relationship: is_conjugate_acid_of CHEBI:77932 ! tetracycline zwitterion
+relationship: RO:0000087 CHEBI:35820 ! has role antiprotozoal drug
+relationship: RO:0000087 CHEBI:36047 ! has role antibacterial drug
+relationship: RO:0000087 CHEBI:48001 ! has role protein synthesis inhibitor
+relationship: RO:0000087 CHEBI:76971 ! has role Escherichia coli metabolite
 
 [Term]
 id: CHEBI:29067
@@ -1486,6 +1598,17 @@ synonym: "Alcohol" EXACT []
 synonym: "alcohols" EXACT []
 synonym: "an alcohol" RELATED []
 is_a: CHEBI:33822 ! organic hydroxy compound
+
+[Term]
+id: CHEBI:32600
+name: tetracene
+def: "An acene that consists of four ortho-fused benzene rings in a rectilinear arrangement." []
+synonym: "2,3-benzanthracene" RELATED []
+synonym: "benz[b]anthracene" RELATED []
+synonym: "naphthacene" RELATED []
+synonym: "tetracene" EXACT []
+is_a: CHEBI:35297 ! acene
+is_a: CHEBI:51270 ! tetracenes
 
 [Term]
 id: CHEBI:33232
@@ -1693,6 +1816,12 @@ synonym: "foodstuff" RELATED []
 synonym: "foodstuffs" RELATED []
 is_a: CHEBI:52211 ! physiological role
 relationship: BFO:0000051 CHEBI:78295 ! has part food component
+
+[Term]
+id: CHEBI:33292
+name: fuel
+def: "An energy-rich substance that can be transformed with release of usable energy." []
+is_a: CHEBI:33232 ! application
 
 [Term]
 id: CHEBI:33296
@@ -1956,6 +2085,25 @@ synonym: "cyclic compounds" RELATED []
 is_a: CHEBI:25367 ! molecule
 
 [Term]
+id: CHEBI:33597
+name: homocyclic compound
+def: "A cyclic compound having as ring members atoms of the same element only." []
+synonym: "homocyclic compound" EXACT []
+synonym: "homocyclic compounds" EXACT []
+synonym: "isocyclic compounds" RELATED []
+is_a: CHEBI:33595 ! cyclic compound
+
+[Term]
+id: CHEBI:33598
+name: carbocyclic compound
+def: "A homocyclic compound in which all of the ring members are carbon atoms." []
+synonym: "carbocycle" RELATED []
+synonym: "carbocyclic compound" EXACT []
+synonym: "carbocyclic compounds" EXACT []
+is_a: CHEBI:33597 ! homocyclic compound
+is_a: CHEBI:33832 ! organic cyclic compound
+
+[Term]
 id: CHEBI:33608
 name: hydrogen molecular entity
 synonym: "hydrogen compounds" RELATED []
@@ -1968,6 +2116,57 @@ id: CHEBI:33635
 name: polycyclic compound
 synonym: "polycyclic compounds" RELATED []
 is_a: CHEBI:33595 ! cyclic compound
+
+[Term]
+id: CHEBI:33637
+name: ortho-fused compound
+def: "A polycyclic compound in which two rings have two, and only two, atoms in common. Such compounds have n common faces and 2n common atoms." []
+synonym: "ortho-fused compounds" RELATED []
+synonym: "ortho-fused polycyclic compounds" EXACT []
+is_a: CHEBI:35293 ! fused compound
+
+[Term]
+id: CHEBI:33655
+name: aromatic compound
+def: "A cyclically conjugated molecular entity with a stability (due to delocalization) significantly greater than that of a hypothetical localized structure (e.g. Kekule structure) is said to possess aromatic character." []
+synonym: "aromatic compounds" EXACT []
+synonym: "aromatic molecular entity" EXACT []
+synonym: "aromatics" RELATED []
+synonym: "aromatische Verbindungen" RELATED []
+is_a: CHEBI:33595 ! cyclic compound
+
+[Term]
+id: CHEBI:33658
+name: arene
+def: "Any monocyclic or polycyclic aromatic hydrocarbon." []
+synonym: "arene" EXACT []
+synonym: "arenes" EXACT []
+synonym: "aromatic hydrocarbons" RELATED []
+is_a: CHEBI:33659 ! organic aromatic compound
+is_a: CHEBI:33663 ! cyclic hydrocarbon
+
+[Term]
+id: CHEBI:33659
+name: organic aromatic compound
+synonym: "organic aromatic compounds" RELATED []
+is_a: CHEBI:33655 ! aromatic compound
+is_a: CHEBI:33832 ! organic cyclic compound
+
+[Term]
+id: CHEBI:33663
+name: cyclic hydrocarbon
+synonym: "cyclic hydrocarbon" EXACT []
+synonym: "cyclic hydrocarbons" RELATED []
+is_a: CHEBI:24632 ! hydrocarbon
+is_a: CHEBI:33598 ! carbocyclic compound
+
+[Term]
+id: CHEBI:33666
+name: polycyclic hydrocarbon
+synonym: "polycyclic hydrocarbon" EXACT []
+synonym: "polycyclic hydrocarbons" EXACT []
+is_a: CHEBI:33663 ! cyclic hydrocarbon
+is_a: CHEBI:35294 ! carbopolycyclic compound
 
 [Term]
 id: CHEBI:33671
@@ -2070,6 +2269,14 @@ is_a: CHEBI:33595 ! cyclic compound
 is_a: CHEBI:72695 ! organic molecule
 
 [Term]
+id: CHEBI:33836
+name: benzenoid aromatic compound
+synonym: "benzenoid aromatic compounds" RELATED []
+synonym: "benzenoid compound" RELATED []
+is_a: CHEBI:33598 ! carbocyclic compound
+is_a: CHEBI:33659 ! organic aromatic compound
+
+[Term]
 id: CHEBI:33839
 name: macromolecule
 def: "A macromolecule is a molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
@@ -2079,6 +2286,19 @@ synonym: "polymer" RELATED []
 synonym: "polymer molecule" RELATED []
 synonym: "polymers" RELATED []
 is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
+id: CHEBI:33848
+name: polycyclic arene
+def: "A polycyclic aromatic hydrocarbon." []
+synonym: "PAH" RELATED []
+synonym: "PAHs" RELATED []
+synonym: "polycyclic arenes" RELATED []
+synonym: "polycyclic aromatic hydrocarbons" RELATED []
+is_a: CHEBI:33658 ! arene
+is_a: CHEBI:33666 ! polycyclic hydrocarbon
+relationship: RO:0000087 CHEBI:138015 ! has role endocrine disruptor
+relationship: RO:0000087 CHEBI:50903 ! has role carcinogenic agent
 
 [Term]
 id: CHEBI:33893
@@ -2120,6 +2340,50 @@ synonym: "inhibiteur" RELATED []
 synonym: "inhibitor" EXACT []
 synonym: "inhibitors" RELATED []
 is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:35293
+name: fused compound
+synonym: "fused compounds" RELATED []
+synonym: "fused polycyclic compounds" RELATED []
+synonym: "fused-ring polycyclic compound" RELATED []
+synonym: "fused-ring polycyclic compounds" RELATED []
+synonym: "polycyclic fused-ring compounds" RELATED []
+is_a: CHEBI:33635 ! polycyclic compound
+
+[Term]
+id: CHEBI:35294
+name: carbopolycyclic compound
+def: "A polyclic compound in which all of the ring members are carbon atoms." []
+synonym: "carbopolycyclic compounds" RELATED []
+is_a: CHEBI:33598 ! carbocyclic compound
+is_a: CHEBI:35295 ! homopolycyclic compound
+
+[Term]
+id: CHEBI:35295
+name: homopolycyclic compound
+synonym: "homopolycyclic compounds" RELATED []
+is_a: CHEBI:33597 ! homocyclic compound
+is_a: CHEBI:33635 ! polycyclic compound
+
+[Term]
+id: CHEBI:35296
+name: ortho-fused polycyclic arene
+synonym: "ortho-fused polycyclic arenes" RELATED []
+is_a: CHEBI:33848 ! polycyclic arene
+is_a: CHEBI:35427 ! ortho-fused polycyclic hydrocarbon
+
+[Term]
+id: CHEBI:35297
+name: acene
+def: "A polycyclic aromatic hydrocarbon consisting of fused benzene rings in a rectilinear arrangement." []
+synonym: "Acen" RELATED []
+synonym: "acene" EXACT []
+synonym: "acenes" EXACT []
+synonym: "Azen" RELATED []
+synonym: "polyacenes" RELATED []
+is_a: CHEBI:35296 ! ortho-fused polycyclic arene
+is_a: CHEBI:51269 ! acenes
 
 [Term]
 id: CHEBI:35341
@@ -2167,6 +2431,32 @@ synonym: "oxoanion" EXACT []
 synonym: "oxoanions" RELATED []
 is_a: CHEBI:25741 ! oxide
 is_a: CHEBI:33273 ! polyatomic anion
+
+[Term]
+id: CHEBI:35427
+name: ortho-fused polycyclic hydrocarbon
+synonym: "ortho-fused polycyclic hydrocarbon" EXACT []
+synonym: "ortho-fused polycyclic hydrocarbons" RELATED []
+is_a: CHEBI:33637 ! ortho-fused compound
+
+[Term]
+id: CHEBI:35441
+name: antiinfective agent
+def: "A substance used in the prophylaxis or therapy of infectious diseases." []
+synonym: "anti-infective agents" RELATED []
+synonym: "anti-infective drugs" RELATED []
+synonym: "antiinfective agents" RELATED []
+synonym: "antiinfective drug" RELATED []
+is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:35442
+name: antiparasitic agent
+def: "A substance used to treat or prevent parasitic infections." []
+synonym: "antiparasitic drugs" RELATED []
+synonym: "antiparasitics" RELATED []
+synonym: "parasiticides" RELATED []
+is_a: CHEBI:35441 ! antiinfective agent
 
 [Term]
 id: CHEBI:35472
@@ -2246,12 +2536,38 @@ is_a: CHEBI:17087 ! ketone
 is_a: CHEBI:35341 ! steroid
 
 [Term]
+id: CHEBI:35820
+name: antiprotozoal drug
+def: "Any antimicrobial drug which is used to treat or prevent protozoal infections." []
+synonym: "antiprotozoal agent" RELATED []
+synonym: "antiprotozoal agents" RELATED []
+synonym: "antiprotozoal drugs" RELATED []
+is_a: CHEBI:35442 ! antiparasitic agent
+is_a: CHEBI:36043 ! antimicrobial drug
+
+[Term]
 id: CHEBI:35881
 name: pnictogen hydride
 synonym: "pnictogen hydride" EXACT []
 synonym: "pnictogen hydrides" RELATED []
 is_a: CHEBI:33242 ! inorganic hydride
 is_a: CHEBI:33302 ! pnictogen molecular entity
+
+[Term]
+id: CHEBI:36043
+name: antimicrobial drug
+def: "A drug used to treat or prevent microbial infections." []
+synonym: "antimicrobial drugs" RELATED []
+is_a: CHEBI:33281 ! antimicrobial agent
+is_a: CHEBI:35441 ! antiinfective agent
+
+[Term]
+id: CHEBI:36047
+name: antibacterial drug
+def: "A drug used to treat or prevent bacterial infections." []
+synonym: "antibacterial drugs" RELATED []
+is_a: CHEBI:33282 ! antibacterial agent
+is_a: CHEBI:36043 ! antimicrobial drug
 
 [Term]
 id: CHEBI:36093
@@ -2741,6 +3057,15 @@ is_a: CHEBI:51689 ! enone
 relationship: BFO:0000051 CHEBI:136849 ! has part 3-oxo-Delta(4)-steroid group
 
 [Term]
+id: CHEBI:48001
+name: protein synthesis inhibitor
+def: "A compound, usually an anti-bacterial agent or a toxin, which inhibits the synthesis of a protein." []
+synonym: "protein synthesis antagonist" RELATED []
+synonym: "protein synthesis antagonists" RELATED []
+synonym: "protein synthesis inhibitors" RELATED []
+is_a: CHEBI:76932 ! pathway inhibitor
+
+[Term]
 id: CHEBI:48210
 name: cyclopentafurofurochromene
 synonym: "cyclopentafurofurochromenes" RELATED []
@@ -2944,6 +3269,13 @@ is_a: CHEBI:52209 ! aetiopathogenetic role
 is_a: CHEBI:64909 ! poison
 
 [Term]
+id: CHEBI:51061
+name: hormone receptor modulator
+def: "A drug that modulates the function of the endocrine glands, the biosynthesis of their secreted hormones, or the action of hormones upon their specific sites." []
+synonym: "hormone receptor modulators" RELATED []
+is_a: CHEBI:90710 ! receptor modulator
+
+[Term]
 id: CHEBI:51086
 name: chemical role
 def: "A role played by the molecular entity or part thereof within a chemical context." []
@@ -2958,6 +3290,26 @@ synonym: "Nitrogenous compounds" RELATED []
 is_a: CHEBI:33302 ! pnictogen molecular entity
 is_a: FOODON:03412972 ! food additive
 relationship: BFO:0000051 CHEBI:25555 ! has part nitrogen atom
+
+[Term]
+id: CHEBI:51151
+name: dipolar compound
+def: "An  organic molecule that is electrically neutral carrying a positive and a negative charge in one of its major canonical descriptions. In most dipolar compounds the charges are delocalized; however the term is also applied to species where this is not the case." []
+synonym: "dipolar compounds" RELATED []
+is_a: CHEBI:72695 ! organic molecule
+
+[Term]
+id: CHEBI:51269
+name: acenes
+def: "Polycyclic aromatic hydrocarbons consisting of fused benzene rings in a rectilinear arrangement and their substitution derivatives." []
+is_a: CHEBI:33836 ! benzenoid aromatic compound
+
+[Term]
+id: CHEBI:51270
+name: tetracenes
+def: "Compounds containing a tetracene skeleton." []
+synonym: "naphthacenes" RELATED []
+is_a: CHEBI:51269 ! acenes
 
 [Term]
 id: CHEBI:51422
@@ -3208,6 +3560,16 @@ synonym: "anti-inflammatory agents" RELATED []
 synonym: "antiinflammatory agent" RELATED []
 synonym: "antiinflammatory agents" RELATED []
 is_a: CHEBI:33232 ! application
+
+[Term]
+id: CHEBI:71392
+name: tetracycline(1-)
+def: "An organic anion that is the conjugate base of tetracycline obtained by deprotonation of the two enolic hydroxy groups and protonation of the tertiary amino group." []
+synonym: "(1S,4aS,11S,11aS,12aS)-3-carbamoyl-1-(dimethylazaniumyl)-4a,7,11-trihydroxy-11-methyl-4,6-dioxo-1,4,4a,6,11,11a,12,12a-octahydrotetracene-2,5-diolate" EXACT []
+synonym: "tetracycline anion" RELATED []
+is_a: CHEBI:25696 ! organic anion
+relationship: is_conjugate_base_of CHEBI:27902 ! tetracycline
+relationship: is_conjugate_base_of CHEBI:77932 ! tetracycline zwitterion
 
 [Term]
 id: CHEBI:72695
@@ -3472,6 +3834,20 @@ synonym: "Homo sapiens metabolites" RELATED []
 is_a: CHEBI:75768 ! mammalian metabolite
 
 [Term]
+id: CHEBI:77932
+name: tetracycline zwitterion
+def: "A zwitterion obtained by transfer of a proton from the 2-hydroxy group to the 1-amino group of tetracycline. It is the major microspecies at pH 7.3 (according to Marvin v 6.2.0.)." []
+synonym: "(1S,4aS,11S,11aS,12aS)-3-carbamoyl-1-(dimethylazaniumyl)-4a,5,7,11-tetrahydroxy-11-methyl-4,6-dioxo-1,4,4a,6,11,11a,12,12a-octahydrotetracen-2-olate" EXACT []
+synonym: "tetracycline" RELATED []
+is_a: CHEBI:144644 ! a tetracycline zwittterion
+is_a: CHEBI:27369 ! zwitterion
+relationship: is_conjugate_acid_of CHEBI:71392 ! tetracycline(1-)
+relationship: is_conjugate_base_of CHEBI:27902 ! tetracycline
+relationship: RO:0000087 CHEBI:35820 ! has role antiprotozoal drug
+relationship: RO:0000087 CHEBI:36047 ! has role antibacterial drug
+relationship: RO:0000087 CHEBI:48001 ! has role protein synthesis inhibitor
+
+[Term]
 id: CHEBI:77941
 name: EC 3.5.1.4 (amidase) inhibitor
 def: "An EC 3.5.1.* (non-peptide linear amide C-N hydrolase) inhibitor that interferes with the action of amidase (EC 3.5.1.4)." []
@@ -3591,6 +3967,13 @@ synonym: "haloacetate (1-)" RELATED []
 is_a: CHEBI:35757 ! monocarboxylic acid anion
 relationship: has_functional_parent CHEBI:30089 ! acetate
 relationship: is_conjugate_base_of CHEBI:16277 ! haloacetic acid
+
+[Term]
+id: CHEBI:90710
+name: receptor modulator
+def: "A drug that acts as an antagonist, agonist, reverse agonist, or in some other fashion when interacting with cellular receptors." []
+synonym: "receptor modulators" RELATED []
+is_a: CHEBI:23888 ! drug
 
 [Term]
 id: ECTO:0000001
@@ -4259,6 +4642,17 @@ intersection_of: RO:0002309 ENVO:01000305 ! has exposure stimulus high temperatu
 relationship: RO:0002309 ENVO:01000305 ! has exposure stimulus high temperature environment
 
 [Term]
+id: ECTO:1000019
+name: exposure to high pressure environment conditions
+def: "A exposure event involving the interaction of an exposure receptor to the condition of high pressure environment." []
+synonym: "high pressure environment exposure" EXACT []
+is_a: ExO:0000002 ! exposure event
+is_a: RO:0002310 ! exposure event or process
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 ENVO:01000304 ! has exposure stimulus high pressure environment
+relationship: RO:0002309 ENVO:01000304 ! has exposure stimulus high pressure environment
+
+[Term]
 id: ECTO:3000000
 name: exposure to organism
 def: "A history of exposure to organism." []
@@ -4310,6 +4704,42 @@ name: exposure to decreased amount of salt
 def: "A exposure event involving the interaction of an exposure receptor to decreased amount of salt." []
 synonym: "exposure to decreased amount in salt" EXACT []
 is_a: ECTO:0010001 ! exposure to qualitative
+
+[Term]
+id: ECTO:4000025
+name: exposure to increased amount of pressure of air
+name: exposure to increased amount of pressure of water
+name: exposure to increased pressure
+def: "A exposure event involving the interaction of an exposure receptor to increased amount of pressure of air." []
+def: "A exposure event involving the interaction of an exposure receptor to increased amount of pressure of water." []
+def: "A exposure event involving the interaction of an exposure receptor to increased pressure." []
+synonym: "exposure to increased amount in pressure of air" EXACT []
+synonym: "exposure to increased amount in pressure of water" EXACT []
+synonym: "increased pressure exposure" EXACT []
+is_a: ECTO:0010003 ! exposure to physical object quality
+is_a: ECTO:4000000 ! exposure to deviation(from_normal)deviation (from_normal) of quality
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 PATO:0001576 ! has exposure stimulus increased pressure
+relationship: RO:0002309 PATO:0001576 ! has exposure stimulus increased pressure
+
+[Term]
+id: ECTO:4000026
+name: exposure to decreased amount of pressure of air
+name: exposure to decreased amount of pressure of water
+name: exposure to decreased pressure
+def: "A exposure event involving the interaction of an exposure receptor to decreased amount of pressure of air." []
+def: "A exposure event involving the interaction of an exposure receptor to decreased amount of pressure of water." []
+def: "A exposure event involving the interaction of an exposure receptor to decreased pressure." []
+synonym: "decreased pressure exposure" EXACT []
+synonym: "exposure to decreased amount in pressure of air" EXACT []
+synonym: "exposure to decreased amount in pressure of water" EXACT []
+is_a: ECTO:0010003 ! exposure to physical object quality
+is_a: ECTO:4000000 ! exposure to deviation(from_normal)deviation (from_normal) of quality
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 PATO:0001575 ! has exposure stimulus decreased pressure
+relationship: RO:0002309 PATO:0001575 ! has exposure stimulus decreased pressure
 
 [Term]
 id: ECTO:4000027
@@ -4713,6 +5143,17 @@ intersection_of: RO:0002309 CHEBI:24431 ! has exposure stimulus chemical entity
 relationship: RO:0002309 CHEBI:24431 ! has exposure stimulus chemical entity
 
 [Term]
+id: ECTO:9000364
+name: tetracycline exposure
+def: "An exposure to tetracycline." []
+synonym: "exposure to tetracycline" EXACT []
+is_a: ECTO:9000026 ! alcohol exposure
+is_a: ECTO:9000044 ! ketone exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:27902 ! has exposure stimulus tetracycline
+relationship: RO:0002309 CHEBI:27902 ! has exposure stimulus tetracycline
+
+[Term]
 id: ECTO:9000376
 name: formic acid exposure
 def: "An exposure to formic acid." []
@@ -4745,6 +5186,16 @@ is_a: ECTO:9000266 ! chemical entity exposure
 intersection_of: ExO:0000002 ! exposure event
 intersection_of: RO:0002309 CHEBI:24866 ! has exposure stimulus salt
 relationship: RO:0002309 CHEBI:24866 ! has exposure stimulus salt
+
+[Term]
+id: ECTO:9000433
+name: polycyclic arene exposure
+def: "An exposure to polycyclic arene." []
+synonym: "exposure to polycyclic arene" EXACT []
+is_a: ECTO:9002148 ! polycyclic hydrocarbon exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:33848 ! has exposure stimulus polycyclic arene
+relationship: RO:0002309 CHEBI:33848 ! has exposure stimulus polycyclic arene
 
 [Term]
 id: ECTO:9000519
@@ -4813,6 +5264,16 @@ intersection_of: RO:0002309 CHEBI:138675 ! has exposure stimulus gas molecular e
 relationship: RO:0002309 CHEBI:138675 ! has exposure stimulus gas molecular entity
 
 [Term]
+id: ECTO:9001630
+name: endocrine disruptor exposure
+def: "An exposure to endocrine disruptor." []
+synonym: "exposure to endocrine disruptor" EXACT []
+is_a: ECTO:0000509 ! drug exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:138015 ! has exposure stimulus endocrine disruptor
+relationship: RO:0002309 CHEBI:138015 ! has exposure stimulus endocrine disruptor
+
+[Term]
 id: ECTO:9001640
 name: electron donor exposure
 def: "An exposure to electron donor." []
@@ -4863,6 +5324,16 @@ intersection_of: RO:0002309 CHEBI:33284 ! has exposure stimulus nutrient
 relationship: RO:0002309 CHEBI:33284 ! has exposure stimulus nutrient
 
 [Term]
+id: ECTO:9001699
+name: fuel exposure
+def: "An exposure to fuel." []
+synonym: "exposure to fuel" EXACT []
+is_a: ECTO:0000486 ! application exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:33292 ! has exposure stimulus fuel
+relationship: RO:0002309 CHEBI:33292 ! has exposure stimulus fuel
+
+[Term]
 id: ECTO:9001701
 name: reagent exposure
 def: "An exposure to reagent." []
@@ -4883,6 +5354,26 @@ intersection_of: RO:0002309 CHEBI:33937 ! has exposure stimulus macronutrient
 relationship: RO:0002309 CHEBI:33937 ! has exposure stimulus macronutrient
 
 [Term]
+id: ECTO:9001711
+name: antiinfective agent exposure
+def: "An exposure to antiinfective agent." []
+synonym: "exposure to antiinfective agent" EXACT []
+is_a: ECTO:0000509 ! drug exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:35441 ! has exposure stimulus antiinfective agent
+relationship: RO:0002309 CHEBI:35441 ! has exposure stimulus antiinfective agent
+
+[Term]
+id: ECTO:9001712
+name: antiparasitic agent exposure
+def: "An exposure to antiparasitic agent." []
+synonym: "exposure to antiparasitic agent" EXACT []
+is_a: ECTO:9001711 ! antiinfective agent exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:35442 ! has exposure stimulus antiparasitic agent
+relationship: RO:0002309 CHEBI:35442 ! has exposure stimulus antiparasitic agent
+
+[Term]
 id: ECTO:9001718
 name: anti-inflammatory drug exposure
 def: "An exposure to anti-inflammatory drug." []
@@ -4894,6 +5385,39 @@ intersection_of: RO:0002309 CHEBI:35472 ! has exposure stimulus anti-inflammator
 relationship: RO:0002309 CHEBI:35472 ! has exposure stimulus anti-inflammatory drug
 
 [Term]
+id: ECTO:9001751
+name: antiprotozoal drug exposure
+def: "An exposure to antiprotozoal drug." []
+synonym: "exposure to antiprotozoal drug" EXACT []
+is_a: ECTO:9001712 ! antiparasitic agent exposure
+is_a: ECTO:9001755 ! antimicrobial drug exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:35820 ! has exposure stimulus antiprotozoal drug
+relationship: RO:0002309 CHEBI:35820 ! has exposure stimulus antiprotozoal drug
+
+[Term]
+id: ECTO:9001755
+name: antimicrobial drug exposure
+def: "An exposure to antimicrobial drug." []
+synonym: "exposure to antimicrobial drug" EXACT []
+is_a: ECTO:0000544 ! antimicrobial agent exposure
+is_a: ECTO:9001711 ! antiinfective agent exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:36043 ! has exposure stimulus antimicrobial drug
+relationship: RO:0002309 CHEBI:36043 ! has exposure stimulus antimicrobial drug
+
+[Term]
+id: ECTO:9001757
+name: antibacterial drug exposure
+def: "An exposure to antibacterial drug." []
+synonym: "exposure to antibacterial drug" EXACT []
+is_a: ECTO:9001694 ! antibacterial agent exposure
+is_a: ECTO:9001755 ! antimicrobial drug exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:36047 ! has exposure stimulus antibacterial drug
+relationship: RO:0002309 CHEBI:36047 ! has exposure stimulus antibacterial drug
+
+[Term]
 id: ECTO:9001793
 name: anaesthetic exposure
 def: "An exposure to anaesthetic." []
@@ -4902,6 +5426,16 @@ is_a: ECTO:0000509 ! drug exposure
 intersection_of: ExO:0000002 ! exposure event
 intersection_of: RO:0002309 CHEBI:38867 ! has exposure stimulus anaesthetic
 relationship: RO:0002309 CHEBI:38867 ! has exposure stimulus anaesthetic
+
+[Term]
+id: ECTO:9001804
+name: protein synthesis inhibitor exposure
+def: "An exposure to protein synthesis inhibitor." []
+synonym: "exposure to protein synthesis inhibitor" EXACT []
+is_a: ECTO:0000557 ! inhibitor exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:48001 ! has exposure stimulus protein synthesis inhibitor
+relationship: RO:0002309 CHEBI:48001 ! has exposure stimulus protein synthesis inhibitor
 
 [Term]
 id: ECTO:9001809
@@ -5085,6 +5619,16 @@ is_a: ECTO:0000487 ! chemical role exposure
 intersection_of: ExO:0000002 ! exposure event
 intersection_of: RO:0002309 CHEBI:37527 ! has exposure stimulus acid
 relationship: RO:0002309 CHEBI:37527 ! has exposure stimulus acid
+
+[Term]
+id: ECTO:9002148
+name: polycyclic hydrocarbon exposure
+def: "An exposure to polycyclic hydrocarbon." []
+synonym: "exposure to polycyclic hydrocarbon" EXACT []
+is_a: ECTO:0000163 ! organic cyclic compound exposure
+intersection_of: ExO:0000002 ! exposure event
+intersection_of: RO:0002309 CHEBI:33666 ! has exposure stimulus polycyclic hydrocarbon
+relationship: RO:0002309 CHEBI:33666 ! has exposure stimulus polycyclic hydrocarbon
 
 [Term]
 id: ENVO:00000000
@@ -5758,6 +6302,15 @@ intersection_of: RO:0002219 ENVO:00001995 ! surrounded by rock
 relationship: RO:0002219 ENVO:00001995 ! surrounded by rock
 
 [Term]
+id: ENVO:01000304
+name: high pressure environment
+def: "A high pressure environment is an environment in which all material entities are exposed to a high ratio of force per unit area." []
+is_a: ENVO:01000997 ! environmental system determined by a quality
+intersection_of: ENVO:01000997 ! environmental system determined by a quality
+intersection_of: RO:0000086 PATO:0001576 ! has quality increased pressure
+relationship: RO:0000086 PATO:0001576 ! has quality increased pressure
+
+[Term]
 id: ENVO:01000305
 name: high temperature environment
 def: "A high temperature environment is an environment in which material entities are exposed to increased levels of heat radiation or which have molecules or atoms moving randomly with increased levels of average kinietic energy." []
@@ -5931,6 +6484,16 @@ def: "A boundary layer is a layer of fluid in the immediate vicinity of a boundi
 synonym: "boundary layer" EXACT []
 is_a: ENVO:01001677 ! fluid interface layer
 relationship: RO:0002220 ENVO:00010504 ! adjacent_to surface layer
+
+[Term]
+id: ENVO:01000554
+name: hydrocarbon gas
+def: "A gas that is primarily composed of hydrocarbon molecules." []
+is_a: ENVO:01000797 ! gaseous environmental material
+is_a: ENVO:2000045 ! hydrocarbon-based environmental material
+intersection_of: ENVO:01000797 ! gaseous environmental material
+intersection_of: RO:0000086 PATO:0001547 ! has quality quality of a gas
+intersection_of: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
 
 [Term]
 id: ENVO:01000617
@@ -7564,6 +8127,16 @@ intersection_of: RO:0000052 ENVO:00001998 ! inheres in soil
 relationship: RO:0000052 ENVO:00001998 ! inheres in soil
 
 [Term]
+id: ENVO:09200011
+name: pressure of air
+def: "The pressure of some air." []
+synonym: "air pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+intersection_of: PATO:0001025 ! pressure
+intersection_of: RO:0000052 ENVO:00002005 ! inheres in air
+relationship: RO:0000052 ENVO:00002005 ! inheres in air
+
+[Term]
 id: ENVO:09200012
 name: temperature of soil
 def: "The temperature of some soil." []
@@ -7592,6 +8165,16 @@ is_a: PATO:0000025 ! composition
 intersection_of: PATO:0000025 ! composition
 intersection_of: RO:0000052 ENVO:00002006 ! inheres in liquid water
 relationship: RO:0000052 ENVO:00002006 ! inheres in liquid water
+
+[Term]
+id: ENVO:2000045
+name: hydrocarbon-based environmental material
+is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
+relationship: RO:0000053 PATO:0015021 ! bearer of combustibility
+relationship: RO:0000087 CHEBI:33292 ! has role fuel
+relationship: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
 
 [Term]
 id: ENVO:2100000
@@ -7624,6 +8207,16 @@ name: concentration of dioxygen in liquid water
 def: "The concentration of dioxygen when measured in liquid water." []
 synonym: "liquid water dioxygen concentration" EXACT []
 is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:3100033
+name: pressure of water
+def: "The pressure of some water." []
+synonym: "water pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+intersection_of: PATO:0001025 ! pressure
+intersection_of: RO:0000052 ENVO:00002006 ! inheres in liquid water
+relationship: RO:0000052 ENVO:00002006 ! inheres in liquid water
 
 [Term]
 id: ExO:0000000
@@ -9216,6 +9809,12 @@ synonym: "relational physical quality" EXACT []
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
+id: PATO:0001025
+name: pressure
+def: "A physical quality that inheres in a bearer by virtue of the bearer's amount of force per unit area it exerts." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001154
 name: elongated
 def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." []
@@ -9376,6 +9975,26 @@ synonym: "large mass" EXACT []
 is_a: PATO:0000125 ! mass
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000125 ! mass
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001575
+name: decreased pressure
+def: "A pressure which is relatively low." []
+synonym: "low pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001025 ! pressure
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001576
+name: increased pressure
+def: "A pressure which is relatively high." []
+synonym: "high pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001025 ! pressure
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
@@ -9548,6 +10167,32 @@ is_a: PATO:0001241 ! physical object quality
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0001241 ! physical object quality
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0015021
+name: combustibility
+def: "The propensity of a material to undergo combustion. Combustion encompasses smouldering and flaming combustion. Combustibility is usually applied to solids." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0015022
+name: increased combustibility
+def: "An increase in combustibility." []
+synonym: "combustible" EXACT []
+is_a: PATO:0002305 ! increased object quality
+is_a: PATO:0015021 ! combustibility
+intersection_of: PATO:0015021 ! combustibility
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0015023
+name: decreased combustibility
+def: "An decrease in combustibility." []
+synonym: "noncombustible" RELATED []
+is_a: PATO:0002303 ! decreased object quality
+is_a: PATO:0015021 ! combustibility
+intersection_of: PATO:0015021 ! combustibility
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
 id: PATO:0015024
