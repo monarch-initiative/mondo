@@ -868,7 +868,10 @@ all_matches.tsv:
 	rdfmatch -T --debug rdf_matcher -i prefixes.ttl -p MONDO -f sssom -X tmp -A void.ttl -w obo_weights -v -i all2 match > $@
 
 matches-to-%.tsv:
-	rdfmatch -T --debug rdf_matcher -i prefixes.ttl -p MONDO -f sssom -X tmp -A void.ttl  -v -i mondo -i $* match > $@
+	rdfmatch  --debug rdf_matcher -i prefixes.ttl -p MONDO  -X tmp -A void.ttl  -v -i mondo -i $* match > $@
+
+matches-to-nando.tsv:
+	rdfmatch -g remove_non_english_literals  --debug rdf_matcher -i prefixes.ttl -p NANDO --match_prefix MONDO  -X tmp -A void.ttl  -v -i mondo -i nando match > $@
 
 lexrules-%.pro:
 	test -d tmp-$* || mkdir -p tmp-$*
@@ -1040,16 +1043,15 @@ bg-clean:
 
 succeed:
 	echo make succeeded
-	
 
 ###### NICO MIGRATION: overwriting unsuccessful goals!
 
 ../sparql/construct-ecs-from-xrefs.sparql:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
-	
+
 d2p.pro:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
-	
+
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
