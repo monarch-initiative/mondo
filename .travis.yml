@@ -35,7 +35,7 @@ before_install:
      sleep 500;
      echo sleeping;
      sleep 500
-  - docker pull obolibrary/odkfull
+  #- docker pull obolibrary/odkfull
 
 before_script:
   - cd src/ontology
@@ -48,8 +48,7 @@ script:
 branches:
   only:
     - master
-
 ### UNCOMMENT THIS AND ADD YOUR DETAILS:
-notifications:
-  email:
-    - nicolas.matentzoglu@gmail.com
+#notifications:
+#  email:
+#    - YOURNAME@YOU.ORG
