@@ -1,0 +1,35 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?term ?term_label ?related
+WHERE 
+{ 
+  { 
+    
+    ?term oboInOwl:hasRelatedSynonym ?related ;
+      oboInOwl:hasExactSynonym ?exact ;
+      a owl:Class .
+    
+    ?term rdfs:label ?term_label .
+    
+    FILTER (str(?related)=str(?exact))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  }
+  #UNION 
+  # { 
+  # ASK CHRIS: IS THIS REDUNDANT? -> REDUNDANT..
+  #  ?x owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+  #    owl:annotatedSource ?term ;
+  #    owl:annotatedTarget ?related .
+  #    
+  # ?y owl:annotatedProperty oboInOwl:hasExactSynonym ;
+  #    owl:annotatedSource ?term ;
+  #    owl:annotatedTarget ?exact .
+  #    
+  # ?term rdfs:label ?term_label .
+  #
+  # FILTER (str(?related)=str(?exact))
+  # FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  # }
+} LIMIT 200
