@@ -32,7 +32,7 @@ Layout:
 
  * src/
     * [patterns](src/ontology) ontology source, plus imports, Makefile
-    * [patterns](src/patterns) templated design patterns
+    * [patterns](src/ontology/patterns/dosdp-patterns) templated design patterns
     * [sparql](src/sparql) SPARQL queries
 
 ## Logo
