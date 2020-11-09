@@ -51,8 +51,8 @@ Note- the date should be the date of the release in the format sh run.sh make GH
 ## Write a description of the release
 
 1. All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
-2. To add a description of the release, click edit, and write a summary from [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) in the 'describe this release' section. 
-
+2. To add a description of the release: click edit, and in the 'describe this release' section add the content from the change log text file above. 
+3. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
 
 ## Commit release files 
 
