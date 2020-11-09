@@ -82,6 +82,9 @@ IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equi
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
 
+COMPONENTS = mondo-tags
+COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
+
 SUBSETS = mondo-minimal
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
@@ -103,6 +106,7 @@ ARTEFACTS = \
   $(MAIN_FILES) \
   $(EQUIVALENTS) \
   $(REPORT_FILES) \
+  $(COMPONENT_FILES) \
   $(SUBSET_FILES)
 
 
