@@ -172,7 +172,7 @@ all: sources
 
 ## SOURCES
 SOURCE_VERSION = $(TODAY)
-SOURCE_IDS = doid ncit mondo ordo medgen
+SOURCE_IDS = doid ncit mondo ordo medgen equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS))
 ALL_SOURCES_OWL = $(patsubst %, sources/$(SOURCE_VERSION)/%.owl, $(SOURCE_IDS))
@@ -205,8 +205,8 @@ sources/$(SOURCE_VERSION)/ncit.owl: | source_release_dir
 sources/$(SOURCE_VERSION)/mondo.owl: | source_release_dir
 	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@
 
-sources/$(SOURCE_VERSION)/ncit.owl: | source_release_dir
-	robot merge -I http://purl.obolibrary.org/obo/ncit.owl -o $@
+sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
+	curl -L -s $(OBO)/mondo/imports/equivalencies.json > $@.tmp && mv $@.tmp $@
 
 sources/$(SOURCE_VERSION)/all_sources_merged.json: $(ALL_SOURCES_OWL)
 	robot merge $(addprefix -i , $^) convert -f json -o $@
