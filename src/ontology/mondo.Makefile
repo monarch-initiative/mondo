@@ -14,7 +14,9 @@ matches:
 
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
-	
+
+test: pattern_schema_checks
+
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
 	$(DOSDPT) prototype --obo-prefixes --template=../patterns/dosdp-patterns --outfile=$@
 
