@@ -1,0 +1,30 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
+prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+
+CONSTRUCT {
+  ?term mondo:should_conform_to mondoPatterns:OMIM_phenotypic_series.yaml ;
+  rdf:type owl:Class .
+}
+WHERE 
+{ 
+  ?exp owl:annotatedSource ?term ;
+       owl:annotatedProperty oboInOwl:hasDbXref ;
+       owl:annotatedTarget ?xref;
+       oboInOwl:source ?source .
+
+  FILTER NOT EXISTS {
+     ?term mondo:should_conform_to mondoPatterns:OMIM_phenotypic_series.yaml .
+  }
+  
+  FILTER NOT EXISTS { ?term owl:deprecated "true"^^xsd:boolean . }
+  
+  FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER(regex(str(?xref), "^OMIMPS:"))
+  FILTER(str(?source)="MONDO:equivalentTo")
+}

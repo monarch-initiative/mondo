@@ -1,0 +1,6 @@
+SELECT ?c1 ?n0 ?n1 WHERE {
+?c1 <http://purl.org/dc/terms/conformsTo> ?n0 .
+?c1 <http://purl.org/dc/terms/conformsTo> ?n1 .
+FILTER ( ?n0!=?n1 ) .
+FILTER ( isIRI(?c1) && regex(str(?c1), "^http://purl.obolibrary.org/obo/MONDO_"))
+}

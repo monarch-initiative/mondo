@@ -1,6 +1,10 @@
-ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/*.yaml))
+ALL_PATTERNS_1=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-h]*.yaml))
+ALL_PATTERNS_2=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[i-p]*.yaml))
+ALL_PATTERNS_3=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[q-z]*.yaml))
 DOSDPT=../dosdp-tools-0.15.1-SNAPSHOT/bin/dosdp-tools
 
+g:
+	echo $(ALL_PATTERNS_2)
 
 .PHONY: dirs
 dirs:
@@ -9,8 +13,18 @@ dirs:
 
 
 .PHONY: matches
-matches:
-	$(DOSDPT) query --ontology=../ontology/mondo-edit.obo --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+	
+matches: matches_1 matches_2 matches_3
+
+matches_1:
+	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS_1)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+
+matches_2:
+	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS_2)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+		
+matches_3:
+	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS_3)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+	
 
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
@@ -154,57 +168,52 @@ clean:
 
 # Makefile for mondo analysis
 
-all: sources/merged.json all_json
+all: sources
 
 ## SOURCES
-DOID = doid-2018-07-05
-NCIT = ncit-disease-2018-06-08
-MONDO = mondo-component
-ORDO = ordo-2_6-2018-07-12
-MG = medgen-disease-extract
-CTD = ctd_diseases-2018-06-25
+SOURCE_VERSION = $(TODAY)
+# snomed
+SOURCE_IDS = doid ncit mondo ordo medgen equivalencies
+ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS))
+ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS))
+ALL_SOURCES_OWL = $(patsubst %, sources/$(SOURCE_VERSION)/%.owl, $(SOURCE_IDS))
 
-SOURCES = $(DOID) $(NCIT) $(MONDO) $(ORDO) $(MG) $(CTD)
-SOURCE_IDS = doid ncit mondo ordo mg
-SOURCE_FILES = $(patsubst %, sources/%.owl.gz, $(SOURCES))
 
-#all_json: $(patsubst %, sources/%.json, $(SOURCE_IDS))
-all_json: $(patsubst %, sources/%.json, $(SOURCES))
-all_json_gz: $(patsubst %, sources/%.json.gz, $(SOURCES))
+sources: $(ALL_SOURCES_JSON) $(ALL_SOURCES_JSON_GZ) sources/$(SOURCE_VERSION)/all_sources_merged.json
 
-sources/%.json: sources/%.owl.gz
-	owltools $< -o -f json $@
-#	robot convert -i $< -f json -o $@
+.PHONY: source_release_dir
+source_release_dir:
+	mkdir -p sources/$(SOURCE_VERSION)
 
-sources/%.json.gz: sources/%.json
+sources/$(SOURCE_VERSION)/%.json.gz: sources/$(SOURCE_VERSION)/%.json | source_release_dir
 	gzip -c $< > $@
-sources/%.owl.gz: sources/%.owl
-	gzip -c $< > $@
+	
+sources/$(SOURCE_VERSION)/%.json: sources/$(SOURCE_VERSION)/%.owl
+	robot merge -i $< convert -f json -o $@
 
-sources/mondo.json: $(patsubst %, sources/%.owl.gz, $(MONDO))
-	owltools $< -o -f json $@
+sources/$(SOURCE_VERSION)/doid.owl: | source_release_dir
+	robot merge -I http://purl.obolibrary.org/obo/doid.owl -o $@
 
-sources/doid.json: $(DOID)
-	owltools $< -o -f json $@
+sources/$(SOURCE_VERSION)/medgen.owl: | source_release_dir
+	robot merge -i sources/medgen/medgen-disease-extract.owl -o $@
 
-sources/medgen.json: $(MG)
-	owltools $< -o -f json $@
+sources/$(SOURCE_VERSION)/ordo.owl: | source_release_dir
+	robot merge -i sources/orphanet/ordo_orphanet.owl -o $@
 
-sources/ordo.json: $(ORDO)
-	owltools $< -o -f json $@
+sources/$(SOURCE_VERSION)/ncit.owl: | source_release_dir
+	robot merge -I http://purl.obolibrary.org/obo/ncit.owl -o $@
 
-sources/ncit.json: $(NCIT)
-	owltools $< -o -f json $@
-
-sources/mondo.owl:
+sources/$(SOURCE_VERSION)/mondo.owl: | source_release_dir
 	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@
 
-sources/merged.json: $(SOURCE_FILES)
-	owltools $(SOURCE_FILES) --merge-support-ontologies -o -f json $@
-#	robot merge $(patsubst %, -i %, $(SOURCE_FILES))  -o $@
+sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
+	curl -L -s $(OBO)/mondo/imports/equivalencies.owl > $@.tmp && mv $@.tmp $@
 
-sources/CTD_diseases.obo:
-	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
+sources/$(SOURCE_VERSION)/all_sources_merged.json: $(ALL_SOURCES_OWL)
+	robot merge $(addprefix -i , $^) convert -f json -o $@
+
+#sources/CTD_diseases.obo:
+#	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
 
 ##################################################
 ################## Old diseases2owl code #########
