@@ -1,0 +1,30 @@
+prefix omim: <http://identifiers.org/omim/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
+prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+
+SELECT ?term ?term_label ?p ?pn ?xc ?xp {
+   ?term rdfs:subClassOf ?p .
+   ?exp owl:annotatedSource ?term ;
+        owl:annotatedProperty oboInOwl:hasDbXref ;
+        owl:annotatedTarget ?xref;
+        oboInOwl:source ?source .
+   ?exp_p owl:annotatedSource ?p ;
+       owl:annotatedProperty oboInOwl:hasDbXref ;
+       owl:annotatedTarget ?xref_p;
+       oboInOwl:source ?source_p .
+   ?term rdfs:label ?term_label .
+   ?p rdfs:label ?pn .
+   FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+   FILTER (isIRI(?p) && regex(str(?p), "^http://purl.obolibrary.org/obo/MONDO_"))
+   FILTER(regex(str(?xref), "^OMIM:"))
+   FILTER(regex(str(?xref_p), "^OMIM:"))
+   FILTER(str(?source)="MONDO:equivalentTo")
+   FILTER(str(?source_p)="MONDO:equivalentTo")
+}
