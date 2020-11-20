@@ -15,6 +15,75 @@ g.parse("../mondo-qc.owl", format="xml")
 
 ## Robot report analysis
 
+
+
+
+<div>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ERROR</td>
+      <td>duplicate_definition</td>
+      <td>http://www.orpha.net/ORDO/Orphanet_79282</td>
+      <td>IAO:0000115</td>
+      <td>type methylmalonic acidemia with homocystinuri...</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ERROR</td>
+      <td>duplicate_definition</td>
+      <td>http://www.orpha.net/ORDO/Orphanet_79284</td>
+      <td>IAO:0000115</td>
+      <td>type methylmalonic acidemia with homocystinuri...</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ERROR</td>
+      <td>duplicate_definition</td>
+      <td>obo:OMIM_606658</td>
+      <td>IAO:0000115</td>
+      <td>Spinocerebellar ataxia type 15/16 (SCA15/16) i...</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ERROR</td>
+      <td>duplicate_definition</td>
+      <td>http://www.orpha.net/ORDO/Orphanet_98769</td>
+      <td>IAO:0000115</td>
+      <td>Spinocerebellar ataxia type 15/16 (SCA15/16) i...</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ERROR</td>
+      <td>duplicate_definition</td>
+      <td>http://www.orpha.net/ORDO/Orphanet_68346</td>
+      <td>IAO:0000115</td>
+      <td>Rare skin disease.</td>
+      <td>2017</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ## Overview of errors
 
 This breaks down the errors in the generic ROBOT report. _Note that the whole report is filtered to only show results pertaining to MONDO classes themselves_. All tables are cut off at {{ NUMBER_ERRORS_SHOWN }} rows.
@@ -28,15 +97,959 @@ Table: Breakdown of the number of relationships in Mondo.
   <thead>
     <tr style="text-align: right;">
       <th>Rule Name</th>
+      <th>2017</th>
+      <th>2018</th>
+      <th>2019</th>
+      <th>2020</th>
+      <th>current</th>
+      <th>edit</th>
+      <th>mondo-owl</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>annotation_whitespace</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>deprecated_class_reference</td>
+      <td>1</td>
+      <td>52</td>
+      <td>49</td>
+      <td>56</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>duplicate_definition</td>
+      <td>0</td>
+      <td>229</td>
+      <td>132</td>
+      <td>109</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>duplicate_exact_synonym</td>
+      <td>0</td>
+      <td>418</td>
+      <td>1662</td>
+      <td>1690</td>
+      <td>1688</td>
+      <td>1689</td>
+      <td>1689</td>
+    </tr>
+    <tr>
+      <td>duplicate_label</td>
+      <td>0</td>
+      <td>66</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>duplicate_scoped_synonym</td>
+      <td>2</td>
+      <td>3835</td>
+      <td>1443</td>
+      <td>1579</td>
+      <td>1599</td>
+      <td>1599</td>
+      <td>1599</td>
+    </tr>
+    <tr>
+      <td>equivalent_pair</td>
+      <td>0</td>
+      <td>28681</td>
+      <td>36995</td>
+      <td>37031</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>invalid_xref</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lowercase_definition</td>
+      <td>1</td>
+      <td>332</td>
+      <td>391</td>
+      <td>387</td>
+      <td>147</td>
+      <td>146</td>
+      <td>146</td>
+    </tr>
+    <tr>
+      <td>missing_definition</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>missing_label</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>missing_obsolete_label</td>
+      <td>2</td>
+      <td>5</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>missing_superclass</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>misused_obsolete_label</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>multiple_equivalent_classes</td>
+      <td>0</td>
+      <td>21299</td>
+      <td>37274</td>
+      <td>37364</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
   </tbody>
 </table>
 
 
 
 ## Detailed breakdown of errors: Editors file
+
+
+
+#### Duplicate definition
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ERROR</td>
+      <td>duplicate_definition</td>
+      <td>MONDO:0001014</td>
+      <td>IAO:0000115</td>
+      <td>A slowly progressing leukemia characterized by a clonal (malignant) proliferation of maturing and mature myeloid cells or mature lymphocytes. When the clonal cellular population is composed of myeloid cells, the process is called chronic myelogenous leukemia. When the clonal cellular population is composed of lymphocytes, it is classified as chronic lymphocytic leukemia, hairy cell leukemia, or T-cell large granular lymphocyte leukemia.</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### Multiple equivalent classes
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ERROR</td>
+      <td>multiple_equivalent_classes</td>
+      <td>MONDO:0021108</td>
+      <td>owl:equivalentClass</td>
+      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid331501</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>ERROR</td>
+      <td>multiple_equivalent_classes</td>
+      <td>MONDO:0021108</td>
+      <td>owl:equivalentClass</td>
+      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid331505</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>ERROR</td>
+      <td>multiple_equivalent_classes</td>
+      <td>MONDO:0045024</td>
+      <td>owl:equivalentClass</td>
+      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid358696</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>ERROR</td>
+      <td>multiple_equivalent_classes</td>
+      <td>MONDO:0045024</td>
+      <td>owl:equivalentClass</td>
+      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid358700</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### Duplicate exact synonym
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0003401</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>yolk Sac tumor of the CNS</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0016739</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>yolk Sac tumor of the CNS</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0003404</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>yolk Sac tumor</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0005744</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>yolk Sac tumor</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0010420</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>XLP</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0010627</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>XLP</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0017304</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>XLOA</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0021019</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>XLOA</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0010209</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>xanthine oxidase deficiency</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0018106</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>xanthine oxidase deficiency</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0010209</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>xanthine dehydrogenase deficiency</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0018106</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>xanthine dehydrogenase deficiency</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0007764</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>Worth syndrome</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0011878</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>Worth syndrome</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_exact_synonym</td>
+      <td>MONDO:0005004</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>Wolffian duct neoplasm</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### Missing definition
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000005</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000009</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000014</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000023</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000030</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000032</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000045</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000049</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000050</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000060</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000065</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000066</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000070</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000075</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000079</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### Duplicate scoped synonym
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000155</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>rare inborn error of sequestering of triglyceride</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000155</td>
+      <td>oboInOwl:hasRelatedSynonym</td>
+      <td>rare inborn error of sequestering of triglyceride</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000242</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>dermatophytosis of beard</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000242</td>
+      <td>oboInOwl:hasRelatedSynonym</td>
+      <td>dermatophytosis of beard</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000270</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>disorder of lower respiratory tract</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000270</td>
+      <td>oboInOwl:hasRelatedSynonym</td>
+      <td>disorder of lower respiratory tract</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000330</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>endemic typhus Fever</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000330</td>
+      <td>oboInOwl:hasRelatedSynonym</td>
+      <td>endemic typhus Fever</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000351</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>rare inborn error of methionine catabolic process</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000351</td>
+      <td>oboInOwl:hasRelatedSynonym</td>
+      <td>rare inborn error of methionine catabolic process</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000414</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>pediatric electroclinical syndrome</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000414</td>
+      <td>oboInOwl:hasRelatedSynonym</td>
+      <td>pediatric electroclinical syndrome</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000421</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>rare inborn error of L-serine biosynthetic process</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000421</td>
+      <td>oboInOwl:hasRelatedSynonym</td>
+      <td>rare inborn error of L-serine biosynthetic process</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>duplicate_scoped_synonym</td>
+      <td>MONDO:0000424</td>
+      <td>oboInOwl:hasExactSynonym</td>
+      <td>rare inborn error of cobalamin metabolic process</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### Lowercase definition
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0007477</td>
+      <td>IAO:0000115</td>
+      <td>3M syndrome is a primordial growth disorder characterized by low birth weight, reduced birth length, severe postnatal growth restriction, a spectrum of minor anomalies (including facial dysmorphism) and normal intelligence.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0007989</td>
+      <td>IAO:0000115</td>
+      <td>2 mm in diameter) from birth, peripheral iris hypopigmentation and transillumination defects leading to errors of refraction (myopia, astigmatism) and sometimes juvenile open angle glaucoma.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0008863</td>
+      <td>IAO:0000115</td>
+      <td>(2p21) genes.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0008872</td>
+      <td>IAO:0000115</td>
+      <td>'Microcephalic osteodysplastic primordial dwarfism type II (MOPDII) is a form of microcephalic primordial dwarfism (MPD) characterized by severe pre- and postnatal growth retardation, with marked microcephaly in proportion to body size, skeletal dysplasia, abnormal dentition, insulin resistance, and increased risk for cerebrovascular disease.'</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0008908</td>
+      <td>IAO:0000115</td>
+      <td>(14q21).</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009299</td>
+      <td>IAO:0000115</td>
+      <td>46,XX gonadal dysgenesis (46,XX GD) is a primary ovarian defect leading to premature ovarian failure (POF) in otherwise normal 46,XX females as a result of failure of the gonads to develop or due to resistance to gonadotrophin stimulation.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009371</td>
+      <td>IAO:0000115</td>
+      <td>3 hydroxyisobutyric aciduria is characterised by ketoacidotic episodes, cerebral anomalies and facial dysmorphism. It is an organic aciduria that involves valine metabolism. Thirteen cases have been described in the literature so far. Transmission is thought to be autosomal recessive.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009397</td>
+      <td>IAO:0000115</td>
+      <td>3.5 mM) from birth and associated with major hyperparathyroidism.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009520</td>
+      <td>IAO:0000115</td>
+      <td>3-hydroxy-3-methylglutaric aciduria (3HMG) is an organic aciduria, due to deficiency of 3-hydroxy-3-methylglutaryl-CoA-lyase (a key enzyme in ketogenesis and leucine metabolism) usually presenting in infancy with episodes of metabolic decompensation triggered by periods of fasting or infections, which when left untreated are life-threatening and may lead to neurological sequelae.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009610</td>
+      <td>IAO:0000115</td>
+      <td>3-methylglutaconic aciduria (3-MGA) type I is an inborn error of leucine metabolism with a variable clinical phenotype ranging from mildly delayed speech to psychomotor retardation, coma, failure to thrive, metabolic acidosis and dystonia.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009611</td>
+      <td>IAO:0000115</td>
+      <td>3-methylglutaconic aciduria (3-MGA) type IV, or unclassified 3-MGA, is a clinically heterogeneous disorder characterised by increased 3-methylglutaconic acid excretion in individuals that cannot be classified as having one of the other forms of 3-MGA (3-MGA I, II or III).</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009787</td>
+      <td>IAO:0000115</td>
+      <td>3-methylglutaconic aciduria type III (MGA III) is an organic aciduria characterised by the association of optic atrophy and choreoathetosis with 3-methylglutaconic aciduria.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0009825</td>
+      <td>IAO:0000115</td>
+      <td>5-Oxoprolinase deficiency is clinically a very heterogeneous condition characterized by 5-oxoprolinuria.</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0010490</td>
+      <td>IAO:0000115</td>
+      <td>(Xq28).</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>lowercase_definition</td>
+      <td>MONDO:0010765</td>
+      <td>IAO:0000115</td>
+      <td>46,XY complete gonadal dysgenesis (46,XY CGD) is a disorder of sex development (DSD) associated with anomalies in gonadal development that result in the presence of female external and internal genitalia despite the 46,XY karyotype.</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### Missing superclass
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000065</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000070</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000162</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000224</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000252</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000261</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000263</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000266</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000405</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000421</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000488</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000541</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000543</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000545</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
+      <td>MONDO:0000551</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Other Quality Control checks
@@ -1195,7 +2208,7 @@ Table: Breakdown of the number of relationships in Mondo.
 
 
     
-![png](mondo_analysis_files/mondo_analysis_20_1.png)
+![png](mondo_analysis_files/mondo_analysis_21_1.png)
     
 
 
