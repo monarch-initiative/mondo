@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-11-06/imports/hp_import.owl
+data-version: mondo/releases/2020-12-02/imports/hp_import.owl
 subsetdef: hposlim_core ""
 subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
@@ -4995,6 +4995,17 @@ xref: UMLS:C0009081
 is_a: HP:0001883 ! Talipes
 
 [Term]
+id: HP:0001787
+name: Abnormal delivery
+namespace: human_phenotype
+def: "An abnormality of the birth process." [HPO:probinson]
+synonym: "Abnormal delivery" EXACT layperson []
+synonym: "Delivery complication" EXACT layperson []
+xref: SNOMEDCT_US:274127000
+xref: UMLS:C0549629
+is_a: HP:0001197 ! Abnormality of prenatal development or birth
+
+[Term]
 id: HP:0001789
 name: Hydrops fetalis
 namespace: human_phenotype
@@ -9461,6 +9472,17 @@ xref: UMLS:C4025225
 is_a: HP:0001367 ! Abnormal joint morphology
 created_by: peter
 creation_date: 2008-03-26T04:27:00Z
+
+[Term]
+id: HP:0005268
+name: Spontaneous abortion
+namespace: human_phenotype
+def: "A pregnancy that ends at a stage in which the fetus is incapable of surviving on its own, defined as the spontaneous loss of a fetus before the 20th week of pregnancy." [HPO:probinson]
+synonym: "Miscarriage" EXACT []
+xref: MSH:D000022
+xref: SNOMEDCT_US:17369002
+xref: UMLS:C0000786
+is_a: HP:0001787 ! Abnormal delivery
 
 [Term]
 id: HP:0005293
@@ -15702,6 +15724,17 @@ xref: UMLS:C0037299
 is_a: HP:0011355 ! Localized skin lesion
 created_by: sebastiankohler
 creation_date: 2010-06-18T02:17:00Z
+
+[Term]
+id: HP:0200067
+name: Recurrent spontaneous abortion
+namespace: human_phenotype
+def: "Repeated episodes of abortion (Expulsion of the product of fertilization before completing the term of gestation) without deliberate interference." [HPO:probinson]
+synonym: "Spontaneous abortion, recurrent" RELATED [HPO:skoehler]
+xref: UMLS:C3279439
+is_a: HP:0005268 ! Spontaneous abortion
+created_by: sebastiankohler
+creation_date: 2013-05-31T01:33:01Z
 
 [Term]
 id: HP:0410008

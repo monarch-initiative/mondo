@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-11-06/imports/pato_import.owl
+data-version: mondo/releases/2020-12-02/imports/pato_import.owl
 ontology: mondo/imports/pato_import
 
 [Term]
@@ -406,6 +406,12 @@ synonym: "relational physical quality" EXACT []
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
+id: PATO:0001025
+name: pressure
+def: "A physical quality that inheres in a bearer by virtue of the bearer's amount of force per unit area it exerts." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001154
 name: elongated
 def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." []
@@ -678,6 +684,26 @@ def: "A spatial pattern inhering in a bearer by virtue of the bearer's being spr
 synonym: "diffuse" EXACT []
 synonym: "scattered" EXACT []
 is_a: PATO:0000060 ! spatial pattern
+
+[Term]
+id: PATO:0001575
+name: decreased pressure
+def: "A pressure which is relatively low." []
+synonym: "low pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001025 ! pressure
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001576
+name: increased pressure
+def: "A pressure which is relatively high." []
+synonym: "high pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001025 ! pressure
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
 id: PATO:0001655

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-11-06/imports/chebi_import.owl
+data-version: mondo/releases/2020-12-02/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -182,6 +182,21 @@ is_a: CHEBI:25697 ! organic cation
 relationship: is_conjugate_acid_of CHEBI:50996 ! tertiary amino compound
 
 [Term]
+id: CHEBI:138015
+name: endocrine disruptor
+def: "Any compound that can disrupt the functions of the endocrine (hormone) system" []
+synonym: "endocrine disrupting chemical" RELATED []
+synonym: "endocrine disrupting chemicals" RELATED []
+synonym: "endocrine disrupting compound" RELATED []
+synonym: "endocrine disrupting compounds" RELATED []
+synonym: "endocrine disruptors" RELATED []
+synonym: "endocrine-disrupting chemical" RELATED []
+synonym: "endocrine-disrupting chemicals" RELATED []
+synonym: "hormonally active agent" RELATED []
+synonym: "hormonally active agents" RELATED []
+is_a: CHEBI:51061 ! hormone receptor modulator
+
+[Term]
 id: CHEBI:138103
 name: inorganic acid
 def: "A Bronsted acid derived from one or more inorganic compounds. Inorganic acids (also known as mineral acids) form hydrons and conjugate base ions when dissolved in water." []
@@ -248,6 +263,18 @@ is_a: CHEBI:139588 ! alpha-hydroxy ketone
 is_a: CHEBI:15734 ! primary alcohol
 
 [Term]
+id: CHEBI:139592
+name: tertiary alpha-hydroxy ketone
+def: "An alpha-hydroxy ketone in which the carbonyl group and the hydroxy group are linked by a carbon bearing two organyl groups." []
+synonym: "tertiary alpha-hydroxy ketones" RELATED []
+synonym: "tertiary alpha-hydroxy-ketone" RELATED []
+synonym: "tertiary alpha-hydroxy-ketones" RELATED []
+synonym: "tertiary alpha-hydroxyketone" RELATED []
+synonym: "tertiary alpha-hydroxyketones" RELATED []
+is_a: CHEBI:139588 ! alpha-hydroxy ketone
+is_a: CHEBI:26878 ! tertiary alcohol
+
+[Term]
 id: CHEBI:140310
 name: phenyl acetates
 def: "An acetate ester obtained by formal condensation of the carboxy group of acetic acid with the hydroxy group of any phenol." []
@@ -301,6 +328,12 @@ is_a: CHEBI:33558 ! alpha-amino-acid anion
 relationship: is_conjugate_acid_of CHEBI:29987 ! glutamate(2-)
 relationship: is_conjugate_base_of CHEBI:18237 ! glutamic acid
 relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
+
+[Term]
+id: CHEBI:144644
+name: a tetracycline zwittterion
+synonym: "a tetracycline" RELATED []
+is_a: CHEBI:26895 ! tetracyclines
 
 [Term]
 id: CHEBI:145795
@@ -2945,6 +2978,14 @@ is_a: CHEBI:33709 ! amino acid
 relationship: is_tautomer_of CHEBI:62031 ! polar amino acid zwitterion
 
 [Term]
+id: CHEBI:26188
+name: polyketide
+def: "Natural and synthetic compounds containing alternating carbonyl and methylene groups ('beta-polyketones'), biogenetically derived from repeated condensation of acetyl coenzyme A (via malonyl coenzyme A), and usually the compounds derived from them by further condensations, etc. Considered by many to be synonymous with the less frequently used terms acetogenins and ketides." []
+synonym: "polyketide" EXACT []
+synonym: "polyketides" RELATED []
+is_a: CHEBI:36963 ! organooxygen compound
+
+[Term]
 id: CHEBI:26191
 name: polyol
 def: "A compound that contains two or more hydroxy groups." []
@@ -3236,9 +3277,26 @@ is_a: CHEBI:24913 ! isoprenoid
 relationship: has_parent_hydride CHEBI:35186 ! terpene
 
 [Term]
+id: CHEBI:26878
+name: tertiary alcohol
+def: "A tertiary alcohol is a compound in which a hydroxy group, -OH, is attached to a saturated carbon atom which has three other carbon atoms attached to it." []
+synonym: "tertiary alcohol" EXACT []
+synonym: "tertiary alcohols" RELATED []
+is_a: CHEBI:30879 ! alcohol
+
+[Term]
+id: CHEBI:26895
+name: tetracyclines
+def: "A subclass of polyketides having an octahydrotetracene-2-carboxamide skeleton, substituted with many hydroxy and other groups." []
+is_a: CHEBI:26188 ! polyketide
+relationship: has_parent_hydride CHEBI:32600 ! tetracene
+relationship: RO:0000087 CHEBI:25212 ! metabolite
+
+[Term]
 id: CHEBI:26932
 name: tetrapyrrole
 def: "A natural pigment containing four pyrrole rings joined by one-carbon units linking position 2 of one pyrrole ring to position 5 of the next." []
+synonym: "a tetrapyrrole" RELATED []
 synonym: "tetrapyrrole" EXACT []
 synonym: "tetrapyrroles" EXACT []
 is_a: CHEBI:33833 ! heteroarene
@@ -3471,6 +3529,35 @@ relationship: has_functional_parent CHEBI:15366 ! acetic acid
 relationship: is_conjugate_acid_of CHEBI:23123 ! chloroacetate
 relationship: RO:0000087 CHEBI:22333 ! alkylating agent
 relationship: RO:0000087 CHEBI:24527 ! herbicide
+
+[Term]
+id: CHEBI:27902
+name: tetracycline
+def: "A broad-spectrum polyketide antibiotic produced by the Streptomyces genus of actinobacteria." []
+synonym: "(4S,4aS,5aS,12aS)-4-(Dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-2-naphthacenecarboxamide" RELATED []
+synonym: "(4S,4aS,5aS,6S,12aS)-4-(dimethylamino)-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-1,4,4a,5,5a,6,11,12a-octahydrotetracene-2-carboxamide" EXACT []
+synonym: "Abramycin" RELATED []
+synonym: "Achromycin" RELATED []
+synonym: "Anhydrotetracycline" RELATED []
+synonym: "Deschlorobiomycin" RELATED []
+synonym: "Liquamycin" RELATED []
+synonym: "Tetracyclin" RELATED []
+synonym: "TETRACYCLINE" EXACT []
+synonym: "Tetracycline" EXACT []
+synonym: "tetracycline" EXACT []
+synonym: "tetracycline" RELATED []
+synonym: "tetracyclinum" RELATED []
+synonym: "Tetrazyklin" RELATED []
+synonym: "Tsiklomitsin" RELATED []
+is_a: CHEBI:139592 ! tertiary alpha-hydroxy ketone
+is_a: CHEBI:26895 ! tetracyclines
+relationship: is_conjugate_acid_of CHEBI:71392 ! tetracycline(1-)
+relationship: is_conjugate_acid_of CHEBI:77932 ! tetracycline zwitterion
+relationship: RO:0000087 CHEBI:33281 ! antimicrobial agent
+relationship: RO:0000087 CHEBI:35820 ! antiprotozoal drug
+relationship: RO:0000087 CHEBI:36047 ! antibacterial drug
+relationship: RO:0000087 CHEBI:48001 ! protein synthesis inhibitor
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 
 [Term]
 id: CHEBI:27933
@@ -4279,6 +4366,17 @@ synonym: "barium" EXACT []
 synonym: "barium" RELATED []
 synonym: "baryum" RELATED []
 is_a: CHEBI:22313 ! alkaline earth metal atom
+
+[Term]
+id: CHEBI:32600
+name: tetracene
+def: "An acene that consists of four ortho-fused benzene rings in a rectilinear arrangement." []
+synonym: "2,3-benzanthracene" RELATED []
+synonym: "benz[b]anthracene" RELATED []
+synonym: "naphthacene" RELATED []
+synonym: "tetracene" EXACT []
+is_a: CHEBI:35297 ! acene
+is_a: CHEBI:51270 ! tetracenes
 
 [Term]
 id: CHEBI:32760
@@ -5210,6 +5308,14 @@ synonym: "bicyclic compounds" RELATED []
 is_a: CHEBI:33595 ! cyclic compound
 
 [Term]
+id: CHEBI:33637
+name: ortho-fused compound
+def: "A polycyclic compound in which two rings have two, and only two, atoms in common. Such compounds have n common faces and 2n common atoms." []
+synonym: "ortho-fused compounds" RELATED []
+synonym: "ortho-fused polycyclic compounds" EXACT []
+is_a: CHEBI:35293 ! fused compound
+
+[Term]
 id: CHEBI:33653
 name: aliphatic compound
 def: "Any acyclic or cyclic, saturated or unsaturated carbon compound, excluding aromatic compounds." []
@@ -5280,6 +5386,14 @@ synonym: "monocyclic hydrocarbon" EXACT []
 synonym: "monocyclic hydrocarbons" EXACT []
 synonym: "monocyclic hydrocarbons" RELATED []
 is_a: CHEBI:33663 ! cyclic hydrocarbon
+
+[Term]
+id: CHEBI:33666
+name: polycyclic hydrocarbon
+synonym: "polycyclic hydrocarbon" EXACT []
+synonym: "polycyclic hydrocarbons" EXACT []
+is_a: CHEBI:33663 ! cyclic hydrocarbon
+is_a: CHEBI:35294 ! carbopolycyclic compound
 
 [Term]
 id: CHEBI:33670
@@ -5585,6 +5699,19 @@ synonym: "monocyclic arenes" RELATED []
 is_a: CHEBI:33658 ! arene
 
 [Term]
+id: CHEBI:33848
+name: polycyclic arene
+def: "A polycyclic aromatic hydrocarbon." []
+synonym: "PAH" RELATED []
+synonym: "PAHs" RELATED []
+synonym: "polycyclic arenes" RELATED []
+synonym: "polycyclic aromatic hydrocarbons" RELATED []
+is_a: CHEBI:33658 ! arene
+is_a: CHEBI:33666 ! polycyclic hydrocarbon
+relationship: RO:0000087 CHEBI:138015 ! endocrine disruptor
+relationship: RO:0000087 CHEBI:50903 ! carcinogenic agent
+
+[Term]
 id: CHEBI:33853
 name: phenols
 def: "Organic aromatic compounds having one or more hydroxy groups attached to a benzene or other arene ring." []
@@ -5876,6 +6003,16 @@ is_a: CHEBI:51143 ! nitrogen molecular entity
 relationship: has_parent_hydride CHEBI:28938 ! ammonium
 
 [Term]
+id: CHEBI:35293
+name: fused compound
+synonym: "fused compounds" RELATED []
+synonym: "fused polycyclic compounds" RELATED []
+synonym: "fused-ring polycyclic compound" RELATED []
+synonym: "fused-ring polycyclic compounds" RELATED []
+synonym: "polycyclic fused-ring compounds" RELATED []
+is_a: CHEBI:33635 ! polycyclic compound
+
+[Term]
 id: CHEBI:35294
 name: carbopolycyclic compound
 def: "A polyclic compound in which all of the ring members are carbon atoms." []
@@ -5889,6 +6026,25 @@ name: homopolycyclic compound
 synonym: "homopolycyclic compounds" RELATED []
 is_a: CHEBI:33597 ! homocyclic compound
 is_a: CHEBI:33635 ! polycyclic compound
+
+[Term]
+id: CHEBI:35296
+name: ortho-fused polycyclic arene
+synonym: "ortho-fused polycyclic arenes" RELATED []
+is_a: CHEBI:33848 ! polycyclic arene
+is_a: CHEBI:35427 ! ortho-fused polycyclic hydrocarbon
+
+[Term]
+id: CHEBI:35297
+name: acene
+def: "A polycyclic aromatic hydrocarbon consisting of fused benzene rings in a rectilinear arrangement." []
+synonym: "Acen" RELATED []
+synonym: "acene" EXACT []
+synonym: "acenes" EXACT []
+synonym: "Azen" RELATED []
+synonym: "polyacenes" RELATED []
+is_a: CHEBI:35296 ! ortho-fused polycyclic arene
+is_a: CHEBI:51269 ! acenes
 
 [Term]
 id: CHEBI:35337
@@ -5995,6 +6151,13 @@ is_a: CHEBI:25741 ! oxide
 is_a: CHEBI:33273 ! polyatomic anion
 
 [Term]
+id: CHEBI:35427
+name: ortho-fused polycyclic hydrocarbon
+synonym: "ortho-fused polycyclic hydrocarbon" EXACT []
+synonym: "ortho-fused polycyclic hydrocarbons" RELATED []
+is_a: CHEBI:33637 ! ortho-fused compound
+
+[Term]
 id: CHEBI:35441
 name: antiinfective agent
 def: "A substance used in the prophylaxis or therapy of infectious diseases." []
@@ -6003,6 +6166,15 @@ synonym: "anti-infective drugs" RELATED []
 synonym: "antiinfective agents" RELATED []
 synonym: "antiinfective drug" RELATED []
 is_a: CHEBI:23888 ! drug
+
+[Term]
+id: CHEBI:35442
+name: antiparasitic agent
+def: "A substance used to treat or prevent parasitic infections." []
+synonym: "antiparasitic drugs" RELATED []
+synonym: "antiparasitics" RELATED []
+synonym: "parasiticides" RELATED []
+is_a: CHEBI:35441 ! antiinfective agent
 
 [Term]
 id: CHEBI:35470
@@ -6413,6 +6585,16 @@ is_a: CHEBI:17087 ! ketone
 is_a: CHEBI:35341 ! steroid
 
 [Term]
+id: CHEBI:35820
+name: antiprotozoal drug
+def: "Any antimicrobial drug which is used to treat or prevent protozoal infections." []
+synonym: "antiprotozoal agent" RELATED []
+synonym: "antiprotozoal agents" RELATED []
+synonym: "antiprotozoal drugs" RELATED []
+is_a: CHEBI:35442 ! antiparasitic agent
+is_a: CHEBI:36043 ! antimicrobial drug
+
+[Term]
 id: CHEBI:35842
 name: antirheumatic drug
 def: "A drug used to treat rheumatoid arthritis." []
@@ -6453,6 +6635,22 @@ synonym: "penams" EXACT []
 is_a: CHEBI:27171 ! organic heterobicyclic compound
 is_a: CHEBI:27933 ! beta-lactam antibiotic
 is_a: CHEBI:38106 ! organosulfur heterocyclic compound
+
+[Term]
+id: CHEBI:36043
+name: antimicrobial drug
+def: "A drug used to treat or prevent microbial infections." []
+synonym: "antimicrobial drugs" RELATED []
+is_a: CHEBI:33281 ! antimicrobial agent
+is_a: CHEBI:35441 ! antiinfective agent
+
+[Term]
+id: CHEBI:36047
+name: antibacterial drug
+def: "A drug used to treat or prevent bacterial infections." []
+synonym: "antibacterial drugs" RELATED []
+is_a: CHEBI:33282 ! antibacterial agent
+is_a: CHEBI:36043 ! antimicrobial drug
 
 [Term]
 id: CHEBI:36054
@@ -7802,6 +8000,15 @@ is_a: CHEBI:51689 ! enone
 relationship: BFO:0000051 CHEBI:136849 ! 3-oxo-Delta(4)-steroid group
 
 [Term]
+id: CHEBI:48001
+name: protein synthesis inhibitor
+def: "A compound, usually an anti-bacterial agent or a toxin, which inhibits the synthesis of a protein." []
+synonym: "protein synthesis antagonist" RELATED []
+synonym: "protein synthesis antagonists" RELATED []
+synonym: "protein synthesis inhibitors" RELATED []
+is_a: CHEBI:76932 ! pathway inhibitor
+
+[Term]
 id: CHEBI:48154
 name: sulfur oxide
 synonym: "oxides of sulfur" RELATED []
@@ -8624,6 +8831,19 @@ name: dipolar compound
 def: "An  organic molecule that is electrically neutral carrying a positive and a negative charge in one of its major canonical descriptions. In most dipolar compounds the charges are delocalized; however the term is also applied to species where this is not the case." []
 synonym: "dipolar compounds" RELATED []
 is_a: CHEBI:72695 ! organic molecule
+
+[Term]
+id: CHEBI:51269
+name: acenes
+def: "Polycyclic aromatic hydrocarbons consisting of fused benzene rings in a rectilinear arrangement and their substitution derivatives." []
+is_a: CHEBI:33836 ! benzenoid aromatic compound
+
+[Term]
+id: CHEBI:51270
+name: tetracenes
+def: "Compounds containing a tetracene skeleton." []
+synonym: "naphthacenes" RELATED []
+is_a: CHEBI:51269 ! acenes
 
 [Term]
 id: CHEBI:51356
@@ -9728,6 +9948,16 @@ synonym: "transferase inhibitors" RELATED []
 is_a: CHEBI:23924 ! enzyme inhibitor
 
 [Term]
+id: CHEBI:71392
+name: tetracycline(1-)
+def: "An organic anion that is the conjugate base of tetracycline obtained by deprotonation of the two enolic hydroxy groups and protonation of the tertiary amino group." []
+synonym: "(1S,4aS,11S,11aS,12aS)-3-carbamoyl-1-(dimethylazaniumyl)-4a,7,11-trihydroxy-11-methyl-4,6-dioxo-1,4,4a,6,11,11a,12,12a-octahydrotetracene-2,5-diolate" EXACT []
+synonym: "tetracycline anion" RELATED []
+is_a: CHEBI:25696 ! organic anion
+relationship: is_conjugate_base_of CHEBI:27902 ! tetracycline
+relationship: is_conjugate_base_of CHEBI:77932 ! tetracycline zwitterion
+
+[Term]
 id: CHEBI:72695
 name: organic molecule
 def: "Any molecule that consists of at least one carbon atom as part of the electrically neutral entity." []
@@ -10513,6 +10743,21 @@ synonym: "H. sapiens metabolites" RELATED []
 synonym: "Homo sapiens metabolite" RELATED []
 synonym: "Homo sapiens metabolites" RELATED []
 is_a: CHEBI:75768 ! mammalian metabolite
+
+[Term]
+id: CHEBI:77932
+name: tetracycline zwitterion
+def: "A zwitterion obtained by transfer of a proton from the 2-hydroxy group to the 1-amino group of tetracycline. It is the major microspecies at pH 7.3 (according to Marvin v 6.2.0.)." []
+synonym: "(1S,4aS,11S,11aS,12aS)-3-carbamoyl-1-(dimethylazaniumyl)-4a,5,7,11-tetrahydroxy-11-methyl-4,6-dioxo-1,4,4a,6,11,11a,12,12a-octahydrotetracen-2-olate" EXACT []
+synonym: "tetracycline" RELATED []
+is_a: CHEBI:144644 ! a tetracycline zwittterion
+is_a: CHEBI:27369 ! zwitterion
+relationship: is_conjugate_acid_of CHEBI:71392 ! tetracycline(1-)
+relationship: is_conjugate_base_of CHEBI:27902 ! tetracycline
+relationship: RO:0000087 CHEBI:33281 ! antimicrobial agent
+relationship: RO:0000087 CHEBI:35820 ! antiprotozoal drug
+relationship: RO:0000087 CHEBI:36047 ! antibacterial drug
+relationship: RO:0000087 CHEBI:48001 ! protein synthesis inhibitor
 
 [Term]
 id: CHEBI:77938

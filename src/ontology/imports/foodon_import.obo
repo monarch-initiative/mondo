@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-09-14/imports/foodon_import.owl
+data-version: mondo/releases/2020-12-02/imports/foodon_import.owl
 ontology: mondo/imports/foodon_import
 
 [Term]
@@ -241,6 +241,13 @@ property_value: IAO:0000602 "(forall (x) (if (MaterialEntity x) (IndependentCont
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
+id: CHEBI:24431
+name: chemical entity
+def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
+
+[Term]
 id: CHEBI:24432
 name: biological role
 def: "A role played by the molecular entity or part thereof within a biological context." []
@@ -282,6 +289,7 @@ def: "Food material for humans and animals which is processed with the intention
 comment: The FoodOn "food product" class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.
 is_a: FOODON:00002403 ! food material
 property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000118 "Foodon product type" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food xsd:anyURI
 
 [Term]
@@ -437,7 +445,6 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 id: FOODON:00001257
 name: milk or milk based food product
 is_a: FOODON:00001256 ! dairy food product
-relationship: RO:0001000 UBERON:0001913 ! derives from milk
 property_value: seeAlso https://en.wikipedia.org/wiki/Fat_content_of_milk#/media/File:Milkproducts.svg
 
 [Term]
@@ -573,8 +580,7 @@ id: FOODON:00002451
 name: food transformation process
 def: "A process involving the physical transformation of a food source or food product into some derived organic material or food product" []
 is_a: BFO:0000015 ! process
-relationship: RO:0002233 FOODON:00003402 ! has input pre-harvest food material
-relationship: RO:0002234 FOODON:00003374 ! has output harvested food material
+relationship: RO:0002234 FOODON:00002403 ! has output food material
 
 [Term]
 id: FOODON:00002452
@@ -642,18 +648,29 @@ id: FOODON:00003203
 name: food harvesting
 def: "A process which takes in some food material from an individual or community of plant or animal organisms in a given context and time, and outputs a precursor or consumable food product. This may include a part of an organism or the whole, and may involve killing the organism." []
 is_a: FOODON:00002451 ! food transformation process
+relationship: RO:0002233 FOODON:00003402 ! has input pre-harvest food material
+relationship: RO:0002234 FOODON:00003374 ! has output harvested food material
+
+[Term]
+id: FOODON:00003318
+name: echinoderm food product
+is_a: FOODON:00001293 ! shellfish food product
+intersection_of: FOODON:00001293 ! shellfish food product
+intersection_of: RO:0001000 FOODON:03412115 ! derives from echinoderm
+property_value: http://purl.org/dc/elements/1.1/date 2020-01-08T00:20:27Z xsd:dateTime
+property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165
 
 [Term]
 id: FOODON:00003374
 name: harvested food material
-def: "A harvested material that has the potential to be food material." []
+def: "Organic food material that has been harvested." []
 is_a: FOODON:00002403 ! food material
 relationship: RO:0002353 FOODON:00003203 ! output of food harvesting
 
 [Term]
 id: FOODON:00003402
 name: pre-harvest food material
-def: "Food material which has not yet been harvested from its rearing environment." []
+def: "Organic food material which has not reached harvestable maturity." []
 is_a: FOODON:00002403 ! food material
 
 [Term]
@@ -664,24 +681,21 @@ is_a: FOODON:03460130 ! physical/chemical modification process
 
 [Term]
 id: FOODON:03000003
-name: brown shrimp
-def: "Farfantepenaeus aztecus is a species of marine penaeid shrimps found around the east coast of the USA and Mexico" []
-is_a: FOODON:03411081 ! penaeid shrimp family
-relationship: RO:0002162 NCBITaxon:6690 ! in taxon Penaeus aztecus
+name: obsolete: brown shrimp
+is_obsolete: true
+replaced_by: NCBITaxon:6690
 
 [Term]
 id: FOODON:03000004
-name: green mud crab
-def: "Scylla paramamosain is a mud crab commonly consumed in South-east Asia." []
-is_a: FOODON:03412215 ! mud crab family
-relationship: RO:0002162 NCBITaxon:85552 ! in taxon Scylla paramamosain
+name: obsolete: green mud crab
+is_obsolete: true
+replaced_by: NCBITaxon:85552
 
 [Term]
 id: FOODON:03000005
-name: Indian prawn
-def: "The Indian prawn (Fenneropenaeus indicus, formerly Penaeus indicus), is one of the major commercial prawn species of the world. It is found in the Indo-West Pacific from eastern and south-eastern Africa, through India, Malaysia and Indonesia to southern China and northern Australia" []
-is_a: FOODON:03411081 ! penaeid shrimp family
-relationship: RO:0002162 NCBITaxon:29960 ! in taxon Penaeus indicus
+name: obsolete: Indian prawn
+is_obsolete: true
+replaced_by: NCBITaxon:29960
 
 [Term]
 id: FOODON:03302116
@@ -693,7 +707,6 @@ synonym: "milk" BROAD []
 xref: SUBSET_SIREN:F2116
 is_a: FOODON:00001771 ! cow milk based food product
 is_a: FOODON:03430130 ! food (liquid)
-relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -707,7 +720,7 @@ xref: SUBSET_SIREN:F3918
 is_a: FOODON:00001958 ! human milk based food product
 is_a: UBERON:0001913 ! milk
 intersection_of: UBERON:0001913 ! milk
-intersection_of: RO:0003001 FOODON:03411087 ! produced by human as milk source
+intersection_of: RO:0003001 NCBITaxon:9606 ! produced by Homo sapiens
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Breast_milk xsd:anyURI
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -719,7 +732,6 @@ comment: SIREN DB annotation:\n* has quality 'semiliquid with solid pieces' (htt
 subset: subset_siren
 xref: SUBSET_SIREN:F4511
 is_a: FOODON:00002471 ! prepared seafood product
-relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -732,7 +744,7 @@ xref: SUBSET_SIREN:F5803
 is_a: FOODON:00001911 ! goat dairy food product
 is_a: UBERON:0001913 ! milk
 intersection_of: UBERON:0001913 ! milk
-intersection_of: RO:0003001 FOODON:03412611 ! produced by doe (goat)
+intersection_of: RO:0003001 NCBITaxon:9925 ! produced by Capra hircus
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -779,7 +791,6 @@ comment: SIREN DB annotation:\n* has quality 'solid' (http://purl.obolibrary.org
 subset: subset_siren
 xref: SUBSET_SIREN:F15468
 is_a: FOODON:00001293 ! shellfish food product
-relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -953,6 +964,22 @@ name: oil-producing plant
 is_a: FOODON:03411013 ! plant used for producing extract or concentrate
 
 [Term]
+id: FOODON:03411021
+name: fish or lower water animal
+def: "An aquatic animal is an animal, either vertebrate or invertebrate, which lives in the water for most or all of its lifetime." []
+is_a: FOODON:00003004 ! animal
+union_of: FOODON:03411222 ! fish
+union_of: FOODON:03411433 ! shellfish
+union_of: FOODON:03412409 ! coelenterate
+
+[Term]
+id: FOODON:03411041
+name: chemical food component
+def: "Any chemical or chemical mixture that exists in a food material or was added to a food material." []
+is_a: CHEBI:24431 ! chemical entity
+relationship: BFO:0000050 FOODON:00002403 ! part of food material
+
+[Term]
 id: FOODON:03411047
 name: grain or seed-producing plant
 is_a: PO:0000003 ! whole plant
@@ -973,9 +1000,9 @@ is_a: FOODON:03411237 ! shrimp
 
 [Term]
 id: FOODON:03411087
-name: human as milk source
-is_a: FOODON:03411134 ! mammal
-relationship: RO:0002162 NCBITaxon:9606 ! in taxon Homo sapiens
+name: obsolete: human as milk source
+is_obsolete: true
+replaced_by: NCBITaxon:9606
 
 [Term]
 id: FOODON:03411134
@@ -983,6 +1010,15 @@ name: mammal
 def: "Mammals (from Latin mamma \"breast\") are vertebrate animals constituting the class Mammalia, and characterized by the presence of mammary glands which in females produce milk for feeding (nursing) their young, a neocortex (a region of the brain), fur or hair, and three middle ear bones." []
 is_a: FOODON:00001092 ! vertebrate animal food product
 is_a: FOODON:03411297 ! vertebrate animal
+
+[Term]
+id: FOODON:03411142
+name: aquatic invertebrate animal (excluding shellfish)
+def: "Aquatic animals other than fish and shellfish" []
+is_a: FOODON:00002581 ! aquatic invertebrate
+union_of: FOODON:03412115 ! echinoderm
+union_of: FOODON:03412409 ! coelenterate
+union_of: FOODON:03414466 ! tunicate
 
 [Term]
 id: FOODON:03411161
@@ -1013,7 +1049,7 @@ is_a: FOODON:03411607 ! nut or edible seed producing plant
 id: FOODON:03411215
 name: obsolete: algae, bacteria or fungus
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1215
-property_value: IAO:0000231 "false" xsd:boolean
+property_value: IAO:0000231 "Disjunction discouraged, use specific item instead." xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 
@@ -1022,6 +1058,7 @@ id: FOODON:03411222
 name: fish
 def: "Fish are the gill-bearing aquatic craniate animals that lack limbs with digits. Most fish are ectothermic (\"cold-blooded\"), allowing their body temperatures to vary as ambient temperatures change, though some of the large active swimmers like white shark and tuna can hold a higher core temperature." []
 is_a: FOODON:00001248 ! fish food product
+is_a: FOODON:03411021 ! fish or lower water animal
 is_a: FOODON:03411297 ! vertebrate animal
 
 [Term]
@@ -1090,6 +1127,7 @@ id: FOODON:03411374
 name: crustacean
 def: "Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]" []
 is_a: FOODON:03411433 ! shellfish
+disjoint_from: FOODON:03412115 ! echinoderm
 
 [Term]
 id: FOODON:03411433
@@ -1097,12 +1135,13 @@ name: shellfish
 def: "The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates." []
 is_a: FOODON:00001293 ! shellfish food product
 is_a: FOODON:00002581 ! aquatic invertebrate
+is_a: FOODON:03411021 ! fish or lower water animal
 
 [Term]
 id: FOODON:03411564
 name: food product organismal source
 def: "This is a hierarchy of organisms, grouped minimally in a combination of taxonomy and consumer-oriented food groups." []
-is_a: ENVO:00010483 ! environmental material
+is_a: OBI:0100026 ! organism
 
 [Term]
 id: FOODON:03411607
@@ -1124,6 +1163,16 @@ synonym: "mollusk" EXACT []
 is_a: FOODON:03411433 ! shellfish
 
 [Term]
+id: FOODON:03412115
+name: echinoderm
+def: "Echinoderm is the common name given to any member of the phylum *Echinodermata* of marine animals. The adults are recognizable by their (usually five-point) radial symmetry, and include such well-known animals as sea stars, sea urchins, sand dollars, and sea cucumbers, as well as the sea lilies or \"stone lilies\". [https://en.wikipedia.org/wiki/Echinoderm]" []
+synonym: "Echinodermata" NARROW []
+synonym: "Echinodermata Klein, 1734" NARROW []
+is_a: FOODON:03411142 ! aquatic invertebrate animal (excluding shellfish)
+is_a: FOODON:03411433 ! shellfish
+disjoint_from: FOODON:03412409 ! coelenterate
+
+[Term]
 id: FOODON:03412215
 name: mud crab family
 def: "Mud crab may refer to any crab that lives in or near mud, such as: species from family *Portunidae*, such as *Scylla serrata*; *Scylla tranquebarica*; *Scylla paramamosain*; members of the family *Panopeidae*, such as *Panopeus herbstii*; members of the family *Xanthidae*; *Helice crassa*, the tunnelling mud crab. [https://en.wikipedia.org/wiki/Mud_crab]" []
@@ -1136,23 +1185,35 @@ def: "A composite organism that arises from algae or cyanobacteria living among 
 is_a: FOODON:03411564 ! food product organismal source
 
 [Term]
+id: FOODON:03412409
+name: coelenterate
+def: "*Coelenterata* is an obsolete term encompassing the animal phyla *Cnidaria* (coral animals, true jellies, sea anemones, sea pens, and their allies) and *Ctenophora* (comb jellies).  [https://en.wikipedia.org/wiki/Coelenterata]" []
+is_a: FOODON:03411021 ! fish or lower water animal
+is_a: FOODON:03411142 ! aquatic invertebrate animal (excluding shellfish)
+
+[Term]
 id: FOODON:03412611
-name: doe (goat)
-synonym: "Capra hircus Linnaeus, 1758" NARROW []
-is_a: FOODON:03411328 ! goat
+name: obsolete: doe (goat)
+is_obsolete: true
+replaced_by: NCBITaxon:9925
 
 [Term]
 id: FOODON:03412702
-name: kid
-synonym: "Capra hircus Linnaeus, 1758" NARROW []
-is_a: FOODON:03411328 ! goat
+name: obsolete: kid
+is_obsolete: true
+replaced_by: NCBITaxon:9925
 
 [Term]
 id: FOODON:03412846
-name: bacteria
-def: "A unicellular prokaryotic organism in the Domain Bacteria." []
-is_a: FOODON:03411564 ! food product organismal source
-relationship: RO:0002162 NCBITaxon:2 ! in taxon Bacteria
+name: obsolete: bacteria
+property_value: IAO:0000412 http://langual.org xsd:string
+is_obsolete: true
+replaced_by: NCBITaxon:2
+
+[Term]
+id: FOODON:03412972
+name: food additive
+is_a: FOODON:03411041 ! chemical food component
 
 [Term]
 id: FOODON:03414374
@@ -1165,6 +1226,12 @@ id: FOODON:03414381
 name: bovid
 def: "A bovid (family *Bovidae*) is any of almost 140 species of cloven-hoofed, ruminant mammal which has males with characteristic unbranching horns covered in a permanent sheath of keratin.\n\nThe family is widespread, being native to Asia, Africa, Europe and North America, and diverse: members include bison, African buffalo, water buffalo, antelopes, gazelles, sheep, goats, muskoxen, and domestic cattle." []
 is_a: FOODON:03411134 ! mammal
+
+[Term]
+id: FOODON:03414466
+name: tunicate
+def: "Tunicates, previously known as *Urochordata* or urochordates, are members of the *Tunicata*, a subphylum of the phylum *Chordata*. They are marine filter feeders with a saclike morphology. In their respiration and feeding they take in water through an incurrent (or inhalant) siphon and expel the filtered water through an excurrent (or exhalant) siphon. Most adult tunicates are sessile and attached to rocks or similarly suitable surfaces on the ocean floor; others such as salps, doliolids and pyrosomes swim in the pelagic zone as adults. Various species are commonly known as sea squirts or sea pork." []
+is_a: FOODON:03411142 ! aquatic invertebrate animal (excluding shellfish)
 
 [Term]
 id: FOODON:03420110
@@ -1226,14 +1293,6 @@ def: "Anatomical part of an animal; includes eggs and milk that, although separa
 is_a: FOODON:03420116 ! part of organism
 
 [Term]
-id: FOODON:03420165
-name: obsolete: fruit or seed
-is_a: PO:0025496 ! multi-tissue plant structure
-is_obsolete: true
-replaced_by: PO:0009001
-replaced_by: PO:0009010
-
-[Term]
 id: FOODON:03420167
 name: fruit part
 def: "The fleshy fruit of any plant. *FRUIT* includes vegetables berries and pods as well. The bulk of a fruit is its fleshy part, which is covered by a peel (skin) and which encloses a core, pit or seeds." []
@@ -1243,6 +1302,7 @@ is_a: PO:0025496 ! multi-tissue plant structure
 id: FOODON:03420174
 name: obsolete: part of plant
 def: "Anatomical part of a plant, such as fruit, seed, pod, leaf, stem or flower as well as the whole plant." []
+property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 replaced_by: PO:0009011
 
@@ -1433,24 +1493,6 @@ is_a: IAO:0000027 ! data item
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 
 [Term]
-id: NCBITaxon:111520
-name: Penaeoidea
-is_a: NCBITaxon:6684 ! Dendrobranchiata
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:116704
-name: Eubrachyura
-is_a: NCBITaxon:6752 ! Brachyura
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:116706
-name: Heterotremata
-is_a: NCBITaxon:116704 ! Eubrachyura
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
 id: NCBITaxon:117571
 name: Euteleostomi
 synonym: "bony vertebrates" EXACT []
@@ -1464,40 +1506,15 @@ is_a: NCBITaxon:117571 ! Euteleostomi
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
-id: NCBITaxon:133894
-name: Penaeus
-is_a: NCBITaxon:6685 ! Penaeidae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
 id: NCBITaxon:1437010
 name: Boreoeutheria
 is_a: NCBITaxon:9347 ! Eutheria
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
-id: NCBITaxon:197562
-name: Pancrustacea
-is_a: NCBITaxon:33317 ! Protostomia
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:2
-name: Bacteria
-synonym: "eubacteria" EXACT []
-is_a: OBI:0100026 ! organism
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
 id: NCBITaxon:207598
 name: Homininae
 is_a: NCBITaxon:9526 ! Catarrhini
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:2172821
-name: Multicrustacea
-is_a: NCBITaxon:6657 ! Crustacea
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1512,12 +1529,6 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 id: NCBITaxon:27592
 name: Bovinae
 is_a: NCBITaxon:9895 ! Bovidae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:29960
-name: Penaeus indicus
-is_a: NCBITaxon:133894 ! Penaeus
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1572,12 +1583,6 @@ is_a: NCBITaxon:33154 ! Opisthokonta
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
-id: NCBITaxon:33317
-name: Protostomia
-is_a: NCBITaxon:33213 ! Bilateria
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
 id: NCBITaxon:33511
 name: Deuterostomia
 synonym: "deuterostomes" EXACT []
@@ -1595,86 +1600,6 @@ id: NCBITaxon:40674
 name: Mammalia
 synonym: "mammals" EXACT []
 is_a: NCBITaxon:32524 ! Amniota
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6657
-name: Crustacea
-synonym: "crustaceans" EXACT []
-is_a: NCBITaxon:197562 ! Pancrustacea
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6682
-name: Eucarida
-is_a: NCBITaxon:72041 ! Eumalacostraca
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6683
-name: Decapoda
-is_a: NCBITaxon:6682 ! Eucarida
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6684
-name: Dendrobranchiata
-is_a: NCBITaxon:6683 ! Decapoda
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6685
-name: Penaeidae
-synonym: "penaeid shrimps" EXACT []
-is_a: NCBITaxon:111520 ! Penaeoidea
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6690
-name: Penaeus aztecus
-synonym: "brown shrimp" EXACT []
-is_a: NCBITaxon:133894 ! Penaeus
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6692
-name: Pleocyemata
-is_a: NCBITaxon:6683 ! Decapoda
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6752
-name: Brachyura
-synonym: "short-tailed crabs" EXACT []
-synonym: "true crabs" EXACT []
-is_a: NCBITaxon:6692 ! Pleocyemata
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6757
-name: Portunidae
-synonym: "swimming crabs" EXACT []
-is_a: NCBITaxon:6774 ! Portunoidea
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6760
-name: Scylla
-synonym: "mangrove crabs" EXACT []
-synonym: "mud crabs" EXACT []
-is_a: NCBITaxon:6757 ! Portunidae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:6774
-name: Portunoidea
-is_a: NCBITaxon:116706 ! Heterotremata
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:72041
-name: Eumalacostraca
-is_a: NCBITaxon:2172821 ! Multicrustacea
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1698,13 +1623,6 @@ name: Gnathostomata <vertebrates>
 synonym: "Gnathostomata" EXACT []
 synonym: "jawed vertebrates" EXACT []
 is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
-
-[Term]
-id: NCBITaxon:85552
-name: Scylla paramamosain
-synonym: "green mud crab" EXACT []
-is_a: NCBITaxon:6760 ! Scylla
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1741,6 +1659,7 @@ id: NCBITaxon:9606
 name: Homo sapiens
 synonym: "human" EXACT []
 synonym: "man" EXACT []
+is_a: FOODON:03411134 ! mammal
 is_a: NCBITaxon:207598 ! Homininae
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
@@ -1778,9 +1697,11 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 [Term]
 id: NCBITaxon:9925
 name: Capra hircus
+synonym: "Capra hircus Linnaeus, 1758" NARROW []
 synonym: "domestic goat" EXACT []
 synonym: "goat" EXACT []
 synonym: "goats" EXACT []
+is_a: FOODON:03411328 ! goat
 is_a: NCBITaxon:9922 ! Capra
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-11-06/imports/go_import.owl
+data-version: mondo/releases/2020-12-02/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -62,8 +62,9 @@ def: "The chemical reactions and pathways involving amino acids containing sulfu
 synonym: "sulfur amino acid metabolism" EXACT []
 synonym: "sulphur amino acid metabolic process" EXACT []
 synonym: "sulphur amino acid metabolism" EXACT []
-is_a: GO:0006520 ! cellular amino acid metabolic process
+is_a: GO:0006082 ! organic acid metabolic process
 is_a: GO:0006790 ! sulfur compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0000098
@@ -75,8 +76,9 @@ synonym: "sulfur amino acid degradation" EXACT []
 synonym: "sulphur amino acid catabolic process" EXACT []
 synonym: "sulphur amino acid catabolism" EXACT []
 is_a: GO:0000096 ! sulfur amino acid metabolic process
-is_a: GO:0009063 ! cellular amino acid catabolic process
+is_a: GO:0016054 ! organic acid catabolic process
 is_a: GO:0044273 ! sulfur compound catabolic process
+is_a: GO:1901565 ! organonitrogen compound catabolic process
 
 [Term]
 id: GO:0000122
@@ -206,56 +208,49 @@ is_a: GO:0005773 ! vacuole
 [Term]
 id: GO:0000781
 name: chromosome, telomeric region
-def: "The terminal region of a linear chromosome that includes the telomeric DNA repeats and associated proteins." []
+def: "The end of a linear chromosome, required for the integrity and maintenance of the end. A chromosome telomere usually includes a region of telomerase-encoded repeats the length of which rarely exceeds 20 bp each and that permits the formation of a telomeric loop (T-loop). The telomeric repeat region is usually preceded by a sub-telomeric region that is gene-poor but rich in repetitive elements. Some telomeres only consist of the latter part (for eg. D. melanogaster telomeres)." []
+synonym: "nuclear chromosome, telomere" NARROW []
+synonym: "nuclear chromosome, telomeric region" NARROW []
 synonym: "telomere" RELATED []
 is_a: GO:0098687 ! chromosomal region
 
 [Term]
 id: GO:0000784
-name: nuclear chromosome, telomeric region
-def: "The end of a linear chromosome, required for the integrity and maintenance of the end. A chromosome telomere usually includes a region of telomerase-encoded repeats the length of which rarely exceeds 20 bp each and that permits the formation of a telomeric loop (T-loop). The telomeric repeat region is usually preceded by a sub-telomeric region that is gene-poor but rich in repetitive elements. Some telomeres only consist of the latter part (for eg. D. melanogaster telomeres)." []
-synonym: "nuclear chromosome, telomere" EXACT []
-is_a: GO:0000781 ! chromosome, telomeric region
-intersection_of: GO:0000781 ! chromosome, telomeric region
-intersection_of: BFO:0000050 GO:0005634 ! part of nucleus
-relationship: BFO:0000050 GO:0000228 ! part of nuclear chromosome
+is_obsolete: true
+replaced_by: GO:0000781
 
 [Term]
 id: GO:0000785
 name: chromatin
 def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that forms the chromosome." []
 synonym: "chromosome scaffold" RELATED []
+synonym: "cytoplasmic chromatin" NARROW []
+synonym: "nuclear chromatin" NARROW []
 is_a: GO:0110165 ! cellular anatomical entity
 relationship: BFO:0000050 GO:0005694 ! part of chromosome
 
 [Term]
 id: GO:0000789
-name: cytoplasmic chromatin
-def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that forms the chromosome in the cytoplasm." []
-is_a: GO:0000785 ! chromatin
-intersection_of: GO:0000785 ! chromatin
-intersection_of: BFO:0000050 GO:0005737 ! part of cytoplasm
-relationship: BFO:0000050 GO:0000229 ! part of cytoplasmic chromosome
+is_obsolete: true
+replaced_by: GO:0000785
 
 [Term]
 id: GO:0000790
-name: nuclear chromatin
-def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that forms the chromosome in the nucleus." []
-is_a: GO:0000785 ! chromatin
-intersection_of: GO:0000785 ! chromatin
-intersection_of: BFO:0000050 GO:0005634 ! part of nucleus
-relationship: BFO:0000050 GO:0000228 ! part of nuclear chromosome
+is_obsolete: true
+replaced_by: GO:0000785
 
 [Term]
 id: GO:0000791
 name: euchromatin
 def: "A dispersed and relatively uncompacted form of chromatin." []
+synonym: "nuclear euchromatin" RELATED []
 is_a: GO:0000785 ! chromatin
 
 [Term]
 id: GO:0000792
 name: heterochromatin
 def: "A compact and highly condensed form of chromatin." []
+synonym: "nuclear heterochromatin" NARROW []
 is_a: GO:0000785 ! chromatin
 
 [Term]
@@ -329,7 +324,7 @@ is_a: GO:0000976 ! transcription regulatory region sequence-specific DNA binding
 [Term]
 id: GO:0000981
 name: DNA-binding transcription factor activity, RNA polymerase II-specific
-def: "Interacting selectively and non-covalently with a specific double-stranded genomic DNA sequence (sometimes referred to as a motif) within the regulatory region of a RNA polymerase II-transcribed gene to modulate transcription. Regulatory regions include promoters (proximal and distal) and enhancers. Genes are transcriptional units." []
+def: "A DNA-binding transcription factor activity that modulates the transcription of specific gene sets transcribed by RNA polymerase II." []
 synonym: "copper ion regulated core promoter proximal region sequence-specific DNA binding RNA polymerase II transcription factor activity" NARROW []
 synonym: "metal ion regulated core promoter proximal region sequence-specific DNA binding RNA polymerase II transcription factor activity" NARROW []
 synonym: "metal ion regulated sequence-specific DNA binding RNA polymerase II transcription factor activity" NARROW []
@@ -355,7 +350,7 @@ synonym: "zinc ion regulated core promoter proximal region sequence-specific DNA
 is_a: GO:0003700 ! DNA-binding transcription factor activity
 relationship: BFO:0000050 GO:0006357 ! part of regulation of transcription by RNA polymerase II
 relationship: BFO:0000051 GO:0000977 ! has part RNA polymerase II transcription regulatory region sequence-specific DNA binding
-relationship: BFO:0000066 GO:0000790 ! occurs in nuclear chromatin
+relationship: BFO:0000066 GO:0000785 ! occurs in chromatin
 
 [Term]
 id: GO:0000988
@@ -666,8 +661,13 @@ relationship: RO:0002213 GO:0016068 ! positively regulates type I hypersensitivi
 id: GO:0001816
 name: cytokine production
 def: "The appearance of a cytokine due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
+synonym: "cytokine biosynthetic process" NARROW []
+synonym: "cytokine metabolic process" NARROW []
+synonym: "cytokine secretion" NARROW []
 synonym: "interferon production" NARROW []
+synonym: "interferon secretion" NARROW []
 synonym: "interleukin production" NARROW []
+synonym: "interleukin secretion" NARROW []
 is_a: GO:0010467 ! gene expression
 is_a: GO:0032501 ! multicellular organismal process
 
@@ -675,9 +675,15 @@ is_a: GO:0032501 ! multicellular organismal process
 id: GO:0001817
 name: regulation of cytokine production
 def: "Any process that modulates the frequency, rate, or extent of production of a cytokine." []
+synonym: "regulation of cytokine anabolism" EXACT []
+synonym: "regulation of cytokine biosynthesis" EXACT []
+synonym: "regulation of cytokine biosynthetic process" NARROW []
+synonym: "regulation of cytokine formation" EXACT []
+synonym: "regulation of cytokine secretion" NARROW []
+synonym: "regulation of cytokine synthesis" EXACT []
 is_a: GO:0010468 ! regulation of gene expression
 is_a: GO:0051239 ! regulation of multicellular organismal process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0001816 ! regulates cytokine production
 relationship: RO:0002211 GO:0001816 ! regulates cytokine production
 
@@ -685,10 +691,20 @@ relationship: RO:0002211 GO:0001816 ! regulates cytokine production
 id: GO:0001818
 name: negative regulation of cytokine production
 def: "Any process that stops, prevents, or reduces the rate of production of a cytokine." []
+synonym: "down regulation of cytokine biosynthetic process" EXACT []
 synonym: "down regulation of cytokine production" EXACT []
+synonym: "down-regulation of cytokine biosynthetic process" EXACT []
 synonym: "down-regulation of cytokine production" EXACT []
+synonym: "downregulation of cytokine biosynthetic process" EXACT []
 synonym: "downregulation of cytokine production" EXACT []
+synonym: "inhibition of cytokine biosynthetic process" NARROW []
 synonym: "inhibition of cytokine production" NARROW []
+synonym: "negative regulation of cytokine anabolism" EXACT []
+synonym: "negative regulation of cytokine biosynthesis" EXACT []
+synonym: "negative regulation of cytokine biosynthetic process" NARROW []
+synonym: "negative regulation of cytokine formation" EXACT []
+synonym: "negative regulation of cytokine secretion" NARROW []
+synonym: "negative regulation of cytokine synthesis" EXACT []
 is_a: GO:0001817 ! regulation of cytokine production
 is_a: GO:0010629 ! negative regulation of gene expression
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
@@ -701,6 +717,8 @@ id: GO:0001819
 name: positive regulation of cytokine production
 def: "Any process that activates or increases the frequency, rate or extent of production of a cytokine." []
 synonym: "activation of cytokine production" NARROW []
+synonym: "positive regulation of cytokine biosynthetic process" NARROW []
+synonym: "positive regulation of cytokine secretion" NARROW []
 synonym: "stimulation of cytokine production" NARROW []
 synonym: "up regulation of cytokine production" EXACT []
 synonym: "up-regulation of cytokine production" EXACT []
@@ -708,7 +726,7 @@ synonym: "upregulation of cytokine production" EXACT []
 is_a: GO:0001817 ! regulation of cytokine production
 is_a: GO:0010628 ! positive regulation of gene expression
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0001816 ! positively regulates cytokine production
 relationship: RO:0002213 GO:0001816 ! positively regulates cytokine production
 
@@ -1119,7 +1137,7 @@ def: "The somatic process that results in the generation of sequence diversity o
 synonym: "somatic diversification of antibodies during immune response" RELATED []
 synonym: "somatic diversification of immunoglobulins during immune response" RELATED []
 is_a: GO:0016445 ! somatic diversification of immunoglobulins
-relationship: BFO:0000050 GO:0002381 ! part of immunoglobulin production involved in immunoglobulin mediated immune response
+relationship: BFO:0000050 GO:0002381 ! part of immunoglobulin production involved in immunoglobulin-mediated immune response
 
 [Term]
 id: GO:0002225
@@ -1397,7 +1415,7 @@ synonym: "B lymphocyte affinity maturation" EXACT []
 synonym: "B-cell affinity maturation" EXACT []
 synonym: "B-lymphocyte affinity maturation" EXACT []
 is_a: GO:0002343 ! peripheral B cell selection
-relationship: BFO:0000050 GO:0002381 ! part of immunoglobulin production involved in immunoglobulin mediated immune response
+relationship: BFO:0000050 GO:0002381 ! part of immunoglobulin production involved in immunoglobulin-mediated immune response
 
 [Term]
 id: GO:0002349
@@ -1429,7 +1447,10 @@ intersection_of: BFO:0000050 GO:0006955 ! part of immune response
 id: GO:0002367
 name: cytokine production involved in immune response
 def: "The appearance of a cytokine due to biosynthesis or secretion following a cellular stimulus contributing to an immune response, resulting in an increase in its intracellular or extracellular levels." []
+synonym: "cytokine biosynthetic process involved in immune response" NARROW []
 synonym: "cytokine production during immune response" RELATED []
+synonym: "cytokine secretion during immune response" RELATED []
+synonym: "cytokine secretion involved in immune response" RELATED []
 is_a: GO:0001816 ! cytokine production
 is_a: GO:0002440 ! production of molecular mediator of immune response
 intersection_of: GO:0001816 ! cytokine production
@@ -1448,15 +1469,21 @@ id: GO:0002377
 name: immunoglobulin production
 def: "The appearance of immunoglobulin due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." []
 synonym: "antibody production" EXACT []
+synonym: "immunoglobulin biosynthetic process" NARROW []
+synonym: "immunoglobulin secretion" NARROW []
 is_a: GO:0002440 ! production of molecular mediator of immune response
 
 [Term]
 id: GO:0002381
-name: immunoglobulin production involved in immunoglobulin mediated immune response
+name: immunoglobulin production involved in immunoglobulin-mediated immune response
 def: "The appearance of immunoglobulin due to biosynthesis or secretion following a cellular stimulus during an immune response, resulting in an increase in its intracellular or extracellular levels." []
 synonym: "antibody production during immune response" RELATED []
+synonym: "antibody secretion during immune response" RELATED []
+synonym: "immunoglobulin biosynthetic process involved in immune response" NARROW []
 synonym: "immunoglobulin production during immune response" RELATED []
 synonym: "immunoglobulin production involved in immune response" RELATED []
+synonym: "immunoglobulin production involved in immunoglobulin mediated immune response" EXACT []
+synonym: "immunoglobulin secretion involved in immune response" NARROW []
 is_a: GO:0002377 ! immunoglobulin production
 intersection_of: GO:0002377 ! immunoglobulin production
 intersection_of: BFO:0000050 GO:0016064 ! part of immunoglobulin mediated immune response
@@ -1511,6 +1538,7 @@ name: production of molecular mediator of immune response
 def: "The synthesis or release of any molecular mediator of the immune response, resulting in an increase in its intracellular or extracellular levels." []
 synonym: "production of cellular mediator of immune response" RELATED []
 is_a: GO:0002376 ! immune system process
+is_a: GO:0010467 ! gene expression
 
 [Term]
 id: GO:0002441
@@ -1816,8 +1844,11 @@ relationship: RO:0002213 GO:0002504 ! positively regulates antigen processing an
 id: GO:0002637
 name: regulation of immunoglobulin production
 def: "Any process that modulates the frequency, rate, or extent of immunoglobulin production." []
+synonym: "regulation of antibody production" EXACT []
+synonym: "regulation of immunoglobulin biosynthetic process" NARROW []
+synonym: "regulation of immunoglobulin secretion" NARROW []
 is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0002377 ! regulates immunoglobulin production
 relationship: RO:0002211 GO:0002377 ! regulates immunoglobulin production
 
@@ -1829,9 +1860,11 @@ synonym: "down regulation of immunoglobulin production" EXACT []
 synonym: "down-regulation of immunoglobulin production" EXACT []
 synonym: "downregulation of immunoglobulin production" EXACT []
 synonym: "inhibition of immunoglobulin production" NARROW []
+synonym: "negative regulation of immunoglobulin biosynthetic process" NARROW []
+synonym: "negative regulation of immunoglobulin secretion" NARROW []
 is_a: GO:0002637 ! regulation of immunoglobulin production
 is_a: GO:0002701 ! negative regulation of production of molecular mediator of immune response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0002377 ! negatively regulates immunoglobulin production
 relationship: RO:0002212 GO:0002377 ! negatively regulates immunoglobulin production
 
@@ -1840,13 +1873,15 @@ id: GO:0002639
 name: positive regulation of immunoglobulin production
 def: "Any process that activates or increases the frequency, rate, or extent of immunoglobulin production." []
 synonym: "activation of immunoglobulin production" NARROW []
+synonym: "positive regulation of immunoglobulin biosynthetic process" NARROW []
+synonym: "positive regulation of immunoglobulin secretion" NARROW []
 synonym: "stimulation of immunoglobulin production" NARROW []
 synonym: "up regulation of immunoglobulin production" EXACT []
 synonym: "up-regulation of immunoglobulin production" EXACT []
 synonym: "upregulation of immunoglobulin production" EXACT []
 is_a: GO:0002637 ! regulation of immunoglobulin production
 is_a: GO:0002702 ! positive regulation of production of molecular mediator of immune response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0002377 ! positively regulates immunoglobulin production
 relationship: RO:0002213 GO:0002377 ! positively regulates immunoglobulin production
 
@@ -2233,6 +2268,7 @@ id: GO:0002700
 name: regulation of production of molecular mediator of immune response
 def: "Any process that modulates the frequency, rate, or extent of the production of molecular mediator of immune response." []
 is_a: GO:0002697 ! regulation of immune effector process
+is_a: GO:0010468 ! regulation of gene expression
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0002440 ! regulates production of molecular mediator of immune response
 relationship: RO:0002211 GO:0002440 ! regulates production of molecular mediator of immune response
@@ -2247,6 +2283,7 @@ synonym: "downregulation of production of molecular mediator of immune response"
 synonym: "inhibition of production of molecular mediator of immune response" NARROW []
 is_a: GO:0002698 ! negative regulation of immune effector process
 is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
+is_a: GO:0010629 ! negative regulation of gene expression
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0002440 ! negatively regulates production of molecular mediator of immune response
 relationship: RO:0002212 GO:0002440 ! negatively regulates production of molecular mediator of immune response
@@ -2262,6 +2299,7 @@ synonym: "up-regulation of production of molecular mediator of immune response" 
 synonym: "upregulation of production of molecular mediator of immune response" EXACT []
 is_a: GO:0002699 ! positive regulation of immune effector process
 is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
+is_a: GO:0010628 ! positive regulation of gene expression
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0002440 ! positively regulates production of molecular mediator of immune response
 relationship: RO:0002213 GO:0002440 ! positively regulates production of molecular mediator of immune response
@@ -2506,7 +2544,7 @@ synonym: "regulation of cytokine production during immune response" RELATED []
 synonym: "regulation of cytokine secretion involved in immune response" NARROW []
 is_a: GO:0001817 ! regulation of cytokine production
 is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0002367 ! regulates cytokine production involved in immune response
 relationship: RO:0002211 GO:0002367 ! regulates cytokine production involved in immune response
 
@@ -2524,8 +2562,7 @@ synonym: "negative regulation of cytokine secretion involved in immune response"
 is_a: GO:0001818 ! negative regulation of cytokine production
 is_a: GO:0002701 ! negative regulation of production of molecular mediator of immune response
 is_a: GO:0002718 ! regulation of cytokine production involved in immune response
-is_a: GO:0050777 ! negative regulation of immune response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0002367 ! negatively regulates cytokine production involved in immune response
 relationship: RO:0002212 GO:0002367 ! negatively regulates cytokine production involved in immune response
 
@@ -2544,7 +2581,7 @@ synonym: "upregulation of cytokine production during immune response" RELATED []
 is_a: GO:0001819 ! positive regulation of cytokine production
 is_a: GO:0002702 ! positive regulation of production of molecular mediator of immune response
 is_a: GO:0002718 ! regulation of cytokine production involved in immune response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0002367 ! positively regulates cytokine production involved in immune response
 relationship: RO:0002213 GO:0002367 ! positively regulates cytokine production involved in immune response
 
@@ -2706,6 +2743,7 @@ synonym: "downregulation of peptide secretion" EXACT []
 synonym: "inhibition of peptide secretion" NARROW []
 is_a: GO:0002791 ! regulation of peptide secretion
 is_a: GO:0051048 ! negative regulation of secretion
+is_a: GO:1903792 ! negative regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0002790 ! negatively regulates peptide secretion
 relationship: RO:0002212 GO:0002790 ! negatively regulates peptide secretion
@@ -2721,6 +2759,7 @@ synonym: "up-regulation of peptide secretion" EXACT []
 synonym: "upregulation of peptide secretion" EXACT []
 is_a: GO:0002791 ! regulation of peptide secretion
 is_a: GO:0051047 ! positive regulation of secretion
+is_a: GO:1903793 ! positive regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0002790 ! positively regulates peptide secretion
 relationship: RO:0002213 GO:0002790 ! positively regulates peptide secretion
@@ -3422,7 +3461,7 @@ is_a: GO:0003677 ! DNA binding
 [Term]
 id: GO:0003700
 name: DNA-binding transcription factor activity
-def: "Interacting selectively and non-covalently with a specific double-stranded genomic DNA sequence (sometimes referred to as a motif) within the regulatory region of a gene to modulate transcription. Regulatory regions include promoters (proximal and distal) and enhancers. Genes are transcriptional units, and include bacterial operons." []
+def: "A transcription regulator activity that modulates transcription of gene sets via selective and non-covalent binding to a specific double-stranded genomic DNA sequence (sometimes referred to as a motif) within a cis-regulatory region. Regulatory regions include promoters (proximal and distal) and enhancers. Genes are transcriptional units, and include bacterial operons." []
 synonym: "bacterial-type DNA binding transcription factor activity" NARROW []
 synonym: "bacterial-type RNA polymerase core promoter proximal region sequence-specific DNA binding transcription factor activity" NARROW []
 synonym: "bacterial-type RNA polymerase transcription enhancer sequence-specific DNA binding transcription factor activity" NARROW []
@@ -3441,7 +3480,6 @@ synonym: "transcription factor activity, bacterial-type RNA polymerase proximal 
 synonym: "transcription factor activity, bacterial-type RNA polymerase transcription enhancer sequence-specific binding" NARROW []
 synonym: "transcription factor activity, metal ion regulated sequence-specific DNA binding" NARROW []
 is_a: GO:0140110 ! transcription regulator activity
-relationship: BFO:0000050 GO:0006355 ! part of regulation of transcription, DNA-templated
 relationship: BFO:0000051 GO:0000976 ! has part transcription regulatory region sequence-specific DNA binding
 
 [Term]
@@ -4184,7 +4222,7 @@ is_a: GO:0004672 ! protein kinase activity
 [Term]
 id: GO:0004683
 name: calmodulin-dependent protein kinase activity
-def: "Catalysis of the reactions: ATP + a protein serine = ADP + protein serine phosphate; and ATP + a protein threonine = ADP + protein threonine phosphate. These reactions require the presence of calcium-bound calmodulin." []
+def: "Calmodulin-dependent catalysis of the reactions: ATP + a protein serine = ADP + protein serine phosphate; and ATP + a protein threonine = ADP + protein threonine phosphate." []
 synonym: "ATP:caldesmon O-phosphotransferase activity" NARROW []
 synonym: "ATP:protein phosphotransferase (Ca2+/calmodulin-dependent) activity" RELATED []
 synonym: "Ca2+/calmodulin-dependent microtubule-associated protein 2 kinase activity" NARROW []
@@ -4351,7 +4389,7 @@ relationship: BFO:0000051 GO:0001848 ! has part complement binding
 [Term]
 id: GO:0004879
 name: nuclear receptor activity
-def: "Combining with a signal and transmitting the signal to the transcriptional machinery by interacting selectively and non-covalently with a specific double-stranded genomic DNA sequence in order to modulate transcription by RNA polymerase II." []
+def: "A DNA-binding transcription factor activity regulated by binding to a ligand that modulates the transcription of specific gene sets transcribed by RNA polymerase II. Nuclear receptor ligands are usually lipid-based (such as a steroid hormone) and the binding of the ligand to its receptor often occurs in the cytoplasm, which leads to its tranlocation to the nucleus." []
 synonym: "1,25-(OH)2D3 receptor activity" NARROW []
 synonym: "9-cis retinoic acid receptor activity" NARROW []
 synonym: "androgen receptor activity" NARROW []
@@ -4536,7 +4574,7 @@ is_a: GO:0015085 ! calcium ion transmembrane transporter activity
 id: GO:0005342
 name: organic acid transmembrane transporter activity
 def: "Enables the transfer of organic acids from one side of a membrane to the other. Organic acids are acidic compound containing carbon in covalent linkage." []
-is_a: GO:0022857 ! transmembrane transporter activity
+is_a: GO:0008509 ! anion transmembrane transporter activity
 relationship: BFO:0000050 GO:1903825 ! part of organic acid transmembrane transport
 
 [Term]
@@ -4747,21 +4785,13 @@ is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
 
 [Term]
 id: GO:0005719
-name: nuclear euchromatin
-def: "The dispersed less dense form of chromatin in the interphase nucleus. It exists in at least two forms, a some being in the form of transcriptionally active chromatin which is the least condensed, while the rest is inactive euchromatin which is more condensed than active chromatin but less condensed than heterochromatin." []
-is_a: GO:0000790 ! nuclear chromatin
-is_a: GO:0000791 ! euchromatin
-intersection_of: GO:0000791 ! euchromatin
-intersection_of: BFO:0000050 GO:0000228 ! part of nuclear chromosome
+is_obsolete: true
+replaced_by: GO:0000791
 
 [Term]
 id: GO:0005720
-name: nuclear heterochromatin
-def: "A condensed form of chromatin, occurring in the nucleus during interphase, that stains strongly with basophilic dyes. The DNA of heterochromatin is typically replicated at a later stage in the cell-division cycle than euchromatin." []
-is_a: GO:0000790 ! nuclear chromatin
-is_a: GO:0000792 ! heterochromatin
-intersection_of: GO:0000792 ! heterochromatin
-intersection_of: BFO:0000050 GO:0000228 ! part of nuclear chromosome
+is_obsolete: true
+replaced_by: GO:0000792
 
 [Term]
 id: GO:0005730
@@ -4858,6 +4888,7 @@ name: mitochondrial matrix
 def: "The gel-like material, with considerable fine structure, that lies in the matrix space, or lumen, of a mitochondrion. It contains the enzymes of the tricarboxylic acid cycle and, in some organisms, the enzymes concerned with fatty acid oxidation." []
 synonym: "mitochondrial lumen" EXACT []
 synonym: "mitochondrial stroma" NARROW []
+is_a: GO:0043233 ! organelle lumen
 is_a: GO:0070013 ! intracellular organelle lumen
 relationship: BFO:0000050 GO:0005739 ! part of mitochondrion
 
@@ -4868,7 +4899,7 @@ def: "A ribosome found in the mitochondrion of a eukaryotic cell; contains a cha
 synonym: "55S ribosome, mitochondrial" NARROW []
 is_a: GO:0000313 ! organellar ribosome
 intersection_of: GO:0005840 ! ribosome
-intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
+intersection_of: BFO:0000050 GO:0005759 ! part of mitochondrial matrix
 relationship: BFO:0000050 GO:0005759 ! part of mitochondrial matrix
 
 [Term]
@@ -4895,6 +4926,7 @@ relationship: BFO:0000050 GO:0005737 ! part of cytoplasm
 id: GO:0005775
 name: vacuolar lumen
 def: "The volume enclosed within the vacuolar membrane." []
+is_a: GO:0043233 ! organelle lumen
 is_a: GO:0070013 ! intracellular organelle lumen
 intersection_of: GO:0031974 ! membrane-enclosed lumen
 intersection_of: BFO:0000050 GO:0005773 ! part of vacuole
@@ -5004,7 +5036,7 @@ name: mitochondrial pyruvate dehydrogenase complex
 def: "Complex that carries out the oxidative decarboxylation of pyruvate to form acetyl-CoA in eukaryotes; includes subunits possessing three catalytic activities: pyruvate dehydrogenase (E1), dihydrolipoamide S-acetyltransferase (E2), and dihydrolipoamide dehydrogenase (E3). The This Eukaryotic form usually contains more subunits than its bacterial counterpart; for example, one known complex contains 30 E1 dimers, 60 E2 monomers, and 6 E3 dimers as well as a few copies of pyruvate dehydrogenase kinase and pyruvate dehydrogenase phosphatase." []
 synonym: "pyruvate dehydrogenase complex (lipoamide)" BROAD []
 is_a: GO:0045254 ! pyruvate dehydrogenase complex
-is_a: GO:0098798 ! mitochondrial protein complex
+is_a: GO:0098798 ! mitochondrial protein-containing complex
 intersection_of: GO:0045254 ! pyruvate dehydrogenase complex
 intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
 relationship: BFO:0000050 GO:0005759 ! part of mitochondrial matrix
@@ -5738,9 +5770,7 @@ id: GO:0006547
 name: histidine metabolic process
 def: "The chemical reactions and pathways involving histidine, 2-amino-3-(1H-imidazol-4-yl)propanoic acid." []
 synonym: "histidine metabolism" EXACT []
-is_a: GO:0009072 ! aromatic amino acid family metabolic process
-is_a: GO:0052803 ! imidazole-containing compound metabolic process
-is_a: GO:1901605 ! alpha-amino acid metabolic process
+is_a: GO:0006520 ! cellular amino acid metabolic process
 
 [Term]
 id: GO:0006555
@@ -5768,8 +5798,6 @@ name: proline metabolic process
 def: "The chemical reactions and pathways involving proline (pyrrolidine-2-carboxylic acid), a chiral, cyclic, nonessential alpha-amino acid found in peptide linkage in proteins." []
 synonym: "proline metabolism" EXACT []
 is_a: GO:0009064 ! glutamine family amino acid metabolic process
-is_a: GO:0046483 ! heterocycle metabolic process
-is_a: GO:1901360 ! organic cyclic compound metabolic process
 
 [Term]
 id: GO:0006563
@@ -5787,6 +5815,7 @@ synonym: "L-serine biosynthesis" EXACT []
 synonym: "L-serine formation" EXACT []
 synonym: "L-serine synthesis" EXACT []
 is_a: GO:0006563 ! L-serine metabolic process
+is_a: GO:0008652 ! cellular amino acid biosynthetic process
 is_a: GO:0009070 ! serine family amino acid biosynthetic process
 
 [Term]
@@ -5822,8 +5851,7 @@ id: GO:0006573
 name: valine metabolic process
 def: "The chemical reactions and pathways involving valine, 2-amino-3-methylbutanoic acid." []
 synonym: "valine metabolism" EXACT []
-is_a: GO:0009081 ! branched-chain amino acid metabolic process
-is_a: GO:1901605 ! alpha-amino acid metabolic process
+is_a: GO:0006520 ! cellular amino acid metabolic process
 
 [Term]
 id: GO:0006575
@@ -5850,8 +5878,8 @@ id: GO:0006584
 name: catecholamine metabolic process
 def: "The chemical reactions and pathways involving any of a group of physiologically important biogenic amines that possess a catechol (3,4-dihydroxyphenyl) nucleus and are derivatives of 3,4-dihydroxyphenylethylamine." []
 synonym: "catecholamine metabolism" EXACT []
+is_a: GO:0006576 ! cellular biogenic amine metabolic process
 is_a: GO:0009712 ! catechol-containing compound metabolic process
-is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0006586
@@ -6212,9 +6240,7 @@ synonym: "vitamin B9 and derivative metabolism" EXACT []
 synonym: "vitamin M and derivative metabolic process" EXACT []
 synonym: "vitamin M and derivative metabolism" EXACT []
 is_a: GO:0006575 ! cellular modified amino acid metabolic process
-is_a: GO:0019752 ! carboxylic acid metabolic process
 is_a: GO:0042558 ! pteridine-containing compound metabolic process
-is_a: GO:0043603 ! cellular amide metabolic process
 
 [Term]
 id: GO:0006766
@@ -6377,7 +6403,7 @@ is_a: GO:0006810 ! transport
 id: GO:0006837
 name: serotonin transport
 def: "The directed movement of serotonin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Serotonin (5-hydroxytryptamine) is a monoamine neurotransmitter occurring in the peripheral and central nervous systems." []
-is_a: GO:0015695 ! organic cation transport
+is_a: GO:0006812 ! cation transport
 is_a: GO:0015844 ! monoamine transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 
@@ -6430,7 +6456,7 @@ intersection_of: BFO:0000066 GO:0005576 ! occurs in extracellular region
 id: GO:0006865
 name: amino acid transport
 def: "The directed movement of amino acids, organic acids containing one or more amino substituents, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
-is_a: GO:0046942 ! carboxylic acid transport
+is_a: GO:0015849 ! organic acid transport
 is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
@@ -7939,9 +7965,10 @@ id: GO:0009072
 name: aromatic amino acid family metabolic process
 def: "The chemical reactions and pathways involving aromatic amino acid family, amino acids with aromatic ring (phenylalanine, tyrosine, tryptophan)." []
 synonym: "aromatic amino acid family metabolism" EXACT []
-is_a: GO:0006520 ! cellular amino acid metabolic process
+is_a: GO:0006082 ! organic acid metabolic process
 is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0009074
@@ -7950,17 +7977,19 @@ def: "The chemical reactions and pathways resulting in the breakdown of aromatic
 synonym: "aromatic amino acid family breakdown" EXACT []
 synonym: "aromatic amino acid family catabolism" EXACT []
 synonym: "aromatic amino acid family degradation" EXACT []
-is_a: GO:0009063 ! cellular amino acid catabolic process
 is_a: GO:0009072 ! aromatic amino acid family metabolic process
+is_a: GO:0016054 ! organic acid catabolic process
 is_a: GO:0019439 ! aromatic compound catabolic process
 is_a: GO:1901361 ! organic cyclic compound catabolic process
+is_a: GO:1901565 ! organonitrogen compound catabolic process
 
 [Term]
 id: GO:0009081
 name: branched-chain amino acid metabolic process
 def: "The chemical reactions and pathways involving amino acids containing a branched carbon skeleton, comprising isoleucine, leucine and valine." []
 synonym: "branched chain family amino acid metabolism" EXACT []
-is_a: GO:0006520 ! cellular amino acid metabolic process
+is_a: GO:0006082 ! organic acid metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0009087
@@ -7971,6 +8000,7 @@ synonym: "methionine catabolism" EXACT []
 synonym: "methionine degradation" EXACT []
 is_a: GO:0000098 ! sulfur amino acid catabolic process
 is_a: GO:0006555 ! methionine metabolic process
+is_a: GO:0009063 ! cellular amino acid catabolic process
 is_a: GO:0009068 ! aspartate family amino acid catabolic process
 
 [Term]
@@ -8352,6 +8382,18 @@ synonym: "amine metabolism" EXACT []
 is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
+id: GO:0009309
+name: amine biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of any organic compound that is weakly basic in character and contains an amino or a substituted amino group. Amines are called primary, secondary, or tertiary according to whether one, two, or three carbon atoms are attached to the nitrogen atom." []
+synonym: "amine anabolism" EXACT []
+synonym: "amine biosynthesis" EXACT []
+synonym: "amine formation" EXACT []
+synonym: "amine synthesis" EXACT []
+is_a: GO:0009308 ! amine metabolic process
+is_a: GO:0044271 ! cellular nitrogen compound biosynthetic process
+is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
 id: GO:0009311
 name: oligosaccharide metabolic process
 def: "The chemical reactions and pathways involving oligosaccharides, molecules with between two and (about) 20 monosaccharide residues connected by glycosidic linkages." []
@@ -8412,7 +8454,6 @@ synonym: "gamma-aminobutyric acid catabolism" EXACT []
 synonym: "gamma-aminobutyric acid degradation" EXACT []
 is_a: GO:0009063 ! cellular amino acid catabolic process
 is_a: GO:0009448 ! gamma-aminobutyric acid metabolic process
-is_a: GO:0072329 ! monocarboxylic acid catabolic process
 
 [Term]
 id: GO:0009566
@@ -9424,7 +9465,7 @@ id: GO:0010827
 name: regulation of glucose transmembrane transport
 def: "Any process that modulates the frequency, rate or extent of glucose transport across a membrane. Glucose transport is the directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 synonym: "regulation of glucose transport" RELATED []
-is_a: GO:0034762 ! regulation of transmembrane transport
+is_a: GO:1903959 ! regulation of anion transmembrane transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:1904659 ! regulates glucose transmembrane transport
 relationship: RO:0002211 GO:1904659 ! regulates glucose transmembrane transport
@@ -9435,7 +9476,7 @@ name: positive regulation of glucose transmembrane transport
 def: "Any process that increases the frequency, rate or extent of glucose transport across a membrane. Glucose transport is the directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 synonym: "positive regulation of glucose transport" RELATED []
 is_a: GO:0010827 ! regulation of glucose transmembrane transport
-is_a: GO:0034764 ! positive regulation of transmembrane transport
+is_a: GO:1903961 ! positive regulation of anion transmembrane transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:1904659 ! positively regulates glucose transmembrane transport
 relationship: RO:0002213 GO:1904659 ! positively regulates glucose transmembrane transport
@@ -9446,7 +9487,7 @@ name: negative regulation of glucose transmembrane transport
 def: "Any process that decreases the frequency, rate or extent of glucose transport across a membrane. Glucose transport is the directed movement of the hexose monosaccharide glucose into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 synonym: "negative regulation of glucose transport" RELATED []
 is_a: GO:0010827 ! regulation of glucose transmembrane transport
-is_a: GO:0034763 ! negative regulation of transmembrane transport
+is_a: GO:1903960 ! negative regulation of anion transmembrane transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:1904659 ! negatively regulates glucose transmembrane transport
 relationship: RO:0002212 GO:1904659 ! negatively regulates glucose transmembrane transport
@@ -9897,7 +9938,6 @@ is_a: GO:0050432 ! catecholamine secretion
 id: GO:0014059
 name: regulation of dopamine secretion
 def: "Any process that modulates the frequency, rate or extent of the regulated release of dopamine." []
-is_a: GO:0043269 ! regulation of ion transport
 is_a: GO:0050433 ! regulation of catecholamine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0014046 ! regulates dopamine secretion
@@ -9908,7 +9948,7 @@ id: GO:0014062
 name: regulation of serotonin secretion
 def: "Any process that modulates the frequency, rate or extent of the regulated release of serotonin." []
 synonym: "regulation of serotonin release" RELATED []
-is_a: GO:0043269 ! regulation of ion transport
+is_a: GO:0044070 ! regulation of anion transport
 is_a: GO:1903530 ! regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0001820 ! regulates serotonin secretion
@@ -9924,8 +9964,8 @@ synonym: "downregulation of serotonin secretion" EXACT []
 synonym: "inhibition of serotonin secretion" NARROW []
 synonym: "positive regulation of serotonin release" RELATED []
 is_a: GO:0014062 ! regulation of serotonin secretion
-is_a: GO:0043271 ! negative regulation of ion transport
 is_a: GO:1903531 ! negative regulation of secretion by cell
+is_a: GO:1903792 ! negative regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0001820 ! negatively regulates serotonin secretion
 relationship: RO:0002212 GO:0001820 ! negatively regulates serotonin secretion
@@ -9941,8 +9981,8 @@ synonym: "up regulation of serotonin secretion" EXACT []
 synonym: "up-regulation of serotonin secretion" EXACT []
 synonym: "upregulation of serotonin secretion" EXACT []
 is_a: GO:0014062 ! regulation of serotonin secretion
-is_a: GO:0043270 ! positive regulation of ion transport
 is_a: GO:1903532 ! positive regulation of secretion by cell
+is_a: GO:1903793 ! positive regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0001820 ! positively regulates serotonin secretion
 relationship: RO:0002213 GO:0001820 ! positively regulates serotonin secretion
@@ -10022,7 +10062,6 @@ relationship: BFO:0000050 GO:1902476 ! part of chloride transmembrane transport
 id: GO:0015136
 name: sialic acid transmembrane transporter activity
 def: "Enables the transfer of sialic acid from one side of a membrane to the other." []
-is_a: GO:0046943 ! carboxylic acid transmembrane transporter activity
 is_a: GO:1901505 ! carbohydrate derivative transmembrane transporter activity
 relationship: BFO:0000050 GO:0015739 ! part of sialic acid transport
 
@@ -10032,7 +10071,7 @@ name: carbohydrate transmembrane transporter activity
 def: "Enables the transfer of carbohydrate from one side of a membrane to the other." []
 synonym: "carbohydrate transporter activity" RELATED []
 synonym: "sugar transporter" NARROW []
-is_a: GO:0022857 ! transmembrane transporter activity
+is_a: GO:0008509 ! anion transmembrane transporter activity
 relationship: BFO:0000050 GO:0034219 ! part of carbohydrate transmembrane transport
 
 [Term]
@@ -10177,7 +10216,6 @@ is_a: GO:0006820 ! anion transport
 id: GO:0015711
 name: organic anion transport
 def: "The directed movement of organic anions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Organic anions are atoms or small molecules with a negative charge which contain carbon in covalent linkage." []
-is_a: GO:0006820 ! anion transport
 is_a: GO:0071702 ! organic substance transport
 
 [Term]
@@ -10192,6 +10230,7 @@ id: GO:0015723
 name: bilirubin transport
 def: "The directed movement of bilirubin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 is_a: GO:0006835 ! dicarboxylic acid transport
+is_a: GO:0015849 ! organic acid transport
 is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
@@ -10199,7 +10238,6 @@ id: GO:0015739
 name: sialic acid transport
 def: "The directed movement of sialic acid into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 is_a: GO:0046942 ! carboxylic acid transport
-is_a: GO:1901264 ! carbohydrate derivative transport
 
 [Term]
 id: GO:0015748
@@ -10223,7 +10261,6 @@ replaced_by: GO:1904659
 id: GO:0015760
 name: glucose-6-phosphate transport
 def: "The directed movement of glucose-6-phosphate into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Glucose-6-phosphate is a monophosphorylated derivative of glucose with the phosphate group attached to C-6." []
-is_a: GO:0015711 ! organic anion transport
 is_a: GO:0015712 ! hexose phosphate transport
 
 [Term]
@@ -10762,6 +10799,7 @@ name: glutamate binding
 def: "Interacting selectively and non-covalently with glutamate, the anion of 2-aminopentanedioic acid." []
 synonym: "glutamic acid binding" EXACT []
 is_a: GO:0016597 ! amino acid binding
+is_a: GO:0043177 ! organic acid binding
 
 [Term]
 id: GO:0016597
@@ -11268,6 +11306,13 @@ is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0046483 ! heterocycle metabolic process
 
 [Term]
+id: GO:0018215
+name: protein phosphopantetheinylation
+def: "The modification of a protein amino acid by phosphopantetheinylation." []
+synonym: "protein amino acid phosphopantetheinylation" EXACT []
+is_a: GO:0006464 ! cellular protein modification process
+
+[Term]
 id: GO:0018271
 name: biotin-protein ligase activity
 def: "Catalysis of the reaction: ATP + biotin + protein = AMP + diphosphate + biotin-protein." []
@@ -11441,7 +11486,7 @@ relationship: BFO:0000051 GO:0007268 ! has part chemical synaptic transmission
 id: GO:0019229
 name: regulation of vasoconstriction
 def: "Any process that modulates the frequency, rate or extent of reductions in the diameter of blood vessels." []
-is_a: GO:0097746 ! regulation of blood vessel diameter
+is_a: GO:0097746 ! blood vessel diameter maintenance
 is_a: GO:1903522 ! regulation of blood circulation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0042310 ! regulates vasoconstriction
@@ -12221,8 +12266,8 @@ def: "The process in which a relatively unspecialized precursor cell acquires sp
 synonym: "lymphocyte cell differentiation" EXACT []
 synonym: "lymphocyte development" RELATED []
 synonym: "lymphocytic blood cell differentiation" EXACT []
-is_a: GO:0002521 ! leukocyte differentiation
 is_a: GO:0046649 ! lymphocyte activation
+is_a: GO:1903131 ! mononuclear cell differentiation
 
 [Term]
 id: GO:0030099
@@ -12371,7 +12416,6 @@ def: "The chemical reactions and pathways involving heparin, any member of a gro
 synonym: "heparan sulfate metabolic process" RELATED []
 synonym: "heparin metabolism" EXACT []
 is_a: GO:0006790 ! sulfur compound metabolic process
-is_a: GO:0043436 ! oxoacid metabolic process
 is_a: GO:1903510 ! mucopolysaccharide metabolic process
 
 [Term]
@@ -12399,7 +12443,6 @@ id: GO:0030212
 name: hyaluronan metabolic process
 def: "The chemical reactions and pathways involving hyaluronan, the naturally occurring anionic form of hyaluronic acid, any member of a group of glycosaminoglycans, the repeat units of which consist of beta-1,4 linked D-glucuronyl-beta-(1,3)-N-acetyl-D-glucosamine." []
 synonym: "hyaluronan metabolism" EXACT []
-is_a: GO:0019752 ! carboxylic acid metabolic process
 is_a: GO:1903510 ! mucopolysaccharide metabolic process
 
 [Term]
@@ -13336,8 +13379,9 @@ id: GO:0031335
 name: regulation of sulfur amino acid metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving sulfur amino acids." []
 synonym: "regulation of sulfur amino acid metabolism" EXACT []
-is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
 is_a: GO:0042762 ! regulation of sulfur metabolic process
+is_a: GO:0051171 ! regulation of nitrogen compound metabolic process
+is_a: GO:0062012 ! regulation of small molecule metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0000096 ! regulates sulfur amino acid metabolic process
 relationship: RO:0002211 GO:0000096 ! regulates sulfur amino acid metabolic process
@@ -13352,8 +13396,9 @@ synonym: "downregulation of sulfur amino acid metabolic process" EXACT []
 synonym: "inhibition of sulfur amino acid metabolic process" NARROW []
 synonym: "negative regulation of sulfur amino acid metabolism" EXACT []
 is_a: GO:0031335 ! regulation of sulfur amino acid metabolic process
-is_a: GO:0045763 ! negative regulation of cellular amino acid metabolic process
+is_a: GO:0051172 ! negative regulation of nitrogen compound metabolic process
 is_a: GO:0051175 ! negative regulation of sulfur metabolic process
+is_a: GO:0062014 ! negative regulation of small molecule metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0000096 ! negatively regulates sulfur amino acid metabolic process
 relationship: RO:0002212 GO:0000096 ! negatively regulates sulfur amino acid metabolic process
@@ -13369,8 +13414,9 @@ synonym: "up regulation of sulfur amino acid metabolic process" EXACT []
 synonym: "up-regulation of sulfur amino acid metabolic process" EXACT []
 synonym: "upregulation of sulfur amino acid metabolic process" EXACT []
 is_a: GO:0031335 ! regulation of sulfur amino acid metabolic process
-is_a: GO:0045764 ! positive regulation of cellular amino acid metabolic process
+is_a: GO:0051173 ! positive regulation of nitrogen compound metabolic process
 is_a: GO:0051176 ! positive regulation of sulfur metabolic process
+is_a: GO:0062013 ! positive regulation of small molecule metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0000096 ! positively regulates sulfur amino acid metabolic process
 relationship: RO:0002213 GO:0000096 ! positively regulates sulfur amino acid metabolic process
@@ -13538,7 +13584,6 @@ id: GO:0031406
 name: carboxylic acid binding
 def: "Interacting selectively and non-covalently with a carboxylic acid, any organic acid containing one or more carboxyl (COOH) groups or anions (COO-)." []
 is_a: GO:0043168 ! anion binding
-is_a: GO:0043177 ! organic acid binding
 
 [Term]
 id: GO:0031410
@@ -13813,6 +13858,7 @@ is_a: GO:0110165 ! cellular anatomical entity
 id: GO:0031981
 name: nuclear lumen
 def: "The volume enclosed by the nuclear inner membrane." []
+is_a: GO:0043233 ! organelle lumen
 is_a: GO:0070013 ! intracellular organelle lumen
 relationship: BFO:0000050 GO:0005634 ! part of nucleus
 
@@ -14204,7 +14250,7 @@ relationship: RO:0002212 GO:0042446 ! negatively regulates hormone biosynthetic 
 id: GO:0032368
 name: regulation of lipid transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of lipids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
-is_a: GO:0051049 ! regulation of transport
+is_a: GO:0044070 ! regulation of anion transport
 is_a: GO:1905952 ! regulation of lipid localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006869 ! regulates lipid transport
@@ -14219,7 +14265,7 @@ synonym: "down-regulation of lipid transport" EXACT []
 synonym: "downregulation of lipid transport" EXACT []
 synonym: "inhibition of lipid transport" NARROW []
 is_a: GO:0032368 ! regulation of lipid transport
-is_a: GO:0051051 ! negative regulation of transport
+is_a: GO:1903792 ! negative regulation of anion transport
 is_a: GO:1905953 ! negative regulation of lipid localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0006869 ! negatively regulates lipid transport
@@ -14235,7 +14281,7 @@ synonym: "up regulation of lipid transport" EXACT []
 synonym: "up-regulation of lipid transport" EXACT []
 synonym: "upregulation of lipid transport" EXACT []
 is_a: GO:0032368 ! regulation of lipid transport
-is_a: GO:0051050 ! positive regulation of transport
+is_a: GO:1903793 ! positive regulation of anion transport
 is_a: GO:1905954 ! positive regulation of lipid localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006869 ! positively regulates lipid transport
@@ -14633,7 +14679,7 @@ relationship: RO:0002211 GO:0007017 ! regulates microtubule-based process
 id: GO:0032890
 name: regulation of organic acid transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of organic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
-is_a: GO:0051049 ! regulation of transport
+is_a: GO:0044070 ! regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0015849 ! regulates organic acid transport
 relationship: RO:0002211 GO:0015849 ! regulates organic acid transport
@@ -14647,7 +14693,7 @@ synonym: "down-regulation of organic acid transport" EXACT []
 synonym: "downregulation of organic acid transport" EXACT []
 synonym: "inhibition of organic acid transport" NARROW []
 is_a: GO:0032890 ! regulation of organic acid transport
-is_a: GO:0051051 ! negative regulation of transport
+is_a: GO:1903792 ! negative regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0015849 ! negatively regulates organic acid transport
 relationship: RO:0002212 GO:0015849 ! negatively regulates organic acid transport
@@ -14662,7 +14708,7 @@ synonym: "up regulation of organic acid transport" EXACT []
 synonym: "up-regulation of organic acid transport" EXACT []
 synonym: "upregulation of organic acid transport" EXACT []
 is_a: GO:0032890 ! regulation of organic acid transport
-is_a: GO:0051050 ! positive regulation of transport
+is_a: GO:1903793 ! positive regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0015849 ! positively regulates organic acid transport
 relationship: RO:0002213 GO:0015849 ! positively regulates organic acid transport
@@ -15210,7 +15256,6 @@ synonym: "downregulation of dopamine secretion" EXACT []
 synonym: "inhibition of dopamine secretion" NARROW []
 is_a: GO:0014059 ! regulation of dopamine secretion
 is_a: GO:0033604 ! negative regulation of catecholamine secretion
-is_a: GO:0043271 ! negative regulation of ion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0014046 ! negatively regulates dopamine secretion
 relationship: RO:0002212 GO:0014046 ! negatively regulates dopamine secretion
@@ -15226,7 +15271,6 @@ synonym: "up-regulation of dopamine secretion" EXACT []
 synonym: "upregulation of dopamine secretion" EXACT []
 is_a: GO:0014059 ! regulation of dopamine secretion
 is_a: GO:0033605 ! positive regulation of catecholamine secretion
-is_a: GO:0043270 ! positive regulation of ion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0014046 ! positively regulates dopamine secretion
 relationship: RO:0002213 GO:0014046 ! positively regulates dopamine secretion
@@ -15379,7 +15423,7 @@ def: "The process in which a carbohydrate is transported across a membrane." []
 synonym: "carbohydrate membrane transport" EXACT []
 synonym: "transmembrane carbohydrate transport" EXACT []
 is_a: GO:0008643 ! carbohydrate transport
-is_a: GO:0055085 ! transmembrane transport
+is_a: GO:0098656 ! anion transmembrane transport
 
 [Term]
 id: GO:0034220
@@ -15874,7 +15918,7 @@ def: "Behavior directed towards society, or taking place between members of the 
 synonym: "cooperative behavior" RELATED []
 synonym: "social behaviour" EXACT []
 is_a: GO:0007610 ! behavior
-is_a: GO:0051703 ! intraspecies interaction between organisms
+is_a: GO:0051703 ! biological process involved in intraspecies interaction between organisms
 
 [Term]
 id: GO:0035227
@@ -16703,6 +16747,17 @@ synonym: "cellular modified amino acid synthesis" EXACT []
 is_a: GO:1901566 ! organonitrogen compound biosynthetic process
 
 [Term]
+id: GO:0042401
+name: cellular biogenic amine biosynthetic process
+def: "The chemical reactions and pathways occurring at the level of individual cells resulting in the formation of any of a group of naturally occurring, biologically active amines, such as norepinephrine, histamine, and serotonin, many of which act as neurotransmitters." []
+synonym: "biogenic amine anabolism" EXACT []
+synonym: "biogenic amine biosynthesis" EXACT []
+synonym: "biogenic amine formation" EXACT []
+synonym: "biogenic amine synthesis" EXACT []
+is_a: GO:0006576 ! cellular biogenic amine metabolic process
+is_a: GO:0009309 ! amine biosynthetic process
+
+[Term]
 id: GO:0042403
 name: thyroid hormone metabolic process
 def: "The chemical reactions and pathways involving any of the compounds secreted by the thyroid gland, largely thyroxine and triiodothyronine." []
@@ -16721,7 +16776,7 @@ synonym: "catecholamine formation" EXACT []
 synonym: "catecholamine synthesis" EXACT []
 is_a: GO:0006584 ! catecholamine metabolic process
 is_a: GO:0009713 ! catechol-containing compound biosynthetic process
-is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+is_a: GO:0042401 ! cellular biogenic amine biosynthetic process
 
 [Term]
 id: GO:0042430
@@ -17609,10 +17664,7 @@ is_a: GO:0043226 ! organelle
 id: GO:0043229
 name: intracellular organelle
 def: "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." []
-is_a: GO:0043226 ! organelle
-intersection_of: GO:0043226 ! organelle
-intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
-relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+is_a: GO:0005622 ! intracellular anatomical structure
 
 [Term]
 id: GO:0043230
@@ -17640,6 +17692,7 @@ is_a: GO:0043228 ! non-membrane-bounded organelle
 is_a: GO:0043229 ! intracellular organelle
 intersection_of: GO:0043228 ! non-membrane-bounded organelle
 intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0043233
@@ -18222,8 +18275,8 @@ synonym: "development on or near surface of other organism during symbiotic inte
 synonym: "development on or near surface of other organism involved in symbiotic interaction" NARROW []
 is_a: GO:0032502 ! developmental process
 intersection_of: GO:0032502 ! developmental process
-intersection_of: BFO:0000050 GO:0044419 ! part of interspecies interaction between organisms
-relationship: BFO:0000050 GO:0044419 ! part of interspecies interaction between organisms
+intersection_of: BFO:0000050 GO:0044419 ! part of biological process involved in interspecies interaction between organisms
+relationship: BFO:0000050 GO:0044419 ! part of biological process involved in interspecies interaction between organisms
 
 [Term]
 id: GO:0044237
@@ -18387,10 +18440,11 @@ relationship: BFO:0000050 GO:0032869 ! part of cellular response to insulin stim
 
 [Term]
 id: GO:0044419
-name: interspecies interaction between organisms
-def: "Any process in which an organism has an effect on an organism of a different species." []
+name: biological process involved in interspecies interaction between organisms
+def: "Any process evolved to enable an interaction with an organism of a different species." []
 synonym: "interaction with another species" EXACT []
 synonym: "interspecies interaction" EXACT []
+synonym: "interspecies interaction between organisms" EXACT []
 synonym: "interspecies interaction with other organisms" EXACT []
 is_a: GO:0008150 ! biological_process
 
@@ -18744,9 +18798,9 @@ id: GO:0045117
 name: azole transmembrane transport
 def: "The directed movement of azoles, heterocyclic compounds found in many biologically important substances, across a lipid bilayer, across a membrane." []
 synonym: "azole transport" RELATED []
-is_a: GO:0055085 ! transmembrane transport
 is_a: GO:0071702 ! organic substance transport
 is_a: GO:0071705 ! nitrogen compound transport
+is_a: GO:0098656 ! anion transmembrane transport
 
 [Term]
 id: GO:0045121
@@ -18912,7 +18966,6 @@ synonym: "hydrogen-translocating F-type ATPase complex" EXACT []
 synonym: "hydrogen-transporting ATP synthase complex" EXACT []
 synonym: "proton-transporting F-type ATPase complex" RELATED []
 is_a: GO:0016469 ! proton-transporting two-sector ATPase complex
-relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0045260
@@ -18966,7 +19019,6 @@ synonym: "ubiquinol-cytochrome-c reductase complex" EXACT []
 is_a: GO:0070069 ! cytochrome complex
 is_a: GO:0098803 ! respiratory chain complex
 is_a: GO:1990204 ! oxidoreductase complex
-relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0045276
@@ -21588,6 +21640,7 @@ synonym: "vitamin M metabolic process" EXACT []
 synonym: "vitamin M metabolism" EXACT []
 is_a: GO:0006760 ! folic acid-containing compound metabolic process
 is_a: GO:0006767 ! water-soluble vitamin metabolic process
+is_a: GO:0043603 ! cellular amide metabolic process
 is_a: GO:0043648 ! dicarboxylic acid metabolic process
 
 [Term]
@@ -21856,14 +21909,12 @@ id: GO:0046942
 name: carboxylic acid transport
 def: "The directed movement of carboxylic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Carboxylic acids are organic acids containing one or more carboxyl (COOH) groups or anions (COO-)." []
 is_a: GO:0015711 ! organic anion transport
-is_a: GO:0015849 ! organic acid transport
 
 [Term]
 id: GO:0046943
 name: carboxylic acid transmembrane transporter activity
 def: "Enables the transfer of carboxylic acids from one side of a membrane to the other. Carboxylic acids are organic acids containing one or more carboxyl (COOH) groups or anions (COO-)." []
 is_a: GO:0005342 ! organic acid transmembrane transporter activity
-is_a: GO:0008514 ! organic anion transmembrane transporter activity
 is_a: GO:0015318 ! inorganic molecular entity transmembrane transporter activity
 relationship: BFO:0000050 GO:1905039 ! part of carboxylic acid transmembrane transport
 
@@ -22655,6 +22706,7 @@ def: "Any process that modulates the frequency, rate or extent of the chemical r
 synonym: "regulation of Hcy metabolic process" EXACT []
 synonym: "regulation of Hcy metabolism" EXACT []
 synonym: "regulation of homocysteine metabolism" EXACT []
+is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
 is_a: GO:0031335 ! regulation of sulfur amino acid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0050667 ! regulates homocysteine metabolic process
@@ -22683,6 +22735,7 @@ synonym: "up regulation of homocysteine metabolic process" EXACT []
 synonym: "up-regulation of homocysteine metabolic process" EXACT []
 synonym: "upregulation of homocysteine metabolic process" EXACT []
 is_a: GO:0031337 ! positive regulation of sulfur amino acid metabolic process
+is_a: GO:0045764 ! positive regulation of cellular amino acid metabolic process
 is_a: GO:0050666 ! regulation of homocysteine metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0050667 ! positively regulates homocysteine metabolic process
@@ -22700,6 +22753,7 @@ synonym: "negative regulation of Hcy metabolic process" EXACT []
 synonym: "negative regulation of Hcy metabolism" EXACT []
 synonym: "negative regulation of homocysteine metabolism" EXACT []
 is_a: GO:0031336 ! negative regulation of sulfur amino acid metabolic process
+is_a: GO:0045763 ! negative regulation of cellular amino acid metabolic process
 is_a: GO:0050666 ! regulation of homocysteine metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0050667 ! negatively regulates homocysteine metabolic process
@@ -24326,8 +24380,8 @@ synonym: "stimulation of protein transport" NARROW []
 synonym: "up regulation of protein transport" EXACT []
 synonym: "up-regulation of protein transport" EXACT []
 synonym: "upregulation of protein transport" EXACT []
-is_a: GO:0051050 ! positive regulation of transport
 is_a: GO:0051223 ! regulation of protein transport
+is_a: GO:1903793 ! positive regulation of anion transport
 is_a: GO:1904951 ! positive regulation of establishment of protein localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0015031 ! positively regulates protein transport
@@ -24351,8 +24405,8 @@ synonym: "down regulation of protein transport" EXACT []
 synonym: "down-regulation of protein transport" EXACT []
 synonym: "downregulation of protein transport" EXACT []
 synonym: "inhibition of protein transport" NARROW []
-is_a: GO:0051051 ! negative regulation of transport
 is_a: GO:0051223 ! regulation of protein transport
+is_a: GO:1903792 ! negative regulation of anion transport
 is_a: GO:1904950 ! negative regulation of establishment of protein localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0015031 ! negatively regulates protein transport
@@ -25225,8 +25279,9 @@ is_a: GO:0051179 ! localization
 
 [Term]
 id: GO:0051703
-name: intraspecies interaction between organisms
+name: biological process involved in intraspecies interaction between organisms
 def: "Any process in which an organism has an effect on an organism of the same species." []
+synonym: "intraspecies interaction between organisms" EXACT []
 synonym: "intraspecies interaction with other organisms" EXACT []
 is_a: GO:0008150 ! biological_process
 
@@ -25256,7 +25311,7 @@ id: GO:0051707
 name: response to other organism
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus from another living organism." []
 is_a: GO:0043207 ! response to external biotic stimulus
-is_a: GO:0044419 ! interspecies interaction between organisms
+is_a: GO:0044419 ! biological process involved in interspecies interaction between organisms
 
 [Term]
 id: GO:0051716
@@ -25501,7 +25556,7 @@ is_a: GO:0015850 ! organic hydroxy compound transport
 id: GO:0051952
 name: regulation of amine transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of amines into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
-is_a: GO:0051049 ! regulation of transport
+is_a: GO:0044070 ! regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0015837 ! regulates amine transport
 relationship: RO:0002211 GO:0015837 ! regulates amine transport
@@ -25514,8 +25569,8 @@ synonym: "down regulation of amine transport" EXACT []
 synonym: "down-regulation of amine transport" EXACT []
 synonym: "downregulation of amine transport" EXACT []
 synonym: "inhibition of amine transport" NARROW []
-is_a: GO:0051051 ! negative regulation of transport
 is_a: GO:0051952 ! regulation of amine transport
+is_a: GO:1903792 ! negative regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0015837 ! negatively regulates amine transport
 relationship: RO:0002212 GO:0015837 ! negatively regulates amine transport
@@ -25529,8 +25584,8 @@ synonym: "stimulation of amine transport" NARROW []
 synonym: "up regulation of amine transport" EXACT []
 synonym: "up-regulation of amine transport" EXACT []
 synonym: "upregulation of amine transport" EXACT []
-is_a: GO:0051050 ! positive regulation of transport
 is_a: GO:0051952 ! regulation of amine transport
+is_a: GO:1903793 ! positive regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0015837 ! positively regulates amine transport
 relationship: RO:0002213 GO:0015837 ! positively regulates amine transport
@@ -25540,7 +25595,6 @@ id: GO:0051955
 name: regulation of amino acid transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of amino acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
 is_a: GO:0032890 ! regulation of organic acid transport
-is_a: GO:0044070 ! regulation of anion transport
 is_a: GO:0051952 ! regulation of amine transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0006865 ! regulates amino acid transport
@@ -25558,7 +25612,6 @@ synonym: "negative regulation of amino acid transmembrane transport" EXACT []
 is_a: GO:0032891 ! negative regulation of organic acid transport
 is_a: GO:0051953 ! negative regulation of amine transport
 is_a: GO:0051955 ! regulation of amino acid transport
-is_a: GO:1903792 ! negative regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0006865 ! negatively regulates amino acid transport
 relationship: RO:0002212 GO:0006865 ! negatively regulates amino acid transport
@@ -25576,7 +25629,6 @@ synonym: "upregulation of amino acid transport" EXACT []
 is_a: GO:0032892 ! positive regulation of organic acid transport
 is_a: GO:0051954 ! positive regulation of amine transport
 is_a: GO:0051955 ! regulation of amino acid transport
-is_a: GO:1903793 ! positive regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0006865 ! positively regulates amino acid transport
 relationship: RO:0002213 GO:0006865 ! positively regulates amino acid transport
@@ -26624,12 +26676,11 @@ is_a: GO:0001568 ! blood vessel development
 
 [Term]
 id: GO:0060850
-name: regulation of transcription involved in cell fate commitment
-def: "Any process that modulates the frequency, rate or extent of transcription from an RNA polymerase II promoter that contributes to the commitment of a cell to a specific fate." []
-is_a: GO:0006357 ! regulation of transcription by RNA polymerase II
-intersection_of: GO:0006357 ! regulation of transcription by RNA polymerase II
-intersection_of: BFO:0000050 GO:0045165 ! part of cell fate commitment
-relationship: BFO:0000050 GO:0045165 ! part of cell fate commitment
+name: obsolete regulation of transcription involved in cell fate commitment
+def: "OBSOLETE. Any process that modulates the frequency, rate or extent of transcription from an RNA polymerase II promoter that contributes to the commitment of a cell to a specific fate." []
+is_obsolete: true
+consider: GO:0006357
+consider: GO:0045165
 
 [Term]
 id: GO:0060973
@@ -27002,7 +27053,7 @@ replaced_by: GO:0008233
 id: GO:0070013
 name: intracellular organelle lumen
 def: "An organelle lumen that is part of an intracellular organelle." []
-is_a: GO:0043233 ! organelle lumen
+is_a: GO:0031974 ! membrane-enclosed lumen
 intersection_of: GO:0031974 ! membrane-enclosed lumen
 intersection_of: BFO:0000050 GO:0043229 ! part of intracellular organelle
 relationship: BFO:0000050 GO:0043229 ! part of intracellular organelle
@@ -27229,6 +27280,7 @@ id: GO:0070255
 name: regulation of mucus secretion
 def: "Any process that modulates the frequency, rate or extent of the regulated release of mucus from a cell or a tissue." []
 synonym: "regulation of mucus production" EXACT []
+is_a: GO:0044070 ! regulation of anion transport
 is_a: GO:0050878 ! regulation of body fluid levels
 is_a: GO:0051046 ! regulation of secretion
 is_a: GO:0051239 ! regulation of multicellular organismal process
@@ -27244,6 +27296,7 @@ synonym: "negative regulation of mucus production" EXACT []
 is_a: GO:0051048 ! negative regulation of secretion
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:0070255 ! regulation of mucus secretion
+is_a: GO:1903792 ! negative regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0070254 ! negatively regulates mucus secretion
 relationship: RO:0002212 GO:0070254 ! negatively regulates mucus secretion
@@ -27256,6 +27309,7 @@ synonym: "positive regulation of mucus production" EXACT []
 is_a: GO:0051047 ! positive regulation of secretion
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:0070255 ! regulation of mucus secretion
+is_a: GO:1903793 ! positive regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0070254 ! positively regulates mucus secretion
 relationship: RO:0002213 GO:0070254 ! positively regulates mucus secretion
@@ -27850,7 +27904,7 @@ is_a: GO:0048856 ! anatomical structure development
 id: GO:0071702
 name: organic substance transport
 def: "The directed movement of organic substances into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore. An organic substance is a molecular entity that contains carbon." []
-is_a: GO:0006810 ! transport
+is_a: GO:0006820 ! anion transport
 
 [Term]
 id: GO:0071704
@@ -28279,13 +28333,14 @@ relationship: RO:0002211 GO:0033554 ! regulates cellular response to stress
 id: GO:0080144
 name: amino acid homeostasis
 def: "Any process involved in the maintenance of an internal steady state of amino acid within an organism or cell." []
-is_a: GO:0055081 ! anion homeostasis
+is_a: GO:0048878 ! chemical homeostasis
 
 [Term]
 id: GO:0080145
 name: cysteine homeostasis
 def: "Any process involved in the maintenance of an internal steady state of cysteine within an organism or cell." []
 is_a: GO:0055080 ! cation homeostasis
+is_a: GO:0055081 ! anion homeostasis
 is_a: GO:0080144 ! amino acid homeostasis
 
 [Term]
@@ -28392,7 +28447,7 @@ relationship: RO:0002213 GO:0022402 ! positively regulates cell cycle process
 id: GO:0090087
 name: regulation of peptide transport
 def: "Any process that modulates the frequency, rate or extent of the directed movement of peptides, compounds of two or more amino acids where the alpha carboxyl group of one is bound to the alpha amino group of another, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
-is_a: GO:0051049 ! regulation of transport
+is_a: GO:0044070 ! regulation of anion transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0015833 ! regulates peptide transport
 relationship: RO:0002211 GO:0015833 ! regulates peptide transport
@@ -28743,7 +28798,7 @@ relationship: BFO:0000050 GO:0005929 ! part of cilium
 id: GO:0097028
 name: dendritic cell differentiation
 def: "The process in which a precursor cell type acquires the specialized features of a dendritic cell. A dendritic cell is a leukocyte of dendritic lineage specialized in the uptake, processing, and transport of antigens to lymph nodes for the purpose of stimulating an immune response via T cell activation." []
-is_a: GO:0002521 ! leukocyte differentiation
+is_a: GO:1903131 ! mononuclear cell differentiation
 
 [Term]
 id: GO:0097060
@@ -28869,9 +28924,9 @@ id: GO:0097708
 name: intracellular vesicle
 def: "Any vesicle that is part of the intracellular region." []
 is_a: GO:0031982 ! vesicle
-is_a: GO:0043229 ! intracellular organelle
 intersection_of: GO:0031982 ! vesicle
 intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
 id: GO:0097711
@@ -28910,8 +28965,10 @@ is_a: GO:0140112 ! extracellular vesicle biogenesis
 
 [Term]
 id: GO:0097746
-name: regulation of blood vessel diameter
+name: blood vessel diameter maintenance
 def: "Any process that modulates the diameter of blood vessels." []
+synonym: "blood vessel diameter homeostasis" EXACT []
+synonym: "regulation of blood vessel diameter" EXACT []
 synonym: "regulation of blood vessel size" RELATED []
 synonym: "regulation of vasodilatation" RELATED []
 synonym: "regulation of vasodilation" RELATED []
@@ -28924,19 +28981,19 @@ id: GO:0097755
 name: positive regulation of blood vessel diameter
 def: "Any process that increases the diameter of blood vessels." []
 synonym: "positive regulation of vasodilation" RELATED []
-is_a: GO:0097746 ! regulation of blood vessel diameter
+is_a: GO:0097746 ! blood vessel diameter maintenance
 
 [Term]
 id: GO:0097756
 name: negative regulation of blood vessel diameter
 def: "Any process that decreases the diameter of blood vessels." []
 synonym: "negative regulation of vasodilation" RELATED []
-is_a: GO:0097746 ! regulation of blood vessel diameter
+is_a: GO:0097746 ! blood vessel diameter maintenance
 
 [Term]
 id: GO:0098531
 name: ligand-activated transcription factor activity
-def: "A DNA-binding transcription factor activity that is directly regulated by binding of a ligand to the protein with this activity.  Examples include the lac and trp repressors in E.coli and many steroid hormone receptors." []
+def: "A DNA-binding transcription factor activity regulated by binding to a ligand and that modulates the transcription of specific gene sets. Examples include the lac and trp repressors in E.coli and steroid hormone receptors." []
 synonym: "direct ligand regulated sequence-specific DNA binding transcription factor activity" EXACT []
 synonym: "transcription factor activity, direct ligand regulated sequence-specific DNA binding" EXACT []
 is_a: GO:0003700 ! DNA-binding transcription factor activity
@@ -29169,8 +29226,9 @@ relationship: BFO:0000050 GO:0005886 ! part of plasma membrane
 
 [Term]
 id: GO:0098798
-name: mitochondrial protein complex
+name: mitochondrial protein-containing complex
 def: "A protein complex that is part of a mitochondrion." []
+synonym: "mitochondrial protein complex" RELATED []
 is_a: GO:0032991 ! protein-containing complex
 intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: BFO:0000050 GO:0005739 ! part of mitochondrion
@@ -29181,7 +29239,7 @@ id: GO:0098800
 name: inner mitochondrial membrane protein complex
 def: "Any protein complex that is part of the inner mitochondrial membrane." []
 is_a: GO:0098796 ! membrane protein complex
-is_a: GO:0098798 ! mitochondrial protein complex
+is_a: GO:0098798 ! mitochondrial protein-containing complex
 intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
 relationship: BFO:0000050 GO:0005743 ! part of mitochondrial inner membrane
@@ -30011,12 +30069,14 @@ id: GO:0140096
 name: catalytic activity, acting on a protein
 def: "Catalytic activity that acts to modify a protein." []
 is_a: GO:0003824 ! catalytic activity
+relationship: BFO:0000050 GO:0018215 ! part of protein phosphopantetheinylation
 
 [Term]
 id: GO:0140110
 name: transcription regulator activity
-def: "A molecular function that controls the rate, timing and/or magnitude of transcription of genetic information. The function of transcriptional regulators is to modulate gene expression at the transcription step so that they are expressed in the right cell at the right time and in the right amount throughout the life of the cell and the organism." []
-is_a: GO:0098772 ! molecular function regulator
+def: "A molecular function that controls the rate, timing and/or magnitude of gene transcription. The function of transcriptional regulators is to modulate gene expression at the transcription step so that they are expressed in the right cell at the right time and in the right amount throughout the life of the cell and the organism. Genes are transcriptional units, and include bacterial operons." []
+is_a: GO:0003674 ! molecular_function
+relationship: BFO:0000050 GO:0006355 ! part of regulation of transcription, DNA-templated
 
 [Term]
 id: GO:0140112
@@ -30137,6 +30197,16 @@ def: "Receiving a signal and transmitting it in a cell to initiate an immune res
 is_a: GO:0038023 ! signaling receptor activity
 
 [Term]
+id: GO:0140513
+name: nuclear protein-containing complex
+def: "A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together in the nucleus." []
+synonym: "nuclear complex" EXACT []
+is_a: GO:0032991 ! protein-containing complex
+intersection_of: GO:0032991 ! protein-containing complex
+intersection_of: BFO:0000050 GO:0005634 ! part of nucleus
+relationship: BFO:0000050 GO:0005634 ! part of nucleus
+
+[Term]
 id: GO:0150063
 name: visual system development
 def: "The process whose specific outcome is the progression of the visual system over time, from its formation to the mature structure, including the eye, parts of the central nervous system (CNS) involved in processing of visual inputs, and connecting nerve pathways." []
@@ -30218,8 +30288,7 @@ name: regulation of cytokine production involved in inflammatory response
 def: "Any process that modulates the frequency, rate or extent of cytokine production involved in inflammatory response." []
 synonym: "regulation of cytokine production involved in acute inflammatory response" NARROW []
 is_a: GO:0001817 ! regulation of cytokine production
-is_a: GO:0050727 ! regulation of inflammatory response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0002534 ! regulates cytokine production involved in inflammatory response
 relationship: RO:0002211 GO:0002534 ! regulates cytokine production involved in inflammatory response
 
@@ -30232,7 +30301,7 @@ synonym: "down regulation of cytokine production involved in inflammatory respon
 synonym: "negative regulation of cytokine production involved in acute inflammatory response" NARROW []
 is_a: GO:0001818 ! negative regulation of cytokine production
 is_a: GO:1900015 ! regulation of cytokine production involved in inflammatory response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0002534 ! negatively regulates cytokine production involved in inflammatory response
 relationship: RO:0002212 GO:0002534 ! negatively regulates cytokine production involved in inflammatory response
 
@@ -30244,9 +30313,8 @@ synonym: "positive regulation of cytokine production involved in acute inflammat
 synonym: "up regulation of cytokine production involved in acute inflammatory response" BROAD []
 synonym: "up regulation of cytokine production involved in inflammatory response" RELATED []
 is_a: GO:0001819 ! positive regulation of cytokine production
-is_a: GO:0050729 ! positive regulation of inflammatory response
 is_a: GO:1900015 ! regulation of cytokine production involved in inflammatory response
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0002534 ! positively regulates cytokine production involved in inflammatory response
 relationship: RO:0002213 GO:0002534 ! positively regulates cytokine production involved in inflammatory response
 
@@ -31371,7 +31439,7 @@ id: GO:1901505
 name: carbohydrate derivative transmembrane transporter activity
 def: "Enables the transfer of carbohydrate derivative from one side of a membrane to the other." []
 synonym: "carbohydrate derivative transporter activity" RELATED []
-is_a: GO:0022857 ! transmembrane transporter activity
+is_a: GO:0008509 ! anion transmembrane transporter activity
 relationship: BFO:0000050 GO:1901264 ! part of carbohydrate derivative transport
 
 [Term]
@@ -31556,7 +31624,8 @@ def: "The chemical reactions and pathways resulting in the breakdown of an alpha
 synonym: "alpha-amino acid breakdown" EXACT []
 synonym: "alpha-amino acid catabolism" EXACT []
 synonym: "alpha-amino acid degradation" EXACT []
-is_a: GO:0009063 ! cellular amino acid catabolic process
+is_a: GO:0016054 ! organic acid catabolic process
+is_a: GO:1901565 ! organonitrogen compound catabolic process
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
@@ -31567,7 +31636,8 @@ synonym: "alpha-amino acid anabolism" EXACT []
 synonym: "alpha-amino acid biosynthesis" EXACT []
 synonym: "alpha-amino acid formation" EXACT []
 synonym: "alpha-amino acid synthesis" EXACT []
-is_a: GO:0008652 ! cellular amino acid biosynthetic process
+is_a: GO:0016053 ! organic acid biosynthetic process
+is_a: GO:1901566 ! organonitrogen compound biosynthetic process
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
@@ -34742,7 +34812,7 @@ id: GO:1903825
 name: organic acid transmembrane transport
 def: "The process in which an organic acid is transported across a membrane." []
 is_a: GO:0015849 ! organic acid transport
-is_a: GO:0055085 ! transmembrane transport
+is_a: GO:0098656 ! anion transmembrane transport
 
 [Term]
 id: GO:1903827
@@ -36455,8 +36525,6 @@ relationship: RO:0002211 GO:0006643 ! regulates membrane lipid metabolic process
 id: GO:1905039
 name: carboxylic acid transmembrane transport
 def: "The process in which carboxylic acid is transported across a membrane." []
-is_a: GO:0046942 ! carboxylic acid transport
-is_a: GO:0098656 ! anion transmembrane transport
 is_a: GO:1903825 ! organic acid transmembrane transport
 
 [Term]
@@ -37259,7 +37327,7 @@ is_a: GO:0043565 ! sequence-specific DNA binding
 [Term]
 id: GO:1990904
 name: ribonucleoprotein complex
-def: "A macromolecular complex containing both protein and RNA molecules." []
+def: "A macromolecular complex that contains both RNA and protein molecules." []
 synonym: "extracellular ribonucleoprotein complex" NARROW []
 synonym: "intracellular ribonucleoprotein complex" NARROW []
 synonym: "protein-RNA complex" EXACT []

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-11-06/imports/envo_import.owl
+data-version: mondo/releases/2020-12-02/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -228,6 +228,11 @@ name: halogen molecular entity
 is_a: CHEBI:33675 ! p-block molecular entity
 
 [Term]
+id: CHEBI:24632
+name: hydrocarbon
+is_a: CHEBI:33245 ! organic fundamental parent
+
+[Term]
 id: CHEBI:24651
 name: hydroxides
 is_a: CHEBI:25806 ! oxygen molecular entity
@@ -365,6 +370,12 @@ id: CHEBI:33242
 name: inorganic hydride
 is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:33692 ! hydrides
+
+[Term]
+id: CHEBI:33245
+name: organic fundamental parent
+is_a: CHEBI:37175 ! organic hydride
+is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
 id: CHEBI:33250
@@ -634,6 +645,11 @@ is_a: CHEBI:33299 ! alkaline earth molecular entity
 id: CHEBI:37134
 name: elemental barium
 is_a: CHEBI:37133 ! barium molecular entity
+
+[Term]
+id: CHEBI:37175
+name: organic hydride
+is_a: CHEBI:33692 ! hydrides
 
 [Term]
 id: CHEBI:37176
@@ -1539,6 +1555,15 @@ intersection_of: RO:0002219 ENVO:00001995 ! surrounded by rock
 relationship: RO:0002219 ENVO:00001995 ! surrounded by rock
 
 [Term]
+id: ENVO:01000304
+name: high pressure environment
+def: "A high pressure environment is an environment in which all material entities are exposed to a high ratio of force per unit area." []
+is_a: ENVO:01000997 ! environmental system determined by a quality
+intersection_of: ENVO:01000997 ! environmental system determined by a quality
+intersection_of: RO:0000086 PATO:0001576 ! has quality increased pressure
+relationship: RO:0000086 PATO:0001576 ! has quality increased pressure
+
+[Term]
 id: ENVO:01000305
 name: high temperature environment
 def: "A high temperature environment is an environment in which material entities are exposed to increased levels of heat radiation or which have molecules or atoms moving randomly with increased levels of average kinietic energy." []
@@ -1719,6 +1744,16 @@ def: "A boundary layer is a layer of fluid in the immediate vicinity of a boundi
 synonym: "boundary layer" EXACT []
 is_a: ENVO:01001677 ! fluid interface layer
 relationship: RO:0002220 ENVO:00010504 ! adjacent to surface layer
+
+[Term]
+id: ENVO:01000554
+name: hydrocarbon gas
+def: "A gas that is primarily composed of hydrocarbon molecules." []
+is_a: ENVO:01000797 ! gaseous environmental material
+is_a: ENVO:2000045 ! hydrocarbon-based environmental material
+intersection_of: ENVO:01000797 ! gaseous environmental material
+intersection_of: RO:0000086 PATO:0001547 ! has quality quality of a gas
+intersection_of: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
 
 [Term]
 id: ENVO:01000617
@@ -3514,6 +3549,16 @@ intersection_of: RO:0000052 ENVO:00001998 ! inheres in soil
 relationship: RO:0000052 ENVO:00001998 ! inheres in soil
 
 [Term]
+id: ENVO:09200011
+name: pressure of air
+def: "The pressure of some air." []
+synonym: "air pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+intersection_of: PATO:0001025 ! pressure
+intersection_of: RO:0000052 ENVO:00002005 ! inheres in air
+relationship: RO:0000052 ENVO:00002005 ! inheres in air
+
+[Term]
 id: ENVO:09200012
 name: temperature of soil
 def: "The temperature of some soil." []
@@ -3554,6 +3599,16 @@ intersection_of: RO:0000052 ENVO:00002006 ! inheres in liquid water
 relationship: RO:0000052 ENVO:00002006 ! inheres in liquid water
 
 [Term]
+id: ENVO:2000045
+name: hydrocarbon-based environmental material
+is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
+relationship: RO:0000053 PATO:0015021 ! bearer of combustibility
+relationship: RO:0000087 CHEBI:33292 ! has role fuel
+relationship: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
+
+[Term]
 id: ENVO:2100000
 name: anatomical entity environment
 def: "An environment which is determined by an anatomical entity." []
@@ -3584,6 +3639,16 @@ name: concentration of dioxygen in liquid water
 def: "The concentration of dioxygen when measured in liquid water." []
 synonym: "liquid water dioxygen concentration" EXACT []
 is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:3100033
+name: pressure of water
+def: "The pressure of some water." []
+synonym: "water pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+intersection_of: PATO:0001025 ! pressure
+intersection_of: RO:0000052 ENVO:00002006 ! inheres in liquid water
+relationship: RO:0000052 ENVO:00002006 ! inheres in liquid water
 
 [Term]
 id: GO:0008150
@@ -4025,6 +4090,12 @@ synonym: "relational physical quality" EXACT []
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
+id: PATO:0001025
+name: pressure
+def: "A physical quality that inheres in a bearer by virtue of the bearer's amount of force per unit area it exerts." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001154
 name: elongated
 def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." []
@@ -4143,6 +4214,14 @@ def: "A mass which is higher than normal or average." []
 synonym: "high mass" EXACT []
 synonym: "large mass" EXACT []
 is_a: PATO:0000125 ! mass
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001576
+name: increased pressure
+def: "A pressure which is relatively high." []
+synonym: "high pressure" EXACT []
+is_a: PATO:0001025 ! pressure
 is_a: PATO:0002305 ! increased object quality
 
 [Term]

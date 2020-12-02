@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/foodon_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-09-14/imports/foodon_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-12-02/imports/foodon_import.owl"/>
     </owl:Ontology>
     
 
@@ -196,6 +196,7 @@
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label>part of</rdfs:label>
         <rdfs:label xml:lang="en">part of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1022,6 +1023,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <obo:IAO_0000115>A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/chebi.owl"/>
+        <rdfs:label>chemical entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_24432 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24432">
@@ -1083,6 +1095,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
         <obo:IAO_0000115 xml:lang="en">Food material for humans and animals which is processed with the intention that it be consumable as a whole or added to other food products.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">Foodon product type</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Food</obo:IAO_0000119>
         <rdfs:comment xml:lang="en">The FoodOn &quot;food product&quot; class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.</rdfs:comment>
         <rdfs:label xml:lang="en">food product</rdfs:label>
@@ -1433,12 +1446,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001257">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001256"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001913"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">milk or milk based food product</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Fat_content_of_milk#/media/File:Milkproducts.svg"/>
     </owl:Class>
@@ -1456,10 +1463,10 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001262"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://eurovoc.europa.eu/drupal/?q=request&amp;amp;uri=http://eurovoc.europa.eu/1115</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.fao.org/pollination/resources/glossary/en/</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Fruit</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eurovoc.europa.eu/drupal/?q=request&amp;amp;uri=http://eurovoc.europa.eu/1115</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://www.fao.org/pollination/resources/glossary/en/</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Fruit</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1761,14 +1768,8 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00003402"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00003374"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">A process involving the physical transformation of a food source or food product into some derived organic material or food product</obo:IAO_0000115>
@@ -1905,8 +1906,42 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00003203">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002451"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00003402"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00003374"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 xml:lang="en">A process which takes in some food material from an individual or community of plant or animal organisms in a given context and time, and outputs a precursor or consumable food product. This may include a part of an organism or the whole, and may involve killing the organism.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">food harvesting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00003318 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00003318">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001293"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412115"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001293"/>
+        <obo:IAO_0000117 rdf:resource="http://orcid.org/0000-0002-8844-9165"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-08T00:20:27Z</dc:date>
+        <rdfs:label xml:lang="en">echinoderm food product</rdfs:label>
     </owl:Class>
     
 
@@ -1921,7 +1956,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00003203"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">A harvested material that has the potential to be food material.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Organic food material that has been harvested.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">harvested food material</rdfs:label>
     </owl:Class>
     
@@ -1931,7 +1966,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00003402">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
-        <obo:IAO_0000115 xml:lang="en">Food material which has not yet been harvested from its rearing environment.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Organic food material which has not reached harvestable maturity.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">pre-harvest food material</rdfs:label>
     </owl:Class>
     
@@ -1950,15 +1985,9 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_03000003 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03000003">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411081"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6690"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Farfantepenaeus aztecus is a species of marine penaeid shrimps found around the east coast of the USA and Mexico</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">brown shrimp</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6690"/>
+        <rdfs:label xml:lang="en">obsolete: brown shrimp</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -1966,15 +1995,9 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_03000004 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03000004">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412215"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_85552"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">Scylla paramamosain is a mud crab commonly consumed in South-east Asia.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">green mud crab</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_85552"/>
+        <rdfs:label xml:lang="en">obsolete: green mud crab</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -1982,15 +2005,9 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_03000005 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03000005">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411081"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_29960"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The Indian prawn (Fenneropenaeus indicus, formerly Penaeus indicus), is one of the major commercial prawn species of the world. It is found in the Indo-West Pacific from eastern and south-eastern Africa, through India, Malaysia and Indonesia to southern China and northern Australia</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">Indian prawn</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_29960"/>
+        <rdfs:label xml:lang="en">obsolete: Indian prawn</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -2000,12 +2017,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03302116">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001771"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03430130"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400148"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasBroadSynonym xml:lang="en">milk</oboInOwl:hasBroadSynonym>
@@ -2030,7 +2041,7 @@
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003001"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -2069,12 +2080,6 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400267"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>SUBSET_SIREN:F4511</oboInOwl:hasDbXref>
@@ -2103,7 +2108,7 @@
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001913"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003001"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412611"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -2200,12 +2205,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315468">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001293"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400267"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>SUBSET_SIREN:F15468</oboInOwl:hasDbXref>
@@ -2476,6 +2475,41 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411021 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411021">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411222"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411433"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412409"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00003004"/>
+        <obo:IAO_0000115 xml:lang="en">An aquatic animal is an animal, either vertebrate or invertebrate, which lives in the water for most or all of its lifetime.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">fish or lower water animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411041 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411041">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">Any chemical or chemical mixture that exists in a food material or was added to a food material.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">chemical food component</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411047 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411047">
@@ -2510,14 +2544,9 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03411087 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411087">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411134"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">human as milk source</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">obsolete: human as milk source</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -2529,6 +2558,25 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411297"/>
         <obo:IAO_0000115 xml:lang="en">Mammals (from Latin mamma &quot;breast&quot;) are vertebrate animals constituting the class Mammalia, and characterized by the presence of mammary glands which in females produce milk for feeding (nursing) their young, a neocortex (a region of the brain), fur or hair, and three middle ear bones.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">mammal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411142 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411142">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412115"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412409"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03414466"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002581"/>
+        <obo:IAO_0000115 xml:lang="en">Aquatic animals other than fish and shellfish</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">aquatic invertebrate animal (excluding shellfish)</rdfs:label>
     </owl:Class>
     
 
@@ -2584,7 +2632,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03411215 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411215">
-        <obo:IAO_0000231 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</obo:IAO_0000231>
+        <obo:IAO_0000231 xml:lang="en">Disjunction discouraged, use specific item instead.</obo:IAO_0000231>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=B1215</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">obsolete: algae, bacteria or fungus</rdfs:label>
@@ -2597,6 +2645,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411222">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001248"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411021"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411297"/>
         <obo:IAO_0000115 xml:lang="en">Fish are the gill-bearing aquatic craniate animals that lack limbs with digits. Most fish are ectothermic (&quot;cold-blooded&quot;), allowing their body temperatures to vary as ambient temperatures change, though some of the large active swimmers like white shark and tuna can hold a higher core temperature.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">fish</rdfs:label>
@@ -2732,6 +2781,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411433">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001293"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411021"/>
         <obo:IAO_0000115 xml:lang="en">The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">shellfish</rdfs:label>
     </owl:Class>
@@ -2741,7 +2791,7 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03411564 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411564">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
         <obo:IAO_0000115 xml:lang="en">This is a hierarchy of organisms, grouped minimally in a combination of taxonomy and consumer-oriented food groups.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">food product organismal source</rdfs:label>
     </owl:Class>
@@ -2779,6 +2829,19 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03412115 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412115">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411142"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411433"/>
+        <obo:IAO_0000115 xml:lang="en">Echinoderm is the common name given to any member of the phylum *Echinodermata* of marine animals. The adults are recognizable by their (usually five-point) radial symmetry, and include such well-known animals as sea stars, sea urchins, sand dollars, and sea cucumbers, as well as the sea lilies or &quot;stone lilies&quot;. [https://en.wikipedia.org/wiki/Echinoderm]</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>Echinodermata</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Echinodermata Klein, 1734</oboInOwl:hasNarrowSynonym>
+        <rdfs:label xml:lang="en">echinoderm</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03412215 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412215">
@@ -2799,12 +2862,23 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03412409 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412409">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411021"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411142"/>
+        <obo:IAO_0000115 xml:lang="en">*Coelenterata* is an obsolete term encompassing the animal phyla *Cnidaria* (coral animals, true jellies, sea anemones, sea pens, and their allies) and *Ctenophora* (comb jellies).  [https://en.wikipedia.org/wiki/Coelenterata]</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">coelenterate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03412611 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412611">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411328"/>
-        <oboInOwl:hasNarrowSynonym>Capra hircus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
-        <rdfs:label xml:lang="en">doe (goat)</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
+        <rdfs:label xml:lang="en">obsolete: doe (goat)</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -2812,9 +2886,9 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03412702 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412702">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411328"/>
-        <oboInOwl:hasNarrowSynonym>Capra hircus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
-        <rdfs:label xml:lang="en">kid</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9925"/>
+        <rdfs:label xml:lang="en">obsolete: kid</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -2822,15 +2896,19 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
     <!-- http://purl.obolibrary.org/obo/FOODON_03412846 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412846">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 xml:lang="en">A unicellular prokaryotic organism in the Domain Bacteria.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">bacteria</rdfs:label>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+        <rdfs:label xml:lang="en">obsolete: bacteria</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03412972 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412972">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411041"/>
+        <rdfs:label xml:lang="en">food additive</rdfs:label>
     </owl:Class>
     
 
@@ -2853,6 +2931,16 @@ The edible portion of the nut is consumed in succulent, dried or processed forms
 
 The family is widespread, being native to Asia, Africa, Europe and North America, and diverse: members include bison, African buffalo, water buffalo, antelopes, gazelles, sheep, goats, muskoxen, and domestic cattle.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">bovid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414466 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414466">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411142"/>
+        <obo:IAO_0000115 xml:lang="en">Tunicates, previously known as *Urochordata* or urochordates, are members of the *Tunicata*, a subphylum of the phylum *Chordata*. They are marine filter feeders with a saclike morphology. In their respiration and feeding they take in water through an incurrent (or inhalant) siphon and expel the filtered water through an excurrent (or exhalant) siphon. Most adult tunicates are sessile and attached to rocks or similarly suitable surfaces on the ocean floor; others such as salps, doliolids and pyrosomes swim in the pelagic zone as adults. Various species are commonly known as sea squirts or sea pork.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">tunicate</rdfs:label>
     </owl:Class>
     
 
@@ -2960,13 +3048,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
 
     <!-- http://purl.obolibrary.org/obo/FOODON_03420165 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420165">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PO_0025496"/>
-        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/PO_0009001"/>
-        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/PO_0009010"/>
-        <rdfs:label xml:lang="en">obsolete: fruit or seed</rdfs:label>
-        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420165"/>
     
 
 
@@ -2990,6 +3072,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420174">
         <obo:IAO_0000115 xml:lang="en">Anatomical part of a plant, such as fruit, seed, pod, leaf, stem or flower as well as the whole plant.</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/PO_0009011"/>
         <rdfs:label xml:lang="en">obsolete: part of plant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -3352,36 +3435,6 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_111520 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_111520">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6684"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Penaeoidea</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_116704 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_116704">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6752"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Eubrachyura</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_116706 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_116706">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_116704"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Heterotremata</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_117571 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_117571">
@@ -3403,16 +3456,6 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_133894 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_133894">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6685"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Penaeus</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_1437010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1437010">
@@ -3423,43 +3466,12 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_197562 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_197562">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33317"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Pancrustacea</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>eubacteria</oboInOwl:hasExactSynonym>
-        <rdfs:label>Bacteria</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_207598 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_207598">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9526"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Homininae</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2172821 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2172821">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6657"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Multicrustacea</rdfs:label>
     </owl:Class>
     
 
@@ -3482,16 +3494,6 @@ The family is widespread, being native to Asia, Africa, Europe and North America
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9895"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label>Bovinae</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_29960 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_29960">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_133894"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Penaeus indicus</rdfs:label>
     </owl:Class>
     
 
@@ -3579,16 +3581,6 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33317 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33317">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Protostomia</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_33511 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33511">
@@ -3617,134 +3609,6 @@ The family is widespread, being native to Asia, Africa, Europe and North America
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <oboInOwl:hasExactSynonym>mammals</oboInOwl:hasExactSynonym>
         <rdfs:label>Mammalia</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6657 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6657">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_197562"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>crustaceans</oboInOwl:hasExactSynonym>
-        <rdfs:label>Crustacea</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6682 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6682">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72041"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Eucarida</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6683 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6683">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6682"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Decapoda</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6684 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6684">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6683"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Dendrobranchiata</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6685 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6685">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_111520"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>penaeid shrimps</oboInOwl:hasExactSynonym>
-        <rdfs:label>Penaeidae</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6690 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6690">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_133894"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>brown shrimp</oboInOwl:hasExactSynonym>
-        <rdfs:label>Penaeus aztecus</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6692 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6692">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6683"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Pleocyemata</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6752 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6752">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6692"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>short-tailed crabs</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>true crabs</oboInOwl:hasExactSynonym>
-        <rdfs:label>Brachyura</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6757 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6757">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6774"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>swimming crabs</oboInOwl:hasExactSynonym>
-        <rdfs:label>Portunidae</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6760 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6760">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6757"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>mangrove crabs</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>mud crabs</oboInOwl:hasExactSynonym>
-        <rdfs:label>Scylla</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6774 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6774">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_116706"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Portunoidea</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_72041 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_72041">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2172821"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <rdfs:label>Eumalacostraca</rdfs:label>
     </owl:Class>
     
 
@@ -3780,17 +3644,6 @@ The family is widespread, being native to Asia, Africa, Europe and North America
         <oboInOwl:hasExactSynonym>Gnathostomata</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>jawed vertebrates</oboInOwl:hasExactSynonym>
         <rdfs:label>Gnathostomata &lt;vertebrates&gt;</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_85552 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_85552">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6760"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
-        <oboInOwl:hasExactSynonym>green mud crab</oboInOwl:hasExactSynonym>
-        <rdfs:label>Scylla paramamosain</rdfs:label>
     </owl:Class>
     
 
@@ -3843,6 +3696,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411134"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_207598"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <oboInOwl:hasExactSynonym>human</oboInOwl:hasExactSynonym>
@@ -3902,11 +3756,13 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_9925 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9925">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411328"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9922"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <oboInOwl:hasExactSynonym>domestic goat</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>goat</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>goats</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>Capra hircus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
         <rdfs:label>Capra hircus</rdfs:label>
     </owl:Class>
     
@@ -4294,6 +4150,34 @@ The family is widespread, being native to Asia, Africa, Europe and North America
         <obo:IAO_0000119 xml:lang="en">group:OBI</obo:IAO_0000119>
         <rdfs:label xml:lang="en">requires discussion</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411374"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412115"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412409"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03414466"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412115"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03412409"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03414466"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
