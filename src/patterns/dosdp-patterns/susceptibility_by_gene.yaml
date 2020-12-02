@@ -30,13 +30,18 @@ name:
 
 def:
   # Induced, frequency=0.6133333333333333, p=http://purl.obolibrary.org/obo/IAO_0000115 
-    text: Any %s in which the cause of the disease is a mutation in the %s gene.
+    text: A susceptibility or predisposition to %s in which the cause of the disease is a mutation in the %s gene.
     vars:
       - disease
       - gene
 
 annotationProperties:
     exact_synonym: oio:hasExactSynonym
+    text: '%s susceptibility caused by %s'
+    vars:
+      - disease
+      - gene
+    
     related_synonym: oio:hasRelatedSynonym
 
 equivalentTo:
@@ -45,6 +50,9 @@ equivalentTo:
     vars:
       - gene
       - disease
+
 pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
+
 contributors:
   - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432
