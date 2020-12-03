@@ -35,13 +35,15 @@ def:
       - gene
 
 annotationProperties:
-    exact_synonym: oio:hasExactSynonym
+    exact_synonym: oio:hasExactSynonym    
+    related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
     text: '%s susceptibility caused by %s'
     vars:
       - disease
       - gene
-    
-    related_synonym: oio:hasRelatedSynonym
 
 equivalentTo:
     text: ('inherited disease susceptibility' and ('disease has basis in dysfunction
