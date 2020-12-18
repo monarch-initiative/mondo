@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-02/imports/go_import.owl
+data-version: mondo/releases/2020-12-18/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -3727,7 +3727,7 @@ is_a: GO:0008233 ! peptidase activity
 [Term]
 id: GO:0004177
 name: aminopeptidase activity
-def: "Catalysis of the hydrolysis of N-terminal amino acid residues from in a polypeptide chain." []
+def: "Catalysis of the hydrolysis of a single N-terminal amino acid residue from a polypeptide chain." []
 is_a: GO:0008238 ! exopeptidase activity
 
 [Term]
@@ -6571,6 +6571,18 @@ def: "A vesicle-mediated transport process that results in the engulfment of ext
 is_a: GO:0016192 ! vesicle-mediated transport
 
 [Term]
+id: GO:0006910
+name: phagocytosis, recognition
+def: "The initial step in phagocytosis involving adhesion to bacteria, immune complexes and other particulate matter, or an apoptotic cell and based on recognition of factors such as bacterial cell wall components, opsonins like complement and antibody or protein receptors and lipids like phosphatidyl serine, and leading to intracellular signaling in the phagocytosing cell." []
+synonym: "recognition of phagocytosed substance by phagocytic cell" EXACT []
+is_a: GO:0008037 ! cell recognition
+intersection_of: GO:0008037 ! cell recognition
+intersection_of: BFO:0000050 GO:0006909 ! part of phagocytosis
+relationship: BFO:0000050 GO:0006897 ! part of endocytosis
+relationship: BFO:0000050 GO:0006909 ! part of phagocytosis
+relationship: BFO:0000051 GO:0038024 ! has part cargo receptor activity
+
+[Term]
 id: GO:0006911
 name: phagocytosis, engulfment
 def: "The internalization of bacteria, immune complexes and other particulate matter or of an apoptotic cell by phagocytosis, including the membrane and cytoskeletal processes required, which involves one of three mechanisms: zippering of pseudopods around a target via repeated receptor-ligand interactions, sinking of the target directly into plasma membrane of the phagocytosing cell, or induced uptake via an enhanced membrane ruffling of the phagocytosing cell similar to macropinocytosis." []
@@ -6916,6 +6928,10 @@ relationship: RO:0002212 GO:0007155 ! negatively regulates cell adhesion
 id: GO:0007165
 name: signal transduction
 def: "The cellular process in which a signal is conveyed to trigger a change in the activity or state of a cell. Signal transduction begins with reception of a signal (e.g. a ligand binding to a receptor or receptor activation by a stimulus such as light), or for signal transduction in the absence of ligand, signal-withdrawal or the activity of a constitutively active receptor. Signal transduction ends with regulation of a downstream cellular process, e.g. regulation of transcription or regulation of a metabolic process. Signal transduction covers signaling from receptors located on the surface of the cell and signaling via molecules located within the cell. For signaling between cells, signal transduction is restricted to events at and within the receiving cell." []
+synonym: "signal transduction by cis-phosphorylation" NARROW []
+synonym: "signal transduction by conformational transition" NARROW []
+synonym: "signal transduction by protein phosphorylation" NARROW []
+synonym: "signal transduction by trans-phosphorylation" NARROW []
 synonym: "signaling cascade" NARROW []
 synonym: "signaling pathway" RELATED []
 synonym: "signalling cascade" NARROW []
@@ -7398,6 +7414,13 @@ intersection_of: RO:0002211 GO:0060047 ! regulates heart contraction
 relationship: RO:0002211 GO:0060047 ! regulates heart contraction
 
 [Term]
+id: GO:0008037
+name: cell recognition
+def: "The process in which a cell in an organism interprets its surroundings." []
+synonym: "recognition of surroundings by cell" EXACT []
+is_a: GO:0009987 ! cellular process
+
+[Term]
 id: GO:0008046
 name: axon guidance receptor activity
 def: "Combining with an extracellular messenger and transmitting the signal from one side of the membrane to the other to results in a change in cellular activity involved in axon guidance." []
@@ -7531,7 +7554,8 @@ id: GO:0008228
 name: opsonization
 def: "The process in which a microorganism (or other particulate material) is rendered more susceptible to phagocytosis by coating with an opsonin, a blood serum protein such as a complement component or antibody." []
 is_a: GO:0002252 ! immune effector process
-relationship: BFO:0000050 GO:0006909 ! part of phagocytosis
+is_a: GO:0048522 ! positive regulation of cellular process
+relationship: RO:0002213 GO:0006910 ! positively regulates phagocytosis, recognition
 
 [Term]
 id: GO:0008233
@@ -7566,7 +7590,7 @@ is_a: GO:0008233 ! peptidase activity
 id: GO:0008240
 name: tripeptidyl-peptidase activity
 def: "Catalysis of the release of an N-terminal tripeptide from a polypeptide." []
-is_a: GO:0070009 ! serine-type aminopeptidase activity
+is_a: GO:0070008 ! serine-type exopeptidase activity
 
 [Term]
 id: GO:0008242
@@ -9009,6 +9033,7 @@ id: GO:0010469
 name: regulation of signaling receptor activity
 def: "Any process that modulates the frequency, rate or extent of a signaling receptor activity. Receptor activity is when a molecule combines with an extracellular or intracellular messenger to initiate a change in cell activity." []
 synonym: "regulation of receptor activity" BROAD []
+synonym: "regulation of signalling receptor activity" EXACT []
 is_a: GO:0009966 ! regulation of signal transduction
 is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
@@ -9645,6 +9670,7 @@ name: regulation of phosphatase activity
 def: "Any process that modulates the rate or frequency of phosphatase activity. Phosphatases catalyze the hydrolysis of phosphoric monoesters, releasing inorganic phosphate." []
 is_a: GO:0035303 ! regulation of dephosphorylation
 is_a: GO:0051336 ! regulation of hydrolase activity
+is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0016791 ! regulates phosphatase activity
 relationship: RO:0002211 GO:0016791 ! regulates phosphatase activity
@@ -10374,7 +10400,6 @@ name: energy derivation by oxidation of organic compounds
 def: "The chemical reactions and pathways by which a cell derives energy from organic compounds; results in the oxidation of the compounds from which energy is released." []
 synonym: "chemoorganotrophy" EXACT []
 is_a: GO:0006091 ! generation of precursor metabolites and energy
-is_a: GO:0055114 ! oxidation-reduction process
 
 [Term]
 id: GO:0015985
@@ -10818,6 +10843,9 @@ is_a: GO:0016491 ! oxidoreductase activity
 id: GO:0016616
 name: oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
 def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-OH group acts as a hydrogen or electron donor and reduces NAD+ or NADP." []
+synonym: "glycolate reductase" RELATED []
+synonym: "glyoxylic acid reductase" RELATED []
+synonym: "NADH-dependent glyoxylate reductase" RELATED []
 is_a: GO:0016614 ! oxidoreductase activity, acting on CH-OH group of donors
 
 [Term]
@@ -12111,6 +12139,7 @@ name: regulation of transmembrane transporter activity
 def: "Any process that modulates the frequency, rate or extent of transmembrane transporter activity." []
 is_a: GO:0032409 ! regulation of transporter activity
 is_a: GO:0034762 ! regulation of transmembrane transport
+is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0022857 ! regulates transmembrane transporter activity
 relationship: RO:0002211 GO:0022857 ! regulates transmembrane transporter activity
@@ -12703,6 +12732,7 @@ id: GO:0030546
 name: signaling receptor activator activity
 def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is increased." []
 synonym: "receptor activator activity" BROAD []
+synonym: "signalling receptor activator activity" EXACT []
 is_a: GO:0030545 ! receptor regulator activity
 
 [Term]
@@ -14332,7 +14362,7 @@ relationship: RO:0002213 GO:0046907 ! positively regulates intracellular transpo
 id: GO:0032409
 name: regulation of transporter activity
 def: "Any process that modulates the activity of a transporter." []
-is_a: GO:0065009 ! regulation of molecular function
+is_a: GO:0008150 ! biological_process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0005215 ! regulates transporter activity
 relationship: RO:0002211 GO:0005215 ! regulates transporter activity
@@ -15551,7 +15581,6 @@ id: GO:0034440
 name: lipid oxidation
 def: "The removal of one or more electrons from a lipid, with or without the concomitant removal of a proton or protons, by reaction with an electron-accepting substance, by addition of oxygen or by removal of hydrogen." []
 is_a: GO:0030258 ! lipid modification
-is_a: GO:0055114 ! oxidation-reduction process
 
 [Term]
 id: GO:0034613
@@ -16275,6 +16304,7 @@ name: signaling receptor activity
 def: "Receiving a signal and transmitting it in the cell to initiate a change in cell activity. A signal is a physical entity or change in state that is used to transfer information in order to trigger a response." []
 synonym: "receptor activity" BROAD []
 synonym: "receptor activity involved in signal transduction" EXACT []
+synonym: "signalling receptor activity" EXACT []
 is_a: GO:0060089 ! molecular transducer activity
 
 [Term]
@@ -16589,7 +16619,7 @@ id: GO:0042310
 name: vasoconstriction
 def: "A decrease in the diameter of blood vessels, especially arteries, due to constriction of smooth muscle cells that line the vessels, and usually causing an increase in blood pressure." []
 synonym: "negative regulation of blood vessel size" EXACT []
-is_a: GO:0097756 ! negative regulation of blood vessel diameter
+is_a: GO:0097746 ! blood vessel diameter maintenance
 
 [Term]
 id: GO:0042320
@@ -17158,6 +17188,9 @@ synonym: "antibacterial peptide activity" RELATED []
 synonym: "defence response to bacteria" EXACT []
 synonym: "defence response to bacterium" EXACT []
 synonym: "defense response to bacteria" EXACT []
+synonym: "defense response to bacterium, incompatible interaction" NARROW []
+synonym: "resistance response to pathogenic bacteria" NARROW []
+synonym: "resistance response to pathogenic bacterium" NARROW []
 is_a: GO:0009617 ! response to bacterium
 is_a: GO:0098542 ! defense response to other organism
 
@@ -18016,6 +18049,7 @@ name: regulation of kinase activity
 def: "Any process that modulates the frequency, rate or extent of kinase activity, the catalysis of the transfer of a phosphate group, usually from ATP, to a substrate molecule." []
 is_a: GO:0042325 ! regulation of phosphorylation
 is_a: GO:0051338 ! regulation of transferase activity
+is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0016301 ! regulates kinase activity
 relationship: RO:0002211 GO:0016301 ! regulates kinase activity
@@ -20727,7 +20761,6 @@ synonym: "downregulation of vasoconstriction" EXACT []
 synonym: "inhibition of vasoconstriction" NARROW []
 is_a: GO:0019229 ! regulation of vasoconstriction
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
-is_a: GO:0097755 ! positive regulation of blood vessel diameter
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002212 GO:0042310 ! negatively regulates vasoconstriction
 relationship: RO:0002212 GO:0042310 ! negatively regulates vasoconstriction
@@ -21891,7 +21924,7 @@ is_a: GO:0055076 ! transition metal ion homeostasis
 [Term]
 id: GO:0046930
 name: pore complex
-def: "Any small opening in a membrane that allows the passage of gases and/or liquids." []
+def: "A protein complex providing a discrete opening in a membrane that allows the passage of gases and/or liquids." []
 synonym: "channel-forming toxin activity" RELATED []
 synonym: "pore" EXACT []
 synonym: "pore-forming toxin activity" RELATED []
@@ -23112,7 +23145,7 @@ name: regulation of catalytic activity
 def: "Any process that modulates the activity of an enzyme." []
 synonym: "regulation of enzyme activity" EXACT []
 synonym: "regulation of metalloenzyme activity" NARROW []
-is_a: GO:0065009 ! regulation of molecular function
+is_a: GO:0008150 ! biological_process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0003824 ! regulates catalytic activity
 relationship: RO:0002211 GO:0003824 ! regulates catalytic activity
@@ -23978,7 +24011,7 @@ relationship: RO:0002213 GO:0032502 ! positively regulates developmental process
 id: GO:0051098
 name: regulation of binding
 def: "Any process that modulates the frequency, rate or extent of binding, the selective interaction of a molecule with one or more specific sites on another molecule." []
-is_a: GO:0065009 ! regulation of molecular function
+is_a: GO:0008150 ! biological_process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0005488 ! regulates binding
 relationship: RO:0002211 GO:0005488 ! regulates binding
@@ -25765,6 +25798,7 @@ def: "Any process that modulates the frequency, rate or extent of peptidase acti
 synonym: "peptidase regulator activity" RELATED []
 is_a: GO:0030162 ! regulation of proteolysis
 is_a: GO:0051336 ! regulation of hydrolase activity
+is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0008233 ! regulates peptidase activity
 relationship: RO:0002211 GO:0008233 ! regulates peptidase activity
@@ -27020,7 +27054,7 @@ name: regulation of molecular function
 def: "Any process that modulates the frequency, rate or extent of a molecular function, an elemental biological activity occurring at the molecular level, such as catalysis or binding." []
 synonym: "regulation of a molecular function" EXACT []
 is_a: GO:0065007 ! biological regulation
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0003674 ! regulates molecular_function
 relationship: RO:0002211 GO:0003674 ! regulates molecular_function
 
@@ -27040,7 +27074,7 @@ is_a: GO:0008238 ! exopeptidase activity
 [Term]
 id: GO:0070009
 name: serine-type aminopeptidase activity
-def: "Catalysis of the hydrolysis of a peptide bond not more than three residues from the N-terminus of a polypeptide chain by a catalytic mechanism that involves a catalytic triad consisting of a serine nucleophile that is activated by a proton relay involving an acidic residue (e.g. aspartate or glutamate) and a basic residue (usually histidine)." []
+def: "Catalysis of the hydrolysis of a single N-terminal amino acid residue from a polypeptide chain by a catalytic mechanism that involves a catalytic triad consisting of a serine nucleophile that is activated by a proton relay involving an acidic residue (e.g. aspartate or glutamate) and a basic residue (usually histidine)." []
 is_a: GO:0004177 ! aminopeptidase activity
 is_a: GO:0070008 ! serine-type exopeptidase activity
 
@@ -27088,7 +27122,7 @@ id: GO:0070092
 name: regulation of glucagon secretion
 def: "Any process that modulates the frequency, rate or extent of the regulated release of glucagon." []
 is_a: GO:0090276 ! regulation of peptide hormone secretion
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0070091 ! regulates glucagon secretion
 relationship: RO:0002211 GO:0070091 ! regulates glucagon secretion
 
@@ -27102,7 +27136,7 @@ synonym: "downregulation of glucagon secretion" EXACT []
 synonym: "inhibition of glucagon secretion" NARROW []
 is_a: GO:0070092 ! regulation of glucagon secretion
 is_a: GO:0090278 ! negative regulation of peptide hormone secretion
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0070091 ! negatively regulates glucagon secretion
 relationship: RO:0002212 GO:0070091 ! negatively regulates glucagon secretion
 
@@ -27117,7 +27151,7 @@ synonym: "up-regulation of glucagon secretion" EXACT []
 synonym: "upregulation of glucagon secretion" EXACT []
 is_a: GO:0070092 ! regulation of glucagon secretion
 is_a: GO:0090277 ! positive regulation of peptide hormone secretion
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0070091 ! positively regulates glucagon secretion
 relationship: RO:0002213 GO:0070091 ! positively regulates glucagon secretion
 
@@ -27164,7 +27198,7 @@ synonym: "regulation of mitochondrial protein formation" EXACT []
 synonym: "regulation of mitochondrial protein synthesis" EXACT []
 is_a: GO:0006417 ! regulation of translation
 is_a: GO:0062125 ! regulation of mitochondrial gene expression
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0032543 ! regulates mitochondrial translation
 relationship: RO:0002211 GO:0032543 ! regulates mitochondrial translation
 
@@ -27178,7 +27212,7 @@ synonym: "negative regulation of mitochondrial protein formation" EXACT []
 synonym: "negative regulation of mitochondrial protein synthesis" EXACT []
 is_a: GO:0017148 ! negative regulation of translation
 is_a: GO:0070129 ! regulation of mitochondrial translation
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0032543 ! negatively regulates mitochondrial translation
 relationship: RO:0002212 GO:0032543 ! negatively regulates mitochondrial translation
 
@@ -27192,7 +27226,7 @@ synonym: "positive regulation of mitochondrial protein formation" EXACT []
 synonym: "positive regulation of mitochondrial protein synthesis" EXACT []
 is_a: GO:0045727 ! positive regulation of translation
 is_a: GO:0070129 ! regulation of mitochondrial translation
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0032543 ! positively regulates mitochondrial translation
 relationship: RO:0002213 GO:0032543 ! positively regulates mitochondrial translation
 
@@ -27203,7 +27237,7 @@ def: "Any process that modulates the frequency, rate or extent of the process pr
 synonym: "regulation of mitochondrial translation initiation" EXACT []
 is_a: GO:0006446 ! regulation of translational initiation
 is_a: GO:0070129 ! regulation of mitochondrial translation
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0070124 ! regulates mitochondrial translational initiation
 relationship: RO:0002211 GO:0070124 ! regulates mitochondrial translational initiation
 
@@ -27215,7 +27249,7 @@ synonym: "negative regulation of mitochondrial translation initiation" EXACT []
 is_a: GO:0045947 ! negative regulation of translational initiation
 is_a: GO:0070130 ! negative regulation of mitochondrial translation
 is_a: GO:0070132 ! regulation of mitochondrial translational initiation
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0070124 ! negatively regulates mitochondrial translational initiation
 relationship: RO:0002212 GO:0070124 ! negatively regulates mitochondrial translational initiation
 
@@ -27227,7 +27261,7 @@ synonym: "positive regulation of mitochondrial translation initiation" EXACT []
 is_a: GO:0045948 ! positive regulation of translational initiation
 is_a: GO:0070131 ! positive regulation of mitochondrial translation
 is_a: GO:0070132 ! regulation of mitochondrial translational initiation
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0070124 ! positively regulates mitochondrial translational initiation
 relationship: RO:0002213 GO:0070124 ! positively regulates mitochondrial translational initiation
 
@@ -27255,7 +27289,7 @@ name: regulation of establishment of protein localization
 def: "Any process that modulates the frequency, rate or extent of the directed movement of a protein to a specific location." []
 synonym: "regulation of establishment of protein localisation" EXACT []
 is_a: GO:0032880 ! regulation of protein localization
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0045184 ! regulates establishment of protein localization
 relationship: RO:0002211 GO:0045184 ! regulates establishment of protein localization
 
@@ -27284,7 +27318,7 @@ is_a: GO:0044070 ! regulation of anion transport
 is_a: GO:0050878 ! regulation of body fluid levels
 is_a: GO:0051046 ! regulation of secretion
 is_a: GO:0051239 ! regulation of multicellular organismal process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0070254 ! regulates mucus secretion
 relationship: RO:0002211 GO:0070254 ! regulates mucus secretion
 
@@ -27297,7 +27331,7 @@ is_a: GO:0051048 ! negative regulation of secretion
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:0070255 ! regulation of mucus secretion
 is_a: GO:1903792 ! negative regulation of anion transport
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0070254 ! negatively regulates mucus secretion
 relationship: RO:0002212 GO:0070254 ! negatively regulates mucus secretion
 
@@ -27310,7 +27344,7 @@ is_a: GO:0051047 ! positive regulation of secretion
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:0070255 ! regulation of mucus secretion
 is_a: GO:1903793 ! positive regulation of anion transport
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0070254 ! positively regulates mucus secretion
 relationship: RO:0002213 GO:0070254 ! positively regulates mucus secretion
 
@@ -27380,7 +27414,7 @@ synonym: "regulation of microtubule cytoskeleton organisation" EXACT []
 synonym: "regulation of microtubule dynamics" EXACT []
 is_a: GO:0032886 ! regulation of microtubule-based process
 is_a: GO:0051493 ! regulation of cytoskeleton organization
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0000226 ! regulates microtubule cytoskeleton organization
 relationship: RO:0002211 GO:0000226 ! regulates microtubule cytoskeleton organization
 
@@ -27402,7 +27436,7 @@ synonym: "regulation of VDR signaling pathway" EXACT []
 synonym: "regulation of vitamin D receptor signalling pathway" EXACT []
 is_a: GO:0009966 ! regulation of signal transduction
 is_a: GO:0032107 ! regulation of response to nutrient levels
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0070561 ! regulates vitamin D receptor signaling pathway
 relationship: RO:0002211 GO:0070561 ! regulates vitamin D receptor signaling pathway
 
@@ -27419,7 +27453,7 @@ synonym: "negative regulation of VDR signalling pathway" EXACT []
 synonym: "negative regulation vitamin D receptor signalling pathway" EXACT []
 is_a: GO:0009968 ! negative regulation of signal transduction
 is_a: GO:0070562 ! regulation of vitamin D receptor signaling pathway
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0070561 ! negatively regulates vitamin D receptor signaling pathway
 relationship: RO:0002212 GO:0070561 ! negatively regulates vitamin D receptor signaling pathway
 
@@ -27436,7 +27470,7 @@ synonym: "up-regulation of vitamin D receptor signaling pathway" EXACT []
 synonym: "upregulation of vitamin D receptor signaling pathway" EXACT []
 is_a: GO:0009967 ! positive regulation of signal transduction
 is_a: GO:0070562 ! regulation of vitamin D receptor signaling pathway
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0070561 ! positively regulates vitamin D receptor signaling pathway
 relationship: RO:0002213 GO:0070561 ! positively regulates vitamin D receptor signaling pathway
 
@@ -27456,7 +27490,7 @@ def: "Any process that modulates the frequency, rate or extent of protein proces
 synonym: "regulation of protein maturation by peptide bond cleavage" EXACT []
 is_a: GO:0030162 ! regulation of proteolysis
 is_a: GO:1903317 ! regulation of protein maturation
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0016485 ! regulates protein processing
 relationship: RO:0002211 GO:0016485 ! regulates protein processing
 
@@ -27516,7 +27550,7 @@ is_a: GO:0010565 ! regulation of cellular ketone metabolic process
 is_a: GO:0031326 ! regulation of cellular biosynthetic process
 is_a: GO:0050810 ! regulation of steroid biosynthetic process
 is_a: GO:1904251 ! regulation of bile acid metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0006699 ! regulates bile acid biosynthetic process
 relationship: RO:0002211 GO:0006699 ! regulates bile acid biosynthetic process
 
@@ -27536,7 +27570,7 @@ is_a: GO:0010894 ! negative regulation of steroid biosynthetic process
 is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
 is_a: GO:0070857 ! regulation of bile acid biosynthetic process
 is_a: GO:1904252 ! negative regulation of bile acid metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0006699 ! negatively regulates bile acid biosynthetic process
 relationship: RO:0002212 GO:0006699 ! negatively regulates bile acid biosynthetic process
 
@@ -27557,7 +27591,7 @@ is_a: GO:0010893 ! positive regulation of steroid biosynthetic process
 is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
 is_a: GO:0070857 ! regulation of bile acid biosynthetic process
 is_a: GO:1904253 ! positive regulation of bile acid metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0006699 ! positively regulates bile acid biosynthetic process
 relationship: RO:0002213 GO:0006699 ! positively regulates bile acid biosynthetic process
 
@@ -27569,7 +27603,7 @@ synonym: "regulation of glycogen metabolism" EXACT []
 is_a: GO:0010906 ! regulation of glucose metabolic process
 is_a: GO:0032881 ! regulation of polysaccharide metabolic process
 is_a: GO:0043467 ! regulation of generation of precursor metabolites and energy
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0005977 ! regulates glycogen metabolic process
 relationship: RO:0002211 GO:0005977 ! regulates glycogen metabolic process
 
@@ -27581,7 +27615,7 @@ synonym: "negative regulation of glycogen metabolism" EXACT []
 is_a: GO:0010605 ! negative regulation of macromolecule metabolic process
 is_a: GO:0010677 ! negative regulation of cellular carbohydrate metabolic process
 is_a: GO:0070873 ! regulation of glycogen metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0005977 ! negatively regulates glycogen metabolic process
 relationship: RO:0002212 GO:0005977 ! negatively regulates glycogen metabolic process
 
@@ -27593,7 +27627,7 @@ synonym: "positive regulation of glycogen metabolism" EXACT []
 is_a: GO:0010604 ! positive regulation of macromolecule metabolic process
 is_a: GO:0010907 ! positive regulation of glucose metabolic process
 is_a: GO:0070873 ! regulation of glycogen metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0005977 ! positively regulates glycogen metabolic process
 relationship: RO:0002213 GO:0005977 ! positively regulates glycogen metabolic process
 
@@ -27641,7 +27675,7 @@ synonym: "regulation of phospholipid synthesis" EXACT []
 is_a: GO:0031326 ! regulation of cellular biosynthetic process
 is_a: GO:0046890 ! regulation of lipid biosynthetic process
 is_a: GO:1903725 ! regulation of phospholipid metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0008654 ! regulates phospholipid biosynthetic process
 relationship: RO:0002211 GO:0008654 ! regulates phospholipid biosynthetic process
 
@@ -27661,7 +27695,7 @@ is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
 is_a: GO:0051055 ! negative regulation of lipid biosynthetic process
 is_a: GO:0071071 ! regulation of phospholipid biosynthetic process
 is_a: GO:1903726 ! negative regulation of phospholipid metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0008654 ! negatively regulates phospholipid biosynthetic process
 relationship: RO:0002212 GO:0008654 ! negatively regulates phospholipid biosynthetic process
 
@@ -27682,7 +27716,7 @@ is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
 is_a: GO:0046889 ! positive regulation of lipid biosynthetic process
 is_a: GO:0071071 ! regulation of phospholipid biosynthetic process
 is_a: GO:1903727 ! positive regulation of phospholipid metabolic process
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0008654 ! positively regulates phospholipid biosynthetic process
 relationship: RO:0002213 GO:0008654 ! positively regulates phospholipid biosynthetic process
 
@@ -27848,7 +27882,7 @@ id: GO:0071622
 name: regulation of granulocyte chemotaxis
 def: "Any process that modulates the rate, frequency or extent of granulocyte chemotaxis. Granulocyte chemotaxis is the movement of a granulocyte in response to an external stimulus." []
 is_a: GO:0002688 ! regulation of leukocyte chemotaxis
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0071621 ! regulates granulocyte chemotaxis
 relationship: RO:0002211 GO:0071621 ! regulates granulocyte chemotaxis
 
@@ -27858,7 +27892,7 @@ name: negative regulation of granulocyte chemotaxis
 def: "Any process that decreases the rate, frequency or extent of granulocyte chemotaxis. Granulocyte chemotaxis is the movement of a granulocyte in response to an external stimulus." []
 is_a: GO:0002689 ! negative regulation of leukocyte chemotaxis
 is_a: GO:0071622 ! regulation of granulocyte chemotaxis
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0071621 ! negatively regulates granulocyte chemotaxis
 relationship: RO:0002212 GO:0071621 ! negatively regulates granulocyte chemotaxis
 
@@ -27868,7 +27902,7 @@ name: positive regulation of granulocyte chemotaxis
 def: "Any process that increases the rate, frequency or extent of granulocyte chemotaxis. Granulocyte chemotaxis is the movement of a granulocyte in response to an external stimulus." []
 is_a: GO:0002690 ! positive regulation of leukocyte chemotaxis
 is_a: GO:0071622 ! regulation of granulocyte chemotaxis
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0071621 ! positively regulates granulocyte chemotaxis
 relationship: RO:0002213 GO:0071621 ! positively regulates granulocyte chemotaxis
 
@@ -28030,7 +28064,7 @@ id: GO:0071900
 name: regulation of protein serine/threonine kinase activity
 def: "Any process that modulates the rate, frequency, or extent of protein serine/threonine kinase activity." []
 is_a: GO:0045859 ! regulation of protein kinase activity
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0004674 ! regulates protein serine/threonine kinase activity
 relationship: RO:0002211 GO:0004674 ! regulates protein serine/threonine kinase activity
 
@@ -28040,7 +28074,7 @@ name: negative regulation of protein serine/threonine kinase activity
 def: "Any process that decreases the rate, frequency, or extent of protein serine/threonine kinase activity." []
 is_a: GO:0006469 ! negative regulation of protein kinase activity
 is_a: GO:0071900 ! regulation of protein serine/threonine kinase activity
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0004674 ! negatively regulates protein serine/threonine kinase activity
 relationship: RO:0002212 GO:0004674 ! negatively regulates protein serine/threonine kinase activity
 
@@ -28050,7 +28084,7 @@ name: positive regulation of protein serine/threonine kinase activity
 def: "Any process that increases the rate, frequency, or extent of protein serine/threonine kinase activity." []
 is_a: GO:0045860 ! positive regulation of protein kinase activity
 is_a: GO:0071900 ! regulation of protein serine/threonine kinase activity
-intersection_of: GO:0008150 ! biological_process
+intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0004674 ! positively regulates protein serine/threonine kinase activity
 relationship: RO:0002213 GO:0004674 ! positively regulates protein serine/threonine kinase activity
 
@@ -28978,17 +29012,17 @@ relationship: BFO:0000050 GO:0008015 ! part of blood circulation
 
 [Term]
 id: GO:0097755
-name: positive regulation of blood vessel diameter
-def: "Any process that increases the diameter of blood vessels." []
+name: obsolete positive regulation of blood vessel diameter
+def: "OBSOLETE. Any process that increases the diameter of blood vessels." []
 synonym: "positive regulation of vasodilation" RELATED []
-is_a: GO:0097746 ! blood vessel diameter maintenance
+is_obsolete: true
 
 [Term]
 id: GO:0097756
-name: negative regulation of blood vessel diameter
-def: "Any process that decreases the diameter of blood vessels." []
+name: obsolete negative regulation of blood vessel diameter
+def: "OBSOLETE. Any process that decreases the diameter of blood vessels." []
 synonym: "negative regulation of vasodilation" RELATED []
-is_a: GO:0097746 ! blood vessel diameter maintenance
+is_obsolete: true
 
 [Term]
 id: GO:0098531
@@ -29002,6 +29036,10 @@ is_a: GO:0003700 ! DNA-binding transcription factor activity
 id: GO:0098542
 name: defense response to other organism
 def: "Reactions triggered in response to the presence of another organism that act to protect the cell or organism from damage caused by that organism." []
+synonym: "defence response incompatible interaction" NARROW []
+synonym: "defence response to pathogen, incompatible interaction" NARROW []
+synonym: "defense response, incompatible interaction" NARROW []
+synonym: "resistance response to pathogen" NARROW []
 is_a: GO:0006952 ! defense response
 is_a: GO:0051707 ! response to other organism
 
@@ -30219,6 +30257,7 @@ id: GO:0150073
 name: regulation of protein-glutamine gamma-glutamyltransferase activity
 def: "Any process that modulates the frequency, rate or extent of protein-glutamine gamma-glutamyltransferase activity." []
 is_a: GO:0051338 ! regulation of transferase activity
+is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0003810 ! regulates protein-glutamine gamma-glutamyltransferase activity
 relationship: RO:0002211 GO:0003810 ! regulates protein-glutamine gamma-glutamyltransferase activity
@@ -30797,7 +30836,13 @@ def: "Any process that modulates the frequency, rate or extent of defense respon
 synonym: "regulation of antibacterial peptide activity" RELATED []
 synonym: "regulation of defence response to bacteria" EXACT []
 synonym: "regulation of defence response to bacterium" EXACT []
+synonym: "regulation of defence response to bacterium, incompatible interaction" NARROW []
+synonym: "regulation of defence response to pathogenic bacteria, incompatible interaction" NARROW []
+synonym: "regulation of defence response to pathogenic bacterium, incompatible interaction" NARROW []
 synonym: "regulation of defense response to bacteria" EXACT []
+synonym: "regulation of defense response to bacterium, incompatible interaction" NARROW []
+synonym: "regulation of resistance response to pathogenic bacteria" NARROW []
+synonym: "regulation of resistance response to pathogenic bacterium" NARROW []
 is_a: GO:0002831 ! regulation of response to biotic stimulus
 is_a: GO:0031347 ! regulation of defense response
 is_a: GO:0032101 ! regulation of response to external stimulus
@@ -30827,12 +30872,20 @@ synonym: "downregulation of defense response to bacterium" EXACT []
 synonym: "inhibition of antibacterial peptide activity" RELATED []
 synonym: "inhibition of defence response to bacteria" EXACT []
 synonym: "inhibition of defence response to bacterium" EXACT []
+synonym: "inhibition of defence response to pathogenic bacteria, incompatible interaction" NARROW []
+synonym: "inhibition of defence response to pathogenic bacterium, incompatible interaction" NARROW []
 synonym: "inhibition of defense response to bacteria" EXACT []
 synonym: "inhibition of defense response to bacterium" NARROW []
+synonym: "inhibition of defense response to bacterium, incompatible interaction" NARROW []
+synonym: "inhibition of resistance response to pathogenic bacteria" NARROW []
+synonym: "inhibition of resistance response to pathogenic bacterium" NARROW []
+synonym: "inhibition of response to pathogenic bacteria (incompatible interaction)" NARROW []
+synonym: "inhibition of response to pathogenic bacterium (incompatible interaction)" NARROW []
 synonym: "negative regulation of antibacterial peptide activity" RELATED []
 synonym: "negative regulation of defence response to bacteria" EXACT []
 synonym: "negative regulation of defence response to bacterium" EXACT []
 synonym: "negative regulation of defense response to bacteria" EXACT []
+synonym: "negative regulation of defense response to bacterium, incompatible interaction" NARROW []
 is_a: GO:0002832 ! negative regulation of response to biotic stimulus
 is_a: GO:0031348 ! negative regulation of defense response
 is_a: GO:0032102 ! negative regulation of response to external stimulus
@@ -30850,10 +30903,13 @@ synonym: "activation of defence response to bacteria" EXACT []
 synonym: "activation of defence response to bacterium" EXACT []
 synonym: "activation of defense response to bacteria" EXACT []
 synonym: "activation of defense response to bacterium" NARROW []
+synonym: "activation of resistance response to pathogenic bacteria" NARROW []
+synonym: "activation of resistance response to pathogenic bacterium" NARROW []
 synonym: "positive regulation of antibacterial peptide activity" RELATED []
 synonym: "positive regulation of defence response to bacteria" EXACT []
 synonym: "positive regulation of defence response to bacterium" EXACT []
 synonym: "positive regulation of defense response to bacteria" EXACT []
+synonym: "positive regulation of defense response to bacterium, incompatible interaction" NARROW []
 synonym: "up regulation of antibacterial peptide activity" RELATED []
 synonym: "up regulation of defence response to bacteria" EXACT []
 synonym: "up regulation of defence response to bacterium" EXACT []
@@ -33144,6 +33200,7 @@ id: GO:1903027
 name: regulation of opsonization
 def: "Any process that modulates the frequency, rate or extent of opsonization." []
 is_a: GO:0002697 ! regulation of immune effector process
+is_a: GO:0050794 ! regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002211 GO:0008228 ! regulates opsonization
 relationship: RO:0002211 GO:0008228 ! regulates opsonization
@@ -37660,6 +37717,7 @@ id: GO:2000272
 name: negative regulation of signaling receptor activity
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of a signaling receptor activity." []
 synonym: "negative regulation of receptor activity" BROAD []
+synonym: "negative regulation of signalling receptor activity" EXACT []
 is_a: GO:0010469 ! regulation of signaling receptor activity
 is_a: GO:0044092 ! negative regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
@@ -37670,6 +37728,7 @@ relationship: RO:0002212 GO:0038023 ! negatively regulates signaling receptor ac
 id: GO:2000273
 name: positive regulation of signaling receptor activity
 def: "Any process that activates or increases the frequency, rate or extent of signaling receptor activity." []
+synonym: "positive regulation of signalling receptor activity" EXACT []
 is_a: GO:0010469 ! regulation of signaling receptor activity
 is_a: GO:0044093 ! positive regulation of molecular function
 intersection_of: GO:0008150 ! biological_process

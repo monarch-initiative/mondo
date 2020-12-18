@@ -1,5 +1,15 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-02/imports/foodon_import.owl
+data-version: mondo/releases/2020-12-18/imports/foodon_import.owl
+subsetdef: Angiosperm ""
+subsetdef: Arabidopsis ""
+subsetdef: Citrus ""
+subsetdef: Gymnosperms ""
+subsetdef: Maize ""
+subsetdef: Poaceae ""
+subsetdef: reference ""
+subsetdef: Rice ""
+subsetdef: Tomato ""
+subsetdef: TraitNet ""
 ontology: mondo/imports/foodon_import
 
 [Term]
@@ -24,12 +34,14 @@ name: continuant
 def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
 is_a: BFO:0000001 ! entity
 disjoint_from: BFO:0000003 ! occurrent
+relationship: BFO:0000050 BFO:0000002 ! part of continuant
 property_value: BFO:0000179 "continuant" xsd:string
 property_value: BFO:0000180 "Continuant" xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
 property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
@@ -47,6 +59,7 @@ id: BFO:0000003
 name: occurrent
 def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
 is_a: BFO:0000001 ! entity
+relationship: BFO:0000050 BFO:0000003 ! part of occurrent
 property_value: BFO:0000179 "occurrent" xsd:string
 property_value: BFO:0000180 "Occurrent" xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: every occurrent that is not a temporal or spatiotemporal region is s-dependent on some independent continuant that is not a spatial region" xsd:string
@@ -71,6 +84,7 @@ def: "b is an independent continuant = Def. b is a continuant which is such that
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000031 ! generically dependent continuant
+relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
 property_value: BFO:0000179 "ic" xsd:string
 property_value: BFO:0000180 "IndependentContinuant" xsd:string
 property_value: IAO:0000112 "a chair" xsd:string
@@ -135,6 +149,7 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
+def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
 is_a: BFO:0000002 ! continuant
 property_value: BFO:0000179 "sdc" xsd:string
@@ -151,6 +166,7 @@ property_value: IAO:0000112 "the role of being a doctor" xsd:string
 property_value: IAO:0000112 "the shape of this hole." xsd:string
 property_value: IAO:0000112 "the smell of this portion of mozzarella" xsd:string
 property_value: IAO:0000116 "Specifically dependent continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. We're not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc." xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000005", comment="per discussion with Barry Smith"}
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 property_value: IAO:0000602 "(iff (SpecificallyDependentContinuant a) (and (Continuant a) (forall (t) (if (existsAt a t) (exists (b) (and (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))))))) // axiom label in BFO2 CLIF: [050-003] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
@@ -286,11 +302,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 id: FOODON:00001002
 name: food product
 def: "Food material for humans and animals which is processed with the intention that it be consumable as a whole or added to other food products." []
-comment: The FoodOn "food product" class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.
 is_a: FOODON:00002403 ! food material
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000118 "Foodon product type" xsd:string
-property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food xsd:anyURI
 
 [Term]
 id: FOODON:00001015
@@ -352,13 +364,14 @@ relationship: RO:0001000 FOODON:03411312 ! derives from wheat plant
 
 [Term]
 id: FOODON:00001143
-name: fungal food product
-def: "Fungal food products include edible fungi, mushrooms, and yeast." []
+name: fungus food product
+def: "A food product consisting of an edible fungi or mushroom or yeast." []
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: RO:0001000 FOODON:03411261 ! derives from fungus
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000119 "In_food"
 property_value: seeAlso http://www.asmscience.org/content/journal/microbiolspec/10.1128/microbiolspec.FUNK-0030-2016 xsd:anyURI
 
 [Term]
@@ -565,7 +578,7 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 [Term]
 id: FOODON:00002403
 name: food material
-def: "Food material is any substance that can be consumed by an organism to satisfy nutritional or other health needs, or to provide a social or organoleptic food experience" []
+def: "Any substance that can be consumed by an organism to satisfy nutritional or other health needs, or to provide a social or organoleptic food experience" []
 synonym: "food" EXACT []
 synonym: "foodstuff" EXACT []
 synonym: "nourishment" EXACT []
@@ -594,8 +607,6 @@ id: FOODON:00002454
 name: food product by quality
 def: "A class which contains food product categories qualified by a quality such as granularity or temperature, which is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like \"food (frozen)\" are both a quality descriptor and the output of a process." []
 is_a: FOODON:00001002 ! food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002470
@@ -1117,8 +1128,6 @@ is_a: FOODON:03411998 ! decapod
 [Term]
 id: FOODON:03411347
 name: obsolete: plant
-def: "A multicellular eukaryote organism of the kingdom Plantae." []
-is_a: FOODON:03411564 ! food product organismal source
 is_obsolete: true
 replaced_by: PO:0000003
 
@@ -1193,15 +1202,16 @@ is_a: FOODON:03411142 ! aquatic invertebrate animal (excluding shellfish)
 
 [Term]
 id: FOODON:03412611
-name: obsolete: doe (goat)
-is_obsolete: true
-replaced_by: NCBITaxon:9925
+name: doe (goat)
+def: "A female goat" []
+synonym: "nanny goat" EXACT []
+is_a: NCBITaxon:9925 ! Capra hircus
 
 [Term]
 id: FOODON:03412702
-name: obsolete: kid
-is_obsolete: true
-replaced_by: NCBITaxon:9925
+name: kid (goat)
+def: "A young goat" []
+is_a: NCBITaxon:9925 ! Capra hircus
 
 [Term]
 id: FOODON:03412846
@@ -1291,6 +1301,12 @@ id: FOODON:03420164
 name: part of animal
 def: "Anatomical part of an animal; includes eggs and milk that, although separated from the animal, are produced as integral parts and are affected by the animal's food intake and metabolism." []
 is_a: FOODON:03420116 ! part of organism
+
+[Term]
+id: FOODON:03420165
+name: obsolete: fruit or seed
+xref: langual:thesaurus.asp?termid=C0165
+is_obsolete: true
 
 [Term]
 id: FOODON:03420167
@@ -1386,6 +1402,12 @@ def: "A pollen-bearing organ in a flower, made up of a slender stalk (filament) 
 is_a: FOODON:03420237 ! floret or flower
 
 [Term]
+id: FOODON:03430113
+name: food physical quality
+def: "The physical state of the food product (liquid, semiliquid, semisolid, or solid). Solid food products are further subdivided by shape or form. Terms are provided for products that have both liquid and solid components or that incorporate air or other gases. [FDA CFSAN 1995]" []
+is_a: FOODON:00002470 ! food object quality
+
+[Term]
 id: FOODON:03430130
 name: food (liquid)
 def: "A state of matter between a solid and a gas, in which a substance has the capacity to flow and conforms to the shape of the container. Liquids range from water to honey, corresponding to a range in viscosity (or apparent viscosity) from 1 to 500 centipoise (viscosity is a measure of a liquid's resistance to flow). Products that are pourable but have a higher viscosity are *SEMILIQUID*." []
@@ -1394,6 +1416,17 @@ xref: SUBSET_SIREN:F5105
 is_a: FOODON:00002454 ! food product by quality
 intersection_of: FOODON:00002454 ! food product by quality
 intersection_of: RO:0000086 PATO:0001548 ! has quality quality of a liquid
+
+[Term]
+id: FOODON:03430131
+name: whole
+def: "Refers to natural or formed shape as appropriate, regardless of size, which may vary from very large (e.g., beef carcass) to very small (e.g., poppy seed, yeast cell)." []
+is_a: FOODON:03430113 ! food physical quality
+
+[Term]
+id: FOODON:03430150
+name: whole, natural shape
+is_a: FOODON:03430131 ! whole
 
 [Term]
 id: FOODON:03460111
@@ -1759,7 +1792,36 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 [Term]
 id: PO:0000003
 name: whole plant
+namespace: plant_anatomy
 def: "A plant structure (PO:0005679) which is a whole organism." []
+comment: Examples include plant embryo (PO:0009009), megagametophyte (PO:0025279) and microgametophyte (PO:0025280).
+subset: reference
+subset: TraitNet
+synonym: "bush (narrow)" NARROW []
+synonym: "clonal colony (related)" RELATED []
+synonym: "colony (related)" RELATED []
+synonym: "frutex (narrow)" NARROW []
+synonym: "frutices (narrow)" NARROW []
+synonym: "gametophyte (narrow)" NARROW []
+synonym: "genet (broad)" BROAD []
+synonym: "herb (narrow)" NARROW []
+synonym: "liana (narrow)" NARROW []
+synonym: "planta entera (Spanish, exact)" EXACT []
+synonym: "prothalli (narrow)" NARROW []
+synonym: "prothallium (narrow)" NARROW []
+synonym: "prothallus (narrow)" NARROW []
+synonym: "ramet (broad)" BROAD []
+synonym: "seedling (narrow)" NARROW []
+synonym: "shrub (narrow)" NARROW []
+synonym: "sporophyte (narrow)" NARROW []
+synonym: "suffrutex (narrow)" NARROW []
+synonym: "suffrutices (narrow)" NARROW []
+synonym: "tree (narrow)" NARROW []
+synonym: "vine (narrow)" NARROW []
+synonym: "woody clump (narrow)" NARROW []
+synonym: "植物体全体 (Japanese, exact)" EXACT []
+xref: PO_GIT:538
+xref: PO_GIT:69
 is_a: FOODON:03411564 ! food product organismal source
 is_a: PO:0009011 ! plant structure
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
@@ -1767,63 +1829,350 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 [Term]
 id: PO:0009001
 name: fruit
+namespace: plant_anatomy
+alt_id: PO:0020067
+alt_id: PO:0020068
+alt_id: PO:0020069
+alt_id: PO:0020070
+alt_id: PO:0020071
+alt_id: PO:0020072
+alt_id: PO:0020073
+alt_id: PO:0020074
+alt_id: PO:0020076
+alt_id: PO:0020077
+alt_id: PO:0020078
+alt_id: PO:0020079
+alt_id: PO:0020080
+alt_id: PO:0020082
+alt_id: PO:0020083
+alt_id: PO:0020087
+alt_id: PO:0020107
 def: "A multi-tissue plant structure (PO:0025496) that develops from a gynoecium (PO:0009062), or a single carpel (PO:0009030), and at maturity may have as parts one or more seeds (PO:0009010)." []
+comment: A fruit (PO:0009001) may contain additional plant structures (PO:0009011) that were part of a flower (PO:0009046) and mature along with the gynoecium, such as a receptacle (PO:0009064). A fruit may develop without fertilization in cases of parthenocarpy, apomixis, or other hormone-induced conditions and may not always contain seeds (PO:0009010). When annotating to fruit (PO:0009001) that are referred to as ‘aggregate’, ‘multiple’, or ‘compound’, please annotate directly to the appropriate plant structure, such as receptacle, hypanthium (PO:0009065) or infructescence (PO:0006342). Fruits only occur in angiosperms.
+subset: Angiosperm
+subset: Arabidopsis
+subset: Maize
+subset: Poaceae
+subset: Rice
+subset: TraitNet
+synonym: "aggregate fruit  (broad)" BROAD []
+synonym: "coenocarp (narrow)" NARROW []
+synonym: "compound fruit  (broad)" BROAD []
+synonym: "dehiscent fruit  (broad)" BROAD []
+synonym: "diaspore  (broad)" BROAD []
+synonym: "frucht (exact, German)" EXACT []
+synonym: "fruto (exact, Spanish)" EXACT []
+synonym: "indehiscent fruit  (broad)" BROAD []
+synonym: "multiple fruit  (broad)" BROAD []
+synonym: "propagule  (broad)" BROAD []
+synonym: "syncarp (narrow)" NARROW []
+synonym: "果実 (exact, Japanese)" EXACT []
+xref: PO_GIT:76
 is_a: PO:0025496 ! multi-tissue plant structure
+relationship: RO:0000086 FOODON:03430150 ! has quality whole, natural shape
+relationship: RO:0002202 PO:0009062 ! develops from gynoecium
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009007
 name: portion of plant tissue
+namespace: plant_anatomy
 def: "A plant structure (PO:0009011) that consists predominantly of similarly specialized plant cells (PO:0009002) of one or more types." []
+comment: A portion of plant tissue may contain one or several types of cells that are organized in a specific spatial arrangement into a structural unit (which includes a mass of callus) and may include an intercellular matrix. May include other types of isolated cells, such as idioblasts.
+subset: reference
+subset: TraitNet
+synonym: "plant tissue (related)" RELATED []
+synonym: "porci&#243n de un tejido vegetal (Spanish, exact)" EXACT []
+synonym: "portion of tissue (broad)" BROAD []
+synonym: "tissue (broad)" BROAD []
+synonym: "植物組織の一部 (Japanese, exact)" EXACT []
+xref: PO_GIT:59
 is_a: PO:0009011 ! plant structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009008
+name: plant organ
+namespace: plant_anatomy
+def: "A multi-tissue plant structure (PO:0025496) that is a functional unit, is a proper part of a whole plant (PO:0000003), and includes portions of plant tissue (PO:0009007) of at least two different types that derive from a common developmental path." []
+comment: Examples include stem (PO:0009047), leaf (PO:0025034), and root (PO:0009005). May include individual plant cells (PO:0009002) that are not part of a portion of plant tissue (e.g., idioblasts, PO:0000283). A plant organ may have one or more different plant organs as parts, such as a sporophyll (PO:0009026) that may have as part a sporangium (PO:0025094) or a carpel (PO:0009030) that may have as part a plant ovule (PO:0020003).
+subset: TraitNet
+synonym: "&#243rgano vegetal (Spanish, exact)" EXACT []
+synonym: "compound plant organ (related)" RELATED []
+synonym: "organ (broad)" BROAD []
+synonym: "simple plant organ (related)" RELATED []
+synonym: "植物 器官 (Japanese, exact)" EXACT []
+xref: PO_GIT:55
+is_a: PO:0025496 ! multi-tissue plant structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009009
+name: plant embryo
+def: "A whole plant (PO:0000003) that participates in the plant embryo stage (PO:0007631)." []
+is_a: PO:0000003 ! whole plant
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009010
 name: seed
+namespace: plant_anatomy
 def: "A multi-tissue plant structure (PO:0025496) that develops from a plant ovule (PO:0020003) and has as parts a plant embryo (PO:0009009) enclosed in a seed coat (PO:0009088)." []
+comment: A seed generally develops from an ovule (PO:0020003) after fertilization, but may develop without fertilization in the case of apogamy (e.g., adventitious embryos or somatic embryos). A seed is a reproductive unit of seed plants (gymnosperms, angiosperms, and fossil pteridosperms).
+subset: Angiosperm
+subset: Arabidopsis
+subset: Citrus
+subset: Gymnosperms
+subset: Maize
+subset: Poaceae
+subset: Rice
+subset: Tomato
+subset: TraitNet
+synonym: "diaspore (broad)" BROAD []
+synonym: "pyrene (narrow)" NARROW []
+synonym: "semilla (Spanish, exact)" EXACT []
+synonym: "種子 (Japanese, exact)" EXACT []
+xref: PO_GIT:405
 is_a: PO:0025496 ! multi-tissue plant structure
+relationship: BFO:0000051 PO:0009009 ! has_part plant embryo
+relationship: RO:0002202 PO:0020003 ! develops from plant ovule
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009011
 name: plant structure
+namespace: plant_anatomy
 def: "A plant anatomical entity (PO:0025131) that is, or was, part of a plant, or was derived from a part of a plant." []
+comment: 'Part' includes both proper parts and the whole plant. CARO:0000003 'connected anatomical structure' is defined as: Material anatomical entity that is a single connected structure with inherent 3D shape, generated by coordinated expression of the organism's own genome.
+subset: TraitNet
+synonym: "estructura vegetal (Spanish, exact)" EXACT []
+synonym: "植物 構造 (Japanese, exact)" EXACT []
+xref: PO_GIT:57
 is_a: FOODON:03420116 ! part of organism
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009062
+name: gynoecium
+def: "A collective phyllome structure (PO:0025023) composed all of the carpels (PO:0009030) in a flower (PO:0009046)." []
+is_a: PO:0025023 ! collective phyllome structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009084
+name: pericarp
+namespace: plant_anatomy
+def: "A portion of plant tissue (PO:0009007) that is the outer layer (wall) of a fruit (PO:0009001), and develops from a plant ovary (PO:0009072) or a carpel (PO:0009030) wall." []
+comment: Pericarp comprises endocarp (PO:0009086), mesocarp (PO:0009087), and exocarp (PO:0009085) layers, each of which can be fleshy or dry. If you are annotating to this term, please add an additional annotation to the specific type of fruit (PO:0009001), such as achene fruit (PO:0030107), berry fruit (PO:0030108), capsule fruit (PO:0030091), caryopsis fruit (PO:0030104), drupe fruit (PO:0030103), follicle fruit (PO:0030105), legume fruit (PO:0030100), nut fruit (PO:0030102), samara fruit (PO:0030099), schizocarp fruit (PO:0030098), silique fruit (PO:0030106), or their subclasses, depending on the species.
+subset: Arabidopsis
+subset: Citrus
+subset: Maize
+subset: Poaceae
+subset: Rice
+subset: Tomato
+synonym: "fruit peel (related)" RELATED []
+synonym: "fruit rind (related)" RELATED []
+synonym: "pericarpo (Spanish, exact)" EXACT []
+synonym: "portion of pericarp tissue (exact)" EXACT []
+synonym: "果皮 (Japanese, exact)" EXACT []
+xref: PO_GIT:149
+xref: PO_GIT:511
+is_a: FOODON:03420167 ! fruit part
+is_a: PO:0009007 ! portion of plant tissue
+intersection_of: BFO:0000051 PO:0009085 ! has_part exocarp
+intersection_of: BFO:0000051 PO:0009086 ! has_part endocarp
+intersection_of: BFO:0000051 PO:0009087 ! has_part mesocarp
+relationship: BFO:0000050 PO:0009001 ! part of fruit
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009085
 name: exocarp
+namespace: plant_anatomy
+alt_id: PO:0006046
+alt_id: PO:0006217
 def: "A portion of plant tissue (PO:0009007) that is the outer layer of a pericarp (PO:0009084)." []
+subset: Citrus
+subset: Tomato
+synonym: "ectocarp (exact)" EXACT []
+synonym: "epicarp (exact)" EXACT []
+synonym: "exocarpo (Spanish, exact)" EXACT []
+synonym: "flavedo (exact)" EXACT []
+synonym: "fruit epidermis (exact)" EXACT []
+synonym: "outer epidermis of pericarp (related)" RELATED []
+synonym: "pericarp epidermis (related)" RELATED []
+synonym: "portion of exocarp tissue (exact)" EXACT []
+synonym: "外果皮 (Japanese, exact)" EXACT []
+xref: PO_GIT:149
+xref: PO_GIT:511
+is_a: FOODON:03420167 ! fruit part
 is_a: PO:0009007 ! portion of plant tissue
+relationship: BFO:0000050 PO:0009084 ! part of pericarp
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009086
+name: endocarp
+namespace: plant_anatomy
+alt_id: PO:0006047
+def: "A portion of plant tissue (PO:0009007) that is the innermost differentiated layer of a pericarp (PO:0009084)." []
+subset: Arabidopsis
+subset: Citrus
+subset: Maize
+subset: Poaceae
+subset: Rice
+subset: Tomato
+synonym: "citrus flesh (related)" RELATED []
+synonym: "citrus pulp (related)" RELATED []
+synonym: "endocarpo (Spanish, exact)" EXACT []
+synonym: "inner epidermis of pericarp (related)" RELATED []
+synonym: "portion of endocarp tissue (exact)" EXACT []
+synonym: "内果皮 (Japanese, exact)" EXACT []
+xref: PO_GIT:149
+xref: PO_GIT:511
+is_a: FOODON:03420167 ! fruit part
+is_a: PO:0009007 ! portion of plant tissue
+relationship: BFO:0000050 PO:0009084 ! part of pericarp
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009087
 name: mesocarp
+namespace: plant_anatomy
 def: "A portion of plant tissue (PO:0009007) that is the middle layer of a pericarp (PO:0009084)." []
+subset: Citrus
+subset: Tomato
+synonym: "albedo (related)" RELATED []
+synonym: "mesocarpo (Spanish, exact)" EXACT []
+synonym: "portion of mesocarp tissue (exact)" EXACT []
+synonym: "中果皮 (Japanese, exact)" EXACT []
+xref: PO_GIT:149
+xref: PO_GIT:511
+is_a: FOODON:03420167 ! fruit part
 is_a: PO:0009007 ! portion of plant tissue
+relationship: BFO:0000050 PO:0009084 ! part of pericarp
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0020003
+name: plant ovule
+def: "A plant organ (PO:0009008) that has as parts a nucellus (PO:0020020) in which a female gametophyte (PO:0025279) is located, one or two integuments (PO:0020021), and a funicle (PO:0020006)." []
+is_a: PO:0009008 ! plant organ
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0025007
+name: collective plant organ structure
+namespace: plant_anatomy
+def: "A collective plant structure (PO:0025497) that is a proper part of a whole plant (PO:0000003), and is composed of two or more adjacent plant organs (PO:0009008) and the associated portions of plant tissue (PO:0009007)." []
+comment: Organs can be of the same type or different types. Examples include flower (PO:0009046), perianth (PO:0009058), and inflorescence (PO:0009049). See also collective organ part structure (PO:0025269), for plant structures composed of parts of multiple organs, but no complete plant organs. This was formerly named collective plant structure.
+subset: TraitNet
+synonym: "estructura vegetal colectiva de &#243rgano (Spanish, exact)" EXACT []
+synonym: "集合植物器官構造 (Japanese, exact)" EXACT []
+xref: PO_GIT:63
+is_a: PO:0025497 ! collective plant structure
+relationship: BFO:0000051 PO:0009008 ! has_part plant organ
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-02-09T04:12:11Z
+
+[Term]
+id: PO:0025023
+name: collective phyllome structure
+namespace: plant_anatomy
+alt_id: PO:0008033
+def: "A collective plant organ structure (PO:0025007) that consists of two or more phyllomes (PO:0006001) originating from the same node or from one or more adjacent nodes with compressed shoot internodes (PO:0005005)." []
+subset: TraitNet
+synonym: "cycle (broad)" BROAD []
+synonym: "estructura colectiva del filoma (Spanish, exact)" EXACT []
+synonym: "floral whorl (narrow)" NARROW []
+synonym: "phyllome whorl (related)" RELATED []
+synonym: "verticil (broad)" BROAD []
+synonym: "whorl (narrow)" NARROW []
+synonym: "葉的器官が集まった構造 (Japanese, exact)" EXACT []
+xref: PO_GIT:90
+xref: PO_GIT:99
+is_a: PO:0025007 ! collective plant organ structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: Laurel_Cooper
+creation_date: 2010-04-28T11:04:34Z
+
+[Term]
+id: PO:0025099
+name: embryo plant structure
+namespace: plant_anatomy
+def: "A plant structure (PO:0009011) that is part of an plant embryo (PO:0009009)." []
+comment: Includes plant structures that only occur in embryos (such as suspensor) as well as plant structures that are part of an embryo when a plant is in the embryonic phase (such as embryonic radicle).
+synonym: "embryonic plant structure (exact)" EXACT []
+synonym: "estructura vegetal embri&#243nica (Spanish, exact)" EXACT []
+synonym: "胚性植物構造 (Japanese, exact)" EXACT []
+xref: PO_GIT:245
+xref: PO_GIT:339
+is_a: PO:0009011 ! plant structure
+intersection_of: PO:0009011 ! plant structure
+intersection_of: BFO:0000050 PO:0009009 ! part of plant embryo
+relationship: BFO:0000050 PO:0009009 ! part of plant embryo
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-11-05T01:36:24Z
 
 [Term]
 id: PO:0025496
 name: multi-tissue plant structure
+namespace: plant_anatomy
 def: "A plant structure (PO:0009011) that has as parts two or more portions of plant tissue (PO:0009007) of at least two different types and which through specific morphogenetic processes forms a single structural unit demarcated by primarily bona-fide boundaries from other structural units of different types." []
+comment: Most multi-tissue plant structures have at least a small connection to other plant structures via a fiat boundary, such as where a leaf (PO:0025034) connects to a shoot axis (PO:0025029), a petal (PO:0009032) connects to a receptacle (PO:0009064), or a branch (PO:0025073) connects to a stem (PO:0009047).  Refers to CARO:0000055 multi-tissue structure, def'n: Anatomical structure that has as parts two or more portions of tissue of at least two different types, and which through specific morphogenetic processes, form a single distinct structural unit demarcated by bona-fide boundries from other structural units of differnt types.
+synonym: "estructura vegetal con m&#250ltiples tejidos (Spanish, exact)" EXACT []
+synonym: "複数の組織からなる植物構造 (Japanese, exact)" EXACT []
+xref: PO_GIT:480
 is_a: PO:0009011 ! plant structure
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: Laurel_Cooper
+creation_date: 2012-06-11T14:57:00Z
+
+[Term]
+id: PO:0025497
+name: collective plant structure
+namespace: plant_anatomy
+def: "A plant structure (PO:0009011) that is a proper part of a whole plant (PO:0000003) and includes two or more adjacent plant organs (PO:0009008) or adjacent cardinal organ parts (PO:0025001), along with any associated portions of plant tissue (PO:0009007)." []
+comment: This is a parent term to describe both collective organ part structure (PO:0025269)  (e.g. septum), as well as collective plant organ structure (PO:0025007) (which was formerly named collective plant structure), for example shoot system (PO:0009006).
+synonym: "estructura vegetal colectiva (Spanish, exact)" EXACT []
+synonym: "集合的植物構造 (Japanese, exact)" EXACT []
+xref: PO_GIT:479
+is_a: PO:0009011 ! plant structure
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: Laurel_Cooper
+creation_date: 2012-06-11T15:09:20Z
 
 [Term]
 id: PO:0030108
 name: berry fruit
+namespace: plant_anatomy
 def: "A fruit (PO:0009001) which at maturity comprises a fleshy endocarp (PO:0009086), fleshy mesocarp (PO:0009087), and fleshy exocarp (PO:0009085)." []
+comment: Examples: pepper (Capsicum annuum), papaya (Carica papaya), avocado (Persea americana), may apple (Podophyllum peltatum), date palm (Phoenix dactylifera), tomato (Solanum lycopersicum), potato (Solanum tuberosum), chocolate (Theobroma cacao), blueberry (Vaccinium spp.), and grape (Vitis vinifera).
+synonym: "bacca (exact)" EXACT []
+synonym: "baya (exact, Spanish)" EXACT []
+synonym: "beere (exact, German)" EXACT []
+synonym: "berry (exact)" EXACT []
+synonym: "indehiscent fruit  (broad)" BROAD []
+synonym: "pyrine (narrow)" NARROW []
+xref: PO_GIT:652
 is_a: PO:0009001 ! fruit
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0030109
 name: hesperidium fruit
+namespace: plant_anatomy
 def: "A berry fruit (PO:0030108) which develops from a superior gynoecium (PO:0009062) and at maturity comprises a thickened exocarp (PO:0009085), thickened mesocarp (PO:0009087), and endocarp (PO:0009086), and has as parts juice sacs (PO:0006013) on a carpel adaxial epidermis (PO:0025618)." []
+comment: A hesperidium fruit (PO:0030109) develops from a superior gynoecium (PO:0009062), and therefore is not surrounded by receptacle (PO:0009064) tissue. Examples: orange, grapefruit, lemon, and lime (Citrus spp.).
+synonym: "citrus fruit (exact)" EXACT []
+synonym: "hesperide (exact, German)" EXACT []
+synonym: "hesperidio (exact, Spanish)" EXACT []
+synonym: "hesperidium (exact)" EXACT []
+synonym: "indehiscent fruit  (broad)" BROAD []
+synonym: "panzerbeere (broad, German)" BROAD []
+xref: PO_GIT:652
 is_a: PO:0030108 ! berry fruit
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
@@ -1885,6 +2234,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 [Typedef]
 id: BFO:0000050
 name: part of
+name: part_of
 def: "a core relation that holds between a part and its whole" []
 property_value: IAO:0000111 "is part of" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
@@ -1895,6 +2245,7 @@ is_a: RO:0002131 ! overlaps
 [Typedef]
 id: BFO:0000051
 name: has part
+name: has_part
 def: "a core relation that holds between a whole and its part" []
 property_value: IAO:0000111 "has part" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
@@ -1915,6 +2266,7 @@ is_a: FOODON:00002420 ! has ingredient
 [Typedef]
 id: FOODON:00002420
 name: has ingredient
+def: "A relation attaching between a food material and another food material that has been added to it at some point in its history." []
 domain: FOODON:00002403 ! food material
 range: FOODON:00001002 ! food product
 is_a: RO:0009001 ! has substance added
@@ -1929,6 +2281,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 [Typedef]
 id: RO:0000056
 name: participates in
+name: participates_in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
 property_value: IAO:0000111 "participates in" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
@@ -1978,6 +2331,12 @@ property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 is_a: RO:0002320 ! evolutionarily related to
+
+[Typedef]
+id: RO:0002202
+name: develops from
+name: develops_from
+is_transitive: true
 
 [Typedef]
 id: RO:0002233
@@ -2032,14 +2391,14 @@ name: has member
 def: "has member is a mereological relation between a collection and an item." []
 property_value: IAO:0000119 "SIO" xsd:string
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: BFO:0000051 ! has part
+is_a: BFO:0000051 ! has_part
 
 [Typedef]
 id: RO:0002353
 name: output of
 def: "inverse of has output" []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000056 ! participates in
+is_a: RO:0000056 ! participates_in
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-02/imports/hp_import.owl
+data-version: mondo/releases/2020-12-18/imports/hp_import.owl
 subsetdef: hposlim_core ""
 subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
@@ -360,24 +360,26 @@ is_a: HP:0020129 ! Abnormal urine protein level
 
 [Term]
 id: HP:0000095
-name: Abnormality of renal glomerulus morphology
+name: Abnormal renal glomerulus morphology
 namespace: human_phenotype
-def: "A structural anomaly of the glomerulus." [Eurenomics:ewuehl]
+def: "A structural anomaly of the glomerulus." [Eurenomics:ewuehl, PMID:18184729]
+comment: Each human kidney contains approximately one million nephrons. The glomerulus is the most proximal component of the nephron. The glomerulus of the mammalian kidney is a highly developed vascular bed that acts as a filter, allowing a filtrate of small molecules, such as water, sugars, electrolytes and small proteins, to pass through a barrier that retains high molecular weight proteins and cells in the circulation.
+synonym: "Abnormality of renal glomerulus morphology" EXACT []
 xref: UMLS:C4025889
-is_a: HP:0012575 ! Abnormal nephron morphology
 is_a: HP:0031263 ! Abnormal renal corpuscle morphology
 
 [Term]
 id: HP:0000096
-name: Glomerulosclerosis
+name: Glomerular sclerosis
 namespace: human_phenotype
 alt_id: HP:0030761
 def: "Accumulation of scar tissue within the glomerulus." [Eurenomics:fschaefer]
+synonym: "Glomerulosclerosis" EXACT []
 synonym: "Renal glomerular fibrosis" BROAD []
 xref: SNOMEDCT_US:197661001
 xref: SNOMEDCT_US:82646005
 xref: UMLS:C0178664
-is_a: HP:0000095 ! Abnormality of renal glomerulus morphology
+is_a: HP:0000095 ! Abnormal renal glomerulus morphology
 
 [Term]
 id: HP:0000098
@@ -406,7 +408,7 @@ synonym: "Glomerular nephritis" EXACT []
 xref: MSH:D005921
 xref: SNOMEDCT_US:36171008
 xref: UMLS:C0017658
-is_a: HP:0000095 ! Abnormality of renal glomerulus morphology
+is_a: HP:0000095 ! Abnormal renal glomerulus morphology
 is_a: HP:0000123 ! Nephritis
 
 [Term]
@@ -1186,6 +1188,30 @@ synonym: "Deformity of the orbital region of the face" NARROW [ORCID:0000-0001-5
 synonym: "Malformation of the orbital region of the face" NARROW [ORCID:0000-0001-5889-4463]
 xref: UMLS:C4025863
 is_a: HP:0000271 ! Abnormality of the face
+
+[Term]
+id: HP:0000316
+name: Hypertelorism
+namespace: human_phenotype
+alt_id: HP:0000578
+alt_id: HP:0002001
+alt_id: HP:0004657
+alt_id: HP:0007871
+def: "Interpupillary distance more than 2 SD above the mean (alternatively, the appearance of an increased interpupillary distance or widely spaced eyes)." [PMID:19125427]
+subset: hposlim_core
+synonym: "Excessive orbital separation" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Increased distance between eye sockets" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Increased distance between eyes" EXACT [ORCID:0000-0001-5889-4463]
+synonym: "Increased interpupillary distance" EXACT []
+synonym: "Ocular hypertelorism" EXACT []
+synonym: "Wide-set eyes" EXACT layperson []
+synonym: "Widely spaced eyes" EXACT layperson []
+synonym: "Widened interpupillary distance" EXACT []
+xref: MSH:D006972
+xref: SNOMEDCT_US:194021007
+xref: SNOMEDCT_US:22006008
+xref: UMLS:C0020534
+is_a: HP:0100886 ! Abnormality of globe location
 
 [Term]
 id: HP:0000347
@@ -2767,6 +2793,19 @@ alt_id: HP:0000844
 def: "Abnormality of the pituitary gland (also known as hypophysis), which is an endocrine gland that protrudes from the bottom of the hypothalamus at the base of the brain. The pituitary gland secretes the hormones ACTH, TSH, PRL, GH, endorphins, FSH, LH, oxytocin, and antidiuretic hormone. The secretion of hormones from the anterior pituitary is under the strict control of hypothalamic hormones, and the posterior pituitary is essentially an extension of the hypothalamus, so that hypothalamus and pituitary gland may be regarded as a functional unit." [DDD:spark]
 xref: UMLS:C4025819
 is_a: HP:0000818 ! Abnormality of the endocrine system
+
+[Term]
+id: HP:0000870
+name: Increased circulating prolactin concentration
+namespace: human_phenotype
+def: "The presence of abnormally increased levels of prolactin in the blood. Prolactin is a peptide hormone produced by the anterior pituitary gland that plays a role in breast development and lactation during pregnancy." [DDD:spark, HPO:probinson]
+synonym: "Hyperprolactinaemia" EXACT []
+synonym: "Hyperprolactinemia" EXACT []
+synonym: "Prolactin excess" EXACT []
+xref: MSH:D006966
+xref: SNOMEDCT_US:237662005
+xref: UMLS:C0020514
+is_a: HP:0010514 ! Hyperpituitarism
 
 [Term]
 id: HP:0000924
@@ -4657,6 +4696,7 @@ alt_id: HP:0200130
 def: "Dilated cardiomyopathy (DCM) is defined by the presence of left ventricular dilatation and left ventricular systolic dysfunction in the absence of abnormal loading conditions (hypertension, valve disease) or coronary artery disease sufficient to cause global systolic impairment. Right ventricular dilation and dysfunction may be present but are not necessary for the diagnosis." [PMID:17916581]
 synonym: "Cardiomyopathy, dilated" EXACT []
 synonym: "Congestive cardiomyopathy" EXACT []
+synonym: "DCM" EXACT abbreviation []
 synonym: "Stretched and thinned heart muscle" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: Fyler:1843
 xref: MSH:D002311
@@ -5598,11 +5638,15 @@ is_a: HP:0000234 ! Abnormality of the head
 
 [Term]
 id: HP:0001966
-name: Mesangial abnormality
+name: Abnormal glomerular mesangium morphology
 namespace: human_phenotype
-def: "An abnormality of the mesangium, i.e., of the central part of the renal glomerulus between capillaries." [HPO:probinson]
+def: "An abnormality of the mesangium, i.e., of the central part of the renal glomerulus between capillaries." [HPO:probinson, PMID:19470685, PMID:20828589]
+comment: Mesangial cells constitute the central stalk of the glomerulus and are in continuity with the extraglomerular mesangium and the juxtaglomerular apparatus. They have contractile properties generated by anchoring filaments to glomerular basement membrane opposite podocyte foot processes and at the paramesangial angles, thereby assisting in the maintenance of capillary organization and convolution. On the capillary lumen side, mesangial cells are in direct contact with endothelial cells without an intervening basement membrane.
+synonym: "Abnormality glomerular mesangium morphology" EXACT []
+synonym: "Abnormality of the glomerular mesangium" EXACT []
+synonym: "Mesangial abnormality" EXACT []
 xref: UMLS:C4025733
-is_a: HP:0000095 ! Abnormality of renal glomerulus morphology
+is_a: HP:0000095 ! Abnormal renal glomerulus morphology
 
 [Term]
 id: HP:0001967
@@ -5616,7 +5660,7 @@ synonym: "Mesangial sclerosis" EXACT []
 xref: MSH:C537346
 xref: SNOMEDCT_US:111406002
 xref: UMLS:C0268747
-is_a: HP:0001966 ! Mesangial abnormality
+is_a: HP:0001966 ! Abnormal glomerular mesangium morphology
 
 [Term]
 id: HP:0001972
@@ -6273,6 +6317,7 @@ xref: SNOMEDCT_US:79631006
 xref: UMLS:C0014553
 is_a: HP:0002197 ! Generalized-onset seizure
 is_a: HP:0011146 ! Dialeptic seizure
+is_a: HP:0033259 ! Non-motor seizure
 
 [Term]
 id: HP:0002134
@@ -7181,9 +7226,9 @@ is_a: HP:0030972 ! Abnormal systemic blood pressure
 
 [Term]
 id: HP:0002617
-name: Dilatation
+name: Vascular dilatation
 namespace: human_phenotype
-def: "Abnormal outpouching or sac-like dilatation in the wall of an atery, vein or the heart." [HPO:probinson]
+def: "Abnormal outpouching or sac-like dilatation in the wall of an atery, vein or the heart." [HPO:probinson, PMID:30225143]
 comment: Aneurysm is considered a severe form of dilatation.
 synonym: "Aneurysm" NARROW layperson []
 synonym: "Aneurysmal dilatation" EXACT [ORCID:0000-0001-5208-3432]
@@ -7196,7 +7241,7 @@ xref: SNOMEDCT_US:432119003
 xref: SNOMEDCT_US:85659009
 xref: UMLS:C0002940
 xref: UMLS:C4020848
-is_a: HP:0025015 ! Abnormal vascular morphology
+is_a: HP:0033353 ! Abnormal blood vessel morphology
 
 [Term]
 id: HP:0002619
@@ -7218,7 +7263,7 @@ def: "An anomaly of vein." [HPO:probinson]
 synonym: "Abnormal vein" EXACT layperson [ORCID:0000-0001-5208-3432]
 synonym: "Venous abnormality" EXACT []
 xref: UMLS:C0241665
-is_a: HP:0025015 ! Abnormal vascular morphology
+is_a: HP:0033353 ! Abnormal blood vessel morphology
 
 [Term]
 id: HP:0002630
@@ -7240,7 +7285,7 @@ synonym: "Inflammation of blood vessel" EXACT layperson [https://orcid.org/0000-
 xref: MSH:D014657
 xref: SNOMEDCT_US:31996006
 xref: UMLS:C0042384
-is_a: HP:0025015 ! Abnormal vascular morphology
+is_a: HP:0033353 ! Abnormal blood vessel morphology
 
 [Term]
 id: HP:0002637
@@ -8340,7 +8385,7 @@ synonym: "Increased levels of animo acids in urine" EXACT layperson [orcid.org/0
 xref: SNOMEDCT_US:35912001
 xref: UMLS:C0238621
 xref: UMLS:C4020843
-is_a: HP:0003110 ! Abnormality of urine homeostasis
+is_a: HP:0033354 ! Abnormal urine metabolite level
 
 [Term]
 id: HP:0003366
@@ -9787,7 +9832,7 @@ is_a: HP:0032973 ! Abnormal bronchoalveolar lavage fluid morphology
 
 [Term]
 id: HP:0006530
-name: Interstitial pulmonary abnormality
+name: Abnormal pulmonary Interstitial morphology
 namespace: human_phenotype
 alt_id: HP:0006513
 alt_id: HP:0006547
@@ -11832,7 +11877,7 @@ xref: Fyler:2600
 xref: SNOMEDCT_US:234119001
 xref: UMLS:C0151489
 xref: UMLS:C4021205
-is_a: HP:0025015 ! Abnormal vascular morphology
+is_a: HP:0033353 ! Abnormal blood vessel morphology
 created_by: peter
 creation_date: 2011-02-16T08:46:49Z
 
@@ -11886,7 +11931,7 @@ name: Abnormality of urine glucose concentration
 namespace: human_phenotype
 def: "An abnormality of the concentration of glucose in the urine." [HPO:gcarletti]
 xref: UMLS:C4023596
-is_a: HP:0003110 ! Abnormality of urine homeostasis
+is_a: HP:0033354 ! Abnormal urine metabolite level
 created_by: peter
 creation_date: 2011-02-21T11:09:32Z
 
@@ -12132,6 +12177,9 @@ name: Dialeptic seizure
 namespace: human_phenotype
 def: "A dialeptic seizure is a type of seizure characterised predominantly by reduced responsiveness or awareness and with subsequent at least partial amnesia of the event." [PMID:9738682]
 comment: The main ictal manifestation of dialeptic seizures is an alteration of consciousness rather than motor or sensory features. The term describes the pure clinical semiology of a seizure and is used independently of the ictal electrographic findings: it could describe a seizure of focal, generalized or unknown onset. In 2017 the ILAE Commission for Classification and Terminology recommended classifying a seizure as having focal or generalized onset only when there is a high degree of confidence (>80%, arbitrarily chosen to parallel the usual allowable beta error) in the accuracy of this determination.
+synonym: "Behavioral arrest seizure with impairment of awareness irrespective of onset" EXACT []
+synonym: "Unknown onset behavioral arrest seizure with impairment of awareness" EXACT []
+synonym: "Unknown onset behavioural arrest seizure with impairment of awareness" EXACT []
 is_a: HP:0001250 ! Seizure
 creation_date: 2011-10-18T01:47:30Z
 
@@ -12928,7 +12976,8 @@ creation_date: 2012-07-19T11:40:31Z
 id: HP:0012072
 name: Aciduria
 namespace: human_phenotype
-def: "Excretion of urine with an acid pH." [HPO:probinson]
+def: "Excretion of urine with an acid pH, i.e., having an increased hydrogen ion concentration." [HPO:probinson]
+synonym: "Acidic urine" EXACT layperson []
 xref: SNOMEDCT_US:21806007
 xref: UMLS:C0278026
 is_a: HP:0032943 ! Abnormal urine pH
@@ -13700,7 +13749,7 @@ id: HP:0020129
 name: Abnormal urine protein level
 namespace: human_phenotype
 def: "Any deviation of the concentration of one or more proteins in the urine." []
-is_a: HP:0003110 ! Abnormality of urine homeostasis
+is_a: HP:0033354 ! Abnormal urine metabolite level
 created_by: robinp
 creation_date: 2019-07-05T16:29:22Z
 
@@ -14219,7 +14268,7 @@ id: HP:0030962
 name: Abnormal morphology of the great vessels
 namespace: human_phenotype
 def: "A structural anomaly affecting a blood vessel involved in the circulation of the heart, i.e., the superior or inferior vena cava, the pulmonary arteries, the pulmonary veins, and the aorta." []
-is_a: HP:0025015 ! Abnormal vascular morphology
+is_a: HP:0033353 ! Abnormal blood vessel morphology
 property_value: http://purl.org/dc/elements/1.1/date 2017-04-18T13:00:44Z xsd:dateTime
 created_by: robinp
 
@@ -14335,6 +14384,7 @@ name: Abnormal renal corpuscle morphology
 namespace: human_phenotype
 def: "Any anomolous structure of the renal corpuscle, which is the initial component of the nephron that filters blood. The renal corpuscle consists of a knot of capillaries (glomerulus) that is surrounded by a double-walled capsule (Bowman capsule) that opens into a renal tubule." []
 is_a: HP:0011035 ! Abnormal renal cortex morphology
+is_a: HP:0012575 ! Abnormal nephron morphology
 property_value: http://purl.org/dc/elements/1.1/date 2017-08-12T18:30:25Z xsd:dateTime
 created_by: peter
 
@@ -14707,6 +14757,35 @@ namespace: human_phenotype
 def: "An anomaly of the musculoskeletal system, which consists of the bones of the skeleton, muscles, cartilage, tendons, ligaments, joints, and other connective tissue. The musculoskeletal system supports the weight of the body, maintains body position and produces movements of the body or of parts of the body." []
 is_a: HP:0000118 ! Phenotypic abnormality
 property_value: http://purl.org/dc/elements/1.1/date 2020-09-05T13:35:03Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033259
+name: Non-motor seizure
+namespace: human_phenotype
+def: "A seizure with clinical manifestation but without motor signs (other than possible behavior arrest) as its initial clinical manifestation. The electrographic onset may be generalized, focal, or unknown." [PMID:2827606, PMID:28276060]
+comment: This term may be used to code the non-motor seizures of a person who cannot confirm or exclude subjective seizure experiences that would aid more detailed classification as a generalized non-motor (absence) seizure or type of focal non-motor seizure.
+is_a: HP:0001250 ! Seizure
+property_value: http://purl.org/dc/elements/1.1/date 2020-11-28T14:43:08Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033353
+name: Abnormal blood vessel morphology
+namespace: human_phenotype
+def: "Any structural anomaly of a blood vessel (artery, arteriole, capillary, venule, or vein)." []
+is_a: HP:0025015 ! Abnormal vascular morphology
+property_value: http://purl.org/dc/elements/1.1/date 2020-12-01T11:42:14Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033354
+name: Abnormal urine metabolite level
+namespace: human_phenotype
+def: "Any deviation from the normal concentration of a metabolite in urine." []
+comment: As water reabsorption in kidneys affect urinary solute concentrations, various methods are applied to normalize the measured concentration. Frequently, concentrations are reported as a ratio to urinary creatinine. The HPO terms in this subhierarchy therefore use the word 'level' to indicate that appropriate normalization has been performed before concluding that the amount of the indicated metabolite is abnormal.
+is_a: HP:0003110 ! Abnormality of urine homeostasis
+property_value: http://purl.org/dc/elements/1.1/date 2020-12-01T12:00:51Z xsd:dateTime
 created_by: peter
 
 [Term]
@@ -15779,7 +15858,7 @@ created_by: http://orcid.org/0000-0001-5208-3432
 id: HP:0410280
 name: Pediatric onset
 namespace: human_phenotype
-def: "Onset of disease manifestations before adulthood, defined here as before the age of 16 years, but excluding neonatal or congenital onset." [ORCID:0000-0002-0843-4271]
+def: "Onset of disease manifestations before adulthood, defined here as before the age of 15 years, but excluding neonatal or congenital onset." [ORCID:0000-0002-0843-4271]
 synonym: "Onset before adulthood" EXACT []
 synonym: "Paediatric onset" EXACT uk_spelling []
 is_a: HP:0003674 ! Onset

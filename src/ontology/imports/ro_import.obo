@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-02/imports/ro_import.owl
+data-version: mondo/releases/2020-12-18/imports/ro_import.owl
 ontology: mondo/imports/ro_import
 
 [Term]
@@ -880,7 +880,6 @@ is_a: RO:0002500 ! causal agent in process
 id: RO:0002218
 name: obsolete has active participant
 def: "x has participant y if and only if x realizes some active role that inheres in y" []
-is_a: RO:0000057 ! has participant
 is_obsolete: true
 
 [Typedef]
@@ -995,7 +994,6 @@ id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
 domain: BFO:0000015 ! process
-range: BFO:0000040 ! material entity
 holds_over_chain: RO:0002224 RO:0002233
 is_a: RO:0000057 ! has participant
 inverse_of: RO:0002352 ! input of
@@ -1567,7 +1565,8 @@ is_a: RO:0002487 ! relation between physical entity and a process or stage
 [Typedef]
 id: RO:0002491
 name: existence starts and ends during
-def: "x existence starts and ends during y if and only if the start of x is part of y and the end of x is part of y. Formally: x existence starts and ends during y iff α(x) >= α(y) & α(x) <= ω(y) & ω(x) <= ω(y) & ω(x) >= α(y)" []
+def: "x exists during y if and only if: 1) the time point at which x begins to exist is after or equal to the time point at which y begins and 2) the time point at which x ceases to exist is before or equal to the point at which y ends. Formally: x existence starts and ends during y iff α(x) >= α(y) & α(x) <= ω(y) & ω(x) <= ω(y) & ω(x) >= α(y)" []
+synonym: "exists during" EXACT []
 is_a: RO:0002488 ! existence starts during
 is_a: RO:0002492 ! existence ends during
 
@@ -1930,7 +1929,7 @@ is_a: RO:0040035 ! disease relationship
 id: RO:0004027
 name: disease has inflammation site
 def: "A relationship between a disease and an anatomical entity where the disease is triggered by an inflammatory response to stimuli occurring in the anatomical entity" []
-range: CARO:0000003 ! connected anatomical structure
+range: BFO:0000004 ! independent continuant
 is_a: RO:0004026 ! disease has location
 
 [Typedef]
