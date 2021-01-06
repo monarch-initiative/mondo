@@ -137,6 +137,8 @@ while(<>) {
     s/EFO:0000784/disease_has_location/;
 
     s@http://linkedlifedata.com/resource/umls/id/@UMLS:@;
+    s@http://id.nlm.nih.gov/mesh/@MESH:@;
+    s@http://snomed.info/id/@SCTID:@;
     s/NCI:/NCIT:/;
     s/SNOMEDCT_US_(\w+):/SCTID:/;
     s/UMLS_CUI/UMLS/;
