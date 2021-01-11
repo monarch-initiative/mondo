@@ -67,6 +67,7 @@ if (!$f1) {
         "mirror/hp.obo",
         "mondo-edit.obo",
         "omim-exclusion-set.obo",
+        "obo-exclusion-set.obo",
         );
 }
 
