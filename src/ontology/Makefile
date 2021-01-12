@@ -882,8 +882,11 @@ lexrules-%.pro:
 	rdfmatch --ontA MONDO --ontB $(shell echo $* | tr a-z A-Z) -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl learn > $@
 .PRECIOUS: lexrules-%.pro
 
+match-dedupe-%.tsv: match-%.tsv
+	sssom dedupe -i $< -o $@
+
 match-%.tsv:
-	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl new_match $< > $@
+	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp -A void.ttl -f sssom  -w obo_weights -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl new_match $< > $@
 
 learnedmatch-%.tsv: lexrules-%.pro
 	rdfmatch -p MONDO -l -c  ../plq/mondo_queries.pro  -X tmp-$* -A void.ttl -f tsv -v -i mondo_edit -i equivs -i mirror/$*.owl -i skos.ttl classify $< > $@
@@ -1063,7 +1066,7 @@ SOURCES_DATE=2020-10-15
 
 mirror/ordo.obo:
 	cp sources/releases/v$(SOURCES_DATE)/obo_orphanet.obo $@
-	
+
 mirror/medic.obo:
 	cp sources/releases/v$(SOURCES_DATE)/medic.obo $@
 
