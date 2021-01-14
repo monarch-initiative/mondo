@@ -531,7 +531,7 @@ imports/equivalencies.obo: imports/equivalencies.owl
 
 clean_imports: $(patsubst %, clean-mirror-%, $(ONTOLOGY_IMPORTS))
 clean-mirror-%: 
-	test -f mirror/%.owl && rm mirror/%.owl || echo 'no mirror file'
+	test -f mirror/$*.owl && rm mirror/$*.owl || echo 'no mirror file'
 
 #imports/equivalencies.owl: $(SRC)
 #	../utils/xrefs2axioms.pl $< > $@.tmp && owltools $@.tmp -o $@

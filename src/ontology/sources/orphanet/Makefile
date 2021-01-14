@@ -31,7 +31,7 @@ EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
            --rename-entity $(OBO)/ECO_0000218 $(OIO)source
 
 
-V=3.0
+V=3.1
 
 # STEP 0: DOWNLOAD
 #ordo_orphanet.owl.zip:
@@ -70,7 +70,7 @@ obo_orphanet_d2g.owl: obo_orphanet_3.owl
 
 # STEP 3b: make an .obo file
 obo_orphanet_3.obo: obo_orphanet_3.owl obo_orphanet_d2g.owl
-	owltools $^ --merge-support-ontologies -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools $^ --merge-support-ontologies --set-ontology-id http://purl.obolibrary.org/obo/orphanet -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 # STEP 4: Remove part-ofs (see 2b, we have these as subClassOf now)
 # TODO: use robot remove for this
