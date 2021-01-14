@@ -67,6 +67,7 @@ if (!$f1) {
         "mirror/hp.obo",
         "mondo-edit.obo",
         "omim-exclusion-set.obo",
+        "obo-exclusion-set.obo",
         );
 }
 
@@ -132,9 +133,17 @@ while(<>) {
 
     s@\.  @. @g;
 
+    s@relationship: IDO:0000664 GENO:0000147@relationship: has_modifier HP:0000006@;
+    s@relationship: IDO:0000664 GENO:0000148@relationship: has_modifier HP:0000007@;
+    
+    s@obo:OMIM_@OMIM:@g;
+    s@obo:OMIMPS_@OMIMPS:@g;
+    s@ORDO:@Orphanet:@g;
     s/SCTID_/SCTID:/;
     s/OMIM:PS/OMIMPS:/;
     s/EFO:0000784/disease_has_location/;
+
+    s@\{http://purl.obolibrary.org/obo/NCIT_P.*\}@@;
 
     s@http://linkedlifedata.com/resource/umls/id/@UMLS:@;
     s@http://id.nlm.nih.gov/mesh/@MESH:@;

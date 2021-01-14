@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-18/imports/envo_import.owl
+data-version: mondo/releases/2021-01-13/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -921,6 +921,64 @@ relationship: RO:0000086 PATO:0001154 ! has quality elongated
 relationship: RO:0002354 ENVO:02500028 ! formed as result of planetary erosion
 
 [Term]
+id: ENVO:00000106
+name: grassland area
+def: "An area in which grasses (Graminae) are a significant component of the vegetation." []
+synonym: "grazing area" RELATED []
+synonym: "herbaceous area" RELATED []
+is_a: ENVO:01001305 ! vegetated area
+relationship: RO:0002131 ENVO:01001206 ! overlaps grassland ecosystem
+
+[Term]
+id: ENVO:00000109
+name: woodland area
+def: "Land having a cover of trees, shrubs, or both." []
+synonym: "brigalow" NARROW []
+synonym: "caatinga" RELATED []
+synonym: "chanaral" RELATED []
+synonym: "coniferous forest" RELATED []
+synonym: "copse" RELATED []
+synonym: "deciduous forest" RELATED []
+synonym: "equatorial forest" RELATED []
+synonym: "equatorial rain forest" RELATED []
+synonym: "garique" RELATED []
+synonym: "grove" RELATED []
+synonym: "jungle" RELATED []
+synonym: "mallee scrub" RELATED []
+synonym: "monsoon forest" RELATED []
+synonym: "moor" RELATED []
+synonym: "mott" RELATED []
+synonym: "motte" RELATED []
+synonym: "mulga" RELATED []
+synonym: "mulga scrub" RELATED []
+synonym: "pine grove" NARROW []
+synonym: "rain forest" RELATED []
+synonym: "reforested area" RELATED []
+synonym: "sagebrush" RELATED []
+synonym: "scrub" RELATED []
+synonym: "shrub" RELATED []
+synonym: "silva" RELATED []
+synonym: "stand" RELATED []
+synonym: "taiga" RELATED []
+synonym: "thicket" RELATED []
+synonym: "thorn forest" RELATED []
+synonym: "tropical rain forest" RELATED []
+synonym: "wood" RELATED []
+synonym: "wooded area" RELATED []
+is_a: ENVO:01001305 ! vegetated area
+
+[Term]
+id: ENVO:00000111
+name: forested area
+def: "An area with a high density of trees. A small forest may be called a wood." []
+synonym: "forest" RELATED []
+synonym: "wood" RELATED []
+is_a: ENVO:00000109 ! woodland area
+intersection_of: ENVO:00000109 ! woodland area
+intersection_of: RO:0002131 ENVO:01001243 ! overlaps forest ecosystem
+relationship: RO:0002131 ENVO:01001243 ! overlaps forest ecosystem
+
+[Term]
 id: ENVO:00000128
 name: dry valley
 def: "A valley that no longer has a surface flow of water. Typically found in either Karst (limestone) or chalk terrain." []
@@ -947,6 +1005,14 @@ def: "Soil or rock and included ice or organic material at or below the freezing
 synonym: "Permafrost" EXACT []
 is_a: ENVO:00010483 ! environmental material
 relationship: RO:0000086 PATO:0001306 ! has quality decreased temperature
+
+[Term]
+id: ENVO:00000176
+name: elevation
+def: "A landform elevated above the surrounding area." []
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: BFO:0000051 ENVO:00002000 ! has part slope
+relationship: RO:0000086 PATO:0001688 ! has quality increased elevation
 
 [Term]
 id: ENVO:00000191
@@ -978,6 +1044,36 @@ name: glacial valley
 def: "A valley that contains, or contained, a glacier and was formed by glacial activity. Typically U-shaped in cross-section." []
 synonym: "valley" RELATED []
 is_a: ENVO:00000100 ! valley
+
+[Term]
+id: ENVO:00000300
+name: scrubland area
+def: "Area covered with low-growing or stunted perennial vegetation and usually not mixed with trees." []
+synonym: "bush" RELATED []
+synonym: "chaparal area" RELATED []
+synonym: "heath" RELATED []
+synonym: "scrub" RELATED []
+synonym: "scrubland" EXACT []
+synonym: "shrubland" RELATED []
+is_a: ENVO:01001305 ! vegetated area
+
+[Term]
+id: ENVO:00000304
+name: shore
+def: "That part of the land in immediate contact with a body of water including the area between high and low water lines." []
+synonym: "beach face" RELATED []
+synonym: "coastal zone" BROAD []
+synonym: "foreshore" RELATED []
+synonym: "inshore" RELATED []
+synonym: "rivage" RELATED []
+synonym: "seashore" RELATED []
+synonym: "SHORE" EXACT []
+synonym: "shore" EXACT []
+synonym: "shoreface" NARROW []
+synonym: "strand" RELATED []
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: BFO:0000050 ENVO:01000687 ! part of coast
+relationship: RO:0002220 ENVO:00000063 ! adjacent to water body
 
 [Term]
 id: ENVO:00000309
@@ -1127,6 +1223,15 @@ relationship: has_increased_levels_of CHEBI:26710 ! sodium chloride
 relationship: RO:0000086 PATO:0001657 ! has quality increased osmolarity
 
 [Term]
+id: ENVO:00002013
+name: igneous rock
+def: "Rock formed from molten magma." []
+is_a: ENVO:00001995 ! rock
+intersection_of: ENVO:00001995 ! rock
+intersection_of: RO:0001000 ENVO:01000231 ! derives from lava
+relationship: RO:0001000 ENVO:01000231 ! derives from lava
+
+[Term]
 id: ENVO:00002016
 name: sedimentary rock
 def: "A rock formed by deposition of either clastic sediments, organic matter, or chemical precipitates (evaporites), followed by compaction of the particulate matter and cementation during diagenesis." []
@@ -1187,6 +1292,15 @@ is_a: ENVO:00002114 ! chemically enriched sediment
 intersection_of: ENVO:00002114 ! chemically enriched sediment
 intersection_of: has_increased_levels_of CHEBI:24835 ! inorganic molecular entity
 relationship: has_increased_levels_of CHEBI:24835 ! inorganic molecular entity
+
+[Term]
+id: ENVO:00002261
+name: forest soil
+def: "A portion of soil which is found in a forested area." []
+is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: RO:0001025 ENVO:00000111 ! located in forested area
+relationship: RO:0001025 ENVO:00000111 ! located in forested area
 
 [Term]
 id: ENVO:00002264
@@ -1256,6 +1370,15 @@ is_a: ENVO:00001998 ! soil
 intersection_of: ENVO:00001998 ! soil
 intersection_of: RO:0000086 PATO:0001824 ! has quality dry
 relationship: RO:0000086 PATO:0001824 ! has quality dry
+
+[Term]
+id: ENVO:00005750
+name: grassland soil
+def: "A portion of soil which is found in a grassland." []
+is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: RO:0001025 ENVO:00000106 ! located in grassland area
+relationship: RO:0001025 ENVO:00000106 ! located in grassland area
 
 [Term]
 id: ENVO:00005800
@@ -1427,6 +1550,32 @@ id: ENVO:01000230
 name: arid
 def: "An environmental condition in which annual precipitation is less than half of annual potential evapotranspiration." []
 is_a: ENVO:01000203 ! environmental condition
+
+[Term]
+id: ENVO:01000231
+name: lava
+def: "Lava is a mixture of molten or semi-molten rock, volatiles, and solids which has extruded beyond a planetary crust." []
+is_a: ENVO:00010483 ! environmental material
+relationship: RO:0000086 PATO:0001305 ! has quality increased temperature
+relationship: RO:0001000 ENVO:01000648 ! derives from magma
+
+[Term]
+id: ENVO:01000242
+name: desert scrubland
+def: "A scrubland which is located in a desert." []
+synonym: "desert scrub" EXACT []
+is_a: ENVO:00000300 ! scrubland area
+intersection_of: ENVO:00000300 ! scrubland area
+intersection_of: RO:0000086 ENVO:01000230 ! has quality arid
+intersection_of: RO:0002131 ENVO:00000097 ! overlaps desert area
+relationship: RO:0000086 ENVO:01000230 ! has quality arid
+relationship: RO:0002131 ENVO:00000097 ! overlaps desert area
+
+[Term]
+id: ENVO:01000248
+name: dense settlement biome
+def: "A dense settlement biome is an anthropogenic terrestrial biome which is primarily used for human habitation, recreation, and industry within built structures with little other land use." []
+is_a: ENVO:01000219 ! anthropogenic terrestrial biome
 
 [Term]
 id: ENVO:01000254
@@ -1677,6 +1826,12 @@ synonym: "scree slope" EXACT []
 is_a: ENVO:00002000 ! slope
 
 [Term]
+id: ENVO:01000340
+name: alpine
+def: "An altitudinal condition which inheres in a bearer by virtue of the bearer having a monthly mean temperature is less than 10 degrees Celsius and being located at altitudes above the tree line and below the snowline." []
+is_a: ENVO:01000343 ! altitudinal condition
+
+[Term]
 id: ENVO:01000342
 name: montane
 def: "An altitudinal condition which inheres in a bearer by virtue of the bearer being located at an altitude between mid-altitude forests and the tree line." []
@@ -1725,6 +1880,11 @@ name: building part
 def: "A building part is a construction which is part of a building." []
 is_a: ENVO:00000070 ! human construction
 relationship: BFO:0000050 ENVO:00000073 ! part of building
+
+[Term]
+id: ENVO:01000435
+name: montane forest
+is_a: ENVO:01001243 ! forest ecosystem
 
 [Term]
 id: ENVO:01000543
@@ -1885,6 +2045,13 @@ relationship: BFO:0000050 ENVO:01000817 ! part of biosphere
 relationship: RO:0002507 PCO:0000001 ! determined by population of organisms
 
 [Term]
+id: ENVO:01000743
+name: land consumption process
+def: "A process in which natural ecosystems present over an expanse of land are removed and replaced with anthropogenic ecosystems." []
+is_a: ENVO:01000952 ! anthropisation
+relationship: RO:0000057 ENVO:01000635 ! has participant planetary landmass
+
+[Term]
 id: ENVO:01000752
 name: area of barren land
 def: "An area of a planet's surface which is primarily composed of bedrock, desert pavement, scarp rock, talus, material exposed by slides, volcanic material, glacial debris, sand, material exposed during strip mining, gravel, and other accumulations of earthen material in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." []
@@ -2006,10 +2173,41 @@ relationship: RO:0002131 ENVO:01000819 ! overlaps hydrosphere
 relationship: RO:0002473 ENVO:00001998 ! composed primarily of soil
 
 [Term]
+id: ENVO:01000869
+name: area of scrub
+def: "An area of a planet's surface which is primarily covered by a shrubs, young trees, or stunted trees.. The surfaces of this area are in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." []
+synonym: "area of shrub" EXACT []
+is_a: ENVO:01001293 ! bush area
+relationship: BFO:0000050 ENVO:00000300 ! part of scrubland area
+relationship: RO:0002220 ENVO:01000323 ! adjacent to atmospheric boundary layer
+
+[Term]
 id: ENVO:01000875
 name: precipitation process
 def: "A precipitation process is a process in which a portion of some substance segregates from a material in which that substance or its precursors were dissolved or suspended in and settles due to a force such as gravity or centrifugal force." []
 is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000883
+name: area of developed open space
+def: "An area of a planet's surface which is primarily covered by cultivated or anthropically maintained vegetation planted for recreation, erosion control, or aesthetic purposes interspersed by constructed or manufactured objects and materials. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." []
+is_a: ENVO:01001200 ! anthropised terrestrial environmental zone
+relationship: BFO:0000050 ENVO:01000248 ! part of dense settlement biome
+relationship: RO:0002220 ENVO:01000323 ! adjacent to atmospheric boundary layer
+
+[Term]
+id: ENVO:01000887
+name: area of sedge- and forb-dominated herbaceous vegetation
+def: "An area of a planet's surface which is primarily covered by sedges or forbs, possibly interpersed with grasses or grass-like plants. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." []
+is_a: ENVO:01001305 ! vegetated area
+relationship: RO:0002220 ENVO:01000323 ! adjacent to atmospheric boundary layer
+
+[Term]
+id: ENVO:01000888
+name: area of gramanoid or herbaceous vegetation
+def: "An area of a planet's surface which is primarily covered by gramanoid or herbaceous vegetation and which is not subject to intensive management by humans. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." []
+is_a: ENVO:00000106 ! grassland area
+relationship: RO:0002220 ENVO:01000323 ! adjacent to atmospheric boundary layer
 
 [Term]
 id: ENVO:01000895
@@ -2395,6 +2593,12 @@ synonym: "cryoplanet" EXACT []
 is_a: ENVO:01000800 ! planet
 
 [Term]
+id: ENVO:01001143
+name: lava planet
+def: "A planet which has a surface layer that nearly completely or completely covered by lava, and which has a substantial portion of its mass composed of lava." []
+is_a: ENVO:01000800 ! planet
+
+[Term]
 id: ENVO:01001147
 name: helium planet
 def: "A gas planet which has an atmosphere composed primarily of helium." []
@@ -2489,6 +2693,21 @@ relationship: RO:0002233 ENVO:00002007 ! has input sediment
 relationship: RO:0002297 ENVO:00002016 ! results in formation of sedimentary rock
 
 [Term]
+id: ENVO:01001206
+name: grassland ecosystem
+def: "An ecosystem in which grasses (Graminae) are the dominant form of vegetation and determine the system's structure and dynamics." []
+synonym: "down" RELATED []
+synonym: "downland" RELATED []
+synonym: "downs" RELATED []
+synonym: "glade" RELATED []
+synonym: "GRASSLAND" EXACT []
+synonym: "Grassland" RELATED []
+synonym: "grassland" EXACT []
+synonym: "grazing area" RELATED []
+synonym: "herbaceous area" RELATED []
+is_a: ENVO:01001790 ! terrestrial ecosystem
+
+[Term]
 id: ENVO:01001211
 name: stellar radiation
 def: "An electromagnetic radiation process during which electromagnetic waves or their quanta are emitted from a star." []
@@ -2536,6 +2755,25 @@ is_a: ENVO:01000951 ! natural environment
 intersection_of: ENVO:01000951 ! natural environment
 intersection_of: BFO:0000050 ENVO:00000063 ! part of water body
 relationship: BFO:0000050 ENVO:00000063 ! part of water body
+
+[Term]
+id: ENVO:01001239
+name: forest canopy
+is_a: ENVO:01001242 ! canopy
+relationship: BFO:0000050 ENVO:01001243 ! part of forest ecosystem
+
+[Term]
+id: ENVO:01001242
+name: canopy
+def: "A vegetation layer which is formed by a collection of individual plant crowns, themselves constituting part of the aboveground portion of a plant community." []
+is_a: ENVO:01000355 ! vegetation layer
+
+[Term]
+id: ENVO:01001243
+name: forest ecosystem
+def: "An ecosystem which is determined by communities of plants with a tree growth form and in which members of those communities form continuous or discontinuous regions of canopy cover." []
+is_a: ENVO:01001790 ! terrestrial ecosystem
+relationship: BFO:0000051 ENVO:01001239 ! has part forest canopy
 
 [Term]
 id: ENVO:01001273
@@ -2605,6 +2843,13 @@ is_a: ENVO:00002008 ! dust
 relationship: RO:0002473 CHEBI:140503 ! composed primarily of kaolin
 
 [Term]
+id: ENVO:01001293
+name: bush area
+def: "A vegetated area which has not been cleared or is sparsely settled, usually scrub-covered or forested" []
+synonym: "the bush" RELATED []
+is_a: ENVO:01001305 ! vegetated area
+
+[Term]
 id: ENVO:01001299
 name: atmospheric zone
 def: "An environmental zone which is part of an atmosphere." []
@@ -2613,6 +2858,12 @@ is_a: ENVO:01000408 ! environmental zone
 intersection_of: ENVO:01000408 ! environmental zone
 intersection_of: BFO:0000050 ENVO:01000267 ! part of atmosphere
 relationship: BFO:0000050 ENVO:01000267 ! part of atmosphere
+
+[Term]
+id: ENVO:01001305
+name: vegetated area
+def: "A vegetated area is a geographic feature which has ground cover dominated by plant communities." []
+is_a: ENVO:01001199 ! terrestrial environmental zone
 
 [Term]
 id: ENVO:01001308
@@ -2701,6 +2952,15 @@ def: "A material transport process during which solid or liquid particles are di
 synonym: "primary aerosol formation" RELATED []
 is_a: ENVO:03000010 ! material transport process
 relationship: RO:0002234 ENVO:00010505 ! has output aerosol
+
+[Term]
+id: ENVO:01001429
+name: land conversion process
+def: "An anthropisation process during which terrestrial environments - natural or anthropised - or parts thereof are altered to facilitate human activities such as agriculture, settlement, or commerce." []
+synonym: "land conversion" EXACT []
+synonym: "land development" EXACT []
+is_a: ENVO:01000743 ! land consumption process
+relationship: RO:0000057 ENVO:00000446 ! has participant terrestrial biome
 
 [Term]
 id: ENVO:01001434
@@ -3119,6 +3379,11 @@ intersection_of: ENVO:01001787 ! aquatic ecosystem
 intersection_of: RO:0002507 ENVO:00001999 ! determined by marine water body
 
 [Term]
+id: ENVO:01001790
+name: terrestrial ecosystem
+is_a: ENVO:01001110 ! ecosystem
+
+[Term]
 id: ENVO:01001795
 name: ecosystem process
 def: "An environmental process either driven by or primarily impacting the parts or emergent properties of an ecosystem." []
@@ -3143,6 +3408,15 @@ intersection_of: RO:0002354 GO:0008150 ! formed as result of biological_process
 intersection_of: RO:0002473 ENVO:01000155 ! composed primarily of organic material
 relationship: RO:0002354 GO:0008150 ! formed as result of biological_process
 relationship: RO:0002473 ENVO:01000155 ! composed primarily of organic material
+
+[Term]
+id: ENVO:01001835
+name: alpine biome
+def: "A biome which is subject to alpine altitudinal conditions." []
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
+intersection_of: RO:0000086 ENVO:01000340 ! has quality alpine
+relationship: RO:0000086 ENVO:01000340 ! has quality alpine
 
 [Term]
 id: ENVO:01001836
@@ -3273,6 +3547,15 @@ def: "A process in which includes the components of an environmental system as p
 is_a: BFO:0000015 ! process
 
 [Term]
+id: ENVO:02500001
+name: desertification
+def: "A type of land degradation in which terrestrial ecosystem becomes increasingly dry, typically losing its bodies of water as well as vegetation and wildlife." []
+is_a: ENVO:02500005 ! land degradation
+intersection_of: ENVO:02500005 ! land degradation
+intersection_of: RO:0002234 ENVO:00000097 ! has output desert area
+relationship: RO:0002234 ENVO:00000097 ! has output desert area
+
+[Term]
 id: ENVO:02500003
 name: atmospheric process
 def: "A process which occurs within an atmosphere." []
@@ -3280,6 +3563,23 @@ is_a: ENVO:02500000 ! environmental system process
 intersection_of: ENVO:02500000 ! environmental system process
 intersection_of: BFO:0000066 ENVO:01000267 ! occurs in atmosphere
 relationship: BFO:0000066 ENVO:01000267 ! occurs in atmosphere
+
+[Term]
+id: ENVO:02500005
+name: land degradation
+def: "A process which diminishes the functioning of an ecosystem located on land." []
+is_a: ENVO:01001795 ! ecosystem process
+relationship: BFO:0000050 ENVO:01000743 ! part of land consumption process
+relationship: RO:0000057 ENVO:00000446 ! has participant terrestrial biome
+relationship: RO:0000057 ENVO:01000635 ! has participant planetary landmass
+
+[Term]
+id: ENVO:02500014
+name: forest process
+is_a: ENVO:01001795 ! ecosystem process
+intersection_of: ENVO:01001795 ! ecosystem process
+intersection_of: RO:0000057 ENVO:00000111 ! has participant forested area
+relationship: RO:0000057 ENVO:00000111 ! has participant forested area
 
 [Term]
 id: ENVO:02500026
@@ -4159,6 +4459,14 @@ def: "A structural quality inhering in a bearer by virtue of the bearer's lackin
 is_a: PATO:0000141 ! structure
 
 [Term]
+id: PATO:0001475
+name: increased position
+def: "A position which is relatively high." []
+synonym: "high position" RELATED []
+is_a: PATO:0000140 ! position
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
 id: PATO:0001476
 name: decreased position
 def: "A positional which is relatively low." []
@@ -4243,6 +4551,15 @@ id: PATO:0001687
 name: elevation
 def: "A positional quality inhering in a bearer by virtue of the bearer's vertical distance of a point above or below a reference surface." []
 is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0001688
+name: increased elevation
+def: "An elevation which is relatively high." []
+synonym: "elevated" RELATED []
+synonym: "high elevation" EXACT []
+is_a: PATO:0001475 ! increased position
+is_a: PATO:0001687 ! elevation
 
 [Term]
 id: PATO:0001689
@@ -4491,6 +4808,16 @@ name: partially_surrounded_by
 def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
 
 [Typedef]
+id: ENVO:2100001
+name: obsolete determined by
+is_obsolete: true
+
+[Typedef]
+id: ENVO:2100007
+name: obsolete determined by part of
+is_obsolete: true
+
+[Typedef]
 id: RO:0000052
 name: inheres in
 def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
@@ -4732,4 +5059,9 @@ id: RO:0002608
 name: process has causal agent
 def: "Inverse of 'causal agent in process'" []
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: has_condition
+name: has_condition
+is_inverse_functional: true
 

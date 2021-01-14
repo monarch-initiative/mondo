@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-18/imports/go_import.owl
+data-version: mondo/releases/2021-01-13/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -361,6 +361,11 @@ synonym: "transcription factor activity" BROAD []
 is_obsolete: true
 consider: GO:0005515
 consider: GO:0140110
+
+[Term]
+id: GO:0001012
+is_obsolete: true
+replaced_by: GO:0000977
 
 [Term]
 id: GO:0001067
@@ -4794,6 +4799,12 @@ is_obsolete: true
 replaced_by: GO:0000792
 
 [Term]
+id: GO:0005724
+name: obsolete nuclear telomeric heterochromatin
+def: "OBSOLETE. Heterochromatic regions of the chromosome found at the telomeres of a chromosome in the nucleus." []
+is_obsolete: true
+
+[Term]
 id: GO:0005730
 name: nucleolus
 def: "A small, dense body one or more of which are present in the nucleus of eukaryotic cells. It is rich in RNA and protein, is not bounded by a limiting membrane, and is not seen during mitosis. Its prime function is the transcription of the nucleolar DNA into 45S ribosomal-precursor RNA, the processing of this RNA into 5.8S, 18S, and 28S components of ribosomal RNA, and the association of these components with 5S RNA and proteins synthesized outside the nucleolus. This association results in the formation of ribonucleoprotein precursors; these pass into the cytoplasm and mature into the 40S and 60S subunits of the ribosome." []
@@ -7506,6 +7517,13 @@ id: GO:0008172
 name: S-methyltransferase activity
 def: "Catalysis of the transfer of a methyl group to the sulfur atom of an acceptor molecule." []
 is_a: GO:0008168 ! methyltransferase activity
+
+[Term]
+id: GO:0008200
+name: ion channel inhibitor activity
+def: "Stops, prevents, or reduces the activity of an ion channel." []
+is_a: GO:0016248 ! channel inhibitor activity
+is_a: GO:0099106 ! ion channel regulator activity
 
 [Term]
 id: GO:0008202
@@ -10664,6 +10682,19 @@ def: "Catalysis of an oxidation-reduction (redox) reaction in which one substrat
 is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
+id: GO:0016247
+name: channel regulator activity
+def: "Modulates the activity of a channel. A channel catalyzes energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel." []
+is_a: GO:0098772 ! molecular function regulator
+
+[Term]
+id: GO:0016248
+name: channel inhibitor activity
+def: "Stops, prevents, or reduces the activity of a channel via direct interaction with the channel. A channel catalyzes energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel." []
+is_a: GO:0016247 ! channel regulator activity
+relationship: RO:0002212 GO:0015267 ! negatively regulates channel activity
+
+[Term]
 id: GO:0016250
 name: N-sulfoglucosamine sulfohydrolase activity
 def: "Catalysis of the reaction: N-sulfo-D-glucosamine + H2O = D-glucosamine + sulfate." []
@@ -13770,6 +13801,13 @@ is_a: GO:0031669 ! cellular response to nutrient levels
 is_a: GO:0070887 ! cellular response to chemical stimulus
 
 [Term]
+id: GO:0031933
+name: obsolete telomeric heterochromatin
+def: "OBSOLETE. Heterochromatic regions of the chromosome found at the telomeres." []
+synonym: "telomeric chromatin" BROAD []
+is_obsolete: true
+
+[Term]
 id: GO:0031943
 name: regulation of glucocorticoid metabolic process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving glucocorticoids." []
@@ -16193,6 +16231,14 @@ def: "The regulated release of an androgen into the circulatory system. Androgen
 is_a: GO:0035929 ! steroid hormone secretion
 
 [Term]
+id: GO:0035936
+name: testosterone secretion
+def: "The regulated release of testosterone into the circulatory system. Testosterone is an androgen having 17beta-hydroxy and 3-oxo groups, together with unsaturation at C-4-C-5." []
+is_a: GO:0015850 ! organic hydroxy compound transport
+is_a: GO:0046879 ! hormone secretion
+is_a: GO:0140353 ! lipid export from cell
+
+[Term]
 id: GO:0035947
 name: obsolete regulation of gluconeogenesis by regulation of transcription from RNA polymerase II promoter
 def: "OBSOLETE. Any process that modulates the frequency, rate or extent of gluconeogenesis, by regulation of transcription from an RNA polymerase II promoter." []
@@ -18147,6 +18193,18 @@ intersection_of: RO:0002213 GO:0051704 ! positively regulates multi-organism pro
 relationship: RO:0002213 GO:0051704 ! positively regulates multi-organism process
 
 [Term]
+id: GO:0043903
+name: regulation of biological process involved in symbiotic interaction
+def: "Any process that modulates the frequency, rate or extent of symbiosis, an interaction between two organisms living together in more or less intimate association." []
+synonym: "regulation of interspecies interactions between organisms" BROAD []
+synonym: "regulation of symbiosis, encompassing mutualism through parasitism" RELATED []
+synonym: "regulation of symbiotic process" EXACT []
+is_a: GO:0050789 ! regulation of biological process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0044403 ! regulates biological process involved in symbiotic interaction
+relationship: RO:0002211 GO:0044403 ! regulates biological process involved in symbiotic interaction
+
+[Term]
 id: GO:0043932
 name: ossification involved in bone remodeling
 def: "The formation or growth of bone or of a bony substance, or the conversion of fibrous tissue or of cartilage into bone, involved in response to injury or other physical, physiological or environmental stress stimuli." []
@@ -18313,6 +18371,11 @@ intersection_of: BFO:0000050 GO:0044419 ! part of biological process involved in
 relationship: BFO:0000050 GO:0044419 ! part of biological process involved in interspecies interaction between organisms
 
 [Term]
+id: GO:0044212
+is_obsolete: true
+replaced_by: GO:0000976
+
+[Term]
 id: GO:0044237
 name: cellular metabolic process
 def: "The chemical reactions and pathways by which individual cells transform chemical substances." []
@@ -18473,6 +18536,22 @@ is_a: GO:0046323 ! glucose import
 relationship: BFO:0000050 GO:0032869 ! part of cellular response to insulin stimulus
 
 [Term]
+id: GO:0044403
+name: biological process involved in symbiotic interaction
+def: "A process carried out by gene products in an organism that enable the organism to engage in a symbiotic relationship, a more or less intimate association, with another organism. The various forms of symbiosis include parasitism, in which the association is disadvantageous or destructive to one of the organisms; mutualism, in which the association is advantageous, or often necessary to one or both and not harmful to either; and commensalism, in which one member of the association benefits while the other is not affected. However, mutualism, parasitism, and commensalism are often not discrete categories of interactions and should rather be perceived as a continuum of interaction ranging from parasitism to mutualism. In fact, the direction of a symbiotic interaction can change during the lifetime of the symbionts due to developmental changes as well as changes in the biotic/abiotic environment in which the interaction occurs. Microscopic symbionts are often referred to as endosymbionts." []
+synonym: "commensalism" NARROW []
+synonym: "host-pathogen interaction" NARROW []
+synonym: "parasitism" NARROW []
+synonym: "symbiosis" RELATED []
+synonym: "symbiosis, encompassing mutualism through parasitism" RELATED []
+synonym: "symbiotic interaction" RELATED []
+synonym: "symbiotic interaction between host and organism" RELATED []
+synonym: "symbiotic interaction between organisms" RELATED []
+synonym: "symbiotic interaction between species" RELATED []
+synonym: "symbiotic process" RELATED []
+is_a: GO:0044419 ! biological process involved in interspecies interaction between organisms
+
+[Term]
 id: GO:0044419
 name: biological process involved in interspecies interaction between organisms
 def: "Any process evolved to enable an interaction with an organism of a different species." []
@@ -18621,6 +18700,13 @@ name: obsolete intracellular organelle part
 def: "OBSOLETE. A constituent part of an intracellular organelle, an organized structure of distinctive morphology and function, occurring within the cell. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton but excludes the plasma membrane." []
 is_obsolete: true
 consider: GO:0043229
+
+[Term]
+id: GO:0044448
+name: obsolete cell cortex part
+def: "OBSOLETE. Any constituent part of the cell cortex, the region of a cell that lies just beneath the plasma membrane and often, but not always, contains a network of actin filaments and associated proteins." []
+is_obsolete: true
+consider: GO:0005938
 
 [Term]
 id: GO:0044449
@@ -28944,6 +29030,11 @@ def: "The cellular synthesis of RNA on a template of nucleic acid (DNA or RNA)."
 is_a: GO:0032774 ! RNA biosynthetic process
 
 [Term]
+id: GO:0097689
+is_obsolete: true
+replaced_by: GO:0005381
+
+[Term]
 id: GO:0097690
 name: iron ion transmembrane transporter inhibitor activity
 def: "An activity that stops, prevents, or reduces the activity of an iron ion transmembrane transporter." []
@@ -29481,6 +29572,13 @@ name: ligand-gated cation channel activity
 def: "Enables the transmembrane transfer of an inorganic cation by a channel that opens when a specific ligand has been bound by the channel complex or one of its constituent parts." []
 is_a: GO:0005261 ! cation channel activity
 is_a: GO:0015276 ! ligand-gated ion channel activity
+
+[Term]
+id: GO:0099106
+name: ion channel regulator activity
+def: "Modulates the activity of a channel via direct interaction with it. A channel catalyzes energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel." []
+is_a: GO:0016247 ! channel regulator activity
+relationship: RO:0002211 GO:0015267 ! regulates channel activity
 
 [Term]
 id: GO:0099111
@@ -38205,6 +38303,38 @@ is_a: GO:2000834 ! regulation of androgen secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: RO:0002213 GO:0035935 ! positively regulates androgen secretion
 relationship: RO:0002213 GO:0035935 ! positively regulates androgen secretion
+
+[Term]
+id: GO:2000843
+name: regulation of testosterone secretion
+def: "Any process that modulates the frequency, rate or extent of testosterone secretion." []
+is_a: GO:0032368 ! regulation of lipid transport
+is_a: GO:0046883 ! regulation of hormone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002211 GO:0035936 ! regulates testosterone secretion
+relationship: RO:0002211 GO:0035936 ! regulates testosterone secretion
+
+[Term]
+id: GO:2000844
+name: negative regulation of testosterone secretion
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of testosterone secretion." []
+is_a: GO:0032369 ! negative regulation of lipid transport
+is_a: GO:0046888 ! negative regulation of hormone secretion
+is_a: GO:2000843 ! regulation of testosterone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002212 GO:0035936 ! negatively regulates testosterone secretion
+relationship: RO:0002212 GO:0035936 ! negatively regulates testosterone secretion
+
+[Term]
+id: GO:2000845
+name: positive regulation of testosterone secretion
+def: "Any process that activates or increases the frequency, rate or extent of testosterone secretion." []
+is_a: GO:0032370 ! positive regulation of lipid transport
+is_a: GO:0046887 ! positive regulation of hormone secretion
+is_a: GO:2000843 ! regulation of testosterone secretion
+intersection_of: GO:0008150 ! biological_process
+intersection_of: RO:0002213 GO:0035936 ! positively regulates testosterone secretion
+relationship: RO:0002213 GO:0035936 ! positively regulates testosterone secretion
 
 [Term]
 id: GO:2000846

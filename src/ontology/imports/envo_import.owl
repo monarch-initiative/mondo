@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/envo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-12-18/imports/envo_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-01-13/imports/envo_import.owl"/>
     </owl:Ontology>
     
 
@@ -122,6 +122,24 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_01001307">
         <obo:IAO_0000115>x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x</obo:IAO_0000115>
         <rdfs:label>partially_surrounded_by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_2100001 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_2100001">
+        <rdfs:label>obsolete determined by</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_2100007 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_2100007">
+        <rdfs:label>obsolete determined by part of</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -549,6 +567,15 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
         <obo:IAO_0000115>Inverse of &apos;causal agent in process&apos;</obo:IAO_0000115>
         <rdfs:label>process has causal agent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/envo#has_condition -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/envo#has_condition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:label>has_condition</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2305,6 +2332,95 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000106 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000106">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001305"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001206"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An area in which grasses (Graminae) are a significant component of the vegetation.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>grazing area</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>herbaceous area</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>grassland area</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000109 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000109">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001305"/>
+        <obo:IAO_0000115>Land having a cover of trees, shrubs, or both.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>brigalow</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>pine grove</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>caatinga</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>chanaral</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>coniferous forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>copse</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>deciduous forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>equatorial forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>equatorial rain forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>garique</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>grove</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>jungle</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mallee scrub</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>monsoon forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>moor</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mott</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>motte</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mulga</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mulga scrub</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>rain forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>reforested area</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sagebrush</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>scrub</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>shrub</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>silva</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>stand</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>taiga</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>thicket</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>thorn forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tropical rain forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>wood</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>wooded area</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>woodland area</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000111 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000111">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000109"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000109"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An area with a high density of trees. A small forest may be called a wood.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>forest</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>wood</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>forested area</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_00000128 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000128">
@@ -2409,6 +2525,28 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000176 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000176">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000191"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001688"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A landform elevated above the surrounding area.</obo:IAO_0000115>
+        <rdfs:label>elevation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_00000191 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000191">
@@ -2484,6 +2622,54 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <obo:IAO_0000115>A valley that contains, or contained, a glacier and was formed by glacial activity. Typically U-shaped in cross-section.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>valley</oboInOwl:hasRelatedSynonym>
         <rdfs:label>glacial valley</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000300 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000300">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001305"/>
+        <obo:IAO_0000115>Area covered with low-growing or stunted perennial vegetation and usually not mixed with trees.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>scrubland</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>bush</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>chaparal area</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>heath</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>scrub</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>shrubland</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>scrubland area</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000304 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000304">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000191"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000687"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000063"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>That part of the land in immediate contact with a body of water including the area between high and low water lines.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>coastal zone</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>SHORE</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>shore</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>shoreface</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>beach face</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>foreshore</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>inshore</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>rivage</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>seashore</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>strand</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>shore</rdfs:label>
     </owl:Class>
     
 
@@ -2920,6 +3106,33 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_00002013 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002013">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00001995"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000231"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001995"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000231"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Rock formed from molten magma.</obo:IAO_0000115>
+        <rdfs:label>igneous rock</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_00002016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002016">
@@ -3133,6 +3346,33 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_00002261 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002261">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00001998"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000111"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001998"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000111"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A portion of soil which is found in a forested area.</obo:IAO_0000115>
+        <rdfs:label>forest soil</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_00002264 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002264">
@@ -3295,6 +3535,33 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Soil which has little to no water content and in which minerals and other soluble chemical entities have either bonded or become adsorbed to sold particles due to insufficient water availability.</obo:IAO_0000115>
         <rdfs:label>dry soil</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00005750 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00005750">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00001998"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000106"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001998"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000106"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A portion of soil which is found in a grassland.</obo:IAO_0000115>
+        <rdfs:label>grassland soil</rdfs:label>
     </owl:Class>
     
 
@@ -3761,6 +4028,105 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000203"/>
         <obo:IAO_0000115>An environmental condition in which annual precipitation is less than half of annual potential evapotranspiration.</obo:IAO_0000115>
         <rdfs:label>arid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000231 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000231">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001307"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000063"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000267"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001305"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000648"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00010483"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001548"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Lava is a mixture of molten or semi-molten rock, volatiles, and solids which has extruded beyond a planetary crust.</obo:IAO_0000115>
+        <rdfs:label>lava</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000242 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000242">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000300"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000230"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000097"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000300"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000230"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000097"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A scrubland which is located in a desert.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>desert scrub</oboInOwl:hasExactSynonym>
+        <rdfs:label>desert scrubland</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000248 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000248">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000219"/>
+        <obo:IAO_0000115>A dense settlement biome is an anthropogenic terrestrial biome which is primarily used for human habitation, recreation, and industry within built structures with little other land use.</obo:IAO_0000115>
+        <rdfs:label>dense settlement biome</rdfs:label>
     </owl:Class>
     
 
@@ -4575,6 +4941,16 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000340 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000340">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000343"/>
+        <obo:IAO_0000115>An altitudinal condition which inheres in a bearer by virtue of the bearer having a monthly mean temperature is less than 10 degrees Celsius and being located at altitudes above the tree line and below the snowline.</obo:IAO_0000115>
+        <rdfs:label>alpine</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01000342 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000342">
@@ -4710,6 +5086,46 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A building part is a construction which is part of a building.</obo:IAO_0000115>
         <rdfs:label>building part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000435 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000435">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001243"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000340"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000342"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000340"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000342"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>montane forest</rdfs:label>
     </owl:Class>
     
 
@@ -5254,6 +5670,35 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000743 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000743">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000952"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001429"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_02500005"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A process in which natural ecosystems present over an expanse of land are removed and replaced with anthropogenic ecosystems.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">land consumption process</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01000752 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000752">
@@ -5588,12 +6033,89 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000869 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000869">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001293"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000300"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000323"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by a shrubs, young trees, or stunted trees.. The surfaces of this area are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>area of shrub</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">area of scrub</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01000875 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000875">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000010"/>
         <obo:IAO_0000115>A precipitation process is a process in which a portion of some substance segregates from a material in which that substance or its precursors were dissolved or suspended in and settles due to a force such as gravity or centrifugal force.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">precipitation process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000883 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000883">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001200"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000248"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000323"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by cultivated or anthropically maintained vegetation planted for recreation, erosion control, or aesthetic purposes interspersed by constructed or manufactured objects and materials. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">area of developed open space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000887 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000887">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001305"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000323"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by sedges or forbs, possibly interpersed with grasses or grass-like plants. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">area of sedge- and forb-dominated herbaceous vegetation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000888 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000888">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000106"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000323"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by gramanoid or herbaceous vegetation and which is not subject to intensive management by humans. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">area of gramanoid or herbaceous vegetation</rdfs:label>
     </owl:Class>
     
 
@@ -7205,6 +7727,53 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001143 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001143">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000800"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000324"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000231"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000800"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000324"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000231"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A planet which has a surface layer that nearly completely or completely covered by lava, and which has a substantial portion of its mass composed of lava.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">lava planet</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01001147 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001147">
@@ -7551,6 +8120,25 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001206 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001206">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001790"/>
+        <obo:IAO_0000115>An ecosystem in which grasses (Graminae) are the dominant form of vegetation and determine the system&apos;s structure and dynamics.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>GRASSLAND</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>grassland</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Grassland</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>down</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>downland</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>downs</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glade</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>grazing area</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>herbaceous area</oboInOwl:hasRelatedSynonym>
+        <rdfs:label xml:lang="en">grassland ecosystem</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01001211 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001211">
@@ -7676,6 +8264,47 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A natural environment which is within a water body.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">aquatic natural environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001239 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001239">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001242"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">forest canopy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001242 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001242">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000355"/>
+        <obo:IAO_0000115>A vegetation layer which is formed by a collection of individual plant crowns, themselves constituting part of the aboveground portion of a plant community.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">canopy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001243 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001243">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001790"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An ecosystem which is determined by communities of plants with a tree growth form and in which members of those communities form continuous or discontinuous regions of canopy cover.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">forest ecosystem</rdfs:label>
     </owl:Class>
     
 
@@ -7912,6 +8541,56 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001293 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001293">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001305"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000111"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000300"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000869"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000883"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000887"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000888"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001305"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000111"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000300"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000869"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000883"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000887"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000888"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A vegetated area which has not been cleared or is sparsely settled, usually scrub-covered or forested</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>the bush</oboInOwl:hasRelatedSynonym>
+        <rdfs:label xml:lang="en">bush area</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01001299 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001299">
@@ -7936,6 +8615,16 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <obo:IAO_0000115>An environmental zone which is part of an atmosphere.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>atmospheric area</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">atmospheric zone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001305 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001305">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001199"/>
+        <obo:IAO_0000115>A vegetated area is a geographic feature which has ground cover dominated by plant communities.</obo:IAO_0000115>
+        <rdfs:label>vegetated area</rdfs:label>
     </owl:Class>
     
 
@@ -8236,6 +8925,37 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <obo:IAO_0000115>A material transport process during which solid or liquid particles are directly introduced into a volume of gas.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>primary aerosol formation</oboInOwl:hasRelatedSynonym>
         <rdfs:label xml:lang="en">primary aerosol formation process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001429 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001429">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000743"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000446"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000313"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000951"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An anthropisation process during which terrestrial environments - natural or anthropised - or parts thereof are altered to facilitate human activities such as agriculture, settlement, or commerce.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>land conversion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>land development</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">land conversion process</rdfs:label>
     </owl:Class>
     
 
@@ -9651,6 +10371,15 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001790 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001790">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001110"/>
+        <rdfs:label xml:lang="en">terrestrial ecosystem</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01001795 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001795">
@@ -9721,6 +10450,33 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An object which is formed as a result of one or more biological processes and is composed primarily of organic material.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">organic object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001835 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001835">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000428"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000340"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000428"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000340"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A biome which is subject to alpine altitudinal conditions.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">alpine biome</rdfs:label>
     </owl:Class>
     
 
@@ -10138,6 +10894,50 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_02500001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500001">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_02500005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000097"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500005"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000097"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000179"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000097"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A type of land degradation in which terrestrial ecosystem becomes increasingly dry, typically losing its bodies of water as well as vegetation and wildlife.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">desertification</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_02500003 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500003">
@@ -10161,6 +10961,60 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A process which occurs within an atmosphere.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">atmospheric process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_02500005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001795"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000743"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000446"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A process which diminishes the functioning of an ecosystem located on land.</obo:IAO_0000115>
+        <rdfs:label>land degradation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_02500014 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500014">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001795"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000111"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001795"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000111"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>forest process</rdfs:label>
     </owl:Class>
     
 
@@ -12596,6 +13450,18 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001475 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001475">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115>A position which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>high position</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>increased position</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001476 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001476">
@@ -12726,6 +13592,19 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
         <obo:IAO_0000115>A positional quality inhering in a bearer by virtue of the bearer&apos;s vertical distance of a point above or below a reference surface.</obo:IAO_0000115>
         <rdfs:label>elevation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001688 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001688">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001475"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001687"/>
+        <obo:IAO_0000115>An elevation which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high elevation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>elevated</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>increased elevation</rdfs:label>
     </owl:Class>
     
 
