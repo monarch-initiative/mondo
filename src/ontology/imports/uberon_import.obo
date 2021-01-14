@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-18/imports/uberon_import.owl
+data-version: mondo/releases/2021-01-13/imports/uberon_import.owl
 ontology: mondo/imports/uberon_import
 
 [Term]
@@ -34592,6 +34592,13 @@ synonym: "multi-cell-part structure" EXACT []
 is_a: UBERON:0000477 ! anatomical cluster
 
 [Term]
+id: UBERON:0005169
+name: interstitial tissue
+def: "connective tissue between the cellular elements of a structure." []
+synonym: "interstitium" EXACT []
+is_a: UBERON:0003891 ! stroma
+
+[Term]
 id: UBERON:0005171
 name: hepatic duct
 def: "Any portion of the ducts that carry bile from the liver to the common bile duct. This may include both intrahapetic components (parts of left and right hepatic ducts) and extrahapetic components (common hepatic duct, plus hilar portion)." []
@@ -34835,6 +34842,73 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0003978 ! valve
 intersection_of: BFO:0000050 UBERON:0002078 ! part of right cardiac atrium
 relationship: BFO:0000050 UBERON:0002078 ! part of right cardiac atrium
+
+[Term]
+id: UBERON:0005211
+name: renal medulla interstitium
+def: "tissue surrounding the loop of Henle in the renal medulla." []
+synonym: "kidney medulla interstitium" EXACT []
+synonym: "medullary interstitium" NARROW []
+synonym: "medullary stroma" RELATED []
+synonym: "renal medullary interstitial tissue" EXACT []
+synonym: "renal medullary interstitium" EXACT []
+is_a: UBERON:0005215 ! kidney interstitium
+intersection_of: UBERON:0005169 ! interstitial tissue
+intersection_of: BFO:0000050 UBERON:0000362 ! part of renal medulla
+relationship: BFO:0000050 UBERON:0000362 ! part of renal medulla
+
+[Term]
+id: UBERON:0005212
+name: Leydig cell region of testis
+def: "The male gonad containing two functional parts: the SEMINIFEROUS TUBULES for the production and transport of male germ cells (SPERMATOGENESIS) and the interstitial compartment containing LEYDIG CELLS that produce ANDROGENS.." []
+synonym: "interstitium of testis" EXACT []
+synonym: "interstitium of the testis" EXACT []
+synonym: "testis - interstitial" EXACT []
+synonym: "testis interstitial tissue" EXACT []
+synonym: "testis interstitium" EXACT []
+is_a: UBERON:0005156 ! reproductive structure
+is_a: UBERON:0005169 ! interstitial tissue
+relationship: BFO:0000050 UBERON:0000473 ! part of testis
+relationship: RO:0002433 UBERON:0000473 ! contributes to morphology of testis
+
+[Term]
+id: UBERON:0005213
+name: outer renal medulla interstitium
+def: "A portion of interstitial tissue that is part of a outer medulla of kidney [Automatically generated definition]." []
+synonym: "kidney outer medulla interstitium" EXACT []
+synonym: "outer medullary interstitium" EXACT []
+is_a: UBERON:0005211 ! renal medulla interstitium
+intersection_of: UBERON:0005169 ! interstitial tissue
+intersection_of: BFO:0000050 UBERON:0001293 ! part of outer medulla of kidney
+relationship: BFO:0000050 UBERON:0001293 ! part of outer medulla of kidney
+
+[Term]
+id: UBERON:0005214
+name: inner renal medulla interstitium
+def: "A portion of interstitial tissue that is part of a inner medulla of kidney [Automatically generated definition]." []
+synonym: "inner medullary interstitium" EXACT []
+synonym: "kidney inner medulla interstitium" EXACT []
+synonym: "papillary interstitium" RELATED []
+is_a: UBERON:0005211 ! renal medulla interstitium
+intersection_of: UBERON:0005169 ! interstitial tissue
+intersection_of: BFO:0000050 UBERON:0001294 ! part of inner medulla of kidney
+relationship: BFO:0000050 UBERON:0001294 ! part of inner medulla of kidney
+
+[Term]
+id: UBERON:0005215
+name: kidney interstitium
+def: "The interstitial compartment of the kidney, comprising the extravascular intertubular spaces of the renal parenchyma, with their attendant cellular elements and extracellular substances, bounded on all sides by epithelial and vascular basement membranes." []
+synonym: "interstitial tissue of kidney" EXACT []
+synonym: "kidney interstitium group" RELATED []
+synonym: "renal interstitial tissue" EXACT []
+synonym: "renal interstitium" EXACT []
+synonym: "renal stroma" EXACT []
+synonym: "stroma of kidney" EXACT []
+is_a: UBERON:0005169 ! interstitial tissue
+intersection_of: UBERON:0005169 ! interstitial tissue
+intersection_of: BFO:0000050 UBERON:0002113 ! part of kidney
+relationship: BFO:0000050 UBERON:0002113 ! part of kidney
+relationship: RO:0002433 UBERON:0002113 ! contributes to morphology of kidney
 
 [Term]
 id: UBERON:0005216
@@ -35174,6 +35248,18 @@ intersection_of: RO:0002179 UBERON:0001225 ! drains cortex of kidney
 relationship: BFO:0000050 UBERON:0001225 ! part of cortex of kidney
 relationship: RO:0002179 UBERON:0001225 ! drains cortex of kidney
 relationship: RO:0002433 UBERON:0001225 ! contributes to morphology of cortex of kidney
+
+[Term]
+id: UBERON:0005270
+name: renal cortex interstitium
+def: "A compartment of the renal cortex situated between basement membranes of epithelia and vessels that contains two contiguous cellular networks in mutual contact, one formed by interstitial fibroblasts, the other by dendritic cells." []
+synonym: "cortical stroma" RELATED []
+synonym: "kidney cortex interstitium" EXACT []
+synonym: "renal cortical interstitial tissue" EXACT []
+is_a: UBERON:0005215 ! kidney interstitium
+intersection_of: UBERON:0005169 ! interstitial tissue
+intersection_of: BFO:0000050 UBERON:0001225 ! part of cortex of kidney
+relationship: BFO:0000050 UBERON:0001225 ! part of cortex of kidney
 
 [Term]
 id: UBERON:0005275
@@ -57860,6 +57946,28 @@ intersection_of: BFO:0000050 UBERON:0001052 ! part of rectum
 relationship: BFO:0000050 UBERON:0001052 ! part of rectum
 
 [Term]
+id: UBERON:0018113
+name: left kidney interstitium
+def: "A kidney interstitium that is part of a left kidney." []
+synonym: "left renal stroma" EXACT []
+synonym: "stroma of left kidney" EXACT []
+is_a: UBERON:0005215 ! kidney interstitium
+intersection_of: UBERON:0005215 ! kidney interstitium
+intersection_of: BFO:0000050 UBERON:0004538 ! part of left kidney
+relationship: BFO:0000050 UBERON:0004538 ! part of left kidney
+
+[Term]
+id: UBERON:0018114
+name: right kidney interstitium
+def: "A kidney interstitium that is part of a right kidney." []
+synonym: "right renal stroma" EXACT []
+synonym: "stroma of right kidney" EXACT []
+is_a: UBERON:0005215 ! kidney interstitium
+intersection_of: UBERON:0005215 ! kidney interstitium
+intersection_of: BFO:0000050 UBERON:0004539 ! part of right kidney
+relationship: BFO:0000050 UBERON:0004539 ! part of right kidney
+
+[Term]
 id: UBERON:0018115
 name: left renal pelvis
 def: "A renal pelvis that is part of a left ureter." []
@@ -57882,6 +57990,46 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0001224 ! renal pelvis
 intersection_of: BFO:0000050 UBERON:0001222 ! part of right ureter
 relationship: BFO:0000050 UBERON:0001222 ! part of right ureter
+
+[Term]
+id: UBERON:0018117
+name: left renal cortex interstitium
+def: "A renal cortex interstitium that is part of a left kidney." []
+synonym: "cortical interstitial tissue of left kidney" EXACT []
+is_a: UBERON:0005270 ! renal cortex interstitium
+is_a: UBERON:0018113 ! left kidney interstitium
+intersection_of: UBERON:0005270 ! renal cortex interstitium
+intersection_of: BFO:0000050 UBERON:0004538 ! part of left kidney
+
+[Term]
+id: UBERON:0018118
+name: right renal cortex interstitium
+def: "A renal cortex interstitium that is part of a right kidney." []
+synonym: "cortical interstitial tissue of right kidney" EXACT []
+is_a: UBERON:0005270 ! renal cortex interstitium
+is_a: UBERON:0018114 ! right kidney interstitium
+intersection_of: UBERON:0005270 ! renal cortex interstitium
+intersection_of: BFO:0000050 UBERON:0004539 ! part of right kidney
+
+[Term]
+id: UBERON:0018119
+name: left renal medulla interstitium
+def: "A renal medulla interstitium that is part of a left kidney." []
+synonym: "medullary interstitial tissue of left kidney" EXACT []
+is_a: UBERON:0005211 ! renal medulla interstitium
+is_a: UBERON:0018113 ! left kidney interstitium
+intersection_of: UBERON:0005211 ! renal medulla interstitium
+intersection_of: BFO:0000050 UBERON:0004538 ! part of left kidney
+
+[Term]
+id: UBERON:0018120
+name: right renal medulla interstitium
+def: "A renal medulla interstitium that is part of a right kidney." []
+synonym: "medullary interstitial tissue of right kidney" EXACT []
+is_a: UBERON:0005211 ! renal medulla interstitium
+is_a: UBERON:0018114 ! right kidney interstitium
+intersection_of: UBERON:0005211 ! renal medulla interstitium
+intersection_of: BFO:0000050 UBERON:0004539 ! part of right kidney
 
 [Term]
 id: UBERON:0018132

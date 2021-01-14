@@ -11,7 +11,7 @@
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/cl_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-12-18/imports/cl_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-01-13/imports/cl_import.owl"/>
     </owl:Ontology>
     
 
@@ -259,7 +259,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:19243617</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19243617</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -275,7 +275,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/cl#has_low_plasma_membrane_amount"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:19243617</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19243617</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3302,6 +3302,58 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000177 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000177">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000151"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0035936"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000151"/>
+        <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
+        <rdfs:label>testosterone secreting cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000178 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000178">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000177"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005212"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>interstitial cell</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasDbXref>BTO:0000755</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>CALOHA:TS-1150</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>EMAPA:29655</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>FMA:72297</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>interstitial cell of Leydig</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
+        <rdfs:comment>Note that the Amphibian Anatomy Ontology (AA) has a class &apos;leydig cells&apos; but this is unrelated</rdfs:comment>
+        <rdfs:label>Leydig cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000178"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12050120</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000181 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000181">
@@ -4724,7 +4776,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An epithelial cell of the integument (the outer layer of an organism).</owl:annotatedTarget>
         <oboInOwl:hasDbXref>Flybase:dsj</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:ma</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MA:ma</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000362"/>
@@ -6009,26 +6061,26 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000553"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CFU-Meg</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11722431</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12482498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:11722431</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:12482498</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000553"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Meg-CFC</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC1794060</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMCID:PMC1794060</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000553"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>MkP</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:21116988</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:21116988</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000553"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>megakaryocytic progenitor cell</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12482498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:12482498</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6303,8 +6355,8 @@
         <owl:annotatedTarget>An immature erythrocyte that changes the protein composition of its plasma membrane by exosome formation and extrusion. The types of protein removed differ between species though removal of the transferrin receptor is apparent in mammals and birds.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15946868</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:2037622</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15946868</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:2037622</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6718,7 +6770,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000586"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The reproductive cell in multicellular organisms.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A05.360.490</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A05.360.490</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7308,8 +7360,8 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721662544</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D020286</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16807374</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:D020286</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:16807374</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17986482</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20024907</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -7468,7 +7520,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell of a layer of transitional epithelium in the wall of the bladder, ureter, and renal pelvis, external to the lamina propria.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:ma</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MA:ma</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7950,7 +8002,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:10449155</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17332250</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9521319</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:9521319</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10676,7 +10728,7 @@
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16551251</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17100874</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:17100874</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13323,7 +13375,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A progenitor cell that can give rise to plasmacytoid and myeloid dendritic cells, and to monocytes and macrophages.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19273628</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19273628</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -16898,7 +16950,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002303"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A ciliated epithelial cell of the retina, this cell type uptakes sodium chloride and passes it to non-pigmented ciliary epithelial cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15106942</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15106942</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -17513,9 +17565,9 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A reticulocyte that retains the nucleus and other organelles. Found in birds, fish, amphibians and reptiles.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:18182572</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:9011180</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:9046052</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18182572</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9011180</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9046052</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -17559,7 +17611,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A reticulocyte lacking a nucleus and showing a basophilic reticulum under vital staining due to the presence of ribosomes.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ISBN:0-12203-052-4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0-12203-052-4</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721601464</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -21005,6 +21057,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0035936 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0035936"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0036161 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0036161"/>
@@ -22154,6 +22212,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005176 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005176"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0005212 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005212"/>
     
 
 
