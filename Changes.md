@@ -1,3 +1,42 @@
+# v2021-01-15
+
+## New Classes
+
+ * [MONDO:0020799](http://purl.obolibrary.org/obo/MONDO_0020799) basal cell neoplasm
+ * [MONDO:0020802](http://purl.obolibrary.org/obo/MONDO_0020802) obsolete basal cell cancer
+ * [MONDO:0020804](http://purl.obolibrary.org/obo/MONDO_0020804) basal cell carcinoma
+ * [MONDO:0020805](http://purl.obolibrary.org/obo/MONDO_0020805) benign basal cell neoplasm
+ * [MONDO:0020807](http://purl.obolibrary.org/obo/MONDO_0020807) ovarian sertoli-stromal cell tumor
+ * [MONDO:0020808](http://purl.obolibrary.org/obo/MONDO_0020808) testicular sertoli cell tumor
+ * [MONDO:0020809](http://purl.obolibrary.org/obo/MONDO_0020809) benign sertoli cell tumor
+ * [MONDO:0020813](http://purl.obolibrary.org/obo/MONDO_0020813) benign testicular sertoli cell tumor
+ * [MONDO:0020814](http://purl.obolibrary.org/obo/MONDO_0020814) miliaria alba
+ * [MONDO:0020816](http://purl.obolibrary.org/obo/MONDO_0020816) miliaria papulosa
+ * [MONDO:0020817](http://purl.obolibrary.org/obo/MONDO_0020817) miliaria vesiculosa
+ * [MONDO:0020820](http://purl.obolibrary.org/obo/MONDO_0020820) distal arthrogryposis type 2B1
+ * [MONDO:0020823](http://purl.obolibrary.org/obo/MONDO_0020823) infantile miliaria
+ * [MONDO:0024227](http://purl.obolibrary.org/obo/MONDO_0024227) miliaria pustulosa
+ * [MONDO:0024228](http://purl.obolibrary.org/obo/MONDO_0024228) miliaria profunda
+ * [MONDO:0024229](http://purl.obolibrary.org/obo/MONDO_0024229) miliaria crystallina
+ * [MONDO:0024988](http://purl.obolibrary.org/obo/MONDO_0024988) sex cord-stromal benign neoplasm
+ * [MONDO:0100229](http://purl.obolibrary.org/obo/MONDO_0100229) Heimler syndrome
+
+## Obsoletions
+
+ * [MONDO:0018194](http://purl.obolibrary.org/obo/MONDO_0018194) sex cord-stromal tumor of testis --> obsolete sex cord-stromal tumor of testis
+
+## Renaming
+
+ * [MONDO:0010713](http://purl.obolibrary.org/obo/MONDO_0010713) properdin deficiency --> properdin deficiency, X-linked
+ * [MONDO:0012707](http://purl.obolibrary.org/obo/MONDO_0012707) FEB9 --> familial febrile seizures 9
+ * [MONDO:0014775](http://purl.obolibrary.org/obo/MONDO_0014775) neonatal severe cardiopulmonary failure due to mitochondrial methylation defect --> combined oxidative phosphorylation deficiency 28
+ * [MONDO:0018194](http://purl.obolibrary.org/obo/MONDO_0018194) sex cord-stromal tumor of testis --> obsolete sex cord-stromal tumor of testis
+ * [MONDO:0027069](http://purl.obolibrary.org/obo/MONDO_0027069) mitochondrial complex 5 (atp synthase) deficiency, mitochondrial type 1 --> mitochondrial complex 5 (ATP synthase) deficiency, mitochondrial type 1
+ * [MONDO:0032750](http://purl.obolibrary.org/obo/MONDO_0032750) arthrogryposis, distal, type 2b2 --> arthrogryposis, distal, type 2B2
+ * [MONDO:0032751](http://purl.obolibrary.org/obo/MONDO_0032751) arthrogryposis, distal, type 2b3 --> arthrogryposis, distal, type 2B3
+ * [MONDO:0032869](http://purl.obolibrary.org/obo/MONDO_0032869) mitochondrial complex 5 (atp synthase) deficiency, nuclear type 6 --> mitochondrial complex 5 (ATP synthase) deficiency, nuclear type 6
+ * [MONDO:0033135](http://purl.obolibrary.org/obo/MONDO_0033135) PMP2-related Charcot-Marie-Tooth disease type 1 --> Charcot-Marie-Tooth disease, demyelinating, type 1G
+
 # v2020-12-18
 
 ## New Classes
