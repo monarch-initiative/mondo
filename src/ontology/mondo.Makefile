@@ -170,7 +170,7 @@ clean:
 
 # Makefile for mondo analysis
 
-all: sources
+# all: sources
 
 ## SOURCES
 SOURCE_VERSION = $(TODAY)
