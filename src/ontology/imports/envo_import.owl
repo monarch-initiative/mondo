@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/envo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-01-13/imports/envo_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-01-15/imports/envo_import.owl"/>
     </owl:Ontology>
     
 
@@ -122,24 +122,6 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_01001307">
         <obo:IAO_0000115>x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x</obo:IAO_0000115>
         <rdfs:label>partially_surrounded_by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_2100001 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_2100001">
-        <rdfs:label>obsolete determined by</rdfs:label>
-        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_2100007 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_2100007">
-        <rdfs:label>obsolete determined by part of</rdfs:label>
-        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -567,15 +549,6 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
         <obo:IAO_0000115>Inverse of &apos;causal agent in process&apos;</obo:IAO_0000115>
         <rdfs:label>process has causal agent</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/envo#has_condition -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/envo#has_condition">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:label>has_condition</rdfs:label>
     </owl:ObjectProperty>
     
 

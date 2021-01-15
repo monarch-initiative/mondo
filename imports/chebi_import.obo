@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-18/imports/chebi_import.owl
+data-version: mondo/releases/2021-01-15/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -4505,6 +4505,17 @@ is_a: CHEBI:50995 ! secondary amino compound
 relationship: is_conjugate_base_of CHEBI:137419 ! secondary ammonium ion
 
 [Term]
+id: CHEBI:32876
+name: tertiary amine
+def: "A compound formally derived from ammonia by replacing three hydrogen atoms by hydrocarbyl groups." []
+synonym: "R3N" RELATED []
+synonym: "tertiaeres Amin" RELATED []
+synonym: "Tertiary amine" EXACT []
+synonym: "tertiary amines" EXACT []
+is_a: CHEBI:32952 ! amine
+is_a: CHEBI:50996 ! tertiary amino compound
+
+[Term]
 id: CHEBI:32877
 name: primary amine
 def: "A compound formally derived from ammonia by replacing one hydrogen atom by a hydrocarbyl group." []
@@ -5835,6 +5846,7 @@ relationship: RO:0000087 CHEBI:23357 ! cofactor
 [Term]
 id: CHEBI:33937
 name: macronutrient
+synonym: "macronutrients" RELATED []
 is_a: CHEBI:33284 ! nutrient
 
 [Term]

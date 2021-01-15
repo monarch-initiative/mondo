@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-13/imports/envo_import.owl
+data-version: mondo/releases/2021-01-15/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -4808,16 +4808,6 @@ name: partially_surrounded_by
 def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
 
 [Typedef]
-id: ENVO:2100001
-name: obsolete determined by
-is_obsolete: true
-
-[Typedef]
-id: ENVO:2100007
-name: obsolete determined by part of
-is_obsolete: true
-
-[Typedef]
 id: RO:0000052
 name: inheres in
 def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
@@ -5059,9 +5049,4 @@ id: RO:0002608
 name: process has causal agent
 def: "Inverse of 'causal agent in process'" []
 is_a: RO:0002410 ! causally related to
-
-[Typedef]
-id: has_condition
-name: has_condition
-is_inverse_functional: true
 

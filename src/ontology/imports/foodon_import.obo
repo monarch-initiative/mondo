@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-13/imports/foodon_import.owl
+data-version: mondo/releases/2021-01-15/imports/foodon_import.owl
 subsetdef: Angiosperm ""
 subsetdef: Arabidopsis ""
 subsetdef: Citrus ""
@@ -2258,12 +2258,6 @@ name: has food substance analog
 is_symmetric: true
 
 [Typedef]
-id: FOODON:00001303
-name: obsolete - has taxonomic identifier
-is_obsolete: true
-replaced_by: RO:0002160
-
-[Typedef]
 id: FOODON:00001563
 name: has defining ingredient
 def: "A defining ingredient defines what a food is principally categorized as, rather than an ingredient listed by percentage of weight or volume. A food may have more than one defining ingredient." []
@@ -2404,7 +2398,7 @@ id: RO:0002353
 name: output of
 def: "inverse of has output" []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000056 ! participates in
+is_a: RO:0000056 ! participates_in
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]

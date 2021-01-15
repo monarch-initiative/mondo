@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2020-12-18/imports/cl_import.owl
+data-version: mondo/releases/2021-01-15/imports/cl_import.owl
 subsetdef: ubprop:upper_level ""
 ontology: mondo/imports/cl_import
 
@@ -1103,6 +1103,29 @@ namespace: cell
 is_a: CL:0000151 ! secretory cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: RO:0002215 GO:0035929
+
+[Term]
+id: CL:0000177
+name: testosterone secreting cell
+namespace: cell
+is_a: CL:0000151 ! secretory cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: RO:0002215 GO:0035936
+
+[Term]
+id: CL:0000178
+name: Leydig cell
+namespace: cell
+def: "A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis." [GOC:tfm, PMID:12050120]
+comment: Note that the Amphibian Anatomy Ontology (AA) has a class 'leydig cells' but this is unrelated
+synonym: "interstitial cell" BROAD []
+synonym: "interstitial cell of Leydig" EXACT []
+xref: BTO:0000755
+xref: CALOHA:TS-1150
+xref: EMAPA:29655
+xref: FMA:72297
+is_a: CL:0000177 ! testosterone secreting cell
+relationship: BFO:0000050 UBERON:0005212
 
 [Term]
 id: CL:0000181
