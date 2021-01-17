@@ -1,0 +1,49 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?term ?term_label ?related
+WHERE 
+{ 
+  { 
+    ?term oboInOwl:hasRelatedSynonym ?related ;
+      rdfs:label ?term_label ;
+      oboInOwl:hasExactSynonym ?exact ;
+      a owl:Class .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasExactSynonym ;
+           owl:annotatedTarget ?exact ;
+           oboInOwl:hasDbXref ?xref1 
+      ] .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+           owl:annotatedTarget ?related ;
+           oboInOwl:hasDbXref ?xref2 
+      ] .
+    
+    FILTER (str(?related)=str(?exact))
+    FILTER (regex(str(?xref1), "OMIM^"))
+    FILTER (regex(str(?xref2), "OMIM^"))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  }
+  #UNION 
+  # { 
+  # ASK CHRIS: IS THIS REDUNDANT? -> REDUNDANT..
+  #  ?x owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+  #    owl:annotatedSource ?term ;
+  #    owl:annotatedTarget ?related .
+  #    
+  # ?y owl:annotatedProperty oboInOwl:hasExactSynonym ;
+  #    owl:annotatedSource ?term ;
+  #    owl:annotatedTarget ?exact .
+  #    
+  # ?term rdfs:label ?term_label .
+  #
+  # FILTER (str(?related)=str(?exact))
+  # FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  # }
+}
