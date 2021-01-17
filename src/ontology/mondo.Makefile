@@ -1,10 +1,8 @@
 ALL_PATTERNS_1=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-h]*.yaml))
 ALL_PATTERNS_2=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[i-p]*.yaml))
 ALL_PATTERNS_3=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[q-z]*.yaml))
-DOSDPT=../dosdp-tools-0.15.1-SNAPSHOT/bin/dosdp-tools
-
-g:
-	echo $(ALL_PATTERNS_2)
+ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
+DOSDPT=../dosdp-tools-0.16-SNAPSHOT/bin/dosdp-tools
 
 .PHONY: dirs
 dirs:
@@ -14,17 +12,11 @@ dirs:
 
 .PHONY: matches
 	
-matches: matches_1 matches_2 matches_3
+matches: 
+	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
 
-matches_1:
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS_1)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
-
-matches_2:
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS_2)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
-		
-matches_3:
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS_3)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
-	
+matches_annotations:
+	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --restrict-axioms-to=annotation --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches_annotations/"
 
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
@@ -170,49 +162,51 @@ clean:
 
 # Makefile for mondo analysis
 
-# all: sources
+#all: sources
 
 ## SOURCES
+## TODO: NOTE THE MONDO SOURCE BUNDLED HERE IS THE LATEST RELEASE, (i.e. does not trigger a release run)
+## THIS is to enable fair comparison with the other sources and issues with syncronisation
+
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit mondo ordo medgen equivalencies
-ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS))
-ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS))
-ALL_SOURCES_OWL = $(patsubst %, sources/$(SOURCE_VERSION)/%.owl, $(SOURCE_IDS))
+SOURCE_IDS = doid ncit ordo medgen omim
+SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
+ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
+ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
+ALL_SOURCES_OWL_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.owl.gz, $(SOURCE_IDS_INCL_MONDO))
+ALL_SOURCES_OWL = $(patsubst %, sources/$(SOURCE_VERSION)/%.owl, $(SOURCE_IDS_INCL_MONDO))
 
 
-sources: $(ALL_SOURCES_JSON) $(ALL_SOURCES_JSON_GZ) sources/$(SOURCE_VERSION)/all_sources_merged.json
+sources: $(ALL_SOURCES_JSON) $(ALL_SOURCES_OWL) $(ALL_SOURCES_JSON_GZ) $(ALL_SOURCES_OWL_GZ)
 
 .PHONY: source_release_dir
 source_release_dir:
 	mkdir -p sources/$(SOURCE_VERSION)
 
-sources/$(SOURCE_VERSION)/%.json.gz: sources/$(SOURCE_VERSION)/%.json | source_release_dir
+sources/$(SOURCE_VERSION)/%.gz: sources/$(SOURCE_VERSION)/% | source_release_dir
 	gzip -c $< > $@
-	
+
 sources/$(SOURCE_VERSION)/%.json: sources/$(SOURCE_VERSION)/%.owl
 	robot merge -i $< convert -f json -o $@
 
-sources/$(SOURCE_VERSION)/doid.owl: | source_release_dir
-	robot merge -I http://purl.obolibrary.org/obo/doid.owl -o $@
+## The following goals covers NCIT, DOID, and MONDO
+sources/$(SOURCE_VERSION)/%.owl: | source_release_dir
+	robot merge -I $(OBO)/$*.owl -o $@
 
+sources/$(SOURCE_VERSION)/omim.owl: build-omim | source_release_dir
+	robot merge -i sources/omim/omim.owl -o $@
+
+# build-medgen
 sources/$(SOURCE_VERSION)/medgen.owl: | source_release_dir
+	echo "WARNING: MEDGEN IS CURRENTLY NOT BEING UPDATED, BECAUSE OF "
 	robot merge -i sources/medgen/medgen-disease-extract.owl -o $@
 
-sources/$(SOURCE_VERSION)/ordo.owl: | source_release_dir
+sources/$(SOURCE_VERSION)/ordo.owl: build-orphanet | source_release_dir
 	robot merge -i sources/orphanet/ordo_orphanet.owl -o $@
-
-sources/$(SOURCE_VERSION)/ncit.owl: | source_release_dir
-	robot merge -I http://purl.obolibrary.org/obo/ncit.owl -o $@
-
-sources/$(SOURCE_VERSION)/mondo.owl: | source_release_dir
-	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@
 
 sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 	curl -L -s $(OBO)/mondo/imports/equivalencies.owl > $@.tmp && mv $@.tmp $@
-
-sources/$(SOURCE_VERSION)/all_sources_merged.json: $(ALL_SOURCES_OWL)
-	robot merge $(addprefix -i , $^) convert -f json -o $@
 
 #sources/CTD_diseases.obo:
 #	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
@@ -223,24 +217,18 @@ sources/$(SOURCE_VERSION)/all_sources_merged.json: $(ALL_SOURCES_OWL)
 
 #### Download and preprocess upstream Mondo sources.
 # MONDO_SOURCES = omim medgen medic orphanet
-MONDO_SOURCES = omim medgen medic orphanet
-all: build_sources
+#MONDO_SOURCES_WITH_SPECIAL_PREPROCESSING = omim medgen orphanet
+#all: build_sources
 
-.PHONY: release_dir
+#.PHONY: release_dir
 
-build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
+#build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
 
 build-%:
-	cd sources/$* && make
+	cd sources/$* && make all -B
 
-xxx:
-	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/excluded-subsumption-is-inferred-violation.sparql reports/excluded-subsumption-is-inferred-violation.tsv
-
-yyy:
-	$(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
-
-aa:
-	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
-
-ab:
-	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
+#### Some useful ROBOT queries:
+# $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/excluded-subsumption-is-inferred-violation.sparql reports/excluded-subsumption-is-inferred-violation.tsv
+# $(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
+# $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
+# $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
