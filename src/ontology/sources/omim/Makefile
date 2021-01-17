@@ -31,4 +31,5 @@ omim.obo: omim-src.obo
 .PRECIOUS: omim.obo
 
 omim.owl: omim.obo
-	owltools $< --set-ontology-id http://purl.obolibrary.org/obo/omim.owl -o -f obo $@
+	owltools $< --set-ontology-id http://purl.obolibrary.org/obo/omim.owl -o $@
+

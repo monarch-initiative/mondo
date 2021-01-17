@@ -568,25 +568,9 @@ mirror/%-labels.owl: mirror/%.owl
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v 
 
-OMIM_URL=https://data.monarchinitiative.org/experimental/omim.ttl
 
 # You could trigger this upstream to get the very latest results:
 # https://ci.monarchinitiative.org/view/dipper/job/build-omim
-
-mirror/omim-src.ttl: 
-	wget --no-check-certificate $(OMIM_URL) -O $@
-.PRECIOUS: mirror/omim.ttl
-
-mirror/omim-src.owl: mirror/omim-src.ttl
-	owltools $< --set-ontology-id $(OBO)/mondo/$@ -o $@
-mirror/omim-src.obo: mirror/omim-src.owl
-	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | ../utils/fix-omim.pl  > $@
-
-mirror/omim.obo: mirror/omim-src.obo
-	$(OBOGREPL) --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' mirror/omim-src.obo | perl -npe 's@http://omim.org/entry/@OMIM:@g;s@http://www.omim.org/phenotypicSeries/PS@OMIMPS:@g' |  $(OBOGREPL) -r 'id: OMIM' -   > $@.tmp.obo
-	owltools $@.tmp.obo --set-ontology-id http://purl.obolibrary.org/obo/omim.owl -o -f obo $@ && rm $@.tmp.obo
-mirror/omim.owl: mirror/omim.obo
-	owltools $< -o $@
 
 
 
