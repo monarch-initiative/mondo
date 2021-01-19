@@ -2,6 +2,31 @@
 This is a listing of all the patterns hosted as part of this directory
 
 ## Patterns in dosdp-patterns
+### Omim disease series by gene
+*This pattern is meant to be used for OMIM diseases, including children of OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. Notes about the OMIMPS (see also OMIM_phenotypic_series.yaml):  - every instance of the OMIMPS metaclass should be equivalent to (via annotated xref) to something in OMIMPS namespace - the OMIMPS will never have an asserted causative gene as logical axiom (and no single causative gene in text def) - the OMIMPS must never be equivalent to an OMIM:nnnnnn (often redundant with the above rule) - the OMIMPS must have an acronym synonym, e.g. HPE - the OMIMPS must have two or more subclasses (direct or indirect) that are equivalent to OMIMs and conform to this pattern - the subclasses should (not must) have a logical def that uses the PS as a genus  - the OMIM subclasses must have acronym synonyms that are the parent syn + number, e.g. HPE1, HPE2 - the primary label for the children should also be parent + {"type"} + number - the first member will usually have the same number local ID as the PS Examples: [holoprosencephaly 1](http://purl.obolibrary.org/obo/MONDO_0009349), [3M syndrome 1](http://purl.obolibrary.org/obo/MONDO_0010117)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml |
+| Name | OMIM_disease_series_by_gene |
+| Classes | MONDO:0000001, SO:0000704,  |
+| Variables | disease (MONDO:0000001), gene (SO:0000704),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
+### Omim phenotypic series
+*This pattern is meant to be used for OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. Note:  - every instance of this metaclass should be equivalent to (via annotated xref) to something in OMIMPS namespace - it will never have an asserted causative gene as logical axiom (and no single causative gene in text def) - it must never be equivalent to an OMIM:nnnnnn (often redundant with the above rule) - it must have an acronym synonym, e.g. HPE - it must have two or more subclasses (direct or indirect) that are equivalent to OMIMs - the subclasses should (not must) have a logical def that uses the PS as a genus (see https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/disease_series_by_gene.yaml) - the OMIM subclasses must have acronym synonyms that are the parent syn + number, e.g. HPE1, HPE2 - the primary label for the children should also be parent + {"type"} + number - the first member will usually have the same number local ID as the PS - the first member in OMIM usually has documentation that is pertinent to the parent PS - the members may(?) generally share high semantic similarity
+Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS236100), '3-M syndrome'(http://purl.obolibrary.org/obo/MONDO_0007477) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS273750).*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml |
+| Name | OMIM_phenotypic_series |
+| Classes | MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
 ### Acquired
 *Pattern for extending a etiology-generic disease class to an acquired form.  Here acquired means that basis for the disease is acquired during the individuals lifetime. It need not exclude genetic etiology, but it excludes inherited.*
 
@@ -138,7 +163,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adult.tsv)
 ### Allergic form of disease
-*an etiological pattern that extends an etiology-generic disease to an allergic form (i.e. caused by pathological type I hypersensitivity reaction)*
+*An etiological pattern that extends an etiology-generic disease to an allergic form (i.e. caused by pathological type I hypersensitivity reaction). The [allergy.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/allergy.yaml) pattern is to refine an existing disease by trigger.
+Examples: [allergic respiratory disease](http://purl.obolibrary.org/obo/MONDO_0000771), [atopic eczema](http://purl.obolibrary.org/obo/MONDO_0004980), [allergic otitis media](http://purl.obolibrary.org/obo/MONDO_0021202)*
 
 | Attribute | Info |
 |----------|----------|
@@ -146,7 +172,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | allergic_form_of_disease |
 | Classes | MONDO:0000001, GO:0016068,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergic_form_of_disease.tsv) |
 
 #### Data preview: 
@@ -160,7 +186,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergic_form_of_disease.tsv)
 ### Allergy
-*allergy classified according to allergic trigger.*
+*Allergy classified according to allergic trigger. This pattern is to refine an existing disease by trigger, the [allergic_form_of_disease.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/allergic_form_of_disease.yaml) pattern is for a generic disease.
+Examples: [egg allergy](http://purl.obolibrary.org/obo/MONDO_0005741), [peach allergy](http://purl.obolibrary.org/obo/MONDO_0000785), [gluten allergy](http://purl.obolibrary.org/obo/MONDO_0000606)*
 
 | Attribute | Info |
 |----------|----------|
@@ -168,7 +195,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | allergy |
 | Classes | MONDO:0005271, owl:Thing,  |
 | Variables | substance (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergy.tsv) |
 
 #### Data preview: 
@@ -176,7 +203,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |:---------------------------------------------|:------------------------|:-----------------------------------------------|:------------------|
 | MONDO:0000789 | Atlantic cod allergy    | NCBITaxon:8049  | Gadus morhua      |
 | MONDO:0000790 | Atlantic salmon allergy | NCBITaxon:8030  | Salmo salar       |
-| MONDO:0000802 | Indian prawn allergy    | FOODON:03000005 | Indian prawn      |
+| MONDO:0000802 | Indian prawn allergy    | NCBITaxon:29960 | Penaeus indicus   |
 | MONDO:0000773 | Timothy grass allergy   | NCBITaxon:15957 | Phleum pratense   |
 | MONDO:0000779 | apple allergy           | NCBITaxon:3750  | Malus domestica   |
 
@@ -514,7 +541,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_by_dysfunctional_structure.tsv)
 ### Disease series by gene
-*This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like like MED12-related intellectual disability syndrome.  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)*
+*This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome.  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)*
 
 | Attribute | Info |
 |----------|----------|
@@ -523,18 +550,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Classes | MONDO:0000001, SO:0001217,  |
 | Variables | disease (MONDO:0000001), gene (SO:0001217),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene.tsv) |
+| Examples |  |
 
-#### Data preview: 
-| defined:class                                | defined:class:label                           | disease                                      | disease:label                               | gene                              | gene:label   |
-|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:--------------------------------------------|:----------------------------------|:-------------|
-| MONDO:0008861 | 3-methylcrotonyl-CoA carboxylase 1 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6936  | MCCC1        |
-| MONDO:0008862 | 3-methylcrotonyl-CoA carboxylase 2 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6937  | MCCC2        |
-| MONDO:0009610 | 3-methylglutaconic aciduria type 1            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/890   | AUH          |
-| MONDO:0009787 | 3-methylglutaconic aciduria type 3            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/8142  | OPA3         |
-| MONDO:0012435 | 3-methylglutaconic aciduria type 5            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/30528 | DNAJC19      |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene.tsv)
 ### Disrupts process
 *A disease that disrupts a process, like immune system function, or early development.
 Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0007004), [type IV hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0002459), [neural tube closure defect](http://purl.obolibrary.org/obo/MONDO_0017059) (55 total)*
@@ -565,19 +582,19 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml |
 | Name | environmental_stimulus |
-| Classes | MONDO:0000001, ENVO:00010483,  |
-| Variables | disease (MONDO:0000001), stimulus (ENVO:00010483),  |
+| Classes | MONDO:0000001, BFO:0000040,  |
+| Variables | disease (MONDO:0000001), stimulus (BFO:0000040),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label   | disease                                      | disease:label                 | stimulus                                       | stimulus:label   |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:------------------------------|:-----------------------------------------------|:-----------------|
-| MONDO:0000802 | Indian prawn allergy  | MONDO:0005271 | allergic disease              | FOODON:03000005 | Indian prawn     |
-| MONDO:0006654 | anthracosis           | MONDO:0015926 | pneumoconiosis                | ENVO:02000099   | coal dust        |
-| MONDO:0016466 | asbestosis            | MONDO:0015926 | pneumoconiosis                | ENVO:02000106   | asbestos dust    |
-| MONDO:0001540 | bagassosis            | MONDO:0004553 | extrinsic allergic alveolitis | ENVO:00002872   | bagasse          |
-| MONDO:0001001 | baritosis             | MONDO:0015926 | pneumoconiosis                | ENVO:01001284   | barium dust      |
+| defined:class                                | defined:class:label                     | disease                                      | disease:label      | stimulus                                      | stimulus:label       |
+|:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:-------------------|:----------------------------------------------|:---------------------|
+| MONDO:0021747 | Acanthamoeba infectious disease         | MONDO:0005550 | infectious disease | NCBITaxon:5754 | Acanthamoeba         |
+| MONDO:0006635 | Acinetobacter infectious disease        | MONDO:0005550 | infectious disease | NCBITaxon:469  | Acinetobacter        |
+| MONDO:0006636 | Actinobacillus infectious disease       | MONDO:0005550 | infectious disease | NCBITaxon:713  | Actinobacillus       |
+| MONDO:0006921 | Actinomycetales infectious disease      | MONDO:0005550 | infectious disease | NCBITaxon:2037 | Actinomycetales      |
+| MONDO:0005117 | Aeromonas hydrophila infectious disease | MONDO:0005550 | infectious disease | NCBITaxon:644  | Aeromonas hydrophila |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv)
 ### Hemangioma
@@ -616,13 +633,13 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                 | process                                   | process:label                                                                                                 |
-|:---------------------------------------------|:------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| MONDO:0009825 | 5-oxoprolinase deficiency (disease) | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
-| MONDO:0005775 | G6PD deficiency                     | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
-| MONDO:0007068 | adenylosuccinate lyase deficiency   | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
-| MONDO:0009665 | biotinidase deficiency              | GO:0047708 | biotinidase activity                                                                                          |
-| MONDO:0017762 | disorder of copper metabolism       | GO:0006878 | cellular copper ion homeostasis                                                                               |
+| defined:class                                | defined:class:label                  | process                                   | process:label                                                                                                 |
+|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
+| MONDO:0009825 | 5-oxoprolinase deficiency (disease)  | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
+| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
+| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
+| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
+| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                                 |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv)
 ### Inborn metabolic disrupts
@@ -639,13 +656,13 @@ Examples: ['5-oxoprolinase deficiency (disease)'](http://purl.obolibrary.org/obo
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                 | v0                                        | v0:label                                                                                                      |
-|:---------------------------------------------|:------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| MONDO:0009825 | 5-oxoprolinase deficiency (disease) | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
-| MONDO:0005775 | G6PD deficiency                     | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
-| MONDO:0007068 | adenylosuccinate lyase deficiency   | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
-| MONDO:0009665 | biotinidase deficiency              | GO:0047708 | biotinidase activity                                                                                          |
-| MONDO:0017762 | disorder of copper metabolism       | GO:0006878 | cellular copper ion homeostasis                                                                               |
+| defined:class                                | defined:class:label                  | v0                                        | v0:label                                                                                                      |
+|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
+| MONDO:0009825 | 5-oxoprolinase deficiency (disease)  | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
+| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
+| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
+| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
+| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                                 |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv)
 ### Infantile
@@ -682,18 +699,8 @@ Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](ht
 | Classes | MONDO:0000001, NCBITaxon:1, MONDO:0005550,  |
 | Variables | agent (NCBITaxon:1),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv) |
+| Examples |  |
 
-#### Data preview: 
-| defined:class                                | defined:class:label                     | agent                                         | agent:label          |
-|:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:---------------------|
-| MONDO:0021747 | Acanthamoeba infectious disease         | NCBITaxon:5754 | Acanthamoeba         |
-| MONDO:0006635 | Acinetobacter infectious disease        | NCBITaxon:469  | Acinetobacter        |
-| MONDO:0006636 | Actinobacillus infectious disease       | NCBITaxon:713  | Actinobacillus       |
-| MONDO:0006921 | Actinomycetales infectious disease      | NCBITaxon:2037 | Actinomycetales      |
-| MONDO:0005117 | Aeromonas hydrophila infectious disease | NCBITaxon:644  | Aeromonas hydrophila |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv)
 ### Infectious inflammation
 *This combines the [infectious disease by agent pattern](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/infectious_disease_by_agent.yaml) and the [inflammatory disease by site](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inflammatory_disease_by_site.yaml) pattern.
 Examples: [bacterial endocarditis (disease)](http://purl.obolibrary.org/obo/MONDO_0006669), [fungal gastritis](http://purl.obolibrary.org/obo/MONDO_0002843)*
@@ -743,25 +750,25 @@ Examples: ['Achilles bursitis'](http://purl.obolibrary.org/obo/MONDO_0001594), [
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inflammatory_disease_by_site.tsv)
 ### Inherited susceptibility
 *This pattern should be used with OMIM phenotypic series (OMIMPS) for which the subclasses are susceptibilities. Note, this pattern should not have an asserted causative gene as logical axiom (and no single causative gene in text definition). The children should have asserted causative genes in the text definitions and in the logical axioms.
-Examples: ['migraine disorder'](http://purl.obolibrary.org/obo/MONDO_0005277), ['microvascular complications of diabetes, susceptibility'](http://purl.obolibrary.org/obo/MONDO_0000065), ['epilepsy, idiopathic generalized'](http://purl.obolibrary.org/obo/MONDO_0005579).*
+Examples: ['microvascular complications of diabetes, susceptibility'](http://purl.obolibrary.org/obo/MONDO_0000065), ['epilepsy, idiopathic generalized'](http://purl.obolibrary.org/obo/MONDO_0005579), ['aspergillosis, susceptibility to'](http://purl.obolibrary.org/obo/MONDO_0013562).*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml |
-| Name | susceptibility_by_gene |
+| Name | inherited_susceptibility |
 | Classes | MONDO:0000001, MONDO:0020573,  |
 | Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                           | disease                                      | disease:label              |
-|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------|
-| MONDO:0007845 | Kaposi sarcoma, susceptibility to             | MONDO:0005055 | Kaposi's sarcoma (disease) |
-| MONDO:0013562 | aspergillosis, susceptibility to              | MONDO:0005657 | aspergillosis              |
-| MONDO:0000162 | autoimmune thyroid disease, susceptibility to | MONDO:0005623 | autoimmune thyroid disease |
-| MONDO:0015279 | chronic mucocutaneous candidiasis (disease)   | MONDO:0002026 | candidiasis                |
-| MONDO:0013713 | dengue virus, susceptibility to               | MONDO:0005502 | dengue disease             |
+| defined:class                                | defined:class:label                           | disease                                      | disease:label                          |
+|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------------------|
+| MONDO:0007845 | Kaposi sarcoma, susceptibility to             | MONDO:0005055 | Kaposi's sarcoma (disease)             |
+| MONDO:0000093 | Schistosoma mansoni infection, susceptibility | MONDO:0044345 | Schistosoma mansoni infectious disease |
+| MONDO:0013562 | aspergillosis, susceptibility to              | MONDO:0005657 | aspergillosis                          |
+| MONDO:0020836 | autism, susceptiblity to                      | MONDO:0005260 | autism (disease)                       |
+| MONDO:0000162 | autoimmune thyroid disease, susceptibility to | MONDO:0005623 | autoimmune thyroid disease             |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv)
 ### Isolated
@@ -778,13 +785,13 @@ Examples: ['isolated aniridia'](http://purl.obolibrary.org/obo/MONDO_0007119), [
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                | disease                                      | disease:label         |
-|:---------------------------------------------|:-----------------------------------|:---------------------------------------------|:----------------------|
-| MONDO:0020075 | genetic non-syndromic obesity      | MONDO:0019182 | monogenic obesity     |
-| MONDO:0017262 | inherited non-syndromic ichthyosis | MONDO:0015947 | inherited ichthyosis  |
-| MONDO:0016520 | isolated Klippel-Feil syndrome     | MONDO:0001029 | Klippel-Feil syndrome |
-| MONDO:0016462 | isolated agammaglobulinemia        | MONDO:0015977 | agammaglobulinemia    |
-| MONDO:0007119 | isolated aniridia                  | MONDO:0019172 | aniridia              |
+| defined:class                                | defined:class:label                                          | disease                                      | disease:label                                   |
+|:---------------------------------------------|:-------------------------------------------------------------|:---------------------------------------------|:------------------------------------------------|
+| MONDO:0016342 | familial isolated arrhythmogenic right ventricular dysplasia | MONDO:0016587 | arrhythmogenic right ventricular cardiomyopathy |
+| MONDO:0020075 | genetic non-syndromic obesity                                | MONDO:0019182 | monogenic obesity                               |
+| MONDO:0017262 | inherited non-syndromic ichthyosis                           | MONDO:0015947 | inherited ichthyosis                            |
+| MONDO:0016520 | isolated Klippel-Feil syndrome                               | MONDO:0001029 | Klippel-Feil syndrome                           |
+| MONDO:0016462 | isolated agammaglobulinemia                                  | MONDO:0015977 | agammaglobulinemia                              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv)
 ### Juvenile
@@ -887,8 +894,8 @@ Examples: ['abdominal cystic lymphangioma'](http://purl.obolibrary.org/obo/MONDO
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/location.yaml |
 | Name | location |
-| Classes | MONDO:0000001, owl:Thing,  |
-| Variables | disease (MONDO:0000001), location (owl:Thing),  |
+| Classes | MONDO:0000001, UBERON:0001062, CL:0000000,  |
+| Variables | disease (MONDO:0000001), location,  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location.tsv) |
 
@@ -1095,7 +1102,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neoplasm_by_origin.tsv)
 ### Neuroendocrine neoplasm
-*Note that tumor is typically a synonym for neoplasm, although this can be context dependent. For NETs, NCIT uses the nomenclature 'tumor' to indicate 'well differentiated, low or intermediate grade tumor'. This can also be called carcinoid, see https://www.cancer.org/cancer/gastrointestinal-carcinoid-tumor/about/what-is-gastrointestinal-carcinoid.html We attempt to spell this out in our labels.*
+*Note that tumor is typically a synonym for neoplasm, although this can be context dependent. For neuroendocrine tumors (NETs), NCIT uses the nomenclature 'tumor' to indicate 'well differentiated, low or intermediate grade tumor'. This can also be called carcinoid, see [https://www.cancer.org/cancer/gastrointestinal-carcinoid-tumor/about/what-is-gastrointestinal-carcinoid.html](https://www.cancer.org/cancer/gastrointestinal-carcinoid-tumor/about/what-is-gastrointestinal-carcinoid.html). We attempt to spell this out in our labels.
+Examples: [breast neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0002485), [digestive system neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0024503), [ovarian neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0002481)*
 
 | Attribute | Info |
 |----------|----------|
@@ -1206,19 +1214,29 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
-### Realized in response to
-*This is auto-generated. Add your description here
+### Realized in response to environmental exposure
+*This pattern is used for a disease, where the cause of the disease is an exposure to an environmental stimulus (using ECTO exposure terms).
 Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_0029001), [alcohol amnestic disorder](http://purl.obolibrary.org/obo/MONDO_0021702), [alcoholic polyneuropathy](http://purl.obolibrary.org/obo/MONDO_0006645) (26 total)*
 
 | Attribute | Info |
 |----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to.yaml |
-| Name | X realized in response to X |
-| Classes | owl:Thing,  |
-| Variables | v0 (owl:Thing), v1 (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
-| Examples |  |
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to_evironmental_exposure.yaml |
+| Name | disease realized in response to environmental exposure |
+| Classes | MONDO:0000001, ExO:0000002,  |
+| Variables | disease (MONDO:0000001), exposure (ExO:0000002),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/realized_in_response_to_environmental_exposure.tsv) |
 
+#### Data preview: 
+| defined:class                                | defined:class:label                        | disease                                      | disease:label                | exposure                                    | exposure:label                    |
+|:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|:--------------------------------------------|:----------------------------------|
+| MONDO:0060781 | Preeyasombat-Varavithya syndrome           | MONDO:0001083 | Fanconi renotubular syndrome | ECTO:9000364 | tetracycline exposure             |
+| MONDO:0003245 | aflatoxin-related hepatocellular carcinoma | MONDO:0007256 | hepatocellular carcinoma     | ECTO:0001108 | aflatoxin exposure                |
+| MONDO:0044663 | aquagenic palmoplantar keratoderma         | MONDO:0006590 | palmoplantar keratosis       | ECTO:9000156 | water exposure                    |
+| MONDO:0043523 | cadmium poisoning                          | MONDO:0029000 | poisoning                    | ECTO:0001566 | cadmium molecular entity exposure |
+| MONDO:0000706 | chemical colitis                           | MONDO:0005292 | colitis (disease)            | ECTO:0000231 | chemical entity exposure          |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/realized_in_response_to_environmental_exposure.tsv)
 ### Refractory
 *TBD.*
 
@@ -1430,9 +1448,9 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml |
 | Name | susceptibility_by_gene |
-| Classes | MONDO:0000001, MONDO:0020573, SO:0001217,  |
-| Variables | gene (SO:0001217), disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Classes | MONDO:0000001, MONDO:0020573, SO:0000704,  |
+| Variables | gene (SO:0000704), disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/susceptibility_by_gene.tsv) |
 
 #### Data preview: 
@@ -1441,8 +1459,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | MONDO:0012153 | Alzheimer disease 9                               | MONDO:0015140 | early-onset autosomal dominant Alzheimer disease | http://identifiers.org/hgnc/37    | ABCA7        |
 | MONDO:0010340 | Asperger syndrome, X-linked, susceptibility to, 1 | MONDO:0005259 | Asperger syndrome                                | http://identifiers.org/hgnc/14289 | NLGN3        |
 | MONDO:0010343 | Asperger syndrome, X-linked, susceptibility to, 2 | MONDO:0005259 | Asperger syndrome                                | http://identifiers.org/hgnc/14287 | NLGN4X       |
-| MONDO:0007723 | Hirschsprung disease, susceptibility to, 1        | MONDO:0018309 | Hirschsprung disease                             | http://identifiers.org/hgnc/9967  | RET          |
-| MONDO:0010833 | Hirschsprung disease, susceptibility to, 2        | MONDO:0018309 | Hirschsprung disease                             | http://identifiers.org/hgnc/3180  | EDNRB        |
+| MONDO:0014786 | IgA nephropathy, susceptibility to, 3             | MONDO:0005342 | IgA glomerulonephritis                           | http://identifiers.org/hgnc/11270 | SPRY2        |
+| MONDO:0020715 | Multiple system atrophy 1, susceptibility to      | MONDO:0007803 | multiple system atrophy                          | http://identifiers.org/hgnc/25223 | COQ2         |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/susceptibility_by_gene.tsv)
 ### Syndromic

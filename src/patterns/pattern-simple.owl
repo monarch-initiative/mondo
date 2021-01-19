@@ -328,6 +328,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIM_disease_series_by_gene</terms:title>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease_series_by_gene</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; related &apos;disease&apos;</oboInOwl:hasExactSynonym>
@@ -350,10 +351,10 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that is caused by exposure to &apos;environmental material&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that is caused by exposure to &apos;material entity&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmental_stimulus</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;environmental material&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; from &apos;environmental material&apos;</rdfs:label>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;material entity&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; from &apos;material entity&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -421,7 +422,6 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/infectious_inflammation.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/infectious_inflammation.yaml">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos; caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infectious_inflammation</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical structure&apos; &apos;organism&apos; inflammation</oboInOwl:hasExactSynonym>
@@ -433,7 +433,6 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/inflammatory_disease_by_site.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/inflammatory_disease_by_site.yaml">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location.yaml"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflammatory_disease_by_site</terms:title>
@@ -447,8 +446,10 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease or disorder&apos; in which the cause of the disease is a mutation in a gene.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">susceptibility_by_gene</terms:title>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inherited susceptibility or predisposition to developing &apos;disease or disorder&apos;.</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inherited_susceptibility</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos;, susceptibility</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos;, susceptibility to</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility</rdfs:label>
     </owl:Class>
     
@@ -512,10 +513,10 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/location.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/location.yaml">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that involves the owl_thing.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that involves the &apos;anatomical entity&apos; or &apos;cell&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; of owl_thing</rdfs:label>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; or &apos;cell&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; of &apos;anatomical entity&apos; or &apos;cell&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -709,12 +710,12 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to.yaml -->
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to_evironmental_exposure.yaml -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to.yaml">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;owl_thing&apos; that realized in response to a &apos;owl_thing&apos;</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X realized in response to X</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; realized in response to &apos;owl_thing&apos;</rdfs:label>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to_evironmental_exposure.yaml">
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; that is realized in response to a &apos;exposure event&apos;</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease realized in response to environmental exposure</terms:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; realized in response to &apos;exposure event&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -778,6 +779,7 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &apos;disease&apos; caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific_inflammatory_disease_by_site</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;organism&apos; caused &apos;disease&apos;</oboInOwl:hasExactSynonym>
@@ -789,7 +791,6 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location.yaml"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &apos;disease&apos; involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific_infectious_disease_by_location</terms:title>
@@ -801,7 +802,6 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_inflammatory_disease_by_site.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_inflammatory_disease_by_site.yaml">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location.yaml"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &apos;disease&apos; involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific_inflammatory_disease_by_site</terms:title>
@@ -827,8 +827,9 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease or disorder&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A susceptibility or predisposition to &apos;disease or disorder&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">susceptibility_by_gene</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility caused by &apos;gene&apos;</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility, &apos;gene&apos; form</rdfs:label>
     </owl:Class>
     
