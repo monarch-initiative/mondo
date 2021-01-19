@@ -1046,16 +1046,14 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-SOURCES_DATE=2020-10-15
-
 mirror/ordo.obo:
-	cp sources/releases/v$(SOURCES_DATE)/obo_orphanet.obo $@
+	robot convert -i sources/$(SOURCE_VERSION)/ordo.owl -o $@
 
-mirror/medic.obo:
-	cp sources/releases/v$(SOURCES_DATE)/medic.obo $@
+mirror/omim.obo:
+	robot convert -i sources/$(SOURCE_VERSION)/omim.owl -o $@
 
 mirror/medgen.obo:
-	cp sources/releases/v$(SOURCES_DATE)/medgen-disease-extract.obo $@
+	robot convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
 
 tmp/tbd_%.tbd: $(SRC) mirror/%.obo
 	cat mirror/$*.obo | perl $(ADDTOTBD) > $@
@@ -1073,7 +1071,7 @@ tmp/ps_slurp_%.obo: tmp/tbd_%.tbd
 %_slurp: tmp/ps_slurp_%.obo tmp/rest_slurp_%.obo
 	echo "Slurping of $* completed".
 
-slurp: ordo_slurp omim_slurp medgen_slurp medic_slurp
+slurp: ordo_slurp omim_slurp medgen_slurp
 
 #tmp/slurp-complete.obo:
 #	robot merge --input tmp/slurp.obo \

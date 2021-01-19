@@ -21,7 +21,7 @@ pattern_schema_checks:
 test: pattern_schema_checks
 
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
-	$(DOSDPT) prototype --obo-prefixes --template=../patterns/dosdp-patterns --outfile=$@
+	$(DOSDPT) prototype --obo-prefixes=true --template=../patterns/dosdp-patterns --outfile=$@
 
 ../patterns/pattern-merged.owl: ../patterns/dosdp-pattern.owl
 	$(ROBOT) merge -i ../patterns/dosdp-pattern.owl annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$(ONT)-pattern.owl annotate --ontology-iri $(ONTBASE)/$(ONT)-pattern.owl -o $@
@@ -229,3 +229,6 @@ build-%:
 # $(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
+
+patterns: matches matches_annotations pattern_docs
+	make components/mondo-tags.owl
