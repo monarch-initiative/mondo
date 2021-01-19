@@ -1,6 +1,3 @@
-ALL_PATTERNS_1=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-h]*.yaml))
-ALL_PATTERNS_2=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[i-p]*.yaml))
-ALL_PATTERNS_3=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[q-z]*.yaml))
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=../dosdp-tools-0.16-SNAPSHOT/bin/dosdp-tools
 
