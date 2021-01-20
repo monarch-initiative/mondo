@@ -40,7 +40,7 @@ Layout:
 The Mondo logo is available here: https://github.com/jmcmurry/closed-illustrations/tree/master/logos/mondo-logos
 
 ## License
-[CC-BY](https://creativecommons.org/licenses/by/3.0/)
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Contact
 
