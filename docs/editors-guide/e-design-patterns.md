@@ -2,7 +2,7 @@
 
 ## Design Pattern (DP) Docs
 
-The canonical design pattern documentation is in [https://github.com/monarch-initiative/mondo-build/tree/master/src/patterns](https://github.com/monarch-initiative/mondo-build/tree/master/src/patterns)
+The canonical design pattern documentation is in [/src/patterns/dosdp-patternss](https://github.com/monarch-initiative/mondo/tree/master/src/patterns/dosdp-patterns)
 
 For now you have to browse the YAML files and understand the underlying principles of Dead Simple Ontology Design Patterns (DOSDP). Further reading is available [here](https://jbiomedsem.biomedcentral.com/articles/10.1186/s13326-017-0126-0).  Some DPs are not yet fully documented, this is ongoing work.
 
