@@ -1,0 +1,55 @@
+pattern_name: disease_series_by_translocation
+
+description: >-
+  This pattern will be used for diseases that are caused by a specific chromosomal translocation. The content below is just a placeholder, as the class to be used in the variable is to be determined. 
+  
+  Examples: [Orphanet:585867 acute myeloid leukemia with t(9;22)(q34.1;q11.2)](https://www.orpha.net/consor/cgi-bin/Disease_Search.php?lng=EN&data_id=29204&Disease_Disease_Search_diseaseGroup=585867&Disease_Disease_Search_diseaseType=ORPHA&Disease(s)/group%20of%20diseases=Acute-myeloid-leukemia-with-t-9-22--q34-1-q11-2-&title=Acute%20myeloid%20leukemia%20with%20t922q34.1q11.2&search=Disease_Search_Simple), [NCIT:C68659 Childhood B Acute Lymphoblastic Leukemia with t(9;22)(q34.1;q11.2); BCR-ABL1](https://ncithesaurus.nci.nih.gov/ncitbrowser/pages/concept_details.jsf?dictionary=NCI_Thesaurus&version=20.11e&code=C68659&ns=ncit&type=properties&key=null&b=1&n=0&vse=null)
+  
+classes:
+    disease: MONDO:0000001
+    translocation: TBD
+
+relations:
+    TBD: TBD
+
+vars:
+    disease: "'disease'"
+    translocation: "'translocation'"
+  
+name:
+    text: '%s with %s'
+    vars:
+      - disease
+      - translocation
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: '%s, %s'
+    vars:
+      - gene
+      - translocation
+      
+def:
+    text: Any %s in which the cause of the disease is a translocation at %s.
+    vars:
+      - disease
+      - translocation
+
+
+equivalentTo:
+    text: "%s and 'relation TBD' some %s
+    vars:
+      - disease
+      - translocation
+
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml
+annotationProperties:
+    exact_synonym: oio:hasExactSynonym
+    related_synonym: oio:hasRelatedSynonym
+
+contributors:
+  - https://orcid.org/0000-0002-6601-2165
+  - https://orcid.org/0000-0001-5208-3432
+
+  
