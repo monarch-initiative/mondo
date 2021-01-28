@@ -1,61 +1,60 @@
 pattern_name: cancer
 
-description: >4-
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/cancer.yaml
 
-    Cancers are malignant neoplasms arising from a variety of different
-    cell types.
+description: '
 
-    This is a design pattern for classes representing cancers based
-    on their location. This may be the site of origin, but it can also
-    represent a secondary site for metastatized cancer.
+  Cancers are malignant neoplasms arising from a variety of different cell types.
 
-    We use the generic 'disease has location' relation, which
-    generalized over primary and secondary sites.
+  This is a design pattern for classes representing cancers based on their location.
+  This may be the site of origin, but it can also represent a secondary site for metastatized
+  cancer.
+
+  We use the generic ''disease has location'' relation, which generalized over primary
+  and secondary sites.'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
 
 classes:
-    cancer: MONDO:0004992
+  cancer: MONDO:0004992
+  owl_thing: owl:Thing
 
-    owl_thing: owl:Thing
 relations:
-    disease has location: RO:0004026
+  disease has location: RO:0004026
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    location: owl_thing
+  location: owl_thing
 
 name:
-    text: '%s cancer'
-    vars:
-      - location
+  text: '%s cancer'
+  vars:
+  - location
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: malignant %s neoplasm
-    vars:
-      - location
-  - annotationProperty: exact_synonym
-    text: malignant neoplasm of %s
-    vars:
-      - location
-  - annotationProperty: exact_synonym
-    text: cancer of %s
-    vars:
-      - location
-
+- annotationProperty: exact_synonym
+  text: malignant %s neoplasm
+  vars:
+  - location
+- annotationProperty: exact_synonym
+  text: malignant neoplasm of %s
+  vars:
+  - location
+- annotationProperty: exact_synonym
+  text: cancer of %s
+  vars:
+  - location
 
 def:
-    text: A cancer involving a %s.
-    vars:
-      - location
+  text: A cancer involving a %s.
+  vars:
+  - location
 
 equivalentTo:
-    text: "'cancer' and 'disease has location' some %s"
-    vars:
-      - location
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/cancer.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '''cancer'' and ''disease has location'' some %s'
+  vars:
+  - location

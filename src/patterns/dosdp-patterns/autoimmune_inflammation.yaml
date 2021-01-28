@@ -1,36 +1,38 @@
 pattern_name: autoimmune_inflammation
 
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autoimmune_inflammation.yaml
+
+description: TBD.
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
 classes:
-    autoimmune disease: MONDO:0007179
-    anatomical structure: UBERON:0000061
+  autoimmune disease: MONDO:0007179
+  anatomical structure: UBERON:0000061
 
 relations:
-    disease has inflammation site: RO:0004027
+  disease has inflammation site: RO:0004027
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    location: "'anatomical structure'"
+  location: '''anatomical structure'''
 
 name:
-    text: autoimmune %s inflammation
-    vars:
-      - location
+  text: autoimmune %s inflammation
+  vars:
+  - location
 
 def:
-    text: An autoimmune inflammatory disease involving a pathogenic inflammatory response
-        in the %s.
-    vars:
-      - location
+  text: An autoimmune inflammatory disease involving a pathogenic inflammatory response
+    in the %s.
+  vars:
+  - location
 
 equivalentTo:
-    text: "'autoimmune disease' and 'disease has inflammation site' some %s"
-    vars:
-      - location
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autoimmune_inflammation.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '''autoimmune disease'' and ''disease has inflammation site'' some %s'
+  vars:
+  - location
