@@ -8,7 +8,7 @@ description: >-
 classes:
     disease: MONDO:0000001
     gene: SO:0000704
-    Mode of inheritance: HP:0000005
+    mode of inheritance: HP:0000005
 
 relations:
     disease has basis in dysfunction of: RO:0004020
@@ -17,14 +17,14 @@ relations:
 vars:
     disease: "'disease'"
     gene: "'gene'"
-    mode of inheritance: "'Mode of inheritance'"
+    mode_of_inheritance: "'mode of inheritance'"
 
 name:
     text: '%s caused by mutation in %s, %s'
     vars:
       - disease
       - gene
-      - mode of inheritance
+      - mode_of_inheritance
 
 annotations:
   - annotationProperty: exact_synonym
@@ -32,21 +32,21 @@ annotations:
     vars:
       - gene
       - disease
-      - inheritance
+      - mode_of_inheritance
       
   - annotationProperty: exact_synonym
     text: '%s related %s, %s'
     vars:
       - gene
       - disease
-      - inheritance
+      - mode_of_inheritance
       
 def:
     text: Any %s in which the cause of the disease is a mutation in the %s gene, and has %s.
     vars:
       - disease
       - gene
-      - inheritance
+      - mode_of_inheritance
 
 
 equivalentTo:
@@ -54,7 +54,7 @@ equivalentTo:
     vars:
       - disease
       - gene
-      - inheritance
+      - mode_of_inheritance
 
 
 pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml
