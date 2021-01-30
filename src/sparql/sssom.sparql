@@ -1,0 +1,32 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT distinct ?subject_id ?subject_label ?predicate_id ?predicate_label ?object_id ?object_label ?match_type ?mapping_provider ?source WHERE 
+{
+  ?subject ?predicate ?object  .
+  OPTIONAL { ?subject rdfs:label ?subject_label } .
+  OPTIONAL { ?object rdfs:label ?object_label } .
+  OPTIONAL { ?predicate rdfs:label ?predicate_label } .
+  OPTIONAL { ?mapping_provider rdf:type owl:Ontology } .
+  OPTIONAL {
+    ?a owl:annotatedSource ?subject ;
+       owl:annotatedProperty ?predicate ;
+       owl:annotatedTarget ?object ;
+       oio:source ?source
+  }
+  FILTER (?predicate=oio:hasDbXref)
+  FILTER(isIRI(?subject))
+  BIND(REPLACE(STR(?subject), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]MAXO[_]", "MAXO:", "i") AS ?subject_id)
+  BIND(IF(regex(str(?object), "http[:][/][/]www[.]ebi[.]ac[.]uk[/]efo[/]EFO[_]")
+				|| regex(str(?object), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]")
+				|| regex(str(?object), "http[:][/][/]www[.]orpha.net[/]ORDO[/]"),
+		REPLACE(
+			REPLACE(STR(?object), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]|http[:][/][/]www[.]ebi[.]ac[.]uk[/]efo[/]|http[:][/][/]www[.]orpha.net[/]ORDO[/]", "", "i"),
+		"[_]", ":", "i")
+		,?object) AS ?object_id)
+  BIND(?predicate as ?predicate_id)
+  BIND("SSSOMC:HumanCurated" as ?match_type)
+}

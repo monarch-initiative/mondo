@@ -1047,11 +1047,11 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-mirror/ordo.obo:
-	robot convert -i sources/$(SOURCE_VERSION)/ordo.owl -o $@
+mirror/ordo.obo: build-orphanet
+	cp sources/orphanet/obo_orphanet.obo $@
 
-mirror/omim.obo:
-	robot convert -i sources/$(SOURCE_VERSION)/omim.owl -o $@
+mirror/omim.obo: build-omim
+	robot convert -i sources/omim/omim.owl -o $@
 
 mirror/medgen.obo:
 	robot convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
