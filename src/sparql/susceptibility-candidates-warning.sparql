@@ -1,0 +1,12 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
+SELECT ?term ?label
+WHERE{
+  ?term rdfs:label ?label .
+FILTER NOT EXISTS {
+	  ?term <http://purl.org/dc/terms/conformsTo> ?pattern
+    FILTER (?pattern IN (pattern:inherited_susceptibility.yaml, pattern:susceptibility_by_gene.yaml) )
+}
+FILTER(isIRI(?term)&&regex(str(?term), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]MONDO[_]"))
+  FILTER(regex(str(?label), "suscep"))
+}
