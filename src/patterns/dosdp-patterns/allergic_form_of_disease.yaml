@@ -1,48 +1,52 @@
 pattern_name: allergic_form_of_disease
 
-description: >4-
-
-    An etiological pattern that extends an etiology-generic disease to an allergic form (i.e. caused by pathological type I hypersensitivity reaction). The [allergy.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/allergy.yaml) pattern is to refine an existing disease by trigger.
-
-    Examples: [allergic respiratory disease](http://purl.obolibrary.org/obo/MONDO_0000771), [atopic eczema](http://purl.obolibrary.org/obo/MONDO_0004980), [allergic otitis media](http://purl.obolibrary.org/obo/MONDO_0021202)
-
-classes:
-    disease: MONDO:0000001
-    type I hypersensitivity: GO:0016068
-
-relations:
-    disease has basis in disruption of: RO:0004021
-
-vars:
-    disease: "'disease'"
-
-name:
-    text: allergic %s
-    vars:
-      - disease
-
-annotations:
-  - annotationProperty: exact_synonym
-    text: allergic form of %s
-    vars:
-      - disease
-
-def:
-    text: A %s with a basis in a pathological type I hypersensitivity reaction.
-    vars:
-      - disease
-
-equivalentTo:
-    text: "%s and 'disease has basis in disruption of' some 'type I hypersensitivity'"
-    vars:
-      - disease
-
-
 pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/allergic_form_of_disease.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
+
+description: '
+
+  An etiological pattern that extends an etiology-generic disease to an allergic form
+  (i.e. caused by pathological type I hypersensitivity reaction). The [allergy.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/allergy.yaml)
+  pattern is to refine an existing disease by trigger.
+
+  Examples: [allergic respiratory disease](http://purl.obolibrary.org/obo/MONDO_0000771),
+  [atopic eczema](http://purl.obolibrary.org/obo/MONDO_0004980), [allergic otitis
+  media](http://purl.obolibrary.org/obo/MONDO_0021202)'
 
 contributors:
-  - https://orcid.org/0000-0002-6601-2165
-  - https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  disease: MONDO:0000001
+  type I hypersensitivity: GO:0016068
+
+relations:
+  disease has basis in disruption of: RO:0004021
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+
+name:
+  text: allergic %s
+  vars:
+  - disease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: allergic form of %s
+  vars:
+  - disease
+
+def:
+  text: A %s with a basis in a pathological type I hypersensitivity reaction.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s and ''disease has basis in disruption of'' some ''type I hypersensitivity'''
+  vars:
+  - disease

@@ -1,40 +1,41 @@
 pattern_name: primary infectious
 
-description: >4-
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/primary_infectious.yaml
 
-    Pattern for extending a disease class to a primary infectious form, a characteristic
-    of an infectious disease in which the disease affects an immunologically normal
-    host. Example: MONDO_0000308 'primary systemic mycosis'.
+description: '
+
+  Pattern for extending a disease class to a primary infectious form, a characteristic
+  of an infectious disease in which the disease affects an immunologically normal
+  host. Example: MONDO_0000308 ''primary systemic mycosis''.'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
 
 classes:
-    primary infectious: MONDO:0045036
+  primary infectious: MONDO:0045036
+  owl_thing: owl:Thing
 
-    owl_thing: owl:Thing
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: owl_thing
+  disease: owl_thing
 
 name:
-    text: primary %s
-    vars:
-      - disease
+  text: primary %s
+  vars:
+  - disease
 
 def:
-    text: A %s that arises from infection in an immunologically normal host.
-    vars:
-      - disease
+  text: A %s that arises from infection in an immunologically normal host.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'primary infectious'"
-    vars:
-      - disease
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/primary_infectious.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''primary infectious'''
+  vars:
+  - disease

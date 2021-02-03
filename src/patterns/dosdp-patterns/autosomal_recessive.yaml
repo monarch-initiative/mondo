@@ -1,40 +1,43 @@
 pattern_name: autosomal_recessive
 
-classes:
-    autosomal recessive inheritance: HP:0000007
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml
 
-    owl_thing: owl:Thing
+description: TBD.
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
+classes:
+  autosomal recessive inheritance: HP:0000007
+  owl_thing: owl:Thing
+
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: owl_thing
+  disease: owl_thing
 
 name:
-    text: autosomal recessive %s
-    vars:
-      - disease
+  text: autosomal recessive %s
+  vars:
+  - disease
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: '%s, autosomal recessive'
-    vars:
-      - disease
+- annotationProperty: exact_synonym
+  text: '%s, autosomal recessive'
+  vars:
+  - disease
 
 def:
-    text: Autosomal recessive form of %s.
-    vars:
-      - disease
+  text: Autosomal recessive form of %s.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'autosomal recessive inheritance'"
-    vars:
-      - disease
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''autosomal recessive inheritance'''
+  vars:
+  - disease
