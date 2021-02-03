@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-15/imports/cl_import.owl
+data-version: mondo/releases/2021-01-29/imports/cl_import.owl
 subsetdef: ubprop:upper_level ""
 ontology: mondo/imports/cl_import
 
@@ -1300,7 +1300,7 @@ namespace: cell
 def: "A cell of the outer of the three germ layers of the embryo." [MESH:A16.254.425.273]
 synonym: "ectoderm cell" EXACT []
 xref: FMA:72549
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0000924
 
 [Term]
@@ -1311,7 +1311,7 @@ def: "A cell of the middle germ layer of the embryo." [MESH:A16.254.425.660]
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0000926
 
 [Term]
@@ -1321,7 +1321,7 @@ namespace: cell
 def: "A cell of the inner of the three germ layers of the embryo." [MESH:A16.254.425.407]
 synonym: "endoderm cell" EXACT []
 xref: FMA:72555
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0000925
 
 [Term]
@@ -1490,7 +1490,8 @@ id: CL:0000255
 name: eukaryotic cell
 namespace: cell
 is_a: CL:0000003 ! native cell
-relationship: RO:0002160 NCBITaxon:2759
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002160 NCBITaxon:2759
 
 [Term]
 id: CL:0000295
@@ -2005,6 +2006,8 @@ name: animal cell
 namespace: cell
 subset: ubprop:upper_level
 is_a: CL:0000255 ! eukaryotic cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002160 NCBITaxon:33208
 relationship: RO:0002160 NCBITaxon:33208
 
 [Term]
@@ -5540,7 +5543,7 @@ creation_date: 2010-09-15T03:01:54Z
 
 [Term]
 id: CL:0002321
-name: embryonic cell
+name: embryonic cell (metazoa)
 namespace: cell
 def: "A cell of the embryo." [FMA:0618947256]
 xref: CALOHA:TS-0263
@@ -6456,7 +6459,7 @@ name: neural crest cell
 namespace: cell
 def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-9900-7880]
 is_a: CL:0000048 ! multi fate stem cell
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 
 [Term]
 id: CL:0011026
@@ -6663,6 +6666,7 @@ name: liver dendritic cell
 namespace: cell
 def: "Any dendritic cell that is part of a liver." [GOC:TermGenie]
 comment: http://www.jleukbio.org/content/66/2/322.abstract
+synonym: "hepatic dendritic cell" EXACT []
 is_a: CL:0000451 ! dendritic cell
 intersection_of: CL:0000451 ! dendritic cell
 intersection_of: BFO:0000050 UBERON:0002107

@@ -1,48 +1,51 @@
 pattern_name: allergy
 
-description: >4-
-
-    Allergy classified according to allergic trigger. This pattern is to refine an existing disease by trigger, the [allergic_form_of_disease.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/allergic_form_of_disease.yaml) pattern is for a generic disease.
-    
-    Examples: [egg allergy](http://purl.obolibrary.org/obo/MONDO_0005741), [peach allergy](http://purl.obolibrary.org/obo/MONDO_0000785), [gluten allergy](http://purl.obolibrary.org/obo/MONDO_0000606)
-
-classes:
-    allergic disease: MONDO:0005271
-
-    owl_thing: owl:Thing
-relations:
-    realized in response to stimulus: RO:0004028
-
-vars:
-    substance: owl_thing
-
-name:
-    text: '%s allergic disease'
-    vars:
-      - substance
-
-annotations:
-  - annotationProperty: exact_synonym
-    text: allergy of %s
-    vars:
-      - substance
-
-def:
-    text: A allergic disease involving a %s.
-    vars:
-      - substance
-
-equivalentTo:
-    text: "'allergic disease' and 'realized in response to stimulus' some %s"
-    vars:
-      - substance
-
-
 pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/allergy.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
+
+description: '
+
+  Allergy classified according to allergic trigger. This pattern is to refine an existing
+  disease by trigger, the [allergic_form_of_disease.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/allergic_form_of_disease.yaml)
+  pattern is for a generic disease.
+
+  Examples: [egg allergy](http://purl.obolibrary.org/obo/MONDO_0005741), [peach allergy](http://purl.obolibrary.org/obo/MONDO_0000785),
+  [gluten allergy](http://purl.obolibrary.org/obo/MONDO_0000606)'
 
 contributors:
-  - https://orcid.org/0000-0002-6601-2165
-  - https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  allergic disease: MONDO:0005271
+  owl_thing: owl:Thing
+
+relations:
+  realized in response to stimulus: RO:0004028
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  substance: owl_thing
+
+name:
+  text: '%s allergic disease'
+  vars:
+  - substance
+
+annotations:
+- annotationProperty: exact_synonym
+  text: allergy of %s
+  vars:
+  - substance
+
+def:
+  text: A allergic disease involving a %s.
+  vars:
+  - substance
+
+equivalentTo:
+  text: '''allergic disease'' and ''realized in response to stimulus'' some %s'
+  vars:
+  - substance

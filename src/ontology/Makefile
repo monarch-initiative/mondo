@@ -161,7 +161,8 @@ check_version_set:
 # REMEMBER TO COMMIT/PUSH
 # e.g. make deploy_release GHVERSION=v2018-10-26
 # this will create the GH repo. Use --no-create if repo already created.
-deploy_release: prepare_release_direct deploy_assets_direct deploy_assets_current
+deploy_release: prepare_release_direct deploy_assets_direct 
+#deploy_assets_current see https://github.com/OBOFoundry/purl.obolibrary.org/pull/723
 
 # deploys to a versioned released
 deploy_assets_direct:
@@ -1046,11 +1047,11 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-mirror/ordo.obo:
-	robot convert -i sources/$(SOURCE_VERSION)/ordo.owl -o $@
+mirror/ordo.obo: build-orphanet
+	cp sources/orphanet/obo_orphanet.obo $@
 
-mirror/omim.obo:
-	robot convert -i sources/$(SOURCE_VERSION)/omim.owl -o $@
+mirror/omim.obo: build-omim
+	robot convert -i sources/omim/omim.owl -o $@
 
 mirror/medgen.obo:
 	robot convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@

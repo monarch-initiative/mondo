@@ -1,61 +1,58 @@
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
 pattern_name: susceptibility_by_gene
 
 description: >4-
     This pattern should be used for terms in which a gene dysfunction causes a predisposition or susceptibility towards developing a specific disease. This pattern is a sub-pattern of [inherited_susceptibility.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inherited_susceptibility.yaml)
 
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
 
-    Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449),
-    [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461),
-    [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)
-
-classes:
-    disease or disorder: MONDO:0000001
-    inherited disease susceptibility: MONDO:0020573
-    gene: SO:0000704
-
-
-relations:
-    disease has basis in dysfunction of: RO:0004020
-    predisposes towards: http://purl.obolibrary.org/obo/mondo#predisposes_towards
-
-
-vars:
-    gene: "'gene'"
-    disease: "'disease or disorder'"
-
-name:
-  # Could not induce name, using default
-    text: '%s susceptibility, %s form'
-    vars:
-      - disease
-      - gene
-
-def:
-    text: A susceptibility or predisposition to %s in which the cause of the disease is a mutation in the %s gene.
-    vars:
-      - disease
-      - gene
-
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym    
-    related_synonym: oio:hasRelatedSynonym
-
-annotations:
-  - annotationProperty: exact_synonym
-    text: '%s susceptibility caused by %s'
-    vars:
-      - disease
-      - gene
-
-equivalentTo:
-    text: ('inherited disease susceptibility' and ('disease has basis in dysfunction
-        of' some %s) and ('predisposes towards' some %s))
-    vars:
-      - gene
-      - disease
-
+  Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449),
+  [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461),
+  [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)'
 
 contributors:
-  - https://orcid.org/0000-0002-6601-2165
-  - https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  disease or disorder: MONDO:0000001
+  inherited disease susceptibility: MONDO:0020573
+  gene: SO:0000704
+
+relations:
+  disease has basis in dysfunction of: RO:0004020
+  predisposes towards: http://purl.obolibrary.org/obo/mondo#predisposes_towards
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  gene: '''gene'''
+  disease: '''disease or disorder'''
+
+name:
+  text: '%s susceptibility, %s form'
+  vars:
+  - disease
+  - gene
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s susceptibility caused by %s'
+  vars:
+  - disease
+  - gene
+
+def:
+  text: A susceptibility or predisposition to %s in which the cause of the disease
+    is a mutation in the %s gene.
+  vars:
+  - disease
+  - gene
+
+equivalentTo:
+  text: ('inherited disease susceptibility' and ('disease has basis in dysfunction
+    of' some %s) and ('predisposes towards' some %s))
+  vars:
+  - gene
+  - disease

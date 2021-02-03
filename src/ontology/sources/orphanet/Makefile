@@ -5,8 +5,8 @@
 OBO=http://purl.obolibrary.org/obo
 TODAY ?= $(shell date +%Y-%m-%d)
 TGT=../releases/v$(TODAY)
-PRODUCTS = obo_orphanet.owl obo_orphanet.obo
-OIO = http://www.geneontology.org/formats/oboInOwl#
+PRODUCTS = obo_orphanet.owl obo_orphanet.obo orphanet_sssom.tsv
+OIO=http://www.geneontology.org/formats/oboInOwl\#
 
 all:  build stage
 build:  $(PRODUCTS)
@@ -27,8 +27,8 @@ FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@g; s@$(OBO)/UMLS_@ht
 # EFO uses different properties. The following command can be used on owltools
 EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
            --rename-entity $(EFO)/reason_for_obsolescence $(RDFS)comment \
-           --rename-entity $(EFO)/alternative_term $(OIO)hasExactSynonym\
-           --rename-entity $(OBO)/ECO_0000218 $(OIO)source
+           --rename-entity $(EFO)/alternative_term "$(OIO)hasExactSynonym" \
+           --rename-entity $(OBO)/ECO_0000218 "$(OIO)source"
 
 
 V=3.1
@@ -83,4 +83,5 @@ obo_orphanet.obo: obo_orphanet_4.obo
 obo_orphanet.owl: obo_orphanet.obo
 	owltools $< -o $@.tmp && perl -npe 's@http://purl.obolibrary.org/obo/Orphanet_@http://www.orpha.net/ORDO/Orphanet_@g' $@.tmp > $@
 
-
+orphanet_sssom.tsv: obo_orphanet.owl
+	robot query -i $< --prefix "ORDO: http://www.orpha.net/ORDO/Orphanet_" -q ../../../sparql/sssom.sparql $@
