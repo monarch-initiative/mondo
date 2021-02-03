@@ -4,7 +4,7 @@
 
 **Download**: https://github.com/monarch-initiative/mondo  
 **Format**: OWL, OBO and json formats  
-**License**: CC BY 3.0  
+**License**: CC BY 4.0  
 
 ## Products:
 
