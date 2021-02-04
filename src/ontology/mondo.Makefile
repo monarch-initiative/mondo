@@ -232,3 +232,13 @@ build-%:
 
 patterns: matches matches_annotations pattern_docs
 	make components/mondo-tags.owl
+	
+reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
+	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
+	
+reports/mondo_unsats.md: mondo.obo
+	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
+		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
+
+.PHONY: mondo_feature_diff
+mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
