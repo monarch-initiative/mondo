@@ -39,7 +39,7 @@ The best way to contribute is by addressing tickets or reporting issues on the [
 
 # License
 
-[CC-BY](https://creativecommons.org/licenses/by/3.0/)
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 # Contact
 
