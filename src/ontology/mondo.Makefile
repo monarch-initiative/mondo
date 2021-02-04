@@ -220,7 +220,7 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 #.PHONY: release_dir
 
 #build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
-
+.PHONY: build-%
 build-%:
 	cd sources/$* && make all -B
 
