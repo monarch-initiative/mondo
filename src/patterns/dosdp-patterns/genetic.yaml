@@ -1,0 +1,44 @@
+pattern_name: genetic
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/genetic.yaml
+
+description: TBD.
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  genetic: MONDO:0021150
+  owl_thing: owl:Thing
+
+relations:
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: owl_thing
+
+name:
+  text: genetic %s
+  vars:
+  - disease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: genetic %s
+  vars:
+  - disease
+
+def:
+  text: An instance of %s that is caused by a genetic modification in an individual.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s and ''has modifier'' some ''genetic'''
+  vars:
+  - disease
