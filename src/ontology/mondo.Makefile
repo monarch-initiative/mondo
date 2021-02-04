@@ -216,7 +216,7 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 # MONDO_SOURCES = omim medgen medic orphanet
 #MONDO_SOURCES_WITH_SPECIAL_PREPROCESSING = omim medgen orphanet
 #all: build_sources
-
+#	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 #.PHONY: release_dir
 
 #build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
@@ -242,3 +242,10 @@ reports/mondo_unsats.md: mondo.obo
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
+related_annos_to_exact:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
+
+r2e:
+	make related_annos_to_exact
+	make NORM
+	
