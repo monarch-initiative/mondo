@@ -242,10 +242,14 @@ reports/mondo_unsats.md: mondo.obo
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
+
+.PHONY: mondo_feature_diff
 related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
 
+.PHONY: r2e
 r2e:
 	make related_annos_to_exact
 	make NORM
+	mv NORM mondo-edit.obo
 	
