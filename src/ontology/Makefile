@@ -345,7 +345,7 @@ all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 IMP=true
 
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --method BOT \
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
 		remove -T imports/removeseed.txt \
 		reason --exclude-tautologies structural \
