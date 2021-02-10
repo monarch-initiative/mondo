@@ -1,9 +1,5 @@
 ---
 ---
-## Analyses
-
-[Rare Disease analysis in Mondo](https://mondo.monarchinitiative.org/pages/analysis/): This analysis is intended to answer the question of 'How many rare diseases are there?' we analyzed terms in Mondo to get a total count of Rare Diseases as defined in Mondo Disease Ontology (Mondo).
-
 ## Relevant Publications
 
 ### Manuscripts
@@ -32,6 +28,10 @@ How Good Identifier Provisioning Can Help Answer This Question](https://docs.goo
 - [Introduction to Mondo](https://docs.google.com/presentation/d/1P6UTsMPt-FYrdMTuUCiS2AsnLAeRAdqNQVcbVavXibM/edit#slide=id.p1), presentation by Chris Mungall, VICC Disease Harmonization call, May 2019.
 - [A comprehensive disease ontology for human disease curation](https://figshare.com/articles/A_comprehensive_disease_ontology_for_human_disease_curation/6141551/1), presentation by Nicole Vasilevsky at the [Biocuration 2018 conference](http://biocuration2018.cn/biocuration2018/)
 - [OBO Tools and Workflows](https://docs.google.com/presentation/d/1JPAaDl6Nitxet9NVqWI30eIygcerYAjdMIGmxbRtIn0/edit#slide=id.p), presentation by Chris Mungall at ICBO 2017
+
+## Analyses
+
+[Rare Disease analysis in Mondo](https://mondo.monarchinitiative.org/pages/analysis/): This analysis is intended to answer the question of 'How many rare diseases are there?' we analyzed terms in Mondo to get a total count of Rare Diseases as defined in Mondo Disease Ontology (Mondo).
 
 ## Ontology Development Tools
 
