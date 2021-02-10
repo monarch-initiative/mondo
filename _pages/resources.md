@@ -20,6 +20,9 @@
 
 ## Relevant Presentations
 - Aligning Design Patterns Across Multiple Ontologies in the Life Sciences by Chris Mungall, Keynote at 11th Workshop on Ontology Design and Patterns - WOP2020. [Recording here](https://www.youtube.com/watch?v=6H4oPnrQmro&ab_channel=obo-academy). [Meeting info here.](http://ontologydesignpatterns.org/wiki/WOP:2020)
+- [How Many Rare Diseases Are There? 
+How Good Identifier Provisioning Can Help Answer This Question](https://docs.google.com/presentation/d/1iUm3VTaHaRiLcjzRYNJtvkhb3HaFhXEJX1KiIr79IVM/edit#slide=id.gae38b1e75e_0_0) by Melissa Haendel, PIDapalooza 2021.
+- [Modeling and making computable the complex interplay between environmental and genetic causes and phenotypic outcomes](https://docs.google.com/presentation/d/1LWVFWBo7ygSkWdoSBQ77-u7WDmPFxtj06KibKVnfquE/edit#slide=id.gae38b1e75e_0_0) by Melissa Haendel. Kohane Journal Club 2021.
 - [Mondo: The world’s disease concepts, unified](https://figshare.com/articles/presentation/Mondo_The_world_s_disease_concepts_unified/13132883) by Nicole Vasilvsky, ClinGen Biocurators Working Group meeting, October 22, 2020. 
 - [Mondo Disease Ontology: harmonizing disease concepts across the world](http://www.informatik.uni-leipzig.de/~loebe/tmp/ICBO2020/abstractY.pdf) by Nicole Vasilevsky, Shahim Essaid, Nico Matentzoglu, Nomi L. Harris, Melissa Haendel, Peter Robinson, Christopher J. Mungall. Poster presentation at International Conference on Biomedical Ontology (ICBO), Virtual conference. [Poster here](https://icbo2020.inf.unibz.it/posters/)
 - [Mondo: a unified disease resource connecting clinical and translational research](https://docs.google.com/presentation/d/18zlo3nK8FQ9NXrgs9CfbtVVw2rc2wLTO1G0ZdipXE1M/edit#slide=id.p1) by Chris Mungall, Pistoia Alliance, July 2020. [Recording here](https://register.gotowebinar.com/recording/recordingView?webinarKey=6109611589629075212&registrantEmail=vasilevs%40ohsu.edu)
