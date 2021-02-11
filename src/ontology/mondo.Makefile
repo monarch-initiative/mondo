@@ -216,11 +216,11 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 # MONDO_SOURCES = omim medgen medic orphanet
 #MONDO_SOURCES_WITH_SPECIAL_PREPROCESSING = omim medgen orphanet
 #all: build_sources
-
+#	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 #.PHONY: release_dir
 
 #build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
-
+.PHONY: build-%
 build-%:
 	cd sources/$* && make all -B
 
@@ -232,3 +232,30 @@ build-%:
 
 patterns: matches matches_annotations pattern_docs
 	make components/mondo-tags.owl
+	
+reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
+	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
+	
+reports/mondo_unsats.md: mondo.obo
+	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
+		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
+
+.PHONY: mondo_feature_diff
+mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
+
+.PHONY: mondo_feature_diff
+related_annos_to_exact:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
+
+#warn-omim-subsumption warn=related-exact-synonym
+warn-%:
+	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query $(SPARQLDIR)/$*-warning.sparql reports/warn-$*.tsv
+
+
+
+.PHONY: r2e
+r2e:
+	make related_annos_to_exact
+	make NORM
+	mv NORM mondo-edit.obo
+	

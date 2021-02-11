@@ -1,49 +1,50 @@
 pattern_name: specific_inflammatory_disease_by_site
 
-description: >4-
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml
 
-    as for inflammatory_disease_by_site, but refining a specific disease
+description: '
+
+  as for inflammatory_disease_by_site, but refining a specific disease'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
 
 classes:
-    disease: MONDO:0000001
-    organism: NCBITaxon:1
+  disease: MONDO:0000001
+  organism: NCBITaxon:1
 
 relations:
-    realized in response to stimulus: RO:0004028
+  realized in response to stimulus: RO:0004028
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: "'disease'"
-    agent: "'organism'"
+  disease: '''disease'''
+  agent: '''organism'''
 
 name:
-    text: '%s %s'
-    vars:
-      - agent
-      - disease
+  text: '%s %s'
+  vars:
+  - agent
+  - disease
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: '%s caused %s'
-    vars:
-      - agent
-      - disease
+- annotationProperty: exact_synonym
+  text: '%s caused %s'
+  vars:
+  - agent
+  - disease
 
 def:
-    text: An %s caused by infection with %s.
-    vars:
-      - disease
-      - agent
+  text: An %s caused by infection with %s.
+  vars:
+  - disease
+  - agent
 
 equivalentTo:
-    text: "%s and 'realized in response to stimulus' some %s"
-    vars:
-      - disease
-      - agent
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''realized in response to stimulus'' some %s'
+  vars:
+  - disease
+  - agent

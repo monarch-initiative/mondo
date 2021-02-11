@@ -1,48 +1,49 @@
 pattern_name: benign
 
-description: >4-
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/benign.yaml
 
-    This is a design pattern for classes representing benign neoplasms, extending
-    a generic neoplasm class. For example, a benign adrenal gland pheochromocytoma,
-    defined as being the benign form of the more general adrenal gland pheochromocytoma.
+description: '
 
-    TODO: encode alternate way of representing
+  This is a design pattern for classes representing benign neoplasms, extending a
+  generic neoplasm class. For example, a benign adrenal gland pheochromocytoma, defined
+  as being the benign form of the more general adrenal gland pheochromocytoma.
+
+  TODO: encode alternate way of representing'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
 
 classes:
-    neoplasm: MONDO:0005070
-    neoplastic, non-malignant: PATO:0002096
+  neoplasm: MONDO:0005070
+  neoplastic, non-malignant: PATO:0002096
 
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    neoplasm: "'neoplasm'"
+  neoplasm: '''neoplasm'''
 
 name:
-    text: benign %s
-    vars:
-      - neoplasm
+  text: benign %s
+  vars:
+  - neoplasm
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: '%s, benign'
-    vars:
-      - neoplasm
+- annotationProperty: exact_synonym
+  text: '%s, benign'
+  vars:
+  - neoplasm
 
 def:
-    text: A form of %s without malignant characteristics.
-    vars:
-      - neoplasm
+  text: A form of %s without malignant characteristics.
+  vars:
+  - neoplasm
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'neoplastic, non-malignant'"
-    vars:
-      - neoplasm
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/benign.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''neoplastic, non-malignant'''
+  vars:
+  - neoplasm

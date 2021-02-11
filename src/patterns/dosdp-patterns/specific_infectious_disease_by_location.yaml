@@ -1,42 +1,43 @@
 pattern_name: specific_infectious_disease_by_location
 
-description: >4-
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml
 
-    TODO
+description: '
+
+  TODO'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
 
 classes:
-    disease: MONDO:0000001
-    anatomical structure: UBERON:0000061
+  disease: MONDO:0000001
+  anatomical structure: UBERON:0000061
 
 relations:
-    disease has inflammation site: RO:0004027
+  disease has inflammation site: RO:0004027
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: "'disease'"
-    location: "'anatomical structure'"
+  disease: '''disease'''
+  location: '''anatomical structure'''
 
 name:
-    text: '%s %s'
-    vars:
-      - location
-      - disease
+  text: '%s %s'
+  vars:
+  - location
+  - disease
 
 def:
-    text: An %s involving a pathogenic inflammatory response in the %s.
-    vars:
-      - disease
-      - location
+  text: An %s involving a pathogenic inflammatory response in the %s.
+  vars:
+  - disease
+  - location
 
 equivalentTo:
-    text: "%s and 'disease has inflammation site' some %s"
-    vars:
-      - disease
-      - location
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''disease has inflammation site'' some %s'
+  vars:
+  - disease
+  - location

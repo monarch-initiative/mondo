@@ -1,51 +1,52 @@
 pattern_name: sarcoma
 
-description: >4-
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/sarcoma.yaml
 
-    Sarcomas are malignant neoplasms arising from soft tissue or bone.
+description: '
 
-    This is a design pattern for classes representing sarcomas based
-    on their location. This may be the site of origin, but it can also
-    represent a secondary site for metastatized sarcma.
+  Sarcomas are malignant neoplasms arising from soft tissue or bone.
 
-    We use the generic 'disease has location' relation, which
-    generalized over primary and secondary sites.
+  This is a design pattern for classes representing sarcomas based on their location.
+  This may be the site of origin, but it can also represent a secondary site for metastatized
+  sarcma.
+
+  We use the generic ''disease has location'' relation, which generalized over primary
+  and secondary sites.'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
 
 classes:
-    sarcoma: MONDO:0005089
+  sarcoma: MONDO:0005089
+  owl_thing: owl:Thing
 
-    owl_thing: owl:Thing
 relations:
-    disease has location: RO:0004026
+  disease has location: RO:0004026
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    location: owl_thing
+  location: owl_thing
 
 name:
-    text: '%s sarcoma'
-    vars:
-      - location
+  text: '%s sarcoma'
+  vars:
+  - location
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: sarcoma of %s
-    vars:
-      - location
+- annotationProperty: exact_synonym
+  text: sarcoma of %s
+  vars:
+  - location
 
 def:
-    text: A sarcoma involving a %s.
-    vars:
-      - location
+  text: A sarcoma involving a %s.
+  vars:
+  - location
 
 equivalentTo:
-    text: "'sarcoma' and 'disease has location' some %s"
-    vars:
-      - location
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/sarcoma.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '''sarcoma'' and ''disease has location'' some %s'
+  vars:
+  - location

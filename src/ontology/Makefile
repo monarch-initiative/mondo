@@ -345,7 +345,7 @@ all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 IMP=true
 
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --method BOT \
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
 		remove -T imports/removeseed.txt \
 		reason --exclude-tautologies structural \
@@ -411,7 +411,7 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label definition-containing-underscore
+CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label definition-containing-underscore related-exact-synonym
 EDIT_CHECKS =     $(CORE_CHECKS)
 MAIN_OWL_CHECKS = $(CORE_CHECKS) no-superclass
 MAIN_OBO_CHECKS = $(CORE_CHECKS) no-superclass
@@ -1047,11 +1047,11 @@ d2p.pro:
 reports/semantic-xref-pairs.tsv:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
-mirror/ordo.obo:
-	robot convert -i sources/$(SOURCE_VERSION)/ordo.owl -o $@
+mirror/ordo.obo: build-orphanet
+	cp sources/orphanet/obo_orphanet.obo $@
 
-mirror/omim.obo:
-	robot convert -i sources/$(SOURCE_VERSION)/omim.owl -o $@
+mirror/omim.obo: build-omim
+	robot convert -i sources/omim/omim.owl -o $@
 
 mirror/medgen.obo:
 	robot convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
