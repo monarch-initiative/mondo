@@ -345,7 +345,7 @@ all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 IMP=true
 
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --method BOT \
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
 		remove -T imports/removeseed.txt \
 		reason --exclude-tautologies structural \
@@ -411,7 +411,7 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label definition-containing-underscore predispose-subClassOf
+CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label definition-containing-underscore related-exact-synonym predispose-subClassOf
 EDIT_CHECKS =     $(CORE_CHECKS)
 MAIN_OWL_CHECKS = $(CORE_CHECKS) no-superclass
 MAIN_OBO_CHECKS = $(CORE_CHECKS) no-superclass

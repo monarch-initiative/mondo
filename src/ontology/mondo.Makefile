@@ -247,6 +247,12 @@ mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
 related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
 
+#warn-omim-subsumption warn=related-exact-synonym
+warn-%:
+	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query $(SPARQLDIR)/$*-warning.sparql reports/warn-$*.tsv
+
+
+
 .PHONY: r2e
 r2e:
 	make related_annos_to_exact
