@@ -3,7 +3,7 @@
 # Mondo Disease Ontology Workhop
 
 
-The workshop will focus on defining ontology patterns and community development processes for ontological disease descriptions. There is a great need for expert clinicians to define clinically relevant navigational grouping classes. These top down and bottom up approaches need to meet in the middle harmoniously. sThis workshop will consist of clinicians and ontologists, as well as expert curators curating genes for clinical utility.
+The workshop will focus on semantic modeling of disease and defining ontology patterns. There is a great need for expert clinicians to define clinically relevant navigational grouping classes. These top down and bottom up approaches need to meet in the middle harmoniously. This workshop will consist of clinicians and ontologists, as well as expert curators working on genes for clinical utility.
 
 ## When & Where
 
