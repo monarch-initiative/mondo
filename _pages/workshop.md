@@ -24,7 +24,7 @@ _Coming soon_
 
 ## Pre-meeting resources:
 
-Mondo resources [webapge](https://mondo.monarchinitiative.org/pages/resources/)
+Mondo resources [webpage](https://mondo.monarchinitiative.org/pages/resources/)
 
 **Mondo: a unified disease resource connecting clinical and translational research.** Talk by Chris Mungall, Pistoia Alliance, July 2020. Recording [here](https://mondo.monarchinitiative.org/pages/resources/)
 
