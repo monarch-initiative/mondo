@@ -25,10 +25,15 @@ jobs:
       # Check some variables
       - name: Print variables
         run: |
-          echo "current branch $GITHUB_REF"
-          echo "Pull request's base branch is: ${BASE_BRANCH}"
-          echo "COMMIT sha: ${GITHUB_SHA}"
-          env:
-            BASE_BRANCH: ${{ github.base_ref }}
+          echo "MONDO_BRANCH: ${GITHUB_BASE_REF}"
+          echo "TRAVIS_BRANCH: ${GITHUB_HEAD_REF}"
+          echo "TRAVIS_COMMIT: "
+          echo "TRAVIS_COMMIT_MESSAGE: "
+          echo "TRAVIS_PULL_REQUEST: "
+          echo "TRAVIS_PULL_REQUEST_BRANCH: ${BASE_BRANCH}"
+          echo "TRAVIS_PULL_REQUEST_SHA: ${GITHUB_SHA}"
+          echo "TRAVIS_EVENT_TYPE: ${GITHUB_EVENT_NAME}"
+          echo "TRAVIS_BUILD_WEB_URL: https://github.com/monarch-initiative/mondo/runs/${{ github.run_id }}"
+          echo "TRAVIS_BUILD_NUMBER: ${{ github.run_number }}"
           if: github.event_name == 'pull_request'
 
