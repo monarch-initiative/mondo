@@ -27,6 +27,7 @@ jobs:
         run: |
           echo "current branch $GITHUB_REF"
           echo "Pull request's base branch is: ${BASE_BRANCH}"
+          echo "COMMIT sha: ${GITHUB_SHA}"
           env:
             BASE_BRANCH: ${{ github.base_ref }}
           if: github.event_name == 'pull_request'
