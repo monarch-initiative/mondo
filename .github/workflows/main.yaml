@@ -24,6 +24,7 @@ jobs:
     steps:
       # Check some variables
       - name: Print variables
+        env: GITHUB_CONTEXT: ${{ toJSON(github)}}
         run: |
           echo "MONDO_BRANCH: ${GITHUB_HEAD_REF}"
           echo "TRAVIS_BRANCH: ${GITHUB_BASE_REF}"
@@ -35,5 +36,6 @@ jobs:
           echo "TRAVIS_EVENT_TYPE: ${GITHUB_EVENT_NAME}"
           echo "TRAVIS_BUILD_WEB_URL: https://github.com/monarch-initiative/mondo/runs/${{ github.run_id }}"
           echo "TRAVIS_BUILD_NUMBER: ${{ github.run_number }}"
+          echo "$GITHUB_CONTEXT"
         if: github.event_name == 'pull_request'
 
