@@ -24,7 +24,8 @@ jobs:
     steps:
       # Check some variables
       - name: Print variables
-        env: GITHUB_CONTEXT: ${{ toJSON(github)}}
+        env: 
+          GITHUB_CONTEXT: ${{ toJSON(github)}}
         run: |
           echo "MONDO_BRANCH: ${GITHUB_HEAD_REF}"
           echo "TRAVIS_BRANCH: ${GITHUB_BASE_REF}"
