@@ -33,7 +33,7 @@ jobs:
           echo "TRAVIS_PULL_REQUEST_BRANCH: ${GITHUB_HEAD_REF}"
           echo "TRAVIS_PULL_REQUEST_SHA: ${GITHUB_SHA}"
           echo "TRAVIS_EVENT_TYPE: ${GITHUB_EVENT_NAME}"
-          echo "TRAVIS_BUILD_WEB_URL: https://github.com/$GITHUB_REPOSITORY/actions/runs/${{ github.run_id }}""
+          echo "TRAVIS_BUILD_WEB_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}""
           echo "TRAVIS_BUILD_NUMBER: ${{ github.run_number }}"
         if: github.event_name == 'pull_request'
 
