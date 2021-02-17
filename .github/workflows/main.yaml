@@ -24,40 +24,16 @@ jobs:
     steps:
       # Check some variables
       - name: Print variables
-        env: 
-          GITHUB_CONTEXT: ${{ toJSON(github)}}
         run: |
           echo "MONDO_BRANCH: ${GITHUB_HEAD_REF}"
           echo "TRAVIS_BRANCH: ${GITHUB_BASE_REF}"
-          echo "TRAVIS_COMMIT: ${{ github.event.head_commit.message }}"
+          echo "TRAVIS_COMMIT: ${{ github.event.pull_request.head.sha }}"
           echo "TRAVIS_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}"
           echo "TRAVIS_PULL_REQUEST: ${{ github.event.number }}"
-          echo "TRAVIS_PULL_REQUEST_BRANCH: ${BASE_BRANCH}"
+          echo "TRAVIS_PULL_REQUEST_BRANCH: ${GITHUB_HEAD_REF}"
           echo "TRAVIS_PULL_REQUEST_SHA: ${GITHUB_SHA}"
           echo "TRAVIS_EVENT_TYPE: ${GITHUB_EVENT_NAME}"
-          echo "TRAVIS_BUILD_WEB_URL: https://github.com/monarch-initiative/mondo/runs/${{ github.run_id }}"
+          echo "TRAVIS_BUILD_WEB_URL: https://github.com/$GITHUB_REPOSITORY/actions/runs/${{ github.run_id }}""
           echo "TRAVIS_BUILD_NUMBER: ${{ github.run_number }}"
-          echo "$GITHUB_CONTEXT"
         if: github.event_name == 'pull_request'
-
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJSON(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJSON(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJSON(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJSON(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
 
