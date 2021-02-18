@@ -6,28 +6,28 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   # push:
-  #  branches: [ issue-2609 ]
+  #  branches: [ master ]
   pull_request:
-    branches: [ issue-2609 ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "ontology_qc"
+  ontology_qc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.2.26
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Check some variables
-      - name: Print variables
-        run: |
-          echo "current branch $GITHUB_REF"
-          echo "Pull request's base branch is: ${BASE_BRANCH}"
-          env:
-            BASE_BRANCH: ${{ github.base_ref }}
-          if: github.event_name == 'pull_request'
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Run ontology QC checks
+        env:
+          DEFAULT_BRANCH: master
+        run: cd src/ontology; make test
 
