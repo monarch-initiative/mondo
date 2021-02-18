@@ -411,7 +411,7 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label definition-containing-underscore related-exact-synonym predispose-subClassOf
+CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label definition-containing-underscore related-exact-synonym predispose-subClassOf omimps-should-be-inherited
 EDIT_CHECKS =     $(CORE_CHECKS)
 MAIN_OWL_CHECKS = $(CORE_CHECKS) no-superclass
 MAIN_OBO_CHECKS = $(CORE_CHECKS) no-superclass
