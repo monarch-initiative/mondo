@@ -3,7 +3,7 @@
 ## Who uses Mondo:
 
 - [Monarch Initiative](https://monarchinitiative.org/)
-- [Ancestory](https://support.ancestry.com/s/article/Disease-Condition-Catalog-Powered-by-MONDO)
+- [Ancestry](https://support.ancestry.com/s/article/Disease-Condition-Catalog-Powered-by-MONDO)
 - [Broad Institute](https://www.broadinstitute.org/)
 - [ClinGen](https://clinicalgenome.org/)
 - [European Joint Programme on Rare Diseases](https://www.ejprarediseases.org/)
