@@ -266,4 +266,4 @@ r2e:
 	mv NORM mondo-edit.obo
 
 mass_obsolete:
-	perl ../scripts/obo-obsoletify.pl  -i ../scripts/obsolete_me.txt mondo-edit.obo > NORM && mv NORM mondo-edit.obo
+	perl ../scripts/obo-obsoletify.pl  -i ../scripts/obsolete_me.txt --seeAlso mondo-edit.obo > NORM && mv NORM mondo-edit.obo 
