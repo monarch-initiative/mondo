@@ -264,4 +264,6 @@ r2e:
 	make related_annos_to_exact
 	make NORM
 	mv NORM mondo-edit.obo
-	
+
+mass_obsolete:
+	perl ../scripts/obo-obsoletify.pl  -i ../scripts/obsolete_me.txt mondo-edit.obo > NORM
