@@ -24,25 +24,25 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: owl_thing
+  process: owl_thing
 
 name:
   text: '%s disease'
   vars:
-  - v0
+  - process
 
 annotations:
 - annotationProperty: exact_synonym
   text: disorder of %s
   vars:
-  - v0
+  - process
 
 def:
   text: A disease that has its basis in the disruption of %s.
   vars:
-  - v0
+  - process
 
 equivalentTo:
   text: '''disease or disorder'' and (''disease caused by disruption of'' some %s)'
   vars:
-  - v0
+  - process

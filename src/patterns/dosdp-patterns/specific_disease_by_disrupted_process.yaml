@@ -25,30 +25,30 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: '''disease'''
-  v1: '''owl_thing'''
+  disease: '''disease'''
+  process: '''owl_thing'''
 
 name:
   text: '%s %s'
   vars:
-  - v1
-  - v0
+  - process
+  - disease
 
 annotations:
 - annotationProperty: exact_synonym
   text: '%s %s'
   vars:
-  - v1
-  - v0
+  - process
+  - disease
 
 def:
   text: Any %s that disrupts %s
   vars:
-  - v0
-  - v1
+  - disease
+  - process
 
 equivalentTo:
   text: '%s and (''disease disrupts'' some %s)'
   vars:
-  - v0
-  - v1
+  - disease
+  - process

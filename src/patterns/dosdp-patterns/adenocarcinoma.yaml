@@ -23,29 +23,29 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: owl_thing
+  disease: owl_thing
 
 name:
   text: '%s adenocarcinoma'
   vars:
-  - v0
+  - location
 
 annotations:
 - annotationProperty: exact_synonym
   text: '%s adenocarcinoma'
   vars:
-  - v0
+  - location
 - annotationProperty: related_synonym
   text: adenocarcinoma of %s
   vars:
-  - v0
+  - location
 
 def:
   text: A carcinoma that arises from glandular epithelial cells of the %s
   vars:
-  - v0
+  - location
 
 equivalentTo:
   text: '''adenocarcinoma'' and (''disease has location'' some %s)'
   vars:
-  - v0
+  - location
