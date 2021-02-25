@@ -25,30 +25,30 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: '''owl:Thing'''
+  process: '''owl:Thing'''
 
 name:
   text: inborn disorder of %s
   vars:
-  - v0
+  - process
 
 annotations:
 - annotationProperty: exact_synonym
   text: inborn error of %s
   vars:
-  - v0
+  - process
 - annotationProperty: related_synonym
   text: rare inborn error of %s
   vars:
-  - v0
+  - process
 
 def:
   text: An acquired metabolic disease that is has its basis in the disruption of %s.
   vars:
-  - v0
+  - process
 
 equivalentTo:
   text: '''inborn errors of metabolism'' and (''disease caused by disruption of''
     some %s)'
   vars:
-  - v0
+  - process

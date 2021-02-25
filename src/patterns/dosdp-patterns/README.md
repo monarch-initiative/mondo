@@ -80,7 +80,7 @@ Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adenocarcinoma.yaml |
 | Name | adenocarcinoma disease has location X |
 | Classes | MONDO:0004970, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenocarcinoma.tsv) |
 
@@ -103,7 +103,7 @@ Examples: [pituitary gland adenoma](http://purl.obolibrary.org/obo/MONDO_0006373
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adenoma.yaml |
 | Name | adenoma disease has location X |
 | Classes | MONDO:0004972, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenoma.tsv) |
 
@@ -126,7 +126,7 @@ Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adenosquamous_carcinoma.yaml |
 | Name | adenosquamous carcinoma disease has location X |
 | Classes | MONDO:0006074, UBERON:0010000,  |
-| Variables | v0 (UBERON:0010000),  |
+| Variables | location (UBERON:0010000),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenosquamous_carcinoma.tsv) |
 
@@ -552,6 +552,29 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples |  |
 
+### Disease series by gene and inheritance
+*This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, and are inherited by a specific mechanism, succh as autosomal dominant and autosomal recessive. 
+Examples: [Growth hormone insensitivity syndrome with immune dysregulation](https://omim.org/phenotypicSeries/PS245590), Growth hormone insensitivity with immune dysregulation 1, autosomal recessive and Growth hormone insensitivity with immune dysregulation 2, autosomal dominant*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml |
+| Name | disease_series_by_gene_and_inheritance |
+| Classes | MONDO:0000001, SO:0000704, HP:0000005,  |
+| Variables | disease (MONDO:0000001), gene (SO:0000704), mode_of_inheritance (HP:0000005),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-7356-1779](https://orcid.org/0000-0002-7356-1779),  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene_and_inheritance.tsv) |
+
+#### Data preview: 
+| defined:class                                | defined:class:label                            | disease                                      | disease:label           | gene                              | gene:label   | mode:of:inheritance                       | mode:of:inheritance:label       |
+|:---------------------------------------------|:-----------------------------------------------|:---------------------------------------------|:------------------------|:----------------------------------|:-------------|:------------------------------------------|:--------------------------------|
+| MONDO:0007818 | Hyper-IgE recurrent infection syndrome 1       | MONDO:0018037 | hyper-IgE syndrome      | http://identifiers.org/hgnc/11364 | STAT3        | HP:0000006 | Autosomal dominant inheritance  |
+| MONDO:0100121 | SCN4A-related myopathy, autosomal recessive    | MONDO:0019952 | congenital myopathy     | http://identifiers.org/hgnc/10591 | SCN4A        | HP:0000007 | Autosomal recessive inheritance |
+| MONDO:0010338 | X-linked distal spinal muscular atrophy type 3 | MONDO:0001516 | spinal muscular atrophy | http://identifiers.org/hgnc/869   | ATP7A        | HP:0001417 | X-linked inheritance            |
+| MONDO:0020721 | X-linked sideroblastic anemia 1                | MONDO:0015194 | sideroblastic anemia    | http://identifiers.org/hgnc/397   | ALAS2        | HP:0001417 | X-linked inheritance            |
+| MONDO:0007092 | amelogenesis imperfecta type 1B                | MONDO:0019507 | amelogenesis imperfecta | http://identifiers.org/hgnc/3344  | ENAM         | HP:0000006 | Autosomal dominant inheritance  |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene_and_inheritance.tsv)
 ### Disrupts process
 *A disease that disrupts a process, like immune system function, or early development.
 Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0007004), [type IV hypersensitivity disease](http://purl.obolibrary.org/obo/MONDO_0002459), [neural tube closure defect](http://purl.obolibrary.org/obo/MONDO_0017059) (55 total)*
@@ -561,7 +584,7 @@ Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MON
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/disrupts_process.yaml |
 | Name | disease or disorder disease caused by disruption of X |
 | Classes | MONDO:0000001, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | process (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disrupts_process.tsv) |
 
@@ -597,6 +620,18 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | MONDO:0005117 | Aeromonas hydrophila infectious disease | MONDO:0005550 | infectious disease | NCBITaxon:644  | Aeromonas hydrophila |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv)
+### Genetic
+*TBD.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/genetic.yaml |
+| Name | genetic |
+| Classes | MONDO:0021150, owl:Thing,  |
+| Variables | disease (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
 ### Hemangioma
 *A hemangioma (a benign vascular lesion characterized by the formation of capillary-sized or cavernous vascular channels) that is located in a specific anatomical site.
 Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [breast hemangioma](http://purl.obolibrary.org/obo/MONDO_0003126), [gastric hemangioma](http://purl.obolibrary.org/obo/MONDO_0002414) (20 total)*
@@ -606,7 +641,7 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/hemangioma.yaml |
 | Name | hemangioma disease has location X |
 | Classes | MONDO:0006500, UBERON:0001062,  |
-| Variables | v0 (UBERON:0001062),  |
+| Variables | location (UBERON:0001062),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv) |
 
@@ -620,6 +655,28 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 | MONDO:0021542 | hemangioma of choroid             | UBERON:0001776 | optic choroid          |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv)
+### Hereditary
+*Pattern for extending a etiology-generic disease class to a hereditary form.  Here hereditary means that etiology is largely genetic, and that the disease is passed down or potentially able to be passed down via inheritance (i.e is germline).*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/hereditary.yaml |
+| Name | hereditary |
+| Classes | MONDO:0021152,  |
+| Variables | disease,  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hereditary.tsv) |
+
+#### Data preview: 
+| defined:class                                | defined:class:label                                         | disease                                      | disease:label                                    |
+|:---------------------------------------------|:------------------------------------------------------------|:---------------------------------------------|:-------------------------------------------------|
+| MONDO:0003847 | Mendelian disease                                           | MONDO:0000001 | disease or disorder                              |
+| MONDO:0007573 | acute erythroleukemia, familial                             | MONDO:0017858 | acute erythroid leukemia                         |
+| MONDO:0008734 | adrenocortical carcinoma, hereditary                        | MONDO:0006639 | adrenal cortex carcinoma                         |
+| MONDO:0016072 | anomaly of puberty or/and menstrual cycle of genetic origin | MONDO:0015860 | anomaly of puberty or/and menstrual cycle        |
+| MONDO:0009925 | autosomal recessive inherited pseudoxanthoma elasticum      | MONDO:0024308 | pseudoxanthoma elasticum (inherited or acquired) |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hereditary.tsv)
 ### Inborn metabolic
 *An acquired metabolic disease that causes disruption of a process.*
 
@@ -651,7 +708,7 @@ Examples: ['5-oxoprolinase deficiency (disease)'](http://purl.obolibrary.org/obo
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic_disrupts.yaml |
 | Name | inborn errors of metabolism disease caused by disruption of X |
 | Classes | MONDO:0019052, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | process (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv) |
 
@@ -749,7 +806,7 @@ Examples: ['Achilles bursitis'](http://purl.obolibrary.org/obo/MONDO_0001594), [
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inflammatory_disease_by_site.tsv)
 ### Inherited susceptibility
-*This pattern should be used with OMIM phenotypic series (OMIMPS) for which the subclasses are susceptibilities. Note, this pattern should not have an asserted causative gene as logical axiom (and no single causative gene in text definition). The children should have asserted causative genes in the text definitions and in the logical axioms.
+*This pattern should be used for children of MONDO_0020573'inherited disease susceptibility', including OMIM phenotypic series (OMIMPS) for which the subclasses are susceptibilities. Note, this pattern should not have an asserted causative gene as logical axiom (and no single causative gene in text definition), in those cases, the susceptibility_by_gene pattern should be used instead. The children should have asserted causative genes in the text definitions and in the logical axioms. This pattern is a superclass of the susceptibility_by_gene pattern.
 Examples: ['microvascular complications of diabetes, susceptibility'](http://purl.obolibrary.org/obo/MONDO_0000065), ['epilepsy, idiopathic generalized'](http://purl.obolibrary.org/obo/MONDO_0005579), ['aspergillosis, susceptibility to'](http://purl.obolibrary.org/obo/MONDO_0013562).*
 
 | Attribute | Info |
@@ -764,11 +821,11 @@ Examples: ['microvascular complications of diabetes, susceptibility'](http://pur
 #### Data preview: 
 | defined:class                                | defined:class:label                           | disease                                      | disease:label                          |
 |:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------------------|
+| MONDO:0100232 | 'psoriatic arthritis, susceptibility to       | MONDO:0011849 | psoriatic arthritis                    |
 | MONDO:0007845 | Kaposi sarcoma, susceptibility to             | MONDO:0005055 | Kaposi's sarcoma (disease)             |
 | MONDO:0000093 | Schistosoma mansoni infection, susceptibility | MONDO:0044345 | Schistosoma mansoni infectious disease |
 | MONDO:0013562 | aspergillosis, susceptibility to              | MONDO:0005657 | aspergillosis                          |
 | MONDO:0020836 | autism, susceptiblity to                      | MONDO:0005260 | autism (disease)                       |
-| MONDO:0000162 | autoimmune thyroid disease, susceptibility to | MONDO:0005623 | autoimmune thyroid disease             |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv)
 ### Isolated
@@ -826,7 +883,7 @@ Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [uret
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/leiomyoma.yaml |
 | Name | leiomyoma disease has location X |
 | Classes | MONDO:0001572, UBERON:0001062,  |
-| Variables | v0 (UBERON:0001062),  |
+| Variables | location (UBERON:0001062),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyoma.tsv) |
 
@@ -849,7 +906,7 @@ Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MO
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/leiomyosarcoma.yaml |
 | Name | leiomyosarcoma disease has location X |
 | Classes | MONDO:0005058, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyosarcoma.tsv) |
 
@@ -872,7 +929,7 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/lipoma.yaml |
 | Name | lipoma disease has location X |
 | Classes | MONDO:0005106, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv) |
 
@@ -940,7 +997,7 @@ Examples: [marginal zone lymphoma](http://purl.obolibrary.org/obo/MONDO_0017604)
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/lymphoma.yaml |
 | Name | lymphoma disease has location X |
 | Classes | MONDO:0005062, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lymphoma.tsv) |
 
@@ -985,7 +1042,7 @@ Examples: [cutaneous melanoma](http://purl.obolibrary.org/obo/MONDO_0005012), [m
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/melanoma.yaml |
 | Name | melanoma disease has location X |
 | Classes | MONDO:0005105, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/melanoma.tsv) |
 
@@ -1008,7 +1065,7 @@ Examples: [skin meningioma](http://purl.obolibrary.org/obo/MONDO_0004429), [brai
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/meningioma.yaml |
 | Name | meningioma disease has location X |
 | Classes | MONDO:0016642, UBERON:0001062,  |
-| Variables | v0 (UBERON:0001062),  |
+| Variables | location (UBERON:0001062),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/meningioma.tsv) |
 
@@ -1043,7 +1100,7 @@ Examples: [cutaneous mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MO
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/mucoepidermoid_carcinoma.yaml |
 | Name | mucoepidermoid carcinoma disease has location X |
 | Classes | MONDO:0003036, UBERON:0001062,  |
-| Variables | v0 (UBERON:0001062),  |
+| Variables | location (UBERON:0001062),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/mucoepidermoid_carcinoma.tsv) |
 
@@ -1268,7 +1325,7 @@ Examples: [rhabdomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/rhabdomyosarcoma.yaml |
 | Name | rhabdomyosarcoma disease has location X |
 | Classes | MONDO:0005212, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/rhabdomyosarcoma.tsv) |
 
@@ -1315,7 +1372,7 @@ Examples: [cervical small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/small_cell_carcinoma.yaml |
 | Name | small cell carcinoma disease has location X |
 | Classes | MONDO:0000402, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/small_cell_carcinoma.tsv) |
 
@@ -1329,6 +1386,29 @@ Examples: [cervical small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0
 | MONDO:0004116 | esophageal small cell neuroendocrine carcinoma | UBERON:0001043 | esophagus              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/small_cell_carcinoma.tsv)
+### Specific disease by disrupted process
+*This is auto-generated. Add your description here
+Examples: [disease of catalytic activity](http://purl.obolibrary.org/obo/MONDO_0044976), [disease of transporter activity](http://purl.obolibrary.org/obo/MONDO_0044975), [phagocytic cell dysfunction](http://purl.obolibrary.org/obo/MONDO_0024627) (49 total)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X |
+| Name | X disease disrupts X |
+| Classes | owl:Thing, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001), process (owl:Thing),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_disrupted_process.tsv) |
+
+#### Data preview: 
+| defined:class                                | defined:class:label            | v0                                           | v0:label            | v1                                        | v1:label                              |
+|:---------------------------------------------|:-------------------------------|:---------------------------------------------|:--------------------|:------------------------------------------|:--------------------------------------|
+| MONDO:0005937 | REM sleep behavior disorder    | MONDO:0003406 | sleep-wake disorder | GO:0042747 | circadian sleep/wake cycle, REM sleep |
+| MONDO:0001531 | blood coagulation disease      | MONDO:0000001 | disease or disorder | GO:0007596 | blood coagulation                     |
+| MONDO:0000833 | bone remodeling disease        | MONDO:0005381 | bone disease        | GO:0046849 | bone remodeling                       |
+| MONDO:0005557 | calcium metabolic disease      | MONDO:0005066 | metabolic disease   | GO:0055074 | calcium ion homeostasis               |
+| MONDO:0020779 | cartilage development disorder | MONDO:0000001 | disease or disorder | GO:0051216 | cartilage development                 |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_disrupted_process.tsv)
 ### Specific disease by dysfunctional structure
 *This is auto-generated. Add your description here
 Examples: [collagenopathy type 2 alpha 1](http://purl.obolibrary.org/obo/MONDO_0022800), [hemoglobinopathy](http://purl.obolibrary.org/obo/MONDO_0044348), [blood platelet disease](http://purl.obolibrary.org/obo/MONDO_0002245) (2195 total)*
@@ -1338,7 +1418,7 @@ Examples: [collagenopathy type 2 alpha 1](http://purl.obolibrary.org/obo/MONDO_0
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml |
 | Name | X disease has basis in dysfunction of X |
 | Classes | owl:Thing,  |
-| Variables | v0 (owl:Thing), v1 (owl:Thing),  |
+| Variables | disease (owl:Thing), structure (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_dysfunctional_structure.tsv) |
 
@@ -1427,7 +1507,7 @@ Examples: [cervical squamous cell carcinoma](http://purl.obolibrary.org/obo/MOND
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/squamous_cell_carcinoma.yaml |
 | Name | squamous cell carcinoma disease has location X |
 | Classes | MONDO:0005096, owl:Thing,  |
-| Variables | v0 (owl:Thing),  |
+| Variables | location (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/squamous_cell_carcinoma.tsv) |
 
@@ -1442,11 +1522,12 @@ Examples: [cervical squamous cell carcinoma](http://purl.obolibrary.org/obo/MOND
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/squamous_cell_carcinoma.tsv)
 ### Susceptibility by gene
-*Examples: [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)*
+*This pattern should be used for terms in which a gene dysfunction causes a predisposition or susceptibility towards developing a specific disease. This pattern is a sub-pattern of [inherited_susceptibility.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inherited_susceptibility.yaml)*
 
 | Attribute | Info |
 |----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml |
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
+Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)' |
 | Name | susceptibility_by_gene |
 | Classes | MONDO:0000001, MONDO:0020573, SO:0000704,  |
 | Variables | gene (SO:0000704), disease (MONDO:0000001),  |

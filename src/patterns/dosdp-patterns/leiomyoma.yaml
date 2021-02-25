@@ -26,27 +26,27 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: '''anatomical entity'''
+  location: '''anatomical entity'''
 
 name:
   text: '%s leiomyoma'
   vars:
-  - v0
+  - location
 
 annotations:
 - annotationProperty: exact_synonym
   text: '%s leiomyoma'
   vars:
-  - v0
+  - location
 
 def:
   text: A benign smooth muscle neoplasm arising from the %s. It is characterized by
     the presence of spindle cells with cigar-shaped nuclei, interlacing fascicles,
     and a whorled pattern.
   vars:
-  - v0
+  - location
 
 equivalentTo:
   text: '''leiomyoma'' and (''disease has location'' some %s)'
   vars:
-  - v0
+  - location
