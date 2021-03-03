@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-29/imports/chebi_import.owl
+data-version: mondo/releases/2021-03-03/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -2411,6 +2411,16 @@ def: "A non-proteinogenic alpha-amino acid bearing one or more hydroxy groups at
 is_a: CHEBI:83925 ! non-proteinogenic alpha-amino acid
 
 [Term]
+id: CHEBI:24669
+name: hydroxy carboxylic acid
+def: "Any carboxylic acid with at least one hydroxy group." []
+synonym: "hydroxy carboxylic acids" RELATED []
+synonym: "hydroxycarboxylic acid" RELATED []
+synonym: "hydroxycarboxylic acids" RELATED []
+is_a: CHEBI:33575 ! carboxylic acid
+is_a: CHEBI:33822 ! organic hydroxy compound
+
+[Term]
 id: CHEBI:24675
 name: hydroxybenzoate
 def: "Any benzoate derivative carrying a single carboxylate group and at least one hydroxy substituent." []
@@ -3112,6 +3122,7 @@ synonym: "sodio" RELATED []
 synonym: "sodium" EXACT []
 synonym: "sodium" RELATED []
 is_a: CHEBI:22314 ! alkali metal atom
+relationship: RO:0000087 CHEBI:33937 ! macronutrient
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 
 [Term]
@@ -5846,6 +5857,7 @@ relationship: RO:0000087 CHEBI:23357 ! cofactor
 [Term]
 id: CHEBI:33937
 name: macronutrient
+def: "Any nutrient required in large quantities by organisms throughout their life in order to orchestrate a range of physiological functions. Macronutrients are usually chemical elements (carbon, hydrogen, nitrogen, oxygen, phosphorus and sulfur) that humans consume in the largest quantities. Calcium, sodium, magnesium and potassium are sometimes included as macronutrients because they are required in relatively large quantities compared with other vitamins and minerals." []
 synonym: "macronutrients" RELATED []
 is_a: CHEBI:33284 ! nutrient
 
@@ -6624,6 +6636,16 @@ synonym: "lipoxygenase inhibitors" RELATED []
 is_a: CHEBI:76837 ! EC 1.13.11.* (oxidoreductase acting on single donors and incorporating 2 O atoms) inhibitor
 
 [Term]
+id: CHEBI:35868
+name: hydroxy monocarboxylic acid
+def: "Any monocarboxylic acid which also contains a separate (alcoholic or phenolic) hydroxy substituent." []
+synonym: "hydroxy acid" RELATED []
+synonym: "hydroxy monocarboxylic acids" RELATED []
+is_a: CHEBI:24669 ! hydroxy carboxylic acid
+is_a: CHEBI:25384 ! monocarboxylic acid
+relationship: is_conjugate_acid_of CHEBI:36059 ! hydroxy monocarboxylic acid anion
+
+[Term]
 id: CHEBI:35881
 name: pnictogen hydride
 synonym: "pnictogen hydride" EXACT []
@@ -6683,6 +6705,7 @@ synonym: "hydroxy monocarboxylic acid anions" RELATED []
 synonym: "hydroxymonocarboxylic acid anion" RELATED []
 synonym: "hydroxymonocarboxylic acid anions" RELATED []
 is_a: CHEBI:35757 ! monocarboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:35868 ! hydroxy monocarboxylic acid
 
 [Term]
 id: CHEBI:36080
