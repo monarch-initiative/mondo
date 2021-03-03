@@ -11,4 +11,4 @@ We use the generic 'disease has location' relation, which generalized over prima
 ## Classes 
 * sarcoma: [MONDO:0005089](http://purl.obolibrary.org/obo/MONDO_0005089) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

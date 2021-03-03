@@ -8,4 +8,4 @@ TBD.
 ## Classes 
 * x_linked_inheritance: [HP:0001417](http://purl.obolibrary.org/obo/HP_0001417) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

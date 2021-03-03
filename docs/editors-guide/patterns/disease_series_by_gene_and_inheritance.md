@@ -12,4 +12,4 @@ Examples: [Growth hormone insensitivity syndrome with immune dysregulation](http
 * disease: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
 * gene: [SO:0000704](http://purl.obolibrary.org/obo/SO_0000704) 
 * mode of inheritance: [HP:0000005](http://purl.obolibrary.org/obo/HP_0000005) 
-_To be completed_
+## _To be completed_

@@ -10,4 +10,4 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 ## Classes 
 * lipoma: [MONDO:0005106](http://purl.obolibrary.org/obo/MONDO_0005106) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

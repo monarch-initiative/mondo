@@ -9,4 +9,4 @@ A disease that is caused by exposure to an environmental stimulus, like the sun 
 ## Classes 
 * disease: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
 * material entity: [BFO:0000040](http://purl.obolibrary.org/obo/BFO_0000040) 
-_To be completed_
+## _To be completed_

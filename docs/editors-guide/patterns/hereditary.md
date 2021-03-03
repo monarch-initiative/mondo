@@ -9,4 +9,4 @@ Pattern for extending a etiology-generic disease class to a hereditary form.  He
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Classes 
 * hereditary: [MONDO:0021152](http://purl.obolibrary.org/obo/MONDO_0021152) 
-_To be completed_
+## _To be completed_

@@ -8,4 +8,4 @@ TBD.
 ## Classes 
 * chronic: [PATO:0001863](http://purl.obolibrary.org/obo/PATO_0001863) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

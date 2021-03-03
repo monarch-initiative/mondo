@@ -34,15 +34,15 @@ for pattern_file in pattern_files:
                     fout.write(f"* {key}: {val} \n")
                 else:
                     fout.write(f"* {key}: [{val}](http://purl.obolibrary.org/obo/{prefix}_{identifier}) \n")
-        fout.write("_To be completed_")
+        fout.write("## _To be completed_")
     pattern_lst.append((pattern_file.stem, pattern))
 
 # create the index.md file 
 pattern_lst.sort(key=lambda x: x[1]['pattern_name'].lower())
 index_md_path = pattern_doc_dir / "index.md"
 with index_md_path.open("w") as fout:
-    fout.write(f"# Design Patterns \n")
-    fout.write(f"A paragraph to describe this page. \n")
+    fout.write(f"# Design Patterns \n\n")
+    fout.write(f"A paragraph to describe this page. \n\n")
     for pattern_file_name, pattern in pattern_lst:        
         fout.write(f"* [{pattern['pattern_name']}]({pattern_file_name}/) \n")
 

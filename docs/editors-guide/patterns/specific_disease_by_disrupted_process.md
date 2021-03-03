@@ -10,4 +10,4 @@ Examples: [disease of catalytic activity](http://purl.obolibrary.org/obo/MONDO_0
 ## Classes 
 * owl_thing: owl:Thing 
 * disease: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
-_To be completed_
+## _To be completed_

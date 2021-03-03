@@ -8,4 +8,4 @@ A disease that is classified as a nuclear subtype, due to a defect in a nuclear 
 ## Classes 
 * nuclear_gene: [SO:0000087](http://purl.obolibrary.org/obo/SO_0000087) 
 * disease: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
-_To be completed_
+## _To be completed_

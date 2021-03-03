@@ -10,4 +10,4 @@ Note that the isolated and syndromic forms will be inferred to be disjoint due t
 ## Classes 
 * syndromic: [MONDO:0021127](http://purl.obolibrary.org/obo/MONDO_0021127) 
 * disease or disorder: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
-_To be completed_
+## _To be completed_

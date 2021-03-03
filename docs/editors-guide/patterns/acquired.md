@@ -8,4 +8,4 @@ Pattern for extending a etiology-generic disease class to an acquired form.  Her
 ## Classes 
 * acquired: [MONDO:0021141](http://purl.obolibrary.org/obo/MONDO_0021141) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

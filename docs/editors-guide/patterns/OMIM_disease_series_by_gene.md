@@ -10,4 +10,4 @@ This pattern is meant to be used for OMIM diseases, including children of OMIM p
 ## Classes 
 * disease: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
 * gene: [SO:0000704](http://purl.obolibrary.org/obo/SO_0000704) 
-_To be completed_
+## _To be completed_

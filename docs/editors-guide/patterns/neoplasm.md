@@ -12,4 +12,4 @@ Note that tumor is typically a synonym for neoplasm, although this can be contex
 ## Classes 
 * neoplasm: [MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_0005070) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

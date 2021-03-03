@@ -8,4 +8,4 @@ An infectious disease where a pathogen is carried and transmitted by another org
 ## Classes 
 * infectious disease: [MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550) 
 * organism: [OBI:0100026](http://purl.obolibrary.org/obo/OBI_0100026) 
-_To be completed_
+## _To be completed_

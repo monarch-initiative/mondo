@@ -12,4 +12,4 @@ This pattern should be used for terms in which a gene dysfunction causes a predi
 * disease or disorder: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
 * inherited disease susceptibility: [MONDO:0020573](http://purl.obolibrary.org/obo/MONDO_0020573) 
 * gene: [SO:0000704](http://purl.obolibrary.org/obo/SO_0000704) 
-_To be completed_
+## _To be completed_

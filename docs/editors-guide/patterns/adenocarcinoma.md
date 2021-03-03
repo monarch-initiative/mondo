@@ -9,4 +9,4 @@ Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_
 ## Classes 
 * adenocarcinoma: [MONDO:0004970](http://purl.obolibrary.org/obo/MONDO_0004970) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

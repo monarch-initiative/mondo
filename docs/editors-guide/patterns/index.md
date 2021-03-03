@@ -1,5 +1,7 @@
 # Design Patterns 
+
 A paragraph to describe this page. 
+
 * [acquired](acquired/) 
 * [acute](acute/) 
 * [adenocarcinoma disease has location X](adenocarcinoma/) 

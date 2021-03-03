@@ -9,4 +9,4 @@ as for inflammatory_disease_by_site, but refining a specific disease
 ## Classes 
 * disease: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
 * organism: [NCBITaxon:1](http://purl.obolibrary.org/obo/NCBITaxon_1) 
-_To be completed_
+## _To be completed_

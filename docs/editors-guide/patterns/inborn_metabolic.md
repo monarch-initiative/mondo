@@ -9,4 +9,4 @@ An acquired metabolic disease that causes disruption of a process.
 ## Classes 
 * ieom: [MONDO:0019052](http://purl.obolibrary.org/obo/MONDO_0019052) 
 * process: [BFO:0000015](http://purl.obolibrary.org/obo/BFO_0000015) 
-_To be completed_
+## _To be completed_

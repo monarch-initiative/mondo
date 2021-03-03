@@ -10,4 +10,4 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 ## Classes 
 * hemangioma: [MONDO:0006500](http://purl.obolibrary.org/obo/MONDO_0006500) 
 * anatomical entity: [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062) 
-_To be completed_
+## _To be completed_

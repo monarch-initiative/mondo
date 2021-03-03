@@ -9,4 +9,4 @@ This pattern is for diseases that are caused by a single mutation in a single ge
 ## Classes 
 * disease: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
 * gene: [SO:0001217](http://purl.obolibrary.org/obo/SO_0001217) 
-_To be completed_
+## _To be completed_

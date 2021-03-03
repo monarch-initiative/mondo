@@ -10,4 +10,4 @@ Examples: ['microvascular complications of diabetes, susceptibility'](http://pur
 ## Classes 
 * disease or disorder: [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) 
 * inherited disease susceptibility: [MONDO:0020573](http://purl.obolibrary.org/obo/MONDO_0020573) 
-_To be completed_
+## _To be completed_

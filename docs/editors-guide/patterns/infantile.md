@@ -10,4 +10,4 @@ Examples: [infant botulism](http://purl.obolibrary.org/obo/MONDO_0015804), [infa
 ## Classes 
 * infantile: [HP:0003593](http://purl.obolibrary.org/obo/HP_0003593) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

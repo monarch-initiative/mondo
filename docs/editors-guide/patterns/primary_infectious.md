@@ -9,4 +9,4 @@ Pattern for extending a disease class to a primary infectious form, a characteri
 ## Classes 
 * primary infectious: [MONDO:0045036](http://purl.obolibrary.org/obo/MONDO_0045036) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

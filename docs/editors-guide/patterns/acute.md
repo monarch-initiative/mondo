@@ -8,4 +8,4 @@ TBD.
 ## Classes 
 * acute: [PATO:0000389](http://purl.obolibrary.org/obo/PATO_0000389) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_

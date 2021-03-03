@@ -10,4 +10,4 @@ Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [uret
 ## Classes 
 * leiomyoma: [MONDO:0001572](http://purl.obolibrary.org/obo/MONDO_0001572) 
 * anatomical entity: [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062) 
-_To be completed_
+## _To be completed_

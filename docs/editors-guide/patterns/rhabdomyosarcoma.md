@@ -9,4 +9,4 @@ Examples: [rhabdomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/
 ## Classes 
 * rhabdomyosarcoma: [MONDO:0005212](http://purl.obolibrary.org/obo/MONDO_0005212) 
 * owl_thing: owl:Thing 
-_To be completed_
+## _To be completed_
