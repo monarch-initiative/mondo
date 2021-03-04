@@ -255,6 +255,8 @@ rm_related_annos_to_exact:
 warn-%:
 	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query $(SPARQLDIR)/$*-warning.sparql reports/warn-$*.tsv
 
+report-query-%:
+	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
 
 
 .PHONY: r2e
@@ -262,4 +264,6 @@ r2e:
 	make related_annos_to_exact
 	make NORM
 	mv NORM mondo-edit.obo
-	
+
+mass_obsolete:
+	perl ../scripts/obo-obsoletify.pl  -i ../scripts/obsolete_me.txt mondo-edit.obo > NORM

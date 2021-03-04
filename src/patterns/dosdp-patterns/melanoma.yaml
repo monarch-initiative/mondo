@@ -23,25 +23,25 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: owl_thing
+  location: owl_thing
 
 name:
   text: '%s melanoma'
   vars:
-  - v0
+  - location
 
 annotations:
 - annotationProperty: exact_synonym
   text: '%s melanoma'
   vars:
-  - v0
+  - location
 
 def:
   text: A melanoma that involves the %s.
   vars:
-  - v0
+  - location
 
 equivalentTo:
   text: '''melanoma'' and (''disease has location'' some %s)'
   vars:
-  - v0
+  - location

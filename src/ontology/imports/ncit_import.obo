@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-29/imports/ncit_import.owl
+data-version: mondo/releases/2021-03-03/imports/ncit_import.owl
 subsetdef: NCIT:C105551 ""
 subsetdef: NCIT:C116977 ""
 subsetdef: NCIT:C118169 ""
@@ -39,10 +39,10 @@ subsetdef: NCIT:C159501 ""
 subsetdef: NCIT:C159502 ""
 subsetdef: NCIT:C159503 ""
 subsetdef: NCIT:C165451 ""
-subsetdef: NCIT:C166371 ""
 subsetdef: NCIT:C166372 ""
 subsetdef: NCIT:C166373 ""
 subsetdef: NCIT:C167409 ""
+subsetdef: NCIT:C168549 ""
 subsetdef: NCIT:C168655 ""
 subsetdef: NCIT:C168656 ""
 subsetdef: NCIT:C168657 ""
@@ -50,6 +50,19 @@ subsetdef: NCIT:C168658 ""
 subsetdef: NCIT:C168661 ""
 subsetdef: NCIT:C168662 ""
 subsetdef: NCIT:C171094 ""
+subsetdef: NCIT:C173073 ""
+subsetdef: NCIT:C173206 ""
+subsetdef: NCIT:C173208 ""
+subsetdef: NCIT:C174018 ""
+subsetdef: NCIT:C174019 ""
+subsetdef: NCIT:C174238 ""
+subsetdef: NCIT:C174239 ""
+subsetdef: NCIT:C174241 ""
+subsetdef: NCIT:C174250 ""
+subsetdef: NCIT:C174253 ""
+subsetdef: NCIT:C174255 ""
+subsetdef: NCIT:C174261 ""
+subsetdef: NCIT:C175517 ""
 subsetdef: NCIT:C54447 ""
 subsetdef: NCIT:C61410 ""
 subsetdef: NCIT:C62596 ""
@@ -66,6 +79,24 @@ subsetdef: oncotree_slim ""
 ontology: mondo/imports/ncit_import
 
 [Term]
+id: NCIT:C101267
+name: Hormone Receptor Positive
+def: "A finding indicating that the neoplastic cells in a tissue sample test positive for estrogen and/or progesterone receptors." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "ER and/or PR +" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "ER and/or PR Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Estrogen Receptor and/or Progesterone Receptor Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Hormone Receptor Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C35682 ! Positive Laboratory Test Result
+is_a: NCIT:C94299 ! Receptor Status
+property_value: NCIT:A13 NCIT:C28656
+property_value: NCIT:A13 NCIT:C38349
+property_value: NCIT:NHC0 "C101267" xsd:string
+property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
+property_value: NCIT:P108 "Hormone Receptor Positive" xsd:string
+property_value: NCIT:P207 "C3640067" xsd:string
+property_value: NCIT:P208 "CL936015" xsd:string
+
+[Term]
 id: NCIT:C12219
 name: Anatomic Structure, System, or Substance
 def: "A human biological structure, fluid or other substance; excludes single molecular entities." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
@@ -77,7 +108,6 @@ disjoint_from: NCIT:C12913 ! Abnormal Cell
 disjoint_from: NCIT:C17828 ! Biological Process
 disjoint_from: NCIT:C43431 ! Activity
 disjoint_from: NCIT:C7057 ! Disease, Disorder or Finding
-property_value: NCIT:A11 NCIT:C90259
 property_value: NCIT:NHC0 "C12219" xsd:string
 property_value: NCIT:P106 "Classification" xsd:string
 property_value: NCIT:P107 "Anatomical Concepts" xsd:string
@@ -91,14 +121,17 @@ property_value: NCIT:P371 "Anatomic Structure, System, or Substance" xsd:string
 id: NCIT:C12378
 name: Digestive System
 def: "The system that includes the esophagus, stomach, small and large intestine, anus, liver, biliary tract, and pancreas." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+subset: NCIT:C165451
+subset: NCIT:C175517
 subset: NCIT:C61410
 subset: NCIT:C66830
 subset: NCIT:C74456
 subset: NCIT:C77526
 synonym: "Body System, Gastrointestinal" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Digestive System" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "digestive system" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="OMFAQ", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "digestive system" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "digestive system" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000046446", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
+synonym: "Gastrointestinal" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICDC", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
 synonym: "Gastrointestinal Body System" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Gastrointestinal Organ System" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "GASTROINTESTINAL SYSTEM" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
@@ -114,6 +147,7 @@ property_value: NCIT:P107 "Gastrointestinal System" xsd:string
 property_value: NCIT:P108 "Digestive System" xsd:string
 property_value: NCIT:P207 "C0012240" xsd:string
 property_value: NCIT:P322 "CDISC" xsd:string
+property_value: NCIT:P322 "ICDC" xsd:string
 property_value: NCIT:P325 "The organs that take in food and turn it into products that the body can use to stay healthy. Waste products the body cannot use leave the body through bowel movements. The digestive system includes the salivary glands, mouth, esophagus, stomach, liver, pancreas, gallbladder, small and large intestines, and rectum." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P325 "The system that includes the esophagus, stomach, small and large intestine, anus, liver, biliary tract, and pancreas. (NCI)" xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC"}
 property_value: NCIT:P366 "Gastrointestinal_System" xsd:string
@@ -142,24 +176,33 @@ subset: NCIT:C159093
 subset: NCIT:C159111
 subset: NCIT:C159117
 subset: NCIT:C159120
+subset: NCIT:C174238
+subset: NCIT:C174241
+subset: NCIT:C174255
+subset: NCIT:C174261
 subset: NCIT:C61410
 subset: NCIT:C66830
 subset: NCIT:C74456
 subset: NCIT:C77526
 subset: NCIT:C77529
-synonym: "Abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="EWS", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
-synonym: "Abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P385="MPN-SAF", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "abdomen" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000045070", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
 synonym: "Abdomen, NOS" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "Abdomen, total" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "ABDOMINAL CAVITY" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P385="SDTM-LOC", http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
-synonym: "Abdominal Cavity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Abdominal Cavity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Abdominal Cavity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "BODY CAVITY, ABDOMINAL" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P385="SEND-SPEC", http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+xref: UBERON:0003684
 is_a: NCIT:C25444 ! Body Cavity
+property_value: NCIT:A28 NCIT:C119940
+property_value: NCIT:A28 NCIT:C157120
+property_value: NCIT:A28 NCIT:C172233
+property_value: NCIT:A28 NCIT:C173281
 property_value: NCIT:NHC0 "C12664" xsd:string
 property_value: NCIT:P106 "Body Location or Region" xsd:string
 property_value: NCIT:P107 "Abdomen" xsd:string
@@ -167,15 +210,16 @@ property_value: NCIT:P108 "Abdomen" xsd:string
 property_value: NCIT:P207 "C0230168" xsd:string
 property_value: NCIT:P322 "CDISC" xsd:string
 property_value: NCIT:P322 "GDC" xsd:string
+property_value: NCIT:P322 "PCDC" xsd:string
 property_value: NCIT:P325 "The area of the body that contains the pancreas, stomach, intestine, liver, gallbladder, and other organs." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P325 "The body cavity between the thoracic and pelvic cavities in mammals." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC"}
 property_value: NCIT:P366 "Abdominal_Cavity" xsd:string
-property_value: NCIT:P375 "Abdomen" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="METDS", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Abdomen" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="BAS", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Abdomen, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="SRB", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Abdomen, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="TOO", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Abdomen, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="PRAS", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Abdomen, total" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="TAS", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Abdomen" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="biospecimen_anatomic_site", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Abdomen" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="metastasis_at_diagnosis_site", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Abdomen, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="tissue_or_organ_of_origin", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Abdomen, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="site_of_resection_or_biopsy", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Abdomen, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="progression_or_recurrence_anatomic_site", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Abdomen, total" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="treatment_anatomic_site", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 
 [Term]
 id: NCIT:C12736
@@ -198,8 +242,8 @@ synonym: "Bowel" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http:/
 synonym: "bowel" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000046500", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
 synonym: "Intestinal tract, NOS" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "INTESTINE" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
-synonym: "Intestine" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Intestine" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Intestine" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "intestine" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000046335", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
 synonym: "Intestines" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C13018 ! Organ
@@ -215,11 +259,11 @@ property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P325 "The long, tube-shaped organ in the abdomen that completes the process of digestion. The intestine has two parts, the small intestine and the large intestine." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P325 "The portion of the gastrointestinal tract that includes the small and large intestines." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC"}
 property_value: NCIT:P366 "Intestine" xsd:string
-property_value: NCIT:P375 "Bowel" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="BAS", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Bowel" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="TAS", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Intestinal tract, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="SRB", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Intestinal tract, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="PRAS", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Intestinal tract, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="TOO", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Bowel" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="treatment_anatomic_site", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Bowel" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="biospecimen_anatomic_site", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Intestinal tract, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="progression_or_recurrence_anatomic_site", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Intestinal tract, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="tissue_or_organ_of_origin", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Intestinal tract, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="site_of_resection_or_biopsy", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 
 [Term]
 id: NCIT:C12913
@@ -247,8 +291,8 @@ subset: NCIT:C168658
 subset: NCIT:C168661
 subset: NCIT:C168662
 synonym: "Cancer Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Malignant Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Malignant Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Malignant Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Tumor cells, malignant" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 is_a: NCIT:C12922 ! Neoplastic Cell
 property_value: NCIT:NHC0 "C12917" xsd:string
@@ -257,8 +301,8 @@ property_value: NCIT:P108 "Malignant Cell" xsd:string
 property_value: NCIT:P207 "C0334227" xsd:string
 property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P366 "Malignant_Cell" xsd:string
-property_value: NCIT:P375 "8001/3" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="MORPH", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Tumor cells, malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="PD", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "8001/3" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="morphology", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Tumor cells, malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="primary_diagnosis", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 property_value: NCIT:P375 "Tumor cells, malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="8001/3", http://purl.obolibrary.org/obo/NCIT_P396="ICDO3", http://purl.obolibrary.org/obo/NCIT_P397="3.1"}
 property_value: NCIT:P375 "Tumor cells, malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="8001/3", http://purl.obolibrary.org/obo/NCIT_P396="ICDO3", http://purl.obolibrary.org/obo/NCIT_P397="3.2"}
 
@@ -267,13 +311,24 @@ id: NCIT:C12919
 name: Organ System
 def: "An anatomical structure that consists of organs and organ subclasses responsible for certain body functions.  Representative examples are the gastrointestinal system, urinary system, and hematopoietic system." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
 subset: NCIT:C165451
-subset: NCIT:C166371
 subset: NCIT:C166373
 synonym: "body system" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P386="ICDC", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
 synonym: "Body Systems" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "body_system" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICDC", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
 synonym: "Organ System" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C12219 ! Anatomic Structure, System, or Substance
+property_value: NCIT:A30 NCIT:C12378
+property_value: NCIT:A30 NCIT:C12686
+property_value: NCIT:A30 NCIT:C12705
+property_value: NCIT:A30 NCIT:C12746
+property_value: NCIT:A30 NCIT:C12754
+property_value: NCIT:A30 NCIT:C12755
+property_value: NCIT:A30 NCIT:C12810
+property_value: NCIT:A30 NCIT:C12841
+property_value: NCIT:A30 NCIT:C12907
+property_value: NCIT:A30 NCIT:C16326
+property_value: NCIT:A30 NCIT:C17649
+property_value: NCIT:A30 NCIT:C42300
 property_value: NCIT:NHC0 "C12919" xsd:string
 property_value: NCIT:P106 "Body System" xsd:string
 property_value: NCIT:P107 "Organ System" xsd:string
@@ -304,20 +359,20 @@ property_value: NCIT:P108 "Neoplastic Cell" xsd:string
 property_value: NCIT:P207 "C0597032" xsd:string
 property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P366 "Neoplastic_Cell" xsd:string
-property_value: NCIT:P375 "8001/1" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="MORPH", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Tumor cells, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="PD", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "8001/1" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="morphology", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Tumor cells, NOS" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="primary_diagnosis", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 property_value: NCIT:P375 "Tumor cells, uncertain whether benign or malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="8001/1", http://purl.obolibrary.org/obo/NCIT_P396="ICDO3", http://purl.obolibrary.org/obo/NCIT_P397="3.2"}
 property_value: NCIT:P375 "Tumor cells, uncertain whether benign or malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="8001/1", http://purl.obolibrary.org/obo/NCIT_P396="ICDO3", http://purl.obolibrary.org/obo/NCIT_P397="3.1"}
-property_value: NCIT:P375 "Tumor cells, uncertain whether benign or malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="PD", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Tumor cells, uncertain whether benign or malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="primary_diagnosis", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 
 [Term]
 id: NCIT:C13018
 name: Organ
 def: "A unique macroscopic (gross) anatomic structure that performs specific functions. It is composed of various tissues.  An organ is part of an anatomic system or a body region. Representative examples include the heart, lung, liver, spleen, and uterus." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
-synonym: "Organ" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Organ" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Organ" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "organ" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000257523", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
-synonym: "Organs" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Organs" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 is_a: NCIT:C12219 ! Anatomic Structure, System, or Substance
 property_value: NCIT:NHC0 "C13018" xsd:string
 property_value: NCIT:P106 "Body Part, Organ, or Organ Component" xsd:string
@@ -378,19 +433,22 @@ subset: NCIT:C159100
 subset: NCIT:C159125
 subset: NCIT:C159412
 subset: NCIT:C171094
+subset: NCIT:C174238
+subset: NCIT:C174253
 subset: NCIT:C62596
 subset: NCIT:C90259
 synonym: "Operation" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
+synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="EWS", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000045570", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
-synonym: "Surgical" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Surgical" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Surgical" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Surgical Intervention" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="CDRH", http://purl.obolibrary.org/obo/NCIT_P384="FDA", http://purl.obolibrary.org/obo/NCIT_P385="4624"}
 synonym: "Surgical Interventions" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Surgical Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Surgical Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
+synonym: "Surgical Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Surgical Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Surgical Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 synonym: "Surgical Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
@@ -399,7 +457,7 @@ synonym: "Surgically" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", h
 synonym: "Type of Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 xref: IMDRF:F19
 is_a: NCIT:C25218 ! Intervention or Procedure
-property_value: NCIT:A11 NCIT:C25218
+property_value: NCIT:A28 NCIT:C175041
 property_value: NCIT:NHC0 "C15329" xsd:string
 property_value: NCIT:P106 "Health Care Activity" xsd:string
 property_value: NCIT:P107 "Surgical Procedure" xsd:string
@@ -410,12 +468,13 @@ property_value: NCIT:P322 "CTRP" xsd:string
 property_value: NCIT:P322 "FDA" xsd:string
 property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
+property_value: NCIT:P322 "PCDC" xsd:string
 property_value: NCIT:P325 "A procedure to remove or repair a part of the body or to find out whether disease is present. An operation." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P325 "One or more surgical procedures was required, or an existing procedure changed." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="FDA", http://purl.obolibrary.org/obo/NCIT_P381="CDRH"}
 property_value: NCIT:P366 "Surgical_Procedure" xsd:string
 property_value: NCIT:P371 "Surgical Procedure" xsd:string
-property_value: NCIT:P375 "Surgery" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="TTYPE", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
-property_value: NCIT:P375 "Surgically Treated" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="REFLUXTT", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Surgery" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="treatment_type", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Surgically Treated" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="reflux_treatment_type", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 
 [Term]
 id: NCIT:C15330
@@ -474,8 +533,8 @@ synonym: "NR3A1 Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY
 synonym: "Nuclear Receptor Subfamily 3 Group A Member 1 Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 synonym: "Positive Estrogen Receptor" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C101267 ! Hormone Receptor Positive
 is_a: NCIT:C16150 ! Estrogen Receptor Status
-is_a: NCIT:C35682 ! Positive Laboratory Test Result
 property_value: NCIT:A13 NCIT:C38349
 property_value: NCIT:NHC0 "C15492" xsd:string
 property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
@@ -547,8 +606,8 @@ synonym: "PR+" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P385="CDR0000044450
 synonym: "Progesterone Receptor Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Progesterone Receptor Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
 synonym: "progesterone receptor positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000045273", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
+is_a: NCIT:C101267 ! Hormone Receptor Positive
 is_a: NCIT:C16149 ! Progesterone Receptor Status
-is_a: NCIT:C35682 ! Positive Laboratory Test Result
 property_value: NCIT:A13 NCIT:C28656
 property_value: NCIT:NHC0 "C15496" xsd:string
 property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
@@ -603,7 +662,7 @@ subset: NCIT:C159413
 synonym: "PgR Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Progesterone Receptor" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 synonym: "Progesterone Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Progesterone Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Progesterone Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Progesterone Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
 is_a: NCIT:C94299 ! Receptor Status
 property_value: NCIT:A13 NCIT:C28656
@@ -636,8 +695,8 @@ synonym: "ESRA Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", 
 synonym: "Estrogen Receptor" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 synonym: "Estrogen Receptor 1 Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Estrogen Receptor Alpha Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Estrogen Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Estrogen Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Estrogen Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Estrogen Receptor Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
 synonym: "ESTRR Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "NR3A1 Status" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
@@ -692,18 +751,21 @@ name: Expression Negative
 def: "An indication that expression of a gene, RNA species or protein is not detected in a sample." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
 subset: NCIT:C157711
 subset: NCIT:C159116
+subset: NCIT:C173073
 synonym: "Absent" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Expression Negative" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Loss of Expression" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Loss of Expression" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
+synonym: "LOST" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTDC", http://purl.obolibrary.org/obo/NCIT_P383="PT"}
 synonym: "Negative" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C35681 ! Negative Test Result
 property_value: NCIT:NHC0 "C165233" xsd:string
 property_value: NCIT:P106 "Cell or Molecular Dysfunction" xsd:string
 property_value: NCIT:P108 "Expression Negative" xsd:string
 property_value: NCIT:P208 "CL978385" xsd:string
+property_value: NCIT:P322 "CTDC" xsd:string
 property_value: NCIT:P322 "GDC" xsd:string
-property_value: NCIT:P375 "Loss of Expression" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="TR", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
+property_value: NCIT:P375 "Loss of Expression" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="test_result", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 
 [Term]
 id: NCIT:C16956
@@ -724,10 +786,10 @@ def: "A passage or transfer, as of a disease from one individual to another." []
 subset: NCIT:C128453
 subset: NCIT:C90259
 synonym: "Disease Transmission" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Pathogen Transmission Route" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Transmission" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 synonym: "Transmitted" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C18264 ! Pathogenesis
-property_value: NCIT:A11 NCIT:C3367
 property_value: NCIT:NHC0 "C17214" xsd:string
 property_value: NCIT:P106 "Pathologic Function" xsd:string
 property_value: NCIT:P108 "Disease Transmission" xsd:string
@@ -783,7 +845,6 @@ def: "An activity that produces an effect, or that is intended to alter the cour
 subset: NCIT:C159501
 subset: NCIT:C159502
 subset: NCIT:C165451
-subset: NCIT:C166371
 subset: NCIT:C166373
 subset: NCIT:C61410
 subset: NCIT:C67497
@@ -802,7 +863,6 @@ synonym: "Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", ht
 synonym: "Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICDC", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
 is_a: NCIT:C16203 ! Clinical or Research Activity
-property_value: NCIT:A11 NCIT:C90259
 property_value: NCIT:NHC0 "C25218" xsd:string
 property_value: NCIT:P106 "Health Care Activity" xsd:string
 property_value: NCIT:P108 "Intervention or Procedure" xsd:string
@@ -812,7 +872,7 @@ property_value: NCIT:P322 "CDISC-GLOSS" xsd:string
 property_value: NCIT:P322 "ICDC" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P325 "In medicine, a treatment or action taken to prevent or treat disease, or improve health in other ways." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
-property_value: NCIT:P325 "The drug, device, therapy, or process under investigation in a clinical study that is believed to have an effect on outcomes of interest in a study (e.g., health-related quality of life, efficacy, safety, pharmacoeconomics). See also test articles, devices, drug product, medicinal product, combination product, general observation class, finding, event." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC-GLOSS"}
+property_value: NCIT:P325 "The drug, device, therapy, or process under investigation in a clinical study that is believed to have an effect on outcomes of interest in a study (e.g., health-related quality of life, efficacy, safety, pharmacoeconomics). [After https://grants.nih.gov/grants/policy/faq_clinical_trial_definition.htm#5224] See also test articles, devices, drug product, medicinal product, combination product, general observation class, finding, event, treatment, diagnosis." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC-GLOSS"}
 property_value: NCIT:P366 "Procedure" xsd:string
 property_value: NCIT:P371 "Intervention or Procedure" xsd:string
 
@@ -846,14 +906,13 @@ subset: NCIT:C61410
 subset: NCIT:C67497
 subset: NCIT:C89506
 subset: NCIT:C90259
-synonym: "Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 synonym: "Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="PT"}
 synonym: "Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
+synonym: "Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 synonym: "finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC-GLOSS"}
 synonym: "Observable Entity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 is_a: NCIT:C7057 ! Disease, Disorder or Finding
-property_value: NCIT:A11 NCIT:C90259
 property_value: NCIT:NHC0 "C3367" xsd:string
 property_value: NCIT:P106 "Finding" xsd:string
 property_value: NCIT:P107 "Finding" xsd:string
@@ -921,16 +980,23 @@ id: NCIT:C35867
 name: Morphologic Finding
 def: "A light microscopic finding that describes the cellular characteristics and architectural patterns of cell populations in a tissue sample." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
 subset: NCIT:C165451
-subset: NCIT:C166371
 subset: NCIT:C166372
+subset: NCIT:C168549
+subset: NCIT:C173206
+subset: NCIT:C173208
+subset: NCIT:C174019
 synonym: "Morphologic Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Morphology" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P386="AML", http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Morphology (A/O/U)" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="Canine Glioma", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
 is_a: NCIT:C83490 ! Microscopic Finding
+property_value: NCIT:A24 NCIT:C168960
+property_value: NCIT:A24 NCIT:C83312
 property_value: NCIT:NHC0 "C35867" xsd:string
 property_value: NCIT:P106 "Finding" xsd:string
 property_value: NCIT:P108 "Morphologic Finding" xsd:string
 property_value: NCIT:P207 "C0700329" xsd:string
 property_value: NCIT:P322 "ICDC" xsd:string
+property_value: NCIT:P322 "PCDC" xsd:string
 property_value: NCIT:P366 "Morphologic_Finding" xsd:string
 
 [Term]
@@ -1004,7 +1070,6 @@ synonym: "ENDOCRINE SYSTEM" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="
 synonym: "Endocrine System Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 synonym: "Endocrine System Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C36278 ! Finding by Site or System
-property_value: NCIT:A11 NCIT:C3367
 property_value: NCIT:NHC0 "C36285" xsd:string
 property_value: NCIT:P106 "Finding" xsd:string
 property_value: NCIT:P108 "Endocrine System Finding" xsd:string
@@ -1023,22 +1088,30 @@ name: Laboratory Test Result
 def: "The outcome of a laboratory test." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
 subset: NCIT:C116977
 subset: NCIT:C118169
+subset: NCIT:C168549
+subset: NCIT:C173206
+subset: NCIT:C174018
+subset: NCIT:C174238
+subset: NCIT:C174239
+subset: NCIT:C174250
 subset: NCIT:C54447
 subset: NCIT:C89506
 subset: NCIT:C90259
 synonym: "Lab Findings" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "Laboratory Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "LAB_RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="EWS", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
+synonym: "LAB_RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P386="AML", http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
+synonym: "Laboratory Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Laboratory Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Laboratory Report" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICSR-CVM", http://purl.obolibrary.org/obo/NCIT_P384="FDA"}
 synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
-synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="TCGA", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
 synonym: "Labs" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "TEST RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICSR", http://purl.obolibrary.org/obo/NCIT_P384="FDA"}
 synonym: "Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C77140 ! Clinical Test Result
-property_value: NCIT:A11 NCIT:C3367
+property_value: NCIT:A23 NCIT:C45253
 property_value: NCIT:NHC0 "C36292" xsd:string
 property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
 property_value: NCIT:P107 "Laboratory Test Result" xsd:string
@@ -1047,6 +1120,7 @@ property_value: NCIT:P207 "C0587081" xsd:string
 property_value: NCIT:P322 "CTRP" xsd:string
 property_value: NCIT:P322 "FDA" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
+property_value: NCIT:P322 "PCDC" xsd:string
 property_value: NCIT:P366 "Test_Result" xsd:string
 property_value: NCIT:P371 "Laboratory Test Result" xsd:string
 
@@ -1209,11 +1283,11 @@ def: "An active process; excludes processes and mechanisms which fulfill biologi
 subset: NCIT:C105551
 subset: NCIT:C159501
 subset: NCIT:C159503
-synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P385="MPN-SAF", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 5.3"}
 synonym: "Activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 3.0.3"}
-synonym: "General activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P386="caDSR", http://purl.obolibrary.org/obo/NCIT_P384="NCI", http://purl.obolibrary.org/obo/NCIT_P385="MDASI-HN"}
+synonym: "General activity" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 disjoint_from: NCIT:C7057 ! Disease, Disorder or Finding
 property_value: NCIT:NHC0 "C43431" xsd:string
 property_value: NCIT:P106 "Activity" xsd:string
