@@ -168,14 +168,17 @@ Here the xref between MONDO:chondrocalcinosis and Orphanet:1416 as two axiom ann
 We aim to always state a reason why a subClassOf axiom exists. We currently use “oio:source” for everything (easier for roundtrip reasons). Currently subClassOf axioms may be annotated with
 
 * List of IDs/CURIEs that support the axiom
-* ONDO:Redundant, if it is entailed by other axioms
-* Name of ontology editor
+* MONDO:Redundant, if it is entailed by other axioms
+* ORCID of ontology editor
 * PMIDs
 * GitHub URLs
+* MONDO:XXXXXXX-obsolete (see note below)
 
 For example, see MONDO_0007113 'Angelman syndrome'
 
 ![SubclassOf Axiom Annotation](images/SubclassOfAxiomAnnotation.png)
+
+_Note_: Some source annotations will be in the format `MONDO:0020484-obsoleted`. The source annotation for a subclasssOf axiom may have an MONDO ID followed by -obsoleted. This means this Mondo term was obsoleted via an obsoletion script, and the term was reclassified under the grandparent. This was done for Orphanet grouping terms, for example MONDO_0016326 'lysosomal disease with hypertrophic cardiomyopathy' is classified as a child of 'heart disease' and the source is MONDO:0020484-obsoleted. MONDO:0020484 is obsoleted now an obsolete class, that was a child of 'heart disease'.
 
 ## Axiom Annotations Summary Table
 
