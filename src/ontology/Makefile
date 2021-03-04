@@ -204,11 +204,12 @@ filtered.owl: filtered.obo skos.ttl
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
 # note: robot will protect redundant annotated axioms
 reasoned.owl: filtered.owl 
-	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
+	$(ROBOT) reason --equivalent-classes-allowed none --exclude-owl-thing true --exclude-duplicate-axioms true --exclude-external-entities true -i $< -r ELK relax reduce --preserve-annotated-axioms false -r ELK $(ANN) -o $@
 
 # merged = reasoned + equivalencies
 reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
+	$(ROBOT) reason -i $@ --equivalent-classes-allowed none -o $(TMPDIR)/$@_test_equivalents.owl
 
 
 
