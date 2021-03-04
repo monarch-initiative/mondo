@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-29/imports/hp_import.owl
+data-version: mondo/releases/2021-03-03/imports/hp_import.owl
 subsetdef: hposlim_core ""
 subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
@@ -184,8 +184,9 @@ is_a: HP:0000032 ! Abnormality of male external genitalia
 
 [Term]
 id: HP:0000036
-name: Abnormality of the penis
+name: Abnormal penis morphology
 namespace: human_phenotype
+def: "Abnormality of the male external sex organ." []
 synonym: "Abnormality of the penis" EXACT layperson []
 xref: UMLS:C4025896
 is_a: HP:0000032 ! Abnormality of male external genitalia
@@ -258,6 +259,7 @@ name: Ureteropelvic junction obstruction
 namespace: human_phenotype
 def: "Blockage of urine flow from the renal pelvis to the proximal ureter." [Eurenomics:ewuehl]
 synonym: "Pelviureteric junction obstruction" EXACT []
+synonym: "Ureteropelvic junction stenosis" EXACT []
 xref: MSH:C537373
 xref: SNOMEDCT_US:95575002
 xref: UMLS:C0521619
@@ -365,6 +367,7 @@ namespace: human_phenotype
 def: "A structural anomaly of the glomerulus." [Eurenomics:ewuehl, PMID:18184729]
 comment: Each human kidney contains approximately one million nephrons. The glomerulus is the most proximal component of the nephron. The glomerulus of the mammalian kidney is a highly developed vascular bed that acts as a filter, allowing a filtrate of small molecules, such as water, sugars, electrolytes and small proteins, to pass through a barrier that retains high molecular weight proteins and cells in the circulation.
 synonym: "Abnormality of renal glomerulus morphology" EXACT []
+synonym: "Morphologic abnormality of the renal glomerulus" EXACT []
 xref: UMLS:C4025889
 is_a: HP:0031263 ! Abnormal renal corpuscle morphology
 
@@ -937,7 +940,7 @@ synonym: "Small head circumference" EXACT layperson []
 synonym: "Small skull" BROAD layperson [ORCID:0000-0001-5889-4463]
 xref: Fyler:4310
 xref: SNOMEDCT_US:271611007
-xref: UMLS:C0424688
+xref: UMLS:C4551563
 is_a: HP:0007364 ! Aplasia/Hypoplasia of the cerebrum
 is_a: HP:0040195 ! Decreased head circumference
 
@@ -1150,7 +1153,7 @@ synonym: "Reduced facial muscle tone" EXACT layperson [ORCID:0000-0001-5889-4463
 xref: UMLS:C1845251
 xref: UMLS:C4280646
 is_a: HP:0000301 ! Abnormality of facial musculature
-is_a: HP:0001252 ! Muscular hypotonia
+is_a: HP:0001252 ! Hypotonia
 
 [Term]
 id: HP:0000301
@@ -2362,6 +2365,8 @@ xref: UMLS:C0023012
 xref: UMLS:C0233715
 xref: UMLS:C0241210
 xref: UMLS:C0454644
+is_a: HP:0002167 ! Neurological speech impairment
+is_a: HP:0002463 ! Language impairment
 is_a: HP:0012758 ! Neurodevelopmental delay
 
 [Term]
@@ -2611,6 +2616,7 @@ alt_id: HP:0004949
 alt_id: HP:0005126
 def: "The presence of chronic increased pressure in the systemic arterial system." [HPO:probinson]
 comment: Hypertension is sustained elevation of resting systolic BP (140 mm Hg or higher), diastolic BP (90 mm Hg or higher), or both.
+synonym: "Arterial hypertension" EXACT []
 synonym: "High blood pressure" RELATED layperson [ORCID:0000-0001-5208-3432]
 synonym: "Systemic hypertension" EXACT []
 xref: MSH:D006973
@@ -3681,12 +3687,17 @@ is_a: HP:0011443 ! Abnormality of coordination
 
 [Term]
 id: HP:0001252
-name: Muscular hypotonia
+name: Hypotonia
 namespace: human_phenotype
-alt_id: HP:0001318
-def: "Muscular hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle), often involving reduced muscle strength. Hypotonia is characterized by a diminished resistance to passive stretching. Muscular hypotonia may be related to defects in skeletal muscle, neuromuscular junction, or peripheral nerve." [HPO:curators]
+alt_id: HP:0011398
+def: "Hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle). Even when relaxed, muscles have a continuous and passive partial contraction which provides some resistance to passive stretching. Hypotonia thus manifests as diminished resistance to passive stretching. Hypotonia is not the same as muscle weakness, although the two conditions can co-exist." [HPO:probinson, PMID:21418198]
+comment: Hypotonia can be caused by abnormalities of the central nervous system, any element of the motor unit (including the lower motoneuron), or both. Hypotonia is not a specific diagnosis, but can be obsereved in hundreds of genetic and other diseases. The first distinction to make when assessing a child with hypotonia is whether decreased muscle tone is a result of an abnormality of the central nervous system (CNS), peripheral neuromuscular system, or a combined abnormality involving both. Clinical findings suggestive of an abnormality of the CNS may include hyperreflexia, cognitive developmental delay, and seizures. In contrast, physical findings pointing towards a neuromuscular origin may include weakness, lack of antigravity movements, muscle atrophy, fasciculations, and/or diminished reflexes, most often in the context of normal cognitive function. The HPO term does not distinguish between these etiologies. Additional HPO terms should be used as required to describe associated features.
+synonym: "Central hypotonia" NARROW []
+synonym: "Low muscle tone" EXACT layperson []
 synonym: "Low or weak muscle tone" EXACT layperson [ORCID:0000-0002-6548-5200]
 synonym: "Muscle hypotonia" EXACT []
+synonym: "Muscular hypotonia" EXACT []
+synonym: "Peripheral hypotonia" NARROW []
 xref: MSH:D009123
 xref: SNOMEDCT_US:398151007
 xref: SNOMEDCT_US:398152000
@@ -5013,7 +5024,7 @@ is_a: HP:0002814 ! Abnormality of the lower limb
 id: HP:0001762
 name: Talipes equinovarus
 namespace: human_phenotype
-def: "Talipes equinovarus (also called clubfoot) typically has four main components: inversion and adduction of the forefoot; inversion of the heel and hindfoot; equinus (limitation of extension) of the ankle and subtalar joint; and internal rotation of the leg." [HPO:probinson]
+def: "Talipes equinovarus (also called clubfoot) typically has four main components: inversion and adduction of the forefoot; inversion of the heel and hindfoot; equinus (limitation of extension) of the ankle and subtalar joint; and internal rotation of the leg." [HPO:probinson, PMID:32491773]
 comment: Clubfoot is a complex, multifactorial deformity with genetic and intrauterine factors. One popular theory postulates that a clubfoot is a result of intrauterine maldevelopment of the talus that leads to adduction and plantarflexion of the foot. On radiographic projection a clubfoot can be noted as parallel axes of talus and calcaneus.
 subset: hposlim_core
 synonym: "Club feet" EXACT layperson []
@@ -5159,6 +5170,7 @@ name: Pancytopenia
 namespace: human_phenotype
 def: "An abnormal reduction in numbers of all blood cell types (red blood cells, white blood cells, and platelets)." [HPO:probinson]
 synonym: "Low blood cell count" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "uk_spelling" EXACT []
 xref: MSH:D010198
 xref: SNOMEDCT_US:127034005
 xref: UMLS:C0030312
@@ -6140,13 +6152,13 @@ xref: MSH:D012131
 xref: SNOMEDCT_US:409623005
 xref: UMLS:C0035229
 xref: UMLS:C4020855
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 
 [Term]
 id: HP:0002094
 name: Dyspnea
 namespace: human_phenotype
-def: "Difficult or labored breathing." [HPO:probinson]
+def: "Difficult or labored breathing. Dyspnea is a subjective feeling only the patient can rate, e.g., on a Borg scale." [HPO:probinson, PMID:16914301]
 synonym: "Abnormal breathing" EXACT []
 synonym: "Breathing difficulty" EXACT []
 synonym: "Difficult to breathe" EXACT []
@@ -6156,14 +6168,14 @@ xref: MSH:D004417
 xref: SNOMEDCT_US:230145002
 xref: SNOMEDCT_US:267036007
 xref: UMLS:C0013404
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 
 [Term]
 id: HP:0002098
 name: Respiratory distress
 namespace: human_phenotype
 alt_id: HP:0002880
-def: "Difficulty in breathing. The physical presentation of respiratory distress is generally referred to as labored breathing, while the sensation of respiratory distress is called shortness of breath or dyspnea." []
+def: "Respiratory distress is objectively observable as the physical or emotional consequences from the experience of dyspnea. The physical presentation of respiratory distress is generally referred to as labored breathing, while the sensation of respiratory distress is called shortness of breath or dyspnea." []
 synonym: "Breathing difficulties" EXACT layperson [ORCID:0000-0001-6908-9849]
 synonym: "Difficulty breathing" EXACT layperson []
 synonym: "Respiratory difficulties" EXACT []
@@ -6191,7 +6203,7 @@ xref: SNOMEDCT_US:195967001
 xref: SNOMEDCT_US:991000119106
 xref: UMLS:C0004096
 xref: UMLS:C3714497
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 is_a: HP:0100326 ! Immunologic hypersensitivity
 
 [Term]
@@ -6351,6 +6363,7 @@ is_a: HP:0002514 ! Cerebral calcification
 id: HP:0002140
 name: Ischemic stroke
 namespace: human_phenotype
+def: "Acute ischemic stroke (AIS) is defined by the sudden loss of blood flow to an area of the brain with the resulting loss of neurologic function. It is caused by thrombosis or embolism that occludes a cerebral vessel supplying a specific area of the brain. During a vessel occlusion, there is a core area where damage to the brain is irreversible and an area of penumbra where the brain has lost function owing to decreased blood flow but is not irreversibly injured." [PMID:32054610]
 synonym: "Ischaemic stroke" EXACT uk_spelling []
 xref: SNOMEDCT_US:422504002
 xref: UMLS:C0948008
@@ -7025,6 +7038,18 @@ xref: UMLS:C4025707
 is_a: HP:0012757 ! Abnormal neuron morphology
 
 [Term]
+id: HP:0002463
+name: Language impairment
+namespace: human_phenotype
+def: "Language impairment is a deficit in comprehension or production of language that includes reduced vocabulary, limited sentence structure or impairments in written or spoken communication. Language abilities are substantially and quantifiably below age expectations." [ISBN:9780890425558]
+synonym: "Language disorder" RELATED []
+synonym: "Language impairment" EXACT layperson []
+xref: MSH:D007806
+xref: SNOMEDCT_US:62305002
+xref: UMLS:C0023015
+is_a: HP:0011446 ! Abnormality of higher mental function
+
+[Term]
 id: HP:0002475
 name: Myelomeningocele
 namespace: human_phenotype
@@ -7299,8 +7324,7 @@ xref: SNOMEDCT_US:287731003
 xref: SNOMEDCT_US:389100007
 xref: UMLS:C0007786
 xref: UMLS:C0917798
-is_a: HP:0009145 ! Abnormal cerebral artery morphology
-is_a: HP:0100545 ! Arterial stenosis
+is_a: HP:0033401 ! Tissue ischemia
 
 [Term]
 id: HP:0002644
@@ -7606,13 +7630,12 @@ synonym: "Abnormal pattern of respiration" EXACT layperson []
 synonym: "Abnormal respiratory patterns" EXACT layperson []
 synonym: "Unusual breathing patterns" EXACT layperson []
 xref: UMLS:C1837388
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 
 [Term]
 id: HP:0002795
-name: Functional respiratory abnormality
+name: Abnormal respiratory system physiology
 namespace: human_phenotype
-comment: This category describes not-primarily structural lesions.
 synonym: "Abnormal respiration" EXACT [ORCID:0000-0001-5208-3432]
 synonym: "Functional respiratory abnormality" EXACT layperson []
 synonym: "Respiratory problem" RELATED layperson []
@@ -7729,7 +7752,7 @@ xref: SNOMEDCT_US:413585005
 xref: SNOMEDCT_US:68052005
 xref: UMLS:C0700198
 xref: UMLS:C2712334
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 
 [Term]
 id: HP:0002840
@@ -7808,7 +7831,7 @@ def: "An increased amount of bilirubin in the blood." [HPO:probinson]
 synonym: "High blood bilirubin levels" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: SNOMEDCT_US:26165005
 xref: UMLS:C0311468
-is_a: HP:0032180 ! Abnormal circulating metabolite concentration
+is_a: HP:0033479 ! Abnormal circulating bilirubin concentration
 
 [Term]
 id: HP:0002905
@@ -7994,7 +8017,7 @@ synonym: "Low blood albumin" EXACT layperson []
 xref: MSH:D034141
 xref: SNOMEDCT_US:119247004
 xref: UMLS:C0239981
-is_a: HP:0012116 ! Abnormal albumin level
+is_a: HP:0012116 ! Abnormal circulating albumin concentration
 
 [Term]
 id: HP:0003074
@@ -8750,13 +8773,14 @@ is_a: HP:0031797 ! Clinical course
 
 [Term]
 id: HP:0003677
-name: Slow progression
+name: Slowly progressive
 namespace: human_phenotype
 alt_id: HP:0003675
 alt_id: HP:0003681
+def: "Applies to a disease manifestation that only slowly increases in scope or severity over the course of time." []
 synonym: "Signs and symptoms worsen slowly with time" EXACT layperson [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-6548-5200]
 synonym: "Slow disease progression" EXACT []
-synonym: "Slowly progressive" EXACT []
+synonym: "Slow progression" EXACT []
 synonym: "Slowly progressive disorder" EXACT []
 xref: UMLS:C1854494
 is_a: HP:0003679 ! Pace of progression
@@ -9336,7 +9360,7 @@ xref: Fyler:1430
 xref: MSH:D021921
 xref: SNOMEDCT_US:268185002
 xref: UMLS:C0003499
-is_a: HP:0001650 ! Aortic valve stenosis
+is_a: HP:0031652 ! Abnormal aortic valve physiology
 created_by: peter
 creation_date: 2008-03-18T08:54:00Z
 
@@ -9719,7 +9743,7 @@ alt_id: HP:0005940
 synonym: "Tracheobronchial anomalies" EXACT []
 xref: Fyler:4232
 xref: UMLS:C4021631
-is_a: HP:0002087 ! Abnormality of the upper respiratory tract
+is_a: HP:0012252 ! Abnormal respiratory system morphology
 created_by: peter
 creation_date: 2008-03-28T09:03:00Z
 
@@ -9891,7 +9915,6 @@ id: HP:0006753
 name: Neoplasm of the stomach
 namespace: human_phenotype
 def: "A tumor (abnormal growth of tissue) of the stomach." [HPO:probinson]
-synonym: "Increased gastric cancer" RELATED []
 synonym: "Neoplasia of the stomach" RELATED []
 synonym: "Stomach tumor" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: MSH:D013274
@@ -11451,9 +11474,10 @@ creation_date: 2010-08-03T09:55:15Z
 
 [Term]
 id: HP:0010876
-name: Abnormal circulating protein level
+name: Abnormal circulating protein concentration
 namespace: human_phenotype
 def: "An abnormal level of a circulating protein in the blood." [HPO:probinson]
+synonym: "Abnormal circulating protein level" EXACT []
 synonym: "Abnormality of circulating protein level" EXACT []
 synonym: "Blood protein disease" RELATED layperson []
 synonym: "Serum protein abnormality" RELATED []
@@ -12103,13 +12127,14 @@ creation_date: 2011-06-08T07:11:09Z
 
 [Term]
 id: HP:0011110
-name: Tonsillitis
+name: Recurrent tonsillitis
 namespace: human_phenotype
-def: "An inflammation of the tonsils." [HPO:probinson]
-synonym: "Inflammation of tonsils" EXACT layperson [ORCID:0000-0001-5208-3432]
+def: "Inflammation of the tonsils that has occurred repeatedly. The definition of recurrent may vary somewhat, but the criteria used recently as a measure of severity were five or more episodes of true tonsillitis per year, symptoms recurring for at least a year, and episodes that are disabling and that prevent normal functioning. In some cases recurrent tonsillitis may be related to immunosusceptibility. Evidence exists for a genetic predisposition for recurrent tonsillitis." [HPO:probinson, PMID:15897415]
+synonym: "IRecurrent inflammation of tonsils" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: MSH:D014069
 xref: SNOMEDCT_US:90176007
 xref: UMLS:C0040425
+is_a: HP:0002719 ! Recurrent infections
 is_a: HP:0100765 ! Abnormality of the tonsils
 created_by: peter
 creation_date: 2011-06-10T07:46:38Z
@@ -12530,6 +12555,7 @@ creation_date: 2012-03-19T09:33:03Z
 id: HP:0011458
 name: Abdominal symptom
 namespace: human_phenotype
+def: "A subjective manifestation of disease localized to the abdomen." []
 xref: UMLS:C0740651
 is_a: HP:0025032 ! Abnormality of digestive system physiology
 created_by: peter
@@ -13019,12 +13045,12 @@ creation_date: 2012-09-16T05:03:29Z
 
 [Term]
 id: HP:0012116
-name: Abnormal albumin level
+name: Abnormal circulating albumin concentration
 namespace: human_phenotype
 def: "Deviation from normal concentration of albumin in the blood." [HPO:probinson]
 synonym: "Abnormal albumin level" EXACT layperson []
 xref: UMLS:C4023036
-is_a: HP:0010876 ! Abnormal circulating protein level
+is_a: HP:0010876 ! Abnormal circulating protein concentration
 created_by: hecht
 creation_date: 2012-09-16T05:14:53Z
 
@@ -13045,7 +13071,7 @@ def: "Any structural anomaly of the acrosome resulting in a round sperm head." [
 xref: MSH:D000072660
 xref: SNOMEDCT_US:236818008
 xref: UMLS:C0403825
-is_a: HP:0012865 ! Sperm head anomaly
+is_a: HP:0012865 ! Abnormal sperm head morphology
 created_by: peter
 creation_date: 2013-03-12T12:21:08Z
 
@@ -13260,7 +13286,7 @@ def: "An abnormality of the partial pressure of oxygen or carbon dioxide in the 
 synonym: "Abnormal blood gas level" EXACT layperson []
 xref: SNOMEDCT_US:312391003
 xref: UMLS:C0476337
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 created_by: peter
 creation_date: 2013-11-10T04:59:20Z
 
@@ -13529,8 +13555,8 @@ creation_date: 2014-03-23T02:48:00Z
 id: HP:0012735
 name: Cough
 namespace: human_phenotype
-def: "A sudden, audible expulsion of air from the lungs through a partially closed glottis, preceded by inhalation." [HPO:probinson, PMID:17540788]
-comment: The European Respiratory Society Task Force recommended two possible definitions of cough: (1) A three-phase expulsive motor act characterized by an inspiratory effort (inspiratory phase) followed by a forced expiratory effort against a closed glottis (compressive phase) and then by opening of the glottis and rapid expiratory airflow (expulsive phase);and (2) A forced expiratory manoeuvre, usually against a closed glottis and associated with a characteristic sound. The term Cough or any of its more specific descendents can be modified by the terms Acute (HP:0011009), Subacute (HP:0011011), and Chronic (HP:0011010). There is agreement that an actue cough lasts less than 3 weeks, a subacute cough from 3 to 8 weeks, and a chronic cough longer than 8 weeks.
+def: "A sudden, audible expulsion of air from the lungs through a partially closed glottis, preceded by inhalation." [HPO:probinson, PMID:16428719, PMID:17540788]
+comment: The European Respiratory Society Task Force recommended two possible definitions of cough: (1) A three-phase expulsive motor act characterized by an inspiratory effort (inspiratory phase) followed by a forced expiratory effort against a closed glottis (compressive phase) and then by opening of the glottis and rapid expiratory airflow (expulsive phase);and (2) A forced expiratory manoeuvre, usually against a closed glottis and associated with a characteristic sound. The term Cough or any of its more specific descendents can be modified by the terms Acute (HP:0011009), Subacute (HP:0011011), and Chronic (HP:0011010). In adults, an acute cough lasts less than 3 weeks, a subacute cough from 3 to 8 weeks, and a chronic cough longer than 8 weeks. In children aged less than 15 years a chronic cough is defined as a daily cough lasting for over 4 weeks.
 synonym: "Cough" EXACT layperson []
 synonym: "Coughing" EXACT layperson []
 xref: MSH:D003371
@@ -13538,7 +13564,7 @@ xref: SNOMEDCT_US:263731006
 xref: SNOMEDCT_US:272039006
 xref: SNOMEDCT_US:49727002
 xref: UMLS:C0010200
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 created_by: peter
 creation_date: 2014-03-23T03:19:50Z
 
@@ -13705,9 +13731,10 @@ creation_date: 2014-06-09T10:07:03Z
 
 [Term]
 id: HP:0012865
-name: Sperm head anomaly
+name: Abnormal sperm head morphology
 namespace: human_phenotype
 def: "A structural abnormality of the sperm head." [HPO:probinson, PMID:22198630]
+synonym: "Sperm head anomaly" EXACT []
 xref: UMLS:C4022702
 is_a: HP:0012864 ! Abnormal sperm morphology
 created_by: hecht
@@ -13885,6 +13912,15 @@ property_value: http://purl.org/dc/elements/1.1/date 2016-12-18T15:16:15Z xsd:da
 created_by: HPO:probinson
 
 [Term]
+id: HP:0025323
+name: Abnormal arterial physiology
+namespace: human_phenotype
+def: "An anomaly of arterial function." []
+is_a: HP:0030163 ! Abnormal vascular physiology
+property_value: http://purl.org/dc/elements/1.1/date 2017-02-03T12:08:38Z xsd:dateTime
+created_by: HPO:probinson
+
+[Term]
 id: HP:0025337
 name: Red eye
 namespace: human_phenotype
@@ -13927,7 +13963,7 @@ id: HP:0025426
 name: Abnormal bronchus morphology
 namespace: human_phenotype
 alt_id: HP:0002109
-def: "Any anomaly of the morphology of the bronchi." []
+def: "Any structural anomaly of the bronchi, i.e., of the airways leading from the trachea to the lungs." []
 synonym: "Abnormality of the bronchi" EXACT []
 is_a: HP:0005607 ! Abnormal tracheobronchial morphology
 property_value: http://purl.org/dc/elements/1.1/date 2017-04-23T12:50:43Z xsd:dateTime
@@ -14217,7 +14253,7 @@ namespace: human_phenotype
 def: "An anomalous (adventitious) sound produced by the breathing process." [HPO:probinson]
 xref: SNOMEDCT_US:301273002
 xref: UMLS:C0231856
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 
 [Term]
 id: HP:0030850
@@ -14243,7 +14279,7 @@ def: "A functional anomaly of that portion of the cardiosvascular system that ca
 synonym: "Abnormal pulmonary circulation" EXACT []
 synonym: "Abnormality of respiratory circulation" EXACT []
 xref: UMLS:C4280730
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 is_a: HP:0030163 ! Abnormal vascular physiology
 
 [Term]
@@ -14530,7 +14566,7 @@ name: Clinical course
 namespace: human_phenotype
 def: "The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual." []
 synonym: "Natural history of disease" RELATED []
-is_a: HP:0000001 ! All
+is_a: HP:0012823 ! Clinical modifier
 property_value: http://purl.org/dc/elements/1.1/date 2018-02-25T14:55:46Z xsd:dateTime
 created_by: peter
 
@@ -14786,6 +14822,23 @@ def: "Any deviation from the normal concentration of a metabolite in urine." []
 comment: As water reabsorption in kidneys affect urinary solute concentrations, various methods are applied to normalize the measured concentration. Frequently, concentrations are reported as a ratio to urinary creatinine. The HPO terms in this subhierarchy therefore use the word 'level' to indicate that appropriate normalization has been performed before concluding that the amount of the indicated metabolite is abnormal.
 is_a: HP:0003110 ! Abnormality of urine homeostasis
 property_value: http://purl.org/dc/elements/1.1/date 2020-12-01T12:00:51Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033401
+name: Tissue ischemia
+namespace: human_phenotype
+def: "Ischemia is defined as a restriction of arterial blood supply to a tissue associated with insufficient oxygenation to support the metabolis requirements of the tissue. Depending on the involved tissues, clinical manifestations may include pain, pallor, lack of pulse, coldness, paresthesia, and paralysis. Additional associated manifestations include hemodynamic parameters (reduced blood pressure distal to the site of restricted arterial supply) and angiographic evidence of arterial occclusion." [PMID:10720362, PMID:26858079]
+is_a: HP:0025323 ! Abnormal arterial physiology
+property_value: http://purl.org/dc/elements/1.1/date 2021-01-09T15:02:58Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033479
+name: Abnormal circulating bilirubin concentration
+namespace: human_phenotype
+is_a: HP:0010995 ! Abnormal circulating dicarboxylic acid concentration
+property_value: http://purl.org/dc/elements/1.1/date 2021-01-09T23:02:44Z xsd:dateTime
 created_by: peter
 
 [Term]
@@ -15082,7 +15135,7 @@ xref: MSH:D006606
 xref: SNOMEDCT_US:65958008
 xref: UMLS:C0019521
 xref: UMLS:C0744897
-is_a: HP:0002795 ! Functional respiratory abnormality
+is_a: HP:0002795 ! Abnormal respiratory system physiology
 created_by: doelkens
 creation_date: 2010-07-08T05:28:00Z
 
@@ -15363,7 +15416,6 @@ synonym: "Cognitive defects" EXACT layperson []
 synonym: "Cognitive deficits" EXACT layperson []
 synonym: "Cognitive impairment" EXACT layperson []
 synonym: "Intellectual impairment" EXACT layperson []
-synonym: "Mental impairment" EXACT layperson []
 xref: MSH:D060825
 xref: SNOMEDCT_US:386806002
 xref: UMLS:C0338656
@@ -15464,7 +15516,6 @@ namespace: human_phenotype
 def: "A multidimensional but common male sexual dysfunction that involves an alteration in any of the components of the erectile response, including organic, relational and psychological." [PMID:27188339]
 synonym: "Abnormal erection" EXACT layperson []
 synonym: "Erectile abnormalities" EXACT layperson []
-xref: UMLS:C4022003
 is_a: HP:0040307 ! Male sexual dysfunction
 created_by: doelkens
 creation_date: 2010-12-29T05:45:28Z
@@ -15506,6 +15557,7 @@ creation_date: 2010-12-30T10:11:51Z
 id: HP:0100659
 name: Abnormality of the cerebral vasculature
 namespace: human_phenotype
+def: "An anomaly of the cerebral blood vessels." [PMID:30335330]
 synonym: "Abnormality of the cerebral blood vessels" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: UMLS:C4022001
 is_a: HP:0002597 ! Abnormality of the vasculature

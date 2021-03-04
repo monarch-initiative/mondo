@@ -23,25 +23,25 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: '''anatomical entity'''
+  location: '''anatomical entity'''
 
 name:
   text: '%s meningioma'
   vars:
-  - v0
+  - location
 
 annotations:
 - annotationProperty: exact_synonym
   text: '%s meningioma'
   vars:
-  - v0
+  - location
 
 def:
   text: A meningioma that affects the %s.
   vars:
-  - v0
+  - location
 
 equivalentTo:
   text: '''meningioma'' and (''disease has location'' some %s)'
   vars:
-  - v0
+  - location

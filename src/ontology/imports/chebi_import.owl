@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/chebi_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-01-29/imports/chebi_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-03-03/imports/chebi_import.owl"/>
     </owl:Ontology>
     
 
@@ -4893,6 +4893,20 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24669 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24669">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33822"/>
+        <obo:IAO_0000115>Any carboxylic acid with at least one hydroxy group.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>hydroxy carboxylic acids</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hydroxycarboxylic acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hydroxycarboxylic acids</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hydroxy carboxylic acid</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_24675 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24675">
@@ -6043,6 +6057,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26708">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22314"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33937"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -10987,6 +11007,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33937">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33284"/>
+        <obo:IAO_0000115>Any nutrient required in large quantities by organisms throughout their life in order to orchestrate a range of physiological functions. Macronutrients are usually chemical elements (carbon, hydrogen, nitrogen, oxygen, phosphorus and sulfur) that humans consume in the largest quantities. Calcium, sodium, magnesium and potassium are sometimes included as macronutrients because they are required in relatively large quantities compared with other vitamins and minerals.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>macronutrients</oboInOwl:hasRelatedSynonym>
         <rdfs:label>macronutrient</rdfs:label>
     </owl:Class>
@@ -12152,6 +12173,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35868 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35868">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24669"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25384"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36059"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Any monocarboxylic acid which also contains a separate (alcoholic or phenolic) hydroxy substituent.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>hydroxy acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hydroxy monocarboxylic acids</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hydroxy monocarboxylic acid</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_35881 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35881">
@@ -12237,6 +12277,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36059">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35757"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35868"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Any monocarboxylic acid anion carrying at least one hydroxy substituent.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>hydroxy monocarboxylic acid anions</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>hydroxymonocarboxylic acid anion</oboInOwl:hasRelatedSynonym>

@@ -247,15 +247,25 @@ mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
 related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
 
+rm_related_annos_to_exact:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
+
+
 #warn-omim-subsumption warn=related-exact-synonym
 warn-%:
 	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query $(SPARQLDIR)/$*-warning.sparql reports/warn-$*.tsv
 
+report-query-%:
+	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
 
+update-query-%:
+	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/$*.ru convert -f obo --check false -o $(SRC).obo
 
 .PHONY: r2e
 r2e:
 	make related_annos_to_exact
 	make NORM
 	mv NORM mondo-edit.obo
-	
+
+mass_obsolete:
+	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/2662 --obsoletionReason MONDO:outOfScope  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo

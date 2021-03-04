@@ -25,26 +25,26 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: owl_thing
+  location: owl_thing
 
 name:
   text: '%s leiomyosarcoma'
   vars:
-  - v0
+  - location
 
 annotations:
 - annotationProperty: exact_synonym
   text: '%s leiomyosarcoma'
   vars:
-  - v0
+  - location
 
 def:
   text: An aggressive malignant smooth muscle neoplasm, arising from the %s. It is
     characterized by a proliferation of neoplastic spindle cells.
   vars:
-  - v0
+  - location
 
 equivalentTo:
   text: '''leiomyosarcoma'' and (''disease has location'' some %s)'
   vars:
-  - v0
+  - location

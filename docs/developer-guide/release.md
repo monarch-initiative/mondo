@@ -29,6 +29,8 @@ Note- the date should be the date of the release in the format sh run.sh make GH
     4.  Ensure that both have all release artefacts attached to it
 7. When this is done, follow instructions for the change log
 
+_Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
+
 ## Generate Change Log
 
 ### Initial Setup:

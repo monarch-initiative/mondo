@@ -24,26 +24,26 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  v0: '''multicellular anatomical structure'''
+  location: '''multicellular anatomical structure'''
 
 name:
   text: '%s adenosquamous carcinoma'
   vars:
-  - v0
+  - location
 
 annotations:
 - annotationProperty: exact_synonym
   text: adenosquamous %s carcinoma
   vars:
-  - v0
+  - location
 
 def:
   text: Any carcinoma that that involves the %s and is characterized by the presence
     of glandular and squamous malignant epithelial components.
   vars:
-  - v0
+  - location
 
 equivalentTo:
   text: '''adenosquamous carcinoma'' and (''disease has location'' some %s)'
   vars:
-  - v0
+  - location

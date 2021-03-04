@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-29/imports/go_import.owl
+data-version: mondo/releases/2021-03-03/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -348,6 +348,9 @@ synonym: "transcription factor activity, RNA polymerase II distal enhancer seque
 synonym: "transcription factor activity, RNA polymerase II proximal promoter sequence-specific DNA binding" NARROW []
 synonym: "zinc ion regulated core promoter proximal region sequence-specific DNA binding RNA polymerase II transcription factor activity" NARROW []
 is_a: GO:0003700 ! DNA-binding transcription factor activity
+intersection_of: GO:0140110 ! transcription regulator activity
+intersection_of: BFO:0000050 GO:0006357 ! part of regulation of transcription by RNA polymerase II
+intersection_of: BFO:0000051 GO:0000977 ! has part RNA polymerase II transcription regulatory region sequence-specific DNA binding
 relationship: BFO:0000050 GO:0006357 ! part of regulation of transcription by RNA polymerase II
 relationship: BFO:0000051 GO:0000977 ! has part RNA polymerase II transcription regulatory region sequence-specific DNA binding
 relationship: BFO:0000066 GO:0000785 ! occurs in chromatin
@@ -372,6 +375,101 @@ id: GO:0001067
 name: regulatory region nucleic acid binding
 def: "Interacting selectively and non-covalently with a nucleic acid region that regulates a nucleic acid-based process. Such processes include transcription, DNA replication, and DNA repair." []
 is_a: GO:0003676 ! nucleic acid binding
+
+[Term]
+id: GO:0001216
+name: DNA-binding transcription activator activity
+def: "A DNA-binding transcription factor activity that activates or increases transcription of specific gene sets." []
+synonym: "bacterial-type RNA polymerase core promoter proximal region sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription" RELATED []
+synonym: "bacterial-type RNA polymerase transcriptional activator activity, metal ion regulated sequence-specific DNA binding" NARROW []
+synonym: "bacterial-type RNA polymerase transcriptional activator activity, sequence-specific DNA binding" NARROW []
+synonym: "metal ion regulated sequence-specific DNA binding bacterial-type RNA polymerase transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "sequence-specific DNA binding bacterial-type RNA polymerase transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "transcriptional activator activity, bacterial-type RNA polymerase core promoter proximal region sequence-specific binding" NARROW []
+synonym: "transcriptional activator activity, bacterial-type RNA polymerase proximal promoter sequence-specific DNA binding" RELATED []
+is_a: GO:0003700 ! DNA-binding transcription factor activity
+intersection_of: GO:0140110 ! transcription regulator activity
+intersection_of: BFO:0000050 GO:0045893 ! part of positive regulation of transcription, DNA-templated
+intersection_of: BFO:0000051 GO:0000976 ! has part transcription regulatory region sequence-specific DNA binding
+relationship: BFO:0000050 GO:0045893 ! part of positive regulation of transcription, DNA-templated
+
+[Term]
+id: GO:0001217
+name: DNA-binding transcription repressor activity
+def: "A DNA-binding transcription factor activity that represses or decreases the transcription of specific gene sets." []
+synonym: "bacterial-type DNA binding transcription repressor activity" NARROW []
+synonym: "bacterial-type RNA polymerase core promoter proximal region sequence-specific DNA binding transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "bacterial-type RNA polymerase transcriptional repressor activity, cadmium ion regulated sequence-specific DNA binding" NARROW []
+synonym: "bacterial-type RNA polymerase transcriptional repressor activity, copper ion regulated sequence-specific DNA binding" NARROW []
+synonym: "bacterial-type RNA polymerase transcriptional repressor activity, metal ion regulated sequence-specific DNA binding" NARROW []
+synonym: "bacterial-type RNA polymerase transcriptional repressor activity, sequence-specific DNA binding" NARROW []
+synonym: "cadmium ion regulated sequence-specific DNA binding bacterial-type RNA polymerase transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "copper ion regulated sequence-specific DNA binding bacterial-type RNA polymerase transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "metal ion regulated sequence-specific DNA binding bacterial-type RNA polymerase transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "sequence-specific DNA binding bacterial-type RNA polymerase transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "transcriptional repressor activity, bacterial-type RNA polymerase core promoter proximal region sequence-specific binding" NARROW []
+synonym: "transcriptional repressor activity, bacterial-type RNA polymerase proximal promoter sequence-specific DNA binding" NARROW []
+is_a: GO:0003700 ! DNA-binding transcription factor activity
+intersection_of: GO:0140110 ! transcription regulator activity
+intersection_of: BFO:0000050 GO:0045892 ! part of negative regulation of transcription, DNA-templated
+intersection_of: BFO:0000051 GO:0000976 ! has part transcription regulatory region sequence-specific DNA binding
+relationship: BFO:0000050 GO:0045892 ! part of negative regulation of transcription, DNA-templated
+
+[Term]
+id: GO:0001227
+name: DNA-binding transcription repressor activity, RNA polymerase II-specific
+def: "A DNA-binding transcription factor activity that represses or decreases the transcription of specific gene sets transcribed by RNA polymerase II." []
+synonym: "distal enhancer DNA-binding transcription repressor activity, RNA polymerase II-specific" NARROW []
+synonym: "metal ion regulated core promoter proximal region sequence-specific DNA binding RNA polymerase II transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "metal ion regulated sequence-specific DNA binding transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "proximal promoter DNA-binding transcription repressor activity, RNA polymerase II-specific" NARROW []
+synonym: "RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "RNA polymerase II distal enhancer sequence-specific DNA-binding transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "RNA polymerase II transcription regulatory region sequence-specific DNA binding transcription factor activity involved in negative regulation of transcription" EXACT []
+synonym: "RNA polymerase II transcriptional repressor activity, metal ion regulated core promoter proximal region sequence-specific binding" NARROW []
+synonym: "RNA polymerase II transcriptional repressor activity, metal ion regulated proximal promoter sequence-specific DNA binding" NARROW []
+synonym: "sequence-specific distal enhancer binding RNA polymerase II transcription factor activity involved in negative regulation of transcription" NARROW []
+synonym: "transcriptional repressor activity, metal ion regulated sequence-specific DNA binding" NARROW []
+synonym: "transcriptional repressor activity, RNA polymerase II distal enhancer sequence-specific binding" NARROW []
+synonym: "transcriptional repressor activity, RNA polymerase II proximal promoter sequence-specific DNA binding" NARROW []
+synonym: "transcriptional repressor activity, RNA polymerase II transcription regulatory region sequence-specific DNA binding" EXACT []
+is_a: GO:0000981 ! DNA-binding transcription factor activity, RNA polymerase II-specific
+is_a: GO:0001217 ! DNA-binding transcription repressor activity
+intersection_of: GO:0140110 ! transcription regulator activity
+intersection_of: BFO:0000050 GO:0000122 ! part of negative regulation of transcription by RNA polymerase II
+intersection_of: BFO:0000051 GO:0000977 ! has part RNA polymerase II transcription regulatory region sequence-specific DNA binding
+relationship: BFO:0000050 GO:0000122 ! part of negative regulation of transcription by RNA polymerase II
+
+[Term]
+id: GO:0001228
+name: DNA-binding transcription activator activity, RNA polymerase II-specific
+def: "A DNA-binding transcription factor activity that activates or increases transcription of specific gene sets transcribed by RNA polymerase II." []
+synonym: "copper ion regulated core promoter proximal region sequence-specific DNA binding RNA polymerase II transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "distal enhancer DNA-binding transcription activator activity, RNA polymerase II-specific" NARROW []
+synonym: "metal ion regulated core promoter proximal region sequence-specific DNA binding RNA polymerase II transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "metal ion regulated sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "proximal promoter DNA-binding transcription activator activity, RNA polymerase II-specific" NARROW []
+synonym: "RNA polymerase II core promoter proximal region sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "RNA polymerase II distal enhancer sequence-specific DNA-binding transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "RNA polymerase II transcription regulatory region sequence-specific DNA binding transcription factor activity involved in positive regulation of transcription" EXACT []
+synonym: "RNA polymerase II transcriptional activator activity, copper ion regulated proximal promoter sequence-specific DNA binding" NARROW []
+synonym: "RNA polymerase II transcriptional activator activity, metal ion regulated core promoter proximal region sequence-specific binding" NARROW []
+synonym: "RNA polymerase II transcriptional activator activity, metal ion regulated proximal promoter sequence-specific DNA binding" NARROW []
+synonym: "RNA polymerase II transcriptional activator activity, zinc ion regulated core promoter proximal region sequence-specific binding" NARROW []
+synonym: "RNA polymerase II transcriptional activator activity, zinc ion regulated proximal promoter sequence-specific DNA binding" NARROW []
+synonym: "sequence-specific distal enhancer binding RNA polymerase II transcription factor activity involved in positive regulation of transcription" NARROW []
+synonym: "transcriptional activator activity, metal ion regulated sequence-specific DNA binding" NARROW []
+synonym: "transcriptional activator activity, RNA polymerase II core promoter proximal region sequence-specific binding" NARROW []
+synonym: "transcriptional activator activity, RNA polymerase II distal enhancer sequence-specific DNA binding" NARROW []
+synonym: "transcriptional activator activity, RNA polymerase II proximal promoter sequence-specific DNA binding" NARROW []
+synonym: "transcriptional activator activity, RNA polymerase II transcription regulatory region sequence-specific DNA binding" EXACT []
+synonym: "zinc ion regulated core promoter proximal region sequence-specific DNA binding RNA polymerase II transcription factor activity involved in positive regulation of transcription" NARROW []
+is_a: GO:0000981 ! DNA-binding transcription factor activity, RNA polymerase II-specific
+is_a: GO:0001216 ! DNA-binding transcription activator activity
+intersection_of: GO:0140110 ! transcription regulator activity
+intersection_of: BFO:0000050 GO:0045944 ! part of positive regulation of transcription by RNA polymerase II
+intersection_of: BFO:0000051 GO:0000977 ! has part RNA polymerase II transcription regulatory region sequence-specific DNA binding
+relationship: BFO:0000050 GO:0045944 ! part of positive regulation of transcription by RNA polymerase II
 
 [Term]
 id: GO:0001501
@@ -3485,6 +3583,9 @@ synonym: "transcription factor activity, bacterial-type RNA polymerase proximal 
 synonym: "transcription factor activity, bacterial-type RNA polymerase transcription enhancer sequence-specific binding" NARROW []
 synonym: "transcription factor activity, metal ion regulated sequence-specific DNA binding" NARROW []
 is_a: GO:0140110 ! transcription regulator activity
+intersection_of: GO:0140110 ! transcription regulator activity
+intersection_of: BFO:0000050 GO:0006355 ! part of regulation of transcription, DNA-templated
+intersection_of: BFO:0000051 GO:0000976 ! has part transcription regulatory region sequence-specific DNA binding
 relationship: BFO:0000051 GO:0000976 ! has part transcription regulatory region sequence-specific DNA binding
 
 [Term]
@@ -11786,6 +11887,36 @@ def: "Interacting selectively and non-covalently with a vitamin, one of a number
 is_a: GO:0036094 ! small molecule binding
 
 [Term]
+id: GO:0019852
+name: L-ascorbic acid metabolic process
+def: "The chemical reactions and pathways involving L-ascorbic acid, (2R)-2-[(1S)-1,2-dihydroxyethyl]-4-hydroxy-5-oxo-2,5-dihydrofuran-3-olate; L-ascorbic acid is vitamin C and has co-factor and anti-oxidant activities in many species." []
+synonym: "ascorbate metabolic process" EXACT []
+synonym: "ascorbate metabolism" EXACT []
+synonym: "L-ascorbic acid metabolism" EXACT []
+synonym: "vitamin C metabolic process" EXACT []
+synonym: "vitamin C metabolism" EXACT []
+is_a: GO:0005996 ! monosaccharide metabolic process
+is_a: GO:0006767 ! water-soluble vitamin metabolic process
+is_a: GO:0019752 ! carboxylic acid metabolic process
+
+[Term]
+id: GO:0019853
+name: L-ascorbic acid biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of L-ascorbic acid; L-ascorbic acid ionizes to give L-ascorbate, (2R)-2-[(1S)-1,2-dihydroxyethyl]-4-hydroxy-5-oxo-2,5-dihydrofuran-3-olate, which is required as a cofactor in the oxidation of prolyl residues to hydroxyprolyl, and other reactions." []
+synonym: "ascorbate biosynthesis" EXACT []
+synonym: "ascorbate biosynthetic process" EXACT []
+synonym: "L-ascorbic acid anabolism" EXACT []
+synonym: "L-ascorbic acid biosynthesis" EXACT []
+synonym: "L-ascorbic acid formation" EXACT []
+synonym: "L-ascorbic acid synthesis" EXACT []
+synonym: "vitamin C biosynthesis" EXACT []
+synonym: "vitamin C biosynthetic process" EXACT []
+is_a: GO:0019852 ! L-ascorbic acid metabolic process
+is_a: GO:0042364 ! water-soluble vitamin biosynthetic process
+is_a: GO:0046364 ! monosaccharide biosynthetic process
+is_a: GO:0046394 ! carboxylic acid biosynthetic process
+
+[Term]
 id: GO:0019866
 name: organelle inner membrane
 def: "The inner, i.e. lumen-facing, lipid bilayer of an organelle envelope; usually highly selective to most ions and metabolites." []
@@ -16790,6 +16921,17 @@ is_a: GO:0006775 ! fat-soluble vitamin metabolic process
 is_a: GO:0009110 ! vitamin biosynthetic process
 
 [Term]
+id: GO:0042364
+name: water-soluble vitamin biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of any of a diverse group of vitamins that are soluble in water." []
+synonym: "water-soluble vitamin anabolism" EXACT []
+synonym: "water-soluble vitamin biosynthesis" EXACT []
+synonym: "water-soluble vitamin formation" EXACT []
+synonym: "water-soluble vitamin synthesis" EXACT []
+is_a: GO:0006767 ! water-soluble vitamin metabolic process
+is_a: GO:0009110 ! vitamin biosynthetic process
+
+[Term]
 id: GO:0042368
 name: vitamin D biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
@@ -20760,7 +20902,6 @@ synonym: "negative regulation of gene-specific transcription" RELATED []
 synonym: "negative regulation of transcription, DNA-dependent" EXACT []
 synonym: "transcription repressor activity" RELATED []
 is_a: GO:0006355 ! regulation of transcription, DNA-templated
-is_a: GO:0010629 ! negative regulation of gene expression
 is_a: GO:1903507 ! negative regulation of nucleic acid-templated transcription
 is_a: GO:2000113 ! negative regulation of cellular macromolecule biosynthetic process
 intersection_of: GO:0065007 ! biological regulation
@@ -20786,7 +20927,6 @@ synonym: "up-regulation of transcription, DNA-dependent" EXACT []
 synonym: "upregulation of gene-specific transcription" RELATED []
 synonym: "upregulation of transcription, DNA-dependent" EXACT []
 is_a: GO:0006355 ! regulation of transcription, DNA-templated
-is_a: GO:0010628 ! positive regulation of gene expression
 is_a: GO:1903508 ! positive regulation of nucleic acid-templated transcription
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0006351 ! positively regulates transcription, DNA-templated
@@ -37574,6 +37714,46 @@ is_a: GO:2000064 ! regulation of cortisol biosynthetic process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0034651 ! positively regulates cortisol biosynthetic process
 relationship: RO:0002213 GO:0034651 ! positively regulates cortisol biosynthetic process
+
+[Term]
+id: GO:2000082
+name: regulation of L-ascorbic acid biosynthetic process
+def: "Any process that modulates the frequency, rate or extent of L-ascorbic acid biosynthetic process." []
+synonym: "regulation of ascorbate biosynthesis" EXACT []
+synonym: "regulation of ascorbate biosynthetic process" EXACT []
+synonym: "regulation of L-ascorbic acid anabolism" EXACT []
+synonym: "regulation of L-ascorbic acid biosynthesis" EXACT []
+synonym: "regulation of L-ascorbic acid formation" EXACT []
+synonym: "regulation of L-ascorbic acid synthesis" EXACT []
+synonym: "regulation of vitamin C biosynthesis" EXACT []
+synonym: "regulation of vitamin C biosynthetic process" EXACT []
+is_a: GO:0010565 ! regulation of cellular ketone metabolic process
+is_a: GO:0030656 ! regulation of vitamin metabolic process
+is_a: GO:0031326 ! regulation of cellular biosynthetic process
+is_a: GO:0043255 ! regulation of carbohydrate biosynthetic process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0019853 ! regulates L-ascorbic acid biosynthetic process
+relationship: RO:0002211 GO:0019853 ! regulates L-ascorbic acid biosynthetic process
+
+[Term]
+id: GO:2000083
+name: negative regulation of L-ascorbic acid biosynthetic process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of L-ascorbic acid biosynthetic process." []
+synonym: "negative regulation of ascorbate biosynthesis" EXACT []
+synonym: "negative regulation of ascorbate biosynthetic process" EXACT []
+synonym: "negative regulation of L-ascorbic acid anabolism" EXACT []
+synonym: "negative regulation of L-ascorbic acid biosynthesis" EXACT []
+synonym: "negative regulation of L-ascorbic acid formation" EXACT []
+synonym: "negative regulation of L-ascorbic acid synthesis" EXACT []
+synonym: "negative regulation of vitamin C biosynthesis" EXACT []
+synonym: "negative regulation of vitamin C biosynthetic process" EXACT []
+is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
+is_a: GO:0045912 ! negative regulation of carbohydrate metabolic process
+is_a: GO:0046137 ! negative regulation of vitamin metabolic process
+is_a: GO:2000082 ! regulation of L-ascorbic acid biosynthetic process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002212 GO:0019853 ! negatively regulates L-ascorbic acid biosynthetic process
+relationship: RO:0002212 GO:0019853 ! negatively regulates L-ascorbic acid biosynthetic process
 
 [Term]
 id: GO:2000112
