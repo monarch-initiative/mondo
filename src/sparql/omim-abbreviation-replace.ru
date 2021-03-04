@@ -1,0 +1,30 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+DELETE {
+  ?term rdfs:label ?term_label .
+} 
+INSERT {
+  ?term rdfs:label ?label_lc .
+}
+WHERE 
+{ 
+  { 
+    ?term <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ?related ;
+      rdfs:label ?term_label .
+      [ rdf:type owl:Axiom ;
+         owl:annotatedSource ?term ;
+         owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+         owl:annotatedTarget ?related ;
+         <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?xref1 ,
+                                                                  ?xref2
+       ] .
+    FILTER(str(?xref1)="MONDO:Lexical")
+    BIND(LCASE(str(?related)) as ?label_lc)
+    #FILTER (regex(str(?xref2), "OMIM^"))
+    FILTER (regex(str(?term_label), "^[A-Z0-9]+$"))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  }
+}

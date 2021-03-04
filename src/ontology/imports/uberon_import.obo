@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-29/imports/uberon_import.owl
+data-version: mondo/releases/2021-03-03/imports/uberon_import.owl
 ontology: mondo/imports/uberon_import
 
 [Term]
@@ -4003,11 +4003,10 @@ id: UBERON:0001073
 name: ileocecal junction
 def: "A point along the course of the gastrointestinal tract where the small intestine (ileum) ends as it opens into the cecal portion of the large intestine; occurs usually within the iliac fossa, demarcated internally as the ileocecal orifice" []
 synonym: "ileocaecal junction" EXACT []
-is_a: UBERON:0007651 ! anatomical junction
+is_a: UBERON:8410024 ! intestinal junction
 intersection_of: UBERON:0007651 ! anatomical junction
 intersection_of: RO:0002176 UBERON:0000059 ! connects large intestine
 intersection_of: RO:0002176 UBERON:0002108 ! connects small intestine
-relationship: BFO:0000050 UBERON:0000160 ! part of intestine
 relationship: RO:0002176 UBERON:0000059 ! connects large intestine
 relationship: RO:0002176 UBERON:0002108 ! connects small intestine
 
@@ -15343,13 +15342,15 @@ relationship: RO:0002433 UBERON:0002350 ! contributes to morphology of conductin
 
 [Term]
 id: UBERON:0002353
-name: atrioventricular bundle
+name: bundle of His
 def: "A part of the His-Purkinje system that transmits signals from the AV node to the cardiac Purkinje fibers[GO]" []
 synonym: "A-V bundle" RELATED []
-synonym: "atrio-ventricular bundle" RELATED []
+synonym: "atrio-ventricular bundle" EXACT []
+synonym: "atrioventricular bundle" EXACT []
 synonym: "atrioventricular bundle muscle tissue" EXACT []
 synonym: "atrioventricular fasciculus" EXACT []
 synonym: "AV bundle" EXACT []
+synonym: "AVB" EXACT []
 synonym: "bundle of His" EXACT []
 synonym: "fasciculus atrioventricularis" EXACT []
 synonym: "His bundle" EXACT []
@@ -26149,6 +26150,8 @@ name: His-Purkinje system
 def: "The His-Purkinje system receives signals from the AV node and is composed of the fibers that regulate cardiac muscle contraction in the ventricles" []
 synonym: "His-Purkinji network" EXACT []
 synonym: "HPS" EXACT []
+synonym: "VCS" EXACT []
+synonym: "ventricular conduction system" EXACT []
 is_a: UBERON:0010131 ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
 relationship: BFO:0000050 UBERON:0002350 ! part of conducting system of heart
@@ -39001,8 +39004,13 @@ relationship: RO:0002387 UBERON:0000981 ! has potential to develop into femur
 id: UBERON:0006235
 name: foregut-midgut junction
 def: "An anatomical junctions that overlaps the foregut and midgut." []
-is_a: UBERON:0007651 ! anatomical junction
+is_a: UBERON:1100000 ! digestive tract junction
+intersection_of: UBERON:0007651 ! anatomical junction
+intersection_of: RO:0002176 UBERON:0001041 ! connects foregut
+intersection_of: RO:0002176 UBERON:0001045 ! connects midgut
 relationship: BFO:0000050 UBERON:0001555 ! part of digestive tract
+relationship: RO:0002176 UBERON:0001041 ! connects foregut
+relationship: RO:0002176 UBERON:0001045 ! connects midgut
 
 [Term]
 id: UBERON:0006238
@@ -39857,13 +39865,13 @@ synonym: "pectinate line of anal canal" EXACT []
 synonym: "recto-anal junction" RELATED []
 synonym: "site of anal membrane" RELATED []
 is_a: UBERON:0004121 ! ectoderm-derived structure
-is_a: UBERON:0007651 ! anatomical junction
+is_a: UBERON:8410024 ! intestinal junction
 intersection_of: UBERON:0007651 ! anatomical junction
-intersection_of: RO:0002220 UBERON:0000931 ! adjacent_to proctodeum
-intersection_of: RO:0002220 UBERON:0001046 ! adjacent_to hindgut
+intersection_of: RO:0002176 UBERON:0000931 ! connects proctodeum
+intersection_of: RO:0002176 UBERON:0001046 ! connects hindgut
 relationship: BFO:0000050 UBERON:0000159 ! part of anal canal
-relationship: RO:0002220 UBERON:0000931 ! adjacent_to proctodeum
-relationship: RO:0002220 UBERON:0001046 ! adjacent_to hindgut
+relationship: RO:0002176 UBERON:0000931 ! connects proctodeum
+relationship: RO:0002176 UBERON:0001046 ! connects hindgut
 
 [Term]
 id: UBERON:0006585
@@ -42554,9 +42562,9 @@ synonym: "esophagogastric junction" RELATED []
 synonym: "gastroesophageal junction" EXACT []
 synonym: "GEJ" RELATED []
 synonym: "squamocolumnar junction between esophagus and stomach" RELATED []
-is_a: UBERON:0007651 ! anatomical junction
-relationship: RO:0002150 UBERON:0001043 ! continuous_with esophagus
-relationship: RO:0002150 UBERON:0001276 ! continuous_with epithelium of stomach
+is_a: UBERON:1100000 ! digestive tract junction
+relationship: RO:0002176 UBERON:0001043 ! connects esophagus
+relationship: RO:0002176 UBERON:0001276 ! connects epithelium of stomach
 
 [Term]
 id: UBERON:0007651
@@ -46119,6 +46127,7 @@ def: "A division of the stomach. The stomach can be divided based on mucosal his
 synonym: "gastric zone" EXACT []
 synonym: "region of stomach" EXACT []
 synonym: "section of stomach" EXACT []
+is_a: UBERON:0004921 ! subdivision of digestive tract
 is_a: UBERON:0034944 ! zone of organ
 intersection_of: UBERON:0034944 ! zone of organ
 intersection_of: BFO:0000050 UBERON:0000945 ! part of stomach
@@ -46127,7 +46136,9 @@ relationship: BFO:0000050 UBERON:0000945 ! part of stomach
 [Term]
 id: UBERON:0009871
 name: nephrogenic zone
-def: "outer portion of the renal cortex. Site of formation of medullary and cortical elements." []
+def: "Outer portion of the renal cortex. Site of formation of medullary and cortical elements." []
+synonym: "cortical nephrogenic niche" EXACT []
+synonym: "cortical nephrogenic zone" EXACT []
 synonym: "nephrogenic tissue" RELATED []
 is_a: UBERON:0005423 ! developing anatomical structure
 relationship: BFO:0000050 UBERON:0001225 ! part of cortex of kidney
@@ -53161,7 +53172,7 @@ relationship: BFO:0000050 UBERON:0002331 ! part of umbilical cord
 id: UBERON:0012650
 name: gastroduodenal junction
 def: "A anatomical junction that connects a stomach and connects a duodenum." []
-is_a: UBERON:0007651 ! anatomical junction
+is_a: UBERON:1100000 ! digestive tract junction
 intersection_of: UBERON:0007651 ! anatomical junction
 intersection_of: RO:0002176 UBERON:0000945 ! connects stomach
 intersection_of: RO:0002176 UBERON:0002114 ! connects duodenum
@@ -56335,7 +56346,7 @@ def: "A strand of hair that is part of a autopod region." []
 synonym: "hair of hand/foot" EXACT []
 synonym: "hand/foot hair" EXACT []
 synonym: "paw hair" NARROW []
-is_a: UBERON:0001037 ! strand of hair
+is_a: UBERON:0037459 ! hair of limb
 intersection_of: UBERON:0001037 ! strand of hair
 intersection_of: BFO:0000050 UBERON:0002470 ! part of autopod region
 relationship: BFO:0000050 UBERON:0002470 ! part of autopod region
@@ -56736,7 +56747,7 @@ id: UBERON:0015485
 name: choledocho-duodenal junction
 def: "hat part of the duodenal wall traversed by the ductus choledochus, ductus pancreaticus, and ampulla." []
 synonym: "choledochoduodenal junction" EXACT []
-is_a: UBERON:0007651 ! anatomical junction
+is_a: UBERON:1100000 ! digestive tract junction
 intersection_of: UBERON:0007651 ! anatomical junction
 intersection_of: RO:0002176 UBERON:0002114 ! connects duodenum
 intersection_of: RO:0002176 UBERON:0002394 ! connects bile duct
@@ -57071,16 +57082,7 @@ relationship: RO:0001025 UBERON:0013069 ! located_in popliteal area
 [Term]
 id: UBERON:0016402
 name: mesocolic lymph node
-def: "A lymph node that located_in a colon." []
-synonym: "colic lymph node" BROAD []
-synonym: "colic node" BROAD []
-synonym: "mesocolic lymph node" EXACT []
-synonym: "pericolic lymph node" RELATED []
-synonym: "pericolonic lymph node" RELATED []
-is_a: UBERON:0015860 ! visceral abdominal lymph node
-intersection_of: UBERON:0000029 ! lymph node
-intersection_of: RO:0001025 UBERON:0022277 ! located_in hepatic flexure of colon
-relationship: RO:0001025 UBERON:0022277 ! located_in hepatic flexure of colon
+is_a: UBERON:0039168 ! colic lymph node
 
 [Term]
 id: UBERON:0016405
@@ -61233,7 +61235,7 @@ id: UBERON:0036214
 name: rectosigmoid junction
 def: "An anatomical junction that is between the sigmoid colon and rectum." []
 synonym: "rectosigmoid region" RELATED []
-is_a: UBERON:0007651 ! anatomical junction
+is_a: UBERON:8410024 ! intestinal junction
 intersection_of: UBERON:0007651 ! anatomical junction
 intersection_of: RO:0002176 UBERON:0001052 ! connects rectum
 intersection_of: RO:0002176 UBERON:0001159 ! connects sigmoid colon
@@ -61785,6 +61787,39 @@ intersection_of: BFO:0000050 UBERON:0001334 ! part of female urethra
 relationship: BFO:0000050 UBERON:0001334 ! part of female urethra
 
 [Term]
+id: UBERON:0037458
+name: hair of neck
+synonym: "neck hair" EXACT []
+is_a: UBERON:0001037 ! strand of hair
+intersection_of: UBERON:0001037 ! strand of hair
+intersection_of: BFO:0000050 UBERON:0000974 ! part of neck
+relationship: BFO:0000050 UBERON:0000974 ! part of neck
+
+[Term]
+id: UBERON:0037459
+name: hair of limb
+synonym: "limb hair" EXACT []
+is_a: UBERON:0001037 ! strand of hair
+intersection_of: UBERON:0001037 ! strand of hair
+intersection_of: BFO:0000050 UBERON:0002101 ! part of limb
+relationship: BFO:0000050 UBERON:0002101 ! part of limb
+
+[Term]
+id: UBERON:0037531
+name: intestinal lymph node
+synonym: "intestinal node" EXACT []
+synonym: "visceral lumbar lymph node" EXACT []
+is_a: UBERON:0015860 ! visceral abdominal lymph node
+
+[Term]
+id: UBERON:0039168
+name: colic lymph node
+synonym: "colic node" EXACT []
+synonym: "pericolic lymph node" EXACT []
+synonym: "pericolonic lymph node" EXACT []
+is_a: UBERON:0037531 ! intestinal lymph node
+
+[Term]
 id: UBERON:1000004
 name: collection of hair on external ear
 def: "A collection of hairs that grows on the external ear." []
@@ -61837,6 +61872,15 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: BFO:0000050 UBERON:0002106 ! part of spleen
 relationship: BFO:0000050 UBERON:0002106 ! part of spleen
+
+[Term]
+id: UBERON:1100000
+name: digestive tract junction
+def: "An anatomical junction between two parts of the digestive tract." []
+is_a: UBERON:0007651 ! anatomical junction
+intersection_of: UBERON:0007651 ! anatomical junction
+intersection_of: RO:0002176 UBERON:0004921 ! connects subdivision of digestive tract
+relationship: RO:0002176 UBERON:0004921 ! connects subdivision of digestive tract
 
 [Term]
 id: UBERON:2000364
@@ -62063,13 +62107,19 @@ synonym: "tail fin" RELATED []
 synonym: "uroptère" EXACT []
 synonym: "uroptérygie" EXACT []
 is_a: UBERON:4000162 ! median fin
+intersection_of: UBERON:0008897 ! fin
+intersection_of: RO:0002551 UBERON:4000167 ! has skeleton caudal fin skeleton
+relationship: RO:0002551 UBERON:4000167 ! has skeleton caudal fin skeleton
 
 [Term]
 id: UBERON:4000167
 name: caudal fin skeleton
 def: "Median fin skeleton supporting the caudal fin." []
 is_a: UBERON:4000170 ! median fin skeleton
+intersection_of: UBERON:0010912 ! subdivision of skeleton
+intersection_of: RO:0002576 UBERON:4000164 ! skeleton of caudal fin
 relationship: BFO:0000050 UBERON:4000164 ! part of caudal fin
+relationship: RO:0002576 UBERON:4000164 ! skeleton of caudal fin
 
 [Term]
 id: UBERON:4000170
@@ -62470,6 +62520,162 @@ is_a: UBERON:0015212 ! lateral structure
 intersection_of: UBERON:0002103 ! hindlimb
 intersection_of: BSPO:0000120 UBERON:0010709 ! in_left_side_of pelvic complex
 relationship: BSPO:0000120 UBERON:0010709 ! in_left_side_of pelvic complex
+
+[Term]
+id: UBERON:8400021
+name: liver serosa
+def: "Hepatic serous coat; peritoneal covering of the liver, enclosing almost all except for a triangular area on its posterior surface (the \"bare area of the liver\") and a smaller area where the liver and gallbladder are in direct contact." []
+synonym: "serosa of liver" EXACT []
+synonym: "tunica serosa hepatis" EXACT []
+is_a: UBERON:0000042 ! serous membrane
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+intersection_of: UBERON:0000042 ! serous membrane
+intersection_of: BFO:0000050 UBERON:0002107 ! part of liver
+relationship: BFO:0000050 UBERON:0002107 ! part of liver
+
+[Term]
+id: UBERON:8400023
+name: liver subserosa
+def: "Subserosal tissue of liver. A zone of areolar connective tissue lying beneath the serous coat of the liver and distinguished with difficulty from the fibrous capsule of Glisson." []
+synonym: "hepatic subserosa" EXACT []
+synonym: "subserosal tissue of liver" EXACT []
+synonym: "subserous layer of liver" EXACT []
+synonym: "tela subserosa (hepar)" EXACT []
+synonym: "tela subserosa hepatis" EXACT []
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0012375 ! subserosa
+intersection_of: UBERON:0012375 ! subserosa
+intersection_of: BFO:0000050 UBERON:0002107 ! part of liver
+relationship: BFO:0000050 UBERON:0002107 ! part of liver
+
+[Term]
+id: UBERON:8400024
+name: subcapsular region of liver
+def: "Region of liver parenchyma immediately below the capsule. This region is frequently specified in pathology diagnoses." []
+synonym: "liver subcapsular region" EXACT []
+synonym: "liver subcapsular tissue" EXACT []
+synonym: "subcapsular tissue of liver" EXACT []
+is_a: UBERON:0001280 ! liver parenchyma
+intersection_of: UBERON:0000353 ! parenchyma
+intersection_of: BFO:0000050 UBERON:0002107 ! part of liver
+intersection_of: RO:0002220 UBERON:0016479 ! adjacent_to capsule of liver
+relationship: RO:0002220 UBERON:0016479 ! adjacent_to capsule of liver
+
+[Term]
+id: UBERON:8410000
+name: duodeno-jejunal junction
+def: "The anatomical junction between the duodenum and the jejunum." []
+synonym: "duodeno-jejunal flexure" EXACT []
+synonym: "duodenojejunal flexure" EXACT []
+synonym: "duodenojejunal junction" EXACT []
+synonym: "flexura duodenojejunalis" EXACT []
+is_a: UBERON:8410024 ! intestinal junction
+intersection_of: UBERON:0007651 ! anatomical junction
+intersection_of: RO:0002176 UBERON:0002114 ! connects duodenum
+intersection_of: RO:0002176 UBERON:0002115 ! connects jejunum
+relationship: BFO:0000050 UBERON:0002108 ! part of small intestine
+relationship: RO:0002176 UBERON:0002114 ! connects duodenum
+relationship: RO:0002176 UBERON:0002115 ! connects jejunum
+
+[Term]
+id: UBERON:8410016
+name: descending sigmoid junction
+def: "The anatomical junction between the descending colon and the sigmoid colon." []
+synonym: "descending-sigmoid colon junction" EXACT []
+synonym: "descending-sigmoid junction" EXACT []
+synonym: "sigmoid junction" BROAD []
+is_a: UBERON:8410024 ! intestinal junction
+intersection_of: UBERON:0007651 ! anatomical junction
+intersection_of: RO:0002176 UBERON:0001158 ! connects descending colon
+intersection_of: RO:0002176 UBERON:0001159 ! connects sigmoid colon
+relationship: BFO:0000050 UBERON:0000168 ! part of proximal-distal subdivision of colon
+relationship: RO:0002176 UBERON:0001158 ! connects descending colon
+relationship: RO:0002176 UBERON:0001159 ! connects sigmoid colon
+
+[Term]
+id: UBERON:8410017
+name: left colic vein
+def: "A portal vein that drains the descending colon. It is a tributary of the inferior mesenteric vein, and follows the path of its corresponding artery, the left colic artery." []
+is_a: UBERON:0002017 ! portal vein
+intersection_of: UBERON:0002017 ! portal vein
+intersection_of: RO:0002179 UBERON:0001158 ! drains descending colon
+intersection_of: RO:0002376 UBERON:0001215 ! tributary_of inferior mesenteric vein
+relationship: BFO:0000050 UBERON:0001215 ! part of inferior mesenteric vein
+relationship: RO:0002179 UBERON:0001158 ! drains descending colon
+relationship: RO:0002376 UBERON:0001215 ! tributary_of inferior mesenteric vein
+
+[Term]
+id: UBERON:8410018
+name: right colic vein
+def: "A portal vein that drains the ascending colon. It is a tributary of the superior mesenteric vein, and travels with its corresponding artery, the right colic artery." []
+is_a: UBERON:0002017 ! portal vein
+intersection_of: UBERON:0002017 ! portal vein
+intersection_of: RO:0002179 UBERON:0001156 ! drains ascending colon
+intersection_of: RO:0002376 UBERON:0001138 ! tributary_of superior mesenteric vein
+relationship: BFO:0000050 UBERON:0001138 ! part of superior mesenteric vein
+relationship: RO:0002179 UBERON:0001156 ! drains ascending colon
+relationship: RO:0002376 UBERON:0001138 ! tributary_of superior mesenteric vein
+
+[Term]
+id: UBERON:8410019
+name: jejuno-ileal junction
+def: "The area where the jejunum ends and the ileum part of the intestine begins. Although there is no clear distinct section, the ileum is narrower and has smaller villi than the jejunum." []
+synonym: "jejunoileal junction" EXACT []
+is_a: UBERON:8410024 ! intestinal junction
+intersection_of: UBERON:0007651 ! anatomical junction
+intersection_of: RO:0002176 UBERON:0002115 ! connects jejunum
+intersection_of: RO:0002176 UBERON:0002116 ! connects ileum
+relationship: BFO:0000050 UBERON:0002108 ! part of small intestine
+relationship: RO:0002176 UBERON:0002115 ! connects jejunum
+relationship: RO:0002176 UBERON:0002116 ! connects ileum
+
+[Term]
+id: UBERON:8410021
+name: inguinal region skin
+def: "The skin covering the inguinal region between the abdomen and the thigh on either side of the pubic bone." []
+synonym: "groin skin" EXACT []
+synonym: "inguinal skin" EXACT []
+synonym: "skin of groin" EXACT []
+synonym: "skin of inguinal region" EXACT []
+synonym: "zone of skin of groin" EXACT []
+synonym: "zone of skin of inguinal region" EXACT []
+is_a: UBERON:0003836 ! abdominal segment skin
+intersection_of: UBERON:0000014 ! zone of skin
+intersection_of: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+relationship: BFO:0000050 UBERON:0008337 ! part of inguinal part of abdomen
+
+[Term]
+id: UBERON:8410024
+name: intestinal junction
+def: "An anatomical junction between two parts of the intestine." []
+synonym: "junction of intestine" EXACT []
+is_a: UBERON:1100000 ! digestive tract junction
+intersection_of: UBERON:0007651 ! anatomical junction
+intersection_of: BFO:0000050 UBERON:0000160 ! part of intestine
+intersection_of: RO:0002176 UBERON:0004921 ! connects subdivision of digestive tract
+relationship: BFO:0000050 UBERON:0000160 ! part of intestine
+
+[Term]
+id: UBERON:8410033
+name: lymph node vein
+def: "A vein where lymph node venules condense and which exits at the lymph node hilum. It is also called hilar vein." []
+synonym: "hilar vein of lymph node" EXACT []
+synonym: "vein of lymph node" EXACT []
+is_a: UBERON:0001638 ! vein
+intersection_of: UBERON:0001638 ! vein
+intersection_of: RO:0002179 UBERON:0000029 ! drains lymph node
+relationship: RO:0002179 UBERON:0000029 ! drains lymph node
+
+[Term]
+id: UBERON:8410034
+name: lymph node artery
+def: "An artery that enters the lymph node at the hilum and branches into smaller arterioles." []
+synonym: "artery of lymph node" EXACT []
+synonym: "hilar artery of lymph node" EXACT []
+is_a: UBERON:0001637 ! artery
+intersection_of: UBERON:0001637 ! artery
+intersection_of: RO:0002178 UBERON:0000029 ! supplies lymph node
+relationship: RO:0002178 UBERON:0000029 ! supplies lymph node
 
 [Typedef]
 id: BFO:0000050

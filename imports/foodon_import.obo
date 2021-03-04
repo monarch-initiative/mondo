@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-01-29/imports/foodon_import.owl
+data-version: mondo/releases/2021-03-03/imports/foodon_import.owl
 subsetdef: Angiosperm ""
 subsetdef: Arabidopsis ""
 subsetdef: Citrus ""
@@ -83,7 +83,6 @@ def: "A continuant that is a bearer of quality and realizable entity entities, i
 def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
 property_value: BFO:0000179 "ic" xsd:string
 property_value: BFO:0000180 "IndependentContinuant" xsd:string
@@ -206,21 +205,6 @@ property_value: IAO:0000116 "BFO 2 Reference: Most examples of fiat object parts
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000600 "b is a fiat object part = Def. b is a material entity which is such that for all times t, if b exists at t then there is some object c such that b proper continuant_part of  c at t and c is demarcated from the remainder of c by a two-dimensional continuant fiat boundary. (axiom label in BFO2 Reference: [027-004])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/027-004"}
 property_value: IAO:0000602 "(forall (x) (if (FiatObjectPart x) (and (MaterialEntity x) (forall (t) (if (existsAt x t) (exists (y) (and (Object y) (properContinuantPartOfAt x y t)))))))) // axiom label in BFO2 CLIF: [027-004] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/027-004"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Term]
-id: BFO:0000031
-name: generically dependent continuant
-def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
-def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/074-001"}
-is_a: BFO:0000002 ! continuant
-property_value: BFO:0000179 "gdc" xsd:string
-property_value: BFO:0000180 "GenericallyDependentContinuant" xsd:string
-property_value: IAO:0000112 "The entries in your database are patterns instantiated as quality instances in your hard drive. The database itself is an aggregate of such patterns. When you create the database you create a particular instance of the generically dependent continuant type database. Each entry in the database is an instance of the generically dependent continuant type IAO: information content entity." xsd:string
-property_value: IAO:0000112 "the pdf file on your laptop, the pdf file that is a copy thereof on my laptop" xsd:string
-property_value: IAO:0000112 "the sequence of this protein molecule; the sequence that is a copy thereof in that protein molecule." xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000602 "(iff (GenericallyDependentContinuant a) (and (Continuant a) (exists (b t) (genericallyDependsOnAt a b t)))) // axiom label in BFO2 CLIF: [074-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/074-001"}
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
@@ -594,6 +578,8 @@ name: food transformation process
 def: "A process involving the physical transformation of a food source or food product into some derived organic material or food product" []
 is_a: BFO:0000015 ! process
 relationship: RO:0002234 FOODON:00002403 ! has output food material
+property_value: IAO:0000114 "requires discussion" xsd:string
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002452
@@ -629,13 +615,31 @@ is_a: FOODON:00002507 ! taurine cattle
 id: FOODON:00002507
 name: taurine cattle
 def: "Taurine cattle (Bos taurus taurus), also called European cattle, are a subspecies of domesticated cattle originating in the Near East. Both taurine cattle and indicine cattle (zebus) are descended from the aurochs. Taurine cattle were originally considered a distinct species, but are now typically grouped with zebus and aurochs into one species, Bos taurus. Most modern breeds of cattle are taurine cattle." []
-is_a: FOODON:03411161 ! cattle
+is_a: NCBITaxon:9913 ! Bos taurus
 
 [Term]
 id: FOODON:00002581
 name: aquatic invertebrate
 def: "An aquatic invertebrate may live entirely beneath the water, or may live upon its surface or on the plants surrounding it. Some breathe air, others breathe water. To move, they may walk, swim, float, skate, fly or glide on their bellies—or they may not move much at all." []
 is_a: FOODON:00002452 ! invertebrate animal
+
+[Term]
+id: FOODON:00002645
+name: food product by process
+def: "A food product organized by the process which it results from." []
+is_a: FOODON:00001002 ! food product
+property_value: http://purl.org/dc/elements/1.1/date 2019-05-23T23:02:07Z xsd:dateTime
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+
+[Term]
+id: FOODON:00002655
+name: food (peeled)
+synonym: "peeled" EXACT []
+is_a: FOODON:00002645 ! food product by process
+intersection_of: FOODON:00002645 ! food product by process
+intersection_of: RO:0002353 FOODON:03000001 ! output of food peeling process
+property_value: http://purl.org/dc/elements/1.1/date 2019-05-25T06:43:20Z xsd:dateTime
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00003004
@@ -658,6 +662,7 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Vegetarian_cuisine xsd
 id: FOODON:00003203
 name: food harvesting
 def: "A process which takes in some food material from an individual or community of plant or animal organisms in a given context and time, and outputs a precursor or consumable food product. This may include a part of an organism or the whole, and may involve killing the organism." []
+comment: This includes harvesting from plants, hunting a deer, or milking process of a cow.  The food is derived from part or whole of a single organism species (with perhaps a few exceptions, such as lichen).
 is_a: FOODON:00002451 ! food transformation process
 relationship: RO:0002233 FOODON:00003402 ! has input pre-harvest food material
 relationship: RO:0002234 FOODON:00003374 ! has output harvested food material
@@ -687,8 +692,10 @@ is_a: FOODON:00002403 ! food material
 [Term]
 id: FOODON:03000001
 name: food peeling process
-def: "\"peeling\" is the process of removing the outer covering, layer or skin from a fruit, vegetable, or plant or animal (such as a shrimp)." []
+def: "peeling\" is the process of removing the outer covering, layer or skin from a fruit, vegetable, or plant or animal (such as a shrimp)." []
 is_a: FOODON:03460130 ! physical/chemical modification process
+relationship: RO:0002234 FOODON:00002655 ! has output food (peeled)
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:03000003
@@ -770,7 +777,7 @@ xref: SUBSET_SIREN:F7455
 is_a: FOODON:03302116 ! cow milk (liquid)
 is_a: UBERON:0001913 ! milk
 intersection_of: UBERON:0001913 ! milk
-intersection_of: RO:0003001 FOODON:03411201 ! produced by dairy cow
+intersection_of: RO:0001000 FOODON:03411201 ! derives from dairy cow
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -1033,12 +1040,9 @@ union_of: FOODON:03414466 ! tunicate
 
 [Term]
 id: FOODON:03411161
-name: cattle
-def: "Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos taurus*... with three subspecies: *Bos taurus primigenius, Bos taurus indicus, Bos taurus taurus*." []
-synonym: "Bos taurus Linnaeus, 1758" NARROW []
-synonym: "cow" NARROW []
-is_a: FOODON:03414374 ! bovine
-relationship: RO:0002162 NCBITaxon:9913 ! in taxon Bos taurus
+name: obsolete: cattle
+is_obsolete: true
+replaced_by: NCBITaxon:9913
 
 [Term]
 id: FOODON:03411201
@@ -1431,17 +1435,23 @@ is_a: FOODON:03430131 ! whole
 [Term]
 id: FOODON:03460111
 name: food treatment process
-def: "Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation. Multiple values can be assigned." []
+def: "Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation." []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0111
 is_a: FOODON:00002451 ! food transformation process
 
 [Term]
 id: FOODON:03460130
 name: physical/chemical modification process
+def: "A food modification process where physical or chemical changes are effected in any food ingredient through a physical or non-enzymatic chemical process." []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0130
 is_a: FOODON:03460141 ! food modification process
 
 [Term]
 id: FOODON:03460141
 name: food modification process
+comment: LanguaL curation note: Used when the food product underwent mechanical, chemical or enzymatic modification that has affected the texture, flavor or other characteristic of the product.
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0141
 is_a: FOODON:03460111 ! food treatment process
 
 [Term]
@@ -1468,7 +1478,10 @@ is_obsolete: true
 [Term]
 id: FOODON:03460225
 name: food component addition process
+comment: LanguaL curation note: A food product is characterized by its main ingredient (food source and part); the addition of secondary ingredients is considered a treatment applied to the product. Secondary ingredients are indexed according to rules that are based on the order of predominance by weight (not counting water) as seen from the label statement, formulation or recipe and/or from the amount of the ingredient as percentage of total product weight. The general rule is:  an ingredient is always indexed if it is the second ingredient in order of predominance, if it is used as a filling, or if it is part of the product name(e.g., raisin bread). Specific rules are given in the scope note for the individual ingredient added; these rules specify more exhaustive indexing. For example, *MUSHROOM ADDED* is indexed regardless of ingredient position. another specific rule is given in the scope note for *SALTED*:  Use if the level of salt is more than 4%. Such a rule is used only when the percentage level can be inferred from the list of ingredients.
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0225
 is_a: FOODON:03460111 ! food treatment process
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:03510019
@@ -1486,44 +1499,6 @@ id: FOODON:03510136
 name: food consumer group
 def: "A food consumer group is a class of organism based on their heterotrophic requirements or preferences." []
 is_a: BFO:0000040 ! material entity
-
-[Term]
-id: IAO:0000027
-name: data item
-def: "a data item is an information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
-is_a: IAO:0000030 ! information content entity
-property_value: IAO:0000111 "data item" xsd:string
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-
-[Term]
-id: IAO:0000030
-name: information content entity
-def: "A generically dependent continuant that is about some thing." []
-is_a: BFO:0000031 ! generically dependent continuant
-property_value: IAO:0000111 "information content entity" xsd:string
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "PERSON: Chris Stoeckert" xsd:string
-property_value: IAO:0000119 "OBI_0000142" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-
-[Term]
-id: IAO:0000078
-name: curation status specification
-def: "The curation status of the term. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value." []
-is_a: IAO:0000102 ! data about an ontology part
-property_value: IAO:0000111 "curation status specification" xsd:string
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000119 GROUP:OBI:<http://purl.obolibrary.org/obo/obi> xsd:string
-property_value: IAO:0000119 "OBI_0000266" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-
-[Term]
-id: IAO:0000102
-name: data about an ontology part
-def: "data about an ontology part is a data item about a part of an ontology, for example a term" []
-is_a: IAO:0000027 ! data item
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 
 [Term]
 id: NCBITaxon:117571
@@ -1712,12 +1687,15 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 [Term]
 id: NCBITaxon:9913
 name: Bos taurus
+def: "Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos taurus*... with three subspecies: *Bos taurus primigenius, Bos taurus indicus, Bos taurus taurus*." []
+synonym: "Bos taurus Linnaeus, 1758" EXACT []
 synonym: "bovine" EXACT []
 synonym: "cattle" EXACT []
 synonym: "cow" EXACT []
 synonym: "dairy cow" EXACT []
 synonym: "domestic cattle" EXACT []
 synonym: "domestic cow" EXACT []
+is_a: FOODON:03414374 ! bovine
 is_a: NCBITaxon:9903 ! Bos
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
@@ -1869,7 +1847,6 @@ synonym: "syncarp (narrow)" NARROW []
 synonym: "果実 (exact, Japanese)" EXACT []
 xref: PO_GIT:76
 is_a: PO:0025496 ! multi-tissue plant structure
-relationship: RO:0000086 FOODON:03430150 ! has quality whole, natural shape
 relationship: RO:0002202 PO:0009062 ! develops from gynoecium
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
@@ -2202,7 +2179,6 @@ id: UBERON:0001913
 name: milk
 def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
 synonym: "mammal milk" EXACT []
-synonym: "milk" EXACT []
 is_a: FOODON:00001257 ! milk or milk based food product
 is_a: FOODON:03315150 ! mammalian milk product
 is_a: UBERON:0006314 ! bodily fluid
@@ -2398,7 +2374,7 @@ id: RO:0002353
 name: output of
 def: "inverse of has output" []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000056 ! participates_in
+is_a: RO:0000056 ! participates in
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]
