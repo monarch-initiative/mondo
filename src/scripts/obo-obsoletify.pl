@@ -9,6 +9,8 @@ my $obsidfile;
 my $replfile;
 my @obsids = ();
 my $seeAlso;
+my $comment;
+my $obsoletionReason;
 while ($ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-h' || $opt eq '--help') {
@@ -38,6 +40,12 @@ while ($ARGV[0] =~ /^\-/) {
     }
     elsif ($opt eq '-s' || $opt eq '--seeAlso') {
         $seeAlso = shift;
+    }
+    elsif ($opt eq '-o' || $opt eq '--obsoletionReason') {
+        $obsoletionReason = shift;
+    }
+    elsif ($opt eq '-c' || $opt eq '--comment') {
+        $comment = shift;
     }
     elsif ($opt eq '-t' || $opt eq '--tag') {
         $tag_h{shift @ARGV} = 1;
@@ -137,6 +145,12 @@ foreach (@lines) {
             if ($seeAlso) {
                 $_ .= "\nproperty_value: seeAlso $seeAlso xsd:anyURI";
 
+            }
+            if ($obsoletionReason) {
+                $_ .= "\nproperty_value: IAO:0000231 $obsoletionReason xsd:string";
+            }
+            if ($comment) {
+                $_ .= "\ncomment: $comment";
             }
         }
     }
