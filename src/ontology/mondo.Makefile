@@ -258,6 +258,8 @@ warn-%:
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
 
+update-query-%:
+	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/$*.ru convert -f obo --check false -o $(SRC).obo
 
 .PHONY: r2e
 r2e:
@@ -266,4 +268,4 @@ r2e:
 	mv NORM mondo-edit.obo
 
 mass_obsolete:
-	perl ../scripts/obo-obsoletify.pl  -i ../scripts/obsolete_me.txt mondo-edit.obo > NORM
+	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/2662 --obsoletionReason MONDO:outOfScope  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
