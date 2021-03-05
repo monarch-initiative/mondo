@@ -73,6 +73,7 @@ ADDTOTBD=../scripts/add-to-tbd.pl
 # ----------------------------------------
 .PHONY: .FORCE
 all: test all_artefacts
+	echo "release finished"
 
 # ----------------------------------------
 # Artefacts
