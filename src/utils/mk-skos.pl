@@ -29,6 +29,9 @@ while (<>) {
         elsif ($anns =~ m@subClassOf@) {
             $rel = 'broadMatch';
         }
+        elsif ($anns =~ m@directSiblingOf@) {
+            $rel = 'closeMatch';
+        }
         elsif ($anns =~ m@superClassOf@) {
             $rel = 'narrowMatch';
         }
