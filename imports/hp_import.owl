@@ -11,7 +11,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/hp_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-01-29/imports/hp_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-03-03/imports/hp_import.owl"/>
     </owl:Ontology>
     
 
@@ -555,11 +555,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0000036">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000032"/>
+        <obo:IAO_0000115>Abnormality of the male external sex organ.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C4025896</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormality of the penis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000036</oboInOwl:id>
-        <rdfs:label>Abnormality of the penis</rdfs:label>
+        <rdfs:label>Abnormal penis morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000036"/>
@@ -717,6 +718,7 @@
         <oboInOwl:hasDbXref>SNOMEDCT_US:95575002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0521619</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Pelviureteric junction obstruction</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Ureteropelvic junction stenosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000074</oboInOwl:id>
         <rdfs:label>Ureteropelvic junction obstruction</rdfs:label>
@@ -1012,6 +1014,7 @@
         <obo:IAO_0000115>A structural anomaly of the glomerulus.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C4025889</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormality of renal glomerulus morphology</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Morphologic abnormality of the renal glomerulus</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000095</oboInOwl:id>
         <rdfs:comment>Each human kidney contains approximately one million nephrons. The glomerulus is the most proximal component of the nephron. The glomerulus of the mammalian kidney is a highly developed vascular bed that acts as a filter, allowing a filtrate of small molecules, such as water, sugars, electrolytes and small proteins, to pass through a barrier that retains high molecular weight proteins and cells in the circulation.</rdfs:comment>
@@ -2578,7 +2581,7 @@
         <oboInOwl:hasBroadSynonym>Small skull</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>Fyler:4310</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:271611007</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UMLS:C0424688</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UMLS:C4551563</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormally small cranium</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Abnormally small skull</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Decreased circumference of cranium</oboInOwl:hasExactSynonym>
@@ -2971,7 +2974,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000272"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Flat cheekbone</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000272"/>
@@ -3023,7 +3026,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000274"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A face that is short (HP:0011219) and narrow (HP:0000275).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>HP:probinson</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000274"/>
@@ -4666,7 +4669,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Glaucoma refers loss of retinal ganglion cells in a characteristic pattern of optic neuropathy usually associated with increased intraocular pressure.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:11815354</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11815354</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6606,6 +6609,8 @@
     <!-- http://purl.obolibrary.org/obo/HP_0000750 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0000750">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002167"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002463"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0012758"/>
         <obo:IAO_0000115>A degree of language development that is significantly below the norm for a child of a specified age.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0002116</oboInOwl:hasAlternativeId>
@@ -7353,6 +7358,7 @@
         <oboInOwl:hasDbXref>SNOMEDCT_US:38341003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0020538</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0497247</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Arterial hypertension</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Systemic hypertension</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>High blood pressure</oboInOwl:hasRelatedSynonym>
@@ -10001,23 +10007,35 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001252">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003808"/>
-        <obo:IAO_0000115>Muscular hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle), often involving reduced muscle strength. Hypotonia is characterized by a diminished resistance to passive stretching. Muscular hypotonia may be related to defects in skeletal muscle, neuromuscular junction, or peripheral nerve.</obo:IAO_0000115>
-        <oboInOwl:hasAlternativeId>HP:0001318</oboInOwl:hasAlternativeId>
+        <obo:IAO_0000115>Hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle). Even when relaxed, muscles have a continuous and passive partial contraction which provides some resistance to passive stretching. Hypotonia thus manifests as diminished resistance to passive stretching. Hypotonia is not the same as muscle weakness, although the two conditions can co-exist.</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId>HP:0011398</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>MSH:D009123</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:398151007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:398152000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0026827</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Low muscle tone</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Low or weak muscle tone</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Muscle hypotonia</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Muscular hypotonia</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>Central hypotonia</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Peripheral hypotonia</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0001252</oboInOwl:id>
-        <rdfs:label>Muscular hypotonia</rdfs:label>
+        <rdfs:comment>Hypotonia can be caused by abnormalities of the central nervous system, any element of the motor unit (including the lower motoneuron), or both. Hypotonia is not a specific diagnosis, but can be obsereved in hundreds of genetic and other diseases. The first distinction to make when assessing a child with hypotonia is whether decreased muscle tone is a result of an abnormality of the central nervous system (CNS), peripheral neuromuscular system, or a combined abnormality involving both. Clinical findings suggestive of an abnormality of the CNS may include hyperreflexia, cognitive developmental delay, and seizures. In contrast, physical findings pointing towards a neuromuscular origin may include weakness, lack of antigravity movements, muscle atrophy, fasciculations, and/or diminished reflexes, most often in the context of normal cognitive function. The HPO term does not distinguish between these etiologies. Additional HPO terms should be used as required to describe associated features.</rdfs:comment>
+        <rdfs:label>Hypotonia</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001252"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Muscular hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle), often involving reduced muscle strength. Hypotonia is characterized by a diminished resistance to passive stretching. Muscular hypotonia may be related to defects in skeletal muscle, neuromuscular junction, or peripheral nerve.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:curators</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle). Even when relaxed, muscles have a continuous and passive partial contraction which provides some resistance to passive stretching. Hypotonia thus manifests as diminished resistance to passive stretching. Hypotonia is not the same as muscle weakness, although the two conditions can co-exist.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:21418198</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001252"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Low muscle tone</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001252"/>
@@ -10300,7 +10318,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Abnormality of the corpus callosum.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:21263138</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:21263138</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10841,7 +10859,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Very brief, involuntary random muscular contractions occurring at rest, in response to sensory stimuli, or accompanying voluntary movements.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001336"/>
@@ -10875,7 +10893,7 @@
         <owl:annotatedTarget>An unintentional, oscillating to-and-fro muscle movement about a joint axis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16344298</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001337"/>
@@ -10914,7 +10932,7 @@
         <owl:annotatedTarget>A spectrum of malformations of cortical development caused by insufficient neuronal migration that subsumes the terms agyria, pachygyria and subcortical band heterotopia. See also neuropathological definitions for 2-, 3-, and 4-layered lissencephaly.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COST:neuromig</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:28440899</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28440899</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001339"/>
@@ -13329,6 +13347,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Talipes equinovarus (also called clubfoot) typically has four main components: inversion and adduction of the forefoot; inversion of the heel and hindfoot; equinus (limitation of extension) of the ankle and subtalar joint; and internal rotation of the leg.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:32491773</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001762"/>
@@ -13642,6 +13661,7 @@
         <oboInOwl:hasDbXref>SNOMEDCT_US:127034005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0030312</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Low blood cell count</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>uk_spelling</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0001876</oboInOwl:id>
         <rdfs:label>Pancytopenia</rdfs:label>
@@ -14078,7 +14098,7 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Blood clot in blood vessel</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0002-6548-5200</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/hp#layperson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/hp#layperson</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -14456,7 +14476,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Abnormal acid accumulation or depletion of base.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:24381489</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24381489</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -15677,7 +15697,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002069"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A bilateral tonic-clonic seizure is a seizure defined by a tonic (bilateral increased tone, lasting seconds to minutes) and then a clonic (bilateral sustained rhythmic jerking) phase.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:pnrobinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>HPO:pnrobinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276060</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -15755,7 +15775,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Chorea (Greek for &apos;dance&apos;) refers to widespread arrhythmic involuntary movements of a forcible, jerky and restless fashion. It is a random-appearing sequence of one or more discrete involuntary movements or movement fragments. Movements appear random because of variability in timing, duration or location. Each movement may have a distinct start and end. However, movements may be strung together and thus may appear to flow randomly from one muscle group to another. Chorea can involve the trunk, neck, face, tongue, and extremities.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -15988,7 +16008,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002094">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002795"/>
-        <obo:IAO_0000115>Difficult or labored breathing.</obo:IAO_0000115>
+        <obo:IAO_0000115>Difficult or labored breathing. Dyspnea is a subjective feeling only the patient can rate, e.g., on a Borg scale.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>MSH:D004417</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:230145002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:267036007</oboInOwl:hasDbXref>
@@ -16005,8 +16025,9 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002094"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Difficult or labored breathing.</owl:annotatedTarget>
+        <owl:annotatedTarget>Difficult or labored breathing. Dyspnea is a subjective feeling only the patient can rate, e.g., on a Borg scale.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:16914301</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002094"/>
@@ -16027,7 +16048,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002098">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002094"/>
-        <obo:IAO_0000115>Difficulty in breathing. The physical presentation of respiratory distress is generally referred to as labored breathing, while the sensation of respiratory distress is called shortness of breath or dyspnea.</obo:IAO_0000115>
+        <obo:IAO_0000115>Respiratory distress is objectively observable as the physical or emotional consequences from the experience of dyspnea. The physical presentation of respiratory distress is generally referred to as labored breathing, while the sensation of respiratory distress is called shortness of breath or dyspnea.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0002880</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>MSH:D004417</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:230145002</oboInOwl:hasDbXref>
@@ -16459,6 +16480,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002140">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001297"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002637"/>
+        <obo:IAO_0000115>Acute ischemic stroke (AIS) is defined by the sudden loss of blood flow to an area of the brain with the resulting loss of neurologic function. It is caused by thrombosis or embolism that occludes a cerebral vessel supplying a specific area of the brain. During a vessel occlusion, there is a core area where damage to the brain is irreversible and an area of penumbra where the brain has lost function owing to decreased blood flow but is not irreversibly injured.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>SNOMEDCT_US:422504002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0948008</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Ischaemic stroke</oboInOwl:hasExactSynonym>
@@ -16466,6 +16488,12 @@
         <oboInOwl:id>HP:0002140</oboInOwl:id>
         <rdfs:label>Ischemic stroke</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002140"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Acute ischemic stroke (AIS) is defined by the sudden loss of blood flow to an area of the brain with the resulting loss of neurologic function. It is caused by thrombosis or embolism that occludes a cerebral vessel supplying a specific area of the brain. During a vessel occlusion, there is a core area where damage to the brain is irreversible and an area of penumbra where the brain has lost function owing to decreased blood flow but is not irreversibly injured.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:32054610</oboInOwl:hasDbXref>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002140"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -16881,10 +16909,10 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedTarget>A generalized-onset seizure is a type of seizure originating at some point within, and rapidly engaging, bilaterally distributed networks. The networks may include cortical and subcortical structures but not necessarily the entire cortex.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:20196795</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:23739099</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23739099</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276060</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276064</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:6790275</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:6790275</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002197"/>
@@ -18143,6 +18171,35 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     
 
 
+    <!-- http://purl.obolibrary.org/obo/HP_0002463 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002463">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0011446"/>
+        <obo:IAO_0000115>Language impairment is a deficit in comprehension or production of language that includes reduced vocabulary, limited sentence structure or impairments in written or spoken communication. Language abilities are substantially and quantifiably below age expectations.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>MSH:D007806</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:62305002</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UMLS:C0023015</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Language impairment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Language disorder</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>HP:0002463</oboInOwl:id>
+        <rdfs:label>Language impairment</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002463"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Language impairment is a deficit in comprehension or production of language that includes reduced vocabulary, limited sentence structure or impairments in written or spoken communication. Language abilities are substantially and quantifiably below age expectations.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ISBN:9780890425558</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002463"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Language impairment</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/HP_0002475 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002475">
@@ -18755,8 +18812,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0002637 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002637">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0009145"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0100545"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033401"/>
         <oboInOwl:hasDbXref>MSH:D002545</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:287731003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:389100007</oboInOwl:hasDbXref>
@@ -18880,7 +18936,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002648"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Abnormally shaped skull</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -19631,8 +19687,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Respiratory problem</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0002795</oboInOwl:id>
-        <rdfs:comment>This category describes not-primarily structural lesions.</rdfs:comment>
-        <rdfs:label>Functional respiratory abnormality</rdfs:label>
+        <rdfs:label>Abnormal respiratory system physiology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002795"/>
@@ -20122,7 +20177,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0002904 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002904">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0032180"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033479"/>
         <obo:IAO_0000115>An increased amount of bilirubin in the blood.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>SNOMEDCT_US:26165005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0311468</oboInOwl:hasDbXref>
@@ -21498,7 +21553,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003355"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>High urine amino acid levels</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>orcid.org/0000-0001-5208-3432</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">orcid.org/0000-0001-5208-3432</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -22306,16 +22361,17 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0003677">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0003679"/>
+        <obo:IAO_0000115>Applies to a disease manifestation that only slowly increases in scope or severity over the course of time.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0003675</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>HP:0003681</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>UMLS:C1854494</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Signs and symptoms worsen slowly with time</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Slow disease progression</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Slowly progressive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Slow progression</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Slowly progressive disorder</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0003677</oboInOwl:id>
-        <rdfs:label>Slow progression</rdfs:label>
+        <rdfs:label>Slowly progressive</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003677"/>
@@ -23546,7 +23602,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0004381 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0004381">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001650"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0031652"/>
         <obo:IAO_0000115>A pathological narrowing in the region above the aortic valve associated with restricted left ventricular outflow.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2008-03-18T08:54:00Z</oboInOwl:creation_date>
@@ -24370,7 +24426,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0005607 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0005607">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002087"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0012252"/>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2008-03-28T09:03:00Z</oboInOwl:creation_date>
         <oboInOwl:hasAlternativeId>HP:0005940</oboInOwl:hasAlternativeId>
@@ -24768,7 +24824,6 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref>UMLS:C4020813</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Stomach tumor</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Increased gastric cancer</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Neoplasia of the stomach</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0006753</oboInOwl:id>
         <rdfs:label>Neoplasm of the stomach</rdfs:label>
@@ -28269,12 +28324,13 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref>UMLS:C4020763</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C4020764</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C4023679</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Abnormal circulating protein level</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Abnormality of circulating protein level</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Blood protein disease</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Serum protein abnormality</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0010876</oboInOwl:id>
-        <rdfs:label>Abnormal circulating protein level</rdfs:label>
+        <rdfs:label>Abnormal circulating protein concentration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0010876"/>
@@ -29611,28 +29667,30 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0011110 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0011110">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002719"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0100765"/>
-        <obo:IAO_0000115>An inflammation of the tonsils.</obo:IAO_0000115>
+        <obo:IAO_0000115>Inflammation of the tonsils that has occurred repeatedly. The definition of recurrent may vary somewhat, but the criteria used recently as a measure of severity were five or more episodes of true tonsillitis per year, symptoms recurring for at least a year, and episodes that are disabling and that prevent normal functioning. In some cases recurrent tonsillitis may be related to immunosusceptibility. Evidence exists for a genetic predisposition for recurrent tonsillitis.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2011-06-10T07:46:38Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>MSH:D014069</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SNOMEDCT_US:90176007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0040425</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>Inflammation of tonsils</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>IRecurrent inflammation of tonsils</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0011110</oboInOwl:id>
-        <rdfs:label>Tonsillitis</rdfs:label>
+        <rdfs:label>Recurrent tonsillitis</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011110"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An inflammation of the tonsils.</owl:annotatedTarget>
+        <owl:annotatedTarget>Inflammation of the tonsils that has occurred repeatedly. The definition of recurrent may vary somewhat, but the criteria used recently as a measure of severity were five or more episodes of true tonsillitis per year, symptoms recurring for at least a year, and episodes that are disabling and that prevent normal functioning. In some cases recurrent tonsillitis may be related to immunosusceptibility. Evidence exists for a genetic predisposition for recurrent tonsillitis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15897415</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011110"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Inflammation of tonsils</owl:annotatedTarget>
+        <owl:annotatedTarget>IRecurrent inflammation of tonsils</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
@@ -29829,7 +29887,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276060</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276062</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276064</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:6790275</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:6790275</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011147"/>
@@ -30618,6 +30676,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0011458">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0025032"/>
+        <obo:IAO_0000115>A subjective manifestation of disease localized to the abdomen.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2012-03-25T05:35:45Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>UMLS:C0740651</oboInOwl:hasDbXref>
@@ -31473,7 +31532,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0011873"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Abnormal number of platelets per volume of blood. In a healthy adult, a normal platelet count is between 150,000 and 450,000 per microliter of blood.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DDD:kfreson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>DDD:kfreson</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -31792,7 +31851,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:hasExactSynonym>Abnormal albumin level</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0012116</oboInOwl:id>
-        <rdfs:label>Abnormal albumin level</rdfs:label>
+        <rdfs:label>Abnormal circulating albumin concentration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0012116"/>
@@ -32990,7 +33049,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:hasExactSynonym>Coughing</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0012735</oboInOwl:id>
-        <rdfs:comment>The European Respiratory Society Task Force recommended two possible definitions of cough: (1) A three-phase expulsive motor act characterized by an inspiratory effort (inspiratory phase) followed by a forced expiratory effort against a closed glottis (compressive phase) and then by opening of the glottis and rapid expiratory airflow (expulsive phase);and (2) A forced expiratory manoeuvre, usually against a closed glottis and associated with a characteristic sound. The term Cough or any of its more specific descendents can be modified by the terms Acute (HP:0011009), Subacute (HP:0011011), and Chronic (HP:0011010). There is agreement that an actue cough lasts less than 3 weeks, a subacute cough from 3 to 8 weeks, and a chronic cough longer than 8 weeks.</rdfs:comment>
+        <rdfs:comment>The European Respiratory Society Task Force recommended two possible definitions of cough: (1) A three-phase expulsive motor act characterized by an inspiratory effort (inspiratory phase) followed by a forced expiratory effort against a closed glottis (compressive phase) and then by opening of the glottis and rapid expiratory airflow (expulsive phase);and (2) A forced expiratory manoeuvre, usually against a closed glottis and associated with a characteristic sound. The term Cough or any of its more specific descendents can be modified by the terms Acute (HP:0011009), Subacute (HP:0011011), and Chronic (HP:0011010). In adults, an acute cough lasts less than 3 weeks, a subacute cough from 3 to 8 weeks, and a chronic cough longer than 8 weeks. In children aged less than 15 years a chronic cough is defined as a daily cough lasting for over 4 weeks.</rdfs:comment>
         <rdfs:label>Cough</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -32998,6 +33057,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A sudden, audible expulsion of air from the lungs through a partially closed glottis, preceded by inhalation.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:16428719</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:17540788</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -33361,9 +33421,10 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:created_by>hecht</oboInOwl:created_by>
         <oboInOwl:creation_date>2014-06-09T10:48:21Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>UMLS:C4022702</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Sperm head anomaly</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0012865</oboInOwl:id>
-        <rdfs:label>Sperm head anomaly</rdfs:label>
+        <rdfs:label>Abnormal sperm head morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0012865"/>
@@ -33637,7 +33698,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0025234"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An undesirable physical event or experience that occur during entry into sleep, during sleep, or during arousal from sleep.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27647645</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:27647645</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -33688,6 +33749,20 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0025278</oboInOwl:id>
         <rdfs:label>Cold-induced sweating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0025323 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0025323">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0030163"/>
+        <obo:IAO_0000115>An anomaly of arterial function.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-03T12:08:38Z</dc:date>
+        <oboInOwl:created_by>HPO:probinson</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0025323</oboInOwl:id>
+        <rdfs:label>Abnormal arterial physiology</rdfs:label>
     </owl:Class>
     
 
@@ -33766,7 +33841,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0025426">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0005607"/>
-        <obo:IAO_0000115>Any anomaly of the morphology of the bronchi.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any structural anomaly of the bronchi, i.e., of the airways leading from the trachea to the lungs.</obo:IAO_0000115>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-23T12:50:43Z</dc:date>
         <oboInOwl:created_by>HPO:probinson</oboInOwl:created_by>
         <oboInOwl:hasAlternativeId>HP:0002109</oboInOwl:hasAlternativeId>
@@ -34949,7 +35024,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/HP_0031797 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0031797">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0000001"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0012823"/>
         <obo:IAO_0000115>The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual.</obo:IAO_0000115>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-25T14:55:46Z</dc:date>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
@@ -35211,7 +35286,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0032368"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An abnormally low blood pH (usually defined as less than 7.35).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:24381489</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24381489</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -35413,6 +35488,40 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:id>HP:0033354</oboInOwl:id>
         <rdfs:comment>As water reabsorption in kidneys affect urinary solute concentrations, various methods are applied to normalize the measured concentration. Frequently, concentrations are reported as a ratio to urinary creatinine. The HPO terms in this subhierarchy therefore use the word &apos;level&apos; to indicate that appropriate normalization has been performed before concluding that the amount of the indicated metabolite is abnormal.</rdfs:comment>
         <rdfs:label>Abnormal urine metabolite level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0033401 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033401">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0025323"/>
+        <obo:IAO_0000115>Ischemia is defined as a restriction of arterial blood supply to a tissue associated with insufficient oxygenation to support the metabolis requirements of the tissue. Depending on the involved tissues, clinical manifestations may include pain, pallor, lack of pulse, coldness, paresthesia, and paralysis. Additional associated manifestations include hemodynamic parameters (reduced blood pressure distal to the site of restricted arterial supply) and angiographic evidence of arterial occclusion.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-09T15:02:58Z</dc:date>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0033401</oboInOwl:id>
+        <rdfs:label>Tissue ischemia</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0033401"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Ischemia is defined as a restriction of arterial blood supply to a tissue associated with insufficient oxygenation to support the metabolis requirements of the tissue. Depending on the involved tissues, clinical manifestations may include pain, pallor, lack of pulse, coldness, paresthesia, and paralysis. Additional associated manifestations include hemodynamic parameters (reduced blood pressure distal to the site of restricted arterial supply) and angiographic evidence of arterial occclusion.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:10720362</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:26858079</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0033479 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033479">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0010995"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-09T23:02:44Z</dc:date>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0033479</oboInOwl:id>
+        <rdfs:label>Abnormal circulating bilirubin concentration</rdfs:label>
     </owl:Class>
     
 
@@ -35716,7 +35825,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0040195"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An abnormally reduced head circumference in a growing child. Head circumference is measured with a nonelastic tape and comprises the distance from above the eyebrows and ears and around the back of the head. The measured HC is then plotted on an appropriate growth chart. Microcephaly is defined as a head circumference (HC) that is great than two standard deviations below the mean of age- and gender-matched population based samples. Severe microcephaly is defined with an HC that is three standard deviations below the mean.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26505062</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:26505062</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0040195"/>
@@ -36004,7 +36113,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Repeated, individually recognizable, intermittent movements or movement fragments that are almost always briefly suppresable and are usually associated with awareness of an urge to perform the movement.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:sdoelken</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0100033"/>
@@ -36716,7 +36825,6 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:hasExactSynonym>Cognitive deficits</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Cognitive impairment</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Intellectual impairment</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Mental impairment</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0100543</oboInOwl:id>
         <rdfs:label>Cognitive impairment</rdfs:label>
@@ -36761,12 +36869,6 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0100543"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Intellectual impairment</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0100543"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Mental impairment</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -36971,7 +37073,6 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <obo:IAO_0000115>A multidimensional but common male sexual dysfunction that involves an alteration in any of the components of the erectile response, including organic, relational and psychological.</obo:IAO_0000115>
         <oboInOwl:created_by>doelkens</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-12-29T05:45:28Z</oboInOwl:creation_date>
-        <oboInOwl:hasDbXref>UMLS:C4022003</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormal erection</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Erectile abnormalities</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
@@ -37067,6 +37168,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0100659">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002597"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0012443"/>
+        <obo:IAO_0000115>An anomaly of the cerebral blood vessels.</obo:IAO_0000115>
         <oboInOwl:created_by>doelkens</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-12-30T11:39:15Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>UMLS:C4022001</oboInOwl:hasDbXref>
@@ -37075,6 +37177,12 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:id>HP:0100659</oboInOwl:id>
         <rdfs:label>Abnormality of the cerebral vasculature</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0100659"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An anomaly of the cerebral blood vessels.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:30335330</oboInOwl:hasDbXref>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0100659"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
