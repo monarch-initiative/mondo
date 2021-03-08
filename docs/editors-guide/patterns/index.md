@@ -1,6 +1,5 @@
 # Design Patterns 
 
-A paragraph to describe this page. 
 
 * [acquired](acquired/) 
 * [acute](acute/) 
