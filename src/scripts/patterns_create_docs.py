@@ -137,7 +137,7 @@ with index_md_path.open("w") as fout:
     fout.write("| Pattern | Description | \n")
     fout.write("|:---|:---|\n")
     for pattern_file_name, pattern in pattern_lst:        
-        fout.write(f"| [{pattern['pattern_name']}]({pattern_file_name}/) | " + pattern['description'].split('\n')[0] + " |  \n")
+        fout.write(f"| [{pattern['pattern_name']}]({pattern_file_name}/) | " + pattern['description'].replace("\n", "<br/>") + " |  \n")
 
 
 
