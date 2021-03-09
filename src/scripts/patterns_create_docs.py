@@ -5,7 +5,7 @@ import yaml
 import re
 import pandas as pd
 
-ROOT = Path(__file__).parent.parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 mkdocs_file = ROOT / "mkdocs.yml"
 pattern_files = (ROOT / "src/patterns/dosdp-patterns").glob("*.yaml")
 pattern_doc_dir = ROOT / "docs/editors-guide/patterns"
