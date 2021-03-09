@@ -15,14 +15,14 @@ This is a listing of all the patterns hosted as part of this directory
 | Examples |  |
 
 ### Omim phenotypic series
-*This pattern is meant to be used for OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. Note:  - every instance of this metaclass should be equivalent to (via annotated xref) to something in OMIMPS namespace - it will never have an asserted causative gene as logical axiom (and no single causative gene in text def) - it must never be equivalent to an OMIM:nnnnnn (often redundant with the above rule) - it must have an acronym synonym, e.g. HPE - it must have two or more subclasses (direct or indirect) that are equivalent to OMIMs - the subclasses should (not must) have a logical def that uses the PS as a genus (see https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/disease_series_by_gene.yaml) - the OMIM subclasses must have acronym synonyms that are the parent syn + number, e.g. HPE1, HPE2 - the primary label for the children should also be parent + {"type"} + number - the first member will usually have the same number local ID as the PS - the first member in OMIM usually has documentation that is pertinent to the parent PS - the members may(?) generally share high semantic similarity
+*This pattern is meant to be used for OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. Note:  - every instance of this metaclass should be equivalent to (via annotated xref) to something in OMIMPS namespace - it will never have an asserted causative gene as logical axiom (and no single causative gene in text def) - it must never be equivalent to an OMIM:nnnnnn (often redundant with the above rule) - it must have an acronym synonym, e.g. HPE - it must have two or more subclasses (direct or indirect) that are equivalent to OMIMs - the subclasses should (not must) have a logical def that uses the PS as a genus (see http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml) - the OMIM subclasses must have acronym synonyms that are the parent syn + number, e.g. HPE1, HPE2 - the primary label for the children should also be parent + {"type"} + number - the first member will usually have the same number local ID as the PS - the first member in OMIM usually has documentation that is pertinent to the parent PS - the members may(?) generally share high semantic similarity - All OMIMPS disease should have a has modifier some inherited restricted, see http://purl.obolibrary.org/obo/mondo/sparql/omimps-should-be-inherited-violation.sparql
 Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS236100), '3-M syndrome'(http://purl.obolibrary.org/obo/MONDO_0007477) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS273750).*
 
 | Attribute | Info |
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml |
 | Name | OMIM_phenotypic_series |
-| Classes | MONDO:0000001,  |
+| Classes | MONDO:0000001, MONDO:0021152,  |
 | Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples |  |
@@ -34,8 +34,8 @@ Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMI
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml |
 | Name | acquired |
-| Classes | MONDO:0021141, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | MONDO:0021141, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acquired.tsv) |
 
@@ -56,8 +56,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/acute.yaml |
 | Name | acute |
-| Classes | PATO:0000389, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | PATO:0000389, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acute.tsv) |
 
@@ -147,8 +147,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/adult.yaml |
 | Name | adult |
-| Classes | HP:0003581, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0003581, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adult.tsv) |
 
@@ -255,8 +255,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/autosomal_dominant.yaml |
 | Name | autosomal_dominant |
-| Classes | HP:0000006, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0000006, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_dominant.tsv) |
 
@@ -277,8 +277,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml |
 | Name | autosomal_recessive |
-| Classes | HP:0000007, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0000007, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_recessive.tsv) |
 
@@ -439,8 +439,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/childhood.yaml |
 | Name | childhood |
-| Classes | HP:0011463, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0011463, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/childhood.tsv) |
 
@@ -461,8 +461,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/chronic.yaml |
 | Name | chronic |
-| Classes | PATO:0001863, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | PATO:0001863, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/chronic.tsv) |
 
@@ -483,8 +483,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/congenital.yaml |
 | Name | congenital |
-| Classes | MONDO:0021140, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | MONDO:0021140, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/congenital.tsv) |
 
@@ -627,8 +627,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/genetic.yaml |
 | Name | genetic |
-| Classes | MONDO:0021150, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | MONDO:0021150, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples |  |
 
@@ -662,8 +662,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/hereditary.yaml |
 | Name | hereditary |
-| Classes | MONDO:0021152,  |
-| Variables | disease,  |
+| Classes | MONDO:0021152, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hereditary.tsv) |
 
@@ -730,8 +730,8 @@ Examples: [infant botulism](http://purl.obolibrary.org/obo/MONDO_0015804), [infa
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/infantile.yaml |
 | Name | infantile |
-| Classes | HP:0003593, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0003593, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infantile.tsv) |
 
@@ -859,8 +859,8 @@ Examples: [juvenile-onset Parkinson disease](http://purl.obolibrary.org/obo/MOND
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/juvenile.yaml |
 | Name | juvenile |
-| Classes | HP:0003621, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0003621, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv) |
 
@@ -1235,8 +1235,8 @@ TODO: write better guidelines on what constitutes a secondary disease vs primary
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/primary_infectious.yaml |
 | Name | primary infectious |
-| Classes | MONDO:0045036, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | MONDO:0045036, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/primary_infectious.tsv) |
 
@@ -1254,8 +1254,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/rare.yaml |
 | Name | rare |
-| Classes | MONDO:0021136, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | MONDO:0021136, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
@@ -1266,8 +1266,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/rare_genetic.yaml |
 | Name | rare_genetic |
-| Classes | MONDO:0021150, MONDO:0021136, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | MONDO:0021150, MONDO:0021136, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
@@ -1417,8 +1417,8 @@ Examples: [collagenopathy type 2 alpha 1](http://purl.obolibrary.org/obo/MONDO_0
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml |
 | Name | X disease has basis in dysfunction of X |
-| Classes | owl:Thing,  |
-| Variables | disease (owl:Thing), structure (owl:Thing),  |
+| Classes | owl:Thing, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001), structure (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_dysfunctional_structure.tsv) |
 
@@ -1596,8 +1596,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/x_linked.yaml |
 | Name | x_linked |
-| Classes | HP:0001417, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0001417, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/x_linked.tsv) |
 
@@ -1618,8 +1618,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml |
 | Name | y_linked |
-| Classes | HP:0001450, owl:Thing,  |
-| Variables | disease (owl:Thing),  |
+| Classes | HP:0001450, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/y_linked.tsv) |
 
