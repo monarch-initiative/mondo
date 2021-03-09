@@ -8,20 +8,20 @@ TBD.
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 ## Name 
 
-malignant {neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
+malignant {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}, malignant
+text: {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}, malignant
 
 ## Definition 
 
-A malignant form of {neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}.
+A malignant form of {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}.
 
 ## Equivalent to 
 
-{neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {malignant\([PATO:0002097](http://purl.obolibrary.org/obo/PATO_0002097)\)}
+{[neoplasm](http://www.w3.org/2002/07/owl#Thing)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[malignant](http://purl.obolibrary.org/obo/PATO_0002097)}
 
 ## Data preview 
 | defined:class                                | defined:class:label           | neoplasm                                     | neoplasm:label               |

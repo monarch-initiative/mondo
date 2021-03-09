@@ -9,20 +9,20 @@ A disease that is caused by exposure to an environmental stimulus, like the sun 
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} from {stimulus\([BFO:0000040](http://purl.obolibrary.org/obo/BFO_0000040)\)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} from {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)}
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {stimulus\([BFO:0000040](http://purl.obolibrary.org/obo/BFO_0000040)\)} {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+text: {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
-A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} that is caused by exposure to {stimulus\([BFO:0000040](http://purl.obolibrary.org/obo/BFO_0000040)\)}.
+A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is caused by exposure to {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)}.
 
 ## Equivalent to 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {stimulus\([BFO:0000040](http://purl.obolibrary.org/obo/BFO_0000040)\)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[realized in response to stimulus](http://purl.obolibrary.org/obo/RO_0004028)} some {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)}
 
 ## Data preview 
 | defined:class                                | defined:class:label                     | disease                                      | disease:label      | stimulus                                      | stimulus:label       |

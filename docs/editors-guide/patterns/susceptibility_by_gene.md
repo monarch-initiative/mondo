@@ -11,20 +11,20 @@ This pattern should be used for terms in which a gene dysfunction causes a predi
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} susceptibility, {gene\([SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)\)} form
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} susceptibility, {[gene](http://purl.obolibrary.org/obo/SO_0000704)} form
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} susceptibility caused by {gene\([SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)\)}
+text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} susceptibility caused by {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
 
 ## Definition 
 
-A susceptibility or predisposition to {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} in which the cause of the disease is a mutation in the {gene\([SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)\)} gene.
+A susceptibility or predisposition to {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause of the disease is a mutation in the {[gene](http://purl.obolibrary.org/obo/SO_0000704)} gene.
 
 ## Equivalent to 
 
-({inherited disease susceptibility\([MONDO:0020573](http://purl.obolibrary.org/obo/MONDO_0020573)\)} and ({disease has basis in dysfunction of\([RO:0004020](http://purl.obolibrary.org/obo/RO_0004020)\)} some {gene\([SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)\)}) and ({predisposes towards\([http://purl.obolibrary.org/obo/mondo#predisposes_towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)\)} some {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}))
+({[inherited disease susceptibility](http://purl.obolibrary.org/obo/MONDO_0020573)} and ({[disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020)} some {[gene](http://purl.obolibrary.org/obo/SO_0000704)}) and ({[predisposes towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)} some {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}))
 
 ## Data preview 
 | defined:class                                | defined:class:label                               | disease                                      | disease:label                                    | gene                              | gene:label   |

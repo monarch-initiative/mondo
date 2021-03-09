@@ -4,29 +4,30 @@
 ## Description 
 
 This pattern should be used for children of MONDO_0020573'inherited disease susceptibility', including OMIM phenotypic series (OMIMPS) for which the subclasses are susceptibilities. Note, this pattern should not have an asserted causative gene as logical axiom (and no single causative gene in text definition), in those cases, the susceptibility_by_gene pattern should be used instead. The children should have asserted causative genes in the text definitions and in the logical axioms. This pattern is a superclass of the susceptibility_by_gene pattern.
+
 Examples: ['microvascular complications of diabetes, susceptibility'](http://purl.obolibrary.org/obo/MONDO_0000065), ['epilepsy, idiopathic generalized'](http://purl.obolibrary.org/obo/MONDO_0005579), ['aspergillosis, susceptibility to'](http://purl.obolibrary.org/obo/MONDO_0013562).
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} susceptibility
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} susceptibility
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}, susceptibility
+text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, susceptibility
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}, susceptibility to
+text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, susceptibility to
 
 ## Definition 
 
-An inherited susceptibility or predisposition to developing {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}.
+An inherited susceptibility or predisposition to developing {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 
 ## Equivalent to 
 
-({inherited disease susceptibility\([MONDO:0020573](http://purl.obolibrary.org/obo/MONDO_0020573)\)} and ({predisposes towards\([http://purl.obolibrary.org/obo/mondo#predisposes_towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)\)} some {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}))
+({[inherited disease susceptibility](http://purl.obolibrary.org/obo/MONDO_0020573)} and ({[predisposes towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)} some {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}))
 
 ## Data preview 
 | defined:class                                | defined:class:label                           | disease                                      | disease:label                          |

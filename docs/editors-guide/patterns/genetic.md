@@ -9,18 +9,18 @@ TBD.
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-genetic {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+genetic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: genetic {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+text: genetic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
-An instance of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} that is caused by a genetic modification in an individual.
+An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is caused by a genetic modification in an individual.
 
 ## Equivalent to 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {genetic\([MONDO:0021150](http://purl.obolibrary.org/obo/MONDO_0021150)\)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[genetic](http://purl.obolibrary.org/obo/MONDO_0021150)}
 

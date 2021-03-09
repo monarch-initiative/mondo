@@ -8,15 +8,15 @@ An infectious disease where a pathogen is carried and transmitted by another org
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 ## Name 
 
-{infectious_disease\([MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550)\)} transmitted by {vector\([OBI:0100026](http://purl.obolibrary.org/obo/OBI_0100026)\)}
+{[infectious_disease](http://purl.obolibrary.org/obo/MONDO_0005550)} transmitted by {[vector](http://purl.obolibrary.org/obo/OBI_0100026)}
 
 ## Definition 
 
-{vector\([OBI:0100026](http://purl.obolibrary.org/obo/OBI_0100026)\)}-borne {infectious_disease\([MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550)\)}.
+{[vector](http://purl.obolibrary.org/obo/OBI_0100026)}-borne {[infectious_disease](http://purl.obolibrary.org/obo/MONDO_0005550)}.
 
 ## Equivalent to 
 
-({infectious_disease\([MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550)\)} and ({transmitted by\([RO:0002451](http://purl.obolibrary.org/obo/RO_0002451)\)} some {vector\([OBI:0100026](http://purl.obolibrary.org/obo/OBI_0100026)\)}))
+({[infectious_disease](http://purl.obolibrary.org/obo/MONDO_0005550)} and ({[transmitted by](http://purl.obolibrary.org/obo/RO_0002451)} some {[vector](http://purl.obolibrary.org/obo/OBI_0100026)}))
 
 ## Data preview 
 | defined:class                                | defined:class:label               | infectious:disease                           | infectious:disease:label     | vector                                          | vector:label         |

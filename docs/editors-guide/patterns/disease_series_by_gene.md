@@ -9,21 +9,21 @@ This pattern is for diseases that are caused by a single mutation in a single ge
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} caused by mutation in {gene\([SO:0001217](http://purl.obolibrary.org/obo/SO_0001217)\)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} caused by mutation in {[gene](http://purl.obolibrary.org/obo/SO_0001217)}
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {gene\([SO:0001217](http://purl.obolibrary.org/obo/SO_0001217)\)} {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+text: {[gene](http://purl.obolibrary.org/obo/SO_0001217)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {gene\([SO:0001217](http://purl.obolibrary.org/obo/SO_0001217)\)} related {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+text: {[gene](http://purl.obolibrary.org/obo/SO_0001217)} related {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
-Any {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} in which the cause of the disease is a mutation in the {gene\([SO:0001217](http://purl.obolibrary.org/obo/SO_0001217)\)} gene.
+Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause of the disease is a mutation in the {[gene](http://purl.obolibrary.org/obo/SO_0001217)} gene.
 
 ## Equivalent to 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease has basis in dysfunction of\([RO:0004020](http://purl.obolibrary.org/obo/RO_0004020)\)} some {gene\([SO:0001217](http://purl.obolibrary.org/obo/SO_0001217)\)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020)} some {[gene](http://purl.obolibrary.org/obo/SO_0001217)}
 

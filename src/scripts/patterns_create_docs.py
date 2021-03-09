@@ -35,13 +35,17 @@ def render_var(var, mapping):
     if is_curie(var_str):
         return  f"{var}\({curie_to_link(var_str)}\)"
     # check format ''class''
-    p = re.compile(r"'[^']*'")
-    if p.match(var_str):
+    p = re.compile(r"'([^']*)'")
+    if p.match(var_str) and len(re.findall(r"'([^']*)'", var_str)) > 1:
         link_str = re.sub(r"'([^']*)'", lambda m: curie_to_link(pattern["classes"][m.group(1)]), var_str)
+        return f"{var}\({link_str}\)"
     else:
-        link_str = curie_to_link(pattern["classes"][var_str])
+        if p.match(var_str):
+            link_str = re.sub(r"'([^']*)'", lambda m: curie_to_uri(pattern["classes"][m.group(1)]), var_str)
+        else:
+            link_str = curie_to_uri(pattern["classes"][var_str])
 
-    return f"{var}\({link_str}\)"
+        return f"[{var}]({link_str})"
 
 
 def render_equivalent(text, vars, pattern):
@@ -50,7 +54,7 @@ def render_equivalent(text, vars, pattern):
     mapping.update(pattern["classes"])
     mapping.update(pattern["relations"])
     p = re.compile(r"'[^']*'")
-    ret = re.sub(r"'([^']*)'", lambda m: "{" + m.group(1) + "\(" + curie_to_link(mapping[m.group(1)]) + "\)}", ret)
+    ret = re.sub(r"'([^']*)'", lambda m: "{[" + m.group(1) + "](" + curie_to_uri(mapping[m.group(1)]) + ")}", ret)
     return ret
 
 
@@ -72,7 +76,7 @@ for pattern_file in pattern_files:
         fout.write(f"# {pattern['pattern_name']} \n\n")
         fout.write(f"[{pattern['pattern_iri']}]({pattern['pattern_iri']})\n")
         fout.write("## Description \n\n")
-        fout.write(pattern["description"] + "\n")
+        fout.write(pattern["description"].replace("\n", "\n\n") + "\n")
         if "contributors" in pattern:
             fout.write("## Contributors \n")
             for contributor in pattern["contributors"]:
@@ -128,8 +132,11 @@ index_md_path = pattern_doc_dir / "index.md"
 with index_md_path.open("w") as fout:
     fout.write(f"# Design Patterns \n\n")
     fout.write(f"\n")
+    fout.write("| Pattern | Description | \n")
+    fout.write("|:---|:---|\n")
     for pattern_file_name, pattern in pattern_lst:        
-        fout.write(f"* [{pattern['pattern_name']}]({pattern_file_name}/) \n")
+        fout.write(f"| [{pattern['pattern_name']}]({pattern_file_name}/) | " + pattern['description'].split('\n')[0] + " |  \n")
+
 
 
 

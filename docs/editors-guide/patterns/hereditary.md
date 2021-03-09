@@ -4,26 +4,27 @@
 ## Description 
 
 
+
 Pattern for extending a etiology-generic disease class to a hereditary form.  Here hereditary means that etiology is largely genetic, and that the disease is passed down or potentially able to be passed down via inheritance (i.e is germline).
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-hereditary {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+hereditary {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: hereditary {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+text: hereditary {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
-An instance of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} that is caused by an inherited genomic modification in an individual.
+An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is caused by an inherited genomic modification in an individual.
 
 ## Equivalent to 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {hereditary\([MONDO:0021152](http://purl.obolibrary.org/obo/MONDO_0021152)\)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[hereditary](http://purl.obolibrary.org/obo/MONDO_0021152)}
 
 ## Data preview 
 | defined:class                                | defined:class:label                                         | disease                                      | disease:label                                    |

@@ -8,29 +8,29 @@ we follow NCIT in making carcinoid a syn for G1 NET
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 ## Name 
 
-{location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} neuroendocrine neoplasm G1
+{[location](http://www.w3.org/2002/07/owl#Thing)} neuroendocrine neoplasm G1
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: grade 1 neuroendocrine neoplasm of {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
+text: grade 1 neuroendocrine neoplasm of {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} neuroendocrine tumor, well differentiated, low grade
+text: {[location](http://www.w3.org/2002/07/owl#Thing)} neuroendocrine tumor, well differentiated, low grade
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} NET G1
+text: {[location](http://www.w3.org/2002/07/owl#Thing)} NET G1
 
 * annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
-text: {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} carcinoid tumor
+text: {[location](http://www.w3.org/2002/07/owl#Thing)} carcinoid tumor
 
 ## Definition 
 
-A well differentiated, low grade tumor with neuroendocrine differentiation that arises from the {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}.
+A well differentiated, low grade tumor with neuroendocrine differentiation that arises from the {[location](http://www.w3.org/2002/07/owl#Thing)}.
 
 ## Equivalent to 
 
-{neuroendocrine neoplasm\([MONDO:0019496](http://purl.obolibrary.org/obo/MONDO_0019496)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {grade 1\([MONDO:0024491](http://purl.obolibrary.org/obo/MONDO_0024491)\)}
+{[neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0019496)} and {[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[grade 1](http://purl.obolibrary.org/obo/MONDO_0024491)}
 
 ## Data preview 
 | defined:class                                | defined:class:label                     | location                                      | location:label     |

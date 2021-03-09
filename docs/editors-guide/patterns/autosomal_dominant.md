@@ -8,20 +8,20 @@ TBD.
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 ## Name 
 
-autosomal dominant {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+autosomal dominant {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
 * annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
-text: {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}, autosomal dominant
+text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, autosomal dominant
 
 ## Definition 
 
-Autosomal dominant form of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}.
+Autosomal dominant form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 
 ## Equivalent to 
 
-{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {autosomal dominant inheritance\([HP:0000006](http://purl.obolibrary.org/obo/HP_0000006)\)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[autosomal dominant inheritance](http://purl.obolibrary.org/obo/HP_0000006)}
 
 ## Data preview 
 | defined:class                                | defined:class:label                                      | disease                                      | disease:label                         |
