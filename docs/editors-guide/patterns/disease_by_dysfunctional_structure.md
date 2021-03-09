@@ -1,5 +1,4 @@
 # disease_by_dysfunctional_structure 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/disease_by_dysfunctional_structure.yaml](http://purl.obolibrary.org/obo/mondo/patterns/disease_by_dysfunctional_structure.yaml)
 ## Description 

@@ -1,5 +1,4 @@
 # disease realized in response to environmental exposure 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to_evironmental_exposure.yaml](http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to_evironmental_exposure.yaml)
 ## Description 

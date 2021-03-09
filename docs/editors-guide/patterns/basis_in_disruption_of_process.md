@@ -1,5 +1,4 @@
 # basis_in_disruption_of_process 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/basis_in_disruption_of_process.yaml](http://purl.obolibrary.org/obo/mondo/patterns/basis_in_disruption_of_process.yaml)
 ## Description 

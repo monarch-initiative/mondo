@@ -1,5 +1,4 @@
 # rare_genetic 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/rare_genetic.yaml](http://purl.obolibrary.org/obo/mondo/patterns/rare_genetic.yaml)
 ## Description 

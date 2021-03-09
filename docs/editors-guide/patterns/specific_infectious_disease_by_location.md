@@ -1,5 +1,4 @@
 # specific_infectious_disease_by_location 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml](http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml)
 ## Description 

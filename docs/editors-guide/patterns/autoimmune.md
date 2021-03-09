@@ -1,5 +1,4 @@
 # autoimmune 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/autoimmune.yaml](http://purl.obolibrary.org/obo/mondo/patterns/autoimmune.yaml)
 ## Description 

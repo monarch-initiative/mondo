@@ -1,5 +1,4 @@
 # y_linked 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml](http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml)
 ## Description 

@@ -1,5 +1,4 @@
 # disease_series_by_gene_and_inheritance 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml](http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml)
 ## Description 

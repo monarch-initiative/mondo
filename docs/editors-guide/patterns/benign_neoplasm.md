@@ -1,5 +1,4 @@
 # benign_neoplasm 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/benign_neoplasm.yaml](http://purl.obolibrary.org/obo/mondo/patterns/benign_neoplasm.yaml)
 ## Description 

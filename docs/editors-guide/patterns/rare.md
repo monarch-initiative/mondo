@@ -1,5 +1,4 @@
 # rare 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/rare.yaml](http://purl.obolibrary.org/obo/mondo/patterns/rare.yaml)
 ## Description 

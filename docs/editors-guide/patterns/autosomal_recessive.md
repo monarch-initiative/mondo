@@ -1,5 +1,4 @@
 # autosomal_recessive 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml](http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml)
 ## Description 

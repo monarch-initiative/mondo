@@ -1,5 +1,4 @@
 # OMIM_phenotypic_series 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml](http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml)
 ## Description 

@@ -1,5 +1,4 @@
 # environmental_stimulus 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml](http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml)
 ## Description 

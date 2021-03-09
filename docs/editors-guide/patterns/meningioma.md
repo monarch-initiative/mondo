@@ -1,5 +1,4 @@
 # meningioma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/meningioma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/meningioma.yaml)
 ## Description 

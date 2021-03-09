@@ -1,5 +1,4 @@
 # inflammatory_disease_by_site 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/inflammatory_disease_by_site.yaml](http://purl.obolibrary.org/obo/mondo/patterns/inflammatory_disease_by_site.yaml)
 ## Description 

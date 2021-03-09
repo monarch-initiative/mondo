@@ -1,5 +1,4 @@
 # autoimmune_inflammation 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/autoimmune_inflammation.yaml](http://purl.obolibrary.org/obo/mondo/patterns/autoimmune_inflammation.yaml)
 ## Description 

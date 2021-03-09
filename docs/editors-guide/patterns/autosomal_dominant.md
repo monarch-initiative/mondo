@@ -1,5 +1,4 @@
 # autosomal_dominant 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/autosomal_dominant.yaml](http://purl.obolibrary.org/obo/mondo/patterns/autosomal_dominant.yaml)
 ## Description 

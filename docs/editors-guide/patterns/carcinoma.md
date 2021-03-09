@@ -1,5 +1,4 @@
 # carcinoma 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/carcinoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/carcinoma.yaml)
 ## Description 

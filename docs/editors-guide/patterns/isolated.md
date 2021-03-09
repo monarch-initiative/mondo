@@ -1,5 +1,4 @@
 # isolated 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml](http://purl.obolibrary.org/obo/mondo/patterns/isolated.yaml)
 ## Description 

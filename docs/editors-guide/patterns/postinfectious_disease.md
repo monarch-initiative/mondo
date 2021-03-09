@@ -1,5 +1,4 @@
 # postinfectious_disease 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/postinfectious_disease.yaml](http://purl.obolibrary.org/obo/mondo/patterns/postinfectious_disease.yaml)
 ## Description 

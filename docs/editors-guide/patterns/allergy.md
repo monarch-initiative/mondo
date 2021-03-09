@@ -1,5 +1,4 @@
 # allergy 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/allergy.yaml](http://purl.obolibrary.org/obo/mondo/patterns/allergy.yaml)
 ## Description 

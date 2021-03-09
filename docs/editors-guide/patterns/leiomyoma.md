@@ -1,5 +1,4 @@
 # leiomyoma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/leiomyoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/leiomyoma.yaml)
 ## Description 

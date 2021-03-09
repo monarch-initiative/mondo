@@ -1,5 +1,4 @@
 # hereditary 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/hereditary.yaml](http://purl.obolibrary.org/obo/mondo/patterns/hereditary.yaml)
 ## Description 

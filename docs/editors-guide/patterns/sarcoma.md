@@ -1,5 +1,4 @@
 # sarcoma 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/sarcoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/sarcoma.yaml)
 ## Description 

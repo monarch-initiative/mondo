@@ -1,5 +1,4 @@
 # rhabdomyosarcoma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/rhabdomyosarcoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/rhabdomyosarcoma.yaml)
 ## Description 

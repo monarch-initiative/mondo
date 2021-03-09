@@ -1,5 +1,4 @@
 # neoplasm 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/neoplasm_by_origin.yaml](http://purl.obolibrary.org/obo/mondo/patterns/neoplasm_by_origin.yaml)
 ## Description 

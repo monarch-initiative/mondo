@@ -1,5 +1,4 @@
 # x_linked 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/x_linked.yaml](http://purl.obolibrary.org/obo/mondo/patterns/x_linked.yaml)
 ## Description 

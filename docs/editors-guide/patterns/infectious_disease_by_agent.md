@@ -1,5 +1,4 @@
 # infectious_disease_by_agent 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml](http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml)
 ## Description 

@@ -1,5 +1,4 @@
 # mitochondriaal_subtype 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/mitochondrial_subtype.yaml](http://purl.obolibrary.org/obo/mondo/patterns/mitochondrial_subtype.yaml)
 ## Description 

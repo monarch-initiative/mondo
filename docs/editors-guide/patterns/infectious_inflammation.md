@@ -1,5 +1,4 @@
 # infectious_inflammation 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/infectious_inflammation.yaml](http://purl.obolibrary.org/obo/mondo/patterns/infectious_inflammation.yaml)
 ## Description 

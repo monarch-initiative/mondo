@@ -1,5 +1,4 @@
 # congenital 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/congenital.yaml](http://purl.obolibrary.org/obo/mondo/patterns/congenital.yaml)
 ## Description 

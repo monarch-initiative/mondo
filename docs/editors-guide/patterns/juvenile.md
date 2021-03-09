@@ -1,5 +1,4 @@
 # juvenile 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/juvenile.yaml](http://purl.obolibrary.org/obo/mondo/patterns/juvenile.yaml)
 ## Description 

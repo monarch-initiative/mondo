@@ -1,5 +1,4 @@
 # carcinoma_in_situ 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/carcinoma_in_situ.yaml](http://purl.obolibrary.org/obo/mondo/patterns/carcinoma_in_situ.yaml)
 ## Description 

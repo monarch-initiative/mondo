@@ -1,5 +1,4 @@
 # malignant 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/malignant.yaml](http://purl.obolibrary.org/obo/mondo/patterns/malignant.yaml)
 ## Description 

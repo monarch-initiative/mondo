@@ -1,5 +1,4 @@
 # squamous cell carcinoma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/squamous_cell_carcinoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/squamous_cell_carcinoma.yaml)
 ## Description 

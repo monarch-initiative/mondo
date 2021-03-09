@@ -1,5 +1,4 @@
 # nuclear_subtype 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/nuclear_subtype.yaml](http://purl.obolibrary.org/obo/mondo/patterns/nuclear_subtype.yaml)
 ## Description 

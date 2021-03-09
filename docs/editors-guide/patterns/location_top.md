@@ -1,5 +1,4 @@
 # location_top 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml](http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml)
 ## Description 

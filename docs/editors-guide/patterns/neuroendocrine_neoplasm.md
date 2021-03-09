@@ -1,5 +1,4 @@
 # neoendocrine_neoplasm 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm.yaml](http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm.yaml)
 ## Description 

@@ -1,5 +1,4 @@
 # mucoepidermoid carcinoma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/mucoepidermoid_carcinoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/mucoepidermoid_carcinoma.yaml)
 ## Description 

@@ -1,5 +1,4 @@
 # adenocarcinoma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/adenocarcinoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/adenocarcinoma.yaml)
 ## Description 

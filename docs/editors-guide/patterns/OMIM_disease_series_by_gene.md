@@ -1,5 +1,4 @@
 # OMIM_disease_series_by_gene 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml](http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml)
 ## Description 

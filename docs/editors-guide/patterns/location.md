@@ -1,5 +1,4 @@
 # location 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/location.yaml](http://purl.obolibrary.org/obo/mondo/patterns/location.yaml)
 ## Description 

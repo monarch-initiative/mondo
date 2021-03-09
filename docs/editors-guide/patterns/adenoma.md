@@ -1,5 +1,4 @@
 # adenoma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/adenoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/adenoma.yaml)
 ## Description 

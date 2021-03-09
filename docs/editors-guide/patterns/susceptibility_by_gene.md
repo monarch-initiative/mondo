@@ -1,5 +1,4 @@
 # susceptibility_by_gene 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
 Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)'](http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml

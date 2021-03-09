@@ -1,5 +1,4 @@
 # vectorBorneDisease 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/vectorBorneDisease.yaml](http://purl.obolibrary.org/obo/mondo/patterns/vectorBorneDisease.yaml)
 ## Description 

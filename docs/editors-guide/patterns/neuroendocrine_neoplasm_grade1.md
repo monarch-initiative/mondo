@@ -1,5 +1,4 @@
 # neoendocrine_neoplasm_grade1 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm_grade1.yaml](http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm_grade1.yaml)
 ## Description 

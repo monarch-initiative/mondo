@@ -65,8 +65,7 @@ for pattern_file in pattern_files:
     pattern = yaml.load(pattern_file.read_text(), Loader=yaml.FullLoader)
     md_file_path = pattern_doc_dir / (pattern_file.stem + ".md")
     with md_file_path.open("w") as fout:
-        fout.write(f"# {pattern['pattern_name']} \n")
-        fout.write("## URL \n\n")
+        fout.write(f"# {pattern['pattern_name']} \n\n")
         fout.write(f"[{pattern['pattern_iri']}]({pattern['pattern_iri']})\n")
         fout.write("## Description \n\n")
         fout.write(pattern["description"] + "\n")

@@ -1,5 +1,4 @@
 # adult 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/adult.yaml](http://purl.obolibrary.org/obo/mondo/patterns/adult.yaml)
 ## Description 

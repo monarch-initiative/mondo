@@ -1,5 +1,4 @@
 # syndromic 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml](http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml)
 ## Description 

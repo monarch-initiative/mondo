@@ -1,5 +1,4 @@
 # melanoma disease has location X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/patterns/melanoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/melanoma.yaml)
 ## Description 

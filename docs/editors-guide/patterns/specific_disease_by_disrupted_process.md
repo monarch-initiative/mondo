@@ -1,5 +1,4 @@
 # X disease disrupts X 
-## URL 
 
 [http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X](http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X)
 ## Description 
