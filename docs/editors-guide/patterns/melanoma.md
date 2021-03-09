@@ -24,3 +24,13 @@ A melanoma that involves the {location\([owl:Thing](http://www.w3.org/2002/07/ow
 
 {melanoma\([MONDO:0005105](http://purl.obolibrary.org/obo/MONDO_0005105)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
+## Data preview: 
+| defined:class                                | defined:class:label          | v0                                            | v0:label         |
+|:---------------------------------------------|:-----------------------------|:----------------------------------------------|:-----------------|
+| MONDO:0006081 | anal melanoma                | UBERON:0001245 | anus             |
+| MONDO:0005012 | cutaneous melanoma (disease) | UBERON:0000014 | zone of skin     |
+| MONDO:0045070 | digestive system melanoma    | UBERON:0001007 | digestive system |
+| MONDO:0001192 | esophageal melanoma          | UBERON:0001043 | esophagus        |
+| MONDO:0000928 | eyelid melanoma              | UBERON:0001711 | eyelid           |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/melanoma.tsv) 

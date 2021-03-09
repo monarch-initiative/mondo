@@ -25,3 +25,13 @@ A form of {neoplasm\([MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_000507
 
 {neoplasm\([MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_0005070)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {neoplastic, non-malignant\([PATO:0002096](http://purl.obolibrary.org/obo/PATO_0002096)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                   | neoplasm                                     | neoplasm:label                                              |
+|:---------------------------------------------|:--------------------------------------|:---------------------------------------------|:------------------------------------------------------------|
+| MONDO:0036990 | benign Leydig cell tumor              | MONDO:0006266 | Leydig cell tumor                                           |
+| MONDO:0020581 | benign PEComa                         | MONDO:0006359 | neoplasm with perivascular epithelioid cell differentiation |
+| MONDO:0006103 | benign adrenal gland pheochromocytoma | MONDO:0004974 | adrenal gland pheochromocytoma                              |
+| MONDO:0036781 | benign axillary neoplasm              | MONDO:0036779 | axillary neoplasm                                           |
+| MONDO:0002065 | benign breast adenomyoepithelioma     | MONDO:0002066 | breast adenomyoepithelioma                                  |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/benign.tsv) 

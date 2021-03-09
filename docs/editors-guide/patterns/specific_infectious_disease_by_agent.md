@@ -24,3 +24,13 @@ An {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} ca
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {agent\([NCBITaxon:1](http://purl.obolibrary.org/obo/NCBITaxon_1)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                     | agent                                         | agent:label          | disease                                      | disease:label      |
+|:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:---------------------|:---------------------------------------------|:-------------------|
+| MONDO:0021747 | Acanthamoeba infectious disease         | NCBITaxon:5754 | Acanthamoeba         | MONDO:0005550 | infectious disease |
+| MONDO:0006635 | Acinetobacter infectious disease        | NCBITaxon:469  | Acinetobacter        | MONDO:0005550 | infectious disease |
+| MONDO:0006636 | Actinobacillus infectious disease       | NCBITaxon:713  | Actinobacillus       | MONDO:0005550 | infectious disease |
+| MONDO:0006921 | Actinomycetales infectious disease      | NCBITaxon:2037 | Actinomycetales      | MONDO:0005550 | infectious disease |
+| MONDO:0005117 | Aeromonas hydrophila infectious disease | NCBITaxon:644  | Aeromonas hydrophila | MONDO:0005550 | infectious disease |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_infectious_disease_by_agent.tsv) 

@@ -3,11 +3,15 @@
 from pathlib import Path
 import yaml
 import re
+import pandas as pd
 
 ROOT = Path(__file__).parent.parent.parent
 mkdocs_file = ROOT / "mkdocs.yml"
 pattern_files = (ROOT / "src/patterns/dosdp-patterns").glob("*.yaml")
 pattern_doc_dir = ROOT / "docs/editors-guide/patterns"
+sample_data_dir = ROOT / "src/patterns/data/matches"
+pattern_matches_location_raw = "https://raw.githubusercontent.com/monarch-initiative/mondo/master/src/patterns/data/matches"
+pattern_matches_location_gh = "https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches"
 
 
 def curie_to_uri(curie):
@@ -92,6 +96,30 @@ for pattern_file in pattern_files:
             fout.write("## Equivalent to \n\n")
             fout.write(render_equivalent(pattern["equivalentTo"]["text"], pattern["equivalentTo"]["vars"], pattern))
             fout.write("\n\n")
+
+        # Create sample table
+        tsv_file = sample_data_dir / (pattern_file.stem + ".tsv")
+        if tsv_file.is_file():
+            examples = []
+            try:
+                df = pd.read_csv(tsv_file, sep="\t")
+                ghurl = f"{pattern_matches_location_gh}/{pattern_file.stem}.tsv"
+                if not df.empty:
+                    examples.append('[mondo]({})'.format(ghurl))
+                    example = ghurl
+                    dfh = df.head()
+                    sample_table = dfh.to_markdown(index=False)
+                    fout.write("## Data preview: \n")
+                    oboiri="http://purl.obolibrary.org/obo/"
+                    fout.write(sample_table.replace(oboiri,"").replace("_",":"))
+                    fout.write("\n\n")
+                    fout.write(f"See full table [here]({example}) \n")
+                else:
+                    print("No matches!")
+            except Exception as e:
+                print("Error processing the tsv file!", e)
+        else:
+            print(str(tsv_file) + " does not exist!")
     pattern_lst.append((pattern_file.stem, pattern))
 
 # create the index.md file 

@@ -28,3 +28,13 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {infantile\([HP:0003593](http://purl.obolibrary.org/obo/HP_0003593)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label         | disease                                      | disease:label         |
+|:---------------------------------------------|:----------------------------|:---------------------------------------------|:----------------------|
+| MONDO:0000212 | hypercalcemia, infantile    | MONDO:0001566 | hypercalcemia disease |
+| MONDO:0015804 | infant botulism             | MONDO:0005498 | botulism              |
+| MONDO:0016089 | infantile Krabbe disease    | MONDO:0009499 | Krabbe disease        |
+| MONDO:0043555 | infantile diarrhea          | MONDO:0001673 | diarrheal disease     |
+| MONDO:0020071 | infantile epilepsy syndrome | MONDO:0015650 | epilepsy syndrome     |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infantile.tsv) 

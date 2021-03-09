@@ -24,3 +24,13 @@ A mucoepidermoid carcinoma that involves the {location\([UBERON:0001062](http://
 
 {mucoepidermoid carcinoma\([MONDO:0003036](http://purl.obolibrary.org/obo/MONDO_0003036)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)\)})
 
+## Data preview: 
+| defined:class                                | defined:class:label                             | v0                                            | v0:label               |
+|:---------------------------------------------|:------------------------------------------------|:----------------------------------------------|:-----------------------|
+| MONDO:0000531 | bronchus mucoepidermoid carcinoma               | UBERON:0002185 | bronchus               |
+| MONDO:0003091 | cutaneous mucoepidermoid carcinoma              | UBERON:0000014 | zone of skin           |
+| MONDO:0003089 | extrahepatic bile duct mucoepidermoid carcinoma | UBERON:0003703 | extrahepatic bile duct |
+| MONDO:0006213 | floor of mouth mucoepidermoid carcinoma         | UBERON:0003679 | mouth floor            |
+| MONDO:0003092 | lacrimal gland mucoepidermoid carcinoma         | UBERON:0001817 | lacrimal gland         |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/mucoepidermoid_carcinoma.tsv) 

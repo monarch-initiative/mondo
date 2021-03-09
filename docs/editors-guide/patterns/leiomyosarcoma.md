@@ -24,3 +24,13 @@ An aggressive malignant smooth muscle neoplasm, arising from the {location\([owl
 
 {leiomyosarcoma\([MONDO:0005058](http://purl.obolibrary.org/obo/MONDO_0005058)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
+## Data preview: 
+| defined:class                                | defined:class:label                   | v0                                            | v0:label               |
+|:---------------------------------------------|:--------------------------------------|:----------------------------------------------|:-----------------------|
+| MONDO:0003358 | anus leiomyosarcoma                   | UBERON:0001245 | anus                   |
+| MONDO:0002624 | bone leiomyosarcoma                   | UBERON:0002481 | bone tissue            |
+| MONDO:0003371 | breast leiomyosarcoma                 | UBERON:0000310 | breast                 |
+| MONDO:0003349 | central nervous system leiomyosarcoma | UBERON:0001017 | central nervous system |
+| MONDO:0003351 | colon leiomyosarcoma                  | UBERON:0001155 | colon                  |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyosarcoma.tsv) 

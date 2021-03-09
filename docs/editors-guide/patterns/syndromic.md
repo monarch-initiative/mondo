@@ -28,3 +28,13 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {syndromic\([MONDO:0021127](http://purl.obolibrary.org/obo/MONDO_0021127)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                   | disease                                      | disease:label                 |
+|:---------------------------------------------|:--------------------------------------|:---------------------------------------------|:------------------------------|
+| MONDO:0015150 | complex hereditary spastic paraplegia | MONDO:0019064 | hereditary spastic paraplegia |
+| MONDO:0017263 | inherited ichthyosis syndromic form   | MONDO:0015947 | inherited ichthyosis          |
+| MONDO:0016463 | syndromic agammaglobulinemia          | MONDO:0015977 | agammaglobulinemia            |
+| MONDO:0020148 | syndromic aniridia                    | MONDO:0019172 | aniridia                      |
+| MONDO:0015246 | syndromic anorectal malformation      | MONDO:0019938 | anorectal malformation        |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/syndromic.tsv) 

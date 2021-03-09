@@ -23,3 +23,13 @@ A malignant form of {neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\
 
 {neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {malignant\([PATO:0002097](http://purl.obolibrary.org/obo/PATO_0002097)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label           | neoplasm                                     | neoplasm:label               |
+|:---------------------------------------------|:------------------------------|:---------------------------------------------|:-----------------------------|
+| MONDO:0004992 | cancer                        | MONDO:0005070 | neoplasm (disease)           |
+| MONDO:0003113 | extragonadal germ cell cancer | MONDO:0018201 | extragonadal germ cell tumor |
+| MONDO:0003252 | granular cell cancer          | MONDO:0006235 | granular cell tumor          |
+| MONDO:0000377 | malignant Leydig cell tumor   | MONDO:0006266 | Leydig cell tumor            |
+| MONDO:0000378 | malignant Sertoli cell tumor  | MONDO:0002696 | Sertoli cell tumor           |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/malignant.tsv) 

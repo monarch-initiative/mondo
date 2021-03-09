@@ -23,3 +23,13 @@ Acute form of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_000
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {acute\([PATO:0000389](http://purl.obolibrary.org/obo/PATO_0000389)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                       | disease                                      | disease:label                       |
+|:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:------------------------------------|
+| MONDO:0020686 | acute adenoiditis                         | MONDO:0000261 | adenoiditis                         |
+| MONDO:0001090 | acute anterolateral myocardial infarction | MONDO:0006652 | anterolateral myocardial infarction |
+| MONDO:0020680 | acute bronchiolitis                       | MONDO:0002465 | bronchiolitis (disease)             |
+| MONDO:0001081 | acute cervicitis                          | MONDO:0002345 | cervicitis (disease)                |
+| MONDO:0001930 | acute cholangitis                         | MONDO:0004789 | cholangitis                         |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acute.tsv) 

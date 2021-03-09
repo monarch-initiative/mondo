@@ -28,3 +28,13 @@ A hemangioma that involves the {location\([UBERON:0001062](http://purl.obolibrar
 
 {hemangioma\([MONDO:0006500](http://purl.obolibrary.org/obo/MONDO_0006500)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)\)})
 
+## Data preview: 
+| defined:class                                | defined:class:label               | v0                                            | v0:label               |
+|:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
+| MONDO:0003126 | breast hemangioma                 | UBERON:0000310 | breast                 |
+| MONDO:0003241 | central nervous system hemangioma | UBERON:0001017 | central nervous system |
+| MONDO:0003948 | cerebral hemangioma               | UBERON:0001893 | telencephalon          |
+| MONDO:0002414 | gastric hemangioma                | UBERON:0000945 | stomach                |
+| MONDO:0021542 | hemangioma of choroid             | UBERON:0001776 | optic choroid          |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv) 

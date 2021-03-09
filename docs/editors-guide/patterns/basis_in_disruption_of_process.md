@@ -25,3 +25,13 @@ A disease that has its basis in the disruption of {process\([BFO:0000015](http:/
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease has basis in disruption of\([RO:0004021](http://purl.obolibrary.org/obo/RO_0004021)\)} some {process\([BFO:0000015](http://purl.obolibrary.org/obo/BFO_0000015)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label     | process                                   | process:label                                         |
+|:---------------------------------------------|:------------------------|:------------------------------------------|:------------------------------------------------------|
+| MONDO:0012996 | AGAT deficiency         | GO:0015068 | glycine amidinotransferase activity                   |
+| MONDO:0021190 | DNA repair disease      | GO:0006281 | DNA repair                                            |
+| MONDO:0018274 | GM3 synthase deficiency | GO:0047291 | lactosylceramide alpha-2,3-sialyltransferase activity |
+| MONDO:0021060 | RASopathy               | GO:0007265 | Ras protein signal transduction                       |
+| MONDO:0005271 | allergic disease        | GO:0016068 | type I hypersensitivity                               |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/basis_in_disruption_of_process.tsv) 

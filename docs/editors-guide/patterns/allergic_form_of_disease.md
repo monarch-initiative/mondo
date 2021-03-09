@@ -26,3 +26,13 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} wit
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease has basis in disruption of\([RO:0004021](http://purl.obolibrary.org/obo/RO_0004021)\)} some {type I hypersensitivity\([GO:0016068](http://purl.obolibrary.org/obo/GO_0016068)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label          | disease                                      | disease:label              |
+|:---------------------------------------------|:-----------------------------|:---------------------------------------------|:---------------------------|
+| MONDO:0004784 | allergic asthma              | MONDO:0004979 | asthma                     |
+| MONDO:0006525 | allergic contact dermatitis  | MONDO:0005480 | contact dermatitis         |
+| MONDO:0005271 | allergic disease             | MONDO:0000001 | disease or disorder        |
+| MONDO:0021202 | allergic otitis media        | MONDO:0005441 | otitis media (disease)     |
+| MONDO:0000771 | allergic respiratory disease | MONDO:0005087 | respiratory system disease |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergic_form_of_disease.tsv) 

@@ -25,3 +25,13 @@ An instance of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_00
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {juvenile\([HP:0003621](http://purl.obolibrary.org/obo/HP_0003621)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                           | disease                                      | disease:label                   |
+|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:--------------------------------|
+| MONDO:0020655 | juvenile ankylosing spondylitis               | MONDO:0005306 | ankylosing spondylitis          |
+| MONDO:0003955 | juvenile breast papillomatosis                | MONDO:0002063 | breast papillomatosis           |
+| MONDO:0100076 | juvenile idiopathic scoliosis                 | MONDO:0000726 | idiopathic scoliosis            |
+| MONDO:0009066 | juvenile nephropathic cystinosis              | MONDO:0100151 | nephropathic cystinosis         |
+| MONDO:0003741 | juvenile type testicular granulosa cell tumor | MONDO:0003395 | testicular granulosa cell tumor |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv) 

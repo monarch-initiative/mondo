@@ -27,3 +27,13 @@ An acquired metabolic disease that is has its basis in the disruption of {proces
 
 {ieom\([MONDO:0019052](http://purl.obolibrary.org/obo/MONDO_0019052)\)} and {disease has basis in disruption of\([RO:0004021](http://purl.obolibrary.org/obo/RO_0004021)\)} some {process\([BFO:0000015](http://purl.obolibrary.org/obo/BFO_0000015)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                  | process                                   | process:label                                                                                                 |
+|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
+| MONDO:0009825 | 5-oxoprolinase deficiency (disease)  | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
+| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
+| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
+| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
+| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                                 |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv) 

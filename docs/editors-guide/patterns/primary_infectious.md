@@ -19,3 +19,10 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {primary infectious\([MONDO:0045036](http://purl.obolibrary.org/obo/MONDO_0045036)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                  | disease                                      | disease:label                |
+|:---------------------------------------------|:-------------------------------------|:---------------------------------------------|:-----------------------------|
+| MONDO:0000314 | primary bacterial infectious disease | MONDO:0005113 | bacterial infectious disease |
+| MONDO:0000308 | primary systemic mycosis             | MONDO:0000256 | systemic mycosis             |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/primary_infectious.tsv) 

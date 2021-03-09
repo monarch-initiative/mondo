@@ -32,3 +32,13 @@ A well differentiated, low grade tumor with neuroendocrine differentiation that 
 
 {neuroendocrine neoplasm\([MONDO:0019496](http://purl.obolibrary.org/obo/MONDO_0019496)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {grade 1\([MONDO:0024491](http://purl.obolibrary.org/obo/MONDO_0024491)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                     | location                                      | location:label     |
+|:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-------------------|
+| MONDO:0006091 | appendix neuroendocrine tumor G1        | UBERON:0001154 | vermiform appendix |
+| MONDO:0006093 | ascending colon neuroendocrine tumor G1 | UBERON:0001156 | ascending colon    |
+| MONDO:0006126 | cecum neuroendocrine tumor G1           | UBERON:0001153 | caecum             |
+| MONDO:0006155 | colon neuroendocrine tumor G1           | UBERON:0001155 | colon              |
+| MONDO:0006162 | colorectal neuroendocrine tumor G1      | UBERON:0012652 | colorectum         |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm_grade1.tsv) 

@@ -26,3 +26,13 @@ A allergic disease involving a {substance\([owl:Thing](http://www.w3.org/2002/07
 
 {allergic disease\([MONDO:0005271](http://purl.obolibrary.org/obo/MONDO_0005271)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {substance\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label     | substance                                      | substance:label   |
+|:---------------------------------------------|:------------------------|:-----------------------------------------------|:------------------|
+| MONDO:0000789 | Atlantic cod allergy    | NCBITaxon:8049  | Gadus morhua      |
+| MONDO:0000790 | Atlantic salmon allergy | NCBITaxon:8030  | Salmo salar       |
+| MONDO:0000802 | Indian prawn allergy    | NCBITaxon:29960 | Penaeus indicus   |
+| MONDO:0000773 | Timothy grass allergy   | NCBITaxon:15957 | Phleum pratense   |
+| MONDO:0000779 | apple allergy           | NCBITaxon:3750  | Malus domestica   |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergy.tsv) 

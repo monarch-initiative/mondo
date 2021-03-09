@@ -24,3 +24,13 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {stimulus\([BFO:0000040](http://purl.obolibrary.org/obo/BFO_0000040)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                     | disease                                      | disease:label      | stimulus                                      | stimulus:label       |
+|:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:-------------------|:----------------------------------------------|:---------------------|
+| MONDO:0021747 | Acanthamoeba infectious disease         | MONDO:0005550 | infectious disease | NCBITaxon:5754 | Acanthamoeba         |
+| MONDO:0006635 | Acinetobacter infectious disease        | MONDO:0005550 | infectious disease | NCBITaxon:469  | Acinetobacter        |
+| MONDO:0006636 | Actinobacillus infectious disease       | MONDO:0005550 | infectious disease | NCBITaxon:713  | Actinobacillus       |
+| MONDO:0006921 | Actinomycetales infectious disease      | MONDO:0005550 | infectious disease | NCBITaxon:2037 | Actinomycetales      |
+| MONDO:0005117 | Aeromonas hydrophila infectious disease | MONDO:0005550 | infectious disease | NCBITaxon:644  | Aeromonas hydrophila |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) 

@@ -25,3 +25,13 @@ A benign smooth muscle neoplasm arising from the {location\([UBERON:0001062](htt
 
 {leiomyoma\([MONDO:0001572](http://purl.obolibrary.org/obo/MONDO_0001572)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)\)})
 
+## Data preview: 
+| defined:class                                | defined:class:label              | v0                                            | v0:label               |
+|:---------------------------------------------|:---------------------------------|:----------------------------------------------|:-----------------------|
+| MONDO:0003292 | anus leiomyoma                   | UBERON:0001245 | anus                   |
+| MONDO:0003300 | appendix leiomyoma               | UBERON:0001154 | vermiform appendix     |
+| MONDO:0001634 | bladder leiomyoma                | UBERON:0001255 | urinary bladder        |
+| MONDO:0002057 | breast leiomyoma                 | UBERON:0000310 | breast                 |
+| MONDO:0003287 | central nervous system leiomyoma | UBERON:0001017 | central nervous system |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyoma.tsv) 

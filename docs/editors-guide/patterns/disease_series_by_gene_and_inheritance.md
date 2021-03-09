@@ -29,3 +29,13 @@ Any {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} i
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease has basis in dysfunction of\([RO:0004020](http://purl.obolibrary.org/obo/RO_0004020)\)} some {gene\([SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {mode_of_inheritance\([HP:0000005](http://purl.obolibrary.org/obo/HP_0000005)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                            | disease                                      | disease:label           | gene                              | gene:label   | mode:of:inheritance                       | mode:of:inheritance:label       |
+|:---------------------------------------------|:-----------------------------------------------|:---------------------------------------------|:------------------------|:----------------------------------|:-------------|:------------------------------------------|:--------------------------------|
+| MONDO:0007818 | Hyper-IgE recurrent infection syndrome 1       | MONDO:0018037 | hyper-IgE syndrome      | http://identifiers.org/hgnc/11364 | STAT3        | HP:0000006 | Autosomal dominant inheritance  |
+| MONDO:0100121 | SCN4A-related myopathy, autosomal recessive    | MONDO:0019952 | congenital myopathy     | http://identifiers.org/hgnc/10591 | SCN4A        | HP:0000007 | Autosomal recessive inheritance |
+| MONDO:0010338 | X-linked distal spinal muscular atrophy type 3 | MONDO:0001516 | spinal muscular atrophy | http://identifiers.org/hgnc/869   | ATP7A        | HP:0001417 | X-linked inheritance            |
+| MONDO:0020721 | X-linked sideroblastic anemia 1                | MONDO:0015194 | sideroblastic anemia    | http://identifiers.org/hgnc/397   | ALAS2        | HP:0001417 | X-linked inheritance            |
+| MONDO:0007092 | amelogenesis imperfecta type 1B                | MONDO:0019507 | amelogenesis imperfecta | http://identifiers.org/hgnc/3344  | ENAM         | HP:0000006 | Autosomal dominant inheritance  |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene_and_inheritance.tsv) 

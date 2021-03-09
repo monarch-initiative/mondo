@@ -25,3 +25,13 @@ A benign adipose tissue neoplasm of the {location\([owl:Thing](http://www.w3.org
 
 {lipoma\([MONDO:0005106](http://purl.obolibrary.org/obo/MONDO_0005106)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
+## Data preview: 
+| defined:class                                | defined:class:label           | v0                                            | v0:label               |
+|:---------------------------------------------|:------------------------------|:----------------------------------------------|:-----------------------|
+| MONDO:0000974 | axillary lipoma               | UBERON:0009472 | axilla                 |
+| MONDO:0000970 | breast lipoma                 | UBERON:0000310 | breast                 |
+| MONDO:0003844 | central nervous system lipoma | UBERON:0001017 | central nervous system |
+| MONDO:0003843 | cerebral hemisphere lipoma    | UBERON:0001869 | cerebral hemisphere    |
+| MONDO:0000971 | chest wall lipoma             | UBERON:0016435 | chest wall             |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv) 

@@ -27,3 +27,13 @@ An aggressive, high-grade and poorly differentiated carcinoma with neuroendocrin
 
 {small cell carcinoma\([MONDO:0000402](http://purl.obolibrary.org/obo/MONDO_0000402)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
+## Data preview: 
+| defined:class                                | defined:class:label                            | v0                                            | v0:label               |
+|:---------------------------------------------|:-----------------------------------------------|:----------------------------------------------|:-----------------------|
+| MONDO:0004120 | Bartholin gland small cell carcinoma           | UBERON:0000460 | major vestibular gland |
+| MONDO:0006142 | cervical small cell carcinoma                  | UBERON:0000002 | uterine cervix         |
+| MONDO:0003978 | colon small cell neuroendocrine carcinoma      | UBERON:0001155 | colon                  |
+| MONDO:0006197 | endometrial small cell carcinoma               | UBERON:0001295 | endometrium            |
+| MONDO:0004116 | esophageal small cell neuroendocrine carcinoma | UBERON:0001043 | esophagus              |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/small_cell_carcinoma.tsv) 

@@ -34,3 +34,13 @@ A neuroendocrine neoplasm involving a {location\([owl:Thing](http://www.w3.org/2
 
 {neuroendocrine neoplasm\([MONDO:0019496](http://purl.obolibrary.org/obo/MONDO_0019496)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label                | location                                      | location:label     |
+|:---------------------------------------------|:-----------------------------------|:----------------------------------------------|:-------------------|
+| MONDO:0003504 | anal canal neuroendocrine neoplasm | UBERON:0000159 | anal canal         |
+| MONDO:0024501 | appendix neuroendocrine neoplasm   | UBERON:0001154 | vermiform appendix |
+| MONDO:0002485 | breast neuroendocrine neoplasm     | UBERON:0000310 | breast             |
+| MONDO:0019963 | bronchial endocrine tumor          | UBERON:0002185 | bronchus           |
+| MONDO:0002882 | colon neuroendocrine neoplasm      | UBERON:0001155 | colon              |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm.tsv) 

@@ -28,3 +28,13 @@ An inherited susceptibility or predisposition to developing {disease\([MONDO:000
 
 ({inherited disease susceptibility\([MONDO:0020573](http://purl.obolibrary.org/obo/MONDO_0020573)\)} and ({predisposes towards\([http://purl.obolibrary.org/obo/mondo#predisposes_towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)\)} some {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}))
 
+## Data preview: 
+| defined:class                                | defined:class:label                           | disease                                      | disease:label                          |
+|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------------------|
+| MONDO:0100232 | 'psoriatic arthritis, susceptibility to       | MONDO:0011849 | psoriatic arthritis                    |
+| MONDO:0007845 | Kaposi sarcoma, susceptibility to             | MONDO:0005055 | Kaposi's sarcoma (disease)             |
+| MONDO:0000093 | Schistosoma mansoni infection, susceptibility | MONDO:0044345 | Schistosoma mansoni infectious disease |
+| MONDO:0013562 | aspergillosis, susceptibility to              | MONDO:0005657 | aspergillosis                          |
+| MONDO:0020836 | autism, susceptiblity to                      | MONDO:0005260 | autism (disease)                       |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv) 

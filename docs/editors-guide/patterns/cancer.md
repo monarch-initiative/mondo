@@ -32,3 +32,13 @@ A cancer involving a {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 
 {cancer\([MONDO:0004992](http://purl.obolibrary.org/obo/MONDO_0004992)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
+## Data preview: 
+| defined:class                                | defined:class:label        | location                                      | location:label           |
+|:---------------------------------------------|:---------------------------|:----------------------------------------------|:-------------------------|
+| MONDO:0000954 | Meckel diverticulum cancer | UBERON:0003705 | Meckel's diverticulum    |
+| MONDO:0004685 | Waldeyer's ring cancer     | UBERON:0001735 | tonsillar ring           |
+| MONDO:0002817 | adrenal gland cancer       | UBERON:0002369 | adrenal gland            |
+| MONDO:0003606 | adrenal medulla cancer     | UBERON:0001236 | adrenal medulla          |
+| MONDO:0000919 | ampulla of vater cancer    | UBERON:0004913 | hepatopancreatic ampulla |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/cancer.tsv) 
