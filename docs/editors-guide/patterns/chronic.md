@@ -1,11 +1,26 @@
 # chronic 
 ## URL 
+
 [http://purl.obolibrary.org/obo/mondo/patterns/chronic.yaml](http://purl.obolibrary.org/obo/mondo/patterns/chronic.yaml)
 ## Description 
+
 TBD.
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
-## Classes 
-* chronic: [PATO:0001863](http://purl.obolibrary.org/obo/PATO_0001863) 
-* owl_thing: owl:Thing 
-## _To be completed_
+## Name 
+
+chronic {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}
+
+## Annotations 
+
+* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+text: {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}, chronic
+
+## Definition 
+
+Chronic form of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}.
+
+## Equivalent to 
+
+{disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {chronic\([PATO:0001863](http://purl.obolibrary.org/obo/PATO_0001863)\)}
+
