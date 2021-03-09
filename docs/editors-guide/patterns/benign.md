@@ -25,7 +25,7 @@ A form of {neoplasm\([MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_000507
 
 {neoplasm\([MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_0005070)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {neoplastic, non-malignant\([PATO:0002096](http://purl.obolibrary.org/obo/PATO_0002096)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                   | neoplasm                                     | neoplasm:label                                              |
 |:---------------------------------------------|:--------------------------------------|:---------------------------------------------|:------------------------------------------------------------|
 | MONDO:0036990 | benign Leydig cell tumor              | MONDO:0006266 | Leydig cell tumor                                           |

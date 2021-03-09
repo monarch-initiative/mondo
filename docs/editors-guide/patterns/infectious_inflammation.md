@@ -26,7 +26,7 @@ An inflammatory disease involving a pathogenic inflammatory response in the {loc
 
 {infectious disease\([MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550)\)} and {disease has inflammation site\([RO:0004027](http://purl.obolibrary.org/obo/RO_0004027)\)} some {location\([UBERON:0000061](http://purl.obolibrary.org/obo/UBERON_0000061)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {agent\([NCBITaxon:1](http://purl.obolibrary.org/obo/NCBITaxon_1)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label              | agent                                         | agent:label   | location                                      | location:label   |
 |:---------------------------------------------|:---------------------------------|:----------------------------------------------|:--------------|:----------------------------------------------|:-----------------|
 | MONDO:0006668 | bacterial conjunctivitis         | NCBITaxon:2    | Bacteria      | UBERON:0001811 | conjunctiva      |

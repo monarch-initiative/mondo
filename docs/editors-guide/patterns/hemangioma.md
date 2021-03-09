@@ -28,7 +28,7 @@ A hemangioma that involves the {location\([UBERON:0001062](http://purl.obolibrar
 
 {hemangioma\([MONDO:0006500](http://purl.obolibrary.org/obo/MONDO_0006500)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label               | v0                                            | v0:label               |
 |:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003126 | breast hemangioma                 | UBERON:0000310 | breast                 |

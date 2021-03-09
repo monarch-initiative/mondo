@@ -24,7 +24,7 @@ A disease that has its basis in the disruption of {process\([owl:Thing](http://w
 
 {disease or disorder\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and ({disease caused by disruption of\([RO:0004021](http://purl.obolibrary.org/obo/RO_0004021)\)} some {process\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label     | v0                                        | v0:label                                              |
 |:---------------------------------------------|:------------------------|:------------------------------------------|:------------------------------------------------------|
 | MONDO:0012996 | AGAT deficiency         | GO:0015068 | glycine amidinotransferase activity                   |

@@ -34,7 +34,7 @@ A neuroendocrine neoplasm involving a {location\([owl:Thing](http://www.w3.org/2
 
 {neuroendocrine neoplasm\([MONDO:0019496](http://purl.obolibrary.org/obo/MONDO_0019496)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                | location                                      | location:label     |
 |:---------------------------------------------|:-----------------------------------|:----------------------------------------------|:-------------------|
 | MONDO:0003504 | anal canal neuroendocrine neoplasm | UBERON:0000159 | anal canal         |

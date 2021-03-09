@@ -18,7 +18,7 @@ An autoimmune form of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/M
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease arises from feature\([RO:0004022](http://purl.obolibrary.org/obo/RO_0004022)\)} some {autoimmunity\([HP:0002960](http://purl.obolibrary.org/obo/HP_0002960)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                        | disease                                      | disease:label                |
 |:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|
 | MONDO:0030702 | autoimmune atherosclerosis                 | MONDO:0005311 | atherosclerosis              |

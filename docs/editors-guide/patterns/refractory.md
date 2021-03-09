@@ -23,7 +23,7 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {refractory\([HP:0031375](http://purl.obolibrary.org/obo/HP_0031375)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                                    | disease                                      | disease:label                               |
 |:---------------------------------------------|:-------------------------------------------------------|:---------------------------------------------|:--------------------------------------------|
 | MONDO:0004110 | refractory hairy cell leukemia                         | MONDO:0018935 | hairy cell leukemia                         |

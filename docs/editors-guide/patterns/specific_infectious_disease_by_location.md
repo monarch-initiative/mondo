@@ -19,7 +19,7 @@ An {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} in
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease has inflammation site\([RO:0004027](http://purl.obolibrary.org/obo/RO_0004027)\)} some {location\([UBERON:0000061](http://purl.obolibrary.org/obo/UBERON_0000061)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label            | disease                                      | disease:label       | location                                      | location:label        |
 |:---------------------------------------------|:-------------------------------|:---------------------------------------------|:--------------------|:----------------------------------------------|:----------------------|
 | MONDO:0001594 | Achilles bursitis              | MONDO:0002471 | bursitis            | UBERON:0003701 | calcaneal tendon      |

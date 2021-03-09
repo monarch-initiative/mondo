@@ -18,7 +18,7 @@ A {parent\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} that
 
 {parent\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease arises from feature\([RO:0004022](http://purl.obolibrary.org/obo/RO_0004022)\)} some {cause\([MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                         | cause                                        | cause:label                   | parent                                       | parent:label              |
 |:---------------------------------------------|:--------------------------------------------|:---------------------------------------------|:------------------------------|:---------------------------------------------|:--------------------------|
 | MONDO:0005491 | Chagas cardiomyopathy                       | MONDO:0001444 | Chagas disease                | MONDO:0004994 | cardiomyopathy            |

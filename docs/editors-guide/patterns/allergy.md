@@ -26,7 +26,7 @@ A allergic disease involving a {substance\([owl:Thing](http://www.w3.org/2002/07
 
 {allergic disease\([MONDO:0005271](http://purl.obolibrary.org/obo/MONDO_0005271)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {substance\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label     | substance                                      | substance:label   |
 |:---------------------------------------------|:------------------------|:-----------------------------------------------|:------------------|
 | MONDO:0000789 | Atlantic cod allergy    | NCBITaxon:8049  | Gadus morhua      |

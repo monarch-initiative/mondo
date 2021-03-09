@@ -25,7 +25,7 @@ A lymphoma that involves the {location\([owl:Thing](http://www.w3.org/2002/07/ow
 
 {lymphoma\([MONDO:0005062](http://purl.obolibrary.org/obo/MONDO_0005062)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label   | v0                                            | v0:label                          |
 |:---------------------------------------------|:----------------------|:----------------------------------------------|:----------------------------------|
 | MONDO:0007650 | MALT lymphoma         | UBERON:0001961 | mucosa-associated lymphoid tissue |

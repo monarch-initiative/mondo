@@ -25,7 +25,7 @@ Any {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} t
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and ({disease disrupts\([RO:0004024](http://purl.obolibrary.org/obo/RO_0004024)\)} some {process\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label            | v0                                           | v0:label            | v1                                        | v1:label                              |
 |:---------------------------------------------|:-------------------------------|:---------------------------------------------|:--------------------|:------------------------------------------|:--------------------------------------|
 | MONDO:0005937 | REM sleep behavior disorder    | MONDO:0003406 | sleep-wake disorder | GO:0042747 | circadian sleep/wake cycle, REM sleep |

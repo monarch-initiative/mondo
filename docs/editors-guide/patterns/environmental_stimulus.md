@@ -24,7 +24,7 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {stimulus\([BFO:0000040](http://purl.obolibrary.org/obo/BFO_0000040)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                     | disease                                      | disease:label      | stimulus                                      | stimulus:label       |
 |:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:-------------------|:----------------------------------------------|:---------------------|
 | MONDO:0021747 | Acanthamoeba infectious disease         | MONDO:0005550 | infectious disease | NCBITaxon:5754 | Acanthamoeba         |

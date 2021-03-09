@@ -26,7 +26,7 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {childhood\([HP:0011463](http://purl.obolibrary.org/obo/HP_0011463)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                       | disease                                      | disease:label                          |
 |:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:---------------------------------------|
 | MONDO:0016241 | alternating hemiplegia of childhood       | MONDO:0016210 | alternating hemiplegia                 |

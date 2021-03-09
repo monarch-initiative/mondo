@@ -20,7 +20,7 @@ Any {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} t
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and ({realized in response to\([RO:0009501](http://purl.obolibrary.org/obo/RO_0009501)\)} some {exposure\([ExO:0000002](http://purl.obolibrary.org/obo/ExO_0000002)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                        | disease                                      | disease:label                | exposure                                    | exposure:label                    |
 |:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|:--------------------------------------------|:----------------------------------|
 | MONDO:0060781 | Preeyasombat-Varavithya syndrome           | MONDO:0001083 | Fanconi renotubular syndrome | ECTO:9000364 | tetracycline exposure             |

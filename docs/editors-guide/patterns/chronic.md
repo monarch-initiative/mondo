@@ -23,7 +23,7 @@ Chronic form of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {chronic\([PATO:0001863](http://purl.obolibrary.org/obo/PATO_0001863)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                           | disease                                      | disease:label                  |
 |:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:-------------------------------|
 | MONDO:0016169 | chronic acquired demyelinating polyneuropathy | MONDO:0015923 | acquired peripheral neuropathy |

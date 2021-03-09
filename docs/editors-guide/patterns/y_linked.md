@@ -23,7 +23,7 @@ Y-linked form of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {y_linked_inheritance\([HP:0001450](http://purl.obolibrary.org/obo/HP_0001450)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label             | disease                                      | disease:label                 |
 |:---------------------------------------------|:--------------------------------|:---------------------------------------------|:------------------------------|
 | MONDO:0000428 | Y-linked disease                | MONDO:0000001 | disease or disorder           |

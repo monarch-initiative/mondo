@@ -24,7 +24,7 @@ A meningioma that affects the {location\([UBERON:0001062](http://purl.obolibrary
 
 {meningioma\([MONDO:0016642](http://purl.obolibrary.org/obo/MONDO_0016642)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label               | v0                                            | v0:label               |
 |:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0002997 | anterior cranial fossa meningioma | UBERON:0003720 | anterior cranial fossa |

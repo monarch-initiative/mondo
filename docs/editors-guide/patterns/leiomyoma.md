@@ -25,7 +25,7 @@ A benign smooth muscle neoplasm arising from the {location\([UBERON:0001062](htt
 
 {leiomyoma\([MONDO:0001572](http://purl.obolibrary.org/obo/MONDO_0001572)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label              | v0                                            | v0:label               |
 |:---------------------------------------------|:---------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003292 | anus leiomyoma                   | UBERON:0001245 | anus                   |

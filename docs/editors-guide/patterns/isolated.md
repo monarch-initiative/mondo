@@ -25,7 +25,7 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} tha
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {isolated\([MONDO:0021128](http://purl.obolibrary.org/obo/MONDO_0021128)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                                          | disease                                      | disease:label                                   |
 |:---------------------------------------------|:-------------------------------------------------------------|:---------------------------------------------|:------------------------------------------------|
 | MONDO:0016342 | familial isolated arrhythmogenic right ventricular dysplasia | MONDO:0016587 | arrhythmogenic right ventricular cardiomyopathy |

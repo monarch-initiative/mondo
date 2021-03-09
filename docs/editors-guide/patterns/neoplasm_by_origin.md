@@ -26,7 +26,7 @@ A neoplasm involving a {structure\([owl:Thing](http://www.w3.org/2002/07/owl#Thi
 
 {neoplasm\([MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_0005070)\)} and {disease arises from structure\([RO:0004022](http://purl.obolibrary.org/obo/RO_0004022)\)} some {structure\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label               | structure                                    | structure:label               |
 |:---------------------------------------------|:----------------------------------|:---------------------------------------------|:------------------------------|
 | MONDO:0015157 | human herpesvirus 8-related tumor | MONDO:0005187 | human herpesvirus 8 infection |

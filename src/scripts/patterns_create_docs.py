@@ -109,7 +109,7 @@ for pattern_file in pattern_files:
                     example = ghurl
                     dfh = df.head()
                     sample_table = dfh.to_markdown(index=False)
-                    fout.write("## Data preview: \n")
+                    fout.write("## Data preview \n")
                     oboiri="http://purl.obolibrary.org/obo/"
                     fout.write(sample_table.replace(oboiri,"").replace("_",":"))
                     fout.write("\n\n")

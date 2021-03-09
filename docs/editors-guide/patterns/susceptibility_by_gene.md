@@ -26,7 +26,7 @@ A susceptibility or predisposition to {disease\([MONDO:0000001](http://purl.obol
 
 ({inherited disease susceptibility\([MONDO:0020573](http://purl.obolibrary.org/obo/MONDO_0020573)\)} and ({disease has basis in dysfunction of\([RO:0004020](http://purl.obolibrary.org/obo/RO_0004020)\)} some {gene\([SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)\)}) and ({predisposes towards\([http://purl.obolibrary.org/obo/mondo#predisposes_towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)\)} some {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}))
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                               | disease                                      | disease:label                                    | gene                              | gene:label   |
 |:---------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:-------------------------------------------------|:----------------------------------|:-------------|
 | MONDO:0012153 | Alzheimer disease 9                               | MONDO:0015140 | early-onset autosomal dominant Alzheimer disease | http://identifiers.org/hgnc/37    | ABCA7        |

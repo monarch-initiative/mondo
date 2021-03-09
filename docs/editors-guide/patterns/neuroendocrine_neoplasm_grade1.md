@@ -32,7 +32,7 @@ A well differentiated, low grade tumor with neuroendocrine differentiation that 
 
 {neuroendocrine neoplasm\([MONDO:0019496](http://purl.obolibrary.org/obo/MONDO_0019496)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {grade 1\([MONDO:0024491](http://purl.obolibrary.org/obo/MONDO_0024491)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                     | location                                      | location:label     |
 |:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-------------------|
 | MONDO:0006091 | appendix neuroendocrine tumor G1        | UBERON:0001154 | vermiform appendix |

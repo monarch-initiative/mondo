@@ -32,7 +32,7 @@ A cancer involving a {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)
 
 {cancer\([MONDO:0004992](http://purl.obolibrary.org/obo/MONDO_0004992)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label        | location                                      | location:label           |
 |:---------------------------------------------|:---------------------------|:----------------------------------------------|:-------------------------|
 | MONDO:0000954 | Meckel diverticulum cancer | UBERON:0003705 | Meckel's diverticulum    |

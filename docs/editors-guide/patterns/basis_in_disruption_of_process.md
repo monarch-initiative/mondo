@@ -25,7 +25,7 @@ A disease that has its basis in the disruption of {process\([BFO:0000015](http:/
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease has basis in disruption of\([RO:0004021](http://purl.obolibrary.org/obo/RO_0004021)\)} some {process\([BFO:0000015](http://purl.obolibrary.org/obo/BFO_0000015)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label     | process                                   | process:label                                         |
 |:---------------------------------------------|:------------------------|:------------------------------------------|:------------------------------------------------------|
 | MONDO:0012996 | AGAT deficiency         | GO:0015068 | glycine amidinotransferase activity                   |

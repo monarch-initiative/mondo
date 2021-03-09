@@ -23,7 +23,7 @@ An instance of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_00
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {acquired\([MONDO:0021141](http://purl.obolibrary.org/obo/MONDO_0021141)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                | disease                                      | disease:label                |
 |:---------------------------------------------|:-----------------------------------|:---------------------------------------------|:-----------------------------|
 | MONDO:0018686 | acquired Creutzfeldt-Jakob disease | MONDO:0005357 | Creutzfeldt Jacob disease    |

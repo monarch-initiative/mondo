@@ -23,7 +23,7 @@ A malignant form of {neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\
 
 {neoplasm\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {malignant\([PATO:0002097](http://purl.obolibrary.org/obo/PATO_0002097)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label           | neoplasm                                     | neoplasm:label               |
 |:---------------------------------------------|:------------------------------|:---------------------------------------------|:-----------------------------|
 | MONDO:0004992 | cancer                        | MONDO:0005070 | neoplasm (disease)           |

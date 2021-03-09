@@ -27,7 +27,7 @@ A adenoma that involves the {location\([owl:Thing](http://www.w3.org/2002/07/owl
 
 {adenoma\([MONDO:0004972](http://purl.obolibrary.org/obo/MONDO_0004972)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label        | v0                                            | v0:label               |
 |:---------------------------------------------|:---------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003419 | Bartholin gland adenoma    | UBERON:0000460 | major vestibular gland |

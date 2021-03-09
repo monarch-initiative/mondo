@@ -28,7 +28,7 @@ An inherited susceptibility or predisposition to developing {disease\([MONDO:000
 
 ({inherited disease susceptibility\([MONDO:0020573](http://purl.obolibrary.org/obo/MONDO_0020573)\)} and ({predisposes towards\([http://purl.obolibrary.org/obo/mondo#predisposes_towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)\)} some {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)}))
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                           | disease                                      | disease:label                          |
 |:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------------------|
 | MONDO:0100232 | 'psoriatic arthritis, susceptibility to       | MONDO:0011849 | psoriatic arthritis                    |

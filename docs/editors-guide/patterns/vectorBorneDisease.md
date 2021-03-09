@@ -18,7 +18,7 @@ An infectious disease where a pathogen is carried and transmitted by another org
 
 ({infectious_disease\([MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550)\)} and ({transmitted by\([RO:0002451](http://purl.obolibrary.org/obo/RO_0002451)\)} some {vector\([OBI:0100026](http://purl.obolibrary.org/obo/OBI_0100026)\)}))
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label               | infectious:disease                           | infectious:disease:label     | vector                                          | vector:label         |
 |:---------------------------------------------|:----------------------------------|:---------------------------------------------|:-----------------------------|:------------------------------------------------|:---------------------|
 | MONDO:0020731 | arbovirus infection               | MONDO:0005108 | viral infectious disease     | NCBITaxon:6943   | Amblyomma americanum |

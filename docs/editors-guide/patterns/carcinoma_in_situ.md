@@ -29,7 +29,7 @@ A carcinoma in situ involving a {location\([owl:Thing](http://www.w3.org/2002/07
 
 {carcinoma in situ\([MONDO:0004647](http://purl.obolibrary.org/obo/MONDO_0004647)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label          | location                                      | location:label   |
 |:---------------------------------------------|:-----------------------------|:----------------------------------------------|:-----------------|
 | MONDO:0004707 | anal canal carcinoma in situ | UBERON:0000159 | anal canal       |

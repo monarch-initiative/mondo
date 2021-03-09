@@ -24,7 +24,7 @@ Any carcinoma that that involves the {location\([UBERON:0010000](http://purl.obo
 
 {adenosquamous carcinoma\([MONDO:0006074](http://purl.obolibrary.org/obo/MONDO_0006074)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([UBERON:0010000](http://purl.obolibrary.org/obo/UBERON_0010000)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                     | v0                                            | v0:label               |
 |:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003555 | Bartholin gland adenosquamous carcinoma | UBERON:0000460 | major vestibular gland |

@@ -33,7 +33,7 @@ A neoplasm involving a {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thin
 
 {neoplasm\([MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_0005070)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label          | location                                      | location:label         |
 |:---------------------------------------------|:-----------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0021114 | Bartholin gland neoplasm     | UBERON:0000460 | major vestibular gland |

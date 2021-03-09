@@ -18,7 +18,7 @@ An autoimmune inflammatory disease involving a pathogenic inflammatory response 
 
 {autoimmune disease\([MONDO:0007179](http://purl.obolibrary.org/obo/MONDO_0007179)\)} and {disease has inflammation site\([RO:0004027](http://purl.obolibrary.org/obo/RO_0004027)\)} some {location\([UBERON:0000061](http://purl.obolibrary.org/obo/UBERON_0000061)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label        | location                                      | location:label   |
 |:---------------------------------------------|:---------------------------|:----------------------------------------------|:-----------------|
 | MONDO:0005623 | autoimmune thyroid disease | UBERON:0002046 | thyroid gland    |

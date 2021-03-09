@@ -26,7 +26,7 @@ A carcinoma involving a {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thi
 
 {carcinoma\([MONDO:0004993](http://purl.obolibrary.org/obo/MONDO_0004993)\)} and {disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label       | location                                      | location:label      |
 |:---------------------------------------------|:--------------------------|:----------------------------------------------|:--------------------|
 | MONDO:0003975 | Littre gland carcinoma    | UBERON:0010186 | male urethral gland |

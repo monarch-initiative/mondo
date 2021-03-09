@@ -23,7 +23,7 @@ Autosomal dominant form of {disease\([MONDO:0000001](http://purl.obolibrary.org/
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {autosomal dominant inheritance\([HP:0000006](http://purl.obolibrary.org/obo/HP_0000006)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                                      | disease                                      | disease:label                         |
 |:---------------------------------------------|:---------------------------------------------------------|:---------------------------------------------|:--------------------------------------|
 | MONDO:0007086 | autosomal dominant Alport syndrome                       | MONDO:0018965 | Alport syndrome                       |

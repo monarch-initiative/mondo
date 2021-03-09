@@ -23,7 +23,7 @@ Acute form of {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_000
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {acute\([PATO:0000389](http://purl.obolibrary.org/obo/PATO_0000389)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                       | disease                                      | disease:label                       |
 |:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:------------------------------------|
 | MONDO:0020686 | acute adenoiditis                         | MONDO:0000261 | adenoiditis                         |

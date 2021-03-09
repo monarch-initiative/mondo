@@ -23,7 +23,7 @@ Autosomal recessive form of {disease\([MONDO:0000001](http://purl.obolibrary.org
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {has modifier\([RO:0002573](http://purl.obolibrary.org/obo/RO_0002573)\)} some {autosomal recessive inheritance\([HP:0000007](http://purl.obolibrary.org/obo/HP_0000007)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                                       | disease                                      | disease:label                         |
 |:---------------------------------------------|:----------------------------------------------------------|:---------------------------------------------|:--------------------------------------|
 | MONDO:0011551 | TH-deficient dopa-responsive dystonia                     | MONDO:0016812 | dopa-responsive dystonia              |

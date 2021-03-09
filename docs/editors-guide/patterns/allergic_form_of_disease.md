@@ -26,7 +26,7 @@ A {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} wit
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {disease has basis in disruption of\([RO:0004021](http://purl.obolibrary.org/obo/RO_0004021)\)} some {type I hypersensitivity\([GO:0016068](http://purl.obolibrary.org/obo/GO_0016068)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label          | disease                                      | disease:label              |
 |:---------------------------------------------|:-----------------------------|:---------------------------------------------|:---------------------------|
 | MONDO:0004784 | allergic asthma              | MONDO:0004979 | asthma                     |

@@ -27,7 +27,7 @@ A carcinoma that arises from glandular epithelial cells of the {location\([owl:T
 
 {adenocarcinoma\([MONDO:0004970](http://purl.obolibrary.org/obo/MONDO_0004970)\)} and ({disease has location\([RO:0004026](http://purl.obolibrary.org/obo/RO_0004026)\)} some {location\([owl:Thing](http://www.w3.org/2002/07/owl#Thing)\)})
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                  | v0                                            | v0:label               |
 |:---------------------------------------------|:-------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003853 | Bartholin gland adenocarcinoma       | UBERON:0000460 | major vestibular gland |

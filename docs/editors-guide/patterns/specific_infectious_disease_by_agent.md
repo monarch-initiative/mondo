@@ -24,7 +24,7 @@ An {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} ca
 
 {disease\([MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)\)} and {realized in response to stimulus\([RO:0004028](http://purl.obolibrary.org/obo/RO_0004028)\)} some {agent\([NCBITaxon:1](http://purl.obolibrary.org/obo/NCBITaxon_1)\)}
 
-## Data preview: 
+## Data preview 
 | defined:class                                | defined:class:label                     | agent                                         | agent:label          | disease                                      | disease:label      |
 |:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:---------------------|:---------------------------------------------|:-------------------|
 | MONDO:0021747 | Acanthamoeba infectious disease         | NCBITaxon:5754 | Acanthamoeba         | MONDO:0005550 | infectious disease |
