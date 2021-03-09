@@ -19,6 +19,9 @@ classes:
 relations:
   has modifier: RO:0002573
 
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
 vars:
   disease: '''disease'''
 
@@ -28,7 +31,7 @@ name:
   - disease
 
 annotations:
-- annotationProperty: oio:hasExactSynonym
+- annotationProperty: exact_synonym
   text: hereditary %s
   vars:
   - disease
