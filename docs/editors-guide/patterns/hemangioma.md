@@ -15,10 +15,10 @@ hemangioma of {[location](http://purl.obolibrary.org/obo/UBERON_0001062)}
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://purl.obolibrary.org/obo/UBERON_0001062)} hemangioma
 
-* annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
+* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
 text: angioma of {[location](http://purl.obolibrary.org/obo/UBERON_0001062)}
 
 ## Definition 

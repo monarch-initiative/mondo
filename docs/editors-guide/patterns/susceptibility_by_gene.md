@@ -15,7 +15,7 @@ This pattern should be used for terms in which a gene dysfunction causes a predi
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} susceptibility caused by {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
 
 ## Definition 

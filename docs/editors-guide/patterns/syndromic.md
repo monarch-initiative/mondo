@@ -15,10 +15,10 @@ syndromic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: syndromic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
-* annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
+* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
 text: syndrome associated with {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 

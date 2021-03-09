@@ -15,7 +15,7 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://www.w3.org/2002/07/owl#Thing)} lipoma
 
 ## Definition 

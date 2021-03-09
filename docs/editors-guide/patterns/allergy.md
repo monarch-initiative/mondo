@@ -17,7 +17,7 @@ Examples: [egg allergy](http://purl.obolibrary.org/obo/MONDO_0005741), [peach al
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: allergy of {[substance](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 

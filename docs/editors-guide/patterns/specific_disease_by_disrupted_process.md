@@ -15,7 +15,7 @@ Examples: [disease of catalytic activity](http://purl.obolibrary.org/obo/MONDO_0
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[process](http://www.w3.org/2002/07/owl#Thing)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 

@@ -16,10 +16,10 @@ Examples: [Growth hormone insensitivity syndrome with immune dysregulation](http
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[gene](http://purl.obolibrary.org/obo/SO_0000704)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, {[mode_of_inheritance](http://purl.obolibrary.org/obo/HP_0000005)}
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[gene](http://purl.obolibrary.org/obo/SO_0000704)} related {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, {[mode_of_inheritance](http://purl.obolibrary.org/obo/HP_0000005)}
 
 ## Definition 

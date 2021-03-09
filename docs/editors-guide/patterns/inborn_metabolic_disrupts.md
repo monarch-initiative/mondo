@@ -15,10 +15,10 @@ inborn disorder of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: inborn error of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
-* annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
+* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
 text: rare inborn error of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 

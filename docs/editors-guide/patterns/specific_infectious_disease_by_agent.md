@@ -14,7 +14,7 @@ as for inflammatory_disease_by_site, but refining a specific disease
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)} caused {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 

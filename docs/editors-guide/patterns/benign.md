@@ -16,7 +16,7 @@ benign {[neoplasm](http://purl.obolibrary.org/obo/MONDO_0005070)}
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[neoplasm](http://purl.obolibrary.org/obo/MONDO_0005070)}, benign
 
 ## Definition 

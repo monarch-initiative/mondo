@@ -15,7 +15,7 @@ Examples: ['abdominal cystic lymphangioma'](http://purl.obolibrary.org/obo/MONDO
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {location\([UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062) or [CL:0000000](http://purl.obolibrary.org/obo/CL_0000000)\)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 

@@ -14,7 +14,7 @@ Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: adenosquamous {[location](http://purl.obolibrary.org/obo/UBERON_0010000)} carcinoma
 
 ## Definition 

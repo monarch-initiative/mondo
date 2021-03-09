@@ -14,7 +14,7 @@ Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MON
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: disorder of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 

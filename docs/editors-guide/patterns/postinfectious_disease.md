@@ -14,10 +14,10 @@ postinfectious {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)} arising f
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: post-{[feature](http://purl.obolibrary.org/obo/MONDO_0005550)} {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)}
 
-* annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
+* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
 text: {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)} secondary to {[feature](http://purl.obolibrary.org/obo/MONDO_0005550)}
 
 ## Definition 

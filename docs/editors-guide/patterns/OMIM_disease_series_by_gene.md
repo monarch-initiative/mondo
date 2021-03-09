@@ -15,7 +15,7 @@ This pattern is meant to be used for OMIM diseases, including children of OMIM p
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[gene](http://purl.obolibrary.org/obo/SO_0000704)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 

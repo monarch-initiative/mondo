@@ -14,10 +14,10 @@ Examples: [cervical small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://www.w3.org/2002/07/owl#Thing)} small cell carcinoma
 
-* annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
+* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
 text: small cell cancer of the {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 

@@ -18,6 +18,8 @@ def curie_to_uri(curie):
     prefix, identifier = curie.split(":")
     if prefix == 'owl':
         return f"http://www.w3.org/2002/07/owl#{identifier}"
+    elif prefix == 'oio':
+        return f"http://www.geneontology.org/formats/oboInOwl#{identifier}"
     else:
         return f"http://purl.obolibrary.org/obo/{prefix}_{identifier}"
 
@@ -33,7 +35,7 @@ def is_curie(s):
 def render_var(var, mapping):
     var_str = mapping[var]
     if is_curie(var_str):
-        return  f"{var}\({curie_to_link(var_str)}\)"
+        return f"[{var}]({curie_to_uri(var_str)})"
     # check format ''class''
     p = re.compile(r"'([^']*)'")
     if p.match(var_str) and len(re.findall(r"'([^']*)'", var_str)) > 1:

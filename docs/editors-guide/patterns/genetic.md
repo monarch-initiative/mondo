@@ -13,7 +13,7 @@ genetic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: genetic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 

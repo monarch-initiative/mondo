@@ -14,7 +14,7 @@ as for inflammatory_disease_by_site, but refining a specific disease
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}itis
 
 ## Definition 

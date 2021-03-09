@@ -12,16 +12,16 @@ we follow NCIT in making carcinoid a syn for G1 NET
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: grade 1 neuroendocrine neoplasm of {[location](http://www.w3.org/2002/07/owl#Thing)}
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://www.w3.org/2002/07/owl#Thing)} neuroendocrine tumor, well differentiated, low grade
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://www.w3.org/2002/07/owl#Thing)} NET G1
 
-* annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
+* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
 text: {[location](http://www.w3.org/2002/07/owl#Thing)} carcinoid tumor
 
 ## Definition 

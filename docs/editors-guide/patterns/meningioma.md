@@ -14,7 +14,7 @@ Examples: [skin meningioma](http://purl.obolibrary.org/obo/MONDO_0004429), [brai
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://purl.obolibrary.org/obo/UBERON_0001062)} meningioma
 
 ## Definition 

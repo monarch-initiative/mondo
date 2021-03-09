@@ -15,10 +15,10 @@ Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](ht
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: infection due to {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)}
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)} infection
 
 ## Definition 

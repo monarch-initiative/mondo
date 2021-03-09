@@ -14,7 +14,7 @@ Diseases classified by a perturbation in an anatomical structure (such as a subc
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: disease of {[structure](http://purl.obolibrary.org/obo/UBERON_0000061)}
 
 ## Definition 

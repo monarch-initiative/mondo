@@ -16,7 +16,7 @@ For example: DNA repair or RAS signaling
 
 ## Annotations 
 
-* annotation: related_synonym\([oio:hasRelatedSynonym](http://purl.obolibrary.org/obo/oio_hasRelatedSynonym)\)  
+* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
 text: disorder of {[process](http://purl.obolibrary.org/obo/BFO_0000015)}
 
 ## Definition 

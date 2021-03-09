@@ -13,10 +13,10 @@ This pattern is for diseases that are caused by a single mutation in a single ge
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[gene](http://purl.obolibrary.org/obo/SO_0001217)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[gene](http://purl.obolibrary.org/obo/SO_0001217)} related {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 

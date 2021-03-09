@@ -14,7 +14,7 @@ Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MO
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://www.w3.org/2002/07/owl#Thing)} leiomyosarcoma
 
 ## Definition 

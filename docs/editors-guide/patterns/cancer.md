@@ -18,13 +18,13 @@ We use the generic 'disease has location' relation, which generalized over prima
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: malignant {[location](http://www.w3.org/2002/07/owl#Thing)} neoplasm
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: malignant neoplasm of {[location](http://www.w3.org/2002/07/owl#Thing)}
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: cancer of {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 

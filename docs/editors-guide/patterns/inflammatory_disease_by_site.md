@@ -19,10 +19,10 @@ inflammation of {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}itis
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[location](http://purl.obolibrary.org/obo/UBERON_0000061)} inflammation
 
 ## Definition 

@@ -13,7 +13,7 @@ A disease that is caused by exposure to an environmental stimulus, like the sun 
 
 ## Annotations 
 
-* annotation: exact_synonym\([oio:hasExactSynonym](http://purl.obolibrary.org/obo/oio_hasExactSynonym)\)  
+* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
 text: {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
