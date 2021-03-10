@@ -136,8 +136,10 @@ with index_md_path.open("w") as fout:
     fout.write(f"\n")
     fout.write("| Pattern | Description | \n")
     fout.write("|:---|:---|\n")
-    for pattern_file_name, pattern in pattern_lst:        
-        fout.write(f"| [{pattern['pattern_name']}]({pattern_file_name}/) | " + pattern['description'].replace("\n", "<br/>") + " |  \n")
+    for pattern_file_name, pattern in pattern_lst:
+        description = pattern['description'].replace("\n", "<br/>")
+        description = re.sub(r"(http://purl[^\s]*\.[yaml|sparql]+)", lambda m: f"[{m.group(1).split('/')[-1]}]({m.group(1)})", description)     
+        fout.write(f"| [{pattern['pattern_name']}]({pattern_file_name}/) | {description} | \n")
 
 
 
