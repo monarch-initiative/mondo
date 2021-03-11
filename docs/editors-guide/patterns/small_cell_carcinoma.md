@@ -29,7 +29,13 @@ An aggressive, high-grade and poorly differentiated carcinoma with neuroendocrin
 {[small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0000402)} and ({[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined:class                                | defined:class:label                            | v0                                            | v0:label               |
+| defined_class                                | defined_class_label                            | v0                                            | v0_label               |
+|:---------------------------------------------|:-----------------------------------------------|:----------------------------------------------|:-----------------------|
+| [MONDO:0004120](http://purl.obolibrary.org/obo/MONDO_0004120) | Bartholin gland small cell carcinoma           | [UBERON:0000460](http://purl.obolibrary.org/obo/UBERON_0000460) | major vestibular gland |
+| [MONDO:0006142](http://purl.obolibrary.org/obo/MONDO_0006142) | cervical small cell carcinoma                  | [UBERON:0000002](http://purl.obolibrary.org/obo/UBERON_0000002) | uterine cervix         |
+| [MONDO:0003978](http://purl.obolibrary.org/obo/MONDO_0003978) | colon small cell neuroendocrine carcinoma      | [UBERON:0001155](http://purl.obolibrary.org/obo/UBERON_0001155) | colon                  |
+| [MONDO:0006197](http://purl.obolibrary.org/obo/MONDO_0006197) | endometrial small cell carcinoma               | [UBERON:0001295](http://purl.obolibrary.org/obo/UBERON_0001295) | endometrium            |
+| [MONDO:0004116](http://purl.obolibrary.org/obo/MONDO_0004116) | esophageal small cell neuroendocrine carcinoma | [UBERON:0001043](http://purl.obolibrary.org/obo/UBERON_0001043) | esophagus              || defined:class                                | defined:class:label                            | v0                                            | v0:label               |
 |:---------------------------------------------|:-----------------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0004120 | Bartholin gland small cell carcinoma           | UBERON:0000460 | major vestibular gland |
 | MONDO:0006142 | cervical small cell carcinoma                  | UBERON:0000002 | uterine cervix         |

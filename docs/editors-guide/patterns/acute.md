@@ -24,7 +24,13 @@ Acute form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[acute](http://purl.obolibrary.org/obo/PATO_0000389)}
 
 ## Data preview 
-| defined:class                                | defined:class:label                       | disease                                      | disease:label                       |
+| defined_class                                | defined_class_label                       | disease                                      | disease_label                       |
+|:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:------------------------------------|
+| [MONDO:0020686](http://purl.obolibrary.org/obo/MONDO_0020686) | acute adenoiditis                         | [MONDO:0000261](http://purl.obolibrary.org/obo/MONDO_0000261) | adenoiditis                         |
+| [MONDO:0001090](http://purl.obolibrary.org/obo/MONDO_0001090) | acute anterolateral myocardial infarction | [MONDO:0006652](http://purl.obolibrary.org/obo/MONDO_0006652) | anterolateral myocardial infarction |
+| [MONDO:0020680](http://purl.obolibrary.org/obo/MONDO_0020680) | acute bronchiolitis                       | [MONDO:0002465](http://purl.obolibrary.org/obo/MONDO_0002465) | bronchiolitis (disease)             |
+| [MONDO:0001081](http://purl.obolibrary.org/obo/MONDO_0001081) | acute cervicitis                          | [MONDO:0002345](http://purl.obolibrary.org/obo/MONDO_0002345) | cervicitis (disease)                |
+| [MONDO:0001930](http://purl.obolibrary.org/obo/MONDO_0001930) | acute cholangitis                         | [MONDO:0004789](http://purl.obolibrary.org/obo/MONDO_0004789) | cholangitis                         || defined:class                                | defined:class:label                       | disease                                      | disease:label                       |
 |:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:------------------------------------|
 | MONDO:0020686 | acute adenoiditis                         | MONDO:0000261 | adenoiditis                         |
 | MONDO:0001090 | acute anterolateral myocardial infarction | MONDO:0006652 | anterolateral myocardial infarction |

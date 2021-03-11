@@ -30,7 +30,13 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is part of a la
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[syndromic](http://purl.obolibrary.org/obo/MONDO_0021127)}
 
 ## Data preview 
-| defined:class                                | defined:class:label                   | disease                                      | disease:label                 |
+| defined_class                                | defined_class_label                   | disease                                      | disease_label                 |
+|:---------------------------------------------|:--------------------------------------|:---------------------------------------------|:------------------------------|
+| [MONDO:0015150](http://purl.obolibrary.org/obo/MONDO_0015150) | complex hereditary spastic paraplegia | [MONDO:0019064](http://purl.obolibrary.org/obo/MONDO_0019064) | hereditary spastic paraplegia |
+| [MONDO:0017263](http://purl.obolibrary.org/obo/MONDO_0017263) | inherited ichthyosis syndromic form   | [MONDO:0015947](http://purl.obolibrary.org/obo/MONDO_0015947) | inherited ichthyosis          |
+| [MONDO:0016463](http://purl.obolibrary.org/obo/MONDO_0016463) | syndromic agammaglobulinemia          | [MONDO:0015977](http://purl.obolibrary.org/obo/MONDO_0015977) | agammaglobulinemia            |
+| [MONDO:0020148](http://purl.obolibrary.org/obo/MONDO_0020148) | syndromic aniridia                    | [MONDO:0019172](http://purl.obolibrary.org/obo/MONDO_0019172) | aniridia                      |
+| [MONDO:0015246](http://purl.obolibrary.org/obo/MONDO_0015246) | syndromic anorectal malformation      | [MONDO:0019938](http://purl.obolibrary.org/obo/MONDO_0019938) | anorectal malformation        || defined:class                                | defined:class:label                   | disease                                      | disease:label                 |
 |:---------------------------------------------|:--------------------------------------|:---------------------------------------------|:------------------------------|
 | MONDO:0015150 | complex hereditary spastic paraplegia | MONDO:0019064 | hereditary spastic paraplegia |
 | MONDO:0017263 | inherited ichthyosis syndromic form   | MONDO:0015947 | inherited ichthyosis          |

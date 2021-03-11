@@ -19,7 +19,13 @@ An autoimmune form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[disease arises from feature](http://purl.obolibrary.org/obo/RO_0004022)} some {[autoimmunity](http://purl.obolibrary.org/obo/HP_0002960)}
 
 ## Data preview 
-| defined:class                                | defined:class:label                        | disease                                      | disease:label                |
+| defined_class                                | defined_class_label                        | disease                                      | disease_label                |
+|:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|
+| [MONDO:0030702](http://purl.obolibrary.org/obo/MONDO_0030702) | autoimmune atherosclerosis                 | [MONDO:0005311](http://purl.obolibrary.org/obo/MONDO_0005311) | atherosclerosis              |
+| [MONDO:0030701](http://purl.obolibrary.org/obo/MONDO_0030701) | autoimmune cardiomyopathy                  | [MONDO:0004994](http://purl.obolibrary.org/obo/MONDO_0004994) | cardiomyopathy               |
+| [MONDO:0007179](http://purl.obolibrary.org/obo/MONDO_0007179) | autoimmune disease                         | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder          |
+| [MONDO:0000587](http://purl.obolibrary.org/obo/MONDO_0000587) | autoimmune disease of ear, nose and throat | [MONDO:0024623](http://purl.obolibrary.org/obo/MONDO_0024623) | otorhinolaryngologic disease |
+| [MONDO:0020640](http://purl.obolibrary.org/obo/MONDO_0020640) | autoimmune encephalitis                    | [MONDO:0019956](http://purl.obolibrary.org/obo/MONDO_0019956) | encephalitis                 || defined:class                                | defined:class:label                        | disease                                      | disease:label                |
 |:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|
 | MONDO:0030702 | autoimmune atherosclerosis                 | MONDO:0005311 | atherosclerosis              |
 | MONDO:0030701 | autoimmune cardiomyopathy                  | MONDO:0004994 | cardiomyopathy               |

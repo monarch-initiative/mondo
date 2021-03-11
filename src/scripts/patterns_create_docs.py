@@ -114,9 +114,10 @@ for pattern_file in pattern_files:
                     examples.append('[mondo]({})'.format(ghurl))
                     example = ghurl
                     dfh = df.head()
-                    sample_table = dfh.to_markdown(index=False)
+                    sample_table = dfh.to_markdown(index=False)                    
                     fout.write("## Data preview \n")
                     oboiri="http://purl.obolibrary.org/obo/"
+                    fout.write(re.sub(r"http://purl.obolibrary.org/obo/([^_]+)_([^\s]+)", lambda m: f"[{m.group(1)}:{m.group(2)}]({m.group(0)})", sample_table))
                     fout.write(sample_table.replace(oboiri,"").replace("_",":"))
                     fout.write("\n\n")
                     fout.write(f"See full table [here]({example}) \n")

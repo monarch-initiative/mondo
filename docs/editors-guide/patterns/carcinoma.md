@@ -30,7 +30,13 @@ A carcinoma involving a {[location](http://www.w3.org/2002/07/owl#Thing)}.
 {[carcinoma](http://purl.obolibrary.org/obo/MONDO_0004993)} and {[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Data preview 
-| defined:class                                | defined:class:label       | location                                      | location:label      |
+| defined_class                                | defined_class_label       | location                                      | location_label      |
+|:---------------------------------------------|:--------------------------|:----------------------------------------------|:--------------------|
+| [MONDO:0003975](http://purl.obolibrary.org/obo/MONDO_0003975) | Littre gland carcinoma    | [UBERON:0010186](http://purl.obolibrary.org/obo/UBERON_0010186) | male urethral gland |
+| [MONDO:0004965](http://purl.obolibrary.org/obo/MONDO_0004965) | acinar cell carcinoma     | [CL:0000622](http://purl.obolibrary.org/obo/CL_0000622)     | acinar cell         |
+| [MONDO:0002814](http://purl.obolibrary.org/obo/MONDO_0002814) | adrenal carcinoma         | [UBERON:0002369](http://purl.obolibrary.org/obo/UBERON_0002369) | adrenal gland       |
+| [MONDO:0006639](http://purl.obolibrary.org/obo/MONDO_0006639) | adrenal cortex carcinoma  | [UBERON:0001235](http://purl.obolibrary.org/obo/UBERON_0001235) | adrenal cortex      |
+| [MONDO:0004202](http://purl.obolibrary.org/obo/MONDO_0004202) | adrenal medulla carcinoma | [UBERON:0001236](http://purl.obolibrary.org/obo/UBERON_0001236) | adrenal medulla     || defined:class                                | defined:class:label       | location                                      | location:label      |
 |:---------------------------------------------|:--------------------------|:----------------------------------------------|:--------------------|
 | MONDO:0003975 | Littre gland carcinoma    | UBERON:0010186 | male urethral gland |
 | MONDO:0004965 | acinar cell carcinoma     | CL:0000622     | acinar cell         |

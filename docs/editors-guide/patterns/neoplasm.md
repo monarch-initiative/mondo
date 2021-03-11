@@ -38,7 +38,13 @@ A neoplasm involving a {[location](http://www.w3.org/2002/07/owl#Thing)}.
 {[neoplasm](http://purl.obolibrary.org/obo/MONDO_0005070)} and {[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Data preview 
-| defined:class                                | defined:class:label          | location                                      | location:label         |
+| defined_class                                | defined_class_label          | location                                      | location_label         |
+|:---------------------------------------------|:-----------------------------|:----------------------------------------------|:-----------------------|
+| [MONDO:0021114](http://purl.obolibrary.org/obo/MONDO_0021114) | Bartholin gland neoplasm     | [UBERON:0000460](http://purl.obolibrary.org/obo/UBERON_0000460) | major vestibular gland |
+| [MONDO:0021082](http://purl.obolibrary.org/obo/MONDO_0021082) | Meckel diverticulum neoplasm | [UBERON:0003705](http://purl.obolibrary.org/obo/UBERON_0003705) | Meckel's diverticulum  |
+| [MONDO:0001884](http://purl.obolibrary.org/obo/MONDO_0001884) | abducens nerve neoplasm      | [UBERON:0001646](http://purl.obolibrary.org/obo/UBERON_0001646) | abducens nerve         |
+| [MONDO:0036591](http://purl.obolibrary.org/obo/MONDO_0036591) | adrenal cortex neoplasm      | [UBERON:0001235](http://purl.obolibrary.org/obo/UBERON_0001235) | adrenal cortex         |
+| [MONDO:0021227](http://purl.obolibrary.org/obo/MONDO_0021227) | adrenal gland neoplasm       | [UBERON:0002369](http://purl.obolibrary.org/obo/UBERON_0002369) | adrenal gland          || defined:class                                | defined:class:label          | location                                      | location:label         |
 |:---------------------------------------------|:-----------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0021114 | Bartholin gland neoplasm     | UBERON:0000460 | major vestibular gland |
 | MONDO:0021082 | Meckel diverticulum neoplasm | UBERON:0003705 | Meckel's diverticulum  |
