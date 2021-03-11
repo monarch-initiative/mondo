@@ -12,7 +12,8 @@ contributors:
 - https://orcid.org/0000-0002-6601-2165
 
 classes:
-  owl:Thing: owl:Thing
+  owl_thing: owl:Thing
+  disease: MONDO:0000001
 
 relations:
   disease has basis in dysfunction of: RO:0004020
@@ -22,8 +23,8 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  disease: '''owl:Thing'''
-  structure: '''owl:Thing'''
+  disease: '''disease'''
+  structure: '''owl_thing'''
 
 name:
   text: '%s %s'

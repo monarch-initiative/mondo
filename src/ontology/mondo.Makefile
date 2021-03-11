@@ -54,8 +54,12 @@ pattern_ontology: ../patterns/pattern.owl
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
 
+pattern_mkdocs:
+	pip install tabulate
+	python ../scripts/patterns_create_docs.py
+
 .PHONY: pattern_docs
-pattern_docs: pattern_ontology pattern_readmes
+pattern_docs: pattern_ontology pattern_readmes pattern_mkdocs
 
 
 #################################

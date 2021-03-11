@@ -14,12 +14,16 @@ contributors:
 
 classes:
   hereditary: MONDO:0021152
+  disease: MONDO:0000001
 
 relations:
   has modifier: RO:0002573
 
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
 vars:
-  disease: owl:Thing
+  disease: '''disease'''
 
 name:
   text: hereditary %s
@@ -27,7 +31,7 @@ name:
   - disease
 
 annotations:
-- annotationProperty: oio:hasExactSynonym
+- annotationProperty: exact_synonym
   text: hereditary %s
   vars:
   - disease
