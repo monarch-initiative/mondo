@@ -12,8 +12,7 @@ acquired {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: acquired {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): acquired {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
@@ -21,7 +20,7 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[acquired](http://purl.obolibrary.org/obo/MONDO_0021141)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [acquired](http://purl.obolibrary.org/obo/MONDO_0021141)
 
 ## Data preview 
 | defined_class                                | defined_class_label                | disease                                      | disease_label                |
@@ -30,12 +29,6 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is
 | [MONDO:0060779](http://purl.obolibrary.org/obo/MONDO_0060779) | acquired Fanconi syndrome          | [MONDO:0001083](http://purl.obolibrary.org/obo/MONDO_0001083) | Fanconi renotubular syndrome |
 | [MONDO:0045023](http://purl.obolibrary.org/obo/MONDO_0045023) | acquired adrenogenital syndrome    | [MONDO:0015898](http://purl.obolibrary.org/obo/MONDO_0015898) | adrenogenital syndrome       |
 | [MONDO:0019624](http://purl.obolibrary.org/obo/MONDO_0019624) | acquired angioedema                | [MONDO:0010481](http://purl.obolibrary.org/obo/MONDO_0010481) | angioedema                   |
-| [MONDO:0015610](http://purl.obolibrary.org/obo/MONDO_0015610) | acquired aplastic anemia           | [MONDO:0015909](http://purl.obolibrary.org/obo/MONDO_0015909) | aplastic anemia              || defined:class                                | defined:class:label                | disease                                      | disease:label                |
-|:---------------------------------------------|:-----------------------------------|:---------------------------------------------|:-----------------------------|
-| MONDO:0018686 | acquired Creutzfeldt-Jakob disease | MONDO:0005357 | Creutzfeldt Jacob disease    |
-| MONDO:0060779 | acquired Fanconi syndrome          | MONDO:0001083 | Fanconi renotubular syndrome |
-| MONDO:0045023 | acquired adrenogenital syndrome    | MONDO:0015898 | adrenogenital syndrome       |
-| MONDO:0019624 | acquired angioedema                | MONDO:0010481 | angioedema                   |
-| MONDO:0015610 | acquired aplastic anemia           | MONDO:0015909 | aplastic anemia              |
+| [MONDO:0015610](http://purl.obolibrary.org/obo/MONDO_0015610) | acquired aplastic anemia           | [MONDO:0015909](http://purl.obolibrary.org/obo/MONDO_0015909) | aplastic anemia              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acquired.tsv) 

@@ -15,11 +15,9 @@ hemangioma of {[location](http://purl.obolibrary.org/obo/UBERON_0001062)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://purl.obolibrary.org/obo/UBERON_0001062)} hemangioma
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://purl.obolibrary.org/obo/UBERON_0001062)} hemangioma
 
-* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
-text: angioma of {[location](http://purl.obolibrary.org/obo/UBERON_0001062)}
+* [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym): angioma of {[location](http://purl.obolibrary.org/obo/UBERON_0001062)}
 
 ## Definition 
 
@@ -27,7 +25,7 @@ A hemangioma that involves the {[location](http://purl.obolibrary.org/obo/UBERON
 
 ## Equivalent to 
 
-{[hemangioma](http://purl.obolibrary.org/obo/MONDO_0006500)} and ({[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://purl.obolibrary.org/obo/UBERON_0001062)})
+[hemangioma](http://purl.obolibrary.org/obo/MONDO_0006500) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://purl.obolibrary.org/obo/UBERON_0001062)})
 
 ## Data preview 
 | defined_class                                | defined_class_label               | v0                                            | v0_label               |
@@ -36,12 +34,6 @@ A hemangioma that involves the {[location](http://purl.obolibrary.org/obo/UBERON
 | [MONDO:0003241](http://purl.obolibrary.org/obo/MONDO_0003241) | central nervous system hemangioma | [UBERON:0001017](http://purl.obolibrary.org/obo/UBERON_0001017) | central nervous system |
 | [MONDO:0003948](http://purl.obolibrary.org/obo/MONDO_0003948) | cerebral hemangioma               | [UBERON:0001893](http://purl.obolibrary.org/obo/UBERON_0001893) | telencephalon          |
 | [MONDO:0002414](http://purl.obolibrary.org/obo/MONDO_0002414) | gastric hemangioma                | [UBERON:0000945](http://purl.obolibrary.org/obo/UBERON_0000945) | stomach                |
-| [MONDO:0021542](http://purl.obolibrary.org/obo/MONDO_0021542) | hemangioma of choroid             | [UBERON:0001776](http://purl.obolibrary.org/obo/UBERON_0001776) | optic choroid          || defined:class                                | defined:class:label               | v0                                            | v0:label               |
-|:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
-| MONDO:0003126 | breast hemangioma                 | UBERON:0000310 | breast                 |
-| MONDO:0003241 | central nervous system hemangioma | UBERON:0001017 | central nervous system |
-| MONDO:0003948 | cerebral hemangioma               | UBERON:0001893 | telencephalon          |
-| MONDO:0002414 | gastric hemangioma                | UBERON:0000945 | stomach                |
-| MONDO:0021542 | hemangioma of choroid             | UBERON:0001776 | optic choroid          |
+| [MONDO:0021542](http://purl.obolibrary.org/obo/MONDO_0021542) | hemangioma of choroid             | [UBERON:0001776](http://purl.obolibrary.org/obo/UBERON_0001776) | optic choroid          |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv) 

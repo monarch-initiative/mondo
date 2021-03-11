@@ -12,8 +12,7 @@ autosomal recessive {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, autosomal recessive
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, autosomal recessive
 
 ## Definition 
 
@@ -21,7 +20,7 @@ Autosomal recessive form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[autosomal recessive inheritance](http://purl.obolibrary.org/obo/HP_0000007)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [autosomal recessive inheritance](http://purl.obolibrary.org/obo/HP_0000007)
 
 ## Data preview 
 | defined_class                                | defined_class_label                                       | disease                                      | disease_label                         |
@@ -30,12 +29,6 @@ Autosomal recessive form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000
 | [MONDO:0008719](http://purl.obolibrary.org/obo/MONDO_0008719) | acrorenal syndrome, autosomal recessive                   | [MONDO:0007059](http://purl.obolibrary.org/obo/MONDO_0007059) | acrorenal syndrome                    |
 | [MONDO:0008762](http://purl.obolibrary.org/obo/MONDO_0008762) | autosomal recessive Alport syndrome                       | [MONDO:0018965](http://purl.obolibrary.org/obo/MONDO_0018965) | Alport syndrome                       |
 | [MONDO:0002014](http://purl.obolibrary.org/obo/MONDO_0002014) | autosomal recessive Ehlers-Danlos syndrome, vascular type | [MONDO:0017314](http://purl.obolibrary.org/obo/MONDO_0017314) | Ehlers-Danlos syndrome, vascular type |
-| [MONDO:0008406](http://purl.obolibrary.org/obo/MONDO_0008406) | autosomal recessive Emery-Dreifuss muscular dystrophy     | [MONDO:0016830](http://purl.obolibrary.org/obo/MONDO_0016830) | Emery-Dreifuss muscular dystrophy     || defined:class                                | defined:class:label                                       | disease                                      | disease:label                         |
-|:---------------------------------------------|:----------------------------------------------------------|:---------------------------------------------|:--------------------------------------|
-| MONDO:0011551 | TH-deficient dopa-responsive dystonia                     | MONDO:0016812 | dopa-responsive dystonia              |
-| MONDO:0008719 | acrorenal syndrome, autosomal recessive                   | MONDO:0007059 | acrorenal syndrome                    |
-| MONDO:0008762 | autosomal recessive Alport syndrome                       | MONDO:0018965 | Alport syndrome                       |
-| MONDO:0002014 | autosomal recessive Ehlers-Danlos syndrome, vascular type | MONDO:0017314 | Ehlers-Danlos syndrome, vascular type |
-| MONDO:0008406 | autosomal recessive Emery-Dreifuss muscular dystrophy     | MONDO:0016830 | Emery-Dreifuss muscular dystrophy     |
+| [MONDO:0008406](http://purl.obolibrary.org/obo/MONDO_0008406) | autosomal recessive Emery-Dreifuss muscular dystrophy     | [MONDO:0016830](http://purl.obolibrary.org/obo/MONDO_0016830) | Emery-Dreifuss muscular dystrophy     |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_recessive.tsv) 

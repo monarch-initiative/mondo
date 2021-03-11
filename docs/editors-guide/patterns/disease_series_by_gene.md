@@ -13,11 +13,9 @@ This pattern is for diseases that are caused by a single mutation in a single ge
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[gene](http://purl.obolibrary.org/obo/SO_0001217)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[gene](http://purl.obolibrary.org/obo/SO_0001217)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[gene](http://purl.obolibrary.org/obo/SO_0001217)} related {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[gene](http://purl.obolibrary.org/obo/SO_0001217)} related {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
@@ -25,5 +23,5 @@ Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020)} some {[gene](http://purl.obolibrary.org/obo/SO_0001217)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020) some {[gene](http://purl.obolibrary.org/obo/SO_0001217)}
 

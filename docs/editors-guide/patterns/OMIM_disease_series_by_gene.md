@@ -15,8 +15,7 @@ This pattern is meant to be used for OMIM diseases, including children of OMIM p
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[gene](http://purl.obolibrary.org/obo/SO_0000704)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[gene](http://purl.obolibrary.org/obo/SO_0000704)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
@@ -24,5 +23,5 @@ Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020)} some {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020) some {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
 

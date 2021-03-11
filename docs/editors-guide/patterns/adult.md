@@ -12,8 +12,7 @@ adult {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} of adults
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} of adults
 
 ## Definition 
 
@@ -21,7 +20,7 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that occurs in an ad
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[adult](http://purl.obolibrary.org/obo/HP_0003581)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [adult](http://purl.obolibrary.org/obo/HP_0003581)
 
 ## Data preview 
 | defined_class                                | defined_class_label                     | disease                                      | disease_label                                 |
@@ -30,12 +29,6 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that occurs in an ad
 | [MONDO:0017723](http://purl.obolibrary.org/obo/MONDO_0017723) | Sandhoff disease, adult form            | [MONDO:0010006](http://purl.obolibrary.org/obo/MONDO_0010006) | Sandhoff disease                              |
 | [MONDO:0017617](http://purl.obolibrary.org/obo/MONDO_0017617) | acquired adult-onset immunodeficiency   | [MONDO:0017769](http://purl.obolibrary.org/obo/MONDO_0017769) | acquired immunodeficiency                     |
 | [MONDO:0060778](http://purl.obolibrary.org/obo/MONDO_0060778) | adult Fanconi syndrome                  | [MONDO:0001083](http://purl.obolibrary.org/obo/MONDO_0001083) | Fanconi renotubular syndrome                  |
-| [MONDO:0016091](http://purl.obolibrary.org/obo/MONDO_0016091) | adult Krabbe disease                    | [MONDO:0009499](http://purl.obolibrary.org/obo/MONDO_0009499) | Krabbe disease                                || defined:class                                | defined:class:label                     | disease                                      | disease:label                                 |
-|:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:----------------------------------------------|
-| MONDO:0000814 | B-cell adult acute lymphocytic leukemia | MONDO:0000872 | B-cell childhood acute lymphoblastic leukemia |
-| MONDO:0017723 | Sandhoff disease, adult form            | MONDO:0010006 | Sandhoff disease                              |
-| MONDO:0017617 | acquired adult-onset immunodeficiency   | MONDO:0017769 | acquired immunodeficiency                     |
-| MONDO:0060778 | adult Fanconi syndrome                  | MONDO:0001083 | Fanconi renotubular syndrome                  |
-| MONDO:0016091 | adult Krabbe disease                    | MONDO:0009499 | Krabbe disease                                |
+| [MONDO:0016091](http://purl.obolibrary.org/obo/MONDO_0016091) | adult Krabbe disease                    | [MONDO:0009499](http://purl.obolibrary.org/obo/MONDO_0009499) | Krabbe disease                                |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adult.tsv) 

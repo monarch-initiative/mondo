@@ -15,11 +15,9 @@ infantile {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: infantile onset {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): infantile onset {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} of infancy
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} of infancy
 
 ## Definition 
 
@@ -27,7 +25,7 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that occurs between 
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[infantile](http://purl.obolibrary.org/obo/HP_0003593)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [infantile](http://purl.obolibrary.org/obo/HP_0003593)
 
 ## Data preview 
 | defined_class                                | defined_class_label         | disease                                      | disease_label         |
@@ -36,12 +34,6 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that occurs between 
 | [MONDO:0015804](http://purl.obolibrary.org/obo/MONDO_0015804) | infant botulism             | [MONDO:0005498](http://purl.obolibrary.org/obo/MONDO_0005498) | botulism              |
 | [MONDO:0016089](http://purl.obolibrary.org/obo/MONDO_0016089) | infantile Krabbe disease    | [MONDO:0009499](http://purl.obolibrary.org/obo/MONDO_0009499) | Krabbe disease        |
 | [MONDO:0043555](http://purl.obolibrary.org/obo/MONDO_0043555) | infantile diarrhea          | [MONDO:0001673](http://purl.obolibrary.org/obo/MONDO_0001673) | diarrheal disease     |
-| [MONDO:0020071](http://purl.obolibrary.org/obo/MONDO_0020071) | infantile epilepsy syndrome | [MONDO:0015650](http://purl.obolibrary.org/obo/MONDO_0015650) | epilepsy syndrome     || defined:class                                | defined:class:label         | disease                                      | disease:label         |
-|:---------------------------------------------|:----------------------------|:---------------------------------------------|:----------------------|
-| MONDO:0000212 | hypercalcemia, infantile    | MONDO:0001566 | hypercalcemia disease |
-| MONDO:0015804 | infant botulism             | MONDO:0005498 | botulism              |
-| MONDO:0016089 | infantile Krabbe disease    | MONDO:0009499 | Krabbe disease        |
-| MONDO:0043555 | infantile diarrhea          | MONDO:0001673 | diarrheal disease     |
-| MONDO:0020071 | infantile epilepsy syndrome | MONDO:0015650 | epilepsy syndrome     |
+| [MONDO:0020071](http://purl.obolibrary.org/obo/MONDO_0020071) | infantile epilepsy syndrome | [MONDO:0015650](http://purl.obolibrary.org/obo/MONDO_0015650) | epilepsy syndrome     |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infantile.tsv) 

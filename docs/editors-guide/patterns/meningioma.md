@@ -14,8 +14,7 @@ Examples: [skin meningioma](http://purl.obolibrary.org/obo/MONDO_0004429), [brai
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://purl.obolibrary.org/obo/UBERON_0001062)} meningioma
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://purl.obolibrary.org/obo/UBERON_0001062)} meningioma
 
 ## Definition 
 
@@ -23,7 +22,7 @@ A meningioma that affects the {[location](http://purl.obolibrary.org/obo/UBERON_
 
 ## Equivalent to 
 
-{[meningioma](http://purl.obolibrary.org/obo/MONDO_0016642)} and ({[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://purl.obolibrary.org/obo/UBERON_0001062)})
+[meningioma](http://purl.obolibrary.org/obo/MONDO_0016642) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://purl.obolibrary.org/obo/UBERON_0001062)})
 
 ## Data preview 
 | defined_class                                | defined_class_label               | v0                                            | v0_label               |
@@ -32,12 +31,6 @@ A meningioma that affects the {[location](http://purl.obolibrary.org/obo/UBERON_
 | [MONDO:0000642](http://purl.obolibrary.org/obo/MONDO_0000642) | brain meningioma                  | [UBERON:0000955](http://purl.obolibrary.org/obo/UBERON_0000955) | brain                  |
 | [MONDO:0002996](http://purl.obolibrary.org/obo/MONDO_0002996) | cavernous sinus meningioma        | [UBERON:0003712](http://purl.obolibrary.org/obo/UBERON_0003712) | cavernous sinus        |
 | [MONDO:0003860](http://purl.obolibrary.org/obo/MONDO_0003860) | cerebellopontine angle meningioma | [UBERON:0014908](http://purl.obolibrary.org/obo/UBERON_0014908) | cerebellopontine angle |
-| [MONDO:0004422](http://purl.obolibrary.org/obo/MONDO_0004422) | cerebral falx meningioma          | [UBERON:0006059](http://purl.obolibrary.org/obo/UBERON_0006059) | falx cerebri           || defined:class                                | defined:class:label               | v0                                            | v0:label               |
-|:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
-| MONDO:0002997 | anterior cranial fossa meningioma | UBERON:0003720 | anterior cranial fossa |
-| MONDO:0000642 | brain meningioma                  | UBERON:0000955 | brain                  |
-| MONDO:0002996 | cavernous sinus meningioma        | UBERON:0003712 | cavernous sinus        |
-| MONDO:0003860 | cerebellopontine angle meningioma | UBERON:0014908 | cerebellopontine angle |
-| MONDO:0004422 | cerebral falx meningioma          | UBERON:0006059 | falx cerebri           |
+| [MONDO:0004422](http://purl.obolibrary.org/obo/MONDO_0004422) | cerebral falx meningioma          | [UBERON:0006059](http://purl.obolibrary.org/obo/UBERON_0006059) | falx cerebri           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/meningioma.tsv) 

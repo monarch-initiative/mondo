@@ -14,11 +14,9 @@ Examples: [rhabdomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://www.w3.org/2002/07/owl#Thing)} rhabdomyosarcoma
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://www.w3.org/2002/07/owl#Thing)} rhabdomyosarcoma
 
-* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
-text: rhabdomyosarcoma of the {[location](http://www.w3.org/2002/07/owl#Thing)}
+* [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym): rhabdomyosarcoma of the {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 
 
@@ -26,7 +24,7 @@ A malignant mesenchymal tumor with skeletal muscle differentiation affecting the
 
 ## Equivalent to 
 
-{[rhabdomyosarcoma](http://purl.obolibrary.org/obo/MONDO_0005212)} and ({[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)})
+[rhabdomyosarcoma](http://purl.obolibrary.org/obo/MONDO_0005212) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
 | defined_class                                | defined_class_label                     | v0                                            | v0_label               |
@@ -35,12 +33,6 @@ A malignant mesenchymal tumor with skeletal muscle differentiation affecting the
 | [MONDO:0002859](http://purl.obolibrary.org/obo/MONDO_0002859) | breast rhabdomyosarcoma                 | [UBERON:0000310](http://purl.obolibrary.org/obo/UBERON_0000310) | breast                 |
 | [MONDO:0002850](http://purl.obolibrary.org/obo/MONDO_0002850) | central nervous system rhabdomyosarcoma | [UBERON:0001017](http://purl.obolibrary.org/obo/UBERON_0001017) | central nervous system |
 | [MONDO:0002577](http://purl.obolibrary.org/obo/MONDO_0002577) | extrahepatic bile duct rhabdomyosarcoma | [UBERON:0003703](http://purl.obolibrary.org/obo/UBERON_0003703) | extrahepatic bile duct |
-| [MONDO:0002856](http://purl.obolibrary.org/obo/MONDO_0002856) | gallbladder rhabdomyosarcoma            | [UBERON:0002110](http://purl.obolibrary.org/obo/UBERON_0002110) | gall bladder           || defined:class                                | defined:class:label                     | v0                                            | v0:label               |
-|:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-----------------------|
-| MONDO:0002864 | anus rhabdomyosarcoma                   | UBERON:0001245 | anus                   |
-| MONDO:0002859 | breast rhabdomyosarcoma                 | UBERON:0000310 | breast                 |
-| MONDO:0002850 | central nervous system rhabdomyosarcoma | UBERON:0001017 | central nervous system |
-| MONDO:0002577 | extrahepatic bile duct rhabdomyosarcoma | UBERON:0003703 | extrahepatic bile duct |
-| MONDO:0002856 | gallbladder rhabdomyosarcoma            | UBERON:0002110 | gall bladder           |
+| [MONDO:0002856](http://purl.obolibrary.org/obo/MONDO_0002856) | gallbladder rhabdomyosarcoma            | [UBERON:0002110](http://purl.obolibrary.org/obo/UBERON_0002110) | gall bladder           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/rhabdomyosarcoma.tsv) 

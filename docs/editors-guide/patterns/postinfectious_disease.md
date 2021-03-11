@@ -14,11 +14,9 @@ postinfectious {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)} arising f
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: post-{[feature](http://purl.obolibrary.org/obo/MONDO_0005550)} {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): post-{[feature](http://purl.obolibrary.org/obo/MONDO_0005550)} {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)}
 
-* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
-text: {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)} secondary to {[feature](http://purl.obolibrary.org/obo/MONDO_0005550)}
+* [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym): {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)} secondary to {[feature](http://purl.obolibrary.org/obo/MONDO_0005550)}
 
 ## Definition 
 
@@ -26,5 +24,5 @@ A post-infectious form of {[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)} and {[disease arises from feature](http://purl.obolibrary.org/obo/RO_0004022)} some {[feature](http://purl.obolibrary.org/obo/MONDO_0005550)}
+{[disease](http://purl.obolibrary.org/obo/NCBITaxon_1)} and [disease arises from feature](http://purl.obolibrary.org/obo/RO_0004022) some {[feature](http://purl.obolibrary.org/obo/MONDO_0005550)}
 

@@ -32,7 +32,7 @@ def is_curie(s):
     return ":" in s
 
 
-def render_var(var, mapping):
+def render_token(var, mapping):
     var_str = mapping[var]
     if is_curie(var_str):
         return f"[{var}]({curie_to_uri(var_str)})"
@@ -51,17 +51,17 @@ def render_var(var, mapping):
 
 
 def render_equivalent(text, vars, pattern):
-    ret = text % tuple("{" + render_var(var, pattern["vars"]) + "}" for var in vars)
+    ret = text % tuple("{" + render_token(var, pattern["vars"]) + "}" for var in vars)
     mapping = {}
     mapping.update(pattern["classes"])
     mapping.update(pattern["relations"])
     p = re.compile(r"'[^']*'")
-    ret = re.sub(r"'([^']*)'", lambda m: "{[" + m.group(1) + "](" + curie_to_uri(mapping[m.group(1)]) + ")}", ret)
+    ret = re.sub(r"'([^']*)'", lambda m: "[" + m.group(1) + "](" + curie_to_uri(mapping[m.group(1)]) + ")", ret)
     return ret
 
 
-def render_name(text, vars, pattern):
-    ret = text % tuple("{" + render_var(var, pattern["vars"]) + "}" for var in vars)
+def render_str(text, vars, pattern):
+    ret = text % tuple("{" + render_token(var, pattern["vars"]) + "}" for var in vars)
     return ret 
 
 
@@ -85,18 +85,17 @@ for pattern_file in pattern_files:
                 fout.write(f"* [{contributor}]({contributor}) \n")
         if "name" in pattern:
             fout.write("## Name \n\n")
-            fout.write(render_name(pattern["name"]["text"], pattern["name"]["vars"], pattern))
+            fout.write(render_str(pattern["name"]["text"], pattern["name"]["vars"], pattern))
             fout.write("\n\n")
         if "annotations" in pattern:
             fout.write("## Annotations \n\n")
             for anno in pattern["annotations"]:
                 fout.write("* ")
-                fout.write(f"annotation: {render_var(anno['annotationProperty'], pattern['annotationProperties'])}  \n")
-                fout.write("text: " + render_name(anno["text"], anno["vars"], pattern))
+                fout.write(render_token(anno['annotationProperty'], pattern['annotationProperties']) + ": " + render_str(anno["text"], anno["vars"], pattern))
                 fout.write("\n\n")
         if "def" in pattern: 
             fout.write("## Definition \n\n")
-            fout.write(render_name(pattern["def"]["text"], pattern["def"]["vars"], pattern))
+            fout.write(render_str(pattern["def"]["text"], pattern["def"]["vars"], pattern))
             fout.write("\n\n")
         if "equivalentTo" in pattern:
             fout.write("## Equivalent to \n\n")
@@ -118,7 +117,6 @@ for pattern_file in pattern_files:
                     fout.write("## Data preview \n")
                     oboiri="http://purl.obolibrary.org/obo/"
                     fout.write(re.sub(r"http://purl.obolibrary.org/obo/([^_]+)_([^\s]+)", lambda m: f"[{m.group(1)}:{m.group(2)}]({m.group(0)})", sample_table))
-                    fout.write(sample_table.replace(oboiri,"").replace("_",":"))
                     fout.write("\n\n")
                     fout.write(f"See full table [here]({example}) \n")
                 else:

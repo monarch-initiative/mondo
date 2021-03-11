@@ -19,11 +19,9 @@ inflammation of {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}itis
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}itis
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://purl.obolibrary.org/obo/UBERON_0000061)} inflammation
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://purl.obolibrary.org/obo/UBERON_0000061)} inflammation
 
 ## Definition 
 
@@ -31,7 +29,7 @@ An inflammatory disease involving a pathogenic inflammatory response in the {[lo
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[disease has inflammation site](http://purl.obolibrary.org/obo/RO_0004027)} some {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}
+[disease](http://purl.obolibrary.org/obo/MONDO_0000001) and [disease has inflammation site](http://purl.obolibrary.org/obo/RO_0004027) some {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}
 
 ## Data preview 
 | defined_class                                | defined_class_label   | location                                      | location_label        |
@@ -40,12 +38,6 @@ An inflammatory disease involving a pathogenic inflammatory response in the {[lo
 | [MONDO:0019838](http://purl.obolibrary.org/obo/MONDO_0019838) | adenohypophysitis     | [UBERON:0002196](http://purl.obolibrary.org/obo/UBERON_0002196) | adenohypophysis       |
 | [MONDO:0000261](http://purl.obolibrary.org/obo/MONDO_0000261) | adenoiditis           | [UBERON:0001732](http://purl.obolibrary.org/obo/UBERON_0001732) | pharyngeal tonsil     |
 | [MONDO:0020710](http://purl.obolibrary.org/obo/MONDO_0020710) | amnionitis            | [UBERON:0000305](http://purl.obolibrary.org/obo/UBERON_0000305) | amnion                |
-| [MONDO:0006656](http://purl.obolibrary.org/obo/MONDO_0006656) | aortitis              | [UBERON:0000947](http://purl.obolibrary.org/obo/UBERON_0000947) | aorta                 || defined:class                                | defined:class:label   | location                                      | location:label        |
-|:---------------------------------------------|:----------------------|:----------------------------------------------|:----------------------|
-| MONDO:0004551 | Meckel diverticulitis | UBERON:0003705 | Meckel's diverticulum |
-| MONDO:0019838 | adenohypophysitis     | UBERON:0002196 | adenohypophysis       |
-| MONDO:0000261 | adenoiditis           | UBERON:0001732 | pharyngeal tonsil     |
-| MONDO:0020710 | amnionitis            | UBERON:0000305 | amnion                |
-| MONDO:0006656 | aortitis              | UBERON:0000947 | aorta                 |
+| [MONDO:0006656](http://purl.obolibrary.org/obo/MONDO_0006656) | aortitis              | [UBERON:0000947](http://purl.obolibrary.org/obo/UBERON_0000947) | aorta                 |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inflammatory_disease_by_site.tsv) 

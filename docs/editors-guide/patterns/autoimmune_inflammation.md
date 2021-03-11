@@ -16,13 +16,11 @@ An autoimmune inflammatory disease involving a pathogenic inflammatory response 
 
 ## Equivalent to 
 
-{[autoimmune disease](http://purl.obolibrary.org/obo/MONDO_0007179)} and {[disease has inflammation site](http://purl.obolibrary.org/obo/RO_0004027)} some {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}
+[autoimmune disease](http://purl.obolibrary.org/obo/MONDO_0007179) and [disease has inflammation site](http://purl.obolibrary.org/obo/RO_0004027) some {[location](http://purl.obolibrary.org/obo/UBERON_0000061)}
 
 ## Data preview 
 | defined_class                                | defined_class_label        | location                                      | location_label   |
 |:---------------------------------------------|:---------------------------|:----------------------------------------------|:-----------------|
-| [MONDO:0005623](http://purl.obolibrary.org/obo/MONDO_0005623) | autoimmune thyroid disease | [UBERON:0002046](http://purl.obolibrary.org/obo/UBERON_0002046) | thyroid gland    || defined:class                                | defined:class:label        | location                                      | location:label   |
-|:---------------------------------------------|:---------------------------|:----------------------------------------------|:-----------------|
-| MONDO:0005623 | autoimmune thyroid disease | UBERON:0002046 | thyroid gland    |
+| [MONDO:0005623](http://purl.obolibrary.org/obo/MONDO_0005623) | autoimmune thyroid disease | [UBERON:0002046](http://purl.obolibrary.org/obo/UBERON_0002046) | thyroid gland    |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autoimmune_inflammation.tsv) 

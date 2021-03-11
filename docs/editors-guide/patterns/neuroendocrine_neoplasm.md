@@ -16,17 +16,13 @@ Examples: [breast neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: neuroendocrine neoplasm of {[location](http://www.w3.org/2002/07/owl#Thing)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): neuroendocrine neoplasm of {[location](http://www.w3.org/2002/07/owl#Thing)}
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://www.w3.org/2002/07/owl#Thing)} neuroendocrine tumor, well differentiated, low or intermediate grade
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://www.w3.org/2002/07/owl#Thing)} neuroendocrine tumor, well differentiated, low or intermediate grade
 
-* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
-text: {[location](http://www.w3.org/2002/07/owl#Thing)} neuroendocrine tumor
+* [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym): {[location](http://www.w3.org/2002/07/owl#Thing)} neuroendocrine tumor
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://www.w3.org/2002/07/owl#Thing)} NET
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://www.w3.org/2002/07/owl#Thing)} NET
 
 ## Definition 
 
@@ -34,7 +30,7 @@ A neuroendocrine neoplasm involving a {[location](http://www.w3.org/2002/07/owl#
 
 ## Equivalent to 
 
-{[neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0019496)} and {[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)}
+[neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0019496) and [disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Data preview 
 | defined_class                                | defined_class_label                | location                                      | location_label     |
@@ -43,12 +39,6 @@ A neuroendocrine neoplasm involving a {[location](http://www.w3.org/2002/07/owl#
 | [MONDO:0024501](http://purl.obolibrary.org/obo/MONDO_0024501) | appendix neuroendocrine neoplasm   | [UBERON:0001154](http://purl.obolibrary.org/obo/UBERON_0001154) | vermiform appendix |
 | [MONDO:0002485](http://purl.obolibrary.org/obo/MONDO_0002485) | breast neuroendocrine neoplasm     | [UBERON:0000310](http://purl.obolibrary.org/obo/UBERON_0000310) | breast             |
 | [MONDO:0019963](http://purl.obolibrary.org/obo/MONDO_0019963) | bronchial endocrine tumor          | [UBERON:0002185](http://purl.obolibrary.org/obo/UBERON_0002185) | bronchus           |
-| [MONDO:0002882](http://purl.obolibrary.org/obo/MONDO_0002882) | colon neuroendocrine neoplasm      | [UBERON:0001155](http://purl.obolibrary.org/obo/UBERON_0001155) | colon              || defined:class                                | defined:class:label                | location                                      | location:label     |
-|:---------------------------------------------|:-----------------------------------|:----------------------------------------------|:-------------------|
-| MONDO:0003504 | anal canal neuroendocrine neoplasm | UBERON:0000159 | anal canal         |
-| MONDO:0024501 | appendix neuroendocrine neoplasm   | UBERON:0001154 | vermiform appendix |
-| MONDO:0002485 | breast neuroendocrine neoplasm     | UBERON:0000310 | breast             |
-| MONDO:0019963 | bronchial endocrine tumor          | UBERON:0002185 | bronchus           |
-| MONDO:0002882 | colon neuroendocrine neoplasm      | UBERON:0001155 | colon              |
+| [MONDO:0002882](http://purl.obolibrary.org/obo/MONDO_0002882) | colon neuroendocrine neoplasm      | [UBERON:0001155](http://purl.obolibrary.org/obo/UBERON_0001155) | colon              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm.tsv) 

@@ -14,11 +14,9 @@ Examples: [cervical small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[location](http://www.w3.org/2002/07/owl#Thing)} small cell carcinoma
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[location](http://www.w3.org/2002/07/owl#Thing)} small cell carcinoma
 
-* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
-text: small cell cancer of the {[location](http://www.w3.org/2002/07/owl#Thing)}
+* [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym): small cell cancer of the {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 
 
@@ -26,7 +24,7 @@ An aggressive, high-grade and poorly differentiated carcinoma with neuroendocrin
 
 ## Equivalent to 
 
-{[small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0000402)} and ({[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)})
+[small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0000402) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
 | defined_class                                | defined_class_label                            | v0                                            | v0_label               |
@@ -35,12 +33,6 @@ An aggressive, high-grade and poorly differentiated carcinoma with neuroendocrin
 | [MONDO:0006142](http://purl.obolibrary.org/obo/MONDO_0006142) | cervical small cell carcinoma                  | [UBERON:0000002](http://purl.obolibrary.org/obo/UBERON_0000002) | uterine cervix         |
 | [MONDO:0003978](http://purl.obolibrary.org/obo/MONDO_0003978) | colon small cell neuroendocrine carcinoma      | [UBERON:0001155](http://purl.obolibrary.org/obo/UBERON_0001155) | colon                  |
 | [MONDO:0006197](http://purl.obolibrary.org/obo/MONDO_0006197) | endometrial small cell carcinoma               | [UBERON:0001295](http://purl.obolibrary.org/obo/UBERON_0001295) | endometrium            |
-| [MONDO:0004116](http://purl.obolibrary.org/obo/MONDO_0004116) | esophageal small cell neuroendocrine carcinoma | [UBERON:0001043](http://purl.obolibrary.org/obo/UBERON_0001043) | esophagus              || defined:class                                | defined:class:label                            | v0                                            | v0:label               |
-|:---------------------------------------------|:-----------------------------------------------|:----------------------------------------------|:-----------------------|
-| MONDO:0004120 | Bartholin gland small cell carcinoma           | UBERON:0000460 | major vestibular gland |
-| MONDO:0006142 | cervical small cell carcinoma                  | UBERON:0000002 | uterine cervix         |
-| MONDO:0003978 | colon small cell neuroendocrine carcinoma      | UBERON:0001155 | colon                  |
-| MONDO:0006197 | endometrial small cell carcinoma               | UBERON:0001295 | endometrium            |
-| MONDO:0004116 | esophageal small cell neuroendocrine carcinoma | UBERON:0001043 | esophagus              |
+| [MONDO:0004116](http://purl.obolibrary.org/obo/MONDO_0004116) | esophageal small cell neuroendocrine carcinoma | [UBERON:0001043](http://purl.obolibrary.org/obo/UBERON_0001043) | esophagus              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/small_cell_carcinoma.tsv) 

@@ -12,8 +12,7 @@ malignant {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}, malignant
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}, malignant
 
 ## Definition 
 
@@ -21,7 +20,7 @@ A malignant form of {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}.
 
 ## Equivalent to 
 
-{[neoplasm](http://www.w3.org/2002/07/owl#Thing)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[malignant](http://purl.obolibrary.org/obo/PATO_0002097)}
+{[neoplasm](http://www.w3.org/2002/07/owl#Thing)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [malignant](http://purl.obolibrary.org/obo/PATO_0002097)
 
 ## Data preview 
 | defined_class                                | defined_class_label           | neoplasm                                     | neoplasm_label               |
@@ -30,12 +29,6 @@ A malignant form of {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}.
 | [MONDO:0003113](http://purl.obolibrary.org/obo/MONDO_0003113) | extragonadal germ cell cancer | [MONDO:0018201](http://purl.obolibrary.org/obo/MONDO_0018201) | extragonadal germ cell tumor |
 | [MONDO:0003252](http://purl.obolibrary.org/obo/MONDO_0003252) | granular cell cancer          | [MONDO:0006235](http://purl.obolibrary.org/obo/MONDO_0006235) | granular cell tumor          |
 | [MONDO:0000377](http://purl.obolibrary.org/obo/MONDO_0000377) | malignant Leydig cell tumor   | [MONDO:0006266](http://purl.obolibrary.org/obo/MONDO_0006266) | Leydig cell tumor            |
-| [MONDO:0000378](http://purl.obolibrary.org/obo/MONDO_0000378) | malignant Sertoli cell tumor  | [MONDO:0002696](http://purl.obolibrary.org/obo/MONDO_0002696) | Sertoli cell tumor           || defined:class                                | defined:class:label           | neoplasm                                     | neoplasm:label               |
-|:---------------------------------------------|:------------------------------|:---------------------------------------------|:-----------------------------|
-| MONDO:0004992 | cancer                        | MONDO:0005070 | neoplasm (disease)           |
-| MONDO:0003113 | extragonadal germ cell cancer | MONDO:0018201 | extragonadal germ cell tumor |
-| MONDO:0003252 | granular cell cancer          | MONDO:0006235 | granular cell tumor          |
-| MONDO:0000377 | malignant Leydig cell tumor   | MONDO:0006266 | Leydig cell tumor            |
-| MONDO:0000378 | malignant Sertoli cell tumor  | MONDO:0002696 | Sertoli cell tumor           |
+| [MONDO:0000378](http://purl.obolibrary.org/obo/MONDO_0000378) | malignant Sertoli cell tumor  | [MONDO:0002696](http://purl.obolibrary.org/obo/MONDO_0002696) | Sertoli cell tumor           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/malignant.tsv) 

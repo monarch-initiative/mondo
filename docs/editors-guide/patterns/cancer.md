@@ -18,14 +18,11 @@ We use the generic 'disease has location' relation, which generalized over prima
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: malignant {[location](http://www.w3.org/2002/07/owl#Thing)} neoplasm
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): malignant {[location](http://www.w3.org/2002/07/owl#Thing)} neoplasm
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: malignant neoplasm of {[location](http://www.w3.org/2002/07/owl#Thing)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): malignant neoplasm of {[location](http://www.w3.org/2002/07/owl#Thing)}
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: cancer of {[location](http://www.w3.org/2002/07/owl#Thing)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): cancer of {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 
 
@@ -33,7 +30,7 @@ A cancer involving a {[location](http://www.w3.org/2002/07/owl#Thing)}.
 
 ## Equivalent to 
 
-{[cancer](http://purl.obolibrary.org/obo/MONDO_0004992)} and {[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://www.w3.org/2002/07/owl#Thing)}
+[cancer](http://purl.obolibrary.org/obo/MONDO_0004992) and [disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Data preview 
 | defined_class                                | defined_class_label        | location                                      | location_label           |
@@ -42,12 +39,6 @@ A cancer involving a {[location](http://www.w3.org/2002/07/owl#Thing)}.
 | [MONDO:0004685](http://purl.obolibrary.org/obo/MONDO_0004685) | Waldeyer's ring cancer     | [UBERON:0001735](http://purl.obolibrary.org/obo/UBERON_0001735) | tonsillar ring           |
 | [MONDO:0002817](http://purl.obolibrary.org/obo/MONDO_0002817) | adrenal gland cancer       | [UBERON:0002369](http://purl.obolibrary.org/obo/UBERON_0002369) | adrenal gland            |
 | [MONDO:0003606](http://purl.obolibrary.org/obo/MONDO_0003606) | adrenal medulla cancer     | [UBERON:0001236](http://purl.obolibrary.org/obo/UBERON_0001236) | adrenal medulla          |
-| [MONDO:0000919](http://purl.obolibrary.org/obo/MONDO_0000919) | ampulla of vater cancer    | [UBERON:0004913](http://purl.obolibrary.org/obo/UBERON_0004913) | hepatopancreatic ampulla || defined:class                                | defined:class:label        | location                                      | location:label           |
-|:---------------------------------------------|:---------------------------|:----------------------------------------------|:-------------------------|
-| MONDO:0000954 | Meckel diverticulum cancer | UBERON:0003705 | Meckel's diverticulum    |
-| MONDO:0004685 | Waldeyer's ring cancer     | UBERON:0001735 | tonsillar ring           |
-| MONDO:0002817 | adrenal gland cancer       | UBERON:0002369 | adrenal gland            |
-| MONDO:0003606 | adrenal medulla cancer     | UBERON:0001236 | adrenal medulla          |
-| MONDO:0000919 | ampulla of vater cancer    | UBERON:0004913 | hepatopancreatic ampulla |
+| [MONDO:0000919](http://purl.obolibrary.org/obo/MONDO_0000919) | ampulla of vater cancer    | [UBERON:0004913](http://purl.obolibrary.org/obo/UBERON_0004913) | hepatopancreatic ampulla |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/cancer.tsv) 

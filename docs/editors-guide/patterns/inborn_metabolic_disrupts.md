@@ -15,11 +15,9 @@ inborn disorder of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: inborn error of {[process](http://www.w3.org/2002/07/owl#Thing)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): inborn error of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
-* annotation: [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)  
-text: rare inborn error of {[process](http://www.w3.org/2002/07/owl#Thing)}
+* [related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym): rare inborn error of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 
 
@@ -27,7 +25,7 @@ An acquired metabolic disease that is has its basis in the disruption of {[proce
 
 ## Equivalent to 
 
-{[inborn errors of metabolism](http://purl.obolibrary.org/obo/MONDO_0019052)} and ({[disease caused by disruption of](http://purl.obolibrary.org/obo/RO_0004021)} some {[process](http://www.w3.org/2002/07/owl#Thing)})
+[inborn errors of metabolism](http://purl.obolibrary.org/obo/MONDO_0019052) and ([disease caused by disruption of](http://purl.obolibrary.org/obo/RO_0004021) some {[process](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
 | defined_class                                | defined_class_label                  | v0                                        | v0_label                                                                                                      |
@@ -36,12 +34,6 @@ An acquired metabolic disease that is has its basis in the disruption of {[proce
 | [MONDO:0005775](http://purl.obolibrary.org/obo/MONDO_0005775) | G6PD deficiency                      | [GO:0004345](http://purl.obolibrary.org/obo/GO_0004345) | glucose-6-phosphate dehydrogenase activity                                                                    |
 | [MONDO:0007068](http://purl.obolibrary.org/obo/MONDO_0007068) | adenylosuccinate lyase deficiency    | [GO:0070626](http://purl.obolibrary.org/obo/GO_0070626) | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
 | [MONDO:0009665](http://purl.obolibrary.org/obo/MONDO_0009665) | biotinidase deficiency               | [GO:0047708](http://purl.obolibrary.org/obo/GO_0047708) | biotinidase activity                                                                                          |
-| [MONDO:0015286](http://purl.obolibrary.org/obo/MONDO_0015286) | congenital disorder of glycosylation | [GO:0070085](http://purl.obolibrary.org/obo/GO_0070085) | glycosylation                                                                                                 || defined:class                                | defined:class:label                  | v0                                        | v0:label                                                                                                      |
-|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| MONDO:0009825 | 5-oxoprolinase deficiency (disease)  | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
-| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
-| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
-| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
-| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                                 |
+| [MONDO:0015286](http://purl.obolibrary.org/obo/MONDO_0015286) | congenital disorder of glycosylation | [GO:0070085](http://purl.obolibrary.org/obo/GO_0070085) | glycosylation                                                                                                 |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv) 

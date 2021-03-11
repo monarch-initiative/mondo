@@ -13,8 +13,7 @@ genetic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: genetic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): genetic {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
 
 ## Definition 
 
@@ -22,5 +21,5 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and {[has modifier](http://purl.obolibrary.org/obo/RO_0002573)} some {[genetic](http://purl.obolibrary.org/obo/MONDO_0021150)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [genetic](http://purl.obolibrary.org/obo/MONDO_0021150)
 

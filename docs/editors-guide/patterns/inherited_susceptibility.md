@@ -15,11 +15,9 @@ Examples: ['microvascular complications of diabetes, susceptibility'](http://pur
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, susceptibility
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, susceptibility
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, susceptibility to
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, susceptibility to
 
 ## Definition 
 
@@ -27,7 +25,7 @@ An inherited susceptibility or predisposition to developing {[disease](http://pu
 
 ## Equivalent to 
 
-({[inherited disease susceptibility](http://purl.obolibrary.org/obo/MONDO_0020573)} and ({[predisposes towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards)} some {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}))
+([inherited disease susceptibility](http://purl.obolibrary.org/obo/MONDO_0020573) and ([predisposes towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards) some {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}))
 
 ## Data preview 
 | defined_class                                | defined_class_label                           | disease                                      | disease_label                          |
@@ -36,12 +34,6 @@ An inherited susceptibility or predisposition to developing {[disease](http://pu
 | [MONDO:0007845](http://purl.obolibrary.org/obo/MONDO_0007845) | Kaposi sarcoma, susceptibility to             | [MONDO:0005055](http://purl.obolibrary.org/obo/MONDO_0005055) | Kaposi's sarcoma (disease)             |
 | [MONDO:0000093](http://purl.obolibrary.org/obo/MONDO_0000093) | Schistosoma mansoni infection, susceptibility | [MONDO:0044345](http://purl.obolibrary.org/obo/MONDO_0044345) | Schistosoma mansoni infectious disease |
 | [MONDO:0013562](http://purl.obolibrary.org/obo/MONDO_0013562) | aspergillosis, susceptibility to              | [MONDO:0005657](http://purl.obolibrary.org/obo/MONDO_0005657) | aspergillosis                          |
-| [MONDO:0020836](http://purl.obolibrary.org/obo/MONDO_0020836) | autism, susceptiblity to                      | [MONDO:0005260](http://purl.obolibrary.org/obo/MONDO_0005260) | autism (disease)                       || defined:class                                | defined:class:label                           | disease                                      | disease:label                          |
-|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------------------|
-| MONDO:0100232 | 'psoriatic arthritis, susceptibility to       | MONDO:0011849 | psoriatic arthritis                    |
-| MONDO:0007845 | Kaposi sarcoma, susceptibility to             | MONDO:0005055 | Kaposi's sarcoma (disease)             |
-| MONDO:0000093 | Schistosoma mansoni infection, susceptibility | MONDO:0044345 | Schistosoma mansoni infectious disease |
-| MONDO:0013562 | aspergillosis, susceptibility to              | MONDO:0005657 | aspergillosis                          |
-| MONDO:0020836 | autism, susceptiblity to                      | MONDO:0005260 | autism (disease)                       |
+| [MONDO:0020836](http://purl.obolibrary.org/obo/MONDO_0020836) | autism, susceptiblity to                      | [MONDO:0005260](http://purl.obolibrary.org/obo/MONDO_0005260) | autism (disease)                       |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv) 

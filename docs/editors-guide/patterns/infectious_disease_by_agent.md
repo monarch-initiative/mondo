@@ -15,11 +15,9 @@ Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](ht
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: infection due to {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): infection due to {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)}
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)} infection
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)} infection
 
 ## Definition 
 
@@ -27,5 +25,5 @@ A disease caused by infection with {[agent](http://purl.obolibrary.org/obo/NCBIT
 
 ## Equivalent to 
 
-{[infectious disease](http://purl.obolibrary.org/obo/MONDO_0005550)} and {[disease has infectious agent](http://purl.obolibrary.org/obo/RO_0014001)} some {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)}
+[infectious disease](http://purl.obolibrary.org/obo/MONDO_0005550) and [disease has infectious agent](http://purl.obolibrary.org/obo/RO_0014001) some {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)}
 

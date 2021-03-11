@@ -14,8 +14,7 @@ Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_
 
 ## Annotations 
 
-* annotation: [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)  
-text: adenosquamous {[location](http://purl.obolibrary.org/obo/UBERON_0010000)} carcinoma
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): adenosquamous {[location](http://purl.obolibrary.org/obo/UBERON_0010000)} carcinoma
 
 ## Definition 
 
@@ -23,7 +22,7 @@ Any carcinoma that that involves the {[location](http://purl.obolibrary.org/obo/
 
 ## Equivalent to 
 
-{[adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006074)} and ({[disease has location](http://purl.obolibrary.org/obo/RO_0004026)} some {[location](http://purl.obolibrary.org/obo/UBERON_0010000)})
+[adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006074) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://purl.obolibrary.org/obo/UBERON_0010000)})
 
 ## Data preview 
 | defined_class                                | defined_class_label                     | v0                                            | v0_label               |
@@ -32,12 +31,6 @@ Any carcinoma that that involves the {[location](http://purl.obolibrary.org/obo/
 | [MONDO:0003549](http://purl.obolibrary.org/obo/MONDO_0003549) | adenosquamous bile duct carcinoma       | [UBERON:0002394](http://purl.obolibrary.org/obo/UBERON_0002394) | bile duct              |
 | [MONDO:0003548](http://purl.obolibrary.org/obo/MONDO_0003548) | adenosquamous breast carcinoma          | [UBERON:0000310](http://purl.obolibrary.org/obo/UBERON_0000310) | breast                 |
 | [MONDO:0003554](http://purl.obolibrary.org/obo/MONDO_0003554) | adenosquamous colon carcinoma           | [UBERON:0001155](http://purl.obolibrary.org/obo/UBERON_0001155) | colon                  |
-| [MONDO:0004973](http://purl.obolibrary.org/obo/MONDO_0004973) | adenosquamous lung carcinoma            | [UBERON:0002048](http://purl.obolibrary.org/obo/UBERON_0002048) | lung                   || defined:class                                | defined:class:label                     | v0                                            | v0:label               |
-|:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-----------------------|
-| MONDO:0003555 | Bartholin gland adenosquamous carcinoma | UBERON:0000460 | major vestibular gland |
-| MONDO:0003549 | adenosquamous bile duct carcinoma       | UBERON:0002394 | bile duct              |
-| MONDO:0003548 | adenosquamous breast carcinoma          | UBERON:0000310 | breast                 |
-| MONDO:0003554 | adenosquamous colon carcinoma           | UBERON:0001155 | colon                  |
-| MONDO:0004973 | adenosquamous lung carcinoma            | UBERON:0002048 | lung                   |
+| [MONDO:0004973](http://purl.obolibrary.org/obo/MONDO_0004973) | adenosquamous lung carcinoma            | [UBERON:0002048](http://purl.obolibrary.org/obo/UBERON_0002048) | lung                   |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenosquamous_carcinoma.tsv) 
