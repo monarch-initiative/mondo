@@ -23,8 +23,8 @@ The release mondo.owl will look like this in Protege:
 
 ## Commit changes to a branch
 1. Create a branch and commit the changes on the branch
-2. Do PR
-3. Wait for QC to pass
+2. Do a pull request (PR)
+3. Wait for GitHub Actions/QC to pass
 4. Merge PR
 
 ## Deploy Release 
