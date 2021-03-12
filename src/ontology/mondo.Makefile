@@ -54,8 +54,12 @@ pattern_ontology: ../patterns/pattern.owl
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
 
+pattern_mkdocs:
+	pip install tabulate
+	python ../scripts/patterns_create_docs.py
+
 .PHONY: pattern_docs
-pattern_docs: pattern_ontology pattern_readmes
+pattern_docs: pattern_ontology pattern_readmes pattern_mkdocs
 
 
 #################################
@@ -258,6 +262,12 @@ warn-%:
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
 
+report-reason-query-%:
+	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-reason-$*.tsv
+report-owl-query-%:
+	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
+
+
 update-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/$*.ru convert -f obo --check false -o $(SRC).obo
 
@@ -267,5 +277,19 @@ r2e:
 	make NORM
 	mv NORM mondo-edit.obo
 
+GH_ISSUE=none
+OBS_REASON=outOfScope
+
 mass_obsolete:
-	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/2662 --obsoletionReason MONDO:outOfScope  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
+	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
+
+MAPPINGSDIR=mappings
+MAPPING_IDS=ordo-omim #omim-ordo mondo-ordo mondo-omim
+ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
+
+tmp/ordo.json:
+	robot merge -i sources/orphanet/ordo_orphanet.owl convert -f json -o $@
+$(MAPPINGSDIR)/ordo-omim.sssom.tsv: tmp/ordo.json
+	sssom convert -i $< -o $@
+
+mappings: $(ALL_MAPPINGS)
