@@ -1,10 +1,11 @@
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?term (COUNT(*) AS ?total)
+SELECT ?term ?term_label (COUNT(*) AS ?total)
 WHERE {
     ?child rdfs:subClassOf ?term .
+    ?term rdfs:label ?term_label .
     FILTER ( regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
     FILTER ( regex(str(?child), "^http://purl.obolibrary.org/obo/MONDO_"))
 }
-GROUP BY ?term
+GROUP BY ?term ?term_label
 HAVING (?total = 1)

@@ -1,0 +1,13 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?c1 ?c2 ?x WHERE 
+{
+  ?c1 owl:equivalentClass ?x .
+  ?c2 owl:equivalentClass ?x .
+
+  FILTER (isIRI(?c1) && regex(str(?c1), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (isIRI(?c2) && regex(str(?c2), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER(?c1 != ?c2)
+}
