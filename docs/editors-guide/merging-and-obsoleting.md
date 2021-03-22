@@ -6,7 +6,7 @@ There are 3 ways to merge classes:
 * Using the Protege merge tool (not yet released)
 * Using owltools
 
-Until the Protege merge tool is ready it is preferred to make merge requests via Chris. This should be done in plain text, either csv or tsv. Two columns (or optionally 4 columns with labels):
+Until the Protege merge tool is ready it is preferred to make merge requests via Nicole. This should be done in plain text, either csv or tsv. Two columns (or optionally 4 columns with labels):
 
 1. CURIE of class to be obsoleted
 1. CURIE of replacement class
@@ -20,6 +20,8 @@ mv new.obo mondo-edit.obo
 ```
 
 Note this can frequently lead to cycles and equivalence between named class pairs, as many seemingly identical classes have different implicit semantics.
+
+Note: if you add an obsoletion reason, make sure that the replaced class does not have an alt_id assertion. If so, remove that before committing.
 
 ## Manual merge/obsolete
 
