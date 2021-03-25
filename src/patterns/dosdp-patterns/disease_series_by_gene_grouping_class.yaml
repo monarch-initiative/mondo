@@ -1,0 +1,60 @@
+pattern_name: disease_series_by_gene_grouping_class
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene_grouping_class.yaml
+
+description: 'This pattern is for grouping classes that group diseases that are caused by a single mutation in
+  a single gene. Examples include OMIM classes that are a part of a phenotypic series (such as children of MONDO_0015229 'Bardet-Biedl syndrome' and gene-based grouping classes from ClinGen.  Examples: [peroxisome biogenesis disorder due to PEX7 defect](http://purl.obolibrary.org/obo/MONDO_0100272)
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  disease: MONDO:0000001
+  gene: SO:0001217
+
+relations:
+  disease has basis in dysfunction of: RO:0004020
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+  gene: '''gene'''
+
+name:
+  text: '%s due to %s defect'
+  vars:
+  - disease
+  - gene
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s caused by mutation in %s'
+  vars:
+  - disease
+  - gene
+- annotationProperty: exact_synonym
+  text: '%s %s'
+  vars:
+  - gene
+  - disease
+- annotationProperty: exact_synonym
+  text: '%s related %s'
+  vars:
+  - gene
+  - disease
+
+def:
+  text: Any %s in which the cause of the disease is a mutation in the %s gene.
+  vars:
+  - disease
+  - gene
+
+equivalentTo:
+  text: '%s and ''disease has basis in dysfunction of'' some %s'
+  vars:
+  - disease
+  - gene
