@@ -15,12 +15,17 @@ The workshop will focus on semantic modeling of disease and defining ontology pa
 
 ## Register
 
-Register here: _Coming soon_
+Register [here](https://docs.google.com/forms/d/e/1FAIpQLScue_MrebrF4Q1i1ikB5LnRZQFxmhosPqUSymYgLsEorMoZIQ/viewform?gxids=7628)
 
 
 # Agenda Topics
 
-_Coming soon_
+1. Introductions
+2. Overview of the Mondo editing process and how to request new terms or changes to Mondo - this will be recorded and shared after the workshop
+3. Paper update and review
+4. Working session to revise the top level classifications in Mondo
+5. Discuss open tickets (time permitting)
+
 
 ## Pre-meeting resources:
 
