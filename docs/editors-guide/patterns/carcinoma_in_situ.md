@@ -3,9 +3,12 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/carcinoma_in_situ.yaml](http://purl.obolibrary.org/obo/mondo/patterns/carcinoma_in_situ.yaml)
 ## Description 
 
-TBD.
+This is a Design pattern for classes representing in situ carcinomas based on their location.
+
+Examples: [breast carcinoma in situ](http://purl.obolibrary.org/obo/MONDO_0004658), [liver carcinoma in situ](http://purl.obolibrary.org/obo/MONDO_0004715)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
 {[location](http://www.w3.org/2002/07/owl#Thing)} carcinoma in situ

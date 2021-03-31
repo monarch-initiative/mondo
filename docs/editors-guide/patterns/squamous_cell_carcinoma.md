@@ -25,7 +25,7 @@ A squamous cell carcinoma that involves the {[location](http://www.w3.org/2002/0
 [squamous cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0005096) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label                      | v0                                            | v0_label                 |
+| defined_class                                | defined_class_label                      | location                                      | location_label           |
 |:---------------------------------------------|:-----------------------------------------|:----------------------------------------------|:-------------------------|
 | [MONDO:0003490](http://purl.obolibrary.org/obo/MONDO_0003490) | ampulla of vater squamous cell carcinoma | [UBERON:0004913](http://purl.obolibrary.org/obo/UBERON_0004913) | hepatopancreatic ampulla |
 | [MONDO:0004132](http://purl.obolibrary.org/obo/MONDO_0004132) | anal canal squamous cell carcinoma       | [UBERON:0000159](http://purl.obolibrary.org/obo/UBERON_0000159) | anal canal               |

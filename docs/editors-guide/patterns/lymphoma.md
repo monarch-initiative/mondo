@@ -26,7 +26,7 @@ A lymphoma that involves the {[location](http://www.w3.org/2002/07/owl#Thing)}.
 [lymphoma](http://purl.obolibrary.org/obo/MONDO_0005062) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label   | v0                                            | v0_label                          |
+| defined_class                                | defined_class_label   | location                                      | location_label                    |
 |:---------------------------------------------|:----------------------|:----------------------------------------------|:----------------------------------|
 | [MONDO:0007650](http://purl.obolibrary.org/obo/MONDO_0007650) | MALT lymphoma         | [UBERON:0001961](http://purl.obolibrary.org/obo/UBERON_0001961) | mucosa-associated lymphoid tissue |
 | [MONDO:0001888](http://purl.obolibrary.org/obo/MONDO_0001888) | anus lymphoma         | [UBERON:0001245](http://purl.obolibrary.org/obo/UBERON_0001245) | anus                              |

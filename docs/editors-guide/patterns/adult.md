@@ -3,9 +3,12 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/adult.yaml](http://purl.obolibrary.org/obo/mondo/patterns/adult.yaml)
 ## Description 
 
-TBD.
+An instance of a disease that has an onset of signs or symptoms of disease between the age of 16 years or later (adult onset).
+
+Examples: [adult brain stem neoplasm](http://purl.obolibrary.org/obo/MONDO_0024797), [adult-onset myasthenia gravis](http://purl.obolibrary.org/obo/MONDO_0018324)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
 adult {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}

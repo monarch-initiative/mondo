@@ -3,9 +3,12 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/congenital.yaml](http://purl.obolibrary.org/obo/mondo/patterns/congenital.yaml)
 ## Description 
 
-TBD.
+An instance of a disease in which the disease is present at birth, regardless of cause.
+
+Examples: [congenital agammaglobulinemia](http://purl.obolibrary.org/obo/MONDO_0001902), [congenital nystagmus](http://purl.obolibrary.org/obo/MONDO_0005712)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
 congenital {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
