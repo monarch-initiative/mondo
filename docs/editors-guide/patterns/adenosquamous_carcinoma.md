@@ -3,11 +3,12 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/adenosquamous_carcinoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/adenosquamous_carcinoma.yaml)
 ## Description 
 
-This is auto-generated. Add your description here
+An adenosquamous carcinoma is a carcinoma composed of malignant glandular cells and malignant squamous cells. This is a design pattern for classes representing adenosquamous carcinomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer. We use the generic 'disease has location' relation, which generalized over primary and secondary sites.
 
-Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003548), [Bartholin's gland adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0003555), [gastric adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006034) (16 total)
+Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003548), [Bartholin gland adenosquamous carcinoma] (http://purl.obolibrary.org/obo/MONDO_0003555), [gastric adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006034)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
 {[location](http://purl.obolibrary.org/obo/UBERON_0010000)} adenosquamous carcinoma
@@ -25,7 +26,7 @@ Any carcinoma that that involves the {[location](http://purl.obolibrary.org/obo/
 [adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006074) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://purl.obolibrary.org/obo/UBERON_0010000)})
 
 ## Data preview 
-| defined_class                                | defined_class_label                     | v0                                            | v0_label               |
+| defined_class                                | defined_class_label                     | location                                      | location_label         |
 |:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0003555](http://purl.obolibrary.org/obo/MONDO_0003555) | Bartholin gland adenosquamous carcinoma | [UBERON:0000460](http://purl.obolibrary.org/obo/UBERON_0000460) | major vestibular gland |
 | [MONDO:0003549](http://purl.obolibrary.org/obo/MONDO_0003549) | adenosquamous bile duct carcinoma       | [UBERON:0002394](http://purl.obolibrary.org/obo/UBERON_0002394) | bile duct              |

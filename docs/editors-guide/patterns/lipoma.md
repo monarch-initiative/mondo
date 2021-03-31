@@ -26,7 +26,7 @@ A benign adipose tissue neoplasm of the {[location](http://www.w3.org/2002/07/ow
 [lipoma](http://purl.obolibrary.org/obo/MONDO_0005106) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label           | v0                                            | v0_label               |
+| defined_class                                | defined_class_label           | location                                      | location_label         |
 |:---------------------------------------------|:------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0000974](http://purl.obolibrary.org/obo/MONDO_0000974) | axillary lipoma               | [UBERON:0009472](http://purl.obolibrary.org/obo/UBERON_0009472) | axilla                 |
 | [MONDO:0000970](http://purl.obolibrary.org/obo/MONDO_0000970) | breast lipoma                 | [UBERON:0000310](http://purl.obolibrary.org/obo/UBERON_0000310) | breast                 |

@@ -3,7 +3,9 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/autoimmune.yaml](http://purl.obolibrary.org/obo/mondo/patterns/autoimmune.yaml)
 ## Description 
 
-TBD.
+An instance of a disease that is brought about or caused by autoimmunity.
+
+Examples: [autoimmune cardiomyopathy](http://purl.obolibrary.org/obo/MONDO_0030701), [autoimmune pancreatitis](http://purl.obolibrary.org/obo/MONDO_0015175)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 ## Name 

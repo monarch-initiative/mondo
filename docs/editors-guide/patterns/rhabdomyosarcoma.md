@@ -27,7 +27,7 @@ A malignant mesenchymal tumor with skeletal muscle differentiation affecting the
 [rhabdomyosarcoma](http://purl.obolibrary.org/obo/MONDO_0005212) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label                     | v0                                            | v0_label               |
+| defined_class                                | defined_class_label                     | location                                      | location_label         |
 |:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0002864](http://purl.obolibrary.org/obo/MONDO_0002864) | anus rhabdomyosarcoma                   | [UBERON:0001245](http://purl.obolibrary.org/obo/UBERON_0001245) | anus                   |
 | [MONDO:0002859](http://purl.obolibrary.org/obo/MONDO_0002859) | breast rhabdomyosarcoma                 | [UBERON:0000310](http://purl.obolibrary.org/obo/UBERON_0000310) | breast                 |
