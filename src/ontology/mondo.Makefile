@@ -1,5 +1,5 @@
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
-DOSDPT=../dosdp-tools-0.16-SNAPSHOT/bin/dosdp-tools
+DOSDPT=dosdp-tools
 
 .PHONY: dirs
 dirs:
@@ -284,12 +284,20 @@ mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
 MAPPINGSDIR=mappings
-MAPPING_IDS=ordo-omim #omim-ordo mondo-ordo mondo-omim
+MAPPING_IDS=ordo omim mondo
 ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
 
-tmp/ordo.json:
-	robot merge -i sources/orphanet/ordo_orphanet.owl convert -f json -o $@
-$(MAPPINGSDIR)/ordo-omim.sssom.tsv: tmp/ordo.json
+tmp/mirror-ordo.json: mirror/ordo.obo
+	robot merge -i $< convert -f json -o $@
+
+tmp/mirror-omim.json: mirror/omim.obo
+	robot merge -i $< convert -f json -o $@
+	
+tmp/mirror-mondo.json: mondo.obo
+	robot merge -i $< convert -f json -o $@
+
+$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 	sssom convert -i $< -o $@
+	#python ../scripts/split_sssom_by_source.py $@
 
 mappings: $(ALL_MAPPINGS)
