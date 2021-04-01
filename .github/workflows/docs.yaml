@@ -2,7 +2,7 @@ name: Docs
 
 on:
   push:
-    branches: [ master ]
+    branches: [ pattern_docs ]
   
 jobs:
   docs:
@@ -18,7 +18,7 @@ jobs:
     - name: install python packages
       run: |
         pip install -r docs/requirements.txt     
-        pip install pandas
+        pip install pandas tabulate
     
     - name: Generate docs 
       run: |
