@@ -24,10 +24,3 @@ Any disease in which the causes of the disease is a perturbation of the {[struct
 
 [disease](http://purl.obolibrary.org/obo/MONDO_0000001) and [disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020) some {[structure](http://purl.obolibrary.org/obo/UBERON_0000061)}
 
-## Data preview 
-| defined_class                                | defined_class_label             | structure                                     | structure_label       |
-|:---------------------------------------------|:--------------------------------|:----------------------------------------------|:----------------------|
-| [MONDO:0004880](http://purl.obolibrary.org/obo/MONDO_0004880) | bowel dysfunction               | [UBERON:0004907](http://purl.obolibrary.org/obo/UBERON_0004907) | lower digestive tract |
-| [MONDO:0001343](http://purl.obolibrary.org/obo/MONDO_0001343) | impaired renal function disease | [UBERON:0002113](http://purl.obolibrary.org/obo/UBERON_0002113) | kidney                |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_by_dysfunctional_structure.tsv) 
