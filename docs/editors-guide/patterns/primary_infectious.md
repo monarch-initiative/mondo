@@ -20,3 +20,10 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that arises from inf
 
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [primary infectious](http://purl.obolibrary.org/obo/MONDO_0045036)
 
+## Data preview 
+| defined_class                                | defined_class_label                  | disease                                      | disease_label                |
+|:---------------------------------------------|:-------------------------------------|:---------------------------------------------|:-----------------------------|
+| [MONDO:0000314](http://purl.obolibrary.org/obo/MONDO_0000314) | primary bacterial infectious disease | [MONDO:0005113](http://purl.obolibrary.org/obo/MONDO_0005113) | bacterial infectious disease |
+| [MONDO:0000308](http://purl.obolibrary.org/obo/MONDO_0000308) | primary systemic mycosis             | [MONDO:0000256](http://purl.obolibrary.org/obo/MONDO_0000256) | systemic mycosis             |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/primary_infectious.tsv) 
