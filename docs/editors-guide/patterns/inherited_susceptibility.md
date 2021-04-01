@@ -27,3 +27,13 @@ An inherited susceptibility or predisposition to developing {[disease](http://pu
 
 ([inherited disease susceptibility](http://purl.obolibrary.org/obo/MONDO_0020573) and ([predisposes towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards) some {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}))
 
+## Data preview 
+| defined_class                                | defined_class_label                           | disease                                      | disease_label                          |
+|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------------------|
+| [MONDO:0100232](http://purl.obolibrary.org/obo/MONDO_0100232) | 'psoriatic arthritis, susceptibility to       | [MONDO:0011849](http://purl.obolibrary.org/obo/MONDO_0011849) | psoriatic arthritis                    |
+| [MONDO:0014707](http://purl.obolibrary.org/obo/MONDO_0014707) | 14q32 duplication syndrome                    | [MONDO:0020076](http://purl.obolibrary.org/obo/MONDO_0020076) | myeloproliferative neoplasm            |
+| [MONDO:0007845](http://purl.obolibrary.org/obo/MONDO_0007845) | Kaposi sarcoma, susceptibility to             | [MONDO:0005055](http://purl.obolibrary.org/obo/MONDO_0005055) | Kaposi's sarcoma (disease)             |
+| [MONDO:0000093](http://purl.obolibrary.org/obo/MONDO_0000093) | Schistosoma mansoni infection, susceptibility | [MONDO:0044345](http://purl.obolibrary.org/obo/MONDO_0044345) | Schistosoma mansoni infectious disease |
+| [MONDO:0013562](http://purl.obolibrary.org/obo/MONDO_0013562) | aspergillosis, susceptibility to              | [MONDO:0005657](http://purl.obolibrary.org/obo/MONDO_0005657) | aspergillosis                          |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv) 

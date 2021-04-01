@@ -23,3 +23,13 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is caused by ex
 
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [realized in response to stimulus](http://purl.obolibrary.org/obo/RO_0004028) some {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)}
 
+## Data preview 
+| defined_class                                | defined_class_label                     | disease                                      | disease_label      | stimulus                                      | stimulus_label       |
+|:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:-------------------|:----------------------------------------------|:---------------------|
+| [MONDO:0021747](http://purl.obolibrary.org/obo/MONDO_0021747) | Acanthamoeba infectious disease         | [MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550) | infectious disease | [NCBITaxon:5754](http://purl.obolibrary.org/obo/NCBITaxon_5754) | Acanthamoeba         |
+| [MONDO:0006635](http://purl.obolibrary.org/obo/MONDO_0006635) | Acinetobacter infectious disease        | [MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550) | infectious disease | [NCBITaxon:469](http://purl.obolibrary.org/obo/NCBITaxon_469)  | Acinetobacter        |
+| [MONDO:0006636](http://purl.obolibrary.org/obo/MONDO_0006636) | Actinobacillus infectious disease       | [MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550) | infectious disease | [NCBITaxon:713](http://purl.obolibrary.org/obo/NCBITaxon_713)  | Actinobacillus       |
+| [MONDO:0006921](http://purl.obolibrary.org/obo/MONDO_0006921) | Actinomycetales infectious disease      | [MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550) | infectious disease | [NCBITaxon:2037](http://purl.obolibrary.org/obo/NCBITaxon_2037) | Actinomycetales      |
+| [MONDO:0005117](http://purl.obolibrary.org/obo/MONDO_0005117) | Aeromonas hydrophila infectious disease | [MONDO:0005550](http://purl.obolibrary.org/obo/MONDO_0005550) | infectious disease | [NCBITaxon:644](http://purl.obolibrary.org/obo/NCBITaxon_644)  | Aeromonas hydrophila |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) 
