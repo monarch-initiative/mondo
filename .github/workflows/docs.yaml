@@ -18,6 +18,7 @@ jobs:
     - name: install python packages
       run: |
         pip install -r docs/requirements.txt     
+        pip install pandas
     
     - name: Generate docs 
       run: |
