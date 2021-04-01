@@ -25,13 +25,3 @@ A benign adipose tissue neoplasm of the {[location](http://www.w3.org/2002/07/ow
 
 [lipoma](http://purl.obolibrary.org/obo/MONDO_0005106) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
-## Data preview 
-| defined_class                                | defined_class_label           | location                                      | location_label         |
-|:---------------------------------------------|:------------------------------|:----------------------------------------------|:-----------------------|
-| [MONDO:0000974](http://purl.obolibrary.org/obo/MONDO_0000974) | axillary lipoma               | [UBERON:0009472](http://purl.obolibrary.org/obo/UBERON_0009472) | axilla                 |
-| [MONDO:0000970](http://purl.obolibrary.org/obo/MONDO_0000970) | breast lipoma                 | [UBERON:0000310](http://purl.obolibrary.org/obo/UBERON_0000310) | breast                 |
-| [MONDO:0003844](http://purl.obolibrary.org/obo/MONDO_0003844) | central nervous system lipoma | [UBERON:0001017](http://purl.obolibrary.org/obo/UBERON_0001017) | central nervous system |
-| [MONDO:0003843](http://purl.obolibrary.org/obo/MONDO_0003843) | cerebral hemisphere lipoma    | [UBERON:0001869](http://purl.obolibrary.org/obo/UBERON_0001869) | cerebral hemisphere    |
-| [MONDO:0000971](http://purl.obolibrary.org/obo/MONDO_0000971) | chest wall lipoma             | [UBERON:0016435](http://purl.obolibrary.org/obo/UBERON_0016435) | chest wall             |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv) 
