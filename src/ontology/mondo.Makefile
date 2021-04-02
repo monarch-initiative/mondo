@@ -326,6 +326,7 @@ modules/harrisons-view.tsv:
 modules/mondo-%-view-top.owl: modules/%-view.tsv
 	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
 	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(OBO)/$(ONT)/mondo-$*-view-top.owl -o $@
+.PRECIOUS: modules/mondo-%-view-top.owl
 
 tmp/mondo-%-leafs.txt: modules/mondo-%-view-top.owl
 	$(ROBOT) query --use-graphs false -i $< -f tsv --query $(SPARQLDIR)/leaf-classes.sparql $@
