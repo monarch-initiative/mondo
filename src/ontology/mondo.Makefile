@@ -292,7 +292,7 @@ tmp/mirror-ordo.json: mirror/ordo.obo
 
 tmp/mirror-omim.json: mirror/omim.obo
 	robot merge -i $< convert -f json -o $@
-	
+
 tmp/mirror-mondo.json: mondo.obo
 	robot merge -i $< convert -f json -o $@
 
@@ -301,3 +301,65 @@ $(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 	#python ../scripts/split_sssom_by_source.py $@
 
 mappings: $(ALL_MAPPINGS)
+
+
+###########################
+## MONDO VIEW GENERATION ##
+###########################
+
+# 1. In a ROBOT template, define a top level as you see fit (using, however, MONDO ids)
+# 2. Make sure the template file ends up in modules, and is named like modules/harrisons-view.tsv, where harrisons is the id
+# 3. Add the id to the MONDOVIEWS variable
+# 4. Run `sh run.sh make mondo-views` to generate all views, including your new one.
+# This will: 
+#     a) build the template (modules/mondo-%-view-top.owl)
+#     b) query for the children of the leafs in the template
+#     c) Remove all other MONDO classes from mondo.owl (other than the leafs and their children)
+#     d) Merge this with the template upper level
+
+
+HARRISON_TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vS0748V0s6seWTYetzidiWJbY7r-e_Vc87XcQKl8NmN5BK0LWUios9DTcGqM_1cLj7wWUaueUaBDVx8/pub?gid=0&single=true&output=tsv
+
+modules/harrisons-view.tsv:
+	wget "$(HARRISON_TEMPLATE_URL)" -O $@
+
+modules/mondo-%-view-top.owl: modules/%-view.tsv
+	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(OBO)/$(ONT)/mondo-$*-view-top.owl -o $@
+
+tmp/mondo-%-leafs.txt: modules/mondo-%-view-top.owl
+	$(ROBOT) query --use-graphs false -i $< -f tsv --query $(SPARQLDIR)/leaf-classes.sparql $@
+	tail -n +2 "$@" > $@.tmp && mv $@.tmp $@
+
+tmp/subclasses-of-%-leafs.sparql: tmp/mondo-%-leafs.txt
+	echo "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>" > $@
+	echo "SELECT ?c WHERE {" >> $@
+	LISTT="$(shell paste -sd" " tmp/mondo-$*-leafs.txt)"; echo "  VALUES ?list { $$LISTT }" >> $@
+	echo "  ?c rdfs:subClassOf+ ?list" >> $@
+	echo "}" >> $@
+
+tmp/mondo-%-children.txt: $(SRC) tmp/subclasses-of-%-leafs.sparql
+	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query tmp/subclasses-of-$*-leafs.sparql $@
+	tail -n +2 "$@" > $@.tmp && mv $@.tmp $@
+
+tmp/mondo-%-children-and-leafs.txt: tmp/mondo-%-children.txt tmp/mondo-%-leafs.txt
+	cat $^ | sort | uniq > $@
+	sed -i -E 's/[<>?"]//g' $@
+
+tmp/mondo-%-removed.owl: tmp/mondo-%-children-and-leafs.txt $(SRC)
+	$(ROBOT) merge -i $(SRC) remove -T $< --select complement --select classes --select "MONDO:*"  -o $@
+
+modules/mondo-%-view.owl: tmp/mondo-%-removed.owl modules/mondo-%-view-top.owl
+	$(ROBOT) merge $(patsubst %, -i %, $^) annotate --ontology-iri $(OBO)/$(ONT)/mondo-$*-view.owl -o $@
+
+MONDOVIEWS=harrisons
+
+mondo-views: $(patsubst %, modules/mondo-%-view.owl, $(MONDOVIEWS))
+
+
+#ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
+#OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501 
+#--prefix "MONDOREL: http://purl.obolibrary.org/obo/mondo#" 
+
+#		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
+#	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
