@@ -28,7 +28,7 @@ An acquired metabolic disease that is has its basis in the disruption of {[proce
 [inborn errors of metabolism](http://purl.obolibrary.org/obo/MONDO_0019052) and ([disease caused by disruption of](http://purl.obolibrary.org/obo/RO_0004021) some {[process](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label                  | v0                                        | v0_label                                                                                                      |
+| defined_class                                | defined_class_label                  | process                                   | process_label                                                                                                 |
 |:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | [MONDO:0009825](http://purl.obolibrary.org/obo/MONDO_0009825) | 5-oxoprolinase deficiency (disease)  | [GO:0017168](http://purl.obolibrary.org/obo/GO_0017168) | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
 | [MONDO:0005775](http://purl.obolibrary.org/obo/MONDO_0005775) | G6PD deficiency                      | [GO:0004345](http://purl.obolibrary.org/obo/GO_0004345) | glucose-6-phosphate dehydrogenase activity                                                                    |

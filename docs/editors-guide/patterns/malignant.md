@@ -3,7 +3,9 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/malignant.yaml](http://purl.obolibrary.org/obo/mondo/patterns/malignant.yaml)
 ## Description 
 
-TBD.
+This is a design pattern for classes representing malignant neoplasms, extending a generic neoplasm class.
+
+Examples: [malignant carotid body paraganglioma](http://purl.obolibrary.org/obo/MONDO_0004650), [malignant germ cell tumor](http://purl.obolibrary.org/obo/MONDO_0006290)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 ## Name 

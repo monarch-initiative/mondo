@@ -26,7 +26,7 @@ Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that disrupts {[pr
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and ([disease disrupts](http://purl.obolibrary.org/obo/RO_0004024) some {[process](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label            | v0                                           | v0_label            | v1                                        | v1_label                              |
+| defined_class                                | defined_class_label            | disease                                      | disease_label       | process                                   | process_label                         |
 |:---------------------------------------------|:-------------------------------|:---------------------------------------------|:--------------------|:------------------------------------------|:--------------------------------------|
 | [MONDO:0005937](http://purl.obolibrary.org/obo/MONDO_0005937) | REM sleep behavior disorder    | [MONDO:0003406](http://purl.obolibrary.org/obo/MONDO_0003406) | sleep-wake disorder | [GO:0042747](http://purl.obolibrary.org/obo/GO_0042747) | circadian sleep/wake cycle, REM sleep |
 | [MONDO:0001531](http://purl.obolibrary.org/obo/MONDO_0001531) | blood coagulation disease      | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder | [GO:0007596](http://purl.obolibrary.org/obo/GO_0007596) | blood coagulation                     |

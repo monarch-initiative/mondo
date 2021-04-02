@@ -3,11 +3,12 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/adenocarcinoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/adenocarcinoma.yaml)
 ## Description 
 
-This is auto-generated. Add your description here
+Adenocarcinoma is a common cancer characterized by the presence of malignant glandular cells. This is a design pattern for classes representing adenocarcinomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer. We use the generic disease has location relation, which generalized over primary and secondary sites.
 
-Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016275), [pituitary adenocarcinoma (disease)](http://purl.obolibrary.org/obo/MONDO_0017582), [ureter adenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0003216) (56 total)
+Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016275), [pituitary adenocarcinoma (disease)](http://purl.obolibrary.org/obo/MONDO_0017582)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
 {[location](http://www.w3.org/2002/07/owl#Thing)} adenocarcinoma
@@ -27,7 +28,7 @@ A carcinoma that arises from glandular epithelial cells of the {[location](http:
 [adenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0004970) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label                  | v0                                            | v0_label               |
+| defined_class                                | defined_class_label                  | location                                      | location_label         |
 |:---------------------------------------------|:-------------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0003853](http://purl.obolibrary.org/obo/MONDO_0003853) | Bartholin gland adenocarcinoma       | [UBERON:0000460](http://purl.obolibrary.org/obo/UBERON_0000460) | major vestibular gland |
 | [MONDO:0003410](http://purl.obolibrary.org/obo/MONDO_0003410) | Wolffian duct adenocarcinoma         | [UBERON:0003074](http://purl.obolibrary.org/obo/UBERON_0003074) | mesonephric duct       |

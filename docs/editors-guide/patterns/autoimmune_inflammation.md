@@ -3,7 +3,9 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/autoimmune_inflammation.yaml](http://purl.obolibrary.org/obo/mondo/patterns/autoimmune_inflammation.yaml)
 ## Description 
 
-TBD.
+An instance of an autoimmune disease that is described by inflammation in a specific anatomical entity.
+
+Example: [autoimmune thyroid disease](http://purl.obolibrary.org/obo/MONDO_0005623)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 ## Name 

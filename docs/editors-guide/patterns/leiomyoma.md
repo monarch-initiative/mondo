@@ -26,7 +26,7 @@ A benign smooth muscle neoplasm arising from the {[location](http://purl.obolibr
 [leiomyoma](http://purl.obolibrary.org/obo/MONDO_0001572) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://purl.obolibrary.org/obo/UBERON_0001062)})
 
 ## Data preview 
-| defined_class                                | defined_class_label              | v0                                            | v0_label               |
+| defined_class                                | defined_class_label              | location                                      | location_label         |
 |:---------------------------------------------|:---------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0003292](http://purl.obolibrary.org/obo/MONDO_0003292) | anus leiomyoma                   | [UBERON:0001245](http://purl.obolibrary.org/obo/UBERON_0001245) | anus                   |
 | [MONDO:0003300](http://purl.obolibrary.org/obo/MONDO_0003300) | appendix leiomyoma               | [UBERON:0001154](http://purl.obolibrary.org/obo/UBERON_0001154) | vermiform appendix     |

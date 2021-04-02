@@ -28,7 +28,7 @@ A hemangioma that involves the {[location](http://purl.obolibrary.org/obo/UBERON
 [hemangioma](http://purl.obolibrary.org/obo/MONDO_0006500) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://purl.obolibrary.org/obo/UBERON_0001062)})
 
 ## Data preview 
-| defined_class                                | defined_class_label               | v0                                            | v0_label               |
+| defined_class                                | defined_class_label               | location                                      | location_label         |
 |:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0003126](http://purl.obolibrary.org/obo/MONDO_0003126) | breast hemangioma                 | [UBERON:0000310](http://purl.obolibrary.org/obo/UBERON_0000310) | breast                 |
 | [MONDO:0003241](http://purl.obolibrary.org/obo/MONDO_0003241) | central nervous system hemangioma | [UBERON:0001017](http://purl.obolibrary.org/obo/UBERON_0001017) | central nervous system |
