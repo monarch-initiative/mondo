@@ -3,9 +3,12 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/childhood.yaml](http://purl.obolibrary.org/obo/mondo/patterns/childhood.yaml)
 ## Description 
 
-TBD.
+An instance of a disease that has an onset of signs or symptoms of disease between the age of 1 to 5 years (childhood onset).
+
+Examples: [childhood astrocytic tumor](http://purl.obolibrary.org/obo/MONDO_0002505), [childhood malignant melanoma](http://purl.obolibrary.org/obo/MONDO_0042494)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
 childhood {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}

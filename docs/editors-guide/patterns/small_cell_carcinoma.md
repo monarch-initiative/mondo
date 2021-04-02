@@ -27,7 +27,7 @@ An aggressive, high-grade and poorly differentiated carcinoma with neuroendocrin
 [small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0000402) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label                            | v0                                            | v0_label               |
+| defined_class                                | defined_class_label                            | location                                      | location_label         |
 |:---------------------------------------------|:-----------------------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0004120](http://purl.obolibrary.org/obo/MONDO_0004120) | Bartholin gland small cell carcinoma           | [UBERON:0000460](http://purl.obolibrary.org/obo/UBERON_0000460) | major vestibular gland |
 | [MONDO:0006142](http://purl.obolibrary.org/obo/MONDO_0006142) | cervical small cell carcinoma                  | [UBERON:0000002](http://purl.obolibrary.org/obo/UBERON_0000002) | uterine cervix         |

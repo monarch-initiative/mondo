@@ -3,11 +3,16 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/mucoepidermoid_carcinoma.yaml](http://purl.obolibrary.org/obo/mondo/patterns/mucoepidermoid_carcinoma.yaml)
 ## Description 
 
-This is auto-generated. Add your description here
+Mucoepidermoid carcinomas are carcinomas morphologically characterized the presence of cuboidal mucous cells, goblet-like mucous cells, squamoid cells, cystic changes, and a fibrotic stromal formation.
+
+This is a design pattern for classes representing mucoepidermoid carcinomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer.
+
+We use the generic 'disease has location' relation, which generalized over primary and secondary sites.
 
 Examples: [cutaneous mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MONDO_0003091), [oral cavity mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MONDO_0044964), [mucoepidermoid breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003087) (18 total)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
 {[location](http://purl.obolibrary.org/obo/UBERON_0001062)} mucoepidermoid carcinoma
@@ -25,7 +30,7 @@ A mucoepidermoid carcinoma that involves the {[location](http://purl.obolibrary.
 [mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MONDO_0003036) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://purl.obolibrary.org/obo/UBERON_0001062)})
 
 ## Data preview 
-| defined_class                                | defined_class_label                             | v0                                            | v0_label               |
+| defined_class                                | defined_class_label                             | location                                      | location_label         |
 |:---------------------------------------------|:------------------------------------------------|:----------------------------------------------|:-----------------------|
 | [MONDO:0000531](http://purl.obolibrary.org/obo/MONDO_0000531) | bronchus mucoepidermoid carcinoma               | [UBERON:0002185](http://purl.obolibrary.org/obo/UBERON_0002185) | bronchus               |
 | [MONDO:0003091](http://purl.obolibrary.org/obo/MONDO_0003091) | cutaneous mucoepidermoid carcinoma              | [UBERON:0000014](http://purl.obolibrary.org/obo/UBERON_0000014) | zone of skin           |
