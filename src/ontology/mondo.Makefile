@@ -347,8 +347,8 @@ tmp/mondo-%-children-and-leafs.txt: tmp/mondo-%-children.txt tmp/mondo-%-leafs.t
 	cat $^ | sort | uniq > $@
 	sed -i -E 's/[<>?"]//g' $@
 
-tmp/mondo-%-removed.owl: tmp/mondo-%-children-and-leafs.txt $(SRC)
-	$(ROBOT) merge -i $(SRC) remove -T $< --select complement --select classes --select "MONDO:*"  -o $@
+tmp/mondo-%-removed.owl: tmp/mondo-%-children-and-leafs.txt mondo.owl
+	$(ROBOT) merge -i mondo.owl remove -T $< --select complement --select classes --select "MONDO:*"  -o $@
 
 modules/mondo-%-view.owl: tmp/mondo-%-removed.owl modules/mondo-%-view-top.owl
 	$(ROBOT) merge $(patsubst %, -i %, $^) annotate --ontology-iri $(OBO)/$(ONT)/mondo-$*-view.owl -o $@
