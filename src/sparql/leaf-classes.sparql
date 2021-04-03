@@ -1,0 +1,12 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?c WHERE {
+  ?c a owl:Class .
+  FILTER NOT EXISTS {
+    ?p rdfs:subClassOf ?c . 
+    FILTER (isIRI(?p) && regex(str(?p), "^http://purl.obolibrary.org/obo/MONDO_"))
+  } .
+  FILTER NOT EXISTS {?c owl:deprecated ?x } .
+  FILTER (isIRI(?c) && regex(str(?c), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
