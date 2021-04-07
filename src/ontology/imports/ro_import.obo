@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-03-03/imports/ro_import.owl
+data-version: mondo/releases/2021-04-07/imports/ro_import.owl
 ontology: mondo/imports/ro_import
 
 [Term]
@@ -2015,6 +2015,12 @@ def: "The entity A has an activity that regulates an activity of the entity B. F
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
 is_a: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0014001
+name: disease has infectious agent
+def: "A relationship between a disease and an infectious agent where the material basis of the disease is an infection with some infectious agent." []
+is_a: RO:0004019 ! disease has basis in
 
 [Typedef]
 id: RO:0040035

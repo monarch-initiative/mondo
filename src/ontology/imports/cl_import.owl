@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/mondo/imports/cl_import.owl#"
      xml:base="http://purl.obolibrary.org/obo/mondo/imports/cl_import.owl"
+     xmlns:cl="http://purl.obolibrary.org/obo/cl#"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -11,7 +12,7 @@
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/cl_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-03-03/imports/cl_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-04-07/imports/cl_import.owl"/>
     </owl:Ontology>
     
 
@@ -36,6 +37,14 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000424 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000424"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/cl#added_for_HCA -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/cl#added_for_HCA">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -259,7 +268,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19243617</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19243617</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -275,7 +284,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/cl#has_low_plasma_membrane_amount"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19243617</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19243617</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -677,7 +686,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A mature male germ cell that develops from a spermatid.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A05.360.490.890</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A05.360.490.890</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2214,7 +2223,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ISBN:068340007X</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:068340007X</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.329.427</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D008407</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC1312421</oboInOwl:hasDbXref>
@@ -2241,7 +2250,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000097"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>tissue basophil</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:068340007X</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:068340007X</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2508,7 +2517,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Ectoderm destined to be nervous tissue.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ISBN:068340007X</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:068340007X</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3275,7 +3284,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000173"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A D cell located in the pancreas. Peripherally placed within the islets like type A cells; contains somatostatin.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:0517223651</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>FMA:0517223651</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -3349,7 +3358,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12050120</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:12050120</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3423,9 +3432,9 @@
         <owl:annotatedTarget>The main structural component of the liver. They are specialized epithelial cells that are organized into interconnected plates called lobules. Majority of cell population of liver, polygonal in shape, arranged in plates or trabeculae between sinusoids; may have single nucleus or binucleated.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0412046911</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.436.348</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19717280</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Hepatocyte</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A11.436.348</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19717280</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Hepatocyte</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3496,9 +3505,9 @@
         <owl:annotatedTarget>An animal cell that has characteristics of both a fibroblast cell and a smooth muscle cell.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MESH:D058628</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:19800625</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20630469</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D058628</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19800625</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20630469</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000186"/>
@@ -3538,7 +3547,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000187"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.620</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A11.620</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3573,7 +3582,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.620.520</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D032389</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9315361</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Smooth_muscle_cell</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Smooth_muscle_cell</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000192"/>
@@ -7379,7 +7388,7 @@
         <oboInOwl:hasDbXref>MESH:D020286</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16807374</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17986482</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20024907</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20024907</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000669"/>
@@ -9729,9 +9738,9 @@
         <owl:annotatedTarget>A progenitor cell of the mast cell lineage. Markers for this cell are FceRIa-low, CD117-positive, CD9-positive, T1/ST2-positive, SCA1-negative, and lineage-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC1183570</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMCID:PMC1183570</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC1312421</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:8629001</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:8629001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9354811</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.copewithcytokines.de</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -10800,7 +10809,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:pam</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:19273629</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19273629</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -11699,7 +11708,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:msz</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMCID:PMC2673126</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC2673126</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12145,7 +12154,7 @@
         <oboInOwl:hasDbXref>PMID:10430905</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11750107</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16551251</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20024907</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20024907</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:9389721</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -14405,7 +14414,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A hematopoietic stem cell capable of rapid replenishment of myeloerythroid progenitors and limited self renewal capability. This cell is Kit-positive, Sca1-positive, CD34-positive, CD150-positive, and is Flt3-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:15572596</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15572596</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19022770</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -14458,8 +14467,8 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A hematopoietic stem cell with long term self renewal capability. This cell is Kit-positive, Sca1-positive, CD150-positive, CD90-low, CD34-negative and Flt3-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:15572596</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:17582345</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15572596</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17582345</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -15206,7 +15215,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A conventional thymic dendritic cell that is CD8alpha-positive.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:19273629</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19273629</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.immgen.org/index_content.html</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -15369,7 +15378,7 @@
         <obo:IAO_0000115>An epithelial cell derived from ectoderm.</obo:IAO_0000115>
         <oboInOwl:created_by>tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-06-29T03:38:22Z</oboInOwl:creation_date>
-        <oboInOwl:hasDbXref>FMA:69074</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:69074</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <rdfs:label>ecto-epithelial cell</rdfs:label>
     </owl:Class>
@@ -15377,7 +15386,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002077"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An epithelial cell derived from ectoderm.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:69074</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:69074</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -17344,8 +17353,8 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 and Isl-1.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20025937</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20217494</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20025937</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20217494</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -18484,7 +18493,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A conventional thymic dendritic cell that is CD8alpha-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:19273629</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19273629</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.immgen.org/index_content.html</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -18559,7 +18568,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002481"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The flattened smooth myoepithelial cells of mesodermal origin that lie just outside the basal lamina of the seminiferous tubule.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:cjm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:cjm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MP:0006420</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -19084,7 +19093,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A myofibroblast that lies in the connective tissue of the spinal cord that has a distinctly lamellar arrangement.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Perineurium</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Perineurium</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19744,6 +19753,7 @@
         <obo:IAO_0000115>Mural cells are pericytes and the vascular smooth muscle cells (vSMCs) of the microcirculation.</obo:IAO_0000115>
         <oboInOwl:created_by>dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-02-29T17:33:55Z</oboInOwl:creation_date>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#added_for_HCA"/>
         <rdfs:label xml:lang="en">mural cell</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -19918,6 +19928,7 @@
         <dc:creator rdf:resource="http://orcid.org/0000-0003-2034-601X"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-05-07T16:03:27Z</dc:date>
         <oboInOwl:hasExactSynonym>serous cell of tracheobronchial tree</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#added_for_HCA"/>
         <rdfs:label xml:lang="en">tracheobronchial serous cell</rdfs:label>
     </owl:Class>
     
@@ -19942,6 +19953,7 @@
         <dc:creator rdf:resource="http://orcid.org/0000-0003-2034-601X"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-05-07T17:29:51Z</dc:date>
         <oboInOwl:hasExactSynonym>chondrocyte of tracheobronchial tree</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#added_for_HCA"/>
         <rdfs:label xml:lang="en">tracheobronchial chondrocyte</rdfs:label>
     </owl:Class>
     
@@ -19967,6 +19979,7 @@
         <dc:creator rdf:resource="http://orcid.org/0000-0003-2034-601X"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-05-07T18:14:52Z</dc:date>
         <oboInOwl:hasExactSynonym>goblet cell of tracheobronchial tree</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#added_for_HCA"/>
         <rdfs:label xml:lang="en">tracheobronchial goblet cell</rdfs:label>
     </owl:Class>
     
