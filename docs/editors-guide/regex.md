@@ -25,6 +25,7 @@ Regular expressions can be used for mass editing in the mondo-edit.obo text file
 
 **Replace**
 $1ABBREVIATION [
+
 ---
 
 ### Mental Retardation
