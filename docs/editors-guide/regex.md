@@ -114,6 +114,6 @@ synonym: "$2$3$4
 **Find:**  
 ^(name: .* )[a-z]$
 
-**Example**
-id: MONDO:0014986
-name: Fanconi anemia complementation group R
+**Example**  
+id: MONDO:0014986  
+name: Fanconi anemia complementation group R  
