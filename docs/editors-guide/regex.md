@@ -67,7 +67,7 @@ $1intellectual disability$2$3
 ### Remove kboom scores
 **Description:** This removes the source annotation that contained kboom scores.
 
-**Find**
+**Find**  
 , source="MONDO:kboom-pr-[0-9].[0-9]+/[0-9].[0-9]+/[0-9]+.[0-9]+
 source="MONDO:kboom-pr[0-9]+-[0-9]+”,
 source="MONDO:kboom-pr-[0-9].[0-9]+/[0-9].[0-9]+/[0-9].[0-9]+", 
@@ -84,5 +84,12 @@ source="MONDO:kboom-pr-[0-9].[0-9]+/[0-9].[0-9]+/[0-9].[0-9]+",
 $1EXACT$3
 
 ---
+### Add subClassOf axiom to a group of terms
+**Description:** This specifically adds the subClassOf axiom `'has modifier' some inherited` to every term that is equivalent to an OMIM phenotypic series (OMIMPS). This is a 'relationship' in the text file. In addition, this adds the source to the axiom, that is the OMIMPS ID.
 
+**Find:**  
+^(xref:.*)(OMIMPS[:][0-9]+)(.*equivalentTo.*)
 
+**Replace:**  
+$1$2$3
+relationship: has_modifier MONDO:0021152 {source="$2"} ! inherited
