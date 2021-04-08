@@ -44,7 +44,7 @@ $1ABBREVIATION [
 ### Mental Retardation
 **Description:** Replace all the mentions of 'mental retardation' with 'intellectual disability'.
 
-**Step 1:** Update all the exact synonyms.  
+#### Step 1: Update all the exact synonyms.  
 
 **Find**
 ^(synonym: ".*)mental retardation(.*EXACT)( \[.*)$
@@ -53,7 +53,7 @@ $1ABBREVIATION [
 $1mental retardation$2 DEPRECATED$3
 $1intellectual disability$2$3
 
-**Step 2:** Update all the related synonyms.
+#### Step 2: Update all the related synonyms.
 
 **Find**
 ^(synonym: ".*)mental retardation(.*RELATED)( \[.*)$
