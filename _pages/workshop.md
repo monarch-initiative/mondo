@@ -10,13 +10,10 @@ The workshop will focus on semantic modeling of disease and defining ontology pa
 **April 05, 2021, Monday**  
 8am-11am PT / 11am-2pm ET / 4pm-7pm UK / 5pm-8pm Europe
 
-**Zoom:** _The zoom link will be shared before the workshop with registered participants._
+## Slides & Recording
 
-
-## Register
-
-Register [here](https://docs.google.com/forms/d/e/1FAIpQLScue_MrebrF4Q1i1ikB5LnRZQFxmhosPqUSymYgLsEorMoZIQ/viewform?gxids=7628)
-
+- Slides available [here](https://docs.google.com/presentation/d/1wlxXxha2QAXxF-nca8heVsSQ8ifkI9FO0GkKzJCbu3o/edit)
+- Recording available [here](https://drive.google.com/file/d/1bksTsCk9RChMwvZ_7LMXymK1Yhfa91Ab/view?usp=sharing)
 
 # Agenda Topics
 
