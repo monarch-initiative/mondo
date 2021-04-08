@@ -1,5 +1,5 @@
 
-## Regular Expressions
+## Bulk Editing Using Regular Expressions
 
 by [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) and [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779)   
 _updated 2021-04-08_
