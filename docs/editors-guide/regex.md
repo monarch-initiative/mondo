@@ -41,8 +41,8 @@ $1ABBREVIATION [
 
 ---
 
-### Mental Retardation
-**Description:** Replace all the mentions of 'mental retardation' with 'intellectual disability'.
+### Replace all the mentions of a label
+**Description:** This specifically replaces all the mentions of 'mental retardation' with 'intellectual disability', but this could be applied to other strings by replacing the terms 'mental retardation' with the a new label (replace 'intellectual disability'.
 
 #### Step 1: Update all the exact synonyms.  
 
