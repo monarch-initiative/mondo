@@ -108,7 +108,7 @@ synonym: "$2$3$4
 
 ---
 
-### Find single letter
+### Find a single letter
 **Description:** Find a label that contains a single letter.
 
 **Find:**  
