@@ -12,10 +12,11 @@ Regular expressions can be used for mass editing in the mondo-edit.obo text file
 
 1. Create a new branch.
 2. Make the changes in the mondo-edit.obo text file (src/ontology/mondo-edit.obo). [Sublime](https://www.sublimetext.com/) (for Mac) or [Atom](https://atom.io/) (for Mac) are recommended text editors.
-3. Make a pull request (PR)
-4. Once all other bulk change PRs are merged after the build has passed, do this:
-5. `sh run.sh make NORM`
-6. `mv NORM mondo-edit.obo`
+3. **Note:** The 'Regular Expresission' button must be checked (.*) and the 'Case sensitive' button (Aa) in your text editor. 
+4. Make a pull request (PR)
+5. Once all other bulk change PRs are merged after the build has passed, do this:
+6. `sh run.sh make NORM`
+7. `mv NORM mondo-edit.obo`
 
 ---
 
