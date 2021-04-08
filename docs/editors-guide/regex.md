@@ -93,3 +93,14 @@ $1EXACT$3
 **Replace:**  
 $1$2$3
 relationship: has_modifier MONDO:0021152 {source="$2"} ! inherited
+
+---
+### Split OMIM synonyms and abbreviations
+**Description:** By default, OMIM termss and synonyms are written as the long name and abbreviation combined, for example [Barber-Say syndrome, BBRSAY](https://omim.org/entry/209885). This will split the synonym and abbreviation, for example Barber-Say syndrome and BBRSAY (see [MONDO:0008853](http://purl.obolibrary.org/obo/MONDO_0008853)). This should be followed by adding the abbreviation tag to the abbreviation synonyms (see above).
+
+**Find:**  
+^(synonym:.*); (.*["])(.*)(.*OMIM.*)
+
+**Replace:**  
+$1"$3$4
+synonym: "$2$3$4
