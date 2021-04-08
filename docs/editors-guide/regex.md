@@ -96,7 +96,7 @@ relationship: has_modifier MONDO:0021152 {source="$2"} ! inherited
 
 ---
 ### Split OMIM synonyms and abbreviations
-**Description:** By default, OMIM termss and synonyms are written as the long name and abbreviation combined, for example [Barber-Say syndrome, BBRSAY](https://omim.org/entry/209885). This will split the synonym and abbreviation, for example Barber-Say syndrome and BBRSAY (see [MONDO:0008853](http://purl.obolibrary.org/obo/MONDO_0008853)). This should be followed by adding the abbreviation tag to the abbreviation synonyms (see above).
+**Description:** By default, OMIM terms and synonyms are written as the long name and abbreviation combined, for example [Barber-Say syndrome, BBRSAY](https://omim.org/entry/209885). This will split the synonym and abbreviation, for example Barber-Say syndrome and BBRSAY (see [MONDO:0008853](http://purl.obolibrary.org/obo/MONDO_0008853)). This should be followed by adding the abbreviation tag to the abbreviation synonyms (see above).
 
 **Find:**  
 ^(synonym:.*); (.*["])(.*)(.*OMIM.*)
@@ -104,3 +104,16 @@ relationship: has_modifier MONDO:0021152 {source="$2"} ! inherited
 **Replace:**  
 $1"$3$4
 synonym: "$2$3$4
+
+
+---
+
+### Find single letter
+**Description:** Find a label that contains a single letter.
+
+**Find:**  
+^(name: .* )[a-z]$
+
+**Example**
+id: MONDO:0014986
+name: Fanconi anemia complementation group R
