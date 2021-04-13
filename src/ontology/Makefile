@@ -132,6 +132,8 @@ all_artefacts: all_reports $(ARTEFACTS)
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
 test: sparql_test_edit roundtrip.obo debug.owl mondo-edit.owl sparql_test_main_obo test_nomerge
+test: reports/robot-report-mondo-edit.obo.tsv reports/robot-report-mondo.owl.tsv
+test: reports/robot-report-mondo.obo.tsv
 
 
 # ----------------------------------------
@@ -485,10 +487,10 @@ fix-report-%:
 
 
 # TODO: remove hacky script once we improve robot output: https://github.com/ontodev/robot/issues/176
-reports-edit/%.tsv: $(SRC) $(SPARQLDIR)/%.sparql
+reports/query-%-mondo-edit.obo.tsv: $(SRC) $(SPARQLDIR)/%.sparql
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
-reports/%.tsv: mondo.owl
+reports/query-%-mondo.owl.tsv: mondo.owl
 	robot query -f tsv -i $< -s $(SPARQLDIR)/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # TODO: replace with sparql
@@ -496,7 +498,7 @@ reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
 	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 #RR=$(HOME)/repos/rctauber/robot/bin/robot report --fail-on none
-RR= robot report --fail-on none
+RR= robot report --fail-on ERROR --profile profile.txt --print 8
 reports/edit/report.tsv: $(SRC)
 	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 reports/release/mondo-obo-report.tsv: mondo.obo
@@ -505,8 +507,8 @@ reports/release/mondo-obo-report.tsv: mondo.obo
 reports/release/mondo-owl-report.tsv: mondo.owl
 	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
-%-report.tsv: %
-	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
+reports/robot-report-%.tsv: %
+	$(RR) -i $* -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 common_map.tsv:
 	blip-findall -debug index -goal ix -i imports/equivalencies.obo -i d2p.pro  -r mondoe -c ../utils/all_genetic.pro common_to_mondo/2 -label -no_pred -use_tabs | cut -f1,3,4 > $@
