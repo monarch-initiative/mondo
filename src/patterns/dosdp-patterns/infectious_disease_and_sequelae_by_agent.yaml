@@ -13,38 +13,37 @@ contributors:
 
 classes:
   disease: MONDO:0000001
-  organism: NCBITaxon:1
   infectious disease: MONDO:0005550
 
 relations:
-  disease has infectious agent: RO:0014001
+   disease arises from feature: RO:0004022
 
 annotationProperties:
   exact_synonym: oio:hasExactSynonym
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  agent: '''organism'''
+  disease: '''disease'''
   infectious disease: '''infectious disease'''
 
 name:
   text: '%s infectious disease and sequelae'
   vars:
-  - agent
+  - disease
 
 annotations:
 - annotationProperty: broad_synonym
   text: '% infectious disease'
   vars:
-  - agent
+  - disease
 
 def:
   text: A disease and associated sequelae caused by infection with %s.
   vars:
-  - agent
+  - disease
 
 equivalentTo:
-  text: '%s and ''disease has infectious agent'' some %s'
+  text: '%s or '%s and 'disease arises from feature' some %s'
   vars:
+  - disease
   - infectious disease
-  - agent
