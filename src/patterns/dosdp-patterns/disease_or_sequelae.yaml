@@ -1,0 +1,47 @@
+pattern_name: disease_or_sequelae.yaml
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_or_sequelae.yaml
+
+description: 'A grouping class for a disease and all of its associated sequelae or aftereffects.
+
+  Examples: [COVID-19 and sequelae](http://purl.obolibrary.org/obo/MONDO_0100318)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  disease: MONDO:0000001
+
+relations:
+   disease arises from feature: RO:0004022
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+
+name:
+  text: '%s and sequelae'
+  vars:
+  - disease
+
+annotations:
+- annotationProperty: broad_synonym
+  text: '%s or sequelae'
+  vars:
+  - disease
+
+def:
+  text: %s and the associated sequelae.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s or ('disease' and 'disease arises from feature' some %s)'
+  vars:
+  - disease
+  - disease
+
