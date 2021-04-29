@@ -21,21 +21,18 @@ annotationProperties:
   exact_synonym: oio:hasExactSynonym
 
 vars:
-  substance abuse: '''substance abuse'''
   stimulus: '''material entity'''
 
 name:
-  text: '%s from %s'
+  text: '%s abuse'
   vars:
-  - substance abuse
   - stimulus
 
 annotations:
 - annotationProperty: exact_synonym
-  text: '%s %s'
+  text: 'abuse of %s'
   vars:
   - stimulus
-  - substance abuse
 
 def:
   text: The abuse or overuse of %s.
@@ -43,7 +40,6 @@ def:
   - stimulus
 
 equivalentTo:
-  text: '%s and ''realized in response to stimulus'' some %s'
+  text: '''substance abuse'' and ''realized in response to stimulus'' some %s'
   vars:
-  - substance abuse
   - stimulus
