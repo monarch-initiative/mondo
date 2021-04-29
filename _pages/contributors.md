@@ -18,7 +18,6 @@ Name | Affiliation | GitHub
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
 [Melissa Haendel](https://lpi.oregonstate.edu/faculty-staff/melissa-haendel) | University of Colorado | [mellybelly](https://github.com/mellybelly)
 [Kalliopi Panoutsopoulou](https://orcid.org/0000-0002-5460-8025) | European Bioinformatics Institute | [kallia-p](https://github.com/kallia-p) 
-Shahim Essaid | Oregon Health & Science University | [ShahimEssaid](https://github.com/ShahimEssaid)
 
 # Contributors
 
@@ -34,6 +33,7 @@ PJ Brooks | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-g
 Tiffany Callahan | [University of Colorado School of Medicine](https://medschool.cuanschutz.edu/) | [callahantiff](https://github.com/callahantiff)
 Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody](https://github.com/LCCarmody)
 Alice Chen | [NIH NCATS](National Center for Advancing Translational Sciences ) | [achenNCATS](https://github.com/achenNCATS)
+Shahim Essaid | Oregon Health & Science University | [ShahimEssaid](https://github.com/ShahimEssaid)
 Christopher G Chute | [Johns Hopkins](https://www.jhu.edu/) | [chute](https://github.com/chute)
 Mélanie Courtot | [EBI](https://www.ebi.ac.uk/) | [mcourtot](https://github.com/mcourtot)
 Maria Della Rocca | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [GARDInfoCenter](https://github.com/GARDInfoCenter)
