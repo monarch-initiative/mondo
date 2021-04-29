@@ -17,7 +17,7 @@ Name | Affiliation | GitHub
 [Nico Matentzoglu](https://www.ebi.ac.uk/about/people/nicolas-matentzoglu) | Semanticly | [matentzn](https://github.com/matentzn)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
 [Melissa Haendel](https://lpi.oregonstate.edu/faculty-staff/melissa-haendel) | University of Colorado | [mellybelly](https://github.com/mellybelly)
-(Kalliopi Panoutsopoulou) | European Bioinformatics Institute | [kallia-p](https://github.com/kallia-p) 
+[Kalliopi Panoutsopoulou](https://orcid.org/0000-0002-5460-8025) | European Bioinformatics Institute | [kallia-p](https://github.com/kallia-p) 
 Shahim Essaid | Oregon Health & Science University | [ShahimEssaid](https://github.com/ShahimEssaid)
 
 # Contributors
