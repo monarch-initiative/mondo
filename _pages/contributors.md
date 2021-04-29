@@ -14,10 +14,11 @@ Name | Affiliation | GitHub
 --- | --- | ---
 [Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall)
 [Nicole Vasilevsky](https://www.ohsu.edu/people/nicole-vasilevsky/AFE02EDDEA27ECE3D94EFA42F7295044) | Oregon Health & Science University | [nicolevasilevsky](https://github.com/nicolevasilevsky)
-Shahim Essaid | Oregon Health & Science University | [ShahimEssaid](https://github.com/ShahimEssaid)
 [Nico Matentzoglu](https://www.ebi.ac.uk/about/people/nicolas-matentzoglu) | Semanticly | [matentzn](https://github.com/matentzn)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
-[Melissa Haendel](https://lpi.oregonstate.edu/faculty-staff/melissa-haendel) | Oregon State University | [mellybelly](https://github.com/mellybelly) 
+[Melissa Haendel](https://lpi.oregonstate.edu/faculty-staff/melissa-haendel) | University of Colorado | [mellybelly](https://github.com/mellybelly)
+(Kalliopi Panoutsopoulou) | [kallia-p](https://github.com/kallia-p) | European Bioinformatics Institute
+Shahim Essaid | Oregon Health & Science University | [ShahimEssaid](https://github.com/ShahimEssaid)
 
 # Contributors
 
