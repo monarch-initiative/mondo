@@ -1,0 +1,46 @@
+pattern_name: poisoning
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml
+
+description: 'A disease that is caused by exposure to an environmental stimulus that causes poisoning.  Examples: [colchicine poisoning](http://purl.obolibrary.org/obo/MONDO_0017859),
+  [cocaine intoxication](http://purl.obolibrary.org/obo/MONDO_0019544)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-7463-6306
+
+classes:
+  poisoning: MONDO:0029000
+  material entity: BFO:0000040
+
+relations:
+  realized in response to stimulus: RO:0004028
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  stimulus: '''material entity'''
+
+name:
+  text: 'poisoning from %s'
+  vars:
+  - stimulus
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s poisoning'
+  vars:
+  - stimulus
+
+def:
+  text: A poisoning that is caused by exposure to %s.
+  vars:
+  - stimulus
+
+equivalentTo:
+  text: '''poisoning'' and ''realized in response to stimulus'' some %s'
+  vars:
+  - stimulus
