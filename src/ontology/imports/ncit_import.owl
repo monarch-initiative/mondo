@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/ncit_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-04-07/imports/ncit_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-04-30/imports/ncit_import.owl"/>
     </owl:Ontology>
     
 
@@ -59,6 +59,14 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_A30 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_A30"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C103330 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_C103330">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -281,6 +289,14 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C159100 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_C159100">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C159106 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_C159106">
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
     </owl:AnnotationProperty>
     
@@ -574,6 +590,14 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C54585 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_C54585">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C61410 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_C61410">
@@ -609,6 +633,14 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C74456 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_C74456">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C74559 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/NCIT_C74559">
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
     </owl:AnnotationProperty>
     
@@ -1004,6 +1036,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12219">
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C12913"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C17828"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C20181"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C7057"/>
         <obo:IAO_0000115>A human biological structure, fluid or other substance; excludes single molecular entities.</obo:IAO_0000115>
@@ -1625,6 +1658,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C12913">
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C17828"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C20181"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C7057"/>
         <obo:IAO_0000115>An abnormal human cell type which can occur in either disease states or disease models.</obo:IAO_0000115>
@@ -3326,6 +3360,141 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C16273 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16273">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19683"/>
+        <obo:IAO_0000115>Consumption of liquids containing ethanol, including the behaviors associated with drinking the alcohol.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C16273</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Individual Behavior</obo:NCIT_P106>
+        <obo:NCIT_P108>Alcohol Consumption</obo:NCIT_P108>
+        <obo:NCIT_P207>C0001948</obo:NCIT_P207>
+        <obo:NCIT_P322>CPTAC</obo:NCIT_P322>
+        <obo:NCIT_P322>GDC</obo:NCIT_P322>
+        <obo:NCIT_P366>Alcohol_Consumption</obo:NCIT_P366>
+        <obo:NCIT_P375>Alcohol Consumption</obo:NCIT_P375>
+        <oboInOwl:hasExactSynonym>Alcohol Consumption</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C156952"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C156953"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C156954"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C157529"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C157711"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C159106"/>
+        <rdfs:label>Alcohol Consumption</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16273"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Consumption of liquids containing ethanol, including the behaviors associated with drinking the alcohol.</owl:annotatedTarget>
+        <obo:NCIT_P378>NCI</obo:NCIT_P378>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16273"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/NCIT_P375"/>
+        <owl:annotatedTarget>Alcohol Consumption</owl:annotatedTarget>
+        <obo:NCIT_P393>Has Synonym</obo:NCIT_P393>
+        <obo:NCIT_P394>PT</obo:NCIT_P394>
+        <obo:NCIT_P395>risk_factor</obo:NCIT_P395>
+        <obo:NCIT_P396>GDC</obo:NCIT_P396>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16273"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Alcohol Consumption</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>CPTAC</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16273"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Alcohol Consumption</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>GDC</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16273"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Alcohol Consumption</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16273"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Alcohol Consumption</owl:annotatedTarget>
+        <obo:NCIT_P383>SY</obo:NCIT_P383>
+        <obo:NCIT_P384>caDSR</obo:NCIT_P384>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C16326 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16326">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
+        <obo:IAO_0000115>The actions or reactions of an object or organism, usually in relation to the environment or surrounding world of stimuli.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C16326</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Behavior</obo:NCIT_P106>
+        <obo:NCIT_P108>Behavior</obo:NCIT_P108>
+        <obo:NCIT_P207>C0004927</obo:NCIT_P207>
+        <obo:NCIT_P322>ICDC</obo:NCIT_P322>
+        <obo:NCIT_P322>NICHD</obo:NCIT_P322>
+        <obo:NCIT_P366>Behavior</obo:NCIT_P366>
+        <obo:NCIT_P371>Behavior</obo:NCIT_P371>
+        <oboInOwl:hasExactSynonym>Attitude</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Behavior</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Behavioral</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Conduct</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C165451"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C175517"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C90259"/>
+        <rdfs:label>Behavior</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The actions or reactions of an object or organism, usually in relation to the environment or surrounding world of stimuli.</owl:annotatedTarget>
+        <obo:NCIT_P378>NCI</obo:NCIT_P378>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Attitude</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>ICDC</obo:NCIT_P384>
+        <obo:NCIT_P386>ICDC</obo:NCIT_P386>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Behavior</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Behavior</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>NICHD</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Behavioral</owl:annotatedTarget>
+        <obo:NCIT_P383>AD</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Conduct</owl:annotatedTarget>
+        <obo:NCIT_P383>SY</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C165233 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C165233">
@@ -3504,6 +3673,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C17828 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C17828">
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C20181"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C7057"/>
         <obo:IAO_0000115>An activity occurring within an organism, between organisms or among organisms and the mechanisms underlying such events.</obo:IAO_0000115>
@@ -3601,6 +3771,195 @@
         <owl:annotatedTarget>Transmission, Sexual</owl:annotatedTarget>
         <obo:NCIT_P383>SY</obo:NCIT_P383>
         <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C19160 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C19160">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C20181"/>
+        <obo:IAO_0000115>A grouping of occupations and fields of study.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C19160</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Occupation or Discipline</obo:NCIT_P106>
+        <obo:NCIT_P108>Occupation or Discipline</obo:NCIT_P108>
+        <obo:NCIT_P207>C1518533</obo:NCIT_P207>
+        <obo:NCIT_P366>Occupation_or_Discipline</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Occupation or Discipline</oboInOwl:hasExactSynonym>
+        <rdfs:label>Occupation or Discipline</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19160"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A grouping of occupations and fields of study.</owl:annotatedTarget>
+        <obo:NCIT_P378>NCI</obo:NCIT_P378>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19160"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Occupation or Discipline</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C19683 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C19683">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16326"/>
+        <obo:IAO_0000115>The observable response of a person.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C19683</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Individual Behavior</obo:NCIT_P106>
+        <obo:NCIT_P108>Personal Behavior</obo:NCIT_P108>
+        <obo:NCIT_P207>C1519022</obo:NCIT_P207>
+        <obo:NCIT_P366>Personal_Behavior</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Personal Behavior</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Personal Conduct</oboInOwl:hasExactSynonym>
+        <rdfs:label>Personal Behavior</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19683"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The observable response of a person.</owl:annotatedTarget>
+        <obo:NCIT_P378>NCI</obo:NCIT_P378>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19683"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Personal Behavior</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19683"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Personal Conduct</owl:annotatedTarget>
+        <obo:NCIT_P383>SY</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C20181 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C20181">
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C7057"/>
+        <obo:IAO_0000115>An organizational header for concepts representing mostly abstract entities.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C20181</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Classification</obo:NCIT_P106>
+        <obo:NCIT_P108>Conceptual Entity</obo:NCIT_P108>
+        <obo:NCIT_P207>C1254372</obo:NCIT_P207>
+        <obo:NCIT_P366>Conceptual_Entities</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>Conceptual Entity</oboInOwl:hasExactSynonym>
+        <rdfs:label>Conceptual Entity</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C20181"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An organizational header for concepts representing mostly abstract entities.</owl:annotatedTarget>
+        <obo:NCIT_P378>NCI</obo:NCIT_P378>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C20181"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Conceptual Entity</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C25193 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C25193">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19160"/>
+        <obo:IAO_0000115>The principal activity that a person does to earn money.</obo:IAO_0000115>
+        <obo:NCIT_NHC0>C25193</obo:NCIT_NHC0>
+        <obo:NCIT_P106>Occupation or Discipline</obo:NCIT_P106>
+        <obo:NCIT_P108>Occupation</obo:NCIT_P108>
+        <obo:NCIT_P207>C0028811</obo:NCIT_P207>
+        <obo:NCIT_P322>CDISC</obo:NCIT_P322>
+        <obo:NCIT_P322>FDA</obo:NCIT_P322>
+        <obo:NCIT_P325>A code specifying the job performed by the employee for the employer. For example, accountant, programmer analyst, patient care associate, staff nurse, etc.</obo:NCIT_P325>
+        <obo:NCIT_P366>Occupation</obo:NCIT_P366>
+        <oboInOwl:hasExactSynonym>EMPJOB</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Employee Job</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Job</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>OCCUPATION</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Occupation</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C103330"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C54447"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C54585"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61410"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C66830"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/NCIT_C74559"/>
+        <rdfs:label>Occupation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The principal activity that a person does to earn money.</owl:annotatedTarget>
+        <obo:NCIT_P378>NCI</obo:NCIT_P378>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/NCIT_P325"/>
+        <owl:annotatedTarget>A code specifying the job performed by the employee for the employer. For example, accountant, programmer analyst, patient care associate, staff nurse, etc.</owl:annotatedTarget>
+        <obo:NCIT_P378>CDISC</obo:NCIT_P378>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>EMPJOB</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>CDISC</obo:NCIT_P384>
+        <obo:NCIT_P385>SDTM-SCTESTCD</obo:NCIT_P385>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Employee Job</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>CDISC</obo:NCIT_P384>
+        <obo:NCIT_P385>SDTM-SCTEST</obo:NCIT_P385>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Employee Job</owl:annotatedTarget>
+        <obo:NCIT_P383>SY</obo:NCIT_P383>
+        <obo:NCIT_P384>CDISC</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Job</owl:annotatedTarget>
+        <obo:NCIT_P383>SY</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>OCCUPATION</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>FDA</obo:NCIT_P384>
+        <obo:NCIT_P386>ICSR</obo:NCIT_P386>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Occupation</owl:annotatedTarget>
+        <obo:NCIT_P383>PT</obo:NCIT_P383>
+        <obo:NCIT_P384>NCI</obo:NCIT_P384>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25193"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Occupation</owl:annotatedTarget>
+        <obo:NCIT_P383>SY</obo:NCIT_P383>
+        <obo:NCIT_P384>caDSR</obo:NCIT_P384>
     </owl:Axiom>
     
 

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-04-07/imports/foodon_import.owl
+data-version: mondo/releases/2021-04-30/imports/foodon_import.owl
 subsetdef: Angiosperm ""
 subsetdef: Arabidopsis ""
 subsetdef: Citrus ""
@@ -289,6 +289,26 @@ property_value: IAO:0000116 "Some of the subclasses are currently freshwater org
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
+id: FOODON:00001053
+name: fermented dairy food product
+is_a: FOODON:00001256 ! dairy food product
+is_a: FOODON:00001258 ! food (fermented)
+intersection_of: FOODON:00001256 ! dairy food product
+intersection_of: FOODON:00001258 ! food (fermented)
+
+[Term]
+id: FOODON:00001054
+name: fermented fish or seafood food product
+is_a: FOODON:00001055 ! sea water fish food product
+is_a: FOODON:00001258 ! food (fermented)
+
+[Term]
+id: FOODON:00001055
+name: sea water fish food product
+is_a: FOODON:00001046 ! seafood product
+is_a: FOODON:03315173 ! fish product (unspecified species)
+
+[Term]
 id: FOODON:00001092
 name: vertebrate animal food product
 def: "A food product which is derived from or produced by an animal that has a vertibrae." []
@@ -304,6 +324,21 @@ name: cereal grain food product
 is_a: FOODON:00001173 ! plant seed food product
 intersection_of: FOODON:00001173 ! plant seed food product
 intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant
+
+[Term]
+id: FOODON:00001094
+name: fermented beverage
+comment: SIREN DB annotation:\n* has quality 'liquid' (http://purl.obolibrary.org/obo/FOODON_03430130)\n* formed as a result of 'microbial/enzymatic modification process' (http://purl.obolibrary.org/obo/FOODON_03460119)\n* formed as a result of 'curing or aging process' (http://purl.obolibrary.org/obo/FOODON_03460253)\n                
+subset: subset_siren
+synonym: "alcoholic beverage" EXACT []
+xref: SUBSET_SIREN:F5644
+is_a: FOODON:00001258 ! food (fermented)
+is_a: FOODON:03301977 ! beverage food product
+intersection_of: FOODON:00001258 ! food (fermented)
+intersection_of: FOODON:03301977 ! beverage food product
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-11T07:25:19Z xsd:dateTime
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:00001107
@@ -426,6 +461,13 @@ is_a: FOODON:00001256 ! dairy food product
 property_value: seeAlso https://en.wikipedia.org/wiki/Fat_content_of_milk#/media/File:Milkproducts.svg
 
 [Term]
+id: FOODON:00001258
+name: food (fermented)
+is_a: FOODON:00002501 ! multi-component food product
+is_a: FOODON:00002645 ! food product by process
+relationship: RO:0002353 FOODON:00001304 ! output of food fermentation
+
+[Term]
 id: FOODON:00001262
 name: botanical fruit food product
 def: "Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits." [http://eurovoc.europa.eu/drupal/?q=request&amp;uri=http\://eurovoc.europa.eu/1115, http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119, http://www.fao.org/pollination/resources/glossary/en/, https://en.wikipedia.org/wiki/Fruit]
@@ -439,6 +481,36 @@ is_a: FOODON:00001176 ! invertebrate animal food product
 intersection_of: FOODON:00001046 ! seafood product
 intersection_of: FOODON:00001176 ! invertebrate animal food product
 intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish
+
+[Term]
+id: FOODON:00001304
+name: food fermentation
+def: "A fermentation process in which either carbohydrates, proteins or fats are modified through microbial, enzymatic and/or other biological process." []
+is_a: FOODON:03460119 ! microbial/enzymatic modification process
+is_a: FOODON:03470107 ! food preservation process
+relationship: RO:0002234 FOODON:00001258 ! has output food (fermented)
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+
+[Term]
+id: FOODON:00001327
+name: pu dong
+def: "Pu dong is fermented crab" []
+is_a: FOODON:00001054 ! fermented fish or seafood food product
+is_a: FOODON:00001785 ! crab food product
+intersection_of: FOODON:00001054 ! fermented fish or seafood food product
+intersection_of: RO:0001000 FOODON:03411335 ! derives from crab
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 http://orcid.org/0000-0002-1816-4260 xsd:anyURI
+
+[Term]
+id: FOODON:00001579
+name: alcoholic beverage
+def: "An alcoholic drink (or alcoholic beverage) is a drink that contains ethanol, a type of alcohol produced by fermentation of grains, fruits, or other sources of sugar." []
+xref: SUBSET_SIREN:F10770
+is_a: FOODON:00001094 ! fermented beverage
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000119 https://en.m.wikipedia.org/wiki/Alcoholic_drink xsd:anyURI
 
 [Term]
 id: FOODON:00001714
@@ -481,6 +553,11 @@ name: food product analog
 is_a: FOODON:00001002 ! food product
 
 [Term]
+id: FOODON:00001882
+name: fruit based alcoholic beverage
+is_a: FOODON:00001579 ! alcoholic beverage
+
+[Term]
 id: FOODON:00001907
 name: gluten refined food product
 is_a: FOODON:00002131 ! plant based refined or partially-refined food product
@@ -491,6 +568,13 @@ name: goat dairy food product
 is_a: FOODON:00001109 ! caprine dairy food product
 intersection_of: FOODON:00001109 ! caprine dairy food product
 intersection_of: RO:0001000 FOODON:03305803 ! derives from goat milk (raw)
+
+[Term]
+id: FOODON:00001916
+name: grain based alcoholic beverage
+is_a: FOODON:00001882 ! fruit based alcoholic beverage
+intersection_of: FOODON:00001579 ! alcoholic beverage
+intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant
 
 [Term]
 id: FOODON:00001958
@@ -531,6 +615,14 @@ intersection_of: RO:0001000 FOODON:03411237 ! derives from shrimp
 id: FOODON:00002244
 name: snail food product
 is_a: FOODON:00002044 ! mollusc food product
+
+[Term]
+id: FOODON:00002373
+name: food product by meal type
+def: "A meal type is the name of an eating occasion that may have location, food type, or other customary contextual features. (Damion's 1st draft definition)" []
+is_a: FOODON:00001002 ! food product
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002381
@@ -585,6 +677,19 @@ id: FOODON:00002471
 name: prepared seafood product
 is_a: FOODON:00001180 ! prepared food product
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
+
+[Term]
+id: FOODON:00002501
+name: multi-component food product
+def: "A food product consisting of food material derived from ingredients sourced from multiple organisms." []
+comment: The definition of this is being discussed in issue: https://github.com/FoodOntology/foodon/issues/57\n\nNamely, how to characterize the threshold of ingredients that make for multi-component classification? Salt, pepper, spices wouldn't normally make a food multi-component?
+is_a: FOODON:00001002 ! food product
+relationship: RO:0001000 FOODON:00002381 ! derives from food product by organism
+relationship: RO:0002350 FOODON:03400139 ! member of multicomponent meal (us cfr)
+property_value: hasSynonym "multi-ingredient" xsd:string
+property_value: http://purl.org/dc/elements/1.1/date 2019-01-23T22:40:32Z xsd:dateTime
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002505
@@ -697,6 +802,17 @@ is_obsolete: true
 replaced_by: NCBITaxon:29960
 
 [Term]
+id: FOODON:03301977
+name: beverage food product
+def: "A liquid prepared for consumption, or a product that can be combined with water or milk to make one." []
+is_a: FOODON:00002373 ! food product by meal type
+relationship: RO:0002350 FOODON:03400229 ! member of beverage (us cfr)
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-12T00:00:00 xsd:dateTime
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03302116
 name: cow milk (liquid)
 comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
@@ -763,6 +879,25 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
+id: FOODON:03309823
+name: shrimp paste
+def: "definition: Shrimp paste or shrimp sauce is a fermented condiment commonly used in Southeast Asian, Northeastern South Asian and Southern Chinese cuisines." []
+comment: SIREN DB annotation:\n* has quality 'semisolid' (http://purl.obolibrary.org/obo/FOODON_03430144)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'whole animal or most parts used' (http://purl.obolibrary.org/obo/FOODON_03420173)\n* formed as a result of 'fermentation/modification process, multiple component' (http://purl.obolibrary.org/obo/FOODON_03460128)\n* formed as a result of 'water removal process' (http://purl.obolibrary.org/obo/FOODON_03460138)\n* formed as a result of 'salted' (http://purl.obolibrary.org/obo/FOODON_03460173)\n* formed as a result of 'preservation by fermentation' (http://purl.obolibrary.org/obo/FOODON_03470104)\n        
+subset: subset_siren
+synonym: "kapi\nngapi\nterasi\nbelacan\nbelachan\nblachang\nmắm ruốc\nmắm tép\nmắm tôm\nbagoong alamang\nbagoong aramang\nhaa1 zoeng3/haa1 gou1\nhom ha/hae ko\nsidol" NARROW []
+synonym: "shrimp sauce" EXACT []
+xref: SUBSET_SIREN:F9823
+is_a: FOODON:00001054 ! fermented fish or seafood food product
+is_a: FOODON:00002239 ! shrimp food product
+intersection_of: FOODON:00001054 ! fermented fish or seafood food product
+intersection_of: FOODON:00002239 ! shrimp food product
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000116 "Need to set languages of synonyms (japanese/thai ?)" xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-1816-4260 xsd:anyURI
+property_value: IAO:0000119 wikipedia:Shrimp_pastse http://www.w3.org/2000/01/rdf-schema#Literal
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
 id: FOODON:03311737
 name: processed food product
 subset: subset_siren
@@ -782,6 +917,19 @@ intersection_of: FOODON:00001257 ! milk or milk based food product
 intersection_of: RO:0001000 UBERON:0001913 ! derives from milk
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03315173
+name: fish product (unspecified species)
+def: "A fish product is a home-made or commercially produced or retail or wholesale product containing substantial amounts of freshwater or saltwater fish and/or shellfish flesh. Note that this category should avoid items that mention a particular species of fish or shellfish." []
+comment: SIREN DB annotation:\n* derives from 'skeletal meat part' (http://purl.obolibrary.org/obo/FOODON_03420175)\n        
+subset: subset_siren
+xref: SUBSET_SIREN:F15173
+is_a: FOODON:00001248 ! fish food product
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000412 http://langual.org xsd:string
+property_value: seeAlso https://en.wikipedia.org/wiki/Fish_products xsd:string
 
 [Term]
 id: FOODON:03315468
@@ -808,6 +956,22 @@ name: refined or partially-refined food product (us cfr)
 def: "Extract, concentrate or isolate derived from a food source through one or more refining steps (see *EXTRACT, CONCENTRATE OR ISOLATE OF PLANT OR ANIMAL*) and marketed as such. [FDA CFSAN 1995]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0129
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400139
+name: multicomponent meal (us cfr)
+def: "A multiple-component food product typically containing a protein source, a vegetable, and a potato, rice or cereal-based component packaged to be served after heating, either as separate items or courses or mixed as recipe components; see 21 CFR 102.26, 102.28 and 104.47 for nutritional quality guidelines." []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=A0139
+is_a: FOODON:03400172 ! prepared food product (us cfr)
+property_value: hasSynonym "compartmentalized dinner" xsd:string
+property_value: hasSynonym "dinner with components separated in serving containers" xsd:string
+property_value: hasSynonym "dinner, compartmentalized" xsd:string
+property_value: hasSynonym "food packs with separate components" xsd:string
+property_value: hasSynonym "heat and serve dinner" xsd:string
+property_value: hasSynonym "multiple-course dinner" xsd:string
+property_value: hasSynonym "tv dinner" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -845,6 +1009,16 @@ name: meat, poultry, seafood or related product (us cfr)
 def: "Products of the flesh of animals. [FDA CFSAN 1995]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0217
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000412 http://langual.org xsd:string
+
+[Term]
+id: FOODON:03400229
+name: beverage (us cfr)
+def: "Alcoholic or nonalcoholic beverage; excludes milk and milk-based beverages, fruit juices and fruit juice drinks, and vegetable juices. [FDA CFSAN 1995]" []
+xref: http://www.langual.org/langual_thesaurus.asp?termid=A0229
+is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
+relationship: RO:0002351 FOODON:03301977 ! has member beverage food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -1422,6 +1596,15 @@ xref: http://www.langual.org/langual_thesaurus.asp?termid=H0111
 is_a: FOODON:00002451 ! food transformation process
 
 [Term]
+id: FOODON:03460119
+name: microbial/enzymatic modification process
+def: "A food modification process by microbial or enzymatic action which results in molecular changes in any food component." []
+comment: LanguaL curation note: If salt, sugar or other food additive is used to aid in the modification process, index it by the appropriate term under *INGREDIENT ADDED*.
+xref: http://www.langual.org/langual_thesaurus.asp?termid=H0119
+is_a: FOODON:03460141 ! food modification process
+property_value: hasSynonym "fermented, unspecified" xsd:string
+
+[Term]
 id: FOODON:03460130
 name: physical/chemical modification process
 def: "A food modification process where physical or chemical changes are effected in any food ingredient through a physical or non-enzymatic chemical process." []
@@ -1463,6 +1646,14 @@ comment: LanguaL curation note: A food product is characterized by its main ingr
 xref: http://www.langual.org/langual_thesaurus.asp?termid=H0225
 is_a: FOODON:03460111 ! food treatment process
 property_value: IAO:0000117 "Damion Dooley" xsd:string
+
+[Term]
+id: FOODON:03470107
+name: food preservation process
+def: "The methods contributing to the prevention or retardation of microbial, enzymatic or oxidative spoilage and thus to the extension of shelf life. Index all methods for which information is available, even if a corresponding descriptor has already been used in *H. TREATMENT APPLIED*. Preservation descriptors refer to the finished food as a whole with these exceptions: (1) if the components of a multi-component food, such as cream pie, are preservation by different methods, index all methods; (2)  if chemical preservatives are declared on the label, always index them even if it is known that the preservative was introduced through or is only present in a component or ingredient of the food; and (3) if the preservation method for an ingredient is declared on the label (such as brie cheese made from pasteurized milk) index it. Also use *INGREDIENT preservation by THERMAL PROCESSING* or *INGREDIENT preservation by IRRADIATION* when ingredients have been pasteurized, ultrapasteurized, sterilized or irradiated." []
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: http://www.langual.org/langual_thesaurus.asp?termid=J0107
+is_a: FOODON:00002451 ! food transformation process
 
 [Term]
 id: FOODON:03510019
@@ -2196,7 +2387,7 @@ subset: TraitNet
 synonym: "sistema de brote reproductivo (Spanish, exact)" EXACT []
 synonym: "生殖シュート 系、苗条系 (Japanese, exact)" EXACT []
 is_a: PO:0009006 ! shoot system
-relationship: RO:0000056 PO:0025530 ! participates in reproductive shoot system development stage
+relationship: RO:0000056 PO:0025530 ! participates_in reproductive shoot system development stage
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 created_by: rwalls
 creation_date: 2010-09-17T09:49:10Z
@@ -2559,7 +2750,7 @@ id: RO:0002353
 name: output of
 def: "inverse of has output" []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000056 ! participates in
+is_a: RO:0000056 ! participates_in
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]
