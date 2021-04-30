@@ -20,25 +20,30 @@ annotationProperties:
   exact_synonym: oio:hasExactSynonym
 
 vars:
+  substance dependence: '''substance dependence'''
   stimulus: '''material entity'''
 
 name:
-  text: '%s dependence'
+  text: '%s %s'
   vars:
   - stimulus
+  - substance dependence
 
 annotations:
 - annotationProperty: exact_synonym
-  text: 'dependence on %s'
+  text: '%s on %s'
   vars:
+  - substance dependence
   - stimulus
 
 def:
-  text: Substance dependence on %s.
+  text: A %s on %s.
   vars:
+  - substance dependence
   - stimulus
 
 equivalentTo:
-  text: '''substance dependence'' and ''realized in response to stimulus'' some %s'
+  text: '%s and ''realized in response to stimulus'' some %s'
   vars:
+  - substance dependence
   - stimulus
