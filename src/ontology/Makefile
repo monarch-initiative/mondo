@@ -519,16 +519,16 @@ common_map.tsv:
 
 # generate includes from sparql CONSTRUCT queries;
 # these can then be merged in to the main ontology
-#include-%.owl: ../sparql/construct-%.sparql $(SRC)
+#include-%.owl: ../sparql/construct/construct-%.sparql $(SRC)
 #	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
-imports/external_definitions.owl: ../sparql/construct-embedded-definition.sparql $(SRC)
+imports/external_definitions.owl: ../sparql/construct/construct-embedded-definition.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && robot annotate -i $@.tmp.ttl -O $(OBO)/mondo/$@ -o $@
 
 FIX_URIS_IN_PLACE = perl -pi -ne $(FIX_URI_EXPR)
 
 all_equivalencies: imports/equivalencies.owl  imports/equivalencies.obo imports/equivalencies.json
-imports/equivalencies.owl: ../sparql/construct-ecs-from-xrefs.sparql $(SRC)
+imports/equivalencies.owl: ../sparql/construct/construct-ecs-from-xrefs.sparql $(SRC)
 	robot merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && $(FIX_URIS_IN_PLACE)  $@.tmp.ttl && robot annotate -i $@.tmp.ttl -a $(PV_CC0) -O $(OBO)/mondo/$@ -o $@
 imports/equivalencies.obo: imports/equivalencies.owl
 	robot convert -i $< -o $@
@@ -563,11 +563,11 @@ mirror/xdisease-all.owl: $(patsubst %, mirror/%.owl, $(XD))
 	owltools $^ --merge-support-ontologies -o $@
 
 mirror/xdisease-labels.owl: mirror/xdisease-all.owl
-	robot query --format ttl -c ../sparql/construct-labels.sparql $@ -i $<
+	robot query --format ttl -c ../sparql/construct/construct-labels.sparql $@ -i $<
 
 mirror/labels:  $(patsubst %, mirror/%-labels.owl, $(XD))
 mirror/%-labels.owl: mirror/%.owl
-	robot query --format ttl -c ../sparql/construct-labels.sparql $@ -i $<
+	robot query --format ttl -c ../sparql/construct/construct-labels.sparql $@ -i $<
 
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v 
@@ -631,7 +631,7 @@ mirror/ncit-disease.owl: mirror/ncit.owl mirror/ncit-disease.uris
 	robot extract -i $< -T mirror/ncit-disease.uris --method BOT relax -o $@
 
 mirror/ncit-%-xrefs.ttl: mirror/ncit.owl
-	robot query -c ../sparql/construct-$*-xrefs-from-ncit.sparql $@ -i $<
+	robot query -c ../sparql/construct/construct-$*-xrefs-from-ncit.sparql $@ -i $<
 
 mirror/merge-ncit-xrefs.owl: mirror/ncit.owl mirror/ncit-icdo-xrefs.ttl mirror/ncit-umls-xrefs.ttl
 	owltools $^ --merge-support-ontologies -o $@
@@ -653,7 +653,7 @@ mirror/dipper-%.obo: mirror/dipper-%.ttl
 	robot convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
 
 mirror/hgnc.owl: mirror/dipper-hgnc.ttl
-	robot query -i $< --format ttl --query ../sparql/construct-hgnc.sparql $@.tmp.ttl &&\
+	robot query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
 	robot annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl
@@ -703,9 +703,9 @@ mirror/efo-disease.obo: mirror/efo-disease.owl
 # Indirect inferences
 # ----------------------------------------
 imports/indirect.owl: mondo-edit.obo
-	robot reason -r elk -i $< query  --format ttl  -c ../sparql/construct-indirect-subclass-of.sparql $@
+	robot reason -r elk -i $< query  --format ttl  -c ../sparql/construct/construct-indirect-subclass-of.sparql $@
 imports/tag-indirect.owl: mondo-edit.obo
-	robot reason -r elk -i $< query  --format ttl  -c ../sparql/construct-tag-indirect-subclass-of.sparql $@
+	robot reason -r elk -i $< query  --format ttl  -c ../sparql/construct/construct-tag-indirect-subclass-of.sparql $@
 
 
 # ----------------------------------------
@@ -718,7 +718,7 @@ compare_all_d: $(patsubst %, compare/axioms-%-d.obo, $(XD))
 
 # Generates synonym from labels
 compare/lsyns-%.owl: mirror/%.owl
-	robot query -i $<  --format ttl -c ../sparql/construct-related-synonym-from-label.sparql $@
+	robot query -i $<  --format ttl -c ../sparql/construct/construct-related-synonym-from-label.sparql $@
 .PRECIOUS: compare/lsyns-%.owl
 
 # Merges in the syns generated as above step
@@ -777,7 +777,7 @@ compare/ann-axioms-%.obo: compare/ann-axioms-%.owl
 # construct an OWL file that expresses the fact that every child term must be distinct from its superclas
 # C1 SubClassOf P ==> exists C2 : C2 subClassOf P, C1 DisjointWith C2
 disjoint_sibs.owl: $(SRC)
-	robot query --format ttl -c ../sparql/construct-disjoint-siblings.sparql $@ -i $<
+	robot query --format ttl -c ../sparql/construct/construct-disjoint-siblings.sparql $@ -i $<
 
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
@@ -1041,7 +1041,7 @@ succeed:
 
 ###### NICO MIGRATION: overwriting unsuccessful goals!
 
-../sparql/construct-ecs-from-xrefs.sparql:
+../sparql/construct/construct-ecs-from-xrefs.sparql:
 	echo "STRONG WARNING STRONG WARNING make $@ is skipped!" && touch $@
 
 d2p.pro:
@@ -1059,7 +1059,7 @@ mirror/omim.obo: build-omim
 mirror/medgen.obo:
 	robot convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
 
-tmp/tbd_%.tbd: $(SRC) mirror/%.obo
+tmp/tbd_%.tbd: $(SRC) #mirror/%.obo
 	cat mirror/$*.obo | perl $(ADDTOTBD) > $@
 
 tmp/rest_slurp_%.obo: tmp/tbd_%.tbd
