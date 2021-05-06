@@ -2,7 +2,7 @@
 
 <img src="https://github.com/jmcmurry/closed-illustrations/blob/master/logos/mondo-logos/mondo_logo_black-banner.png"/>
 
-# Mondo
+# Mondo 
 
 This is the repository for managing the Mondo Disease Ontology (Mondo). Mondo aims to harmonizes disease definitions across the world. For more details on this ontology see:
 
