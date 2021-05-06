@@ -25,3 +25,13 @@ paste the full iri in the 'Name:' field, for example, http://purl.obolibrary.org
 1. hit 'OK'
 1. Now you can use this term, for example to construct logical axioms. The next time the imports are refreshed, the metadata (labels, definitions, etc) for this term is imported from the respective external source ontology and becomes visible in mondo-edit.obo.
 1. See instructions on how to remake the imports file [here](../developer-guide/imports.md).
+
+### Alternative instructions (not tested)
+
+_Added 2020-05-06_
+
+1. Open the src/ontology/imports/*_terms.txt
+2. Add term to this file
+3. run import: (for example:)
+sh run.sh make imports/chebi_import.owl
+4. edit in Protege
