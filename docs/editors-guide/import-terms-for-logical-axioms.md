@@ -33,5 +33,5 @@ _Added 2020-05-06_
 1. Open the src/ontology/imports/*_terms.txt
 2. Add term to this file
 3. run import: (for example:)
-sh run.sh make imports/chebi_import.owl
+`sh run.sh make imports/chebi_import.owl`
 4. edit in Protege
