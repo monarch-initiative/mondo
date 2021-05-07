@@ -1,0 +1,24 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+
+INSERT {
+  ?ax oboInOwl:hasSynonymType mondo:EXCLUDE .
+  ?ax oboInOwl:hasDbXref "MONDO:SynonymSameAsLabel"
+}
+WHERE 
+{ 
+    ?term ?p ?syn ;
+      rdfs:label ?syn ;
+      a owl:Class .
+  	 VALUES ?p { oboInOwl:hasRelatedSynonym oboInOwl:hasExactSynonym oboInOwl:hasBroadSynonym oboInOwl:hasNarrowSynonym } .
+      ?ax a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty ?p ;
+           owl:annotatedTarget ?syn.
+    
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+
+}

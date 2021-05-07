@@ -254,6 +254,9 @@ related_annos_to_exact:
 rm_related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
 
+mark_syns_equal_to_label_for_exclusion:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/construct-exclude-syn-equal-label.sparql convert -f obo -o $(SRC)
+
 
 #warn-omim-subsumption warn=related-exact-synonym
 warn-%:
