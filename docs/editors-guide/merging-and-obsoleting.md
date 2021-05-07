@@ -25,13 +25,15 @@ Note: if you add an obsoletion reason, make sure that the replaced class does no
 
 ## Manual merge/obsolete
 
-by Nicole Vasilevsky 08/31/18
+by Nicole Vasilevsky _updated 2021-05_
 
 1. If one class should be merged with another class, first obsolete the class that will be merged.
 1. Search for the class to be obsoleted
 1. Rename label to: obsolete [class name]
 1. Add annotation **owl:deprecated** and indicate true (in literal)
 1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684). If the disease term is being obsoleted and an HPO term should be used instead, do not use **term replaced by**, rather use the annotation **consider.** For example, see MONDO:0001445.
+1. Add annotation IAO_0000231 (has obsolescence reason - this is not labeled in Mondo) and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
+1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms
 1. Add an obsoletion reason: use the annotation property IAO:0000231 () and chose an individual reason (click on Entity IRI and select a reason from the list. If there is not a valid reason in the list, add it as an individual, or manually write in a reason as a string.)
 1. If the class has children, remove the superclass assertion for the children 
@@ -47,6 +49,8 @@ Note: A Mondo obsolete class should not have an xref axiom tagged with "MONDO:eq
 1. Search for the class to be obsoleted.
 1. Rename label to: obsolete [class name].
 1. Add annotation **owl:deprecated** and indicate true (in literal).
+1. Add annotation IAO_0000231 (has obsolescence reason - this is not labeled in Mondo) and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
+1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms.
 1. If the class has children, remove the superclass assertions for the children.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
