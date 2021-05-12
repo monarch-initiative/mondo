@@ -23,10 +23,13 @@ Note this can frequently lead to cycles and equivalence between named class pair
 
 Note: if you add an obsoletion reason, make sure that the replaced class does not have an alt_id assertion. If so, remove that before committing.
 
-## Manual merge/obsolete
+## Merge terms
 
-by Nicole Vasilevsky _updated 2021-05_
+### Merge using owltools
 
+Details coming soon.  
+
+### Manual merge/obsolete
 1. If one class should be merged with another class, first obsolete the class that will be merged.
 1. Search for the class to be obsoleted
 1. Rename label to: obsolete [class name]
@@ -46,6 +49,16 @@ by Nicole Vasilevsky _updated 2021-05_
 Note: A Mondo obsolete class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
 
 ## Obsolete a class (without merging)
+
+### Obsolete a class (using Protege 'Make entity obsolete' function)
+1. Search for the class to be obsoleted.
+1. In the Protege edit menu-> Make entity obsolete
+1. Add annotation IAO_0000231 (has obsolescence reason - this is not labeled in Mondo) and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
+1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
+1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
+1. Add annotation consider, add the CURIE for the term that should be considered as a replacement.
+
+### Obsolete a class (manually)
 1. Search for the class to be obsoleted.
 1. Rename label to: obsolete [class name].
 1. Add annotation **owl:deprecated** and indicate true (in literal).
@@ -62,6 +75,12 @@ If a term is a candidate for obsoletion and/or merging, this should be reported 
 Some examples of when to obsolete and/or merge a term are:  
 
 - **Duplicate terms** (for example MONDO:0019055 mitochondrial disease was obsoleted and replaced by MONDO:0004069 'inborn mitochondrial metabolism disorder')  
-- **Terms that are not truly diseases** (ie phenotype terms, such as MONDO:0007348 Colchicine resistance)  
+- **Out of scope**- Terms that are not truly diseases, (ie phenotype terms, such as MONDO:0007348 Colchicine resistance). For another example, see [see #503](https://github.com/monarch-initiative/mondo/issues/503)  
+- **obsoleted in source**: for example, OMIM, Orphanet or GARD may retire or obsolete a term. For example, MONDO:0015173 obsolete autoimmune enteropathy type 2
+is a phenotype and not a disease: for example, MONDO:0043606 'obsolete pathologic fracture'
 
 Issues should remain open for at least two weeks to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
+
+See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
+
+by Nicole Vasilevsky _updated 2021-05_12_
