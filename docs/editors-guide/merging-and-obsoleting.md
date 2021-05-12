@@ -27,7 +27,35 @@ Note: if you add an obsoletion reason, make sure that the replaced class does no
 
 ### Merge using owltools
 
-Details coming soon.  
+1. Create a branch and name it issue-### (for example issue-2864)
+1. Open Protege
+1. Prepre the owltools command:
+`owltools --use-catalog mondo-edit.obo  --obsolete-replace [CURIE 1] [CURIE 2] -o -f obo mondo-edit.obo`  
+
+CURIE 1 = term to be obsoleted  
+CURIE 2 = replacement term (ie term to be merged with)
+
+For example:
+If to merge MONDO:0023052 ectrodactyly polydactyly with MONDO:0009156 ectrodactyly-polydactyly syndrome, the command is: 
+
+`owltools --use-catalog mondo-edit.obo  --obsolete-replace MONDO:0023052 MONDO:0009156 -o -f obo mondo-edit.obo`
+
+_Recommended_: Use this [template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1265889881) to track the terms to be mergd. There is a formula in column F, copy from the row above.
+_Note_: the Mondo ID in columns A and C must be in CURIE format (use a semi-colon, not an underscore)  
+
+1. In Terminal, navigate to ..mondo/src/ontology
+1. Run your owltools command
+1. Check the output in GitHub desktop
+1. Open a new version of mondo-edit.obo in Protege
+1. Search for the term that was obsoleted
+1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
+1. Add an obsoletion reason: use the annotation property IAO:0000231 and write 'terms merged' in the literal field.
+1. Search for the 'term replaced by' term
+1. Delete the old ID
+1. Review the annotations to ensure there are no duplicate annotations. If there are, they should be merged.
+1. If there are duplicate dbxrefs that are annotated as MONDO:equivalentTo (ie two OMIM xrefs), the dbxref from the obsolete class should be annotated as MONDO:obsoleteEquivalent 
+1. Review the subClassOf assertions, and make sure there are no duplicates. If there are, they should be merged.
+1. When reviewing the diff, make sure there is not an Alt ID. The diff should only show additions to the merged term and the obsoletion
 
 ### Manual merge/obsolete
 1. If one class should be merged with another class, first obsolete the class that will be merged.
