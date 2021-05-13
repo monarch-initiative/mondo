@@ -414,10 +414,11 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 # these live in the ../sparql directory, and have suffix -violation.sparql
 # adding the name here will make the violation check live
-CORE_CHECKS =     subclass-cycle equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels undeclared-synonym-type undeclared-subset same-label definition-containing-underscore related-exact-synonym predispose-subClassOf
-EDIT_CHECKS =     $(CORE_CHECKS) omimps-should-be-inherited
-MAIN_OWL_CHECKS = $(CORE_CHECKS) no-superclass
-MAIN_OBO_CHECKS = $(CORE_CHECKS) no-superclass
+
+SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/qc-*.sparql)))
+SPARQL_GENERAL_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/general/qc-*.sparql)))
+SPARQL_MONDO_QC_FILES=$(foreach V,$(SPARQL_MONDO_QC),$(SPARQLDIR)/qc/mondo/qc-$V.sparql)
+SPARQL_GENERAL_QC_FILES=$(foreach V,$(SPARQL_MONDO_QC),$(SPARQLDIR)/qc/general/qc-$V.sparql)
 
 QSRC = $(SRC)-noimports.owl
 
@@ -426,14 +427,13 @@ $(QSRC): $(SRC)
 
 # run all violation checks on edit file
 sparql_test_edit: $(QSRC)
-	robot verify -i $< --queries $(foreach V,$(EDIT_CHECKS),$(SPARQLDIR)/qc/$V-violation.sparql) -O reports/edit/ && touch $@
+	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES) $(SPARQL_GENERAL_QC_FILES) -O reports/edit/ && touch $@
 
 sparql_test_main_owl: $(ONT).owl
-	robot verify -i $< --queries $(foreach V,$(MAIN_OWL_CHECKS),$(SPARQLDIR)/qc/$V-violation.sparql) -O reports/edit/ && touch $@
+	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES) $(SPARQL_GENERAL_QC_FILES) -O reports/main_owl/ && touch $@
 
 sparql_test_main_obo: $(ONT).obo
-	robot verify -i $< --queries $(foreach V,$(MAIN_OBO_CHECKS),$(SPARQLDIR)/qc/$V-violation.sparql) -O reports/edit/ && touch $@
-
+	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES) $(SPARQL_GENERAL_QC_FILES) -O reports/main_obo/ && touch $@
 
 PL2SPARQL = ../plq/pq-mondo
 #../sparql/%.sparql:
