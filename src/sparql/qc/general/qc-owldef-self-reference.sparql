@@ -3,9 +3,12 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity
-WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE 
+{
   { ?entity owl:equivalentClass [ owl:intersectionOf [ rdf:rest*/rdf:first ?entity ] ] }
     UNION
   { ?entity owl:equivalentClass [ owl:intersectionOf [ rdf:rest*/rdf:first [ owl:someValuesFrom ?entity ] ] ] }
+  BIND(owl:equivalentClass as ?property)
+  BIND("Entity referencing itself in equivalentClass expression!" as ?value)
 }
+ORDER BY ?entity

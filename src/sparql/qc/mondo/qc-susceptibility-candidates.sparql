@@ -1,7 +1,6 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
-SELECT ?entity ?label
-WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
   ?entity rdfs:label ?label .
   FILTER NOT EXISTS {
 	  ?entity <http://purl.org/dc/terms/conformsTo> ?pattern
@@ -10,3 +9,4 @@ WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(regex(str(?label), "suscep"))
 }
+ORDER BY ?entity

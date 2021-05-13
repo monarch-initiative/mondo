@@ -8,7 +8,7 @@ prefix disease_stage: <http://purl.obolibrary.org/obo/MONDO_0021007>
 prefix disease_susceptibility: <http://purl.obolibrary.org/obo/MONDO_0042489>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?entity ?n WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
   ?entity a owl:Class ;
      rdfs:label ?n
@@ -27,3 +27,4 @@ SELECT ?entity ?n WHERE
     } )
 
 }
+ORDER BY ?entity

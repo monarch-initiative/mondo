@@ -1,7 +1,9 @@
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?entity ?p
+SELECT DISTINCT ?entity ?property ?value 
 WHERE {
-    ?entity ?p ?entity .
+    ?entity ?property ?entity .
     FILTER ( isIRI(?entity)) 
+    BIND("Entity referencing itself in triple!" as ?value)
 }
+ORDER BY ?entity

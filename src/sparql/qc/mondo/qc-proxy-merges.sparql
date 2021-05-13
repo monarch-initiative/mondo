@@ -2,9 +2,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT distinct ?entity ?entity_label ?omim2_xref ?omim_xref
-WHERE 
-{ 
+SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity rdfs:label ?entity_label ;
       oboInOwl:hasDbXref ?omim_xref ;
       oboInOwl:hasDbXref ?omim2_xref ;
@@ -28,3 +26,4 @@ WHERE
   	FILTER (str(?omim2_source)="MONDO:equivalentTo")
     FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
 }
+ORDER BY ?entity

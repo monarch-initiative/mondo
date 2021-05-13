@@ -11,26 +11,22 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 
-SELECT ?entity ?entity_label ?excluded ?excluded_label
+SELECT DISTINCT ?entity ?property ?value  
 WHERE 
 { 
-  ?entity mondo:excluded_subClassOf ?excluded ;
-      rdfs:subClassOf* ?excluded ;
-      rdfs:label ?entity_label .
+  ?entity mondo:excluded_subClassOf ?value ;
+      rdfs:subClassOf* ?value .
   
     FILTER NOT EXISTS {
        ?entity mondo:excluded_from_qc_check mondoSparql:excluded-subsumption-is-inferred-violation.sparql .
     }
   
-  OPTIONAL {
-    ?excluded rdfs:label ?excluded_label .
-  }
-  
-  FILTER (isIRI(?excluded) && STRSTARTS(str(?excluded), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER( ?entity=?excluded)
+  FILTER( ?entity=?value)
+  BIND(mondo:excluded_subClassOf as ?property)
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-no-subclass-between-genetic-disease.sparql
@@ -40,7 +36,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?entity ?entity_label ?d2 ?d2_label WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
 
 ?entity rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -67,7 +63,7 @@ FILTER ( ?entity!=?d2 )
 FILTER ( ?gene1!=?gene2 )
 
 }
-
+ORDER BY ?entity
 # FILTER ( ?gene1!=?gene2 ) this is a hack to circumvent the case that a disease pertains to the same gene but is further specified.
 
 # Using the subclass selector turned out way too costly computationally:
@@ -88,7 +84,7 @@ prefix disease_stage: <http://purl.obolibrary.org/obo/MONDO_0021007>
 prefix disease_susceptibility: <http://purl.obolibrary.org/obo/MONDO_0042489>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?entity ?n WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
   ?entity a owl:Class ;
      rdfs:label ?n
@@ -107,7 +103,7 @@ SELECT ?entity ?n WHERE
     } )
 
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-omim-subsumption.sparql
@@ -124,7 +120,7 @@ prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
-SELECT ?entity ?entity_label ?p ?pn ?xc ?xp {
+SELECT DISTINCT ?entity ?property ?value WHERE {
    ?entity rdfs:subClassOf ?p .
    ?exp owl:annotatedSource ?entity ;
         owl:annotatedProperty oboInOwl:hasDbXref ;
@@ -143,6 +139,7 @@ SELECT ?entity ?entity_label ?p ?pn ?xc ?xp {
    FILTER(str(?source)="MONDO:equivalentTo")
    FILTER(str(?source_p)="MONDO:equivalentTo")
 }
+ORDER BY ?entity
 ```
 
 ###  qc-omimps-should-be-inherited.sparql
@@ -157,9 +154,7 @@ prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
-SELECT ?entity
-WHERE 
-{ 
+SELECT DISTINCT ?entity ?property ?value WHERE {
   ?exp owl:annotatedSource ?entity ;
        owl:annotatedProperty oboInOwl:hasDbXref ;
        owl:annotatedTarget ?xref;
@@ -177,6 +172,7 @@ WHERE
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
 }
+ORDER BY ?entity
 ```
 
 ###  qc-predispose-subClassOf.sparql
@@ -187,9 +183,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 
-select ?entity ?y 
-WHERE
-{
+SELECT DISTINCT ?entity ?property ?value WHERE {
   ?entity owl:equivalentClass ?intersection .
   ?intersection owl:intersectionOf ?lst .
   ?lst rdf:rest*/rdf:first ?restriction .
@@ -198,7 +192,7 @@ WHERE
   ?entity rdfs:subClassOf ?y . 
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-proxy-merge-equiv.sparql
@@ -208,8 +202,7 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?c2 ?x WHERE 
-{
+SELECT DISTINCT ?entity ?property ?value WHERE {
   ?entity owl:equivalentClass ?x .
   ?c2 owl:equivalentClass ?x .
 
@@ -217,6 +210,7 @@ SELECT ?entity ?c2 ?x WHERE
   FILTER (isIRI(?c2) && STRSTARTS(str(?c2), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(?entity != ?c2)
 }
+ORDER BY ?entity
 ```
 
 ###  qc-proxy-merges.sparql
@@ -226,9 +220,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT distinct ?entity ?entity_label ?omim2_xref ?omim_xref
-WHERE 
-{ 
+SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity rdfs:label ?entity_label ;
       oboInOwl:hasDbXref ?omim_xref ;
       oboInOwl:hasDbXref ?omim2_xref ;
@@ -252,6 +244,7 @@ WHERE
   	FILTER (str(?omim2_source)="MONDO:equivalentTo")
     FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
 }
+ORDER BY ?entity
 ```
 
 ###  qc-related-exact-synonym-omim.sparql
@@ -261,9 +254,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?entity_label ?related
-WHERE 
-{ 
+SELECT DISTINCT ?entity ?property ?value WHERE {
   { 
     ?entity oboInOwl:hasRelatedSynonym ?related ;
       rdfs:label ?entity_label ;
@@ -307,6 +298,8 @@ WHERE
   # }
 }
 
+ORDER BY ?entity
+
 ```
 
 ###  qc-susceptibility-candidates.sparql
@@ -314,8 +307,7 @@ WHERE
 ```
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
-SELECT ?entity ?label
-WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
   ?entity rdfs:label ?label .
   FILTER NOT EXISTS {
 	  ?entity <http://purl.org/dc/terms/conformsTo> ?pattern
@@ -324,6 +316,7 @@ WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(regex(str(?label), "suscep"))
 }
+ORDER BY ?entity
 ```
 
 ## General quality checks
@@ -337,12 +330,16 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
 
-SELECT ?entity ?x WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
-  ?entity IAO:0000115 ?x .
-  FILTER( regex(STR(?x), "_"))
+  VALUES ?property {
+    IAO:0000115
+  }
+  ?entity ?property ?value .
+  FILTER( regex(STR(?value), "_"))
   FILTER (!isBlank(?entity))
 }
+ORDER BY ?entity
 
 ```
 
@@ -355,15 +352,18 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?baseLabel ?equivalentClass ?equivalentLabel WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
-  ?entity owl:equivalentClass ?equivalentClass .
-  ?entity rdfs:label ?baseLabel .
-  ?equivalentClass rdfs:label ?equivalentLabel .
-
+  VALUES ?property {
+    owl:equivalentClass
+  }
+  
+  ?entity ?property ?value .
+  
   FILTER (!isBlank(?entity)) .
-  FILTER (!isBlank(?equivalentClass))
+  FILTER (!isBlank(?value))
 }
+ORDER BY ?entity
 
 ```
 
@@ -406,11 +406,13 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
 
-SELECT ?entity WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
 	?entity a owl:Class
 	FILTER NOT EXISTS {?entity rdfs:label ?lab}
 	FILTER NOT EXISTS {?entity replaced_by: ?replCls}
-        FILTER (!isBlank(?entity))
+  FILTER (!isBlank(?entity))
+  BIND(rdfs:label as ?property)
+  BIND("Must have a label" as ?value)
 }
 ORDER BY ?entity
 
@@ -426,21 +428,22 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
 PREFIX consider: <http://www.geneontology.org/formats/oboInOwl#consider>
 
-SELECT ?entity ?clsLabel ?rule WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
        ?entity a owl:Class  ;
             rdfs:label ?clsLabel ;
 	    owl:deprecated "true"^^xsd:boolean
         {
           {
             FILTER ( ! regex(str(?clsLabel), "^obsolete ") )
-            BIND ("obsolete label must start with obsolete" AS ?rule)
+            BIND ("obsolete label must start with obsolete" AS ?value)
           }
           UNION
           {
             ?entity rdfs:subClassOf ?parent
-            BIND("no logical axioms for obsolete" AS ?rule)
+            BIND("no logical axioms for obsolete" AS ?value)
           }
         }
+  BIND(owl:deprecated as ?property)
 }
 ORDER BY ?entity
 
@@ -454,13 +457,15 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity
-WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE 
+{
   { ?entity owl:equivalentClass [ owl:intersectionOf [ rdf:rest*/rdf:first ?entity ] ] }
     UNION
   { ?entity owl:equivalentClass [ owl:intersectionOf [ rdf:rest*/rdf:first [ owl:someValuesFrom ?entity ] ] ] }
+  BIND(owl:equivalentClass as ?property)
+  BIND("Entity referencing itself in equivalentClass expression!" as ?value)
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-redundant-subClassOf.sparql
@@ -470,7 +475,7 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?xl ?y ?yl ?z ?zl WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
   ?entity rdfs:subClassOf ?y ;
      rdfs:label ?xl .
@@ -479,9 +484,10 @@ SELECT ?entity ?xl ?y ?yl ?z ?zl WHERE
   ?entity rdfs:subClassOf ?z .
   ?z rdfs:label ?zl .
 
-
+  BIND(owl:equivalentClass as ?property)
+  BIND("Entity referencing itself in equivalentClass expression!" as ?value)
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-reflexive.sparql
@@ -489,12 +495,13 @@ SELECT ?entity ?xl ?y ?yl ?z ?zl WHERE
 ```
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?entity ?p
+SELECT DISTINCT ?entity ?property ?value 
 WHERE {
-    ?entity ?p ?entity .
+    ?entity ?property ?entity .
     FILTER ( isIRI(?entity)) 
+    BIND("Entity referencing itself in triple!" as ?value)
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-related-exact-synonym.sparql
@@ -504,52 +511,32 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?entity_label ?related
-WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 { 
-  { 
-    
-    ?entity oboInOwl:hasRelatedSynonym ?related ;
+    ?entity oboInOwl:hasRelatedSynonym ?value ;
       oboInOwl:hasExactSynonym ?exact ;
       a owl:Class .
     
     ?entity rdfs:label ?entity_label .
     
-    FILTER (str(?related)=str(?exact))
+    FILTER (str(?value)=str(?exact))
     FILTER (isIRI(?entity))
-  }
 }
-
+ORDER BY ?entity
 ```
 
-###  qc-same-label-violation.sparql
+###  qc-same-label.sparql
 
 ```
-SELECT ?entity ?n0 ?c2 WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
 ?entity <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
 ?c2 <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
-FILTER NOT EXISTS {?entity <http://www.w3.org/2002/07/owl#deprecated> ?v1} .
+FILTER NOT EXISTS {?entity <http://www.w3.org/2002/07/owl#deprecated> ?value} .
 FILTER NOT EXISTS {?c2 <http://www.w3.org/2002/07/owl#deprecated> ?v2} .
 FILTER (?entity != ?c2)
+BIND(<http://www.w3.org/2002/07/owl#deprecated> as ?property)
 }
-
-```
-
-###  qc-single-child-count.sparql
-
-```
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT ?entity ?entity_label (COUNT(*) AS ?total)
-WHERE {
-    ?child rdfs:subClassOf ?entity .
-    ?entity rdfs:label ?entity_label .
-    FILTER ( isIRI(?entity))
-    FILTER ( isIRI(?child))
-}
-GROUP BY ?entity ?entity_label
-HAVING (?total = 1)
-
+ORDER BY ?entity
 ```
 
 ###  qc-single-child.sparql
@@ -557,16 +544,16 @@ HAVING (?total = 1)
 ```
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?childLabel ?cls ?clsLabel WHERE {
-    ?cls rdfs:label ?clsLabel .
-    ?entity rdfs:subClassOf ?cls ;
-           rdfs:label ?childLabel
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity rdfs:subClassOf ?value .
     FILTER NOT EXISTS {
-       ?child2 rdfs:subClassOf ?cls .
-       FILTER (?child2 != ?child)
+       ?child2 rdfs:subClassOf ?value .
+       FILTER (?child2 != ?entity)
     }
+    BIND(rdfs:subClassOf AS ?property)
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-subclass-cycle.sparql
@@ -574,11 +561,14 @@ SELECT ?entity ?childLabel ?cls ?clsLabel WHERE {
 ```
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?clsLabel WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity rdfs:subClassOf+ ?entity ;
-         rdfs:label ?clsLabel
+         rdfs:label ?clsLabel 
+         
+   BIND(rdfs:subClassOf AS ?property)
+   BIND(?entity AS ?value)
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-trailing-whitespace.sparql
@@ -588,25 +578,27 @@ SELECT ?entity ?clsLabel WHERE {
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?p ?x WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
-  ?entity ?p ?x .
+  ?entity ?property ?value .
 
-  FILTER( regex(STR(?x), "^ ") || regex(STR(?x), " $")  )
-  FILTER( ?p != owl:annotatedTarget )
+  FILTER( regex(STR(?value), "^ ") || regex(STR(?value), " $")  )
+  FILTER( ?property != owl:annotatedTarget )
 }
-
+ORDER BY ?entity
 ```
 
 ###  qc-two-pattern.sparql
 
 ```
-SELECT ?entity ?n0 ?n1 WHERE {
-?entity <http://purl.org/dc/terms/conformsTo> ?n0 .
+SELECT DISTINCT ?entity ?property ?value WHERE {
+?entity <http://purl.org/dc/terms/conformsTo> ?value .
 ?entity <http://purl.org/dc/terms/conformsTo> ?n1 .
-FILTER ( ?n0!=?n1 ) .
+FILTER ( ?value!=?n1 ) .
 FILTER ( isIRI(?c1))
+BIND(<http://purl.org/dc/terms/conformsTo> AS ?property)
 }
+ORDER BY ?entity
 ```
 
 ###  qc-undeclared-subset.sparql
@@ -617,11 +609,13 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
 
-SELECT DISTINCT ?entity WHERE {
-       ?c oio:inSubset ?entity .
-       FILTER NOT EXISTS { ?entity rdfs:subPropertyOf oio:SubsetProperty } 
+SELECT DISTINCT ?entity ?property ?value WHERE {
+   ?c oio:inSubset ?entity .
+   FILTER NOT EXISTS { ?entity rdfs:subPropertyOf oio:SubsetProperty } 
+   BIND(oio:inSubset AS ?property)
+   BIND("Subset not declared." as ?value)
 }
-
+ORDER BY ?entity
 
 ```
 
@@ -633,11 +627,12 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
 
-SELECT DISTINCT ?entity WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
        ?axiom oio:hasSynonymType ?entity .
        FILTER NOT EXISTS { ?entity rdfs:subPropertyOf oio:SynonymTypeProperty } 
+       BIND(oio:hasSynonymType AS ?property)
 }
-
+ORDER BY ?entity
 
 ```
 
@@ -650,13 +645,13 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?x WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
   ?entity hasDbXref: ?x .
 
   FILTER( regex(STR(?x), " ") || regex(STR(?x), ";") || STR(?x) = ""  )
-
+  BIND(hasDbXref: AS ?property)
 }
-
+ORDER BY ?entity
 ```
 

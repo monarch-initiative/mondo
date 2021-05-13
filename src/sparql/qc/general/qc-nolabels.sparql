@@ -3,10 +3,12 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
 
-SELECT ?entity WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
 	?entity a owl:Class
 	FILTER NOT EXISTS {?entity rdfs:label ?lab}
 	FILTER NOT EXISTS {?entity replaced_by: ?replCls}
-        FILTER (!isBlank(?entity))
+  FILTER (!isBlank(?entity))
+  BIND(rdfs:label as ?property)
+  BIND("Must have a label" as ?value)
 }
 ORDER BY ?entity

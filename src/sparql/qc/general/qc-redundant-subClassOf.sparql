@@ -2,7 +2,7 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?xl ?y ?yl ?z ?zl WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
   ?entity rdfs:subClassOf ?y ;
      rdfs:label ?xl .
@@ -11,5 +11,7 @@ SELECT ?entity ?xl ?y ?yl ?z ?zl WHERE
   ?entity rdfs:subClassOf ?z .
   ?z rdfs:label ?zl .
 
-
+  BIND(owl:equivalentClass as ?property)
+  BIND("Entity referencing itself in equivalentClass expression!" as ?value)
 }
+ORDER BY ?entity

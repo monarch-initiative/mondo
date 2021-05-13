@@ -2,7 +2,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?entity ?entity_label ?d2 ?d2_label WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
 
 ?entity rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -29,7 +29,7 @@ FILTER ( ?entity!=?d2 )
 FILTER ( ?gene1!=?gene2 )
 
 }
-
+ORDER BY ?entity
 # FILTER ( ?gene1!=?gene2 ) this is a hack to circumvent the case that a disease pertains to the same gene but is further specified.
 
 # Using the subclass selector turned out way too costly computationally:

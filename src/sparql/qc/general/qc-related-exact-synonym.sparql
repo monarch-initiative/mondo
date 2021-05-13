@@ -2,18 +2,15 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?entity_label ?related
-WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 { 
-  { 
-    
-    ?entity oboInOwl:hasRelatedSynonym ?related ;
+    ?entity oboInOwl:hasRelatedSynonym ?value ;
       oboInOwl:hasExactSynonym ?exact ;
       a owl:Class .
     
     ?entity rdfs:label ?entity_label .
     
-    FILTER (str(?related)=str(?exact))
+    FILTER (str(?value)=str(?exact))
     FILTER (isIRI(?entity))
-  }
 }
+ORDER BY ?entity

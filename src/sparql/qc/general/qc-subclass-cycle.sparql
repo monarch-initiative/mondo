@@ -1,6 +1,10 @@
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?clsLabel WHERE {
+SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity rdfs:subClassOf+ ?entity ;
-         rdfs:label ?clsLabel
+         rdfs:label ?clsLabel 
+         
+   BIND(rdfs:subClassOf AS ?property)
+   BIND(?entity AS ?value)
 }
+ORDER BY ?entity

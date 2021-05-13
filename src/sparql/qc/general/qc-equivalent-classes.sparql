@@ -4,12 +4,15 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?entity ?baseLabel ?equivalentClass ?equivalentLabel WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE 
 {
-  ?entity owl:equivalentClass ?equivalentClass .
-  ?entity rdfs:label ?baseLabel .
-  ?equivalentClass rdfs:label ?equivalentLabel .
-
+  VALUES ?property {
+    owl:equivalentClass
+  }
+  
+  ?entity ?property ?value .
+  
   FILTER (!isBlank(?entity)) .
-  FILTER (!isBlank(?equivalentClass))
+  FILTER (!isBlank(?value))
 }
+ORDER BY ?entity

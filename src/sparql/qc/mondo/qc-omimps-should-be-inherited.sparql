@@ -7,9 +7,7 @@ prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
-SELECT ?entity
-WHERE 
-{ 
+SELECT DISTINCT ?entity ?property ?value WHERE {
   ?exp owl:annotatedSource ?entity ;
        owl:annotatedProperty oboInOwl:hasDbXref ;
        owl:annotatedTarget ?xref;
@@ -27,3 +25,4 @@ WHERE
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
 }
+ORDER BY ?entity
