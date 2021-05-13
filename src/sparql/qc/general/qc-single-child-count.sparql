@@ -1,0 +1,11 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?entity_label (COUNT(*) AS ?total)
+WHERE {
+    ?child rdfs:subClassOf ?entity .
+    ?entity rdfs:label ?entity_label .
+    FILTER ( isIRI(?entity))
+    FILTER ( isIRI(?child))
+}
+GROUP BY ?entity ?entity_label
+HAVING (?total = 1)

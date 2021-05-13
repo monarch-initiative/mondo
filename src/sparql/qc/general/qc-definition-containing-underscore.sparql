@@ -1,0 +1,12 @@
+# description: Checks wether definitions contain underscore characters, which could be an indication of a typo.
+
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+
+SELECT ?entity ?x WHERE 
+{
+  ?entity IAO:0000115 ?x .
+  FILTER( regex(STR(?x), "_"))
+  FILTER (!isBlank(?entity))
+}

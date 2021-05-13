@@ -1,0 +1,6 @@
+SELECT ?entity ?n0 ?n1 WHERE {
+?entity <http://purl.org/dc/terms/conformsTo> ?n0 .
+?entity <http://purl.org/dc/terms/conformsTo> ?n1 .
+FILTER ( ?n0!=?n1 ) .
+FILTER ( isIRI(?c1))
+}

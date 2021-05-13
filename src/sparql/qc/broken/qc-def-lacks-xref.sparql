@@ -1,0 +1,12 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?term ?def (group_concat(?xref) as ?xrefs) WHERE 
+{
+  ?term a owl:Class .
+  OPTIONAL { ?term oio:hasDbXref ?xref } .
+  OPTIONAL { ?term def: ?def } .
+  FILTER (!isBlank(?term))
+}
+GROUP BY ?term ?def

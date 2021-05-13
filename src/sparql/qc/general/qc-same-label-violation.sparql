@@ -1,0 +1,7 @@
+SELECT ?entity ?n0 ?c2 WHERE {
+?entity <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
+?c2 <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
+FILTER NOT EXISTS {?entity <http://www.w3.org/2002/07/owl#deprecated> ?v1} .
+FILTER NOT EXISTS {?c2 <http://www.w3.org/2002/07/owl#deprecated> ?v2} .
+FILTER (?entity != ?c2)
+}

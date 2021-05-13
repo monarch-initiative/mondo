@@ -1,0 +1,11 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?childLabel ?cls ?clsLabel WHERE {
+    ?cls rdfs:label ?clsLabel .
+    ?entity rdfs:subClassOf ?cls ;
+           rdfs:label ?childLabel
+    FILTER NOT EXISTS {
+       ?child2 rdfs:subClassOf ?cls .
+       FILTER (?child2 != ?child)
+    }
+}
