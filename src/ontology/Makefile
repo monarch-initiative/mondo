@@ -417,8 +417,8 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/qc-*.sparql)))
 SPARQL_GENERAL_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/general/qc-*.sparql)))
-SPARQL_MONDO_QC_FILES=$(foreach V,$(SPARQL_MONDO_QC),$(SPARQLDIR)/qc/mondo/qc-$V.sparql)
-SPARQL_GENERAL_QC_FILES=$(foreach V,$(SPARQL_MONDO_QC),$(SPARQLDIR)/qc/general/qc-$V.sparql)
+SPARQL_MONDO_QC_FILES=$(foreach V,$(SPARQL_MONDO_QC),$(SPARQLDIR)/qc/mondo/$V.sparql)
+SPARQL_GENERAL_QC_FILES=$(foreach V,$(SPARQL_GENERAL_QC),$(SPARQLDIR)/qc/general/$V.sparql)
 
 QSRC = $(SRC)-noimports.owl
 
