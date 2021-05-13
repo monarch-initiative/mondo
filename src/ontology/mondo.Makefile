@@ -54,18 +54,47 @@ pattern_ontology: ../patterns/pattern.owl
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
 
+MYDIR = .
+list: $(MYDIR)/*
+        
+../../docs/editors-guide/quality-control-tests.md:
+	echo "# Custom SPARQL checks Mondo" > $@ &&\
+	echo "" >> $@ &&\
+	echo "## Mondo specific checks" >> $@ &&\
+	echo "" >> $@ &&\
+	for file in $(SPARQLDIR)/qc/mondo/*.sparql ; do \
+		echo "### " $$(basename $${file}) >> $@  ; \
+		echo "" >> $@ ; \
+		echo "\`\`\`" >> $@ ; \
+		cat $${file} >> $@ ; \
+		echo "" >> $@ ;\
+		echo "\`\`\`" >> $@ ; \
+		echo "" >> $@ ;\
+	done &&\
+	echo "## General quality checks" >> $@ &&\
+	echo "" >> $@ &&\
+	for file in $(SPARQLDIR)/qc/general/*.sparql ; do \
+		echo "### " $$(basename $${file}) >> $@  ; \
+		echo "" >> $@ ; \
+		echo "\`\`\`" >> $@ ; \
+		cat $${file} >> $@ ; \
+		echo "" >> $@ ;\
+		echo "\`\`\`" >> $@ ; \
+		echo "" >> $@ ;\
+	done
+
+qc_docs: ../../docs/editors-guide/quality-control-tests.md
+
 pattern_mkdocs:
 	pip install tabulate
 	python ../scripts/patterns_create_docs.py
 
 .PHONY: pattern_docs
-pattern_docs: pattern_ontology pattern_readmes pattern_mkdocs
+pattern_docs: pattern_ontology pattern_readmes pattern_mkdocs qc_docs
 
 
 #################################
 ##### REPORTING PIPELINE ########
-
-SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/*.sparql)))
 SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/reports/*-stats.sparql)))
 SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/tags/*-tags.sparql)))
 
