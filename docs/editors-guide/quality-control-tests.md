@@ -367,6 +367,39 @@ ORDER BY ?entity
 
 ```
 
+###  qc-missing-label.sparql
+
+```
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+ VALUES ?property { rdfs:label }
+ ?entity ?any ?o .
+ FILTER NOT EXISTS { ?entity ?property ?value }
+ FILTER NOT EXISTS { ?entity a owl:Ontology }
+ FILTER NOT EXISTS { ?entity owl:deprecated true }
+ FILTER NOT EXISTS {
+   ?entity rdfs:subPropertyOf oboInOwl:SubsetProperty .
+ }
+ FILTER EXISTS {
+   ?entity ?prop2 ?object .
+   FILTER (?prop2 != rdf:type)
+   FILTER (?prop2 != owl:equivalentClass)
+   FILTER (?prop2 != owl:disjointWith)
+   FILTER (?prop2 != owl:equivalentProperty)
+   FILTER (?prop2 != owl:sameAs)
+   FILTER (?prop2 != owl:differentFrom)
+   FILTER (?prop2 != owl:inverseOf)
+ }
+ FILTER (!isBlank(?entity))
+ FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
+ORDER BY ?entity
+```
+
 ###  qc-multiple-logical-definitions.sparql
 
 ```
@@ -396,26 +429,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
  FILTER (!isBlank(?entity))
 }
 ORDER BY ?entity
-```
-
-###  qc-nolabels.sparql
-
-```
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
-
-SELECT DISTINCT ?entity ?property ?value WHERE {
-	?entity a owl:Class
-	FILTER NOT EXISTS {?entity rdfs:label ?lab}
-	FILTER NOT EXISTS {?entity replaced_by: ?replCls}
-  FILTER (!isBlank(?entity))
-  BIND(rdfs:label as ?property)
-  BIND("Must have a label" as ?value)
-}
-ORDER BY ?entity
-
 ```
 
 ###  qc-obsoletes.sparql
