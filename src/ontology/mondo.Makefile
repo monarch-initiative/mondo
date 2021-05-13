@@ -65,9 +65,9 @@ pattern_docs: pattern_ontology pattern_readmes pattern_mkdocs
 #################################
 ##### REPORTING PIPELINE ########
 
-SPARQL_WARNINGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-warning.sparql)))
-SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-stats.sparql)))
-SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-tags.sparql)))
+SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/*.sparql)))
+SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/reports/*-stats.sparql)))
+SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/tags/*-tags.sparql)))
 
 tmp/mondo-version_edit.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
@@ -93,13 +93,13 @@ tmp/mondo-version_2017.owl:
 	$(ROBOT) merge -i $@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 # This combines all into one single command
-.PHONY: all_reports_warnings_%
-all_reports_warnings_%: tmp/mondo-version_%.owl
-	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_WARNINGS),-s $(SPARQLDIR)/$V.sparql reports/mondo-qc-$*-$V.tsv)
+.PHONY: all_reports_sparqlqc_%
+all_reports_sparqlqc_%: tmp/mondo-version_%.owl
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_MONDO_QC),-s $(SPARQLDIR)/qc/mondo/$V.sparql reports/mondo-qc-$*-$V.tsv)
 
 .PHONY: all_reports_stats_%
 all_reports_stats_%: tmp/mondo-version_%.owl
-	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/mondo-qc-$*-$V.tsv)
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/reports/$V.sparql reports/mondo-qc-$*-$V.tsv)
 
 reports/mondo-qc-%-robot-report-obo.tsv: tmp/mondo-version_%.owl
 	$(ROBOT) report -i $< --fail-on none --print 5 -o $@
@@ -112,7 +112,7 @@ QC_REPORTS_RM=$(foreach V,$(QC_BASE_FILES), reports/$V*)
 clean_qc:
 	rm report/mondo-qc-*
 
-qc_reports_%: all_reports_stats_% reports/mondo-qc-%-robot-report-obo.tsv all_reports_warnings_%
+qc_reports_%: all_reports_stats_% reports/mondo-qc-%-robot-report-obo.tsv all_reports_sparqlqc_%
 	echo $^
 
 travis_test: mondo.owl sparql_test_main_obo
@@ -144,7 +144,7 @@ tmp/mondo-tags-dosdp.owl: tmp/mondo-tags-dosdp.tsv | dirs
 	$(ROBOT) merge -i $(SRC) template --template $< --prefix "MONDO: http://purl.obolibrary.org/obo/MONDO_" --output $@
 
 tmp/mondo-tags-sparql.ttl: $(SRC) | dirs
-	$(ROBOT) query -f ttl -i $< --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/$V.sparql) --output-dir tmp/
+	$(ROBOT) query -f ttl -i $< --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/tags/$V.sparql) --output-dir tmp/
 	$(ROBOT) merge $(addprefix -i , $(foreach V,$(SPARQL_TAGS),tmp/$V.ttl)) -o $@
 
 components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl tmp/mondo-tags-sparql.ttl | dirs
@@ -220,7 +220,7 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 # MONDO_SOURCES = omim medgen medic orphanet
 #MONDO_SOURCES_WITH_SPECIAL_PREPROCESSING = omim medgen orphanet
 #all: build_sources
-#	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
+#	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/reports/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 #.PHONY: release_dir
 
 #build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
@@ -230,7 +230,7 @@ build-%:
 
 #### Some useful ROBOT queries:
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/excluded-subsumption-is-inferred-violation.sparql reports/excluded-subsumption-is-inferred-violation.tsv
-# $(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
+# $(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/update/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
 
@@ -254,22 +254,18 @@ related_annos_to_exact:
 rm_related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
 
-
-#warn-omim-subsumption warn=related-exact-synonym
-warn-%:
-	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query $(SPARQLDIR)/$*-warning.sparql reports/warn-$*.tsv
-
 report-query-%:
-	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
+	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
 report-reason-query-%:
-	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-reason-$*.tsv
+	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
+
 report-owl-query-%:
-	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
+	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
 
 update-query-%:
-	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/$*.ru convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
 
 .PHONY: r2e
 r2e:
@@ -329,7 +325,7 @@ modules/mondo-%-view-top.owl: modules/%-view.tsv
 .PRECIOUS: modules/mondo-%-view-top.owl
 
 tmp/mondo-%-leafs.txt: modules/mondo-%-view-top.owl
-	$(ROBOT) query --use-graphs false -i $< -f tsv --query $(SPARQLDIR)/leaf-classes.sparql $@
+	$(ROBOT) query --use-graphs false -i $< -f tsv --query $(SPARQLDIR)/signature/leaf-classes.sparql $@
 	tail -n +2 "$@" > $@.tmp && mv $@.tmp $@
 
 tmp/subclasses-of-%-leafs.sparql: tmp/mondo-%-leafs.txt
