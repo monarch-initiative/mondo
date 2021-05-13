@@ -848,7 +848,7 @@ omim2medgen.obo: mim2gene_medgen
 	grep phenotype $<  | cut -f1,5 | perl -npe 's@^@OMIM:@;s@\t@\tUMLS:@' | grep UMLS:C | tbl2obolinks.pl --rel xref --source NCBI:mim2gene_medline - > $@
 
 reports/mondo-equivs.tsv:
-	robot query -i mondo.owl -q ../sparql/sssom-mappings.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
+	robot query -i mondo.owl -q ../sparql/reports/sssom-mappings.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # NEW: uses rdf_matcher
 # **IMPORTANT*: remember to clear tmp/ dir for fresh start
