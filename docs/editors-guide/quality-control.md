@@ -10,7 +10,6 @@ The tests run as part of the Mondo pipeline are defined in our [GitHub Action wo
 1. Custom SPARQL checks
 1. DOSDP pattern checks
 
-
 ## Checks
 
 ### Roundtripping to ensure mondo-edit is OBO-format compatible
@@ -81,3 +80,5 @@ We use the pattern schema checker (https://github.com/INCATools/dead_simple_owl_
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
 ```
+
+We use http://purl.obolibrary.org/obo/mondo#excluded_from_qc_check annotation to tag cases that would otherwise fail. Automated tagging occurs in this make pipeline: `components/mondo-tags.owl`.

@@ -14,17 +14,18 @@ prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 SELECT DISTINCT ?entity ?property ?value  
 WHERE 
 { 
-  ?entity mondo:excluded_subClassOf ?value ;
-      rdfs:subClassOf* ?value .
+  ?entity mondo:excluded_subClassOf ?parent ;
+      rdfs:subClassOf* ?parent .
   
     FILTER NOT EXISTS {
        ?entity mondo:excluded_from_qc_check mondoSparql:excluded-subsumption-is-inferred-violation.sparql .
     }
   
-  FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER( ?entity=?value)
+  FILTER( ?entity=?parent)
   BIND(mondo:excluded_subClassOf as ?property)
+  BIND(str(?parent) as ?value)
 }
 ORDER BY ?entity
 ```
@@ -301,7 +302,8 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT ?entity ?property ?value WHERE 
 {
-  ?entity def: ?value
+  ?entity def: ?value .
+  
   ?def_anno a owl:Axiom ;
   owl:annotatedSource ?entity ;
   owl:annotatedProperty def: ;
@@ -450,37 +452,6 @@ ORDER BY ?entity
 
 ```
 
-###  qc-obsoletes.sparql
-
-```
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
-PREFIX consider: <http://www.geneontology.org/formats/oboInOwl#consider>
-
-SELECT DISTINCT ?entity ?property ?value WHERE {
-       ?entity a owl:Class  ;
-            rdfs:label ?clsLabel ;
-	    owl:deprecated "true"^^xsd:boolean
-        {
-          {
-            FILTER ( ! regex(str(?clsLabel), "^obsolete ") )
-            BIND ("obsolete label must start with obsolete" AS ?value)
-          }
-          UNION
-          {
-            ?entity rdfs:subClassOf ?parent
-            BIND("no logical axioms for obsolete" AS ?value)
-          }
-        }
-  BIND(owl:deprecated as ?property)
-}
-ORDER BY ?entity
-
-```
-
 ###  qc-owldef-self-reference.sparql
 
 ```
@@ -556,13 +527,16 @@ ORDER BY ?entity
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-    ?entity rdfs:subClassOf ?value .
+    ?entity rdfs:subClassOf ?parent .
     FILTER NOT EXISTS {
-       ?child2 rdfs:subClassOf ?value .
+       ?child2 rdfs:subClassOf ?parent .
        FILTER (?child2 != ?entity)
+       FILTER (isIRI(?child2) && STRSTARTS(str(?child2), "http://purl.obolibrary.org/obo/MONDO_"))
     }
-    BIND(rdfs:subClassOf AS ?property)
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(rdfs:subClassOf AS ?property)
+    BIND(str(?parent) AS ?value)
 }
 ORDER BY ?entity
 ```

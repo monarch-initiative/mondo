@@ -5,11 +5,11 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     FILTER NOT EXISTS {
        ?child2 rdfs:subClassOf ?parent .
        FILTER (?child2 != ?entity)
+       FILTER (isIRI(?child2) && STRSTARTS(str(?child2), "http://purl.obolibrary.org/obo/MONDO_"))
     }
-    BIND(rdfs:subClassOf AS ?property)
-    BIND("Entity is single child." AS ?value)
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
-    FILTER (isIRI(?child2) && STRSTARTS(str(?child2), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(rdfs:subClassOf AS ?property)
+    BIND(str(?parent) AS ?value)
 }
 ORDER BY ?entity
