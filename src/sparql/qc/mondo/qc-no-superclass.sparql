@@ -25,6 +25,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE
         UNION
       {?entity rdfs:subClassOf* disease_stage: }
     } )
-
+    BIND(rdfs:subClassOf as ?property)
 }
 ORDER BY ?entity

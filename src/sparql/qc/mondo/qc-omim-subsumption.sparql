@@ -10,22 +10,22 @@ prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-   ?entity rdfs:subClassOf ?p .
+   ?entity rdfs:subClassOf ?value .
    ?exp owl:annotatedSource ?entity ;
         owl:annotatedProperty oboInOwl:hasDbXref ;
         owl:annotatedTarget ?xref;
         oboInOwl:source ?source .
-   ?exp_p owl:annotatedSource ?p ;
+   ?exp_p owl:annotatedSource ?value ;
        owl:annotatedProperty oboInOwl:hasDbXref ;
        owl:annotatedTarget ?xref_p;
        oboInOwl:source ?source_p .
    ?entity rdfs:label ?entity_label .
-   ?p rdfs:label ?pn .
    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-   FILTER (isIRI(?p) && STRSTARTS(str(?p), "http://purl.obolibrary.org/obo/MONDO_"))
+   FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
    FILTER(STRSTARTS(str(?xref), "OMIM:"))
    FILTER(STRSTARTS(str(?xref_p), "OMIM:"))
    FILTER(str(?source)="MONDO:equivalentTo")
    FILTER(str(?source_p)="MONDO:equivalentTo")
+   BIND(rdfs:subClassOf as ?property)
 }
 ORDER BY ?entity

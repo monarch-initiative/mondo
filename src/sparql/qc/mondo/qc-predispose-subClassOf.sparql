@@ -7,9 +7,10 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   ?entity owl:equivalentClass ?intersection .
   ?intersection owl:intersectionOf ?lst .
   ?lst rdf:rest*/rdf:first ?restriction .
-  ?restriction owl:someValuesFrom ?y .
+  ?restriction owl:someValuesFrom ?value .
   ?restriction owl:onProperty mondo:predisposes_towards .
-  ?entity rdfs:subClassOf ?y . 
+  ?entity rdfs:subClassOf ?value . 
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(mondo:predisposes_towards as ?property)
 }
 ORDER BY ?entity

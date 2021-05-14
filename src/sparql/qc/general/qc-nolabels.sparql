@@ -10,5 +10,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   FILTER (!isBlank(?entity))
   BIND(rdfs:label as ?property)
   BIND("Must have a label" as ?value)
+	FILTER (strstarts(str(?entity),"http://purl.obolibrary.org/obo/MONDO_"))
 }
 ORDER BY ?entity

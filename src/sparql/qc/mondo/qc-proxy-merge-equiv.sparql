@@ -9,5 +9,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER (isIRI(?c2) && STRSTARTS(str(?c2), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(?entity != ?c2)
+  BIND(owl:equivalentClass as ?property)
 }
 ORDER BY ?entity

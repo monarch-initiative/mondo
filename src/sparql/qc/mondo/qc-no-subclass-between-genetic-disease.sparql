@@ -10,24 +10,23 @@ owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . 
 ?entity rdfs:label ?entity_label .
 
-?entity rdfs:subClassOf* ?d2 .
+?entity rdfs:subClassOf* ?value .
 
-?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
+?value rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene2 ] .
-?d2 rdfs:label ?d2_label .
 
-FILTER NOT EXISTS { ?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
+FILTER NOT EXISTS { ?value rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . }
 
 FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-FILTER (isIRI(?d2) && STRSTARTS(str(?d2), "http://purl.obolibrary.org/obo/MONDO_"))
+FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
 FILTER (isIRI(?gene1) && STRSTARTS(str(?gene1), "http://identifiers.org/hgnc/"))
 FILTER (isIRI(?gene2) && STRSTARTS(str(?gene2), "http://identifiers.org/hgnc/"))
-FILTER ( ?entity!=?d2 )
+FILTER ( ?entity!=?value )
 FILTER ( ?gene1!=?gene2 )
-
+BIND(rdfs:subClassOf as ?property)
 }
 ORDER BY ?entity
 # FILTER ( ?gene1!=?gene2 ) this is a hack to circumvent the case that a disease pertains to the same gene but is further specified.

@@ -44,24 +44,23 @@ owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . 
 ?entity rdfs:label ?entity_label .
 
-?entity rdfs:subClassOf* ?d2 .
+?entity rdfs:subClassOf* ?value .
 
-?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
+?value rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene2 ] .
-?d2 rdfs:label ?d2_label .
 
-FILTER NOT EXISTS { ?d2 rdfs:subClassOf [ rdf:type owl:Restriction ;
+FILTER NOT EXISTS { ?value rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . }
 
 FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-FILTER (isIRI(?d2) && STRSTARTS(str(?d2), "http://purl.obolibrary.org/obo/MONDO_"))
+FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
 FILTER (isIRI(?gene1) && STRSTARTS(str(?gene1), "http://identifiers.org/hgnc/"))
 FILTER (isIRI(?gene2) && STRSTARTS(str(?gene2), "http://identifiers.org/hgnc/"))
-FILTER ( ?entity!=?d2 )
+FILTER ( ?entity!=?value )
 FILTER ( ?gene1!=?gene2 )
-
+BIND(rdfs:subClassOf as ?property)
 }
 ORDER BY ?entity
 # FILTER ( ?gene1!=?gene2 ) this is a hack to circumvent the case that a disease pertains to the same gene but is further specified.
@@ -101,7 +100,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE
         UNION
       {?entity rdfs:subClassOf* disease_stage: }
     } )
-
+    BIND(rdfs:subClassOf as ?property)
 }
 ORDER BY ?entity
 ```
@@ -121,23 +120,23 @@ prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-   ?entity rdfs:subClassOf ?p .
+   ?entity rdfs:subClassOf ?value .
    ?exp owl:annotatedSource ?entity ;
         owl:annotatedProperty oboInOwl:hasDbXref ;
         owl:annotatedTarget ?xref;
         oboInOwl:source ?source .
-   ?exp_p owl:annotatedSource ?p ;
+   ?exp_p owl:annotatedSource ?value ;
        owl:annotatedProperty oboInOwl:hasDbXref ;
        owl:annotatedTarget ?xref_p;
        oboInOwl:source ?source_p .
    ?entity rdfs:label ?entity_label .
-   ?p rdfs:label ?pn .
    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-   FILTER (isIRI(?p) && STRSTARTS(str(?p), "http://purl.obolibrary.org/obo/MONDO_"))
+   FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
    FILTER(STRSTARTS(str(?xref), "OMIM:"))
    FILTER(STRSTARTS(str(?xref_p), "OMIM:"))
    FILTER(str(?source)="MONDO:equivalentTo")
    FILTER(str(?source_p)="MONDO:equivalentTo")
+   BIND(rdfs:subClassOf as ?property)
 }
 ORDER BY ?entity
 ```
@@ -171,6 +170,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
+  BIND(<http://purl.obolibrary.org/obo/RO_0002573> as ?property)
 }
 ORDER BY ?entity
 ```
@@ -187,10 +187,11 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   ?entity owl:equivalentClass ?intersection .
   ?intersection owl:intersectionOf ?lst .
   ?lst rdf:rest*/rdf:first ?restriction .
-  ?restriction owl:someValuesFrom ?y .
+  ?restriction owl:someValuesFrom ?value .
   ?restriction owl:onProperty mondo:predisposes_towards .
-  ?entity rdfs:subClassOf ?y . 
+  ?entity rdfs:subClassOf ?value . 
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(mondo:predisposes_towards as ?property)
 }
 ORDER BY ?entity
 ```
@@ -209,6 +210,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER (isIRI(?c2) && STRSTARTS(str(?c2), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(?entity != ?c2)
+  BIND(owl:equivalentClass as ?property)
 }
 ORDER BY ?entity
 ```
@@ -221,28 +223,29 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-    ?entity rdfs:label ?entity_label ;
-      oboInOwl:hasDbXref ?omim_xref ;
-      oboInOwl:hasDbXref ?omim2_xref ;
-      a owl:Class .
-      ?xref_anno2 a owl:Axiom ;
+    ?entity oboInOwl:hasDbXref ?xref .
+    
+    ?entity2 oboInOwl:hasDbXref ?xref .
+    
+    ?xref_anno2 a owl:Axiom ;
            owl:annotatedSource ?entity ;
            owl:annotatedProperty oboInOwl:hasDbXref ;
-           owl:annotatedTarget ?omim2_xref ;
-           oboInOwl:source ?omim2_source .
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source1 .
     	
   		?xref_anno a owl:Axiom ;
-           owl:annotatedSource ?entity ;
+           owl:annotatedSource ?entity2 ;
            owl:annotatedProperty oboInOwl:hasDbXref ;
-           owl:annotatedTarget ?omim_xref ;
-           oboInOwl:source ?omim_source .
-  	
-    	
-  	FILTER (str(REPLACE( ?omim2_xref , '[:].*$', '' )) = str(REPLACE( ?omim_xref , '[:].*$', '' )))
-  	FILTER (str(?omim2_xref)!=str(?omim_xref))
-    FILTER (str(?omim_source)="MONDO:equivalentTo")
-  	FILTER (str(?omim2_source)="MONDO:equivalentTo")
-    FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source2 .
+
+  	FILTER (?entity2!=?entity)
+    FILTER (str(?source1)="MONDO:equivalentTo")
+  	FILTER (str(?source2)="MONDO:equivalentTo")
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (isIRI(?entity2) && STRSTARTS(str(?entity2), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(oboInOwl:hasDbXref as ?property)
+    BIND(str(?entity2) as ?value)
 }
 ORDER BY ?entity
 ```
@@ -279,47 +282,42 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     FILTER (regex(str(?xref1), "OMIM^"))
     FILTER (regex(str(?xref2), "OMIM^"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(oboInOwl:hasExactSynonym as ?property)
   }
-  #UNION 
-  # { 
-  # ASK CHRIS: IS THIS REDUNDANT? -> REDUNDANT..
-  #  ?x owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
-  #    owl:annotatedSource ?entity ;
-  #    owl:annotatedTarget ?related .
-  #    
-  # ?y owl:annotatedProperty oboInOwl:hasExactSynonym ;
-  #    owl:annotatedSource ?entity ;
-  #    owl:annotatedTarget ?exact .
-  #    
-  # ?entity rdfs:label ?entity_label .
-  #
-  # FILTER (str(?related)=str(?exact))
-  # FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
-  # }
 }
 
 ORDER BY ?entity
 
-```
-
-###  qc-susceptibility-candidates.sparql
-
-```
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
-SELECT DISTINCT ?entity ?property ?value WHERE {
-  ?entity rdfs:label ?label .
-  FILTER NOT EXISTS {
-	  ?entity <http://purl.org/dc/terms/conformsTo> ?pattern
-    FILTER (?pattern IN (pattern:inherited_susceptibility.yaml, pattern:susceptibility_by_gene.yaml) )
-  }
-  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER(regex(str(?label), "suscep"))
-}
-ORDER BY ?entity
 ```
 
 ## General quality checks
+
+###  qc-def-lacks-xref.sparql
+
+```
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?entity ?property ?value WHERE 
+{
+  ?entity def: ?value
+  ?def_anno a owl:Axiom ;
+  owl:annotatedSource ?entity ;
+  owl:annotatedProperty def: ;
+  owl:annotatedTarget ?value .
+  
+  FILTER NOT EXISTS {
+    ?def_anno oio:hasDbXref ?x .
+  }
+  
+  FILTER (!isBlank(?entity))
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(def: as ?property)
+}
+ORDER BY ?entity
+
+```
 
 ###  qc-definition-containing-underscore.sparql
 
@@ -431,6 +429,27 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
 ORDER BY ?entity
 ```
 
+###  qc-nolabels.sparql
+
+```
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+	?entity a owl:Class
+	FILTER NOT EXISTS {?entity rdfs:label ?lab}
+	FILTER NOT EXISTS {?entity replaced_by: ?replCls}
+  FILTER (!isBlank(?entity))
+  BIND(rdfs:label as ?property)
+  BIND("Must have a label" as ?value)
+	FILTER (strstarts(str(?entity),"http://purl.obolibrary.org/obo/MONDO_"))
+}
+ORDER BY ?entity
+
+```
+
 ###  qc-obsoletes.sparql
 
 ```
@@ -481,28 +500,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE
 ORDER BY ?entity
 ```
 
-###  qc-redundant-subClassOf.sparql
-
-```
-prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
-prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT DISTINCT ?entity ?property ?value WHERE 
-{
-  ?entity rdfs:subClassOf ?y ;
-     rdfs:label ?xl .
-  ?y rdfs:subClassOf+ ?z ;
-     rdfs:label ?yl .
-  ?entity rdfs:subClassOf ?z .
-  ?z rdfs:label ?zl .
-
-  BIND(owl:equivalentClass as ?property)
-  BIND("Entity referencing itself in equivalentClass expression!" as ?value)
-}
-ORDER BY ?entity
-```
-
 ###  qc-reflexive.sparql
 
 ```
@@ -534,6 +531,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE
     
     FILTER (str(?value)=str(?exact))
     FILTER (isIRI(?entity))
+    BIND("oboInOwl:hasExactSynonym" as ?property)
 }
 ORDER BY ?entity
 ```

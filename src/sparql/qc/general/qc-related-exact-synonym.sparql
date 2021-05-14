@@ -12,5 +12,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE
     
     FILTER (str(?value)=str(?exact))
     FILTER (isIRI(?entity))
+    BIND("oboInOwl:hasExactSynonym" as ?property)
 }
 ORDER BY ?entity

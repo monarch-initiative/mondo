@@ -24,5 +24,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
+  BIND(<http://purl.obolibrary.org/obo/RO_0002573> as ?property)
 }
 ORDER BY ?entity
