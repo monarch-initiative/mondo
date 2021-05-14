@@ -420,11 +420,18 @@ SPARQL_OWL_EXCLUDE=qc-omim-subsumption
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OBO=$(filter-out $(SPARQL_OBO_EXCLUDE),$(SPARQL_GENERAL_QC))
+SPARQL_MONDO_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_MONDO_QC))
+SPARQL_MONDO_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_MONDO_QC))
+SPARQL_MONDO_QC_OBO=$(filter-out $(SPARQL_OBO_EXCLUDE),$(SPARQL_MONDO_QC))
 
 SPARQL_MONDO_QC_FILES=$(foreach V,$(SPARQL_MONDO_QC),$(SPARQLDIR)/qc/mondo/$V.sparql)
 SPARQL_GENERAL_QC_FILES_EDIT=$(foreach V,$(SPARQL_GENERAL_QC_EDIT),$(SPARQLDIR)/qc/general/$V.sparql)
 SPARQL_GENERAL_QC_FILES_OBO=$(foreach V,$(SPARQL_GENERAL_QC_OBO),$(SPARQLDIR)/qc/general/$V.sparql)
 SPARQL_GENERAL_QC_FILES_OWL=$(foreach V,$(SPARQL_GENERAL_QC_OWL),$(SPARQLDIR)/qc/general/$V.sparql)
+SPARQL_MONDO_QC_FILES_EDIT=$(foreach V,$(SPARQL_MONDO_QC_EDIT),$(SPARQLDIR)/qc/mondo/$V.sparql)
+SPARQL_MONDO_QC_FILES_OBO=$(foreach V,$(SPARQL_MONDO_QC_OBO),$(SPARQLDIR)/qc/mondo/$V.sparql)
+SPARQL_MONDO_QC_FILES_OWL=$(foreach V,$(SPARQL_MONDO_QC_OWL),$(SPARQLDIR)/qc/mondo/$V.sparql)
+
 
 QSRC = $(SRC)-noimports.owl
 
@@ -433,13 +440,13 @@ $(QSRC): $(SRC)
 
 # run all violation checks on edit file
 sparql_test_edit: $(QSRC)
-	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES) $(SPARQL_GENERAL_QC_FILES_EDIT) -O reports/edit/ && touch $@
+	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES_EDIT) $(SPARQL_GENERAL_QC_FILES_EDIT) -O reports/edit/ && touch $@
 
 sparql_test_main_owl: $(ONT).owl
-	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES) $(SPARQL_GENERAL_QC_FILES_OWL) -O reports/main_owl/ && touch $@
+	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OWL) $(SPARQL_GENERAL_QC_FILES_OWL) -O reports/main_owl/ && touch $@
 
 sparql_test_main_obo: $(ONT).obo
-	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES) $(SPARQL_GENERAL_QC_FILES_OBO) -O reports/main_obo/ && touch $@
+	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OBO) $(SPARQL_GENERAL_QC_FILES_OBO) -O reports/main_obo/ && touch $@
 
 PL2SPARQL = ../plq/pq-mondo
 #../sparql/%.sparql:
