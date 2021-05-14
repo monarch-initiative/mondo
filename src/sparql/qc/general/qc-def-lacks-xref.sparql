@@ -4,7 +4,8 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT ?entity ?property ?value WHERE 
 {
-  ?entity def: ?value
+  ?entity def: ?value .
+  
   ?def_anno a owl:Axiom ;
   owl:annotatedSource ?entity ;
   owl:annotatedProperty def: ;
