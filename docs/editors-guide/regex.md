@@ -2,11 +2,11 @@
 ## Bulk Editing Using Regular Expressions
 
 by [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) and [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779)   
-_created 2021-04-08_
+_updated 2021-05-12_
 
 **Objective:** 
 
-Regular expressions can be used for mass editing in the mondo-edit.obo text file. 
+Regular expressions can be used for mass editing in the mondo-edit.obo text file. A very helpful reference for writing regex patterns is available here: [regex101](https://regex101.com/).
 
 ### Workflow
 
