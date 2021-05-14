@@ -7,16 +7,17 @@ prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 SELECT DISTINCT ?entity ?property ?value  
 WHERE 
 { 
-  ?entity mondo:excluded_subClassOf ?value ;
-      rdfs:subClassOf* ?value .
+  ?entity mondo:excluded_subClassOf ?parent ;
+      rdfs:subClassOf* ?parent .
   
     FILTER NOT EXISTS {
        ?entity mondo:excluded_from_qc_check mondoSparql:excluded-subsumption-is-inferred-violation.sparql .
     }
   
-  FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER( ?entity=?value)
+  FILTER( ?entity=?parent)
   BIND(mondo:excluded_subClassOf as ?property)
+  BIND(str(?parent) as ?value)
 }
 ORDER BY ?entity
