@@ -26,8 +26,7 @@ omim-src.obo: omim-src.owl
 
 # this gets rid of genes
 omim.obo: omim-src.obo
-	$(OBOGREPL) --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' omim-src.obo | $(OBOGREPL) -r 'property_value: https://w3id.org/biolink/vocab/category https://w3id.org/biolink/vocab/Disease' - | perl -npe 's@http://omim.org/entry/@OMIM:@g;s@http://www.omim.org/phenotypicSeries/PS@OMIMPS:@g' |  $(OBOGREPL) -r 'id: OMIM' -   > $@.tmp.obo
-	sed -i 's@^property_value: https://w3id.org/biolink/vocab/category https://w3id.org/biolink/vocab/Disease@is_a: MONDO:0000001@g' $@.tmp.obo
+	$(OBOGREPL) --neg -r '(equivalent_to|is_a: SO|property_value: RO:0002524)' $< | $(OBOGREPL) -r 'property_value: https://w3id.org/biolink/vocab/category https://w3id.org/biolink/vocab/Disease' - | perl -npe 's@http://omim.org/entry/@OMIM:@g;s@http://www.omim.org/phenotypicSeries/PS@OMIMPS:@g' |  $(OBOGREPL) -r 'id: OMIM' -   > $@.tmp.obo
 	owltools $@.tmp.obo --set-ontology-id http://purl.obolibrary.org/obo/omim.owl -o -f obo $@ && rm $@.tmp.obo
 .PRECIOUS: omim.obo
 
