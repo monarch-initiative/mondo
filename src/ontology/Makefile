@@ -1062,9 +1062,8 @@ mirror/medgen.obo:
 tmp/tbd_%.tbd: $(SRC) mirror/%.obo
 	cat mirror/$*.obo | perl $(ADDTOTBD) > $@
 
-# There are some orphanet classes children of obsoletes. these will be filtered out by this process
 tmp/rest_slurp_%.obo: tmp/tbd_%.tbd
-	cat tmp/tbd_$*.tbd | perl $(OBOGREP) --neg -r ALREADY - | perl $(OBOGREP) --neg -r is_obsol - | perl $(OBOGREP) --neg -r "name: obsolete" - | perl $(OBOGREP) --neg -r "name: rare" - | perl $(OBOGREP) --neg -r 'xref: Ensembl:' - | perl $(OBOGREP) -r is_a - | grep -v "no mapping" - > $@
+	cat $< | perl $(OBOGREP) --neg -r ALREADY - | perl $(OBOGREP) --neg -r is_obsol - | perl $(OBOGREP) -r is_a - | perl $(OBOGREP) --neg -r "no mapping" - > $@
 	sed -i -E 's/is_a[:][ ]MONDO[:]0000001[ ][{]source[=]["]OMIM[:][0-9]+["][}][ ][!][ ]disease[ ]or[ ]disorder/is_a: MONDO:0003847/g' $@
 .PRECIOUS: tmp/rest_slurp_%.obo
 
