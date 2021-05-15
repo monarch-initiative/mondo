@@ -10,7 +10,11 @@ prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/gen
 prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
-SELECT DISTINCT ?entity ?property ?value WHERE {
+CONSTRUCT {
+  ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omim-subsumption.sparql ;
+  rdf:type owl:Class .
+}
+WHERE {
    ?entity rdfs:subClassOf ?parent .
    ?exp owl:annotatedSource ?entity ;
         owl:annotatedProperty oboInOwl:hasDbXref ;

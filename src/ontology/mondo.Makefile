@@ -390,17 +390,13 @@ mondo-views: $(patsubst %, modules/mondo-%-view.owl, $(MONDOVIEWS))
 #		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
 #	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
 
-reports/mondo-small-report.html: $(SRC)
-	$(ROBOT) merge -i $< reason remove --base-iri "$(OBO)/MONDO_" --base-iri "$(OBO)/mondo#" --axioms external -p false report --profile profile.txt --fail-on none -o $@
-.PRECIOUS: reports/mondo-small-report.html
-
 reports/mondo-edit-report.html: $(SRC)
 	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason report --profile profile.txt --fail-on none -o $@
 .PRECIOUS: reports/mondo-edit-report.html
 
 .PHONY: mondo_%_report
-mondo_small_report: reports/mondo-small-report.html
 mondo_edit_report: reports/mondo-edit-report.html
+test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html
