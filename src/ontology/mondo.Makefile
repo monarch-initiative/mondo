@@ -173,7 +173,7 @@ tmp/mondo-tags-dosdp.owl: tmp/mondo-tags-dosdp.tsv | dirs
 	$(ROBOT) merge -i $(SRC) template --template $< --prefix "MONDO: http://purl.obolibrary.org/obo/MONDO_" --output $@
 
 tmp/mondo-tags-sparql.ttl: $(SRC) | dirs
-	$(ROBOT) query -f ttl -i $< --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/tags/$V.sparql) --output-dir tmp/
+	$(ROBOT) reason -i $< query -f ttl --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/tags/$V.sparql) --output-dir tmp/
 	$(ROBOT) merge $(addprefix -i , $(foreach V,$(SPARQL_TAGS),tmp/$V.ttl)) -o $@
 
 components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl tmp/mondo-tags-sparql.ttl | dirs
