@@ -9,7 +9,8 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
-prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
 
 SELECT DISTINCT ?entity ?property ?value  
 WHERE 
@@ -18,7 +19,7 @@ WHERE
       rdfs:subClassOf* ?parent .
   
     FILTER NOT EXISTS {
-       ?entity mondo:excluded_from_qc_check mondoSparql:excluded-subsumption-is-inferred-violation.sparql .
+       ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-excluded-subsumption-is-inferred.sparql .
     }
   
   FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
@@ -36,6 +37,9 @@ ORDER BY ?entity
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
 
 SELECT DISTINCT ?entity ?property ?value WHERE 
 {
@@ -54,6 +58,10 @@ owl:someValuesFrom ?gene2 ] .
 FILTER NOT EXISTS { ?value rdfs:subClassOf [ rdf:type owl:Restriction ;
 owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
 owl:someValuesFrom ?gene1 ] . }
+
+FILTER NOT EXISTS {
+   ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-no-subclass-between-genetic-disease.sparql .
+}
 
 FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
 FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
@@ -117,27 +125,34 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
-prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-   ?entity rdfs:subClassOf ?value .
+   ?entity rdfs:subClassOf ?parent .
    ?exp owl:annotatedSource ?entity ;
         owl:annotatedProperty oboInOwl:hasDbXref ;
         owl:annotatedTarget ?xref;
         oboInOwl:source ?source .
-   ?exp_p owl:annotatedSource ?value ;
+   ?exp_p owl:annotatedSource ?parent ;
        owl:annotatedProperty oboInOwl:hasDbXref ;
        owl:annotatedTarget ?xref_p;
        oboInOwl:source ?source_p .
    ?entity rdfs:label ?entity_label .
+   
+   FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omim-subsumption.sparql .
+   }
+   
    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-   FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
+   FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
    FILTER(STRSTARTS(str(?xref), "OMIM:"))
    FILTER(STRSTARTS(str(?xref_p), "OMIM:"))
    FILTER(str(?source)="MONDO:equivalentTo")
    FILTER(str(?source_p)="MONDO:equivalentTo")
    BIND(rdfs:subClassOf as ?property)
+   BIND(REPLACE(STR(?parent),"[<>]","") AS ?value)
 }
 ORDER BY ?entity
 ```
@@ -525,6 +540,9 @@ ORDER BY ?entity
 
 ```
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity rdfs:subClassOf ?parent .
@@ -532,6 +550,9 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
        ?child2 rdfs:subClassOf ?parent .
        FILTER (?child2 != ?entity)
        FILTER (isIRI(?child2) && STRSTARTS(str(?child2), "http://purl.obolibrary.org/obo/MONDO_"))
+    }
+    FILTER NOT EXISTS {
+       ?entity mondo:excluded_from_qc_check mondoSparqlQcGeneral:qc-single-child.sparql .
     }
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
@@ -554,6 +575,33 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
    BIND(?entity AS ?value)
 }
 ORDER BY ?entity
+```
+
+###  qc-syn-source-not-xref.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?property ?value
+WHERE 
+{ 
+  VALUES ?property {
+    oboInOwl:hasRelatedSynonym
+    oboInOwl:hasExactSynonym
+    oboInOwl:hasNarrowSynonym
+    oboInOwl:hasBroadSynonym
+  }
+    ?entity ?property ?value ;
+      a owl:Class .
+      ?anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty ?property ;
+           owl:annotatedTarget ?value ;
+           oboInOwl:source ?xref .  
+   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
 ```
 
 ###  qc-trailing-whitespace.sparql
