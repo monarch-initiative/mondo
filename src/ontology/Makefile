@@ -440,12 +440,15 @@ $(QSRC): $(SRC)
 
 # run all violation checks on edit file
 sparql_test_edit: $(QSRC)
+	mkdir -p reports/edit/ &&\
 	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES_EDIT) $(SPARQL_GENERAL_QC_FILES_EDIT) -O reports/edit/ && touch $@
 
 sparql_test_main_owl: $(ONT).owl
+	mkdir -p reports/main_owl/ &&\
 	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OWL) $(SPARQL_GENERAL_QC_FILES_OWL) -O reports/main_owl/ && touch $@
 
 sparql_test_main_obo: $(ONT).obo
+	mkdir -p reports/main_obo/ &&\
 	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OBO) $(SPARQL_GENERAL_QC_FILES_OBO) -O reports/main_obo/ && touch $@
 
 PL2SPARQL = ../plq/pq-mondo

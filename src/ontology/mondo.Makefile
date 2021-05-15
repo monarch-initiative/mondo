@@ -395,7 +395,7 @@ reports/mondo-small-report.html: $(SRC)
 .PRECIOUS: reports/mondo-small-report.html
 
 reports/mondo-edit-report.html: $(SRC)
-	$(ROBOT) reason -i $< report --profile profile.txt --fail-on none -o $@
+	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason report --profile profile.txt --fail-on none -o $@
 .PRECIOUS: reports/mondo-edit-report.html
 
 .PHONY: mondo_%_report
