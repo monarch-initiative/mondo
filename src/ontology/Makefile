@@ -414,9 +414,9 @@ NEWAXTEST: mondo-edit.owl new.owl
 
 SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/qc-*.sparql)))
 SPARQL_GENERAL_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/general/qc-*.sparql)))
-SPARQL_EDIT_EXCLUDE=qc-no-superclass qc-omim-subsumption qc-single-child
-SPARQL_OBO_EXCLUDE=qc-omim-subsumption qc-single-child qc-omimps-should-be-inherited
-SPARQL_OWL_EXCLUDE=qc-omim-subsumption qc-single-child
+SPARQL_EDIT_EXCLUDE=
+SPARQL_OBO_EXCLUDE=
+SPARQL_OWL_EXCLUDE=
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OBO=$(filter-out $(SPARQL_OBO_EXCLUDE),$(SPARQL_GENERAL_QC))
