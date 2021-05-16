@@ -390,8 +390,8 @@ mondo-views: $(patsubst %, modules/mondo-%-view.owl, $(MONDOVIEWS))
 #		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
 #	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
 
-reports/mondo-edit-report.html: $(SRC)
-	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason report --profile profile.txt --fail-on none -o $@
+reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
+	$(ROBOT) report -i $< --profile profile.txt --fail-on none -o $@
 .PRECIOUS: reports/mondo-edit-report.html
 
 .PHONY: mondo_%_report

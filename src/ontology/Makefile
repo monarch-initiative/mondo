@@ -438,8 +438,12 @@ QSRC = $(SRC)-noimports.owl
 $(QSRC): $(SRC)
 	owltools --use-catalog $< --remove-imports-declarations -o $@
 
+SRC_TAGS_REASONED=tmp/src_tags_reasoned.owl
+$(SRC_TAGS_REASONED):
+	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason -o $@
+
 # run all violation checks on edit file
-sparql_test_edit: $(QSRC)
+sparql_test_edit: $(SRC_TAGS_REASONED)
 	mkdir -p reports/edit/ &&\
 	robot verify -i $< --queries $(SPARQL_MONDO_QC_FILES_EDIT) $(SPARQL_GENERAL_QC_FILES_EDIT) -O reports/edit/ && touch $@
 
