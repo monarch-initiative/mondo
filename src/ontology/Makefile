@@ -439,7 +439,8 @@ $(QSRC): $(SRC)
 	owltools --use-catalog $< --remove-imports-declarations -o $@
 
 SRC_TAGS_REASONED=tmp/src_tags_reasoned.owl
-$(SRC_TAGS_REASONED):
+
+$(SRC_TAGS_REASONED): $(SRC)
 	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason -o $@
 
 # run all violation checks on edit file
