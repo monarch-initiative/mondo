@@ -1,0 +1,22 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?property ?value
+WHERE 
+{ 
+  VALUES ?property {
+    oboInOwl:hasRelatedSynonym
+    oboInOwl:hasExactSynonym
+    oboInOwl:hasNarrowSynonym
+    oboInOwl:hasBroadSynonym
+  }
+    ?entity ?property ?value ;
+      a owl:Class .
+      ?anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty ?property ;
+           owl:annotatedTarget ?value ;
+           oboInOwl:source ?xref .  
+   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}

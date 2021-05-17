@@ -1,0 +1,14 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+  ?entity owl:equivalentClass ?x .
+  ?c2 owl:equivalentClass ?x .
+
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (isIRI(?c2) && STRSTARTS(str(?c2), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER(?entity != ?c2)
+  BIND(owl:equivalentClass as ?property)
+}
+ORDER BY ?entity

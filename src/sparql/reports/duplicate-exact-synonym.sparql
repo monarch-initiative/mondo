@@ -1,0 +1,32 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?exact ?term ?term_label ?xref ?term2 ?term_label2 ?xref2
+WHERE 
+{
+    ?term a owl:Class; 
+  		oboInOwl:hasExactSynonym ?exact ;
+		rdfs:label ?term_label .
+    ?term2 a owl:Class; 
+  		oboInOwl:hasExactSynonym ?exact ;
+		rdfs:label ?term_label2 .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasExactSynonym ;
+           owl:annotatedTarget ?exact ;
+           oboInOwl:hasDbXref ?xref 
+      ] .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term2 ;
+           owl:annotatedProperty oboInOwl:hasExactSynonym ;
+           owl:annotatedTarget ?exact ;
+           oboInOwl:hasDbXref ?xref2 
+      ] .
+    
+    FILTER (STR(?term) < STR(?term2))
+    FILTER (isIRI(?term) && STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (isIRI(?term2) && STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/MONDO_"))
+} 
