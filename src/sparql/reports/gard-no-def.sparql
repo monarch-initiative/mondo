@@ -1,0 +1,23 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT distinct ?term ?term_label ?xref
+WHERE 
+{ 
+    ?term rdfs:label ?term_label ;
+      oboInOwl:hasDbXref ?xref ;
+      a owl:Class .
+  		[ a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source 
+		] .
+  	FILTER NOT EXISTS {
+  		?term <http://purl.obolibrary.org/obo/IAO_0000115> ?def .
+  	}
+  	FILTER (STRSTARTS(str(?xref),"GARD"))
+    FILTER (str(?source)="MONDO:equivalentTo")
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
