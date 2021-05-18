@@ -1,0 +1,12 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+   ?c oio:inSubset ?entity .
+   FILTER NOT EXISTS { ?entity rdfs:subPropertyOf oio:SubsetProperty } 
+   BIND(oio:inSubset AS ?property)
+   BIND("Subset not declared." as ?value)
+}
+ORDER BY ?entity

@@ -1,0 +1,22 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?entity ?property ?value WHERE 
+{
+  ?entity def: ?value .
+  
+  ?def_anno a owl:Axiom ;
+  owl:annotatedSource ?entity ;
+  owl:annotatedProperty def: ;
+  owl:annotatedTarget ?value .
+  
+  FILTER NOT EXISTS {
+    ?def_anno oio:hasDbXref ?x .
+  }
+  
+  FILTER (!isBlank(?entity))
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(def: as ?property)
+}
+ORDER BY ?entity

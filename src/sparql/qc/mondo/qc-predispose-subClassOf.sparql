@@ -1,0 +1,16 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+  ?entity owl:equivalentClass ?intersection .
+  ?intersection owl:intersectionOf ?lst .
+  ?lst rdf:rest*/rdf:first ?restriction .
+  ?restriction owl:someValuesFrom ?value .
+  ?restriction owl:onProperty mondo:predisposes_towards .
+  ?entity rdfs:subClassOf ?value . 
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(mondo:predisposes_towards as ?property)
+}
+ORDER BY ?entity

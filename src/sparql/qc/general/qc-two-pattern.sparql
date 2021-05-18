@@ -1,0 +1,8 @@
+SELECT DISTINCT ?entity ?property ?value WHERE {
+?entity <http://purl.org/dc/terms/conformsTo> ?value .
+?entity <http://purl.org/dc/terms/conformsTo> ?n1 .
+FILTER ( ?value!=?n1 ) .
+FILTER ( isIRI(?c1))
+BIND(<http://purl.org/dc/terms/conformsTo> AS ?property)
+}
+ORDER BY ?entity
