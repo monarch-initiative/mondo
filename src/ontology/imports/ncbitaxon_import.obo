@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-03-03/imports/ncbitaxon_import.owl
+data-version: mondo/releases/2021-04-30/imports/ncbitaxon_import.owl
 ontology: mondo/imports/ncbitaxon_import
 
 [Term]
@@ -5275,16 +5275,74 @@ is_a: NCBITaxon:11158 ! Paramyxoviridae
 property_value: has_rank NCBITaxon:subfamily
 
 [Term]
+id: NCBITaxon:2560194
+name: Orthoavulavirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:2560069 ! Avulavirinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:2560195
+name: Orthorubulavirus
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:2560080 ! Rubulavirinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:2560319
+name: Avian orthoavulavirus 1
+namespace: ncbi_taxonomy
 alt_id: NCBITaxon:11176
+synonym: "Avian avulavirus 1" RELATED synonym []
+synonym: "avian paramyxovirus 1" EXACT equivalent_name []
+synonym: "Avian Paramyxovirus Serotype I" EXACT equivalent_name []
+synonym: "Avian paramyxovirus type 1" EXACT equivalent_name []
+synonym: "Avian paramyxovirus type-1" EXACT equivalent_name []
+synonym: "NDV" BROAD acronym []
+synonym: "Newcastle disease virus" EXACT equivalent_name []
+synonym: "Newcastle disease virus NDV" EXACT equivalent_name []
+xref: GC_ID:1
+is_a: NCBITaxon:2560194 ! Orthoavulavirus
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:2560525
+name: Human orthorubulavirus 2
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:11199
+alt_id: NCBITaxon:11212
 alt_id: NCBITaxon:1979160
+synonym: "HPIV-2" BROAD acronym []
+synonym: "HPIV2" BROAD acronym []
+synonym: "Human parainfluenza 2 virus" EXACT equivalent_name []
+synonym: "human parainfluenza virus" RELATED in_part []
+synonym: "Human parainfluenza virus 2" EXACT equivalent_name []
+synonym: "Human parainfluenza virus type 2" EXACT equivalent_name []
+synonym: "Human rubulavirus 2" RELATED synonym []
+synonym: "Parainfluenza virus type 2" EXACT equivalent_name []
+synonym: "PIV-2" BROAD acronym []
+xref: GC_ID:1
+is_a: NCBITaxon:2560195 ! Orthorubulavirus
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:2560526
+name: Human orthorubulavirus 4
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:11203
 alt_id: NCBITaxon:1979161
+synonym: "HPIV type 4" EXACT equivalent_name []
+synonym: "HPIV4" BROAD acronym []
+synonym: "human parainfluenza virus" RELATED in_part []
+synonym: "Human parainfluenza virus 4" EXACT equivalent_name []
+synonym: "Human parainfluenza virus type 4" EXACT equivalent_name []
+synonym: "Human rubulavirus 4" RELATED synonym []
+synonym: "Parainfluenza virus type 4" EXACT equivalent_name []
+xref: GC_ID:1
+is_a: NCBITaxon:2560195 ! Orthorubulavirus
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:2560547
@@ -5296,8 +5354,15 @@ property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:2560602
+name: Mumps orthorubulavirus
+namespace: ncbi_taxonomy
 alt_id: NCBITaxon:11161
 alt_id: NCBITaxon:1979165
+synonym: "Mumps rubulavirus" RELATED synonym []
+synonym: "Mumps virus" EXACT equivalent_name []
+xref: GC_ID:1
+is_a: NCBITaxon:2560195 ! Orthorubulavirus
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:2572477
@@ -9152,8 +9217,8 @@ property_value: has_rank NCBITaxon:subfamily
 id: NCBITaxon:4751
 name: Fungi
 namespace: ncbi_taxonomy
-synonym: "fungi" RELATED blast_name []
 synonym: "fungi" RELATED in_part []
+synonym: "fungi" RELATED blast_name []
 synonym: "Mycota" RELATED genbank_synonym []
 xref: GC_ID:1
 xref: PMID:11062127

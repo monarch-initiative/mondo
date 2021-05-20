@@ -17,15 +17,24 @@ The release mondo.owl will look like this in Protege:
 
 1. Pull master
 2. `cd git/mondo/src/ontology/`
-3. `sh run.sh make all -B` - note, this takes about 2-3 hours
+3. `sh run.sh make all -B` - note, this takes about 2-3 hours.
 4. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
-5. `cp ~/.token .token`  
-6. `sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
+5. Make sure you see ‘release finished’ after the command has run
+
+## Commit changes to a branch
+1. Create a branch and commit the changes on the branch
+2. Do a pull request (PR)
+3. Wait for GitHub Actions/QC to pass
+4. Merge PR
+
+## Deploy Release 
+7. `cp ~/.token .token`  
+8. `sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
 Note- the date should be the date of the release in the format sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release (for example, v2020-08-10)  (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
 7. Check these two release pages (make sure you replace the date correctly in the first link): 
     1. https://github.com/monarch-initiative/mondo/releases/tag/v2020-XX-XX
     2. https://github.com/monarch-initiative/mondo/releases/tag/current 
-    3. Both should: Ensure on both that it says nicolevasilevsky released this 1 days ago or now
+    3. Both should: Ensure on both that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     4.  Ensure that both have all release artefacts attached to it
 7. When this is done, follow instructions for the change log
 
@@ -34,10 +43,10 @@ _Note: While the release is running, don't shut your laptop or switch between re
 ## Generate Change Log
 
 ### Initial Setup:
-1. copy the obo script from github: https://github.com/cmungall/obo-scripts
+1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
     1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
         1. right click and save as
-2. move that file: mv [wherever I downloaded it, for example: /Users/vasilevs/bin/obo-simple-diff.pl] /usr/local/bin
+2. Move that file: mv [wherever I downloaded it, for example: /Users/vasilevs/bin/obo-simple-diff.pl] /usr/local/bin
     1. mv  /Users/vasilevs/bin/obo-simple-diff.pl /usr/local/bin
 3. chmod 755 obo-simple-diff.pl 
 

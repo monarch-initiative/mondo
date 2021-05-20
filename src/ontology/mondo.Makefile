@@ -1,5 +1,5 @@
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
-DOSDPT=../dosdp-tools-0.16-SNAPSHOT/bin/dosdp-tools
+DOSDPT=dosdp-tools
 
 .PHONY: dirs
 dirs:
@@ -54,16 +54,49 @@ pattern_ontology: ../patterns/pattern.owl
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
 
+MYDIR = .
+list: $(MYDIR)/*
+        
+../../docs/editors-guide/quality-control-tests.md:
+	echo "# Custom SPARQL checks Mondo" > $@ &&\
+	echo "" >> $@ &&\
+	echo "## Mondo specific checks" >> $@ &&\
+	echo "" >> $@ &&\
+	for file in $(SPARQLDIR)/qc/mondo/*.sparql ; do \
+		echo "### " $$(basename $${file}) >> $@  ; \
+		echo "" >> $@ ; \
+		echo "\`\`\`" >> $@ ; \
+		cat $${file} >> $@ ; \
+		echo "" >> $@ ;\
+		echo "\`\`\`" >> $@ ; \
+		echo "" >> $@ ;\
+	done &&\
+	echo "## General quality checks" >> $@ &&\
+	echo "" >> $@ &&\
+	for file in $(SPARQLDIR)/qc/general/*.sparql ; do \
+		echo "### " $$(basename $${file}) >> $@  ; \
+		echo "" >> $@ ; \
+		echo "\`\`\`" >> $@ ; \
+		cat $${file} >> $@ ; \
+		echo "" >> $@ ;\
+		echo "\`\`\`" >> $@ ; \
+		echo "" >> $@ ;\
+	done
+
+qc_docs: ../../docs/editors-guide/quality-control-tests.md
+
+pattern_mkdocs:
+	pip install tabulate
+	python ../scripts/patterns_create_docs.py
+
 .PHONY: pattern_docs
-pattern_docs: pattern_ontology pattern_readmes
+pattern_docs: pattern_ontology pattern_readmes pattern_mkdocs qc_docs
 
 
 #################################
 ##### REPORTING PIPELINE ########
-
-SPARQL_WARNINGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-warning.sparql)))
-SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-stats.sparql)))
-SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/*-tags.sparql)))
+SPARQL_STATS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/reports/*-stats.sparql)))
+SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/tags/*-tags.sparql)))
 
 tmp/mondo-version_edit.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
@@ -89,13 +122,13 @@ tmp/mondo-version_2017.owl:
 	$(ROBOT) merge -i $@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 # This combines all into one single command
-.PHONY: all_reports_warnings_%
-all_reports_warnings_%: tmp/mondo-version_%.owl
-	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_WARNINGS),-s $(SPARQLDIR)/$V.sparql reports/mondo-qc-$*-$V.tsv)
+.PHONY: all_reports_sparqlqc_%
+all_reports_sparqlqc_%: tmp/mondo-version_%.owl
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_MONDO_QC),-s $(SPARQLDIR)/qc/mondo/$V.sparql reports/mondo-qc-$*-$V.tsv)
 
 .PHONY: all_reports_stats_%
 all_reports_stats_%: tmp/mondo-version_%.owl
-	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/$V.sparql reports/mondo-qc-$*-$V.tsv)
+	$(ROBOT) query -f tsv --use-graphs true -i $< $(foreach V,$(SPARQL_STATS),-s $(SPARQLDIR)/reports/$V.sparql reports/mondo-qc-$*-$V.tsv)
 
 reports/mondo-qc-%-robot-report-obo.tsv: tmp/mondo-version_%.owl
 	$(ROBOT) report -i $< --fail-on none --print 5 -o $@
@@ -108,7 +141,7 @@ QC_REPORTS_RM=$(foreach V,$(QC_BASE_FILES), reports/$V*)
 clean_qc:
 	rm report/mondo-qc-*
 
-qc_reports_%: all_reports_stats_% reports/mondo-qc-%-robot-report-obo.tsv all_reports_warnings_%
+qc_reports_%: all_reports_stats_% reports/mondo-qc-%-robot-report-obo.tsv all_reports_sparqlqc_%
 	echo $^
 
 travis_test: mondo.owl sparql_test_main_obo
@@ -140,7 +173,7 @@ tmp/mondo-tags-dosdp.owl: tmp/mondo-tags-dosdp.tsv | dirs
 	$(ROBOT) merge -i $(SRC) template --template $< --prefix "MONDO: http://purl.obolibrary.org/obo/MONDO_" --output $@
 
 tmp/mondo-tags-sparql.ttl: $(SRC) | dirs
-	$(ROBOT) query -f ttl -i $< --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/$V.sparql) --output-dir tmp/
+	$(ROBOT) reason -i $< query -f ttl --queries $(foreach V,$(SPARQL_TAGS),$(SPARQLDIR)/tags/$V.sparql) --output-dir tmp/
 	$(ROBOT) merge $(addprefix -i , $(foreach V,$(SPARQL_TAGS),tmp/$V.ttl)) -o $@
 
 components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl tmp/mondo-tags-sparql.ttl | dirs
@@ -216,7 +249,7 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 # MONDO_SOURCES = omim medgen medic orphanet
 #MONDO_SOURCES_WITH_SPECIAL_PREPROCESSING = omim medgen orphanet
 #all: build_sources
-#	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
+#	$(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/reports/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 #.PHONY: release_dir
 
 #build_sources: $(patsubst %, build-%, $(MONDO_SOURCES))
@@ -226,7 +259,7 @@ build-%:
 
 #### Some useful ROBOT queries:
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/excluded-subsumption-is-inferred-violation.sparql reports/excluded-subsumption-is-inferred-violation.tsv
-# $(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
+# $(ROBOT) query -i $(SRC) --update $(SPARQLDIR)/update/excluded-subsumption-is-inferred-tags.sparql -o $(SRC)
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
 
@@ -250,16 +283,18 @@ related_annos_to_exact:
 rm_related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
 
-
-#warn-omim-subsumption warn=related-exact-synonym
-warn-%:
-	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query $(SPARQLDIR)/$*-warning.sparql reports/warn-$*.tsv
-
 report-query-%:
-	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/$*.sparql reports/report-$*.tsv
+	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
+
+report-reason-query-%:
+	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
+
+report-owl-query-%:
+	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
+
 
 update-query-%:
-	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/$*.ru convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
 
 .PHONY: r2e
 r2e:
@@ -272,3 +307,96 @@ OBS_REASON=outOfScope
 
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
+
+MAPPINGSDIR=mappings
+MAPPING_IDS=ordo omim mondo
+ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
+
+tmp/mirror-ordo.json: mirror/ordo.obo
+	robot merge -i $< convert -f json -o $@
+
+tmp/mirror-omim.json: mirror/omim.obo
+	robot merge -i $< convert -f json -o $@
+
+tmp/mirror-mondo.json: mondo.obo
+	robot merge -i $< convert -f json -o $@
+
+$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
+	sssom convert -i $< -o $@
+	#python ../scripts/split_sssom_by_source.py $@
+
+mappings: $(ALL_MAPPINGS)
+
+
+###########################
+## MONDO VIEW GENERATION ##
+###########################
+
+# 1. In a ROBOT template, define a top level as you see fit (using, however, MONDO ids)
+# 2. Make sure the template file ends up in modules, and is named like modules/harrisons-view.tsv, where harrisons is the id
+# 3. Add the id to the MONDOVIEWS variable
+# 4. Run `sh run.sh make mondo-views` to generate all views, including your new one.
+# This will: 
+#     a) build the template (modules/mondo-%-view-top.owl)
+#     b) query for the children of the leafs in the template
+#     c) Remove all other MONDO classes from mondo.owl (other than the leafs and their children)
+#     d) Merge this with the template upper level
+
+
+HARRISON_TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vS0748V0s6seWTYetzidiWJbY7r-e_Vc87XcQKl8NmN5BK0LWUios9DTcGqM_1cLj7wWUaueUaBDVx8/pub?gid=0&single=true&output=tsv
+
+modules/harrisons-view.tsv:
+	wget "$(HARRISON_TEMPLATE_URL)" -O $@
+
+modules/mondo-%-view-top.owl: modules/%-view.tsv
+	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(OBO)/$(ONT)/mondo-$*-view-top.owl -o $@
+.PRECIOUS: modules/mondo-%-view-top.owl
+
+tmp/mondo-%-leafs.txt: modules/mondo-%-view-top.owl
+	$(ROBOT) query --use-graphs false -i $< -f tsv --query $(SPARQLDIR)/signature/leaf-classes.sparql $@
+	tail -n +2 "$@" > $@.tmp && mv $@.tmp $@
+
+tmp/subclasses-of-%-leafs.sparql: tmp/mondo-%-leafs.txt
+	echo "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>" > $@
+	echo "SELECT ?c WHERE {" >> $@
+	LISTT="$(shell paste -sd" " tmp/mondo-$*-leafs.txt)"; echo "  VALUES ?list { $$LISTT }" >> $@
+	echo "  ?c rdfs:subClassOf+ ?list" >> $@
+	echo "}" >> $@
+
+tmp/mondo-%-children.txt: $(SRC) tmp/subclasses-of-%-leafs.sparql
+	$(ROBOT) query --use-graphs false -i $(SRC) -f tsv --query tmp/subclasses-of-$*-leafs.sparql $@
+	tail -n +2 "$@" > $@.tmp && mv $@.tmp $@
+
+tmp/mondo-%-children-and-leafs.txt: tmp/mondo-%-children.txt tmp/mondo-%-leafs.txt
+	cat $^ | sort | uniq > $@
+	sed -i -E 's/[<>?"]//g' $@
+
+tmp/mondo-%-removed.owl: tmp/mondo-%-children-and-leafs.txt mondo.owl
+	$(ROBOT) merge -i mondo.owl remove -T $< --select complement --select classes --select "MONDO:*"  -o $@
+
+modules/mondo-%-view.owl: tmp/mondo-%-removed.owl modules/mondo-%-view-top.owl
+	$(ROBOT) merge $(patsubst %, -i %, $^) annotate --ontology-iri $(OBO)/$(ONT)/mondo-$*-view.owl -o $@
+
+MONDOVIEWS=harrisons
+
+mondo-views: $(patsubst %, modules/mondo-%-view.owl, $(MONDOVIEWS))
+
+
+#ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
+#OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501 
+#--prefix "MONDOREL: http://purl.obolibrary.org/obo/mondo#" 
+
+#		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
+#	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
+
+reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
+	$(ROBOT) report -i $< --profile profile.txt --fail-on none -o $@
+.PRECIOUS: reports/mondo-edit-report.html
+
+.PHONY: mondo_%_report
+mondo_edit_report: reports/mondo-edit-report.html
+test: mondo_edit_report
+
+open_%_report: 
+	open reports/mondo-$*-report.html

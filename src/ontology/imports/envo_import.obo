@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-03-03/imports/envo_import.owl
+data-version: mondo/releases/2021-04-30/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -38,6 +38,12 @@ name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
 def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
 is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000016
+name: disposition
+is_a: BFO:0000017 ! realizable entity
+disjoint_from: BFO:0000023 ! role
 
 [Term]
 id: BFO:0000017
@@ -1885,6 +1891,12 @@ relationship: BFO:0000050 ENVO:00000073 ! part of building
 id: ENVO:01000435
 name: montane forest
 is_a: ENVO:01001243 ! forest ecosystem
+
+[Term]
+id: ENVO:01000452
+name: environmental disposition
+def: "A disposition which is realised by an environmental system or system parts thereof." []
+is_a: BFO:0000016 ! disposition
 
 [Term]
 id: ENVO:01000543
@@ -3819,6 +3831,16 @@ intersection_of: RO:0000052 ENVO:00002005 ! inheres in air
 relationship: RO:0000052 ENVO:00002005 ! inheres in air
 
 [Term]
+id: ENVO:09200002
+name: environmental system process quality
+def: "The quality of a environmental system process." []
+synonym: "quality of environmental system process" EXACT []
+is_a: PATO:0001236 ! process quality
+intersection_of: PATO:0001236 ! process quality
+intersection_of: RO:0000052 ENVO:02500000 ! inheres in environmental system process
+relationship: RO:0000052 ENVO:02500000 ! inheres in environmental system process
+
+[Term]
 id: ENVO:09200004
 name: porosity of soil
 def: "The porosity of some soil." []
@@ -4400,6 +4422,17 @@ id: PATO:0001154
 name: elongated
 def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." []
 is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001236
+name: process quality
+def: "A quality which inheres in an process." []
+synonym: "quality of a process" EXACT []
+synonym: "quality of occurrent" EXACT []
+synonym: "quality of process" EXACT []
+synonym: "relational quality of occurrent" EXACT []
+is_a: PATO:0000001 ! quality
+disjoint_from: PATO:0001241 ! physical object quality
 
 [Term]
 id: PATO:0001241

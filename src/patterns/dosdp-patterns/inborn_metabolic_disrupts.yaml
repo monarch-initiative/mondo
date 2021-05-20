@@ -15,7 +15,7 @@ contributors:
 
 classes:
   inborn errors of metabolism: MONDO:0019052
-  owl:Thing: owl:Thing
+  owl_thing: owl:Thing
 
 relations:
   disease caused by disruption of: RO:0004021
@@ -25,7 +25,7 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  process: '''owl:Thing'''
+  process: '''owl_thing'''
 
 name:
   text: inborn disorder of %s
@@ -48,7 +48,6 @@ def:
   - process
 
 equivalentTo:
-  text: '''inborn errors of metabolism'' and (''disease caused by disruption of''
-    some %s)'
+  text: '''inborn errors of metabolism'' and (''disease caused by disruption of'' some %s)'
   vars:
   - process

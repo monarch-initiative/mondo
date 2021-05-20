@@ -1,0 +1,28 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+CONSTRUCT { 
+  ?entity mondo:excluded_from_qc_check mondoSparqlQcGeneral:qc-single-child.sparql ;
+  rdf:type owl:Class . 
+}
+WHERE {
+    ?entity rdfs:subClassOf ?parent .
+    FILTER NOT EXISTS {
+       ?child2 rdfs:subClassOf ?parent .
+       FILTER (?child2 != ?entity)
+       FILTER (isIRI(?child2) && STRSTARTS(str(?child2), "http://purl.obolibrary.org/obo/MONDO_"))
+    }
+    
+    FILTER NOT EXISTS {
+       ?entity mondo:excluded_from_qc_check mondoSparqlQcGeneral:qc-single-child.sparql .
+    }
+    
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
+}

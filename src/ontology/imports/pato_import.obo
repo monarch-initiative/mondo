@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-03-03/imports/pato_import.owl
+data-version: mondo/releases/2021-04-30/imports/pato_import.owl
 ontology: mondo/imports/pato_import
 
 [Term]
@@ -242,6 +242,16 @@ def: "A shape quality inhering in a bearer by virtue of the bearer's being such 
 synonym: "round" RELATED []
 synonym: "rounded" RELATED []
 is_a: PATO:0000947 ! elliptic
+
+[Term]
+id: PATO:0000460
+name: abnormal
+def: "A quality inhering in a bearer by virtue of the bearer's deviation from normal or average." []
+synonym: "aberrant" RELATED []
+synonym: "atypia" RELATED []
+synonym: "atypical" RELATED []
+synonym: "defective" RELATED []
+is_a: PATO:0000069 ! deviation (from_normal)
 
 [Term]
 id: PATO:0000461
@@ -1293,7 +1303,6 @@ name: has effector activity
 def: "A 'has effector activity' B if A and B are GO molecular functions (GO_0003674),  A 'has component activity' B and B is the effector (output function) of B.  Each compound function has only one effector activity." []
 is_functional: true
 is_a: RO:0002017 ! has component activity
-is_a: RO:0002211 ! regulates
 
 [Typedef]
 id: RO:0002086
@@ -1338,6 +1347,7 @@ holds_over_chain: RO:0002578 RO:0002578
 is_transitive: true
 is_a: RO:0002411 ! causally upstream of
 inverse_of: RO:0002334 ! regulated by
+transitive_over: RO:0002025 ! has effector activity
 
 [Typedef]
 id: RO:0002212
@@ -1384,7 +1394,6 @@ id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
 domain: BFO:0000015 ! process
-range: BFO:0000040 ! material entity
 is_a: RO:0000057 ! has participant
 inverse_of: RO:0002352 ! input of
 
