@@ -26,9 +26,6 @@ parser.add_argument("-m", "--sssom_metadata", dest="sssom_metadata_path", help="
 parser.add_argument("-o", "--output-dir", dest="tsv_out_path", help="Output directory")
 args = parser.parse_args()
 
-
-
-
 sssom_file=args.sssom_tsv_path
 metadata_file=args.sssom_metadata_path
 mapping_dir=args.tsv_out_path
@@ -72,11 +69,11 @@ for pre_subj in subject_prefixes:
             relppost=rel.split(":")[1]
             sssom_file=os.path.join(mapping_dir,f"{pre_subj.lower()}_{relppost.lower()}_{pre_obj.lower()}.sssom.tsv")
     
-            dfs=df[(df['subject_id'].str.startswith(pre_sub+":")) 
+            dfs=df[(df['subject_id'].str.startswith(pre_subj+":")) 
                    & (df['predicate_id'] == rel) 
                    & (df['object_id'].str.startswith(pre_obj+":"))]
             if pre_subj in curie_map and pre_obj in curie_map and len(dfs)>0:
-                cm = {pre_sub: curie_map[pre_sub], pre_obj: curie_map[pre_obj], relpre: curie_map[relpre]}
+                cm = {pre_subj: curie_map[pre_subj], pre_obj: curie_map[pre_obj], relpre: curie_map[relpre]}
                 msdf=from_dataframe(dfs,curie_map=cm,meta=meta)
                 write_tsv(msdf=msdf,filename=sssom_file)
                 print(f"Writing {sssom_file} complete!")
