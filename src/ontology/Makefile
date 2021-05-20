@@ -78,7 +78,7 @@ all: test all_artefacts
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -358,6 +358,13 @@ imports/%_import.owl: mirror/%.owl imports/%_terms.txt
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
 imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+
+imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/omo_import.owl
+	
+
 
 edit-merged.owl: $(SRC)
 	robot merge -c true -i $< -o $@
@@ -640,6 +647,9 @@ mirror/ncit.owl:
 
 mirror/cl.owl:
 	wget --no-check-certificate $(OBO)/cl/cl-base.owl -O $@ && touch $@
+
+mirror/omo.owl:
+	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
 
 mirror/ncit-disease.uris: mirror/ncit.owl
 	robot query -i $< -s ../sparql/signature/ncit-subclass-of-disease.sparql $@
