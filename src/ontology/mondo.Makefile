@@ -311,7 +311,7 @@ mass_obsolete:
 MAPPINGSDIR=mappings
 METADATADIR=metadata
 MAPPING_IDS=ordo omim mondo
-ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
+ALL_MAPPINGS=$(patsubst %, tmp/%.sssom.tsv, $(MAPPING_IDS))
 
 tmp/mirror-ordo.json: mirror/ordo.obo
 	robot merge -i mirror/ordo.obo convert -f json -o $@
@@ -322,7 +322,7 @@ tmp/mirror-omim.json: mirror/omim.obo
 tmp/mirror-mondo.json: mondo.obo
 	robot merge -i mondo.owl convert -f json -o $@
 
-$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
+tmp/%.sssom.tsv: tmp/mirror-%.json
 	sssom parse -i tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
 	python ../scripts/split_sssom_by_source.py -s $@ -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 
