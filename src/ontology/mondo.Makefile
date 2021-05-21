@@ -309,21 +309,22 @@ mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
 MAPPINGSDIR=mappings
+METADATADIR=metadata
 MAPPING_IDS=ordo omim mondo
 ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
 
 tmp/mirror-ordo.json: mirror/ordo.obo
-	robot merge -i $< convert -f json -o $@
+	robot merge -i mirror/ordo.obo convert -f json -o $@
 
 tmp/mirror-omim.json: mirror/omim.obo
-	robot merge -i $< convert -f json -o $@
+	robot merge -i mirror/omim.obo convert -f json -o $@
 
 tmp/mirror-mondo.json: mondo.obo
-	robot merge -i $< convert -f json -o $@
+	robot merge -i mondo.owl convert -f json -o $@
 
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
-	sssom convert -i $< -o $@
-	#python ../scripts/split_sssom_by_source.py $@
+	sssom parse -i tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
+	python ../scripts/split_sssom_by_source.py -s $@ -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 
 mappings: $(ALL_MAPPINGS)
 
