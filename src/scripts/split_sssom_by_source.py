@@ -83,9 +83,13 @@ msdf = from_dataframe(df, curie_map=curie_map, meta=meta['global_metadata'])
 
 splitted = split_dataframe(msdf)
 for msdf in splitted:
-    m = msdf.meta
+    fromS = msdf.split("_")[0]
+    toS = msdf.split("_")[2]
+    m = splitted[msdf].metadata
     for source_metadata in meta['source_metadata']:
-        if 'metadata' in source_metadata:
-            for item in source_metadata['metadata']:
-                m[item]=source_metadata['metadata'][item]
+        if source_metadata["from"]==fromS and source_metadata["to"]==toS:
+            if 'metadata' in source_metadata:
+                for item in source_metadata['metadata']:
+                    m[item]=source_metadata['metadata'][item]
+    msdf.metadata = m
 write_tsvs(splitted,mapping_dir)
