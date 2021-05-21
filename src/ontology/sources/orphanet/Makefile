@@ -5,7 +5,7 @@
 OBO=http://purl.obolibrary.org/obo
 TODAY ?= $(shell date +%Y-%m-%d)
 TGT=../releases/v$(TODAY)
-PRODUCTS = obo_orphanet.owl obo_orphanet.obo orphanet_sssom.tsv
+PRODUCTS = obo_orphanet.owl obo_orphanet.obo
 OIO=http://www.geneontology.org/formats/oboInOwl\#
 
 all:  build stage
@@ -83,5 +83,3 @@ obo_orphanet.obo: obo_orphanet_4.obo
 obo_orphanet.owl: obo_orphanet.obo
 	owltools $< -o $@.tmp && perl -npe 's@http://purl.obolibrary.org/obo/Orphanet_@http://www.orpha.net/ORDO/Orphanet_@g' $@.tmp > $@
 
-orphanet_sssom.tsv: obo_orphanet.owl
-	robot query -i $< --prefix "ORDO: http://www.orpha.net/ORDO/Orphanet_" -q ../../../sparql/sssom.sparql $@

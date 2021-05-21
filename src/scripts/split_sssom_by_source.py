@@ -82,13 +82,18 @@ relations=set(df['predicate_id'])
 
 df = replace_temporary_prefixes(subject_prefixes, df)
 df = replace_temporary_prefixes(object_prefixes, df)
-msdf = from_dataframe(df, curie_map=curie_map, meta=meta['global_metadata'])
+global_metadata=meta['global_metadata']
+
+msdf = from_dataframe(df, curie_map=curie_map, meta=global_metadata)
+today = datetime.today().strftime('%Y-%m-%d')
 
 splitted = split_dataframe_by_prefix(msdf,subject_prefixes_allowed,object_prefixes, relations_allowed)
 for msdf in splitted:
     fromS = msdf.split("_")[0].upper()
     toS = msdf.split("_")[2].upper()
     m = splitted[msdf].metadata
+    m['mapping_set_version']=f"http://purl.obolibrary.org/obo/mondo/release/v{today}/mappings/{msdf}.sssom.tsv"
+
     for source_metadata in meta['source_metadata']:
         if source_metadata["from"]==fromS and source_metadata["to"]==toS:
             if 'metadata' in source_metadata:
