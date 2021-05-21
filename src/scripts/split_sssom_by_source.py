@@ -15,7 +15,7 @@ from argparse import ArgumentParser
 import yaml
 
 from sssom.datamodel_util import read_pandas
-from sssom.parsers import from_dataframe, split_dataframe
+from sssom.parsers import from_dataframe, split_dataframe_by_prefix
 from sssom.writers import write_tsv, write_tsvs
 
 import logging
@@ -73,6 +73,9 @@ meta, curie_map=read_metadata(metadata_file)
 df=read_pandas(sssom_file)
 df["match_type"]="HumanCurated"
 
+subject_prefixes_allowed = meta['subject_prefixes']
+relations_allowed = meta['relations']
+
 subject_prefixes=set(df['subject_id'].str.split(':', 1, expand=True)[0])
 object_prefixes=set(df['object_id'].str.split(':', 1, expand=True)[0])
 relations=set(df['predicate_id'])
@@ -81,15 +84,20 @@ df = replace_temporary_prefixes(subject_prefixes, df)
 df = replace_temporary_prefixes(object_prefixes, df)
 msdf = from_dataframe(df, curie_map=curie_map, meta=meta['global_metadata'])
 
-splitted = split_dataframe(msdf)
+splitted = split_dataframe_by_prefix(msdf,subject_prefixes_allowed,object_prefixes, relations_allowed)
 for msdf in splitted:
-    fromS = msdf.split("_")[0]
-    toS = msdf.split("_")[2]
+    fromS = msdf.split("_")[0].upper()
+    toS = msdf.split("_")[2].upper()
+    print(f"From {fromS} to {toS}")
     m = splitted[msdf].metadata
     for source_metadata in meta['source_metadata']:
+        print(f"A")
         if source_metadata["from"]==fromS and source_metadata["to"]==toS:
+            print(f"B")
             if 'metadata' in source_metadata:
+                print(f"C")
                 for item in source_metadata['metadata']:
+                    print(f"D {item}")
                     m[item]=source_metadata['metadata'][item]
-    msdf.metadata = m
+    splitted[msdf].metadata = m
 write_tsvs(splitted,mapping_dir)

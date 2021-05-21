@@ -16,6 +16,17 @@ curie_map:
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   skos: http://www.w3.org/2004/02/skos/core#
+subject_prefixes:
+  - MONDO
+  - OMIM
+  - Orphanet
+relations:
+  - skos:exactMatch
+  - skos:broadMatch
+  - skos:narrowMatch
+  - skos:closeMatch
+  - skos:relatedMatch
+  - oboInOwl:hasDbXref
 global_metadata:
   subject_source: http://purl.obolibrary.org/obo/mondo.owl
   license: "https://creativecommons.org/publicdomain/zero/1.0/"
