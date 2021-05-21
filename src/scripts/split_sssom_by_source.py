@@ -88,16 +88,11 @@ splitted = split_dataframe_by_prefix(msdf,subject_prefixes_allowed,object_prefix
 for msdf in splitted:
     fromS = msdf.split("_")[0].upper()
     toS = msdf.split("_")[2].upper()
-    print(f"From {fromS} to {toS}")
     m = splitted[msdf].metadata
     for source_metadata in meta['source_metadata']:
-        print(f"A")
         if source_metadata["from"]==fromS and source_metadata["to"]==toS:
-            print(f"B")
             if 'metadata' in source_metadata:
-                print(f"C")
                 for item in source_metadata['metadata']:
-                    print(f"D {item}")
                     m[item]=source_metadata['metadata'][item]
     splitted[msdf].metadata = m
 write_tsvs(splitted,mapping_dir)
