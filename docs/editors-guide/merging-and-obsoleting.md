@@ -63,10 +63,9 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a semi-colo
 1. Rename label to: obsolete [class name]
 1. Add annotation **owl:deprecated** and indicate true (in literal)
 1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684). If the disease term is being obsoleted and an HPO term should be used instead, do not use **term replaced by**, rather use the annotation **consider.** For example, see MONDO:0001445.
-1. Add annotation 'has obsolescence reason' and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and chose an individual reason (click on Entity IRI and select a reason from the list. If there is not a valid reason in the list, add it as an individual, or manually write in a reason as a string.)
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms
-1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and chose an individual reason (click on Entity IRI and select a reason from the list. If there is not a valid reason in the list, add it as an individual, or manually write in a reason as a string.)
 1. If the class has children, remove the superclass assertion for the children 
 1. Example: ![Manual merge example 1](images/github-workflow-manual-merge-1.png)
 1. Move all the synonyms to the new term. 
