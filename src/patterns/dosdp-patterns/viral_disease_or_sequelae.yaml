@@ -4,7 +4,7 @@ pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/viral_disease_or_sequ
 
 description: 'A grouping class for a disease and all of its associated sequelae or aftereffects.
 
-  Examples: [COVID-19 and sequelae](http://purl.obolibrary.org/obo/MONDO_0100318)'
+  Examples: [COVID-19 or sequela](http://purl.obolibrary.org/obo/MONDO_0100318)'
 
 contributors:
 - https://orcid.org/0000-0002-6601-2165
@@ -12,6 +12,7 @@ contributors:
 
 classes:
   disease: MONDO:0000001
+  organism: OBI:0100026
 
 relations:
    disease arises from feature: RO:0004022
@@ -21,10 +22,12 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
+  infectious_agent: '''organism'''
+  disease: '''disease'''
   disease: '''disease'''
 
 name:
-  text: '%s and sequelae'
+  text: '%s or sequela'
   vars:
   - disease
 
@@ -35,12 +38,13 @@ annotations:
   - disease
 
 def:
-  text: An instance of %s and the associated sequelae.
+  text: A disease caused by infection with %s or the associated aftereffects of the disease.
   vars:
+  - infectious_agent
   - disease
 
 equivalentTo:
-  text: '%s or ('disease' and 'disease arises from feature' some %s)'
+  text: '%s' or '%s'
   vars:
   - disease
   - disease
