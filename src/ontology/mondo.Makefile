@@ -26,6 +26,10 @@ test: pattern_schema_checks
 # ----------------------------------------
 
 # Test patterns for schema compliance:
+merge_definitions: 
+	$(ROBOT) merge -i $(SRC) -i ../patterns/definitions.owl --collapse-import-closure false convert -f obo -o tmp/mondoeditmerged.obo &&\
+	mv  tmp/mondoeditmerged.obo $(SRC) 
+
 
 .PHONY: patterns
 patterns: all_imports $(PATTERNDIR)/pattern.owl $(PATTERNDIR)/definitions.owl
