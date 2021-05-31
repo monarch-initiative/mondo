@@ -1,0 +1,21 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity rdfs:subClassOf ?parent .
+    FILTER NOT EXISTS {
+       ?child2 rdfs:subClassOf ?parent .
+       FILTER (?child2 != ?entity)
+       FILTER (isIRI(?child2) && STRSTARTS(str(?child2), "http://purl.obolibrary.org/obo/MONDO_"))
+    }
+    FILTER NOT EXISTS {
+       ?entity mondo:excluded_from_qc_check mondoSparqlQcGeneral:qc-single-child.sparql .
+    }
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(rdfs:subClassOf AS ?property)
+    BIND(str(?parent) AS ?value)
+}
+ORDER BY ?entity

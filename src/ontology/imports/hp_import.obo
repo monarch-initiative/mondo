@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-04-07/imports/hp_import.owl
+data-version: mondo/releases/2021-04-30/imports/hp_import.owl
 subsetdef: hposlim_core ""
 subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
@@ -922,8 +922,8 @@ alt_id: HP:0001366
 alt_id: HP:0005485
 alt_id: HP:0005489
 alt_id: HP:0005497
-def: "Head circumference below 2 standard deviations below the mean for age and gender." [PMID:19125436, PMID:25465325, PMID:9683597]
-comment: Head circumference is measured from just above the glabella (the most prominent point on the frontal bone above the root of the nose) to the most posterior prominent point of the occipital bone using a tape measure. Some standard charts are organized by centiles [Hall et al. [2007]], others by standard deviations [Farkas, [1981]]. It is important to add an indication of how far below the normal standard the head circumference is if an accurate assessment of this can be made. Microcephaly is an absolute term. The term relative microcephaly can be used when the head size centile is less than the centile for height, for example, head size at the 3rd centile with height at the 75% for age and sex. On prenatal ultrasound, microcephaly is diagnosed if the head circumference or the biparietal diameter is more than three standard deviations below the mean.
+def: "Head circumference below 2 standard deviations below the mean for age and gender." [PMID:15806441, PMID:19125436, PMID:25465325, PMID:9683597]
+comment: Head circumference is measured from just above the glabella (the most prominent point on the frontal bone above the root of the nose) to the most posterior prominent point of the occipital bone using a tape measure. Some standard charts are organized by centiles, others by standard deviations. It is important to add an indication of how far below the normal standard the head circumference is if an accurate assessment of this can be made. Microcephaly is an absolute term. The term relative microcephaly can be used when the head size centile is less than the centile for height, for example, head size at the 3rd centile with height at the 75% for age and sex. On prenatal ultrasound, microcephaly is diagnosed if the head circumference or the biparietal diameter is more than three standard deviations below the mean. Microcephaly is divided into primary microcephaly, which is present at birth, and secondary microcephaly, which develops postnatally. The crucial difference between these groupings is that primary microcephaly is usually a static developmental anomaly, whereas secondary microcephaly indicates a progressive neurodegenerative condition
 subset: hposlim_core
 synonym: "Abnormally small cranium" EXACT [ORCID:0000-0001-5889-4463]
 synonym: "Abnormally small head" BROAD layperson [ORCID:0000-0001-5889-4463]
@@ -2291,6 +2291,7 @@ synonym: "Anxiety" EXACT layperson []
 synonym: "Anxiety disease" RELATED layperson []
 synonym: "Anxiousness" EXACT []
 synonym: "Excessive, persistent worry and fear" EXACT layperson [ORCID:0000-0002-6548-5200]
+synonym: "Sense of doom" NARROW []
 xref: MSH:D001007
 xref: SNOMEDCT_US:48694002
 xref: UMLS:C0003467
@@ -2768,6 +2769,7 @@ namespace: human_phenotype
 def: "Abnormally high variation in the amount of time between periods." [PMID:29323693]
 comment: Most women have between 11 and 13 menstrual periods each year. Bleeding usually lasts around 5 days (range: 2 to 7 days). When menstruation first starts, it can take up to 2 years to establish a regular cycle. After puberty, most women's menstruation is regular. The length of time between each period is similar. The normal menstrual cycle length is 28 (+/- 7) days days with the menstruation lasting between 2 and 7 days. It can take up to 2 years from menarche to develop a mature hypothalamic-pituitary-gonadal (HPG) axis. Within 1 year, 75 percent of girls have a cycle between 21 and 45 days. By the fifth gynecological year, 90 percent of girls will have regular cycles.
 synonym: "Irregular menses" EXACT []
+synonym: "Irregular periods" EXACT []
 synonym: "Menstrual irregularities" EXACT []
 synonym: "Menstrual irregularity" EXACT layperson []
 xref: SNOMEDCT_US:80182007
@@ -3812,7 +3814,7 @@ synonym: "Abnormal corpus callosum" EXACT []
 synonym: "Abnormality of the corpus callosum" EXACT []
 synonym: "Corpus callosum abnormality" EXACT []
 xref: UMLS:C1842581
-is_a: HP:0002500 ! Abnormality of the cerebral white matter
+is_a: HP:0002500 ! Abnormal cerebral white matter morphology
 
 [Term]
 id: HP:0001274
@@ -3920,7 +3922,7 @@ synonym: "Stroke" EXACT layperson []
 xref: MSH:D020521
 xref: SNOMEDCT_US:230690007
 xref: UMLS:C0038454
-is_a: HP:0100659 ! Abnormality of the cerebral vasculature
+is_a: HP:0100659 ! Abnormal cerebral vascular morphology
 
 [Term]
 id: HP:0001298
@@ -3985,7 +3987,28 @@ synonym: "Cerebellar vermal hypoplasia" EXACT []
 synonym: "Hypoplasia of the cerebellar vermis" EXACT []
 synonym: "Hypoplastic cerebellar vermis" EXACT []
 xref: UMLS:C1840379
+is_a: HP:0001321 ! Cerebellar hypoplasia
 is_a: HP:0006817 ! Aplasia/Hypoplasia of the cerebellar vermis
+
+[Term]
+id: HP:0001321
+name: Cerebellar hypoplasia
+namespace: human_phenotype
+alt_id: HP:0006806
+alt_id: HP:0006910
+alt_id: HP:0007038
+alt_id: HP:0007053
+def: "Underdevelopment of the cerebellum." [HPO:probinson, PMID:27160001]
+comment: By prenatal ultrasound, cerebellar hypoplasia is diagnosed if the cerebellum measures more than two standard deviations below the mean. In adults, cerebellar hypoplasia is typically diagnosed by computer tomography or magnetic resonance imaging. Cerebellar hypoplasia can be diagnosed if there is a small cerebellum with fissures of normal size compared with the folia (this is a distinguishing characteristic compared with cerebellar atrophy). Cerebellar hypoplasia (CH) refers to an underdevelopment of the cerebellum. This category of cerebellar malformation is distinct from Dandy Walker malformation in that it does not involve a concurrent enlargement of the posterior fossa, and almost all individuals exhibit cognitive and motor impairments.
+synonym: "Congenital cerebellar hypoplasia" EXACT []
+synonym: "Hypoplasia of cerebellum" EXACT []
+synonym: "Hypoplastic cerebellum" EXACT []
+synonym: "Small cerebellum" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Underdeveloped cerebellum" EXACT layperson [ORCID:0000-0001-5208-3432]
+xref: MSH:C562568
+xref: SNOMEDCT_US:16026008
+xref: UMLS:C0266470
+is_a: HP:0007360 ! Aplasia/Hypoplasia of the cerebellum
 
 [Term]
 id: HP:0001324
@@ -4182,13 +4205,13 @@ is_a: HP:0011729 ! Abnormality of joint mobility
 
 [Term]
 id: HP:0001384
-name: Abnormality of the hip joint
+name: Abnormal hip joint morphology
 namespace: human_phenotype
 def: "An abnormality of the hip joint." [HPO:probinson]
 synonym: "Abnormality of the hip joint" EXACT layperson []
 synonym: "Abnormality of the hip joints" RELATED layperson []
 xref: UMLS:C4020870
-is_a: HP:0003272 ! Abnormality of the hip bone
+is_a: HP:0003272 ! Abnormal hip bone morphology
 is_a: HP:0005262 ! Abnormality of the synovia
 is_a: HP:0100491 ! Abnormality of lower limb joint
 
@@ -6163,6 +6186,8 @@ synonym: "Abnormal breathing" EXACT []
 synonym: "Breathing difficulty" EXACT []
 synonym: "Difficult to breathe" EXACT []
 synonym: "Dyspnoea" EXACT uk_spelling []
+synonym: "Panting" RELATED layperson []
+synonym: "Shortness of breath" EXACT layperson []
 synonym: "Trouble breathing" EXACT layperson []
 xref: MSH:D004417
 xref: SNOMEDCT_US:230145002
@@ -6179,8 +6204,6 @@ def: "Respiratory distress is objectively observable as the physical or emotiona
 synonym: "Breathing difficulties" EXACT layperson [ORCID:0000-0001-6908-9849]
 synonym: "Difficulty breathing" EXACT layperson []
 synonym: "Respiratory difficulties" EXACT []
-synonym: "Short of breath" RELATED layperson []
-synonym: "Shortness of breath" RELATED layperson []
 xref: MSH:D004417
 xref: SNOMEDCT_US:230145002
 xref: SNOMEDCT_US:267036007
@@ -7093,12 +7116,13 @@ is_a: HP:0011442 ! Abnormal central motor function
 
 [Term]
 id: HP:0002500
-name: Abnormality of the cerebral white matter
+name: Abnormal cerebral white matter morphology
 namespace: human_phenotype
 alt_id: HP:0200100
 def: "An abnormality of the cerebral white matter." [HPO:probinson]
 comment: This finding can be demonstrated by magnetic resonance imaging, especially with t2 signalling. The cerebral white matter is the region of the central nervous system that consists mostly of glial cells and myelinated axons that interconnect the various regions of the cerebrum and the lower brain centers. It is located in the subcortex.
 synonym: "Abnormality of subcortical white matter" EXACT []
+synonym: "Abnormality of the cerebral white matter" EXACT []
 synonym: "Cerebral white matter abnormalities" EXACT []
 synonym: "Cortical white matter abnormalities seen on MRI" RELATED [HPO:skoehler]
 synonym: "Leukoaraiosis" EXACT [PMID:3800716]
@@ -7160,13 +7184,15 @@ synonym: "Abnormal gyration" EXACT []
 synonym: "Cerebral gyral anomalies" EXACT []
 xref: UMLS:C1856019
 is_a: HP:0002269 ! Abnormality of neuronal migration
-is_a: HP:0002538 ! Abnormality of the cerebral cortex
+is_a: HP:0002538 ! Abnormal cerebral cortex morphology
 
 [Term]
 id: HP:0002538
-name: Abnormality of the cerebral cortex
+name: Abnormal cerebral cortex morphology
 namespace: human_phenotype
-def: "An abnormality of the cerebral cortex." [HPO:probinson]
+def: "Any structural abnormality of the cerebral cortex." [HPO:probinson, PMID:31373394]
+comment: The cerebral cortex constitutes more than half the volume of the human brain and is presumed to be responsible for the neuronal computations underlying complex phenomena, such as perception, thought, language, attention, episodic memory and voluntary movement.
+synonym: "Abnormality of the cerebral cortex" EXACT []
 xref: UMLS:C4025701
 is_a: HP:0002060 ! Abnormal cerebral morphology
 
@@ -8340,7 +8366,7 @@ is_a: HP:0001438 ! Abnormal abdomen morphology
 
 [Term]
 id: HP:0003272
-name: Abnormality of the hip bone
+name: Abnormal hip bone morphology
 namespace: human_phenotype
 def: "An abnormality of the hip bone." [HPO:probinson]
 comment: The hip region comprises the vasculature of hip, skin of hip, superficial fascia of hip, the hip bone, hip joint, and musculature of hip. The hip is part of the pelvic girdle.
@@ -9938,6 +9964,7 @@ synonym: "Hypo/aplastic vermis" EXACT []
 xref: UMLS:C1855676
 xref: UMLS:C3280770
 is_a: HP:0002334 ! Abnormality of the cerebellar vermis
+is_a: HP:0007360 ! Aplasia/Hypoplasia of the cerebellum
 
 [Term]
 id: HP:0006872
@@ -9972,6 +9999,23 @@ xref: MSH:D000690
 xref: SNOMEDCT_US:86044005
 xref: UMLS:C0002736
 is_a: HP:0007373 ! Motor neuron atrophy
+
+[Term]
+id: HP:0007360
+name: Aplasia/Hypoplasia of the cerebellum
+namespace: human_phenotype
+alt_id: HP:0006857
+alt_id: HP:0007368
+synonym: "Absent/small cerebellum" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Absent/underdeveloped cerebellum" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Atrophy/Degeneration affecting the cerebellum" EXACT []
+synonym: "Atrophy/Hypoplasia of the cerebellum" EXACT []
+synonym: "Cerebellar hypoplasia/atrophy" EXACT []
+xref: UMLS:C3279222
+is_a: HP:0001317 ! Abnormal cerebellum morphology
+is_a: HP:0002977 ! Aplasia/Hypoplasia involving the central nervous system
+created_by: peter
+creation_date: 2008-03-31T05:30:00Z
 
 [Term]
 id: HP:0007364
@@ -10022,8 +10066,8 @@ synonym: "Complete or partial absence of the corpus callosum" EXACT []
 synonym: "Hypoplasia or absence of the corpus callosum" EXACT []
 synonym: "Hypoplastic or absent corpus callosum" EXACT []
 xref: UMLS:C1861866
-is_a: HP:0001273 ! Abnormal corpus callosum morphology
 is_a: HP:0007364 ! Aplasia/Hypoplasia of the cerebrum
+is_a: HP:0033725 ! Thin corpus callosum
 created_by: peter
 creation_date: 2008-04-01T10:35:00Z
 
@@ -10307,8 +10351,8 @@ namespace: human_phenotype
 alt_id: HP:0007467
 alt_id: HP:0007496
 alt_id: HP:0200038
-def: "The presence of one or more bullae on the skin, defined as fluid-filled blisters more than 5 mm in diameter with thin walls." [HPO:probinson]
-comment: A bulla is a large vesicle described as a rounded or irregularly shaped blister containing serous or seropurulent fluid, equal to or greater than 10mm.
+def: "The presence of one or more bullae on the skin, defined as fluid-filled blisters more than 5 mm in diameter with thin walls." [HPO:probinson, PMID:31596619]
+comment: A bulla is a large vesicle described as a rounded or irregularly shaped blister containing serous or seropurulent fluid, equal to or greater than 10mm. In approaching blistering diseases, there are 3 fundamental criteria to consider: (1) the site or level of the blister (or the lowest level of vesiculation): subcorneal, midepidermis, suprabasal, subepidermal; (2) the findings that implicate the mechanism of blister formation (spongiosis, acantholysis, blistering degeneration, or epidermolysis); and (3) the type of inflammation (neutrophilic, lymphocytic, eosinophilic, mixed), if present.
 synonym: "Abnormal blistering of the skin" EXACT layperson []
 synonym: "Blister" EXACT []
 synonym: "Blistering, generalized" EXACT layperson []
@@ -10683,7 +10727,7 @@ synonym: "Abnormality of cerebral artery" EXACT layperson []
 synonym: "Abnormality of the cerebral arteries" EXACT layperson []
 xref: UMLS:C4021520
 is_a: HP:0011004 ! Abnormal systemic arterial morphology
-is_a: HP:0100659 ! Abnormality of the cerebral vasculature
+is_a: HP:0100659 ! Abnormal cerebral vascular morphology
 created_by: peter
 creation_date: 2008-05-02T01:39:00Z
 
@@ -14842,6 +14886,17 @@ property_value: http://purl.org/dc/elements/1.1/date 2021-01-09T23:02:44Z xsd:da
 created_by: peter
 
 [Term]
+id: HP:0033725
+name: Thin corpus callosum
+namespace: human_phenotype
+def: "An abnormally thin corpus callous, due to atrophy, hypoplasia or agenesis. This term is intended to be used in situations where it is not known if thinning of the corpus callosum (for instance, as visualized by magnetic resonance tomography) is due to abnormal development (e.g. a leukodystrophy) or atrophy following normal development (e.g. neurodegeneration)." [ORCID:0000-0002-1735-8178]
+synonym: "Small corpus callosum" EXACT []
+synonym: "Thinning of the corpus callosum" EXACT []
+is_a: HP:0001273 ! Abnormal corpus callosum morphology
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-07T16:39:13Z xsd:dateTime
+created_by: peter
+
+[Term]
 id: HP:0040006
 name: Mortality/Aging
 namespace: human_phenotype
@@ -15555,10 +15610,11 @@ creation_date: 2010-12-30T10:11:51Z
 
 [Term]
 id: HP:0100659
-name: Abnormality of the cerebral vasculature
+name: Abnormal cerebral vascular morphology
 namespace: human_phenotype
 def: "An anomaly of the cerebral blood vessels." [PMID:30335330]
 synonym: "Abnormality of the cerebral blood vessels" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Abnormality of the cerebral vasculature" EXACT []
 xref: UMLS:C4022001
 is_a: HP:0002597 ! Abnormality of the vasculature
 is_a: HP:0012443 ! Abnormality of brain morphology

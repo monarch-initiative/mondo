@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-04-07/imports/go_import.owl
+data-version: mondo/releases/2021-04-30/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -16521,6 +16521,24 @@ synonym: "collagen-activated signalling pathway" EXACT []
 is_a: GO:0007166 ! cell surface receptor signaling pathway
 
 [Term]
+id: GO:0040007
+name: growth
+def: "The increase in size or mass of an entire organism, a part of an organism or a cell." []
+synonym: "growth pattern" RELATED []
+synonym: "non-developmental growth" RELATED []
+is_a: GO:0008150 ! biological_process
+disjoint_from: GO:0044848 ! biological phase
+
+[Term]
+id: GO:0040008
+name: regulation of growth
+def: "Any process that modulates the frequency, rate or extent of the growth of all or part of an organism so that it occurs at its proper speed, either globally or in a specific part of the organism's development." []
+is_a: GO:0050789 ! regulation of biological process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0040007 ! regulates growth
+relationship: RO:0002211 GO:0040007 ! regulates growth
+
+[Term]
 id: GO:0040011
 name: locomotion
 def: "Self-propelled movement of a cell or organism from one location to another." []
@@ -21179,6 +21197,35 @@ is_a: GO:0062013 ! positive regulation of small molecule metabolic process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0006631 ! positively regulates fatty acid metabolic process
 relationship: RO:0002213 GO:0006631 ! positively regulates fatty acid metabolic process
+
+[Term]
+id: GO:0045926
+name: negative regulation of growth
+def: "Any process that stops, prevents or reduces the rate or extent of growth, the increase in size or mass of all or part of an organism." []
+synonym: "down regulation of growth" EXACT []
+synonym: "down-regulation of growth" EXACT []
+synonym: "downregulation of growth" EXACT []
+synonym: "inhibition of growth" NARROW []
+is_a: GO:0040008 ! regulation of growth
+is_a: GO:0048519 ! negative regulation of biological process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002212 GO:0040007 ! negatively regulates growth
+relationship: RO:0002212 GO:0040007 ! negatively regulates growth
+
+[Term]
+id: GO:0045927
+name: positive regulation of growth
+def: "Any process that activates or increases the rate or extent of growth, the increase in size or mass of all or part of an organism." []
+synonym: "activation of growth" NARROW []
+synonym: "stimulation of growth" NARROW []
+synonym: "up regulation of growth" EXACT []
+synonym: "up-regulation of growth" EXACT []
+synonym: "upregulation of growth" EXACT []
+is_a: GO:0040008 ! regulation of growth
+is_a: GO:0048518 ! positive regulation of biological process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002213 GO:0040007 ! positively regulates growth
+relationship: RO:0002213 GO:0040007 ! positively regulates growth
 
 [Term]
 id: GO:0045930

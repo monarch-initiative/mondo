@@ -11,7 +11,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/hp_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-04-07/imports/hp_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-04-30/imports/hp_import.owl"/>
     </owl:Ontology>
     
 
@@ -2594,13 +2594,14 @@
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0000252</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/hp.obo#hposlim_core"/>
-        <rdfs:comment>Head circumference is measured from just above the glabella (the most prominent point on the frontal bone above the root of the nose) to the most posterior prominent point of the occipital bone using a tape measure. Some standard charts are organized by centiles [Hall et al. [2007]], others by standard deviations [Farkas, [1981]]. It is important to add an indication of how far below the normal standard the head circumference is if an accurate assessment of this can be made. Microcephaly is an absolute term. The term relative microcephaly can be used when the head size centile is less than the centile for height, for example, head size at the 3rd centile with height at the 75% for age and sex. On prenatal ultrasound, microcephaly is diagnosed if the head circumference or the biparietal diameter is more than three standard deviations below the mean.</rdfs:comment>
+        <rdfs:comment>Head circumference is measured from just above the glabella (the most prominent point on the frontal bone above the root of the nose) to the most posterior prominent point of the occipital bone using a tape measure. Some standard charts are organized by centiles, others by standard deviations. It is important to add an indication of how far below the normal standard the head circumference is if an accurate assessment of this can be made. Microcephaly is an absolute term. The term relative microcephaly can be used when the head size centile is less than the centile for height, for example, head size at the 3rd centile with height at the 75% for age and sex. On prenatal ultrasound, microcephaly is diagnosed if the head circumference or the biparietal diameter is more than three standard deviations below the mean. Microcephaly is divided into primary microcephaly, which is present at birth, and secondary microcephaly, which develops postnatally. The crucial difference between these groupings is that primary microcephaly is usually a static developmental anomaly, whereas secondary microcephaly indicates a progressive neurodegenerative condition</rdfs:comment>
         <rdfs:label>Microcephaly</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000252"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Head circumference below 2 standard deviations below the mean for age and gender.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:15806441</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19125436</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:25465325</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:9683597</oboInOwl:hasDbXref>
@@ -2974,7 +2975,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000272"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Flat cheekbone</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0000272"/>
@@ -4669,7 +4670,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Glaucoma refers loss of retinal ganglion cells in a characteristic pattern of optic neuropathy usually associated with increased intraocular pressure.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11815354</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:11815354</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6494,6 +6495,7 @@
         <oboInOwl:hasExactSynonym>Anxiety</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Anxiousness</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Excessive, persistent worry and fear</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>Sense of doom</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Anxiety disease</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0000739</oboInOwl:id>
@@ -7706,6 +7708,7 @@
         <oboInOwl:hasDbXref>SNOMEDCT_US:80182007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0156404</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Irregular menses</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Irregular periods</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Menstrual irregularities</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Menstrual irregularity</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
@@ -10706,6 +10709,7 @@
     <!-- http://purl.obolibrary.org/obo/HP_0001320 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001320">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001321"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0006817"/>
         <obo:IAO_0000115>Underdevelopment of the vermis of cerebellum.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C1840379</oboInOwl:hasDbXref>
@@ -10721,6 +10725,52 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Underdevelopment of the vermis of cerebellum.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0001321 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001321">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0007360"/>
+        <obo:IAO_0000115>Underdevelopment of the cerebellum.</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId>HP:0006806</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0006910</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0007038</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0007053</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasDbXref>MSH:C562568</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SNOMEDCT_US:16026008</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UMLS:C0266470</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Congenital cerebellar hypoplasia</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Hypoplasia of cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Hypoplastic cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Small cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Underdeveloped cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0001321</oboInOwl:id>
+        <rdfs:comment>By prenatal ultrasound, cerebellar hypoplasia is diagnosed if the cerebellum measures more than two standard deviations below the mean. In adults, cerebellar hypoplasia is typically diagnosed by computer tomography or magnetic resonance imaging. Cerebellar hypoplasia can be diagnosed if there is a small cerebellum with fissures of normal size compared with the folia (this is a distinguishing characteristic compared with cerebellar atrophy). Cerebellar hypoplasia (CH) refers to an underdevelopment of the cerebellum. This category of cerebellar malformation is distinct from Dandy Walker malformation in that it does not involve a concurrent enlargement of the posterior fossa, and almost all individuals exhibit cognitive and motor impairments.</rdfs:comment>
+        <rdfs:label>Cerebellar hypoplasia</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001321"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Underdevelopment of the cerebellum.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:27160001</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001321"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Small cerebellum</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001321"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Underdeveloped cerebellum</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
 
@@ -10859,7 +10909,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Very brief, involuntary random muscular contractions occurring at rest, in response to sensory stimuli, or accompanying voluntary movements.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001336"/>
@@ -10893,7 +10943,7 @@
         <owl:annotatedTarget>An unintentional, oscillating to-and-fro muscle movement about a joint axis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16344298</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001337"/>
@@ -11237,7 +11287,7 @@
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Abnormality of the hip joints</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0001384</oboInOwl:id>
-        <rdfs:label>Abnormality of the hip joint</rdfs:label>
+        <rdfs:label>Abnormal hip joint morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0001384"/>
@@ -15655,7 +15705,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A type of ataxia characterized by the impairment of the ability to coordinate the movements required for normal walking. Gait ataxia is characteirzed by a wide-based staggering gait with a tendency to fall.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UKT:rschuele</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UKT:rschuele</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002066"/>
@@ -15775,7 +15825,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Chorea (Greek for &apos;dance&apos;) refers to widespread arrhythmic involuntary movements of a forcible, jerky and restless fashion. It is a random-appearing sequence of one or more discrete involuntary movements or movement fragments. Movements appear random because of variability in timing, duration or location. Each movement may have a distinct start and end. However, movements may be strung together and thus may appear to flow randomly from one muscle group to another. Chorea can involve the trunk, neck, face, tongue, and extremities.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -16017,8 +16067,10 @@
         <oboInOwl:hasExactSynonym>Breathing difficulty</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Difficult to breathe</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Dyspnoea</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Shortness of breath</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Trouble breathing</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Panting</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0002094</oboInOwl:id>
         <rdfs:label>Dyspnea</rdfs:label>
     </owl:Class>
@@ -16038,7 +16090,19 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002094"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Shortness of breath</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002094"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Trouble breathing</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002094"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Panting</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -16060,8 +16124,6 @@
         <oboInOwl:hasExactSynonym>Difficulty breathing</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Respiratory difficulties</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Short of breath</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Shortness of breath</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0002098</oboInOwl:id>
         <rdfs:label>Respiratory distress</rdfs:label>
     </owl:Class>
@@ -16076,18 +16138,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002098"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Difficulty breathing</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002098"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Short of breath</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002098"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Shortness of breath</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -16909,7 +16959,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedTarget>A generalized-onset seizure is a type of seizure originating at some point within, and rapidly engaging, bilaterally distributed networks. The networks may include cortical and subcortical structures but not necessarily the entire cortex.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20196795</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23739099</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:23739099</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276060</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28276064</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:6790275</oboInOwl:hasDbXref>
@@ -18291,6 +18341,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasDbXref>UMLS:C0948163</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C4020851</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormality of subcortical white matter</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormality of the cerebral white matter</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Cerebral white matter abnormalities</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Leukoaraiosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>White matter abnormalities</oboInOwl:hasExactSynonym>
@@ -18299,7 +18350,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasRelatedSynonym>Cortical white matter abnormalities seen on MRI</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0002500</oboInOwl:id>
         <rdfs:comment>This finding can be demonstrated by magnetic resonance imaging, especially with t2 signalling. The cerebral white matter is the region of the central nervous system that consists mostly of glial cells and myelinated axons that interconnect the various regions of the cerebrum and the lower brain centers. It is located in the subcortex.</rdfs:comment>
-        <rdfs:label>Abnormality of the cerebral white matter</rdfs:label>
+        <rdfs:label>Abnormal cerebral white matter morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002500"/>
@@ -18426,17 +18477,20 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0002538">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002060"/>
-        <obo:IAO_0000115>An abnormality of the cerebral cortex.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any structural abnormality of the cerebral cortex.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UMLS:C4025701</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Abnormality of the cerebral cortex</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0002538</oboInOwl:id>
-        <rdfs:label>Abnormality of the cerebral cortex</rdfs:label>
+        <rdfs:comment>The cerebral cortex constitutes more than half the volume of the human brain and is presumed to be responsible for the neuronal computations underlying complex phenomena, such as perception, thought, language, attention, episodic memory and voluntary movement.</rdfs:comment>
+        <rdfs:label>Abnormal cerebral cortex morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002538"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An abnormality of the cerebral cortex.</owl:annotatedTarget>
+        <owl:annotatedTarget>Any structural abnormality of the cerebral cortex.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:31373394</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -18936,7 +18990,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0002648"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Abnormally shaped skull</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ORCID:0000-0002-9353-5498</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
     </owl:Axiom>
     
@@ -21412,7 +21466,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0003272</oboInOwl:id>
         <rdfs:comment>The hip region comprises the vasculature of hip, skin of hip, superficial fascia of hip, the hip bone, hip joint, and musculature of hip. The hip is part of the pelvic girdle.</rdfs:comment>
-        <rdfs:label>Abnormality of the hip bone</rdfs:label>
+        <rdfs:label>Abnormal hip bone morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003272"/>
@@ -21547,7 +21601,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003355"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An increased concentration of an amino acid in the urine.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:SKOEHLER</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>HPO:SKOEHLER</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0003355"/>
@@ -24848,6 +24902,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0006817">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002334"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0007360"/>
         <obo:IAO_0000115>Absence or underdevelopment of the vermis of cerebellum.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>HP:0005690</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>HP:0007080</oboInOwl:hasAlternativeId>
@@ -24939,6 +24994,42 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     
 
 
+    <!-- http://purl.obolibrary.org/obo/HP_0007360 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0007360">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001317"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0002977"/>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:creation_date>2008-03-31T05:30:00Z</oboInOwl:creation_date>
+        <oboInOwl:hasAlternativeId>HP:0006857</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>HP:0007368</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasDbXref>UMLS:C3279222</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Absent/small cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Absent/underdeveloped cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Atrophy/Degeneration affecting the cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Atrophy/Hypoplasia of the cerebellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Cerebellar hypoplasia/atrophy</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0007360</oboInOwl:id>
+        <rdfs:label>Aplasia/Hypoplasia of the cerebellum</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0007360"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Absent/small cerebellum</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0007360"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Absent/underdeveloped cerebellum</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0001-5208-3432</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/hp.obo#layperson"/>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/HP_0007364 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0007364">
@@ -25017,8 +25108,8 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
     <!-- http://purl.obolibrary.org/obo/HP_0007370 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0007370">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001273"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0007364"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0033725"/>
         <obo:IAO_0000115>Absence or underdevelopment of the corpus callosum.</obo:IAO_0000115>
         <oboInOwl:created_by>peter</oboInOwl:created_by>
         <oboInOwl:creation_date>2008-04-01T10:35:00Z</oboInOwl:creation_date>
@@ -25650,7 +25741,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Skin blisters</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>HP:0008066</oboInOwl:id>
-        <rdfs:comment>A bulla is a large vesicle described as a rounded or irregularly shaped blister containing serous or seropurulent fluid, equal to or greater than 10mm.</rdfs:comment>
+        <rdfs:comment>A bulla is a large vesicle described as a rounded or irregularly shaped blister containing serous or seropurulent fluid, equal to or greater than 10mm. In approaching blistering diseases, there are 3 fundamental criteria to consider: (1) the site or level of the blister (or the lowest level of vesiculation): subcorneal, midepidermis, suprabasal, subepidermal; (2) the findings that implicate the mechanism of blister formation (spongiosis, acantholysis, blistering degeneration, or epidermolysis); and (3) the type of inflammation (neutrophilic, lymphocytic, eosinophilic, mixed), if present.</rdfs:comment>
         <rdfs:label>Abnormal blistering of the skin</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -25658,6 +25749,7 @@ Hyperhomocystinemic patients show blood homocystine levels in the range of 50-20
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The presence of one or more bullae on the skin, defined as fluid-filled blisters more than 5 mm in diameter with thin walls.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:31596619</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0008066"/>
@@ -33431,7 +33523,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A structural abnormality of the sperm head.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22198630</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:22198630</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -33698,7 +33790,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0025234"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An undesirable physical event or experience that occur during entry into sleep, during sleep, or during arousal from sleep.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:27647645</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27647645</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -35526,6 +35618,28 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/HP_0033725 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0033725">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001273"/>
+        <obo:IAO_0000115>An abnormally thin corpus callous, due to atrophy, hypoplasia or agenesis. This term is intended to be used in situations where it is not known if thinning of the corpus callosum (for instance, as visualized by magnetic resonance tomography) is due to abnormal development (e.g. a leukodystrophy) or atrophy following normal development (e.g. neurodegeneration).</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-04-07T16:39:13Z</dc:date>
+        <oboInOwl:created_by>peter</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>Small corpus callosum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Thinning of the corpus callosum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HP:0033725</oboInOwl:id>
+        <rdfs:label>Thin corpus callosum</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0033725"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An abnormally thin corpus callous, due to atrophy, hypoplasia or agenesis. This term is intended to be used in situations where it is not known if thinning of the corpus callosum (for instance, as visualized by magnetic resonance tomography) is due to abnormal development (e.g. a leukodystrophy) or atrophy following normal development (e.g. neurodegeneration).</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0002-1735-8178</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/HP_0040006 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0040006">
@@ -36113,7 +36227,7 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Repeated, individually recognizable, intermittent movements or movement fragments that are almost always briefly suppresable and are usually associated with awareness of an urge to perform the movement.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:sdoelken</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20589866</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20589866</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0100033"/>
@@ -37173,9 +37287,10 @@ and two otolith organs that are sensitive to linear acceleration.</rdfs:comment>
         <oboInOwl:creation_date>2010-12-30T11:39:15Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>UMLS:C4022001</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Abnormality of the cerebral blood vessels</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Abnormality of the cerebral vasculature</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>human_phenotype</oboInOwl:hasOBONamespace>
         <oboInOwl:id>HP:0100659</oboInOwl:id>
-        <rdfs:label>Abnormality of the cerebral vasculature</rdfs:label>
+        <rdfs:label>Abnormal cerebral vascular morphology</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HP_0100659"/>

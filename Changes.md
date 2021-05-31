@@ -1,3 +1,93 @@
+#2021-04-30
+
+## New Classes
+
+ * [MONDO:0030962](http://purl.obolibrary.org/obo/MONDO_0030962) nephrotic syndrome, type 23
+ * [MONDO:0030965](http://purl.obolibrary.org/obo/MONDO_0030965) olmsted syndrome 2
+ * [MONDO:0030971](http://purl.obolibrary.org/obo/MONDO_0030971) immunodeficiency 78 with autoimmunity and developmental delay
+ * [MONDO:0030973](http://purl.obolibrary.org/obo/MONDO_0030973) immunodeficiency 77
+ * [MONDO:0030974](http://purl.obolibrary.org/obo/MONDO_0030974) mitochondrial complex 2 deficiency, nuclear type 4
+ * [MONDO:0030981](http://purl.obolibrary.org/obo/MONDO_0030981) immunodeficiency 79
+ * [MONDO:0030985](http://purl.obolibrary.org/obo/MONDO_0030985) premature ovarian failure 19
+ * [MONDO:0030989](http://purl.obolibrary.org/obo/MONDO_0030989) spermatogenic failure 53
+ * [MONDO:0030996](http://purl.obolibrary.org/obo/MONDO_0030996) bleeding disorder, platelet-type, 24
+ * [MONDO:0030997](http://purl.obolibrary.org/obo/MONDO_0030997) mitochondrial complex 1 deficiency, nuclear type 37
+ * [MONDO:0030998](http://purl.obolibrary.org/obo/MONDO_0030998) deafness, autosomal dominant 80
+ * [MONDO:0031003](http://purl.obolibrary.org/obo/MONDO_0031003) hypercholanemia, familial, 2
+ * [MONDO:0031009](http://purl.obolibrary.org/obo/MONDO_0031009) Glanzmann thrombasthenia 2
+ * [MONDO:0031010](http://purl.obolibrary.org/obo/MONDO_0031010) odontochondrodysplasia 2 with hearing loss and diabetes
+ * [MONDO:0031037](http://purl.obolibrary.org/obo/MONDO_0031037) famililal cerebral cavernous malformations
+ * [MONDO:0031169](http://purl.obolibrary.org/obo/MONDO_0031169) odontochondrodysplasia
+ * [MONDO:0031332](http://purl.obolibrary.org/obo/MONDO_0031332) Glanzmann thrombasthenia 1
+ * [MONDO:0031446](http://purl.obolibrary.org/obo/MONDO_0031446) hypercholanemia, familial 1
+ * [MONDO:0031481](http://purl.obolibrary.org/obo/MONDO_0031481) microcephaly, epilepsy, and diabetes syndrome 1
+ * [MONDO:0100308](http://purl.obolibrary.org/obo/MONDO_0100308) atactic disorder
+ * [MONDO:0100309](http://purl.obolibrary.org/obo/MONDO_0100309) hereditary ataxia
+ * [MONDO:0100310](http://purl.obolibrary.org/obo/MONDO_0100310) hereditary cerebellar ataxia
+ * [MONDO:0100311](http://purl.obolibrary.org/obo/MONDO_0100311) sensory ataxia
+ * [MONDO:0100312](http://purl.obolibrary.org/obo/MONDO_0100312) vestibular ataxia
+ * [MONDO:0100318](http://purl.obolibrary.org/obo/MONDO_0100318) COVID-19 or sequela
+ * [MONDO:0100319](http://purl.obolibrary.org/obo/MONDO_0100319) COVID-19–associated multisystem inflammatory syndrome in adults
+ * [MONDO:0100320](http://purl.obolibrary.org/obo/MONDO_0100320) sequela of COVID-19
+ * [MONDO:0100321](http://purl.obolibrary.org/obo/MONDO_0100321) viral disease or post-viral disorder
+ * [MONDO:0100325](http://purl.obolibrary.org/obo/MONDO_0100325) odontochondrodysplasia 1
+ * [MONDO:0100326](http://purl.obolibrary.org/obo/MONDO_0100326) Glanzmann thrombasthenia
+ * [MONDO:0100327](http://purl.obolibrary.org/obo/MONDO_0100327) hypercholanemia, familial
+ * [MONDO:0100328](http://purl.obolibrary.org/obo/MONDO_0100328) microcephaly, epilepsy, and diabetes syndrome
+ * [MONDO:0100337](http://purl.obolibrary.org/obo/MONDO_0100337) SEC61A1 deficiency
+ * [MONDO:0100339](http://purl.obolibrary.org/obo/MONDO_0100339) Friedreich ataxia
+ * [MONDO:0100340](http://purl.obolibrary.org/obo/MONDO_0100340) Friedreich ataxia 1
+ * [MONDO:0100342](http://purl.obolibrary.org/obo/MONDO_0100342) malignant glioma
+ * [MONDO:0100343](http://purl.obolibrary.org/obo/MONDO_0100343) antenatal Bartter syndrome
+ * [MONDO:0100344](http://purl.obolibrary.org/obo/MONDO_0100344) Bartter disease type 1
+ * [MONDO:0100345](http://purl.obolibrary.org/obo/MONDO_0100345) lactose intolerance (disease)
+ * [MONDO:0100347](http://purl.obolibrary.org/obo/MONDO_0100347) carcinoid syndrome
+
+## Obsoletions
+
+ * [MONDO:0000557](http://purl.obolibrary.org/obo/MONDO_0000557) hereditary ataxia --> obsolete hereditary ataxia
+ * [MONDO:0006689](http://purl.obolibrary.org/obo/MONDO_0006689) carcinoid syndrome --> obsolete carcinoid syndrome
+ * [MONDO:0007291](http://purl.obolibrary.org/obo/MONDO_0007291) familial cerebral cavernous malformation --> obsolete familial cerebral cavernous malformation
+ * [MONDO:0008480](http://purl.obolibrary.org/obo/MONDO_0008480) odontochondrodysplasia --> obsolete odontochondrodysplasia
+ * [MONDO:0009116](http://purl.obolibrary.org/obo/MONDO_0009116) lactose intolerance (disease) --> obsolete lactose intolerance (disease)
+ * [MONDO:0009245](http://purl.obolibrary.org/obo/MONDO_0009245) Friedreich ataxia --> obsolete Friedreich ataxia
+ * [MONDO:0010119](http://purl.obolibrary.org/obo/MONDO_0010119) Glanzmann's thrombasthenia --> obsolete Glanzmann's thrombasthenia
+ * [MONDO:0011127](http://purl.obolibrary.org/obo/MONDO_0011127) Bartter disease type 1 --> obsolete Bartter disease type 1
+ * [MONDO:0011905](http://purl.obolibrary.org/obo/MONDO_0011905) familial hypercholanemia --> obsolete familial hypercholanemia
+ * [MONDO:0013647](http://purl.obolibrary.org/obo/MONDO_0013647) primary microcephaly-epilepsy-permanent neonatal diabetes syndrome --> obsolete primary microcephaly-epilepsy-permanent neonatal diabetes syndrome
+ * [MONDO:0015917](http://purl.obolibrary.org/obo/MONDO_0015917) malignant glioma --> obsolete malignant glioma
+ * [MONDO:0100139](http://purl.obolibrary.org/obo/MONDO_0100139) asymptomatic COVID-19 infection --> obsolete asymptomatic COVID-19 infection
+ * [MONDO:0100140](http://purl.obolibrary.org/obo/MONDO_0100140) mild COVID-19 infection --> obsolete mild COVID-19 infection
+ * [MONDO:0100141](http://purl.obolibrary.org/obo/MONDO_0100141) moderate COVID-19 infection --> obsolete moderate COVID-19 infection
+ * [MONDO:0100142](http://purl.obolibrary.org/obo/MONDO_0100142) severe COVID-19 infection --> obsolete severe COVID-19 infection
+ * [MONDO:0100143](http://purl.obolibrary.org/obo/MONDO_0100143) critical COVID-19 infection --> obsolete critical COVID-19 infection
+ * [MONDO:0100145](http://purl.obolibrary.org/obo/MONDO_0100145) presymptomatic COVID-19 infection --> obsolete presymptomatic COVID-19 infection
+
+## Renaming
+
+ * [MONDO:0000557](http://purl.obolibrary.org/obo/MONDO_0000557) hereditary ataxia --> obsolete hereditary ataxia
+ * [MONDO:0005227](http://purl.obolibrary.org/obo/MONDO_0005227) abscess --> abscess (disease)
+ * [MONDO:0006689](http://purl.obolibrary.org/obo/MONDO_0006689) carcinoid syndrome --> obsolete carcinoid syndrome
+ * [MONDO:0007291](http://purl.obolibrary.org/obo/MONDO_0007291) familial cerebral cavernous malformation --> obsolete familial cerebral cavernous malformation
+ * [MONDO:0008480](http://purl.obolibrary.org/obo/MONDO_0008480) odontochondrodysplasia --> obsolete odontochondrodysplasia
+ * [MONDO:0009116](http://purl.obolibrary.org/obo/MONDO_0009116) lactose intolerance (disease) --> obsolete lactose intolerance (disease)
+ * [MONDO:0009245](http://purl.obolibrary.org/obo/MONDO_0009245) Friedreich ataxia --> obsolete Friedreich ataxia
+ * [MONDO:0010119](http://purl.obolibrary.org/obo/MONDO_0010119) Glanzmann's thrombasthenia --> obsolete Glanzmann's thrombasthenia
+ * [MONDO:0011127](http://purl.obolibrary.org/obo/MONDO_0011127) Bartter disease type 1 --> obsolete Bartter disease type 1
+ * [MONDO:0011905](http://purl.obolibrary.org/obo/MONDO_0011905) familial hypercholanemia --> obsolete familial hypercholanemia
+ * [MONDO:0013647](http://purl.obolibrary.org/obo/MONDO_0013647) primary microcephaly-epilepsy-permanent neonatal diabetes syndrome --> obsolete primary microcephaly-epilepsy-permanent neonatal diabetes syndrome
+ * [MONDO:0014195](http://purl.obolibrary.org/obo/MONDO_0014195) microcornea-myopic chorioretinal atrophy-telecanthus syndrome --> microcornea-myopic chorioretinal atrophy
+ * [MONDO:0015917](http://purl.obolibrary.org/obo/MONDO_0015917) malignant glioma --> obsolete malignant glioma
+ * [MONDO:0020724](http://purl.obolibrary.org/obo/MONDO_0020724) familial cerebral cavernous malformation 1 --> cerebral cavernous malformation 1
+ * [MONDO:0026767](http://purl.obolibrary.org/obo/MONDO_0026767) immunodeficiency 74, covid19-related, X-linked --> immunodeficiency 74, COVID-19-related, X-linked
+ * [MONDO:0100139](http://purl.obolibrary.org/obo/MONDO_0100139) asymptomatic COVID-19 infection --> obsolete asymptomatic COVID-19 infection
+ * [MONDO:0100140](http://purl.obolibrary.org/obo/MONDO_0100140) mild COVID-19 infection --> obsolete mild COVID-19 infection
+ * [MONDO:0100141](http://purl.obolibrary.org/obo/MONDO_0100141) moderate COVID-19 infection --> obsolete moderate COVID-19 infection
+ * [MONDO:0100142](http://purl.obolibrary.org/obo/MONDO_0100142) severe COVID-19 infection --> obsolete severe COVID-19 infection
+ * [MONDO:0100143](http://purl.obolibrary.org/obo/MONDO_0100143) critical COVID-19 infection --> obsolete critical COVID-19 infection
+ * [MONDO:0100145](http://purl.obolibrary.org/obo/MONDO_0100145) presymptomatic COVID-19 infection --> obsolete presymptomatic COVID-19 infection
+
+
 # v2021-04-07
 
 ## New Classes

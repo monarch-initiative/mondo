@@ -11,7 +11,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/foodon_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-04-07/imports/foodon_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-04-30/imports/foodon_import.owl"/>
     </owl:Ontology>
     
 
@@ -1210,6 +1210,63 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001053 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001053">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001256"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001258"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001256"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001258"/>
+        <rdfs:label xml:lang="en">fermented dairy food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001054 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001054">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001258"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411222"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411374"/>
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03411433"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001055"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001258"/>
+        <rdfs:label xml:lang="en">fermented fish or seafood food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001055 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001055">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001046"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03315173"/>
+        <rdfs:label xml:lang="en">sea water fish food product</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001092 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001092">
@@ -1249,6 +1306,35 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
         <rdfs:label xml:lang="en">cereal grain food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001094 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001094">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001258"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03301977"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001258"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03301977"/>
+        <obo:IAO_0000117>Damion Dooley</obo:IAO_0000117>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-06-11T07:25:19Z</dc:date>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F5644</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>alcoholic beverage</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* has quality &apos;liquid&apos; (http://purl.obolibrary.org/obo/FOODON_03430130)
+* formed as a result of &apos;microbial/enzymatic modification process&apos; (http://purl.obolibrary.org/obo/FOODON_03460119)
+* formed as a result of &apos;curing or aging process&apos; (http://purl.obolibrary.org/obo/FOODON_03460253)
+                </rdfs:comment>
+        <rdfs:label xml:lang="en">fermented beverage</rdfs:label>
     </owl:Class>
     
 
@@ -1519,6 +1605,22 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001258 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001258">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002501"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002645"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001304"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">food (fermented)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001262 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001262">
@@ -1531,7 +1633,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://eurovoc.europa.eu/drupal/?q=request&amp;amp;uri=http://eurovoc.europa.eu/1115</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://www.fao.org/pollination/resources/glossary/en/</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Fruit</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -1556,6 +1658,62 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001046"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001176"/>
         <rdfs:label xml:lang="en">shellfish food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001304 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001304">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03460119"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03470107"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001258"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A fermentation process in which either carbohydrates, proteins or fats are modified through microbial, enzymatic and/or other biological process.</obo:IAO_0000115>
+        <obo:IAO_0000117>Damion Dooley</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">food fermentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001327 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001327">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001054"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411335"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001054"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001785"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">Pu dong is fermented crab</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://orcid.org/0000-0002-1816-4260</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">pu dong</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001579 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001579">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001094"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">An alcoholic drink (or alcoholic beverage) is a drink that contains ethanol, a type of alcohol produced by fermentation of grains, fruits, or other sources of sugar.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.m.wikipedia.org/wiki/Alcoholic_drink</obo:IAO_0000119>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F10770</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">alcoholic beverage</rdfs:label>
     </owl:Class>
     
 
@@ -1656,6 +1814,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001882 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001882">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001579"/>
+        <rdfs:label xml:lang="en">fruit based alcoholic beverage</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001907 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001907">
@@ -1681,6 +1848,26 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001109"/>
         <rdfs:label xml:lang="en">goat dairy food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001916 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001916">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001579"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411324"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001882"/>
+        <rdfs:label xml:lang="en">grain based alcoholic beverage</rdfs:label>
     </owl:Class>
     
 
@@ -1782,6 +1969,18 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002244">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002044"/>
         <rdfs:label xml:lang="en">snail food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00002373 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002373">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">A meal type is the name of an eating occasion that may have location, food type, or other customary contextual features. (Damion&apos;s 1st draft definition)</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">food product by meal type</rdfs:label>
     </owl:Class>
     
 
@@ -1888,6 +2087,35 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">prepared seafood product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00002501 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002501">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002381"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400139"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A food product consisting of food material derived from ingredients sourced from multiple organisms.</obo:IAO_0000115>
+        <obo:IAO_0000117>Damion Dooley</obo:IAO_0000117>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-23T22:40:32Z</dc:date>
+        <oboInOwl:hasSynonym xml:lang="en">multi-ingredient</oboInOwl:hasSynonym>
+        <rdfs:comment xml:lang="en">The definition of this is being discussed in issue: https://github.com/FoodOntology/foodon/issues/57
+
+Namely, how to characterize the threshold of ingredients that make for multi-component classification? Salt, pepper, spices wouldn&apos;t normally make a food multi-component?</rdfs:comment>
+        <rdfs:label xml:lang="en">multi-component food product</rdfs:label>
     </owl:Class>
     
 
@@ -2122,6 +2350,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03301977 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03301977">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002373"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400229"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A liquid prepared for consumption, or a product that can be combined with water or milk to make one.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-09-12T00:00:00</dc:date>
+        <rdfs:label xml:lang="en">beverage food product</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03302116 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03302116">
@@ -2271,6 +2519,56 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03309823 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03309823">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001054"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002239"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001054"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002239"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>definition: Shrimp paste or shrimp sauce is a fermented condiment commonly used in Southeast Asian, Northeastern South Asian and Southern Chinese cuisines.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">Need to set languages of synonyms (japanese/thai ?)</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://orcid.org/0000-0002-1816-4260</obo:IAO_0000117>
+        <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">wikipedia:Shrimp_pastse</obo:IAO_0000119>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F9823</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym xml:lang="en">shrimp sauce</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>kapi
+ngapi
+terasi
+belacan
+belachan
+blachang
+mắm ruốc
+mắm tép
+mắm tôm
+bagoong alamang
+bagoong aramang
+haa1 zoeng3/haa1 gou1
+hom ha/hae ko
+sidol</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* has quality &apos;semisolid&apos; (http://purl.obolibrary.org/obo/FOODON_03430144)
+* has quality &apos;not heat-treated&apos; (http://purl.obolibrary.org/obo/FOODON_03440003)
+* derives from &apos;whole animal or most parts used&apos; (http://purl.obolibrary.org/obo/FOODON_03420173)
+* formed as a result of &apos;fermentation/modification process, multiple component&apos; (http://purl.obolibrary.org/obo/FOODON_03460128)
+* formed as a result of &apos;water removal process&apos; (http://purl.obolibrary.org/obo/FOODON_03460138)
+* formed as a result of &apos;salted&apos; (http://purl.obolibrary.org/obo/FOODON_03460173)
+* formed as a result of &apos;preservation by fermentation&apos; (http://purl.obolibrary.org/obo/FOODON_03470104)
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">shrimp paste</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03311737 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03311737">
@@ -2307,6 +2605,25 @@
 * derives from &apos;milk (mammary secretion)&apos; (http://purl.obolibrary.org/obo/UBERON_0001913)
         </rdfs:comment>
         <rdfs:label xml:lang="en">mammalian milk product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03315173 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315173">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001248"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">A fish product is a home-made or commercially produced or retail or wholesale product containing substantial amounts of freshwater or saltwater fish and/or shellfish flesh. Note that this category should avoid items that mention a particular species of fish or shellfish.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F15173</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* derives from &apos;skeletal meat part&apos; (http://purl.obolibrary.org/obo/FOODON_03420175)
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">fish product (unspecified species)</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">https://en.wikipedia.org/wiki/Fish_products</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -2350,6 +2667,26 @@
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0129</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">refined or partially-refined food product (us cfr)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400139 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400139">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400172"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">A multiple-component food product typically containing a protein source, a vegetable, and a potato, rice or cereal-based component packaged to be served after heating, either as separate items or courses or mixed as recipe components; see 21 CFR 102.26, 102.28 and 104.47 for nutritional quality guidelines.</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0139</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">compartmentalized dinner</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">dinner with components separated in serving containers</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">dinner, compartmentalized</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">food packs with separate components</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">heat and serve dinner</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">multiple-course dinner</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">tv dinner</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">multicomponent meal (us cfr)</rdfs:label>
     </owl:Class>
     
 
@@ -2403,6 +2740,33 @@
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0217</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">meat, poultry, seafood or related product (us cfr)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03400229 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400229">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03401270"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03301977"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002351"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03301977"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Alcoholic or nonalcoholic beverage; excludes milk and milk-based beverages, fruit juices and fruit juice drinks, and vegetable juices. [FDA CFSAN 1995]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=A0229</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">beverage (us cfr)</rdfs:label>
     </owl:Class>
     
 
@@ -3421,6 +3785,19 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03460119 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460119">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03460141"/>
+        <obo:IAO_0000115 xml:lang="en">A food modification process by microbial or enzymatic action which results in molecular changes in any food component.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=H0119</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">fermented, unspecified</oboInOwl:hasSynonym>
+        <rdfs:comment xml:lang="en">LanguaL curation note: If salt, sugar or other food additive is used to aid in the modification process, index it by the appropriate term under *INGREDIENT ADDED*.</rdfs:comment>
+        <rdfs:label xml:lang="en">microbial/enzymatic modification process</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03460130 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460130">
@@ -3486,6 +3863,18 @@ The family is widespread, being native to Asia, Africa, Europe and North America
         <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=H0225</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">LanguaL curation note: A food product is characterized by its main ingredient (food source and part); the addition of secondary ingredients is considered a treatment applied to the product. Secondary ingredients are indexed according to rules that are based on the order of predominance by weight (not counting water) as seen from the label statement, formulation or recipe and/or from the amount of the ingredient as percentage of total product weight. The general rule is:  an ingredient is always indexed if it is the second ingredient in order of predominance, if it is used as a filling, or if it is part of the product name(e.g., raisin bread). Specific rules are given in the scope note for the individual ingredient added; these rules specify more exhaustive indexing. For example, *MUSHROOM ADDED* is indexed regardless of ingredient position. another specific rule is given in the scope note for *SALTED*:  Use if the level of salt is more than 4%. Such a rule is used only when the percentage level can be inferred from the list of ingredients.</rdfs:comment>
         <rdfs:label xml:lang="en">food component addition process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03470107 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03470107">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002451"/>
+        <obo:IAO_0000115 xml:lang="en">The methods contributing to the prevention or retardation of microbial, enzymatic or oxidative spoilage and thus to the extension of shelf life. Index all methods for which information is available, even if a corresponding descriptor has already been used in *H. TREATMENT APPLIED*. Preservation descriptors refer to the finished food as a whole with these exceptions: (1) if the components of a multi-component food, such as cream pie, are preservation by different methods, index all methods; (2)  if chemical preservatives are declared on the label, always index them even if it is known that the preservative was introduced through or is only present in a component or ingredient of the food; and (3) if the preservation method for an ingredient is declared on the label (such as brie cheese made from pasteurized milk) index it. Also use *INGREDIENT preservation by THERMAL PROCESSING* or *INGREDIENT preservation by IRRADIATION* when ingredients have been pasteurized, ultrapasteurized, sterilized or irradiated.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>http://www.langual.org/langual_thesaurus.asp?termid=J0107</oboInOwl:hasDbXref>
+        <rdfs:comment xml:lang="en">LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.</rdfs:comment>
+        <rdfs:label xml:lang="en">food preservation process</rdfs:label>
     </owl:Class>
     
 

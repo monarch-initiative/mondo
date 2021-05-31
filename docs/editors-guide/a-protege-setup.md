@@ -19,6 +19,8 @@ As of August 2019, Mondo editors are using `Protege version 5.5.0`
   - Below the line: `<string>-Xss16M</string>`
   - Insert another line: `<string>-Xmx12G</string>`
 
+_Note - if you have issues opening Protege, then reduce the memory, try 10G (or lower) instead._
+
 ## Instructions for new Protege users
 
 ### Obtaining your ID range

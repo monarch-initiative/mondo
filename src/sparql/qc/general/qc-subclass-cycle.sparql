@@ -1,0 +1,10 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity rdfs:subClassOf+ ?entity .
+   FILTER(?entity!=owl:Nothing)
+   BIND(rdfs:subClassOf AS ?property)
+   BIND(?entity AS ?value)
+}
+ORDER BY ?entity
