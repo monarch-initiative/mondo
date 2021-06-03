@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-03-03/imports/ro_import.owl
+data-version: mondo/releases/2021-06-01/imports/ro_import.owl
 ontology: mondo/imports/ro_import
 
 [Term]
@@ -388,6 +388,25 @@ property_value: IAO:0000118 "has_participant" xsd:string
 domain: BFO:0000003 ! occurrent
 range: BFO:0000002 ! continuant
 holds_over_chain: BFO:0000051 RO:0000057
+
+[Typedef]
+id: RO:0000058
+name: is concretized as
+def: "A relationship between a generically dependent continuant and a specifically dependent continuant, in which the generically dependent continuant depends on some independent continuant in virtue of the fact that the specifically dependent continuant also depends on that same independent continuant. A generically dependent continuant may be concretized as multiple specifically dependent continuants." []
+property_value: IAO:0000112 "A journal article is an information artifact that inheres in some number of printed journals. For each copy of the printed journal there is some quality that carries the journal article, such as a pattern of ink. The journal article (a generically dependent continuant) is concretized as the quality (a specifically dependent continuant), and both depend on that copy of the printed journal (an independent continuant)." xsd:string
+property_value: IAO:0000112 "An investigator reads a protocol and forms a plan to carry out an assay. The plan is a realizable entity (a specifically dependent continuant) that concretizes the protocol (a generically dependent continuant), and both depend on the investigator (an independent continuant). The plan is then realized by the assay (a process)." xsd:string
+domain: BFO:0000031 ! generically dependent continuant
+range: BFO:0000020 ! specifically dependent continuant
+inverse_of: RO:0000059 ! concretizes
+
+[Typedef]
+id: RO:0000059
+name: concretizes
+def: "A relationship between a specifically dependent continuant and a generically dependent continuant, in which the generically dependent continuant depends on some independent continuant in virtue of the fact that the specifically dependent continuant also depends on that same independent continuant. Multiple specifically dependent continuants can concretize the same generically dependent continuant." []
+property_value: IAO:0000112 "A journal article is an information artifact that inheres in some number of printed journals. For each copy of the printed journal there is some quality that carries the journal article, such as a pattern of ink. The quality (a specifically dependent continuant) concretizes the journal article (a generically dependent continuant), and both depend on that copy of the printed journal (an independent continuant)." xsd:string
+property_value: IAO:0000112 "An investigator reads a protocol and forms a plan to carry out an assay. The plan is a realizable entity (a specifically dependent continuant) that concretizes the protocol (a generically dependent continuant), and both depend on the investigator (an independent continuant). The plan is then realized by the assay (a process)." xsd:string
+domain: BFO:0000020 ! specifically dependent continuant
+range: BFO:0000031 ! generically dependent continuant
 
 [Typedef]
 id: RO:0000080
@@ -2009,12 +2028,36 @@ range: BFO:0000015 ! process
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
+id: RO:0010001
+name: generically depends on
+def: "A generically dependent continuant *b* generically depends on an independent continuant *c* at time *t* means: there inheres in *c* a specifically deendent continuant which concretizes *b* at *t*." []
+synonym: "g-depends on" EXACT []
+domain: BFO:0000031 ! generically dependent continuant
+range: BFO:0000004 ! independent continuant
+holds_over_chain: RO:0000052 RO:0000058
+inverse_of: RO:0010002 ! is carrier of
+
+[Typedef]
+id: RO:0010002
+name: is carrier of
+def: "*b* is carrier of *c* at time *t* if and only if *c* *g-depends on* *b* at *t*" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000031 ! generically dependent continuant
+holds_over_chain: RO:0000059 RO:0000053
+
+[Typedef]
 id: RO:0011002
 name: regulates activity of
 def: "The entity A has an activity that regulates an activity of the entity B. For example, A and B are gene products where the catalytic activity of A regulates the kinase activity of B." []
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
 is_a: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0014001
+name: disease has infectious agent
+def: "A relationship between a disease and an infectious agent where the material basis of the disease is an infection with some infectious agent." []
+is_a: RO:0004019 ! disease has basis in
 
 [Typedef]
 id: RO:0040035
