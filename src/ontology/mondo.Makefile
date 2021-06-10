@@ -424,10 +424,11 @@ tmp/mondo-ncit-neoplasm-roots.csv: tmp/mondo-neoplasm.owl
 # renaming them, and then chopping off everything from above
 # In effect, you should have a layer of Mondo classes, and underneath
 # Some specific neoplasms not covered by Mondo.
-tmp/ncit-neoplasm.owl: tmp/mondo-ncit-neoplasm-roots.csv mirror/ncit.owl
-	$(ROBOT) reason -i mirror/ncit.owl filter --term NCIT:C3262 --select "self descendants" --trim false -o $@_filter.owl \
-	rename --mappings $< --allow-missing-entities true -o $@_rename.owl \
-	filter --select "<http://purl.obolibrary.org/obo/MONDO_*>" --select "self descendants" --select "annotations" -o $@_remove.owl \
+tmp/ncit-neoplasm.owl: #tmp/mondo-ncit-neoplasm-roots.csv mirror/ncit.owl
+	echo "Skipping dependencies, need some fixing #3136" &&\
+	$(ROBOT) reason -i mirror/ncit.owl filter --term NCIT:C3262 --select "self descendants" --trim false \
+	rename --mappings tmp/mondo-ncit-neoplasm-roots.csv --allow-missing-entities true \
+	filter --select "<http://purl.obolibrary.org/obo/MONDO_*>" --select "self descendants" \
 	remove --select "<http://purl.obolibrary.org/obo/MONDO_*>" --axioms annotation -o $@
 .PRECIOUS: tmp/ncit-neoplasm.owl
 
