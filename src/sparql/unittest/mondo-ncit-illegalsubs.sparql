@@ -1,0 +1,11 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix NCIT: <http://purl.obolibrary.org/obo/NCIT_>
+
+
+SELECT distinct ?term ?parent WHERE {
+ ?term rdfs:subClassOf+ ?parent
+ FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+ FILTER (isIRI(?parent) && regex(str(?parent), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
