@@ -276,6 +276,31 @@ reports/mondo_unsats.md: mondo.obo
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
 
+
+EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/monarch-initiative/mondo/master/src/ontology/mondo-edit.obo
+
+tmp/src-noimports.owl: $(SRC)
+	$(ROBOT) remove -i $< --select imports -o $@
+
+tmp/src-imports.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+
+tmp/src-master-noimports.owl:
+	$(ROBOT) remove -I $(EDIT_GITHUB_MASTER) --select imports -o $@
+
+tmp/src-master-imports.owl:
+	$(ROBOT) merge -I $(EDIT_GITHUB_MASTER) -o $@
+
+reports/diff_edit_%.md: tmp/src-master-%.owl tmp/src-%.owl
+	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -f markdown -o $@
+
+reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
+	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -o $@
+
+branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
+
+
+
 .PHONY: mondo_feature_diff
 related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
@@ -428,13 +453,27 @@ tmp/ncit-neoplasm.owl: #tmp/mondo-ncit-neoplasm-roots.csv mirror/ncit.owl
 	echo "Skipping dependencies, need some fixing #3136" &&\
 	$(ROBOT) reason -i mirror/ncit.owl filter --term NCIT:C3262 --select "self descendants" --trim false \
 	rename --mappings tmp/mondo-ncit-neoplasm-roots.csv --allow-missing-entities true \
-	filter --select "<http://purl.obolibrary.org/obo/MONDO_*>" --select "self descendants" \
-	remove --select "<http://purl.obolibrary.org/obo/MONDO_*>" --axioms annotation -o $@
+	filter --select "<http://purl.obolibrary.org/obo/MONDO_*>" --select "self descendants" --select "annotations" \
+	remove --select "<http://purl.obolibrary.org/obo/MONDO_*>" --axioms annotation remove --axioms Declaration -o $@
 .PRECIOUS: tmp/ncit-neoplasm.owl
+
+
+tmp/verify-%.txt: tmp/ncit-neoplasm.owl
+	$(ROBOT) verify -i $< --queries $(SPARQLDIR)/unittest/$*.sparql --output-dir tmp/
+
+
+tmp/materialise-subclass.csv: #tmp/ncit-neoplasm.owl
+	$(ROBOT) query -i tmp/ncit-neoplasm.owl --query $(SPARQLDIR)/unittest/mondo-ncit-illegalsubs.sparql $@
+	sed -i '2iID,SC %' $@
+
+merge_template_%: tmp/%.csv
+	$(ROBOT) template --merge-before --input $(SRC) \
+ --template $< --output $(SRC).obo && mv $(SRC).obo $(SRC)
+
 
 # Finally in the release, mondo.owl is merged with the ncit-neoplasm module to 
 # form the desired mondo-ncit.owl module
-$(ONT)-ncit.owl: tmp/ncit-neoplasm.owl mondo.owl
+$(ONT)-ncit.owl: tmp/ncit-neoplasm.owl mondo.owl tmp/verify-ncit-cancer.txt tmp/verify-mondo-ncit-illegalsubs.txt
 	$(ROBOT) merge -i mondo.owl -i tmp/ncit-neoplasm.owl -o $@
 
 #TODO E. [optional] subset this, including only subclasses of Neoplasm or susceptibility to Neoplasm [e.g. to include Lynch]
