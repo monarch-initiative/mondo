@@ -400,3 +400,40 @@ test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html
+
+##################################
+### Mondo/NCIT Cancer Module #####
+##################################
+
+# The cancer Module of Mondo corresponds to Mondo.owl
+# together with NCIT neoplasms where they are more specific
+# compared to what Mondo covers
+
+
+# To make computation (SPARQL etc) faster, we first extract the neoplasm subset from Mondo
+tmp/mondo-neoplasm.owl: mondo.owl
+	$(ROBOT) filter -i mondo.owl --term MONDO:0005070 --select descendants --trim false -o $@
+
+# This gets you all the Mondo classes equivalent to some NCIT class 
+# that do not have a further NCIT class being a child of it
+tmp/mondo-ncit-neoplasm-roots.csv: tmp/mondo-neoplasm.owl
+	$(ROBOT) query -i $< --query $(SPARQLDIR)/signature/ncit-neoplasm-mondo-roots.sparql $@
+
+# This takes the neoplasm branch of NCIT (reasoned, just to be sure),
+# Identifies the classes corresponding to the most specific Mondo classes And
+# renaming them, and then chopping off everything from above
+# In effect, you should have a layer of Mondo classes, and underneath
+# Some specific neoplasms not covered by Mondo.
+tmp/ncit-neoplasm.owl: tmp/mondo-ncit-neoplasm-roots.csv mirror/ncit.owl
+	$(ROBOT) reason -i mirror/ncit.owl filter --term NCIT:C3262 --select "self descendants" --trim false -o $@_filter.owl \
+	rename --mappings $< --allow-missing-entities true -o $@_rename.owl \
+	filter --select "<http://purl.obolibrary.org/obo/MONDO_*>" --select "self descendants" --select "annotations" -o $@_remove.owl \
+	remove --select "<http://purl.obolibrary.org/obo/MONDO_*>" --axioms annotation -o $@
+.PRECIOUS: tmp/ncit-neoplasm.owl
+
+# Finally in the release, mondo.owl is merged with the ncit-neoplasm module to 
+# form the desired mondo-ncit.owl module
+$(ONT)-ncit.owl: tmp/ncit-neoplasm.owl mondo.owl
+	$(ROBOT) merge -i mondo.owl -i tmp/ncit-neoplasm.owl -o $@
+
+#TODO E. [optional] subset this, including only subclasses of Neoplasm or susceptibility to Neoplasm [e.g. to include Lynch]

@@ -1,0 +1,33 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+SELECT ?ncit_xref ?term WHERE {
+	?term rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0005070> ;
+ 			oboInOwl:hasDbXref ?ncit_xref .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?ncit_xref ;
+           oboInOwl:source ?source 
+      ] .
+  	FILTER NOT EXISTS {
+      ?child rdfs:subClassOf+ ?term .
+      ?child oboInOwl:hasDbXref ?ncit_xref_child .
+      [
+          a owl:Axiom ;
+             owl:annotatedSource ?child ;
+             owl:annotatedProperty oboInOwl:hasDbXref ;
+             owl:annotatedTarget ?ncit_xref_child ;
+             oboInOwl:source ?source 
+      ] .
+      FILTER (regex(str(?ncit_xref_child), "^NCIT"))
+      FILTER (isIRI(?child) && regex(str(?child), "^http://purl.obolibrary.org/obo/MONDO_"))
+  	}
+    FILTER (str(?source)="MONDO:equivalentTo")
+    FILTER (regex(str(?ncit_xref), "^NCIT"))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+
+}
