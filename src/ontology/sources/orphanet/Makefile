@@ -83,3 +83,5 @@ obo_orphanet.obo: obo_orphanet_4.obo
 obo_orphanet.owl: obo_orphanet.obo
 	owltools $< -o $@.tmp && perl -npe 's@http://purl.obolibrary.org/obo/Orphanet_@http://www.orpha.net/ORDO/Orphanet_@g' $@.tmp > $@
 
+#orphanet_sssom.tsv: obo_orphanet.owl
+#	robot query -i $< --prefix "ORDO: http://www.orpha.net/ORDO/Orphanet_" -q ../../../sparql/sssom.sparql $@

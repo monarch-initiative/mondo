@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/chebi_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-05-07/imports/chebi_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-06-01/imports/chebi_import.owl"/>
     </owl:Ontology>
     
 
@@ -1454,6 +1454,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_173085"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25512"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2435,6 +2441,23 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_169952 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_169952">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_15036"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_6067"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>13-cis-retinoate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>(2Z,4E,6E,8E)-3,7-dimethyl-9-(2,6,6-trimethyl-1-cyclohexen-1-yl)-2,4,6,8-nonatetraenoate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>13-cis-retinoate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_16998 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16998">
@@ -2859,6 +2882,17 @@
         <oboInOwl:hasRelatedSynonym>Phe</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>beta-phenyl-L-alanine</oboInOwl:hasRelatedSynonym>
         <rdfs:label>L-phenylalanine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_173085 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_173085">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52206"/>
+        <obo:IAO_0000115>Any substance that induces or promotes the process of ferroptosis (a type of programmed cell death dependent on iron and characterized by the accumulation of lipid peroxides) in organisms.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>ferroptosis inducers</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ferroptosis inducer</rdfs:label>
     </owl:Class>
     
 
@@ -3568,11 +3602,15 @@
         <oboInOwl:hasExactSynonym>piperidine</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Azacyclohexane</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Hexahydropyridine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Piperidin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>azinane</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cyclopentimine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cypentil</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hexazane</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pentamethyleneamine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pentamethyleneimine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pentamethylenimine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>perhydropyridine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pip</oboInOwl:hasRelatedSynonym>
         <rdfs:label>piperidine</rdfs:label>
     </owl:Class>
@@ -15041,8 +15079,8 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50183">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76898"/>
         <obo:IAO_0000115>An enzyme inhibitor that interferes with the activity of cytochrome P450 involved in catalysis of organic substances.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym>CYP2D6 inhbitor</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>CYP2D6 inhbitors</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>CYP2D6 inhibitor</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>CYP2D6 inhibitors</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>P450 inhibitors</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cytochrome P450 inhibitor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cytochrome P450 inhibitors</oboInOwl:hasRelatedSynonym>
@@ -16840,6 +16878,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50905"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_169952"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A retinoic acid that is all-trans-retinoic acid in which the double bond which is alpha,beta- to the carboxy group is isomerised to Z configuration. A synthetic retinoid, it is used for the treatment of severe cases of acne and other skin diseases.</obo:IAO_0000115>
