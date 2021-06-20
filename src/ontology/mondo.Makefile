@@ -468,13 +468,19 @@ tmp/ncit-neoplasm-under-mondo.owl: tmp/mondo-ncit-neoplasm-roots.csv tmp/ncit-ne
 	remove --select "<http://purl.obolibrary.org/obo/MONDO_*>" --axioms annotation remove --axioms Declaration -o $@
 .PRECIOUS: tmp/ncit-neoplasm-under-mondo.owl
 
-tmp/verify-%.txt: tmp/ncit-neoplasm-under-mondo.owl
-	$(ROBOT) verify -i $< --queries $(SPARQLDIR)/unittest/$*.sparql --output-dir tmp/
+tmp/verify-ncit-cancer.txt: $(ONT)-ncit.owl
+	$(ROBOT) verify -i $< --queries $(SPARQLDIR)/unittest/ncit-cancer.sparql --output-dir tmp/
+
+tmp/verify-mondo-ncit-illegalsubs.txt: tmp/ncit-neoplasm-under-mondo.owl
+	$(ROBOT) verify -i $< --queries $(SPARQLDIR)/unittest/mondo-ncit-illegalsubs.sparql --output-dir tmp/
 
 # Finally in the release, mondo.owl is merged with the ncit-neoplasm module to 
 # form the desired mondo-ncit.owl module
-$(ONT)-ncit.owl: tmp/ncit-neoplasm-under-mondo.owl tmp/verify-ncit-cancer.txt tmp/verify-mondo-ncit-illegalsubs.txt #mondo.owl
+$(ONT)-ncit.owl: tmp/ncit-neoplasm-under-mondo.owl #mondo.owl
 	$(ROBOT) merge -i mondo.owl -i tmp/ncit-neoplasm-under-mondo.owl -o $@
+.PRECIOUS: $(ONT)-ncit.owl
+
+ncit_qc: tmp/verify-ncit-cancer.txt tmp/verify-mondo-ncit-illegalsubs.txt
 
 #TODO E. [optional] subset this, including only subclasses of Neoplasm or susceptibility to Neoplasm [e.g. to include Lynch]
 
