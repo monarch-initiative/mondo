@@ -3,6 +3,7 @@ curie_map:
   UMLS: http://linkedlifedata.com/resource/umls/id/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   DOID: http://purl.obolibrary.org/obo/DOID_
+  EFO: http://www.ebi.ac.uk/efo/EFO_
   HP: http://purl.obolibrary.org/obo/HP_
   SCTID: http://identifiers.org/snomedct/
   OMIM: http://omim.org/entry/
@@ -20,6 +21,7 @@ subject_prefixes:
   - MONDO
   - OMIM
   - Orphanet
+  - EFO
 relations:
   - skos:exactMatch
   - skos:broadMatch
@@ -41,3 +43,7 @@ source_metadata:
     to: UMLS
     metadata:
       object_source: https://uts.nlm.nih.gov/uts/
+  - from: MONDO
+    to: EFO
+    metadata:
+      object_source: http://www.ebi.ac.uk/efo/efo.owl
