@@ -2,7 +2,7 @@ pattern_name: idiopathic
 
 pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/idiopathic.yaml
 
-description: 'This pattern is applied to diseases that are described as being idiopathic, i.e. having an uncertained or unknown cause.
+description: 'This pattern is applied to diseases that are described as being idiopathic, i.e. having an uncertain or unknown cause.
 
 Examples: [idiopathic aplastic anemia](http://purl.obolibrary.org/obo/MONDO_0012197),
   [idiopathic avascular necrosis](http://purl.obolibrary.org/obo/MONDO_0018380)'
@@ -11,7 +11,7 @@ contributors:
 - https://orcid.org/0000-0002-4142-7153
 
 classes:
-  idiopathic: PATO:
+  idiopathic: MONDO:0700005
   disease: MONDO:0000001
 
 relations:
@@ -22,7 +22,7 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  disease: '''disease'''
+  disease: "'disease'"
 
 name:
   text: idiopathic %s
