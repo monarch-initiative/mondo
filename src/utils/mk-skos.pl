@@ -24,7 +24,7 @@ while (<>) {
             $rel = 'exactMatch';
         }
         elsif ($anns =~ m@otherHierarchy@) {
-            $rel = 'exactMatch';
+            $rel = 'relatedMatch';
         }
         elsif ($anns =~ m@subClassOf@) {
             $rel = 'broadMatch';
