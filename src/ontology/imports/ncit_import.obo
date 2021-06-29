@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-04-30/imports/ncit_import.owl
+data-version: mondo/releases/2021-06-01/imports/ncit_import.owl
 subsetdef: NCIT:C103330 ""
 subsetdef: NCIT:C105551 ""
 subsetdef: NCIT:C116977 ""
@@ -8,6 +8,8 @@ subsetdef: NCIT:C120531 ""
 subsetdef: NCIT:C124302 ""
 subsetdef: NCIT:C124303 ""
 subsetdef: NCIT:C128453 ""
+subsetdef: NCIT:C132298 ""
+subsetdef: NCIT:C132310 ""
 subsetdef: NCIT:C142799 ""
 subsetdef: NCIT:C142800 ""
 subsetdef: NCIT:C156952 ""
@@ -55,6 +57,7 @@ subsetdef: NCIT:C171094 ""
 subsetdef: NCIT:C173073 ""
 subsetdef: NCIT:C173206 ""
 subsetdef: NCIT:C173208 ""
+subsetdef: NCIT:C173381 ""
 subsetdef: NCIT:C174018 ""
 subsetdef: NCIT:C174019 ""
 subsetdef: NCIT:C174238 ""
@@ -65,6 +68,23 @@ subsetdef: NCIT:C174253 ""
 subsetdef: NCIT:C174255 ""
 subsetdef: NCIT:C174261 ""
 subsetdef: NCIT:C175517 ""
+subsetdef: NCIT:C177383 ""
+subsetdef: NCIT:C177384 ""
+subsetdef: NCIT:C177385 ""
+subsetdef: NCIT:C177398 ""
+subsetdef: NCIT:C177400 ""
+subsetdef: NCIT:C177402 ""
+subsetdef: NCIT:C177410 ""
+subsetdef: NCIT:C177415 ""
+subsetdef: NCIT:C177536 ""
+subsetdef: NCIT:C177537 ""
+subsetdef: NCIT:C178106 ""
+subsetdef: NCIT:C178113 ""
+subsetdef: NCIT:C178115 ""
+subsetdef: NCIT:C178116 ""
+subsetdef: NCIT:C178117 ""
+subsetdef: NCIT:C178719 ""
+subsetdef: NCIT:C179027 ""
 subsetdef: NCIT:C54447 ""
 subsetdef: NCIT:C54585 ""
 subsetdef: NCIT:C61410 ""
@@ -90,7 +110,7 @@ synonym: "ER and/or PR +" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY
 synonym: "ER and/or PR Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Estrogen Receptor and/or Progesterone Receptor Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Hormone Receptor Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-is_a: NCIT:C35682 ! Positive Laboratory Test Result
+is_a: NCIT:C177692 ! Expression Positive
 is_a: NCIT:C94299 ! Receptor Status
 property_value: NCIT:A13 NCIT:C28656
 property_value: NCIT:A13 NCIT:C38349
@@ -98,7 +118,6 @@ property_value: NCIT:NHC0 "C101267" xsd:string
 property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
 property_value: NCIT:P108 "Hormone Receptor Positive" xsd:string
 property_value: NCIT:P207 "C3640067" xsd:string
-property_value: NCIT:P208 "CL936015" xsd:string
 
 [Term]
 id: NCIT:C12219
@@ -120,7 +139,6 @@ property_value: NCIT:P108 "Anatomic Structure, System, or Substance" xsd:string
 property_value: NCIT:P207 "C1515976" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P366 "Anatomic_Structure_System_or_Substance" xsd:string
-property_value: NCIT:P371 "Anatomic Structure, System, or Substance" xsd:string
 
 [Term]
 id: NCIT:C12378
@@ -185,6 +203,7 @@ subset: NCIT:C174238
 subset: NCIT:C174241
 subset: NCIT:C174255
 subset: NCIT:C174261
+subset: NCIT:C177537
 subset: NCIT:C61410
 subset: NCIT:C66830
 subset: NCIT:C74456
@@ -208,6 +227,12 @@ property_value: NCIT:A28 NCIT:C119940
 property_value: NCIT:A28 NCIT:C157120
 property_value: NCIT:A28 NCIT:C172233
 property_value: NCIT:A28 NCIT:C173281
+property_value: NCIT:A32 NCIT:C156421
+property_value: NCIT:A32 NCIT:C156422
+property_value: NCIT:A32 NCIT:C171435
+property_value: NCIT:A32 NCIT:C177570
+property_value: NCIT:A32 NCIT:C177625
+property_value: NCIT:A32 NCIT:C70729
 property_value: NCIT:NHC0 "C12664" xsd:string
 property_value: NCIT:P106 "Body Location or Region" xsd:string
 property_value: NCIT:P107 "Abdomen" xsd:string
@@ -236,6 +261,7 @@ subset: NCIT:C159093
 subset: NCIT:C159111
 subset: NCIT:C159117
 subset: NCIT:C159120
+subset: NCIT:C177537
 subset: NCIT:C61410
 subset: NCIT:C66830
 subset: NCIT:C74456
@@ -254,6 +280,11 @@ synonym: "Intestines" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", h
 is_a: NCIT:C13018 ! Organ
 relationship: NCIT:R81 NCIT:C12664 ! Abdomen
 relationship: NCIT:R82 NCIT:C12378 ! Digestive System
+property_value: NCIT:A32 NCIT:C156421
+property_value: NCIT:A32 NCIT:C156422
+property_value: NCIT:A32 NCIT:C171435
+property_value: NCIT:A32 NCIT:C177570
+property_value: NCIT:A32 NCIT:C70729
 property_value: NCIT:NHC0 "C12736" xsd:string
 property_value: NCIT:P106 "Body Part, Organ, or Organ Component" xsd:string
 property_value: NCIT:P107 "Intestine" xsd:string
@@ -296,16 +327,29 @@ subset: NCIT:C168657
 subset: NCIT:C168658
 subset: NCIT:C168661
 subset: NCIT:C168662
+subset: NCIT:C177384
+subset: NCIT:C177385
+subset: NCIT:C177400
+subset: NCIT:C177537
 synonym: "Cancer Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Malignant Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Malignant Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
+synonym: "MALIGNANT_CELLS" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="GCT", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Tumor cells, malignant" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 is_a: NCIT:C12922 ! Neoplastic Cell
+property_value: NCIT:A23 NCIT:C25162
+property_value: NCIT:A32 NCIT:C176985
+property_value: NCIT:A32 NCIT:C177621
+property_value: NCIT:A34 NCIT:C17998
+property_value: NCIT:A34 NCIT:C25626
+property_value: NCIT:A34 NCIT:C43234
+property_value: NCIT:A34 NCIT:C48190
 property_value: NCIT:NHC0 "C12917" xsd:string
 property_value: NCIT:P106 "Cell" xsd:string
 property_value: NCIT:P108 "Malignant Cell" xsd:string
 property_value: NCIT:P207 "C0334227" xsd:string
 property_value: NCIT:P322 "GDC" xsd:string
+property_value: NCIT:P322 "PCDC" xsd:string
 property_value: NCIT:P366 "Malignant_Cell" xsd:string
 property_value: NCIT:P375 "8001/3" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Related To", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="morphology", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 property_value: NCIT:P375 "Tumor cells, malignant" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="primary_diagnosis", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
@@ -354,11 +398,14 @@ subset: NCIT:C168657
 subset: NCIT:C168658
 subset: NCIT:C168661
 subset: NCIT:C168662
+subset: NCIT:C177537
 synonym: "Neoplastic Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Tumor Cell" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Tumor cells, NOS" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "Tumor cells, uncertain whether benign or malignant" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 is_a: NCIT:C12913 ! Abnormal Cell
+property_value: NCIT:A32 NCIT:C176985
+property_value: NCIT:A32 NCIT:C177621
 property_value: NCIT:NHC0 "C12922" xsd:string
 property_value: NCIT:P106 "Cell" xsd:string
 property_value: NCIT:P108 "Neoplastic Cell" xsd:string
@@ -440,14 +487,25 @@ subset: NCIT:C159125
 subset: NCIT:C159412
 subset: NCIT:C171094
 subset: NCIT:C174238
+subset: NCIT:C174241
 subset: NCIT:C174253
+subset: NCIT:C177383
+subset: NCIT:C177385
+subset: NCIT:C177402
+subset: NCIT:C177410
+subset: NCIT:C177537
+subset: NCIT:C178113
+subset: NCIT:C178115
+subset: NCIT:C178116
 subset: NCIT:C62596
 subset: NCIT:C90259
 synonym: "Operation" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="EWS", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
+synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="GCT", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ALL", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000045570", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
 synonym: "Surgical" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Surgical" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
@@ -463,7 +521,13 @@ synonym: "Surgically" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", h
 synonym: "Type of Surgery" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 xref: IMDRF:F19
 is_a: NCIT:C25218 ! Intervention or Procedure
+property_value: NCIT:A28 NCIT:C161601
 property_value: NCIT:A28 NCIT:C175041
+property_value: NCIT:A32 NCIT:C177637
+property_value: NCIT:A32 NCIT:C25218
+property_value: NCIT:A33 NCIT:C161601
+property_value: NCIT:A33 NCIT:C177376
+property_value: NCIT:A35 NCIT:C175041
 property_value: NCIT:NHC0 "C15329" xsd:string
 property_value: NCIT:P106 "Health Care Activity" xsd:string
 property_value: NCIT:P107 "Surgical Procedure" xsd:string
@@ -478,7 +542,6 @@ property_value: NCIT:P322 "PCDC" xsd:string
 property_value: NCIT:P325 "A procedure to remove or repair a part of the body or to find out whether disease is present. An operation." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P325 "One or more surgical procedures was required, or an existing procedure changed." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="FDA", http://purl.obolibrary.org/obo/NCIT_P381="CDRH"}
 property_value: NCIT:P366 "Surgical_Procedure" xsd:string
-property_value: NCIT:P371 "Surgical Procedure" xsd:string
 property_value: NCIT:P375 "Surgery" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="treatment_type", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 property_value: NCIT:P375 "Surgically Treated" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="reflux_treatment_type", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 
@@ -761,11 +824,13 @@ subset: NCIT:C156954
 subset: NCIT:C157529
 subset: NCIT:C157711
 subset: NCIT:C159106
+subset: NCIT:C177537
 synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CPTAC"}
 synonym: "Alcohol Consumption" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 is_a: NCIT:C19683 ! Personal Behavior
+property_value: NCIT:A32 NCIT:C17103
 property_value: NCIT:NHC0 "C16273" xsd:string
 property_value: NCIT:P106 "Individual Behavior" xsd:string
 property_value: NCIT:P108 "Alcohol Consumption" xsd:string
@@ -795,7 +860,6 @@ property_value: NCIT:P207 "C0004927" xsd:string
 property_value: NCIT:P322 "ICDC" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P366 "Behavior" xsd:string
-property_value: NCIT:P371 "Behavior" xsd:string
 
 [Term]
 id: NCIT:C165233
@@ -804,13 +868,16 @@ def: "An indication that expression of a gene, RNA species or protein is not det
 subset: NCIT:C157711
 subset: NCIT:C159116
 subset: NCIT:C173073
+subset: NCIT:C177537
 synonym: "Absent" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Expression Negative" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Loss of Expression" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Loss of Expression" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "LOST" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTDC", http://purl.obolibrary.org/obo/NCIT_P383="PT"}
 synonym: "Negative" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Not Expressed" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C35681 ! Negative Test Result
+property_value: NCIT:A32 NCIT:C36292
 property_value: NCIT:NHC0 "C165233" xsd:string
 property_value: NCIT:P106 "Cell or Molecular Dysfunction" xsd:string
 property_value: NCIT:P108 "Expression Negative" xsd:string
@@ -836,6 +903,8 @@ id: NCIT:C17214
 name: Disease Transmission
 def: "A passage or transfer, as of a disease from one individual to another." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
 subset: NCIT:C128453
+subset: NCIT:C173381
+subset: NCIT:C177415
 subset: NCIT:C90259
 synonym: "Disease Transmission" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Pathogen Transmission Route" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
@@ -849,7 +918,18 @@ property_value: NCIT:P207 "C0242781" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P325 "The conveyance of an infection to a person." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NICHD"}
 property_value: NCIT:P366 "Transmission" xsd:string
-property_value: NCIT:P371 "Transmission" xsd:string
+
+[Term]
+id: NCIT:C177692
+name: Expression Positive
+def: "An indication that the expression of a gene, transcript or protein has been detected in a sample." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+synonym: "Expressed" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Expression Detected" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Expression Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+is_a: NCIT:C35682 ! Positive Laboratory Test Result
+property_value: NCIT:NHC0 "C177692" xsd:string
+property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
+property_value: NCIT:P108 "Expression Positive" xsd:string
 
 [Term]
 id: NCIT:C17828
@@ -942,10 +1022,12 @@ subset: NCIT:C74559
 synonym: "EMPJOB" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-SCTESTCD"}
 synonym: "Employee Job" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC", http://purl.obolibrary.org/obo/NCIT_P385="SDTM-SCTEST"}
 synonym: "Employee Job" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
+synonym: "Employment Category" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Job" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "OCCUPATION" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICSR", http://purl.obolibrary.org/obo/NCIT_P384="FDA"}
 synonym: "Occupation" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Occupation" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
+synonym: "Occupation Type" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 is_a: NCIT:C19160 ! Occupation or Discipline
 property_value: NCIT:NHC0 "C25193" xsd:string
 property_value: NCIT:P106 "Occupation or Discipline" xsd:string
@@ -960,39 +1042,105 @@ property_value: NCIT:P366 "Occupation" xsd:string
 id: NCIT:C25218
 name: Intervention or Procedure
 def: "An activity that produces an effect, or that is intended to alter the course of a disease in a patient or population. This is a general term that encompasses the medical, social, behavioral, and environmental acts that can have preventive, therapeutic, or palliative effects." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+subset: NCIT:C132298
+subset: NCIT:C132310
+subset: NCIT:C157711
 subset: NCIT:C159501
 subset: NCIT:C159502
 subset: NCIT:C165451
 subset: NCIT:C166373
+subset: NCIT:C177536
 subset: NCIT:C61410
 subset: NCIT:C67497
 subset: NCIT:C90259
 subset: NCIT:C99147
 synonym: "Intervention" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "intervention" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000454757", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
+synonym: "Intervention" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
 synonym: "intervention" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC-GLOSS"}
+synonym: "intervention" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000454757", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
 synonym: "Intervention or Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 synonym: "Intervention or Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Intervention Strategies" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Interventional" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="AD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "interventionDescription" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 3.0.3"}
 synonym: "interventionDescription" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 5.3"}
+synonym: "interventionDescription" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="BRIDG 3.0.3"}
 synonym: "Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
 synonym: "Procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "procedure" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICDC", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
+synonym: "treatment type" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="VAR", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
+synonym: "treatment_type" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="VAR", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 is_a: NCIT:C16203 ! Clinical or Research Activity
+property_value: NCIT:A31 NCIT:C104914
+property_value: NCIT:A31 NCIT:C116466
+property_value: NCIT:A31 NCIT:C116643
+property_value: NCIT:A31 NCIT:C138187
+property_value: NCIT:A31 NCIT:C141342
+property_value: NCIT:A31 NCIT:C15195
+property_value: NCIT:A31 NCIT:C152055
+property_value: NCIT:A31 NCIT:C15215
+property_value: NCIT:A31 NCIT:C15230
+property_value: NCIT:A31 NCIT:C15262
+property_value: NCIT:A31 NCIT:C15289
+property_value: NCIT:A31 NCIT:C15313
+property_value: NCIT:A31 NCIT:C15329
+property_value: NCIT:A31 NCIT:C15358
+property_value: NCIT:A31 NCIT:C15370
+property_value: NCIT:A31 NCIT:C15382
+property_value: NCIT:A31 NCIT:C15393
+property_value: NCIT:A31 NCIT:C15431
+property_value: NCIT:A31 NCIT:C15445
+property_value: NCIT:A31 NCIT:C15470
+property_value: NCIT:A31 NCIT:C15533
+property_value: NCIT:A31 NCIT:C15632
+property_value: NCIT:A31 NCIT:C15651
+property_value: NCIT:A31 NCIT:C15666
+property_value: NCIT:A31 NCIT:C15696
+property_value: NCIT:A31 NCIT:C15747
+property_value: NCIT:A31 NCIT:C15751
+property_value: NCIT:A31 NCIT:C15752
+property_value: NCIT:A31 NCIT:C157968
+property_value: NCIT:A31 NCIT:C15986
+property_value: NCIT:A31 NCIT:C16035
+property_value: NCIT:A31 NCIT:C16039
+property_value: NCIT:A31 NCIT:C16135
+property_value: NCIT:A31 NCIT:C165189
+property_value: NCIT:A31 NCIT:C165192
+property_value: NCIT:A31 NCIT:C165194
+property_value: NCIT:A31 NCIT:C17649
+property_value: NCIT:A31 NCIT:C17998
+property_value: NCIT:A31 NCIT:C20985
+property_value: NCIT:A31 NCIT:C43234
+property_value: NCIT:A31 NCIT:C443
+property_value: NCIT:A31 NCIT:C46089
+property_value: NCIT:A31 NCIT:C62714
+property_value: NCIT:A31 NCIT:C62726
+property_value: NCIT:A31 NCIT:C64172
+property_value: NCIT:A31 NCIT:C66891
+property_value: NCIT:A31 NCIT:C66897
+property_value: NCIT:A31 NCIT:C66899
+property_value: NCIT:A31 NCIT:C67444
+property_value: NCIT:A31 NCIT:C70840
+property_value: NCIT:A31 NCIT:C76243
+property_value: NCIT:A31 NCIT:C798
+property_value: NCIT:A31 NCIT:C85254
+property_value: NCIT:A31 NCIT:C92991
+property_value: NCIT:A31 NCIT:C93196
+property_value: NCIT:A31 NCIT:C93340
+property_value: NCIT:A31 NCIT:C95484
 property_value: NCIT:NHC0 "C25218" xsd:string
 property_value: NCIT:P106 "Health Care Activity" xsd:string
 property_value: NCIT:P108 "Intervention or Procedure" xsd:string
 property_value: NCIT:P207 "C0184661" xsd:string
 property_value: NCIT:P322 "BRIDG" xsd:string
+property_value: NCIT:P322 "CDISC" xsd:string
 property_value: NCIT:P322 "CDISC-GLOSS" xsd:string
+property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P322 "ICDC" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P325 "In medicine, a treatment or action taken to prevent or treat disease, or improve health in other ways." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P325 "The drug, device, therapy, or process under investigation in a clinical study that is believed to have an effect on outcomes of interest in a study (e.g., health-related quality of life, efficacy, safety, pharmacoeconomics). [After https://grants.nih.gov/grants/policy/faq_clinical_trial_definition.htm#5224] See also test articles, devices, drug product, medicinal product, combination product, general observation class, finding, event, treatment, diagnosis." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC-GLOSS"}
+property_value: NCIT:P325 "The drug, device, therapy, or process under investigation in a clinical study that is believed to have an effect on outcomes of interest in a study. [After https://grants.nih.gov/grants/policy/faq_clinical_trial_definition.htm#5224] (CDISC-Glossary)" xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC"}
 property_value: NCIT:P366 "Procedure" xsd:string
-property_value: NCIT:P371 "Intervention or Procedure" xsd:string
 
 [Term]
 id: NCIT:C25444
@@ -1041,7 +1189,6 @@ property_value: NCIT:P322 "CTRP" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P325 "A meaningful interpretation of data or observations resulting from planned evaluations. Compare to conclusion, hypothesis. See also general observation class, intervention, event." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC-GLOSS"}
 property_value: NCIT:P366 "Finding" xsd:string
-property_value: NCIT:P371 "Finding" xsd:string
 
 [Term]
 id: NCIT:C35461
@@ -1069,6 +1216,9 @@ property_value: NCIT:P366 "Clinical_Course_of_Disease" xsd:string
 id: NCIT:C35681
 name: Negative Test Result
 def: "A test result that indicates that a specific disease, condition, or attribute being assessed is not present." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+subset: NCIT:C178719
+subset: NCIT:C179027
+synonym: "Negative" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="SeroNet", http://purl.obolibrary.org/obo/NCIT_P383="PT"}
 synonym: "Negative Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "negative test result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P385="CDR0000044692", http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
 is_a: NCIT:C77140 ! Clinical Test Result
@@ -1076,6 +1226,7 @@ property_value: NCIT:NHC0 "C35681" xsd:string
 property_value: NCIT:P106 "Finding" xsd:string
 property_value: NCIT:P108 "Negative Test Result" xsd:string
 property_value: NCIT:P207 "C1334932" xsd:string
+property_value: NCIT:P322 "SeroNet" xsd:string
 property_value: NCIT:P325 "A test result that does not show the specific disease, condition, or biomarker for which the test is being done." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P366 "Negative_Test_Result" xsd:string
 
@@ -1083,6 +1234,9 @@ property_value: NCIT:P366 "Negative_Test_Result" xsd:string
 id: NCIT:C35682
 name: Positive Laboratory Test Result
 def: "A laboratory test result that indicates that a specific disease, condition, or attribute being assessed is present." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+subset: NCIT:C178719
+subset: NCIT:C179027
+synonym: "Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="SeroNet", http://purl.obolibrary.org/obo/NCIT_P383="PT"}
 synonym: "Positive Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "positive test result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="CDR0000044710", http://purl.obolibrary.org/obo/NCIT_P384="NCI-GLOSS"}
 is_a: NCIT:C36292 ! Laboratory Test Result
@@ -1090,6 +1244,7 @@ property_value: NCIT:NHC0 "C35682" xsd:string
 property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
 property_value: NCIT:P108 "Positive Laboratory Test Result" xsd:string
 property_value: NCIT:P207 "C1335447" xsd:string
+property_value: NCIT:P322 "SeroNet" xsd:string
 property_value: NCIT:P325 "A test result that reveals the presence of a specific disease or condition for which the test is being done." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="NCI-GLOSS"}
 property_value: NCIT:P366 "Positive_Test_Result" xsd:string
 
@@ -1103,12 +1258,17 @@ subset: NCIT:C168549
 subset: NCIT:C173206
 subset: NCIT:C173208
 subset: NCIT:C174019
+subset: NCIT:C178106
+subset: NCIT:C178115
+subset: NCIT:C178116
 synonym: "Morphologic Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Morphology" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ALL", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Morphology" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P386="AML", http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Morphology (A/O/U)" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="Canine Glioma", http://purl.obolibrary.org/obo/NCIT_P384="ICDC"}
 is_a: NCIT:C83490 ! Microscopic Finding
 property_value: NCIT:A24 NCIT:C168960
 property_value: NCIT:A24 NCIT:C83312
+property_value: NCIT:A35 NCIT:C83312
 property_value: NCIT:NHC0 "C35867" xsd:string
 property_value: NCIT:P106 "Finding" xsd:string
 property_value: NCIT:P108 "Morphologic Finding" xsd:string
@@ -1121,13 +1281,25 @@ property_value: NCIT:P366 "Morphologic_Finding" xsd:string
 id: NCIT:C35886
 name: Morphologic Architectural Pattern
 def: "A microscopic finding that relates to the architectural patterns of a normal or abnormal cellular population in a tissue specimen." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
+subset: NCIT:C157711
+subset: NCIT:C177536
 synonym: "Morphologic Architectural Pattern" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="HD", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "morphologic architectural pattern" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="VAR", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
+synonym: "morphologic_architectural_pattern" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="VAR", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 is_a: NCIT:C35867 ! Morphologic Finding
+property_value: NCIT:A31 NCIT:C179432
+property_value: NCIT:A31 NCIT:C179447
+property_value: NCIT:A31 NCIT:C35911
+property_value: NCIT:A31 NCIT:C35920
+property_value: NCIT:A31 NCIT:C35925
+property_value: NCIT:A31 NCIT:C36181
+property_value: NCIT:A31 NCIT:C36182
 property_value: NCIT:NHC0 "C35886" xsd:string
 property_value: NCIT:P106 "Finding" xsd:string
 property_value: NCIT:P108 "Morphologic Architectural Pattern" xsd:string
 property_value: NCIT:P207 "C1334802" xsd:string
 property_value: NCIT:P310 "Header_Concept" xsd:string
+property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P366 "Morphologic_Architectural_Pattern" xsd:string
 
 [Term]
@@ -1135,19 +1307,25 @@ id: NCIT:C35920
 name: Cribriform Pattern
 def: "A morphologic finding indicating the presence of sheets of malignant epithelial cells punctuated by gland-like spaces in a tissue sample." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
 subset: NCIT:C120531
+subset: NCIT:C157711
+subset: NCIT:C177537
 subset: NCIT:C61410
 subset: NCIT:C77526
+synonym: "Cribiform" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 synonym: "CRIBRIFORM CHANGE" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
 synonym: "Cribriform Pattern" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Pseudoglandular Formation" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="CDISC"}
 is_a: NCIT:C35886 ! Morphologic Architectural Pattern
+property_value: NCIT:A32 NCIT:C35886
 property_value: NCIT:NHC0 "C35920" xsd:string
 property_value: NCIT:P106 "Finding" xsd:string
 property_value: NCIT:P108 "Cribriform Pattern" xsd:string
 property_value: NCIT:P207 "C1333163" xsd:string
 property_value: NCIT:P322 "CDISC" xsd:string
+property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P325 "Formation of epithelial pseudoglandular structures with lumens." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC"}
 property_value: NCIT:P366 "Cribriform_Pattern" xsd:string
+property_value: NCIT:P375 "Cribiform" xsd:string {http://purl.obolibrary.org/obo/NCIT_P393="Has Synonym", http://purl.obolibrary.org/obo/NCIT_P394="PT", http://purl.obolibrary.org/obo/NCIT_P395="morphologic_architectural_pattern", http://purl.obolibrary.org/obo/NCIT_P396="GDC"}
 
 [Term]
 id: NCIT:C36104
@@ -1198,7 +1376,6 @@ property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P325 "Normal or abnormal clinical findings related to the collection of tissues capable of secreting hormones." xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="ACC/AHA"}
 property_value: NCIT:P325 "Symptoms, physical examination results, and/or laboratory test results related to the endocrine system. (NCI)" xsd:string {http://purl.obolibrary.org/obo/NCIT_P378="CDISC"}
 property_value: NCIT:P366 "Endocrine_System_Finding" xsd:string
-property_value: NCIT:P371 "Endocrine System Finding" xsd:string
 
 [Term]
 id: NCIT:C36292
@@ -1206,30 +1383,55 @@ name: Laboratory Test Result
 def: "The outcome of a laboratory test." [] {http://purl.obolibrary.org/obo/NCIT_P378="NCI"}
 subset: NCIT:C116977
 subset: NCIT:C118169
+subset: NCIT:C157711
 subset: NCIT:C168549
 subset: NCIT:C173206
 subset: NCIT:C174018
 subset: NCIT:C174238
 subset: NCIT:C174239
 subset: NCIT:C174250
+subset: NCIT:C177384
+subset: NCIT:C177385
+subset: NCIT:C177398
+subset: NCIT:C177536
+subset: NCIT:C178106
+subset: NCIT:C178116
+subset: NCIT:C178117
 subset: NCIT:C54447
 subset: NCIT:C89506
 subset: NCIT:C90259
 synonym: "Lab Findings" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
-synonym: "LAB_RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="EWS", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "LAB_RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P386="AML", http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
-synonym: "Laboratory Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
+synonym: "LAB_RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="EWS", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
+synonym: "LAB_RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ALL", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
+synonym: "LAB_RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="GCT", http://purl.obolibrary.org/obo/NCIT_P384="PCDC"}
 synonym: "Laboratory Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "Laboratory Finding" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Laboratory Report" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICSR-CVM", http://purl.obolibrary.org/obo/NCIT_P384="FDA"}
-synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="caDSR"}
 synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NICHD"}
+synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "Laboratory Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
 synonym: "Labs" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "TEST RESULT" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P386="ICSR", http://purl.obolibrary.org/obo/NCIT_P384="FDA"}
 synonym: "Test Result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
+synonym: "test result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY", http://purl.obolibrary.org/obo/NCIT_P385="VAR", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
+synonym: "test_result" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P385="VAR", http://purl.obolibrary.org/obo/NCIT_P384="GDC"}
 is_a: NCIT:C77140 ! Clinical Test Result
 property_value: NCIT:A23 NCIT:C45253
+property_value: NCIT:A31 NCIT:C14165
+property_value: NCIT:A31 NCIT:C165229
+property_value: NCIT:A31 NCIT:C165233
+property_value: NCIT:A31 NCIT:C17998
+property_value: NCIT:A31 NCIT:C25227
+property_value: NCIT:A31 NCIT:C26683
+property_value: NCIT:A31 NCIT:C38757
+property_value: NCIT:A31 NCIT:C38758
+property_value: NCIT:A31 NCIT:C43234
+property_value: NCIT:A31 NCIT:C49142
+property_value: NCIT:A31 NCIT:C54722
+property_value: NCIT:A31 NCIT:C73705
+property_value: NCIT:A31 NCIT:C86071
 property_value: NCIT:NHC0 "C36292" xsd:string
 property_value: NCIT:P106 "Laboratory or Test Result" xsd:string
 property_value: NCIT:P107 "Laboratory Test Result" xsd:string
@@ -1237,10 +1439,10 @@ property_value: NCIT:P108 "Laboratory Test Result" xsd:string
 property_value: NCIT:P207 "C0587081" xsd:string
 property_value: NCIT:P322 "CTRP" xsd:string
 property_value: NCIT:P322 "FDA" xsd:string
+property_value: NCIT:P322 "GDC" xsd:string
 property_value: NCIT:P322 "NICHD" xsd:string
 property_value: NCIT:P322 "PCDC" xsd:string
 property_value: NCIT:P366 "Test_Result" xsd:string
-property_value: NCIT:P371 "Laboratory Test Result" xsd:string
 
 [Term]
 id: NCIT:C36745
@@ -1501,7 +1703,7 @@ synonym: "HER2 Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="SY"
 synonym: "HER2/Neu Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P383="PT", http://purl.obolibrary.org/obo/NCIT_P384="NCI"}
 synonym: "HER2/Neu Positive" EXACT [] {http://purl.obolibrary.org/obo/NCIT_P384="CTRP", http://purl.obolibrary.org/obo/NCIT_P383="DN"}
 is_a: NCIT:C16152 ! HER2/Neu Status
-is_a: NCIT:C35682 ! Positive Laboratory Test Result
+is_a: NCIT:C177692 ! Expression Positive
 property_value: NCIT:A13 NCIT:C17756
 property_value: NCIT:NHC0 "C68748" xsd:string
 property_value: NCIT:P106 "Laboratory or Test Result" xsd:string

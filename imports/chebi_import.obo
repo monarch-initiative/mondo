@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-03-03/imports/chebi_import.owl
+data-version: mondo/releases/2021-06-01/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -707,6 +707,7 @@ is_a: CHEBI:18237 ! glutamic acid
 is_a: CHEBI:24318 ! glutamine family amino acid
 relationship: is_conjugate_acid_of CHEBI:29985 ! L-glutamate(1-)
 relationship: is_enantiomer_of CHEBI:15966 ! D-glutamic acid
+relationship: RO:0000087 CHEBI:173085 ! ferroptosis inducer
 relationship: RO:0000087 CHEBI:25512 ! neurotransmitter
 relationship: RO:0000087 CHEBI:27027 ! micronutrient
 relationship: RO:0000087 CHEBI:50733 ! nutraceutical
@@ -1129,6 +1130,14 @@ relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:84735 ! algal metabolite
 
 [Term]
+id: CHEBI:169952
+name: 13-cis-retinoate
+synonym: "(2Z,4E,6E,8E)-3,7-dimethyl-9-(2,6,6-trimethyl-1-cyclohexen-1-yl)-2,4,6,8-nonatetraenoate" RELATED []
+synonym: "13-cis-retinoate" EXACT []
+is_a: CHEBI:15036 ! retinoate
+relationship: is_conjugate_base_of CHEBI:6067 ! isotretinoin
+
+[Term]
 id: CHEBI:16998
 name: D-phenylalanine
 def: "The D-enantiomer of phenylalanine." []
@@ -1297,6 +1306,13 @@ relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:76967 ! human xenobiotic metabolite
 relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 relationship: RO:0000087 CHEBI:84735 ! algal metabolite
+
+[Term]
+id: CHEBI:173085
+name: ferroptosis inducer
+def: "Any substance that induces or promotes the process of ferroptosis (a type of programmed cell death dependent on iron and characterized by the accumulation of lipid peroxides) in organisms." []
+synonym: "ferroptosis inducers" RELATED []
+is_a: CHEBI:52206 ! biochemical role
 
 [Term]
 id: CHEBI:17310
@@ -1606,11 +1622,15 @@ def: "An azacycloalkane that is cyclohexane in which one of the carbons is repla
 synonym: "Azacyclohexane" RELATED []
 synonym: "azinane" RELATED []
 synonym: "cyclopentimine" RELATED []
+synonym: "cypentil" RELATED []
 synonym: "Hexahydropyridine" RELATED []
+synonym: "hexazane" RELATED []
 synonym: "pentamethyleneamine" RELATED []
 synonym: "pentamethyleneimine" RELATED []
 synonym: "pentamethylenimine" RELATED []
+synonym: "perhydropyridine" RELATED []
 synonym: "pip" RELATED []
+synonym: "Piperidin" RELATED []
 synonym: "Piperidine" EXACT []
 synonym: "piperidine" EXACT []
 is_a: CHEBI:26151 ! piperidines
@@ -6094,7 +6114,7 @@ relationship: RO:0000087 CHEBI:35337 ! central nervous system stimulant
 [Term]
 id: CHEBI:35341
 name: steroid
-def: "Any of naturally occurring compounds and synthetic analogues, based on the cyclopenta[a]phenanthrene carbon skeleton, partially or completely hydrogenated; there are usually methyl groups at C-10 and C-13, and often an alkyl group at C-17. By extension, one or more bond scissions, ring expansions and/or ring contractions of the skeleton may have occurred. Natural steroids are derived biogenetically from squalene, so may be considered as triterpenoids." []
+def: "Any of naturally occurring compounds and synthetic analogues, based on the cyclopenta[a]phenanthrene carbon skeleton, partially or completely hydrogenated; there are usually methyl groups at C-10 and C-13, and often an alkyl group at C-17. By extension, one or more bond scissions, ring expansions and/or ring contractions of the skeleton may have occurred. Natural steroids are derived biogenetically from squalene which is a triterpene." []
 synonym: "a steroid" RELATED []
 synonym: "Steroid" EXACT []
 synonym: "steroids" EXACT []
@@ -8378,8 +8398,8 @@ is_a: CHEBI:23888 ! drug
 id: CHEBI:50183
 name: P450 inhibitor
 def: "An enzyme inhibitor that interferes with the activity of cytochrome P450 involved in catalysis of organic substances." []
-synonym: "CYP2D6 inhbitor" RELATED []
-synonym: "CYP2D6 inhbitors" RELATED []
+synonym: "CYP2D6 inhibitor" RELATED []
+synonym: "CYP2D6 inhibitors" RELATED []
 synonym: "cytochrome P450 inhibitor" RELATED []
 synonym: "cytochrome P450 inhibitors" RELATED []
 synonym: "P450 inhibitors" RELATED []
@@ -9446,6 +9466,7 @@ synonym: "isotretinoino" RELATED []
 synonym: "isotretinoinum" RELATED []
 synonym: "Neovitamin A acid" RELATED []
 is_a: CHEBI:26536 ! retinoic acid
+relationship: is_conjugate_acid_of CHEBI:169952 ! 13-cis-retinoate
 relationship: RO:0000087 CHEBI:35610 ! antineoplastic agent
 relationship: RO:0000087 CHEBI:50176 ! keratolytic drug
 relationship: RO:0000087 CHEBI:50905 ! teratogenic agent
@@ -10884,6 +10905,13 @@ name: refrigerant
 def: "A substance used in a thermodynamic heat pump cycle or refrigeration cycle that undergoes a phase change from a gas to a liquid and back. Refrigerants are used in air-conditioning systems and freezers or refrigerators and are assigned a \"R\" number (by ASHRAE - formerly the American Society of Heating, Refrigerating and Air Conditioning Engineers), which is determined systematically according to their molecular structure." []
 synonym: "refrigerants" RELATED []
 is_a: CHEBI:33232 ! application
+
+[Term]
+id: CHEBI:78505
+name: venom
+def: "A toxin used by animals and injected into their victims by a bite or sting." []
+synonym: "venoms" RELATED []
+is_a: CHEBI:27026 ! toxin
 
 [Term]
 id: CHEBI:78608
