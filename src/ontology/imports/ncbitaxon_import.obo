@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-04-30/imports/ncbitaxon_import.owl
+data-version: mondo/releases/2021-06-01/imports/ncbitaxon_import.owl
 ontology: mondo/imports/ncbitaxon_import
 
 [Term]
@@ -4931,6 +4931,14 @@ is_a: NCBITaxon:6657 ! Crustacea
 property_value: has_rank NCBITaxon:superclass
 
 [Term]
+id: NCBITaxon:2212703
+name: Mucoromycetes
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:451507 ! Mucoromycotina
+property_value: has_rank NCBITaxon:class
+
+[Term]
 id: NCBITaxon:2212966
 name: Echinococcus granulosus group
 namespace: ncbi_taxonomy
@@ -8594,6 +8602,20 @@ is_a: NCBITaxon:424551 ! Solanoideae
 property_value: has_rank NCBITaxon:tribe
 
 [Term]
+id: NCBITaxon:42458
+name: Lichtheimia corymbifera
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:2231641
+synonym: "Absidia corymbifera" RELATED synonym []
+synonym: "Mucor corymbifer" RELATED synonym []
+synonym: "Mycocladus corymbifer" RELATED synonym []
+synonym: "Mycocladus corymbiferus" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:17997297
+is_a: NCBITaxon:688353 ! Lichtheimia
+property_value: has_rank NCBITaxon:species
+
+[Term]
 id: NCBITaxon:42461
 name: Opisthokonta incertae sedis
 namespace: ncbi_taxonomy
@@ -9217,8 +9239,8 @@ property_value: has_rank NCBITaxon:subfamily
 id: NCBITaxon:4751
 name: Fungi
 namespace: ncbi_taxonomy
-synonym: "fungi" RELATED in_part []
 synonym: "fungi" RELATED blast_name []
+synonym: "fungi" RELATED in_part []
 synonym: "Mycota" RELATED genbank_synonym []
 xref: GC_ID:1
 xref: PMID:11062127
@@ -9317,6 +9339,20 @@ synonym: "Isospora belli" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:242060 ! Cystoisospora
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:4827
+name: Mucorales
+namespace: ncbi_taxonomy
+synonym: "pin moulds" EXACT genbank_common_name []
+xref: GC_ID:1
+xref: PMID:12684019
+xref: PMID:14715234
+xref: PMID:17051209
+xref: PMID:17486964
+xref: PMID:17572334
+is_a: NCBITaxon:2212703 ! Mucoromycetes
+property_value: has_rank NCBITaxon:order
 
 [Term]
 id: NCBITaxon:485
@@ -9447,6 +9483,17 @@ is_a: NCBITaxon:4107 ! Solanum
 property_value: has_rank NCBITaxon:subgenus
 
 [Term]
+id: NCBITaxon:499202
+name: Lichtheimiaceae
+namespace: ncbi_taxonomy
+synonym: "Mycocladaceae" RELATED synonym []
+synonym: "Mycocladiaceae" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:17997297
+is_a: NCBITaxon:4827 ! Mucorales
+property_value: has_rank NCBITaxon:family
+
+[Term]
 id: NCBITaxon:499556
 name: Chapare mammarenavirus
 namespace: ncbi_taxonomy
@@ -9558,6 +9605,16 @@ xref: GC_ID:1
 xref: PMID:21892240
 is_a: NCBITaxon:2720871 ! Aspergillus subgen. Circumdati
 property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:5073
+name: Penicillium
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:28577
+synonym: "Eupenicillium" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1131492 ! Aspergillaceae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:5094
@@ -12003,6 +12060,14 @@ is_a: NCBITaxon:116926 ! Philophthalmidae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:688353
+name: Lichtheimia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:499202 ! Lichtheimiaceae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
 id: NCBITaxon:689831
 name: Spinareovirinae
 namespace: ncbi_taxonomy
@@ -12292,6 +12357,18 @@ synonym: "Uniramia" RELATED in_part []
 xref: GC_ID:1
 is_a: NCBITaxon:197562 ! Pancrustacea
 property_value: has_rank NCBITaxon:subphylum
+
+[Term]
+id: NCBITaxon:69773
+name: Penicillium glabrum
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:1195892
+synonym: "Citromyces glaber" RELATED synonym []
+synonym: "Citromyces glaber Wehmer, 1911" RELATED synonym []
+synonym: "Penicillium frequentans" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:5073 ! Penicillium
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:69826
