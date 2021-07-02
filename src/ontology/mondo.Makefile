@@ -10,7 +10,7 @@ dirs:
 .PHONY: matches
 
 tmp/mondo-edit-merged.owl: $(SRC)
-	$(ROBOT) merge -i $< -o $S@
+	$(ROBOT) merge -i $< -o $@
 
 matches: tmp/mondo-edit-merged.owl
 	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
