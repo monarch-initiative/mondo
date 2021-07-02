@@ -22,7 +22,7 @@ pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
 
 owlaxioms_check:
-	grep "^owl-axioms" mondo-edit.obo && exit 1 || true
+	! grep "^owl-axioms" mondo-edit.obo
 
 test: pattern_schema_checks
 test: owlaxioms_check
