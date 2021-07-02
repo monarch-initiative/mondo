@@ -1,6 +1,6 @@
 TODAY ?= $(shell date +%Y-%m-%d)
 TGT=../releases/v$(TODAY)
-PRODUCTS = omim.owl omim_sssom.tsv
+PRODUCTS = omim.owl
 OMIM_URL=https://data.monarchinitiative.org/experimental/omim.ttl
 OBOGREPL=perl ../../obo-grep.pl
 
@@ -33,5 +33,5 @@ omim.obo: omim-src.obo
 omim.owl: omim.obo
 	owltools $< --set-ontology-id http://purl.obolibrary.org/obo/omim.owl -o $@
 
-omim_sssom.tsv: omim.owl
-	robot query -i $< --prefix "ORDO: http://www.orpha.net/ORDO/Orphanet_" -q ../../../sparql/sssom.sparql $@
+#omim_sssom.tsv: omim.owl
+#	robot query -i $< --prefix "ORDO: http://www.orpha.net/ORDO/Orphanet_" -q ../../../sparql/sssom.sparql $@
