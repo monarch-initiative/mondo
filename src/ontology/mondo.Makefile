@@ -8,12 +8,15 @@ dirs:
 
 
 .PHONY: matches
-	
-matches: 
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
 
-matches_annotations:
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --restrict-axioms-to=annotation --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches_annotations/"
+tmp/mondo-edit-merged.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $S@
+
+matches: tmp/mondo-edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+
+matches_annotations: tmp/mondo-edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --restrict-axioms-to=annotation --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches_annotations/"
 
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
@@ -400,3 +403,6 @@ test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html
+
+mondo_obo:
+	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
