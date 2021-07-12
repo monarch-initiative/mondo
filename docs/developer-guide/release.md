@@ -27,13 +27,13 @@ The release mondo.owl will look like this in Protege:
 3. Wait for GitHub Actions/QC to pass
 4. Merge PR
 
-## Deploy Release 
+## Deploy Release
 7. `cp ~/.token .token`  
 8. `sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
 Note- the date should be the date of the release in the format sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release (for example, v2020-08-10)  (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
-7. Check these two release pages (make sure you replace the date correctly in the first link): 
+7. Check these two release pages (make sure you replace the date correctly in the first link):
     1. https://github.com/monarch-initiative/mondo/releases/tag/v2020-XX-XX
-    2. https://github.com/monarch-initiative/mondo/releases/tag/current 
+    2. https://github.com/monarch-initiative/mondo/releases/tag/current
     3. Both should: Ensure on both that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     4.  Ensure that both have all release artefacts attached to it
 7. When this is done, follow instructions for the change log
@@ -45,10 +45,10 @@ _Note: While the release is running, don't shut your laptop or switch between re
 ### Initial Setup:
 1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
     1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
-        1. right click and save as
-2. Move that file: mv [wherever I downloaded it, for example: /Users/vasilevs/bin/obo-simple-diff.pl] /usr/local/bin
-    1. mv  /Users/vasilevs/bin/obo-simple-diff.pl /usr/local/bin
-3. chmod 755 obo-simple-diff.pl 
+        1. right click and save as (and save in Downloads)
+2. Move the file:
+`mv Downloads/obo-simple-diff.pl ~/tools`
+3. `cchmod 755 ~/tools/obo-simple-diff.pl`
 
 ### Generate Change Log Workflow:
 1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
@@ -62,10 +62,9 @@ _Note: While the release is running, don't shut your laptop or switch between re
 ## Write a description of the release
 
 1. All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
-2. To add a description of the release: click edit, and in the 'describe this release' section add the content from the change log text file above. 
+2. To add a description of the release: click edit, and in the 'describe this release' section add the content from the change log text file above.
 3. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
 
-## Commit release files 
+## Commit release files
 
 8. Commit all of the changed import and report files (ignore or discard diff files, change log)
-
