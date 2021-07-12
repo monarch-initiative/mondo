@@ -39,7 +39,7 @@ For a video showing how to install Elk on a Mac, click [here](https://www.dropbo
   3. Copy and paste the two files into the plugins directory
   4. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu.
 
- Important: it seems Elk 0.5. Does not work with all versions of Protege, in particular, 5.2 and below. These instructions were only tested with Protege 5.5.
+ Important: it seems Elk 0.5 does not work with all versions of Protege, in particular, 5.2 and below. These instructions were only tested with Protege 5.5.
 
  ### Remove the old Elk Reasoner
  It may be necessary to remove the old Elk reasoner.
