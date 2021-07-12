@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-06-01/imports/chebi_import.owl
+data-version: mondo/releases/2021-07-12/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -1310,7 +1310,7 @@ relationship: RO:0000087 CHEBI:84735 ! algal metabolite
 [Term]
 id: CHEBI:173085
 name: ferroptosis inducer
-def: "Any substance that induces or promotes the process of ferroptosis (a type of programmed cell death dependent on iron and characterized by the accumulation of lipid peroxides) in organisms." []
+def: "Any substance that induces or promotes ferroptosis (a type of programmed cell death dependent on iron and characterized by the accumulation of lipid peroxides) in organisms." []
 synonym: "ferroptosis inducers" RELATED []
 is_a: CHEBI:52206 ! biochemical role
 
@@ -7852,6 +7852,7 @@ synonym: "Tylenol" RELATED []
 is_a: CHEBI:22160 ! acetamides
 is_a: CHEBI:33853 ! phenols
 relationship: has_functional_parent CHEBI:17602 ! 4-aminophenol
+relationship: RO:0000087 CHEBI:173085 ! ferroptosis inducer
 relationship: RO:0000087 CHEBI:35475 ! non-steroidal anti-inflammatory drug
 relationship: RO:0000087 CHEBI:35481 ! non-narcotic analgesic
 relationship: RO:0000087 CHEBI:35493 ! antipyretic
@@ -11162,6 +11163,7 @@ name: sphingoid base(1+)
 def: "A cationic sphingoid obtained by protonation of the amino group of any 2-amino-1,3-dihydroxysphingoid base." []
 synonym: "2-amino-1,3-dihydroxysphingoid base(1+)" RELATED []
 synonym: "a sphingoid base" RELATED []
+is_a: CHEBI:35785 ! sphingoid
 is_a: CHEBI:83876 ! cationic sphingoid
 
 [Term]
