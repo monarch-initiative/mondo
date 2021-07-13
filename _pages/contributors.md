@@ -13,11 +13,13 @@ Mondo is developed by members of the [Monarch Initiative](https://monarchinitiat
 Name | Affiliation | GitHub
 --- | --- | ---
 [Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall)
-[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Oregon Health & Science University | [nicolevasilevsky](https://github.com/nicolevasilevsky)
+[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky)
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | Semanticly | [matentzn](https://github.com/matentzn)
+[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly)
-[Kalliopi Panoutsopoulou](https://orcid.org/0000-0002-5460-8025) | European Bioinformatics Institute | [kallia-p](https://github.com/kallia-p) 
+[Kalliopi Panoutsopoulou](https://orcid.org/0000-0002-5460-8025) | European Bioinformatics Institute | [kallia-p](https://github.com/kallia-p)
+[Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3)
 
 # Contributors
 
@@ -60,7 +62,7 @@ Kate Megquier | [Broad Institute](https://www.broadinstitute.org/) | [kmegquier]
 Moni Munoz-Torres | [Monarch Initiative](http://monarchinitiative.org/) | [monicacecilia](https://github.com/monicacecilia)
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
 David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://github.com/dosumis)
-Brooke Palus | [ClinGen](https://clinicalgenome.org/) | 
+Brooke Palus | [ClinGen](https://clinicalgenome.org/) |
 Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
 Ana Rath | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [ana-rath-orphanet](https://github.com/ana-rath-orphanet)
