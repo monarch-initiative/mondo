@@ -11,22 +11,24 @@ Sometimes a pull request will have a conflict with the base branch. These confli
 6. `git push -f`
 
 ### Rebase instructions using GitHub Desktop:
+
 _updated 2021-07-12_
-1. Master -> fetch pull
-2. Go to branch with conflict
-3. Pull branch
-4. Branch -> update from master
-5. Open in Sublime or Atom
-6. Make changes in file (open the mondo-edit.obo file in a text editor (like Sublime) and search for the conflicts. These are usually preceeded by <<<<<. Fix the conflicts, then save.)
-7. In GitHub Desktop, continue merge
-8. Push
-9. In terminal: `open mondo-edit.obo` (or open in Protege manually)
-10. Save as (nothing should have changed in the diff)
-11. Check the diff in GitHub online
 
-See additional documentation about what to do in case of a conflict here: [https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore)](https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore))
+1. Master -> fetch pull. 
+2. Go to branch with conflict. 
+3. Pull branch. 
+4. Branch -> update from master. 
+5. Open in Sublime or Atom. 
+6. Make changes in file (open the mondo-edit.obo file in a text editor (like Sublime) and search for the conflicts. These are usually preceeded by <<<<<. Fix the conflicts, then save). 
+7. In GitHub Desktop, continue merge. 
+8. Push. 
+9. In terminal: `open mondo-edit.obo` (or open in Protege manually). 
+10. Save as (nothing should have changed in the diff). 
+11. Check the diff in GitHub online. 
 
-Some examples of conflicts Nicole worked on are below:
+See additional documentation about what to do in case of a conflict here: [https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore)](https://github.com/AgileVentures/MetPlus_PETS/wiki/Developing-a-feature-(or-bug,-chore)). 
+
+Some examples of conflicts Nicole worked on are below:  
 
 ![Example1](images/FixGitHubConflicts/Slide1.jpeg)
 ![Example2](images/FixGitHubConflicts/Slide2.jpeg)
