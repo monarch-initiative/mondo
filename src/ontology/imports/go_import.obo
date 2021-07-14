@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-06-01/imports/go_import.owl
+data-version: mondo/releases/2021-07-12/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -30,7 +30,7 @@ id: GO:0000041
 name: transition metal ion transport
 def: "The directed movement of transition metal ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A transition metal is an element whose atom has an incomplete d-subshell of extranuclear electrons, or which gives rise to a cation or cations with an incomplete d-subshell. Transition metals often have more than one valency state. Biologically relevant transition metals include vanadium, manganese, iron, copper, cobalt, nickel, molybdenum and silver." []
 synonym: "transition metal transport" EXACT []
-is_a: GO:0006812 ! cation transport
+is_a: GO:0030001 ! metal ion transport
 
 [Term]
 id: GO:0000050
@@ -308,7 +308,7 @@ intersection_of: BFO:0000066 GO:0005739 ! occurs in mitochondrion
 [Term]
 id: GO:0000976
 name: transcription cis-regulatory region binding
-def: "Interacting selectively and non-covalently with a specific sequence of DNA that is part of a regulatory region that controls transcription of that section of the DNA. The transcribed region might be described as a gene, cistron, or operon." []
+def: "Binding to a specific sequence of DNA that is part of a regulatory region that controls transcription of that section of the DNA. The transcribed region might be described as a gene, cistron, or operon." []
 synonym: "regulatory region DNA binding" BROAD []
 synonym: "transcription regulatory region DNA binding" RELATED []
 synonym: "transcription regulatory region sequence-specific DNA binding" EXACT []
@@ -318,7 +318,7 @@ is_a: GO:1990837 ! sequence-specific double-stranded DNA binding
 [Term]
 id: GO:0000977
 name: RNA polymerase II transcription regulatory region sequence-specific DNA binding
-def: "Interacting selectively and non-covalently with a specific sequence of DNA that is part of a regulatory region that controls the transcription of a gene or cistron by RNA polymerase II." []
+def: "Binding to a specific sequence of DNA that is part of a regulatory region that controls the transcription of a gene or cistron by RNA polymerase II." []
 synonym: "RNA polymerase II regulatory region DNA binding" RELATED []
 is_a: GO:0000976 ! transcription cis-regulatory region binding
 
@@ -359,7 +359,7 @@ relationship: BFO:0000066 GO:0000785 ! occurs in chromatin
 [Term]
 id: GO:0000988
 name: obsolete transcription factor activity, protein binding
-def: "OBSOLETE. Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules), in order to modulate transcription. A protein binding transcription factor may or may not also interact with the template nucleic acid (either DNA or RNA) as well." []
+def: "OBSOLETE. Binding to a protein or protein complex, to modulate transcription. A protein binding transcription factor may or may not also interact with the template nucleic acid (either DNA or RNA) as well." []
 synonym: "protein binding transcription factor activity" EXACT []
 synonym: "transcription factor activity" BROAD []
 is_obsolete: true
@@ -374,7 +374,7 @@ replaced_by: GO:0000977
 [Term]
 id: GO:0001067
 name: transcription regulatory region nucleic acid binding
-def: "Interacting selectively and non-covalently with a nucleic acid region that regulates a nucleic acid-based process. Such processes include transcription, DNA replication, and DNA repair." []
+def: "Binding to a nucleic acid region that regulates a nucleic acid-based process. Such processes include transcription, DNA replication, and DNA repair." []
 synonym: "regulatory region nucleic acid binding" RELATED []
 is_a: GO:0003676 ! nucleic acid binding
 
@@ -567,11 +567,7 @@ id: GO:0001671
 name: ATPase activator activity
 def: "Binds to and increases the activity of an ATP hydrolysis activity." []
 synonym: "ATPase stimulator activity" EXACT []
-is_a: GO:0008047 ! enzyme activator activity
-is_a: GO:0060590 ! ATPase regulator activity
-intersection_of: GO:0098772 ! molecular function regulator
-intersection_of: RO:0002213 GO:0140603 ! positively regulates ATP hydrolysis activity
-relationship: RO:0002213 GO:0140603 ! positively regulates ATP hydrolysis activity
+is_a: GO:0098772 ! molecular function regulator
 
 [Term]
 id: GO:0001675
@@ -889,7 +885,7 @@ relationship: BFO:0000050 GO:0014020 ! part of primary neural tube formation
 [Term]
 id: GO:0001848
 name: complement binding
-def: "Interacting selectively and non-covalently with any component or product of the complement cascade." []
+def: "Binding to a component or product of the complement cascade." []
 is_a: GO:0005515 ! protein binding
 
 [Term]
@@ -1157,7 +1153,7 @@ relationship: BFO:0000050 GO:0060429 ! part of epithelium development
 [Term]
 id: GO:0002020
 name: protease binding
-def: "Interacting selectively and non-covalently with any protease or peptidase." []
+def: "Binding to a protease or a peptidase." []
 is_a: GO:0019899 ! enzyme binding
 
 [Term]
@@ -3397,7 +3393,7 @@ relationship: RO:0002213 GO:0006959 ! positively regulates humoral immune respon
 [Term]
 id: GO:0003006
 name: developmental process involved in reproduction
-def: "A developmental process in which a progressive change in the state of some part of an organism specifically contributes to its ability to form offspring." []
+def: "A developmental process in which a progressive change in the state of some part of an organism, germline or somatic, specifically contributes to its ability to form offspring." []
 synonym: "puberty" NARROW []
 synonym: "reproductive developmental process" RELATED []
 is_a: GO:0022414 ! reproductive process
@@ -3555,7 +3551,7 @@ synonym: "molecular function" EXACT []
 [Term]
 id: GO:0003676
 name: nucleic acid binding
-def: "Interacting selectively and non-covalently with any nucleic acid." []
+def: "Binding to a nucleic acid." []
 synonym: "base pairing" NARROW []
 is_a: GO:0097159 ! organic cyclic compound binding
 is_a: GO:1901363 ! heterocyclic compound binding
@@ -3573,7 +3569,7 @@ is_a: GO:0003676 ! nucleic acid binding
 [Term]
 id: GO:0003690
 name: double-stranded DNA binding
-def: "Interacting selectively and non-covalently with double-stranded DNA." []
+def: "Binding to double-stranded DNA." []
 synonym: "dsDNA binding" EXACT []
 is_a: GO:0003677 ! DNA binding
 
@@ -3614,7 +3610,7 @@ relationship: BFO:0000050 GO:0043401 ! part of steroid hormone mediated signalin
 [Term]
 id: GO:0003723
 name: RNA binding
-def: "Interacting selectively and non-covalently with an RNA molecule or a portion thereof." []
+def: "Binding to an RNA molecule or a portion thereof." []
 synonym: "base pairing with RNA" NARROW []
 synonym: "poly(A) RNA binding" RELATED []
 synonym: "poly(A)-RNA binding" RELATED []
@@ -3849,12 +3845,12 @@ is_a: GO:0008233 ! peptidase activity
 [Term]
 id: GO:0004176
 name: ATP-dependent peptidase activity
-def: "Catalysis of the reaction: ATP + H2O = ADP + phosphate, to drive the hydrolysis of peptide bonds." []
+def: "Catalysis of the hydrolysis of peptide bonds, driven by ATP hydrolysis." []
 synonym: "ATP-dependent proteolysis" RELATED []
 is_a: GO:0008233 ! peptidase activity
-is_a: GO:0016887 ! ATPase
+is_a: GO:0140657 ! ATP-dependent activity
 intersection_of: GO:0008233 ! peptidase activity
-intersection_of: BFO:0000051 GO:0140603 ! has part ATP hydrolysis activity
+intersection_of: BFO:0000051 GO:0016887 ! has part ATP hydrolysis activity
 
 [Term]
 id: GO:0004177
@@ -4499,8 +4495,8 @@ id: GO:0004857
 name: enzyme inhibitor activity
 def: "Binds to and stops, prevents or reduces the activity of an enzyme." []
 synonym: "metalloenzyme inhibitor activity" NARROW []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0030234 ! enzyme regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002212 GO:0003824 ! negatively regulates catalytic activity
 relationship: BFO:0000050 GO:0043086 ! part of negative regulation of catalytic activity
 relationship: RO:0002212 GO:0003824 ! negatively regulates catalytic activity
@@ -4648,7 +4644,7 @@ is_a: GO:0099094 ! ligand-gated cation channel activity
 [Term]
 id: GO:0005102
 name: signaling receptor binding
-def: "Interacting selectively and non-covalently with one or more specific sites on a receptor molecule, a macromolecule that undergoes combination with a hormone, neurotransmitter, drug or intracellular messenger to initiate a change in cell function." []
+def: "Binding to one or more specific sites on a receptor molecule, a macromolecule that undergoes combination with a hormone, neurotransmitter, drug or intracellular messenger to initiate a change in cell function." []
 synonym: "receptor binding" BROAD []
 synonym: "receptor ligand" NARROW []
 synonym: "receptor-associated protein activity" RELATED []
@@ -4739,7 +4735,7 @@ id: GO:0005246
 name: calcium channel regulator activity
 def: "Modulates the activity of a calcium channel." []
 is_a: GO:0099106 ! ion channel regulator activity
-intersection_of: GO:0003674 ! molecular_function
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002211 GO:0005262 ! regulates calcium channel activity
 relationship: RO:0002211 GO:0005262 ! regulates calcium channel activity
 
@@ -4800,20 +4796,20 @@ is_a: GO:0003674 ! molecular_function
 [Term]
 id: GO:0005496
 name: steroid binding
-def: "Interacting selectively and non-covalently with a steroid, any of a large group of substances that have in common a ring system based on 1,2-cyclopentanoperhydrophenanthrene." []
+def: "Binding to a steroid, any of a large group of substances that have in common a ring system based on 1,2-cyclopentanoperhydrophenanthrene." []
 is_a: GO:0008289 ! lipid binding
 is_a: GO:0097159 ! organic cyclic compound binding
 
 [Term]
 id: GO:0005497
 name: androgen binding
-def: "Interacting selectively and non-covalently with any androgen, male sex hormones." []
+def: "Binding to an androgen, a male sex hormone." []
 is_a: GO:0042562 ! hormone binding
 
 [Term]
 id: GO:0005499
 name: vitamin D binding
-def: "Interacting selectively and non-covalently with vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
+def: "Binding to vitamin D, any of a group of related, fat-soluble compounds that are derived from delta-5,7 steroids and play a central role in calcium metabolism. Specific forms of vitamin D include calciferol (ergocalciferol; vitamin D2) and cholecalciferol (calciol; vitamin D3)." []
 synonym: "calciferol binding" NARROW []
 synonym: "cholecalciferol binding" NARROW []
 synonym: "ergocalciferol binding" NARROW []
@@ -4823,7 +4819,7 @@ is_a: GO:0019842 ! vitamin binding
 [Term]
 id: GO:0005515
 name: protein binding
-def: "Interacting selectively and non-covalently with any protein or protein complex (a complex of two or more proteins that may include other nonprotein molecules)." []
+def: "Binding to a protein." []
 synonym: "glycoprotein binding" NARROW []
 synonym: "protein amino acid binding" EXACT []
 is_a: GO:0005488 ! binding
@@ -4831,7 +4827,7 @@ is_a: GO:0005488 ! binding
 [Term]
 id: GO:0005518
 name: collagen binding
-def: "Interacting selectively and non-covalently with collagen, a group of fibrous proteins of very high tensile strength that form the main component of connective tissue in animals. Collagen is highly enriched in glycine (some regions are 33% glycine) and proline, occurring predominantly as 3-hydroxyproline (about 20%)." []
+def: "Binding to collagen, a group of fibrous proteins of very high tensile strength that form the main component of connective tissue in animals. Collagen is highly enriched in glycine (some regions are 33% glycine) and proline, occurring predominantly as 3-hydroxyproline (about 20%)." []
 is_a: GO:0044877 ! protein-containing complex binding
 
 [Term]
@@ -5006,7 +5002,7 @@ relationship: BFO:0000050 GO:0031981 ! part of nuclear lumen
 [Term]
 id: GO:0005737
 name: cytoplasm
-def: "All of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." []
+def: "The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." []
 is_a: GO:0110165 ! cellular anatomical entity
 relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
@@ -6017,7 +6013,6 @@ synonym: "L-serine biosynthesis" EXACT []
 synonym: "L-serine formation" EXACT []
 synonym: "L-serine synthesis" EXACT []
 is_a: GO:0006563 ! L-serine metabolic process
-is_a: GO:0008652 ! cellular amino acid biosynthetic process
 is_a: GO:0009070 ! serine family amino acid biosynthetic process
 
 [Term]
@@ -7637,8 +7632,8 @@ id: GO:0008047
 name: enzyme activator activity
 def: "Binds to and increases the activity of an enzyme." []
 synonym: "metalloenzyme activator activity" NARROW []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0030234 ! enzyme regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002213 GO:0003824 ! positively regulates catalytic activity
 relationship: RO:0002213 GO:0003824 ! positively regulates catalytic activity
 
@@ -7682,7 +7677,7 @@ is_a: GO:0008757 ! S-adenosylmethionine-dependent methyltransferase activity
 [Term]
 id: GO:0008144
 name: drug binding
-def: "Interacting selectively and non-covalently with a drug, any naturally occurring or synthetic substance, other than a nutrient, that, when administered or applied to an organism, affects the structure or functioning of the organism; in particular, any such substance used in the diagnosis, prevention, or treatment of disease." []
+def: "Binding to a drug, a naturally occurring or synthetic substance, other than a nutrient, that, when administered or applied to an organism, affects the structure or functioning of the organism;typically used in the diagnosis, prevention, or treatment of disease." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -7727,7 +7722,7 @@ is_a: GO:0016248 ! channel inhibitor activity
 is_a: GO:0099106 ! ion channel regulator activity
 intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002212 GO:0005216 ! negatively regulates ion channel activity
-relationship: BFO:0000051 GO:0044325 ! has part ion channel binding
+relationship: BFO:0000051 GO:0044325 ! has part transmembrane transporter binding
 relationship: RO:0002212 GO:0005216 ! negatively regulates ion channel activity
 
 [Term]
@@ -7749,7 +7744,7 @@ is_a: GO:1902652 ! secondary alcohol metabolic process
 [Term]
 id: GO:0008206
 name: bile acid metabolic process
-def: "The chemical reactions and pathways involving bile acids, any of a group of steroid carboxylic acids occurring in bile, where they are present as the sodium salts of their amides with glycine or taurine." []
+def: "The chemical reactions and pathways involving bile acids, a group of steroid carboxylic acids occurring in bile, where they are present as the sodium salts of their amides with glycine or taurine." []
 synonym: "bile acid metabolism" EXACT []
 is_a: GO:0008202 ! steroid metabolic process
 is_a: GO:0032787 ! monocarboxylic acid metabolic process
@@ -7862,7 +7857,7 @@ relationship: RO:0002212 GO:0008283 ! negatively regulates cell population proli
 [Term]
 id: GO:0008289
 name: lipid binding
-def: "Interacting selectively and non-covalently with a lipid." []
+def: "Binding to a lipid." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -7987,7 +7982,7 @@ is_a: GO:0016769 ! transferase activity, transferring nitrogenous groups
 [Term]
 id: GO:0008484
 name: sulfuric ester hydrolase activity
-def: "Catalysis of the reaction: RSO-R' + H2O = RSOOH + R'H. This reaction is the hydrolysis of any sulfuric ester bond, any ester formed from sulfuric acid, O=SO(OH)2." []
+def: "Catalysis of the reaction: RSO-R' + H2O = RSOOH + R'H. This reaction is the hydrolysis of a sulfuric ester bond, an ester formed from sulfuric acid, O=SO(OH)2." []
 synonym: "sulfatase activity" EXACT []
 synonym: "sulphuric ester hydrolase activity" EXACT []
 is_a: GO:0016788 ! hydrolase activity, acting on ester bonds
@@ -8061,14 +8056,14 @@ is_a: GO:1901615 ! organic hydroxy compound metabolic process
 [Term]
 id: GO:0008643
 name: carbohydrate transport
-def: "The directed movement of carbohydrate into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Carbohydrates are any of a group of organic compounds based of the general formula Cx(H2O)y." []
+def: "The directed movement of carbohydrate into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Carbohydrates are a group of organic compounds based of the general formula Cx(H2O)y." []
 synonym: "sugar transport" NARROW []
 is_a: GO:0071702 ! organic substance transport
 
 [Term]
 id: GO:0008645
 name: hexose transmembrane transport
-def: "The process in which hexose is transported across a membrane. Hexoses are any aldoses with a chain of six carbon atoms in the molecule." []
+def: "The process in which hexose is transported across a membrane. Hexoses are aldoses with a chain of six carbon atoms in the molecule." []
 synonym: "hexose membrane transport" RELATED []
 synonym: "hexose transport" RELATED []
 synonym: "high-affinity hexose transport" NARROW []
@@ -8091,7 +8086,7 @@ is_a: GO:1901566 ! organonitrogen compound biosynthetic process
 [Term]
 id: GO:0008654
 name: phospholipid biosynthetic process
-def: "The chemical reactions and pathways resulting in the formation of phospholipids, any lipid containing phosphoric acid as a mono- or diester." []
+def: "The chemical reactions and pathways resulting in the formation of a phospholipid, a lipid containing phosphoric acid as a mono- or diester." []
 synonym: "phospholipid anabolism" EXACT []
 synonym: "phospholipid biosynthesis" EXACT []
 synonym: "phospholipid formation" EXACT []
@@ -8221,10 +8216,9 @@ id: GO:0009072
 name: aromatic amino acid family metabolic process
 def: "The chemical reactions and pathways involving aromatic amino acid family, amino acids with aromatic ring (phenylalanine, tyrosine, tryptophan)." []
 synonym: "aromatic amino acid family metabolism" EXACT []
-is_a: GO:0006082 ! organic acid metabolic process
+is_a: GO:0006520 ! cellular amino acid metabolic process
 is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
-is_a: GO:1901564 ! organonitrogen compound metabolic process
 
 [Term]
 id: GO:0009074
@@ -8244,8 +8238,7 @@ id: GO:0009081
 name: branched-chain amino acid metabolic process
 def: "The chemical reactions and pathways involving amino acids containing a branched carbon skeleton, comprising isoleucine, leucine and valine." []
 synonym: "branched chain family amino acid metabolism" EXACT []
-is_a: GO:0006082 ! organic acid metabolic process
-is_a: GO:1901564 ! organonitrogen compound metabolic process
+is_a: GO:0006520 ! cellular amino acid metabolic process
 
 [Term]
 id: GO:0009087
@@ -8262,7 +8255,7 @@ is_a: GO:0009068 ! aspartate family amino acid catabolic process
 [Term]
 id: GO:0009100
 name: glycoprotein metabolic process
-def: "The chemical reactions and pathways involving glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
+def: "The chemical reactions and pathways involving glycoproteins, a protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
 synonym: "glycoprotein metabolism" EXACT []
 is_a: GO:0019538 ! protein metabolic process
 is_a: GO:0044260 ! cellular macromolecule metabolic process
@@ -8271,7 +8264,7 @@ is_a: GO:1901135 ! carbohydrate derivative metabolic process
 [Term]
 id: GO:0009101
 name: glycoprotein biosynthetic process
-def: "The chemical reactions and pathways resulting in the formation of glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
+def: "The chemical reactions and pathways resulting in the formation of glycoproteins, a protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
 synonym: "glycoprotein anabolism" EXACT []
 synonym: "glycoprotein biosynthesis" EXACT []
 synonym: "glycoprotein formation" EXACT []
@@ -9335,7 +9328,7 @@ relationship: RO:0002212 GO:0009059 ! negatively regulates macromolecule biosynt
 [Term]
 id: GO:0010559
 name: regulation of glycoprotein biosynthetic process
-def: "Any process that modulates the rate, frequency, or extent of the chemical reactions and pathways resulting in the formation of glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
+def: "Any process that modulates the rate, frequency, or extent of the chemical reactions and pathways resulting in the formation of a glycoprotein, a protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
 is_a: GO:1903018 ! regulation of glycoprotein metabolic process
 is_a: GO:2000112 ! regulation of cellular macromolecule biosynthetic process
 intersection_of: GO:0065007 ! biological regulation
@@ -9345,7 +9338,7 @@ relationship: RO:0002211 GO:0009101 ! regulates glycoprotein biosynthetic proces
 [Term]
 id: GO:0010560
 name: positive regulation of glycoprotein biosynthetic process
-def: "Any process that increases the rate, frequency, or extent of the chemical reactions and pathways resulting in the formation of glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
+def: "Any process that increases the rate, frequency, or extent of the chemical reactions and pathways resulting in the formation of a glycoprotein, a protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
 is_a: GO:0010557 ! positive regulation of macromolecule biosynthetic process
 is_a: GO:0010559 ! regulation of glycoprotein biosynthetic process
 is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
@@ -9357,7 +9350,7 @@ relationship: RO:0002213 GO:0009101 ! positively regulates glycoprotein biosynth
 [Term]
 id: GO:0010561
 name: negative regulation of glycoprotein biosynthetic process
-def: "Any process that decreases the rate, frequency, or extent of the chemical reactions and pathways resulting in the formation of glycoproteins, any protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
+def: "Any process that decreases the rate, frequency, or extent of the chemical reactions and pathways resulting in the formation of a glycoprotein, a protein that contains covalently bound glycose (i.e. monosaccharide) residues; the glycose occurs most commonly as oligosaccharide or fairly small polysaccharide but occasionally as monosaccharide." []
 is_a: GO:0010559 ! regulation of glycoprotein biosynthetic process
 is_a: GO:1903019 ! negative regulation of glycoprotein metabolic process
 is_a: GO:2000113 ! negative regulation of cellular macromolecule biosynthetic process
@@ -9829,6 +9822,16 @@ is_a: GO:0010889 ! regulation of sequestering of triglyceride
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0030730 ! negatively regulates sequestering of triglyceride
 relationship: RO:0002212 GO:0030730 ! negatively regulates sequestering of triglyceride
+
+[Term]
+id: GO:0010892
+name: positive regulation of mitochondrial translation in response to stress
+def: "Any process that activates or increases the frequency, rate or extent of mitochondrial translation as a result of a stimulus indicating the organism is under stress." []
+is_a: GO:0032056 ! positive regulation of translation in response to stress
+is_a: GO:0070131 ! positive regulation of mitochondrial translation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002213 GO:0032543 ! positively regulates mitochondrial translation
 
 [Term]
 id: GO:0010893
@@ -11109,7 +11112,7 @@ relationship: BFO:0000050 GO:0006915 ! part of apoptotic process
 [Term]
 id: GO:0016595
 name: glutamate binding
-def: "Interacting selectively and non-covalently with glutamate, the anion of 2-aminopentanedioic acid." []
+def: "Binding to glutamate, the anion of 2-aminopentanedioic acid." []
 synonym: "glutamic acid binding" EXACT []
 is_a: GO:0016597 ! amino acid binding
 is_a: GO:0031406 ! carboxylic acid binding
@@ -11117,7 +11120,7 @@ is_a: GO:0031406 ! carboxylic acid binding
 [Term]
 id: GO:0016597
 name: amino acid binding
-def: "Interacting selectively and non-covalently with an amino acid, organic acids containing one or more amino substituents." []
+def: "Binding to an amino acid, organic acids containing one or more amino substituents." []
 is_a: GO:0043177 ! organic acid binding
 
 [Term]
@@ -11537,13 +11540,17 @@ is_a: GO:0016874 ! ligase activity
 
 [Term]
 id: GO:0016887
-name: ATPase
-def: "A molecular function characterized by the use of ATP hydrolysis as an energy source, for example to catalyze a reaction or drive transport against a concentration gradient." []
-synonym: "ATPase activity, coupled" RELATED []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
-intersection_of: BFO:0000051 GO:0140603 ! has part ATP hydrolysis activity
-relationship: BFO:0000051 GO:0140603 ! has part ATP hydrolysis activity
+name: ATP hydrolysis activity
+def: "Catalysis of the reaction: ATP + H2O = ADP + H+ Pi. ATP hydrolysis is used in some reactions as an energy source, for example to catalyze a reaction or drive transport against a concentration gradient." []
+synonym: "adenosine 5'-triphosphatase activity" EXACT []
+synonym: "adenosine triphosphatase activity" EXACT []
+synonym: "adenosinetriphosphatase activity" EXACT []
+synonym: "ATP hydrolase activity" EXACT []
+synonym: "ATP monophosphatase activity" RELATED []
+synonym: "ATP phosphohydrolase activity" EXACT []
+synonym: "ATPase" BROAD []
+is_a: GO:0017111 ! nucleoside-triphosphatase activity
+relationship: BFO:0000050 GO:0140657 ! part of ATP-dependent activity
 
 [Term]
 id: GO:0016903
@@ -11722,6 +11729,7 @@ is_a: GO:1901615 ! organic hydroxy compound metabolic process
 id: GO:0019098
 name: reproductive behavior
 def: "The specific behavior of an organism that is associated with reproduction." []
+synonym: "multi-organism reproductive behavior" NARROW []
 synonym: "multicellular organism reproductive behavior" NARROW []
 synonym: "reproductive behavior in a multicellular organism" EXACT []
 synonym: "reproductive behaviour" EXACT []
@@ -11763,8 +11771,8 @@ is_a: GO:0016791 ! phosphatase activity
 id: GO:0019207
 name: kinase regulator activity
 def: "Modulates the activity of a kinase, an enzyme which catalyzes of the transfer of a phosphate group, usually from ATP, to a substrate molecule." []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0030234 ! enzyme regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002211 GO:0016301 ! regulates kinase activity
 relationship: RO:0002211 GO:0016301 ! regulates kinase activity
 
@@ -11784,7 +11792,7 @@ name: kinase activator activity
 def: "Binds to and increases the activity of a kinase, an enzyme which catalyzes of the transfer of a phosphate group, usually from ATP, to a substrate molecule." []
 is_a: GO:0008047 ! enzyme activator activity
 is_a: GO:0019207 ! kinase regulator activity
-intersection_of: GO:0003674 ! molecular_function
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002213 GO:0016301 ! positively regulates kinase activity
 relationship: BFO:0000050 GO:0033674 ! part of positive regulation of kinase activity
 relationship: RO:0002213 GO:0016301 ! positively regulates kinase activity
@@ -11795,7 +11803,7 @@ name: kinase inhibitor activity
 def: "Binds to and stops, prevents or reduces the activity of a kinase." []
 is_a: GO:0004857 ! enzyme inhibitor activity
 is_a: GO:0019207 ! kinase regulator activity
-intersection_of: GO:0003674 ! molecular_function
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002212 GO:0016301 ! negatively regulates kinase activity
 relationship: RO:0002212 GO:0016301 ! negatively regulates kinase activity
 
@@ -11804,7 +11812,8 @@ id: GO:0019211
 name: phosphatase activator activity
 def: "Binds to and increases the activity of a phosphatase, an enzyme which catalyzes of the removal of a phosphate group from a substrate molecule." []
 is_a: GO:0008047 ! enzyme activator activity
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0019208 ! phosphatase regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002213 GO:0016791 ! positively regulates phosphatase activity
 relationship: RO:0002213 GO:0016791 ! positively regulates phosphatase activity
 
@@ -12148,7 +12157,7 @@ is_a: GO:0098802 ! plasma membrane signaling receptor complex
 [Term]
 id: GO:0019842
 name: vitamin binding
-def: "Interacting selectively and non-covalently with a vitamin, one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
+def: "Binding to a vitamin, one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
 is_a: GO:0036094 ! small molecule binding
 
 [Term]
@@ -12226,25 +12235,25 @@ is_a: GO:0042558 ! pteridine-containing compound metabolic process
 [Term]
 id: GO:0019899
 name: enzyme binding
-def: "Interacting selectively and non-covalently with any enzyme." []
+def: "Binding to an enzyme, a protein with catalytic activity." []
 is_a: GO:0005515 ! protein binding
 
 [Term]
 id: GO:0019900
 name: kinase binding
-def: "Interacting selectively and non-covalently with a kinase, any enzyme that catalyzes the transfer of a phosphate group." []
+def: "Binding to a kinase, any enzyme that catalyzes the transfer of a phosphate group." []
 is_a: GO:0019899 ! enzyme binding
 
 [Term]
 id: GO:0019901
 name: protein kinase binding
-def: "Interacting selectively and non-covalently with a protein kinase, any enzyme that catalyzes the transfer of a phosphate group, usually from ATP, to a protein substrate." []
+def: "Binding to a protein kinase, any enzyme that catalyzes the transfer of a phosphate group, usually from ATP, to a protein substrate." []
 is_a: GO:0019900 ! kinase binding
 
 [Term]
 id: GO:0019902
 name: phosphatase binding
-def: "Interacting selectively and non-covalently with any phosphatase." []
+def: "Binding to a phosphatase." []
 is_a: GO:0019899 ! enzyme binding
 
 [Term]
@@ -12272,7 +12281,7 @@ is_a: GO:0044703 ! multi-organism reproductive process
 [Term]
 id: GO:0019955
 name: cytokine binding
-def: "Interacting selectively and non-covalently with a cytokine, any of a group of proteins that function to control the survival, growth and differentiation of tissues and cells, and which have autocrine and paracrine activity." []
+def: "Binding to a cytokine, any of a group of proteins that function to control the survival, growth and differentiation of tissues and cells, and which have autocrine and paracrine activity." []
 synonym: "IL binding" NARROW []
 synonym: "interleukin binding" NARROW []
 is_a: GO:0005515 ! protein binding
@@ -13268,8 +13277,8 @@ name: signaling receptor activator activity
 def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is increased." []
 synonym: "receptor activator activity" BROAD []
 synonym: "signalling receptor activator activity" EXACT []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0030545 ! signaling receptor regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002213 GO:0038023 ! positively regulates signaling receptor activity
 relationship: RO:0002213 GO:0038023 ! positively regulates signaling receptor activity
 
@@ -13322,8 +13331,7 @@ id: GO:0030659
 name: cytoplasmic vesicle membrane
 def: "The lipid bilayer surrounding a cytoplasmic vesicle." []
 is_a: GO:0012506 ! vesicle membrane
-is_a: GO:0043229 ! intracellular organelle
-intersection_of: GO:0043226 ! organelle
+intersection_of: GO:0016020 ! membrane
 intersection_of: BFO:0000050 GO:0031410 ! part of cytoplasmic vesicle
 relationship: BFO:0000050 GO:0031410 ! part of cytoplasmic vesicle
 
@@ -13436,7 +13444,6 @@ synonym: "regulation of nucleotide breakdown" EXACT []
 synonym: "regulation of nucleotide catabolism" EXACT []
 synonym: "regulation of nucleotide degradation" EXACT []
 is_a: GO:0006140 ! regulation of nucleotide metabolic process
-is_a: GO:0031326 ! regulation of cellular biosynthetic process
 is_a: GO:0031329 ! regulation of cellular catabolic process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0009166 ! regulates nucleotide catabolic process
@@ -13454,7 +13461,6 @@ synonym: "negative regulation of nucleotide breakdown" EXACT []
 synonym: "negative regulation of nucleotide catabolism" EXACT []
 synonym: "negative regulation of nucleotide degradation" EXACT []
 is_a: GO:0030811 ! regulation of nucleotide catabolic process
-is_a: GO:0031327 ! negative regulation of cellular biosynthetic process
 is_a: GO:0031330 ! negative regulation of cellular catabolic process
 is_a: GO:0045980 ! negative regulation of nucleotide metabolic process
 intersection_of: GO:0065007 ! biological regulation
@@ -13474,7 +13480,6 @@ synonym: "up regulation of nucleotide catabolic process" EXACT []
 synonym: "up-regulation of nucleotide catabolic process" EXACT []
 synonym: "upregulation of nucleotide catabolic process" EXACT []
 is_a: GO:0030811 ! regulation of nucleotide catabolic process
-is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
 is_a: GO:0031331 ! positive regulation of cellular catabolic process
 is_a: GO:0045981 ! positive regulation of nucleotide metabolic process
 intersection_of: GO:0065007 ! biological regulation
@@ -14171,7 +14176,7 @@ relationship: RO:0002213 GO:0006464 ! positively regulates cellular protein modi
 [Term]
 id: GO:0031406
 name: carboxylic acid binding
-def: "Interacting selectively and non-covalently with a carboxylic acid, any organic acid containing one or more carboxyl (COOH) groups or anions (COO-)." []
+def: "Binding to a carboxylic acid, an organic acid containing one or more carboxyl (COOH) groups or anions (COO-)." []
 is_a: GO:0043168 ! anion binding
 
 [Term]
@@ -14504,6 +14509,64 @@ intersection_of: GO:0006259 ! DNA metabolic process
 intersection_of: BFO:0000066 GO:0005739 ! occurs in mitochondrion
 relationship: BFO:0000050 GO:0000002 ! part of mitochondrial genome maintenance
 relationship: BFO:0000066 GO:0005739 ! occurs in mitochondrion
+
+[Term]
+id: GO:0032055
+name: negative regulation of translation in response to stress
+def: "Any process that stops, prevents or reduces the rate of translation as a result of a stimulus indicating the organism is under stress." []
+synonym: "down regulation of translation in response to stress" EXACT []
+synonym: "down-regulation of translation in response to stress" EXACT []
+synonym: "downregulation of translation in response to stress" EXACT []
+synonym: "inhibition of translation in response to stress" NARROW []
+is_a: GO:0017148 ! negative regulation of translation
+is_a: GO:0043555 ! regulation of translation in response to stress
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002212 GO:0006412 ! negatively regulates translation
+
+[Term]
+id: GO:0032056
+name: positive regulation of translation in response to stress
+def: "Any process that activates or increases the frequency, rate or extent of translation as a result of a stimulus indicating the organism is under stress." []
+synonym: "activation of translation in response to stress" NARROW []
+synonym: "stimulation of translation in response to stress" NARROW []
+synonym: "up regulation of translation in response to stress" EXACT []
+synonym: "up-regulation of translation in response to stress" EXACT []
+synonym: "upregulation of translation in response to stress" EXACT []
+is_a: GO:0043555 ! regulation of translation in response to stress
+is_a: GO:0045727 ! positive regulation of translation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002213 GO:0006412 ! positively regulates translation
+
+[Term]
+id: GO:0032057
+name: negative regulation of translational initiation in response to stress
+def: "Any process that stops, prevents or reduces the rate of translation initiation as a result of a stimulus indicating the organism is under stress." []
+synonym: "down regulation of translation initiation in response to stress" EXACT []
+synonym: "down-regulation of translation initiation in response to stress" EXACT []
+synonym: "downregulation of translation initiation in response to stress" EXACT []
+synonym: "inhibition of translation initiation in response to stress" NARROW []
+is_a: GO:0045947 ! negative regulation of translational initiation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0006950 ! part of response to stress
+intersection_of: RO:0002212 GO:0006413 ! negatively regulates translational initiation
+relationship: BFO:0000050 GO:0006950 ! part of response to stress
+
+[Term]
+id: GO:0032058
+name: positive regulation of translational initiation in response to stress
+def: "Any process that activates or increases the frequency, rate or extent of translation initiation as a result of a stimulus indicating the organism is under stress." []
+synonym: "activation of translation initiation in response to stress" NARROW []
+synonym: "stimulation of translation initiation in response to stress" NARROW []
+synonym: "up regulation of translation initiation in response to stress" EXACT []
+synonym: "up-regulation of translation initiation in response to stress" EXACT []
+synonym: "upregulation of translation initiation in response to stress" EXACT []
+is_a: GO:0045948 ! positive regulation of translational initiation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0006950 ! part of response to stress
+intersection_of: RO:0002213 GO:0006413 ! positively regulates translational initiation
+relationship: BFO:0000050 GO:0006950 ! part of response to stress
 
 [Term]
 id: GO:0032060
@@ -15220,10 +15283,10 @@ synonym: "downregulation of ATPase activity" EXACT []
 synonym: "inhibition of ATPase activity" NARROW []
 synonym: "negative regulation of adenosinetriphosphatase activity" EXACT []
 is_a: GO:0043462 ! regulation of ATPase activity
-is_a: GO:0044092 ! negative regulation of molecular function
+is_a: GO:0051346 ! negative regulation of hydrolase activity
 intersection_of: GO:0065007 ! biological regulation
-intersection_of: RO:0002212 GO:0016887 ! negatively regulates ATPase
-relationship: RO:0002212 GO:0016887 ! negatively regulates ATPase
+intersection_of: RO:0002212 GO:0016887 ! negatively regulates ATP hydrolysis activity
+relationship: RO:0002212 GO:0016887 ! negatively regulates ATP hydrolysis activity
 
 [Term]
 id: GO:0032781
@@ -15236,10 +15299,10 @@ synonym: "up regulation of ATPase activity" EXACT []
 synonym: "up-regulation of ATPase activity" EXACT []
 synonym: "upregulation of ATPase activity" EXACT []
 is_a: GO:0043462 ! regulation of ATPase activity
-is_a: GO:0044093 ! positive regulation of molecular function
+is_a: GO:0051345 ! positive regulation of hydrolase activity
 intersection_of: GO:0065007 ! biological regulation
-intersection_of: RO:0002213 GO:0016887 ! positively regulates ATPase
-relationship: RO:0002213 GO:0016887 ! positively regulates ATPase
+intersection_of: RO:0002213 GO:0016887 ! positively regulates ATP hydrolysis activity
+relationship: RO:0002213 GO:0016887 ! positively regulates ATP hydrolysis activity
 
 [Term]
 id: GO:0032787
@@ -16329,7 +16392,7 @@ synonym: "regulation of Fe transport" EXACT []
 synonym: "regulation of iron import" NARROW []
 synonym: "regulation of iron ion import" NARROW []
 synonym: "regulation of iron transport" EXACT []
-is_a: GO:0043269 ! regulation of ion transport
+is_a: GO:0010959 ! regulation of metal ion transport
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0006826 ! regulates iron ion transport
 relationship: RO:0002211 GO:0006826 ! regulates iron ion transport
@@ -16873,7 +16936,7 @@ is_obsolete: true
 [Term]
 id: GO:0036094
 name: small molecule binding
-def: "Interacting selectively and non-covalently with a small molecule, any low molecular weight, monomeric, non-encoded molecule." []
+def: "Binding to a small molecule, any low molecular weight, monomeric, non-encoded molecule." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -17055,11 +17118,7 @@ id: GO:0042030
 name: ATPase inhibitor activity
 def: "Binds to and stops, prevents or reduces an ATP hydrolysis activity." []
 synonym: "adenosinetriphosphatase inhibitor" EXACT []
-is_a: GO:0004857 ! enzyme inhibitor activity
-is_a: GO:0060590 ! ATPase regulator activity
-intersection_of: GO:0098772 ! molecular function regulator
-intersection_of: RO:0002212 GO:0140603 ! negatively regulates ATP hydrolysis activity
-relationship: RO:0002212 GO:0140603 ! negatively regulates ATP hydrolysis activity
+is_a: GO:0098772 ! molecular function regulator
 
 [Term]
 id: GO:0042060
@@ -17214,7 +17273,7 @@ is_a: GO:1901566 ! organonitrogen compound biosynthetic process
 [Term]
 id: GO:0042165
 name: neurotransmitter binding
-def: "Interacting selectively and non-covalently with a neurotransmitter, any chemical substance that is capable of transmitting (or inhibiting the transmission of) a nerve impulse from a neuron to another cell." []
+def: "Binding to a neurotransmitter, any chemical substance that is capable of transmitting (or inhibiting the transmission of) a nerve impulse from a neuron to another cell." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -17675,7 +17734,7 @@ is_a: GO:1901564 ! organonitrogen compound metabolic process
 [Term]
 id: GO:0042562
 name: hormone binding
-def: "Interacting selectively and non-covalently with any hormone, naturally occurring substances secreted by specialized cells that affect the metabolism or behavior of cells possessing functional receptors for the hormone. Hormones may be produced by the same, or different, cell as express the receptor." []
+def: "Binding to an hormone, a naturally occurring substance secreted by specialized cells that affect the metabolism or behavior of cells possessing functional receptors for the hormone. Hormones may be produced by the same, or different, cell as express the receptor." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -17762,9 +17821,9 @@ synonym: "hydrolase activity, acting on acid anhydrides, catalyzing transmembran
 synonym: "P-P-bond-hydrolysis-driven transmembrane transporter activity" BROAD []
 synonym: "P-P-bond-hydrolysis-driven transporter" BROAD []
 is_a: GO:0015399 ! primary active transmembrane transporter activity
-is_a: GO:0016887 ! ATPase
+is_a: GO:0140657 ! ATP-dependent activity
 intersection_of: GO:0015399 ! primary active transmembrane transporter activity
-intersection_of: BFO:0000051 GO:0140603 ! has part ATP hydrolysis activity
+intersection_of: BFO:0000051 GO:0016887 ! has part ATP hydrolysis activity
 
 [Term]
 id: GO:0042632
@@ -18321,14 +18380,14 @@ relationship: BFO:0000050 GO:0006412 ! part of translation
 [Term]
 id: GO:0043167
 name: ion binding
-def: "Interacting selectively and non-covalently with ions, charged atoms or groups of atoms." []
+def: "Binding to an ion, a charged atoms or groups of atoms." []
 synonym: "atom binding" RELATED []
 is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0043168
 name: anion binding
-def: "Interacting selectively and non-covalently with anions, charged atoms or groups of atoms with a net negative charge." []
+def: "Binding to an anion, a charged atom or group of atoms with a net negative charge." []
 is_a: GO:0043167 ! ion binding
 
 [Term]
@@ -18344,7 +18403,7 @@ is_a: GO:0071704 ! organic substance metabolic process
 [Term]
 id: GO:0043177
 name: organic acid binding
-def: "Interacting selectively and non-covalently with an organic acid, any acidic compound containing carbon in covalent linkage." []
+def: "Binding to an organic acid, any acidic compound containing carbon in covalent linkage." []
 is_a: GO:0036094 ! small molecule binding
 
 [Term]
@@ -18720,10 +18779,10 @@ id: GO:0043462
 name: regulation of ATPase activity
 def: "Any process that modulates the rate of ATP hydrolysis by an ATPase." []
 synonym: "regulation of adenosinetriphosphatase activity" EXACT []
-is_a: GO:0065009 ! regulation of molecular function
+is_a: GO:0051336 ! regulation of hydrolase activity
 intersection_of: GO:0065007 ! biological regulation
-intersection_of: RO:0002211 GO:0016887 ! regulates ATPase
-relationship: RO:0002211 GO:0016887 ! regulates ATPase
+intersection_of: RO:0002211 GO:0016887 ! regulates ATP hydrolysis activity
+relationship: RO:0002211 GO:0016887 ! regulates ATP hydrolysis activity
 
 [Term]
 id: GO:0043467
@@ -18791,9 +18850,31 @@ intersection_of: RO:0002211 GO:0016301 ! regulates kinase activity
 relationship: RO:0002211 GO:0016301 ! regulates kinase activity
 
 [Term]
+id: GO:0043555
+name: regulation of translation in response to stress
+def: "Modulation of the frequency, rate or extent of translation as a result of a stimulus indicating the organism is under stress. The stress is usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." []
+synonym: "translational stress response" EXACT []
+is_a: GO:0006417 ! regulation of translation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002211 GO:0006412 ! regulates translation
+relationship: BFO:0000050 GO:0033554 ! part of cellular response to stress
+
+[Term]
+id: GO:0043558
+name: regulation of translational initiation in response to stress
+def: "Any process that modulates the frequency, rate or extent of translation initiation, as a result of a stimulus indicating the organism is under stress." []
+synonym: "regulation of translation initiation in response to stress" EXACT []
+is_a: GO:0006446 ! regulation of translational initiation
+is_a: GO:0043555 ! regulation of translation in response to stress
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002211 GO:0006413 ! regulates translational initiation
+
+[Term]
 id: GO:0043565
 name: sequence-specific DNA binding
-def: "Interacting selectively and non-covalently with DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA e.g. promotor binding or rDNA binding." []
+def: "Binding to DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA e.g. promotor binding or rDNA binding." []
 synonym: "sequence specific DNA binding" EXACT []
 is_a: GO:0003677 ! DNA binding
 
@@ -18855,32 +18936,21 @@ is_a: GO:0016620 ! oxidoreductase activity, acting on the aldehyde or oxo group 
 
 [Term]
 id: GO:0043900
-name: regulation of multi-organism process
-def: "Any process that modulates the frequency, rate or extent of a multi-organism process, a process in which an organism has an effect on another organism of the same or different species." []
-is_a: GO:0050789 ! regulation of biological process
-intersection_of: GO:0065007 ! biological regulation
-intersection_of: RO:0002211 GO:0051704 ! regulates multi-organism process
-relationship: RO:0002211 GO:0051704 ! regulates multi-organism process
+name: obsolete regulation of multi-organism process
+def: "OBSOLETE. Any process that modulates the frequency, rate or extent of a multi-organism process, a process in which an organism has an effect on another organism of the same or different species." []
+is_obsolete: true
 
 [Term]
 id: GO:0043901
-name: negative regulation of multi-organism process
-def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a multi-organism process, a process in which an organism has an effect on another organism of the same or different species." []
-is_a: GO:0043900 ! regulation of multi-organism process
-is_a: GO:0048519 ! negative regulation of biological process
-intersection_of: GO:0065007 ! biological regulation
-intersection_of: RO:0002212 GO:0051704 ! negatively regulates multi-organism process
-relationship: RO:0002212 GO:0051704 ! negatively regulates multi-organism process
+name: obsolete negative regulation of multi-organism process
+def: "OBSOLETE. Any process that stops, prevents, or reduces the frequency, rate or extent of a multi-organism process, a process in which an organism has an effect on another organism of the same or different species." []
+is_obsolete: true
 
 [Term]
 id: GO:0043902
-name: positive regulation of multi-organism process
-def: "Any process that activates or increases the frequency, rate or extent of a multi-organism process, a process in which an organism has an effect on another organism of the same or different species." []
-is_a: GO:0043900 ! regulation of multi-organism process
-is_a: GO:0048518 ! positive regulation of biological process
-intersection_of: GO:0065007 ! biological regulation
-intersection_of: RO:0002213 GO:0051704 ! positively regulates multi-organism process
-relationship: RO:0002213 GO:0051704 ! positively regulates multi-organism process
+name: obsolete positive regulation of multi-organism process
+def: "OBSOLETE. Any process that activates or increases the frequency, rate or extent of a multi-organism process, a process in which an organism has an effect on another organism of the same or different species." []
+is_obsolete: true
 
 [Term]
 id: GO:0043903
@@ -19254,8 +19324,9 @@ is_a: GO:0044281 ! small molecule metabolic process
 
 [Term]
 id: GO:0044325
-name: ion channel binding
-def: "Interacting selectively and non-covalently with one or more specific sites on an ion channel, a protein complex that spans a membrane and forms a water-filled channel across the phospholipid bilayer allowing selective ion transport down its electrochemical gradient." []
+name: transmembrane transporter binding
+def: "Binding to a transmembrane transporter, a protein or protein complex that enables the transfer of a substance, usually a specific substance or a group of related substances, from one side of a membrane to the other." []
+synonym: "ion channel binding" NARROW []
 is_a: GO:0005515 ! protein binding
 
 [Term]
@@ -19581,7 +19652,7 @@ intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
 [Term]
 id: GO:0044877
 name: protein-containing complex binding
-def: "Interacting selectively and non-covalently with a macromolecular complex." []
+def: "Binding to a macromolecular complex." []
 synonym: "macromolecular complex binding" RELATED []
 synonym: "protein complex binding" EXACT []
 is_a: GO:0005488 ! binding
@@ -19860,6 +19931,7 @@ synonym: "NADH dehydrogenase complex (ubiquinone)" EXACT []
 synonym: "NADH-Q oxidoreductase complex" EXACT []
 is_a: GO:0030964 ! NADH dehydrogenase complex
 is_a: GO:0098803 ! respiratory chain complex
+is_a: GO:1902495 ! transmembrane transporter complex
 
 [Term]
 id: GO:0045272
@@ -19888,6 +19960,7 @@ synonym: "ubiquinol-cytochrome c oxidoreductase complex" EXACT []
 synonym: "ubiquinol-cytochrome-c reductase complex" EXACT []
 is_a: GO:0070069 ! cytochrome complex
 is_a: GO:0098803 ! respiratory chain complex
+is_a: GO:1902495 ! transmembrane transporter complex
 is_a: GO:1990204 ! oxidoreductase complex
 
 [Term]
@@ -24224,7 +24297,7 @@ relationship: RO:0002213 GO:0050817 ! positively regulates coagulation
 [Term]
 id: GO:0050839
 name: cell adhesion molecule binding
-def: "Interacting selectively and non-covalently with a cell adhesion molecule." []
+def: "Binding to a cell adhesion molecule." []
 synonym: "adhesive extracellular matrix constituent" RELATED []
 synonym: "CAM binding" EXACT []
 synonym: "cell adhesion molecule activity" RELATED []
@@ -27332,7 +27405,6 @@ relationship: RO:0002212 GO:0060374 ! negatively regulates mast cell differentia
 id: GO:0060405
 name: regulation of penile erection
 def: "Any process that modulates the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow." []
-is_a: GO:0043900 ! regulation of multi-organism process
 is_a: GO:0051239 ! regulation of multicellular organismal process
 is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0065007 ! biological regulation
@@ -27343,7 +27415,6 @@ relationship: RO:0002211 GO:0043084 ! regulates penile erection
 id: GO:0060406
 name: positive regulation of penile erection
 def: "Any process that increases the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow." []
-is_a: GO:0043902 ! positive regulation of multi-organism process
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:0060405 ! regulation of penile erection
 is_a: GO:2000243 ! positive regulation of reproductive process
@@ -27355,7 +27426,6 @@ relationship: RO:0002213 GO:0043084 ! positively regulates penile erection
 id: GO:0060407
 name: negative regulation of penile erection
 def: "Any process that stops, prevents, or reduces the rate, frequency or extent of penile erection. Penile erection is the hardening, enlarging and rising of the penis which often occurs in the sexually aroused male and enables sexual intercourse. Achieved by increased inflow of blood into the vessels of erectile tissue, and decreased outflow." []
-is_a: GO:0043901 ! negative regulation of multi-organism process
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:0060405 ! regulation of penile erection
 is_a: GO:2000242 ! negative regulation of reproductive process
@@ -27393,7 +27463,6 @@ relationship: RO:0002212 GO:0022600 ! negatively regulates digestive system proc
 id: GO:0060467
 name: negative regulation of fertilization
 def: "Any process that decreases the rate, frequency or extent of fertilization. Fertilization is the union of gametes of opposite sexes during the process of sexual reproduction to form a zygote. It involves the fusion of the gametic nuclei (karyogamy) and cytoplasm (plasmogamy)." []
-is_a: GO:0043901 ! negative regulation of multi-organism process
 is_a: GO:0080154 ! regulation of fertilization
 is_a: GO:2000242 ! negative regulation of reproductive process
 intersection_of: GO:0065007 ! biological regulation
@@ -27513,10 +27582,7 @@ id: GO:0060590
 name: ATPase regulator activity
 def: "Binds to and modulates the activity of an ATP hydrolysis activity." []
 synonym: "ATP hydrolysis regulator activity" EXACT []
-is_a: GO:0060589 ! nucleoside-triphosphatase regulator activity
-intersection_of: GO:0098772 ! molecular function regulator
-intersection_of: RO:0002211 GO:0140603 ! regulates ATP hydrolysis activity
-relationship: RO:0002211 GO:0140603 ! regulates ATP hydrolysis activity
+is_a: GO:0098772 ! molecular function regulator
 
 [Term]
 id: GO:0060591
@@ -28251,7 +28317,6 @@ name: negative regulation of mitochondrial translational initiation
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the process preceding formation of the peptide bond between the first two amino acids of a protein in a mitochondrion." []
 synonym: "negative regulation of mitochondrial translation initiation" EXACT []
 is_a: GO:0045947 ! negative regulation of translational initiation
-is_a: GO:0070130 ! negative regulation of mitochondrial translation
 is_a: GO:0070132 ! regulation of mitochondrial translational initiation
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0070124 ! negatively regulates mitochondrial translational initiation
@@ -28375,7 +28440,7 @@ is_a: GO:0003014 ! renal system process
 [Term]
 id: GO:0070324
 name: thyroid hormone binding
-def: "Interacting selectively and non-covalently with thyroxine (T4) or triiodothyronine (T3), tyrosine-based hormones produced by the thyroid gland." []
+def: "Binding to thyroxine (T4) or triiodothyronine (T3), tyrosine-based hormones produced by the thyroid gland." []
 synonym: "thyroxine binding" NARROW []
 synonym: "triiodothyronine binding" NARROW []
 is_a: GO:0042562 ! hormone binding
@@ -28493,7 +28558,7 @@ is_a: GO:0098662 ! inorganic cation transmembrane transport
 [Term]
 id: GO:0070613
 name: regulation of protein processing
-def: "Any process that modulates the frequency, rate or extent of protein processing, any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein." []
+def: "Any process that modulates the frequency, rate or extent of protein processing, a protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein." []
 synonym: "regulation of protein maturation by peptide bond cleavage" EXACT []
 is_a: GO:0030162 ! regulation of proteolysis
 is_a: GO:1903317 ! regulation of protein maturation
@@ -29383,7 +29448,6 @@ is_a: GO:0080144 ! amino acid homeostasis
 id: GO:0080154
 name: regulation of fertilization
 def: "Any process that modulates the rate, frequency or extent of fertilization. Fertilization is the union of gametes of opposite sexes during the process of sexual reproduction to form a zygote. It involves the fusion of the gametic nuclei (karyogamy) and cytoplasm (plasmogamy)." []
-is_a: GO:0043900 ! regulation of multi-organism process
 is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0009566 ! regulates fertilization
@@ -29848,7 +29912,7 @@ relationship: BFO:0000050 GO:0045202 ! part of synapse
 [Term]
 id: GO:0097159
 name: organic cyclic compound binding
-def: "Interacting selectively and non-covalently with an organic cyclic compound, any molecular entity that contains carbon arranged in a cyclic molecular structure." []
+def: "Binding to an organic cyclic compound, any molecular entity that contains carbon arranged in a cyclic molecular structure." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -30497,8 +30561,8 @@ id: GO:0099103
 name: channel activator activity
 def: "Direct interaction with a channel (binding or modification), resulting in its opening. A channel catalyzes energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel." []
 synonym: "channel gating activity" EXACT []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0016247 ! channel regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002213 GO:0015267 ! positively regulates channel activity
 relationship: RO:0002213 GO:0015267 ! positively regulates channel activity
 
@@ -30506,8 +30570,8 @@ relationship: RO:0002213 GO:0015267 ! positively regulates channel activity
 id: GO:0099106
 name: ion channel regulator activity
 def: "Modulates the activity of a channel via direct interaction with it. A channel catalyzes energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel." []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0016247 ! channel regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002211 GO:0005216 ! regulates ion channel activity
 relationship: RO:0002211 GO:0005216 ! regulates ion channel activity
 
@@ -30590,8 +30654,9 @@ is_a: GO:0099081 ! supramolecular polymer
 
 [Term]
 id: GO:0099522
-name: region of cytosol
+name: cytosolic region
 def: "Any (proper) part of the cytosol of a single cell of sufficient size to still be considered cytosol." []
+synonym: "region of cytosol" EXACT []
 is_a: GO:0005829 ! cytosol
 intersection_of: GO:0005829 ! cytosol
 intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
@@ -30601,7 +30666,7 @@ relationship: BFO:0000050 GO:0005829 ! part of cytosol
 id: GO:0099523
 name: presynaptic cytosol
 def: "The region of the cytosol consisting of all cytosol that is part of the presynapse." []
-is_a: GO:0099522 ! region of cytosol
+is_a: GO:0099522 ! cytosolic region
 intersection_of: GO:0005829 ! cytosol
 intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
 intersection_of: BFO:0000050 GO:0098793 ! part of presynapse
@@ -30611,7 +30676,7 @@ relationship: BFO:0000050 GO:0098793 ! part of presynapse
 id: GO:0099524
 name: postsynaptic cytosol
 def: "The region of the cytosol consisting of all cytosol that is part of the postsynapse." []
-is_a: GO:0099522 ! region of cytosol
+is_a: GO:0099522 ! cytosolic region
 intersection_of: GO:0005829 ! cytosol
 intersection_of: BFO:0000050 GO:0005829 ! part of cytosol
 intersection_of: BFO:0000050 GO:0098794 ! part of postsynapse
@@ -30731,8 +30796,8 @@ relationship: RO:0002211 GO:0030594 ! regulates neurotransmitter receptor activi
 id: GO:0099602
 name: neurotransmitter receptor regulator activity
 def: "A molecular function that directly (via physical interaction or direct modification) activates, inhibits or otherwise modulates the activity of a neurotransmitter receptor. Modulation of activity includes changes in desensitization rate, ligand affinity, ion selectivity and pore-opening/closing." []
-is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
+is_a: GO:0030545 ! signaling receptor regulator activity
+intersection_of: GO:0098772 ! molecular function regulator
 intersection_of: RO:0002211 GO:0030594 ! regulates neurotransmitter receptor activity
 relationship: RO:0002211 GO:0030594 ! regulates neurotransmitter receptor activity
 
@@ -31323,15 +31388,31 @@ relationship: RO:0002213 GO:0140110 ! positively regulates transcription regulat
 
 [Term]
 id: GO:0140603
-name: ATP hydrolysis activity
-def: "Catalysis of the reaction: ATP + H2O = ADP + H+ Pi. ATP hydrolysis is used in some reactions as an energy source, for example to catalyze a reaction or drive transport against a concentration gradient." []
-synonym: "adenosine 5'-triphosphatase activity" RELATED []
-synonym: "adenosine triphosphatase activity" RELATED []
-synonym: "adenosinetriphosphatase activity" EXACT []
-synonym: "ATP hydrolase activity" RELATED []
-synonym: "ATP monophosphatase activity" RELATED []
-synonym: "ATP phosphohydrolase activity" EXACT []
-is_a: GO:0017111 ! nucleoside-triphosphatase activity
+name: obsolete ATP hydrolysis activity
+def: "OBSOLETE. Catalysis of the reaction: ATP + H2O = ADP + H+ Pi. ATP hydrolysis is used in some reactions as an energy source, for example to catalyze a reaction or drive transport against a concentration gradient." []
+is_obsolete: true
+replaced_by: GO:0016887
+
+[Term]
+id: GO:0140631
+name: aldehyde dehydrogenase (NAD+) inhibitor activity
+def: "Binds to and stops, prevents or reduces the activity of aldehyde dehydrogenase (NAD+)." []
+is_a: GO:0004857 ! enzyme inhibitor activity
+intersection_of: GO:0098772 ! molecular function regulator
+intersection_of: RO:0002212 GO:0004029 ! negatively regulates aldehyde dehydrogenase (NAD+) activity
+relationship: RO:0002212 GO:0004029 ! negatively regulates aldehyde dehydrogenase (NAD+) activity
+
+[Term]
+id: GO:0140657
+name: ATP-dependent activity
+def: "A molecular function characterized by the coupling of ATP hydrolysis to other steps of a reaction mechanism to make the reaction energetically favorable, for example to catalyze a reaction or drive transport against a concentration gradient." []
+synonym: "ATP hydrolysis-dependent activity" EXACT []
+synonym: "ATPase activity, coupled" EXACT []
+synonym: "ATPase-dependent activity" EXACT []
+is_a: GO:0003674 ! molecular_function
+intersection_of: GO:0003674 ! molecular_function
+intersection_of: BFO:0000051 GO:0016887 ! has part ATP hydrolysis activity
+relationship: BFO:0000051 GO:0016887 ! has part ATP hydrolysis activity
 
 [Term]
 id: GO:0150063
@@ -32405,7 +32486,6 @@ synonym: "nucleoside phosphate breakdown" EXACT []
 synonym: "nucleoside phosphate catabolism" EXACT []
 synonym: "nucleoside phosphate degradation" EXACT []
 is_a: GO:0006753 ! nucleoside phosphate metabolic process
-is_a: GO:0034404 ! nucleobase-containing small molecule biosynthetic process
 is_a: GO:0034655 ! nucleobase-containing compound catabolic process
 is_a: GO:0046434 ! organophosphate catabolic process
 
@@ -32516,7 +32596,7 @@ is_a: GO:1901576 ! organic substance biosynthetic process
 [Term]
 id: GO:1901363
 name: heterocyclic compound binding
-def: "Interacting selectively and non-covalently with heterocyclic compound." []
+def: "Binding to heterocyclic compound." []
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -32783,8 +32863,7 @@ synonym: "alpha-amino acid anabolism" EXACT []
 synonym: "alpha-amino acid biosynthesis" EXACT []
 synonym: "alpha-amino acid formation" EXACT []
 synonym: "alpha-amino acid synthesis" EXACT []
-is_a: GO:0016053 ! organic acid biosynthetic process
-is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+is_a: GO:0008652 ! cellular amino acid biosynthetic process
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
@@ -33329,7 +33408,7 @@ relationship: RO:0002213 GO:0030317 ! positively regulates flagellated sperm mot
 [Term]
 id: GO:1902098
 name: calcitriol binding
-def: "Interacting selectively and non-covalently with calcitriol. Calcitriol (1,25-dihydroxycholecalciferol) is the hormonally active form of vitamin D3." []
+def: "Binding to calcitriol. Calcitriol (1,25-dihydroxycholecalciferol) is the hormonally active form of vitamin D3." []
 synonym: "1,25-dihydroxycholecalciferol binding" EXACT []
 synonym: "1,25-dihydroxyvitamin D3 binding" EXACT []
 synonym: "1alpha,25(OH)2 vitamin D3 binding" EXACT []
@@ -33483,7 +33562,7 @@ relationship: BFO:0000050 GO:0048514 ! part of blood vessel morphogenesis
 [Term]
 id: GO:1902271
 name: D3 vitamins binding
-def: "Interacting selectively and non-covalently with D3 vitamins." []
+def: "Binding to D3 vitamins." []
 is_a: GO:0005499 ! vitamin D binding
 
 [Term]
@@ -33592,7 +33671,6 @@ id: GO:1902490
 name: regulation of sperm capacitation
 def: "Any process that modulates the frequency, rate or extent of sperm capacitation." []
 synonym: "regulation of sperm activation" RELATED []
-is_a: GO:0043900 ! regulation of multi-organism process
 is_a: GO:0051239 ! regulation of multicellular organismal process
 is_a: GO:1903429 ! regulation of cell maturation
 is_a: GO:2000241 ! regulation of reproductive process
@@ -33613,7 +33691,6 @@ synonym: "downregulation of sperm capacitation" EXACT []
 synonym: "inhibition of sperm activation" RELATED []
 synonym: "inhibition of sperm capacitation" NARROW []
 synonym: "negative regulation of sperm activation" RELATED []
-is_a: GO:0043901 ! negative regulation of multi-organism process
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:1902490 ! regulation of sperm capacitation
 is_a: GO:1903430 ! negative regulation of cell maturation
@@ -33635,7 +33712,6 @@ synonym: "up-regulation of sperm activation" RELATED []
 synonym: "up-regulation of sperm capacitation" EXACT []
 synonym: "upregulation of sperm activation" RELATED []
 synonym: "upregulation of sperm capacitation" EXACT []
-is_a: GO:0043902 ! positive regulation of multi-organism process
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:1902490 ! regulation of sperm capacitation
 is_a: GO:1903431 ! positive regulation of cell maturation
@@ -33650,6 +33726,14 @@ name: catalytic complex
 def: "A protein complex which is capable of catalytic activity." []
 synonym: "enzyme complex" EXACT []
 is_a: GO:0032991 ! protein-containing complex
+
+[Term]
+id: GO:1902495
+name: transmembrane transporter complex
+def: "A transmembrane protein complex which enables the transfer of a substance from one side of a membrane to the other." []
+is_a: GO:0098796 ! membrane protein complex
+is_a: GO:1990351 ! transporter complex
+relationship: BFO:0000050 GO:0016021 ! part of integral component of membrane
 
 [Term]
 id: GO:1902531
@@ -36925,7 +37009,6 @@ id: GO:1904688
 name: regulation of cytoplasmic translational initiation
 def: "Any process that modulates the frequency, rate or extent of cytoplasmic translational initiation." []
 is_a: GO:0006446 ! regulation of translational initiation
-is_a: GO:2000765 ! regulation of cytoplasmic translation
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002211 GO:0002183 ! regulates cytoplasmic translational initiation
 relationship: RO:0002211 GO:0002183 ! regulates cytoplasmic translational initiation
@@ -36940,7 +37023,6 @@ synonym: "downregulation of cytoplasmic translational initiation" EXACT []
 synonym: "inhibition of cytoplasmic translational initiation" NARROW []
 is_a: GO:0045947 ! negative regulation of translational initiation
 is_a: GO:1904688 ! regulation of cytoplasmic translational initiation
-is_a: GO:2000766 ! negative regulation of cytoplasmic translation
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0002183 ! negatively regulates cytoplasmic translational initiation
 relationship: RO:0002212 GO:0002183 ! negatively regulates cytoplasmic translational initiation
@@ -36955,7 +37037,6 @@ synonym: "up-regulation of cytoplasmic translational initiation" EXACT []
 synonym: "upregulation of cytoplasmic translational initiation" EXACT []
 is_a: GO:0045948 ! positive regulation of translational initiation
 is_a: GO:1904688 ! regulation of cytoplasmic translational initiation
-is_a: GO:2000767 ! positive regulation of cytoplasmic translation
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0002183 ! positively regulates cytoplasmic translational initiation
 relationship: RO:0002213 GO:0002183 ! positively regulates cytoplasmic translational initiation
@@ -38315,7 +38396,6 @@ synonym: "up-regulation of fertilization" EXACT []
 synonym: "up-regulation of syngamy" EXACT []
 synonym: "upregulation of fertilization" EXACT []
 synonym: "upregulation of syngamy" EXACT []
-is_a: GO:0043902 ! positive regulation of multi-organism process
 is_a: GO:0080154 ! regulation of fertilization
 is_a: GO:2000243 ! positive regulation of reproductive process
 intersection_of: GO:0065007 ! biological regulation
@@ -38515,6 +38595,22 @@ def: "The movement of a neutrophil within or between different tissues and organ
 is_a: GO:0097530 ! granulocyte migration
 
 [Term]
+id: GO:1990351
+name: transporter complex
+def: "A protein complex facilitating transport of molecules (proteins, small molecules, nucleic acids) into, out of or within a cell, or between cells." []
+is_a: GO:0032991 ! protein-containing complex
+
+[Term]
+id: GO:1990497
+name: regulation of cytoplasmic translation in response to stress
+def: "Modulation of the frequency, rate or extent of cytoplasmic translation as a result of a stimulus indicating the organism is under stress. The stress is usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." []
+is_a: GO:0043555 ! regulation of translation in response to stress
+is_a: GO:2000765 ! regulation of cytoplasmic translation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002211 GO:0002181 ! regulates cytoplasmic translation
+
+[Term]
 id: GO:1990542
 name: mitochondrial transmembrane transport
 def: "The process in which a solute is transported from one side of a membrane to the other into, out of or within a mitochondrion." []
@@ -38530,6 +38626,28 @@ is_a: GO:2000765 ! regulation of cytoplasmic translation
 intersection_of: GO:0050789 ! regulation of biological process
 intersection_of: RO:0002211 GO:0002184 ! regulates cytoplasmic translational termination
 relationship: RO:0002211 GO:0002184 ! regulates cytoplasmic translational termination
+
+[Term]
+id: GO:1990611
+name: regulation of cytoplasmic translational initiation in response to stress
+def: "Modulation of the frequency, rate or extent of cytoplasmic translational initiation as a result of a stimulus indicating the organism is under stress. The stress is usually, but not necessarily, exogenous (e.g. temperature, humidity, ionizing radiation)." []
+is_a: GO:0043558 ! regulation of translational initiation in response to stress
+is_a: GO:1904688 ! regulation of cytoplasmic translational initiation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002211 GO:0002183 ! regulates cytoplasmic translational initiation
+
+[Term]
+id: GO:1990625
+name: negative regulation of cytoplasmic translational initiation in response to stress
+def: "Any process that stops, prevents or reduces the rate of cytoplasmic translation initiation as a result of a stimulus indicating the organism is under stress." []
+is_a: GO:0032055 ! negative regulation of translation in response to stress
+is_a: GO:0032057 ! negative regulation of translational initiation in response to stress
+is_a: GO:1904689 ! negative regulation of cytoplasmic translational initiation
+is_a: GO:1990611 ! regulation of cytoplasmic translational initiation in response to stress
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: BFO:0000050 GO:0033554 ! part of cellular response to stress
+intersection_of: RO:0002212 GO:0002183 ! negatively regulates cytoplasmic translational initiation
 
 [Term]
 id: GO:1990731
@@ -38559,7 +38677,7 @@ relationship: BFO:0000050 GO:0097237 ! part of cellular response to toxic substa
 [Term]
 id: GO:1990837
 name: sequence-specific double-stranded DNA binding
-def: "Interacting selectively and non-covalently with double-stranded DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA, e.g. promotor binding or rDNA binding." []
+def: "Binding to double-stranded DNA of a specific nucleotide composition, e.g. GC-rich DNA binding, or with a specific sequence motif or type of DNA, e.g. promotor binding or rDNA binding." []
 synonym: "sequence-specific dsDNA binding" EXACT []
 is_a: GO:0003690 ! double-stranded DNA binding
 is_a: GO:0043565 ! sequence-specific DNA binding

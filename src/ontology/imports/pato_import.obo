@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-06-01/imports/pato_import.owl
+data-version: mondo/releases/2021-07-12/imports/pato_import.owl
 ontology: mondo/imports/pato_import
 
 [Term]
@@ -30,6 +30,20 @@ def: "An occurrent that has temporal proper parts and for some time t, p s-depen
 is_a: BFO:0000003 ! occurrent
 
 [Term]
+id: BFO:0000016
+name: disposition
+is_a: BFO:0000017 ! realizable entity
+disjoint_from: BFO:0000023 ! role
+
+[Term]
+id: BFO:0000017
+name: realizable entity
+def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
+relationship: BFO:0000050 BFO:0000017 ! part of realizable entity
+
+[Term]
 id: BFO:0000019
 name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
@@ -41,6 +55,17 @@ name: specifically dependent continuant
 def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 is_a: BFO:0000002 ! continuant
 relationship: BFO:0000050 BFO:0000020 ! part of specifically dependent continuant
+
+[Term]
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000034
+name: function
+is_a: BFO:0000016 ! disposition
 
 [Term]
 id: BFO:0000040
@@ -573,6 +598,12 @@ def: "A nucleate quality inhering in a bearer by virtue of the bearer's having o
 is_a: PATO:0002505 ! nucleated
 
 [Term]
+id: PATO:0001411
+name: structured
+def: "A structural quality inhering in a bearer by virtue of the bearer's having distinct structure." []
+is_a: PATO:0000141 ! structure
+
+[Term]
 id: PATO:0001412
 name: unstructured
 def: "A structural quality inhering in a bearer by virtue of the bearer's lacking distinct structure." []
@@ -979,7 +1010,7 @@ is_a: PATO:0000051 ! morphology
 [Term]
 id: PATO:0002094
 name: basophilic
-def: "An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific ph conditions." []
+def: "An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific pH conditions." []
 is_a: PATO:0002070 ! affinity
 
 [Term]
@@ -1187,14 +1218,17 @@ id: BFO:0000051
 name: has part
 name: has_part
 def: "a core relation that holds between a whole and its part" []
-def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." []
 is_transitive: true
 is_a: RO:0002131 ! overlaps
 
 [Typedef]
 id: BFO:0000062
 name: preceded by
+name: preceded_by
 def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+synonym: "is preceded by" EXACT []
+synonym: "takes place after" EXACT []
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 holds_over_chain: BFO:0000050 BFO:0000062
@@ -1228,6 +1262,22 @@ name: contains process
 def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
 
 [Typedef]
+id: RO:0000052
+name: characteristic of
+def: "a relation between a specifically dependent continuant (the characteristic) and any other entity (the bearer), in which the characteristic depends on the bearer for its existence." []
+is_functional: true
+is_a: RO:0002314 ! characteristic of part of
+inverse_of: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000053
+name: bearer of
+name: has characteristic
+def: "Inverse of characteristic_of" []
+range: BFO:0000020 ! specifically dependent continuant
+is_inverse_functional: true
+
+[Typedef]
 id: RO:0000056
 name: participates in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
@@ -1242,6 +1292,66 @@ def: "a relation between a process and a continuant, in which the continuant is 
 domain: BFO:0000003 ! occurrent
 range: BFO:0000002 ! continuant
 holds_over_chain: BFO:0000051 RO:0000057
+
+[Typedef]
+id: RO:0000079
+name: function of
+def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
+domain: BFO:0000034 ! function
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000085 ! has function
+
+[Typedef]
+id: RO:0000080
+name: quality of
+def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000086 ! has quality
+
+[Typedef]
+id: RO:0000081
+name: role of
+def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000087 ! has role
+
+[Typedef]
+id: RO:0000085
+name: has function
+def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000034 ! function
+is_a: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000086
+name: has quality
+def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
+range: BFO:0000019 ! quality
+is_a: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000087
+name: has role
+def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000023 ! role
+is_a: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000091
+name: has disposition
+def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000016 ! disposition
+is_a: RO:0000053 ! bearer of
+inverse_of: RO:0000092 ! disposition of
+
+[Typedef]
+id: RO:0000092
+name: disposition of
+def: "inverse of has disposition" []
+is_a: RO:0000052 ! characteristic of
 
 [Typedef]
 id: RO:0002013
@@ -1313,7 +1423,13 @@ is_a: RO:0002222 ! temporally related to
 [Typedef]
 id: RO:0002087
 name: immediately preceded by
-is_a: BFO:0000062 ! preceded by
+name: immediately_preceded_by
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+synonym: "directly preceded by" EXACT []
+synonym: "is directly preceded by" EXACT []
+synonym: "is immediately preceded by" EXACT []
+synonym: "starts_at_end_of" EXACT []
+is_a: BFO:0000062 ! preceded_by
 inverse_of: RO:0002090 ! immediately precedes
 
 [Typedef]
@@ -1425,6 +1541,14 @@ is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004046 ! causally upstream of or within, negative effect
 
 [Typedef]
+id: RO:0002314
+name: characteristic of part of
+def: "q characteristic of part of w if and only if there exists some p such that q inheres in p and p part of w." []
+holds_over_chain: RO:0000052 BFO:0000050
+is_a: RO:0002502 ! depends on
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
 id: RO:0002323
 name: mereotopologically related to
 def: "A mereological relationship or a topological relationship" []
@@ -1497,7 +1621,7 @@ is_a: RO:0002328 ! functionally related to
 id: RO:0002404
 name: causally downstream of
 def: "inverse of upstream of" []
-is_a: BFO:0000062 ! preceded by
+is_a: BFO:0000062 ! preceded_by
 is_a: RO:0002427 ! causally downstream of or within
 inverse_of: RO:0002411 ! causally upstream of
 
@@ -1666,6 +1790,10 @@ def: "p is causally related to q if and only if p or any part of p and q or any 
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002502
+name: depends on
 
 [Typedef]
 id: RO:0002506
