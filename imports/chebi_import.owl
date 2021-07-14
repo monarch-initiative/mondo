@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/chebi_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-06-01/imports/chebi_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-07-12/imports/chebi_import.owl"/>
     </owl:Ontology>
     
 
@@ -2890,7 +2890,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_173085">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52206"/>
-        <obo:IAO_0000115>Any substance that induces or promotes the process of ferroptosis (a type of programmed cell death dependent on iron and characterized by the accumulation of lipid peroxides) in organisms.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any substance that induces or promotes ferroptosis (a type of programmed cell death dependent on iron and characterized by the accumulation of lipid peroxides) in organisms.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>ferroptosis inducers</oboInOwl:hasRelatedSynonym>
         <rdfs:label>ferroptosis inducer</rdfs:label>
     </owl:Class>
@@ -14161,6 +14161,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_173085"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35475"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -19357,6 +19363,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_84410 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_84410">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35785"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_83876"/>
         <obo:IAO_0000115>A cationic sphingoid obtained by protonation of the amino group of any 2-amino-1,3-dihydroxysphingoid base.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>2-amino-1,3-dihydroxysphingoid base(1+)</oboInOwl:hasRelatedSynonym>
