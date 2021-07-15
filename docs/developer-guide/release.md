@@ -2,6 +2,8 @@
 
 Mondo is released on a monthly basis around the first of the month. Additional releases are run ad hoc. All Mondo releases are available [here](https://github.com/monarch-initiative/mondo/releases).
 
+**Initial setup**: Follow the instructions to [Generate token](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) before starting.
+
 # Releases
 
 All release products are described on the [OBO page](http://obofoundry.org/ontology/mondo.html) and [Mondo website](https://mondo.monarchinitiative.org/).
@@ -27,6 +29,28 @@ The release mondo.owl will look like this in Protege:
 3. Wait for GitHub Actions/QC to pass
 4. Merge PR
 
+## Generate Change Log
+
+### Initial Setup:
+1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
+    1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
+        1. right click and save as (and save in Downloads)
+2. Move the file:
+`mv Downloads/obo-simple-diff.pl ~/tools`
+3. `cchmod 755 ~/tools/obo-simple-diff.pl`
+
+### Generate Change Log Workflow:
+<!-- 1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
+2. Download the previous mondo.obo and save as mondo-lastbuild.obo-->
+1. In terminal: `make mondo-diff.txt -B`
+4. `./get-new-classes.sh > somefilename.txt`
+    1. For exaample: ./get-new-classes.sh > MondoRelease_2020-07-01.txt
+5. Open this file on your computer: MondoRelease_somefilename.txt
+  1. For example: MondoRelease_2020-06-01.txt
+
+_Note: this was updated on 2021-07-15 and has not been tested yet_  
+  
+
 ## Deploy Release
 1. `cp ~/.token .token`  
 1. `sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
@@ -39,25 +63,6 @@ Note- the date should be the date of the release in the format sh run.sh make GH
 1. When this is done, follow instructions for the change log
 
 _Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
-
-## Generate Change Log
-
-### Initial Setup:
-1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
-    1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
-        1. right click and save as (and save in Downloads)
-2. Move the file:
-`mv Downloads/obo-simple-diff.pl ~/tools`
-3. `cchmod 755 ~/tools/obo-simple-diff.pl`
-
-### Generate Change Log Workflow:
-1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
-2. Download the previous mondo.obo and save as mondo-lastbuild.obo
-3. In terminal: `make mondo-diff.txt`
-4. `./get-new-classes.sh > somefilename.txt`
-    1. For exaample: ./get-new-classes.sh > MondoRelease_2020-07-01.txt
-5. Open this file on your computer: MondoRelease_somefilename.txt
-  1. For example: MondoRelease_2020-06-01.txt
 
 ## Write a description of the release
 
