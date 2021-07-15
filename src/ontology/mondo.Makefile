@@ -21,7 +21,11 @@ matches_annotations: tmp/mondo-edit-merged.owl
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
 
+owlaxioms_check:
+	! grep "^owl-axioms" mondo-edit.obo
+
 test: pattern_schema_checks
+test: owlaxioms_check
 
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
 	$(DOSDPT) prototype --obo-prefixes=true --template=../patterns/dosdp-patterns --outfile=$@

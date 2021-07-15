@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-06-01/imports/so_import.owl
+data-version: mondo/releases/2021-07-12/imports/so_import.owl
 ontology: mondo/imports/so_import
 
 [Term]
@@ -89,7 +89,7 @@ is_a: SO:0001059 ! sequence_alteration
 [Term]
 id: SO:0000252
 name: rRNA
-def: "RNA that comprises part of a ribosome, and that can provide both structural scaffolding and catalytic activity." []
+def: "rRNA is an RNA component of a ribosome that can provide both structural scaffolding and catalytic activity." []
 synonym: "INSDC_feature:rRNA" EXACT []
 synonym: "INSDC_qualifier:unknown" BROAD []
 synonym: "ribosomal ribonucleic acid" EXACT []
@@ -187,12 +187,12 @@ is_a: SO:0000011 ! non_protein_coding
 
 [Term]
 id: SO:0000651
-name: large_subunit_rRNA
-def: "Ribosomal RNA transcript that structures the large subunit of the ribosome." []
-synonym: "large subunit rRNA" EXACT []
-synonym: "LSU RNA" EXACT []
-synonym: "LSU rRNA" EXACT []
-is_a: SO:0000252 ! rRNA
+name: cytosolic_LSU_rRNA
+def: "Cytosolic LSU rRNA is an RNA component of the large subunit of cytosolic ribosomes." []
+synonym: "cytosolic large subunit rRNA" EXACT []
+synonym: "cytosolic LSU RNA" EXACT []
+synonym: "cytosolic LSU rRNA" EXACT []
+is_a: SO:0002343 ! cytosolic_rRNA
 relationship: derives_from SO:0000325 ! rRNA_large_subunit_primary_transcript
 
 [Term]
@@ -500,6 +500,14 @@ def: "A ncRNA_gene (SO:0001263) that is less than 200 nucleotides in length." []
 synonym: "small non-coding RNA gene" EXACT []
 synonym: "sncRNA gene" EXACT []
 is_a: SO:0001263 ! ncRNA_gene
+
+[Term]
+id: SO:0002343
+name: cytosolic_rRNA
+def: "Cytosolic rRNA is an RNA component of the small or large subunits of cytosolic ribosomes." []
+synonym: "cytosolic ribosomal RNA" EXACT []
+synonym: "cytosolic rRNA" EXACT []
+is_a: SO:0000252 ! rRNA
 
 [Term]
 id: SO:0005855
