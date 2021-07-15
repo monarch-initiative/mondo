@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-06-01/imports/hp_import.owl
+data-version: mondo/releases/2021-07-12/imports/hp_import.owl
 subsetdef: hposlim_core ""
 subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
@@ -535,6 +535,7 @@ namespace: human_phenotype
 alt_id: HP:0100609
 def: "Prolonged and excessive menses at regular intervals in excess of 80 mL or lasting longer than 7 days." [HPO:probinson, PMID:22594864]
 synonym: "Abnormally heavy bleeding during menstruation" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Abnormally heavy periods" EXACT layperson []
 synonym: "Hypermenorrhea" EXACT [PMID:22594864]
 xref: MSH:D008595
 xref: SNOMEDCT_US:386692008
@@ -880,7 +881,7 @@ synonym: "Too much cerebrospinal fluid in the brain" EXACT layperson [orcid.org/
 xref: MSH:D006849
 xref: SNOMEDCT_US:230745008
 xref: UMLS:C0020255
-is_a: HP:0002118 ! Abnormality of the cerebral ventricles
+is_a: HP:0002118 ! Abnormal cerebral ventricle morphology
 is_a: HP:0002921 ! Abnormality of the cerebrospinal fluid
 
 [Term]
@@ -1421,6 +1422,7 @@ namespace: human_phenotype
 def: "Epistaxis, or nosebleed, refers to a hemorrhage localized in the nose." [HPO:probinson]
 synonym: "Bloody nose" EXACT layperson [ORCID:0000-0001-5889-4463]
 synonym: "Frequent nosebleeds" EXACT layperson []
+synonym: "Nasal haemorrhage" EXACT uk_spelling []
 synonym: "Nasal hemorrhage" EXACT [NCIT:C26766]
 synonym: "Nose bleed" EXACT layperson [NCIT:C26766]
 synonym: "Nose bleeding" EXACT layperson []
@@ -1916,7 +1918,7 @@ is_a: HP:0100887 ! Abnormality of globe size
 id: HP:0000572
 name: Visual loss
 namespace: human_phenotype
-def: "Loss of visual acuity (implying that vision was better at a certain timepoint in life). Otherwise the term reduced visual acuity should be used (or a subclass of that)." [HPO:sdoelken]
+def: "Loss of visual acuity (implying that vision was better at a certain time point in life). Otherwise the term reduced visual acuity should be used (or a subclass of that)." [HPO:sdoelken]
 synonym: "Loss of vision" EXACT layperson []
 synonym: "Vision loss" EXACT layperson [HPO:skoehler]
 synonym: "Visual loss" EXACT layperson []
@@ -2026,7 +2028,7 @@ id: HP:0000618
 name: Blindness
 namespace: human_phenotype
 alt_id: HP:0007839
-def: "Blindness is the condition of lacking visual perception defined as visual perception below 3/60 and/or a visual field of no greater than 10 degress in radius around central fixation." [DDD:gblack, PMID:28779882]
+def: "Blindness is the condition of lacking visual perception defined as visual perception below 3/60 and/or a visual field of no greater than 10 degrees in radius around central fixation." [DDD:gblack, PMID:28779882]
 comment: Various scales have been developed to describe the extent of vision loss and define blindness. Total blindness is the complete lack of form and visual light perception and is clinically recorded as NLP (no light perception). Blindness is frequently used to describe severe visual impairment with residual vision. Those described as having only light perception have no more sight than the ability to tell light from dark and the general direction of a light source.
 subset: hposlim_core
 synonym: "Blindness" EXACT layperson []
@@ -2152,15 +2154,15 @@ is_a: HP:0002186 ! Apraxia
 id: HP:0000668
 name: Hypodontia
 namespace: human_phenotype
-def: "A developmental anomaly characterized by a reduced number of teeth, whereby up to 6 teeth are missing." [HPO:ibailleulforestier]
-comment: Hypodontia refers to a reduced number of primary or permanent teeth. Hypodontia may affect either both primary and permanent teeth or only the permanent teeth. Wisdom teeth (the third secondary maxillary and mandibular molar teeth) are not included in this count.
+def: "The absence of five or less teeth from the normal series by a failure to develop." [HPO:ibailleulforestier, PMID:31468724]
+comment: Hypodontia needs to be confirmed by X-rays. The terms hypodontia and oligodontia have been used interchangeably in literature but these define two different clinical entities. Hypodontia has been used to define exclusively the absence of permanent teeth and excluding third molars, but the absence of any deciduous and permanent teeth, including third molars, should be called hypodontia as well.
 subset: hposlim_core
 synonym: "Failure of development of between one and six teeth" EXACT layperson [ORCID:0000-0001-5889-4463]
 synonym: "Missing between one and six teeth" RELATED layperson [ORCID:0000-0001-5889-4463]
 xref: MSH:D000848
 xref: SNOMEDCT_US:64969001
 xref: UMLS:C0020608
-is_a: HP:0009804 ! Reduced number of teeth
+is_a: HP:0009804 ! Tooth agenesis
 
 [Term]
 id: HP:0000707
@@ -2195,6 +2197,11 @@ synonym: "Behavioral problems" EXACT layperson []
 synonym: "Behavioral symptoms" RELATED layperson []
 synonym: "Behavioral/psychiatric abnormalities" EXACT layperson []
 synonym: "Behavioural abnormality" EXACT uk_spelling []
+synonym: "Behavioural changes" EXACT uk_spelling []
+synonym: "Behavioural disorders" EXACT uk_spelling []
+synonym: "Behavioural disturbances" EXACT uk_spelling []
+synonym: "Behavioural problems" EXACT uk_spelling []
+synonym: "Behavioural symptoms" RELATED uk_spelling []
 synonym: "Behavioural/Psychiatric abnormality" EXACT layperson []
 synonym: "Psychiatric disorders" EXACT layperson []
 synonym: "Psychiatric disturbances" EXACT layperson []
@@ -2267,6 +2274,7 @@ synonym: "Autism spectrum disorder" RELATED layperson []
 synonym: "Autism spectrum disorders" RELATED layperson [HPO:skoehler]
 synonym: "Autistic behaviors" RELATED [HPO:skoehler]
 synonym: "Autistic behaviour" EXACT uk_spelling []
+synonym: "Autistic behaviours" RELATED uk_spelling []
 synonym: "Pervasive developmental disorder" EXACT []
 xref: MSH:D000067877
 xref: UMLS:C0856975
@@ -2277,6 +2285,7 @@ is_a: HP:0000708 ! Behavioral abnormality
 id: HP:0000737
 name: Irritability
 namespace: human_phenotype
+def: "A proneness to anger, i.e., a condition of being easily bothered or annoyed." [PMID:27343883]
 synonym: "Irritability" EXACT layperson []
 synonym: "Irritable" EXACT layperson []
 xref: UMLS:C2700617
@@ -2291,7 +2300,6 @@ synonym: "Anxiety" EXACT layperson []
 synonym: "Anxiety disease" RELATED layperson []
 synonym: "Anxiousness" EXACT []
 synonym: "Excessive, persistent worry and fear" EXACT layperson [ORCID:0000-0002-6548-5200]
-synonym: "Sense of doom" NARROW []
 xref: MSH:D001007
 xref: SNOMEDCT_US:48694002
 xref: UMLS:C0003467
@@ -2377,6 +2385,7 @@ namespace: human_phenotype
 alt_id: HP:0008764
 def: "Hyperactivity is a state of constantly being unusually or abnormally active, including in situations in which it is not appropriate." [ORCID:0000-0002-6713-2943]
 synonym: "Hyperactive behavior" EXACT []
+synonym: "Hyperactive behaviour" EXACT uk_spelling []
 synonym: "More active than typical" EXACT layperson [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-6548-5200]
 xref: MSH:D006948
 xref: SNOMEDCT_US:44548000
@@ -2746,6 +2755,7 @@ def: "An enlargement of the thyroid gland." [HPO:probinson]
 synonym: "Enlarged thyroid gland in neck" EXACT layperson [https://orcid.org/0000-0002-6548-5200]
 synonym: "Goitre" EXACT uk_spelling []
 synonym: "Thyroid goiter" EXACT []
+synonym: "Thyroid goitre" EXACT uk_spelling []
 xref: MSH:D006042
 xref: SNOMEDCT_US:3716002
 xref: UMLS:C0018021
@@ -3042,7 +3052,7 @@ is_a: HP:0007550 ! Hypohidrosis or hyperhidrosis
 id: HP:0000967
 name: Petechiae
 namespace: human_phenotype
-def: "Petechiae are pinpoint-sized reddish/purple spots, resembling a rash, that appear just under the skin or a mucous membrane when capillaries have ruptured and some superficial bleeding into the skin has happened. This term refers to an abnormally increased susceptibility to developing petechiae." [HPO:probinson]
+def: "Petechiae are pinpoint-sized reddish/purple spots, resembling a rash, that appear just under the skin or a mucous membrane when capillaries have ruptured and some superficial bleeding into the skin has happened. This term refers to an abnormally increased susceptibility to developing petechiae." [HPO:probinson, PMID:29493956]
 subset: hposlim_core
 xref: MEDDRA:10034754 "Petechiae"
 xref: MSH:D011693
@@ -3092,7 +3102,8 @@ is_a: HP:0025276 ! Abnormality of skin adnexa physiology
 id: HP:0000972
 name: Palmoplantar hyperkeratosis
 namespace: human_phenotype
-def: "Hyperkeratosis affecting the palm of the hand and the sole of the foot." [HPO:probinson]
+def: "Abnormal thickening of the skin localized to the palm of the hand and the sole of the foot." [HPO:probinson]
+comment: The terms hyperkeratosis and keratoderma have been used interchangeably throughout the literature.
 subset: hposlim_core
 synonym: "Hyperkeratosis of palms and soles" EXACT []
 synonym: "Hyperkeratosis of the palms and soles" EXACT []
@@ -3115,7 +3126,7 @@ alt_id: HP:0001011
 alt_id: HP:0001064
 alt_id: HP:0007424
 def: "Abnormal excessive perspiration (sweating) despite the lack of appropriate stimuli like hot and humid weather." [HPO:probinson]
-comment: Ther terms hyperhidrosis and diaphoresis are often used interchangeably to describe excessive perspiration. Diaphoresis can be used to refer to excessive sweating that occurs with certain diseases (secondary hyperhidrosis). Since the HPO does not intend to provide coess for etiologies or diseases, we will use these terms interchangeably to refer to excessive perspiration without an appropriate cause such as hot and humid weather.
+comment: The terms hyperhidrosis and diaphoresis are often used interchangeably to describe excessive perspiration. Diaphoresis can be used to refer to excessive sweating that occurs with certain diseases (secondary hyperhidrosis). Since the HPO does not intend to provide coess for etiologies or diseases, we will use these terms interchangeably to refer to excessive perspiration without an appropriate cause such as hot and humid weather.
 subset: hposlim_core
 synonym: "Diaphoresis" EXACT []
 synonym: "Excessive sweating" EXACT layperson [ORCID:0000-0001-5208-3432]
@@ -3187,14 +3198,13 @@ synonym: "Thickening of palms and soles" EXACT layperson []
 xref: MSH:D007645
 xref: SNOMEDCT_US:706885006
 xref: UMLS:C0022596
-is_a: HP:0000962 ! Hyperkeratosis
+is_a: HP:0000972 ! Palmoplantar hyperkeratosis
 
 [Term]
 id: HP:0000988
 name: Skin rash
 namespace: human_phenotype
 def: "A red eruption of the skin." [HPO:probinson]
-synonym: "Exanthem" EXACT []
 synonym: "Rash" BROAD layperson []
 synonym: "Skin rash" EXACT layperson []
 xref: MEDDRA:10037844 "Rash"
@@ -3289,6 +3299,7 @@ def: "An abnormality of the pigmentation of the skin." [HPO:probinson]
 subset: hposlim_core
 synonym: "Abnormal pigmentation" EXACT layperson []
 synonym: "Abnormal skin color" EXACT layperson [ORCID:0000-0001-6908-9849]
+synonym: "Abnormal skin colour" EXACT uk_spelling []
 synonym: "Abnormal skin pigmentation" EXACT layperson [HPO:skoehler]
 synonym: "Abnormality of pigmentation" EXACT layperson []
 synonym: "Abnormality of skin pigmentation" EXACT layperson []
@@ -3693,7 +3704,7 @@ name: Hypotonia
 namespace: human_phenotype
 alt_id: HP:0011398
 def: "Hypotonia is an abnormally low muscle tone (the amount of tension or resistance to movement in a muscle). Even when relaxed, muscles have a continuous and passive partial contraction which provides some resistance to passive stretching. Hypotonia thus manifests as diminished resistance to passive stretching. Hypotonia is not the same as muscle weakness, although the two conditions can co-exist." [HPO:probinson, PMID:21418198]
-comment: Hypotonia can be caused by abnormalities of the central nervous system, any element of the motor unit (including the lower motoneuron), or both. Hypotonia is not a specific diagnosis, but can be obsereved in hundreds of genetic and other diseases. The first distinction to make when assessing a child with hypotonia is whether decreased muscle tone is a result of an abnormality of the central nervous system (CNS), peripheral neuromuscular system, or a combined abnormality involving both. Clinical findings suggestive of an abnormality of the CNS may include hyperreflexia, cognitive developmental delay, and seizures. In contrast, physical findings pointing towards a neuromuscular origin may include weakness, lack of antigravity movements, muscle atrophy, fasciculations, and/or diminished reflexes, most often in the context of normal cognitive function. The HPO term does not distinguish between these etiologies. Additional HPO terms should be used as required to describe associated features.
+comment: Hypotonia can be caused by abnormalities of the central nervous system, any element of the motor unit (including the lower motoneuron), or both. Hypotonia is not a specific diagnosis, but can be observed in hundreds of genetic and other diseases. The first distinction to make when assessing a child with hypotonia is whether decreased muscle tone is a result of an abnormality of the central nervous system (CNS), peripheral neuromuscular system, or a combined abnormality involving both. Clinical findings suggestive of an abnormality of the CNS may include hyperreflexia, cognitive developmental delay, and seizures. In contrast, physical findings pointing towards a neuromuscular origin may include weakness, lack of antigravity movements, muscle atrophy, fasciculations, and/or diminished reflexes, most often in the context of normal cognitive function. The HPO term does not distinguish between these etiologies. Additional HPO terms should be used as required to describe associated features.
 synonym: "Central hypotonia" NARROW []
 synonym: "Low muscle tone" EXACT layperson []
 synonym: "Low or weak muscle tone" EXACT layperson [ORCID:0000-0002-6548-5200]
@@ -3730,6 +3741,7 @@ xref: SNOMEDCT_US:221360009
 xref: SNOMEDCT_US:397790002
 xref: UMLS:C0026838
 is_a: HP:0001276 ! Hypertonia
+is_a: HP:0002493 ! Upper motor neuron dysfunction
 
 [Term]
 id: HP:0001259
@@ -3849,7 +3861,6 @@ xref: MSH:D009122
 xref: SNOMEDCT_US:41581000
 xref: SNOMEDCT_US:56731001
 xref: UMLS:C0026826
-is_a: HP:0002493 ! Upper motor neuron dysfunction
 is_a: HP:0003808 ! Abnormal muscle tone
 
 [Term]
@@ -3939,7 +3950,7 @@ is_a: HP:0012638 ! Abnormal nervous system physiology
 id: HP:0001300
 name: Parkinsonism
 namespace: human_phenotype
-def: "Characteristic neurologic anomaly resulting form degeneration of dopamine-generating cells in the substantia nigra, a region of the midbrain, characterized clinically by shaking, rigidity, slowness of movement and difficulty with walking and gait." [HPO:probinson]
+def: "Characteristic neurologic anomaly resulting from degeneration of dopamine-generating cells in the substantia nigra, a region of the midbrain, characterized clinically by shaking, rigidity, slowness of movement and difficulty with walking and gait." [HPO:probinson]
 synonym: "Parkinsonian disease" RELATED []
 xref: MSH:D020734
 xref: SNOMEDCT_US:32798002
@@ -3976,7 +3987,7 @@ synonym: "Cerebellar anomaly" EXACT layperson []
 synonym: "Cerebellar signs" EXACT []
 xref: UMLS:C0742038
 xref: UMLS:C1866129
-is_a: HP:0011283 ! Abnormality of the metencephalon
+is_a: HP:0011283 ! Abnormal metencephalon morphology
 
 [Term]
 id: HP:0001320
@@ -3998,7 +4009,7 @@ alt_id: HP:0006806
 alt_id: HP:0006910
 alt_id: HP:0007038
 alt_id: HP:0007053
-def: "Underdevelopment of the cerebellum." [HPO:probinson, PMID:27160001]
+def: "Cerebellar hypoplasia is a descriptive term implying a cerebellum with a reduced volume, but a normal shape and is stable over time." [HPO:probinson, PMID:26331051, PMID:27160001]
 comment: By prenatal ultrasound, cerebellar hypoplasia is diagnosed if the cerebellum measures more than two standard deviations below the mean. In adults, cerebellar hypoplasia is typically diagnosed by computer tomography or magnetic resonance imaging. Cerebellar hypoplasia can be diagnosed if there is a small cerebellum with fissures of normal size compared with the folia (this is a distinguishing characteristic compared with cerebellar atrophy). Cerebellar hypoplasia (CH) refers to an underdevelopment of the cerebellum. This category of cerebellar malformation is distinct from Dandy Walker malformation in that it does not involve a concurrent enlargement of the posterior fossa, and almost all individuals exhibit cognitive and motor impairments.
 synonym: "Congenital cerebellar hypoplasia" EXACT []
 synonym: "Hypoplasia of cerebellum" EXACT []
@@ -4351,6 +4362,7 @@ id: HP:0001450
 name: Y-linked inheritance
 namespace: human_phenotype
 def: "A mode of inheritance that is observed for traits related to a gene encoded on the Y chromosome." [HPO:curators]
+synonym: "Y-linked" EXACT []
 xref: MSH:D050173
 xref: UMLS:C0814045
 is_a: HP:0010985 ! Gonosomal inheritance
@@ -4483,6 +4495,7 @@ name: Overgrowth
 namespace: human_phenotype
 def: "Excessive postnatal growth which may comprise increased weight, increased length, and/or increased head circumference." [HPO:probinson]
 synonym: "General overgrowth" EXACT layperson []
+synonym: "Generalised overgrowth" RELATED uk_spelling []
 synonym: "Generalized overgrowth" RELATED [HPO:skoehler]
 xref: UMLS:C1849265
 xref: UMLS:C1851731
@@ -4511,12 +4524,18 @@ alt_id: HP:0007631
 def: "An abnormal reduction in quantity or strength of fetal movements." [HPO:curators]
 synonym: "Decreased fetal activity" EXACT []
 synonym: "Decreased fetal movements" EXACT []
+synonym: "Decreased foetal activity" EXACT uk_spelling []
 synonym: "Decreased foetal movement" EXACT uk_spelling []
+synonym: "Decreased foetal movements" EXACT uk_spelling []
 synonym: "Decreased movement in utero" EXACT []
 synonym: "Fetal hypokinesia" EXACT []
+synonym: "Foetal hypokinesia" EXACT uk_spelling []
 synonym: "Less than 10 fetal movements in 12 hours" EXACT layperson [PMID:2729383]
+synonym: "Less than 10 foetal movements in 12 hours" EXACT uk_spelling []
 synonym: "Reduced fetal movement" EXACT []
 synonym: "Reduced fetal movements" EXACT []
+synonym: "Reduced foetal movement" EXACT uk_spelling []
+synonym: "Reduced foetal movements" EXACT uk_spelling []
 xref: SNOMEDCT_US:276369006
 xref: UMLS:C0235659
 is_a: HP:0001557 ! Prenatal movement abnormality
@@ -4636,6 +4655,7 @@ name: Dysphonia
 namespace: human_phenotype
 def: "An impairment in the ability to produce voice sounds." [HPO:probinson]
 synonym: "Inability to produce voice sounds" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Voice change" EXACT layperson []
 xref: MSH:D055154
 xref: SNOMEDCT_US:47004009
 xref: UMLS:C1527344
@@ -5121,7 +5141,8 @@ is_a: HP:0001792 ! Small nail
 id: HP:0001824
 name: Weight loss
 namespace: human_phenotype
-def: "Reduction inexisting body weight." [HPO:probinson]
+def: "Reduction of total body weight." [HPO:probinson]
+synonym: "Loss of weight" EXACT []
 xref: MSH:D015431
 xref: SNOMEDCT_US:161832001
 xref: SNOMEDCT_US:262285001
@@ -5137,8 +5158,9 @@ alt_id: HP:0003135
 def: "An abnormality of the hematopoietic system." [HPO:probinson]
 comment: The hematopoietic system comprises the organs that are involved in the production of blood, primarily the bone marrow, spleen, tonsils, and lymph nodes.
 synonym: "Abnormality of blood and blood-forming tissues" EXACT layperson []
-synonym: "Abnormality of the haematopoietic system" RELATED []
+synonym: "Abnormality of the haematopoietic system" EXACT uk_spelling []
 synonym: "Abnormality of the hematopoietic system" EXACT []
+synonym: "Haematological abnormality" EXACT uk_spelling []
 synonym: "Hematologic disease" RELATED []
 synonym: "Hematological abnormality" EXACT []
 xref: MSH:D006402
@@ -5259,7 +5281,6 @@ name: Abnormal leukocyte morphology
 namespace: human_phenotype
 def: "An abnormality of leukocytes." [HPO:probinson]
 comment: Leukocytes are nucleated cells of the myeloid or lymphoid lineages, found in blood or other tissue.
-synonym: "Abnormal leukocyte function" EXACT []
 synonym: "Abnormality of leukocytes" EXACT []
 xref: SNOMEDCT_US:134199001
 xref: SNOMEDCT_US:24827003
@@ -5304,7 +5325,6 @@ synonym: "Lymphocytopenia" EXACT []
 xref: MSH:D008231
 xref: SNOMEDCT_US:48813009
 xref: UMLS:C0024312
-is_a: HP:0001882 ! Leukopenia
 is_a: HP:0040088 ! Abnormal lymphocyte count
 
 [Term]
@@ -5367,7 +5387,9 @@ alt_id: HP:0005509
 def: "A reduction in erythrocytes volume or hemoglobin concentration." [HPO:probinson]
 comment: Anemia is not a specific entity but can result from many underlying pathologic processes. The three main causes of anemia are blood loss, decreased or faulty red blood cell production, and increased destruction of red blood cells. Various classifications are in clinical use including a classification according to the mean corpuscular volume (MCV) of the erythrocytes: microcytic, macrocytic, or normocytic. Anemias can also be classified according to variations in cell size and shape, as reflected by the red-cell distribution width (RDW). Additionally, anemias can be classified into those of inadequate production and hemolytic anemias.
 synonym: "Anaemia" EXACT []
+synonym: "Decreased haemoglobin" RELATED uk_spelling []
 synonym: "Decreased hemoglobin" RELATED []
+synonym: "Low number of red blood cells or haemoglobin" EXACT uk_spelling []
 synonym: "Low number of red blood cells or hemoglobin" EXACT layperson [orcid.org/0000-0002-6548-5200]
 xref: MSH:D000740
 xref: SNOMEDCT_US:165397008
@@ -5456,6 +5478,7 @@ namespace: human_phenotype
 alt_id: HP:0100791
 def: "Sideroblastic anemia results from a defect in the incorporation of iron into the heme molecule. A sideroblast is an erythroblast that has stainable deposits of iron in cytoplasm (this can be demonstrated by Prussian blue staining)." [HPO:probinson]
 comment: Sideroblastic anemia may be either congenital or acquired. In sideroblastic anemia, the hematocrit tends to be around 20 to 30 percent, and the mean corpuscular volume is normal or low.
+synonym: "Hypersideremic anaemia" EXACT uk_spelling []
 synonym: "Hypersideremic anemia" EXACT []
 synonym: "Sideroblastic anaemia" EXACT uk_spelling []
 xref: MSH:D000756
@@ -5612,8 +5635,8 @@ is_a: HP:0011032 ! Abnormality of fluid regulation
 id: HP:0001945
 name: Fever
 namespace: human_phenotype
-def: "Elevated body temperature due to failed thermoregulation." [HPO:sdoelken]
-comment: Hyperthermia is defined as a temperature greater than 37.5-38.3 degree celsius (100-101 degree Fahrenheit).
+def: "Body temperature elevated above the normal range." [HPO:sdoelken, PMID:9759682]
+comment: Fever has been defined as a state of elevated core temperature, which is often, but not necessarily, part of the defensive responses of multicellular organisms (host) to the invasion of live (microorganisms) or inanimate matter recognized as pathogenic or alien by the host. The febrile response (of which fever is a component) is a complex physiologic reaction to disease, involving a cytokine-mediated rise in core temperature, generation of acute phase reactants, and activation of numerous physiologic, endocrinologic, and immunologic systems. The rise in temperature during fever is to be distinguished from that occurring during episodes of hyperthermia. Unlike fever, hyperthermia involves an unregulated rise in body temperature in which pyrogenic cytokines are not directly involved and against which standard antipyretics are ineffective. It represents a failure of thermoregulatory homeostasis, in which there is uncontrolled heat production, inadequate heat dissipation, or defective hypothalamic thermoregulation.
 synonym: "Fever" EXACT layperson []
 synonym: "Hyperthermia" EXACT []
 synonym: "Pyrexia" EXACT []
@@ -5977,6 +6000,7 @@ name: Malignant hyperthermia
 namespace: human_phenotype
 alt_id: HP:0004896
 def: "Malignant hyperthermia is characterized by a rapid increase in temperature to 39-42 degrees C in response to inhalational anesthetics such as halothane or to muscle relaxants such as succinylcholine." [HPO:curators]
+synonym: "Malignant hyperthermia with anaesthesia" EXACT uk_spelling []
 synonym: "Malignant hyperthermia with anesthesia" EXACT []
 xref: MSH:D008305
 xref: SNOMEDCT_US:213026003
@@ -6023,7 +6047,7 @@ synonym: "Rigidity" EXACT layperson []
 xref: MSH:D009127
 xref: SNOMEDCT_US:16046003
 xref: UMLS:C0026837
-is_a: HP:0011442 ! Abnormal central motor function
+is_a: HP:0001276 ! Hypertonia
 
 [Term]
 id: HP:0002066
@@ -6050,6 +6074,7 @@ alt_id: HP:0007252
 def: "A bilateral tonic-clonic seizure is a seizure defined by a tonic (bilateral increased tone, lasting seconds to minutes) and then a clonic (bilateral sustained rhythmic jerking) phase." [HPO:pnrobinson, PMID:28276060]
 comment: A tonic-clonic seizure may be generalised from onset or progress from a focal seizure to a bilateral tonic clonic seizure. This term describes the observed semiology of the seizure without specifying whether the onset is focal or generalized. Thus it can be used for coding bilateral tonic-clonic seizures when the onset is not known. This form of seizure was formerly commonly called grand mal seizure.
 synonym: "Bilateral convulsive seizures" EXACT []
+synonym: "Generalised convulsion" EXACT uk_spelling []
 synonym: "Generalised tonic-clonic seizure (without specification of onset)" EXACT []
 synonym: "Generalized convulsion" EXACT []
 synonym: "Generalized tonic-clonic seizure (without specification of onset)" EXACT []
@@ -6183,8 +6208,9 @@ name: Dyspnea
 namespace: human_phenotype
 def: "Difficult or labored breathing. Dyspnea is a subjective feeling only the patient can rate, e.g., on a Borg scale." [HPO:probinson, PMID:16914301]
 synonym: "Abnormal breathing" EXACT []
-synonym: "Breathing difficulty" EXACT []
-synonym: "Difficult to breathe" EXACT []
+synonym: "Breathing difficulty" EXACT layperson []
+synonym: "Difficult to breathe" EXACT layperson []
+synonym: "Difficulty breathing" EXACT layperson []
 synonym: "Dyspnoea" EXACT uk_spelling []
 synonym: "Panting" RELATED layperson []
 synonym: "Shortness of breath" EXACT layperson []
@@ -6202,7 +6228,7 @@ namespace: human_phenotype
 alt_id: HP:0002880
 def: "Respiratory distress is objectively observable as the physical or emotional consequences from the experience of dyspnea. The physical presentation of respiratory distress is generally referred to as labored breathing, while the sensation of respiratory distress is called shortness of breath or dyspnea." []
 synonym: "Breathing difficulties" EXACT layperson [ORCID:0000-0001-6908-9849]
-synonym: "Difficulty breathing" EXACT layperson []
+synonym: "Labored breathing" EXACT layperson []
 synonym: "Respiratory difficulties" EXACT []
 xref: MSH:D004417
 xref: SNOMEDCT_US:230145002
@@ -6302,9 +6328,10 @@ is_a: HP:0031983 ! Abnormal pulmonary thoracic imaging finding
 
 [Term]
 id: HP:0002118
-name: Abnormality of the cerebral ventricles
+name: Abnormal cerebral ventricle morphology
 namespace: human_phenotype
-def: "Abnormality of the cerebral ventricles." [HPO:probinson]
+def: "Any structural abnormality of the cerebral ventricles." [HPO:probinson]
+synonym: "Abnormality of the cerebral ventricles" EXACT []
 xref: UMLS:C4025724
 is_a: HP:0012443 ! Abnormality of brain morphology
 
@@ -6326,7 +6353,7 @@ synonym: "Enlarged ventricular system" EXACT []
 synonym: "Large cerebral ventricles and cisternae" EXACT []
 synonym: "Ventricular dilatation" EXACT []
 xref: UMLS:C3278923
-is_a: HP:0002118 ! Abnormality of the cerebral ventricles
+is_a: HP:0002118 ! Abnormal cerebral ventricle morphology
 
 [Term]
 id: HP:0002121
@@ -6567,10 +6594,12 @@ alt_id: HP:0007339
 def: "A generalized-onset seizure is a type of seizure originating at some point within, and rapidly engaging, bilaterally distributed networks. The networks may include cortical and subcortical structures but not necessarily the entire cortex." [HPO:probinson, PMID:20196795, PMID:23739099, PMID:28276060, PMID:28276064, PMID:6790275]
 comment: in 2017 the ILAE Commission for Classification and Terminology recommended classifying a seizure as having focal or generalized onset only when there is a high degree of confidence (over 80%, arbitrarily chosen to parallel the usual allowable beta error) in the accuracy of this determination. Classifying a seizure as having apparently generalised onset does not rule out a focal-onset obscured by limitations of our current clinical methods.
 synonym: "Generalised onset seizure" EXACT uk_spelling []
+synonym: "Generalised seizures" EXACT uk_spelling []
 synonym: "Generalised-onset seizure" EXACT uk_spelling []
 synonym: "Generalized onset seizure" EXACT []
 synonym: "Generalized seizures" EXACT plural_form []
 synonym: "Generalized-onset seizures" EXACT plural_form []
+synonym: "Primary generalised seizure" EXACT uk_spelling []
 synonym: "Primary generalized seizure" EXACT []
 xref: MSH:D012640
 xref: SNOMEDCT_US:246545002
@@ -6587,7 +6616,7 @@ def: "An abnormal dilatation of the fourth cerebral ventricle." [HPO:probinson]
 synonym: "Enlarged fourth ventricle" EXACT []
 xref: UMLS:C1847117
 is_a: HP:0002119 ! Ventriculomegaly
-is_a: HP:0010950 ! Abnormality of the fourth ventricle
+is_a: HP:0010950 ! Abnormal fourth ventricle morphology
 
 [Term]
 id: HP:0002202
@@ -6721,6 +6750,7 @@ namespace: human_phenotype
 def: "Hemorrhage affecting the gastrointestinal tract." [HPO:probinson]
 synonym: "Gastrointestinal bleeding" EXACT layperson []
 synonym: "Gastrointestinal haemorrhage" EXACT uk_spelling []
+synonym: "GI haemorrhage" EXACT uk_spelling []
 synonym: "GI hemorrhage" EXACT abbreviation []
 xref: MSH:D006471
 xref: SNOMEDCT_US:74474003
@@ -6780,6 +6810,7 @@ id: HP:0002249
 name: Melena
 namespace: human_phenotype
 def: "The passage of blackish, tarry feces associated with gastrointestinal hemorrhage. Melena occurs if the blood remains in the colon long enough for it to be broken down by colonic bacteria. One degradation product, hematin, imbues the stool with a blackish color. Thus, melena generally occurs with bleeding from the upper gastrointestinal tract (e.g., stomach ulcers or duodenal ulcers), since the blood usually remains in the gut for a longer period of time than with lower gastrointestinal bleeding." [HPO:probinson]
+synonym: "Black faeces" NARROW uk_spelling []
 synonym: "Black feces" NARROW layperson [ORCID:0000-0001-6908-9849]
 xref: MSH:D008551
 xref: SNOMEDCT_US:249627005
@@ -6893,12 +6924,13 @@ is_a: HP:0004372 ! Reduced consciousness/confusion
 
 [Term]
 id: HP:0002334
-name: Abnormality of the cerebellar vermis
+name: Abnormal cerebellar vermis morphology
 namespace: human_phenotype
 def: "An anomaly of the vermis of cerebellum." [HPO:probinson]
 comment: The cerebellar vermis is the unpaired, median portion of the cerebellum that connects the two hemispheres.
+synonym: "Abnormality of the cerebellar vermis" EXACT []
 xref: UMLS:C4025712
-is_a: HP:0002438 ! Cerebellar malformation
+is_a: HP:0001317 ! Abnormal cerebellum morphology
 
 [Term]
 id: HP:0002344
@@ -7019,7 +7051,7 @@ synonym: "Aqueduct stenosis" EXACT []
 synonym: "Narrowing of aqueduct of Sylvius" EXACT [https://orcid.org/0000-0002-6548-5200]
 xref: MSH:D006849
 xref: UMLS:C2936786
-is_a: HP:0002118 ! Abnormality of the cerebral ventricles
+is_a: HP:0002118 ! Abnormal cerebral ventricle morphology
 
 [Term]
 id: HP:0002414
@@ -7097,6 +7129,7 @@ alt_id: HP:0003792
 def: "An involuntary and painless delay in the relaxation of skeletal muscle following contraction or electrical stimulation." [HPO:probinson]
 comment: Patients often describe myotonia as stiffness that is worse at the onset of activity and that improves with repeated muscle contractions. Myotonia tends to worsen in cold weather. Myotonia can be elicited by voluntary muscle contraction of by muscle percussion (e.g., by tapping the thenar eminence). During physical examination, myotonia may be elicited by asking the patient to make a tight fist and then quickly open the hand. Myotonia is caused by an abnormality in the muscle membrane, i.e., of the ion channels that control the contraction of muscle fibers.
 synonym: "Delayed relaxation of muscle fibers after contraction" EXACT []
+synonym: "Delayed relaxation of muscle fibres after contraction" EXACT uk_spelling []
 xref: MSH:D009222
 xref: SNOMEDCT_US:3434004
 xref: UMLS:C0027125
@@ -7229,6 +7262,7 @@ name: Intestinal bleeding
 namespace: human_phenotype
 def: "Bleeding from the intestines." [DDD:akelly]
 synonym: "Intestinal bleeding" EXACT layperson []
+synonym: "Intestinal haemorrhage" EXACT uk_spelling []
 synonym: "Intestinal hemorrhage" EXACT []
 xref: SNOMEDCT_US:712510007
 xref: UMLS:C0267373
@@ -7253,6 +7287,7 @@ namespace: human_phenotype
 alt_id: HP:0007147
 def: "Involuntary fecal soiling in adults and children who have usually already been toilet trained." [HPO:sdoelken]
 synonym: "Anal incontinence" EXACT []
+synonym: "Faecal incontinence" EXACT uk_spelling []
 synonym: "Fecal incontinence" EXACT []
 synonym: "Loss of bowel control" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: MSH:D005242
@@ -7759,6 +7794,7 @@ id: HP:0002829
 name: Arthralgia
 namespace: human_phenotype
 def: "Joint pain." [HPO:probinson]
+comment: Arthralgia is distinct from Arthritis, which is not a symptom but a diagnosis with articular inflammation or signs of osteoarthritis.
 synonym: "Arthralgias" EXACT []
 synonym: "Arthritic pain" RELATED []
 synonym: "Joint pain" EXACT layperson [ORCID:0000-0002-6548-5200]
@@ -8137,9 +8173,10 @@ is_a: HP:0004354 ! Abnormal circulating carboxylic acid concentration
 
 [Term]
 id: HP:0003117
-name: Abnormal circulating hormone level
+name: Abnormal circulating hormone concentration
 namespace: human_phenotype
 def: "An abnormal concentration of a hormone in the blood." [HPO:probinson]
+synonym: "Abnormal circulating hormone level" EXACT []
 synonym: "Abnormality of circulating hormone level" EXACT layperson []
 xref: UMLS:C4025652
 is_a: HP:0000818 ! Abnormality of the endocrine system
@@ -8151,6 +8188,7 @@ namespace: human_phenotype
 alt_id: HP:0003611
 def: "Any deviation from the normal concentration of a lipid in the blood circulation." [HPO:probinson]
 comment: According to CHEBI:18059 'Lipids' is a loosely defined term for substances of biological origin that are soluble in nonpolar solvents. They consist of saponifiable lipids, such as glycerides (fats and oils) and phospholipids, as well as nonsaponifiable lipids, principally steroids.
+synonym: "Dyslipidaemia" RELATED uk_spelling []
 synonym: "Dyslipidemia" RELATED []
 xref: MSH:D050171
 xref: SNOMEDCT_US:370992007
@@ -8477,7 +8515,7 @@ synonym: "Tingling" EXACT layperson []
 xref: MSH:D010292
 xref: SNOMEDCT_US:91019004
 xref: UMLS:C0030554
-is_a: HP:0000763 ! Sensory neuropathy
+is_a: HP:0033747 ! Abnormal exteroceptive sensation
 
 [Term]
 id: HP:0003418
@@ -8544,6 +8582,7 @@ alt_id: HP:0100794
 def: "A type of weakness that occurs after a muscle group is used and lessens if the muscle group has some rest. That is, there is diminution of strength with repetitive muscle actions." [HPO:probinson]
 comment: This type of weakness is pathognomonic for an abnormality of the neuromuscular junction such as myasthenia gravis. A characteristic form of muscular weakness that worsens after use of affected muscles. Myasthenia is caused by failure of neuromuscular transmission, which results from the binding of autoantibodies to proteins involved in signaling at the neuromuscular junction, including especially the nicotinic acetyl choline receptor (AChR) or, less frequently, a muscle-specific tyrosine kinase involved in AChR clustering.
 synonym: "Fatigable weakness of limb muscles" EXACT []
+synonym: "Generalised muscle weakness due to defect at the neuromuscular junction" EXACT uk_spelling []
 synonym: "Generalized muscle weakness due to defect at the neuromuscular junction" EXACT []
 synonym: "Myasthenia" EXACT []
 synonym: "Myasthenic weakness" EXACT []
@@ -8554,19 +8593,18 @@ is_a: HP:0003398 ! Abnormal synaptic transmission at the neuromuscular junction
 
 [Term]
 id: HP:0003474
-name: Sensory impairment
+name: Somatic sensory dysfunction
 namespace: human_phenotype
 alt_id: HP:0100964
 def: "An abnormality of the primary sensation that is mediated by peripheral nerves (pain, temperature, touch, vibration, joint position). The word hypoesthesia (or hypesthesia) refers to a reduction in cutaneous sensation to a specific type of testing." [HPO:probinson]
 comment: This term does not include abnormalities of cortical sensation such as two-point discrimination, stereognosis, and graphesthesia.
-synonym: "Hypoaesthesia" EXACT []
-synonym: "Hypoesthesia" EXACT []
+synonym: "Sensory impairment" EXACT []
 xref: MSH:D006987
 xref: SNOMEDCT_US:397974008
 xref: SNOMEDCT_US:398026008
 xref: SNOMEDCT_US:59073000
 xref: UMLS:C0020580
-is_a: HP:0009830 ! Peripheral neuropathy
+is_a: HP:0012638 ! Abnormal nervous system physiology
 
 [Term]
 id: HP:0003496
@@ -8834,6 +8872,7 @@ alt_id: HP:0001624
 alt_id: HP:0001625
 def: "Death of the fetus in utero after at least 20 weeks of gestation." [HPO:probinson]
 synonym: "Fetal death" RELATED layperson []
+synonym: "Foetal death" RELATED uk_spelling []
 synonym: "Stillbirth" EXACT layperson []
 synonym: "Stillborn" EXACT layperson []
 xref: MSH:D005313
@@ -8894,7 +8933,9 @@ def: "Any abnormality of the skeletal muscle cell. Muscle fibers are subdivided 
 comment: Normal human muscle is composed of many individual muscle fibers bundled together by layers of connective tissue that are arranged in a nesting-doll like fashion. The inner most structure, the single muscle fiber, is covered by a thin layer of primarily reticular fibers called the endomysium. The endomysium is quite inconspicuous and muscle fibers appear to be in direct contact with each other. The finest capillaries, nerve twigs and lymphatic capillaries are found within the endomysium. Groups of muscle fibers are bound together by the thicker perimysium, forming structures called fascicles. Capillaries, nerve fibers and lymphatic vessels also track in the perimyseum. Bundles of fascicles are encased within the dense irregular connective tissue of the epimysium. These connective tissue layers provide mechanical protection for the muscle fibers and increase the tensile strength of the muscle. The layers are continuous with the tendon, which provides attachment to bone. Individual muscle fibers are syncytia, formed by embryonic fusion of many myoblasts or later, myosatellite cells. Each muscle fiber contains many nuclei, peripherally positioned immediately adjacent to the sarcolemmal membrane. In healthy muscle only 3-5 percent of fibers contain nuclei that are located internally, within the cell, but many disease processes lead to internal nuclei. Each nucleus provides a segment of the cell with needed translated protein products.
 synonym: "Abnormal muscle fibre morphology" EXACT uk_spelling []
 synonym: "Abnormal skeletal muscle fiber morphology" EXACT []
+synonym: "Abnormal skeletal muscle fibre morphology" EXACT uk_spelling []
 synonym: "Abnormality of muscle fibers" EXACT []
+synonym: "Abnormality of muscle fibres" EXACT uk_spelling []
 xref: UMLS:C4021663
 is_a: HP:0011805 ! Abnormal skeletal muscle morphology
 created_by: peter
@@ -9355,6 +9396,7 @@ name: Hematological neoplasm
 namespace: human_phenotype
 def: "Neoplasms located in the blood and blood-forming tissue (the bone marrow and lymphatic tissue)." [http://www.ncbi.nlm.nih.gov/mesh?term=Hematologic%20Neoplasms]
 synonym: "Blood tumor" BROAD layperson [ORCID:0000-0001-5208-3432]
+synonym: "Blood tumour" BROAD uk_spelling []
 synonym: "Haematological neoplasm" EXACT uk_spelling []
 xref: MSH:D019337
 xref: SNOMEDCT_US:129154003
@@ -9672,8 +9714,10 @@ name: Chronic myelogenous leukemia
 namespace: human_phenotype
 alt_id: HP:0005544
 def: "A myeloproliferative disorder characterized by increased proliferation of the granulocytic cell line without the loss of their capacity to differentiate." [HPO:probinson]
+synonym: "Chronic myelocytic leukaemia" EXACT uk_spelling []
 synonym: "Chronic myelocytic leukemia" EXACT []
 synonym: "Chronic myelogenous leukaemia" EXACT uk_spelling []
+synonym: "Chronic myeloid leukaemia" EXACT uk_spelling []
 synonym: "Chronic myeloid leukemia" EXACT []
 xref: DOID:8552 "chronic myeloid leukemia"
 xref: MSH:D015464
@@ -9758,6 +9802,7 @@ namespace: human_phenotype
 subset: hposlim_core
 synonym: "Hair hypopigmentation" EXACT []
 synonym: "Loss of hair color" EXACT layperson [https://orcid.org/0000-0002-6548-5200]
+synonym: "Loss of hair colour" EXACT uk_spelling []
 xref: UMLS:C3278401
 is_a: HP:0009887 ! Abnormality of hair pigmentation
 
@@ -9882,7 +9927,7 @@ is_a: HP:0032973 ! Abnormal bronchoalveolar lavage fluid morphology
 
 [Term]
 id: HP:0006530
-name: Abnormal pulmonary Interstitial morphology
+name: Abnormal pulmonary interstitial morphology
 namespace: human_phenotype
 alt_id: HP:0006513
 alt_id: HP:0006547
@@ -9943,6 +9988,7 @@ namespace: human_phenotype
 def: "A tumor (abnormal growth of tissue) of the stomach." [HPO:probinson]
 synonym: "Neoplasia of the stomach" RELATED []
 synonym: "Stomach tumor" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Stomach tumour" EXACT uk_spelling []
 xref: MSH:D013274
 xref: NCIT:C3262
 xref: SNOMEDCT_US:126824007
@@ -9963,7 +10009,7 @@ synonym: "Cerebellar vermis aplasia/hypoplasia" EXACT []
 synonym: "Hypo/aplastic vermis" EXACT []
 xref: UMLS:C1855676
 xref: UMLS:C3280770
-is_a: HP:0002334 ! Abnormality of the cerebellar vermis
+is_a: HP:0002334 ! Abnormal cerebellar vermis morphology
 is_a: HP:0007360 ! Aplasia/Hypoplasia of the cerebellum
 
 [Term]
@@ -9976,6 +10022,7 @@ name: Abnormal aggressive, impulsive or violent behavior
 namespace: human_phenotype
 synonym: "Abnormal aggressive, impulsive or violent behaviour" EXACT uk_spelling []
 synonym: "Aggressive/violent behavior" BROAD layperson []
+synonym: "Aggressive/violent behaviour" BROAD uk_spelling []
 xref: UMLS:C4024963
 is_a: HP:0100851 ! Abnormal emotion/affect behavior
 
@@ -10101,7 +10148,9 @@ def: "A tumor (abnormal growth of tissue) of the gastrointestinal tract." [HPO:p
 synonym: "Gastrointestinal tract neoplasia" EXACT []
 synonym: "Gastrointestinal tract neoplasm" EXACT []
 synonym: "Gastrointestinal tract tumor" EXACT layperson []
+synonym: "Gastrointestinal tract tumour" EXACT uk_spelling []
 synonym: "GI tract tumor" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "GI tract tumour" EXACT uk_spelling []
 synonym: "Neoplasm of the GI tract" EXACT abbreviation []
 xref: MSH:D005770
 xref: NCIT:C3262
@@ -10113,13 +10162,17 @@ created_by: peter
 creation_date: 2008-04-01T11:55:00Z
 
 [Term]
-id: HP:0007435
-name: Diffuse palmoplantar keratoderma
+id: HP:0007447
+name: Diffuse palmoplantar hyperkeratosis
 namespace: human_phenotype
+alt_id: HP:0007435
+def: "Diffuse abnormal thickening of the skin on the palms and soles." [PMID:17298101]
+comment: The terms hyperkeratosis and keratoderma have been used interchangeably throughout the literature.
+synonym: "Diffuse palmoplantar keratoderma" EXACT []
+synonym: "Hyperkeratosis, diffuse palmoplantar" EXACT []
 xref: MSH:D015776
-xref: SNOMEDCT_US:400123002
-xref: UMLS:C0022584
-is_a: HP:0000982 ! Palmoplantar keratoderma
+xref: UMLS:C4021575
+is_a: HP:0000972 ! Palmoplantar hyperkeratosis
 
 [Term]
 id: HP:0007513
@@ -10355,6 +10408,7 @@ def: "The presence of one or more bullae on the skin, defined as fluid-filled bl
 comment: A bulla is a large vesicle described as a rounded or irregularly shaped blister containing serous or seropurulent fluid, equal to or greater than 10mm. In approaching blistering diseases, there are 3 fundamental criteria to consider: (1) the site or level of the blister (or the lowest level of vesiculation): subcorneal, midepidermis, suprabasal, subepidermal; (2) the findings that implicate the mechanism of blister formation (spongiosis, acantholysis, blistering degeneration, or epidermolysis); and (3) the type of inflammation (neutrophilic, lymphocytic, eosinophilic, mixed), if present.
 synonym: "Abnormal blistering of the skin" EXACT layperson []
 synonym: "Blister" EXACT []
+synonym: "Blistering, generalised" EXACT uk_spelling []
 synonym: "Blistering, generalized" EXACT layperson []
 synonym: "Blisters" EXACT layperson []
 synonym: "Skin blisters" RELATED layperson [HPO:skoehler]
@@ -10560,7 +10614,7 @@ synonym: "Abnormal kidney artery" EXACT layperson [ORCID:0000-0001-5208-3432]
 synonym: "Abnormality of the renal artery" EXACT []
 xref: UMLS:C4024624
 is_a: HP:0011004 ! Abnormal systemic arterial morphology
-is_a: HP:0012210 ! Abnormal renal morphology
+is_a: HP:0033835 ! Abnormal renal vascular morphology
 created_by: peter
 creation_date: 2008-04-04T06:13:00Z
 
@@ -10625,6 +10679,7 @@ namespace: human_phenotype
 alt_id: HP:0008966
 def: "Generalized degenerative changes of the fat tissue." [HPO:curators]
 synonym: "Generalised lipodystrophy" EXACT uk_spelling []
+synonym: "Lipodystrophy, generalised" EXACT uk_spelling []
 synonym: "Lipodystrophy, generalized" EXACT []
 xref: MSH:D052497
 xref: SNOMEDCT_US:284449005
@@ -10835,16 +10890,18 @@ creation_date: 2009-02-11T05:20:04Z
 
 [Term]
 id: HP:0009804
-name: Reduced number of teeth
+name: Tooth agenesis
 namespace: human_phenotype
-def: "The presence of a reduced number of teeth as in Hypodontia or as in Anodontia." [HPO:sdoelken]
-comment: Hypodontia describes a situation when there are fewer than the normal number of teeth, whereby 6 teeth or fewer teeth are missing (oligodontia refers to the condition of missing more than 6 teeth and the congenital absence of all teeth is called anodontia).
+def: "The absence of one or more teeth from the normal series by a failure\nto develop" [HPO:sdoelken, PMID:31468724]
+comment: Teeth agenesis needs to be confirmed by X-rays. Teeth agenesis encompasses hypodontia, oligodontia, and anodontia. The total number and the type of teeth missing should be added to the description. The clinical absence of a tooth due to a disturbed eruption should not be termed teeth agenesis but a missing tooth.
 synonym: "Decreased number of teeth" RELATED layperson [ORCID:0000-0001-5889-4463]
 synonym: "Decreased tooth count" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Dental agenesis" EXACT []
 synonym: "Failure of development of some teeth" EXACT [ORCID:0000-0001-5889-4463]
 synonym: "Fewer teeth than normal" RELATED layperson [ORCID:0000-0001-5889-4463]
 synonym: "Missing some teeth" RELATED layperson [ORCID:0000-0001-5889-4463]
 synonym: "Reduced number of teeth" EXACT layperson []
+synonym: "Teeth, agenesis" EXACT plural_form []
 synonym: "Tooth agenesis" BROAD []
 xref: UMLS:C4024202
 xref: UMLS:C4083050
@@ -10922,6 +10979,7 @@ alt_id: HP:0007088
 alt_id: HP:0007235
 alt_id: HP:0007355
 def: "Peripheral neuropathy is a general term for any disorder of the peripheral nervous system. The main clinical features used to classify peripheral neuropathy are distribution, type (mainly demyelinating versus mainly axonal), duration, and course." [HPO:sdoelken]
+comment: Terms from this subhierarchy should be used to describe morphological abnormalities seen in peripheral neuropathy. Functional deficits should be coded separately.
 synonym: "Neuropathy" RELATED []
 synonym: "Peripheral nerve damage" EXACT [ORCID:0000-0001-5208-3432]
 synonym: "Peripheral neuritis" EXACT [ORCID:0000-0001-5208-3432]
@@ -10931,7 +10989,7 @@ xref: SNOMEDCT_US:386033004
 xref: SNOMEDCT_US:42658009
 xref: UMLS:C0031117
 xref: UMLS:C0442874
-is_a: HP:0000759 ! Abnormal peripheral nervous system morphology
+is_a: HP:0012638 ! Abnormal nervous system physiology
 created_by: peter
 creation_date: 2009-03-01T07:49:18Z
 
@@ -10941,6 +10999,7 @@ name: Abnormality of hair pigmentation
 namespace: human_phenotype
 def: "An abnormality of hair pigmentation (color)." [HPO:curators]
 synonym: "Abnormality of hair color" EXACT layperson [ORCID:0000-0001-5889-4463]
+synonym: "Abnormality of hair colour" EXACT uk_spelling []
 synonym: "Abnormality of hair pigmentation" EXACT layperson []
 xref: UMLS:C4024172
 is_a: HP:0001595 ! Abnormal hair morphology
@@ -11301,6 +11360,7 @@ def: "A tumor (abnormal growth of tissue) of the skeleton." [HPO:probinson]
 synonym: "Bone neoplasm" RELATED []
 synonym: "Neoplasia of the skeletal system" NARROW []
 synonym: "Skeletal tumor" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Skeletal tumour" EXACT uk_spelling []
 xref: NCIT:C3262
 xref: SNOMEDCT_US:442868003
 xref: UMLS:C2732838
@@ -11448,7 +11508,7 @@ creation_date: 2010-06-25T09:00:39Z
 id: HP:0010765
 name: Palmar hyperkeratosis
 namespace: human_phenotype
-def: "Hyperkeratosis affecting the palm of the hand." [HPO:probinson]
+def: "Abnormal thickening of the skin localized to the palm of the hand." [HPO:probinson]
 xref: UMLS:C4023710
 is_a: HP:0000962 ! Hyperkeratosis
 is_a: HP:0040211 ! Abnormal skin morphology of the palm
@@ -11553,6 +11613,7 @@ synonym: "Aseptic bone necrosis" EXACT []
 synonym: "Aseptic necrosis" EXACT []
 synonym: "Bone infarction" EXACT []
 synonym: "Death of bone due to decreased blood supply" EXACT layperson [https://orcid.org/0000-0002-6548-5200]
+synonym: "Ischaemic bone necrosis" EXACT uk_spelling []
 synonym: "Ischemic bone necrosis" EXACT []
 synonym: "Osteochondronecrosis" EXACT []
 synonym: "Osteonecrosis" EXACT []
@@ -11706,12 +11767,13 @@ creation_date: 2011-01-16T11:39:17Z
 
 [Term]
 id: HP:0010950
-name: Abnormality of the fourth ventricle
+name: Abnormal fourth ventricle morphology
 namespace: human_phenotype
 def: "An abnormality of the fourth ventricle." [HPO:probinson]
 comment: The fourth ventricle is the cerebral ventricle that extends from the cerebral aqueduct to the obex, and is located within the pons and the upper part of the medulla oblongata.
+synonym: "Abnormality of the fourth ventricle" EXACT []
 xref: UMLS:C4023630
-is_a: HP:0002118 ! Abnormality of the cerebral ventricles
+is_a: HP:0002118 ! Abnormal cerebral ventricle morphology
 created_by: peter
 creation_date: 2011-01-17T12:58:00Z
 
@@ -11726,6 +11788,7 @@ def: "A kind of anemia characterized by inadequate production of erythrocytes." 
 synonym: "Anaemia of inadequate production" EXACT uk_spelling []
 synonym: "Anemia, dyserythropoietic" EXACT []
 synonym: "Defective erythropoiesis" EXACT []
+synonym: "Dyserythropoietic anaemia" EXACT uk_spelling []
 synonym: "Dyserythropoietic anemia" EXACT []
 synonym: "Ineffective erythropoiesis" EXACT []
 xref: SNOMEDCT_US:70730006
@@ -12142,7 +12205,7 @@ synonym: "Abnormality of circulating adrenocorticotropic hormone level" RELATED 
 synonym: "Abnormality of circulating adrenocorticotropin level" RELATED []
 synonym: "Abnormality of circulating corticotropin level" EXACT []
 xref: UMLS:C4023574
-is_a: HP:0003117 ! Abnormal circulating hormone level
+is_a: HP:0003117 ! Abnormal circulating hormone concentration
 created_by: peter
 creation_date: 2011-03-10T07:46:59Z
 
@@ -12247,6 +12310,7 @@ namespace: human_phenotype
 def: "A dialeptic seizure is a type of seizure characterised predominantly by reduced responsiveness or awareness and with subsequent at least partial amnesia of the event." [PMID:9738682]
 comment: The main ictal manifestation of dialeptic seizures is an alteration of consciousness rather than motor or sensory features. The term describes the pure clinical semiology of a seizure and is used independently of the ictal electrographic findings: it could describe a seizure of focal, generalized or unknown onset. In 2017 the ILAE Commission for Classification and Terminology recommended classifying a seizure as having focal or generalized onset only when there is a high degree of confidence (>80%, arbitrarily chosen to parallel the usual allowable beta error) in the accuracy of this determination.
 synonym: "Behavioral arrest seizure with impairment of awareness irrespective of onset" EXACT []
+synonym: "Behavioural arrest seizure with impairment of awareness irrespective of onset" EXACT uk_spelling []
 synonym: "Unknown onset behavioral arrest seizure with impairment of awareness" EXACT []
 synonym: "Unknown onset behavioural arrest seizure with impairment of awareness" EXACT []
 is_a: HP:0001250 ! Seizure
@@ -12352,9 +12416,10 @@ creation_date: 2012-01-01T01:22:36Z
 
 [Term]
 id: HP:0011283
-name: Abnormality of the metencephalon
+name: Abnormal metencephalon morphology
 namespace: human_phenotype
 def: "An abnormality of the metencephalon. The metencephalon is the part of the hindbrain that consists of the pons and the cerebellum." [HPO:probinson]
+synonym: "Abnormality of the metencephalon" EXACT []
 xref: UMLS:C4023432
 is_a: HP:0011282 ! Abnormality of hindbrain morphology
 created_by: peter
@@ -12499,7 +12564,7 @@ def: "An abnormality of the function of the inner ear." [DDD:dfitzpatrick]
 comment: The inner ear comprises the cochlea, three semicircular canals and the vestibule (labyrinth), and is directly responsible for hearing. Additionally, the vestibule and semicircular canals function to maintain balance or equilibrium.
 synonym: "Functional abnormality of the inner ear" EXACT layperson []
 xref: UMLS:C4023382
-is_a: HP:0000359 ! Abnormality of the inner ear
+is_a: HP:0031704 ! Abnormal ear physiology
 created_by: hecht
 creation_date: 2012-03-09T04:58:30Z
 
@@ -13650,6 +13715,7 @@ name: Neoplasm of the ear
 namespace: human_phenotype
 def: "A tumor (abnormal growth of tissue) of the ear." [HPO:probinson]
 synonym: "Ear tumor" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Ear tumour" EXACT uk_spelling []
 xref: MSH:D004428
 xref: NCIT:C3262
 xref: SNOMEDCT_US:363228008
@@ -13893,8 +13959,8 @@ def: "A deviation from normal concentration of the hormone estrogen in the blood
 comment: Clinical estrogen tests measure one of three components: estrone (E1), estradiol (E2), or estriol (E3).
 synonym: "Abnormal circulating oestrogen level" EXACT []
 synonym: "Abnormal estrogen level" EXACT []
-is_a: HP:0003117 ! Abnormal circulating hormone level
-is_a: HP:0008373 ! Puberty and gonadal disorders
+synonym: "Abnormal oestrogen level" EXACT uk_spelling []
+is_a: HP:0033799 ! Abnormal circulating sex hormone concentration
 property_value: http://purl.org/dc/elements/1.1/date 2016-11-27T13:46:29Z xsd:dateTime
 created_by: HPO:probinson
 
@@ -13921,7 +13987,7 @@ created_by: HPO:probinson
 id: HP:0025234
 name: Parasomnia
 namespace: human_phenotype
-def: "An undesirable physical event or experience that occur during entry into sleep, during sleep, or during arousal from sleep." [PMID:27647645]
+def: "An undesirable physical event or experience that occurs during entry into sleep, during sleep, or during arousal from sleep." [PMID:27647645]
 is_a: HP:0002360 ! Sleep disturbance
 property_value: http://purl.org/dc/elements/1.1/date 2016-12-14T11:50:48Z xsd:dateTime
 created_by: HPO:probinson
@@ -13933,6 +13999,7 @@ namespace: human_phenotype
 def: "Any physiological abnormality of the esophagus." []
 synonym: "Abnormality of oesophagus physiology" EXACT uk_spelling []
 synonym: "Functional abnormality of the esophagus" EXACT []
+synonym: "Functional abnormality of the oesophagus" EXACT uk_spelling []
 is_a: HP:0012719 ! Functional abnormality of the gastrointestinal tract
 property_value: http://purl.org/dc/elements/1.1/date 2016-12-18T13:39:06Z xsd:dateTime
 created_by: HPO:probinson
@@ -13989,6 +14056,7 @@ id: HP:0025408
 name: Abnormal spleen morphology
 namespace: human_phenotype
 def: "Any anomaly of the structure of the spleen." []
+synonym: "Splenic lesion" RELATED []
 is_a: HP:0001743 ! Abnormality of the spleen
 property_value: http://purl.org/dc/elements/1.1/date 2017-04-23T10:55:52Z xsd:dateTime
 created_by: HPO:probinson
@@ -14089,6 +14157,7 @@ name: Cervical polyp
 namespace: human_phenotype
 def: "Abnormal growth of tissue projecting from a mucous membrane of the endocervix." [HPO:probinson, PMID:21270291]
 synonym: "Cervical tumor" EXACT layperson [ORCID:0000-0001-6908-9849]
+synonym: "Cervical tumour" EXACT uk_spelling []
 xref: MSH:D002583
 xref: SNOMEDCT_US:123841004
 xref: SNOMEDCT_US:65576009
@@ -14153,13 +14222,14 @@ name: Abnormal circulating androgen level
 namespace: human_phenotype
 def: "An anomaly in the blood concentration of an androgen, that is, of a steroid hormone that controls development and maintenance of masculine characteristics. The androgens include testosterone and Dehydroepiandrosterone." [HPO:probinson]
 xref: UMLS:C4072892
-is_a: HP:0003117 ! Abnormal circulating hormone level
+is_a: HP:0033799 ! Abnormal circulating sex hormone concentration
 
 [Term]
 id: HP:0030348
-name: Increased circulating androgen level
+name: Increased circulating androgen concentration
 namespace: human_phenotype
 def: "An elevation of the blood concentration of an androgen, that is, of a steroid hormone that controls development and maintenance of masculine characteristics. The androgens include testosterone and Dehydroepiandrosterone." [HPO:probinson]
+synonym: "Increased circulating androgen level" EXACT []
 xref: UMLS:C4072893
 is_a: HP:0030347 ! Abnormal circulating androgen level
 
@@ -14505,8 +14575,8 @@ id: HP:0031409
 name: Abnormal lymphocyte physiology
 namespace: human_phenotype
 def: "Any anomaly of lymphocyte function." []
-is_a: HP:0010978 ! Abnormality of immune system physiology
 is_a: HP:0011017 ! Abnormal cellular physiology
+is_a: HP:0033796 ! Abnormal leukocyte physiology
 property_value: http://purl.org/dc/elements/1.1/date 2017-09-04T12:08:45Z xsd:dateTime
 created_by: peter
 
@@ -14640,7 +14710,7 @@ name: Abnormal pulmonary thoracic imaging finding
 namespace: human_phenotype
 def: "This term groups terms representing abnormal findings derived from chest X-ray investigation of the lung. In general, lung abnormalities can manifest as opacities (areas of increased density) or as regions with decreased density." []
 synonym: "Abnormal chest radiograph finding (lung)" EXACT []
-is_a: HP:0002088 ! Abnormal lung morphology
+is_a: HP:0012252 ! Abnormal respiratory system morphology
 property_value: http://purl.org/dc/elements/1.1/date 2018-07-08T13:38:01Z xsd:dateTime
 created_by: peter
 
@@ -14807,7 +14877,7 @@ created_by: peter
 id: HP:0033095
 name: Increased sulfur amino acid level in urine
 namespace: human_phenotype
-synonym: "An elevated level of a sulfur-containing amino acid in the urine." EXACT []
+def: "An elevated level of a sulfur-containing amino acid in the urine." []
 synonym: "Increased sulfur-containing amino acid level in urine" EXACT []
 synonym: "Increased sulphur amino acid level in urine" EXACT uk_spelling []
 is_a: HP:0033100 ! Increased proteinogenic amino acid level in urine
@@ -14894,6 +14964,47 @@ synonym: "Small corpus callosum" EXACT []
 synonym: "Thinning of the corpus callosum" EXACT []
 is_a: HP:0001273 ! Abnormal corpus callosum morphology
 property_value: http://purl.org/dc/elements/1.1/date 2021-04-07T16:39:13Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033747
+name: Abnormal exteroceptive sensation
+namespace: human_phenotype
+def: "A type of somatic sensory dysfunction characterized by abnormality of superficial sensation that is mediated by receptors in skin and mucous membranes." []
+is_a: HP:0003474 ! Somatic sensory dysfunction
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-21T10:58:44Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033796
+name: Abnormal leukocyte physiology
+namespace: human_phenotype
+def: "A functional abnormality of a white blood cell." []
+is_a: HP:0001871 ! Abnormality of blood and blood-forming tissues
+is_a: HP:0010978 ! Abnormality of immune system physiology
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-08T13:50:44Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033799
+name: Abnormal circulating sex hormone concentration
+namespace: human_phenotype
+def: "Any deviation from the normal concentration of a sex hormone in the blood circulation" []
+comment: Sex hormones are steroid hormones that include the androgens, estrogens, and progestogens.
+synonym: "Abnormal circulating gonadal steroid concentration" EXACT []
+synonym: "Abnormal circulating gonadocorticoid concentration" EXACT []
+synonym: "Abnormal circulating sex steroid concentration" EXACT []
+is_a: HP:0003117 ! Abnormal circulating hormone concentration
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-09T11:33:30Z xsd:dateTime
+created_by: peter
+
+[Term]
+id: HP:0033835
+name: Abnormal renal vascular morphology
+namespace: human_phenotype
+def: "Anomalous structure of a blood vessel in the kidney." []
+is_a: HP:0012210 ! Abnormal renal morphology
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-16T17:27:46Z xsd:dateTime
 created_by: peter
 
 [Term]
@@ -15033,7 +15144,7 @@ name: Abnormal insulin level
 namespace: human_phenotype
 def: "An abnormal concentration of insulin in the body." []
 xref: UMLS:C4073160
-is_a: HP:0003117 ! Abnormal circulating hormone level
+is_a: HP:0003117 ! Abnormal circulating hormone concentration
 
 [Term]
 id: HP:0040215
@@ -15286,6 +15397,7 @@ alt_id: HP:0003790
 def: "The presence of inclusion bodies within the cytoplasm of muscle cells. Inclusion bodies are aggregates (deposits) or stainable material, usually misfolded proteins." [HPO:probinson]
 synonym: "Muscle fiber cytoplasmic bodies" EXACT [http://neuromuscular.wustl.edu/pathol/cytobod.htm]
 synonym: "Muscle fibre cytoplasmatic inclusion bodies" EXACT uk_spelling []
+synonym: "Muscle fibre cytoplasmic bodies" EXACT uk_spelling []
 xref: UMLS:C4022157
 is_a: HP:0100299 ! Muscle fiber inclusion bodies
 created_by: doelkens
@@ -15364,6 +15476,30 @@ created_by: doelkens
 creation_date: 2010-12-14T10:58:11Z
 
 [Term]
+id: HP:0100496
+name: Abnormality of the vitamin B3 metabolism
+namespace: human_phenotype
+comment: Vitamin B3 is also known as nicotinic acid, vitamin PP or Niacin and is one of the forty to eighty essential human nutrients.
+synonym: "Abnormality of the vitamin B3 metabolism" EXACT layperson []
+xref: UMLS:C4022040
+is_a: HP:0004340 ! Abnormality of vitamin B metabolism
+created_by: doelkens
+creation_date: 2010-12-17T04:13:00Z
+
+[Term]
+id: HP:0100497
+name: Vitamin B3 deficiency
+namespace: human_phenotype
+synonym: "Vitamin B3 deficiency" EXACT layperson []
+xref: MSH:D010383
+xref: SNOMEDCT_US:418186002
+xref: SNOMEDCT_US:418279001
+xref: UMLS:C0030783
+is_a: HP:0100496 ! Abnormality of the vitamin B3 metabolism
+created_by: doelkens
+creation_date: 2010-12-17T04:14:51Z
+
+[Term]
 id: HP:0100502
 name: Vitamin B12 deficiency
 namespace: human_phenotype
@@ -15418,6 +15554,7 @@ namespace: human_phenotype
 def: "Tumor of the lung." [HPO:probinson]
 synonym: "Lung cancer" BROAD layperson []
 synonym: "Lung tumor" EXACT layperson []
+synonym: "Lung tumour" EXACT uk_spelling []
 xref: MSH:D008175
 xref: NCIT:C3262
 xref: SNOMEDCT_US:126713003
@@ -15464,7 +15601,8 @@ alt_id: HP:0002441
 alt_id: HP:0006972
 alt_id: HP:0006998
 alt_id: HP:0007211
-def: "Abnormality in the process of thought including the ability to process information." [HPO:sdoelken]
+def: "Abnormal cognition with deficits in thinking, reasoning, or remembering." [HPO:sdoelken]
+comment: An individual with cognitive impairment may have trouble remembering, learning new things, concentrating, or making decisions.
 synonym: "Abnormality of cognition" EXACT layperson []
 synonym: "Cognitive abnormality" EXACT layperson []
 synonym: "Cognitive defects" EXACT layperson []
@@ -15523,6 +15661,7 @@ namespace: human_phenotype
 def: "Fluid accumulation in the lungs." [HPO:sdoelken]
 synonym: "Excess fluid in lungs" EXACT layperson [ORCID:0000-0001-5208-3432]
 synonym: "Lung edema" EXACT []
+synonym: "Lung oedema" EXACT uk_spelling []
 synonym: "Pulmonary oedema" EXACT []
 synonym: "Wet lung" EXACT layperson [ORCID:0000-0001-5208-3432]
 xref: MSH:D011654
@@ -15554,6 +15693,7 @@ name: Neoplasm of the respiratory system
 namespace: human_phenotype
 def: "A tumor (abnormal growth of tissue) of the respiratory system." [HPO:probinson]
 synonym: "Respiratory system tumor" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Respiratory system tumour" EXACT uk_spelling []
 xref: MSH:D012142
 xref: NCIT:C3262
 xref: SNOMEDCT_US:126667002
@@ -15645,6 +15785,7 @@ synonym: "Self-harm" EXACT []
 synonym: "Self-injurious behavior" EXACT layperson []
 synonym: "Self-injurious behaviors" RELATED layperson [HPO:skoehler]
 synonym: "Self-injurious behaviour" EXACT layperson []
+synonym: "Self-injurious behaviours" RELATED uk_spelling []
 xref: MSH:D016728
 xref: SNOMEDCT_US:248062006
 xref: UMLS:C0085271
@@ -15739,6 +15880,7 @@ name: Neoplasm of the middle ear
 namespace: human_phenotype
 def: "A tumor (abnormal growth of tissue) of the middle ear." [HPO:probinson]
 synonym: "Middle ear tumor" EXACT layperson [ORCID:0000-0001-5208-3432]
+synonym: "Middle ear tumour" EXACT uk_spelling []
 synonym: "Neoplasia of the middle ear" EXACT []
 xref: NCIT:C3262
 xref: SNOMEDCT_US:127006003
@@ -15864,11 +16006,13 @@ creation_date: 2011-12-12T10:02:15Z
 id: HP:0100963
 name: Hyperesthesia
 namespace: human_phenotype
+def: "Increased sensitivity to stimulation, excluding the special senses, which may refer to various modes of cutaneous sensibility including touch and thermal sensation without pain, as well as to pain." [PMID:33085272]
+comment: Hyperesthesia is a common symptom of neuropathic pain. Neuropathic pain is defined by the International Association for the Study of Pain as pain caused by a lesion or disease of the somatosensory system. The neuropathic pain phenotype contains a spectrum of symptoms that can be roughly categorized into positive and negative symptoms. Hyperesthesia is a positive symptom of neuropathic pain. Positive symptoms are categorized as stimulus-dependent pain, stimulus-independent pain, and paresthesias.
 synonym: "Hyperaesthesia" EXACT []
 xref: MSH:D006941
 xref: SNOMEDCT_US:14151009
 xref: UMLS:C0020453
-is_a: HP:0000763 ! Sensory neuropathy
+is_a: HP:0033747 ! Abnormal exteroceptive sensation
 created_by: doelkens
 creation_date: 2012-01-18T06:11:19Z
 

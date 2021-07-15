@@ -10,7 +10,7 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/ncbitaxon_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-06-01/imports/ncbitaxon_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-07-12/imports/ncbitaxon_import.owl"/>
     </owl:Ontology>
     
 
@@ -2542,7 +2542,7 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_11286 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_11286">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_11270"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2842407"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_genus"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
@@ -5156,26 +5156,10 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_12461 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_12461">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1678143"/>
-        <oboInOwl:hasBroadSynonym>HEV</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>Hepatitis E virus HEV</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>NCBITaxon:12461</oboInOwl:id>
-        <rdfs:label>Hepatitis E virus</rdfs:label>
+        <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1678143"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_12461"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
-        <owl:annotatedTarget>HEV</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#acronym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_12461"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Hepatitis E virus HEV</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#equivalent_name"/>
-    </owl:Axiom>
     
 
 
@@ -6621,7 +6605,6 @@
         <oboInOwl:hasDbXref>PMID:9336916</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Lyme disease spirochete</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Borrelia burdorferi</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Borrelia burgdorferi</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:139</oboInOwl:id>
         <rdfs:label>Borreliella burgdorferi</rdfs:label>
@@ -6631,12 +6614,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Lyme disease spirochete</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#genbank_common_name"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_139"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Borrelia burdorferi</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_139"/>
@@ -7201,9 +7178,16 @@
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_clade"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Paracanthomorphacea</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:1489838</oboInOwl:id>
-        <rdfs:label>Paracanthomorphacea</rdfs:label>
+        <rdfs:label>Paracanthopterygii</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1489838"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Paracanthomorphacea</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
     
 
 
@@ -7627,7 +7611,7 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_157 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_157">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_137"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2845253"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_genus"/>
         <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:23961314</oboInOwl:hasDbXref>
@@ -8444,11 +8428,33 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1678143">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1678141"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_species"/>
+        <oboInOwl:hasAlternativeId>NCBITaxon:12461</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasBroadSynonym>HEV</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Hepatitis E virus HEV</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Hepatitis E virus</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:1678143</oboInOwl:id>
         <rdfs:label>Orthohepevirus A</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1678143"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+        <owl:annotatedTarget>HEV</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#acronym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1678143"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Hepatitis E virus HEV</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#equivalent_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1678143"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Hepatitis E virus</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
     
 
 
@@ -8560,16 +8566,9 @@
         <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16014471</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Treponemataceae</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:170</oboInOwl:id>
         <rdfs:label>Leptospiraceae</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_170"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Treponemataceae</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#in_part"/>
-    </owl:Axiom>
     
 
 
@@ -8870,6 +8869,7 @@
         <oboInOwl:hasDbXref>PMID:1883713</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:2275850</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:29497402</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:31296783</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:7547284</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:7547304</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:7907223</oboInOwl:hasDbXref>
@@ -9484,14 +9484,14 @@
         <oboInOwl:hasDbXref>PMID:16558750</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:24480908</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Eubacteriales</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Clostridiales</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:186802</oboInOwl:id>
-        <rdfs:label>Clostridiales</rdfs:label>
+        <rdfs:label>Eubacteriales</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_186802"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Eubacteriales</owl:annotatedTarget>
+        <owl:annotatedTarget>Clostridiales</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     
@@ -10904,10 +10904,17 @@
         <oboInOwl:hasDbXref>PMID:25288668</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:26654112</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>&quot;Leptospiria&quot; Cavalier-Smith 2020</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Spirochaetes</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:203692</oboInOwl:id>
         <rdfs:label>Spirochaetia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203692"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>&quot;Leptospiria&quot; Cavalier-Smith 2020</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_203692"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
@@ -12088,7 +12095,7 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_234 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_234">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_118882"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2826938"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_genus"/>
         <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:28066370</oboInOwl:hasDbXref>
@@ -13359,7 +13366,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2731360">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2731341"/>
-        <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_clade"/>
+        <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_kingdom"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id>NCBITaxon:2731360</oboInOwl:id>
@@ -14357,6 +14364,19 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2826938 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2826938">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_118882"/>
+        <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:32373076</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:2826938</oboInOwl:id>
+        <rdfs:label>Brucella/Ochrobactrum group</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_28314 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_28314">
@@ -14440,6 +14460,45 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2842242 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2842242">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
+        <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_clade"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:2842242</oboInOwl:id>
+        <rdfs:label>Ribozyviria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2842321 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2842321">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2842242"/>
+        <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_family"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:2842321</oboInOwl:id>
+        <rdfs:label>Kolmioviridae</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2842407 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2842407">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_11270"/>
+        <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_subfamily"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:2842407</oboInOwl:id>
+        <rdfs:label>Alpharhabdovirinae</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_28450 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_28450">
@@ -14493,6 +14552,19 @@
         <owl:annotatedTarget>Pseudomonas pseudomallei</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2845253 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2845253">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_136"/>
+        <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_family"/>
+        <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:2845253</oboInOwl:id>
+        <rdfs:label>Treponemataceae</rdfs:label>
+    </owl:Class>
     
 
 
@@ -14734,12 +14806,12 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_28845 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_28845">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28844"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2267273"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_species"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id>NCBITaxon:28845</oboInOwl:id>
-        <rdfs:label>Diphyllobothrium dendriticum</rdfs:label>
+        <rdfs:label>Dibothriocephalus dendriticus</rdfs:label>
     </owl:Class>
     
 
@@ -17426,12 +17498,12 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_34632">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_578835"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_species"/>
+        <oboInOwl:hasAlternativeId>NCBITaxon:2138176</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:59657</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>brown dog tick</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Ixodes sanguineus</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Rhiphicephalus sanguineus</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:34632</oboInOwl:id>
         <rdfs:label>Rhipicephalus sanguineus</rdfs:label>
     </owl:Class>
@@ -17445,12 +17517,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_34632"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Ixodes sanguineus</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_34632"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Rhiphicephalus sanguineus</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     
@@ -17610,21 +17676,15 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28211"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_order"/>
         <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:16403855</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:1854635</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>rhizobacteria</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Rhizobiaceae group</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Rhizobiales</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>alpha-2 proteobacteria</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>rhizobacteria</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:356</oboInOwl:id>
-        <rdfs:label>Rhizobiales</rdfs:label>
+        <rdfs:label>Hyphomicrobiales</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>rhizobacteria</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#genbank_common_name"/>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
@@ -17634,8 +17694,20 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Rhizobiales</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>alpha-2 proteobacteria</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#in_part"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_356"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>rhizobacteria</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     
 
@@ -17933,15 +18005,15 @@
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_36855"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Brucella melitensis bv. Canis</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#equivalent_name"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_36855"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Brucella melitensis biovar Canis</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#genbank_synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_36855"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Brucella melitensis bv. Canis</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#equivalent_name"/>
     </owl:Axiom>
     
 
@@ -18311,9 +18383,11 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3758">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3754"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_species"/>
+        <oboInOwl:hasAlternativeId>NCBITaxon:114938</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>plum</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Prunus domestica subsp. intermedia</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:3758</oboInOwl:id>
         <rdfs:label>Prunus domestica</rdfs:label>
     </owl:Class>
@@ -18322,6 +18396,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>plum</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#genbank_common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3758"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Prunus domestica subsp. intermedia</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     
 
@@ -18748,7 +18828,7 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_39759 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_39759">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2842321"/>
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_genus"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
@@ -19375,16 +19455,9 @@
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_species"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Pneumocystis jiroveci</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:42068</oboInOwl:id>
         <rdfs:label>Pneumocystis jirovecii</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_42068"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Pneumocystis jiroveci</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
-    </owl:Axiom>
     
 
 
@@ -21039,7 +21112,7 @@
         <oboInOwl:hasDbXref>PMID:17051209</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:17486964</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:17572334</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>pin moulds</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>pin molds</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id>NCBITaxon:4827</oboInOwl:id>
         <rdfs:label>Mucorales</rdfs:label>
@@ -21047,7 +21120,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4827"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>pin moulds</owl:annotatedTarget>
+        <owl:annotatedTarget>pin molds</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#genbank_common_name"/>
     </owl:Axiom>
     
@@ -21551,18 +21624,26 @@
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_genus"/>
         <oboInOwl:hasAlternativeId>NCBITaxon:1131475</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:36632</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>NCBITaxon:36634</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:37503</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:743109</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:20141373</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:28082760</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Chaetosartorya</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Petromyces</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Phialosimplex</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Polypaecilum</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:5052</oboInOwl:id>
         <rdfs:label>Aspergillus</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_5052"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Chaetosartorya</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_5052"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
@@ -24216,6 +24297,7 @@
         <oboInOwl:hasExactSynonym>malaria parasite P. vivax</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Haemamoeba vivax</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Haemamoeba vivax Grassi and Feletti, 1890</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:5855</oboInOwl:id>
         <rdfs:label>Plasmodium vivax</rdfs:label>
     </owl:Class>
@@ -24229,6 +24311,12 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_5855"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Haemamoeba vivax</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_5855"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Haemamoeba vivax Grassi and Feletti, 1890</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     
@@ -25971,6 +26059,10 @@
         <ncbitaxon:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_species"/>
         <oboInOwl:hasAlternativeId>NCBITaxon:1471787</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:1471788</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>NCBITaxon:329135</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>NCBITaxon:329140</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>NCBITaxon:346633</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasAlternativeId>NCBITaxon:346634</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:582196</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:582198</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>NCBITaxon:582214</oboInOwl:hasAlternativeId>
@@ -31327,9 +31419,11 @@
         <oboInOwl:hasDbXref>GC_ID:11</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:1115421</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11760958</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:12215262</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:8195363</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>agent of human granulocytic ehrlichiosis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Anaplasma phagocytophila</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Cytoecetes bovis</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Cytoecetes phagocytophila</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Ehrlichia equi</oboInOwl:hasRelatedSynonym>
@@ -31347,6 +31441,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>agent of human granulocytic ehrlichiosis</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_948"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Anaplasma phagocytophila</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_948"/>
@@ -31548,33 +31648,45 @@
         <oboInOwl:hasDbXref>PMID:26654112</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:28066339</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:29458499</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>BCF group</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Bacteroides-Cytophaga-Flexibacter group</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>CFB group</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Cytophaga-Flexibacter-Bacteroides phylum</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>BCF group</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Bacteroidaeota</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Bacteroides-Cytophaga-Flexibacter group</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Bacteroidota</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>CFB group</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>CFB group bacteria</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Cytophaga-Flexibacter-Bacteroides phylum</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:976</oboInOwl:id>
         <rdfs:label>Bacteroidetes</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>BCF group</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Bacteroides-Cytophaga-Flexibacter group</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>CFB group</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Cytophaga-Flexibacter-Bacteroides phylum</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Bacteroidaeota</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Bacteroides-Cytophaga-Flexibacter group</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -31586,20 +31698,8 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>CFB group</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>CFB group bacteria</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#blast_name"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_976"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Cytophaga-Flexibacter-Bacteroides phylum</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
     </owl:Axiom>
     
 

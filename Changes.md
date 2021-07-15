@@ -1,3 +1,51 @@
+# 2021-07-12
+
+## New Classes
+
+ * [MONDO:0025690](http://purl.obolibrary.org/obo/MONDO_0025690) microcephaly, epilepsy, and diabetes syndrome 2
+ * [MONDO:0025691](http://purl.obolibrary.org/obo/MONDO_0025691) dystonia 30
+ * [MONDO:0025699](http://purl.obolibrary.org/obo/MONDO_0025699) Coffin-Siris syndrome 12
+ * [MONDO:0025701](http://purl.obolibrary.org/obo/MONDO_0025701) leukodystrophy, hypomyelinating, 22
+ * [MONDO:0025712](http://purl.obolibrary.org/obo/MONDO_0025712) angioedema, hereditary, 4
+ * [MONDO:0025713](http://purl.obolibrary.org/obo/MONDO_0025713) angioedema, hereditary, 7
+ * [MONDO:0100329](http://purl.obolibrary.org/obo/MONDO_0100329) primary viral infectious disease
+ * [MONDO:0100330](http://purl.obolibrary.org/obo/MONDO_0100330) disease arising from reactivation of latent infection with virus
+ * [MONDO:0100332](http://purl.obolibrary.org/obo/MONDO_0100332) disease has primary infectious agent
+ * [MONDO:0100333](http://purl.obolibrary.org/obo/MONDO_0100333) disease caused by reactivation of latent infectious agent
+ * [MONDO:0100334](http://purl.obolibrary.org/obo/MONDO_0100334) obsolete viral infectious disease or sequela
+ * [MONDO:0100336](http://purl.obolibrary.org/obo/MONDO_0100336) infectious disease or post-infectious disorder
+ * [MONDO:0100338](http://purl.obolibrary.org/obo/MONDO_0100338) urinary tract infection (disease)
+ * [MONDO:0100353](http://purl.obolibrary.org/obo/MONDO_0100353) HHV-7 infectious disease
+ * [MONDO:0100370](http://purl.obolibrary.org/obo/MONDO_0100370) acute hepatitis B virus infection
+ * [MONDO:0100371](http://purl.obolibrary.org/obo/MONDO_0100371) acute hepatitis C virus infection
+ * [MONDO:0700000](http://purl.obolibrary.org/obo/MONDO_0700000) ALG9-associated autosomal dominant polycystic kidney disease
+ * [MONDO:0700001](http://purl.obolibrary.org/obo/MONDO_0700001) shrinking lung syndrome
+ * [MONDO:0700004](http://purl.obolibrary.org/obo/MONDO_0700004) idiopathic vs non-idiopathic
+ * [MONDO:0700005](http://purl.obolibrary.org/obo/MONDO_0700005) idiopathic
+ * [MONDO:0700006](http://purl.obolibrary.org/obo/MONDO_0700006) non-idiopathic
+
+## Obsoletions
+
+ * [MONDO:0011645](http://purl.obolibrary.org/obo/MONDO_0011645) aneurysmal bone cysts --> obsolete aneurysmal bone cysts
+ * [MONDO:0014812](http://purl.obolibrary.org/obo/MONDO_0014812) metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration --> obsolete metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration
+ * [MONDO:0020810](http://purl.obolibrary.org/obo/MONDO_0020810) congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome --> obsolete congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome
+ * [MONDO:0024297](http://purl.obolibrary.org/obo/MONDO_0024297) nutritional or metabolic disease --> obsolete nutritional or metabolic disease
+
+## Renaming
+
+ * [MONDO:0005135](http://purl.obolibrary.org/obo/MONDO_0005135) parasitic infection --> parasitic infectious disease
+ * [MONDO:0005247](http://purl.obolibrary.org/obo/MONDO_0005247) urinary tract infection (disease) --> bacterial urinary tract infection (disease)
+ * [MONDO:0008842](http://purl.obolibrary.org/obo/MONDO_0008842) ataxia with oculomotor apraxia type 1 --> ataxia, early-onset, with oculomotor apraxia and hypoalbuminemia
+ * [MONDO:0009908](http://purl.obolibrary.org/obo/MONDO_0009908) dehydratase deficiency --> pterin-4 alpha-carbinolamine dehydratase 1 deficiency
+ * [MONDO:0011645](http://purl.obolibrary.org/obo/MONDO_0011645) aneurysmal bone cysts --> obsolete aneurysmal bone cysts
+ * [MONDO:0014399](http://purl.obolibrary.org/obo/MONDO_0014399) PCNA-related progressive neurodegenerative photosensitivy syndrome --> ataxia-telangiectasia-like disorder 2
+ * [MONDO:0014531](http://purl.obolibrary.org/obo/MONDO_0014531) amyotrohpic lateral sclerosis type 22 --> amyotrophic lateral sclerosis type 22
+ * [MONDO:0014812](http://purl.obolibrary.org/obo/MONDO_0014812) metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration --> obsolete metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration
+ * [MONDO:0020810](http://purl.obolibrary.org/obo/MONDO_0020810) congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome --> obsolete congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome
+ * [MONDO:0022636](http://purl.obolibrary.org/obo/MONDO_0022636) candida glabrata --> candida glabrata infection
+ * [MONDO:0024297](http://purl.obolibrary.org/obo/MONDO_0024297) nutritional or metabolic disease --> obsolete nutritional or metabolic disease
+ * [MONDO:0100318](http://purl.obolibrary.org/obo/MONDO_0100318) COVID-19 or sequela --> SARS-CoV-2-related disease
+
 # 2021-06-01
 
 ## New Classes
