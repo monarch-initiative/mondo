@@ -16,9 +16,9 @@ As of August 2019, Mondo editors are using `Protege version 5.5.0`
 ## Add ELK reasoner
 These instructions are written for Mac users.
 
-#### Install **ELK 0.5** 
+#### Install **ELK 0.5**
 - - Click here to get the latest [Protege Plugin latest build](https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&g=org.semanticweb.elk&a=elk-distribution-protege&e=zip&v=LATEST) (this is available on the bottom of [ELK pages](https://github.com/liveontologies/elk-reasoner/wiki/GettingElk). This will download a zipped file.)
-  
+
   - When downloaded, unzip and copy puli and elk jars (two .jar files) in the unpacked directory.
   -  Paste these files in your Protege plugin directory, as described below. This can be done via one of two ways:
 
@@ -27,7 +27,7 @@ These instructions are written for Mac users.
       - ~/.Protege/plugins (note this is usually hidden from finder, but you can see it in the terminal) or
       - Go to Protege in Applications (Finder), right click, 'Show package contents' -> Java -> plugins
   1. Copy and paste the two files into the plugins directory
-  1. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu. 
+  1. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu.
 
 For a video showing how to install Elk on a Mac, click [here](https://www.dropbox.com/s/n3td2n48xmwd3mj/Install_ELK_0.5.mov?dl=0)   
 
@@ -37,10 +37,19 @@ For a video showing how to install Elk on a Mac, click [here](https://www.dropbo
       `open ~/.Protege, then click on plugins`
   2. Click on plugins
   3. Copy and paste the two files into the plugins directory
-  4. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu. 
-      
- Important: it seems Elk 0.5. Does not work with all versions of Protege, in particular, 5.2 and below. These instructions were only tested with Protege 5.5.
- 
+  4. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu.
+
+ Important: it seems Elk 0.5 does not work with all versions of Protege, in particular, 5.2 and below. These instructions were only tested with Protege 5.5.
+
+ ### Remove the old Elk Reasoner
+ It may be necessary to remove the old Elk reasoner.
+
+ 1. in your terminal, type:
+open ~/.Protege/
+ 2. go to plugins
+ 3. delete: org.semanticweb.elk.jar
+ 4. Restart Protege
+
 ## Fix memory settings
 - Protege needs at least 4G of RAM to cope with Mondo, ideally use 12G or 16G if your machine can handle it.
 - If running from Protege.app on a mac, open the /Applications/Protege-5.5.0/Protégé.app/Contents/info.plist file
