@@ -13,6 +13,14 @@ As of August 2019, Mondo editors are using `Protege version 5.5.0`
 - Unzip and move the Protege app to your Applications folder.
 - See [Install_Protege5_Mac](https://protegewiki.stanford.edu/wiki/Install_Protege5_Mac) for more instructions and troubleshooting common problems.
 
+## Increase memory in Protege
+
+1. Protege needs at least 4G of RAM to cope with Mondo, ideally use 12G or 16G if your machine can handle it.
+1. If running from Protege.app on a mac, open the /Applications/Protege-5.5.0/Protégé.app/Contents/info.plist file
+1. Below the line: <string>-Xss16M</string>
+1. Insert another line: <string>-Xmx12G</string>
+1. Note - if you have issues opening Protege, then reduce the memory, try 10G (or lower) instead.
+
 ## Add ELK reasoner
 These instructions are written for Mac users.
 
