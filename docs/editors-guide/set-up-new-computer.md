@@ -46,7 +46,7 @@ Please make sure you have some kind of git client installed on your Machine. If 
 1. Type 'whitespace' in the search bar
 1. Set preferences per the image below
 
-![whitespace]()
+![whitespace](https://github.com/monarch-initiative/mondo/blob/master/docs/images/whitespace.png)
 
 
 
