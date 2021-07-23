@@ -8,7 +8,8 @@ _Added 2020-05-06_
 
 1. Open the src/ontology/imports/*_terms.txt
 2. Add term to this file
-3. run import: (for example:)
+3. In the Terminal, run: `export "MEMORY_GB=15"`
+4. Then run import: (for example:)
 `sh run.sh make imports/chebi_import.owl`
 4. Close Protege and open again
 5. Edit in Protege
