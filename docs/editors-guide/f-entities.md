@@ -120,17 +120,17 @@ For example, see MONDO_0001071 'intellectual disability'
 8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`).
 9. Click OK
 
-Synonym types include:
+##### Synonym types
 
 Synonym type | Description | Example of usage
 -- | -- | -- 
-A synonym that is historic and discouraged | | 
-A synonym that is recorded for consistency with another source but is a misspelling | | 
+A synonym that is historic and discouraged | A synonym that is no longer appropriate  | MONDO:0001071 'intellectual disability'
+A synonym that is recorded for consistency with another source but is a misspelling | The source term has a misspelling | N/A
 abbreviation | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
-ambiguous | | 
+ambiguous | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
 clingen preferred | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
-dubious synonym | | 
-Synonym to be removed from public release but maintained in edit version as record of external usage | | 
+dubious synonym | Not not to be relied upon or suspect | MONDO:0002776 'external ear disease'
+Synonym to be removed from public release but maintained in edit version as record of external usage | Synonym is used in an external source | MONDO:0011088 congenital myasthenic syndrome 1A
 
 ## Axiom Annotations
 
