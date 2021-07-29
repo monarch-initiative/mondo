@@ -89,20 +89,6 @@ For example, MONDO:0012996 `AGAT deficiency` has the related synonym `disorder o
 
 We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining) 
 
-### Synonym type:
-
-#### How to add a synonym annotation in Protege
-
-1. Click on the synonym
-2. Click the @ symbol on the synonym
-3. Click `Annotations` +
-4. Click `has_synonym_type` on the left
-5. Click `Entity IRI` on the top of the box
-6. Click `Annotation properties` on the top of the box
-7. Scroll to bottom, and show annotation below `synonym_type_property` (click triangle)
-8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`).
-9. Click OK
-
 ##### Synonym types
 
 Synonym Label | Synonym type | Description | Example of usage
