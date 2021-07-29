@@ -92,4 +92,4 @@ See example below:
 1. Click OK
 1. Click OK
 
-Save your work and view the diff in GitHub Desktop and create a pull request.
+Save your work and view the diff in GitHub Desktop and [create a pull request](https://mondo.readthedocs.io/en/latest/editors-guide/d-github-pr-workflow/).
