@@ -1,4 +1,4 @@
-## Add New Terms to Mondo: 
+## Add New Terms to Mondo
 
 #### Before you start:
 - make sure your Protege is setup (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/a-protege-setup/)).
@@ -108,4 +108,4 @@ Synonyms can be further annotated with synonym types. Click [here](https://mondo
 1. Click OK
 1. Click OK
 
-Save your work and view the diff in GitHub Desktop and create a pull request.
+Save your work and view the diff in GitHub Desktop and [create a pull request](https://mondo.readthedocs.io/en/latest/editors-guide/d-github-pr-workflow/).
