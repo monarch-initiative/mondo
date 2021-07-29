@@ -117,8 +117,20 @@ For example, see MONDO_0001071 'intellectual disability'
 5. Click `Entity IRI` on the top of the box
 6. Click `Annotation properties` on the top of the box
 7. Scroll to bottom, and show annotation below `synonym_type_property` (click triangle)
-8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`)
+8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`).
 9. Click OK
+
+Synonym types include:
+
+Synonym type | Description | Example of usage
+-- | -- | -- 
+A synonym that is historic and discouraged | | 
+A synonym that is recorded for consistency with another source but is a misspelling | | 
+abbreviation | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
+ambiguous | | 
+clingen preferred | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
+dubious synonym | | 
+Synonym to be removed from public release but maintained in edit version as record of external usage | | 
 
 ## Axiom Annotations
 
