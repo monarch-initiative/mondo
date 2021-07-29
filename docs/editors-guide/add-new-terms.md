@@ -1,4 +1,4 @@
-## Add New Terms to Mondo: 
+## Add New Terms to Mondo
 
 #### Before you start:
 - make sure your Protege is setup (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/a-protege-setup/)).
