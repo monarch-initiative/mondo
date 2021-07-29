@@ -79,7 +79,7 @@ See example below:
 
 ### Synonym types:
 
-Synonyms can be further annotated with synonym types. Click [here]() for a  summary and description of synonym types in Mondo.
+Synonyms can be further annotated with synonym types. Click [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#synonym-types) for a  summary and description of synonym types in Mondo.
 
 #### Add a synonym annotation in Protege
 
