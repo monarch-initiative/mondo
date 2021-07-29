@@ -91,23 +91,6 @@ We follow a lot of the same rules as Uberon for text mining: [https://github.com
 
 ### Synonym type:
 
-#### EXCLUDE synonyms
-
-Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release.
-
-For example, see MONDO_0002679 cerebral infarction or MONDO_0008170 'ovarian cancer'
-
-![ovarian cancer](images/OvarianCancerNOS.png)
-
-#### DEPRACATE synonyms
-
-We may also mark synonyms with DEPRECATED. E.g. all occurrences of “mental retardation” should be “intellectual disability”
-
-We try and avoid including things in this list: [https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations](https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations) but if it’s established (e.g. Wegener granulomatosis) may include as a synonym and mark DEPRECATED
-
-For example, see MONDO_0001071 'intellectual disability'
-![intellectual disability](images/IntellectualDisability.png)
-
 #### How to add a synonym annotation in Protege
 
 1. Click on the synonym
@@ -122,15 +105,22 @@ For example, see MONDO_0001071 'intellectual disability'
 
 ##### Synonym types
 
-Synonym type | Description | Example of usage
--- | -- | -- 
-A synonym that is historic and discouraged | A synonym that is no longer appropriate  | MONDO:0001071 'intellectual disability'
-A synonym that is recorded for consistency with another source but is a misspelling | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
-abbreviation | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
-ambiguous | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
-clingen preferred | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
-dubious synonym | Not not to be relied upon or suspect | MONDO:0002776 'external ear disease'
-Synonym to be removed from public release but maintained in edit version as record of external usage | Synonym is used in an external source | MONDO:0011088 congenital myasthenic syndrome 1A
+Synonym Label | Synonym type | Description | Example of usage
+-- | -- | -- | -- 
+A synonym that is historic and discouraged | DEPRACATE | We mark synonyms with DEPRECATED that are historic and no longer appropriate to use, e.g. all occurrences of “mental retardation” should be “intellectual disability”. We try and avoid including things in this list: [https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations](https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations) but if it’s established (e.g. Wegener granulomatosis) may include as a synonym and mark DEPRECATED | MONDO:0001071 'intellectual disability'
+A synonym that is recorded for consistency with another source but is a misspelling | MISSPELLING | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
+abbreviation | ABBREVIATION | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
+ambiguous | AMBIGUOUS | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
+clingen preferred | CLINGEN_PREFERRED | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
+dubious synonym | DUBIOUS | Not not to be relied upon or suspect | MONDO:0002776 'external ear disease'
+Synonym to be removed from public release but maintained in edit version as record of external usage | EXCLUDE | Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release. | MONDO:0011088 congenital myasthenic syndrome 1A, MONDO:0002679 cerebral infarction, MONDO:0008170 'ovarian cancer'
+
+Example of a DEPRECATE synonym in Protege: MONDO_0001071 'intellectual disability'
+![intellectual disability](images/IntellectualDisability.png)
+
+Example of an EXCLUDE synonym in Protege: MONDO:0008170 'ovarian cancer'
+![ovarian cancer](images/OvarianCancerNOS.png)
+
 
 ## Axiom Annotations
 
