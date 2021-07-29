@@ -6,7 +6,7 @@ There are 3 ways to merge classes:
 * Using the Protege merge tool (not yet released)
 * Using owltools
 
-Until the Protege merge tool is ready it is preferred to make merge requests via Nicole. This should be done in plain text, either csv or tsv. Two columns (or optionally 4 columns with labels):
+Until the Protege merge tool is ready it is preferred to make merge requests using owl tools via Nicole and Sabrina. You will need to have Docker installed and running (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/set-up-new-computer/#set-up-docker)). This should be done in plain text, either csv or tsv. Two columns (or optionally 4 columns with labels):
 
 1. CURIE of class to be obsoleted
 1. CURIE of replacement class
