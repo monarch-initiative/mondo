@@ -64,7 +64,7 @@ See example below:
 
 #### Add Synonyms
 
-- Synonyms should be exact, narrow, broad or related. Select appropriate annotation: 'has_exact_synonym', etc. 
+- Synonyms should be exact, narrow, broad or related. Select appropriate annotation: 'has_exact_synonym', etc. Click [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#synonym-scope) for more details on synonym scopes.
 - All synonyms in Mondo should have a dbxref on the synonym
 
 1.  Click the add annotations button
