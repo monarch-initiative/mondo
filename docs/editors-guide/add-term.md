@@ -64,7 +64,7 @@ See example below:
 
 #### Add Synonyms
 
-- Synonyms should be exact, narrow, broad or related. Select appropriate annotation: 'has_exact_synonym', etc. 
+- Synonyms should be exact, narrow, broad or related. Select appropriate annotation: 'has_exact_synonym', etc. Click [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#synonym-scope) for more details on synonym scopes.
 - All synonyms in Mondo should have a dbxref on the synonym
 
 1.  Click the add annotations button
@@ -76,6 +76,22 @@ See example below:
 1.  Add the dbxref to each synonym: Select database_cross_reference, and add dbxref in white box
 1. Click OK
 1. Click OK
+
+### Synonym types:
+
+Synonyms can be further annotated with synonym types. Click [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#synonym-types) for a  summary and description of synonym types in Mondo.
+
+#### Add a synonym annotation in Protege
+
+1. Click on the synonym
+2. Click the @ symbol on the synonym
+3. Click `Annotations` +
+4. Click `has_synonym_type` on the left
+5. Click `Entity IRI` on the top of the box
+6. Click `Annotation properties` on the top of the box
+7. Scroll to bottom, and show annotation below `synonym_type_property` (click triangle)
+8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`).
+9. Click OK
 
 #### Add Database cross reference
 
