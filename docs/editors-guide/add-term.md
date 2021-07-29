@@ -77,6 +77,22 @@ See example below:
 1. Click OK
 1. Click OK
 
+### Synonym types:
+
+Synonyms can be further annotated with synonym types. Click [here]() for a  summary and description of synonym types in Mondo.
+
+#### Add a synonym annotation in Protege
+
+1. Click on the synonym
+2. Click the @ symbol on the synonym
+3. Click `Annotations` +
+4. Click `has_synonym_type` on the left
+5. Click `Entity IRI` on the top of the box
+6. Click `Annotation properties` on the top of the box
+7. Scroll to bottom, and show annotation below `synonym_type_property` (click triangle)
+8. Select appropriate synonym type (e.g. `A synonym that is historic and discouraged`).
+9. Click OK
+
 #### Add Database cross reference
 
 - Database cross references to other source ontologies and terminologies can be added to terms
