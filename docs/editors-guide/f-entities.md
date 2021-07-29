@@ -125,7 +125,7 @@ For example, see MONDO_0001071 'intellectual disability'
 Synonym type | Description | Example of usage
 -- | -- | -- 
 A synonym that is historic and discouraged | A synonym that is no longer appropriate  | MONDO:0001071 'intellectual disability'
-A synonym that is recorded for consistency with another source but is a misspelling | The source term has a misspelling | N/A
+A synonym that is recorded for consistency with another source but is a misspelling | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
 abbreviation | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
 ambiguous | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
 clingen preferred | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
