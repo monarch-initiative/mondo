@@ -389,6 +389,21 @@ MONDOVIEWS=harrisons
 
 mondo-views: $(patsubst %, modules/mondo-%-view.owl, $(MONDOVIEWS))
 
+modules/mondo-%.owl: modules/%.tsv
+	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(OBO)/$(ONT)/mondo-$*.owl -o $@
+.PRECIOUS: modules/mondo-%.owl
+
+MERGE_TEMPLATE=tmp/merge_template.tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_B9QERClTE_sgASKEgIpG428Hxud0T-glA6-7KGt4aDXW47V2A5RNjcnGHlqKrGgM8guuwcCkcFW0/pub?gid=577155275&single=true&output=tsv
+
+tmp/merge_template.tsv:
+	wget "$(TEMPLATE_URL)" -O $@
+
+merge_template: $(MERGE_TEMPLATE)
+	$(ROBOT) template --merge-before --input $(SRC) \
+ --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
+
 
 #ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
 #OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501 
