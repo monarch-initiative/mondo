@@ -18,6 +18,7 @@ Name | Affiliation | GitHub
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro)
 [Dazhi Jiao](https://orcid.org/0000-0001-5052-3836) | Johns Hopkins University | [jiaola ](https://github.com/jiaola)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
+[Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly)
 [Kalliopi Panoutsopoulou](https://orcid.org/0000-0002-5460-8025) | European Bioinformatics Institute | [kallia-p](https://github.com/kallia-p)
 [Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3)
@@ -31,6 +32,7 @@ Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jam
 Larry Babb | [ClinGen](https://clinicalgenome.org/) |
 Jim Balhoff | [RENCI](https://renci.org/) | [balhoff ](https://github.com/balhoff )
 Samantha Baxter | [Broad Institute](https://www.broadinstitute.org/) | [sambaxter](https://github.com/sambaxter)
+Sue Bello | [The Jackson Laboratory](https://www.jax.org/) | [sbello](https://github.com/sbello)
 Taylor Bingaman | [ClinGen](https://clinicalgenome.org/) | [tibingaman](https://github.com/tibingaman)
 Neal Boerkoel | [The University of British Columbia](https://www.ubc.ca/) | [cboerkoel ](https://github.com/cboerkoel)
 Vanessa Boulanger | [NORD](https://rarediseases.org/) | [vanessaboulanger](https://github.com/vanessaboulanger)
@@ -53,7 +55,6 @@ Gilberto Fragoso | [NCI](https://www.cancer.gov/) | [NCIEVS](https://github.com/
 Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.com/melluf)
 Jenny Goldstein | [ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
 Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
-Ada Hamosh | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
 Emily Hartley | [Critical Path Institute](https://c-path.org/) | [ehartley](https://github.com/ehartley)
 Allison Heath | [CHOP](https://www.chop.edu/) | [allisonheath](https://github.com/allisonheath)
