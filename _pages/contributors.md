@@ -82,5 +82,6 @@ Andrea Storm |[GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about
 Deanne Taylor | [Childrens Hospital of Philadelphia](https://www.chop.edu/)
 Courtney Thaxton | [ClinGen](https://clinicalgenome.org/) | [courtneythaxton](https://github.com/courtneythaxton)
 Anne Thessen | [Monarch Initiative](http://monarchinitiative.org/) | [diatomsRcool](https://github.com/diatomsRcool)
+Dani Welter | | [daniwelter](https://github.com/daniwelter)
 Matt Wright | [ClinGen](https://clinicalgenome.org/) | [wrightmw](https://github.com/wrightmw)
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
