@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-07-12/imports/pato_import.owl
+data-version: mondo/releases/2021-08-02/imports/pato_import.owl
 ontology: mondo/imports/pato_import
 
 [Term]
@@ -197,6 +197,12 @@ def: "A physical quality that inheres in a bearer by virtue of the proportion of
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0000136
+name: closure
+def: "A morphological quality pertaining to the degree to which an object contains an opening, aperture, orifice or vent." []
+is_a: PATO:0000051 ! morphology
+
+[Term]
 id: PATO:0000140
 name: position
 def: "A spatial quality inhering in a bearer by virtue of the bearer's spatial location relative to other objects in the vicinity." []
@@ -218,6 +224,12 @@ id: PATO:0000146
 name: temperature
 def: "A physical quality of the thermal energy of a system." []
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000150
+name: texture
+def: "A morphologic quality inhering in a bearer by virtue of the bearer's relative size, organization and distribution of its surface elements or the representation or invention of the appearance of its surface; visual and tactile surface characteristics." []
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: PATO:0000261
@@ -259,6 +271,24 @@ def: "A branchiness quality inhering in a bearer by virtue of the bearer's havin
 synonym: "ramified" EXACT []
 synonym: "ramiform" EXACT []
 is_a: PATO:0002009 ! branchiness
+
+[Term]
+id: PATO:0000404
+name: coiled
+def: "A shape quality inhering in a bearer by virtue of the bearer's being curled or wound (especially in concentric rings or spirals)." []
+synonym: "helical" RELATED []
+synonym: "helicoid" RELATED []
+synonym: "helicoidal" RELATED []
+synonym: "helix-shaped" RELATED []
+synonym: "spiral" EXACT []
+is_a: PATO:0001794 ! coiling
+
+[Term]
+id: PATO:0000407
+name: flat
+def: "A quality inhering in a bearer by virtue of the bearer's having a horizontal surface without a slope, tilt, or curvature." []
+synonym: "plate-like" RELATED []
+is_a: PATO:0002254 ! flattened
 
 [Term]
 id: PATO:0000411
@@ -364,6 +394,26 @@ intersection_of: PATO:0000117 ! size
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0000588
+name: vestigial
+def: "A quality inhering in a bearer by virtue of the bearer's being a remnant structure from earlier development or evolution." []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0000608
+name: closed
+def: "A morphological quality inhering in a bearer by virtue of the bearer's affording blocked passage or view." []
+synonym: "blocked" RELATED []
+is_a: PATO:0000136 ! closure
+disjoint_from: PATO:0000610 ! open
+
+[Term]
+id: PATO:0000610
+name: open
+def: "A morphological quality inhering in a bearer by virtue of the bearer's affording unobstructed passage or view." []
+is_a: PATO:0000136 ! closure
+
+[Term]
 id: PATO:0000627
 name: localized
 def: "A spatial pattern quality inhering in a bearer by virtue of the bearer's being confined or restricted to a particular location." []
@@ -401,6 +451,14 @@ def: "A optical quality inhering in a bearer by virtue of the bearer's not being
 synonym: "clouding" RELATED []
 synonym: "cloudy" RELATED []
 synonym: "non-transparent" EXACT []
+is_a: PATO:0000957 ! opacity
+
+[Term]
+id: PATO:0000964
+name: transparent
+def: "A optical quality inhering in a bearer by virtue of the bearer's lacking opacity." []
+synonym: "clear" EXACT []
+synonym: "hyaline" EXACT []
 is_a: PATO:0000957 ! opacity
 
 [Term]
@@ -447,10 +505,28 @@ def: "A physical quality that inheres in a bearer by virtue of the bearer's amou
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001031
+name: elasticity
+def: "A physical quality inhering in a bearer by virtue of the bearer's disposition to recover its size and shape after deformation in any way." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001154
 name: elongated
 def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." []
 is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001171
+name: elastic
+def: "An elasticity quality inhering in a bearer by virtue of the bearer's ability to recover its size and shape after deformation in any way." []
+is_a: PATO:0001031 ! elasticity
+
+[Term]
+id: PATO:0001190
+name: juvenile
+def: "A maturity quality inhering in a bearer by virtue the bearer's being not fully grown or developed." []
+is_a: PATO:0000261 ! maturity
 
 [Term]
 id: PATO:0001236
@@ -482,6 +558,24 @@ id: PATO:0001291
 name: electromagnetic (EM) radiation quality
 def: "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation." []
 is_a: PATO:0001739 ! radiation quality
+
+[Term]
+id: PATO:0001292
+name: full-spectrum EM radiation quality
+def: "An EM radiation quality that is independent of the EM wavelength range." []
+is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+
+[Term]
+id: PATO:0001294
+name: radiation reflective quality
+def: "A scalar EM radiation quality which obtains by the capacity of the bearer to scatter or reflect radiation." []
+is_a: PATO:0001292 ! full-spectrum EM radiation quality
+
+[Term]
+id: PATO:0001297
+name: reflectivity
+def: "A radiation reflective quality inhering in a bearer by virtue of the ratio of the energy of a wave reflected from its surface to the energy possessed by the wave striking the bearer's surface." []
+is_a: PATO:0001294 ! radiation reflective quality
 
 [Term]
 id: PATO:0001300
@@ -655,6 +749,13 @@ def: "A physical quality inhering in a bearer by virtue of the bearer's disposit
 is_a: PATO:0001546 ! quality of a solid
 
 [Term]
+id: PATO:0001544
+name: flexible
+def: "A physical quality inhering in a bearer by virtue of the bearer's ability of being turned, bowed, or twisted without breaking." []
+synonym: "bendy" EXACT []
+is_a: PATO:0001543 ! flexibility
+
+[Term]
 id: PATO:0001545
 name: inflexible
 def: "A physical quality inhering in a bearer by virtue of the bearer's inability of being turned, bowed, or twisted without breaking." []
@@ -747,6 +848,38 @@ intersection_of: PATO:0001025 ! pressure
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0001579
+name: contractility
+def: "A physical quality that is the ability to contract or shrink." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001580
+name: increased contractility
+def: "A contractility which is relatively high." []
+synonym: "high contractility" EXACT []
+is_a: PATO:0001690 ! contractile
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001690 ! contractile
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001581
+name: decreased contractility
+def: "A contractility which is relatively low." []
+synonym: "low contractility" EXACT []
+is_a: PATO:0001690 ! contractile
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001690 ! contractile
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001591
+name: curvature
+def: "A surface shape quality inhering in a bearer by virtue of the bearer's exhibiting a degree of bending." []
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0001655
 name: osmolarity
 def: "A concentration quality inhering in a bearer by virtue of the bearer's amount of osmoles of solute per liter of solution." []
@@ -827,6 +960,12 @@ intersection_of: PATO:0001687 ! elevation
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0001690
+name: contractile
+def: "A contractility quality inhering in a bearer by virtue of the bearer's ability of contracting or being contracted." []
+is_a: PATO:0001579 ! contractility
+
+[Term]
 id: PATO:0001693
 name: increased viscosity
 def: "A viscosity which relatively high." []
@@ -847,16 +986,75 @@ intersection_of: PATO:0000998 ! viscous
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0001735
+name: liquid configuration
+def: "A physical quality inhering in a bearer by virtue of the bearer's parts having the arrangement which exhibits characteristics of liquids." []
+synonym: "liquid" EXACT []
+is_a: PATO:0001548 ! quality of a liquid
+
+[Term]
 id: PATO:0001739
 name: radiation quality
 def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001748
+name: invaginated
+def: "A shape quality in which a portion of the outermost boundary of an entity folds in space such that a portion that was originally convex is now concave." []
+is_a: PATO:0001857 ! concave
+
+[Term]
 id: PATO:0001759
 name: granular
 def: "A composition quality inhering in a bearer by virtue of the bearer's containing granules." []
 is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0001776
+name: increased flexibility
+def: "A flexibility which is relatively high." []
+synonym: "high flexibility" EXACT []
+is_a: PATO:0001544 ! flexible
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001544 ! flexible
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001777
+name: decreased flexibility
+def: "A flexibility which is relatively low." []
+synonym: "low flexibility" EXACT []
+is_a: PATO:0001544 ! flexible
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001544 ! flexible
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001794
+name: coiling
+def: "A shape quality inhering in a bearer by virtue of the bearer's being wound in a continuous series of loops." []
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001795
+name: increased coiling
+def: "A coiling which is relatively high." []
+synonym: "high coiling" EXACT []
+is_a: PATO:0000404 ! coiled
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0000404 ! coiled
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001796
+name: decreased coiling
+def: "A coiling which is relatively low." []
+synonym: "low coiling" EXACT []
+is_a: PATO:0000404 ! coiled
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0000404 ! coiled
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
 id: PATO:0001822
@@ -901,10 +1099,41 @@ synonym: "disk-shaped" EXACT []
 is_a: PATO:0001873 ! cylindrical
 
 [Term]
+id: PATO:0001910
+name: folded
+def: "A surface feature shape quality inhering in a bearer by virtue of the bearer's one part being layered over another connected part." []
+is_a: PATO:0001925 ! surface feature shape
+
+[Term]
+id: PATO:0001925
+name: surface feature shape
+def: "A surface shape quality inhering in a bearer by virtue of the bearer's shape of features present on its surface or outer shell." []
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0001985
 name: frozen
 def: "A quality inhering in a bearer by virtue of the bearer's being kept below its freezing point." []
 is_a: PATO:0000146 ! temperature
+
+[Term]
+id: PATO:0001987
+name: saccular
+def: "A structural quality inhering in a bearer by virtue of the bearer's having a three dimensional cavity with a narrow or no opening, and often containing an anatomical substance." []
+synonym: "sacular" EXACT []
+is_a: PATO:0002014 ! structure, cavities
+
+[Term]
+id: PATO:0001992
+name: cellularity
+def: "An organismal quality inhering in a bearer by virtue of the bearer's consisting cells." []
+is_a: PATO:0001995 ! organismal quality
+
+[Term]
+id: PATO:0001993
+name: multicellular
+def: "A cellularity quality inhering in a bearer by virtue of the bearer's consisting of more than one cell." []
+is_a: PATO:0001992 ! cellularity
 
 [Term]
 id: PATO:0001995
@@ -973,6 +1202,15 @@ def: "A concave quality inhering in a bearer by virtue of the bearer's curving i
 is_a: PATO:0001857 ! concave
 
 [Term]
+id: PATO:0002045
+name: dendritic
+def: "A branched quality inhering in a bearer by virtue of the bearer's having smaller branches arising from larger branches. Resembling a tree in branching structure." []
+synonym: "dendriform" EXACT []
+synonym: "dendroid" EXACT []
+synonym: "dendroidal" EXACT []
+is_a: PATO:0000402 ! branched
+
+[Term]
 id: PATO:0002062
 name: physical quality of a process
 is_a: PATO:0001236 ! process quality
@@ -1000,6 +1238,12 @@ is_a: PATO:0002070 ! affinity
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0002070 ! affinity
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0002078
+name: hollow
+def: "A quality inhering in a bearer by virtue of the bearer's having an empty space or cavity within." []
+is_a: PATO:0002014 ! structure, cavities
 
 [Term]
 id: PATO:0002092
@@ -1088,10 +1332,53 @@ def: "A quality inhering in a bearer by virtue of its constitution." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0002254
+name: flattened
+def: "A quality inhering in a bearer by virtue of the bearer's surface becoming more extended in a plane." []
+synonym: "compressed" RELATED []
+is_a: PATO:0001591 ! curvature
+
+[Term]
+id: PATO:0002255
+name: grooved
+def: "Texture quality inhering in a bearer by virtue of the bearer's being marked with one or more channels." []
+synonym: "channeled" RELATED []
+synonym: "creased" RELATED []
+is_a: PATO:0000150 ! texture
+
+[Term]
 id: PATO:0002266
 name: 3-D shape
 def: "A shape that inheres in a 3 dimensional entity." []
 is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002287
+name: increased elasticity
+def: "An elasticity which is relatively high." []
+is_a: PATO:0001171 ! elastic
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001171 ! elastic
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0002288
+name: decreased elasticity
+def: "An elasticity which is relatively low." []
+is_a: PATO:0001171 ! elastic
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001171 ! elastic
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0002299
+name: tubular
+def: "A cylindrical shape that is hollow." []
+synonym: "tube like" EXACT []
+synonym: "tube-shaped" EXACT []
+synonym: "tubulate" EXACT []
+is_a: PATO:0001873 ! cylindrical
+is_a: PATO:0002078 ! hollow
 
 [Term]
 id: PATO:0002300
@@ -1155,10 +1442,52 @@ synonym: "Lamé curve" EXACT []
 is_a: PATO:0002006 ! 2-D shape
 
 [Term]
+id: PATO:0002422
+name: acinar
+def: "Pertaining to the individual parts making up an aggregate fruit like a many-lobed \"berry,\" such as a raspberry." []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0002444
+name: mineralized
+def: "A composition quality inhering in a bearer by virtue of the bearer's being composed of or possessing inorganic material." []
+is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0002462
+name: collagenous
+def: "A composition quality inhering in an bearer by virtue of the bearer's consisting of collagen." []
+is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0002468
+name: distensible
+def: "A structure quality inhering in a bearer by virtue of the bearer's being capable of swelling or stretching." []
+is_a: PATO:0015008 ! distensibility
+
+[Term]
 id: PATO:0002505
 name: nucleated
 def: "A nucleate quality inhering in a bearer by virtue of the bearer's having one or more nucleus." []
 is_a: PATO:0001404 ! nucleate quality
+
+[Term]
+id: PATO:0002507
+name: keratinous
+def: "A composition quality inhering in a bearer by virtue of the bearer's consisting of keratin." []
+is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0010001
+name: disconnected
+def: "A structural quality inhering in the bearer by virtue of the bearer consisting of multiple structures lacking any physical connection to each other." []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0015008
+name: distensibility
+def: "A quality inhering in a bearer by virtue of the extent to which the bearer is capable of being stretched or swollen." []
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0015021
