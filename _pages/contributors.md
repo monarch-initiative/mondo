@@ -45,6 +45,7 @@ Christopher G Chute | [Johns Hopkins](https://www.jhu.edu/) | [chute](https://gi
 Mélanie Courtot | [EBI](https://www.ebi.ac.uk/) | [mcourtot](https://github.com/mcourtot)
 Maria Della Rocca | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [GARDInfoCenter](https://github.com/GARDInfoCenter)
 Marina DiStefano | [ClinGen](https://clinicalgenome.org/) | [marinadistefano](https://github.com/marinadistefano)
+Bill Duncan | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [wdduncan](https://github.com/wdduncan)
 Colin Ellis | [CHOP](https://www.chop.edu/) | [colinellis1](https://github.com/colinellis1)
 Mark Engelstad | [Oregon Health & Science University](www.ohsu.edu) | [markengelstad](https://github.com/markengelstad)
 Gilberto Fragoso | [NCI](https://www.cancer.gov/) | [NCIEVS](https://github.com/NCIEVS)
