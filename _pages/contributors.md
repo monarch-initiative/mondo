@@ -62,6 +62,7 @@ Madeline Hughes | [Broad Institute](https://www.broadinstitute.org/) | [madeline
 Simon Jupp | [EBI](https://www.ebi.ac.uk/) | [simonjupp](https://github.com/simonjupp)
 Megan Kane | [NCBI](National Center for Biotechnology Information) | [kanems](https://github.com/kanems)
 Avi Kelman | [CHOP](https://www.chop.edu/) | [fiendish](https://github.com/fiendish)
+HyeongSik Kim | [Robert Bosch LLC](https://www.bosch.us/) | [yy20716](https://github.com/yy20716)
 Bron Kisler | [NCI](https://www.cancer.gov/) | [bronkisler](https://github.com/bronkisler)
 Sebastian Kohler | [Ada Health](https://ada.com/) | [drseb ](https://github.com/drseb )
 Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/) | [Letchau](https://github.com/Letchau)
