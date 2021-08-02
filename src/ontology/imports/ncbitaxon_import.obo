@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-07-12/imports/ncbitaxon_import.owl
+data-version: mondo/releases/2021-08-02/imports/ncbitaxon_import.owl
 ontology: mondo/imports/ncbitaxon_import
 
 [Term]
@@ -217,6 +217,41 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:10293 ! Alphaherpesvirinae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:10298
+name: Human alphaherpesvirus 1
+namespace: ncbi_taxonomy
+synonym: "Herpes simplex virus 1" RELATED genbank_synonym []
+synonym: "herpes simplex virus 1 HSV-1" EXACT equivalent_name []
+synonym: "herpes simplex virus HSV-1" EXACT equivalent_name []
+synonym: "Herpes simplex virus type 1" EXACT genbank_common_name []
+synonym: "herpes simplex virus type 1 HSV-1" EXACT equivalent_name []
+synonym: "herpes simplex virus type 1 HSV1" EXACT equivalent_name []
+synonym: "herpes simplex virus type-1 HSV-1" EXACT equivalent_name []
+synonym: "HSV-1" BROAD acronym []
+synonym: "HSV1" BROAD acronym []
+synonym: "Human herpesvirus 1" RELATED synonym []
+synonym: "Human herpesvirus type 1" EXACT equivalent_name []
+xref: GC_ID:1
+is_a: NCBITaxon:10294 ! Simplexvirus
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:10310
+name: Human alphaherpesvirus 2
+namespace: ncbi_taxonomy
+synonym: "Herpes simplex virus (type 2)" EXACT equivalent_name []
+synonym: "Herpes simplex virus 2" RELATED genbank_synonym []
+synonym: "Herpes simplex virus II" EXACT equivalent_name []
+synonym: "Herpes simplex virus type 2" EXACT equivalent_name []
+synonym: "Herpes simplex virus type 2 (HSV-2)" EXACT equivalent_name []
+synonym: "herpes simplex virus type 2 HSV-2" RELATED synonym []
+synonym: "HSV2" BROAD acronym []
+synonym: "Human herpesvirus 2" EXACT equivalent_name []
+xref: GC_ID:1
+is_a: NCBITaxon:10294 ! Simplexvirus
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:10319
@@ -2188,6 +2223,18 @@ is_a: NCBITaxon:7198 ! Phlebotominae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:1329799
+name: Archelosauria
+namespace: ncbi_taxonomy
+synonym: "Archosauria-Testudines" RELATED synonym []
+synonym: "Testudines + Archosauria group" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:22839753
+xref: PMID:25450099
+is_a: NCBITaxon:32561 ! Sauria
+property_value: has_rank NCBITaxon:clade
+
+[Term]
 id: NCBITaxon:133423
 name: Batillus
 namespace: ncbi_taxonomy
@@ -2549,6 +2596,10 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:1658400 ! Hectopsyllidae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:140878
+alt_id: NCBITaxon:110310
 
 [Term]
 id: NCBITaxon:142786
@@ -7086,6 +7137,16 @@ is_a: NCBITaxon:40674 ! Mammalia
 property_value: has_rank NCBITaxon:clade
 
 [Term]
+id: NCBITaxon:32561
+name: Sauria
+namespace: ncbi_taxonomy
+synonym: "Diapsida" RELATED synonym []
+synonym: "diapsids" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:8457 ! Sauropsida
+property_value: has_rank NCBITaxon:clade
+
+[Term]
 id: NCBITaxon:325675
 name: unclassified Arteriviridae
 namespace: ncbi_taxonomy
@@ -8774,6 +8835,40 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:740973 ! Dientamoebidae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:436486
+name: Dinosauria
+namespace: ncbi_taxonomy
+synonym: "dinosaur" EXACT common_name []
+synonym: "dinosaurs" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:8492 ! Archosauria
+property_value: has_rank NCBITaxon:clade
+
+[Term]
+id: NCBITaxon:436489
+name: Saurischia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:436486 ! Dinosauria
+property_value: has_rank NCBITaxon:clade
+
+[Term]
+id: NCBITaxon:436491
+name: Theropoda
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:436489 ! Saurischia
+property_value: has_rank NCBITaxon:clade
+
+[Term]
+id: NCBITaxon:436492
+name: Coelurosauria
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:436491 ! Theropoda
+property_value: has_rank NCBITaxon:clade
 
 [Term]
 id: NCBITaxon:43733
@@ -12951,6 +13046,16 @@ is_a: NCBITaxon:5796 ! Coccidia
 property_value: has_rank NCBITaxon:order
 
 [Term]
+id: NCBITaxon:7586
+name: Echinodermata
+namespace: ncbi_taxonomy
+synonym: "echinoderms" EXACT genbank_common_name []
+synonym: "echinoderms" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:33511 ! Deuterostomia
+property_value: has_rank NCBITaxon:phylum
+
+[Term]
 id: NCBITaxon:766
 name: Rickettsiales
 namespace: ncbi_taxonomy
@@ -13573,6 +13678,15 @@ is_a: NCBITaxon:84527 ! Metagonimus
 property_value: has_rank NCBITaxon:species
 
 [Term]
+id: NCBITaxon:8457
+name: Sauropsida
+namespace: ncbi_taxonomy
+synonym: "sauropsids" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:32524 ! Amniota
+property_value: has_rank NCBITaxon:clade
+
+[Term]
 id: NCBITaxon:84642
 name: Aeromonadaceae
 namespace: ncbi_taxonomy
@@ -13591,6 +13705,14 @@ xref: PMID:11931161
 xref: PMID:1715737
 is_a: NCBITaxon:203492 ! Fusobacteriaceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:8492
+name: Archosauria
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:1329799 ! Archelosauria
+property_value: has_rank NCBITaxon:clade
 
 [Term]
 id: NCBITaxon:85004
@@ -13719,6 +13841,17 @@ xref: PMID:23475340
 xref: PMID:26373441
 is_a: NCBITaxon:1386 ! Bacillus <firmicutes>
 property_value: has_rank NCBITaxon:species_group
+
+[Term]
+id: NCBITaxon:8782
+name: Aves
+namespace: ncbi_taxonomy
+synonym: "avian" RELATED synonym []
+synonym: "birds" EXACT genbank_common_name []
+synonym: "birds" RELATED blast_name []
+xref: GC_ID:1
+is_a: NCBITaxon:436492 ! Coelurosauria
+property_value: has_rank NCBITaxon:class
 
 [Term]
 id: NCBITaxon:88456
