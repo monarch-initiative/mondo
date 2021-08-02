@@ -42,14 +42,11 @@ The release mondo.owl will look like this in Protege:
 ### Generate Change Log Workflow:
 <!-- 1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
 2. Download the previous mondo.obo and save as mondo-lastbuild.obo-->
-1. In terminal: `make mondo-diff.txt -B`
-4. `./get-new-classes.sh > somefilename.txt`
-    1. For exaample: ./get-new-classes.sh > MondoRelease_2020-07-01.txt
-5. Open this file on your computer: MondoRelease_somefilename.txt
-  1. For example: MondoRelease_2020-06-01.txt
-
-_Note: this was updated on 2021-07-15 and has not been tested yet_  
-  
+1. In terminal: `make mondo-diff.txt -B`. 
+1. `./get-new-classes.sh > somefilename.txt`. 
+    1. For example: `./get-new-classes.sh > MondoRelease_2020-07-01.txt`. 
+1. Open this file on your computer: MondoRelease_somefilename.txt. 
+  1. For example: MondoRelease_2020-06-01.txt.   
 
 ## Deploy Release
 1. `cp ~/.token .token`  
