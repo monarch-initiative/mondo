@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-07-12/imports/chebi_import.owl
+data-version: mondo/releases/2021-08-02/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -23,6 +23,7 @@ name: pyridoxal(1+)
 def: "A pyridinium ion obtained by protonation of the ring nitrogen of pyridoxal." []
 synonym: "4-formyl-3-hydroxy-5-(hydroxymethyl)-2-methylpyridin-1-ium" EXACT []
 synonym: "pyridoxal cation" RELATED []
+is_a: CHEBI:27306 ! vitamin B6
 is_a: CHEBI:50334 ! pyridinium ion
 relationship: is_conjugate_acid_of CHEBI:17310 ! pyridoxal
 
@@ -102,6 +103,16 @@ name: dicarboxylic acids and O-substituted derivatives
 def: "A class of carbonyl compound encompassing dicarboxylic acids and any derivatives obtained by substitution of either one or both of the carboxy hydrogens." []
 synonym: "dicarboxylic acids and derivatives" RELATED []
 is_a: CHEBI:36586 ! carbonyl compound
+
+[Term]
+id: CHEBI:132153
+name: hyaluronate
+def: "A carbohydrate acid derivative anion obtained by deprotonation of the carboxy groups of hyaluronic acid; major species at pH 7.3." []
+synonym: "hyaluronan" RELATED []
+synonym: "hyaluronate polyanion" RELATED []
+is_a: CHEBI:61469 ! polyanionic polymer
+is_a: CHEBI:63551 ! carbohydrate acid derivative anion
+relationship: is_conjugate_base_of CHEBI:16336 ! hyaluronic acid
 
 [Term]
 id: CHEBI:132233
@@ -204,6 +215,15 @@ synonym: "inorganic acids" RELATED []
 synonym: "mineral acid" RELATED []
 synonym: "mineral acids" RELATED []
 is_a: CHEBI:39141 ! Bronsted acid
+
+[Term]
+id: CHEBI:13850
+name: apoprotein
+def: "An apoprotein is a protein devoid of its characteristic prosthetic group or metal." []
+synonym: "apoprotein" EXACT []
+synonym: "apoproteins" RELATED []
+is_a: CHEBI:38560 ! simple protein
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 
 [Term]
 id: CHEBI:138675
@@ -314,6 +334,13 @@ synonym: "(2S)-1-(p-hydroxyphenyl)-3-oxopropan-2-aminium" RELATED []
 synonym: "L-tyrosinal" RELATED []
 is_a: CHEBI:65296 ! primary ammonium ion
 relationship: is_conjugate_acid_of CHEBI:46209 ! L-tyrosinal
+
+[Term]
+id: CHEBI:142163
+name: 24G7 epitope
+def: "An antigenic epitope recognized by an anti-bilirubin monoclonal antibody designated 24G7. A substructure of bilirubin IXalpha, it is the region containing the oxo group at C-1, the methyl group at C-2, C-(4, 5, 6, 9), and N-21 and -22." []
+is_a: CHEBI:24433 ! group
+relationship: RO:0000087 CHEBI:53000 ! epitope
 
 [Term]
 id: CHEBI:14321
@@ -542,6 +569,22 @@ relationship: RO:0000087 CHEBI:77746 ! human metabolite
 relationship: RO:0000087 CHEBI:77974 ! food packaging gas
 
 [Term]
+id: CHEBI:15440
+name: squalene
+def: "A triterpene consisting of 2,6,10,15,19,23-hexamethyltetracosane having six double bonds at the 2-, 6-, 10-, 14-, 18- and 22-positions with (all-E)-configuration." []
+synonym: "(6E,10E,14E,18E)-2,6,10,15,19,23-hexamethyltetracosa-2,6,10,14,18,22-hexaene" EXACT []
+synonym: "(all-E)-2,6,10,15,19,23-hexamethyl-2,6,10,14,18,22-tetracosahexaene" RELATED []
+synonym: "Spinacene" RELATED []
+synonym: "Squalene" EXACT []
+synonym: "squalene" EXACT []
+synonym: "Supraene" RELATED []
+is_a: CHEBI:35191 ! triterpene
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:76924 ! plant metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
 id: CHEBI:15705
 name: L-alpha-amino acid
 def: "Any alpha-amino acid having L-configuration at the alpha-carbon." []
@@ -639,7 +682,7 @@ synonym: "(3aS,4S,6aR)-Hexahydro-2-oxo-1H-thieno[3,4-d]imidazole-4-valeric acid"
 synonym: "5-(2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl)pentanoic acid" RELATED []
 synonym: "5-[(3aS,4S,6aR)-2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl]pentanoic acid" EXACT []
 synonym: "BIOTIN" EXACT []
-synonym: "Biotin" EXACT []
+synonym: "biotin" RELATED []
 synonym: "biotina" RELATED []
 synonym: "biotine" RELATED []
 synonym: "biotinum" RELATED []
@@ -651,17 +694,18 @@ synonym: "D-(+)-biotin" RELATED []
 synonym: "D-Biotin" RELATED []
 synonym: "vitamin B7" RELATED []
 synonym: "Vitamin H" RELATED []
+is_a: CHEBI:176841 ! vitamin B7
 is_a: CHEBI:51570 ! biotins
 relationship: is_conjugate_acid_of CHEBI:57586 ! biotinate
 relationship: RO:0000087 CHEBI:23354 ! coenzyme
 relationship: RO:0000087 CHEBI:23357 ! cofactor
 relationship: RO:0000087 CHEBI:26348 ! prosthetic group
 relationship: RO:0000087 CHEBI:50733 ! nutraceutical
-relationship: RO:0000087 CHEBI:75769 ! B vitamin
 relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
 
 [Term]
 id: CHEBI:15966
@@ -757,6 +801,16 @@ relationship: RO:0000087 CHEBI:77941 ! EC 3.5.1.4 (amidase) inhibitor
 relationship: RO:0000087 CHEBI:78433 ! refrigerant
 
 [Term]
+id: CHEBI:16137
+name: chondroitin D-glucuronate
+def: "A mucopolysaccharide composed of repeating beta-D-glucopyranuronosyl-(1->3)-beta-D-N-acetylgalactosaminyl units." []
+synonym: "Chondroitin" RELATED []
+synonym: "Chondroitin-D-glucuronate" RELATED []
+is_a: CHEBI:37395 ! mucopolysaccharide
+relationship: is_conjugate_acid_of CHEBI:57652 ! chondroitin D-glucuronate anion
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+
+[Term]
 id: CHEBI:16150
 name: benzoate
 def: "The simplest member of the class of  benzoates that is the conjugate base of benzoic acid, comprising a benzoic acid core with a proton missing to give a charge of -1." []
@@ -772,6 +826,32 @@ is_a: CHEBI:22718 ! benzoates
 relationship: is_conjugate_base_of CHEBI:30746 ! benzoic acid
 relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:76967 ! human xenobiotic metabolite
+
+[Term]
+id: CHEBI:16189
+name: sulfate
+def: "A sulfur oxoanion obtained by deprotonation of both OH groups of sulfuric acid." []
+synonym: "[SO4](2-)" RELATED []
+synonym: "SO4(2-)" RELATED []
+synonym: "Sulfate" EXACT []
+synonym: "sulfate" EXACT []
+synonym: "Sulfate anion(2-)" RELATED []
+synonym: "Sulfate dianion" RELATED []
+synonym: "SULFATE ION" RELATED []
+synonym: "Sulfate(2-)" RELATED []
+synonym: "Sulfuric acid ion(2-)" RELATED []
+synonym: "sulphate" RELATED []
+synonym: "sulphate ion" RELATED []
+synonym: "tetraoxidosulfate(2-)" EXACT []
+synonym: "tetraoxosulfate(2-)" EXACT []
+synonym: "tetraoxosulfate(VI)" EXACT []
+is_a: CHEBI:33482 ! sulfur oxoanion
+is_a: CHEBI:48154 ! sulfur oxide
+is_a: CHEBI:79388 ! divalent inorganic anion
+relationship: is_conjugate_base_of CHEBI:45696 ! hydrogensulfate
+relationship: RO:0000087 CHEBI:23357 ! cofactor
+relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
 id: CHEBI:16199
@@ -842,6 +922,22 @@ relationship: is_conjugate_acid_of CHEBI:57718 ! barbiturate(2-)
 relationship: is_conjugate_acid_of CHEBI:77938 ! barbiturate(1-)
 relationship: RO:0000087 CHEBI:35703 ! xenobiotic
 relationship: RO:0000087 CHEBI:50904 ! allergen
+
+[Term]
+id: CHEBI:16336
+name: hyaluronic acid
+def: "A mucopolysaccharide composed of N-acetylglucosamine and glucuronic acid subunits. It is found in the connective tissues of vertebrates. A principal constituent of the extracellular matrix (ECM), it mediates the growth and metastasis of tumour cells." []
+synonym: "[beta-D-glucopyranuronosyl-(1->3)-2-(acetylamino)-2-deoxy-beta-D-glucopyranosyl-(1->4)]n" RELATED []
+synonym: "[beta-N-Acetyl-D-glucosaminyl(1,4)beta-D-glucuronosyl(1,3)]n" RELATED []
+synonym: "acide hyaluronique" RELATED []
+synonym: "acido hialuronico" RELATED []
+synonym: "hyaluronan" RELATED []
+synonym: "Hyaluronic acid" EXACT []
+synonym: "Hyaluronsaeure" RELATED []
+is_a: CHEBI:37395 ! mucopolysaccharide
+is_a: CHEBI:72813 ! exopolysaccharide
+relationship: is_conjugate_acid_of CHEBI:132153 ! hyaluronate
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
 id: CHEBI:16393
@@ -979,14 +1075,25 @@ relationship: RO:0000087 CHEBI:50904 ! allergen
 id: CHEBI:16709
 name: pyridoxine
 def: "A hydroxymethylpyridine with hydroxymethyl groups at positions 4 and 5, a hydroxy group at position 3 and a methyl group at position 2. The 4-methanol form of vitamin B6, it is converted intoto pyridoxal phosphate which is a coenzyme for synthesis of amino acids, neurotransmitters, sphingolipids and aminolevulinic acid." []
+synonym: "2-methyl-3-hydroxy-4,5-bis(hydroxymethyl)pyridine" RELATED []
+synonym: "2-methyl-3-hydroxy-4,5-di(hydroxymethyl)pyridine" RELATED []
+synonym: "2-Methyl-3-hydroxy-4,5-dihydroxymethyl-pyridin" RELATED []
 synonym: "2-methyl-3-hydroxy-4,5-dihydroxymethylpyridine" RELATED []
+synonym: "2-methyl-4,5-bis(hydroxymethyl)-3-hydroxypyridine" RELATED []
+synonym: "2-methyl-4,5-dimethylol-pyridin-3-ol" RELATED []
+synonym: "3-hydroxy-2-picoline-4,5-dimethanol" RELATED []
 synonym: "3-hydroxy-4,5-bis(hydroxymethyl)-2-methylpyridine" RELATED []
 synonym: "3-hydroxy-4,5-dimethylol-alpha-picoline" RELATED []
+synonym: "4,5-bis(hydroxymethyl)-2-methyl-pyridin-3-ol" RELATED []
 synonym: "4,5-bis(hydroxymethyl)-2-methylpyridin-3-ol" EXACT []
 synonym: "5-hydroxy-6-methyl-3,4-pyridinedimethanol" RELATED []
-synonym: "Pyridoxine" EXACT []
+synonym: "piridossina" RELATED []
+synonym: "pyridoxina" RELATED []
 synonym: "pyridoxine" EXACT []
+synonym: "pyridoxine" RELATED []
+synonym: "pyridoxinum" RELATED []
 synonym: "Pyridoxol" RELATED []
+synonym: "pyridoxolum" RELATED []
 synonym: "vitamin B6" RELATED []
 is_a: CHEBI:25340 ! methylpyridines
 is_a: CHEBI:27306 ! vitamin B6
@@ -1035,6 +1142,13 @@ synonym: "D-Amino acid" RELATED []
 is_a: CHEBI:83925 ! non-proteinogenic alpha-amino acid
 relationship: is_conjugate_acid_of CHEBI:60895 ! D-alpha-amino acid anion
 relationship: is_tautomer_of CHEBI:59871 ! D-alpha-amino acid zwitterion
+
+[Term]
+id: CHEBI:167559
+name: glycan
+def: "Any oligosaccharide, polysaccharide or their derivatives consisting of monosaccharides or monosaccharide derivatives linked by glycosidic bonds. See also http://www.ontobee.org/ontology/GNO?iri=http://purl.obolibrary.org/obo/GNO_00000001." []
+synonym: "glycans" RELATED []
+is_a: CHEBI:78616 ! carbohydrates and carbohydrate derivatives
 
 [Term]
 id: CHEBI:16827
@@ -1130,6 +1244,27 @@ relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:84735 ! algal metabolite
 
 [Term]
+id: CHEBI:16990
+name: bilirubin IXalpha
+def: "A member of the class of  biladienes that is a linear tetrapyrrole with the dipyrrole units being of both exovinyl and endovinyl type. A product of heme degradation, it is produced in the reticuloendothelial system by the reduction of biliverdin and transported to the liver as a complex with serum albumin." []
+synonym: "1,10,19,22,23,24-hexahydro-2,7,13,17-tetramethyl-1,19-dioxo-3,18-divinylbiline-8,12-dipropionic acid" RELATED []
+synonym: "2,17-diethenyl-1,10,19,22,23,24-hexahydro-3,7,13,18-tetramethyl-1,19-dioxo-21H-biline-8,12-dipropanoic acid" RELATED []
+synonym: "2,7,13,17-tetramethyl-1,19-dioxo-3,18-divinyl-1,10,19,22,23,24-hexahydro-21H-biline-8,12-dipropanoic acid" RELATED []
+synonym: "3,18-diethenyl-2,7,13,17-tetramethyl-1,19-dioxo-1,10,19,22,23,24-hexahydro-21H-biline-8,12-dipropanoic acid" EXACT []
+synonym: "8,12-bis(2-carboxyethyl)-2,7,13,17-tetramethyl-3,18-divinylbiladiene-ac-1,19(21H,24H)-dione" RELATED []
+synonym: "Bilirubin" RELATED []
+synonym: "bilirubin" EXACT []
+synonym: "bilirubin(Z,Z)" RELATED []
+synonym: "bilirubin-IXalpha" RELATED []
+is_a: CHEBI:35692 ! dicarboxylic acid
+is_a: CHEBI:36735 ! biladienes
+relationship: BFO:0000051 CHEBI:142163 ! 24G7 epitope
+relationship: is_conjugate_acid_of CHEBI:57977 ! bilirubin(2-)
+relationship: RO:0000087 CHEBI:22586 ! antioxidant
+relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
 id: CHEBI:169952
 name: 13-cis-retinoate
 synonym: "(2Z,4E,6E,8E)-3,7-dimethyl-9-(2,6,6-trimethyl-1-cyclohexen-1-yl)-2,4,6,8-nonatetraenoate" RELATED []
@@ -1160,33 +1295,48 @@ relationship: is_tautomer_of CHEBI:57981 ! D-phenylalanine zwitterion
 id: CHEBI:17015
 name: riboflavin
 def: "D-Ribitol in which the hydroxy group at position 5 is substituted by a 7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl moiety. It is a nutritional factor found in milk, eggs, malted barley, liver, kidney, heart, and leafy vegetables, but the richest natural source is yeast. The free form occurs only in the retina of the eye, in whey, and in urine; its principal forms in tissues and cells are as flavin mononucleotide and flavin-adenine dinucleotide." []
+synonym: "1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol" EXACT []
 synonym: "1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol" RELATED []
-synonym: "5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol" EXACT []
+synonym: "5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol" RELATED []
 synonym: "6,7-dimethyl-9-D-ribitylisoalloxazine" RELATED []
 synonym: "7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione" RELATED []
 synonym: "7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine" RELATED []
-synonym: "7,8-Dimethyl-10-ribitylisoalloxazine" RELATED []
+synonym: "7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione" RELATED []
+synonym: "7,8-dimethyl-10-ribitylisoalloxazine" RELATED []
+synonym: "Aqua-Flave" RELATED []
+synonym: "Beflavin" RELATED []
+synonym: "Beflavine" RELATED []
+synonym: "Bisulase" RELATED []
+synonym: "Dermadram" RELATED []
 synonym: "E101" RELATED []
-synonym: "Lactoflavin" RELATED []
-synonym: "Riboflavin" EXACT []
-synonym: "riboflavin" EXACT []
+synonym: "Fiboflavin" RELATED []
+synonym: "Flavaxin" RELATED []
+synonym: "Flavin Bb" RELATED []
+synonym: "Flaxain" RELATED []
+synonym: "Hyflavin" RELATED []
+synonym: "lactoflavin" RELATED []
 synonym: "riboflavin" RELATED []
+synonym: "riboflavin (vit B2)" RELATED []
 synonym: "riboflavina" RELATED []
-synonym: "RIBOFLAVINE" RELATED []
 synonym: "riboflavine" RELATED []
 synonym: "riboflavinum" RELATED []
 synonym: "Vitamin B2" RELATED []
 synonym: "vitamin B2" RELATED []
 synonym: "vitamin G" RELATED []
+synonym: "vitasan B2" RELATED []
+is_a: CHEBI:176838 ! vitamin B2
 is_a: CHEBI:30527 ! flavin
 relationship: is_conjugate_acid_of CHEBI:57986 ! riboflavin(1-)
+relationship: RO:0000087 CHEBI:22586 ! antioxidant
 relationship: RO:0000087 CHEBI:23357 ! cofactor
-relationship: RO:0000087 CHEBI:25212 ! metabolite
 relationship: RO:0000087 CHEBI:47868 ! photosensitizing agent
-relationship: RO:0000087 CHEBI:75769 ! B vitamin
+relationship: RO:0000087 CHEBI:67079 ! anti-inflammatory agent
 relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
+relationship: RO:0000087 CHEBI:76924 ! plant metabolite
 relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 relationship: RO:0000087 CHEBI:77182 ! food colouring
+relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
+relationship: RO:0000087 CHEBI:84087 ! human urinary metabolite
 
 [Term]
 id: CHEBI:17087
@@ -1200,6 +1350,21 @@ synonym: "ketones" EXACT []
 synonym: "ketones" RELATED []
 synonym: "R-CO-R'" RELATED []
 is_a: CHEBI:36586 ! carbonyl compound
+
+[Term]
+id: CHEBI:17089
+name: glycoprotein
+def: "A compound in which a carbohydrate component is covalently bound to a protein component." []
+synonym: "glicoproteina" RELATED []
+synonym: "glicoproteinas" RELATED []
+synonym: "Glycoprotein" EXACT []
+synonym: "glycoproteine" RELATED []
+synonym: "glycoproteines" RELATED []
+synonym: "glycoproteins" EXACT []
+synonym: "Glykoprotein" RELATED []
+synonym: "Glykoproteine" RELATED []
+is_a: CHEBI:33837 ! conjugated protein
+is_a: CHEBI:63299 ! carbohydrate derivative
 
 [Term]
 id: CHEBI:17137
@@ -1462,6 +1627,49 @@ relationship: RO:0000087 CHEBI:25212 ! metabolite
 relationship: RO:0000087 CHEBI:50904 ! allergen
 
 [Term]
+id: CHEBI:176838
+name: vitamin B2
+def: "Any member of a group of vitamers that belong to the chemical structural class called flavins that exhibit biological activity against vitamin B2 deficiency. Symptoms associated with vitamin B2 deficiency include glossitis, seborrhea, angular stomaitis, cheilosis and photophobia. The vitamers include riboflavin and its phosphate derivatives (and includes their salt, ionised and hydrate forms)." []
+synonym: "vitamin B-2" RELATED []
+synonym: "vitamin B2" EXACT []
+synonym: "vitamins B2" RELATED []
+synonym: "vitamins B2 vitamer" RELATED []
+synonym: "vitamins B2 vitamers" RELATED []
+is_a: CHEBI:75769 ! B vitamin
+
+[Term]
+id: CHEBI:176841
+name: vitamin B7
+def: "Any member of a group of vitamers that belong to the chemical structural class called biotins that exhibit biological activity against vitamin B7 deficiency. Vitamin B7 deficiency is very rare in individuals who take a normal balanced diet. Foods rich in biotin are egg yolk, liver, cereals, vegetables (spinach, mushrooms) and rice. Symptoms associated with vitamin B7 deficiency include thinning hair, scaly skin rashes around eyes, nose and mouth, and brittle nails. The vitamers include biotin and its ionized and salt forms." []
+synonym: "vitamin B-7" RELATED []
+synonym: "vitamin B7" EXACT []
+synonym: "vitamin B7 vitamer" RELATED []
+synonym: "vitamin B7 vitamers" RELATED []
+synonym: "vitamins B7" RELATED []
+is_a: CHEBI:75769 ! B vitamin
+
+[Term]
+id: CHEBI:176843
+name: vitamin B12
+def: "Any member of a group of cobalamin vitamers that exhibit biological activity against vitamin B12 deficiency. Vitamin B12 deficiency is associated with low red blood cell count and anemia. The vitamers are found in foods such as cereals, meat, fish, and poultry. The vitamers include adenosylcobalamin, hydroxocobalamin, cyanocobalamin, aquacobalamin, nitritocobalamin and methylcobabalamin (also includes their ionized, salt and phosphate derivatives)." []
+synonym: "vitamin B-12" RELATED []
+synonym: "vitamin B12" EXACT []
+synonym: "vitamin B12 vitamer" RELATED []
+synonym: "vitamin B12 vitamers" RELATED []
+synonym: "vitamins B12" RELATED []
+is_a: CHEBI:75769 ! B vitamin
+
+[Term]
+id: CHEBI:176894
+name: vitamin B6 phosphate anion
+synonym: "vitamin B-6 phosphate anion" RELATED []
+synonym: "vitamin B-6 phosphate anions" RELATED []
+synonym: "vitamin B6 phosphate anions" RELATED []
+is_a: CHEBI:27306 ! vitamin B6
+is_a: CHEBI:58945 ! organophosphate oxoanion
+relationship: is_conjugate_base_of CHEBI:36970 ! vitamin B6 phosphate
+
+[Term]
 id: CHEBI:17781
 name: lumichrome
 def: "A compound showing blue fluorescence, formed by a photolysis of riboflavin in acid or neutral solution." []
@@ -1655,6 +1863,18 @@ synonym: "lipids" EXACT []
 is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
+id: CHEBI:18085
+name: glycosaminoglycan
+def: "Any polysaccharide containing a substantial proportion of aminomonosaccharide residues." []
+synonym: "glicosaminoglicano" RELATED []
+synonym: "Glycosaminoglycan" EXACT []
+synonym: "glycosaminoglycan" EXACT []
+synonym: "glycosaminoglycane" RELATED []
+synonym: "glycosaminoglycans" RELATED []
+synonym: "Glykosaminoglykan" RELATED []
+is_a: CHEBI:22506 ! aminoglycan
+
+[Term]
 id: CHEBI:18140
 name: hydrogen halide
 synonym: "HX" RELATED []
@@ -1663,6 +1883,23 @@ synonym: "hydrogen halides" EXACT []
 synonym: "hydrogen halides" RELATED []
 is_a: CHEBI:33405 ! hydracid
 relationship: RO:0000087 CHEBI:138103 ! inorganic acid
+
+[Term]
+id: CHEBI:18154
+name: polysaccharide
+def: "A biomacromolecule consisting of large numbers of monosaccharide residues linked glycosidically. This term is commonly used only for those containing more than ten monosaccharide residues." []
+synonym: "Glycan" RELATED []
+synonym: "Glycane" RELATED []
+synonym: "glycans" RELATED []
+synonym: "Glykan" RELATED []
+synonym: "Glykane" RELATED []
+synonym: "polisacarido" RELATED []
+synonym: "polisacaridos" RELATED []
+synonym: "Polysaccharide" EXACT []
+synonym: "polysaccharides" EXACT []
+is_a: CHEBI:16646 ! carbohydrate
+is_a: CHEBI:167559 ! glycan
+is_a: CHEBI:33694 ! biomacromolecule
 
 [Term]
 id: CHEBI:18186
@@ -1911,6 +2148,13 @@ is_a: CHEBI:22478 ! amino alcohol
 is_a: CHEBI:23824 ! diol
 
 [Term]
+id: CHEBI:22506
+name: aminoglycan
+synonym: "aminoglycans" RELATED []
+is_a: CHEBI:35352 ! organonitrogen compound
+is_a: CHEBI:65212 ! polysaccharide derivative
+
+[Term]
 id: CHEBI:22562
 name: anilines
 def: "Any  aromatic amine that is benzene carrying at least one amino substituent and its substituted derivatives." []
@@ -1927,6 +2171,15 @@ synonym: "Anionen" RELATED []
 synonym: "aniones" RELATED []
 synonym: "anions" RELATED []
 is_a: CHEBI:24870 ! ion
+
+[Term]
+id: CHEBI:22586
+name: antioxidant
+def: "A substance that opposes oxidation or inhibits reactions brought about by dioxygen or peroxides." []
+synonym: "antioxidants" RELATED []
+synonym: "antioxydant" RELATED []
+synonym: "antoxidant" RELATED []
+is_a: CHEBI:51086 ! chemical role
 
 [Term]
 id: CHEBI:22691
@@ -1986,6 +2239,15 @@ synonym: "phenylmethyl" RELATED []
 is_a: CHEBI:33452 ! benzylic group
 is_a: CHEBI:50325 ! proteinogenic amino-acid side-chain group
 relationship: is_substituent_group_from CHEBI:17578 ! toluene
+
+[Term]
+id: CHEBI:22868
+name: bile salt
+def: "A sodium salt of the conjugate of any bile acid with either glycine or taurine." []
+synonym: "Bile acid" RELATED []
+synonym: "bile salts" RELATED []
+is_a: CHEBI:36078 ! cholanoid
+is_a: CHEBI:38700 ! organic sodium salt
 
 [Term]
 id: CHEBI:22881
@@ -2125,6 +2387,7 @@ is_a: CHEBI:36683 ! organochlorine compound
 [Term]
 id: CHEBI:23334
 name: cobalamins
+is_a: CHEBI:176843 ! vitamin B12
 is_a: CHEBI:23341 ! cobamides
 
 [Term]
@@ -2548,6 +2811,13 @@ is_a: CHEBI:24870 ! ion
 is_a: CHEBI:33238 ! monoatomic entity
 
 [Term]
+id: CHEBI:24868
+name: organic salt
+synonym: "organic salts" RELATED []
+synonym: "organisches Salz" RELATED []
+is_a: CHEBI:24866 ! salt
+
+[Term]
 id: CHEBI:24870
 name: ion
 def: "A molecular entity having a net electric charge." []
@@ -2602,6 +2872,11 @@ synonym: "Lakton" RELATED []
 synonym: "Laktone" RELATED []
 is_a: CHEBI:33308 ! carboxylic ester
 is_a: CHEBI:38104 ! oxacycle
+
+[Term]
+id: CHEBI:25046
+name: linear tetrapyrrole
+is_a: CHEBI:26932 ! tetrapyrrole
 
 [Term]
 id: CHEBI:25154
@@ -2863,6 +3138,14 @@ synonym: "organophosphate ester" RELATED []
 synonym: "organophosphate esters" RELATED []
 is_a: CHEBI:25710 ! organophosphorus compound
 is_a: CHEBI:26020 ! phosphate
+
+[Term]
+id: CHEBI:25704
+name: organic sulfate
+def: "Compounds of the general formula SO3HOR where R is an organyl group" []
+synonym: "organic sulfates" RELATED []
+is_a: CHEBI:26820 ! sulfates
+relationship: is_conjugate_acid_of CHEBI:58958 ! organosulfate oxoanion
 
 [Term]
 id: CHEBI:2571
@@ -3272,6 +3555,25 @@ relationship: RO:0000087 CHEBI:51039 ! dopamine uptake inhibitor
 relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
 
 [Term]
+id: CHEBI:26819
+name: sulfuric ester
+def: "An ester of an alcohol and sulfuric acid." []
+synonym: "sulfate ester" RELATED []
+synonym: "sulfuric acid ester" RELATED []
+synonym: "sulfuric acid esters" RELATED []
+is_a: CHEBI:35701 ! ester
+is_a: CHEBI:37826 ! sulfuric acid derivative
+
+[Term]
+id: CHEBI:26820
+name: sulfates
+def: "Salts and esters of sulfuric acid" []
+synonym: "sulfates" EXACT []
+synonym: "sulfuric acid derivative" RELATED []
+synonym: "sulphates" RELATED []
+is_a: CHEBI:37826 ! sulfuric acid derivative
+
+[Term]
 id: CHEBI:26833
 name: sulfur atom
 synonym: "16S" RELATED []
@@ -3295,6 +3597,29 @@ synonym: "sulfur molecular entities" RELATED []
 synonym: "sulfur molecular entity" EXACT []
 is_a: CHEBI:33304 ! chalcogen molecular entity
 relationship: BFO:0000051 CHEBI:26833 ! sulfur atom
+
+[Term]
+id: CHEBI:26836
+name: sulfuric acid
+def: "A sulfur oxoacid that consists of two oxo and two hydroxy groups joined covalently to a central sulfur atom." []
+synonym: "[S(OH)2O2]" RELATED []
+synonym: "[SO2(OH)2]" RELATED []
+synonym: "Acide sulfurique" RELATED []
+synonym: "Acido sulfurico" RELATED []
+synonym: "Acidum sulfuricum" RELATED []
+synonym: "dihydrogen tetraoxosulfate" EXACT []
+synonym: "dihydroxidodioxidosulfur" EXACT []
+synonym: "H2SO4" RELATED []
+synonym: "hydrogen tetraoxosulfate(2-)" EXACT []
+synonym: "hydrogen tetraoxosulfate(VI)" EXACT []
+synonym: "Schwefelsaeureloesungen" RELATED []
+synonym: "Sulfuric acid" EXACT []
+synonym: "sulfuric acid" EXACT []
+synonym: "sulphuric acid" RELATED []
+synonym: "tetraoxosulfuric acid" EXACT []
+is_a: CHEBI:33402 ! sulfur oxoacid
+relationship: is_conjugate_acid_of CHEBI:45696 ! hydrogensulfate
+relationship: RO:0000087 CHEBI:35223 ! catalyst
 
 [Term]
 id: CHEBI:26873
@@ -3335,11 +3660,18 @@ is_a: CHEBI:38077 ! polypyrrole
 
 [Term]
 id: CHEBI:26948
-name: thiamine
+name: vitamin B1
+def: "Any member of the group of 1,3-thiazolium cations that exhibit biological activity against vitamin B1 deficiency in animals. Symptoms of vitamin B1 deficiency include constipation, loss of apetite, fatigue, nausea, delirium, blurry vision and muscle weakness. Severe vitamin B1 deficiency can also lead to a disease known as beriberi. Vitamin B1 consists of the vitamer thiamin and its acid, aldehyde and phosphorylated derivatives (and their corresponding ionized, salt and hydrate forms)." []
+synonym: "thiamine" RELATED []
 synonym: "thiamines" RELATED []
+synonym: "thiamins" RELATED []
+synonym: "vitamin B1" EXACT []
+synonym: "vitamin B1 vitamer" RELATED []
+synonym: "vitamin B1 vitamers" RELATED []
+synonym: "vitamins B1" RELATED []
 is_a: CHEBI:38338 ! aminopyrimidine
-is_a: CHEBI:38418 ! 1,3-thiazoles
-relationship: RO:0000087 CHEBI:75769 ! B vitamin
+is_a: CHEBI:63048 ! 1,3-thiazolium cation
+is_a: CHEBI:75769 ! B vitamin
 
 [Term]
 id: CHEBI:26979
@@ -3420,12 +3752,16 @@ is_a: CHEBI:37838 ! carboacyl group
 [Term]
 id: CHEBI:27306
 name: vitamin B6
+def: "Any member of the group of pyridines that exhibit biological activity against vitamin B6 deficiency. Vitamin B6 deficiency is associated with microcytic anemia, electroencephalographic abnormalities, dermatitis with cheilosis (scaling on the lips and cracks at the corners of the mouth) and glossitis (swollen tongue), depression and confusion, and weakened immune function. Vitamin B6 consists of the vitamers pyridoxine, pyridoxal, and pyridoxamine and their respective 5'-phosphate esters (and includes their corresponding ionized and salt forms)." []
 synonym: "vitamin B-6" RELATED []
 synonym: "Vitamin B6" EXACT []
+synonym: "vitamin B6 vitamer" RELATED []
+synonym: "vitamin B6 vitamers" RELATED []
 synonym: "vitamina B6" RELATED []
 synonym: "vitamine B6" RELATED []
+synonym: "vitamins B6" RELATED []
 is_a: CHEBI:26421 ! pyridines
-relationship: RO:0000087 CHEBI:75769 ! B vitamin
+is_a: CHEBI:75769 ! B vitamin
 
 [Term]
 id: CHEBI:27314
@@ -3821,6 +4157,11 @@ relationship: is_conjugate_acid_of CHEBI:17544 ! hydrogencarbonate
 relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 
 [Term]
+id: CHEBI:29057
+name: keratan
+is_a: CHEBI:18085 ! glycosaminoglycan
+
+[Term]
 id: CHEBI:29067
 name: carboxylic acid anion
 def: "The conjugate base formed when the carboxy group of a carboxylic acid is deprotonated." []
@@ -4093,7 +4434,6 @@ synonym: "cobalamin" EXACT []
 is_a: CHEBI:23334 ! cobalamins
 relationship: RO:0000087 CHEBI:23357 ! cofactor
 relationship: RO:0000087 CHEBI:26348 ! prosthetic group
-relationship: RO:0000087 CHEBI:75769 ! B vitamin
 
 [Term]
 id: CHEBI:30413
@@ -5624,6 +5964,23 @@ synonym: "alpha-amino-acid cations" RELATED []
 is_a: CHEBI:33703 ! amino-acid cation
 
 [Term]
+id: CHEBI:33720
+name: carbohydrate acid
+synonym: "carbohydrate acid" EXACT []
+synonym: "carbohydrate acids" RELATED []
+is_a: CHEBI:16646 ! carbohydrate
+is_a: CHEBI:33575 ! carboxylic acid
+relationship: is_conjugate_acid_of CHEBI:33721 ! carbohydrate acid anion
+
+[Term]
+id: CHEBI:33721
+name: carbohydrate acid anion
+synonym: "carbohydrate acid anion" EXACT []
+synonym: "carbohydrate acid anions" RELATED []
+is_a: CHEBI:29067 ! carboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:33720 ! carbohydrate acid
+
+[Term]
 id: CHEBI:33743
 name: manganese group molecular entity
 synonym: "manganese group molecular entities" RELATED []
@@ -5986,6 +6343,17 @@ synonym: "diterpenos" RELATED []
 is_a: CHEBI:35186 ! terpene
 
 [Term]
+id: CHEBI:35191
+name: triterpene
+def: "A C30 terpene." []
+synonym: "Triterpen" RELATED []
+synonym: "triterpenes" EXACT []
+synonym: "triterpenes" RELATED []
+synonym: "triterpeno" RELATED []
+synonym: "triterpenos" RELATED []
+is_a: CHEBI:35186 ! terpene
+
+[Term]
 id: CHEBI:35219
 name: plant growth retardant
 synonym: "plant growth inhibitor" RELATED []
@@ -6317,6 +6685,12 @@ is_a: CHEBI:35341 ! steroid
 is_a: CHEBI:35507 ! natural product fundamental parent
 
 [Term]
+id: CHEBI:35519
+name: cholane
+synonym: "cholane" EXACT []
+is_a: CHEBI:35508 ! steroid fundamental parent
+
+[Term]
 id: CHEBI:35523
 name: bronchodilator agent
 def: "An agent that causes an increase in the expansion of a bronchus or bronchial tubes." []
@@ -6577,6 +6951,24 @@ synonym: "antifungals" RELATED []
 is_a: CHEBI:33281 ! antimicrobial agent
 
 [Term]
+id: CHEBI:35722
+name: sulfated glycosaminoglycan
+synonym: "glycosaminoglycan sulfate" RELATED []
+synonym: "glycosaminoglycan sulfates" RELATED []
+synonym: "sulfated glycosaminoglycans" RELATED []
+is_a: CHEBI:18085 ! glycosaminoglycan
+is_a: CHEBI:35724 ! carbohydrate sulfate
+
+[Term]
+id: CHEBI:35724
+name: carbohydrate sulfate
+synonym: "carbohydrate sulfates" RELATED []
+synonym: "carbohydrate sulphates" RELATED []
+is_a: CHEBI:25704 ! organic sulfate
+is_a: CHEBI:26819 ! sulfuric ester
+is_a: CHEBI:63299 ! carbohydrate derivative
+
+[Term]
 id: CHEBI:35740
 name: liposaccharide
 synonym: "liposaccharides" RELATED []
@@ -6728,6 +7120,14 @@ is_a: CHEBI:35757 ! monocarboxylic acid anion
 relationship: is_conjugate_base_of CHEBI:35868 ! hydroxy monocarboxylic acid
 
 [Term]
+id: CHEBI:36078
+name: cholanoid
+synonym: "bile acids and derivatives" RELATED []
+synonym: "cholanoids" RELATED []
+is_a: CHEBI:35341 ! steroid
+relationship: has_parent_hydride CHEBI:35519 ! cholane
+
+[Term]
 id: CHEBI:36080
 name: protein
 def: "A biological macromolecule minimally consisting of one polypeptide chain synthesized at the ribosome." []
@@ -6752,6 +7152,14 @@ synonym: "alicyclic ketone" EXACT []
 synonym: "alicyclic ketones" EXACT []
 is_a: CHEBI:3992 ! cyclic ketone
 relationship: has_parent_hydride CHEBI:33654 ! alicyclic compound
+
+[Term]
+id: CHEBI:36277
+name: bile acid salt
+def: "A salt of a bile acid." []
+synonym: "bile acid salts" RELATED []
+is_a: CHEBI:24868 ! organic salt
+is_a: CHEBI:36078 ! cholanoid
 
 [Term]
 id: CHEBI:36309
@@ -6940,6 +7348,12 @@ is_a: CHEBI:26764 ! steroid hormone
 is_a: CHEBI:50858 ! corticosteroid
 
 [Term]
+id: CHEBI:36735
+name: biladienes
+def: "Compounds based on a biladiene skeleton." []
+is_a: CHEBI:25046 ! linear tetrapyrrole
+
+[Term]
 id: CHEBI:36820
 name: ring assembly
 def: "Two or more cyclic systems (single rings or fused systems) which are directly joined to each other by double or single bonds are named ring assemblies when the number of such direct ring junctions is one less than the number of cyclic systems involved." []
@@ -7073,6 +7487,7 @@ synonym: "vitamin B6 phosphates" RELATED []
 is_a: CHEBI:25703 ! organic phosphate
 is_a: CHEBI:27306 ! vitamin B6
 is_a: CHEBI:37734 ! phosphoric ester
+relationship: is_conjugate_acid_of CHEBI:176894 ! vitamin B6 phosphate anion
 relationship: RO:0000087 CHEBI:23357 ! cofactor
 
 [Term]
@@ -7164,6 +7579,32 @@ is_a: CHEBI:22315 ! alkaloid
 is_a: CHEBI:38295 ! azabicycloalkane
 
 [Term]
+id: CHEBI:37395
+name: mucopolysaccharide
+def: "Any of the group of polysaccharides composed of alternating units from uronic acids and glycosamines, and commonly partially esterified with sulfuric acid." []
+synonym: "mucopolisacarido" RELATED []
+synonym: "mucopolisacaridos" RELATED []
+synonym: "Mucopolysaccharid" RELATED []
+synonym: "Mucopolysaccharide" EXACT []
+synonym: "mucopolysaccharides" EXACT []
+synonym: "Mukopolysaccharid" RELATED []
+is_a: CHEBI:18085 ! glycosaminoglycan
+
+[Term]
+id: CHEBI:37397
+name: chondroitin sulfate
+def: "Any of a class of 10--60 kDa glycosaminoglycan sulfates, widely distributed in cartilage and other mammalian connective tissues." []
+synonym: "chondroitin polysulfate" RELATED []
+synonym: "Chondroitin sulfate" EXACT []
+synonym: "chondroitin sulfates" RELATED []
+synonym: "chondroitin sulfuric acid" RELATED []
+synonym: "chondroitin sulphate" RELATED []
+synonym: "Chondroitinsulfat" RELATED []
+is_a: CHEBI:35722 ! sulfated glycosaminoglycan
+is_a: CHEBI:37395 ! mucopolysaccharide
+relationship: has_functional_parent CHEBI:16137 ! chondroitin D-glucuronate
+
+[Term]
 id: CHEBI:37527
 name: acid
 def: "An acid is a molecular entity capable of donating a hydron (Bronsted acid) or capable of forming a covalent bond with an electron pair (Lewis acid)." []
@@ -7232,6 +7673,14 @@ synonym: "(2S,5R)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxy
 synonym: "2,2-dimethylpenam-3alpha-carboxylic acid" EXACT []
 synonym: "penicillanic acid" EXACT []
 is_a: CHEBI:25865 ! penicillanic acids
+
+[Term]
+id: CHEBI:37826
+name: sulfuric acid derivative
+synonym: "sulfuric acid derivative" EXACT []
+synonym: "sulfuric acid derivatives" RELATED []
+is_a: CHEBI:33424 ! sulfur oxoacid derivative
+relationship: has_functional_parent CHEBI:26836 ! sulfuric acid
 
 [Term]
 id: CHEBI:37838
@@ -7496,6 +7945,12 @@ is_a: CHEBI:25355 ! mitochondrial respiratory-chain inhibitor
 is_a: CHEBI:76870 ! EC 1.9.3.* (oxidoreductase acting on donor heme group, oxygen as acceptor) inhibitor
 
 [Term]
+id: CHEBI:38560
+name: simple protein
+synonym: "simple proteins" RELATED []
+is_a: CHEBI:36080 ! protein
+
+[Term]
 id: CHEBI:38632
 name: membrane transport modulator
 def: "Any agent that affects the transport of molecular entities across a biological membrane." []
@@ -7509,6 +7964,14 @@ def: "An agent that inhibits sodium influx through cell membranes." []
 synonym: "Na channel blocker" RELATED []
 synonym: "sodium channel blockers" RELATED []
 is_a: CHEBI:39000 ! sodium channel modulator
+
+[Term]
+id: CHEBI:38700
+name: organic sodium salt
+synonym: "organic sodium salt" EXACT []
+synonym: "organic sodium salts" RELATED []
+is_a: CHEBI:24868 ! organic salt
+is_a: CHEBI:26714 ! sodium salt
 
 [Term]
 id: CHEBI:38702
@@ -7587,6 +8050,42 @@ id: CHEBI:39000
 name: sodium channel modulator
 synonym: "sodium channel modulators" RELATED []
 is_a: CHEBI:38632 ! membrane transport modulator
+
+[Term]
+id: CHEBI:39015
+name: apolipoprotein
+def: "Protein component on the surface of lipoprotein." []
+synonym: "apolipoproteins" RELATED []
+is_a: CHEBI:13850 ! apoprotein
+
+[Term]
+id: CHEBI:39022
+name: inclusion compound
+def: "A complex in which one component (the host) forms a cavity or, in the case of a crystal, a crystal lattice containing spaces in the shape of long tunnels or channels in which molecular entities of a second chemical species (the guest) are located. There is no covalent bonding between guest and host, the attraction being generally due to van der Waals forces." []
+synonym: "compose d'inclusion" RELATED []
+synonym: "compuesto de inclusion" RELATED []
+synonym: "compuestos de inclusion" RELATED []
+synonym: "inclusion complex" RELATED []
+synonym: "inclusion compound" EXACT []
+synonym: "inclusion compounds" RELATED []
+is_a: CHEBI:50967 ! non-covalently-bound molecular entity
+
+[Term]
+id: CHEBI:39024
+name: clathrate compound
+def: "Inclusion compound in which the guest molecule is in a cage formed by the host molecule or by a lattice of host molecules." []
+synonym: "cage compound" RELATED []
+synonym: "Clathrat" RELATED []
+synonym: "clathrate" RELATED []
+synonym: "clathrate compounds" RELATED []
+synonym: "clathrates" EXACT []
+synonym: "Clathratverbindung" RELATED []
+synonym: "clatrato" RELATED []
+synonym: "clatratos" RELATED []
+synonym: "compuesto de clatrato" RELATED []
+synonym: "Klathrat" RELATED []
+synonym: "Klathratverbindung" RELATED []
+is_a: CHEBI:39022 ! inclusion compound
 
 [Term]
 id: CHEBI:39141
@@ -7825,6 +8324,22 @@ relationship: RO:0000087 CHEBI:53000 ! epitope
 relationship: RO:0000087 CHEBI:63510 ! EC 3.6.3.9 (Na(+)/K(+)-transporting ATPase) inhibitor
 
 [Term]
+id: CHEBI:45696
+name: hydrogensulfate
+synonym: "[SO3(OH)](-)" RELATED []
+synonym: "HSO4(-)" RELATED []
+synonym: "HYDROGEN SULFATE" RELATED []
+synonym: "hydrogen(tetraoxidosulfate)(1-)" EXACT []
+synonym: "hydrogensulfate" EXACT []
+synonym: "hydrogensulfate(1-)" EXACT []
+synonym: "hydrogentetraoxosulfate(1-)" EXACT []
+synonym: "hydrogentetraoxosulfate(VI)" EXACT []
+synonym: "hydroxidotrioxidosulfate(1-)" EXACT []
+is_a: CHEBI:33482 ! sulfur oxoanion
+relationship: is_conjugate_acid_of CHEBI:16189 ! sulfate
+relationship: is_conjugate_base_of CHEBI:26836 ! sulfuric acid
+
+[Term]
 id: CHEBI:46195
 name: paracetamol
 def: "A member of the class of phenols that is 4-aminophenol in which one of the hydrogens attached to the amino group has been replaced by an acetyl group." []
@@ -7915,6 +8430,12 @@ synonym: "silicatos" RELATED []
 synonym: "Silikat" RELATED []
 synonym: "Silikate" RELATED []
 synonym: "Silikatminerale" RELATED []
+is_a: CHEBI:46662 ! mineral
+
+[Term]
+id: CHEBI:46723
+name: phosphate mineral
+synonym: "phosphate minerals" RELATED []
 is_a: CHEBI:46662 ! mineral
 
 [Term]
@@ -8826,6 +9347,13 @@ synonym: "SSRI" RELATED []
 is_a: CHEBI:48278 ! serotonergic drug
 
 [Term]
+id: CHEBI:50967
+name: non-covalently-bound molecular entity
+def: "Systems consisting of two or more molecular entities held together by non-covalent interactions." []
+synonym: "non-covalently-bound molecular entities" RELATED []
+is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
 id: CHEBI:50994
 name: primary amino compound
 def: "A compound formally derived from ammonia by replacing one hydrogen atom by an organyl group." []
@@ -9027,6 +9555,19 @@ synonym: "pharmaceuticals" RELATED []
 is_a: CHEBI:33232 ! application
 
 [Term]
+id: CHEBI:52254
+name: apatite
+def: "A phosphate mineral with the general formula Ca5(PO4)3X where X = OH, F or Cl." []
+synonym: "hydroxyapatite" RELATED []
+is_a: CHEBI:46723 ! phosphate mineral
+
+[Term]
+id: CHEBI:52255
+name: hydroxylapatite
+def: "A phosphate mineral with the formula Ca5(PO4)3(OH)." []
+is_a: CHEBI:52254 ! apatite
+
+[Term]
 id: CHEBI:52395
 name: oxyketone
 def: "A compound with the general formula R2C=O (R=/=H) where one or more of the R groups contains an oxy (-O-) group." []
@@ -9064,6 +9605,22 @@ synonym: "iso-cyanates" RELATED []
 is_a: CHEBI:35352 ! organonitrogen compound
 is_a: CHEBI:36963 ! organooxygen compound
 relationship: has_functional_parent CHEBI:29202 ! isocyanic acid
+
+[Term]
+id: CHEBI:53309
+name: polyanionic macromolecule
+def: "A polymer carrying multiple negative charges." []
+synonym: "polyanion" RELATED []
+synonym: "polyanions" RELATED []
+is_a: CHEBI:53368 ! ionic macromolecule
+
+[Term]
+id: CHEBI:53368
+name: ionic macromolecule
+def: "A macromolecule containing ionic groups." []
+synonym: "ionic polymer" RELATED []
+synonym: "polyionic macromolecule" RELATED []
+is_a: CHEBI:33839 ! macromolecule
 
 [Term]
 id: CHEBI:5386
@@ -9133,12 +9690,22 @@ name: biotinate
 def: "Conjugate base of biotin arising from deprotonation of the carboxy group." []
 synonym: "5-[(3aS,4S,6aR)-2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl]pentanoate" EXACT []
 synonym: "biotin" RELATED []
-synonym: "biotinate anion" RELATED []
+synonym: "biotin anion" RELATED []
+is_a: CHEBI:176841 ! vitamin B7
 is_a: CHEBI:35757 ! monocarboxylic acid anion
 relationship: is_conjugate_base_of CHEBI:15956 ! biotin
 relationship: RO:0000087 CHEBI:23357 ! cofactor
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:57652
+name: chondroitin D-glucuronate anion
+def: "Anionic form of chondroitin D-glucuronate arising from deprotonation of the carboxylic acid groups of the repeating units; major species at pH 7.3." []
+synonym: "chondroitin D-glucuronate" RELATED []
+synonym: "chondroitin D-glucuronate polyanion" RELATED []
+is_a: CHEBI:61469 ! polyanionic polymer
+relationship: is_conjugate_base_of CHEBI:16137 ! chondroitin D-glucuronate
 
 [Term]
 id: CHEBI:57718
@@ -9184,6 +9751,18 @@ relationship: is_conjugate_acid_of CHEBI:16874 ! psychosine
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
 
 [Term]
+id: CHEBI:57977
+name: bilirubin(2-)
+def: "A dicarboxylic acid dianion obtained by deprotonation of the two carboxy groups of bilirubin; major species at pH 7.3." []
+synonym: "2,7,13,17-tetramethyl-1,19-dioxo-3,18-divinyl-1,10,19,22,23,24-hexahydro-21H-biline-8,12-dipropanoate" RELATED []
+synonym: "bilirubin dianion" RELATED []
+synonym: "bilirubin IXalpha" RELATED []
+is_a: CHEBI:28965 ! dicarboxylic acid dianion
+is_a: CHEBI:59252 ! linear tetrapyrrole anion
+relationship: is_conjugate_base_of CHEBI:16990 ! bilirubin IXalpha
+relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
 id: CHEBI:57981
 name: D-phenylalanine zwitterion
 def: "A D-alpha-amino acid zwitterion that is D-phenylalanine in which a proton has been transferred from the carboxy group to the amino group. It is the major species at pH 7.3." []
@@ -9197,11 +9776,14 @@ relationship: is_tautomer_of CHEBI:16998 ! D-phenylalanine
 [Term]
 id: CHEBI:57986
 name: riboflavin(1-)
-def: "The anion resulting from removal of a proton from the nitrogen at the 3 position (between the two carbonyl gropus) of riboflavin." []
+def: "An organic anion that is the conjugate base of riboflavin resulting from the removal of a proton from the nitrogen at position 3 (between the two carbonyl groups). Major microspecies at pH 7.3." []
 synonym: "1-deoxy-1-(7,8-dimethyl-2,4-dioxo-2H-benzo[g]pteridin-3-id-10(4H)-yl)-D-ribitol" EXACT []
 synonym: "7,8-dimethyl-2,4-dioxo-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]-2H,3H,4H,10H-benzo[g]pteridin-3-ide" RELATED []
 synonym: "riboflavin" RELATED []
-is_a: CHEBI:25696 ! organic anion
+synonym: "riboflavin anion" RELATED []
+synonym: "vitamin B2(1-)" RELATED []
+is_a: CHEBI:176838 ! vitamin B2
+is_a: CHEBI:60531 ! flavin(1-)
 relationship: is_conjugate_base_of CHEBI:17015 ! riboflavin
 relationship: RO:0000087 CHEBI:23357 ! cofactor
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
@@ -9274,6 +9856,16 @@ synonym: "saturated fatty acid anions" RELATED []
 is_a: CHEBI:28868 ! fatty acid anion
 
 [Term]
+id: CHEBI:58958
+name: organosulfate oxoanion
+def: "An organic anion of general formula RS(=O)2O(-) where R is an organyl group." []
+synonym: "organosulfate oxoanions" RELATED []
+is_a: CHEBI:25696 ! organic anion
+is_a: CHEBI:33482 ! sulfur oxoanion
+relationship: has_functional_parent CHEBI:16189 ! sulfate
+relationship: is_conjugate_base_of CHEBI:25704 ! organic sulfate
+
+[Term]
 id: CHEBI:589779
 name: piperidinium
 def: "The conjugate acid of piperidine; major species at pH 7.3." []
@@ -9298,6 +9890,15 @@ name: hapten
 def: "Any substance capable of eliciting an immune response only when attached to a large carrier such as a protein. Examples include dinitrophenols; oligosaccharides; peptides; and heavy metals." []
 synonym: "haptens" RELATED []
 is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:59252
+name: linear tetrapyrrole anion
+def: "An organic anion arising from deprotonation of a acyclic tetrapyrrole compound." []
+synonym: "acyclic tetrapyrrole anion" RELATED []
+synonym: "acyclic tetrapyrrole anions" RELATED []
+synonym: "linear tetrapyrrole anions" RELATED []
+is_a: CHEBI:25696 ! organic anion
 
 [Term]
 id: CHEBI:59517
@@ -9345,7 +9946,7 @@ synonym: "3-hydroxy-5-(hydroxymethyl)-2-methylisonicotinaldehyde 5-phosphate dia
 synonym: "3-hydroxy-5-(hydroxymethyl)-2-methylisonicotinaldehyde 5-phosphate(2-)" RELATED []
 synonym: "pyridoxal 5'-phosphate" RELATED []
 synonym: "pyridoxal 5'-phosphate dianion" RELATED []
-is_a: CHEBI:58945 ! organophosphate oxoanion
+is_a: CHEBI:176894 ! vitamin B6 phosphate anion
 relationship: is_conjugate_base_of CHEBI:18405 ! pyridoxal 5'-phosphate
 relationship: RO:0000087 CHEBI:23357 ! cofactor
 relationship: RO:0000087 CHEBI:75772 ! Saccharomyces cerevisiae metabolite
@@ -9402,6 +10003,15 @@ synonym: "Mischung" RELATED []
 is_a: CHEBI:59999 ! chemical substance
 
 [Term]
+id: CHEBI:60027
+name: polymer
+def: "A polymer is a mixture, which is composed of macromolecules of different kinds and which may be differentiated by composition, length, degree of branching etc.." []
+synonym: "Kunststoff" RELATED []
+synonym: "Polymer" EXACT []
+is_a: CHEBI:60004 ! mixture
+relationship: BFO:0000051 CHEBI:33839 ! macromolecule
+
+[Term]
 id: CHEBI:60056
 name: cocaine(1+)
 def: "The conjugate base of cocaine arising from protonation of the tertiary amino group; major species at pH 7.3." []
@@ -9412,6 +10022,14 @@ is_a: CHEBI:35274 ! ammonium ion derivative
 is_a: CHEBI:37332 ! tropane alkaloid
 relationship: is_conjugate_acid_of CHEBI:27958 ! cocaine
 relationship: RO:0000087 CHEBI:77746 ! human metabolite
+
+[Term]
+id: CHEBI:60164
+name: ionic polymer
+def: "An ionic polymer is a polymer, composed of ionic macromolecules." []
+synonym: "polyionic polymer" RELATED []
+is_a: CHEBI:60027 ! polymer
+relationship: BFO:0000051 CHEBI:53368 ! ionic macromolecule
 
 [Term]
 id: CHEBI:60242
@@ -9516,6 +10134,16 @@ synonym: "racemic mixture" RELATED []
 is_a: CHEBI:60004 ! mixture
 
 [Term]
+id: CHEBI:60924
+name: keratan sulfate
+def: "A sulfated glycosaminoglycan, a linear polymer that consists of the repeating disaccharide  [3)-beta-Gal-(1->4)-beta-GlcNAc-(1->] and containing sulfo groups located at random positions." []
+synonym: "keratan sulfates" RELATED []
+synonym: "keratosulfate" RELATED []
+is_a: CHEBI:35722 ! sulfated glycosaminoglycan
+is_a: CHEBI:37395 ! mucopolysaccharide
+relationship: has_functional_parent CHEBI:29057 ! keratan
+
+[Term]
 id: CHEBI:6121
 name: ketamine
 def: "A member of the class of cyclohexanones in which one of the hydrogens at position 2 is substituted by a 2-chlorophenyl group, while the other is substituted by a methylamino group." []
@@ -9549,6 +10177,15 @@ name: C21-steroid
 def: "A steroid that has a structure based on a 21-carbon (pregnane) skeleton. Note that individual examples may have ring substituents at other positions and/or contain double bonds, aromatic A-rings, expanded/contracted rings etc., so the formula and mass may vary from that given for the generic structure." []
 synonym: "a C21-steroid" RELATED []
 is_a: CHEBI:35341 ! steroid
+
+[Term]
+id: CHEBI:61469
+name: polyanionic polymer
+def: "A polymer, composed of polyanion macromolecules." []
+synonym: "polyanion" RELATED []
+synonym: "polyanions" RELATED []
+is_a: CHEBI:60164 ! ionic polymer
+relationship: BFO:0000051 CHEBI:53309 ! polyanionic macromolecule
 
 [Term]
 id: CHEBI:61655
@@ -9635,6 +10272,14 @@ synonym: "fuel enhancer" RELATED []
 is_a: CHEBI:51086 ! chemical role
 
 [Term]
+id: CHEBI:63048
+name: 1,3-thiazolium cation
+def: "An organic cation resulting from protonation or quaternisation at the 3-position of any 1,3-thiazole." []
+synonym: "1,3-thiazolium cations" RELATED []
+is_a: CHEBI:25697 ! organic cation
+is_a: CHEBI:38418 ! 1,3-thiazoles
+
+[Term]
 id: CHEBI:63161
 name: glycosyl compound
 def: "A carbohydrate derivative arising formally from the elimination of water from a glycosidic hydroxy group and an H atom bound to an oxygen, carbon, nitrogen or sulfur atom of a separate entity." []
@@ -9696,6 +10341,15 @@ synonym: "phosphomonoesterase inhibitors" RELATED []
 is_a: CHEBI:76775 ! EC 3.1.3.* (phosphoric monoester hydrolase) inhibitor
 
 [Term]
+id: CHEBI:63436
+name: carbohydrate acid derivative
+def: "A carbohydrate derivative that is formally obtained from a carbohydrate acid." []
+synonym: "carbohydrate acid derivatives" RELATED []
+is_a: CHEBI:63299 ! carbohydrate derivative
+relationship: has_functional_parent CHEBI:33720 ! carbohydrate acid
+relationship: is_conjugate_acid_of CHEBI:63551 ! carbohydrate acid derivative anion
+
+[Term]
 id: CHEBI:63473
 name: aromatic amino-acid anion
 def: "An aromatic amino acid whose alpha-carboxylic acid group is ionized (non-protonated)." []
@@ -9725,6 +10379,17 @@ synonym: "sodium-potassium adenosine triphosphatase inhibitors" RELATED []
 synonym: "sodium-potassium pump inhibitor" RELATED []
 synonym: "sodium-potassium pump inhibitors" RELATED []
 is_a: CHEBI:76895 ! EC 3.6.3.* (acid anhydride hydrolase catalysing transmembrane movement of substances) inhibitor
+
+[Term]
+id: CHEBI:63551
+name: carbohydrate acid derivative anion
+def: "A carboxylic acid anion resulting from the deprotonation of the carboxy group of a carbohydrate acid derivative." []
+synonym: "carbohydrate acid anion derivative" RELATED []
+synonym: "carbohydrate acid anion derivatives" RELATED []
+synonym: "carbohydrate acid derivative anions" RELATED []
+is_a: CHEBI:29067 ! carboxylic acid anion
+relationship: has_functional_parent CHEBI:33721 ! carbohydrate acid anion
+relationship: is_conjugate_base_of CHEBI:63436 ! carbohydrate acid derivative
 
 [Term]
 id: CHEBI:64047
@@ -9827,6 +10492,18 @@ synonym: "mitotic inhibitors" RELATED []
 is_a: CHEBI:52210 ! pharmacological role
 
 [Term]
+id: CHEBI:6495
+name: lipoprotein
+def: "A clathrate complex consisting of a lipid enwrapped in a protein host without covalent binding in such a way that the complex has a hydrophilic outer surface consisting of all the protein and the polar ends of any phospholipids." []
+synonym: "Lipoprotein" EXACT []
+synonym: "lipoprotein particle" RELATED []
+synonym: "lipoproteins" EXACT []
+is_a: CHEBI:33837 ! conjugated protein
+is_a: CHEBI:39024 ! clathrate compound
+relationship: BFO:0000051 CHEBI:39015 ! apolipoprotein
+relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+
+[Term]
 id: CHEBI:64996
 name: EC 1.13.11.33 (arachidonate 15-lipoxygenase) inhibitor
 def: "A lipoxygenase inhibitor that interferes with the action of arachidonate 15-lipoxygenase (EC 1.13.11.33)." []
@@ -9923,6 +10600,16 @@ synonym: "Tweenase inhibitors" RELATED []
 synonym: "Tweenesterase inhibitor" RELATED []
 synonym: "Tweenesterase inhibitors" RELATED []
 is_a: CHEBI:76773 ! EC 3.1.1.* (carboxylic ester hydrolase) inhibitor
+
+[Term]
+id: CHEBI:65212
+name: polysaccharide derivative
+def: "A carbohydrate derivative that is any derivative of a polysaccharide." []
+synonym: "polysaccharide derivatives" RELATED []
+is_a: CHEBI:167559 ! glycan
+is_a: CHEBI:33694 ! biomacromolecule
+is_a: CHEBI:63299 ! carbohydrate derivative
+relationship: has_functional_parent CHEBI:18154 ! polysaccharide
 
 [Term]
 id: CHEBI:65255
@@ -10023,6 +10710,15 @@ synonym: "organic compounds" RELATED []
 synonym: "organic molecules" RELATED []
 is_a: CHEBI:25367 ! molecule
 is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:72813
+name: exopolysaccharide
+def: "A biomacromolecule composed of carbohydrate residues which is secreted by a microorganism into the surrounding environment." []
+synonym: "exopolysaccharides" RELATED []
+synonym: "extracellular polymeric substance" RELATED []
+synonym: "extracellular polymeric substances" RELATED []
+is_a: CHEBI:33694 ! biomacromolecule
 
 [Term]
 id: CHEBI:73181
@@ -10216,13 +10912,15 @@ is_a: CHEBI:75767 ! animal metabolite
 [Term]
 id: CHEBI:75769
 name: B vitamin
-def: "A role played by any of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B). The group comprises of vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such). B vitamins play important roles in cell metabolism." []
+def: "Any member of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such)." []
 synonym: "B vitamins" RELATED []
 synonym: "B-group vitamin" RELATED []
 synonym: "B-group vitamins" RELATED []
 synonym: "vitamin B" RELATED []
-is_a: CHEBI:27314 ! water-soluble vitamin
-is_a: CHEBI:50733 ! nutraceutical
+is_a: CHEBI:35352 ! organonitrogen compound
+is_a: CHEBI:36963 ! organooxygen compound
+relationship: RO:0000087 CHEBI:27314 ! water-soluble vitamin
+relationship: RO:0000087 CHEBI:50733 ! nutraceutical
 
 [Term]
 id: CHEBI:75771
@@ -11129,6 +11827,13 @@ synonym: "cardiac glycosides" RELATED []
 is_a: CHEBI:24400 ! glycoside
 is_a: CHEBI:26766 ! steroid lactone
 relationship: RO:0000087 CHEBI:77307 ! cardioprotective agent
+
+[Term]
+id: CHEBI:84087
+name: human urinary metabolite
+def: "Any metabolite (endogenous or exogenous) found in human urine samples." []
+synonym: "human urinary metabolites" RELATED []
+is_a: CHEBI:77746 ! human metabolite
 
 [Term]
 id: CHEBI:84124

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-07-12/imports/ro_import.owl
+data-version: mondo/releases/2021-08-02/imports/ro_import.owl
 ontology: mondo/imports/ro_import
 
 [Term]
@@ -668,6 +668,22 @@ is_functional: true
 is_a: RO:0002017 ! has component activity
 
 [Typedef]
+id: RO:0002081
+name: before or simultaneous with
+comment: Primitive instance level timing relation between events
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "<=" xsd:string
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
+id: RO:0002082
+name: simultaneous with
+comment: t1 simultaneous_with t2 iff:=  t1 before_or_simultaneous_with t2  and not (t1 before t2)
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+is_transitive: true
+is_a: RO:0002081 ! before or simultaneous with
+
+[Typedef]
 id: RO:0002084
 name: during which ends
 comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002122 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
@@ -712,6 +728,15 @@ property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "o" xsd:string
 property_value: IAO:0000118 "overlaps" xsd:string
 is_a: RO:0002222 ! temporally related to
+
+[Typedef]
+id: RO:0002100
+name: has soma location
+def: "Relation between a neuron and an anatomical structure that its soma is part of." []
+domain: CL:0000540 ! neuron
+range: CARO:0000003 ! connected anatomical structure
+is_a: RO:0002131 ! overlaps
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002103
@@ -1217,6 +1242,12 @@ name: ecologically related to
 def: "A relationship that is mediated in some way by the environment or environmental feature (ENVO:00002297)" []
 
 [Typedef]
+id: RO:0002322
+name: confers advantage in
+range: ENVO:01000254 ! environmental system
+is_a: RO:0002321 ! ecologically related to
+
+[Typedef]
 id: RO:0002323
 name: mereotopologically related to
 def: "A mereological relationship or a topological relationship" []
@@ -1675,6 +1706,7 @@ holds_over_chain: RO:0002258 RO:0002496
 is_a: RO:0002487 ! relation between physical entity and a process or stage
 transitive_over: BFO:0000050 ! part of
 transitive_over: BFO:0000062 ! preceded by
+transitive_over: RO:0002082 ! simultaneous with
 
 [Typedef]
 id: RO:0002497
@@ -1685,6 +1717,7 @@ holds_over_chain: RO:0002286 RO:0002497
 is_a: RO:0002487 ! relation between physical entity and a process or stage
 transitive_over: BFO:0000050 ! part of
 transitive_over: BFO:0000063 ! precedes
+transitive_over: RO:0002082 ! simultaneous with
 
 [Typedef]
 id: RO:0002500
