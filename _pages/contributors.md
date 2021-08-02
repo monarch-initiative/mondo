@@ -55,6 +55,7 @@ Madeline Hughes | [Broad Institute](https://www.broadinstitute.org/) | [madeline
 Simon Jupp | [EBI](https://www.ebi.ac.uk/) | [simonjupp](https://github.com/simonjupp)
 Avi Kelman | [CHOP](https://www.chop.edu/) | [fiendish](https://github.com/fiendish)
 Bron Kisler | [NCI](https://www.cancer.gov/) | [bronkisler](https://github.com/bronkisler)
+Sebastian Kohler | [Ada Health](https://ada.com/) | [drseb ](https://github.com/drseb )
 Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/) | [Letchau](https://github.com/Letchau)
 Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [janinelewis3](https://github.com/janinelewis3)
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
