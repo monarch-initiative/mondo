@@ -4,11 +4,7 @@
 
 This page provides details and summaries for upcoming and past Mondo workshops. 
 
-## Upcoming workshops
-
-Check back soon.
-
-## Past Workshops
+## Workshops
 
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
