@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-02/imports/hp_import.owl
+data-version: mondo/releases/2021-08-03/imports/hp_import.owl
 subsetdef: hposlim_core ""
 subsetdef: secondary_consequence ""
 ontology: mondo/imports/hp_import
@@ -3481,7 +3481,7 @@ id: HP:0001103
 name: Abnormal macular morphology
 namespace: human_phenotype
 def: "A structural abnormality of the macula lutea, which is an oval-shaped highly pigmented yellow spot near the center of the retina." [HPO:probinson, PMID:16255686]
-comment: The term macula derives from the presence of the xanthophyll pigments, lutein and zeaxanthin, in a region five to six millimetres in diameter at the posterior pole of  the  eye,  appearing  as  a  yellow  spot (macula  lutea),  when  viewed  in  red-free light.
+comment: The term macula derives from the presence of the xanthophyll pigments, lutein and zeaxanthin, in a region five to six millimetres in diameter at the posterior pole of the eye, appearing as a yellow spot (macula lutea), when viewed in red-free light.
 subset: hposlim_core
 synonym: "Abnormality of the macula" EXACT []
 synonym: "Macula abnormality" EXACT []
@@ -6033,6 +6033,7 @@ namespace: human_phenotype
 def: "Any structural abnormality of the telencephalon, which is also known as the cerebrum." [HPO:probinson]
 synonym: "Abnormality of the cerebrum" EXACT []
 synonym: "Abnormality of the telencephalon" EXACT []
+synonym: "Cerebral lesion" EXACT []
 xref: UMLS:C4021762
 is_a: HP:0100547 ! Abnormality of forebrain morphology
 
@@ -6219,7 +6220,7 @@ xref: MSH:D004417
 xref: SNOMEDCT_US:230145002
 xref: SNOMEDCT_US:267036007
 xref: UMLS:C0013404
-is_a: HP:0002795 ! Abnormal respiratory system physiology
+is_a: HP:0002793 ! Abnormal pattern of respiration
 
 [Term]
 id: HP:0002098
@@ -8951,6 +8952,7 @@ synonym: "Involuntary movements" EXACT layperson []
 synonym: "Involuntary muscle contractions" EXACT layperson []
 xref: SNOMEDCT_US:102542000
 xref: UMLS:C0235086
+is_a: HP:0011442 ! Abnormal central motor function
 is_a: HP:0100022 ! Abnormality of movement
 created_by: peter
 creation_date: 2008-02-20T12:18:00Z
@@ -8972,7 +8974,7 @@ creation_date: 2008-02-20T01:23:00Z
 id: HP:0004307
 name: Abnormal anatomic location of the heart
 namespace: human_phenotype
-def: "Thickening of the left ventricle wall with congenital onset." [PMID:154915]
+def: "Developmental defect characterized by an anomalous anatomic location of the heart." []
 xref: UMLS:C4025359
 is_a: HP:0001627 ! Abnormal heart morphology
 created_by: peter
@@ -10614,7 +10616,7 @@ synonym: "Abnormal kidney artery" EXACT layperson [ORCID:0000-0001-5208-3432]
 synonym: "Abnormality of the renal artery" EXACT []
 xref: UMLS:C4024624
 is_a: HP:0011004 ! Abnormal systemic arterial morphology
-is_a: HP:0033835 ! Abnormal renal vascular morphology
+is_a: HP:0033836 ! Abnormal intrarenal artery morphology
 created_by: peter
 creation_date: 2008-04-04T06:13:00Z
 
@@ -13969,7 +13971,7 @@ id: HP:0025142
 name: Constitutional symptom
 namespace: human_phenotype
 def: "A symptom or manifestation indicating a systemic or general effect of a disease and that may affect the general well-being or status of an individual." []
-comment: Note that we use the preferred term label constitutional symptom because this reflects common usage, but we do not restrict the term or its descendents to the narrow meaning of symptom, i.e., a complaint related by a patient to a physician. There is no generally accepted classification of what defines a constitutional symptom, but examples  include weight loss, fatigue, general weakness, night sweats, shaking, chills, fever, and vomiting.
+comment: Note that we use the preferred term label constitutional symptom because this reflects common usage, but we do not restrict the term or its descendents to the narrow meaning of symptom, i.e., a complaint related by a patient to a physician. There is no generally accepted classification of what defines a constitutional symptom, but examples include weight loss, fatigue, general weakness, night sweats, shaking, chills, fever, and vomiting.
 is_a: HP:0000118 ! Phenotypic abnormality
 property_value: http://purl.org/dc/elements/1.1/date 2016-11-29T11:02:54Z xsd:dateTime
 created_by: HPO:probinson
@@ -15008,6 +15010,16 @@ property_value: http://purl.org/dc/elements/1.1/date 2021-05-16T17:27:46Z xsd:da
 created_by: peter
 
 [Term]
+id: HP:0033836
+name: Abnormal intrarenal artery morphology
+namespace: human_phenotype
+def: "An anomalous structure of an artery located in the kidney." []
+synonym: "Abnormal kidney arterial blood vessel morphology" EXACT []
+is_a: HP:0033835 ! Abnormal renal vascular morphology
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-16T17:29:18Z xsd:dateTime
+created_by: peter
+
+[Term]
 id: HP:0040006
 name: Mortality/Aging
 namespace: human_phenotype
@@ -15301,7 +15313,7 @@ xref: MSH:D006606
 xref: SNOMEDCT_US:65958008
 xref: UMLS:C0019521
 xref: UMLS:C0744897
-is_a: HP:0002795 ! Abnormal respiratory system physiology
+is_a: HP:0025142 ! Constitutional symptom
 created_by: doelkens
 creation_date: 2010-07-08T05:28:00Z
 
