@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-02/imports/uberon_import.owl
+data-version: mondo/releases/2021-08-03/imports/uberon_import.owl
 ontology: mondo/imports/uberon_import
 
 [Term]
@@ -8464,6 +8464,17 @@ intersection_of: BFO:0000050 UBERON:0002367 ! part of prostate gland
 relationship: BFO:0000050 UBERON:0002367 ! part of prostate gland
 
 [Term]
+id: CL:2000060
+name: placental villous trophoblast
+def: "A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua." []
+synonym: "vCTB" EXACT []
+synonym: "villous cytotrophoblast" EXACT []
+is_a: CL:0000351 ! trophoblast cell
+intersection_of: CL:0000351 ! trophoblast cell
+intersection_of: BFO:0000050 UBERON:0010005 ! part of placental labyrinth villous
+relationship: BFO:0000050 UBERON:0010005 ! part of placental labyrinth villous
+
+[Term]
 id: CL:2000061
 name: placental amniotic mesenchymal stromal cell
 def: "Any mesenchymal stem cell that is part of a placenta." []
@@ -8471,6 +8482,16 @@ is_a: CL:0000134 ! mesenchymal stem cell
 intersection_of: CL:0000134 ! mesenchymal stem cell
 intersection_of: BFO:0000050 UBERON:0001987 ! part of placenta
 relationship: BFO:0000050 UBERON:0001987 ! part of placenta
+
+[Term]
+id: CL:2000062
+name: placental villus capillary endothelial cell
+def: "Any capillary endothelial cell that is part of a placenta." []
+is_a: CL:0002144 ! capillary endothelial cell
+is_a: CL:0002577 ! placental epithelial cell
+intersection_of: CL:0002144 ! capillary endothelial cell
+intersection_of: BFO:0000050 UBERON:0010005 ! part of placental labyrinth villous
+relationship: BFO:0000050 UBERON:0010005 ! part of placental labyrinth villous
 
 [Term]
 id: CL:2000063
@@ -21349,7 +21370,7 @@ synonym: "submucous layer" RELATED []
 synonym: "tela submucosa" RELATED []
 synonym: "tunica submucosa" RELATED []
 is_a: UBERON:0004923 ! organ component layer
-relationship: BSPO:0001107 UBERON:0000344 ! immediately_deep_to mucosa
+relationship: BSPO:0001107 UBERON:0000344 ! immediately deep to mucosa
 relationship: RO:0002160 NCBITaxon:7711 ! only in taxon Chordata
 relationship: RO:0002473 UBERON:0002384 ! composed primarily of connective tissue
 
@@ -21573,7 +21594,7 @@ synonym: "lamina propria mucosae" EXACT []
 synonym: "tunica propria" RELATED []
 is_a: UBERON:0004923 ! organ component layer
 relationship: BFO:0000050 UBERON:0000344 ! part of mucosa
-relationship: BSPO:0001107 UBERON:0000483 ! immediately_deep_to epithelium
+relationship: BSPO:0001107 UBERON:0000483 ! immediately deep to epithelium
 relationship: RO:0002473 UBERON:0011825 ! composed primarily of loose connective tissue
 
 [Term]
@@ -22587,10 +22608,10 @@ synonym: "vestibule of mouth" RELATED []
 synonym: "vestibulum oris" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
 intersection_of: UBERON:0004921 ! subdivision of digestive tract
-intersection_of: BSPO:0001106 UBERON:0001555 ! proximalmost part of digestive tract
+intersection_of: BSPO:0001106 UBERON:0001555 ! proximalmost_part_of digestive tract
 relationship: BFO:0000050 UBERON:0000033 ! part of head
 relationship: BFO:0000050 UBERON:0001555 ! part of digestive tract
-relationship: BSPO:0001106 UBERON:0001555 ! proximalmost part of digestive tract
+relationship: BSPO:0001106 UBERON:0001555 ! proximalmost_part_of digestive tract
 relationship: RO:0002160 NCBITaxon:6072 ! only in taxon Eumetazoa
 relationship: RO:0002202 UBERON:0035804 ! develops from future mouth
 
@@ -23804,10 +23825,10 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0005156 ! reproductive structure
 intersection_of: UBERON:0000064 ! organ part
-intersection_of: BSPO:0001106 UBERON:0000002 ! proximalmost part of uterine cervix
+intersection_of: BSPO:0001106 UBERON:0000002 ! proximalmost_part_of uterine cervix
 relationship: BFO:0000050 UBERON:0000002 ! part of uterine cervix
 relationship: BFO:0000051 UBERON:0000485 ! has part simple columnar epithelium
-relationship: BSPO:0001106 UBERON:0000002 ! proximalmost part of uterine cervix
+relationship: BSPO:0001106 UBERON:0000002 ! proximalmost_part_of uterine cervix
 
 [Term]
 id: UBERON:0000459
@@ -32393,7 +32414,7 @@ intersection_of: UBERON:0005856 ! developing mesenchymal condensation
 intersection_of: BFO:0000050 UBERON:0008281 ! part of tooth bud
 intersection_of: RO:0002473 CL:0007003 ! composed primarily of preodontoblast
 relationship: BFO:0000050 UBERON:0008281 ! part of tooth bud
-relationship: BSPO:0001107 UBERON:0005176 ! immediately_deep_to tooth enamel organ
+relationship: BSPO:0001107 UBERON:0005176 ! immediately deep to tooth enamel organ
 relationship: RO:0002202 UBERON:0003856 ! develops from uncondensed odontogenic mesenchyme
 relationship: RO:0002473 CL:0007003 ! composed primarily of preodontoblast
 
@@ -36013,7 +36034,7 @@ synonym: "proximal intestine" RELATED []
 synonym: "upper intestine" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: BFO:0000050 UBERON:0002108 ! part of small intestine
-relationship: BSPO:0001106 UBERON:0002108 ! proximalmost part of small intestine
+relationship: BSPO:0001106 UBERON:0002108 ! proximalmost_part_of small intestine
 relationship: RO:0002150 UBERON:0001166 ! continuous with pylorus
 relationship: RO:0002433 UBERON:0002108 ! contributes to morphology of small intestine
 
@@ -40197,8 +40218,8 @@ synonym: "CA4" RELATED []
 synonym: "polymorph layer of the dentate gyrus" RELATED []
 is_a: UBERON:0002304 ! layer of dentate gyrus
 intersection_of: UBERON:0002304 ! layer of dentate gyrus
-intersection_of: BSPO:0001107 UBERON:0005381 ! immediately_deep_to dentate gyrus granule cell layer
-relationship: BSPO:0001107 UBERON:0005381 ! immediately_deep_to dentate gyrus granule cell layer
+intersection_of: BSPO:0001107 UBERON:0005381 ! immediately deep to dentate gyrus granule cell layer
+relationship: BSPO:0001107 UBERON:0005381 ! immediately deep to dentate gyrus granule cell layer
 relationship: RO:0002473 CL:0000540 ! composed primarily of neuron
 
 [Term]
@@ -48320,6 +48341,18 @@ relationship: BFO:0000050 UBERON:0000012 ! part of somatic nervous system
 relationship: RO:0002433 UBERON:0000012 ! contributes to morphology of somatic nervous system
 
 [Term]
+id: UBERON:0003946
+name: placenta labyrinth
+def: "The placental layers where embryonic blood vessels are surrounded by trophoblast cells and maternal blood" []
+synonym: "labyrinthine layer" EXACT []
+synonym: "labyrinthine layer of placenta" EXACT []
+synonym: "placental labyrinth" EXACT []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005156 ! reproductive structure
+relationship: BFO:0000050 UBERON:0001987 ! part of placenta
+relationship: RO:0002433 UBERON:0001987 ! contributes to morphology of placenta
+
+[Term]
 id: UBERON:0003947
 name: brain ventricle/choroid plexus
 def: "The brain ventricles or their associated choroid plexuses" []
@@ -48426,6 +48459,19 @@ id: UBERON:0003968
 name: peripheral lymph node
 def: "The lymph nodes located outside the thoracic and abdominal cavities, such as the submandibular, prescapular, axillary, inguinal and popliteal lymph nodes" []
 is_a: UBERON:0000029 ! lymph node
+
+[Term]
+id: UBERON:0003970
+name: placental labyrinth vasculature
+def: "blood vessels of the layer of the placenta where embryonic and maternal blood vessels interdigitate" []
+synonym: "placental labyrinth vascular network" EXACT []
+synonym: "placental vasculature" RELATED []
+synonym: "vasculature of placenta labyrinth" EXACT []
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0006876 ! vasculature of organ
+intersection_of: UBERON:0002049 ! vasculature
+intersection_of: BFO:0000050 UBERON:0003946 ! part of placenta labyrinth
+relationship: BFO:0000050 UBERON:0003946 ! part of placenta labyrinth
 
 [Term]
 id: UBERON:0003975
@@ -49429,6 +49475,22 @@ intersection_of: UBERON:0005154 ! epithelial cord
 intersection_of: BFO:0000050 UBERON:0001765 ! part of mammary duct
 relationship: BFO:0000050 UBERON:0001765 ! part of mammary duct
 relationship: RO:0002202 UBERON:0005333 ! develops from mammary bud
+
+[Term]
+id: UBERON:0004183
+name: placental labyrinth blood vessel
+def: "The embryonic vessels grow through the layer to come in close contact with the maternal blood supply" []
+synonym: "blood vessel of labyrinthine layer" EXACT []
+synonym: "blood vessel of labyrinthine layer of placenta" EXACT []
+synonym: "blood vessel of placenta labyrinth" EXACT []
+synonym: "labyrinthine layer blood vessel" EXACT []
+synonym: "labyrinthine layer of placenta blood vessel" EXACT []
+synonym: "placenta labyrinth blood vessel" EXACT []
+is_a: UBERON:0022358 ! placenta blood vessel
+intersection_of: UBERON:0001981 ! blood vessel
+intersection_of: BFO:0000050 UBERON:0003946 ! part of placenta labyrinth
+relationship: BFO:0000050 UBERON:0003946 ! part of placenta labyrinth
+relationship: BFO:0000050 UBERON:0003970 ! part of placental labyrinth vasculature
 
 [Term]
 id: UBERON:0004184
@@ -53306,7 +53368,7 @@ intersection_of: UBERON:0002304 ! layer of dentate gyrus
 intersection_of: RO:0002007 UBERON:0001885 ! bounding layer of dentate gyrus of hippocampal formation
 relationship: BFO:0000051 GO:0030425 ! has part dendrite
 relationship: BFO:0000051 UBERON:0006134 ! has part nerve fiber
-relationship: BSPO:0001107 UBERON:0002361 ! immediately_deep_to pia mater
+relationship: BSPO:0001107 UBERON:0002361 ! immediately deep to pia mater
 relationship: RO:0002007 UBERON:0001885 ! bounding layer of dentate gyrus of hippocampal formation
 relationship: RO:0002473 GO:0044464 ! composed primarily of obsolete cell part
 
@@ -59441,8 +59503,8 @@ synonym: "granular layer of the dentate gyrus" RELATED []
 synonym: "stratum granulare gyri dentati" EXACT []
 is_a: UBERON:0002304 ! layer of dentate gyrus
 intersection_of: UBERON:0002304 ! layer of dentate gyrus
-intersection_of: BSPO:0001107 UBERON:0004679 ! immediately_deep_to dentate gyrus molecular layer
-relationship: BSPO:0001107 UBERON:0004679 ! immediately_deep_to dentate gyrus molecular layer
+intersection_of: BSPO:0001107 UBERON:0004679 ! immediately deep to dentate gyrus molecular layer
+relationship: BSPO:0001107 UBERON:0004679 ! immediately deep to dentate gyrus molecular layer
 relationship: RO:0002473 CL:0000120 ! composed primarily of granule cell
 
 [Term]
@@ -70929,6 +70991,16 @@ is_a: UBERON:0034922 ! cell cluster
 disjoint_from: UBERON:0011216 ! organ system subdivision
 
 [Term]
+id: UBERON:0010005
+name: placental labyrinth villous
+def: "The vascularized and branched structures arising from the rodent trophoblast-derived epithelium that allow an increase its surface area for the efficient exchange of nutrients and wastes between the maternal and fetal circulation" []
+synonym: "placental labyrinth villi" RELATED []
+synonym: "villous of placental labyrinth" EXACT []
+is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: BFO:0000050 UBERON:0003946 ! part of placenta labyrinth
+relationship: RO:0002433 UBERON:0003946 ! contributes to morphology of placenta labyrinth
+
+[Term]
 id: UBERON:0010009
 name: aggregate regional part of brain
 def: "A regional part of brain consisting of multiple brain regions that are not related through a simple volummetric part of hierarchy, e.g., basal ganglia[NIF]." []
@@ -80005,7 +80077,7 @@ is_a: UBERON:0014530 ! white matter lamina of neuraxis
 intersection_of: UBERON:0014530 ! white matter lamina of neuraxis
 intersection_of: BFO:0000050 UBERON:0002037 ! part of cerebellum
 relationship: BFO:0000050 UBERON:0002037 ! part of cerebellum
-relationship: BSPO:0001107 UBERON:0002956 ! immediately_deep_to granular layer of cerebellar cortex
+relationship: BSPO:0001107 UBERON:0002956 ! immediately deep to granular layer of cerebellar cortex
 
 [Term]
 id: UBERON:0014541
