@@ -10,29 +10,34 @@ Check back soon.
 
 ## Past Workshops
 
- - [Mondo Workshop (November 2018)](#november-2018)
- - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
- 
-<a name="november-2018"></a> 
+- [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
+- [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
+- [Mondo Workshop (November 2018)](#november-2018)
 
-### Mondo Workshop
+<a name="june-2021"></a> 
+### ClinGen Virtual Retreat 2021
 
-#### Description: 
+#### Title
+Mondo Disease Ontology (How ClinGen curators work with the Mondo Disease Ontology, which aims to harmonize disease definitions across the world)
 
-The workshop focused on defining ontology patterns and community development processes for ontological disease descriptions. Specifically, there was a need to provision multiple attributes to a disease for computational classification. The attributes need to take into account penetrance, expressivity, genetic variation, histology, biomarkers, temporality, somatic and mosaic characteristics, environmental interactions, etc. There was a need to enable expert curation groups such as in ClinGen, EBI, Orphanet, GARD, MedGen, and OMIM to create disease definitions on the fly, capture the provenance and evidence robustly, and have an identifier for use immediately. This workshop included invited curators, clinicians and ontologists and provided an opportunity to get an overview of Mondo and the source terminologies, as well as networking opportunities.
+#### Presenter
+Nicole Vasilevsky
 
-#### Date and Location
- 
-**Date:** November, 2018   
-**Location:** Broad Institute, Cambridge MA
+#### Description
+
+ClinGen hosted a virtual retreat for all ClinGen contributors June 24-25, 2021. The retreat provided the ClinGen community and collaborators with an event to learn about and share new and existing work, as well as best practices across ClinGen. This presentation discussed the Mondo Disease Ontology, which is used for gene-disease annotations by ClinGen curators. The **retreat agenda** is available [here](https://clinicalgenome.org/about/events/clingen-retreat-2021/agenda/).
+
+#### Date and Time
+**June 24, 2021**  
+3:40 - 5:10pm Eastern
 
 #### Slides
 
-Slides are available [here](https://drive.google.com/drive/u/1/folders/1OV_3RCHk1GyDe2T1kobAF4aP7YD5ccfO).
+- Slides are available [here](https://figshare.com/articles/presentation/Mondo_Disease_Ontology_How_ClinGen_curators_work_with_the_Mondo_Disease_Ontology_which_aims_to_harmonize_disease_definitions_across_the_world_/15101529).
 
 #### Funding:
 
-Phenomics BD2K Forums for Integrative Phenomics (1 U13 CA221044-01)
+NHGRI Phenomics First (1RM1HG010860-01)
  
 <a name="april-2021"></a> 
 ### Mondo Upper Level Reclassification Workshop
@@ -52,3 +57,23 @@ A workshop with invited members of the community to work on the top-level classi
 #### Funding:
 
 NHGRI Phenomics First (1RM1HG010860-01)
+
+<a name="november-2018"></a> 
+### Mondo Workshop
+
+#### Description: 
+
+The workshop focused on defining ontology patterns and community development processes for ontological disease descriptions. Specifically, there was a need to provision multiple attributes to a disease for computational classification. The attributes need to take into account penetrance, expressivity, genetic variation, histology, biomarkers, temporality, somatic and mosaic characteristics, environmental interactions, etc. There was a need to enable expert curation groups such as in ClinGen, EBI, Orphanet, GARD, MedGen, and OMIM to create disease definitions on the fly, capture the provenance and evidence robustly, and have an identifier for use immediately. This workshop included invited curators, clinicians and ontologists and provided an opportunity to get an overview of Mondo and the source terminologies, as well as networking opportunities.
+
+#### Date and Location
+ 
+**Date:** November, 2018   
+**Location:** Broad Institute, Cambridge MA
+
+#### Slides
+
+Slides are available [here](https://drive.google.com/drive/u/1/folders/1OV_3RCHk1GyDe2T1kobAF4aP7YD5ccfO).
+
+#### Funding:
+
+Phenomics BD2K Forums for Integrative Phenomics (1 U13 CA221044-01)
