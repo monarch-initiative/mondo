@@ -56,6 +56,7 @@ Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.c
 Jenny Goldstein | [ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
 Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
+Nomi Harris | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [nlharris ](https://github.com/nlharris)
 Emily Hartley | [Critical Path Institute](https://c-path.org/) | [ehartley](https://github.com/ehartley)
 Allison Heath | [CHOP](https://www.chop.edu/) | [allisonheath](https://github.com/allisonheath)
 Harshad Hegde | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [hrshdhgd](https://github.com/hrshdhgd)
