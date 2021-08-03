@@ -15,6 +15,7 @@
 - [Monkeying around with OWL: Musings on building and using ontologies](https://douroucouli.wordpress.com/). Posts by Chris Mungall
 
 ## Relevant Presentations
+- Mondo Disease Ontology: harmonizing disease concepts across the world. Nicole Vasilevsky, Nico Matentzoglu, Dazhi Jiao, Melissa Haendel, Peter Robinson, Chris Mungall. (2021) [Poster presentation and Lightning Talk] Curating the Clinical Genome (virtual). May 12, 2021. [Recording here.](https://www.youtube.com/watch?v=uDTuLZBW4yI)
 - Aligning Design Patterns Across Multiple Ontologies in the Life Sciences by Chris Mungall, Keynote at 11th Workshop on Ontology Design and Patterns - WOP2020. [Recording here](https://www.youtube.com/watch?v=6H4oPnrQmro&ab_channel=obo-academy). [Meeting info here.](http://ontologydesignpatterns.org/wiki/WOP:2020)
 - [How Many Rare Diseases Are There? 
 How Good Identifier Provisioning Can Help Answer This Question](https://docs.google.com/presentation/d/1iUm3VTaHaRiLcjzRYNJtvkhb3HaFhXEJX1KiIr79IVM/edit#slide=id.gae38b1e75e_0_0) by Melissa Haendel, PIDapalooza 2021.
