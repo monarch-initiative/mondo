@@ -2,18 +2,34 @@
 ---
 # Mondo Disease Ontology Workshops
 
-This page provides details and summaries for upcoming and past Mondo workshops. 
+Details and summaries for upcoming and past Mondo workshops. 
 
 ## Workshops
 
+- [Renal Disease and Phenotype Workshop (July 14, 2021)](#renal)
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
 - [Mondo Workshop (November 2018)](#november-2018)
 
+<a name="renal"></a> 
+### Renal Disease and Phenotype Workshop
+
+#### Description
+
+This workshop was hosted by Nicole Vasilevsky (Mondo) and Peter Robinson (Human Phenotype Ontology), and brought together experts in kidney disease clinical care. We discussed improvements to classification of the ['kidney disease' (MONDO:0005240)](https://www.ebi.ac.uk/ols/ontologies/mondo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMONDO_0005240) hierarchy in Mondo. As an outcome of this meeting, the kidney disease hiearchy will be revised in accordance to the classifications described in [Brenner and Rector's The Kidney](https://www.us.elsevierhealth.com/brenner-and-rectors-the-kidney-2-volume-set-9780323532655.html?gclid=CjwKCAjwlrqHBhByEiwAnLmYUCC5SqtlaMQWFvf1qvAu9GbhO3c9VntzXng-TAYftZBPTcu4S5PdVBoC4bUQAvD_BwE) textbook. See [GitHub ticket](https://github.com/monarch-initiative/mondo/issues/3282) for more details.
+
+#### Date and Time
+**July 14, 2021**  
+2-3pm PT
+
+#### Funding:
+
+NHGRI Phenomics First (1RM1HG010860-01)
+
 <a name="june-2021"></a> 
 ### ClinGen Virtual Retreat 2021
 
-#### Title
+#### Presentation Title
 Mondo Disease Ontology (How ClinGen curators work with the Mondo Disease Ontology, which aims to harmonize disease definitions across the world)
 
 #### Presenter
@@ -21,7 +37,7 @@ Nicole Vasilevsky
 
 #### Description
 
-ClinGen hosted a virtual retreat for all ClinGen contributors June 24-25, 2021. The retreat provided the ClinGen community and collaborators with an event to learn about and share new and existing work, as well as best practices across ClinGen. This presentation discussed the Mondo Disease Ontology, which is used for gene-disease annotations by ClinGen curators. The **retreat agenda** is available [here](https://clinicalgenome.org/about/events/clingen-retreat-2021/agenda/).
+[ClinGen](https://clinicalgenome.org/) hosted a virtual retreat for all ClinGen contributors June 24-25, 2021. The retreat provided the ClinGen community and collaborators with an event to learn about and share new and existing work, as well as best practices across ClinGen. This presentation discussed the Mondo Disease Ontology, which is used for gene-disease annotations by ClinGen curators. The **retreat agenda** is available [here](https://clinicalgenome.org/about/events/clingen-retreat-2021/agenda/).
 
 #### Date and Time
 **June 24, 2021**  
@@ -59,7 +75,7 @@ NHGRI Phenomics First (1RM1HG010860-01)
 
 #### Description: 
 
-The workshop focused on defining ontology patterns and community development processes for ontological disease descriptions. Specifically, there was a need to provision multiple attributes to a disease for computational classification. The attributes need to take into account penetrance, expressivity, genetic variation, histology, biomarkers, temporality, somatic and mosaic characteristics, environmental interactions, etc. There was a need to enable expert curation groups such as in ClinGen, EBI, Orphanet, GARD, MedGen, and OMIM to create disease definitions on the fly, capture the provenance and evidence robustly, and have an identifier for use immediately. This workshop included invited curators, clinicians and ontologists and provided an opportunity to get an overview of Mondo and the source terminologies, as well as networking opportunities.
+The workshop focused on defining ontology patterns and community development processes for ontological disease descriptions. Specifically, there was a need to provision multiple attributes to a disease for computational classification. The attributes need to take into account penetrance, expressivity, genetic variation, histology, biomarkers, temporality, somatic and mosaic characteristics, environmental interactions, etc. There was a need to enable expert curation groups such as in ClinGen, EBI, Orphanet, GARD, MedGen, and OMIM to create disease definitions on the fly, capture the provenance and evidence robustly, and have an identifier for use immediately. This workshop included invited curators, clinicians and ontologists and provided an opportunity to get an overview of Mondo and the source terminologies, as well as networking opportunities. See more details [here](https://monarch-initiative.github.io/phenomics/pages/mondo.html).
 
 #### Date and Location
  
