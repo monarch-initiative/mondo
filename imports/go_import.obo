@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-02/imports/go_import.owl
+data-version: mondo/releases/2021-08-03/imports/go_import.owl
 ontology: mondo/imports/go_import
 
 [Term]
@@ -7812,6 +7812,13 @@ relationship: BFO:0000050 GO:0007268 ! part of chemical synaptic transmission
 relationship: BFO:0000066 GO:0098793 ! occurs in presynapse
 
 [Term]
+id: GO:0007271
+name: synaptic transmission, cholinergic
+def: "The vesicular release of acetylcholine from a presynapse, across a chemical synapse, the subsequent activation of dopamine receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." []
+synonym: "cholinergic synaptic transmission" EXACT []
+is_a: GO:0007268 ! chemical synaptic transmission
+
+[Term]
 id: GO:0007272
 name: ensheathment of neurons
 def: "The process in which glial cells envelop neuronal cell bodies and/or axons to form an insulating layer. This can take the form of myelinating or non-myelinating ensheathment." []
@@ -11116,6 +11123,63 @@ intersection_of: RO:0002213 GO:0014051 ! positively regulates gamma-aminobutyric
 relationship: RO:0002213 GO:0014051 ! positively regulates gamma-aminobutyric acid secretion
 
 [Term]
+id: GO:0014055
+name: acetylcholine secretion, neurotransmission
+def: "The regulated release of acetylcholine by a cell. The acetylcholine acts as a neurotransmitter that acts in both the peripheral nervous system (PNS) and central nervous system (CNS)." []
+is_a: GO:0007269 ! neurotransmitter secretion
+is_a: GO:0061526 ! acetylcholine secretion
+intersection_of: GO:0061526 ! acetylcholine secretion
+intersection_of: BFO:0000050 GO:0007271 ! part of synaptic transmission, cholinergic
+relationship: BFO:0000050 GO:0007271 ! part of synaptic transmission, cholinergic
+
+[Term]
+id: GO:0014056
+name: regulation of acetylcholine secretion, neurotransmission
+def: "Any process that modulates the frequency, rate or extent of the regulated release of acetylcholine." []
+is_a: GO:0032222 ! regulation of synaptic transmission, cholinergic
+is_a: GO:0043269 ! regulation of ion transport
+is_a: GO:0046928 ! regulation of neurotransmitter secretion
+is_a: GO:0051952 ! regulation of amine transport
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0014055 ! regulates acetylcholine secretion, neurotransmission
+relationship: RO:0002211 GO:0014055 ! regulates acetylcholine secretion, neurotransmission
+
+[Term]
+id: GO:0014057
+name: positive regulation of acetylcholine secretion, neurotransmission
+def: "Any process that activates or increases the frequency, rate or extent of the regulated release of acetylcholine." []
+synonym: "activation of acetylcholine secretion" NARROW []
+synonym: "stimulation of acetylcholine secretion" NARROW []
+synonym: "up regulation of acetylcholine secretion" EXACT []
+synonym: "up-regulation of acetylcholine secretion" EXACT []
+synonym: "upregulation of acetylcholine secretion" EXACT []
+is_a: GO:0001956 ! positive regulation of neurotransmitter secretion
+is_a: GO:0014056 ! regulation of acetylcholine secretion, neurotransmission
+is_a: GO:0032224 ! positive regulation of synaptic transmission, cholinergic
+is_a: GO:0043270 ! positive regulation of ion transport
+is_a: GO:0051954 ! positive regulation of amine transport
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002213 GO:0014055 ! positively regulates acetylcholine secretion, neurotransmission
+relationship: RO:0002213 GO:0014055 ! positively regulates acetylcholine secretion, neurotransmission
+
+[Term]
+id: GO:0014058
+name: negative regulation of acetylcholine secretion, neurotransmission
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the regulated release of acetylcholine." []
+synonym: "down regulation of acetylcholine secretion" EXACT []
+synonym: "down-regulation of acetylcholine secretion" EXACT []
+synonym: "downregulation of acetylcholine secretion" EXACT []
+synonym: "inhibition of acetylcholine secretion" NARROW []
+is_a: GO:0014056 ! regulation of acetylcholine secretion, neurotransmission
+is_a: GO:0032223 ! negative regulation of synaptic transmission, cholinergic
+is_a: GO:0043271 ! negative regulation of ion transport
+is_a: GO:0046929 ! negative regulation of neurotransmitter secretion
+is_a: GO:0051953 ! negative regulation of amine transport
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002212 GO:0014055 ! negatively regulates acetylcholine secretion, neurotransmission
+relationship: RO:0002212 GO:0014055 ! negatively regulates acetylcholine secretion, neurotransmission
+
+[Term]
 id: GO:0014059
 name: regulation of dopamine secretion
 def: "Any process that modulates the frequency, rate or extent of the regulated release of dopamine." []
@@ -11586,6 +11650,14 @@ name: organic hydroxy compound transport
 def: "The directed movement of an organic hydroxy compound (organic alcohol) into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. An organic hydroxy compound is an organic compound having at least one hydroxy group attached to a carbon atom." []
 synonym: "organic alcohol transport" EXACT []
 is_a: GO:0071702 ! organic substance transport
+
+[Term]
+id: GO:0015870
+name: acetylcholine transport
+def: "The directed movement of acetylcholine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Acetylcholine is an acetic acid ester of the organic base choline and functions as a neurotransmitter, released at the synapses of parasympathetic nerves and at neuromuscular junctions." []
+is_a: GO:0015695 ! organic cation transport
+is_a: GO:0071705 ! nitrogen compound transport
+is_a: GO:1901374 ! acetate ester transport
 
 [Term]
 id: GO:0015872
@@ -15935,6 +16007,44 @@ def: "The directed movement of riboflavin into, out of or within a cell, or betw
 is_a: GO:0015711 ! organic anion transport
 is_a: GO:0051180 ! vitamin transport
 is_a: GO:0071705 ! nitrogen compound transport
+
+[Term]
+id: GO:0032222
+name: regulation of synaptic transmission, cholinergic
+def: "Any process that modulates the frequency, rate or extent of cholinergic synaptic transmission, the process of communication from a neuron to another neuron across a synapse using the neurotransmitter acetylcholine." []
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0007271 ! regulates synaptic transmission, cholinergic
+relationship: RO:0002211 GO:0007271 ! regulates synaptic transmission, cholinergic
+
+[Term]
+id: GO:0032223
+name: negative regulation of synaptic transmission, cholinergic
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of cholinergic synaptic transmission, the process of communication from a neuron to another neuron across a synapse using the neurotransmitter acetylcholine." []
+synonym: "down regulation of synaptic transmission, cholinergic" EXACT []
+synonym: "down-regulation of synaptic transmission, cholinergic" EXACT []
+synonym: "downregulation of synaptic transmission, cholinergic" EXACT []
+synonym: "inhibition of synaptic transmission, cholinergic" NARROW []
+is_a: GO:0032222 ! regulation of synaptic transmission, cholinergic
+is_a: GO:0050805 ! negative regulation of synaptic transmission
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002212 GO:0007271 ! negatively regulates synaptic transmission, cholinergic
+relationship: RO:0002212 GO:0007271 ! negatively regulates synaptic transmission, cholinergic
+
+[Term]
+id: GO:0032224
+name: positive regulation of synaptic transmission, cholinergic
+def: "Any process that activates, maintains or increases the frequency, rate or extent of cholinergic synaptic transmission, the process of communication from a neuron to another neuron across a synapse using the neurotransmitter acetylcholine." []
+synonym: "activation of synaptic transmission, cholinergic" NARROW []
+synonym: "stimulation of synaptic transmission, cholinergic" NARROW []
+synonym: "up regulation of synaptic transmission, cholinergic" EXACT []
+synonym: "up-regulation of synaptic transmission, cholinergic" EXACT []
+synonym: "upregulation of synaptic transmission, cholinergic" EXACT []
+is_a: GO:0032222 ! regulation of synaptic transmission, cholinergic
+is_a: GO:0050806 ! positive regulation of synaptic transmission
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002213 GO:0007271 ! positively regulates synaptic transmission, cholinergic
+relationship: RO:0002213 GO:0007271 ! positively regulates synaptic transmission, cholinergic
 
 [Term]
 id: GO:0032228
@@ -30283,6 +30393,13 @@ def: "A process in which a protein is transported to, or maintained in, a locati
 is_a: GO:0033365 ! protein localization to organelle
 
 [Term]
+id: GO:0061526
+name: acetylcholine secretion
+def: "The regulated release of acetylcholine by a cell." []
+is_a: GO:0015870 ! acetylcholine transport
+is_a: GO:0023061 ! signal release
+
+[Term]
 id: GO:0061534
 name: gamma-aminobutyric acid secretion, neurotransmission
 def: "The regulated release of gamma-aminobutyric acid by a cell, in which the gamma-aminobutyric acid acts as a neurotransmitter." []
@@ -35216,6 +35333,12 @@ id: GO:1901363
 name: heterocyclic compound binding
 def: "Binding to heterocyclic compound." []
 is_a: GO:0005488 ! binding
+
+[Term]
+id: GO:1901374
+name: acetate ester transport
+def: "The directed movement of an acetate ester into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." []
+is_a: GO:0071702 ! organic substance transport
 
 [Term]
 id: GO:1901401
