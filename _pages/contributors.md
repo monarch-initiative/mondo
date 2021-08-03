@@ -81,6 +81,7 @@ David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://githu
 Brooke Palus | [ClinGen](https://clinicalgenome.org/) |
 Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
+Tim Putman | [Monarch Initiative](http://monarchinitiative.org/) | [putmantime](https://github.com/putmantime) 
 Ana Rath | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [ana-rath-orphanet](https://github.com/ana-rath-orphanet)
 Heidi Rehm | [ClinGen](https://clinicalgenome.org/) | [heidirehm](https://github.com/heidirehm)
 Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](https://github.com/kreinold)
