@@ -4,7 +4,11 @@
 
 This page provides details and summaries for upcoming and past Mondo workshops. 
 
-## Workshops
+## Upcoming workshops
+
+Check back soon.
+
+## Past Workshops
 
  - [Mondo Workshop (November 2018)](#november-2018)
  - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
