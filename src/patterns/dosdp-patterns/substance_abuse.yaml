@@ -1,0 +1,45 @@
+pattern_name: substance_abuse
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/substance_abuse.yaml
+
+description: 'A substance abuse that specifies a specific environmental stimulus such as alcohol, cocaine, etc. Examples: [alcohol abuse](http://purl.obolibrary.org/obo/MONDO_0002046),
+  [cocaine abuse](http://purl.obolibrary.org/obo/MONDO_0004456)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-7463-6306
+
+classes:
+  substance abuse: MONDO:0002491
+  material entity: BFO:0000040
+
+relations:
+  realized in response to stimulus: RO:0004028
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  stimulus: '''material entity'''
+
+name:
+  text: '%s abuse'
+  vars:
+  - stimulus
+
+annotations:
+- annotationProperty: exact_synonym
+  text: 'abuse of %s'
+  vars:
+  - stimulus
+
+def:
+  text: The abuse or overuse of %s.
+  vars:
+  - stimulus
+
+equivalentTo:
+  text: '''substance abuse'' and ''realized in response to stimulus'' some %s'
+  vars:
+  - stimulus

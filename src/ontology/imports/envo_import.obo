@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-03-03/imports/envo_import.owl
+data-version: mondo/releases/2021-08-03/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -40,6 +40,12 @@ def: "p is a process = Def. p is an occurrent that has temporal proper parts and
 is_a: BFO:0000003 ! occurrent
 
 [Term]
+id: BFO:0000016
+name: disposition
+is_a: BFO:0000017 ! realizable entity
+disjoint_from: BFO:0000023 ! role
+
+[Term]
 id: BFO:0000017
 name: realizable entity
 def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
@@ -72,6 +78,11 @@ is_a: BFO:0000017 ! realizable entity
 id: BFO:0000024
 name: fiat object
 name: fiat object part
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000027
+name: object aggregate
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -127,6 +138,7 @@ is_a: CHEBI:33579 ! main group molecular entity
 [Term]
 id: CHEBI:140503
 name: kaolin
+is_a: CHEBI:48730 ! aluminosilicate mineral
 is_a: CHEBI:60004 ! mixture
 
 [Term]
@@ -689,6 +701,11 @@ name: silicate mineral
 is_a: CHEBI:46662 ! mineral
 
 [Term]
+id: CHEBI:48730
+name: aluminosilicate mineral
+is_a: CHEBI:46663 ! silicate mineral
+
+[Term]
 id: CHEBI:50860
 name: organic molecular entity
 is_a: CHEBI:33582 ! carbon group molecular entity
@@ -1110,7 +1127,8 @@ is_a: ENVO:01001110 ! ecosystem
 disjoint_from: ENVO:01000276 ! ecoregion
 disjoint_from: ENVO:01000280 ! ecozone
 relationship: BFO:0000050 ENVO:01000817 ! part of biosphere
-relationship: BFO:0000051 ENVO:01000739 {minCardinality="2"} ! has part habitat
+relationship: BFO:0000051 ENVO:01000739 ! has part habitat
+relationship: RO:0002180 ENVO:01000739 {minCardinality="2"} ! has component habitat
 relationship: RO:0002507 PCO:0000002 ! determined by ecological community
 
 [Term]
@@ -1644,10 +1662,12 @@ relationship: BFO:0000050 ENVO:01000280 ! part of ecozone
 [Term]
 id: ENVO:01000277
 name: water ice
-def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." []
+def: "Ice which is formed from water." []
 synonym: "ice" RELATED []
 is_a: ENVO:01000814 ! solid environmental material
 is_a: ENVO:01001125 ! ice
+intersection_of: ENVO:01001125 ! ice
+intersection_of: RO:0002473 ENVO:00002006 ! composed primarily of liquid water
 relationship: RO:0002473 ENVO:00002006 ! composed primarily of liquid water
 
 [Term]
@@ -1887,6 +1907,12 @@ name: montane forest
 is_a: ENVO:01001243 ! forest ecosystem
 
 [Term]
+id: ENVO:01000452
+name: environmental disposition
+def: "A disposition which is realised by an environmental system or system parts thereof." []
+is_a: BFO:0000016 ! disposition
+
+[Term]
 id: ENVO:01000543
 name: atmospheric layer
 def: "A layer that is part of the atmosphere." []
@@ -2037,6 +2063,13 @@ def: "Condensation is a process during which a gas undergoes a phase transition 
 is_a: ENVO:01001510 ! material congelation process
 
 [Term]
+id: ENVO:01000726
+name: desublimation process
+def: "Desublimation is a process in which a portion of some gas undergoes a phase transition into a portion of some solid." []
+synonym: "deposition" BROAD []
+is_a: ENVO:01001510 ! material congelation process
+
+[Term]
 id: ENVO:01000739
 name: habitat
 def: "An environmental system which can sustain and allow the growth of an ecological population." []
@@ -2108,7 +2141,7 @@ name: astronomical object
 def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." []
 synonym: "celestial object" RELATED []
 is_a: BFO:0000030 ! object
-relationship: BFO:0000051 ENVO:01000799 {minCardinality="1"} ! has part astronomical body
+relationship: BFO:0000051 ENVO:01000799 ! has part astronomical body
 relationship: RO:0000086 ENVO:01001164 ! has quality geodiversity
 relationship: RO:0002219 ENVO:01000637 ! surrounded by outer space
 
@@ -2171,6 +2204,22 @@ relationship: RO:0002131 ENVO:01000646 ! overlaps lithosphere
 relationship: RO:0002131 ENVO:01000817 ! overlaps biosphere
 relationship: RO:0002131 ENVO:01000819 ! overlaps hydrosphere
 relationship: RO:0002473 ENVO:00001998 ! composed primarily of soil
+
+[Term]
+id: ENVO:01000845
+name: crystal
+def: "A solid material whose constituents, such as atoms, molecules or ions, are arranged in a highly ordered microscopic structure, forming a crystal lattice that extends in all directions." []
+is_a: ENVO:01000814 ! solid environmental material
+relationship: RO:0000086 PATO:0001411 ! has quality structured
+
+[Term]
+id: ENVO:01000846
+name: water ice crystal
+def: "A crystal which is primarily composed of water ice." []
+synonym: "ice crystal" BROAD []
+is_a: ENVO:00000131 ! glacial feature
+is_a: ENVO:01000845 ! crystal
+relationship: RO:0002473 ENVO:01000277 ! composed primarily of water ice
 
 [Term]
 id: ENVO:01000869
@@ -2593,6 +2642,16 @@ synonym: "cryoplanet" EXACT []
 is_a: ENVO:01000800 ! planet
 
 [Term]
+id: ENVO:01001138
+name: carbon dioxide ice
+def: "Ice which is primarily composed of carbon dioxide." []
+synonym: "dry ice" RELATED []
+is_a: ENVO:01001125 ! ice
+intersection_of: ENVO:01001125 ! ice
+intersection_of: RO:0002473 CHEBI:16526 ! composed primarily of carbon dioxide
+relationship: RO:0002473 CHEBI:16526 ! composed primarily of carbon dioxide
+
+[Term]
 id: ENVO:01001143
 name: lava planet
 def: "A planet which has a surface layer that nearly completely or completely covered by lava, and which has a substantial portion of its mass composed of lava." []
@@ -2839,7 +2898,7 @@ id: ENVO:01001288
 name: kaolin dust
 def: "Dust which is primarily composed of kaolinite particles." []
 synonym: "kaolinite dust" EXACT []
-is_a: ENVO:00002008 ! dust
+is_a: ENVO:02000100 ! mineral dust
 relationship: RO:0002473 CHEBI:140503 ! composed primarily of kaolin
 
 [Term]
@@ -3085,7 +3144,7 @@ relationship: RO:0002220 ENVO:01000635 ! adjacent to planetary landmass
 [Term]
 id: ENVO:01001581
 name: sea surface layer
-def: "A surface layer of a water body which is part of an ocean or sea." []
+def: "A surface layer which is part of an ocean or sea." []
 is_a: ENVO:01000295 ! marine layer
 is_a: ENVO:01001554 ! surface layer of a water body
 
@@ -3614,6 +3673,12 @@ def: "An environmental process which has water - in any of its states - as a par
 is_a: ENVO:02500000 ! environmental system process
 
 [Term]
+id: ENVO:03000008
+name: compaction process
+def: "A physical process during which atoms, molecules, or other consituents of a material entity are forced closer together." []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
 id: ENVO:03000009
 name: material accumulation process
 def: "A process during which the mass of one or more materials, present within a given site, increases." []
@@ -3660,6 +3725,14 @@ relationship: RO:0002233 ENVO:00010483 ! has input environmental material
 relationship: RO:0002234 ENVO:00010483 ! has output environmental material
 
 [Term]
+id: ENVO:03000055
+name: desublimation of water vapour into ice
+def: "A desublimation process during which water vapour is frozen into water ice." []
+is_a: ENVO:01000726 ! desublimation process
+is_a: ENVO:02500031 ! hydrological process
+relationship: RO:0002233 ENVO:00002006 ! has input liquid water
+
+[Term]
 id: ENVO:03000110
 name: cryoform
 def: "A geographic feature which is primarily composed of a continuous mass of snow and/or ice." []
@@ -3677,6 +3750,19 @@ intersection_of: ENVO:01001691 ! mass of compounded environmental materials
 intersection_of: RO:0002473 ENVO:01000406 ! composed primarily of snow
 relationship: RO:0002354 ENVO:01001617 ! formed as result of snow accumulation process
 relationship: RO:0002473 ENVO:01000406 ! composed primarily of snow
+
+[Term]
+id: ENVO:03520007
+name: snow crystal
+def: "A water ice crystal which is constituted by water molecules aligned in a hexagonal array." []
+synonym: "snowflake" BROAD []
+is_a: ENVO:01000846 ! water ice crystal
+
+[Term]
+id: ENVO:03600001
+name: chemically contaminated sediment
+def: "Sediment which contains some chemical contaminant." []
+is_a: ENVO:00002114 ! chemically enriched sediment
 
 [Term]
 id: ENVO:04000003
@@ -3817,6 +3903,16 @@ is_a: ENVO:09200000 ! temperature of environmental material
 intersection_of: PATO:0000146 ! temperature
 intersection_of: RO:0000052 ENVO:00002005 ! inheres in air
 relationship: RO:0000052 ENVO:00002005 ! inheres in air
+
+[Term]
+id: ENVO:09200002
+name: environmental system process quality
+def: "The quality of a environmental system process." []
+synonym: "quality of environmental system process" EXACT []
+is_a: PATO:0001236 ! process quality
+intersection_of: PATO:0001236 ! process quality
+intersection_of: RO:0000052 ENVO:02500000 ! inheres in environmental system process
+relationship: RO:0000052 ENVO:02500000 ! inheres in environmental system process
 
 [Term]
 id: ENVO:09200004
@@ -3974,7 +4070,7 @@ is_a: OBI:0100026 ! organism
 [Term]
 id: NCBITaxon:117570
 name: Teleostomi
-is_a: NCBITaxon:7776 ! Gnathostomata <vertebrate>
+is_a: NCBITaxon:7776 ! Gnathostomata <vertebrates>
 
 [Term]
 id: NCBITaxon:117571
@@ -4005,7 +4101,6 @@ name: Bacteria
 synonym: "bacteria" RELATED []
 synonym: "eubacteria" EXACT []
 synonym: "Monera" RELATED []
-synonym: "not Bacteria Haeckel 1894" RELATED []
 synonym: "Procaryotae" RELATED []
 synonym: "Prokaryota" RELATED []
 synonym: "Prokaryotae" RELATED []
@@ -4070,7 +4165,7 @@ is_a: NCBITaxon:32523 ! Tetrapoda
 
 [Term]
 id: NCBITaxon:32525
-name: Theria <Mammalia>
+name: Theria <mammals>
 synonym: "Theria" EXACT []
 is_a: NCBITaxon:40674 ! Mammalia
 
@@ -4078,8 +4173,9 @@ is_a: NCBITaxon:40674 ! Mammalia
 id: NCBITaxon:33090
 name: Viridiplantae
 synonym: "Chlorobionta" RELATED []
-synonym: "Chlorophyta/Embryophyta group" RELATED []
-synonym: "chlorophyte/embryophyte group" RELATED []
+synonym: "Chlorophyta/Embryophyta group" EXACT []
+synonym: "chlorophyte/embryophyte group" EXACT []
+synonym: "Chloroplastida" RELATED []
 synonym: "green plants" EXACT []
 synonym: "green plants" RELATED []
 is_a: NCBITaxon:2759 ! Eukaryota
@@ -4137,18 +4233,18 @@ is_a: NCBITaxon:33511 ! Deuterostomia
 
 [Term]
 id: NCBITaxon:7742
-name: Vertebrata <Metazoa>
+name: Vertebrata <vertebrates>
 synonym: "Vertebrata" EXACT []
 synonym: "vertebrates" EXACT []
 synonym: "vertebrates" RELATED []
-is_a: NCBITaxon:89593 ! Craniata <chordata>
+is_a: NCBITaxon:89593 ! Craniata <chordates>
 
 [Term]
 id: NCBITaxon:7776
-name: Gnathostomata <vertebrate>
+name: Gnathostomata <vertebrates>
 synonym: "Gnathostomata" EXACT []
 synonym: "jawed vertebrates" EXACT []
-is_a: NCBITaxon:7742 ! Vertebrata <Metazoa>
+is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
 
 [Term]
 id: NCBITaxon:8287
@@ -4157,7 +4253,7 @@ is_a: NCBITaxon:117571 ! Euteleostomi
 
 [Term]
 id: NCBITaxon:89593
-name: Craniata <chordata>
+name: Craniata <chordates>
 synonym: "Craniata" EXACT []
 is_a: NCBITaxon:7711 ! Chordata
 
@@ -4169,7 +4265,7 @@ synonym: "placental mammals" EXACT []
 synonym: "Placentalia" RELATED []
 synonym: "placentals" EXACT []
 synonym: "placentals" RELATED []
-is_a: NCBITaxon:32525 ! Theria <Mammalia>
+is_a: NCBITaxon:32525 ! Theria <mammals>
 
 [Term]
 id: NCBITaxon:9443
@@ -4207,7 +4303,7 @@ is_a: NCBITaxon:9605 ! Homo
 [Term]
 id: OBI:0000011
 name: planned process
-def: "A processual entity that realizes a plan which is the concretization of a plan specification." []
+def: "A process that realizes a plan which is the concretization of a plan specification." []
 is_a: BFO:0000015 ! process
 
 [Term]
@@ -4402,6 +4498,17 @@ def: "A quality inhering in a bearer by virtue of the bearer's length being nota
 is_a: PATO:0000052 ! shape
 
 [Term]
+id: PATO:0001236
+name: process quality
+def: "A quality which inheres in an process." []
+synonym: "quality of a process" EXACT []
+synonym: "quality of occurrent" EXACT []
+synonym: "quality of process" EXACT []
+synonym: "relational quality of occurrent" EXACT []
+is_a: PATO:0000001 ! quality
+disjoint_from: PATO:0001241 ! physical object quality
+
+[Term]
 id: PATO:0001241
 name: physical object quality
 def: "A quality which inheres in a continuant." []
@@ -4451,6 +4558,12 @@ id: PATO:0001332
 name: amorphous
 def: "A morphology quality inhering in a bearer by virtue of the bearer's lack of distinct morphology." []
 is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0001411
+name: structured
+def: "A structural quality inhering in a bearer by virtue of the bearer's having distinct structure." []
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0001412
@@ -4874,6 +4987,12 @@ def: "A is spatially_disjoint_from B if and only if they have no parts in common
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
+id: RO:0002180
+name: has component
+def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
+is_a: BFO:0000051 ! has part
+
+[Typedef]
 id: RO:0002211
 name: regulates
 name: regulates (processual)
@@ -4890,7 +5009,6 @@ is_a: RO:0002220 ! adjacent to
 id: RO:0002220
 name: adjacent to
 def: "x adjacent to y if and only if x and y share a boundary." []
-is_functional: true
 is_a: RO:0002163 ! spatially disjoint from
 
 [Typedef]
@@ -4959,6 +5077,12 @@ def: "A relationship that holds between entities participating in some developme
 id: RO:0002328
 name: functionally related to
 def: "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." []
+
+[Typedef]
+id: RO:0002351
+name: has member
+def: "has member is a mereological relation between a collection and an item." []
+is_a: BFO:0000051 ! has part
 
 [Typedef]
 id: RO:0002353

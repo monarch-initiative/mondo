@@ -1,0 +1,18 @@
+# description: checks for named equivalent classes, which are not allowed in Mondo
+
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE 
+{
+  VALUES ?property {
+    owl:equivalentClass
+  }
+  
+  ?entity ?property ?value .
+  
+  FILTER (!isBlank(?entity)) .
+  FILTER (!isBlank(?value))
+}
+ORDER BY ?entity

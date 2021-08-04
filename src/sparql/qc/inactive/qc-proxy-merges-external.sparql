@@ -1,0 +1,30 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity rdfs:label ?entity_label ;
+      oboInOwl:hasDbXref ?omim_xref ;
+      oboInOwl:hasDbXref ?omim2_xref ;
+      a owl:Class .
+      ?xref_anno2 a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?omim2_xref ;
+           oboInOwl:source ?omim2_source .
+    	
+  		?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?omim_xref ;
+           oboInOwl:source ?omim_source .
+  	
+    	
+  	FILTER (str(REPLACE( ?omim2_xref , '[:].*$', '' )) = str(REPLACE( ?omim_xref , '[:].*$', '' )))
+  	FILTER (str(?omim2_xref)!=str(?omim_xref))
+    FILTER (str(?omim_source)="MONDO:equivalentTo")
+  	FILTER (str(?omim2_source)="MONDO:equivalentTo")
+    FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(oboInOwl:hasDbXref as ?property)
+}
+ORDER BY ?entity

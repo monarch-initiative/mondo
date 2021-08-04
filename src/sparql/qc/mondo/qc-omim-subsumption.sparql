@@ -1,0 +1,38 @@
+prefix omim: <http://identifiers.org/omim/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+   ?entity rdfs:subClassOf ?parent .
+   ?exp owl:annotatedSource ?entity ;
+        owl:annotatedProperty oboInOwl:hasDbXref ;
+        owl:annotatedTarget ?xref;
+        oboInOwl:source ?source .
+   ?exp_p owl:annotatedSource ?parent ;
+       owl:annotatedProperty oboInOwl:hasDbXref ;
+       owl:annotatedTarget ?xref_p;
+       oboInOwl:source ?source_p .
+   ?entity rdfs:label ?entity_label .
+   
+   FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omim-subsumption.sparql .
+   }
+   
+   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+   FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
+   FILTER(STRSTARTS(str(?xref), "OMIM:"))
+   FILTER(STRSTARTS(str(?xref_p), "OMIM:"))
+   FILTER(str(?source)="MONDO:equivalentTo")
+   FILTER(str(?source_p)="MONDO:equivalentTo")
+   BIND(rdfs:subClassOf as ?property)
+   BIND(REPLACE(STR(?parent),"[<>]","") AS ?value)
+}
+ORDER BY ?entity

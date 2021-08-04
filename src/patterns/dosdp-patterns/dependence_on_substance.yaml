@@ -1,0 +1,45 @@
+pattern_name: dependence_on_substance
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/dependence_on_substance.yaml
+
+description: 'Dependence on a substance that specifies the environmental stimulus such as alcohol, cocaine, etc. Example: [dependence on cocaine](http://purl.obolibrary.org/obo/MONDO_0005186).' 
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-7463-6306
+
+classes:
+  substance dependence: MONDO:0004938
+  chemical: CHEBI:24431
+
+relations:
+  realized in response to stimulus: RO:0004028
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  stimulus: '''chemical'''
+
+name:
+  text: 'dependence on %s'
+  vars:
+  - stimulus
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s dependence'
+  vars:
+  - stimulus
+
+
+def:
+  text: A substance dependence on %s.
+  vars:
+  - stimulus
+
+equivalentTo:
+  text: '''substance dependence'' and ''realized in response to stimulus'' some %s'
+  vars:
+  - stimulus

@@ -1,0 +1,30 @@
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix disease: <http://purl.obolibrary.org/obo/MONDO_0000001>
+prefix disease_characteristic: <http://purl.obolibrary.org/obo/MONDO_0021125>
+prefix disease_stage: <http://purl.obolibrary.org/obo/MONDO_0021007>
+prefix disease_susceptibility: <http://purl.obolibrary.org/obo/MONDO_0042489>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE 
+{
+  ?entity a owl:Class ;
+     rdfs:label ?n
+  FILTER (strstarts(str(?entity),"http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (!isBlank(?entity))
+  FILTER ( NOT EXISTS {?entity owl:deprecated "true"^^xsd:boolean} )
+  FILTER ( NOT EXISTS
+    {
+      {?entity rdfs:subClassOf* disease: }
+        UNION
+      {?entity rdfs:subClassOf* disease_characteristic: }
+        UNION
+      {?entity rdfs:subClassOf* disease_susceptibility: }
+        UNION
+      {?entity rdfs:subClassOf* disease_stage: }
+    } )
+    BIND(rdfs:subClassOf as ?property)
+}
+ORDER BY ?entity

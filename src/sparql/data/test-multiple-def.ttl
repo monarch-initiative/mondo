@@ -1,0 +1,77 @@
+@prefix : <http://www.semanticweb.org/matentzn/ontologies/2021/3/untitled-ontology-239#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/matentzn/ontologies/2021/3/untitled-ontology-239> .
+
+<http://www.semanticweb.org/matentzn/ontologies/2021/3/untitled-ontology-239> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/CL_0017532
+<http://purl.obolibrary.org/obo/CL_0017532> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "R" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/CL_0017530
+<http://purl.obolibrary.org/obo/CL_0017530> rdf:type owl:Class ;
+                                            owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/CL_0017535>
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/CL_0017532> ;
+                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0017531>
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ,
+                                                                [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/CL_0017535>
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/CL_0017532> ;
+                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0017533>
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ;
+                                            rdfs:label "A" .
+
+
+###  http://purl.obolibrary.org/obo/CL_0017531
+<http://purl.obolibrary.org/obo/CL_0017531> rdf:type owl:Class ;
+                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.obolibrary.org/obo/CL_0017532> ;
+                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0017535>
+                                                                ] ;
+                                            rdfs:label "B" .
+
+
+###  http://purl.obolibrary.org/obo/CL_0017533
+<http://purl.obolibrary.org/obo/CL_0017533> rdf:type owl:Class ;
+                                            rdfs:label "C" .
+
+
+###  http://purl.obolibrary.org/obo/CL_0017534
+<http://purl.obolibrary.org/obo/CL_0017534> rdf:type owl:Class ;
+                                            owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/CL_0017535>
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/CL_0017532> ;
+                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/CL_0017533>
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] ;
+                                            rdfs:label "A2" .
+
+
+###  http://purl.obolibrary.org/obo/CL_0017535
+<http://purl.obolibrary.org/obo/CL_0017535> rdf:type owl:Class ;
+                                            rdfs:label "X" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
