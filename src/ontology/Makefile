@@ -365,6 +365,15 @@ imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/omo_import.owl
 
+imports/so_import.owl: mirror/so.owl imports/so_terms.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/so_terms.txt --force true --individuals definitions --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		remove -T imports/removeseed.txt \
+		remove --select object-properties \
+		reason --exclude-tautologies structural \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: imports/omo_import.owl
 
 edit-merged.owl: $(SRC)
 	$(ROBOT) merge -c true -i $< -o $@
