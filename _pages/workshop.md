@@ -9,7 +9,7 @@ Details and summaries for upcoming and past Mondo workshops.
 - [Renal Disease and Phenotype Workshop (July 14, 2021)](#renal)
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
-- [Mondo Workshop (November 2018)](#november-2018)
+- [Mondo Introductory Workshop (November 2018)](#november-2018)
 
 <a name="renal"></a> 
 ## Renal Disease and Phenotype Workshop
@@ -55,7 +55,7 @@ NHGRI Phenomics First (1RM1HG010860-01)
 ## Mondo Upper Level Reclassification Workshop
 
 ### Description: 
-A workshop with invited members of the community to work on the top-level classification of Mondo. The workshop focused on semantic modeling of disease and defining ontology patterns. There is a great need for expert clinicians to define clinically relevant navigational grouping classes. These top down and bottom up approaches need to meet in the middle harmoniously. This workshop included clinicians and ontologists, as well as expert curators working on genes for clinical utility.
+A workshop with invited members of the community to work on the top-level classification of Mondo. The workshop focused on semantic modeling of disease and defining ontology patterns. There is a great need for expert clinicians to define clinically relevant navigational grouping classes. These top down and bottom up approaches need to meet in the middle harmoniously. This workshop included clinicians and ontologists, as well as expert curators working on genes for clinical utility. As an outcome of this meeting, the Mondo hierarchy was revised in accordance to the classifications described in Harrison's Principles of Internal Medicine textbook. See [GitHub tickets](https://github.com/monarch-initiative/mondo/issues?q=is%3Aopen+is%3Aissue+label%3A%22Harrison+reclassification%22) for more details.
 
 ### Date and Time
 **April 05, 2021, Monday**  
@@ -71,7 +71,7 @@ A workshop with invited members of the community to work on the top-level classi
 NHGRI Phenomics First (1RM1HG010860-01)
 
 <a name="november-2018"></a> 
-## Mondo Workshop
+## Mondo Introductory Workshop
 
 ### Description: 
 
