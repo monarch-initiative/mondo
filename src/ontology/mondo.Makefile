@@ -395,7 +395,7 @@ modules/mondo-%.owl: modules/%.tsv
 .PRECIOUS: modules/mondo-%.owl
 
 MERGE_TEMPLATE=tmp/merge_template.tsv
-TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_B9QERClTE_sgASKEgIpG428Hxud0T-glA6-7KGt4aDXW47V2A5RNjcnGHlqKrGgM8guuwcCkcFW0/pub?gid=577155275&single=true&output=tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_G0rImuYa8o72cgQ97bH7xIq_V4TF6YfHkQaQY7HJUElcolO2RSh4bE7d50HTlSL1Vq7LoRJSkKBD/pub?gid=875350397&single=true&output=tsv
 
 tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
