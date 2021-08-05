@@ -1,3 +1,21 @@
+## How to create a new SPARQL report
+
+1. Go to https://yasgui.triply.cc/#
+2. Find a blueprint from src/sparql/reports directory
+3. Copy and paste into yasqui and edit as needed
+4. Run query and ensure it works
+5. In [Atom](https://atom.io/) (text editor), go to src/sparql/reports directory
+6. Right click on any file name and duplicate
+7. Rename file appropriately
+8. Paste contents of query into file
+9. In Terminal run `sh run.sh make report-query-disease-labeled-terms`
+10. The report will be in the src/sparql/reports folder
+
+### Tips
+
+- Tip 1: If you want to look a the report quickly, type in Terminal `atom reports/report-disease-labeled-terms.tsv`. This will open it in Atom.
+- Tip 2: In Terminal, `open reports` - this will open the file in Finder.
+
 ## How to generate reports
 
 Reports are generally created like this:
