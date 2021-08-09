@@ -9,12 +9,10 @@ contributors:
 
 classes:
   monosomy: MONDO:0020639
-  hypoploid: SO:0000056
   chromosome: GO:0005694
   
 
 relations:
-  has modifier: RO:0002573
   disease arises from structure: RO:0004030
 
 annotationProperties:
@@ -41,6 +39,6 @@ def:
   - chromosome
 
 equivalentTo:
-  text: monosomy and ('has modifier' some hypoploid) and ('disease arises from structure' some %s)
+  text: monosomy and ('disease arises from structure' some %s)
   vars:
   - chromosome
