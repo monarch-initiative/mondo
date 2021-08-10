@@ -43,9 +43,10 @@ Nicole Vasilevsky
 **June 24, 2021**  
 3:40 - 5:10pm Eastern
 
-### Slides
+### Slides & Recording
 
 - Slides are available [here](https://figshare.com/articles/presentation/Mondo_Disease_Ontology_How_ClinGen_curators_work_with_the_Mondo_Disease_Ontology_which_aims_to_harmonize_disease_definitions_across_the_world_/15101529).
+- Recording is available [here](https://www.youtube.com/watch?v=Qb0mr0YTPcI&list=PLrik3QIJ5Zvug1zD1C_Vl3P2Vzt3R6ces&index=9).
 
 ### Funding:
 
