@@ -1,0 +1,38 @@
+pattern_name: partial_chromosome_duplication
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/partial_chromosome_duplication.yaml
+
+description: 'This pattern is meant to be used for chromosomal anomaly which consists in the duplication a part of a chromosome.' 
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  'syndrome caused by partial chromosomal duplication': MONDO:0000762
+  chromosome_part: 
+  
+
+relations:
+  disease arises from structure: RO:0004030
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  chromosome_part: "chromosome_part"
+
+name:
+  text: '%s duplication syndrome'
+  vars:
+  - chromosome_part
+
+def:
+  text: A chromosomal anomaly consisting of the duplication of %s.
+  vars:
+  - chromosome_part
+
+equivalentTo:
+  text: 'syndrome caused by partial chromosomal duplication' and ('disease arises from structure' some %s)
+  vars:
+  - chromosome_part
