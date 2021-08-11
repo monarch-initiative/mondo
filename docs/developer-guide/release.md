@@ -19,7 +19,7 @@ The release mondo.owl will look like this in Protege:
 
 1. Pull master
 2. `cd git/mondo/src/ontology/`
-3. `sh run.sh make all -B` - note, this takes about 2-3 hours.
+3. `MEMORY_GB=12 sh run.sh make all -B` - note, this takes about 2-3 hours.
 4. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
 5. Make sure you see ‘release finished’ after the command has run
 
