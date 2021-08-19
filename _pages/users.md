@@ -6,6 +6,7 @@
 - [Ancestry](https://support.ancestry.com/s/article/Disease-Condition-Catalog-Powered-by-MONDO)
 - [Broad Institute](https://www.broadinstitute.org/)
 - [ClinGen](https://clinicalgenome.org/)
+- [Critcal Path Institute](https://c-path.org/)
 - [European Joint Programme on Rare Diseases](https://www.ejprarediseases.org/)
 - [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/)
 - Mondo is used for disease annotations in [EBI resources](https://www.ebi.ac.uk/services), [Open Targets](https://www.opentargets.org/), and [Euro-Bioimaging](http://www.eurobioimaging.eu/)  
