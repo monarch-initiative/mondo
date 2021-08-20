@@ -2,12 +2,12 @@
 
 ### Overview
 
-_Overview added 20 August 2021_
+_Added 20 August 2021_
 
 1. Mondo users need to be notified before we obsolete, merge or [split](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/) a Mondo class.
 1. If a Mondo class is to be obsoleted
   - in Protege, add the following annotations to the term-to-be-obsoleted:
-    - an obsoletion_candidate subset tag ([instructions here]())
+    - an obsoletion_candidate subset tag ([instructions here](https://mondo.readthedocs.io/en/latest/editors-guide/add-new-terms/#add-subset-tags))
     - seeAlso: GitHub ticket that describes the obsoletion request
 1. Monthly: Perform a SPARQL query to identify all the obsoletion candidates.
 1. Share the report on the mondo users email list.
