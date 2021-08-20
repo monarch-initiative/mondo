@@ -5,6 +5,8 @@ DOSDPT=dosdp-tools
 dirs:
 	mkdir -p tmp/
 	mkdir -p components/
+	mkdir -p mirror/
+	mkdir -p reports/
 
 
 .PHONY: matches
