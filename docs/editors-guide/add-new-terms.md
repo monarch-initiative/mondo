@@ -108,8 +108,6 @@ Synonyms can be further annotated with synonym types. Click [here](https://mondo
 1. Click OK
 1. Click OK
 
-Save your work and view the diff in GitHub Desktop and [create a pull request](https://mondo.readthedocs.io/en/latest/editors-guide/d-github-pr-workflow/).
-
 #### subClassOf assertion source
 
 In Mondo, all of the parents (subClassOf assertions) should have a source, so we capture the provenance of where the superclass (subClassOf/parent) assertion came from.
@@ -124,3 +122,6 @@ In Mondo, all of the parents (subClassOf assertions) should have a source, so we
 
 ![image](https://user-images.githubusercontent.com/6722114/130161756-dad35b4a-ce8f-485b-9841-9cc7465ca088.png)
 
+### Commit to GitHub
+
+Save your work and view the diff in GitHub Desktop and [create a pull request](https://mondo.readthedocs.io/en/latest/editors-guide/d-github-pr-workflow/).
