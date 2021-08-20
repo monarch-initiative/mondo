@@ -108,7 +108,7 @@ Synonyms can be further annotated with synonym types. Click [here](https://mondo
 1. Click OK
 1. Click OK
 
-#### subClassOf assertion source
+#### Add source to parent (subClassOf assertion)
 
 In Mondo, all of the parents (subClassOf assertions) should have a source, so we capture the provenance of where the superclass (subClassOf/parent) assertion came from.
 
@@ -121,6 +121,16 @@ In Mondo, all of the parents (subClassOf assertions) should have a source, so we
 ![image](https://user-images.githubusercontent.com/6722114/130161740-1ead68d9-7444-4336-a8a6-45df388ce448.png)
 
 ![image](https://user-images.githubusercontent.com/6722114/130161756-dad35b4a-ce8f-485b-9841-9cc7465ca088.png)
+
+### Add subset tags
+
+1. See a description of subsets [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#subsets).
+1. To add a subset tag, click the + above Annotations in the Annotations box
+1. Chose in_subset in the annotations list 
+1. Click Entity IRI tab 
+1. Click Annotation Properties tab 
+1. Scroll down to subset_property and expand the list
+1. Chose subset tag, such as obsoletion_candidate
 
 ### Commit to GitHub
 
