@@ -2,7 +2,7 @@ pattern_name: disease_series_by_gene
 
 pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml
 
-description: 'This pattern is for diseases that are caused by a single mutation in
+description: 'This pattern is for diseases that are caused by a single variation or mutation in
   a single gene, that have gene-based names, such as new disease terms that are requested
   by ClinGen, like MED12-related intellectual disability syndrome.  Examples: [MED12-related
   intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000),
@@ -29,7 +29,7 @@ vars:
   gene: '''gene'''
 
 name:
-  text: '%s caused by mutation in %s'
+  text: '%s caused by variation in %s'
   vars:
   - disease
   - gene
@@ -45,9 +45,14 @@ annotations:
   vars:
   - gene
   - disease
+- annotationProperty: exact_synonym
+  text: '%s caused by mutation in %s'
+  vars:
+  - disease
+  - gene
 
 def:
-  text: Any %s in which the cause of the disease is a mutation in the %s gene.
+  text: Any %s in which the cause of the disease is a variation in the %s gene.
   vars:
   - disease
   - gene
