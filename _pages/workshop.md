@@ -53,7 +53,7 @@ Nicole Vasilevsky
 NHGRI Phenomics First (1RM1HG010860-01)
  
 <a name="april-2021"></a> 
-## Mondo Upper Level Reclassification Workshop
+## Mondo Clinical Reclassification Workshop
 
 ### Description: 
 A workshop with invited members of the community to work on the top-level classification of Mondo. The workshop focused on semantic modeling of disease and defining ontology patterns. There is a great need for expert clinicians to define clinically relevant navigational grouping classes. These top down and bottom up approaches need to meet in the middle harmoniously. This workshop included clinicians and ontologists, as well as expert curators working on genes for clinical utility. As an outcome of this meeting, the Mondo hierarchy was revised in accordance to the classifications described in Harrison's Principles of Internal Medicine textbook. See [GitHub tickets](https://github.com/monarch-initiative/mondo/issues?q=is%3Aopen+is%3Aissue+label%3A%22Harrison+reclassification%22) for more details.
@@ -62,10 +62,11 @@ A workshop with invited members of the community to work on the top-level classi
 **April 05, 2021, Monday**  
 8am-11am PT / 11am-2pm ET / 4pm-7pm UK / 5pm-8pm Europe
 
-### Slides & Recording
+### Slides, Recording, Report
 
 - Slides are available [here](https://docs.google.com/presentation/d/1wlxXxha2QAXxF-nca8heVsSQ8ifkI9FO0GkKzJCbu3o/edit).
 - Recording is available [here](https://drive.google.com/file/d/1bksTsCk9RChMwvZ_7LMXymK1Yhfa91Ab/view?usp=sharing).
+- A report with a full description of the workshop and outcomes is available [here](https://zenodo.org/record/5273598#.YSftWNNKh6p)
 
 ### Funding:
 
