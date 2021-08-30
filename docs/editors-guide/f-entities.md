@@ -67,25 +67,25 @@ These are incorrect in many places where they have been brought in externally. *
 
 The definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name. 
 
-For example, MONDO:0003321 `hereditary Wilms' tumor` and `familial Wilms' tumor`.
+For example, MONDO:0003321-hereditary Wilms' tumor : ‘has_exact_synonym’ ‘familial Wilms' tumor’.
 
 #### Narrow 
 
 The definition of the synonym is the same as the primary definition, but has additional qualifiers. 
 
-For example, MONDO:0004979 `asthma` and `exercise-induced asthma`
+For example, MONDO:0004979 asthma : ‘has_narrow_synonym’ ‘exercise-induced asthma’
 
 #### Broad
 
 The primary definition accurately describes the synonym, but the definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term.
 
-For example, MONDO:0016264 `autoimmune hepatitis` and `autoimmune liver disease`
+For example, MONDO:0016264 autoimmune hepatitis : ‘has_broad_synonym’ ‘autoimmune liver disease’
 
 #### Related 
 
 This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included. 
 
-For example, MONDO:0012996 `AGAT deficiency` has the related synonym `disorder of glycine amidinotransferase activity`.
+For example, MONDO:0015263 Brugada syndrome : ‘has_related_synonym’ ‘sudden unexpected nocturnal death syndrome’.
 
 We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining) 
 
