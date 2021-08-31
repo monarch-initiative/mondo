@@ -13,7 +13,9 @@ WHERE
   
   ?cls rdfs:label ?clsLabel .
   
-  ?cls rdfs:comment ?comment
+    OPTIONAL {
+  	?cls rdfs:comment ?comment
+  }
   
   FILTER NOT EXISTS { ?cls owl:deprecated "true"^^xsd:boolean }
 }
