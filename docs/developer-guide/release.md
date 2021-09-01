@@ -4,6 +4,8 @@ Mondo is released on a monthly basis around the first of the month. Additional r
 
 **Initial setup**: Follow the instructions to [Generate token](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) before starting.
 
+Videos outlining this process are available [here](https://drive.google.com/drive/u/0/folders/1kDD572vCE2NRGC57cX7vTUHQSFvomyb7).
+
 # Releases
 
 All release products are described on the [OBO page](http://obofoundry.org/ontology/mondo.html) and [Mondo website](https://mondo.monarchinitiative.org/).
