@@ -40,6 +40,10 @@ The release mondo.owl will look like this in Protege:
 `mv Downloads/obo-simple-diff.pl ~/tools`
 3. `cchmod 755 ~/tools/obo-simple-diff.pl`
 
+### Generate token
+
+1. Follow the instructions [here](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) to generate the GitHub token.
+
 ### Generate Change Log Workflow:
 <!-- 1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
 2. Download the previous mondo.obo and save as mondo-lastbuild.obo-->
