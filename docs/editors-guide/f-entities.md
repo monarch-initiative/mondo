@@ -187,7 +187,7 @@ MONDO:ontobio   |   Lexical matching method |   subclassOf  |   N   |   MONDO:00
 MONDO:patterns....  |   A pattern was used to define the term or synonym, see: https://github.com/monarch-initiative/mondo/tree/master/src/patterns |   definitions, synonyms   |   N   |   MONDO:0016593 'acquired ataxia'
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'
 MONDO:relatedTo     |   Used when a term is not equivalent but similar. |   xrefs   |   N   |   MONDO:0015350 '17q11.2 microduplication syndrome'
-MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' | database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
+MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
 MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom. |  xrefs  |   N   |   MONDO:0005147 ‘type 1 diabetes mellitus’ database_cross_reference:  OMIM:125852  (refers to the child term ‘type 1 diabetes mellitus type 2’){source=MONDO:superClassOf}
 
 ## Subsets
