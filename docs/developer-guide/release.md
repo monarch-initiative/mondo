@@ -28,6 +28,7 @@ The release mondo.owl will look like this in Protege:
 2. Do a pull request (PR)
 3. Wait for GitHub Actions/QC to pass
 4. Merge PR
+5. When this is done, follow instructions to Generate Change Log
 
 ## Generate Change Log
 
@@ -58,7 +59,6 @@ Note- the date should be the date of the release in the format sh run.sh make GH
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     3. Ensure it has all release artefacts attached to it
     4. Check this file to ensure you see the expected changes (spot check a few changes): https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl
-1. When this is done, follow instructions for the change log
 
 _Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
 
