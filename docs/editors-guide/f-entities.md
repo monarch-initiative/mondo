@@ -171,7 +171,7 @@ _Note_: Some source annotations will be in the format `MONDO:0020484-obsoleted`.
 ## Axiom Annotations Summary Table
 
 Annotation  |   Description |   What kind of axiom it can apply to  |   Editors only?   |   Example
---- |   --- |   --- |   --- |   ---
+--- | --- | --- | --- | ---
 MONDO:ambiguous     |   Used to indicate where there is a known case where this synonym is ambiguous with something else.   |   synonyms    |   N   |   MONDO:0009825 '5-oxoprolinase deficiency (disease)' (synonym: 5-oxoprolinase deficiency)
 MONDO:design_pattern    |   If annotated on a synonym, the synonym was derived from a design pattern.   |   synonyms    |   N   |   MONDO:0009770 '3MC syndrome 1' (synonym: 3MC syndrome caused by mutation in MASP1)
 MONDO:directSiblingOf   |   The term that is xref'd is a direct sibling of term. The goal was to capture where someone made an xref.    |   xrefs   |   N   |   MONDO:0008854 ‘Bardet-Biedl syndrome 1’| database_cross_reference: UMLS:C1859564 (refers to ‘Bardet-Biedl syndrome 3’) {source=MONDO:directSiblingOf}
@@ -188,8 +188,7 @@ MONDO:patterns....  |   A pattern was used to define the term or synonym, see: h
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'
 MONDO:relatedTo     |   Used when a term is not equivalent but similar. |   xrefs   |   N   |   MONDO:0015350 '17q11.2 microduplication syndrome'
 MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' | database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
-MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom.     |  xrefs  |   N   |   MONDO:0005147 ‘type 1 diabetes mellitus’
-database_cross_reference:  OMIM:125852  (refers to the child term ‘type 1 diabetes mellitus type 2’){source=MONDO:superClassOf}
+MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom. |  xrefs  |   N   |   MONDO:0005147 ‘type 1 diabetes mellitus’ database_cross_reference:  OMIM:125852  (refers to the child term ‘type 1 diabetes mellitus type 2’){source=MONDO:superClassOf}
 
 ## Subsets
 
