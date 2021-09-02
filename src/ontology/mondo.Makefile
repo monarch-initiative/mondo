@@ -427,3 +427,24 @@ open_%_report:
 
 mondo_obo:
 	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
+
+METRIC_SINCE_VERSION=2019-06-29
+METRIC_UNTIL_VERSION=2020-06-30
+
+tmp/mondo-%-release.owl:
+	wget http://purl.obolibrary.org/obo/mondo/releases/$*/mondo.owl -O $@
+
+tmp/unmerge.owl: tmp/mondo-$(METRIC_SINCE_VERSION)-release.owl tmp/mondo-$(METRIC_UNTIL_VERSION)-release.owl
+	$(ROBOT) unmerge -i tmp/mondo-$(METRIC_UNTIL_VERSION)-release.owl -i tmp/mondo-$(METRIC_SINCE_VERSION)-release.owl -o $@
+
+report-metrics-%: tmp/mondo-%.owl
+	$(ROBOT) query --use-graphs true -i $< -f tsv --query $(SPARQLDIR)/reports/all-properties.sparql reports/report-$*.tsv
+
+metrics: report-metrics-$(METRIC_SINCE_VERSION)-release report-metrics-$(METRIC_UNTIL_VERSION)-release
+
+tmp/harrisons_seed.txt: mondo.owl
+	$(ROBOT) query --use-graphs true -i $< -f csv --query $(SPARQLDIR)/signature/harrisonview-seed.sparql $@
+
+mondo-harrisons-view.owl: mondo.owl tmp/harrisons_seed.txt
+	$(ROBOT) remove -i $< -T tmp/harrisons_seed.txt --select complement --select classes --select "MONDO:*" \
+	annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@ annotate --ontology-iri $(ONTBASE)/$@ -o $@
