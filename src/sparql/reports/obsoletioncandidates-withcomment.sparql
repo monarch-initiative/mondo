@@ -6,14 +6,14 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix mondoSubset: <http://purl.obolibrary.org/obo/mondo#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT  ?cls ?clsLabel ?comment ?seeAlso
+SELECT distinct ?cls ?clsLabel (GROUP_CONCAT(?comment;SEPARATOR="|") AS ?comments) (GROUP_CONCAT(?seeAlso;SEPARATOR="|") AS ?seeAlsos)
 WHERE 
 {
   ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate>.
   
-  ?cls rdfs:label ?clsLabel .
+  ?cls rdfs:label ?clsLabel 
   
-    OPTIONAL {
+  OPTIONAL {
   	?cls rdfs:comment ?comment
   }
   
@@ -23,4 +23,6 @@ WHERE
   
   FILTER NOT EXISTS { ?cls owl:deprecated "true"^^xsd:boolean }
 }
+
+GROUP BY ?cls ?clsLabel
 ORDER BY ?cls
