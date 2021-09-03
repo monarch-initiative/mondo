@@ -334,7 +334,12 @@ tmp/mirror-mondo.json: mondo.owl
 tmp/mirror-efo.json: #mirror/efo.owl
 	robot merge -i mirror/efo.owl convert -f json -o $@
 
-tmp/%.sssom.tsv: tmp/mirror-%.json
+.PHONY: sssom
+sssom:
+	pip install sssom
+	pip install --upgrade --no-deps --force-reinstall sssom==0.3.2
+
+tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
 	sssom parse -i tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
 	python ../scripts/split_sssom_by_source.py -s $@ -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 
