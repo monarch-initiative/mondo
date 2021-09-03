@@ -14,9 +14,9 @@ import pandas as pd
 from argparse import ArgumentParser
 import yaml
 
-from sssom.datamodel_util import read_pandas
-from sssom.parsers import from_dataframe, split_dataframe_by_prefix
-from sssom.writers import write_tsv, write_tsvs
+from sssom.util import read_pandas
+from sssom.parsers import from_sssom_dataframe, split_dataframe_by_prefix
+from sssom.writers import write_table, write_tables
 
 import logging
 
@@ -84,7 +84,7 @@ df = replace_temporary_prefixes(subject_prefixes, df)
 df = replace_temporary_prefixes(object_prefixes, df)
 global_metadata=meta['global_metadata']
 
-msdf = from_dataframe(df, curie_map=curie_map, meta=global_metadata)
+msdf = from_sssom_dataframe(df, curie_map=curie_map, meta=global_metadata)
 today = datetime.today().strftime('%Y-%m-%d')
 
 splitted = split_dataframe_by_prefix(msdf,subject_prefixes_allowed,object_prefixes, relations_allowed)
@@ -100,4 +100,4 @@ for msdf in splitted:
                 for item in source_metadata['metadata']:
                     m[item]=source_metadata['metadata'][item]
     splitted[msdf].metadata = m
-write_tsvs(splitted,mapping_dir)
+write_tables(splitted,mapping_dir)
