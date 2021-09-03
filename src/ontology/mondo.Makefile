@@ -319,7 +319,7 @@ mass_obsolete:
 
 MAPPINGSDIR=mappings
 METADATADIR=metadata
-MAPPING_IDS=ordo omim mondo efo
+MAPPING_IDS=ordo omim mondo
 ALL_MAPPINGS=$(patsubst %, tmp/%.sssom.tsv, $(MAPPING_IDS))
 
 tmp/mirror-ordo.json: mirror/ordo.obo
