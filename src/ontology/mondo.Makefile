@@ -336,9 +336,7 @@ tmp/mirror-efo.json: #mirror/efo.owl
 
 .PHONY: sssom
 sssom:
-	pip install --upgrade pip
-	pip install sssom
-	pip install --upgrade --force-reinstall sssom==0.3.2
+	pip install --upgrade pip && pip install --upgrade --force-reinstall sssom==0.3.2
 
 tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
 	sssom parse -i tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
