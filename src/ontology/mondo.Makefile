@@ -5,20 +5,29 @@ DOSDPT=dosdp-tools
 dirs:
 	mkdir -p tmp/
 	mkdir -p components/
+	mkdir -p mirror/
+	mkdir -p reports/
 
 
 .PHONY: matches
-	
-matches: 
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
 
-matches_annotations:
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --restrict-axioms-to=annotation --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches_annotations/"
+tmp/mondo-edit-merged.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+
+matches: tmp/mondo-edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+
+matches_annotations: tmp/mondo-edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --restrict-axioms-to=annotation --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches_annotations/"
 
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
 
+owlaxioms_check:
+	! grep "^owl-axioms" mondo-edit.obo
+
 test: pattern_schema_checks
+test: owlaxioms_check
 
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
 	$(DOSDPT) prototype --obo-prefixes=true --template=../patterns/dosdp-patterns --outfile=$@
@@ -386,6 +395,21 @@ MONDOVIEWS=harrisons
 
 mondo-views: $(patsubst %, modules/mondo-%-view.owl, $(MONDOVIEWS))
 
+modules/mondo-%.owl: modules/%.tsv
+	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(OBO)/$(ONT)/mondo-$*.owl -o $@
+.PRECIOUS: modules/mondo-%.owl
+
+MERGE_TEMPLATE=tmp/merge_template.tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_G0rImuYa8o72cgQ97bH7xIq_V4TF6YfHkQaQY7HJUElcolO2RSh4bE7d50HTlSL1Vq7LoRJSkKBD/pub?gid=875350397&single=true&output=tsv
+
+tmp/merge_template.tsv:
+	wget "$(TEMPLATE_URL)" -O $@
+
+merge_template: $(MERGE_TEMPLATE)
+	$(ROBOT) template --merge-before --input $(SRC) \
+ --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
+
 
 #ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
 #OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501 
@@ -404,3 +428,27 @@ test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html
+
+mondo_obo:
+	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
+
+METRIC_SINCE_VERSION=2019-06-29
+METRIC_UNTIL_VERSION=2020-06-30
+
+tmp/mondo-%-release.owl:
+	wget http://purl.obolibrary.org/obo/mondo/releases/$*/mondo.owl -O $@
+
+tmp/unmerge.owl: tmp/mondo-$(METRIC_SINCE_VERSION)-release.owl tmp/mondo-$(METRIC_UNTIL_VERSION)-release.owl
+	$(ROBOT) unmerge -i tmp/mondo-$(METRIC_UNTIL_VERSION)-release.owl -i tmp/mondo-$(METRIC_SINCE_VERSION)-release.owl -o $@
+
+report-metrics-%: tmp/mondo-%.owl
+	$(ROBOT) query --use-graphs true -i $< -f tsv --query $(SPARQLDIR)/reports/all-properties.sparql reports/report-$*.tsv
+
+metrics: report-metrics-$(METRIC_SINCE_VERSION)-release report-metrics-$(METRIC_UNTIL_VERSION)-release
+
+tmp/harrisons_seed.txt: mondo.owl
+	$(ROBOT) query --use-graphs true -i $< -f csv --query $(SPARQLDIR)/signature/harrisonview-seed.sparql $@
+
+mondo-harrisons-view.owl: mondo.owl tmp/harrisons_seed.txt
+	$(ROBOT) remove -i $< -T tmp/harrisons_seed.txt --select complement --select classes --select "MONDO:*" \
+	annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@ annotate --ontology-iri $(ONTBASE)/$@ -o $@
