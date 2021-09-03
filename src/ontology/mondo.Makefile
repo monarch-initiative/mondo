@@ -337,6 +337,7 @@ tmp/mirror-efo.json: #mirror/efo.owl
 .PHONY: sssom
 sssom:
 	pip install sssom
+	pip install jsonasobj2
 	pip install --upgrade --no-deps --force-reinstall sssom==0.3.2
 
 tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
