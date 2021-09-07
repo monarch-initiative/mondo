@@ -24,3 +24,13 @@ A poisoning that is caused by exposure to {[stimulus](http://purl.obolibrary.org
 
 [poisoning](http://purl.obolibrary.org/obo/MONDO_0029000) and [realized in response to stimulus](http://purl.obolibrary.org/obo/RO_0004028) some {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)}
 
+## Data preview 
+| defined_class                                | defined_class_label       | stimulus                                   | stimulus_label             |
+|:---------------------------------------------|:--------------------------|:-------------------------------------------|:---------------------------|
+| [MONDO:0019544](http://purl.obolibrary.org/obo/MONDO_0019544) | cocaine intoxication      | [CHEBI:27958](http://purl.obolibrary.org/obo/CHEBI_27958) | cocaine                    |
+| [MONDO:0017859](http://purl.obolibrary.org/obo/MONDO_0017859) | colchicine poisoning      | [CHEBI:23359](http://purl.obolibrary.org/obo/CHEBI_23359) | colchicine                 |
+| [MONDO:0017863](http://purl.obolibrary.org/obo/MONDO_0017863) | digitalis poisoning       | [CHEBI:4551](http://purl.obolibrary.org/obo/CHEBI_4551)  | digoxin                    |
+| [MONDO:0017861](http://purl.obolibrary.org/obo/MONDO_0017861) | ethylene glycol poisoning | [CHEBI:30742](http://purl.obolibrary.org/obo/CHEBI_30742) | ethylene glycol            |
+| [MONDO:0017638](http://purl.obolibrary.org/obo/MONDO_0017638) | manganese poisoning       | [CHEBI:25154](http://purl.obolibrary.org/obo/CHEBI_25154) | manganese molecular entity |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/poisoning.tsv) 
