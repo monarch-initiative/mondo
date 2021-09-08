@@ -18,7 +18,7 @@ the new ID for the new terms in advance by adding the label to this [ROBOT templ
 1. In this [ROBOT template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1242007499):
 - add the IDs for the terms to be obsoleted in columnn A
 - add the labels in column B (for human readability)
-- the labels in column E should be automatically populated from the [ROBOT_CreateNewTerm](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843)]
+- the labels in column E should be automatically populated from the [ROBOT_CreateNewTerm](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843)
 template
 - add a link to the GitHub ticket in column G
 1. Follow the instructions to [Merge a ROBOT template into Mondo](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/).
