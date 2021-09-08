@@ -36,7 +36,7 @@ share with the Mondo users list:
 ## Split Terms
 
 1. When we're ready to split the terms, we need to add the new terms to Mondo, that the old terms will be merged into.
-1. 1. Follow the instructions to [Merge a ROBOT template into Mondo](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/) with the [ROBOT_CreateNewTerm](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843)
+1. Follow the instructions to [Merge a ROBOT template into Mondo](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/) with the [ROBOT_CreateNewTerm](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843)
 template.
 1. Then follow the instructions for [splitting classes](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/).
 1. If terms are to be obsoleted and merged into new classes, follow the instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/#merge-using-owltools).
