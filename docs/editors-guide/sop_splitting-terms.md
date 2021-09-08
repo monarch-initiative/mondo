@@ -9,6 +9,9 @@ possible.
 1. Notify users of the the users that the term will be split.
 1. If there are no objections, make the changes after two release cycles have
 passed.
+1. The workflow involves two steps:
+  1. Create new terms and IDs for the term that will be split.
+  1. Obsolete and merge the existing term into the new term.
 
 ## Detailed Workflow
 
