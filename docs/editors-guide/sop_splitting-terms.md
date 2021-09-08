@@ -13,8 +13,7 @@ passed.
 ## Detailed Workflow
 1. Identify a term that should be split. 
 1. If the term should be split into two new terms, assign
-the new ID for the new terms in advance by adding the label to this [ROBOT template]
-(https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843).
+the new ID for the new terms in advance by adding the label to this [ROBOT template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843).
 1. Add the obsoletion tags to the terms to be obsoleted:
 1. In this [ROBOT template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1242007499),
 - add the IDs for the terms to be obsoleted in columnn A
