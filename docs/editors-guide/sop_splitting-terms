@@ -1,6 +1,6 @@
 # SOP Splitting Terms
 
-# Overview of workflow
+## Overview of workflow
 1. Identify a term that should be split. 
 1. If the term should be split into two new terms, assign
 the new ID for that term in advance.
@@ -10,7 +10,7 @@ possible.
 1. If there are no objections, make the changes after two release cycles have
 passed.
 
-# Detailed Workflow
+## Detailed Workflow
 1. Identify a term that should be split. 
 1. If the term should be split into two new terms, assign
 the new ID for the new terms in advance by adding the label to this [ROBOT template]
@@ -24,4 +24,10 @@ template
 - add a link to the GitHub ticket in column G
 1. Follow the instructions to [Merge a ROBOT template into Mondo](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/).
 1. At the time of the release, generate the sparql report for obsoletion candidates and 
-share with the Mondo users list.
+share with the Mondo users list: 
+1. In terminal, run `sh run.sh make report-obsoletioncandidates-withcomment`
+1. The report will be in the src/sparql/reports folder
+
+### Tips
+- Tip 1: If you want to look a the report quickly, type in Terminal atom reports/report-disease-labeled-terms.tsv. This will open it in Atom.
+- Tip 2: In Terminal, open reports - this will open the file in Finder.
