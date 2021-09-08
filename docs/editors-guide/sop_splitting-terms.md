@@ -11,6 +11,8 @@ possible.
 passed.
 
 ## Detailed Workflow
+
+### Add obsoletion tags to terms to be split
 1. Identify a term that should be split. 
 1. If the term should be split into two new terms, assign
 the new ID for the new terms in advance by adding the label to this [ROBOT template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843).
@@ -30,3 +32,11 @@ share with the Mondo users list:
 ### Tips
 - Tip 1: If you want to look a the report quickly, type in Terminal `atom reports/report-disease-labeled-terms.tsv`. This will open it in Atom.
 - Tip 2: In Terminal, `open reports` - this will open the file in Finder.
+
+## Split Terms
+
+1. When we're ready to split the terms, we need to add the new terms to Mondo, that the old terms will be merged into.
+1. 1. Follow the instructions to [Merge a ROBOT template into Mondo](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/) with the [ROBOT_CreateNewTerm](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843)
+template.
+1. Then follow the instructions for [splitting classes](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/).
+1. If terms are to be obsoleted and merged into new classes, follow the instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/#merge-using-owltools).
