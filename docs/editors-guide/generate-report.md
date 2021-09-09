@@ -42,7 +42,7 @@ The only requirement for a report is, that a suitable SPARQL query can be found 
 
 Note:
 If you want to run a query using the "inferred" version of the ontology (e.g. harrisonview-termlist requires to check whether any parents (asserted and inferred) have the 'harrisonview' tag), use the following command: 
-sh run.sh make report-reason-query-
+`sh run.sh make report-reason-query-`
 
 If you want to create your very own report, you can: 
 
