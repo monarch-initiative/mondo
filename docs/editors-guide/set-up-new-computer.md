@@ -49,8 +49,8 @@ Please make sure you have some kind of git client installed on your Machine. If 
 ![whitespace](https://github.com/monarch-initiative/mondo/raw/master/docs/images/whitespace.png)
 
 
+## Clone Mondo
 
-
-
-
-
+1. Recommended to clone into a directory without white spaces in the path, for example, /users/me/git/mondo (me= your username), but avoid /users/me/git projects/mondo
+2. In terminal: `git clone` https://github.com/monarch-initiative/mondo.git
+4. Create mirror directory: `sh run.sh make dirs`

@@ -67,25 +67,25 @@ These are incorrect in many places where they have been brought in externally. *
 
 The definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name. 
 
-For example, MONDO:0003321 `hereditary Wilms' tumor` and `familial Wilms' tumor`.
+For example, MONDO:0003321-hereditary Wilms' tumor : ‘has_exact_synonym’ ‘familial Wilms' tumor’.
 
 #### Narrow 
 
 The definition of the synonym is the same as the primary definition, but has additional qualifiers. 
 
-For example, MONDO:0004979 `asthma` and `exercise-induced asthma`
+For example, MONDO:0004979 asthma : ‘has_narrow_synonym’ ‘exercise-induced asthma’
 
 #### Broad
 
 The primary definition accurately describes the synonym, but the definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term.
 
-For example, MONDO:0016264 `autoimmune hepatitis` and `autoimmune liver disease`
+For example, MONDO:0016264 autoimmune hepatitis : ‘has_broad_synonym’ ‘autoimmune liver disease’
 
 #### Related 
 
 This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included. 
 
-For example, MONDO:0012996 `AGAT deficiency` has the related synonym `disorder of glycine amidinotransferase activity`.
+For example, MONDO:0015263 Brugada syndrome : ‘has_related_synonym’ ‘sudden unexpected nocturnal death syndrome’.
 
 We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining) 
 
@@ -171,24 +171,24 @@ _Note_: Some source annotations will be in the format `MONDO:0020484-obsoleted`.
 ## Axiom Annotations Summary Table
 
 Annotation  |   Description |   What kind of axiom it can apply to  |   Editors only?   |   Example
---- |   --- |   --- |   --- |   ---
+--- | --- | --- | --- | ---
 MONDO:ambiguous     |   Used to indicate where there is a known case where this synonym is ambiguous with something else.   |   synonyms    |   N   |   MONDO:0009825 '5-oxoprolinase deficiency (disease)' (synonym: 5-oxoprolinase deficiency)
 MONDO:design_pattern    |   If annotated on a synonym, the synonym was derived from a design pattern.   |   synonyms    |   N   |   MONDO:0009770 '3MC syndrome 1' (synonym: 3MC syndrome caused by mutation in MASP1)
-MONDO:directSiblingOf   |   The term that is xref'd is a direct sibling of term. The goal was to capture where someone made an xref.    |   xrefs   |   N   |   MONDO:0008854 'Bardet-Biedl syndrome 1' (xref UMLS:C1858054)
+MONDO:directSiblingOf   |   The term that is xref'd is a direct sibling of term. The goal was to capture where someone made an xref.    |   xrefs   |   N   |   MONDO:0008854 ‘Bardet-Biedl syndrome 1’ database_cross_reference: UMLS:C1859564 (refers to ‘Bardet-Biedl syndrome 3’) {source=MONDO:directSiblingOf}
 MONDO:entailed  |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   Y   |   MONDO:0001594 'Achilles bursitis'
-MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology.We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease'
-MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom.   |   xrefs   |   N   |   MONDO:0100087 'familial Alzheimer disease'
+MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology.We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease' database_cross_reference: Orphanet:1239 (was obsoleted in orphanet) {source=MONDO:equivalentObsolete}
+MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom.   |   xrefs   |   N   |   MONDO:0100087 'familial Alzheimer disease' database_cross_reference: GARD:0000632 (refers to the disease in GARD) {source=MONDO:equivalentTo}
 MONDO:kboom-pr-[number]     |   These are the probability scores from the kBoom algorithm.  |  xrefs   |   Y   |   MONDO:0008966 'Aagenaes syndrome'
 MONDO:Lexical   |   Same as design_pattern. Should be replaced with specific design_pattern.    |   synonyms    |   N   |   MONDO:0010278 'Christianson syndrome'
 MONDO:LexicalVariant    |   Similar to design_pattern, should be replaced with specific documentation about variant documentation.  |  synonyms   |   N   |   MONDO:0006018 'Wissler syndrome'
 MONDO:notFoundInDiseaseSubset   |   This annotation is typically added to dbxefs from UMLS or NCIt, to indicate the term is not from the disease branch.    |   dbxef   |   N   |   MONDO_0015350 '17q11.2 microduplication syndrome'
-MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   MONDO:0008858 'Behr syndrome'
+MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   MONDO:0011812 ‘Duane-radial ray syndrome’ database_cross_reference: Orphanet:959 (was equivalent to MONDO:0019863 which was obsoleted)  {source=MONDO:obsoleteEquivalent}
 MONDO:ontobio   |   Lexical matching method |   subclassOf  |   N   |   MONDO:0012176 'Emanuel syndrome'
 MONDO:patterns....  |   A pattern was used to define the term or synonym, see: https://github.com/monarch-initiative/mondo/tree/master/src/patterns |   definitions, synonyms   |   N   |   MONDO:0016593 'acquired ataxia'
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'
 MONDO:relatedTo     |   Used when a term is not equivalent but similar. |   xrefs   |   N   |   MONDO:0015350 '17q11.2 microduplication syndrome'
-MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   | xrefs   |   N   |   MONDO:0017781 '12p12.1 microdeletion syndrome'
-MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom.     |  xrefs  |   N   |   MONDO:0017806 '15q overgrowth syndrome'
+MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
+MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom. |  xrefs  |   N   |   MONDO:0005147 ‘type 1 diabetes mellitus’ database_cross_reference:  OMIM:125852  (refers to the child term ‘type 1 diabetes mellitus type 2’){source=MONDO:superClassOf}
 
 ## Subsets
 

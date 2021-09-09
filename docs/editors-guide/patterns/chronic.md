@@ -32,6 +32,6 @@ Chronic form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 | [MONDO:0001251](http://purl.obolibrary.org/obo/MONDO_0001251) | chronic apical periodontitis                  | [MONDO:0004508](http://purl.obolibrary.org/obo/MONDO_0004508) | periapical periodontitis       |
 | [MONDO:0005607](http://purl.obolibrary.org/obo/MONDO_0005607) | chronic bronchitis                            | [MONDO:0003781](http://purl.obolibrary.org/obo/MONDO_0003781) | bronchitis                     |
 | [MONDO:0004924](http://purl.obolibrary.org/obo/MONDO_0004924) | chronic canaliculitis                         | [MONDO:0005631](http://purl.obolibrary.org/obo/MONDO_0005631) | actinomycosis                  |
-| [MONDO:0002030](http://purl.obolibrary.org/obo/MONDO_0002030) | chronic cervicitis                            | [MONDO:0002345](http://purl.obolibrary.org/obo/MONDO_0002345) | cervicitis (disease)           |
+| [MONDO:0002030](http://purl.obolibrary.org/obo/MONDO_0002030) | chronic cervicitis                            | [MONDO:0002345](http://purl.obolibrary.org/obo/MONDO_0002345) | cervicitis                     |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/chronic.tsv) 

@@ -1,0 +1,16 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?term ?term_label ?Xref
+WHERE 
+  { 
+    ?term oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders> ;
+          oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> ;
+          
+      rdfs:label ?term_label .
+    FILTER NOT EXISTS { ?term owl:deprecated "true"^^xsd:boolean . }
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+ 
+  }

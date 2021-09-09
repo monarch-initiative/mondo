@@ -1,3 +1,194 @@
+
+# 2021-09-01
+
+## New Classes
+
+ * [MONDO:0025708](http://purl.obolibrary.org/obo/MONDO_0025708) megacystis-microcolon-intestinal hypoperistalsis syndrome 2
+ * [MONDO:0035349](http://purl.obolibrary.org/obo/MONDO_0035349) localized dystrophic epidermolysis bullosa
+ * [MONDO:0035354](http://purl.obolibrary.org/obo/MONDO_0035354) IgG4-related systemic disease
+ * [MONDO:0035357](http://purl.obolibrary.org/obo/MONDO_0035357) portosinusoidal vascular disease
+ * [MONDO:0035362](http://purl.obolibrary.org/obo/MONDO_0035362) TRIM22-related inflammatory bowel disease
+ * [MONDO:0035363](http://purl.obolibrary.org/obo/MONDO_0035363) IRF2BPL-related regressive neurodevelopmental disorder-dystonia-seizures syndrome
+ * [MONDO:0035369](http://purl.obolibrary.org/obo/MONDO_0035369) MTHFS-related developmental delay-microcephaly-short stature-epilepsy syndrome
+ * [MONDO:0035370](http://purl.obolibrary.org/obo/MONDO_0035370) ALPI-related inflammatory bowel disease
+ * [MONDO:0035375](http://purl.obolibrary.org/obo/MONDO_0035375) multisystem inflammatory syndrome in children and adults
+ * [MONDO:0035398](http://purl.obolibrary.org/obo/MONDO_0035398) hypomyelination of early myelinating structures
+ * [MONDO:0100041](http://purl.obolibrary.org/obo/MONDO_0100041) secondary trimethylaminuria
+ * [MONDO:0100044](http://purl.obolibrary.org/obo/MONDO_0100044) acrofrontofacionasal dysostosis 1
+ * [MONDO:0550003](http://purl.obolibrary.org/obo/MONDO_0550003) SEC61B-related polycystic liver disease
+ * [MONDO:0700085](http://purl.obolibrary.org/obo/MONDO_0700085) pentasomy
+ * [MONDO:0700086](http://purl.obolibrary.org/obo/MONDO_0700086) uniparental disomy
+ * [MONDO:0700087](http://purl.obolibrary.org/obo/MONDO_0700087) Usher syndrome type 1B
+ * [MONDO:0700088](http://purl.obolibrary.org/obo/MONDO_0700088) paroxysmal nonkinesigenic dyskinesia
+ * [MONDO:0700089](http://purl.obolibrary.org/obo/MONDO_0700089) paroxysmal nonkinesigenic dyskinesia 1
+ * [MONDO:0700090](http://purl.obolibrary.org/obo/MONDO_0700090) epilepsy, familial temporal lobe, 1
+ * [MONDO:0800001](http://purl.obolibrary.org/obo/MONDO_0800001) delayed sleep phase syndrome, susceptibility to
+
+## Obsoletions
+
+ * [MONDO:0004424](http://purl.obolibrary.org/obo/MONDO_0004424) familial glomangioma --> obsolete familial glomangioma
+ * [MONDO:0005261](http://purl.obolibrary.org/obo/MONDO_0005261) pervasive developmental disorder - not otherwise specified --> obsolete pervasive developmental disorder - not otherwise specified
+ * [MONDO:0005442](http://purl.obolibrary.org/obo/MONDO_0005442) type 1 diabetes nephropathy --> obsolete type 1 diabetes nephropathy
+ * [MONDO:0005443](http://purl.obolibrary.org/obo/MONDO_0005443) type 2 diabetes nephropathy --> obsolete type 2 diabetes nephropathy
+ * [MONDO:0007326](http://purl.obolibrary.org/obo/MONDO_0007326) paroxysmal nonkinesigenic dyskinesia 1 --> obsolete paroxysmal nonkinesigenic dyskinesia 1
+ * [MONDO:0015119](http://purl.obolibrary.org/obo/MONDO_0015119) bronchopulmonary tumor --> obsolete bronchopulmonary tumor
+ * [MONDO:0015989](http://purl.obolibrary.org/obo/MONDO_0015989) congenital valvular dysplasia --> obsolete congenital valvular dysplasia
+ * [MONDO:0016254](http://purl.obolibrary.org/obo/MONDO_0016254) rare variants of adenocarcinoma of the corpus uteri --> obsolete rare variants of adenocarcinoma of the corpus uteri
+ * [MONDO:0016629](http://purl.obolibrary.org/obo/MONDO_0016629) hemorrhagic disorder due to a platelet anomaly --> obsolete hemorrhagic disorder due to a platelet anomaly
+ * [MONDO:0016632](http://purl.obolibrary.org/obo/MONDO_0016632) thrombotic disorder due to a coagulation factors defect --> obsolete thrombotic disorder due to a coagulation factors defect
+ * [MONDO:0016635](http://purl.obolibrary.org/obo/MONDO_0016635) thrombotic disorder due to a platelet anomaly --> obsolete thrombotic disorder due to a platelet anomaly
+ * [MONDO:0016767](http://purl.obolibrary.org/obo/MONDO_0016767) cutaneous lichen planus --> obsolete cutaneous lichen planus
+ * [MONDO:0017141](http://purl.obolibrary.org/obo/MONDO_0017141) hemorrhagic disorder due to a constitutional thrombocytopenia --> obsolete hemorrhagic disorder due to a constitutional thrombocytopenia
+ * [MONDO:0017663](http://purl.obolibrary.org/obo/MONDO_0017663) inherited tremor disorder --> obsolete inherited tremor disorder
+ * [MONDO:0018729](http://purl.obolibrary.org/obo/MONDO_0018729) genetic vascular tumor --> obsolete genetic vascular tumor
+ * [MONDO:0019183](http://purl.obolibrary.org/obo/MONDO_0019183) inherited odontologic disease --> obsolete inherited odontologic disease
+ * [MONDO:0020092](http://purl.obolibrary.org/obo/MONDO_0020092) rare idiopathic male infertility --> obsolete rare idiopathic male infertility
+ * [MONDO:0021720](http://purl.obolibrary.org/obo/MONDO_0021720) fetal alcohol spectrum disorders --> obsolete fetal alcohol spectrum disorders
+
+## Renaming
+
+ * [MONDO:0004424](http://purl.obolibrary.org/obo/MONDO_0004424) familial glomangioma --> obsolete familial glomangioma
+ * [MONDO:0005261](http://purl.obolibrary.org/obo/MONDO_0005261) pervasive developmental disorder - not otherwise specified --> obsolete pervasive developmental disorder - not otherwise specified
+ * [MONDO:0005442](http://purl.obolibrary.org/obo/MONDO_0005442) type 1 diabetes nephropathy --> obsolete type 1 diabetes nephropathy
+ * [MONDO:0005443](http://purl.obolibrary.org/obo/MONDO_0005443) type 2 diabetes nephropathy --> obsolete type 2 diabetes nephropathy
+ * [MONDO:0005554](http://purl.obolibrary.org/obo/MONDO_0005554) rheumatologic disorder --> rheumatic disorder
+ * [MONDO:0007326](http://purl.obolibrary.org/obo/MONDO_0007326) paroxysmal nonkinesigenic dyskinesia 1 --> obsolete paroxysmal nonkinesigenic dyskinesia 1
+ * [MONDO:0008757](http://purl.obolibrary.org/obo/MONDO_0008757) alopecia universalis --> alopecia universalis congenita
+ * [MONDO:0009402](http://purl.obolibrary.org/obo/MONDO_0009402) hypertelorism-hypospadias-polysyndactyly syndrome --> acrofrontofacionasal dysostosis 2
+ * [MONDO:0014175](http://purl.obolibrary.org/obo/MONDO_0014175) mitochondrial DNA depletion syndrome 12 --> mitochondrial DNA depletion syndrome 12B (cardiomyopathic type), autosomal recessive
+ * [MONDO:0014243](http://purl.obolibrary.org/obo/MONDO_0014243) Prader-Willi syndrome due to point mutation --> Schaaf-Yang syndrome
+ * [MONDO:0014959](http://purl.obolibrary.org/obo/MONDO_0014959) mitochondrial DNA depletion syndrome 12a (cardiomyopathic type), autosomal dominant --> mitochondrial DNA depletion syndrome 12A (cardiomyopathic type), autosomal dominant
+ * [MONDO:0015119](http://purl.obolibrary.org/obo/MONDO_0015119) bronchopulmonary tumor --> obsolete bronchopulmonary tumor
+ * [MONDO:0015989](http://purl.obolibrary.org/obo/MONDO_0015989) congenital valvular dysplasia --> obsolete congenital valvular dysplasia
+ * [MONDO:0016254](http://purl.obolibrary.org/obo/MONDO_0016254) rare variants of adenocarcinoma of the corpus uteri --> obsolete rare variants of adenocarcinoma of the corpus uteri
+ * [MONDO:0016629](http://purl.obolibrary.org/obo/MONDO_0016629) hemorrhagic disorder due to a platelet anomaly --> obsolete hemorrhagic disorder due to a platelet anomaly
+ * [MONDO:0016632](http://purl.obolibrary.org/obo/MONDO_0016632) thrombotic disorder due to a coagulation factors defect --> obsolete thrombotic disorder due to a coagulation factors defect
+ * [MONDO:0016635](http://purl.obolibrary.org/obo/MONDO_0016635) thrombotic disorder due to a platelet anomaly --> obsolete thrombotic disorder due to a platelet anomaly
+ * [MONDO:0016767](http://purl.obolibrary.org/obo/MONDO_0016767) cutaneous lichen planus --> obsolete cutaneous lichen planus
+ * [MONDO:0017141](http://purl.obolibrary.org/obo/MONDO_0017141) hemorrhagic disorder due to a constitutional thrombocytopenia --> obsolete hemorrhagic disorder due to a constitutional thrombocytopenia
+ * [MONDO:0017663](http://purl.obolibrary.org/obo/MONDO_0017663) inherited tremor disorder --> obsolete inherited tremor disorder
+ * [MONDO:0018729](http://purl.obolibrary.org/obo/MONDO_0018729) genetic vascular tumor --> obsolete genetic vascular tumor
+ * [MONDO:0019183](http://purl.obolibrary.org/obo/MONDO_0019183) inherited odontologic disease --> obsolete inherited odontologic disease
+ * [MONDO:0020092](http://purl.obolibrary.org/obo/MONDO_0020092) rare idiopathic male infertility --> obsolete rare idiopathic male infertility
+ * [MONDO:0020726](http://purl.obolibrary.org/obo/MONDO_0020726) medullary cystic kidney disease 1 --> tubulointerstitial kidney disease, autosomal dominant, 2
+ * [MONDO:0021720](http://purl.obolibrary.org/obo/MONDO_0021720) fetal alcohol spectrum disorders --> obsolete fetal alcohol spectrum disorders
+ * [MONDO:0023007](http://purl.obolibrary.org/obo/MONDO_0023007) drachtman weinblatt sitarz syndrome --> Drachtman Weinblatt Sitarz syndrome
+ * [MONDO:0029141](http://purl.obolibrary.org/obo/MONDO_0029141) usher syndrome, type 4 --> Usher syndrome, type 4
+ * [MONDO:0030899](http://purl.obolibrary.org/obo/MONDO_0030899) oculocutaneous albinism, type 8 --> oculocutaneous albinism type 8
+ * [MONDO:0100232](http://purl.obolibrary.org/obo/MONDO_0100232) 'psoriatic arthritis, susceptibility to --> psoriatic arthritis, susceptibility to
+ * [MONDO:0700066](http://purl.obolibrary.org/obo/MONDO_0700066) myopathy caused by mutation in FKRP --> myopathy caused by varation in FKRP
+ * [MONDO:0700067](http://purl.obolibrary.org/obo/MONDO_0700067) myopathy caused by mutation in FKTN --> myopathy caused by varation in FKTN
+ * [MONDO:0700068](http://purl.obolibrary.org/obo/MONDO_0700068) myopathy caused by mutation in POMGNT1 --> myopathy caused by varation in POMGNT1
+ * [MONDO:0700069](http://purl.obolibrary.org/obo/MONDO_0700069) myopathy caused by mutation in POMGNT2 --> myopathy caused by varation in POMGNT2
+ * [MONDO:0700070](http://purl.obolibrary.org/obo/MONDO_0700070) myopathy caused by mutation in POMT1 --> myopathy caused by varation in POMT1
+ * [MONDO:0700071](http://purl.obolibrary.org/obo/MONDO_0700071) myopathy caused by mutation in POMT2 {xref="MONDO:patterns/disease_series_by_gene"} --> myopathy caused by varation in POMT2
+ * [MONDO:0700075](http://purl.obolibrary.org/obo/MONDO_0700075) congenital muscular dystrophy caused by mutation in POMGNT2 --> congenital muscular dystrophy caused by varation in POMGNT2
+ * [MONDO:0700084](http://purl.obolibrary.org/obo/MONDO_0700084) myopathy caused by mutation in GMPPB --> myopathy caused by varation in GMPPB
+
+
+# 2021-08-11
+
+## New Classes
+
+ * [MONDO:0100003](http://purl.obolibrary.org/obo/MONDO_0100003) susceptibility to angioedema induced by ACE inhibitors
+ * [MONDO:0100007](http://purl.obolibrary.org/obo/MONDO_0100007) chronic inflammatory demyelinating polyneuropathy
+ * [MONDO:0100017](http://purl.obolibrary.org/obo/MONDO_0100017) pityriasis rubra pilaris
+ * [MONDO:0100018](http://purl.obolibrary.org/obo/MONDO_0100018) adult onset pityriasis rubra pilaris
+ * [MONDO:0100037](http://purl.obolibrary.org/obo/MONDO_0100037) juvenile onset pityriasis rubra pilaris
+ * [MONDO:0100373](http://purl.obolibrary.org/obo/MONDO_0100373) acute myeloid leukemia, inv(16)(p13.1;q22)
+ * [MONDO:0100374](http://purl.obolibrary.org/obo/MONDO_0100374) acute myeloid leukemia, t(16;16)(p13.1;q22)
+ * [MONDO:0100375](http://purl.obolibrary.org/obo/MONDO_0100375) acute myeloid leukemia, t(15;17)(q24;q21)
+ * [MONDO:0100376](http://purl.obolibrary.org/obo/MONDO_0100376) acute myeloid leukemia, t(9;11)(p21.3;q23.3)
+ * [MONDO:0100377](http://purl.obolibrary.org/obo/MONDO_0100377) acute myeloid leukemia, t(10;11)(p12;q23)
+ * [MONDO:0100378](http://purl.obolibrary.org/obo/MONDO_0100378) acute myeloid leukemia, t(10;11)(p11.2;q23)
+ * [MONDO:0100379](http://purl.obolibrary.org/obo/MONDO_0100379) acute myeloid leukemia, t(1;11)(q21;q23)
+ * [MONDO:0100380](http://purl.obolibrary.org/obo/MONDO_0100380) acute myeloid leukemia, t(4;11)(q21;q23)
+ * [MONDO:0100381](http://purl.obolibrary.org/obo/MONDO_0100381) acute myeloid leukemia, t(6;11)(q27;q23)
+ * [MONDO:0100382](http://purl.obolibrary.org/obo/MONDO_0100382) acute myeloid leukemia, t(6;9)(p23;q34.1)
+ * [MONDO:0100383](http://purl.obolibrary.org/obo/MONDO_0100383) acute myeloid leukemia, t(11;19)(q23;p13)
+ * [MONDO:0100384](http://purl.obolibrary.org/obo/MONDO_0100384) acute myeloid leukemia, t(11;19)(q23;p13.1)
+ * [MONDO:0100385](http://purl.obolibrary.org/obo/MONDO_0100385) acute myeloid leukemia, t(11;19)(q23.3;p13.3)
+ * [MONDO:0100386](http://purl.obolibrary.org/obo/MONDO_0100386) acute myeloid leukemia, t(v;11q23.3)
+ * [MONDO:0100387](http://purl.obolibrary.org/obo/MONDO_0100387) acute myeloid leukemia, Monosomy 7
+ * [MONDO:0100388](http://purl.obolibrary.org/obo/MONDO_0100388) acute myeloid leukemia, Monosomy 5
+ * [MONDO:0100389](http://purl.obolibrary.org/obo/MONDO_0100389) acute myeloid leukemia, Trisomy 8
+ * [MONDO:0100390](http://purl.obolibrary.org/obo/MONDO_0100390) acute myeloid leukemia, der12p
+ * [MONDO:0100391](http://purl.obolibrary.org/obo/MONDO_0100391) acute myeloid leukemia, t(2;12)
+ * [MONDO:0100392](http://purl.obolibrary.org/obo/MONDO_0100392) acute myeloid leukemia, t(11;17)
+ * [MONDO:0100393](http://purl.obolibrary.org/obo/MONDO_0100393) acute myeloid leukemia, t(8;16)
+ * [MONDO:0100394](http://purl.obolibrary.org/obo/MONDO_0100394) acute myeloid leukemia, t(1;22)
+ * [MONDO:0100395](http://purl.obolibrary.org/obo/MONDO_0100395) acute myeloid leukemia, t(5;11)(q35;p15)
+ * [MONDO:0100396](http://purl.obolibrary.org/obo/MONDO_0100396) acute myeloid leukemia, t(7;12)(q36;p13)
+ * [MONDO:0100397](http://purl.obolibrary.org/obo/MONDO_0100397) acute myeloid leukemia, t(9;22)(q34.1;q11.2)
+ * [MONDO:0100398](http://purl.obolibrary.org/obo/MONDO_0100398) acute myeloid leukemia, inv(3)(q21.3;q26.2)
+ * [MONDO:0100399](http://purl.obolibrary.org/obo/MONDO_0100399) acute myeloid leukemia, t(3;3)(q21.3;q26.2)
+ * [MONDO:0100400](http://purl.obolibrary.org/obo/MONDO_0100400) acute myeloid leukemia, t(3;12)(q23;p12.3)
+ * [MONDO:0100401](http://purl.obolibrary.org/obo/MONDO_0100401) acute myeloid leukemia, del(5q31-q32)
+ * [MONDO:0100402](http://purl.obolibrary.org/obo/MONDO_0100402) acute myeloid leukemia, del(13q14-q21)
+ * [MONDO:0100403](http://purl.obolibrary.org/obo/MONDO_0100403) acute myeloid leukemia, loss of chromosome 17p
+ * [MONDO:0100404](http://purl.obolibrary.org/obo/MONDO_0100404) acute myeloid leukemia, MLL gene rearrangement
+ * [MONDO:0100405](http://purl.obolibrary.org/obo/MONDO_0100405) acute myeloid leukemia, Non-KMT2A MLLT10 rearrangement positive
+ * [MONDO:0100406](http://purl.obolibrary.org/obo/MONDO_0100406) acute myeloid leukemia, inv(16)(p13.3;q24.3)
+ * [MONDO:0100407](http://purl.obolibrary.org/obo/MONDO_0100407) acute myeloid leukemia, t(11;15)(p15;q35)
+ * [MONDO:0100408](http://purl.obolibrary.org/obo/MONDO_0100408) acute myeloid leukemia, t(16;21)(q24;q22)
+ * [MONDO:0100409](http://purl.obolibrary.org/obo/MONDO_0100409) acute myeloid leukemia, t(3;5)(q25;q34)
+ * [MONDO:0100410](http://purl.obolibrary.org/obo/MONDO_0100410) acute myeloid leukemia, t(16;21)(p11;q22)
+ * [MONDO:0100411](http://purl.obolibrary.org/obo/MONDO_0100411) acute myeloid leukemia, NPM1 gene mutation
+ * [MONDO:0100412](http://purl.obolibrary.org/obo/MONDO_0100412) acute myeloid leukemia, monoallelic CEBPA gene mutation
+ * [MONDO:0100413](http://purl.obolibrary.org/obo/MONDO_0100413) acute myeloid leukemia, biallelic CEBPA gene mutation
+ * [MONDO:0100414](http://purl.obolibrary.org/obo/MONDO_0100414) acute myeloid leukemia, CEBPA gene mutation
+ * [MONDO:0100415](http://purl.obolibrary.org/obo/MONDO_0100415) acute myeloid leukemia, FLT3 internal tandem duplication
+ * [MONDO:0100416](http://purl.obolibrary.org/obo/MONDO_0100416) acute myeloid leukemia, FLT3 tyrosine kinase domain point mutation
+ * [MONDO:0100417](http://purl.obolibrary.org/obo/MONDO_0100417) acute myeloid leukemia, WT1 gene mutation
+ * [MONDO:0100418](http://purl.obolibrary.org/obo/MONDO_0100418) acute myeloid leukemia, KIT exon 17 mutation
+ * [MONDO:0100419](http://purl.obolibrary.org/obo/MONDO_0100419) acute myeloid leukemia, KIT exon 8 mutation
+ * [MONDO:0100420](http://purl.obolibrary.org/obo/MONDO_0100420) acute myeloid leukemia, KIT gene mutation
+ * [MONDO:0100421](http://purl.obolibrary.org/obo/MONDO_0100421) acute myeloid leukemia, GATA1 gene mutation
+ * [MONDO:0100422](http://purl.obolibrary.org/obo/MONDO_0100422) acute myeloid leukemia, RUNX1 gene mutation
+ * [MONDO:0100423](http://purl.obolibrary.org/obo/MONDO_0100423) acute myeloid leukemia, PTPN11 gene mutation
+ * [MONDO:0100424](http://purl.obolibrary.org/obo/MONDO_0100424) acute myeloid leukemia, NRAS gene mutation
+ * [MONDO:0100425](http://purl.obolibrary.org/obo/MONDO_0100425) acute myeloid leukemia, KRAS gene mutation
+ * [MONDO:0700066](http://purl.obolibrary.org/obo/MONDO_0700066) myopathy caused by mutation in FKRP
+ * [MONDO:0700067](http://purl.obolibrary.org/obo/MONDO_0700067) myopathy caused by mutation in FKTN
+ * [MONDO:0700068](http://purl.obolibrary.org/obo/MONDO_0700068) myopathy caused by mutation in POMGNT1
+ * [MONDO:0700069](http://purl.obolibrary.org/obo/MONDO_0700069) myopathy caused by mutation in POMGNT2
+ * [MONDO:0700070](http://purl.obolibrary.org/obo/MONDO_0700070) myopathy caused by mutation in POMT1
+ * [MONDO:0700071](http://purl.obolibrary.org/obo/MONDO_0700071) myopathy caused by mutation in POMT2 {xref="MONDO:patterns/disease_series_by_gene"}
+ * [MONDO:0700075](http://purl.obolibrary.org/obo/MONDO_0700075) congenital muscular dystrophy caused by mutation in POMGNT2
+ * [MONDO:0700084](http://purl.obolibrary.org/obo/MONDO_0700084) myopathy caused by mutation in GMPPB
+
+## Obsoletions
+
+ * [MONDO:0005721](http://purl.obolibrary.org/obo/MONDO_0005721) coxsackievirus infectious disease --> obsolete coxsackievirus infectious disease
+ * [MONDO:0006448](http://purl.obolibrary.org/obo/MONDO_0006448) testicular teratoma (disease) --> obsolete testicular teratoma (disease)
+ * [MONDO:0015598](http://purl.obolibrary.org/obo/MONDO_0015598) acrodermatitis continua suppurativa of Hallopeau --> obsolete acrodermatitis continua suppurativa of Hallopeau
+ * [MONDO:0016597](http://purl.obolibrary.org/obo/MONDO_0016597) generalized pustular psoriasis --> obsolete generalized pustular psoriasis
+ * [MONDO:0018452](http://purl.obolibrary.org/obo/MONDO_0018452) deficiency of the interleukin-36 receptor antagonist --> obsolete deficiency of the interleukin-36 receptor antagonist
+ * [MONDO:0024293](http://purl.obolibrary.org/obo/MONDO_0024293) polyposis, gastric, Dos Santos and de Magalhaes 1980 --> obsolete polyposis, gastric, Dos Santos and de Magalhaes 1980
+ * [MONDO:0024351](http://purl.obolibrary.org/obo/MONDO_0024351) familial pityriasis rubra pilaris --> obsolete familial pityriasis rubra pilaris
+ * [MONDO:0029001](http://purl.obolibrary.org/obo/MONDO_0029001) chemically-induced disorder --> obsolete chemically-induced disorder
+ * [MONDO:0045028](http://purl.obolibrary.org/obo/MONDO_0045028) radiation or chemically induced disorder --> obsolete radiation or chemically induced disorder
+
+## Renaming
+
+ * [MONDO:0005721](http://purl.obolibrary.org/obo/MONDO_0005721) coxsackievirus infectious disease --> obsolete coxsackievirus infectious disease
+ * [MONDO:0006448](http://purl.obolibrary.org/obo/MONDO_0006448) testicular teratoma (disease) --> obsolete testicular teratoma (disease)
+ * [MONDO:0007691](http://purl.obolibrary.org/obo/MONDO_0007691) chronic inflammatory demyelinating polyneuropathy --> Guillain-Barre syndrome, familial
+ * [MONDO:0007953](http://purl.obolibrary.org/obo/MONDO_0007953) binder syndrome --> Binder syndrome
+ * [MONDO:0008251](http://purl.obolibrary.org/obo/MONDO_0008251) pityriasis rubra pilaris --> familial pityriasis rubra pilaris
+ * [MONDO:0010711](http://purl.obolibrary.org/obo/MONDO_0010711) tarp syndrome --> TARP syndrome
+ * [MONDO:0011922](http://purl.obolibrary.org/obo/MONDO_0011922) adult idiopathic neutropenia --> nonimmune chronic idiopathic neutropenia of adults
+ * [MONDO:0015598](http://purl.obolibrary.org/obo/MONDO_0015598) acrodermatitis continua suppurativa of Hallopeau --> obsolete acrodermatitis continua suppurativa of Hallopeau
+ * [MONDO:0016597](http://purl.obolibrary.org/obo/MONDO_0016597) generalized pustular psoriasis --> obsolete generalized pustular psoriasis
+ * [MONDO:0018452](http://purl.obolibrary.org/obo/MONDO_0018452) deficiency of the interleukin-36 receptor antagonist --> obsolete deficiency of the interleukin-36 receptor antagonist
+ * [MONDO:0020113](http://purl.obolibrary.org/obo/MONDO_0020113) red cell aplasia --> primary acquired red cell aplasia
+ * [MONDO:0024293](http://purl.obolibrary.org/obo/MONDO_0024293) polyposis, gastric, Dos Santos and de Magalhaes 1980 --> obsolete polyposis, gastric, Dos Santos and de Magalhaes 1980
+ * [MONDO:0024351](http://purl.obolibrary.org/obo/MONDO_0024351) familial pityriasis rubra pilaris --> obsolete familial pityriasis rubra pilaris
+ * [MONDO:0029001](http://purl.obolibrary.org/obo/MONDO_0029001) chemically-induced disorder --> obsolete chemically-induced disorder
+ * [MONDO:0045028](http://purl.obolibrary.org/obo/MONDO_0045028) radiation or chemically induced disorder --> obsolete radiation or chemically induced disorder
+ * [MONDO:0054813](http://purl.obolibrary.org/obo/MONDO_0054813) ehlers-danlos syndrome, classic-like, 2 --> Ehlers-Danlos syndrome, classic-like, 2
+
+
 # 2021-08-03
 
 ## New Classes
