@@ -1,0 +1,21 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+SELECT DISTINCT ?term ?property ?value ?p ?v WHERE
+{
+	?term ?property ?value .
+  	OPTIONAL {
+      VALUES ?p { oboInOwl:hasSynonymType oboInOwl:source oboInOwl:hasDbXref }
+  		?axiom
+      	a owl:Axiom ;
+     	  owl:annotatedSource ?term ;
+      	owl:annotatedProperty ?property ;
+      	owl:annotatedTarget ?value ;
+    	?p ?v .
+  	}
+	FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER(!isBlank(?value))
+}
