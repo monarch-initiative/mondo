@@ -108,30 +108,4 @@ Synonyms can be further annotated with synonym types. Click [here](https://mondo
 1. Click OK
 1. Click OK
 
-#### Add source to parent (subClassOf assertion)
-
-In Mondo, all of the parents (subClassOf assertions) should have a source, so we capture the provenance of where the superclass (subClassOf/parent) assertion came from.
-
-1. Click on the @ symbol next to the parent class
-2. Click the + next to Annotations in the pop up box
-3. Select source from the annotations list
-4. Add a source, such as an OMIM or Orphanet ID, your ORCID, or a PMID ID.
-5. Note - you can add more than one source, as displayed in the example below.
-
-![image](https://user-images.githubusercontent.com/6722114/130161740-1ead68d9-7444-4336-a8a6-45df388ce448.png)
-
-![image](https://user-images.githubusercontent.com/6722114/130161756-dad35b4a-ce8f-485b-9841-9cc7465ca088.png)
-
-### Add subset tags
-
-1. See a description of subsets [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#subsets).
-1. To add a subset tag, click the + above Annotations in the Annotations box
-1. Chose in_subset in the annotations list 
-1. Click Entity IRI tab 
-1. Click Annotation Properties tab 
-1. Scroll down to subset_property and expand the list
-1. Chose subset tag, such as obsoletion_candidate
-
-### Commit to GitHub
-
 Save your work and view the diff in GitHub Desktop and [create a pull request](https://mondo.readthedocs.io/en/latest/editors-guide/d-github-pr-workflow/).

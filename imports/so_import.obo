@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-05/imports/so_import.owl
+data-version: mondo/releases/2021-08-03/imports/so_import.owl
 ontology: mondo/imports/so_import
 
 [Term]
@@ -87,6 +87,7 @@ name: mature_transcript
 def: "A transcript which has undergone the necessary modifications, if any, for its function. In eukaryotes this includes, for example, processing of introns, cleavage, base modification, and modifications to the 5' and/or the 3' ends, other than addition of bases. In bacteria functional mRNAs are usually not modified." []
 synonym: "mature transcript" EXACT []
 is_a: SO:0000673 ! transcript
+relationship: derives_from SO:0000185 ! primary_transcript
 
 [Term]
 id: SO:0000240
@@ -94,6 +95,7 @@ name: chromosome_variation
 def: "A deviation in chromosome structure or number." []
 synonym: "chromosome variation" EXACT []
 is_a: SO:0001507 ! variant_collection
+relationship: part_of SO:0001524 ! chromosomally_aberrant_genome
 
 [Term]
 id: SO:0000248
@@ -111,6 +113,7 @@ synonym: "INSDC_qualifier:unknown" BROAD []
 synonym: "ribosomal ribonucleic acid" EXACT []
 synonym: "ribosomal RNA" EXACT []
 is_a: SO:0000655 ! ncRNA
+relationship: derives_from SO:0000209 ! rRNA_primary_transcript
 
 [Term]
 id: SO:0000298
@@ -223,6 +226,7 @@ synonym: "cytosolic large subunit rRNA" EXACT []
 synonym: "cytosolic LSU RNA" EXACT []
 synonym: "cytosolic LSU rRNA" EXACT []
 is_a: SO:0002343 ! cytosolic_rRNA
+relationship: derives_from SO:0000325 ! rRNA_large_subunit_primary_transcript
 
 [Term]
 id: SO:0000655
@@ -260,6 +264,7 @@ name: transcript
 def: "An RNA synthesized on a DNA or RNA template by an RNA polymerase." []
 synonym: "INSDC_feature:misc_RNA" BROAD []
 is_a: SO:0000831 ! gene_member_region
+relationship: overlaps SO:0002300 ! unit_of_gene_expression
 
 [Term]
 id: SO:0000704
@@ -267,6 +272,7 @@ name: gene
 def: "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions." []
 synonym: "INSDC_feature:gene" EXACT []
 is_a: SO:0001411 ! biological_region
+relationship: member_of SO:0005855 ! gene_group
 
 [Term]
 id: SO:0000733
@@ -288,6 +294,7 @@ name: gene_member_region
 def: "A region of a gene." []
 synonym: "gene member region" EXACT []
 is_a: SO:0001411 ! biological_region
+relationship: member_of SO:0000704 ! gene
 
 [Term]
 id: SO:0000946
@@ -326,6 +333,9 @@ id: SO:0001026
 name: genome
 def: "A genome is the sum of genetic material within a cell or virion." []
 is_a: SO:0001260 ! sequence_collection
+intersection_of: SO:0001260 ! sequence_collection
+intersection_of: has_part SO:0001235 ! replicon
+relationship: has_part SO:0001235 ! replicon
 
 [Term]
 id: SO:0001059
@@ -347,6 +357,9 @@ name: protein_coding_gene
 def: "A gene that codes for an RNA that can be translated into a protein." []
 synonym: "protein coding gene" EXACT []
 is_a: SO:0000704 ! gene
+intersection_of: SO:0000704 ! gene
+intersection_of: has_quality SO:0000010 ! protein_coding
+relationship: has_quality SO:0000010 ! protein_coding
 
 [Term]
 id: SO:0001235
@@ -382,6 +395,11 @@ synonym: "miRNA gene" EXACT []
 synonym: "stRNA gene" EXACT []
 synonym: "stRNA_gene" EXACT []
 is_a: SO:0002342 ! sncRNA_gene
+intersection_of: SO:0002342 ! sncRNA_gene
+intersection_of: has_quality SO:0000571 ! miRNA_encoding
+intersection_of: has_quality SO:0000656 ! stRNA_encoding
+relationship: has_quality SO:0000571 ! miRNA_encoding
+relationship: has_quality SO:0000656 ! stRNA_encoding
 
 [Term]
 id: SO:0001267
@@ -389,6 +407,9 @@ name: snoRNA_gene
 def: "A gene encoding a small noncoding RNA that participates in the processing or chemical modifications of many RNAs, including ribosomal RNAs and spliceosomal RNAs." []
 synonym: "snoRNA gene" EXACT []
 is_a: SO:0002342 ! sncRNA_gene
+intersection_of: SO:0002342 ! sncRNA_gene
+intersection_of: has_quality SO:0000578 ! snoRNA_encoding
+relationship: has_quality SO:0000578 ! snoRNA_encoding
 
 [Term]
 id: SO:0001268
@@ -404,6 +425,9 @@ name: tRNA_gene
 def: "A noncoding RNA that binds to a specific amino acid to allow that amino acid to be used by the ribosome during translation of RNA." []
 synonym: "tRNA gene" EXACT []
 is_a: SO:0002342 ! sncRNA_gene
+intersection_of: SO:0002342 ! sncRNA_gene
+intersection_of: has_quality SO:0000663 ! tRNA_encoding
+relationship: has_quality SO:0000663 ! tRNA_encoding
 
 [Term]
 id: SO:0001411
@@ -449,6 +473,9 @@ name: variant_collection
 def: "A collection of one or more sequences of an individual." []
 synonym: "variant collection" RELATED []
 is_a: SO:0001260 ! sequence_collection
+intersection_of: SO:0001260 ! sequence_collection
+intersection_of: has_part SO:0001059 ! sequence_alteration
+relationship: has_part SO:0001059 ! sequence_alteration
 
 [Term]
 id: SO:0001508
@@ -593,6 +620,9 @@ name: intrachromosomal_mutation
 def: "A chromosomal structure variation within a single chromosome." []
 synonym: "intrachromosomal mutation" EXACT []
 is_a: SO:1000183 ! chromosome_structure_variation
+intersection_of: SO:1000183 ! chromosome_structure_variation
+intersection_of: has_quality SO:0001510 ! intrachromosomal
+relationship: has_quality SO:0001510 ! intrachromosomal
 
 [Term]
 id: SO:1000029
@@ -604,6 +634,9 @@ synonym: "(fungi)D" RELATED []
 synonym: "chromosomal deletion" EXACT []
 synonym: "deficiency" EXACT []
 is_a: SO:1000028 ! intrachromosomal_mutation
+intersection_of: SO:1000028 ! intrachromosomal_mutation
+intersection_of: has_part SO:0000159 ! deletion
+relationship: has_part SO:0000159 ! deletion
 
 [Term]
 id: SO:1000030
@@ -614,6 +647,9 @@ synonym: "(Drosophila)In" RELATED []
 synonym: "(fungi)In" RELATED []
 synonym: "chromosomal inversion" EXACT []
 is_a: SO:1000028 ! intrachromosomal_mutation
+intersection_of: SO:1000028 ! intrachromosomal_mutation
+intersection_of: has_part SO:1000036 ! inversion
+relationship: has_part SO:1000036 ! inversion
 
 [Term]
 id: SO:1000036
@@ -640,6 +676,9 @@ synonym: "(Drosophila)R" RELATED []
 synonym: "(fungi)C" RELATED []
 synonym: "ring chromosome" EXACT []
 is_a: SO:1000028 ! intrachromosomal_mutation
+intersection_of: SO:1000028 ! intrachromosomal_mutation
+intersection_of: has_quality SO:0000988 ! circular
+relationship: has_quality SO:0000988 ! circular
 
 [Term]
 id: SO:1000182
@@ -656,4 +695,35 @@ def: "An alteration of the genome that leads to a change in the structure or num
 synonym: "chromosome structure variation" EXACT []
 synonym: "snpEff:CHROMOSOME_LARGE_DELETION" EXACT []
 is_a: SO:0000240 ! chromosome_variation
+
+[Typedef]
+id: derives_from
+name: derives_from
+is_transitive: true
+
+[Typedef]
+id: has_part
+name: has_part
+def: "Inverse of part_of." []
+
+[Typedef]
+id: has_quality
+name: has_quality
+
+[Typedef]
+id: member_of
+name: member_of
+is_transitive: true
+is_a: part_of ! part_of
+
+[Typedef]
+id: overlaps
+name: overlaps
+def: "X overlaps Y iff there exists some Z such that Z contained_by X and Z contained_by Y." []
+
+[Typedef]
+id: part_of
+name: part_of
+def: "X part_of Y if X is a subregion of Y." []
+is_transitive: true
 

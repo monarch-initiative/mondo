@@ -3,7 +3,7 @@ This is a listing of all the patterns hosted as part of this directory
 
 ## Patterns in dosdp-patterns
 ### Omim disease series by gene
-*This pattern is meant to be used for OMIM Mendelian diseases (ie unitary genetic diseases, as described in [PMID:33417889](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7820621/)), including children of OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. Notes about the OMIMPS (see also OMIM_phenotypic_series.yaml):  - every instance of the OMIMPS metaclass should be equivalent to (via annotated xref) to something in OMIMPS namespace - the OMIMPS will never have an asserted causative gene as logical axiom (and no single causative gene in text def) - the OMIMPS must never be equivalent to an OMIM:nnnnnn (often redundant with the above rule) - the OMIMPS must have an acronym synonym, e.g. HPE - the OMIMPS must have two or more subclasses (direct or indirect) that are equivalent to OMIMs and conform to this pattern - the subclasses should (not must) have a logical def that uses the PS as a genus  - the OMIM subclasses must have acronym synonyms that are the parent syn + number, e.g. HPE1, HPE2 - the primary label for the children should also be parent + {"type"} + number - the first member will usually have the same number local ID as the PS Examples: [holoprosencephaly 1](http://purl.obolibrary.org/obo/MONDO_0009349), [3M syndrome 1](http://purl.obolibrary.org/obo/MONDO_0010117)*
+*This pattern is meant to be used for OMIM diseases, including children of OMIM phenotypic series (OMIMPS), which are represented as grouping classes in Mondo. Notes about the OMIMPS (see also OMIM_phenotypic_series.yaml):  - every instance of the OMIMPS metaclass should be equivalent to (via annotated xref) to something in OMIMPS namespace - the OMIMPS will never have an asserted causative gene as logical axiom (and no single causative gene in text def) - the OMIMPS must never be equivalent to an OMIM:nnnnnn (often redundant with the above rule) - the OMIMPS must have an acronym synonym, e.g. HPE - the OMIMPS must have two or more subclasses (direct or indirect) that are equivalent to OMIMs and conform to this pattern - the subclasses should (not must) have a logical def that uses the PS as a genus  - the OMIM subclasses must have acronym synonyms that are the parent syn + number, e.g. HPE1, HPE2 - the primary label for the children should also be parent + {"type"} + number - the first member will usually have the same number local ID as the PS Examples: [holoprosencephaly 1](http://purl.obolibrary.org/obo/MONDO_0009349), [3M syndrome 1](http://purl.obolibrary.org/obo/MONDO_0010117)*
 
 | Attribute | Info |
 |----------|----------|
@@ -50,8 +50,7 @@ Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMI
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acquired.tsv)
 ### Acute
-*This pattern is applied to diseases that are described as having an acute onset, i.e. the sudden appearance of disease manifestations over a short period of time.
-Examples: [acute bronchiolitis](http://purl.obolibrary.org/obo/MONDO_0020680), [acute liver failure](http://purl.obolibrary.org/obo/MONDO_0019542)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -59,22 +58,22 @@ Examples: [acute bronchiolitis](http://purl.obolibrary.org/obo/MONDO_0020680), [
 | Name | acute |
 | Classes | PATO:0000389, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acute.tsv) |
 
 #### Data preview: 
 | defined:class                                | defined:class:label                       | disease                                      | disease:label                       |
 |:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:------------------------------------|
-| MONDO:0003540 | acute T cell leukemia                     | MONDO:0005525 | T-cell leukemia                     |
+| MONDO:0020686 | acute adenoiditis                         | MONDO:0000261 | adenoiditis                         |
 | MONDO:0001090 | acute anterolateral myocardial infarction | MONDO:0006652 | anterolateral myocardial infarction |
-| MONDO:0020680 | acute bronchiolitis                       | MONDO:0002465 | bronchiolitis                       |
-| MONDO:0001081 | acute cervicitis                          | MONDO:0002345 | cervicitis                          |
+| MONDO:0020680 | acute bronchiolitis                       | MONDO:0002465 | bronchiolitis (disease)             |
+| MONDO:0001081 | acute cervicitis                          | MONDO:0002345 | cervicitis (disease)                |
 | MONDO:0001930 | acute cholangitis                         | MONDO:0004789 | cholangitis                         |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acute.tsv)
 ### Adenocarcinoma
-*Adenocarcinoma is a common cancer characterized by the presence of malignant glandular cells. This is a design pattern for classes representing adenocarcinomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer. We use the generic disease has location relation, which generalized over primary and secondary sites.
-Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016275), [pituitary adenocarcinoma (disease)](http://purl.obolibrary.org/obo/MONDO_0017582)*
+*This is auto-generated. Add your description here
+Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_0016275), [pituitary adenocarcinoma (disease)](http://purl.obolibrary.org/obo/MONDO_0017582), [ureter adenocarcinoma](http://purl.obolibrary.org/obo/MONDO_0003216) (56 total)*
 
 | Attribute | Info |
 |----------|----------|
@@ -82,11 +81,11 @@ Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_
 | Name | adenocarcinoma disease has location X |
 | Classes | MONDO:0004970, owl:Thing,  |
 | Variables | location (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenocarcinoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | location                                      | location:label         |
+| defined:class                                | defined:class:label                  | v0                                            | v0:label               |
 |:---------------------------------------------|:-------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003853 | Bartholin gland adenocarcinoma       | UBERON:0000460 | major vestibular gland |
 | MONDO:0003410 | Wolffian duct adenocarcinoma         | UBERON:0003074 | mesonephric duct       |
@@ -96,7 +95,8 @@ Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenocarcinoma.tsv)
 ### Adenoma
-*Adenomas are neoplasms arising from epithelium. This is a design pattern for classes representing adenomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer. We use the generic `disease has location` relation, which is generalized over primary and secondary sites. Examples: [pituitary gland adenoma](http://purl.obolibrary.org/obo/MONDO_0006373), [breast adenoma](http://purl.obolibrary.org/obo/MONDO_0002058)*
+*This is auto-generated. Add your description here
+Examples: [pituitary gland adenoma](http://purl.obolibrary.org/obo/MONDO_0006373), [breast adenoma](http://purl.obolibrary.org/obo/MONDO_0002058), [Bartholin gland adenoma](http://purl.obolibrary.org/obo/MONDO_0003419) (31 total)*
 
 | Attribute | Info |
 |----------|----------|
@@ -104,11 +104,11 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Name | adenoma disease has location X |
 | Classes | MONDO:0004972, owl:Thing,  |
 | Variables | location (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label        | location                                      | location:label         |
+| defined:class                                | defined:class:label        | v0                                            | v0:label               |
 |:---------------------------------------------|:---------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003419 | Bartholin gland adenoma    | UBERON:0000460 | major vestibular gland |
 | MONDO:0021301 | adenoma of nipple          | UBERON:0002030 | nipple                 |
@@ -118,8 +118,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenoma.tsv)
 ### Adenosquamous carcinoma
-*An adenosquamous carcinoma is a carcinoma composed of malignant glandular cells and malignant squamous cells. This is a design pattern for classes representing adenosquamous carcinomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer. We use the generic 'disease has location' relation, which generalized over primary and secondary sites.
-Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003548), [Bartholin gland adenosquamous carcinoma] (http://purl.obolibrary.org/obo/MONDO_0003555), [gastric adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006034)*
+*This is auto-generated. Add your description here
+Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003548), [Bartholin's gland adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0003555), [gastric adenosquamous carcinoma](http://purl.obolibrary.org/obo/MONDO_0006034) (16 total)*
 
 | Attribute | Info |
 |----------|----------|
@@ -127,11 +127,11 @@ Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_
 | Name | adenosquamous carcinoma disease has location X |
 | Classes | MONDO:0006074, UBERON:0010000,  |
 | Variables | location (UBERON:0010000),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenosquamous_carcinoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                     | location                                      | location:label         |
+| defined:class                                | defined:class:label                     | v0                                            | v0:label               |
 |:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003555 | Bartholin gland adenosquamous carcinoma | UBERON:0000460 | major vestibular gland |
 | MONDO:0003549 | adenosquamous bile duct carcinoma       | UBERON:0002394 | bile duct              |
@@ -141,8 +141,7 @@ Examples: [adenosquamous breast carcinoma](http://purl.obolibrary.org/obo/MONDO_
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenosquamous_carcinoma.tsv)
 ### Adult
-*An instance of a disease that has an onset of signs or symptoms of disease between the age of 16 years or later (adult onset).
-Examples: [adult brain stem neoplasm](http://purl.obolibrary.org/obo/MONDO_0024797), [adult-onset myasthenia gravis](http://purl.obolibrary.org/obo/MONDO_0018324)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -150,7 +149,7 @@ Examples: [adult brain stem neoplasm](http://purl.obolibrary.org/obo/MONDO_00247
 | Name | adult |
 | Classes | HP:0003581, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adult.tsv) |
 
 #### Data preview: 
@@ -182,7 +181,7 @@ Examples: [allergic respiratory disease](http://purl.obolibrary.org/obo/MONDO_00
 | MONDO:0004784 | allergic asthma              | MONDO:0004979 | asthma                     |
 | MONDO:0006525 | allergic contact dermatitis  | MONDO:0005480 | contact dermatitis         |
 | MONDO:0005271 | allergic disease             | MONDO:0000001 | disease or disorder        |
-| MONDO:0021202 | allergic otitis media        | MONDO:0005441 | otitis media               |
+| MONDO:0021202 | allergic otitis media        | MONDO:0005441 | otitis media (disease)     |
 | MONDO:0000771 | allergic respiratory disease | MONDO:0005087 | respiratory system disease |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergic_form_of_disease.tsv)
@@ -197,11 +196,20 @@ Examples: [egg allergy](http://purl.obolibrary.org/obo/MONDO_0005741), [peach al
 | Classes | MONDO:0005271, owl:Thing,  |
 | Variables | substance (owl:Thing),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
-| Examples |  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergy.tsv) |
 
+#### Data preview: 
+| defined:class                                | defined:class:label     | substance                                      | substance:label   |
+|:---------------------------------------------|:------------------------|:-----------------------------------------------|:------------------|
+| MONDO:0000789 | Atlantic cod allergy    | NCBITaxon:8049  | Gadus morhua      |
+| MONDO:0000790 | Atlantic salmon allergy | NCBITaxon:8030  | Salmo salar       |
+| MONDO:0000802 | Indian prawn allergy    | NCBITaxon:29960 | Penaeus indicus   |
+| MONDO:0000773 | Timothy grass allergy   | NCBITaxon:15957 | Phleum pratense   |
+| MONDO:0000779 | apple allergy           | NCBITaxon:3750  | Malus domestica   |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergy.tsv)
 ### Autoimmune
-*An instance of a disease that is brought about or caused by autoimmunity.
-Examples: [autoimmune cardiomyopathy](http://purl.obolibrary.org/obo/MONDO_0030701), [autoimmune pancreatitis](http://purl.obolibrary.org/obo/MONDO_0015175)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -223,8 +231,7 @@ Examples: [autoimmune cardiomyopathy](http://purl.obolibrary.org/obo/MONDO_00307
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autoimmune.tsv)
 ### Autoimmune inflammation
-*An instance of an autoimmune disease that is described by inflammation in a specific anatomical entity.
-Example: [autoimmune thyroid disease](http://purl.obolibrary.org/obo/MONDO_0005623)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -242,8 +249,7 @@ Example: [autoimmune thyroid disease](http://purl.obolibrary.org/obo/MONDO_00056
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autoimmune_inflammation.tsv)
 ### Autosomal dominant
-*This pattern is applied to autosomal dominant forms of an inherited disease.
-Examples: [autosomal dominant cerebellar ataxia](http://purl.obolibrary.org/obo/MONDO_0020380), [autosomal dominant osteopetrosis](http://purl.obolibrary.org/obo/MONDO_0020645)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -251,7 +257,7 @@ Examples: [autosomal dominant cerebellar ataxia](http://purl.obolibrary.org/obo/
 | Name | autosomal_dominant |
 | Classes | HP:0000006, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_dominant.tsv) |
 
 #### Data preview: 
@@ -265,8 +271,7 @@ Examples: [autosomal dominant cerebellar ataxia](http://purl.obolibrary.org/obo/
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_dominant.tsv)
 ### Autosomal recessive
-*This pattern is applied to autosomal recessive forms of an inherited disease.
-Examples: [autosomal recessive brachyolmia](http://purl.obolibrary.org/obo/MONDO_0018662), [autosomal recessive sideroblastic anemia](http://purl.obolibrary.org/obo/MONDO_0016828)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -274,7 +279,7 @@ Examples: [autosomal recessive brachyolmia](http://purl.obolibrary.org/obo/MONDO
 | Name | autosomal_recessive |
 | Classes | HP:0000007, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_recessive.tsv) |
 
 #### Data preview: 
@@ -406,8 +411,7 @@ We use the generic 'disease has location' relation, which generalized over prima
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/carcinoma.tsv)
 ### Carcinoma in situ
-*This is a Design pattern for classes representing in situ carcinomas based on their location.
-Examples: [breast carcinoma in situ](http://purl.obolibrary.org/obo/MONDO_0004658), [liver carcinoma in situ](http://purl.obolibrary.org/obo/MONDO_0004715)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -415,7 +419,7 @@ Examples: [breast carcinoma in situ](http://purl.obolibrary.org/obo/MONDO_000465
 | Name | carcinoma_in_situ |
 | Classes | MONDO:0004647, owl:Thing,  |
 | Variables | location (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/carcinoma_in_situ.tsv) |
 
 #### Data preview: 
@@ -429,8 +433,7 @@ Examples: [breast carcinoma in situ](http://purl.obolibrary.org/obo/MONDO_000465
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/carcinoma_in_situ.tsv)
 ### Childhood
-*An instance of a disease that has an onset of signs or symptoms of disease between the age of 1 to 5 years (childhood onset).
-Examples: [childhood astrocytic tumor](http://purl.obolibrary.org/obo/MONDO_0002505), [childhood malignant melanoma](http://purl.obolibrary.org/obo/MONDO_0042494)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -438,22 +441,21 @@ Examples: [childhood astrocytic tumor](http://purl.obolibrary.org/obo/MONDO_0002
 | Name | childhood |
 | Classes | HP:0011463, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/childhood.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                       | disease                                      | disease:label                  |
-|:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:-------------------------------|
-| MONDO:0016241 | alternating hemiplegia of childhood       | MONDO:0016210 | alternating hemiplegia         |
-| MONDO:0016114 | bulbospinal muscular atrophy of childhood | MONDO:0016113 | bulbospinal muscular atrophy   |
-| MONDO:0000870 | childhood acute lymphoblastic leukemia    | MONDO:0004967 | acute lymphoblastic leukemia   |
-| MONDO:0004996 | childhood acute myeloid leukemia          | MONDO:0018874 | acute myeloid leukemia         |
-| MONDO:0044767 | childhood adrenal gland pheochromocytoma  | MONDO:0004974 | adrenal gland pheochromocytoma |
+| defined:class                                | defined:class:label                       | disease                                      | disease:label                          |
+|:---------------------------------------------|:------------------------------------------|:---------------------------------------------|:---------------------------------------|
+| MONDO:0016241 | alternating hemiplegia of childhood       | MONDO:0016210 | alternating hemiplegia                 |
+| MONDO:0016114 | bulbospinal muscular atrophy of childhood | MONDO:0016113 | bulbospinal muscular atrophy           |
+| MONDO:0000870 | childhood acute lymphoblastic leukemia    | MONDO:0004967 | acute lymphoblastic leukemia (disease) |
+| MONDO:0004996 | childhood acute myeloid leukemia          | MONDO:0018874 | acute myeloid leukemia                 |
+| MONDO:0044767 | childhood adrenal gland pheochromocytoma  | MONDO:0004974 | adrenal gland pheochromocytoma         |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/childhood.tsv)
 ### Chronic
-*This pattern is applied to diseases that are described as having an chronic duration, i.e. a disease having a slow progressive course of indefinite duration.
-Examples: [chronic bronchitis](http://purl.obolibrary.org/obo/MONDO_0005607), [chronic hepatitis B virus infection](http://purl.obolibrary.org/obo/MONDO_0005366)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -461,7 +463,7 @@ Examples: [chronic bronchitis](http://purl.obolibrary.org/obo/MONDO_0005607), [c
 | Name | chronic |
 | Classes | PATO:0001863, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/chronic.tsv) |
 
 #### Data preview: 
@@ -471,12 +473,11 @@ Examples: [chronic bronchitis](http://purl.obolibrary.org/obo/MONDO_0005607), [c
 | MONDO:0001251 | chronic apical periodontitis                  | MONDO:0004508 | periapical periodontitis       |
 | MONDO:0005607 | chronic bronchitis                            | MONDO:0003781 | bronchitis                     |
 | MONDO:0004924 | chronic canaliculitis                         | MONDO:0005631 | actinomycosis                  |
-| MONDO:0002030 | chronic cervicitis                            | MONDO:0002345 | cervicitis                     |
+| MONDO:0002030 | chronic cervicitis                            | MONDO:0002345 | cervicitis (disease)           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/chronic.tsv)
 ### Congenital
-*An instance of a disease in which the disease is present at birth, regardless of cause.
-Examples: [congenital agammaglobulinemia](http://purl.obolibrary.org/obo/MONDO_0001902), [congenital nystagmus](http://purl.obolibrary.org/obo/MONDO_0005712)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -484,22 +485,21 @@ Examples: [congenital agammaglobulinemia](http://purl.obolibrary.org/obo/MONDO_0
 | Name | congenital |
 | Classes | MONDO:0021140, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/congenital.tsv) |
 
 #### Data preview: 
 | defined:class                                | defined:class:label               | disease                                      | disease:label                  |
 |:---------------------------------------------|:----------------------------------|:---------------------------------------------|:-------------------------------|
 | MONDO:0001902 | congenital agammaglobulinemia     | MONDO:0015977 | agammaglobulinemia             |
-| MONDO:0000577 | congenital anemia                 | MONDO:0002280 | anemia                         |
+| MONDO:0000577 | congenital anemia                 | MONDO:0002280 | anemia (disease)               |
 | MONDO:0017375 | congenital enterovirus infection  | MONDO:0005747 | enterovirus infectious disease |
 | MONDO:0004527 | congenital granular cell tumor    | MONDO:0006235 | granular cell tumor            |
 | MONDO:0009332 | congenital hematological disorder | MONDO:0005570 | hematologic disease            |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/congenital.tsv)
 ### Consequence of infectious disease
-*This pattern is applied to a disease that is caused by an infectious agent.
-Examples: [hepatitis C induced liver cirrhosis](http://purl.obolibrary.org/obo/MONDO_0005448), [rubella encephalitis](http://purl.obolibrary.org/obo/MONDO_0020648)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -507,31 +507,19 @@ Examples: [hepatitis C induced liver cirrhosis](http://purl.obolibrary.org/obo/M
 | Name | consequence_of_infectious_disease |
 | Classes | MONDO:0000001, MONDO:0005550,  |
 | Variables | parent (MONDO:0000001), cause (MONDO:0005550),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/consequence_of_infectious_disease.tsv) |
 
 #### Data preview: 
 | defined:class                                | defined:class:label                         | cause                                        | cause:label                   | parent                                       | parent:label              |
 |:---------------------------------------------|:--------------------------------------------|:---------------------------------------------|:------------------------------|:---------------------------------------------|:--------------------------|
-| MONDO:0020689 | AIDS dementia complex                       | MONDO:0005109 | HIV infectious disease        | MONDO:0001627 | dementia                  |
 | MONDO:0005491 | Chagas cardiomyopathy                       | MONDO:0001444 | Chagas disease                | MONDO:0004994 | cardiomyopathy            |
 | MONDO:0000890 | Zika virus congenital syndrome              | MONDO:0018661 | Zika virus infectious disease | MONDO:0000839 | congenital abnormality    |
 | MONDO:0005448 | hepatitis C induced liver cirrhosis         | MONDO:0005231 | hepatitis C virus infection   | MONDO:0005155 | cirrhosis of liver        |
 | MONDO:0034103 | infection-related hemolytic uremic syndrome | MONDO:0005550 | infectious disease            | MONDO:0001549 | hemolytic-uremic syndrome |
+| MONDO:0002812 | infectious otitis interna                   | MONDO:0005550 | infectious disease            | MONDO:0002008 | labyrinthitis             |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/consequence_of_infectious_disease.tsv)
-### Dependence on substance
-*Dependence on a substance that specifies the environmental stimulus such as alcohol, cocaine, etc. Example: [dependence on cocaine](http://purl.obolibrary.org/obo/MONDO_0005186).*
-
-| Attribute | Info |
-|----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/dependence_on_substance.yaml |
-| Name | dependence_on_substance |
-| Classes | MONDO:0004938, CHEBI:24431,  |
-| Variables | stimulus (CHEBI:24431),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-7463-6306](https://orcid.org/0000-0002-7463-6306),  |
-| Examples |  |
-
 ### Disease by dysfunctional structure
 *Diseases classified by a perturbation in an anatomical structure (such as a subcellular component, or an organ)*
 
@@ -549,10 +537,11 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |:---------------------------------------------|:--------------------------------|:----------------------------------------------|:----------------------|
 | MONDO:0004880 | bowel dysfunction               | UBERON:0004907 | lower digestive tract |
 | MONDO:0001343 | impaired renal function disease | UBERON:0002113 | kidney                |
+| MONDO:0019744 | rare renal tubular disease      | UBERON:0009773 | renal tubule          |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_by_dysfunctional_structure.tsv)
 ### Disease series by gene
-*This pattern is for diseases that are caused by a single variation or mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome.  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)*
+*This pattern is for diseases that are caused by a single mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome.  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)*
 
 | Attribute | Info |
 |----------|----------|
@@ -600,7 +589,7 @@ Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MON
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disrupts_process.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label     | process                                   | process:label                                         |
+| defined:class                                | defined:class:label     | v0                                        | v0:label                                              |
 |:---------------------------------------------|:------------------------|:------------------------------------------|:------------------------------------------------------|
 | MONDO:0012996 | AGAT deficiency         | GO:0015068 | glycine amidinotransferase activity                   |
 | MONDO:0021190 | DNA repair disease      | GO:0006281 | DNA repair                                            |
@@ -610,7 +599,7 @@ Examples: [type III hypersensitivity disease](http://purl.obolibrary.org/obo/MON
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disrupts_process.tsv)
 ### Environmental stimulus
-*A disease that is caused by exposure to an environmental stimulus, like the sun or pesticides.  Examples: [carbon monoxide-induced parkinsonism](http://purl.obolibrary.org/obo/MONDO_0017639), [cocaine intoxication](http://purl.obolibrary.org/obo/MONDO_0019544)*
+*A disease that is caused by exposure to an environmental stimulus, like the sun or pesticides.  Examples: [carbon monoxide-induced parkinsonism](http://purl.obolibrary.org/obo/MONDO_0017639), [cocaine intoxication](http://purl.obolibrary.org/obo/MONDO_0019544), [Colorado tick fever](http://purl.obolibrary.org/obo/MONDO_0005708)*
 
 | Attribute | Info |
 |----------|----------|
@@ -622,15 +611,27 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label   | disease                                      | disease:label                 | stimulus                                     | stimulus:label   |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:------------------------------|:---------------------------------------------|:-----------------|
-| MONDO:0003969 | amphetamine abuse     | MONDO:0002491 | substance abuse               | CHEBI:2679    | amphetamine      |
-| MONDO:0006654 | anthracosis           | MONDO:0015926 | pneumoconiosis                | ENVO:02000099 | coal dust        |
-| MONDO:0016466 | asbestosis            | MONDO:0015926 | pneumoconiosis                | ENVO:02000106 | asbestos dust    |
-| MONDO:0001540 | bagassosis            | MONDO:0004553 | extrinsic allergic alveolitis | ENVO:00002872 | bagasse          |
-| MONDO:0004599 | barbiturate abuse     | MONDO:0002491 | substance abuse               | CHEBI:29745   | barbiturate      |
+| defined:class                                | defined:class:label                     | disease                                      | disease:label      | stimulus                                      | stimulus:label       |
+|:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:-------------------|:----------------------------------------------|:---------------------|
+| MONDO:0021747 | Acanthamoeba infectious disease         | MONDO:0005550 | infectious disease | NCBITaxon:5754 | Acanthamoeba         |
+| MONDO:0006635 | Acinetobacter infectious disease        | MONDO:0005550 | infectious disease | NCBITaxon:469  | Acinetobacter        |
+| MONDO:0006636 | Actinobacillus infectious disease       | MONDO:0005550 | infectious disease | NCBITaxon:713  | Actinobacillus       |
+| MONDO:0006921 | Actinomycetales infectious disease      | MONDO:0005550 | infectious disease | NCBITaxon:2037 | Actinomycetales      |
+| MONDO:0005117 | Aeromonas hydrophila infectious disease | MONDO:0005550 | infectious disease | NCBITaxon:644  | Aeromonas hydrophila |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv)
+### Genetic
+*TBD.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/genetic.yaml |
+| Name | genetic |
+| Classes | MONDO:0021150, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
 ### Hemangioma
 *A hemangioma (a benign vascular lesion characterized by the formation of capillary-sized or cavernous vascular channels) that is located in a specific anatomical site.
 Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [breast hemangioma](http://purl.obolibrary.org/obo/MONDO_0003126), [gastric hemangioma](http://purl.obolibrary.org/obo/MONDO_0002414) (20 total)*
@@ -645,7 +646,7 @@ Examples: [skin hemangioma](http://purl.obolibrary.org/obo/MONDO_0003110), [brea
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hemangioma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label               | location                                      | location:label         |
+| defined:class                                | defined:class:label               | v0                                            | v0:label               |
 |:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003126 | breast hemangioma                 | UBERON:0000310 | breast                 |
 | MONDO:0003241 | central nervous system hemangioma | UBERON:0001017 | central nervous system |
@@ -667,38 +668,15 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hereditary.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                                         | disease                                      | disease:label                             |
-|:---------------------------------------------|:------------------------------------------------------------|:---------------------------------------------|:------------------------------------------|
-| MONDO:0003847 | Mendelian disease                                           | MONDO:0000001 | disease or disorder                       |
-| MONDO:0007573 | acute erythroleukemia, familial                             | MONDO:0017858 | acute erythroid leukemia                  |
-| MONDO:0008734 | adrenocortical carcinoma, hereditary                        | MONDO:0006639 | adrenal cortex carcinoma                  |
-| MONDO:0016072 | anomaly of puberty or/and menstrual cycle of genetic origin | MONDO:0015860 | anomaly of puberty or/and menstrual cycle |
-| MONDO:0018384 | avascular necrosis of genetic origin                        | MONDO:0018373 | avascular necrosis                        |
+| defined:class                                | defined:class:label                                         | disease                                      | disease:label                                    |
+|:---------------------------------------------|:------------------------------------------------------------|:---------------------------------------------|:-------------------------------------------------|
+| MONDO:0003847 | Mendelian disease                                           | MONDO:0000001 | disease or disorder                              |
+| MONDO:0007573 | acute erythroleukemia, familial                             | MONDO:0017858 | acute erythroid leukemia                         |
+| MONDO:0008734 | adrenocortical carcinoma, hereditary                        | MONDO:0006639 | adrenal cortex carcinoma                         |
+| MONDO:0016072 | anomaly of puberty or/and menstrual cycle of genetic origin | MONDO:0015860 | anomaly of puberty or/and menstrual cycle        |
+| MONDO:0009925 | autosomal recessive inherited pseudoxanthoma elasticum      | MONDO:0024308 | pseudoxanthoma elasticum (inherited or acquired) |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hereditary.tsv)
-### Idiopathic
-*This pattern is applied to diseases that are described as being idiopathic, i.e. having an uncertain or unknown cause.
-Examples: [idiopathic aplastic anemia](http://purl.obolibrary.org/obo/MONDO_0012197), [idiopathic avascular necrosis](http://purl.obolibrary.org/obo/MONDO_0018380)*
-
-| Attribute | Info |
-|----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/idiopathic.yaml |
-| Name | idiopathic |
-| Classes | MONDO:0700005, MONDO:0000001,  |
-| Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/idiopathic.tsv) |
-
-#### Data preview: 
-| defined:class                                | defined:class:label                  | disease                                      | disease:label             |
-|:---------------------------------------------|:-------------------------------------|:---------------------------------------------|:--------------------------|
-| MONDO:0005579 | epilepsy, idiopathic generalized     | MONDO:0005027 | epilepsy                  |
-| MONDO:0015344 | idiopathic acute transverse myelitis | MONDO:0015342 | acute transverse myelitis |
-| MONDO:0100054 | idiopathic anaphylaxis               | MONDO:0100053 | anaphylaxis               |
-| MONDO:0017256 | idiopathic anterior uveitis          | MONDO:0006651 | anterior uveitis          |
-| MONDO:0005110 | idiopathic cardiomyopathy            | MONDO:0004994 | cardiomyopathy            |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/idiopathic.tsv)
 ### Inborn metabolic
 *An acquired metabolic disease that causes disruption of a process.*
 
@@ -714,7 +692,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 #### Data preview: 
 | defined:class                                | defined:class:label                  | process                                   | process:label                                                                                                 |
 |:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| MONDO:0009825 | 5-oxoprolinase deficiency            | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
+| MONDO:0009825 | 5-oxoprolinase deficiency (disease)  | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
 | MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
 | MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
 | MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
@@ -735,9 +713,9 @@ Examples: ['5-oxoprolinase deficiency (disease)'](http://purl.obolibrary.org/obo
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | process                                   | process:label                                                                                                 |
+| defined:class                                | defined:class:label                  | v0                                        | v0:label                                                                                                      |
 |:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| MONDO:0009825 | 5-oxoprolinase deficiency            | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
+| MONDO:0009825 | 5-oxoprolinase deficiency (disease)  | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
 | MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
 | MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
 | MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
@@ -778,18 +756,8 @@ Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](ht
 | Classes | MONDO:0000001, NCBITaxon:1, MONDO:0005550,  |
 | Variables | agent (NCBITaxon:1),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv) |
+| Examples |  |
 
-#### Data preview: 
-| defined:class                                | defined:class:label                     | agent                                         | agent:label          |
-|:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:---------------------|
-| MONDO:0021747 | Acanthamoeba infectious disease         | NCBITaxon:5754 | Acanthamoeba         |
-| MONDO:0006635 | Acinetobacter infectious disease        | NCBITaxon:469  | Acinetobacter        |
-| MONDO:0006636 | Actinobacillus infectious disease       | NCBITaxon:713  | Actinobacillus       |
-| MONDO:0006921 | Actinomycetales infectious disease      | NCBITaxon:2037 | Actinomycetales      |
-| MONDO:0005117 | Aeromonas hydrophila infectious disease | NCBITaxon:644  | Aeromonas hydrophila |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv)
 ### Infectious inflammation
 *This combines the [infectious disease by agent pattern](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/infectious_disease_by_agent.yaml) and the [inflammatory disease by site](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inflammatory_disease_by_site.yaml) pattern.
 Examples: [bacterial endocarditis (disease)](http://purl.obolibrary.org/obo/MONDO_0006669), [fungal gastritis](http://purl.obolibrary.org/obo/MONDO_0002843)*
@@ -801,8 +769,18 @@ Examples: [bacterial endocarditis (disease)](http://purl.obolibrary.org/obo/MOND
 | Classes | MONDO:0000001, NCBITaxon:1, UBERON:0000061, MONDO:0005550,  |
 | Variables | location (UBERON:0000061), agent (NCBITaxon:1),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
-| Examples |  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_inflammation.tsv) |
 
+#### Data preview: 
+| defined:class                                | defined:class:label              | agent                                         | agent:label   | location                                      | location:label   |
+|:---------------------------------------------|:---------------------------------|:----------------------------------------------|:--------------|:----------------------------------------------|:-----------------|
+| MONDO:0006668 | bacterial conjunctivitis         | NCBITaxon:2    | Bacteria      | UBERON:0001811 | conjunctiva      |
+| MONDO:0006669 | bacterial endocarditis (disease) | NCBITaxon:2    | Bacteria      | UBERON:0002165 | endocardium      |
+| MONDO:0002842 | bacterial gastritis              | NCBITaxon:2    | Bacteria      | UBERON:0000945 | stomach          |
+| MONDO:0016127 | bacterial myositis               | NCBITaxon:2    | Bacteria      | UBERON:0002385 | muscle tissue    |
+| MONDO:0002843 | fungal gastritis                 | NCBITaxon:4751 | Fungi         | UBERON:0000945 | stomach          |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_inflammation.tsv)
 ### Inflammatory disease by site
 *Inflammatory diseases can be classified by the location in which the pathological inflammatory process occurs.
 For inflammatory diseases caused by infection, this may be the site of infection.
@@ -843,11 +821,11 @@ Examples: ['microvascular complications of diabetes, susceptibility'](http://pur
 #### Data preview: 
 | defined:class                                | defined:class:label                           | disease                                      | disease:label                          |
 |:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------------------------|
-| MONDO:0014707 | 14q32 duplication syndrome                    | MONDO:0020076 | myeloproliferative neoplasm            |
-| MONDO:0007845 | Kaposi sarcoma, susceptibility to             | MONDO:0005055 | Kaposi's sarcoma                       |
+| MONDO:0100232 | 'psoriatic arthritis, susceptibility to       | MONDO:0011849 | psoriatic arthritis                    |
+| MONDO:0007845 | Kaposi sarcoma, susceptibility to             | MONDO:0005055 | Kaposi's sarcoma (disease)             |
 | MONDO:0000093 | Schistosoma mansoni infection, susceptibility | MONDO:0044345 | Schistosoma mansoni infectious disease |
 | MONDO:0013562 | aspergillosis, susceptibility to              | MONDO:0005657 | aspergillosis                          |
-| MONDO:0020836 | autism, susceptiblity to                      | MONDO:0005260 | autism                                 |
+| MONDO:0020836 | autism, susceptiblity to                      | MONDO:0005260 | autism (disease)                       |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv)
 ### Isolated
@@ -887,13 +865,13 @@ Examples: [juvenile-onset Parkinson disease](http://purl.obolibrary.org/obo/MOND
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                     | disease                                      | disease:label            |
-|:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:-------------------------|
-| MONDO:0020655 | juvenile ankylosing spondylitis         | MONDO:0005306 | ankylosing spondylitis   |
-| MONDO:0003955 | juvenile breast papillomatosis          | MONDO:0002063 | breast papillomatosis    |
-| MONDO:0100076 | juvenile idiopathic scoliosis           | MONDO:0000726 | idiopathic scoliosis     |
-| MONDO:0009066 | juvenile nephropathic cystinosis        | MONDO:0100151 | nephropathic cystinosis  |
-| MONDO:0100037 | juvenile onset pityriasis rubra pilaris | MONDO:0100017 | pityriasis rubra pilaris |
+| defined:class                                | defined:class:label                           | disease                                      | disease:label                   |
+|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:--------------------------------|
+| MONDO:0020655 | juvenile ankylosing spondylitis               | MONDO:0005306 | ankylosing spondylitis          |
+| MONDO:0003955 | juvenile breast papillomatosis                | MONDO:0002063 | breast papillomatosis           |
+| MONDO:0100076 | juvenile idiopathic scoliosis                 | MONDO:0000726 | idiopathic scoliosis            |
+| MONDO:0009066 | juvenile nephropathic cystinosis              | MONDO:0100151 | nephropathic cystinosis         |
+| MONDO:0003741 | juvenile type testicular granulosa cell tumor | MONDO:0003395 | testicular granulosa cell tumor |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv)
 ### Leiomyoma
@@ -910,7 +888,7 @@ Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [uret
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label              | location                                      | location:label         |
+| defined:class                                | defined:class:label              | v0                                            | v0:label               |
 |:---------------------------------------------|:---------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003292 | anus leiomyoma                   | UBERON:0001245 | anus                   |
 | MONDO:0003300 | appendix leiomyoma               | UBERON:0001154 | vermiform appendix     |
@@ -933,7 +911,7 @@ Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MO
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyosarcoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                   | location                                      | location:label         |
+| defined:class                                | defined:class:label                   | v0                                            | v0:label               |
 |:---------------------------------------------|:--------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0003358 | anus leiomyosarcoma                   | UBERON:0001245 | anus                   |
 | MONDO:0002624 | bone leiomyosarcoma                   | UBERON:0002481 | bone tissue            |
@@ -956,7 +934,7 @@ Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorect
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lipoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label           | location                                      | location:label         |
+| defined:class                                | defined:class:label           | v0                                            | v0:label               |
 |:---------------------------------------------|:------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0000974 | axillary lipoma               | UBERON:0009472 | axilla                 |
 | MONDO:0000970 | breast lipoma                 | UBERON:0000310 | breast                 |
@@ -1024,7 +1002,7 @@ Examples: [marginal zone lymphoma](http://purl.obolibrary.org/obo/MONDO_0017604)
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lymphoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label   | location                                      | location:label                    |
+| defined:class                                | defined:class:label   | v0                                            | v0:label                          |
 |:---------------------------------------------|:----------------------|:----------------------------------------------|:----------------------------------|
 | MONDO:0007650 | MALT lymphoma         | UBERON:0001961 | mucosa-associated lymphoid tissue |
 | MONDO:0001888 | anus lymphoma         | UBERON:0001245 | anus                              |
@@ -1034,8 +1012,7 @@ Examples: [marginal zone lymphoma](http://purl.obolibrary.org/obo/MONDO_0017604)
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/lymphoma.tsv)
 ### Malignant
-*This is a design pattern for classes representing malignant neoplasms, extending a generic neoplasm class.
-Examples: [malignant carotid body paraganglioma](http://purl.obolibrary.org/obo/MONDO_0004650), [malignant germ cell tumor](http://purl.obolibrary.org/obo/MONDO_0006290)*
+*TBD.*
 
 | Attribute | Info |
 |----------|----------|
@@ -1049,7 +1026,7 @@ Examples: [malignant carotid body paraganglioma](http://purl.obolibrary.org/obo/
 #### Data preview: 
 | defined:class                                | defined:class:label           | neoplasm                                     | neoplasm:label               |
 |:---------------------------------------------|:------------------------------|:---------------------------------------------|:-----------------------------|
-| MONDO:0004992 | cancer                        | MONDO:0005070 | neoplasm                     |
+| MONDO:0004992 | cancer                        | MONDO:0005070 | neoplasm (disease)           |
 | MONDO:0003113 | extragonadal germ cell cancer | MONDO:0018201 | extragonadal germ cell tumor |
 | MONDO:0003252 | granular cell cancer          | MONDO:0006235 | granular cell tumor          |
 | MONDO:0000377 | malignant Leydig cell tumor   | MONDO:0006266 | Leydig cell tumor            |
@@ -1057,7 +1034,7 @@ Examples: [malignant carotid body paraganglioma](http://purl.obolibrary.org/obo/
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/malignant.tsv)
 ### Melanoma
-*Melanomas are malignant, usually aggressive tumor composed of atypical, neoplastic melanocytes. This is a design pattern for classes representing melanomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer. We use the generic 'disease has location' relation, which generalized over primary and secondary sites.
+*This is auto-generated. Add your description here
 Examples: [cutaneous melanoma](http://purl.obolibrary.org/obo/MONDO_0005012), [malignant breast melanoma](http://purl.obolibrary.org/obo/MONDO_0002975), [malignant melanoma of the mucosa](http://purl.obolibrary.org/obo/MONDO_0015694) (22 total)*
 
 | Attribute | Info |
@@ -1070,17 +1047,17 @@ Examples: [cutaneous melanoma](http://purl.obolibrary.org/obo/MONDO_0005012), [m
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/melanoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label       | location                                      | location:label   |
-|:---------------------------------------------|:--------------------------|:----------------------------------------------|:-----------------|
-| MONDO:0006081 | anal melanoma             | UBERON:0001245 | anus             |
-| MONDO:0005012 | cutaneous melanoma        | UBERON:0000014 | zone of skin     |
-| MONDO:0045070 | digestive system melanoma | UBERON:0001007 | digestive system |
-| MONDO:0001192 | esophageal melanoma       | UBERON:0001043 | esophagus        |
-| MONDO:0000928 | eyelid melanoma           | UBERON:0001711 | eyelid           |
+| defined:class                                | defined:class:label          | v0                                            | v0:label         |
+|:---------------------------------------------|:-----------------------------|:----------------------------------------------|:-----------------|
+| MONDO:0006081 | anal melanoma                | UBERON:0001245 | anus             |
+| MONDO:0005012 | cutaneous melanoma (disease) | UBERON:0000014 | zone of skin     |
+| MONDO:0045070 | digestive system melanoma    | UBERON:0001007 | digestive system |
+| MONDO:0001192 | esophageal melanoma          | UBERON:0001043 | esophagus        |
+| MONDO:0000928 | eyelid melanoma              | UBERON:0001711 | eyelid           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/melanoma.tsv)
 ### Meningioma
-*A meningioma is a slow growing tumor attached to the dura mater. This is a design pattern for classes representing meningiomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer. We use the generic 'disease has location' relation, which generalized over primary and secondary sites.
+*This is auto-generated. Add your description here
 Examples: [skin meningioma](http://purl.obolibrary.org/obo/MONDO_0004429), [brain meningioma](http://purl.obolibrary.org/obo/MONDO_0000642), [choroid plexus meningioma](http://purl.obolibrary.org/obo/MONDO_0003053) (26 total)*
 
 | Attribute | Info |
@@ -1093,7 +1070,7 @@ Examples: [skin meningioma](http://purl.obolibrary.org/obo/MONDO_0004429), [brai
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/meningioma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label               | location                                      | location:label         |
+| defined:class                                | defined:class:label               | v0                                            | v0:label               |
 |:---------------------------------------------|:----------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0002997 | anterior cranial fossa meningioma | UBERON:0003720 | anterior cranial fossa |
 | MONDO:0000642 | brain meningioma                  | UBERON:0000955 | brain                  |
@@ -1115,9 +1092,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples |  |
 
 ### Mucoepidermoid carcinoma
-*Mucoepidermoid carcinomas are carcinomas morphologically characterized the presence of cuboidal mucous cells, goblet-like mucous cells, squamoid cells, cystic changes, and a fibrotic stromal formation.
-This is a design pattern for classes representing mucoepidermoid carcinomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized cancer.
-We use the generic 'disease has location' relation, which generalized over primary and secondary sites.
+*This is auto-generated. Add your description here
 Examples: [cutaneous mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MONDO_0003091), [oral cavity mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MONDO_0044964), [mucoepidermoid breast carcinoma](http://purl.obolibrary.org/obo/MONDO_0003087) (18 total)*
 
 | Attribute | Info |
@@ -1126,11 +1101,11 @@ Examples: [cutaneous mucoepidermoid carcinoma](http://purl.obolibrary.org/obo/MO
 | Name | mucoepidermoid carcinoma disease has location X |
 | Classes | MONDO:0003036, UBERON:0001062,  |
 | Variables | location (UBERON:0001062),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/mucoepidermoid_carcinoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                             | location                                      | location:label         |
+| defined:class                                | defined:class:label                             | v0                                            | v0:label               |
 |:---------------------------------------------|:------------------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0000531 | bronchus mucoepidermoid carcinoma               | UBERON:0002185 | bronchus               |
 | MONDO:0003091 | cutaneous mucoepidermoid carcinoma              | UBERON:0000014 | zone of skin           |
@@ -1207,8 +1182,7 @@ Examples: [breast neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm.tsv)
 ### Neuroendocrine neoplasm grade1
-*We follow NCIT in making carcinoid tumor a synonym for neuroendocrine neoplasm G1 (G1 NET).
-Examples: [carcinoid tumor (disease)](http://purl.obolibrary.org/obo/MONDO_0005369)*
+*we follow NCIT in making carcinoid a syn for G1 NET*
 
 | Attribute | Info |
 |----------|----------|
@@ -1216,7 +1190,7 @@ Examples: [carcinoid tumor (disease)](http://purl.obolibrary.org/obo/MONDO_00053
 | Name | neoendocrine_neoplasm_grade1 |
 | Classes | MONDO:0019496, MONDO:0024491, owl:Thing,  |
 | Variables | location (owl:Thing),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm_grade1.tsv) |
 
 #### Data preview: 
@@ -1241,28 +1215,6 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
-### Poisoning
-*A disease that is caused by exposure to an environmental stimulus that causes poisoning.  Examples: [colchicine poisoning](http://purl.obolibrary.org/obo/MONDO_0017859), [cocaine intoxication](http://purl.obolibrary.org/obo/MONDO_0019544)*
-
-| Attribute | Info |
-|----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml |
-| Name | poisoning |
-| Classes | MONDO:0029000, BFO:0000040,  |
-| Variables | stimulus (BFO:0000040),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-7463-6306](https://orcid.org/0000-0002-7463-6306),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/poisoning.tsv) |
-
-#### Data preview: 
-| defined:class                                | defined:class:label       | stimulus                                   | stimulus:label             |
-|:---------------------------------------------|:--------------------------|:-------------------------------------------|:---------------------------|
-| MONDO:0019544 | cocaine intoxication      | CHEBI:27958 | cocaine                    |
-| MONDO:0017859 | colchicine poisoning      | CHEBI:23359 | colchicine                 |
-| MONDO:0017863 | digitalis poisoning       | CHEBI:4551  | digoxin                    |
-| MONDO:0017861 | ethylene glycol poisoning | CHEBI:30742 | ethylene glycol            |
-| MONDO:0017638 | manganese poisoning       | CHEBI:25154 | manganese molecular entity |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/poisoning.tsv)
 ### Postinfectious disease
 *A design pattern for conditions such as post-herpetic neuralgia or postinfectious encephalitis, where the disease is secondary to the initial infection.
 TODO: write better guidelines on what constitutes a secondary disease vs primary. * We do not use this pattern for AIDS-HIV for example, instead representing this is using SubClassOf. * We draw a distinction between infectious and postinfectious encepahlitis. * we do not use this pattern for chickenpox, but we do for shingles*
@@ -1320,7 +1272,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples |  |
 
 ### Realized in response to environmental exposure
-*This pattern is used for a disease, where the cause of the disease is an exposure to an environmental stimulus (using ECTO exposure terms). Note that this pattern does not include infectious disease or classes that would include an organism, virus or viroid. Rather it includes exposures to chemicals (includng drugs), or mixtures.
+*This pattern is used for a disease, where the cause of the disease is an exposure to an environmental stimulus (using ECTO exposure terms).
 Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_0029001), [alcohol amnestic disorder](http://purl.obolibrary.org/obo/MONDO_0021702), [alcoholic polyneuropathy](http://purl.obolibrary.org/obo/MONDO_0006645) (26 total)*
 
 | Attribute | Info |
@@ -1333,13 +1285,13 @@ Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_002
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/realized_in_response_to_environmental_exposure.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                        | disease                                      | disease:label                | exposure                                    | exposure:label                  |
-|:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|:--------------------------------------------|:--------------------------------|
-| MONDO:0060781 | Preeyasombat-Varavithya syndrome           | MONDO:0001083 | Fanconi renotubular syndrome | ECTO:9000364 | exposure to tetracycline        |
-| MONDO:0003245 | aflatoxin-related hepatocellular carcinoma | MONDO:0007256 | hepatocellular carcinoma     | ECTO:0001108 | exposure to aflatoxin           |
-| MONDO:0002046 | alcohol abuse                              | MONDO:0002491 | substance abuse              | ECTO:0001082 | exposure to alcohol consumption |
-| MONDO:0021702 | alcohol amnestic disorder                  | MONDO:0001152 | amnestic disorder            | ECTO:0001082 | exposure to alcohol consumption |
-| MONDO:0007079 | alcohol dependence                         | MONDO:0004938 | substance dependence         | ECTO:0001082 | exposure to alcohol consumption |
+| defined:class                                | defined:class:label                        | disease                                      | disease:label                | exposure                                    | exposure:label                    |
+|:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|:--------------------------------------------|:----------------------------------|
+| MONDO:0060781 | Preeyasombat-Varavithya syndrome           | MONDO:0001083 | Fanconi renotubular syndrome | ECTO:9000364 | tetracycline exposure             |
+| MONDO:0003245 | aflatoxin-related hepatocellular carcinoma | MONDO:0007256 | hepatocellular carcinoma     | ECTO:0001108 | aflatoxin exposure                |
+| MONDO:0044663 | aquagenic palmoplantar keratoderma         | MONDO:0006590 | palmoplantar keratosis       | ECTO:9000156 | water exposure                    |
+| MONDO:0043523 | cadmium poisoning                          | MONDO:0029000 | poisoning                    | ECTO:0001566 | cadmium molecular entity exposure |
+| MONDO:0000706 | chemical colitis                           | MONDO:0005292 | colitis (disease)            | ECTO:0000231 | chemical entity exposure          |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/realized_in_response_to_environmental_exposure.tsv)
 ### Refractory
@@ -1378,7 +1330,7 @@ Examples: [rhabdomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/rhabdomyosarcoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                     | location                                      | location:label         |
+| defined:class                                | defined:class:label                     | v0                                            | v0:label               |
 |:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0002864 | anus rhabdomyosarcoma                   | UBERON:0001245 | anus                   |
 | MONDO:0002859 | breast rhabdomyosarcoma                 | UBERON:0000310 | breast                 |
@@ -1405,7 +1357,7 @@ We use the generic 'disease has location' relation, which generalized over prima
 | defined:class                                | defined:class:label     | location                                      | location:label   |
 |:---------------------------------------------|:------------------------|:----------------------------------------------|:-----------------|
 | MONDO:0019480 | Langerhans cell sarcoma | CL:0000453     | Langerhans cell  |
-| MONDO:0016982 | angiosarcoma            | UBERON:0001981 | blood vessel     |
+| MONDO:0016982 | angiosarcoma (disease)  | UBERON:0001981 | blood vessel     |
 | MONDO:0002865 | anus sarcoma            | UBERON:0001245 | anus             |
 | MONDO:0002862 | bile duct sarcoma       | UBERON:0002394 | bile duct        |
 | MONDO:0001374 | bladder sarcoma         | UBERON:0001255 | urinary bladder  |
@@ -1425,7 +1377,7 @@ Examples: [cervical small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/small_cell_carcinoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                            | location                                      | location:label         |
+| defined:class                                | defined:class:label                            | v0                                            | v0:label               |
 |:---------------------------------------------|:-----------------------------------------------|:----------------------------------------------|:-----------------------|
 | MONDO:0004120 | Bartholin gland small cell carcinoma           | UBERON:0000460 | major vestibular gland |
 | MONDO:0006142 | cervical small cell carcinoma                  | UBERON:0000002 | uterine cervix         |
@@ -1448,13 +1400,13 @@ Examples: [disease of catalytic activity](http://purl.obolibrary.org/obo/MONDO_0
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_disrupted_process.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label         | disease                                      | disease:label       | process                                   | process:label                         |
-|:---------------------------------------------|:----------------------------|:---------------------------------------------|:--------------------|:------------------------------------------|:--------------------------------------|
-| MONDO:0005937 | REM sleep behavior disorder | MONDO:0003406 | sleep-wake disorder | GO:0042747 | circadian sleep/wake cycle, REM sleep |
-| MONDO:0001531 | blood coagulation disease   | MONDO:0000001 | disease or disorder | GO:0007596 | blood coagulation                     |
-| MONDO:0000833 | bone remodeling disease     | MONDO:0005381 | bone disease        | GO:0046849 | bone remodeling                       |
-| MONDO:0005557 | calcium metabolic disease   | MONDO:0005066 | metabolic disease   | GO:0055074 | calcium ion homeostasis               |
-| MONDO:0045024 | cancer or benign tumor      | MONDO:0000001 | disease or disorder | GO:0008283 | cell population proliferation         |
+| defined:class                                | defined:class:label            | v0                                           | v0:label            | v1                                        | v1:label                              |
+|:---------------------------------------------|:-------------------------------|:---------------------------------------------|:--------------------|:------------------------------------------|:--------------------------------------|
+| MONDO:0005937 | REM sleep behavior disorder    | MONDO:0003406 | sleep-wake disorder | GO:0042747 | circadian sleep/wake cycle, REM sleep |
+| MONDO:0001531 | blood coagulation disease      | MONDO:0000001 | disease or disorder | GO:0007596 | blood coagulation                     |
+| MONDO:0000833 | bone remodeling disease        | MONDO:0005381 | bone disease        | GO:0046849 | bone remodeling                       |
+| MONDO:0005557 | calcium metabolic disease      | MONDO:0005066 | metabolic disease   | GO:0055074 | calcium ion homeostasis               |
+| MONDO:0020779 | cartilage development disorder | MONDO:0000001 | disease or disorder | GO:0051216 | cartilage development                 |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_disrupted_process.tsv)
 ### Specific disease by dysfunctional structure
@@ -1471,13 +1423,13 @@ Examples: [collagenopathy type 2 alpha 1](http://purl.obolibrary.org/obo/MONDO_0
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_dysfunctional_structure.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                           | disease                                      | disease:label                               | structure                         | structure:label   |
-|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:--------------------------------------------|:----------------------------------|:------------------|
-| MONDO:0008861 | 3-methylcrotonyl-CoA carboxylase 1 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6936  | MCCC1             |
-| MONDO:0008862 | 3-methylcrotonyl-CoA carboxylase 2 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6937  | MCCC2             |
-| MONDO:0009610 | 3-methylglutaconic aciduria type 1            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/890   | AUH               |
-| MONDO:0009787 | 3-methylglutaconic aciduria type 3            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/8142  | OPA3              |
-| MONDO:0012435 | 3-methylglutaconic aciduria type 5            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/30528 | DNAJC19           |
+| defined:class                                | defined:class:label                           | v0                                           | v0:label                                    | v1                                | v1:label   |
+|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:--------------------------------------------|:----------------------------------|:-----------|
+| MONDO:0008861 | 3-methylcrotonyl-CoA carboxylase 1 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6936  | MCCC1      |
+| MONDO:0008862 | 3-methylcrotonyl-CoA carboxylase 2 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6937  | MCCC2      |
+| MONDO:0009610 | 3-methylglutaconic aciduria type 1            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/890   | AUH        |
+| MONDO:0009787 | 3-methylglutaconic aciduria type 3            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/8142  | OPA3       |
+| MONDO:0012435 | 3-methylglutaconic aciduria type 5            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/30528 | DNAJC19    |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_dysfunctional_structure.tsv)
 ### Specific infectious disease by agent
@@ -1490,8 +1442,18 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Classes | MONDO:0000001, NCBITaxon:1,  |
 | Variables | disease (MONDO:0000001), agent (NCBITaxon:1),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
-| Examples |  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_infectious_disease_by_agent.tsv) |
 
+#### Data preview: 
+| defined:class                                | defined:class:label                     | agent                                         | agent:label          | disease                                      | disease:label      |
+|:---------------------------------------------|:----------------------------------------|:----------------------------------------------|:---------------------|:---------------------------------------------|:-------------------|
+| MONDO:0021747 | Acanthamoeba infectious disease         | NCBITaxon:5754 | Acanthamoeba         | MONDO:0005550 | infectious disease |
+| MONDO:0006635 | Acinetobacter infectious disease        | NCBITaxon:469  | Acinetobacter        | MONDO:0005550 | infectious disease |
+| MONDO:0006636 | Actinobacillus infectious disease       | NCBITaxon:713  | Actinobacillus       | MONDO:0005550 | infectious disease |
+| MONDO:0006921 | Actinomycetales infectious disease      | NCBITaxon:2037 | Actinomycetales      | MONDO:0005550 | infectious disease |
+| MONDO:0005117 | Aeromonas hydrophila infectious disease | NCBITaxon:644  | Aeromonas hydrophila | MONDO:0005550 | infectious disease |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_infectious_disease_by_agent.tsv)
 ### Specific infectious disease by location
 *TODO*
 
@@ -1550,7 +1512,7 @@ Examples: [cervical squamous cell carcinoma](http://purl.obolibrary.org/obo/MOND
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/squamous_cell_carcinoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                      | location                                      | location:label           |
+| defined:class                                | defined:class:label                      | v0                                            | v0:label                 |
 |:---------------------------------------------|:-----------------------------------------|:----------------------------------------------|:-------------------------|
 | MONDO:0003490 | ampulla of vater squamous cell carcinoma | UBERON:0004913 | hepatopancreatic ampulla |
 | MONDO:0004132 | anal canal squamous cell carcinoma       | UBERON:0000159 | anal canal               |
@@ -1559,27 +1521,6 @@ Examples: [cervical squamous cell carcinoma](http://purl.obolibrary.org/obo/MOND
 | MONDO:0004053 | bartholin gland squamous cell carcinoma  | UBERON:0000460 | major vestibular gland   |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/squamous_cell_carcinoma.tsv)
-### Substance abuse
-*A substance abuse that specifies a specific environmental stimulus such as alcohol, cocaine, etc. Examples: [alcohol abuse](http://purl.obolibrary.org/obo/MONDO_0002046), [cocaine abuse](http://purl.obolibrary.org/obo/MONDO_0004456)*
-
-| Attribute | Info |
-|----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/substance_abuse.yaml |
-| Name | substance_abuse |
-| Classes | MONDO:0002491, BFO:0000040,  |
-| Variables | stimulus (BFO:0000040),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-7463-6306](https://orcid.org/0000-0002-7463-6306),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/substance_abuse.tsv) |
-
-#### Data preview: 
-| defined:class                                | defined:class:label   | stimulus                                   | stimulus:label   |
-|:---------------------------------------------|:----------------------|:-------------------------------------------|:-----------------|
-| MONDO:0003969 | amphetamine abuse     | CHEBI:2679  | amphetamine      |
-| MONDO:0004599 | barbiturate abuse     | CHEBI:29745 | barbiturate      |
-| MONDO:0004456 | cocaine abuse         | CHEBI:27958 | cocaine          |
-| MONDO:0005912 | phencyclidine abuse   | CHEBI:8058  | phencyclidine    |
-
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/substance_abuse.tsv)
 ### Susceptibility by gene
 *This pattern should be used for terms in which a gene dysfunction causes a predisposition or susceptibility towards developing a specific disease. This pattern is a sub-pattern of [inherited_susceptibility.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inherited_susceptibility.yaml)*
 

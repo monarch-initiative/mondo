@@ -4,8 +4,6 @@ Mondo is released on a monthly basis around the first of the month. Additional r
 
 **Initial setup**: Follow the instructions to [Generate token](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) before starting.
 
-Videos outlining this process are available [here](https://drive.google.com/drive/u/0/folders/1kDD572vCE2NRGC57cX7vTUHQSFvomyb7).
-
 # Releases
 
 All release products are described on the [OBO page](http://obofoundry.org/ontology/mondo.html) and [Mondo website](https://mondo.monarchinitiative.org/).
@@ -30,7 +28,6 @@ The release mondo.owl will look like this in Protege:
 2. Do a pull request (PR)
 3. Wait for GitHub Actions/QC to pass
 4. Merge PR
-5. When this is done, follow instructions to Generate Change Log
 
 ## Generate Change Log
 
@@ -42,19 +39,15 @@ The release mondo.owl will look like this in Protege:
 `mv Downloads/obo-simple-diff.pl ~/tools`
 3. `cchmod 755 ~/tools/obo-simple-diff.pl`
 
-### Generate token
-
-1. Follow the instructions [here](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) to generate the GitHub token.
-
 ### Generate Change Log Workflow:
 <!-- 1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
 2. Download the previous mondo.obo and save as mondo-lastbuild.obo-->
 
-1. In terminal: `make mondo-diff.txt -B`  
-1. `./get-new-classes.sh > somefilename.txt`  
-1. **For example:** `./get-new-classes.sh > MondoRelease_2020-07-01.txt`  
-1. Open this file on your computer: MondoRelease_somefilename.txt  
-1. **For example:** MondoRelease_2020-06-01.txt     
+1. In terminal: `make mondo-diff.txt -B`. 
+1. `./get-new-classes.sh > somefilename.txt`. 
+1. **For example:** `./get-new-classes.sh > MondoRelease_2020-07-01.txt`. 
+1. Open this file on your computer: MondoRelease_somefilename.txt. 
+1. **For example:** MondoRelease_2020-06-01.txt.   
 
 ## Deploy Release
 1. `cp ~/.token .token`  
@@ -65,6 +58,7 @@ Note- the date should be the date of the release in the format sh run.sh make GH
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     3. Ensure it has all release artefacts attached to it
     4. Check this file to ensure you see the expected changes (spot check a few changes): https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl
+1. When this is done, follow instructions for the change log
 
 _Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
 

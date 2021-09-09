@@ -33,7 +33,7 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} with a basis in a pa
 | [MONDO:0004784](http://purl.obolibrary.org/obo/MONDO_0004784) | allergic asthma              | [MONDO:0004979](http://purl.obolibrary.org/obo/MONDO_0004979) | asthma                     |
 | [MONDO:0006525](http://purl.obolibrary.org/obo/MONDO_0006525) | allergic contact dermatitis  | [MONDO:0005480](http://purl.obolibrary.org/obo/MONDO_0005480) | contact dermatitis         |
 | [MONDO:0005271](http://purl.obolibrary.org/obo/MONDO_0005271) | allergic disease             | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder        |
-| [MONDO:0021202](http://purl.obolibrary.org/obo/MONDO_0021202) | allergic otitis media        | [MONDO:0005441](http://purl.obolibrary.org/obo/MONDO_0005441) | otitis media               |
+| [MONDO:0021202](http://purl.obolibrary.org/obo/MONDO_0021202) | allergic otitis media        | [MONDO:0005441](http://purl.obolibrary.org/obo/MONDO_0005441) | otitis media (disease)     |
 | [MONDO:0000771](http://purl.obolibrary.org/obo/MONDO_0000771) | allergic respiratory disease | [MONDO:0005087](http://purl.obolibrary.org/obo/MONDO_0005087) | respiratory system disease |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/allergic_form_of_disease.tsv) 
