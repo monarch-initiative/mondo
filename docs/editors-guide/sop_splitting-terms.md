@@ -1,6 +1,7 @@
 # SOP Splitting Terms
 
 ## Overview of workflow
+
 1. Identify a term that should be split. 
 1. If the term should be split into two new terms, assign
 the new ID for that term in advance.
