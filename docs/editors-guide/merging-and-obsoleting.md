@@ -56,8 +56,8 @@ If to merge MONDO:0023052 ectrodactyly polydactyly with MONDO:0009156 ectrodacty
 
 `owltools --use-catalog mondo-edit.obo  --obsolete-replace MONDO:0023052 MONDO:0009156 -o -f obo mondo-edit.obo`
 
-_Recommended_: Use this [template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1265889881) to track the terms to be mergd. There is a formula in column F, copy from the row above.
-_Note_: the Mondo ID in columns A and C must be in CURIE format (use a semi-colon, not an underscore)  
+_Recommended_: Use this [template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1265889881) to track the terms to be mergd. There is a formula in column G, copy from the row above.
+_Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, not an underscore)  
 
 1. In Terminal, navigate to ..mondo/src/ontology
 1. Run your owltools command
