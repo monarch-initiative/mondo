@@ -15,7 +15,7 @@ passed.
   1. Obsolete and merge the existing term into the new term.
   
 ## Example:
-OMIM may rename a disease from FOO to FOO 1, and create a new phenotypic series (PS) with the name FOO. (For an example, see [OMIM:606176 Diabetes mellitus, permanent neonatal 1](https://www.omim.org/entry/606176), which is part of the phenoypic series [PS606176 Diabetes mellitus, permanent neonatal](https://www.omim.org/phenotypicSeries/PS606176) and the respective Mondo ticket []#1803](https://github.com/monarch-initiative/mondo/issues/1803). In this case, we should follow the [Splitting a more specific term into a more generic term workflow](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/#splitting-a-more-specific-term-into-a-more-generic-term).
+OMIM may rename a disease from FOO to FOO 1, and create a new phenotypic series (PS) with the name FOO. (For an example, see [OMIM:606176 Diabetes mellitus, permanent neonatal 1](https://www.omim.org/entry/606176), which is part of the phenoypic series [PS606176 Diabetes mellitus, permanent neonatal](https://www.omim.org/phenotypicSeries/PS606176) and the respective Mondo ticket [#1803](https://github.com/monarch-initiative/mondo/issues/1803). In this case, we should follow the [Splitting a more specific term into a more generic term workflow](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/#splitting-a-more-specific-term-into-a-more-generic-term).
 
 Workflow:
 1. Add the label FOO and FOO1 to the [ROBOT_CreateNewTerm Template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843.)
