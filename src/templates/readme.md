@@ -3,7 +3,7 @@
 # ROBOT templates
 
 ## Overview
-ROBOT templates are used in Mondo to add terms in bulk, or make bulk changes. The available templates are described below.
+ROBOT templates are used in Mondo to add terms in bulk, or make bulk changes. The available templates are described below. Instructions for using these templates are available below. The instructions are for templates build in google docs.
 
 **Name**: [ROBOT_CreateNewTerm.tsv](https://github.com/monarch-initiative/mondo/blob/master/src/templates/ROBOT_CreateNewTerm.tsv)
 **Description**: This is a blank ROBOT template to add new terms to Mondo. IDs should be added in the CURIE format (eg MONDO:0021194).
