@@ -6,4 +6,9 @@
 **Description**: New NCIt terms that are subtypes of MONDO_0018874 'acute myeloid leukemia' were added to Mondo via a ROBOT template.
 
 **Name**: ROBOT_ObsoleteTag.tsv  
-**Description**: ROBOT template to add obsoletion tags (in subset obsoletion_candidate) for terms to-be-obsoleted in Mondo. 
+**Description**: ROBOT template to add obsoletion tags (in subset obsoletion_candidate) for terms to-be-obsoleted in Mondo.
+
+**Name**: ROBOT_CreateNewTerm.tsv  
+**Description**: ROBOT template to add new terms to Mondo. IDs should be added in the CURIE format (eg MONDO:0021194).
+
+
