@@ -5,8 +5,8 @@
 ## Overview
 ROBOT templates are used in Mondo to add terms in bulk, or make bulk changes. The available templates are described below.
 
-**Name**: ROBOT_CreateNewTerm.tsv  
-**Description**: ROBOT template to add new terms to Mondo. IDs should be added in the CURIE format (eg MONDO:0021194).
+**Name**: [ROBOT_CreateNewTerm.tsv](https://github.com/monarch-initiative/mondo/blob/master/src/templates/ROBOT_CreateNewTerm.tsv)
+**Description**: This is a blank ROBOT template to add new terms to Mondo. IDs should be added in the CURIE format (eg MONDO:0021194).
 
 **Name**: [ROBOT_AML_NCIT_for_MONDO_2021-09-14](https://github.com/monarch-initiative/mondo/blob/master/src/templates/ROBOT_AML_NCIT_for_MONDO_2021-09-14.tsv)  
 **Description**: This template contains new subtypes of MONDO_0018874 'acute myeloid leukemia' that map to NCIt classes. These were added to Mondo via a ROBOT template.
