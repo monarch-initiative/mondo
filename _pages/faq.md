@@ -23,6 +23,16 @@ A new release can be expected in [OLS](https://www.ebi.ac.uk/ols/ontologies/mond
 
 Mondo is a community-driven project and we welcome your feedback and suggested changes. We request that all proposed changed be suggested on [GitHub issue tracker](https://github.com/monarch-initiative/mondo), so they can be seen and discussed by the Mondo community. Note, you will need sign up for a free GitHub account, if you do not already have one.
 
+### Why and how are terms obsoleted from Mondo?
+
+#### Why are terms obsoleted
+Terms in Mondo may be obsoleted when they are no longer needed, considered out of scope, if they are duplicates, or if they have been obsoleted in a source ontology and merged with another term. Mondo terms are never deleted, instead are obsoleted, so that any MONDO ID ever created remains in the ontology.
+
+Further description and a discussion board on obsoletions is available [here](https://github.com/monarch-initiative/mondo/discussions/2765). Anyone with a GitHub account can contribute to the discussion.
+
+#### How are terms obsoleted?
+Our workflow for obsoleting terms is evolving to meet the needs of our users. When a term is to be obsoleted (or merged), the term will be annotated with a subset tag `obsoletion candidate`, and will include an annotation with a link to a relevant GitHub ticket and a comment describing the obsoletion reason. The Mondo curation team will send a report around the first of each month, along with the latest release to inform users of potential obsoletions. Users will have at least 2 months to review the obsoletion candidates. If there are no objections from the community, the curation team will obsolete the term.
+
 ### How can I collaborate with Mondo?
 
 We welcome the participation of interested colleagues. We anticipate that the structure of Mondo will continue to be refined and completed for some time to come. Groups or persons with expert knowledge in a particular domain of disease(s) are invited to contribute their knowledge on a collaborative basis. See issues that need input from medical experts [here](https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed). Please contact us to discuss details.
