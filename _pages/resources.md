@@ -10,6 +10,10 @@
 - [A Census of Disease Ontologies.](https://www.annualreviews.org/doi/10.1146/annurev-biodatasci-080917-013459) Melissa A. Haendel, Julie A. McMurry, Rose Relevo, Christopher J. Mungall, Peter N. Robinson, and Christopher G. Chute (2018) Annual Review of Biomedical Data Science Vol. 1:305-331
 - [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Mungall, Christopher J., Julie A. McMurry, Sebastian Köhler, James P. Balhoff, Charles Borromeo, Matthew Brush, Seth Carbon, et al. 2017.  Nucleic Acids Research 45 (D1): D712–22.
 
+### Relevant Publications
+ - [Response to Biesecker et al.](https://www.sciencedirect.com/science/article/pii/S000292972100272X?dgcid=author) By Ada Hamosh et. al (2021)
+ - [Disease Naming in Mondo](https://mondo.monarchinitiative.org/pages/disease-naming/)
+ 
 ### Blogs
 - [New release of Mondo Disease Ontology](https://medium.com/@MonarchInit/new-release-of-mondo-disease-ontology-9a48521353e3) - _Published June 13, 2019, Monarch Initiative_
 - [Monkeying around with OWL: Musings on building and using ontologies](https://douroucouli.wordpress.com/). Posts by Chris Mungall
