@@ -460,7 +460,7 @@ tmp/efo_protection.txt:
 	cat tmp/efo_mondo_terms.txt tmp/efo_disease_p_ta.txt | grep MONDO_ | sort | uniq  > $@
 
 .PHONY: %_risks
-%_risks: $(SRC) tmp/%o_protection.txt
+%_risks: $(SRC) tmp/%_protection.txt
 	$(ROBOT) merge -i $(SRC) filter -T tmp/$*_protection.txt --select annotations \
 		verify --queries ../sparql/reports/obsoletion-candidates.sparql --output-dir tmp/
 
