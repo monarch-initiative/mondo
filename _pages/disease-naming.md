@@ -12,8 +12,8 @@ For disease naming in Mondo, we aim to utilize the former approach in that we pr
 
 ## References
 
-1. Rasmussen SA, Hamosh A; OMIM curators. (What's in a name? Issues to consider when naming Mendelian disorders.) Genet Med. 2020 Oct;22(10):1573-1575. doi: 10.1038/s41436-020-0851-0. Epub 2020 Jun 18. PMID: 32555417 
-2. Biesecker, L.G., Adam, M.P., Alkuraya, F.S., Amemiya, A.R., Bamshad, M.J., Beck, A.E., Bennett, J.T., Bird, L.M., Carey, J.C., Chung, B., et al. (2021). A dyadic approach to the delineation of diagnostic entities in clinical genomics. Am J Hum Genet 108, 8-15.
+1. Rasmussen SA, Hamosh A; OMIM curators. (2020) What's in a name? Issues to consider when naming Mendelian disorders. Genet Med. 2020 Oct;22(10):1573-1575. doi: 10.1038/s41436-020-0851-0. Epub 2020 Jun 18. PMID: 32555417. [Link here](https://europepmc.org/article/pmc/pmc7521992)
+2. Biesecker, L.G., Adam, M.P., Alkuraya, F.S., Amemiya, A.R., Bamshad, M.J., Beck, A.E., Bennett, J.T., Bird, L.M., Carey, J.C., Chung, B., et al. (2021). A dyadic approach to the delineation of diagnostic entities in clinical genomics. Am J Hum Genet 108, 8-15. [Link here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7820621/)
 3. Ada Hamosh, Joanna S. Amberger, Carol A. Bocchini, Joann Bodurtha, Carol J. Bult, Christopher G. Chute, Garry R. Cutting, Harry C. Dietz, Helen V. Firth, Richard A.Gibbs, Wayne W. Grody, Melissa A. Haendel, James R.Lupski, Jennifer E. Posey, Peter N. Robinson, Lynn M. Schriml, Alan F. Scott, Nara L. Sobreira, David Valle, Nan Wu, Sonja A. Rasmussen. (2021) Response to Biesecker et al. The American Journal of Human Genetics 108, 1807–1808, September 2, 20211807. [Link here](https://www.sciencedirect.com/science/article/pii/S000292972100272X?dgcid=author)
 
 
