@@ -448,3 +448,21 @@ tmp/harrisons_seed.txt: mondo.owl
 mondo-harrisons-view.owl: mondo.owl tmp/harrisons_seed.txt
 	$(ROBOT) remove -i $< -T tmp/harrisons_seed.txt --select complement --select classes --select "MONDO:*" \
 	annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@ annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+
+######################################
+### Mondo managing major use ids #####
+######################################
+
+tmp/efo_protection.txt:
+	wget "https://raw.githubusercontent.com/EBISPOT/efo/master/src/ontology/iri_dependencies/mondo_terms.txt" -O tmp/efo_mondo_terms.txt
+	wget "https://raw.githubusercontent.com/EBISPOT/otar_profiler/master/templates/disease_p_ta.txt" -O tmp/efo_disease_p_ta.txt
+	cat tmp/efo_mondo_terms.txt tmp/efo_disease_p_ta.txt | grep MONDO_ | sort | uniq  > $@
+
+.PHONY: %_risks
+%_risks: $(SRC) tmp/%o_protection.txt
+	$(ROBOT) merge -i $(SRC) filter -T tmp/$*_protection.txt --select annotations \
+		verify --queries ../sparql/reports/obsoletion-candidates.sparql --output-dir tmp/
+
+.PHONY: risky_obsoletion_check
+risky_obsoletion_check: efo_risks
