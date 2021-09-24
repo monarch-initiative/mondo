@@ -2,7 +2,11 @@
 ---
 # Disease Naming in Mondo
   
-Mondo aims to provide complete coverage of disease entities in humans and across species. New disease classes are continuously added to Mondo as needed, and Mondo team members participate in a community-wide committee of biocurators and clinicians to define disease language. Different communities have different preferences for disease naming conventions and Mondo intends to address all of our users’ needs through use of primary labels and synonyms. Below we describe two different perspectives on disease naming from the [OMIM](https://www.omim.org) clinical genetics team, and Leslie Biesecker (NIH) and his team. 
+Mondo aims to provide complete coverage of disease entities in humans and across species. New disease classes are continuously added to Mondo as needed, and Mondo team members participate in a community-wide committee of biocurators and clinicians to define disease language. Different communities have different preferences for disease naming conventions and Mondo intends to address all of our users’ needs through use of primary labels and synonyms. 
+
+## Mendelian Disease Naming
+
+Below we describe two different perspectives on Mendelian disease naming from the [OMIM](https://www.omim.org) clinical genetics team, and Leslie Biesecker (NIH) and his team. 
 
 OMIM differentiates molecular subtypes of Mendelian diseases using a numbering schema, for example, Noonan syndrome 1-13. Diseases that have similar phenotypes that have different underlying causal gene variants are grouped into a phenotypic series (for example, Noonan syndrome, [https://omim.org/phenotypicSeries/PS163950)](https://omim.org/phenotypicSeries/PS163950) [1]. 
 
