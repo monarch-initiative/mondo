@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/mondo/mondo-harrisons-view-top.owl#"
+     xml:base="http://purl.obolibrary.org/obo/mondo/mondo-harrisons-view-top.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/mondo-harrisons-view-top.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0000001">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease (Harrison classification)</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease or disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0001292 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0001292">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disorders of the Autonomic Nervous System</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autonomic nervous system disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0002025 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002025">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Psychiatric and Addiction Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psychiatric disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0002028 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002028">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Personality Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">personality disorder (disease)</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0002050 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002050">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depression and Depressive Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depressive disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0002494 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002494">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broader term</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cocaine and Other Commonly Used Drugs</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substance-related disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0002545 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002545">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diseases of the Spinal Cord</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spinal cord disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0002602 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002602">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0005071"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diseases of the Central Nervous System</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">central nervous system disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0003117 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0003117">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Somatic Symptom Disorder</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MONDO_0003117</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0003569 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0003569">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I think this is the grouping class that groups all of these</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trigeminal Neuralgia, Bell’s Palsy, and Other Cranial Nerve Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cranial nerve neuropathy</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0004648 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0004648">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vascular Dementia</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vascular dementia</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0004975 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0004975">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alzheimer’s Disease</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alzheimer disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0004985 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0004985">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bipolar Disorder</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bipolar disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005027">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seizures and Epilepsy</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epilepsy</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005049 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005049">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intracranial Hemorrhage</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intracranial hemorrhage</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005071 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005071">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neurologic Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nervous system disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005090">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schizophrenia</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">schizophrenia (disease)</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005098 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005098">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mondo doesn&apos;t have ischemic stroke, it is in HPO</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ischemic Stroke</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroke disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005180 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005180">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parkinson’s Disease</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parkinson disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005244 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005244">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0019056"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peripheral Neuropathy</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peripheral neuropathy</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005301 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005301">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multiple Sclerosis</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multiple sclerosis</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005395 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005395">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tremor, Chorea, and Other Movement Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">movement disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005404 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005404">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chronic Fatigue Syndrome</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myalgic encephalomeyelitis/chronic fatigue syndrome</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005451 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005451">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feeding and Eating Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eating disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005530 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005530">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Narrow synonym</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opioid-Related Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opiate dependence</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005618 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005618">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anxiety Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anxiety disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0007488 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0007488">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dementia with Lewy Bodies</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lewy body dementia</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0008575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0008575">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nicotine Addiction</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nicotine dependence</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0011057 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0011057">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cerebrovascular Diseases</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cerebrovascular disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0016218 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0016218">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0019056"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We don&apos;t have a class called &apos;immune mediated neuropathy, closest match is: MONDO_0000590 &apos;autoimmune disease of peripheral nervous system&apos;</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guillain-Barré Syndrome and Other Immune-Mediated Neuropathies</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guillain-Barre syndrome</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0017276 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017276">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Frontotemporal Dementia</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frontotemporal dementia</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0018926 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018926">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prion Diseases</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human prion disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0019056 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019056">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0005071"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nerve and Muscle Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuromuscular disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0019100 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019100">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neuromyelitis Optica</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuromyelitis optica</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0020121 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0020121">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0019056"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">muscular dystrophy&apos; is a child of &apos;neuromuscular disease&apos; and &apos;skeletal muscle disease&apos;</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muscular Dystrophies and Other Muscle Diseases</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">muscular dystrophy</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0020124 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0020124">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0019056"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myasthenia Gravis is a descendent of neuromuscular junction disease</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myasthenia Gravis and Other Diseases of the Neuromuscular Junction</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuromuscular junction disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0020128 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0020128">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MONDO_0004976 &apos;amyotrophic lateral sclerosis&apos;</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amyotrophic Lateral Sclerosis and Other Motor Neuron Diseases</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">motor neuron disease</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0021146 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0021146">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MONDO_0005277 migraine disorder&apos; is a grandchild of headache disorder</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Migraine and Other Primary Headache Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">headache disorder</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0021698 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0021698">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002025"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alcohol and Alcohol Use Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alcohol-related disorders</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0043510 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0043510">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concussion and Other Traumatic Brain Injuries</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brain injury</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0100308 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0100308">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MONDO_0002602"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is on a PR: https://github.com/monarch-initiative/mondo/pull/2867</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ataxic Disorders</rdfs:label>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">atactic disorder</skos:altLabel>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+

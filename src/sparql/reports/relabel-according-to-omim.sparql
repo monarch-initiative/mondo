@@ -1,0 +1,33 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT distinct ?term ?term_label ?omim_label ?omim_xref
+WHERE 
+{ 
+    ?term rdfs:label ?term_label ;
+      oboInOwl:hasDbXref ?omim_xref ;
+      oboInOwl:hasExactSynonym ?omim_label ;
+      a owl:Class .
+      
+      ?syn_anno a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasExactSynonym ;
+           owl:annotatedTarget ?omim_label ;
+           oboInOwl:hasDbXref ?omim_xref .
+    	
+  		?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?omim_xref ;
+           oboInOwl:source "MONDO:equivalentTo"^^xsd:string .
+    
+    FILTER(STRSTARTS(?omim_xref, "OMIM"))
+  	FILTER (str(?term_label)!=str(?omim_label))
+    FILTER (isIRI(?term) && STRSTARTS(str(?term),"http://purl.obolibrary.org/obo/MONDO_"))
+    
+    FILTER NOT EXISTS {
+      ?syn_anno oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#ABBREVIATION> .
+    }
+}

@@ -20,6 +20,7 @@ Stable release versions
 See [Changes.md](Changes.md) for more details
 
 
+
 ## Editors' version
 
 Editors of this ontology should use the edit version, [src/ontology/mondo-edit.obo](src/ontology/mondo-edit.obo)
@@ -40,7 +41,7 @@ Layout:
 The Mondo logo is available here: https://github.com/jmcmurry/closed-illustrations/tree/master/logos/mondo-logos
 
 ## License
-[CC-BY](https://creativecommons.org/licenses/by/3.0/)
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Contact
 

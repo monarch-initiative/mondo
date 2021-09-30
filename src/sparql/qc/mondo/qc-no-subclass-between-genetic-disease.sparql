@@ -1,0 +1,43 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+
+SELECT DISTINCT ?entity ?property ?value WHERE 
+{
+
+?entity rdfs:subClassOf [ rdf:type owl:Restriction ;
+owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
+owl:someValuesFrom ?gene1 ] . 
+?entity rdfs:label ?entity_label .
+
+?entity rdfs:subClassOf* ?value .
+
+?value rdfs:subClassOf [ rdf:type owl:Restriction ;
+owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
+owl:someValuesFrom ?gene2 ] .
+
+FILTER NOT EXISTS { ?value rdfs:subClassOf [ rdf:type owl:Restriction ;
+owl:onProperty <http://purl.obolibrary.org/obo/RO_0004020> ;
+owl:someValuesFrom ?gene1 ] . }
+
+FILTER NOT EXISTS {
+   ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-no-subclass-between-genetic-disease.sparql .
+}
+
+FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+FILTER (isIRI(?value) && STRSTARTS(str(?value), "http://purl.obolibrary.org/obo/MONDO_"))
+FILTER (isIRI(?gene1) && STRSTARTS(str(?gene1), "http://identifiers.org/hgnc/"))
+FILTER (isIRI(?gene2) && STRSTARTS(str(?gene2), "http://identifiers.org/hgnc/"))
+FILTER ( ?entity!=?value )
+FILTER ( ?gene1!=?gene2 )
+BIND(rdfs:subClassOf as ?property)
+}
+ORDER BY ?entity
+# FILTER ( ?gene1!=?gene2 ) this is a hack to circumvent the case that a disease pertains to the same gene but is further specified.
+
+# Using the subclass selector turned out way too costly computationally:
+# ?gene rdfs:subClassOf* <http://purl.obolibrary.org/obo/SO_0001217> .
+# ?gene2 rdfs:subClassOf* <http://purl.obolibrary.org/obo/SO_0001217> .

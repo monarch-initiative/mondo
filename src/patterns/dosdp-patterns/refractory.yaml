@@ -1,40 +1,43 @@
 pattern_name: refractory
 
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/refractory.yaml
+
+description: TBD.
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
 classes:
-    refractory: HP:0031375
-    disease: MONDO:0000001
+  refractory: HP:0031375
+  disease: MONDO:0000001
 
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: disease
+  disease: disease
 
 name:
-    text: refractory %s
-    vars:
-      - disease
+  text: refractory %s
+  vars:
+  - disease
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: '%s, refractory'
-    vars:
-      - disease
+- annotationProperty: exact_synonym
+  text: '%s, refractory'
+  vars:
+  - disease
 
 def:
-    text: A %s that is difficult to treat or cure.
-    vars:
-      - disease
+  text: A %s that is difficult to treat or cure.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'refractory'"
-    vars:
-      - disease
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/refractory.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''refractory'''
+  vars:
+  - disease

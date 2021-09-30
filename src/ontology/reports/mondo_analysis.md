@@ -124,8 +124,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>49</td>
       <td>56</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>duplicate_definition</td>
@@ -144,8 +144,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>1662</td>
       <td>1690</td>
       <td>1688</td>
-      <td>1689</td>
-      <td>1689</td>
+      <td>1687</td>
+      <td>1687</td>
     </tr>
     <tr>
       <td>duplicate_label</td>
@@ -164,8 +164,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>1443</td>
       <td>1579</td>
       <td>1599</td>
-      <td>1599</td>
-      <td>1599</td>
+      <td>1649</td>
+      <td>1649</td>
     </tr>
     <tr>
       <td>equivalent_pair</td>
@@ -316,7 +316,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid331501</td>
+      <td>278cfaf2-dbe4-4d3f-a484-8ceae7f869aagenid333489</td>
       <td>edit</td>
     </tr>
     <tr>
@@ -324,7 +324,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0021108</td>
       <td>owl:equivalentClass</td>
-      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid331505</td>
+      <td>278cfaf2-dbe4-4d3f-a484-8ceae7f869aagenid333493</td>
       <td>edit</td>
     </tr>
     <tr>
@@ -332,7 +332,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid358696</td>
+      <td>278cfaf2-dbe4-4d3f-a484-8ceae7f869aagenid360961</td>
       <td>edit</td>
     </tr>
     <tr>
@@ -340,7 +340,36 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>multiple_equivalent_classes</td>
       <td>MONDO:0045024</td>
       <td>owl:equivalentClass</td>
-      <td>df2a8c44-3aea-47c7-8191-b85cb7db2c7egenid358700</td>
+      <td>278cfaf2-dbe4-4d3f-a484-8ceae7f869aagenid360965</td>
+      <td>edit</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### Deprecated class reference
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Level</th>
+      <th>Rule Name</th>
+      <th>Subject</th>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Ontology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ERROR</td>
+      <td>deprecated_class_reference</td>
+      <td>MONDO:0020802</td>
+      <td>rdfs:subClassOf</td>
+      <td>MONDO:0020804</td>
       <td>edit</td>
     </tr>
   </tbody>
@@ -564,14 +593,6 @@ Table: Breakdown of the number of relationships in Mondo.
     <tr>
       <td>WARN</td>
       <td>missing_definition</td>
-      <td>MONDO:0000049</td>
-      <td>IAO:0000115</td>
-      <td>NaN</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>WARN</td>
-      <td>missing_definition</td>
       <td>MONDO:0000050</td>
       <td>IAO:0000115</td>
       <td>NaN</td>
@@ -621,6 +642,14 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>WARN</td>
       <td>missing_definition</td>
       <td>MONDO:0000079</td>
+      <td>IAO:0000115</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>missing_definition</td>
+      <td>MONDO:0000090</td>
       <td>IAO:0000115</td>
       <td>NaN</td>
       <td>edit</td>
@@ -947,6 +976,14 @@ Table: Breakdown of the number of relationships in Mondo.
     <tr>
       <td>INFO</td>
       <td>missing_superclass</td>
+      <td>MONDO:0000093</td>
+      <td>rdfs:subClassOf</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>missing_superclass</td>
       <td>MONDO:0000162</td>
       <td>rdfs:subClassOf</td>
       <td>NaN</td>
@@ -1040,14 +1077,6 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>NaN</td>
       <td>edit</td>
     </tr>
-    <tr>
-      <td>INFO</td>
-      <td>missing_superclass</td>
-      <td>MONDO:0000551</td>
-      <td>rdfs:subClassOf</td>
-      <td>NaN</td>
-      <td>edit</td>
-    </tr>
   </tbody>
 </table>
 
@@ -1056,12 +1085,20 @@ Table: Breakdown of the number of relationships in Mondo.
 
     WARNING!  mondo-qc-2017-no-subclass-between-genetic-disease-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-2018-no-subclass-between-genetic-disease-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-edit-no-subclass-between-genetic-disease-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-2017-omim-subsumption-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-2017-reflexive-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-2018-reflexive-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-current-reflexive-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-edit-reflexive-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-mondo-owl-reflexive-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-2017-related-exact-synonym-omim-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-2018-related-exact-synonym-omim-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-2019-related-exact-synonym-omim-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-2020-related-exact-synonym-omim-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-current-related-exact-synonym-omim-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-edit-related-exact-synonym-omim-warning.tsv  is empty and has been skipped.
+    WARNING!  mondo-qc-mondo-owl-related-exact-synonym-omim-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-2017-single-child-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-2017-two-pattern-warning.tsv  is empty and has been skipped.
     WARNING!  mondo-qc-2018-two-pattern-warning.tsv  is empty and has been skipped.
@@ -1092,8 +1129,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>214.0</td>
       <td>71.0</td>
       <td>74.0</td>
-      <td>17.0</td>
-      <td>74.0</td>
+      <td>NaN</td>
+      <td>61.0</td>
     </tr>
     <tr>
       <td>omim-subsumption-warning</td>
@@ -1102,8 +1139,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>690.0</td>
       <td>556.0</td>
       <td>581.0</td>
-      <td>517.0</td>
-      <td>548.0</td>
+      <td>509.0</td>
+      <td>539.0</td>
     </tr>
     <tr>
       <td>reflexive-warning</td>
@@ -1132,7 +1169,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>1637.0</td>
       <td>1580.0</td>
       <td>1558.0</td>
-      <td>1381.0</td>
+      <td>1377.0</td>
       <td>1556.0</td>
     </tr>
     <tr>
@@ -1150,140 +1187,11 @@ Table: Breakdown of the number of relationships in Mondo.
 
 
 
-### Check: no-subclass-between-genetic-disease-warning
-
-
-
-#### mondo-owl (Errors: 17)
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>term</th>
-      <th>term_label</th>
-      <th>d2</th>
-      <th>d2_label</th>
-      <th>ontology</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>MONDO:0044304</td>
-      <td>hyperphenylalaninemia due to DNAJC12 deficiency</td>
-      <td>MONDO:0009861</td>
-      <td>phenylketonuria</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009711</td>
-      <td>congenital fiber-type disproportion myopathy</td>
-      <td>MONDO:0100084</td>
-      <td>actinopathy</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0012160</td>
-      <td>spondylometaphyseal dysplasia-cone-rod dystrophy syndrome</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0010486</td>
-      <td>palmoplantar keratoderma, mutilating, with periorificial keratotic plaques, X-linked</td>
-      <td>MONDO:0019014</td>
-      <td>mutilating palmoplantar keratoderma with periorificial keratotic plaques</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009593</td>
-      <td>spondylometaphyseal dysplasia, Sedaghatian type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007982</td>
-      <td>metaphyseal chondrodysplasia, Jansen type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009652</td>
-      <td>mucolipidosis type III gamma</td>
-      <td>MONDO:0018931</td>
-      <td>mucolipidosis type III</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009597</td>
-      <td>metaphyseal chondrodysplasia, Spahr type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0008476</td>
-      <td>spondyloepimetaphyseal dysplasia, Strudwick type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0011211</td>
-      <td>axial spondylometaphyseal dysplasia</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0008477</td>
-      <td>spondylometaphyseal dysplasia, Kozlowski type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0009711</td>
-      <td>congenital fiber-type disproportion myopathy</td>
-      <td>MONDO:0100084</td>
-      <td>actinopathy</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0011939</td>
-      <td>Spondyloenchondrodysplasia with immune dysregulation</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0013223</td>
-      <td>autosomal recessive spondylometaphyseal dysplasia, Megarbane type</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0007983</td>
-      <td>Schmid metaphyseal chondrodysplasia</td>
-      <td>MONDO:0009943</td>
-      <td>Pyle disease</td>
-      <td>edit</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
 ### Check: omim-subsumption-warning
 
 
 
-#### mondo-owl (Errors: 517)
+#### mondo-owl (Errors: 509)
 
 
 
@@ -1319,15 +1227,6 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>edit</td>
     </tr>
     <tr>
-      <td>MONDO:0009967</td>
-      <td>renal tubular acidosis 3</td>
-      <td>MONDO:0009818</td>
-      <td>autosomal recessive osteopetrosis 3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>edit</td>
-    </tr>
-    <tr>
       <td>MONDO:0032834</td>
       <td>retinitis pigmentosa 86</td>
       <td>MONDO:0019200</td>
@@ -1355,15 +1254,6 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>edit</td>
     </tr>
     <tr>
-      <td>MONDO:0012395</td>
-      <td>cataract 18</td>
-      <td>MONDO:0011060</td>
-      <td>early-onset non-syndromic cataract</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>edit</td>
-    </tr>
-    <tr>
       <td>MONDO:0013611</td>
       <td>retinitis pigmentosa 62</td>
       <td>MONDO:0019200</td>
@@ -1386,15 +1276,6 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>autosomal recessive nonsyndromic deafness 45</td>
       <td>MONDO:0019588</td>
       <td>autosomal recessive nonsyndromic deafness</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>edit</td>
-    </tr>
-    <tr>
-      <td>MONDO:0027462</td>
-      <td>autosomal recessive cutis laxa type 2c</td>
-      <td>MONDO:0009054</td>
-      <td>autosomal recessive cutis laxa type 2, classic type</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>edit</td>
@@ -1431,6 +1312,33 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>autosomal recessive nonsyndromic deafness 89</td>
       <td>MONDO:0019588</td>
       <td>autosomal recessive nonsyndromic deafness</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>MONDO:0011552</td>
+      <td>SCZD10</td>
+      <td>MONDO:0005090</td>
+      <td>schizophrenia (disease)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>MONDO:0012452</td>
+      <td>autosomal recessive nonsyndromic deafness 65</td>
+      <td>MONDO:0019588</td>
+      <td>autosomal recessive nonsyndromic deafness</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>edit</td>
+    </tr>
+    <tr>
+      <td>MONDO:0014929</td>
+      <td>retinitis pigmentosa 76</td>
+      <td>MONDO:0019200</td>
+      <td>retinitis pigmentosa</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>edit</td>
@@ -1557,7 +1465,7 @@ Table: Breakdown of the number of relationships in Mondo.
 
 
 
-#### mondo-owl (Errors: 1381)
+#### mondo-owl (Errors: 1377)
 
 
 
@@ -1677,13 +1585,13 @@ Table: Breakdown of the number of relationships in Mondo.
     <tr>
       <td>MONDO:0017941</td>
       <td>&lt;http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml</td>
-      <td>&lt;http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml</td>
+      <td>&lt;http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml</td>
       <td>edit</td>
     </tr>
     <tr>
       <td>MONDO:0017941</td>
       <td>&lt;http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml</td>
-      <td>&lt;http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml</td>
+      <td>&lt;http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml</td>
       <td>edit</td>
     </tr>
     <tr>
@@ -1792,8 +1700,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>99234</td>
       <td>99326</td>
       <td>100034</td>
-      <td>100068</td>
-      <td>128546</td>
+      <td>101046</td>
+      <td>129485</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2004/02/skos/core#exactMatch</td>
@@ -1802,7 +1710,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>69877</td>
       <td>69979</td>
       <td>70604</td>
-      <td>70633</td>
+      <td>71623</td>
       <td>0</td>
     </tr>
     <tr>
@@ -1812,8 +1720,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>63390</td>
       <td>63636</td>
       <td>64723</td>
-      <td>64753</td>
-      <td>64753</td>
+      <td>65325</td>
+      <td>65325</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2000/01/rdf-schema#subClassOf</td>
@@ -1822,8 +1730,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>46835</td>
       <td>46891</td>
       <td>47630</td>
-      <td>47693</td>
-      <td>47106</td>
+      <td>47485</td>
+      <td>46928</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym</td>
@@ -1832,8 +1740,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>37814</td>
       <td>37757</td>
       <td>37785</td>
-      <td>37778</td>
-      <td>37778</td>
+      <td>38433</td>
+      <td>38433</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td>
@@ -1842,8 +1750,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>23555</td>
       <td>23623</td>
       <td>24297</td>
-      <td>24323</td>
-      <td>24323</td>
+      <td>24373</td>
+      <td>24373</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#id</td>
@@ -1852,8 +1760,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>23443</td>
       <td>23510</td>
       <td>24180</td>
-      <td>24206</td>
-      <td>24206</td>
+      <td>24256</td>
+      <td>24256</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2000/01/rdf-schema#label</td>
@@ -1862,8 +1770,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>23442</td>
       <td>23510</td>
       <td>24180</td>
-      <td>24206</td>
-      <td>24206</td>
+      <td>24256</td>
+      <td>24256</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2004/02/skos/core#closeMatch</td>
@@ -1872,7 +1780,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>16375</td>
       <td>16273</td>
       <td>16510</td>
-      <td>16512</td>
+      <td>16486</td>
       <td>0</td>
     </tr>
     <tr>
@@ -1882,8 +1790,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>15425</td>
       <td>15452</td>
       <td>15504</td>
-      <td>15504</td>
-      <td>15504</td>
+      <td>15502</td>
+      <td>15502</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#inSubset</td>
@@ -1892,8 +1800,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>13335</td>
       <td>13383</td>
       <td>13454</td>
-      <td>13458</td>
-      <td>13458</td>
+      <td>13390</td>
+      <td>13390</td>
     </tr>
     <tr>
       <td>&lt;http://purl.org/dc/terms/conformsTo</td>
@@ -1912,8 +1820,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>44290</td>
       <td>44367</td>
       <td>7428</td>
-      <td>7469</td>
-      <td>7469</td>
+      <td>7463</td>
+      <td>7463</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2000/01/rdf-schema#seeAlso</td>
@@ -1922,8 +1830,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>3062</td>
       <td>3063</td>
       <td>3162</td>
-      <td>3173</td>
-      <td>3173</td>
+      <td>3232</td>
+      <td>3232</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2002/07/owl#deprecated</td>
@@ -1932,8 +1840,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>1756</td>
       <td>1794</td>
       <td>1965</td>
-      <td>1975</td>
-      <td>1975</td>
+      <td>2081</td>
+      <td>2081</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/IAO_0100001</td>
@@ -1942,8 +1850,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>1540</td>
       <td>1564</td>
       <td>1673</td>
-      <td>1676</td>
-      <td>1676</td>
+      <td>1723</td>
+      <td>1723</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/mondo#excluded_from_qc_check</td>
@@ -1952,8 +1860,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>1397</td>
-      <td>1397</td>
+      <td>1377</td>
+      <td>1377</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/mondo#excluded_subClassOf</td>
@@ -1962,8 +1870,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>789</td>
       <td>909</td>
       <td>1073</td>
-      <td>1076</td>
-      <td>1081</td>
+      <td>1130</td>
+      <td>1135</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2000/01/rdf-schema#comment</td>
@@ -1972,8 +1880,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>947</td>
       <td>952</td>
       <td>974</td>
-      <td>978</td>
-      <td>978</td>
+      <td>1067</td>
+      <td>1067</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym</td>
@@ -1982,8 +1890,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>768</td>
       <td>774</td>
       <td>789</td>
-      <td>791</td>
-      <td>791</td>
+      <td>797</td>
+      <td>797</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym</td>
@@ -1992,8 +1900,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>443</td>
       <td>455</td>
       <td>490</td>
-      <td>490</td>
-      <td>490</td>
+      <td>513</td>
+      <td>513</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/mondo#should_conform_to</td>
@@ -2002,8 +1910,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>486</td>
-      <td>486</td>
+      <td>485</td>
+      <td>485</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#consider</td>
@@ -2012,8 +1920,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>248</td>
       <td>251</td>
       <td>291</td>
-      <td>294</td>
-      <td>294</td>
+      <td>346</td>
+      <td>346</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/IAO_0000231</td>
@@ -2042,8 +1950,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>4</td>
       <td>20</td>
       <td>89</td>
-      <td>93</td>
-      <td>93</td>
+      <td>97</td>
+      <td>97</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2002/07/owl#disjointWith</td>
@@ -2052,8 +1960,8 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>72</td>
       <td>71</td>
       <td>76</td>
-      <td>76</td>
-      <td>76</td>
+      <td>78</td>
+      <td>78</td>
     </tr>
     <tr>
       <td>&lt;http://purl.org/dc/elements/1.1/date</td>
@@ -2082,7 +1990,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>15</td>
       <td>15</td>
       <td>12</td>
-      <td>12</td>
+      <td>15</td>
       <td>0</td>
     </tr>
     <tr>
@@ -2092,7 +2000,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>11</td>
       <td>12</td>
       <td>11</td>
-      <td>11</td>
+      <td>12</td>
       <td>0</td>
     </tr>
     <tr>
@@ -2163,7 +2071,7 @@ Table: Breakdown of the number of relationships in Mondo.
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>5570</td>
+      <td>5527</td>
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/mondo#RELARED</td>
@@ -2235,129 +2143,159 @@ Table: Breakdown of the number of relationships in Mondo.
     </tr>
     <tr>
       <td>&lt;http://purl.obolibrary.org/obo/mondo#excluded_from_qc_check</td>
-      <td>1397</td>
+      <td>1377</td>
       <td>0</td>
-      <td>1397</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/mondo#should_conform_to</td>
-      <td>486</td>
-      <td>0</td>
-      <td>486</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2000/01/rdf-schema#subClassOf</td>
-      <td>47693</td>
-      <td>47630</td>
-      <td>63</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2002/07/owl#equivalentClass</td>
-      <td>7469</td>
-      <td>7428</td>
-      <td>41</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasDbXref</td>
-      <td>100068</td>
-      <td>100034</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasExactSynonym</td>
-      <td>64753</td>
-      <td>64723</td>
-      <td>30</td>
+      <td>1377</td>
     </tr>
     <tr>
       <td>&lt;http://www.w3.org/2004/02/skos/core#exactMatch</td>
-      <td>70633</td>
+      <td>71623</td>
       <td>70604</td>
-      <td>29</td>
+      <td>1019</td>
     </tr>
     <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#id</td>
-      <td>24206</td>
-      <td>24180</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2000/01/rdf-schema#label</td>
-      <td>24206</td>
-      <td>24180</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td>
-      <td>24323</td>
-      <td>24297</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2000/01/rdf-schema#seeAlso</td>
-      <td>3173</td>
-      <td>3162</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2002/07/owl#deprecated</td>
-      <td>1975</td>
-      <td>1965</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#inSubset</td>
-      <td>13458</td>
-      <td>13454</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2000/01/rdf-schema#comment</td>
-      <td>978</td>
-      <td>974</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#created_by</td>
-      <td>93</td>
-      <td>89</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/IAO_0100001</td>
-      <td>1676</td>
-      <td>1673</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>&lt;http://purl.obolibrary.org/obo/mondo#excluded_subClassOf</td>
-      <td>1076</td>
-      <td>1073</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#consider</td>
-      <td>294</td>
-      <td>291</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.w3.org/2004/02/skos/core#closeMatch</td>
-      <td>16512</td>
-      <td>16510</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym</td>
-      <td>791</td>
-      <td>789</td>
-      <td>2</td>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasDbXref</td>
+      <td>101046</td>
+      <td>100034</td>
+      <td>1012</td>
     </tr>
     <tr>
       <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym</td>
-      <td>37778</td>
+      <td>38433</td>
       <td>37785</td>
-      <td>-7</td>
+      <td>648</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasExactSynonym</td>
+      <td>65325</td>
+      <td>64723</td>
+      <td>602</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/mondo#should_conform_to</td>
+      <td>485</td>
+      <td>0</td>
+      <td>485</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2002/07/owl#deprecated</td>
+      <td>2081</td>
+      <td>1965</td>
+      <td>116</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2000/01/rdf-schema#comment</td>
+      <td>1067</td>
+      <td>974</td>
+      <td>93</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td>
+      <td>24373</td>
+      <td>24297</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#id</td>
+      <td>24256</td>
+      <td>24180</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2000/01/rdf-schema#label</td>
+      <td>24256</td>
+      <td>24180</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2000/01/rdf-schema#seeAlso</td>
+      <td>3232</td>
+      <td>3162</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/mondo#excluded_subClassOf</td>
+      <td>1130</td>
+      <td>1073</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#consider</td>
+      <td>346</td>
+      <td>291</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/IAO_0100001</td>
+      <td>1723</td>
+      <td>1673</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2002/07/owl#equivalentClass</td>
+      <td>7463</td>
+      <td>7428</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym</td>
+      <td>513</td>
+      <td>490</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym</td>
+      <td>797</td>
+      <td>789</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#created_by</td>
+      <td>97</td>
+      <td>89</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2004/02/skos/core#broadMatch</td>
+      <td>15</td>
+      <td>12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2002/07/owl#disjointWith</td>
+      <td>78</td>
+      <td>76</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2004/02/skos/core#narrowMatch</td>
+      <td>12</td>
+      <td>11</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>&lt;http://purl.obolibrary.org/obo/IAO_0000115</td>
+      <td>15502</td>
+      <td>15504</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2004/02/skos/core#closeMatch</td>
+      <td>16486</td>
+      <td>16510</td>
+      <td>-24</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.geneontology.org/formats/oboInOwl#inSubset</td>
+      <td>13390</td>
+      <td>13454</td>
+      <td>-64</td>
+    </tr>
+    <tr>
+      <td>&lt;http://www.w3.org/2000/01/rdf-schema#subClassOf</td>
+      <td>47485</td>
+      <td>47630</td>
+      <td>-145</td>
     </tr>
   </tbody>
 </table>

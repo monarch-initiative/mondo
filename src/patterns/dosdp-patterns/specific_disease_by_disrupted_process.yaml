@@ -1,0 +1,54 @@
+pattern_name: X disease disrupts X
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X
+
+description: 'This is auto-generated. Add your description here
+
+  Examples: [disease of catalytic activity](http://purl.obolibrary.org/obo/MONDO_0044976),
+  [disease of transporter activity](http://purl.obolibrary.org/obo/MONDO_0044975),
+  [phagocytic cell dysfunction](http://purl.obolibrary.org/obo/MONDO_0024627) (49
+  total)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  owl_thing: owl:Thing
+  disease: MONDO:0000001
+
+relations:
+  disease disrupts: RO:0004024
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+  process: '''owl_thing'''
+
+name:
+  text: '%s %s'
+  vars:
+  - process
+  - disease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s %s'
+  vars:
+  - process
+  - disease
+
+def:
+  text: Any %s that disrupts %s
+  vars:
+  - disease
+  - process
+
+equivalentTo:
+  text: '%s and (''disease disrupts'' some %s)'
+  vars:
+  - disease
+  - process

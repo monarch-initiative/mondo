@@ -1,40 +1,47 @@
 pattern_name: autosomal_recessive
 
-classes:
-    autosomal recessive inheritance: HP:0000007
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml
 
-    owl_thing: owl:Thing
+description: 'This pattern is applied to autosomal recessive forms of an inherited disease.
+
+Examples: [autosomal recessive brachyolmia](http://purl.obolibrary.org/obo/MONDO_0018662),
+  [autosomal recessive sideroblastic anemia](http://purl.obolibrary.org/obo/MONDO_0016828)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  autosomal recessive inheritance: HP:0000007
+  disease: MONDO:0000001
+
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: owl_thing
+  disease: '''disease'''
 
 name:
-    text: autosomal recessive %s
-    vars:
-      - disease
+  text: autosomal recessive %s
+  vars:
+  - disease
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: '%s, autosomal recessive'
-    vars:
-      - disease
+- annotationProperty: exact_synonym
+  text: '%s, autosomal recessive'
+  vars:
+  - disease
 
 def:
-    text: Autosomal recessive form of %s.
-    vars:
-      - disease
+  text: Autosomal recessive form of %s.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'autosomal recessive inheritance'"
-    vars:
-      - disease
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''autosomal recessive inheritance'''
+  vars:
+  - disease

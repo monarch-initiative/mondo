@@ -1,0 +1,51 @@
+Prefix(:=<http://www.semanticweb.org/matentzn/ontologies/2021/3/untitled-ontology-239#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/matentzn/ontologies/2021/3/untitled-ontology-239>
+
+Declaration(Class(<http://purl.obolibrary.org/obo/CL_0017530>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CL_0017531>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CL_0017533>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CL_0017534>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/CL_0017532>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://purl.obolibrary.org/obo/CL_0017532> (R)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0017532> "R")
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://purl.obolibrary.org/obo/CL_0017530> (A)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0017530> "A")
+EquivalentClasses(<http://purl.obolibrary.org/obo/CL_0017530> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/CL_0017532> <http://purl.obolibrary.org/obo/CL_0017531>))
+EquivalentClasses(<http://purl.obolibrary.org/obo/CL_0017530> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/CL_0017532> <http://purl.obolibrary.org/obo/CL_0017533>))
+
+# Class: <http://purl.obolibrary.org/obo/CL_0017531> (B)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0017531> "B")
+
+# Class: <http://purl.obolibrary.org/obo/CL_0017533> (C)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0017533> "C")
+
+# Class: <http://purl.obolibrary.org/obo/CL_0017534> (A2)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CL_0017534> "A2")
+EquivalentClasses(<http://purl.obolibrary.org/obo/CL_0017534> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/CL_0017532> <http://purl.obolibrary.org/obo/CL_0017533>))
+
+
+)

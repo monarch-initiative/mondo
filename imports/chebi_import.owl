@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/chebi_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2020-11-06/imports/chebi_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-08-03/imports/chebi_import.owl"/>
     </owl:Ontology>
     
 
@@ -153,6 +153,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_131530 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_131530">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27306"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50334"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -253,6 +254,25 @@
         <obo:IAO_0000115>A class of carbonyl compound encompassing dicarboxylic acids and any derivatives obtained by substitution of either one or both of the carboxy hydrogens.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>dicarboxylic acids and derivatives</oboInOwl:hasRelatedSynonym>
         <rdfs:label>dicarboxylic acids and O-substituted derivatives</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_132153 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_132153">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_61469"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63551"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16336"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A carbohydrate acid derivative anion obtained by deprotonation of the carboxy groups of hyaluronic acid; major species at pH 7.3.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>hyaluronan</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hyaluronate polyanion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hyaluronate</rdfs:label>
     </owl:Class>
     
 
@@ -391,6 +411,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_138015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_138015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51061"/>
+        <obo:IAO_0000115>Any compound that can disrupt the functions of the endocrine (hormone) system</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>endocrine disrupting chemical</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>endocrine disrupting chemicals</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>endocrine disrupting compound</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>endocrine disrupting compounds</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>endocrine disruptors</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>endocrine-disrupting chemical</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>endocrine-disrupting chemicals</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hormonally active agent</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hormonally active agents</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>endocrine disruptor</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_138103 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_138103">
@@ -400,6 +439,24 @@
         <oboInOwl:hasRelatedSynonym>mineral acid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>mineral acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label>inorganic acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_13850 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_13850">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38560"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75771"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An apoprotein is a protein devoid of its characteristic prosthetic group or metal.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>apoprotein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>apoproteins</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>apoprotein</rdfs:label>
     </owl:Class>
     
 
@@ -486,6 +543,22 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_139592 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_139592">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_139588"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26878"/>
+        <obo:IAO_0000115>An alpha-hydroxy ketone in which the carbonyl group and the hydroxy group are linked by a carbon bearing two organyl groups.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>tertiary alpha-hydroxy ketones</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tertiary alpha-hydroxy-ketone</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tertiary alpha-hydroxy-ketones</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tertiary alpha-hydroxyketone</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tertiary alpha-hydroxyketones</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tertiary alpha-hydroxy ketone</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_140310 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_140310">
@@ -563,6 +636,22 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_142163 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_142163">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24433"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_53000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An antigenic epitope recognized by an anti-bilirubin monoclonal antibody designated 24G7. A substructure of bilirubin IXalpha, it is the region containing the oxo group at C-1, the methyl group at C-2, C-(4, 5, 6, 9), and N-21 and -22.</obo:IAO_0000115>
+        <rdfs:label>24G7 epitope</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_14321 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_14321">
@@ -592,6 +681,16 @@
         <oboInOwl:hasRelatedSynonym>glutamate</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>glutamic acid monoanion</oboInOwl:hasRelatedSynonym>
         <rdfs:label>glutamate(1-)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_144644 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_144644">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26895"/>
+        <oboInOwl:hasRelatedSynonym>a tetracycline</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>a tetracycline zwittterion</rdfs:label>
     </owl:Class>
     
 
@@ -1066,6 +1165,46 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_15440 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_15440">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35191"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75771"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75772"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76924"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77746"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A triterpene consisting of 2,6,10,15,19,23-hexamethyltetracosane having six double bonds at the 2-, 6-, 10-, 14-, 18- and 22-positions with (all-E)-configuration.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>(6E,10E,14E,18E)-2,6,10,15,19,23-hexamethyltetracosa-2,6,10,14,18,22-hexaene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Squalene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>squalene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>(all-E)-2,6,10,15,19,23-hexamethyl-2,6,10,14,18,22-tetracosahexaene</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Spinacene</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Supraene</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>squalene</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_15705 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_15705">
@@ -1273,6 +1412,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_15956 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_15956">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176841"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51570"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1301,12 +1441,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75771"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1330,6 +1464,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_78675"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_57586"/>
             </owl:Restriction>
@@ -1337,7 +1477,6 @@
         <obo:IAO_0000115>An organic heterobicyclic compound that consists of 2-oxohexahydro-1H-thieno[3,4-d]imidazole having a valeric acid substituent attached to the tetrahydrothiophene ring. The parent of the class of biotins.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>5-[(3aS,4S,6aR)-2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl]pentanoic acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>BIOTIN</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Biotin</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>(+)-cis-Hexahydro-2-oxo-1H-thieno[3,4]imidazole-4-valeric acid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>(3aS,4S,6aR)-Hexahydro-2-oxo-1H-thieno[3,4-d]imidazole-4-valeric acid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>5-(2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl)pentanoic acid</oboInOwl:hasRelatedSynonym>
@@ -1345,6 +1484,7 @@
         <oboInOwl:hasRelatedSynonym>D-(+)-biotin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>D-Biotin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Vitamin H</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>biotin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>biotina</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>biotine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>biotinum</oboInOwl:hasRelatedSynonym>
@@ -1406,6 +1546,12 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18237"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24318"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_173085"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -1560,6 +1706,30 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16137 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16137">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37395"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75771"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_57652"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A mucopolysaccharide composed of repeating beta-D-glucopyranuronosyl-(1-&gt;3)-beta-D-N-acetylgalactosaminyl units.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Chondroitin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Chondroitin-D-glucuronate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>chondroitin D-glucuronate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_16150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16150">
@@ -1592,6 +1762,56 @@
         <oboInOwl:hasRelatedSynonym>benzoate anion</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>benzoic acid, ion(1-)</oboInOwl:hasRelatedSynonym>
         <rdfs:label>benzoate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16189 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16189">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33482"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48154"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_79388"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75772"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77746"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_45696"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A sulfur oxoanion obtained by deprotonation of both OH groups of sulfuric acid.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Sulfate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>sulfate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tetraoxidosulfate(2-)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tetraoxosulfate(2-)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tetraoxosulfate(VI)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>SO4(2-)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>SULFATE ION</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Sulfate anion(2-)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Sulfate dianion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Sulfate(2-)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Sulfuric acid ion(2-)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>[SO4](2-)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sulphate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sulphate ion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sulfate</rdfs:label>
     </owl:Class>
     
 
@@ -1768,6 +1988,36 @@
         <oboInOwl:hasRelatedSynonym>Malonylharnstoff</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Malonylurea</oboInOwl:hasRelatedSynonym>
         <rdfs:label>barbituric acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16336 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16336">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37395"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_72813"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77746"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_132153"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A mucopolysaccharide composed of N-acetylglucosamine and glucuronic acid subunits. It is found in the connective tissues of vertebrates. A principal constituent of the extracellular matrix (ECM), it mediates the growth and metastasis of tumour cells.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Hyaluronic acid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Hyaluronsaeure</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>[beta-D-glucopyranuronosyl-(1-&gt;3)-2-(acetylamino)-2-deoxy-beta-D-glucopyranosyl-(1-&gt;4)]n</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>[beta-N-Acetyl-D-glucosaminyl(1,4)beta-D-glucuronosyl(1,3)]n</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>acide hyaluronique</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>acido hialuronico</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hyaluronan</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hyaluronic acid</rdfs:label>
     </owl:Class>
     
 
@@ -2082,13 +2332,24 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A hydroxymethylpyridine with hydroxymethyl groups at positions 4 and 5, a hydroxy group at position 3 and a methyl group at position 2. The 4-methanol form of vitamin B6, it is converted intoto pyridoxal phosphate which is a coenzyme for synthesis of amino acids, neurotransmitters, sphingolipids and aminolevulinic acid.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>4,5-bis(hydroxymethyl)-2-methylpyridin-3-ol</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Pyridoxine</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>pyridoxine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>2-Methyl-3-hydroxy-4,5-dihydroxymethyl-pyridin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>2-methyl-3-hydroxy-4,5-bis(hydroxymethyl)pyridine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>2-methyl-3-hydroxy-4,5-di(hydroxymethyl)pyridine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>2-methyl-3-hydroxy-4,5-dihydroxymethylpyridine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>2-methyl-4,5-bis(hydroxymethyl)-3-hydroxypyridine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>2-methyl-4,5-dimethylol-pyridin-3-ol</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>3-hydroxy-2-picoline-4,5-dimethanol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>3-hydroxy-4,5-bis(hydroxymethyl)-2-methylpyridine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>3-hydroxy-4,5-dimethylol-alpha-picoline</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>4,5-bis(hydroxymethyl)-2-methyl-pyridin-3-ol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>5-hydroxy-6-methyl-3,4-pyridinedimethanol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Pyridoxol</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>piridossina</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pyridoxina</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pyridoxine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pyridoxinum</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pyridoxolum</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamin B6</oboInOwl:hasRelatedSynonym>
         <rdfs:label>pyridoxine</rdfs:label>
     </owl:Class>
@@ -2162,6 +2423,17 @@
         <oboInOwl:hasRelatedSynonym>D-Amino acid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>D-alpha-amino acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label>D-alpha-amino acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_167559 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_167559">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_78616"/>
+        <obo:IAO_0000115>Any oligosaccharide, polysaccharide or their derivatives consisting of monosaccharides or monosaccharide derivatives linked by glycosidic bonds. See also http://www.ontobee.org/ontology/GNO?iri=http://purl.obolibrary.org/obo/GNO_00000001.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>glycans</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>glycan</rdfs:label>
     </owl:Class>
     
 
@@ -2390,6 +2662,73 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_16990 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16990">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35692"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36735"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_142163"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22586"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75771"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77746"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_57977"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A member of the class of  biladienes that is a linear tetrapyrrole with the dipyrrole units being of both exovinyl and endovinyl type. A product of heme degradation, it is produced in the reticuloendothelial system by the reduction of biliverdin and transported to the liver as a complex with serum albumin.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>3,18-diethenyl-2,7,13,17-tetramethyl-1,19-dioxo-1,10,19,22,23,24-hexahydro-21H-biline-8,12-dipropanoic acid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>bilirubin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>1,10,19,22,23,24-hexahydro-2,7,13,17-tetramethyl-1,19-dioxo-3,18-divinylbiline-8,12-dipropionic acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>2,17-diethenyl-1,10,19,22,23,24-hexahydro-3,7,13,18-tetramethyl-1,19-dioxo-21H-biline-8,12-dipropanoic acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>2,7,13,17-tetramethyl-1,19-dioxo-3,18-divinyl-1,10,19,22,23,24-hexahydro-21H-biline-8,12-dipropanoic acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>8,12-bis(2-carboxyethyl)-2,7,13,17-tetramethyl-3,18-divinylbiladiene-ac-1,19(21H,24H)-dione</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Bilirubin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>bilirubin(Z,Z)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>bilirubin-IXalpha</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>bilirubin IXalpha</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_169952 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_169952">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_15036"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_6067"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>13-cis-retinoate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>(2Z,4E,6E,8E)-3,7-dimethyl-9-(2,6,6-trimethyl-1-cyclohexen-1-yl)-2,4,6,8-nonatetraenoate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>13-cis-retinoate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_16998 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16998">
@@ -2436,17 +2775,18 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_17015 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176838"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_30527"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22586"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25212"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2458,13 +2798,19 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_67079"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75771"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76924"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2481,29 +2827,52 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_78675"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_84087"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_57986"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>D-Ribitol in which the hydroxy group at position 5 is substituted by a 7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl moiety. It is a nutritional factor found in milk, eggs, malted barley, liver, kidney, heart, and leafy vegetables, but the richest natural source is yeast. The free form occurs only in the retina of the eye, in whey, and in urine; its principal forms in tissues and cells are as flavin mononucleotide and flavin-adenine dinucleotide.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Riboflavin</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>riboflavin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>1-deoxy-1-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)pentitol</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>6,7-dimethyl-9-D-ribitylisoalloxazine</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>7,8-Dimethyl-10-ribitylisoalloxazine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)benzo[g]pteridine-2,4(3H,10H)-dione</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>7,8-dimethyl-10-(D-ribo-2,3,4,5-tetrahydroxypentyl)isoalloxazine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4(3H,10H)-dione</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>7,8-dimethyl-10-ribitylisoalloxazine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Aqua-Flave</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Beflavin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Beflavine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Bisulase</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Dermadram</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>E101</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Lactoflavin</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>RIBOFLAVINE</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Fiboflavin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Flavaxin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Flavin Bb</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Flaxain</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Hyflavin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Vitamin B2</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>lactoflavin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>riboflavin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>riboflavin (vit B2)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>riboflavina</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>riboflavine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>riboflavinum</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamin B2</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamin G</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitasan B2</oboInOwl:hasRelatedSynonym>
         <rdfs:label>riboflavin</rdfs:label>
     </owl:Class>
     
@@ -2522,6 +2891,25 @@
         <oboInOwl:hasRelatedSynonym>cetone</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>ketones</oboInOwl:hasRelatedSynonym>
         <rdfs:label>ketone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_17089 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17089">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33837"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63299"/>
+        <obo:IAO_0000115>A compound in which a carbohydrate component is covalently bound to a protein component.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Glycoprotein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>glycoproteins</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Glykoprotein</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Glykoproteine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glicoproteina</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glicoproteinas</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glycoproteine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glycoproteines</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>glycoprotein</rdfs:label>
     </owl:Class>
     
 
@@ -2814,6 +3202,17 @@
         <oboInOwl:hasRelatedSynonym>Phe</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>beta-phenyl-L-alanine</oboInOwl:hasRelatedSynonym>
         <rdfs:label>L-phenylalanine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_173085 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_173085">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52206"/>
+        <obo:IAO_0000115>Any substance that induces or promotes ferroptosis (a type of programmed cell death dependent on iron and characterized by the accumulation of lipid peroxides) in organisms.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>ferroptosis inducers</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ferroptosis inducer</rdfs:label>
     </owl:Class>
     
 
@@ -3128,6 +3527,70 @@
         <oboInOwl:hasRelatedSynonym>p-Aminophenol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>p-hydroxyaniline</oboInOwl:hasRelatedSynonym>
         <rdfs:label>4-aminophenol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_176838 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_176838">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
+        <obo:IAO_0000115>Any member of a group of vitamers that belong to the chemical structural class called flavins that exhibit biological activity against vitamin B2 deficiency. Symptoms associated with vitamin B2 deficiency include glossitis, seborrhea, angular stomaitis, cheilosis and photophobia. The vitamers include riboflavin and its phosphate derivatives (and includes their salt, ionised and hydrate forms).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>vitamin B2</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B-2</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamins B2</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamins B2 vitamer</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamins B2 vitamers</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>vitamin B2</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_176841 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_176841">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
+        <obo:IAO_0000115>Any member of a group of vitamers that belong to the chemical structural class called biotins that exhibit biological activity against vitamin B7 deficiency. Vitamin B7 deficiency is very rare in individuals who take a normal balanced diet. Foods rich in biotin are egg yolk, liver, cereals, vegetables (spinach, mushrooms) and rice. Symptoms associated with vitamin B7 deficiency include thinning hair, scaly skin rashes around eyes, nose and mouth, and brittle nails. The vitamers include biotin and its ionized and salt forms.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>vitamin B7</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B-7</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B7 vitamer</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B7 vitamers</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamins B7</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>vitamin B7</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_176843 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_176843">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
+        <obo:IAO_0000115>Any member of a group of cobalamin vitamers that exhibit biological activity against vitamin B12 deficiency. Vitamin B12 deficiency is associated with low red blood cell count and anemia. The vitamers are found in foods such as cereals, meat, fish, and poultry. The vitamers include adenosylcobalamin, hydroxocobalamin, cyanocobalamin, aquacobalamin, nitritocobalamin and methylcobabalamin (also includes their ionized, salt and phosphate derivatives).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>vitamin B12</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B-12</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B12 vitamer</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B12 vitamers</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamins B12</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>vitamin B12</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_176894 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_176894">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27306"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_58945"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36970"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasRelatedSynonym>vitamin B-6 phosphate anion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B-6 phosphate anions</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B6 phosphate anions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>vitamin B6 phosphate anion</rdfs:label>
     </owl:Class>
     
 
@@ -3523,11 +3986,15 @@
         <oboInOwl:hasExactSynonym>piperidine</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Azacyclohexane</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Hexahydropyridine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Piperidin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>azinane</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cyclopentimine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cypentil</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hexazane</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pentamethyleneamine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pentamethyleneimine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pentamethylenimine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>perhydropyridine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pip</oboInOwl:hasRelatedSynonym>
         <rdfs:label>piperidine</rdfs:label>
     </owl:Class>
@@ -3542,6 +4009,22 @@
         <oboInOwl:hasExactSynonym>Lipid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lipids</oboInOwl:hasExactSynonym>
         <rdfs:label>lipid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_18085 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_18085">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22506"/>
+        <obo:IAO_0000115>Any polysaccharide containing a substantial proportion of aminomonosaccharide residues.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Glycosaminoglycan</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>glycosaminoglycan</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Glykosaminoglykan</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glicosaminoglicano</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glycosaminoglycane</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glycosaminoglycans</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>glycosaminoglycan</rdfs:label>
     </owl:Class>
     
 
@@ -3561,6 +4044,27 @@
         <oboInOwl:hasRelatedSynonym>HX</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>hydrogen halides</oboInOwl:hasRelatedSynonym>
         <rdfs:label>hydrogen halide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_18154 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_18154">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16646"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_167559"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33694"/>
+        <obo:IAO_0000115>A biomacromolecule consisting of large numbers of monosaccharide residues linked glycosidically. This term is commonly used only for those containing more than ten monosaccharide residues.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Polysaccharide</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>polysaccharides</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Glycan</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Glycane</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Glykan</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Glykane</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glycans</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polisacarido</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polisacaridos</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polysaccharide</rdfs:label>
     </owl:Class>
     
 
@@ -4024,6 +4528,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_22506 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22506">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35352"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_65212"/>
+        <oboInOwl:hasRelatedSynonym>aminoglycans</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>aminoglycan</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_22562 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22562">
@@ -4046,6 +4561,19 @@
         <oboInOwl:hasRelatedSynonym>aniones</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>anions</oboInOwl:hasRelatedSynonym>
         <rdfs:label>anion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_22586 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22586">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51086"/>
+        <obo:IAO_0000115>A substance that opposes oxidation or inhibits reactions brought about by dioxygen or peroxides.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>antioxidants</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>antioxydant</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>antoxidant</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>antioxidant</rdfs:label>
     </owl:Class>
     
 
@@ -4143,6 +4671,19 @@
         <oboInOwl:hasRelatedSynonym>phenylalanine side-chain</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>phenylmethyl</oboInOwl:hasRelatedSynonym>
         <rdfs:label>benzyl group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_22868 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22868">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36078"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38700"/>
+        <obo:IAO_0000115>A sodium salt of the conjugate of any bile acid with either glycine or taurine.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Bile acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>bile salts</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>bile salt</rdfs:label>
     </owl:Class>
     
 
@@ -4368,6 +4909,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_23334 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23334">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176843"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23341"/>
         <rdfs:label>cobalamins</rdfs:label>
     </owl:Class>
@@ -4848,6 +5390,20 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24669 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24669">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33822"/>
+        <obo:IAO_0000115>Any carboxylic acid with at least one hydroxy group.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>hydroxy carboxylic acids</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hydroxycarboxylic acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hydroxycarboxylic acids</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hydroxy carboxylic acid</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_24675 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24675">
@@ -5029,6 +5585,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24868 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24868">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24866"/>
+        <oboInOwl:hasRelatedSynonym>organic salts</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>organisches Salz</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>organic salt</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_24870 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24870">
@@ -5106,6 +5673,15 @@
         <oboInOwl:hasRelatedSynonym>lactona</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>lactonas</oboInOwl:hasRelatedSynonym>
         <rdfs:label>lactone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25046 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25046">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26932"/>
+        <rdfs:label>linear tetrapyrrole</rdfs:label>
     </owl:Class>
     
 
@@ -5512,6 +6088,23 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25704 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25704">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26820"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_58958"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Compounds of the general formula SO3HOR where R is an organyl group</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>organic sulfates</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>organic sulfate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_2571 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_2571">
@@ -5775,6 +6368,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26188 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26188">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36963"/>
+        <obo:IAO_0000115>Natural and synthetic compounds containing alternating carbonyl and methylene groups (&apos;beta-polyketones&apos;), biogenetically derived from repeated condensation of acetyl coenzyme A (via malonyl coenzyme A), and usually the compounds derived from them by further condensations, etc. Considered by many to be synonymous with the less frequently used terms acetogenins and ketides.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>polyketide</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>polyketides</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polyketide</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_26191 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26191">
@@ -5986,6 +6591,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26708">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22314"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33937"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -6251,6 +6862,33 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26819 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26819">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35701"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37826"/>
+        <obo:IAO_0000115>An ester of an alcohol and sulfuric acid.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>sulfate ester</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sulfuric acid ester</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sulfuric acid esters</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sulfuric ester</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26820 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26820">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37826"/>
+        <obo:IAO_0000115>Salts and esters of sulfuric acid</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sulfates</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>sulfuric acid derivative</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sulphates</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sulfates</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_26833 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26833">
@@ -6294,6 +6932,43 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26836 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26836">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33402"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35223"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_45696"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A sulfur oxoacid that consists of two oxo and two hydroxy groups joined covalently to a central sulfur atom.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Sulfuric acid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>dihydrogen tetraoxosulfate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>dihydroxidodioxidosulfur</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hydrogen tetraoxosulfate(2-)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hydrogen tetraoxosulfate(VI)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>sulfuric acid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tetraoxosulfuric acid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Acide sulfurique</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Acido sulfurico</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Acidum sulfuricum</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>H2SO4</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Schwefelsaeureloesungen</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>[S(OH)2O2]</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>[SO2(OH)2]</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sulphuric acid</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sulfuric acid</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_26873 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26873">
@@ -6314,6 +6989,40 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26878 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26878">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_30879"/>
+        <obo:IAO_0000115>A tertiary alcohol is a compound in which a hydroxy group, -OH, is attached to a saturated carbon atom which has three other carbon atoms attached to it.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>tertiary alcohol</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>tertiary alcohols</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tertiary alcohol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26895 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26895">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26188"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25212"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_parent_hydride"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_32600"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A subclass of polyketides having an octahydrotetracene-2-carboxamide skeleton, substituted with many hydroxy and other groups.</obo:IAO_0000115>
+        <rdfs:label>tetracyclines</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_26932 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26932">
@@ -6322,6 +7031,7 @@
         <obo:IAO_0000115>A natural pigment containing four pyrrole rings joined by one-carbon units linking position 2 of one pyrrole ring to position 5 of the next.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>tetrapyrrole</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>tetrapyrroles</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>a tetrapyrrole</oboInOwl:hasRelatedSynonym>
         <rdfs:label>tetrapyrrole</rdfs:label>
     </owl:Class>
     
@@ -6331,15 +7041,17 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26948">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38338"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38418"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63048"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
+        <obo:IAO_0000115>Any member of the group of 1,3-thiazolium cations that exhibit biological activity against vitamin B1 deficiency in animals. Symptoms of vitamin B1 deficiency include constipation, loss of apetite, fatigue, nausea, delirium, blurry vision and muscle weakness. Severe vitamin B1 deficiency can also lead to a disease known as beriberi. Vitamin B1 consists of the vitamer thiamin and its acid, aldehyde and phosphorylated derivatives (and their corresponding ionized, salt and hydrate forms).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>vitamin B1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>thiamine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>thiamines</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>thiamine</rdfs:label>
+        <oboInOwl:hasRelatedSynonym>thiamins</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B1 vitamer</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B1 vitamers</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamins B1</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>vitamin B1</rdfs:label>
     </owl:Class>
     
 
@@ -6461,16 +7173,15 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27306">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26421"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
+        <obo:IAO_0000115>Any member of the group of pyridines that exhibit biological activity against vitamin B6 deficiency. Vitamin B6 deficiency is associated with microcytic anemia, electroencephalographic abnormalities, dermatitis with cheilosis (scaling on the lips and cracks at the corners of the mouth) and glossitis (swollen tongue), depression and confusion, and weakened immune function. Vitamin B6 consists of the vitamers pyridoxine, pyridoxal, and pyridoxamine and their respective 5&apos;-phosphate esters (and includes their corresponding ionized and salt forms).</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>Vitamin B6</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>vitamin B-6</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B6 vitamer</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B6 vitamers</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamina B6</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamine B6</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamins B6</oboInOwl:hasRelatedSynonym>
         <rdfs:label>vitamin B6</rdfs:label>
     </owl:Class>
     
@@ -6698,6 +7409,74 @@
         <oboInOwl:hasRelatedSynonym>monochloroacetic acid</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>monochloroethanoic acid</oboInOwl:hasRelatedSynonym>
         <rdfs:label>chloroacetic acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27902 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27902">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_139592"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26895"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33281"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35820"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36047"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76971"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_71392"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77932"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A broad-spectrum polyketide antibiotic produced by the Streptomyces genus of actinobacteria.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>(4S,4aS,5aS,6S,12aS)-4-(dimethylamino)-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-1,4,4a,5,5a,6,11,12a-octahydrotetracene-2-carboxamide</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>TETRACYCLINE</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Tetracycline</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tetracycline</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>(4S,4aS,5aS,12aS)-4-(Dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-2-naphthacenecarboxamide</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Abramycin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Achromycin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Anhydrotetracycline</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Deschlorobiomycin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Liquamycin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Tetracyclin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Tetrazyklin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Tsiklomitsin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tetracycline</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tetracyclinum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tetracycline</rdfs:label>
     </owl:Class>
     
 
@@ -7165,6 +7944,15 @@
         <oboInOwl:hasRelatedSynonym>Koehlensaeure</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>[CO(OH)2]</oboInOwl:hasRelatedSynonym>
         <rdfs:label>carbonic acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_29057 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_29057">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18085"/>
+        <rdfs:label>keratan</rdfs:label>
     </owl:Class>
     
 
@@ -7711,12 +8499,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26348"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_75769"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cobalt-corrinoid hexaamide that is cobalamin with the oxidation state of the central cobalt atom unspecified.</obo:IAO_0000115>
@@ -8350,6 +9132,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_32600 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_32600">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35297"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51270"/>
+        <obo:IAO_0000115>An acene that consists of four ortho-fused benzene rings in a rectilinear arrangement.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>tetracene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>2,3-benzanthracene</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>benz[b]anthracene</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>naphthacene</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tetracene</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_32760 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_32760">
@@ -8647,6 +9444,21 @@
         <oboInOwl:hasRelatedSynonym>R2NH</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>sekundaeres Amin</oboInOwl:hasRelatedSynonym>
         <rdfs:label>secondary amine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_32876 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_32876">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_32952"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50996"/>
+        <obo:IAO_0000115>A compound formally derived from ammonia by replacing three hydrogen atoms by hydrocarbyl groups.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Tertiary amine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tertiary amines</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>R3N</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tertiaeres Amin</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tertiary amine</rdfs:label>
     </owl:Class>
     
 
@@ -9921,6 +10733,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33637 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33637">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35293"/>
+        <obo:IAO_0000115>A polycyclic compound in which two rings have two, and only two, atoms in common. Such compounds have n common faces and 2n common atoms.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>ortho-fused polycyclic compounds</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>ortho-fused compounds</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ortho-fused compound</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_33653 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33653">
@@ -10025,6 +10849,18 @@
         <oboInOwl:hasExactSynonym>monocyclic hydrocarbons</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>monocyclic hydrocarbons</oboInOwl:hasRelatedSynonym>
         <rdfs:label>monocyclic hydrocarbon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33666 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33666">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33663"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35294"/>
+        <oboInOwl:hasExactSynonym>polycyclic hydrocarbon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>polycyclic hydrocarbons</oboInOwl:hasExactSynonym>
+        <rdfs:label>polycyclic hydrocarbon</rdfs:label>
     </owl:Class>
     
 
@@ -10345,6 +11181,41 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33720 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33720">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16646"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33721"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>carbohydrate acid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>carbohydrate acids</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>carbohydrate acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33721 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33721">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33720"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>carbohydrate acid anion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>carbohydrate acid anions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>carbohydrate acid anion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_33743 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33743">
@@ -10548,6 +11419,33 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33848 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33848">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33658"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33666"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_138015"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50903"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A polycyclic aromatic hydrocarbon.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>PAH</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>PAHs</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polycyclic arenes</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polycyclic aromatic hydrocarbons</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polycyclic arene</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_33853 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33853">
@@ -10746,6 +11644,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33937">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33284"/>
+        <obo:IAO_0000115>Any nutrient required in large quantities by organisms throughout their life in order to orchestrate a range of physiological functions. Macronutrients are usually chemical elements (carbon, hydrogen, nitrogen, oxygen, phosphorus and sulfur) that humans consume in the largest quantities. Calcium, sodium, magnesium and potassium are sometimes included as macronutrients because they are required in relatively large quantities compared with other vitamins and minerals.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>macronutrients</oboInOwl:hasRelatedSynonym>
         <rdfs:label>macronutrient</rdfs:label>
     </owl:Class>
     
@@ -10915,6 +11815,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35191 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35191">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35186"/>
+        <obo:IAO_0000115>A C30 terpene.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>triterpenes</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Triterpen</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>triterpenes</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>triterpeno</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>triterpenos</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>triterpene</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_35219 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35219">
@@ -11009,6 +11924,20 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35293 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35293">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33635"/>
+        <oboInOwl:hasRelatedSynonym>fused compounds</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>fused polycyclic compounds</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>fused-ring polycyclic compound</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>fused-ring polycyclic compounds</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polycyclic fused-ring compounds</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>fused compound</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_35294 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35294">
@@ -11028,6 +11957,33 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33635"/>
         <oboInOwl:hasRelatedSynonym>homopolycyclic compounds</oboInOwl:hasRelatedSynonym>
         <rdfs:label>homopolycyclic compound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35296 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35296">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33848"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35427"/>
+        <oboInOwl:hasRelatedSynonym>ortho-fused polycyclic arenes</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ortho-fused polycyclic arene</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35297 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35297">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35296"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51269"/>
+        <obo:IAO_0000115>A polycyclic aromatic hydrocarbon consisting of fused benzene rings in a rectilinear arrangement.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>acene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>acenes</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Acen</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Azen</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polyacenes</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>acene</rdfs:label>
     </owl:Class>
     
 
@@ -11071,7 +12027,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35341">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18059"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51958"/>
-        <obo:IAO_0000115>Any of naturally occurring compounds and synthetic analogues, based on the cyclopenta[a]phenanthrene carbon skeleton, partially or completely hydrogenated; there are usually methyl groups at C-10 and C-13, and often an alkyl group at C-17. By extension, one or more bond scissions, ring expansions and/or ring contractions of the skeleton may have occurred. Natural steroids are derived biogenetically from squalene, so may be considered as triterpenoids.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any of naturally occurring compounds and synthetic analogues, based on the cyclopenta[a]phenanthrene carbon skeleton, partially or completely hydrogenated; there are usually methyl groups at C-10 and C-13, and often an alkyl group at C-17. By extension, one or more bond scissions, ring expansions and/or ring contractions of the skeleton may have occurred. Natural steroids are derived biogenetically from squalene which is a triterpene.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>Steroid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>steroids</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>a steroid</oboInOwl:hasRelatedSynonym>
@@ -11186,6 +12142,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35427 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35427">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33637"/>
+        <oboInOwl:hasExactSynonym>ortho-fused polycyclic hydrocarbon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>ortho-fused polycyclic hydrocarbons</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ortho-fused polycyclic hydrocarbon</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_35441 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35441">
@@ -11196,6 +12163,19 @@
         <oboInOwl:hasRelatedSynonym>antiinfective agents</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>antiinfective drug</oboInOwl:hasRelatedSynonym>
         <rdfs:label>antiinfective agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35442 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35442">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35441"/>
+        <obo:IAO_0000115>A substance used to treat or prevent parasitic infections.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>antiparasitic drugs</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>antiparasitics</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>parasiticides</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>antiparasitic agent</rdfs:label>
     </owl:Class>
     
 
@@ -11340,6 +12320,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35507"/>
         <oboInOwl:hasRelatedSynonym>steroid fundamental parents</oboInOwl:hasRelatedSynonym>
         <rdfs:label>steroid fundamental parent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35519 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35519">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35508"/>
+        <oboInOwl:hasExactSynonym>cholane</oboInOwl:hasExactSynonym>
+        <rdfs:label>cholane</rdfs:label>
     </owl:Class>
     
 
@@ -11714,6 +12704,32 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35722 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35722">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18085"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35724"/>
+        <oboInOwl:hasRelatedSynonym>glycosaminoglycan sulfate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>glycosaminoglycan sulfates</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sulfated glycosaminoglycans</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sulfated glycosaminoglycan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35724 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35724">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25704"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26819"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63299"/>
+        <oboInOwl:hasRelatedSynonym>carbohydrate sulfates</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>carbohydrate sulphates</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>carbohydrate sulfate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_35740 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35740">
@@ -11806,6 +12822,20 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35820 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35820">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35442"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36043"/>
+        <obo:IAO_0000115>Any antimicrobial drug which is used to treat or prevent protozoal infections.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>antiprotozoal agent</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>antiprotozoal agents</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>antiprotozoal drugs</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>antiprotozoal drug</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_35842 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35842">
@@ -11827,6 +12857,25 @@
         <oboInOwl:hasRelatedSynonym>lipooxygenase inhibitor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>lipoxygenase inhibitors</oboInOwl:hasRelatedSynonym>
         <rdfs:label>lipoxygenase inhibitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35868 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35868">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24669"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25384"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36059"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Any monocarboxylic acid which also contains a separate (alcoholic or phenolic) hydroxy substituent.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>hydroxy acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hydroxy monocarboxylic acids</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hydroxy monocarboxylic acid</rdfs:label>
     </owl:Class>
     
 
@@ -11868,6 +12917,30 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36043 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36043">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33281"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35441"/>
+        <obo:IAO_0000115>A drug used to treat or prevent microbial infections.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>antimicrobial drugs</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>antimicrobial drug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36047 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36047">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33282"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36043"/>
+        <obo:IAO_0000115>A drug used to treat or prevent bacterial infections.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>antibacterial drugs</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>antibacterial drug</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_36054 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36054">
@@ -11892,11 +12965,34 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36059">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35757"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35868"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Any monocarboxylic acid anion carrying at least one hydroxy substituent.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>hydroxy monocarboxylic acid anions</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>hydroxymonocarboxylic acid anion</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>hydroxymonocarboxylic acid anions</oboInOwl:hasRelatedSynonym>
         <rdfs:label>hydroxy monocarboxylic acid anion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36078 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36078">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35341"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_parent_hydride"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35519"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasRelatedSynonym>bile acids and derivatives</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cholanoids</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>cholanoid</rdfs:label>
     </owl:Class>
     
 
@@ -11945,6 +13041,18 @@
         <oboInOwl:hasExactSynonym>alicyclic ketone</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>alicyclic ketones</oboInOwl:hasExactSynonym>
         <rdfs:label>alicyclic ketone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36277 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36277">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24868"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36078"/>
+        <obo:IAO_0000115>A salt of a bile acid.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>bile acid salts</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>bile acid salt</rdfs:label>
     </owl:Class>
     
 
@@ -12247,6 +13355,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36735 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36735">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25046"/>
+        <obo:IAO_0000115>Compounds based on a biladiene skeleton.</obo:IAO_0000115>
+        <rdfs:label>biladienes</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_36820 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36820">
@@ -12460,6 +13578,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23357"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176894"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:hasRelatedSynonym>vitamin B-6 phosphates</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamin B6 phosphates</oboInOwl:hasRelatedSynonym>
         <rdfs:label>vitamin B6 phosphate</rdfs:label>
@@ -12633,6 +13757,45 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_37395 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_37395">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18085"/>
+        <obo:IAO_0000115>Any of the group of polysaccharides composed of alternating units from uronic acids and glycosamines, and commonly partially esterified with sulfuric acid.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mucopolysaccharide</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mucopolysaccharides</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Mucopolysaccharid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Mukopolysaccharid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mucopolisacarido</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mucopolisacaridos</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>mucopolysaccharide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_37397 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_37397">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35722"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37395"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16137"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Any of a class of 10--60 kDa glycosaminoglycan sulfates, widely distributed in cartilage and other mammalian connective tissues.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Chondroitin sulfate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Chondroitinsulfat</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>chondroitin polysulfate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>chondroitin sulfates</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>chondroitin sulfuric acid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>chondroitin sulphate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>chondroitin sulfate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_37527 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_37527">
@@ -12732,6 +13895,23 @@
         <oboInOwl:hasExactSynonym>penicillanic acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>(2S,5R)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylic acid</oboInOwl:hasRelatedSynonym>
         <rdfs:label>penicillanic acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_37826 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_37826">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33424"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26836"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>sulfuric acid derivative</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>sulfuric acid derivatives</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sulfuric acid derivative</rdfs:label>
     </owl:Class>
     
 
@@ -13123,6 +14303,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_38560 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_38560">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36080"/>
+        <oboInOwl:hasRelatedSynonym>simple proteins</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>simple protein</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_38632 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_38632">
@@ -13142,6 +14332,18 @@
         <oboInOwl:hasRelatedSynonym>Na channel blocker</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>sodium channel blockers</oboInOwl:hasRelatedSynonym>
         <rdfs:label>sodium channel blocker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_38700 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_38700">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24868"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26714"/>
+        <oboInOwl:hasExactSynonym>organic sodium salt</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>organic sodium salts</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>organic sodium salt</rdfs:label>
     </owl:Class>
     
 
@@ -13261,6 +14463,54 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38632"/>
         <oboInOwl:hasRelatedSynonym>sodium channel modulators</oboInOwl:hasRelatedSynonym>
         <rdfs:label>sodium channel modulator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_39015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_39015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_13850"/>
+        <obo:IAO_0000115>Protein component on the surface of lipoprotein.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>apolipoproteins</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>apolipoprotein</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_39022 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_39022">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50967"/>
+        <obo:IAO_0000115>A complex in which one component (the host) forms a cavity or, in the case of a crystal, a crystal lattice containing spaces in the shape of long tunnels or channels in which molecular entities of a second chemical species (the guest) are located. There is no covalent bonding between guest and host, the attraction being generally due to van der Waals forces.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>inclusion compound</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>compose d&apos;inclusion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>compuesto de inclusion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>compuestos de inclusion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>inclusion complex</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>inclusion compounds</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>inclusion compound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_39024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_39024">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_39022"/>
+        <obo:IAO_0000115>Inclusion compound in which the guest molecule is in a cage formed by the host molecule or by a lattice of host molecules.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>clathrates</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Clathrat</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Clathratverbindung</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Klathrat</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Klathratverbindung</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cage compound</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>clathrate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>clathrate compounds</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>clatrato</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>clatratos</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>compuesto de clatrato</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>clathrate compound</rdfs:label>
     </owl:Class>
     
 
@@ -13724,11 +14974,47 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_45696 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_45696">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33482"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16189"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26836"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>hydrogen(tetraoxidosulfate)(1-)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hydrogensulfate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hydrogensulfate(1-)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hydrogentetraoxosulfate(1-)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hydrogentetraoxosulfate(VI)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hydroxidotrioxidosulfate(1-)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>HSO4(-)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>HYDROGEN SULFATE</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>[SO3(OH)](-)</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hydrogensulfate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_46195 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_46195">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22160"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33853"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_173085"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -13896,6 +15182,16 @@
         <oboInOwl:hasRelatedSynonym>silicato</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>silicatos</oboInOwl:hasRelatedSynonym>
         <rdfs:label>silicate mineral</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_46723 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_46723">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46662"/>
+        <oboInOwl:hasRelatedSynonym>phosphate minerals</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>phosphate mineral</rdfs:label>
     </owl:Class>
     
 
@@ -14124,6 +15420,19 @@
         <oboInOwl:hasRelatedSynonym>3-oxo-Delta(4) steroids</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>a 3-oxo-Delta(4)-steroid</oboInOwl:hasRelatedSynonym>
         <rdfs:label>3-oxo-Delta(4) steroid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_48001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_48001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76932"/>
+        <obo:IAO_0000115>A compound, usually an anti-bacterial agent or a toxin, which inhibits the synthesis of a protein.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>protein synthesis antagonist</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>protein synthesis antagonists</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>protein synthesis inhibitors</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>protein synthesis inhibitor</rdfs:label>
     </owl:Class>
     
 
@@ -14637,8 +15946,8 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50183">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76898"/>
         <obo:IAO_0000115>An enzyme inhibitor that interferes with the activity of cytochrome P450 involved in catalysis of organic substances.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym>CYP2D6 inhbitor</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>CYP2D6 inhbitors</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>CYP2D6 inhibitor</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>CYP2D6 inhibitors</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>P450 inhibitors</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cytochrome P450 inhibitor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cytochrome P450 inhibitors</oboInOwl:hasRelatedSynonym>
@@ -15264,6 +16573,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50967 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50967">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36357"/>
+        <obo:IAO_0000115>Systems consisting of two or more molecular entities held together by non-covalent interactions.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>non-covalently-bound molecular entities</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>non-covalently-bound molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_50994 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50994">
@@ -15370,6 +16690,27 @@
         <obo:IAO_0000115>An  organic molecule that is electrically neutral carrying a positive and a negative charge in one of its major canonical descriptions. In most dipolar compounds the charges are delocalized; however the term is also applied to species where this is not the case.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>dipolar compounds</oboInOwl:hasRelatedSynonym>
         <rdfs:label>dipolar compound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_51269 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_51269">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33836"/>
+        <obo:IAO_0000115>Polycyclic aromatic hydrocarbons consisting of fused benzene rings in a rectilinear arrangement and their substitution derivatives.</obo:IAO_0000115>
+        <rdfs:label>acenes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_51270 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_51270">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51269"/>
+        <obo:IAO_0000115>Compounds containing a tetracene skeleton.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>naphthacenes</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tetracenes</rdfs:label>
     </owl:Class>
     
 
@@ -15586,6 +16927,27 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_52254 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_52254">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46723"/>
+        <obo:IAO_0000115>A phosphate mineral with the general formula Ca5(PO4)3X where X = OH, F or Cl.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>hydroxyapatite</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>apatite</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_52255 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_52255">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52254"/>
+        <obo:IAO_0000115>A phosphate mineral with the formula Ca5(PO4)3(OH).</obo:IAO_0000115>
+        <rdfs:label>hydroxylapatite</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_52395 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_52395">
@@ -15646,6 +17008,30 @@
         <obo:IAO_0000115>Organonitrogen compounds that are derivatives of isocyanic acid; compounds containing the isocyanate functional group -N=C=O (as opposed to the cyanate group, -O-C#N).</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>iso-cyanates</oboInOwl:hasRelatedSynonym>
         <rdfs:label>isocyanates</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_53309 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_53309">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_53368"/>
+        <obo:IAO_0000115>A polymer carrying multiple negative charges.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>polyanion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polyanions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polyanionic macromolecule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_53368 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_53368">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33839"/>
+        <obo:IAO_0000115>A macromolecule containing ionic groups.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>ionic polymer</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polyionic macromolecule</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ionic macromolecule</rdfs:label>
     </owl:Class>
     
 
@@ -15745,6 +17131,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_57586 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_57586">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176841"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35757"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -15773,8 +17160,26 @@
         <obo:IAO_0000115>Conjugate base of biotin arising from deprotonation of the carboxy group.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>5-[(3aS,4S,6aR)-2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl]pentanoate</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>biotin</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>biotinate anion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>biotin anion</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biotinate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_57652 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_57652">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_61469"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16137"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Anionic form of chondroitin D-glucuronate arising from deprotonation of the carboxylic acid groups of the repeating units; major species at pH 7.3.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>chondroitin D-glucuronate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>chondroitin D-glucuronate polyanion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>chondroitin D-glucuronate anion</rdfs:label>
     </owl:Class>
     
 
@@ -15878,6 +17283,32 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_57977 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_57977">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28965"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_59252"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77746"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16990"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A dicarboxylic acid dianion obtained by deprotonation of the two carboxy groups of bilirubin; major species at pH 7.3.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>2,7,13,17-tetramethyl-1,19-dioxo-3,18-divinyl-1,10,19,22,23,24-hexahydro-21H-biline-8,12-dipropanoate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>bilirubin IXalpha</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>bilirubin dianion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>bilirubin(2-)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_57981 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_57981">
@@ -15906,7 +17337,8 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_57986 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_57986">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25696"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176838"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60531"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -15925,10 +17357,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17015"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>The anion resulting from removal of a proton from the nitrogen at the 3 position (between the two carbonyl gropus) of riboflavin.</obo:IAO_0000115>
+        <obo:IAO_0000115>An organic anion that is the conjugate base of riboflavin resulting from the removal of a proton from the nitrogen at position 3 (between the two carbonyl groups). Major microspecies at pH 7.3.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>1-deoxy-1-(7,8-dimethyl-2,4-dioxo-2H-benzo[g]pteridin-3-id-10(4H)-yl)-D-ribitol</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>7,8-dimethyl-2,4-dioxo-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]-2H,3H,4H,10H-benzo[g]pteridin-3-ide</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>riboflavin</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>riboflavin anion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin B2(1-)</oboInOwl:hasRelatedSynonym>
         <rdfs:label>riboflavin(1-)</rdfs:label>
     </owl:Class>
     
@@ -16069,6 +17503,30 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_58958 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_58958">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25696"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33482"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16189"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25704"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An organic anion of general formula RS(=O)2O(-) where R is an organyl group.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>organosulfate oxoanions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>organosulfate oxoanion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_589779 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_589779">
@@ -16108,6 +17566,19 @@
         <obo:IAO_0000115>Any substance capable of eliciting an immune response only when attached to a large carrier such as a protein. Examples include dinitrophenols; oligosaccharides; peptides; and heavy metals.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>haptens</oboInOwl:hasRelatedSynonym>
         <rdfs:label>hapten</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_59252 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_59252">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25696"/>
+        <obo:IAO_0000115>An organic anion arising from deprotonation of a acyclic tetrapyrrole compound.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>acyclic tetrapyrrole anion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>acyclic tetrapyrrole anions</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>linear tetrapyrrole anions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>linear tetrapyrrole anion</rdfs:label>
     </owl:Class>
     
 
@@ -16184,7 +17655,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_597326 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_597326">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_58945"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176894"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -16309,6 +17780,24 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_60027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_60027">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33839"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A polymer is a mixture, which is composed of macromolecules of different kinds and which may be differentiated by composition, length, degree of branching etc..</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Polymer</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Kunststoff</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polymer</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_60056 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_60056">
@@ -16331,6 +17820,23 @@
         <oboInOwl:hasRelatedSynonym>cocaine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cocaine cation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>cocaine(1+)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_60164 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_60164">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_53368"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An ionic polymer is a polymer, composed of ionic macromolecules.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>polyionic polymer</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ionic polymer</rdfs:label>
     </owl:Class>
     
 
@@ -16415,6 +17921,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50905"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_169952"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A retinoic acid that is all-trans-retinoic acid in which the double bond which is alpha,beta- to the carboxy group is isomerised to Z configuration. A synthetic retinoid, it is used for the treatment of severe cases of acne and other skin diseases.</obo:IAO_0000115>
@@ -16506,6 +18018,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_60924 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_60924">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35722"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_37395"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29057"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A sulfated glycosaminoglycan, a linear polymer that consists of the repeating disaccharide  [3)-beta-Gal-(1-&gt;4)-beta-GlcNAc-(1-&gt;] and containing sulfo groups located at random positions.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>keratan sulfates</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>keratosulfate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>keratan sulfate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_6121 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_6121">
@@ -16575,6 +18106,24 @@
         <obo:IAO_0000115>A steroid that has a structure based on a 21-carbon (pregnane) skeleton. Note that individual examples may have ring substituents at other positions and/or contain double bonds, aromatic A-rings, expanded/contracted rings etc., so the formula and mass may vary from that given for the generic structure.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>a C21-steroid</oboInOwl:hasRelatedSynonym>
         <rdfs:label>C21-steroid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_61469 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_61469">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_60164"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_53309"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A polymer, composed of polyanion macromolecules.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>polyanion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>polyanions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polyanionic polymer</rdfs:label>
     </owl:Class>
     
 
@@ -16705,6 +18254,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_63048 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_63048">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25697"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38418"/>
+        <obo:IAO_0000115>An organic cation resulting from protonation or quaternisation at the 3-position of any 1,3-thiazole.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>1,3-thiazolium cations</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>1,3-thiazolium cation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_63161 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_63161">
@@ -16787,6 +18348,29 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_63436 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_63436">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63299"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33720"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63551"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A carbohydrate derivative that is formally obtained from a carbohydrate acid.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>carbohydrate acid derivatives</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>carbohydrate acid derivative</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_63473 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_63473">
@@ -16827,6 +18411,31 @@
         <oboInOwl:hasRelatedSynonym>sodium-potassium pump inhibitor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>sodium-potassium pump inhibitors</oboInOwl:hasRelatedSynonym>
         <rdfs:label>EC 3.6.3.9 (Na(+)/K(+)-transporting ATPase) inhibitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_63551 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_63551">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33721"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63436"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A carboxylic acid anion resulting from the deprotonation of the carboxy group of a carbohydrate acid derivative.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>carbohydrate acid anion derivative</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>carbohydrate acid anion derivatives</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>carbohydrate acid derivative anions</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>carbohydrate acid derivative anion</rdfs:label>
     </owl:Class>
     
 
@@ -16967,6 +18576,32 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_6495 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_6495">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33837"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_39024"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_39015"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_76971"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A clathrate complex consisting of a lipid enwrapped in a protein host without covalent binding in such a way that the complex has a hydrophilic outer surface consisting of all the protein and the polar ends of any phospholipids.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Lipoprotein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>lipoproteins</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>lipoprotein particle</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>lipoprotein</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_64996 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_64996">
@@ -17069,6 +18704,25 @@
         <oboInOwl:hasRelatedSynonym>tween-hydrolysing esterase inhibitor</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>tween-hydrolyzing esterase inhibitors</oboInOwl:hasRelatedSynonym>
         <rdfs:label>EC 3.1.1.3 (triacylglycerol lipase) inhibitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_65212 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_65212">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_167559"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33694"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63299"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#has_functional_parent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_18154"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A carbohydrate derivative that is any derivative of a polysaccharide.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>polysaccharide derivatives</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polysaccharide derivative</rdfs:label>
     </owl:Class>
     
 
@@ -17200,6 +18854,30 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_71392 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_71392">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25696"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27902"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77932"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An organic anion that is the conjugate base of tetracycline obtained by deprotonation of the two enolic hydroxy groups and protonation of the tertiary amino group.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>(1S,4aS,11S,11aS,12aS)-3-carbamoyl-1-(dimethylazaniumyl)-4a,7,11-trihydroxy-11-methyl-4,6-dioxo-1,4,4a,6,11,11a,12,12a-octahydrotetracene-2,5-diolate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>tetracycline anion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tetracycline(1-)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_72695 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_72695">
@@ -17210,6 +18888,19 @@
         <oboInOwl:hasRelatedSynonym>organic compounds</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>organic molecules</oboInOwl:hasRelatedSynonym>
         <rdfs:label>organic molecule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_72813 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_72813">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33694"/>
+        <obo:IAO_0000115>A biomacromolecule composed of carbohydrate residues which is secreted by a microorganism into the surrounding environment.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>exopolysaccharides</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>extracellular polymeric substance</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>extracellular polymeric substances</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>exopolysaccharide</rdfs:label>
     </owl:Class>
     
 
@@ -17470,9 +19161,21 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_75769 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_75769">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27314"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50733"/>
-        <obo:IAO_0000115>A role played by any of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B). The group comprises of vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such). B vitamins play important roles in cell metabolism.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35352"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36963"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27314"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50733"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Any member of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such).</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>B vitamins</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>B-group vitamin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>B-group vitamins</oboInOwl:hasRelatedSynonym>
@@ -18248,6 +19951,55 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_77932 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_77932">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_144644"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27369"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33281"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35820"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36047"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_48001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_71392"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27902"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A zwitterion obtained by transfer of a proton from the 2-hydroxy group to the 1-amino group of tetracycline. It is the major microspecies at pH 7.3 (according to Marvin v 6.2.0.).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>(1S,4aS,11S,11aS,12aS)-3-carbamoyl-1-(dimethylazaniumyl)-4a,5,7,11-tetrahydroxy-11-methyl-4,6-dioxo-1,4,4a,6,11,11a,12,12a-octahydrotetracen-2-olate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>tetracycline</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>tetracycline zwitterion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_77938 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_77938">
@@ -18386,6 +20138,17 @@
         <obo:IAO_0000115>A substance used in a thermodynamic heat pump cycle or refrigeration cycle that undergoes a phase change from a gas to a liquid and back. Refrigerants are used in air-conditioning systems and freezers or refrigerators and are assigned a &quot;R&quot; number (by ASHRAE - formerly the American Society of Heating, Refrigerating and Air Conditioning Engineers), which is determined systematically according to their molecular structure.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>refrigerants</oboInOwl:hasRelatedSynonym>
         <rdfs:label>refrigerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_78505 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_78505">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27026"/>
+        <obo:IAO_0000115>A toxin used by animals and injected into their victims by a bite or sting.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>venoms</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>venom</rdfs:label>
     </owl:Class>
     
 
@@ -18747,6 +20510,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_84087 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_84087">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_77746"/>
+        <obo:IAO_0000115>Any metabolite (endogenous or exogenous) found in human urine samples.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>human urinary metabolites</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>human urinary metabolite</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_84124 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_84124">
@@ -18804,6 +20578,7 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_84410 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_84410">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35785"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_83876"/>
         <obo:IAO_0000115>A cationic sphingoid obtained by protonation of the amino group of any 2-amino-1,3-dihydroxysphingoid base.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>2-amino-1,3-dihydroxysphingoid base(1+)</oboInOwl:hasRelatedSynonym>

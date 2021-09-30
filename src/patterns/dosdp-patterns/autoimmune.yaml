@@ -1,35 +1,40 @@
 pattern_name: autoimmune
 
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autoimmune.yaml
+
+description: 'An instance of a disease that is brought about or caused by autoimmunity.
+
+  Examples: [autoimmune cardiomyopathy](http://purl.obolibrary.org/obo/MONDO_0030701),
+  [autoimmune pancreatitis](http://purl.obolibrary.org/obo/MONDO_0015175)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
 classes:
-    disease: MONDO:0000001
-    autoimmunity: HP:0002960
+  disease: MONDO:0000001
+  autoimmunity: HP:0002960
 
 relations:
-    disease arises from feature: RO:0004022
+  disease arises from feature: RO:0004022
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: "'disease'"
+  disease: '''disease'''
 
 name:
-    text: autoimmune %s
-    vars:
-      - disease
+  text: autoimmune %s
+  vars:
+  - disease
 
 def:
-    text: An autoimmune form of %s.
-    vars:
-      - disease
+  text: An autoimmune form of %s.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'disease arises from feature' some 'autoimmunity'"
-    vars:
-      - disease
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/autoimmune.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''disease arises from feature'' some ''autoimmunity'''
+  vars:
+  - disease

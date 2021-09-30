@@ -1,41 +1,43 @@
 pattern_name: rare
 
-classes:
-    rare: MONDO:0021136
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/rare.yaml
 
-    owl_thing: owl:Thing
+description: TBD.
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
+classes:
+  rare: MONDO:0021136
+  disease: MONDO:0000001
+
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: owl_thing
+  disease: '''disease'''
 
 name:
-    text: rare %s
-    vars:
-      - disease
+  text: rare %s
+  vars:
+  - disease
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: rare %s
-    vars:
-      - disease
+- annotationProperty: exact_synonym
+  text: rare %s
+  vars:
+  - disease
 
 def:
-    text: Any of the forms of %s that have a rare incidence.
-    vars:
-      - disease
+  text: Any of the forms of %s that have a rare incidence.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'rare'"
-    vars:
-      - disease
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/rare.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''rare'''
+  vars:
+  - disease

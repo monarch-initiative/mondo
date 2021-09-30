@@ -1,0 +1,48 @@
+pattern_name: hereditary
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/hereditary.yaml
+
+description: '
+
+  Pattern for extending a etiology-generic disease class to a hereditary form.  Here
+  hereditary means that etiology is largely genetic, and that the disease is passed
+  down or potentially able to be passed down via inheritance (i.e is germline).'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  hereditary: MONDO:0021152
+  disease: MONDO:0000001
+
+relations:
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  disease: '''disease'''
+
+name:
+  text: hereditary %s
+  vars:
+  - disease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: hereditary %s
+  vars:
+  - disease
+
+def:
+  text: An instance of %s that is caused by an inherited genomic modification in an
+    individual.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s and ''has modifier'' some ''hereditary'''
+  vars:
+  - disease

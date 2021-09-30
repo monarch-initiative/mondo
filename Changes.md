@@ -1,3 +1,2734 @@
+
+# 2021-09-01
+
+## New Classes
+
+ * [MONDO:0025708](http://purl.obolibrary.org/obo/MONDO_0025708) megacystis-microcolon-intestinal hypoperistalsis syndrome 2
+ * [MONDO:0035349](http://purl.obolibrary.org/obo/MONDO_0035349) localized dystrophic epidermolysis bullosa
+ * [MONDO:0035354](http://purl.obolibrary.org/obo/MONDO_0035354) IgG4-related systemic disease
+ * [MONDO:0035357](http://purl.obolibrary.org/obo/MONDO_0035357) portosinusoidal vascular disease
+ * [MONDO:0035362](http://purl.obolibrary.org/obo/MONDO_0035362) TRIM22-related inflammatory bowel disease
+ * [MONDO:0035363](http://purl.obolibrary.org/obo/MONDO_0035363) IRF2BPL-related regressive neurodevelopmental disorder-dystonia-seizures syndrome
+ * [MONDO:0035369](http://purl.obolibrary.org/obo/MONDO_0035369) MTHFS-related developmental delay-microcephaly-short stature-epilepsy syndrome
+ * [MONDO:0035370](http://purl.obolibrary.org/obo/MONDO_0035370) ALPI-related inflammatory bowel disease
+ * [MONDO:0035375](http://purl.obolibrary.org/obo/MONDO_0035375) multisystem inflammatory syndrome in children and adults
+ * [MONDO:0035398](http://purl.obolibrary.org/obo/MONDO_0035398) hypomyelination of early myelinating structures
+ * [MONDO:0100041](http://purl.obolibrary.org/obo/MONDO_0100041) secondary trimethylaminuria
+ * [MONDO:0100044](http://purl.obolibrary.org/obo/MONDO_0100044) acrofrontofacionasal dysostosis 1
+ * [MONDO:0550003](http://purl.obolibrary.org/obo/MONDO_0550003) SEC61B-related polycystic liver disease
+ * [MONDO:0700085](http://purl.obolibrary.org/obo/MONDO_0700085) pentasomy
+ * [MONDO:0700086](http://purl.obolibrary.org/obo/MONDO_0700086) uniparental disomy
+ * [MONDO:0700087](http://purl.obolibrary.org/obo/MONDO_0700087) Usher syndrome type 1B
+ * [MONDO:0700088](http://purl.obolibrary.org/obo/MONDO_0700088) paroxysmal nonkinesigenic dyskinesia
+ * [MONDO:0700089](http://purl.obolibrary.org/obo/MONDO_0700089) paroxysmal nonkinesigenic dyskinesia 1
+ * [MONDO:0700090](http://purl.obolibrary.org/obo/MONDO_0700090) epilepsy, familial temporal lobe, 1
+ * [MONDO:0800001](http://purl.obolibrary.org/obo/MONDO_0800001) delayed sleep phase syndrome, susceptibility to
+
+## Obsoletions
+
+ * [MONDO:0004424](http://purl.obolibrary.org/obo/MONDO_0004424) familial glomangioma --> obsolete familial glomangioma
+ * [MONDO:0005261](http://purl.obolibrary.org/obo/MONDO_0005261) pervasive developmental disorder - not otherwise specified --> obsolete pervasive developmental disorder - not otherwise specified
+ * [MONDO:0005442](http://purl.obolibrary.org/obo/MONDO_0005442) type 1 diabetes nephropathy --> obsolete type 1 diabetes nephropathy
+ * [MONDO:0005443](http://purl.obolibrary.org/obo/MONDO_0005443) type 2 diabetes nephropathy --> obsolete type 2 diabetes nephropathy
+ * [MONDO:0007326](http://purl.obolibrary.org/obo/MONDO_0007326) paroxysmal nonkinesigenic dyskinesia 1 --> obsolete paroxysmal nonkinesigenic dyskinesia 1
+ * [MONDO:0015119](http://purl.obolibrary.org/obo/MONDO_0015119) bronchopulmonary tumor --> obsolete bronchopulmonary tumor
+ * [MONDO:0015989](http://purl.obolibrary.org/obo/MONDO_0015989) congenital valvular dysplasia --> obsolete congenital valvular dysplasia
+ * [MONDO:0016254](http://purl.obolibrary.org/obo/MONDO_0016254) rare variants of adenocarcinoma of the corpus uteri --> obsolete rare variants of adenocarcinoma of the corpus uteri
+ * [MONDO:0016629](http://purl.obolibrary.org/obo/MONDO_0016629) hemorrhagic disorder due to a platelet anomaly --> obsolete hemorrhagic disorder due to a platelet anomaly
+ * [MONDO:0016632](http://purl.obolibrary.org/obo/MONDO_0016632) thrombotic disorder due to a coagulation factors defect --> obsolete thrombotic disorder due to a coagulation factors defect
+ * [MONDO:0016635](http://purl.obolibrary.org/obo/MONDO_0016635) thrombotic disorder due to a platelet anomaly --> obsolete thrombotic disorder due to a platelet anomaly
+ * [MONDO:0016767](http://purl.obolibrary.org/obo/MONDO_0016767) cutaneous lichen planus --> obsolete cutaneous lichen planus
+ * [MONDO:0017141](http://purl.obolibrary.org/obo/MONDO_0017141) hemorrhagic disorder due to a constitutional thrombocytopenia --> obsolete hemorrhagic disorder due to a constitutional thrombocytopenia
+ * [MONDO:0017663](http://purl.obolibrary.org/obo/MONDO_0017663) inherited tremor disorder --> obsolete inherited tremor disorder
+ * [MONDO:0018729](http://purl.obolibrary.org/obo/MONDO_0018729) genetic vascular tumor --> obsolete genetic vascular tumor
+ * [MONDO:0019183](http://purl.obolibrary.org/obo/MONDO_0019183) inherited odontologic disease --> obsolete inherited odontologic disease
+ * [MONDO:0020092](http://purl.obolibrary.org/obo/MONDO_0020092) rare idiopathic male infertility --> obsolete rare idiopathic male infertility
+ * [MONDO:0021720](http://purl.obolibrary.org/obo/MONDO_0021720) fetal alcohol spectrum disorders --> obsolete fetal alcohol spectrum disorders
+
+## Renaming
+
+ * [MONDO:0004424](http://purl.obolibrary.org/obo/MONDO_0004424) familial glomangioma --> obsolete familial glomangioma
+ * [MONDO:0005261](http://purl.obolibrary.org/obo/MONDO_0005261) pervasive developmental disorder - not otherwise specified --> obsolete pervasive developmental disorder - not otherwise specified
+ * [MONDO:0005442](http://purl.obolibrary.org/obo/MONDO_0005442) type 1 diabetes nephropathy --> obsolete type 1 diabetes nephropathy
+ * [MONDO:0005443](http://purl.obolibrary.org/obo/MONDO_0005443) type 2 diabetes nephropathy --> obsolete type 2 diabetes nephropathy
+ * [MONDO:0005554](http://purl.obolibrary.org/obo/MONDO_0005554) rheumatologic disorder --> rheumatic disorder
+ * [MONDO:0007326](http://purl.obolibrary.org/obo/MONDO_0007326) paroxysmal nonkinesigenic dyskinesia 1 --> obsolete paroxysmal nonkinesigenic dyskinesia 1
+ * [MONDO:0008757](http://purl.obolibrary.org/obo/MONDO_0008757) alopecia universalis --> alopecia universalis congenita
+ * [MONDO:0009402](http://purl.obolibrary.org/obo/MONDO_0009402) hypertelorism-hypospadias-polysyndactyly syndrome --> acrofrontofacionasal dysostosis 2
+ * [MONDO:0014175](http://purl.obolibrary.org/obo/MONDO_0014175) mitochondrial DNA depletion syndrome 12 --> mitochondrial DNA depletion syndrome 12B (cardiomyopathic type), autosomal recessive
+ * [MONDO:0014243](http://purl.obolibrary.org/obo/MONDO_0014243) Prader-Willi syndrome due to point mutation --> Schaaf-Yang syndrome
+ * [MONDO:0014959](http://purl.obolibrary.org/obo/MONDO_0014959) mitochondrial DNA depletion syndrome 12a (cardiomyopathic type), autosomal dominant --> mitochondrial DNA depletion syndrome 12A (cardiomyopathic type), autosomal dominant
+ * [MONDO:0015119](http://purl.obolibrary.org/obo/MONDO_0015119) bronchopulmonary tumor --> obsolete bronchopulmonary tumor
+ * [MONDO:0015989](http://purl.obolibrary.org/obo/MONDO_0015989) congenital valvular dysplasia --> obsolete congenital valvular dysplasia
+ * [MONDO:0016254](http://purl.obolibrary.org/obo/MONDO_0016254) rare variants of adenocarcinoma of the corpus uteri --> obsolete rare variants of adenocarcinoma of the corpus uteri
+ * [MONDO:0016629](http://purl.obolibrary.org/obo/MONDO_0016629) hemorrhagic disorder due to a platelet anomaly --> obsolete hemorrhagic disorder due to a platelet anomaly
+ * [MONDO:0016632](http://purl.obolibrary.org/obo/MONDO_0016632) thrombotic disorder due to a coagulation factors defect --> obsolete thrombotic disorder due to a coagulation factors defect
+ * [MONDO:0016635](http://purl.obolibrary.org/obo/MONDO_0016635) thrombotic disorder due to a platelet anomaly --> obsolete thrombotic disorder due to a platelet anomaly
+ * [MONDO:0016767](http://purl.obolibrary.org/obo/MONDO_0016767) cutaneous lichen planus --> obsolete cutaneous lichen planus
+ * [MONDO:0017141](http://purl.obolibrary.org/obo/MONDO_0017141) hemorrhagic disorder due to a constitutional thrombocytopenia --> obsolete hemorrhagic disorder due to a constitutional thrombocytopenia
+ * [MONDO:0017663](http://purl.obolibrary.org/obo/MONDO_0017663) inherited tremor disorder --> obsolete inherited tremor disorder
+ * [MONDO:0018729](http://purl.obolibrary.org/obo/MONDO_0018729) genetic vascular tumor --> obsolete genetic vascular tumor
+ * [MONDO:0019183](http://purl.obolibrary.org/obo/MONDO_0019183) inherited odontologic disease --> obsolete inherited odontologic disease
+ * [MONDO:0020092](http://purl.obolibrary.org/obo/MONDO_0020092) rare idiopathic male infertility --> obsolete rare idiopathic male infertility
+ * [MONDO:0020726](http://purl.obolibrary.org/obo/MONDO_0020726) medullary cystic kidney disease 1 --> tubulointerstitial kidney disease, autosomal dominant, 2
+ * [MONDO:0021720](http://purl.obolibrary.org/obo/MONDO_0021720) fetal alcohol spectrum disorders --> obsolete fetal alcohol spectrum disorders
+ * [MONDO:0023007](http://purl.obolibrary.org/obo/MONDO_0023007) drachtman weinblatt sitarz syndrome --> Drachtman Weinblatt Sitarz syndrome
+ * [MONDO:0029141](http://purl.obolibrary.org/obo/MONDO_0029141) usher syndrome, type 4 --> Usher syndrome, type 4
+ * [MONDO:0030899](http://purl.obolibrary.org/obo/MONDO_0030899) oculocutaneous albinism, type 8 --> oculocutaneous albinism type 8
+ * [MONDO:0100232](http://purl.obolibrary.org/obo/MONDO_0100232) 'psoriatic arthritis, susceptibility to --> psoriatic arthritis, susceptibility to
+ * [MONDO:0700066](http://purl.obolibrary.org/obo/MONDO_0700066) myopathy caused by mutation in FKRP --> myopathy caused by varation in FKRP
+ * [MONDO:0700067](http://purl.obolibrary.org/obo/MONDO_0700067) myopathy caused by mutation in FKTN --> myopathy caused by varation in FKTN
+ * [MONDO:0700068](http://purl.obolibrary.org/obo/MONDO_0700068) myopathy caused by mutation in POMGNT1 --> myopathy caused by varation in POMGNT1
+ * [MONDO:0700069](http://purl.obolibrary.org/obo/MONDO_0700069) myopathy caused by mutation in POMGNT2 --> myopathy caused by varation in POMGNT2
+ * [MONDO:0700070](http://purl.obolibrary.org/obo/MONDO_0700070) myopathy caused by mutation in POMT1 --> myopathy caused by varation in POMT1
+ * [MONDO:0700071](http://purl.obolibrary.org/obo/MONDO_0700071) myopathy caused by mutation in POMT2 {xref="MONDO:patterns/disease_series_by_gene"} --> myopathy caused by varation in POMT2
+ * [MONDO:0700075](http://purl.obolibrary.org/obo/MONDO_0700075) congenital muscular dystrophy caused by mutation in POMGNT2 --> congenital muscular dystrophy caused by varation in POMGNT2
+ * [MONDO:0700084](http://purl.obolibrary.org/obo/MONDO_0700084) myopathy caused by mutation in GMPPB --> myopathy caused by varation in GMPPB
+
+
+# 2021-08-11
+
+## New Classes
+
+ * [MONDO:0100003](http://purl.obolibrary.org/obo/MONDO_0100003) susceptibility to angioedema induced by ACE inhibitors
+ * [MONDO:0100007](http://purl.obolibrary.org/obo/MONDO_0100007) chronic inflammatory demyelinating polyneuropathy
+ * [MONDO:0100017](http://purl.obolibrary.org/obo/MONDO_0100017) pityriasis rubra pilaris
+ * [MONDO:0100018](http://purl.obolibrary.org/obo/MONDO_0100018) adult onset pityriasis rubra pilaris
+ * [MONDO:0100037](http://purl.obolibrary.org/obo/MONDO_0100037) juvenile onset pityriasis rubra pilaris
+ * [MONDO:0100373](http://purl.obolibrary.org/obo/MONDO_0100373) acute myeloid leukemia, inv(16)(p13.1;q22)
+ * [MONDO:0100374](http://purl.obolibrary.org/obo/MONDO_0100374) acute myeloid leukemia, t(16;16)(p13.1;q22)
+ * [MONDO:0100375](http://purl.obolibrary.org/obo/MONDO_0100375) acute myeloid leukemia, t(15;17)(q24;q21)
+ * [MONDO:0100376](http://purl.obolibrary.org/obo/MONDO_0100376) acute myeloid leukemia, t(9;11)(p21.3;q23.3)
+ * [MONDO:0100377](http://purl.obolibrary.org/obo/MONDO_0100377) acute myeloid leukemia, t(10;11)(p12;q23)
+ * [MONDO:0100378](http://purl.obolibrary.org/obo/MONDO_0100378) acute myeloid leukemia, t(10;11)(p11.2;q23)
+ * [MONDO:0100379](http://purl.obolibrary.org/obo/MONDO_0100379) acute myeloid leukemia, t(1;11)(q21;q23)
+ * [MONDO:0100380](http://purl.obolibrary.org/obo/MONDO_0100380) acute myeloid leukemia, t(4;11)(q21;q23)
+ * [MONDO:0100381](http://purl.obolibrary.org/obo/MONDO_0100381) acute myeloid leukemia, t(6;11)(q27;q23)
+ * [MONDO:0100382](http://purl.obolibrary.org/obo/MONDO_0100382) acute myeloid leukemia, t(6;9)(p23;q34.1)
+ * [MONDO:0100383](http://purl.obolibrary.org/obo/MONDO_0100383) acute myeloid leukemia, t(11;19)(q23;p13)
+ * [MONDO:0100384](http://purl.obolibrary.org/obo/MONDO_0100384) acute myeloid leukemia, t(11;19)(q23;p13.1)
+ * [MONDO:0100385](http://purl.obolibrary.org/obo/MONDO_0100385) acute myeloid leukemia, t(11;19)(q23.3;p13.3)
+ * [MONDO:0100386](http://purl.obolibrary.org/obo/MONDO_0100386) acute myeloid leukemia, t(v;11q23.3)
+ * [MONDO:0100387](http://purl.obolibrary.org/obo/MONDO_0100387) acute myeloid leukemia, Monosomy 7
+ * [MONDO:0100388](http://purl.obolibrary.org/obo/MONDO_0100388) acute myeloid leukemia, Monosomy 5
+ * [MONDO:0100389](http://purl.obolibrary.org/obo/MONDO_0100389) acute myeloid leukemia, Trisomy 8
+ * [MONDO:0100390](http://purl.obolibrary.org/obo/MONDO_0100390) acute myeloid leukemia, der12p
+ * [MONDO:0100391](http://purl.obolibrary.org/obo/MONDO_0100391) acute myeloid leukemia, t(2;12)
+ * [MONDO:0100392](http://purl.obolibrary.org/obo/MONDO_0100392) acute myeloid leukemia, t(11;17)
+ * [MONDO:0100393](http://purl.obolibrary.org/obo/MONDO_0100393) acute myeloid leukemia, t(8;16)
+ * [MONDO:0100394](http://purl.obolibrary.org/obo/MONDO_0100394) acute myeloid leukemia, t(1;22)
+ * [MONDO:0100395](http://purl.obolibrary.org/obo/MONDO_0100395) acute myeloid leukemia, t(5;11)(q35;p15)
+ * [MONDO:0100396](http://purl.obolibrary.org/obo/MONDO_0100396) acute myeloid leukemia, t(7;12)(q36;p13)
+ * [MONDO:0100397](http://purl.obolibrary.org/obo/MONDO_0100397) acute myeloid leukemia, t(9;22)(q34.1;q11.2)
+ * [MONDO:0100398](http://purl.obolibrary.org/obo/MONDO_0100398) acute myeloid leukemia, inv(3)(q21.3;q26.2)
+ * [MONDO:0100399](http://purl.obolibrary.org/obo/MONDO_0100399) acute myeloid leukemia, t(3;3)(q21.3;q26.2)
+ * [MONDO:0100400](http://purl.obolibrary.org/obo/MONDO_0100400) acute myeloid leukemia, t(3;12)(q23;p12.3)
+ * [MONDO:0100401](http://purl.obolibrary.org/obo/MONDO_0100401) acute myeloid leukemia, del(5q31-q32)
+ * [MONDO:0100402](http://purl.obolibrary.org/obo/MONDO_0100402) acute myeloid leukemia, del(13q14-q21)
+ * [MONDO:0100403](http://purl.obolibrary.org/obo/MONDO_0100403) acute myeloid leukemia, loss of chromosome 17p
+ * [MONDO:0100404](http://purl.obolibrary.org/obo/MONDO_0100404) acute myeloid leukemia, MLL gene rearrangement
+ * [MONDO:0100405](http://purl.obolibrary.org/obo/MONDO_0100405) acute myeloid leukemia, Non-KMT2A MLLT10 rearrangement positive
+ * [MONDO:0100406](http://purl.obolibrary.org/obo/MONDO_0100406) acute myeloid leukemia, inv(16)(p13.3;q24.3)
+ * [MONDO:0100407](http://purl.obolibrary.org/obo/MONDO_0100407) acute myeloid leukemia, t(11;15)(p15;q35)
+ * [MONDO:0100408](http://purl.obolibrary.org/obo/MONDO_0100408) acute myeloid leukemia, t(16;21)(q24;q22)
+ * [MONDO:0100409](http://purl.obolibrary.org/obo/MONDO_0100409) acute myeloid leukemia, t(3;5)(q25;q34)
+ * [MONDO:0100410](http://purl.obolibrary.org/obo/MONDO_0100410) acute myeloid leukemia, t(16;21)(p11;q22)
+ * [MONDO:0100411](http://purl.obolibrary.org/obo/MONDO_0100411) acute myeloid leukemia, NPM1 gene mutation
+ * [MONDO:0100412](http://purl.obolibrary.org/obo/MONDO_0100412) acute myeloid leukemia, monoallelic CEBPA gene mutation
+ * [MONDO:0100413](http://purl.obolibrary.org/obo/MONDO_0100413) acute myeloid leukemia, biallelic CEBPA gene mutation
+ * [MONDO:0100414](http://purl.obolibrary.org/obo/MONDO_0100414) acute myeloid leukemia, CEBPA gene mutation
+ * [MONDO:0100415](http://purl.obolibrary.org/obo/MONDO_0100415) acute myeloid leukemia, FLT3 internal tandem duplication
+ * [MONDO:0100416](http://purl.obolibrary.org/obo/MONDO_0100416) acute myeloid leukemia, FLT3 tyrosine kinase domain point mutation
+ * [MONDO:0100417](http://purl.obolibrary.org/obo/MONDO_0100417) acute myeloid leukemia, WT1 gene mutation
+ * [MONDO:0100418](http://purl.obolibrary.org/obo/MONDO_0100418) acute myeloid leukemia, KIT exon 17 mutation
+ * [MONDO:0100419](http://purl.obolibrary.org/obo/MONDO_0100419) acute myeloid leukemia, KIT exon 8 mutation
+ * [MONDO:0100420](http://purl.obolibrary.org/obo/MONDO_0100420) acute myeloid leukemia, KIT gene mutation
+ * [MONDO:0100421](http://purl.obolibrary.org/obo/MONDO_0100421) acute myeloid leukemia, GATA1 gene mutation
+ * [MONDO:0100422](http://purl.obolibrary.org/obo/MONDO_0100422) acute myeloid leukemia, RUNX1 gene mutation
+ * [MONDO:0100423](http://purl.obolibrary.org/obo/MONDO_0100423) acute myeloid leukemia, PTPN11 gene mutation
+ * [MONDO:0100424](http://purl.obolibrary.org/obo/MONDO_0100424) acute myeloid leukemia, NRAS gene mutation
+ * [MONDO:0100425](http://purl.obolibrary.org/obo/MONDO_0100425) acute myeloid leukemia, KRAS gene mutation
+ * [MONDO:0700066](http://purl.obolibrary.org/obo/MONDO_0700066) myopathy caused by mutation in FKRP
+ * [MONDO:0700067](http://purl.obolibrary.org/obo/MONDO_0700067) myopathy caused by mutation in FKTN
+ * [MONDO:0700068](http://purl.obolibrary.org/obo/MONDO_0700068) myopathy caused by mutation in POMGNT1
+ * [MONDO:0700069](http://purl.obolibrary.org/obo/MONDO_0700069) myopathy caused by mutation in POMGNT2
+ * [MONDO:0700070](http://purl.obolibrary.org/obo/MONDO_0700070) myopathy caused by mutation in POMT1
+ * [MONDO:0700071](http://purl.obolibrary.org/obo/MONDO_0700071) myopathy caused by mutation in POMT2 {xref="MONDO:patterns/disease_series_by_gene"}
+ * [MONDO:0700075](http://purl.obolibrary.org/obo/MONDO_0700075) congenital muscular dystrophy caused by mutation in POMGNT2
+ * [MONDO:0700084](http://purl.obolibrary.org/obo/MONDO_0700084) myopathy caused by mutation in GMPPB
+
+## Obsoletions
+
+ * [MONDO:0005721](http://purl.obolibrary.org/obo/MONDO_0005721) coxsackievirus infectious disease --> obsolete coxsackievirus infectious disease
+ * [MONDO:0006448](http://purl.obolibrary.org/obo/MONDO_0006448) testicular teratoma (disease) --> obsolete testicular teratoma (disease)
+ * [MONDO:0015598](http://purl.obolibrary.org/obo/MONDO_0015598) acrodermatitis continua suppurativa of Hallopeau --> obsolete acrodermatitis continua suppurativa of Hallopeau
+ * [MONDO:0016597](http://purl.obolibrary.org/obo/MONDO_0016597) generalized pustular psoriasis --> obsolete generalized pustular psoriasis
+ * [MONDO:0018452](http://purl.obolibrary.org/obo/MONDO_0018452) deficiency of the interleukin-36 receptor antagonist --> obsolete deficiency of the interleukin-36 receptor antagonist
+ * [MONDO:0024293](http://purl.obolibrary.org/obo/MONDO_0024293) polyposis, gastric, Dos Santos and de Magalhaes 1980 --> obsolete polyposis, gastric, Dos Santos and de Magalhaes 1980
+ * [MONDO:0024351](http://purl.obolibrary.org/obo/MONDO_0024351) familial pityriasis rubra pilaris --> obsolete familial pityriasis rubra pilaris
+ * [MONDO:0029001](http://purl.obolibrary.org/obo/MONDO_0029001) chemically-induced disorder --> obsolete chemically-induced disorder
+ * [MONDO:0045028](http://purl.obolibrary.org/obo/MONDO_0045028) radiation or chemically induced disorder --> obsolete radiation or chemically induced disorder
+
+## Renaming
+
+ * [MONDO:0005721](http://purl.obolibrary.org/obo/MONDO_0005721) coxsackievirus infectious disease --> obsolete coxsackievirus infectious disease
+ * [MONDO:0006448](http://purl.obolibrary.org/obo/MONDO_0006448) testicular teratoma (disease) --> obsolete testicular teratoma (disease)
+ * [MONDO:0007691](http://purl.obolibrary.org/obo/MONDO_0007691) chronic inflammatory demyelinating polyneuropathy --> Guillain-Barre syndrome, familial
+ * [MONDO:0007953](http://purl.obolibrary.org/obo/MONDO_0007953) binder syndrome --> Binder syndrome
+ * [MONDO:0008251](http://purl.obolibrary.org/obo/MONDO_0008251) pityriasis rubra pilaris --> familial pityriasis rubra pilaris
+ * [MONDO:0010711](http://purl.obolibrary.org/obo/MONDO_0010711) tarp syndrome --> TARP syndrome
+ * [MONDO:0011922](http://purl.obolibrary.org/obo/MONDO_0011922) adult idiopathic neutropenia --> nonimmune chronic idiopathic neutropenia of adults
+ * [MONDO:0015598](http://purl.obolibrary.org/obo/MONDO_0015598) acrodermatitis continua suppurativa of Hallopeau --> obsolete acrodermatitis continua suppurativa of Hallopeau
+ * [MONDO:0016597](http://purl.obolibrary.org/obo/MONDO_0016597) generalized pustular psoriasis --> obsolete generalized pustular psoriasis
+ * [MONDO:0018452](http://purl.obolibrary.org/obo/MONDO_0018452) deficiency of the interleukin-36 receptor antagonist --> obsolete deficiency of the interleukin-36 receptor antagonist
+ * [MONDO:0020113](http://purl.obolibrary.org/obo/MONDO_0020113) red cell aplasia --> primary acquired red cell aplasia
+ * [MONDO:0024293](http://purl.obolibrary.org/obo/MONDO_0024293) polyposis, gastric, Dos Santos and de Magalhaes 1980 --> obsolete polyposis, gastric, Dos Santos and de Magalhaes 1980
+ * [MONDO:0024351](http://purl.obolibrary.org/obo/MONDO_0024351) familial pityriasis rubra pilaris --> obsolete familial pityriasis rubra pilaris
+ * [MONDO:0029001](http://purl.obolibrary.org/obo/MONDO_0029001) chemically-induced disorder --> obsolete chemically-induced disorder
+ * [MONDO:0045028](http://purl.obolibrary.org/obo/MONDO_0045028) radiation or chemically induced disorder --> obsolete radiation or chemically induced disorder
+ * [MONDO:0054813](http://purl.obolibrary.org/obo/MONDO_0054813) ehlers-danlos syndrome, classic-like, 2 --> Ehlers-Danlos syndrome, classic-like, 2
+
+
+# 2021-08-03
+
+## New Classes
+
+ * [MONDO:0600026](http://purl.obolibrary.org/obo/MONDO_0600026) vanishing lung syndrome
+ * [MONDO:0700064](http://purl.obolibrary.org/obo/MONDO_0700064) aneuploidy
+ * [MONDO:0700065](http://purl.obolibrary.org/obo/MONDO_0700065) trisomy
+
+## Obsoletions
+
+ * [MONDO:0004626](http://purl.obolibrary.org/obo/MONDO_0004626) Hodgkin's paragranuloma --> obsolete Hodgkin's paragranuloma
+ * [MONDO:0005889](http://purl.obolibrary.org/obo/MONDO_0005889) orthomyxoviridae infectious disease --> obsolete orthomyxoviridae infectious disease
+ * [MONDO:0008074](http://purl.obolibrary.org/obo/MONDO_0008074) nerve growth factor, alpha subunit --> obsolete nerve growth factor, alpha subunit
+ * [MONDO:0018297](http://purl.obolibrary.org/obo/MONDO_0018297) hypotonia-speech impairment-severe cognitive delay syndrome --> obsolete hypotonia-speech impairment-severe cognitive delay syndrome
+
+## Renaming
+
+ * [MONDO:0004626](http://purl.obolibrary.org/obo/MONDO_0004626) Hodgkin's paragranuloma --> obsolete Hodgkin's paragranuloma
+ * [MONDO:0005889](http://purl.obolibrary.org/obo/MONDO_0005889) orthomyxoviridae infectious disease --> obsolete orthomyxoviridae infectious disease
+ * [MONDO:0008074](http://purl.obolibrary.org/obo/MONDO_0008074) nerve growth factor, alpha subunit --> obsolete nerve growth factor, alpha subunit
+ * [MONDO:0014823](http://purl.obolibrary.org/obo/MONDO_0014823) TBCK-related intellectual disability syndrome --> hypotonia, infantile, with psychomotor retardation and characteristic facies 3
+ * [MONDO:0018297](http://purl.obolibrary.org/obo/MONDO_0018297) hypotonia-speech impairment-severe cognitive delay syndrome --> obsolete hypotonia-speech impairment-severe cognitive delay syndrome
+
+
+# 2021-08-02
+
+## New Classes
+
+ * [MONDO:0025986](http://purl.obolibrary.org/obo/MONDO_0025986) megacystis-microcolon-intestinal hypoperistalsis syndrome
+ * [MONDO:0100257](http://purl.obolibrary.org/obo/MONDO_0100257) peroxisomal single enzyme/protein defect
+ * [MONDO:0100258](http://purl.obolibrary.org/obo/MONDO_0100258) phytanoyl-CoA hydroxylase deficiency
+ * [MONDO:0100259](http://purl.obolibrary.org/obo/MONDO_0100259) peroxisome biogenesis disorder due to PEX1 defect
+ * [MONDO:0100260](http://purl.obolibrary.org/obo/MONDO_0100260) peroxisome biogenesis disorder due to PEX2 defect
+ * [MONDO:0100261](http://purl.obolibrary.org/obo/MONDO_0100261) peroxisome biogenesis disorder due to PEX3 defect
+ * [MONDO:0100262](http://purl.obolibrary.org/obo/MONDO_0100262) peroxisome biogenesis disorder due to PEX5 defect
+ * [MONDO:0100263](http://purl.obolibrary.org/obo/MONDO_0100263) peroxisome biogenesis disorder due to PEX6 defect
+ * [MONDO:0100264](http://purl.obolibrary.org/obo/MONDO_0100264) peroxisome biogenesis disorder due to PEX10 defect
+ * [MONDO:0100265](http://purl.obolibrary.org/obo/MONDO_0100265) peroxisome biogenesis disorder due to PEX5 defect in the PEX7-binding domain
+ * [MONDO:0100266](http://purl.obolibrary.org/obo/MONDO_0100266) peroxisome biogenesis disorder due to PEX12 defect
+ * [MONDO:0100267](http://purl.obolibrary.org/obo/MONDO_0100267) peroxisome biogenesis disorder due to PEX13 defect
+ * [MONDO:0100268](http://purl.obolibrary.org/obo/MONDO_0100268) peroxisome biogenesis disorder due to PEX14 defect
+ * [MONDO:0100269](http://purl.obolibrary.org/obo/MONDO_0100269) peroxisome biogenesis disorder due to PEX16 defect
+ * [MONDO:0100270](http://purl.obolibrary.org/obo/MONDO_0100270) peroxisome biogenesis disorder due to PEX19 defect
+ * [MONDO:0100271](http://purl.obolibrary.org/obo/MONDO_0100271) peroxisome biogenesis disorder due to PEX26 defect
+ * [MONDO:0100272](http://purl.obolibrary.org/obo/MONDO_0100272) peroxisome biogenesis disorder due to PEX7 defect
+ * [MONDO:0100273](http://purl.obolibrary.org/obo/MONDO_0100273) glyceronephosphate O-acyltransferase deficiency
+ * [MONDO:0100274](http://purl.obolibrary.org/obo/MONDO_0100274) alkylglycerone-phosphate synthase deficiency
+ * [MONDO:0100275](http://purl.obolibrary.org/obo/MONDO_0100275) fatty acyl-CoA reductase defects
+ * [MONDO:0100276](http://purl.obolibrary.org/obo/MONDO_0100276) disorder of defective peroxisomal and mitochondrial fission
+ * [MONDO:0100277](http://purl.obolibrary.org/obo/MONDO_0100277) disorder of peroxisomal alpha oxidation
+ * [MONDO:0100278](http://purl.obolibrary.org/obo/MONDO_0100278) alanine glyoxylate aminotransferase deficiency
+ * [MONDO:0100279](http://purl.obolibrary.org/obo/MONDO_0100279) peroxisome biogenesis disorder due to PEX11B defect
+ * [MONDO:0100304](http://purl.obolibrary.org/obo/MONDO_0100304) disorder of bile acid aminotransferase
+ * [MONDO:0100305](http://purl.obolibrary.org/obo/MONDO_0100305) bile acid CoA:amino acid N-acyltransferase deficiency
+ * [MONDO:0100306](http://purl.obolibrary.org/obo/MONDO_0100306) disorder of defective peroxisome oxidative status
+ * [MONDO:0100307](http://purl.obolibrary.org/obo/MONDO_0100307) adult Refsum disease due to PEX7 defect
+ * [MONDO:0100315](http://purl.obolibrary.org/obo/MONDO_0100315) isolated adrenal insufficiency
+ * [MONDO:0100322](http://purl.obolibrary.org/obo/MONDO_0100322) non-Zellweger spectrum disorder
+ * [MONDO:0100354](http://purl.obolibrary.org/obo/MONDO_0100354) megacystis-microcolon-intestinal hypoperistalsis syndrome 1
+ * [MONDO:0100355](http://purl.obolibrary.org/obo/MONDO_0100355) classic or non-classic genetic disease presentation
+ * [MONDO:0100356](http://purl.obolibrary.org/obo/MONDO_0100356) classic presentation
+ * [MONDO:0100357](http://purl.obolibrary.org/obo/MONDO_0100357) non-classic presentation
+ * [MONDO:0100358](http://purl.obolibrary.org/obo/MONDO_0100358) ectodermal dysplasia WNT10A related
+ * [MONDO:0100359](http://purl.obolibrary.org/obo/MONDO_0100359) herpes simplex type 1 infectious disease
+ * [MONDO:0100360](http://purl.obolibrary.org/obo/MONDO_0100360) herpes simplex type 2 infectious disease
+ * [MONDO:0100361](http://purl.obolibrary.org/obo/MONDO_0100361) lip herpes simplex type 1 infectious disease
+ * [MONDO:0100362](http://purl.obolibrary.org/obo/MONDO_0100362) lip herpes simplex type 2 infectious disease
+ * [MONDO:0100363](http://purl.obolibrary.org/obo/MONDO_0100363) genital herpes simplex type 2 infectious disease
+ * [MONDO:0100364](http://purl.obolibrary.org/obo/MONDO_0100364) genital herpes simplex type 1 infectious disease
+ * [MONDO:0100372](http://purl.obolibrary.org/obo/MONDO_0100372) disorder of peroxisomal transporter
+ * [MONDO:0500018](http://purl.obolibrary.org/obo/MONDO_0500018) acute fibrinous and organizing pneumonia
+ * [MONDO:0600014](http://purl.obolibrary.org/obo/MONDO_0600014) alveolar capillary dysplasia without misalignment of pulmonary veins
+ * [MONDO:0600023](http://purl.obolibrary.org/obo/MONDO_0600023) idiopathic inflammatory myopathy
+ * [MONDO:0600024](http://purl.obolibrary.org/obo/MONDO_0600024) familial idiopathic inflammatory myopathy
+ * [MONDO:0600025](http://purl.obolibrary.org/obo/MONDO_0600025) hydrosalpinx
+ * [MONDO:0700002](http://purl.obolibrary.org/obo/MONDO_0700002) ATP1A3-associated neurological disorder
+ * [MONDO:0700003](http://purl.obolibrary.org/obo/MONDO_0700003) obstetric disorder
+ * [MONDO:0700007](http://purl.obolibrary.org/obo/MONDO_0700007) idiopathic disease
+ * [MONDO:0700057](http://purl.obolibrary.org/obo/MONDO_0700057) neurological pain disorder
+ * [MONDO:0700060](http://purl.obolibrary.org/obo/MONDO_0700060) leukemia, acute, X-linked
+ * [MONDO:0700061](http://purl.obolibrary.org/obo/MONDO_0700061) mosaic vs complete
+ * [MONDO:0700062](http://purl.obolibrary.org/obo/MONDO_0700062) mosaic
+ * [MONDO:0700063](http://purl.obolibrary.org/obo/MONDO_0700063) complete
+
+## Obsoletions
+
+ * [MONDO:0000012](http://purl.obolibrary.org/obo/MONDO_0000012) obsolete choreoathetosis (disease) --> obsolete choreoathetosis
+ * [MONDO:0000054](http://purl.obolibrary.org/obo/MONDO_0000054) obsolete macular dystrophy (disease) --> obsolete macular dystrophy
+ * [MONDO:0000063](http://purl.obolibrary.org/obo/MONDO_0000063) obsolete molybdenum cofactor deficiency (disease) --> obsolete molybdenum cofactor deficiency
+ * [MONDO:0000077](http://purl.obolibrary.org/obo/MONDO_0000077) obsolete nystagmus (disease) --> obsolete nystagmus
+ * [MONDO:0000094](http://purl.obolibrary.org/obo/MONDO_0000094) obsolete spherocytosis (disease) --> obsolete spherocytosis
+ * [MONDO:0000106](http://purl.obolibrary.org/obo/MONDO_0000106) obsolete apnea (disease) --> obsolete apnea
+ * [MONDO:0000132](http://purl.obolibrary.org/obo/MONDO_0000132) obsolete hypocalcemia (disease) --> obsolete hypocalcemia
+ * [MONDO:0000161](http://purl.obolibrary.org/obo/MONDO_0000161) obsolete adrenal hyperplasia (disease) --> obsolete adrenal hyperplasia
+ * [MONDO:0000348](http://purl.obolibrary.org/obo/MONDO_0000348) obsolete posterior polar cataract (disease) --> obsolete posterior polar cataract
+ * [MONDO:0000537](http://purl.obolibrary.org/obo/MONDO_0000537) obsolete gastrointestinal carcinoma (disease) --> obsolete gastrointestinal carcinoma
+ * [MONDO:0000796](http://purl.obolibrary.org/obo/MONDO_0000796) obsolete cow milk allergy (disease) --> obsolete cow milk allergy
+ * [MONDO:0001445](http://purl.obolibrary.org/obo/MONDO_0001445) obsolete neurogenic bladder (disease) --> obsolete neurogenic bladder
+ * [MONDO:0001662](http://purl.obolibrary.org/obo/MONDO_0001662) obsolete right bundle branch block (disease) --> obsolete right bundle branch block
+ * [MONDO:0001872](http://purl.obolibrary.org/obo/MONDO_0001872) obsolete vestibular nystagmus (disease) --> obsolete vestibular nystagmus
+ * [MONDO:0001948](http://purl.obolibrary.org/obo/MONDO_0001948) Riedel's fibrosing thyroiditis --> obsolete Riedel's fibrosing thyroiditis
+ * [MONDO:0002080](http://purl.obolibrary.org/obo/MONDO_0002080) obsolete congenital ichthyosiform erythroderma (disease) --> obsolete congenital ichthyosiform erythroderma
+ * [MONDO:0002144](http://purl.obolibrary.org/obo/MONDO_0002144) obsolete hyperuricemia (disease) --> obsolete hyperuricemia
+ * [MONDO:0002498](http://purl.obolibrary.org/obo/MONDO_0002498) obsolete glioblastoma multiforme (disease) --> obsolete glioblastoma multiforme
+ * [MONDO:0002723](http://purl.obolibrary.org/obo/MONDO_0002723) obsolete cutaneous mastocytosis (disease) --> obsolete cutaneous mastocytosis
+ * [MONDO:0003833](http://purl.obolibrary.org/obo/MONDO_0003833) obsolete severe combined immunodeficiency (disease) --> obsolete severe combined immunodeficiency
+ * [MONDO:0004711](http://purl.obolibrary.org/obo/MONDO_0004711) obsolete amyloidosis (disease) --> obsolete amyloidosis
+ * [MONDO:0004761](http://purl.obolibrary.org/obo/MONDO_0004761) obsolete urethral diverticulum (disease) --> obsolete urethral diverticulum
+ * [MONDO:0005241](http://purl.obolibrary.org/obo/MONDO_0005241) obsolete adrenocortical carcinoma (disease) --> obsolete adrenocortical carcinoma
+ * [MONDO:0005245](http://purl.obolibrary.org/obo/MONDO_0005245) obsolete testicular seminoma (disease) --> obsolete testicular seminoma
+ * [MONDO:0005263](http://purl.obolibrary.org/obo/MONDO_0005263) unipolar depression --> obsolete unipolar depression
+ * [MONDO:0005360](http://purl.obolibrary.org/obo/MONDO_0005360) obsolete Dupuytren contracture (disease) --> obsolete Dupuytren contracture
+ * [MONDO:0006020](http://purl.obolibrary.org/obo/MONDO_0006020) obsolete Zollinger-Ellison syndrome (disease) --> obsolete Zollinger-Ellison syndrome
+ * [MONDO:0006100](http://purl.obolibrary.org/obo/MONDO_0006100) obsolete Bartholin gland carcinoma (disease) --> obsolete Bartholin gland carcinoma
+ * [MONDO:0006379](http://purl.obolibrary.org/obo/MONDO_0006379) obsolete pleural mesothelioma (disease) --> obsolete pleural mesothelioma
+ * [MONDO:0007778](http://purl.obolibrary.org/obo/MONDO_0007778) obsolete hypertelorism (disease) --> obsolete hypertelorism
+ * [MONDO:0007960](http://purl.obolibrary.org/obo/MONDO_0007960) megacystis-microcolon-intestinal hypoperistalsis syndrome --> obsolete megacystis-microcolon-intestinal hypoperistalsis syndrome
+ * [MONDO:0008331](http://purl.obolibrary.org/obo/MONDO_0008331) obsolete pseudopapilledema (disease) --> obsolete pseudopapilledema
+ * [MONDO:0008360](http://purl.obolibrary.org/obo/MONDO_0008360) obsolete radioulnar synostosis (disease) --> obsolete radioulnar synostosis
+ * [MONDO:0008664](http://purl.obolibrary.org/obo/MONDO_0008664) autosomal dominant neovascular inflammatory vitreoretinopathy --> obsolete autosomal dominant neovascular inflammatory vitreoretinopathy
+ * [MONDO:0008820](http://purl.obolibrary.org/obo/MONDO_0008820) arthrogryposis, distal, with hypopituitarism, intellectual disability, and facial anomalies --> obsolete arthrogryposis, distal, with hypopituitarism, intellectual disability, and facial anomalies
+ * [MONDO:0009078](http://purl.obolibrary.org/obo/MONDO_0009078) Jervell and Lange-Nielsen syndrome --> obsolete Jervell and Lange-Nielsen syndrome
+ * [MONDO:0009116](http://purl.obolibrary.org/obo/MONDO_0009116) obsolete lactose intolerance (disease) --> obsolete lactose intolerance
+ * [MONDO:0010470](http://purl.obolibrary.org/obo/MONDO_0010470) Baratela-Scott syndrome --> obsolete Baratela-Scott syndrome
+ * [MONDO:0014315](http://purl.obolibrary.org/obo/MONDO_0014315) Mitchell-Riley syndrome --> obsolete Mitchell-Riley syndrome
+ * [MONDO:0014709](http://purl.obolibrary.org/obo/MONDO_0014709) Heimler syndrome 2 --> obsolete Heimler syndrome 2
+ * [MONDO:0014849](http://purl.obolibrary.org/obo/MONDO_0014849) autosomal recessive nonsyndromic deafness 105 --> obsolete autosomal recessive nonsyndromic deafness 105
+ * [MONDO:0015098](http://purl.obolibrary.org/obo/MONDO_0015098) obsolete situs inversus totalis (disease) --> obsolete situs inversus totalis
+ * [MONDO:0015561](http://purl.obolibrary.org/obo/MONDO_0015561) aleukemic mast cell leukemia --> obsolete aleukemic mast cell leukemia
+ * [MONDO:0015707](http://purl.obolibrary.org/obo/MONDO_0015707) DNA repair defect other than combined T-cell and B-cell immunodeficiencies --> obsolete DNA repair defect other than combined T-cell and B-cell immunodeficiencies
+ * [MONDO:0017254](http://purl.obolibrary.org/obo/MONDO_0017254) obsolete posterior uveitis (disease) --> obsolete posterior uveitis
+ * [MONDO:0017753](http://purl.obolibrary.org/obo/MONDO_0017753) disorder of peroxisomal alpha-, beta- and omega-oxidation --> obsolete disorder of peroxisomal alpha-, beta- and omega-oxidation
+ * [MONDO:0018568](http://purl.obolibrary.org/obo/MONDO_0018568) COG2-CDG --> obsolete COG2-CDG
+ * [MONDO:0018598](http://purl.obolibrary.org/obo/MONDO_0018598) neonatal adrenoleukodystrophy --> obsolete neonatal adrenoleukodystrophy
+ * [MONDO:0019174](http://purl.obolibrary.org/obo/MONDO_0019174) infantile Refsum disease --> obsolete infantile Refsum disease
+ * [MONDO:0019185](http://purl.obolibrary.org/obo/MONDO_0019185) obsolete rhabdomyosarcoma (disease) --> obsolete rhabdomyosarcoma
+ * [MONDO:0019425](http://purl.obolibrary.org/obo/MONDO_0019425) X-linked intellectual disability-hypotonia-facial dysmorphism-aggressive behavior syndrome --> obsolete X-linked intellectual disability-hypotonia-facial dysmorphism-aggressive behavior syndrome
+ * [MONDO:0020201](http://purl.obolibrary.org/obo/MONDO_0020201) obsolete conjunctival telangiectasia (disease) --> obsolete conjunctival telangiectasia
+ * [MONDO:0020328](http://purl.obolibrary.org/obo/MONDO_0020328) classic Hodgkin lymphoma, mixed cellularity type --> obsolete classic Hodgkin lymphoma, mixed cellularity type
+ * [MONDO:0020329](http://purl.obolibrary.org/obo/MONDO_0020329) classic Hodgkin lymphoma, lymphocyte-rich type --> obsolete classic Hodgkin lymphoma, lymphocyte-rich type
+ * [MONDO:0020330](http://purl.obolibrary.org/obo/MONDO_0020330) classic Hodgkin lymphoma, lymphocyte-depleted type --> obsolete classic Hodgkin lymphoma, lymphocyte-depleted type
+ * [MONDO:0021668](http://purl.obolibrary.org/obo/MONDO_0021668) disorder involving pain --> obsolete disorder involving pain
+ * [MONDO:0024544](http://purl.obolibrary.org/obo/MONDO_0024544) Heimler syndrome 1 --> obsolete Heimler syndrome 1
+ * [MONDO:0100229](http://purl.obolibrary.org/obo/MONDO_0100229) Heimler syndrome --> obsolete Heimler syndrome
+
+## Renaming
+
+ * [MONDO:0000012](http://purl.obolibrary.org/obo/MONDO_0000012) obsolete choreoathetosis (disease) --> obsolete choreoathetosis
+ * [MONDO:0000054](http://purl.obolibrary.org/obo/MONDO_0000054) obsolete macular dystrophy (disease) --> obsolete macular dystrophy
+ * [MONDO:0000063](http://purl.obolibrary.org/obo/MONDO_0000063) obsolete molybdenum cofactor deficiency (disease) --> obsolete molybdenum cofactor deficiency
+ * [MONDO:0000077](http://purl.obolibrary.org/obo/MONDO_0000077) obsolete nystagmus (disease) --> obsolete nystagmus
+ * [MONDO:0000094](http://purl.obolibrary.org/obo/MONDO_0000094) obsolete spherocytosis (disease) --> obsolete spherocytosis
+ * [MONDO:0000106](http://purl.obolibrary.org/obo/MONDO_0000106) obsolete apnea (disease) --> obsolete apnea
+ * [MONDO:0000129](http://purl.obolibrary.org/obo/MONDO_0000129) glutaric aciduria (disease) --> glutaric aciduria
+ * [MONDO:0000132](http://purl.obolibrary.org/obo/MONDO_0000132) obsolete hypocalcemia (disease) --> obsolete hypocalcemia
+ * [MONDO:0000138](http://purl.obolibrary.org/obo/MONDO_0000138) metaphyseal chondrodysplasia (disease) --> metaphyseal chondrodysplasia
+ * [MONDO:0000161](http://purl.obolibrary.org/obo/MONDO_0000161) obsolete adrenal hyperplasia (disease) --> obsolete adrenal hyperplasia
+ * [MONDO:0000190](http://purl.obolibrary.org/obo/MONDO_0000190) ventricular fibrillation (disease) --> ventricular fibrillation
+ * [MONDO:0000265](http://purl.obolibrary.org/obo/MONDO_0000265) aspiration pneumonia (disease) --> aspiration pneumonia
+ * [MONDO:0000313](http://purl.obolibrary.org/obo/MONDO_0000313) hypophosphatemia (disease) --> hypophosphatemia
+ * [MONDO:0000328](http://purl.obolibrary.org/obo/MONDO_0000328) hyperphosphatemia (disease) --> hyperphosphatemia
+ * [MONDO:0000348](http://purl.obolibrary.org/obo/MONDO_0000348) obsolete posterior polar cataract (disease) --> obsolete posterior polar cataract
+ * [MONDO:0000365](http://purl.obolibrary.org/obo/MONDO_0000365) primary congenital glaucoma (disease) --> primary congenital glaucoma
+ * [MONDO:0000387](http://purl.obolibrary.org/obo/MONDO_0000387) hypochromic microcytic anemia (disease) --> hypochromic microcytic anemia
+ * [MONDO:0000424](http://purl.obolibrary.org/obo/MONDO_0000424) inborn vitamin B12 deficiency (disease) --> inborn vitamin B12 deficiency
+ * [MONDO:0000465](http://purl.obolibrary.org/obo/MONDO_0000465) atrioventricular block (disease) --> atrioventricular block
+ * [MONDO:0000495](http://purl.obolibrary.org/obo/MONDO_0000495) oppositional defiant disorder (disease) --> oppositional defiant disorder
+ * [MONDO:0000537](http://purl.obolibrary.org/obo/MONDO_0000537) obsolete gastrointestinal carcinoma (disease) --> obsolete gastrointestinal carcinoma
+ * [MONDO:0000541](http://purl.obolibrary.org/obo/MONDO_0000541) jejunal adenocarcinoma (disease) --> jejunal adenocarcinoma
+ * [MONDO:0000671](http://purl.obolibrary.org/obo/MONDO_0000671) finger agnosia (disease) --> finger agnosia
+ * [MONDO:0000680](http://purl.obolibrary.org/obo/MONDO_0000680) astereognosia (disease) --> astereognosia
+ * [MONDO:0000685](http://purl.obolibrary.org/obo/MONDO_0000685) visual agnosia (disease) --> visual agnosia
+ * [MONDO:0000728](http://purl.obolibrary.org/obo/MONDO_0000728) ptosis (disease) --> ptosis
+ * [MONDO:0000744](http://purl.obolibrary.org/obo/MONDO_0000744) lung abscess (disease) --> lung abscess
+ * [MONDO:0000748](http://purl.obolibrary.org/obo/MONDO_0000748) mastoiditis (disease) --> mastoiditis
+ * [MONDO:0000751](http://purl.obolibrary.org/obo/MONDO_0000751) cervical polyp (disease) --> cervical polyp
+ * [MONDO:0000754](http://purl.obolibrary.org/obo/MONDO_0000754) anal fistula (disease) --> anal fistula
+ * [MONDO:0000796](http://purl.obolibrary.org/obo/MONDO_0000796) obsolete cow milk allergy (disease) --> obsolete cow milk allergy
+ * [MONDO:0000859](http://purl.obolibrary.org/obo/MONDO_0000859) spina bifida occulta (disease) --> spina bifida occulta
+ * [MONDO:0000945](http://purl.obolibrary.org/obo/MONDO_0000945) venous insufficiency (disease) --> venous insufficiency
+ * [MONDO:0000980](http://purl.obolibrary.org/obo/MONDO_0000980) aortic atherosclerosis (disease) --> aortic atherosclerosis
+ * [MONDO:0001008](http://purl.obolibrary.org/obo/MONDO_0001008) blepharophimosis (disease) --> blepharophimosis
+ * [MONDO:0001020](http://purl.obolibrary.org/obo/MONDO_0001020) amblyopia (disease) --> amblyopia
+ * [MONDO:0001044](http://purl.obolibrary.org/obo/MONDO_0001044) esophageal atresia (disease) --> esophageal atresia
+ * [MONDO:0001045](http://purl.obolibrary.org/obo/MONDO_0001045) intestinal atresia (disease) --> intestinal atresia
+ * [MONDO:0001068](http://purl.obolibrary.org/obo/MONDO_0001068) osteomalacia (disease) --> osteomalacia
+ * [MONDO:0001075](http://purl.obolibrary.org/obo/MONDO_0001075) steatorrhea (disease) --> steatorrhea
+ * [MONDO:0001126](http://purl.obolibrary.org/obo/MONDO_0001126) gastric ulcer (disease) --> gastric ulcer
+ * [MONDO:0001147](http://purl.obolibrary.org/obo/MONDO_0001147) meningocele (disease) --> meningocele
+ * [MONDO:0001149](http://purl.obolibrary.org/obo/MONDO_0001149) microcephaly (disease) --> microcephaly
+ * [MONDO:0001156](http://purl.obolibrary.org/obo/MONDO_0001156) borderline personality disorder (disease) --> borderline personality disorder
+ * [MONDO:0001210](http://purl.obolibrary.org/obo/MONDO_0001210) enophthalmos (disease) --> enophthalmos
+ * [MONDO:0001271](http://purl.obolibrary.org/obo/MONDO_0001271) lens subluxation (disease) --> lens subluxation
+ * [MONDO:0001303](http://purl.obolibrary.org/obo/MONDO_0001303) abnormal pupillary function (disease) --> abnormal pupillary function
+ * [MONDO:0001321](http://purl.obolibrary.org/obo/MONDO_0001321) scleral staphyloma (disease) --> scleral staphyloma
+ * [MONDO:0001342](http://purl.obolibrary.org/obo/MONDO_0001342) dysgammaglobulinemia (disease) --> dysgammaglobulinemia
+ * [MONDO:0001357](http://purl.obolibrary.org/obo/MONDO_0001357) hypochromic anemia (disease) --> hypochromic anemia
+ * [MONDO:0001370](http://purl.obolibrary.org/obo/MONDO_0001370) pericardial effusion (disease) --> pericardial effusion
+ * [MONDO:0001384](http://purl.obolibrary.org/obo/MONDO_0001384) myopia (disease) --> myopia
+ * [MONDO:0001409](http://purl.obolibrary.org/obo/MONDO_0001409) esophagitis (disease) --> esophagitis
+ * [MONDO:0001414](http://purl.obolibrary.org/obo/MONDO_0001414) osteopoikilosis (disease) --> osteopoikilosis
+ * [MONDO:0001445](http://purl.obolibrary.org/obo/MONDO_0001445) obsolete neurogenic bladder (disease) --> obsolete neurogenic bladder
+ * [MONDO:0001447](http://purl.obolibrary.org/obo/MONDO_0001447) detrusor sphincter dyssynergia (disease) --> detrusor sphincter dyssynergia
+ * [MONDO:0001478](http://purl.obolibrary.org/obo/MONDO_0001478) anisometropia (disease) --> anisometropia
+ * [MONDO:0001519](http://purl.obolibrary.org/obo/MONDO_0001519) entropion (disease) --> entropion
+ * [MONDO:0001552](http://purl.obolibrary.org/obo/MONDO_0001552) dyscalculia (disease) --> dyscalculia
+ * [MONDO:0001556](http://purl.obolibrary.org/obo/MONDO_0001556) urethral obstruction (disease) --> urethral obstruction
+ * [MONDO:0001561](http://purl.obolibrary.org/obo/MONDO_0001561) pyloric stenosis (disease) --> pyloric stenosis
+ * [MONDO:0001603](http://purl.obolibrary.org/obo/MONDO_0001603) paralytic lagophthalmos (disease) --> paralytic lagophthalmos
+ * [MONDO:0001617](http://purl.obolibrary.org/obo/MONDO_0001617) transient global amnesia (disease) --> transient global amnesia
+ * [MONDO:0001623](http://purl.obolibrary.org/obo/MONDO_0001623) cicatricial lagophthalmos (disease) --> cicatricial lagophthalmos
+ * [MONDO:0001627](http://purl.obolibrary.org/obo/MONDO_0001627) dementia (disease) --> dementia
+ * [MONDO:0001645](http://purl.obolibrary.org/obo/MONDO_0001645) crescentic glomerulonephritis (disease) --> crescentic glomerulonephritis
+ * [MONDO:0001650](http://purl.obolibrary.org/obo/MONDO_0001650) acute cystitis (disease) --> acute cystitis
+ * [MONDO:0001662](http://purl.obolibrary.org/obo/MONDO_0001662) obsolete right bundle branch block (disease) --> obsolete right bundle branch block
+ * [MONDO:0001700](http://purl.obolibrary.org/obo/MONDO_0001700) megaloblastic anemia (disease) --> megaloblastic anemia
+ * [MONDO:0001718](http://purl.obolibrary.org/obo/MONDO_0001718) scleritis (disease) --> scleritis
+ * [MONDO:0001780](http://purl.obolibrary.org/obo/MONDO_0001780) premature ejaculation (disease) --> premature ejaculation
+ * [MONDO:0001822](http://purl.obolibrary.org/obo/MONDO_0001822) hypolipoproteinemia (disease) --> hypolipoproteinemia
+ * [MONDO:0001836](http://purl.obolibrary.org/obo/MONDO_0001836) amenorrhea (disease) --> amenorrhea
+ * [MONDO:0001872](http://purl.obolibrary.org/obo/MONDO_0001872) obsolete vestibular nystagmus (disease) --> obsolete vestibular nystagmus
+ * [MONDO:0001882](http://purl.obolibrary.org/obo/MONDO_0001882) bacteriuria (disease) --> bacteriuria
+ * [MONDO:0001948](http://purl.obolibrary.org/obo/MONDO_0001948) Riedel's fibrosing thyroiditis --> obsolete Riedel's fibrosing thyroiditis
+ * [MONDO:0001953](http://purl.obolibrary.org/obo/MONDO_0001953) pyuria (disease) --> pyuria
+ * [MONDO:0002028](http://purl.obolibrary.org/obo/MONDO_0002028) personality disorder (disease) --> personality disorder
+ * [MONDO:0002043](http://purl.obolibrary.org/obo/MONDO_0002043) ectropion (disease) --> ectropion
+ * [MONDO:0002052](http://purl.obolibrary.org/obo/MONDO_0002052) lymphadenitis (disease) --> lymphadenitis
+ * [MONDO:0002070](http://purl.obolibrary.org/obo/MONDO_0002070) ventricular septal defect (disease) --> ventricular septal defect
+ * [MONDO:0002076](http://purl.obolibrary.org/obo/MONDO_0002076) pneumothorax (disease) --> pneumothorax
+ * [MONDO:0002080](http://purl.obolibrary.org/obo/MONDO_0002080) obsolete congenital ichthyosiform erythroderma (disease) --> obsolete congenital ichthyosiform erythroderma
+ * [MONDO:0002093](http://purl.obolibrary.org/obo/MONDO_0002093) acanthoma (disease) --> acanthoma
+ * [MONDO:0002119](http://purl.obolibrary.org/obo/MONDO_0002119) ossifying fibroma (disease) --> ossifying fibroma
+ * [MONDO:0002127](http://purl.obolibrary.org/obo/MONDO_0002127) urethral stricture (disease) --> urethral stricture
+ * [MONDO:0002144](http://purl.obolibrary.org/obo/MONDO_0002144) obsolete hyperuricemia (disease) --> obsolete hyperuricemia
+ * [MONDO:0002177](http://purl.obolibrary.org/obo/MONDO_0002177) hyperinsulinism (disease) --> hyperinsulinism
+ * [MONDO:0002205](http://purl.obolibrary.org/obo/MONDO_0002205) vulvar melanoma (disease) --> vulvar melanoma
+ * [MONDO:0002234](http://purl.obolibrary.org/obo/MONDO_0002234) vaginitis (disease) --> vaginitis
+ * [MONDO:0002257](http://purl.obolibrary.org/obo/MONDO_0002257) ankylosis (disease) --> ankylosis
+ * [MONDO:0002280](http://purl.obolibrary.org/obo/MONDO_0002280) anemia (disease) --> anemia
+ * [MONDO:0002281](http://purl.obolibrary.org/obo/MONDO_0002281) macrocytic anemia (disease) --> macrocytic anemia
+ * [MONDO:0002333](http://purl.obolibrary.org/obo/MONDO_0002333) splenic abscess (disease) --> splenic abscess
+ * [MONDO:0002345](http://purl.obolibrary.org/obo/MONDO_0002345) cervicitis (disease) --> cervicitis
+ * [MONDO:0002400](http://purl.obolibrary.org/obo/MONDO_0002400) synovitis (disease) --> synovitis
+ * [MONDO:0002441](http://purl.obolibrary.org/obo/MONDO_0002441) Jervell-Lange Nielsen syndrome --> Jervell and Lange-Nielsen syndrome
+ * [MONDO:0002443](http://purl.obolibrary.org/obo/MONDO_0002443) bruxism (disease) --> bruxism
+ * [MONDO:0002447](http://purl.obolibrary.org/obo/MONDO_0002447) endometrial carcinoma (disease) --> endometrial carcinoma
+ * [MONDO:0002454](http://purl.obolibrary.org/obo/MONDO_0002454) thyroid adenoma (disease) --> thyroid adenoma
+ * [MONDO:0002461](http://purl.obolibrary.org/obo/MONDO_0002461) membranoproliferative glomerulonephritis (disease) --> membranoproliferative glomerulonephritis
+ * [MONDO:0002462](http://purl.obolibrary.org/obo/MONDO_0002462) glomerulonephritis (disease) --> glomerulonephritis
+ * [MONDO:0002465](http://purl.obolibrary.org/obo/MONDO_0002465) bronchiolitis (disease) --> bronchiolitis
+ * [MONDO:0002498](http://purl.obolibrary.org/obo/MONDO_0002498) obsolete glioblastoma multiforme (disease) --> obsolete glioblastoma multiforme
+ * [MONDO:0002598](http://purl.obolibrary.org/obo/MONDO_0002598) germinoma (disease) --> germinoma
+ * [MONDO:0002610](http://purl.obolibrary.org/obo/MONDO_0002610) purpura (disease) --> purpura
+ * [MONDO:0002613](http://purl.obolibrary.org/obo/MONDO_0002613) histrionic personality disorder (disease) --> histrionic personality disorder
+ * [MONDO:0002615](http://purl.obolibrary.org/obo/MONDO_0002615) xanthomatosis (disease) --> xanthomatosis
+ * [MONDO:0002660](http://purl.obolibrary.org/obo/MONDO_0002660) blepharochalasis (disease) --> blepharochalasis
+ * [MONDO:0002697](http://purl.obolibrary.org/obo/MONDO_0002697) ovarian gonadoblastoma (disease) --> ovarian gonadoblastoma
+ * [MONDO:0002698](http://purl.obolibrary.org/obo/MONDO_0002698) testicular gonadoblastoma (disease) --> testicular gonadoblastoma
+ * [MONDO:0002723](http://purl.obolibrary.org/obo/MONDO_0002723) obsolete cutaneous mastocytosis (disease) --> obsolete cutaneous mastocytosis
+ * [MONDO:0002735](http://purl.obolibrary.org/obo/MONDO_0002735) anal canal adenocarcinoma (disease) --> anal canal adenocarcinoma
+ * [MONDO:0002807](http://purl.obolibrary.org/obo/MONDO_0002807) bronchial neoplasm (disease) --> bronchial neoplasm
+ * [MONDO:0002904](http://purl.obolibrary.org/obo/MONDO_0002904) echolalia (disease) --> echolalia
+ * [MONDO:0002905](http://purl.obolibrary.org/obo/MONDO_0002905) mutism (disease) --> mutism
+ * [MONDO:0003002](http://purl.obolibrary.org/obo/MONDO_0003002) dysgerminoma (disease) --> dysgerminoma
+ * [MONDO:0003038](http://purl.obolibrary.org/obo/MONDO_0003038) dysgraphia (disease) --> dysgraphia
+ * [MONDO:0003157](http://purl.obolibrary.org/obo/MONDO_0003157) Gorham disease --> disappearing bone disease
+ * [MONDO:0003227](http://purl.obolibrary.org/obo/MONDO_0003227) prosopagnosia (disease) --> prosopagnosia
+ * [MONDO:0003282](http://purl.obolibrary.org/obo/MONDO_0003282) ovarian cyst (disease) --> ovarian cyst
+ * [MONDO:0003304](http://purl.obolibrary.org/obo/MONDO_0003304) plexiform neurofibroma (disease) --> plexiform neurofibroma
+ * [MONDO:0003329](http://purl.obolibrary.org/obo/MONDO_0003329) ureteral obstruction (disease) --> ureteral obstruction
+ * [MONDO:0003362](http://purl.obolibrary.org/obo/MONDO_0003362) cutaneous leiomyosarcoma (disease) --> cutaneous leiomyosarcoma
+ * [MONDO:0003367](http://purl.obolibrary.org/obo/MONDO_0003367) gastric leiomyosarcoma (disease) --> gastric leiomyosarcoma
+ * [MONDO:0003783](http://purl.obolibrary.org/obo/MONDO_0003783) lymphopenia (disease) --> lymphopenia
+ * [MONDO:0003799](http://purl.obolibrary.org/obo/MONDO_0003799) conjunctivitis (disease) --> conjunctivitis
+ * [MONDO:0003833](http://purl.obolibrary.org/obo/MONDO_0003833) obsolete severe combined immunodeficiency (disease) --> obsolete severe combined immunodeficiency
+ * [MONDO:0003865](http://purl.obolibrary.org/obo/MONDO_0003865) acral lentiginous melanoma (disease) --> acral lentiginous melanoma
+ * [MONDO:0004126](http://purl.obolibrary.org/obo/MONDO_0004126) thyroiditis (disease) --> thyroiditis
+ * [MONDO:0004568](http://purl.obolibrary.org/obo/MONDO_0004568) paralytic ileus (disease) --> paralytic ileus
+ * [MONDO:0004585](http://purl.obolibrary.org/obo/MONDO_0004585) polyhydramnios (disease) --> polyhydramnios
+ * [MONDO:0004674](http://purl.obolibrary.org/obo/MONDO_0004674) chorioretinitis (disease) --> chorioretinitis
+ * [MONDO:0004686](http://purl.obolibrary.org/obo/MONDO_0004686) lattice corneal dystrophy (disease) --> lattice corneal dystrophy
+ * [MONDO:0004697](http://purl.obolibrary.org/obo/MONDO_0004697) esophageal leukoplakia (disease) --> esophageal leukoplakia
+ * [MONDO:0004711](http://purl.obolibrary.org/obo/MONDO_0004711) obsolete amyloidosis (disease) --> obsolete amyloidosis
+ * [MONDO:0004737](http://purl.obolibrary.org/obo/MONDO_0004737) homocystinuria (disease) --> homocystinuria
+ * [MONDO:0004747](http://purl.obolibrary.org/obo/MONDO_0004747) cleft lip (disease) --> cleft lip
+ * [MONDO:0004754](http://purl.obolibrary.org/obo/MONDO_0004754) rectal prolapse (disease) --> rectal prolapse
+ * [MONDO:0004758](http://purl.obolibrary.org/obo/MONDO_0004758) scotoma (disease) --> scotoma
+ * [MONDO:0004761](http://purl.obolibrary.org/obo/MONDO_0004761) obsolete urethral diverticulum (disease) --> obsolete urethral diverticulum
+ * [MONDO:0004770](http://purl.obolibrary.org/obo/MONDO_0004770) exophthalmos (disease) --> exophthalmos
+ * [MONDO:0004773](http://purl.obolibrary.org/obo/MONDO_0004773) iridocyclitis (disease) --> iridocyclitis
+ * [MONDO:0004779](http://purl.obolibrary.org/obo/MONDO_0004779) epididymitis (disease) --> epididymitis
+ * [MONDO:0004830](http://purl.obolibrary.org/obo/MONDO_0004830) fasciitis (disease) --> fasciitis
+ * [MONDO:0004846](http://purl.obolibrary.org/obo/MONDO_0004846) placental abruption (disease) --> placental abruption
+ * [MONDO:0004910](http://purl.obolibrary.org/obo/MONDO_0004910) mitral valve prolapse (disease) --> mitral valve prolapse
+ * [MONDO:0004934](http://purl.obolibrary.org/obo/MONDO_0004934) periostitis (disease) --> periostitis
+ * [MONDO:0004966](http://purl.obolibrary.org/obo/MONDO_0004966) gastritis (disease) --> gastritis
+ * [MONDO:0004967](http://purl.obolibrary.org/obo/MONDO_0004967) acute lymphoblastic leukemia (disease) --> acute lymphoblastic leukemia
+ * [MONDO:0004981](http://purl.obolibrary.org/obo/MONDO_0004981) atrial fibrillation (disease) --> atrial fibrillation
+ * [MONDO:0004997](http://purl.obolibrary.org/obo/MONDO_0004997) chondroblastoma (disease) --> chondroblastoma
+ * [MONDO:0005001](http://purl.obolibrary.org/obo/MONDO_0005001) chronic gastritis (disease) --> chronic gastritis
+ * [MONDO:0005012](http://purl.obolibrary.org/obo/MONDO_0005012) cutaneous melanoma (disease) --> cutaneous melanoma
+ * [MONDO:0005015](http://purl.obolibrary.org/obo/MONDO_0005015) diabetes mellitus (disease) --> diabetes mellitus
+ * [MONDO:0005016](http://purl.obolibrary.org/obo/MONDO_0005016) diabetic nephropathy --> diabetic kidney disease
+ * [MONDO:0005025](http://purl.obolibrary.org/obo/MONDO_0005025) endocarditis (disease) --> endocarditis
+ * [MONDO:0005033](http://purl.obolibrary.org/obo/MONDO_0005033) ganglioneuroma (disease) --> ganglioneuroma
+ * [MONDO:0005035](http://purl.obolibrary.org/obo/MONDO_0005035) ganglioneuroblastoma (disease) --> ganglioneuroblastoma
+ * [MONDO:0005041](http://purl.obolibrary.org/obo/MONDO_0005041) glaucoma (disease) --> glaucoma
+ * [MONDO:0005055](http://purl.obolibrary.org/obo/MONDO_0005055) Kaposi's sarcoma (disease) --> Kaposi's sarcoma
+ * [MONDO:0005059](http://purl.obolibrary.org/obo/MONDO_0005059) leukemia (disease) --> leukemia
+ * [MONDO:0005068](http://purl.obolibrary.org/obo/MONDO_0005068) myocardial infarction (disease) --> myocardial infarction
+ * [MONDO:0005070](http://purl.obolibrary.org/obo/MONDO_0005070) neoplasm (disease) --> neoplasm
+ * [MONDO:0005086](http://purl.obolibrary.org/obo/MONDO_0005086) renal cell carcinoma (disease) --> renal cell carcinoma
+ * [MONDO:0005090](http://purl.obolibrary.org/obo/MONDO_0005090) schizophrenia (disease) --> schizophrenia
+ * [MONDO:0005099](http://purl.obolibrary.org/obo/MONDO_0005099) subarachnoid hemorrhage (disease) --> subarachnoid hemorrhage
+ * [MONDO:0005101](http://purl.obolibrary.org/obo/MONDO_0005101) ulcerative colitis (disease) --> ulcerative colitis
+ * [MONDO:0005105](http://purl.obolibrary.org/obo/MONDO_0005105) melanoma (disease) --> melanoma
+ * [MONDO:0005129](http://purl.obolibrary.org/obo/MONDO_0005129) cataract (disease) --> cataract
+ * [MONDO:0005133](http://purl.obolibrary.org/obo/MONDO_0005133) endometriosis (disease) --> endometriosis
+ * [MONDO:0005160](http://purl.obolibrary.org/obo/MONDO_0005160) aortic aneurysm (disease) --> aortic aneurysm
+ * [MONDO:0005164](http://purl.obolibrary.org/obo/MONDO_0005164) fibrosarcoma (disease) --> fibrosarcoma
+ * [MONDO:0005166](http://purl.obolibrary.org/obo/MONDO_0005166) osteoma (disease) --> osteoma
+ * [MONDO:0005173](http://purl.obolibrary.org/obo/MONDO_0005173) actinic keratosis (disease) --> actinic keratosis
+ * [MONDO:0005207](http://purl.obolibrary.org/obo/MONDO_0005207) choriocarcinoma (disease) --> choriocarcinoma
+ * [MONDO:0005212](http://purl.obolibrary.org/obo/MONDO_0005212) rhabdomyosarcoma (disease) --> rhabdomyosarcoma
+ * [MONDO:0005227](http://purl.obolibrary.org/obo/MONDO_0005227) abscess (disease) --> abscess
+ * [MONDO:0005230](http://purl.obolibrary.org/obo/MONDO_0005230) cellulitis (disease) --> cellulitis
+ * [MONDO:0005233](http://purl.obolibrary.org/obo/MONDO_0005233) non-small cell lung carcinoma (disease) --> non-small cell lung carcinoma
+ * [MONDO:0005236](http://purl.obolibrary.org/obo/MONDO_0005236) xanthoma (disease) --> xanthoma
+ * [MONDO:0005241](http://purl.obolibrary.org/obo/MONDO_0005241) obsolete adrenocortical carcinoma (disease) --> obsolete adrenocortical carcinoma
+ * [MONDO:0005245](http://purl.obolibrary.org/obo/MONDO_0005245) obsolete testicular seminoma (disease) --> obsolete testicular seminoma
+ * [MONDO:0005246](http://purl.obolibrary.org/obo/MONDO_0005246) osteomyelitis (disease) --> osteomyelitis
+ * [MONDO:0005247](http://purl.obolibrary.org/obo/MONDO_0005247) bacterial urinary tract infection (disease) --> bacterial urinary tract infection
+ * [MONDO:0005260](http://purl.obolibrary.org/obo/MONDO_0005260) autism (disease) --> autism
+ * [MONDO:0005262](http://purl.obolibrary.org/obo/MONDO_0005262) central nervous system cyst (disease) --> central nervous system cyst
+ * [MONDO:0005263](http://purl.obolibrary.org/obo/MONDO_0005263) unipolar depression --> obsolete unipolar depression
+ * [MONDO:0005264](http://purl.obolibrary.org/obo/MONDO_0005264) transient ischemic attack (disease) --> transient ischemic attack
+ * [MONDO:0005279](http://purl.obolibrary.org/obo/MONDO_0005279) pulmonary embolism (disease) --> pulmonary embolism
+ * [MONDO:0005280](http://purl.obolibrary.org/obo/MONDO_0005280) prostatitis (disease) --> prostatitis
+ * [MONDO:0005288](http://purl.obolibrary.org/obo/MONDO_0005288) intestinal polyp (disease) --> intestinal polyp
+ * [MONDO:0005289](http://purl.obolibrary.org/obo/MONDO_0005289) paranasal sinus neoplasm (disease) --> paranasal sinus neoplasm
+ * [MONDO:0005290](http://purl.obolibrary.org/obo/MONDO_0005290) rhabdomyolysis (disease) --> rhabdomyolysis
+ * [MONDO:0005292](http://purl.obolibrary.org/obo/MONDO_0005292) colitis (disease) --> colitis
+ * [MONDO:0005297](http://purl.obolibrary.org/obo/MONDO_0005297) urethritis (disease) --> urethritis
+ * [MONDO:0005304](http://purl.obolibrary.org/obo/MONDO_0005304) biliary tract neoplasm (disease) --> biliary tract neoplasm
+ * [MONDO:0005310](http://purl.obolibrary.org/obo/MONDO_0005310) atrial flutter (disease) --> atrial flutter
+ * [MONDO:0005345](http://purl.obolibrary.org/obo/MONDO_0005345) hypospadias (disease) --> hypospadias
+ * [MONDO:0005347](http://purl.obolibrary.org/obo/MONDO_0005347) hypertriglyceridemia (disease) --> hypertriglyceridemia
+ * [MONDO:0005349](http://purl.obolibrary.org/obo/MONDO_0005349) otosclerosis (disease) --> otosclerosis
+ * [MONDO:0005360](http://purl.obolibrary.org/obo/MONDO_0005360) obsolete Dupuytren contracture (disease) --> obsolete Dupuytren contracture
+ * [MONDO:0005362](http://purl.obolibrary.org/obo/MONDO_0005362) erectile dysfunction (disease) --> erectile dysfunction
+ * [MONDO:0005369](http://purl.obolibrary.org/obo/MONDO_0005369) carcinoid tumor (disease) --> carcinoid tumor
+ * [MONDO:0005397](http://purl.obolibrary.org/obo/MONDO_0005397) goiter (disease) --> goiter
+ * [MONDO:0005402](http://purl.obolibrary.org/obo/MONDO_0005402) lymphoid leukemia (disease) --> lymphoid leukemia
+ * [MONDO:0005412](http://purl.obolibrary.org/obo/MONDO_0005412) duodenal ulcer (disease) --> duodenal ulcer
+ * [MONDO:0005441](http://purl.obolibrary.org/obo/MONDO_0005441) otitis media (disease) --> otitis media
+ * [MONDO:0005463](http://purl.obolibrary.org/obo/MONDO_0005463) aortic valve calcification (disease) --> aortic valve calcification
+ * [MONDO:0005466](http://purl.obolibrary.org/obo/MONDO_0005466) hypersomnia (disease) --> hypersomnia
+ * [MONDO:0005469](http://purl.obolibrary.org/obo/MONDO_0005469) orthostatic hypotension (disease) --> orthostatic hypotension
+ * [MONDO:0005489](http://purl.obolibrary.org/obo/MONDO_0005489) dyslexia (disease) --> dyslexia
+ * [MONDO:0005492](http://purl.obolibrary.org/obo/MONDO_0005492) urticaria (disease) --> urticaria
+ * [MONDO:0005520](http://purl.obolibrary.org/obo/MONDO_0005520) rickets (disease) --> rickets
+ * [MONDO:0005541](http://purl.obolibrary.org/obo/MONDO_0005541) spondylolysis (disease) --> spondylolysis
+ * [MONDO:0005571](http://purl.obolibrary.org/obo/MONDO_0005571) polycythemia (disease) --> polycythemia
+ * [MONDO:0005783](http://purl.obolibrary.org/obo/MONDO_0005783) hemopericardium (disease) --> hemopericardium
+ * [MONDO:0005803](http://purl.obolibrary.org/obo/MONDO_0005803) hyperinsulinemic hypoglycemia (disease) --> hyperinsulinemic hypoglycemia
+ * [MONDO:0005804](http://purl.obolibrary.org/obo/MONDO_0005804) hyperprolactinemia (disease) --> hyperprolactinemia
+ * [MONDO:0005881](http://purl.obolibrary.org/obo/MONDO_0005881) oligohydramnios (disease) --> oligohydramnios
+ * [MONDO:0005898](http://purl.obolibrary.org/obo/MONDO_0005898) paronychia (disease) --> paronychia
+ * [MONDO:0005904](http://purl.obolibrary.org/obo/MONDO_0005904) pericarditis (disease) --> pericarditis
+ * [MONDO:0005936](http://purl.obolibrary.org/obo/MONDO_0005936) recurrent pneumonia (disease) --> recurrent pneumonia
+ * [MONDO:0006007](http://purl.obolibrary.org/obo/MONDO_0006007) vesicoureteral reflux (disease) --> vesicoureteral reflux
+ * [MONDO:0006020](http://purl.obolibrary.org/obo/MONDO_0006020) obsolete Zollinger-Ellison syndrome (disease) --> obsolete Zollinger-Ellison syndrome
+ * [MONDO:0006100](http://purl.obolibrary.org/obo/MONDO_0006100) obsolete Bartholin gland carcinoma (disease) --> obsolete Bartholin gland carcinoma
+ * [MONDO:0006123](http://purl.obolibrary.org/obo/MONDO_0006123) cardiac rhabdomyoma (disease) --> cardiac rhabdomyoma
+ * [MONDO:0006190](http://purl.obolibrary.org/obo/MONDO_0006190) endolymphatic sac tumor (disease) --> endolymphatic sac tumor
+ * [MONDO:0006251](http://purl.obolibrary.org/obo/MONDO_0006251) inclusion body fibromatosis (disease) --> inclusion body fibromatosis
+ * [MONDO:0006292](http://purl.obolibrary.org/obo/MONDO_0006292) malignant mesothelioma (disease) --> malignant mesothelioma
+ * [MONDO:0006354](http://purl.obolibrary.org/obo/MONDO_0006354) parathyroid hyperplasia (disease) --> parathyroid hyperplasia
+ * [MONDO:0006362](http://purl.obolibrary.org/obo/MONDO_0006362) peritoneal mesothelioma (disease) --> peritoneal mesothelioma
+ * [MONDO:0006379](http://purl.obolibrary.org/obo/MONDO_0006379) obsolete pleural mesothelioma (disease) --> obsolete pleural mesothelioma
+ * [MONDO:0006456](http://purl.obolibrary.org/obo/MONDO_0006456) thymoma (disease) --> thymoma
+ * [MONDO:0006499](http://purl.obolibrary.org/obo/MONDO_0006499) hamartoma (disease) --> hamartoma
+ * [MONDO:0006530](http://purl.obolibrary.org/obo/MONDO_0006530) cholesteatoma (disease) --> cholesteatoma
+ * [MONDO:0006536](http://purl.obolibrary.org/obo/MONDO_0006536) congenital generalized lipodystrophy (disease) --> congenital generalized lipodystrophy
+ * [MONDO:0006547](http://purl.obolibrary.org/obo/MONDO_0006547) exanthem (disease) --> exanthem
+ * [MONDO:0006573](http://purl.obolibrary.org/obo/MONDO_0006573) lipodystrophy (disease) --> lipodystrophy
+ * [MONDO:0006602](http://purl.obolibrary.org/obo/MONDO_0006602) porokeratosis (disease) --> porokeratosis
+ * [MONDO:0006608](http://purl.obolibrary.org/obo/MONDO_0006608) seborrheic dermatitis (disease) --> seborrheic dermatitis
+ * [MONDO:0006624](http://purl.obolibrary.org/obo/MONDO_0006624) overactive bladder (disease) --> overactive bladder
+ * [MONDO:0006651](http://purl.obolibrary.org/obo/MONDO_0006651) anterior uveitis (disease) --> anterior uveitis
+ * [MONDO:0006663](http://purl.obolibrary.org/obo/MONDO_0006663) asphyxia neonatorum --> perinatal asphyxia
+ * [MONDO:0006669](http://purl.obolibrary.org/obo/MONDO_0006669) bacterial endocarditis (disease) --> bacterial endocarditis
+ * [MONDO:0006711](http://purl.obolibrary.org/obo/MONDO_0006711) constrictive pericarditis (disease) --> constrictive pericarditis
+ * [MONDO:0006726](http://purl.obolibrary.org/obo/MONDO_0006726) diaphragmatic eventration (disease) --> diaphragmatic eventration
+ * [MONDO:0006769](http://purl.obolibrary.org/obo/MONDO_0006769) gastroparesis (disease) --> gastroparesis
+ * [MONDO:0006791](http://purl.obolibrary.org/obo/MONDO_0006791) hyperemesis gravidarum (disease) --> hyperemesis gravidarum
+ * [MONDO:0006795](http://purl.obolibrary.org/obo/MONDO_0006795) hypersplenism (disease) --> hypersplenism
+ * [MONDO:0006806](http://purl.obolibrary.org/obo/MONDO_0006806) intermediate uveitis (disease) --> intermediate uveitis
+ * [MONDO:0006814](http://purl.obolibrary.org/obo/MONDO_0006814) iritis (disease) --> iritis
+ * [MONDO:0006869](http://purl.obolibrary.org/obo/MONDO_0006869) nodular goiter (disease) --> nodular goiter
+ * [MONDO:0006882](http://purl.obolibrary.org/obo/MONDO_0006882) orchitis (disease) --> orchitis
+ * [MONDO:0006947](http://purl.obolibrary.org/obo/MONDO_0006947) renovascular hypertension (disease) --> renovascular hypertension
+ * [MONDO:0006964](http://purl.obolibrary.org/obo/MONDO_0006964) secondary hyperparathyroidism (disease) --> secondary hyperparathyroidism
+ * [MONDO:0006996](http://purl.obolibrary.org/obo/MONDO_0006996) thyroid crisis (disease) --> thyroid crisis
+ * [MONDO:0007001](http://purl.obolibrary.org/obo/MONDO_0007001) tricuspid valve prolapse (disease) --> tricuspid valve prolapse
+ * [MONDO:0007016](http://purl.obolibrary.org/obo/MONDO_0007016) vitamin A deficiency (disease) --> vitamin A deficiency
+ * [MONDO:0007035](http://purl.obolibrary.org/obo/MONDO_0007035) acanthosis nigricans (disease) --> acanthosis nigricans
+ * [MONDO:0007074](http://purl.obolibrary.org/obo/MONDO_0007074) ainhum (disease) --> ainhum
+ * [MONDO:0007122](http://purl.obolibrary.org/obo/MONDO_0007122) anisocoria (disease) --> anisocoria
+ * [MONDO:0007145](http://purl.obolibrary.org/obo/MONDO_0007145) aplasia cutis congenita (disease) --> aplasia cutis congenita
+ * [MONDO:0007197](http://purl.obolibrary.org/obo/MONDO_0007197) bladder diverticulum (disease) --> bladder diverticulum
+ * [MONDO:0007305](http://purl.obolibrary.org/obo/MONDO_0007305) cervical vertebral dysplasia (disease) --> cervical vertebral dysplasia
+ * [MONDO:0007339](http://purl.obolibrary.org/obo/MONDO_0007339) blepharo-cheilo-odontic syndrome --> blepharocheilodontic syndrome
+ * [MONDO:0007354](http://purl.obolibrary.org/obo/MONDO_0007354) coloboma of optic nerve (disease) --> coloboma of optic nerve
+ * [MONDO:0007391](http://purl.obolibrary.org/obo/MONDO_0007391) coxa vara (disease) --> coxa vara
+ * [MONDO:0007515](http://purl.obolibrary.org/obo/MONDO_0007515) ectopia pupillae (disease) --> ectopia pupillae
+ * [MONDO:0007591](http://purl.obolibrary.org/obo/MONDO_0007591) facial hypertrichosis (disease) --> facial hypertrichosis
+ * [MONDO:0007677](http://purl.obolibrary.org/obo/MONDO_0007677) hyperglycinuria (disease) --> hyperglycinuria
+ * [MONDO:0007721](http://purl.obolibrary.org/obo/MONDO_0007721) hiatus hernia (disease) --> hiatus hernia
+ * [MONDO:0007722](http://purl.obolibrary.org/obo/MONDO_0007722) heterochromia iridis (disease) --> heterochromia iridis
+ * [MONDO:0007735](http://purl.obolibrary.org/obo/MONDO_0007735) congenital Horner syndrome (disease) --> congenital Horner syndrome
+ * [MONDO:0007737](http://purl.obolibrary.org/obo/MONDO_0007737) humeroradial synostosis (disease) --> humeroradial synostosis
+ * [MONDO:0007756](http://purl.obolibrary.org/obo/MONDO_0007756) hyperkeratosis lenticularis perstans (disease) --> hyperkeratosis lenticularis perstans
+ * [MONDO:0007765](http://purl.obolibrary.org/obo/MONDO_0007765) hyperostosis cranialis interna (disease) --> hyperostosis cranialis interna
+ * [MONDO:0007774](http://purl.obolibrary.org/obo/MONDO_0007774) hyperreflexia (disease) --> hyperreflexia
+ * [MONDO:0007778](http://purl.obolibrary.org/obo/MONDO_0007778) obsolete hypertelorism (disease) --> obsolete hypertelorism
+ * [MONDO:0007915](http://purl.obolibrary.org/obo/MONDO_0007915) systemic lupus erythematosus (disease) --> systemic lupus erythematosus
+ * [MONDO:0007960](http://purl.obolibrary.org/obo/MONDO_0007960) megacystis-microcolon-intestinal hypoperistalsis syndrome --> obsolete megacystis-microcolon-intestinal hypoperistalsis syndrome
+ * [MONDO:0008040](http://purl.obolibrary.org/obo/MONDO_0008040) transient myeloproliferative syndrome (disease) --> transient myeloproliferative syndrome
+ * [MONDO:0008095](http://purl.obolibrary.org/obo/MONDO_0008095) nevus anemicus (disease) --> nevus anemicus
+ * [MONDO:0008135](http://purl.obolibrary.org/obo/MONDO_0008135) optic atrophy with negative Electroretinograms --> optic atrophy 13 with retinal and foveal abnormalities
+ * [MONDO:0008168](http://purl.obolibrary.org/obo/MONDO_0008168) ovarian fibroma (disease) --> ovarian fibroma
+ * [MONDO:0008213](http://purl.obolibrary.org/obo/MONDO_0008213) pectus excavatum (disease) --> pectus excavatum
+ * [MONDO:0008249](http://purl.obolibrary.org/obo/MONDO_0008249) pilonidal sinus (disease) --> pilonidal sinus
+ * [MONDO:0008320](http://purl.obolibrary.org/obo/MONDO_0008320) Protrusio acetabuli (disease) --> Protrusio acetabuli
+ * [MONDO:0008331](http://purl.obolibrary.org/obo/MONDO_0008331) obsolete pseudopapilledema (disease) --> obsolete pseudopapilledema
+ * [MONDO:0008340](http://purl.obolibrary.org/obo/MONDO_0008340) congenital ptosis (disease) --> congenital ptosis
+ * [MONDO:0008360](http://purl.obolibrary.org/obo/MONDO_0008360) obsolete radioulnar synostosis (disease) --> obsolete radioulnar synostosis
+ * [MONDO:0008373](http://purl.obolibrary.org/obo/MONDO_0008373) retinal arterial tortuosity (disease) --> retinal arterial tortuosity
+ * [MONDO:0008449](http://purl.obolibrary.org/obo/MONDO_0008449) spina bifida (disease) --> spina bifida
+ * [MONDO:0008475](http://purl.obolibrary.org/obo/MONDO_0008475) spondylolisthesis (disease) --> spondylolisthesis
+ * [MONDO:0008482](http://purl.obolibrary.org/obo/MONDO_0008482) Sprengel deformity (disease) --> Sprengel deformity
+ * [MONDO:0008504](http://purl.obolibrary.org/obo/MONDO_0008504) supravalvular aortic stenosis (disease) --> supravalvular aortic stenosis
+ * [MONDO:0008509](http://purl.obolibrary.org/obo/MONDO_0008509) distal symphalangism (disease) --> distal symphalangism
+ * [MONDO:0008511](http://purl.obolibrary.org/obo/MONDO_0008511) proximal symphalangism (disease) --> proximal symphalangism
+ * [MONDO:0008532](http://purl.obolibrary.org/obo/MONDO_0008532) teeth present at birth (disease) --> teeth present at birth
+ * [MONDO:0008561](http://purl.obolibrary.org/obo/MONDO_0008561) thumb deformity (disease) --> thumb deformity
+ * [MONDO:0008583](http://purl.obolibrary.org/obo/MONDO_0008583) inherited torticollis (disease) --> inherited torticollis
+ * [MONDO:0008628](http://purl.obolibrary.org/obo/MONDO_0008628) ureterocele (disease) --> ureterocele
+ * [MONDO:0008664](http://purl.obolibrary.org/obo/MONDO_0008664) autosomal dominant neovascular inflammatory vitreoretinopathy --> obsolete autosomal dominant neovascular inflammatory vitreoretinopathy
+ * [MONDO:0008677](http://purl.obolibrary.org/obo/MONDO_0008677) widow's peak (disease) --> widow's peak
+ * [MONDO:0008685](http://purl.obolibrary.org/obo/MONDO_0008685) Wolff-Parkinson-white syndrome (disease) --> Wolff-Parkinson-white syndrome
+ * [MONDO:0008698](http://purl.obolibrary.org/obo/MONDO_0008698) achalasia (disease) --> achalasia
+ * [MONDO:0008720](http://purl.obolibrary.org/obo/MONDO_0008720) congenital isolated adrenocorticotropic hormone deficiency (disease) --> congenital isolated adrenocorticotropic hormone deficiency
+ * [MONDO:0008780](http://purl.obolibrary.org/obo/MONDO_0008780) amyotrophic lateral sclerosis type 2 --> amyotrophic lateral sclerosis type 2, juvenile
+ * [MONDO:0008820](http://purl.obolibrary.org/obo/MONDO_0008820) arthrogryposis, distal, with hypopituitarism, intellectual disability, and facial anomalies --> obsolete arthrogryposis, distal, with hypopituitarism, intellectual disability, and facial anomalies
+ * [MONDO:0008832](http://purl.obolibrary.org/obo/MONDO_0008832) right atrial isomerism (disease) --> right atrial isomerism
+ * [MONDO:0008848](http://purl.obolibrary.org/obo/MONDO_0008848) atrioventricular dissociation (disease) --> atrioventricular dissociation
+ * [MONDO:0008977](http://purl.obolibrary.org/obo/MONDO_0008977) chondrosarcoma (disease) --> chondrosarcoma
+ * [MONDO:0008978](http://purl.obolibrary.org/obo/MONDO_0008978) chordoma (disease) --> chordoma
+ * [MONDO:0009047](http://purl.obolibrary.org/obo/MONDO_0009047) cryptorchidism (disease) --> cryptorchidism
+ * [MONDO:0009055](http://purl.obolibrary.org/obo/MONDO_0009055) cutis marmorata telangiectatica congenita (disease) --> cutis marmorata telangiectatica congenita
+ * [MONDO:0009058](http://purl.obolibrary.org/obo/MONDO_0009058) cystathioninuria (disease) --> cystathioninuria
+ * [MONDO:0009067](http://purl.obolibrary.org/obo/MONDO_0009067) cystinuria (disease) --> cystinuria
+ * [MONDO:0009078](http://purl.obolibrary.org/obo/MONDO_0009078) Jervell and Lange-Nielsen syndrome --> obsolete Jervell and Lange-Nielsen syndrome
+ * [MONDO:0009092](http://purl.obolibrary.org/obo/MONDO_0009092) Nasu-Hakola disease --> polycystic lipomembranous osteodysplasia with sclerosing leukoencephaly
+ * [MONDO:0009105](http://purl.obolibrary.org/obo/MONDO_0009105) tricho-hepato-enteric syndrome --> trichohepatoenteric syndrome
+ * [MONDO:0009116](http://purl.obolibrary.org/obo/MONDO_0009116) obsolete lactose intolerance (disease) --> obsolete lactose intolerance
+ * [MONDO:0009126](http://purl.obolibrary.org/obo/MONDO_0009126) duodenal atresia (disease) --> duodenal atresia
+ * [MONDO:0009144](http://purl.obolibrary.org/obo/MONDO_0009144) Ebstein anomaly (disease) --> Ebstein anomaly
+ * [MONDO:0009172](http://purl.obolibrary.org/obo/MONDO_0009172) enterocolitis (disease) --> enterocolitis
+ * [MONDO:0009174](http://purl.obolibrary.org/obo/MONDO_0009174) protein-losing enteropathy (disease) --> protein-losing enteropathy
+ * [MONDO:0009175](http://purl.obolibrary.org/obo/MONDO_0009175) eosinophilic fasciitis (disease) --> eosinophilic fasciitis
+ * [MONDO:0009194](http://purl.obolibrary.org/obo/MONDO_0009194) chronic Epstein-Barr virus infection syndrome --> immunodeficiency 32B
+ * [MONDO:0009256](http://purl.obolibrary.org/obo/MONDO_0009256) galactorrhea (disease) --> galactorrhea
+ * [MONDO:0009288](http://purl.obolibrary.org/obo/MONDO_0009288) glycogen storage disease due to glucose-6-phosphatase deficiency type IB --> glycogen storage disease Ib
+ * [MONDO:0009374](http://purl.obolibrary.org/obo/MONDO_0009374) hydroxyprolinemia (disease) --> hydroxyprolinemia
+ * [MONDO:0009388](http://purl.obolibrary.org/obo/MONDO_0009388) hyperlysinemia (disease) --> hyperlysinemia
+ * [MONDO:0009576](http://purl.obolibrary.org/obo/MONDO_0009576) megalocornea (disease) --> megalocornea
+ * [MONDO:0009628](http://purl.obolibrary.org/obo/MONDO_0009628) microcolon (disease) --> microcolon
+ * [MONDO:0009774](http://purl.obolibrary.org/obo/MONDO_0009774) cloacal exstrophy (disease) --> cloacal exstrophy
+ * [MONDO:0009807](http://purl.obolibrary.org/obo/MONDO_0009807) osteosarcoma (disease) --> osteosarcoma
+ * [MONDO:0009808](http://purl.obolibrary.org/obo/MONDO_0009808) osteoid osteoma (disease) --> osteoid osteoma
+ * [MONDO:0009813](http://purl.obolibrary.org/obo/MONDO_0009813) chronic recurrent multifocal osteomyelitis (disease) --> chronic recurrent multifocal osteomyelitis
+ * [MONDO:0009825](http://purl.obolibrary.org/obo/MONDO_0009825) 5-oxoprolinase deficiency (disease) --> 5-oxoprolinase deficiency
+ * [MONDO:0009870](http://purl.obolibrary.org/obo/MONDO_0009870) pili torti (disease) --> pili torti
+ * [MONDO:0009930](http://purl.obolibrary.org/obo/MONDO_0009930) pulmonary arteriovenous malformation (disease) --> pulmonary arteriovenous malformation
+ * [MONDO:0009934](http://purl.obolibrary.org/obo/MONDO_0009934) congenital alveolar capillary dysplasia --> alveolar capillary dysplasia with misalignment of pulmonary veins
+ * [MONDO:0009938](http://purl.obolibrary.org/obo/MONDO_0009938) pulmonic stenosis (disease) --> pulmonic stenosis
+ * [MONDO:0009993](http://purl.obolibrary.org/obo/MONDO_0009993) embryonal rhabdomyosarcoma (disease) --> embryonal rhabdomyosarcoma
+ * [MONDO:0009994](http://purl.obolibrary.org/obo/MONDO_0009994) alveolar rhabdomyosarcoma (disease) --> alveolar rhabdomyosarcoma
+ * [MONDO:0010096](http://purl.obolibrary.org/obo/MONDO_0010096) tardive dyskinesia (disease) --> tardive dyskinesia
+ * [MONDO:0010098](http://purl.obolibrary.org/obo/MONDO_0010098) taurodontism (disease) --> taurodontism
+ * [MONDO:0010167](http://purl.obolibrary.org/obo/MONDO_0010167) urocanic aciduria (disease) --> urocanic aciduria
+ * [MONDO:0010293](http://purl.obolibrary.org/obo/MONDO_0010293) hypohidrotic ectodermal dysplasia with immunodeficiency --> ectodermal dysplasia and immune deficiency
+ * [MONDO:0010407](http://purl.obolibrary.org/obo/MONDO_0010407) syndromic X-linked intellectual disability Turner type --> intellectual disability, X-linked syndromic, Turner type
+ * [MONDO:0010434](http://purl.obolibrary.org/obo/MONDO_0010434) synovial sarcoma (disease) --> synovial sarcoma
+ * [MONDO:0010470](http://purl.obolibrary.org/obo/MONDO_0010470) Baratela-Scott syndrome --> obsolete Baratela-Scott syndrome
+ * [MONDO:0010528](http://purl.obolibrary.org/obo/MONDO_0010528) anosmia (disease) --> anosmia
+ * [MONDO:0010562](http://purl.obolibrary.org/obo/MONDO_0010562) colonic atresia (disease) --> colonic atresia
+ * [MONDO:0010594](http://purl.obolibrary.org/obo/MONDO_0010594) inherited genitourinary tract anomalies (disease) --> inherited genitourinary tract anomalies
+ * [MONDO:0010643](http://purl.obolibrary.org/obo/MONDO_0010643) acute leukemia (disease) --> acute leukemia
+ * [MONDO:0010672](http://purl.obolibrary.org/obo/MONDO_0010672) microphthalmia with linear skin defects syndrome --> linear skin defects with multiple congenital anomalies
+ * [MONDO:0010758](http://purl.obolibrary.org/obo/MONDO_0010758) Wieacker-Wolff, X-linked recessive --> Wieacker-Wolff syndrome
+ * [MONDO:0010805](http://purl.obolibrary.org/obo/MONDO_0010805) bladder exstrophy (disease) --> bladder exstrophy
+ * [MONDO:0010811](http://purl.obolibrary.org/obo/MONDO_0010811) benign prostatic hyperplasia (disease) --> benign prostatic hyperplasia
+ * [MONDO:0010837](http://purl.obolibrary.org/obo/MONDO_0010837) primary hyperparathyroidism (disease) --> primary hyperparathyroidism
+ * [MONDO:0011182](http://purl.obolibrary.org/obo/MONDO_0011182) trimethylaminuria (disease) --> trimethylaminuria
+ * [MONDO:0011284](http://purl.obolibrary.org/obo/MONDO_0011284) astigmatism (disease) --> astigmatism
+ * [MONDO:0011362](http://purl.obolibrary.org/obo/MONDO_0011362) hereditary proximal myopathy with early respiratory failure --> myopathy, myofibrillar, 9, with early respiratory failure
+ * [MONDO:0011414](http://purl.obolibrary.org/obo/MONDO_0011414) Peters anomaly (disease) --> Peters anomaly
+ * [MONDO:0011438](http://purl.obolibrary.org/obo/MONDO_0011438) acne (disease) --> acne
+ * [MONDO:0011457](http://purl.obolibrary.org/obo/MONDO_0011457) ataxia - telangiectasia-like disorder --> ataxia-telangiectasia-like disorder
+ * [MONDO:0011514](http://purl.obolibrary.org/obo/MONDO_0011514) tricuspid atresia (disease) --> tricuspid atresia
+ * [MONDO:0011655](http://purl.obolibrary.org/obo/MONDO_0011655) alveolar soft part sarcoma (disease) --> alveolar soft part sarcoma
+ * [MONDO:0011835](http://purl.obolibrary.org/obo/MONDO_0011835) sensory ataxic neuropathy-dysarthria-ophthalmoparesis syndrome --> sensory ataxic neuropathy, dysarthria, and ophthalmoparesis
+ * [MONDO:0011888](http://purl.obolibrary.org/obo/MONDO_0011888) immunodeficiency due to interleukin-1 receptor-associated kinase-4 deficiency --> immunodeficiency 67
+ * [MONDO:0011927](http://purl.obolibrary.org/obo/MONDO_0011927) tufted angioma (disease) --> tufted angioma
+ * [MONDO:0012494](http://purl.obolibrary.org/obo/MONDO_0012494) testicular microlithiasis (disease) --> testicular microlithiasis
+ * [MONDO:0012853](http://purl.obolibrary.org/obo/MONDO_0012853) progeroid syndrome, Petty type --> Fontaine progeroid syndrome
+ * [MONDO:0013150](http://purl.obolibrary.org/obo/MONDO_0013150) infantile dystonia-parkinsonism --> parkinsonism-dystonia, infantile
+ * [MONDO:0013391](http://purl.obolibrary.org/obo/MONDO_0013391) leukoencephalopathy-dystonia-motor neuropathy syndrome --> sterol carrier protein 2 deficiency
+ * [MONDO:0013577](http://purl.obolibrary.org/obo/MONDO_0013577) Lipedema (disease) --> Lipedema
+ * [MONDO:0013600](http://purl.obolibrary.org/obo/MONDO_0013600) insomnia (disease) --> insomnia
+ * [MONDO:0013624](http://purl.obolibrary.org/obo/MONDO_0013624) intellectual disability, autosomal recessive 15 --> Rafiq syndrome
+ * [MONDO:0013663](http://purl.obolibrary.org/obo/MONDO_0013663) platelet-activating factor acetylhydrolase deficiency (disease) --> platelet-activating factor acetylhydrolase deficiency
+ * [MONDO:0013726](http://purl.obolibrary.org/obo/MONDO_0013726) lethal encephalopathy due to mitochondrial and peroxisomal fission defect --> encephalopathy, lethal, due to defective mitochondrial peroxisomal fission 1
+ * [MONDO:0013981](http://purl.obolibrary.org/obo/MONDO_0013981) familial cortical myoclonus --> myoclonus, familial
+ * [MONDO:0014315](http://purl.obolibrary.org/obo/MONDO_0014315) Mitchell-Riley syndrome --> obsolete Mitchell-Riley syndrome
+ * [MONDO:0014709](http://purl.obolibrary.org/obo/MONDO_0014709) Heimler syndrome 2 --> obsolete Heimler syndrome 2
+ * [MONDO:0014849](http://purl.obolibrary.org/obo/MONDO_0014849) autosomal recessive nonsyndromic deafness 105 --> obsolete autosomal recessive nonsyndromic deafness 105
+ * [MONDO:0014905](http://purl.obolibrary.org/obo/MONDO_0014905) Leigh-like basal ganglia disease-optic atrophy-peripheral neuropathy syndrome --> encephalopathy due to defective mitochondrial and peroxisomal fission 2
+ * [MONDO:0015098](http://purl.obolibrary.org/obo/MONDO_0015098) obsolete situs inversus totalis (disease) --> obsolete situs inversus totalis
+ * [MONDO:0015151](http://purl.obolibrary.org/obo/MONDO_0015151) autosomal dominant limb-girdle muscular dystrophy --> muscular dystrophy, limb-girdle, autosomal dominant
+ * [MONDO:0015193](http://purl.obolibrary.org/obo/MONDO_0015193) hydrops fetalis (disease) --> hydrops fetalis
+ * [MONDO:0015195](http://purl.obolibrary.org/obo/MONDO_0015195) atresia of urethra (disease) --> atresia of urethra
+ * [MONDO:0015279](http://purl.obolibrary.org/obo/MONDO_0015279) chronic mucocutaneous candidiasis (disease) --> chronic mucocutaneous candidiasis
+ * [MONDO:0015341](http://purl.obolibrary.org/obo/MONDO_0015341) congenital panfollicular nevus (disease) --> congenital panfollicular nevus
+ * [MONDO:0015386](http://purl.obolibrary.org/obo/MONDO_0015386) epignathus (disease) --> epignathus
+ * [MONDO:0015486](http://purl.obolibrary.org/obo/MONDO_0015486) keratoconus (disease) --> keratoconus
+ * [MONDO:0015561](http://purl.obolibrary.org/obo/MONDO_0015561) aleukemic mast cell leukemia --> obsolete aleukemic mast cell leukemia
+ * [MONDO:0015661](http://purl.obolibrary.org/obo/MONDO_0015661) dextrocardia (disease) --> dextrocardia
+ * [MONDO:0015666](http://purl.obolibrary.org/obo/MONDO_0015666) familial idiopathic dilatation of the right atrium (disease) --> familial idiopathic dilatation of the right atrium
+ * [MONDO:0015677](http://purl.obolibrary.org/obo/MONDO_0015677) cardiac diverticulum (disease) --> cardiac diverticulum
+ * [MONDO:0015686](http://purl.obolibrary.org/obo/MONDO_0015686) primary peritoneal carcinoma (disease) --> primary peritoneal carcinoma
+ * [MONDO:0015707](http://purl.obolibrary.org/obo/MONDO_0015707) DNA repair defect other than combined T-cell and B-cell immunodeficiencies --> obsolete DNA repair defect other than combined T-cell and B-cell immunodeficiencies
+ * [MONDO:0015827](http://purl.obolibrary.org/obo/MONDO_0015827) distal renal tubular acidosis (disease) --> distal renal tubular acidosis
+ * [MONDO:0015974](http://purl.obolibrary.org/obo/MONDO_0015974) severe combined immunodeficiency (disease) --> severe combined immunodeficiency
+ * [MONDO:0016122](http://purl.obolibrary.org/obo/MONDO_0016122) periodic paralysis (disease) --> periodic paralysis
+ * [MONDO:0016344](http://purl.obolibrary.org/obo/MONDO_0016344) hydranencephaly (disease) --> hydranencephaly
+ * [MONDO:0016390](http://purl.obolibrary.org/obo/MONDO_0016390) familial isolated hypoparathyroidism --> familial hypoparathyroidism
+ * [MONDO:0016523](http://purl.obolibrary.org/obo/MONDO_0016523) bronchogenic cyst (disease) --> bronchogenic cyst
+ * [MONDO:0016608](http://purl.obolibrary.org/obo/MONDO_0016608) megalencephaly (disease) --> megalencephaly
+ * [MONDO:0016642](http://purl.obolibrary.org/obo/MONDO_0016642) meningioma (disease) --> meningioma
+ * [MONDO:0016648](http://purl.obolibrary.org/obo/MONDO_0016648) multiple epiphyseal dysplasia (disease) --> multiple epiphyseal dysplasia
+ * [MONDO:0016723](http://purl.obolibrary.org/obo/MONDO_0016723) pineocytoma (disease) --> pineocytoma
+ * [MONDO:0016754](http://purl.obolibrary.org/obo/MONDO_0016754) vestibular schwannoma (disease) --> vestibular schwannoma
+ * [MONDO:0016824](http://purl.obolibrary.org/obo/MONDO_0016824) myofibromatosis --> infantile myofibromatosis
+ * [MONDO:0016982](http://purl.obolibrary.org/obo/MONDO_0016982) angiosarcoma (disease) --> angiosarcoma
+ * [MONDO:0017078](http://purl.obolibrary.org/obo/MONDO_0017078) cephalocele (disease) --> cephalocele
+ * [MONDO:0017106](http://purl.obolibrary.org/obo/MONDO_0017106) retrocerebellar cyst (disease) --> retrocerebellar cyst
+ * [MONDO:0017178](http://purl.obolibrary.org/obo/MONDO_0017178) osteochondritis dissecans (disease) --> osteochondritis dissecans
+ * [MONDO:0017181](http://purl.obolibrary.org/obo/MONDO_0017181) hypnic headache (disease) --> hypnic headache
+ * [MONDO:0017198](http://purl.obolibrary.org/obo/MONDO_0017198) osteopetrosis (disease) --> osteopetrosis
+ * [MONDO:0017201](http://purl.obolibrary.org/obo/MONDO_0017201) Spasmus nutans (disease) --> Spasmus nutans
+ * [MONDO:0017254](http://purl.obolibrary.org/obo/MONDO_0017254) obsolete posterior uveitis (disease) --> obsolete posterior uveitis
+ * [MONDO:0017255](http://purl.obolibrary.org/obo/MONDO_0017255) panuveitis (disease) --> panuveitis
+ * [MONDO:0017285](http://purl.obolibrary.org/obo/MONDO_0017285) penoscrotal transposition (disease) --> penoscrotal transposition
+ * [MONDO:0017304](http://purl.obolibrary.org/obo/MONDO_0017304) ocular albinism (disease) --> ocular albinism
+ * [MONDO:0017340](http://purl.obolibrary.org/obo/MONDO_0017340) juvenile nasopharyngeal angiofibroma (disease) --> juvenile nasopharyngeal angiofibroma
+ * [MONDO:0017449](http://purl.obolibrary.org/obo/MONDO_0017449) split hand (disease) --> split hand
+ * [MONDO:0017450](http://purl.obolibrary.org/obo/MONDO_0017450) split foot (disease) --> split foot
+ * [MONDO:0017470](http://purl.obolibrary.org/obo/MONDO_0017470) congenital knee dislocation (disease) --> congenital knee dislocation
+ * [MONDO:0017582](http://purl.obolibrary.org/obo/MONDO_0017582) pituitary adenocarcinoma (disease) --> pituitary adenocarcinoma
+ * [MONDO:0017753](http://purl.obolibrary.org/obo/MONDO_0017753) disorder of peroxisomal alpha-, beta- and omega-oxidation --> obsolete disorder of peroxisomal alpha-, beta- and omega-oxidation
+ * [MONDO:0017988](http://purl.obolibrary.org/obo/MONDO_0017988) multifocal atrial tachycardia (disease) --> multifocal atrial tachycardia
+ * [MONDO:0018048](http://purl.obolibrary.org/obo/MONDO_0018048) heparin-induced thrombocytopenia (disease) --> heparin-induced thrombocytopenia
+ * [MONDO:0018072](http://purl.obolibrary.org/obo/MONDO_0018072) persistent truncus arteriosus (disease) --> persistent truncus arteriosus
+ * [MONDO:0018082](http://purl.obolibrary.org/obo/MONDO_0018082) aorto-ventricular tunnel (disease) --> aorto-ventricular tunnel
+ * [MONDO:0018090](http://purl.obolibrary.org/obo/MONDO_0018090) double outlet left ventricle (disease) --> double outlet left ventricle
+ * [MONDO:0018102](http://purl.obolibrary.org/obo/MONDO_0018102) corneal dystrophy (disease) --> corneal dystrophy
+ * [MONDO:0018177](http://purl.obolibrary.org/obo/MONDO_0018177) glioblastoma (disease) --> glioblastoma
+ * [MONDO:0018178](http://purl.obolibrary.org/obo/MONDO_0018178) intestinal lymphangiectasia (disease) --> intestinal lymphangiectasia
+ * [MONDO:0018242](http://purl.obolibrary.org/obo/MONDO_0018242) autoimmune hypoparathyroidism (disease) --> autoimmune hypoparathyroidism
+ * [MONDO:0018470](http://purl.obolibrary.org/obo/MONDO_0018470) renal agenesis (disease) --> renal agenesis
+ * [MONDO:0018544](http://purl.obolibrary.org/obo/MONDO_0018544) X-linked adrenoleukodystrophy --> adrenoleukodystrophy
+ * [MONDO:0018551](http://purl.obolibrary.org/obo/MONDO_0018551) patent urachus (disease) --> patent urachus
+ * [MONDO:0018568](http://purl.obolibrary.org/obo/MONDO_0018568) COG2-CDG --> obsolete COG2-CDG
+ * [MONDO:0018598](http://purl.obolibrary.org/obo/MONDO_0018598) neonatal adrenoleukodystrophy --> obsolete neonatal adrenoleukodystrophy
+ * [MONDO:0018646](http://purl.obolibrary.org/obo/MONDO_0018646) sclerosing cholangitis (disease) --> sclerosing cholangitis
+ * [MONDO:0018664](http://purl.obolibrary.org/obo/MONDO_0018664) ectopia cordis (disease) --> ectopia cordis
+ * [MONDO:0018667](http://purl.obolibrary.org/obo/MONDO_0018667) pleural empyema (disease) --> pleural empyema
+ * [MONDO:0018815](http://purl.obolibrary.org/obo/MONDO_0018815) aneurysmal bone cyst (disease) --> aneurysmal bone cyst
+ * [MONDO:0018844](http://purl.obolibrary.org/obo/MONDO_0018844) urachal cyst (disease) --> urachal cyst
+ * [MONDO:0018849](http://purl.obolibrary.org/obo/MONDO_0018849) dentinogenesis imperfecta (disease) --> dentinogenesis imperfecta
+ * [MONDO:0018901](http://purl.obolibrary.org/obo/MONDO_0018901) left ventricular noncompaction (disease) --> left ventricular noncompaction
+ * [MONDO:0018911](http://purl.obolibrary.org/obo/MONDO_0018911) maturity-onset diabetes of the young (disease) --> maturity-onset diabetes of the young
+ * [MONDO:0018936](http://purl.obolibrary.org/obo/MONDO_0018936) osteoblastoma (disease) --> osteoblastoma
+ * [MONDO:0018943](http://purl.obolibrary.org/obo/MONDO_0018943) myofibrillar myopathy (disease) --> myofibrillar myopathy
+ * [MONDO:0018969](http://purl.obolibrary.org/obo/MONDO_0018969) craniorachischisis (disease) --> craniorachischisis
+ * [MONDO:0019005](http://purl.obolibrary.org/obo/MONDO_0019005) nephronophthisis (disease) --> nephronophthisis
+ * [MONDO:0019015](http://purl.obolibrary.org/obo/MONDO_0019015) omphalocele (disease) --> omphalocele
+ * [MONDO:0019065](http://purl.obolibrary.org/obo/MONDO_0019065) amyloidosis (disease) --> amyloidosis
+ * [MONDO:0019174](http://purl.obolibrary.org/obo/MONDO_0019174) infantile Refsum disease --> obsolete infantile Refsum disease
+ * [MONDO:0019185](http://purl.obolibrary.org/obo/MONDO_0019185) obsolete rhabdomyosarcoma (disease) --> obsolete rhabdomyosarcoma
+ * [MONDO:0019233](http://purl.obolibrary.org/obo/MONDO_0019233) peroxisomal beta-oxidation disorder --> disorder of peroxisomal beta oxidation
+ * [MONDO:0019269](http://purl.obolibrary.org/obo/MONDO_0019269) ichthyosis (disease) --> ichthyosis
+ * [MONDO:0019280](http://purl.obolibrary.org/obo/MONDO_0019280) hypertrichosis (disease) --> hypertrichosis
+ * [MONDO:0019290](http://purl.obolibrary.org/obo/MONDO_0019290) hypopigmentation of the skin (disease) --> hypopigmentation of the skin
+ * [MONDO:0019340](http://purl.obolibrary.org/obo/MONDO_0019340) scleroderma (disease) --> scleroderma
+ * [MONDO:0019425](http://purl.obolibrary.org/obo/MONDO_0019425) X-linked intellectual disability-hypotonia-facial dysmorphism-aggressive behavior syndrome --> obsolete X-linked intellectual disability-hypotonia-facial dysmorphism-aggressive behavior syndrome
+ * [MONDO:0019540](http://purl.obolibrary.org/obo/MONDO_0019540) diffuse alveolar hemorrhage (disease) --> diffuse alveolar hemorrhage
+ * [MONDO:0019588](http://purl.obolibrary.org/obo/MONDO_0019588) autosomal recessive nonsyndromic deafness --> deafness, autosomal recessive
+ * [MONDO:0019609](http://purl.obolibrary.org/obo/MONDO_0019609) Zellweger syndrome --> Zellweger spectrum disorders
+ * [MONDO:0019629](http://purl.obolibrary.org/obo/MONDO_0019629) sclerocornea (disease) --> sclerocornea
+ * [MONDO:0019637](http://purl.obolibrary.org/obo/MONDO_0019637) renal hypoplasia (disease) --> renal hypoplasia
+ * [MONDO:0019638](http://purl.obolibrary.org/obo/MONDO_0019638) renal dysplasia (disease) --> renal dysplasia
+ * [MONDO:0019665](http://purl.obolibrary.org/obo/MONDO_0019665) monostotic fibrous dysplasia (disease) --> monostotic fibrous dysplasia
+ * [MONDO:0019673](http://purl.obolibrary.org/obo/MONDO_0019673) postaxial polydactyly type A (disease) --> postaxial polydactyly type A
+ * [MONDO:0019759](http://purl.obolibrary.org/obo/MONDO_0019759) epispadias (disease) --> epispadias
+ * [MONDO:0019807](http://purl.obolibrary.org/obo/MONDO_0019807) mesocardia (disease) --> mesocardia
+ * [MONDO:0019808](http://purl.obolibrary.org/obo/MONDO_0019808) aortic valve atresia (disease) --> aortic valve atresia
+ * [MONDO:0020122](http://purl.obolibrary.org/obo/MONDO_0020122) idiopathic inflammatory myopathy --> acquired idiopathic inflammatory myopathy
+ * [MONDO:0020201](http://purl.obolibrary.org/obo/MONDO_0020201) obsolete conjunctival telangiectasia (disease) --> obsolete conjunctival telangiectasia
+ * [MONDO:0020283](http://purl.obolibrary.org/obo/MONDO_0020283) uveitis (disease) --> uveitis
+ * [MONDO:0020328](http://purl.obolibrary.org/obo/MONDO_0020328) classic Hodgkin lymphoma, mixed cellularity type --> obsolete classic Hodgkin lymphoma, mixed cellularity type
+ * [MONDO:0020329](http://purl.obolibrary.org/obo/MONDO_0020329) classic Hodgkin lymphoma, lymphocyte-rich type --> obsolete classic Hodgkin lymphoma, lymphocyte-rich type
+ * [MONDO:0020330](http://purl.obolibrary.org/obo/MONDO_0020330) classic Hodgkin lymphoma, lymphocyte-depleted type --> obsolete classic Hodgkin lymphoma, lymphocyte-depleted type
+ * [MONDO:0020356](http://purl.obolibrary.org/obo/MONDO_0020356) coloboma of iris (disease) --> coloboma of iris
+ * [MONDO:0020398](http://purl.obolibrary.org/obo/MONDO_0020398) congenital mitral stenosis (disease) --> congenital mitral stenosis
+ * [MONDO:0020417](http://purl.obolibrary.org/obo/MONDO_0020417) right aortic arch (disease) --> right aortic arch
+ * [MONDO:0020419](http://purl.obolibrary.org/obo/MONDO_0020419) pulmonary artery hypoplasia (disease) --> pulmonary artery hypoplasia
+ * [MONDO:0020429](http://purl.obolibrary.org/obo/MONDO_0020429) cor triatriatum dexter (disease) --> cor triatriatum dexter
+ * [MONDO:0020439](http://purl.obolibrary.org/obo/MONDO_0020439) patent foramen ovale (disease) --> patent foramen ovale
+ * [MONDO:0020525](http://purl.obolibrary.org/obo/MONDO_0020525) transient neonatal diabetes mellitus (disease) --> transient neonatal diabetes mellitus
+ * [MONDO:0021002](http://purl.obolibrary.org/obo/MONDO_0021002) syndactyly (disease) --> syndactyly
+ * [MONDO:0021003](http://purl.obolibrary.org/obo/MONDO_0021003) polydactyly (disease) --> polydactyly
+ * [MONDO:0021004](http://purl.obolibrary.org/obo/MONDO_0021004) brachydactyly (disease) --> brachydactyly
+ * [MONDO:0021108](http://purl.obolibrary.org/obo/MONDO_0021108) meningitis (disease) --> meningitis
+ * [MONDO:0021187](http://purl.obolibrary.org/obo/MONDO_0021187) hyperlipidemia (disease) --> hyperlipidemia
+ * [MONDO:0021668](http://purl.obolibrary.org/obo/MONDO_0021668) disorder involving pain --> obsolete disorder involving pain
+ * [MONDO:0024544](http://purl.obolibrary.org/obo/MONDO_0024544) Heimler syndrome 1 --> obsolete Heimler syndrome 1
+ * [MONDO:0030914](http://purl.obolibrary.org/obo/MONDO_0030914) intellectual disability, autosomal dominant 49 --> Clark-Baraitser syndrome
+ * [MONDO:0045024](http://purl.obolibrary.org/obo/MONDO_0045024) cell proliferation disorder --> cancer or benign tumor
+ * [MONDO:0054549](http://purl.obolibrary.org/obo/MONDO_0054549) peroxisome biogenesis disorder 10b --> peroxisome biogenesis disorder 10B
+ * [MONDO:0100112](http://purl.obolibrary.org/obo/MONDO_0100112) ACBD5 deficiency --> acyl-CoA binding domain containing protein 5 deficiency
+ * [MONDO:0100229](http://purl.obolibrary.org/obo/MONDO_0100229) Heimler syndrome --> obsolete Heimler syndrome
+ * [MONDO:0100320](http://purl.obolibrary.org/obo/MONDO_0100320) sequela of COVID-19 --> post-COVID-19 disorder
+ * [MONDO:0100330](http://purl.obolibrary.org/obo/MONDO_0100330) disease arising from reactivation of latent infection with virus --> disease arising from reactivation of latent virus
+ * [MONDO:0100338](http://purl.obolibrary.org/obo/MONDO_0100338) urinary tract infection (disease) --> urinary tract infection
+ * [MONDO:0100345](http://purl.obolibrary.org/obo/MONDO_0100345) lactose intolerance (disease) --> lactose intolerance
+
+
+# 2021-07-12
+
+## New Classes
+
+ * [MONDO:0025690](http://purl.obolibrary.org/obo/MONDO_0025690) microcephaly, epilepsy, and diabetes syndrome 2
+ * [MONDO:0025691](http://purl.obolibrary.org/obo/MONDO_0025691) dystonia 30
+ * [MONDO:0025699](http://purl.obolibrary.org/obo/MONDO_0025699) Coffin-Siris syndrome 12
+ * [MONDO:0025701](http://purl.obolibrary.org/obo/MONDO_0025701) leukodystrophy, hypomyelinating, 22
+ * [MONDO:0025712](http://purl.obolibrary.org/obo/MONDO_0025712) angioedema, hereditary, 4
+ * [MONDO:0025713](http://purl.obolibrary.org/obo/MONDO_0025713) angioedema, hereditary, 7
+ * [MONDO:0100329](http://purl.obolibrary.org/obo/MONDO_0100329) primary viral infectious disease
+ * [MONDO:0100330](http://purl.obolibrary.org/obo/MONDO_0100330) disease arising from reactivation of latent infection with virus
+ * [MONDO:0100332](http://purl.obolibrary.org/obo/MONDO_0100332) disease has primary infectious agent
+ * [MONDO:0100333](http://purl.obolibrary.org/obo/MONDO_0100333) disease caused by reactivation of latent infectious agent
+ * [MONDO:0100334](http://purl.obolibrary.org/obo/MONDO_0100334) obsolete viral infectious disease or sequela
+ * [MONDO:0100336](http://purl.obolibrary.org/obo/MONDO_0100336) infectious disease or post-infectious disorder
+ * [MONDO:0100338](http://purl.obolibrary.org/obo/MONDO_0100338) urinary tract infection (disease)
+ * [MONDO:0100353](http://purl.obolibrary.org/obo/MONDO_0100353) HHV-7 infectious disease
+ * [MONDO:0100370](http://purl.obolibrary.org/obo/MONDO_0100370) acute hepatitis B virus infection
+ * [MONDO:0100371](http://purl.obolibrary.org/obo/MONDO_0100371) acute hepatitis C virus infection
+ * [MONDO:0700000](http://purl.obolibrary.org/obo/MONDO_0700000) ALG9-associated autosomal dominant polycystic kidney disease
+ * [MONDO:0700001](http://purl.obolibrary.org/obo/MONDO_0700001) shrinking lung syndrome
+ * [MONDO:0700004](http://purl.obolibrary.org/obo/MONDO_0700004) idiopathic vs non-idiopathic
+ * [MONDO:0700005](http://purl.obolibrary.org/obo/MONDO_0700005) idiopathic
+ * [MONDO:0700006](http://purl.obolibrary.org/obo/MONDO_0700006) non-idiopathic
+
+## Obsoletions
+
+ * [MONDO:0011645](http://purl.obolibrary.org/obo/MONDO_0011645) aneurysmal bone cysts --> obsolete aneurysmal bone cysts
+ * [MONDO:0014812](http://purl.obolibrary.org/obo/MONDO_0014812) metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration --> obsolete metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration
+ * [MONDO:0020810](http://purl.obolibrary.org/obo/MONDO_0020810) congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome --> obsolete congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome
+ * [MONDO:0024297](http://purl.obolibrary.org/obo/MONDO_0024297) nutritional or metabolic disease --> obsolete nutritional or metabolic disease
+
+## Renaming
+
+ * [MONDO:0005135](http://purl.obolibrary.org/obo/MONDO_0005135) parasitic infection --> parasitic infectious disease
+ * [MONDO:0005247](http://purl.obolibrary.org/obo/MONDO_0005247) urinary tract infection (disease) --> bacterial urinary tract infection (disease)
+ * [MONDO:0008842](http://purl.obolibrary.org/obo/MONDO_0008842) ataxia with oculomotor apraxia type 1 --> ataxia, early-onset, with oculomotor apraxia and hypoalbuminemia
+ * [MONDO:0009908](http://purl.obolibrary.org/obo/MONDO_0009908) dehydratase deficiency --> pterin-4 alpha-carbinolamine dehydratase 1 deficiency
+ * [MONDO:0011645](http://purl.obolibrary.org/obo/MONDO_0011645) aneurysmal bone cysts --> obsolete aneurysmal bone cysts
+ * [MONDO:0014399](http://purl.obolibrary.org/obo/MONDO_0014399) PCNA-related progressive neurodegenerative photosensitivy syndrome --> ataxia-telangiectasia-like disorder 2
+ * [MONDO:0014531](http://purl.obolibrary.org/obo/MONDO_0014531) amyotrohpic lateral sclerosis type 22 --> amyotrophic lateral sclerosis type 22
+ * [MONDO:0014812](http://purl.obolibrary.org/obo/MONDO_0014812) metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration --> obsolete metabolic encephalomyopathic crises, recurrent, with rhabdomyolysis, cardiac arrhythmias, and neurodegeneration
+ * [MONDO:0020810](http://purl.obolibrary.org/obo/MONDO_0020810) congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome --> obsolete congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome
+ * [MONDO:0022636](http://purl.obolibrary.org/obo/MONDO_0022636) candida glabrata --> candida glabrata infection
+ * [MONDO:0024297](http://purl.obolibrary.org/obo/MONDO_0024297) nutritional or metabolic disease --> obsolete nutritional or metabolic disease
+ * [MONDO:0100318](http://purl.obolibrary.org/obo/MONDO_0100318) COVID-19 or sequela --> SARS-CoV-2-related disease
+
+# 2021-06-01
+
+## New Classes
+
+ * [MONDO:0021421](http://purl.obolibrary.org/obo/MONDO_0021421) carcinoid tumors, intestina
+ * [MONDO:0025351](http://purl.obolibrary.org/obo/MONDO_0025351) multiple congenital anomalies-neurodevelopmental syndrome, x-linked
+ * [MONDO:0025356](http://purl.obolibrary.org/obo/MONDO_0025356) azoospermia, obstructive, with nephrolithiasis
+ * [MONDO:0025622](http://purl.obolibrary.org/obo/MONDO_0025622) Charcot-Marie-Tooth disease, axonal, mitochondrial form, 1
+ * [MONDO:0030835](http://purl.obolibrary.org/obo/MONDO_0030835) developmental delay, impaired growth, dysmorphic facies, and axonal neuropathy
+ * [MONDO:0030837](http://purl.obolibrary.org/obo/MONDO_0030837) neurodevelopmental disorder with microcephaly, impaired language, epilepsy, and gait abnormalities
+ * [MONDO:0030849](http://purl.obolibrary.org/obo/MONDO_0030849) intellectual developmental disorder with speech delay and axonal peripheral neuropathy
+ * [MONDO:0030852](http://purl.obolibrary.org/obo/MONDO_0030852) neurodevelopmental disorder with dysmorphic facies, sleep disturbance, and brain abnormalities
+ * [MONDO:0030859](http://purl.obolibrary.org/obo/MONDO_0030859) COACH syndrome 2
+ * [MONDO:0030860](http://purl.obolibrary.org/obo/MONDO_0030860) neuronopathy, distal hereditary motor, type 5C
+ * [MONDO:0030862](http://purl.obolibrary.org/obo/MONDO_0030862) COACH syndrome 3
+ * [MONDO:0030866](http://purl.obolibrary.org/obo/MONDO_0030866) neurodevelopmental disorder with cardiomyopathy, spasticity, and brain abnormalities
+ * [MONDO:0030871](http://purl.obolibrary.org/obo/MONDO_0030871) vertebral hypersegmentation and orofacial anomalies
+ * [MONDO:0030873](http://purl.obolibrary.org/obo/MONDO_0030873) cardiofacioneurodevelopmental syndrome
+ * [MONDO:0030878](http://purl.obolibrary.org/obo/MONDO_0030878) Kaya-Barakat-Masson syndrome
+ * [MONDO:0030880](http://purl.obolibrary.org/obo/MONDO_0030880) mandibuloacral dysplasia progeroid syndrome
+ * [MONDO:0030885](http://purl.obolibrary.org/obo/MONDO_0030885) amyotrophic lateral sclerosis 26 with or without frontotemporal dementia
+ * [MONDO:0030893](http://purl.obolibrary.org/obo/MONDO_0030893) leukoencephalopathy, progressive, infantile-onset, with or without deafness
+ * [MONDO:0030896](http://purl.obolibrary.org/obo/MONDO_0030896) chromosome 13q33-q34 deletion syndrome
+ * [MONDO:0030897](http://purl.obolibrary.org/obo/MONDO_0030897) Lessel-Kreienkamp syndrome
+ * [MONDO:0030900](http://purl.obolibrary.org/obo/MONDO_0030900) intellectual developmental disorder with paroxysmal dyskinesia or seizures
+ * [MONDO:0030930](http://purl.obolibrary.org/obo/MONDO_0030930) neurodevelopmental disorder with or without early-onset generalized epilepsy
+ * [MONDO:0030947](http://purl.obolibrary.org/obo/MONDO_0030947) neurodegeneration, childhood-onset, with hypotonia, respiratory insufficiency, and brain imaging abnormalities
+ * [MONDO:0030963](http://purl.obolibrary.org/obo/MONDO_0030963) Li-Campeau syndrome
+ * [MONDO:0030966](http://purl.obolibrary.org/obo/MONDO_0030966) neurofacioskeletal syndrome with or without renal agenesis
+ * [MONDO:0030967](http://purl.obolibrary.org/obo/MONDO_0030967) deafness, congenital, and adult-onset progressive leukoencephalopathy
+ * [MONDO:0030976](http://purl.obolibrary.org/obo/MONDO_0030976) oculomotor-abducens synkinesis
+ * [MONDO:0030977](http://purl.obolibrary.org/obo/MONDO_0030977) neuropathy, hereditary motor, with myopathic features
+ * [MONDO:0030978](http://purl.obolibrary.org/obo/MONDO_0030978) endove syndrome, limb-only type
+ * [MONDO:0030979](http://purl.obolibrary.org/obo/MONDO_0030979) endove syndrome, limb-brain type
+ * [MONDO:0030982](http://purl.obolibrary.org/obo/MONDO_0030982) sulfide quinone oxidoreductase deficiency
+ * [MONDO:0030986](http://purl.obolibrary.org/obo/MONDO_0030986) blistering, acantholytic, of oral and laryngeal mucosa
+ * [MONDO:0030987](http://purl.obolibrary.org/obo/MONDO_0030987) vertebral, cardiac, tracheoesophageal, renal, and limb defects
+ * [MONDO:0030988](http://purl.obolibrary.org/obo/MONDO_0030988) developmental delay with dysmorphic facies and dental anomalies
+ * [MONDO:0030990](http://purl.obolibrary.org/obo/MONDO_0030990) Kohlschutter-Tonz syndrome-like
+ * [MONDO:0030991](http://purl.obolibrary.org/obo/MONDO_0030991) bile acid conjugation defect 1
+ * [MONDO:0030992](http://purl.obolibrary.org/obo/MONDO_0030992) short stature, oligodontia, dysmorphic facies, and motor delay
+ * [MONDO:0030994](http://purl.obolibrary.org/obo/MONDO_0030994) neurodevelopmental disorder with or without autism or seizures
+ * [MONDO:0030995](http://purl.obolibrary.org/obo/MONDO_0030995) global developmental delay with speech and behavioral abnormalities
+ * [MONDO:0030999](http://purl.obolibrary.org/obo/MONDO_0030999) neurodevelopmental disorder with cerebral atrophy and variable facial dysmorphism
+ * [MONDO:0031001](http://purl.obolibrary.org/obo/MONDO_0031001) vitreoretinopathy with phalangeal epiphyseal dysplasia
+ * [MONDO:0031002](http://purl.obolibrary.org/obo/MONDO_0031002) Baralle-Macken syndrome
+ * [MONDO:0031006](http://purl.obolibrary.org/obo/MONDO_0031006) neurodegeneration with ataxia and late-onset optic atrophy
+ * [MONDO:0031007](http://purl.obolibrary.org/obo/MONDO_0031007) spondyloepiphyseal dysplasia, sensorineural hearing loss, impaired intellectual development, and leber congenital amaurosis
+ * [MONDO:0031008](http://purl.obolibrary.org/obo/MONDO_0031008) nephrotic syndrome, type 24
+ * [MONDO:0031011](http://purl.obolibrary.org/obo/MONDO_0031011) neurodevelopmental disorder with dysmorphic facies and variable seizures
+ * [MONDO:0100283](http://purl.obolibrary.org/obo/MONDO_0100283) overgrowth syndrome and/or cerebral malformations due to abnormalities in MTOR pathway genes
+ * [MONDO:0100348](http://purl.obolibrary.org/obo/MONDO_0100348) neurodevelopmental disorder with microcephaly, impaired language, and gait abnormalities
+ * [MONDO:0100349](http://purl.obolibrary.org/obo/MONDO_0100349) COACH syndrome
+ * [MONDO:0100350](http://purl.obolibrary.org/obo/MONDO_0100350) neuronopathy, distal hereditary motor, type 5
+ * [MONDO:0100352](http://purl.obolibrary.org/obo/MONDO_0100352) episodic kinesigenic dyskinesia 1
+ * [MONDO:0400006](http://purl.obolibrary.org/obo/MONDO_0400006) botryomycosis
+ * [MONDO:0500000](http://purl.obolibrary.org/obo/MONDO_0500000) episodic angioedema with eosinophilia
+ * [MONDO:0600001](http://purl.obolibrary.org/obo/MONDO_0600001) glutaminase deficiency
+ * [MONDO:0600002](http://purl.obolibrary.org/obo/MONDO_0600002) hemorrhagic fever
+ * [MONDO:0600003](http://purl.obolibrary.org/obo/MONDO_0600003) bacterial hemorrhagic fever
+ * [MONDO:0600005](http://purl.obolibrary.org/obo/MONDO_0600005) venom allergy
+ * [MONDO:0600008](http://purl.obolibrary.org/obo/MONDO_0600008) cytokine release syndrome
+ * [MONDO:0600009](http://purl.obolibrary.org/obo/MONDO_0600009) severe hypophosphatasia
+ * [MONDO:0600010](http://purl.obolibrary.org/obo/MONDO_0600010) moderate hypophosphatasia
+ * [MONDO:0600011](http://purl.obolibrary.org/obo/MONDO_0600011) mild hypophosphatasia
+
+## Obsoletions
+
+ * [MONDO:0007189](http://purl.obolibrary.org/obo/MONDO_0007189) B-cell growth factor --> obsolete B-cell growth factor
+ * [MONDO:0007494](http://purl.obolibrary.org/obo/MONDO_0007494) episodic kinesigenic dyskinesia 1 --> obsolete episodic kinesigenic dyskinesia 1
+ * [MONDO:0007798](http://purl.obolibrary.org/obo/MONDO_0007798) adult hypophosphatasia --> obsolete adult hypophosphatasia
+ * [MONDO:0009325](http://purl.obolibrary.org/obo/MONDO_0009325) deafness-enamel hypoplasia-nail defects syndrome --> obsolete deafness-enamel hypoplasia-nail defects syndrome
+ * [MONDO:0009427](http://purl.obolibrary.org/obo/MONDO_0009427) infantile hypophosphatasia --> obsolete infantile hypophosphatasia
+ * [MONDO:0009428](http://purl.obolibrary.org/obo/MONDO_0009428) childhood hypophosphatasia --> obsolete childhood hypophosphatasia
+ * [MONDO:0010990](http://purl.obolibrary.org/obo/MONDO_0010990) Cd4/CD8 T-cell ratio --> obsolete Cd4/CD8 T-cell ratio
+ * [MONDO:0014763](http://purl.obolibrary.org/obo/MONDO_0014763) Bombay phenotype --> obsolete Bombay phenotype
+ * [MONDO:0016343](http://purl.obolibrary.org/obo/MONDO_0016343) unclassified cardiomyopathy --> obsolete unclassified cardiomyopathy
+ * [MONDO:0016606](http://purl.obolibrary.org/obo/MONDO_0016606) prenatal benign hypophosphatasia --> obsolete prenatal benign hypophosphatasia
+ * [MONDO:0023052](http://purl.obolibrary.org/obo/MONDO_0023052) ectrodactyly polydactyly --> obsolete ectrodactyly polydactyly
+ * [MONDO:0030965](http://purl.obolibrary.org/obo/MONDO_0030965) olmsted syndrome 2 --> obsolete olmsted syndrome 2
+
+## Renaming
+
+ * [MONDO:0007189](http://purl.obolibrary.org/obo/MONDO_0007189) B-cell growth factor --> obsolete B-cell growth factor
+ * [MONDO:0007494](http://purl.obolibrary.org/obo/MONDO_0007494) episodic kinesigenic dyskinesia 1 --> obsolete episodic kinesigenic dyskinesia 1
+ * [MONDO:0007798](http://purl.obolibrary.org/obo/MONDO_0007798) adult hypophosphatasia --> obsolete adult hypophosphatasia
+ * [MONDO:0008996](http://purl.obolibrary.org/obo/MONDO_0008996) Joubert syndrome with hepatic defect --> COACH syndrome 1
+ * [MONDO:0009120](http://purl.obolibrary.org/obo/MONDO_0009120) marfanoid syndrome, De Silva type --> diverticulosis of bowel, hernia, and retinal detachment
+ * [MONDO:0009325](http://purl.obolibrary.org/obo/MONDO_0009325) deafness-enamel hypoplasia-nail defects syndrome --> obsolete deafness-enamel hypoplasia-nail defects syndrome
+ * [MONDO:0009427](http://purl.obolibrary.org/obo/MONDO_0009427) infantile hypophosphatasia --> obsolete infantile hypophosphatasia
+ * [MONDO:0009428](http://purl.obolibrary.org/obo/MONDO_0009428) childhood hypophosphatasia --> obsolete childhood hypophosphatasia
+ * [MONDO:0010990](http://purl.obolibrary.org/obo/MONDO_0010990) Cd4/CD8 T-cell ratio --> obsolete Cd4/CD8 T-cell ratio
+ * [MONDO:0011175](http://purl.obolibrary.org/obo/MONDO_0011175) friedreich ataxia 2 --> Friedreich ataxia 2
+ * [MONDO:0014763](http://purl.obolibrary.org/obo/MONDO_0014763) Bombay phenotype --> obsolete Bombay phenotype
+ * [MONDO:0014805](http://purl.obolibrary.org/obo/MONDO_0014805) 16p13.2 microdeletion syndrome --> Hao-Fountain syndrome
+ * [MONDO:0015667](http://purl.obolibrary.org/obo/MONDO_0015667) unclassified acute myeloid leukemia --> acute myeloid leukemia by FAB classification
+ * [MONDO:0016343](http://purl.obolibrary.org/obo/MONDO_0016343) unclassified cardiomyopathy --> obsolete unclassified cardiomyopathy
+ * [MONDO:0016606](http://purl.obolibrary.org/obo/MONDO_0016606) prenatal benign hypophosphatasia --> obsolete prenatal benign hypophosphatasia
+ * [MONDO:0018603](http://purl.obolibrary.org/obo/MONDO_0018603) interstitial lung disease due to SP-c deficiency --> interstitial lung disease due to SP-C deficiency
+ * [MONDO:0020720](http://purl.obolibrary.org/obo/MONDO_0020720) X-linked hypophosphatemic rickets (recessive or dominant) --> X-linked hypophosphatemic rickets
+ * [MONDO:0023052](http://purl.obolibrary.org/obo/MONDO_0023052) ectrodactyly polydactyly --> obsolete ectrodactyly polydactyly
+ * [MONDO:0030965](http://purl.obolibrary.org/obo/MONDO_0030965) olmsted syndrome 2 --> obsolete olmsted syndrome 2
+ * [MONDO:0032728](http://purl.obolibrary.org/obo/MONDO_0032728) charcot-marie-tooth disease, axonal, type 2ee --> Charcot-Marie-Tooth disease, axonal, type 2EE
+
+
+
+# 2021-04-30
+
+## New Classes
+
+ * [MONDO:0030962](http://purl.obolibrary.org/obo/MONDO_0030962) nephrotic syndrome, type 23
+ * [MONDO:0030965](http://purl.obolibrary.org/obo/MONDO_0030965) olmsted syndrome 2
+ * [MONDO:0030971](http://purl.obolibrary.org/obo/MONDO_0030971) immunodeficiency 78 with autoimmunity and developmental delay
+ * [MONDO:0030973](http://purl.obolibrary.org/obo/MONDO_0030973) immunodeficiency 77
+ * [MONDO:0030974](http://purl.obolibrary.org/obo/MONDO_0030974) mitochondrial complex 2 deficiency, nuclear type 4
+ * [MONDO:0030981](http://purl.obolibrary.org/obo/MONDO_0030981) immunodeficiency 79
+ * [MONDO:0030985](http://purl.obolibrary.org/obo/MONDO_0030985) premature ovarian failure 19
+ * [MONDO:0030989](http://purl.obolibrary.org/obo/MONDO_0030989) spermatogenic failure 53
+ * [MONDO:0030996](http://purl.obolibrary.org/obo/MONDO_0030996) bleeding disorder, platelet-type, 24
+ * [MONDO:0030997](http://purl.obolibrary.org/obo/MONDO_0030997) mitochondrial complex 1 deficiency, nuclear type 37
+ * [MONDO:0030998](http://purl.obolibrary.org/obo/MONDO_0030998) deafness, autosomal dominant 80
+ * [MONDO:0031003](http://purl.obolibrary.org/obo/MONDO_0031003) hypercholanemia, familial, 2
+ * [MONDO:0031009](http://purl.obolibrary.org/obo/MONDO_0031009) Glanzmann thrombasthenia 2
+ * [MONDO:0031010](http://purl.obolibrary.org/obo/MONDO_0031010) odontochondrodysplasia 2 with hearing loss and diabetes
+ * [MONDO:0031037](http://purl.obolibrary.org/obo/MONDO_0031037) famililal cerebral cavernous malformations
+ * [MONDO:0031169](http://purl.obolibrary.org/obo/MONDO_0031169) odontochondrodysplasia
+ * [MONDO:0031332](http://purl.obolibrary.org/obo/MONDO_0031332) Glanzmann thrombasthenia 1
+ * [MONDO:0031446](http://purl.obolibrary.org/obo/MONDO_0031446) hypercholanemia, familial 1
+ * [MONDO:0031481](http://purl.obolibrary.org/obo/MONDO_0031481) microcephaly, epilepsy, and diabetes syndrome 1
+ * [MONDO:0100308](http://purl.obolibrary.org/obo/MONDO_0100308) atactic disorder
+ * [MONDO:0100309](http://purl.obolibrary.org/obo/MONDO_0100309) hereditary ataxia
+ * [MONDO:0100310](http://purl.obolibrary.org/obo/MONDO_0100310) hereditary cerebellar ataxia
+ * [MONDO:0100311](http://purl.obolibrary.org/obo/MONDO_0100311) sensory ataxia
+ * [MONDO:0100312](http://purl.obolibrary.org/obo/MONDO_0100312) vestibular ataxia
+ * [MONDO:0100318](http://purl.obolibrary.org/obo/MONDO_0100318) COVID-19 or sequela
+ * [MONDO:0100319](http://purl.obolibrary.org/obo/MONDO_0100319) COVID-19–associated multisystem inflammatory syndrome in adults
+ * [MONDO:0100320](http://purl.obolibrary.org/obo/MONDO_0100320) sequela of COVID-19
+ * [MONDO:0100321](http://purl.obolibrary.org/obo/MONDO_0100321) viral disease or post-viral disorder
+ * [MONDO:0100325](http://purl.obolibrary.org/obo/MONDO_0100325) odontochondrodysplasia 1
+ * [MONDO:0100326](http://purl.obolibrary.org/obo/MONDO_0100326) Glanzmann thrombasthenia
+ * [MONDO:0100327](http://purl.obolibrary.org/obo/MONDO_0100327) hypercholanemia, familial
+ * [MONDO:0100328](http://purl.obolibrary.org/obo/MONDO_0100328) microcephaly, epilepsy, and diabetes syndrome
+ * [MONDO:0100337](http://purl.obolibrary.org/obo/MONDO_0100337) SEC61A1 deficiency
+ * [MONDO:0100339](http://purl.obolibrary.org/obo/MONDO_0100339) Friedreich ataxia
+ * [MONDO:0100340](http://purl.obolibrary.org/obo/MONDO_0100340) Friedreich ataxia 1
+ * [MONDO:0100342](http://purl.obolibrary.org/obo/MONDO_0100342) malignant glioma
+ * [MONDO:0100343](http://purl.obolibrary.org/obo/MONDO_0100343) antenatal Bartter syndrome
+ * [MONDO:0100344](http://purl.obolibrary.org/obo/MONDO_0100344) Bartter disease type 1
+ * [MONDO:0100345](http://purl.obolibrary.org/obo/MONDO_0100345) lactose intolerance (disease)
+ * [MONDO:0100347](http://purl.obolibrary.org/obo/MONDO_0100347) carcinoid syndrome
+
+## Obsoletions
+
+ * [MONDO:0000557](http://purl.obolibrary.org/obo/MONDO_0000557) hereditary ataxia --> obsolete hereditary ataxia
+ * [MONDO:0006689](http://purl.obolibrary.org/obo/MONDO_0006689) carcinoid syndrome --> obsolete carcinoid syndrome
+ * [MONDO:0007291](http://purl.obolibrary.org/obo/MONDO_0007291) familial cerebral cavernous malformation --> obsolete familial cerebral cavernous malformation
+ * [MONDO:0008480](http://purl.obolibrary.org/obo/MONDO_0008480) odontochondrodysplasia --> obsolete odontochondrodysplasia
+ * [MONDO:0009116](http://purl.obolibrary.org/obo/MONDO_0009116) lactose intolerance (disease) --> obsolete lactose intolerance (disease)
+ * [MONDO:0009245](http://purl.obolibrary.org/obo/MONDO_0009245) Friedreich ataxia --> obsolete Friedreich ataxia
+ * [MONDO:0010119](http://purl.obolibrary.org/obo/MONDO_0010119) Glanzmann's thrombasthenia --> obsolete Glanzmann's thrombasthenia
+ * [MONDO:0011127](http://purl.obolibrary.org/obo/MONDO_0011127) Bartter disease type 1 --> obsolete Bartter disease type 1
+ * [MONDO:0011905](http://purl.obolibrary.org/obo/MONDO_0011905) familial hypercholanemia --> obsolete familial hypercholanemia
+ * [MONDO:0013647](http://purl.obolibrary.org/obo/MONDO_0013647) primary microcephaly-epilepsy-permanent neonatal diabetes syndrome --> obsolete primary microcephaly-epilepsy-permanent neonatal diabetes syndrome
+ * [MONDO:0015917](http://purl.obolibrary.org/obo/MONDO_0015917) malignant glioma --> obsolete malignant glioma
+ * [MONDO:0100139](http://purl.obolibrary.org/obo/MONDO_0100139) asymptomatic COVID-19 infection --> obsolete asymptomatic COVID-19 infection
+ * [MONDO:0100140](http://purl.obolibrary.org/obo/MONDO_0100140) mild COVID-19 infection --> obsolete mild COVID-19 infection
+ * [MONDO:0100141](http://purl.obolibrary.org/obo/MONDO_0100141) moderate COVID-19 infection --> obsolete moderate COVID-19 infection
+ * [MONDO:0100142](http://purl.obolibrary.org/obo/MONDO_0100142) severe COVID-19 infection --> obsolete severe COVID-19 infection
+ * [MONDO:0100143](http://purl.obolibrary.org/obo/MONDO_0100143) critical COVID-19 infection --> obsolete critical COVID-19 infection
+ * [MONDO:0100145](http://purl.obolibrary.org/obo/MONDO_0100145) presymptomatic COVID-19 infection --> obsolete presymptomatic COVID-19 infection
+
+## Renaming
+
+ * [MONDO:0000557](http://purl.obolibrary.org/obo/MONDO_0000557) hereditary ataxia --> obsolete hereditary ataxia
+ * [MONDO:0005227](http://purl.obolibrary.org/obo/MONDO_0005227) abscess --> abscess (disease)
+ * [MONDO:0006689](http://purl.obolibrary.org/obo/MONDO_0006689) carcinoid syndrome --> obsolete carcinoid syndrome
+ * [MONDO:0007291](http://purl.obolibrary.org/obo/MONDO_0007291) familial cerebral cavernous malformation --> obsolete familial cerebral cavernous malformation
+ * [MONDO:0008480](http://purl.obolibrary.org/obo/MONDO_0008480) odontochondrodysplasia --> obsolete odontochondrodysplasia
+ * [MONDO:0009116](http://purl.obolibrary.org/obo/MONDO_0009116) lactose intolerance (disease) --> obsolete lactose intolerance (disease)
+ * [MONDO:0009245](http://purl.obolibrary.org/obo/MONDO_0009245) Friedreich ataxia --> obsolete Friedreich ataxia
+ * [MONDO:0010119](http://purl.obolibrary.org/obo/MONDO_0010119) Glanzmann's thrombasthenia --> obsolete Glanzmann's thrombasthenia
+ * [MONDO:0011127](http://purl.obolibrary.org/obo/MONDO_0011127) Bartter disease type 1 --> obsolete Bartter disease type 1
+ * [MONDO:0011905](http://purl.obolibrary.org/obo/MONDO_0011905) familial hypercholanemia --> obsolete familial hypercholanemia
+ * [MONDO:0013647](http://purl.obolibrary.org/obo/MONDO_0013647) primary microcephaly-epilepsy-permanent neonatal diabetes syndrome --> obsolete primary microcephaly-epilepsy-permanent neonatal diabetes syndrome
+ * [MONDO:0014195](http://purl.obolibrary.org/obo/MONDO_0014195) microcornea-myopic chorioretinal atrophy-telecanthus syndrome --> microcornea-myopic chorioretinal atrophy
+ * [MONDO:0015917](http://purl.obolibrary.org/obo/MONDO_0015917) malignant glioma --> obsolete malignant glioma
+ * [MONDO:0020724](http://purl.obolibrary.org/obo/MONDO_0020724) familial cerebral cavernous malformation 1 --> cerebral cavernous malformation 1
+ * [MONDO:0026767](http://purl.obolibrary.org/obo/MONDO_0026767) immunodeficiency 74, covid19-related, X-linked --> immunodeficiency 74, COVID-19-related, X-linked
+ * [MONDO:0100139](http://purl.obolibrary.org/obo/MONDO_0100139) asymptomatic COVID-19 infection --> obsolete asymptomatic COVID-19 infection
+ * [MONDO:0100140](http://purl.obolibrary.org/obo/MONDO_0100140) mild COVID-19 infection --> obsolete mild COVID-19 infection
+ * [MONDO:0100141](http://purl.obolibrary.org/obo/MONDO_0100141) moderate COVID-19 infection --> obsolete moderate COVID-19 infection
+ * [MONDO:0100142](http://purl.obolibrary.org/obo/MONDO_0100142) severe COVID-19 infection --> obsolete severe COVID-19 infection
+ * [MONDO:0100143](http://purl.obolibrary.org/obo/MONDO_0100143) critical COVID-19 infection --> obsolete critical COVID-19 infection
+ * [MONDO:0100145](http://purl.obolibrary.org/obo/MONDO_0100145) presymptomatic COVID-19 infection --> obsolete presymptomatic COVID-19 infection
+
+
+# v2021-04-07
+
+## New Classes
+
+ * [MONDO:0025353](http://purl.obolibrary.org/obo/MONDO_0025353) developmental and epileptic encephalopathy, 90
+ * [MONDO:0025354](http://purl.obolibrary.org/obo/MONDO_0025354) spermatogenic failure, X-linked, 3
+ * [MONDO:0030894](http://purl.obolibrary.org/obo/MONDO_0030894) AMED syndrome, digenic
+ * [MONDO:0030895](http://purl.obolibrary.org/obo/MONDO_0030895) nephrotic syndrome, type 22
+ * [MONDO:0030898](http://purl.obolibrary.org/obo/MONDO_0030898) immunodeficiency 76
+ * [MONDO:0030899](http://purl.obolibrary.org/obo/MONDO_0030899) oculocutaneous albinism, type 8
+ * [MONDO:0030902](http://purl.obolibrary.org/obo/MONDO_0030902) mitochondrial complex 1 deficiency, nuclear type 36
+ * [MONDO:0030903](http://purl.obolibrary.org/obo/MONDO_0030903) Hermansky-Pudlak syndrome 11
+ * [MONDO:0030905](http://purl.obolibrary.org/obo/MONDO_0030905) deafness, autosomal recessive 117
+ * [MONDO:0030924](http://purl.obolibrary.org/obo/MONDO_0030924) proteasome-associated autoinflammatory syndrome 5
+ * [MONDO:0030925](http://purl.obolibrary.org/obo/MONDO_0030925) oocyte maturation defect 10
+ * [MONDO:0030926](http://purl.obolibrary.org/obo/MONDO_0030926) spermatogenic failure 51
+ * [MONDO:0030927](http://purl.obolibrary.org/obo/MONDO_0030927) myofibrillar myopathy 11
+ * [MONDO:0030928](http://purl.obolibrary.org/obo/MONDO_0030928) microcephaly 26, primary, autosomal dominant
+ * [MONDO:0030929](http://purl.obolibrary.org/obo/MONDO_0030929) microcephaly 27, primary, autosomal dominant
+ * [MONDO:0030931](http://purl.obolibrary.org/obo/MONDO_0030931) proteasome-associated autoinflammatory syndrome 4
+ * [MONDO:0030933](http://purl.obolibrary.org/obo/MONDO_0030933) Joubert syndrome 37
+ * [MONDO:0030934](http://purl.obolibrary.org/obo/MONDO_0030934) intellectual developmental disorder, autosomal dominant 64
+ * [MONDO:0030935](http://purl.obolibrary.org/obo/MONDO_0030935) mitochondrial complex 2 deficiency, nuclear type 2
+ * [MONDO:0030936](http://purl.obolibrary.org/obo/MONDO_0030936) epilepsy, progressive myoclonic, 12
+ * [MONDO:0030937](http://purl.obolibrary.org/obo/MONDO_0030937) mitochondrial complex 2 deficiency, nuclear type 3
+ * [MONDO:0030938](http://purl.obolibrary.org/obo/MONDO_0030938) spermatogenic failure 52
+ * [MONDO:0030939](http://purl.obolibrary.org/obo/MONDO_0030939) premature ovarian failure 18
+ * [MONDO:0030941](http://purl.obolibrary.org/obo/MONDO_0030941) erythrokeratodermia variabilis et progressiva 7
+ * [MONDO:0030953](http://purl.obolibrary.org/obo/MONDO_0030953) short stature, facial dysmorphism, and skeletal anomalies with or without cardiac anomalies 2
+ * [MONDO:0030961](http://purl.obolibrary.org/obo/MONDO_0030961) Olmsted syndrome 2
+ * [MONDO:0031230](http://purl.obolibrary.org/obo/MONDO_0031230) mitochondrial complex II deficiency, nuclear type
+ * [MONDO:0031421](http://purl.obolibrary.org/obo/MONDO_0031421) Olmsted syndrome
+ * [MONDO:0031439](http://purl.obolibrary.org/obo/MONDO_0031439) short stature, facial dysmorphism, and skeletal anomalies with or without cardiac anomalies
+ * [MONDO:0100290](http://purl.obolibrary.org/obo/MONDO_0100290) colon serrated polyposis
+ * [MONDO:0100291](http://purl.obolibrary.org/obo/MONDO_0100291) early T cell progenitor acute lymphoblastic leukemia
+ * [MONDO:0100294](http://purl.obolibrary.org/obo/MONDO_0100294) mitochondrial complex II deficiency, nuclear type 1
+ * [MONDO:0100296](http://purl.obolibrary.org/obo/MONDO_0100296) Olmsted syndrome 1
+ * [MONDO:0100297](http://purl.obolibrary.org/obo/MONDO_0100297) short stature, facial dysmorphism, and skeletal anomalies with or without cardiac anomalies 1
+ * [MONDO:0100316](http://purl.obolibrary.org/obo/MONDO_0100316) long QT syndrome 1
++id: disease_has_infectious_agent ! disease has infectious agent
+
+## Obsoletions
+
+ * [MONDO:0000606](http://purl.obolibrary.org/obo/MONDO_0000606) gluten allergy --> obsolete gluten allergy
+ * [MONDO:0000772](http://purl.obolibrary.org/obo/MONDO_0000772) pollen allergy --> obsolete pollen allergy
+ * [MONDO:0000773](http://purl.obolibrary.org/obo/MONDO_0000773) Timothy grass allergy --> obsolete Timothy grass allergy
+ * [MONDO:0000776](http://purl.obolibrary.org/obo/MONDO_0000776) metal allergy --> obsolete metal allergy
+ * [MONDO:0000779](http://purl.obolibrary.org/obo/MONDO_0000779) apple allergy --> obsolete apple allergy
+ * [MONDO:0000780](http://purl.obolibrary.org/obo/MONDO_0000780) apricot allergy --> obsolete apricot allergy
+ * [MONDO:0000785](http://purl.obolibrary.org/obo/MONDO_0000785) peach allergy --> obsolete peach allergy
+ * [MONDO:0000786](http://purl.obolibrary.org/obo/MONDO_0000786) plum allergy --> obsolete plum allergy
+ * [MONDO:0000787](http://purl.obolibrary.org/obo/MONDO_0000787) tomato allergy --> obsolete tomato allergy
+ * [MONDO:0000788](http://purl.obolibrary.org/obo/MONDO_0000788) fish allergy --> obsolete fish allergy
+ * [MONDO:0000789](http://purl.obolibrary.org/obo/MONDO_0000789) Atlantic cod allergy --> obsolete Atlantic cod allergy
+ * [MONDO:0000790](http://purl.obolibrary.org/obo/MONDO_0000790) Atlantic salmon allergy --> obsolete Atlantic salmon allergy
+ * [MONDO:0000791](http://purl.obolibrary.org/obo/MONDO_0000791) carp allergy --> obsolete carp allergy
+ * [MONDO:0000793](http://purl.obolibrary.org/obo/MONDO_0000793) rainbow trout allergy --> obsolete rainbow trout allergy
+ * [MONDO:0000794](http://purl.obolibrary.org/obo/MONDO_0000794) beta-lactam allergy --> obsolete beta-lactam allergy
+ * [MONDO:0000795](http://purl.obolibrary.org/obo/MONDO_0000795) penicillin allergy --> obsolete penicillin allergy
+ * [MONDO:0000796](http://purl.obolibrary.org/obo/MONDO_0000796) cow milk allergy (disease) --> obsolete cow milk allergy (disease)
+ * [MONDO:0000797](http://purl.obolibrary.org/obo/MONDO_0000797) goat milk allergy --> obsolete goat milk allergy
+ * [MONDO:0000798](http://purl.obolibrary.org/obo/MONDO_0000798) mollusc allergy --> obsolete mollusc allergy
+ * [MONDO:0000799](http://purl.obolibrary.org/obo/MONDO_0000799) crustacean allergy --> obsolete crustacean allergy
+ * [MONDO:0000800](http://purl.obolibrary.org/obo/MONDO_0000800) brown shrimp allergy --> obsolete brown shrimp allergy
+ * [MONDO:0000801](http://purl.obolibrary.org/obo/MONDO_0000801) green mud crab allergy --> obsolete green mud crab allergy
+ * [MONDO:0000802](http://purl.obolibrary.org/obo/MONDO_0000802) Indian prawn allergy --> obsolete Indian prawn allergy
+ * [MONDO:0000803](http://purl.obolibrary.org/obo/MONDO_0000803) tiger prawn allergy --> obsolete tiger prawn allergy
+ * [MONDO:0000804](http://purl.obolibrary.org/obo/MONDO_0000804) white shrimp allergy --> obsolete white shrimp allergy
+ * [MONDO:0000805](http://purl.obolibrary.org/obo/MONDO_0000805) snail allergy --> obsolete snail allergy
+ * [MONDO:0000806](http://purl.obolibrary.org/obo/MONDO_0000806) horned turban snail allergy --> obsolete horned turban snail allergy
+ * [MONDO:0000865](http://purl.obolibrary.org/obo/MONDO_0000865) congenital fiber-type disproportion --> obsolete congenital fiber-type disproportion
+ * [MONDO:0000991](http://purl.obolibrary.org/obo/MONDO_0000991) left bundle branch block --> obsolete left bundle branch block
+ * [MONDO:0001662](http://purl.obolibrary.org/obo/MONDO_0001662) right bundle branch block (disease) --> obsolete right bundle branch block (disease)
+ * [MONDO:0002497](http://purl.obolibrary.org/obo/MONDO_0002497) food allergy --> obsolete food allergy
+ * [MONDO:0005741](http://purl.obolibrary.org/obo/MONDO_0005741) egg allergy --> obsolete egg allergy
+ * [MONDO:0006772](http://purl.obolibrary.org/obo/MONDO_0006772) glycogen storage disease VIII --> obsolete glycogen storage disease VIII
+ * [MONDO:0006872](http://purl.obolibrary.org/obo/MONDO_0006872) nut allergic reaction --> obsolete nut allergic reaction
+ * [MONDO:0007021](http://purl.obolibrary.org/obo/MONDO_0007021) wheat allergic disease --> obsolete wheat allergic disease
+ * [MONDO:0007954](http://purl.obolibrary.org/obo/MONDO_0007954) May-Hegglin anomaly --> obsolete May-Hegglin anomaly
+ * [MONDO:0008032](http://purl.obolibrary.org/obo/MONDO_0008032) autosomal dominant limb-girdle muscular dystrophy type 1A --> obsolete autosomal dominant limb-girdle muscular dystrophy type 1A
+ * [MONDO:0008646](http://purl.obolibrary.org/obo/MONDO_0008646) long QT syndrome 1 --> obsolete long QT syndrome 1
+ * [MONDO:0009317](http://purl.obolibrary.org/obo/MONDO_0009317) nonphotosensitive trichothiodystrophy --> obsolete nonphotosensitive trichothiodystrophy
+ * [MONDO:0009641](http://purl.obolibrary.org/obo/MONDO_0009641) mitochondrial complex II deficiency --> obsolete mitochondrial complex II deficiency
+ * [MONDO:0009739](http://purl.obolibrary.org/obo/MONDO_0009739) infantile neuroaxonal dystrophy --> obsolete infantile neuroaxonal dystrophy
+ * [MONDO:0010086](http://purl.obolibrary.org/obo/MONDO_0010086) sudden infant death syndrome --> obsolete sudden infant death syndrome
+ * [MONDO:0012632](http://purl.obolibrary.org/obo/MONDO_0012632) Alzheimer disease 15 --> obsolete Alzheimer disease 15
+ * [MONDO:0015147](http://purl.obolibrary.org/obo/MONDO_0015147) other syndrome with lissencephaly as a major feature --> obsolete other syndrome with lissencephaly as a major feature
+ * [MONDO:0015226](http://purl.obolibrary.org/obo/MONDO_0015226) syndrome with limb malformations as a major feature --> obsolete syndrome with limb malformations as a major feature
+ * [MONDO:0015319](http://purl.obolibrary.org/obo/MONDO_0015319) rare disease with Pierre Robin syndrome --> obsolete rare disease with Pierre Robin syndrome
+ * [MONDO:0015332](http://purl.obolibrary.org/obo/MONDO_0015332) rare developmental defect with connective tissue involvement --> obsolete rare developmental defect with connective tissue involvement
+ * [MONDO:0015475](http://purl.obolibrary.org/obo/MONDO_0015475) rare head and neck malformation --> obsolete rare head and neck malformation
+ * [MONDO:0015506](http://purl.obolibrary.org/obo/MONDO_0015506) rare syndrome with cardiac malformations --> obsolete rare syndrome with cardiac malformations
+ * [MONDO:0015603](http://purl.obolibrary.org/obo/MONDO_0015603) rare odontal or periodontal disorder --> obsolete rare odontal or periodontal disorder
+ * [MONDO:0015652](http://purl.obolibrary.org/obo/MONDO_0015652) chromosomal anomaly with epilepsy as a major feature --> obsolete chromosomal anomaly with epilepsy as a major feature
+ * [MONDO:0015662](http://purl.obolibrary.org/obo/MONDO_0015662) hemorrhagic disorder due to an acquired coagulation factor defect --> obsolete hemorrhagic disorder due to an acquired coagulation factor defect
+ * [MONDO:0015669](http://purl.obolibrary.org/obo/MONDO_0015669) rare disease with dentinogenesis imperfecta --> obsolete rare disease with dentinogenesis imperfecta
+ * [MONDO:0015847](http://purl.obolibrary.org/obo/MONDO_0015847) rare vaginal malformation --> obsolete rare vaginal malformation
+ * [MONDO:0015851](http://purl.obolibrary.org/obo/MONDO_0015851) rare breast malformation --> obsolete rare breast malformation
+ * [MONDO:0015857](http://purl.obolibrary.org/obo/MONDO_0015857) rare non-malformative gynecologic or obstetric disease --> obsolete rare non-malformative gynecologic or obstetric disease
+ * [MONDO:0015858](http://purl.obolibrary.org/obo/MONDO_0015858) rare non-malformative breast disease --> obsolete rare non-malformative breast disease
+ * [MONDO:0015859](http://purl.obolibrary.org/obo/MONDO_0015859) rare non-malformative uterovaginal or vulvovaginal disease --> obsolete rare non-malformative uterovaginal or vulvovaginal disease
+ * [MONDO:0015861](http://purl.obolibrary.org/obo/MONDO_0015861) rare uterine adnexal tumor --> obsolete rare uterine adnexal tumor
+ * [MONDO:0015875](http://purl.obolibrary.org/obo/MONDO_0015875) rare non-malformative uterine adnexal disease --> obsolete rare non-malformative uterine adnexal disease
+ * [MONDO:0015876](http://purl.obolibrary.org/obo/MONDO_0015876) rare vulvovaginal tumor --> obsolete rare vulvovaginal tumor
+ * [MONDO:0015885](http://purl.obolibrary.org/obo/MONDO_0015885) rare insulin-resistance syndrome --> obsolete rare insulin-resistance syndrome
+ * [MONDO:0015887](http://purl.obolibrary.org/obo/MONDO_0015887) rare diabetes mellitus type 2 --> obsolete rare diabetes mellitus type 2
+ * [MONDO:0015888](http://purl.obolibrary.org/obo/MONDO_0015888) other rare diabetes mellitus --> obsolete other rare diabetes mellitus
+ * [MONDO:0015889](http://purl.obolibrary.org/obo/MONDO_0015889) rare hypothalamic or pituitary disease --> obsolete rare hypothalamic or pituitary disease
+ * [MONDO:0015890](http://purl.obolibrary.org/obo/MONDO_0015890) rare disorder with congenital hypogonadotropic hypogonadism --> obsolete rare disorder with congenital hypogonadotropic hypogonadism
+ * [MONDO:0015913](http://purl.obolibrary.org/obo/MONDO_0015913) rare thrombotic disease of hematologic origin --> obsolete rare thrombotic disease of hematologic origin
+ * [MONDO:0015916](http://purl.obolibrary.org/obo/MONDO_0015916) rare neuroinflammatory or neuroimmunological disease --> obsolete rare neuroinflammatory or neuroimmunological disease
+ * [MONDO:0015937](http://purl.obolibrary.org/obo/MONDO_0015937) rare inflammatory eye disease --> obsolete rare inflammatory eye disease
+ * [MONDO:0015964](http://purl.obolibrary.org/obo/MONDO_0015964) obsolete rare genetic palpebral, lacrimal system and conjunctival disease --> obsolete obsolete rare genetic palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0015965](http://purl.obolibrary.org/obo/MONDO_0015965) rare genetic refraction anomaly --> obsolete rare genetic refraction anomaly
+ * [MONDO:0015968](http://purl.obolibrary.org/obo/MONDO_0015968) rare genetic hypothalamic or pituitary disease --> obsolete rare genetic hypothalamic or pituitary disease
+ * [MONDO:0015970](http://purl.obolibrary.org/obo/MONDO_0015970) rare genetic parathyroid disease and phosphocalcic metabolism disorder --> obsolete rare genetic parathyroid disease and phosphocalcic metabolism disorder
+ * [MONDO:0016055](http://purl.obolibrary.org/obo/MONDO_0016055) syndrome with corpus callosum agenesis /dysgenesis as a major feature --> obsolete syndrome with corpus callosum agenesis /dysgenesis as a major feature
+ * [MONDO:0016132](http://purl.obolibrary.org/obo/MONDO_0016132) rare hereditary disease with peripheral neuropathy --> obsolete rare hereditary disease with peripheral neuropathy
+ * [MONDO:0016133](http://purl.obolibrary.org/obo/MONDO_0016133) rare hereditary metabolic disease with peripheral neuropathy --> obsolete rare hereditary metabolic disease with peripheral neuropathy
+ * [MONDO:0016134](http://purl.obolibrary.org/obo/MONDO_0016134) rare hereditary systemic disease with peripheral neuropathy --> obsolete rare hereditary systemic disease with peripheral neuropathy
+ * [MONDO:0016135](http://purl.obolibrary.org/obo/MONDO_0016135) rare hereditary neurologic disease with peripheral neuropathy --> obsolete rare hereditary neurologic disease with peripheral neuropathy
+ * [MONDO:0016232](http://purl.obolibrary.org/obo/MONDO_0016232) rare venous malformation --> obsolete rare venous malformation
+ * [MONDO:0016233](http://purl.obolibrary.org/obo/MONDO_0016233) rare lymphatic system malformation --> obsolete rare lymphatic system malformation
+ * [MONDO:0016320](http://purl.obolibrary.org/obo/MONDO_0016320) rare hereditary thrombophilia --> obsolete rare hereditary thrombophilia
+ * [MONDO:0016406](http://purl.obolibrary.org/obo/MONDO_0016406) other metabolic disease with epilepsy --> obsolete other metabolic disease with epilepsy
+ * [MONDO:0016507](http://purl.obolibrary.org/obo/MONDO_0016507) rare surgically correctable form of primary aldosteronism --> obsolete rare surgically correctable form of primary aldosteronism
+ * [MONDO:0016508](http://purl.obolibrary.org/obo/MONDO_0016508) rare non surgically correctable form of primary aldosteronism --> obsolete rare non surgically correctable form of primary aldosteronism
+ * [MONDO:0016631](http://purl.obolibrary.org/obo/MONDO_0016631) hemorrhagic disorder due to an acquired platelet anomaly --> obsolete hemorrhagic disorder due to an acquired platelet anomaly
+ * [MONDO:0016633](http://purl.obolibrary.org/obo/MONDO_0016633) thrombotic disorder due to a constitutional coagulation factors defect --> obsolete thrombotic disorder due to a constitutional coagulation factors defect
+ * [MONDO:0016634](http://purl.obolibrary.org/obo/MONDO_0016634) thrombotic disorder due to an acquired coagulation factors defect --> obsolete thrombotic disorder due to an acquired coagulation factors defect
+ * [MONDO:0016636](http://purl.obolibrary.org/obo/MONDO_0016636) thrombotic disorder due to a constitutional platelet anomaly --> obsolete thrombotic disorder due to a constitutional platelet anomaly
+ * [MONDO:0016637](http://purl.obolibrary.org/obo/MONDO_0016637) thrombotic disorder due to an acquired platelet anomaly --> obsolete thrombotic disorder due to an acquired platelet anomaly
+ * [MONDO:0016768](http://purl.obolibrary.org/obo/MONDO_0016768) rare mucosal lichen planus --> obsolete rare mucosal lichen planus
+ * [MONDO:0016992](http://purl.obolibrary.org/obo/MONDO_0016992) peeling skin syndrome type B --> obsolete peeling skin syndrome type B
+ * [MONDO:0017120](http://purl.obolibrary.org/obo/MONDO_0017120) other syndrome with a central nervous system malformation as major feature --> obsolete other syndrome with a central nervous system malformation as major feature
+ * [MONDO:0017122](http://purl.obolibrary.org/obo/MONDO_0017122) genetic syndrome with corpus callosum agenesis/dysgenesis as a major feature --> obsolete genetic syndrome with corpus callosum agenesis/dysgenesis as a major feature
+ * [MONDO:0017125](http://purl.obolibrary.org/obo/MONDO_0017125) oculofaciocardiodental syndrome --> obsolete oculofaciocardiodental syndrome
+ * [MONDO:0017142](http://purl.obolibrary.org/obo/MONDO_0017142) hemorrhagic disorder due to a qualitative platelet defect --> obsolete hemorrhagic disorder due to a qualitative platelet defect
+ * [MONDO:0017159](http://purl.obolibrary.org/obo/MONDO_0017159) syndrome with pulmonary hypertension as a major feature --> obsolete syndrome with pulmonary hypertension as a major feature
+ * [MONDO:0017166](http://purl.obolibrary.org/obo/MONDO_0017166) rare tumor of salivary glands --> obsolete rare tumor of salivary glands
+ * [MONDO:0017631](http://purl.obolibrary.org/obo/MONDO_0017631) rare tumor of gallbladder and extrahepatic biliary tract --> obsolete rare tumor of gallbladder and extrahepatic biliary tract
+ * [MONDO:0017633](http://purl.obolibrary.org/obo/MONDO_0017633) rare intoxication due to medical products --> obsolete rare intoxication due to medical products
+ * [MONDO:0017637](http://purl.obolibrary.org/obo/MONDO_0017637) rare parkinsonian syndrome due to intoxication --> obsolete rare parkinsonian syndrome due to intoxication
+ * [MONDO:0017652](http://purl.obolibrary.org/obo/MONDO_0017652) rare disease with myoclonus as a major feature --> obsolete rare disease with myoclonus as a major feature
+ * [MONDO:0017657](http://purl.obolibrary.org/obo/MONDO_0017657) rare paroxysmal movement disorder --> obsolete rare paroxysmal movement disorder
+ * [MONDO:0017661](http://purl.obolibrary.org/obo/MONDO_0017661) rare parkinsonian syndrome due to genetic neurodegenerative disease --> obsolete rare parkinsonian syndrome due to genetic neurodegenerative disease
+ * [MONDO:0017665](http://purl.obolibrary.org/obo/MONDO_0017665) rare genetic disease with myoclonus as a major feature --> obsolete rare genetic disease with myoclonus as a major feature
+ * [MONDO:0017669](http://purl.obolibrary.org/obo/MONDO_0017669) disease with diffuse palmoplantar keratoderma as a major feature --> obsolete disease with diffuse palmoplantar keratoderma as a major feature
+ * [MONDO:0017671](http://purl.obolibrary.org/obo/MONDO_0017671) autosomal recessive disease with diffuse palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease with diffuse palmoplantar keratoderma as a major feature
+ * [MONDO:0017674](http://purl.obolibrary.org/obo/MONDO_0017674) disease with focal palmoplantar keratoderma as a major feature --> obsolete disease with focal palmoplantar keratoderma as a major feature
+ * [MONDO:0017678](http://purl.obolibrary.org/obo/MONDO_0017678) obsolete disease with punctate palmoplantar keratoderma as a major feature --> obsolete obsolete disease with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017679](http://purl.obolibrary.org/obo/MONDO_0017679) obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017820](http://purl.obolibrary.org/obo/MONDO_0017820) obsolete disease with Cushing syndrome as a major feature --> obsolete obsolete disease with Cushing syndrome as a major feature
+ * [MONDO:0018033](http://purl.obolibrary.org/obo/MONDO_0018033) other immunodeficiency syndromes due to defects in innate immunity --> obsolete other immunodeficiency syndromes due to defects in innate immunity
+ * [MONDO:0018041](http://purl.obolibrary.org/obo/MONDO_0018041) other immunodeficiency syndrome with predominantly antibody defects --> obsolete other immunodeficiency syndrome with predominantly antibody defects
+ * [MONDO:0018235](http://purl.obolibrary.org/obo/MONDO_0018235) dysostosis with limb anomaly as a major feature --> obsolete dysostosis with limb anomaly as a major feature
+ * [MONDO:0018236](http://purl.obolibrary.org/obo/MONDO_0018236) dysostosis with limb and face anomalies as a major feature --> obsolete dysostosis with limb and face anomalies as a major feature
+ * [MONDO:0018265](http://purl.obolibrary.org/obo/MONDO_0018265) rare disorder with dystonia and other neurologic or systemic manifestation --> obsolete rare disorder with dystonia and other neurologic or systemic manifestation
+ * [MONDO:0018285](http://purl.obolibrary.org/obo/MONDO_0018285) X-linked congenital disorder of glycosylation with intellectual disability as a major feature --> obsolete X-linked congenital disorder of glycosylation with intellectual disability as a major feature
+ * [MONDO:0018286](http://purl.obolibrary.org/obo/MONDO_0018286) non-X-linked congenital disorder of glycosylation with intellectual disability as a major feature --> obsolete non-X-linked congenital disorder of glycosylation with intellectual disability as a major feature
+ * [MONDO:0018287](http://purl.obolibrary.org/obo/MONDO_0018287) congenital disorder of glycosylation with epilepsy as a major feature --> obsolete congenital disorder of glycosylation with epilepsy as a major feature
+ * [MONDO:0018290](http://purl.obolibrary.org/obo/MONDO_0018290) congenital disorder of glycosylation with cardiac malformation as a major feature --> obsolete congenital disorder of glycosylation with cardiac malformation as a major feature
+ * [MONDO:0018294](http://purl.obolibrary.org/obo/MONDO_0018294) congenital disorder of glycosylation with nephropathy as a major feature --> obsolete congenital disorder of glycosylation with nephropathy as a major feature
+ * [MONDO:0018295](http://purl.obolibrary.org/obo/MONDO_0018295) congenital disorder of glycosylation with deafness as a major feature --> obsolete congenital disorder of glycosylation with deafness as a major feature
+ * [MONDO:0018377](http://purl.obolibrary.org/obo/MONDO_0018377) rare hereditary disease with avascular necrosis --> obsolete rare hereditary disease with avascular necrosis
+ * [MONDO:0018386](http://purl.obolibrary.org/obo/MONDO_0018386) rare male infertility due to hypothalamic-pituitary-gonadal axis disorder --> obsolete rare male infertility due to hypothalamic-pituitary-gonadal axis disorder
+ * [MONDO:0018387](http://purl.obolibrary.org/obo/MONDO_0018387) rare male infertility due to adrenal disorder --> obsolete rare male infertility due to adrenal disorder
+ * [MONDO:0018388](http://purl.obolibrary.org/obo/MONDO_0018388) rare male infertility due to testicular endocrine disorder --> obsolete rare male infertility due to testicular endocrine disorder
+ * [MONDO:0018396](http://purl.obolibrary.org/obo/MONDO_0018396) rare male fertility disorder with obstructive azoospermia --> obsolete rare male fertility disorder with obstructive azoospermia
+ * [MONDO:0018397](http://purl.obolibrary.org/obo/MONDO_0018397) female infertility due to hypothalamic-pituitary-gonadal axis disorder --> obsolete female infertility due to hypothalamic-pituitary-gonadal axis disorder
+ * [MONDO:0018400](http://purl.obolibrary.org/obo/MONDO_0018400) rare female infertility due to an adrenal disorder --> obsolete rare female infertility due to an adrenal disorder
+ * [MONDO:0018401](http://purl.obolibrary.org/obo/MONDO_0018401) female infertility due to an anomaly of ovarian function --> obsolete female infertility due to an anomaly of ovarian function
+ * [MONDO:0018405](http://purl.obolibrary.org/obo/MONDO_0018405) rare male infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin --> obsolete rare male infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin
+ * [MONDO:0018406](http://purl.obolibrary.org/obo/MONDO_0018406) rare male infertility due to adrenal disorder of genetic origin --> obsolete rare male infertility due to adrenal disorder of genetic origin
+ * [MONDO:0018409](http://purl.obolibrary.org/obo/MONDO_0018409) rare genetic disorder with obstructive azoospermia --> obsolete rare genetic disorder with obstructive azoospermia
+ * [MONDO:0018411](http://purl.obolibrary.org/obo/MONDO_0018411) rare female infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin --> obsolete rare female infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin
+ * [MONDO:0018412](http://purl.obolibrary.org/obo/MONDO_0018412) rare female infertility due to adrenal disorder of genetic origin --> obsolete rare female infertility due to adrenal disorder of genetic origin
+ * [MONDO:0018413](http://purl.obolibrary.org/obo/MONDO_0018413) female infertility due to an anomaly of ovarian function of genetic origin --> obsolete female infertility due to an anomaly of ovarian function of genetic origin
+ * [MONDO:0018455](http://purl.obolibrary.org/obo/MONDO_0018455) dysostosis of genetic origin with limb anomaly as a major feature --> obsolete dysostosis of genetic origin with limb anomaly as a major feature
+ * [MONDO:0018457](http://purl.obolibrary.org/obo/MONDO_0018457) rare genetic bone development disorder --> obsolete rare genetic bone development disorder
+ * [MONDO:0018488](http://purl.obolibrary.org/obo/MONDO_0018488) rare genetic odontal or periodontal disorder --> obsolete rare genetic odontal or periodontal disorder
+ * [MONDO:0018520](http://purl.obolibrary.org/obo/MONDO_0018520) rare epithelial tumor of pancreas --> obsolete rare epithelial tumor of pancreas
+ * [MONDO:0018530](http://purl.obolibrary.org/obo/MONDO_0018530) rare epithelial tumor of liver and intrahepatic biliary tract --> obsolete rare epithelial tumor of liver and intrahepatic biliary tract
+ * [MONDO:0018539](http://purl.obolibrary.org/obo/MONDO_0018539) rare epithelial tumor of small intestine --> obsolete rare epithelial tumor of small intestine
+ * [MONDO:0018719](http://purl.obolibrary.org/obo/MONDO_0018719) obsolete rare capillary malformation with associated anomalies --> obsolete obsolete rare capillary malformation with associated anomalies
+ * [MONDO:0018721](http://purl.obolibrary.org/obo/MONDO_0018721) rare combined vascular malformation --> obsolete rare combined vascular malformation
+ * [MONDO:0018723](http://purl.obolibrary.org/obo/MONDO_0018723) rare vascular malformation of major vessels --> obsolete rare vascular malformation of major vessels
+ * [MONDO:0018730](http://purl.obolibrary.org/obo/MONDO_0018730) rare genetic venous malformation --> obsolete rare genetic venous malformation
+ * [MONDO:0018753](http://purl.obolibrary.org/obo/MONDO_0018753) rare disease with malignant hyperthermia --> obsolete rare disease with malignant hyperthermia
+ * [MONDO:0018798](http://purl.obolibrary.org/obo/MONDO_0018798) other genetic dermis disorder --> obsolete other genetic dermis disorder
+ * [MONDO:0018833](http://purl.obolibrary.org/obo/MONDO_0018833) rare idiopathic macular telangiectasia --> obsolete rare idiopathic macular telangiectasia
+ * [MONDO:0018880](http://purl.obolibrary.org/obo/MONDO_0018880) rare teratologic disease --> obsolete rare teratologic disease
+ * [MONDO:0018972](http://purl.obolibrary.org/obo/MONDO_0018972) rare epithelial tumor of stomach --> obsolete rare epithelial tumor of stomach
+ * [MONDO:0019014](http://purl.obolibrary.org/obo/MONDO_0019014) mutilating palmoplantar keratoderma with periorificial keratotic plaques --> obsolete mutilating palmoplantar keratoderma with periorificial keratotic plaques
+ * [MONDO:0019038](http://purl.obolibrary.org/obo/MONDO_0019038) rare maxillo-facial surgical disease --> obsolete rare maxillo-facial surgical disease
+ * [MONDO:0019039](http://purl.obolibrary.org/obo/MONDO_0019039) rare hemorrhagic disorder due to a constitutional coagulation factors defect --> obsolete rare hemorrhagic disorder due to a constitutional coagulation factors defect
+ * [MONDO:0019061](http://purl.obolibrary.org/obo/MONDO_0019061) rare parathyroid disease and phosphocalcic metabolism anomaly --> obsolete rare parathyroid disease and phosphocalcic metabolism anomaly
+ * [MONDO:0019097](http://purl.obolibrary.org/obo/MONDO_0019097) hemorrhagic disorder due to a constitutional platelet anomaly --> obsolete hemorrhagic disorder due to a constitutional platelet anomaly
+ * [MONDO:0019252](http://purl.obolibrary.org/obo/MONDO_0019252) other metabolic disease with skin involvement --> obsolete other metabolic disease with skin involvement
+ * [MONDO:0019274](http://purl.obolibrary.org/obo/MONDO_0019274) other epidermal disorder --> obsolete other epidermal disorder
+ * [MONDO:0019275](http://purl.obolibrary.org/obo/MONDO_0019275) other genetic epidermal disease --> obsolete other genetic epidermal disease
+ * [MONDO:0019304](http://purl.obolibrary.org/obo/MONDO_0019304) rare photodermatosis --> obsolete rare photodermatosis
+ * [MONDO:0019546](http://purl.obolibrary.org/obo/MONDO_0019546) other acquired skin disease --> obsolete other acquired skin disease
+ * [MONDO:0019590](http://purl.obolibrary.org/obo/MONDO_0019590) rare endocrine growth disease --> obsolete rare endocrine growth disease
+ * [MONDO:0019602](http://purl.obolibrary.org/obo/MONDO_0019602) other inborn metabolic disease --> obsolete other inborn metabolic disease
+ * [MONDO:0019663](http://purl.obolibrary.org/obo/MONDO_0019663) short rib-polydactyly syndrome, Saldino-Noonan type --> obsolete short rib-polydactyly syndrome, Saldino-Noonan type
+ * [MONDO:0019744](http://purl.obolibrary.org/obo/MONDO_0019744) rare renal tubular disease --> obsolete rare renal tubular disease
+ * [MONDO:0019748](http://purl.obolibrary.org/obo/MONDO_0019748) rare cause of hypertension --> obsolete rare cause of hypertension
+ * [MONDO:0019936](http://purl.obolibrary.org/obo/MONDO_0019936) rare otorhinolaryngological malformation --> obsolete rare otorhinolaryngological malformation
+ * [MONDO:0019937](http://purl.obolibrary.org/obo/MONDO_0019937) rare gynecologic or obstetric disease --> obsolete rare gynecologic or obstetric disease
+ * [MONDO:0020013](http://purl.obolibrary.org/obo/MONDO_0020013) rare odontologic disease --> obsolete rare odontologic disease
+ * [MONDO:0020014](http://purl.obolibrary.org/obo/MONDO_0020014) rare disease with odontological manifestation --> obsolete rare disease with odontological manifestation
+ * [MONDO:0020016](http://purl.obolibrary.org/obo/MONDO_0020016) rare neurologic disease with psychiatric involvement --> obsolete rare neurologic disease with psychiatric involvement
+ * [MONDO:0020035](http://purl.obolibrary.org/obo/MONDO_0020035) rare otorhinolaryngologic tumor --> obsolete rare otorhinolaryngologic tumor
+ * [MONDO:0020094](http://purl.obolibrary.org/obo/MONDO_0020094) autosomal dominant disease with diffuse palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease with diffuse palmoplantar keratoderma as a major feature
+ * [MONDO:0020095](http://purl.obolibrary.org/obo/MONDO_0020095) autosomal dominant disease associated with focal palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease associated with focal palmoplantar keratoderma as a major feature
+ * [MONDO:0020097](http://purl.obolibrary.org/obo/MONDO_0020097) autosomal recessive disease with focal palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease with focal palmoplantar keratoderma as a major feature
+ * [MONDO:0020104](http://purl.obolibrary.org/obo/MONDO_0020104) rare constitutional hemolytic anemia due to an enzyme disorder --> obsolete rare constitutional hemolytic anemia due to an enzyme disorder
+ * [MONDO:0020149](http://purl.obolibrary.org/obo/MONDO_0020149) rare eye disease due to a differentiation anomaly --> obsolete rare eye disease due to a differentiation anomaly
+ * [MONDO:0020150](http://purl.obolibrary.org/obo/MONDO_0020150) obsolete rare palpebral, lacrimal system and conjunctival disease --> obsolete obsolete rare palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0020152](http://purl.obolibrary.org/obo/MONDO_0020152) rare eyelid malformation --> obsolete rare eyelid malformation
+ * [MONDO:0020169](http://purl.obolibrary.org/obo/MONDO_0020169) rare disorder with ptosis --> obsolete rare disorder with ptosis
+ * [MONDO:0020206](http://purl.obolibrary.org/obo/MONDO_0020206) rare refraction anomaly --> obsolete rare refraction anomaly
+ * [MONDO:0020209](http://purl.obolibrary.org/obo/MONDO_0020209) rare hyperopia and astigmatism --> obsolete rare hyperopia and astigmatism
+ * [MONDO:0020222](http://purl.obolibrary.org/obo/MONDO_0020222) rare disease with glaucoma as a major feature --> obsolete rare disease with glaucoma as a major feature
+ * [MONDO:0020223](http://purl.obolibrary.org/obo/MONDO_0020223) lens and zonula anomaly --> obsolete lens and zonula anomaly
+ * [MONDO:0020251](http://purl.obolibrary.org/obo/MONDO_0020251) rare strabismus and restriction syndrome --> obsolete rare strabismus and restriction syndrome
+ * [MONDO:0020258](http://purl.obolibrary.org/obo/MONDO_0020258) oculomotor apraxia or related oculomotor disease --> obsolete oculomotor apraxia or related oculomotor disease
+ * [MONDO:0020484](http://purl.obolibrary.org/obo/MONDO_0020484) rare familial disorder with hypertrophic cardiomyopathy --> obsolete rare familial disorder with hypertrophic cardiomyopathy
+ * [MONDO:0020671](http://purl.obolibrary.org/obo/MONDO_0020671) susceptibility to ischemic stroke --> obsolete susceptibility to ischemic stroke
+ * [MONDO:0020755](http://purl.obolibrary.org/obo/MONDO_0020755) heart block --> obsolete heart block
+ * [MONDO:0020803](http://purl.obolibrary.org/obo/MONDO_0020803) bundle branch block --> obsolete bundle branch block
+ * [MONDO:0021570](http://purl.obolibrary.org/obo/MONDO_0021570) Hauptmann-Thannhauser muscular dystrophy --> obsolete Hauptmann-Thannhauser muscular dystrophy
+ * [MONDO:0022676](http://purl.obolibrary.org/obo/MONDO_0022676) cataract - glaucoma --> obsolete cataract - glaucoma
+ * [MONDO:0022732](http://purl.obolibrary.org/obo/MONDO_0022732) chorea minor --> obsolete chorea minor
+ * [MONDO:0025517](http://purl.obolibrary.org/obo/MONDO_0025517) shrimp allergy --> obsolete shrimp allergy
+ * [MONDO:0025518](http://purl.obolibrary.org/obo/MONDO_0025518) aspirin allergy --> obsolete aspirin allergy
+ * [MONDO:0028737](http://purl.obolibrary.org/obo/MONDO_0028737) biliary atresia disorder --> obsolete biliary atresia disorder
+ * [MONDO:0044636](http://purl.obolibrary.org/obo/MONDO_0044636) rare hyperkinetic movement disorder --> obsolete rare hyperkinetic movement disorder
+ * [MONDO:0044680](http://purl.obolibrary.org/obo/MONDO_0044680) short rib-polydactyly syndrome type 5 --> obsolete short rib-polydactyly syndrome type 5
+ * [MONDO:0044808](http://purl.obolibrary.org/obo/MONDO_0044808) early onset primary dystonia --> obsolete early onset primary dystonia
+ * [MONDO:0060649](http://purl.obolibrary.org/obo/MONDO_0060649) short stature, facial dysmorphism, and skeletal anomalies with or without cardiac anomalies --> obsolete short stature, facial dysmorphism, and skeletal anomalies with or without cardiac anomalies
+
+## Renaming
+
+ * [MONDO:0000606](http://purl.obolibrary.org/obo/MONDO_0000606) gluten allergy --> obsolete gluten allergy
+ * [MONDO:0000772](http://purl.obolibrary.org/obo/MONDO_0000772) pollen allergy --> obsolete pollen allergy
+ * [MONDO:0000773](http://purl.obolibrary.org/obo/MONDO_0000773) Timothy grass allergy --> obsolete Timothy grass allergy
+ * [MONDO:0000776](http://purl.obolibrary.org/obo/MONDO_0000776) metal allergy --> obsolete metal allergy
+ * [MONDO:0000779](http://purl.obolibrary.org/obo/MONDO_0000779) apple allergy --> obsolete apple allergy
+ * [MONDO:0000780](http://purl.obolibrary.org/obo/MONDO_0000780) apricot allergy --> obsolete apricot allergy
+ * [MONDO:0000783](http://purl.obolibrary.org/obo/MONDO_0000783) orange allery --> orange allergy
+ * [MONDO:0000785](http://purl.obolibrary.org/obo/MONDO_0000785) peach allergy --> obsolete peach allergy
+ * [MONDO:0000786](http://purl.obolibrary.org/obo/MONDO_0000786) plum allergy --> obsolete plum allergy
+ * [MONDO:0000787](http://purl.obolibrary.org/obo/MONDO_0000787) tomato allergy --> obsolete tomato allergy
+ * [MONDO:0000788](http://purl.obolibrary.org/obo/MONDO_0000788) fish allergy --> obsolete fish allergy
+ * [MONDO:0000789](http://purl.obolibrary.org/obo/MONDO_0000789) Atlantic cod allergy --> obsolete Atlantic cod allergy
+ * [MONDO:0000790](http://purl.obolibrary.org/obo/MONDO_0000790) Atlantic salmon allergy --> obsolete Atlantic salmon allergy
+ * [MONDO:0000791](http://purl.obolibrary.org/obo/MONDO_0000791) carp allergy --> obsolete carp allergy
+ * [MONDO:0000793](http://purl.obolibrary.org/obo/MONDO_0000793) rainbow trout allergy --> obsolete rainbow trout allergy
+ * [MONDO:0000794](http://purl.obolibrary.org/obo/MONDO_0000794) beta-lactam allergy --> obsolete beta-lactam allergy
+ * [MONDO:0000795](http://purl.obolibrary.org/obo/MONDO_0000795) penicillin allergy --> obsolete penicillin allergy
+ * [MONDO:0000796](http://purl.obolibrary.org/obo/MONDO_0000796) cow milk allergy (disease) --> obsolete cow milk allergy (disease)
+ * [MONDO:0000797](http://purl.obolibrary.org/obo/MONDO_0000797) goat milk allergy --> obsolete goat milk allergy
+ * [MONDO:0000798](http://purl.obolibrary.org/obo/MONDO_0000798) mollusc allergy --> obsolete mollusc allergy
+ * [MONDO:0000799](http://purl.obolibrary.org/obo/MONDO_0000799) crustacean allergy --> obsolete crustacean allergy
+ * [MONDO:0000800](http://purl.obolibrary.org/obo/MONDO_0000800) brown shrimp allergy --> obsolete brown shrimp allergy
+ * [MONDO:0000801](http://purl.obolibrary.org/obo/MONDO_0000801) green mud crab allergy --> obsolete green mud crab allergy
+ * [MONDO:0000802](http://purl.obolibrary.org/obo/MONDO_0000802) Indian prawn allergy --> obsolete Indian prawn allergy
+ * [MONDO:0000803](http://purl.obolibrary.org/obo/MONDO_0000803) tiger prawn allergy --> obsolete tiger prawn allergy
+ * [MONDO:0000804](http://purl.obolibrary.org/obo/MONDO_0000804) white shrimp allergy --> obsolete white shrimp allergy
+ * [MONDO:0000805](http://purl.obolibrary.org/obo/MONDO_0000805) snail allergy --> obsolete snail allergy
+ * [MONDO:0000806](http://purl.obolibrary.org/obo/MONDO_0000806) horned turban snail allergy --> obsolete horned turban snail allergy
+ * [MONDO:0000865](http://purl.obolibrary.org/obo/MONDO_0000865) congenital fiber-type disproportion --> obsolete congenital fiber-type disproportion
+ * [MONDO:0000991](http://purl.obolibrary.org/obo/MONDO_0000991) left bundle branch block --> obsolete left bundle branch block
+ * [MONDO:0001662](http://purl.obolibrary.org/obo/MONDO_0001662) right bundle branch block (disease) --> obsolete right bundle branch block (disease)
+ * [MONDO:0002497](http://purl.obolibrary.org/obo/MONDO_0002497) food allergy --> obsolete food allergy
+ * [MONDO:0002520](http://purl.obolibrary.org/obo/MONDO_0002520) acute hepatic porphyria --> hepatic porphyria
+ * [MONDO:0005741](http://purl.obolibrary.org/obo/MONDO_0005741) egg allergy --> obsolete egg allergy
+ * [MONDO:0006772](http://purl.obolibrary.org/obo/MONDO_0006772) glycogen storage disease VIII --> obsolete glycogen storage disease VIII
+ * [MONDO:0006872](http://purl.obolibrary.org/obo/MONDO_0006872) nut allergic reaction --> obsolete nut allergic reaction
+ * [MONDO:0007021](http://purl.obolibrary.org/obo/MONDO_0007021) wheat allergic disease --> obsolete wheat allergic disease
+ * [MONDO:0007161](http://purl.obolibrary.org/obo/MONDO_0007161) SPGF2 --> spermatogenic failure 2
+ * [MONDO:0007169](http://purl.obolibrary.org/obo/MONDO_0007169) ATHS --> atherosclerosis susceptibility
+ * [MONDO:0007184](http://purl.obolibrary.org/obo/MONDO_0007184) AGA1 --> alopecia, androgenetic, 1
+ * [MONDO:0007192](http://purl.obolibrary.org/obo/MONDO_0007192) AABT --> beta-amino acids, renal transport of
+ * [MONDO:0007257](http://purl.obolibrary.org/obo/MONDO_0007257) CANDF1 --> candidiasis, familial, 1
+ * [MONDO:0007332](http://purl.obolibrary.org/obo/MONDO_0007332) SHFLD1 --> split-hand/foot malformation with long bone deficiency 1
+ * [MONDO:0007367](http://purl.obolibrary.org/obo/MONDO_0007367) FEB1 --> febrile seizures, familial, 1
+ * [MONDO:0007559](http://purl.obolibrary.org/obo/MONDO_0007559) PPR1 --> photoparoxysmal response 1
+ * [MONDO:0007729](http://purl.obolibrary.org/obo/MONDO_0007729) DDH1 --> developmental dysplasia of the hip 1
+ * [MONDO:0007754](http://purl.obolibrary.org/obo/MONDO_0007754) HYPRPP --> hyperhidrosis palmaris ET plantaris
+ * [MONDO:0007877](http://purl.obolibrary.org/obo/MONDO_0007877) LAP --> laryngeal adductor paralysis
+ * [MONDO:0007918](http://purl.obolibrary.org/obo/MONDO_0007918) microcephaly with or without chorioretinopathy, lymphedema, or mental retardation --> microcephaly with or without chorioretinopathy, lymphedema, or intellectual disability
+ * [MONDO:0007954](http://purl.obolibrary.org/obo/MONDO_0007954) May-Hegglin anomaly --> obsolete May-Hegglin anomaly
+ * [MONDO:0007981](http://purl.obolibrary.org/obo/MONDO_0007981) metachromatic leukodystrophy, adult-onset, with normal arylsulfatase a --> metachromatic leukodystrophy, adult-onset, with normal arylsulfatase A
+ * [MONDO:0007995](http://purl.obolibrary.org/obo/MONDO_0007995) MCOPCT1 --> microphthalmia, isolated, with cataract 1
+ * [MONDO:0008032](http://purl.obolibrary.org/obo/MONDO_0008032) autosomal dominant limb-girdle muscular dystrophy type 1A --> obsolete autosomal dominant limb-girdle muscular dystrophy type 1A
+ * [MONDO:0008053](http://purl.obolibrary.org/obo/MONDO_0008053) MYP2 --> myopia 2, autosomal dominant
+ * [MONDO:0008072](http://purl.obolibrary.org/obo/MONDO_0008072) IGAN1 --> IgA nephropathy, susceptibility to, 1
+ * [MONDO:0008106](http://purl.obolibrary.org/obo/MONDO_0008106) NYS2 --> nystagmus 2, congenital, autosomal dominant
+ * [MONDO:0008164](http://purl.obolibrary.org/obo/MONDO_0008164) OTSC1 --> otosclerosis 1
+ * [MONDO:0008172](http://purl.obolibrary.org/obo/MONDO_0008172) PHOAD --> hypertrophic osteoarthropathy, primary, autosomal dominant
+ * [MONDO:0008290](http://purl.obolibrary.org/obo/MONDO_0008290) POROK1 --> porokeratosis 1, Mibelli type
+ * [MONDO:0008414](http://purl.obolibrary.org/obo/MONDO_0008414) SCZD1 --> schizophrenia 1
+ * [MONDO:0008614](http://purl.obolibrary.org/obo/MONDO_0008614) ST3 --> suppressor of tumorigenicity 3
+ * [MONDO:0008646](http://purl.obolibrary.org/obo/MONDO_0008646) long QT syndrome 1 --> obsolete long QT syndrome 1
+ * [MONDO:0008653](http://purl.obolibrary.org/obo/MONDO_0008653) VUR1 --> vesicoureteral reflux 1
+ * [MONDO:0008654](http://purl.obolibrary.org/obo/MONDO_0008654) NYS4 --> nystagmus 4, congenital, autosomal dominant
+ * [MONDO:0008776](http://purl.obolibrary.org/obo/MONDO_0008776) amyloidosis of gingiva and conjunctiva, with mental retardation --> amyloidosis of gingiva and conjunctiva, with intellectual disability
+ * [MONDO:0008820](http://purl.obolibrary.org/obo/MONDO_0008820) arthrogryposis, distal, with hypopituitarism, mental retardation, and facial anomalies --> arthrogryposis, distal, with hypopituitarism, intellectual disability, and facial anomalies
+ * [MONDO:0008821](http://purl.obolibrary.org/obo/MONDO_0008821) arthrogryposis, distal, with mental retardation and characteristic facies --> arthrogryposis, distal, with intellectual disability and characteristic facies
+ * [MONDO:0008932](http://purl.obolibrary.org/obo/MONDO_0008932) PCD --> premature centromere division
+ * [MONDO:0008942](http://purl.obolibrary.org/obo/MONDO_0008942) CPD2 --> cerebelloparenchymal disorder II
+ * [MONDO:0009040](http://purl.obolibrary.org/obo/MONDO_0009040) craniosynostosis-mental retardation syndrome of 51N and Gettig --> craniosynostosis-intellectual disability syndrome of 51N and Gettig
+ * [MONDO:0009041](http://purl.obolibrary.org/obo/MONDO_0009041) craniosynostosis-mental retardation-clefting syndrome --> craniosynostosis-intellectual disability-clefting syndrome
+ * [MONDO:0009056](http://purl.obolibrary.org/obo/MONDO_0009056) cutis verticis gyrata and mental retardation --> cutis verticis gyrata and intellectual disability
+ * [MONDO:0009128](http://purl.obolibrary.org/obo/MONDO_0009128) dwarfism, mental retardation, and eye abnormality --> dwarfism, intellectual disability, and eye abnormality
+ * [MONDO:0009186](http://purl.obolibrary.org/obo/MONDO_0009186) epilepsy, photogenic, with spastic diplegia and mental retardation --> epilepsy, photogenic, with spastic diplegia and intellectual disability
+ * [MONDO:0009201](http://purl.obolibrary.org/obo/MONDO_0009201) facial abnormalities, kyphoscoliosis, and mental retardation --> facial abnormalities, kyphoscoliosis, and intellectual disability
+ * [MONDO:0009317](http://purl.obolibrary.org/obo/MONDO_0009317) nonphotosensitive trichothiodystrophy --> obsolete nonphotosensitive trichothiodystrophy
+ * [MONDO:0009382](http://purl.obolibrary.org/obo/MONDO_0009382) PSHB --> hyperbilirubinemia, shunt, primary
+ * [MONDO:0009460](http://purl.obolibrary.org/obo/MONDO_0009460) Indolylacroyl Glycinuria with mental retardation --> indolylacroyl glycinuria with intellectual disability
+ * [MONDO:0009641](http://purl.obolibrary.org/obo/MONDO_0009641) mitochondrial complex II deficiency --> obsolete mitochondrial complex II deficiency
+ * [MONDO:0009649](http://purl.obolibrary.org/obo/MONDO_0009649) MYMY1 --> moyamoya disease 1
+ * [MONDO:0009713](http://purl.obolibrary.org/obo/MONDO_0009713) MYP18 --> myopia 18, autosomal recessive
+ * [MONDO:0009739](http://purl.obolibrary.org/obo/MONDO_0009739) infantile neuroaxonal dystrophy --> obsolete infantile neuroaxonal dystrophy
+ * [MONDO:0009913](http://purl.obolibrary.org/obo/MONDO_0009913) prune belly syndrome with pulmonic stenosis, mental retardation, and deafness --> prune belly syndrome with pulmonic stenosis, intellectual disability, and deafness
+ * [MONDO:0009986](http://purl.obolibrary.org/obo/MONDO_0009986) retinopathy, pigmentary, and mental retardation --> retinopathy, pigmentary, and intellectual disability
+ * [MONDO:0010040](http://purl.obolibrary.org/obo/MONDO_0010040) ataxia, spastic, childhood-onset, autosomal recessive, with optic atrophy and mental retardation --> ataxia, spastic, childhood-onset, autosomal recessive, with optic atrophy and intellectual disability
+ * [MONDO:0010042](http://purl.obolibrary.org/obo/MONDO_0010042) spastic diplegia and mental retardation --> spastic diplegia and intellectual disability
+ * [MONDO:0010054](http://purl.obolibrary.org/obo/MONDO_0010054) spinal muscular atrophy with mental retardation --> spinal muscular atrophy with intellectual disability
+ * [MONDO:0010070](http://purl.obolibrary.org/obo/MONDO_0010070) BCYM1A --> brachyolmia type 1, Hobaek type
+ * [MONDO:0010074](http://purl.obolibrary.org/obo/MONDO_0010074) BCYM1B --> brachyolmia type 1, toledo type
+ * [MONDO:0010084](http://purl.obolibrary.org/obo/MONDO_0010084) sucrosuria, hiatus hernia and mental retardation --> sucrosuria, hiatus hernia and intellectual disability
+ * [MONDO:0010086](http://purl.obolibrary.org/obo/MONDO_0010086) sudden infant death syndrome --> obsolete sudden infant death syndrome
+ * [MONDO:0010189](http://purl.obolibrary.org/obo/MONDO_0010189) vitiligo, progressive, with mental retardation and urethral duplication --> vitiligo, progressive, with intellectual disability and urethral duplication
+ * [MONDO:0010228](http://purl.obolibrary.org/obo/MONDO_0010228) DFNX3 --> deafness, X-linked 3
+ * [MONDO:0010230](http://purl.obolibrary.org/obo/MONDO_0010230) MRX23 --> intellectual disability, X-linked 23
+ * [MONDO:0010231](http://purl.obolibrary.org/obo/MONDO_0010231) MRX20 --> intellectual disability, X-linked 20
+ * [MONDO:0010236](http://purl.obolibrary.org/obo/MONDO_0010236) MRX14 --> intellectual disability, X-linked 14
+ * [MONDO:0010250](http://purl.obolibrary.org/obo/MONDO_0010250) MRX49 --> intellectual disability, X-linked 49
+ * [MONDO:0010251](http://purl.obolibrary.org/obo/MONDO_0010251) MRX50 --> intellectual disability, X-linked 50
+ * [MONDO:0010257](http://purl.obolibrary.org/obo/MONDO_0010257) HPCX1 --> prostate cancer, hereditary, X-linked 1
+ * [MONDO:0010260](http://purl.obolibrary.org/obo/MONDO_0010260) ACLLX --> arthrogryposis, congenital, lower limb, X-linked
+ * [MONDO:0010267](http://purl.obolibrary.org/obo/MONDO_0010267) EMWX --> episodic muscle weakness, X-linked
+ * [MONDO:0010274](http://purl.obolibrary.org/obo/MONDO_0010274) TGCT1 --> testicular germ cell tumor 1
+ * [MONDO:0010300](http://purl.obolibrary.org/obo/MONDO_0010300) MRX53 --> intellectual disability, X-linked 53
+ * [MONDO:0010301](http://purl.obolibrary.org/obo/MONDO_0010301) THCYTX --> thrombocythemia, X-linked
+ * [MONDO:0010307](http://purl.obolibrary.org/obo/MONDO_0010307) MRX73 --> intellectual disability, X-linked 73
+ * [MONDO:0010309](http://purl.obolibrary.org/obo/MONDO_0010309) MRX42 --> intellectual disability, X-linked 42
+ * [MONDO:0010314](http://purl.obolibrary.org/obo/MONDO_0010314) BPPX --> polymicrogyria, bilateral perisylvian, X-linked
+ * [MONDO:0010322](http://purl.obolibrary.org/obo/MONDO_0010322) MRX2 --> intellectual disability, X-linked 2
+ * [MONDO:0010324](http://purl.obolibrary.org/obo/MONDO_0010324) MRX81 --> intellectual disability, X-linked 81
+ * [MONDO:0010329](http://purl.obolibrary.org/obo/MONDO_0010329) MRX77 --> intellectual disability, X-linked 77
+ * [MONDO:0010347](http://purl.obolibrary.org/obo/MONDO_0010347) MRX84 --> intellectual disability, X-linked 84
+ * [MONDO:0010351](http://purl.obolibrary.org/obo/MONDO_0010351) Fanconi anemia complementation group b --> Fanconi anemia complementation group B
+ * [MONDO:0010352](http://purl.obolibrary.org/obo/MONDO_0010352) MRX82 --> intellectual disability, X-linked 82
+ * [MONDO:0010360](http://purl.obolibrary.org/obo/MONDO_0010360) PARK12 --> parkinson disease 12
+ * [MONDO:0010365](http://purl.obolibrary.org/obo/MONDO_0010365) CFTDX --> myopathy, congenital, with fiber-type disproportion, X-linked
+ * [MONDO:0010369](http://purl.obolibrary.org/obo/MONDO_0010369) NYS5 --> nystagmus 5, congenital, X-linked
+ * [MONDO:0010377](http://purl.obolibrary.org/obo/MONDO_0010377) MYP13 --> myopia 13, X-linked
+ * [MONDO:0010380](http://purl.obolibrary.org/obo/MONDO_0010380) cataract, ataxia, short stature, and mental retardation --> cataract, ataxia, short stature, and intellectual disability
+ * [MONDO:0010388](http://purl.obolibrary.org/obo/MONDO_0010388) rolandic epilepsy, mental retardation, and speech dyspraxia, X-linked --> rolandic epilepsy, intellectual disability, and speech dyspraxia, X-linked
+ * [MONDO:0010405](http://purl.obolibrary.org/obo/MONDO_0010405) HPCX2 --> prostate cancer, hereditary, X-linked 2
+ * [MONDO:0010410](http://purl.obolibrary.org/obo/MONDO_0010410) AGA2 --> alopecia, androgenetic, 2
+ * [MONDO:0010413](http://purl.obolibrary.org/obo/MONDO_0010413) MRX95 --> intellectual disability, X-linked 95
+ * [MONDO:0010450](http://purl.obolibrary.org/obo/MONDO_0010450) MRX89 --> intellectual disability, X-linked 89
+ * [MONDO:0010453](http://purl.obolibrary.org/obo/MONDO_0010453) MRX92 --> intellectual disability, X-linked 92
+ * [MONDO:0010454](http://purl.obolibrary.org/obo/MONDO_0010454) MRX88 --> intellectual disability, XMEN-linked 88
+ * [MONDO:0010468](http://purl.obolibrary.org/obo/MONDO_0010468) ANIB5 --> aneurysm, intracranial berry, 5
+ * [MONDO:0010486](http://purl.obolibrary.org/obo/MONDO_0010486) palmoplantar keratoderma, mutilating, with periorificial keratotic plaques, X-linked --> Olmsted syndrome, X-linked
+ * [MONDO:0010573](http://purl.obolibrary.org/obo/MONDO_0010573) cutis verticis gyrata, thyroid aplasia, and mental retardation --> cutis verticis gyrata, thyroid aplasia, and intellectual disability
+ * [MONDO:0010685](http://purl.obolibrary.org/obo/MONDO_0010685) MYP1 --> myopia 1, X-linked
+ * [MONDO:0010697](http://purl.obolibrary.org/obo/MONDO_0010697) OPEM --> ophthalmoplegia, external, and myopia
+ * [MONDO:0010834](http://purl.obolibrary.org/obo/MONDO_0010834) HSCR5 --> hirschsprung disease, susceptibility to, 5
+ * [MONDO:0010836](http://purl.obolibrary.org/obo/MONDO_0010836) NNO1 --> nanophthalmos 1
+ * [MONDO:0010846](http://purl.obolibrary.org/obo/MONDO_0010846) EXT3 --> exostoses, multiple, type III
+ * [MONDO:0010872](http://purl.obolibrary.org/obo/MONDO_0010872) PDDP --> parotid salivary glands, polycystic dysgenetic disease of
+ * [MONDO:0010897](http://purl.obolibrary.org/obo/MONDO_0010897) SCZD3 --> schizophrenia 3
+ * [MONDO:0010910](http://purl.obolibrary.org/obo/MONDO_0010910) ENUR1 --> enuresis, nocturnal, 1
+ * [MONDO:0010957](http://purl.obolibrary.org/obo/MONDO_0010957) agonadism, 46,XY, with mental retardation, short stature, retarded bone age, and multiple extragenital malformations --> agonadism, 46,XY, with intellectual disability, short stature, retarded bone age, and multiple extragenital malformations
+ * [MONDO:0010968](http://purl.obolibrary.org/obo/MONDO_0010968) GLC3B --> glaucoma 3, primary infantile, B
+ * [MONDO:0010982](http://purl.obolibrary.org/obo/MONDO_0010982) ichthyosis-mental retardation syndrome with large keratohyalin granules in the skin --> ichthyosis-intellectual disability syndrome with large keratohyalin granules in the skin
+ * [MONDO:0010985](http://purl.obolibrary.org/obo/MONDO_0010985) FAME1 --> epilepsy, familial adult myoclonic, 1
+ * [MONDO:0011021](http://purl.obolibrary.org/obo/MONDO_0011021) neuronal intestinal dysplasia, type b --> neuronal intestinal dysplasia, type B
+ * [MONDO:0011072](http://purl.obolibrary.org/obo/MONDO_0011072) NIDDM2 --> diabetes mellitus, noninsulin-dependent, 2
+ * [MONDO:0011084](http://purl.obolibrary.org/obo/MONDO_0011084) PSORS3 --> psoriasis 3, susceptibility to
+ * [MONDO:0011175](http://purl.obolibrary.org/obo/MONDO_0011175) FRDA2 --> friedreich ataxia 2
+ * [MONDO:0011201](http://purl.obolibrary.org/obo/MONDO_0011201) ETM2 --> tremor, hereditary essential, 2
+ * [MONDO:0011220](http://purl.obolibrary.org/obo/MONDO_0011220) PARK3 --> parkinson disease 3, autosomal dominant
+ * [MONDO:0011222](http://purl.obolibrary.org/obo/MONDO_0011222) GLC1D --> glaucoma 1, open angle, D
+ * [MONDO:0011231](http://purl.obolibrary.org/obo/MONDO_0011231) FEB2 --> febrile seizures, familial, 2
+ * [MONDO:0011250](http://purl.obolibrary.org/obo/MONDO_0011250) microcephaly, macrotia, and mental retardation --> microcephaly, macrotia, and intellectual disability
+ * [MONDO:0011256](http://purl.obolibrary.org/obo/MONDO_0011256) emphysema, congenital, with deafness, penoscrotal web, and mental retardation --> emphysema, congenital, with deafness, penoscrotal web, and intellectual disability
+ * [MONDO:0011261](http://purl.obolibrary.org/obo/MONDO_0011261) spondyloepiphyseal dysplasia with coronal craniosynostosis, cataracts, cleft palate, and mental retardation --> spondyloepiphyseal dysplasia with coronal craniosynostosis, cataracts, cleft palate, and intellectual disability
+ * [MONDO:0011265](http://purl.obolibrary.org/obo/MONDO_0011265) STHAG2 --> tooth agenesis, selective, 2
+ * [MONDO:0011280](http://purl.obolibrary.org/obo/MONDO_0011280) SCZD6 --> schizophrenia 6
+ * [MONDO:0011290](http://purl.obolibrary.org/obo/MONDO_0011290) dislocated elbows, bowed tibias, scoliosis, deafness, cataract, microcephaly, and mental retardation --> dislocated elbows, bowed tibias, scoliosis, deafness, cataract, microcephaly, and intellectual disability
+ * [MONDO:0011294](http://purl.obolibrary.org/obo/MONDO_0011294) SCZD5 --> schizophrenia 5
+ * [MONDO:0011295](http://purl.obolibrary.org/obo/MONDO_0011295) SCZD7 --> schizophrenia 7
+ * [MONDO:0011298](http://purl.obolibrary.org/obo/MONDO_0011298) SCZD8 --> schizophrenia 8
+ * [MONDO:0011300](http://purl.obolibrary.org/obo/MONDO_0011300) MYP3 --> myopia 3, autosomal dominant
+ * [MONDO:0011307](http://purl.obolibrary.org/obo/MONDO_0011307) SCZD2 --> schizophrenia 2
+ * [MONDO:0011311](http://purl.obolibrary.org/obo/MONDO_0011311) glaucoma 1, open angle, f --> glaucoma 1, open angle, F
+ * [MONDO:0011325](http://purl.obolibrary.org/obo/MONDO_0011325) Fanconi anemia complementation group f --> Fanconi anemia complementation group F
+ * [MONDO:0011341](http://purl.obolibrary.org/obo/MONDO_0011341) microcephaly, facial abnormalities, micromelia, and mental retardation --> microcephaly, facial abnormalities, micromelia, and intellectual disability
+ * [MONDO:0011387](http://purl.obolibrary.org/obo/MONDO_0011387) PSORS4 --> psoriasis 4, susceptibility to
+ * [MONDO:0011433](http://purl.obolibrary.org/obo/MONDO_0011433) anemia, congenital hypoplastic, with multiple congenital anomalies/mental retardation syndrome --> anemia, congenital hypoplastic, with multiple congenital anomalies/intellectual disability syndrome
+ * [MONDO:0011434](http://purl.obolibrary.org/obo/MONDO_0011434) PSORS5 --> psoriasis 5, susceptibility to
+ * [MONDO:0011478](http://purl.obolibrary.org/obo/MONDO_0011478) growth and developmental retardation, ocular ptosis, cardiac defect, and anal atresia --> growth and developintellectual disability, ocular ptosis, cardiac defect, and anal atresia
+ * [MONDO:0011491](http://purl.obolibrary.org/obo/MONDO_0011491) EIG7 --> epilepsy, idiopathic generalized, susceptibility to, 7
+ * [MONDO:0011542](http://purl.obolibrary.org/obo/MONDO_0011542) PSORS6 --> psoriasis 6, susceptibility to
+ * [MONDO:0011550](http://purl.obolibrary.org/obo/MONDO_0011550) fibromatosis, gingival, with hypertrichosis and mental retardation --> fibromatosis, gingival, with hypertrichosis and intellectual disability
+ * [MONDO:0011552](http://purl.obolibrary.org/obo/MONDO_0011552) SCZD10 --> schizophrenia 10
+ * [MONDO:0011554](http://purl.obolibrary.org/obo/MONDO_0011554) DFNM1 --> deafness, nonsyndromic, modifier 1
+ * [MONDO:0011556](http://purl.obolibrary.org/obo/MONDO_0011556) BCC1 --> basal cell carcinoma, susceptibility to, 1
+ * [MONDO:0011563](http://purl.obolibrary.org/obo/MONDO_0011563) GINGF2 --> fibromatosis, gingival, 2
+ * [MONDO:0011573](http://purl.obolibrary.org/obo/MONDO_0011573) PSORS7 --> psoriasis 7, susceptibility to
+ * [MONDO:0011586](http://purl.obolibrary.org/obo/MONDO_0011586) OTSC2 --> otosclerosis 2
+ * [MONDO:0011592](http://purl.obolibrary.org/obo/MONDO_0011592) EVR3 --> exudative vitreoretinopathy 3
+ * [MONDO:0011611](http://purl.obolibrary.org/obo/MONDO_0011611) short stature, mental retardation, callosal agenesis, Heminasal hypoplasia, microphthalmia, and atypical clefting --> short stature, intellectual disability, callosal agenesis, Heminasal hypoplasia, microphthalmia, and atypical clefting
+ * [MONDO:0011627](http://purl.obolibrary.org/obo/MONDO_0011627) AUTS5 --> autism, susceptibility to, 5
+ * [MONDO:0011656](http://purl.obolibrary.org/obo/MONDO_0011656) PDB4 --> paget disease of bone 4
+ * [MONDO:0011659](http://purl.obolibrary.org/obo/MONDO_0011659) HTX3 --> heterotaxy, visceral, 3, autosomal
+ * [MONDO:0011674](http://purl.obolibrary.org/obo/MONDO_0011674) Charcot-Marie-Tooth disease dominant intermediate b --> Charcot-Marie-Tooth disease dominant intermediate B
+ * [MONDO:0011675](http://purl.obolibrary.org/obo/MONDO_0011675) Charcot-Marie-Tooth disease dominant intermediate a --> Charcot-Marie-Tooth disease dominant intermediate A
+ * [MONDO:0011692](http://purl.obolibrary.org/obo/MONDO_0011692) IBGC2 --> basal ganglia calcification, idiopathic, 2
+ * [MONDO:0011704](http://purl.obolibrary.org/obo/MONDO_0011704) GLC1B --> glaucoma 1, open angle, B
+ * [MONDO:0011733](http://purl.obolibrary.org/obo/MONDO_0011733) PSMNSB --> parasomnia, sleep bruxism type
+ * [MONDO:0011736](http://purl.obolibrary.org/obo/MONDO_0011736) Cree mental retardation syndrome --> Cree intellectual disability syndrome
+ * [MONDO:0011737](http://purl.obolibrary.org/obo/MONDO_0011737) PARK10 --> parkinson disease 10
+ * [MONDO:0011741](http://purl.obolibrary.org/obo/MONDO_0011741) HSCR6 --> hirschsprung disease, susceptibility to, 6
+ * [MONDO:0011742](http://purl.obolibrary.org/obo/MONDO_0011742) HSCR7 --> hirschsprung disease, susceptibility to, 7
+ * [MONDO:0011753](http://purl.obolibrary.org/obo/MONDO_0011753) EIG2 --> epilepsy, idiopathic generalized, susceptibility to, 2
+ * [MONDO:0011755](http://purl.obolibrary.org/obo/MONDO_0011755) SLSN3 --> senior-loken syndrome 3
+ * [MONDO:0011793](http://purl.obolibrary.org/obo/MONDO_0011793) CELIAC5 --> celiac disease, susceptibility to, 5
+ * [MONDO:0011796](http://purl.obolibrary.org/obo/MONDO_0011796) PEPS --> epilepsy, partial, with pericentral spikes
+ * [MONDO:0011800](http://purl.obolibrary.org/obo/MONDO_0011800) GLM4 --> glioma susceptibility 4
+ * [MONDO:0011824](http://purl.obolibrary.org/obo/MONDO_0011824) AUTS8 --> autism, susceptibility to, 8
+ * [MONDO:0011858](http://purl.obolibrary.org/obo/MONDO_0011858) spastic paraplegia, ataxia, and mental retardation --> spastic paraplegia, ataxia, and intellectual disability
+ * [MONDO:0011860](http://purl.obolibrary.org/obo/MONDO_0011860) LPRS2 --> leprosy, susceptibility to, 2
+ * [MONDO:0011880](http://purl.obolibrary.org/obo/MONDO_0011880) CANDF3 --> candidiasis, familial, 3
+ * [MONDO:0011900](http://purl.obolibrary.org/obo/MONDO_0011900) POROK4 --> porokeratosis 4, disseminated superficial actinic type
+ * [MONDO:0011909](http://purl.obolibrary.org/obo/MONDO_0011909) Charcot-Marie-Tooth disease dominant intermediate d --> Charcot-Marie-Tooth disease dominant intermediate D
+ * [MONDO:0011915](http://purl.obolibrary.org/obo/MONDO_0011915) MMVP2 --> mitral valve prolapse, myxomatous 2
+ * [MONDO:0011926](http://purl.obolibrary.org/obo/MONDO_0011926) PSORS9 --> psoriasis 9, susceptibility to
+ * [MONDO:0011931](http://purl.obolibrary.org/obo/MONDO_0011931) OVCAS1 --> ovarian cancer, susceptibility to, 1
+ * [MONDO:0011954](http://purl.obolibrary.org/obo/MONDO_0011954) CMM4 --> melanoma, cutaneous malignant, susceptibility to, 4
+ * [MONDO:0011956](http://purl.obolibrary.org/obo/MONDO_0011956) AUTS3 --> autism, susceptibility to, 3
+ * [MONDO:0011990](http://purl.obolibrary.org/obo/MONDO_0011990) BFNS3 --> seizures, benign familial neonatal, 3
+ * [MONDO:0011999](http://purl.obolibrary.org/obo/MONDO_0011999) OTSC3 --> otosclerosis 3
+ * [MONDO:0012005](http://purl.obolibrary.org/obo/MONDO_0012005) growth failure, microcephaly, mental retardation, cataracts, large joint contractures, osteoporosis, cortical dysplasia, and cerebellar atrophy --> growth failure, microcephaly, intellectual disability, cataracts, large joint contractures, osteoporosis, cortical dysplasia, and cerebellar atrophy
+ * [MONDO:0012012](http://purl.obolibrary.org/obo/MONDO_0012012) Charcot-Marie-Tooth disease dominant intermediate c --> Charcot-Marie-Tooth disease dominant intermediate C
+ * [MONDO:0012014](http://purl.obolibrary.org/obo/MONDO_0012014) Charcot-Marie-Tooth disease recessive intermediate a --> Charcot-Marie-Tooth disease recessive intermediate A
+ * [MONDO:0012015](http://purl.obolibrary.org/obo/MONDO_0012015) NYS3 --> nystagmus 3, congenital, autosomal dominant
+ * [MONDO:0012021](http://purl.obolibrary.org/obo/MONDO_0012021) MYP17 --> myopia 17, autosomal dominant
+ * [MONDO:0012027](http://purl.obolibrary.org/obo/MONDO_0012027) AIS2 --> autoimmune disease, susceptibility to, 2
+ * [MONDO:0012028](http://purl.obolibrary.org/obo/MONDO_0012028) AIS3 --> autoimmune disease, susceptibility to, 3
+ * [MONDO:0012042](http://purl.obolibrary.org/obo/MONDO_0012042) HSCR8 --> hirschsprung disease, susceptibility to, 8
+ * [MONDO:0012045](http://purl.obolibrary.org/obo/MONDO_0012045) MYP5 --> myopia 5, autosomal dominant
+ * [MONDO:0012053](http://purl.obolibrary.org/obo/MONDO_0012053) ANIB2 --> aneurysm, intracranial berry, 2
+ * [MONDO:0012066](http://purl.obolibrary.org/obo/MONDO_0012066) ATFB1 --> atrial fibrillation, familial, 1
+ * [MONDO:0012069](http://purl.obolibrary.org/obo/MONDO_0012069) KTCN3 --> keratoconus 3
+ * [MONDO:0012079](http://purl.obolibrary.org/obo/MONDO_0012079) ASPG2 --> asperger syndrome, susceptibility to, 2
+ * [MONDO:0012082](http://purl.obolibrary.org/obo/MONDO_0012082) ASPG1 --> asperger syndrome, susceptibility to, 1
+ * [MONDO:0012101](http://purl.obolibrary.org/obo/MONDO_0012101) GLC1J --> glaucoma 1, open angle, J
+ * [MONDO:0012102](http://purl.obolibrary.org/obo/MONDO_0012102) GLC1K --> glaucoma 1, open angle, K
+ * [MONDO:0012113](http://purl.obolibrary.org/obo/MONDO_0012113) EIG3 --> epilepsy, idiopathic generalized, susceptibility to, 3
+ * [MONDO:0012119](http://purl.obolibrary.org/obo/MONDO_0012119) ASPG3 --> asperger syndrome, susceptibility to, 3
+ * [MONDO:0012121](http://purl.obolibrary.org/obo/MONDO_0012121) OTSC5 --> otosclerosis 5
+ * [MONDO:0012122](http://purl.obolibrary.org/obo/MONDO_0012122) MYMY3 --> moyamoya disease 3
+ * [MONDO:0012134](http://purl.obolibrary.org/obo/MONDO_0012134) EJM3 --> myoclonic epilepsy, juvenile, susceptibility to, 3
+ * [MONDO:0012158](http://purl.obolibrary.org/obo/MONDO_0012158) KTCN2 --> keratoconus 2
+ * [MONDO:0012159](http://purl.obolibrary.org/obo/MONDO_0012159) LNCR1 --> lung cancer susceptibility 1
+ * [MONDO:0012167](http://purl.obolibrary.org/obo/MONDO_0012167) ATFB2 --> atrial fibrillation, familial, 2
+ * [MONDO:0012187](http://purl.obolibrary.org/obo/MONDO_0012187) Fanconi anemia complementation group j --> Fanconi anemia complementation group J
+ * [MONDO:0012194](http://purl.obolibrary.org/obo/MONDO_0012194) ANIB3 --> aneurysm, intracranial berry, 3
+ * [MONDO:0012214](http://purl.obolibrary.org/obo/MONDO_0012214) GCCD3 --> glucocorticoid deficiency 3
+ * [MONDO:0012218](http://purl.obolibrary.org/obo/MONDO_0012218) ADDWOC --> dandy-walker malformation with occipital cephalocele, autosomal dominant
+ * [MONDO:0012224](http://purl.obolibrary.org/obo/MONDO_0012224) FEB6 --> febrile seizures, familial, 6
+ * [MONDO:0012226](http://purl.obolibrary.org/obo/MONDO_0012226) FEB5 --> febrile seizures, familial, 5
+ * [MONDO:0012227](http://purl.obolibrary.org/obo/MONDO_0012227) MYP7 --> myopia 7
+ * [MONDO:0012228](http://purl.obolibrary.org/obo/MONDO_0012228) MYP8 --> myopia 8
+ * [MONDO:0012229](http://purl.obolibrary.org/obo/MONDO_0012229) MYP9 --> myopia 9
+ * [MONDO:0012230](http://purl.obolibrary.org/obo/MONDO_0012230) MYP10 --> myopia 10
+ * [MONDO:0012236](http://purl.obolibrary.org/obo/MONDO_0012236) KTCN4 --> keratoconus 4
+ * [MONDO:0012242](http://purl.obolibrary.org/obo/MONDO_0012242) VVS --> syncope, familial vasovagal
+ * [MONDO:0012261](http://purl.obolibrary.org/obo/MONDO_0012261) AUTS6 --> autism, susceptibility to, 6
+ * [MONDO:0012262](http://purl.obolibrary.org/obo/MONDO_0012262) CFEOM3C --> fibrosis of extraocular muscles, congenital, 3c
+ * [MONDO:0012263](http://purl.obolibrary.org/obo/MONDO_0012263) AIS4 --> autoimmune disease, susceptibility to, 4
+ * [MONDO:0012264](http://purl.obolibrary.org/obo/MONDO_0012264) PEE2 --> preeclampsia/eclampsia 2
+ * [MONDO:0012265](http://purl.obolibrary.org/obo/MONDO_0012265) PEE3 --> preeclampsia/eclampsia 3
+ * [MONDO:0012285](http://purl.obolibrary.org/obo/MONDO_0012285) LVNC2 --> left ventricular noncompaction 2
+ * [MONDO:0012302](http://purl.obolibrary.org/obo/MONDO_0012302) PFM3 --> parietal foramina 3
+ * [MONDO:0012304](http://purl.obolibrary.org/obo/MONDO_0012304) PPR2 --> photoparoxysmal response 2
+ * [MONDO:0012305](http://purl.obolibrary.org/obo/MONDO_0012305) PPR3 --> photoparoxysmal response 3
+ * [MONDO:0012324](http://purl.obolibrary.org/obo/MONDO_0012324) 14q22q23 microdeletion syndrome --> Frias syndrome
+ * [MONDO:0012337](http://purl.obolibrary.org/obo/MONDO_0012337) GLC1I --> glaucoma 1, open angle, I
+ * [MONDO:0012338](http://purl.obolibrary.org/obo/MONDO_0012338) EIG4 --> epilepsy, idiopathic generalized, susceptibility to, 4
+ * [MONDO:0012340](http://purl.obolibrary.org/obo/MONDO_0012340) CELIAC2 --> celiac disease, susceptibility to, 2
+ * [MONDO:0012343](http://purl.obolibrary.org/obo/MONDO_0012343) AAA2 --> aortic aneurysm, familial abdominal, 2
+ * [MONDO:0012346](http://purl.obolibrary.org/obo/MONDO_0012346) GEFSP4 --> generalized epilepsy with febrile seizures plus, type 4
+ * [MONDO:0012358](http://purl.obolibrary.org/obo/MONDO_0012358) LPRS1 --> leprosy, susceptibility to, 1
+ * [MONDO:0012365](http://purl.obolibrary.org/obo/MONDO_0012365) GBD2 --> gallbladder disease 2
+ * [MONDO:0012366](http://purl.obolibrary.org/obo/MONDO_0012366) GBD3 --> gallbladder disease 3
+ * [MONDO:0012377](http://purl.obolibrary.org/obo/MONDO_0012377) ASPG4 --> asperger syndrome, susceptibility to, 4
+ * [MONDO:0012378](http://purl.obolibrary.org/obo/MONDO_0012378) GINGF3 --> fibromatosis, gingival, 3
+ * [MONDO:0012388](http://purl.obolibrary.org/obo/MONDO_0012388) MYP11 --> myopia 11, autosomal dominant
+ * [MONDO:0012389](http://purl.obolibrary.org/obo/MONDO_0012389) MYP12 --> myopia 12, autosomal dominant
+ * [MONDO:0012425](http://purl.obolibrary.org/obo/MONDO_0012425) FECD2 --> corneal dystrophy, fuchs endothelial, 2
+ * [MONDO:0012428](http://purl.obolibrary.org/obo/MONDO_0012428) KYPSC1 --> kyphoscoliosis 1
+ * [MONDO:0012430](http://purl.obolibrary.org/obo/MONDO_0012430) cerebellar ataxia, mental retardation, and dysequilibrium syndrome 2 --> cerebellar ataxia, intellectual disability, and dysequilibrium syndrome 2
+ * [MONDO:0012443](http://purl.obolibrary.org/obo/MONDO_0012443) ANIB4 --> aneurysm, intracranial berry, 4
+ * [MONDO:0012451](http://purl.obolibrary.org/obo/MONDO_0012451) EOE1 --> esophagitis, eosinophilic, 1
+ * [MONDO:0012469](http://purl.obolibrary.org/obo/MONDO_0012469) MYP14 --> myopia 14
+ * [MONDO:0012470](http://purl.obolibrary.org/obo/MONDO_0012470) HPC7 --> prostate cancer, hereditary, 7
+ * [MONDO:0012515](http://purl.obolibrary.org/obo/MONDO_0012515) GLC1M --> glaucoma 1, open angle, M
+ * [MONDO:0012533](http://purl.obolibrary.org/obo/MONDO_0012533) AUTS7 --> autism, susceptibility to, 7
+ * [MONDO:0012537](http://purl.obolibrary.org/obo/MONDO_0012537) SHFLD2 --> split-hand/foot malformation with long bone deficiency 2
+ * [MONDO:0012542](http://purl.obolibrary.org/obo/MONDO_0012542) PSORS8 --> psoriasis 8, susceptibility to
+ * [MONDO:0012566](http://purl.obolibrary.org/obo/MONDO_0012566) AUTS11 --> autism, susceptibility to, 11
+ * [MONDO:0012567](http://purl.obolibrary.org/obo/MONDO_0012567) AUTS12 --> autism, susceptibility to, 12
+ * [MONDO:0012568](http://purl.obolibrary.org/obo/MONDO_0012568) OS4 --> osteoarthritis susceptibility 4
+ * [MONDO:0012569](http://purl.obolibrary.org/obo/MONDO_0012569) MMVP3 --> mitral valve prolapse, myxomatous 3
+ * [MONDO:0012578](http://purl.obolibrary.org/obo/MONDO_0012578) AUTS13 --> autism, susceptibility to, 13
+ * [MONDO:0012583](http://purl.obolibrary.org/obo/MONDO_0012583) STHAG5 --> tooth agenesis, selective, 5
+ * [MONDO:0012598](http://purl.obolibrary.org/obo/MONDO_0012598) GINGF4 --> fibromatosis, gingival, 4
+ * [MONDO:0012599](http://purl.obolibrary.org/obo/MONDO_0012599) HYT8 --> hypertension, essential, susceptibility to, 8
+ * [MONDO:0012600](http://purl.obolibrary.org/obo/MONDO_0012600) AUTS9 --> autism, susceptibility to, 9
+ * [MONDO:0012601](http://purl.obolibrary.org/obo/MONDO_0012601) AUTS10 --> autism, susceptibility to, 10
+ * [MONDO:0012617](http://purl.obolibrary.org/obo/MONDO_0012617) MRT9 --> intellectual disability, autosomal recessive 9
+ * [MONDO:0012618](http://purl.obolibrary.org/obo/MONDO_0012618) MRT10 --> intellectual disability, autosomal recessive 10
+ * [MONDO:0012619](http://purl.obolibrary.org/obo/MONDO_0012619) MRT11 --> intellectual disability, autosomal recessive 11
+ * [MONDO:0012620](http://purl.obolibrary.org/obo/MONDO_0012620) HPC10 --> prostate cancer, hereditary, 10
+ * [MONDO:0012623](http://purl.obolibrary.org/obo/MONDO_0012623) MRT4 --> intellectual disability, autosomal recessive 4
+ * [MONDO:0012628](http://purl.obolibrary.org/obo/MONDO_0012628) CHDS8 --> coronary heart disease, susceptibility to, 8
+ * [MONDO:0012632](http://purl.obolibrary.org/obo/MONDO_0012632) Alzheimer disease 15 --> obsolete Alzheimer disease 15
+ * [MONDO:0012645](http://purl.obolibrary.org/obo/MONDO_0012645) GLC1N --> glaucoma 1, open angle, N
+ * [MONDO:0012646](http://purl.obolibrary.org/obo/MONDO_0012646) GLC1H --> glaucoma 1, open angle, H
+ * [MONDO:0012653](http://purl.obolibrary.org/obo/MONDO_0012653) PHPVAD --> persistent hyperplastic primary vitreous, autosomal dominant
+ * [MONDO:0012655](http://purl.obolibrary.org/obo/MONDO_0012655) EJM4 --> myoclonic epilepsy, juvenile, susceptibility to, 4
+ * [MONDO:0012671](http://purl.obolibrary.org/obo/MONDO_0012671) ETM3 --> tremor, hereditary essential, 3
+ * [MONDO:0012673](http://purl.obolibrary.org/obo/MONDO_0012673) CRCS2 --> colorectal cancer, susceptibility to, 2
+ * [MONDO:0012678](http://purl.obolibrary.org/obo/MONDO_0012678) ATFB5 --> atrial fibrillation, familial, 5
+ * [MONDO:0012681](http://purl.obolibrary.org/obo/MONDO_0012681) FEB7 --> febrile seizures, familial, 7
+ * [MONDO:0012692](http://purl.obolibrary.org/obo/MONDO_0012692) renal tubular acidosis, distal, with nephrocalcinosis, short stature, mental retardation, and distinctive facies --> renal tubular acidosis, distal, with nephrocalcinosis, short stature, intellectual disability, and distinctive facies
+ * [MONDO:0012696](http://purl.obolibrary.org/obo/MONDO_0012696) OTSC4 --> otosclerosis 4
+ * [MONDO:0012697](http://purl.obolibrary.org/obo/MONDO_0012697) OTSC7 --> otosclerosis 7
+ * [MONDO:0012702](http://purl.obolibrary.org/obo/MONDO_0012702) CELIAC6 --> celiac disease, susceptibility to, 6
+ * [MONDO:0012708](http://purl.obolibrary.org/obo/MONDO_0012708) PLSA1 --> primary lateral sclerosis, adult, 1
+ * [MONDO:0012710](http://purl.obolibrary.org/obo/MONDO_0012710) HSCR9 --> hirschsprung disease, susceptibility to, 9
+ * [MONDO:0012712](http://purl.obolibrary.org/obo/MONDO_0012712) DYTCA --> dystonia with cerebellar atrophy
+ * [MONDO:0012751](http://purl.obolibrary.org/obo/MONDO_0012751) AAA3 --> aortic aneurysm, familial abdominal, 3
+ * [MONDO:0012752](http://purl.obolibrary.org/obo/MONDO_0012752) ANIB6 --> aneurysm, intracranial berry, 6
+ * [MONDO:0012754](http://purl.obolibrary.org/obo/MONDO_0012754) NNO3 --> nanophthalmos 3
+ * [MONDO:0012760](http://purl.obolibrary.org/obo/MONDO_0012760) EIG5 --> epilepsy, idiopathic generalized, susceptibility to, 5
+ * [MONDO:0012768](http://purl.obolibrary.org/obo/MONDO_0012768) HPC11 --> prostate cancer, hereditary, 11
+ * [MONDO:0012769](http://purl.obolibrary.org/obo/MONDO_0012769) HPC14 --> prostate cancer, hereditary, 14
+ * [MONDO:0012770](http://purl.obolibrary.org/obo/MONDO_0012770) HPC15 --> prostate cancer, hereditary, 15
+ * [MONDO:0012776](http://purl.obolibrary.org/obo/MONDO_0012776) CELIAC7 --> celiac disease, susceptibility to, 7
+ * [MONDO:0012777](http://purl.obolibrary.org/obo/MONDO_0012777) CELIAC8 --> celiac disease, susceptibility to, 8
+ * [MONDO:0012778](http://purl.obolibrary.org/obo/MONDO_0012778) CELIAC9 --> celiac disease, susceptibility to, 9
+ * [MONDO:0012779](http://purl.obolibrary.org/obo/MONDO_0012779) CELIAC10 --> celiac disease, susceptibility to, 10
+ * [MONDO:0012780](http://purl.obolibrary.org/obo/MONDO_0012780) CELIAC11 --> celiac disease, susceptibility to, 11
+ * [MONDO:0012781](http://purl.obolibrary.org/obo/MONDO_0012781) CELIAC12 --> celiac disease, susceptibility to, 12
+ * [MONDO:0012782](http://purl.obolibrary.org/obo/MONDO_0012782) CELIAC13 --> celiac disease, susceptibility to, 13
+ * [MONDO:0012788](http://purl.obolibrary.org/obo/MONDO_0012788) CHDS9 --> coronary heart disease, susceptibility to, 9
+ * [MONDO:0012797](http://purl.obolibrary.org/obo/MONDO_0012797) OTSC8 --> otosclerosis 8
+ * [MONDO:0012810](http://purl.obolibrary.org/obo/MONDO_0012810) ANIB7 --> aneurysm, intracranial berry, 7
+ * [MONDO:0012811](http://purl.obolibrary.org/obo/MONDO_0012811) ANIB8 --> aneurysm, intracranial berry, 8
+ * [MONDO:0012821](http://purl.obolibrary.org/obo/MONDO_0012821) CRCS5 --> colorectal cancer, susceptibility to, 5
+ * [MONDO:0012822](http://purl.obolibrary.org/obo/MONDO_0012822) CRCS6 --> colorectal cancer, susceptibility to, 6
+ * [MONDO:0012823](http://purl.obolibrary.org/obo/MONDO_0012823) CRCS7 --> colorectal cancer, susceptibility to, 7
+ * [MONDO:0012846](http://purl.obolibrary.org/obo/MONDO_0012846) GEFSP6 --> generalized epilepsy with febrile seizures plus, type 6
+ * [MONDO:0012857](http://purl.obolibrary.org/obo/MONDO_0012857) POROK5 --> porokeratosis 5, disseminated superficial actinic type
+ * [MONDO:0012872](http://purl.obolibrary.org/obo/MONDO_0012872) THPH9 --> thrombophilia, familial, due to decreased release of tissue plasminogen activator
+ * [MONDO:0012874](http://purl.obolibrary.org/obo/MONDO_0012874) POROK6 --> porokeratosis 6, disseminated superficial actinic type
+ * [MONDO:0012889](http://purl.obolibrary.org/obo/MONDO_0012889) SS3 --> sarcoidosis, susceptibility to, 3
+ * [MONDO:0012894](http://purl.obolibrary.org/obo/MONDO_0012894) OS6 --> osteoarthritis susceptibility 6
+ * [MONDO:0012896](http://purl.obolibrary.org/obo/MONDO_0012896) PSORS10 --> psoriasis 10, susceptibility to
+ * [MONDO:0012899](http://purl.obolibrary.org/obo/MONDO_0012899) AGA3 --> alopecia, androgenetic, 3
+ * [MONDO:0012909](http://purl.obolibrary.org/obo/MONDO_0012909) skeletal defects, genital hypoplasia, and mental retardation --> skeletal defects, genital hypoplasia, and intellectual disability
+ * [MONDO:0012913](http://purl.obolibrary.org/obo/MONDO_0012913) Wilms tumor, aniridia, genitourinary anomalies, mental retardation, and obesity syndrome --> Wilms tumor, aniridia, genitourinary anomalies, intellectual disability, and obesity syndrome
+ * [MONDO:0012932](http://purl.obolibrary.org/obo/MONDO_0012932) MYP16 --> myopia 16, autosomal dominant
+ * [MONDO:0012942](http://purl.obolibrary.org/obo/MONDO_0012942) LNCR3 --> lung cancer susceptibility 3
+ * [MONDO:0012949](http://purl.obolibrary.org/obo/MONDO_0012949) ANIB9 --> aneurysm, intracranial berry, 9
+ * [MONDO:0012950](http://purl.obolibrary.org/obo/MONDO_0012950) ANIB10 --> aneurysm, intracranial berry, 10
+ * [MONDO:0012951](http://purl.obolibrary.org/obo/MONDO_0012951) CRCS8 --> colorectal cancer, susceptibility to, 8
+ * [MONDO:0012952](http://purl.obolibrary.org/obo/MONDO_0012952) CRCS9 --> colorectal cancer, susceptibility to, 9
+ * [MONDO:0012959](http://purl.obolibrary.org/obo/MONDO_0012959) PSORS11 --> psoriasis 11, susceptibility to
+ * [MONDO:0012965](http://purl.obolibrary.org/obo/MONDO_0012965) BFIS4 --> seizures, benign familial infantile, 4
+ * [MONDO:0012972](http://purl.obolibrary.org/obo/MONDO_0012972) FEB10 --> febrile seizures, familial, 10
+ * [MONDO:0012995](http://purl.obolibrary.org/obo/MONDO_0012995) MYP15 --> myopia 15, autosomal dominant
+ * [MONDO:0013055](http://purl.obolibrary.org/obo/MONDO_0013055) Stargardt macular degeneration, absent or hypoplastic corpus callosum, mental retardation, and dysmorphic features --> Stargardt macular degeneration, absent or hypoplastic corpus callosum, intellectual disability, and dysmorphic features
+ * [MONDO:0013057](http://purl.obolibrary.org/obo/MONDO_0013057) PSORS12 --> psoriasis 12, susceptibility to
+ * [MONDO:0013084](http://purl.obolibrary.org/obo/MONDO_0013084) NBLST4 --> neuroblastoma, susceptibility to, 4
+ * [MONDO:0013085](http://purl.obolibrary.org/obo/MONDO_0013085) NBLST5 --> neuroblastoma, susceptibility to, 5
+ * [MONDO:0013086](http://purl.obolibrary.org/obo/MONDO_0013086) NBLST6 --> neuroblastoma, susceptibility to, 6
+ * [MONDO:0013088](http://purl.obolibrary.org/obo/MONDO_0013088) FL1 --> follicular lymphoma, susceptibility to, 1
+ * [MONDO:0013089](http://purl.obolibrary.org/obo/MONDO_0013089) SCZD13 --> schizophrenia 13
+ * [MONDO:0013094](http://purl.obolibrary.org/obo/MONDO_0013094) GLM5 --> glioma susceptibility 5
+ * [MONDO:0013095](http://purl.obolibrary.org/obo/MONDO_0013095) GLM6 --> glioma susceptibility 6
+ * [MONDO:0013096](http://purl.obolibrary.org/obo/MONDO_0013096) GLM7 --> glioma susceptibility 7
+ * [MONDO:0013097](http://purl.obolibrary.org/obo/MONDO_0013097) GLM8 --> glioma susceptibility 8
+ * [MONDO:0013100](http://purl.obolibrary.org/obo/MONDO_0013100) ATFB8 --> atrial fibrillation, familial, 8
+ * [MONDO:0013101](http://purl.obolibrary.org/obo/MONDO_0013101) BCC2 --> basal cell carcinoma, susceptibility to, 2
+ * [MONDO:0013102](http://purl.obolibrary.org/obo/MONDO_0013102) BCC3 --> basal cell carcinoma, susceptibility to, 3
+ * [MONDO:0013104](http://purl.obolibrary.org/obo/MONDO_0013104) BCC4 --> basal cell carcinoma, susceptibility to, 4
+ * [MONDO:0013105](http://purl.obolibrary.org/obo/MONDO_0013105) BCC5 --> basal cell carcinoma, susceptibility to, 5
+ * [MONDO:0013106](http://purl.obolibrary.org/obo/MONDO_0013106) BCC6 --> basal cell carcinoma, susceptibility to, 6
+ * [MONDO:0013121](http://purl.obolibrary.org/obo/MONDO_0013121) GLC3C --> glaucoma 3, primary congenital, C
+ * [MONDO:0013122](http://purl.obolibrary.org/obo/MONDO_0013122) glaucoma 3, primary congenital, d --> glaucoma 3, primary congenital, D
+ * [MONDO:0013151](http://purl.obolibrary.org/obo/MONDO_0013151) CACD3 --> choroidal dystrophy, central areolar, 3
+ * [MONDO:0013155](http://purl.obolibrary.org/obo/MONDO_0013155) muscular dystrophy-dystroglycanopathy (congenital with mental retardation), type B3 --> muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B3
+ * [MONDO:0013156](http://purl.obolibrary.org/obo/MONDO_0013156) muscular dystrophy-dystroglycanopathy (congenital without mental retardation), type B4 --> muscular dystrophy-dystroglycanopathy (congenital without intellectual disability), type B4
+ * [MONDO:0013159](http://purl.obolibrary.org/obo/MONDO_0013159) muscular dystrophy-dystroglycanopathy (congenital with mental retardation), type B1 --> muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B1
+ * [MONDO:0013160](http://purl.obolibrary.org/obo/MONDO_0013160) muscular dystrophy-dystroglycanopathy (congenital with mental retardation), type B2 --> muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B2
+ * [MONDO:0013167](http://purl.obolibrary.org/obo/MONDO_0013167) PARK16 --> parkinson disease 16
+ * [MONDO:0013188](http://purl.obolibrary.org/obo/MONDO_0013188) cerebellar ataxia, mental retardation, and dysequilibrium syndrome 3 --> cerebellar ataxia, intellectual disability, and dysequilibrium syndrome 3
+ * [MONDO:0013205](http://purl.obolibrary.org/obo/MONDO_0013205) FECD5 --> corneal dystrophy, fuchs endothelial, 5
+ * [MONDO:0013207](http://purl.obolibrary.org/obo/MONDO_0013207) FECD7 --> corneal dystrophy, fuchs endothelial, 7
+ * [MONDO:0013213](http://purl.obolibrary.org/obo/MONDO_0013213) CIHL --> hearing loss, cisplatin-induced, susceptibility to
+ * [MONDO:0013246](http://purl.obolibrary.org/obo/MONDO_0013246) NAFLD2 --> fatty liver disease, nonalcoholic, susceptibility to, 2
+ * [MONDO:0013257](http://purl.obolibrary.org/obo/MONDO_0013257) LPRS6 --> leprosy, susceptibility to, 6
+ * [MONDO:0013260](http://purl.obolibrary.org/obo/MONDO_0013260) EOE2 --> esophagitis, eosinophilic, 2
+ * [MONDO:0013321](http://purl.obolibrary.org/obo/MONDO_0013321) FWS --> forsythe-wakeling syndrome
+ * [MONDO:0013322](http://purl.obolibrary.org/obo/MONDO_0013322) FAME3 --> epilepsy, familial adult myoclonic, 3
+ * [MONDO:0013332](http://purl.obolibrary.org/obo/MONDO_0013332) brachydactyly, type A1, with short stature, scoliosis, microcephaly, ptosis, hearing loss, and mental retardation --> brachydactyly, type A1, with short stature, scoliosis, microcephaly, ptosis, hearing loss, and intellectual disability
+ * [MONDO:0013338](http://purl.obolibrary.org/obo/MONDO_0013338) Charcot-Marie-Tooth disease recessive intermediate b --> Charcot-Marie-Tooth disease recessive intermediate B
+ * [MONDO:0013448](http://purl.obolibrary.org/obo/MONDO_0013448) GEFSP8 --> generalized epilepsy with febrile seizures plus, type 8
+ * [MONDO:0013488](http://purl.obolibrary.org/obo/MONDO_0013488) APLDC3 --> lipodystrophy, partial, acquired, with low complement component c3, with or without glomerulonephritis
+ * [MONDO:0013491](http://purl.obolibrary.org/obo/MONDO_0013491) megalencephalic leukoencephalopathy with subcortical cysts 2B, remitting, with or without mental retardation --> megalencephalic leukoencephalopathy with subcortical cysts 2B, remitting, with or without intellectual disability
+ * [MONDO:0013492](http://purl.obolibrary.org/obo/MONDO_0013492) APMR3 --> alopecia-intellectual disability syndrome 3
+ * [MONDO:0013493](http://purl.obolibrary.org/obo/MONDO_0013493) ACACAD --> acetyl-coa carboxylase deficiency
+ * [MONDO:0013496](http://purl.obolibrary.org/obo/MONDO_0013496) IGAN2 --> IgA nephropathy, susceptibility to, 2
+ * [MONDO:0013508](http://purl.obolibrary.org/obo/MONDO_0013508) MYP19 --> myopia 19, autosomal dominant
+ * [MONDO:0013603](http://purl.obolibrary.org/obo/MONDO_0013603) MYP20 --> myopia 20, autosomal dominant
+ * [MONDO:0013629](http://purl.obolibrary.org/obo/MONDO_0013629) MRT16 --> intellectual disability, autosomal recessive 16
+ * [MONDO:0013631](http://purl.obolibrary.org/obo/MONDO_0013631) LNCR5 --> lung cancer susceptibility 5
+ * [MONDO:0013654](http://purl.obolibrary.org/obo/MONDO_0013654) ANIB11 --> aneurysm, intracranial berry, 11
+ * [MONDO:0013665](http://purl.obolibrary.org/obo/MONDO_0013665) EJM9 --> epilepsy, juvenile myoclonic, susceptibility to, 9
+ * [MONDO:0013682](http://purl.obolibrary.org/obo/MONDO_0013682) VUR4 --> vesicoureteral reflux 4
+ * [MONDO:0013683](http://purl.obolibrary.org/obo/MONDO_0013683) VUR5 --> vesicoureteral reflux 5
+ * [MONDO:0013684](http://purl.obolibrary.org/obo/MONDO_0013684) VUR6 --> vesicoureteral reflux 6
+ * [MONDO:0013694](http://purl.obolibrary.org/obo/MONDO_0013694) MRT31 --> intellectual disability, autosomal recessive 31
+ * [MONDO:0013697](http://purl.obolibrary.org/obo/MONDO_0013697) MRT29 --> intellectual disability, autosomal recessive 29
+ * [MONDO:0013703](http://purl.obolibrary.org/obo/MONDO_0013703) MRT33 --> intellectual disability, autosomal recessive 33
+ * [MONDO:0013704](http://purl.obolibrary.org/obo/MONDO_0013704) MRT30 --> intellectual disability, autosomal recessive 30
+ * [MONDO:0013705](http://purl.obolibrary.org/obo/MONDO_0013705) MRT19 --> intellectual disability, autosomal recessive 19
+ * [MONDO:0013706](http://purl.obolibrary.org/obo/MONDO_0013706) MRT23 --> intellectual disability, autosomal recessive 23
+ * [MONDO:0013707](http://purl.obolibrary.org/obo/MONDO_0013707) MRT24 --> intellectual disability, autosomal recessive 24
+ * [MONDO:0013708](http://purl.obolibrary.org/obo/MONDO_0013708) MRT25 --> intellectual disability, autosomal recessive 25
+ * [MONDO:0013709](http://purl.obolibrary.org/obo/MONDO_0013709) MRT28 --> intellectual disability, autosomal recessive 28
+ * [MONDO:0013716](http://purl.obolibrary.org/obo/MONDO_0013716) AAA4 --> aortic aneurysm, familial abdominal, 4
+ * [MONDO:0013814](http://purl.obolibrary.org/obo/MONDO_0013814) PDCOS --> podoconiosis, susceptibility to
+ * [MONDO:0013830](http://purl.obolibrary.org/obo/MONDO_0013830) KTCN5 --> keratoconus 5
+ * [MONDO:0013831](http://purl.obolibrary.org/obo/MONDO_0013831) KTCN6 --> keratoconus 6
+ * [MONDO:0013832](http://purl.obolibrary.org/obo/MONDO_0013832) KTCN8 --> keratoconus 8
+ * [MONDO:0013833](http://purl.obolibrary.org/obo/MONDO_0013833) KTCN7 --> keratoconus 7
+ * [MONDO:0013856](http://purl.obolibrary.org/obo/MONDO_0013856) hypertelorism and other facial dysmorphism, brachydactyly, genital abnormalities, mental retardation, and recurrent inflammatory episodes --> hypertelorism and other facial dysmorphism, brachydactyly, genital abnormalities, intellectual disability, and recurrent inflammatory episodes
+ * [MONDO:0013868](http://purl.obolibrary.org/obo/MONDO_0013868) POROK7 --> porokeratosis 7, disseminated superficial actinic type
+ * [MONDO:0013886](http://purl.obolibrary.org/obo/MONDO_0013886) nonprogressive cerebellar atxia with mental retardation --> nonprogressive cerebellar atxia with intellectual disability
+ * [MONDO:0013903](http://purl.obolibrary.org/obo/MONDO_0013903) NYS7 --> nystagmus 7, congenital, autosomal dominant
+ * [MONDO:0013908](http://purl.obolibrary.org/obo/MONDO_0013908) TTPP3 --> thyrotoxic periodic paralysis, susceptibility to, 3
+ * [MONDO:0013909](http://purl.obolibrary.org/obo/MONDO_0013909) HHV8S --> human herpesvirus 8, susceptibility to
+ * [MONDO:0013973](http://purl.obolibrary.org/obo/MONDO_0013973) ECTD5 --> ectodermal dysplasia 5, hair/nail type
+ * [MONDO:0013974](http://purl.obolibrary.org/obo/MONDO_0013974) ECTD6 --> ectodermal dysplasia 6, hair/nail type
+ * [MONDO:0013980](http://purl.obolibrary.org/obo/MONDO_0013980) PPKP1B --> palmoplantar keratoderma, punctate type ib
+ * [MONDO:0013988](http://purl.obolibrary.org/obo/MONDO_0013988) CHTD3 --> congenital heart defects, multiple types, 3
+ * [MONDO:0014055](http://purl.obolibrary.org/obo/MONDO_0014055) FAME4 --> epilepsy, familial adult myoclonic, 4
+ * [MONDO:0014074](http://purl.obolibrary.org/obo/MONDO_0014074) Charcot-Marie-Tooth disease dominant intermediate f --> Charcot-Marie-Tooth disease dominant intermediate F
+ * [MONDO:0014104](http://purl.obolibrary.org/obo/MONDO_0014104) cerebellar ataxia, mental retardation, and dysequilibrium syndrome 4 --> cerebellar ataxia, intellectual disability, and dysequilibrium syndrome 4
+ * [MONDO:0014141](http://purl.obolibrary.org/obo/MONDO_0014141) muscular dystrophy-dystroglycanopathy (congenital with mental retardation), type B14 --> muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B14
+ * [MONDO:0014154](http://purl.obolibrary.org/obo/MONDO_0014154) Charcot-Marie-Tooth disease recessive intermediate c --> Charcot-Marie-Tooth disease recessive intermediate C
+ * [MONDO:0014161](http://purl.obolibrary.org/obo/MONDO_0014161) VUR7 --> vesicoureteral reflux 7
+ * [MONDO:0014219](http://purl.obolibrary.org/obo/MONDO_0014219) alacrima, achalasia, and mental retardation syndrome --> alacrima, achalasia, and intellectual disability syndrome
+ * [MONDO:0014264](http://purl.obolibrary.org/obo/MONDO_0014264) OTSC10 --> otosclerosis 10
+ * [MONDO:0014277](http://purl.obolibrary.org/obo/MONDO_0014277) DDH2 --> developmental dysplasia of the hip 2
+ * [MONDO:0014301](http://purl.obolibrary.org/obo/MONDO_0014301) DDD3 --> dowling-degos disease 3
+ * [MONDO:0014467](http://purl.obolibrary.org/obo/MONDO_0014467) Charcot-Marie-Tooth disease recessive intermediate d --> Charcot-Marie-Tooth disease recessive intermediate D
+ * [MONDO:0014986](http://purl.obolibrary.org/obo/MONDO_0014986) Fanconi anemia complementation group r --> Fanconi anemia complementation group R
+ * [MONDO:0015147](http://purl.obolibrary.org/obo/MONDO_0015147) other syndrome with lissencephaly as a major feature --> obsolete other syndrome with lissencephaly as a major feature
+ * [MONDO:0015226](http://purl.obolibrary.org/obo/MONDO_0015226) syndrome with limb malformations as a major feature --> obsolete syndrome with limb malformations as a major feature
+ * [MONDO:0015319](http://purl.obolibrary.org/obo/MONDO_0015319) rare disease with Pierre Robin syndrome --> obsolete rare disease with Pierre Robin syndrome
+ * [MONDO:0015332](http://purl.obolibrary.org/obo/MONDO_0015332) rare developmental defect with connective tissue involvement --> obsolete rare developmental defect with connective tissue involvement
+ * [MONDO:0015475](http://purl.obolibrary.org/obo/MONDO_0015475) rare head and neck malformation --> obsolete rare head and neck malformation
+ * [MONDO:0015506](http://purl.obolibrary.org/obo/MONDO_0015506) rare syndrome with cardiac malformations --> obsolete rare syndrome with cardiac malformations
+ * [MONDO:0015603](http://purl.obolibrary.org/obo/MONDO_0015603) rare odontal or periodontal disorder --> obsolete rare odontal or periodontal disorder
+ * [MONDO:0015652](http://purl.obolibrary.org/obo/MONDO_0015652) chromosomal anomaly with epilepsy as a major feature --> obsolete chromosomal anomaly with epilepsy as a major feature
+ * [MONDO:0015662](http://purl.obolibrary.org/obo/MONDO_0015662) hemorrhagic disorder due to an acquired coagulation factor defect --> obsolete hemorrhagic disorder due to an acquired coagulation factor defect
+ * [MONDO:0015669](http://purl.obolibrary.org/obo/MONDO_0015669) rare disease with dentinogenesis imperfecta --> obsolete rare disease with dentinogenesis imperfecta
+ * [MONDO:0015847](http://purl.obolibrary.org/obo/MONDO_0015847) rare vaginal malformation --> obsolete rare vaginal malformation
+ * [MONDO:0015851](http://purl.obolibrary.org/obo/MONDO_0015851) rare breast malformation --> obsolete rare breast malformation
+ * [MONDO:0015857](http://purl.obolibrary.org/obo/MONDO_0015857) rare non-malformative gynecologic or obstetric disease --> obsolete rare non-malformative gynecologic or obstetric disease
+ * [MONDO:0015858](http://purl.obolibrary.org/obo/MONDO_0015858) rare non-malformative breast disease --> obsolete rare non-malformative breast disease
+ * [MONDO:0015859](http://purl.obolibrary.org/obo/MONDO_0015859) rare non-malformative uterovaginal or vulvovaginal disease --> obsolete rare non-malformative uterovaginal or vulvovaginal disease
+ * [MONDO:0015861](http://purl.obolibrary.org/obo/MONDO_0015861) rare uterine adnexal tumor --> obsolete rare uterine adnexal tumor
+ * [MONDO:0015875](http://purl.obolibrary.org/obo/MONDO_0015875) rare non-malformative uterine adnexal disease --> obsolete rare non-malformative uterine adnexal disease
+ * [MONDO:0015876](http://purl.obolibrary.org/obo/MONDO_0015876) rare vulvovaginal tumor --> obsolete rare vulvovaginal tumor
+ * [MONDO:0015885](http://purl.obolibrary.org/obo/MONDO_0015885) rare insulin-resistance syndrome --> obsolete rare insulin-resistance syndrome
+ * [MONDO:0015887](http://purl.obolibrary.org/obo/MONDO_0015887) rare diabetes mellitus type 2 --> obsolete rare diabetes mellitus type 2
+ * [MONDO:0015888](http://purl.obolibrary.org/obo/MONDO_0015888) other rare diabetes mellitus --> obsolete other rare diabetes mellitus
+ * [MONDO:0015889](http://purl.obolibrary.org/obo/MONDO_0015889) rare hypothalamic or pituitary disease --> obsolete rare hypothalamic or pituitary disease
+ * [MONDO:0015890](http://purl.obolibrary.org/obo/MONDO_0015890) rare disorder with congenital hypogonadotropic hypogonadism --> obsolete rare disorder with congenital hypogonadotropic hypogonadism
+ * [MONDO:0015912](http://purl.obolibrary.org/obo/MONDO_0015912) MYH-9 related disease --> macrothrombocytopenia and granulocyte inclusions with or without nephritis or sensorineural hearing loss
+ * [MONDO:0015913](http://purl.obolibrary.org/obo/MONDO_0015913) rare thrombotic disease of hematologic origin --> obsolete rare thrombotic disease of hematologic origin
+ * [MONDO:0015916](http://purl.obolibrary.org/obo/MONDO_0015916) rare neuroinflammatory or neuroimmunological disease --> obsolete rare neuroinflammatory or neuroimmunological disease
+ * [MONDO:0015937](http://purl.obolibrary.org/obo/MONDO_0015937) rare inflammatory eye disease --> obsolete rare inflammatory eye disease
+ * [MONDO:0015964](http://purl.obolibrary.org/obo/MONDO_0015964) obsolete rare genetic palpebral, lacrimal system and conjunctival disease --> obsolete obsolete rare genetic palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0015965](http://purl.obolibrary.org/obo/MONDO_0015965) rare genetic refraction anomaly --> obsolete rare genetic refraction anomaly
+ * [MONDO:0015968](http://purl.obolibrary.org/obo/MONDO_0015968) rare genetic hypothalamic or pituitary disease --> obsolete rare genetic hypothalamic or pituitary disease
+ * [MONDO:0015970](http://purl.obolibrary.org/obo/MONDO_0015970) rare genetic parathyroid disease and phosphocalcic metabolism disorder --> obsolete rare genetic parathyroid disease and phosphocalcic metabolism disorder
+ * [MONDO:0016055](http://purl.obolibrary.org/obo/MONDO_0016055) syndrome with corpus callosum agenesis /dysgenesis as a major feature --> obsolete syndrome with corpus callosum agenesis /dysgenesis as a major feature
+ * [MONDO:0016132](http://purl.obolibrary.org/obo/MONDO_0016132) rare hereditary disease with peripheral neuropathy --> obsolete rare hereditary disease with peripheral neuropathy
+ * [MONDO:0016133](http://purl.obolibrary.org/obo/MONDO_0016133) rare hereditary metabolic disease with peripheral neuropathy --> obsolete rare hereditary metabolic disease with peripheral neuropathy
+ * [MONDO:0016134](http://purl.obolibrary.org/obo/MONDO_0016134) rare hereditary systemic disease with peripheral neuropathy --> obsolete rare hereditary systemic disease with peripheral neuropathy
+ * [MONDO:0016135](http://purl.obolibrary.org/obo/MONDO_0016135) rare hereditary neurologic disease with peripheral neuropathy --> obsolete rare hereditary neurologic disease with peripheral neuropathy
+ * [MONDO:0016232](http://purl.obolibrary.org/obo/MONDO_0016232) rare venous malformation --> obsolete rare venous malformation
+ * [MONDO:0016233](http://purl.obolibrary.org/obo/MONDO_0016233) rare lymphatic system malformation --> obsolete rare lymphatic system malformation
+ * [MONDO:0016320](http://purl.obolibrary.org/obo/MONDO_0016320) rare hereditary thrombophilia --> obsolete rare hereditary thrombophilia
+ * [MONDO:0016406](http://purl.obolibrary.org/obo/MONDO_0016406) other metabolic disease with epilepsy --> obsolete other metabolic disease with epilepsy
+ * [MONDO:0016507](http://purl.obolibrary.org/obo/MONDO_0016507) rare surgically correctable form of primary aldosteronism --> obsolete rare surgically correctable form of primary aldosteronism
+ * [MONDO:0016508](http://purl.obolibrary.org/obo/MONDO_0016508) rare non surgically correctable form of primary aldosteronism --> obsolete rare non surgically correctable form of primary aldosteronism
+ * [MONDO:0016631](http://purl.obolibrary.org/obo/MONDO_0016631) hemorrhagic disorder due to an acquired platelet anomaly --> obsolete hemorrhagic disorder due to an acquired platelet anomaly
+ * [MONDO:0016633](http://purl.obolibrary.org/obo/MONDO_0016633) thrombotic disorder due to a constitutional coagulation factors defect --> obsolete thrombotic disorder due to a constitutional coagulation factors defect
+ * [MONDO:0016634](http://purl.obolibrary.org/obo/MONDO_0016634) thrombotic disorder due to an acquired coagulation factors defect --> obsolete thrombotic disorder due to an acquired coagulation factors defect
+ * [MONDO:0016636](http://purl.obolibrary.org/obo/MONDO_0016636) thrombotic disorder due to a constitutional platelet anomaly --> obsolete thrombotic disorder due to a constitutional platelet anomaly
+ * [MONDO:0016637](http://purl.obolibrary.org/obo/MONDO_0016637) thrombotic disorder due to an acquired platelet anomaly --> obsolete thrombotic disorder due to an acquired platelet anomaly
+ * [MONDO:0016768](http://purl.obolibrary.org/obo/MONDO_0016768) rare mucosal lichen planus --> obsolete rare mucosal lichen planus
+ * [MONDO:0016992](http://purl.obolibrary.org/obo/MONDO_0016992) peeling skin syndrome type B --> obsolete peeling skin syndrome type B
+ * [MONDO:0017120](http://purl.obolibrary.org/obo/MONDO_0017120) other syndrome with a central nervous system malformation as major feature --> obsolete other syndrome with a central nervous system malformation as major feature
+ * [MONDO:0017122](http://purl.obolibrary.org/obo/MONDO_0017122) genetic syndrome with corpus callosum agenesis/dysgenesis as a major feature --> obsolete genetic syndrome with corpus callosum agenesis/dysgenesis as a major feature
+ * [MONDO:0017125](http://purl.obolibrary.org/obo/MONDO_0017125) oculofaciocardiodental syndrome --> obsolete oculofaciocardiodental syndrome
+ * [MONDO:0017142](http://purl.obolibrary.org/obo/MONDO_0017142) hemorrhagic disorder due to a qualitative platelet defect --> obsolete hemorrhagic disorder due to a qualitative platelet defect
+ * [MONDO:0017159](http://purl.obolibrary.org/obo/MONDO_0017159) syndrome with pulmonary hypertension as a major feature --> obsolete syndrome with pulmonary hypertension as a major feature
+ * [MONDO:0017166](http://purl.obolibrary.org/obo/MONDO_0017166) rare tumor of salivary glands --> obsolete rare tumor of salivary glands
+ * [MONDO:0017297](http://purl.obolibrary.org/obo/MONDO_0017297) CLIPPERS --> chronic lymphocytic inflammation with pontine perivascular enhancement responsive to steroids {xref="Orphanet:284448"}
+ * [MONDO:0017631](http://purl.obolibrary.org/obo/MONDO_0017631) rare tumor of gallbladder and extrahepatic biliary tract --> obsolete rare tumor of gallbladder and extrahepatic biliary tract
+ * [MONDO:0017633](http://purl.obolibrary.org/obo/MONDO_0017633) rare intoxication due to medical products --> obsolete rare intoxication due to medical products
+ * [MONDO:0017637](http://purl.obolibrary.org/obo/MONDO_0017637) rare parkinsonian syndrome due to intoxication --> obsolete rare parkinsonian syndrome due to intoxication
+ * [MONDO:0017652](http://purl.obolibrary.org/obo/MONDO_0017652) rare disease with myoclonus as a major feature --> obsolete rare disease with myoclonus as a major feature
+ * [MONDO:0017657](http://purl.obolibrary.org/obo/MONDO_0017657) rare paroxysmal movement disorder --> obsolete rare paroxysmal movement disorder
+ * [MONDO:0017661](http://purl.obolibrary.org/obo/MONDO_0017661) rare parkinsonian syndrome due to genetic neurodegenerative disease --> obsolete rare parkinsonian syndrome due to genetic neurodegenerative disease
+ * [MONDO:0017665](http://purl.obolibrary.org/obo/MONDO_0017665) rare genetic disease with myoclonus as a major feature --> obsolete rare genetic disease with myoclonus as a major feature
+ * [MONDO:0017669](http://purl.obolibrary.org/obo/MONDO_0017669) disease with diffuse palmoplantar keratoderma as a major feature --> obsolete disease with diffuse palmoplantar keratoderma as a major feature
+ * [MONDO:0017671](http://purl.obolibrary.org/obo/MONDO_0017671) autosomal recessive disease with diffuse palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease with diffuse palmoplantar keratoderma as a major feature
+ * [MONDO:0017674](http://purl.obolibrary.org/obo/MONDO_0017674) disease with focal palmoplantar keratoderma as a major feature --> obsolete disease with focal palmoplantar keratoderma as a major feature
+ * [MONDO:0017678](http://purl.obolibrary.org/obo/MONDO_0017678) obsolete disease with punctate palmoplantar keratoderma as a major feature --> obsolete obsolete disease with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017679](http://purl.obolibrary.org/obo/MONDO_0017679) obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017820](http://purl.obolibrary.org/obo/MONDO_0017820) obsolete disease with Cushing syndrome as a major feature --> obsolete obsolete disease with Cushing syndrome as a major feature
+ * [MONDO:0018033](http://purl.obolibrary.org/obo/MONDO_0018033) other immunodeficiency syndromes due to defects in innate immunity --> obsolete other immunodeficiency syndromes due to defects in innate immunity
+ * [MONDO:0018041](http://purl.obolibrary.org/obo/MONDO_0018041) other immunodeficiency syndrome with predominantly antibody defects --> obsolete other immunodeficiency syndrome with predominantly antibody defects
+ * [MONDO:0018235](http://purl.obolibrary.org/obo/MONDO_0018235) dysostosis with limb anomaly as a major feature --> obsolete dysostosis with limb anomaly as a major feature
+ * [MONDO:0018236](http://purl.obolibrary.org/obo/MONDO_0018236) dysostosis with limb and face anomalies as a major feature --> obsolete dysostosis with limb and face anomalies as a major feature
+ * [MONDO:0018265](http://purl.obolibrary.org/obo/MONDO_0018265) rare disorder with dystonia and other neurologic or systemic manifestation --> obsolete rare disorder with dystonia and other neurologic or systemic manifestation
+ * [MONDO:0018285](http://purl.obolibrary.org/obo/MONDO_0018285) X-linked congenital disorder of glycosylation with intellectual disability as a major feature --> obsolete X-linked congenital disorder of glycosylation with intellectual disability as a major feature
+ * [MONDO:0018286](http://purl.obolibrary.org/obo/MONDO_0018286) non-X-linked congenital disorder of glycosylation with intellectual disability as a major feature --> obsolete non-X-linked congenital disorder of glycosylation with intellectual disability as a major feature
+ * [MONDO:0018287](http://purl.obolibrary.org/obo/MONDO_0018287) congenital disorder of glycosylation with epilepsy as a major feature --> obsolete congenital disorder of glycosylation with epilepsy as a major feature
+ * [MONDO:0018290](http://purl.obolibrary.org/obo/MONDO_0018290) congenital disorder of glycosylation with cardiac malformation as a major feature --> obsolete congenital disorder of glycosylation with cardiac malformation as a major feature
+ * [MONDO:0018294](http://purl.obolibrary.org/obo/MONDO_0018294) congenital disorder of glycosylation with nephropathy as a major feature --> obsolete congenital disorder of glycosylation with nephropathy as a major feature
+ * [MONDO:0018295](http://purl.obolibrary.org/obo/MONDO_0018295) congenital disorder of glycosylation with deafness as a major feature --> obsolete congenital disorder of glycosylation with deafness as a major feature
+ * [MONDO:0018377](http://purl.obolibrary.org/obo/MONDO_0018377) rare hereditary disease with avascular necrosis --> obsolete rare hereditary disease with avascular necrosis
+ * [MONDO:0018386](http://purl.obolibrary.org/obo/MONDO_0018386) rare male infertility due to hypothalamic-pituitary-gonadal axis disorder --> obsolete rare male infertility due to hypothalamic-pituitary-gonadal axis disorder
+ * [MONDO:0018387](http://purl.obolibrary.org/obo/MONDO_0018387) rare male infertility due to adrenal disorder --> obsolete rare male infertility due to adrenal disorder
+ * [MONDO:0018388](http://purl.obolibrary.org/obo/MONDO_0018388) rare male infertility due to testicular endocrine disorder --> obsolete rare male infertility due to testicular endocrine disorder
+ * [MONDO:0018396](http://purl.obolibrary.org/obo/MONDO_0018396) rare male fertility disorder with obstructive azoospermia --> obsolete rare male fertility disorder with obstructive azoospermia
+ * [MONDO:0018397](http://purl.obolibrary.org/obo/MONDO_0018397) female infertility due to hypothalamic-pituitary-gonadal axis disorder --> obsolete female infertility due to hypothalamic-pituitary-gonadal axis disorder
+ * [MONDO:0018400](http://purl.obolibrary.org/obo/MONDO_0018400) rare female infertility due to an adrenal disorder --> obsolete rare female infertility due to an adrenal disorder
+ * [MONDO:0018401](http://purl.obolibrary.org/obo/MONDO_0018401) female infertility due to an anomaly of ovarian function --> obsolete female infertility due to an anomaly of ovarian function
+ * [MONDO:0018405](http://purl.obolibrary.org/obo/MONDO_0018405) rare male infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin --> obsolete rare male infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin
+ * [MONDO:0018406](http://purl.obolibrary.org/obo/MONDO_0018406) rare male infertility due to adrenal disorder of genetic origin --> obsolete rare male infertility due to adrenal disorder of genetic origin
+ * [MONDO:0018409](http://purl.obolibrary.org/obo/MONDO_0018409) rare genetic disorder with obstructive azoospermia --> obsolete rare genetic disorder with obstructive azoospermia
+ * [MONDO:0018411](http://purl.obolibrary.org/obo/MONDO_0018411) rare female infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin --> obsolete rare female infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin
+ * [MONDO:0018412](http://purl.obolibrary.org/obo/MONDO_0018412) rare female infertility due to adrenal disorder of genetic origin --> obsolete rare female infertility due to adrenal disorder of genetic origin
+ * [MONDO:0018413](http://purl.obolibrary.org/obo/MONDO_0018413) female infertility due to an anomaly of ovarian function of genetic origin --> obsolete female infertility due to an anomaly of ovarian function of genetic origin
+ * [MONDO:0018455](http://purl.obolibrary.org/obo/MONDO_0018455) dysostosis of genetic origin with limb anomaly as a major feature --> obsolete dysostosis of genetic origin with limb anomaly as a major feature
+ * [MONDO:0018457](http://purl.obolibrary.org/obo/MONDO_0018457) rare genetic bone development disorder --> obsolete rare genetic bone development disorder
+ * [MONDO:0018488](http://purl.obolibrary.org/obo/MONDO_0018488) rare genetic odontal or periodontal disorder --> obsolete rare genetic odontal or periodontal disorder
+ * [MONDO:0018520](http://purl.obolibrary.org/obo/MONDO_0018520) rare epithelial tumor of pancreas --> obsolete rare epithelial tumor of pancreas
+ * [MONDO:0018530](http://purl.obolibrary.org/obo/MONDO_0018530) rare epithelial tumor of liver and intrahepatic biliary tract --> obsolete rare epithelial tumor of liver and intrahepatic biliary tract
+ * [MONDO:0018539](http://purl.obolibrary.org/obo/MONDO_0018539) rare epithelial tumor of small intestine --> obsolete rare epithelial tumor of small intestine
+ * [MONDO:0018719](http://purl.obolibrary.org/obo/MONDO_0018719) obsolete rare capillary malformation with associated anomalies --> obsolete obsolete rare capillary malformation with associated anomalies
+ * [MONDO:0018721](http://purl.obolibrary.org/obo/MONDO_0018721) rare combined vascular malformation --> obsolete rare combined vascular malformation
+ * [MONDO:0018723](http://purl.obolibrary.org/obo/MONDO_0018723) rare vascular malformation of major vessels --> obsolete rare vascular malformation of major vessels
+ * [MONDO:0018730](http://purl.obolibrary.org/obo/MONDO_0018730) rare genetic venous malformation --> obsolete rare genetic venous malformation
+ * [MONDO:0018753](http://purl.obolibrary.org/obo/MONDO_0018753) rare disease with malignant hyperthermia --> obsolete rare disease with malignant hyperthermia
+ * [MONDO:0018798](http://purl.obolibrary.org/obo/MONDO_0018798) other genetic dermis disorder --> obsolete other genetic dermis disorder
+ * [MONDO:0018833](http://purl.obolibrary.org/obo/MONDO_0018833) rare idiopathic macular telangiectasia --> obsolete rare idiopathic macular telangiectasia
+ * [MONDO:0018880](http://purl.obolibrary.org/obo/MONDO_0018880) rare teratologic disease --> obsolete rare teratologic disease
+ * [MONDO:0018972](http://purl.obolibrary.org/obo/MONDO_0018972) rare epithelial tumor of stomach --> obsolete rare epithelial tumor of stomach
+ * [MONDO:0019014](http://purl.obolibrary.org/obo/MONDO_0019014) mutilating palmoplantar keratoderma with periorificial keratotic plaques --> obsolete mutilating palmoplantar keratoderma with periorificial keratotic plaques
+ * [MONDO:0019038](http://purl.obolibrary.org/obo/MONDO_0019038) rare maxillo-facial surgical disease --> obsolete rare maxillo-facial surgical disease
+ * [MONDO:0019039](http://purl.obolibrary.org/obo/MONDO_0019039) rare hemorrhagic disorder due to a constitutional coagulation factors defect --> obsolete rare hemorrhagic disorder due to a constitutional coagulation factors defect
+ * [MONDO:0019061](http://purl.obolibrary.org/obo/MONDO_0019061) rare parathyroid disease and phosphocalcic metabolism anomaly --> obsolete rare parathyroid disease and phosphocalcic metabolism anomaly
+ * [MONDO:0019097](http://purl.obolibrary.org/obo/MONDO_0019097) hemorrhagic disorder due to a constitutional platelet anomaly --> obsolete hemorrhagic disorder due to a constitutional platelet anomaly
+ * [MONDO:0019252](http://purl.obolibrary.org/obo/MONDO_0019252) other metabolic disease with skin involvement --> obsolete other metabolic disease with skin involvement
+ * [MONDO:0019274](http://purl.obolibrary.org/obo/MONDO_0019274) other epidermal disorder --> obsolete other epidermal disorder
+ * [MONDO:0019275](http://purl.obolibrary.org/obo/MONDO_0019275) other genetic epidermal disease --> obsolete other genetic epidermal disease
+ * [MONDO:0019304](http://purl.obolibrary.org/obo/MONDO_0019304) rare photodermatosis --> obsolete rare photodermatosis
+ * [MONDO:0019546](http://purl.obolibrary.org/obo/MONDO_0019546) other acquired skin disease --> obsolete other acquired skin disease
+ * [MONDO:0019590](http://purl.obolibrary.org/obo/MONDO_0019590) rare endocrine growth disease --> obsolete rare endocrine growth disease
+ * [MONDO:0019602](http://purl.obolibrary.org/obo/MONDO_0019602) other inborn metabolic disease --> obsolete other inborn metabolic disease
+ * [MONDO:0019663](http://purl.obolibrary.org/obo/MONDO_0019663) short rib-polydactyly syndrome, Saldino-Noonan type --> obsolete short rib-polydactyly syndrome, Saldino-Noonan type
+ * [MONDO:0019744](http://purl.obolibrary.org/obo/MONDO_0019744) rare renal tubular disease --> obsolete rare renal tubular disease
+ * [MONDO:0019748](http://purl.obolibrary.org/obo/MONDO_0019748) rare cause of hypertension --> obsolete rare cause of hypertension
+ * [MONDO:0019936](http://purl.obolibrary.org/obo/MONDO_0019936) rare otorhinolaryngological malformation --> obsolete rare otorhinolaryngological malformation
+ * [MONDO:0019937](http://purl.obolibrary.org/obo/MONDO_0019937) rare gynecologic or obstetric disease --> obsolete rare gynecologic or obstetric disease
+ * [MONDO:0020013](http://purl.obolibrary.org/obo/MONDO_0020013) rare odontologic disease --> obsolete rare odontologic disease
+ * [MONDO:0020014](http://purl.obolibrary.org/obo/MONDO_0020014) rare disease with odontological manifestation --> obsolete rare disease with odontological manifestation
+ * [MONDO:0020016](http://purl.obolibrary.org/obo/MONDO_0020016) rare neurologic disease with psychiatric involvement --> obsolete rare neurologic disease with psychiatric involvement
+ * [MONDO:0020035](http://purl.obolibrary.org/obo/MONDO_0020035) rare otorhinolaryngologic tumor --> obsolete rare otorhinolaryngologic tumor
+ * [MONDO:0020094](http://purl.obolibrary.org/obo/MONDO_0020094) autosomal dominant disease with diffuse palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease with diffuse palmoplantar keratoderma as a major feature
+ * [MONDO:0020095](http://purl.obolibrary.org/obo/MONDO_0020095) autosomal dominant disease associated with focal palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease associated with focal palmoplantar keratoderma as a major feature
+ * [MONDO:0020097](http://purl.obolibrary.org/obo/MONDO_0020097) autosomal recessive disease with focal palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease with focal palmoplantar keratoderma as a major feature
+ * [MONDO:0020104](http://purl.obolibrary.org/obo/MONDO_0020104) rare constitutional hemolytic anemia due to an enzyme disorder --> obsolete rare constitutional hemolytic anemia due to an enzyme disorder
+ * [MONDO:0020149](http://purl.obolibrary.org/obo/MONDO_0020149) rare eye disease due to a differentiation anomaly --> obsolete rare eye disease due to a differentiation anomaly
+ * [MONDO:0020150](http://purl.obolibrary.org/obo/MONDO_0020150) obsolete rare palpebral, lacrimal system and conjunctival disease --> obsolete obsolete rare palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0020152](http://purl.obolibrary.org/obo/MONDO_0020152) rare eyelid malformation --> obsolete rare eyelid malformation
+ * [MONDO:0020169](http://purl.obolibrary.org/obo/MONDO_0020169) rare disorder with ptosis --> obsolete rare disorder with ptosis
+ * [MONDO:0020206](http://purl.obolibrary.org/obo/MONDO_0020206) rare refraction anomaly --> obsolete rare refraction anomaly
+ * [MONDO:0020209](http://purl.obolibrary.org/obo/MONDO_0020209) rare hyperopia and astigmatism --> obsolete rare hyperopia and astigmatism
+ * [MONDO:0020222](http://purl.obolibrary.org/obo/MONDO_0020222) rare disease with glaucoma as a major feature --> obsolete rare disease with glaucoma as a major feature
+ * [MONDO:0020223](http://purl.obolibrary.org/obo/MONDO_0020223) lens and zonula anomaly --> obsolete lens and zonula anomaly
+ * [MONDO:0020251](http://purl.obolibrary.org/obo/MONDO_0020251) rare strabismus and restriction syndrome --> obsolete rare strabismus and restriction syndrome
+ * [MONDO:0020258](http://purl.obolibrary.org/obo/MONDO_0020258) oculomotor apraxia or related oculomotor disease --> obsolete oculomotor apraxia or related oculomotor disease
+ * [MONDO:0020484](http://purl.obolibrary.org/obo/MONDO_0020484) rare familial disorder with hypertrophic cardiomyopathy --> obsolete rare familial disorder with hypertrophic cardiomyopathy
+ * [MONDO:0020671](http://purl.obolibrary.org/obo/MONDO_0020671) susceptibility to ischemic stroke --> obsolete susceptibility to ischemic stroke
+ * [MONDO:0020737](http://purl.obolibrary.org/obo/MONDO_0020737) optic atrophy 10 with or without ataxia, mental retardation, and seizures --> optic atrophy 10 with or without ataxia, intellectual disability, and seizures
+ * [MONDO:0020755](http://purl.obolibrary.org/obo/MONDO_0020755) heart block --> obsolete heart block
+ * [MONDO:0020803](http://purl.obolibrary.org/obo/MONDO_0020803) bundle branch block --> obsolete bundle branch block
+ * [MONDO:0020846](http://purl.obolibrary.org/obo/MONDO_0020846) mental retardation, autosomal recessive 64 --> intellectual disability, autosomal recessive 64
+ * [MONDO:0020847](http://purl.obolibrary.org/obo/MONDO_0020847) mental retardation, autosomal dominant 58 --> intellectual disability, autosomal dominant 58
+ * [MONDO:0021570](http://purl.obolibrary.org/obo/MONDO_0021570) Hauptmann-Thannhauser muscular dystrophy --> obsolete Hauptmann-Thannhauser muscular dystrophy
+ * [MONDO:0021849](http://purl.obolibrary.org/obo/MONDO_0021849) alopecia macular degeneration growth retardation syndome --> alopecia macular degeneration growth retardation syndrome
+ * [MONDO:0022676](http://purl.obolibrary.org/obo/MONDO_0022676) cataract - glaucoma --> obsolete cataract - glaucoma
+ * [MONDO:0022732](http://purl.obolibrary.org/obo/MONDO_0022732) chorea minor --> obsolete chorea minor
+ * [MONDO:0022778](http://purl.obolibrary.org/obo/MONDO_0022778) cleft lip palate mental retardation corneal opacity --> cleft lip palate intellectual disability corneal opacity
+ * [MONDO:0022832](http://purl.obolibrary.org/obo/MONDO_0022832) congenital heart disease radio ulnar synostosis mental retardation --> congenital heart disease radio ulnar synostosis intellectual disability
+ * [MONDO:0022865](http://purl.obolibrary.org/obo/MONDO_0022865) corneal dystrophy ichthyosis microcephaly mental retardation --> corneal dystrophy ichthyosis microcephaly intellectual disability
+ * [MONDO:0022889](http://purl.obolibrary.org/obo/MONDO_0022889) craniostenosis with congenital heart disease mental retardation --> craniostenosis with congenital heart disease intellectual disability
+ * [MONDO:0022898](http://purl.obolibrary.org/obo/MONDO_0022898) craniosynostosis mental retardation heart defects --> craniosynostosis intellectual disability heart defects
+ * [MONDO:0023272](http://purl.obolibrary.org/obo/MONDO_0023272) goniodysgenesis mental retardation short stature --> goniodysgenesis intellectual disability short stature
+ * [MONDO:0024542](http://purl.obolibrary.org/obo/MONDO_0024542) cerebellar ataxia, mental retardation, and dysequilibrium syndrome 1 --> cerebellar ataxia, intellectual disability, and dysequilibrium syndrome 1
+ * [MONDO:0025517](http://purl.obolibrary.org/obo/MONDO_0025517) shrimp allergy --> obsolete shrimp allergy
+ * [MONDO:0025518](http://purl.obolibrary.org/obo/MONDO_0025518) aspirin allergy --> obsolete aspirin allergy
+ * [MONDO:0026733](http://purl.obolibrary.org/obo/MONDO_0026733) intellectual developmental disorder, x-linked, syndromic, Hackmann-Di Donato type --> intellectual developmental disorder, X-linked, syndromic, Hackmann-Di Donato type
+ * [MONDO:0026763](http://purl.obolibrary.org/obo/MONDO_0026763) holoprosencephaly 13, x-linked --> holoprosencephaly 13, X-linked
+ * [MONDO:0026767](http://purl.obolibrary.org/obo/MONDO_0026767) immunodeficiency 74, covid19-related, x-linked --> immunodeficiency 74, covid19-related, X-linked
+ * [MONDO:0026768](http://purl.obolibrary.org/obo/MONDO_0026768) warfarin sensitivity, x-linked --> warfarin sensitivity, X-linked
+ * [MONDO:0028737](http://purl.obolibrary.org/obo/MONDO_0028737) biliary atresia disorder --> obsolete biliary atresia disorder
+ * [MONDO:0030009](http://purl.obolibrary.org/obo/MONDO_0030009) alopecia-mental retardation syndrome 4 --> alopecia-intellectual disability syndrome 4
+ * [MONDO:0032605](http://purl.obolibrary.org/obo/MONDO_0032605) mental retardation, autosomal recessive 66 --> intellectual disability, autosomal recessive 66
+ * [MONDO:0042724](http://purl.obolibrary.org/obo/MONDO_0042724) macrocephaly, mental retardation, short stature, spastic paraplegia and cns malformations --> macrocephaly, intellectual disability, short stature, spastic paraplegia and cns malformations
+ * [MONDO:0042726](http://purl.obolibrary.org/obo/MONDO_0042726) macrogyria, pseudobulbar palsy and mental retardation --> macrogyria, pseudobulbar palsy and intellectual disability
+ * [MONDO:0043139](http://purl.obolibrary.org/obo/MONDO_0043139) microcephaly sparse hair mental retardation seizures --> microcephaly sparse hair intellectual disability seizures
+ * [MONDO:0044313](http://purl.obolibrary.org/obo/MONDO_0044313) mental retardation, autosomal recessive 60 --> intellectual disability, autosomal recessive 60
+ * [MONDO:0044636](http://purl.obolibrary.org/obo/MONDO_0044636) rare hyperkinetic movement disorder --> obsolete rare hyperkinetic movement disorder
+ * [MONDO:0044680](http://purl.obolibrary.org/obo/MONDO_0044680) short rib-polydactyly syndrome type 5 --> obsolete short rib-polydactyly syndrome type 5
+ * [MONDO:0044808](http://purl.obolibrary.org/obo/MONDO_0044808) early onset primary dystonia --> obsolete early onset primary dystonia
+ * [MONDO:0049222](http://purl.obolibrary.org/obo/MONDO_0049222) intellectual disability, x-linked 107 --> intellectual disability, X-linked 107
+ * [MONDO:0054837](http://purl.obolibrary.org/obo/MONDO_0054837) mental retardation, autosomal dominant 57 --> intellectual disability, autosomal dominant 57
+ * [MONDO:0060649](http://purl.obolibrary.org/obo/MONDO_0060649) short stature, facial dysmorphism, and skeletal anomalies with or without cardiac anomalies --> obsolete short stature, facial dysmorphism, and skeletal anomalies with or without cardiac anomalies
+
+# v2021-03-03
+
+## New Classes
+
+ * [MONDO:0030923](http://purl.obolibrary.org/obo/MONDO_0030923) frontotemporal dementia and/or amyotrophic lateral sclerosis
+ * [MONDO:0035112](http://purl.obolibrary.org/obo/MONDO_0035112) acute myeloid leukemia with BCR-ABL1
+ * [MONDO:0100237](http://purl.obolibrary.org/obo/MONDO_0100237) inherited cutis laxa
+ * [MONDO:0100238](http://purl.obolibrary.org/obo/MONDO_0100238) inherited Fanconi renotubular syndrome
+ * [MONDO:0100239](http://purl.obolibrary.org/obo/MONDO_0100239) inherited hypertrophic pyloric stenosis
+ * [MONDO:0100240](http://purl.obolibrary.org/obo/MONDO_0100240) inherited thrombophilia
+ * [MONDO:0100241](http://purl.obolibrary.org/obo/MONDO_0100241) inherited thrombocytopenia
+ * [MONDO:0100242](http://purl.obolibrary.org/obo/MONDO_0100242) glioma susceptibility
+ * [MONDO:0100243](http://purl.obolibrary.org/obo/MONDO_0100243) inherited paroxysmal nocturnal hemoglobinuria
+ * [MONDO:0100244](http://purl.obolibrary.org/obo/MONDO_0100244) paroxysmal nocturnal hemoglobinuria
+ * [MONDO:0100245](http://purl.obolibrary.org/obo/MONDO_0100245) acquired paroxysmal nocturnal hemoglobinuria
+ * [MONDO:0100246](http://purl.obolibrary.org/obo/MONDO_0100246) migraine with or without aura, susceptibility to
+ * [MONDO:0100247](http://purl.obolibrary.org/obo/MONDO_0100247) multiple congenital anomalies-hypotonia-seizures syndrome
+ * [MONDO:0100248](http://purl.obolibrary.org/obo/MONDO_0100248) rapidly progressive primary central nervous system vasculitis
+ * [MONDO:0100249](http://purl.obolibrary.org/obo/MONDO_0100249) 46,XX testicular disorder of sex development
+ * [MONDO:0100250](http://purl.obolibrary.org/obo/MONDO_0100250) 46,XX sex reversal 1
+ * [MONDO:0100251](http://purl.obolibrary.org/obo/MONDO_0100251) familial hyperphosphatemic tumoral calcinosis/hyperphosphatemic hyperostosis syndrome
+ * [MONDO:0100252](http://purl.obolibrary.org/obo/MONDO_0100252) tumoral calcinosis, hyperphosphatemic, familial, 1
+ * [MONDO:0100253](http://purl.obolibrary.org/obo/MONDO_0100253) Roberts-SC phocomelia syndrome
+ * [MONDO:0100255](http://purl.obolibrary.org/obo/MONDO_0100255) adenosine kinase deficiency
+ * [MONDO:0100280](http://purl.obolibrary.org/obo/MONDO_0100280) Waldenstrom macroglobulinemia
+ * [MONDO:0100281](http://purl.obolibrary.org/obo/MONDO_0100281) macroglobulinemia, Waldenstrom, 1
+ * [MONDO:0100282](http://purl.obolibrary.org/obo/MONDO_0100282) SC phocomelia syndrome
+ * [MONDO:0100284](http://purl.obolibrary.org/obo/MONDO_0100284) X-linked intellectual disability
+ * [MONDO:0100285](http://purl.obolibrary.org/obo/MONDO_0100285) extrahepatic biliary atresia
+ * [MONDO:0100286](http://purl.obolibrary.org/obo/MONDO_0100286) respiratory syncytial virus bronchiolitis
+ * [MONDO:0100288](http://purl.obolibrary.org/obo/MONDO_0100288) enhanced S-cone syndrome
+ * [MONDO:0100289](http://purl.obolibrary.org/obo/MONDO_0100289) Goldmann-Favre syndrome
+
+## Obsoletions
+
+ * [MONDO:0000834](http://purl.obolibrary.org/obo/MONDO_0000834) bone deterioration disease --> obsolete bone deterioration disease
+ * [MONDO:0007926](http://purl.obolibrary.org/obo/MONDO_0007926) Waldenstrom macroglobulinemia --> obsolete Waldenstrom macroglobulinemia
+ * [MONDO:0008112](http://purl.obolibrary.org/obo/MONDO_0008112) Goldenhar syndrome --> obsolete Goldenhar syndrome
+ * [MONDO:0008220](http://purl.obolibrary.org/obo/MONDO_0008220) pepsinogen 3, group 1 --> obsolete pepsinogen 3, group 1
+ * [MONDO:0008897](http://purl.obolibrary.org/obo/MONDO_0008897) hyperphosphatemic familial tumoral calcinosis --> obsolete tumoral calcinosis, hyperphosphatemic, familial, 1
+ * [MONDO:0009989](http://purl.obolibrary.org/obo/MONDO_0009989) enhanced S-cone syndrome --> obsolete enhanced S-cone syndrome
+ * [MONDO:0010009](http://purl.obolibrary.org/obo/MONDO_0010009) SC phocomelia syndrome --> obsolete SC phocomelia syndrome
+ * [MONDO:0010303](http://purl.obolibrary.org/obo/MONDO_0010303) colobomatous microphthalmia --> obsolete colobomatous microphthalmia
+ * [MONDO:0010372](http://purl.obolibrary.org/obo/MONDO_0010372) Clark-Baraitser syndrome --> obsolete Clark-Baraitser syndrome
+ * [MONDO:0010766](http://purl.obolibrary.org/obo/MONDO_0010766) 46,XX testicular disorder of sex development --> obsolete 46,XX sex reversal 1
+ * [MONDO:0011204](http://purl.obolibrary.org/obo/MONDO_0011204) cerebellar degeneration-related autoantigen 3 --> obsolete cerebellar degeneration-related autoantigen 3
+ * [MONDO:0011623](http://purl.obolibrary.org/obo/MONDO_0011623) spinocerebellar ataxia, autosomal recessive 1 --> obsolete spinocerebellar ataxia, autosomal recessive 1
+ * [MONDO:0013676](http://purl.obolibrary.org/obo/MONDO_0013676) hypermethioninemia due to adenosine kinase deficiency --> obsolete hypermethioninemia due to adenosine kinase deficiency
+ * [MONDO:0013861](http://purl.obolibrary.org/obo/MONDO_0013861) amyotrophic lateral sclerosis type 17 --> obsolete amyotrophic lateral sclerosis type 17
+ * [MONDO:0014655](http://purl.obolibrary.org/obo/MONDO_0014655) Bethlem myopathy 2 --> obsolete Bethlem myopathy 2
+ * [MONDO:0016640](http://purl.obolibrary.org/obo/MONDO_0016640) fibrous dysplasia of bone --> obsolete fibrous dysplasia of bone
+ * [MONDO:0017911](http://purl.obolibrary.org/obo/MONDO_0017911) cleft lip/palate-ectodermal dysplasia syndrome --> obsolete cleft lip/palate-ectodermal dysplasia syndrome
+ * [MONDO:0018641](http://purl.obolibrary.org/obo/MONDO_0018641) paroxysmal nocturnal hemoglobinuria --> obsolete paroxysmal nocturnal hemoglobinuria
+ * [MONDO:0023191](http://purl.obolibrary.org/obo/MONDO_0023191) Freire-Maia odontotrichomelic syndrome --> obsolete Freire-Maia odontotrichomelic syndrome
+ * [MONDO:0033939](http://purl.obolibrary.org/obo/MONDO_0033939) hypohidrosis-electrolyte imbalance-lacrimal gland dysfunction-ichthyosis-xerostomia syndrome --> obsolete hypohidrosis-electrolyte imbalance-lacrimal gland dysfunction-ichthyosis-xerostomia syndrome
+ * [MONDO:0043181](http://purl.obolibrary.org/obo/MONDO_0043181) refsum disease with increased pipecolic acidemia --> obsolete Refsum disease with increased pipecolic acidemia
+
+## Renaming
+
+ * [MONDO:0000834](http://purl.obolibrary.org/obo/MONDO_0000834) bone deterioration disease --> obsolete bone deterioration disease
+ * [MONDO:0003321](http://purl.obolibrary.org/obo/MONDO_0003321) hereditary Wilms' tumor --> hereditary Wilms tumor
+ * [MONDO:0005578](http://purl.obolibrary.org/obo/MONDO_0005578) arthritis --> arthritic joint disease
+ * [MONDO:0006664](http://purl.obolibrary.org/obo/MONDO_0006664) atrial heart septal defect --> atrial septal defect
+ * [MONDO:0007105](http://purl.obolibrary.org/obo/MONDO_0007105) frontotemporal dementia with motor neuron disease 1 --> frontotemporal dementia and/or amyotrophic lateral sclerosis 1
+ * [MONDO:0007172](http://purl.obolibrary.org/obo/MONDO_0007172) atrial heart septal defect 1 --> atrial septal defect 1
+ * [MONDO:0007173](http://purl.obolibrary.org/obo/MONDO_0007173) atrial heart septal defect 7 --> atrial septal defect 7
+ * [MONDO:0007319](http://purl.obolibrary.org/obo/MONDO_0007319) familial calcium pyrophosphate deposition --> chondrocalcinosis 2
+ * [MONDO:0007399](http://purl.obolibrary.org/obo/MONDO_0007399) craniosynostosis 1 --> TWIST1-related craniosynostosis
+ * [MONDO:0007681](http://purl.obolibrary.org/obo/MONDO_0007681) familial multinodular goiter --> goiter, multinodular 1, with or without Sertoli-Leydig cell tumors
+ * [MONDO:0007768](http://purl.obolibrary.org/obo/MONDO_0007768) hyperparathyroidism-jaw tumor syndrome --> hyperparathyroidism 2 with jaw tumors
+ * [MONDO:0007926](http://purl.obolibrary.org/obo/MONDO_0007926) Waldenstrom macroglobulinemia --> obsolete Waldenstrom macroglobulinemia
+ * [MONDO:0008050](http://purl.obolibrary.org/obo/MONDO_0008050) Laing early-onset distal myopathy --> MYH7-related skeletal myopathy
+ * [MONDO:0008112](http://purl.obolibrary.org/obo/MONDO_0008112) Goldenhar syndrome --> obsolete Goldenhar syndrome
+ * [MONDO:0008220](http://purl.obolibrary.org/obo/MONDO_0008220) pepsinogen 3, group 1 --> obsolete pepsinogen 3, group 1
+ * [MONDO:0008226](http://purl.obolibrary.org/obo/MONDO_0008226) aggressive periodontitis --> periodontitis, aggressive 1
+ * [MONDO:0008355](http://purl.obolibrary.org/obo/MONDO_0008355) IHPS1 --> pyloric stenosis, infantile hypertrophic, 1
+ * [MONDO:0008473](http://purl.obolibrary.org/obo/MONDO_0008473) spondyloepiphyseal dysplasia, Maroteaux type --> spondyloepimetaphyseal dysplasia, Maroteaux type
+ * [MONDO:0008494](http://purl.obolibrary.org/obo/MONDO_0008494) hereditary cryohydrocytosis with normal stomatin --> cryohydrocytosis
+ * [MONDO:0008679](http://purl.obolibrary.org/obo/MONDO_0008679) Wilms tumor type 1 --> Wilms tumor 1
+ * [MONDO:0008710](http://purl.obolibrary.org/obo/MONDO_0008710) Carpenter syndrome 1 --> RAB23-related Carpenter syndrome
+ * [MONDO:0008897](http://purl.obolibrary.org/obo/MONDO_0008897) hyperphosphatemic familial tumoral calcinosis --> obsolete tumoral calcinosis, hyperphosphatemic, familial, 1
+ * [MONDO:0009151](http://purl.obolibrary.org/obo/MONDO_0009151) Zlotogora-Ogur syndrome --> cleft lip/palate-ectodermal dysplasia syndrome
+ * [MONDO:0009989](http://purl.obolibrary.org/obo/MONDO_0009989) enhanced S-cone syndrome --> obsolete enhanced S-cone syndrome
+ * [MONDO:0010009](http://purl.obolibrary.org/obo/MONDO_0010009) SC phocomelia syndrome --> obsolete SC phocomelia syndrome
+ * [MONDO:0010290](http://purl.obolibrary.org/obo/MONDO_0010290) MNG2 --> goiter, multinodular 2
+ * [MONDO:0010296](http://purl.obolibrary.org/obo/MONDO_0010296) AGMX2 --> immunodeficiency 61
+ * [MONDO:0010303](http://purl.obolibrary.org/obo/MONDO_0010303) colobomatous microphthalmia --> obsolete colobomatous microphthalmia
+ * [MONDO:0010372](http://purl.obolibrary.org/obo/MONDO_0010372) Clark-Baraitser syndrome --> obsolete Clark-Baraitser syndrome
+ * [MONDO:0010411](http://purl.obolibrary.org/obo/MONDO_0010411) IHPS4 --> pyloric stenosis, infantile hypertrophic, 4
+ * [MONDO:0010728](http://purl.obolibrary.org/obo/MONDO_0010728) scarf syndrome --> SCARF syndrome
+ * [MONDO:0010758](http://purl.obolibrary.org/obo/MONDO_0010758) intellectual disability-developmental delay-contractures syndrome --> Wieacker-Wolff, X-linked recessive
+ * [MONDO:0010766](http://purl.obolibrary.org/obo/MONDO_0010766) 46,XX testicular disorder of sex development --> obsolete 46,XX sex reversal 1
+ * [MONDO:0010917](http://purl.obolibrary.org/obo/MONDO_0010917) CCAL1 --> chondrocalcinosis 1
+ * [MONDO:0010936](http://purl.obolibrary.org/obo/MONDO_0010936) frontotemporal dementia, chromosome 3-linked --> frontotemporal dementia and/or amyotrophic lateral sclerosis 7
+ * [MONDO:0010997](http://purl.obolibrary.org/obo/MONDO_0010997) classic progressive supranuclear palsy syndrome --> supranuclear palsy, progressive, 1
+ * [MONDO:0011204](http://purl.obolibrary.org/obo/MONDO_0011204) cerebellar degeneration-related autoantigen 3 --> obsolete cerebellar degeneration-related autoantigen 3
+ * [MONDO:0011589](http://purl.obolibrary.org/obo/MONDO_0011589) MCOPCB2 --> microphthalmia with coloboma 2
+ * [MONDO:0011623](http://purl.obolibrary.org/obo/MONDO_0011623) spinocerebellar ataxia, autosomal recessive 1 --> obsolete spinocerebellar ataxia, autosomal recessive 1
+ * [MONDO:0011635](http://purl.obolibrary.org/obo/MONDO_0011635) MNG3 --> goiter, multinodular 3
+ * [MONDO:0011801](http://purl.obolibrary.org/obo/MONDO_0011801) spinocerebellar ataxia type 1 with axonal neuropathy --> spinocerebellar ataxia, autosomal recessive, with axonal neuropathy 1
+ * [MONDO:0011847](http://purl.obolibrary.org/obo/MONDO_0011847) migraine without aura --> migraine without aura, susceptibility to, 4
+ * [MONDO:0011938](http://purl.obolibrary.org/obo/MONDO_0011938) atrial heart septal defect 2 --> atrial septal defect 2
+ * [MONDO:0012278](http://purl.obolibrary.org/obo/MONDO_0012278) PSNP2 --> supranuclear palsy, progressive, 2
+ * [MONDO:0012292](http://purl.obolibrary.org/obo/MONDO_0012292) hepatitis c virus, susceptibility to --> hepatitis C virus, susceptibility to
+ * [MONDO:0012406](http://purl.obolibrary.org/obo/MONDO_0012406) HRPT3 --> hyperparathyroidism 3
+ * [MONDO:0012457](http://purl.obolibrary.org/obo/MONDO_0012457) IHPS2 --> pyloric stenosis, infantile hypertrophic, 2
+ * [MONDO:0012491](http://purl.obolibrary.org/obo/MONDO_0012491) WM2 --> macroglobulinemia, Waldenstrom, 2
+ * [MONDO:0012551](http://purl.obolibrary.org/obo/MONDO_0012551) AA2 --> alopecia areata 2
+ * [MONDO:0012561](http://purl.obolibrary.org/obo/MONDO_0012561) congenital anomalies of kidney and urinary tract 1, susceptibility to --> congenital anomalies of kidney and urinary tract 1
+ * [MONDO:0012576](http://purl.obolibrary.org/obo/MONDO_0012576) PSNP3 --> supranuclear palsy, progressive, 3
+ * [MONDO:0012654](http://purl.obolibrary.org/obo/MONDO_0012654) atrial heart septal defect 4 --> atrial septal defect 4
+ * [MONDO:0012715](http://purl.obolibrary.org/obo/MONDO_0012715) MGR12 --> migraine with or without aura, susceptibility to, 12
+ * [MONDO:0012785](http://purl.obolibrary.org/obo/MONDO_0012785) infantile hypertrophic pyloric stenosis type 3 --> pyloric stenosis, infantile hypertrophic, 3
+ * [MONDO:0012922](http://purl.obolibrary.org/obo/MONDO_0012922) infantile hypertrophic pyloric stenosis type 5 --> pyloric stenosis, infantile hypertrophic, 5
+ * [MONDO:0013011](http://purl.obolibrary.org/obo/MONDO_0013011) atrial heart septal defect 5 --> atrial septal defect 5
+ * [MONDO:0013123](http://purl.obolibrary.org/obo/MONDO_0013123) atrial heart septal defect 6 --> atrial septal defect 6
+ * [MONDO:0013138](http://purl.obolibrary.org/obo/MONDO_0013138) BRV2 --> vertigo, benign recurrent, 2
+ * [MONDO:0013501](http://purl.obolibrary.org/obo/MONDO_0013501) amyotrophic lateral sclerosis type 14 --> frontotemporal dementia and/or amyotrophic lateral sclerosis 6
+ * [MONDO:0013567](http://purl.obolibrary.org/obo/MONDO_0013567) atrial heart septal defect 3 --> atrial septal defect 3
+ * [MONDO:0013676](http://purl.obolibrary.org/obo/MONDO_0013676) hypermethioninemia due to adenosine kinase deficiency --> obsolete hypermethioninemia due to adenosine kinase deficiency
+ * [MONDO:0013750](http://purl.obolibrary.org/obo/MONDO_0013750) atrial heart septal defect 8 --> atrial septal defect 8
+ * [MONDO:0013770](http://purl.obolibrary.org/obo/MONDO_0013770) atrial heart septal defect 9 --> atrial septal defect 9
+ * [MONDO:0013861](http://purl.obolibrary.org/obo/MONDO_0013861) amyotrophic lateral sclerosis type 17 --> obsolete amyotrophic lateral sclerosis type 17
+ * [MONDO:0013998](http://purl.obolibrary.org/obo/MONDO_0013998) Carpenter syndrome 2 --> MEGF8-related Carpenter syndrome
+ * [MONDO:0014128](http://purl.obolibrary.org/obo/MONDO_0014128) craniosynostosis 3 --> TCF12-related craniosynostosis
+ * [MONDO:0014395](http://purl.obolibrary.org/obo/MONDO_0014395) FTDALS2 --> frontotemporal dementia and/or amyotrophic lateral sclerosis 2
+ * [MONDO:0014640](http://purl.obolibrary.org/obo/MONDO_0014640) FTDALS3 --> frontotemporal dementia and/or amyotrophic lateral sclerosis 3
+ * [MONDO:0014641](http://purl.obolibrary.org/obo/MONDO_0014641) FTDALS4 --> frontotemporal dementia and/or amyotrophic lateral sclerosis 4
+ * [MONDO:0014655](http://purl.obolibrary.org/obo/MONDO_0014655) Bethlem myopathy 2 --> obsolete Bethlem myopathy 2
+ * [MONDO:0014659](http://purl.obolibrary.org/obo/MONDO_0014659) fever-associated acute infantile liver failure syndrome --> infantile liver failure syndrome 2
+ * [MONDO:0016640](http://purl.obolibrary.org/obo/MONDO_0016640) fibrous dysplasia of bone --> obsolete fibrous dysplasia of bone
+ * [MONDO:0017241](http://purl.obolibrary.org/obo/MONDO_0017241) severe intellectual disability and progressive spastic paraplegia --> AP4-related intellectual disability and spastic paraplegia
+ * [MONDO:0017911](http://purl.obolibrary.org/obo/MONDO_0017911) cleft lip/palate-ectodermal dysplasia syndrome --> obsolete cleft lip/palate-ectodermal dysplasia syndrome
+ * [MONDO:0018641](http://purl.obolibrary.org/obo/MONDO_0018641) paroxysmal nocturnal hemoglobinuria --> obsolete paroxysmal nocturnal hemoglobinuria
+ * [MONDO:0018828](http://purl.obolibrary.org/obo/MONDO_0018828) UPS18 deficiency --> pseudo-TORCH syndrome 2
+ * [MONDO:0018996](http://purl.obolibrary.org/obo/MONDO_0018996) spinocerebellar ataxia with axonal neuropathy type 2 --> spinocerebellar ataxia, autosomal recessive, with axonal neuropathy 2
+ * [MONDO:0019567](http://purl.obolibrary.org/obo/MONDO_0019567) Ehlers-Danlos syndrome type 1 --> Ehlers-Danlos syndrome, classic type, 1
+ * [MONDO:0019568](http://purl.obolibrary.org/obo/MONDO_0019568) Ehlers-Danlos syndrome type 2 --> Ehlers-Danlos syndrome, classic type, 2
+ * [MONDO:0022948](http://purl.obolibrary.org/obo/MONDO_0022948) deal barratt dillon syndrome --> Deal Barratt Dillon syndrome
+ * [MONDO:0023191](http://purl.obolibrary.org/obo/MONDO_0023191) Freire-Maia odontotrichomelic syndrome --> obsolete Freire-Maia odontotrichomelic syndrome
+ * [MONDO:0024525](http://purl.obolibrary.org/obo/MONDO_0024525) FRTS1 --> Fanconi renotubular syndrome 1
+ * [MONDO:0024549](http://purl.obolibrary.org/obo/MONDO_0024549) MCOPCB1 --> microphthalmia with coloboma 1
+ * [MONDO:0027451](http://purl.obolibrary.org/obo/MONDO_0027451) autosomal recessive cutis laxa type 2d --> autosomal recessive cutis laxa type 2D
+ * [MONDO:0027462](http://purl.obolibrary.org/obo/MONDO_0027462) autosomal recessive cutis laxa type 2c --> autosomal recessive cutis laxa type 2C
+ * [MONDO:0027676](http://purl.obolibrary.org/obo/MONDO_0027676) congenital anomalies of kidney and urinary tract type 2 --> congenital anomalies of kidney and urinary tract 2
+ * [MONDO:0030044](http://purl.obolibrary.org/obo/MONDO_0030044) pseudo-torch syndrome 3 --> pseudo-TORCH syndrome 3
+ * [MONDO:0030056](http://purl.obolibrary.org/obo/MONDO_0030056) fanconi renotubular syndrome 5 --> Fanconi renotubular syndrome 5
+ * [MONDO:0033939](http://purl.obolibrary.org/obo/MONDO_0033939) hypohidrosis-electrolyte imbalance-lacrimal gland dysfunction-ichthyosis-xerostomia syndrome --> obsolete hypohidrosis-electrolyte imbalance-lacrimal gland dysfunction-ichthyosis-xerostomia syndrome
+ * [MONDO:0034022](http://purl.obolibrary.org/obo/MONDO_0034022) myopathic Ehlers-Danlos syndrome --> Bethlem myopathy 2
+ * [MONDO:0043181](http://purl.obolibrary.org/obo/MONDO_0043181) refsum disease with increased pipecolic acidemia --> obsolete Refsum disease with increased pipecolic acidemia
+ * [MONDO:0060564](http://purl.obolibrary.org/obo/MONDO_0060564) helix syndrome --> HELIX syndrome
+
+
+# v2021-01-29
+
+## New Classes
+
+ * [MONDO:0030801](http://purl.obolibrary.org/obo/MONDO_0030801) monosomy 7 myelodysplasia and leukemia syndrome 2
+ * [MONDO:0030840](http://purl.obolibrary.org/obo/MONDO_0030840) mismatch repair cancer syndrome 2
+ * [MONDO:0030841](http://purl.obolibrary.org/obo/MONDO_0030841) mismatch repair cancer syndrome 3
+ * [MONDO:0030843](http://purl.obolibrary.org/obo/MONDO_0030843) mismatch repair cancer syndrome 4
+ * [MONDO:0030844](http://purl.obolibrary.org/obo/MONDO_0030844) spermatogenic failure 47
+ * [MONDO:0030846](http://purl.obolibrary.org/obo/MONDO_0030846) spermatogenic failure 48
+ * [MONDO:0030847](http://purl.obolibrary.org/obo/MONDO_0030847) arthrogryposis, distal, type 1C
+ * [MONDO:0030854](http://purl.obolibrary.org/obo/MONDO_0030854) combined osteogenesis imperfecta and Ehlers-Danlos syndrome 1
+ * [MONDO:0030855](http://purl.obolibrary.org/obo/MONDO_0030855) combined osteogenesis imperfecta and Ehlers-Danlos syndrome 2
+ * [MONDO:0030856](http://purl.obolibrary.org/obo/MONDO_0030856) developmental and epileptic encephalopathy 89
+ * [MONDO:0030858](http://purl.obolibrary.org/obo/MONDO_0030858) immunodeficiency 75
+ * [MONDO:0030861](http://purl.obolibrary.org/obo/MONDO_0030861) osteogenesis imperfecta, type 21
+ * [MONDO:0030864](http://purl.obolibrary.org/obo/MONDO_0030864) Ritscher-Schinzel syndrome 3
+ * [MONDO:0030867](http://purl.obolibrary.org/obo/MONDO_0030867) thrombocytopenia 7
+ * [MONDO:0030868](http://purl.obolibrary.org/obo/MONDO_0030868) spermatogenic failure 49
+ * [MONDO:0030869](http://purl.obolibrary.org/obo/MONDO_0030869) spermatogenic failures 50
+ * [MONDO:0030870](http://purl.obolibrary.org/obo/MONDO_0030870) premature ovarian failure 17
+ * [MONDO:0030872](http://purl.obolibrary.org/obo/MONDO_0030872) frontotemporal dementia and/or amyotrophic lateral sclerosis 8
+ * [MONDO:0030875](http://purl.obolibrary.org/obo/MONDO_0030875) frontotemporal dementia and/or amyotrophic lateral sclerosis 5
+ * [MONDO:0030876](http://purl.obolibrary.org/obo/MONDO_0030876) cardioacrofacial dysplasia 1
+ * [MONDO:0030877](http://purl.obolibrary.org/obo/MONDO_0030877) cardioacrofacial dysplasia 2
+ * [MONDO:0030883](http://purl.obolibrary.org/obo/MONDO_0030883) carpal tunnel syndrome 2
+ * [MONDO:0031178](http://purl.obolibrary.org/obo/MONDO_0031178) monosomy 7 myelodysplasia and leukemia syndrome
+ * [MONDO:0031219](http://purl.obolibrary.org/obo/MONDO_0031219) mismatch repair cancer syndrome
+ * [MONDO:0031386](http://purl.obolibrary.org/obo/MONDO_0031386) cardioacrofacial dysplasia
+ * [MONDO:0035117](http://purl.obolibrary.org/obo/MONDO_0035117) PUM1-associated developmental disability-ataxia-seizure syndrome
+ * [MONDO:0035121](http://purl.obolibrary.org/obo/MONDO_0035121) myeloid/lymphoid neoplasm associated with JAK2 rearrangement
+ * [MONDO:0035122](http://purl.obolibrary.org/obo/MONDO_0035122) GRIN2B-related developmental delay, intellectual disability and autism spectrum disorder
+ * [MONDO:0035124](http://purl.obolibrary.org/obo/MONDO_0035124) linear hypopigmentation and craniofacial asymmetry with acral, ocular and brain anomalies
+ * [MONDO:0035133](http://purl.obolibrary.org/obo/MONDO_0035133) PHIP-related behavioral problems-intellectual disability-obesity-dysmorphic features syndrome
+ * [MONDO:0035136](http://purl.obolibrary.org/obo/MONDO_0035136) isolated melanotic schwannoma
+ * [MONDO:0100230](http://purl.obolibrary.org/obo/MONDO_0100230) fatty acyl-CoA reductase 1 dysregulation
+ * [MONDO:0100231](http://purl.obolibrary.org/obo/MONDO_0100231) psoriatic arthritis, susceptibility to, 1
+ * [MONDO:0100232](http://purl.obolibrary.org/obo/MONDO_0100232) 'psoriatic arthritis, susceptibility to
+ * [MONDO:0100233](http://purl.obolibrary.org/obo/MONDO_0100233) long COVID-19
+ * [MONDO:0100234](http://purl.obolibrary.org/obo/MONDO_0100234) paroxysmal familial ventricular fibrillation
+
+## Obsoletions
+
+ * [MONDO:0015502](http://purl.obolibrary.org/obo/MONDO_0015502) pinnae and external auditory canal anomaly --> obsolete pinnae and external auditory canal anomaly
+ * [MONDO:0015891](http://purl.obolibrary.org/obo/MONDO_0015891) hypogonadotropic hypogonadism associated with other endocrinopathies --> obsolete hypogonadotropic hypogonadism associated with other endocrinopathies
+ * [MONDO:0016131](http://purl.obolibrary.org/obo/MONDO_0016131) spinal muscular atrophy associated with central nervous system anomaly --> obsolete spinal muscular atrophy associated with central nervous system anomaly
+ * [MONDO:0016138](http://purl.obolibrary.org/obo/MONDO_0016138) malignant lymphoma with peripheral neuropathy --> obsolete malignant lymphoma with peripheral neuropathy
+ * [MONDO:0016404](http://purl.obolibrary.org/obo/MONDO_0016404) metabolic neurotransmission anomaly with epilepsy --> obsolete metabolic neurotransmission anomaly with epilepsy
+ * [MONDO:0016804](http://purl.obolibrary.org/obo/MONDO_0016804) exercise intolerance with lactic acidosis --> obsolete exercise intolerance with lactic acidosis
+ * [MONDO:0017000](http://purl.obolibrary.org/obo/MONDO_0017000) X chromosome number anomaly with female phenotype --> obsolete X chromosome number anomaly with female phenotype
+ * [MONDO:0017001](http://purl.obolibrary.org/obo/MONDO_0017001) X chromosome number anomaly with male phenotype --> obsolete X chromosome number anomaly with male phenotype
+ * [MONDO:0017083](http://purl.obolibrary.org/obo/MONDO_0017083) lipoma associated with neurospinal dysraphism --> obsolete lipoma associated with neurospinal dysraphism
+ * [MONDO:0017085](http://purl.obolibrary.org/obo/MONDO_0017085) malformation of the neurenteric canal, spinal cord and column --> obsolete malformation of the neurenteric canal, spinal cord and column
+ * [MONDO:0017433](http://purl.obolibrary.org/obo/MONDO_0017433) dysostosis with combined reduction defects of upper and lower limbs --> obsolete dysostosis with combined reduction defects of upper and lower limbs
+ * [MONDO:0017653](http://purl.obolibrary.org/obo/MONDO_0017653) epilepsy and/or ataxia with myoclonus as major feature --> obsolete epilepsy and/or ataxia with myoclonus as major feature
+ * [MONDO:0017654](http://purl.obolibrary.org/obo/MONDO_0017654) non progressive epilepsy and/or ataxia with myoclonus as a major feature --> obsolete non progressive epilepsy and/or ataxia with myoclonus as a major feature
+ * [MONDO:0017655](http://purl.obolibrary.org/obo/MONDO_0017655) progressive epilepsy and/or ataxia with myoclonus as a major feature --> obsolete progressive epilepsy and/or ataxia with myoclonus as a major feature
+ * [MONDO:0018032](http://purl.obolibrary.org/obo/MONDO_0018032) constitutional neutropenia with extra-hematopoietic manifestations --> obsolete constitutional neutropenia with extra-hematopoietic manifestations
+ * [MONDO:0018038](http://purl.obolibrary.org/obo/MONDO_0018038) immunodeficiency with isotype or light chain deficiencies with normal number of B-cells --> obsolete immunodeficiency with isotype or light chain deficiencies with normal number of B-cells
+ * [MONDO:0018200](http://purl.obolibrary.org/obo/MONDO_0018200) acute encephalopathy with inflammation-mediated status epilepticus --> obsolete acute encephalopathy with inflammation-mediated status epilepticus
+ * [MONDO:0018299](http://purl.obolibrary.org/obo/MONDO_0018299) sphingolipidosis with epilepsy --> obsolete sphingolipidosis with epilepsy
+ * [MONDO:0018545](http://purl.obolibrary.org/obo/MONDO_0018545) primary immunodeficiency with predisposition to severe viral infection --> obsolete primary immunodeficiency with predisposition to severe viral infection
+ * [MONDO:0018699](http://purl.obolibrary.org/obo/MONDO_0018699) pseudohypoparathyroidism with Albright hereditary osteodystrophy --> obsolete pseudohypoparathyroidism with Albright hereditary osteodystrophy
+ * [MONDO:0018700](http://purl.obolibrary.org/obo/MONDO_0018700) pseudohypoparathyroidism without Albright hereditary osteodystrophy --> obsolete pseudohypoparathyroidism without Albright hereditary osteodystrophy
+ * [MONDO:0018722](http://purl.obolibrary.org/obo/MONDO_0018722) primary lymphedema with associated anomalies --> obsolete primary lymphedema with associated anomalies
+ * [MONDO:0019709](http://purl.obolibrary.org/obo/MONDO_0019709) cleidocranial dysplasia and isolated cranial ossification defect --> obsolete cleidocranial dysplasia and isolated cranial ossification defect
+ * [MONDO:0019710](http://purl.obolibrary.org/obo/MONDO_0019710) dysostosis with predominant craniofacial involvement --> obsolete dysostosis with predominant craniofacial involvement
+ * [MONDO:0019711](http://purl.obolibrary.org/obo/MONDO_0019711) dysostosis with predominant vertebral and costal involvement --> obsolete dysostosis with predominant vertebral and costal involvement
+ * [MONDO:0019987](http://purl.obolibrary.org/obo/MONDO_0019987) congenital and infantile nephrotic syndrome --> obsolete congenital and infantile nephrotic syndrome
+ * [MONDO:0020139](http://purl.obolibrary.org/obo/MONDO_0020139) early-onset ataxia with dementia --> obsolete early-onset ataxia with dementia
+ * [MONDO:0020140](http://purl.obolibrary.org/obo/MONDO_0020140) late-onset ataxia with dementia --> obsolete late-onset ataxia with dementia
+ * [MONDO:0020221](http://purl.obolibrary.org/obo/MONDO_0020221) secondary glaucoma due to a proliferation and differentiation anomaly --> obsolete secondary glaucoma due to a proliferation and differentiation anomaly
+ * [MONDO:0020234](http://purl.obolibrary.org/obo/MONDO_0020234) craniofacial anomaly with cataract --> obsolete craniofacial anomaly with cataract
+ * [MONDO:0020243](http://purl.obolibrary.org/obo/MONDO_0020243) colobomatous and areolar dystrophy --> obsolete colobomatous and areolar dystrophy
+ * [MONDO:0020254](http://purl.obolibrary.org/obo/MONDO_0020254) craniostenosis associated with a strabismus --> obsolete craniostenosis associated with a strabismus
+ * [MONDO:0020262](http://purl.obolibrary.org/obo/MONDO_0020262) nervous system anomaly with eye involvement --> obsolete nervous system anomaly with eye involvement
+ * [MONDO:0020263](http://purl.obolibrary.org/obo/MONDO_0020263) spinocerebellar ataxia with oculomotor anomaly --> obsolete spinocerebellar ataxia with oculomotor anomaly
+ * [MONDO:0020264](http://purl.obolibrary.org/obo/MONDO_0020264) spinocerebellar degenerescence and spastic paraparesis with an oculomotor anomaly --> obsolete spinocerebellar degenerescence and spastic paraparesis with an oculomotor anomaly
+ * [MONDO:0020268](http://purl.obolibrary.org/obo/MONDO_0020268) ichthyosis associated with ocular features --> obsolete ichthyosis associated with ocular features
+ * [MONDO:0020269](http://purl.obolibrary.org/obo/MONDO_0020269) syndromic ichthyosis associated with ocular features --> obsolete syndromic ichthyosis associated with ocular features
+ * [MONDO:0020271](http://purl.obolibrary.org/obo/MONDO_0020271) phakomatosis with eye involvement --> obsolete phakomatosis with eye involvement
+ * [MONDO:0028741](http://purl.obolibrary.org/obo/MONDO_0028741) overgrowth or tall stature syndrome with skeletal involvement --> obsolete overgrowth or tall stature syndrome with skeletal involvement
+ * [MONDO:0028742](http://purl.obolibrary.org/obo/MONDO_0028742) dysostosis with brachydactyly without extraskeletal manifestations --> obsolete dysostosis with brachydactyly without extraskeletal manifestations
+ * [MONDO:0028743](http://purl.obolibrary.org/obo/MONDO_0028743) dysostosis with brachydactyly with extraskeletal manifestations --> obsolete dysostosis with brachydactyly with extraskeletal manifestations
+
+## Renaming
+
+ * [MONDO:0000914](http://purl.obolibrary.org/obo/MONDO_0000914) CADASIL 1 --> cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy, type 1
+ * [MONDO:0007432](http://purl.obolibrary.org/obo/MONDO_0007432) CADASIL --> cerebral arteriopathy with subcortical infarcts and leukoencephalopathy
+ * [MONDO:0009646](http://purl.obolibrary.org/obo/MONDO_0009646) monosomy 7 of bone marrow --> Monosomy 7 myelodysplasia and leukemia syndrome 1
+ * [MONDO:0010120](http://purl.obolibrary.org/obo/MONDO_0010120) THC3 --> thrombocytopenia 3
+ * [MONDO:0010159](http://purl.obolibrary.org/obo/MONDO_0010159) constitutional mismatch repair deficiency syndrome --> mismatch repair cancer syndrome 1
+ * [MONDO:0010743](http://purl.obolibrary.org/obo/MONDO_0010743) X-linked thrombocytopenia with normal platelets --> thrombocytopenia 1
+ * [MONDO:0010829](http://purl.obolibrary.org/obo/MONDO_0010829) CARASIL --> CARASIL syndrome
+ * [MONDO:0010958](http://purl.obolibrary.org/obo/MONDO_0010958) cardiac arrhythmia, ankyrin-b-related --> cardiac arrhythmia, ankyrin-B-related
+ * [MONDO:0011376](http://purl.obolibrary.org/obo/MONDO_0011376) idiopathic ventricular fibrillation, non Brugada type --> ventricular fibrillation, paroxysmal familial, type 1
+ * [MONDO:0014837](http://purl.obolibrary.org/obo/MONDO_0014837) hereditary thrombocytopenia with early-onset myelofibrosis --> thrombocytopenia 6
+ * [MONDO:0015502](http://purl.obolibrary.org/obo/MONDO_0015502) pinnae and external auditory canal anomaly --> obsolete pinnae and external auditory canal anomaly
+ * [MONDO:0015688](http://purl.obolibrary.org/obo/MONDO_0015688) myeloid neoplasms associated with eosinophilia and abnormality of PDGFRA, PDGFRB or FGFR1 --> myeloid/lymphoid neoplasms associated with eosinophilia and abnormality of PDGFRA, PDGFRB, FGFR1 or JAK2
+ * [MONDO:0015891](http://purl.obolibrary.org/obo/MONDO_0015891) hypogonadotropic hypogonadism associated with other endocrinopathies --> obsolete hypogonadotropic hypogonadism associated with other endocrinopathies
+ * [MONDO:0016131](http://purl.obolibrary.org/obo/MONDO_0016131) spinal muscular atrophy associated with central nervous system anomaly --> obsolete spinal muscular atrophy associated with central nervous system anomaly
+ * [MONDO:0016138](http://purl.obolibrary.org/obo/MONDO_0016138) malignant lymphoma with peripheral neuropathy --> obsolete malignant lymphoma with peripheral neuropathy
+ * [MONDO:0016404](http://purl.obolibrary.org/obo/MONDO_0016404) metabolic neurotransmission anomaly with epilepsy --> obsolete metabolic neurotransmission anomaly with epilepsy
+ * [MONDO:0016804](http://purl.obolibrary.org/obo/MONDO_0016804) exercise intolerance with lactic acidosis --> obsolete exercise intolerance with lactic acidosis
+ * [MONDO:0017000](http://purl.obolibrary.org/obo/MONDO_0017000) X chromosome number anomaly with female phenotype --> obsolete X chromosome number anomaly with female phenotype
+ * [MONDO:0017001](http://purl.obolibrary.org/obo/MONDO_0017001) X chromosome number anomaly with male phenotype --> obsolete X chromosome number anomaly with male phenotype
+ * [MONDO:0017083](http://purl.obolibrary.org/obo/MONDO_0017083) lipoma associated with neurospinal dysraphism --> obsolete lipoma associated with neurospinal dysraphism
+ * [MONDO:0017085](http://purl.obolibrary.org/obo/MONDO_0017085) malformation of the neurenteric canal, spinal cord and column --> obsolete malformation of the neurenteric canal, spinal cord and column
+ * [MONDO:0017433](http://purl.obolibrary.org/obo/MONDO_0017433) dysostosis with combined reduction defects of upper and lower limbs --> obsolete dysostosis with combined reduction defects of upper and lower limbs
+ * [MONDO:0017653](http://purl.obolibrary.org/obo/MONDO_0017653) epilepsy and/or ataxia with myoclonus as major feature --> obsolete epilepsy and/or ataxia with myoclonus as major feature
+ * [MONDO:0017654](http://purl.obolibrary.org/obo/MONDO_0017654) non progressive epilepsy and/or ataxia with myoclonus as a major feature --> obsolete non progressive epilepsy and/or ataxia with myoclonus as a major feature
+ * [MONDO:0017655](http://purl.obolibrary.org/obo/MONDO_0017655) progressive epilepsy and/or ataxia with myoclonus as a major feature --> obsolete progressive epilepsy and/or ataxia with myoclonus as a major feature
+ * [MONDO:0018032](http://purl.obolibrary.org/obo/MONDO_0018032) constitutional neutropenia with extra-hematopoietic manifestations --> obsolete constitutional neutropenia with extra-hematopoietic manifestations
+ * [MONDO:0018038](http://purl.obolibrary.org/obo/MONDO_0018038) immunodeficiency with isotype or light chain deficiencies with normal number of B-cells --> obsolete immunodeficiency with isotype or light chain deficiencies with normal number of B-cells
+ * [MONDO:0018200](http://purl.obolibrary.org/obo/MONDO_0018200) acute encephalopathy with inflammation-mediated status epilepticus --> obsolete acute encephalopathy with inflammation-mediated status epilepticus
+ * [MONDO:0018299](http://purl.obolibrary.org/obo/MONDO_0018299) sphingolipidosis with epilepsy --> obsolete sphingolipidosis with epilepsy
+ * [MONDO:0018545](http://purl.obolibrary.org/obo/MONDO_0018545) primary immunodeficiency with predisposition to severe viral infection --> obsolete primary immunodeficiency with predisposition to severe viral infection
+ * [MONDO:0018699](http://purl.obolibrary.org/obo/MONDO_0018699) pseudohypoparathyroidism with Albright hereditary osteodystrophy --> obsolete pseudohypoparathyroidism with Albright hereditary osteodystrophy
+ * [MONDO:0018700](http://purl.obolibrary.org/obo/MONDO_0018700) pseudohypoparathyroidism without Albright hereditary osteodystrophy --> obsolete pseudohypoparathyroidism without Albright hereditary osteodystrophy
+ * [MONDO:0018722](http://purl.obolibrary.org/obo/MONDO_0018722) primary lymphedema with associated anomalies --> obsolete primary lymphedema with associated anomalies
+ * [MONDO:0019709](http://purl.obolibrary.org/obo/MONDO_0019709) cleidocranial dysplasia and isolated cranial ossification defect --> obsolete cleidocranial dysplasia and isolated cranial ossification defect
+ * [MONDO:0019710](http://purl.obolibrary.org/obo/MONDO_0019710) dysostosis with predominant craniofacial involvement --> obsolete dysostosis with predominant craniofacial involvement
+ * [MONDO:0019711](http://purl.obolibrary.org/obo/MONDO_0019711) dysostosis with predominant vertebral and costal involvement --> obsolete dysostosis with predominant vertebral and costal involvement
+ * [MONDO:0019987](http://purl.obolibrary.org/obo/MONDO_0019987) congenital and infantile nephrotic syndrome --> obsolete congenital and infantile nephrotic syndrome
+ * [MONDO:0020139](http://purl.obolibrary.org/obo/MONDO_0020139) early-onset ataxia with dementia --> obsolete early-onset ataxia with dementia
+ * [MONDO:0020140](http://purl.obolibrary.org/obo/MONDO_0020140) late-onset ataxia with dementia --> obsolete late-onset ataxia with dementia
+ * [MONDO:0020221](http://purl.obolibrary.org/obo/MONDO_0020221) secondary glaucoma due to a proliferation and differentiation anomaly --> obsolete secondary glaucoma due to a proliferation and differentiation anomaly
+ * [MONDO:0020234](http://purl.obolibrary.org/obo/MONDO_0020234) craniofacial anomaly with cataract --> obsolete craniofacial anomaly with cataract
+ * [MONDO:0020243](http://purl.obolibrary.org/obo/MONDO_0020243) colobomatous and areolar dystrophy --> obsolete colobomatous and areolar dystrophy
+ * [MONDO:0020254](http://purl.obolibrary.org/obo/MONDO_0020254) craniostenosis associated with a strabismus --> obsolete craniostenosis associated with a strabismus
+ * [MONDO:0020262](http://purl.obolibrary.org/obo/MONDO_0020262) nervous system anomaly with eye involvement --> obsolete nervous system anomaly with eye involvement
+ * [MONDO:0020263](http://purl.obolibrary.org/obo/MONDO_0020263) spinocerebellar ataxia with oculomotor anomaly --> obsolete spinocerebellar ataxia with oculomotor anomaly
+ * [MONDO:0020264](http://purl.obolibrary.org/obo/MONDO_0020264) spinocerebellar degenerescence and spastic paraparesis with an oculomotor anomaly --> obsolete spinocerebellar degenerescence and spastic paraparesis with an oculomotor anomaly
+ * [MONDO:0020268](http://purl.obolibrary.org/obo/MONDO_0020268) ichthyosis associated with ocular features --> obsolete ichthyosis associated with ocular features
+ * [MONDO:0020269](http://purl.obolibrary.org/obo/MONDO_0020269) syndromic ichthyosis associated with ocular features --> obsolete syndromic ichthyosis associated with ocular features
+ * [MONDO:0020271](http://purl.obolibrary.org/obo/MONDO_0020271) phakomatosis with eye involvement --> obsolete phakomatosis with eye involvement
+ * [MONDO:0020686](http://purl.obolibrary.org/obo/MONDO_0020686) acute adenoiditis --> acute tonsillitis
+ * [MONDO:0028741](http://purl.obolibrary.org/obo/MONDO_0028741) overgrowth or tall stature syndrome with skeletal involvement --> obsolete overgrowth or tall stature syndrome with skeletal involvement
+ * [MONDO:0028742](http://purl.obolibrary.org/obo/MONDO_0028742) dysostosis with brachydactyly without extraskeletal manifestations --> obsolete dysostosis with brachydactyly without extraskeletal manifestations
+ * [MONDO:0028743](http://purl.obolibrary.org/obo/MONDO_0028743) dysostosis with brachydactyly with extraskeletal manifestations --> obsolete dysostosis with brachydactyly with extraskeletal manifestations
+
+
+# v2021-01-15
+
+## New Classes
+
+ * [MONDO:0020799](http://purl.obolibrary.org/obo/MONDO_0020799) basal cell neoplasm
+ * [MONDO:0020802](http://purl.obolibrary.org/obo/MONDO_0020802) obsolete basal cell cancer
+ * [MONDO:0020804](http://purl.obolibrary.org/obo/MONDO_0020804) basal cell carcinoma
+ * [MONDO:0020805](http://purl.obolibrary.org/obo/MONDO_0020805) benign basal cell neoplasm
+ * [MONDO:0020807](http://purl.obolibrary.org/obo/MONDO_0020807) ovarian sertoli-stromal cell tumor
+ * [MONDO:0020808](http://purl.obolibrary.org/obo/MONDO_0020808) testicular sertoli cell tumor
+ * [MONDO:0020809](http://purl.obolibrary.org/obo/MONDO_0020809) benign sertoli cell tumor
+ * [MONDO:0020813](http://purl.obolibrary.org/obo/MONDO_0020813) benign testicular sertoli cell tumor
+ * [MONDO:0020814](http://purl.obolibrary.org/obo/MONDO_0020814) miliaria alba
+ * [MONDO:0020816](http://purl.obolibrary.org/obo/MONDO_0020816) miliaria papulosa
+ * [MONDO:0020817](http://purl.obolibrary.org/obo/MONDO_0020817) miliaria vesiculosa
+ * [MONDO:0020820](http://purl.obolibrary.org/obo/MONDO_0020820) distal arthrogryposis type 2B1
+ * [MONDO:0020823](http://purl.obolibrary.org/obo/MONDO_0020823) infantile miliaria
+ * [MONDO:0024227](http://purl.obolibrary.org/obo/MONDO_0024227) miliaria pustulosa
+ * [MONDO:0024228](http://purl.obolibrary.org/obo/MONDO_0024228) miliaria profunda
+ * [MONDO:0024229](http://purl.obolibrary.org/obo/MONDO_0024229) miliaria crystallina
+ * [MONDO:0024988](http://purl.obolibrary.org/obo/MONDO_0024988) sex cord-stromal benign neoplasm
+ * [MONDO:0100229](http://purl.obolibrary.org/obo/MONDO_0100229) Heimler syndrome
+
+## Obsoletions
+
+ * [MONDO:0018194](http://purl.obolibrary.org/obo/MONDO_0018194) sex cord-stromal tumor of testis --> obsolete sex cord-stromal tumor of testis
+
+## Renaming
+
+ * [MONDO:0010713](http://purl.obolibrary.org/obo/MONDO_0010713) properdin deficiency --> properdin deficiency, X-linked
+ * [MONDO:0012707](http://purl.obolibrary.org/obo/MONDO_0012707) FEB9 --> familial febrile seizures 9
+ * [MONDO:0014775](http://purl.obolibrary.org/obo/MONDO_0014775) neonatal severe cardiopulmonary failure due to mitochondrial methylation defect --> combined oxidative phosphorylation deficiency 28
+ * [MONDO:0018194](http://purl.obolibrary.org/obo/MONDO_0018194) sex cord-stromal tumor of testis --> obsolete sex cord-stromal tumor of testis
+ * [MONDO:0027069](http://purl.obolibrary.org/obo/MONDO_0027069) mitochondrial complex 5 (atp synthase) deficiency, mitochondrial type 1 --> mitochondrial complex 5 (ATP synthase) deficiency, mitochondrial type 1
+ * [MONDO:0032750](http://purl.obolibrary.org/obo/MONDO_0032750) arthrogryposis, distal, type 2b2 --> arthrogryposis, distal, type 2B2
+ * [MONDO:0032751](http://purl.obolibrary.org/obo/MONDO_0032751) arthrogryposis, distal, type 2b3 --> arthrogryposis, distal, type 2B3
+ * [MONDO:0032869](http://purl.obolibrary.org/obo/MONDO_0032869) mitochondrial complex 5 (atp synthase) deficiency, nuclear type 6 --> mitochondrial complex 5 (ATP synthase) deficiency, nuclear type 6
+ * [MONDO:0033135](http://purl.obolibrary.org/obo/MONDO_0033135) PMP2-related Charcot-Marie-Tooth disease type 1 --> Charcot-Marie-Tooth disease, demyelinating, type 1G
+
+# v2020-12-18
+
+## New Classes
+
+ * [MONDO:0020836](http://purl.obolibrary.org/obo/MONDO_0020836) autism, susceptiblity to
+ * [MONDO:0026771](http://purl.obolibrary.org/obo/MONDO_0026771) developmental and epileptic encephalopathy, 85, with or without midline brain defects
+ * [MONDO:0026777](http://purl.obolibrary.org/obo/MONDO_0026777) VEXAS syndrome
+ * [MONDO:0033613](http://purl.obolibrary.org/obo/MONDO_0033613) neurodevelopmental disorder with progressive spasticity and brain white matter abnormalities
+ * [MONDO:0033614](http://purl.obolibrary.org/obo/MONDO_0033614) spastic paraplegia 83, autosomal recessive
+ * [MONDO:0033615](http://purl.obolibrary.org/obo/MONDO_0033615) coenzyme q10 deficiency, primary, 9
+ * [MONDO:0033618](http://purl.obolibrary.org/obo/MONDO_0033618) Vissers-Bodmer syndrome
+ * [MONDO:0033619](http://purl.obolibrary.org/obo/MONDO_0033619) myopathy, epilepsy, and progressive cerebral atrophy
+ * [MONDO:0033620](http://purl.obolibrary.org/obo/MONDO_0033620) myofibrillar myopathy 10
+ * [MONDO:0033621](http://purl.obolibrary.org/obo/MONDO_0033621) spinal muscular atrophy, infantile, James type
+ * [MONDO:0033622](http://purl.obolibrary.org/obo/MONDO_0033622) spermatogenic failure 44
+ * [MONDO:0033630](http://purl.obolibrary.org/obo/MONDO_0033630) neurodevelopmental disorder with speech impairment and dysmorphic facies
+ * [MONDO:0033631](http://purl.obolibrary.org/obo/MONDO_0033631) combined oxidative phosphorylation deficiency 51
+ * [MONDO:0033635](http://purl.obolibrary.org/obo/MONDO_0033635) mitochondrial complex 4 deficiency, nuclear type 3
+ * [MONDO:0033636](http://purl.obolibrary.org/obo/MONDO_0033636) mitochondrial complex 4 deficiency, nuclear type 4
+ * [MONDO:0033637](http://purl.obolibrary.org/obo/MONDO_0033637) mitochondrial complex 4 deficiency, nuclear type 7
+ * [MONDO:0033638](http://purl.obolibrary.org/obo/MONDO_0033638) mitochondrial complex 4 deficiency, nuclear type 8
+ * [MONDO:0033639](http://purl.obolibrary.org/obo/MONDO_0033639) mitochondrial complex 4 deficiency, nuclear type 10
+ * [MONDO:0033640](http://purl.obolibrary.org/obo/MONDO_0033640) vitamin D-dependent rickets, type 3
+ * [MONDO:0033641](http://purl.obolibrary.org/obo/MONDO_0033641) cleft palate, proliferative retinopathy, and developmental delay
+ * [MONDO:0033642](http://purl.obolibrary.org/obo/MONDO_0033642) neurodevelopmental disorder with alopecia and brain abnormalities
+ * [MONDO:0033643](http://purl.obolibrary.org/obo/MONDO_0033643) inflammatory bowel disease 30
+ * [MONDO:0033644](http://purl.obolibrary.org/obo/MONDO_0033644) microcornea, rod-cone dystrophy, cataract, and posterior staphyloma 1
+ * [MONDO:0033645](http://purl.obolibrary.org/obo/MONDO_0033645) mitochondrial complex 4 deficiency, nuclear type 11
+ * [MONDO:0033646](http://purl.obolibrary.org/obo/MONDO_0033646) mitochondrial complex 4 deficiency, nuclear type 12
+ * [MONDO:0033649](http://purl.obolibrary.org/obo/MONDO_0033649) mitochondrial complex 4 deficiency, nuclear type 14
+ * [MONDO:0033650](http://purl.obolibrary.org/obo/MONDO_0033650) mitochondrial complex 4 deficiency, nuclear type 15
+ * [MONDO:0033651](http://purl.obolibrary.org/obo/MONDO_0033651) mitochondrial complex 4 deficiency, nuclear type 16
+ * [MONDO:0033652](http://purl.obolibrary.org/obo/MONDO_0033652) mitochondrial complex 4 deficiency, nuclear type 17
+ * [MONDO:0033653](http://purl.obolibrary.org/obo/MONDO_0033653) mitochondrial complex 4 deficiency, nuclear type 18
+ * [MONDO:0033654](http://purl.obolibrary.org/obo/MONDO_0033654) mitochondrial complex 4 deficiency, nuclear type 19
+ * [MONDO:0033655](http://purl.obolibrary.org/obo/MONDO_0033655) mitochondrial complex 4 deficiency, nuclear type 20
+ * [MONDO:0033656](http://purl.obolibrary.org/obo/MONDO_0033656) mitochondrial complex 4 deficiency, nuclear type 21
+ * [MONDO:0033657](http://purl.obolibrary.org/obo/MONDO_0033657) leukodystrophy, hypomyelinating, 20
+ * [MONDO:0033658](http://purl.obolibrary.org/obo/MONDO_0033658) neurodevelopmental disorder with seizures and brain atrophy
+ * [MONDO:0033662](http://purl.obolibrary.org/obo/MONDO_0033662) neurodevelopmental disorder with microcephaly, seizures, and brain atrophy
+ * [MONDO:0033664](http://purl.obolibrary.org/obo/MONDO_0033664) Kilquist syndrome
+ * [MONDO:0033665](http://purl.obolibrary.org/obo/MONDO_0033665) deafness, autosomal dominant 78
+ * [MONDO:0033667](http://purl.obolibrary.org/obo/MONDO_0033667) Delpire-McNeill syndrome
+ * [MONDO:0033668](http://purl.obolibrary.org/obo/MONDO_0033668) deafness, autosomal dominant 79
+ * [MONDO:0033669](http://purl.obolibrary.org/obo/MONDO_0033669) Noonan syndrome 13
+ * [MONDO:0033670](http://purl.obolibrary.org/obo/MONDO_0033670) deafness, autosomal recessive 116
+ * [MONDO:0033671](http://purl.obolibrary.org/obo/MONDO_0033671) spermatogenic failure 45
+ * [MONDO:0033673](http://purl.obolibrary.org/obo/MONDO_0033673) spermatogenic failure 46
+ * [MONDO:0033885](http://purl.obolibrary.org/obo/MONDO_0033885) mitochondrial complex IV deficiency, nuclear-type
+ * [MONDO:0034846](http://purl.obolibrary.org/obo/MONDO_0034846) primary desmosis coli
+ * [MONDO:0034976](http://purl.obolibrary.org/obo/MONDO_0034976) iatrogenic Creutzfeldt-Jakob disease
+ * [MONDO:0034987](http://purl.obolibrary.org/obo/MONDO_0034987) intraductal tubulopapillary neoplasm of pancreas
+ * [MONDO:0035004](http://purl.obolibrary.org/obo/MONDO_0035004) serine biosynthesis pathway deficiency, infantile/juvenile form
+ * [MONDO:0035008](http://purl.obolibrary.org/obo/MONDO_0035008) isolated splenic vein thrombosis
+ * [MONDO:0035009](http://purl.obolibrary.org/obo/MONDO_0035009) isolated mesenteric vein thrombosis
+ * [MONDO:0100195](http://purl.obolibrary.org/obo/MONDO_0100195) X-linked intellectual disability with hypopituitarism
+ * [MONDO:0100222](http://purl.obolibrary.org/obo/MONDO_0100222) A20 haploinsufficiency
+ * [MONDO:0100223](http://purl.obolibrary.org/obo/MONDO_0100223) mitochondrial complex I deficiency, nuclear type
+ * [MONDO:0100224](http://purl.obolibrary.org/obo/MONDO_0100224) mitochondrial complex I deficiency, nuclear type 1
+ * [MONDO:0100225](http://purl.obolibrary.org/obo/MONDO_0100225) collagen 6-related myopathy
+ * [MONDO:0100226](http://purl.obolibrary.org/obo/MONDO_0100226) parasomnia, sleepwalking type
+
+## Obsoletions
+
+ * [MONDO:0000049](http://purl.obolibrary.org/obo/MONDO_0000049) invasive pneumococcal disease, recurrent isolated --> obsolete invasive pneumococcal disease, recurrent isolated
+ * [MONDO:0000123](http://purl.obolibrary.org/obo/MONDO_0000123) obsolete factor v and Factor VIII, combined deficiency of --> obsolete factor V and Factor VIII, combined deficiency of
+ * [MONDO:0001807](http://purl.obolibrary.org/obo/MONDO_0001807) familial combined hyperlipidemia --> obsolete familial combined hyperlipidemia
+ * [MONDO:0001932](http://purl.obolibrary.org/obo/MONDO_0001932) atrophic vulva --> obsolete atrophic vulva
+ * [MONDO:0002264](http://purl.obolibrary.org/obo/MONDO_0002264) atrophy of prostate --> obsolete atrophy of prostate
+ * [MONDO:0006168](http://purl.obolibrary.org/obo/MONDO_0006168) common hematopoietic neoplasm --> obsolete common hematopoietic neoplasm
+ * [MONDO:0006315](http://purl.obolibrary.org/obo/MONDO_0006315) neoplastic medium-sized B-lymphocyte with basophilic cytoplasm --> obsolete neoplastic medium-sized B-lymphocyte with basophilic cytoplasm
+ * [MONDO:0007347](http://purl.obolibrary.org/obo/MONDO_0007347) CXB3S --> obsolete Coxsackievirus B3 susceptibility
+ * [MONDO:0007468](http://purl.obolibrary.org/obo/MONDO_0007468) DNA, satellite, alpha type --> obsolete DNA, satellite, alpha type
+ * [MONDO:0007506](http://purl.obolibrary.org/obo/MONDO_0007506) echo virus 11 sensitivity --> obsoleted echo virus 11 sensitivity
+ * [MONDO:0008657](http://purl.obolibrary.org/obo/MONDO_0008657) vibratory angioedema --> obsolete vibratory angioedema
+ * [MONDO:0008761](http://purl.obolibrary.org/obo/MONDO_0008761) alpha-2-deficient collagen disease --> obsolete alpha-2-deficient collagen disease
+ * [MONDO:0009304](http://purl.obolibrary.org/obo/MONDO_0009304) Gorlin-Chaudhry-Moss syndrome --> obsolete Gorlin-Chaudhry-Moss syndrome
+ * [MONDO:0009640](http://purl.obolibrary.org/obo/MONDO_0009640) mitochondrial complex I deficiency, nuclear type --> obsolete mitochondrial complex I deficiency, nuclear type
+ * [MONDO:0010071](http://purl.obolibrary.org/obo/MONDO_0010071) spondyloenchondrodysplasia --> obsolete spondyloenchondrodysplasia
+ * [MONDO:0010195](http://purl.obolibrary.org/obo/MONDO_0010195) Weissenbacher-Zweymuller syndrome --> obsolete Weissenbacher-Zweymuller syndrome
+ * [MONDO:0010272](http://purl.obolibrary.org/obo/MONDO_0010272) syndromic X-linked intellectual disability type 10 --> obsolete syndromic X-linked intellectual disability type 10
+ * [MONDO:0010357](http://purl.obolibrary.org/obo/MONDO_0010357) MRX78 --> obsolete MRX78
+ * [MONDO:0010376](http://purl.obolibrary.org/obo/MONDO_0010376) Brooks-Wisniewski-brown syndrome --> obsolete Brooks-Wisniewski-brown syndrome
+ * [MONDO:0010387](http://purl.obolibrary.org/obo/MONDO_0010387) invasive pneumococcal disease, recurrent isolated, 2 --> obsolete invasive pneumococcal disease, recurrent isolated, 2
+ * [MONDO:0011324](http://purl.obolibrary.org/obo/MONDO_0011324) hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss --> obsolete hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss
+ * [MONDO:0011859](http://purl.obolibrary.org/obo/MONDO_0011859) distal myopathy with early respiratory muscle involvement --> obsolete distal myopathy with early respiratory muscle involvement
+ * [MONDO:0012189](http://purl.obolibrary.org/obo/MONDO_0012189) Amish infantile epilepsy syndrome --> obsolete Amish infantile epilepsy syndrome
+ * [MONDO:0012560](http://purl.obolibrary.org/obo/MONDO_0012560) invasive pneumococcal disease, recurrent isolated, 1 --> obsolete invasive pneumococcal disease, recurrent isolated, 1
+ * [MONDO:0013494](http://purl.obolibrary.org/obo/MONDO_0013494) PSMNSW --> obsolete PSMNSW
+ * [MONDO:0013701](http://purl.obolibrary.org/obo/MONDO_0013701) MRT32 --> obsolete MRT32
+ * [MONDO:0015172](http://purl.obolibrary.org/obo/MONDO_0015172) epithelio-exfoliative colitis-deafness syndrome --> obsolete epithelio-exfoliative colitis-deafness syndrome
+ * [MONDO:0015173](http://purl.obolibrary.org/obo/MONDO_0015173) autoimmune enteropathy type 2 --> obsolete autoimmune enteropathy type 2
+ * [MONDO:0015297](http://purl.obolibrary.org/obo/MONDO_0015297) microcephaly-digital anomalies-intellectual disability syndrome --> obsolete microcephaly-digital anomalies-intellectual disability syndrome
+ * [MONDO:0015560](http://purl.obolibrary.org/obo/MONDO_0015560) classic mast cell leukemia --> obsolete classic mast cell leukemia
+ * [MONDO:0015602](http://purl.obolibrary.org/obo/MONDO_0015602) developmental delay-deafness syndrome, Hildebrand type --> obsolete developmental delay-deafness syndrome, Hildebrand type
+ * [MONDO:0015964](http://purl.obolibrary.org/obo/MONDO_0015964) rare genetic palpebral, lacrimal system and conjunctival disease --> obsolete rare genetic palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0016082](http://purl.obolibrary.org/obo/MONDO_0016082) tracheo-esophageal fistula-hypospadias syndrome --> obsolete tracheo-esophageal fistula-hypospadias syndrome
+ * [MONDO:0016111](http://purl.obolibrary.org/obo/MONDO_0016111) non-dystrophic myopathy with collagen 6 anomaly --> obsolete non-dystrophic myopathy with collagen 6 anomaly
+ * [MONDO:0016124](http://purl.obolibrary.org/obo/MONDO_0016124) drug and/or toxic myopathy --> obsolete drug and/or toxic myopathy
+ * [MONDO:0016997](http://purl.obolibrary.org/obo/MONDO_0016997) hereditary epidermolysis bullosa associated with ocular features --> obsolete hereditary epidermolysis bullosa associated with ocular features
+ * [MONDO:0017378](http://purl.obolibrary.org/obo/MONDO_0017378) polymicrogyria-turricephaly-hypogenitalism syndrome --> obsolete polymicrogyria-turricephaly-hypogenitalism syndrome
+ * [MONDO:0017458](http://purl.obolibrary.org/obo/MONDO_0017458) postaxial polydactyly of toes --> obsolete postaxial polydactyly of toes
+ * [MONDO:0017459](http://purl.obolibrary.org/obo/MONDO_0017459) central polydactyly of toes --> obsolete central polydactyly of toes
+ * [MONDO:0017494](http://purl.obolibrary.org/obo/MONDO_0017494) congenital absence of upper arm and forearm with hand present, unilateral --> obsolete congenital absence of upper arm and forearm with hand present, unilateral
+ * [MONDO:0017495](http://purl.obolibrary.org/obo/MONDO_0017495) congenital absence of upper arm and forearm with hand present, bilateral --> obsolete congenital absence of upper arm and forearm with hand present, bilateral
+ * [MONDO:0017539](http://purl.obolibrary.org/obo/MONDO_0017539) postaxial polydactyly of toes, unilateral --> obsolete postaxial polydactyly of toes, unilateral
+ * [MONDO:0017540](http://purl.obolibrary.org/obo/MONDO_0017540) postaxial polydactyly of toes, bilateral --> obsolete postaxial polydactyly of toes, bilateral
+ * [MONDO:0017541](http://purl.obolibrary.org/obo/MONDO_0017541) central polydactyly of toes, unilateral --> obsolete central polydactyly of toes, unilateral
+ * [MONDO:0017542](http://purl.obolibrary.org/obo/MONDO_0017542) central polydactyly of toes, bilateral --> obsolete central polydactyly of toes, bilateral
+ * [MONDO:0017678](http://purl.obolibrary.org/obo/MONDO_0017678) disease with punctate palmoplantar keratoderma as a major feature --> obsolete disease with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017679](http://purl.obolibrary.org/obo/MONDO_0017679) autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017680](http://purl.obolibrary.org/obo/MONDO_0017680) autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017820](http://purl.obolibrary.org/obo/MONDO_0017820) disease with Cushing syndrome as a major feature --> obsolete disease with Cushing syndrome as a major feature
+ * [MONDO:0017938](http://purl.obolibrary.org/obo/MONDO_0017938) X-linked cleft palate and ankyloglossia --> obsolete X-linked cleft palate and ankyloglossia
+ * [MONDO:0017996](http://purl.obolibrary.org/obo/MONDO_0017996) blepharophimosis - intellectual disability syndrome due to UBE3B deficiency --> obsolete blepharophimosis - intellectual disability syndrome due to UBE3B deficiency
+ * [MONDO:0018275](http://purl.obolibrary.org/obo/MONDO_0018275) salt and pepper syndrome --> obsolete salt and pepper syndrome
+ * [MONDO:0018336](http://purl.obolibrary.org/obo/MONDO_0018336) Silver-Russell syndrome due to a point mutation --> obsolete Silver-Russell syndrome due to a point mutation
+ * [MONDO:0019348](http://purl.obolibrary.org/obo/MONDO_0019348) Ehlers-Danlos syndrome with periventricular heterotopia --> obsolete Ehlers-Danlos syndrome with periventricular heterotopia
+ * [MONDO:0019389](http://purl.obolibrary.org/obo/MONDO_0019389) X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome --> obsolete X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome
+ * [MONDO:0019410](http://purl.obolibrary.org/obo/MONDO_0019410) nodulosis-arthropathy-osteolysis syndrome --> obsolete nodulosis-arthropathy-osteolysis syndrome
+ * [MONDO:0019657](http://purl.obolibrary.org/obo/MONDO_0019657) sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes
+ * [MONDO:0019658](http://purl.obolibrary.org/obo/MONDO_0019658) sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation
+ * [MONDO:0019894](http://purl.obolibrary.org/obo/MONDO_0019894) non-distal monosomy 7p --> obsolete non-distal monosomy 7p
+ * [MONDO:0020150](http://purl.obolibrary.org/obo/MONDO_0020150) rare palpebral, lacrimal system and conjunctival disease --> obsolete rare palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0020168](http://purl.obolibrary.org/obo/MONDO_0020168) kinetic eyelid anomaly --> obsolete kinetic eyelid anomaly
+ * [MONDO:0020170](http://purl.obolibrary.org/obo/MONDO_0020170) congenital upper palpebral retraction --> obsolete congenital upper palpebral retraction
+ * [MONDO:0020199](http://purl.obolibrary.org/obo/MONDO_0020199) conjunctival vascular anomaly --> obsolete conjunctival vascular anomaly
+ * [MONDO:0020200](http://purl.obolibrary.org/obo/MONDO_0020200) conjunctival hemangioma or hemolymphangioma --> obsolete conjunctival hemangioma or hemolymphangioma
+ * [MONDO:0020201](http://purl.obolibrary.org/obo/MONDO_0020201) conjunctival telangiectasia (disease) --> obsolete conjunctival telangiectasia (disease)
+ * [MONDO:0020202](http://purl.obolibrary.org/obo/MONDO_0020202) conjunctival lymphangiectasia --> obsolete conjunctival lymphangiectasia
+ * [MONDO:0020261](http://purl.obolibrary.org/obo/MONDO_0020261) neurological disease with abnormal eye movements --> obsolete neurological disease with abnormal eye movements
+ * [MONDO:0020719](http://purl.obolibrary.org/obo/MONDO_0020719) susceptibility to Hirschsprung disease --> obsolete susceptibility to Hirschsprung disease
+ * [MONDO:0024236](http://purl.obolibrary.org/obo/MONDO_0024236) degenerative disorder --> obsolete degenerative disorder
+ * [MONDO:0024624](http://purl.obolibrary.org/obo/MONDO_0024624) atrophy of lacrimal gland --> obsolete atrophy of lacrimal gland
+ * [MONDO:0033571](http://purl.obolibrary.org/obo/MONDO_0033571) skeletal muscle glycogen content and metabolism quantitative trait locus --> obsolete skeletal muscle glycogen content and metabolism quantitative trait locus
+
+## Renaming
+
+ * [MONDO:0000049](http://purl.obolibrary.org/obo/MONDO_0000049) invasive pneumococcal disease, recurrent isolated --> obsolete invasive pneumococcal disease, recurrent isolated
+ * [MONDO:0000123](http://purl.obolibrary.org/obo/MONDO_0000123) obsolete factor v and Factor VIII, combined deficiency of --> obsolete factor V and Factor VIII, combined deficiency of
+ * [MONDO:0001807](http://purl.obolibrary.org/obo/MONDO_0001807) familial combined hyperlipidemia --> obsolete familial combined hyperlipidemia
+ * [MONDO:0001932](http://purl.obolibrary.org/obo/MONDO_0001932) atrophic vulva --> obsolete atrophic vulva
+ * [MONDO:0002264](http://purl.obolibrary.org/obo/MONDO_0002264) atrophy of prostate --> obsolete atrophy of prostate
+ * [MONDO:0006168](http://purl.obolibrary.org/obo/MONDO_0006168) common hematopoietic neoplasm --> obsolete common hematopoietic neoplasm
+ * [MONDO:0006315](http://purl.obolibrary.org/obo/MONDO_0006315) neoplastic medium-sized B-lymphocyte with basophilic cytoplasm --> obsolete neoplastic medium-sized B-lymphocyte with basophilic cytoplasm
+ * [MONDO:0007347](http://purl.obolibrary.org/obo/MONDO_0007347) CXB3S --> obsolete Coxsackievirus B3 susceptibility
+ * [MONDO:0007468](http://purl.obolibrary.org/obo/MONDO_0007468) DNA, satellite, alpha type --> obsolete DNA, satellite, alpha type
+ * [MONDO:0007506](http://purl.obolibrary.org/obo/MONDO_0007506) echo virus 11 sensitivity --> obsoleted echo virus 11 sensitivity
+ * [MONDO:0008490](http://purl.obolibrary.org/obo/MONDO_0008490) Stickler syndrome type 3 --> otospondylomegaepiphyseal dysplasia, autosomal dominant
+ * [MONDO:0008535](http://purl.obolibrary.org/obo/MONDO_0008535) telangiectasia, hereditary hemorrhagic, of Rendu, Osler, and Weber --> telangiectasia, hereditary hemorrhagic, type 1
+ * [MONDO:0008657](http://purl.obolibrary.org/obo/MONDO_0008657) vibratory angioedema --> obsolete vibratory angioedema
+ * [MONDO:0008659](http://purl.obolibrary.org/obo/MONDO_0008659) transcobalamin i deficiency --> transcobalamin I deficiency
+ * [MONDO:0008761](http://purl.obolibrary.org/obo/MONDO_0008761) alpha-2-deficient collagen disease --> obsolete alpha-2-deficient collagen disease
+ * [MONDO:0008885](http://purl.obolibrary.org/obo/MONDO_0008885) Branchioskeletogenital syndrome --> Elsahy-Waters syndrome
+ * [MONDO:0009304](http://purl.obolibrary.org/obo/MONDO_0009304) Gorlin-Chaudhry-Moss syndrome --> obsolete Gorlin-Chaudhry-Moss syndrome
+ * [MONDO:0009640](http://purl.obolibrary.org/obo/MONDO_0009640) mitochondrial complex I deficiency, nuclear type --> obsolete mitochondrial complex I deficiency, nuclear type
+ * [MONDO:0010071](http://purl.obolibrary.org/obo/MONDO_0010071) spondyloenchondrodysplasia --> obsolete spondyloenchondrodysplasia
+ * [MONDO:0010195](http://purl.obolibrary.org/obo/MONDO_0010195) Weissenbacher-Zweymuller syndrome --> obsolete Weissenbacher-Zweymuller syndrome
+ * [MONDO:0010272](http://purl.obolibrary.org/obo/MONDO_0010272) syndromic X-linked intellectual disability type 10 --> obsolete syndromic X-linked intellectual disability type 10
+ * [MONDO:0010327](http://purl.obolibrary.org/obo/MONDO_0010327) HSD10 disease --> HSD10 mitochondrial disease
+ * [MONDO:0010357](http://purl.obolibrary.org/obo/MONDO_0010357) MRX78 --> obsolete MRX78
+ * [MONDO:0010376](http://purl.obolibrary.org/obo/MONDO_0010376) Brooks-Wisniewski-brown syndrome --> obsolete Brooks-Wisniewski-brown syndrome
+ * [MONDO:0010386](http://purl.obolibrary.org/obo/MONDO_0010386) X-linked mendelian susceptibility to mycobacterial diseases due to IKBKG deficiency --> immunodeficiency 33
+ * [MONDO:0010387](http://purl.obolibrary.org/obo/MONDO_0010387) invasive pneumococcal disease, recurrent isolated, 2 --> obsolete invasive pneumococcal disease, recurrent isolated, 2
+ * [MONDO:0010961](http://purl.obolibrary.org/obo/MONDO_0010961) obesity due to prohormone convertase i deficiency --> obesity due to prohormone convertase I deficiency
+ * [MONDO:0011324](http://purl.obolibrary.org/obo/MONDO_0011324) hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss --> obsolete hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss
+ * [MONDO:0011859](http://purl.obolibrary.org/obo/MONDO_0011859) distal myopathy with early respiratory muscle involvement --> obsolete distal myopathy with early respiratory muscle involvement
+ * [MONDO:0012186](http://purl.obolibrary.org/obo/MONDO_0012186) Fanconi anemia complementation group i --> Fanconi anemia complementation group I
+ * [MONDO:0012189](http://purl.obolibrary.org/obo/MONDO_0012189) Amish infantile epilepsy syndrome --> obsolete Amish infantile epilepsy syndrome
+ * [MONDO:0012560](http://purl.obolibrary.org/obo/MONDO_0012560) invasive pneumococcal disease, recurrent isolated, 1 --> obsolete invasive pneumococcal disease, recurrent isolated, 1
+ * [MONDO:0013422](http://purl.obolibrary.org/obo/MONDO_0013422) type i complement component 8 deficiency --> type I complement component 8 deficiency
+ * [MONDO:0013494](http://purl.obolibrary.org/obo/MONDO_0013494) PSMNSW --> obsolete PSMNSW
+ * [MONDO:0013701](http://purl.obolibrary.org/obo/MONDO_0013701) MRT32 --> obsolete MRT32
+ * [MONDO:0014567](http://purl.obolibrary.org/obo/MONDO_0014567) postnatal microcephaly-infantile hypotonia-spastic diplegia-dysarthria-intellectual disability syndrome --> glutamate pyruvate transaminase 2 deficiency
+ * [MONDO:0014985](http://purl.obolibrary.org/obo/MONDO_0014985) Fanconi anemia complementation group v --> Fanconi anemia complementation group V
+ * [MONDO:0015172](http://purl.obolibrary.org/obo/MONDO_0015172) epithelio-exfoliative colitis-deafness syndrome --> obsolete epithelio-exfoliative colitis-deafness syndrome
+ * [MONDO:0015173](http://purl.obolibrary.org/obo/MONDO_0015173) autoimmune enteropathy type 2 --> obsolete autoimmune enteropathy type 2
+ * [MONDO:0015297](http://purl.obolibrary.org/obo/MONDO_0015297) microcephaly-digital anomalies-intellectual disability syndrome --> obsolete microcephaly-digital anomalies-intellectual disability syndrome
+ * [MONDO:0015560](http://purl.obolibrary.org/obo/MONDO_0015560) classic mast cell leukemia --> obsolete classic mast cell leukemia
+ * [MONDO:0015602](http://purl.obolibrary.org/obo/MONDO_0015602) developmental delay-deafness syndrome, Hildebrand type --> obsolete developmental delay-deafness syndrome, Hildebrand type
+ * [MONDO:0015964](http://purl.obolibrary.org/obo/MONDO_0015964) rare genetic palpebral, lacrimal system and conjunctival disease --> obsolete rare genetic palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0016082](http://purl.obolibrary.org/obo/MONDO_0016082) tracheo-esophageal fistula-hypospadias syndrome --> obsolete tracheo-esophageal fistula-hypospadias syndrome
+ * [MONDO:0016111](http://purl.obolibrary.org/obo/MONDO_0016111) non-dystrophic myopathy with collagen 6 anomaly --> obsolete non-dystrophic myopathy with collagen 6 anomaly
+ * [MONDO:0016124](http://purl.obolibrary.org/obo/MONDO_0016124) drug and/or toxic myopathy --> obsolete drug and/or toxic myopathy
+ * [MONDO:0016997](http://purl.obolibrary.org/obo/MONDO_0016997) hereditary epidermolysis bullosa associated with ocular features --> obsolete hereditary epidermolysis bullosa associated with ocular features
+ * [MONDO:0017378](http://purl.obolibrary.org/obo/MONDO_0017378) polymicrogyria-turricephaly-hypogenitalism syndrome --> obsolete polymicrogyria-turricephaly-hypogenitalism syndrome
+ * [MONDO:0017458](http://purl.obolibrary.org/obo/MONDO_0017458) postaxial polydactyly of toes --> obsolete postaxial polydactyly of toes
+ * [MONDO:0017459](http://purl.obolibrary.org/obo/MONDO_0017459) central polydactyly of toes --> obsolete central polydactyly of toes
+ * [MONDO:0017494](http://purl.obolibrary.org/obo/MONDO_0017494) congenital absence of upper arm and forearm with hand present, unilateral --> obsolete congenital absence of upper arm and forearm with hand present, unilateral
+ * [MONDO:0017495](http://purl.obolibrary.org/obo/MONDO_0017495) congenital absence of upper arm and forearm with hand present, bilateral --> obsolete congenital absence of upper arm and forearm with hand present, bilateral
+ * [MONDO:0017539](http://purl.obolibrary.org/obo/MONDO_0017539) postaxial polydactyly of toes, unilateral --> obsolete postaxial polydactyly of toes, unilateral
+ * [MONDO:0017540](http://purl.obolibrary.org/obo/MONDO_0017540) postaxial polydactyly of toes, bilateral --> obsolete postaxial polydactyly of toes, bilateral
+ * [MONDO:0017541](http://purl.obolibrary.org/obo/MONDO_0017541) central polydactyly of toes, unilateral --> obsolete central polydactyly of toes, unilateral
+ * [MONDO:0017542](http://purl.obolibrary.org/obo/MONDO_0017542) central polydactyly of toes, bilateral --> obsolete central polydactyly of toes, bilateral
+ * [MONDO:0017678](http://purl.obolibrary.org/obo/MONDO_0017678) disease with punctate palmoplantar keratoderma as a major feature --> obsolete disease with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017679](http://purl.obolibrary.org/obo/MONDO_0017679) autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017680](http://purl.obolibrary.org/obo/MONDO_0017680) autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017820](http://purl.obolibrary.org/obo/MONDO_0017820) disease with Cushing syndrome as a major feature --> obsolete disease with Cushing syndrome as a major feature
+ * [MONDO:0017938](http://purl.obolibrary.org/obo/MONDO_0017938) X-linked cleft palate and ankyloglossia --> obsolete X-linked cleft palate and ankyloglossia
+ * [MONDO:0017996](http://purl.obolibrary.org/obo/MONDO_0017996) blepharophimosis - intellectual disability syndrome due to UBE3B deficiency --> obsolete blepharophimosis - intellectual disability syndrome due to UBE3B deficiency
+ * [MONDO:0018275](http://purl.obolibrary.org/obo/MONDO_0018275) salt and pepper syndrome --> obsolete salt and pepper syndrome
+ * [MONDO:0018336](http://purl.obolibrary.org/obo/MONDO_0018336) Silver-Russell syndrome due to a point mutation --> obsolete Silver-Russell syndrome due to a point mutation
+ * [MONDO:0019348](http://purl.obolibrary.org/obo/MONDO_0019348) Ehlers-Danlos syndrome with periventricular heterotopia --> obsolete Ehlers-Danlos syndrome with periventricular heterotopia
+ * [MONDO:0019389](http://purl.obolibrary.org/obo/MONDO_0019389) X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome --> obsolete X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome
+ * [MONDO:0019410](http://purl.obolibrary.org/obo/MONDO_0019410) nodulosis-arthropathy-osteolysis syndrome --> obsolete nodulosis-arthropathy-osteolysis syndrome
+ * [MONDO:0019657](http://purl.obolibrary.org/obo/MONDO_0019657) sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes
+ * [MONDO:0019658](http://purl.obolibrary.org/obo/MONDO_0019658) sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation
+ * [MONDO:0019894](http://purl.obolibrary.org/obo/MONDO_0019894) non-distal monosomy 7p --> obsolete non-distal monosomy 7p
+ * [MONDO:0020150](http://purl.obolibrary.org/obo/MONDO_0020150) rare palpebral, lacrimal system and conjunctival disease --> obsolete rare palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0020168](http://purl.obolibrary.org/obo/MONDO_0020168) kinetic eyelid anomaly --> obsolete kinetic eyelid anomaly
+ * [MONDO:0020170](http://purl.obolibrary.org/obo/MONDO_0020170) congenital upper palpebral retraction --> obsolete congenital upper palpebral retraction
+ * [MONDO:0020199](http://purl.obolibrary.org/obo/MONDO_0020199) conjunctival vascular anomaly --> obsolete conjunctival vascular anomaly
+ * [MONDO:0020200](http://purl.obolibrary.org/obo/MONDO_0020200) conjunctival hemangioma or hemolymphangioma --> obsolete conjunctival hemangioma or hemolymphangioma
+ * [MONDO:0020201](http://purl.obolibrary.org/obo/MONDO_0020201) conjunctival telangiectasia (disease) --> obsolete conjunctival telangiectasia (disease)
+ * [MONDO:0020202](http://purl.obolibrary.org/obo/MONDO_0020202) conjunctival lymphangiectasia --> obsolete conjunctival lymphangiectasia
+ * [MONDO:0020261](http://purl.obolibrary.org/obo/MONDO_0020261) neurological disease with abnormal eye movements --> obsolete neurological disease with abnormal eye movements
+ * [MONDO:0020719](http://purl.obolibrary.org/obo/MONDO_0020719) susceptibility to Hirschsprung disease --> obsolete susceptibility to Hirschsprung disease
+ * [MONDO:0022932](http://purl.obolibrary.org/obo/MONDO_0022932) davenport-Donlan syndrome --> Davenport-Donlan syndrome
+ * [MONDO:0024236](http://purl.obolibrary.org/obo/MONDO_0024236) degenerative disorder --> obsolete degenerative disorder
+ * [MONDO:0024624](http://purl.obolibrary.org/obo/MONDO_0024624) atrophy of lacrimal gland --> obsolete atrophy of lacrimal gland
+ * [MONDO:0033571](http://purl.obolibrary.org/obo/MONDO_0033571) skeletal muscle glycogen content and metabolism quantitative trait locus --> obsolete skeletal muscle glycogen content and metabolism quantitative trait locus
+
+
+# v2020-12-02
+
+## New Classes
+
+ * [MONDO:0020836](http://purl.obolibrary.org/obo/MONDO_0020836) autism, susceptiblity to
+ * [MONDO:0026771](http://purl.obolibrary.org/obo/MONDO_0026771) developmental and epileptic encephalopathy, 85, with or without midline brain defects
+ * [MONDO:0026777](http://purl.obolibrary.org/obo/MONDO_0026777) VEXAS syndrome
+ * [MONDO:0033613](http://purl.obolibrary.org/obo/MONDO_0033613) neurodevelopmental disorder with progressive spasticity and brain white matter abnormalities
+ * [MONDO:0033614](http://purl.obolibrary.org/obo/MONDO_0033614) spastic paraplegia 83, autosomal recessive
+ * [MONDO:0033615](http://purl.obolibrary.org/obo/MONDO_0033615) coenzyme q10 deficiency, primary, 9
+ * [MONDO:0033618](http://purl.obolibrary.org/obo/MONDO_0033618) Vissers-Bodmer syndrome
+ * [MONDO:0033619](http://purl.obolibrary.org/obo/MONDO_0033619) myopathy, epilepsy, and progressive cerebral atrophy
+ * [MONDO:0033620](http://purl.obolibrary.org/obo/MONDO_0033620) myofibrillar myopathy 10
+ * [MONDO:0033621](http://purl.obolibrary.org/obo/MONDO_0033621) spinal muscular atrophy, infantile, James type
+ * [MONDO:0033622](http://purl.obolibrary.org/obo/MONDO_0033622) spermatogenic failure 44
+ * [MONDO:0033630](http://purl.obolibrary.org/obo/MONDO_0033630) neurodevelopmental disorder with speech impairment and dysmorphic facies
+ * [MONDO:0033631](http://purl.obolibrary.org/obo/MONDO_0033631) combined oxidative phosphorylation deficiency 51
+ * [MONDO:0033635](http://purl.obolibrary.org/obo/MONDO_0033635) mitochondrial complex 4 deficiency, nuclear type 3
+ * [MONDO:0033636](http://purl.obolibrary.org/obo/MONDO_0033636) mitochondrial complex 4 deficiency, nuclear type 4
+ * [MONDO:0033637](http://purl.obolibrary.org/obo/MONDO_0033637) mitochondrial complex 4 deficiency, nuclear type 7
+ * [MONDO:0033638](http://purl.obolibrary.org/obo/MONDO_0033638) mitochondrial complex 4 deficiency, nuclear type 8
+ * [MONDO:0033639](http://purl.obolibrary.org/obo/MONDO_0033639) mitochondrial complex 4 deficiency, nuclear type 10
+ * [MONDO:0033640](http://purl.obolibrary.org/obo/MONDO_0033640) vitamin D-dependent rickets, type 3
+ * [MONDO:0033641](http://purl.obolibrary.org/obo/MONDO_0033641) cleft palate, proliferative retinopathy, and developmental delay
+ * [MONDO:0033642](http://purl.obolibrary.org/obo/MONDO_0033642) neurodevelopmental disorder with alopecia and brain abnormalities
+ * [MONDO:0033643](http://purl.obolibrary.org/obo/MONDO_0033643) inflammatory bowel disease 30
+ * [MONDO:0033644](http://purl.obolibrary.org/obo/MONDO_0033644) microcornea, rod-cone dystrophy, cataract, and posterior staphyloma 1
+ * [MONDO:0033645](http://purl.obolibrary.org/obo/MONDO_0033645) mitochondrial complex 4 deficiency, nuclear type 11
+ * [MONDO:0033646](http://purl.obolibrary.org/obo/MONDO_0033646) mitochondrial complex 4 deficiency, nuclear type 12
+ * [MONDO:0033649](http://purl.obolibrary.org/obo/MONDO_0033649) mitochondrial complex 4 deficiency, nuclear type 14
+ * [MONDO:0033650](http://purl.obolibrary.org/obo/MONDO_0033650) mitochondrial complex 4 deficiency, nuclear type 15
+ * [MONDO:0033651](http://purl.obolibrary.org/obo/MONDO_0033651) mitochondrial complex 4 deficiency, nuclear type 16
+ * [MONDO:0033652](http://purl.obolibrary.org/obo/MONDO_0033652) mitochondrial complex 4 deficiency, nuclear type 17
+ * [MONDO:0033653](http://purl.obolibrary.org/obo/MONDO_0033653) mitochondrial complex 4 deficiency, nuclear type 18
+ * [MONDO:0033654](http://purl.obolibrary.org/obo/MONDO_0033654) mitochondrial complex 4 deficiency, nuclear type 19
+ * [MONDO:0033655](http://purl.obolibrary.org/obo/MONDO_0033655) mitochondrial complex 4 deficiency, nuclear type 20
+ * [MONDO:0033656](http://purl.obolibrary.org/obo/MONDO_0033656) mitochondrial complex 4 deficiency, nuclear type 21
+ * [MONDO:0033657](http://purl.obolibrary.org/obo/MONDO_0033657) leukodystrophy, hypomyelinating, 20
+ * [MONDO:0033658](http://purl.obolibrary.org/obo/MONDO_0033658) neurodevelopmental disorder with seizures and brain atrophy
+ * [MONDO:0033662](http://purl.obolibrary.org/obo/MONDO_0033662) neurodevelopmental disorder with microcephaly, seizures, and brain atrophy
+ * [MONDO:0033664](http://purl.obolibrary.org/obo/MONDO_0033664) Kilquist syndrome
+ * [MONDO:0033665](http://purl.obolibrary.org/obo/MONDO_0033665) deafness, autosomal dominant 78
+ * [MONDO:0033667](http://purl.obolibrary.org/obo/MONDO_0033667) Delpire-McNeill syndrome
+ * [MONDO:0033668](http://purl.obolibrary.org/obo/MONDO_0033668) deafness, autosomal dominant 79
+ * [MONDO:0033669](http://purl.obolibrary.org/obo/MONDO_0033669) Noonan syndrome 13
+ * [MONDO:0033670](http://purl.obolibrary.org/obo/MONDO_0033670) deafness, autosomal recessive 116
+ * [MONDO:0033671](http://purl.obolibrary.org/obo/MONDO_0033671) spermatogenic failure 45
+ * [MONDO:0033673](http://purl.obolibrary.org/obo/MONDO_0033673) spermatogenic failure 46
+ * [MONDO:0033885](http://purl.obolibrary.org/obo/MONDO_0033885) mitochondrial complex IV deficiency, nuclear-type
+ * [MONDO:0034846](http://purl.obolibrary.org/obo/MONDO_0034846) primary desmosis coli
+ * [MONDO:0034976](http://purl.obolibrary.org/obo/MONDO_0034976) iatrogenic Creutzfeldt-Jakob disease
+ * [MONDO:0034987](http://purl.obolibrary.org/obo/MONDO_0034987) intraductal tubulopapillary neoplasm of pancreas
+ * [MONDO:0035004](http://purl.obolibrary.org/obo/MONDO_0035004) serine biosynthesis pathway deficiency, infantile/juvenile form
+ * [MONDO:0035008](http://purl.obolibrary.org/obo/MONDO_0035008) isolated splenic vein thrombosis
+ * [MONDO:0035009](http://purl.obolibrary.org/obo/MONDO_0035009) isolated mesenteric vein thrombosis
+ * [MONDO:0100195](http://purl.obolibrary.org/obo/MONDO_0100195) X-linked intellectual disability with hypopituitarism
+ * [MONDO:0100222](http://purl.obolibrary.org/obo/MONDO_0100222) A20 haploinsufficiency
+ * [MONDO:0100223](http://purl.obolibrary.org/obo/MONDO_0100223) mitochondrial complex I deficiency, nuclear type
+ * [MONDO:0100224](http://purl.obolibrary.org/obo/MONDO_0100224) mitochondrial complex I deficiency, nuclear type 1
+ * [MONDO:0100225](http://purl.obolibrary.org/obo/MONDO_0100225) collagen 6-related myopathy
+ * [MONDO:0100226](http://purl.obolibrary.org/obo/MONDO_0100226) parasomnia, sleepwalking type
+
+## Obsoletions
+
+ * [MONDO:0000049](http://purl.obolibrary.org/obo/MONDO_0000049) invasive pneumococcal disease, recurrent isolated --> obsolete invasive pneumococcal disease, recurrent isolated
+ * [MONDO:0000123](http://purl.obolibrary.org/obo/MONDO_0000123) obsolete factor v and Factor VIII, combined deficiency of --> obsolete factor V and Factor VIII, combined deficiency of
+ * [MONDO:0001807](http://purl.obolibrary.org/obo/MONDO_0001807) familial combined hyperlipidemia --> obsolete familial combined hyperlipidemia
+ * [MONDO:0001932](http://purl.obolibrary.org/obo/MONDO_0001932) atrophic vulva --> obsolete atrophic vulva
+ * [MONDO:0002264](http://purl.obolibrary.org/obo/MONDO_0002264) atrophy of prostate --> obsolete atrophy of prostate
+ * [MONDO:0006168](http://purl.obolibrary.org/obo/MONDO_0006168) common hematopoietic neoplasm --> obsolete common hematopoietic neoplasm
+ * [MONDO:0006315](http://purl.obolibrary.org/obo/MONDO_0006315) neoplastic medium-sized B-lymphocyte with basophilic cytoplasm --> obsolete neoplastic medium-sized B-lymphocyte with basophilic cytoplasm
+ * [MONDO:0007347](http://purl.obolibrary.org/obo/MONDO_0007347) CXB3S --> obsolete Coxsackievirus B3 susceptibility
+ * [MONDO:0007468](http://purl.obolibrary.org/obo/MONDO_0007468) DNA, satellite, alpha type --> obsolete DNA, satellite, alpha type
+ * [MONDO:0007506](http://purl.obolibrary.org/obo/MONDO_0007506) echo virus 11 sensitivity --> obsoleted echo virus 11 sensitivity
+ * [MONDO:0008657](http://purl.obolibrary.org/obo/MONDO_0008657) vibratory angioedema --> obsolete vibratory angioedema
+ * [MONDO:0008761](http://purl.obolibrary.org/obo/MONDO_0008761) alpha-2-deficient collagen disease --> obsolete alpha-2-deficient collagen disease
+ * [MONDO:0009304](http://purl.obolibrary.org/obo/MONDO_0009304) Gorlin-Chaudhry-Moss syndrome --> obsolete Gorlin-Chaudhry-Moss syndrome
+ * [MONDO:0009640](http://purl.obolibrary.org/obo/MONDO_0009640) mitochondrial complex I deficiency, nuclear type --> obsolete mitochondrial complex I deficiency, nuclear type
+ * [MONDO:0010071](http://purl.obolibrary.org/obo/MONDO_0010071) spondyloenchondrodysplasia --> obsolete spondyloenchondrodysplasia
+ * [MONDO:0010195](http://purl.obolibrary.org/obo/MONDO_0010195) Weissenbacher-Zweymuller syndrome --> obsolete Weissenbacher-Zweymuller syndrome
+ * [MONDO:0010272](http://purl.obolibrary.org/obo/MONDO_0010272) syndromic X-linked intellectual disability type 10 --> obsolete syndromic X-linked intellectual disability type 10
+ * [MONDO:0010357](http://purl.obolibrary.org/obo/MONDO_0010357) MRX78 --> obsolete MRX78
+ * [MONDO:0010376](http://purl.obolibrary.org/obo/MONDO_0010376) Brooks-Wisniewski-brown syndrome --> obsolete Brooks-Wisniewski-brown syndrome
+ * [MONDO:0010387](http://purl.obolibrary.org/obo/MONDO_0010387) invasive pneumococcal disease, recurrent isolated, 2 --> obsolete invasive pneumococcal disease, recurrent isolated, 2
+ * [MONDO:0011324](http://purl.obolibrary.org/obo/MONDO_0011324) hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss --> obsolete hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss
+ * [MONDO:0011859](http://purl.obolibrary.org/obo/MONDO_0011859) distal myopathy with early respiratory muscle involvement --> obsolete distal myopathy with early respiratory muscle involvement
+ * [MONDO:0012189](http://purl.obolibrary.org/obo/MONDO_0012189) Amish infantile epilepsy syndrome --> obsolete Amish infantile epilepsy syndrome
+ * [MONDO:0012560](http://purl.obolibrary.org/obo/MONDO_0012560) invasive pneumococcal disease, recurrent isolated, 1 --> obsolete invasive pneumococcal disease, recurrent isolated, 1
+ * [MONDO:0013494](http://purl.obolibrary.org/obo/MONDO_0013494) PSMNSW --> obsolete PSMNSW
+ * [MONDO:0013701](http://purl.obolibrary.org/obo/MONDO_0013701) MRT32 --> obsolete MRT32
+ * [MONDO:0015172](http://purl.obolibrary.org/obo/MONDO_0015172) epithelio-exfoliative colitis-deafness syndrome --> obsolete epithelio-exfoliative colitis-deafness syndrome
+ * [MONDO:0015173](http://purl.obolibrary.org/obo/MONDO_0015173) autoimmune enteropathy type 2 --> obsolete autoimmune enteropathy type 2
+ * [MONDO:0015297](http://purl.obolibrary.org/obo/MONDO_0015297) microcephaly-digital anomalies-intellectual disability syndrome --> obsolete microcephaly-digital anomalies-intellectual disability syndrome
+ * [MONDO:0015560](http://purl.obolibrary.org/obo/MONDO_0015560) classic mast cell leukemia --> obsolete classic mast cell leukemia
+ * [MONDO:0015602](http://purl.obolibrary.org/obo/MONDO_0015602) developmental delay-deafness syndrome, Hildebrand type --> obsolete developmental delay-deafness syndrome, Hildebrand type
+ * [MONDO:0015964](http://purl.obolibrary.org/obo/MONDO_0015964) rare genetic palpebral, lacrimal system and conjunctival disease --> obsolete rare genetic palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0016082](http://purl.obolibrary.org/obo/MONDO_0016082) tracheo-esophageal fistula-hypospadias syndrome --> obsolete tracheo-esophageal fistula-hypospadias syndrome
+ * [MONDO:0016111](http://purl.obolibrary.org/obo/MONDO_0016111) non-dystrophic myopathy with collagen 6 anomaly --> obsolete non-dystrophic myopathy with collagen 6 anomaly
+ * [MONDO:0016124](http://purl.obolibrary.org/obo/MONDO_0016124) drug and/or toxic myopathy --> obsolete drug and/or toxic myopathy
+ * [MONDO:0016997](http://purl.obolibrary.org/obo/MONDO_0016997) hereditary epidermolysis bullosa associated with ocular features --> obsolete hereditary epidermolysis bullosa associated with ocular features
+ * [MONDO:0017378](http://purl.obolibrary.org/obo/MONDO_0017378) polymicrogyria-turricephaly-hypogenitalism syndrome --> obsolete polymicrogyria-turricephaly-hypogenitalism syndrome
+ * [MONDO:0017458](http://purl.obolibrary.org/obo/MONDO_0017458) postaxial polydactyly of toes --> obsolete postaxial polydactyly of toes
+ * [MONDO:0017459](http://purl.obolibrary.org/obo/MONDO_0017459) central polydactyly of toes --> obsolete central polydactyly of toes
+ * [MONDO:0017494](http://purl.obolibrary.org/obo/MONDO_0017494) congenital absence of upper arm and forearm with hand present, unilateral --> obsolete congenital absence of upper arm and forearm with hand present, unilateral
+ * [MONDO:0017495](http://purl.obolibrary.org/obo/MONDO_0017495) congenital absence of upper arm and forearm with hand present, bilateral --> obsolete congenital absence of upper arm and forearm with hand present, bilateral
+ * [MONDO:0017539](http://purl.obolibrary.org/obo/MONDO_0017539) postaxial polydactyly of toes, unilateral --> obsolete postaxial polydactyly of toes, unilateral
+ * [MONDO:0017540](http://purl.obolibrary.org/obo/MONDO_0017540) postaxial polydactyly of toes, bilateral --> obsolete postaxial polydactyly of toes, bilateral
+ * [MONDO:0017541](http://purl.obolibrary.org/obo/MONDO_0017541) central polydactyly of toes, unilateral --> obsolete central polydactyly of toes, unilateral
+ * [MONDO:0017542](http://purl.obolibrary.org/obo/MONDO_0017542) central polydactyly of toes, bilateral --> obsolete central polydactyly of toes, bilateral
+ * [MONDO:0017678](http://purl.obolibrary.org/obo/MONDO_0017678) disease with punctate palmoplantar keratoderma as a major feature --> obsolete disease with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017679](http://purl.obolibrary.org/obo/MONDO_0017679) autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017680](http://purl.obolibrary.org/obo/MONDO_0017680) autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017820](http://purl.obolibrary.org/obo/MONDO_0017820) disease with Cushing syndrome as a major feature --> obsolete disease with Cushing syndrome as a major feature
+ * [MONDO:0017938](http://purl.obolibrary.org/obo/MONDO_0017938) X-linked cleft palate and ankyloglossia --> obsolete X-linked cleft palate and ankyloglossia
+ * [MONDO:0017996](http://purl.obolibrary.org/obo/MONDO_0017996) blepharophimosis - intellectual disability syndrome due to UBE3B deficiency --> obsolete blepharophimosis - intellectual disability syndrome due to UBE3B deficiency
+ * [MONDO:0018275](http://purl.obolibrary.org/obo/MONDO_0018275) salt and pepper syndrome --> obsolete salt and pepper syndrome
+ * [MONDO:0018336](http://purl.obolibrary.org/obo/MONDO_0018336) Silver-Russell syndrome due to a point mutation --> obsolete Silver-Russell syndrome due to a point mutation
+ * [MONDO:0019348](http://purl.obolibrary.org/obo/MONDO_0019348) Ehlers-Danlos syndrome with periventricular heterotopia --> obsolete Ehlers-Danlos syndrome with periventricular heterotopia
+ * [MONDO:0019389](http://purl.obolibrary.org/obo/MONDO_0019389) X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome --> obsolete X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome
+ * [MONDO:0019410](http://purl.obolibrary.org/obo/MONDO_0019410) nodulosis-arthropathy-osteolysis syndrome --> obsolete nodulosis-arthropathy-osteolysis syndrome
+ * [MONDO:0019657](http://purl.obolibrary.org/obo/MONDO_0019657) sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes
+ * [MONDO:0019658](http://purl.obolibrary.org/obo/MONDO_0019658) sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation
+ * [MONDO:0019894](http://purl.obolibrary.org/obo/MONDO_0019894) non-distal monosomy 7p --> obsolete non-distal monosomy 7p
+ * [MONDO:0020150](http://purl.obolibrary.org/obo/MONDO_0020150) rare palpebral, lacrimal system and conjunctival disease --> obsolete rare palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0020168](http://purl.obolibrary.org/obo/MONDO_0020168) kinetic eyelid anomaly --> obsolete kinetic eyelid anomaly
+ * [MONDO:0020170](http://purl.obolibrary.org/obo/MONDO_0020170) congenital upper palpebral retraction --> obsolete congenital upper palpebral retraction
+ * [MONDO:0020199](http://purl.obolibrary.org/obo/MONDO_0020199) conjunctival vascular anomaly --> obsolete conjunctival vascular anomaly
+ * [MONDO:0020200](http://purl.obolibrary.org/obo/MONDO_0020200) conjunctival hemangioma or hemolymphangioma --> obsolete conjunctival hemangioma or hemolymphangioma
+ * [MONDO:0020201](http://purl.obolibrary.org/obo/MONDO_0020201) conjunctival telangiectasia (disease) --> obsolete conjunctival telangiectasia (disease)
+ * [MONDO:0020202](http://purl.obolibrary.org/obo/MONDO_0020202) conjunctival lymphangiectasia --> obsolete conjunctival lymphangiectasia
+ * [MONDO:0020261](http://purl.obolibrary.org/obo/MONDO_0020261) neurological disease with abnormal eye movements --> obsolete neurological disease with abnormal eye movements
+ * [MONDO:0020719](http://purl.obolibrary.org/obo/MONDO_0020719) susceptibility to Hirschsprung disease --> obsolete susceptibility to Hirschsprung disease
+ * [MONDO:0024236](http://purl.obolibrary.org/obo/MONDO_0024236) degenerative disorder --> obsolete degenerative disorder
+ * [MONDO:0024624](http://purl.obolibrary.org/obo/MONDO_0024624) atrophy of lacrimal gland --> obsolete atrophy of lacrimal gland
+ * [MONDO:0033571](http://purl.obolibrary.org/obo/MONDO_0033571) skeletal muscle glycogen content and metabolism quantitative trait locus --> obsolete skeletal muscle glycogen content and metabolism quantitative trait locus
+
+## Renaming
+
+ * [MONDO:0000049](http://purl.obolibrary.org/obo/MONDO_0000049) invasive pneumococcal disease, recurrent isolated --> obsolete invasive pneumococcal disease, recurrent isolated
+ * [MONDO:0000123](http://purl.obolibrary.org/obo/MONDO_0000123) obsolete factor v and Factor VIII, combined deficiency of --> obsolete factor V and Factor VIII, combined deficiency of
+ * [MONDO:0001807](http://purl.obolibrary.org/obo/MONDO_0001807) familial combined hyperlipidemia --> obsolete familial combined hyperlipidemia
+ * [MONDO:0001932](http://purl.obolibrary.org/obo/MONDO_0001932) atrophic vulva --> obsolete atrophic vulva
+ * [MONDO:0002264](http://purl.obolibrary.org/obo/MONDO_0002264) atrophy of prostate --> obsolete atrophy of prostate
+ * [MONDO:0006168](http://purl.obolibrary.org/obo/MONDO_0006168) common hematopoietic neoplasm --> obsolete common hematopoietic neoplasm
+ * [MONDO:0006315](http://purl.obolibrary.org/obo/MONDO_0006315) neoplastic medium-sized B-lymphocyte with basophilic cytoplasm --> obsolete neoplastic medium-sized B-lymphocyte with basophilic cytoplasm
+ * [MONDO:0007347](http://purl.obolibrary.org/obo/MONDO_0007347) CXB3S --> obsolete Coxsackievirus B3 susceptibility
+ * [MONDO:0007468](http://purl.obolibrary.org/obo/MONDO_0007468) DNA, satellite, alpha type --> obsolete DNA, satellite, alpha type
+ * [MONDO:0007506](http://purl.obolibrary.org/obo/MONDO_0007506) echo virus 11 sensitivity --> obsoleted echo virus 11 sensitivity
+ * [MONDO:0008490](http://purl.obolibrary.org/obo/MONDO_0008490) Stickler syndrome type 3 --> otospondylomegaepiphyseal dysplasia, autosomal dominant
+ * [MONDO:0008535](http://purl.obolibrary.org/obo/MONDO_0008535) telangiectasia, hereditary hemorrhagic, of Rendu, Osler, and Weber --> telangiectasia, hereditary hemorrhagic, type 1
+ * [MONDO:0008657](http://purl.obolibrary.org/obo/MONDO_0008657) vibratory angioedema --> obsolete vibratory angioedema
+ * [MONDO:0008659](http://purl.obolibrary.org/obo/MONDO_0008659) transcobalamin i deficiency --> transcobalamin I deficiency
+ * [MONDO:0008761](http://purl.obolibrary.org/obo/MONDO_0008761) alpha-2-deficient collagen disease --> obsolete alpha-2-deficient collagen disease
+ * [MONDO:0008885](http://purl.obolibrary.org/obo/MONDO_0008885) Branchioskeletogenital syndrome --> Elsahy-Waters syndrome
+ * [MONDO:0009304](http://purl.obolibrary.org/obo/MONDO_0009304) Gorlin-Chaudhry-Moss syndrome --> obsolete Gorlin-Chaudhry-Moss syndrome
+ * [MONDO:0009640](http://purl.obolibrary.org/obo/MONDO_0009640) mitochondrial complex I deficiency, nuclear type --> obsolete mitochondrial complex I deficiency, nuclear type
+ * [MONDO:0010071](http://purl.obolibrary.org/obo/MONDO_0010071) spondyloenchondrodysplasia --> obsolete spondyloenchondrodysplasia
+ * [MONDO:0010195](http://purl.obolibrary.org/obo/MONDO_0010195) Weissenbacher-Zweymuller syndrome --> obsolete Weissenbacher-Zweymuller syndrome
+ * [MONDO:0010272](http://purl.obolibrary.org/obo/MONDO_0010272) syndromic X-linked intellectual disability type 10 --> obsolete syndromic X-linked intellectual disability type 10
+ * [MONDO:0010327](http://purl.obolibrary.org/obo/MONDO_0010327) HSD10 disease --> HSD10 mitochondrial disease
+ * [MONDO:0010357](http://purl.obolibrary.org/obo/MONDO_0010357) MRX78 --> obsolete MRX78
+ * [MONDO:0010376](http://purl.obolibrary.org/obo/MONDO_0010376) Brooks-Wisniewski-brown syndrome --> obsolete Brooks-Wisniewski-brown syndrome
+ * [MONDO:0010386](http://purl.obolibrary.org/obo/MONDO_0010386) X-linked mendelian susceptibility to mycobacterial diseases due to IKBKG deficiency --> immunodeficiency 33
+ * [MONDO:0010387](http://purl.obolibrary.org/obo/MONDO_0010387) invasive pneumococcal disease, recurrent isolated, 2 --> obsolete invasive pneumococcal disease, recurrent isolated, 2
+ * [MONDO:0010961](http://purl.obolibrary.org/obo/MONDO_0010961) obesity due to prohormone convertase i deficiency --> obesity due to prohormone convertase I deficiency
+ * [MONDO:0011324](http://purl.obolibrary.org/obo/MONDO_0011324) hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss --> obsolete hypospadias, hypertelorism, upper 51D coloboma, and mixed-type hearing loss
+ * [MONDO:0011859](http://purl.obolibrary.org/obo/MONDO_0011859) distal myopathy with early respiratory muscle involvement --> obsolete distal myopathy with early respiratory muscle involvement
+ * [MONDO:0012186](http://purl.obolibrary.org/obo/MONDO_0012186) Fanconi anemia complementation group i --> Fanconi anemia complementation group I
+ * [MONDO:0012189](http://purl.obolibrary.org/obo/MONDO_0012189) Amish infantile epilepsy syndrome --> obsolete Amish infantile epilepsy syndrome
+ * [MONDO:0012560](http://purl.obolibrary.org/obo/MONDO_0012560) invasive pneumococcal disease, recurrent isolated, 1 --> obsolete invasive pneumococcal disease, recurrent isolated, 1
+ * [MONDO:0013422](http://purl.obolibrary.org/obo/MONDO_0013422) type i complement component 8 deficiency --> type I complement component 8 deficiency
+ * [MONDO:0013494](http://purl.obolibrary.org/obo/MONDO_0013494) PSMNSW --> obsolete PSMNSW
+ * [MONDO:0013701](http://purl.obolibrary.org/obo/MONDO_0013701) MRT32 --> obsolete MRT32
+ * [MONDO:0014567](http://purl.obolibrary.org/obo/MONDO_0014567) postnatal microcephaly-infantile hypotonia-spastic diplegia-dysarthria-intellectual disability syndrome --> glutamate pyruvate transaminase 2 deficiency
+ * [MONDO:0014985](http://purl.obolibrary.org/obo/MONDO_0014985) Fanconi anemia complementation group v --> Fanconi anemia complementation group V
+ * [MONDO:0015172](http://purl.obolibrary.org/obo/MONDO_0015172) epithelio-exfoliative colitis-deafness syndrome --> obsolete epithelio-exfoliative colitis-deafness syndrome
+ * [MONDO:0015173](http://purl.obolibrary.org/obo/MONDO_0015173) autoimmune enteropathy type 2 --> obsolete autoimmune enteropathy type 2
+ * [MONDO:0015297](http://purl.obolibrary.org/obo/MONDO_0015297) microcephaly-digital anomalies-intellectual disability syndrome --> obsolete microcephaly-digital anomalies-intellectual disability syndrome
+ * [MONDO:0015560](http://purl.obolibrary.org/obo/MONDO_0015560) classic mast cell leukemia --> obsolete classic mast cell leukemia
+ * [MONDO:0015602](http://purl.obolibrary.org/obo/MONDO_0015602) developmental delay-deafness syndrome, Hildebrand type --> obsolete developmental delay-deafness syndrome, Hildebrand type
+ * [MONDO:0015964](http://purl.obolibrary.org/obo/MONDO_0015964) rare genetic palpebral, lacrimal system and conjunctival disease --> obsolete rare genetic palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0016082](http://purl.obolibrary.org/obo/MONDO_0016082) tracheo-esophageal fistula-hypospadias syndrome --> obsolete tracheo-esophageal fistula-hypospadias syndrome
+ * [MONDO:0016111](http://purl.obolibrary.org/obo/MONDO_0016111) non-dystrophic myopathy with collagen 6 anomaly --> obsolete non-dystrophic myopathy with collagen 6 anomaly
+ * [MONDO:0016124](http://purl.obolibrary.org/obo/MONDO_0016124) drug and/or toxic myopathy --> obsolete drug and/or toxic myopathy
+ * [MONDO:0016997](http://purl.obolibrary.org/obo/MONDO_0016997) hereditary epidermolysis bullosa associated with ocular features --> obsolete hereditary epidermolysis bullosa associated with ocular features
+ * [MONDO:0017378](http://purl.obolibrary.org/obo/MONDO_0017378) polymicrogyria-turricephaly-hypogenitalism syndrome --> obsolete polymicrogyria-turricephaly-hypogenitalism syndrome
+ * [MONDO:0017458](http://purl.obolibrary.org/obo/MONDO_0017458) postaxial polydactyly of toes --> obsolete postaxial polydactyly of toes
+ * [MONDO:0017459](http://purl.obolibrary.org/obo/MONDO_0017459) central polydactyly of toes --> obsolete central polydactyly of toes
+ * [MONDO:0017494](http://purl.obolibrary.org/obo/MONDO_0017494) congenital absence of upper arm and forearm with hand present, unilateral --> obsolete congenital absence of upper arm and forearm with hand present, unilateral
+ * [MONDO:0017495](http://purl.obolibrary.org/obo/MONDO_0017495) congenital absence of upper arm and forearm with hand present, bilateral --> obsolete congenital absence of upper arm and forearm with hand present, bilateral
+ * [MONDO:0017539](http://purl.obolibrary.org/obo/MONDO_0017539) postaxial polydactyly of toes, unilateral --> obsolete postaxial polydactyly of toes, unilateral
+ * [MONDO:0017540](http://purl.obolibrary.org/obo/MONDO_0017540) postaxial polydactyly of toes, bilateral --> obsolete postaxial polydactyly of toes, bilateral
+ * [MONDO:0017541](http://purl.obolibrary.org/obo/MONDO_0017541) central polydactyly of toes, unilateral --> obsolete central polydactyly of toes, unilateral
+ * [MONDO:0017542](http://purl.obolibrary.org/obo/MONDO_0017542) central polydactyly of toes, bilateral --> obsolete central polydactyly of toes, bilateral
+ * [MONDO:0017678](http://purl.obolibrary.org/obo/MONDO_0017678) disease with punctate palmoplantar keratoderma as a major feature --> obsolete disease with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017679](http://purl.obolibrary.org/obo/MONDO_0017679) autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal dominant disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017680](http://purl.obolibrary.org/obo/MONDO_0017680) autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature --> obsolete autosomal recessive disease associated with punctate palmoplantar keratoderma as a major feature
+ * [MONDO:0017820](http://purl.obolibrary.org/obo/MONDO_0017820) disease with Cushing syndrome as a major feature --> obsolete disease with Cushing syndrome as a major feature
+ * [MONDO:0017938](http://purl.obolibrary.org/obo/MONDO_0017938) X-linked cleft palate and ankyloglossia --> obsolete X-linked cleft palate and ankyloglossia
+ * [MONDO:0017996](http://purl.obolibrary.org/obo/MONDO_0017996) blepharophimosis - intellectual disability syndrome due to UBE3B deficiency --> obsolete blepharophimosis - intellectual disability syndrome due to UBE3B deficiency
+ * [MONDO:0018275](http://purl.obolibrary.org/obo/MONDO_0018275) salt and pepper syndrome --> obsolete salt and pepper syndrome
+ * [MONDO:0018336](http://purl.obolibrary.org/obo/MONDO_0018336) Silver-Russell syndrome due to a point mutation --> obsolete Silver-Russell syndrome due to a point mutation
+ * [MONDO:0019348](http://purl.obolibrary.org/obo/MONDO_0019348) Ehlers-Danlos syndrome with periventricular heterotopia --> obsolete Ehlers-Danlos syndrome with periventricular heterotopia
+ * [MONDO:0019389](http://purl.obolibrary.org/obo/MONDO_0019389) X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome --> obsolete X-linked recessive intellectual disability-macrocephaly-ciliary dysfunction syndrome
+ * [MONDO:0019410](http://purl.obolibrary.org/obo/MONDO_0019410) nodulosis-arthropathy-osteolysis syndrome --> obsolete nodulosis-arthropathy-osteolysis syndrome
+ * [MONDO:0019657](http://purl.obolibrary.org/obo/MONDO_0019657) sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with minimal changes
+ * [MONDO:0019658](http://purl.obolibrary.org/obo/MONDO_0019658) sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation --> obsolete sporadic idiopathic steroid-resistant nephrotic syndrome with diffuse mesangial proliferation
+ * [MONDO:0019894](http://purl.obolibrary.org/obo/MONDO_0019894) non-distal monosomy 7p --> obsolete non-distal monosomy 7p
+ * [MONDO:0020150](http://purl.obolibrary.org/obo/MONDO_0020150) rare palpebral, lacrimal system and conjunctival disease --> obsolete rare palpebral, lacrimal system and conjunctival disease
+ * [MONDO:0020168](http://purl.obolibrary.org/obo/MONDO_0020168) kinetic eyelid anomaly --> obsolete kinetic eyelid anomaly
+ * [MONDO:0020170](http://purl.obolibrary.org/obo/MONDO_0020170) congenital upper palpebral retraction --> obsolete congenital upper palpebral retraction
+ * [MONDO:0020199](http://purl.obolibrary.org/obo/MONDO_0020199) conjunctival vascular anomaly --> obsolete conjunctival vascular anomaly
+ * [MONDO:0020200](http://purl.obolibrary.org/obo/MONDO_0020200) conjunctival hemangioma or hemolymphangioma --> obsolete conjunctival hemangioma or hemolymphangioma
+ * [MONDO:0020201](http://purl.obolibrary.org/obo/MONDO_0020201) conjunctival telangiectasia (disease) --> obsolete conjunctival telangiectasia (disease)
+ * [MONDO:0020202](http://purl.obolibrary.org/obo/MONDO_0020202) conjunctival lymphangiectasia --> obsolete conjunctival lymphangiectasia
+ * [MONDO:0020261](http://purl.obolibrary.org/obo/MONDO_0020261) neurological disease with abnormal eye movements --> obsolete neurological disease with abnormal eye movements
+ * [MONDO:0020719](http://purl.obolibrary.org/obo/MONDO_0020719) susceptibility to Hirschsprung disease --> obsolete susceptibility to Hirschsprung disease
+ * [MONDO:0022932](http://purl.obolibrary.org/obo/MONDO_0022932) davenport-Donlan syndrome --> Davenport-Donlan syndrome
+ * [MONDO:0024236](http://purl.obolibrary.org/obo/MONDO_0024236) degenerative disorder --> obsolete degenerative disorder
+ * [MONDO:0024624](http://purl.obolibrary.org/obo/MONDO_0024624) atrophy of lacrimal gland --> obsolete atrophy of lacrimal gland
+ * [MONDO:0033571](http://purl.obolibrary.org/obo/MONDO_0033571) skeletal muscle glycogen content and metabolism quantitative trait locus --> obsolete skeletal muscle glycogen content and metabolism quantitative trait locus
+
 # v2020-11-06
 
 ## New Classes

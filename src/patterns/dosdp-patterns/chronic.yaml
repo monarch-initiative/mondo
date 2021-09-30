@@ -1,40 +1,47 @@
 pattern_name: chronic
 
-classes:
-    chronic: PATO:0001863
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/chronic.yaml
 
-    owl_thing: owl:Thing
+description: 'This pattern is applied to diseases that are described as having an chronic duration, i.e. a disease having a slow progressive course of indefinite duration.
+
+Examples: [chronic bronchitis](http://purl.obolibrary.org/obo/MONDO_0005607),
+  [chronic hepatitis B virus infection](http://purl.obolibrary.org/obo/MONDO_0005366)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  chronic: PATO:0001863
+  disease: MONDO:0000001
+
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: owl_thing
+  disease: '''disease'''
 
 name:
-    text: chronic %s
-    vars:
-      - disease
+  text: chronic %s
+  vars:
+  - disease
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: '%s, chronic'
-    vars:
-      - disease
+- annotationProperty: exact_synonym
+  text: '%s, chronic'
+  vars:
+  - disease
 
 def:
-    text: Chronic form of %s.
-    vars:
-      - disease
+  text: Chronic form of %s.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'chronic'"
-    vars:
-      - disease
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/chronic.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''chronic'''
+  vars:
+  - disease

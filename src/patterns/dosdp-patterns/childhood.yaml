@@ -1,44 +1,52 @@
 pattern_name: childhood
 
-classes:
-    childhood: HP:0011463
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/childhood.yaml
 
-    owl_thing: owl:Thing
+description: 'An instance of a disease that has an onset of signs or symptoms of disease
+  between the age of 1 to 5 years (childhood onset).
+  
+  Examples: [childhood astrocytic tumor](http://purl.obolibrary.org/obo/MONDO_0002505),
+  [childhood malignant melanoma](http://purl.obolibrary.org/obo/MONDO_0042494)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  childhood: HP:0011463
+  disease: MONDO:0000001
+
 relations:
-    has modifier: RO:0002573
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    disease: owl_thing
+  disease: '''disease'''
 
 name:
-    text: childhood %s
-    vars:
-      - disease
+  text: childhood %s
+  vars:
+  - disease
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: '%s of childhood'
-    vars:
-      - disease
-  - annotationProperty: related_synonym
-    text: pediatric %s
-    vars:
-      - disease
+- annotationProperty: exact_synonym
+  text: '%s of childhood'
+  vars:
+  - disease
+- annotationProperty: related_synonym
+  text: pediatric %s
+  vars:
+  - disease
 
 def:
-    text: A %s that occurs during childhood.
-    vars:
-      - disease
+  text: A %s that occurs during childhood.
+  vars:
+  - disease
 
 equivalentTo:
-    text: "%s and 'has modifier' some 'childhood'"
-    vars:
-      - disease
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/childhood.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''has modifier'' some ''childhood'''
+  vars:
+  - disease

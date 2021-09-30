@@ -1,42 +1,45 @@
 pattern_name: consequence_of_infectious_disease
 
-classes:
-    disease: MONDO:0000001
-    infectious disease: MONDO:0005550
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/consequence_of_infectious_disease.yaml
 
+description: 'This pattern is applied to a disease that is caused by an infectious agent.
+
+Examples: [hepatitis C induced liver cirrhosis](http://purl.obolibrary.org/obo/MONDO_0005448),
+  [rubella encephalitis](http://purl.obolibrary.org/obo/MONDO_0020648)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  disease: MONDO:0000001
+  infectious disease: MONDO:0005550
 
 relations:
-    disease arises from feature: RO:0004022
+  disease arises from feature: RO:0004022
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    parent: disease
-    cause: "'infectious disease'"
+  parent: disease
+  cause: '''infectious disease'''
 
 name:
-    text: '%s %s'
-    vars:
-      - cause
-      - parent
-
+  text: '%s %s'
+  vars:
+  - cause
+  - parent
 
 def:
-    text: A %s that arises as a consequence of %s.
-    vars:
-      - parent
-      - cause
+  text: A %s that arises as a consequence of %s.
+  vars:
+  - parent
+  - cause
 
 equivalentTo:
-    text: "%s and 'disease arises from feature' some %s"
-    vars:
-      - parent
-      - cause
-
-
-
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/consequence_of_infectious_disease.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-description: TBD.
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '%s and ''disease arises from feature'' some %s'
+  vars:
+  - parent
+  - cause

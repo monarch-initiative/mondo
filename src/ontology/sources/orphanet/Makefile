@@ -6,7 +6,7 @@ OBO=http://purl.obolibrary.org/obo
 TODAY ?= $(shell date +%Y-%m-%d)
 TGT=../releases/v$(TODAY)
 PRODUCTS = obo_orphanet.owl obo_orphanet.obo
-OIO = http://www.geneontology.org/formats/oboInOwl#
+OIO=http://www.geneontology.org/formats/oboInOwl\#
 
 all:  build stage
 build:  $(PRODUCTS)
@@ -27,11 +27,11 @@ FIX_URI_EXPR = 's@$(OBO)/EFO_@http://www.ebi.ac.uk/efo/EFO_@g; s@$(OBO)/UMLS_@ht
 # EFO uses different properties. The following command can be used on owltools
 EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
            --rename-entity $(EFO)/reason_for_obsolescence $(RDFS)comment \
-           --rename-entity $(EFO)/alternative_term $(OIO)hasExactSynonym\
-           --rename-entity $(OBO)/ECO_0000218 $(OIO)source
+           --rename-entity $(EFO)/alternative_term "$(OIO)hasExactSynonym" \
+           --rename-entity $(OBO)/ECO_0000218 "$(OIO)source"
 
 
-V=3.0
+V=3.2
 
 # STEP 0: DOWNLOAD
 #ordo_orphanet.owl.zip:
@@ -70,7 +70,7 @@ obo_orphanet_d2g.owl: obo_orphanet_3.owl
 
 # STEP 3b: make an .obo file
 obo_orphanet_3.obo: obo_orphanet_3.owl obo_orphanet_d2g.owl
-	owltools $^ --merge-support-ontologies -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools $^ --merge-support-ontologies --set-ontology-id http://purl.obolibrary.org/obo/orphanet -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 # STEP 4: Remove part-ofs (see 2b, we have these as subClassOf now)
 # TODO: use robot remove for this
@@ -83,4 +83,5 @@ obo_orphanet.obo: obo_orphanet_4.obo
 obo_orphanet.owl: obo_orphanet.obo
 	owltools $< -o $@.tmp && perl -npe 's@http://purl.obolibrary.org/obo/Orphanet_@http://www.orpha.net/ORDO/Orphanet_@g' $@.tmp > $@
 
-
+#orphanet_sssom.tsv: obo_orphanet.owl
+#	robot query -i $< --prefix "ORDO: http://www.orpha.net/ORDO/Orphanet_" -q ../../../sparql/sssom.sparql $@

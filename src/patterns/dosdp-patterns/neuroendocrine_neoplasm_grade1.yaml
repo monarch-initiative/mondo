@@ -1,57 +1,62 @@
 pattern_name: neoendocrine_neoplasm_grade1
 
-description: >-
-    we follow NCIT in making carcinoid a syn for G1 NET
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm_grade1.yaml
+
+description: 'We follow NCIT in making carcinoid tumor a synonym for neuroendocrine neoplasm G1 (G1 NET).
+
+Examples: [carcinoid tumor (disease)](http://purl.obolibrary.org/obo/MONDO_0005369)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
 
 classes:
-    neuroendocrine neoplasm: MONDO:0019496
-    grade 1: MONDO:0024491
+  neuroendocrine neoplasm: MONDO:0019496
+  grade 1: MONDO:0024491
+  owl_thing: owl:Thing
 
-    owl_thing: owl:Thing
 relations:
-    disease has location: RO:0004026
-    has modifier: RO:0002573
+  disease has location: RO:0004026
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
 
 vars:
-    location: owl_thing
+  location: owl_thing
 
 name:
-    text: '%s neuroendocrine neoplasm G1'
-    vars:
-      - location
+  text: '%s neuroendocrine neoplasm G1'
+  vars:
+  - location
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: grade 1 neuroendocrine neoplasm of %s
-    vars:
-      - location
-  - annotationProperty: exact_synonym
-    text: '%s neuroendocrine tumor, well differentiated, low grade'
-    vars:
-      - location
-  - annotationProperty: exact_synonym
-    text: '%s NET G1'
-    vars:
-      - location
-  - annotationProperty: related_synonym
-    text: '%s carcinoid tumor'
-    vars:
-      - location
+- annotationProperty: exact_synonym
+  text: grade 1 neuroendocrine neoplasm of %s
+  vars:
+  - location
+- annotationProperty: exact_synonym
+  text: '%s neuroendocrine tumor, well differentiated, low grade'
+  vars:
+  - location
+- annotationProperty: exact_synonym
+  text: '%s NET G1'
+  vars:
+  - location
+- annotationProperty: related_synonym
+  text: '%s carcinoid tumor'
+  vars:
+  - location
 
 def:
-    text: A well differentiated, low grade tumor with neuroendocrine differentiation
-        that arises from the %s.
-    vars:
-      - location
+  text: A well differentiated, low grade tumor with neuroendocrine differentiation
+    that arises from the %s.
+  vars:
+  - location
 
 equivalentTo:
-    text: "'neuroendocrine neoplasm' and 'disease has location' some %s and 'has modifier'\
-        \ some 'grade 1'"
-    vars:
-      - location
-pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm_grade1.yaml
-annotationProperties:
-    exact_synonym: oio:hasExactSynonym
-    related_synonym: oio:hasRelatedSynonym
-contributors:
-  - https://orcid.org/0000-0002-6601-2165
+  text: '''neuroendocrine neoplasm'' and ''disease has location'' some %s and ''has
+    modifier'' some ''grade 1'''
+  vars:
+  - location

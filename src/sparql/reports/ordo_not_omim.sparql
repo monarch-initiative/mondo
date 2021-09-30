@@ -1,0 +1,48 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+#all of the ORDO entries that are not related to OMIM entries (i.e., leave out OMIM leaf nodes, also leave out nodes such as Bardet Biedl syndrome that are superclass of leaf nodes).
+
+SELECT distinct ?term_curie ?term_label ?ordo_xref
+WHERE 
+{ 
+    ?term rdfs:label ?term_label ;
+           oboInOwl:hasDbXref ?ordo_xref .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?ordo_xref ;
+           oboInOwl:source ?source 
+      ] .
+    FILTER NOT EXISTS {
+    	?child rdfs:subClassOf ?term .
+      FILTER (isIRI(?child) && regex(str(?child), "^http://purl.obolibrary.org/obo/MONDO_"))
+      FILTER(?child!=?term)
+    }
+  	FILTER NOT EXISTS {
+  		?term oboInOwl:hasDbXref ?omim_xref .
+        [
+            a owl:Axiom ;
+              owl:annotatedSource ?term ;
+              owl:annotatedProperty oboInOwl:hasDbXref ;
+              owl:annotatedTarget ?omim_xref ;
+              oboInOwl:source ?source 
+        ] .
+    	FILTER (regex(str(?omim_xref), "^OMIM"))
+  	}
+    BIND(
+		IF(	
+			regex(str(?term), "http[:][/][/]www[.]ebi[.]ac[.]uk[/]efo[/]EFO[_]")
+				|| regex(str(?term), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]")
+				|| regex(str(?term), "http[:][/][/]www[.]orpha.net[/]ORDO[/]"),
+			REPLACE(
+				REPLACE(STR(?term), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]|http[:][/][/]www[.]ebi[.]ac[.]uk[/]efo[/]|http[:][/][/]www[.]orpha.net[/]ORDO[/]", "", "i"),
+			"[_]", ":", "i")
+      , str(?term))  as ?term_curie)
+    FILTER (str(?source)="MONDO:equivalentTo")
+    FILTER (regex(str(?ordo_xref), "^Orphanet"))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+
+}
