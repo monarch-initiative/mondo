@@ -5,17 +5,17 @@
 1. Mondo users need to be notified before we obsolete, merge or [split](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/) a Mondo class.
 1. If there is a request to obsolete a Mondo class, [Monarch Initiative](https://monarchinitiative.org/) to determine if the disease term is used for Monarch annotations. For example, [discitis](https://monarchinitiative.org/disease/MONDO:0006728) (see ticket [here](https://github.com/monarch-initiative/mondo/issues/501)) does not have any annotations in Monarch. (_This is something that we hope to automate in the future_).
 3. If a term is to be obsoleted, in a new row in the [ROBOT_ObsoleteTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=505727337), add the following information for the term-to-be-obsoleted:
-  1. ID for term to be obsoleted 
-  1. Label for term to be obsoleted 
-  1. seeAlso: GitHub ticket that describes the obsoletion request
-  1. Consider: the replacement term that should be considered for use after the term is obsoleted. If there is no replacement, leave it blank.
-  1. Obsoletion reason: chose from dropdown list.
-  1. Comment: do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
-  1. Obsoletion candidate subset: This should always be http://purl.obolibrary.org/obo/mondo#obsoletion_candidate
-  1. obsoletion date: should be a release date at the first of the month, at least two months from today. Please write in the format YYYY-MM-DD.
+    1. ID for term to be obsoleted 
+    1. Label for term to be obsoleted 
+    1. seeAlso: GitHub ticket that describes the obsoletion request
+    1. Consider: the replacement term that should be considered for use after the term is obsoleted. If there is no replacement, leave it blank.
+    1. Obsoletion reason: chose from dropdown list.
+    1. Comment: do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
+    1. Obsoletion candidate subset: This should always be http://purl.obolibrary.org/obo/mondo#obsoletion_candidate
+    1. obsoletion date: should be a release date at the first of the month, at least two months from today. Please write in the format YYYY-MM-DD.
 4. If a term is to be merged, in a new row in the [ROBOT_MergeTag spreadsheet templte](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1109324509), add the information above, and in addition, add:
-  1. Mondo ID for the term that will replace the obsoleted terms
-  1. Label for the term that will replace the obsoleted terms
+    1. Mondo ID for the term that will replace the obsoleted terms
+    1. Label for the term that will replace the obsoleted terms
 
 #### Monthly (before release)
 1. Run the pipeline to [merge the ROBOT template](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/) and commit and merge the PR into mondo-edit.obo.
