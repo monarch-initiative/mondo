@@ -35,12 +35,13 @@ The release mondo.owl will look like this in Protege:
 ## Generate Change Log
 
 ### Initial Setup:
+1. In terminal: `mkdir ~/tools`
 1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
     1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
         1. right click and save as (and save in Downloads)
-2. Move the file:
+1. Move the file:
 `mv Downloads/obo-simple-diff.pl ~/tools`
-3. `chmod 755 ~/tools/obo-simple-diff.pl`
+1. `chmod 755 ~/tools/obo-simple-diff.pl`
 
 ### Generate token
 
