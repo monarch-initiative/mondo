@@ -40,7 +40,7 @@ The release mondo.owl will look like this in Protege:
         1. right click and save as (and save in Downloads)
 2. Move the file:
 `mv Downloads/obo-simple-diff.pl ~/tools`
-3. `cchmod 755 ~/tools/obo-simple-diff.pl`
+3. `chmod 755 ~/tools/obo-simple-diff.pl`
 
 ### Generate token
 
