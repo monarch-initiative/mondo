@@ -2,9 +2,29 @@
 
 Mondo is released on a monthly basis around the first of the month. Additional releases are run ad hoc. All Mondo releases are available [here](https://github.com/monarch-initiative/mondo/releases).
 
-**Initial setup**: Follow the instructions to [Generate token](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) before starting.
-
 Videos outlining this process are available [here](https://drive.google.com/drive/u/0/folders/1kDD572vCE2NRGC57cX7vTUHQSFvomyb7).
+
+# Initial setup: 
+These steps will be done only once, when setting up your computer for Mondo release. 
+### Generate token
+1. Follow the instructions [here](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) to generate the GitHub token.
+### Get the obo-simple-diff script and set-up your path:
+1. In terminal, create a "tools" directory: 
+`mkdir ~/tools`. 
+We are creating a directory in your user directory (not in your Mondo directory). This directory will contain various tools, like ROBOT and scripts necessary for release processes. 
+1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
+    1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
+        1. right click and save as (and save in Downloads)
+1. Move the file to the "tools" directory:
+`mv Downloads/obo-simple-diff.pl ~/tools`
+1. `chmod +x ~/tools/obo-simple-diff.pl`
+1. Add your ~/tools directory to your path. If you are using zsh (as shown in the terminal window title), create your path: 
+   - `nano ~/.zshrc`
+   - paste the following into the file: `export PATH=/Users/torosa/tools:$PATH`(instead of "/Users/torosa", use your path to the tools directory)
+   - save (by hitting control+O + enter) and close (control+x)
+   - in the terminal, type: `source ~/.zshrc`
+Note: you need to change terminal window in order to the change to apply before running the Mondo command. 
+
 
 # Releases
 
@@ -18,6 +38,8 @@ The release mondo.owl will look like this in Protege:
 ![How release looks in Protege](images/release-protege-look.png)
 
 # Mondo release workflow
+
+_Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
 
 1. Pull master
 2. `cd git/mondo/src/ontology/`
@@ -35,21 +57,9 @@ The release mondo.owl will look like this in Protege:
 ## Generate Change Log
 
 ### Initial Setup:
-1. In terminal: `mkdir ~/tools`. We are creating a directory in your user directory (not in your Mondo directory). This directory will contain various tools, like ROBOT and scripts necessary for release processes. This step will be done only once, when you set your computer up for Mondo release. 
-1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
-    1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
-        1. right click and save as (and save in Downloads)
-1. Move the file:
-`mv Downloads/obo-simple-diff.pl ~/tools`
-1. `chmod +x ~/tools/obo-simple-diff.pl`
-1. Add your ~/tools directory to your path. If you are using zsh (as shown in the terminal window title), create your path: 
-   - `nano ~/.zshrc`, then past the following into the file: `export PATH=/Users/torosa/tools:$PATH`(use your path to the tools directory), save by hitting control+O then enter and close (control+x)
-   - in the terminal, type: `source ~/.zshrc`
-Note: you need to change terminal window in order to the change to apply before running the Mondo command. 
-
-### Generate token
-
-1. Follow the instructions [here](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) to generate the GitHub token.
+Make sure the initial setup (see above) has been done :
+1. Download the `obo-simple-diff.pl` script to the "tools" directory and set-up your path to the tools directory.
+2. Generate token
 
 ### Generate Change Log Workflow:
 <!-- 1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
@@ -57,9 +67,9 @@ Note: you need to change terminal window in order to the change to apply before 
 
 1. In terminal: `make mondo-diff.txt -B`  
 1. `./get-new-classes.sh > somefilename.txt`  
-1. **For example:** `./get-new-classes.sh > MondoRelease_2020-07-01.txt`  
-1. Open this file on your computer: MondoRelease_somefilename.txt  
-1. **For example:** MondoRelease_2020-06-01.txt     
+  - "somefilename" should be MondoRelease_YYYY-MM-DD, for example: `./get-new-classes.sh > MondoRelease_2020-07-01.txt`  
+3. Open this file on your computer: MondoRelease_somefilename.txt  
+  - For example: MondoRelease_2020-06-01.txt     
 
 ## Deploy Release
 1. `cp ~/.token .token`  
@@ -68,17 +78,25 @@ Note- the date should be the date of the release in the format sh run.sh make GH
 1. Check these the release pages (make sure you replace the date correctly in the first link):
     1. https://github.com/monarch-initiative/mondo/releases/tag/v2020-XX-XX
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
-    3. Ensure it has all release artefacts attached to it
+    3. Ensure it has all release artefacts attached to it (there should be 18 assets)
     4. Check this file to ensure you see the expected changes (spot check a few changes): https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl
-
-_Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
 
 ## Write a description of the release
 
-1. All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
-2. To add a description of the release: click edit, and in the 'describe this release' section add the content from the change log text file above.
-3. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
+1. Add the release description to the release tab: 
+ - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
+ - To add a description of the release: 
+   - click edit
+   - in the 'describe this release' section add the content from the change log text file above
+   - click "update release"
+2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
+ - go to changes.md
+ - click edit
+ - add the name of the new release and the content from the change log text file above. 
+ - commit to master
 
 ## Commit release files
 
-8. Commit all of the changed import and report files (ignore or discard diff files, change log)
+1. Commit all of the changed import and report files (ignore or discard diff files, change log) to a branch
+1. Once all checks have passed, merge to master
+Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
