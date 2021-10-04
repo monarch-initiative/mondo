@@ -1,3 +1,45 @@
+# 2021-10-01
+
+## New Classes
+
+ * [MONDO:0023655](http://purl.obolibrary.org/obo/MONDO_0023655) immunodeficiency 14b, autosomal recessive
+ * [MONDO:0023657](http://purl.obolibrary.org/obo/MONDO_0023657) intellectual developmental disorder, autosomal dominant 65
+ * [MONDO:0023659](http://purl.obolibrary.org/obo/MONDO_0023659) developmental and epileptic encephalopathy 96
+ * [MONDO:0023660](http://purl.obolibrary.org/obo/MONDO_0023660) angioedema, hereditary, 6
+ * [MONDO:0023662](http://purl.obolibrary.org/obo/MONDO_0023662) lymphatic malformation 10
+ * [MONDO:0023664](http://purl.obolibrary.org/obo/MONDO_0023664) spermatogenic failure 54
+ * [MONDO:0023671](http://purl.obolibrary.org/obo/MONDO_0023671) oculopharyngodistal myopathy 3
+ * [MONDO:0100050](http://purl.obolibrary.org/obo/MONDO_0100050) Usher syndrome, type 1D/F
+ * [MONDO:0100055](http://purl.obolibrary.org/obo/MONDO_0100055) intraosseous spindle cell rhabdomyosarcoma with TFCP2/NCOA2 rearrangements
+ * [MONDO:0100060](http://purl.obolibrary.org/obo/MONDO_0100060) congenital/infantile spindle cell rhabdomyosarcoma with VGLL2/NCOA2/CITED2 rearrangements
+ * [MONDO:0100067](http://purl.obolibrary.org/obo/MONDO_0100067) childhood spindle cell rhabdomyosarcoma
+ * [MONDO:0100077](http://purl.obolibrary.org/obo/MONDO_0100077) congenital alveolar dysplasia
+ * [MONDO:0100090](http://purl.obolibrary.org/obo/MONDO_0100090) congenital alveolar dysplasia due to FGF10
+ * [MONDO:0100097](http://purl.obolibrary.org/obo/MONDO_0100097) congenital alveolar dysplasia due to TBX4
+ * [MONDO:0100099](http://purl.obolibrary.org/obo/MONDO_0100099) retrograde cricopharyngeus dysfunction
+ * [MONDO:0100109](http://purl.obolibrary.org/obo/MONDO_0100109) Zinner syndrome
+ * [MONDO:0100111](http://purl.obolibrary.org/obo/MONDO_0100111) focal segmental glomerulosclerosis and neurodevelopmental syndrome
+ * [MONDO:0600016](http://purl.obolibrary.org/obo/MONDO_0600016) acinar dysplasia
+ * [MONDO:0600017](http://purl.obolibrary.org/obo/MONDO_0600017) acinar dysplasia caused by mutation in FGF10
+ * [MONDO:0600018](http://purl.obolibrary.org/obo/MONDO_0600018) acinar dysplasia caused by mutation in FGFR2
+ * [MONDO:0600019](http://purl.obolibrary.org/obo/MONDO_0600019) acinar dysplasia caused by mutation in TBX4
+ * [MONDO:0600027](http://purl.obolibrary.org/obo/MONDO_0600027) congenital right-sided heart lesions
+ * [MONDO:0600029](http://purl.obolibrary.org/obo/MONDO_0600029) restrictive pulmonary disease
+ * [MONDO:0700091](http://purl.obolibrary.org/obo/MONDO_0700091) ring chromosome anomaly
+ * [MONDO:0700092](http://purl.obolibrary.org/obo/MONDO_0700092) neurodevelopmental disorder
+
+## Obsoletions
+
+ * [MONDO:0100411](http://purl.obolibrary.org/obo/MONDO_0100411) acute myeloid leukemia, NPM1 gene mutation --> obsolete acute myeloid leukemia, NPM1 gene mutation
+
+## Renaming
+
+ * [MONDO:0010177](http://purl.obolibrary.org/obo/MONDO_0010177) retinal ischemic syndrome-digestive tract small vessel hyalinosis-diffuse cerebral calcifications syndrome --> vascular hyalinosis
+ * [MONDO:0014327](http://purl.obolibrary.org/obo/MONDO_0014327) autosomal dominant focal non-epidermolytic palmoplantar keratoderma with plantar blistering --> palmoplantar keratoderma, nonepidermolytic, focal or diffuse
+ * [MONDO:0018702](http://purl.obolibrary.org/obo/MONDO_0018702) TAFRO syndrome --> Castleman-Kojima disease
+ * [MONDO:0023603](http://purl.obolibrary.org/obo/MONDO_0023603) hereditary connective tissue disorder --> hereditary disorder of connective tissue
+ * [MONDO:0100411](http://purl.obolibrary.org/obo/MONDO_0100411) acute myeloid leukemia, NPM1 gene mutation --> obsolete acute myeloid leukemia, NPM1 gene mutation
+
 
 # 2021-09-01
 

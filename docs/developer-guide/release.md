@@ -35,12 +35,17 @@ The release mondo.owl will look like this in Protege:
 ## Generate Change Log
 
 ### Initial Setup:
+1. In terminal: `mkdir ~/tools`. We are creating a directory in your user directory (not in your Mondo directory). This directory will contain various tools, like ROBOT and scripts necessary for release processes. This step will be done only once, when you set your computer up for Mondo release. 
 1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
     1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
         1. right click and save as (and save in Downloads)
-2. Move the file:
+1. Move the file:
 `mv Downloads/obo-simple-diff.pl ~/tools`
-3. `cchmod 755 ~/tools/obo-simple-diff.pl`
+1. `chmod +x ~/tools/obo-simple-diff.pl`
+1. Add your ~/tools directory to your path. If you are using zsh (as shown in the terminal window title), create your path: 
+   - `nano ~/.zshrc`, then past the following into the file: `export PATH=/Users/torosa/tools:$PATH`(use your path to the tools directory), save by hitting control+O then enter and close (control+x)
+   - in the terminal, type: `source ~/.zshrc`
+Note: you need to change terminal window in order to the change to apply before running the Mondo command. 
 
 ### Generate token
 
