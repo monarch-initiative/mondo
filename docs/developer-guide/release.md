@@ -4,26 +4,26 @@ Mondo is released on a monthly basis around the first of the month. Additional r
 
 Videos outlining this process are available [here](https://drive.google.com/drive/u/0/folders/1kDD572vCE2NRGC57cX7vTUHQSFvomyb7).
 
-# Initial setup: 
+## Initial setup: 
 These steps will be done only once, when setting up your computer for Mondo release. 
 ### Generate token
 1. Follow the instructions [here](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) to generate the GitHub token.
 ### Get the obo-simple-diff script and set-up your path:
-1. In terminal, create a "tools" directory: 
+1. In terminal, create a "tools" directory in your home directory: 
 `mkdir ~/tools`. 
-We are creating a directory in your user directory (not in your Mondo directory). This directory will contain various tools, like ROBOT and scripts necessary for release processes. 
+Note that we are creating a directory in your user directory, not in your Mondo directory (FYI, `~/` refers to your home directory in Mac or Linux systems). This directory can in the future contain various tools, such as ROBOT and scripts necessary for release processes. 
 1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
     1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
         1. right click and save as (and save in Downloads)
-1. Move the file to the "tools" directory:
-`mv Downloads/obo-simple-diff.pl ~/tools`
-1. `chmod +x ~/tools/obo-simple-diff.pl`
-1. Add your ~/tools directory to your path. If you are using zsh (as shown in the terminal window title), create your path: 
+        2. Move the file to the "tools" directory: `mv Downloads/obo-simple-diff.pl ~/tools`
+    1. alternatively, you can download the script directly using a command line tool like wget: `wget https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl -O ~/tools/obo-simple-diff.pl`
+1. We now make the downloaded script executable using the `chmod` command: type `chmod +x ~/tools/obo-simple-diff.pl` in your terminal and hit enter.
+1. Lastly, ensure that your ~/tools directory is added to your path. If you are using zsh (as shown in the terminal window title), create your path: 
    - `nano ~/.zshrc`
-   - paste the following into the file: `export PATH=/Users/torosa/tools:$PATH`(instead of "/Users/torosa", use your path to the tools directory)
-   - save (by hitting control+O + enter) and close (control+x)
-   - in the terminal, type: `source ~/.zshrc`
-Note: you need to change terminal window in order to the change to apply before running the Mondo command. 
+   - paste the following line into the file, usually at the very end: `export PATH=/Users/torosa/tools:$PATH`(instead of "/Users/torosa", use your path to the tools directory)
+   - save (by hitting control+o and then enter) and close (control+x)
+   - in the terminal, type: `source ~/.zshrc`; this reloades the `.zshrc` file. 
+   - *Open a new Terminal window before you continue*. 
 
 
 # Releases
