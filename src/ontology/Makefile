@@ -1104,7 +1104,7 @@ mirror/omim.obo: build-omim
 mirror/medgen.obo:
 	$(ROBOT) convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
 
-tmp/tbd_%.tbd: $(SRC) mirror/%.obo
+tmp/tbd_%.tbd: $(SRC) mirror/%.obo mirror/hp.obo
 	cat mirror/$*.obo | perl $(ADDTOTBD) > $@
 
 tmp/rest_slurp_%.obo: tmp/tbd_%.tbd
