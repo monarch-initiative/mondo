@@ -14,13 +14,12 @@ $(TGT):
 	mkdir -p $@
 
 omim-src.ttl:
-	curl $(OMIM_URL) --output $@
+	wget $(OMIM_URL) -O $@
 
 omim-src.owl: omim-src.ttl
 	owltools $< --set-ontology-id $(OBO)/mondo/$@ -o $@
 	
 omim-src.obo: omim-src.owl
-	echo "WARNING: OMIM ingest has multiple labels on classes (see https://github.com/monarch-initiative/dipper/issues/969)"
 	robot convert -i $< --check false -f obo -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo | perl ./bin/fix-omim.pl  > $@
 	rm $@.tmp.obo
 
