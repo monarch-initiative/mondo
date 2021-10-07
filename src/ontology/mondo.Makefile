@@ -416,7 +416,7 @@ tmp/remove_classes.txt: $(MERGE_TEMPLATE)
 	cut -f1 $< > $@
 
 merge_obsolete_template: $(MERGE_TEMPLATE) tmp/remove_classes.txt
-	$(ROBOT) remove --input $(SRC) -T tmp/remove_classes.txt --preserve-structure false template --merge-before \
+	$(ROBOT) remove --input $(SRC) -T tmp/remove_classes.txt --preserve-structure true template --merge-before \
 --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 
