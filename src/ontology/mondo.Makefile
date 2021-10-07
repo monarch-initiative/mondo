@@ -403,7 +403,7 @@ modules/mondo-%.owl: modules/%.tsv
 .PRECIOUS: modules/mondo-%.owl
 
 MERGE_TEMPLATE=tmp/merge_template.tsv
-TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_G0rImuYa8o72cgQ97bH7xIq_V4TF6YfHkQaQY7HJUElcolO2RSh4bE7d50HTlSL1Vq7LoRJSkKBD/pub?gid=875350397&single=true&output=tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vTV6ITR7RJMt5jswUHBmEEcfbNAeZWpj4VkDbMY3Bvh_fcmfXEw1CFvbgzOUPDxsj6oT5vsFQRg8FuM/pub?gid=346126899&single=true&output=tsv
 
 tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
@@ -415,8 +415,8 @@ merge_template: $(MERGE_TEMPLATE)
 tmp/remove_classes.txt: $(MERGE_TEMPLATE)
 	cut -f1 $< > $@
 
-merge_onsolete_template: $(MERGE_TEMPLATE) tmp/remove_classes.txt
-	$(ROBOT) remove --input $(SRC) -T tmp/remove_classes.txt template --merge-before \
+merge_obsolete_template: $(MERGE_TEMPLATE) tmp/remove_classes.txt
+	$(ROBOT) remove --input $(SRC) -T tmp/remove_classes.txt --preserve-structure false template --merge-before \
 --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 
