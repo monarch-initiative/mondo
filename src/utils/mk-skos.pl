@@ -69,8 +69,11 @@ while (<>) {
         elsif ($prefix eq 'MEDGEN') {
             $uri = 'http://identifiers.org/medgen/';
         }
+        elsif ($prefix eq 'OMIMPS') {
+            $uri = 'https://omim.org/phenotypicSeries/PS';
+        }
         elsif ($prefix eq 'OMIM') {
-            $uri = 'http://identifiers.org/omim/';
+            $uri = 'https://omim.org/entry/';
         }
         elsif ($prefix eq 'MedDRA') {
             $uri = 'http://identifiers.org/meddra/';
