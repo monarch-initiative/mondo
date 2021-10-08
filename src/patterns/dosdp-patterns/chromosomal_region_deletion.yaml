@@ -19,25 +19,25 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  chromosomal region: '''chromosomal region'''
+  chromosomal_region: '''chromosomal region'''
 
 name:
   text: '%s deletion'
   vars:
-  - chromosomal region
+  - chromosomal_region
 
 annotations:
 - annotationProperty: exact_synonym
   text: 'deletion of %s'
   vars:
-  - chromosomal region
+  - chromosomal_region
 
 def:
   text: A chromosomal anomaly consisting of the deletion of %s.
   vars:
-  - chromosomal region
+  - chromosomal_region
 
 equivalentTo:
   text: 'syndrome caused by partial chromosomal deletion' and ('disease arises from structure' some %s)
   vars:
-  - chromosomal region
+  - chromosomal_region
