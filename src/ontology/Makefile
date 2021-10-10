@@ -186,10 +186,10 @@ deploy_assets_current:
 ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
-skos.ttl: $(SRC)
+skos.ttl: filtered.obo
 	../utils/mk-skos.pl $< > $@
 
 # this appears to be problematic. not all declarations are restored on a save.
