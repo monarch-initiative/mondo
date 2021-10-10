@@ -415,8 +415,15 @@ merge_template: $(MERGE_TEMPLATE)
 tmp/remove_classes.txt: $(MERGE_TEMPLATE)
 	cut -f1 $< > $@
 
-merge_obsolete_template: $(MERGE_TEMPLATE) tmp/remove_classes.txt
-	$(ROBOT) remove --input $(SRC) -T tmp/remove_classes.txt --preserve-structure false template --merge-before \
+tmp/glue_removed.owl: $(SRC) tmp/remove_classes.txt
+	$(ROBOT) filter -i $(SRC) -T tmp/remove_classes.txt --select "self parents children" --trim true \
+	remove -T tmp/remove_classes.txt --preserve-structure true \
+	filter --axioms SubClassOf \
+	convert -f ofn -o $@
+
+merge_obsolete_template: #$(MERGE_TEMPLATE) tmp/glue_removed.owl
+	git checkout master -- $(SRC) &&\
+	$(ROBOT) merge --input $(SRC) --input tmp/glue_removed.owl --collapse-import-closure false template --merge-before \
 --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 
