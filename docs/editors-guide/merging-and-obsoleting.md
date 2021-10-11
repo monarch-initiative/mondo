@@ -2,18 +2,27 @@
 
 ### Overview
 
-_Added 20 August 2021_
-
 1. Mondo users need to be notified before we obsolete, merge or [split](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/) a Mondo class.
-1. If a Mondo class is to be obsoleted
-    - Run the [risky_obsoletion_check](https://mondo.readthedocs.io/en/latest/editors-guide/risky_obsoletion_check) pipeline to check if external ontologies and databases (such as EFO and ClinGen) are using this Mondo term.
-    - in Protege, add the following annotations to the term-to-be-obsoleted:
-    - an obsoletion_candidate subset tag ([instructions here](https://mondo.readthedocs.io/en/latest/editors-guide/add-new-terms/#add-subset-tags))
-    - seeAlso: GitHub ticket that describes the obsoletion request
-1. Monthly: Perform a SPARQL query to identify all the obsoletion candidates (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/generate-report/#how-to-generate-reports)).
-1. Share the report on the mondo users email list.
-1. Check [Monarch Initiative](https://monarchinitiative.org/) to determine if the disease term is used for Monarch annotations. For example, [discitis](https://monarchinitiative.org/disease/MONDO:0006728) (see ticket [here](https://github.com/monarch-initiative/mondo/issues/501)) does not have any annotations in Monarch.
-1. If possible, determine if any users, such as ClinGen or Open Targets, are using the term. If so, contact them directly to inform of them of the potential obsoletion.
+1. If there is a request to obsolete a Mondo class, [Monarch Initiative](https://monarchinitiative.org/) to determine if the disease term is used for Monarch annotations. For example, [discitis](https://monarchinitiative.org/disease/MONDO:0006728) (see ticket [here](https://github.com/monarch-initiative/mondo/issues/501)) does not have any annotations in Monarch. (_This is something that we hope to automate in the future_).
+3. If a term is to be obsoleted, in a new row in the [ROBOT_ObsoleteTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=505727337), add the following information for the term-to-be-obsoleted:
+    1. ID for term to be obsoleted 
+    1. Label for term to be obsoleted 
+    1. seeAlso: GitHub ticket that describes the obsoletion request
+    1. Consider: the replacement term that should be considered for use after the term is obsoleted. If there is no replacement, leave it blank.
+    1. Obsoletion reason: chose from dropdown list.
+    1. Comment: do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
+    1. Obsoletion candidate subset: This should always be http://purl.obolibrary.org/obo/mondo#obsoletion_candidate
+    1. obsoletion date: should be a release date at the first of the month, at least two months from today. Please write in the format YYYY-MM-DD.
+4. If a term is to be merged, in a new row in the [ROBOT_MergeTag spreadsheet templte](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1109324509), add the information above, and in addition, add:
+    1. Mondo ID for the term that will replace the obsoleted terms
+    1. Label for the term that will replace the obsoleted terms
+
+#### Monthly (before release)
+1. Run the pipeline to [merge the ROBOT template](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/) and commit and merge the PR into mondo-edit.obo.
+3. Run the [risky_obsoletion_check](https://mondo.readthedocs.io/en/latest/editors-guide/risky_obsoletion_check) pipeline to check if external ontologies and databases (such as EFO and ClinGen) are using this Mondo term.
+  - if so, create a ticket on the [EFO tracker](https://github.com/EBISPOT/efo/issues) and notify ClinGen users (_for now, email Larry Babb_).
+1. Perform a SPARQL query to identify all the obsoletion candidates (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/generate-report/#how-to-generate-reports)). The command to run the query is: `sh run.sh make report-query-obsoletioncandidates-withcomment`. This will be the report that will be shared with Mondo users to inform them of upcoming obsoletions.
+1. Share the report on the Mondo users email list (include the file as an attachment) and/or share the report (tsv file) on GitHub [here](https://github.com/monarch-initiative/mondo/tree/master/reports/obsoletion-candidates).
 1. Allow for at least one month after sending the report or contacting users before obsoleting the terms to allow users time to comment.
 
 ### How to
@@ -127,4 +136,4 @@ Issues should remain open for at least two weeks to allow for the community to c
 
 See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
 
-by Nicole Vasilevsky _updated 2021-05_12_
+by Nicole Vasilevsky and Sabrina Toro _updated 2021-09_28_

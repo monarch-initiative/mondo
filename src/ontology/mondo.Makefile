@@ -277,7 +277,13 @@ patterns: matches matches_annotations pattern_docs
 	
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
-	
+
+tmp/mondo-lastbase.owl:
+	mkdir -p tmp && wget "http://purl.obolibrary.org/obo/mondo/mondo-base.owl" -O $@
+
+reports/mondo_diff.md: mondo-base.owl tmp/mondo-lastbase.owl
+	$(ROBOT) diff --left tmp/mondo-lastbase.owl --right $< -f markdown -o $@
+
 reports/mondo_unsats.md: mondo.obo
 	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
 		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
@@ -403,7 +409,7 @@ tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
 
 merge_template: $(MERGE_TEMPLATE)
-	$(ROBOT) template --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --merge-before --input $(SRC) \
  --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 

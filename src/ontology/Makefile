@@ -79,7 +79,7 @@ all: test all_artefacts
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -186,10 +186,10 @@ deploy_assets_current:
 ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
-skos.ttl: $(SRC)
+skos.ttl: filtered.obo
 	../utils/mk-skos.pl $< > $@
 
 # this appears to be problematic. not all declarations are restored on a save.
@@ -1104,7 +1104,7 @@ mirror/omim.obo: build-omim
 mirror/medgen.obo:
 	$(ROBOT) convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
 
-tmp/tbd_%.tbd: $(SRC) mirror/%.obo
+tmp/tbd_%.tbd: $(SRC) mirror/%.obo mirror/hp.obo
 	cat mirror/$*.obo | perl $(ADDTOTBD) > $@
 
 tmp/rest_slurp_%.obo: tmp/tbd_%.tbd
