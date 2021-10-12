@@ -834,7 +834,7 @@ debug_inference_check.owl: debug.owl explain_unsat.owl
 explain_unsat.owl: debug.owl
 	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation mondo_explain_debug.md \
 	annotate --ontology-iri "http://purl.obolibrary.org/obo/mondo/mondo_explain_debug.ofn" \
-	--output mondo_explain_debug.ofn
+	--output mondo_explain_debug.ofn && cat mondo_explain_debug.md
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 	owltools --no-logging --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
