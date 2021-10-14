@@ -415,13 +415,6 @@ merge_template: $(MERGE_TEMPLATE)
 tmp/remove_classes.txt: $(MERGE_TEMPLATE)
 	cut -f1 $< > $@
 
-tmp/glue_removed.owl: $(SRC) tmp/remove_classes.txt
-	$(ROBOT) filter -i $(SRC) -T tmp/remove_classes.txt --select "self parents children" --trim true \
-	remove -T tmp/remove_classes.txt --preserve-structure true \
-	filter --axioms SubClassOf \
-	convert -f ofn -o $@
-
-
 tmp/heal_hierarchy.ru: tmp/remove_classes.txt
 	echo "PREFIX owl: <http://www.w3.org/2002/07/owl#>" > $@
 	echo "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" >> $@
@@ -440,10 +433,11 @@ tmp/heal_hierarchy.ru: tmp/remove_classes.txt
 	echo "  FILTER (?subj in (MONDO:0015938, MONDO:0020272, MONDO:0010301, MONDO:0015318, MONDO:0015320, MONDO:0015321, MONDO:0015322, MONDO:0015543, MONDO:0016148, MONDO:0016329, MONDO:0017133, MONDO:0017274, MONDO:0019687, MONDO:0020012, MONDO:0020277, MONDO:0100027))" >> $@
 	echo "}" >> $@
 
-merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE)
+merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_classes.txt
 	git checkout master -- $(SRC) &&\
-	$(ROBOT) query --input $(SRC) --update $< template --merge-before \
-	--template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
+	$(ROBOT) query --input $(SRC) --update $< \
+	remove -T tmp/remove_classes.txt --preserve-structure false \
+	template --merge-before --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 
 #ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
