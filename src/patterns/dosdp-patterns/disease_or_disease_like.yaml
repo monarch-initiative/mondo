@@ -1,0 +1,36 @@
+pattern_name: disease or disease-like
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml
+
+description: 'This pattern is for grouping classes to group terms that are disease or disease-like. 
+Sometimes we feel there is insufficient reason to group, and X and X-like are not connected via shared 
+is-a but instead by shares-features-with. Children of this grouping class should be X and X-like disease.
+  Examples: [viral disease or post-viral disorder](http://purl.obolibrary.org/obo/MONDO_0100321)'
+
+contributors:
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  disease: MONDO:0000001
+
+vars:
+  disease1: "'disease'"
+  disease2: "'disease'"
+
+name:
+  text: '%s or %s'
+  vars:
+  - disease1
+  - disease2
+
+def:
+  text: A disease that presents as a %s or %s.
+  vars:
+  - disease1
+  - disease2
+
+equivalentTo:
+  text: '%s or %s'
+  vars:
+  - disease1
+  - disease2
