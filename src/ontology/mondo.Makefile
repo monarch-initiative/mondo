@@ -295,6 +295,10 @@ mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
 related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
 
+related_to_exact_where_label:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-related-where-label.ru -o $(SRC)
+
+	
 rm_related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
 
@@ -403,7 +407,7 @@ modules/mondo-%.owl: modules/%.tsv
 .PRECIOUS: modules/mondo-%.owl
 
 MERGE_TEMPLATE=tmp/merge_template.tsv
-TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_G0rImuYa8o72cgQ97bH7xIq_V4TF6YfHkQaQY7HJUElcolO2RSh4bE7d50HTlSL1Vq7LoRJSkKBD/pub?gid=875350397&single=true&output=tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vTV6ITR7RJMt5jswUHBmEEcfbNAeZWpj4VkDbMY3Bvh_fcmfXEw1CFvbgzOUPDxsj6oT5vsFQRg8FuM/pub?gid=346126899&single=true&output=tsv
 
 tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
@@ -411,6 +415,33 @@ tmp/merge_template.tsv:
 merge_template: $(MERGE_TEMPLATE)
 	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --merge-before --input $(SRC) \
  --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
+
+tmp/remove_classes.txt: $(MERGE_TEMPLATE)
+	cut -f1 $< > $@
+
+tmp/heal_hierarchy.ru: tmp/remove_classes.txt
+	echo "PREFIX owl: <http://www.w3.org/2002/07/owl#>" > $@
+	echo "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" >> $@
+	echo "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" >> $@
+	echo "prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>" >> $@
+	echo "DELETE {" >> $@
+	echo "?child rdfs:subClassOf ?subj ." >> $@
+	echo "?subj rdfs:subClassOf ?parent ." >> $@
+	echo "}" >> $@
+	echo "INSERT {" >> $@
+	echo "	?child rdfs:subClassOf ?parent ." >> $@
+	echo "}" >> $@
+	echo "WHERE {" >> $@
+	echo "  ?child rdfs:subClassOf ?subj ." >> $@
+	echo "  ?subj rdfs:subClassOf ?parent ." >> $@
+	echo "  FILTER (?subj in (MONDO:0015938, MONDO:0020272, MONDO:0010301, MONDO:0015318, MONDO:0015320, MONDO:0015321, MONDO:0015322, MONDO:0015543, MONDO:0016148, MONDO:0016329, MONDO:0017133, MONDO:0017274, MONDO:0019687, MONDO:0020012, MONDO:0020277, MONDO:0100027))" >> $@
+	echo "}" >> $@
+
+merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_classes.txt
+	git checkout master -- $(SRC) &&\
+	$(ROBOT) query --input $(SRC) --update $< \
+	remove -T tmp/remove_classes.txt --preserve-structure false \
+	template --merge-before --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 
 #ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
