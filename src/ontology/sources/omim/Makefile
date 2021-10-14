@@ -1,7 +1,7 @@
 TODAY ?= $(shell date +%Y-%m-%d)
 TGT=../releases/v$(TODAY)
 PRODUCTS = omim.owl
-OMIM_URL=https://github.com/monarch-initiative/omim/releases/download/latest/omim.xml
+OMIM_URL=https://github.com/monarch-initiative/omim/releases/download/latest/omim.ttl
 OBOGREPL=perl ../../obo-grep.pl
 
 all:  build stage
@@ -14,7 +14,7 @@ $(TGT):
 	mkdir -p $@
 
 omim-src.ttl:
-	curl $(OMIM_URL) --output $@
+	wget --no-check-certificate $(OMIM_URL) -O $@
 
 omim-src.owl: omim-src.ttl
 	owltools $< --set-ontology-id $(OBO)/mondo/$@ -o $@
