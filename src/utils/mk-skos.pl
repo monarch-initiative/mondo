@@ -24,7 +24,7 @@ while (<>) {
             $rel = 'exactMatch';
         }
         elsif ($anns =~ m@otherHierarchy@) {
-            $rel = 'exactMatch';
+            $rel = 'relatedMatch';
         }
         elsif ($anns =~ m@subClassOf@) {
             $rel = 'broadMatch';
@@ -42,9 +42,6 @@ while (<>) {
         elsif ($anns =~ m@btnt@) {
             # 1017
             $rel = 'broadMatch';
-        }
-        elsif ($anns =~ m@/e@) {
-            $rel = 'exactMatch';
         }
         $rel = "http://www.w3.org/2004/02/skos/core#".$rel;
         my $uri;
@@ -69,8 +66,11 @@ while (<>) {
         elsif ($prefix eq 'MEDGEN') {
             $uri = 'http://identifiers.org/medgen/';
         }
+        elsif ($prefix eq 'OMIMPS') {
+            $uri = 'https://omim.org/phenotypicSeries/PS';
+        }
         elsif ($prefix eq 'OMIM') {
-            $uri = 'http://identifiers.org/omim/';
+            $uri = 'https://omim.org/entry/';
         }
         elsif ($prefix eq 'MedDRA') {
             $uri = 'http://identifiers.org/meddra/';
