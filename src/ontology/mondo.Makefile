@@ -31,7 +31,9 @@ test: owlaxioms_check
 test: test_reason_equivalence
 
 test_reason_equivalence: $(SRC)
-	$(ROBOT) 	merge -i $< reason -e none -o $@
+	$(ROBOT) merge -i $< \
+	remove --term FOODON:03315150 --term FOODON:00001257 --term ENVO:01001479 --term ENVO:01001784 --axioms logical \
+	reason -e none
 
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
 	$(DOSDPT) prototype --obo-prefixes=true --template=../patterns/dosdp-patterns --outfile=$@
