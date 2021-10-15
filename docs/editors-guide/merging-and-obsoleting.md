@@ -13,7 +13,7 @@
     1. Comment: do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
     1. Obsoletion candidate subset: This should always be http://purl.obolibrary.org/obo/mondo#obsoletion_candidate
     1. obsoletion date: should be a release date at the first of the month, at least two months from today. Please write in the format YYYY-MM-DD.
-4. If a term is to be merged, in a new row in the [ROBOT_MergeTag spreadsheet templte](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1109324509), add the information above, and in addition, add:
+4. If a term is to be merged, in a new row in the [ROBOT_MergeTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1109324509), add the information above, and in addition, add:
     1. Mondo ID for the term that will replace the obsoleted terms
     1. Label for the term that will replace the obsoleted terms
 
