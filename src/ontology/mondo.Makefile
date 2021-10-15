@@ -28,9 +28,9 @@ owlaxioms_check:
 
 test: pattern_schema_checks
 test: owlaxioms_check
-test: reason_equivalence
+test: test_reason_equivalence
 	
-reason_equivalence: $(SRC)
+test_reason_equivalence: $(SRC)
 	$(ROBOT) 	merge -i $< reason -e none -o $@
 
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
