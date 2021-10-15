@@ -1,7 +1,7 @@
 TODAY ?= $(shell date +%Y-%m-%d)
 TGT=../releases/v$(TODAY)
 PRODUCTS = omim.owl
-OMIM_URL=https://data.monarchinitiative.org/experimental/omim.ttl
+OMIM_URL=https://github.com/monarch-initiative/omim/releases/download/latest/omim.ttl
 OBOGREPL=perl ../../obo-grep.pl
 
 all:  build stage
@@ -14,13 +14,12 @@ $(TGT):
 	mkdir -p $@
 
 omim-src.ttl:
-	wget --no-check-certificate $(OMIM_URL) -O $@
+	wget $(OMIM_URL) -O $@
 
 omim-src.owl: omim-src.ttl
 	owltools $< --set-ontology-id $(OBO)/mondo/$@ -o $@
 	
 omim-src.obo: omim-src.owl
-	echo "WARNING: OMIM ingest has multiple labels on classes (see https://github.com/monarch-initiative/dipper/issues/969)"
 	robot convert -i $< --check false -f obo -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo | perl ./bin/fix-omim.pl  > $@
 	rm $@.tmp.obo
 
