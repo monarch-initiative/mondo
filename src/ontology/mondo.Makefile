@@ -29,7 +29,7 @@ owlaxioms_check:
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
-	
+
 test_reason_equivalence: $(SRC)
 	$(ROBOT) 	merge -i $< reason -e none -o $@
 
