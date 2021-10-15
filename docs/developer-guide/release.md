@@ -100,3 +100,25 @@ Note- the date should be the date of the release in the format sh run.sh make GH
 1. Commit all of the changed import and report files (ignore or discard diff files, change log) to a branch
 1. Once all checks have passed, merge to master
 Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
+
+## Email Mondo Users
+Send an email to Mondo users: mondo-users@googlegroups.com  
+(Note - the recipients usually a picture of someone's pet to be included.)
+
+### Subject
+Mondo release + obsoletion candidates
+
+### Body
+
+Hello,  
+
+The latest Mondo release is now available here:https://github.com/monarch-initiative/mondo/releases  
+
+Please find a list of terms that are candidates to be obsoleted or merged here: https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/report-obsoletioncandidates-withcomment.tsv  
+Note - the proposed obsoletion date is listed in the table.  
+
+If you have an open issue that needs to be prioritized, please email us or comment on the ticket.  
+
+Thanks all,  
+
+Nicole and Sabrina  
