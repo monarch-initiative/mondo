@@ -28,6 +28,10 @@ owlaxioms_check:
 
 test: pattern_schema_checks
 test: owlaxioms_check
+test: reason_equivalence
+	
+reason_equivalence: $(SRC)
+	$(ROBOT) 	merge -i $< reason -e none -o $@
 
 ../patterns/dosdp-pattern.owl: pattern_schema_checks
 	$(DOSDPT) prototype --obo-prefixes=true --template=../patterns/dosdp-patterns --outfile=$@
