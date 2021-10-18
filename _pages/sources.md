@@ -19,7 +19,6 @@ ICD - ICD-10 - International Classification of Diseases | ICD10 | xref/Alignment
 Experimental Factor Ontology | EFO | xref/Alignments* | [https://www.ebi.ac.uk/efo/](https://www.ebi.ac.uk/efo/)
 Disease Ontology | DO | Source | [http://www.obofoundry.org/ontology/doid.html](http://www.obofoundry.org/ontology/doid.html)
 Mental Functioning Ontology | MF | Source | [http://www.obofoundry.org/ontology/mf.html](http://www.obofoundry.org/ontology/mf.html)
-Columbia Open Health Data | COHD | xref/Alignments | [http://cohd.io/](http://cohd.io/)
 MedGen | MEDGEN |xref/Alignments | [https://www.ncbi.nlm.nih.gov/medgen/](https://www.ncbi.nlm.nih.gov/medgen/)
 Ontology for General Medical Science | OGMS | xref/Alignments | [https://github.com/OGMS/ogms](https://github.com/OGMS/ogms)
 Medical Dictionary for Regulatory Activities | MeDRA | xref/Alignments | [https://www.meddra.org/](https://www.meddra.org/)
