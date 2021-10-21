@@ -35,6 +35,7 @@ OWLTOOLS= owltools
 USECAT= --use-catalog
 SPARQLDIR = ../sparql
 PATTERNDIR = ../patterns
+TMPDIR = tmp
 
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
@@ -210,9 +211,12 @@ filtered.owl: filtered.obo skos.ttl
 reasoned.owl: filtered.owl 
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
+test: reasoned-plus-equivalents.owl
+
 # merged = reasoned + equivalencies
 reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
+	$(ROBOT) reason -i $@ --equivalent-classes-allowed asserted-only -o $(TMPDIR)/$@_test_equivalents.owl
 
 
 
