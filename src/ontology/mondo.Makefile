@@ -509,3 +509,9 @@ tmp/efo_protection.txt:
 
 .PHONY: risky_obsoletion_check
 risky_obsoletion_check: efo_risks
+
+.PHONY: test_owlaxioms
+test_owlaxioms:
+	! grep "owl-axioms: " mondo-edit.obo
+
+test: test_owlaxioms 
