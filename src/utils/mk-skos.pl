@@ -18,7 +18,7 @@ while (<>) {
             $rel = 'exactMatch';
         }
         elsif ($anns =~ m@equivalentObsolete@) {
-            $rel = 'exactMatch';
+            next;
         }
         elsif ($anns =~ m@obsoleteEquivalent@) {
             $rel = 'exactMatch';
