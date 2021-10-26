@@ -11,7 +11,7 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/pato_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-03-03/imports/pato_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-08-03/imports/pato_import.owl"/>
     </owl:Ontology>
     
 
@@ -87,7 +87,6 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115>Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2.</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
         <rdfs:label>has part</rdfs:label>
         <rdfs:label xml:lang="en">has part</rdfs:label>
@@ -108,8 +107,12 @@
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
+        <obo:IAO_0000115>X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) &lt;= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>is preceded by</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>takes place after</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">preceded by</rdfs:label>
+        <rdfs:label>preceded_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -126,6 +129,7 @@
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000063"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115 xml:lang="en">x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) &lt;= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.</obo:IAO_0000115>
+        <rdfs:label>precedes</rdfs:label>
         <rdfs:label xml:lang="en">precedes</rdfs:label>
     </owl:ObjectProperty>
     
@@ -160,6 +164,30 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002314"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between a specifically dependent continuant (the characteristic) and any other entity (the bearer), in which the characteristic depends on the bearer for its existence.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">characteristic of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000053 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <obo:IAO_0000115 xml:lang="en">Inverse of characteristic_of</obo:IAO_0000115>
+        <rdfs:label>bearer of</rdfs:label>
+        <rdfs:label xml:lang="en">has characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000056">
@@ -183,6 +211,98 @@
         </owl:propertyChainAxiom>
         <obo:IAO_0000115 xml:lang="en">a relation between a process and a continuant, in which the continuant is somehow involved in the process</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has participant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000079 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000079">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000085"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">function of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">quality of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000081 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000081">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">role of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000085 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000085">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has function</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000086 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000087 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000087">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000091 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000091">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000092"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has disposition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000092 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000092">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+        <obo:IAO_0000115>inverse of has disposition</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">disposition of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -277,7 +397,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002025">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002017"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <obo:IAO_0000115>A &apos;has effector activity&apos; B if A and B are GO molecular functions (GO_0003674),  A &apos;has component activity&apos; B and B is the effector (output function) of B.  Each compound function has only one effector activity.</obo:IAO_0000115>
         <rdfs:label>has effector activity</rdfs:label>
@@ -300,7 +419,13 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002087">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002090"/>
+        <obo:IAO_0000115>X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>directly preceded by</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>is directly preceded by</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>is immediately preceded by</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>starts_at_end_of</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">immediately preceded by</rdfs:label>
+        <rdfs:label>immediately_preceded_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -345,6 +470,7 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <obo:IAO_0000115>w &apos;has component&apos; p if w &apos;has part&apos; p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type.</obo:IAO_0000115>
+        <rdfs:label>has component</rdfs:label>
         <rdfs:label xml:lang="en">has component</rdfs:label>
     </owl:ObjectProperty>
     
@@ -358,6 +484,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002211"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002025"/>
+        </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002578"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002578"/>
@@ -440,7 +570,6 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002352"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115>p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has input</rdfs:label>
     </owl:ObjectProperty>
@@ -492,6 +621,24 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004046"/>
         <rdfs:label>causally upstream of, negative effect</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002314 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002314">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002502"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002314"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>q characteristic of part of w if and only if there exists some p such that q inheres in p and p part of w.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">characteristic of part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -929,6 +1076,14 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002502 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002502">
+        <rdfs:label>depends on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002506 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002506">
@@ -1338,6 +1493,33 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000016">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:label xml:lang="en">disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <obo:IAO_0000115 xml:lang="en">A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">realizable entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
@@ -1369,12 +1551,77 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000023">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+        <obo:IAO_0000115 xml:lang="en">A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000034 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000034">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <rdfs:label xml:lang="en">function</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000115 xml:lang="en">An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0030000"/>
+        <rdfs:label xml:lang="en">anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
+        <rdfs:label xml:lang="en">connected anatomical structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:label xml:lang="en">material anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0030000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0030000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:label>biological entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:label xml:lang="en">cell</rdfs:label>
     </owl:Class>
     
 
@@ -1397,6 +1644,155 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0005575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
+        <obo:IAO_0000115>A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>cell or subcellular entity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>cellular component</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>subcellular entity</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>cellular_component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005622 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005622">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
+        <obo:IAO_0000115>A component of a cell contained within (but not including) the plasma membrane. In eukaryotes it includes the nucleus and cytoplasm.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>internal to cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>intracellular</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>protoplasm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>nucleocytoplasm</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>protoplast</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>intracellular anatomical structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005634 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005634">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043231"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044464"/>
+        <obo:IAO_0000115>A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell&apos;s chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>cell nucleus</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>horsetail nucleus</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>nucleus</rdfs:label>
+        <rdfs:label xml:lang="en">nucleus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005635 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005635">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0031967"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0012505"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The double lipid bilayer enclosing the nucleus and separating its contents from the rest of the cytoplasm; includes the intermembrane space, a gap of width 20-40 nm (also called the perinuclear space).</obo:IAO_0000115>
+        <rdfs:label>nuclear envelope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005737 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005737">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005622"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures.</obo:IAO_0000115>
+        <rdfs:label>cytoplasm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005773 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005773">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043231"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005737"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material. Cells contain one or several vacuoles, that may have different functions from each other. Vacuoles have a diverse array of functions. They can act as a storage organelle for nutrients or waste products, as a degradative compartment, as a cost-effective way of increasing cell size, and as a homeostatic regulator controlling both turgor pressure and pH of the cytosol.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>vacuolar carboxypeptidase Y</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>vacuole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005886 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005886">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0071944"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>juxtamembrane</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>cell membrane</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>cellular membrane</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>cytoplasmic membrane</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>plasmalemma</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>bacterial inner membrane</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>inner endospore membrane</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>plasma membrane lipid bilayer</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>plasma membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005938 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005938">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005737"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0071944"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005737"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0071944"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The region of a cell that lies just beneath the plasma membrane and often, but not always, contains a network of actin filaments and associated proteins.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell periphery</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>peripheral cytoplasm</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>cell cortex</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
@@ -1407,6 +1803,41 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:hasRelatedSynonym>single organism process</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>single-organism process</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biological_process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0012505 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0012505">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005773"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005886"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A collection of membranous structures involved in transport within the cell. The main components of the endomembrane system are endoplasmic reticulum, Golgi bodies, vesicles, cell membrane and nuclear envelope. Members of the endomembrane system pass materials through each other or though the use of vesicles.</obo:IAO_0000115>
+        <rdfs:label>endomembrane system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0016020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
+        <obo:IAO_0000115>A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>membrane region</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>region of membrane</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>whole membrane</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>membrane</rdfs:label>
     </owl:Class>
     
 
@@ -1440,6 +1871,294 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016772">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016740"/>
         <rdfs:label>transferase activity, transferring phosphorus-containing groups</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0031090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0031090">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0016020"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043227"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A membrane that is one of the two lipid bilayers of an organelle envelope or the outermost membrane of single membrane bound organelle.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>intracellular membrane</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>organelle membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0031965 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0031965">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0016020"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0031090"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005635"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Either of the lipid bilayers that surround the nucleus and form the nuclear envelope; excludes the intermembrane space.</obo:IAO_0000115>
+        <rdfs:label>nuclear membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0031967 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0031967">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0031975"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043227"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043229"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A double membrane structure enclosing an organelle, including two lipid bilayers and the region between them. In some cases, an organelle envelope may have more than two membranes.</obo:IAO_0000115>
+        <rdfs:label>organelle envelope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0031975 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0031975">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
+        <obo:IAO_0000115>A multilayered structure surrounding all or part of a cell; encompasses one or more lipid bilayers, and may include a cell wall layer; also includes the space between layers.</obo:IAO_0000115>
+        <rdfs:label>envelope</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0043226 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043226">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
+        <obo:IAO_0000115>Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane.</obo:IAO_0000115>
+        <rdfs:label>organelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0043227 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043227">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0043226"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016020"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043226"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016020"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>membrane-enclosed organelle</oboInOwl:hasExactSynonym>
+        <rdfs:label>membrane-bounded organelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0043229 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043229">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0043226"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005622"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043226"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005622"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane.</obo:IAO_0000115>
+        <rdfs:label>intracellular organelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0043231 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0043231">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0043227"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005622"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043227"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043229"/>
+        <obo:IAO_0000115>Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane and occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>intracellular membrane-enclosed organelle</oboInOwl:hasExactSynonym>
+        <rdfs:label>intracellular membrane-bounded organelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0044464 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0044464">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:label xml:lang="en">cell part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0071944 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0071944">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
+        <obo:IAO_0000115>The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures.</obo:IAO_0000115>
+        <rdfs:label>cell periphery</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0098590 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0098590">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0016020"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005886"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005886"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A membrane that is a (regional) part of the plasma membrane.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>region of plasma membrane</oboInOwl:hasExactSynonym>
+        <rdfs:label>plasma membrane region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0099568 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0099568">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005737"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005737"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005737"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005737"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Any (proper) part of the cytoplasm of a single cell of sufficient size to still be considered cytoplasm.</obo:IAO_0000115>
+        <rdfs:label>cytoplasmic region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0099738 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0099738">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005938"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005938"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005938"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0099568"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005938"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>The complete extent of cell cortex that underlies some some region of the plasma membrane.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>perimembrane region</oboInOwl:hasExactSynonym>
+        <rdfs:label>cell cortex region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0110165 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0110165">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
+        <obo:IAO_0000115>A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex.</obo:IAO_0000115>
+        <rdfs:label>cellular anatomical entity</rdfs:label>
     </owl:Class>
     
 
@@ -1585,6 +2304,16 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0000136 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000136">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115>A morphological quality pertaining to the degree to which an object contains an opening, aperture, orifice or vent.</obo:IAO_0000115>
+        <rdfs:label>closure</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0000140 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000140">
@@ -1616,6 +2345,16 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
         <obo:IAO_0000115>A physical quality of the thermal energy of a system.</obo:IAO_0000115>
         <rdfs:label>temperature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000150">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115>A morphologic quality inhering in a bearer by virtue of the bearer&apos;s relative size, organization and distribution of its surface elements or the representation or invention of the appearance of its surface; visual and tactile surface characteristics.</obo:IAO_0000115>
+        <rdfs:label>texture</rdfs:label>
     </owl:Class>
     
 
@@ -1699,6 +2438,44 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0000404 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000404">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001794"/>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the bearer&apos;s being curled or wound (especially in concentric rings or spirals).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>spiral</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>helical</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>helicoid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>helicoidal</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>helix-shaped</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>coiled</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000406 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000406">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001591"/>
+        <obo:IAO_0000115>A curvature quality inhering in a bearer by virtue of the bearer&apos;s having or being marked by a curve or smoothly rounded bend.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>bowing</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>curled</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>curved</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000407 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000407">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002254"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s having a horizontal surface without a slope, tilt, or curvature.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>plate-like</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>flat</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0000411 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000411">
@@ -1707,6 +2484,20 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:hasRelatedSynonym>round</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>rounded</oboInOwl:hasRelatedSynonym>
         <rdfs:label>circular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000460">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000069"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s deviation from normal or average.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>aberrant</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>atypia</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>atypical</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>defective</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>abnormal</rdfs:label>
     </owl:Class>
     
 
@@ -1869,6 +2660,38 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0000588 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000588">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s being a remnant structure from earlier development or evolution.</obo:IAO_0000115>
+        <rdfs:label>vestigial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000608 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000608">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000136"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0000610"/>
+        <obo:IAO_0000115>A morphological quality inhering in a bearer by virtue of the bearer&apos;s affording blocked passage or view.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>blocked</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>closed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000610 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000610">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000136"/>
+        <obo:IAO_0000115>A morphological quality inhering in a bearer by virtue of the bearer&apos;s affording unobstructed passage or view.</obo:IAO_0000115>
+        <rdfs:label>open</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0000627 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000627">
@@ -1925,6 +2748,18 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:hasRelatedSynonym>clouding</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cloudy</oboInOwl:hasRelatedSynonym>
         <rdfs:label>opaque</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000964 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000964">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000957"/>
+        <obo:IAO_0000115>A optical quality inhering in a bearer by virtue of the bearer&apos;s lacking opacity.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>clear</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hyaline</oboInOwl:hasExactSynonym>
+        <rdfs:label>transparent</rdfs:label>
     </owl:Class>
     
 
@@ -2000,12 +2835,42 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001031">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to recover its size and shape after deformation in any way.</obo:IAO_0000115>
+        <rdfs:label>elasticity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001154 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001154">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
         <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s length being notably higher than its width.</obo:IAO_0000115>
         <rdfs:label>elongated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001171 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001171">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001031"/>
+        <obo:IAO_0000115>An elasticity quality inhering in a bearer by virtue of the bearer&apos;s ability to recover its size and shape after deformation in any way.</obo:IAO_0000115>
+        <rdfs:label>elastic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001190 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001190">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000261"/>
+        <obo:IAO_0000115>A maturity quality inhering in a bearer by virtue the bearer&apos;s being not fully grown or developed.</obo:IAO_0000115>
+        <rdfs:label>juvenile</rdfs:label>
     </owl:Class>
     
 
@@ -2049,6 +2914,36 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001739"/>
         <obo:IAO_0000115>A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation.</obo:IAO_0000115>
         <rdfs:label>electromagnetic (EM) radiation quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001292 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001292">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001291"/>
+        <obo:IAO_0000115>An EM radiation quality that is independent of the EM wavelength range.</obo:IAO_0000115>
+        <rdfs:label>full-spectrum EM radiation quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001294 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001294">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001292"/>
+        <obo:IAO_0000115>A scalar EM radiation quality which obtains by the capacity of the bearer to scatter or reflect radiation.</obo:IAO_0000115>
+        <rdfs:label>radiation reflective quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001297 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001297">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001294"/>
+        <obo:IAO_0000115>A radiation reflective quality inhering in a bearer by virtue of the ratio of the energy of a wave reflected from its surface to the energy possessed by the wave striking the bearer&apos;s surface.</obo:IAO_0000115>
+        <rdfs:label>reflectivity</rdfs:label>
     </owl:Class>
     
 
@@ -2243,12 +3138,42 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001406 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001406">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001908"/>
+        <obo:IAO_0000115>A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having two nuclei.</obo:IAO_0000115>
+        <rdfs:label>binucleate</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001407 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001407">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
         <obo:IAO_0000115>A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having one nucleus.</obo:IAO_0000115>
         <rdfs:label>mononucleate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001410 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001410">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the bearer&apos;s being marked by narrow lines or grooves, usually parallel.</obo:IAO_0000115>
+        <rdfs:label>striated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001411 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001411">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115>A structural quality inhering in a bearer by virtue of the bearer&apos;s having distinct structure.</obo:IAO_0000115>
+        <rdfs:label>structured</rdfs:label>
     </owl:Class>
     
 
@@ -2346,6 +3271,17 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001546"/>
         <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
         <rdfs:label>flexibility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001544 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001544">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001543"/>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s ability of being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>bendy</oboInOwl:hasExactSynonym>
+        <rdfs:label>flexible</rdfs:label>
     </owl:Class>
     
 
@@ -2523,6 +3459,116 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001579 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001579">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115>A physical quality that is the ability to contract or shrink.</obo:IAO_0000115>
+        <rdfs:label>contractility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001580 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001580">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001690"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001690"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115>A contractility which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high contractility</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased contractility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001581 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001581">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001690"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001690"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115>A contractility which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low contractility</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased contractility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001591 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001591">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115>A surface shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting a degree of bending.</obo:IAO_0000115>
+        <rdfs:label>curvature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001592 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001592">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0000406"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000406"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115>A curvature which is relatively high.</obo:IAO_0000115>
+        <rdfs:label>increased curvature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001593 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001593">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0000406"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000406"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115>A curvature which is relatively low.</obo:IAO_0000115>
+        <rdfs:label>decreased curvature</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001655 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001655">
@@ -2693,6 +3739,16 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001690 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001690">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001579"/>
+        <obo:IAO_0000115>A contractility quality inhering in a bearer by virtue of the bearer&apos;s ability of contracting or being contracted.</obo:IAO_0000115>
+        <rdfs:label>contractile</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001693 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001693">
@@ -2739,6 +3795,17 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001735 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001735">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001548"/>
+        <obo:IAO_0000115>A physical quality inhering in a bearer by virtue of the bearer&apos;s parts having the arrangement which exhibits characteristics of liquids.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>liquid</oboInOwl:hasExactSynonym>
+        <rdfs:label>liquid configuration</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001739 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001739">
@@ -2749,12 +3816,134 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001748 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001748">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001857"/>
+        <obo:IAO_0000115>A shape quality in which a portion of the outermost boundary of an entity folds in space such that a portion that was originally convex is now concave.</obo:IAO_0000115>
+        <rdfs:label>invaginated</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001759 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001759">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
         <obo:IAO_0000115>A composition quality inhering in a bearer by virtue of the bearer&apos;s containing granules.</obo:IAO_0000115>
         <rdfs:label>granular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001776 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001776">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001544"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001544"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115>A flexibility which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high flexibility</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased flexibility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001777 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001777">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001544"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001544"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115>A flexibility which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low flexibility</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased flexibility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001789 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001789">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000406"/>
+        <obo:IAO_0000115>A curvature quality inhering in a bearer by virtue of the bearer&apos;s having a shape resembling a dome.</obo:IAO_0000115>
+        <rdfs:label>domed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001794 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001794">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the bearer&apos;s being wound in a continuous series of loops.</obo:IAO_0000115>
+        <rdfs:label>coiling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001795 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001795">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0000404"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000404"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115>A coiling which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>high coiling</oboInOwl:hasExactSynonym>
+        <rdfs:label>increased coiling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001796 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001796">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0000404"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000404"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115>A coiling which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>low coiling</oboInOwl:hasExactSynonym>
+        <rdfs:label>decreased coiling</rdfs:label>
     </owl:Class>
     
 
@@ -2830,12 +4019,73 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001908 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001908">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
+        <obo:IAO_0000115>A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having more than one nucleus.</obo:IAO_0000115>
+        <rdfs:label>multinucleate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001910 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001910">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001925"/>
+        <obo:IAO_0000115>A surface feature shape quality inhering in a bearer by virtue of the bearer&apos;s one part being layered over another connected part.</obo:IAO_0000115>
+        <rdfs:label>folded</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001925 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001925">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115>A surface shape quality inhering in a bearer by virtue of the bearer&apos;s shape of features present on its surface or outer shell.</obo:IAO_0000115>
+        <rdfs:label>surface feature shape</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001985 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001985">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000146"/>
         <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s being kept below its freezing point.</obo:IAO_0000115>
         <rdfs:label>frozen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001987 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001987">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002014"/>
+        <obo:IAO_0000115>A structural quality inhering in a bearer by virtue of the bearer&apos;s having a three dimensional cavity with a narrow or no opening, and often containing an anatomical substance.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sacular</oboInOwl:hasExactSynonym>
+        <rdfs:label>saccular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001992 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001992">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
+        <obo:IAO_0000115>An organismal quality inhering in a bearer by virtue of the bearer&apos;s consisting cells.</obo:IAO_0000115>
+        <rdfs:label>cellularity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001993 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001993">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001992"/>
+        <obo:IAO_0000115>A cellularity quality inhering in a bearer by virtue of the bearer&apos;s consisting of more than one cell.</obo:IAO_0000115>
+        <rdfs:label>multicellular</rdfs:label>
     </owl:Class>
     
 
@@ -2956,6 +4206,19 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0002045 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002045">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000402"/>
+        <obo:IAO_0000115>A branched quality inhering in a bearer by virtue of the bearer&apos;s having smaller branches arising from larger branches. Resembling a tree in branching structure.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>dendriform</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>dendroid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>dendroidal</oboInOwl:hasExactSynonym>
+        <rdfs:label>dendritic</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0002062 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002062">
@@ -3019,6 +4282,16 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0002078 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002078">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002014"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s having an empty space or cavity within.</obo:IAO_0000115>
+        <rdfs:label>hollow</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0002092 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002092">
@@ -3033,7 +4306,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002094">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002070"/>
-        <obo:IAO_0000115>An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific ph conditions.</obo:IAO_0000115>
+        <obo:IAO_0000115>An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific pH conditions.</obo:IAO_0000115>
         <rdfs:label>basophilic</rdfs:label>
     </owl:Class>
     
@@ -3157,12 +4430,93 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0002254 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002254">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001591"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s surface becoming more extended in a plane.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>compressed</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>flattened</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002255 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002255">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000150"/>
+        <obo:IAO_0000115>Texture quality inhering in a bearer by virtue of the bearer&apos;s being marked with one or more channels.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>channeled</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>creased</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>grooved</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0002266 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002266">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
         <obo:IAO_0000115>A shape that inheres in a 3 dimensional entity.</obo:IAO_0000115>
         <rdfs:label>3-D shape</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002287 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002287">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001171"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001171"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115>An elasticity which is relatively high.</obo:IAO_0000115>
+        <rdfs:label>increased elasticity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002288 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002288">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PATO_0001171"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000461"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001171"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115>An elasticity which is relatively low.</obo:IAO_0000115>
+        <rdfs:label>decreased elasticity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002299 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002299">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001873"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002078"/>
+        <obo:IAO_0000115>A cylindrical shape that is hollow.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>tube like</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tube-shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tubulate</oboInOwl:hasExactSynonym>
+        <rdfs:label>tubular</rdfs:label>
     </owl:Class>
     
 
@@ -3320,12 +4674,102 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0002422 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002422">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115>Pertaining to the individual parts making up an aggregate fruit like a many-lobed &quot;berry,&quot; such as a raspberry.</obo:IAO_0000115>
+        <rdfs:label>acinar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002444 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002444">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
+        <obo:IAO_0000115>A composition quality inhering in a bearer by virtue of the bearer&apos;s being composed of or possessing inorganic material.</obo:IAO_0000115>
+        <rdfs:label>mineralized</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002462 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002462">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
+        <obo:IAO_0000115>A composition quality inhering in an bearer by virtue of the bearer&apos;s consisting of collagen.</obo:IAO_0000115>
+        <rdfs:label>collagenous</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002468 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002468">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0015008"/>
+        <obo:IAO_0000115>A structure quality inhering in a bearer by virtue of the bearer&apos;s being capable of swelling or stretching.</obo:IAO_0000115>
+        <rdfs:label>distensible</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002478 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002478">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001410"/>
+        <obo:IAO_0000115>A shape quality inhering in a bearer by virtue of the bearer&apos;s being marked by narrow lines or grooves, usually parallel, that are oriented transversely relative to the long axis of the bearer.</obo:IAO_0000115>
+        <rdfs:label>transversely striated</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0002505 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002505">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001404"/>
         <obo:IAO_0000115>A nucleate quality inhering in a bearer by virtue of the bearer&apos;s having one or more nucleus.</obo:IAO_0000115>
         <rdfs:label>nucleated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002507 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002507">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
+        <obo:IAO_0000115>A composition quality inhering in a bearer by virtue of the bearer&apos;s consisting of keratin.</obo:IAO_0000115>
+        <rdfs:label>keratinous</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0010001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0010001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115>A structural quality inhering in the bearer by virtue of the bearer consisting of multiple structures lacking any physical connection to each other.</obo:IAO_0000115>
+        <rdfs:label>disconnected</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0010006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0010006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115>A quality of a single cell inhering in the bearer by virtue of the bearer&apos;s size or shape or structure.</obo:IAO_0000115>
+        <rdfs:label>cell morphology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0015008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0015008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the extent to which the bearer is capable of being stretched or swollen.</obo:IAO_0000115>
+        <rdfs:label>distensibility</rdfs:label>
     </owl:Class>
     
 
@@ -3430,6 +4874,36 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0070002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0070002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0070026"/>
+        <obo:IAO_0000115>A cell morphology that inheres in multipolar neurons with densely branched terminal axonal arborizations that form basket-like structures surrounding and synapsing to the somas of target cells.</obo:IAO_0000115>
+        <rdfs:label>basket cell morphology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0070006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0070006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0010006"/>
+        <obo:IAO_0000115>A cell morphology that inheres in neurons which have two principal fibres (dendrites or axon) that emerge from the soma and begin to branch some distance from it, have few spines, and branch in narrow fields. This is in contrast to bitufted morphology where branching occurs close to the soma.</obo:IAO_0000115>
+        <rdfs:label>bipolar morphology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0070026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0070026">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0010006"/>
+        <obo:IAO_0000115>A cell morphology that inheres in neurons which possess a single axon and many dendrites and dendritic branches.</obo:IAO_0000115>
+        <rdfs:label>multipolar neuron morphology</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -3438,6 +4912,149 @@ For example, A and B may be gene products and binding of B by A positively regul
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000000"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001993"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </owl:intersectionOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001405"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001406"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001407"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001908"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001407"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001908"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0010006"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
+    </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002566"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
@@ -3486,6 +5103,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#d">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ro.owl#z">
@@ -3591,6 +5214,178 @@ For example, A and B may be gene products and binding of B by A positively regul
                         <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002018"/>
                         <swrl:argument1 rdf:resource="urn:swrl#w"/>
                         <swrl:argument2 rdf:resource="urn:swrl#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000091"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0000085"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#d"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -4278,6 +6073,116 @@ For example, A and B may be gene products and binding of B by A positively regul
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002404"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>

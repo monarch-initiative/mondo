@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: mondo/releases/2021-04-30/imports/foodon_import.owl
+data-version: mondo/releases/2021-08-03/imports/foodon_import.owl
 subsetdef: Angiosperm ""
 subsetdef: Arabidopsis ""
 subsetdef: Citrus ""
+subsetdef: CL ""
 subsetdef: Gymnosperms ""
 subsetdef: Maize ""
 subsetdef: Poaceae ""
@@ -25,6 +26,7 @@ property_value: IAO:0000112 "your body mass index" xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
 property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ecocore.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
@@ -44,6 +46,8 @@ property_value: BFO:0000180 "Continuant" xsd:string
 property_value: IAO:0000111 "continuant" xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
 property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ons.owl
@@ -90,6 +94,7 @@ id: BFO:0000004
 name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
@@ -105,6 +110,8 @@ property_value: IAO:0000112 "an orchestra." xsd:string
 property_value: IAO:0000112 "an organism" xsd:string
 property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
 property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
@@ -211,8 +218,10 @@ property_value: IAO:0000112 "the undetached arm of a human being" xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: Material entities (continuants) can preserve their identity even while gaining and losing material parts. Continuants are contrasted with occurrents, which unfold themselves in successive temporal parts or phases [60" xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: Object, Fiat Object Part and Object Aggregate are not intended to be exhaustive of Material Entity. Users are invited to propose new subcategories of Material Entity." xsd:string
 property_value: IAO:0000116 "BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here." xsd:string
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 property_value: IAO:0000600 "A material entity is an independent continuant that has some portion of matter as proper or improper continuant part. (axiom label in BFO2 Reference: [019-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/019-002"}
 property_value: IAO:0000601 "every entity of which a material entity is continuant part is also a material entity. (axiom label in BFO2 Reference: [021-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/021-002"}
@@ -427,6 +436,7 @@ is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: RO:0001000 FOODON:03411301 ! derives from algae
 property_value: IAO:0000412 http://langual.org xsd:string
+property_value: seeAlso https://ungc-communications-assets.s3.amazonaws.com/docs/publications/The-Seaweed-Manifesto.pdf
 
 [Term]
 id: FOODON:00001248
@@ -1529,8 +1539,9 @@ is_a: FOODON:03420144 ! plant above surface, excluding fruit and seed
 
 [Term]
 id: FOODON:03420279
-name: pollen
-is_a: FOODON:03420310 ! stamen
+name: obsolete: pollen
+is_obsolete: true
+replaced_by: PO:0025281
 
 [Term]
 id: FOODON:03420293
@@ -1556,9 +1567,9 @@ is_a: PO:0009010 ! seed
 
 [Term]
 id: FOODON:03420310
-name: stamen
-def: "A pollen-bearing organ in a flower, made up of a slender stalk (filament) and a pollen sac (anther) (Webster's)" []
-is_a: FOODON:03420237 ! floret or flower
+name: obsolete: stamen
+is_obsolete: true
+replaced_by: PO:0009029
 
 [Term]
 id: FOODON:03430113
@@ -1759,7 +1770,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 [Term]
 id: NCBITaxon:33213
 name: Bilateria
-is_a: NCBITaxon:33154 ! Opisthokonta
+is_a: NCBITaxon:6072 ! Eumetazoa
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1780,6 +1791,12 @@ id: NCBITaxon:40674
 name: Mammalia
 synonym: "mammals" EXACT []
 is_a: NCBITaxon:32524 ! Amniota
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
+
+[Term]
+id: NCBITaxon:6072
+name: Eumetazoa
+is_a: NCBITaxon:33154 ! Opisthokonta
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
@@ -1979,14 +1996,116 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 [Term]
 id: PO:0000018
 name: ovule primordium
+namespace: plant_anatomy
+def: "A floral structure primordium (PO:0025477) that is committed to the development of an ovule (PO:0020003)." []
+comment: The transition from ovule primordium to ovule occurs when an integument (PO:0020021) begins to develop from the protoderm (PO:0006210).
+synonym: "portion of ovule primordium tissue (exact)" EXACT []
+synonym: "primordio de &#243vulo (Spanish, exact)" EXACT []
+synonym: "胚珠原基（可視的） (Japanese, exact)" EXACT []
+xref: PO_GIT:465
+is_a: PO:0025477 ! floral organ primordium
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0000019
 name: gynoecium primordium
+namespace: plant_anatomy
+def: "A floral structure primordium (PO:0025477) that is committed to the development of a gynoecium (PO:0009062)." []
+comment: Use carpel primordium (PO:0004703) for the primordium (PO:0025127) of an individual carpel (PO:0009030).
+synonym: "pistil primordium (exact)" EXACT []
+synonym: "portion of gynoecium primordium tissue (exact)" EXACT []
+synonym: "primordio de gineceo (Spanish, exact)" EXACT []
+synonym: "雌蕊原基(可視的）   (Japanese, exact)" EXACT []
+xref: PO_GIT:465
+is_a: PO:0025477 ! floral organ primordium
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0000037
+name: shoot axis apex
+namespace: plant_anatomy
+def: "A shoot axis (PO:0025029) that is the most distal part of a shoot system (PO:0009006) and has as parts a shoot apical meristem (PO:0020148) and the youngest primordia (PO:0025127)." []
+subset: reference
+synonym: "&#225pice del epiblasto (epiblastema) (Spanish, exact)" EXACT []
+synonym: "シュート頂、茎頂 (Japanese, exact)" EXACT []
+xref: PO_GIT:234
+is_a: PO:0025029 ! shoot axis
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0000229
 name: flower meristem
+namespace: plant_anatomy
+alt_id: PO:0006329
+alt_id: PO:0006373
+alt_id: PO:0006374
+alt_id: PO:0025091
+def: "A portion of reproductive shoot apical meristem tissue (PO:0008028) that gives rise to the floral organs (PO:0025395)." []
+comment: In Zea mays and other grasses, the floret meristem is part of a spikelet and develops into a specific type of floret. If you are annotating to this structure for Zea mays or other grasses, please also add an annotation to the spikelet type that the meristem is part of. Choose the most specific term possible from: spikelet (PO:0009051), ear spikelet (PO:0006320), ear pedicellate spikelet (PO:0006348), ear sessile spikelet (PO:0006349), tassel spikelet (PO:0006309), tassel pedicellate spikelet (PO:0006312), tassel sessile spikelet (PO:0006311).
+synonym: "ear floret meristem (narrow)" NARROW []
+synonym: "floral apical meristem (related)" RELATED []
+synonym: "floral meristem (exact)" EXACT []
+synonym: "floret meristem (narrow)" NARROW []
+synonym: "mersitema floral (Spanish, exact)" EXACT []
+synonym: "Poaceae floret meristem (narrow)" NARROW []
+synonym: "tassel floret meristem (narrow)" NARROW []
+synonym: "花芽分裂組織 (Japanese, exact)" EXACT []
+is_a: PO:0008028 ! reproductive shoot apical meristem
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0004010
+name: meristematic cell
+namespace: plant_anatomy
+def: "A native plant cell (PO:0025606) synthesizing protoplasm and producing new cells by division and with only a primary cell wall." []
+subset: CL
+synonym: "c&#233lula meristem&#225tica (Spanish, exact)" EXACT []
+synonym: "stem cell (exact)" EXACT []
+synonym: "分裂組織細胞 (Japanese, exact)" EXACT []
+xref: CL:0000034
+xref: PO_GIT:272
+is_a: PO:0025606 ! native plant cell
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0006079
+name: shoot system meristem
+namespace: plant_anatomy
+def: "A portion of meristem tissue (PO:0009013) that is part of a shoot system (PO:0009006)." []
+subset: TraitNet
+synonym: "meristema del epiblasto (epiblastema) (Spanish, exact)" EXACT []
+synonym: "シュート分裂組織 (Japanese, exact)" EXACT []
+xref: PO_GIT:472
+xref: PO_GIT:583
+is_a: PO:0009013 ! portion of meristem tissue
+relationship: BFO:0000050 PO:0009006 ! part of shoot system
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0006210
+name: protoderm
+namespace: plant_anatomy
+def: "A portion of meristem tissue (PO:0009013) that is the outer layer of an apical meristem (PO:0020144), or the outer layer of a plant embryo proper (PO:0000001), and gives rise to a portion of epidermis (PO:0005679)." []
+comment: A protoderm may or may not arise from independent initial cells (PO:0004011). Some researchers also refer to it as an epidermis in a  meristematic state.
+synonym: "dermatogen cell (related)" RELATED []
+synonym: "portion of protoderm tissue (exact)" EXACT []
+synonym: "protodermis (Spanish, exact)" EXACT []
+synonym: "前表皮、原表皮 (Japanese, exact)" EXACT []
+xref: PO_GIT:125
+is_a: PO:0009013 ! portion of meristem tissue
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0008028
+name: reproductive shoot apical meristem
+namespace: plant_anatomy
+def: "A shoot apical meristem (PO:0020148) that gives rise to the apical growth of reproductive tissues and organs." []
+synonym: "meristema apical reproductivo del epiblasto (epiblastema) (Spanish, exact)" EXACT []
+synonym: "生殖シュート頂端 分裂組織 (Japanese, exact)" EXACT []
+xref: PO_GIT:36
+is_a: PO:0020148 ! shoot apical meristem
+relationship: BFO:0000050 PO:0025222 ! part of reproductive shoot apex
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009001
@@ -2032,6 +2151,23 @@ synonym: "果実 (exact, Japanese)" EXACT []
 xref: PO_GIT:76
 is_a: PO:0025496 ! multi-tissue plant structure
 relationship: RO:0002202 PO:0009062 ! develops from gynoecium
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009002
+name: plant cell
+namespace: plant_anatomy
+def: "A cell which is a plant structure (PO:0009011)." []
+comment: Applies to cells that are living or dead at maturity (e.g., fiber cell or tracheid) and includes any external encapsulating structures (if present) such as the plasma membrane and the plant-type cell wall. Definition of cell GO:0005623: "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope". GO:0009505. Definition of plant-type cell wall (GO:0009505): A more or less rigid structure lying outside the cell membrane of a cell and composed of cellulose and pectin and other organic and inorganic substances, synonym; exact: cellulose and pectin-containing cell wall.
+subset: CL
+subset: reference
+subset: TraitNet
+synonym: "c&#233lula vegetal (Spanish, exact)" EXACT []
+synonym: "cell (broad)" BROAD []
+synonym: "植物細胞 (Japanese, exact)" EXACT []
+xref: GO:0005623
+xref: PO_GIT:56
+is_a: PO:0009011 ! plant structure
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
@@ -2136,6 +2272,7 @@ synonym: "estructura vegetal (Spanish, exact)" EXACT []
 synonym: "植物 構造 (Japanese, exact)" EXACT []
 xref: PO_GIT:57
 is_a: FOODON:03420116 ! part of organism
+is_a: PO:0025131 ! plant anatomical entity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
@@ -2151,6 +2288,21 @@ synonym: "etapa de desarrollo de estructura vegetal (Spanish, exact)" EXACT []
 synonym: "plant growth and development stage (exact)" EXACT []
 xref: PO_GIT:185
 is_a: BFO:0000003 ! occurrent
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0009013
+name: portion of meristem tissue
+namespace: plant_anatomy
+def: "A portion of plant tissue (PO:0009007) in which plant cells (PO:0009002) have retained their embryonic characteristics, or have reverted to them secondarily, and that divide to produce new cells that can undergo differentiation to form mature tissues, i.e. they have a capacity for morphogenesis and growth." []
+subset: TraitNet
+synonym: "meristem (exact)" EXACT []
+synonym: "meristema (Spanish, exact)" EXACT []
+synonym: "meristematic tissue (exact)" EXACT []
+synonym: "分裂組織 (Japanese, exact)" EXACT []
+xref: PO_GIT:472
+is_a: PO:0009007 ! portion of plant tissue
+relationship: BFO:0000051 PO:0004010 ! has_part meristematic cell
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
@@ -2342,6 +2494,54 @@ relationship: RO:0002202 PO:0000018 ! develops from ovule primordium
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
+id: PO:0020144
+name: apical meristem
+namespace: plant_anatomy
+def: "A maximal portion of meristem tissue (PO:0009013) located at a shoot apex (PO:0000037) or root tip (PO:0000025)." []
+subset: TraitNet
+synonym: "AM (exact)" EXACT []
+synonym: "meristema apical (Spanish, exact)" EXACT []
+synonym: "primary meristem (related)" RELATED []
+synonym: "promeristem (broad)" BROAD []
+synonym: "頂端分裂組織 (Japanese, exact)" EXACT []
+xref: PO_GIT:579
+is_a: PO:0009013 ! portion of meristem tissue
+relationship: BFO:0000051 PO:0006210 ! has_part protoderm
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0020148
+name: shoot apical meristem
+namespace: plant_anatomy
+def: "A shoot system meristem (PO:0006079) formed at the apex of the shoot axis (PO:0025029), including those originating from an axillary bud meristem (PO:0000232)." []
+subset: TraitNet
+synonym: "meristema apical del epiblasto (epiblastema) (Spanish, exact)" EXACT []
+synonym: "primary shoot meristem (related)" RELATED []
+synonym: "promeristem (broad)" BROAD []
+synonym: "SAM (exact)" EXACT []
+synonym: "茎頂分裂組織 (Japanese, exact)" EXACT []
+xref: PO_GIT:472
+is_a: PO:0006079 ! shoot system meristem
+is_a: PO:0020144 ! apical meristem
+relationship: BFO:0000050 PO:0000037 ! part of shoot axis apex
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: PO:0025004
+name: plant axis
+namespace: plant_anatomy
+def: "An axial plant organ (PO:0009008)." []
+comment: Includes roots and shoots.
+subset: TraitNet
+synonym: "eje de la planta (Spanish, exact)" EXACT []
+synonym: "plant axes (exact, plural)" EXACT []
+synonym: "植物軸（軸柱） (Japanese, exact)" EXACT []
+is_a: PO:0009008 ! plant organ
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-07-01T03:44:41Z
+
+[Term]
 id: PO:0025007
 name: collective plant organ structure
 namespace: plant_anatomy
@@ -2379,6 +2579,28 @@ created_by: Laurel_Cooper
 creation_date: 2010-04-28T11:04:34Z
 
 [Term]
+id: PO:0025029
+name: shoot axis
+namespace: plant_anatomy
+def: "A plant axis (PO:0025004) that is part of a shoot system (PO:0009006)." []
+comment: Often bears leaves and branches. In vascular plants, has at least one node and one internode.
+subset: Angiosperm
+subset: Arabidopsis
+subset: Maize
+subset: Poaceae
+subset: Rice
+subset: TraitNet
+synonym: "caullome (exact)" EXACT []
+synonym: "eje del epiblasto (epiblastema) (Spanish, exact)" EXACT []
+synonym: "shoot (related)" RELATED []
+synonym: "シュート軸 (Japanese, exact)" EXACT []
+is_a: PO:0025004 ! plant axis
+relationship: BFO:0000050 PO:0009006 ! part of shoot system
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-07-01T03:46:35Z
+
+[Term]
 id: PO:0025082
 name: reproductive shoot system
 namespace: plant_anatomy
@@ -2412,6 +2634,67 @@ created_by: rwalls
 creation_date: 2010-11-05T01:36:24Z
 
 [Term]
+id: PO:0025127
+name: primordium
+namespace: plant_anatomy
+def: "A portion of meristem tissue (PO:0009013) that has as parts protoderm (PO:0006210) and sub-epidermal meristematic tissue and is committed to the development of a particular plant structure (PO:0009011)." []
+comment: A primordium appears as a protrusion and is the first distinct form of a plant organ (PO:0009008), cardinal organ part (PO:0025001), or collective plant organ structure (PO:0025007). The transition from a primordium to the plant structure it develops into is marked by the development of non-meristematic cells, although meristematic cells may be present after the transition.
+synonym: "portion of primordial tissue (exact)" EXACT []
+synonym: "portion of primordium tissue (exact)" EXACT []
+synonym: "primordia (exact, plural)" EXACT []
+synonym: "primordio (Spanish, exact)" EXACT []
+synonym: "原基（可視的）  (Japanese, exact)" EXACT []
+xref: PO_GIT:186
+is_a: PO:0009013 ! portion of meristem tissue
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-11-15T09:10:22Z
+
+[Term]
+id: PO:0025131
+name: plant anatomical entity
+namespace: plant_anatomy
+def: "An anatomical entity that is or was part of a plant." []
+comment: Includes both material entities such as plant structures and immaterial entities such as plant anatomical spaces. CARO:0000000 'anatomical entity' is defined as: A part of a cellular organism that is either an immaterial entity or a material entity with granularity aboove the level of a protein complex.  Or, a substance produced by a cellular organism with granularity above the level of a protein complex.  Refers to BFO:0000004 'independent continuant'.
+synonym: "entidad anat&#243mica vegetal (Spanish, exact)" EXACT []
+synonym: "植物 解剖学（形態）的実体 (Japanese, exact)" EXACT []
+xref: PO_GIT:224
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-11-15T11:41:38Z
+
+[Term]
+id: PO:0025222
+name: reproductive shoot apex
+namespace: plant_anatomy
+def: "A shoot apex that has as part a reproductive shoot apical meristem." []
+synonym: "&#225pice reproductivo del epiblasto (epiblastema) (Spanish, exact)" EXACT []
+synonym: "生殖シュート頂、茎頂 (Japanese, exact)" EXACT []
+is_a: PO:0000037 ! shoot axis apex
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-12-20T08:47:03Z
+
+[Term]
+id: PO:0025233
+name: portion of embryo plant tissue
+namespace: plant_anatomy
+def: "A portion of plant tissue (PO:0009007) that is part of a plant embryo (PO:0009009)." []
+comment: This class is for tissues that only occur as part of an embryo.
+synonym: "portion of embryo tissue (broad)" BROAD []
+synonym: "portion of embryonic plant tissue (exact)" EXACT []
+synonym: "tejido embri&#243nico vegetal (Spanish, exact)" EXACT []
+synonym: "植物胚性組織 の一部   (Japanese, exact)" EXACT []
+xref: PO_GIT:338
+is_a: PO:0009007 ! portion of plant tissue
+is_a: PO:0025099 ! embryo plant structure
+intersection_of: PO:0009007 ! portion of plant tissue
+intersection_of: BFO:0000050 PO:0009009 ! part of plant embryo
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2010-12-20T12:27:10Z
+
+[Term]
 id: PO:0025338
 name: collective plant organ structure development stage
 namespace: plant_structure_development_stage
@@ -2443,6 +2726,24 @@ relationship: BFO:0000050 PO:0009046 ! part of flower
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 created_by: rwalls
 creation_date: 2012-01-19T11:44:36Z
+
+[Term]
+id: PO:0025477
+name: floral organ primordium
+namespace: plant_anatomy
+def: "A primordium (PO:0025127) that is committed to the development of a floral organ (PO:0025395) and is part of a reproductive shoot apex (PO:0025222)." []
+comment: If annotating to a primordium of a floral structure, it is better to use the more specific term, such as petal primordium (PO:0000021) or anther primordium (PO:0006089).
+subset: Angiosperm
+synonym: "floral structure primordia (exact, plural)" EXACT []
+synonym: "portion of floral structure primordium tissue (exact)" EXACT []
+synonym: "primordio de organo floral (Spanish, exact)" EXACT []
+synonym: "花器官原基 (Japanese, exact)" EXACT []
+xref: PO_GIT:465
+is_a: PO:0025127 ! primordium
+relationship: BFO:0000050 PO:0025222 ! part of reproductive shoot apex
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: rwalls
+creation_date: 2012-04-26T03:57:09Z
 
 [Term]
 id: PO:0025496
@@ -2497,6 +2798,18 @@ created_by: Laurel_Cooper
 creation_date: 2012-12-13T19:01:14Z
 
 [Term]
+id: PO:0025606
+name: native plant cell
+namespace: plant_anatomy
+def: "A plant cell (PO:0009002) that is either part of a multicellular whole plant (PO:0000003) 'in vivo' or a unicellular organism 'in natura' (i.e. part of a natural environment)." []
+comment: A native plant cell is one that is not grown or maintained in vitro, nor part of an in vitro plant structure (PO:0000004).
+xref: PO_GIT:586
+is_a: PO:0009002 ! plant cell
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+created_by: Laurel_Cooper
+creation_date: 2014-05-13T16:51:47Z
+
+[Term]
 id: PO:0030108
 name: berry fruit
 namespace: plant_anatomy
@@ -2539,6 +2852,7 @@ relationship: RO:0003001 OBI:0100026 ! produced by organism
 id: UBERON:0000468
 name: multicellular organism
 def: "Anatomical structure that is an individual member of a species and consists of more than one cell." []
+synonym: "multi-cellular organism" EXACT []
 is_a: BFO:0000040 ! material entity
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -2546,6 +2860,8 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0001911
 name: mammary gland
 def: "A specialized accessory gland of the skin of mammals that secretes milk. The gland is typically only developed in females, and regresses in males." []
+synonym: "glandula mammaria" EXACT []
+synonym: "lactiferous gland" EXACT []
 is_a: FOODON:03420127 ! animal body or body part
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
@@ -2554,6 +2870,7 @@ id: UBERON:0001913
 name: milk
 def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
 synonym: "mammal milk" EXACT []
+synonym: "mammary gland milk" EXACT []
 is_a: FOODON:00001257 ! milk or milk based food product
 is_a: FOODON:03315150 ! mammalian milk product
 is_a: UBERON:0006314 ! bodily fluid
@@ -2571,6 +2888,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0006314
 name: bodily fluid
 def: "Liquid components of living organisms. includes fluids that are excreted or secreted from the body as well as body water that normally is not." []
+synonym: "body fluid" EXACT []
 synonym: "fluid" BROAD []
 is_a: UBERON:0000463 ! organism substance
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
@@ -2579,6 +2897,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 id: UBERON:0007023
 name: adult organism
 def: "A multicellular organism that existence_ends_with a post-juvenile adult stage and existence_starts_with a post-juvenile adult stage." []
+synonym: "adults" EXACT []
 is_a: UBERON:0000468 ! multicellular organism
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 

@@ -1,0 +1,20 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+SELECT distinct ?cls ?label (GROUP_CONCAT(?parent_label;SEPARATOR="|") AS ?parents) WHERE {
+  {
+	?cls a owl:Class; 
+  		rdfs:label ?label .
+    ?cls rdfs:subClassOf ?parent .
+    ?parent rdfs:label ?parent_label .
+  	FILTER(regex(str(?label),"disease"))
+    FILTER NOT EXISTS {
+    	?cls owl:deprecated "true"^^xsd:boolean
+  	}
+    FILTER( !isBlank(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+  }
+  	
+} GROUP BY ?cls ?label

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-04-30/imports/pato_import.owl
+data-version: mondo/releases/2021-08-03/imports/pato_import.owl
 ontology: mondo/imports/pato_import
 
 [Term]
@@ -30,6 +30,20 @@ def: "An occurrent that has temporal proper parts and for some time t, p s-depen
 is_a: BFO:0000003 ! occurrent
 
 [Term]
+id: BFO:0000016
+name: disposition
+is_a: BFO:0000017 ! realizable entity
+disjoint_from: BFO:0000023 ! role
+
+[Term]
+id: BFO:0000017
+name: realizable entity
+def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
+relationship: BFO:0000050 BFO:0000017 ! part of realizable entity
+
+[Term]
 id: BFO:0000019
 name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
@@ -43,10 +57,49 @@ is_a: BFO:0000002 ! continuant
 relationship: BFO:0000050 BFO:0000020 ! part of specifically dependent continuant
 
 [Term]
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000034
+name: function
+is_a: BFO:0000016 ! disposition
+
+[Term]
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
 is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CARO:0000000
+name: anatomical entity
+is_a: CARO:0030000 ! biological entity
+
+[Term]
+id: CARO:0000003
+name: connected anatomical structure
+is_a: CARO:0000006 ! material anatomical entity
+
+[Term]
+id: CARO:0000006
+name: material anatomical entity
+is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
+
+[Term]
+id: CARO:0030000
+name: biological entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CL:0000000
+name: cell
+is_a: CARO:0000003 ! connected anatomical structure
+relationship: BFO:0000051 GO:0005634 {gci_filler="PATO:0001407", gci_relation="RO:0000053"} ! has part nucleus
+relationship: BFO:0000051 GO:0005634 {gci_filler="PATO:0001908", gci_relation="RO:0000053"} ! has part nucleus
 
 [Term]
 id: GO:0003674
@@ -59,6 +112,83 @@ name: catalytic activity
 is_a: GO:0003674 ! molecular_function
 
 [Term]
+id: GO:0005575
+name: cellular_component
+def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." []
+synonym: "cell or subcellular entity" EXACT []
+synonym: "cellular component" EXACT []
+synonym: "subcellular entity" RELATED []
+
+[Term]
+id: GO:0005622
+name: intracellular anatomical structure
+def: "A component of a cell contained within (but not including) the plasma membrane. In eukaryotes it includes the nucleus and cytoplasm." []
+synonym: "internal to cell" EXACT []
+synonym: "intracellular" EXACT []
+synonym: "nucleocytoplasm" RELATED []
+synonym: "protoplasm" EXACT []
+synonym: "protoplast" RELATED []
+is_a: GO:0110165 ! cellular anatomical entity
+
+[Term]
+id: GO:0005634
+name: nucleus
+def: "A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated. In most cells, the nucleus contains all of the cell's chromosomes except the organellar chromosomes, and is the site of RNA synthesis and processing. In some species, or in specialized cell types, RNA metabolism or DNA replication may be absent." []
+synonym: "cell nucleus" EXACT []
+synonym: "horsetail nucleus" NARROW []
+is_a: GO:0043231 ! intracellular membrane-bounded organelle
+is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0005635
+name: nuclear envelope
+def: "The double lipid bilayer enclosing the nucleus and separating its contents from the rest of the cytoplasm; includes the intermembrane space, a gap of width 20-40 nm (also called the perinuclear space)." []
+is_a: GO:0031967 ! organelle envelope
+relationship: BFO:0000050 GO:0005634 ! part of nucleus
+relationship: BFO:0000050 GO:0012505 ! part of endomembrane system
+
+[Term]
+id: GO:0005737
+name: cytoplasm
+def: "The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." []
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+
+[Term]
+id: GO:0005773
+name: vacuole
+def: "A closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material. Cells contain one or several vacuoles, that may have different functions from each other. Vacuoles have a diverse array of functions. They can act as a storage organelle for nutrients or waste products, as a degradative compartment, as a cost-effective way of increasing cell size, and as a homeostatic regulator controlling both turgor pressure and pH of the cytosol." []
+synonym: "vacuolar carboxypeptidase Y" RELATED []
+is_a: GO:0043231 ! intracellular membrane-bounded organelle
+relationship: BFO:0000050 GO:0005737 ! part of cytoplasm
+
+[Term]
+id: GO:0005886
+name: plasma membrane
+def: "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." []
+synonym: "bacterial inner membrane" NARROW []
+synonym: "cell membrane" EXACT []
+synonym: "cellular membrane" EXACT []
+synonym: "cytoplasmic membrane" EXACT []
+synonym: "inner endospore membrane" NARROW []
+synonym: "juxtamembrane" BROAD []
+synonym: "plasma membrane lipid bilayer" NARROW []
+synonym: "plasmalemma" EXACT []
+is_a: GO:0016020 ! membrane
+relationship: BFO:0000050 GO:0071944 ! part of cell periphery
+
+[Term]
+id: GO:0005938
+name: cell cortex
+def: "The region of a cell that lies just beneath the plasma membrane and often, but not always, contains a network of actin filaments and associated proteins." []
+synonym: "cell periphery" RELATED []
+synonym: "peripheral cytoplasm" RELATED []
+is_a: GO:0005737 ! cytoplasm
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: BFO:0000050 GO:0071944 ! part of cell periphery
+relationship: BFO:0000050 GO:0071944 ! part of cell periphery
+
+[Term]
 id: GO:0008150
 name: biological_process
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
@@ -67,6 +197,23 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0012505
+name: endomembrane system
+def: "A collection of membranous structures involved in transport within the cell. The main components of the endomembrane system are endoplasmic reticulum, Golgi bodies, vesicles, cell membrane and nuclear envelope. Members of the endomembrane system pass materials through each other or though the use of vesicles." []
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: BFO:0000051 GO:0005773 ! has part vacuole
+relationship: BFO:0000051 GO:0005886 ! has part plasma membrane
+
+[Term]
+id: GO:0016020
+name: membrane
+def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." []
+synonym: "membrane region" NARROW []
+synonym: "region of membrane" NARROW []
+synonym: "whole membrane" NARROW []
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0016301
@@ -82,6 +229,121 @@ is_a: GO:0003824 ! catalytic activity
 id: GO:0016772
 name: transferase activity, transferring phosphorus-containing groups
 is_a: GO:0016740 ! transferase activity
+
+[Term]
+id: GO:0031090
+name: organelle membrane
+def: "A membrane that is one of the two lipid bilayers of an organelle envelope or the outermost membrane of single membrane bound organelle." []
+synonym: "intracellular membrane" RELATED []
+is_a: GO:0016020 ! membrane
+intersection_of: GO:0016020 ! membrane
+intersection_of: BFO:0000050 GO:0043227 ! part of membrane-bounded organelle
+relationship: BFO:0000050 GO:0043227 ! part of membrane-bounded organelle
+
+[Term]
+id: GO:0031965
+name: nuclear membrane
+def: "Either of the lipid bilayers that surround the nucleus and form the nuclear envelope; excludes the intermembrane space." []
+is_a: GO:0031090 ! organelle membrane
+intersection_of: GO:0016020 ! membrane
+intersection_of: BFO:0000050 GO:0005634 ! part of nucleus
+relationship: BFO:0000050 GO:0005635 ! part of nuclear envelope
+
+[Term]
+id: GO:0031967
+name: organelle envelope
+def: "A double membrane structure enclosing an organelle, including two lipid bilayers and the region between them. In some cases, an organelle envelope may have more than two membranes." []
+is_a: GO:0031975 ! envelope
+relationship: BFO:0000050 GO:0043227 ! part of membrane-bounded organelle
+relationship: BFO:0000050 GO:0043229 ! part of intracellular organelle
+
+[Term]
+id: GO:0031975
+name: envelope
+def: "A multilayered structure surrounding all or part of a cell; encompasses one or more lipid bilayers, and may include a cell wall layer; also includes the space between layers." []
+is_a: GO:0110165 ! cellular anatomical entity
+
+[Term]
+id: GO:0043226
+name: organelle
+def: "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane." []
+is_a: GO:0110165 ! cellular anatomical entity
+
+[Term]
+id: GO:0043227
+name: membrane-bounded organelle
+def: "Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane." []
+synonym: "membrane-enclosed organelle" EXACT []
+is_a: GO:0043226 ! organelle
+intersection_of: GO:0043226 ! organelle
+intersection_of: BFO:0000051 GO:0016020 ! has part membrane
+relationship: BFO:0000051 GO:0016020 ! has part membrane
+
+[Term]
+id: GO:0043229
+name: intracellular organelle
+def: "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." []
+is_a: GO:0043226 ! organelle
+intersection_of: GO:0043226 ! organelle
+intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+relationship: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+
+[Term]
+id: GO:0043231
+name: intracellular membrane-bounded organelle
+def: "Organized structure of distinctive morphology and function, bounded by a single or double lipid bilayer membrane and occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, and vesicles. Excludes the plasma membrane." []
+synonym: "intracellular membrane-enclosed organelle" EXACT []
+is_a: GO:0043227 ! membrane-bounded organelle
+is_a: GO:0043229 ! intracellular organelle
+intersection_of: GO:0043227 ! membrane-bounded organelle
+intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
+
+[Term]
+id: GO:0044464
+name: cell part
+is_a: CARO:0000003 ! connected anatomical structure
+
+[Term]
+id: GO:0071944
+name: cell periphery
+def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." []
+is_a: GO:0110165 ! cellular anatomical entity
+
+[Term]
+id: GO:0098590
+name: plasma membrane region
+def: "A membrane that is a (regional) part of the plasma membrane." []
+synonym: "region of plasma membrane" EXACT []
+is_a: GO:0016020 ! membrane
+intersection_of: GO:0016020 ! membrane
+intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+relationship: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0099568
+name: cytoplasmic region
+def: "Any (proper) part of the cytoplasm of a single cell of sufficient size to still be considered cytoplasm." []
+is_a: GO:0005737 ! cytoplasm
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: BFO:0000050 GO:0005737 ! part of cytoplasm
+relationship: BFO:0000050 GO:0005737 ! part of cytoplasm
+
+[Term]
+id: GO:0099738
+name: cell cortex region
+def: "The complete extent of cell cortex that underlies some some region of the plasma membrane." []
+synonym: "perimembrane region" EXACT []
+is_a: GO:0005938 ! cell cortex
+is_a: GO:0099568 ! cytoplasmic region
+intersection_of: GO:0005938 ! cell cortex
+intersection_of: BFO:0000050 GO:0005938 ! part of cell cortex
+relationship: BFO:0000050 GO:0005938 ! part of cell cortex
+
+[Term]
+id: GO:0110165
+name: cellular anatomical entity
+def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex." []
+is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: PATO:0000001
@@ -172,6 +434,12 @@ def: "A physical quality that inheres in a bearer by virtue of the proportion of
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0000136
+name: closure
+def: "A morphological quality pertaining to the degree to which an object contains an opening, aperture, orifice or vent." []
+is_a: PATO:0000051 ! morphology
+
+[Term]
 id: PATO:0000140
 name: position
 def: "A spatial quality inhering in a bearer by virtue of the bearer's spatial location relative to other objects in the vicinity." []
@@ -193,6 +461,12 @@ id: PATO:0000146
 name: temperature
 def: "A physical quality of the thermal energy of a system." []
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000150
+name: texture
+def: "A morphologic quality inhering in a bearer by virtue of the bearer's relative size, organization and distribution of its surface elements or the representation or invention of the appearance of its surface; visual and tactile surface characteristics." []
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: PATO:0000261
@@ -234,6 +508,32 @@ def: "A branchiness quality inhering in a bearer by virtue of the bearer's havin
 synonym: "ramified" EXACT []
 synonym: "ramiform" EXACT []
 is_a: PATO:0002009 ! branchiness
+
+[Term]
+id: PATO:0000404
+name: coiled
+def: "A shape quality inhering in a bearer by virtue of the bearer's being curled or wound (especially in concentric rings or spirals)." []
+synonym: "helical" RELATED []
+synonym: "helicoid" RELATED []
+synonym: "helicoidal" RELATED []
+synonym: "helix-shaped" RELATED []
+synonym: "spiral" EXACT []
+is_a: PATO:0001794 ! coiling
+
+[Term]
+id: PATO:0000406
+name: curved
+def: "A curvature quality inhering in a bearer by virtue of the bearer's having or being marked by a curve or smoothly rounded bend." []
+synonym: "bowing" NARROW []
+synonym: "curled" RELATED []
+is_a: PATO:0001591 ! curvature
+
+[Term]
+id: PATO:0000407
+name: flat
+def: "A quality inhering in a bearer by virtue of the bearer's having a horizontal surface without a slope, tilt, or curvature." []
+synonym: "plate-like" RELATED []
+is_a: PATO:0002254 ! flattened
 
 [Term]
 id: PATO:0000411
@@ -339,6 +639,26 @@ intersection_of: PATO:0000117 ! size
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0000588
+name: vestigial
+def: "A quality inhering in a bearer by virtue of the bearer's being a remnant structure from earlier development or evolution." []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0000608
+name: closed
+def: "A morphological quality inhering in a bearer by virtue of the bearer's affording blocked passage or view." []
+synonym: "blocked" RELATED []
+is_a: PATO:0000136 ! closure
+disjoint_from: PATO:0000610 ! open
+
+[Term]
+id: PATO:0000610
+name: open
+def: "A morphological quality inhering in a bearer by virtue of the bearer's affording unobstructed passage or view." []
+is_a: PATO:0000136 ! closure
+
+[Term]
 id: PATO:0000627
 name: localized
 def: "A spatial pattern quality inhering in a bearer by virtue of the bearer's being confined or restricted to a particular location." []
@@ -376,6 +696,14 @@ def: "A optical quality inhering in a bearer by virtue of the bearer's not being
 synonym: "clouding" RELATED []
 synonym: "cloudy" RELATED []
 synonym: "non-transparent" EXACT []
+is_a: PATO:0000957 ! opacity
+
+[Term]
+id: PATO:0000964
+name: transparent
+def: "A optical quality inhering in a bearer by virtue of the bearer's lacking opacity." []
+synonym: "clear" EXACT []
+synonym: "hyaline" EXACT []
 is_a: PATO:0000957 ! opacity
 
 [Term]
@@ -422,10 +750,28 @@ def: "A physical quality that inheres in a bearer by virtue of the bearer's amou
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001031
+name: elasticity
+def: "A physical quality inhering in a bearer by virtue of the bearer's disposition to recover its size and shape after deformation in any way." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001154
 name: elongated
 def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." []
 is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001171
+name: elastic
+def: "An elasticity quality inhering in a bearer by virtue of the bearer's ability to recover its size and shape after deformation in any way." []
+is_a: PATO:0001031 ! elasticity
+
+[Term]
+id: PATO:0001190
+name: juvenile
+def: "A maturity quality inhering in a bearer by virtue the bearer's being not fully grown or developed." []
+is_a: PATO:0000261 ! maturity
 
 [Term]
 id: PATO:0001236
@@ -457,6 +803,24 @@ id: PATO:0001291
 name: electromagnetic (EM) radiation quality
 def: "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation." []
 is_a: PATO:0001739 ! radiation quality
+
+[Term]
+id: PATO:0001292
+name: full-spectrum EM radiation quality
+def: "An EM radiation quality that is independent of the EM wavelength range." []
+is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+
+[Term]
+id: PATO:0001294
+name: radiation reflective quality
+def: "A scalar EM radiation quality which obtains by the capacity of the bearer to scatter or reflect radiation." []
+is_a: PATO:0001292 ! full-spectrum EM radiation quality
+
+[Term]
+id: PATO:0001297
+name: reflectivity
+def: "A radiation reflective quality inhering in a bearer by virtue of the ratio of the energy of a wave reflected from its surface to the energy possessed by the wave striking the bearer's surface." []
+is_a: PATO:0001294 ! radiation reflective quality
 
 [Term]
 id: PATO:0001300
@@ -567,10 +931,28 @@ def: "A nucleate quality inhering in a bearer by virtue of the bearer's having n
 is_a: PATO:0001404 ! nucleate quality
 
 [Term]
+id: PATO:0001406
+name: binucleate
+def: "A nucleate quality inhering in a bearer by virtue of the bearer's having two nuclei." []
+is_a: PATO:0001908 ! multinucleate
+
+[Term]
 id: PATO:0001407
 name: mononucleate
 def: "A nucleate quality inhering in a bearer by virtue of the bearer's having one nucleus." []
 is_a: PATO:0002505 ! nucleated
+
+[Term]
+id: PATO:0001410
+name: striated
+def: "A shape quality inhering in a bearer by virtue of the bearer's being marked by narrow lines or grooves, usually parallel." []
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001411
+name: structured
+def: "A structural quality inhering in a bearer by virtue of the bearer's having distinct structure." []
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0001412
@@ -622,6 +1004,13 @@ id: PATO:0001543
 name: flexibility
 def: "A physical quality inhering in a bearer by virtue of the bearer's disposition to being turned, bowed, or twisted without breaking." []
 is_a: PATO:0001546 ! quality of a solid
+
+[Term]
+id: PATO:0001544
+name: flexible
+def: "A physical quality inhering in a bearer by virtue of the bearer's ability of being turned, bowed, or twisted without breaking." []
+synonym: "bendy" EXACT []
+is_a: PATO:0001543 ! flexibility
 
 [Term]
 id: PATO:0001545
@@ -716,6 +1105,56 @@ intersection_of: PATO:0001025 ! pressure
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0001579
+name: contractility
+def: "A physical quality that is the ability to contract or shrink." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001580
+name: increased contractility
+def: "A contractility which is relatively high." []
+synonym: "high contractility" EXACT []
+is_a: PATO:0001690 ! contractile
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001690 ! contractile
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001581
+name: decreased contractility
+def: "A contractility which is relatively low." []
+synonym: "low contractility" EXACT []
+is_a: PATO:0001690 ! contractile
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001690 ! contractile
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001591
+name: curvature
+def: "A surface shape quality inhering in a bearer by virtue of the bearer's exhibiting a degree of bending." []
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001592
+name: increased curvature
+def: "A curvature which is relatively high." []
+is_a: PATO:0000406 ! curved
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0000406 ! curved
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001593
+name: decreased curvature
+def: "A curvature which is relatively low." []
+is_a: PATO:0000406 ! curved
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0000406 ! curved
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
 id: PATO:0001655
 name: osmolarity
 def: "A concentration quality inhering in a bearer by virtue of the bearer's amount of osmoles of solute per liter of solution." []
@@ -796,6 +1235,12 @@ intersection_of: PATO:0001687 ! elevation
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0001690
+name: contractile
+def: "A contractility quality inhering in a bearer by virtue of the bearer's ability of contracting or being contracted." []
+is_a: PATO:0001579 ! contractility
+
+[Term]
 id: PATO:0001693
 name: increased viscosity
 def: "A viscosity which relatively high." []
@@ -816,16 +1261,81 @@ intersection_of: PATO:0000998 ! viscous
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0001735
+name: liquid configuration
+def: "A physical quality inhering in a bearer by virtue of the bearer's parts having the arrangement which exhibits characteristics of liquids." []
+synonym: "liquid" EXACT []
+is_a: PATO:0001548 ! quality of a liquid
+
+[Term]
 id: PATO:0001739
 name: radiation quality
 def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001748
+name: invaginated
+def: "A shape quality in which a portion of the outermost boundary of an entity folds in space such that a portion that was originally convex is now concave." []
+is_a: PATO:0001857 ! concave
+
+[Term]
 id: PATO:0001759
 name: granular
 def: "A composition quality inhering in a bearer by virtue of the bearer's containing granules." []
 is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0001776
+name: increased flexibility
+def: "A flexibility which is relatively high." []
+synonym: "high flexibility" EXACT []
+is_a: PATO:0001544 ! flexible
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001544 ! flexible
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001777
+name: decreased flexibility
+def: "A flexibility which is relatively low." []
+synonym: "low flexibility" EXACT []
+is_a: PATO:0001544 ! flexible
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001544 ! flexible
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001789
+name: domed
+def: "A curvature quality inhering in a bearer by virtue of the bearer's having a shape resembling a dome." []
+is_a: PATO:0000406 ! curved
+
+[Term]
+id: PATO:0001794
+name: coiling
+def: "A shape quality inhering in a bearer by virtue of the bearer's being wound in a continuous series of loops." []
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001795
+name: increased coiling
+def: "A coiling which is relatively high." []
+synonym: "high coiling" EXACT []
+is_a: PATO:0000404 ! coiled
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0000404 ! coiled
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0001796
+name: decreased coiling
+def: "A coiling which is relatively low." []
+synonym: "low coiling" EXACT []
+is_a: PATO:0000404 ! coiled
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0000404 ! coiled
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
 id: PATO:0001822
@@ -870,10 +1380,47 @@ synonym: "disk-shaped" EXACT []
 is_a: PATO:0001873 ! cylindrical
 
 [Term]
+id: PATO:0001908
+name: multinucleate
+def: "A nucleate quality inhering in a bearer by virtue of the bearer's having more than one nucleus." []
+is_a: PATO:0002505 ! nucleated
+
+[Term]
+id: PATO:0001910
+name: folded
+def: "A surface feature shape quality inhering in a bearer by virtue of the bearer's one part being layered over another connected part." []
+is_a: PATO:0001925 ! surface feature shape
+
+[Term]
+id: PATO:0001925
+name: surface feature shape
+def: "A surface shape quality inhering in a bearer by virtue of the bearer's shape of features present on its surface or outer shell." []
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0001985
 name: frozen
 def: "A quality inhering in a bearer by virtue of the bearer's being kept below its freezing point." []
 is_a: PATO:0000146 ! temperature
+
+[Term]
+id: PATO:0001987
+name: saccular
+def: "A structural quality inhering in a bearer by virtue of the bearer's having a three dimensional cavity with a narrow or no opening, and often containing an anatomical substance." []
+synonym: "sacular" EXACT []
+is_a: PATO:0002014 ! structure, cavities
+
+[Term]
+id: PATO:0001992
+name: cellularity
+def: "An organismal quality inhering in a bearer by virtue of the bearer's consisting cells." []
+is_a: PATO:0001995 ! organismal quality
+
+[Term]
+id: PATO:0001993
+name: multicellular
+def: "A cellularity quality inhering in a bearer by virtue of the bearer's consisting of more than one cell." []
+is_a: PATO:0001992 ! cellularity
 
 [Term]
 id: PATO:0001995
@@ -942,6 +1489,15 @@ def: "A concave quality inhering in a bearer by virtue of the bearer's curving i
 is_a: PATO:0001857 ! concave
 
 [Term]
+id: PATO:0002045
+name: dendritic
+def: "A branched quality inhering in a bearer by virtue of the bearer's having smaller branches arising from larger branches. Resembling a tree in branching structure." []
+synonym: "dendriform" EXACT []
+synonym: "dendroid" EXACT []
+synonym: "dendroidal" EXACT []
+is_a: PATO:0000402 ! branched
+
+[Term]
 id: PATO:0002062
 name: physical quality of a process
 is_a: PATO:0001236 ! process quality
@@ -971,6 +1527,12 @@ intersection_of: PATO:0002070 ! affinity
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
 [Term]
+id: PATO:0002078
+name: hollow
+def: "A quality inhering in a bearer by virtue of the bearer's having an empty space or cavity within." []
+is_a: PATO:0002014 ! structure, cavities
+
+[Term]
 id: PATO:0002092
 name: anaplastic
 def: "A morphology quality inhering in a neoplastic cell by virtue of the bearer's exhibiting breakdown of cell-cell interaction maintaining tissue architecture, proliferative dysregulation and bizarre modification to nucleus size and shape." []
@@ -979,7 +1541,7 @@ is_a: PATO:0000051 ! morphology
 [Term]
 id: PATO:0002094
 name: basophilic
-def: "An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific ph conditions." []
+def: "An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific pH conditions." []
 is_a: PATO:0002070 ! affinity
 
 [Term]
@@ -1057,10 +1619,53 @@ def: "A quality inhering in a bearer by virtue of its constitution." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0002254
+name: flattened
+def: "A quality inhering in a bearer by virtue of the bearer's surface becoming more extended in a plane." []
+synonym: "compressed" RELATED []
+is_a: PATO:0001591 ! curvature
+
+[Term]
+id: PATO:0002255
+name: grooved
+def: "Texture quality inhering in a bearer by virtue of the bearer's being marked with one or more channels." []
+synonym: "channeled" RELATED []
+synonym: "creased" RELATED []
+is_a: PATO:0000150 ! texture
+
+[Term]
 id: PATO:0002266
 name: 3-D shape
 def: "A shape that inheres in a 3 dimensional entity." []
 is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002287
+name: increased elasticity
+def: "An elasticity which is relatively high." []
+is_a: PATO:0001171 ! elastic
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001171 ! elastic
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0002288
+name: decreased elasticity
+def: "An elasticity which is relatively low." []
+is_a: PATO:0001171 ! elastic
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001171 ! elastic
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+
+[Term]
+id: PATO:0002299
+name: tubular
+def: "A cylindrical shape that is hollow." []
+synonym: "tube like" EXACT []
+synonym: "tube-shaped" EXACT []
+synonym: "tubulate" EXACT []
+is_a: PATO:0001873 ! cylindrical
+is_a: PATO:0002078 ! hollow
 
 [Term]
 id: PATO:0002300
@@ -1124,10 +1729,64 @@ synonym: "Lamé curve" EXACT []
 is_a: PATO:0002006 ! 2-D shape
 
 [Term]
+id: PATO:0002422
+name: acinar
+def: "Pertaining to the individual parts making up an aggregate fruit like a many-lobed \"berry,\" such as a raspberry." []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0002444
+name: mineralized
+def: "A composition quality inhering in a bearer by virtue of the bearer's being composed of or possessing inorganic material." []
+is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0002462
+name: collagenous
+def: "A composition quality inhering in an bearer by virtue of the bearer's consisting of collagen." []
+is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0002468
+name: distensible
+def: "A structure quality inhering in a bearer by virtue of the bearer's being capable of swelling or stretching." []
+is_a: PATO:0015008 ! distensibility
+
+[Term]
+id: PATO:0002478
+name: transversely striated
+def: "A shape quality inhering in a bearer by virtue of the bearer's being marked by narrow lines or grooves, usually parallel, that are oriented transversely relative to the long axis of the bearer." []
+is_a: PATO:0001410 ! striated
+
+[Term]
 id: PATO:0002505
 name: nucleated
 def: "A nucleate quality inhering in a bearer by virtue of the bearer's having one or more nucleus." []
 is_a: PATO:0001404 ! nucleate quality
+
+[Term]
+id: PATO:0002507
+name: keratinous
+def: "A composition quality inhering in a bearer by virtue of the bearer's consisting of keratin." []
+is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0010001
+name: disconnected
+def: "A structural quality inhering in the bearer by virtue of the bearer consisting of multiple structures lacking any physical connection to each other." []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0010006
+name: cell morphology
+def: "A quality of a single cell inhering in the bearer by virtue of the bearer's size or shape or structure." []
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0015008
+name: distensibility
+def: "A quality inhering in a bearer by virtue of the extent to which the bearer is capable of being stretched or swollen." []
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0015021
@@ -1173,6 +1832,24 @@ is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000973 ! porosity
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 
+[Term]
+id: PATO:0070002
+name: basket cell morphology
+def: "A cell morphology that inheres in multipolar neurons with densely branched terminal axonal arborizations that form basket-like structures surrounding and synapsing to the somas of target cells." []
+is_a: PATO:0070026 ! multipolar neuron morphology
+
+[Term]
+id: PATO:0070006
+name: bipolar morphology
+def: "A cell morphology that inheres in neurons which have two principal fibres (dendrites or axon) that emerge from the soma and begin to branch some distance from it, have few spines, and branch in narrow fields. This is in contrast to bitufted morphology where branching occurs close to the soma." []
+is_a: PATO:0010006 ! cell morphology
+
+[Term]
+id: PATO:0070026
+name: multipolar neuron morphology
+def: "A cell morphology that inheres in neurons which possess a single axon and many dendrites and dendritic branches." []
+is_a: PATO:0010006 ! cell morphology
+
 [Typedef]
 id: BFO:0000050
 name: part of
@@ -1187,14 +1864,17 @@ id: BFO:0000051
 name: has part
 name: has_part
 def: "a core relation that holds between a whole and its part" []
-def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." []
 is_transitive: true
 is_a: RO:0002131 ! overlaps
 
 [Typedef]
 id: BFO:0000062
 name: preceded by
+name: preceded_by
 def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+synonym: "is preceded by" EXACT []
+synonym: "takes place after" EXACT []
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 holds_over_chain: BFO:0000050 BFO:0000062
@@ -1228,6 +1908,22 @@ name: contains process
 def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
 
 [Typedef]
+id: RO:0000052
+name: characteristic of
+def: "a relation between a specifically dependent continuant (the characteristic) and any other entity (the bearer), in which the characteristic depends on the bearer for its existence." []
+is_functional: true
+is_a: RO:0002314 ! characteristic of part of
+inverse_of: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000053
+name: bearer of
+name: has characteristic
+def: "Inverse of characteristic_of" []
+range: BFO:0000020 ! specifically dependent continuant
+is_inverse_functional: true
+
+[Typedef]
 id: RO:0000056
 name: participates in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
@@ -1242,6 +1938,66 @@ def: "a relation between a process and a continuant, in which the continuant is 
 domain: BFO:0000003 ! occurrent
 range: BFO:0000002 ! continuant
 holds_over_chain: BFO:0000051 RO:0000057
+
+[Typedef]
+id: RO:0000079
+name: function of
+def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
+domain: BFO:0000034 ! function
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000085 ! has function
+
+[Typedef]
+id: RO:0000080
+name: quality of
+def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000086 ! has quality
+
+[Typedef]
+id: RO:0000081
+name: role of
+def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000087 ! has role
+
+[Typedef]
+id: RO:0000085
+name: has function
+def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000034 ! function
+is_a: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000086
+name: has quality
+def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
+range: BFO:0000019 ! quality
+is_a: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000087
+name: has role
+def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000023 ! role
+is_a: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000091
+name: has disposition
+def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000016 ! disposition
+is_a: RO:0000053 ! bearer of
+inverse_of: RO:0000092 ! disposition of
+
+[Typedef]
+id: RO:0000092
+name: disposition of
+def: "inverse of has disposition" []
+is_a: RO:0000052 ! characteristic of
 
 [Typedef]
 id: RO:0002013
@@ -1313,7 +2069,13 @@ is_a: RO:0002222 ! temporally related to
 [Typedef]
 id: RO:0002087
 name: immediately preceded by
-is_a: BFO:0000062 ! preceded by
+name: immediately_preceded_by
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+synonym: "directly preceded by" EXACT []
+synonym: "is directly preceded by" EXACT []
+synonym: "is immediately preceded by" EXACT []
+synonym: "starts_at_end_of" EXACT []
+is_a: BFO:0000062 ! preceded_by
 inverse_of: RO:0002090 ! immediately precedes
 
 [Typedef]
@@ -1425,6 +2187,14 @@ is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004046 ! causally upstream of or within, negative effect
 
 [Typedef]
+id: RO:0002314
+name: characteristic of part of
+def: "q characteristic of part of w if and only if there exists some p such that q inheres in p and p part of w." []
+holds_over_chain: RO:0000052 BFO:0000050
+is_a: RO:0002502 ! depends on
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
 id: RO:0002323
 name: mereotopologically related to
 def: "A mereological relationship or a topological relationship" []
@@ -1497,7 +2267,7 @@ is_a: RO:0002328 ! functionally related to
 id: RO:0002404
 name: causally downstream of
 def: "inverse of upstream of" []
-is_a: BFO:0000062 ! preceded by
+is_a: BFO:0000062 ! preceded_by
 is_a: RO:0002427 ! causally downstream of or within
 inverse_of: RO:0002411 ! causally upstream of
 
@@ -1666,6 +2436,10 @@ def: "p is causally related to q if and only if p or any part of p and q or any 
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002502
+name: depends on
 
 [Typedef]
 id: RO:0002506

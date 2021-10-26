@@ -35,6 +35,7 @@ OWLTOOLS= owltools
 USECAT= --use-catalog
 SPARQLDIR = ../sparql
 PATTERNDIR = ../patterns
+TMPDIR = tmp
 
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
@@ -79,7 +80,7 @@ all: test all_artefacts
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -132,7 +133,7 @@ all_artefacts: all_reports $(ARTEFACTS)
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
-test: sparql_test_edit roundtrip.obo debug.owl mondo-edit.owl sparql_test_main_obo test_nomerge
+test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-edit.obo.tsv reports/robot-report-mondo.owl.tsv
 test: reports/robot-report-mondo.obo.tsv
 
@@ -186,10 +187,10 @@ deploy_assets_current:
 ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
-skos.ttl: $(SRC)
+skos.ttl: filtered.obo
 	../utils/mk-skos.pl $< > $@
 
 # this appears to be problematic. not all declarations are restored on a save.
@@ -210,9 +211,12 @@ filtered.owl: filtered.obo skos.ttl
 reasoned.owl: filtered.owl 
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
+test: reasoned-plus-equivalents.owl
+
 # merged = reasoned + equivalencies
 reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
+	#$(ROBOT) reason -i $@ --equivalent-classes-allowed asserted-only -o $(TMPDIR)/$@_test_equivalents.owl
 
 
 
@@ -349,7 +353,7 @@ all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 IMP=true
 
 imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
 		remove -T imports/removeseed.txt \
 		reason --exclude-tautologies structural \
@@ -364,8 +368,16 @@ imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
 	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/omo_import.owl
-	
 
+imports/so_import.owl: mirror/so.owl imports/so_terms.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/so_terms.txt --force true --individuals definitions --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		remove -T imports/removeseed.txt \
+		remove --select object-properties \
+		reason --exclude-tautologies structural \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: imports/omo_import.owl
 
 edit-merged.owl: $(SRC)
 	$(ROBOT) merge -c true -i $< -o $@
@@ -423,8 +435,8 @@ NEWAXTEST: mondo-edit.owl new.owl
 SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/qc-*.sparql)))
 SPARQL_GENERAL_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/general/qc-*.sparql)))
 SPARQL_EDIT_EXCLUDE=
-SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption
-SPARQL_OWL_EXCLUDE=
+SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties
+SPARQL_OWL_EXCLUDE=qc-permitted-properties
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OBO=$(filter-out $(SPARQL_OBO_EXCLUDE),$(SPARQL_GENERAL_QC))
@@ -504,7 +516,7 @@ prefixes: mondo-edit.obo
 # ----------------------------------------
 
 
-all_reports: all_reports_1 fix_reports
+all_reports: all_reports_1 fix_reports robot-report-obsoletioncandidates-withcomment
 
 all_reports_1: mondo.owl $(ADDITIONAL_REPORT_FILES)
 	$(ROBOT) query -f tsv -i $< $(REPORT_ARGS) && touch $@
@@ -639,6 +651,10 @@ mirror/mfoem.owl:
 mirror/doid.owl:
 	wget --no-check-certificate $(OBO)/doid.owl -O doid1.owl && owltools doid1.owl -o -f obo doid1.obo && owltools doid1.obo -o $@
 
+# TODO: change this when monochrom is on OBO
+mirror/chr.owl:
+	wget --no-check-certificate https://raw.githubusercontent.com/monarch-initiative/monochrom/master/chr-base.owl -O $@
+
 
 mirror/neoplasm-core.owl:
 	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@ && touch $@
@@ -683,6 +699,7 @@ mirror/dipper-%.ttl:
 
 mirror/dipper-%.obo: mirror/dipper-%.ttl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
+
 
 mirror/hgnc.owl: mirror/dipper-hgnc.ttl
 	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
@@ -813,6 +830,15 @@ disjoint_sibs.owl: $(SRC)
 
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
+
+
+debug_inference_check.owl: debug.owl explain_unsat.owl
+	$(ROBOT) reason -i $< --equivalent-classes-allowed none -o $@
+
+explain_unsat.owl: debug.owl
+	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation mondo_explain_debug.md \
+	annotate --ontology-iri "http://purl.obolibrary.org/obo/mondo/mondo_explain_debug.ofn" \
+	--output mondo_explain_debug.ofn && cat mondo_explain_debug.md
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 	owltools --no-logging --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
@@ -1091,7 +1117,7 @@ mirror/omim.obo: build-omim
 mirror/medgen.obo:
 	$(ROBOT) convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
 
-tmp/tbd_%.tbd: $(SRC) mirror/%.obo
+tmp/tbd_%.tbd: $(SRC) mirror/%.obo mirror/hp.obo
 	cat mirror/$*.obo | perl $(ADDTOTBD) > $@
 
 tmp/rest_slurp_%.obo: tmp/tbd_%.tbd

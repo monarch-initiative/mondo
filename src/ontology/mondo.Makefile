@@ -6,20 +6,35 @@ PAT=true
 dirs:
 	mkdir -p tmp/
 	mkdir -p components/
+	mkdir -p mirror/
+	mkdir -p reports/
 
 
 .PHONY: matches
-	
-matches: 
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
 
-matches_annotations:
-	$(DOSDPT) query --ontology=$(SRC) --catalog=catalog-v001.xml --reasoner=elk --restrict-axioms-to=annotation --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches_annotations/"
+tmp/mondo-edit-merged.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+
+matches: tmp/mondo-edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+
+matches_annotations: tmp/mondo-edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --restrict-axioms-to=annotation --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches_annotations/"
 
 pattern_schema_checks:
 	simple_pattern_tester.py ../patterns/dosdp-patterns/
 
+owlaxioms_check:
+	! grep "^owl-axioms" mondo-edit.obo
+
 test: pattern_schema_checks
+test: owlaxioms_check
+test: test_reason_equivalence
+
+test_reason_equivalence: $(SRC)
+	$(ROBOT) merge -i $< \
+	remove --term FOODON:03315150 --term FOODON:00001257 --term ENVO:01001479 --term ENVO:01001784 --axioms logical \
+	reason -e none
 
 # ----------------------------------------
 # Patterns (experimental)
@@ -335,7 +350,13 @@ patterns: matches matches_annotations pattern_docs
 	
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
-	
+
+tmp/mondo-lastbase.owl:
+	mkdir -p tmp && wget "http://purl.obolibrary.org/obo/mondo/mondo-base.owl" -O $@
+
+reports/mondo_diff.md: mondo-base.owl tmp/mondo-lastbase.owl
+	$(ROBOT) diff --left tmp/mondo-lastbase.owl --right $< -f markdown -o $@
+
 reports/mondo_unsats.md: mondo.obo
 	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
 		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
@@ -347,6 +368,10 @@ mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
 related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/related-exact-synonym-annotations.ru -o $(SRC)
 
+related_to_exact_where_label:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-related-where-label.ru -o $(SRC)
+
+	
 rm_related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
 
@@ -449,6 +474,48 @@ MONDOVIEWS=harrisons
 
 mondo-views: $(patsubst %, modules/mondo-%-view.owl, $(MONDOVIEWS))
 
+modules/mondo-%.owl: modules/%.tsv
+	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(OBO)/$(ONT)/mondo-$*.owl -o $@
+.PRECIOUS: modules/mondo-%.owl
+
+MERGE_TEMPLATE=tmp/merge_template.tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vTV6ITR7RJMt5jswUHBmEEcfbNAeZWpj4VkDbMY3Bvh_fcmfXEw1CFvbgzOUPDxsj6oT5vsFQRg8FuM/pub?gid=346126899&single=true&output=tsv
+
+tmp/merge_template.tsv:
+	wget "$(TEMPLATE_URL)" -O $@
+
+merge_template: $(MERGE_TEMPLATE)
+	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --merge-before --input $(SRC) \
+ --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
+
+tmp/remove_classes.txt: $(MERGE_TEMPLATE)
+	cut -f1 $< > $@
+
+tmp/heal_hierarchy.ru: tmp/remove_classes.txt
+	echo "PREFIX owl: <http://www.w3.org/2002/07/owl#>" > $@
+	echo "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" >> $@
+	echo "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" >> $@
+	echo "prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>" >> $@
+	echo "DELETE {" >> $@
+	echo "?child rdfs:subClassOf ?subj ." >> $@
+	echo "?subj rdfs:subClassOf ?parent ." >> $@
+	echo "}" >> $@
+	echo "INSERT {" >> $@
+	echo "	?child rdfs:subClassOf ?parent ." >> $@
+	echo "}" >> $@
+	echo "WHERE {" >> $@
+	echo "  ?child rdfs:subClassOf ?subj ." >> $@
+	echo "  ?subj rdfs:subClassOf ?parent ." >> $@
+	echo "  FILTER (?subj in (MONDO:0015938, MONDO:0020272, MONDO:0010301, MONDO:0015318, MONDO:0015320, MONDO:0015321, MONDO:0015322, MONDO:0015543, MONDO:0016148, MONDO:0016329, MONDO:0017133, MONDO:0017274, MONDO:0019687, MONDO:0020012, MONDO:0020277, MONDO:0100027))" >> $@
+	echo "}" >> $@
+
+merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_classes.txt
+	git checkout master -- $(SRC) &&\
+	$(ROBOT) query --input $(SRC) --update $< \
+	remove -T tmp/remove_classes.txt --preserve-structure false \
+	template --merge-before --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
+
 
 #ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
 #OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501 
@@ -467,3 +534,51 @@ test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html
+
+mondo_obo:
+	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
+
+METRIC_SINCE_VERSION=2019-06-29
+METRIC_UNTIL_VERSION=2020-06-30
+
+tmp/mondo-%-release.owl:
+	wget http://purl.obolibrary.org/obo/mondo/releases/$*/mondo.owl -O $@
+
+tmp/unmerge.owl: tmp/mondo-$(METRIC_SINCE_VERSION)-release.owl tmp/mondo-$(METRIC_UNTIL_VERSION)-release.owl
+	$(ROBOT) unmerge -i tmp/mondo-$(METRIC_UNTIL_VERSION)-release.owl -i tmp/mondo-$(METRIC_SINCE_VERSION)-release.owl -o $@
+
+report-metrics-%: tmp/mondo-%.owl
+	$(ROBOT) query --use-graphs true -i $< -f tsv --query $(SPARQLDIR)/reports/all-properties.sparql reports/report-$*.tsv
+
+metrics: report-metrics-$(METRIC_SINCE_VERSION)-release report-metrics-$(METRIC_UNTIL_VERSION)-release
+
+tmp/harrisons_seed.txt: mondo.owl
+	$(ROBOT) query --use-graphs true -i $< -f csv --query $(SPARQLDIR)/signature/harrisonview-seed.sparql $@
+
+mondo-harrisons-view.owl: mondo.owl tmp/harrisons_seed.txt
+	$(ROBOT) remove -i $< -T tmp/harrisons_seed.txt --select complement --select classes --select "MONDO:*" \
+	annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@ annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+
+######################################
+### Mondo managing major use ids #####
+######################################
+
+tmp/efo_protection.txt:
+	wget "https://raw.githubusercontent.com/EBISPOT/efo/master/src/ontology/iri_dependencies/mondo_terms.txt" -O tmp/efo_mondo_terms.txt
+	wget "https://raw.githubusercontent.com/EBISPOT/otar_profiler/master/templates/disease_p_ta.txt" -O tmp/efo_disease_p_ta.txt
+	cat tmp/efo_mondo_terms.txt tmp/efo_disease_p_ta.txt | grep MONDO_ | sort | uniq  > $@
+
+.PHONY: %_risks
+%_risks: $(SRC) tmp/%_protection.txt
+	$(ROBOT) merge -i $(SRC) filter -T tmp/$*_protection.txt --select annotations \
+		verify --queries ../sparql/reports/obsoletion-candidates.sparql --output-dir tmp/
+
+.PHONY: risky_obsoletion_check
+risky_obsoletion_check: efo_risks
+
+.PHONY: test_owlaxioms
+test_owlaxioms:
+	! grep "owl-axioms: " mondo-edit.obo
+
+test: test_owlaxioms 

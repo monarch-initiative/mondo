@@ -8,10 +8,24 @@ _Added 2020-05-06_
 
 1. Open the src/ontology/imports/*_terms.txt
 2. Add term to this file
-3. run import: (for example:)
+3. In the Terminal, run: `export "MEMORY_GB=15"`
+4. Then run import: (for example:)
 `sh run.sh make imports/chebi_import.owl`
 4. Close Protege and open again
 5. Edit in Protege
+
+#### Detailed instructions for adding a new gene
+
+1. Find the gene in HGNC that you need to add:
+https://www.genenames.org/. Copy the ID (for example, 8965)
+2. Open the src/ontology/imports/hgnc_terms.txt
+3. Add a new line to the file: http://identifiers.org/hgnc/[your ID], for example http://identifiers.org/hgnc/8965
+5. run import:
+`sh run.sh make imports/hgnc_import.owl`
+4. Close Protege and open again
+5. Edit in Protege
+6. In your diff, you will see changes to mondo-edit.obo, src/ontology/imports/hgnc_terms.txt, src/ontology/imports/hgnc_import.owl
+7. Commmit changes on a branch and create a pull request.
 
 ### Alternate instructions
 
