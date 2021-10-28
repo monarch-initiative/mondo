@@ -317,6 +317,12 @@ report-reason-query-%:
 report-owl-query-%:
 	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
+tmp/mondo-rdfxml.owl:
+	$(ROBOT) remove -i $(SRC) --select imports convert -f owl -o $@
+
+report-tbd-query-%: tmp/mondo-rdfxml.owl
+	$(ROBOT) query --use-graphs true -i $< -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
+
 
 update-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
