@@ -89,4 +89,10 @@ Please see our [blog post](https://medium.com/@MonarchInit/new-release-of-mondo-
 
 The semantics of owl equivalentClass are such that all concepts are strictly identical in meaning. This always translates to a 1:1 mapping, except when we do a 'proxy merge' - we decide that two concepts in an external resource mean the same thing. This is not very common, and the numbers usually come down as we work with the source ontologies to resolve this. See [ticket](https://github.com/monarch-initiative/mondo/issues/936).
 
-{% comment %} Review this page and add some more FAQs {% endcomment %}
+### What is the difference between MONDO:equivalentTo and skos:exactMatch?
+
+MONDO:equivalentTo and skos:exactMatch conceptually overlap but they have entirely different semantics. Mondo:equivalentTo is much stronger than skos:exactMatch. Mondo uses skos:exactMatch to bridge semantic spaces which conceptually overlap, but are not (necessarily) logically coherent according to OWL semantics. For example, Mondo defines X (an example here of a disease) which is an exact match to Y (add mapped MeSH term) in MeSH, which is not an OWL ontology - trying to apply an equivalent relation with OWL semantics would not make much sense.
+
+Moreover, merging Mondo with another disease ontology, even if both are maintained in OWL, is not guaranteed to produce a coherent result, i.e one that contains no logical errors. This is a very fundamental feature of Mondo: integrating various disease classification to create a harmonised classification. This harmonised classification may, by design, partially disagree with any particular source. Therefore, applying strong OWL semantics with owl:equivalentClass is, usually, inappropriate.
+
+{% comment %} Add more FAQs as needed {% endcomment %}
