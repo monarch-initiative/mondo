@@ -95,4 +95,24 @@ MONDO:equivalentTo and skos:exactMatch conceptually overlap but they have entire
 
 Moreover, merging Mondo with another disease ontology, even if both are maintained in OWL, is not guaranteed to produce a coherent result, i.e one that contains no logical errors. This is a very fundamental feature of Mondo: integrating various disease classification to create a harmonised classification. This harmonised classification may, by design, partially disagree with any particular source. Therefore, applying strong OWL semantics with owl:equivalentClass is, usually, inappropriate.
 
+### What are the different types of synonyms in Mondo?
+
+- **Exact synonym**: an alternative term that has the same meaning.  
+  Example:   
+  name: hereditary Wilms' tumor  
+  exact synonym: familial Wilms’ tumor  
+- **Narrow synonym**: a more specific term.  
+Example:  
+name: asthma  
+exact synonym: exercise-induced asthma  
+- **Broad synonym**: a more general term.  
+Example:  
+name: autoimmune hepatitis  
+exact synonym: autoimmune liver disease
+- **Related synonym**: A word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. (_Note - we have a lot of synonyms in Mondo currently that are marked related but should really be exact and we're actively working on cleaning this up_).  
+Example:  
+name: AGAT deficiency  
+exact synonym: disorder of glycine amidinotransferase activity 
+ 
+
 {% comment %} Add more FAQs as needed {% endcomment %}
