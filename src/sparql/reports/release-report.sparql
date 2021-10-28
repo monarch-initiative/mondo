@@ -1,0 +1,23 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX definition: <http://purl.obolibrary.org/obo/IAO_0000115>
+
+SELECT ?mondo_term ?label ?definition ?obsoletion_candidate ?obsolete WHERE {
+  ?mondo_term a owl:Class .
+  OPTIONAL {
+    ?mondo_term rdfs:label ?label .
+  }
+  OPTIONAL {
+    ?mondo_term definition: ?definition .
+  }
+  OPTIONAL {
+    ?mondo_term owl:deprecated ?obsolete_value .
+  }
+  OPTIONAL {
+    ?mondo_term <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> ?obsoletion_candidate .
+  }
+  FILTER( !isBlank(?mondo_term) && regex(str(?mondo_term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(STR(?obsolete_value) as ?obsolete)
+} 
