@@ -311,6 +311,9 @@ rm_related_annos_to_exact:
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
+report-base-query-%: mondo-base.owl
+	$(ROBOT) query --use-graphs true -i mondo-base.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-base-$*.tsv
+
 report-reason-query-%:
 	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
 
@@ -360,10 +363,10 @@ mappings: $(ALL_MAPPINGS)
 
 ##### RELEASE Report ######
 
-reports/mondo_base_current_%.tsv: #mondo-base.owl
+reports/mondo_base_current_%.tsv: mondo-base.owl
 	$(ROBOT) query --use-graphs true -i mondo-base.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
-reports/mondo_base_last_%.tsv: #tmp/mondo-lastbase.owl
+reports/mondo_base_last_%.tsv: tmp/mondo-lastbase.owl
 	$(ROBOT) query --use-graphs true -i tmp/mondo-lastbase.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
 reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv 
@@ -372,8 +375,15 @@ reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv repor
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md
 
+reports/mondo_obsoletioncandidates.tsv: report-base-query-obsoletioncandidates-withcomment
+	cp reports/report-base-obsoletioncandidates-withcomment.tsv $@
+	sed -i 's/[?]//g' $@
+	sed -i 's/<http:[/][/]purl[.]obolibrary[.]org[/]obo[/]MONDO_/MONDO:/g' $@
+	sed -i 's/>//g' $@
+
 release_diff: reports/mondo_release_diff.md
 all: reports/mondo_release_diff.md
+all: reports/mondo_obsoletioncandidates.tsv
 
 ###########################
 ## MONDO VIEW GENERATION ##

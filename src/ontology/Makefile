@@ -112,7 +112,9 @@ ARTEFACTS = \
   $(COMPONENT_FILES) \
   $(SUBSET_FILES)
 
-REPORT_FILES_RELEASE = reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv
+REPORT_FILES_RELEASE = reports/mondo_release_diff_changed_terms.tsv \
+  reports/mondo_release_diff_new_terms.tsv \
+  reports/mondo_obsoletioncandidates.tsv
 
 ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) \
   ../../README.md \
