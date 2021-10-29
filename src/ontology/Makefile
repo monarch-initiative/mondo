@@ -112,8 +112,13 @@ ARTEFACTS = \
   $(COMPONENT_FILES) \
   $(SUBSET_FILES)
 
+REPORT_FILES_RELEASE = reports/mondo_release_diff_changed_terms.tsv \
+  reports/mondo_release_diff_new_terms.tsv \
+  reports/mondo_obsoletioncandidates.tsv
 
-ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) ../../README.md 
+ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) \
+  ../../README.md \
+  $(REPORT_FILES_RELEASE)
 
 list_main_files:
 	echo $(MAIN_FILES)
@@ -176,9 +181,9 @@ deploy_assets_direct:
 	../utils/make-release-assets.py -c $(RELEASE_ASSETS_OPTS) --release $(GHVERSION) $(ASSETS)
 
 # deploys to https://github.com/monarch-initiative/mondo/releases/tag/current
-deploy_assets_current:
-	ls -alt $(ASSETS)
-	../utils/make-release-assets.py -c -f --release current $(ASSETS)
+#deploy_assets_current:
+#	ls -alt $(ASSETS)
+#	../utils/make-release-assets.py -c -f --release current $(ASSETS)
 
 # ----------------------------------------
 # Main release targets

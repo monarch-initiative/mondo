@@ -8,23 +8,16 @@ Videos outlining this process are available [here](https://drive.google.com/driv
 These steps will be done only once, when setting up your computer for Mondo release. 
 ### Generate token
 1. Follow the instructions [here](https://mondo.readthedocs.io/en/latest/developer-guide/generate-token/) to generate the GitHub token.
-### Get the obo-simple-diff script and set-up your path:
+### Set-up your path:
 1. In terminal, create a "tools" directory in your home directory: 
 `mkdir ~/tools`. 
 Note that we are creating a directory in your user directory, not in your Mondo directory (FYI, `~/` refers to your home directory in Mac or Linux systems). This directory can in the future contain various tools, such as ROBOT and scripts necessary for release processes. 
-1. Copy the obo script from github: https://github.com/cmungall/obo-scripts
-    1. the script is: https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl
-        1. right click and save as (and save in Downloads)
-        2. Move the file to the "tools" directory: `mv Downloads/obo-simple-diff.pl ~/tools`
-    1. alternatively, you can download the script directly using a command line tool like wget: `wget https://raw.githubusercontent.com/cmungall/obo-scripts/master/obo-simple-diff.pl -O ~/tools/obo-simple-diff.pl`
-1. We now make the downloaded script executable using the `chmod` command: type `chmod +x ~/tools/obo-simple-diff.pl` in your terminal and hit enter.
 1. Lastly, ensure that your ~/tools directory is added to your path. If you are using zsh (as shown in the terminal window title), create your path: 
    - `nano ~/.zshrc`
    - paste the following line into the file, usually at the very end: `export PATH=/Users/torosa/tools:$PATH`(instead of "/Users/torosa", use your path to the tools directory)
    - save (by hitting control+o and then enter) and close (control+x)
    - in the terminal, type: `source ~/.zshrc`; this reloades the `.zshrc` file. 
    - *Open a new Terminal window before you continue*. 
-
 
 # Releases
 
@@ -54,22 +47,10 @@ _Note: While the release is running, don't shut your laptop or switch between re
 4. Merge PR
 5. When this is done, follow instructions to Generate Change Log
 
-## Generate Change Log
-
 ### Initial Setup:
 Make sure the initial setup (see above) has been done :
 1. Download the `obo-simple-diff.pl` script to the "tools" directory and set-up your path to the tools directory.
 2. Generate token
-
-### Generate Change Log Workflow:
-<!-- 1. Download the latest mondo.obo from GitHub (https://github.com/monarch-initiative/mondo/releases) and save under /ontology folder (do not commit later)
-2. Download the previous mondo.obo and save as mondo-lastbuild.obo-->
-
-1. In terminal: `make mondo-diff.txt -B`  
-1. `./get-new-classes.sh > somefilename.txt`  
-  - "somefilename" should be MondoRelease_YYYY-MM-DD, for example: `./get-new-classes.sh > MondoRelease_2020-07-01.txt`  
-3. Open this file on your computer: MondoRelease_somefilename.txt  
-  - For example: MondoRelease_2020-06-01.txt     
 
 ## Deploy Release
 1. `cp ~/.token .token`  
@@ -87,7 +68,7 @@ Note- the date should be the date of the release in the format sh run.sh make GH
  - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
  - To add a description of the release: 
    - click edit
-   - in the 'describe this release' section add the content from the change log text file above
+   - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`
    - click "update release"
 2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
  - go to changes.md
