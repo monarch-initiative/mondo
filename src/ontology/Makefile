@@ -521,7 +521,7 @@ prefixes: mondo-edit.obo
 # ----------------------------------------
 
 
-all_reports: all_reports_1 fix_reports robot-report-obsoletioncandidates-withcomment
+all_reports: all_reports_1 fix_reports
 
 all_reports_1: mondo.owl $(ADDITIONAL_REPORT_FILES)
 	$(ROBOT) query -f tsv -i $< $(REPORT_ARGS) && touch $@
