@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-09-22/imports/chr_import.owl
+data-version: mondo/releases/2021-10-06/imports/chr_import.owl
 ontology: mondo/imports/chr_import
 
 [Term]
@@ -579,6 +579,26 @@ relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "35300000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "28500000" xsd:integer
+
+[Term]
+id: CHR:9606-chr16p12
+name: chr16p12 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr16p1 ! chr16p1 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "28500000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "16700000" xsd:integer
+
+[Term]
+id: CHR:9606-chr16p12.1
+name: chr16p12.1 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr16p12 ! chr16p12 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "28500000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "24200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p13
