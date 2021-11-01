@@ -58,7 +58,7 @@ Note- the date should be the date of the release in the format sh run.sh make GH
 1. Check these the release pages (make sure you replace the date correctly in the first link):
     1. https://github.com/monarch-initiative/mondo/releases/tag/v2020-XX-XX
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
-    3. Ensure it has all release artefacts attached to it (there should be 18 assets)
+    3. Ensure it has all release artefacts attached to it (there should be 21 assets)
     4. Check this file to ensure you see the expected changes (spot check a few changes): https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl
 
 ## Write a description of the release
@@ -99,7 +99,8 @@ Hello,
 
 The latest Mondo release is now available here:https://github.com/monarch-initiative/mondo/releases  
 
-Please find a list of terms that are candidates to be obsoleted or merged here: https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/report-obsoletioncandidates-withcomment.tsv  
+Please find a list of terms that are candidates to be obsoleted or merged here: http://purl.obolibrary.org/obo/mondo/mondo_obsoletioncandidates.tsv
+  
 Note - the proposed obsoletion date is listed in the table.  
 
 If you have an open issue that needs to be prioritized, please email us or comment on the ticket.  
