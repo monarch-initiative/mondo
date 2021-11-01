@@ -82,7 +82,7 @@ Note- the date should be the date of the release in the format sh run.sh make GH
 1. Once all checks have passed, merge to master
 Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
 
-## Check obsoletion obsoletioncandidates
+## Check obsoletion obsoletion candidates
 
 With each release, a TSV should be generated with obsoletion candidates. Check that this tsv file is up-to-date here:
 https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/report-obsoletioncandidates-withcomment.tsv
