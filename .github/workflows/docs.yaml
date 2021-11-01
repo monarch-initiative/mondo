@@ -1,0 +1,35 @@
+name: Docs
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  docs:
+    runs-on: ubuntu-latest 
+    steps:
+    - uses: actions/checkout@v2 
+
+    - name: Set up Python
+      uses: actions/setup-python@v2 
+      with:
+        python-version: 3.8 
+    
+    - name: install python packages
+      run: |
+        pip install -r docs/requirements.txt     
+        pip install pandas tabulate
+    
+    - name: Generate docs 
+      run: |
+        python src/scripts/patterns_create_docs.py
+    
+    - name: Check in the updated docs 
+      run: |
+        git add --force docs 
+        if [[ ! -z $(git status -s .) ]]
+        then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'Updating generated pattern docs' .
+          git push
+        fi
