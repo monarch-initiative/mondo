@@ -45,7 +45,6 @@ _Note: While the release is running, don't shut your laptop or switch between re
 2. Do a pull request (PR)
 3. Wait for GitHub Actions/QC to pass
 4. Merge PR
-5. When this is done, follow instructions to Generate Change Log
 
 ### Initial Setup:
 Make sure the initial setup (see above) has been done :
