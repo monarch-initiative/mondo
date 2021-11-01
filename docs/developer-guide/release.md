@@ -34,17 +34,17 @@ The release mondo.owl will look like this in Protege:
 
 _Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
 
+## Prepare the release
 1. Pull master
 2. `cd git/mondo/src/ontology/`
 3. `MEMORY_GB=12 sh run.sh make IMP=false all -B` - note, this takes about 2-3 hours.
 4. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
 5. Make sure you see ‘release finished’ after the command has run
-
-## Commit changes to a branch
-1. Create a branch and commit the changes on the branch
-2. Do a pull request (PR)
-3. Wait for GitHub Actions/QC to pass
-4. Merge PR
+6. Commit changes to a branch
+   1. Create a branch and commit the changes on the branch
+   1. Do a pull request (PR)
+   1. Wait for GitHub Actions/QC to pass
+   1. Merge PR
 
 ### Initial Setup:
 Make sure the initial setup (see above) has been done :
@@ -60,26 +60,22 @@ Note- the date should be the date of the release in the format sh run.sh make GH
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     3. Ensure it has all release artefacts attached to it (there should be 21 assets)
     4. Check this file to ensure you see the expected changes (spot check a few changes): https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl
-
-## Write a description of the release
-
-1. Add the release description to the release tab: 
- - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
- - To add a description of the release: 
-   - click edit
-   - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`
-   - click "update release"
-2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
- - go to changes.md
- - click edit
- - add the name of the new release and the content from the change log text file above. 
- - commit to master
-
-## Commit release files
-
-1. Commit all of the changed import and report files (ignore or discard diff files, change log) to a branch
-1. Once all checks have passed, merge to master
-Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
+1. Write a description of the release
+   1. Add the release description to the release tab: 
+       - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
+       - To add a description of the release: 
+         - click edit
+         - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`
+         - click "update release"
+   2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
+      - go to changes.md
+      - click edit
+      - add the name of the new release and the content from the change log text file above. 
+      - commit to master
+1. Commit release files
+   1. Commit all of the changed import and report files (ignore or discard diff files, change log) to a branch
+   1. Once all checks have passed, merge to master
+   Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
 
 ## Check obsoletion obsoletion candidates
 
