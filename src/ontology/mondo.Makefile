@@ -472,7 +472,7 @@ tmp/heal_hierarchy.ru: tmp/remove_classes.txt
 	echo "WHERE {" >> $@
 	echo "  ?child rdfs:subClassOf ?subj ." >> $@
 	echo "  ?subj rdfs:subClassOf ?parent ." >> $@
-	echo "  FILTER (?subj in (MONDO:0015938, MONDO:0020272, MONDO:0010301, MONDO:0015318, MONDO:0015320, MONDO:0015321, MONDO:0015322, MONDO:0015543, MONDO:0016148, MONDO:0016329, MONDO:0017133, MONDO:0017274, MONDO:0019687, MONDO:0020012, MONDO:0020277, MONDO:0100027))" >> $@
+	echo "  FILTER (?subj in (MONDO:0018652, MONDO:0014424, MONDO:0016788, MONDO:0014425, MONDO:0018651, MONDO:0005503))" >> $@
 	echo "}" >> $@
 
 merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_classes.txt
