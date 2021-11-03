@@ -45,6 +45,12 @@ last_ids = df_report_last_release['mondo_id'].unique()
 current_ids = df_report_current_release['mondo_id'].unique()
 new_terms = [x for x in current_ids if x not in last_ids]
 
+df_obsoleted = df_report_current_release[df_report_current_release['property']=='obsolete'][['mondo_id','value_new']].copy()
+obsoleted_terms=df_obsoleted['mondo_id'].unique()
+df_labels = df_report_current_release[df_report_current_release['property']=='label'][['mondo_id','value_new']].copy()
+df_labels.drop_duplicates(inplace=True)
+df_labels.columns = ['Mondo ID','Label']
+
 df_report_full= pd.merge(df_report_last_release, df_report_current_release, on=['mondo_id','property'],how='right')
 df_report_full.fillna('', inplace=True)
 df_report = df_report_full[df_report_full['value_old']!=df_report_full['value_new']].copy()
@@ -68,19 +74,20 @@ print("")
 print(f"* Number of new terms: {len(df_report_changed)}")
 print(f"* Number of changed labels: {len(df_report_changed[df_report_changed['property']=='label'])}")
 print(f"* Number of changed definitions: {len(df_report_changed[df_report_changed['property']=='definition'])}")
-print(f"* Number obsoleted terms: {len(df_report_changed[df_report_changed['property']=='obsolete'])}")
+print(f"* Number obsoleted terms: {len(obsoleted_terms)}")
 print(f"* Number of new obsoletion candidates: {len(df_report_changed[(df_report_changed['property']=='obsoletion_candidate') & (df_report_changed['value_old']!=True)])}")
 print(f"* Number of terms who were previously candidate for obsoletion and are now not anymore: {len(df_report_changed[(df_report_changed['property']=='obsoletion_candidate') & (df_report_changed['value_old']==True)])}")
 print("")
 print("")
 print("## New terms")
 df_report_new.columns = ['Mondo ID', 'Label', 'Definition', 'Obsoletion candidate?', 'Obsolete']
-print(df_report_new.to_markdown(index=False))
+print(df_report_new[['Mondo ID', 'Label', 'Definition']].to_markdown(index=False))
 
 print("")
 print("")
 print("## Changed terms")
 df_report_changed.columns = ['Mondo ID', 'property', 'Previous release', 'New release']
+df_report_changed = df_report_changed.merge(df_labels,how="left",on="Mondo ID")
 for property in df_report_changed['property'].unique():
     property_title = f"### Changed {property}"
     if property=="obsolete":
@@ -95,12 +102,21 @@ for property in df_report_changed['property'].unique():
         print("")
         print(f"#### New obsoletion candidates:")
         print("")
-        print(df[['Mondo ID', 'Previous release', 'New release']].to_markdown(index=False))
-        df = df_report_changed[(df_report_changed['property']=='obsoletion_candidate') & (df_report_changed['Previous release']==True)]
+        if len(df)>0:
+            print(df[['Mondo ID','Label']].to_markdown(index=False))
+        else:
+            print("No changes.")
+        df = df_report_changed[(df_report_changed['property']=='obsoletion_candidate') & (df_report_changed['Previous release']==True) & ~(df_report_changed['Mondo ID'].isin(obsoleted_terms))]
         print("")
         print(f"#### Number of terms who were previously candidate for obsoletion and are now not anymore:")
         print("")
-        print(df[['Mondo ID', 'Previous release', 'New release']].to_markdown(index=False))
+        if len(df)>0:
+            print(df[['Mondo ID','Label']].to_markdown(index=False))
+        else:
+            print("No changes.")
+    elif property=="obsolete":
+        df = df_report_changed[df_report_changed['property']=="obsolete"]
+        print(df[df['New release']][['Mondo ID','Label']].to_markdown(index=False))
     else:
         df = df_report_changed[df_report_changed['property']==property]
-        print(df[['Mondo ID', 'Previous release', 'New release']].to_markdown(index=False))
+        print(df[['Mondo ID','Label', 'Previous release', 'New release']].to_markdown(index=False))
