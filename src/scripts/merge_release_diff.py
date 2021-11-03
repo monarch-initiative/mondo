@@ -108,7 +108,7 @@ for property in df_report_changed['property'].unique():
             print("No changes.")
         df = df_report_changed[(df_report_changed['property']=='obsoletion_candidate') & (df_report_changed['Previous release']==True) & ~(df_report_changed['Mondo ID'].isin(obsoleted_terms))]
         print("")
-        print(f"#### Number of terms who were previously candidate for obsoletion and are now not anymore:")
+        print(f"#### Terms that were previously candidate for obsoletion and are now not anymore:")
         print("")
         if len(df)>0:
             print(df[['Mondo ID','Label']].to_markdown(index=False))
