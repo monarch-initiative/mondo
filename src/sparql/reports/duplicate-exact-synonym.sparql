@@ -26,8 +26,8 @@ WHERE
            oboInOwl:hasDbXref ?xref2 
       ] .
     
-    FILTER (STR(?term) < STR(?term2))
-    FILTER (isIRI(?term) && STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/MONDO_"))
-    FILTER (isIRI(?term2) && STRSTARTS(STR(?term2), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (?term != ?term2)
+    FILTER (STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER (STRSTARTS(STR(?term2), "http://purl.obolibrary.org/obo/MONDO_"))
   	BIND (CONCAT(?xref1,"|",?xref2) as ?xref)
 } GROUP BY ?exact ?term ?term_label ?term2 ?term_label2 ORDER BY ?exact
