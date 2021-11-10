@@ -6,10 +6,27 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops
 
+- [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
 - [Renal Disease and Phenotype Workshop (July 14, 2021)](#renal)
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
 - [Mondo Introductory Workshop (November 2018)](#november-2018)
+
+<a name="november-2021"></a> 
+## Mondo Clinical Reclassification Workshop Part 2
+
+### Description
+This workshop is a follow-up to the Mondo Clinical Reclassification Workshop (April 2021).
+Mondo was reclassified to create a clinical-centric view (see description [here](https://zenodo.org/record/5273598#.YVtjEWZKj0o)), however, many clinically useful terms are still difficult to find as they are subClasses of general grouping terms such as “disease of anatomical system”.
+In this workshop, we will propose an updated top-level classification of Mondo which more closely resembles the clinical view of diseases. We will gather stakeholders and community members for their comments, requests, and input.
+
+### Date and Time
+**November 17th, 2021**
+12-2pm PST / 3-5pm EST / 8-10pm UK / 9pm-11pm Europe
+
+### Funding:
+
+NHGRI Phenomics First (1RM1HG010860-01)
 
 <a name="renal"></a> 
 ## Renal Disease and Phenotype Workshop
