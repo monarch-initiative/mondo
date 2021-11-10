@@ -21,7 +21,7 @@ Mondo was reclassified to create a clinical-centric view (see description [here]
 In this workshop, we will propose an updated top-level classification of Mondo which more closely resembles the clinical view of diseases. We will gather stakeholders and community members for their comments, requests, and input.
 
 ### Date and Time
-**November 17th, 2021**
+**November 17th, 2021**  
 12-2pm PST / 3-5pm EST / 8-10pm UK / 9pm-11pm Europe
 
 ### Funding:
