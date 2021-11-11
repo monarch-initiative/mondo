@@ -195,6 +195,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/MAXO_0000864 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/MAXO_0000864">
+        <obo:IAO_0000115>Uses of chemicals which affect the course of conditions, diseases, syndromes or pathology to benefit the health of an individual.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>drug uses</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pharmocological uses</oboInOwl:hasRelatedSynonym>
+        <rdfs:label xml:lang="en">therapeutic uses</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000293 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293">
@@ -1722,6 +1733,16 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label>object</rdfs:label>
+        <rdfs:label xml:lang="en">object</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031">
@@ -1749,6 +1770,61 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115 xml:lang="en">An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time.</obo:IAO_0000115>
         <rdfs:label>material entity</rdfs:label>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23888 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23888">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52217"/>
+        <obo:IAO_0000115>Any substance which when absorbed into a living organism may modify one or more of its functions. The term is generally accepted for a substance taken for a therapeutic purpose, but is also commonly used for abused substances.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>drugs</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>medicine</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>drug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <obo:IAO_0000115>A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>chemical entity</oboInOwl:hasExactSynonym>
+        <rdfs:label>chemical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33232 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33232">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50906"/>
+        <obo:IAO_0000115>Intended use of the molecular entity or part thereof by humans.</obo:IAO_0000115>
+        <rdfs:label>application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50906 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50906">
+        <obo:IAO_0000115>A role is particular behaviour which a material entity may exhibit.</obo:IAO_0000115>
+        <rdfs:label>role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_52217 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_52217">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33232"/>
+        <obo:IAO_0000115>Any substance introduced into a living organism with therapeutic or diagnostic purpose.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>farmaco</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>medicament</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pharmaceuticals</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pharmaceutical</rdfs:label>
     </owl:Class>
     
 
@@ -2126,6 +2202,58 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000102"/>
         <obo:IAO_0000115 xml:lang="en">A denotator type indicates how a term should be interpreted from an ontological perspective.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">denotator type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MAXO_0000058 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0000058">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MAXO_0000058"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MAXO_0000864"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23888"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>Use of a substance introduced into a living organism with therapeutic or diagnostic purpose.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>drug therapy</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>drug treatment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>medication therapy</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>pharmaceutical drug</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>pharmaceutical treatment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>pharmacological treatment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>treatment with drug</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">pharmacotherapy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MAXO_0000647 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0000647">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MAXO_0000058"/>
+        <obo:IAO_0000115>The use of synthetic or naturally-occurring chemicals for the treatment of diseases.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>chemotherapeutic agent treatment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>chemotherapeutic drug treatment</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>treatment with a chemotherapeutic agent</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>treatment with a chemotherapeutic drug</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>treatment with a chemotherapeutic medication</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">chemotherapy</rdfs:label>
     </owl:Class>
     
 
