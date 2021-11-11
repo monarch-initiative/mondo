@@ -33,6 +33,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -2202,6 +2208,29 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000102"/>
         <obo:IAO_0000115 xml:lang="en">A denotator type indicates how a term should be interpreted from an ontological perspective.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">denotator type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MAXO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0000001">
+        <obo:IAO_0000115>A clinically prescribed procedure, therapy, intervention, or recommendation.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>health care process</oboInOwl:hasNarrowSynonym>
+        <rdfs:label xml:lang="en">medical action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MAXO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MAXO_0000001"/>
+        <obo:IAO_0000115>All manners of treatment, be they pharmaceuticals, invasive procedures, etc. to relieve illness and injury in attempts to bring the body back to its normal state.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>medical procedure</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasNarrowSynonym>clinical procedure</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>treatment</oboInOwl:hasNarrowSynonym>
+        <rdfs:label xml:lang="en">therapeutic procedure</rdfs:label>
     </owl:Class>
     
 
