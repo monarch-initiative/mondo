@@ -39,6 +39,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
@@ -1437,6 +1443,18 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NBO_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000001"/>
+        <obo:IAO_0000115>The act of moving any of the tissues and hard structures surrounding the mouth other than teeth, jaws or filter structures [NBO:AC]</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>mouth part movement</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>other moved mouth parts</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>mouth movement</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NBO_0000010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000010">
@@ -1449,6 +1467,17 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NBO_0000011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000011">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
+        <obo:IAO_0000115>&quot;A behavior that occurs predominantly or only, in individuals that are part of a group.&quot; [Wikipedia:Social_behavior]</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>social behaviour</oboInOwl:hasExactSynonym>
+        <rdfs:label>social behavior</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NBO_0000034 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000034">
@@ -1456,6 +1485,19 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115>&quot;Behaviour related to the activity which primary purpose is the sexual reproduction.&quot; [NBO:GVG]</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>sexual actions</oboInOwl:hasRelatedSynonym>
         <rdfs:label>sexual activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000073 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000073">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000747"/>
+        <obo:IAO_0000115>The act of repeated grinding, tearing, and or crushing with teeth or jaws [NBO:SMAC]</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym xml:lang="en">chew</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym xml:lang="en">gnaw</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mastication</oboInOwl:hasExactSynonym>
+        <rdfs:label>chewing</rdfs:label>
     </owl:Class>
     
 
@@ -1503,6 +1545,18 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NBO_0000308 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000308">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000607"/>
+        <obo:IAO_0000115>&quot;Cognitive perception of a sensation by any of the five senses -- vision, touch, smell, taste, and hearing.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>behavior involving perception</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>perception behavior</oboInOwl:hasExactSynonym>
+        <rdfs:label>sensation behavior</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NBO_0000313 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000313">
@@ -1515,12 +1569,65 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NBO_0000317 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000317">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000327"/>
+        <obo:IAO_0000115>&quot;Behavior related to the awareness of body balance and movement.&quot; [MBP:GVG]</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>proprioception</oboInOwl:hasExactSynonym>
+        <rdfs:label>vestibular behavior</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000327 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000327">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000751"/>
+        <obo:IAO_0000115>&quot;Behavior related to the sensations arising from the skin and from the muscles, tendons, and joints.&quot; [OBP:GVG]</obo:IAO_0000115>
+        <rdfs:label>somatic sensation related behavior</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NBO_0000338 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000338">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
         <obo:IAO_0000115>&quot;Movement behavior of the body or its parts.&quot;</obo:IAO_0000115>
         <rdfs:label>kinesthetic behavior</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000339 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000339">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000317"/>
+        <obo:IAO_0000115>&quot;The coordination of combinations of body movements created with the kinematic (such as spatial direction) and kinetic (force) parameters that result in intended actions.&quot; [wikipedia:Motor_coordination]</obo:IAO_0000115>
+        <rdfs:label>motor coordination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000347 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000347">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000339"/>
+        <obo:IAO_0000115>&quot;The coordination of large muscle groups and whole body movement.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>large muscle coordination</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>whole body coordination</oboInOwl:hasExactSynonym>
+        <rdfs:label>gross motor coordination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000355 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000355">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000317"/>
+        <obo:IAO_0000115>&quot;Intentionally or habitually assumed arrangement of the body and its limbs.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <rdfs:label>posture</rdfs:label>
     </owl:Class>
     
 
@@ -1586,6 +1693,16 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NBO_0000455 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000455">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000308"/>
+        <obo:IAO_0000115>&quot;The sustained focus of cognitive resources on information while filtering or ignoring extraneous information.  Intended to encompass only attention to perceptual stimuli. &quot; [wikipedia:Attention]</obo:IAO_0000115>
+        <rdfs:label>attention behavior</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NBO_0000550 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000550">
@@ -1612,6 +1729,36 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
         <obo:IAO_0000115>&quot;Behaviour related to cognitive processes.&quot; [NBO:JH]</obo:IAO_0000115>
         <rdfs:label>cognitive behavior</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000612 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000612">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000011"/>
+        <obo:IAO_0000115>&quot;A social behavior related to the activity of conveying information.&quot; [wikipedia:Communication]</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>communicating</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>signal exchange</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>communication behavior</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000747 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000747">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000007"/>
+        <rdfs:label>jaw movement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NBO_0000751 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000751">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000308"/>
+        <rdfs:label>perception behavior by means</rdfs:label>
     </owl:Class>
     
 
