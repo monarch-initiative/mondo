@@ -361,13 +361,14 @@ imports/%_import.owl: mirror/%.owl imports/%_terms.txt
 	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
 		remove -T imports/removeseed.txt \
+		remove --select "<http://purl.obolibrary.org/obo/PR_*>" \
 		reason --exclude-tautologies structural \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
 imports/%_import.obo: imports/%_import.owl
-	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	if [ $(IMP) = true ]; then $(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@; fi
 
 imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
 	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
@@ -667,8 +668,9 @@ mirror/neoplasm-core.owl:
 mirror/ncit.owl:
 	wget --no-check-certificate $(OBO)/ncit.owl -O $@ && touch $@
 
+# It looks odd to reason relax reduce the base, but its necessary until we have base plus
 mirror/cl.owl:
-	wget --no-check-certificate $(OBO)/cl/cl-base.owl -O $@ && touch $@
+	$(ROBOT) merge -I $(OBO)/cl/cl-base.owl reason relax reduce -o $@ && touch $@
 
 mirror/omo.owl:
 	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
