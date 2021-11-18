@@ -668,8 +668,9 @@ mirror/neoplasm-core.owl:
 mirror/ncit.owl:
 	wget --no-check-certificate $(OBO)/ncit.owl -O $@ && touch $@
 
+# It looks odd to reason relax reduce the base, but its necessary until we have base plus
 mirror/cl.owl:
-	wget --no-check-certificate $(OBO)/cl/cl-base.owl -O $@ && touch $@
+	$(ROBOT) merge -I $(OBO)/cl/cl-base.owl reason relax reduce -o $@ && touch $@
 
 mirror/omo.owl:
 	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
