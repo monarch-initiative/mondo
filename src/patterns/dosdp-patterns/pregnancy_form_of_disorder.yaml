@@ -7,8 +7,8 @@ Examples: [pregnancy associated osteoporosis](http://purl.obolibrary.org/obo/MON
 [hypertension, pregnancy-induced](http://purl.obolibrary.org/obo/MONDO_0024664)'
 
 contributors: 
-  - https://orcid.org/0000-0002-6601-2165
-  - https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
   
 classes: 
   disease: MONDO:0000001
@@ -20,26 +20,25 @@ annotationProperties:
   exact_synonym: oio:hasExactSynonym
   related_synonym: oio:hasRelatedSynonym
   
-vars: 
+vars:
   disease: '''disease'''
   
 name: 
   text: pregnancy associated %s
-  vars: 
-    - disease
+  vars:
+  - disease
 
-annotations: 
-  annotationProperty: exact_synonym
+- annotationProperty: exact_synonym
   text: '%s, pregnancy induced'
-  vars: 
-    - disease
-
-def: 
+  vars:
+  - disease
+  
+def:
   text: Any instance of %s that is associated with pregnancy.
-  vars: 
-    - disease
-
+  vars:
+  - disease
+  
 equivalentTo: 
   text: "%s and 'pregnancy disorder'"
   vars: 
-    - disease
+  - disease
