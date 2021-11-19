@@ -1,0 +1,25 @@
+name: Deploy reports
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_reports:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.2.30
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Rebuild reports
+        env:
+          DEFAULT_BRANCH: master
+        run: cd src/ontology; make all_release_reports -B
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+        #  github_token: ${{ secrets.GITHUB_TOKEN }}
+        #  branch: ${{ GitHub.head_ref }}
+          tags: true

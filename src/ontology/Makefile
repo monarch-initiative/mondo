@@ -132,6 +132,8 @@ list_artefacts:
 
 all_artefacts: all_reports $(ARTEFACTS)
 
+all_release_reports: $(REPORT_FILES_RELEASE)
+
 # ----------------------------------------
 # Tests
 # ----------------------------------------
