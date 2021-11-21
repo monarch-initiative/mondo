@@ -18,7 +18,7 @@ jobs:
       - name: Run diff
         env:
           GH_USERNAME: ${{ github.actor }}
-        run: cd src/ontology/ && make reports/mondo_diff.md IMP=false PAT=false MIR=false reports/mondo_diff.md
+        run: cd src/ontology/ && make all_release_reports IMP=false PAT=false MIR=false reports/mondo_diff.md
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
