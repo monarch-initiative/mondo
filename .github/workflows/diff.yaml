@@ -16,3 +16,11 @@ jobs:
         run: cd src/ontology/ && make IMP=false PAT=false MIR=false all_release_reports
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update Mondo diff reports
+          title: 'Mondo Diff reports'
+          body: |
+            Updates Mondo diff reports, including
+            - Current changes to labels in Mondo
+            - New terms that are about to be added as part of the next release
+          assignees: sabrinatoro
