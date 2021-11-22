@@ -547,3 +547,22 @@ test_owlaxioms:
 	! grep "owl-axioms: " mondo-edit.obo
 
 test: test_owlaxioms 
+
+######################################
+### Mondo slurp python ###############
+######################################
+
+SLURP_FROM="https://github.com/monarch-initiative/omim/releases/download/1.0.0/omim.ttl"
+tmp/source-%.ttl:
+	wget $(SLURP_FROM) -O $@
+
+tmp/mondo-edit.ttl: $(SRC)
+	$(ROBOT) convert -i $< -f ttl -o $@
+
+tmp/mondo-edit-%.ttl: tmp/mondo-edit.ttl tmp/source-%.ttl
+	python ../scripts/migrate.py $^ $@
+
+migrate-%: tmp/mondo-edit-%.ttl
+	$(ROBOT) convert -i $< -f obo -o $@
+
+migrate: migrate-omim
