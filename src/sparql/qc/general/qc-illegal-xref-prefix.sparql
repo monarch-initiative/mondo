@@ -1,0 +1,21 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix xref: <http://www.geneontology.org/formats/oboInOwl#hasDbXref>
+
+SELECT ?entity ?property ?value WHERE 
+{
+  {
+  ?entity xref: ?value .
+  } 
+  UNION
+  {
+  ?ax a owl:Axiom ;
+  owl:annotatedSource ?entity ;
+  xref: ?value  
+  }
+  FILTER(STRSTARTS(str(?entity), "OMIM:PS") || !regex(str(?value), "(Wikidata|OMOP|OMIT|OGMS|Wikipedia|GTR|HGNC|KEGG|SCDO|OMIM|DOID|OMIMPS|MONDO|UMLS|Orphanet|GARD|NCIT|PMID|SCTID|MESH|EFO|ONCOTREE|ICD10|ICD9|HP|ICDO|MedDRA|doi|CSP|CSP2005|GO):"))
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(xref: as ?property)
+}
+ORDER BY ?entity
