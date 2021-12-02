@@ -16,6 +16,8 @@
  - [Disease Naming in Mondo](https://mondo.monarchinitiative.org/pages/disease-naming/)
  
 ### Blogs
+- [Mondo Disease Ontology Highlights from 2021](https://monarchinit.medium.com/?p=7f2e66baae0b) By Sabrina Toro and Nicole Vasilevsky - _Published December 01, 2021, Monarch Initiative_
+- [The Mondo ‘Cat’-a-log and Mondo Highlights from 2020](https://monarchinit.medium.com/the-mondo-cat-a-log-and-mondo-highlights-from-2020-1ec0c9b6a8d9) by Nicole Vasilevsky - _Published December 18, 2020, Monarch Intiative_
 - [New release of Mondo Disease Ontology](https://medium.com/@MonarchInit/new-release-of-mondo-disease-ontology-9a48521353e3) - _Published June 13, 2019, Monarch Initiative_
 - [Monkeying around with OWL: Musings on building and using ontologies](https://douroucouli.wordpress.com/). Posts by Chris Mungall
 
