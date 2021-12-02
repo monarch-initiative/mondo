@@ -26,7 +26,9 @@ Mondo is a community-driven project and we welcome your feedback and suggested c
 ### Why and how are terms obsoleted from Mondo?
 
 #### Why are terms obsoleted
-Terms in Mondo may be obsoleted when they are no longer needed, considered out of scope, if they are duplicates, or if they have been obsoleted in a source ontology and merged with another term. Mondo terms are never deleted, instead are obsoleted, so that any MONDO ID ever created remains in the ontology.
+Terms in Mondo may be obsoleted when they are no longer needed, considered out of scope, if they are duplicates, or if they have been obsoleted in a source ontology and merged with another term. Mondo terms are never deleted, instead are obsoleted, so that any MONDO ID ever created remains in the ontology. 
+
+To ensure minimal disruption to curation and annotations using Mondo terms, if a term is to be considered for obsoletion in Mondo, we inform users before obsoletion. Our workflow entails 1) adding an ‘obsoletion candidate’ subset tag in Mondo ontology file, 2) including a link to the GitHub ticket that describes the reason for obsoletion (and is a place for community comments), 3) add the date for proposed obsoletion (for example, 2022–01–01), and 4) a comment that indicates the reason and terms to be considered for replacement or an actual replacement term (in the case of a merge). We provide an obsoletion report (for example, see the November report [here](https://github.com/monarch-initiative/mondo/releases/download/v2021-11-01/mondo_obsoletioncandidates.tsv)) with each release and will wait at least two months before obsoleting any class, to allow our users time to update their annotations or make comments (or request the term be kept instead).
 
 Further description and a discussion board on obsoletions is available [here](https://github.com/monarch-initiative/mondo/discussions/2765). Anyone with a GitHub account can contribute to the discussion.
 
