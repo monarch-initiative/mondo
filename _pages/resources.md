@@ -4,6 +4,7 @@
 
 ### Manuscripts
 
+- [New view of the Mondo Disease Ontology High-level Classification According to Harrison's Principles of Internal Medicine textbook.](https://zenodo.org/record/5273598#.YalFLfHML6Z) Sabrina Toro, Ada Hamosh, Nico Matentzoglu, Monica Munoz-Torres, Lauren Chan, Courtney Thaxton, Gioconda Alyea, Melissa Haendel, Chris Mungall, Peter N Robinson, & Nicole Vasilevsky. Zenodo. https://doi.org/10.5281/zenodo.5273598
 - [How many rare diseases are there?](https://www.nature.com/articles/d41573-019-00180-y) Melissa Haendel, Nicole Vasilevsky, Deepak Unni, Cristian Bologa, Nomi Harris, Heidi Rehm, Ada Hamosh, Gareth Baynam, Tudor Groza, Julie McMurry, Hugh Dawkins, Ana Rath, Courtney Thaxon, Giovanni Bocci, Marcin P. Joachimiak, Sebastian Köhler, Peter N. Robinson, Chris Mungall & Tudor I. Oprea. Nature Reviews Drug Discovery, 05 November 2019
 - [The Monarch Initiative in 2019: an integrative data and analytic platform connecting phenotypes to genotypes across species.](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz997/5614574#170074726) Kent A Shefchek, Nomi L Harris, Michael Gargano, Nicolas Matentzoglu, Deepak Unni, Matthew Brush, Daniel Keith, Tom Conlin, Nicole Vasilevsky, et al. Nucleic Acids Research, gkz997, https://doi.org/10.1093/nar/gkz997. 
 - [k-BOOM: A Bayesian approach to ontology structure inference, with applications in disease ontology construction](https://www.biorxiv.org/content/10.1101/048843v3). Mungall C, et al. (2019) doi: https://doi.org/10.1101/048843
