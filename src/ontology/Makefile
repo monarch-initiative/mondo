@@ -635,6 +635,11 @@ mirror/%.owl:
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
+mirror/ecto.owl: 
+	$(OWLTOOLS) $(OBO)/ecto.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@ &&\
+	$(ROBOT) remove -i $@ --select "<http://purl.obolibrary.org/obo/ENVO_*>" -o $@ 
+.PRECIOUS: mirror/ecto.owl
+
 mirror/ncbitaxon.owl: 
 	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@ && touch $@
 .PRECIOUS: mirror/ncbitaxon.owl
