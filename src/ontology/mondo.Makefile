@@ -26,9 +26,13 @@ pattern_schema_checks:
 owlaxioms_check:
 	! grep "^owl-axioms" mondo-edit.obo
 
+obo_validator:
+	fastobo-validator mondo-edit.obo
+
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
+test: obo_validator
 
 test_reason_equivalence: $(SRC)
 	$(ROBOT) merge -i $< \
