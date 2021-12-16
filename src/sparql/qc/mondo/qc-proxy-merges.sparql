@@ -20,8 +20,8 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
            oboInOwl:source ?source2 .
 
   	FILTER (?entity2!=?entity)
-    FILTER (str(?source1)="MONDO:equivalentTo")
-  	FILTER (str(?source2)="MONDO:equivalentTo")
+    FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:obsoleteEquivalent"))
+  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:obsoleteEquivalent"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     FILTER (isIRI(?entity2) && STRSTARTS(str(?entity2), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(oboInOwl:hasDbXref as ?property)
