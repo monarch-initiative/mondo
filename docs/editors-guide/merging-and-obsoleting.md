@@ -26,7 +26,7 @@
 1. Allow for at least one month after sending the report or contacting users before obsoleting the terms to allow users time to comment.
 
 ### How to
-There are 3 ways to merge classes:
+There are 2 ways to merge classes:
 
 * Manually (not recommended)
 * Using owltools
@@ -113,7 +113,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. Add annotation consider, add the CURIE for the term that should be considered as a replacement.
-1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
 
 ### Obsolete a class (manually)
 1. Search for the class to be obsoleted.
@@ -124,7 +124,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Remove superclass axioms.
 1. If the class has children, remove the superclass assertions for the children.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
-1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
 
 ## When to obsolete / merge
 
@@ -141,4 +141,4 @@ Issues should remain open for at least two weeks to allow for the community to c
 
 See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
 
-by Nicole Vasilevsky and Sabrina Toro _updated 2021-12_17_
+by Nicole Vasilevsky and Sabrina Toro _updated 2021-12-17_
