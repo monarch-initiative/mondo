@@ -71,16 +71,22 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 
 1. In Terminal, navigate to ..mondo/src/ontology
 1. Run your owltools command
-1. Check the output in GitHub desktop
+1. **Review diff**: Check the output in GitHub desktop. _Note: you may see an unexpected addition at the top that starts with owl-axioms... This is because two IDs were added to replacement term. The instructions below instruct to remove the additional ID, and this will go away after you do that._
+1. The dbxrefs should stay with the obsoleted class and not be moved to the replacement term. In the diff in GH Desktop, click beside the row with the added dbxef and right click and click Discard added line.
+
+![image](https://user-images.githubusercontent.com/6722114/146590909-a0fe6eec-9063-4b4e-82fb-7ac11e8aa87d.png)
+
 1. Open a new version of mondo-edit.obo in Protege
-1. Search for the term that was obsoleted
+1. **Obsoleted class**: Search for the term that was obsoleted
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and write 'terms merged' in the literal field.
-1. Search for the 'term replaced by' term
-1. Delete the old ID
-1. Review the annotations to ensure there are no duplicate annotations. If there are, they should be merged.
-1. If there are duplicate dbxrefs that are annotated as MONDO:equivalentTo (ie two OMIM xrefs), the dbxref from the obsolete class should be annotated as MONDO:obsoleteEquivalent 
-1. Review the subClassOf assertions, and make sure there are no duplicates. If there are, they should be merged.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
+1. **Replacement term**: Search for the 'term replaced by' term
+1. Delete the old ID (_if you check the diff after doing this and saving, you'll see the unexpected addition will disappear_)
+1. Review the annotations to ensure there are no duplicate annotations. If there are, they should be combined. (Sometimes this is easier to review in the diff in GitHub Desktop, but they must be fixed in Protege.)
+1. Review the subClassOf assertions, and make sure there are no duplicates. If there are, they should be combined.
+1. OWL Tools removes the xrefs from the obsoleted terms, but those should be retained and any annotations to MONDO:equivalentTo should be changed to MONDO:obsoleteEquivalent. Manually add those back with the correct annotation.
+1. Remove the annotations: 'in subset obsoletion candidate' and 'scheduled for obsoletion on or after'  
 1. When reviewing the diff, make sure there is not an Alt ID. The diff should only show additions to the merged term and the obsoletion
 
 ### Manual merge/obsolete
@@ -95,11 +101,13 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 1. If the class has children, remove the superclass assertion for the children 
 1. Example: ![Manual merge example 1](images/github-workflow-manual-merge-1.png)
 1. Move all the synonyms to the new term. 
-1. Move all the **database_cross_references** to the new term.
-1. If applicable, to mark the synonym as deprecated, add an annotation to the synonym: has_synonym_type ‘A synonym that is historic and discouraged’. See granulomatosis with polyangiitis for examples of deprecated syn axiom annotations
-1. It is a good idea to add a reason for obsoletion to the class. This can be added as a **comment** or add **seeAlso** and add a link to the GitHub ticket.
+1. Retain all of the **database_cross_references** on the obsoleted term. Any annotations to MONDO:equivalentTo should be changed to MONDO:obsoleteEquivalent.
+1. If applicable, to mark the synonym as deprecated, add an annotation to the synonym: has_synonym_type ‘A synonym that is historic and discouraged’. See granulomatosis with polyangiitis for examples of deprecated syn axiom annotations.
+1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and write 'terms merged' in the literal field.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
 
-Note: A Mondo obsolete class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
+Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
 
 ## Obsolete a class (without merging)
 
