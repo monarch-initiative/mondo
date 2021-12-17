@@ -453,7 +453,7 @@ modules/mondo-%.owl: modules/%.tsv
 .PRECIOUS: modules/mondo-%.owl
 
 MERGE_TEMPLATE=tmp/merge_template.tsv
-TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vTV6ITR7RJMt5jswUHBmEEcfbNAeZWpj4VkDbMY3Bvh_fcmfXEw1CFvbgzOUPDxsj6oT5vsFQRg8FuM/pub?gid=346126899&single=true&output=tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vRLyWmoOYGq5sYoCaci9al-gX2-7dwaKRr5RRBynTA5gaBlpZREgcsQ2MM0mMlrQS_Q32Y7qSAkgzKD/pub?gid=400324569&single=true&output=tsv
 
 tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
@@ -574,3 +574,16 @@ migrate-%: tmp/mondo-edit-%.ttl
 	$(ROBOT) convert -i $< -f obo -o $@
 
 migrate: migrate-omim
+
+tmp/ordo.owl:
+	cp ~/ws/mondo-analysis/preparation/ordo.owl $@.tmp.owl
+	$(ROBOT) remove -i $@.tmp.owl --term IAO:0000115 -o $@
+
+#query --update ../sparql/update/fix_deprecated_annotated.ru
+.PHONY: migrate_new
+migrate_new: tmp/ordo.owl
+	~/knocean/robot/bin/robot migrate -i $(SRC) --prefix "Orphanet: http://www.orpha.net/ORDO/Orphanet_" -s tmp/ordo.owl --mappings /Users/matentzn/ws/mondo-analysis/mondo_translate/mondo-rename-ordo.tsv convert -f owl -o tmp/$(SRC).owl &&\
+	$(ROBOT) query -i tmp/$(SRC).owl --update ../sparql/update/fix_deprecated_annotated.ru --update ../sparql/update/change_source_to_xref.ru \
+		query --query ../sparql/reports/unmapped.sparql reports/unmapped.tsv --output tmp/$(SRC).ofn &&\
+	owltools --use-catalog tmp/$(SRC).ofn --merge-axiom-annotations -o -f obo tmp/$@ &&\
+	grep -v ^owl-axioms: tmp/$@ > $(SRC)

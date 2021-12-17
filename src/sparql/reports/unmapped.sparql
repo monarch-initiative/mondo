@@ -1,0 +1,19 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix obo: <http://purl.obolibrary.org/obo/>
+
+SELECT ?cls ?label (GROUP_CONCAT(?xref;SEPARATOR="|") AS ?xrefs) (GROUP_CONCAT(?synonym;SEPARATOR="|") AS ?synonyms)
+{
+  ?cls a owl:Class .
+  OPTIONAL {
+    ?cls rdfs:label ?lbl .
+  }
+  OPTIONAL {
+    ?cls oio:hasDbXref ?xref .
+  }
+  OPTIONAL {
+    ?cls oio:hasExactSynonym ?synonym .
+  }
+  FILTER(isIRI(?cls) && (STRSTARTS(str(?cls), "http://www.orpha.net/ORDO/Orphanet_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/DOID_")))
+} GROUP BY ?cls ?label
