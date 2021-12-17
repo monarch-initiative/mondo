@@ -70,18 +70,14 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 
 1. In Terminal, navigate to ..mondo/src/ontology
 1. Run your owltools command
-1. **Review diff**: Check the output in GitHub desktop. _Note: you may see an unexpected addition at the top that starts with owl-axioms... This is because two IDs were added to replacement term. The instructions below note to remove the additional ID, and this will go away after you do that._
-1. The dbxrefs should stay with the obsoleted class and not be moved to the replacement term. In the diff in GH Desktop, click beside the row with the added dbxef and right click and click Discard added line.
-
-![image](https://user-images.githubusercontent.com/6722114/146590909-a0fe6eec-9063-4b4e-82fb-7ac11e8aa87d.png)
-
-1. **Retain xrefx on obsolete term:** OWL Tools removes the xrefs from the obsoleted terms, but those should be retained. However, discarding the added line in GitHub Desktop does not add the xrefs back to the obsoleted term, so this needs to be done manually. It is easiest to open the mondo-edit.obo file in a text editor (like Atom) and copy the deleted xrefs from the diff and paste them back into the file for obsolete term. Any source annotations to MONDO:equivalentTo on a dbxref should be changed to MONDO:obsoleteEquivalent.
-1. Save the file.
+1. **Review diff**: Check the output in GitHub Desktop. _Note: you may see an unexpected addition at the top that starts with owl-axioms... This is because two IDs were added to replacement term. The instructions below note to remove the additional ID, and this will go away after you do that._
+1. The dbxrefs should stay with the obsoleted class and not be moved to the replacement term. In the diff in GH Desktop, make sure you are in split view (click on the settings icon on the upper right). Click beside the row with the added dbxef (in green) and right click and click Discard added line. Do the same for the removed  dbxrefs (in red).
 
 1. Open a new version of mondo-edit.obo in Protege
 1. **Obsoleted class**: Search for the term that was obsoleted
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and write 'terms merged' in the literal field.
+1. Any source annotations to MONDO:equivalentTo on a dbxref should be changed to MONDO:obsoleteEquivalent.
 1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
 1. **Replacement term**: Search for the 'term replaced by' term
 1. Delete the old ID (_if you check the diff after doing this and saving, you'll see the unexpected addition will disappear_)
