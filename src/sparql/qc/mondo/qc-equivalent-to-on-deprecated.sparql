@@ -15,7 +15,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     
     ?entity owl:deprecated true 
 
-    FILTER ((str(?source)="MONDO:equivalentTo"))
+    FILTER ((str(?source)="MONDO:equivalentTo") || (str(?source)="MONDO:equivalentObsolete"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(?xref as ?property)
     BIND(?source as ?value)
