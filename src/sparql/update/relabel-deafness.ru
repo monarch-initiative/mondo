@@ -12,11 +12,26 @@ DELETE {
 INSERT {
     ?term rdfs:label ?new_label .
   	?term oboInOwl:hasNarrowSynonym ?label .
+		[ rdf:type owl:Axiom ;
+	     owl:annotatedSource ?term ;
+	     owl:annotatedProperty oboInOwl:hasNarrowSynonym ;
+	     owl:annotatedTarget ?label ;
+	     oboInOwl:hasDbXref ?xref ] .
   	?term rdfs:seeAlso <https://github.com/monarch-initiative/mondo/issues/551> .
 } 
 WHERE { 
   ?term rdfs:subClassOf* MONDO:0019497 .
   ?term rdfs:label ?label .
+	OPTIONAL {
+    ?term oboInOwl:hasDbXref ?xref .
+    ?axr rdf:type owl:Axiom ;
+         owl:annotatedSource ?term ;
+         owl:annotatedProperty oboInOwl:hasDbXref ;
+         owl:annotatedTarget ?xref ;
+         oboInOwl:source ?source .
+    FILTER(regex(str(?xref),"OMIM:") || regex(str(?xref),"OMIMPS:"))
+    FILTER(regex(str(?source), "MONDO:equivalentTo"))
+	}
   FILTER(regex(str(?label), "deafness"))
   BIND(REPLACE(str(?label), "deafness", "hearing loss") as ?new_label )
 }
