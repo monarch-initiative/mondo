@@ -2,6 +2,11 @@ name: Docs
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'docs/**'
   
 jobs:
   docs:
@@ -23,13 +28,11 @@ jobs:
       run: |
         python src/scripts/patterns_create_docs.py
     
-    - name: Check in the updated docs 
-      run: |
-        git add --force docs 
-        if [[ ! -z $(git status -s .) ]]
-        then
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m 'Updating generated pattern docs' .
-          git push
-        fi
+    - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update Mondo docs
+          title: 'Update Mondo docs'
+          body: |
+            Updates Mondo documenation.
+          assignees: nicolevasilevsky
