@@ -20,7 +20,6 @@ Stable release versions
 See [Changes.md](Changes.md) for more details
 
 
-
 ## Editors' version
 
 Editors of this ontology should use the edit version, [src/ontology/mondo-edit.obo](src/ontology/mondo-edit.obo)
