@@ -6,7 +6,6 @@ The Mondo pages are built managed using readthedocs.org at https://readthedocs.o
 
 Click on Failed to understand why the build is not progressing.
 
-> Add the following paragraph as well.
 
 # How are the patterns rebuilt? 
 
