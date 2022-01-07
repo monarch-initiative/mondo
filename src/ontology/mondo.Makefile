@@ -330,9 +330,13 @@ tmp/mondo-rdfxml.owl:
 report-tbd-query-%: tmp/mondo-rdfxml.owl
 	$(ROBOT) query --use-graphs true -i $< -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
-
 update-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
+
+update-merge-normalise-%: update-query-%
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
 
 .PHONY: r2e
 r2e:
