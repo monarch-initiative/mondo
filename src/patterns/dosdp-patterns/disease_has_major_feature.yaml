@@ -19,8 +19,8 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  disease: "disease"
-  phenotypic abnormality: "phenotype"
+  disease: '''disease'''
+  phenotypic abnormality: '''phenotype'''
 
 #name:
 #  text: '%s neoplasm'
@@ -44,7 +44,7 @@ vars:
 #  - structure
 
 equivalentTo:
-  text: "'%s' and ('disease has major feature' some %s)"
+  text: '''%s' and ('disease has major feature' some %s)'
   vars:
   - disease
   - phenotype
