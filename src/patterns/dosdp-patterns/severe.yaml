@@ -1,0 +1,40 @@
+pattern_name: severe
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/severe.yaml
+
+description: 'Pattern for describing the severity of a disease, in this case, a severe form of the disease.  
+Here severe means having a high degree of severity. This may correspond with specific genetic mutations (or homozygous or heterozygous forms).
+
+    Examples: [severe ichthyosis vulgaris](http://purl.obolibrary.org/obo/MONDO_0100475)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
+classes:
+  Severe: HP:0012828
+  disease: MONDO:0000001
+
+relations:
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+
+name:
+  text: severe %s
+  vars:
+  - disease
+
+def:
+  text: An instance of %s in which the disease presentation is severe in severity.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s and ''has modifier'' some ''Severe'''
+  vars:
+  - disease

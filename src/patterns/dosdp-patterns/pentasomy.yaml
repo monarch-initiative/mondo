@@ -1,0 +1,39 @@
+pattern_name: pentasomy
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/pentasomy.yaml
+
+description: 'This pattern is meant to be used for chromosomal disorder which consists of the presence of three additional chromosomes of the same type from the normal diploid number. Note that the presence of additional chromosomes refers to the entire chromosome, and not to part of a chromosome.' 
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  pentasomy: MONDO:0700085
+  chromosome: GO:0005694
+  
+
+relations:
+  disease arises from structure: RO:0004030
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  chromosome: "'chromosome'"
+# Even though the parent term is GO:0005694, a Monochrom term (CHR:##) is required.
+
+name:
+  text: 'pentasomy %s'
+  vars:
+  - chromosome
+
+def:
+  text: A chromosomal disorder consisting of the presence of 3 extra chromosomes %s.
+  vars:
+  - chromosome
+
+equivalentTo:
+  text: pentasomy and ('disease arises from structure' some %s)
+  vars:
+  - chromosome
