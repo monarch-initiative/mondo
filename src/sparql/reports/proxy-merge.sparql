@@ -1,0 +1,33 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+#description: Retrieves all cases where a Mondo term links to more than one term in the same source, aka 'proxy merge'
+
+SELECT DISTINCT ?source ?entity ?property (GROUP_CONCAT(DISTINCT ?xref1;SEPARATOR="|") as ?xrefs) WHERE {
+    ?entity oboInOwl:hasDbXref ?xref1 .
+    
+    ?entity oboInOwl:hasDbXref ?xref2 .
+    
+    ?xref_anno1 a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref1 ;
+           oboInOwl:source ?source1 .
+    
+    ?xref_anno2 a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref2 ;
+           oboInOwl:source ?source2 .
+
+    FILTER(?xref1!=?xref2)
+    FILTER (STRBEFORE(STR(?xref1),":")=STRBEFORE(STR(?xref2),":"))
+    FILTER (str(?source1)="MONDO:equivalentTo")
+    FILTER (str(?source2)="MONDO:equivalentTo")
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(oboInOwl:hasDbXref as ?property)
+    BIND(STRBEFORE(STR(?xref1),":") as ?source)
+}
+GROUP BY ?source ?entity ?property
+ORDER BY ?source ?entity
