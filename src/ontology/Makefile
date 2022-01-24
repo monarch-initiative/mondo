@@ -208,9 +208,11 @@ REMOVE_DECLARATIONS=
 # we remove declaration axioms for ALL classes;
 # all necessary ones are implicitly added back when converting back to OWL
 # see: https://github.com/owlcs/owlapi/pull/761
-filtered.owl: filtered.obo skos.ttl
+filtered-step1.owl: filtered.obo skos.ttl
 	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
 
+filtered.owl: filtered-step1.owl
+	$(ROBOT) remove --input $< --output $@ --term-file config/remove-annotations-before-release.txt
 
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
