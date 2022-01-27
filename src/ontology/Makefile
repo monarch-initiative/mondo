@@ -679,6 +679,9 @@ mirror/ncit.owl:
 mirror/cl.owl:
 	$(ROBOT) merge -I $(OBO)/cl/cl-base.owl reason relax reduce -o $@ && touch $@
 
+mirror/uberon.owl:
+	$(ROBOT) merge -I $(OBO)/uberon/uberon-base.owl reason relax reduce -o $@ && touch $@
+
 mirror/omo.owl:
 	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
 
