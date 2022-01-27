@@ -23,7 +23,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
 
   	FILTER (?entity2!=?entity)
     FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete"))
-  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete"))
+  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     FILTER (isIRI(?entity2) && STRSTARTS(str(?entity2), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(?xref as ?property)
