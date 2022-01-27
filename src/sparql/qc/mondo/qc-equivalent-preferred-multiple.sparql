@@ -12,17 +12,22 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
            owl:annotatedSource ?entity ;
            owl:annotatedProperty oboInOwl:hasDbXref ;
            owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source0 ;
            oboInOwl:source ?source1 .
   
   	?xref_anno2 a owl:Axiom ;
            owl:annotatedSource ?entity ;
            owl:annotatedProperty oboInOwl:hasDbXref ;
            owl:annotatedTarget ?xref2 ;
-           oboInOwl:source ?source2 .
-    
+           oboInOwl:source ?source2 ;
+           oboInOwl:source ?source4 .
+           
+
     FILTER(str(?xref2)!=str(?xref))
   	FILTER(STRBEFORE(str(?xref),":") = STRBEFORE(str(?xref2),":")) 
-    FILTER ((str(?source1)="MONDO:equivalentObsolete"))
+    FILTER ((str(?source0)="MONDO:preferredExternal"))
+    FILTER ((str(?source4)="MONDO:preferredExternal"))
+    FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:equivalentObsolete"))
   	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:equivalentObsolete"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(?xref as ?property)
