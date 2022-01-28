@@ -12,9 +12,7 @@ Obsoletion candidate term | A term that is proposed for obsoletion in the future
  As part of a release of the Mondo Disease Ontology, we produce three files that document key changes between the new release and the previous release:
 
 1.  Record of obsoletion candidates: a table that documents the terms that are still active, but proposed for obsoletion in the future.
-
 2.  Record of changes to ontology terms: a table that documents changes of key metadata elements to active and obsolete terms in the ontology.
-
 3.  Record of new terms: a table that documents terms that were not present in the previous release and have been added to the current release.
 
 In the following, we formally define the contents of these files in the form of a contract, the "Mondo Changelog Metadata Contract". That means that our users can rely on this structure for automatic processing.
@@ -23,53 +21,32 @@ Record of obsoletion candidates
 -------------------------------
 
 -   No MONDO term should appear more than once in this list.
-
 -   The records in the planned obsoletion or obsoletion candidate file represent the unique set of all MONDO terms (ids/labels) who are still active at the time of the release, but are scheduled for obsoletion in the future
-
 -   The git issue(s) and planned obsoletion date are required.
-
 -   The planned date may change from release to release.
-
 -   Multiple related git issues should be separated by the "|" (pipe) character.
-
 -   When a MONDO term is removed from the list it may be caused either by the fact that it has been "Obsoleted" or simply "Not an Obsoletion Candidate Anymore". 
 
 Changed Term records
 --------------------
 
 -   The records in the changed terms file represent the property values that have changed for a given MONDO term in a release (compared with the previous release).
-
--   Only specific core properties are tracked for changes, see below. The changed term table does not reflect the complete set of changes to Mondo terms (i.e. changes wrt to other properties).
-
--   Each record in this file MUST have a unique MONDO id + property combination of values. 
-
+-   Only specific core properties are tracked for changes, see below. The changed term table does not reflect the complete set of changes to Mondo terms (i.e. changes with regard to to other properties).
+-   Each record in this file MUST have a unique MONDO id + property combination of values.
 -   The previous (old) and new value of the given property on a given MONDO term are included in each record. 
-
--   The 4 properties being tracked are "label", "definition", "obsolete" flag, and "obsoletion_candidate" flag. 
-
--   "label" - the previous (old) value of the mondo label and the new value. 
-
--   This will include ANY change to the label including when the "obsolete" term is prepended at the time a MONDO term is actually obsoleted in a given release. 
-
--   Both old and new values are required (labels cannot be blank or empty). 
-
--   While the obsolete = TRUE state is the computably definitive way to determine if a term is obsoleted, we should reasonably expect all obsoleted terms to have a label change.
-
--   "definition" the previous (old) value of the mondo definition and the new value. 
-
--   This will include ANY change from typographic or minor editing to complete rewrites or removals.
-
--   "obsoletion_candidate" flag.
-
--   term is a boolean flag that changes from 
-
--   blank (or FALSE) to TRUE when a MONDO term is added to the obsoletion candidate list. 
-
--   TRUE to blank (or FALSE) when a MONDO term is removed from the obsoletion candidate list
-
--   Records that remain on the obsoletion candidate for several releases would not have a changed "obsoletion_candidate" flag value until they are obsoleted or removed for the candidate list without being obsoleted at which time the obsoletion_candidate flag would change from TRUE to blank (or FALSE).
-
--   "obsolete" flag term is a boolean value that changes from blank (or FALSE) to TRUE when a MONDO term is obsoleted in a given release. Blank and FALSE mean the same thing (the term is NOT obsoleted), but they are represented differently in the ontology: blank means, no owl:deprecated annotation, false means, owl:deprecated false. The latter case does not happen in practice intentionally, but it can happen by accident. 
+-   The 4 properties being tracked are "**label**", "**definition**", "**obsolete**" flag, and "**obsoletion_candidate**" flag. 
+    - "**label**" - the previous (old) value of the mondo label and the new value. 
+      - This will include ANY change to the label including when the "obsolete" term is prepended at the time a MONDO term is actually obsoleted in a given release. 
+      - Both old and new values are required (labels cannot be blank or empty). 
+      - While the obsolete = TRUE state is the computably definitive way to determine if a term is obsoleted, we should reasonably expect all obsoleted terms to have a label change.
+    - "**definition**" the previous (old) value of the mondo definition and the new value. 
+      - This will include ANY change from typographic or minor editing to complete rewrites or removals.
+    - "**obsoletion_candidate**" flag.
+      - term is a boolean flag that changes from 
+        - blank (or FALSE) to TRUE when a MONDO term is added to the obsoletion candidate list. 
+        - TRUE to blank (or FALSE) when a MONDO term is removed from the obsoletion candidate list
+      - Records that remain on the obsoletion candidate for several releases would not have a changed "obsoletion_candidate" flag value until they are obsoleted or removed for the candidate list without being obsoleted at which time the obsoletion_candidate flag would change from TRUE to blank (or FALSE).
+    - "**obsolete**" flag term is a boolean value that changes from blank (or FALSE) to TRUE when a MONDO term is obsoleted in a given release. Blank and FALSE mean the same thing (the term is NOT obsoleted), but they are represented differently in the ontology: blank means, no owl:deprecated annotation, false means, owl:deprecated false. The latter case does not happen in practice intentionally, but it can happen by accident. 
 
 -   If a MONDO term is ever "un-obsoleted" the values would change from TRUE to blank (or FALSE) - but this use case is yet to be observed in practice. 
 
