@@ -47,22 +47,15 @@ Changed Term records
         - TRUE to blank (or FALSE) when a MONDO term is removed from the obsoletion candidate list
       - Records that remain on the obsoletion candidate for several releases would not have a changed "obsoletion_candidate" flag value until they are obsoleted or removed for the candidate list without being obsoleted at which time the obsoletion_candidate flag would change from TRUE to blank (or FALSE).
     - "**obsolete**" flag term is a boolean value that changes from blank (or FALSE) to TRUE when a MONDO term is obsoleted in a given release. Blank and FALSE mean the same thing (the term is NOT obsoleted), but they are represented differently in the ontology: blank means, no owl:deprecated annotation, false means, owl:deprecated false. The latter case does not happen in practice intentionally, but it can happen by accident. 
-
--   If a MONDO term is ever "un-obsoleted" the values would change from TRUE to blank (or FALSE) - but this use case is yet to be observed in practice. 
-
--   Any MONDO term that is obsoleted (new value = TRUE) should have a corresponding change in the obsoletion_candidate flag value from TRUE to blank (or FALSE) if the MONDO term was on the candidate obsoletion list in a prior release (i.e. a term MUST NOT be obsolete and an obsoletion candidate at the same time). 
-
--   When a MONDO term is obsoleted the "label" property will likely be changed to have a prepended "obsolete" term prepended to the previous value of the label.
+      - If a MONDO term is ever "un-obsoleted" the values would change from TRUE to blank (or FALSE) - but this use case is yet to be observed in practice.   
+      - Any MONDO term that is obsoleted (new value = TRUE) should have a corresponding change in the obsoletion_candidate flag value from TRUE to blank (or FALSE) if the MONDO term was on the candidate obsoletion list in a prior release (i.e. a term MUST NOT be obsolete and an obsoletion candidate at the same time). 
+      - When a MONDO term is obsoleted the "label" property will likely be changed to have a prepended "obsolete" term prepended to the previous value of the label.
 
 New Term records
 ----------------
 
 -   No MONDO Id in the New Term records table have been present in the previous or any of the previous releases (i.e. are new)
-
 -   No MONDO id appears in more than two records.
-
 -   The MONDO id MUST NOT be in either of the other two files (changed terms and obsoletion candidate terms). 
-
 -   MONDO id, label, definition, obsolete flag and obsoletion_candidate flag values are provided. 
-
 -   The MONDO id and label are required.
