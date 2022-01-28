@@ -681,7 +681,8 @@ mirror/cl.owl:
 
 mirror/uberon.owl:
 	$(ROBOT) merge -I $(OBO)/uberon/uberon-base.owl reason relax reduce \
-		remove --base-iri $(OBO)/UBERON_ --base-iri $(OBO)/UBPROP_ --axioms external --preserve-structure false --trim false -o $@ && touch $@
+		remove --base-iri $(OBO)/UBERON --base-iri $(OBO)/UBPROP_ --axioms external --preserve-structure false --trim false \
+		remove --term rdfs:label --select complement --select "annotation-properties" -o $@ && touch $@
 
 mirror/omo.owl:
 	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
