@@ -39,8 +39,9 @@ _Note: While the release is running, don't shut your laptop or switch between re
 2. `cd git/mondo/src/ontology/`
 3. `MEMORY_GB=12 sh run.sh make IMP=false all -B` - note, this takes about 2-3 hours.
 4. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
-5. Make sure you see ‘release finished’ after the command has run
-6. Commit changes to a branch
+5. Review the file `src/ontology/reports/mondo_release_diff.md`. There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
+6. Make sure you see ‘release finished’ after the command has run
+7. Commit changes to a branch
    1. Create a branch and commit the changes on the branch
    1. Do a pull request (PR)
    1. Wait for GitHub Actions/QC to pass

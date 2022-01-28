@@ -81,7 +81,7 @@ print("----------------START LOG: DO NOT INCLUDE ME IN RELEASE NOTES------------
 print("")
 print("QC: obsoletion schema integrity checks")
 print("")
-print("Checkin table: Obsoletion candidates table")
+print("Checking: Obsoletion candidates table")
 print("")
 if not df_report_current_obsoletion_candidates['mondo_id'].is_unique:
     print("MONDO IDs in obsoletion candidate table are not unique.")
@@ -99,7 +99,7 @@ if len(df_report_current_obsoletion_candidates[df_report_current_obsoletion_cand
     print("")
 
 
-print("Table: Changed terms table")
+print("Checking: Changed terms table")
 print("")
 dfx = df_report_changed.groupby(['mondo_id', 'property']).size().reset_index(name='freq')
 
@@ -108,7 +108,7 @@ if len(dfx[dfx['freq']>1]):
     print(dfx[dfx['freq']>1])
     print("")
 
-print("Table: New terms table")
+print("Checking: New terms table")
 print("")
 dfx = df_report_changed.groupby(['mondo_id', 'property']).size().reset_index(name='freq')
 
