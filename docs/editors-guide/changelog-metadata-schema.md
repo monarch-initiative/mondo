@@ -49,7 +49,7 @@ Changed Term records
     - "**obsolete**" flag term is a boolean value that changes from blank (or FALSE) to TRUE when a MONDO term is obsoleted in a given release. Blank and FALSE mean the same thing (the term is NOT obsoleted), but they are represented differently in the ontology: blank means, no owl:deprecated annotation, false means, owl:deprecated false. The latter case does not happen in practice intentionally, but it can happen by accident. 
       - If a MONDO term is ever "un-obsoleted" the values would change from TRUE to blank (or FALSE) - but this use case is yet to be observed in practice.   
       - Any MONDO term that is obsoleted (new value = TRUE) should have a corresponding change in the obsoletion_candidate flag value from TRUE to blank (or FALSE) if the MONDO term was on the candidate obsoletion list in a prior release (i.e. a term MUST NOT be obsolete and an obsoletion candidate at the same time). 
-      - When a MONDO term is obsoleted the "label" property will likely be changed to have a prepended "obsolete" term prepended to the previous value of the label.
+      - When a MONDO term is obsoleted the "label" property will be changed to have a prepended "obsolete" term prepended to the previous value of the label.
 
 New Term records
 ----------------
