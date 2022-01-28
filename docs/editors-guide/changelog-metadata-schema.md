@@ -17,7 +17,7 @@ Obsoletion candidate term | A term that is proposed for obsoletion in the future
 
 In the following, we formally define the contents of these files in the form of a contract, the "Mondo Changelog Metadata Contract". That means that our users can rely on this structure for automatic processing.
 
-Record of obsoletion candidates
+Record of [obsoletion candidates](http://purl.obolibrary.org/obo/mondo/mondo_obsoletioncandidates.tsv)
 -------------------------------
 
 -   No MONDO term should appear more than once in this list.
@@ -27,7 +27,7 @@ Record of obsoletion candidates
 -   Multiple related git issues should be separated by the "|" (pipe) character.
 -   When a MONDO term is removed from the list it may be caused either by the fact that it has been "Obsoleted" or simply "Not an Obsoletion Candidate Anymore". 
 
-Changed Term records
+[Changed Term records](http://purl.obolibrary.org/obo/mondo/mondo_release_diff_changed_terms.tsv)
 --------------------
 
 -   The records in the changed terms file represent the property values that have changed for a given MONDO term in a release (compared with the previous release).
@@ -51,7 +51,7 @@ Changed Term records
       - Any MONDO term that is obsoleted (new value = TRUE) should have a corresponding change in the obsoletion_candidate flag value from TRUE to blank (or FALSE) if the MONDO term was on the candidate obsoletion list in a prior release (i.e. a term MUST NOT be obsolete and an obsoletion candidate at the same time). 
       - When a MONDO term is obsoleted the "label" property will be changed to have a prepended "obsolete" term prepended to the previous value of the label.
 
-New Term records
+[New Term records](http://purl.obolibrary.org/obo/mondo/mondo_release_diff_new_terms.tsv)
 ----------------
 
 -   No MONDO Id in the New Term records table have been present in the previous or any of the previous releases (i.e. are new)
