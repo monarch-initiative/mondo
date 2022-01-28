@@ -393,7 +393,7 @@ imports/seed.txt: edit-merged.owl
 	$(ROBOT) query -f tsv -i $< -s ../sparql/signature/classes.sparql $@.tmp && perl -npe 's@^\<@@;s@>$$@@' $@.tmp | sort -u > $@
 
 imports/%_terms.txt: imports/seed.txt
-	grep -hi $* $< $@ | sort -u  > $@.tmp && mv $@.tmp $@
+	touch $@ && grep -hi $* $< $@ | sort -u  > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Release
@@ -631,7 +631,7 @@ trigger-mirror:
 	touch $@
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: 
+mirror/%.owl:
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
