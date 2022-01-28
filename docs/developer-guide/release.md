@@ -47,6 +47,7 @@ _Note: While the release is running, don't shut your laptop or switch between re
    1. Wait for GitHub Actions/QC to pass
    1. Merge PR
 
+
 ### Initial Setup:
 Make sure the initial setup (see above) has been done :
 1. Download the `obo-simple-diff.pl` script to the "tools" directory and set-up your path to the tools directory.
@@ -66,7 +67,7 @@ Note- the date should be the date of the release in the format sh run.sh make GH
        - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
        - To add a description of the release: 
          - click edit
-         - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`
+         - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`.
          - click "update release"
    2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
       - go to changes.md
