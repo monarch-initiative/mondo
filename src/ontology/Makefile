@@ -680,7 +680,8 @@ mirror/cl.owl:
 	$(ROBOT) merge -I $(OBO)/cl/cl-base.owl reason relax reduce -o $@ && touch $@
 
 mirror/uberon.owl:
-	$(ROBOT) merge -I $(OBO)/uberon/uberon-base.owl reason relax reduce -o $@ && touch $@
+	$(ROBOT) merge -I $(OBO)/uberon/uberon-base.owl reason relax reduce \
+		remove --base-iri $(OBO)/UBERON_ --base-iri $(OBO)/UBPROP_ --axioms external --preserve-structure false --trim false -o $@ && touch $@
 
 mirror/omo.owl:
 	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
