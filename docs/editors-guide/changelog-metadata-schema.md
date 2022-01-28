@@ -22,7 +22,7 @@ Record of obsoletion candidates
 
 -   No MONDO term should appear more than once in this list.
 -   The records in the planned obsoletion or obsoletion candidate file represent the unique set of all MONDO terms (ids/labels) who are still active at the time of the release, but are scheduled for obsoletion in the future
--   The git issue(s) and planned obsoletion date are required.
+-   The git issue(s) and planned date are required.
 -   The planned date may change from release to release.
 -   Multiple related git issues should be separated by the "|" (pipe) character.
 -   When a MONDO term is removed from the list it may be caused either by the fact that it has been "Obsoleted" or simply "Not an Obsoletion Candidate Anymore". 
