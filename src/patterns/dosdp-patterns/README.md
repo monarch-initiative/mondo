@@ -451,6 +451,42 @@ Examples: [childhood astrocytic tumor](http://purl.obolibrary.org/obo/MONDO_0002
 | MONDO:0044767 | childhood adrenal gland pheochromocytoma  | MONDO:0004974 | adrenal gland pheochromocytoma |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/childhood.tsv)
+### Chromosomal region deletion
+*This pattern is meant to be used for chromosomal disorder which consists of the deletion of chromosomal region in which the chromosomal region is known. Note that to refer to a partial deletion of a chromosome when the region is not know (only the chromosome is known), the partial_chromosome_deletion pattern should be used.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/chromosomal_region_deletion.yaml |
+| Name | chromosomal_region_deletion |
+| Classes | MONDO:0000761, GO:0098687,  |
+| Variables | chromosomal_region (GO:0098687),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
+### Chromosomal region duplication
+*This pattern is meant to be used for chromosomal disorder which consists in the duplication of chromosomal region in which the chromosomal region is known. "Duplication" means an increase of copy number, and includes an extra copy (partial trisomy) and 2 extra copies (partial tetrasomy, also called triplication) of chromosomal region. Note that this pattern does not include the duplication of the entire chromosome (trisomy, tetrasomy, pentasomy).*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/chromosomal_region_duplication.yaml |
+| Name | chromosomal_region_duplication |
+| Classes | MONDO:0000762, GO:0098687,  |
+| Variables | chromosomal_region (GO:0098687),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
+### Chromosome type
+*This pattern is meant to be used for chromosomal disorder defined by the chromosome affected.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/chromosome_type.yaml |
+| Name | chromosome_type |
+| Classes | MONDO:0019040, GO:0005694,  |
+| Variables | chromosome (GO:0005694),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
 ### Chronic
 *This pattern is applied to diseases that are described as having an chronic duration, i.e. a disease having a slow progressive course of indefinite duration.
 Examples: [chronic bronchitis](http://purl.obolibrary.org/obo/MONDO_0005607), [chronic hepatitis B virus infection](http://purl.obolibrary.org/obo/MONDO_0005366)*
@@ -551,8 +587,32 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | MONDO:0001343 | impaired renal function disease | UBERON:0002113 | kidney                |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_by_dysfunctional_structure.tsv)
+### Disease has major feature
+*Diseases which have a phenotype as a major feature of the disease are included in this pattern, e.g. scurvy (MONDO:0009412) which has the major feature of low levels of vitamin C (HP:0100510).*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease_has_major_feature.yaml |
+| Name | disease_has_phenotype |
+| Classes | MONDO:0005070, HP:0000118,  |
+| Variables | disease (MONDO:0005070), phenotypic abnormality (HP:0000118),  |
+| Contributors | [0000-0002-7463-6306](https://orcid.org/0000-0002-7463-6306),  |
+| Examples |  |
+
+### Disease or disease like
+*This pattern is for grouping classes to group terms that are disease or disease-like. Sometimes we feel there is insufficient reason to group, and X and X-like are not connected via shared is-a but instead by shares-features-with. Children of this grouping class should be X and X-like disease. Examples: [viral disease or post-viral disorder](http://purl.obolibrary.org/obo/MONDO_0100321)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml |
+| Name | disease or disease-like |
+| Classes | MONDO:0000001,  |
+| Variables | disease1 (MONDO:0000001), disease2 (MONDO:0000001),  |
+| Contributors | [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
 ### Disease series by gene
-*This pattern is for diseases that are caused by a single variation or mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome.  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)*
+*This pattern is for diseases that are caused by a single variation or mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome. See more details about [disease naming in Mondo here](https://mondo.monarchinitiative.org/pages/disease-naming/).  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)*
 
 | Attribute | Info |
 |----------|----------|
@@ -676,6 +736,19 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | MONDO:0018384 | avascular necrosis of genetic origin                        | MONDO:0018373 | avascular necrosis                        |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hereditary.tsv)
+### Iatrogenic
+*Some diseases are caused by diagnostic and therapeutic procedures undertaken on a patient, such as a hospital acquired infection like MRSA. Use this pattern to define the iatrogenic form of a disease.
+Examples: ['iatrogenic botulism'](http://purl.obolibrary.org/obo/MONDO_0016778), ['iatrogenic Creutzfeldt-Jakob disease'](http://purl.obolibrary.org/obo/MONDO_0034976)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/iatrogenic.yaml |
+| Name | iatrogenic |
+| Classes | MONDO:0100426, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
 ### Idiopathic
 *This pattern is applied to diseases that are described as being idiopathic, i.e. having an uncertain or unknown cause.
 Examples: [idiopathic aplastic anemia](http://purl.obolibrary.org/obo/MONDO_0012197), [idiopathic avascular necrosis](http://purl.obolibrary.org/obo/MONDO_0018380)*
@@ -1102,6 +1175,19 @@ Examples: [skin meningioma](http://purl.obolibrary.org/obo/MONDO_0004429), [brai
 | MONDO:0004422 | cerebral falx meningioma          | UBERON:0006059 | falx cerebri           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/meningioma.tsv)
+### Mild
+*Pattern for describing the severity of a disease, in this case, a mild form of the disease. Here mild means having a relatively minor degree of severity. This may correspond with specific genetic mutations (or homozygous or heterozygous forms).
+Examples: [mild ichthyosis vulgaris](http://purl.obolibrary.org/obo/MONDO_0100474)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/mild.yaml |
+| Name | mild |
+| Classes | HP:0012825, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Examples |  |
+
 ### Mitochondrial subtype
 *A disease that is classified as a mitochondrial subtype, due to a defect in a mitochondrial gene, such as MONDO:0100134 'mitochondrial complex I deficiency, mitochondrial type'.*
 
@@ -1112,6 +1198,18 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Classes | SO:0000088, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Examples |  |
+
+### Monosomy
+*This pattern is meant to be used for chromosomal disorder which consists of the absence of one chromosome from the normal diploid number. Note that the absence of chromosome refers to the entire chromosome, and not to part of a chromosome.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/monosomy.yaml |
+| Name | monosomy |
+| Classes | MONDO:0020639, GO:0005694,  |
+| Variables | chromosome (GO:0005694),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
 | Examples |  |
 
 ### Mucoepidermoid carcinoma
@@ -1241,6 +1339,30 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
 | Examples |  |
 
+### Partial chromosomal deletion
+*This pattern is meant to be used for chromosomal disorder which consists of the deletion of part of a chromosome in which only the chromosome which part is deleted is known (the chromosomal region is not known). Note that when the chromosomal region is known, the chromosomal_region_deletion pattern should be used. Also note that this pattern does not include the loss of the entire chromosome (monosomy).*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/partial_chromosomal_deletion.yaml |
+| Name | partial_chromosomal_deletion |
+| Classes | MONDO:0000761, GO:0005694,  |
+| Variables | chromosome (GO:0005694),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
+### Pentasomy
+*This pattern is meant to be used for chromosomal disorder which consists of the presence of three additional chromosomes of the same type from the normal diploid number. Note that the presence of additional chromosomes refers to the entire chromosome, and not to part of a chromosome.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/pentasomy.yaml |
+| Name | pentasomy |
+| Classes | MONDO:0700085, GO:0005694,  |
+| Variables | chromosome (GO:0005694),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
 ### Poisoning
 *A disease that is caused by exposure to an environmental stimulus that causes poisoning.  Examples: [colchicine poisoning](http://purl.obolibrary.org/obo/MONDO_0017859), [cocaine intoxication](http://purl.obolibrary.org/obo/MONDO_0019544)*
 
@@ -1251,18 +1373,20 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Classes | MONDO:0029000, BFO:0000040,  |
 | Variables | stimulus (BFO:0000040),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-7463-6306](https://orcid.org/0000-0002-7463-6306),  |
-| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/poisoning.tsv) |
+| Examples |  |
 
-#### Data preview: 
-| defined:class                                | defined:class:label       | stimulus                                   | stimulus:label             |
-|:---------------------------------------------|:--------------------------|:-------------------------------------------|:---------------------------|
-| MONDO:0019544 | cocaine intoxication      | CHEBI:27958 | cocaine                    |
-| MONDO:0017859 | colchicine poisoning      | CHEBI:23359 | colchicine                 |
-| MONDO:0017863 | digitalis poisoning       | CHEBI:4551  | digoxin                    |
-| MONDO:0017861 | ethylene glycol poisoning | CHEBI:30742 | ethylene glycol            |
-| MONDO:0017638 | manganese poisoning       | CHEBI:25154 | manganese molecular entity |
+### Polygenic disorder
+*This pattern is for diseases that are caused by a variation (or mutation) in a two or more genes. The relation disease has basis in dysfunction should be used for each gene that is affected. For digenic diseases, this would be twice, for polygenic diseases, it would be 3 or more. Examples: [Usher syndrome, type 1D/F](http://purl.obolibrary.org/obo/MONDO_0100050)*
 
-See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/poisoning.tsv)
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/polygenic_disorder.yaml |
+| Name | polygenic_disorder |
+| Classes | MONDO:0000001, SO:0001217,  |
+| Variables | disease (MONDO:0000001), gene (SO:0001217),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
 ### Postinfectious disease
 *A design pattern for conditions such as post-herpetic neuralgia or postinfectious encephalitis, where the disease is secondary to the initial infection.
 TODO: write better guidelines on what constitutes a secondary disease vs primary. * We do not use this pattern for AIDS-HIV for example, instead representing this is using SubClassOf. * We draw a distinction between infectious and postinfectious encepahlitis. * we do not use this pattern for chickenpox, but we do for shingles*
@@ -1274,6 +1398,18 @@ TODO: write better guidelines on what constitutes a secondary disease vs primary
 | Classes | MONDO:0000001, MONDO:0005550, NCBITaxon:1,  |
 | Variables | disease (NCBITaxon:1), feature (MONDO:0005550),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Examples |  |
+
+### Pregnancy form of disorder
+*An instance of a disease is associated with a pregnancy. Examples: [pregnancy associated osteoporosis](http://purl.obolibrary.org/obo/MONDO_0100194), [hypertension, pregnancy-induced](http://purl.obolibrary.org/obo/MONDO_0024664)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/pregnancy_form_of_disorder.yaml |
+| Name | pregnancy_form_of_disorder |
+| Classes | MONDO:0000001, MONDO:0024575,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples |  |
 
 ### Primary infectious
@@ -1320,8 +1456,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples |  |
 
 ### Realized in response to environmental exposure
-*This pattern is used for a disease, where the cause of the disease is an exposure to an environmental stimulus (using ECTO exposure terms). Note that this pattern does not include infectious disease or classes that would include an organism, virus or viroid. Rather it includes exposures to chemicals (includng drugs), or mixtures.
-Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_0029001), [alcohol amnestic disorder](http://purl.obolibrary.org/obo/MONDO_0021702), [alcoholic polyneuropathy](http://purl.obolibrary.org/obo/MONDO_0006645) (26 total)*
+*This pattern is used for a disease, where the cause of the disease is an exposure to an environmental stimulus (using ECTO exposure terms) or a medical action, such as a therapeutic treatment (using MAxO terms). Note that this pattern does not include infectious disease or classes that would include an organism, virus or viroid. Rather it includes exposures to chemicals (includng drugs), or mixtures.
+Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_0029001), [alcohol amnestic disorder](http://purl.obolibrary.org/obo/MONDO_0021702), [alcoholic polyneuropathy](http://purl.obolibrary.org/obo/MONDO_0006645), [chemotherapy-induced alopecia](http://purl.obolibrary.org/obo/MONDO_0005483) (26 total)*
 
 | Attribute | Info |
 |----------|----------|
@@ -1387,6 +1523,18 @@ Examples: [rhabdomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/
 | MONDO:0002856 | gallbladder rhabdomyosarcoma            | UBERON:0002110 | gall bladder           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/rhabdomyosarcoma.tsv)
+### Ring chromosome anomaly
+*This pattern is meant to be used for chromosomal disorder which consists of the presence of a ring chromosome. A ring chromosome is a chromosome whose arms have fused together to form a ring, often with the loss of the ends of the chromosome.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/ring_chromosome_anomaly.yaml |
+| Name | ring_chromosome_anomaly |
+| Classes | MONDO:0700091, GO:0005694,  |
+| Variables | chromosome (GO:0005694),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
 ### Sarcoma
 *Sarcomas are malignant neoplasms arising from soft tissue or bone.
 This is a design pattern for classes representing sarcomas based on their location. This may be the site of origin, but it can also represent a secondary site for metastatized sarcma.
@@ -1411,6 +1559,19 @@ We use the generic 'disease has location' relation, which generalized over prima
 | MONDO:0001374 | bladder sarcoma         | UBERON:0001255 | urinary bladder  |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/sarcoma.tsv)
+### Severe
+*Pattern for describing the severity of a disease, in this case, a severe form of the disease. Here severe means having a high degree of severity. This may correspond with specific genetic mutations (or homozygous or heterozygous forms).
+Examples: [severe ichthyosis vulgaris](http://purl.obolibrary.org/obo/MONDO_0100475)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/severe.yaml |
+| Name | severe |
+| Classes | HP:0012828, MONDO:0000001,  |
+| Variables | disease (MONDO:0000001),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Examples |  |
+
 ### Small cell carcinoma
 *This is auto-generated. Add your description here
 Examples: [cervical small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0006142), [pancreatic small cell neuroendocrine carcinoma](http://purl.obolibrary.org/obo/MONDO_0006348), [ureter small cell carcinoma](http://purl.obolibrary.org/obo/MONDO_0006482) (16 total)*
@@ -1626,6 +1787,30 @@ Note that the isolated and syndromic forms will be inferred to be disjoint due t
 | MONDO:0015246 | syndromic anorectal malformation      | MONDO:0019938 | anorectal malformation        |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/syndromic.tsv)
+### Tetrasomy
+*This pattern is meant to be used for chromosomal disorder which consists of the presence of two additional chromosomes of the same type from the normal diploid number. Note that the presence of additional chromosomes refers to the entire chromosome, and not to part of a chromosome.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/tetrasomy.yaml |
+| Name | tetrasomy |
+| Classes | MONDO:0030502, GO:0005694,  |
+| Variables | chromosome (GO:0005694),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
+### Trisomy
+*This pattern is meant to be used for chromosomal disorder which consists of the presence of one additional chromosome from the normal diploid number. Note that the presence of additional chromosome refers to the entire chromosome, and not to part of a chromosome.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/trisomy.yaml |
+| Name | trisomy |
+| Classes | MONDO:0700065, GO:0005694,  |
+| Variables | chromosome (GO:0005694),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
 ### Vector borne disease
 *An infectious disease where a pathogen is carried and transmitted by another organism that acts as disease vector. Examples: MONDO_0020601 'mosquito-borne viral encephalitis', MONDO_0017572 'tick-borne encephalitis'*
 
