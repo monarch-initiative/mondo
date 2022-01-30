@@ -102,6 +102,7 @@ list: $(MYDIR)/*
 		echo "" >> $@ ;\
 	done
 
+.PHONY: qc_docs
 qc_docs: ../../docs/editors-guide/quality-control-tests.md
 
 pattern_mkdocs:
