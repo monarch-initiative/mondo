@@ -39,12 +39,14 @@ _Note: While the release is running, don't shut your laptop or switch between re
 2. `cd git/mondo/src/ontology/`
 3. `MEMORY_GB=12 sh run.sh make IMP=false all -B` - note, this takes about 2-3 hours.
 4. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
-5. Make sure you see ‘release finished’ after the command has run
-6. Commit changes to a branch
+5. Review the file `src/ontology/reports/mondo_release_diff.md`. There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
+6. Make sure you see ‘release finished’ after the command has run
+7. Commit changes to a branch
    1. Create a branch and commit the changes on the branch
    1. Do a pull request (PR)
    1. Wait for GitHub Actions/QC to pass
    1. Merge PR
+
 
 ### Initial Setup:
 Make sure the initial setup (see above) has been done :
@@ -65,7 +67,7 @@ Note- the date should be the date of the release in the format sh run.sh make GH
        - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
        - To add a description of the release: 
          - click edit
-         - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`
+         - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`.
          - click "update release"
    2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
       - go to changes.md
