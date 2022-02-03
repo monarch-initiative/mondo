@@ -29,5 +29,5 @@ jobs:
       - name: Run ontology QC checks
         env:
           DEFAULT_BRANCH: master
-        run: cd src/ontology; make GITHUB_ACTION=true test -B
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
 
