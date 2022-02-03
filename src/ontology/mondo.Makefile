@@ -334,10 +334,40 @@ report-tbd-query-%: tmp/mondo-rdfxml.owl
 update-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
 
+construct-query-%:
+	$(ROBOT) query --use-graphs true -i $(SRC) --query $(SPARQLDIR)/update/$*.ru tmp/construct-$*.ttl
+
+construct-merge-query-%: construct-query-%
+	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*.ttl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+construct-unmerge-query-%: construct-query-%
+	$(ROBOT) unmerge -i $(SRC) -i tmp/construct-$*.ttl convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+# This first merges a the result of a construct query to mondo-edit, than unmerges another
+construct-remerge-query-%: construct-query-% construct-query-%-new
+	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*-new.ttl --collapse-import-closure false \
+		unmerge -i tmp/construct-$*.ttl \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+fix-disorder-names:
+	make construct-unmerge-query-construct-disorders-conformsTo-location-label
+	make construct-merge-query-construct-disorders-conformsTo-location-newlabel
+	
+
 update-merge-normalise-%: update-query-%
 	mv $(SRC).obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
+
 
 .PHONY: r2e
 r2e:

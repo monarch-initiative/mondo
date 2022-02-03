@@ -126,6 +126,14 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
 
+## Simple mass obsoletion pipeline
+
+If you only want to obsolete terms without taking another look, you can use the simple mass obsoletion pipeline:
+
+1. add all terms you wish to obsolete to config/obsolete_me.txt
+1. run `sh run.sh make mass_obsolete2 -B`
+1. Very carefully review the diff. More carefully then usual!
+
 ## When to obsolete / merge
 
 If a term is a candidate for obsoletion and/or merging, this should be reported on the [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues) and labeled 'obsolete'. Click [here](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3Aobsolete) for potential terms to be obsoleted.
