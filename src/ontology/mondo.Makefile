@@ -381,6 +381,17 @@ OBS_REASON=outOfScope
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+mass_obsolete2: config/obsolete_me.txt tmp/mass_obsolete.ru
+	echo "Make sure you have updated ../sparql/update/mondo-obsolete-simple.ru before running this script.."
+	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
+		remove -T config/obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
 MAPPINGSDIR=mappings
 MAPPING_IDS=ordo omim mondo
 ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
