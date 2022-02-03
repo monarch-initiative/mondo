@@ -13,7 +13,7 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v2
       - name: Run diff
-        run: cd src/ontology/ && make IMP=false PAT=false MIR=false all_release_reports
+        run: cd src/ontology/ && make IMP=false PAT=false MIR=false GITHUB_ACTION=true all_release_reports
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
