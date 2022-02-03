@@ -71,7 +71,7 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 1. In Terminal, navigate to ..mondo/src/ontology
 1. Run your owltools command
 1. **Review diff**: Check the output in GitHub Desktop. _Note: you may see an unexpected addition at the top that starts with owl-axioms... This is because two IDs were added to replacement term. The instructions below note to remove the additional ID, and this will go away after you do that._
-1. The dbxrefs should stay with the obsoleted class and not be moved to the replacement term. In the diff in GH Desktop, make sure you are in split view (click on the settings icon on the upper right). Click beside the row with the added dbxef (in green) and right click and click Discard added line. Do the same for the removed  dbxrefs (in red).
+1. The owltools command will move all of the dbxrefs to the new term. We can have proxy merges, ie two MONDO:equivalentTo xrefs from the same source. If this is the case, one dbxref should be marked as MONDO:preferredExternal (as a source annotation on the dbxref). 
 
 1. Open a new version of mondo-edit.obo in Protege
 1. **Obsoleted class**: Search for the term that was obsoleted
