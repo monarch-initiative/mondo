@@ -195,6 +195,9 @@ ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
 filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@(equivalent|otherHierarchy|subClassOf|directSiblingOf|superClassOf|ntbt|btnt)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	$(ROBOT) query -i $@ --use-graphs true --update ../sparql/update/delete-axiom-annotations.ru \
+		remove --term-file config/remove-annotations-before-release.txt \
+		convert -f obo --check false -o $@.obo && mv $@.obo $@
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 skos.ttl: filtered.obo
@@ -208,11 +211,8 @@ REMOVE_DECLARATIONS=
 # we remove declaration axioms for ALL classes;
 # all necessary ones are implicitly added back when converting back to OWL
 # see: https://github.com/owlcs/owlapi/pull/761
-filtered-step1.owl: filtered.obo skos.ttl
+filtered.owl: filtered.obo skos.ttl
 	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
-
-filtered.owl: filtered-step1.owl
-	$(ROBOT) remove --input $< --output $@ --term-file config/remove-annotations-before-release.txt
 
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
