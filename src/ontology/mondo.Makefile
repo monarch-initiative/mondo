@@ -377,8 +377,8 @@ reports/mondo_base_current_%.tsv: mondo-base.owl
 reports/mondo_base_last_%.tsv: tmp/mondo-lastbase.owl
 	$(ROBOT) query --use-graphs true -i tmp/mondo-lastbase.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
-reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv
-	python ../scripts/merge_release_diff.py reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv > reports/mondo_release_diff.md
+reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv reports/mondo_obsoletioncandidates.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv
+	python ../scripts/merge_release_diff.py reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv > reports/mondo_release_diff.md
 	sed -i 's/  */ /g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md
@@ -574,3 +574,36 @@ migrate-%: tmp/mondo-edit-%.ttl
 	$(ROBOT) convert -i $< -f obo -o $@
 
 migrate: migrate-omim
+
+#######################################
+### New Pattern merge pipeline ########
+#######################################
+
+../patterns/data/default/%.owl: ../patterns/data/default/%.tsv $(SRC)
+	dosdp-tools generate --catalog=catalog-v001.xml --obo-prefixes=true --restrict-axioms-to=logical --ontology=$(SRC)  --template=../patterns/dosdp-patterns/$*.yaml --outfile=$@ generate --infile=$<
+
+../patterns/data/default/%_terms.txt: ../patterns/data/default/%.tsv
+	cut -f1 $< | tail -n +2 | sed 's!http://purl.obolibrary.org/obo/MONDO_!MONDO:!g' > $@
+
+tmp/remove_%.ru: ../patterns/data/default/%_terms.txt
+	echo "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>" > $@
+	echo "prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>" >> $@
+	echo "PREFIX owl: <http://www.w3.org/2002/07/owl#>" >> $@
+	echo "DELETE {" >> $@
+	echo "?list owl:equivalentClass ?equivalent ." >> $@
+	echo "}" >> $@
+	echo "WHERE {" >> $@
+	LISTT="$(shell paste -sd" " ../patterns/data/default/$*_terms.txt)"; echo "  VALUES ?list { $$LISTT }" >> $@
+	echo "  ?list owl:equivalentClass ?equivalent ." >> $@
+	echo "  FILTER(isBlank(?equivalent))" >> $@
+	echo "}" >> $@
+
+dosdp-merge-%: ../patterns/data/default/%.owl tmp/remove_%.ru
+	$(ROBOT) query -i $(SRC) --update tmp/remove_$*.ru \
+		merge -i $< --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+		mv tmp/$(SRC) $(SRC)
+		make NORM
+		mv NORM $(SRC)
+
+p1: dosdp-merge-acute
