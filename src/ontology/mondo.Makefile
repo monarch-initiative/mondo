@@ -381,13 +381,30 @@ OBS_REASON=outOfScope
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
+tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
 tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
 	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-mass_obsolete2: config/obsolete_me.txt tmp/mass_obsolete.ru
+tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
+	$(ROBOT) query -i $(SRC) --use-graphs true -f tsv --query $< $@
+	sed -i 's/[?]//g' $@
+	sed -i 's/<http:[/][/]purl[.]obolibrary[.]org[/]obo[/]MONDO_/MONDO:/g' $@
+	sed -i 's/>//g' $@
+
+.PHONY: mass_obsolete_warning
+mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
+	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
+
+mass_obsolete2: tmp/mass_obsolete_me.txt tmp/mass_obsolete.ru
 	echo "Make sure you have updated ../sparql/update/mondo-obsolete-simple.ru before running this script.."
+	make mass_obsolete_warning
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
-		remove -T config/obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
+		remove -T $< --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
@@ -419,7 +436,7 @@ reports/mondo_base_current_%.tsv: mondo-base.owl
 reports/mondo_base_last_%.tsv: tmp/mondo-lastbase.owl
 	$(ROBOT) query --use-graphs true -i tmp/mondo-lastbase.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
-reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv reports/mondo_obsoletioncandidates.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv
+reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv
 	python ../scripts/merge_release_diff.py reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv > reports/mondo_release_diff.md
 	sed -i 's/  */ /g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md

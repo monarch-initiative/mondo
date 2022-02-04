@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+
+SELECT DISTINCT ?entity
+WHERE {
+  VALUES ?entity { MONDO:0000000 }  .
+  ?entity a owl:Class .
+  FILTER NOT EXISTS { ?entity oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> . }
+}
