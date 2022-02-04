@@ -7,8 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:mondo="http://purl.obolibrary.org/obo/mondo#"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/components/mondo-tags.owl"/>
     
 
@@ -39,12 +38,6 @@
     <!-- http://purl.org/dc/terms/conformsTo -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/conformsTo"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#source -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#source"/>
     
 
 
@@ -7921,7 +7914,6 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0002697 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002697">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location.yaml"/>
     </owl:Class>
     
@@ -17998,6 +17990,14 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005803 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005803">
+        <mondo:should_conform_to rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/MONDO_0005805 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005805">
@@ -18166,22 +18166,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005853">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/malignant.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0005854 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005854">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0005861 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005861">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -19597,14 +19581,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0006337">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0006339 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0006339">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -21309,7 +21285,6 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0007071 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0007071">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
         <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql"/>
     </owl:Class>
     
@@ -22525,14 +22500,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0007800 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0007800">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0007805 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0007805">
@@ -23000,14 +22967,6 @@
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/inflammatory_disease_by_site.yaml"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_inflammatory_disease_by_site.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0008055 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0008055">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql"/>
     </owl:Class>
     
 
@@ -23716,7 +23675,6 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0008523 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0008523">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
         <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql"/>
     </owl:Class>
     
@@ -24772,14 +24730,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0009265 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0009265">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0009269 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0009269">
@@ -25061,14 +25011,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0009401">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0009410 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0009410">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -25511,7 +25453,6 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0009715 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0009715">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml"/>
     </owl:Class>
     
@@ -25862,8 +25803,6 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0009867 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0009867">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml"/>
     </owl:Class>
     
@@ -26124,14 +26063,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0010030">
         <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0010035 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0010035">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -27478,14 +27409,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0010798 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0010798">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0010806 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0010806">
@@ -28291,14 +28214,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0011147 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0011147">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0011153 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0011153">
@@ -28984,14 +28899,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0011413">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0011414 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0011414">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -31565,7 +31472,6 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0012382 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0012382">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml"/>
     </owl:Class>
     
@@ -43884,14 +43790,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0015927 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0015927">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0015932 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0015932">
@@ -44357,14 +44255,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0016172">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0016174 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0016174">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -45450,14 +45340,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0017164 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017164">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0017169 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017169">
@@ -45938,7 +45820,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017638">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -46066,14 +45947,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017765">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic.yaml"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic_disrupts.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0017771 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017771">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -46246,7 +46119,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017859">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -46255,7 +46127,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017860">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -46264,7 +46135,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017861">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -46273,7 +46143,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017862">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -46282,7 +46151,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0017863">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -46515,14 +46383,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018100">
         <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
         <mondo:should_conform_to rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0018104 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018104">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -47088,14 +46948,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0018619 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018619">
-        <mondo:should_conform_to rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0018630 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018630">
@@ -47165,13 +47017,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018683">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml"/>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MONDO_0018683"/>
-        <owl:annotatedProperty rdf:resource="http://purl.org/dc/terms/conformsTo"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml"/>
-        <oboInOwl:source>MONDOLEX:0018683</oboInOwl:source>
-        <oboInOwl:source>NCIT:C112831</oboInOwl:source>
-    </owl:Axiom>
     
 
 
@@ -47228,7 +47073,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018741">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -47309,14 +47153,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018781">
         <mondo:should_conform_to rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0018786 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0018786">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -47788,14 +47624,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0019093 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019093">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0019095 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019095">
@@ -47922,14 +47750,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019165">
         <mondo:should_conform_to rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0019167 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019167">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -48505,14 +48325,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0019414 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019414">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0019436 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019436">
@@ -48688,7 +48500,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019544">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -49074,14 +48885,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019852">
         <mondo:should_conform_to rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml"/>
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/hereditary.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0019870 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0019870">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -53755,14 +53558,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MONDO_0022201 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0022201">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MONDO_0022293 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0022293">
@@ -53938,14 +53733,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0022742">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/realized_in_response_to_environmental_exposure.yaml"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0022754 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0022754">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
 
@@ -56787,7 +56574,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0034212">
         <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/environmental_stimulus.yaml"/>
-        <terms:conformsTo rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/poisoning.yaml"/>
     </owl:Class>
     
 
@@ -57372,14 +57158,6 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0042496 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0042496">
-        <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MONDO_0042499 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0042499">
         <mondo:excluded_from_qc_check rdf:resource="http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql"/>
     </owl:Class>
     
@@ -60016,5 +59794,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
 
