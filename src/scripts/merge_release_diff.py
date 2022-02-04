@@ -225,6 +225,6 @@ print("### Terms that were previously candidate for obsoletion and are now not a
 print("")
     
 if len(df_old_obsolete_candidates)>0:
-    print(df_obsolete_candidates[['Mondo ID','Label']].to_markdown(index=False))
+    print(df_old_obsolete_candidates[['Mondo ID','Label']].to_markdown(index=False))
 else:
     print("No changes.")
