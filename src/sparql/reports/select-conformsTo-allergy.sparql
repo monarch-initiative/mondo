@@ -1,4 +1,5 @@
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dcterms: <http://purl.org/dc/terms/>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -12,7 +13,7 @@ SELECT ?term ?term_label
 WHERE 
 { 
   ?term rdfs:label ?term_label .
-  ?term <http://purl.org/dc/terms/conformsTo> mondoPatterns:allergy.yaml .
+  ?term dcterms:conformsTo mondoPatterns:allergy.yaml .
   FILTER NOT EXISTS { ?term owl:deprecated "true"^^xsd:boolean . }  
   FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
 }

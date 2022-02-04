@@ -102,6 +102,7 @@ list: $(MYDIR)/*
 		echo "" >> $@ ;\
 	done
 
+.PHONY: qc_docs
 qc_docs: ../../docs/editors-guide/quality-control-tests.md
 
 pattern_mkdocs:
@@ -333,10 +334,40 @@ report-tbd-query-%: tmp/mondo-rdfxml.owl
 update-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
 
+construct-query-%:
+	$(ROBOT) query --use-graphs true -i $(SRC) --query $(SPARQLDIR)/update/$*.ru tmp/construct-$*.ttl
+
+construct-merge-query-%: construct-query-%
+	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*.ttl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+construct-unmerge-query-%: construct-query-%
+	$(ROBOT) unmerge -i $(SRC) -i tmp/construct-$*.ttl convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+# This first merges a the result of a construct query to mondo-edit, than unmerges another
+construct-remerge-query-%: construct-query-% construct-query-%-new
+	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*-new.ttl --collapse-import-closure false \
+		unmerge -i tmp/construct-$*.ttl \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+fix-disorder-names:
+	make construct-unmerge-query-construct-disorders-conformsTo-location-label
+	make construct-merge-query-construct-disorders-conformsTo-location-newlabel
+	
+
 update-merge-normalise-%: update-query-%
 	mv $(SRC).obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
+
 
 .PHONY: r2e
 r2e:
@@ -349,6 +380,17 @@ OBS_REASON=outOfScope
 
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
+
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+mass_obsolete2: config/obsolete_me.txt tmp/mass_obsolete.ru
+	echo "Make sure you have updated ../sparql/update/mondo-obsolete-simple.ru before running this script.."
+	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
+		remove -T config/obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
 
 MAPPINGSDIR=mappings
 MAPPING_IDS=ordo omim mondo
@@ -377,8 +419,8 @@ reports/mondo_base_current_%.tsv: mondo-base.owl
 reports/mondo_base_last_%.tsv: tmp/mondo-lastbase.owl
 	$(ROBOT) query --use-graphs true -i tmp/mondo-lastbase.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
-reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv
-	python ../scripts/merge_release_diff.py reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv > reports/mondo_release_diff.md
+reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv reports/mondo_obsoletioncandidates.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv
+	python ../scripts/merge_release_diff.py reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv > reports/mondo_release_diff.md
 	sed -i 's/  */ /g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md

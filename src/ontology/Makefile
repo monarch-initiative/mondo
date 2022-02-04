@@ -193,8 +193,16 @@ deploy_assets_direct:
 
 ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
+# the GITHUB_ACTION flag should be set to true to skip computationally intensive actions in the pipeline that are not necessary for QC, see filtered.obo
+# Use sparingly
+
+GITHUB_ACTION = false
+
 filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@(equivalent|otherHierarchy|subClassOf|directSiblingOf|superClassOf|ntbt|btnt)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false --update ../sparql/update/delete-axiom-annotations.ru \
+		remove --term-file config/remove-annotations-before-release.txt \
+		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 skos.ttl: filtered.obo
@@ -210,7 +218,6 @@ REMOVE_DECLARATIONS=
 # see: https://github.com/owlcs/owlapi/pull/761
 filtered.owl: filtered.obo skos.ttl
 	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
-
 
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
@@ -720,11 +727,15 @@ mirror/dipper-%.obo: mirror/dipper-%.ttl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
 
 
-mirror/hgnc.owl: mirror/dipper-hgnc.ttl
-	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
-	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
-		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl
+mirror/hgnc.owl:
+	echo "WARNING: HGNC MIRROR TEMPORARILY SKIPPED (KINDA AN ERROR)!"
+
+#mirror/hgnc.owl: mirror/dipper-hgnc.ttl
+#	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
+#	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+#		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+#		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl
+
 #	$(ROBOT) query construct
 #	owltools $< --remove-axioms -t EquivalentClasses -o $@
 #	owltools $< --remove-dangling -o $@
