@@ -727,11 +727,15 @@ mirror/dipper-%.obo: mirror/dipper-%.ttl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
 
 
-mirror/hgnc.owl: mirror/dipper-hgnc.ttl
-	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
-	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
-		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl
+mirror/hgnc.owl:
+	echo "WARNING: HGNC MIRROR TEMPORARILY SKIPPED (KINDA AN ERROR)!"
+
+#mirror/hgnc.owl: mirror/dipper-hgnc.ttl
+#	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
+#	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+#		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+#		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl
+
 #	$(ROBOT) query construct
 #	owltools $< --remove-axioms -t EquivalentClasses -o $@
 #	owltools $< --remove-dangling -o $@
