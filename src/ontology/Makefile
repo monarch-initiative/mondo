@@ -550,8 +550,8 @@ reports/query-%-mondo.owl.tsv: mondo.owl $(SPARQLDIR)/reports/%.sparql
 	$(ROBOT) query -f tsv -i $< -s $(SPARQLDIR)/reports/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # TODO: replace with sparql
-reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
-	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
+#reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
+#	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 #RR=$(HOME)/repos/rctauber/robot/bin/$(ROBOT) report --fail-on none
 RR= $(ROBOT) report --fail-on ERROR --profile profile.txt --print 8
