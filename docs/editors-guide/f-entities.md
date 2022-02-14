@@ -44,7 +44,8 @@ EFO > {Orphanet,NCIT} > DesignPattern > DOID
 
 NCIT is generally favored over Orphanet, except for genetic non-cancer diseases.
 
-We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus). More details on [how to write simple, concise, and clear operational text definitions is here](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/).
+
+We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus). If you edit a definition and it deviates from the definition dbxref, add your ORCID as an additional dbxref. More details on [how to write simple, concise, and clear operational text definitions is here](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/). 
 
 ## Synonyms
 
