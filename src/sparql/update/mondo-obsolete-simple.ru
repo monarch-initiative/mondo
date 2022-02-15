@@ -5,18 +5,18 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 
 DELETE {
-  ?entity rdfs:subClassOf ?parent .	
   ?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
-  ?entity oboInOwl:inSubset ?subset .
+  ?entity oboInOwl:inSubset ?subset . #this does not delete nested subsets (ie subsets with dbxrefs)
   ?entity oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> .
-  ?xref_anno oboInOwl:source ?source .
-  ?entity rdfs:label ?label .
+  ?xref_anno oboInOwl:source ?source . #this deletes MONDO:equivalentTo 
+  ?entity rdfs:label ?label . #this deletes the old label and adds the new label
 }
 
 INSERT {
-  ?xref_anno oboInOwl:source ?new_source .
-  ?entity rdfs:label ?new_label .
+  ?xref_anno oboInOwl:source ?new_source . #this adds MONDO:obsoleteEquivalent (where the annotation was previously MONDO:equivalentTo)
+  ?entity rdfs:label ?new_label . #this adds the new label obsolete label 
   ?entity owl:deprecated true .
+  ?entity <http://purl.obolibrary.org/obo/IAO_0000231> "out of scope" .
 }
 
 WHERE {
@@ -41,6 +41,6 @@ WHERE {
 
    	FILTER NOT EXISTS { ?entity owl:deprecated true }
   	
-  	BIND(REPLACE(str(?source), "MONDO:equivalent", "MONDO:obosoleteEquivalent") as ?new_source)
+  	BIND(REPLACE(str(?source), "MONDO:equivalentTo", "MONDO:obsoleteEquivalent") as ?new_source)
   	BIND(CONCAT("obsolete ",str(?label)) as ?new_label)
 }
