@@ -556,13 +556,6 @@ merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_clas
 #		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
 #	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
 
-reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
-	$(ROBOT) report -i $< --profile profile.txt --fail-on none -o $@
-.PRECIOUS: reports/mondo-edit-report.html
-
-.PHONY: mondo_%_report
-mondo_edit_report: reports/mondo-edit-report.html
-test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html

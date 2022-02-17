@@ -141,8 +141,7 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
-test: reports/robot-report-mondo-edit.obo.tsv reports/robot-report-mondo.owl.tsv
-test: reports/robot-report-mondo.obo.tsv
+test: reports/robot-report-mondo-tags-reasoned.owl.tsv
 
 
 # ----------------------------------------
@@ -473,7 +472,7 @@ QSRC = $(SRC)-noimports.owl
 $(QSRC): $(SRC)
 	owltools --use-catalog $< --remove-imports-declarations -o $@
 
-SRC_TAGS_REASONED=tmp/src_tags_reasoned.owl
+SRC_TAGS_REASONED=mondo-tags-reasoned.owl
 
 $(SRC_TAGS_REASONED): $(SRC)
 	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason -o $@
@@ -555,16 +554,15 @@ reports/query-%-mondo.owl.tsv: mondo.owl $(SPARQLDIR)/reports/%.sparql
 
 #RR=$(HOME)/repos/rctauber/robot/bin/$(ROBOT) report --fail-on none
 RR= $(ROBOT) report --fail-on ERROR --profile profile.txt --print 8
-reports/edit/report.tsv: $(SRC)
-	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
-reports/release/mondo-obo-report.tsv: mondo.obo
-	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
-
-reports/release/mondo-owl-report.tsv: mondo.owl
-	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 reports/robot-report-%.tsv: %
-	$(RR) -i $* -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
+	$(RR) -i $* -o $@
+
+reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
+	$(ROBOT) report -i $< --profile profile.txt --fail-on ERROR -o $@
+.PRECIOUS: reports/mondo-edit-report.html
+
+mondo_edit_report: reports/mondo-edit-report.html
 
 common_map.tsv:
 	blip-findall -debug index -goal ix -i imports/equivalencies.obo -i d2p.pro  -r mondoe -c ../utils/all_genetic.pro common_to_mondo/2 -label -no_pred -use_tabs | cut -f1,3,4 > $@
