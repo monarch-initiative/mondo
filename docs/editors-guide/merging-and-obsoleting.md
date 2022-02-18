@@ -111,6 +111,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 ### Obsolete a class (using Protege 'Make entity obsolete' function)
 1. Search for the class to be obsoleted.
 1. In the Protege edit menu-> Make entity obsolete
+1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
 1. Add annotation 'has obsolescence reason' and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
