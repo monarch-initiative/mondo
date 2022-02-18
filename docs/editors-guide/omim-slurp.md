@@ -13,7 +13,7 @@ are labels and synonyms appropriately capitalized, etc.
 2. **For OMIMPS:**
   1. Check the OMIMPS to see if a grouping class already exists in Mondo (there may already be a grouping class from Orphanet, in which case, just add the OMIMPS as an additional dbxref.) To check, check the ID after the PS (for example, if the OMIMPS is OMIMPS:131760, check OMIM:131760 to see if that term already exists in Mondo.)
   1. If a prototype term exists (i.e., the original term in OMIM, where another gene was identified later and that term term became type 1 and other type 2, etc. were created, and then an OMIM Phenotypic Series (OMIMPS) was created), this term needs to be split.
-    1. 1. For the OMIMPS, if a split is needed, we need to mark the existing terms as obsoletion candidates and wait for 2 months before we do the split (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/sop_splitting-terms/)). Create a ticket following this [example](https://github.com/monarch-initiative/mondo/issues/4500).
+    1. For the OMIMPS, if a split is needed, we need to mark the existing terms as obsoletion candidates and wait for 2 months before we do the split (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/sop_splitting-terms/)). Create a ticket following this [example](https://github.com/monarch-initiative/mondo/issues/4500).
   1. Note - if you add a new OMIMPS, the children will **_not_** automatically be added, they need to be added manually. (Some children terms may not be in Mondo and will be added in a future slurp.)
 3. **For rest of OMIM:**
   1. Check the terms to make sure they do not already exist in Mondo. (Search for OMIM:XXXXXX in mondo-edit.obo text file.) 
