@@ -122,6 +122,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Search for the class to be obsoleted.
 1. Rename label to: obsolete [class name].
 1. Add annotation **owl:deprecated** and indicate true (in literal).
+1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
 1. Add annotation 'has obsolescence reason' and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms.
