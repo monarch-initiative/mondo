@@ -17,7 +17,7 @@
 - [HL7 International](https://confluence.hl7.org/display/TA/External+Terminologies+-+Information)
 - [Human Cell Atlas](https://www.humancellatlas.org/)
 - [Infertility Disease Database](http://mdl.shsmu.edu.cn/IDDB/module/mainpage/mainpage.jsp)
-- [MSeqDR: the Mitochondrial Disease Sequence Data Resource Consortium ](https://mseqdr.org/wp/index.php/2019/10/01/mondo-disease-ontology-is-coming-to-mseqdr/)
+- [MSeqDR: the Mitochondrial Disease Sequence Data Resource Consortium ](https://mseqdr.org/)
 - [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
 - [NCBI MedGen](https://www.ncbi.nlm.nih.gov/medgen/)
 - [NCI Cancer Research Data Commons](https://datascience.cancer.gov/data-commons)
