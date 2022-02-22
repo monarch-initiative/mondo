@@ -3,7 +3,7 @@
 ## Who uses Mondo:
 
 - [Monarch Initiative](https://monarchinitiative.org/)
-- [Ancestry](https://support.ancestry.com/s/article/Disease-Condition-Catalog-Powered-by-MONDO)
+<!---- [Ancestry](https://support.ancestry.com/s/article/Disease-Condition-Catalog-Powered-by-MONDO)--->
 - [Broad Institute](https://www.broadinstitute.org/)
 - [ClinGen](https://clinicalgenome.org/)
 - [Critcal Path Institute](https://c-path.org/)
@@ -21,6 +21,7 @@
 - [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
 - [NCBI MedGen](https://www.ncbi.nlm.nih.gov/medgen/)
 - [NCI Cancer Research Data Commons](https://datascience.cancer.gov/data-commons)
+- [Pharos](https://pharos.nih.gov/diseases)
 - [Penn TURBO](http://upibi.org/turbo/)
 - [Pombase](https://www.pombase.org/)
 - [SunQuest](https://www.sunquestinfo.com/)
