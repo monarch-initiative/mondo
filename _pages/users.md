@@ -21,8 +21,8 @@
 - [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
 - [NCBI MedGen](https://www.ncbi.nlm.nih.gov/medgen/)
 - [NCI Cancer Research Data Commons](https://datascience.cancer.gov/data-commons)
-- [Pharos](https://pharos.nih.gov/diseases)
 - [Penn TURBO](http://upibi.org/turbo/)
+- [Pharos](https://pharos.nih.gov/diseases)
 - [Pombase](https://www.pombase.org/)
 - [SunQuest](https://www.sunquestinfo.com/)
 
