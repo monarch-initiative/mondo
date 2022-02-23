@@ -38,7 +38,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
        owl:disjointWith
      }
      ?entity a owl:Class;
-             owl:deprecated true .  
+             owl:deprecated true .
      ?value ?property ?entity .
   }
   UNION
@@ -54,14 +54,14 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   UNION
   {
    VALUES ?property {
-     owl:someValuesFrom   
+     owl:someValuesFrom
      owl:allValuesFrom
    }
    ?value a owl:Class ;
           owl:deprecated true .
    ?rest a owl:Restriction ;
          ?property ?value .
-   BIND("anonymous expression" as ?entity)
+   BIND("blank node" as ?entity)
   }
 }
 ORDER BY ?entity

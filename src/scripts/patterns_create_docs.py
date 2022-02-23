@@ -54,7 +54,8 @@ def render_equivalent(text, vars, pattern):
     ret = text % tuple("{" + render_token(var, pattern["vars"]) + "}" for var in vars)
     mapping = {}
     mapping.update(pattern["classes"])
-    mapping.update(pattern["relations"])
+    if "relations" in pattern:
+        mapping.update(pattern["relations"])
     p = re.compile(r"'[^']*'")
     ret = re.sub(r"'([^']*)'", lambda m: "[" + m.group(1) + "](" + curie_to_uri(mapping[m.group(1)]) + ")", ret)
     return ret

@@ -1,0 +1,18 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT distinct ?term ?label ?related ?synonym
+WHERE 
+{ 
+  VALUES ?synonym { oboInOwl:hasRelatedSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasBroadSynonym oboInOwl:hasCloseSynonym }
+    ?term ?synonym ?related ;
+          rdfs:label ?label ;
+      	a owl:Class .
+    
+  	FILTER(str(?label)=str(?related))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+}

@@ -1,0 +1,50 @@
+pattern_name: disease_has_phenotype
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_has_major_feature.yaml
+
+description: 'Diseases which have a phenotype as a major feature of the disease are included in this pattern, e.g. scurvy (MONDO:0009412) which has the major feature of low levels of vitamin C (HP:0100510).'
+
+contributors:
+- https://orcid.org/0000-0002-7463-6306
+
+classes:
+  disease: MONDO:0005070
+  phenotypic abnormality: HP:0000118
+
+relations:
+  disease has major feature: http://purl.obolibrary.org/obo/mondo#disease_has_major_feature
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+  phenotypic abnormality: '''phenotypic abnormality'''
+
+#name:
+#  text: '%s neoplasm'
+#  vars:
+#  - structure
+
+#annotations:
+#- annotationProperty: exact_synonym
+#  text: malignant %s neoplasm
+#  vars:
+#  - structure
+  
+#- annotationProperty: exact_synonym
+#  text: neoplasm of %s
+#  vars:
+#  - structure
+
+#def:
+#  text: A neoplasm involving a %s.
+#  vars:
+#  - structure
+
+equivalentTo:
+  text: "%s and 'disease has major feature' some %s"
+  vars:
+  - disease
+  - phenotypic abnormality 

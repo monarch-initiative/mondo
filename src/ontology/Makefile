@@ -35,6 +35,7 @@ OWLTOOLS= owltools
 USECAT= --use-catalog
 SPARQLDIR = ../sparql
 PATTERNDIR = ../patterns
+TMPDIR = tmp
 
 CONSTRUCTS= embedded-definition
 INCLUDES_OWL = $(patsubst %,include-%.owl,$(CONSTRUCTS))
@@ -79,7 +80,7 @@ all: test all_artefacts
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -111,8 +112,13 @@ ARTEFACTS = \
   $(COMPONENT_FILES) \
   $(SUBSET_FILES)
 
+REPORT_FILES_RELEASE = reports/mondo_release_diff_changed_terms.tsv \
+  reports/mondo_release_diff_new_terms.tsv \
+  reports/mondo_obsoletioncandidates.tsv
 
-ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) ../../README.md 
+ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) \
+  ../../README.md \
+  $(REPORT_FILES_RELEASE)
 
 list_main_files:
 	echo $(MAIN_FILES)
@@ -126,13 +132,15 @@ list_artefacts:
 
 all_artefacts: all_reports $(ARTEFACTS)
 
+all_release_reports: $(REPORT_FILES_RELEASE)
+
 # ----------------------------------------
 # Tests
 # ----------------------------------------
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
-test: sparql_test_edit roundtrip.obo debug.owl mondo-edit.owl sparql_test_main_obo test_nomerge
+test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-edit.obo.tsv reports/robot-report-mondo.owl.tsv
 test: reports/robot-report-mondo.obo.tsv
 
@@ -175,9 +183,9 @@ deploy_assets_direct:
 	../utils/make-release-assets.py -c $(RELEASE_ASSETS_OPTS) --release $(GHVERSION) $(ASSETS)
 
 # deploys to https://github.com/monarch-initiative/mondo/releases/tag/current
-deploy_assets_current:
-	ls -alt $(ASSETS)
-	../utils/make-release-assets.py -c -f --release current $(ASSETS)
+#deploy_assets_current:
+#	ls -alt $(ASSETS)
+#	../utils/make-release-assets.py -c -f --release current $(ASSETS)
 
 # ----------------------------------------
 # Main release targets
@@ -185,11 +193,19 @@ deploy_assets_current:
 
 ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
+# the GITHUB_ACTION flag should be set to true to skip computationally intensive actions in the pipeline that are not necessary for QC, see filtered.obo
+# Use sparingly
+
+GITHUB_ACTION = false
+
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@equivalent@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@(equivalent|otherHierarchy|subClassOf|directSiblingOf|superClassOf|ntbt|btnt)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false --update ../sparql/update/delete-axiom-annotations.ru \
+		remove --term-file config/remove-annotations-before-release.txt \
+		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
-skos.ttl: $(SRC)
+skos.ttl: filtered.obo
 	../utils/mk-skos.pl $< > $@
 
 # this appears to be problematic. not all declarations are restored on a save.
@@ -203,16 +219,18 @@ REMOVE_DECLARATIONS=
 filtered.owl: filtered.obo skos.ttl
 	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
 
-
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
 # note: $(ROBOT) will protect redundant annotated axioms
 reasoned.owl: filtered.owl 
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
+test: reasoned-plus-equivalents.owl
+
 # merged = reasoned + equivalencies
 reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
+	#$(ROBOT) reason -i $@ --equivalent-classes-allowed asserted-only -o $(TMPDIR)/$@_test_equivalents.owl
 
 
 
@@ -352,13 +370,14 @@ imports/%_import.owl: mirror/%.owl imports/%_terms.txt
 	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
 		remove -T imports/removeseed.txt \
+		remove --select "<http://purl.obolibrary.org/obo/PR_*>" \
 		reason --exclude-tautologies structural \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
 
 # we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
 imports/%_import.obo: imports/%_import.owl
-	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	if [ $(IMP) = true ]; then $(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@; fi
 
 imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
 	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
@@ -381,7 +400,7 @@ imports/seed.txt: edit-merged.owl
 	$(ROBOT) query -f tsv -i $< -s ../sparql/signature/classes.sparql $@.tmp && perl -npe 's@^\<@@;s@>$$@@' $@.tmp | sort -u > $@
 
 imports/%_terms.txt: imports/seed.txt
-	grep -hi $* $< $@ | sort -u  > $@.tmp && mv $@.tmp $@
+	touch $@ && grep -hi $* $< $@ | sort -u  > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Release
@@ -531,8 +550,8 @@ reports/query-%-mondo.owl.tsv: mondo.owl $(SPARQLDIR)/reports/%.sparql
 	$(ROBOT) query -f tsv -i $< -s $(SPARQLDIR)/reports/$*.sparql $@.tmp && ../utils/tidy-sparql-output.pl $@.tmp > $@
 
 # TODO: replace with sparql
-reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
-	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
+#reports/semantic-xref-pairs.tsv: d2p.pro mondo-base.obo
+#	blip-findall -i mondo-base.obo -i $< -i ../../scratch/mondo-ncit-finding.pro -consult ../utils/xreftbl_maker.pro xrefrow/5 -no_pred > $@
 
 #RR=$(HOME)/repos/rctauber/robot/bin/$(ROBOT) report --fail-on none
 RR= $(ROBOT) report --fail-on ERROR --profile profile.txt --print 8
@@ -619,9 +638,14 @@ trigger-mirror:
 	touch $@
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: 
+mirror/%.owl:
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
+
+mirror/ecto.owl: 
+	$(OWLTOOLS) $(OBO)/ecto.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@ &&\
+	$(ROBOT) remove -i $@ --select "<http://purl.obolibrary.org/obo/ENVO_*>" -o $@ 
+.PRECIOUS: mirror/ecto.owl
 
 mirror/ncbitaxon.owl: 
 	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@ && touch $@
@@ -658,8 +682,14 @@ mirror/neoplasm-core.owl:
 mirror/ncit.owl:
 	wget --no-check-certificate $(OBO)/ncit.owl -O $@ && touch $@
 
+# It looks odd to reason relax reduce the base, but its necessary until we have base plus
 mirror/cl.owl:
-	wget --no-check-certificate $(OBO)/cl/cl-base.owl -O $@ && touch $@
+	$(ROBOT) merge -I $(OBO)/cl/cl-base.owl reason relax reduce -o $@ && touch $@
+
+mirror/uberon.owl:
+	$(ROBOT) merge -I $(OBO)/uberon/uberon-base.owl reason relax reduce \
+		remove --base-iri $(OBO)/UBERON --base-iri $(OBO)/UBPROP_ --axioms external --preserve-structure false --trim false \
+		remove --term rdfs:label --select complement --select "annotation-properties" -o $@ && touch $@
 
 mirror/omo.owl:
 	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
@@ -691,17 +721,21 @@ mirror/medgen-disease-extract.owl: mirror/medgen-disease-extract.obo
 	owltools $< -o $@.tmp && perl -npe $(FIX_URI_EXPR) $@.tmp > $@
 
 mirror/dipper-%.ttl:
-	wget --no-check-certificate https://data.monarchinitiative.org/ttl/$*.ttl -O $@.tmp && perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@
+	wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp && perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@
 
 mirror/dipper-%.obo: mirror/dipper-%.ttl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
 
+
+#mirror/hgnc.owl:
+#	echo "WARNING: HGNC MIRROR TEMPORARILY SKIPPED (KINDA AN ERROR)!"
 
 mirror/hgnc.owl: mirror/dipper-hgnc.ttl
 	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
 	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl
+
 #	$(ROBOT) query construct
 #	owltools $< --remove-axioms -t EquivalentClasses -o $@
 #	owltools $< --remove-dangling -o $@
@@ -826,6 +860,15 @@ disjoint_sibs.owl: $(SRC)
 
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
+
+
+debug_inference_check.owl: debug.owl explain_unsat.owl
+	$(ROBOT) reason -i $< --equivalent-classes-allowed none -o $@
+
+explain_unsat.owl: debug.owl
+	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation mondo_explain_debug.md \
+	annotate --ontology-iri "http://purl.obolibrary.org/obo/mondo/mondo_explain_debug.ofn" \
+	--output mondo_explain_debug.ofn && cat mondo_explain_debug.md
 
 debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
 	owltools --no-logging --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
@@ -1104,7 +1147,7 @@ mirror/omim.obo: build-omim
 mirror/medgen.obo:
 	$(ROBOT) convert -i sources/$(SOURCE_VERSION)/medgen.owl -o $@
 
-tmp/tbd_%.tbd: $(SRC) mirror/%.obo
+tmp/tbd_%.tbd: $(SRC) mirror/%.obo mirror/hp.obo
 	cat mirror/$*.obo | perl $(ADDTOTBD) > $@
 
 tmp/rest_slurp_%.obo: tmp/tbd_%.tbd

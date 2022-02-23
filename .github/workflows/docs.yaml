@@ -1,0 +1,38 @@
+name: Docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/patterns/dosdp-patterns/**'
+  
+jobs:
+  docs:
+    runs-on: ubuntu-latest 
+    steps:
+    - uses: actions/checkout@v2 
+
+    - name: Set up Python
+      uses: actions/setup-python@v2 
+      with:
+        python-version: 3.8 
+    
+    - name: install python packages
+      run: |
+        pip install -r docs/requirements.txt     
+        pip install pandas tabulate
+    
+    - name: Generate docs 
+      run: |
+        python src/scripts/patterns_create_docs.py
+    
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: Update Mondo pattern docs
+        title: 'Update Mondo pattern docs'
+        body: |
+          Updates Mondo pattern documenation. This can usually be merged without review, but its good to take a look.
+        assignees: nicolevasilevsky

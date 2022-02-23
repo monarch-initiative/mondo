@@ -1,0 +1,44 @@
+pattern_name: chromosomal_region_deletion
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/chromosomal_region_deletion.yaml
+
+description: 'This pattern is meant to be used for chromosomal disorder which consists of the deletion of chromosomal region in which the chromosomal region is known. Note that to refer to a partial deletion of a chromosome when the region is not know (only the chromosome is known), the partial_chromosome_deletion pattern should be used.' 
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  syndrome caused by partial chromosomal deletion: MONDO:0000761
+  chromosomal region: GO:0098687
+  
+relations:
+  disease arises from structure: RO:0004030
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  chromosomal_region: "'chromosomal region'"
+# Even though the parent term is GO:0098687, a Monochrom term (CHR:##) is required.
+
+name:
+  text: '%s deletion'
+  vars:
+  - chromosomal_region
+
+annotations:
+- annotationProperty: exact_synonym
+  text: 'deletion of %s'
+  vars:
+  - chromosomal_region
+
+def:
+  text: A chromosomal disorder consisting of the deletion of %s.
+  vars:
+  - chromosomal_region
+
+equivalentTo:
+  text: '''syndrome caused by partial chromosomal deletion'' and (''disease arises from structure'' some %s)'
+  vars:
+  - chromosomal_region
