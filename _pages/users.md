@@ -2,9 +2,9 @@
 ---
 ## Who uses Mondo:
 
-Name | Description | 
--- | -- |
-[Monarch Initiative](https://monarchinitiative.org/) | Monarch is a system that allows for cross-species disease discovery, and Mondo was initially developed for the Monarch Initiative and is used for integrating disease data across species.
+Name | Description
+-- | -- 
+[Monarch Initiative](https://monarchinitiative.org/) | Monarch is a system that allows for cross-species disease discovery, and Mondo was initially developed for the Monarch Initiative and is used for integrating disease data across species. 
 [Broad Institute](https://www.broadinstitute.org/) | A research organization that assembles a community of researchers from MIT, Harvard, and Harvard-affiliated hospitals. 
 [ClinGen](https://clinicalgenome.org/) | ClinGen is a curated database of clinically relevant genes and variants. Mondo is used annotating diseases associated with gene variants.
 [Critcal Path Institute](https://c-path.org/) | An independent nonprofit, public-private partnership with the U.S. Food and Drug Administration (FDA) focused on the medical product development process.
