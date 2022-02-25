@@ -16,11 +16,9 @@ Name | Affiliation | GitHub
 [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky)
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | Semanticly | [matentzn](https://github.com/matentzn)
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro)
-[Dazhi Jiao](https://orcid.org/0000-0001-5052-3836) | Johns Hopkins University | [jiaola ](https://github.com/jiaola)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly)
-[Kalliopi Panoutsopoulou](https://orcid.org/0000-0002-5460-8025) | European Bioinformatics Institute | [kallia-p](https://github.com/kallia-p)
 [Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3)
 
 # Contributors
@@ -63,6 +61,7 @@ Harshad Hegde | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [hrshdh
 Jessica Hekman | [Broad Institute](https://www.broadinstitute.org/) | [jphekman](https://github.com/jphekman)
 Ingo Helbig | [CHOP](https://www.chop.edu/) | [ihelbig](https://github.com/ihelbig)
 Madeline Hughes | [Broad Institute](https://www.broadinstitute.org/) | [madelinehughes](https://github.com/madelinehughes)
+[Dazhi Jiao](https://orcid.org/0000-0001-5052-3836) | Amazon | [jiaola ](https://github.com/jiaola)
 Simon Jupp | [EBI](https://www.ebi.ac.uk/) | [simonjupp](https://github.com/simonjupp)
 Megan Kane | [NCBI](National Center for Biotechnology Information) | [kanems](https://github.com/kanems)
 Avi Kelman | [CHOP](https://www.chop.edu/) | [fiendish](https://github.com/fiendish)
@@ -79,6 +78,7 @@ Moni Munoz-Torres | [Monarch Initiative](http://monarchinitiative.org/) | [monic
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
 Daniel Olson | [Critical Path Institute](https://c-path.org/) | [Vineyardintern](https://github.com/Vineyardintern)
 David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://github.com/dosumis)
+[Kalliopi Panoutsopoulou](https://orcid.org/0000-0002-5460-8025) |  | [kallia-p](https://github.com/kallia-p)
 Brooke Palus | [ClinGen](https://clinicalgenome.org/) |
 Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
