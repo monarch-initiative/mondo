@@ -74,7 +74,8 @@ Note- the date should be the date of the release in the format sh run.sh make GH
       - click edit
       - add the name of the new release and the content from the change log text file above. 
       - commit to master
-1. Commit release files
+   3. Click on "Publish release" (THIS IS NEW, the release, so far should have been in Draft state)
+1. Commit release files (<- Why is this necessary? This should be done in the "commit" phase of the prepare release section above.)
    1. Commit all of the changed import and report files (ignore or discard diff files, change log) to a branch
    1. Once all checks have passed, merge to master
    Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
