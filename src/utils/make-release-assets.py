@@ -56,7 +56,7 @@ def make_assets(dry_run, force, create, token, org, repo, release, paths):
                 else:
                     logging.error("Release already exists!")
                 logging.info("Creating release")
-        G_repo.create_git_release(release, release, message, draft=False, prerelease=False)
+        G_repo.create_git_release(release, release, message, draft=True, prerelease=False)
     
     G_rel = G_repo.get_release(release)
 
