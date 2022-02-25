@@ -16,6 +16,7 @@ Name | Affiliation | GitHub
 [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky)
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | Semanticly | [matentzn](https://github.com/matentzn)
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro)
+Joe Flack | [Johns Hopkins University](https://www.jhu.edu/) | [joeflack4]https://github.com/joeflack4
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly)
@@ -60,6 +61,7 @@ Allison Heath | [CHOP](https://www.chop.edu/) | [allisonheath](https://github.co
 Harshad Hegde | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [hrshdhgd](https://github.com/hrshdhgd)
 Jessica Hekman | [Broad Institute](https://www.broadinstitute.org/) | [jphekman](https://github.com/jphekman)
 Ingo Helbig | [CHOP](https://www.chop.edu/) | [ihelbig](https://github.com/ihelbig)
+Stacy Holovenko | [Emedgene](https://www.emedgene.com/) | [aholovenko](https://github.com/aholovenko)
 Madeline Hughes | [Broad Institute](https://www.broadinstitute.org/) | [madelinehughes](https://github.com/madelinehughes)
 Dazhi Jiao | Amazon | [jiaola ](https://github.com/jiaola)
 Simon Jupp | [EBI](https://www.ebi.ac.uk/) | [simonjupp](https://github.com/simonjupp)
@@ -67,7 +69,8 @@ Megan Kane | [NCBI](National Center for Biotechnology Information) | [kanems](ht
 Avi Kelman | [CHOP](https://www.chop.edu/) | [fiendish](https://github.com/fiendish)
 HyeongSik Kim | [Robert Bosch LLC](https://www.bosch.us/) | [yy20716](https://github.com/yy20716)
 Bron Kisler | [NCI](https://www.cancer.gov/) | [bronkisler](https://github.com/bronkisler)
-Sebastian Kohler | [Ada Health](https://ada.com/) | [drseb ](https://github.com/drseb )
+Sebastian Kohler | [Ada Health](https://ada.com/) | [drseb ](https://github.com/drseb)
+Abbe Lai | Boston Children's Hospital | [abbe-Lai](https://github.com/abbe-Lai)
 Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/) | [Letchau](https://github.com/Letchau)
 Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [janinelewis3](https://github.com/janinelewis3)
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
@@ -99,6 +102,7 @@ Andrea Storm |[GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about
 Deanne Taylor | [Childrens Hospital of Philadelphia](https://www.chop.edu/)
 Courtney Thaxton | [ClinGen](https://clinicalgenome.org/) | [courtneythaxton](https://github.com/courtneythaxton)
 Anne Thessen | [Monarch Initiative](http://monarchinitiative.org/) | [diatomsRcool](https://github.com/diatomsRcool)
+Alex Wagner | [Nationwide Children's Hospital](https://www.nationwidechildrens.org/) | [ahwagner]https://github.com/ahwagner
 Dani Welter | | [daniwelter](https://github.com/daniwelter)
 Matt Wright | [ClinGen](https://clinicalgenome.org/) | [wrightmw](https://github.com/wrightmw)
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
