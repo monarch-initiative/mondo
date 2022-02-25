@@ -2,10 +2,9 @@
 ---
 ## Who uses Mondo:
 
-Name | Description 
--- | -- 
+Name | Description | 
+-- | -- |
 [Monarch Initiative](https://monarchinitiative.org/) | Monarch is a system that allows for cross-species disease discovery, and Mondo was initially developed for the Monarch Initiative and is used for integrating disease data across species.
-<!---- [Ancestry](https://support.ancestry.com/s/article/Disease-Condition-Catalog-Powered-by-MONDO)--->
 [Broad Institute](https://www.broadinstitute.org/) | A research organization that assembles a community of researchers from MIT, Harvard, and Harvard-affiliated hospitals. 
 [ClinGen](https://clinicalgenome.org/) | ClinGen is a curated database of clinically relevant genes and variants. Mondo is used annotating diseases associated with gene variants.
 [Critcal Path Institute](https://c-path.org/) | An independent nonprofit, public-private partnership with the U.S. Food and Drug Administration (FDA) focused on the medical product development process.
@@ -27,6 +26,8 @@ Name | Description
 [Pharos](https://pharos.nih.gov/diseases) | Pharos provides a interface to the Knowledge Management Center (KMC) for the Illuminating the Druggable Genome (IDG) program. Diseases in the Pharos database are maped to Mondo terms and IDs.
 [Pombase](https://www.pombase.org/) | A comprehensive database for the fission yeast Schizosaccharomyces pombe, providing structural and functional annotation, literature curation and access to large-scale data sets.
 [SunQuest](https://www.sunquestinfo.com/) | Sunquest offers comprehensive laboratory informatics, including laboratory information management systems (LIS/LIMS), and lab analytics solutions for clinical pathology, anatomic pathology, and molecular pathology, including next-generation sequencing (NGS) for precision medicine.
+
+<!---- [Ancestry](https://support.ancestry.com/s/article/Disease-Condition-Catalog-Powered-by-MONDO)--->
 
 ## Report issues/bugs/new term requests, changes, etc.
 
