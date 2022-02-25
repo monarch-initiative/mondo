@@ -28,7 +28,7 @@ Name | Affiliation | GitHub
 --- | --- | ---
 Gioconda Alyea | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [galyea-gard](https://github.com/galyea-gard )
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
-Larry Babb | [ClinGen](https://clinicalgenome.org/) |
+Larry Babb | [ClinGen](https://clinicalgenome.org/) | [larrybabb]https://github.com/larrybabb
 Jim Balhoff | [RENCI](https://renci.org/) | [balhoff ](https://github.com/balhoff )
 Samantha Baxter | [Broad Institute](https://www.broadinstitute.org/) | [sambaxter](https://github.com/sambaxter)
 Sue Bello | [The Jackson Laboratory](https://www.jax.org/) | [sbello](https://github.com/sbello)
