@@ -130,6 +130,7 @@ Tam Sneddon | [ClinGen](https://clinicalgenome.org/) | [tsneddon](https://github
 Ralf Stephan           |                         | [rwst](https://github.com/rwst)
 Andrea Storm |[GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [GARDInfoCenter](https://github.com/GARDInfoCenter)
 Gregory Stupp          |                         | [stuppie](https://github.com/stuppie)
+Mia Sullivan                  | ClinGen                     | [miajsullivan](https://github.com/miajsullivan)             |
 Jagadish Sundaramurthi | Monarch                 | [jagcsun](https://github.com/jagcsun)
 Deanne Taylor | [Childrens Hospital of Philadelphia](https://www.chop.edu/) |[taylordm](https://github.com/taylordm)
 Courtney Thaxton | [ClinGen](https://clinicalgenome.org/) | [courtneythaxton](https://github.com/courtneythaxton)
@@ -162,7 +163,6 @@ N/A                    | N/A                     | [mayherpatel](https://github.
 N/A                    | N/A                     | [mbalzotti](https://github.com/mbalzotti)                   |
 N/A                    | N/A                     | [megood1](https://github.com/megood1)                       |
 N/A                    | N/A                     | [mhughes5](https://github.com/mhughes5)                     |
-N/A                    | N/A                     | [miajsullivan](https://github.com/miajsullivan)             |
 N/A                    | N/A                     | [mshadbolt](https://github.com/mshadbolt)                   |
 N/A                    | N/A                     | [need47](https://github.com/need47)                       |
 N/A                    | N/A                     | [paulacarrio](https://github.com/paulacarrio)                |
