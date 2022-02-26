@@ -127,9 +127,9 @@ Eric Sid | [NIH NCATS](National Center for Advancing Translational Sciences ) | 
 Rebecca Siegert | [Broad Institute](https://www.broadinstitute.org/) | [rebecca-siegert](https://github.com/rebecca-siegert)
 Morgan Similuk | [NIH NHGRI](https://www.genome.gov/) | [MorganSimiluk](https://github.com/MorganSimiluk)
 Tam Sneddon | [ClinGen](https://clinicalgenome.org/) | [tsneddon](https://github.com/tsneddon)
-Ralf Stephan           |                         | [rwst]https://github.com/rwst    
+Ralf Stephan           |                         | [rwst](https://github.com/rwst)
 Andrea Storm |[GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [GARDInfoCenter](https://github.com/GARDInfoCenter)
-Gregory Stupp          |                         | [stuppie]https://github.com/stuppie 
+Gregory Stupp          |                         | [stuppie](https://github.com/stuppie)
 Jagadish Sundaramurthi | Monarch                 | [jagcsun](https://github.com/jagcsun)
 Deanne Taylor | [Childrens Hospital of Philadelphia](https://www.chop.edu/) |[taylordm](https://github.com/taylordm)
 Courtney Thaxton | [ClinGen](https://clinicalgenome.org/) | [courtneythaxton](https://github.com/courtneythaxton)
