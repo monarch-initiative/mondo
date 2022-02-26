@@ -48,7 +48,7 @@ Lauren Chan | [Monarch Initiative](http://monarchinitiative.org/) | [laurenechan
 Alice Chen | [NIH NCATS](National Center for Advancing Translational Sciences ) | [achenNCATS](https://github.com/achenNCATS)
 Louise Daugherty       | Healx                   | [lcdaugherty](https://github.com/lcdaugherty)               |
 Michel Dumontier       | Maastricht University   | [micheldumontier](https://github.com/micheldumontier)       |
-Nathan Dunn            |                         | [nathandunn]https://github.com/nathandunn                   |
+Nathan Dunn            |                         | [nathandunn](https://github.com/nathandunn)               |
 Shahim Essaid | [Monarch Initiative](http://monarchinitiative.org/) | [ShahimEssaid](https://github.com/ShahimEssaid)
 Christopher G Chute | [Johns Hopkins](https://www.jhu.edu/) | [chute](https://github.com/chute)
 Tom Conlin | [Oregon State University](https://oregonstate.edu/)| [TomConlin ](https://github.com/TomConlin) 
@@ -58,15 +58,15 @@ Marina DiStefano | [ClinGen](https://clinicalgenome.org/) | [marinadistefano](ht
 Bill Duncan | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [wdduncan](https://github.com/wdduncan)
 Colin Ellis | [CHOP](https://www.chop.edu/) | [colinellis1](https://github.com/colinellis1)
 Mark Engelstad | [Oregon Health & Science University](www.ohsu.edu) | [markengelstad](https://github.com/markengelstad)
-May Flowers            | ClinGen                 | [RedRiver1816]https://github.com/RedRiver1816               |
-Vince Forgetta         | Lady Davis Institute    | [vforget]https://github.com/vforget                         |
+May Flowers            | ClinGen                 | [RedRiver1816](https://github.com/RedRiver1816)             |
+Vince Forgetta         | Lady Davis Institute    | [vforget](https://github.com/vforget)                      |
 Gilberto Fragoso | [NCI](https://www.cancer.gov/) | [NCIEVS](https://github.com/NCIEVS)
 Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.com/melluf)
 Jenny Goldstein | [ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
 Asier Gonzalez         |                        | [AsierGonzalez](https://github.com/AsierGonzalez)
 JP Gourdine            |                         | [jpgourdine](https://github.com/jpgourdine) 
 Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
-Dylan Gration          |                         | [peupeubangbang]https://github.com/peupeubangbang
+Dylan Gration          |                         | [peupeubangbang](https://github.com/peupeubangbang)
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
 Nomi Harris | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [nlharris ](https://github.com/nlharris)
 Emily Hartley | [Critical Path Institute](https://c-path.org/) | [ehartley](https://github.com/ehartley)
@@ -98,7 +98,7 @@ Andrea Martinez Vernon | University of Warwick  | [asmvernon](https://github.com
 Julie McMurry | [Monarch Initiative](http://monarchinitiative.org/) | [jmcmurry](https://github.com/jmcmurry)
 Birgit Meldal          | EMBL-EBI               | [bmeldal](https://github.com/bmeldal)  
 Kate Megquier | [Broad Institute](https://www.broadinstitute.org/) | [kmegquier](https://github.com/kmegquier)
-Mark Miller            | LBNL                    | [turbomam]https://github.com/turbomam  
+Mark Miller            | LBNL                    | [turbomam](https://github.com/turbomam)
 Shruthi Mohan | ClinGen | [Mohan-Shruthi](https://github.com/Mohan-Shruthi)
 Fernando Moreno Jabato |                         | [fmjabato](https://github.com/fmjabato) 
 Sierra Moxon | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [sierra-moxon](https://github.com/sierra-moxon)
@@ -106,14 +106,14 @@ Moni Munoz-Torres | [Monarch Initiative](http://monarchinitiative.org/) | [monic
 David Ochoa            | EMBL-EBI               | [d0choa](https://github.com/d0choa)
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
 Daniel Olson | [Critical Path Institute](https://c-path.org/) | [Vineyardintern](https://github.com/Vineyardintern)
-Tudor Oprea            |                         | [TudorOprea]https://github.com/TudorOprea
+Tudor Oprea            |                         | [TudorOprea](https://github.com/TudorOprea)
 David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://github.com/dosumis)
 Kalliopi Panoutsopoulou |  | [kallia-p](https://github.com/kallia-p)
 Brooke Palus | [ClinGen](https://clinicalgenome.org/) | [brookepalus](https://github.com/brookepalus)
 Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
 Tim Putman | [Monarch Initiative](http://monarchinitiative.org/) | [putmantime](https://github.com/putmantime) 
-Stephen Ramsey         | Oregon State University | [saramsey]https://github.com/saramsey 
+Stephen Ramsey         | Oregon State University | [saramsey](https://github.com/saramsey)
 Ana Rath | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [ana-rath-orphanet](https://github.com/ana-rath-orphanet)
 Heidi Rehm | [ClinGen](https://clinicalgenome.org/) | [heidirehm](https://github.com/heidirehm)
 Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](https://github.com/kreinold)
