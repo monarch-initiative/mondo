@@ -61,6 +61,7 @@ Allison Heath | [CHOP](https://www.chop.edu/) | [allisonheath](https://github.co
 Harshad Hegde | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [hrshdhgd](https://github.com/hrshdhgd)
 Jessica Hekman | [Broad Institute](https://www.broadinstitute.org/) | [jphekman](https://github.com/jphekman)
 Ingo Helbig | [CHOP](https://www.chop.edu/) | [ihelbig](https://github.com/ihelbig)
+Alex Henrie            |                        | [alexhenrie]https://github.com/alexhenrie  
 Stacy Holovenko | [Emedgene](https://www.emedgene.com/) | [aholovenko](https://github.com/aholovenko)
 Madeline Hughes | [Broad Institute](https://www.broadinstitute.org/) | [madelinehughes](https://github.com/madelinehughes)
 Dazhi Jiao | Amazon | [jiaola ](https://github.com/jiaola)
