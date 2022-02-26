@@ -145,9 +145,9 @@ Colleen Xu             |                        | [colleenXu](https://github.com
 Fuqi Xu                | EMBL-EBI                | [FuqiX](https://github.com/FuqiX) 
 Andreas Zankl          | University of Sydney   | [azankl](https://github.com/azankl) 
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
-|  | [dancingline](https://github.com/dancingline)     
-| | [darintay](https://github.com/darintay)  
-| | [dst1](https://github.com/dst1) 
+N/A                    | N/A | [dancingline](https://github.com/dancingline)     
+N/A                    | N/A | [darintay](https://github.com/darintay)  
+N/A                    | N/A | [dst1](https://github.com/dst1) 
 N/A                    | N/A                     | [ewilcox19](https://github.com/ewilcox19)                   |
 N/A                    | N/A                     | [fjlogrono](https://github.com/fjlogrono)                   |
 N/A                    | N/A                     | [groliver](https://github.com/groliver)                     |
