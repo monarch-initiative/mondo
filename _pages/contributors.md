@@ -28,7 +28,7 @@ Name | Affiliation | GitHub
 --- | --- | ---
 Gioconda Alyea | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [galyea-gard](https://github.com/galyea-gard )
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
-Larry Babb | [ClinGen](https://clinicalgenome.org/) | [larrybabb]https://github.com/larrybabb
+Larry Babb | [ClinGen](https://clinicalgenome.org/) | [larrybabb](https://github.com/larrybabb)
 Jim Balhoff | [RENCI](https://renci.org/) | [balhoff ](https://github.com/balhoff )
 Samantha Baxter | [Broad Institute](https://www.broadinstitute.org/) | [sambaxter](https://github.com/sambaxter)
 Sue Bello | [The Jackson Laboratory](https://www.jax.org/) | [sbello](https://github.com/sbello)
@@ -61,22 +61,22 @@ Allison Heath | [CHOP](https://www.chop.edu/) | [allisonheath](https://github.co
 Harshad Hegde | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [hrshdhgd](https://github.com/hrshdhgd)
 Jessica Hekman | [Broad Institute](https://www.broadinstitute.org/) | [jphekman](https://github.com/jphekman)
 Ingo Helbig | [CHOP](https://www.chop.edu/) | [ihelbig](https://github.com/ihelbig)
-Alex Henrie            |                        | [alexhenrie]https://github.com/alexhenrie  
+Alex Henrie            |                        | [alexhenrie](https://github.com/alexhenrie)
 Stacy Holovenko | [Emedgene](https://www.emedgene.com/) | [aholovenko](https://github.com/aholovenko)
 Madeline Hughes | [Broad Institute](https://www.broadinstitute.org/) | [madelinehughes](https://github.com/madelinehughes)
 Dazhi Jiao | Amazon | [jiaola ](https://github.com/jiaola)
 Simon Jupp | [EBI](https://www.ebi.ac.uk/) | [simonjupp](https://github.com/simonjupp)
 Megan Kane | [NCBI](National Center for Biotechnology Information) | [kanems](https://github.com/kanems)
-Anneli Karlsson        | SciBite ltd            | [AnneliK]https://github.com/AnneliK             | 
+Anneli Karlsson        | SciBite ltd            | [AnneliK](https://github.com/AnneliK)        | 
 Avi Kelman | [CHOP](https://www.chop.edu/) | [fiendish](https://github.com/fiendish)
 HyeongSik Kim | [Robert Bosch LLC](https://www.bosch.us/) | [yy20716](https://github.com/yy20716)
 Bron Kisler | [NCI](https://www.cancer.gov/) | [bronkisler](https://github.com/bronkisler)
 Sebastian Kohler | [Ada Health](https://ada.com/) | [drseb ](https://github.com/drseb)
 Abbe Lai | Boston Children's Hospital | [abbe-Lai](https://github.com/abbe-Lai)
-Martin Larralde        | EMBL                   | [althonos]https://github.com/althonos           | 
+Martin Larralde        | EMBL                   | [althonos](https://github.com/althonos)        | 
 Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/) | [Letchau](https://github.com/Letchau)
 Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [janinelewis3](https://github.com/janinelewis3)
-Antonia Lock           | UniProt Consortium     | [Antonialock]https://github.com/Antonialock     | 
+Antonia Lock           | UniProt Consortium     | [Antonialock](https://github.com/Antonialock)    | 
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
 Julie McMurry | [Monarch Initiative](http://monarchinitiative.org/) | [jmcmurry](https://github.com/jmcmurry)
 Kate Megquier | [Broad Institute](https://www.broadinstitute.org/) | [kmegquier](https://github.com/kmegquier)
