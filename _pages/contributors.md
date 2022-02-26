@@ -15,7 +15,7 @@ Name | Affiliation | GitHub
 [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky)
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | Semanticly | [matentzn](https://github.com/matentzn)
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro)
-[Joe Flack](https://orcid.org/0000-0002-2906-7319) | [Johns Hopkins University](https://www.jhu.edu/) | [joeflack4](https://github.com/joeflack4)
+[Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly)
