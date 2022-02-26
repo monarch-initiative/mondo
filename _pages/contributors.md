@@ -12,7 +12,6 @@ Mondo is developed by members of the [Monarch Initiative](https://monarchinitiat
 
 Name | Affiliation | GitHub
 --- | --- | ---
-[Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall)
 [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky)
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | Semanticly | [matentzn](https://github.com/matentzn)
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro)
@@ -21,6 +20,7 @@ Name | Affiliation | GitHub
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly)
 [Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3)
+[Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall)
 
 # Contributors
 
