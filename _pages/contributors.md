@@ -40,6 +40,7 @@ Vanessa Boulanger | [NORD](https://rarediseases.org/) | [vanessaboulanger](https
 PJ Brooks | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [pjbrooksphd](https://github.com/pjbrooksphd)
 Matt Brush | [Monarch Initiative](http://monarchinitiative.org/) | [mbrush ](https://github.com/mbrush)
 Orion Buske            |                        | [buske](https://github.com/buske)  
+Gully    Burns          | CZI                     | \[GullyBurns\](https://github.com/GullyBurns)                 |
 Tiffany Callahan | [University of Colorado School of Medicine](https://medschool.cuanschutz.edu/) | [callahantiff](https://github.com/callahantiff)
 Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody](https://github.com/LCCarmody)
 Lauren Chan | [Monarch Initiative](http://monarchinitiative.org/) | [laurenechan](https://github.com/laurenechan)
