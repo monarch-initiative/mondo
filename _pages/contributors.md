@@ -54,6 +54,7 @@ Gilberto Fragoso | [NCI](https://www.cancer.gov/) | [NCIEVS](https://github.com/
 Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.com/melluf)
 Jenny Goldstein | [ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
 Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
+Asier Gonzalez         |                        | [AsierGonzalez](https://github.com/AsierGonzalez)
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
 Nomi Harris | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [nlharris ](https://github.com/nlharris)
 Emily Hartley | [Critical Path Institute](https://c-path.org/) | [ehartley](https://github.com/ehartley)
@@ -78,9 +79,10 @@ Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/
 Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [janinelewis3](https://github.com/janinelewis3)
 Antonia Lock           | UniProt Consortium     | [Antonialock](https://github.com/Antonialock)    | 
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
+Andrea Martinez Vernon | University of Warwick  | [asmvernon](https://github.com/asmvernon)  
 Julie McMurry | [Monarch Initiative](http://monarchinitiative.org/) | [jmcmurry](https://github.com/jmcmurry)
 Kate Megquier | [Broad Institute](https://www.broadinstitute.org/) | [kmegquier](https://github.com/kmegquier)
-Shruthi Mohan | ClinGen | [Mohan-Shruthi]https://github.com/Mohan-Shruthi
+Shruthi Mohan | ClinGen | [Mohan-Shruthi](https://github.com/Mohan-Shruthi)
 Sierra Moxon | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [sierra-moxon](https://github.com/sierra-moxon)
 Moni Munoz-Torres | [Monarch Initiative](http://monarchinitiative.org/) | [monicacecilia](https://github.com/monicacecilia)
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
@@ -97,6 +99,7 @@ Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](
 Erin Riggs | [ClinGen](https://clinicalgenome.org/) | [erinriggs](https://github.com/erinriggs)
 Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia)
 Sirarat Sarntivijai | [ELIXIR](https://elixiruknode.org/) | [siiraa](https://github.com/siiraa)
+Andy Schroeder         |                        | [aschroed](https://github.com/aschroed)           
 Kent Shefchek  | [Monarch Initiative](http://monarchinitiative.org/) | [kshefchek](https://github.com/kshefchek)
 Sangeeta Shukla | [Childrens Hospital of Philadelphia](https://www.chop.edu/)
 Eric Sid | [NIH NCATS](National Center for Advancing Translational Sciences ) | [ericsid](https://github.com/ericsid)
@@ -110,4 +113,5 @@ Anne Thessen | [Monarch Initiative](http://monarchinitiative.org/) | [diatomsRco
 Alex Wagner | [Nationwide Children's Hospital](https://www.nationwidechildrens.org/) | [ahwagner]https://github.com/ahwagner
 Dani Welter | | [daniwelter](https://github.com/daniwelter)
 Matt Wright | [ClinGen](https://clinicalgenome.org/) | [wrightmw](https://github.com/wrightmw)
+Andreas Zankl          | University of Sydney   | [azankl](https://github.com/azankl) 
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
