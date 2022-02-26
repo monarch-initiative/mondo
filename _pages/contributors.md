@@ -58,11 +58,15 @@ Marina DiStefano | [ClinGen](https://clinicalgenome.org/) | [marinadistefano](ht
 Bill Duncan | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [wdduncan](https://github.com/wdduncan)
 Colin Ellis | [CHOP](https://www.chop.edu/) | [colinellis1](https://github.com/colinellis1)
 Mark Engelstad | [Oregon Health & Science University](www.ohsu.edu) | [markengelstad](https://github.com/markengelstad)
+May Flowers            | ClinGen                 | [RedRiver1816]https://github.com/RedRiver1816               |
+Vince Forgetta         | Lady Davis Institute    | [vforget]https://github.com/vforget                         |
 Gilberto Fragoso | [NCI](https://www.cancer.gov/) | [NCIEVS](https://github.com/NCIEVS)
 Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.com/melluf)
 Jenny Goldstein | [ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
-Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
 Asier Gonzalez         |                        | [AsierGonzalez](https://github.com/AsierGonzalez)
+JP Gourdine            |                         | [jpgourdine](https://github.com/jpgourdine) 
+Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
+Dylan Gration          |                         | [peupeubangbang]https://github.com/peupeubangbang
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
 Nomi Harris | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [nlharris ](https://github.com/nlharris)
 Emily Hartley | [Critical Path Institute](https://c-path.org/) | [ehartley](https://github.com/ehartley)
@@ -88,23 +92,28 @@ Martin Larralde        | EMBL                   | [althonos](https://github.com/
 Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/) | [Letchau](https://github.com/Letchau)
 Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [janinelewis3](https://github.com/janinelewis3)
 Antonia Lock           | UniProt Consortium     | [Antonialock](https://github.com/Antonialock)    | 
+Irene López            | EMBL-EBI                | [ireneisdoomed](https://github.com/ireneisdoomed)
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
 Andrea Martinez Vernon | University of Warwick  | [asmvernon](https://github.com/asmvernon)  
 Julie McMurry | [Monarch Initiative](http://monarchinitiative.org/) | [jmcmurry](https://github.com/jmcmurry)
 Birgit Meldal          | EMBL-EBI               | [bmeldal](https://github.com/bmeldal)  
 Kate Megquier | [Broad Institute](https://www.broadinstitute.org/) | [kmegquier](https://github.com/kmegquier)
+Mark Miller            | LBNL                    | [turbomam]https://github.com/turbomam  
 Shruthi Mohan | ClinGen | [Mohan-Shruthi](https://github.com/Mohan-Shruthi)
+Fernando Moreno Jabato |                         | [fmjabato](https://github.com/fmjabato) 
 Sierra Moxon | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [sierra-moxon](https://github.com/sierra-moxon)
 Moni Munoz-Torres | [Monarch Initiative](http://monarchinitiative.org/) | [monicacecilia](https://github.com/monicacecilia)
 David Ochoa            | EMBL-EBI               | [d0choa](https://github.com/d0choa)
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
 Daniel Olson | [Critical Path Institute](https://c-path.org/) | [Vineyardintern](https://github.com/Vineyardintern)
+Tudor Oprea            |                         | [TudorOprea]https://github.com/TudorOprea
 David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://github.com/dosumis)
 Kalliopi Panoutsopoulou |  | [kallia-p](https://github.com/kallia-p)
 Brooke Palus | [ClinGen](https://clinicalgenome.org/) | [brookepalus](https://github.com/brookepalus)
 Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
 Tim Putman | [Monarch Initiative](http://monarchinitiative.org/) | [putmantime](https://github.com/putmantime) 
+Stephen Ramsey         | Oregon State University | [saramsey]https://github.com/saramsey 
 Ana Rath | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [ana-rath-orphanet](https://github.com/ana-rath-orphanet)
 Heidi Rehm | [ClinGen](https://clinicalgenome.org/) | [heidirehm](https://github.com/heidirehm)
 Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](https://github.com/kreinold)
@@ -118,11 +127,15 @@ Eric Sid | [NIH NCATS](National Center for Advancing Translational Sciences ) | 
 Rebecca Siegert | [Broad Institute](https://www.broadinstitute.org/) | [rebecca-siegert](https://github.com/rebecca-siegert)
 Morgan Similuk | [NIH NHGRI](https://www.genome.gov/) | [MorganSimiluk](https://github.com/MorganSimiluk)
 Tam Sneddon | [ClinGen](https://clinicalgenome.org/) | [tsneddon](https://github.com/tsneddon)
+Ralf Stephan           |                         | [rwst]https://github.com/rwst    
 Andrea Storm |[GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [GARDInfoCenter](https://github.com/GARDInfoCenter)
+Gregory Stupp          |                         | [stuppie]https://github.com/stuppie 
+Jagadish Sundaramurthi | Monarch                 | [jagcsun](https://github.com/jagcsun)
 Deanne Taylor | [Childrens Hospital of Philadelphia](https://www.chop.edu/) |[taylordm](https://github.com/taylordm)
 Courtney Thaxton | [ClinGen](https://clinicalgenome.org/) | [courtneythaxton](https://github.com/courtneythaxton)
 Anne Thessen | [Monarch Initiative](http://monarchinitiative.org/) | [diatomsRcool](https://github.com/diatomsRcool)
 Eloise Valasek         |                        | [eloisevalasek](https://github.com/eloisevalasek)
+Jordi Valls-Margarit   |                         | [Jordi-Valls](https://github.com/Jordi-Valls)
 Alex Wagner | [Nationwide Children's Hospital](https://www.nationwidechildrens.org/) | [ahwagner](https://github.com/ahwagner)
 Dani Welter | | [daniwelter](https://github.com/daniwelter)
 Matt Wright | [ClinGen](https://clinicalgenome.org/) | [wrightmw](https://github.com/wrightmw)
