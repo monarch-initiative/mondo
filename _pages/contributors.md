@@ -148,10 +148,10 @@ Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhan
 |  | [dancingline](https://github.com/dancingline)     
 | | [darintay](https://github.com/darintay)  
 | | [dst1](https://github.com/dst1) 
-| N/A                    | N/A                     | [ewilcox19](https://github.com/ewilcox19)                   |
-| N/A                    | N/A                     | [fjlogrono](https://github.com/fjlogrono)                   |
-| N/A                    | N/A                     | [groliver](https://github.com/groliver)                     |
-| N/A                    | N/A                     | [gtsueng](https://github.com/gtsueng)                       |
+N/A                    | N/A                     | [ewilcox19](https://github.com/ewilcox19)                   |
+N/A                    | N/A                     | [fjlogrono](https://github.com/fjlogrono)                   |
+N/A                    | N/A                     | [groliver](https://github.com/groliver)                     |
+N/A                    | N/A                     | [gtsueng](https://github.com/gtsueng)                       |
 | N/A                    | N/A                     | [jahilton](https://github.com/jahilton)                     |
 | N/A                    | N/A                     | [jmcglaughon](https://github.com/jmcglaughon)               |
 | N/A                    | N/A                     | [johannaest](https://github.com/johannaest)                 |
@@ -163,12 +163,12 @@ Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhan
 | N/A                    | N/A                     | [megood1](https://github.com/megood1)                       |
 | N/A                    | N/A                     | [mhughes5](https://github.com/mhughes5)                     |
 | N/A                    | N/A                     | [miajsullivan](https://github.com/miajsullivan)             |
-| N/A                    | N/A                     | [mshadbolt]https://github.com/mshadbolt                     |
-| N/A                    | N/A                     | [need47]https://github.com/need47                           |
-| N/A                    | N/A                     | [paulacarrio]https://github.com/paulacarrio                 |
-| N/A                    | N/A                     | [seoanezonjic]https://github.com/seoanezonjic               |
-| N/A                    | N/A                     | [sgblanch]https://github.com/sgblanch                       |
-| N/A                    | N/A                     | [smcnulty13]https://github.com/smcnulty13                   |
-| N/A                    | N/A                     | [tnavatar]https://github.com/tnavatar                       |
-| N/A                    | N/A                     | [WallaceKa]https://github.com/WallaceKa                     |
-| N/A                    | N/A                     | [kristyleelowdermilk]https://github.com/kristyleelowdermilk | 
+| N/A                    | N/A                     | [mshadbolt](https://github.com/mshadbolt)                   |
+| N/A                    | N/A                     | [need47](https://github.com/need47)                       |
+| N/A                    | N/A                     | [paulacarrio](https://github.com/paulacarrio)                |
+| N/A                    | N/A                     | [seoanezonjic](https://github.com/seoanezonjic)             |
+| N/A                    | N/A                     | [sgblanch](https://github.com/sgblanch)                |
+| N/A                    | N/A                     | [smcnulty13](https://github.com/smcnulty13)                  |
+| N/A                    | N/A                     | [tnavatar](https://github.com/tnavatar)                      |
+| N/A                    | N/A                     | [WallaceKa](https://github.com/WallaceKa)                    |
+| N/A                    | N/A                     | [kristyleelowdermilk](https://github.com/kristyleelowdermilk) | 
