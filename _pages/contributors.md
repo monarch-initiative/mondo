@@ -43,8 +43,12 @@ Orion Buske            |                        | [buske](https://github.com/bus
 Gully    Burns          | CZI                     | \[GullyBurns\](https://github.com/GullyBurns)                 |
 Tiffany Callahan | [University of Colorado School of Medicine](https://medschool.cuanschutz.edu/) | [callahantiff](https://github.com/callahantiff)
 Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody](https://github.com/LCCarmody)
+Luca Cappelletti       |                         | \[LucaCappelletti94\](https://github.com/LucaCappelletti94)   |
 Lauren Chan | [Monarch Initiative](http://monarchinitiative.org/) | [laurenechan](https://github.com/laurenechan)
 Alice Chen | [NIH NCATS](National Center for Advancing Translational Sciences ) | [achenNCATS](https://github.com/achenNCATS)
+Louise Daugherty       | Healx                   | \[lcdaugherty\](https://github.com/lcdaugherty)               |
+Michel Dumontier       | Maastricht University   | \[micheldumontier\](https://github.com/micheldumontier)       |
+Nathan Dunn            |                         | \[nathandunn\]https://github.com/nathandunn                   |
 Shahim Essaid | [Monarch Initiative](http://monarchinitiative.org/) | [ShahimEssaid](https://github.com/ShahimEssaid)
 Christopher G Chute | [Johns Hopkins](https://www.jhu.edu/) | [chute](https://github.com/chute)
 Tom Conlin | [Oregon State University](https://oregonstate.edu/)| [TomConlin ](https://github.com/TomConlin) 
