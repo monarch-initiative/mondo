@@ -76,6 +76,7 @@ Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/abou
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
 Julie McMurry | [Monarch Initiative](http://monarchinitiative.org/) | [jmcmurry](https://github.com/jmcmurry)
 Kate Megquier | [Broad Institute](https://www.broadinstitute.org/) | [kmegquier](https://github.com/kmegquier)
+Shruthi Mohan | ClinGen | [Mohan-Shruthi]https://github.com/Mohan-Shruthi
 Sierra Moxon | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [sierra-moxon](https://github.com/sierra-moxon)
 Moni Munoz-Torres | [Monarch Initiative](http://monarchinitiative.org/) | [monicacecilia](https://github.com/monicacecilia)
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
