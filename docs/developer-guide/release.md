@@ -62,6 +62,8 @@ Note- the date should be the date of the release in the format sh run.sh make GH
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     3. Ensure it has all release artefacts attached to it (there should be 21 assets)
     4. Check this file to ensure you see the expected changes (spot check a few changes): https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl
+1. Commit all of the changed import and report files (ignore or discard diff files, change log) to a branch
+1. Once all checks have passed, merge to master. Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
 1. Write a description of the release
    1. Add the release description to the release tab: 
        - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
@@ -74,10 +76,7 @@ Note- the date should be the date of the release in the format sh run.sh make GH
       - click edit
       - add the name of the new release and the content from the change log text file above. 
       - commit to master
-1. Commit release files
-   1. Commit all of the changed import and report files (ignore or discard diff files, change log) to a branch
-   1. Once all checks have passed, merge to master
-   Note: The changes shown in this new commit are the copied files from the source ontology directory (they don’t affect anything).
+   3. Click on "Publish release" (THIS IS NEW, the release, so far should have been in Draft state) 
 
 ## Check obsoletion obsoletion candidates
 
