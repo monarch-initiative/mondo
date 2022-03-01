@@ -22,3 +22,13 @@ A chromosomal disorder consisting of the partial deletion of {[chromosome](http:
 
 [syndrome caused by partial chromosomal deletion](http://purl.obolibrary.org/obo/MONDO_0000761) and ([disease arises from structure](http://purl.obolibrary.org/obo/RO_0004030) some {[chromosome](http://purl.obolibrary.org/obo/GO_0005694)})
 
+## Data preview 
+| defined_class                                | defined_class_label               | chromosome                                    | chromosome_label      |
+|:---------------------------------------------|:----------------------------------|:----------------------------------------------|:----------------------|
+| [MONDO:0015607](http://purl.obolibrary.org/obo/MONDO_0015607) | partial chromosome Y deletion     | [CHR:9606-chrY](http://purl.obolibrary.org/obo/CHR_9606-chrY)  | chromosome Y (Human)  |
+| [MONDO:0016866](http://purl.obolibrary.org/obo/MONDO_0016866) | partial deletion of chromosome 1  | [CHR:9606-chr1](http://purl.obolibrary.org/obo/CHR_9606-chr1)  | chromosome 1 (Human)  |
+| [MONDO:0016875](http://purl.obolibrary.org/obo/MONDO_0016875) | partial deletion of chromosome 10 | [CHR:9606-chr10](http://purl.obolibrary.org/obo/CHR_9606-chr10) | chromosome 10 (Human) |
+| [MONDO:0016876](http://purl.obolibrary.org/obo/MONDO_0016876) | partial deletion of chromosome 11 | [CHR:9606-chr11](http://purl.obolibrary.org/obo/CHR_9606-chr11) | chromosome 11 (Human) |
+| [MONDO:0017277](http://purl.obolibrary.org/obo/MONDO_0017277) | partial deletion of chromosome 12 | [CHR:9606-chr12](http://purl.obolibrary.org/obo/CHR_9606-chr12) | chromosome 12 (Human) |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/partial_chromosomal_deletion.tsv) 

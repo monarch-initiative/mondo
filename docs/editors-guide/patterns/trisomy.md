@@ -18,3 +18,13 @@ A chromosomal disorder consisting of the presence of an extra {[chromosome](http
 
 trisomy and ([disease arises from structure](http://purl.obolibrary.org/obo/RO_0004030) some {[chromosome](http://purl.obolibrary.org/obo/GO_0005694)})
 
+## Data preview 
+| defined_class                                | defined_class_label   | chromosome                                    | chromosome_label      |
+|:---------------------------------------------|:----------------------|:----------------------------------------------|:----------------------|
+| [MONDO:0022180](http://purl.obolibrary.org/obo/MONDO_0022180) | chromosome 16 trisomy | [CHR:9606-chr16](http://purl.obolibrary.org/obo/CHR_9606-chr16) | chromosome 16 (Human) |
+| [MONDO:0022757](http://purl.obolibrary.org/obo/MONDO_0022757) | chromosome 20 trisomy | [CHR:9606-chr20](http://purl.obolibrary.org/obo/CHR_9606-chr20) | chromosome 20 (Human) |
+| [MONDO:0043452](http://purl.obolibrary.org/obo/MONDO_0043452) | chromosome 8, trisomy | [CHR:9606-chr8](http://purl.obolibrary.org/obo/CHR_9606-chr8)  | chromosome 8 (Human)  |
+| [MONDO:0018068](http://purl.obolibrary.org/obo/MONDO_0018068) | trisomy 13            | [CHR:9606-chr13](http://purl.obolibrary.org/obo/CHR_9606-chr13) | chromosome 13 (Human) |
+| [MONDO:0018071](http://purl.obolibrary.org/obo/MONDO_0018071) | trisomy 18            | [CHR:9606-chr18](http://purl.obolibrary.org/obo/CHR_9606-chr18) | chromosome 18 (Human) |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/trisomy.tsv) 

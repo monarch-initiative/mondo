@@ -20,3 +20,9 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in whic
 
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [Severe](http://purl.obolibrary.org/obo/HP_0012828)
 
+## Data preview 
+| defined_class                                | defined_class_label        | disease                                      | disease_label       |
+|:---------------------------------------------|:---------------------------|:---------------------------------------------|:--------------------|
+| [MONDO:0100475](http://purl.obolibrary.org/obo/MONDO_0100475) | severe ichthyosis vulgaris | [MONDO:0024304](http://purl.obolibrary.org/obo/MONDO_0024304) | ichthyosis vulgaris |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/severe.tsv) 
