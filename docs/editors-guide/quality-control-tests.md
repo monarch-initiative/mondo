@@ -2,6 +2,76 @@
 
 ## Mondo specific checks
 
+###  qc-equivalent-preferred-multiple.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
+  	?entity oboInOwl:hasDbXref ?xref .
+  	?entity oboInOwl:hasDbXref ?xref2 .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source0 ;
+           oboInOwl:source ?source1 .
+  
+  	?xref_anno2 a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref2 ;
+           oboInOwl:source ?source2 ;
+           oboInOwl:source ?source4 .
+           
+
+    FILTER(str(?xref2)!=str(?xref))
+  	FILTER(STRBEFORE(str(?xref),":") = STRBEFORE(str(?xref2),":")) 
+    FILTER ((str(?source0)="MONDO:preferredExternal"))
+    FILTER ((str(?source4)="MONDO:preferredExternal"))
+    FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:equivalentObsolete"))
+  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:equivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(?xref2 as ?value)
+}
+
+```
+
+###  qc-equivalent-to-on-deprecated.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+#description: Deprecated class employs equivalentTo
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity oboInOwl:hasDbXref ?xref .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source .
+    
+    ?entity owl:deprecated true 
+
+    FILTER ((str(?source)="MONDO:equivalentTo") || (str(?source)="MONDO:equivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(?source as ?value)
+}
+ORDER BY ?entity
+
+```
+
 ###  qc-excluded-subsumption-is-inferred.sparql
 
 ```
@@ -112,6 +182,33 @@ SELECT DISTINCT ?entity ?property ?value WHERE
     BIND(rdfs:subClassOf as ?property)
 }
 ORDER BY ?entity
+```
+
+###  qc-obsolete-equivalent-on-non-deprecated.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity oboInOwl:hasDbXref ?xref .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source .
+    
+    FILTER NOT EXISTS { ?entity owl:deprecated true }
+
+    FILTER ((str(?source)="MONDO:obsoleteEquivalent") || (str(?source)="MONDO:obsoleteEquivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(str(?entity2) as ?value)
+}
+ORDER BY ?entity
+
 ```
 
 ###  qc-omim-subsumption.sparql
@@ -238,6 +335,8 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
+#description: No two Mondo IDs should ever point to the same external ID
+
 SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity oboInOwl:hasDbXref ?xref .
     
@@ -256,14 +355,15 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
            oboInOwl:source ?source2 .
 
   	FILTER (?entity2!=?entity)
-    FILTER (str(?source1)="MONDO:equivalentTo")
-  	FILTER (str(?source2)="MONDO:equivalentTo")
+    FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete"))
+  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     FILTER (isIRI(?entity2) && STRSTARTS(str(?entity2), "http://purl.obolibrary.org/obo/MONDO_"))
-    BIND(oboInOwl:hasDbXref as ?property)
+    BIND(?xref as ?property)
     BIND(str(?entity2) as ?value)
 }
 ORDER BY ?entity
+
 ```
 
 ###  qc-related-exact-synonym-omim.sparql

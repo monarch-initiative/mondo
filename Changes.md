@@ -1,4 +1,462 @@
-# 2022-04-03
+# 2022-03-01
+
+## Overview:
+
+
+* Number of new terms: 81
+* Number of changed labels: 23
+* Number of changed definitions: 28
+* Number obsoleted terms: 235
+* Number of new obsoletion candidates: 47
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0030374 | WHIM syndrome 2 | |
+| MONDO:0030375 | neurologic, endocrine, and pancreatic disease, multisystem, infantile-onset 2 | |
+| MONDO:0030376 | Martsolf syndrome 2 | |
+| MONDO:0030378 | combined oxidative phosphorylation deficiency 53 | |
+| MONDO:0030397 | portal hypertension, noncirrhotic, 2 | |
+| MONDO:0030399 | visceral neuropathy, familial, 2, autosomal recessive | |
+| MONDO:0030423 | congenital disorder of glycosylation, type 2v | |
+| MONDO:0030428 | immunodeficiency 85 and autoimmunity | |
+| MONDO:0030430 | spermatogenic failure 56 | |
+| MONDO:0030433 | Charcot-Marie-Tooth disease, axonal, type 2FF | |
+| MONDO:0030434 | epilepsy, idiopathic generalized, susceptibility to, 18 | |
+| MONDO:0030436 | anemia, sideroblastic, 5 | |
+| MONDO:0030437 | congenital disorder of glycosylation, type IIw | |
+| MONDO:0030438 | pontocerebellar hypoplasia, type 16 | |
+| MONDO:0030439 | spermatogenic failure 57 | |
+| MONDO:0030440 | cone-rod dystrophy 22 | |
+| MONDO:0030448 | immunodeficiency 86 | |
+| MONDO:0030449 | deafness, autosomal recessive 118, with cochlear aplasia | |
+| MONDO:0030453 | developmental and epileptic encephalopathy 97 | |
+| MONDO:0030454 | Joubert syndrome 39 | |
+| MONDO:0030455 | dystonia 31 | |
+| MONDO:0030456 | muscular dystrophy, limb-girdle, autosomal recessive 27 | |
+| MONDO:0030457 | immunodeficiency 87 and autoimmunity | |
+| MONDO:0030458 | Charcot-Marie-Tooth disease, axonal, Type 2HH | |
+| MONDO:0030462 | Joubert syndrome 40 | |
+| MONDO:0030463 | spermatogenic failure 58 | |
+| MONDO:0030465 | cataract 49 | |
+| MONDO:0030471 | Galloway-Mowat syndrome 9 | |
+| MONDO:0030472 | developmental and epileptic encephalopathy 98 | |
+| MONDO:0030473 | developmental and epileptic encephalopathy 99 | |
+| MONDO:0030474 | heterotaxy, visceral, 10, autosomal, with male infertility | |
+| MONDO:0030475 | heterotaxy, visceral, 11, autosomal, with male infertility | |
+| MONDO:0030476 | Galloway-Mowat syndrome 10 | |
+| MONDO:0030480 | hearing loss, autosomal recessive 119 | |
+| MONDO:0030482 | spastic paraplegia 84, autosomal recessive | |
+| MONDO:0030483 | immunodeficiency 88 | |
+| MONDO:0030484 | immunodeficiency 89 and autoimmunity | |
+| MONDO:0030486 | dystonia 32 | |
+| MONDO:0030487 | spondylometaphyseal dysplasia, pagnamenta type | |
+| MONDO:0030489 | epidermolysis bullosa simplex 2A, generalized severe | |
+| MONDO:0030490 | oocyte maturation defect 11 | |
+| MONDO:0030491 | immunodeficiency 91 and hyperinflammation | |
+| MONDO:0030492 | spermatogenic failure 59 | |
+| MONDO:0030493 | spermatogenic failure 60 | |
+| MONDO:0030498 | immunodeficiency 92 | |
+| MONDO:0030500 | Loeys-Dietz syndrome 6 | |
+| MONDO:0030503 | cholestasis, progressive familial intrahepatic, 7, with or without hearing loss | |
+| MONDO:0030505 | cholestasis, progressive familial intrahepatic, 8 | |
+| MONDO:0030506 | ovarian dysgenesis 9 | |
+| MONDO:0030507 | spermatogenic failure 61 | |
+| MONDO:0030508 | spermatogenic failure 62 | |
+| MONDO:0030512 | spastic paraplegia 85, autosomal recessive | |
+| MONDO:0030513 | dystonia 33 | |
+| MONDO:0030514 | leukodystrophy, hypomyelinating, 23, with ataxia, deafness, liver dysfunction, and dilated cardiomyopathy | |
+| MONDO:0030515 | spermatogenic failure 63 | |
+| MONDO:0030517 | trichothiodystrophy 8, nonphotosensitive | |
+| MONDO:0030518 | trichothiodystrophy 9, nonphotosensitive | |
+| MONDO:0030519 | agammaglobulinemia 9, autosomal recessive | |
+| MONDO:0030522 | spermatogenic failure 64 | |
+| MONDO:0030523 | oocyte maturation defect 12 | |
+| MONDO:0030524 | mucopolysaccharidosis, type 10 | |
+| MONDO:0030525 | epidermolysis bullosa simplex 2B, generalized intermediate | |
+| MONDO:0030527 | epidermolysis bullosa simplex 2C, localized | |
+| MONDO:0030528 | immunodeficiency 93 and hypertrophic cardiomyopathy | |
+| MONDO:0030529 | agammaglobulinemia 10, autosomal dominant | |
+| MONDO:0030531 | spermatogenic failure 65 | |
+| MONDO:0030533 | intellectual developmental disorder, autosomal recessive 73 | |
+| MONDO:0030534 | hypogonadotropic hypogonadism 26 with or without anosmia | |
+| MONDO:0030535 | epidermolysis bullosa simplex 2d, generalized, intermediate or severe, autosomal recessive | |
+| MONDO:0030538 | dystonia 34, myoclonic | |
+| MONDO:0030543 | combined oxidative phosphorylation deficiency 54 | |
+| MONDO:0030553 | acromesomelic dysplasia 4 | |
+| MONDO:0030606 | Bryant-Li-Bhoj neurodevelopmental syndrome 1 | |
+| MONDO:0030607 | Bryant-Li-Bhoj neurodevelopmental syndrome 2 | |
+| MONDO:0031200 | Bryant-Li-Bhoj neurodevelopmental syndrome | |
+| MONDO:0100485 | KCNH1 associated disorder | Any neurodevelopmental disorder in which the cause of the disease is a mutation in the KCNH1 gene. Variants in KCNH1 cause significant neurodevelopmental disabilities that lie along a phenotypic spectrum ranging from non-syndromic to syndromic. The most common phenotypes associated with variants in KCNH1 include intellectual disability, seizures, hypotonia, absence or hypoplasia of nails, and gingival enlargement. Hypoplastic terminal phalanges of fingers and toes, proximal placement and long thumb, and long toes present less frequently. |
+| MONDO:0100486 | adult acne | Acne that occurs in an adult. |
+| MONDO:0700038 | TDP-43 proteinopathy | Disease characterized by the presence of abnormally phosphorylated, ubiquitinated, and cleaved DNA-binding protein TDP-43 in affected brain and spinal cord. Inclusions of the pathologic protein in neurons and glia, without the presence of AMYLOID, is the major feature of these conditions, thus making these proteinopathies distinct from most other neurogenerative disorders in which protein misfolding leads to brain amyloidosis. Both frontotemporal lobar degeneration and AMYOTROPHIC LATERAL SCLEROSIS exhibit this common method of pathogenesis and thus they may represent two extremes of a continuous clinicopathological spectrum of one disease. |
+| MONDO:0700039 | bladder exstrophy-epispadias-cloacal extrophy complex | An anterior midline defect with variable expression involving the infraumbilical abdominal wall including the pelvis, urinary tract, and external genitalia. |
+| MONDO:0700040 | neonatal jaundice due to ABO incompatibility | Jaundice that appears during the neonatal period due to high levels of unconjugated bilirubin that are a result of maternal-fetal ABO incompatibility. |
+| MONDO:0700041 | neuroblastoma, susceptibility to, 2 | |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0007064 | severe combined immunodeficiency, autosomal recessive, T cell-negative, B cell-negative, NK cell-negative, due to adenosine deaminase deficiency | adenosine deaminase deficiency | severe combined immunodeficiency, autosomal recessive, T cell-negative, B cell-negative, NK cell-negative, due to adenosine deaminase deficiency |
+| MONDO:0007219 | Osebold-Remondini syndrome | brachydactyly type A6 | Osebold-Remondini syndrome |
+| MONDO:0007550 | epidermolysis bullosa simplex 1A, generalized severe | epidermolysis bullosa simplex Dowling-Meara type | epidermolysis bullosa simplex 1A, generalized severe |
+| MONDO:0007551 | epidermolysis bullosa simplex 1C, localized | localized epidermolysis bullosa simplex | epidermolysis bullosa simplex 1C, localized |
+| MONDO:0007554 | epidermolysis bullosa simplex 1B, generalized intermediate | generalized epidermolysis bullosa simplex, non-Dowling-Meara type | epidermolysis bullosa simplex 1B, generalized intermediate |
+| MONDO:0007555 | pidermolysis bullosa simplex 5A, Ogna type | epidermolysis bullosa simplex Ogna type | pidermolysis bullosa simplex 5A, Ogna type |
+| MONDO:0007556 | epidermolysis bullosa simplex 2F, with mottled pigmentation | epidermolysis bullosa simplex with mottled pigmentation | epidermolysis bullosa simplex 2F, with mottled pigmentation |
+| MONDO:0008703 | acromesomelic dysplasia 2A | acromesomelic dysplasia, Grebe type | acromesomelic dysplasia 2A |
+| MONDO:0008717 | acromesomelic dysplasia 2C, Hunter-Thompson type | acromesomelic dysplasia, Hunter-Thompson type | acromesomelic dysplasia 2C, Hunter-Thompson type |
+| MONDO:0009181 | epidermolysis bullosa simplex 5B, with muscular dystrophy | epidermolysis bullosa simplex with muscular dystrophy | epidermolysis bullosa simplex 5B, with muscular dystrophy |
+| MONDO:0009231 | acromesomelic dysplasia 2B | fibular hypoplasia and complex brachydactyly | acromesomelic dysplasia 2B |
+| MONDO:0009741 | neuroblastoma, susceptibility to, 1 | neuroblastoma, susceptibility to | neuroblastoma, susceptibility to, 1 |
+| MONDO:0017919 | exstrophy-epispadias complex | bladder exstrophy-epispadias-cloacal exstrophy complex | exstrophy-epispadias complex |
+| MONDO:0016826 | methylmalonic aciduria and homocystinuria | methylmalonic acidemia with homocystinuria | methylmalonic aciduria and homocystinuria |
+| MONDO:0010976 | epidermolysis bullosa simplex 1D, generalized, intermediate or severe, autosomal recessive | KRT14-related epidermolysis bullosa simplex | epidermolysis bullosa simplex 1D, generalized, intermediate or severe, autosomal recessive |
+| MONDO:0011275 | acromesomelic dysplasia 1, Maroteaux type | acromesomelic dysplasia, Maroteaux type | acromesomelic dysplasia 1, Maroteaux type |
+| MONDO:0012258 | epidermolysis bullosa simplex 2E, with migratory circinate erythema | epidermolysis bullosa simplex with circinate migratory erythema | epidermolysis bullosa simplex 2E, with migratory circinate erythema |
+| MONDO:0012274 | acromesomelic dysplasia 3 | acromesomelic dysplasia, Demirhan type | acromesomelic dysplasia 3 |
+| MONDO:0012807 | epidermolysis bullosa simplex 5C, with pyloric atresia | epidermolysis bullosa simplex with pyloric atresia | epidermolysis bullosa simplex 5C, with pyloric atresia |
+| MONDO:0013144 | hereditary antithrombin deficiency | antithrombin III deficiency | hereditary antithrombin deficiency |
+| MONDO:0014014 | epidermolysis bullosa simplex 4, localized or generalized intermediate, autosomal recessive | epidermolysis bullosa simplex due to exophilin 5 deficiency | epidermolysis bullosa simplex 4, localized or generalized intermediate, autosomal recessive |
+| MONDO:0014180 | epidermolysis bullosa simplex 3, localized or generalized intermediate, with BP230 deficiency | epidermolysis bullosa simplex due to BP230 deficiency | epidermolysis bullosa simplex 3, localized or generalized intermediate, with BP230 deficiency |
+| MONDO:0015006 | epidermolysis bullosa simplex 6, generalized, with scarring and hair loss | generalized basal epidermolysis bullosa simplex with skin atrophy, scarring and hair loss | epidermolysis bullosa simplex 6, generalized, with scarring and hair loss |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0015140 | early-onset autosomal dominant Alzheimer disease | Early-onset autosomal dominant Alzheimer disease (EOAD) is a progressive dementia with reduction of cognitive functions. EOAD presents the same phenotype as sporadic Alzheimer disease (AD) but has an early age of onset, usually before 60 years old. | A progressive dementia with reduction of cognitive functions. It presents the same phenotype as sporadic Alzheimer disease (AD) but has an early age of onset, usually before 60 years old. |
+| MONDO:0007219 | Osebold-Remondini syndrome | Brachydactyly A6 (BDA6) is characterized by brachymesophalangy with mesomelic short limbs, and carpal and tarsal bone abnormalities. In general, the affected individuals are of slightly short stature and normal intelligence. The syndrome has been described in a kindred with seven affected members from three generations. Transmission appears to be autosomal dominant. | A brachymesophalangy with mesomelic short limbs, and carpal and tarsal bone abnormalities. In general, the affected individuals are of slightly short stature and normal intelligence. The syndrome has been described in a kindred with seven affected members from three generations. Transmission appears to be autosomal dominant. |
+| MONDO:0019696 | acromesomelic dysplasia | Acromesomelic dysplasia describes a group of extremely rare, inherited, progressive skeletal conditions that result in a particular form of short stature, called short-limb dwarfism. The short stature is the result of unusually short forearms and forelegs (mesomelia) and abnormal shortening of the bones in the hands and feet (acromelia). At birth, the hands and feet may appear abnormally short and broad. Over time, the apparent disproportion becomes even more obvious, especially during the first years of life. Additional features may include: limited extension of the elbows and arms; progressive abnormal curvature of the spine; an enlarged head; and a slightly flattened midface. Acromesomelic dysplasia is inherited as an autosomal recessive trait. There are different types of acromesomelic dysplasia, which are distinguished by their genetic cause. To read more about the different types, click on the links below. Acromesomelic dysplasia, Maroteaux type Acromesomelic dysplasia, Hunter-Thompson type Acromesomelic dysplasia, Grebe type | A group of extremely rare, inherited, progressive skeletal conditions that result in a particular form of short stature, called short-limb dwarfism. The short stature is the result of unusually short forearms and forelegs (mesomelia) and abnormal shortening of the bones in the hands and feet (acromelia). At birth, the hands and feet may appear abnormally short and broad. Over time, the apparent disproportion becomes even more obvious, especially during the first years of life. Additional features may include: limited extension of the elbows and arms; progressive abnormal curvature of the spine; an enlarged head; and a slightly flattened midface. Acromesomelic dysplasia is inherited as an autosomal recessive trait. There are different types of acromesomelic dysplasia, which are distinguished by their genetic cause. To read more about the different types, click on the links below. Acromesomelic dysplasia, Maroteaux type Acromesomelic dysplasia, Hunter-Thompson type Acromesomelic dysplasia, Grebe type |
+| MONDO:0007550 | epidermolysis bullosa simplex 1A, generalized severe | Epidermolysis bullosa simplex, Dowling-Meara type (EBS-DM) is a basal subtype of epidermolysis bullosa simplex (EBS) characterized by the presence of generalized vesicles and small blisters in grouped or arcuate configuration. | A basal subtype of epidermolysis bullosa simplex (EBS) characterized by the presence of generalized vesicles and small blisters in grouped or arcuate configuration. |
+| MONDO:0007551 | epidermolysis bullosa simplex 1C, localized | Localized epidermolysis bullosa simplex, formerly known as EBS, Weber-Cockayne, is a basal subtype of epidermolysis bullosa simplex (EBS). The disease is characterized by blisters occurring mainly on the palms and soles, exacerbated by warm weather. | A basal subtype of epidermolysis bullosa simplex (EBS). The disease is characterized by blisters occurring mainly on the palms and soles, exacerbated by warm weather. |
+| MONDO:0007555 | pidermolysis bullosa simplex 5A, Ogna type | Epidermolysis bullosa simplex, Ogna type (EBS-O) is a basal subtype of epidermolysis bullosa simplex (EBS) characterized by sometimes widespread, primarily acral blistering. | A basal subtype of epidermolysis bullosa simplex (EBS) characterized by sometimes widespread, primarily acral blistering. |
+| MONDO:0007556 | epidermolysis bullosa simplex 2F, with mottled pigmentation | Epidermolysis bullosa simplex with mottled pigmentation (EBS-MP) is a basal subtype of epidermolysis bullosa simplex (EBS) characterized by generalized blistering with mottled or reticulate brown pigmentation. | A basal subtype of epidermolysis bullosa simplex (EBS) characterized by generalized blistering with mottled or reticulate brown pigmentation. |
+| MONDO:0008703 | acromesomelic dysplasia 2A | Acromesomelic dysplasia, Grebe type is an autosomal recessively inherited form of acromesomelic dysplasia characterized by severe dwarfism at birth, abnormalities confined to limbs, severe shortening and deformity of long bones, fusion or absence of carpal and tarsal bones, ball shaped fingers and, occasionally, polydactyly and absent joints. As seen in acromesomelic dysplasia, Hunter-Thomson type and acromesomelic dysplasia, Maroteaux Type, facial features and intelligence are normal. | An autosomal recessively inherited form of acromesomelic dysplasia characterized by severe dwarfism at birth, abnormalities confined to limbs, severe shortening and deformity of long bones, fusion or absence of carpal and tarsal bones, ball shaped fingers and, occasionally, polydactyly and absent joints. As seen in acromesomelic dysplasia, Hunter-Thomson type and acromesomelic dysplasia, Maroteaux Type, facial features and intelligence are normal. |
+| MONDO:0008872 | microcephalic osteodysplastic primordial dwarfism type II | 'Microcephalic osteodysplastic primordial dwarfism type II (MOPDII) is a form of microcephalic primordial dwarfism (MPD) characterized by severe pre- and postnatal growth retardation, with marked microcephaly in proportion to body size, skeletal dysplasia, abnormal dentition, insulin resistance, and increased risk for cerebrovascular disease.' | A form of microcephalic primordial dwarfism (MPD) characterized by severe pre- and postnatal growth retardation, with marked microcephaly in proportion to body size, skeletal dysplasia, abnormal dentition, insulin resistance, and increased risk for cerebrovascular disease. |
+| MONDO:0009049 | Cushing syndrome due to macronodular adrenal hyperplasia | ACTH-independent macronodular adrenal hyperplasia (AIMAH) is a rare cause of Cushing syndrome (CS) characterized by nodular enlargement of both adrenal glands (multiple nodules above 1 cm in diameter) that produce excess cortisol and features of adrenocorticotropic hormone (ACTH) independent CS. | A rare type of Cushing syndrome (CS) characterized by nodular enlargement of both adrenal glands (multiple nodules above 1 cm in diameter) that produce excess cortisol and features of adrenocorticotropic hormone (ACTH) independent CS. |
+| MONDO:0009181 | epidermolysis bullosa simplex 5B, with muscular dystrophy | Epidermolysis bullosa simplex with muscular dystrophy (EBS-MD) is a basal subtype of epidermolysis bullosa simplex (EBS) characterized by generalized blistering associated with muscular dystrophy. | A basal subtype of epidermolysis bullosa simplex (EBS) characterized by generalized blistering associated with muscular dystrophy. |
+| MONDO:0016826 | methylmalonic aciduria and homocystinuria | Methylmalonic acidemia with homocystinuria is an inborn error of vitamin B12 (cobalamin) metabolism characterized by megaloblastic anemia, lethargy, failure to thrive, developmental delay, intellectual deficit and seizures. There are four complementation classes of cobalamin defects (cblC, cblD, cblF and cblJ) that are responsible for methylmalonic acidemia - homocystinuria (methylmalonic acidemia - homocystinuria cblC, cblD cblF and cblJ). | An inborn error of vitamin B12 (cobalamin) metabolism characterized by megaloblastic anemia, lethargy, failure to thrive, developmental delay, intellectual deficit and seizures. There are four complementation classes of cobalamin defects (cblC, cblD, cblF and cblJ) that are responsible for methylmalonic acidemia - homocystinuria (methylmalonic acidemia - homocystinuria cblC, cblD cblF and cblJ). |
+| MONDO:0010490 | SSR4-CDG | (Xq28). | A form of congenital disorders of N-linked glycosylation characterized by neurologic abnormalities (global developmental delay in language, social skills and fine and gross motor development, intellectual disability, hypotonia, microcephaly, seizures/epilepsy), facial dysmorphism (deep set eyes, large ears, hypoplastic vermillion of upper lip, large mouth with widely spaced teeth), feeding problems often due to chewing difficulties and aversion to food with certain textures, failure to thrive, gastrointestinal abnormalities (reflux or vomiting) and strabismus. The disease is caused by mutations in the gene SSR4(Xq28). |
+| MONDO:0016297 | prelingual non-syndromic genetic hearing loss | Prelingual non-syndromic genetic deafness is a rare, genetically highly heterogeneous otorhinolaryngologic disease, resulting from inner and/or middle ear or hearing nerve anomalies, typically characterized by bilateral, severe to profound hearing loss (mean sensorineural hearing impairment of 60 dB or more for 500-, 1,000-, and 2,000-Hz frequency tones in the better ear) which occurs before the onset of speech development and is not associated with visible external ear abnormalities or any other medical problems. It is usually nonprogressive and impedes oral language acquisition. | A rare, genetically highly heterogeneous otorhinolaryngologic disease, resulting from inner and/or middle ear or hearing nerve anomalies, typically characterized by bilateral, severe to profound hearing loss (mean sensorineural hearing impairment of 60 dB or more for 500-, 1,000-, and 2,000-Hz frequency tones in the better ear) which occurs before the onset of speech development and is not associated with visible external ear abnormalities or any other medical problems. It is usually nonprogressive and impedes oral language acquisition. |
+| MONDO:0010881 | mesomelia-synostoses syndrome | Mesomelia-Synostoses syndrome (MSS) is a syndromal osteochondrodysplasia due to a contiguous gene deletion syndrome, characterized by progressive bowing of forearms and forelegs leading to mesomelia, progressive intracarpal or intratarsal bone fusion and fusion of metacarpal bones with proximal phalanges, ptosis, hypertelorism, abnormal soft palate, congenital heart defect, and ureteral anomalies. | A syndromal osteochondrodysplasia due to a contiguous gene deletion syndrome, characterized by progressive bowing of forearms and forelegs leading to mesomelia, progressive intracarpal or intratarsal bone fusion and fusion of metacarpal bones with proximal phalanges, ptosis, hypertelorism, abnormal soft palate, congenital heart defect, and ureteral anomalies. |
+| MONDO:0010976 | epidermolysis bullosa simplex 1D, generalized, intermediate or severe, autosomal recessive | KRT14-related epidermolysis bullosa simplex (EBS-AR KRT14) is a basal subtype of epidermolysis bullosa simplex EBS characterized by generalized or, less frequently, localized acral blistering. | A basal subtype of epidermolysis bullosa simplex EBS characterized by generalized or, less frequently, localized acral blistering. |
+| MONDO:0011847 | migraine without aura, susceptibility to, 4 | A migraine disorder characterized by episodes that occur in the absence of preceding focal neurological symptoms. | An inherited susceptibility or predisposition to developing migraines without aura. |
+| MONDO:0012258 | epidermolysis bullosa simplex 2E, with migratory circinate erythema | Epidermolysis bullosa simplex with circinate migratory erythema (EBS-migr) is a basal subtype of epidermolysis bullosa simplex (EBS) characterized by belt-like areas of erythema with multiple vesicles and small blisters at the advancing edge of erythema. | A basal subtype of epidermolysis bullosa simplex (EBS) characterized by belt-like areas of erythema with multiple vesicles and small blisters at the advancing edge of erythema. |
+| MONDO:0012735 | Temple-Baraitser syndrome | Temple-Baraitser syndrome is a rare developmental anomalies syndrome characterized by severe intellectual disability and distal hypoplasia of digits, particularly of thumbs and halluces, with nail aplasia or hypoplasia. Facial dysmorphism with a pseudo-myopathic appearance has been reported, which may include high anterior hairline or low frontal hairline with central cowlick, flat forehead, ptosis, hypertelorism, downslanting palpebral fissures, epicanthal folds, ears with thick helices, broad depressed nasal bridge with anteverted nares, short columella, long philtrum, high-arched palate, broad mouth with thick vermilion border of the upper or the lower lip and downturned corners. Marked hypotonia, seizures and global developmental delay have been reported, associated with autistic spectrum disorder manifestations in some patients. | A rare developmental anomalies syndrome characterized by severe intellectual disability and distal hypoplasia of digits, particularly of thumbs and halluces, with nail aplasia or hypoplasia. Facial dysmorphism with a pseudo-myopathic appearance has been reported, which may include high anterior hairline or low frontal hairline with central cowlick, flat forehead, ptosis, hypertelorism, downslanting palpebral fissures, epicanthal folds, ears with thick helices, broad depressed nasal bridge with anteverted nares, short columella, long philtrum, high-arched palate, broad mouth with thick vermilion border of the upper or the lower lip and downturned corners. Marked hypotonia, seizures and global developmental delay have been reported, associated with autistic spectrum disorder manifestations in some patients. |
+| MONDO:0012807 | epidermolysis bullosa simplex 5C, with pyloric atresia | Epidermolysis bullosa simplex with pyloric atresia (EBS-PA) is a basal subtype of epidermolysis bullosa simplex (EBS) characterized by generalized severe blistering with widespread congenital absence of skin and pyloric atresia. | A basal subtype of epidermolysis bullosa simplex (EBS) characterized by generalized severe blistering with widespread congenital absence of skin and pyloric atresia. |
+| MONDO:0013082 | Hirschsprung disease-ganglioneuroblastoma syndrome | | A rare, genetic, developmental defect during embryogenesis syndrome characterized by total or partial colonic aganglionosis associated with peripheral, usually multifocal, neuroblastic tumors (ganglioneuroblastoma, neuroblastoma, ganglioneuroma). Congenital central hypoventilation syndrome, with variable severity of respiratory compromise, cardiovascular and ophthalmologic symptoms, consistent with autonomic nervous system dysfunction, is occasionally associated. |
+| MONDO:0013144 | hereditary antithrombin deficiency | A rare disorder characterized by the presence of low levels of antithrombin III which prohibits the formation of blood clots. It may be inherited, usually in an autosomal dominant pattern, or acquired. It may lead to venous thrombosis and pulmonary embolism. | A rare, genetic, hematological disease characterized by decreased levels of antithrombin activity in plasma resulting in impaired inactivation of thrombin and factor Xa. Patients have an increased risk for venous thromboembolism, usually in the deep veins of the arms, legs and pulmonary system and, on occasion, in other venous territories (e.g. cerebral veins or sinus, mesenteric, portal, hepatic, renal and/or retinal veins). |
+| MONDO:0013357 | chromosome 17q11.2 deletion syndrome, 1.4Mb | 17q11 microdeletion syndrome is a rare severe form of neurofibromatosis type 1 (NF1) characterized by mild facial dysmorphism, developmental delay, intellectual disability, increased risk of malignancies, and a large number of neurofibromas. | A rare severe form of neurofibromatosis type 1 (NF1) characterized by mild facial dysmorphism, developmental delay, intellectual disability, increased risk of malignancies, and a large number of neurofibromas. |
+| MONDO:0017178 | osteochondritis dissecans | A rare genetic skeletal disorder characterized clinically by abnormal chondro-skeletal development, disproportionate short stature and skeletal deformation mainly affecting the knees, hips, ankles and elbows with onset generally in late childhood or adolescence. | A rare bone disease characterized by an acquired idiopathic necrotic lesion of subchondral bone with the formation of a sequestrum, which may detach to form loose bodies in joints. OCD mainly affects the knee, ankle and elbow joints and can lead to pain, functional limitations and secondary osteoarthritis. |
+| MONDO:0017712 | combined pancreatic lipase-colipase deficiency | \Combined pancreatic lipase-colipase deficiency is a disorder of lipid absorption and transport characterized by steatorrhea with foul-smelling stools from birth, diminished serum carotene and vitamin E and a combined deficiency of the pancreatic enzymes lipase and colipase. Patients are otherwise healthy and develop normally with no apparent pancreatic disease. There have been no further descriptions in the literature since 1990." | A disorder of lipid absorption and transport characterized by steatorrhea with foul-smelling stools from birth, diminished serum carotene and vitamin E and a combined deficiency of the pancreatic enzymes lipase and colipase. Patients are otherwise healthy and develop normally with no apparent pancreatic disease. There have been no further descriptions in the literature since 1990. |
+| MONDO:0019167 | immunoglobulin a vasculitis | SchC6nlein-Henoch purpura (SHP) is a systemic IgA vasculitis that affects small vessels. It is characterized by skin purpura, arthritis, and abdominal and/or renal involvement. | A systemic IgA vasculitis that affects small vessels. It is characterized by skin purpura, arthritis, and abdominal and/or renal involvement. |
+| MONDO:0019984 | renal tubular dysgenesis due to twin-twin transfusion | 'Renal tubular dysgenesis due to twin-twin transfusion syndrome (TTTS) is an acquired form of renal tubular dysgenesis that develops in donor fetuses due to the uneven shunting of growth factor and nutrients to the kidney of the recipient and is characterized by absent or poorly developed proximal tubules, persistent oligohydramnios and consequently the Potter sequence (facial dysmorphism with large and flat low-set ears, lung hypoplasia, arthrogryposis and limb positioning defects).' | An acquired form of renal tubular dysgenesis that develops in donor fetuses due to the uneven shunting of growth factor and nutrients to the kidney of the recipient and is characterized by absent or poorly developed proximal tubules, persistent oligohydramnios and consequently the Potter sequence (facial dysmorphism with large and flat low-set ears, lung hypoplasia, arthrogryposis and limb positioning defects). |
+| MONDO:0020050 | autosomal trisomy | A chromosomal abnormality consisting of the presence of one chromosome in addition to the normal diploid number. | |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0019708 | obsolete primary bone dysplasia with disorganized development of skeletal components |
+| MONDO:0003127 | obsolete embryoma |
+| MONDO:0006251 | obsolete inclusion body fibromatosis |
+| MONDO:0018627 | obsolete ACTH-independent Cushing syndrome due to rare cortisol-producing adrenal tumor |
+| MONDO:0006785 | obsolete Henoch-Schoenlein purpura |
+| MONDO:0015501 | obsolete syndrome or malformation associated with head and neck malformations |
+| MONDO:0018232 | obsolete primary bone dysplasia with micromelia |
+| MONDO:0016436 | obsolete acquired dermis elastic tissue disorder with increased elastic tissue |
+| MONDO:0019700 | obsolete primary bone dysplasia with multiple joint dislocations |
+| MONDO:0015657 | obsolete inflammatory and autoimmune disease with epilepsy |
+| MONDO:0017370 | obsolete autoinflammatory syndrome with skin involvement |
+| MONDO:0019703 | obsolete primary bone dysplasia with increased bone density |
+| MONDO:0020226 | obsolete chromosomal anomaly with cataract |
+| MONDO:0019704 | obsolete primary bone dysplasia with decreased bone density |
+| MONDO:0018231 | obsolete primary bone dysplasia with progressive ossification of skin, skeletal muscle, fascia, tendons and ligaments |
+| MONDO:0019305 | obsolete immune deficiency with skin involvement |
+| MONDO:0017311 | obsolete rare disease with thoracic aortic aneurysm and aortic dissection |
+| MONDO:0018790 | obsolete COL4A1 or COL4A2-related cerebral small vessel disease with hemorrhagic tendancy |
+| MONDO:0015218 | obsolete syndromic developmental defect of the eye |
+| MONDO:0015220 | obsolete syndrome with a central nervous system malformation as major feature |
+| MONDO:0019827 | obsolete disease associated with non-acquired combined pituitary hormone deficiency |
+| MONDO:0015651 | obsolete neurocutaneous syndrome with epilepsy |
+| MONDO:0016337 | obsolete syndrome associated with dilated cardiomyopathy |
+| MONDO:0017118 | obsolete syndrome with a cerebellar malformation as major feature |
+| MONDO:0017035 | obsolete secondary interstitial lung disease in childhood and adulthood associated with a systemic disease |
+| MONDO:0015329 | obsolete malformation syndrome with short stature |
+| MONDO:0019705 | obsolete primary bone dysplasia with defective bone mineralization |
+| MONDO:0015945 | obsolete polymalformative genetic syndrome with increased risk of developing cancer |
+| MONDO:0015336 | obsolete malformation syndrome with odontal and/or periodontal component |
+| MONDO:0017272 | obsolete autosomal ichthyosis syndrome with prominent neurologics signs |
+| MONDO:0020228 | obsolete cataract associated with a metabolic disease |
+| MONDO:0020281 | obsolete metabolic disease with pigmentary retinitis |
+| MONDO:0017432 | obsolete syndrome with limb reduction defects |
+| MONDO:0020232 | obsolete musculoskeletal disease with cataract |
+| MONDO:0016399 | obsolete amino acid or protein metabolism disease with epilepsy |
+| MONDO:0016402 | obsolete mitochondrial disease with epilepsy |
+| MONDO:0016403 | obsolete mitochondrial disease with peripheral neuropathy |
+| MONDO:0015920 | obsolete syndromic neurometabolic disease with X-linked intellectual disability |
+| MONDO:0016326 | obsolete lysosomal disease with hypertrophic cardiomyopathy |
+| MONDO:0019301 | obsolete metabolic disease with skin involvement |
+| MONDO:0019706 | obsolete lysosomal storage disease with skeletal involvement |
+| MONDO:0015188 | obsolete metabolic disorder with intestinal involvement |
+| MONDO:0015895 | obsolete syndrome with hypoparathyroidism |
+| MONDO:0016792 | obsolete mitochondrial oxidative phosphorylation disorder due to a large-scale single deletion of mitochondrial DNA |
+| MONDO:0011140 | obsolete benign familial neonatal-infantile seizures |
+| MONDO:0017271 | obsolete autosomal ichthyosis syndrome with prominent hair abnormalities |
+| MONDO:0017021 | obsolete secondary interstitial lung disease specific to childhood associated with a connective tissue disease |
+| MONDO:0015877 | obsolete malformative syndrome with dentinogenesis imperfecta |
+| MONDO:0018558 | obsolete syndrome with woolly hair |
+| MONDO:0018718 | obsolete vascular tumor with associated anomalies |
+| MONDO:0020182 | obsolete palpebral tumor with a vascular malformation |
+| MONDO:0012501 | obsolete mutagen sensitivity |
+| MONDO:0015659 | obsolete infectious disease with epilepsy |
+| MONDO:0019066 | obsolete syndrome with brachydactyly |
+| MONDO:0015655 | obsolete cerebral malformation with epilepsy |
+| MONDO:0013617 | obsolete overgrowth-macrocephaly-facial dysmorphism syndrome |
+| MONDO:0016334 | obsolete neuromuscular disease with dilated cardiomyopathy |
+| MONDO:0017020 | obsolete secondary interstitial lung disease specific to childhood associated with a systemic disease |
+| MONDO:0015052 | obsolete primary interstitial lung disease specific to childhood due to pulmonary surfactant protein anomalies |
+| MONDO:0015081 | obsolete neuroendocrine tumor with other location |
+| MONDO:0020266 | obsolete genodermatosis with ocular features |
+| MONDO:0015136 | obsolete immunodeficiency due to a genetic complement cascade protein anomaly |
+| MONDO:0015181 | obsolete congenital intestinal disease due to an enzymatic defect |
+| MONDO:0020138 | obsolete ataxia with dementia |
+| MONDO:0015331 | obsolete malformation syndrome with skin/mucosae involvement |
+| MONDO:0015495 | obsolete otomandibular dysplasia associated with monogenic syndromes |
+| MONDO:0017641 | obsolete miscellaneous movement disorder due to neurodegenerative disease |
+| MONDO:0017662 | obsolete miscellaneous movement disorder due to genetic neurodegenerative disease |
+| MONDO:0015572 | obsolete cerebral malformation due to abnormal neuronal migration |
+| MONDO:0015581 | obsolete bile acid synthesis defect with cholestasis and malabsorption |
+| MONDO:0015654 | obsolete idiopathic or cryptogenic familial epilepsy syndrome with identified loci/genes |
+| MONDO:0015656 | obsolete metabolic disease with epilepsy |
+| MONDO:0015658 | obsolete cerebral diseases of vascular origin with epilepsy |
+| MONDO:0015709 | obsolete immunodeficiency syndrome with autoimmunity |
+| MONDO:0015710 | obsolete immune dysregulation disease with immunodeficiency |
+| MONDO:0015711 | obsolete specific antibody deficiency with normal immunoglobulin concentrations and normal numbers of B cells |
+| MONDO:0018035 | obsolete syndrome with combined immunodeficiency |
+| MONDO:0020063 | obsolete malformation syndrome with hamartosis |
+| MONDO:0015789 | obsolete non-acquired combined pituitary hormone deficiencies without extra-pituitary malformations |
+| MONDO:0015825 | obsolete obesity due to congenital leptin resistance |
+| MONDO:0015919 | obsolete syndromic neurometabolic disease with non-X-linked intellectual disability |
+| MONDO:0015922 | obsolete channelopathy with epilepsy |
+| MONDO:0015928 | obsolete secondary interstitial lung disease in childhood and adulthood associated with a connective tissue disease |
+| MONDO:0016177 | obsolete systemic inflammatory disease associated with an acquired peripheral neuropathy |
+| MONDO:0017952 | obsolete non-familial rare disease with dilated cardiomyopathy |
+| MONDO:0020253 | obsolete syndrome with a symptomatic strabismus |
+| MONDO:0016050 | obsolete thiamine-responsive encephalopathy |
+| MONDO:0016104 | obsolete infectious disease with peripheral neuropathy |
+| MONDO:0016136 | obsolete cerebellar ataxia with peripheral neuropathy |
+| MONDO:0016137 | obsolete acute and subacute inflammatory demyelinating polyneuropathy |
+| MONDO:0016178 | obsolete peripheral neuropathy associated with monoclonal gammopathy |
+| MONDO:0016180 | obsolete hematological disease associated with an acquired peripheral neuropathy |
+| MONDO:0016181 | obsolete solid tumor associated with an acquired peripheral neuropathy |
+| MONDO:0016235 | obsolete complex vascular malformation with associated anomalies |
+| MONDO:0016325 | obsolete glycogen storage disease with hypertrophic cardiomyopathy |
+| MONDO:0016327 | obsolete mitochondrial disease with hypertrophic cardiomyopathy |
+| MONDO:0016328 | obsolete fatty acid oxidation and ketogenesis disorder with hypertrophic cardiomyopathy |
+| MONDO:0016335 | obsolete mitochondrial disease with dilated cardiomyopathy |
+| MONDO:0016336 | obsolete fatty acid oxidation and ketogenesis disorder with dilated cardiomyopathy |
+| MONDO:0016341 | obsolete lysosomal disease with restrictive cardiomyopathy |
+| MONDO:0020280 | obsolete metabolic disease with cataract |
+| MONDO:0016397 | obsolete lysosomal disease with epilepsy |
+| MONDO:0016398 | obsolete peroxisomal disease with epilepsy |
+| MONDO:0016400 | obsolete metal transport or utilization disorder with epilepsy |
+| MONDO:0016401 | obsolete energy metabolism disorder with epilepsy |
+| MONDO:0016405 | obsolete sterol metabolism disorder with epilepsy |
+| MONDO:0016435 | obsolete acquired dermis elastic tissue disorder with decreased elastic tissue |
+| MONDO:0016488 | obsolete beta-thalassemia associated with another hemoglobin anomaly |
+| MONDO:0016492 | obsolete beta-thalassemia with other manifestations |
+| MONDO:0018395 | obsolete male infertility due to sperm motility disorder |
+| MONDO:0016578 | obsolete mitochondrial oxidative phosphorylation disorder due to nuclear DNA anomalies |
+| MONDO:0016628 | obsolete hemorrhagic disorder due to a coagulation factors defect |
+| MONDO:0016704 | obsolete glial tumor of neuroepithelial tissue with unknown origin |
+| MONDO:0016754 | obsolete vestibular schwannoma |
+| MONDO:0016791 | obsolete mitochondrial oxidative phosphorylation disorder due to mitochondrial DNA anomalies |
+| MONDO:0016793 | obsolete mitochondrial oxidative phosphorylation disorder due to a point mutation of mitochondrial DNA |
+| MONDO:0016795 | obsolete mitochondrial oxidative phosphorylation disorder due to a duplication of mitochondrial DNA |
+| MONDO:0016799 | obsolete mitochondrial oxidative phosphorylation disorder with no known mechanism |
+| MONDO:0017016 | obsolete primary interstitial lung disease specific to childhood due to alveolar structure disorder |
+| MONDO:0017017 | obsolete primary interstitial lung disease specific to childhood due to alveolar vascular disorder |
+| MONDO:0017022 | obsolete secondary interstitial lung disease specific to childhood associated with a systemic vasculitis |
+| MONDO:0017023 | obsolete secondary interstitial lung disease specific to childhood associated with a granulomatous disease |
+| MONDO:0017024 | obsolete secondary interstitial lung disease specific to childhood associated with a metabolic disease |
+| MONDO:0017028 | obsolete secondary interstitial lung disease specific to adulthood associated with a systemic disease |
+| MONDO:0017032 | obsolete primary interstitial lung disease in childhood and adulthood due to alveolar structure disorder |
+| MONDO:0017033 | obsolete primary interstitial lung disease in childhood and adulthood due to alveolar vascular disorder |
+| MONDO:0017037 | obsolete secondary interstitial lung disease in childhood and adulthood associated with a metabolic disease |
+| MONDO:0017038 | obsolete secondary interstitial lung disease in childhood and adulthood associated with a systemic vasculitis |
+| MONDO:0017119 | obsolete syndrome with microcephaly as major feature |
+| MONDO:0017121 | obsolete syndrome with a Dandy-Walker malformation as major feature |
+| MONDO:0017150 | obsolete pulmonary arterial hypertension associated with another disease |
+| MONDO:0017151 | obsolete pulmonary arterial hypertension associated with connective tissue disease |
+| MONDO:0017152 | obsolete pulmonary arterial hypertension associated with congenital heart disease |
+| MONDO:0017153 | obsolete pulmonary arterial hypertension associated with HIV infection |
+| MONDO:0017154 | obsolete pulmonary arterial hypertension associated with portal hypertension |
+| MONDO:0017155 | obsolete pulmonary arterial hypertension associated with schistosomiasis |
+| MONDO:0017156 | obsolete pulmonary arterial hypertension associated with chronic hemolytic anemia |
+| MONDO:0017158 | obsolete pulmonary hypertension with unclear multifactorial mechanism |
+| MONDO:0017163 | obsolete hemolytic disease due to fetomaternal alloimmunization |
+| MONDO:0017273 | obsolete autosomal ichthyosis syndrome with fatal disease course |
+| MONDO:0017333 | obsolete hypomyelinating leukodystrophy with or without oligondontia and/or hypogonadism |
+| MONDO:0017369 | obsolete autoinflammatory syndrome with immune deficiency |
+| MONDO:0017390 | obsolete methylmalonic acidemia without homocystinuria |
+| MONDO:0017434 | obsolete syndrome with limb duplication, polydactyly, syndactyly, and/or hyperphalangy |
+| MONDO:0017635 | obsolete parkinsonian syndrome due to neurodegenerative disease |
+| MONDO:0017643 | obsolete frontotemporal neurodegeneration with movement disorder |
+| MONDO:0017646 | obsolete neurodegenerative disease with chorea |
+| MONDO:0017647 | obsolete postinfectious autoimmune disease with chorea |
+| MONDO:0017693 | obsolete glycogen storage disease due to glycogen synthase deficiency |
+| MONDO:0017717 | obsolete metabolic disease due to other fatty acid oxidation disorder |
+| MONDO:0017718 | obsolete mitochondrial disorder due to a defect in assembly or maturation of the respiratory chain complexes |
+| MONDO:0017841 | obsolete autoimmune disease with skin involvement |
+| MONDO:0017897 | obsolete autosomal recessive mendelian susceptibility to mycobacterial diseases due to a complete deficiency |
+| MONDO:0017898 | obsolete autosomal recessive mendelian susceptibility to mycobacterial diseases due to a partial deficiency |
+| MONDO:0017899 | obsolete autosomal dominant mendelian susceptibility to mycobacterial diseases due to a partial deficiency |
+| MONDO:0017956 | obsolete mixed autoinflammatory and autoimmune syndrome |
+| MONDO:0017965 | obsolete syndrome with 46,XX disorder of sex development |
+| MONDO:0017970 | obsolete 46,XY disorder of sex development due to impaired androgen production |
+| MONDO:0017971 | obsolete 46,XY disorder of sex development due to a cholesterol synthesis defect |
+| MONDO:0018118 | obsolete disorder of phospholipids, sphingolipids and fatty acids biosynthesis with central nervous system predominant involvement |
+| MONDO:0018036 | obsolete immunodeficiency due to absence of thymus |
+| MONDO:0018042 | obsolete immunodeficiency syndrome with abnormal pigmentation |
+| MONDO:0020276 | obsolete pigmentation disorder with eye involvement, excluding albinism |
+| MONDO:0018119 | obsolete disorder of phospholipids, sphingolipids and fatty acids biosynthesis with peripheral nerves predominant involvement |
+| MONDO:0018120 | obsolete disorder of phospholipids, sphingolipids and fatty acids biosynthesis with skeletal muscle predominant involvement |
+| MONDO:0018132 | obsolete congenital muscular alpha-dystroglycanopathy with brain and eye anomalies |
+| MONDO:0018157 | obsolete mitochondrial disorder due to a defect in mitochondrial protein synthesis |
+| MONDO:0018251 | obsolete glycogen storage disease due to phosphorylase kinase deficiency |
+| MONDO:0018284 | obsolete congenital disorder of glycosylation with neurological involvement |
+| MONDO:0018288 | obsolete congenital disorder of glycosylation with hepatic involvement |
+| MONDO:0018289 | obsolete congenital disorder of glycosylation with dilated cardiomyopathy |
+| MONDO:0018291 | obsolete congenital disorder of glycosylation with intestinal involvement |
+| MONDO:0018293 | obsolete congenital disorder of glycosylation with skin involvement |
+| MONDO:0018296 | obsolete congenital disorder of glycosylation with developmental anomaly |
+| MONDO:0018335 | obsolete deep dermatophytosis |
+| MONDO:0018389 | obsolete male infertility due to gonadal dysgenesis or sperm disorder |
+| MONDO:0018390 | obsolete male infertility due to sperm disorder |
+| MONDO:0018391 | obsolete male infertility with spermatogenesis disorder |
+| MONDO:0018392 | obsolete male infertility with spermatogenesis disorder due to single gene mutation |
+| MONDO:0018398 | obsolete female infertility due to a congenital hypogonadotropic hypogonadism |
+| MONDO:0018402 | obsolete female infertility due to gonadal dysgenesis |
+| MONDO:0018403 | obsolete female infertility due to an implantation defect |
+| MONDO:0018407 | obsolete male infertility due to obstructive azoospermia of genetic origin |
+| MONDO:0018414 | obsolete female infertility due to an implantation defect of genetic origin |
+| MONDO:0018444 | obsolete female infertility due to fertilization defect |
+| MONDO:0018549 | obsolete late-onset scapuloperoneal muscular dystrophy with hyaline bodies |
+| MONDO:0018618 | obsolete 46,XY disorder of sexual development due to dihydrotestosterone backdoor pathway biosynthesis defect |
+| MONDO:0018649 | obsolete cerebral visual impairment |
+| MONDO:0018727 | obsolete immunodeficiency due to a complement regulatory deficiency |
+| MONDO:0018750 | obsolete class I glucose-6-phosphate dehydrogenase deficiency |
+| MONDO:0018789 | obsolete COL4A1 or COL4A2-related cerebral small vessel disease with ischemic tendancy |
+| MONDO:0020229 | obsolete cerebral disease with cataract |
+| MONDO:0019594 | obsolete 46,XY disorder of sex development due to a testosterone synthesis defect |
+| MONDO:0019595 | obsolete 46,XY disorder of sex development due to adrenal and testicular steroidogenesis defect |
+| MONDO:0019596 | obsolete 46,XY disorder of sex development due to testicular steroidogenesis defect |
+| MONDO:0019715 | obsolete syndrome with synostosis or other joint formation defect |
+| MONDO:0019717 | obsolete chromosomal disease with overgrowth |
+| MONDO:0019747 | obsolete hematological disorder with renal involvement |
+| MONDO:0019853 | obsolete congenital hypothyroidism due to developmental anomaly |
+| MONDO:0019856 | obsolete primary congenital hypothyroidism without thyroid developmental anomaly |
+| MONDO:0019859 | obsolete congenital thyroid malformation without hypothyroidism |
+| MONDO:0020041 | obsolete 46,XY disorder of sex development due to a defect in testosterone metabolism by peripheral tissue |
+| MONDO:0020042 | obsolete syndrome with 46,XY disorder of sex development |
+| MONDO:0020045 | obsolete autosomal recessive cerebellar ataxia due to a DNA repair defect |
+| MONDO:0020078 | obsolete acute myeloid leukemia with recurrent genetic anomaly |
+| MONDO:0020090 | obsolete male infertility due to gonadal dysgenesis |
+| MONDO:0020091 | obsolete male infertility due to obstructive azoospermia |
+| MONDO:0020098 | obsolete constitutional anemia due to iron metabolism disorder |
+| MONDO:0020101 | obsolete constitutional hemolytic anemia due to membrane defect |
+| MONDO:0020103 | obsolete constitutional hemolytic anemia due to acanthocytosis |
+| MONDO:0020105 | obsolete hemolytic anemia due to hexose monophosphate shunt and glutathione metabolism anomalies |
+| MONDO:0020106 | obsolete hemolytic anemia due to a disorder of glycolytic enzymes |
+| MONDO:0020107 | obsolete hemolytic anemia due to an erythrocyte nucleotide metabolism disorder |
+| MONDO:0020109 | obsolete constitutional megaloblastic anemia due to vitamin B12 metabolism disorder |
+| MONDO:0020111 | obsolete constitutional megaloblastic anemia due to folate metabolism disorder |
+| MONDO:0020137 | obsolete frontotemporal degeneration with dementia |
+| MONDO:0020142 | obsolete metabolic disease with dementia |
+| MONDO:0020217 | obsolete secondary dysgenetic glaucoma associated with neural crest cell migration anomaly |
+| MONDO:0020230 | obsolete renal disease with cataract |
+| MONDO:0020231 | obsolete cardiac disease with cataract |
+| MONDO:0020233 | obsolete dentocutaneous disease with cataract |
+| MONDO:0020259 | obsolete myopathy with eye involvement |
+| MONDO:0020265 | obsolete mitochondrial disease with eye involvement |
+| MONDO:0020267 | obsolete genetic keratinization disorder associated with ocular features |
+| MONDO:0020270 | obsolete pigmentation disorder with eye involvement |
+| MONDO:0020273 | obsolete disease with potential neoplastic degeneration associated with ocular features |
+| MONDO:0020274 | obsolete onycho-patellar syndrome with eye involvement |
+| MONDO:0020278 | obsolete metabolic disease associated with ocular features |
+| MONDO:0020279 | obsolete metabolic disease with corneal opacity |
+| MONDO:0020282 | obsolete metabolic disease with macular cherry-red spot |
+| MONDO:0021421 | obsolete carcinoid tumors, intestina |
+| MONDO:0024348 | obsolete pityriasis capitis |
+| MONDO:0027750 | obsolete serpinopathy with toxic serpin polymerization |
+| MONDO:0027751 | obsolete serpinopathy with loss of serpin function |
+| MONDO:0033967 | obsolete immune dysregulation with inflammatory bowel disease |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0006600 | pigmentation disease |
+| MONDO:0020247 | congenital vitreoretinal dysplasia |
+| MONDO:0004553 | extrinsic allergic alveolitis |
+| MONDO:0021191 | malignant ependymoma |
+| MONDO:0004771 | Fuchs' heterochromic uveitis |
+| MONDO:0005992 | trichinosis |
+| MONDO:0006147 | chronic eosinophilic leukemia, not otherwise specified |
+| MONDO:0006584 | neonatal jaundice |
+| MONDO:0020248 | vitreoretinal degeneration |
+| MONDO:0007061 | acylase, cobalt-activated |
+| MONDO:0015551 | basal epidermolysis bullosa simplex |
+| MONDO:0020218 | goniodysgenesis |
+| MONDO:0007780 | hypertelorism, Teebi type |
+| MONDO:0008042 | myoclonus and ataxia |
+| MONDO:0008345 | idiopathic pulmonary fibrosis |
+| MONDO:0019341 | tuberous sclerosis complex |
+| MONDO:0008852 | congenital central hypoventilation syndrome |
+| MONDO:0008856 | immunodeficiency 27A |
+| MONDO:0008940 | endosteal sclerosis-cerebellar hypoplasia syndrome |
+| MONDO:0008942 | cerebelloparenchymal disorder II |
+| MONDO:0009096 | hereditary diffuse leukoencephalopathy with axonal spheroids and pigmented glia |
+| MONDO:0009316 | hair defect-photosensitivity-intellectual disability syndrome |
+| MONDO:0010113 | thalidomide susceptibility |
+| MONDO:0010783 | Alzheimer disease, susceptibility to, mitochondrial |
+| MONDO:0011111 | horns in sheep |
+| MONDO:0011319 | activator of liver function 1 |
+| MONDO:0020220 | corneoiridogoniodysgenesis |
+| MONDO:0011707 | familial dyskinesia and facial myokymia |
+| MONDO:0013733 | accelerated tumor formation, susceptibility to |
+| MONDO:0014616 | Skint1-like pseudogene |
+| MONDO:0016036 | Ledderhose disease |
+| MONDO:0016626 | hemolytic anemia due to glyceraldehyde-3-phosphate dehydrogenase deficiency |
+| MONDO:0019511 | autosomal dominant medullary cystic kidney disease with hyperuricemia |
+| MONDO:0019774 | Holmes-Gang syndrome |
+| MONDO:0020312 | atypical chronic myeloid leukemia |
+| MONDO:0020358 | coloboma of optic disc |
+| MONDO:0020670 | antithrombin deficiency type 2 |
+| MONDO:0022556 | oculo-cerebral dysplasia |
+| MONDO:0022916 | cystic hygroma lethal cleft palate |
+| MONDO:0022926 | daentl towsend Siegel syndrome |
+| MONDO:0023000 | dobrow syndrome |
+| MONDO:0032647 | global developmental delay, lung cysts, overgrowth, and wilms tumor |
+| MONDO:0042908 | Schaap-Taylor-Baraitser syndrome |
+| MONDO:0044354 | Rosai-Dorfman disease |
+| MONDO:0044684 | tuberculous meningitis |
+| MONDO:0056821 | bronchiolitis obliterans organizing pneumonia |
+| MONDO:0100461 | gastrointestinal defects and immunodeficiency syndrome |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
+# 2022-02-04
 
 ## Overview 
 
