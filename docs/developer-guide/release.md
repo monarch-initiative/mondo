@@ -72,7 +72,7 @@ Press Enter to open github.com in your browser...
 ## Deploy Release
 1. `cp ~/.token .token`  
 1. `make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
-Note- the date should be the date of the release in the format sh run.sh make GHVERSION=vYYYY-MM-DD deploy_release (for example, v2022-04-01) (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
+Note- the date should be the date of the release in the format `make GHVERSION=vYYYY-MM-DD deploy_release` (for example, v2022-04-01) (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
 1. Check these the release pages (make sure you replace the date correctly in the link in the output in the terminal):
     1. For example: https://github.com/monarch-initiative/mondo/releases/tag/untagged-2a6c39951f3210b62380
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
