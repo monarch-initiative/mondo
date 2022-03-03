@@ -11,7 +11,7 @@ DELETE {
   ?xref_anno oboInOwl:source ?source . #this deletes MONDO:equivalentTo 
   ?entity rdfs:label ?label . #this deletes the old label and adds the new label
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?definition . #This deletes the definition
-
+  ?def_anno owl:annotatedTarget ?definition.
 }
 
 INSERT {
@@ -20,7 +20,7 @@ INSERT {
   ?entity owl:deprecated true .
   ?entity <http://purl.obolibrary.org/obo/IAO_0000231> "out of scope" .
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?obsolete_definition .
-
+  ?def_anno owl:annotatedTarget ?obsolete_definition.
 }
 
 WHERE {
@@ -41,6 +41,16 @@ WHERE {
     
   	OPTIONAL {
   		?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
+  	}
+    
+    OPTIONAL {
+  		?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?definition .
+      ?def_anno a owl:Axiom ;
+         owl:annotatedSource ?entity ;
+         owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000115> ;
+         owl:annotatedTarget ?definition ;
+         ?p ?x .
+      BIND(CONCAT("OBSOLETE. ",str(?definition)) as ?obsolete_definition)
   	}
     
     OPTIONAL {
