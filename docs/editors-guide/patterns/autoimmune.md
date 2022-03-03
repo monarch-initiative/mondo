@@ -23,10 +23,10 @@ An autoimmune form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 ## Data preview 
 | defined_class                                | defined_class_label                        | disease                                      | disease_label                |
 |:---------------------------------------------|:-------------------------------------------|:---------------------------------------------|:-----------------------------|
-| [MONDO:0030702](http://purl.obolibrary.org/obo/MONDO_0030702) | autoimmune atherosclerosis                 | [MONDO:0005311](http://purl.obolibrary.org/obo/MONDO_0005311) | atherosclerosis              |
-| [MONDO:0030701](http://purl.obolibrary.org/obo/MONDO_0030701) | autoimmune cardiomyopathy                  | [MONDO:0004994](http://purl.obolibrary.org/obo/MONDO_0004994) | cardiomyopathy               |
 | [MONDO:0007179](http://purl.obolibrary.org/obo/MONDO_0007179) | autoimmune disease                         | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder          |
 | [MONDO:0000587](http://purl.obolibrary.org/obo/MONDO_0000587) | autoimmune disease of ear, nose and throat | [MONDO:0024623](http://purl.obolibrary.org/obo/MONDO_0024623) | otorhinolaryngologic disease |
-| [MONDO:0020640](http://purl.obolibrary.org/obo/MONDO_0020640) | autoimmune encephalitis                    | [MONDO:0019956](http://purl.obolibrary.org/obo/MONDO_0019956) | encephalitis                 |
+| [MONDO:0018242](http://purl.obolibrary.org/obo/MONDO_0018242) | autoimmune hypoparathyroidism              | [MONDO:0001220](http://purl.obolibrary.org/obo/MONDO_0001220) | hypoparathyroidism           |
+| [MONDO:0022518](http://purl.obolibrary.org/obo/MONDO_0022518) | autoimmune inner ear disease               | [MONDO:0002467](http://purl.obolibrary.org/obo/MONDO_0002467) | inner ear disorder           |
+| [MONDO:0017979](http://purl.obolibrary.org/obo/MONDO_0017979) | autoimmune lymphoproliferative syndrome    | [MONDO:0016537](http://purl.obolibrary.org/obo/MONDO_0016537) | lymphoproliferative syndrome |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autoimmune.tsv) 
