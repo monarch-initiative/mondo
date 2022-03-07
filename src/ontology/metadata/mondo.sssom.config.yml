@@ -9,6 +9,7 @@ curie_map:
   OMIM: http://omim.org/entry/
   OMIM__2: http://identifiers.org/omim/
   OMIM__3: http://purl.obolibrary.org/obo/OMIM_
+  OMIM__4: https://omim.org/entry/
   MESH: http://identifiers.org/mesh/
   MEDDRA: http://identifiers.org/meddra/
   OMIMPS: http://www.omim.org/phenotypicSeries/
@@ -17,11 +18,14 @@ curie_map:
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   skos: http://www.w3.org/2004/02/skos/core#
+  ICD10CM: http://apps.who.int/classifications/icd10/browse/2010/en#/
+  OMIMPS: https://omim.org/phenotypicSeries/PS
 subject_prefixes:
   - MONDO
   - OMIM
   - Orphanet
   - EFO
+  - ICD10CM
 relations:
   - oboInOwl:hasDbXref
   - skos:exactMatch
@@ -33,18 +37,29 @@ global_metadata:
   subject_source: http://purl.obolibrary.org/obo/mondo.owl
   license: "https://creativecommons.org/publicdomain/zero/1.0/"
   mapping_date: "2020-01-01"
+  mapping_set_id: "GLOBAL" # Apparently this is the one that matters.
 source_metadata:
   - from: MONDO
     to: OMIM
     metadata:
       object_source: https://www.omim.org/
+      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/omim.sssom.tsv"
       mapping_date: "2021-03-20"
       comment: "The latest OMIM is integrated with every Mondo release."
   - from: MONDO
     to: UMLS
     metadata:
       object_source: https://uts.nlm.nih.gov/uts/
+      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/umls.sssom.tsv"
   - from: MONDO
     to: EFO
     metadata:
       object_source: http://www.ebi.ac.uk/efo/efo.owl
+      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/efo.sssom.tsv"
+  - from: MONDO
+    to: ICD10CM
+    metadata:
+      object_source: https://www.icd10data.com/
+      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/icd10.sssom.tsv"
+      mapping_date: "2021-03-20"
+      comment: "Test"

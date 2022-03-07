@@ -220,7 +220,7 @@ clean:
 
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit ordo medgen omim
+SOURCE_IDS = doid ncit ordo medgen omim icd10cm
 SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -429,7 +429,10 @@ tmp/mirror-efo.json: #mirror/efo.owl
 .PHONY: sssom
 sssom:
 	echo "skipping.."
-	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.7
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall git+https://github.com/mapping-commons/sssom-py.git
+
+xx:
+	sssom parse tmp/mirror-mondo.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o tmp/test.sssom.tsv
 
 tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@

@@ -84,7 +84,7 @@ df = replace_temporary_prefixes(subject_prefixes, df)
 df = replace_temporary_prefixes(object_prefixes, df)
 global_metadata=meta['global_metadata']
 
-msdf = from_sssom_dataframe(df, curie_map=curie_map, meta=global_metadata)
+msdf = from_sssom_dataframe(df, prefix_map=curie_map, meta=global_metadata)
 today = datetime.today().strftime('%Y-%m-%d')
 
 splitted = split_dataframe_by_prefix(msdf,subject_prefixes_allowed,object_prefixes, relations_allowed)
