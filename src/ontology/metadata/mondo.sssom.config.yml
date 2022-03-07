@@ -36,30 +36,45 @@ relations:
 global_metadata:
   subject_source: http://purl.obolibrary.org/obo/mondo.owl
   license: "https://creativecommons.org/publicdomain/zero/1.0/"
-  mapping_date: "2020-01-01"
+  mapping_date: "2017-09-20"
   mapping_set_id: "GLOBAL" # Apparently this is the one that matters.
 source_metadata:
   - from: MONDO
     to: OMIM
     metadata:
       object_source: https://www.omim.org/
-      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/omim.sssom.tsv"
-      mapping_date: "2021-03-20"
+      object_source_version: http://www.orphadata.org/data/ORDO/ordo_orphanet_3.1.owl
+      mapping_date: "2022-02-11"
       comment: "The latest OMIM is integrated with every Mondo release."
   - from: MONDO
     to: UMLS
     metadata:
       object_source: https://uts.nlm.nih.gov/uts/
-      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/umls.sssom.tsv"
   - from: MONDO
     to: EFO
     metadata:
       object_source: http://www.ebi.ac.uk/efo/efo.owl
-      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/efo.sssom.tsv"
   - from: MONDO
     to: ICD10CM
     metadata:
       object_source: https://www.icd10data.com/
-      mapping_set_id: "http://purl.obolibrary.org/obo/mondo/mappings/icd10.sssom.tsv"
-      mapping_date: "2021-03-20"
-      comment: "Test"
+      mapping_date: "2017-09-20"
+  - from: MONDO
+    to: Orphanet
+    metadata:
+      object_source: https://www.orpha.net/
+      object_source_version: http://www.orphadata.org/data/ORDO/ordo_orphanet_3.1.owl
+      mapping_date: "2021-07-06"
+      comment: "The latest Orphanet is integrated with every Mondo release."
+  - from: MONDO
+    to: NCIT
+    metadata:
+      object_source: http://purl.obolibrary.org/obo/ncit.owl
+      object_source_version: http://purl.obolibrary.org/obo/ncit/releases/2018-06-14/ncit.owl
+      mapping_date: "2018-06-14"
+  - from: MONDO
+    to: DOID
+    metadata:
+      object_source: http://purl.obolibrary.org/obo/doid.owl
+      object_source_version: http://purl.obolibrary.org/obo/doid/releases/2018-07-05/doid.owl
+      mapping_date: "2018-07-05"

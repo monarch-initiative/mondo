@@ -93,6 +93,7 @@ for msdf in splitted:
     toS = msdf.split("_")[2].upper()
     m = splitted[msdf].metadata
     m['mapping_set_version']=f"http://purl.obolibrary.org/obo/mondo/releases/{today}/mappings/{msdf}.sssom.tsv"
+    m['mapping_set_id']=f"http://purl.obolibrary.org/obo/mondo/mappings/{msdf}.sssom.tsv"
 
     for source_metadata in meta['source_metadata']:
         if source_metadata["from"]==fromS and source_metadata["to"]==toS:
