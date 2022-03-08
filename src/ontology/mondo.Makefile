@@ -400,11 +400,11 @@ tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
 	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
 
-mass_obsolete2: tmp/mass_obsolete_me.txt tmp/mass_obsolete.ru
-	echo "Make sure you have updated ../sparql/update/mondo-obsolete-simple.ru before running this script.."
+mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
+	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	make mass_obsolete_warning
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
-		remove -T $< --axioms logical convert -f obo --check false -o $(SRC).obo
+		remove -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
