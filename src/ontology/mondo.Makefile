@@ -324,7 +324,7 @@ report-reason-query-%:
 
 report-reason-materialise-query-%:
 	$(ROBOT) reason -i $(SRC) materialize --term RO:0002573 \
-		query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
+		query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-materialise-$*.tsv
 
 
 report-owl-query-%:
