@@ -16,13 +16,25 @@ WHERE
 
   ?cls rdfs:subClassOf+ [
                owl:onProperty <http://purl.obolibrary.org/obo/RO_0002573> ;
-               owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021136> ] }
+               owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021136> ] 
+
+FILTER NOT EXISTS {
+    ?cls ^rdfs:subClassOf ?child
+  }
+
+               }
  
  UNION 
   { ?cls a owl:Class;
           rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
 
-    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#gard_rare>. }
+    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#gard_rare>. 
+
+FILTER NOT EXISTS {
+    ?cls ^rdfs:subClassOf ?child
+  }
+
+    }
 
   
   FILTER NOT EXISTS {
