@@ -7,7 +7,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
-#number of cross references in Mondo by prefix
+# number of cross references in Mondo by prefix
 
 SELECT ?prefix (COUNT(DISTINCT ?value) AS ?ct_xrefs)
 
@@ -16,6 +16,14 @@ WHERE
   VALUES ?mapping { oboInOwl:hasDbXref }
   ?cls a owl:Class; 
      	?mapping ?value .
+    	
+  	?xref_anno2 a owl:Axiom ;
+           owl:annotatedSource ?cls ;
+           owl:annotatedProperty ?mapping ;
+           owl:annotatedTarget ?value ;
+           oboInOwl:source ?source .
+
+  FILTER (str(?source)="MONDO:equivalentTo")
   
   FILTER NOT EXISTS {
   	?cls owl:deprecated ?deprecated .
