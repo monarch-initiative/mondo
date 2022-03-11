@@ -1,0 +1,36 @@
+# description: Looks for xrefs with illegal prefixes that are on annotation properies
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?prefix #?mapping ?property
+
+WHERE 
+{
+  #VALUES ?mapping { oboInOwl:hasDbXref }
+  VALUES ?property { oboInOwl:source oboInOwl:hasDbXref }
+  ?cls a owl:Class; 
+  		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
+     	?mapping ?value .
+  
+    ?axiom owl:annotatedSource ?cls ;
+           owl:annotatedProperty ?mapping ;
+           owl:annotatedTarget ?value ;
+           ?property ?source .
+    
+  
+  FILTER NOT EXISTS {
+  	?cls owl:deprecated ?deprecated .
+  }
+  FILTER( STRBEFORE(str(?source),":") not in ("UMLS", "DOID", "OMIM", "Orphanet", "SCTID", "MESH", "NCIT", "GARD", "ICD9", "EFO", "MedDRA", "ICDO", "HP", "ONCOTREE", "OMIMPS", "Wikipedia", "GTR", "HGNC", "CSP", "KEGG", "PMID", "MEDGEN", "NIFSTD", "MONDO", "ICD10CM", "OMOP", "MFOMD", "MP", "OGMS", "Wikidata", "SCDO", "ICD11", "NDFRT", "LOINC", "IDO", "PATO", "OBI", "MTH", "Reactome", "DERMO", "MPATH", "ICD9CM", "ISBN", "doi", "MEDIC", "ClinGen", "HPO", "ECO", "MedGen", "OMIT"))
+  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND( STRBEFORE(str(?source),":") AS ?prefix)
+  
+} ORDER BY ?cls
+
