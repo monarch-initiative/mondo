@@ -200,7 +200,9 @@ GITHUB_ACTION = false
 
 filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@(equivalent|otherHierarchy|subClassOf|directSiblingOf|superClassOf|ntbt|btnt)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
-	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false --update ../sparql/update/delete-axiom-annotations.ru \
+	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
+		--update ../sparql/update/delete-axiom-annotations.ru \
+		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
 		remove --term-file config/remove-annotations-before-release.txt \
 		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
