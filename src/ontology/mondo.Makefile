@@ -322,6 +322,11 @@ report-base-query-%: mondo-base.owl
 report-reason-query-%:
 	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
 
+report-reason-materialise-query-%:
+	$(ROBOT) reason -i $(SRC) materialize --term RO:0002573 \
+		query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-materialise-$*.tsv
+
+
 report-owl-query-%:
 	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
@@ -400,11 +405,11 @@ tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
 	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
 
-mass_obsolete2: tmp/mass_obsolete_me.txt tmp/mass_obsolete.ru
-	echo "Make sure you have updated ../sparql/update/mondo-obsolete-simple.ru before running this script.."
+mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
+	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	make mass_obsolete_warning
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
-		remove -T $< --axioms logical convert -f obo --check false -o $(SRC).obo
+		remove -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
@@ -570,13 +575,6 @@ merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_clas
 #		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
 #	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
 
-reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
-	$(ROBOT) report -i $< --profile profile.txt --fail-on none -o $@
-.PRECIOUS: reports/mondo-edit-report.html
-
-.PHONY: mondo_%_report
-mondo_edit_report: reports/mondo-edit-report.html
-test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html

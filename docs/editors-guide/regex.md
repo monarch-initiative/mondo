@@ -32,9 +32,9 @@ Regular expressions can be used for mass editing in the mondo-edit.obo text file
 ### Abbreviations
 **Description:** Add an 'abbrevation' tag to synonyms.
 
-**Find**
-^(synonym: "[A-Z]+["] EXACT)( [0-9: a-zA-Z\[\],/\.-_\-]*)$
-^(synonym: "[A-Z0-9]+["][ ][A-Z]+[ ])\[
+**Find**  
+`^(synonym: "[A-Z]+["] EXACT)( [0-9: a-zA-Z\[\],/\.-_\-]*)$` _or_ 
+`^(synonym: "[A-Z0-9]+["][ ][A-Z]+[ ])\[`
 
 **Replace**
 $1ABBREVIATION [

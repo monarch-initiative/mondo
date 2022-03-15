@@ -1,0 +1,26 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+#number of cross references in Mondo by prefix
+
+SELECT ?property (COUNT(DISTINCT ?value) AS ?ct_annotations)
+
+WHERE 
+{
+  VALUES ?property { oboInOwl:hasExactSynonym  oboInOwl:hasRelatedSynonym oboInOwl:hasBroadSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasDbXref IAO:0000115 rdfs:subClassOf } 
+  ?cls a owl:Class; 
+     	?property ?value .
+  
+  FILTER NOT EXISTS {
+  	?cls owl:deprecated true .
+  }
+
+  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+} GROUP BY ?property ORDER BY DESC(?ct_annotations)
+

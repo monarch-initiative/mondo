@@ -21,3 +21,10 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that has an iatrogen
 
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [iatrogenic](http://purl.obolibrary.org/obo/MONDO_0100426)
 
+## Data preview 
+| defined_class                                | defined_class_label   | disease                                      | disease_label       |
+|:---------------------------------------------|:----------------------|:---------------------------------------------|:--------------------|
+| [MONDO:0016778](http://purl.obolibrary.org/obo/MONDO_0016778) | iatrogenic botulism   | [MONDO:0005498](http://purl.obolibrary.org/obo/MONDO_0005498) | botulism            |
+| [MONDO:0043543](http://purl.obolibrary.org/obo/MONDO_0043543) | iatrogenic disease    | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/iatrogenic.tsv) 

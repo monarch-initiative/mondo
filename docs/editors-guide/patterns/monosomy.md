@@ -22,3 +22,11 @@ A chromosomal disorder consisting of the absence of one {[chromosome](http://pur
 
 monosomy and ([disease arises from structure](http://purl.obolibrary.org/obo/RO_0004030) some {[chromosome](http://purl.obolibrary.org/obo/GO_0005694)})
 
+## Data preview 
+| defined_class                                | defined_class_label   | chromosome                                    | chromosome_label      |
+|:---------------------------------------------|:----------------------|:----------------------------------------------|:----------------------|
+| [MONDO:0019891](http://purl.obolibrary.org/obo/MONDO_0019891) | monosomy 22           | [CHR:9606-chr22](http://purl.obolibrary.org/obo/CHR_9606-chr22) | chromosome 22 (Human) |
+| [MONDO:0020466](http://purl.obolibrary.org/obo/MONDO_0020466) | monosomy X            | [CHR:9606-chrX](http://purl.obolibrary.org/obo/CHR_9606-chrX)  | chromosome X (Human)  |
+| [MONDO:0700035](http://purl.obolibrary.org/obo/MONDO_0700035) | monosomy chromosome 8 | [CHR:9606-chr8](http://purl.obolibrary.org/obo/CHR_9606-chr8)  | chromosome 8 (Human)  |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/monosomy.tsv) 

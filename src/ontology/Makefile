@@ -141,8 +141,7 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
-test: reports/robot-report-mondo-edit.obo.tsv reports/robot-report-mondo.owl.tsv
-test: reports/robot-report-mondo.obo.tsv
+test: reports/robot-report-mondo-tags-reasoned.owl.tsv
 
 
 # ----------------------------------------
@@ -173,15 +172,16 @@ check_version_set:
 # REMEMBER TO COMMIT/PUSH
 # e.g. make deploy_release GHVERSION=v2018-10-26
 # this will create the GH repo. Use --no-create if repo already created.
-deploy_release: prepare_release_direct deploy_assets_direct 
+deploy_release: deploy_assets_direct
 #deploy_assets_current see https://github.com/OBOFoundry/purl.obolibrary.org/pull/723
 
 # deploys to a versioned released
 deploy_assets_direct:
 	@test $(GHVERSION)
 	ls -alt $(ASSETS)
-	../utils/make-release-assets.py -c $(RELEASE_ASSETS_OPTS) --release $(GHVERSION) $(ASSETS)
+	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(ASSETS)
 
+#	../utils/make-release-assets.py -c $(RELEASE_ASSETS_OPTS) --release $(GHVERSION) $(ASSETS)
 # deploys to https://github.com/monarch-initiative/mondo/releases/tag/current
 #deploy_assets_current:
 #	ls -alt $(ASSETS)
@@ -200,7 +200,9 @@ GITHUB_ACTION = false
 
 filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS):@ && !(m@(equivalent|otherHierarchy|subClassOf|directSiblingOf|superClassOf|ntbt|btnt)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
-	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false --update ../sparql/update/delete-axiom-annotations.ru \
+	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
+		--update ../sparql/update/delete-axiom-annotations.ru \
+		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
 		remove --term-file config/remove-annotations-before-release.txt \
 		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
@@ -473,7 +475,7 @@ QSRC = $(SRC)-noimports.owl
 $(QSRC): $(SRC)
 	owltools --use-catalog $< --remove-imports-declarations -o $@
 
-SRC_TAGS_REASONED=tmp/src_tags_reasoned.owl
+SRC_TAGS_REASONED=mondo-tags-reasoned.owl
 
 $(SRC_TAGS_REASONED): $(SRC)
 	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason -o $@
@@ -555,16 +557,15 @@ reports/query-%-mondo.owl.tsv: mondo.owl $(SPARQLDIR)/reports/%.sparql
 
 #RR=$(HOME)/repos/rctauber/robot/bin/$(ROBOT) report --fail-on none
 RR= $(ROBOT) report --fail-on ERROR --profile profile.txt --print 8
-reports/edit/report.tsv: $(SRC)
-	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
-reports/release/mondo-obo-report.tsv: mondo.obo
-	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
-
-reports/release/mondo-owl-report.tsv: mondo.owl
-	$(RR) -i $<  -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
 
 reports/robot-report-%.tsv: %
-	$(RR) -i $* -o $@.tmp && mv $@.tmp $@ || mv $@.tmp $@
+	$(RR) -i $* -o $@
+
+reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
+	$(ROBOT) report -i $< --profile profile.txt --fail-on ERROR -o $@
+.PRECIOUS: reports/mondo-edit-report.html
+
+mondo_edit_report: reports/mondo-edit-report.html
 
 common_map.tsv:
 	blip-findall -debug index -goal ix -i imports/equivalencies.obo -i d2p.pro  -r mondoe -c ../utils/all_genetic.pro common_to_mondo/2 -label -no_pred -use_tabs | cut -f1,3,4 > $@
