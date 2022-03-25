@@ -1,16 +1,17 @@
-# GitHub Access
-- The GitHub repo is here: [https://github.com/monarch-initiative/mondo](https://github.com/monarch-initiative/mondo).
-- The ontology structure is standard - e.g. src/ontology/ for source files for ontology
-- Edit file is **mondo-edit.obo**
+# Proxy merge
 
-We use obo format to enable meaningful diffs in pull requests. Complex axioms that cannot be expressed in obo are edited in a sub-module and imported (imports/axioms.owl).
+A proxy merge is caused by two equivalentTo mappings two the same external ID:
 
-(the use of obo in combination with axiom annotation imposes some constraints that result in mild oddities, outlined later)
+MONDO:123 skos:exactMatch OMIM:123
+MONDO:124 skos:exactMatch OMIM:123
 
-# GitHub workflow
+The name proxy merge comes from the fact that MONDO:123 and MONDO:124 are merged "by proxy". This case is strictly forbidden in Mondo and we have QC guarding against it.
 
-**ALL CHANGES ARE DONE AS PULL REQUESTS.** No changes are to be committed to master. Make all changes on branches, and make Pull Requests.
+However, cases like this, informally referred to as reverse proxy merges, are allowed: two external concepts a considered the same by Mondo, for example:
 
-Guidelines that are specific to editing Mondo are available [here](https://mondo.readthedocs.io/en/latest/editors-guide/editing-workflow/). These guidelines were adopted from the [Gene Ontology](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html).
+```
+MONDO:124 skos:exactMatch OMIM:123
+MONDO:124 skos:exactMatch OMIM:124
+```
 
-
+In this case, OMIM:123 and OMIM:124 are merged together into one MONDO ID. This case is allowed: it does suggest that Mondo considers the two classes (OMIM:123 and OMIM:124) the same, while the upstream source considers them separate. 
