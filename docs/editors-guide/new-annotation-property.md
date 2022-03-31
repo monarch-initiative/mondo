@@ -3,6 +3,7 @@
 1. Go to the Annotation properties tab. 
 1. Add a new property using the “+” (similar to adding a class)
 
+<img width="1152" alt="image" src="https://user-images.githubusercontent.com/6722114/161129257-2ab4d809-683c-41d6-b918-426ddab53cc4.png">
 
 1. Name the annotation property
 The IRI for annotation properties should do not have numerical ID. The convention for Annotation Property IRI in Mondo is: 
