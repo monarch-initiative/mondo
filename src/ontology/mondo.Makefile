@@ -434,7 +434,7 @@ tmp/mirror-efo.json: #mirror/efo.owl
 .PHONY: sssom
 sssom:
 	echo "skipping.."
-	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall git+https://github.com/mapping-commons/sssom-py.git
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall git+https://github.com/mapping-commons/sssom-py.git@curie_detection_patch
 
 tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
