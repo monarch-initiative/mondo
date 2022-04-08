@@ -28,7 +28,59 @@ WHERE
   FILTER NOT EXISTS {
   	?cls owl:deprecated ?deprecated .
   }
-  FILTER( STRBEFORE(str(?source),":") not in ("UMLS", "DOID", "OMIM", "Orphanet", "SCTID", "MESH", "NCIT", "GARD", "ICD9", "EFO", "MedDRA", "ICDO", "HP", "ONCOTREE", "OMIMPS", "Wikipedia", "GTR", "HGNC", "CSP", "KEGG", "PMID", "MEDGEN", "NIFSTD", "MONDO", "ICD10CM", "OMOP", "MFOMD", "MP", "OGMS", "Wikidata", "SCDO", "ICD11", "NDFRT", "LOINC", "IDO", "PATO", "OBI", "MTH", "Reactome", "DERMO", "MPATH", "ICD9CM", "ISBN", "doi", "MEDIC", "ClinGen", "HPO", "ECO", "MedGen", "OMIT"))
+  FILTER( STRBEFORE(str(?source),":") not in (
+    "UMLS",
+    "DOID",
+    "OMIM",
+    "Orphanet",
+    "SCTID",
+    "MESH",
+    "NCIT",
+    "GARD",
+    "ICD9",
+    "EFO",
+    "MedDRA",
+    "ICDO",
+    "HP",
+    "ONCOTREE",
+    "OMIMPS",
+    "Wikipedia",
+    "GTR",
+    "HGNC",
+    "CSP",
+    "KEGG",
+    "PMID",
+    "MEDGEN",
+    "NIFSTD",
+    "MONDO",
+    "ICD10CM",
+    "OMOP",
+    "MFOMD",
+    "MP",
+    "OGMS",
+    "Wikidata",
+    "SCDO",
+    "ICD11",
+    "NDFRT",
+    "LOINC",
+    "IDO",
+    "PATO",
+    "OBI",
+    "MTH",
+    "Reactome",
+    "DERMO",
+    "MPATH",
+    "ICD9CM",
+    "ISBN",
+    "doi",
+    "MEDIC",
+    "ClinGen",
+    "ECO",
+    "MedGen",
+    "OMIT",
+    "MONDORULE"
+    )
+  )
   FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
   BIND( STRBEFORE(str(?source),":") AS ?prefix)
   
