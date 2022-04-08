@@ -18,6 +18,10 @@ Note that we are creating a directory in your user directory, not in your Mondo 
    - save (by hitting control+o and then enter) and close (control+x)
    - in the terminal, type: `source ~/.zshrc`; this reloades the `.zshrc` file. 
    - *Open a new Terminal window before you continue*. 
+###  install gh : 
+- make sure you have installed 'brew' [here](https://brew.sh/)
+- `brew install gh`
+
 
 # Releases
 
@@ -49,11 +53,15 @@ _Note: While the release is running, don't shut your laptop or switch between re
    1. Wait for GitHub Actions/QC to pass
    1. Merge PR
 
-### Initial Setup:
+## Initial Setup:
 Make sure the initial setup (see above) has been done:
 1. Download the `obo-simple-diff.pl` script to the "tools" directory and set-up your path to the tools directory.
-1. Generate token
-1. Make sure you have gh installed: `brew install gh`. For other ways to install, see [here](https://github.com/cli/cli). Note, you will have to login to GitHub with gh, the command line will give you a series of prompts. For example:
+2. Generate token
+3. Make sure you have gh installed: `brew install gh`. For other ways to install, see [here](https://github.com/cli/cli). 
+
+
+## Deploy Release
+1. login to GitHub via the command line: `gh auth login`. The command line will give you a series of prompts:
 
 ```
 ? What account do you want to log into? **Answer**: GitHub.com
@@ -69,11 +77,10 @@ Press Enter to open github.com in your browser...
 ✓ Logged in as nicolevasilevsky
 ```
 
-## Deploy Release
 1. `cp ~/.token .token`  
 1. `make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
 Note- the date should be the date of the release in the format `make GHVERSION=vYYYY-MM-DD deploy_release` (for example, v2022-04-01) (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
-1. Check these the release pages (make sure you replace the date correctly in the link in the output in the terminal):
+1. Check these the release pages (make sure you replace the date correctly **in the link in the output in the terminal**):
     1. For example: https://github.com/monarch-initiative/mondo/releases/tag/untagged-2a6c39951f3210b62380
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     3. Ensure it has all release artifacts attached to it (there should be 19 assets in the draft. Note, there will be 21 after the release is published.)
@@ -84,7 +91,7 @@ Note- the date should be the date of the release in the format `make GHVERSION=v
        - To add a description of the release: 
          - click edit
          - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`.
-         - click "update release"
+         - click "save draft"
    2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
       - go to changes.md
       - click edit
@@ -95,7 +102,7 @@ Note- the date should be the date of the release in the format `make GHVERSION=v
 ## Check obsoletion obsoletion candidates
 
 With each release, a TSV should be generated with obsoletion candidates. Check that this tsv file is up-to-date here:
-https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/report-obsoletioncandidates-withcomment.tsv
+https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/mondo_obsoletioncandidates.tsv
 
 ## Email Mondo Users
 Send an email to Mondo users: mondo-users@googlegroups.com  
@@ -110,7 +117,7 @@ Hello,
 
 The latest Mondo release is now available here:https://github.com/monarch-initiative/mondo/releases  
 
-Please find a list of terms that are candidates to be obsoleted or merged here: http://purl.obolibrary.org/obo/mondo/mondo_obsoletioncandidates.tsv
+Please find a list of terms that are candidates to be obsoleted or merged here: https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/mondo_obsoletioncandidates.tsv
   
 Note - the proposed obsoletion date is listed in the table.  
 

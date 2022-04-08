@@ -1,3 +1,164 @@
+# 2022-04-04
+
+## Overview:
+
+
+* Number of new terms: 13
+* Number of changed labels: 8
+* Number of changed definitions: 4
+* Number obsoleted terms: 73
+* Number of new obsoletion candidates: 16
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 1
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100487 | TPM4-related platelet disorder | A platelet disorder in which the cause of the disease is a variant in the TPM4 gene. |
+| MONDO:0100488 | CDH1-related diffuse gastric and lobular breast cancer | Germline pathogenic or likely pathogenic variants in the CDH1 gene predispose to hereditary diffuse gastric cancer, a cancer susceptibility syndrome inherited in an autosomal dominant pattern, initially characterized by the increased risk for diffuse gastric cancer (DGC) but subsequently well documented to be associated with lobular breast cancer (LBC) in women. |
+| MONDO:0100489 | Graves disease, susceptibility to, 1 | |
+| MONDO:0100490 | breasts and/or nipples, aplasia or hypoplasia of, 1 | |
+| MONDO:0100491 | generalized pustular psoriasis | A rare and extreme form of psoriasis characterized by the appearance of sterile pustules which can take many patterns. All the main pathological features of the disease are accentuated. Generalized pustular psoriasis is clinically heterogeneous in its age at onset, precipitants, severity, and natural history. Many overlapping clinical entities are recognized. There is a relationship between these entities and plaque psoriasis, as some individuals may have episodes of plaque psoriasis preceding or following the generalized pustular psoriasis, but in others generalized pustular psoriasis occurs as the sole phenotype without plaque psoriasis at any time. |
+| MONDO:0700043 | syndrome caused by partial chromosomal duplication of the short arm of chromosome 9 | |
+| MONDO:8000023 | type 3 autoimmune lymphoproliferative syndrome | A rare, primary immunodeficiency. It is caused by a currently undetermined defect in the Fas-induced apoptosis pathway. No mutations in Fas, FASLG or CASP10 are detectable. Disruption of Fas-induced apoptosis impairs lymphocyte homeostasis and immune tolerance. Characteristic laboratory findings include an increase in circulating, double-negative (CD4-/CD8-) T cells in the setting of immune-mediated anemia, thrombocytopenia and neutropenia. Clinical signs present in childhood include fatigue, pallor, bruising, hepatosplenomegaly and chronic, non-malignant, non-infectious lymphadenopathy. The clinical course is influenced by a strong association with other autoimmune disorders and an increased risk for developing Hodgkin and non-Hodgkin lymphoma. |
+| MONDO:8000024 | autoimmune lymphoproliferative syndrome, type III caused by mutation in PRKCD | Any autoimmune lymphoproliferative syndrome in which the cause of the disease is a mutation in the PRKCD gene. |
+| MONDO:8000030 | obsolete morphological anomaly | |
+| MONDO:8000031 | obsolete subtype of a disorder | |
+| MONDO:8000032 | obsolete malformation syndrome | |
+| MONDO:8000033 | obsolete group of disorders | |
+| MONDO:8000034 | obsolete disorder | |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0003778 | inborn errors of immunity | primary immunodeficiency disease | inborn errors of immunity |
+| MONDO:0008791 | anencephaly 1 | isolated anencephaly/exencephaly | anencephaly 1 |
+| MONDO:0013612 | geleophysic dysplasia 2 | Geleophysic dysplasia 2 | geleophysic dysplasia 2 |
+| MONDO:0014320 | Bosch-Boonstra-Schaaf optic atrophy syndrome | optic atrophy-intellectual disability syndrome | Bosch-Boonstra-Schaaf optic atrophy syndrome |
+| MONDO:0018983 | Tolosa-Hunt syndrome | tolosa-Hunt syndrome | Tolosa-Hunt syndrome |
+| MONDO:0020745 | ventricular arrhythmias due to cardiac ryanodine receptor calcium release deficiency syndrome | autosomal dominant cardiac arrhythmia (Kuhn) | ventricular arrhythmias due to cardiac ryanodine receptor calcium release deficiency syndrome |
+| MONDO:0043195 | Rubinstein Taybi like syndrome | rubinstein taybi like syndrome | Rubinstein Taybi like syndrome |
+| MONDO:0700130 | partial trisomy 21 | partial Trisomy 21 | partial trisomy 21 |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0006086 | angiomyxoma | A benign soft tissue neoplasm characterized by the presence of neoplastic spindle and stellate cells in a myxoid stroma. | A benign soft tissue neoplasm characterized by the presence of neoplastic spindle and stellate cells, and vascular proliferation in a myxoid stroma. |
+| MONDO:0700085 | pentasomy | A chromosomal anomaly consisting of the presence of three chromosomes of the same type in addition to the normal diploid number. | A chromosomal disorder consisting of the presence of three chromosomes of the same type in addition to the normal diploid number. |
+| MONDO:0017388 | celiac trunk compression syndrome | | A rare disease caused by compression of the celiac axis by an abnormally shaped arcuate ligament (the part of the diaphragm in which both pillars join in the midline around the aorta). Patients have recurrent abdominal pain, anorexia and weight loss. The pain is epigastric, and diarrhea or constipation may be present as well. Onset of pain will usually, although not always, be after food intake, and may be associated with nausea and emesis. Other symptoms may include lassitude, exercise intolerance and vomiting. Occasionally, a patient may show an abdominal murmur upon auscultation. |
+| MONDO:0030502 | tetrasomy | A chromosomal anomaly consisting of the presence of two chromosomes of the same type in addition to the normal diploid number. | A chromosomal disorder consisting of the presence of two chromosomes of the same type in addition to the normal diploid number. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000651 | obsolete thoracic disorder |
+| MONDO:0006588 | obsolete nonepidermolytic palmoplantar keratoderma |
+| MONDO:0007139 | obsolete Antipyrine metabolism |
+| MONDO:0007141 | obsolete antiviral state repressor, regulator of |
+| MONDO:0007317 | obsolete chlorpropamide-alcohol flushing |
+| MONDO:0007331 | obsolete cleft chin |
+| MONDO:0007532 | obsolete Electroencephalographic peculiarity: occipital slow beta waves |
+| MONDO:0007591 | obsolete facial hypertrichosis |
+| MONDO:0007622 | obsolete flood factor deficiency |
+| MONDO:0007645 | obsolete gastric sneezing |
+| MONDO:0007692 | obsolete hairy ears |
+| MONDO:0007822 | obsolete incisors, long upper central |
+| MONDO:0007823 | obsolete insulin receptors, familial increase 1N |
+| MONDO:0008068 | obsolete navicular bone, accessory |
+| MONDO:0008110 | obsolete ocular dominance |
+| MONDO:0008326 | obsolete pseudocholinesterase, increase in plasma level of |
+| MONDO:0008351 | obsolete pupil, egg-shaped |
+| MONDO:0008405 | obsolete scapula, contour of vertebral border of |
+| MONDO:0008432 | obsolete ketone compounds, ability to smell |
+| MONDO:0008548 | obsolete theophylline Biotransformation |
+| MONDO:0008616 | obsolete twinning due to superfetation |
+| MONDO:0008625 | obsolete urate-binding globulin, decrease 1N |
+| MONDO:0008677 | obsolete widow's peak |
+| MONDO:0009125 | obsolete dopamine beta-hydroxylase, plasma, thermolability of |
+| MONDO:0009250 | obsolete fructose utilization |
+| MONDO:0009553 | obsolete Plasmodium falciparum blood infection level |
+| MONDO:0009829 | obsolete pallidal degeneration, progressive, with retinitis pigmentosa |
+| MONDO:0009930 | obsolete pulmonary arteriovenous malformation |
+| MONDO:0010705 | obsolete ouabain resistance |
+| MONDO:0010994 | obsolete micromelic dwarfism, Fryns type |
+| MONDO:0011554 | obsolete deafness, nonsyndromic, modifier 1 |
+| MONDO:0011692 | obsolete basal ganglia calcification, idiopathic, 2 |
+| MONDO:0013538 | obsolete alpha-2-macroglobulin deficiency |
+| MONDO:0013586 | obsolete Chitotriosidase deficiency |
+| MONDO:0013799 | obsolete efavirenz, poor metabolism of |
+| MONDO:0014053 | obsolete stomatin-like protein-2, hyperphosphorylation of |
+| MONDO:0014253 | obsolete autoimmune lymphoproliferative syndrome type 3 |
+| MONDO:0014826 | obsolete nucleoside diphosphate-linked moiety X Motif 15 deficiency |
+| MONDO:0015153 | obsolete autosomal monosomy |
+| MONDO:0016946 | obsolete partial trisomy of the short arm of chromosome 9 |
+| MONDO:0016962 | obsolete partial duplication of the long arm of chromosome 11 |
+| MONDO:0016963 | obsolete partial duplication of the long arm of chromosome 13 |
+| MONDO:0016998 | obsolete complex chromosomal rearrangement |
+| MONDO:0016999 | obsolete X chromosome number anomaly |
+| MONDO:0017002 | obsolete polysomy of X chromosome |
+| MONDO:0017005 | obsolete Y chromosome number anomaly |
+| MONDO:0017006 | obsolete X and Y chromosomal anomaly |
+| MONDO:0017011 | obsolete uniparental disomy of chromosome X |
+| MONDO:0017412 | obsolete 2q31.1 microduplication syndrome |
+| MONDO:0018186 | obsolete ring chromosome |
+| MONDO:0019683 | obsolete syndactyly type 2 |
+| MONDO:0020050 | obsolete autosomal trisomy |
+| MONDO:0020053 | obsolete total autosomal monosomy |
+| MONDO:0020054 | obsolete partial autosomal monosomy |
+| MONDO:0020055 | obsolete autosomal uniparental disomy |
+| MONDO:0020056 | obsolete uniparental disomy of maternal origin |
+| MONDO:0020057 | obsolete uniparental disomy of paternal origin |
+| MONDO:0020059 | obsolete gonosome number anomaly |
+| MONDO:0020060 | obsolete gonosome structural anomaly |
+| MONDO:0020061 | obsolete chromosome Y structural anomaly |
+| MONDO:0020062 | obsolete chromosome X structural anomaly |
+| MONDO:0020734 | obsolete erythrocyte AMP deaminase deficiency |
+| MONDO:0021059 | obsolete head or neck disorder/disorder |
+| MONDO:0022109 | obsolete catatrichy |
+| MONDO:0022794 | obsolete chromosome 8 deletion |
+| MONDO:0026768 | obsolete warfarin sensitivity, X-linked |
+| MONDO:0030032 | obsolete chromosome 17q11.2 duplication syndrome, 1.4-mb |
+| MONDO:0033552 | obsolete blood group, lewis system |
+| MONDO:0044965 | obsolete abdominal and pelvic region disorder |
+| MONDO:0044967 | obsolete limb disorder |
+| MONDO:0044978 | obsolete disease of cell nucleus |
+| MONDO:0044988 | obsolete hip region disorder |
+| MONDO:0060593 | obsolete actn3 deficiency |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0020591 | disorder of peritoneum |
+| MONDO:0003804 | blood protein disease |
+| MONDO:0005042 | head disorder |
+| MONDO:0044990 | hand disorder |
+| MONDO:0044989 | foot disorder |
+| MONDO:0043707 | mediastinal disorder |
+| MONDO:0004955 | metabolic syndrome |
+| MONDO:0015879 | non-syndromic diaphragmatic or thoracic malformation |
+| MONDO:0015880 | syndromic diaphragmatic or thoracic malformation |
+| MONDO:0021016 | channelopathy |
+| MONDO:0019664 | short rib-polydactyly syndrome, Verma-Naumoff type |
+| MONDO:0014129 | autosomal recessive limb-girdle muscular dystrophy type 2R |
+| MONDO:0020051 | total autosomal trisomy |
+| MONDO:0020052 | partial autosomal trisomy/tetrasomy |
+| MONDO:0018138 | ocular albinism with congenital sensorineural hearing loss |
+| MONDO:0020595 | disorder of retroperitoneum |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0008791 | anencephaly 1 |
+
+
 # 2022-03-01
 
 ## Overview:

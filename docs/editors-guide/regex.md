@@ -117,3 +117,20 @@ synonym: "$2$3$4
 **Example:**  
 id: MONDO:0014986  
 name: Fanconi anemia complementation group R  
+
+---
+
+### Remove MONDO:superClassOf and MONDO:subClassOf source axiom annotations
+
+Related to: https://github.com/monarch-initiative/mondo/issues/4688 
+
+**Find:**  
+(xref: .*)source="MONDO:subClassOf", (.*) _or_
+(xref: .*)source="MONDO:superClassOf", (.*) _or_
+(xref: .*), source="MONDO:subClassOf"(.*) _or_
+(xref: .*), source="MONDO:superClassOf"(.*) _or_
+(xref: .*)source="MONDO:subClassOf"(.*) _or_
+(xref: .*)source="MONDO:superClassOf"(.*) _or_
+
+**Relace:**
+$1$2
