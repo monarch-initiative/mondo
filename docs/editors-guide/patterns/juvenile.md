@@ -26,12 +26,12 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that ha
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [juvenile](http://purl.obolibrary.org/obo/HP_0003621)
 
 ## Data preview 
-| defined_class                                | defined_class_label                     | disease                                      | disease_label            |
-|:---------------------------------------------|:----------------------------------------|:---------------------------------------------|:-------------------------|
-| [MONDO:0020655](http://purl.obolibrary.org/obo/MONDO_0020655) | juvenile ankylosing spondylitis         | [MONDO:0005306](http://purl.obolibrary.org/obo/MONDO_0005306) | ankylosing spondylitis   |
-| [MONDO:0003955](http://purl.obolibrary.org/obo/MONDO_0003955) | juvenile breast papillomatosis          | [MONDO:0002063](http://purl.obolibrary.org/obo/MONDO_0002063) | breast papillomatosis    |
-| [MONDO:0100076](http://purl.obolibrary.org/obo/MONDO_0100076) | juvenile idiopathic scoliosis           | [MONDO:0000726](http://purl.obolibrary.org/obo/MONDO_0000726) | idiopathic scoliosis     |
-| [MONDO:0009066](http://purl.obolibrary.org/obo/MONDO_0009066) | juvenile nephropathic cystinosis        | [MONDO:0100151](http://purl.obolibrary.org/obo/MONDO_0100151) | nephropathic cystinosis  |
-| [MONDO:0100037](http://purl.obolibrary.org/obo/MONDO_0100037) | juvenile onset pityriasis rubra pilaris | [MONDO:0100017](http://purl.obolibrary.org/obo/MONDO_0100017) | pityriasis rubra pilaris |
+| defined_class                                | defined_class_label                           | disease                                      | disease_label                   |
+|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:--------------------------------|
+| [MONDO:0020655](http://purl.obolibrary.org/obo/MONDO_0020655) | juvenile ankylosing spondylitis               | [MONDO:0005306](http://purl.obolibrary.org/obo/MONDO_0005306) | ankylosing spondylitis          |
+| [MONDO:0009066](http://purl.obolibrary.org/obo/MONDO_0009066) | juvenile nephropathic cystinosis              | [MONDO:0100151](http://purl.obolibrary.org/obo/MONDO_0100151) | nephropathic cystinosis         |
+| [MONDO:0019262](http://purl.obolibrary.org/obo/MONDO_0019262) | juvenile neuronal ceroid lipofuscinosis       | [MONDO:0016295](http://purl.obolibrary.org/obo/MONDO_0016295) | neuronal ceroid lipofuscinosis  |
+| [MONDO:0003741](http://purl.obolibrary.org/obo/MONDO_0003741) | juvenile type testicular granulosa cell tumor | [MONDO:0003395](http://purl.obolibrary.org/obo/MONDO_0003395) | testicular granulosa cell tumor |
+| [MONDO:0000828](http://purl.obolibrary.org/obo/MONDO_0000828) | juvenile-onset Parkinson disease              | [MONDO:0005180](http://purl.obolibrary.org/obo/MONDO_0005180) | Parkinson disease               |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv) 

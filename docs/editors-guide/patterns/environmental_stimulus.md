@@ -24,12 +24,12 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is caused by ex
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [realized in response to stimulus](http://purl.obolibrary.org/obo/RO_0004028) some {[stimulus](http://purl.obolibrary.org/obo/BFO_0000040)}
 
 ## Data preview 
-| defined_class                                | defined_class_label   | disease                                      | disease_label                 | stimulus                                     | stimulus_label   |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:------------------------------|:---------------------------------------------|:-----------------|
-| [MONDO:0003969](http://purl.obolibrary.org/obo/MONDO_0003969) | amphetamine abuse     | [MONDO:0002491](http://purl.obolibrary.org/obo/MONDO_0002491) | substance abuse               | [CHEBI:2679](http://purl.obolibrary.org/obo/CHEBI_2679)    | amphetamine      |
-| [MONDO:0006654](http://purl.obolibrary.org/obo/MONDO_0006654) | anthracosis           | [MONDO:0015926](http://purl.obolibrary.org/obo/MONDO_0015926) | pneumoconiosis                | [ENVO:02000099](http://purl.obolibrary.org/obo/ENVO_02000099) | coal dust        |
-| [MONDO:0016466](http://purl.obolibrary.org/obo/MONDO_0016466) | asbestosis            | [MONDO:0015926](http://purl.obolibrary.org/obo/MONDO_0015926) | pneumoconiosis                | [ENVO:02000106](http://purl.obolibrary.org/obo/ENVO_02000106) | asbestos dust    |
-| [MONDO:0001540](http://purl.obolibrary.org/obo/MONDO_0001540) | bagassosis            | [MONDO:0004553](http://purl.obolibrary.org/obo/MONDO_0004553) | extrinsic allergic alveolitis | [ENVO:00002872](http://purl.obolibrary.org/obo/ENVO_00002872) | bagasse          |
-| [MONDO:0004599](http://purl.obolibrary.org/obo/MONDO_0004599) | barbiturate abuse     | [MONDO:0002491](http://purl.obolibrary.org/obo/MONDO_0002491) | substance abuse               | [CHEBI:29745](http://purl.obolibrary.org/obo/CHEBI_29745)   | barbiturate      |
+| defined_class                                | defined_class_label       | disease                                      | disease_label   | stimulus                                   | stimulus_label   |
+|:---------------------------------------------|:--------------------------|:---------------------------------------------|:----------------|:-------------------------------------------|:-----------------|
+| [MONDO:0043523](http://purl.obolibrary.org/obo/MONDO_0043523) | cadmium poisoning         | [MONDO:0029000](http://purl.obolibrary.org/obo/MONDO_0029000) | poisoning       | [CHEBI:22977](http://purl.obolibrary.org/obo/CHEBI_22977) | cadmium atom     |
+| [MONDO:0019544](http://purl.obolibrary.org/obo/MONDO_0019544) | cocaine intoxication      | [MONDO:0029000](http://purl.obolibrary.org/obo/MONDO_0029000) | poisoning       | [CHEBI:27958](http://purl.obolibrary.org/obo/CHEBI_27958) | cocaine          |
+| [MONDO:0017859](http://purl.obolibrary.org/obo/MONDO_0017859) | colchicine poisoning      | [MONDO:0029000](http://purl.obolibrary.org/obo/MONDO_0029000) | poisoning       | [CHEBI:23359](http://purl.obolibrary.org/obo/CHEBI_23359) | colchicine       |
+| [MONDO:0017863](http://purl.obolibrary.org/obo/MONDO_0017863) | digitalis poisoning       | [MONDO:0029000](http://purl.obolibrary.org/obo/MONDO_0029000) | poisoning       | [CHEBI:4551](http://purl.obolibrary.org/obo/CHEBI_4551)  | digoxin          |
+| [MONDO:0017861](http://purl.obolibrary.org/obo/MONDO_0017861) | ethylene glycol poisoning | [MONDO:0029000](http://purl.obolibrary.org/obo/MONDO_0029000) | poisoning       | [CHEBI:30742](http://purl.obolibrary.org/obo/CHEBI_30742) | ethylene glycol  |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) 

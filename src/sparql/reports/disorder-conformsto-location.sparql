@@ -1,0 +1,20 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+prefix dcterms: <http://purl.org/dc/terms/>
+
+
+
+
+SELECT distinct *
+WHERE {
+  ?term rdfs:label ?label .
+  ?term dcterms:conformsTo mondoPatterns:location.yaml .
+  FILTER NOT EXISTS { ?term owl:deprecated "true"^^xsd:boolean . }
+  FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER(regex(str(?label),"disease"))
+  BIND(REPLACE(str(?label), "disease", "disorder") as ?new_label )
+}

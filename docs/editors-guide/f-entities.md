@@ -44,7 +44,8 @@ EFO > {Orphanet,NCIT} > DesignPattern > DOID
 
 NCIT is generally favored over Orphanet, except for genetic non-cancer diseases.
 
-We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus). More details on [how to write simple, concise, and clear operational text definitions is here](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/).
+
+We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus). If you edit a definition and it deviates from the definition dbxref, add your ORCID as an additional dbxref. More details on [how to write simple, concise, and clear operational text definitions is here](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/). 
 
 ## Synonyms
 
@@ -183,12 +184,14 @@ MONDO:Lexical   |   Same as design_pattern. Should be replaced with specific des
 MONDO:LexicalVariant    |   Similar to design_pattern, should be replaced with specific documentation about variant documentation.  |  synonyms   |   N   |   MONDO:0006018 'Wissler syndrome'
 MONDO:notFoundInDiseaseSubset   |   This annotation is typically added to dbxefs from UMLS or NCIt, to indicate the term is not from the disease branch.    |   dbxef   |   N   |   MONDO_0015350 '17q11.2 microduplication syndrome'
 MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   MONDO:0011812 ‘Duane-radial ray syndrome’ database_cross_reference: Orphanet:959 (was equivalent to MONDO:0019863 which was obsoleted)  {source=MONDO:obsoleteEquivalent}
+MONDO:obsoleteEquivalentObsolete    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   TBD
 MONDO:ontobio   |   Lexical matching method |   subclassOf  |   N   |   MONDO:0012176 'Emanuel syndrome'
 MONDO:patterns....  |   A pattern was used to define the term or synonym, see: https://github.com/monarch-initiative/mondo/tree/master/src/patterns |   definitions, synonyms   |   N   |   MONDO:0016593 'acquired ataxia'
+MONDO:preferredExternal | Identifies the preferred term in case multiple terms from the same source are merged (aka proxy merge). | database_cross_reference | Y | MONDO:0009666 'holocarboxylase synthetase deficiency' database_cross_reference: SCTID:360369003
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'
 MONDO:relatedTo     |   Used when a term is not equivalent but similar. |   xrefs   |   N   |   MONDO:0015350 '17q11.2 microduplication syndrome'
-MONDO:subClassOf    |   This is interpreted strongly as an OWL subclass of axiom.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
-MONDO:superClassOf  |   This is interpreted strongly as an OWL superclass of axiom. |  xrefs  |   N   |   MONDO:0005147 ‘type 1 diabetes mellitus’ database_cross_reference:  OMIM:125852  (refers to the child term ‘type 1 diabetes mellitus type 2’){source=MONDO:superClassOf}
+MONDO:MONDO:mondoIsNarrowerThanSource   |   The Mondo class is narrorwer (more specific) than the source xref.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
+MONDO:mondoIsBroaderThanSource |   The Mondo class is broader (more general) than the source xref.  |  xrefs  |   N   |   MONDO:0005147 ‘type 1 diabetes mellitus’ database_cross_reference:  OMIM:125852  (refers to the child term ‘type 1 diabetes mellitus type 2’){source=MONDO:superClassOf}
 
 ## Subsets
 

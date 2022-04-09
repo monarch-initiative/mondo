@@ -1,0 +1,39 @@
+pattern_name: chromosome_type
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/chromosome_type.yaml
+
+description: 'This pattern is meant to be used for chromosomal disorder defined by the chromosome affected.'
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  chromosomal disorder: MONDO:0019040
+  chromosome: GO:0005694
+
+
+relations:
+  disease arises from structure: RO:0004030
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  chromosome: "'chromosome'"
+# Even though the parent term is GO:0005694, a Monochrom term (CHR:##) is required.
+
+name:
+  text: '%s disorder'
+  vars:
+  - chromosome
+
+def:
+  text: A chromosomal disorder in which %s is affected.
+  vars:
+  - chromosome
+
+equivalentTo:
+  text: "'chromosomal disorder' and ('disease arises from structure' some %s)"
+  vars:
+  - chromosome

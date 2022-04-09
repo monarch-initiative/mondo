@@ -1,0 +1,28 @@
+# description: Looks for xrefs with illegal prefixes
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?cls ?prefix
+
+WHERE 
+{
+  VALUES ?mapping { oboInOwl:hasDbXref }
+  ?cls a owl:Class; 
+     	?mapping ?value .
+  
+  FILTER NOT EXISTS {
+  	?cls owl:deprecated ?deprecated .
+  }
+  FILTER( STRBEFORE(str(?value),":") not in ("UMLS", "ICD10EXP", "DOID", "OMIM", "Orphanet", "SCTID", "MESH", "NCIT", "GARD", "ICD9", "EFO", "MedDRA", "ICDO", "HP", "ONCOTREE", "OMIMPS", "Wikipedia", "GTR", "HGNC", "CSP", "KEGG", "PMID", "MEDGEN", "NIFSTD", "MONDO", "ICD10CM", "OMOP", "MFOMD", "MP", "OGMS", "Wikidata", "SCDO", "ICD11", "NDFRT", "LOINC", "IDO", "PATO", "OBI","ICD10", "MTH", "Reactome", "DERMO", "MPATH", "ICD9CM"))
+  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND( STRBEFORE(str(?value),":") AS ?prefix)
+  
+} ORDER BY ?cls
+

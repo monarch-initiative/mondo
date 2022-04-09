@@ -6,14 +6,14 @@ on:
 jobs:
   diff:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.2.29
+    container: obolibrary/odkfull:v1.3.0
     strategy:
       max-parallel: 1
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
       - name: Run diff
-        run: cd src/ontology/ && make IMP=false PAT=false MIR=false all_release_reports
+        run: cd src/ontology/ && make IMP=false PAT=false MIR=false GITHUB_ACTION=true all_release_reports
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
