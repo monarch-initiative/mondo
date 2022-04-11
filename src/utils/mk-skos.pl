@@ -75,6 +75,9 @@ while (<>) {
         elsif ($prefix eq 'MedDRA') {
             $uri = 'http://identifiers.org/meddra/';
         }
+        elsif ($prefix eq 'ICD10CM') {
+            $uri = 'http://apps.who.int/classifications/icd10/browse/2010/en#/';
+        }
 
         if ($uri) {
             my $tgt = "$uri$x";

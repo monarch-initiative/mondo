@@ -8,6 +8,7 @@ Deprecated term | A term that should not be used anymore. Technically, "deprecat
 Obsoleted term | A term that should not be used anymore and has been removed from the logical structure of the ontology. For provenance purpose, such terms live on in the ontology file outside the class hierarchy, denoted with owl:deprecated "true".
 Active term | A term that active in the ontology, i.e. part of the logical classification.
 Obsoletion candidate term | A term that is proposed for obsoletion in the future, but still active.
+Born obsolete | These are terms that didn't previously exist, but they are added because they are "in scope" (refer to diseases), but are against Mondo's curation rules. For example, see [issue #4525](https://github.com/monarch-initiative/mondo/issues/).
 
  As part of a release of the Mondo Disease Ontology, we produce three files that document key changes between the new release and the previous release:
 

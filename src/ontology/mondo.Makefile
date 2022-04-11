@@ -220,7 +220,7 @@ clean:
 
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit ordo medgen omim
+SOURCE_IDS = doid ncit ordo medgen omim icd10cm
 SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -322,6 +322,11 @@ report-base-query-%: mondo-base.owl
 report-reason-query-%:
 	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
 
+report-reason-materialise-query-%:
+	$(ROBOT) reason -i $(SRC) materialize --term RO:0002573 \
+		query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-materialise-$*.tsv
+
+
 report-owl-query-%:
 	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
@@ -400,31 +405,48 @@ tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
 	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
 
-mass_obsolete2: tmp/mass_obsolete_me.txt tmp/mass_obsolete.ru
-	echo "Make sure you have updated ../sparql/update/mondo-obsolete-simple.ru before running this script.."
+mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
+	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	make mass_obsolete_warning
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
-		remove -T $< --axioms logical convert -f obo --check false -o $(SRC).obo
+		remove -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
 
 MAPPINGSDIR=mappings
-MAPPING_IDS=ordo omim mondo
-ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
+METADATADIR=metadata
+MAPPING_IDS=omim mondo
+ALL_MAPPINGS=$(patsubst %, tmp/%.sssom.tsv, $(MAPPING_IDS))
 
 tmp/mirror-ordo.json: mirror/ordo.obo
-	robot merge -i $< convert -f json -o $@
+	robot merge -i mirror/ordo.obo convert -f json -o $@
 
 tmp/mirror-omim.json: mirror/omim.obo
-	robot merge -i $< convert -f json -o $@
+	robot merge -i mirror/omim.obo convert -f json -o $@
 
-tmp/mirror-mondo.json: mondo.obo
-	robot merge -i $< convert -f json -o $@
+tmp/mirror-mondo.json: mondo.owl
+	robot merge -i mondo.owl convert -f json -o $@
 
-$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
-	sssom convert -i $< -o $@
-	#python ../scripts/split_sssom_by_source.py $@
+tmp/mirror-efo.json: #mirror/efo.owl
+	robot merge -i mirror/efo.owl convert -f json -o $@
+
+.PHONY: sssom
+sssom:
+	echo "skipping.."
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall git+https://github.com/mapping-commons/sssom-py.git@master
+
+tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
+	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
+
+$(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
+	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
+	cp $< $@
+
+#$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
+#	sssom convert -i $< -o $@
+#	#python ../scripts/split_sssom_by_source.py $@
+
 
 mappings: $(ALL_MAPPINGS)
 
