@@ -13,8 +13,7 @@ SELECT DISTINCT ?cls ?property ?prefix ?source
 
 WHERE 
 {
-  {
-    VALUES ?property { oboInOwl:source }
+    VALUES ?property { oboInOwl:source oboInOwl:hasDbXref }
     ?cls a owl:Class; 
     		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
        	?mapping ?value .
@@ -41,87 +40,15 @@ WHERE
       "GTR",
       "HGNC",
       "HP",
-      "ICD10CM",
-      "ICD10WHO",
-      "ICD11",
-      "ICD9",
-      "ICD9CM",
-      "ICDO",
       "http",
       "https",
-      "ICDO",
-      "IDO",
-      "ISBN-13",
-      "KEGG",
-      "LOINC",
-      "MedDRA",
-      "MedGen",
-      "MEDGEN",
-      "MEDIC",
-      "MESH",
-      "MFOMD",
-      "MONDO",
-      "MONDORULE",
-      "MP",
-      "MPATH",
-      "MTH",
-      "NCIT",
-      "NDFRT",
-      "NIFSTD",
-      "OBI",
-      "OGMS",
-      "OMIM",
-      "OMIMPS",
-      "OMIT",
-      "OMOP",
-      "ONCOTREE",
-      "Orphanet",
-      "PATO",
-      "PMID",
-      "Reactome",
-      "SCDO",
-      "SCTID",
-      "UMLS",
-      "Wikidata",
-      "Wikipedia"
-      )
-    )
-    FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
-    BIND( STRBEFORE(str(?source),":") AS ?prefix)
-  } UNION {
-    VALUES ?property { oboInOwl:hasDbXref }
-    ?cls a owl:Class; 
-    		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
-       	?mapping ?value .
-    
-      ?axiom owl:annotatedSource ?cls ;
-             owl:annotatedProperty ?mapping ;
-             owl:annotatedTarget ?value ;
-             ?property ?source .
-      
-    
-    FILTER NOT EXISTS {
-    	?cls owl:deprecated ?deprecated .
-    }
-    FILTER( STRBEFORE(str(?source),":") not in (
-      "ClinGen",
-      "CSP",
-      "DC-OMIM", #Consider removing
-      "DERMO",
-      "doi",
-      "DOID",
-      "ECO",
-      "EFO",
-      "GARD",
-      "GTR",
-      "HGNC",
-      "HP",
       "ICD10CM",
       "ICD10WHO",
       "ICD11",
       "ICD9",
       "ICD9CM",
       "ICDO",
+      "ICDO",
       "IDO",
       "ISBN-13",
       "KEGG",
@@ -160,7 +87,5 @@ WHERE
     )
     FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND( STRBEFORE(str(?source),":") AS ?prefix)
-  }
-  
 } ORDER BY ?cls
 
