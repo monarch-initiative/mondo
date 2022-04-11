@@ -9,82 +9,158 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
-SELECT DISTINCT ?cls ?property ?prefix #?mapping ?property
+SELECT DISTINCT ?cls ?property ?prefix ?source
 
 WHERE 
 {
-  #VALUES ?mapping { oboInOwl:hasDbXref }
-  VALUES ?property { oboInOwl:source oboInOwl:hasDbXref }
-  ?cls a owl:Class; 
-  		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
-     	?mapping ?value .
-  
-    ?axiom owl:annotatedSource ?cls ;
-           owl:annotatedProperty ?mapping ;
-           owl:annotatedTarget ?value ;
-           ?property ?source .
+  {
+    VALUES ?property { oboInOwl:source }
+    ?cls a owl:Class; 
+    		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
+       	?mapping ?value .
     
-  
-  FILTER NOT EXISTS {
-  	?cls owl:deprecated ?deprecated .
-  }
-  FILTER( STRBEFORE(str(?source),":") not in (
-    "ClinGen",
-    "CSP",
-    "DC-OMIM", #Consider removing
-    "DERMO",
-    "doi",
-    "DOID",
-    "ECO",
-    "EFO",
-    "GARD",
-    "GTR",
-    "HGNC",
-    "HP",
-    "ICD10CM",
-    "ICD10WHO",
-    "ICD11",
-    "ICD9",
-    "ICD9CM",
-    "ICDO",
-    "IDO",
-    "ISBN-13",
-    "KEGG",
-    "LOINC",
-    "MedDRA",
-    "MedGen",
-    "MEDGEN",
-    "MEDIC",
-    "MESH",
-    "MFOMD",
-    "MONDO",
-    "MONDORULE",
-    "MP",
-    "MPATH",
-    "MTH",
-    "NCIT",
-    "NDFRT",
-    "NIFSTD",
-    "OBI",
-    "OGMS",
-    "OMIM",
-    "OMIMPS",
-    "OMIT",
-    "OMOP",
-    "ONCOTREE",
-    "Orphanet",
-    "PATO",
-    "PMID",
-    "Reactome",
-    "SCDO",
-    "SCTID",
-    "UMLS",
-    "Wikidata",
-    "Wikipedia"
+      ?axiom owl:annotatedSource ?cls ;
+             owl:annotatedProperty ?mapping ;
+             owl:annotatedTarget ?value ;
+             ?property ?source .
+      
+    
+    FILTER NOT EXISTS {
+    	?cls owl:deprecated ?deprecated .
+    }
+    FILTER( STRBEFORE(str(?source),":") not in (
+      "ClinGen",
+      "CSP",
+      "DC-OMIM", #Consider removing
+      "DERMO",
+      "doi",
+      "DOID",
+      "ECO",
+      "EFO",
+      "GARD",
+      "GTR",
+      "HGNC",
+      "HP",
+      "ICD10CM",
+      "ICD10WHO",
+      "ICD11",
+      "ICD9",
+      "ICD9CM",
+      "ICDO",
+      "http",
+      "https",
+      "ICDO",
+      "IDO",
+      "ISBN-13",
+      "KEGG",
+      "LOINC",
+      "MedDRA",
+      "MedGen",
+      "MEDGEN",
+      "MEDIC",
+      "MESH",
+      "MFOMD",
+      "MONDO",
+      "MONDORULE",
+      "MP",
+      "MPATH",
+      "MTH",
+      "NCIT",
+      "NDFRT",
+      "NIFSTD",
+      "OBI",
+      "OGMS",
+      "OMIM",
+      "OMIMPS",
+      "OMIT",
+      "OMOP",
+      "ONCOTREE",
+      "Orphanet",
+      "PATO",
+      "PMID",
+      "Reactome",
+      "SCDO",
+      "SCTID",
+      "UMLS",
+      "Wikidata",
+      "Wikipedia"
+      )
     )
-  )
-  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
-  BIND( STRBEFORE(str(?source),":") AS ?prefix)
+    FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND( STRBEFORE(str(?source),":") AS ?prefix)
+  } UNION {
+    VALUES ?property { oboInOwl:hasDbXref }
+    ?cls a owl:Class; 
+    		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
+       	?mapping ?value .
+    
+      ?axiom owl:annotatedSource ?cls ;
+             owl:annotatedProperty ?mapping ;
+             owl:annotatedTarget ?value ;
+             ?property ?source .
+      
+    
+    FILTER NOT EXISTS {
+    	?cls owl:deprecated ?deprecated .
+    }
+    FILTER( STRBEFORE(str(?source),":") not in (
+      "ClinGen",
+      "CSP",
+      "DC-OMIM", #Consider removing
+      "DERMO",
+      "doi",
+      "DOID",
+      "ECO",
+      "EFO",
+      "GARD",
+      "GTR",
+      "HGNC",
+      "HP",
+      "ICD10CM",
+      "ICD10WHO",
+      "ICD11",
+      "ICD9",
+      "ICD9CM",
+      "ICDO",
+      "IDO",
+      "ISBN-13",
+      "KEGG",
+      "LOINC",
+      "MedDRA",
+      "MedGen",
+      "MEDGEN",
+      "MEDIC",
+      "MESH",
+      "MFOMD",
+      "MONDO",
+      "MONDORULE",
+      "MP",
+      "MPATH",
+      "MTH",
+      "NCIT",
+      "NDFRT",
+      "NIFSTD",
+      "OBI",
+      "OGMS",
+      "OMIM",
+      "OMIMPS",
+      "OMIT",
+      "OMOP",
+      "ONCOTREE",
+      "Orphanet",
+      "PATO",
+      "PMID",
+      "Reactome",
+      "SCDO",
+      "SCTID",
+      "UMLS",
+      "Wikidata",
+      "Wikipedia"
+      )
+    )
+    FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND( STRBEFORE(str(?source),":") AS ?prefix)
+  }
   
 } ORDER BY ?cls
 
