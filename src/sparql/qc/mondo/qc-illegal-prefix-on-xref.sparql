@@ -20,7 +20,52 @@ WHERE
   FILTER NOT EXISTS {
   	?cls owl:deprecated ?deprecated .
   }
-  FILTER( STRBEFORE(str(?value),":") not in ("UMLS", "ICD10EXP", "DOID", "OMIM", "Orphanet", "SCTID", "MESH", "NCIT", "GARD", "ICD9", "EFO", "MedDRA", "ICDO", "HP", "ONCOTREE", "OMIMPS", "Wikipedia", "GTR", "HGNC", "CSP", "KEGG", "PMID", "MEDGEN", "NIFSTD", "MONDO", "ICD10CM", "OMOP", "MFOMD", "MP", "OGMS", "Wikidata", "SCDO", "ICD11", "NDFRT", "LOINC", "IDO", "PATO", "OBI","ICD10", "MTH", "Reactome", "DERMO", "MPATH", "ICD9CM", "ICD10WHO", "ICD10CM"))
+  FILTER( STRBEFORE(str(?value),":") not in (
+      "CSP",
+      "DERMO",
+      "DOID",
+      "EFO",
+      "GARD",
+      "GTR",
+      "HGNC",
+      "HP",
+      "ICD10CM",
+      "ICD10EXP",
+      "ICD10WHO",
+      "ICD11",
+      "ICD9",
+      "ICD9CM",
+      "ICDO",
+      "IDO",
+      "KEGG",
+      "LOINC",
+      "MedDRA",
+      "MEDGEN",
+      "MESH",
+      "MFOMD",
+      "MONDO",
+      "MP",
+      "MPATH",
+      "MTH",
+      "NCIT",
+      "NDFRT",
+      "NIFSTD",
+      "OBI",
+      "OGMS",
+      "OMIM",
+      "OMIMPS",
+      "OMOP",
+      "ONCOTREE",
+      "Orphanet",
+      "PATO",
+      "PMID",
+      "Reactome",
+      "SCDO",
+      "SCTID",
+      "UMLS",
+      "Wikidata",
+      "Wikipedia"
+    ))
   FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
   BIND( STRBEFORE(str(?value),":") AS ?prefix)
   
