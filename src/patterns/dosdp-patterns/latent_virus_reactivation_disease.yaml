@@ -19,12 +19,8 @@ annotationProperties:
   exact_synonym: oio:hasExactSynonym
 
 vars:
-  virus: '''virus'''
+  virus: "'virus'"
 
-name:
-  text: 'xxx'
-  vars:
-  - virus
 
 annotations:
 - annotationProperty: exact_synonym
@@ -39,6 +35,6 @@ def:
   - virus
 
 equivalentTo:
-  text: '''viral infectious disease'' and ''disease caused by reactivation of latent infectious agent'' some %s'
+  text: 'viral infectious disease' and ('disease caused by reactivation of latent infectious agent' some %s)
   vars:
   - virus

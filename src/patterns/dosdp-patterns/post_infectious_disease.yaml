@@ -20,7 +20,7 @@ annotationProperties:
   exact_synonym: oio:hasExactSynonym
 
 vars:
-  infectiousdisease: '''infectious disease'''
+  infectiousdisease: "'infectious disease'"
 
 name:
   text: 'post-%s'
@@ -40,6 +40,6 @@ def:
   - infectiousdisease
 
 equivalentTo:
-  text: '''disease or disorder'' and ''disease has basis in feature'' some %s'
+  text: 'disease or disorder' and ('disease has basis in feature' some %s)
   vars:
   - infectiousdisease
