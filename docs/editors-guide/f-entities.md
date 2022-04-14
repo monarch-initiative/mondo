@@ -190,7 +190,7 @@ MONDO:patterns....  |   A pattern was used to define the term or synonym, see: h
 MONDO:preferredExternal | Identifies the preferred term in case multiple terms from the same source are merged (aka proxy merge). | database_cross_reference | Y | MONDO:0009666 'holocarboxylase synthetase deficiency' database_cross_reference: SCTID:360369003
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'
 MONDO:relatedTo     |   Used when a term is not equivalent but similar. |   xrefs   |   N   |   MONDO:0015350 '17q11.2 microduplication syndrome'
-MONDO:MONDO:mondoIsNarrowerThanSource   |   The Mondo class is narrorwer (more specific) than the source xref.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
+MONDO:mondoIsNarrowerThanSource   |   The Mondo class is narrorwer (more specific) than the source xref.   | xrefs   |   N   |   MONDO:0010117 '3M syndrome 1' database_cross_reference: Orphanet:2616 (refers to the  parent term  '3M syndrome){source=MONDO:subClassOf}
 MONDO:mondoIsBroaderThanSource |   The Mondo class is broader (more general) than the source xref.  |  xrefs  |   N   |   MONDO:0005147 ‘type 1 diabetes mellitus’ database_cross_reference:  OMIM:125852  (refers to the child term ‘type 1 diabetes mellitus type 2’){source=MONDO:superClassOf}
 
 ## Subsets
