@@ -441,7 +441,7 @@ tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
 
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
-	cp $< $@
+	sssom dosql -q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 #	sssom convert -i $< -o $@
