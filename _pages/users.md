@@ -22,6 +22,7 @@ Name | Description
 [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) | ClinVar aggregates information about genomic variation and its relationship to human health.
 [NCBI MedGen](https://www.ncbi.nlm.nih.gov/medgen/) | MedGen organizes information related to human medical genetics, such as attributes of conditions with a genetic contribution. MedGen maps their disease pages to Mondo IDs.
 [NCI Cancer Research Data Commons](https://datascience.cancer.gov/data-commons) | A cloud-based data science infrastructure that connects data sets with analytics tools to allow users to share, integrate, analyze, and visualize cancer research data to drive scientific discovery.
+[OMIA](https://omia.org)) | Online Mendelian Inheritance in Animals (OMIA) is a catalogue/compendium of inherited disorders, other (single-locus) traits, and genes in 346 animal species. 
 [Penn TURBO](http://upibi.org/turbo/) | TURBO transforms relational electronic health record (EHR) data into a semantic graph. Mondo is used for disease annotations and integration of disease data.
 [Pharos](https://pharos.nih.gov/diseases) | Pharos provides a interface to the Knowledge Management Center (KMC) for the Illuminating the Druggable Genome (IDG) program. Diseases in the Pharos database are maped to Mondo terms and IDs.
 [Pombase](https://www.pombase.org/) | A comprehensive database for the fission yeast Schizosaccharomyces pombe, providing structural and functional annotation, literature curation and access to large-scale data sets.
