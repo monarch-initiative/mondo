@@ -16,5 +16,5 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that has a defect in
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020) some [nuclear_gene](http://purl.obolibrary.org/obo/SO_0000087)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has material basis in germline mutation in](http://purl.obolibrary.org/obo/RO_0004003) some [nuclear_gene](http://purl.obolibrary.org/obo/SO_0000087)
 
