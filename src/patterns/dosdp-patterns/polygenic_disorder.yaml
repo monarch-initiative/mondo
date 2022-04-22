@@ -3,8 +3,8 @@ pattern_name: polygenic_disorder
 pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/polygenic_disorder.yaml
 
 description: 'This pattern is for diseases that are caused by a variation (or mutation) in
-  a two or more genes. The relation disease has basis in dysfunction should be used for each gene that is affected. For digenic diseases, 
-  this would be twice, for polygenic diseases, it would be 3 or more. 
+  a two or more genes. The relation disease has basis in dysfunction should be used for each gene that is affected. For digenic diseases,
+  this would be twice, for polygenic diseases, it would be 3 or more.
    Examples: [Usher syndrome, type 1D/F](http://purl.obolibrary.org/obo/MONDO_0100050)'
 
 contributors:
@@ -16,7 +16,7 @@ classes:
   gene: SO:0001217
 
 relations:
-  disease has basis in dysfunction of: RO:0004020
+  has material basis in germline mutation in: RO:0004003
 
 annotationProperties:
   exact_synonym: oio:hasExactSynonym
@@ -56,7 +56,7 @@ def:
   - gene
 
 equivalentTo:
-  text: '%s and ''disease has basis in dysfunction of'' some %s and ''disease has basis in dysfunction of'' some %s'
+  text: '%s and ''has material basis in germline mutation in'' some %s and ''has material basis in germline mutation in'' some %s'
   vars:
   - disease
   - gene
