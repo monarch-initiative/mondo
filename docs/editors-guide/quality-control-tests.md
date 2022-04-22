@@ -362,7 +362,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
 
   FILTER NOT EXISTS {
-     ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omimps-should-inherited.sparql .
+     ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omimps-should-be-inherited.sparql .
   }
 
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
