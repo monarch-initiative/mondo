@@ -6,6 +6,8 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
   ?exp owl:annotatedSource ?entity ;
@@ -20,6 +22,10 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   }
   
   FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
+  
+  FILTER NOT EXISTS {
+     ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:omimps-should-inherited.sparql .
+  }
   
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
