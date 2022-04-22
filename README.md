@@ -1,4 +1,4 @@
-[![Jenkins master status](https://ci.monarchinitiative.org/buildStatus/icon?subject=Jenkins%20master%20status&job=test-mondo&build=last:${params.MONDO_BRANCH=master})](https://ci.monarchinitiative.org/job/test-mondo/)
+![Build Status](https://github.com/monarch-initiative/mondo/workflows/CI/badge.svg) <img width="100px" src="http://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png" alt="CC BY 4.0">
 
 <img src="https://github.com/jmcmurry/closed-illustrations/blob/master/logos/mondo-logos/mondo_logo_black-banner.png"/>
 
