@@ -20,13 +20,13 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002573> ;
     owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021152> ] .
   }
-  
+
   FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
-  
+
   FILTER NOT EXISTS {
-     ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:omimps-should-inherited.sparql .
+     ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omimps-should-inherited.sparql .
   }
-  
+
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
