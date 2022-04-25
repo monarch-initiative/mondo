@@ -461,7 +461,7 @@ reports/mondo_base_last_%.tsv: tmp/mondo-lastbase.owl
 tmp/mondo-versioned-base.owl:
 	$(ROBOT) convert -I http://purl.obolibrary.org/obo/mondo/releases/$(COMPARE_VERSION)/mondo-base.owl -f owl -o $@
 
-reports/mondo_base_version_%.tsv: #tmp/mondo-versioned-base.owl
+reports/mondo_base_version_%.tsv: tmp/mondo-versioned-base.owl
 	$(ROBOT) query --use-graphs true -i tmp/mondo-versioned-base.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
 reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv
