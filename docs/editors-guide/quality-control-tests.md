@@ -277,6 +277,25 @@ SELECT DISTINCT ?entity ?property ?value WHERE
 ORDER BY ?entity
 ```
 
+###  qc-not-replacedby-and-consider.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# description: We do not want a consider and a replaced by at the same time.
+
+SELECT ?entity ?property ?value  WHERE {
+  ?entity	<http://purl.obolibrary.org/obo/IAO_0100001> ?value .
+  ?entity	oboInOwl:consider ?value2 .
+  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+
+}
+
+```
+
 ###  qc-obsolete-equivalent-on-non-deprecated.sparql
 
 ```
