@@ -180,6 +180,20 @@ WHERE
 
 ```
 
+###  qc-negative-subclass-of.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+SELECT ?subClass ?property ?superClass  WHERE {
+  VALUES ?property { rdfs:subClassOf }. 
+  VALUES ?subClass { MONDO:0024643 }. 
+  VALUES ?superClass {MONDO:0002081 }. 
+  ?subClass	?property ?superClass .
+}
+```
+
 ###  qc-no-subclass-between-genetic-disease.sparql
 
 ```
