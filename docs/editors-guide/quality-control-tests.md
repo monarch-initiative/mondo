@@ -180,6 +180,20 @@ WHERE
 
 ```
 
+###  qc-negative-subclass-of.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+SELECT ?subClass ?property ?superClass  WHERE {
+  VALUES ?property { rdfs:subClassOf }. 
+  VALUES ?subClass { MONDO:0024643 }. 
+  VALUES ?superClass {MONDO:0002081 }. 
+  ?subClass	?property ?superClass .
+}
+```
+
 ###  qc-no-subclass-between-genetic-disease.sparql
 
 ```
@@ -344,6 +358,8 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
   ?exp owl:annotatedSource ?entity ;
@@ -356,9 +372,13 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002573> ;
     owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021152> ] .
   }
-  
+
   FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
-  
+
+  FILTER NOT EXISTS {
+     ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omimps-should-be-inherited.sparql .
+  }
+
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
