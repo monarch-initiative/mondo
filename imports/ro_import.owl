@@ -12,7 +12,7 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/ro_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-08-03/imports/ro_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2022-04-18/imports/ro_import.owl"/>
     </owl:Ontology>
     
 
@@ -88,6 +88,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000589 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0100001 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0100001"/>
     
 
 
@@ -215,44 +221,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000111 xml:lang="en">precedes</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) &lt;= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">precedes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000066 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000066">
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000067"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000066"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000066"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <obo:IAO_0000111 xml:lang="en">occurs in</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">b occurs_in c =def b is a process and c is a material entity or immaterial entity&amp; there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.&amp; forall(t) if b exists_at t then c exists_at t &amp; there exist spatial regions s and s’ where &amp; b spatially_projects_onto s at t&amp; c is occupies_spatial_region s’ at t&amp; s is a proper_continuant_part_of s’ at t</obo:IAO_0000115>
-        <obo:IAO_0000118 xml:lang="en">occurs_in</obo:IAO_0000118>
-        <obo:IAO_0000118 xml:lang="en">unfolds in</obo:IAO_0000118>
-        <obo:IAO_0000118 xml:lang="en">unfolds_in</obo:IAO_0000118>
-        <rdfs:comment>Paraphrase of definition: a relation between a process and an independent continuant, in which the process takes place entirely within the independent continuant</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">occurs in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000067 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000067">
-        <obo:IAO_0000111 xml:lang="en">site of</obo:IAO_0000111>
-        <obo:IAO_0000115 xml:lang="en">[copied from inverse property &apos;occurs in&apos;] b occurs_in c =def b is a process and c is a material entity or immaterial entity&amp; there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.&amp; forall(t) if b exists_at t then c exists_at t &amp; there exist spatial regions s and s’ where &amp; b spatially_projects_onto s at t&amp; c is occupies_spatial_region s’ at t&amp; s is a proper_continuant_part_of s’ at t</obo:IAO_0000115>
-        <rdfs:comment>Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">contains process</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -588,13 +556,13 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000116>This is redundant with the more specific &apos;independent and not spatial region&apos; constraint. We leave in the redundant axiom for use with reasoners that do not use negation.</obo:IAO_0000116>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#domain"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000116>This is redundant with the more specific &apos;independent and not spatial region&apos; constraint. We leave in the redundant axiom for use with reasoners that do not use negation.</obo:IAO_0000116>
     </owl:Axiom>
@@ -976,7 +944,6 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002134 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002134">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0001001"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002134"/>
@@ -1195,7 +1162,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002200 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002200">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0016001"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002201"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UPHENO_0001001"/>
         <obo:IAO_0000115>A relationship that holds between a biological entity and a phenotype. Here a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). The subject of this relationship can be an organism (where the organism has the phenotype, i.e. the qualities inhere in parts of this organism), a genomic entity such as a gene or genotype (if modifications of the gene or the genotype causes the phenotype), or a condition such as a disease (such that if the condition inheres in an organism, then the organism has the phenotype).</obo:IAO_0000115>
@@ -1207,7 +1174,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002201 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002201">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <obo:IAO_0000115>inverse of has phenotype</obo:IAO_0000115>
         <rdfs:label xml:lang="en">phenotype of</rdfs:label>
@@ -1372,7 +1338,8 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002218 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002218">
-        <obo:IAO_0000115>x has participant y if and only if x realizes some active role that inheres in y</obo:IAO_0000115>
+        <obo:IAO_0000115>OBSOLETE x has participant y if and only if x realizes some active role that inheres in y</obo:IAO_0000115>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/RO_0002500"/>
         <rdfs:label>obsolete has active participant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
@@ -1514,38 +1481,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002231 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002231">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002479"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002224"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000066"/>
-        </owl:propertyChainAxiom>
-        <obo:IAO_0000115>x &apos;has starts location&apos; y if and only if there exists some process z such that x &apos;starts with&apos; z and z &apos;occurs in&apos; y</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has start location</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002232 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002232">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002479"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002230"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000066"/>
-        </owl:propertyChainAxiom>
-        <obo:IAO_0000115>x &apos;has end location&apos; y if and only if there exists some process z such that x &apos;ends with&apos; z and z &apos;occurs in&apos; y</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has end location</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0002233 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002233">
@@ -1571,7 +1506,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002230"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002234"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p.</obo:IAO_0000115>
+        <obo:IAO_0000115>p has output c iff c is a participant in p, c is present at the end of p, and c is not present in the same state at the beginning of p.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has output</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2062,7 +1997,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002375 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002375">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
@@ -2075,6 +2009,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/RO_0002376 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002376">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002375"/>
         <obo:IAO_0000115>x tributary_of y if and only if x a channel for the flow of a substance into y, where y is larger than x. If x and y are hydrographic features, then y is the main stem of a river, or a lake or bay, but not the sea or ocean. If x and y are anatomical, then y is a vein.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">tributary of</rdfs:label>
@@ -2314,22 +2249,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002432 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002432">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002327"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000066"/>
-        </owl:propertyChainAxiom>
-        <obo:IAO_0000115>c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>enables activity in</oboInOwl:hasExactSynonym>
-        <rdfs:label>is active in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0002433 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002433">
@@ -2458,21 +2377,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115>x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y.</obo:IAO_0000115>
         <rdfs:label>composed primarily of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002479 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002479">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000066"/>
-        </owl:propertyChainAxiom>
-        <obo:IAO_0000115>p has part that occurs in c if and only if there exists some p1, such that p has_part p1, and p1 occurs in c.</obo:IAO_0000115>
-        <rdfs:label>has part that occurs in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2843,6 +2747,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <!-- http://purl.obolibrary.org/obo/RO_0002569 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002569">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002375"/>
         <obo:IAO_0000115>inverse of branching part of</obo:IAO_0000115>
         <rdfs:label>has branching part</rdfs:label>
@@ -3013,12 +2918,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0003001"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
-            </rdf:Description>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002234"/>
-        </owl:propertyChainAxiom>
         <obo:IAO_0000115>a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">produces</rdfs:label>
     </owl:ObjectProperty>
@@ -3032,6 +2931,26 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115>a produced_by b iff some process that occurs_in b has_output a.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">produced by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0003302 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003302">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
+        <obo:IAO_0000115>A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the entity has some causal or contributing role that influences the condition.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">causes or contributes to condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0003303 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003303">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0003302"/>
+        <obo:IAO_0000115>A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the entity has some causal role for the condition.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">causes condition</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -3066,6 +2985,26 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0004003 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004003">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004000"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004013"/>
+        <rdfs:label>has material basis in germline mutation in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0004004 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004004">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004000"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004014"/>
+        <rdfs:label>has material basis in somatic mutation in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0004010 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004010">
@@ -3082,6 +3021,28 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004010"/>
         <obo:IAO_0000115>Relates a gene to condition, such that a mutation in this gene in a germ cell provides a new function of the corresponding product and that is sufficient to produce the condition and that can be passed on to offspring[modified from orphanet].</obo:IAO_0000115>
         <rdfs:label>is causal gain of function germline mutation of in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0004013 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004013">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0003303"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004010"/>
+        <obo:IAO_0000115>Relates a gene to condition, such that a mutation in this gene is sufficient to produce the condition and that can be passed on to offspring[modified from orphanet].</obo:IAO_0000115>
+        <rdfs:label>is causal germline mutation in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0004014 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004014">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0003303"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004010"/>
+        <obo:IAO_0000115>Relates a gene to condition, such that a mutation in this gene is sufficient to produce the condition but that cannot be passed on to offspring[modified from orphanet].</obo:IAO_0000115>
+        <rdfs:label>is causal somatic mutation in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -3260,8 +3221,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0004030">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004019"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
-        <obo:IAO_0000115>A relationship between a disease and an anatomical structure where the material basis of the disease is some pathological change in the structure.</obo:IAO_0000115>
-        <rdfs:label>disease arises from structure</rdfs:label>
+        <obo:IAO_0000115>A relationship between a disease and an anatomical structure where the material basis of the disease is some pathological change in the structure. Anatomical structure includes cellular and sub-cellular entities, such as chromosome and organelles.</obo:IAO_0000115>
+        <rdfs:label>disease arises from alteration in structure</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -3421,18 +3382,81 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0016001 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0016001">
+        <rdfs:label>has phenotype or disease</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0017001 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0017001">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002215"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002233"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>X utilizes Y means X and Y are material entities, and X is capable of some process P that has input Y.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">utilizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0019000 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0019000">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002211"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0019000"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>A relationship that holds between a process and a characteristic in which process (P) regulates characteristic (C) iff: P results in the existence of C OR affects the intensity or magnitude of C.</obo:IAO_0000115>
+        <rdfs:label>regulates characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0019001 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0019001">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0019000"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002213"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0019001"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>A relationship that holds between a process and a characteristic in which process (P) positively regulates characteristic (C) iff: P results in an increase in the intensity or magnitude of C.</obo:IAO_0000115>
+        <rdfs:label>positively regulates characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0019002 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0019002">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0019000"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002212"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0019001"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002213"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0019002"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>A relationship that holds between a process and a characteristic in which process (P) negatively regulates characteristic (C) iff: P results in a decrease in the intensity or magnitude of C.</obo:IAO_0000115>
+        <rdfs:label>negatively regulates characteristic</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0040035 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0040035">
         <obo:IAO_0000115>This relation groups  relations between diseases and any other kind of entity.</obo:IAO_0000115>
         <rdfs:label>disease relationship</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     
 
 
@@ -4070,6 +4094,15 @@ For example, A and B may be gene products and binding of B by A positively regul
     <rdf:Description rdf:about="urn:swrl#mf2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
@@ -4540,50 +4573,6 @@ For example, A and B may be gene products and binding of B by A positively regul
                         <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002447"/>
                         <swrl:argument1 rdf:resource="urn:swrl#g1"/>
                         <swrl:argument2 rdf:resource="urn:swrl#g2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002327"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -5173,6 +5162,94 @@ For example, A and B may be gene products and binding of B by A positively regul
                         <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
                         <swrl:argument1 rdf:resource="urn:swrl#x"/>
                         <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0019002"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0019001"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002264"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002263"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
