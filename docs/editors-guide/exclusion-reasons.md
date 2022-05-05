@@ -1,7 +1,7 @@
 # Exclusion Reasons
 
 ## Description 
-_This document is a work in progress._ Noted below are reasons for excluding external ontology or terminology terms from Mondo. 
+_This document is a work in progress._ Noted below are reasons for excluding external ontology or terminology terms from Mondo. See enum file [here](https://github.com/monarch-initiative/mondo/blob/master/src/schema/mondo.yaml).
 
 ID| Reasons for exclusion | Description | Example
 ---| ---| --- | --
