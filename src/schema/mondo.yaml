@@ -1,0 +1,23 @@
+id: https://w3id.org/mondo
+name: mondo
+description: >-
+  A schema for describing the Mondo Ontology Data Model
+imports:
+ - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mondo: https://w3id.org/mondo/
+default_prefix: mondo
+
+enums:
+  entity_type_enum:
+    permissible_values:
+      excludeBiologicalProcess:
+        title: biological process
+        description: The concept describes a biological process and not a disease.
+        notes: "Example: ICD10CM:O00-O08 Pregnancy with abortive outcome."
+      excludeBiomarker:
+        title: biomarker
+        description: A biomarker that is used for disease status and not a disease, such as estrogen receptor status for breast cancer.
+        notes: "Example: ICD10CM:Z17-Z17 Estrogen receptor status."
+
