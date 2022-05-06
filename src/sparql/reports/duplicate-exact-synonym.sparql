@@ -18,22 +18,24 @@ WHERE
       FILTER (STRSTARTS(STR(?term2), "http://purl.obolibrary.org/obo/MONDO_"))
     }
   }
-  [
-     a owl:Axiom ;
+  ?axa1 a owl:Axiom ;
        owl:annotatedSource ?term ;
        owl:annotatedProperty oboInOwl:hasExactSynonym ;
        owl:annotatedTarget ?exact ;
-       oboInOwl:hasDbXref ?xref1 
-  ] .
-  [
-     a owl:Axiom ;
+       oboInOwl:hasDbXref ?xref1 .
+  ?axa2 a owl:Axiom ;
        owl:annotatedSource ?term2 ;
        owl:annotatedProperty oboInOwl:hasExactSynonym ;
        owl:annotatedTarget ?exact ;
-       oboInOwl:hasDbXref ?xref2 
-  ] .
+       oboInOwl:hasDbXref ?xref2 .
+  FILTER NOT EXISTS {
+    ?axa1 oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION>
+  }
+  FILTER NOT EXISTS {
+    ?axa2 oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION>
+  }
   ?term rdfs:label ?term_label .
-  ?term rdfs:label ?term_label2 .
+  ?term2 rdfs:label ?term_label2 .
   BIND (CONCAT(?xref1,"|",?xref2) as ?xref)
 } 
 GROUP BY ?exact ?term ?term_label ?term2 ?term_label2 ORDER BY ?exact
