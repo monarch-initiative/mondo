@@ -26,9 +26,13 @@ pattern_schema_checks:
 owlaxioms_check:
 	! grep "^owl-axioms" mondo-edit.obo
 
+obo_validator:
+	fastobo-validator mondo-edit.obo
+
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
+test: obo_validator
 
 test_reason_equivalence: $(SRC)
 	$(ROBOT) merge -i $< \
@@ -98,6 +102,7 @@ list: $(MYDIR)/*
 		echo "" >> $@ ;\
 	done
 
+.PHONY: qc_docs
 qc_docs: ../../docs/editors-guide/quality-control-tests.md
 
 pattern_mkdocs:
@@ -215,7 +220,7 @@ clean:
 
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit ordo medgen omim
+SOURCE_IDS = doid ncit ordo medgen omim icd10cm
 SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -317,6 +322,11 @@ report-base-query-%: mondo-base.owl
 report-reason-query-%:
 	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
 
+report-reason-materialise-query-%:
+	$(ROBOT) reason -i $(SRC) materialize --term RO:0002573 \
+		query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-materialise-$*.tsv
+
+
 report-owl-query-%:
 	$(ROBOT) query --use-graphs true -I http://purl.obolibrary.org/obo/mondo/mondo-with-equivalents.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
@@ -326,9 +336,43 @@ tmp/mondo-rdfxml.owl:
 report-tbd-query-%: tmp/mondo-rdfxml.owl
 	$(ROBOT) query --use-graphs true -i $< -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
-
 update-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
+
+construct-query-%:
+	$(ROBOT) query --use-graphs true -i $(SRC) --query $(SPARQLDIR)/update/$*.ru tmp/construct-$*.ttl
+
+construct-merge-query-%: construct-query-%
+	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*.ttl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+construct-unmerge-query-%: construct-query-%
+	$(ROBOT) unmerge -i $(SRC) -i tmp/construct-$*.ttl convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+# This first merges a the result of a construct query to mondo-edit, than unmerges another
+construct-remerge-query-%: construct-query-% construct-query-%-new
+	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*-new.ttl --collapse-import-closure false \
+		unmerge -i tmp/construct-$*.ttl \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+fix-disorder-names:
+	make construct-unmerge-query-construct-disorders-conformsTo-location-label
+	make construct-merge-query-construct-disorders-conformsTo-location-newlabel
+	
+
+update-merge-normalise-%: update-query-%
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
 
 .PHONY: r2e
 r2e:
@@ -342,22 +386,67 @@ OBS_REASON=outOfScope
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
+tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
+	$(ROBOT) query -i $(SRC) --use-graphs true -f tsv --query $< $@
+	sed -i 's/[?]//g' $@
+	sed -i 's/<http:[/][/]purl[.]obolibrary[.]org[/]obo[/]MONDO_/MONDO:/g' $@
+	sed -i 's/>//g' $@
+
+.PHONY: mass_obsolete_warning
+mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
+	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
+
+mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
+	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
+	make mass_obsolete_warning
+	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
+		remove -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
 MAPPINGSDIR=mappings
-MAPPING_IDS=ordo omim mondo
-ALL_MAPPINGS=$(patsubst %, mappings/%.sssom.tsv, $(MAPPING_IDS))
+METADATADIR=metadata
+MAPPING_IDS=omim mondo
+ALL_MAPPINGS=$(patsubst %, tmp/%.sssom.tsv, $(MAPPING_IDS))
 
 tmp/mirror-ordo.json: mirror/ordo.obo
-	robot merge -i $< convert -f json -o $@
+	robot merge -i mirror/ordo.obo convert -f json -o $@
 
 tmp/mirror-omim.json: mirror/omim.obo
-	robot merge -i $< convert -f json -o $@
+	robot merge -i mirror/omim.obo convert -f json -o $@
 
-tmp/mirror-mondo.json: mondo.obo
-	robot merge -i $< convert -f json -o $@
+tmp/mirror-mondo.json: mondo.owl
+	robot merge -i mondo.owl convert -f json -o $@
 
-$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
-	sssom convert -i $< -o $@
-	#python ../scripts/split_sssom_by_source.py $@
+tmp/mirror-efo.json: #mirror/efo.owl
+	robot merge -i mirror/efo.owl convert -f json -o $@
+
+.PHONY: sssom
+sssom:
+	echo "skipping.."
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall git+https://github.com/mapping-commons/sssom-py.git@master
+
+tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
+	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
+
+$(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
+	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
+	sssom dosql -q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
+
+#$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
+#	sssom convert -i $< -o $@
+#	#python ../scripts/split_sssom_by_source.py $@
+
 
 mappings: $(ALL_MAPPINGS)
 
@@ -369,11 +458,24 @@ reports/mondo_base_current_%.tsv: mondo-base.owl
 reports/mondo_base_last_%.tsv: tmp/mondo-lastbase.owl
 	$(ROBOT) query --use-graphs true -i tmp/mondo-lastbase.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
-reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv 
-	python ../scripts/merge_release_diff.py $^ reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv > reports/mondo_release_diff.md
+tmp/mondo-versioned-base.owl:
+	$(ROBOT) convert -I http://purl.obolibrary.org/obo/mondo/releases/$(COMPARE_VERSION)/mondo-base.owl -f owl -o $@
+
+reports/mondo_base_version_%.tsv: tmp/mondo-versioned-base.owl
+	$(ROBOT) query --use-graphs true -i tmp/mondo-versioned-base.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
+
+reports/mondo_release_diff.md reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv: reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv
+	python ../scripts/merge_release_diff.py reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv reports/mondo_release_diff_changed_terms.tsv reports/mondo_release_diff_new_terms.tsv > reports/mondo_release_diff.md
 	sed -i 's/  */ /g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md
 	sed -i 's/----*/---/g' reports/mondo_release_diff.md
+
+version_diff: reports/mondo_base_version_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv
+	python ../scripts/merge_release_diff.py reports/mondo_base_last_release-report.tsv reports/mondo_base_current_release-report.tsv reports/mondo_obsoletioncandidates.tsv reports/mondo_release_diff_changed_terms_version.tsv reports/mondo_release_diff_new_terms_version.tsv > reports/mondo_release_diff_version.md
+	sed -i 's/  */ /g' reports/mondo_release_diff_version.md
+	sed -i 's/----*/---/g' reports/mondo_release_diff_version.md
+	sed -i 's/----*/---/g' reports/mondo_release_diff_version.md
+
 
 reports/mondo_obsoletioncandidates.tsv: report-base-query-obsoletioncandidates-withcomment
 	cp reports/report-base-obsoletioncandidates-withcomment.tsv $@
@@ -489,13 +591,6 @@ merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_clas
 #		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
 #	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
 
-reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
-	$(ROBOT) report -i $< --profile profile.txt --fail-on none -o $@
-.PRECIOUS: reports/mondo-edit-report.html
-
-.PHONY: mondo_%_report
-mondo_edit_report: reports/mondo-edit-report.html
-test: mondo_edit_report
 
 open_%_report: 
 	open reports/mondo-$*-report.html
@@ -547,3 +642,55 @@ test_owlaxioms:
 	! grep "owl-axioms: " mondo-edit.obo
 
 test: test_owlaxioms 
+
+######################################
+### Mondo slurp python ###############
+######################################
+
+SLURP_FROM="https://github.com/monarch-initiative/omim/releases/download/1.0.0/omim.ttl"
+tmp/source-%.ttl:
+	wget $(SLURP_FROM) -O $@
+
+tmp/mondo-edit.ttl: $(SRC)
+	$(ROBOT) convert -i $< -f ttl -o $@
+
+tmp/mondo-edit-%.ttl: tmp/mondo-edit.ttl tmp/source-%.ttl
+	python ../scripts/migrate.py $^ $@
+
+migrate-%: tmp/mondo-edit-%.ttl
+	$(ROBOT) convert -i $< -f obo -o $@
+
+migrate: migrate-omim
+
+#######################################
+### New Pattern merge pipeline ########
+#######################################
+
+../patterns/data/default/%.owl: ../patterns/data/default/%.tsv $(SRC)
+	dosdp-tools generate --catalog=catalog-v001.xml --obo-prefixes=true --restrict-axioms-to=logical --ontology=$(SRC)  --template=../patterns/dosdp-patterns/$*.yaml --outfile=$@ generate --infile=$<
+
+../patterns/data/default/%_terms.txt: ../patterns/data/default/%.tsv
+	cut -f1 $< | tail -n +2 | sed 's!http://purl.obolibrary.org/obo/MONDO_!MONDO:!g' > $@
+
+tmp/remove_%.ru: ../patterns/data/default/%_terms.txt
+	echo "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>" > $@
+	echo "prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>" >> $@
+	echo "PREFIX owl: <http://www.w3.org/2002/07/owl#>" >> $@
+	echo "DELETE {" >> $@
+	echo "?list owl:equivalentClass ?equivalent ." >> $@
+	echo "}" >> $@
+	echo "WHERE {" >> $@
+	LISTT="$(shell paste -sd" " ../patterns/data/default/$*_terms.txt)"; echo "  VALUES ?list { $$LISTT }" >> $@
+	echo "  ?list owl:equivalentClass ?equivalent ." >> $@
+	echo "  FILTER(isBlank(?equivalent))" >> $@
+	echo "}" >> $@
+
+dosdp-merge-%: ../patterns/data/default/%.owl tmp/remove_%.ru
+	$(ROBOT) query -i $(SRC) --update tmp/remove_$*.ru \
+		merge -i $< --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+		mv tmp/$(SRC) $(SRC)
+		make NORM
+		mv NORM $(SRC)
+
+p1: dosdp-merge-acute

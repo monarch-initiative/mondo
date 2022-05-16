@@ -28,9 +28,9 @@ A disease involving the {[location](http://www.w3.org/2002/07/owl#Thing)}.
 | defined_class                                | defined_class_label                  | location                                      | location_label             |
 |:---------------------------------------------|:-------------------------------------|:----------------------------------------------|:---------------------------|
 | [MONDO:0044965](http://purl.obolibrary.org/obo/MONDO_0044965) | abdominal and pelvic region disorder | [UBERON:0002417](http://purl.obolibrary.org/obo/UBERON_0002417) | abdominal segment of trunk |
-| [MONDO:0020594](http://purl.obolibrary.org/obo/MONDO_0020594) | abducens nerve disease               | [UBERON:0001646](http://purl.obolibrary.org/obo/UBERON_0001646) | abducens nerve             |
-| [MONDO:0002636](http://purl.obolibrary.org/obo/MONDO_0002636) | accessory nerve disease              | [UBERON:0002019](http://purl.obolibrary.org/obo/UBERON_0002019) | accessory XI nerve         |
-| [MONDO:0002816](http://purl.obolibrary.org/obo/MONDO_0002816) | adrenal cortex disease               | [UBERON:0001235](http://purl.obolibrary.org/obo/UBERON_0001235) | adrenal cortex             |
-| [MONDO:0005495](http://purl.obolibrary.org/obo/MONDO_0005495) | adrenal gland disease                | [UBERON:0002369](http://purl.obolibrary.org/obo/UBERON_0002369) | adrenal gland              |
+| [MONDO:0020594](http://purl.obolibrary.org/obo/MONDO_0020594) | abducens nerve disorder              | [UBERON:0001646](http://purl.obolibrary.org/obo/UBERON_0001646) | abducens nerve             |
+| [MONDO:0002636](http://purl.obolibrary.org/obo/MONDO_0002636) | accessory nerve disorder             | [UBERON:0002019](http://purl.obolibrary.org/obo/UBERON_0002019) | accessory XI nerve         |
+| [MONDO:0002816](http://purl.obolibrary.org/obo/MONDO_0002816) | adrenal cortex disorder              | [UBERON:0001235](http://purl.obolibrary.org/obo/UBERON_0001235) | adrenal cortex             |
+| [MONDO:0005495](http://purl.obolibrary.org/obo/MONDO_0005495) | adrenal gland disorder               | [UBERON:0002369](http://purl.obolibrary.org/obo/UBERON_0002369) | adrenal gland              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location_top.tsv) 

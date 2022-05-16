@@ -1,0 +1,25 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# number of classes (not obsolete) with at least 1 narrow synonym
+
+
+SELECT distinct (count(distinct ?cls) as ?count)
+
+WHERE 
+{
+  ?cls a owl:Class .
+  ?cls rdfs:label ?cls_label .
+  
+  FILTER EXISTS { ?cls <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ?narrowsyn . }
+    
+  FILTER NOT EXISTS {
+    ?cls owl:deprecated "true"^^xsd:boolean
+  }
+  
+  FILTER( !isBlank(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+}

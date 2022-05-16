@@ -2,26 +2,25 @@ name: Create ongoing diffs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 13 * * 1"
 jobs:
   diff:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.2.29
+    container: obolibrary/odkfull:v1.3.0
     strategy:
       max-parallel: 1
     steps:
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-          ref: master # Change to name of main branch, e.g. "main"
+      - name: Checkout main branch
+        uses: actions/checkout@v2
       - name: Run diff
-        env:
-          GH_USERNAME: ${{ github.actor }}
-        run: cd src/ontology/ && make reports/mondo_diff.md IMP=false PAT=false MIR=false reports/mondo_diff.md
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+        run: cd src/ontology/ && make IMP=false PAT=false MIR=false GITHUB_ACTION=true all_release_reports
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
         with:
-        #  github_token: ${{ secrets.GITHUB_TOKEN }}
-        #  branch: ${{ GitHub.head_ref }}
-          tags: true
+          commit-message: Update Mondo diff reports
+          title: 'Mondo Diff reports'
+          body: |
+            Updates Mondo diff reports, including
+            - Current changes to labels in Mondo
+            - New terms that are about to be added as part of the next release
+          assignees: sabrinatoro

@@ -1,0 +1,17 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?cls ?term_label ?parent ?parent_label ?x WHERE { 
+  
+  ?cls rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0000001> .
+  ?parent rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0000001> .
+  ?cls rdfs:label ?term_label .
+  ?parent rdfs:label ?parent_label .
+  
+  FILTER NOT EXISTS { ?cls rdfs:subClassOf* ?parent . }
+  FILTER(?cls!=?parent)
+  FILTER(STRSTARTS(str(?term_label), CONCAT(str(?parent_label)," ")))
+  FILTER (isIRI(?cls))
+}

@@ -1,0 +1,14 @@
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+
+SELECT ?term ?term_label 
+WHERE 
+{ 
+  ?term rdfs:label ?term_label .
+  ?term dcterms:conformsTo mondoPatterns:location.yaml .
+  FILTER NOT EXISTS { ?term owl:deprecated "true"^^xsd:boolean . }
+  FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+} 

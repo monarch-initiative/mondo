@@ -1,0 +1,42 @@
+pattern_name: iatrogenic
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/iatrogenic.yaml
+
+description: 'Some diseases are caused by diagnostic and therapeutic procedures undertaken on a patient, such as a hospital acquired infection
+like MRSA. Use this pattern to define the iatrogenic form of a disease.
+
+  Examples: [''iatrogenic botulism''](http://purl.obolibrary.org/obo/MONDO_0016778),
+  [''iatrogenic Creutzfeldt-Jakob disease''](http://purl.obolibrary.org/obo/MONDO_0034976)'
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  iatrogenic: MONDO:0100426
+  disease: MONDO:0000001
+
+relations:
+  has modifier: RO:0002573
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+
+name:
+  text: iatrogenic %s
+  vars:
+  - disease
+
+def:
+  text: A %s that has an iatrogenic cause.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s and ''has modifier'' some ''iatrogenic'''
+  vars:
+  - disease

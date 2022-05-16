@@ -1,0 +1,63 @@
+pattern_name: polygenic_disorder
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/polygenic_disorder.yaml
+
+description: 'This pattern is for diseases that are caused by a variation (or mutation) in
+  a two or more genes. The relation disease has basis in dysfunction should be used for each gene that is affected. For digenic diseases,
+  this would be twice, for polygenic diseases, it would be 3 or more.
+   Examples: [Usher syndrome, type 1D/F](http://purl.obolibrary.org/obo/MONDO_0100050)'
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  disease: MONDO:0000001
+  gene: SO:0001217
+
+relations:
+  has material basis in germline mutation in: RO:0004003
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+  gene: '''gene'''
+
+name:
+  text: '%s caused by variation in %s'
+  vars:
+  - disease
+  - gene
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s %s'
+  vars:
+  - gene
+  - disease
+- annotationProperty: exact_synonym
+  text: '%s related %s'
+  vars:
+  - gene
+  - disease
+- annotationProperty: exact_synonym
+  text: '%s caused by mutation in %s'
+  vars:
+  - disease
+  - gene
+
+def:
+  text: Any %s in which the cause of the disease is a variation in the %s gene.
+  vars:
+  - disease
+  - gene
+
+equivalentTo:
+  text: '%s and ''has material basis in germline mutation in'' some %s and ''has material basis in germline mutation in'' some %s'
+  vars:
+  - disease
+  - gene
+  - gene

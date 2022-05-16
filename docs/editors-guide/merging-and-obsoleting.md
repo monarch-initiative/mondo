@@ -26,13 +26,12 @@
 1. Allow for at least one month after sending the report or contacting users before obsoleting the terms to allow users time to comment.
 
 ### How to
-There are 3 ways to merge classes:
+There are 2 ways to merge classes:
 
 * Manually (not recommended)
-* Using the Protege merge tool (not yet released)
 * Using owltools
 
-Until the Protege merge tool is ready it is preferred to make merge requests using owl tools via Nicole and Sabrina. You will need to have Docker installed and running (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/set-up-new-computer/#set-up-docker)). This should be done in plain text, either csv or tsv. Two columns (or optionally 4 columns with labels):
+To use owl tools  will need to have Docker installed and running (see instructions [here](https://mondo.readthedocs.io/en/latest/editors-guide/set-up-new-computer/#set-up-docker)). This should be done in plain text, either csv or tsv. Two columns (or optionally 4 columns with labels):
 
 1. CURIE of class to be obsoleted
 1. CURIE of replacement class
@@ -55,7 +54,7 @@ Note: if you add an obsoletion reason, make sure that the replaced class does no
 
 1. Create a branch and name it issue-### (for example issue-2864)
 1. Open Protege
-1. Prepre the owltools command:
+1. Prepare the owltools command:
 `owltools --use-catalog mondo-edit.obo  --obsolete-replace [CURIE 1] [CURIE 2] -o -f obo mondo-edit.obo`  
 
 CURIE 1 = term to be obsoleted  
@@ -71,16 +70,22 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 
 1. In Terminal, navigate to ..mondo/src/ontology
 1. Run your owltools command
-1. Check the output in GitHub desktop
+1. **Review diff**: Check the output in GitHub Desktop. _Note: you may see an unexpected addition at the top that starts with owl-axioms... This is because two IDs were added to replacement term. The instructions below note to remove the additional ID, and this will go away after you do that._
+1. The owltools command will move all of the dbxrefs to the new term. We can have proxy merges, ie two MONDO:equivalentTo xrefs from the same source. If this is the case, one dbxref should be marked as MONDO:preferredExternal (as a source annotation on the dbxref) in addition to the MONDO:equivalentTo source annotation. 
+
+![Screen Shot 2022-02-08 at 11 00 00 AM](https://user-images.githubusercontent.com/12737987/153057430-1f39e85c-cfc6-4fa0-8ac2-2fb4da0b5628.png)
+
 1. Open a new version of mondo-edit.obo in Protege
-1. Search for the term that was obsoleted
+1. **Obsoleted class**: Search for the term that was obsoleted
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and write 'terms merged' in the literal field.
-1. Search for the 'term replaced by' term
-1. Delete the old ID
-1. Review the annotations to ensure there are no duplicate annotations. If there are, they should be merged.
-1. If there are duplicate dbxrefs that are annotated as MONDO:equivalentTo (ie two OMIM xrefs), the dbxref from the obsolete class should be annotated as MONDO:obsoleteEquivalent 
-1. Review the subClassOf assertions, and make sure there are no duplicates. If there are, they should be merged.
+1. Any source annotations to MONDO:equivalentTo on a dbxref should be changed to MONDO:obsoleteEquivalent.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
+1. **Replacement term**: Search for the 'term replaced by' term
+1. Delete the old ID (_if you check the diff after doing this and saving, you'll see the unexpected addition will disappear_)
+1. Review the annotations to ensure there are no duplicate annotations. If there are, they should be combined. (Sometimes this is easier to review in the diff in GitHub Desktop, but they must be fixed in Protege.)
+1. Review the subClassOf assertions, and make sure there are no duplicates. If there are, they should be combined.
+1. Remove the annotations: 'in subset obsoletion candidate' and 'scheduled for obsoletion on or after'  
 1. When reviewing the diff, make sure there is not an Alt ID. The diff should only show additions to the merged term and the obsoletion
 
 ### Manual merge/obsolete
@@ -89,37 +94,49 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 1. Rename label to: obsolete [class name]
 1. Add annotation **owl:deprecated** and indicate true (in literal)
 1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684). If the disease term is being obsoleted and an HPO term should be used instead, do not use **term replaced by**, rather use the annotation **consider.** For example, see MONDO:0001445.
-1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and chose an individual reason (click on Entity IRI and select a reason from the list. If there is not a valid reason in the list, add it as an individual, or manually write in a reason as a string.)
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and manually write in a reason as a string (usually 'out of scope'). Add a source annotation to the obolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/).
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms
 1. If the class has children, remove the superclass assertion for the children 
 1. Example: ![Manual merge example 1](images/github-workflow-manual-merge-1.png)
 1. Move all the synonyms to the new term. 
-1. Move all the **database_cross_references** to the new term.
-1. If applicable, to mark the synonym as deprecated, add an annotation to the synonym: has_synonym_type ‘A synonym that is historic and discouraged’. See granulomatosis with polyangiitis for examples of deprecated syn axiom annotations
-1. It is a good idea to add a reason for obsoletion to the class. This can be added as a **comment** or add **seeAlso** and add a link to the GitHub ticket.
+1. Retain all of the **database_cross_references** on the obsoleted term. Any annotations to MONDO:equivalentTo should be changed to MONDO:obsoleteEquivalent.
+1. If applicable, to mark the synonym as deprecated, add an annotation to the synonym: has_synonym_type ‘A synonym that is historic and discouraged’. See granulomatosis with polyangiitis for examples of deprecated syn axiom annotations.
 
-Note: A Mondo obsolete class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
+Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
 
 ## Obsolete a class (without merging)
 
 ### Obsolete a class (using Protege 'Make entity obsolete' function)
 1. Search for the class to be obsoleted.
 1. In the Protege edit menu-> Make entity obsolete
-1. Add annotation 'has obsolescence reason' and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
+1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and manually write in a reason as a string (usually 'out of scope'). Add a source annotation to the obolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/).
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. Add annotation consider, add the CURIE for the term that should be considered as a replacement.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
 
 ### Obsolete a class (manually)
 1. Search for the class to be obsoleted.
 1. Rename label to: obsolete [class name].
 1. Add annotation **owl:deprecated** and indicate true (in literal).
-1. Add annotation 'has obsolescence reason' and either add an individual or add free text in the literal box, if there is not a suitable individual. (To add an individual, click the 'Entity IRI' tab, then click Individuals)
+1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and manually write in a reason as a string (usually 'out of scope'). Add a source annotation to the obolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/).
 1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms.
 1. If the class has children, remove the superclass assertions for the children.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
+
+## Simple mass obsoletion pipeline
+
+If you only want to obsolete terms without taking another look, you can use the simple mass obsoletion pipeline:
+
+1. add all terms you wish to obsolete to config/obsolete_me.txt
+1. run `sh run.sh make mass_obsolete2 -B`
+1. Very carefully review the diff. More carefully then usual!
 
 ## When to obsolete / merge
 
@@ -136,4 +153,4 @@ Issues should remain open for at least two weeks to allow for the community to c
 
 See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
 
-by Nicole Vasilevsky and Sabrina Toro _updated 2021-09_28_
+by Nicole Vasilevsky and Sabrina Toro _updated 2021-12-17_

@@ -2,6 +2,76 @@
 
 ## Mondo specific checks
 
+###  qc-equivalent-preferred-multiple.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
+  	?entity oboInOwl:hasDbXref ?xref .
+  	?entity oboInOwl:hasDbXref ?xref2 .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source0 ;
+           oboInOwl:source ?source1 .
+  
+  	?xref_anno2 a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref2 ;
+           oboInOwl:source ?source2 ;
+           oboInOwl:source ?source4 .
+           
+
+    FILTER(str(?xref2)!=str(?xref))
+  	FILTER(STRBEFORE(str(?xref),":") = STRBEFORE(str(?xref2),":")) 
+    FILTER ((str(?source0)="MONDO:preferredExternal"))
+    FILTER ((str(?source4)="MONDO:preferredExternal"))
+    FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:equivalentObsolete"))
+  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:equivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(?xref2 as ?value)
+}
+
+```
+
+###  qc-equivalent-to-on-deprecated.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+#description: Deprecated class employs equivalentTo
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity oboInOwl:hasDbXref ?xref .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source .
+    
+    ?entity owl:deprecated true 
+
+    FILTER ((str(?source)="MONDO:equivalentTo") || (str(?source)="MONDO:equivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(?source as ?value)
+}
+ORDER BY ?entity
+
+```
+
 ###  qc-excluded-subsumption-is-inferred.sparql
 
 ```
@@ -29,6 +99,99 @@ WHERE
   BIND(str(?parent) as ?value)
 }
 ORDER BY ?entity
+```
+
+###  qc-illegal-prefix-on-xref.sparql
+
+```
+# description: Looks for xrefs with illegal prefixes
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?cls ?prefix
+
+WHERE 
+{
+  VALUES ?mapping { oboInOwl:hasDbXref }
+  ?cls a owl:Class; 
+     	?mapping ?value .
+  
+  FILTER NOT EXISTS {
+  	?cls owl:deprecated ?deprecated .
+  }
+  FILTER( STRBEFORE(str(?value),":") not in (
+      "CSP",
+      "DERMO",
+      "DOID",
+      "EFO",
+      "GARD",
+      "GTR",
+      "HGNC",
+      "HP",
+      "ICD10CM",
+      "ICD10EXP",
+      "ICD10WHO",
+      "ICD11",
+      "ICD9",
+      "ICD9CM",
+      "ICDO",
+      "IDO",
+      "KEGG",
+      "LOINC",
+      "MedDRA",
+      "MEDGEN",
+      "MESH",
+      "MFOMD",
+      "MONDO",
+      "MP",
+      "MPATH",
+      "MTH",
+      "NCIT",
+      "NDFRT",
+      "NIFSTD",
+      "OBI",
+      "OGMS",
+      "OMIM",
+      "OMIMPS",
+      "OMOP",
+      "ONCOTREE",
+      "Orphanet",
+      "PATO",
+      "PMID",
+      "Reactome",
+      "SCDO",
+      "SCTID",
+      "UMLS",
+      "Wikidata",
+      "Wikipedia"
+    ))
+  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND( STRBEFORE(str(?value),":") AS ?prefix)
+  
+} ORDER BY ?cls
+
+
+```
+
+###  qc-negative-subclass-of.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+SELECT ?subClass ?property ?superClass  WHERE {
+  VALUES ?property { rdfs:subClassOf }. 
+  VALUES ?subClass { MONDO:0024643 }. 
+  VALUES ?superClass {MONDO:0002081 }. 
+  ?subClass	?property ?superClass .
+}
 ```
 
 ###  qc-no-subclass-between-genetic-disease.sparql
@@ -114,6 +277,52 @@ SELECT DISTINCT ?entity ?property ?value WHERE
 ORDER BY ?entity
 ```
 
+###  qc-not-replacedby-and-consider.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# description: We do not want a consider and a replaced by at the same time.
+
+SELECT ?entity ?property ?value  WHERE {
+  ?entity	<http://purl.obolibrary.org/obo/IAO_0100001> ?value .
+  ?entity	oboInOwl:consider ?value2 .
+  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+
+}
+
+```
+
+###  qc-obsolete-equivalent-on-non-deprecated.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity oboInOwl:hasDbXref ?xref .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source .
+    
+    FILTER NOT EXISTS { ?entity owl:deprecated true }
+
+    FILTER ((str(?source)="MONDO:obsoleteEquivalent") || (str(?source)="MONDO:obsoleteEquivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(str(?entity2) as ?value)
+}
+ORDER BY ?entity
+
+```
+
 ###  qc-omim-subsumption.sparql
 
 ```
@@ -168,6 +377,8 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
   ?exp owl:annotatedSource ?entity ;
@@ -180,9 +391,13 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     owl:onProperty <http://purl.obolibrary.org/obo/RO_0002573> ;
     owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021152> ] .
   }
-  
+
   FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
-  
+
+  FILTER NOT EXISTS {
+     ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-omimps-should-be-inherited.sparql .
+  }
+
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
@@ -238,6 +453,8 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
+#description: No two Mondo IDs should ever point to the same external ID
+
 SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity oboInOwl:hasDbXref ?xref .
     
@@ -256,14 +473,15 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
            oboInOwl:source ?source2 .
 
   	FILTER (?entity2!=?entity)
-    FILTER (str(?source1)="MONDO:equivalentTo")
-  	FILTER (str(?source2)="MONDO:equivalentTo")
+    FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete"))
+  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     FILTER (isIRI(?entity2) && STRSTARTS(str(?entity2), "http://purl.obolibrary.org/obo/MONDO_"))
-    BIND(oboInOwl:hasDbXref as ?property)
+    BIND(?xref as ?property)
     BIND(str(?entity2) as ?value)
 }
 ORDER BY ?entity
+
 ```
 
 ###  qc-related-exact-synonym-omim.sparql
@@ -358,6 +576,108 @@ ORDER BY ?entity
 
 ```
 
+###  qc-deprecated-class-reference.sparql
+
+```
+# # Deprecated Class Reference
+#
+# **Problem:** A deprecated class is used in a logical axiom. A deprecated class can be the child of another class (e.g. ObsoleteClass), but it cannot have children or be used in blank nodes or equivalent class statements. Additionally, a deprecated class should not have any equivalent classes or anonymous parents.
+#
+# **Solution:** Replace deprecated class.
+
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+  {
+   VALUES ?property {
+     rdfs:subClassOf
+   }
+   ?entity a owl:Class;
+           owl:deprecated true ;
+           ?property ?value .
+   FILTER ( ?value NOT IN (oboInOwl:ObsoleteClass, owl:Thing) )
+  }
+  UNION
+  {
+   VALUES ?property {
+     owl:equivalentClass
+     owl:disjointWith
+   }
+   ?entity a owl:Class;
+           owl:deprecated true ;
+           ?property ?value .
+  }
+  UNION
+  {
+     VALUES ?property {
+       rdfs:subClassOf
+       owl:equivalentClass
+       owl:disjointWith
+     }
+     ?entity a owl:Class;
+             owl:deprecated true .
+     ?value ?property ?entity .
+  }
+  UNION
+  {
+   VALUES ?property {
+     owl:ObjectProperty
+     owl:DataProperty
+   }
+   ?entity a owl:Class ;
+           owl:deprecated true ;
+           ?property ?value .
+  }
+  UNION
+  {
+   VALUES ?property {
+     owl:someValuesFrom
+     owl:allValuesFrom
+   }
+   ?value a owl:Class ;
+          owl:deprecated true .
+   ?rest a owl:Restriction ;
+         ?property ?value .
+   BIND("blank node" as ?entity)
+  }
+}
+ORDER BY ?entity
+```
+
+###  qc-doublewhite.sparql
+
+```
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+SELECT ?entity ?property ?value
+WHERE {
+  VALUES ?property { 
+      rdfs:comment
+      rdfs:label
+      oio:hasExactSynonym
+      oio:hasNarrowSynonym
+      oio:hasBroadSynonym
+      oio:hasCloseSynonym
+      oio:hasRelatedSynonym
+    }
+    ?entity rdf:type owl:Class ;
+            ?property ?value .
+  filter( regex(str(?value), "  " ) || regex(str(?value), "\t" ))
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+
+}
+```
+
 ###  qc-equivalent-classes.sparql
 
 ```
@@ -379,6 +699,56 @@ SELECT DISTINCT ?entity ?property ?value WHERE
   FILTER (!isBlank(?value))
 }
 ORDER BY ?entity
+
+```
+
+###  qc-illegal-axiom-annotation.sparql
+
+```
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Checks wether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
+
+SELECT distinct ?entity ?property ?value
+WHERE 
+{ 
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty ?property ;
+           owl:annotatedTarget ?x ;
+           ?value ?y 
+      ] .
+    FILTER(?property!=rdfs:subClassOf && ?value!=rdfs:comment)
+  	FILTER(?y!=?x && ?y!=?property && ?y!=?entity && ?y!=owl:Axiom)
+  	FILTER ((?value != oboInOwl:source) && (?value != oboInOwl:hasDbXref) && (?value != oboInOwl:hasSynonymType)) .
+    FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
+
+}
+```
+
+###  qc-illegal-properties.sparql
+
+```
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+  {
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#source>
+                     <http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/mondo#source> }
+  ?entity ?property ?value .
+  } UNION {
+    VALUES ?entity { <http://purl.obolibrary.org/obo/mondo#source>
+                     <http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/mondo#source> }
+  	?entity ?property ?value .
+  }
+}
+ORDER BY DESC(UCASE(str(?value)))
 
 ```
 
@@ -411,6 +781,22 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
  }
  FILTER (!isBlank(?entity))
  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
+ORDER BY ?entity
+```
+
+###  qc-misused-replaced-by.sparql
+
+```
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+ VALUES ?property { <http://purl.obolibrary.org/obo/IAO_0100001> }
+ ?entity ?property ?value .
+ FILTER NOT EXISTS { ?entity owl:deprecated true }
+ FILTER (?entity != oboInOwl:ObsoleteClass)
 }
 ORDER BY ?entity
 ```
@@ -486,15 +872,42 @@ SELECT DISTINCT ?entity ?property ?value WHERE
 ORDER BY ?entity
 ```
 
+###  qc-permitted-properties.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix RO: <http://purl.obolibrary.org/obo/RO_>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix dce: <http://purl.org/dc/elements/1.1/>
+prefix dc: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?term ?property ?value WHERE 
+{
+	?term ?property ?value .
+  	?property a owl:AnnotationProperty .
+	FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  	FILTER(!isBlank(?value))
+  FILTER (?property NOT IN (dce:creator, dce:date, IAO:0000115, IAO:0000231, IAO:0100001, mondo:excluded_subClassOf, mondo:excluded_from_qc_check, mondo:excluded_synonym, mondo:pathogenesis, mondo:related, mondo:confidence, dc:conformsTo, mondo:should_conform_to, oboInOwl:consider, oboInOwl:created_by, oboInOwl:creation_date, oboInOwl:hasAlternativeId, oboInOwl:hasBroadSynonym, oboInOwl:hasDbXref, oboInOwl:hasExactSynonym, oboInOwl:hasNarrowSynonym, oboInOwl:hasRelatedSynonym, oboInOwl:id, oboInOwl:inSubset, owl:deprecated, rdfs:comment, rdfs:isDefinedBy, rdfs:label, rdfs:seeAlso, RO:0002161, skos:broadMatch, skos:closeMatch, skos:exactMatch, skos:narrowMatch))
+}
+
+```
+
 ###  qc-reflexive.sparql
 
 ```
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT DISTINCT ?entity ?property ?value 
 WHERE {
     ?entity ?property ?entity .
-    FILTER ( isIRI(?entity)) 
+    FILTER ( isIRI(?entity))
+    FILTER(?entity!=owl:Nothing)
     BIND("Entity referencing itself in triple!" as ?value)
 }
 ORDER BY ?entity
@@ -566,15 +979,38 @@ ORDER BY ?entity
 
 ```
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-    ?entity rdfs:subClassOf+ ?entity ;
-         rdfs:label ?clsLabel 
-         
+    ?entity rdfs:subClassOf+ ?entity .
+   FILTER(?entity!=owl:Nothing)
    BIND(rdfs:subClassOf AS ?property)
    BIND(?entity AS ?value)
 }
 ORDER BY ?entity
+```
+
+###  qc-syn-equal-label.sparql
+
+```
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT distinct ?term ?label ?related ?synonym
+WHERE 
+{ 
+  VALUES ?synonym { oboInOwl:hasRelatedSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasBroadSynonym oboInOwl:hasCloseSynonym }
+    ?term ?synonym ?related ;
+          rdfs:label ?label ;
+      	a owl:Class .
+    
+  	FILTER(str(?label)=str(?related))
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
 ```
 
 ###  qc-syn-source-not-xref.sparql

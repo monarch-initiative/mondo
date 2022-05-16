@@ -1,35 +1,32 @@
-name: Docs
-
+name: Update pattern and SPARQL docs
 on:
   workflow_dispatch:
-  
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/patterns/dosdp-patterns/**'
+      - 'src/sparql/**'
 jobs:
-  docs:
-    runs-on: ubuntu-latest 
+  diff:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.3.0
+    strategy:
+      max-parallel: 1
     steps:
-    - uses: actions/checkout@v2 
-
-    - name: Set up Python
-      uses: actions/setup-python@v2 
-      with:
-        python-version: 3.8 
-    
-    - name: install python packages
-      run: |
-        pip install -r docs/requirements.txt     
-        pip install pandas tabulate
-    
-    - name: Generate docs 
-      run: |
-        python src/scripts/patterns_create_docs.py
-    
-    - name: Check in the updated docs 
-      run: |
-        git add --force docs 
-        if [[ ! -z $(git status -s .) ]]
-        then
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m 'Updating generated pattern docs' .
-          git push
-        fi
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+      - name: Run diff
+        run: cd src/ontology/ && make pattern_docs -B
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update DOSDP template and SPARQL qc documentation
+          title: 'Update DOSDP and SPARQL docs'
+          body: |
+            Updates DOSDP template and SPARQL qc documentation, including
+            - Update the dosdp pattern docs overview
+            - Update the README.md in the DOSDP directory
+            - Update pattern.owl
+            - Update SPARQL QC check documenation
+          assignees: nicolevasilevsky

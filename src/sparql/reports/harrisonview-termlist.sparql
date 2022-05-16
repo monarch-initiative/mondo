@@ -3,6 +3,9 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+#description: 'This query reports all the terms which have the "harrisons_view" tag, as well as the children of these terms (which might or might not have the tag). Parent(s) of each terms is(are) also reported.'    
+
 SELECT distinct ?cls ?label (GROUP_CONCAT(?parent_label;SEPARATOR="|") AS ?parents) WHERE {
   {
   ?cls a owl:Class;

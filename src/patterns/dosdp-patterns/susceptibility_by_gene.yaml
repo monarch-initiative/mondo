@@ -20,7 +20,7 @@ classes:
   gene: SO:0000704
 
 relations:
-  disease has basis in dysfunction of: RO:0004020
+  has material basis in germline mutation in: RO:0004003
   predisposes towards: http://purl.obolibrary.org/obo/mondo#predisposes_towards
 
 annotationProperties:
@@ -52,8 +52,7 @@ def:
   - gene
 
 equivalentTo:
-  text: ('inherited disease susceptibility' and ('disease has basis in dysfunction
-    of' some %s) and ('predisposes towards' some %s))
+  text: ('inherited disease susceptibility' and ('has material basis in germline mutation in' some %s) and ('predisposes towards' some %s))
   vars:
   - gene
   - disease

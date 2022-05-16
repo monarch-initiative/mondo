@@ -1,0 +1,43 @@
+pattern_name: pregnancy_form_of_disorder
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/pregnancy_form_of_disorder.yaml
+
+description: 'An instance of a disease is associated with a pregnancy. 
+  Examples: [pregnancy associated osteoporosis](http://purl.obolibrary.org/obo/MONDO_0100194), 
+  [hypertension, pregnancy-induced](http://purl.obolibrary.org/obo/MONDO_0024664)'
+
+contributors: 
+- https://orcid.org/0000-0002-6601-2165
+- https://orcid.org/0000-0001-5208-3432
+  
+classes: 
+  disease: MONDO:0000001
+  pregnancy disorder: MONDO:0024575
+  
+annotationProperties: 
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+  
+vars:
+  disease: '''disease'''
+  
+name: 
+  text: pregnancy associated %s
+  vars:
+  - disease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s, pregnancy induced'
+  vars:
+  - disease
+  
+def:
+  text: Any instance of %s that is associated with pregnancy.
+  vars:
+  - disease
+  
+equivalentTo: 
+  text: "%s and 'pregnancy disorder'"
+  vars: 
+  - disease

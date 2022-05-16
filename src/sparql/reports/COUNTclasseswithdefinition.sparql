@@ -1,0 +1,26 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# count how many non-obsolete classes have definition
+
+SELECT (count(distinct ?cls) as ?count) 
+
+WHERE 
+{
+  ?cls a owl:Class .
+  ?cls rdfs:label ?cls_label .
+  
+  FILTER EXISTS {
+    ?cls <http://purl.obolibrary.org/obo/IAO_0000115> ?definition.
+  }
+  
+  FILTER NOT EXISTS {
+    ?cls owl:deprecated "true"^^xsd:boolean
+  }
+
+FILTER( !isBlank(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+}

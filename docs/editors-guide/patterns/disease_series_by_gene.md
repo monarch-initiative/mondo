@@ -3,7 +3,7 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml](http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml)
 ## Description 
 
-This pattern is for diseases that are caused by a single variation or mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome.  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)
+This pattern is for diseases that are caused by a single variation or mutation in a single gene, that have gene-based names, such as new disease terms that are requested by ClinGen, like MED12-related intellectual disability syndrome. See more details about [disease naming in Mondo here](https://mondo.monarchinitiative.org/pages/disease-naming/).  Examples: [MED12-related intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000), [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
@@ -25,5 +25,5 @@ Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020) some {[gene](http://purl.obolibrary.org/obo/SO_0001217)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has material basis in germline mutation in](http://purl.obolibrary.org/obo/RO_0004003) some {[gene](http://purl.obolibrary.org/obo/SO_0001217)}
 
