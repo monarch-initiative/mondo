@@ -54,10 +54,10 @@ _Note: While the release is running, don't shut your laptop or switch between re
    1. Merge PR
 
 ## Initial Setup:
-Make sure the initial setup (see above) has been done:
-1. Download the `obo-simple-diff.pl` script to the "tools" directory and set-up your path to the tools directory.
-2. Generate token
-3. Make sure you have gh installed: `brew install gh`. For other ways to install, see [here](https://github.com/cli/cli). 
+Make sure the initial setup (see above) has been done:  
+1. Download the `obo-simple-diff.pl` script to the "tools" directory and set-up your path to the tools directory.  
+2. Generate token  
+3. Make sure you have gh installed: `brew install gh`. For other ways to install, see [here](https://github.com/cli/cli).  
 
 
 ## Deploy Release
@@ -99,7 +99,7 @@ Note- the date should be the date of the release in the format `make GHVERSION=v
       - commit to master
    3. Click on "Publish release" (THIS IS NEW, the release, so far should have been in Draft state) 
 
-## Check obsoletion obsoletion candidates
+## Check obsoletion candidates
 
 With each release, a TSV should be generated with obsoletion candidates. Check that this tsv file is up-to-date here:
 https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/mondo_obsoletioncandidates.tsv

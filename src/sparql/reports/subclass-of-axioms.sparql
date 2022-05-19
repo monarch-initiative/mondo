@@ -1,0 +1,13 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?subsumption WHERE 
+{
+  ?cls a owl:Class ;
+       rdfs:subClassOf ?superCls .
+  FILTER (!isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (!isBlank(?superCls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(CONCAT(CONCAT(STR( ?cls ),"-"), STR(?superCls)) AS ?subsumption ) .
+} ORDER BY ?subsumption

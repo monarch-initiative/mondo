@@ -1014,6 +1014,18 @@ Examples: [juvenile-onset Parkinson disease](http://purl.obolibrary.org/obo/MOND
 | MONDO:0000828 | juvenile-onset Parkinson disease              | MONDO:0005180 | Parkinson disease               |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/juvenile.tsv)
+### Latent virus reactivation disease
+*This template is for disease which arises from the reactivation of a virus from a latent phase to a lytic phase. Examples: [herpes zoster](http://purl.obolibrary.org/obo/MONDO_0005609)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/latent_virus_reactivation_disease.yaml |
+| Name | latent_virus_reactivation_disease |
+| Classes | MONDO:0005108, NCBITaxon:10239,  |
+| Variables | virus (NCBITaxon:10239),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
 ### Leiomyoma
 *A leiomyoma (a well-circumscribed benign smooth muscle neoplasm characterized by the presence of spindle cells with cigar-shaped nuclei, interlacing fascicles, and a whorled pattern) that is located in a specific anatomical entity.
 Examples: [leiomyoma cutis](http://purl.obolibrary.org/obo/MONDO_0003291), [ureter leiomyoma](http://purl.obolibrary.org/obo/MONDO_0001399), [urethra leiomyoma](http://purl.obolibrary.org/obo/MONDO_0002222) (30 total)*
@@ -1465,6 +1477,18 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Classes | MONDO:0000001, SO:0001217,  |
 | Variables | disease (MONDO:0000001), gene (SO:0001217),  |
 | Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
+### Post infectious disease
+*Post-infection disorder follows infection but is distinct from the infection itself and its usual manifestations. Examples: [post-COVID-19 disorder](http://purl.obolibrary.org/obo/MONDO_0100320)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/post_infectious_disease.yaml |
+| Name | post_infectious_disease |
+| Classes | MONDO:0000001, MONDO:0021669, MONDO:0005550,  |
+| Variables | infectiousdisease (MONDO:0005550),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
 | Examples |  |
 
 ### Postinfectious disease
