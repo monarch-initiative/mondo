@@ -10,12 +10,12 @@ All mappings in Mondo are created the same way:
 4. This set becomes our set of "candidate mappings", and are merged into Mondo.
 5. We rely on the community to inform us of bad mappings (i.e. we do _not_ review every single mapping manually).
 
-Mappings are scoped as:
-- exact
-- close (somewhat similar, but not the same)
-- broad (external term is broader in scope)
-- narrow (external term is narrower in scope) 
-- related (external term is in a different branch, i.e. a disease in Mondo to a phenotype in HPO)
+Mappings are scoped as:  
+- exact  
+- close (somewhat similar, but not the same)  
+- broad (external term is broader in scope)  
+- narrow (external term is narrower in scope)  
+- related (external term is in a different branch, i.e. a disease in Mondo to a phenotype in HPO)  
 
 ## Disclaimer
 

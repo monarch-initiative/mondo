@@ -23,7 +23,7 @@ A susceptibility or predisposition to {[disease](http://purl.obolibrary.org/obo/
 
 ## Equivalent to 
 
-([inherited disease susceptibility](http://purl.obolibrary.org/obo/MONDO_0020573) and ([disease has basis in dysfunction of](http://purl.obolibrary.org/obo/RO_0004020) some {[gene](http://purl.obolibrary.org/obo/SO_0000704)}) and ([predisposes towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards) some {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}))
+([inherited disease susceptibility](http://purl.obolibrary.org/obo/MONDO_0020573) and ([has material basis in germline mutation in](http://purl.obolibrary.org/obo/RO_0004003) some {[gene](http://purl.obolibrary.org/obo/SO_0000704)}) and ([predisposes towards](http://purl.obolibrary.org/obo/http_//purl.obolibrary.org/obo/mondo#predisposes_towards) some {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}))
 
 ## Data preview 
 | defined_class                                | defined_class_label                                         | disease                                      | disease_label                                    | gene                              | gene_label   |
