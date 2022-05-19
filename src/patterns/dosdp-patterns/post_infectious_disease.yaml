@@ -1,0 +1,45 @@
+pattern_name: post_infectious_disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/post_infectious_disease.yaml
+
+description: 'Post-infection disorder follows infection but is distinct from the infection itself and its usual manifestations. Examples: [post-COVID-19 disorder](http://purl.obolibrary.org/obo/MONDO_0100320)'
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  disease or disorder: MONDO:0000001
+  post-infectious disorder: MONDO:0021669
+  infectious disease: MONDO:0005550
+  
+
+relations:
+  disease has basis in feature: RO:0004022
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  infectiousdisease: "'infectious disease'"
+
+name:
+  text: 'post-%s'
+  vars:
+  - infectiousdisease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: disorder due to consequences of %s
+  vars:
+  - infectiousdisease
+
+
+def:
+  text: A disorder caused by the infection in %s and manifesting after the original infection. 
+  vars:
+  - infectiousdisease
+
+equivalentTo:
+  text: '''disease or disorder'' and ''disease has basis in feature'' some %s'
+  vars:
+  - infectiousdisease

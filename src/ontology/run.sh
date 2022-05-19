@@ -9,7 +9,20 @@
 # we therefore map the whole repo (../..) to a docker volume.
 #
 # See README-editors.md for more details.
+
+IMAGE=${IMAGE:-odkfull}
 MEMORY_GB=${MEMORY_GB:-8}
 MEMORY_JAVA="-Xmx${MEMORY_GB}G"
+ODK_DEBUG=${ODK_DEBUG:-no}
+
 echo "Running ODK with ${MEMORY_GB} GB of memory."
-docker run --memory=${MEMORY_GB}g -e ROBOT_JAVA_ARGS=${MEMORY_JAVA} -e JAVA_OPTS=${MEMORY_JAVA} -v $PWD/../../:/work -w /work/src/ontology --rm -ti obolibrary/odkfull "$@"
+
+TIMECMD=
+if [ x$ODK_DEBUG = xyes ]; then
+    # If you wish to change the format string, take care of using
+    # non-breaking spaces (U+00A0) instead of normal spaces, to
+    # prevent the shell from tokenizing the format string.
+    TIMECMD="/usr/bin/time -f ### DEBUG STATS ###\nElapsed time: %E\nPeak memory: %M kb"
+fi
+
+docker run --memory=${MEMORY_GB}g  -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS=${MEMORY_JAVA} -e JAVA_OPTS=${MEMORY_JAVA} --rm -ti obolibrary/$IMAGE $TIMECMD "$@"
