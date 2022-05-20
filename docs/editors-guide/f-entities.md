@@ -182,6 +182,8 @@ MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom
 MONDO:kboom-pr-[number]     |   These are the probability scores from the kBoom algorithm.  |  xrefs   |   Y   |   MONDO:0008966 'Aagenaes syndrome'
 MONDO:Lexical   |   Same as design_pattern. Should be replaced with specific design_pattern.    |   synonyms    |   N   |   MONDO:0010278 'Christianson syndrome'
 MONDO:LexicalVariant    |   Similar to design_pattern, should be replaced with specific documentation about variant documentation.  |  synonyms   |   N   |   MONDO:0006018 'Wissler syndrome'
+MONDO:mondoIsNarrowerThanSource   |   The Mondo class is narrower (more specific) than the source xref.   | xrefs   |   N   |   MONDO:0035649 ''adult-onset Steinert myotonic dystrophy'' database_cross_reference: ICD10:G71.1 {source=MONDO:mondoIsNarrowerThanSource}
+MONDO:mondoIsBroaderThanSource |   The Mondo class is broader (more general) than the source xref.  |  xrefs  |   N   |   
 MONDO:notFoundInDiseaseSubset   |   This annotation is typically added to dbxefs from UMLS or NCIt, to indicate the term is not from the disease branch.    |   dbxef   |   N   |   MONDO_0015350 '17q11.2 microduplication syndrome'
 MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   MONDO:0011812 ‘Duane-radial ray syndrome’ database_cross_reference: Orphanet:959 (was equivalent to MONDO:0019863 which was obsoleted)  {source=MONDO:obsoleteEquivalent}
 MONDO:obsoleteEquivalentObsolete    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   TBD
@@ -190,8 +192,7 @@ MONDO:patterns....  |   A pattern was used to define the term or synonym, see: h
 MONDO:preferredExternal | Identifies the preferred term in case multiple terms from the same source are merged (aka proxy merge). | database_cross_reference | Y | MONDO:0009666 'holocarboxylase synthetase deficiency' database_cross_reference: SCTID:360369003
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'
 MONDO:relatedTo     |   Used when a term is not equivalent but similar. |   xrefs   |   N   |   MONDO:0015350 '17q11.2 microduplication syndrome'
-MONDO:mondoIsNarrowerThanSource   |   The Mondo class is narrower (more specific) than the source xref.   | xrefs   |   N   |   MONDO:0035649 ''adult-onset Steinert myotonic dystrophy'' database_cross_reference: ICD10:G71.1 {source=MONDO:mondoIsNarrowerThanSource}
-MONDO:mondoIsBroaderThanSource |   The Mondo class is broader (more general) than the source xref.  |  xrefs  |   N   |   
+MONDO:typo | An xref from an external source is a typo. | xrefs | N | MONDO:0019572 autosomal recessive cutis laxa type 1
 
 ## Subsets
 
