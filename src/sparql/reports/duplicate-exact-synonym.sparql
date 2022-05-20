@@ -1,33 +1,41 @@
-prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT distinct ?exact ?term ?term_label ?term2 ?term_label2 (GROUP_CONCAT(DISTINCT ?xref;SEPARATOR="|") AS ?xrefs)
+SELECT ?exact ?term ?term_label ?term2 ?term_label2 (GROUP_CONCAT(DISTINCT ?xref;SEPARATOR="|") AS ?xrefs)
 WHERE 
 {
-    ?term a owl:Class; 
-  		oboInOwl:hasExactSynonym ?exact ;
-		rdfs:label ?term_label .
-    ?term2 a owl:Class; 
-  		oboInOwl:hasExactSynonym ?exact ;
-		rdfs:label ?term_label2 .
-      [
-         a owl:Axiom ;
-           owl:annotatedSource ?term ;
-           owl:annotatedProperty oboInOwl:hasExactSynonym ;
-           owl:annotatedTarget ?exact ;
-           oboInOwl:hasDbXref ?xref1 
-      ] .
-      [
-         a owl:Axiom ;
-           owl:annotatedSource ?term2 ;
-           owl:annotatedProperty oboInOwl:hasExactSynonym ;
-           owl:annotatedTarget ?exact ;
-           oboInOwl:hasDbXref ?xref2 
-      ] .
-    
-    FILTER (?term != ?term2)
-    FILTER (STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/MONDO_"))
-    FILTER (STRSTARTS(STR(?term2), "http://purl.obolibrary.org/obo/MONDO_"))
-  	BIND (CONCAT(?xref1,"|",?xref2) as ?xref)
-} GROUP BY ?exact ?term ?term_label ?term2 ?term_label2 ORDER BY ?exact
+  {
+    SELECT ?term ?term2 ?exact
+    WHERE {
+      ?term a owl:Class .
+      ?term oboInOwl:hasExactSynonym ?exact .
+      ?term2 oboInOwl:hasExactSynonym ?exact .
+      ?term2 a owl:Class .
+      FILTER (?term != ?term2)
+      ?term rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0000001> .
+      FILTER (STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/MONDO_"))
+      FILTER (STRSTARTS(STR(?term2), "http://purl.obolibrary.org/obo/MONDO_"))
+    }
+  }
+  ?axa1 a owl:Axiom ;
+       owl:annotatedSource ?term ;
+       owl:annotatedProperty oboInOwl:hasExactSynonym ;
+       owl:annotatedTarget ?exact ;
+       oboInOwl:hasDbXref ?xref1 .
+  ?axa2 a owl:Axiom ;
+       owl:annotatedSource ?term2 ;
+       owl:annotatedProperty oboInOwl:hasExactSynonym ;
+       owl:annotatedTarget ?exact ;
+       oboInOwl:hasDbXref ?xref2 .
+  FILTER NOT EXISTS {
+    ?axa1 oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION>
+  }
+  FILTER NOT EXISTS {
+    ?axa2 oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION>
+  }
+  ?term rdfs:label ?term_label .
+  ?term2 rdfs:label ?term_label2 .
+  BIND (CONCAT(?xref1,"|",?xref2) as ?xref)
+} 
+GROUP BY ?exact ?term ?term_label ?term2 ?term_label2 ORDER BY ?exact
