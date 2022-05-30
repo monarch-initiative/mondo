@@ -416,8 +416,8 @@ mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 
 MAPPINGSDIR=mappings
 METADATADIR=metadata
-MAPPING_IDS=omim mondo
-ALL_MAPPINGS=$(patsubst %, tmp/%.sssom.tsv, $(MAPPING_IDS))
+MAPPING_IDS=mondo
+ALL_MAPPINGS=$(patsubst %, $(MAPPINGSDIR)/%.sssom.tsv, $(MAPPING_IDS))
 
 tmp/mirror-ordo.json: mirror/ordo.obo
 	robot merge -i mirror/ordo.obo convert -f json -o $@
@@ -433,15 +433,18 @@ tmp/mirror-efo.json: #mirror/efo.owl
 
 .PHONY: sssom
 sssom:
-	echo "skipping.."
-	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall git+https://github.com/mapping-commons/sssom-py.git@master
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.11
 
 tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
 
+qqq:
+	sssom parse tmp/mirror-mondo.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o tmp/www.sssom.tsv
+
+
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
-	sssom dosql -q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
+	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 #	sssom convert -i $< -o $@
