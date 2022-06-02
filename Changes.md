@@ -1,3 +1,138 @@
+# 2022-06-01
+
+## Overview:
+
+
+* Number of new terms: 29
+* Number of changed labels: 4
+* Number of changed definitions: 22
+* Number obsoleted terms: 16
+* Number of new obsoletion candidates: 19
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0024771 | myopathy, distal, 7, adult-onset, X-linked | |
+| MONDO:0024777 | immunodeficiency 98 with autoinflammation, X-linked | |
+| MONDO:0030619 | retinitis pigmentosa 92 | |
+| MONDO:0030669 | gastrointestinal defects and immunodeficiency syndrome 2 | |
+| MONDO:0030729 | Tessadori-van Haaften neurodevelopmental syndrome 1 | |
+| MONDO:0030730 | Tessadori-van Haaften neurodevelopmental syndrome 2 | |
+| MONDO:0030746 | epidermolysis bullosa, junctional 2A, intermediate | |
+| MONDO:0030747 | epidermolysis bullosa, junctional 2B, severe | |
+| MONDO:0030748 | epidermolysis bullosa, junctional 3A, intermediate | |
+| MONDO:0030749 | epidermolysis bullosa, junctional 3B, severe | |
+| MONDO:0030750 | epidermolysis bullosa, junctional 4, intermediate | |
+| MONDO:0030768 | epidermolysis bullosa, junctional 5A, intermediate | |
+| MONDO:0030785 | intellectual developmental disorder, autosomal recessive 75, with neuropsychiatric features and variant lissencephaly | |
+| MONDO:0030787 | spermatogenic failure 71 | |
+| MONDO:0030797 | retinitis pigmentosa 93 | |
+| MONDO:0030798 | immunodeficiency 99 with hypogammaglobulinemia and autoimmune cytopenias | |
+| MONDO:0030800 | cholestasis, progressive familial intrahepatic, 9 | |
+| MONDO:0030809 | spermatogenic failure 72 | |
+| MONDO:0030810 | cholestasis, progressive familial intrahepatic, 10 | |
+| MONDO:0030813 | immunodeficiency 101 (varicella zoster virus-specific) | |
+| MONDO:0030815 | cholestasis, progressive familial intrahepatic, 11 | |
+| MONDO:0030818 | spermatogenic failure 73 | |
+| MONDO:0030819 | meckel syndrome 14 | |
+| MONDO:0030822 | renal hypodysplasia/aplasia 4 | |
+| MONDO:0100460 | tobacco addiction, susceptibility to | An inherited susceptibility or predisposition to developing nicotine dependence. |
+| MONDO:0100463 | methylmalonic aciduria and/or homocystinuria, cblD type | An autosomal recessive inborn disorder of cobalamin metabolism caused by biallelic variants in MMADHC. Depending on the type and location of variants in MMADHC, patients may present with methylmalonic aciduria, homocystinuria, or both. MMADHC has been reported to result in the cblD complementation group of cobalamin disorders. |
+| MONDO:0700073 | glutaric acidemia IIa | Any multiple acyl-CoA dehydrogenase deficiency in which the cause of the disease is a mutation in the ETFA gene. |
+| MONDO:0700074 | glutaric acidemia IIb | Any multiple acyl-CoA dehydrogenase deficiency in which the cause of the disease is a mutation in the ETFB gene. |
+| MONDO:0700076 | glutaric acidemia IIc | Any multiple acyl-CoA dehydrogenase deficiency in which the cause of the disease is a mutation in the ETFDH gene. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0007818 | hyper-IgE recurrent infection syndrome 1 | Hyper-IgE recurrent infection syndrome 1 | hyper-IgE recurrent infection syndrome 1 |
+| MONDO:0008675 | Freeman-Sheldon syndrome | freeman-Sheldon syndrome | Freeman-Sheldon syndrome |
+| MONDO:0014977 | autosomal recessive limb-girdle muscular dystrophy type 2R1 | autosomal recessive limb-girdle muscular dystrophy type 2Z | autosomal recessive limb-girdle muscular dystrophy type 2R1 |
+| MONDO:0044640 | Charcot-Marie-Tooth disease type 2T | charcot-marie-tooth disease type 2T | Charcot-Marie-Tooth disease type 2T |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0000188 | GLUT1 deficiency syndrome | | An epileptic encephalopathy resulting from impaired glucose transport into the brain. |
+| MONDO:0002279 | iron metabolism disease | Disorders in the processing of iron in the body: its absorption, transport, storage, and utilization. (From Mosby's Medical, Nursing, & Allied Health Dictionary, 4th ed) | Disorders in the processing of iron in the body: its absorption, transport, storage, and utilization. |
+| MONDO:0001793 | excessive tearing | Diseases of the lacrimal apparatus. | Profuse lacrimation. |
+| MONDO:0016085 | Cole-Carpenter syndrome | Cole-Carpenter syndrome is an extremely rare form of bone dysplasia characterized by the features of osteogenesis imperfecta such as bone fragility associated with multiple fractures, bone deformities (metaphyseal irregularities and bowing of the long bones) and blue sclera, in association with growth failure, craniosynostosis, hydrocephalus, ocular proptosis, and distinctive facial features (e.g. frontal bossing, midface hypoplasia, and micrognathia). | An extremely rare form of bone dysplasia characterized by the features of osteogenesis imperfecta such as bone fragility associated with multiple fractures, bone deformities (metaphyseal irregularities and bowing of the long bones) and blue sclera, in association with growth failure, craniosynostosis, hydrocephalus, ocular proptosis, and distinctive facial features (e.g. frontal bossing, midface hypoplasia, and micrognathia). |
+| MONDO:0007252 | Gordon syndrome | Gordon syndrome, also known as distal arthrogryposis type 3, is an extremely rare multiple congenital malformation syndrome characterized by congenital contractures of hand and feet with variable degrees of severity of camptodactyly, clubfoot and, less frequently, cleft palate. Intelligence is normal but in some cases, additional abnormalities, such as short stature, kyphoscoliosis, ptosis, micrognathia, and cryptorchidism may also be present. Gordon syndrome, Marden-Walker syndrome and arthrogryposis with oculomotor limitation and electroretinal anomalies clinically and genetically overlap, and could represent variable expressions of the same condition. | An extremely rare multiple congenital malformation syndrome characterized by congenital contractures of hand and feet with variable degrees of severity of camptodactyly, clubfoot and, less frequently, cleft palate. Intelligence is normal but in some cases, additional abnormalities, such as short stature, kyphoscoliosis, ptosis, micrognathia, and cryptorchidism may also be present. Gordon syndrome, Marden-Walker syndrome and arthrogryposis with oculomotor limitation and electroretinal anomalies clinically and genetically overlap, and could represent variable expressions of the same condition. |
+| MONDO:0019162 | pseudohypoaldosteronism type 2 | Pseudohypoaldosteronism type 2 (PHA2) is a rare inherited form of hypertension characterized by hyperkalemia, hyperchloremic metabolic acidosis, normal or elevated aldosterone, low renin, and normal renal function. | A rare inherited form of hypertension characterized by hyperkalemia, hyperchloremic metabolic acidosis, normal or elevated aldosterone, low renin, and normal renal function. |
+| MONDO:0007827 | inclusion body myositis | Inclusion body myositis (IBM) is a slowly progressive degenerative inflammatory disorder of skeletal muscles characterized by late onset weakness of specific muscles and distinctive histopathological features. | A slowly progressive degenerative inflammatory disorder of skeletal muscles characterized by late onset weakness of specific muscles and distinctive histopathological features. |
+| MONDO:0016797 | multiple mitochondrial DNA deletion syndrome | | A mitochondrial oxidative phosphorylation disorder in which mitochondrial DNA (mtDNA) level is lower than normal. |
+| MONDO:0018975 | neurofibromatosis type 1 | Neurofibromatosis type 1 (NF1) is a clinically heterogeneous, neurocutaneous genetic disorder characterized by cafe-au-lait spots, iris Lisch nodules, axillary and inguinal freckling, and multiple neurofibromas. | A clinically heterogeneous, neurocutaneous genetic disorder characterized by cafe-au-lait spots, iris Lisch nodules, axillary and inguinal freckling, and multiple neurofibromas. |
+| MONDO:0019027 | otopalatodigital syndrome | Otopalatodigital (OPD) syndrome is a form of frontootopalatodigital syndrome, characterized by deafness, cleft palate, and characteristic digital anomalies. OPD syndrome is divided into two forms based on severity: the milder form designated OPD type 1 (OPD1), and the more severe and often lethal form designated OPD type 2 (OPD2). OPD is an X-linked disorder. Two other genetic disorders with features overlapping OPD, frontometaphyseal dysplasia (FMD) and osteodysplasty, Melnick-Needles type (MNS) have been described; thus OPD1, OPD2, FMD, and MNS are allelic disorders. | A form of frontootopalatodigital syndrome, characterized by deafness, cleft palate, and characteristic digital anomalies. OPD syndrome is divided into two forms based on severity: the milder form designated OPD type 1 (OPD1), and the more severe and often lethal form designated OPD type 2 (OPD2). OPD is an X-linked disorder. Two other genetic disorders with features overlapping OPD, frontometaphyseal dysplasia (FMD) and osteodysplasty, Melnick-Needles type (MNS) have been described; thus OPD1, OPD2, FMD, and MNS are allelic disorders. |
+| MONDO:0010704 | otopalatodigital syndrome type 1 | Otopalatodigital syndrome type 1 (OPD1) is the mildest form of otopalatodigital syndrome spectrum disorder, and is characterized by a generalized skeletal dysplasia, mild intellectual disability, conductive hearing loss, and typical facial anomalies. | The mildest form of otopalatodigital syndrome spectrum disorder that is characterized by a generalized skeletal dysplasia, mild intellectual disability, conductive hearing loss, and typical facial anomalies. |
+| MONDO:0019037 | progressive supranuclear palsy | Progressive supranuclear palsy (PSP) is a rare late-onset neurodegenerative disease characterized by supranuclear gaze palsy, postural instability, progressive rigidity, and mild dementia. | A rare late-onset neurodegenerative disease characterized by supranuclear gaze palsy, postural instability, progressive rigidity, and mild dementia. |
+| MONDO:0011076 | myofibrillar myopathy 1 | Desminopathy is a rare genetic skeletal muscle disease characterized by abnormal chimeric aggregates of desmin and other cytoskeletal proteins and granulofilamentous material at the ultrastructural level in muscle biopsies and variable clinical/ myopathological features, age of disease onset and rate of disease progression. Patients present with bilateral skeletal muscle weakness that starts in distal leg muscles and spreads proximally, sometimes involving trunk, neck flexors and facial muscles and often cardiomyopathy manifested by conduction blocks, arrhythmias, chronic heart failure, and sometimes tachyarrhythmia. Weakness eventually leads to wheelchair dependence. Respiratory insufficiency can be a major cause of disability and death, beginning with nocturnal hyperventilation with oxygen desaturation and progressing to daytime respiratory failure. | A rare genetic skeletal muscle disease characterized by abnormal chimeric aggregates of desmin and other cytoskeletal proteins and granulofilamentous material at the ultrastructural level in muscle biopsies and variable clinical/ myopathological features, age of disease onset and rate of disease progression. Patients present with bilateral skeletal muscle weakness that starts in distal leg muscles and spreads proximally, sometimes involving trunk, neck flexors and facial muscles and often cardiomyopathy manifested by conduction blocks, arrhythmias, chronic heart failure, and sometimes tachyarrhythmia. Weakness eventually leads to wheelchair dependence. Respiratory insufficiency can be a major cause of disability and death, beginning with nocturnal hyperventilation with oxygen desaturation and progressing to daytime respiratory failure. |
+| MONDO:0011897 | leukoencephalopathy-ataxia-hypodontia-hypomyelination syndrome | Leukoencephalopathy-ataxia-hypodontia-hypomyelination syndrome is characterised by ataxia, delayed dentition, hypomyelination and cerebral atrophy. So far, eight cases have been described. | A syndrome is characterised by ataxia, delayed dentition, hypomyelination and cerebral atrophy. So far, eight cases have been described. |
+| MONDO:0012004 | parathyroid gland carcinoma | Parathyroid carcinoma (PRTC) is a very rare, slow-growing, clinically serious endocrine tumor that generally develops in mid-adulthood. PRTC presents as a palpable painless mass in the neck and causes severe hypercalcemia and related symptoms, non-specific gastrointestinal manifestations, as well as renal and bone complications related to primary hyperparathyroidism (nephrolithiasis, impaired renal function, osteoporosis, bone pain, and pathologic fractures, etc.). Some PRTCs are however non-functioning tumors. | A very rare, slow-growing, clinically serious endocrine tumor that generally develops in mid-adulthood. PRTC presents as a palpable painless mass in the neck and causes severe hypercalcemia and related symptoms, non-specific gastrointestinal manifestations, as well as renal and bone complications related to primary hyperparathyroidism (nephrolithiasis, impaired renal function, osteoporosis, bone pain, and pathologic fractures, etc.). Some PRTCs are however non-functioning tumors. |
+| MONDO:0012805 | childhood onset GLUT1 deficiency syndrome 2 | Paroxysmal exertion-induced dyskinesia (PED) is a form of paroxysmal dyskinesia, characterized by painless attacks of dystonia of the extremities triggered by prolonged physical activities. | A form of paroxysmal dyskinesia, characterized by painless attacks of dystonia of the extremities triggered by prolonged physical activities. |
+| MONDO:0014382 | tall stature-intellectual disability-facial dysmorphism syndrome | | A rare multiple congenital anomalies syndrome characterized by greater hight, mild to moderate intellectual disability and distinctive facial appereance like round face, heavy, horizontal eyebrows and narrow palpebral fissures. |
+| MONDO:0014558 | autosomal dominant intellectual disability-craniofacial anomalies-cardiac defects syndrome | | A rare genetic neurodevelopmental disorder characterized by global developmental delay (DD) and variable degrees of intellectual disability (ID) with delayed or limited/absent speech development associated with neonatal hypotonia, feeding difficulties, cardiac anomalies and dysmorphic facial features, predominantly broad nasal tip and thin, tented upper lip. Microcephaly, frequent infections, gastrointestinal and/or ocular anomalies have also been described. |
+| MONDO:0014716 | macrocephaly-intellectual disability-neurodevelopmental disorder-small thorax syndrome | | A rare multiple congenital anomalies/dysmorphic syndrome with intellectual disability, characterized by macrocephaly, intellectual disability, seizures, dysmorphic facial features (including tall forehead, downslanting palpebral fissures, hypertelorism, depressed nasal bridge, and macrostomia), megalencephaly, and small thorax. Other reported features are umbilical hernia, muscular hypotonia, global developmental delay, autistic behavior, and café-au-lait spots, among others. |
+| MONDO:0014977 | autosomal recessive limb-girdle muscular dystrophy type 2R1 | An autosomal recessive condition caused by mutation(s) in the POGLUT1 gene, encoding protein O-glucosyltransferase 1. It is characterized by progressive muscular dystrophy, primarily affecting the proximal muscles, resulting in difficulty walking. | An autosomal recessive condition caused by pathogenic variant(s) of the POGLUT1 gene, encoding protein O-glucosyltransferase 1. It is characterized by progressive muscular dystrophy, primarily affecting the proximal muscles, resulting in difficulty walking. A characteristic finding of “inside-to-outside” fatty degeneration on muscle imaging has been noted in patients. |
+| MONDO:0015408 | diffuse lymphatic malformation | | A rare developmental defect during embryogenesis characterized by multifocal dilated lymphatic vessels involving multiple organs and tissues. Patients mostly present in infancy and childhood. Clinical course and prognosis depend on the affected sites and extent of the condition, deterioration of lung function being a major cause of morbidity and mortality. |
+| MONDO:0016029 | esthesioneuroblastoma | Esthesioneuroblastoma (ENB) is a rare malignant neoplasm of the sinonasal cavity, arising from the basal layers of olfactory neuroepithelial cells in the superior nasal vault, which usually occurs in the 5th to 6th decades of life and is characterized clinically by non-specific symptoms such as progressive ipsilateral nasal block, sinusitis, facial pain, intermittent headaches, hyposmia/dysosmia, rhinorrhea and epistaxis as well as proptosis, diplopia and excessive lacrimation due to orbital extension. With early treatment and in the absence of distant metastases, ENB appears to have a good prognosis (compared to other superior nasal malignancies), despite a high rate of cervical metastases. | A rare malignant neoplasm of the sinonasal cavity, arising from the basal layers of olfactory neuroepithelial cells in the superior nasal vault, which usually occurs in the 5th to 6th decades of life and is characterized clinically by non-specific symptoms such as progressive ipsilateral nasal block, sinusitis, facial pain, intermittent headaches, hyposmia/dysosmia, rhinorrhea and epistaxis as well as proptosis, diplopia and excessive lacrimation due to orbital extension. With early treatment and in the absence of distant metastases, ENB appears to have a good prognosis (compared to other superior nasal malignancies), despite a high rate of cervical metastases. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0003804 | obsolete blood protein disease |
+| MONDO:0004955 | obsolete metabolic syndrome |
+| MONDO:0015880 | obsolete syndromic diaphragmatic or thoracic malformation |
+| MONDO:0014129 | obsolete autosomal recessive limb-girdle muscular dystrophy type 2R |
+| MONDO:0015879 | obsolete non-syndromic diaphragmatic or thoracic malformation |
+| MONDO:0018138 | obsolete ocular albinism with congenital sensorineural hearing loss |
+| MONDO:0019664 | obsolete short rib-polydactyly syndrome, Verma-Naumoff type |
+| MONDO:0020051 | obsolete total autosomal trisomy |
+| MONDO:0020052 | obsolete partial autosomal trisomy/tetrasomy |
+| MONDO:0020591 | obsolete disorder of peritoneum |
+| MONDO:0020595 | obsolete disorder of retroperitoneum |
+| MONDO:0021016 | obsolete channelopathy |
+| MONDO:0043707 | obsolete mediastinal disorder |
+| MONDO:0044989 | obsolete foot disorder |
+| MONDO:0044990 | obsolete hand disorder |
+| MONDO:0060712 | obsolete developmental delay, intellectual disability, obesity, and dysmorphic features |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0044987 | face disorder |
+| MONDO:0006858 | mouth disorder |
+| MONDO:0016275 | adenocarcinoma of cervix uteri |
+| MONDO:0044999 | scalp disorder |
+| MONDO:0004033 | familial ovarian carcinoma |
+| MONDO:0004268 | subareolar duct papillomatosis |
+| MONDO:0005482 | molar-incisor hypomineralization |
+| MONDO:0016286 | adenoid cystic carcinoma of the cervix uteri |
+| MONDO:0006661 | ascorbic acid deficiency |
+| MONDO:0009812 | osteomalacia, sclerosing, with cerebral calcification |
+| MONDO:0009997 | Roberts syndrome |
+| MONDO:0011763 | T-box 24 |
+| MONDO:0012332 | short stature-delayed bone age due to thyroid hormone metabolism deficiency |
+| MONDO:0013141 | autosomal dominant macrothrombocytopenia TUBB1-related |
+| MONDO:0013809 | cerebellar ataxia, neuropathy, and vestibular areflexia syndrome |
+| MONDO:0035635 | short stature-skeletal dysplasia-retinal degeneration-intellectual disability-sensorineural hearing loss syndrome |
+| MONDO:0044652 | optic atrophy-peripheral neuropathy-developmental delay syndrome |
+| MONDO:0044998 | carpal region disorder |
+| MONDO:0100188 | combined ApoA-I and ApoC-III deficiency |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
+
 # 2022-05-02
 
 ## Overview:
@@ -1171,7 +1306,7 @@ No changes.
 
 # 2022-02-04
 
-## Overview 
+## Overview
 
 * Number of new terms: 55
 * Number of changed labels: 290
@@ -5818,8 +5953,8 @@ No changes.
  * [MONDO:0011378](http://purl.obolibrary.org/obo/MONDO_0011378) CFM1 --> obsolete CFM1
  * [MONDO:0014663](http://purl.obolibrary.org/obo/MONDO_0014663) growth restriction, severe, with distinctive facies --> Silver-Russell syndrome 3
  * [MONDO:0030045](http://purl.obolibrary.org/obo/MONDO_0030045) liberfarb syndrome --> Liberfarb syndrome
- 
- 
+
+
 # v2020-09-01
 
 
@@ -6410,65 +6545,65 @@ TODO
  * obsolete MONDO:0016076 - closes https://github.com/monarch-initiative/mondo/issues/842
  * revise superclass for MONDO_0006685 - closes https://github.com/monarch-initiative/mondo/issues/580
  * obsolete MONDO:0009651 - closes https://github.com/monarch-initiative/mondo/issues/816
- * add comment to MONDO:0005259  closes https://github.com/monarch-initiative/mondo/issues/705 
- * update annotations on MONDO:0006849  closes https://github.com/monarch-initiative/mondo/issues/989 
- * revise superclasses for MONDO_0016823  closes https://github.com/monarch-initiative/mondo/issues/581 
- * relabel MONDO:0019303  addresses https://github.com/monarch-initiative/mondo/issues/821 
- * add subclassOf relations to MONDO_0008608 'Down syndrome'  closes https://github.com/monarch-initiative/mondo/issues/824 
- * add superclassOf axiom to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  closes https://github.com/monarch-initiative/mondo/issues/692 
- * add superclassOf relation to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  addresses https://github.com/monarch-initiative/mondo/issues/692 
- * rename MONDO:0007750 hypercholesterolemia, familial, 1  closes https://github.com/monarch-initiative/mondo/issues/729. 
- * obsolete 'sensory system disease'  closes https://github.com/monarch-initiative/mondo/issues/823 
- * remove excluded subclass of from MONDO_0001202  closes https://github.com/monarch-initiative/mondo/issues/726 
- * revise annotations for MONDO_0005305  addresses https://github.com/monarch-initiative/mondo/issues/924 
- * obsolete MONDO:0001445 neurogenic bladder (disease)  closes https://github.com/monarch-initiative/mondo/issues/974 
- * delete xref to obsolete EFO term  addresses https://github.com/monarch-initiative/mondo/issues/992 
- * obsolete MONDO:0022460  closes https://github.com/monarch-initiative/mondo/issues/140 
- * obsolete MONDO:0007563 and MONDO:0005305  closes https://github.com/monarch-initiative/mondo/issues/924 
- * remove incorrect xref from MONDO:0016462 isolated agammaglobulinemia  closes https://github.com/monarch-initiative/mondo/issues/800 
- * excluding DO syns that clash with other exact syns, see https://github.com/monarch-initiative/mondo/issues/808 
- * excluding DO syns that clash with other label, see https://github.com/monarch-initiative/mondo/issues/808 
- * update label and syn scope for Mungan syndrome  closes https://github.com/monarch-initiative/mondo/issues/887 
- * relink excluded subclass of  closes https://github.com/monarch-initiative/mondo/issues/898 
- * reclassiify 'Hinman syndrome'  and add equiv axiom to neurogenic bladder  addresses https://github.com/monarch-initiative/mondo/issues/885 
- * obsolete MONDO:0009639 mitochondrial myopathy with lactic acidosis  closes https://github.com/monarch-initiative/mondo/issues/817 
- * obsolete MONDO:0022314  closes https://github.com/monarch-initiative/mondo/issues/880 
- * add def to MONDO:0013419  closes https://github.com/monarch-initiative/mondo/issues/959 
- * revise superclass for MONDO_0010252  closes https://github.com/monarch-initiative/mondo/issues/926 
- * add new term MONDO:0100085 cancer of long bone of upper limb  closes https://github.com/monarch-initiative/mondo/issues/899 
- * merged dupes for nephropathic infantile cystinosis, fixes https://github.com/monarch-initiative/mondo/issues/960 
- * changes for https://github.com/monarch-initiative/mondo/issues/960 
- * add MONDO:0100086 perinatal disease  addresses https://github.com/monarch-initiative/mondo/issues/685 
- * add new terms  MONDO:0100087 familial Alzheimber disease MONDO:0100088 late-onset familial alzheimer disease closes https://github.com/monarch-initiative/mondo/issues/921 
- * obsolete MONDO:0006775  closes https://github.com/monarch-initiative/mondo/issues/877 
- * remove superclasses for cystic fibrosis  addresses https://github.com/monarch-initiative/mondo/issues/685 
- * reclassify MONDO_0004961 and MONDO:0004962  and revise text def for MONDO:0004962 per https://github.com/EBISPOT/efo/issues/329  closes https://github.com/monarch-initiative/mondo/issues/490 
- * Revise classification of MONDO:0044013 'puerperal disorder'  closes https://github.com/monarch-initiative/mondo/issues/652 
- * fix typo  closes https://github.com/monarch-initiative/mondo/issues/883 
- * fix typo  address https://github.com/monarch-initiative/mondo/issues/926 
- * revise de for MONDO:0000509  addresses https://github.com/monarch-initiative/mondo/issues/926 
- * revise subclass for MONDO_0014224  addresses https://github.com/monarch-initiative/mondo/issues/926 
- * change labels  addresses https://github.com/monarch-initiative/mondo/issues/926 
- * add axiom to actinopathy  closes https://github.com/monarch-initiative/mondo/issues/942 
- * update text def for MONDO:0013343  closes https://github.com/monarch-initiative/mondo/issues/939 
- * revised synonym scope for 'C1Q deficiency'  closes https://github.com/monarch-initiative/mondo/issues/940 
- * revise subclass assertions for MONDO:0009833  closes https://github.com/monarch-initiative/mondo/issues/859 
- * add missing period in text def for MONDO:0005413  addresses https://github.com/monarch-initiative/mondo/issues/685 
- * relabel MONDO:0005413 and change superclass  addresses https://github.com/monarch-initiative/mondo/issues/685 
- * fixed issue subclassOf assertion for MONDO_0022968  addresses https://github.com/monarch-initiative/mondo/issues/841 
- * obsoleted drug response terms  Obsoleted these classes: MONDO_0007348 Colchicine resistance MONDO_0008697 'acetophenetidin sensitivity' MONDO_0008906 Carbimazole sensitivity MONDO_0012294 CYP2C19-related poor drug metabolism MONDO_0012148 'drug metabolism, poor, CYP2D6-related' MONDO_0014330 'eculizumab, poor response to'  closes https://github.com/monarch-initiative/mondo/issues/860 
- * obsolete class MONDO:0004823  addresses https://github.com/monarch-initiative/mondo/issues/841 
- * obsolete MONDO:0019184  closes https://github.com/monarch-initiative/mondo/issues/836 
- * update synonyms for MONDO:0060702  closes https://github.com/monarch-initiative/mondo/issues/875 
- * remove dbxref from MONDO_0009290  closes https://github.com/monarch-initiative/mondo/issues/862 
- * remove superclass assertions for MONDO:0009169  addresses https://github.com/monarch-initiative/mondo/issues/834 
- * remove subclassof assertions  Removed subClass Of assertions and added execluded subclass of annotatiions for MONDO:0010631 and MONDO:0010568 closes https://github.com/monarch-initiative/mondo/issues/912 
- * add new term MONDO:0100084 actinopathy  closes https://github.com/monarch-initiative/mondo/issues/900 
- * remove incorrect xrefs and synonyms from endotheliitis  closes https://github.com/monarch-initiative/mondo/issues/904 
- * fix issues with prion disease terms  addresses issues outlined in https://github.com/monarch-initiative/mondo/issues/908 
- * remove subclass of assertioin for MONDO_0005772 (geotrichosis)  closes https://github.com/monarch-initiative/mondo/issues/909 
- * add term replaced by annotation to 'obsolete Marfan syndrome type 2'  closes https://github.com/monarch-initiative/mondo/issues/913 
- * Fixes gene URI issues fixes https://github.com/monarch-initiative/mondo/issues/905 also normalizes 
+ * add comment to MONDO:0005259  closes https://github.com/monarch-initiative/mondo/issues/705
+ * update annotations on MONDO:0006849  closes https://github.com/monarch-initiative/mondo/issues/989
+ * revise superclasses for MONDO_0016823  closes https://github.com/monarch-initiative/mondo/issues/581
+ * relabel MONDO:0019303  addresses https://github.com/monarch-initiative/mondo/issues/821
+ * add subclassOf relations to MONDO_0008608 'Down syndrome'  closes https://github.com/monarch-initiative/mondo/issues/824
+ * add superclassOf axiom to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  closes https://github.com/monarch-initiative/mondo/issues/692
+ * add superclassOf relation to MONDO_0007052 'growth hormone secreting pituitary adenoma 1'  addresses https://github.com/monarch-initiative/mondo/issues/692
+ * rename MONDO:0007750 hypercholesterolemia, familial, 1  closes https://github.com/monarch-initiative/mondo/issues/729.
+ * obsolete 'sensory system disease'  closes https://github.com/monarch-initiative/mondo/issues/823
+ * remove excluded subclass of from MONDO_0001202  closes https://github.com/monarch-initiative/mondo/issues/726
+ * revise annotations for MONDO_0005305  addresses https://github.com/monarch-initiative/mondo/issues/924
+ * obsolete MONDO:0001445 neurogenic bladder (disease)  closes https://github.com/monarch-initiative/mondo/issues/974
+ * delete xref to obsolete EFO term  addresses https://github.com/monarch-initiative/mondo/issues/992
+ * obsolete MONDO:0022460  closes https://github.com/monarch-initiative/mondo/issues/140
+ * obsolete MONDO:0007563 and MONDO:0005305  closes https://github.com/monarch-initiative/mondo/issues/924
+ * remove incorrect xref from MONDO:0016462 isolated agammaglobulinemia  closes https://github.com/monarch-initiative/mondo/issues/800
+ * excluding DO syns that clash with other exact syns, see https://github.com/monarch-initiative/mondo/issues/808
+ * excluding DO syns that clash with other label, see https://github.com/monarch-initiative/mondo/issues/808
+ * update label and syn scope for Mungan syndrome  closes https://github.com/monarch-initiative/mondo/issues/887
+ * relink excluded subclass of  closes https://github.com/monarch-initiative/mondo/issues/898
+ * reclassiify 'Hinman syndrome'  and add equiv axiom to neurogenic bladder  addresses https://github.com/monarch-initiative/mondo/issues/885
+ * obsolete MONDO:0009639 mitochondrial myopathy with lactic acidosis  closes https://github.com/monarch-initiative/mondo/issues/817
+ * obsolete MONDO:0022314  closes https://github.com/monarch-initiative/mondo/issues/880
+ * add def to MONDO:0013419  closes https://github.com/monarch-initiative/mondo/issues/959
+ * revise superclass for MONDO_0010252  closes https://github.com/monarch-initiative/mondo/issues/926
+ * add new term MONDO:0100085 cancer of long bone of upper limb  closes https://github.com/monarch-initiative/mondo/issues/899
+ * merged dupes for nephropathic infantile cystinosis, fixes https://github.com/monarch-initiative/mondo/issues/960
+ * changes for https://github.com/monarch-initiative/mondo/issues/960
+ * add MONDO:0100086 perinatal disease  addresses https://github.com/monarch-initiative/mondo/issues/685
+ * add new terms  MONDO:0100087 familial Alzheimber disease MONDO:0100088 late-onset familial alzheimer disease closes https://github.com/monarch-initiative/mondo/issues/921
+ * obsolete MONDO:0006775  closes https://github.com/monarch-initiative/mondo/issues/877
+ * remove superclasses for cystic fibrosis  addresses https://github.com/monarch-initiative/mondo/issues/685
+ * reclassify MONDO_0004961 and MONDO:0004962  and revise text def for MONDO:0004962 per https://github.com/EBISPOT/efo/issues/329  closes https://github.com/monarch-initiative/mondo/issues/490
+ * Revise classification of MONDO:0044013 'puerperal disorder'  closes https://github.com/monarch-initiative/mondo/issues/652
+ * fix typo  closes https://github.com/monarch-initiative/mondo/issues/883
+ * fix typo  address https://github.com/monarch-initiative/mondo/issues/926
+ * revise de for MONDO:0000509  addresses https://github.com/monarch-initiative/mondo/issues/926
+ * revise subclass for MONDO_0014224  addresses https://github.com/monarch-initiative/mondo/issues/926
+ * change labels  addresses https://github.com/monarch-initiative/mondo/issues/926
+ * add axiom to actinopathy  closes https://github.com/monarch-initiative/mondo/issues/942
+ * update text def for MONDO:0013343  closes https://github.com/monarch-initiative/mondo/issues/939
+ * revised synonym scope for 'C1Q deficiency'  closes https://github.com/monarch-initiative/mondo/issues/940
+ * revise subclass assertions for MONDO:0009833  closes https://github.com/monarch-initiative/mondo/issues/859
+ * add missing period in text def for MONDO:0005413  addresses https://github.com/monarch-initiative/mondo/issues/685
+ * relabel MONDO:0005413 and change superclass  addresses https://github.com/monarch-initiative/mondo/issues/685
+ * fixed issue subclassOf assertion for MONDO_0022968  addresses https://github.com/monarch-initiative/mondo/issues/841
+ * obsoleted drug response terms  Obsoleted these classes: MONDO_0007348 Colchicine resistance MONDO_0008697 'acetophenetidin sensitivity' MONDO_0008906 Carbimazole sensitivity MONDO_0012294 CYP2C19-related poor drug metabolism MONDO_0012148 'drug metabolism, poor, CYP2D6-related' MONDO_0014330 'eculizumab, poor response to'  closes https://github.com/monarch-initiative/mondo/issues/860
+ * obsolete class MONDO:0004823  addresses https://github.com/monarch-initiative/mondo/issues/841
+ * obsolete MONDO:0019184  closes https://github.com/monarch-initiative/mondo/issues/836
+ * update synonyms for MONDO:0060702  closes https://github.com/monarch-initiative/mondo/issues/875
+ * remove dbxref from MONDO_0009290  closes https://github.com/monarch-initiative/mondo/issues/862
+ * remove superclass assertions for MONDO:0009169  addresses https://github.com/monarch-initiative/mondo/issues/834
+ * remove subclassof assertions  Removed subClass Of assertions and added execluded subclass of annotatiions for MONDO:0010631 and MONDO:0010568 closes https://github.com/monarch-initiative/mondo/issues/912
+ * add new term MONDO:0100084 actinopathy  closes https://github.com/monarch-initiative/mondo/issues/900
+ * remove incorrect xrefs and synonyms from endotheliitis  closes https://github.com/monarch-initiative/mondo/issues/904
+ * fix issues with prion disease terms  addresses issues outlined in https://github.com/monarch-initiative/mondo/issues/908
+ * remove subclass of assertioin for MONDO_0005772 (geotrichosis)  closes https://github.com/monarch-initiative/mondo/issues/909
+ * add term replaced by annotation to 'obsolete Marfan syndrome type 2'  closes https://github.com/monarch-initiative/mondo/issues/913
+ * Fixes gene URI issues fixes https://github.com/monarch-initiative/mondo/issues/905 also normalizes
 
 ## New Classes
 
@@ -7051,7 +7186,7 @@ This major release includes two large changes:
  * McCune-Albright/polyostotic fibrous dysplasia fixes https://github.com/monarch-initiative/mondo/issues/649
  * obs rare genetic myoclonus
  * removing rare qualifiers
-#254 * Obsoleting rare-X terms, step1, 
+#254 * Obsoleting rare-X terms, step1,
  * removed incorrect xref from pathologic fracture and revised xref for femoral neck fracture. Closes https://github.com/monarch-initiative/mondo/issues/644
  * Aligning infectious inflammatory diseases with pattern
  * Fixing too weak def of infectious disease, fixes https://github.com/monarch-initiative/mondo/issues/547
@@ -7105,7 +7240,7 @@ This major release includes two large changes:
  * added synonyms back for narcolepsy, susceptibility to, 2,4,5,6 and narcolepsy 3, addresses https://github.com/monarch-initiative/mondo/issues/536
  * added synonyms back for various disorders, 1-9, addresses https://github.com/monarch-initiative/mondo/issues/536
  * relabled MONDO:0013844, MONDO:0013841, MONDO:0012232, MONDO: 0008483, and others addresses https://github.com/monarch-initiative/mondo/issues/536
-    
+
 
 # 2018-12-02 release
 
@@ -7395,7 +7530,7 @@ This major release includes two large changes:
  * [http://purl.obolibrary.org/obo/MONDO_0018732](http://purl.obolibrary.org/obo/MONDO_0018732) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001)* [primary central nervous system lymphoma](http://purl.obolibrary.org/obo/MONDO_0002571)
  * [obsolete human papillomavirus type 18 integration site 2](http://purl.obolibrary.org/obo/MONDO_0008191) not a disease
  * [obsolete human papillomavirus type 18 integration site 1](http://purl.obolibrary.org/obo/MONDO_0008190) not a disease
- 
+
 # 2018-10-26 release
 
 ### New classes
@@ -9249,7 +9384,7 @@ For the release, we map back to original clique leaders. We also make
 a 'pre' release consisting of classes with MONDO IDs as primary. See
 obo page for more details:
 
-[http://obofoundry.org/ontology/mondo.html](http://obofoundry.org/ontology/mondo.html) 
+[http://obofoundry.org/ontology/mondo.html](http://obofoundry.org/ontology/mondo.html)
 
 ## 2017-10-02
 

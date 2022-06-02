@@ -8,8 +8,8 @@
 3. Name the annotation property   
 The IRI for annotation properties should do not have numerical ID.    
 The convention for Annotation Property IRI in Mondo is : `http://purl.obolibrary.org/obo/mondo#new_property` where  
-  - mondo = ontology where the property is created   
-  - #new_property = name of the annotation property, preceded by #      
+      - mondo = ontology where the property is created   
+      - #new_property = name of the annotation property, preceded by #      
 
   In order to create this IRI, manually add the IRI when creating the annotation property, as shown here:
 
@@ -24,4 +24,5 @@ Annotation required:
 
   Note:
   - "is_metadata_tag" MUST be added when adding a new annotation property in obo, in order to obo to recognize the new annotation property.  
-  - No other annotations are required for annotation properties, however, it is a good idea to add a comment, or other useful information.
+  - Even though no other annotations are required for annotation properties, it is a idea to add a comment or other useful informationt hat would allow someone to re-use the annotation property. Minimal required information is proposed [here](https://github.com/information-artifact-ontology/ontology-metadata/blob/1b2087bf993162e692c1dcc03d86c07e174f9142/src/templates/annotation_properties.tsv)
+.
