@@ -10,6 +10,13 @@ The following is intended to serve as a guide for anyone who would like to use M
 - If there is a change in the concept, the ID/term will be obsoleted, and a new concept will be created. A 'term replaced by' annotation will point to the new term. If the obsoleted term is not replaced by a new term, there may be a 'consider' annotation, that points to a new term to consider using for annotation.
 - Note: as long as curations are made to the concept, annotations will always be correct.
 
+### Example
+`MONDO:0013731` was renamed from `EMARDD Syndrome (Early-onset myopathy-areflexia-respiratory distress-dysphagia syndrome)` to `MEGF10-related myopathy`
+
+If this disease was annotated with the phenotypes muscle weakness, respiratory difficulties, joint contractures, scoliosis, the phenotypes would still be associated with the same concept, even though the name changed.
+
+See [https://github.com/monarch-initiative/mondo/issues/1112](https://github.com/monarch-initiative/mondo/issues/1112)
+
 ## Curate to the Definition
 
 - When annotating a disease with a Mondo term, always curate to the definition of the Mondo term, not based on the primary label. 
