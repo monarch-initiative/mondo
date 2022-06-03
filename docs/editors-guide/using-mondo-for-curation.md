@@ -1,4 +1,4 @@
-# Mondo Curation Guide 
+# Using Mondo for Data Curation
 
 The following is intended to serve as a guide for anyone who would like to use Mondo for curating disease annotations.
 
