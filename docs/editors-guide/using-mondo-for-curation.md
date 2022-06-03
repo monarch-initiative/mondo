@@ -23,6 +23,19 @@ See issue [https://github.com/monarch-initiative/mondo/issues/1112](https://gith
 - Therefore, if the label changes, your annotation will always be correct.
 - Review the hierarchy of the term and curate to the most specific term possible.
 
+## Consider the hierarchy/term parentage
+
+Review the ontology classification and annotate to the most specific term when possible.
+
+## Example
+
+If you are curating the statement: “The patient was diagnosed with myofibrillar myopathy, and displayed progressive limb and axial muscle weakness.”  
+
+You would annotate the term `MONDO:0018943 myofibrillar myopathy`
+
+
+
+
 ## Annotate up
 
 - If the term you need is not available, annotate to the 'parent' class/ or superclass (the more general class in the hierarchy).
