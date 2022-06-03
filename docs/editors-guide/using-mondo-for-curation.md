@@ -15,7 +15,7 @@ The following is intended to serve as a guide for anyone who would like to use M
 
 If this disease was annotated with the phenotypes muscle weakness, respiratory difficulties, joint contractures, scoliosis, the phenotypes would still be associated with the same concept, even though the name changed.
 
-See [https://github.com/monarch-initiative/mondo/issues/1112](https://github.com/monarch-initiative/mondo/issues/1112)
+See issue [https://github.com/monarch-initiative/mondo/issues/1112](https://github.com/monarch-initiative/mondo/issues/1112)
 
 ## Curate to the Definition
 
