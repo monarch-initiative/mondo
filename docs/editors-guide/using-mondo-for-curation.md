@@ -31,9 +31,15 @@ Review the ontology classification and annotate to the most specific term when p
 
 If you are curating the statement: “The patient was diagnosed with myofibrillar myopathy, and displayed progressive limb and axial muscle weakness.”  
 
-You would annotate the term `MONDO:0018943 myofibrillar myopathy`
+You would annotate the term `MONDO:0018943 myofibrillar myopathy`. See Figure 1.
+
+If you are curating the statement: “The patient was diagnosed with myofibrillar myopathy caused by a variation in BAG3. The patient displayed progressive limb and axial muscle weakness (...).”  
+
+You would annotate the term `MONDO:0018943 myofibrillar myopathy 6`. See Figure 1.
 
 <img width="895" alt="image" src="https://user-images.githubusercontent.com/6722114/171963572-110aad4d-cbe3-41f2-9eb4-03dd58b243c7.png">
+
+**Figure 1**: Example hierarchy of myopathy in Mondo.
 
 ## Annotate up
 
