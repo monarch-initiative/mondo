@@ -153,4 +153,23 @@ Issues should remain open for at least two weeks to allow for the community to c
 
 See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
 
-by Nicole Vasilevsky and Sabrina Toro _updated 2021-12-17_
+## Restoring an Obsolete Ontology Term
+
+### Notification
+Create a ticket and end an email notification to the Mondo users google group.
+
+### Protégé Process for Restoring an Obsolete Ontology Term
+
+1. Navigate to the obsolete term
+1. In the annotation window:
+  1. Modify the term label to remove 'obsolete'
+  1. Modify the term definition to remove 'OBSOLETE.'
+  1. Update the comment to Note that this term was reinstated from obsolete.
+  1. Remove any replaced_by and consider tags by clicking on the (x) at the right-hand side
+  1. Add Subclasses as appropriate
+  1. Remove the owl:deprecated: true tag
+  1. Add superclass and source annotation for the superClassOf assertion
+1. Run the reasoner
+1. Save
+
+by Nicole Vasilevsky and Sabrina Toro _updated 2022-06-07_
