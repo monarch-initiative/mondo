@@ -155,6 +155,12 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
 
 ## Restoring an Obsolete Ontology Term
 
+_NOTE: these instructions are under development and need further vetting._
+
+### When to restore or reinstate an ontology term
+
+_Under development_
+
 ### Notification
 Create a ticket and end an email notification to the Mondo users google group.
 
