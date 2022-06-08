@@ -6,11 +6,27 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops
 
+- [Using the Mondo Disease Ontology for Disease Data Curation](June 08, 2022)(#june-2022)
+- [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
 - [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
 - [Renal Disease and Phenotype Workshop (July 14, 2021)](#renal)
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
 - [Mondo Introductory Workshop (November 2018)](#november-2018)
+
+<a name="june-2022"></a> 
+## Using the Mondo Disease Ontology for Disease Data Curation
+
+### Description
+This workshop was presented at the virtual [Curating the Clinical Genome conference(https://clinicalgenome.org/about/events/curating-the-clinical-genome-2022/final-agenda/). We introduced participants to Mondo, its advantages, and how it relates to other disease terminologies. The focus will be on disease curation best practices, how to use Mondo to annotate disease data, where to find disease terms, what to do if required terms do not exist in Mondo, and how to request changes or improvements. Mondo is a collaborative and community-developed resource; workshop attendees will learn how to contribute to Mondo. This workshop also introduced the Mondo ontology curation workflow, including new term creation, and how different user requests are reconciled (e.g. disease naming), term obsoletions and merges, and ontology releases. In addition, technical aspects of Mondo, including quality control and automated pipelines, were discussed.
+
+### Date and Time
+**June 08, 2022**
+9-10:30am PT / 12-1:30pm EST / 5-6:30pm UK / 6-7:30pm Europe
+
+### Slides
+
+- Slides are available [here](https://docs.google.com/presentation/d/1lRnASIv9zmrnmqJvCFRwnpYRPCL8tI4ImCmAXbQIJUc/edit#slide=id.p)
 
 <a name="november-2021"></a> 
 ## Mondo Clinical Reclassification Workshop Part 2
