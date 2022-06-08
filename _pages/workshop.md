@@ -25,7 +25,7 @@ Sabrina Toro, Nicole Vasilevsky, Nico Matentzoglu
 This workshop was presented at the virtual [Curating the Clinical Genome conference](https://clinicalgenome.org/about/events/curating-the-clinical-genome-2022/agenda/). We introduced participants to Mondo, its advantages, and how it relates to other disease terminologies. The focus will be on disease curation best practices, how to use Mondo to annotate disease data, where to find disease terms, what to do if required terms do not exist in Mondo, and how to request changes or improvements. Mondo is a collaborative and community-developed resource; workshop attendees will learn how to contribute to Mondo. This workshop also introduced the Mondo ontology curation workflow, including new term creation, and how different user requests are reconciled (e.g. disease naming), term obsoletions and merges, and ontology releases. In addition, technical aspects of Mondo, including quality control and automated pipelines, were discussed.
 
 ### Date and Time
-**June 08, 2022**
+**June 08, 2022**  
 9-10:30am PT / 12-1:30pm EST / 5-6:30pm UK / 6-7:30pm Europe
 
 ### Slides
