@@ -6,7 +6,7 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops
 
-- [Using the Mondo Disease Ontology for Disease Data Curation](June 08, 2022](#june-2022)
+- [Using the Mondo Disease Ontology for Disease Data Curation (June 08, 2022)](#june-2022)
 - [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
 - [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
 - [Renal Disease and Phenotype Workshop (July 14, 2021)](#renal)
