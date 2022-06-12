@@ -11,6 +11,7 @@ The Mondo Disease Ontology (Mondo) aims to harmonize disease definitions across 
 
 - [About](#about)
 - [How was it created?](#created)
+- [Summary statistics](#stats)
 - [Contribute](#contribute)
 - [License](#license)
 - [Contact](#contact)
@@ -25,6 +26,33 @@ In order to address the lack of a unified disease terminology that provides prec
 Mondo’s development is coordinated with the [Human Phenotype Ontology (HPO)](https://hpo.jax.org/app/), which describes the individual phenotypic features that constitute a disease. Like the HPO, Mondo provides a hierarchical structure which can be used for classification or “rolling up” diseases to higher level groupings. It provides mappings to other disease resources, but in contrast to other mappings between ontologies, we precisely annotate each mapping using strict semantics, so that we know when two disease names or identifiers are equivalent or one-to-one, in contrast to simply being closely related.
 
 For more details, please see these [slides](https://docs.google.com/presentation/d/1piBa680WN4EmI2q5oGpXGeuurZNkP66E4iOSJtEM1Ro/edit#slide=id.p1).
+
+<a name="stats"></a> 
+## Summary statistics
+
+### Summary statistics across all Mondo concepts
+Version at: https://github.com/monarch-initiative/mondo/releases/tag/v2022-03-01
+
+Disease term feature | Count
+-- | -- 
+Total number of terms | 22,157
+Database cross references | 104,479
+Term definitions | 15,443
+Exact synonyms | 66,247
+Related synonyms | 30,661
+Narrow (more specific) synonyms | 2,214
+Broad (more general) synonyms | 847
+
+## Disease concept statistics for select disease categories. 
+
+Note that these groupings are overlapping. (Version at: https://github.com/monarch-initiative/mondo/releases/tag/v2022-03-01) 
+
+Disease type | Count (Concepts)
+-- | --
+Rare diseases | 10,443
+Infectious diseases  | 1,240
+Cancers (including neoplasms) | 4,298
+Mendelian diseases |  11,380
 
 <a name="created"></a> 
 ## How was it created?    
