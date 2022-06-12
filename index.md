@@ -45,7 +45,7 @@ Broad (more general) synonyms | 847
 
 ## Disease concept statistics for select disease categories. 
 
-Note that these groupings are overlapping. (Version at: https://github.com/monarch-initiative/mondo/releases/tag/v2022-03-01) 
+Note that these groupings are overlapping. Version at: https://github.com/monarch-initiative/mondo/releases/tag/v2022-03-01. 
 
 Disease type | Count (Concepts)
 -- | --
