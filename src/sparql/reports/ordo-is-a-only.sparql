@@ -11,11 +11,11 @@ SELECT distinct ?term ?label
 
 WHERE 
 {
-  	?term rdfs:subClassOf <http://purl.obolibrary.org/obo/MONDO_0000001> ;
+  	?term rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0000001> ;
          rdfs:label ?label ;
         oboInOwl:hasDbXref ?xref ;
-        rdfs:subClassOf ?super .
-  	?child rdfs:subClassOf ?term .
+        rdfs:subClassOf* ?super .
+  	?child rdfs:subClassOf* ?term .
   
   FILTER(?child!=?term)
  
