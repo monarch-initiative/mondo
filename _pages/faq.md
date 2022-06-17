@@ -106,15 +106,15 @@ Moreover, merging Mondo with another disease ontology, even if both are maintain
 - **Narrow synonym**: a more specific term.  
 Example:  
 name: asthma  
-exact synonym: exercise-induced asthma  
+narrow synonym: exercise-induced asthma  
 - **Broad synonym**: a more general term.  
 Example:  
 name: autoimmune hepatitis  
-exact synonym: autoimmune liver disease
+broad synonym: autoimmune liver disease
 - **Related synonym**: A word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. (_Note - we have a lot of synonyms in Mondo currently that are marked related but should really be exact and we're actively working on cleaning this up_).  
 Example:  
 name: AGAT deficiency  
-exact synonym: disorder of glycine amidinotransferase activity 
+related synonym: disorder of glycine amidinotransferase activity 
  
 
 {% comment %} Add more FAQs as needed {% endcomment %}
