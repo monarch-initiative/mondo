@@ -1,30 +1,35 @@
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
-prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
-prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
-SELECT distinct ?term ?label
-
-WHERE 
-{
-  	?term rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0000001> ;
-         rdfs:label ?label ;
-        oboInOwl:hasDbXref ?xref ;
-        rdfs:subClassOf ?super .
-  	?child rdfs:subClassOf* ?term .
-  
-  FILTER(?child!=?term)
- 
-  
-  FILTER(STRSTARTS(str(?xref), "Orphanet:"))
-  
-  FILTER NOT EXISTS {
-  	?term  oboInOwl:hasDbXref ?xref2 .
-    FILTER(!STRSTARTS(str(?xref2), "Orphanet:"))
+SELECT distinct ?cls ?label ?parent ?parent_label ?source WHERE {
+  {
+	?cls a owl:Class; 
+  		rdfs:label ?label .
+    ?cls rdfs:subClassOf ?parent .
+    ?parent rdfs:label ?parent_label .
+    ?subclass_axiom a owl:Axiom ;
+           owl:annotatedSource ?cls ;
+           owl:annotatedProperty rdfs:subClassOf ;
+           owl:annotatedTarget ?parent ;
+           oboInOwl:source ?source .
+  	FILTER(regex(str(?label),"disease"))
+    FILTER NOT EXISTS {
+    	?cls owl:deprecated "true"^^xsd:boolean
+  	}
+        FILTER NOT EXISTS {
+    	?subclass_axiom a owl:Axiom ;
+           owl:annotatedSource ?cls ;
+           owl:annotatedProperty rdfs:subClassOf ;
+           owl:annotatedTarget ?parent ;
+           oboInOwl:source ?source_other .
+      FILTER( ?source_other!=?source)
+  	}
+    FILTER(regex(str(?source), "^Orphanet:"))
+    FILTER( !isBlank(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
   }
-  FILTER( !isBlank(?term))
-} 
+  	
+}
