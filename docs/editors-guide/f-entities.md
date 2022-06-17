@@ -144,13 +144,16 @@ Here the xref between MONDO:chondrocalcinosis and Orphanet:1416 as two axiom ann
     * Note: we should consider changing the AP here. It’s not really the case that these are source any more, as they are added after the fact as an easy way to guage consistency of axioms across ontologies.
 * We indicate the semantics of the xref using a source of one of
     * MONDO:equivalentTo
-    * MONDO:superClassOf
-    * MONDO:subClassOf
     * MONDO:OtherRelationship
     * In the first 3 cases, these are interpreted strongly as an OWL axiom. **Never use equivalentTo for ‘very close to’. Overuse will result in merges**. See also docs on proxy merges
-    * MONDO:superClassOf and MONDO:subClassOf may be incomplete. The important one is equivalence, as they others can be inferred
+    *  The important one is equivalence, as they others can be inferred.
     * Note: we could of course use OWL axioms directly, but this is awkward for various reasons, so the logical axioms are maintained as annotated xrefs for now.
     * We also use MONDO:obsoleteEquivalent and MONDO:equivalentObsolete for cases where we have exact 1:1 matches between an obsolete and a live class. We want to avoid making an equivalence axiom here.
+
+Note: we used to add annotations to xrefs:
+* MONDO:superClassOf
+* MONDO:subClassOf
+MONDO:superClassOf and MONDO:subClassOf may have been incomplete. These were removed (see ticket [#4688](https://github.com/monarch-initiative/mondo/issues/4688) and they should be inferred with the boomer pipeline.
 
 ## Axiom Annotations on Logical Axioms
 
