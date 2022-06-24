@@ -38,6 +38,12 @@ The release mondo.owl will look like this in Protege:
 
 _Note: While the release is running, don't shut your laptop or switch between repos or branches in GitHub, as this will stop the release._
 
+## Normalization step (BEFORE the release process)
+1. It is always a good idea to normalize the ontology after bulk changes. It is also good to normalize the ontology before a release
+2. The commands to use are:  
+`sh run.sh make NORM`  
+`mv NORM mondo-edit.obo`   
+
 ## Prepare the release
 1. Do a docker pull: `docker pull obolibrary/odkfull`
 1. Pull master

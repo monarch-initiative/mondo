@@ -144,13 +144,16 @@ Here the xref between MONDO:chondrocalcinosis and Orphanet:1416 as two axiom ann
     * Note: we should consider changing the AP here. It’s not really the case that these are source any more, as they are added after the fact as an easy way to guage consistency of axioms across ontologies.
 * We indicate the semantics of the xref using a source of one of
     * MONDO:equivalentTo
-    * MONDO:superClassOf
-    * MONDO:subClassOf
     * MONDO:OtherRelationship
     * In the first 3 cases, these are interpreted strongly as an OWL axiom. **Never use equivalentTo for ‘very close to’. Overuse will result in merges**. See also docs on proxy merges
-    * MONDO:superClassOf and MONDO:subClassOf may be incomplete. The important one is equivalence, as they others can be inferred
+    *  The important one is equivalence, as they others can be inferred.
     * Note: we could of course use OWL axioms directly, but this is awkward for various reasons, so the logical axioms are maintained as annotated xrefs for now.
     * We also use MONDO:obsoleteEquivalent and MONDO:equivalentObsolete for cases where we have exact 1:1 matches between an obsolete and a live class. We want to avoid making an equivalence axiom here.
+
+Note: we used to add annotations to xrefs:
+* MONDO:superClassOf
+* MONDO:subClassOf
+MONDO:superClassOf and MONDO:subClassOf may have been incomplete. These were removed (see ticket [#4688](https://github.com/monarch-initiative/mondo/issues/4688) and they should be inferred with the boomer pipeline.
 
 ## Axiom Annotations on Logical Axioms
 
@@ -173,30 +176,23 @@ _Note_: Some source annotations will be in the format `MONDO:0020484-obsoleted`.
 
 Annotation  |   Description |   What kind of axiom it can apply to  |   Editors only?   |   Example
 --- | --- | --- | --- | ---
-MONDO:agrant9394 | | xrefs | N | MONDO:0100061 PRPS1 deficiency disorder
 MONDO:ambiguous     |   Used to indicate where there is a known case where this synonym is ambiguous with something else.   |   synonyms    |   N   |   MONDO:0009825 '5-oxoprolinase deficiency (disease)' (synonym: 5-oxoprolinase deficiency)
 MONDO:design_pattern    |   If annotated on a synonym, the synonym was derived from a design pattern.   |   synonyms    |   N   |   MONDO:0009770 '3MC syndrome 1' (synonym: 3MC syndrome caused by mutation in MASP1)
 MONDO:directSiblingOf   |   The term that is xref'd is a direct sibling of term. The goal was to capture where someone made an xref.    |   xrefs   |   N   |   MONDO:0008854 ‘Bardet-Biedl syndrome 1’ database_cross_reference: UMLS:C1859564 (refers to ‘Bardet-Biedl syndrome 3’) {source=MONDO:directSiblingOf}
 MONDO:entailed  |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   Y   |   MONDO:0001594 'Achilles bursitis'
-MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology.We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease' database_cross_reference: Orphanet:1239 (was obsoleted in orphanet) {source=MONDO:equivalentObsolete}
-MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom.   |   xrefs   |   N   |   MONDO:0100087 'familial Alzheimer disease' database_cross_reference: GARD:0000632 (refers to the disease in GARD) {source=MONDO:equivalentTo}
+MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease' database_cross_reference: Orphanet:1239 (was obsoleted in orphanet) {source=MONDO:equivalentObsolete}
+MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom, meaning the two terms are considered to be exactly the same. This can be added to any xref where this is true.   |   xrefs   |   N   |   MONDO:0100087 'familial Alzheimer disease' database_cross_reference: GARD:0000632 (refers to the disease in GARD) {source=MONDO:equivalentTo}
 MONDO:kboom-pr-[number]     |   These are the probability scores from the kBoom algorithm.  |  xrefs   |   Y   |   MONDO:0008966 'Aagenaes syndrome'
-MONDO:indirect | | xrefs  | N | MONDO:0100224 mitochondrial complex I deficiency, nuclear type 1
 MONDO:Lexical   |   Same as design_pattern. Should be replaced with specific design_pattern.    |   synonyms    |   N   |   MONDO:0010278 'Christianson syndrome'
 MONDO:LexicalVariant    |   Similar to design_pattern, should be replaced with specific documentation about variant documentation.  |  synonyms   |   N   |   MONDO:0006018 'Wissler syndrome'
-MONDO:linkedlifedata | | xrefs | N | MONDO:0100288 enhanced S-cone syndrome
-MONDO:mim2gene_medgen | | xrefs |N  | MONDO:0100288 enhanced S-cone syndrome
+MONDO:mim2gene_medgen | This indicates the gene relationship came from MedGen. | xrefs |N  | MONDO:0100288 enhanced S-cone syndrome
 MONDO:mondoIsNarrowerThanSource   |   The Mondo class is narrower (more specific) than the source xref.   | xrefs   |   N   |   MONDO:0035649 ''adult-onset Steinert myotonic dystrophy'' database_cross_reference: ICD10:G71.1 {source=MONDO:mondoIsNarrowerThanSource}
 MONDO:mondoIsBroaderThanSource |   The Mondo class is broader (more general) than the source xref.  |  xrefs  |   N   |   
-MONDO:NCBI_mim2gene_medline | | xrefs | N | MONDO:0100288 enhanced S-cone syndrome
+MONDO:NCBI_mim2gene_medline | This indicates the gene relationship came from MedGen.  | xrefs | N | MONDO:0100288 enhanced S-cone syndrome
 MONDO:notFoundInDiseaseSubset   |   This annotation is typically added to dbxefs from UMLS or NCIt, to indicate the term is not from the disease branch.    |   dbxef   |   N   |   MONDO_0015350 '17q11.2 microduplication syndrome'
 MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   MONDO:0011812 ‘Duane-radial ray syndrome’ database_cross_reference: Orphanet:959 (was equivalent to MONDO:0019863 which was obsoleted)  {source=MONDO:obsoleteEquivalent}
 MONDO:obsoleteEquivalentObsolete    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   TBD
-MONDO:OMIM-generic-entry | N | xrefs | | MONDO:0019588 hearing loss, autosomal recessive
-MONDO:OMIM-shared | | xrefs | N |  MONDO:0020108 autoimmune hemolytic anemia
 MONDO:ontobio   |   Lexical matching method |   subclassOf  |   N   |   MONDO:0012176 'Emanuel syndrome'
-MONDO:ORDO-def | | xrefs | N |  MONDO:0024300 hypophosphatemic rickets
-MONDO:Orphanet-shared | | xrefs | N  |  MONDO:0024457 neurodegeneration with brain iron accumulation 2A
 MONDO:patterns....  |   A pattern was used to define the term or synonym, see: https://github.com/monarch-initiative/mondo/tree/master/src/patterns |   definitions, synonyms   |   N   |   MONDO:0016593 'acquired ataxia'
 MONDO:preferredExternal | Identifies the preferred term in case multiple terms from the same source are merged (aka proxy merge). | database_cross_reference | Y | MONDO:0009666 'holocarboxylase synthetase deficiency' database_cross_reference: SCTID:360369003
 MONDO:Redundant |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   N   |   MONDO:0023543 'Katsantoni-Papadakou-Lagoyanni syndrome'

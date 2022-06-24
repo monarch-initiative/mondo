@@ -153,4 +153,31 @@ Issues should remain open for at least two weeks to allow for the community to c
 
 See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
 
-by Nicole Vasilevsky and Sabrina Toro _updated 2021-12-17_
+## Restoring an Obsolete Ontology Term
+
+### When to restore or reinstate an ontology term
+
+There may be rare cases when we chose to reinstate or restore an obsolete class. For example, in this ticket ([#4948](https://github.com/monarch-initiative/mondo/issues/4948)) we decided to reinstate some Orphanet grouping classes because they were used in the classification scheme described by the authors of the [paper](https://pubmed.ncbi.nlm.nih.gov/31633310/).
+
+**Note**: The Gene Ontology has [instructions to restore an obsolete term](https://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term), but in Mondo, we prefer to create a new term and mint a new ID, and point from the obsoleted term to the new term using the `replaced_by` annotation.
+
+### Restore an obsolete term (Add new term)
+
+1. Follow the usual instructions to [create a new term](https://mondo.readthedocs.io/en/latest/editors-guide/add-new-terms/#add-a-new-term) in Mondo. 
+  1. _More advanced_: New terms can be added using the text file:
+    1. Open mondo-edit.obo in a text editor, like Atom.
+    1. Find the obsoleted term.
+    1. Copy the stanzas for that term and paste as a new term in the file.
+    1. Replace the ID with the new ID
+    1. Remove the 'obsolete' from the label
+    1. Remove the obsolescence annotations: 
+       1. property_value: IAO:0000231 "out of scope" xsd:string
+       1. is_obsolete: true
+    1. If applicable, change the source annotations from MONDO:obsoleteEquivalent to MONDO:equivalentTo
+    1. Update the seeAlso annotation to point to the relevant ticket
+1. Find the obsolete term, and add (or replace) the annotation 'replaced_by' to point to the new ID.
+  1. **Note**: A term cannot have both a `consider` annotation and a `replaced_by` annotation. Add only the `replaced_by` annotation that points to the new term you created.
+1. If edits were made in the text file, be sure to open the file in Protege and Save As -> mondo-edit.obo and replace existing failure
+1. Commit to your branch and create a pull request
+
+by Nicole Vasilevsky and Sabrina Toro _updated 2022-06-07_
