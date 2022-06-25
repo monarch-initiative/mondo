@@ -12,7 +12,7 @@ contributors:
 
 classes:
   lesioned: PATO:0040025
-  anatomial entity: UBERON:0001062
+  anatomical entity: UBERON:0001062
 
 relations:
   has modifier: RO:0002573
@@ -22,25 +22,25 @@ annotationProperties:
   related_synonym: oio:hasRelatedSynonym
 
 vars:
-  anatomial entity: '''anatomial entity'''
+  anatomical entity: '''anatomical entity'''
 
 name:
   text: %s lesion
   vars:
-  - anatomial entity
+  - anatomical entity
 
 annotations:
 - annotationProperty: exact_synonym
   text: '%s, lesioned'
   vars:
-  - anatomial entity
+  - anatomical entity
 
 def:
   text: Lesioned form of %s.
   vars:
-  - anatomial entity
+  - anatomical entity
 
 equivalentTo:
   text: '%s and ''has modifier'' some ''lesioned'''
   vars:
-  - anatomial entity
+  - anatomical entity
