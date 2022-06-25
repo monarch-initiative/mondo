@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/pattern.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2022-06-17/mondo-pattern.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2022-06-25/mondo-pattern.owl"/>
     </owl:Ontology>
     
 
@@ -2831,6 +2831,14 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0040025 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0040025">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/SO_0000087 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000087">
@@ -4140,6 +4148,30 @@ For example, A and B may be gene products and binding of B by A positively regul
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leiomyosarcoma disease has location X</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing leiomyosarcoma</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing leiomyosarcoma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/lesioned.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/lesioned.yaml">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002573"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0040025"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesioned form of &apos;anatomical entity&apos;.</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lesioned</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos;, lesioned</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; lesion</rdfs:label>
     </owl:Class>
     
 

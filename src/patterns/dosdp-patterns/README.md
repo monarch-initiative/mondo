@@ -1072,6 +1072,19 @@ Examples: [leiomyosarcoma of the cervix uteri](http://purl.obolibrary.org/obo/MO
 | MONDO:0003351 | colon leiomyosarcoma                  | UBERON:0001155 | colon                  |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/leiomyosarcoma.tsv)
+### Lesioned
+*This pattern is applied to diseases that are described as having a lesion, where a localized pathological or traumatic structural change, damage, deformity, or discontinuity of tissue, organ, or body part is present.
+Examples: [ulnar nerve lesion](http://purl.obolibrary.org/obo/MONDO_0001458 ), [peripheral nerve lesion](http://purl.obolibrary.org/obo/MONDO_0024334)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/lesioned.yaml |
+| Name | lesioned |
+| Classes | PATO:0040025, UBERON:0001062,  |
+| Variables | anatomical entity (UBERON:0001062),  |
+| Contributors | [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Examples |  |
+
 ### Lipoma
 *A benign, usually painless, well-circumscribed lipomatous tumor composed of adipose tissue that is located in a specific anatomical location.
 Examples: [skin lipoma](http://purl.obolibrary.org/obo/MONDO_0000964), [colorectal lipoma](http://purl.obolibrary.org/obo/MONDO_0003885), [tendon sheath lipoma](http://purl.obolibrary.org/obo/MONDO_0004076) (28 total)*
