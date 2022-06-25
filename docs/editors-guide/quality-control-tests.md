@@ -775,6 +775,53 @@ WHERE {
 }
 ```
 
+###  qc-duplicate-exact-synonym-no-abbrev.sparql
+
+```
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+  VALUES ?property1 {
+    obo:IAO_0000118
+    oboInOwl:hasExactSynonym
+    rdfs:label
+  }
+  VALUES ?property2 {
+    obo:IAO_0000118
+    oboInOwl:hasExactSynonym
+    rdfs:label
+  }
+  ?entity1 ?property1 ?value.
+  ?entity2 ?property2 ?value .
+  
+  FILTER NOT EXISTS {
+    ?axiom owl:annotatedSource ?entity1 ;
+         owl:annotatedProperty ?property1 ;
+         owl:annotatedTarget ?value ;
+         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION> .
+  }
+  
+  FILTER NOT EXISTS {
+    ?axiom owl:annotatedSource ?entity2 ;
+         owl:annotatedProperty ?property2 ;
+         owl:annotatedTarget ?value ;
+         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION> .
+  }
+  
+  FILTER NOT EXISTS { ?entity owl:deprecated true }
+  FILTER NOT EXISTS { ?entity2 owl:deprecated true }
+  FILTER (?entity1 != ?entity2)
+  FILTER (!isBlank(?entity1))
+  FILTER (!isBlank(?entity2))
+  BIND(CONCAT(CONCAT(REPLACE(str(?entity1),"http://purl.obolibrary.org/obo/MONDO_","MONDO:"),"-"), REPLACE(str(?entity2),"http://purl.obolibrary.org/obo/MONDO_","MONDO:")) as ?entity)
+  BIND(CONCAT(CONCAT(REPLACE(REPLACE(str(?property1),"http://www.w3.org/2000/01/rdf-schema#","rdfs:"),"http://www.geneontology.org/formats/oboInOwl#","oboInOwl:"),"-"), REPLACE(REPLACE(str(?property1),"http://www.w3.org/2000/01/rdf-schema#","rdfs:"),"http://www.geneontology.org/formats/oboInOwl#","oboInOwl:")) as ?property)
+}
+ORDER BY DESC(UCASE(str(?value)))
+```
+
 ###  qc-equivalent-classes.sparql
 
 ```
