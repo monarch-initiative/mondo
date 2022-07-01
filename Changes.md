@@ -1,3 +1,354 @@
+# 2022-07-01
+
+## Overview:
+
+* Number of new terms: 100
+* Number of changed labels: 17
+* Number of changed definitions: 55
+* Number obsoleted terms: 15
+* Number of new obsoletion candidates: 120
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 1
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0024770 | autoinflammatory syndrome, familial, X-linked, Behcet-like 2 | |
+| MONDO:0024781 | immunodeficiency 102 | |
+| MONDO:0027652 | 5-fluorouracil toxicity | |
+| MONDO:0027653 | abacavir toxicity | |
+| MONDO:0027655 | allopurinol toxicity | |
+| MONDO:0027664 | cisplatin toxicity | |
+| MONDO:0027666 | codeine toxicity | |
+| MONDO:0027667 | efavirenz toxicity | |
+| MONDO:0027668 | flucloxacilline toxicity | |
+| MONDO:0027675 | irinotecan toxicity | |
+| MONDO:0027677 | isoniazid toxicity | |
+| MONDO:0027687 | raltegravir toxicity | |
+| MONDO:0027696 | voriconazole toxicity | |
+| MONDO:0030756 | Stuve-Wiedemann syndrome 2 | |
+| MONDO:0030770 | congenital disorder of deglycosylation 2 | |
+| MONDO:0030781 | restrictive dermopathy 2 | |
+| MONDO:0030881 | developmental and epileptic encephalopathy 102 | |
+| MONDO:0030886 | holoprosencephaly 14 | |
+| MONDO:0030887 | cardiomyopathy, dilated, 2G | |
+| MONDO:0030890 | pontocerebellar hypoplasia, IIA 17 | |
+| MONDO:0030891 | intellectual developmental disorder, autosomal dominant 66 | |
+| MONDO:0031213 | restrictive dermopathy | |
+| MONDO:0031257 | high altitude pulmonary edema | A rare pulmonary condition characterized by non-cardiogenic pulmonary edema occurring in otherwise healthy individuals within days of an ascent above 2500-3000 m. Early symptoms include exertional dyspnea, non-productive cough, chest tightness, and reduced exercise performance, followed by dyspnea at rest and possibly orthopnea, as well as gurgling in the chest and pink frothy sputum in advanced cases. Clinical signs are cyanosis, tachypnea, tachycardia, crackles or wheezing, and elevated body temperature (generally not exceeding 38.5°C). Signs of concomitant high-altitude cerebral edema may also be observed. Chest x-rays typically show patchy opacities predominantly in the right middle lobe. |
+| MONDO:0031280 | Stuve-Wiedemann syndrome | |
+| MONDO:0031376 | congenital disorder of deglycosylation | |
+| MONDO:0031384 | autoinflammatory syndrome, familial, Behcet-like | |
+| MONDO:0033169 | curariform drugs toxicity | |
+| MONDO:0033170 | statin toxicity | |
+| MONDO:0033181 | phenytoin or carbamazepine toxicity | |
+| MONDO:0033938 | acute radiation syndrome | |
+| MONDO:0034989 | intellectual disability-cardiac anomalies-short stature-joint laxity syndrome | A rare genetic multiple congenital anomalies/dysmorphic syndrome characterized by intrauterine and postnatal growth restriction, global developmental delay, intellectual disability, and dysmorphic facial features (such as broad nasal root, anteverted nares, long philtrum, low-set and posteriorly rotated ears, and short neck). Additional reported manifestations are microcephaly, short stature, vertebral abnormalities, joint laxity, ocular, cardiac, and renal defects, and minor limb anomalies. Brain imaging may show hypoplastic corpus callosum, delayed myelination, and cerebral atrophy. |
+| MONDO:0034991 | intrauterine growth restriction-congenital multiple café-au-lait macules-increased sister chromatid exchange syndrome | A rare genetic disease characterized by the presence of multiple café-au-lait macules and elevated rates of sister chromatid exchange demonstrated on cytogenetic testing. Pre- and postnatal growth deficiency with short stature, microcephaly, mild developmental delay, cardiomyopathy, and symptomatic gastro-esophageal reflux have also been described, while malar rash is typically absent. |
+| MONDO:0035337 | Duane retraction syndrome with congenital deafness | A rare neurologic disease characterized by the presence of Duane retraction syndrome (i. e. a congenital cranial dysinnervation disorder with unilateral or bilateral limitation of abduction and/or adduction of the eye, as well as globe retraction and palpebral fissure narrowing on attempted adduction) in combination with congenital unilateral or bilateral hearing loss. The sidedness of hearing loss corresponds to the sidedness of the retraction syndrome. |
+| MONDO:0035344 | acute bilirubin encephalopathy | A rare neurologic disease characterized by lethargy, hypotonia, poor feeding, opisthotonus, and a typical high-pitched cry due to bilirubin accumulation in the globus pallidus, sub-thalamic nuclei, and other brain regions, resulting from severe neonatal unconjugated hyperbilirubinemia. Onset of symptoms is typically within the first three to five days of life. Additional features include fever, apnea, seizures, and coma. Especially respiratory failure or refractory seizures may lead to a fatal outcome. |
+| MONDO:0035345 | chronic bilirubin encephalopathy | A rare neurologic disease characterized by the chronic consequences of bilirubin toxicity in the globus pallidus, sub-thalamic nuclei, and other brain regions, after exposure to high levels of unconjugated bilirubin in the neonatal period. Symptoms begin after the acute phase of bilirubin encephalopathy in the first year of life, evolve slowly over several years, and include mild to severe extrapyramidal disturbances (especially dystonia and athetosis), auditory neuropathy spectrum disorder, and oculomotor and dental abnormalities. |
+| MONDO:0035350 | letrozole toxicity | |
+| MONDO:0035763 | idiopathic non-lupus full-house nephropathy | |
+| MONDO:0035764 | idiopathic steroid-sensitive nephrotic syndrome with secondary steroid resistance | |
+| MONDO:0035777 | parenteral nutrition-associated cholestasis | A rare hepatic disease characterized by intrahepatic cholestasis and deterioration of liver function in patients receiving parenteral nutrition for extended periods of time (signs may appear as early as within the first two weeks of initiation of parenteral nutrition). The condition commonly occurs in neonates and usually resolves with transition to enteral feeding, although severe cases may progress to liver fibrosis, cirrhosis, and portal hypertension. |
+| MONDO:0035838 | idiopathic multicentric Castleman disease | |
+| MONDO:0035875 | ivermectin toxicity | |
+| MONDO:0035876 | belinostat toxicity or dose selection | |
+| MONDO:0035930 | neu-laxova syndrome due to 3-phosphoserine phosphatase deficiency | |
+| MONDO:0035940 | B-lymphoblastic leukemia/lymphoma with t(9;22)(q34.1;q11.2) | |
+| MONDO:0035941 | B-lymphoblastic leukemia/lymphoma with t(v;11q23.3) | |
+| MONDO:0035942 | B-lymphoblastic leukemia/lymphoma with t(12;21)(p13.2;q22.1) | |
+| MONDO:0035943 | B-lymphoblastic leukemia/lymphoma with hyperdiploidy | |
+| MONDO:0035944 | B-lymphoblastic leukemia/lymphoma with hypodiploidy | |
+| MONDO:0035945 | B-lymphoblastic leukemia/lymphoma with t(5;14)(q31.1;q32.3) | |
+| MONDO:0036025 | toxicity to dolutegravir | |
+| MONDO:0036042 | KAT6B-related multiple congenital anomalies syndrome | |
+| MONDO:0036045 | euthyroid dysprealbuminemic hyperthyroxinemia | |
+| MONDO:0036189 | oculogastrointestinal-neurodevelopmental syndrome | |
+| MONDO:0036192 | EN1-related dorsoventral syndrome | |
+| MONDO:0036193 | parkinsonism with polyneuropathy | |
+| MONDO:0036212 | spastic paraparesis-cataracts-speech delay syndrome | |
+| MONDO:0036217 | lethal pontocerebellar hypoplasia-hypotonia-respiratory insufficiency syndrome due to a point mutation | |
+| MONDO:0036218 | lethal pontocerebellar hypoplasia-hypotonia-respiratory insufficiency syndrome due to biallelic deletions in the ATAD3 gene cluster | |
+| MONDO:0037149 | HSD10 disease, atypical type | |
+| MONDO:0037398 | pneumonia caused by pseudomonas aeruginosa infection | A rare pulmonary disease characterized by primary or nonbacteremic pneumonia most frequently arising in an intensive care setting, or bacteremic pneumonia, which is typically associated with neutropenia. Chronic lower respiratory tract infection with development of episodes of pneumonia is common in patients with cystic fibrosis. Acute infections are potentially life-threatening. Patients present with fever, chills, dyspnea, cyanosis, productive cough, as well as signs of severe systemic toxicity. Alveolar hemorrhage, necrosis, and, eventually, cavity formation, are commonly seen. |
+| MONDO:0100464 | acid sphingomyelinase deficiency | An autosomal recessive lysosomal disease caused by biallelic loss of function variants in the SMPD1 gene. Clinical symptoms in affected individuals occur along a continuum. At the severe end of the spectrum are individuals historically diagnosed with Niemann-Pick disease type A (the neurovisceral form), which is characterized by hepatosplenomegaly with rapid neurological deterioration leading to death in the first few years of life. At the milder end of the spectrum are individuals historically diagnosed with Niemann-Pick disease type B, a later-onset, chronic visceral form, characterized by progressive visceral organ symptoms including hepatosplenomegaly and pulmonary insufficiency, and survival into adulthood. In addition, some affected individuals present with an intermediate phenotype, Niemann-Pick disease type A/B. |
+| MONDO:0100465 | complex neurodevelopmental disorder with or without congenital anomalies | A complex neurodevelopmental disorder that involves more than one phenotype associated with the central nervous system, including but not limited to intellectual disability, autism, and seizures (epilepsy), in addition to one or more structural or functional anomaly(ies) that develops prenatally. |
+| MONDO:0100492 | Bonnevie-Ullrich syndrome | A genetic syndrome which occurs in females. It is caused by the inheritance of only one complete X chromosome (45, X). Clinical signs of the symmetrical form are identical to those of Turner syndrome and include bilateral webbing of the neck and edema of the extremities. Clinical characteristics include decreased stature and under-developed sexual organs. Patients usually have a normal life expectancy. |
+| MONDO:0100493 | autosomal recessive titinopathy | Autosomal recessive form of TTN-related myopathy. |
+| MONDO:0100494 | autosomal dominant titinopathy | Autosomal dominant form of TTN-related myopathy. |
+| MONDO:0100495 | autosomal recessive distal titinopathy | A rare myopathy characterized by weakness of the muscles of the anterior compartment of lower limbs. Described as a more severe tibial muscular dystrophy phenotype, distal titinopathy is associated with earlier onset and progression to include soleus muscle and proximal muscles. |
+| MONDO:0100496 | Emery-Dreifuss-like muscular dystrophy | A rare inherited muscular dystrophy characterized by the coexistence of limb-girdle weakness and early-onset diffuse joint contractures without cardiomyopathy. |
+| MONDO:0100497 | titinopathy with congenital contractures | A prenatal/infant-onset muscle disorder characterized by limb contractures, muscle weakness (often with significant axial involvement), long bone fractures, and/or cardiac abnormalities. |
+| MONDO:0700077 | vitiligo-associated multiple autoimmune disease susceptibility 6 | |
+| MONDO:0700078 | triple-positive breast carcinoma | A breast carcinoma which is positive for expression of estrogen receptor (ER), progesterone receptor (PR), and human epidermal growth factor receptor 2 (HER2). |
+| MONDO:0700079 | hormone receptor-positive breast cancer | A breast carcinoma which is positive for expression of estrogen receptor (ER), progesterone receptor (PR), and is negative for expression of human epidermal growth factor receptor 2 (HER2). |
+| MONDO:0700080 | EPHB4-associated vascular malformation spectrum | Any vascular malformation in which the cause of the disease is a variation in the EPHB4 gene. |
+| MONDO:0700081 | newborn respiratory distress syndrome | A condition beginning in the first day of life that results from inadequate surfactant production, causing increased work of breathing and impaired gas exchange. |
+| MONDO:0800042 | restrictive dermopathy 1 | A a neonatal lethal genetic disease characterized by very tight and thin skin with erosions and scaling, associated to a typical facial dysmorphism, arthrogryposis multiplex, fetal akinesia or hypokinesia deformation sequence (FADS) and pulmonary hypoplasia without neurological abnormalities. |
+| MONDO:0800043 | Stüve-Wiedemann syndrome 1 | A rare autosomal recessive congenital primary skeletal dysplasia, characterized by small stature, bowing of the long bones, camptodactyly, hyperthermic episodes, respiratory distress/apneic episodes and feeding difficulties that usually lead to early mortality. |
+| MONDO:0800044 | congenital disorder of deglycosylation 1 | A rare autosomal recessive inherited disorder caused by mutations in the NGLY1 gene. It is characterized by developmental delay, hypotonia, abnormal involuntary movements, poor tear production, microcephaly, intractable seizures, abnormal eye movements, and liver abnormalities. |
+| MONDO:0800045 | autoinflammatory syndrome, familial, Behcet-like 1 | |
+| MONDO:0800063 | primordial dwarfism and slender bone disorder | A skeletal dysplsia characterized by primordial dwarfism, an extreme growth deficiency disorder that has its onset during embryonic development and persists throughout life and slender bone disorder, a heterogeneous group of neonatal dwarfism syndromes, usually of unknown etiology, associated with gracile (thin) bones, multiple fractures, and prenatal or early postnatal death. |
+| MONDO:0800064 | osteogenesis imperfecta and a reduction of bone mineral density. | A skeletal dysplasia characterized by osteogenesis imperfecta and decreased bone density. |
+| MONDO:0800066 | polydactyly-syndactyly-triphalangism | Any skeletal dysplasia that is characterizedby polydactyly, syndactyly and triphalangism, where a digit has three phalanges instead of two. |
+| MONDO:0800075 | dysostosis with predominant vertebral with and without costal involvement | Any dysostosis that involves the vertebrae, with or without involvement of the the ribs or the upper sides of the body. |
+| MONDO:0800080 | severe spondylodysplastic dysplasia | An instance of spondylodysplastic dysplasia that has a high degree of severity. |
+| MONDO:0800084 | primary bone dysplasia with increased bone density | |
+| MONDO:0800085 | dysostosis with predominant craniofacial involvement | |
+| MONDO:0800086 | primary bone dysplasia with multiple joint dislocations | |
+| MONDO:0800087 | type 11 collagen-related bone disorder | |
+| MONDO:0800088 | lysosomal storage disease with skeletal involvement | |
+| MONDO:0800089 | primary bone dysplasia with disorganized development of skeletal components | |
+| MONDO:0800090 | ectrodactyly with and without other manifestations | |
+| MONDO:0800091 | overgrowth or tall stature syndrome with skeletal involvement | |
+| MONDO:0800092 | genetic inflammatory or rheumatoid-like osteoarthropathy | |
+| MONDO:0800093 | dysostosis with brachydactyly without extraskeletal manifestations | |
+| MONDO:0800094 | dysostosis with brachydactyly with extraskeletal manifestations | |
+| MONDO:0800095 | syndrome with synostosis or other joint formation defect | |
+| MONDO:0800096 | abnormal mineralization disorder | A skeletal dysplasia where osteoid becomes calcified. |
+| MONDO:0800098 | SNRNP200-related dominant retinopathy | A retinopathy caused by heterozygous variants in the SNRNP200 gene. |
+| MONDO:0800099 | RDH12-related recessive retinopathy | A retinopathy, typically severe, and early onset, caused by biallelic variants in the RDH12 gene. |
+| MONDO:0800100 | RDH12-related dominant retinopathy | A retinopathy caused by gain of function, heterozygous variants in the RDH12 gene, and associated with late onset retinopathy with a mild phenotype, characterized by nyctalopia and visual field loss, but relatively preserved central vision. |
+| MONDO:0800101 | NMNAT1-related retinopathy | A retinopathy, typically severe and early onset, caused by biallelic variants in the NMNAT1 gene. Some patients have been reported to have spondyloepiphyseal dysplasia syndrome, including sensorineural hearing loss, intellectual disability in addition to retinopathy. However, additional studies are needed to definitively describe this disease association. |
+| MONDO:0800102 | CNGA3-related retinopathy | A retinopathy, typically described as achromatopsia, caused by biallelic variants in the CNGA3 gene. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0006311 | myelodysplastic/myeloproliferative neoplasm | myelodysplastic/myeloproliferative Neoplasm | myelodysplastic/myeloproliferative neoplasm |
+| MONDO:0018230 | skeletal dysplasia | primary bone dysplasia | skeletal dysplasia |
+| MONDO:0007944 | Treacher Collins syndrome 1 | Treacher-Collins syndrome 1 | Treacher Collins syndrome 1 |
+| MONDO:0009100 | type 1 diabetes mellitus 1 | IDDM 1 | type 1 diabetes mellitus 1 |
+| MONDO:0009613 | methylmalonic aciduria, cblA type | vitamin B12-responsive methylmalonic acidemia type cblA | methylmalonic aciduria, cblA type |
+| MONDO:0009614 | methylmalonic aciduria, cblB type | vitamin B12-responsive methylmalonic acidemia type cblB | methylmalonic aciduria, cblB type |
+| MONDO:0009655 | mucopolysaccharidosis type 3A | Sanfilippo syndrome type A | mucopolysaccharidosis type 3A |
+| MONDO:0009656 | mucopolysaccharidosis type 3B | Sanfilippo syndrome type B | mucopolysaccharidosis type 3B |
+| MONDO:0009657 | mucopolysaccharidosis type 3C | Sanfilippo syndrome type C | mucopolysaccharidosis type 3C |
+| MONDO:0009658 | mucopolysaccharidosis type 3D | Sanfilippo syndrome type D | mucopolysaccharidosis type 3D |
+| MONDO:0009971 | respiratory distress syndrome in premature infants | newborn respiratory distress syndrome | respiratory distress syndrome in premature infants |
+| MONDO:0043678 | chromosome inversion disorder | chromosome inversion | chromosome inversion disorder |
+| MONDO:0014955 | RCBTB1-related retinopathy | retinal dystrophy with or without extraocular anomalies | RCBTB1-related retinopathy |
+| MONDO:0017939 | minicore myopathy | classic multiminicore myopathy | minicore myopathy |
+| MONDO:0020495 | PEHO-like syndrome | peho-like syndrome | PEHO-like syndrome |
+| MONDO:0020718 | congenital short bowel syndrome, autosomal recessive | congenital short bowel syndrome 1 | congenital short bowel syndrome, autosomal recessive |
+| MONDO:0030067 | Treacher Collins syndrome 4 | treacher collins syndrome 4 | Treacher Collins syndrome 4 |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0009943 | Pyle disease | Pyle disease is a bone dysplasia characterised by genu valgum, metaphyseal anomalies with broadening of the long bones extending into the diaphyses and giving the femora and tibiae an 'Erlenmeyer flask'' appearance, widening of the ribs and clavicles, platyspondyly and cortical thinning. | A bone dysplasia characterised by genu valgum, metaphyseal anomalies with broadening of the long bones extending into the diaphyses and giving the femora and tibiae an 'Erlenmeyer flask'' appearance, widening of the ribs and clavicles, platyspondyly and cortical thinning. |
+| MONDO:0018234 | dysostosis | A disorder of the development of bone in which ossification is affected. | A group of disorders in which the skeletal involvement is predominantly manifested as abnormalities of individual bones or in a group of bones. |
+| MONDO:0020366 | congenital glaucoma | Congenital glaucoma (CG) is a developmental glaucoma that results from the abnormal development of the aqueous drainage structure, characterized by an elevated intra-ocular pressure, enlargement of globe (buphthalmos), corneal edema and optic nerve cupping, and presenting clinically with the characteristic triad of epiphora, photophobia and blepharospasm. | A developmental glaucoma that results from the abnormal development of the aqueous drainage structure, characterized by an elevated intra-ocular pressure, enlargement of globe (buphthalmos), corneal edema and optic nerve cupping, and presenting clinically with the characteristic triad of epiphora, photophobia and blepharospasm. |
+| MONDO:0020380 | autosomal dominant cerebellar ataxia | Autosomal dominant cerebellar ataxia (ADCA) describes a clinically and genetically heterogeneous group of neurodegenerative diseases characterized by a slowly progressive ataxia of gait, stance and limbs, dysarthria and/or oculomotor disorder, due to cerebellar degeneration in the absence of coexisting diseases. The degenerative process can be limited to the cerebellum (ADCA type 3) or may additionally involve the retina (ADCA type 2), optic nerve, ponto-medullary systems, basal ganglia, cerebral cortex, spinal tracts or peripheral nerves (ADCA type 1). In ACDA type 4, a cerebellar syndrome is associated with epilepsy. | A clinically and genetically heterogeneous group of neurodegenerative diseases characterized by a slowly progressive ataxia of gait, stance and limbs, dysarthria and/or oculomotor disorder, due to cerebellar degeneration in the absence of coexisting diseases. The degenerative process can be limited to the cerebellum (ADCA type 3) or may additionally involve the retina (ADCA type 2), optic nerve, ponto-medullary systems, basal ganglia, cerebral cortex, spinal tracts or peripheral nerves (ADCA type 1). In ACDA type 4, a cerebellar syndrome is associated with epilepsy. |
+| MONDO:0008667 | von Hippel-Lindau disease | Von Hippel-Lindau disease (VHL) is a familial cancer predisposition syndrome associated with a variety of malignant and benign neoplasms, most frequently retinal, cerebellar, and spinal hemangioblastoma, renal cell carcinoma (RCC), and pheochromocytoma. | A familial cancer predisposition syndrome associated with a variety of malignant and benign neoplasms, most frequently retinal, cerebellar, and spinal hemangioblastoma, renal cell carcinoma (RCC), and pheochromocytoma. |
+| MONDO:0004978 | aortic stenosis | In the same amount or manner; to the same degree; in the role, function, or capacity of. | |
+| MONDO:0018230 | skeletal dysplasia | | Any Mendelian diseases that affects growth and development of the skeleton. |
+| MONDO:0010920 | microtia | Microtia is a congenital malformation of the external ear, seen more frequently in males, that occurs sporadically or is inherited, that is characterized by unilateral (79-93% of cases, 60% of which involve the right ear) or bilateral small and abnormally shaped auricles and that is often associated with atresia or stenosis of the ear canal, attention deficit disorders and delayed language development. The variation in auricle size ranges from grade I, where the auricle is simply smaller than normal, to grade IV, also known as anotia, where there is a complete absence of the external ear and of the auditory canal. | A congenital malformation of the external ear, seen more frequently in males, that occurs sporadically or is inherited, that is characterized by unilateral (79-93% of cases, 60% of which involve the right ear) or bilateral small and abnormally shaped auricles and that is often associated with atresia or stenosis of the ear canal, attention deficit disorders and delayed language development. The variation in auricle size ranges from grade I, where the auricle is simply smaller than normal, to grade IV, also known as anotia, where there is a complete absence of the external ear and of the auditory canal. |
+| MONDO:0007671 | fibronectin glomerulopathy | Fibronectin glomerulopathy is a hereditary kidney disease characterized by proteinuria, type IV renal tubular acidosis, microscopic hematuria and hypertension that may lead to end-stage renal failure in the second to sixth decade of life. | A hereditary kidney disease characterized by proteinuria, type IV renal tubular acidosis, microscopic hematuria and hypertension that may lead to end-stage renal failure in the second to sixth decade of life. |
+| MONDO:0007764 | autosomal dominant osteosclerosis, Worth type | Worth type autosomal dominant osteosclerosis is a sclerozing bone disorder characterized by generalized skeletal densification, particularly of the cranial vault and tubular long bones, which is not associated to an increased risk of fracture. | A sclerozing bone disorder characterized by generalized skeletal densification, particularly of the cranial vault and tubular long bones, which is not associated to an increased risk of fracture. |
+| MONDO:0019072 | intrahepatic cholestasis | Intrahepatic cholestasis of pregnancy (ICP) is a cholestatic disorder characterized by (i) pruritus with onset in the second or third trimester of pregnancy, (ii) elevated serum aminotransferases and bile acid levels, and (iii) spontaneous relief of signs and symptoms within two to three weeks after delivery. | A cholestasis characterized by impairment of the bile flow caused by obstruction located in the liver. |
+| MONDO:0007838 | Jacobsen syndrome | Jacobsen syndrome is a multiple congenital anomaly/mental retardation (MCA/MR) contiguous gene syndrome caused by partial deletion of the long arm of chromosome 11. | A multiple congenital anomaly/intellectual disability contiguous gene syndrome caused by partial deletion of the long arm of chromosome 11. |
+| MONDO:0007856 | palmoplantar keratoderma-esophageal carcinoma syndrome | Tylosis with esophageal cancer (TOC) is an inherited condition characterized by palmoplantar keratoderma and esophageal cancer. The palmoplantar keratoderma usually begins around age 10, and esophageal cancer may form after age 20. This condition is caused by a mutation in the RHBDF2 gene and is inherited in an autosomal dominant pattern. | An inherited condition characterized by palmoplantar keratoderma and esophageal cancer. The palmoplantar keratoderma usually begins around age 10, and esophageal cancer may form after age 20. This condition is caused by a mutation in the RHBDF2 gene and is inherited in an autosomal dominant pattern. |
+| MONDO:0007864 | angioosteohypertrophic syndrome | Angio-osteohypertrophic (AOH) syndrome is a congenital vascular bone syndrome (CVBS) characterized by the presence of a vascular malformation in a limb, mainly of the arteriovenous type, which results in overgrowth of the affected limb. | A congenital vascular bone syndrome (CVBS) characterized by the presence of a vascular malformation in a limb, mainly of the arteriovenous type, which results in overgrowth of the affected limb. |
+| MONDO:0007893 | Noonan syndrome with multiple lentigines | Noonan syndrome with multiple lentigines (NSML), previously known as LEOPARD syndrome, is a rare multisystem genetic disorder characterized by lentigines, hypertrophic cardiomyopathy, short stature, pectus deformity, and dysmorphic facial features. | A rare multisystem genetic disorder characterized by lentigines, hypertrophic cardiomyopathy, short stature, pectus deformity, and dysmorphic facial features. |
+| MONDO:0008270 | polydactyly of a triphalangeal thumb | Polydactyly of a triphalangeal thumb or PPD2 is a form of preaxial polydactyly of fingers, a limb malformation syndrome, that is characterized by the presence of a usually opposable triphalangeal thumb with or without additional duplication of one or more skeletal components of the thumb. The thumb appearance can differ widely in shape (wedge to rectangular) or it can be deviated in the radio-ulnar plane (clinodactyly). PPD2 is also associated with systemic syndromes, including Holt-Oram syndrome and Fanconi anemia. | A form of preaxial polydactyly of fingers, a limb malformation syndrome, that is characterized by the presence of a usually opposable triphalangeal thumb with or without additional duplication of one or more skeletal components of the thumb. The thumb appearance can differ widely in shape (wedge to rectangular) or it can be deviated in the radio-ulnar plane (clinodactyly). PPD2 is also associated with systemic syndromes, including Holt-Oram syndrome and Fanconi anemia. |
+| MONDO:0008515 | syndactyly type 4 | Syndactyly type 4 (SD4) is a very rare congenital distal limb malformation characterized by complete bilateral syndactyly (involving all digits 1 to 5). | A very rare congenital distal limb malformation characterized by complete bilateral syndactyly (involving all digits 1 to 5). |
+| MONDO:0017417 | renal-hepatic-pancreatic dysplasia | Renal-hepatic-pancreatic dysplasia is a rare, genetic, developmental defect during embryogenesis syndrome characterized by the triad of pancreatic fibrosis (and cysts, with a reduction of parenchymal tissue), renal dysplasia (with peripheral cortical cysts, primitive collecting ducts, glomerular cysts and metaplastic cartilage) and hepatic dysgenesis (enlarged portal areas containing numerous elongated binary profiles with a tendancy to perilobular fibrosis). Situs abnormalities, skeletal anomalies and anencephaly have also been associated. Patients that survive the neonatal period present renal insufficiency, chronic jaundice and insulin-dependant diabetes. | A rare, genetic, developmental defect during embryogenesis syndrome characterized by the triad of pancreatic fibrosis (and cysts, with a reduction of parenchymal tissue), renal dysplasia (with peripheral cortical cysts, primitive collecting ducts, glomerular cysts and metaplastic cartilage) and hepatic dysgenesis (enlarged portal areas containing numerous elongated binary profiles with a tendancy to perilobular fibrosis). Situs abnormalities, skeletal anomalies and anencephaly have also been associated. Patients that survive the neonatal period present renal insufficiency, chronic jaundice and insulin-dependant diabetes. |
+| MONDO:0008941 | hepatic fibrosis-renal cysts-intellectual disability syndrome | Hepatic fibrosis-renal cysts-intellectual disability syndrome is a rare, syndromic intellectual disability characterized by early developmental delay with failure to thrive, intellectual disability, congenital hepatic fibrosis, renal cystic dysplasia, and dysmorphic facial features (bilateral ptosis, anteverted nostrils, high arched palate, and micrognathia). Variable additional features have been reported, including cerebellar anomalies, postaxial polydactyly, syndactyly, genital anomalies, tachypnea. There have been no further descriptions in the literature since 1987. | A rare, syndromic intellectual disability characterized by early developmental delay with failure to thrive, intellectual disability, congenital hepatic fibrosis, renal cystic dysplasia, and dysmorphic facial features (bilateral ptosis, anteverted nostrils, high arched palate, and micrognathia). Variable additional features have been reported, including cerebellar anomalies, postaxial polydactyly, syndactyly, genital anomalies, tachypnea. There have been no further descriptions in the literature since 1987. |
+| MONDO:0009041 | craniosynostosis-intellectual disability-clefting syndrome | A recessive syndrome characterized by craniosynostosis, mental retardation, seizures, choroidal coloboma, dysplastic kidneys, bat ears, cleft lip and palate, and beaked nose. | A recessive syndrome characterized by craniosynostosis, intellectual disability, seizures, choroidal coloboma, dysplastic kidneys, bat ears, cleft lip and palate, and beaked nose. |
+| MONDO:0009100 | type 1 diabetes mellitus 1 | | Any type 1 diabetes mellitus that is caused by variation in genes located in the MHC complex on chromosome 6p21.3. |
+| MONDO:0009458 | Schimke immuno-osseous dysplasia | Schimke immuno-osseous dysplasia (SIOD) is a multisystem disorder characterized by spondyloepiphyseal dysplasia and disproportionate short stature, facial dysmorphism, T-cell immunodeficiency, and glomerulonephritis with nephrotic syndrome. | A multisystem disorder characterized by spondyloepiphyseal dysplasia and disproportionate short stature, facial dysmorphism, T-cell immunodeficiency, and glomerulonephritis with nephrotic syndrome. |
+| MONDO:0009626 | pseudo-TORCH syndrome | Congenital intrauterine infection-like syndrome is characterised by the presence of microcephaly and intracranial calcifications at birth accompanied by neurological delay, seizures and a clinical course similar to that seen in patients after intrauterine infection with Toxoplasma gondii, Rubella, Cytomegalovirus, Herpes simplex (so-called TORCH syndrome), or other agents, despite repeated tests revealing the absence of any known infectious agent. | A Mendelian disease characterised by the presence of microcephaly and intracranial calcifications at birth accompanied by neurological delay, seizures and a clinical course similar to that seen in patients after intrauterine infection with Toxoplasma gondii, Rubella, Cytomegalovirus, Herpes simplex (so-called TORCH syndrome), or other agents, despite repeated tests revealing the absence of any known infectious agent. |
+| MONDO:0018948 | multiminicore myopathy | Multi-minicore Disease (MmD) is a hereditary neuromuscular disorder characterized by multiple cores on muscle biopsy and clinical features of a congenital myopathy. | A hereditary neuromuscular disorder characterized by multiple cores on muscle biopsy and clinical features of a congenital myopathy. |
+| MONDO:0009724 | nail-patella-like renal disease | Nail-patella-like renal disease is a severe nephropathy characterised by renal dysfunction, proteinuria, oedema and microscopic haematuria. It has been described in three brothers, two of which died from end-stage renal insufficiency. | A severe nephropathy characterised by renal dysfunction, proteinuria, oedema and microscopic haematuria. It has been described in three brothers, two of which died from end-stage renal insufficiency. |
+| MONDO:0010200 | Wilson disease | Wilson disease is a very rare inherited multisystemic disease presenting non-specific neurological, hepatic, psychiatric or osseo-muscular manifestations due to excessive copper deposition in the body. | A very rare inherited multisystemic disease presenting non-specific neurological, hepatic, psychiatric or osseo-muscular manifestations due to excessive copper deposition in the body. |
+| MONDO:0010208 | wrinkly skin syndrome | Wrinkly skin syndrome (WSS) is characterized by wrinkling of the skin of the dorsum of the hands and feet, an increased number of palmar and plantar creases, wrinkled abdominal skin, multiple skeletal abnormalities (joint laxity and congenital hip dislocation), late closing of the anterior fontanel, microcephaly, pre- and postnatal growth retardation, developmental delay and facial dysmorphism (a broad nasal bridge, downslanting palpebral fissures and hypertelorism). | A type of cutis laxa that is characterized by wrinkling of the skin of the dorsum of the hands and feet, an increased number of palmar and plantar creases, wrinkled abdominal skin, multiple skeletal abnormalities (joint laxity and congenital hip dislocation), late closing of the anterior fontanel, microcephaly, pre- and postnatal growth retardation, developmental delay and facial dysmorphism (a broad nasal bridge, downslanting palpebral fissures and hypertelorism). |
+| MONDO:0010275 | spondyloepimetaphyseal dysplasia, Bieganski type | Spondyloepimetaphyseal dysplasia, Bieganski type is a rare primary bone dysplasia disorder characterized by infantile-onset, progressive, multiple skeletal deformities in association with slowly progressive central and peripheral neurodegeneration. Patients present short stature, coarse facies, psychomotor regression and cognitive impairment. Imaging shows abnormally-shaped vertebral bodies, small, flat epiphyses, and widened metaphyses, as well as cerebral and cerebellar atrophy and progressive axonal-hypomyelinating neuropathy. | A rare genetic neurological disorder characterized by the association of hypomyelinating leukodystrophy with spondylometaphyseal dysplasia. Patients present in infancy with absent or delayed ability to walk independently, slowly progressive motor deterioration, spasticity, ataxia, proximal weakness, and joint contractures. Additional manifestations include mild cognitive impairment, short stature, scoliosis, enlarged and deformed joints, dysarthria, nystagmus, visual defects, and mildly dysmorphic features, among others. Mode of inheritance is X-linked recessive. |
+| MONDO:0010690 | congenital stationary night blindness 1A | Any congenital stationary night blindness in which the cause of the disease is a mutation in the NYX gene. | A congenital stationary night blindness caused by variants in the X-linked NYX gene. |
+| MONDO:0010870 | tibial muscular dystrophy | Tibial muscular dystrophy (TMD) is a distal myopathy characterized by weakness of the muscles of the anterior compartment of lower limbs, appearing in the fourth to seventh decade of life. | A distal myopathy characterized by weakness of the muscles of the anterior compartment of lower limbs, appearing in the fourth to seventh decade of life. |
+| MONDO:0011273 | H syndrome | H syndrome is a systemic inherited histiocytosis, with characteristic cutaneous findings accompanying systemic manifestations. H syndrome refers to the major clinical findings of hyperpigmentation, hypertrichosis, hepatosplenomegaly, heart anomalies, hearing loss, hypogonadism, low height, and occasionally, hyperglycemia/diabetes mellitus. Due to overlapping clinical features, H syndrome is now considered to include pigmented hypertrichosis with insulin dependent diabetes mellitus syndrome (PHID), Faisalabad histiocytosis (FHC) and familial sinus histiocytosis with massive lymphadenopathy (FSHML). | A systemic inherited histiocytosis, with characteristic cutaneous findings accompanying systemic manifestations. H syndrome refers to the major clinical findings of hyperpigmentation, hypertrichosis, hepatosplenomegaly, heart anomalies, hearing loss, hypogonadism, low height, and occasionally, hyperglycemia/diabetes mellitus. Due to overlapping clinical features, H syndrome is now considered to include pigmented hypertrichosis with insulin dependent diabetes mellitus syndrome (PHID), Faisalabad histiocytosis (FHC) and familial sinus histiocytosis with massive lymphadenopathy (FSHML). |
+| MONDO:0011426 | aceruloplasminemia | Aceruloplasminemia is an adult-onset disorder of neurodegeneration with brain iron accumulation (NBIA) characterized by anemia, retinal degeneration, diabetes and various neurological symptoms. | An adult-onset disorder of neurodegeneration with brain iron accumulation (NBIA) characterized by anemia, retinal degeneration, diabetes and various neurological symptoms. |
+| MONDO:0015609 | advanced sleep phase syndrome | Familial advanced sleep-phase syndrome (FASPS) is a very rare circadian rhythm sleep disorder characterized by very early sleep onset and offset possibly resulting in emotional and physical disruptions. | A very rare circadian rhythm sleep disorder characterized by very early sleep onset and offset possibly resulting in emotional and physical disruptions. |
+| MONDO:0043678 | chromosome inversion disorder | A type of chromosome rearrangement in which a segment has been turned through 180 degrees (inverted), and inserted back into its original location on the chromosome. | Chromosomal disorder consisting of the presence a chromosome rearrangement in which a segment has been turned through 180 degrees (inverted), and inserted back into its original location on the chromosome. |
+| MONDO:0012308 | Joubert syndrome with renal defect | Joubert syndrome with renal defect is a rare subtype of Joubert syndrome and related disorders (JSRD) characterized by the neurological features of JS associated with renal disease, in the absence of retinopathy. | A rare subtype of Joubert syndrome and related disorders (JSRD) characterized by the neurological features of JS associated with renal disease, in the absence of retinopathy. |
+| MONDO:0019573 | autosomal recessive cutis laxa type 2 | Autosomal recessive cutis laxa, type 2 (ARCL2) appears to cover a spectrum of connective tissue disorders characterized by the association of wrinkled, redundant and sagging inelastic skin with growth and developmental delay, and skeletal anomalies. The spectrum ranges from patients with classic ARCL2 (ARCL, DebrC) type) to patients with a milder form of the disease, wrinkled skin syndrome (WSS). | A spectrum of connective tissue disorders characterized by the association of wrinkled, redundant and sagging inelastic skin with growth and developmental delay, and skeletal anomalies. The spectrum ranges from patients with classic ARCL2 (ARCL, Debre) type) to patients with a milder form of the disease, wrinkled skin syndrome (WSS). |
+| MONDO:0034024 | kyphoscoliotic Ehlers-Danlos syndrome | A rare systemic disease for which two subtypes exist, either related to the gene PLOD1 or FKBP22, and for which the clinically overlapping characteristics include congenital muscle hypotonia, congenital or early-onset kyphoscoliosis (progressive or non-progressive), and generalized joint hypermobility with dislocations/subluxations (in particular of the shoulders, hips, and knees). Additional features which may occur in both subtypes are skin hyperextensibility, easy bruising of the skin, rupture/aneurysm of a medium-sized artery, osteopenia/osteoporosis, blue sclerae, umbilical or inguinal hernia, chest deformity, marfanoid habitus, talipes equinovarus, and refractive errors. Gene-specific features, with variable presentation, are additionally observed in each subtype. | A rare systemic disease for which two subtypes exist, either related to the gene PLOD1 or FKBP14 (formerly FKBP22), and for which the clinically overlapping characteristics include congenital muscle hypotonia, congenital or early-onset kyphoscoliosis (progressive or non-progressive), and generalized joint hypermobility with dislocations/subluxations (in particular of the shoulders, hips, and knees). Additional features which may occur in both subtypes are skin hyperextensibility, easy bruising of the skin, rupture/aneurysm of a medium-sized artery, osteopenia/osteoporosis, blue sclerae, umbilical or inguinal hernia, chest deformity, marfanoid habitus, talipes equinovarus, and refractive errors. Gene-specific features, with variable presentation, are additionally observed in each subtype. |
+| MONDO:0014128 | TCF12-related craniosynostosis | Any craniosynostosis in which the cause of the disease is a mutation in the TCF12 gene. | Any syndromic craniosynostosis in which the cause of the disease is a mutation in the TCF12 gene. |
+| MONDO:0700091 | ring chromosome disorder | Chromosomal anomaly consisting of the presence of a ring chromosome. A ring chromosome is a chromosome whose arms have fused together to form a ring, often with the loss of the ends of the chromosome. | Chromosomal disorder in which the chromosomal anomaly consists of the presence of a ring chromosome. A ring chromosome is a chromosome whose arms have fused together to form a ring, often with the loss of the ends of the chromosome. |
+| MONDO:0015588 | limbic encephalitis | Limbic encephalitis represents a group of autoimmune conditions characterized by inflammation of the limbic system and other parts of the brain.The cardinal sign of limbic encephalitis is a severe impairment of short-term memory; however,symptoms may also include confusion, psychiatric symptoms, and seizures.The symptomstypically develop over a few weeks or months, but they may evolve over a few days. Limbic encephalitis is often associated with an underlying neoplasm (paraneoplastic limbic encephalitis); however some cases never have a neoplasm identified (non-paraneoplastic limbic encephalitis). Delayed diagnosis is common, but improvements are being made to assist in early detection. Various tests including imaging studies (MRI, PET) laboratory tests (CSF analysis), and tests that measure the electrical activity of the brain (EEG) may be utilized to confirm a diagnosis. Treatment includes removal of the neoplasm (if identified) and immunotherapy. | A group of autoimmune conditions characterized by inflammation of the limbic system and other parts of the brain.The cardinal sign of limbic encephalitis is a severe impairment of short-term memory; however,symptoms may also include confusion, psychiatric symptoms, and seizures.The symptomstypically develop over a few weeks or months, but they may evolve over a few days. Limbic encephalitis is often associated with an underlying neoplasm (paraneoplastic limbic encephalitis); however some cases never have a neoplasm identified (non-paraneoplastic limbic encephalitis). Delayed diagnosis is common, but improvements are being made to assist in early detection. Various tests including imaging studies (MRI, PET) laboratory tests (CSF analysis), and tests that measure the electrical activity of the brain (EEG) may be utilized to confirm a diagnosis. Treatment includes removal of the neoplasm (if identified) and immunotherapy. |
+| MONDO:0015681 | childhood disintegrative disorder | Childhood disintergrative disorder is a rare pervasive developmental disorder with a disease onset before the age of three and characterized by a dramatic loss of behavioral and developmental functioning after atleast two years of normal development. Manifestations of the disease include loss of speech, incontinence, communication and social interaction problems, stereotypical autistic behaviors and dementia. | A rare pervasive developmental disorder with a disease onset before the age of three and characterized by a dramatic loss of behavioral and developmental functioning after atleast two years of normal development. Manifestations of the disease include loss of speech, incontinence, communication and social interaction problems, stereotypical autistic behaviors and dementia. |
+| MONDO:0016422 | autoimmune polyendocrinopathy type 3 | Autoimmune polyendocrinopathy type 3 is a rare, endocrine disease characterized by autoimmune thyroid disease associated with at least one other autoimmune disease, such as type I diabetes mellitus, chronic atrophic gastritis, pernicious anemia, vitiligo, alopecia, or myasthenia gravis, but excluding Addison disease. | A rare, endocrine disease characterized by autoimmune thyroid disease associated with at least one other autoimmune disease, such as type I diabetes mellitus, chronic atrophic gastritis, pernicious anemia, vitiligo, alopecia, or myasthenia gravis, but excluding Addison disease. |
+| MONDO:0700064 | aneuploidy | A chromosomal abnormality in which there is an addition or loss of chromosomes within a set. | Chromosomal disorder consisting of the presence a chromosomal abnormality in which there is an addition or loss of chromosomes within a set. |
+| MONDO:0017363 | idiopathic chronic eosinophilic pneumonia | Idiopathic chronic eosinophilic pneumonia (ICEP) is a very rare, severe, interstitial lung disease of insidious onset with subacute or chronic non-specific respiratory manifestations (dyspnea, cough, wheezing) often associated with systemic manifestations (fatigue, malaise, weight loss). | A very rare, severe, interstitial lung disease of insidious onset with subacute or chronic non-specific respiratory manifestations (dyspnea, cough, wheezing) often associated with systemic manifestations (fatigue, malaise, weight loss). |
+| MONDO:0042981 | aortic valve stenosis | | Aortic valve stenosis (AVS) is a condition characterized by narrowing of the heart's aortic valve opening. This narrowing prevents the valve from opening fully, which obstructs blood flow from the heart into the aorta, and onward to the rest of the body. AVS can range from mild to severe. Signs and symptoms typically develop when the narrowing of the opening is severe and may include chest pain (angina) or tightness; shortness of breath or fatigue (especially during exertion); feeling faint or fainting; heart palpitations; and heart murmur. Individuals with less severe congenital AVS (present at birth) may not develop symptoms until adulthood. Individuals with severe cases may faint without warning. AVS can have several causes including abnormal development before birth (such as having 1 or 2 valve leaflets instead of 3); calcium build-up on the valve in adulthood; and rheumatic fever. |
+| MONDO:0018017 | goblet cell carcinoma | Goblet cell carcinoma (GCC) is an aggressive type of endocrine tumor of the appendix presenting equally in males and females in the fifth decade of life and manifesting with a palpable mass and abdominal pain or acute appendicitis. Metastasis to the ovaries, peritoneum or right colon has usually already occurred in half of patients at the time of diagnosis. | An aggressive type of endocrine tumor of the appendix presenting equally in males and females in the fifth decade of life and manifesting with a palpable mass and abdominal pain or acute appendicitis. Metastasis to the ovaries, peritoneum or right colon has usually already occurred in half of patients at the time of diagnosis. |
+| MONDO:0019934 | polyploidy | The chromosomal constitution of a cell containing multiples of the normal number of chromosomes; includes triploidy (symbol: 3N), tetraploidy (symbol: 4N), etc. | Chromosomal disorder in which the chromosomal constitution of a cell containing multiples of the normal number of chromosomes; includes triploidy (symbol: 3N), tetraploidy (symbol: 4N), etc. |
+| MONDO:0019068 | congenital membranous nephropathy due to maternal anti-neutral endopeptidase alloimmunization | Congenital membranous nephropathy due to maternal anti-neutral endopeptidase (NEP) alloimmunization (CMNEPA) is a glomerular disease characterized by severe renal failure and nephrotic syndrome at birth, which rapidly improve in the first weeks of life. | A glomerular disease characterized by severe renal failure and nephrotic syndrome at birth, which rapidly improve in the first weeks of life. |
+| MONDO:0019780 | anotia | Anotia is a congenital malformation of the external ear and the most extreme form of microtia characterized by the complete absence of the external ear and auditory canal, conductive hearing loss, attention deficit disorders and delayed language development. | A congenital malformation of the external ear and the most extreme form of microtia characterized by the complete absence of the external ear and auditory canal, conductive hearing loss, attention deficit disorders and delayed language development. |
+| MONDO:0020049 | autosomal anomaly | A chromosomal anomaly that involves an autosome. | Chromosomal disorder in which the chromosomal anomaly involves an autosome. |
+| MONDO:0020058 | gonosome anomaly | | Chromosomal disorder in which the chromosomal anomaly involves an gonosome. A gonosome is a chromosome responsible for sex determination. In humans and most animals, the sex chromosomes are designated X and Y. |
+| MONDO:0030669 | gastrointestinal defects and immunodeficiency syndrome 2 | | A severe autosomal recessive developmental disorder characterized by multiple intestinal atresia apparent soon after birth. Affected infants have a distended abdomen and do not pass meconium. There is some evidence of inflammatory bowel disease. Death occurs in the first weeks of life. Some patients may also have immunodeficiency. |
+| MONDO:0035678 | Timothy syndrome type 1 | | Classical Timothy syndrome with cutaneous syndactyly. |
+| MONDO:0035679 | Timothy syndrome type 2 | | Classical Timothy syndrome without cutaneous syndactyly. |
+| MONDO:0100325 | odontochondrodysplasia 1 | Odontochondrodysplasia, also called Goldblatt syndrome, is a very rare syndrome associating chondrodysplasia with dentinogenesis imperfecta. | A very rare syndrome associating chondrodysplasia with dentinogenesis imperfecta. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0001726 | obsolete childhood disintegrative disease |
+| MONDO:0006089 | obsolete appendix goblet cell carcinoid |
+| MONDO:0006832 | obsolete limited scleroderma |
+| MONDO:0006906 | obsolete pigmented villonodular synovitis |
+| MONDO:0010143 | obsolete lethal restrictive dermopathy |
+| MONDO:0010594 | obsolete inherited genitourinary tract anomalies |
+| MONDO:0011108 | obsolete Stüve-Wiedemann syndrome |
+| MONDO:0011878 | obsolete Worth syndrome |
+| MONDO:0014109 | obsolete NGLY1-deficiency |
+| MONDO:0014761 | obsolete hereditary pediatric Behçet-like disease |
+| MONDO:0017606 | obsolete facial nerve palsy due to herpes zoster infection |
+| MONDO:0021145 | obsolete disorder of genitourinary system |
+| MONDO:0021849 | obsolete alopecia macular degeneration growth retardation syndrome |
+| MONDO:0023235 | obsolete giant congenital nevus |
+| MONDO:0025370 | obsolete urogenital neoplasm |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0015508 | genetic parenchymatous liver disease |
+| MONDO:0015979 | hereditary predisposition to infections |
+| MONDO:0000508 | syndromic intellectual disability |
+| MONDO:0024255 | genetic skin disease |
+| MONDO:0020127 | genetic peripheral neuropathy |
+| MONDO:0019117 | genetic nervous system disorder |
+| MONDO:0016156 | qualitative or quantitative defects of FKRP |
+| MONDO:0016184 | qualitative or quantitative defects of protein O-mannosyltransferase 1 |
+| MONDO:0016185 | qualitative or quantitative defects of protein O-mannosyltransferase 2 |
+| MONDO:0019058 | neurometabolic disease |
+| MONDO:0043005 | genetic multiple congenital anomalies/dysmorphic syndrome |
+| MONDO:0000218 | preimplantation embryonic lethality |
+| MONDO:0019721 | syndromic renal or urinary tract malformation |
+| MONDO:0015110 | genetic cardiac rhythm disease |
+| MONDO:0000601 | autoimmune disorder of urogenital tract |
+| MONDO:0015953 | genetic central nervous system and retinal vascular disease |
+| MONDO:0015512 | genetic hypertension |
+| MONDO:0015509 | genetic biliary tract disease |
+| MONDO:0020676 | disorder of central nervous system or retinal vasculature |
+| MONDO:0019589 | syndromic genetic hearing loss |
+| MONDO:0018751 | genetic otorhinolaryngologic disease |
+| MONDO:0043008 | genetic multiple congenital anomalies/dysmorphic syndrome without intellectual disability |
+| MONDO:0003998 | vaginal tubular adenoma |
+| MONDO:0019833 | pituitary hormone deficiency from tumoral origin |
+| MONDO:0020225 | syndromic cataract |
+| MONDO:0017143 | genetic infertility |
+| MONDO:0015547 | genetic dementia |
+| MONDO:0018787 | genetic cerebral small vessel disease |
+| MONDO:0019843 | pituitary hormone deficiency secondary to a granulomatous disease |
+| MONDO:0006657 | apparent mineralocorticoid excess syndrome |
+| MONDO:0043007 | genetic multiple congenital anomalies/dysmorphic syndrome-variable intellectual disability syndrome |
+| MONDO:0019285 | syndromic nail anomaly |
+| MONDO:0015246 | syndromic anorectal malformation |
+| MONDO:0016229 | genetic vascular anomaly |
+| MONDO:0017760 | disorder of other vitamins and cofactors metabolism and transport |
+| MONDO:0015163 | primary glomerular disease |
+| MONDO:0019601 | autosomal recessive axonal hereditary motor and sensory neuropathy |
+| MONDO:0015617 | genetic gastro-esophageal disease |
+| MONDO:0007665 | glaucoma 1, open angle, E |
+| MONDO:0016513 | alpha-thalassemia-related diseases |
+| MONDO:0020208 | syndromic myopia |
+| MONDO:0018795 | syndromic constitutional thrombocytopenia |
+| MONDO:0015360 | autosomal dominant hereditary axonal motor and sensory neuropathy |
+| MONDO:0018188 | genetic intestinal polyposis |
+| MONDO:0016195 | qualitative or quantitative defects of beta-myosin heavy chain (MYH7) |
+| MONDO:0008085 | neuropathy, hereditary sensorimotor, with upper motor neuron, visual pathway and autonomic disturbance |
+| MONDO:0017031 | primary interstitial lung disease in childhood and adulthood |
+| MONDO:0008370 | reticular dystrophy of retinal pigment epithelium |
+| MONDO:0016187 | qualitative or quantitative defects of desmin |
+| MONDO:0019282 | syndromic hair shaft abnormality |
+| MONDO:0019834 | pituitary hormone deficiency from meningeal origin |
+| MONDO:0018609 | syndromic hereditary optic neuropathy |
+| MONDO:0009011 | constriction rings syndrome |
+| MONDO:0016151 | qualitative or quantitative defects of perlecan |
+| MONDO:0016198 | qualitative or quantitative defects of plectin |
+| MONDO:0016165 | genetic hypoparathyroidism |
+| MONDO:0015182 | congenital enteropathy involving intestinal mucosa development |
+| MONDO:0016152 | qualitative or quantitative defects of calpain |
+| MONDO:0016145 | qualitative or quantitative defects of dysferlin |
+| MONDO:0016143 | qualitative or quantitative defects of gamma-sarcoglycan |
+| MONDO:0016153 | qualitative or quantitative defects of TRIM32 |
+| MONDO:0016193 | qualitative or quantitative defects of alpha-actin |
+| MONDO:0016197 | qualitative or quantitative defects of selenoprotein N1 |
+| MONDO:0017303 | qualitative or quantitative defects of tropomyosin |
+| MONDO:0009827 | pachyonychia congenita, autosomal recessive |
+| MONDO:0016147 | qualitative or quantitative defects of dystrophin |
+| MONDO:0016196 | qualitative or quantitative defects of emerin |
+| MONDO:0016154 | qualitative or quantitative defects of myotubularin |
+| MONDO:0016110 | non-dystrophic myopathy |
+| MONDO:0016199 | qualitative or quantitative defects of protein SERCA1 |
+| MONDO:0016144 | qualitative or quantitative defects of delta-sarcoglycan |
+| MONDO:0016192 | qualitative or quantitative defects of telethonin |
+| MONDO:0011222 | glaucoma 1, open angle, D |
+| MONDO:0011311 | glaucoma 1, open angle, F |
+| MONDO:0017146 | sickle cell disease and related diseases |
+| MONDO:0017144 | alpha-thalassemia and related diseases |
+| MONDO:0016191 | qualitative or quantitative defects of titin |
+| MONDO:0016142 | qualitative or quantitative defects of beta-sarcoglycan |
+| MONDO:0017302 | qualitative or quantitative defects of troponin |
+| MONDO:0016200 | qualitative or quantitative defects of glucosamine (UDP-N-acetyl)-2-epimerase/N-acetylmannosamine kinase - |
+| MONDO:0011704 | glaucoma 1, open angle, B |
+| MONDO:0016141 | qualitative or quantitative defects of alpha-sarcoglycan |
+| MONDO:0016201 | qualitative or quantitative defects of myotilin |
+| MONDO:0016190 | qualitative or quantitative defects of protein ZASP |
+| MONDO:0016189 | qualitative or quantitative defects of filamin C |
+| MONDO:0012337 | glaucoma 1, open angle, I |
+| MONDO:0012357 | glaucoma 1, open angle, G |
+| MONDO:0012646 | glaucoma 1, open angle, H |
+| MONDO:0016157 | qualitative or quantitative defects of fukutin |
+| MONDO:0016150 | qualitative or quantitative defects of integrin alpha-7 |
+| MONDO:0018283 | primary qualitative or quantitative defects of alpha-dystroglycan |
+| MONDO:0016155 | qualitative or quantitative defects of protein involved in O-glycosylation of alpha-dystroglycan |
+| MONDO:0014783 | preimplantation embryonic lethality 1 |
+| MONDO:0018529 | qualitative or quantitative defects of Torsin-1A-interacting protein 1 |
+| MONDO:0014978 | preimplantation embryonic lethality 2 |
+| MONDO:0018775 | axonal hereditary motor and sensory neuropathy |
+| MONDO:0016194 | qualitative or quantitative defects of nebulin |
+| MONDO:0016139 | qualitative or quantitative protein defects in neuromuscular diseases |
+| MONDO:0016140 | sarcoglycanopathy |
+| MONDO:0016149 | qualitative or quantitative defects of merosin |
+| MONDO:0018282 | qualitative or quantitative defects of alpha-dystroglycan |
+| MONDO:0016166 | genetic hyperparathyroidism |
+| MONDO:0016182 | qualitative or quantitative defects of protein O-mannose beta1,2N-acetylglucosaminyltransferase |
+| MONDO:0016183 | qualitative or quantitative defects of protein glycosyltransferase-like |
+| MONDO:0016186 | qualitative or quantitative defects of myofibrillar proteins |
+| MONDO:0016188 | qualitative or quantitative defects of alphaB-cristallin |
+| MONDO:0016667 | sickle cell disease associated with an other hemoglobin anomaly |
+| MONDO:0017030 | interstitial lung disease in childhood and adulthood |
+| MONDO:0017034 | secondary interstitial lung disease in childhood and adulthood |
+| MONDO:0017040 | exposure-related interstitial lung disease |
+| MONDO:0042981 | aortic valve stenosis |
+| MONDO:0021027 | genetic hair anomaly |
+| MONDO:0021028 | genetic nail anomaly |
+| MONDO:0019841 | pituitary hormone defiency from vascular origin |
+| MONDO:0019777 | Carpenter-Waziri syndrome |
+| MONDO:0020503 | resistance to thyrotropin-releasing hormone syndrome |
+| MONDO:0022018 | Borrone di Rocco Crovato syndrome |
+| MONDO:0022620 | CD4 deficiency |
+| MONDO:0022880 | corticobasal degeneration |
+| MONDO:0044331 | genetic transient congenital hypothyroidism |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0024686 | tenosynovial giant cell tumor, diffuse type |
+
 # 2022-06-01
 
 ## Overview:
