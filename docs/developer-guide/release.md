@@ -43,6 +43,8 @@ _Note: While the release is running, don't shut your laptop or switch between re
 2. The commands to use are:  
 `sh run.sh make NORM`  
 `mv NORM mondo-edit.obo`   
+3. Move the changes to a branch and create a pull request and wait for the checks to pass.
+4. Merge the PR and continue with the release.
 
 ## Prepare the release
 1. Do a docker pull: `docker pull obolibrary/odkfull`
