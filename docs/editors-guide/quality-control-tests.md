@@ -137,6 +137,7 @@ WHERE
       "ClinGen",
       "CSP",
       "DC-OMIM", #Consider removing
+      "DECIPHER",
       "DERMO",
       "doi",
       "DOID",
@@ -226,6 +227,7 @@ WHERE
   FILTER( STRBEFORE(str(?value),":") not in (
       "CSP",
       "DERMO",
+      "DECIPHER",
       "DOID",
       "EFO",
       "GARD",
