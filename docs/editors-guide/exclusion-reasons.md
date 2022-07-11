@@ -5,13 +5,14 @@ _This document is a work in progress._ Noted below are reasons for excluding ext
 
 ID| Reasons for exclusion | Description | Example
 ---| ---| --- | --
-MONDO:excludeBiologicalProcess |biological process | The concept describes a biological process and not a disease.| ICD10CM:O00-O08 Pregnancy with abortive outcome                                                                      
+MONDO:excludeBiologicalProcess | biological process | The concept describes a biological process and not a disease.| ICD10CM:O00-O08 Pregnancy with abortive outcome                                                                      
 MONDO:excludeBiomarker | biomarker | A biomarker that is used for disease status and not a disease, such as estrogen receptor status for breast cancer. | ICD10CM:Z17-Z17 Estrogen receptor status
 MONDO:excludeCausingAgents | disease causing agents | Agents, such as bacteria or other pathogens, that cause disease, but the code(s) do not refer to diseases themselves. | ICD10CM:B95-B97 Bacterial and viral infectious agents          
 MONDO:excludeClinicalModifier | clinical modifier | Diseases that are modified by a clinical modifier (such as symptomatic, severe, etc.) may be out of scope by Mondo. | MONDO:0034028 symptomatic form of hemochromatosis type 1
-MONDO:excludeClinicalSituation | clinical situation | Partiular clinical situations in a disease or syndrome, not diseases themselves. | Orphanet:244275 de novo thrombotic microangiopathy after kidney transplantation 
+MONDO:excludeClinicalSituation | clinical situation | Particular clinical situations in a disease or syndrome, not diseases themselves. | Orphanet:244275 de novo thrombotic microangiopathy after kidney transplantation 
 MONDO:excludeComplication | complication | A secondary disease or condition aggravating an already existing one that is the result of an event (like birth), procedure or surgery. | J95-J95 Intraoperative and postprocedural complications and disorders of respiratory system, not elsewhere classified 
 MONDO:excludeConditionsCausedByExternalForce | conditions caused by external force | A condition that is caused by an external force (such as a transport accident) and not a disease. | ICD10CM:V95-V97 Air and space transport accidents                                                       
+MONDO:excludeFinding | finding | The concept described is not a clinical finding, not a disease. | MONDO:0001424 sarcoid meningitis
 MONDO:excludeGeneticCarrier | genetic carrier | The concept described is not a disease, it is for individual who is heterozygous for a recessive gene and thus does not express the recessive phenotype but can transmit the gene to offspring. | ICD10CM:Z14-Z15 Genetic carrier and genetic susceptibility to disease
 MONDO:excludeGene | gene | A concept that refers to a gene (or protein). | OMIM:607044 T-BOX 24
 MONDO:excludeGeneticFormOfDisease | genetic form of disease | A grouping class that that is characterized by the feature of having a genetic or inheritable component. We don't include these terms in Mondo because it is a grouping class that is not commonly used. | Orphanet:183472 genetic dermis disorder
