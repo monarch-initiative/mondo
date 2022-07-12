@@ -1,10 +1,10 @@
 # GitHub Pull Request Workflow
 
 This documentation was adapted from the [Gene Ontology editors guide](http://go-ontology.readthedocs.io/en/latest/DailyWorkflow.html).  
-_Updated 2019-08-19 by Nicole Vasilevsky_
+_Updated 2022-07-12 by Nicole Vasilevsky_
 
 ## Updating the local copy of the ontology with ‘git pull’
-1. Navigate to your local directory of mondo: cd git/mondo/src/ontology
+1. In the terminal, navigate to your local directory of mondo: cd git/mondo/src/ontology
 2. If the terminal window is not configured to display the branch name, type: git status. You will see:  
 
 `On branch [master] [or the name of the branch you are on]`  
@@ -88,8 +88,8 @@ For example:
 6. Click on the green box ‘Pull request’ to generate a pull request.
 
 ## Merging 
-1. **Chris Mungall will merge any pull requests for now**
-2. Wait for the Travis checks to complete (this can take several minutes. In some cases, it can take almost an hour). If the Travis checks failed, go back to your working copy and correct the reported errors.
+1. A member of the Mondo curation team will review and merge any pull requests.
+2. Wait for the Travis checks to complete (this usually takes about 30 minutes, unless the checks fail, in which case, you'll see the failure within a few minutes. If the Travis checks failed, go back to your working copy and correct the reported errors.
 
 ## Merge instructions
 1. If the Travis checks are successful and if you are done working on that branch, merge the pull request. Confirming the merge will close the ticket if you have used the word ‘fixes’ in your commit comment. **NOTE:** Merge the branches only when the work is completed. If there is related work to be done as a follow up to the original request, create a new GitHub ticket and start the process from the beginning.
