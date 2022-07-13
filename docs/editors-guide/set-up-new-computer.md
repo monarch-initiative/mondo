@@ -22,7 +22,7 @@ Set memory ~60% of your system memory, for example, if you have 16GB of RAM, the
 ## Install Java
 note: brew install java has changed since a few months ago (early 2021)
 
-`wget brew install java`
+`brew install java`
 
 `echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc`
 
