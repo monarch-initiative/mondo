@@ -24,6 +24,12 @@ Sabrina Toro, Nicole Vasilevsky, Nico Matentzoglu
 ### Description
 This workshop was presented at the virtual [Curating the Clinical Genome conference](https://clinicalgenome.org/about/events/curating-the-clinical-genome-2022/agenda/). 31 participants attended. We introduced participants to Mondo, its advantages, and how it relates to other disease terminologies. The focus will be on disease curation best practices, how to use Mondo to annotate disease data, where to find disease terms, what to do if required terms do not exist in Mondo, and how to request changes or improvements. Mondo is a collaborative and community-developed resource; workshop attendees will learn how to contribute to Mondo. This workshop also introduced the Mondo ontology curation workflow, including new term creation, and how different user requests are reconciled (e.g. disease naming), term obsoletions and merges, and ontology releases. In addition, technical aspects of Mondo, including quality control and automated pipelines, were discussed.
 
+Participants were polled at the beginning of the workshop about their usage and familiarity with Mondo. Participants were either very familiar with ontologies (8 respondents, 50%), or had heard about ontologies but didn’t understand what they were (7 respondents, 44%); one respondent (6%) did not know what ontology is. Half of the respondents use ontologies for curation anytime possible (8 respondents, 50%), while the other half either occasionally use ontologies for curation (4 respondents, 25%) or do not use ontology for data curation (4 respondents, 25%).
+
+Most respondents used Mondo for disease curation (7 respondents, 39%) or knew about Mondo but did not use it (7 respondents, 39%). 2 respondents used Mondo for disease annotations and active members of the Mondo community, 2 respondents were Mondo users for reasons other than curation, and 1 respondent had never heard of Mondo.
+
+Most respondents (13, 72%) had never requested changes to Mondo; the other respondents had either created GitHub issues (4 respondents) and/or contracted the Mondo team (3 respondents).
+
 ### Date and Time
 **June 08, 2022**  
 9-10:30am PT / 12-1:30pm EST / 5-6:30pm UK / 6-7:30pm Europe
