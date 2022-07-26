@@ -96,6 +96,10 @@ In the resulting pop-up window, click on the `New Entities` tab and set the valu
 
 ![NewEntities](images/NewEntities.png)
 
+### Switching ID range
+
+If you edit another ontology besides Mondo, you will need to switch your ID range. Protege (unfortunately) does not remember the last prefix or ID range that you used when you switch between ontologies. Therefore we need to manually update this each time we switch ontologies. See [instructions here](https://oboacademy.github.io/obook/howto/switching-ontologies/).
+
 ## User details
 
 1. `User name` Clcik `Use supplied user name:` add your name (ie nicolevasilevsky)
