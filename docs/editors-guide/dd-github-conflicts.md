@@ -34,3 +34,7 @@ Some examples of conflicts Nicole worked on are below:
 ![Example2](images/FixGitHubConflicts/Slide2.jpeg)
 ![Example3](images/FixGitHubConflicts/Slide3.jpeg)
 ![Example4](images/FixGitHubConflicts/Slide4.jpeg)
+
+## Video explanation
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cB1ZDfBNNN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
