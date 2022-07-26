@@ -5,7 +5,7 @@ Sometimes a pull request will have a conflict with the base branch. These confli
 ### Rebase instructions using command line:
 1. checkout branch that has conflicts
 2. `git rebase master`
-3. Make changes in file (open the mondo-edit.obo file in a text editor (like Sublime) and search for the conflicts. These are usually preceeded by <<<<<. Fix the conflicts, then save.)
+3. Make changes in file (open the mondo-edit.obo file in a text editor (like Sublime) and search for the conflicts. These are usually preceded by <<<<<. Fix the conflicts, then save.)
 4. `git add -A`
 5. `git rebase --continue`
 6. `git push -f`
@@ -19,7 +19,7 @@ _updated 2021-07-12_
 3. Pull branch. 
 4. Branch -> update from master. 
 5. Open in Sublime or Atom. 
-6. Make changes in file (open the mondo-edit.obo file in a text editor (like Sublime) and search for the conflicts. These are usually preceeded by <<<<<. Fix the conflicts, then save). 
+6. Make changes in file (open the mondo-edit.obo file in a text editor (like Sublime) and search for the conflicts. These are usually preceded by <<<<<. Fix the conflicts, then save). 
 7. In GitHub Desktop, continue merge. 
 8. Push. 
 9. In terminal: `open mondo-edit.obo` (or open in Protege manually). 
