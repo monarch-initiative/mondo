@@ -5,7 +5,7 @@ _Updated 2021-08-05_
 ## Merging a ROBOT template into Mondo:
 
 1. Create Google sheet with ROBOT template
-1. Click File->Publish to the Web
+1. Click File->Share->Publish to the Web
 1. Publish the specific sheet as TSV
 1. Copy the link to the TSV
 1. Run `git checkout master — mondo-edit.obo`  to revert mondo-edit.obo to the state it is on the master branch. This is only important if you have run the template command before.
