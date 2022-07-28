@@ -4,7 +4,7 @@ _Updated 2021-08-05_
 
 ## Merging a ROBOT template into Mondo:
 
-1. Create Google sheet with ROBOT template
+1. Create Google sheet with ROBOT template. See example Mondo ROBOT templates [here](https://github.com/monarch-initiative/mondo/tree/master/src/templates). See more details about ROBOT templates [here](https://oboacademy.github.io/obook/lesson/templates-for-obo/#robot-template-vs-dosdp-template).
 1. Click File->Share->Publish to the Web
 1. Publish the specific sheet as TSV
 1. Copy the link to the TSV
