@@ -11,7 +11,7 @@
     1. Consider: the replacement term that should be considered for use after the term is obsoleted. If there is no replacement, leave it blank.
     1. Obsoletion reason: chose from dropdown list.
     1. Comment: 
-       1. do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
+       1. Do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
        1. manually check the term to be obsoleted for comment. 
           1. If the term to be obsoleted already has a comment, manually add the structured obsoletion comment to the existing comment.
           2. If the term to be obsoleted does NOT has a comment, copy and paste the formula from the row above and add it in the "Comment to be automatically added" column  
