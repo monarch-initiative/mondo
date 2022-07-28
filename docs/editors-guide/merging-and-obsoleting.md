@@ -10,7 +10,11 @@
     1. seeAlso: GitHub ticket that describes the obsoletion request
     1. Consider: the replacement term that should be considered for use after the term is obsoleted. If there is no replacement, leave it blank.
     1. Obsoletion reason: chose from dropdown list.
-    1. Comment: do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
+    1. Comment: 
+       1. do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
+       1. manually check the term to be obsoleted for comment. 
+          1. If the term to be obsoleted already has a comment, manually add the structured obsoletion comment to the existing comment.
+          2. If the term to be obsoleted does NOT has a comment, copy and paste the formula from the row above and add it in the "Comment to be automatically added" column  
     1. Obsoletion candidate subset: This should always be http://purl.obolibrary.org/obo/mondo#obsoletion_candidate
     1. obsoletion date: should be a release date at the first of the month, at least two months from today. Please write in the format YYYY-MM-DD.
 4. If a term is to be merged, in a new row in the [ROBOT_MergeTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1109324509), add the information above, and in addition, add:
