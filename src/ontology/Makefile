@@ -245,7 +245,9 @@ $(ONT).owl: reasoned.owl
 
 # obo is self-contained
 $(ONT).obo: reasoned.owl
-	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
+	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@.tmp.owl
+	owltools --use-catalog $@.tmp.owl --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
+	rm -f $@.tmp.owl
 $(ONT).json: $(ONT).owl
 	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
