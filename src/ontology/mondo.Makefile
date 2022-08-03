@@ -32,7 +32,11 @@ obo_validator:
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
+test: test_reason_equivalence_hermit
 test: obo_validator
+
+test_reason_equivalence_hermit: $(ONT).obo
+	$(ROBOT) reason -i $< --equivalent-classes-allowed none -r hermit
 
 test_reason_equivalence: $(SRC)
 	$(ROBOT) merge -i $< \

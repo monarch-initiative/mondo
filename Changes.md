@@ -1,3 +1,176 @@
+# 2022-08-01
+
+## Overview:
+
+* Number of new terms: 19
+* Number of changed labels: 6
+* Number of changed definitions: 35
+* Number obsoleted terms: 34
+* Number of new obsoletion candidates: 34
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 1
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0030827 | macrothrombocytopenia, isolated, 2, autosomal dominant | |
+| MONDO:0030839 | thyroid hormone metabolism, abnormal, 2 | |
+| MONDO:0031432 | thyroid hormone metabolism, abnormal | |
+| MONDO:0031447 | macrothrombocytopenia, isolated | |
+| MONDO:0100498 | UROD-related inherited porphyria | Any inherited porphyria in which the cause of the disease is monoallelic or biallelic variants in the UROD gene. |
+| MONDO:0100502 | NTHL1-deficiency tumor predisposition syndrome | Biallelic constitutional/germline loss-of-function NTHL1 variants confer predisposition to tumor formation demonstrating ‘COSMIC Signature 30’ mutation profile. Tumors have been reported at multiple primary sites; in particular adenomatous polyposis of colon (~10-50 polyps), colorectal cancer, and breast cancer. |
+| MONDO:0100503 | DPH5-related diphthamide-deficiency syndrome | A neurodevelopmental disorder in which the cause of the disease is a mutation in the DPH5 gene, which is characterized by craniofacial dysmorphology, profound neurodevelopmental delay, multisystem abnormalities, and miscarriages. |
+| MONDO:0100504 | fungal infection of the toenail | A fungal infectious disease that involves the toenail. |
+| MONDO:0100505 | food dermatitis | Dermatitis caused by an allergic reaction to ingested food. |
+| MONDO:0100506 | Cockayne spectrum with or without cerebrooculofacioskeletal syndrome | An autosomal recessive, multisystem condition caused by pathogenic variants of the ERCC6 gene, encoding the DNA excision repair protein, ERCC-6. Cockayne spectrum with or without cerebrooculofacioskeletal syndrome is characterized by growth failure at birth, with little or no postnatal neurologic development in addition to congenital cataracts or other structural anomalies of the eye, early postnatal contractures of the spine (kyphosis, scoliosis) and joints, and death usually occurring by age five years. This term lumps Cockayne syndrome type 2/B (CSB), cerebrooculofacioskeletal syndrome 1 (COFS syndrome), and De Sanctis-Cacchione syndrome into a spectrum of disease. |
+| MONDO:0700082 | Robertsonian translocation Down syndrome | Chromosomal disorder in which (part or full) chromosome 21 is attached to another chromosome, resulting in the presence of a third copy of part of full chromosome 21 genetic material. A Robertsonian translocation is a structural chromosomal anomaly in which two acrocentric chromosomes break, resulting in the fusion of the nonhomologous chromosomes’ long arms to form a single, large chromosome. |
+| MONDO:0700083 | reciprocal translocation down syndrome | Chromosomal disorder in which (part or full) chromosome 21 has been exchange with another chromosome, resulting in the presence of a third copy of (part or full) chromosome 21 genetic material. A reciprocal translocation is a chromosome abnormality caused by exchange of parts between non-homologous chromosomes. |
+| MONDO:0700093 | balanced Robertsonian translocation Down syndrome | Robertsonian translocation Down syndrome in which translocation displacement of the end regions of chromosomes occured without loss of chromosomal material between the two nonhomologous chromosomes. |
+| MONDO:0700094 | unbalanced Robertsonian translocation Down syndrome | Robertsonian translocation Down syndrome in which translocation displacement of the end regions of chromosomes occured with loss of chromosomal material between the two nonhomologous chromosomes. |
+| MONDO:0800046 | thyroid hormone metabolism, abnormal 1 | A rare, genetic congenital hypothyroidism disorder characterized by mild global developmental delay in childhood, short stature, delayed bone age, and abnormal thyroid and selenium levels in serum (high total and free T4 concentrations, low T3, high reverse T3, normal to high TSH, decreased selenium). Intellectual disability, primary infertility, hypotonia, muscle weakness, and impaired hearing have also been reported. |
+| MONDO:0800047 | macrothrombocytopenia, isolated, 1, autosomal dominant | Any autosomal dominant macrothrombocytopenia in which the cause of the disease is a mutation in the TUBB1 gene. |
+| MONDO:0800104 | immunodeficiency 105 | Any immunodeficiency disease which the cause of the disease is a mutation in the PTPRC gene. |
+| MONDO:0800105 | catatonia | A psychiatric disorder featuring stupor, posturing, and echophenomena. |
+| MONDO:0800106 | disruptive behavior disorder | A mental disorder that includes conduct disorder (CD), oppositional defiant disorder (ODD), and attention Deficit Hyperactivity Disorder (ADHD). Features may include frequent aggression, deceitfulness, and defiance, and often persist through the lifespan. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0007962 | megalodactyly | Megalodactyly | megalodactyly |
+| MONDO:0008075 | schwannomatosis | neurofibromatosis type 3 | schwannomatosis |
+| MONDO:0010663 | intellectual disability-hypotonic facies syndrome, X-linked, 1 | X-linked intellectual disability-hypotonic face syndrome | intellectual disability-hypotonic facies syndrome, X-linked, 1 |
+| MONDO:0012163 | immunodeficiency 104 | severe combined immunodeficiency, autosomal recessive, T cell-negative, B cell-positive, NK cell-positive | immunodeficiency 104 |
+| MONDO:0013784 | neonatal-onset encephalopathy with rigidity and seizures | lethal neonatal spasticity-epileptic encephalopathy syndrome | neonatal-onset encephalopathy with rigidity and seizures |
+| MONDO:0700130 | partial segmental duplication | partial trisomy 21 | partial segmental duplication |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0004598 | acute cor pulmonale | Acute form of cor pulmonale. | A form of acute right heart failure produced by a sudden increase in resistance to blood flow in the pulmonary circulation. |
+| MONDO:0017666 | diffuse palmoplantar keratoderma | | Palmoplantar keratoderma that diffusely involves most of the palm and sole and is caused by a genetic abnormality. |
+| MONDO:0007113 | Angelman syndrome | Angelman syndrome (AS) is a neurogenetic disorder characterized by severe intellectual deficit and distinct facial dysmorphic features. | A neurogenetic disorder characterized by severe intellectual deficit and distinct facial dysmorphic features. |
+| MONDO:0007168 | atelosteogenesis type III | Atelosteogenesis III (AOIII) is a skeletal dysplasia characterized by short limbs dysmorphic facies and diagnostic radiographic findings. | A skeletal dysplasia characterized by short limbs dysmorphic facies and diagnostic radiographic findings. |
+| MONDO:0016524 | congenital vascular bone syndrome | An alteration in limb growth caused by congenital vascular malformations in childhood | An alteration in limb growth caused by congenital vascular malformations in childhood. |
+| MONDO:0019270 | erythrokeratoderma | | An umbrella term for a group of rare genetic skin disorders characterized by well-demarcated plaques of reddened, dry and thickened skin. Typically, these lesions are distributed symmetrically on the body and tend to slowly expand and progress over time. |
+| MONDO:0008608 | Down syndrome | Down syndrome is a chromosomal abnormality caused by the presence of a third (partial or total) copy of chromosome 21 and that is characterized by variable intellectual disability, muscular hypotonia, and joint laxity, often associated with a characteristic facial dysmorphism and various anomalies such as cardiac, gastrointestinal, or endocrine defects. | Down syndrome is a chromosomal abnormality caused by the presence of a third (partial or total) copy of the chromosome 21 genetic material and that is characterized by variable intellectual disability, muscular hypotonia, and joint laxity, often associated with a characteristic facial dysmorphism and various anomalies such as cardiac, gastrointestinal, or endocrine defects. |
+| MONDO:0008075 | schwannomatosis | Neurofibromatosis (NF) type 3 (NF3), also known as schwannomatosis, is the least frequent form of the rare genetic disorder neurofibromatosis. It is clinically and genetically distinct from NF1 and NF2 and is characterized by the development of multiple schwannomas (nerve sheath tumors), without involvement of the vestibular nerves. NF3 develops in adulthood and is often associated with chronic pain. Dysesthesia and paresthesia may also be present. Common localizations include the spine, peripheral nerves, and the cranium. | The least frequent form of the rare genetic disorder neurofibromatosis. It is clinically and genetically distinct from NF1 and NF2 and is characterized by the development of multiple schwannomas (nerve sheath tumors), without involvement of the vestibular nerves. NF3 develops in adulthood and is often associated with chronic pain. Dysesthesia and paresthesia may also be present. Common localizations include the spine, peripheral nerves, and the cranium. |
+| MONDO:0015104 | porphyria cutanea tarda | Porphyria cutanea tarda (PCT) is the most common form of chronic hepatic porphyria. It is characterized by bullous photodermatitis. | The most common form of chronic hepatic porphyria. It is characterized by bullous photodermatitis. |
+| MONDO:0008756 | alopecia - intellectual disability syndrome | Alopecia-intellectual deficit syndrome is an extremely rare syndrome described in less than 20 families to date and characterized by total or partial alopecia associated with intellectual deficit. The syndrome can be associated with other anomalies such as seizures, sensorineural hearing loss, delayed psychomotor development, and/or hypertonia. | An extremely rare syndrome described in less than 20 families to date and characterized by total or partial alopecia associated with intellectual deficit. The syndrome can be associated with other anomalies such as seizures, sensorineural hearing loss, delayed psychomotor development, and/or hypertonia. |
+| MONDO:0016006 | Cockayne syndrome | Cockayne syndrome (CS) is a multisystem condition characterized by short stature, a characteristic facial appearance, premature aging, photosensitivity, progressive neurological dysfunction, and intellectual deficit. | A multisystem condition characterized by short stature, a characteristic facial appearance, premature aging, photosensitivity, progressive neurological dysfunction, and intellectual deficit. |
+| MONDO:0009028 | Crane-Heise syndrome | Crane-Heise syndrome is a very rare syndrome characterized by poorly mineralized calvarium, facial dysmorphism, vertebral abnormalities and absent clavicles. | A very rare syndrome characterized by poorly mineralized calvarium, facial dysmorphism, vertebral abnormalities and absent clavicles. |
+| MONDO:0009412 | scurvy | Scurvy is a condition that develops in people who do not consume an adequate amount of vitamin C in their diet. Although scurvy is relatively rare in the United States, it continues to be a problem in malnourished populations around the world (such as impoverished, underdeveloped third world countries). Early features of the condition include general weakness, fatigue and aching limbs. If left untreated, more serious problems can develop such as anemia, gum disease, and skin hemorrhages. Symptoms generally develop after at least 3 months of severe or total vitamin C deficiency. Scurvy can be cured with vitamin C supplements taken by mouth. Once recovery is complete, dietary modifications to ensure the 'recommended daily intake' of vitamin C is reached will prevent relapse. Except in the case of severe dental disease, permanent damage from scurvy does not usually occur. | A condition that develops in people who do not consume an adequate amount of vitamin C in their diet. Although scurvy is relatively rare in the United States, it continues to be a problem in malnourished populations around the world (such as impoverished, underdeveloped third world countries). Early features of the condition include general weakness, fatigue and aching limbs. If left untreated, more serious problems can develop such as anemia, gum disease, and skin hemorrhages. Symptoms generally develop after at least 3 months of severe or total vitamin C deficiency. Scurvy can be cured with vitamin C supplements taken by mouth. Once recovery is complete, dietary modifications to ensure the 'recommended daily intake' of vitamin C is reached will prevent relapse. Except in the case of severe dental disease, permanent damage from scurvy does not usually occur. |
+| MONDO:0009727 | atelosteogenesis type II | Atelosteogenesis II is a lethal perinatal bone dysplasia characterized by limb shortening, normal sized skull with cleft palate, hitchhiker thumbs, distinctive facial dysmorphism and radiographic skeletal features, caused by mutations in the diastrophic dysplasia sulfate transporter gene. | A lethal perinatal bone dysplasia characterized by limb shortening, normal sized skull with cleft palate, hitchhiker thumbs, distinctive facial dysmorphism and radiographic skeletal features, caused by mutations in the diastrophic dysplasia sulfate transporter gene. |
+| MONDO:0010651 | Menkes disease | Menkes disease (MD) is a usually severe multisystemic disorder of copper metabolism, characterized by progressive neurodegeneration and marked connective tissue anomalies as well as typical sparse abnormal steely hair. | A usually severe multisystemic disorder of copper metabolism, characterized by progressive neurodegeneration and marked connective tissue anomalies as well as typical sparse abnormal steely hair. |
+| MONDO:0010661 | severe X-linked intellectual disability, Gustavson type | Severe X-linked intellectual disability, Gustavson type is characterised by X-linked mental retardation, microcephaly, optical atrophy with impaired vision or blindness, a severe hearing defect, facial dysmorphology, spasticity, epileptic seizures and restricted joint movement. It has been described in seven children from two generations of a Swedish family. All patients died in during early childhood. | Severe X-linked intellectual disability, Gustavson type is characterised by X-linked intellectual disability, microcephaly, optical atrophy with impaired vision or blindness, a severe hearing defect, facial dysmorphology, spasticity, epileptic seizures and restricted joint movement. It has been described in seven children from two generations of a Swedish family. All patients died in during early childhood. |
+| MONDO:0010663 | intellectual disability-hypotonic facies syndrome, X-linked, 1 | Mental retardation-hypotonic facies covers a group of X-linked syndromes characterized by severe intellectual deficit and facial dysmorphism, with variable other features. | A group of X-linked syndromes characterized by severe intellectual deficit and facial dysmorphism, with variable other features. |
+| MONDO:0010886 | 2q37 microdeletion syndrome | Deletion 2q37 or monosomy 2q37 is a chromosomal anomaly involving deletion of chromosome band 2q37 and manifests as three major clinical findings: developmental delay, skeletal malformations and facial dysmorphism. | A chromosomal anomaly involving deletion of chromosome band 2q37 and manifests as three major clinical findings: developmental delay, skeletal malformations and facial dysmorphism. |
+| MONDO:0011017 | Naxos disease | Naxos disease is a recessively inherited condition with arrhythmogenic right ventricular dysplasia/cardiomyopathy (ARVD/C) and a cutaneous phenotype, characterised by peculiar woolly hair and palmoplantar keratoderma. | A recessively inherited condition with arrhythmogenic right ventricular dysplasia/cardiomyopathy (ARVD/C) and a cutaneous phenotype, characterised by peculiar woolly hair and palmoplantar keratoderma. |
+| MONDO:0011240 | megalencephaly-capillary malformation-polymicrogyria syndrome | Megalencephaly-capillary malformation-polymicrogyria syndrome (MCAP) is a polymalfomative syndrome characterized by cutaneous capillary malformations, megalencephaly, cortical brain malformations (most distinctively polymicrogyria), abnormalities of somatic growth with body and brain asymmetry, developmental delay, and characteristic facial dysmorphism. | A polymalfomative syndrome characterized by cutaneous capillary malformations, megalencephaly, cortical brain malformations (most distinctively polymicrogyria), abnormalities of somatic growth with body and brain asymmetry, developmental delay, and characteristic facial dysmorphism. |
+| MONDO:0013038 | CLOVES syndrome | CLOVE syndrome is characterized by Congenital Lipomatous Overgrowth, progressive, complex and mixed truncal Vascular malformations, and Epidermal nevi. | A syndromic disease characterized by Congenital Lipomatous Overgrowth, progressive, complex and mixed truncal Vascular malformations, and Epidermal nevi. |
+| MONDO:0013970 | branched-chain keto acid dehydrogenase kinase deficiency | Autism-epilepsy syndrome due to branched chain ketoacid dehydrogenase kinase deficiency is a rare disorder of branched-chain amino acid metabolism characterized by childhood-onset epilepsy, autism and intellectual disability with reduced levels of plasma branched chain aminoacids. | A rare disorder of branched-chain amino acid metabolism characterized by childhood-onset epilepsy, autism and intellectual disability with reduced levels of plasma branched chain aminoacids. |
+| MONDO:0014958 | Harel-Yoon syndrome | | A syndromic neurodevelopmental disorder characterized by delayed psychomotor development, intellectual disability, truncal hypotonia, spasticity, and peripheral neuropathy. |
+| MONDO:0016249 | hereditary site-specific ovarian cancer syndrome | Hereditary site-specific ovarian cancer syndrome refers to ovarian cancer caused by germline mutations in various genes, usually associated with additional cancer risks. The most common are breast and ovarian cancer syndrome (HBOC) due to mutations in BRCA1 and BRCA2 genes and hereditary nonpolyposis colorectal cancer (HNPCC) due to mutations in DNA mismatch-repair genes. Mutations in STK11 gene, causing Peutz-Jeghers syndrome, are also associated with a risk of ovarian cancer (typically sex cord stromal tumors). Mutations in other genes, including RAD51C, RAD51D, PALB2, confer an elevated ovarian cancer risk in a minority of patients. | Ovarian cancer caused by germline mutations in various genes, usually associated with additional cancer risks. The most common are breast and ovarian cancer syndrome (HBOC) due to mutations in BRCA1 and BRCA2 genes and hereditary nonpolyposis colorectal cancer (HNPCC) due to mutations in DNA mismatch-repair genes. Mutations in STK11 gene, causing Peutz-Jeghers syndrome, are also associated with a risk of ovarian cancer (typically sex cord stromal tumors). Mutations in other genes, including RAD51C, RAD51D, PALB2, confer an elevated ovarian cancer risk in a minority of patients. |
+| MONDO:0017177 | hemihyperplasia-multiple lipomatosis syndrome | Hemihyperplasia-multiple lipomatosis syndrome is a rare, genetic overgrowth syndrome characterized by non- progressive, asymmetrical, moderate hemihyperplasia (frequently affecting the limbs) associated with slow growing, painless, multiple, recurrent, subcutaneous lipomatous masses distributed throughout entire body (in particular back, torso, extremities, fingers, axillae). Superficial vascular malformations may also be associated. Increased risk of intra-abdominal embryonal malignancies may be associated. | A rare, genetic overgrowth syndrome characterized by non- progressive, asymmetrical, moderate hemihyperplasia (frequently affecting the limbs) associated with slow growing, painless, multiple, recurrent, subcutaneous lipomatous masses distributed throughout entire body (in particular back, torso, extremities, fingers, axillae). Superficial vascular malformations may also be associated. Increased risk of intra-abdominal embryonal malignancies may be associated. |
+| MONDO:0017812 | segmental progressive overgrowth syndrome with fibroadipose hyperplasia | | A rare PIK3CA-related overgrowth syndrome disease characterized by segmental and progressive overgrowth, predominantly involving the adipose tissue, or a mixture of adipose and fibrous tissue, with variable involvement of subcutaneous and muscular tissue, as well as skeletal overgrowth. Overgrowth severity and range is highly variable, although frequently it is asymmetric and disproportionate, it affects lower extremities more than the upper ones, and progresses in a distal to proximal patten. Congenital overgrowth is typically associated. |
+| MONDO:0017851 | erythrokeratodermia variabilis | A rare genetic chronic skin disorder characterized by hyperkeratosis and transient erythema. Mutations in GJB3 and GJB4 genes have been identified as causative agents. | A rare genetic chronic skin disorder characterized by hyperkeratosis and transient erythema. |
+| MONDO:0018341 | 3q27.3 microdeletion syndrome | 3q27.3 microdeletion syndrome is a rare chromosomal anomaly syndrome, resulting from the partial deletion of the long arm of chromosome 3, characterized by mild to severe intellectual disability, neuropsychiatric disorders of the psychotic and dysthymic spectrum, mild distinctive facial dysmorphism (incl. slender face, deep-set eyes, high nasal bridge with a hooked nose, small, low- set ears, short philtrum, small mouth with thin upper lip, prognathism) and a marfanoid habitus. | A rare chromosomal anomaly syndrome, resulting from the partial deletion of the long arm of chromosome 3, characterized by mild to severe intellectual disability, neuropsychiatric disorders of the psychotic and dysthymic spectrum, mild distinctive facial dysmorphism (incl. slender face, deep-set eyes, high nasal bridge with a hooked nose, small, low- set ears, short philtrum, small mouth with thin upper lip, prognathism) and a marfanoid habitus. |
+| MONDO:0018564 | 3p25.3 microdeletion syndrome | 3p25.3 microdeletion syndrome is a rare chromosomal anomaly characterized by intellectual disability, epilepsy or EEG abnormalities, poor speech, ataxia, and stereotypic hand movements. | A rare chromosomal anomaly characterized by intellectual disability, epilepsy or EEG abnormalities, poor speech, ataxia, and stereotypic hand movements. |
+| MONDO:0019139 | acquired hemophilia | Acquired hemophilia A (AHA) is a rare,often severe, hematological autoimmune disorder characterized by spontaneous hemorrhages into the skin, muscles, soft tissues,or mucous membranes. | Acquired hemophilia is a bleeding disorder that interferes with the body's blood clotting process. Signs and symptoms include prolonged bleeding, frequent nosebleeds, bruising throughout the body, solid swellings of congealed blood (hematomas), hematuria, and gastrointestinal or urologic bleeding. Acquired hemophilia occurs when the body's immune system attacks and disables a certain protein that helps the blood clot. About half of the cases are associated with other conditions, such as pregnancy, autoimmune disease, cancer, skin diseases, or allergic reactions to medications. |
+| MONDO:0019640 | posterior urethral valve | Posterior urethral valve (PUV) is the most common anomaly of fetal lower urinary tract obstruction (LUTO)and is characterized by an abnormal congenital obstructing membrane that is located within the posterior urethra associated with significant obstruction of the male bladder restricting normal bladder emptying. | Posterior urethral valve (PUV) is the most common anomaly of fetal lower urinary tract obstruction (LUTO) and is characterized by an abnormal congenital obstructing membrane that is located within the posterior urethra associated with significant obstruction of the male bladder restricting normal bladder emptying. |
+| MONDO:0019799 | hepatoerythropoietic porphyria | Hepatoerythropioetic porphyria (HEP) is a very rare form of chronic hepatic porphyria characterized by bullous photodermatitis. | A very rare form of chronic hepatic porphyria characterized by bullous photodermatitis. |
+| MONDO:0030837 | neurodevelopmental disorder with microcephaly, impaired language, epilepsy, and gait abnormalities | | An autosomal dominant neurodevelopmental disorder characterized by global developmental delay apparent in infancy. Affected individuals have delayed walking with variable gait abnormalities, including ataxia and spasticity, impaired intellectual development with poor or absent speech and language, and progressive microcephaly. Dysmorphic facial features may also be observed. Most patients have early-onset seizures; some may develop a demyelinating peripheral neuropathy. The clinical features suggest involvement of both the central and peripheral nervous systems. |
+| MONDO:0100468 | Batten-Turner congenital myopathy | A congenital myopathy described by Batten (1910) and later Turner (1949) and Turner and Lees (1962) in which a family of 6 siblings presented in infancy the picture of 'amyotonia congenita' and later in life a nonprogressive myopathy. | A congenital myopathy in which a family of 6 siblings presented in infancy the picture of 'amyotonia congenita' and later in life a nonprogressive myopathy. |
+| MONDO:0700128 | translocation Down syndrome | Down syndrome in which the extra (partial or total) copy of chromosome 21 is attached to another chromosome. | Down syndrome in which the extra (partial or total) copy of chromosome 21 genetic material is attached to another chromosome. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000238 | obsolete pestis minor |
+| MONDO:0001306 | obsolete recurrent corneal erosion |
+| MONDO:0001321 | obsolete scleral staphyloma |
+| MONDO:0001424 | obsolete sarcoid meningitis |
+| MONDO:0001578 | obsolete hernia of ovary and fallopian tube |
+| MONDO:0002336 | obsolete inflammatory and toxic neuropathy |
+| MONDO:0001946 | obsolete hyperestrogenism |
+| MONDO:0004033 | obsolete familial ovarian carcinoma |
+| MONDO:0004268 | obsolete subareolar duct papillomatosis |
+| MONDO:0005049 | obsolete intracranial hemorrhage |
+| MONDO:0005482 | obsolete molar-incisor hypomineralization |
+| MONDO:0005862 | obsolete multiple chemical sensitivity |
+| MONDO:0006185 | obsolete ductal or ductular proliferation |
+| MONDO:0006560 | obsolete hypohidrosis |
+| MONDO:0006661 | obsolete ascorbic acid deficiency |
+| MONDO:0007578 | obsolete esterase B |
+| MONDO:0007579 | obsolete esterase C |
+| MONDO:0007580 | obsolete esterase ES-2, regulator for |
+| MONDO:0007583 | obsolete exostoses of heel |
+| MONDO:0007816 | obsolete immune suppression |
+| MONDO:0020236 | obsolete lens position anomaly |
+| MONDO:0009812 | obsolete osteomalacia, sclerosing, with cerebral calcification |
+| MONDO:0010034 | obsolete anosmia for butyl mercaptan |
+| MONDO:0011763 | obsolete T-box 24 |
+| MONDO:0012332 | obsolete short stature-delayed bone age due to thyroid hormone metabolism deficiency |
+| MONDO:0013141 | obsolete autosomal dominant macrothrombocytopenia TUBB1-related |
+| MONDO:0013809 | obsolete cerebellar ataxia, neuropathy, and vestibular areflexia syndrome |
+| MONDO:0016275 | obsolete adenocarcinoma of cervix uteri |
+| MONDO:0016286 | obsolete adenoid cystic carcinoma of the cervix uteri |
+| MONDO:0035635 | obsolete short stature-skeletal dysplasia-retinal degeneration-intellectual disability-sensorineural hearing loss syndrome |
+| MONDO:0044652 | obsolete optic atrophy-peripheral neuropathy-developmental delay syndrome |
+| MONDO:0044987 | obsolete face disorder |
+| MONDO:0044998 | obsolete carpal region disorder |
+| MONDO:0044999 | obsolete scalp disorder |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000237 | erysipeloid |
+| MONDO:0000561 | spinocerebellar ataxia type 16 |
+| MONDO:0004721 | liver neoplasm |
+| MONDO:0001524 | globe disease |
+| MONDO:0005218 | muscular disorder |
+| MONDO:0002454 | thyroid adenoma |
+| MONDO:0018351 | adenocarcinoma of penis |
+| MONDO:0004595 | acute pulmonary heart disease |
+| MONDO:0004935 | acquired carotenemia |
+| MONDO:0005410 | acute graft vs. host disease |
+| MONDO:0041161 | endometrial hyperplasia |
+| MONDO:0015077 | adrenal/paraganglial tumor |
+| MONDO:0007806 | hypotrichosis 4 |
+| MONDO:0016808 | mitochondrial DNA depletion syndrome, hepatocerebral form |
+| MONDO:0008996 | COACH syndrome 1 |
+| MONDO:0009628 | microcolon |
+| MONDO:0010050 | spastic pseudosclerosis |
+| MONDO:0018303 | generalized isolated dystonia |
+| MONDO:0011751 | COPD, severe early onset |
+| MONDO:0011940 | mycobacterium tuberculosis, susceptibility to |
+| MONDO:0012663 | Plasmodium falciparum fever episodes quantitative trait locus 1 |
+| MONDO:0014958 | Harel-Yoon syndrome |
+| MONDO:0015848 | septate vagina |
+| MONDO:0015934 | non-syndromic urogenital tract malformation of male and female |
+| MONDO:0016251 | salivary gland type cancer of the breast |
+| MONDO:0018527 | osteoclastic giant cell tumor of pancreas |
+| MONDO:0018560 | anterior urethral valve |
+| MONDO:0019775 | Chudley-Lowry-Hoar syndrome |
+| MONDO:0019776 | Juberg-Marsidi syndrome |
+| MONDO:0019778 | Smith-Fineman-Myers syndrome |
+| MONDO:0019779 | Renier-Gabreels-Jasper syndrome |
+| MONDO:0021257 | glomus jugulare neoplasm |
+| MONDO:0021664 | cervical aortic arch |
+| MONDO:0042915 | Schmitt-Gillenwater-Kelly syndrome |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000508 | syndromic intellectual disability |
+
 # 2022-07-01
 
 ## Overview:

@@ -20,8 +20,8 @@ curie_map:
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   skos: http://www.w3.org/2004/02/skos/core#
-  ICD10CM: https://icd.codes/icd10cm/
-  ICD10WHO: http://apps.who.int/classifications/icd10/browse/2010/en#/
+  ICD10CM: http://purl.bioontology.org/ontology/ICD10CM/
+  ICD10WHO: https://icd.who.int/browse10/2019/en#/
   OMIMPS: https://omim.org/phenotypicSeries/PS
 subject_prefixes:
   - MONDO
@@ -30,6 +30,9 @@ subject_prefixes:
   - EFO
   - ICD10CM
   - ICD10WHO
+  - OMIMPS
+  - NCIT
+  - DOID
 relations:
   - oboInOwl:hasDbXref
   - skos:exactMatch
