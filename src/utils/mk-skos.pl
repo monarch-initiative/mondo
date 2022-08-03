@@ -76,10 +76,10 @@ while (<>) {
             $uri = 'http://identifiers.org/meddra/';
         }
         elsif ($prefix eq 'ICD10WHO') {
-            $uri = 'http://apps.who.int/classifications/icd10/browse/2010/en#/';
+            $uri = 'https://icd.who.int/browse10/2019/en#/';
         }
         elsif ($prefix eq 'ICD10CM') {
-            $uri = 'https://icd.codes/icd10cm/';
+            $uri = 'http://purl.bioontology.org/ontology/ICD10CM/';
         }
 
         if ($uri) {
