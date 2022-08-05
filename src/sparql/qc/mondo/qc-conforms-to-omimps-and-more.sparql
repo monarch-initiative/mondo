@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# description: This test determines if a class conforms to OMIMPS and at least one more pattern
+
+SELECT ?sub ?pattern WHERE {
+  ?sub <http://purl.obolibrary.org/obo/mondo#should_conform_to> <http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml> .
+  ?sub <http://purl.obolibrary.org/obo/mondo#should_conform_to> ?pattern .
+  
+  FILTER(?pattern!=<http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml>)
+  
+}
