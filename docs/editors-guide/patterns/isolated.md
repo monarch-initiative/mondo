@@ -26,12 +26,12 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is not part of 
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [has an isolated presentation](http://purl.obolibrary.org/obo/MONDO_0021128)
 
 ## Data preview 
-| defined_class                                | defined_class_label                               | disease                                      | disease_label                            |
-|:---------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:-----------------------------------------|
-| [MONDO:0020075](http://purl.obolibrary.org/obo/MONDO_0020075) | genetic non-syndromic obesity                     | [MONDO:0019182](http://purl.obolibrary.org/obo/MONDO_0019182) | inherited obesity                        |
-| [MONDO:0017262](http://purl.obolibrary.org/obo/MONDO_0017262) | inherited non-syndromic ichthyosis                | [MONDO:0015947](http://purl.obolibrary.org/obo/MONDO_0015947) | inherited ichthyosis                     |
-| [MONDO:0016462](http://purl.obolibrary.org/obo/MONDO_0016462) | isolated agammaglobulinemia                       | [MONDO:0015977](http://purl.obolibrary.org/obo/MONDO_0015977) | agammaglobulinemia                       |
-| [MONDO:0016553](http://purl.obolibrary.org/obo/MONDO_0016553) | isolated congenital hypogonadotropic hypogonadism | [MONDO:0015770](http://purl.obolibrary.org/obo/MONDO_0015770) | congenital hypogonadotropic hypogonadism |
-| [MONDO:0017667](http://purl.obolibrary.org/obo/MONDO_0017667) | isolated diffuse palmoplantar keratoderma         | [MONDO:0017666](http://purl.obolibrary.org/obo/MONDO_0017666) | diffuse palmoplantar keratoderma         |
+| defined_class                                | defined_class_label                | disease                                      | disease_label        |
+|:---------------------------------------------|:-----------------------------------|:---------------------------------------------|:---------------------|
+| [MONDO:0020075](http://purl.obolibrary.org/obo/MONDO_0020075) | genetic non-syndromic obesity      | [MONDO:0019182](http://purl.obolibrary.org/obo/MONDO_0019182) | inherited obesity    |
+| [MONDO:0017262](http://purl.obolibrary.org/obo/MONDO_0017262) | inherited non-syndromic ichthyosis | [MONDO:0015947](http://purl.obolibrary.org/obo/MONDO_0015947) | inherited ichthyosis |
+| [MONDO:0016462](http://purl.obolibrary.org/obo/MONDO_0016462) | isolated agammaglobulinemia        | [MONDO:0015977](http://purl.obolibrary.org/obo/MONDO_0015977) | agammaglobulinemia   |
+| [MONDO:0016043](http://purl.obolibrary.org/obo/MONDO_0016043) | isolated cleft lip                 | [MONDO:0004747](http://purl.obolibrary.org/obo/MONDO_0004747) | cleft lip            |
+| [MONDO:0007336](http://purl.obolibrary.org/obo/MONDO_0007336) | isolated cleft palate              | [MONDO:0016064](http://purl.obolibrary.org/obo/MONDO_0016064) | cleft palate         |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv) 

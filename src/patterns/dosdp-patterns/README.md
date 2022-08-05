@@ -44,9 +44,9 @@ Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMI
 |:---------------------------------------------|:-----------------------------------------------|:---------------------------------------------|:--------------------------------------|
 | MONDO:0060779 | acquired Fanconi syndrome                      | MONDO:0001083 | Fanconi renotubular syndrome          |
 | MONDO:0045023 | acquired adrenogenital syndrome                | MONDO:0015898 | adrenogenital syndrome                |
-| MONDO:0015610 | acquired aplastic anemia                       | MONDO:0015909 | aplastic anemia                       |
 | MONDO:0019846 | acquired central diabetes insipidus            | MONDO:0015790 | central diabetes insipidus            |
 | MONDO:0015130 | acquired chronic primary adrenal insufficiency | MONDO:0015129 | chronic primary adrenal insufficiency |
+| MONDO:0019193 | acquired generalized lipodystrophy             | MONDO:0027766 | generalized lipodystrophy             |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acquired.tsv)
 ### Acute
@@ -86,13 +86,13 @@ Examples: [adenocarcinoma of cervix uteri](http://purl.obolibrary.org/obo/MONDO_
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenocarcinoma.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | location                                      | location:label         |
-|:---------------------------------------------|:-------------------------------------|:----------------------------------------------|:-----------------------|
-| MONDO:0003853 | Bartholin gland adenocarcinoma       | UBERON:0000460 | major vestibular gland |
-| MONDO:0003410 | Wolffian duct adenocarcinoma         | UBERON:0003074 | mesonephric duct       |
-| MONDO:0016275 | adenocarcinoma of cervix uteri       | UBERON:0000002 | uterine cervix         |
-| MONDO:0018351 | adenocarcinoma of penis              | UBERON:0000989 | penis                  |
-| MONDO:0004173 | adenocarcinoma of skene gland origin | UBERON:0010145 | paraurethral gland     |
+| defined:class                                | defined:class:label                  | location                                      | location:label           |
+|:---------------------------------------------|:-------------------------------------|:----------------------------------------------|:-------------------------|
+| MONDO:0003853 | Bartholin gland adenocarcinoma       | UBERON:0000460 | major vestibular gland   |
+| MONDO:0003410 | Wolffian duct adenocarcinoma         | UBERON:0003074 | mesonephric duct         |
+| MONDO:0018351 | adenocarcinoma of penis              | UBERON:0000989 | penis                    |
+| MONDO:0004173 | adenocarcinoma of skene gland origin | UBERON:0010145 | paraurethral gland       |
+| MONDO:0002670 | ampulla of vater adenocarcinoma      | UBERON:0004913 | hepatopancreatic ampulla |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/adenocarcinoma.tsv)
 ### Adenoma
@@ -577,11 +577,11 @@ Examples: [hepatitis C induced liver cirrhosis](http://purl.obolibrary.org/obo/M
 #### Data preview: 
 | defined:class                                | defined:class:label       | cause                                        | cause:label                  | parent                                       | parent:label        |
 |:---------------------------------------------|:--------------------------|:---------------------------------------------|:-----------------------------|:---------------------------------------------|:--------------------|
+| MONDO:0020689 | AIDS dementia complex     | MONDO:0005109 | HIV infectious disease       | MONDO:0001627 | dementia            |
 | MONDO:0002812 | infectious otitis interna | MONDO:0005550 | infectious disease           | MONDO:0002008 | labyrinthitis       |
 | MONDO:0021673 | post-bacterial disorder   | MONDO:0005113 | bacterial infectious disease | MONDO:0000001 | disease or disorder |
 | MONDO:0021669 | post-infectious disorder  | MONDO:0005550 | infectious disease           | MONDO:0000001 | disease or disorder |
 | MONDO:0021670 | post-infectious syndrome  | MONDO:0005550 | infectious disease           | MONDO:0002254 | syndromic disease   |
-| MONDO:0021674 | post-viral disorder       | MONDO:0005108 | viral infectious disease     | MONDO:0000001 | disease or disorder |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/consequence_of_infectious_disease.tsv)
 ### Dependence on substance
@@ -677,11 +677,11 @@ Examples: [Growth hormone insensitivity syndrome with immune dysregulation](http
 #### Data preview: 
 | defined:class                                | defined:class:label                                                       | disease                                      | disease:label                 | gene                              | gene:label   | mode:of:inheritance                       | mode:of:inheritance:label       |
 |:---------------------------------------------|:--------------------------------------------------------------------------|:---------------------------------------------|:------------------------------|:----------------------------------|:-------------|:------------------------------------------|:--------------------------------|
-| MONDO:0007818 | Hyper-IgE recurrent infection syndrome 1                                  | MONDO:0018037 | hyper-IgE syndrome            | http://identifiers.org/hgnc/11364 | STAT3        | HP:0000006 | Autosomal dominant inheritance  |
 | MONDO:0007092 | amelogenesis imperfecta type 1B                                           | MONDO:0019507 | amelogenesis imperfecta       | http://identifiers.org/hgnc/3344  | ENAM         | HP:0000006 | Autosomal dominant inheritance  |
 | MONDO:0014865 | autosomal recessive severe congenital neutropenia due to CSF3R deficiency | MONDO:0018542 | severe congenital neutropenia | http://identifiers.org/hgnc/2439  | CSF3R        | HP:0000007 | Autosomal recessive inheritance |
 | MONDO:0018487 | autosomal recessive severe congenital neutropenia due to CXCR2 deficiency | MONDO:0018542 | severe congenital neutropenia | http://identifiers.org/hgnc/6027  | CXCR2        | HP:0000007 | Autosomal recessive inheritance |
 | MONDO:0012930 | autosomal recessive severe congenital neutropenia due to G6PC3 deficiency | MONDO:0018542 | severe congenital neutropenia | http://identifiers.org/hgnc/24861 | G6PC3        | HP:0000007 | Autosomal recessive inheritance |
+| MONDO:0014456 | autosomal recessive severe congenital neutropenia due to JAGN1 deficiency | MONDO:0018542 | severe congenital neutropenia | http://identifiers.org/hgnc/26926 | JAGN1        | HP:0000007 | Autosomal recessive inheritance |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene_and_inheritance.tsv)
 ### Disrupts process
@@ -720,13 +720,13 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label       | disease                                      | disease:label   | stimulus                                   | stimulus:label   |
-|:---------------------------------------------|:--------------------------|:---------------------------------------------|:----------------|:-------------------------------------------|:-----------------|
-| MONDO:0043523 | cadmium poisoning         | MONDO:0029000 | poisoning       | CHEBI:22977 | cadmium atom     |
-| MONDO:0019544 | cocaine intoxication      | MONDO:0029000 | poisoning       | CHEBI:27958 | cocaine          |
-| MONDO:0017859 | colchicine poisoning      | MONDO:0029000 | poisoning       | CHEBI:23359 | colchicine       |
-| MONDO:0017863 | digitalis poisoning       | MONDO:0029000 | poisoning       | CHEBI:4551  | digoxin          |
-| MONDO:0017861 | ethylene glycol poisoning | MONDO:0029000 | poisoning       | CHEBI:30742 | ethylene glycol  |
+| defined:class                                | defined:class:label   | disease                                      | disease:label   | stimulus                                   | stimulus:label   |
+|:---------------------------------------------|:----------------------|:---------------------------------------------|:----------------|:-------------------------------------------|:-----------------|
+| MONDO:0003969 | amphetamine abuse     | MONDO:0002491 | substance abuse | CHEBI:2679  | amphetamine      |
+| MONDO:0004599 | barbiturate abuse     | MONDO:0002491 | substance abuse | CHEBI:29745 | barbiturate      |
+| MONDO:0043523 | cadmium poisoning     | MONDO:0029000 | poisoning       | CHEBI:22977 | cadmium atom     |
+| MONDO:0004456 | cocaine abuse         | MONDO:0002491 | substance abuse | CHEBI:27958 | cocaine          |
+| MONDO:0005186 | cocaine dependence    | MONDO:0005303 | drug dependence | CHEBI:27958 | cocaine          |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/environmental_stimulus.tsv)
 ### Hemangioma
@@ -830,13 +830,13 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | process                                   | process:label                                                                                                 |
-|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| MONDO:0009825 | 5-oxoprolinase deficiency            | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
-| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
-| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
-| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
-| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                                 |
+| defined:class                                | defined:class:label                  | process                                   | process:label                                                                                              |
+|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| MONDO:0009825 | 5-oxoprolinase deficiency            | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                  |
+| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                 |
+| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido) succinate lyase (fumarate-forming) activity |
+| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                       |
+| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic.tsv)
 ### Inborn metabolic disrupts
@@ -853,13 +853,13 @@ Examples: ['5-oxoprolinase deficiency (disease)'](http://purl.obolibrary.org/obo
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | process                                   | process:label                                                                                                 |
-|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| MONDO:0009825 | 5-oxoprolinase deficiency            | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                     |
-| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                    |
-| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido)succinate AMP-lyase (fumarate-forming) activity |
-| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                          |
-| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                                 |
+| defined:class                                | defined:class:label                  | process                                   | process:label                                                                                              |
+|:---------------------------------------------|:-------------------------------------|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| MONDO:0009825 | 5-oxoprolinase deficiency            | GO:0017168 | 5-oxoprolinase (ATP-hydrolyzing) activity                                                                  |
+| MONDO:0005775 | G6PD deficiency                      | GO:0004345 | glucose-6-phosphate dehydrogenase activity                                                                 |
+| MONDO:0007068 | adenylosuccinate lyase deficiency    | GO:0070626 | (S)-2-(5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido) succinate lyase (fumarate-forming) activity |
+| MONDO:0009665 | biotinidase deficiency               | GO:0047708 | biotinidase activity                                                                                       |
+| MONDO:0015286 | congenital disorder of glycosylation | GO:0070085 | glycosylation                                                                                              |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inborn_metabolic_disrupts.tsv)
 ### Infantile
@@ -982,13 +982,13 @@ Examples: ['isolated aniridia'](http://purl.obolibrary.org/obo/MONDO_0007119), [
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                               | disease                                      | disease:label                            |
-|:---------------------------------------------|:--------------------------------------------------|:---------------------------------------------|:-----------------------------------------|
-| MONDO:0020075 | genetic non-syndromic obesity                     | MONDO:0019182 | inherited obesity                        |
-| MONDO:0017262 | inherited non-syndromic ichthyosis                | MONDO:0015947 | inherited ichthyosis                     |
-| MONDO:0016462 | isolated agammaglobulinemia                       | MONDO:0015977 | agammaglobulinemia                       |
-| MONDO:0016553 | isolated congenital hypogonadotropic hypogonadism | MONDO:0015770 | congenital hypogonadotropic hypogonadism |
-| MONDO:0017667 | isolated diffuse palmoplantar keratoderma         | MONDO:0017666 | diffuse palmoplantar keratoderma         |
+| defined:class                                | defined:class:label                | disease                                      | disease:label        |
+|:---------------------------------------------|:-----------------------------------|:---------------------------------------------|:---------------------|
+| MONDO:0020075 | genetic non-syndromic obesity      | MONDO:0019182 | inherited obesity    |
+| MONDO:0017262 | inherited non-syndromic ichthyosis | MONDO:0015947 | inherited ichthyosis |
+| MONDO:0016462 | isolated agammaglobulinemia        | MONDO:0015977 | agammaglobulinemia   |
+| MONDO:0016043 | isolated cleft lip                 | MONDO:0004747 | cleft lip            |
+| MONDO:0007336 | isolated cleft palate              | MONDO:0016064 | cleft palate         |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/isolated.tsv)
 ### Juvenile
@@ -1122,13 +1122,13 @@ Examples: ['abdominal cystic lymphangioma'](http://purl.obolibrary.org/obo/MONDO
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | disease                                      | disease:label        | location                                      | location:label             |
-|:---------------------------------------------|:-------------------------------------|:---------------------------------------------|:---------------------|:----------------------------------------------|:---------------------------|
-| MONDO:0004120 | Bartholin gland small cell carcinoma | MONDO:0000402 | small cell carcinoma | UBERON:0000460 | major vestibular gland     |
-| MONDO:0024283 | Demodex folliculitis                 | MONDO:0017280 | demodicidosis        | UBERON:0002073 | hair follicle              |
-| MONDO:0006576 | Ludwig's angina                      | MONDO:0005230 | cellulitis           | UBERON:0003679 | mouth floor                |
-| MONDO:0001858 | Tietze syndrome                      | MONDO:0002254 | syndromic disease    | UBERON:0002293 | costochondral joint        |
-| MONDO:0044965 | abdominal and pelvic region disorder | MONDO:0000001 | disease or disorder  | UBERON:0002417 | abdominal segment of trunk |
+| defined:class                                | defined:class:label                  | disease                                      | disease:label        | location                                      | location:label         |
+|:---------------------------------------------|:-------------------------------------|:---------------------------------------------|:---------------------|:----------------------------------------------|:-----------------------|
+| MONDO:0004120 | Bartholin gland small cell carcinoma | MONDO:0000402 | small cell carcinoma | UBERON:0000460 | major vestibular gland |
+| MONDO:0024283 | Demodex folliculitis                 | MONDO:0017280 | demodicidosis        | UBERON:0002073 | hair follicle          |
+| MONDO:0006576 | Ludwig's angina                      | MONDO:0005230 | cellulitis           | UBERON:0003679 | mouth floor            |
+| MONDO:0001858 | Tietze syndrome                      | MONDO:0002254 | syndromic disease    | UBERON:0002293 | costochondral joint    |
+| MONDO:0021726 | abdominal cystic lymphangioma        | MONDO:0009761 | cystic hygroma       | UBERON:0000916 | abdomen                |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location.tsv)
 ### Location top
@@ -1144,13 +1144,13 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location_top.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | location                                      | location:label             |
-|:---------------------------------------------|:-------------------------------------|:----------------------------------------------|:---------------------------|
-| MONDO:0044965 | abdominal and pelvic region disorder | UBERON:0002417 | abdominal segment of trunk |
-| MONDO:0020594 | abducens nerve disorder              | UBERON:0001646 | abducens nerve             |
-| MONDO:0002636 | accessory nerve disorder             | UBERON:0002019 | accessory XI nerve         |
-| MONDO:0002816 | adrenal cortex disorder              | UBERON:0001235 | adrenal cortex             |
-| MONDO:0005495 | adrenal gland disorder               | UBERON:0002369 | adrenal gland              |
+| defined:class                                | defined:class:label      | location                                      | location:label              |
+|:---------------------------------------------|:-------------------------|:----------------------------------------------|:----------------------------|
+| MONDO:0020594 | abducens nerve disorder  | UBERON:0001646 | abducens nerve              |
+| MONDO:0002636 | accessory nerve disorder | UBERON:0002019 | accessory XI nerve          |
+| MONDO:0002816 | adrenal cortex disorder  | UBERON:0001235 | adrenal cortex              |
+| MONDO:0005495 | adrenal gland disorder   | UBERON:0002369 | adrenal gland               |
+| MONDO:0003182 | anterior horn disorder   | UBERON:0002257 | ventral horn of spinal cord |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/location_top.tsv)
 ### Lymphoma
@@ -1502,8 +1502,16 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Classes | MONDO:0000001, MONDO:0021669, MONDO:0005550,  |
 | Variables | infectiousdisease (MONDO:0005550),  |
 | Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
-| Examples |  |
+| Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/post_infectious_disease.tsv) |
 
+#### Data preview: 
+| defined:class                                | defined:class:label      | infectiousdisease                            | infectiousdisease:label      |
+|:---------------------------------------------|:-------------------------|:---------------------------------------------|:-----------------------------|
+| MONDO:0021673 | post-bacterial disorder  | MONDO:0005113 | bacterial infectious disease |
+| MONDO:0021669 | post-infectious disorder | MONDO:0005550 | infectious disease           |
+| MONDO:0021674 | post-viral disorder      | MONDO:0005108 | viral infectious disease     |
+
+See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/post_infectious_disease.tsv)
 ### Postinfectious disease
 *A design pattern for conditions such as post-herpetic neuralgia or postinfectious encephalitis, where the disease is secondary to the initial infection.
 TODO: write better guidelines on what constitutes a secondary disease vs primary. * We do not use this pattern for AIDS-HIV for example, instead representing this is using SubClassOf. * We draw a distinction between infectious and postinfectious encepahlitis. * we do not use this pattern for chickenpox, but we do for shingles*
@@ -1530,9 +1538,10 @@ TODO: write better guidelines on what constitutes a secondary disease vs primary
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/pregnancy_form_of_disorder.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label   | disease                                      | disease:label     |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:------------------|
-| MONDO:0005406 | gestational diabetes  | MONDO:0005015 | diabetes mellitus |
+| defined:class                                | defined:class:label               | disease                                      | disease:label     |
+|:---------------------------------------------|:----------------------------------|:---------------------------------------------|:------------------|
+| MONDO:0005406 | gestational diabetes              | MONDO:0005015 | diabetes mellitus |
+| MONDO:0100194 | pregnancy associated osteoporosis | MONDO:0005298 | osteoporosis      |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/pregnancy_form_of_disorder.tsv)
 ### Primary infectious
@@ -1592,13 +1601,13 @@ Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_002
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/realized_in_response_to_environmental_exposure.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                  | disease                                      | disease:label                | exposure                                    | exposure:label                  |
-|:---------------------------------------------|:-------------------------------------|:---------------------------------------------|:-----------------------------|:--------------------------------------------|:--------------------------------|
-| MONDO:0060781 | Preeyasombat-Varavithya syndrome     | MONDO:0001083 | Fanconi renotubular syndrome | ECTO:9000364 | exposure to tetracycline        |
-| MONDO:0003232 | alcoholic pancreatitis               | MONDO:0004982 | pancreatitis                 | ECTO:0001082 | exposure to alcohol consumption |
-| MONDO:0024357 | drug induced central sleep apnea     | MONDO:0004731 | central sleep apnea syndrome | ECTO:0000509 | exposure to drug                |
-| MONDO:0019553 | drug-induced localized lipodystrophy | MONDO:0019194 | localized lipodystrophy      | ECTO:0000509 | exposure to drug                |
-| MONDO:0016474 | drug-induced lupus erythematosus     | MONDO:0004670 | lupus erythematosus          | ECTO:0000509 | exposure to drug                |
+| defined:class                                | defined:class:label              | disease                                      | disease:label                | exposure                                    | exposure:label                  |
+|:---------------------------------------------|:---------------------------------|:---------------------------------------------|:-----------------------------|:--------------------------------------------|:--------------------------------|
+| MONDO:0060781 | Preeyasombat-Varavithya syndrome | MONDO:0001083 | Fanconi renotubular syndrome | ECTO:9000364 | exposure to tetracycline        |
+| MONDO:0002046 | alcohol abuse                    | MONDO:0002491 | substance abuse              | ECTO:0001082 | exposure to alcohol consumption |
+| MONDO:0021702 | alcohol amnestic disorder        | MONDO:0001152 | amnestic disorder            | ECTO:0001082 | exposure to alcohol consumption |
+| MONDO:0007079 | alcohol dependence               | MONDO:0004938 | substance dependence         | ECTO:0001082 | exposure to alcohol consumption |
+| MONDO:0021698 | alcohol-related disorders        | MONDO:0002494 | substance-related disorder   | ECTO:0001082 | exposure to alcohol consumption |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/realized_in_response_to_environmental_exposure.tsv)
 ### Refractory
@@ -1614,9 +1623,10 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/refractory.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label      | disease                                      | disease:label                        |
-|:---------------------------------------------|:-------------------------|:---------------------------------------------|:-------------------------------------|
-| MONDO:0004401 | testis refractory cancer | MONDO:0003510 | malignant testicular germ cell tumor |
+| defined:class                                | defined:class:label                | disease                                      | disease:label                        |
+|:---------------------------------------------|:-----------------------------------|:---------------------------------------------|:-------------------------------------|
+| MONDO:0004401 | testis refractory cancer           | MONDO:0003510 | malignant testicular germ cell tumor |
+| MONDO:0005414 | treatment-refractory schizophrenia | MONDO:0005090 | schizophrenia                        |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/refractory.tsv)
 ### Rhabdomyosarcoma
@@ -1767,13 +1777,13 @@ Examples: [collagenopathy type 2 alpha 1](http://purl.obolibrary.org/obo/MONDO_0
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_dysfunctional_structure.tsv) |
 
 #### Data preview: 
-| defined:class                                | defined:class:label                           | disease                                      | disease:label                               | structure                         | structure:label   |
-|:---------------------------------------------|:----------------------------------------------|:---------------------------------------------|:--------------------------------------------|:----------------------------------|:------------------|
-| MONDO:0008861 | 3-methylcrotonyl-CoA carboxylase 1 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6936  | MCCC1             |
-| MONDO:0008862 | 3-methylcrotonyl-CoA carboxylase 2 deficiency | MONDO:0018950 | 3-methylcrotonyl-CoA carboxylase deficiency | http://identifiers.org/hgnc/6937  | MCCC2             |
-| MONDO:0009610 | 3-methylglutaconic aciduria type 1            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/890   | AUH               |
-| MONDO:0009787 | 3-methylglutaconic aciduria type 3            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/8142  | OPA3              |
-| MONDO:0012435 | 3-methylglutaconic aciduria type 5            | MONDO:0017359 | 3-methylglutaconic aciduria                 | http://identifiers.org/hgnc/30528 | DNAJC19           |
+| defined:class                                | defined:class:label      | disease                                      | disease:label       | structure                                     | structure:label       |
+|:---------------------------------------------|:-------------------------|:---------------------------------------------|:--------------------|:----------------------------------------------|:----------------------|
+| MONDO:0002245 | blood platelet disease   | MONDO:0000001 | disease or disorder | CL:0000233     | platelet              |
+| MONDO:0004880 | bowel dysfunction        | MONDO:0000001 | disease or disorder | UBERON:0004907 | lower digestive tract |
+| MONDO:0020144 | cerebrovascular dementia | MONDO:0001627 | dementia            | UBERON:0008998 | vasculature of brain  |
+| MONDO:0005308 | ciliopathy               | MONDO:0000001 | disease or disorder | GO:0005929     | cilium                |
+| MONDO:0004603 | collagenopathy           | MONDO:0000001 | disease or disorder | GO:0005581     | collagen trimer       |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/specific_disease_by_dysfunctional_structure.tsv)
 ### Specific infectious disease by agent
