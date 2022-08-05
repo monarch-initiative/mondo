@@ -27,8 +27,8 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is
 |:---------------------------------------------|:-----------------------------------------------|:---------------------------------------------|:--------------------------------------|
 | [MONDO:0060779](http://purl.obolibrary.org/obo/MONDO_0060779) | acquired Fanconi syndrome                      | [MONDO:0001083](http://purl.obolibrary.org/obo/MONDO_0001083) | Fanconi renotubular syndrome          |
 | [MONDO:0045023](http://purl.obolibrary.org/obo/MONDO_0045023) | acquired adrenogenital syndrome                | [MONDO:0015898](http://purl.obolibrary.org/obo/MONDO_0015898) | adrenogenital syndrome                |
-| [MONDO:0015610](http://purl.obolibrary.org/obo/MONDO_0015610) | acquired aplastic anemia                       | [MONDO:0015909](http://purl.obolibrary.org/obo/MONDO_0015909) | aplastic anemia                       |
 | [MONDO:0019846](http://purl.obolibrary.org/obo/MONDO_0019846) | acquired central diabetes insipidus            | [MONDO:0015790](http://purl.obolibrary.org/obo/MONDO_0015790) | central diabetes insipidus            |
 | [MONDO:0015130](http://purl.obolibrary.org/obo/MONDO_0015130) | acquired chronic primary adrenal insufficiency | [MONDO:0015129](http://purl.obolibrary.org/obo/MONDO_0015129) | chronic primary adrenal insufficiency |
+| [MONDO:0019193](http://purl.obolibrary.org/obo/MONDO_0019193) | acquired generalized lipodystrophy             | [MONDO:0027766](http://purl.obolibrary.org/obo/MONDO_0027766) | generalized lipodystrophy             |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/acquired.tsv) 
