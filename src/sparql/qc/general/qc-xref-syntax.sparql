@@ -6,9 +6,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE 
 {
-  ?entity hasDbXref: ?x .
+  ?entity hasDbXref: ?value .
 
-  FILTER( regex(STR(?x), " ") || regex(STR(?x), ";") || STR(?x) = ""  )
+  FILTER( regex(STR(?value), " ") || regex(STR(?value), ";") || STR(?value) = ""  )
   BIND(hasDbXref: AS ?property)
 }
 ORDER BY ?entity
