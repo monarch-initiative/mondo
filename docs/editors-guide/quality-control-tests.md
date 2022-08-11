@@ -1315,5 +1315,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE
   BIND(hasDbXref: AS ?property)
 }
 ORDER BY ?entity
+
 ```
 
