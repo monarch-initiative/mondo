@@ -651,7 +651,7 @@ mirror/ecto.owl:
 .PRECIOUS: mirror/ecto.owl
 
 mirror/ncbitaxon.owl: 
-	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@ && touch $@
+	wget --no-check-certificate http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -O $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # hp.owl currently contains many stray root classes
