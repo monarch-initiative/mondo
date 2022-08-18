@@ -1,99 +1,432 @@
 id: https://w3id.org/mondo
 name: mondo
-description: >-
-  A schema for describing the Mondo Ontology Data Model
+description: A schema for describing the Mondo Ontology Data Model
 imports:
- - linkml:types
+- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   mondo: https://w3id.org/mondo/
 default_prefix: mondo
-
 enums:
   entity_type_enum:
     permissible_values:
       excludeBiologicalProcess:
         title: biological process
-        description: The concept describes a biological process and not a disease.
-        notes: "Example: ICD10CM:O00-O08 Pregnancy with abortive outcome."
+        description: 'Code used when the term is excluded from Mondo based on the
+          fact that the term''s concept is not a disease and describes a biological
+          process.
+
+          [From GO:0008150: A biological process represents a specific objective that
+          the organism is genetically programmed to achieve. Biological processes
+          are often described by their outcome or ending state, e.g., the biological
+          process of cell division results in the creation of two daughter cells (a
+          divided cell) from a single parent cell. A biological process is accomplished
+          by a particular set of molecular functions carried out by specific gene
+          products (or macromolecular complexes), often in a highly regulated manner
+          and in a particular temporal sequence.]'
+        notes: '- This code applies for terms describing a biological process occuring
+          "normally" (e.g.  ICD10CM:O00-O9A - Pregnancy, childbirth and the puerperium)
+
+          - For cases where the biological process occurs "abnormally", MONDO:excludePhenotype
+          should be used (e.g. MONDO:0007816 - obsolete immune suppression)
+
+          - For cases where the biological process could be occuring "normally" or
+          "abnormally", this code, MONDO:excludeBiologicalProcess, can be used (e.g.
+          MONDO:0006185 - obsolete ductal or ductular proliferation)'
+        examples: ICD10CM:O00-O9A - Pregnancy, childbirth and the puerperium
+        exclude_children: true
       excludeBiomarker:
         title: biomarker
-        description: A biomarker that is used for disease status and not a disease, such as estrogen receptor status for breast cancer.
-        notes: "Example: ICD10CM:Z17-Z17 Estrogen receptor status."
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents measurable indicator
+          of some biological state or condition, such as disease status.
+        notes: 'When the term concept represents the biomarker status, one might consider
+          using MONDO:excludePhenotype (e.g. ICD10CM:Z17.0 - Estrogen receptor positive
+          status [ER+]), or MONDO:excludeRiskFactor (e.g. ICD10CM:Z15.01 - Genetic
+          susceptibility to malignant neoplasm of breast; synonym: Brca1 gene mutation
+          positive).'
+        examples: ICD10CM:Z17-Z17 - Estrogen receptor status
+        exclude_children: true
       excludeClinicalModifier:
         title: clinical modifier
-        description: Diseases that are modified by a clinical modifier (such as symptomatic, severe, etc.) may be out of scope by Mondo.
-        notes: "Example: MONDO:0034028 symptomatic form of hemochromatosis type 1."
+        description: Diseases that are modified by a clinical modifier (such as symptomatic,
+          severe, etc.) may be out of scope by Mondo.
+        notes: 'Example: MONDO:0034028 symptomatic form of hemochromatosis type 1.'
       excludeComplication:
         title: complication
-        description: A secondary disease or condition aggravating an already existing one that is the result of an event (like birth), procedure or surgery.
-        notes: "Example: J95-J95 Intraoperative and postprocedural complications and disorders of respiratory system, not elsewhere classified."
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents a complication to
+          an external procedure (e.g surgery) or events (e.g birth).
+        notes: One needs to be careful to not confuse actual "diseases" resulting
+          from an event (e.g. injury, disease resulting from infection, or viral sequela).
+          In these cases, the representation of the concept in Mondo might be reasonable.
+        examples: 'ICD10CM:E36-E36 - Intraoperative complications of endocrine system
+
+          Orphanet:90053 - Complications after hematopoietic stem cell transplantation'
+        exclude_children: true
       excludeConditionsCausedByExternalForce:
         title: conditions caused by external force
-        description: A condition that is caused by an external force (such as a transport accident) and not a disease.
-        notes: "Example: ICD10CM:V95-V97 Air and space transport accidents."
+        description: A condition that is caused by an external force (such as a transport
+          accident) and not a disease.
+        notes: 'Example: ICD10CM:V95-V97 Air and space transport accidents.'
       excludeCausingAgents:
         title: disease causing agents
-        description: Agents, such as bacteria or other pathogens, that cause disease, but the code(s) do not refer to diseases themselves.
-        notes: "Example: ICD10CM:B95-B97 Bacterial and viral infectious agents."
+        description: Agents, such as bacteria or other pathogens, that cause disease,
+          but the code(s) do not refer to diseases themselves.
+        notes: 'Example: ICD10CM:B95-B97 Bacterial and viral infectious agents.'
       excludePresenceOfEnvironmentalMaterials:
         title: presence of environmental materials
-        description: This code is for the presence of environmental materials, such as foreign body fragments or objects in the body and does not refer to a disease.
-        notes: "Example: ICD10CM:Z18-Z18 Retained foreign body fragments."
+        description: This code is for the presence of environmental materials, such
+          as foreign body fragments or objects in the body and does not refer to a
+          disease.
+        notes: 'Example: ICD10CM:Z18-Z18 Retained foreign body fragments.'
       excludeGeneticCarrier:
         title: genetic carrier
-        description: The concept described is not a disease, it is for individual who is heterozygous for a recessive gene and thus does not express the recessive phenotype but can transmit the gene to offspring.
-        notes: "Example: ICD10CM:Z14-Z15 Genetic carrier and genetic susceptibility to disease."
+        description: The concept described is not a disease, it is for individual
+          who is heterozygous for a recessive gene and thus does not express the recessive
+          phenotype but can transmit the gene to offspring.
+        notes: 'Example: ICD10CM:Z14-Z15 Genetic carrier and genetic susceptibility
+          to disease.'
       excludeGeneticFormOfDisease:
         title: genetic form of disease
-        description: A grouping class that that is characterized by the feature of having a genetic or inheritable component. We don't include these terms in Mondo because it is a grouping class that is not commonly used.
-        notes: "Example: Orphanet:183472 genetic dermis disorder."
+        description: A grouping class that that is characterized by the feature of
+          having a genetic or inheritable component. We don't include these terms
+          in Mondo because it is a grouping class that is not commonly used.
+        notes: 'Example: Orphanet:183472 genetic dermis disorder.'
       excludeGroupingClass:
         title: grouping class
-        description: A term that is not a disease itself but groups together classes that share common features, like grouping diseases together by phenotypic features.
-        notes: "Example: Orphanet:138041 Pierre Robin syndrome associated with collagen disease."
+        description: A term that is not a disease itself but groups together classes
+          that share common features, like grouping diseases together by phenotypic
+          features.
+        notes: 'Example: Orphanet:138041 Pierre Robin syndrome associated with collagen
+          disease.'
       excludeHistoricalDisease:
         title: historical disease
-        description: A term that is no longer considered a disease due to lack of supporting evidence.
-        notes: "Example: MONDO:0010682 'myoclonic epilepsy, progressive, X-linked'."
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is no longer considered a disease due to lack of
+          supporting evidence.
+        notes: ''
+        examples: 'MONDO:0000238 - obsolete pestis minor
+
+          MONDO:0009827 - obsolete pachyonychia congenita, autosomal recessive'
+        exclude_children: false
       excludeMedicalAction:
         title: medical action
-        description: A clinically prescribed procedure, therapy, intervention, or recommendation, not a disease.
-        notes: "Example: ICD10CM:Z30-Z39 Persons encountering health services in circumstances related to reproduction."
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents a clinically prescribed
+          procedure, therapy, intervention, or recommendation.
+        notes: ''
+        examples: 'ICD10CM:O30-O48 - Maternal care related to the fetus and amniotic
+          cavity and possible delivery problems
+
+          ICD10CM:O09-O09 - Supervision of high risk pregnancy'
+        exclude_children: true
       excludePhenotype:
         title: phenotype
-        description: Observable characteristics of an individual that is the product of interactions between genes and the environment. The concept described is not a disease.
-        notes: "Example: ICD10CM:P09-P09 Abnormal findings on neonatal screening."
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents observable characteristics
+          of an individual that is the product of interactions between genes and the
+          environment.
+        notes: This code includes concepts representing "features", "symptoms", and
+          "clinical finding" describing results of clinical, laboratory, or molecular
+          examination.
+        examples: 'ICD10CM:E16.3 - Increased secretion of glucagon
+
+          ICD10CM:R70-R79 - Abnormal findings on examination of blood, without diagnosis
+
+          ICD10CM:R25-R29 - Symptoms and signs involving the nervous and musculoskeletal
+          systems
+
+          ICD10CM:Z68.53 - Body mass index [BMI] pediatric, 85th percentile to less
+          than 95th percentile for age'
+        exclude_children: true
       excludePhenotypeForMetastasis:
         title: phenotype for metastasis
-        description: Characteristics of metastatic tumors (a tumor that has spread from the part of the body where it started (the primary site) to other parts of the body.). The concept described is not a disease.
-        notes: "Example: ICD10CM:C7B-C7B Secondary neuroendocrine tumors."
+        description: Characteristics of metastatic tumors (a tumor that has spread
+          from the part of the body where it started (the primary site) to other parts
+          of the body.). The concept described is not a disease.
+        notes: 'Example: ICD10CM:C7B-C7B Secondary neuroendocrine tumors.'
       excludePhenotypeForTumor:
         title: phenotype for tumor
-        description: Characteristics of a tumor that causes the disease, but not the disease itself.
-        notes: "Example: ICD10CM:C7A-C7A Malignant neuroendocrine tumors."
+        description: Characteristics of a tumor that causes the disease, but not the
+          disease itself.
+        notes: 'Example: ICD10CM:C7A-C7A Malignant neuroendocrine tumors.'
       excludeRare:
         title: rare
-        description: We do not include rare subtypes of diseases as proper classes in Mondo, but rather use the rare subclass annotation.
-        notes: "Example: Orphanet:101954 rare adrenal disease."
+        description: We do not include rare subtypes of diseases as proper classes
+          in Mondo, but rather use the rare subclass annotation.
+        notes: 'Example: Orphanet:101954 rare adrenal disease.'
       excludeRiskFactor:
         title: risk factor
-        description: Something that increases the chance of developing a disease, not the disease itself.
-        notes: "Example: Z20-Z29 Persons with potential health hazards related to communicable diseases."
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents a condition or a
+          genetic carrier that increases the chance of developing a disease.
+        notes: ''
+        examples: ICD10CM:Z15.01 - Genetic susceptibility to malignant neoplasm of
+          breast
+        exclude_children: true
       excludeConditionsCausedByExternalFactor:
         title: conditions caused by external factor
-        description: A condition that is caused by an external factor or event (such as labor and delivery). The concept described is not a disease.
-        notes: "Example: ICD10CM:N99-N99 Intraoperative and postprocedural complications and disorders of genitourinary system, not elsewhere classified."
+        description: A condition that is caused by an external factor or event (such
+          as labor and delivery). The concept described is not a disease.
+        notes: 'Example: ICD10CM:N99-N99 Intraoperative and postprocedural complications
+          and disorders of genitourinary system, not elsewhere classified.'
       excludeBehavior:
         title: behavior
         description: An action performed by an individual, not a disease.
-        notes: "Example: O30-O48 Maternal care related to the fetus and amniotic cavity and possible delivery problems."
+        notes: 'Example: O30-O48 Maternal care related to the fetus and amniotic cavity
+          and possible delivery problems.'
       excludeTrait:
         title: trait
-        description: A characteristic of an individual, not a disease.
-        notes: "Example: ICD10CM:Z67-Z67 Blood type."
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents a characteristic
+          of an individual.
+        notes: ''
+        examples: 'ICD10CM:Z67-Z67 - blood type
+
+          ICD10CM:Z68-68 - Body Mass Index'
+        exclude_children: true
       excludeTraumaticCause:
         title: traumatic cause
         description: A secondary complication of a distressing experience, not a disease.
-        notes: "Example: ICD10CM:T79-T79 Certain early complications of trauma."
+        notes: 'Example: ICD10CM:T79-T79 Certain early complications of trauma.'
+      excludeNonDisease:
+        title: not a disease
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease.
+        notes: This blanket exclusion code is used in cases  when the term represents
+          a non disease concept for which a more precise code is unavailable, and/or
+          we did not have the resources to determine which more specific exclusion
+          code should be used.
+        examples: ''
+        exclude_children: true
+      excludeCausalAgents:
+        title: disease causing agents
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents agents, such as
+          bacteria or other pathogens, that cause disease.
+        notes: ''
+        examples: 'ICD10CM:B95-B97 - Bacterial and viral infectious agents
 
+          ICD10CM:B95.0 - Streptococcus, group A, as the cause of diseases classified
+          elsewhere'
+        exclude_children: true
+      excludeGene:
+        title: gene
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents a gene or protein.
+        notes: ''
+        examples: 'MONDO:0007578 - obsolete esterase B
+
+          MONDO:0011763 - obsolete T-box 24'
+        exclude_children: true
+      excludeExternalFactor:
+        title: external factor
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents factors and/or actions
+          that influence health status and might (or might not) be the cause of a
+          disease.
+        notes: This code should be used when the concept is not clearly a procedure,
+          an event, or a medical action, or is a mix of these.
+        examples: "ICD10CM:Z00-Z99\t- Factors influencing health status and contact\
+          \ with health services"
+        exclude_children: true
+      excludeCondition:
+        title: condition
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents a condition possibly
+          leading to disease.
+        notes: ''
+        examples: ICD10CM:P80-P83 - Conditions involving the integument and temperature
+          regulation of newborn
+        exclude_children: true
+      excludeEvent:
+        title: event
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represent occurrences; these
+          could result in injury and/or its effect, or represent periods in a disease.
+        notes: This code excludes all procedures and interventions; these should be
+          excluded using the code MONDO:excludeMedicalAction.
+        examples: 'ICD10CM:Y62-Y69 - Misadventures to patients during surgical and
+          medical care
+
+          Orphanet:391655 - Off-periods in Parkinson disease not responding to oral
+          treatment
+
+          ICD10CM:V98.3 - Accident to, on or involving ski lift'
+        exclude_children: true
+      excludePopulation:
+        title: population
+        description: Code used when the term is excluded from Mondo based on the fact
+          that the term's concept is not a disease and represents individuals or individual
+          populations.
+        notes: ''
+        examples: 'ICD10CM:V60-V69 - Occupant of heavy transport vehicle injured in
+          transport accident
+
+          ICD10CM:P50 - Newborn affected by intrauterine (fetal) blood loss'
+        exclude_children: true
+      excludeGrouping:
+        title: grouping
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases in
+          a way that is not supported in Mondo.
+        notes: This blanket exclusion code is used in cases when the term represents
+          a grouping term for which no more precise code is available, and/or we did
+          not have the resources to determine which more specific exclusion code should
+          be used.
+        examples: 'MONDO:0020051 - obsolete total autosomal trisomy
+
+          MONDO:0019843 - obsolete pituitary hormone deficiency secondary to a granulomatous
+          disease'
+        exclude_children: false
+      excludeGroupingPhenotype:
+        title: grouping - based on shared phenotype/feature
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on shared phenotypes and/or features, which is a disease classification/grouping
+          not supported in Mondo.
+        notes: When requested by the expert community, terms grouping diseases based
+          on phenotype/feature could be included into Mondo. However (1) use case(s)
+          for this request is(are) required (since other avenues, such as query through
+          disease annotations, might be more appropriate solutions), (2) commitment
+          by the requesters to maintain the list of grouped diseases (ie children
+          of the grouping term) is requested in order to ensure that this ontology
+          branch is correct and complete.
+        examples: 'Orphanet:567558 - Non-genetic systemic disease with glomerulopathy
+          as a major feature
+
+          Orphanet:567562 - Disorder with multisystemic involvement and glomerulopathy'
+        exclude_children: false
+      excludeGroupingMorpho:
+        title: grouping - based on morphology
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on affected morphological structure, and this grouping was reported to be
+          uninformative and deemed unnecessary (based on Harrison's Principles of
+          Internal Medicine).
+        notes: https://doi.org/10.5281/zenodo.5273598
+        examples: 'MONDO_0015163 - obsolete primary glomerular disease
+
+          MONDO_0021145 - obsolete disorder of genitourinary system'
+        exclude_children: false
+      excludeGroupingOrigin:
+        title: grouping based on disease origin
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on their shared origin.
+        notes: This blanket exclusion code is used in cases when the term represents
+          a grouping term based on the disease origin for which no more precise code
+          is available, and/or we did not have the resources to determine which more
+          specific exclusion code should be used.
+        examples: 'Orphanet:542323 - CAR T cell therapy-associated cytokine release
+          syndrome
+
+          MONDO:0024147 -  obsolete Pierre Robin syndrome associated with a chromosomal
+          anomaly
+
+          MONDO:0019833 - obsolete pituitary hormone deficiency from tumoral origin'
+        exclude_children: false
+      excludeGroupingOriginGenetic:
+        title: grouping based on genetic origin
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on their shared genetic origin.
+        notes: '- For cases in which the grouping term is based on the defective gene,
+          GroupingOriginMolecular should be used.
+
+          - In some cases, it might be appropriate to include the term as a narrow
+          concept of a Mondo term (e.g. Orphanet:206634-Genetic skeletal muscle disease
+          _MONDO:mondoIsBroaderThanSource_ MONDO:0020120-skeletal muscle disease)'
+        examples: 'MONDO:0018787 - obsolete genetic cerebral small vessel disease
+
+          MONDO:0019117 - obsolete genetic nervous system disorder'
+        exclude_children: false
+      excludeGroupingOriginMolecular:
+        title: grouping based on molecular origin
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on defect in a same gene/protein/protein complex.
+        notes: When requested by the expert community, terms grouping diseases based
+          on the defective gene/protein/protein complex could be included into Mondo.
+          However (1) use case(s) for this request is(are) required (since other avenues,
+          such as query through disease annotations, might be more appropriate solutions),
+          (2) commitment by the requesters to maintain the list of grouped diseases
+          (ie children of the grouping term) is requested in order to ensure that
+          this ontology branch is correct and complete.
+        examples: 'Orphanet:603699 - KLHL7-related disorder
+
+          Orphanet:98748 - Neurological channelopathy of the central nervous system
+          due to a genetic acetylcholine receptor defect
+
+          Orphanet:207090 - Qualitative or quantitative defects of collagen 6'
+        exclude_children: false
+      excludeGroupingOriginProcess:
+        title: grouping based on process origin
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on defect in a same biological process.
+        notes: When requested by the expert community, terms grouping diseases based
+          on the defective biological process could be included into Mondo. However
+          (1) use case(s) for this request is(are) required (since other avenues,
+          such as query through disease annotations, might be more appropriate solutions),
+          (2) commitment by the requesters to maintain the list of grouped diseases
+          (ie children of the grouping term) is requested in order to ensure that
+          this ontology branch is correct and complete.
+        examples: 'MONDO:0006600 - obsolete pigmentation disease
+
+          MONDO:0021016 - obsolete channelopathy'
+        exclude_children: false
+      excludeGroupingModifier:
+        title: grouping based on clinical modifier
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on shared modifier (e.g. symptomatic, severe, moderate,...).
+        notes: "- Terms excluded with this code represent grouping terms; actual diseases\
+          \ including the modifier should not be excluded (e.g. Orphanet:465508 -\
+          \ symptomatic form of hemochromatosis type 1) \n- In some cases, it might\
+          \ be appropriate to include the term as a narrow concept of a Mondo term\
+          \ (e.g. Orphanet:206634-Genetic skeletal muscle disease _MONDO:mondoIsBroaderThanSource_\
+          \ MONDO:0020120-skeletal muscle disease ; Orphanet:498491 - Complete hemimelia\
+          \ _MONDO:mondoIsBroaderThanSource_ MONDO:0016240-hemimelia)"
+        examples: 'Orphanet:519323 - Syndromic macular dystrophy
+
+          MONDO:0015879 - obsolete non-syndromic diaphragmatic or thoracic malformation'
+        exclude_children: false
+      excludeGroupingModifierRare:
+        title: grouping based on rare clinical modifier
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on shared modifier "rare".
+        notes: "- Terms excluded with this code represent grouping terms; actual diseases\
+          \ including the modifier should not be excluded (e.g. Orphanet:102002 -\
+          \ Rare ataxia) \n- In some cases, it might be appropriate to include the\
+          \ term as a narrow concept of a Mondo term (e.g. Orphanet:519298-Rare scleral\
+          \ disorder _MONDO:mondoIsBroaderThanSource_ MONDO:0001269-scleral disorder)"
+        examples: MONDO:0035001 - obsolete rare disorder of the visual organs
+        exclude_children: false
+      excludeGroupingPopulation:
+        title: grouping based on individual or population of individual
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on affected individual or population of individual.
+        notes: ''
+        examples: 'Orphanet:91127 - Adenovirus infection in immunocompromised patients
+
+          Orphanet:231080 - High-grade dysplasia in patients with Barrett esophagus'
+        exclude_children: false
+      excludeGroupingHeritability:
+        title: grouping based on heritability
+        description: Code used when the term is excluded from Mondo based on the fact
+          that this term is not a specific disease; it instead groups diseases based
+          on their heritability feature.
+        notes: When requested by the expert community, terms grouping diseases based
+          on the heritability type could be included into Mondo. However (1) use case(s)
+          for this request is(are) required (since other avenues, such as query through
+          disease annotations, might be more appropriate solutions), (2) commitment
+          by the requesters to maintain the list of grouped diseases (ie children
+          of the grouping term) is requested in order to ensure that this ontology
+          branch is correct and complete.
+        examples: MONDO:0019601 - obsolete autosomal recessive axonal hereditary motor
+          and sensory neuropathy
+        exclude_children: false
