@@ -34,7 +34,7 @@ enums:
           "abnormally", this code, MONDO:excludeBiologicalProcess, can be used (e.g.
           MONDO:0006185 - obsolete ductal or ductular proliferation)'
         examples: ICD10CM:O00-O9A - Pregnancy, childbirth and the puerperium
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeBiomarker:
         title: biomarker
         description: Code used when the term is excluded from Mondo based on the fact
@@ -46,7 +46,7 @@ enums:
           susceptibility to malignant neoplasm of breast; synonym: Brca1 gene mutation
           positive).'
         examples: ICD10CM:Z17-Z17 - Estrogen receptor status
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeComplication:
         title: complication
         description: Code used when the term is excluded from Mondo based on the fact
@@ -58,28 +58,25 @@ enums:
         examples: 'ICD10CM:E36-E36 - Intraoperative complications of endocrine system
 
           Orphanet:90053 - Complications after hematopoietic stem cell transplantation'
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeHistoricalDisease:
         title: historical disease
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is no longer considered a disease due to lack of
           supporting evidence.
-        notes: ''
         examples: 'MONDO:0000238 - obsolete pestis minor
 
           MONDO:0009827 - obsolete pachyonychia congenita, autosomal recessive'
-        exclude_children: false
       excludeMedicalAction:
         title: medical action
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is not a disease and represents a clinically prescribed
           procedure, therapy, intervention, or recommendation.
-        notes: ''
         examples: 'ICD10CM:O30-O48 - Maternal care related to the fetus and amniotic
           cavity and possible delivery problems
 
           ICD10CM:O09-O09 - Supervision of high risk pregnancy'
-        exclude_children: true
+        is_a: MONDO:excludeExternalFactor
       excludePhenotype:
         title: phenotype
         description: Code used when the term is excluded from Mondo based on the fact
@@ -98,26 +95,24 @@ enums:
 
           ICD10CM:Z68.53 - Body mass index [BMI] pediatric, 85th percentile to less
           than 95th percentile for age'
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeRiskFactor:
         title: risk factor
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is not a disease and represents a condition or a
           genetic carrier that increases the chance of developing a disease.
-        notes: ''
         examples: ICD10CM:Z15.01 - Genetic susceptibility to malignant neoplasm of
           breast
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeTrait:
         title: trait
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is not a disease and represents a characteristic
           of an individual.
-        notes: ''
         examples: 'ICD10CM:Z67-Z67 - blood type
 
           ICD10CM:Z68-68 - Body Mass Index'
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeNonDisease:
         title: not a disease
         description: Code used when the term is excluded from Mondo based on the fact
@@ -126,28 +121,24 @@ enums:
           a non disease concept for which a more precise code is unavailable, and/or
           we did not have the resources to determine which more specific exclusion
           code should be used.
-        examples: ''
-        exclude_children: true
       excludeCausalAgents:
         title: disease causing agents
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is not a disease and represents agents, such as
           bacteria or other pathogens, that cause disease.
-        notes: ''
         examples: 'ICD10CM:B95-B97 - Bacterial and viral infectious agents
 
           ICD10CM:B95.0 - Streptococcus, group A, as the cause of diseases classified
           elsewhere'
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeGene:
         title: gene
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is not a disease and represents a gene or protein.
-        notes: ''
         examples: 'MONDO:0007578 - obsolete esterase B
 
           MONDO:0011763 - obsolete T-box 24'
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeExternalFactor:
         title: external factor
         description: Code used when the term is excluded from Mondo based on the fact
@@ -158,16 +149,15 @@ enums:
           an event, or a medical action, or is a mix of these.
         examples: "ICD10CM:Z00-Z99\t- Factors influencing health status and contact\
           \ with health services"
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeCondition:
         title: condition
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is not a disease and represents a condition possibly
           leading to disease.
-        notes: ''
         examples: ICD10CM:P80-P83 - Conditions involving the integument and temperature
           regulation of newborn
-        exclude_children: true
+        is_a: MONDO:excludeExternalFactor
       excludeEvent:
         title: event
         description: Code used when the term is excluded from Mondo based on the fact
@@ -182,18 +172,17 @@ enums:
           treatment
 
           ICD10CM:V98.3 - Accident to, on or involving ski lift'
-        exclude_children: true
+        is_a: MONDO:excludeExternalFactor
       excludePopulation:
         title: population
         description: Code used when the term is excluded from Mondo based on the fact
           that the term's concept is not a disease and represents individuals or individual
           populations.
-        notes: ''
         examples: 'ICD10CM:V60-V69 - Occupant of heavy transport vehicle injured in
           transport accident
 
           ICD10CM:P50 - Newborn affected by intrauterine (fetal) blood loss'
-        exclude_children: true
+        is_a: MONDO:excludeNonDisease
       excludeGrouping:
         title: grouping
         description: Code used when the term is excluded from Mondo based on the fact
@@ -207,7 +196,6 @@ enums:
 
           MONDO:0019843 - obsolete pituitary hormone deficiency secondary to a granulomatous
           disease'
-        exclude_children: false
       excludeGroupingPhenotype:
         title: grouping - based on shared phenotype/feature
         description: Code used when the term is excluded from Mondo based on the fact
@@ -225,7 +213,7 @@ enums:
           as a major feature
 
           Orphanet:567562 - Disorder with multisystemic involvement and glomerulopathy'
-        exclude_children: false
+        is_a: MONDO:excludeMONDO:excludeGrouping
       excludeGroupingMorpho:
         title: grouping - based on morphology
         description: Code used when the term is excluded from Mondo based on the fact
@@ -237,7 +225,7 @@ enums:
         examples: 'MONDO_0015163 - obsolete primary glomerular disease
 
           MONDO_0021145 - obsolete disorder of genitourinary system'
-        exclude_children: false
+        is_a: MONDO:excludeMONDO:excludeGrouping
       excludeGroupingOrigin:
         title: grouping based on disease origin
         description: Code used when the term is excluded from Mondo based on the fact
@@ -254,7 +242,7 @@ enums:
           anomaly
 
           MONDO:0019833 - obsolete pituitary hormone deficiency from tumoral origin'
-        exclude_children: false
+        is_a: MONDO:excludeMONDO:excludeGrouping
       excludeGroupingOriginGenetic:
         title: grouping based on genetic origin
         description: Code used when the term is excluded from Mondo based on the fact
@@ -269,7 +257,7 @@ enums:
         examples: 'MONDO:0018787 - obsolete genetic cerebral small vessel disease
 
           MONDO:0019117 - obsolete genetic nervous system disorder'
-        exclude_children: false
+        is_a: MONDO:excludeGroupingOrigin
       excludeGroupingOriginMolecular:
         title: grouping based on molecular origin
         description: Code used when the term is excluded from Mondo based on the fact
@@ -288,7 +276,7 @@ enums:
           due to a genetic acetylcholine receptor defect
 
           Orphanet:207090 - Qualitative or quantitative defects of collagen 6'
-        exclude_children: false
+        is_a: MONDO:excludeGroupingOrigin
       excludeGroupingOriginProcess:
         title: grouping based on process origin
         description: Code used when the term is excluded from Mondo based on the fact
@@ -304,7 +292,7 @@ enums:
         examples: 'MONDO:0006600 - obsolete pigmentation disease
 
           MONDO:0021016 - obsolete channelopathy'
-        exclude_children: false
+        is_a: MONDO:excludeGroupingOrigin
       excludeGroupingModifier:
         title: grouping based on clinical modifier
         description: Code used when the term is excluded from Mondo based on the fact
@@ -320,7 +308,7 @@ enums:
         examples: 'Orphanet:519323 - Syndromic macular dystrophy
 
           MONDO:0015879 - obsolete non-syndromic diaphragmatic or thoracic malformation'
-        exclude_children: false
+        is_a: MONDO:excludeGroupingOrigin
       excludeGroupingModifierRare:
         title: grouping based on rare clinical modifier
         description: Code used when the term is excluded from Mondo based on the fact
@@ -332,17 +320,16 @@ enums:
           \ term as a narrow concept of a Mondo term (e.g. Orphanet:519298-Rare scleral\
           \ disorder _MONDO:mondoIsBroaderThanSource_ MONDO:0001269-scleral disorder)"
         examples: MONDO:0035001 - obsolete rare disorder of the visual organs
-        exclude_children: false
+        is_a: MONDO:excludeGroupingModifier
       excludeGroupingPopulation:
         title: grouping based on individual or population of individual
         description: Code used when the term is excluded from Mondo based on the fact
           that this term is not a specific disease; it instead groups diseases based
           on affected individual or population of individual.
-        notes: ''
         examples: 'Orphanet:91127 - Adenovirus infection in immunocompromised patients
 
           Orphanet:231080 - High-grade dysplasia in patients with Barrett esophagus'
-        exclude_children: false
+        is_a: MONDO:excludeMONDO:excludeGrouping
       excludeGroupingHeritability:
         title: grouping based on heritability
         description: Code used when the term is excluded from Mondo based on the fact
@@ -357,4 +344,4 @@ enums:
           branch is correct and complete.
         examples: MONDO:0019601 - obsolete autosomal recessive axonal hereditary motor
           and sensory neuropathy
-        exclude_children: false
+        is_a: MONDO:excludeMONDO:excludeGrouping

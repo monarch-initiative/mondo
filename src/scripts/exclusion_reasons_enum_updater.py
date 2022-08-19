@@ -24,8 +24,8 @@ SHEET_YML_MAPPINGS = {
 	'definitions': 'description',
 	'notes': 'notes',
 	'examples': 'examples',
-	'exclude_children': 'exclude_children',
 }
+SHEET_IGNORE_FIELDS = ['codes', 'exclude_children']
 DEFAULTS = {
 	'input_path_exclusion_reasons': os.path.join(PROJECT_DIR, 'src', 'scripts', 'exclusion_reasons.csv'),
 	'input_path_mondo_schema': os.path.join(PROJECT_DIR, 'src', 'schema', 'mondo.yaml'),
@@ -52,6 +52,7 @@ def run(input_path_exclusion_reasons: str, input_path_mondo_schema: str):
 	exclusion_dicts: Dict[str, Dict[str, str]] = mondo_schema['enums']['entity_type_enum']['permissible_values']
 
 	# Delete: Any schema enum items not located in GoogleSheet source of truth
+	# todo: Delete any fields within enums that are not in GoogleSheet?
 	obsoleted_exclusion_reasons = [x for x in exclusion_dicts if x not in set(df['codes'])]
 	for item in obsoleted_exclusion_reasons:
 		del exclusion_dicts[item]
@@ -59,12 +60,13 @@ def run(input_path_exclusion_reasons: str, input_path_mondo_schema: str):
 	# Updates
 	for _index, row in df.iterrows():
 		exclusion_reason_name = row['codes']
-		row_d = {k: v for k, v in row.to_dict().items() if k != 'codes'}
+		row_d = {k: v for k, v in row.to_dict().items() if k not in SHEET_IGNORE_FIELDS}
 		if exclusion_reason_name not in exclusion_dicts:
 			exclusion_dicts[exclusion_reason_name] = {}
 		for k, v in row_d.items():
 			target_field = SHEET_YML_MAPPINGS.get(k, k)
-			exclusion_dicts[exclusion_reason_name][target_field] = v
+			if v:
+				exclusion_dicts[exclusion_reason_name][target_field] = v
 
 	# Save
 	mondo_schema['enums']['entity_type_enum']['permissible_values'] = exclusion_dicts
