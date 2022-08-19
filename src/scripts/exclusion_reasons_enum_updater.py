@@ -9,7 +9,6 @@ Instructions:
 """
 import os
 import re
-import sys
 from argparse import ArgumentParser
 from pathlib import Path
 from typing import Dict
@@ -39,6 +38,10 @@ def run(input_path_exclusion_reasons: str, input_path_mondo_schema: str):
 	# - Drops all rows where all cells are empty
 	df = pd.read_csv(input_path_exclusion_reasons).dropna(axis=0, how='all').fillna('')
 	# - Format to remove whitespace, leading indentation markers, and unneeded MONDO prefix
+	#   The first of these replacements is redundant w/ the second, but it is here as a failsafe in case MONDO: is
+	#   removed in the future. It does require that there be a space after any - characters, though, so something like
+	#   ---excludeNonDisease without a space before the exclusion name would not be captured.
+	df['codes'] = df['codes'].apply(lambda x: re.sub('.*- ', '', x))
 	df['codes'] = df['codes'].apply(lambda x: re.sub('.*MONDO:', '', x))
 	# - Strip all whitespace
 	df = df.apply(lambda x: x.str.strip() if x.dtype == 'object' else x)
@@ -48,13 +51,10 @@ def run(input_path_exclusion_reasons: str, input_path_mondo_schema: str):
 		mondo_schema = yaml.safe_load(stream)
 	exclusion_dicts: Dict[str, Dict[str, str]] = mondo_schema['enums']['entity_type_enum']['permissible_values']
 
-	# Warning: schema enum items not located in GoogleSheet
-	missing_exclusion_reasons = [x for x in exclusion_dicts if x not in set(df['codes'])]
-	if missing_exclusion_reasons:
-		missing_str = '\n'.join(missing_exclusion_reasons)
-		print(
-			f'Warning: The following exclusion reasons were found in {input_path_mondo_schema}, but not in '
-			f'{input_path_exclusion_reasons}: \n{missing_str}', file=sys.stderr)
+	# Delete: Any schema enum items not located in GoogleSheet source of truth
+	obsoleted_exclusion_reasons = [x for x in exclusion_dicts if x not in set(df['codes'])]
+	for item in obsoleted_exclusion_reasons:
+		del exclusion_dicts[item]
 
 	# Updates
 	for _index, row in df.iterrows():
@@ -63,7 +63,7 @@ def run(input_path_exclusion_reasons: str, input_path_mondo_schema: str):
 		if exclusion_reason_name not in exclusion_dicts:
 			exclusion_dicts[exclusion_reason_name] = {}
 		for k, v in row_d.items():
-			target_field = SHEET_YML_MAPPINGS[k]
+			target_field = SHEET_YML_MAPPINGS.get(k, k)
 			exclusion_dicts[exclusion_reason_name][target_field] = v
 
 	# Save
