@@ -115,6 +115,15 @@ broad synonym: autoimmune liver disease
 Example:  
 name: AGAT deficiency  
 related synonym: disorder of glycine amidinotransferase activity 
+
+#### What if I cannot find a specific code / term mapped to a Mondo ID?
+
+There are two main reasons why a code or a term from another ontology, vocabulary or terminology is not mapped to Mondo yet. 
+
+1. The term is relatively new and the Mondo synchronisation pipeline has not captured it. If the term is newer than 3 months, the term will usually only appear in the next Mondo release.
+2. The term was explicitly excluded. If you want to know if and what a specific term was excluded, see [list of excluded terms](https://github.com/monarch-initiative/mondo-ingest/blob/main/src/ontology/reports/exclusion_reasons.robot.template.tsv)
+
+In rare cases, a term is excluded because of a mistake in the curation. This can happen, for example, when a relevant disease term exist in a branch of a source ontology, like NCIT, that is not tracked by Mondo. In this case, we encourage you to make an issue on the [Mondo issue tracker](https://github.com/monarch-initiative/mondo/issues) to let us know.
  
 
 {% comment %} Add more FAQs as needed {% endcomment %}
