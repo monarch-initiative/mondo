@@ -16,7 +16,7 @@ description: 'This pattern is meant to be used for OMIM phenotypic series (OMIMP
   + number - the first member will usually have the same number local ID as the PS
   - the first member in OMIM usually has documentation that is pertinent to the parent
   PS - the members may(?) generally share high semantic similarity
-  - All OMIMPS disease should have a has modifier some inherited restricted, see http://purl.obolibrary.org/obo/mondo/sparql/omimps-should-be-inherited-violation.sparql
+  - All OMIMPS disease should have a 'has characteristic' some inherited restricted, see http://purl.obolibrary.org/obo/mondo/sparql/omimps-should-be-inherited-violation.sparql
   
   Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS236100),
   ''3-M syndrome''(http://purl.obolibrary.org/obo/MONDO_0007477) [OMIMPS:236100](https://omim.org/phenotypicSeries/PS273750). '
@@ -30,7 +30,7 @@ classes:
   inherited: MONDO:0021152
 
 relations:
-  has_modifier: RO:0002573
+  has_modifier: RO:0000053
 
 vars:
   disease: '''disease'''
