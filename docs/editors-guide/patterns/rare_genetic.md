@@ -22,5 +22,5 @@ A form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is both
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [genetic](http://purl.obolibrary.org/obo/MONDO_0021150) and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [rare](http://purl.obolibrary.org/obo/MONDO_0021136)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [genetic](http://purl.obolibrary.org/obo/MONDO_0021150) and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [rare](http://purl.obolibrary.org/obo/MONDO_0021136)
 

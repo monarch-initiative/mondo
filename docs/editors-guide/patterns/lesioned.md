@@ -22,5 +22,5 @@ Lesioned form of {[anatomical entity](http://purl.obolibrary.org/obo/UBERON_0001
 
 ## Equivalent to 
 
-{[anatomical entity](http://purl.obolibrary.org/obo/UBERON_0001062)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [lesioned](http://purl.obolibrary.org/obo/PATO_0040025)
+{[anatomical entity](http://purl.obolibrary.org/obo/UBERON_0001062)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [lesioned](http://purl.obolibrary.org/obo/PATO_0040025)
 
