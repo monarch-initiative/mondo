@@ -25,7 +25,7 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that occurs during c
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [childhood](http://purl.obolibrary.org/obo/HP_0011463)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [childhood](http://purl.obolibrary.org/obo/HP_0011463)
 
 ## Data preview 
 | defined_class                                | defined_class_label                      | disease                                      | disease_label                  |

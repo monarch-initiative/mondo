@@ -22,7 +22,7 @@ Idiopathic form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [idiopathic](http://purl.obolibrary.org/obo/MONDO_0700005)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [idiopathic](http://purl.obolibrary.org/obo/MONDO_0700005)
 
 ## Data preview 
 | defined_class                                | defined_class_label                   | disease                                      | disease_label              |
