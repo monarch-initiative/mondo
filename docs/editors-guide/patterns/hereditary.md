@@ -23,7 +23,7 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [hereditary](http://purl.obolibrary.org/obo/MONDO_0021152)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [hereditary](http://purl.obolibrary.org/obo/MONDO_0021152)
 
 ## Data preview 
 | defined_class                                | defined_class_label                                   | disease                                      | disease_label             |

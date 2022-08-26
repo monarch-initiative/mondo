@@ -19,7 +19,7 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that has an iatrogen
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [iatrogenic](http://purl.obolibrary.org/obo/MONDO_0100426)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [iatrogenic](http://purl.obolibrary.org/obo/MONDO_0100426)
 
 ## Data preview 
 | defined_class                                | defined_class_label   | disease                                      | disease_label       |

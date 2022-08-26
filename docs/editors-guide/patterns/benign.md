@@ -24,7 +24,7 @@ A form of {[neoplasm](http://purl.obolibrary.org/obo/MONDO_0005070)} without mal
 
 ## Equivalent to 
 
-{[neoplasm](http://purl.obolibrary.org/obo/MONDO_0005070)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [neoplastic, non-malignant](http://purl.obolibrary.org/obo/PATO_0002096)
+{[neoplasm](http://purl.obolibrary.org/obo/MONDO_0005070)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [neoplastic, non-malignant](http://purl.obolibrary.org/obo/PATO_0002096)
 
 ## Data preview 
 | defined_class                                | defined_class_label                   | neoplasm                                     | neoplasm_label                                              |

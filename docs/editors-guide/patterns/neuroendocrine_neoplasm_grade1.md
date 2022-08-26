@@ -29,7 +29,7 @@ A well differentiated, low grade tumor with neuroendocrine differentiation that 
 
 ## Equivalent to 
 
-[neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0019496) and [disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [grade 1](http://purl.obolibrary.org/obo/MONDO_0024491)
+[neuroendocrine neoplasm](http://purl.obolibrary.org/obo/MONDO_0019496) and [disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [grade 1](http://purl.obolibrary.org/obo/MONDO_0024491)
 
 ## Data preview 
 | defined_class                                | defined_class_label                     | location                                      | location_label     |
