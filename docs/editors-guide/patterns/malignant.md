@@ -22,7 +22,7 @@ A malignant form of {[neoplasm](http://www.w3.org/2002/07/owl#Thing)}.
 
 ## Equivalent to 
 
-{[neoplasm](http://www.w3.org/2002/07/owl#Thing)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [malignant](http://purl.obolibrary.org/obo/PATO_0002097)
+{[neoplasm](http://www.w3.org/2002/07/owl#Thing)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [malignant](http://purl.obolibrary.org/obo/PATO_0002097)
 
 ## Data preview 
 | defined_class                                | defined_class_label           | neoplasm                                     | neoplasm_label               |

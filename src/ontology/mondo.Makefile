@@ -1,7 +1,7 @@
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
 
-.PHONY: dirs
+.PHONY: dirs python-install-dependencies update-exclusion-reasons
 dirs:
 	mkdir -p tmp/
 	mkdir -p components/
@@ -701,3 +701,12 @@ dosdp-merge-%: ../patterns/data/default/%.owl tmp/remove_%.ru
 		mv NORM $(SRC)
 
 p1: dosdp-merge-acute
+
+python-install-dependencies:
+	python3 -m pip install --upgrade pip
+	python3 -m pip install --upgrade -r ../../requirements.txt
+
+update-exclusion-reasons: python-install-dependencies
+	python3 ../scripts/exclusion_reasons_enum_updater.py \
+	--input-path-exclusion-reasons ../scripts/exclusion_reasons.csv \
+	--input-path-mondo-schema ../schema/mondo.yaml

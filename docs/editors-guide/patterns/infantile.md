@@ -25,7 +25,7 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that occurs between 
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [infantile](http://purl.obolibrary.org/obo/HP_0003593)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [infantile](http://purl.obolibrary.org/obo/HP_0003593)
 
 ## Data preview 
 | defined_class                                | defined_class_label                      | disease                                      | disease_label                  |
