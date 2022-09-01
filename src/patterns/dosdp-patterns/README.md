@@ -818,7 +818,7 @@ Examples: [idiopathic aplastic anemia](http://purl.obolibrary.org/obo/MONDO_0012
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/idiopathic.tsv)
 ### Inborn metabolic
-*An acquired metabolic disease that causes disruption of a process.*
+*An inherited metabolic disease that causes disruption of a process.*
 
 | Attribute | Info |
 |----------|----------|
