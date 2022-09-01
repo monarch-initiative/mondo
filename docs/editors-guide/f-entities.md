@@ -206,3 +206,7 @@ We use ORDO subClassOf as subset, thus we have subsets starting ordo_ for all th
 We add our own subsets. These should be described in the header. They include subsets of classes that need further examination.
 
 We use the n_of_one subset if a disease is described only in one individual or family. We try and retain these unless it is something truly lost in the midsts of time.
+
+## Term tracker item
+
+If you make changes to a Mondo term based on requests on a GitHub ticket, please add an annotation to the URL of the GitHub ticket using the annotation property 'term tracker item' (type xsd:anyURI)

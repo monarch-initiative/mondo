@@ -505,7 +505,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
 
   FILTER NOT EXISTS {
     ?entity rdfs:subClassOf [ rdf:type owl:Restriction ;
-    owl:onProperty <http://purl.obolibrary.org/obo/RO_0002573> ;
+    owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
     owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021152> ] .
   }
 
@@ -518,7 +518,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
   FILTER(STRSTARTS(str(?xref), "OMIMPS:"))
   FILTER(str(?source)="MONDO:equivalentTo")
-  BIND(<http://purl.obolibrary.org/obo/RO_0002573> as ?property)
+  BIND(<http://purl.obolibrary.org/obo/RO_0000053> as ?property)
 }
 ORDER BY ?entity
 ```
@@ -1315,5 +1315,6 @@ SELECT DISTINCT ?entity ?property ?value WHERE
   BIND(hasDbXref: AS ?property)
 }
 ORDER BY ?entity
+
 ```
 

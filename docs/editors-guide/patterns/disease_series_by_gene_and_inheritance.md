@@ -26,7 +26,7 @@ Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has material basis in germline mutation in](http://purl.obolibrary.org/obo/RO_0004003) some {[gene](http://purl.obolibrary.org/obo/SO_0000704)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some {[mode_of_inheritance](http://purl.obolibrary.org/obo/HP_0000005)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has material basis in germline mutation in](http://purl.obolibrary.org/obo/RO_0004003) some {[gene](http://purl.obolibrary.org/obo/SO_0000704)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some {[mode_of_inheritance](http://purl.obolibrary.org/obo/HP_0000005)}
 
 ## Data preview 
 | defined_class                                | defined_class_label                                                       | disease                                      | disease_label                 | gene                              | gene_label   | mode_of_inheritance                       | mode_of_inheritance_label       |
