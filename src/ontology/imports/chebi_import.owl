@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/chebi_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-08-03/imports/chebi_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2022-09-03/imports/chebi_import.owl"/>
     </owl:Ontology>
     
 
@@ -803,6 +803,12 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_140310"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22723"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26596"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176497"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
@@ -2202,6 +2208,7 @@
         <oboInOwl:hasExactSynonym>carbohydrates</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Kohlenhydrat</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Kohlenhydrate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>a carbohydrate</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>carbohidrato</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>carbohidratos</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>glucide</oboInOwl:hasRelatedSynonym>
@@ -3527,6 +3534,23 @@
         <oboInOwl:hasRelatedSynonym>p-Aminophenol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>p-hydroxyaniline</oboInOwl:hasRelatedSynonym>
         <rdfs:label>4-aminophenol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_176497 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_176497">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50267"/>
+        <obo:IAO_0000115>Any compound that supports healthy aging, slows the biological aging process, or extends lifespan.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>anti-aging agent</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>anti-aging agents</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>anti-aging drug</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>anti-aging drugs</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>geroprotective agent</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>geroprotective agents</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>geroprotectors</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>geroprotector</rdfs:label>
     </owl:Class>
     
 
@@ -7191,9 +7215,11 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27314">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33229"/>
+        <obo:IAO_0000115>Any vitamin that dissolves in water and readily absorbed into tissues for immediate use. Unlike the fat-soluble vitamins, they are not stored in the body and need to be replenished regularly in the diet and will rarely accumulate to toxic levels since they are quickly excreted from the body via urine.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>wasserloesliche Vitamine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>water-soluble vitamin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>water-soluble vitamins</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>water-soluble vitamin</rdfs:label>
+        <rdfs:label>water-soluble vitamin (role)</rdfs:label>
     </owl:Class>
     
 
@@ -9512,14 +9538,14 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27027"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_52206"/>
         <obo:IAO_0000115>A biochemical role played by any micronutrient that is an organic compound. Vitamins are present in foods in small amounts and are essential to normal metabolism and biochemical functions, usually as coenzymes. The term &quot;vitamines&quot; (from vita + amines) was coined in 1912 by Casimir Funk, who believed that these compounds were amines.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>Vitamin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>vitamin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamina</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitaminas</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamine</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamines</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitamins</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>vitaminum</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>vitamin</rdfs:label>
+        <rdfs:label>vitamin (role)</rdfs:label>
     </owl:Class>
     
 
@@ -11676,6 +11702,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176497"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24527"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -12113,7 +12145,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28868"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Any aliphatic monocarboxylic acid derived from or contained in esterified form in an animal or vegetable fat, oil or wax.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any aliphatic monocarboxylic acid derived from or contained in esterified form in an animal or vegetable fat, oil or wax. Natural fatty acids commonly have a chain of 4 to 28 carbons (usually unbranched and even-numbered), which may be saturated or unsaturated. By extension, the term is sometimes used to embrace all acyclic aliphatic carboxylic acids.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>Fatty acid</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>fatty acids</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Fettsaeure</oboInOwl:hasRelatedSynonym>
@@ -15018,6 +15050,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_176497"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35475"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -17863,6 +17901,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Zwitterionic form of any peptide where, in general, the amino terminus is positively charged and the carboxy terminus is negatively charged.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>a peptide</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>peptide zwitterions</oboInOwl:hasRelatedSynonym>
         <rdfs:label>peptide zwitterion</rdfs:label>
     </owl:Class>
@@ -19175,7 +19214,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50733"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Any member of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such).</obo:IAO_0000115>
+        <obo:IAO_0000115>Any member of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises of vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such).</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>B vitamins</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>B-group vitamin</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>B-group vitamins</oboInOwl:hasRelatedSynonym>
