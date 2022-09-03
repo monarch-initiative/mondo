@@ -690,7 +690,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_144644">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26895"/>
         <oboInOwl:hasRelatedSynonym>a tetracycline</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>a tetracycline zwittterion</rdfs:label>
+        <rdfs:label>a tetracycline zwitterion</rdfs:label>
     </owl:Class>
     
 
@@ -2192,6 +2192,7 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A naturally occurring polypeptide synthesized at the ribosome.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>Protein</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>a protein</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>polypeptide chain</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>protein polypeptide chains</oboInOwl:hasRelatedSynonym>
         <rdfs:label>protein polypeptide chain</rdfs:label>
@@ -2912,6 +2913,7 @@
         <oboInOwl:hasExactSynonym>glycoproteins</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Glykoprotein</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Glykoproteine</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>a glycoprotein</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>glicoproteina</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>glicoproteinas</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>glycoproteine</oboInOwl:hasRelatedSynonym>
@@ -4660,6 +4662,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_22718">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35757"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_91007"/>
         <obo:IAO_0000115>A monocarboxylic acid anion obtained by deprotonation of the carboxy group of any benzoic acid.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>benzoate anion</oboInOwl:hasRelatedSynonym>
         <rdfs:label>benzoates</rdfs:label>
@@ -5893,6 +5896,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25388">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24675"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_base_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25389"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A hydroxybenzoate carrying a single hydroxy substituent at unspecified position.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>monohydroxybenzoates</oboInOwl:hasRelatedSynonym>
         <rdfs:label>monohydroxybenzoate</rdfs:label>
@@ -5904,6 +5913,12 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25389">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24676"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/chebi#is_conjugate_acid_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25388"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Any hydroxybenzoic acid having a single phenolic hydroxy substituent on the benzene ring.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>monohydroxybenzoic acids</oboInOwl:hasRelatedSynonym>
         <rdfs:label>monohydroxybenzoic acid</rdfs:label>
@@ -7654,6 +7669,9 @@
         <oboInOwl:hasRelatedSynonym>HOCN</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Zyansaeure</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>[C(N)OH]</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>acide cyanique</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>acido cianico</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>acidum cyanicum</oboInOwl:hasRelatedSynonym>
         <rdfs:label>cyanic acid</rdfs:label>
     </owl:Class>
     
