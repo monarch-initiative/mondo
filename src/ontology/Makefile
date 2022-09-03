@@ -662,7 +662,7 @@ mirror/hp.owl:  mirror/hp.obo
 	$(OWLTOOLS) $< -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: mirror/hp.owl
 
-CHEBI_URL=https://github.com/obophenotype/chebi_obo_slim/blob/main/chebi_slim.owl
+CHEBI_URL=https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
 
 mirror/chebi.owl:
 	wget --no-check-certificate $(CHEBI_URL) -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@ && touch $@
