@@ -18,7 +18,7 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in whic
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [Mild](http://purl.obolibrary.org/obo/HP_0012825)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [Mild](http://purl.obolibrary.org/obo/HP_0012825)
 
 ## Data preview 
 | defined_class                                | defined_class_label      | disease                                      | disease_label       |
