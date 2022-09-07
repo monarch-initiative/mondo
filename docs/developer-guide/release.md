@@ -2,7 +2,7 @@
 
 Mondo is released on a monthly basis around the first of the month. Additional releases are run ad hoc. All Mondo releases are available [here](https://github.com/monarch-initiative/mondo/releases).
 
-Videos outlining this process are available [here](https://drive.google.com/drive/u/0/folders/1kDD572vCE2NRGC57cX7vTUHQSFvomyb7).
+Videos outlining this process are available [here](https://www.youtube.com/watch?v=LfOnrnCCnmI).
 
 ## Initial setup: 
 These steps will be done only once, when setting up your computer for Mondo release. 
