@@ -713,5 +713,9 @@ update-exclusion-reasons: python-install-dependencies
 
 TERM=MONDO:0021055
 
-viz:
-	runoak -i prontolib:mondo-edit.obo viz $(TERM) -p i,p
+oaklib:
+	pip install -U oaklib
+mondo-edit.db: mondo-edit.obo
+	semsql make mondo-edit.db
+viz: mondo-edit.db
+	runoak -i sqlite:mondo-edit.db viz $(TERM) -p i,p -o test.png
