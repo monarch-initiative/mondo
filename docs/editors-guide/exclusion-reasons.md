@@ -1,6 +1,23 @@
-# Exclusion Reasons
+# Source Term Exclusion
 
-## Description 
+## Description
+
+Mondo imports terms from multiple sources (e.g. ICD10CM, Orphanet,...). These sources contain terms which’s concept is out of scope for Mondo, and therefore should not be imported. These excluded terms are recorded in “exclusion lists”.
+
+These exclusion lists include :
+  - term_ID: identifier of the term at the source
+  - term_label: term label at the source
+  - exclusion_reason: reason(s) for excluding the term in Mondo. The exclusion reason should a code from the table below
+  - exclude_children: true or false, this field indicates whether the children of this term should also be excluded from Mondo. This field is only applicable when the source of the term is an ontology.
+
+Exclusion lists are in the .tsv format and maintained in this folder: `mondo-ingest/src/ontology/config/`. Each source has its own term exclusion list(e.g `mondo-ingest/src/ontology/config/icd10cm_exclusions.tsv`)
+
+**Updating the source exclusion list:**
+Curators should update the exclusion list by updating the .tsv file. For example, the excluded ICD10CM terms list should be done by updating the following file: `mondo-ingest/src/ontology/config/icd10cm_exclusions.tsv`
+Note that these updates should be associated with a PR in Github, such that we are able to review changes history.
+
+
+## Exclusion Reasons
 _This document is a work in progress._ Noted below are reasons for excluding external ontology or terminology terms from Mondo. See enum file [here](https://github.com/monarch-initiative/mondo/blob/master/src/schema/mondo.yaml). The dashes in column 1 are meant to indicate the code is a subtype of the code above.
 
 | codes                                       | code name                                                | Definitions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Examples                                                                                                                                                                                                                                                                                                                     | IF source is an ontology, the children of this term should also be excluded |
