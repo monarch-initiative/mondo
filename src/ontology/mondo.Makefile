@@ -710,3 +710,8 @@ update-exclusion-reasons: python-install-dependencies
 	python3 ../scripts/exclusion_reasons_enum_updater.py \
 	--input-path-exclusion-reasons ../scripts/exclusion_reasons.csv \
 	--input-path-mondo-schema ../schema/mondo.yaml
+
+TERM=MONDO:0021055
+
+viz:
+	runoak -i prontolib:mondo-edit.obo viz $(TERM) -p i,p
