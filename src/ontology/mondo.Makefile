@@ -358,6 +358,24 @@ construct-unmerge-query-%: construct-query-%
 	make NORM
 	mv NORM $(SRC)
 
+TMP_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8cszVqBNOeClD6uFif3QRHn0Ud_Cyt_gylyTTFJ-RoJaOwNWS7Qv3c516bJoTBaKT1WLagSQ7CQqS/pub?gid=0&single=true&output=tsv"
+TMP_TEMPLATE_FILE=tmp/temporary.tsv
+TMP_TEMPLATE_OWL=tmp/temporary.owl
+temporary_template:
+	wget $(TMP_TEMPLATE_URL) -O $(TMP_TEMPLATE_FILE)
+	robot template --template $(TMP_TEMPLATE_FILE) -o $(TMP_TEMPLATE_OWL)
+
+UNMERGE_FILE=$(TMP_TEMPLATE_OWL)
+unmerge:
+	$(ROBOT) convert -i $(UNMERGE_FILE) -f ofn -o tmp/unmerge.owl
+	sed -i '/^Declaration[(]/d' tmp/unmerge.owl
+	$(ROBOT) unmerge -i mondo-edit.obo -i tmp/unmerge.owl convert -f obo -o tmp/mondo-edit.obo
+	mv tmp/mondo-edit.obo mondo-edit.obo
+	make NORM
+	mv NORM mondo-edit.obo
+	
+	
+
 # This first merges a the result of a construct query to mondo-edit, than unmerges another
 construct-remerge-query-%: construct-query-% construct-query-%-new
 	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*-new.ttl --collapse-import-closure false \
