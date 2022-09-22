@@ -455,7 +455,7 @@ tmp/mirror-efo.json: #mirror/efo.owl
 
 .PHONY: sssom
 sssom:
-	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.13
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.16
 
 tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
@@ -728,3 +728,12 @@ update-exclusion-reasons: python-install-dependencies
 	python3 ../scripts/exclusion_reasons_enum_updater.py \
 	--input-path-exclusion-reasons ../scripts/exclusion_reasons.csv \
 	--input-path-mondo-schema ../schema/mondo.yaml
+
+TERM=MONDO:0021055
+
+oaklib:
+	pip install -U oaklib
+mondo-edit.db: mondo-edit.obo
+	semsql make mondo-edit.db
+viz: mondo-edit.db
+	runoak -i sqlite:mondo-edit.db viz $(TERM) -p i,p -o test.png --no-view
