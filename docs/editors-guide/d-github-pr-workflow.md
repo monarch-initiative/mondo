@@ -40,7 +40,12 @@ BICB119:ontology vasilevs$`
 ## Editing mondo on a branch
 1. Create a new branch, open Protege and navigate to the class as described above. 
 2. Make necessary changes in Protege. For example, if there are incorrect xrefs on a class, delete those xrefs.
-
+3.Whenever we editor add dbxrefs, run make norm:
+    - navigate to src/ontology in the terminal
+    - run the commands:
+      `sh run.sh make NORM`
+      `mv NORM mondo-edit.obo`
+  
 ## Committing, pushing and making pull requests
 1. Review: Changes made to the ontology can be viewed by typing `git diff` in the terminal window. If there are changes that have already been committed, the changes in the active branch relative to master can be viewed by typing `git diff master.`
 2. Before committing, run the diff. Examples of a diff are pasted below. Large diffs are a sign that something went wrong. In this case, do not commit the changes and ask Chris Mungall for help instead.
