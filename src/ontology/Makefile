@@ -74,7 +74,7 @@ ADDTOTBD=../scripts/add-to-tbd.pl
 # Top-level targets
 # ----------------------------------------
 .PHONY: .FORCE
-all: test all_artefacts
+all: test all_artefacts mappings
 	echo "release finished"
 
 # ----------------------------------------
@@ -148,8 +148,9 @@ test: reports/robot-report-mondo-tags-reasoned.owl.tsv
 # Staging releases
 # ----------------------------------------
 
-prepare_release: $(ARTEFACTS)
-	rsync -R $^ ../..
+#prepare_release: $(ARTEFACTS)
+#	$(MAKE) mappings -B
+#	rsync -R $^ ../..
 
 # note: only reports, imports
 prepare_release_direct:
