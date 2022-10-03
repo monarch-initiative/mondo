@@ -2,6 +2,25 @@
 
 ## Mondo specific checks
 
+###  qc-check-for-two-replaced-by-annotations.sparql
+
+```
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+  VALUES ?property {
+    IAO:0100001
+  }
+  ?entity ?property ?value1 .
+  ?entity ?property ?value2 .
+  FILTER(?value1!=?value2)
+  BIND(CONCAT(str(?value1), CONCAT("|", str(?value2))) as ?value)
+}
+```
+
 ###  qc-conforms-to-omimps-and-more.sparql
 
 ```
