@@ -1,3 +1,151 @@
+# 2022-10-03 
+
+## Overview:
+
+
+* Number of new terms: 34
+* Number of changed labels: 47
+* Number of changed definitions: 7
+* Number obsoleted terms: 10
+* Number of new obsoletion candidates: 4
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 1
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100478 | brain malformations with or without urinary tract defects | A brain disorder caused by pathogenic variants in NFIA that is characterized by developmental delay, corpus callosum agenesis/hypoplasia and craniofacial dysmorphism, such as macrocephaly (caused by hydrocephalus or ventriculomegaly), low-set ears, anteverted nostrils and micrognathia. Urinary tract defects (e.g. vesicoureteral reflux, urinary incontinence) are also frequently associated. Other reported variable manifestations include hypotonia, tethered spinal cord, Chiari type I malformation and seizures. |
+| MONDO:0100500 | Mendelian neurodevelopmental disorder | A neurodevelopmental disorder that is caused by genetic modifications where those modifications are inherited from a parent's genome. |
+| MONDO:0700096 | human disease or disorder | |
+| MONDO:0700098 | neoplasm, non-human animal | |
+| MONDO:0700099 | adenocarcinoma, non-human animal | |
+| MONDO:0700100 | leukemia, non-human animal | |
+| MONDO:0700101 | carcinoma, non-human animal | |
+| MONDO:0700102 | lymphoma, non-human animal | |
+| MONDO:0700103 | nutritional deficiency disease, non-human animal | |
+| MONDO:0700104 | respiratory system disorder, non-human animal | |
+| MONDO:0700105 | difference of sexual differentiation, non-human animal | |
+| MONDO:0700106 | immune system disorder, non-human animal | |
+| MONDO:0700108 | prion disease, non-human animal | |
+| MONDO:0700109 | skin disease caused by bacterial infection, non-human animal | |
+| MONDO:0700110 | pneumonia, non-human animal | |
+| MONDO:0700111 | bacterial pneumonia, non-human animal | |
+| MONDO:0800103 | COACH syndrome 1 | Any COACH syndrome in which the cause of the disease is a variation in the TMEM67 gene. |
+| MONDO:0800134 | primary immunodeficiency due to calcium channel deficiency | An immunodeficiency disease caused by a variation in the CRACR2A gene. |
+| MONDO:0800135 | congenital emphysematous lung disease due to Filamin A loss-of-function variant | Any interstitial lung disease specific to childhood caused by a loss-of-function variation in the FLNA gene. Female children are reported more often. Rare male patients with loss-of-function FLNA mutation-associated lung disease with residual protein function can survive into infancy with a severe form of the phenotype. |
+| MONDO:0800136 | non-severe combined immunodeficiency due to COPG1 deficiency | Any non-severe combined immunodeficiency caused by a deficiency in the COPG1 gene. |
+| MONDO:0800137 | early-onset pulmonary and cutaneous vasculitis | A monogenic autoinflammatory disorder caused by a de novo activating mutation, p.Tyr515∗, in hematopoietic cell kinase (HCK). The disease is characterized by cutaneous vasculitis and chronic pulmonary inflammation that progresses to fibrosis. |
+| MONDO:0800138 | multisystem autoimmune disease due to IKAROS gain of function | An autoimmune disease caused by a loss-of-function variation in the IKZF1/IKAROSgene. Leukocytes of patients exhibited specific defects including impaired IL-2 production by T cells, T helper (TH) skewing toward TH2, low numbers of regulatory T cells (Treg), eosinophilia, and abnormal PC proliferation. |
+| MONDO:0800139 | HELIOS deficiency | A non-severe combined immunodeficiency caused by a loss-of-function variation in the IKZF2 gene that is characterized by recurrent upper respiratory infections, thrush and mucosal ulcers, and chronic lymphadenopathy. |
+| MONDO:0800140 | ITPKB deficiency | Any non-severe combined immunodeficiency in which the cause of the disease is variation in the ITPKB gene. |
+| MONDO:0800141 | MAN2B2 deficiency | Any non-severe combined immunodeficiency in which the cause of the disease is variation in the MAN2B2 gene. |
+| MONDO:0800142 | chronic mucocutaneous candidiasis and connective tissue disease due to JNK1 haploinsufficiency | An immunodeficiency disease caused by a variation in MAPK8, the gene encoding c-Jun N-terminal kinase 1 (JNK1), that is characterized by chronic mucocutaneous candidiasis and a connective tissue disorder that clinically overlaps with Ehlers-Danlos syndrome (EDS). |
+| MONDO:0800143 | cytomegalovirus pneumonia due to NOS2 deficiency | Cytomegalovirus pneumonia due to variant in the NOS2 gene. |
+| MONDO:0800144 | autoimmune pulmonary disease due to PD-1 deficiency | An autoimmune disease that is characterized by a lack of PD-1 on patient peripheral blood mononuclear cells (PBMCs) and reduced IFN production in response to mycobacterial stimuli. |
+| MONDO:0800145 | non-severe combined immunodeficiency due to polymerase delta deficiency | Any non-severe combined immunodeficiency in which the cause of the disease is variation in the POLD1/POLD2 gene. |
+| MONDO:0800146 | agammaglobulinemia, autosomal recessive, due to BOB1 deficiency | Any agammaglobulinemia in which the cause of the disease is autosomal recessive deficiency in the BOB1 gene. |
+| MONDO:0800147 | hemophagocytic lymphohistiocytosis due to RhoG deficiency | Any genetic hemophagocytic lymphohistiocytosis in which the cause of the disease is an autosomal recessive variation in the RHOG gene. |
+| MONDO:0800148 | autoinflammatory syndrome due to TBK1 deficiency | Any autoinflammatory syndrome in which the cause of the disease is an autosomal recessive variation in the TBK1 gene. |
+| MONDO:0800149 | immunodeficiency, common variable, due to APRIL deficiency | Any commonn variable immunodeficiency in which the cause of the disease is an autosomal recessive variation in the TNFS13 gene. |
+| MONDO:0810000 | choroidal neovascularization | An eye disorder described by the growth of new blood vessels that originate from the choroid through a break in the Bruch membrane into the sub–retinal pigment epithelium (sub-RPE) or subretinal space. Choroidal neovascularization (CNV) is a major cause of visual loss. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0001571 | gynecomastia disorder | gynecomastia | gynecomastia disorder |
+| MONDO:0002145 | disorder of sexual differentiation | difference of sexual differentiation | disorder of sexual differentiation |
+| MONDO:0005272 | myelodysplastic syndrome with single lineage dysplasia | refractory anemia | myelodysplastic syndrome with single lineage dysplasia |
+| MONDO:0019453 | myelodysplastic syndrome with multilineage dysplasia | refractory cytopenia with multilineage dysplasia | myelodysplastic syndrome with multilineage dysplasia |
+| MONDO:0007925 | myelodysplastic syndrome associated with isolated del(5q) | chromosome 5q deletion syndrome | myelodysplastic syndrome associated with isolated del(5q) |
+| MONDO:0008907 | PMM2-congenital disorder of glycosylation | PMM2-CDG | PMM2-congenital disorder of glycosylation |
+| MONDO:0008908 | MGAT2-congenital disorder of glycosylation | MGAT2-CDG | MGAT2-congenital disorder of glycosylation |
+| MONDO:0012117 | ALG9-congenital disorder of glycosylation | ALG9-CDG | ALG9-congenital disorder of glycosylation |
+| MONDO:0010478 | SLC35A2-congenital disorder of glycosylation | SLC35A2-CDG | SLC35A2-congenital disorder of glycosylation |
+| MONDO:0010490 | SSR4-congenital disorder of glycosylation | SSR4-CDG | SSR4-congenital disorder of glycosylation |
+| MONDO:0010998 | ALG3-congenital disorder of glycosylation | ALG3-CDG | ALG3-congenital disorder of glycosylation |
+| MONDO:0011257 | MPI-congenital disorder of glycosylation | MPI-CDG | MPI-congenital disorder of glycosylation |
+| MONDO:0011291 | ALG6-congenital disorder of glycosylation 1C | congenital disorder of glycosylation type 1C | ALG6-congenital disorder of glycosylation 1C |
+| MONDO:0011342 | SLC35A1-congenital disorder of glycosylation | SLC35A1-CDG | SLC35A1-congenital disorder of glycosylation |
+| MONDO:0011629 | MOGS-congenital disorder of glycosylation | MOGS-CDG | MOGS-congenital disorder of glycosylation |
+| MONDO:0011772 | B4GALT1-congenital disorder of glycosylation | B4GALT1-CDG | B4GALT1-congenital disorder of glycosylation |
+| MONDO:0011783 | ALG12-congenital disorder of glycosylation | ALG12-CDG | ALG12-congenital disorder of glycosylation |
+| MONDO:0011933 | ALG2-congenital disorder of glycosylation | ALG2-CDG | ALG2-congenital disorder of glycosylation |
+| MONDO:0011964 | DPAGT1-congenital disorder of glycosylation | DPAGT1-CDG | DPAGT1-congenital disorder of glycosylation |
+| MONDO:0011969 | ALG8-congenital disorder of glycosylation | ALG8-CDG | ALG8-congenital disorder of glycosylation |
+| MONDO:0012041 | familial adenomatous polyposis 2 | MUTYH-related attenuated familial adenomatous polyposis | familial adenomatous polyposis 2 |
+| MONDO:0012052 | ALG1-congenital disorder of glycosylation | ALG1-CDG | ALG1-congenital disorder of glycosylation |
+| MONDO:0012118 | COG7-congenital disorder of glycosylation | COG7-CDG | COG7-congenital disorder of glycosylation |
+| MONDO:0012128 | transposition of the great arteries, dextro-looped | dextro-looped transposition of the great arteries 1 | transposition of the great arteries, dextro-looped |
+| MONDO:0012211 | MPDU1-congenital disorder of glycosylation | MPDU1-CDG | MPDU1-congenital disorder of glycosylation |
+| MONDO:0012556 | DK1-congenital disorder of glycosylation | DK1-CDG | DK1-congenital disorder of glycosylation |
+| MONDO:0012635 | COG8-congenital disorder of glycosylation | COG8-CDG | COG8-congenital disorder of glycosylation |
+| MONDO:0012637 | COG1-congenital disorder of glycosylation | COG1-CDG | COG1-congenital disorder of glycosylation |
+| MONDO:0012783 | RFT1-congenital disorder of glycosylation | RFT1-CDG | RFT1-congenital disorder of glycosylation |
+| MONDO:0012885 | SRD5A3-congenital disorder of glycosylation | SRD5A3-CDG | SRD5A3-congenital disorder of glycosylation |
+| MONDO:0013049 | DPM3-congenital disorder of glycosylation | DPM3-CDG | DPM3-congenital disorder of glycosylation |
+| MONDO:0013281 | COG4-congenital disorder of glycosylation | COG4-CDG | COG4-congenital disorder of glycosylation |
+| MONDO:0013325 | COG5-congenital disorder of glycosylation | COG5-CDG | COG5-congenital disorder of glycosylation |
+| MONDO:0013349 | ALG11-congenital disorder of glycosylation | ALG11-CDG | ALG11-congenital disorder of glycosylation |
+| MONDO:0013463 | congenital heart defects, multiple types, 6 | dextro-looped transposition of the great arteries 3 | congenital heart defects, multiple types, 6 |
+| MONDO:0013789 | DDOST-congenital disorder of glycosylation | DDOST-CDG | DDOST-congenital disorder of glycosylation |
+| MONDO:0013810 | COG6-ongenital disorder of glycosylation | COG6-CGD | COG6-ongenital disorder of glycosylation |
+| MONDO:0013870 | TMEM165-congenital disorder of glycosylation | TMEM165-CDG | TMEM165-congenital disorder of glycosylation |
+| MONDO:0013968 | PGM1-congenital disorder of glycosylation | PGM1-CDG | PGM1-congenital disorder of glycosylation |
+| MONDO:0014270 | STT3A-congenital disorder of glycosylation | STT3A-CDG | STT3A-congenital disorder of glycosylation |
+| MONDO:0014271 | STT3B-congenital disorder of glycosylation | STT3B-CDG | STT3B-congenital disorder of glycosylation |
+| MONDO:0014630 | familial adenomatous polyposis 3 | NTHL1-related attenuated familial adenomatous polyposis | familial adenomatous polyposis 3 |
+| MONDO:0018273 | XYLT1-congenital disorder of glycosylation | XYLT1-CDG | XYLT1-congenital disorder of glycosylation |
+| MONDO:0018349 | MAN1B1-congenital disorder of glycosylation | MAN1B1-CDG | MAN1B1-congenital disorder of glycosylation |
+| MONDO:0019157 | myelodysplastic syndrome with ring sideroblasts | acquired idiopathic sideroblastic anemia | myelodysplastic syndrome with ring sideroblasts |
+| MONDO:0022622 | congenital disorder of glycosylation syndrome type 4 | CDG syndrome type 4 | congenital disorder of glycosylation syndrome type 4 |
+| MONDO:0100068 | SLC10A7-congenital disorder of glycosylation | SLC10A7-CDG | SLC10A7-congenital disorder of glycosylation |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0005272 | myelodysplastic syndrome with single lineage dysplasia | A myelodysplastic syndrome characterized mainly by dysplasia of the erythroid series. Refractory anemia is uncommon. It is primarily a disease of older adults. The median survival exceeds 5 years. (WHO, 2001) | A myelodysplastic syndrome characterized by dysplasia seen in at least 10% of the early cells of 1 cell type (either red blood cells, white blood cells, or megakaryocytes) in the bone marrow. |
+| MONDO:0006763 | frozen shoulder | Inflammation or irritation of a bursa, the fibrous sac that acts as a cushion between moving structures of bones, muscles, tendons or skin. | A painful inflammatory process leads to a mechanical block in active and passive range of motion (ROM) of the shoulder. Adhesive capsulitis of the shoulder is characterized by functional loss of passive and active shoulder motion. This inflammatory process results in fibroblastic proliferation and extensive scar tissue formation. Fibroblastic proliferation, a late phase of the inflammatory process involved in tissue repair, leads to thickening, fibrosis, and adhesion of the capsule to itself and the humerus. |
+| MONDO:0008357 | radial hypoplasia-triphalangeal thumbs-hypospadias-maxillary diastema syndrome | Radial hypoplasia-triphalangeal thumbs-hypospadias-maxillary diastema syndrome is characterised by symmetric, nonopposable triphalangeal thumbs and radial hypoplasia. It has been described in eight patients (five females and three males) spanning generations of a family. The affected males also presented with hypospadias. The syndrome is inherited as an autosomal dominant trait. | A syndrome is characterised by symmetric, nonopposable triphalangeal thumbs and radial hypoplasia. It has been described in eight patients (five females and three males) spanning generations of a family. The affected males also presented with hypospadias. The syndrome is inherited as an autosomal dominant trait. |
+| MONDO:0800153 | urea cycle disorder or inherited hyperammonemia | A disorder of amino acid metabolism that has its basis in the disruption of the urea cycle and/or there is an inherited increased concentration of ammonia in the blood. | A disorder of amino acid metabolism that has its basis in the disruption of the urea cycle or an inherited hyperammonemia (any specific disease which causes an inherited increased concentration of ammonia in the blood). |
+| MONDO:0009842 | Pelger-Huet-like anomaly and episodic fever with abdominal pain | | An autoinflammatory disease with defective neutrophil function caused by a homozygous Arg219His mutation in the transcription factor C/EBPε. |
+| MONDO:0010613 | inborn glycerol kinase deficiency | An inherited metabolic disease that is has its basis in the disruption of glycerol kinase activity. | An acquired metabolic disease that has its basis in the disruption of glycerol kinase activity. |
+| MONDO:0030491 | immunodeficiency 91 and hyperinflammation | | An autosomal recessive immunodeficiency caused by a variation in the ZNFX1 gene, characterized by severe infections by both RNA and DNA viruses and virally triggered inflammatory episodes with hemophagocytic lymphohistiocytosis-like disease, early-onset seizures, and renal and lung disease. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0004595 | obsolete acute pulmonary heart disease |
+| MONDO:0008996 | obsolete COACH syndrome 1 |
+| MONDO:0009628 | obsolete microcolon |
+| MONDO:0010050 | obsolete spastic pseudosclerosis |
+| MONDO:0019775 | obsolete Chudley-Lowry-Hoar syndrome |
+| MONDO:0019776 | obsolete Juberg-Marsidi syndrome |
+| MONDO:0019777 | obsolete Carpenter-Waziri syndrome |
+| MONDO:0019778 | obsolete Smith-Fineman-Myers syndrome |
+| MONDO:0019779 | obsolete Renier-Gabreels-Jasper syndrome |
+| MONDO:0042915 | obsolete Schmitt-Gillenwater-Kelly syndrome |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0001324 | hyperandrogenism |
+| MONDO:0006928 | proliferative vitreoretinopathy |
+| MONDO:0009977 | Knobloch syndrome |
+| MONDO:0016784 | gestational trophoblastic disease |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0035370 | ALPI-related inflammatory bowel disease |
+
 # 2022-09-06
 
 ## Overview:
