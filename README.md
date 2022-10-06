@@ -13,7 +13,7 @@ This is the repository for managing the Mondo Disease Ontology (Mondo). Mondo ai
 
 Stable release versions
 
- * http://purl.obolibrary.org/obo/mondo.obo
+ * [http://purl.obolibrary.org/obo/mondo.obo](https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.obo)
  * http://purl.obolibrary.org/obo/mondo.json
  * http://purl.obolibrary.org/obo/mondo.owl
 
