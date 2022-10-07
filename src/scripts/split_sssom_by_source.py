@@ -14,7 +14,7 @@ import pandas as pd
 from argparse import ArgumentParser
 import yaml
 
-from sssom.util import read_pandas
+from sssom.util import read_pandas, sort_df_rows_columns
 from sssom.parsers import from_sssom_dataframe, split_dataframe_by_prefix
 from sssom.writers import write_table, write_tables
 
@@ -71,7 +71,7 @@ def read_metadata(filename):
 
 meta, curie_map=read_metadata(metadata_file)
 df=read_pandas(sssom_file)
-df["match_type"]="HumanCurated"
+df["mapping_justification"]="semapv:ManualMappingCuration"
 
 subject_prefixes_allowed = meta['subject_prefixes']
 relations_allowed = meta['relations']
@@ -101,4 +101,6 @@ for msdf in splitted:
                 for item in source_metadata['metadata']:
                     m[item]=source_metadata['metadata'][item]
     splitted[msdf].metadata = m
+    splitted[msdf].df = sort_df_rows_columns(splitted[msdf].df, by_columns=True, by_rows=True)
+
 write_tables(splitted,mapping_dir)

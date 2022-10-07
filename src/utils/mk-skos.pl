@@ -14,6 +14,7 @@ while (<>) {
     if (m@^xref: (\S+):(\S+) (.*)@) {
         my ($prefix, $x, $anns) = ($1,$2,$3);
         my $rel = 'closeMatch';
+        
         if ($anns =~ m@equivalentTo@) {
             $rel = 'exactMatch';
         }
