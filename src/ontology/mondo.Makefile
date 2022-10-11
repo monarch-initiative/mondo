@@ -457,12 +457,13 @@ tmp/mirror-efo.json: #mirror/efo.owl
 sssom:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.17
 
-.PHONY: oak
-oak:
+.PHONY: oaklib
+oaklib:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
 
-tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
+tmp/%.sssom.tsv: tmp/mirror-%.json | sssom | oaklib | mondo_merge_db
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
+	python ../scripts/add_object_label.py run $@
 
 qqq:
 	sssom parse tmp/mirror-mondo.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o tmp/www.sssom.tsv
@@ -627,6 +628,12 @@ open_%_report:
 
 mondo_obo:
 	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
+
+tmp/mondo-ingest.owl:
+	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
+
+mondo_merge_db: tmp/mondo-ingest.owl
+	semsql make tmp/mondo-ingest.db
 
 METRIC_SINCE_VERSION=2019-06-29
 METRIC_UNTIL_VERSION=2020-06-30
