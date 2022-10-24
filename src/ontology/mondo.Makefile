@@ -463,13 +463,13 @@ oaklib:
 
 tmp/%.sssom.tsv: tmp/mirror-%.json | sssom | oaklib | mondo_merge_db
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
-	python ../scripts/add_object_label.py run $@
 
 qqq:
 	sssom parse tmp/mirror-mondo.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o tmp/www.sssom.tsv
 
 
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
+	python ../scripts/add_object_label.py run $<
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
 	sssom sort $@ -o $@

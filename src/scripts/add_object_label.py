@@ -8,6 +8,8 @@ from sssom.writers import write_table
 
 SSSOM_FILE = "../ontology/tmp/mondo.sssom.tsv"
 RESOURCE = "../ontology/tmp/mondo-ingest.db"
+OBJECT_LABEL_COLUMN = "object_label"
+OBJECT_ID_COLUMN = "object_id"
 
 input_argument = click.argument("input", required=True, type=click.Path(exists=True))
 output_option = click.option(
@@ -30,12 +32,11 @@ def main():
 def run(input: str = SSSOM_FILE, output: TextIO =SSSOM_FILE):
     """Get object_label from resource via oaklib."""
     msdf = parse_sssom_table(input)
-    # msdf.df.to_csv("test.tsv", sep="\t", index=False)
-    # import pdb; pdb.set_trace()
     ontology_resource = OntologyResource(slug=RESOURCE, local=True)
     oi = SqlImplementation(ontology_resource)
-    msdf.df['object_label'] = msdf.df['object_id'].apply(lambda x: oi.label(x))
-    write_table(msdf=msdf,file=output)
+    if OBJECT_LABEL_COLUMN not in msdf.df.columns:
+        msdf.df[OBJECT_LABEL_COLUMN] = msdf.df[OBJECT_ID_COLUMN].apply(lambda x: oi.label(x))
+        write_table(msdf=msdf,file=output)
 
 if __name__ == "__main__":
     main()
