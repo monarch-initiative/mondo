@@ -3,7 +3,7 @@ name: Merge two terms
 about: Obsolete or deprecate an existing Mondo term and merge with another Mondo term
 title: "[Merge]"
 labels: merge
-assignees: nicolevasilevsky
+assignees: nicolevasilevsky, sabrinatoro
 
 ---
 
