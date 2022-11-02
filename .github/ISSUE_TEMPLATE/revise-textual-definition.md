@@ -3,7 +3,7 @@ name: Revise textual definition
 about: Change the textual definition of an Mondo term
 title: "[Revise text def]"
 labels: ''
-assignees: nicolevasilevsky
+assignees: nicolevasilevsky, sabrinatoro
 
 ---
 
