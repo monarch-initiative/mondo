@@ -1412,6 +1412,30 @@ Examples: [carcinoid tumor (disease)](http://purl.obolibrary.org/obo/MONDO_00053
 | MONDO:0006162 | colorectal neuroendocrine tumor G1      | UBERON:0012652 | colorectum         |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm_grade1.tsv)
+### Nonhuman disease
+*This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human. Examples: [leukemia, non-human animal](http://purl.obolibrary.org/obo/MONDO_0700100), [hepatitis, viral, animal](http://purl.obolibrary.org/obo/MONDO_0025085)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml |
+| Name | nonhuman_disease |
+| Classes | MONDO:0005583, MONDO:0700096,  |
+| Variables | human_disease (MONDO:0700096),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
+### Nonhuman disease taxon
+*This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human and the taxon affected is known. Examples: [leukemia, feline](http://purl.obolibrary.org/obo/MONDO_0025488)*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml |
+| Name | nonhuman_disease_taxon |
+| Classes | MONDO:0005583, MONDO:0700096, NCBITaxon:1,  |
+| Variables | human_disease (MONDO:0700096), taxon (NCBITaxon:1),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
+| Examples |  |
+
 ### Nuclear subtype
 *A disease that is classified as a nuclear subtype, due to a defect in a nuclear gene, such as MONDO:0009640 'mitochondrial complex I deficiency, nuclear type'.*
 

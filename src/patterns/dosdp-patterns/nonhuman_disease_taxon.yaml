@@ -1,0 +1,54 @@
+pattern_name: nonhuman_disease_taxon
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml
+
+description: 'This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human and the taxon affected is known.
+  Examples: [leukemia, feline](http://purl.obolibrary.org/obo/MONDO_0025488)'
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  non-human animal disease: MONDO:0005583
+  human disease or disorder: MONDO:0700096
+  taxon: NCBITaxon:1
+
+relations:
+  cross-species analog: MONDO:0700097
+  in taxon: RO:0002162
+
+#annotationProperties:
+#  exact_synonym: oio:hasExactSynonym
+#  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  human_disease: "'human disease or disorder'"
+  taxon: "'taxon'"
+
+name:
+  text: '%s, %s'
+  vars:
+  - human_disease
+  - taxon
+
+#annotations:
+#- annotationProperty: exact_synonym
+#  text: ''
+#  vars:
+#  - human disease
+#- annotationProperty: related_synonym
+#  text:
+#  vars:
+#  - human disease
+
+def:
+  text: '%s that occurs in %s'
+  vars:
+  - human_disease
+  - taxon
+
+equivalentTo:
+  text: '''non-human animal disease'' and (''cross-species analog'' some %s) and (''in taxon'' some %s)'
+  vars:
+  - human_disease
+  - taxon

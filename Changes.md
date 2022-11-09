@@ -1,3 +1,121 @@
+# 2022-11-01
+
+## Overview:
+* Number of new terms: 71
+* Number of changed labels: 0
+* Number of changed definitions: 3
+* Number obsoleted terms: 3
+* Number of new obsoletion candidates: 1
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 1
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100048 | graft-versus-host disease, susceptibility to | An inherited susceptibility or predisposition to developing graft vs. host disease. |
+| MONDO:0700112 | heterotaxy, visceral, 5, autosomal | Any visceral hetetotaxy in which the cause of the disease is a mutation in the NODAL gene. |
+| MONDO:0700131 | sarcoma, non-human animal | Sarcoma that occurs in non-human animals. |
+| MONDO:0700132 | melanoma, non-human animal | Melanoma that occurs in non-human animals. |
+| MONDO:0700133 | adenoma, non-human | Adenoma that occurs in non-human animals. |
+| MONDO:0700134 | bovine neoplasm | A neoplasm that occurs in cattle. |
+| MONDO:0700135 | bovine leukemia | A malignant (clonal) hematologic disorder, involving hematopoietic stem cells and characterized by the presence of primitive or atypical myeloid or lymphoid cells in the bone marrow and the blood which occurs in cattle |
+| MONDO:0700136 | bovine protoporphyria | A congenital metabolic disorder characterized by a deficiency in the enzyme ferrochelatase, which occurs in cattle. |
+| MONDO:0700137 | bovine lymphosarcoma | Lymphosarcoma that occurs in a cow. |
+| MONDO:0700138 | bovine rectal myxoma | A myxoma that occurs in the rectum of a cow. |
+| MONDO:0700139 | canine neoplasm | A neoplasm that occurs in dogs. |
+| MONDO:0700140 | canine osteosarcoma | An osteosarcoma of mesenchymal origin in a dog. It is the most common bone cancer in dogs, most often developing in the limbs of large or giant breed dogs. The morphologic and biologic behavior of canine osteosarcomas is similar to that of human osteosarcomas. |
+| MONDO:0700141 | canine melanoma | Melanoma occurring in a dog. It is the most common malignant tumor found in the mouths of dogs and also occurs frequently on the digits. All canine melanomas are locally invasive and malignant canine melanomas show a high rate of metastasis. Melanoma in dogs has been established as a relevant model for human melanoma. |
+| MONDO:0700142 | canine hemangiosarcoma | Hemangiosarcoma occurring in a dog. It is an incurable tumor of vascular endothelial cells and occurs more commonly in dogs beyond middle age, and is especially common in certain breeds. Most hemangiosarcomas do not have a known cause. |
+| MONDO:0700143 | canine mammary carcinoma | Mammary carcinoma occurring in a dog. |
+| MONDO:0700144 | canine leukemia | An acute or chronic malignant (clonal) hematologic disorder, arising from hematopoietic stem cells in dogs. It is characterized by the presence of primitive or atypical myeloid or lymphoid cells in the bone marrow and the blood. |
+| MONDO:0700145 | canine lymphoma | A malignant lymphoproliferative disorder that affects dogs. It is characterized by the clonal proliferation of B- or T-lymphocytes in the lymph nodes, bone marrow, and/or extranodal sites. |
+| MONDO:0700146 | canine prostate carcinoma | A malignant epithelial neoplasm arising from the prostate gland of a dog. |
+| MONDO:0700147 | canine histiocytic sarcoma | A malignant neoplasm that affects dogs, characterized by the presence of malignant cells with morphologic and immunophenotypic characteristics similar to those seen in mature histiocytes. |
+| MONDO:0700148 | canine transitional cell carcinoma | A malignant neoplasm that affects dogs, arising from transitional epithelium. |
+| MONDO:0700149 | canine sarcoma | A malignant mesenchymal neoplasm that affects dogs. It arises from muscle, fat, fibrous tissue, bone, cartilage, and blood vessels. |
+| MONDO:0700150 | canine mastocytoma | A tumor composed of mast cells that occurs in dogs. |
+| MONDO:0700151 | canine glioma | A brain or spinal cord tumor arising from glial cells that occurs in dogs. |
+| MONDO:0700152 | canine hepatocellular carcinoma | A malignant tumor arising from hepatocytes that occurs in dogs. |
+| MONDO:0700153 | canine lung adenocarcinoma | A carcinoma that arises from the lung in dogs and is characterized by the presence of malignant glandular epithelial cells. |
+| MONDO:0700154 | canine rhabdomyosarcoma | A malignant mesenchymal neoplasm arising from skeletal muscle that occurs in dogs. |
+| MONDO:0700155 | canine thyroid adenocarcinoma | Adeonocarcinoma of the thyroid gland occurring in a dog. |
+| MONDO:0700156 | canine soft tissue sarcoma | Soft tissue sarcoma occurring in a dog. |
+| MONDO:0700157 | canine oral squamous cell carcinoma | Oral squamous cell carcinoma that occurs in a dog. |
+| MONDO:0700158 | canine pancreatic carcinoma | Pancreatic carcinoma that occurs in a dog. |
+| MONDO:0700159 | canine acanthomatous epulis | A tumor arising from odontogenic epithelium and occurs in a dog. |
+| MONDO:0700160 | canine mammary adenoma | An adenoma arising from the mammary gland of a dog. |
+| MONDO:0700161 | canine gastrointestinal stromal tumor | A gastrointestinal stromal tumor occurring in a dog. |
+| MONDO:0700162 | canine granular cell tumor | A granular cell tumor occurring in a dog. |
+| MONDO:0700163 | canine Langerhans cell histiocytosis | Langerhans cell histiocytosis occurring in a dog. |
+| MONDO:0700164 | canine nephroblastoma | A nephroblastoma occurring in a dog. |
+| MONDO:0700165 | canine thyroid gland medullary carcinoma | Thyroid gland medullary carcinoma occurring in a dog. |
+| MONDO:0700166 | canine transmissible venereal tumor | A sexually transmitted tumor arising from histiocytes and occurring in dogs. |
+| MONDO:0700167 | canine sebaceous gland epithelioma | Sebaceous epithelioma occurring in a dog. |
+| MONDO:0700168 | canine oral melanoma | A melanoma that affects the lip and/or oral cavity of a dog. |
+| MONDO:0700169 | canine cutaneous t-cell lymphoma | Cutaneous T-cell lymphoma occurring in a dog. |
+| MONDO:0700170 | equine neoplasm | Neoplasm that occurs in a horse. |
+| MONDO:0700171 | horse melanoma | Melanoma that occurs in a horse. |
+| MONDO:0700172 | horse lymphoma | Lymphoma that occurs in a horse. |
+| MONDO:0700173 | horse sarcoid | A fibroblastic tumor that occurs in the skin of a horse. |
+| MONDO:0700174 | horse transitional cell carcinoma | Transitional cell carcinoma that occurs in a horse. |
+| MONDO:0700175 | feline neoplasm | Neoplasm that occurs in a cat. |
+| MONDO:0700176 | feline lymphoma | A lymphoma that occurs in cats. It is associated with exposure to feline leukemia virus and feline immunodeficiency virus. |
+| MONDO:0700177 | feline mammary carcinoma | Mammary carcinoma occurring in a cat. |
+| MONDO:0700178 | feline oral squamous cell carcinoma | Oral squamous cell carcinoma that occurs in a cat. |
+| MONDO:0700179 | feline osteosarcoma | Osteosarcoma that occurs in a cat. |
+| MONDO:0700180 | feline bronchioloalveolar lung carcinoma | Bronchioloalveolar lung carcinoma that occurs in a cat. |
+| MONDO:0700181 | feline fibrosarcoma | Fibrosarcoma that occurs in a cat. |
+| MONDO:0700182 | feline erythroleukemia | Erythroleukemia that occurs in a cat. |
+| MONDO:0700183 | feline reticulum cell sarcoma | Reticulum cell sarcoma that occurs in a cat. |
+| MONDO:0700184 | feline large granular lymphocyte lymphoma | A T-cell leukemia in which there is a persistent increase in the number of large granular lymphocytes in the peripheral blood and occurring in a cat. |
+| MONDO:0700185 | feline melanoma | A malignant, usually aggressive tumor composed of atypical, neoplastic melanocytes that occurs in a cat. |
+| MONDO:0700186 | feline histiocytic sarcoma | Histiocytic sarcoma occurring in a cat. |
+| MONDO:0700187 | feline progressive histiocytosis | A condition occurring in cats characterized by solitary or multiple cutaneous nodules and papules, which may metastasize late in the course of the disease. Lesions consist of poorly circumscribed histiocytic infiltrates of the superficial and deep dermis, with variable extension into the subcutis. |
+| MONDO:0700188 | feline synovial cell sarcoma | Synovial cell sarcoma occurring in a cat. |
+| MONDO:0700189 | chicken neoplasm | A neoplasm that occurs in a chicken. |
+| MONDO:0700190 | chicken bursal lymphoma | A malignant lymphoma that arises in the bursa of Fabricius in a chicken. |
+| MONDO:0700191 | chicken fibrosarcoma | Fibrosarcoma that occurs in a chicken. |
+| MONDO:0700192 | chicken hepatoma | Hepatoma that occurs in a chicken. |
+| MONDO:0700193 | chicken monocytic leukemia | Monocytic leukemia that occurs in a chicken. |
+| MONDO:0700194 | chicken lymphoma | Lymphoma that occurs in a chicken. |
+| MONDO:0700195 | rous sarcoma | A fibrosarcoma, originally observed in a Plymouth Rock hen, now thought to be an expression of infection by certain viruses of the avian leukosis-sarcoma complex in the family |
+| MONDO:0700196 | fish melanoma | Melanoma that occurs in a fish. |
+| MONDO:0700197 | porcine leukemia | Leukemia that occurs in a pig. |
+| MONDO:0700198 | porcine lymphoma | Lymphoma that occurs in a pig. |
+| MONDO:0700199 | sheep lung adenocarcinoma | Adenocarcinoma arising from the lung of a sheep. |
+
+
+## Changed terms
+No changed labels.
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0009821 | lethal osteosclerotic bone dysplasia | Lethal osteosclerotic bone dysplasia is defined by generalized osteosclerosis with periosteal bone formation, characteristic facial dysmorphism, brain abnormalities including intracerebral calcifications, and neonatal lethal course. | Generalized osteosclerosis with periosteal bone formation, characteristic facial dysmorphism, brain abnormalities including intracerebral calcifications, and neonatal lethal course. |
+| MONDO:0013730 | graft versus host disease | Acute graft-versus-host disease (GVHD) occurs after allogeneic hematopoietic stem cell transplant and is a reaction of donor immune cells against host tissues. Activated donor T cells damage host epithelial cells after an inflammatory cascade that begins with the preparative regimen. | An immune system disorder that occurs after allogeneic hematopoietic stem cell transplant and is a reaction of donor immune cells against host tissues. Activated donor T cells damage host epithelial cells after an inflammatory cascade that begins with the preparative regimen. |
+| MONDO:0020485 | King-Denborough syndrome | King-Denborough syndrome is a rare genetic non-dystrophic myopathy characterized by the triad of congenital myopathy, dysmorphic features and susceptibility to malignant hyperthermia. Patients present with a wide phenotypic range, including delayed motor development, muscle weakness and fatigability, ptosis and facies myopathica (with or without creatine kinase elevations), skeletal abnormalities (e.g. short stature, scoliosis, kyphosis, lumbar lordosis and pectus carinatum/excavatum), mild dysmorphic facial features (e.g. hypertelorism, down-slanting palpebral fissures, epicanthic folds, low set ears, micrognathia), webbing of the neck, cryptorchidism, and a susceptibility to malignant hyperthermia and/or rhabdomyolysis due to intensive physical strain, viral infection or statin use. | A rare genetic non-dystrophic myopathy characterized by the triad of congenital myopathy, dysmorphic features and susceptibility to malignant hyperthermia. Patients present with a wide phenotypic range, including delayed motor development, muscle weakness and fatigability, ptosis and facies myopathica (with or without creatine kinase elevations), skeletal abnormalities (e.g. short stature, scoliosis, kyphosis, lumbar lordosis and pectus carinatum/excavatum), mild dysmorphic facial features (e.g. hypertelorism, down-slanting palpebral fissures, epicanthic folds, low set ears, micrognathia), webbing of the neck, cryptorchidism, and a susceptibility to malignant hyperthermia and/or rhabdomyolysis due to intensive physical strain, viral infection or statin use. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0005042 | obsolete head disorder |
+| MONDO:0006051 | obsolete postweaning multisystemic wasting syndrome |
+| MONDO:0025155 | obsolete hemorrhagic syndrome, bovine |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0015522 | situs ambiguus |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0018795 | syndromic constitutional thrombocytopenia |
+
 # 2022-10-11
 
 ## Overview:
@@ -162,7 +280,7 @@
 
 No changes.
 
-# 2022-10-03 
+# 2022-10-03
 
 ## Overview:
 
