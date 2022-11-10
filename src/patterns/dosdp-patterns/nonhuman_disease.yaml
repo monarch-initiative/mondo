@@ -1,0 +1,49 @@
+pattern_name: nonhuman_disease
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml
+
+description: 'This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human.
+  Examples: [leukemia, non-human animal](http://purl.obolibrary.org/obo/MONDO_0700100),
+  [hepatitis, viral, animal](http://purl.obolibrary.org/obo/MONDO_0025085)'
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  non-human animal disease: MONDO:0005583
+  human disease or disorder: MONDO:0700096
+
+relations:
+  cross-species analog: MONDO:0700097
+
+#annotationProperties:
+#  exact_synonym: oio:hasExactSynonym
+#  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  human_disease: "'human disease or disorder'"
+
+name:
+  text: '%s, non-human animal'
+  vars:
+  - human_disease
+
+#annotations:
+#- annotationProperty: exact_synonym
+#  text: ''
+#  vars:
+#  - human disease
+#- annotationProperty: related_synonym
+#  text:
+#  vars:
+#  - human disease
+
+def:
+  text: '%s that occurs in non-human animals'
+  vars:
+  - human_disease
+
+equivalentTo:
+  text: '''non-human animal disease'' and (''cross-species analog'' some %s)'
+  vars:
+  - human_disease

@@ -3,7 +3,7 @@ name: Add synonym
 about: New synonym suggestion for an existing Mondo term.
 title: ''
 labels: synonym
-assignees: nicolevasilevsky
+assignees: nicolevasilevsky, sabrinatoro
 
 ---
 
