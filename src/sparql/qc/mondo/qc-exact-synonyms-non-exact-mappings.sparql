@@ -6,7 +6,7 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 
-SELECT ?entity ?label ?xref ?synonym ?code
+SELECT DISTINCT ?entity ?label ?xref ?synonym ?code
 WHERE {
   
   VALUES ?code {
