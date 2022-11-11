@@ -60,7 +60,6 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install --no-interaction --no-root
-          poetry run pip install kgcl-schema
 
       - name: Run ochange
         id: ochange
