@@ -16,12 +16,19 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
-[Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) | Y | N
+[Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) | Y (medical expert)| N
 [Harshad Hegde](https://orcid.org/0000-0002-2411-565X) | Lawrence Berkeley National Lab | [hrshdhgd](https://github.com/hrshdhgd) | N | Y
-[Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh) | Medical expert | N
+[Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh) | medical expert | N
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly) | Y | N
 [Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3) | N | Y
 [Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall) | Y | Y
+
+# Project managers
+
+Name | Affiliation | GitHub 
+--- | --- | --- | 
+Sarah Gehrke | University of Colorado | [sagehrke](https://github.com/sagehrke)
+Moni Munoz-Torres | University of Colorado | [monicacecilia ](https://github.com/monicacecilia )
 
 # Contributors
 
