@@ -8,19 +8,20 @@ Issues that need medical expertise are [here](https://github.com/monarch-initiat
 
 # Developers
 
-Mondo is developed by members of the [Monarch Initiative](https://monarchinitiative.org/):
+Mondo is developed by members of the [Monarch Initiative](https://monarchinitiative.org/): 
 
-Name | Affiliation | GitHub
---- | --- | ---
-[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky)
-[Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn)
-[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro)
-[Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4)
-[Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson)
-[Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh)
-[Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly)
-[Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3)
-[Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall)
+Name | Affiliation | GitHub | Curation team? | Technical team?
+--- | --- | --- | --- | ---
+[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
+[Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
+[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
+[Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
+[Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) | Y | N
+[Harshad Hegde](https://orcid.org/0000-0002-2411-565X) | Lawrence Berkeley National Lab | [hrshdhgd](https://github.com/hrshdhgd) | N | Y
+[Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh) | Medical expert | N
+[Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly) | Y | N
+[Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3) | N | Y
+[Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall) | Y | Y
 
 # Contributors
 
