@@ -9,7 +9,7 @@ Mondo meetings should be added to the Monarch shared google calendar. Members of
 
 - **Curation call**: Thursdays, 9am PT
 - **Technical call**: Fridays, 10am PT
-- **Quarterly Medical Expert calls**: Next meeting is Thursday, Dec 01, 12-1pm PT. Future calls will be scheduled.
+- **Quarterly Medical Expert calls**: Next meeting is Thursday, Dec 01, 2022, 12-1pm PT. Future calls will be scheduled.
 
 ## Mondo workshops
 - Any upcoming workshops should be advertised 
