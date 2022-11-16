@@ -109,6 +109,49 @@ ORDER BY ?entity
 
 ```
 
+###  qc-exact-synonyms-non-exact-mappings.sparql
+
+```
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+
+SELECT DISTINCT ?entity ?label ?xref ?synonym ?code
+WHERE {
+  
+  VALUES ?code {
+    "MONDO:relatedTo"^^xsd:string
+    "MONDO:mondoIsNarrowerThanSource"^^xsd:string
+    "MONDO:directSiblingOf"^^xsd:string
+    "MONDO:mondoIsBroaderThanSource"^^xsd:string
+  }
+  
+  ?entity rdfs:subClassOf* MONDO:0000001 .
+  ?entity rdfs:label ?label .
+  
+  ?entity oboInOwl:hasDbXref ?xref .
+    [ 
+      owl:annotatedSource ?entity ;
+      owl:annotatedProperty oboInOwl:hasDbXref ;
+      owl:annotatedTarget ?xref ;
+      oboInOwl:source ?code 
+    ] .
+ 
+  ?entity oboInOwl:hasExactSynonym ?synonym .
+  	[ 
+      owl:annotatedSource ?entity ;
+      owl:annotatedProperty oboInOwl:hasExactSynonym ;
+      owl:annotatedTarget ?synonym ;
+      oboInOwl:hasDbXref ?xref 
+    ] .
+  
+}
+```
+
 ###  qc-excluded-subsumption-is-inferred.sparql
 
 ```
