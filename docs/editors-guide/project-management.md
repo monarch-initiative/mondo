@@ -5,6 +5,7 @@
 Documentation of project management tasks in Mondo.
 
 ## Recurring meetings
+Mondo meetings should be added to the Monarch shared google calendar. Members of the curation and technical teams are outlined [here](https://mondo.monarchinitiative.org/pages/contributors/).
 
 - **Curation call**: Thursdays, 9am PT
 - **Technical call**: Fridays, 10am PT
