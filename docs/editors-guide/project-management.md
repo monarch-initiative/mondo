@@ -2,7 +2,7 @@
 
 ## Description
 
-Documentation of project management workflows in Mondo.
+Documentation of project management tasks in Mondo.
 
 ## Recurring meetings
 
