@@ -1,4 +1,4 @@
-# Mondo Project management
+# Mondo Project Management
 
 ## Description
 
