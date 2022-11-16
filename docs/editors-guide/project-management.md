@@ -28,7 +28,7 @@ Mondo meetings should be added to the Monarch shared google calendar. Members of
 
 - Please refer to the [pre-release checklist](https://mondo.readthedocs.io/en/latest/editors-guide/pre-release-checklist/) for necessary tasks before the release
 - Mondo should be released on a monthly basis on/around the first of the month. Instructions are [here](https://mondo.readthedocs.io/en/latest/developer-guide/release/).
-- If there are any delays with the release (more than a couple days), please communicate any delays in the release to the Mondo users on the mailing list and in Slack. Some of our users depend on the regular releases, such as EFO
+- If there are any delays with the release (more than a couple days), please communicate these to the Mondo users on the mailing list and in Slack. Some of our users depend on the regular releases, such as EFO
 
 ## Website updates
 - The [Mondo website](https://mondo.monarchinitiative.org/) should be regularly updated (instructions are [here](https://mondo.readthedocs.io/en/latest/editors-guide/mondo-website-editing/)). Regular updates that may be needed include:
