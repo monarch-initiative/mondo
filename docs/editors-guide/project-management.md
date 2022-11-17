@@ -4,6 +4,18 @@
 
 Documentation of project management tasks in Mondo.
 
+## Mondo roles
+
+- **Lead Curator**
+- **Technical Lead**
+- **Software developer**
+- **Biocurator**
+- **Project Manager**
+- **Medical advisor** 
+- **Technical Advisor**
+- **Strategic Advisor**
+- **Stakeholder Engagement/Outreach**
+
 ## Recurring meetings
 Mondo meetings should be added to the Monarch shared google calendar. Members of the curation and technical teams are outlined [here](https://mondo.monarchinitiative.org/pages/contributors/).
 
