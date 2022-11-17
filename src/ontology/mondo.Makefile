@@ -287,7 +287,7 @@ build-%:
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
 
-patterns: matches matches_annotations pattern_docs
+patterns: matches pattern_docs
 	make components/mondo-tags.owl
 	
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
