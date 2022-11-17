@@ -12,14 +12,21 @@ Mondo meetings should be added to the Monarch shared google calendar. Members of
 - **Quarterly Medical Expert calls**: Next meeting is Thursday, Dec 01, 2022, 12-1pm PT. Future calls will be scheduled.
 
 ## Mondo workshops
-- Any upcoming workshops should be advertised 
+- Any upcoming workshops should be organized and advertised.
+
+### Organizing workshops
+
+Ideally we should have community based Mondo workshops every 4-6 months.
+
+### Advertising workshops
+
   - on our [website](https://mondo.monarchinitiative.org/pages/workshop/)
   - on our Slack channel
   - on the mailing list
 
 ## Set milestones and triage tickets
 - All tickets should be:
-  1. Acknowledged, thank the contributor for the ticket. 
+  1. Acknowledged, thank the contributor for the ticket 
   2. Assigned to a curation or technical team member
   3. Assigned to a monthly milestone
   4. Given a label
