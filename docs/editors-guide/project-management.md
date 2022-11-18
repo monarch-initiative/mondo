@@ -6,16 +6,14 @@ Documentation of project management tasks in Mondo.
 
 ## Mondo roles
 
-- **Lead Curator**
-  - **Description**: Coordinate Curation team and Technical teams. 
-  - **Person**: [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432)
-- **Technical Lead**
-- **Software developer**
-- **Biocurator**
-- **Project Manager**
-  - Issue label: [Project management](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3A%22project+management%22)
-- **Medical advisor** 
-- **Technical Advisor**
+Role | Description | Person(s) | Relevant labels
+-- | -- | -- | --
+**Lead Curator** | Coordinate Curation team and Technical teams, in collaboration with Technical Lead. | [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432)
+**Technical Lead**: | Coordinate Techcnical team. | [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779)
+**Software developer** | Implement technical workflows including mappings and external source ingests, and quality control checks. | [Joe Flack](https://orcid.org/0000-0002-2906-7319), [Harshad Hegde](https://orcid.org/0000-0002-2411-565X), [Deepak Unni](https://orcid.org/0000-0002-3583-7340) | **Biocurator** | Curate content in Mondo through iterative addition, revision and reclassification of terms and hierarchies. Liase with community. | [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) 
+**Project Manager** | Oversee project management of Mondo as described below. | Sarah Gehrke , Moni Munoz-Torres | [Project management](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3A%22project+management%22)
+**Medical advisor** | Provide medical expertise for content curation. | [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson), [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) |
+**Technical Advisor** | Provide advise and oversight to technical team. | [Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/)
 - **Strategic Advisor**
 - **Stakeholder Engagement/Outreach**
 
