@@ -39,7 +39,7 @@ Ideally we should have community based Mondo workshops every 4-6 months.
   - on the mailing list
 
 ## Set milestones and triage tickets
-- All tickets should be:
+- All [tickets](https://github.com/monarch-initiative/mondo/issues) should be:
   1. Acknowledged, thank the contributor for the ticket 
   2. Assigned to a curation or technical team member
   3. Assigned to a monthly milestone
