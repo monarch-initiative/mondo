@@ -7,6 +7,8 @@ Documentation of project management tasks in Mondo.
 ## Mondo roles
 
 - **Lead Curator**
+  - **Description**: Coordinate Curation team and Technical teams. 
+  - **Person**: [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432)
 - **Technical Lead**
 - **Software developer**
 - **Biocurator**
