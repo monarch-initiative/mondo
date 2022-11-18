@@ -51,6 +51,12 @@ Ideally we should have community based Mondo workshops every 4-6 months.
 - Mondo should be released on a monthly basis on/around the first of the month. Instructions are [here](https://mondo.readthedocs.io/en/latest/developer-guide/release/).
 - If there are any delays with the release (more than a couple days), please communicate these to the Mondo users on the mailing list and in Slack. Some of our users depend on the regular releases, such as EFO
 
+## RPPR
+
+- Link Mondo tickets to [Phenomics First Operations Board](https://github.com/monarch-initiative/phenomics_first_resource/issues?q=is%3Aissue+is%3Aopen+label%3A%22Aim+2+-+MONDO%22)
+- Ensure deliverables for P1 grant are being addressed
+- Coordinate reporting for yearly RPPR
+
 ## Website updates
 - The [Mondo website](https://mondo.monarchinitiative.org/) should be regularly updated (instructions are [here](https://mondo.readthedocs.io/en/latest/editors-guide/mondo-website-editing/)). Regular updates that may be needed include:
   - [Mondo users](https://mondo.monarchinitiative.org/pages/users/)
