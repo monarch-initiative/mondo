@@ -11,6 +11,7 @@ Documentation of project management tasks in Mondo.
 - **Software developer**
 - **Biocurator**
 - **Project Manager**
+  - Issue label: [Project management](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3A%22project+management%22)
 - **Medical advisor** 
 - **Technical Advisor**
 - **Strategic Advisor**
@@ -56,6 +57,10 @@ Ideally we should have community based Mondo workshops every 4-6 months.
   - [Resources](https://mondo.monarchinitiative.org/pages/resources/)- including new papers, presentations, blog posts, etc.
   - [Workhops](https://mondo.monarchinitiative.org/pages/workshop/)
   - [FAQs](https://mondo.monarchinitiative.org/pages/faq/) should be updated as new questions arise
+
+## Liase with Mondo Users
+
+- Keep track of Mondo users (keep contact info up to date, what project they are working on, how they are using Mondo)
 
 ## Onboarding of new contributors
 
