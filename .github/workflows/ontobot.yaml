@@ -59,6 +59,7 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         run: |
+          poetry update ontobot-change-agent
           poetry install --no-interaction --no-root
 
       - name: Run ochange
