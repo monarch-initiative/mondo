@@ -34,6 +34,6 @@ An inherited susceptibility or predisposition to developing {[disease](http://pu
 | [MONDO:0013562](http://purl.obolibrary.org/obo/MONDO_0013562) | aspergillosis, susceptibility to              | [MONDO:0005657](http://purl.obolibrary.org/obo/MONDO_0005657) | aspergillosis                            |
 | [MONDO:0000162](http://purl.obolibrary.org/obo/MONDO_0000162) | autoimmune thyroid disease, susceptibility to | [MONDO:0005623](http://purl.obolibrary.org/obo/MONDO_0005623) | autoimmune thyroid disease               |
 | [MONDO:0000108](http://purl.obolibrary.org/obo/MONDO_0000108) | bacteremia, susceptibility                    | [MONDO:0005229](http://purl.obolibrary.org/obo/MONDO_0005229) | bacterial infectious disease with sepsis |
-| [MONDO:0015279](http://purl.obolibrary.org/obo/MONDO_0015279) | chronic mucocutaneous candidiasis             | [MONDO:0002026](http://purl.obolibrary.org/obo/MONDO_0002026) | candidiasis                              |
+| [MONDO:0013713](http://purl.obolibrary.org/obo/MONDO_0013713) | dengue virus, susceptibility to               | [MONDO:0005502](http://purl.obolibrary.org/obo/MONDO_0005502) | dengue disease                           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/inherited_susceptibility.tsv) 

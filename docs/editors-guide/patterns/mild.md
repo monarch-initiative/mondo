@@ -24,6 +24,5 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in whic
 | defined_class                                | defined_class_label      | disease                                      | disease_label       |
 |:---------------------------------------------|:-------------------------|:---------------------------------------------|:--------------------|
 | [MONDO:0100474](http://purl.obolibrary.org/obo/MONDO_0100474) | mild ichthyosis vulgaris | [MONDO:0024304](http://purl.obolibrary.org/obo/MONDO_0024304) | ichthyosis vulgaris |
-| [MONDO:0000238](http://purl.obolibrary.org/obo/MONDO_0000238) | pestis minor             | [MONDO:0001112](http://purl.obolibrary.org/obo/MONDO_0001112) | bubonic plague      |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/mild.tsv) 
