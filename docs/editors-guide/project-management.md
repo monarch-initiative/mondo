@@ -55,6 +55,7 @@ Ideally we should have community based Mondo workshops every 4-6 months.
 
 - Link Mondo tickets to [Phenomics First Operations Board](https://github.com/monarch-initiative/phenomics_first_resource/issues?q=is%3Aissue+is%3Aopen+label%3A%22Aim+2+-+MONDO%22)
 - Ensure deliverables for P1 grant are being addressed
+- Send all dissemination artifacts to the 'nuggets' address for Monarch/TISLab (to help RPPR prepping)
 - Coordinate reporting for yearly RPPR
 
 ## Website updates
@@ -65,7 +66,7 @@ Ideally we should have community based Mondo workshops every 4-6 months.
   - [Workhops](https://mondo.monarchinitiative.org/pages/workshop/)
   - [FAQs](https://mondo.monarchinitiative.org/pages/faq/) should be updated as new questions arise
 
-## Liase with Mondo Users
+## Liaise with Mondo Users
 
 - Keep track of Mondo users (keep contact info up to date, what project they are working on, how they are using Mondo)
 
