@@ -84,7 +84,7 @@ python-versions = ">=3.5"
 dev = ["cloudpickle", "coverage[toml] (>=5.0.2)", "furo", "hypothesis", "mypy (>=0.900,!=0.940)", "pre-commit", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "sphinx", "sphinx-notfound-page", "zope.interface"]
 docs = ["furo", "sphinx", "sphinx-notfound-page", "zope.interface"]
 tests = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "zope.interface"]
-tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
+tests-no-zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
 
 [[package]]
 name = "Babel"
@@ -179,7 +179,7 @@ optional = false
 python-versions = ">=3.6.0"
 
 [package.extras]
-unicode_backport = ["unicodedata2"]
+unicode-backport = ["unicodedata2"]
 
 [[package]]
 name = "class-resolver"
@@ -621,7 +621,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-atomic_cache = ["atomicwrites"]
+atomic-cache = ["atomicwrites"]
 nearley = ["js2py"]
 regex = ["regex"]
 
@@ -714,7 +714,7 @@ mdurl = ">=0.1,<1.0"
 
 [package.extras]
 benchmarking = ["psutil", "pytest", "pytest-benchmark (>=3.2,<4.0)"]
-code_style = ["pre-commit (==2.6)"]
+code-style = ["pre-commit (==2.6)"]
 compare = ["commonmark (>=0.9.1,<0.10.0)", "markdown (>=3.3.6,<3.4.0)", "mistletoe (>=0.8.1,<0.9.0)", "mistune (>=2.0.2,<2.1.0)", "panflute (>=2.1.3,<2.2.0)"]
 linkify = ["linkify-it-py (>=1.0,<2.0)"]
 plugins = ["mdit-py-plugins"]
@@ -742,7 +742,7 @@ python-versions = ">=3.7"
 markdown-it-py = ">=1.0.0,<3.0.0"
 
 [package.extras]
-code_style = ["pre-commit"]
+code-style = ["pre-commit"]
 rtd = ["attrs", "myst-parser (>=0.16.1,<0.17.0)", "sphinx-book-theme (>=0.1.0,<0.2.0)"]
 testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
 
@@ -791,7 +791,7 @@ sphinx = ">=4,<6"
 typing-extensions = "*"
 
 [package.extras]
-code_style = ["pre-commit (>=2.12,<3.0)"]
+code-style = ["pre-commit (>=2.12,<3.0)"]
 linkify = ["linkify-it-py (>=1.0,<2.0)"]
 rtd = ["ipython", "sphinx-book-theme", "sphinx-design", "sphinxcontrib.mermaid (>=0.7.1,<0.8.0)", "sphinxext-opengraph (>=0.6.3,<0.7.0)", "sphinxext-rediraffe (>=0.2.7,<0.3.0)"]
 testing = ["beautifulsoup4", "coverage[toml]", "pytest (>=6,<7)", "pytest-cov", "pytest-param-files (>=0.3.4,<0.4.0)", "pytest-regressions", "sphinx (<5.2)", "sphinx-pytest"]
@@ -893,7 +893,7 @@ tests = ["coverage", "pytest"]
 
 [[package]]
 name = "ontobot-change-agent"
-version = "0.3.1"
+version = "0.3.7"
 description = "Update ontologies using change language."
 category = "main"
 optional = false
@@ -1365,7 +1365,7 @@ urllib3 = ">=1.21.1,<1.27"
 
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
-use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "rfc3339-validator"
@@ -1663,19 +1663,19 @@ aiomysql = ["aiomysql", "greenlet (!=0.4.17)"]
 aiosqlite = ["aiosqlite", "greenlet (!=0.4.17)", "typing_extensions (!=3.10.0.1)"]
 asyncio = ["greenlet (!=0.4.17)"]
 asyncmy = ["asyncmy (>=0.2.3,!=0.2.4)", "greenlet (!=0.4.17)"]
-mariadb_connector = ["mariadb (>=1.0.1,!=1.1.2)"]
+mariadb-connector = ["mariadb (>=1.0.1,!=1.1.2)"]
 mssql = ["pyodbc"]
-mssql_pymssql = ["pymssql"]
-mssql_pyodbc = ["pyodbc"]
+mssql-pymssql = ["pymssql"]
+mssql-pyodbc = ["pyodbc"]
 mypy = ["mypy (>=0.910)", "sqlalchemy2-stubs"]
 mysql = ["mysqlclient (>=1.4.0)", "mysqlclient (>=1.4.0,<2)"]
-mysql_connector = ["mysql-connector-python"]
+mysql-connector = ["mysql-connector-python"]
 oracle = ["cx_oracle (>=7)", "cx_oracle (>=7,<8)"]
 postgresql = ["psycopg2 (>=2.7)"]
-postgresql_asyncpg = ["asyncpg", "greenlet (!=0.4.17)"]
-postgresql_pg8000 = ["pg8000 (>=1.16.6,!=1.29.0)"]
-postgresql_psycopg2binary = ["psycopg2-binary"]
-postgresql_psycopg2cffi = ["psycopg2cffi"]
+postgresql-asyncpg = ["asyncpg", "greenlet (!=0.4.17)"]
+postgresql-pg8000 = ["pg8000 (>=1.16.6,!=1.29.0)"]
+postgresql-psycopg2binary = ["psycopg2-binary"]
+postgresql-psycopg2cffi = ["psycopg2cffi"]
 pymysql = ["pymysql", "pymysql (<1)"]
 sqlcipher = ["sqlcipher3_binary"]
 
@@ -1700,7 +1700,7 @@ password = ["passlib (>=1.6,<2.0)"]
 pendulum = ["pendulum (>=2.0.5)"]
 phone = ["phonenumbers (>=5.9.2)"]
 test = ["Jinja2 (>=2.3)", "Pygments (>=1.2)", "backports.zoneinfo", "docutils (>=0.10)", "flake8 (>=2.4.0)", "flexmock (>=0.9.7)", "isort (>=4.2.2)", "pg8000 (>=1.12.4)", "psycopg2 (>=2.5.1)", "psycopg2cffi (>=2.8.1)", "pymysql", "pyodbc", "pytest (>=2.7.1)", "python-dateutil (>=2.6)", "pytz (>=2014.2)"]
-test_all = ["Babel (>=1.3)", "Jinja2 (>=2.3)", "Pygments (>=1.2)", "arrow (>=0.3.4)", "backports.zoneinfo", "colour (>=0.0.4)", "cryptography (>=0.6)", "docutils (>=0.10)", "flake8 (>=2.4.0)", "flexmock (>=0.9.7)", "furl (>=0.4.1)", "intervals (>=0.7.1)", "isort (>=4.2.2)", "passlib (>=1.6,<2.0)", "pendulum (>=2.0.5)", "pg8000 (>=1.12.4)", "phonenumbers (>=5.9.2)", "psycopg2 (>=2.5.1)", "psycopg2cffi (>=2.8.1)", "pymysql", "pyodbc", "pytest (>=2.7.1)", "python-dateutil", "python-dateutil (>=2.6)", "pytz (>=2014.2)"]
+test-all = ["Babel (>=1.3)", "Jinja2 (>=2.3)", "Pygments (>=1.2)", "arrow (>=0.3.4)", "backports.zoneinfo", "colour (>=0.0.4)", "cryptography (>=0.6)", "docutils (>=0.10)", "flake8 (>=2.4.0)", "flexmock (>=0.9.7)", "furl (>=0.4.1)", "intervals (>=0.7.1)", "isort (>=4.2.2)", "passlib (>=1.6,<2.0)", "pendulum (>=2.0.5)", "pg8000 (>=1.12.4)", "phonenumbers (>=5.9.2)", "psycopg2 (>=2.5.1)", "psycopg2cffi (>=2.8.1)", "pymysql", "pyodbc", "pytest (>=2.7.1)", "python-dateutil", "python-dateutil (>=2.6)", "pytz (>=2014.2)"]
 timezone = ["python-dateutil"]
 url = ["furl (>=0.4.1)"]
 
@@ -2598,8 +2598,8 @@ ols-client = [
     {file = "ols_client-0.1.2.tar.gz", hash = "sha256:f495a608ca81475a3ba17d67d768f5e64973d5d415588b683be2067cc28ab2b9"},
 ]
 ontobot-change-agent = [
-    {file = "ontobot_change_agent-0.3.1-py3-none-any.whl", hash = "sha256:74f2f6687ba5d318f4c670849095db3550ffe9aaccd55eff32129742e65fea6c"},
-    {file = "ontobot_change_agent-0.3.1.tar.gz", hash = "sha256:97e2d76ed11f09ca0cefe9b95872000cb1b6e10968809f8055856b05e1b43436"},
+    {file = "ontobot_change_agent-0.3.7-py3-none-any.whl", hash = "sha256:7faadff54744482ab286c2b210f01f2b6bfa47312540d93f2009c00a929f5b25"},
+    {file = "ontobot_change_agent-0.3.7.tar.gz", hash = "sha256:5d097c1c65b5666d1a44b6128aeb1e333d2416644e1e5cd0b7f16ad475a3e6b6"},
 ]
 ontoportal-client = [
     {file = "ontoportal_client-0.0.3-py3-none-any.whl", hash = "sha256:c81288f9fdb81ec5bfcdf017d6efd08b0a09a84fd61c9cdebd14ce5adde45307"},
@@ -2643,7 +2643,6 @@ pandas = [
     {file = "pandas-1.5.1.tar.gz", hash = "sha256:249cec5f2a5b22096440bd85c33106b6102e0672204abd2d5c014106459804ee"},
 ]
 pandasql = [
-    {file = "pandasql-0.7.3-py2.7.egg", hash = "sha256:75f08c5cdfd19f61ceed8c38a6ac138c353776ad3be8e015edcee977c2299aad"},
     {file = "pandasql-0.7.3.tar.gz", hash = "sha256:1eb248869086435a7d85281ebd9fe525d69d9d954a0dceb854f71a8d0fd8de69"},
 ]
 parse = [
