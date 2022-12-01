@@ -35,7 +35,7 @@ Mondo Releases |Mondo should be released on a monthly basis on/around the first 
 Grant reporting | 1. Link Mondo tickets to [Phenomics First Operations Board](https://github.com/monarch-initiative/phenomics_first_resource/issues?q=is%3Aissue+is%3Aopen+label%3A%22Aim+2+-+MONDO%22) 2. Ensure deliverables for P1 grant are being addressed, 3. Send all dissemination artifacts to the 'nuggets' address for Monarch/TISLab (to help RPPR prepping) | Project Manager
 RPPR | Coordinate reporting for yearly RPPR | Project Manager
 Website updates |The [Mondo website](https://mondo.monarchinitiative.org/) should be regularly updated (instructions are [here](https://mondo.readthedocs.io/en/latest/editors-guide/mondo-website-editing/)). Regular updates that may be needed include: [Mondo users](https://mondo.monarchinitiative.org/pages/users/), [Mondo contributors](https://mondo.monarchinitiative.org/pages/contributors/), [Resources](https://mondo.monarchinitiative.org/pages/resources/)- including new papers, presentations, blog posts, etc., [Workhops](https://mondo.monarchinitiative.org/pages/workshop/), [FAQs](https://mondo.monarchinitiative.org/pages/faq/) should be updated as new questions arise | Lead curator
-Liaise with Mondo Users | Keep track of Mondo users (keep contact info up to date, what project they are working on, how they are using Mondo) | Curation team
+Liaise with Mondo Users | Keep track of Mondo users (keep contact info up to date, what project they are working on, how they are using Mondo) | Lead curator
 Onboarding of new contributors | Refer to the [onboarding doc here](https://docs.google.com/spreadsheets/d/18qfgcUYaCif0NhfNF5QaLp8DvxG0llwcSmp3B5U-MhE/edit#gid=0) | Lead Curator
   
 
