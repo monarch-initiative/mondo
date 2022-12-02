@@ -19,9 +19,9 @@ Role | Description | Person(s) | Relevant issues
 **Stakeholder Engagement/Outreach** | Liase with community users and stakeholders and provide outreach for Mondo resource | [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432), [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153), [Sarah Gehrke](https://orcid.org/0000-0003-3245-2880), [Moni Munoz-Torres](https://orcid.org/0000-0001-8430-6039)   | [workshop](https://github.com/monarch-initiative/mondo/issues?q=is%3Aopen+is%3Aissue+label%3Aworkshop)
 
 ## Recurring meetings
-- **Curation call**: Thursdays, 9am PT
-- **Technical call**: Fridays, 10am PT
-- **Quarterly Medical Expert calls**: Next meeting is Thursday, Dec 01, 2022, 12-1pm PT. Future calls will be scheduled.
+- **Curation call**: Thursdays, 10am PT
+- **Technical call**: Fridays, 9am PT
+- **Monthly Medical Expert calls**: TBD.
 
 ## Mondo tasks
 
