@@ -35,7 +35,7 @@
 1. Create a ROBOT template with the updated annotations.
     1. For annotations replacement, the ROBOT template would essentially be the same as the one used for removing annotations (ie same fields), but with the new annotations.
 1. Merge this ROBOT template following the regular process (explained [here](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/))
-    1. Run: `sh run.sh make TEMPLATE_URL=“yyy” merge_template -B`
+    1. Run: `sh run.sh make TEMPLATE_URL="yyy" merge_template -B`
     where **yyy** = the ROBOT template link
 1. The end result is essentially an update of existing annotations.
 
