@@ -39,6 +39,12 @@
     where **yyy** = the ROBOT template link
 1. The end result is essentially an update of existing annotations.
 
+### Important note:
+This workflow does NOT work in cases when one of many annotation needs to be updated. For example, updating the 'MONDO:equivalentTo' to 'MONDO:equivalentObsolete' for the OMIM x-ref in the example below could not be done using this workflow as this x-ref has other annotations
+
+![Screenshot 2022-12-15 at 7 57 54 AM](https://user-images.githubusercontent.com/12737987/207907762-d7759254-8f75-4dcc-a603-9ada4d9cbf5d.png)
+
+
 ### Examples:
 #### Remove 'obsoletion-candidate' tag, and 'date of obsoletion'
 This might be done when terms were removed from the obsoletion candidate list.
