@@ -21,7 +21,7 @@ Role | Description | Person(s) | Relevant issues
 ## Recurring meetings
 - **Curation call**: Thursdays, 10am PT
 - **Technical call**: Fridays, 9am PT
-- **Monthly Medical Expert calls**: TBD.
+- **Quarterly Medical Expert call**: Next call is scheduled on March 02, 2023 12 - 2pm PT/ 3 - 5 pm ET
 
 ## Mondo tasks
 
