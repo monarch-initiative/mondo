@@ -114,7 +114,12 @@ Press Enter to open github.com in your browser...
 With each release, a TSV should be generated with obsoletion candidates. Check that this tsv file is up-to-date here:
 https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/mondo_obsoletioncandidates.tsv
 
-## Email Mondo Users
+## Announce released
+
+### Mastodon
+Notify the project manager that the release should be announced on Mastodon.
+
+### Email Mondo Users
 Send an email to Mondo users: mondo-users@googlegroups.com  
 (Note - the recipients usually a picture of someone's pet to be included.)
 
