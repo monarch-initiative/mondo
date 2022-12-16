@@ -21,7 +21,7 @@ Role | Description | Person(s) | Relevant issues
 ## Recurring meetings
 - **Curation call**: Thursdays, 10am PT
 - **Technical call**: Fridays, 9am PT
-- **Monthly Medical Expert calls**: TBD.
+- **Quarterly Medical Expert call**: Every three months on the first Thursday, 12 - 2pm PT/ 3 - 5 pm ET
 
 ## Mondo tasks
 
@@ -33,7 +33,7 @@ Advertising workshops | Workshops should be advertised on our [website](https://
 Set milestones and triage tickets |All [tickets](https://github.com/monarch-initiative/mondo/issues) should be: 1. Acknowledged, thank the contributor for the ticket, 2. Assigned to a curation or technical team member, 3. Assigned to a monthly milestone, 4. Given a label | Lead Curator
 Mondo Releases |Mondo should be released on a monthly basis on/around the first of the month. Please refer to the [pre-release checklist](https://mondo.readthedocs.io/en/latest/editors-guide/pre-release-checklist/) for necessary tasks before the release. Instructions are [here](https://mondo.readthedocs.io/en/latest/developer-guide/release/). If there are any delays with the release (more than a couple days), please communicate these to the Mondo users on the mailing list and in Slack. Some of our users depend on the regular releases, such as EFO. | Lead curator
 Announce Mondo Release on Mastadon | Post about Mondo release, see text [here](https://docs.google.com/document/d/1cweSg1PMKybXvwgXvGSIdBLrIVbHt1D2ru-b6b_mh6s/edit#) | Project Manager
-Grant reporting | 1. Link Mondo tickets to [Phenomics First Operations Board](https://github.com/monarch-initiative/phenomics_first_resource/issues?q=is%3Aissue+is%3Aopen+label%3A%22Aim+2+-+MONDO%22) 2. Ensure deliverables for P1 grant are being addressed, 3. Send all dissemination artifacts to the 'nuggets' address for Monarch/TISLab (to help RPPR prepping) | Project Manager
+Grant reporting | 1. Link Mondo tickets to [Phenomics First Operations Board](https://github.com/monarch-initiative/phenomics_first_resource/issues?q=is%3Aissue+is%3Aopen+label%3A%22Aim+2+-+MONDO%22) 2. Ensure deliverables for P1 grant are being addressed, 3. Send all dissemination artifacts to the 'nuggets' address for Monarch/TISLab (to help RPPR prepping) | Lead Curator
 RPPR | Coordinate reporting for yearly RPPR | Project Manager
 Website updates |The [Mondo website](https://mondo.monarchinitiative.org/) should be regularly updated (instructions are [here](https://mondo.readthedocs.io/en/latest/editors-guide/mondo-website-editing/)). Regular updates that may be needed include: [Mondo users](https://mondo.monarchinitiative.org/pages/users/), [Mondo contributors](https://mondo.monarchinitiative.org/pages/contributors/), [Resources](https://mondo.monarchinitiative.org/pages/resources/)- including new papers, presentations, blog posts, etc., [Workhops](https://mondo.monarchinitiative.org/pages/workshop/), [FAQs](https://mondo.monarchinitiative.org/pages/faq/) should be updated as new questions arise | Lead curator
 Liaise with Mondo Users | Keep track of Mondo users (keep contact info up to date, what project they are working on, how they are using Mondo) | Lead curator
