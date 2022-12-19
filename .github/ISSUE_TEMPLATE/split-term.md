@@ -3,7 +3,7 @@ name: Split term
 about: Request to split a term into two or more terms
 title: 'split term: <enter name>'
 labels: split
-assignees: nicolevasilevsky
+assignees: nicolevasilevsky, sabrinatoro
 
 ---
 

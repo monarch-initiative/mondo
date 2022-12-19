@@ -10,7 +10,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/mondo-pattern.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2022-10-03/mondo-pattern.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2022-12-12/mondo-pattern.owl"/>
     </owl:Ontology>
     
 
@@ -67,9 +67,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/MONDO_0700097 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/MONDO_0700097"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000053 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
     
 
 
@@ -452,6 +464,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/MONDO_0005583 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005583"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/MONDO_0006074 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0006074"/>
@@ -605,6 +623,12 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0700091 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0700091"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MONDO_0700096 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0700096"/>
     
 
 
@@ -2197,6 +2221,52 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine tumor, well differentiated, low grade</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing carcinoid tumor</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine neoplasm G1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0005583"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MONDO_0700097"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0700096"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos; that occurs in non-human animals</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease</terms:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos;, non-human animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0005583"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MONDO_0700097"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0700096"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos; that occurs in &apos;taxon&apos;</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease_taxon</terms:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos;, &apos;taxon&apos;</rdfs:label>
     </owl:Class>
     
 

@@ -17,7 +17,7 @@ are labels and synonyms appropriately capitalized, etc.
   1. Note - if you add a new OMIMPS, the children will **_not_** automatically be added, they need to be added manually. (Some children terms may not be in Mondo and will be added in a future slurp.)
   1. New OMIMPS terms can be added directly into mondo-edit.obo text file. Note, they may not have the superclass and they also need a subclassOf axiom (or you will get a QC error):
   `is_a: MONDO:0003847 {source="OMIMPS:XXXXXX"} ! l'Mendelian disease'`
-  `relationship: has_modifier MONDO:0021152 {source="OMIMPS:XXXXXX"} ! inherited` 
+  `relationship: has_characteristic MONDO:0021152 {source="OMIMPS:XXXXXX"} ! inherited` 
 3. **For rest of OMIM:**
   1. Check the terms to make sure they do not already exist in Mondo. (Search for OMIM:XXXXXX in mondo-edit.obo text file.) 
   2. If the term does already exist in Mondo, verify the term is equivalent by checking the OMIM record online, then add the OMIM dbxref and MONDO:equivalent to to the Mondo class.

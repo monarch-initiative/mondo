@@ -22,9 +22,9 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that has an iatrogen
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [iatrogenic](http://purl.obolibrary.org/obo/MONDO_0100426)
 
 ## Data preview 
-| defined_class                                | defined_class_label   | disease                                      | disease_label       |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:--------------------|
-| [MONDO:0016778](http://purl.obolibrary.org/obo/MONDO_0016778) | iatrogenic botulism   | [MONDO:0005498](http://purl.obolibrary.org/obo/MONDO_0005498) | botulism            |
-| [MONDO:0043543](http://purl.obolibrary.org/obo/MONDO_0043543) | iatrogenic disease    | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder |
+| defined_class                                | defined_class_label   | disease                                      | disease_label             |
+|:---------------------------------------------|:----------------------|:---------------------------------------------|:--------------------------|
+| [MONDO:0016778](http://purl.obolibrary.org/obo/MONDO_0016778) | iatrogenic botulism   | [MONDO:0005498](http://purl.obolibrary.org/obo/MONDO_0005498) | botulism                  |
+| [MONDO:0043543](http://purl.obolibrary.org/obo/MONDO_0043543) | iatrogenic disease    | [MONDO:0700096](http://purl.obolibrary.org/obo/MONDO_0700096) | human disease or disorder |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/iatrogenic.tsv) 
