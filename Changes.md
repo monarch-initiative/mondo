@@ -1,3 +1,208 @@
+# 2023-01-04
+## Overview:
+
+* Number of new terms: 130
+* Number of changed labels: 11
+* Number of changed definitions: 11
+* Number obsoleted terms: 9
+* Number of new obsoletion candidates: 1
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100149 | PNPLA6-related spastic paraplegia with or without ataxia | An autosomal recessive, multisystem condition caused by pathogenic variants of the PNPLA6 gene that characterized by peripheral neuropathy, cognitive impairment, lower limb spasticity, muscle weakness, and reduced vibration sense. Additional clinical features may include cerebellar ataxia, hypogonadism, growth hormone deficiency, and hypothyroidism. |
+| MONDO:0100162 | IKBKG-related immunodeficiency with or without ectodermal dysplasia | Any recessive immunodeficiency (ID), with or without ectodermal dysplasia (EDA), in which the cause of the disease is mutation in the IKBKG gene. ID/EDA-ID patients, always males, are hemizygous for an IKBKG (NEMO) mutation that preserves residual NF-κB activation (hypomorphic mutations) and may also present with osteopetrosis and lymphoedema (OL-EDA-ID). |
+| MONDO:0100191 | inherited kidney disorder | A type of genetic disorder manifestations of primary clinical importance in the and that primarily results from alterations in one gene or from an alternation of the genome affecting one or more gene or functional element. Said genetic or genomic alteration may be inherited from one or both parents or may occur de novo. |
+| MONDO:0100198 | Mendelian encephalopathy | An instance of encephalopathy that is caused by an inherited genomic modification in an individual. |
+| MONDO:0100199 | diffuse gastric and lobular breast cancer syndrome with or without cleft lip and/or palate | |
+| MONDO:0100200 | microcephaly with intellectual disability | Microcephaly characterized by both microcephaly and atypical neurodevelopment, without other commonly reported non-brain related phenotypes. |
+| MONDO:0100201 | lumbar disc disease | A vertebral column disorder caused by degeneration of intervertebral discs of the lumbar spine. One of the most common musculoskeletal disorders, it has strong genetic determinants. |
+| MONDO:0100202 | lumbar disc herniation, susceptibility to | |
+| MONDO:0100206 | lumbar disc degeneration, susceptibility to | |
+| MONDO:0100207 | infantile-onset epilepsy | Epilepsy starting in the first 12 months of life, including self-limiting and refractory seizures, and epilepsies with and without developmental disorders. |
+| MONDO:0700042 | X-linked mendelian susceptibility to mycobacterial diseases due to IKBKG deficiency | A susceptibility or predisposition to mycobacterial infectious diseases in which the cause of the disease is a mutation in the IKBKG gene. |
+| MONDO:0700044 | TUBB2A-related tubulinopathy | A tubulinopathy syndrome often associated with microtubule dysfunction, malformations of the corpus callosum, enlarged ventricles, dysgyria, abnormal basal ganglia, cerebellar vermis hypoplasia/dysplasia, and decreased white matter, due to heterozygous variants in TUBB2A. Individuals may present with variable combinations of malformations of the corpus callosum, enlarged ventricles, dysgyria, abnormal basal ganglia, cerebellar vermis hypoplasia/dysplasia, and decreased white matter. Epilepsy, speech impairment, and motor impairment are also frequent features. |
+| MONDO:0700045 | protothecosis | A disease caused by infection with achlorophyllic algae of the genus Prototheca, the majority caused by the species P. wickerhamii. Clinical manifestations of reported cases have included cutaneous lesions, olecranon bursitis, or systemic involvement. |
+| MONDO:0800296 | microcornea, rod-cone dystrophy, cataract, and posterior staphyloma 2 | |
+| MONDO:0800297 | neuronal ceroid lipofuscinosis, late infantile | |
+| MONDO:0800298 | peroxisome biogenesis disorder, complementation group 2 | |
+| MONDO:0800299 | myopathy, congenital, with excess of muscle spindles | |
+| MONDO:0800300 | black locks with albinism and deafness syndrome | |
+| MONDO:0800301 | Friedreich ataxia with retained reflexes | |
+| MONDO:0800302 | glycogen storage disease Id | |
+| MONDO:0800303 | hypophosphatasia, perinatal lethal | |
+| MONDO:0800304 | neuropathy, hereditary sensory and autonomic, type IId | |
+| MONDO:0800305 | myelofibrosis with myeloid metaplasia | |
+| MONDO:0800306 | epilepsy, progressive myoclonic, 2b | |
+| MONDO:0800307 | de la Chapelle dysplasia | |
+| MONDO:0800308 | orotic aciduria without megaloblastic anemia | |
+| MONDO:0800310 | pregnancy loss, recurrent, 4 | |
+| MONDO:0800311 | vas deferens, congenital unilateral aplasia of | |
+| MONDO:0800312 | woolly hair, autosomal recessive 1, with or without hypotrichosis | |
+| MONDO:0800316 | contiguous ABCD1/DXS1375E deletion syndrome | |
+| MONDO:0800317 | premature ovarian failure 4 | |
+| MONDO:0800318 | Emery-dDeifuss muscular dystrophy 6, x-linked | |
+| MONDO:0800319 | cone dystrophy 5, x-linked | |
+| MONDO:0800320 | cone dystrophy 1, x-linked | |
+| MONDO:0800321 | congenital heart defects, multiple types, 1, x-linked | |
+| MONDO:0800322 | membranous obstruction of inferior vena cava | |
+| MONDO:0800323 | long QT syndrome 4 | |
+| MONDO:0800324 | microphthalmia, isolated, with coloboma 8 | |
+| MONDO:0800326 | cone-rod dystrophy 14 | |
+| MONDO:0800329 | febrile seizures, familial, 3a | |
+| MONDO:0800330 | myoclonic epilepsy, juvenile, 2 | |
+| MONDO:0800331 | hyperglycinemia, transient neonatal | |
+| MONDO:0800335 | migraine, familial hemiplegic, 4 | |
+| MONDO:0800337 | acute tubulointerstitial nephritis | |
+| MONDO:0800339 | laryngospasm, severe neonatal episodic | |
+| MONDO:0800340 | seasonal affective disorder, susceptibility to | |
+| MONDO:0800341 | cap myopathy 1 | |
+| MONDO:0800342 | cap myopathy 2 | |
+| MONDO:0800343 | rhegmatogenous retinal detachment, autosomal dominant | |
+| MONDO:0800344 | brachydactyly-syndactyly-oligodactyly syndrome | |
+| MONDO:0800345 | atrial fibrillation, familial, 17 | |
+| MONDO:0800346 | left ventricular noncompaction 9 | |
+| MONDO:0800347 | cardiomyopathy, familial hypertrophic, 23, with or without ventricular noncompaction | |
+| MONDO:0800349 | atrial fibrillation, familial, 16 | |
+| MONDO:0800350 | left ventricular noncompaction 4 | |
+| MONDO:0800408 | urogenital adysplasia | |
+| MONDO:0800409 | ventricular fibrillation during myocardial infarction, susceptibility to | |
+| MONDO:0800410 | UV-induced skin damage, susceptibility to | |
+| MONDO:0800412 | yakut short stature syndrome | |
+| MONDO:0800413 | antisocial behavior, susceptibility to | |
+| MONDO:0800414 | aplastic anemia, susceptibility to | |
+| MONDO:0800415 | asthma, aspirin-induced, susceptibility to | |
+| MONDO:0800416 | autism, susceptibility to, 1 | |
+| MONDO:0800417 | autism, susceptibility to, 4 | |
+| MONDO:0800418 | breast cancer, familial, susceptibility to, 1 | |
+| MONDO:0800419 | breast cancer, familial, susceptibility to, 2 | |
+| MONDO:0800420 | breast cancer, familial, susceptibility to, 3 | |
+| MONDO:0800421 | cardiomyopathy, familial hypertrophic, 4, susceptibility to | |
+| MONDO:0800422 | cirrhosis, noncryptogenic, susceptibility to | |
+| MONDO:0800423 | colorectal cancer, susceptibility to, 4 | |
+| MONDO:0800424 | colorectal cancer, susceptibility to, on chromosome 15 | |
+| MONDO:0800425 | coronary artery disease, severe, susceptibility to | |
+| MONDO:0800426 | dengue fever, susceptibility to | |
+| MONDO:0800427 | dengue hemorrhagic fever, susceptibility to | |
+| MONDO:0800428 | dengue shock syndrome, susceptibility to | |
+| MONDO:0800429 | dyslexia, susceptibility to, 4 | |
+| MONDO:0800430 | dyslexia, susceptibility to, 7 | |
+| MONDO:0800431 | efavirenz central nervous system toxicity, susceptibility to | |
+| MONDO:0800432 | obesity, susceptibility to | |
+| MONDO:0800433 | ovarian cancer, familial, susceptibility to, 1 | |
+| MONDO:0800434 | ovarian cancer, familial, susceptibility to, 2 | |
+| MONDO:0800435 | ovarian cancer, familial, susceptibility to, 3 | |
+| MONDO:0850030 | complete hemimelia | |
+| MONDO:0850046 | amniotic fluid embolism | |
+| MONDO:0850048 | classic eosinophilic pustular folliculitis | |
+| MONDO:0850049 | painful legs and moving toes syndrome | |
+| MONDO:0850050 | congenital aphakia-iris hypoplasia-microphthalmia-microcornea syndrome | |
+| MONDO:0850053 | F12-associated cold autoinflammatory syndrome | |
+| MONDO:0850054 | hemophilia B leyden | |
+| MONDO:0850058 | chronic neurovisceral acid sphingomyelinase deficiency | |
+| MONDO:0850059 | hereditary persistence of fetal hemoglobin-intellectual disability syndrome | |
+| MONDO:0850064 | inherited hematologic cancer-predisposing syndrome | |
+| MONDO:0850065 | neonatal-onset severe multisystemic autoinflammatory disease with increased IL18 | |
+| MONDO:0850066 | SAMD9L-associated autoinflammatory syndrome | |
+| MONDO:0850067 | immune deficiency due to impaired neutrophil phagocytosis and migration | |
+| MONDO:0850068 | early-onset autoimmunity-autoinflammation-immunodeficiency syndrome | |
+| MONDO:0850069 | familial hyperinflammatory lymphoproliferative immunodeficiency | |
+| MONDO:0850070 | CADINS disease | |
+| MONDO:0850071 | developmental delay-immunodeficiency-leukoencephalopathy-hypohomocysteinemia syndrome | |
+| MONDO:0850072 | non-syndromic unisutural craniosynostosis | |
+| MONDO:0850073 | non-syndromic unicoronal craniosynostosis | |
+| MONDO:0850074 | non-syndromic unilambdoid craniosynostosis | |
+| MONDO:0850075 | non-syndromic unifrontosphenoidal craniosynostosis | |
+| MONDO:0850076 | non-syndromic unisquamosal craniosynostosis | |
+| MONDO:0850077 | non-syndromic multisutural craniosynostosis | |
+| MONDO:0850078 | non-syndromic non-specific multisutural craniosynostosis | |
+| MONDO:0850079 | non-syndromic bilambdoid craniosynostosis | |
+| MONDO:0850080 | non-syndromic unicoronal and sagittal craniosynostosis | |
+| MONDO:0850081 | non-syndromic metopic and sagittal craniosynostosis | |
+| MONDO:0850082 | non-syndromic bicoronal and metopic craniosynostosis | |
+| MONDO:0850083 | non-syndromic bicoronal and sagittal craniosynostosis | |
+| MONDO:0850084 | non-syndromic pansynostosis | |
+| MONDO:0850087 | primary hypomagnesemia-generalized seizures-intellectual disability-obesity syndrome | |
+| MONDO:0850088 | EGF-related primary hypomagnesemia with intellectual disability | |
+| MONDO:0850089 | Gitelman-like kidney tubulopathy due to mitochondrial DNA mutation | |
+| MONDO:0850090 | fibrosis-neurodegeneration-cerebral angiomatosis syndrome | |
+| MONDO:0850095 | X-linked severe syndromic thoracic aortic aneurysm and dissection | |
+| MONDO:0850096 | SBDS-related severe neonatal spondylometaphyseal dysplasia | |
+| MONDO:0850097 | autoimmune limbic encephalitis | A rare autoimmune encephalitis involving the mesial temporal lobes and clinically characterized by subacute onset (i. e. rapid progression of less than three months) of short-term memory deficits, seizures or psychiatric symptoms, such as behavioral changes, anxiety, depression, and psychosis. Further diagnostic criteria are bilateral abnormalities restricted to the mesial temporal lobes in brain MRI, cerebrospinal fluid pleocytosis and/or epileptic or slow-wave activity involving the temporal lobes in EEG, and reasonable exclusion of alternative causes. Paraneoplastic or non-paraneoplastic antibodies against neuronal antigens may be found in serum and/or cerebrospinal fluid. |
+| MONDO:0850099 | MIR140-related spondyloepiphyseal dysplasia | |
+| MONDO:0850100 | body integrity dysphoria | |
+| MONDO:0850102 | non-specific autoimmune supratentorial encephalitis with characteristic antibodies | |
+| MONDO:0850103 | non-specific autoimmune supratentorial encephalitis without characteristic antibodies | |
+| MONDO:0850104 | paraneoplastic isolated brainstem encephalitis | |
+| MONDO:0850105 | non-specific autoimmune brainstem encephalitis with characteristic antibodies | |
+| MONDO:0850106 | non-specific autoimmune brainstem encephalitis without characteristic antibodies | |
+| MONDO:0850107 | postinfectious cerebellitis | |
+| MONDO:0850108 | non-specific autoimmune cerebellar ataxia with characteristic antibodies | |
+| MONDO:0850109 | non-specific autoimmune cerebellar ataxia without characteristic antibodies | |
+| MONDO:0850115 | early-onset obesity-hyperphagia-severe developmental delay syndrome | |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0015335 | Mendelian syndromes with cleft lip/palate | orofacial clefting syndrome | Mendelian syndromes with cleft lip/palate |
+| MONDO:0007175 | PR interval, variation in | PR interval, variation 1N | PR interval, variation in |
+| MONDO:0007842 | joint laxity, familial | Ehlers-Danlos syndrome type 11 | joint laxity, familial |
+| MONDO:0008332 | platelet-type von Willebrand disease | pseudo-von Willebrand disease | platelet-type von Willebrand disease |
+| MONDO:0017905 | X-linked Mendelian susceptibility to mycobacterial diseases | X-linked mendelian susceptibility to mycobacterial diseases | X-linked Mendelian susceptibility to mycobacterial diseases |
+| MONDO:0011842 | GRN-related frontotemporal lobar degeneration with Tdp43 inclusions | Grn-related frontotemporal lobar degeneration with Tdp43 inclusions | GRN-related frontotemporal lobar degeneration with Tdp43 inclusions |
+| MONDO:0012249 | Lynch syndrome 2 | colorectal cancer, hereditary nonpolyposis, type 2 | Lynch syndrome 2 |
+| MONDO:0013196 | Lynch syndrome 8 | colorectal cancer, hereditary nonpolyposis, type 8 | Lynch syndrome 8 |
+| MONDO:0013699 | Lynch syndrome 4 | colorectal cancer, hereditary nonpolyposis, type 4 | Lynch syndrome 4 |
+| MONDO:0013710 | Lynch syndrome 5 | colorectal cancer, hereditary nonpolyposis, type 5 | Lynch syndrome 5 |
+| MONDO:0030711 | Anemia, congenital dyserythropoietic, type IIIb, autosomal recessive | anemia, congenital dyserythropoietic, IIA IIIB, autosomal recessive | Anemia, congenital dyserythropoietic, type IIIb, autosomal recessive |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0000437 | cerebellar ataxia | A neurological syndrome characterised by clumsy and unco-ordinated movement of the limbs, trunk, and cranial muscles. It results from pathology in the cerebellum and its connections, or in the proprioceptive sensory pathways. | A neurological syndrome characterised by clumsy and uncoordinated movement of the limbs, trunk, and cranial muscles. It results from pathology in the cerebellum and its connections, or in the proprioceptive sensory pathways. |
+| MONDO:0007842 | joint laxity, familial | Ehlers-Danlos syndrome, type 11, is characterised by generalized joint hypermobility often complicated by dislocation of major joints, particularly the shoulder but in some cases the kneecap. Congenital hip dislocation has also been frequently reported. The syndrome has been described in several families. It is transmitted as an autosomal dominant trait, with high penetrance. | A type of Ehlers-Danlos syndrome characterised by generalized joint hypermobility often complicated by dislocation of major joints, particularly the shoulder but in some cases the kneecap. Congenital hip dislocation has also been frequently reported. The syndrome has been described in several families. It is transmitted as an autosomal dominant trait, with high penetrance. |
+| MONDO:0008332 | platelet-type von Willebrand disease | Platelet type Von Willebrand disease (PT-VWD) is a bleeding disorder characterized by mild to moderate mucocutaneous bleeding, which becomes more pronounced during pregnancy or following ingestion of drugs that have anti-platelet activity. PT-VWD is due to hyperresponsive platelets, resulting in thrombocytopenia. | A bleeding disorder characterized by mild to moderate mucocutaneous bleeding, which becomes more pronounced during pregnancy or following ingestion of drugs that have anti-platelet activity. PT-VWD is due to hyperresponsive platelets, resulting in thrombocytopenia. |
+| MONDO:0015924 | pulmonary arterial hypertension | Pulmonary arterial hypertension (PAH) is a group of diseases characterized by elevated pulmonary arterial resistance leading to right heart failure. PAH is progressive and potentially fatal. PAH may be idiopathic and/ or familial, or induced by drug or toxin (drug-or toxin-induced PAH) or associated with other diseases like congenital heart disease, connective tissue disease, HIV, schistosomiasis, portal hypertension (PAH associated with other disease). | A group of diseases characterized by elevated pulmonary arterial resistance leading to right heart failure. PAH is progressive and potentially fatal. PAH may be idiopathic and/ or familial, or induced by drug or toxin (drug-or toxin-induced PAH) or associated with other diseases like congenital heart disease, connective tissue disease, HIV, schistosomiasis, portal hypertension (PAH associated with other disease). |
+| MONDO:0017905 | X-linked Mendelian susceptibility to mycobacterial diseases | X-linked (XR) Mendelian susceptibility to mycobacterial diseases (MSMD) describes a rare group of immunodeficiencies due to specific mutations in the inhibitor of kappa light polypeptide gene enhancer in B-cells, kinase gamma (IKBKG) or the cytochrome b-245, beta polypeptide (CYBB) genes. They are characterized by mycobacterial infections, occuring in males. | A rare group of immunodeficiencies due to specific mutations in the inhibitor of kappa light polypeptide gene enhancer in B-cells, kinase gamma (IKBKG) or the cytochrome b-245, beta polypeptide (CYBB) genes. They are characterized by mycobacterial infections, occuring in males. |
+| MONDO:0013920 | herpes simplex encephalitis, susceptibility to, 3 | Any herpes simplex encephalitis in which the cause of the disease is a mutation in the TRAF3 gene. | A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the TRAF3 gene. |
+| MONDO:0013921 | herpes simplex encephalitis, susceptibility to, 4 | Any herpes simplex encephalitis in which the cause of the disease is a mutation in the TICAM1 gene. | A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the TICAM1 gene. |
+| MONDO:0020071 | infantile epilepsy syndrome | A epilepsy syndrome that occurs between 28 days to one year of life.. | An epilepsy syndrome that occurs between 28 days to one year of life. |
+| MONDO:0014680 | herpes simplex encephalitis, susceptibility to, 7 | Any herpes simplex encephalitis in which the cause of the disease is a mutation in the IRF3 gene. | A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the IRF3 gene. |
+| MONDO:0100153 | tubulinopathy | A nervous system disorder characterized by complex cortical malformations including in most cases dysmorphic basal ganglia in which the cause of the disease is a variation in one or more of the tubulin genes. | A nervous system disorder characterized by complex cortical malformations including in most cases dysmorphic basal ganglia and/or corpus callosum in which the cause of the disease is a variation in a tubulin gene. |
+| MONDO:0024563 | herpes simplex encephalitis, susceptibility to, 1 | Any herpes simplex encephalitis in which the cause of the disease is a mutation in the UNC93B1 gene. | A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the UNC93B1 gene. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0001324 | obsolete hyperandrogenism |
+| MONDO:0007665 | obsolete glaucoma 1, open angle, E |
+| MONDO:0011222 | obsolete glaucoma 1, open angle, D |
+| MONDO:0011311 | obsolete glaucoma 1, open angle, F |
+| MONDO:0011704 | obsolete glaucoma 1, open angle, B |
+| MONDO:0012337 | obsolete glaucoma 1, open angle, I |
+| MONDO:0012357 | obsolete glaucoma 1, open angle, G |
+| MONDO:0012646 | obsolete glaucoma 1, open angle, H |
+| MONDO:0015522 | obsolete situs ambiguus |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0010368 | immunodeficiency without anhidrotic ectodermal dysplasia |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
+
 # 2022-12-01
 
 ## Overview:
