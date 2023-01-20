@@ -287,7 +287,7 @@ build-%:
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
 
-patterns: matches matches_annotations pattern_docs
+patterns: matches pattern_docs
 	make components/mondo-tags.owl
 	
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
@@ -361,8 +361,9 @@ construct-unmerge-query-%: construct-query-%
 TMP_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8cszVqBNOeClD6uFif3QRHn0Ud_Cyt_gylyTTFJ-RoJaOwNWS7Qv3c516bJoTBaKT1WLagSQ7CQqS/pub?gid=0&single=true&output=tsv"
 TMP_TEMPLATE_FILE=tmp/temporary.tsv
 TMP_TEMPLATE_OWL=tmp/temporary.owl
+
 temporary_template:
-	wget $(TMP_TEMPLATE_URL) -O $(TMP_TEMPLATE_FILE)
+	wget "$(TMP_TEMPLATE_URL)" -O $(TMP_TEMPLATE_FILE)
 	robot template --template $(TMP_TEMPLATE_FILE) -o $(TMP_TEMPLATE_OWL)
 
 UNMERGE_FILE=$(TMP_TEMPLATE_OWL)
@@ -457,7 +458,11 @@ tmp/mirror-efo.json: #mirror/efo.owl
 sssom:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.17
 
-tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
+.PHONY: oaklib
+oaklib:
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
+
+tmp/%.sssom.tsv: tmp/mirror-%.json | sssom | oaklib | mondo_merge_db
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
 
 qqq:
@@ -465,6 +470,7 @@ qqq:
 
 
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
+	python ../scripts/add_object_label.py run $<
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
 	sssom sort $@ -o $@
@@ -623,6 +629,12 @@ open_%_report:
 
 mondo_obo:
 	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
+
+tmp/mondo-ingest.owl:
+	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
+
+mondo_merge_db: tmp/mondo-ingest.owl
+	semsql make tmp/mondo-ingest.db
 
 METRIC_SINCE_VERSION=2019-06-29
 METRIC_UNTIL_VERSION=2020-06-30

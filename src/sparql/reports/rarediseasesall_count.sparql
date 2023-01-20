@@ -5,41 +5,32 @@ prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-# MONDO classes with the axiom "'has modifier' some rare" AND/OR "has subset :‘gard_rare’" AND limited to the 'disease' branch (ie not including terms from the 'disease susceptibility' branch) AND consider only leaf nodes.
+# MONDO classes (includes grouping classes) with the axiom "'has modifier' some rare" AND/OR "has subset :‘gard_rare’" AND limited to the 'disease' branch (ie not including terms from the 'disease susceptibility' branch) AND consider only leaf nodes.
 
 SELECT distinct (count(distinct ?cls) as ?count)
 
-WHERE 
+WHERE
 {
   {?cls a owl:Class;
           rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
 
   ?cls rdfs:subClassOf+ [
-               owl:onProperty <http://purl.obolibrary.org/obo/RO_0002573> ;
-               owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021136> ] 
-
-FILTER NOT EXISTS {
-    ?cls ^rdfs:subClassOf ?child
-  }
+               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+               owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021136> ]
 
                }
- 
- UNION 
+
+ UNION
   { ?cls a owl:Class;
           rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
 
-    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#gard_rare>. 
-
-FILTER NOT EXISTS {
-    ?cls ^rdfs:subClassOf ?child
-  }
+    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#gard_rare>.
 
     }
 
-  
+
   FILTER NOT EXISTS {
     ?cls owl:deprecated "true"^^xsd:boolean
   }
  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
 }
-  
