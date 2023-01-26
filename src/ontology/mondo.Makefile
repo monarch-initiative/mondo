@@ -211,6 +211,16 @@ clean:
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
 
 #############################################
+##### Mondo subset auto-tagger ##############
+#############################################
+
+tmp/mondo-subsets.ttl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason query --format ttl --query ../sparql/construct/construct-rare-subset.sparql $@
+
+components/mondo-subsets.owl: tmp/mondo-subsets.ttl | dirs
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+#############################################
 ##### Mondo analysis ########################
 #############################################
 
