@@ -1,5 +1,6 @@
 prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix inSubset: <http://www.geneontology.org/formats/oboInOwl#inSubset>
 prefix obsoletion_candidate: <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate>
@@ -19,7 +20,7 @@ WHERE
   }
   
   OPTIONAL {
-  	?mondo_id rdfs:seeAlso ?issue_
+  	?mondo_id IAO:0000233 ?issue_
   }
   
  ?mondo_id <http://purl.obolibrary.org/obo/IAO_0006012> ?obsoletion_date

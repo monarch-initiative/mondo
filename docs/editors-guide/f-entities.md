@@ -13,7 +13,7 @@ The standard OBO properties are used:
 * Label. **Every class MUST have a single unambiguous label**
 * Definition. **Every class SHOULD have a text definition**.
 * Synonyms. Use broad/narrow/exact/related wisely.
-    * See: [uberon synonyms guide](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining). 
+    * See: [uberon synonyms guide](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining).
     * TODO: still to clean up a lot of synonym scopes seeded from external ontologies
     * We tend to use BROAD/NARROW generously, even if the sub/super exists. This is because it is useful to annotate other ontologies usages of synonyms.
 * Comment: Optional. max one per class (obo-format limit).
@@ -21,8 +21,7 @@ The standard OBO properties are used:
 
 ## Labels
 
-Case rules:
-
+**Case rules:**  
 * Use lowercase, even for initial letter, except for these exceptions:
     * proper names (for example, Epstein-Barr virus-associated mesenchymal tumor)
     * latin names (for example, Homo sapiens)
@@ -32,9 +31,16 @@ Case rules:
 * Type symbols should be capitalized (e.g. “type A”)
 * Generally arabic > roman, except for established names (e.g. cranial nerve VII)
 
-Uniqueness:
-
+**Uniqueness:**  
 We strive for uniqueness. **However, be careful when evaluating uniqueness**. Various OMIMs that are apparently distinct have names that are the same, except with different lexicalizations.
+
+**Disease naming:**  
+Disease naming conventions are explained [here](https://mondo.monarchinitiative.org/pages/disease-naming/).  
+- Mondo follows the OMIM naming conventions. Therefore, the disease name coming from OMIM will be preferentially the primary term label
+- Term relabeling requests (e.g. gene-based labels) are addressed as follow:
+  - if the original term label comes from OMIM, the original label is retained and the requested new label is added as an "exact synonym". If the request comes for a CliGen working group, the synonym type called ‘ClinGen preferred’ will be added.
+  - if the original term label does not come from OMIM, the term will be relabeled as requested (note that the original label will be added as an exact synonym)
+
 
 ## Text definitions
 
@@ -45,7 +51,7 @@ EFO > {Orphanet,NCIT} > DesignPattern > DOID
 NCIT is generally favored over Orphanet, except for genetic non-cancer diseases.
 
 
-We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus). If you edit a definition and it deviates from the definition dbxref, add your ORCID as an additional dbxref. More details on [how to write simple, concise, and clear operational text definitions is here](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/). 
+We have overwitten some with our own. We aim for genus-differentia (but not in the style of DO which gets this wrong in many cases, for example, overstating the genus). If you edit a definition and it deviates from the definition dbxref, add your ORCID as an additional dbxref. More details on [how to write simple, concise, and clear operational text definitions is here](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/).
 
 ## Synonyms
 
@@ -66,13 +72,13 @@ These are incorrect in many places where they have been brought in externally. *
 
 #### Exact
 
-The definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name. 
+The definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name.
 
 For example, MONDO:0003321-hereditary Wilms' tumor : ‘has_exact_synonym’ ‘familial Wilms' tumor’.
 
-#### Narrow 
+#### Narrow
 
-The definition of the synonym is the same as the primary definition, but has additional qualifiers. 
+The definition of the synonym is the same as the primary definition, but has additional qualifiers.
 
 For example, MONDO:0004979 asthma : ‘has_narrow_synonym’ ‘exercise-induced asthma’
 
@@ -82,18 +88,18 @@ The primary definition accurately describes the synonym, but the definition of t
 
 For example, MONDO:0016264 autoimmune hepatitis : ‘has_broad_synonym’ ‘autoimmune liver disease’
 
-#### Related 
+#### Related
 
-This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included. 
+This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included.
 
 For example, MONDO:0015263 Brugada syndrome : ‘has_related_synonym’ ‘sudden unexpected nocturnal death syndrome’.
 
-We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining) 
+We follow a lot of the same rules as Uberon for text mining: [https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining](https://github.com/obophenotype/uberon/wiki/Using-uberon-for-text-mining)
 
 ##### Synonym types
 
 Synonym Label | Synonym type | Description | Example of usage
--- | -- | -- | -- 
+-- | -- | -- | --
 A synonym that is historic and discouraged | DEPRACATE | We mark synonyms with DEPRECATED that are historic and no longer appropriate to use, e.g. all occurrences of “mental retardation” should be “intellectual disability”. We try and avoid including things in this list: [https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations](https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations) but if it’s established (e.g. Wegener granulomatosis) may include as a synonym and mark DEPRECATED | MONDO:0001071 'intellectual disability'
 A synonym that is recorded for consistency with another source but is a misspelling | MISSPELLING | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
 abbreviation | ABBREVIATION | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
@@ -182,7 +188,7 @@ MONDO:directSiblingOf   |   The term that is xref'd is a direct sibling of term.
 MONDO:entailed  |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   Y   |   MONDO:0001594 'Achilles bursitis'
 MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease' database_cross_reference: Orphanet:1239 (was obsoleted in orphanet) {source=MONDO:equivalentObsolete}
 MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom, meaning the two terms are considered to be exactly the same. This can be added to any xref where this is true.   |   xrefs   |   N   |   MONDO:0100087 'familial Alzheimer disease' database_cross_reference: GARD:0000632 (refers to the disease in GARD) {source=MONDO:equivalentTo}
-MONDO:includedEntryInOMIM | This indicates a term is an 'included' entry in OMIM, for example https://omim.org/entry/233910 | xrefs | N | MONDO:0100167 'dystonia, dopa-responsive, with or without hyperphenylalaninemia, autosomal recessive' 
+MONDO:includedEntryInOMIM | This indicates a term is an 'included' entry in OMIM, for example https://omim.org/entry/233910 | xrefs | N | MONDO:0100167 'dystonia, dopa-responsive, with or without hyperphenylalaninemia, autosomal recessive'
 MONDO:kboom-pr-[number]     |   These are the probability scores from the kBoom algorithm.  |  xrefs   |   Y   |   MONDO:0008966 'Aagenaes syndrome'
 MONDO:Lexical   |   Same as design_pattern. Should be replaced with specific design_pattern.    |   synonyms    |   N   |   MONDO:0010278 'Christianson syndrome'
 MONDO:LexicalVariant    |   Similar to design_pattern, should be replaced with specific documentation about variant documentation.  |  synonyms   |   N   |   MONDO:0006018 'Wissler syndrome'

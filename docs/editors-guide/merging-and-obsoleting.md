@@ -92,6 +92,10 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 1. Remove the annotations: 'in subset obsoletion candidate' and 'scheduled for obsoletion on or after'  
 1. When reviewing the diff, make sure there is not an Alt ID. The diff should only show additions to the merged term and the obsoletion
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hhuq4Lwz0Ds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EjM_xigLisg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Manual merge/obsolete
 1. If one class should be merged with another class, first obsolete the class that will be merged.
 1. Search for the class to be obsoleted
