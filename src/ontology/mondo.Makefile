@@ -687,6 +687,8 @@ test_obs_reason:
 	! grep -E "property_value: IAO:0000231.*xsd:[^s]" mondo-edit.obo
 	echo "obsolesence reason does not seem to use the correct property"
 	! grep -E "\"terms merged\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+	! grep -E "\"out of scope\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+	! grep -E "\"terms split\" xsd:" mondo-edit.obo | grep -v IAO:0000231
 
 test: test_obs_reason
 
