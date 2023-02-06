@@ -1,3 +1,111 @@
+# 2023-02-06
+## Overview:
+
+
+* Number of new terms: 17
+* Number of changed labels: 11
+* Number of changed definitions: 7
+* Number obsoleted terms: 7
+* Number of new obsoletion candidates: 22
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0031329 | craniofacial dysmorphism, skeletal anomalies, and impaired intellectual development syndrome | |
+| MONDO:0031415 | Carey-Fineman-Ziter syndrome | |
+| MONDO:0031632 | developmental delay with short stature, dysmorphic facial features, and sparse hair | |
+| MONDO:0100158 | CHRNG-associated hypo-akinesia disorder of prenatal onset | A spectrum of presentations resulting from biallelic protein-altering variation in CHRNG. Inactivation of the receptor during early development leads to prenatal hypo-akinesia; subsequent phenotypes are a consequence of this hypo-akinesia and are thought to be dependent upon timing and severity of the anomaly at the neuromuscular junction. A range of phenotypes varying in severity (including both lethal and non-lethal presentations) have been reported, but typically include joint contractures, pterygia, dysmorphic features, vertebral and thoracic anomalies, and additional variable abnormalities. There are no clear genotype-phenotype correlations between the lethal and non-lethal presentations of this spectrum; both inter- and intra-familial variability have been reported, with the same variants being observed in both lethal and non-lethal cases. |
+| MONDO:0100190 | gastric intestinal metaplasia | Metaplastic changes in the lining of the upper digestive tract. |
+| MONDO:0100208 | self-limited familial neonatal-infantile epilepsy | An epilepsy syndrome associated with infantile period seizures, complete or nearly-complete seizure remission afterwards, usually good developmental outcome, and dominant transmission with high penetrance in pedigrees. For most affected infants, seizures begin within the first week after term birth. In a minority, however, seizures can begin after the first week but within the first several months of life. At onset, seizures may be highly recurrent, and often feature unilateral tonic limb stiffening that may alternate sides from seizure to seizure, accompanied by cyanosis and autonomic features. Limb shaking movements occur, but not in the evolving rhythmic pattern of tonic-clonic convulsions in older individuals. Neurological examination of the infant is normal between seizures. Although these seizures remit by 4-12 months of age in the majority, 15-30% of those affected have one or more seizure recurrences later, including febrile seizures, focal-onset seizures, and convulsions. Although most affected children show typical development, individuals with mild learning difficulties have been reported in families where the majority develop typically. |
+| MONDO:0100216 | DICER1-related tumor predisposition | Pathogenic germline variation in DICER1 confers an autosomal dominant predisposition to tumor formation at multiple primary sites, including pleuropulmonary blastoma, pulmonary cysts, thyroid gland neoplasia, ovarian tumors, and cystic nephroma. Other syndromic features such as macrocephaly have been described. |
+| MONDO:0100227 | ALS2-related motor neuron disease | Any motor neuron disease in which the cause of the disease is a mutation in the ALS2 gene. |
+| MONDO:0100235 | FOXC1-related anterior segment dysgenesis | Any anterior segment dysgenesis in which the cause of the disease is a mutation in the FOXC1 gene. |
+| MONDO:0100236 | LTBP2-related ocular dysgenesis | Any ocular dysgenesis disorder in which the cause of the disease is a mutation in the LTBP2 gene. |
+| MONDO:0100254 | CACNA1A-related complex neurodevelopmental disorder | A progressive complex neurodevelopmental condition caused by variants in the CACNA1A gene. Phenotypic onset (usually) occurs around age 1 and most often includes intellectual disability but can also include epileptic encephalopathy, benign paroxysmal torticollis of infancy and paroxysmal tonic upgaze psychomotor delay, learning difficulties, absence epilepsy, episodic ataxia, and hemiplegic migraines. |
+| MONDO:0700046 | baclofen withdrawal syndrome | Withdrawal syndrome involving the abrupt discontinuation of baclofen therapy (intrathecal or oral). Baclofen withdrawal syndrome can result in high fever, altered mental status (including agitation, insomnia, confusion, delusions, hallucinations, seizures, visual changes, or psychosis), and potentially profound muscular rigidity that sometimes progresses to fatal rhabdomyolysis. |
+| MONDO:0700047 | premenopausal osteoporosis | Osteoporosis occuring in premenopausal women with existing fragility fractures, diseases or treatments known to cause bone loss or fractures. |
+| MONDO:0700048 | hand-foot syndrome | A condition characterized by redness, pain, swelling, and tingling in the palms of the hands or the soles of the feet. It may appear as a side effect to chemotherapy agents. |
+| MONDO:0800436 | craniofacial dysmorphism, skeletal anomalies, and impaired intellectual development 1 | Any craniofacial dysmorphism, skeletal anomalies, and impaired intellectual development in which the cause of the disease is a variation in the TMCO1 gene. |
+| MONDO:0800437 | Carey-Fineman-Ziter syndrome 1 | A rare condition characterized by the association of hypotonia, Moebius sequence (bilateral congenital facial palsy with impairment of ocular abduction), Pierre-Robin sequence (micrognathia, glossoptosis, and high-arched or cleft palate), unusual face, and growth delay. |
+| MONDO:0800438 | developmental delay with short stature, dysmorphic facial features, and sparse hair 1 | Any developmental delay with short stature, dysmorphic facial features, and sparse hair in which the cause of the disease is a mutation in the DPH1 gene. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0013696 | chromosome 2p16.3 deletion syndrome | chromosome 2P16.3 deletion syndrome | chromosome 2p16.3 deletion syndrome |
+| MONDO:0021764 | acrofacial dysostosis Preis type | acrofacial dysostosis preis type | acrofacial dysostosis Preis type |
+| MONDO:0024773 | spermatogenic failure, X-linked, 4 | spermatogenic failure, x-linked, 4 | spermatogenic failure, X-linked, 4 |
+| MONDO:0025351 | multiple congenital anomalies-neurodevelopmental syndrome, X-linked | multiple congenital anomalies-neurodevelopmental syndrome, x-linked | multiple congenital anomalies-neurodevelopmental syndrome, X-linked |
+| MONDO:0035826 | symptomatic form of X-linked centronuclear myopathy in female carriers | symptomatic form of x-linked centronuclear myopathy in female carriers | symptomatic form of X-linked centronuclear myopathy in female carriers |
+| MONDO:0100024 | self-limited familial infantile epilepsy | self-limited familial and non-familial infantile seizures | self-limited familial infantile epilepsy |
+| MONDO:0800250 | Graves disease, susceptibility to, X-linked 2 | graves disease, susceptibility to, x-linked 2 | Graves disease, susceptibility to, X-linked 2 |
+| MONDO:0800318 | Emery-Deifuss muscular dystrophy 6, X-linked | Emery-dDeifuss muscular dystrophy 6, x-linked | Emery-Deifuss muscular dystrophy 6, X-linked |
+| MONDO:0800319 | cone dystrophy 5, X-linked | cone dystrophy 5, x-linked | cone dystrophy 5, X-linked |
+| MONDO:0800320 | cone dystrophy 1, X-linked | cone dystrophy 1, x-linked | cone dystrophy 1, X-linked |
+| MONDO:0800321 | congenital heart defects, multiple types, 1, X-linked | congenital heart defects, multiple types, 1, x-linked | congenital heart defects, multiple types, 1, X-linked |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0005567 | substance withdrawal syndrome | A substance-specific organic brain syndrome that follows the discontinuation of administration or use, or reduction in intake of an addictive substance, e.g. opioids, barbiturates and alcohol; amphetamines or similarly acting sympathomimetics; cocaine; nicotine; sedatives, hypnotics, or anxiolytics. Syndrome manifests with diverse, often painful physical and psychological symptoms, which include but not limited to intense drug craving, anxiety, depression, insomnia, nausea, perspiration, body aches, tremors, hallucinations, and convulsions. | A substance-specific organic brain syndrome that follows the discontinuation of administration or use, or reduction in intake of a substance (including alcohol, prescribed medications and recreational drugs). Syndrome manifests with diverse, often painful physical and psychological symptoms, which include but not limited to intense drug craving, anxiety, depression, insomnia, nausea, perspiration, body aches, tremors, hallucinations, and convulsions. |
+| MONDO:0005789 | hepatitis D virus infection | Inflammation of the liver in humans caused by hepatitis delta virus, a defective rna virus that can only infect hepatitis B patients. For its viral coating, hepatitis delta virus requires the hepatitis B surface antigens produced by these patients. Hepatitis D can occur either concomitantly with (coinfection) or subsequent to (superinfection) hepatitis B infection. Similar to hepatitis B, it is primarily transmitted by parenteral exposure, such as transfusion of contaminated blood or blood products, but can also be transmitted via sexual or intimate personal contact. | Inflammation of the liver in humans caused by hepatitis delta virus, a defective RNA virus that can only infect hepatitis B patients. For its viral coating, hepatitis delta virus requires the hepatitis B surface antigens produced by these patients. Hepatitis D can occur either concomitantly with (coinfection) or subsequent to (superinfection) hepatitis B infection. Similar to hepatitis B, it is primarily transmitted by parenteral exposure, such as transfusion of contaminated blood or blood products, but can also be transmitted via sexual or intimate personal contact. |
+| MONDO:0015924 | pulmonary arterial hypertension | A group of diseases characterized by elevated pulmonary arterial resistance leading to right heart failure. PAH is progressive and potentially fatal. PAH may be idiopathic and/ or familial, or induced by drug or toxin (drug-or toxin-induced PAH) or associated with other diseases like congenital heart disease, connective tissue disease, HIV, schistosomiasis, portal hypertension (PAH associated with other disease). | Pulmonary arterial hypertension (PAH) is a group of diseases characterized by mean pulmonary artery pressure >20 mmHg and elevated pulmonary arterial resistance leading to right heart failure. PAH is progressive and potentially fatal. PAH may be idiopathic and/ or familial, have overt features of venous/capillary involvement (pulmonary veno-occlusive disease, PVOD/pulmonary capillary hemangiomatosis, PCH), induced by drug or toxin (drug-or toxin-induced PAH), or associated with other diseases like congenital heart disease, connective tissue disease, HIV, schistosomiasis, portal hypertension (PAH associated with other disease). |
+| MONDO:0008572 | tibia, hypoplasia or aplasia of, with polydactyly | | Tibial hemimelia-polysyndactyly-triphalangeal thumb syndrome is a rare, genetic dysostosis syndrome, with marked inter- and intra-familial variation, typically characterized by triphalangeal thumbs, hand and/or foot polysyndactyly and/or absent/hypoplastic tibiae (associated with duplication of fibulae in some cases), although isolated triphalangeal thumbs have also been reported. It is often accompanied with remarkable short stature and additional features may include radio-ulnar synostosis and hand oligodactyly, as well as abnormal carpal and metatarsal bones. |
+| MONDO:0018554 | pulmonary veno-occlusive disease and/or pulmonary capillary haemangiomatosis | Pulmonary veno-occlusive disease and/or pulmonary capillary hemangiomatosis (PVOD and/or PCH) constitutes a rare subgroup of pulmonary arterial hypertension (PAH) characterized by obliterative fibrosis of the small pulmonary veins and venules and/or capillary infiltration of the pulmonary interstitium leading to increased pulmonary vascular resistance and right ventricular dysfunction. | A rare subgroup of pulmonary arterial hypertension (PAH) characterized by obliterative fibrosis of the small pulmonary veins and venules and/or capillary infiltration of the pulmonary interstitium leading to increased pulmonary vascular resistance and right ventricular dysfunction. |
+| MONDO:0019053 | peroxisomal disease | A group of congenital disorders of lipid metabolism, caused by loss of the normal peroxisomes. Signs and symptoms include developmental delays, mental retardation, facial abnormalities, hepatomegaly, and hypotonia. | A group of congenital disorders of lipid metabolism, caused by loss of the normal peroxisomes. Signs and symptoms include developmental delays, intellectual disability, characteristic facial dysmorphic features, hepatomegaly, and hypotonia. |
+| MONDO:0019409 | idiopathic juvenile osteoporosis | Idiopathic juvenile osteoporosis (IJO) is a primary condition of bone demineralization that presents with pain in the back and extremities, walking difficulties, multiple fractures, and radiological evidence of osteoporosis. | Idiopathic juvenile osteoporosis (IJO) is a primary condition of bone demineralization childhood or adolescence that presents with pain in the back and extremities, walking difficulties, multiple fractures, and radiological evidence of osteoporosis. Onset usually occurs in the prepubertal period, between 8 and 12 years of age. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0004738 | obsolete histidine metabolism disease |
+| MONDO:0008952 | obsolete cerebrofaciothoracic dysplasia |
+| MONDO:0009700 | obsolete Carey-Fineman-Ziter syndrome |
+| MONDO:0012017 | obsolete Parkes Weber syndrome |
+| MONDO:0014824 | obsolete craniofacial dysplasia-short stature-ectodermal anomalies-intellectual disability syndrome |
+| MONDO:0018052 | obsolete hypoplastic tibiae-postaxial polydactyly syndrome |
+| MONDO:0020306 | obsolete absent tibia-polydactyly syndrome |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000769 | chicken egg allergy |
+| MONDO:0000778 | fruit allergy |
+| MONDO:0000781 | cherry allergy |
+| MONDO:0000782 | Indian plum allergy |
+| MONDO:0000783 | orange allergy |
+| MONDO:0000784 | melon allergy |
+| MONDO:0100336 | infectious disease or post-infectious disorder |
+| MONDO:0006514 | recalcitrant atopic dermatitis |
+| MONDO:0007649 | gastric juice peptides |
+| MONDO:0008120 | spinocerebellar ataxia type 7 |
+| MONDO:0011649 | AVSD 1 |
+| MONDO:0014834 | dyskinesia, limb and orofacial, infantile-onset |
+| MONDO:0015594 | non-paraneoplastic limbic encephalitis |
+| MONDO:0016317 | limbic encephalitis with NMDA receptor antibodies |
+| MONDO:0017984 | familial lambdoid synostosis |
+| MONDO:0018834 | adenylosuccinate synthetase-like 1-related distal myopathy |
+| MONDO:0019899 | distal monosomy 20q |
+| MONDO:0033187 | combined oxidative phosphorylation defect type 29 |
+| MONDO:0044683 | limbic encephalitis with neurexin-3 antibodies |
+| MONDO:0800303 | hypophosphatasia, perinatal lethal |
+| MONDO:0800316 | contiguous ABCD1/DXS1375E deletion syndrome |
+| MONDO:0800343 | rhegmatogenous retinal detachment, autosomal dominant |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
+
 # 2023-01-04
 ## Overview:
 
