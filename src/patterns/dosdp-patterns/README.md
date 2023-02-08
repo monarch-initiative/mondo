@@ -1430,7 +1430,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/nonhuman_disease.tsv)
 ### Nonhuman disease taxon
-*This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human and the taxon affected is known. Examples: [leukemia, feline](http://purl.obolibrary.org/obo/MONDO_0025488)*
+*This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human AND the taxon affected is known. Examples: [leukemia, feline](http://purl.obolibrary.org/obo/MONDO_0025488)*
 
 | Attribute | Info |
 |----------|----------|

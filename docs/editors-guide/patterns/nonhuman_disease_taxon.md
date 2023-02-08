@@ -3,7 +3,7 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml](http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml)
 ## Description 
 
-This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human and the taxon affected is known. Examples: [leukemia, feline](http://purl.obolibrary.org/obo/MONDO_0025488)
+This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human AND the taxon affected is known. Examples: [leukemia, feline](http://purl.obolibrary.org/obo/MONDO_0025488)
 ## Contributors 
 * [https://orcid.org/0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153) 
 ## Name 
