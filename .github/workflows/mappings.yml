@@ -24,8 +24,6 @@ jobs:
         run: |
           echo "resource=src/ontology/mondo-edit.obo" >> $GITHUB_ENV
           echo "branch-name=make_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
-          echo "PR_TITLE=Weekly automated mappings update." >> $GITHUB_ENV
-          echo "PR_BODY=PLACEHOLDER: Needs to be updated." >> $GITHUB_ENV
 
       - name: Run MakeFile
         id: MakeFile
@@ -36,6 +34,8 @@ jobs:
           make GITHUB_ACTION=true IMP=false PAT=false update-ncit-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-omim-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-ordo-mappings -B
+          echo "PR_TITLE=Weekly automated mappings update." >> $GITHUB_ENV
+          echo "PR_BODY=PLACEHOLDER: Needs to be updated." >> $GITHUB_ENV
           
 
       - name: Create Pull Request
