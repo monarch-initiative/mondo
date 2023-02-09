@@ -752,3 +752,15 @@ update-exclusion-reasons: python-install-dependencies
 	python3 ../scripts/exclusion_reasons_enum_updater.py \
 	--input-path-exclusion-reasons ../scripts/exclusion_reasons.csv \
 	--input-path-mondo-schema ../schema/mondo.yaml
+
+##################################
+##### Scheduled GH Actions #######
+##################################
+$(TMPDIR)/new-exact-matches-%.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
+
+$(TMPDIR)/new-exact-matches-%.owl: $(TMPDIR)/new-exact-matches-%.tsv
+	$(ROBOT) template --template $< -o $@
+
+update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
+	$(ROBOT) merge -i $(SRC) -i $< -o tmp/mondo-edit.obo && mv tmp/mondo-edit.obo $(SRC)
