@@ -80,7 +80,7 @@ all: test all_artefacts mappings
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
