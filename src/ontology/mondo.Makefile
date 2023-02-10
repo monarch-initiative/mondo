@@ -763,4 +763,8 @@ $(TMPDIR)/new-exact-matches-%.owl: $(TMPDIR)/new-exact-matches-%.tsv
 	$(ROBOT) --prefix "sssom: https://w3id.org/sssom/" template --template $< -o $@
 
 update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
-	$(ROBOT) merge -i $(SRC) -i $< -o tmp/mondo-edit.obo && mv tmp/mondo-edit.obo $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $< --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+		mv tmp/$(SRC) $(SRC)
+		make NORM
+		mv NORM $(SRC)
