@@ -25,7 +25,7 @@ jobs:
         id: vars
         run: |
           echo "resource=src/ontology/mondo-edit.obo" >> $GITHUB_ENV
-          echo "branch-name=make_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
+          echo "branch-name=mapping_automation" >> $GITHUB_ENV
 
       - name: Run MakeFile
         id: MakeFile
@@ -51,3 +51,4 @@ jobs:
           base: ${{ github.head_ref }}
           branch: ${{ env.branch-name }}
           token: ${{ secrets.GH_TOKEN }}
+          reviewers: @hrshdhgd
