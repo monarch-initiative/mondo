@@ -10,7 +10,7 @@ These exclusion lists include :
   - exclusion_reason: reason(s) for excluding the term in Mondo. The exclusion reason should a code from the table below
   - exclude_children: true or false, this field indicates whether the children of this term should also be excluded from Mondo. This field is only applicable when the source of the term is an ontology.
 
-Exclusion lists are in the .tsv format and maintained in this folder: `mondo-ingest/src/ontology/config/`. Each source has its own term exclusion list(e.g `mondo-ingest/src/ontology/config/icd10cm_exclusions.tsv`)
+Exclusion lists are in the .tsv format and maintained in this folder: `mondo-ingest/src/ontology/config/`. Each source has its own term exclusion list(e.g [mondo-ingest/src/ontology/config/icd10cm_exclusions.tsv](https://github.com/monarch-initiative/mondo-ingest/blob/main/src/ontology/config/icd10cm_exclusions.tsv))
 
 **Updating the source exclusion list:**
 Curators should update the exclusion list by updating the .tsv file. For example, the excluded ICD10CM terms list should be done by updating the following file: `mondo-ingest/src/ontology/config/icd10cm_exclusions.tsv`
