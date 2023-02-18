@@ -15,11 +15,15 @@ WHERE {
  ?a <http://www.geneontology.org/formats/oboInOwl#source> ?v3 .
  FILTER (strStarts(?v3,"MONDO:equivalent"))
  BIND (
-    uri(replace(
+    uri(replace(replace(replace(replace(replace(
         concat("http://purl.obolibrary.org/obo/",
                replace(?x, ":", "_")),
-        "http://purl.obolibrary.org/obo/Orphanet_",
-        "http://www.orpha.net/ORDO/Orphanet_"))
+           "http://purl.obolibrary.org/obo/Orphanet_","http://www.orpha.net/ORDO/Orphanet_"
+        ), "http://purl.obolibrary.org/obo/OMIM_","https://omim.org/entry/"
+        ), "http://purl.obolibrary.org/obo/OMIMPS_","https://omim.org/phenotypicSeries/PS"
+    	), "http://purl.obolibrary.org/obo/SCTID_","http://snomed.info/id/"
+    	), "http://purl.obolibrary.org/obo/ONCOTREE_","http://oncotree.mskcc.org/api/tumorTypes/search/code/"
+      ))
     AS ?xcURI)
 }
 
