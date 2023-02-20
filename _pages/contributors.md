@@ -25,10 +25,10 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 
 # Project managers
 
-Name | Affiliation | GitHub 
+Name | Affiliation | Role | GitHub 
 --- | --- | --- | 
-Sarah Gehrke | University of Colorado | [sagehrke](https://github.com/sagehrke)
-Moni Munoz-Torres | University of Colorado | [monicacecilia ](https://github.com/monicacecilia )
+Sarah Gehrke | University of Colorado | Project Manager | [sagehrke](https://github.com/sagehrke)
+Moni Munoz-Torres | University of Colorado | Phenomics First Program Director | [monicacecilia ](https://github.com/monicacecilia )
 
 # Contributors
 
