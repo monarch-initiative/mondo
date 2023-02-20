@@ -25,11 +25,33 @@ This document describes the community curation workflow in Mondo, including how 
 - **obsoleted in source**: for example, OMIM, Orphanet or GARD may retire or obsolete a term. For example, MONDO:0015173 obsolete autoimmune enteropathy type 2
 is a phenotype and not a disease: for example, MONDO:0043606 'obsolete pathologic fracture'
 
-2.  
-3. More details about the obsoletion workflow is [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/).
+2. If a term is a candidate for obsoletion and/or merging, it will be reported on the [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues) and labeled 'obsolete' or 'merge'. See [obsoletion candidates here](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3Aobsolete) or [merge candidates here](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3Amerge).
+3. Issues will remain open for at least two months to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
+4. Terms in the ontology file will be labeled as 'obsoletion candidates' and a proposed date for obsoletion will be added to the term.
+4. With every Mondo release, we will report the terms that have been obsoleted from Mondo and the new obsoletion candidates (for example, see the [2023-02-06 release notes](https://github.com/monarch-initiative/mondo/releases/tag/v2023-02-06)).
+5. When a term is tagged for obsoletion, the community has the opportunity to provide input about the potential obsoletion of the term. 
+6. More details about the obsoletion workflow is [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/).
+
+### Request to remove a term from the obsoletion list
+
+If a Mondo terms has been tagged for obsoletion but it is in use by your project or you would like it to remain available, simply comment on the GitHub ticket or contact the Mondo Curation team via email or Slack and request that it be removed from the obsoletion candidate list. The Mondo Curation team is happy to oblige all requests.
+
+## Mondo releases
+- Mondo is released on a monthly basis around the 1st of each month.
+- All of the Mondo releases are available [here](https://github.com/monarch-initiative/mondo/releases).
+- Release notes includes:
+    - list of all new terms
+    - list of terms with updated label
+    - list of terms with changed definitions
+    - list of obsoleted terms
+    - list of new obsoletion candidates
+- Mondo users are notified of the latest release via our Mondo users email list. To be added to the email list, please contact email us at info@monarchinitative.org.
 
 ## Conflict resolution
 
-## Mondo Releases
+The Mondo development team strives to provide an inclusive, community-based development process and we thrive based on our user and community feedback and participation. 
 
-Term Maturity levels, public opinion period, and conflict resolution: We will define the process for community vetting of proposed terms. For example, proposed new terms will be shared with the community for their comments before promoting the terms to the next maturity level (e.g. “proposed”, “provisional”, “mature” or “obsolete.”). The goal is to garner community agreement on what will best balance currency of information delivered to clinical settings with robustness of knowledge and ease of evidence interpretation.
+In the case that there are disagreements about our development approaches, we will work to resolve the issues. Some approaches include:
+- Vetting process by members of the community is done on GitHub issues that are visible to (and can be commented on by) the community
+- Open weekly Mondo Curation calls - any member of the community is welcome to join our calls. Please email info@monarchinitative.org and request to be added to the invitation.
+- We host community workshops to discuss larger topics and workflows. A list of past workshops is available [here](https://mondo.monarchinitiative.org/pages/workshop/).
