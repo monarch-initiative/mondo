@@ -12,7 +12,7 @@ Mondo is developed by members of the [Monarch Initiative](https://monarchinitiat
 
 Name | Affiliation | GitHub | Curation team? | Technical team?
 --- | --- | --- | --- | ---
-[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
+[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Critical Path Institute | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
