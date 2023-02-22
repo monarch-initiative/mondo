@@ -88,7 +88,7 @@ IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
 COMPONENTS = mondo-tags mondo-subsets
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
-SUBSETS = mondo-minimal rare
+SUBSETS = mondo-minimal mondo-rare
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
 
@@ -328,8 +328,11 @@ reports/reasoner-diff.obo: filtered-nr.obo filtered-nr-reasoned.obo
 
 all_subsets: $(SUBSET_FILES)
 
-subsets/mondo-%.owl: $(ONT).owl | $(SUBSETDIR)
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
+tmp/rare-seed.txt: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason query --query ../sparql/signature/rare-subset.sparql $@
+
+subsets/mondo-%.owl: $(ONT).owl tmp/rare-seed.txt | $(SUBSETDIR)
+	robot extract --method subset --input $< -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/%.owl
 
@@ -345,6 +348,8 @@ subsets/%.json: subsets/%.owl
 subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
+rare_subset:
+	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl
 
 # ----------------------------------------
 # DOSDP Modules

@@ -7,11 +7,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 #classes with the axiom "'bearer of' some rare" AND/OR "has subset :‘gard_rare’" AND limited to disease branch (ie not including the disease susceptibility branch
 
-CONSTRUCT {
-  ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#mondo_rare> .
-}
-
-WHERE
+SELECT ?cls WHERE
 {
   ?cls a owl:Class;
   rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
