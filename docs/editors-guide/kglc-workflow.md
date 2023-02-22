@@ -4,13 +4,14 @@
 
 - Open a new issue with the description of the request.
  - In the description, ontobot looks for the phrase `Hey ontobot!, apply: `
- - This phase is followed by bullets of KGCL commands
- - e.g.
+ - This phase should be followed by bullets of KGCL (Knowledge Graph Change Language) commands
+ - For e.g.:
  
  ```
 Hey ontobot! apply:
  - create broad synonym 'ABCD' for CURIE:1234
 ```
+
 - Commands that are functional as of now:
   - create broad synonym 'ABCD' for CURIE:1234
   - create exact synonym 'ABCD' for CURIE:1234
