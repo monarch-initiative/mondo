@@ -585,7 +585,7 @@ tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
 
 merge_template: $(MERGE_TEMPLATE)
-	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --prefix "sssom: https://w3id.org/sssom/" --merge-before --input $(SRC) \
  --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 tmp/remove_classes.txt: $(MERGE_TEMPLATE)
