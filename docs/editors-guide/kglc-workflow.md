@@ -18,5 +18,5 @@ Hey ontobot! apply:
   - create narrow synonym 'ABCD' for CURIE:1234
   - create related synonym 'ABCD' for CURIE:1234
   - obsolete CURIE:1234 with replacement CURIE:4567
- - create node http://purl.obolibrary.org/obo/ABCD_99999999 'label of the node'
- - rename CURIE:1234 from 'old label' to 'new label'
+  - create node CURIE:99999 'label of the node'
+  - rename CURIE:1234 from 'old label' to 'new label'
