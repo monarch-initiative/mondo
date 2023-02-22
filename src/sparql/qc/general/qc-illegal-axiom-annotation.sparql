@@ -2,22 +2,23 @@ PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix sssom: <https://w3id.org/sssom/>
 
 # Checks wether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
 
 SELECT distinct ?entity ?property ?value
-WHERE 
-{ 
+WHERE
+{
       [
          a owl:Axiom ;
            owl:annotatedSource ?entity ;
            owl:annotatedProperty ?property ;
            owl:annotatedTarget ?x ;
-           ?value ?y 
+           ?value ?y
       ] .
     FILTER(?property!=rdfs:subClassOf && ?value!=rdfs:comment)
   	FILTER(?y!=?x && ?y!=?property && ?y!=?entity && ?y!=owl:Axiom)
-  	FILTER ((?value != oboInOwl:source) && (?value != oboInOwl:hasDbXref) && (?value != oboInOwl:hasSynonymType)) .
+  	FILTER ((?value != oboInOwl:source) && (?value != oboInOwl:hasDbXref) && (?value != oboInOwl:hasSynonymType) && (?value != sssom:object_label)) .
     FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
 
 }
