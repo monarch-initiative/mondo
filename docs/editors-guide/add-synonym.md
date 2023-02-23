@@ -1,6 +1,6 @@
-# KGCL workflows
+# Make changes to Mondo via simple commands
 
-## Add synonym using KGCL
+**Description**: Mondo has a workflow that allows for simple changes to be added via commands added to an issue. Users can suggest addition of a synonym, obsoletion of a class, create a new class or rename a class. 
 
 - Open a new issue with the description of the request.
  - In the description, ontobot looks for the phrase `Hey ontobot!, apply: `
@@ -9,14 +9,14 @@
  
  ```
 Hey ontobot! apply:
- - create broad synonym 'ABCD' for CURIE:1234
+ - create broad synonym 'ABCD' for MONDO:0001234
 ```
 
 - Commands that are functional as of now:
-  - create broad synonym 'ABCD' for CURIE:1234
-  - create exact synonym 'ABCD' for CURIE:1234
-  - create narrow synonym 'ABCD' for CURIE:1234
-  - create related synonym 'ABCD' for CURIE:1234
-  - obsolete CURIE:1234 with replacement CURIE:4567
-  - create node CURIE:99999 'label of the node'
-  - rename CURIE:1234 from 'old label' to 'new label'
+  - create broad synonym 'ABCD' for MONDO:0001234
+  - create exact synonym 'ABCD' for MONDO:0001234
+  - create narrow synonym 'ABCD' for MONDO:0001234
+  - create related synonym 'ABCD' for MONDO:0001234
+  - obsolete MONDO:0001234 with replacement MONDO:0001234
+  - create class MONDO:0001234 'label of the class'
+  - rename MONDO:0001234 from 'old label' to 'new label'
