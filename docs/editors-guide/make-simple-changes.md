@@ -18,5 +18,5 @@ Hey ontobot! apply:
   - create narrow synonym 'ABCD' for MONDO:0001234
   - create related synonym 'ABCD' for MONDO:0001234
   - obsolete MONDO:0001234 with replacement MONDO:0001234
-  - create class MONDO:0001234 'label of the class'
+  - create node MONDO:0001234 'label of the class'
   - rename MONDO:0001234 from 'old label' to 'new label'
