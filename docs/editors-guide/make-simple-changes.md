@@ -9,7 +9,7 @@
  
  ```
 Hey ontobot! apply:
- - create broad synonym 'ABCD' for MONDO:0001234
+- create broad synonym 'ABCD' for MONDO:0001234
 ```
 
 - Commands that are functional as of now:
