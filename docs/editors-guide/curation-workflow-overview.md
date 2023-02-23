@@ -11,7 +11,7 @@ This document describes the community curation workflow in Mondo, including how 
   
 ### How to request new terms in Mondo
 1. New term requests should go on our [GitHub tracker](https://github.com/monarch-initiative/mondo/issues).
-    - Guidelines on how to make new term requests are available [here](..editors-guide/c-make-good-term-request.md)
+    - Guidelines on how to make new term requests are available [here](editors-guide/c-make-good-term-request.md)
 2. Alternatively, you may contact us by email or via Slack to inquire about adding a new term. Please email info@monarchinitative.org with questions or to request to be added to our Slack channel.
 3. Users are always welcome to join our weekly Curation calls,  please email info@monarchinitative.org and request to be added to the invitation.
 
