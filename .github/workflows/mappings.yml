@@ -36,8 +36,8 @@ jobs:
           make GITHUB_ACTION=true IMP=false PAT=false update-ncit-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-omim-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-ordo-mappings -B
-          echo "PR_TITLE=[$(date + %Y%m%d)] Weekly automated mappings update." >> $GITHUB_ENV
-          echo "PR_BODY=This ran on $(date + %Y%m%d). PLACEHOLDER: Needs to be updated." >> $GITHUB_ENV
+          echo "PR_TITLE=Weekly automated mappings update." >> $GITHUB_ENV
+          echo "PR_BODY=PLACEHOLDER: Needs to be updated." >> $GITHUB_ENV
           
 
       - name: Create Pull Request
