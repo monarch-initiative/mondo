@@ -7,26 +7,18 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.4
     strategy:
-      matrix:
-        python-version: ["3.9"]
-        os: [ ubuntu-latest ]
-
+      max-parallel: 1
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ matrix.python-version }}
-
+      - name: Checkout main branch
+        uses: actions/checkout@v2
       - name: Set env variables.
         id: vars
         run: |
           echo "resource=src/ontology/mondo-edit.obo" >> $GITHUB_ENV
           echo "branch-name=mapping_automation" >> $GITHUB_ENV
-
       - name: Run MakeFile
         id: MakeFile
         run: |
@@ -36,10 +28,6 @@ jobs:
           make GITHUB_ACTION=true IMP=false PAT=false update-ncit-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-omim-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-ordo-mappings -B
-          echo "PR_TITLE=Weekly automated mappings update." >> $GITHUB_ENV
-          echo "PR_BODY=PLACEHOLDER: Needs to be updated." >> $GITHUB_ENV
-          
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
