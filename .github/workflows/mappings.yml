@@ -7,15 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.3.0
-    strategy:
-      matrix:
+    # strategy:
+    #   matrix:
     #     python-version: ["3.9"]
-        os: [ ubuntu-latest ]
+    #     os: [ ubuntu-latest ]
 
     steps:
-      # - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       # - name: Set up Python ${{ matrix.python-version }}
       #   uses: actions/setup-python@v3
       #   with:
