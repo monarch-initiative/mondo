@@ -8,11 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.3.1
+    container: obolibrary/odkfull:v1.4
 
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Update mappings
         run: |
           cd src/ontology
@@ -22,11 +22,16 @@ jobs:
           make GITHUB_ACTION=true IMP=false PAT=false update-omim-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-ordo-mappings -B
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
+          branch-suffix: short-commit-hash
+          labels: Automated
           commit-message: Update mappings in Mondo
           title: 'Update mappings in Mondo'
           body: |
             Update mappings in Mondo from external sources
           # assignees: "sabrinatoro"
           assignees: "hrshdhgd"
+          base: ${{ github.head_ref }}
+          branch: 'mapping_automation'
+          token: ${{ secrets.GH_TOKEN }}
