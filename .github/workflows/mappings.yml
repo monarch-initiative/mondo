@@ -42,13 +42,9 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
-        if: ${{ env.PR_TITLE}}
         with:
-          branch-suffix: short-commit-hash
-          labels: Automated
-          body: ${{ env.PR_BODY }}
-          title: ${{ env.PR_TITLE }}
-          base: ${{ github.head_ref }}
-          branch: ${{ env.branch-name }}
-          token: ${{ secrets.GH_TOKEN }}
-          reviewers: "sabrinatoro"
+          commit-message: Update mappings in Mondo
+          title: 'Update mappings in Mondo'
+          body: |
+            Update mappings in Mondo from external sources
+          assignees: "sabrinatoro"
