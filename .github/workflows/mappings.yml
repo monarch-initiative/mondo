@@ -14,13 +14,7 @@ jobs:
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
-      - name: Set env variables.
-        id: vars
-        run: |
-          echo "resource=src/ontology/mondo-edit.obo" >> $GITHUB_ENV
-          echo "branch-name=mapping_automation" >> $GITHUB_ENV
-      - name: Run MakeFile
-        id: MakeFile
+      - name: Update mappings
         run: |
           cd src/ontology
           make GITHUB_ACTION=true IMP=false PAT=false update-doid-mappings -B
