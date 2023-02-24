@@ -30,11 +30,11 @@ jobs:
         id: MakeFile
         run: |
           cd src/ontology
-          sh runs.sh make update-doid-mappings -B
-          sh runs.sh make update-icd-mappings -B
-          sh runs.sh make update-ncit-mappings -B
-          sh runs.sh make update-omim-mappings -B
-          sh runs.sh make update-ordo-mappings -B    
+          sh run.sh make update-doid-mappings -B
+          sh run.sh make update-icd-mappings -B
+          sh run.sh make update-ncit-mappings -B
+          sh run.sh make update-omim-mappings -B
+          sh run.sh make update-ordo-mappings -B    
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
