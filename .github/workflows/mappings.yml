@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-    container: obolibrary/odkfull:v1.3.0
+    container: obolibrary/odkfull:v1.4
     strategy:
       matrix:
         python-version: ["3.9"]
