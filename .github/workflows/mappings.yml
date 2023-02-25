@@ -14,8 +14,7 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v3
 
-      - name: Run MakeFile
-        id: MakeFile
+      - name: Update mappings
         run: |
           cd src/ontology
           make GITHUB_ACTION=true IMP=false PAT=false update-doid-mappings -B
