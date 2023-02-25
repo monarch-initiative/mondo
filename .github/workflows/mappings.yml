@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.4
+    container: obolibrary/odkfull:v1.3.0
 
     steps:
       - name: Checkout main branch
@@ -33,5 +33,5 @@ jobs:
           title: "Weekly automated mappings update"
           base: ${{ github.head_ref }}
           branch: "mapping_automation"
-          # token: ${{ secrets.GH_TOKEN }}
-          reviewers: "sabrinatoro"
+          token: ${{ secrets.GH_TOKEN }}
+          reviewers: "matentzn"
