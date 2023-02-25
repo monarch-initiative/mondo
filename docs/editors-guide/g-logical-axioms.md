@@ -10,6 +10,8 @@ Note if you don’t stay in the inferred view you will see a lot of redundant su
 
 For normal ontology development we would avoid asserting axioms that can be inferred. Here we violate this dictum and assert a subClassOf axiom if it is true and it is asserted elsewhere (we annotate axiom with the source ID). 
 
+Some classes in Mondo describe combinations of multiple classes and use "disjunctive" logic ("or") or "conjunctive" logic ("and"), for example 'neonatal inflammatory skin and bowel disease' (MONDO:0017411). For a detailed description of this see [OBO Academy explanation of HOW TO INTERPRET AN 'AND' OR AN 'OR'](https://oboacademy.github.io/obook/explanation/intro-to-ontologies/#how-to-interpret-an-and-or-an-or). 
+
 If we want to remove a subClassOf axiom that has external evidence, we turn it into a excluded_subClassOf annotation (non-logical) axiom.
 
 ### Excluded subclassOf
