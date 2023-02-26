@@ -20,11 +20,12 @@ Y-linked form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [y_linked_inheritance](http://purl.obolibrary.org/obo/HP_0001450)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [y_linked_inheritance](http://purl.obolibrary.org/obo/HP_0001450)
 
 ## Data preview 
-| defined_class                                | defined_class_label   | disease                                      | disease_label       |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:--------------------|
-| [MONDO:0000428](http://purl.obolibrary.org/obo/MONDO_0000428) | Y-linked disease      | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder |
+| defined_class                                | defined_class_label           | disease                                      | disease_label        |
+|:---------------------------------------------|:------------------------------|:---------------------------------------------|:---------------------|
+| [MONDO:0000428](http://purl.obolibrary.org/obo/MONDO_0000428) | Y-linked disease              | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder  |
+| [MONDO:0010761](http://purl.obolibrary.org/obo/MONDO_0010761) | retinitis pigmentosa Y-linked | [MONDO:0019200](http://purl.obolibrary.org/obo/MONDO_0019200) | retinitis pigmentosa |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/y_linked.tsv) 

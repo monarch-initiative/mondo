@@ -31,15 +31,6 @@ These instructions are written for Mac users.
   -  Paste these files in your Protege plugin directory, as described below. This can be done via one of two ways:
 
 #### Approach 1
-  1. Paste these files in your Protege plugin directory. This is in one of two locations:
-      - ~/.Protege/plugins (note this is usually hidden from finder, but you can see it in the terminal) or
-      - Go to Protege in Applications (Finder), right click, 'Show package contents' -> Java -> plugins
-  1. Copy and paste the two files into the plugins directory
-  1. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu.
-
-For a video showing how to install Elk on a Mac, click [here](https://www.dropbox.com/s/n3td2n48xmwd3mj/Install_ELK_0.5.mov?dl=0)   
-
-#### Approach 2
 
   1. In Terminal:
       `open ~/.Protege, then click on plugins`
@@ -47,7 +38,18 @@ For a video showing how to install Elk on a Mac, click [here](https://www.dropbo
   3. Copy and paste the two files into the plugins directory
   4. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu.
 
- Important: it seems Elk 0.5 does not work with all versions of Protege, in particular, 5.2 and below. These instructions were only tested with Protege 5.5.
+ #### Approach 2
+   1. Paste these files in your Protege plugin directory. This is in one of two locations:
+       - ~/.Protege/plugins (note this is usually hidden from finder, but you can see it in the terminal) or
+       - Go to Protege in Applications (Finder), right click, 'Show package contents' -> Java -> plugins
+   1. Copy and paste the two files into the plugins directory
+   1. Restart Protege. You should see ELK 0.5 installed in your Reasoner menu.
+   
+Important: it seems Elk 0.5 does not work with all versions of Protege, in particular, 5.2 and below. These instructions were only tested with Protege 5.5.
+
+#### Video explanation
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5-UYTmly59I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 
  ### Remove the old Elk Reasoner
  It may be necessary to remove the old Elk reasoner.
@@ -93,6 +95,10 @@ In the resulting pop-up window, click on the `New Entities` tab and set the valu
 4. Check the `Remember last ID between Protege sessions` box (Note: You want the ID to be remembered to prevent clashes when working in parallel on branches.)
 
 ![NewEntities](images/NewEntities.png)
+
+### Switching ID range
+
+If you edit another ontology besides Mondo, you will need to switch your ID range. Protege (unfortunately) does not remember the last prefix or ID range that you used when you switch between ontologies. Therefore we need to manually update this each time we switch ontologies. See [instructions here](https://oboacademy.github.io/obook/howto/switching-ontologies/).
 
 ## User details
 

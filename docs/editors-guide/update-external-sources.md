@@ -1,5 +1,7 @@
 # Update external sources
 
+**Note:** this documentation is outdated and will be updated soon.
+
 ## Update OMIM
 
 1. run ingest: https://ci.monarchinitiative.org/job/build-omim/ note: right now only a few people can actually run this and it is likely to be replaced by the new ingest being developed by Dazhi soon. For the moment, ping Nico to run this ingest. Before continuing to step 2, make sure that the run has completed by checking that the last run in the [build history](https://ci.monarchinitiative.org/job/build-omim/) is green. 

@@ -1,7 +1,7 @@
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
 
-.PHONY: dirs
+.PHONY: dirs python-install-dependencies update-exclusion-reasons
 dirs:
 	mkdir -p tmp/
 	mkdir -p components/
@@ -32,7 +32,11 @@ obo_validator:
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
+test: test_reason_equivalence_hermit
 test: obo_validator
+
+test_reason_equivalence_hermit: $(ONT).obo
+	$(ROBOT) reason -i $< --equivalent-classes-allowed none -r hermit
 
 test_reason_equivalence: $(SRC)
 	$(ROBOT) merge -i $< \
@@ -283,7 +287,7 @@ build-%:
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-report.sparql reports/related-exact-synonym-report.tsv
 # $(ROBOT) query -f tsv --use-graphs false -i $(SRC) --query $(SPARQLDIR)/related-exact-synonym-reportz.sparql reports/related-exact-synonym-report.tsv
 
-patterns: matches matches_annotations pattern_docs
+patterns: matches pattern_docs
 	make components/mondo-tags.owl
 	
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
@@ -354,6 +358,25 @@ construct-unmerge-query-%: construct-query-%
 	make NORM
 	mv NORM $(SRC)
 
+TMP_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8cszVqBNOeClD6uFif3QRHn0Ud_Cyt_gylyTTFJ-RoJaOwNWS7Qv3c516bJoTBaKT1WLagSQ7CQqS/pub?gid=0&single=true&output=tsv"
+TMP_TEMPLATE_FILE=tmp/temporary.tsv
+TMP_TEMPLATE_OWL=tmp/temporary.owl
+
+temporary_template:
+	wget "$(TMP_TEMPLATE_URL)" -O $(TMP_TEMPLATE_FILE)
+	robot template --template $(TMP_TEMPLATE_FILE) -o $(TMP_TEMPLATE_OWL)
+
+UNMERGE_FILE=$(TMP_TEMPLATE_OWL)
+unmerge:
+	$(ROBOT) convert -i $(UNMERGE_FILE) -f ofn -o tmp/unmerge.owl
+	sed -i '/^Declaration[(]/d' tmp/unmerge.owl
+	$(ROBOT) unmerge -i mondo-edit.obo -i tmp/unmerge.owl convert -f obo -o tmp/mondo-edit.obo
+	mv tmp/mondo-edit.obo mondo-edit.obo
+	make NORM
+	mv NORM mondo-edit.obo
+	
+	
+
 # This first merges a the result of a construct query to mondo-edit, than unmerges another
 construct-remerge-query-%: construct-query-% construct-query-%-new
 	$(ROBOT) merge -i $(SRC) -i tmp/construct-$*-new.ttl --collapse-import-closure false \
@@ -416,8 +439,8 @@ mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 
 MAPPINGSDIR=mappings
 METADATADIR=metadata
-MAPPING_IDS=omim mondo
-ALL_MAPPINGS=$(patsubst %, tmp/%.sssom.tsv, $(MAPPING_IDS))
+MAPPING_IDS=mondo
+ALL_MAPPINGS=$(patsubst %, $(MAPPINGSDIR)/%.sssom.tsv, $(MAPPING_IDS))
 
 tmp/mirror-ordo.json: mirror/ordo.obo
 	robot merge -i mirror/ordo.obo convert -f json -o $@
@@ -433,15 +456,24 @@ tmp/mirror-efo.json: #mirror/efo.owl
 
 .PHONY: sssom
 sssom:
-	echo "skipping.."
-	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall git+https://github.com/mapping-commons/sssom-py.git@master
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.17
 
-tmp/%.sssom.tsv: tmp/mirror-%.json | sssom
+.PHONY: oaklib
+oaklib:
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
+
+tmp/%.sssom.tsv: tmp/mirror-%.json | sssom | oaklib | mondo_merge_db
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
 
+qqq:
+	sssom parse tmp/mirror-mondo.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o tmp/www.sssom.tsv
+
+
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
+	python ../scripts/add_object_label.py run $<
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
-	sssom dosql -q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
+	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
+	sssom sort $@ -o $@
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 #	sssom convert -i $< -o $@
@@ -553,7 +585,7 @@ tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
 
 merge_template: $(MERGE_TEMPLATE)
-	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --prefix "sssom: https://w3id.org/sssom/" --merge-before --input $(SRC) \
  --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 tmp/remove_classes.txt: $(MERGE_TEMPLATE)
@@ -597,6 +629,12 @@ open_%_report:
 
 mondo_obo:
 	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
+
+tmp/mondo-ingest.owl:
+	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
+
+mondo_merge_db: tmp/mondo-ingest.owl
+	semsql make tmp/mondo-ingest.db
 
 METRIC_SINCE_VERSION=2019-06-29
 METRIC_UNTIL_VERSION=2020-06-30
@@ -642,6 +680,17 @@ test_owlaxioms:
 	! grep "owl-axioms: " mondo-edit.obo
 
 test: test_owlaxioms 
+
+.PHONY: test_obs_reason
+test_obs_reason:
+	echo "all obsolesence reasons should be typed as xsd:string"
+	! grep -E "property_value: IAO:0000231.*xsd:[^s]" mondo-edit.obo
+	echo "obsolesence reason does not seem to use the correct property"
+	! grep -E "\"terms merged\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+	! grep -E "\"out of scope\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+	! grep -E "\"terms split\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+
+test: test_obs_reason
 
 ######################################
 ### Mondo slurp python ###############
@@ -694,3 +743,28 @@ dosdp-merge-%: ../patterns/data/default/%.owl tmp/remove_%.ru
 		mv NORM $(SRC)
 
 p1: dosdp-merge-acute
+
+python-install-dependencies:
+	python3 -m pip install --upgrade pip
+	python3 -m pip install --upgrade -r ../../requirements.txt
+
+update-exclusion-reasons: python-install-dependencies
+	python3 ../scripts/exclusion_reasons_enum_updater.py \
+	--input-path-exclusion-reasons ../scripts/exclusion_reasons.csv \
+	--input-path-mondo-schema ../schema/mondo.yaml
+
+##################################
+##### Scheduled GH Actions #######
+##################################
+$(TMPDIR)/new-exact-matches-%.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
+
+$(TMPDIR)/new-exact-matches-%.owl: $(TMPDIR)/new-exact-matches-%.tsv
+	$(ROBOT) --prefix "sssom: https://w3id.org/sssom/" template --template $< -o $@
+
+update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
+	$(ROBOT) merge -i $(SRC) -i $< --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+		mv tmp/$(SRC) $(SRC)
+		make NORM
+		mv NORM $(SRC)

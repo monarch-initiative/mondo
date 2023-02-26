@@ -4,25 +4,30 @@ curie_map:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   DOID: http://purl.obolibrary.org/obo/DOID_
   EFO: http://www.ebi.ac.uk/efo/EFO_
-  HGNC: "https://identifiers.org/hgnc:"
-  HGNC__2: "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:"
+  HGNC: "http://identifiers.org/hgnc/"
+  HGNC__2: "https://identifiers.org/hgnc:"
+  HGNC__3: "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:"
   HGNC_symbol: https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/
   HP: http://purl.obolibrary.org/obo/HP_
   SCTID: http://identifiers.org/snomedct/
+  SCTID__2: http://snomed.info/id/
   OMIM: https://omim.org/entry/
   OMIM__2: http://identifiers.org/omim/
   OMIM__3: http://purl.obolibrary.org/obo/OMIM_
   OMIM__4: http://omim.org/entry/
   MESH: http://identifiers.org/mesh/
-  MEDDRA: http://identifiers.org/meddra/
   Orphanet: http://www.orpha.net/ORDO/Orphanet_
   Orphanet__2: http://purl.obolibrary.org/obo/Orphanet_
   oboInOwl: http://www.geneontology.org/formats/oboInOwl#
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   skos: http://www.w3.org/2004/02/skos/core#
-  ICD10CM: https://icd.codes/icd10cm/
-  ICD10WHO: http://apps.who.int/classifications/icd10/browse/2010/en#/
+  ICD10CM: http://purl.bioontology.org/ontology/ICD10CM/
+  ICD10CM__2: https://icd.codes/icd10cm/
+  ICD10WHO: https://icd.who.int/browse10/2019/en#/
+  ICD10WHO__2: http://apps.who.int/classifications/icd10/browse/2010/en#/
   OMIMPS: https://omim.org/phenotypicSeries/PS
+  MEDGEN: http://identifiers.org/medgen/
+  MedDRA: http://identifiers.org/meddra/
 subject_prefixes:
   - MONDO
   - OMIM
@@ -30,6 +35,9 @@ subject_prefixes:
   - EFO
   - ICD10CM
   - ICD10WHO
+  - OMIMPS
+  - NCIT
+  - DOID
 relations:
   - oboInOwl:hasDbXref
   - skos:exactMatch

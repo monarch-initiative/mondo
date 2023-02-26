@@ -23,15 +23,15 @@ Autosomal recessive form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [autosomal recessive inheritance](http://purl.obolibrary.org/obo/HP_0000007)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [autosomal recessive inheritance](http://purl.obolibrary.org/obo/HP_0000007)
 
 ## Data preview 
 | defined_class                                | defined_class_label                                       | disease                                      | disease_label                         |
 |:---------------------------------------------|:----------------------------------------------------------|:---------------------------------------------|:--------------------------------------|
-| [MONDO:0011551](http://purl.obolibrary.org/obo/MONDO_0011551) | TH-deficient dopa-responsive dystonia                     | [MONDO:0016812](http://purl.obolibrary.org/obo/MONDO_0016812) | dopa-responsive dystonia              |
 | [MONDO:0008762](http://purl.obolibrary.org/obo/MONDO_0008762) | autosomal recessive Alport syndrome                       | [MONDO:0018965](http://purl.obolibrary.org/obo/MONDO_0018965) | Alport syndrome                       |
 | [MONDO:0002014](http://purl.obolibrary.org/obo/MONDO_0002014) | autosomal recessive Ehlers-Danlos syndrome, vascular type | [MONDO:0017314](http://purl.obolibrary.org/obo/MONDO_0017314) | Ehlers-Danlos syndrome, vascular type |
 | [MONDO:0009486](http://purl.obolibrary.org/obo/MONDO_0009486) | autosomal recessive Kenny-Caffey syndrome                 | [MONDO:0016516](http://purl.obolibrary.org/obo/MONDO_0016516) | Kenny-Caffey syndrome                 |
 | [MONDO:0009999](http://purl.obolibrary.org/obo/MONDO_0009999) | autosomal recessive Robinow syndrome                      | [MONDO:0019978](http://purl.obolibrary.org/obo/MONDO_0019978) | Robinow syndrome                      |
+| [MONDO:0016647](http://purl.obolibrary.org/obo/MONDO_0016647) | autosomal recessive Stickler syndrome                     | [MONDO:0019354](http://purl.obolibrary.org/obo/MONDO_0019354) | Stickler syndrome                     |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_recessive.tsv) 

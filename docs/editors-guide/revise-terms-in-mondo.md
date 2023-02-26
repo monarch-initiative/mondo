@@ -42,4 +42,4 @@ In Mondo, we don't want to delete superclasses, but rather exclude the superclas
 1. Click OK
 1. Repeat as needed to move all the source annotations from the parent to the excludedsubcClassOf annotation
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PVrl_ONPgZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

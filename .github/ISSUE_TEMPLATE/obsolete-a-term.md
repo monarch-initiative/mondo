@@ -3,7 +3,7 @@ name: Obsolete a term
 about: Obsolete or deprecate an existing Mondo term
 title: "[Obsolete]"
 labels: obsolete
-assignees: nicolevasilevsky
+assignees: nicolevasilevsky, sabrinatoro
 
 ---
 

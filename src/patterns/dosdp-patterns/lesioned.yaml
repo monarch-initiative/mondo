@@ -1,0 +1,46 @@
+pattern_name: lesioned
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/lesioned.yaml
+
+description: 'This pattern is applied to diseases that are described as having a lesion, where a localized pathological or traumatic structural change, damage, deformity, or discontinuity of tissue, organ, or body part is present.
+
+Examples: [ulnar nerve lesion](http://purl.obolibrary.org/obo/MONDO_0001458 ),
+  [peripheral nerve lesion](http://purl.obolibrary.org/obo/MONDO_0024334)'
+
+contributors:
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  lesioned: PATO:0040025
+  anatomical entity: UBERON:0001062
+
+relations:
+  has characteristic: RO:0000053
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  anatomical entity: '''anatomical entity'''
+
+name:
+  text: '%s lesion'
+  vars:
+  - anatomical entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s, lesioned'
+  vars:
+  - anatomical entity
+
+def:
+  text: Lesioned form of %s.
+  vars:
+  - anatomical entity
+
+equivalentTo:
+  text: '%s and ''has characteristic'' some ''lesioned'''
+  vars:
+  - anatomical entity

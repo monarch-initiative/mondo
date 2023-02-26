@@ -24,8 +24,9 @@ Any instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that i
 {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [pregnancy disorder](http://purl.obolibrary.org/obo/MONDO_0024575)
 
 ## Data preview 
-| defined_class                                | defined_class_label   | disease                                      | disease_label     |
-|:---------------------------------------------|:----------------------|:---------------------------------------------|:------------------|
-| [MONDO:0005406](http://purl.obolibrary.org/obo/MONDO_0005406) | gestational diabetes  | [MONDO:0005015](http://purl.obolibrary.org/obo/MONDO_0005015) | diabetes mellitus |
+| defined_class                                | defined_class_label               | disease                                      | disease_label     |
+|:---------------------------------------------|:----------------------------------|:---------------------------------------------|:------------------|
+| [MONDO:0005406](http://purl.obolibrary.org/obo/MONDO_0005406) | gestational diabetes              | [MONDO:0005015](http://purl.obolibrary.org/obo/MONDO_0005015) | diabetes mellitus |
+| [MONDO:0100194](http://purl.obolibrary.org/obo/MONDO_0100194) | pregnancy associated osteoporosis | [MONDO:0005298](http://purl.obolibrary.org/obo/MONDO_0005298) | osteoporosis      |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/pregnancy_form_of_disorder.tsv) 

@@ -74,13 +74,13 @@ ADDTOTBD=../scripts/add-to-tbd.pl
 # Top-level targets
 # ----------------------------------------
 .PHONY: .FORCE
-all: test all_artefacts
+all: test all_artefacts mappings
 	echo "release finished"
 
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf oba ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
+ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
@@ -126,7 +126,7 @@ list_main_files:
 list_artefacts:
 	echo $(ARTEFACTS)
 	du -sh $(ARTEFACTS)
-%-DU: 
+%-DU:
 	@test -f $* && du -sh $* || echo "MISSING" $*
 
 
@@ -148,11 +148,12 @@ test: reports/robot-report-mondo-tags-reasoned.owl.tsv
 # Staging releases
 # ----------------------------------------
 
-prepare_release: $(ARTEFACTS)
-	rsync -R $^ ../..
+#prepare_release: $(ARTEFACTS)
+#	$(MAKE) mappings -B
+#	rsync -R $^ ../..
 
 # note: only reports, imports
-prepare_release_direct: 
+prepare_release_direct:
 	rsync -R $(ARTEFACTS) ../..
 
 all_includes: $(INCLUDES_OWL)
@@ -199,7 +200,7 @@ ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 GITHUB_ACTION = false
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM):@ && !(m@(equivalent|otherHierarchy|subClassOf|directSiblingOf|superClassOf|ntbt|btnt)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo|relatedTo|mondoIsNarrowerThanSource|directSiblingOf|mondoIsBroaderThanSource)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
 	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
 		--update ../sparql/update/delete-axiom-annotations.ru \
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
@@ -224,7 +225,7 @@ filtered.owl: filtered.obo skos.ttl
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
 # note: $(ROBOT) will protect redundant annotated axioms
-reasoned.owl: filtered.owl 
+reasoned.owl: filtered.owl
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
 
 test: reasoned-plus-equivalents.owl
@@ -245,7 +246,9 @@ $(ONT).owl: reasoned.owl
 
 # obo is self-contained
 $(ONT).obo: reasoned.owl
-	owltools --use-catalog $< --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
+	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@.tmp.owl
+	owltools --use-catalog $@.tmp.owl --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
+	rm -f $@.tmp.owl
 $(ONT).json: $(ONT).owl
 	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
 #	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
@@ -324,7 +327,7 @@ reports/reasoner-diff.obo: filtered-nr.obo filtered-nr-reasoned.obo
 # ----------------------------------------
 all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-minimal.json
 
-TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch 
+TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch
 subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
 	owltools --use-catalog $< $(TRIM_MINIMAL) imports/equivalencies.owl --merge-support-ontologies --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
 	$(ROBOT) annotate -R -i $@.tmp.owl -o $@.tmp2.owl &&\
@@ -353,7 +356,7 @@ modules/%.owl: modules/%.tsv
 # ----------------------------------------
 # Most ontologies are modularly constructed using portions of other ontologies
 # These live in the imports/ folder
-# These can be regenerated with make all_imports 
+# These can be regenerated with make all_imports
 
 ONTOLOGY_IMPORTS_OWL = $(patsubst %, imports/%_import.owl, $(ONTOLOGY_IMPORTS))
 ONTOLOGY_IMPORTS_OBO = $(patsubst %, imports/%_import.obo, $(ONTOLOGY_IMPORTS))
@@ -413,9 +416,9 @@ imports/%_terms.txt: imports/seed.txt
 
 mondo-lastbuild.owl:
 	curl -L -s $(OBO)/mondo.owl > $@.tmp && mv $@.tmp $@
-mondo-lastbuild.obo: 
+mondo-lastbuild.obo:
 	curl -L -s $(OBO)/mondo.obo > $@.tmp && mv $@.tmp $@
-#mondo-diff.md: mondo-lastbuild.owl 
+#mondo-diff.md: mondo-lastbuild.owl
 #	owljs-diff -o $@ $< mondo.owl
 mondo-diff.txt: mondo-lastbuild.obo
 	obo-simple-diff.pl $< mondo.obo >  $@.tmp && mv $@.tmp $@
@@ -500,7 +503,7 @@ PL2SPARQL = ../plq/pq-mondo
 reports/pql-%.tsv: mondo-edit.owl
 	 $(PL2SPARQL) -f tsv -v -i $< -e -l "$*" > $@.tmp && mv $@.tmp $@
 
-reports/bg-%.tsv: 
+reports/bg-%.tsv:
 	 $(PL2SPARQL) -f tsv -l "$*" > $@.tmp && mv $@.tmp $@
 
 reports/$(Q)-pqlx-$(Ont).tsv: mondo-edit.owl
@@ -591,7 +594,7 @@ imports/equivalencies.obo: imports/equivalencies.owl
 	$(ROBOT) convert -i $< -o $@
 
 clean_imports: $(patsubst %, clean-mirror-%, $(ONTOLOGY_IMPORTS))
-clean-mirror-%: 
+clean-mirror-%:
 	test -f mirror/$*.owl && rm mirror/$*.owl || echo 'no mirror file'
 
 #imports/equivalencies.owl: $(SRC)
@@ -627,7 +630,7 @@ mirror/%-labels.owl: mirror/%.owl
 	$(ROBOT) query --format ttl -c ../sparql/construct/construct-labels.sparql $@ -i $<
 
 mirror/%-raw.owl: mirror/%.owl
-	$(OWLTOOLS) $< --remove-axioms-about -v 
+	$(OWLTOOLS) $< --remove-axioms-about -v
 
 
 # You could trigger this upstream to get the very latest results:
@@ -643,28 +646,30 @@ mirror/%.owl:
 	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/ecto.owl: 
+mirror/ecto.owl:
 	$(OWLTOOLS) $(OBO)/ecto.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@ &&\
-	$(ROBOT) remove -i $@ --select "<http://purl.obolibrary.org/obo/ENVO_*>" -o $@ 
+	$(ROBOT) remove -i $@ --select "<http://purl.obolibrary.org/obo/ENVO_*>" -o $@
 .PRECIOUS: mirror/ecto.owl
 
-mirror/ncbitaxon.owl: 
-	wget --no-check-certificate $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@ && touch $@
+mirror/ncbitaxon.owl:
+	wget --no-check-certificate http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -O $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # hp.owl currently contains many stray root classes
-mirror/hp.obo: 
+mirror/hp.obo:
 	wget --no-check-certificate $(OBO)/hp.obo -O $@.tmp && mv $@.tmp $@ && touch $@
 .PRECIOUS: mirror/hp.obo
 mirror/hp.owl:  mirror/hp.obo
 	$(OWLTOOLS) $< -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: mirror/hp.owl
 
-mirror/chebi.owl: 
-	wget --no-check-certificate $(OBO)/chebi.obo -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@ && touch $@
+CHEBI_URL=https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+
+mirror/chebi.owl:
+	wget --no-check-certificate $(CHEBI_URL) -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@ && touch $@
 .PRECIOUS: mirror/chebi.owl
 
-mirror/mfoem.owl: 
+mirror/mfoem.owl:
 	$(OWLTOOLS) $(OBO)/mfoem.owl --remove-annotation-assertions -l -s -d --make-subset-by-properties -f BFO:0000050 // --remove-dangling-annotations  -o $@
 .PRECIOUS: mirror/mfoem.owl
 
@@ -743,7 +748,7 @@ mirror/hgnc.owl: mirror/dipper-hgnc.ttl
 #	owltools $< --merge-equivalence-sets -s http://identifiers.org/hgnc/ 20 -o $@
 
 
-mirror/omia.ttl: 
+mirror/omia.ttl:
 	wget --no-check-certificate http://data.monarchinitiative.org/ttl/omia.ttl -O $@ && touch $@
 .PRECIOUS: mirror/omia.ttl
 

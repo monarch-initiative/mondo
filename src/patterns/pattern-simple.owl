@@ -500,7 +500,7 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/inborn_metabolic.yaml">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An acquired metabolic disease that is has its basis in the disruption of &apos;process&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inherited metabolic disease that is has its basis in the disruption of &apos;process&apos;.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn_metabolic</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn error of &apos;process&apos;</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare inborn error of &apos;process&apos;</oboInOwl:hasRelatedSynonym>
@@ -634,6 +634,17 @@
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leiomyosarcoma disease has location X</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing leiomyosarcoma</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing leiomyosarcoma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/lesioned.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/lesioned.yaml">
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesioned form of &apos;anatomical entity&apos;.</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lesioned</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos;, lesioned</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; lesion</rdfs:label>
     </owl:Class>
     
 
@@ -811,6 +822,27 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine tumor, well differentiated, low grade</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing carcinoid tumor</oboInOwl:hasRelatedSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine neoplasm G1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml">
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos; that occurs in non-human animals</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease</terms:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos;, non-human animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos; that occurs in &apos;taxon&apos;</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease_taxon</terms:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos;, &apos;taxon&apos;</rdfs:label>
     </owl:Class>
     
 

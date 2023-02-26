@@ -3,7 +3,7 @@ name: Revise logical definition
 about: Improve the OWL-DL statement of a Mondo term
 title: "[Revise logical def]"
 labels: logical def
-assignees: nicolevasilevsky
+assignees: nicolevasilevsky, sabrinatoro
 
 ---
 

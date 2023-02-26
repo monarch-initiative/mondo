@@ -23,12 +23,12 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [hereditary](http://purl.obolibrary.org/obo/MONDO_0021152)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [hereditary](http://purl.obolibrary.org/obo/MONDO_0021152)
 
 ## Data preview 
 | defined_class                                | defined_class_label                                   | disease                                      | disease_label             |
 |:---------------------------------------------|:------------------------------------------------------|:---------------------------------------------|:--------------------------|
-| [MONDO:0003847](http://purl.obolibrary.org/obo/MONDO_0003847) | Mendelian disease                                     | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder       |
+| [MONDO:0003847](http://purl.obolibrary.org/obo/MONDO_0003847) | Mendelian disease                                     | [MONDO:0700096](http://purl.obolibrary.org/obo/MONDO_0700096) | human disease or disorder |
 | [MONDO:0008734](http://purl.obolibrary.org/obo/MONDO_0008734) | adrenocortical carcinoma, hereditary                  | [MONDO:0006639](http://purl.obolibrary.org/obo/MONDO_0006639) | adrenal cortex carcinoma  |
 | [MONDO:0013099](http://purl.obolibrary.org/obo/MONDO_0013099) | combined pituitary hormone deficiencies, genetic form | [MONDO:0005152](http://purl.obolibrary.org/obo/MONDO_0005152) | hypopituitarism           |
 | [MONDO:0006536](http://purl.obolibrary.org/obo/MONDO_0006536) | congenital generalized lipodystrophy                  | [MONDO:0027766](http://purl.obolibrary.org/obo/MONDO_0027766) | generalized lipodystrophy |

@@ -1,0 +1,92 @@
+# description: Looks for xrefs with illegal prefixes that are on annotation properies
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?cls ?property ?prefix ?source
+
+WHERE 
+{
+    VALUES ?property { oboInOwl:source oboInOwl:hasDbXref }
+    ?cls a owl:Class; 
+    		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
+       	?mapping ?value .
+    
+      ?axiom owl:annotatedSource ?cls ;
+             owl:annotatedProperty ?mapping ;
+             owl:annotatedTarget ?value ;
+             ?property ?source .
+      
+    
+    FILTER NOT EXISTS {
+    	?cls owl:deprecated ?deprecated .
+    }
+    FILTER( STRBEFORE(str(?source),":") not in (
+      "ClinGen",
+      "CSP",
+      "DC-OMIM", #Consider removing
+      "DECIPHER",
+      "DERMO",
+      "doi",
+      "DOID",
+      "ECO",
+      "EFO",
+      "GARD",
+      "GTR",
+      "HGNC",
+      "HP",
+      "http",
+      "https",
+      "ICD10CM",
+      "ICD10WHO",
+      "ICD11",
+      "ICD9",
+      "ICD9CM",
+      "ICDO",
+      "ICDO",
+      "IDO",
+      "ISBN-13",
+      "KEGG",
+      "LOINC",
+      "MedDRA",
+      "MedGen",
+      "MEDGEN",
+      "MEDIC",
+      "MESH",
+      "MFOMD",
+      "MONDO",
+      "MONDORULE",
+      "MP",
+      "MPATH",
+      "MTH",
+      "NCIT",
+      "NDFRT",
+      "NIFSTD",
+      "OBI",
+      "OGMS",
+      "OMIM",
+      "OMIMPS",
+      "OMIT",
+      "OMOP",
+      "ONCOTREE",
+      "Orphanet",
+      "PATO",
+      "PMID",
+      "Reactome",
+      "SCDO",
+      "SCTID",
+      "UMLS",
+      "Wikidata",
+      "Wikipedia"
+      )
+    )
+    FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND( STRBEFORE(str(?source),":") AS ?prefix)
+} ORDER BY ?cls
+

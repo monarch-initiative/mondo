@@ -2,15 +2,36 @@
 
 ### Overview
 
+## When to obsolete / merge
+
+If a term is a candidate for obsoletion and/or merging, this should be reported on the [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues) and labeled 'obsolete'. Click [here](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3Aobsolete) for potential terms to be obsoleted.
+
+Some examples of when to obsolete and/or merge a term are:  
+
+- **Duplicate terms** (for example MONDO:0019055 mitochondrial disease was obsoleted and replaced by MONDO:0004069 'inborn mitochondrial metabolism disorder')  
+- **Out of scope**- Some terms are excluded from Mondo based on certain criteria, which are outlined in the [exclusion reason table](editors-guide/exclusion-reasons.md). For example, terms that are not truly diseases, (ie phenotype terms, such as MONDO:0007348 Colchicine resistance). For another example, see [see #503](https://github.com/monarch-initiative/mondo/issues/503).
+- **obsoleted in source**: for example, OMIM, Orphanet or GARD may retire or obsolete a term. For example, MONDO:0015173 obsolete autoimmune enteropathy type 2
+is a phenotype and not a disease: for example, MONDO:0043606 'obsolete pathologic fracture'
+
+Issues should remain open for at least two months to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
+
+See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
+
+## Workflow
+
 1. Mondo users need to be notified before we obsolete, merge or [split](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/) a Mondo class.
 1. If there is a request to obsolete a Mondo class, [Monarch Initiative](https://monarchinitiative.org/) to determine if the disease term is used for Monarch annotations. For example, [discitis](https://monarchinitiative.org/disease/MONDO:0006728) (see ticket [here](https://github.com/monarch-initiative/mondo/issues/501)) does not have any annotations in Monarch. (_This is something that we hope to automate in the future_).
 3. If a term is to be obsoleted, in a new row in the [ROBOT_ObsoleteTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=505727337), add the following information for the term-to-be-obsoleted:
     1. ID for term to be obsoleted 
     1. Label for term to be obsoleted 
-    1. seeAlso: GitHub ticket that describes the obsoletion request
+    1. 'term tracker item': GitHub ticket that describes the obsoletion request
     1. Consider: the replacement term that should be considered for use after the term is obsoleted. If there is no replacement, leave it blank.
     1. Obsoletion reason: chose from dropdown list.
-    1. Comment: do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
+    1. Comment: 
+       1. Do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
+       1. Manually check the term to be obsoleted for comment. 
+          1. If the term to be obsoleted already has a comment, manually add the structured obsoletion comment to the existing comment.
+          2. If the term to be obsoleted does NOT has a comment, copy and paste the formula from the row above and add it in the "Comment to be automatically added" column  
     1. Obsoletion candidate subset: This should always be http://purl.obolibrary.org/obo/mondo#obsoletion_candidate
     1. obsoletion date: should be a release date at the first of the month, at least two months from today. Please write in the format YYYY-MM-DD.
 4. If a term is to be merged, in a new row in the [ROBOT_MergeTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1109324509), add the information above, and in addition, add:
@@ -77,7 +98,7 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 
 1. Open a new version of mondo-edit.obo in Protege
 1. **Obsoleted class**: Search for the term that was obsoleted
-1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
+1. Add 'term tracker item' (type xsd:anyURI) annotation with a link to the GitHub issue that requested the obsoletion.
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and write 'terms merged' in the literal field.
 1. Any source annotations to MONDO:equivalentTo on a dbxref should be changed to MONDO:obsoleteEquivalent.
 1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
@@ -88,6 +109,10 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 1. Remove the annotations: 'in subset obsoletion candidate' and 'scheduled for obsoletion on or after'  
 1. When reviewing the diff, make sure there is not an Alt ID. The diff should only show additions to the merged term and the obsoletion
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hhuq4Lwz0Ds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EjM_xigLisg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Manual merge/obsolete
 1. If one class should be merged with another class, first obsolete the class that will be merged.
 1. Search for the class to be obsoleted
@@ -96,7 +121,7 @@ _Note_: the Mondo ID in columns A and C must be in CURIE format (use a colon, no
 1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684). If the disease term is being obsoleted and an HPO term should be used instead, do not use **term replaced by**, rather use the annotation **consider.** For example, see MONDO:0001445.
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and manually write in a reason as a string (usually 'out of scope'). Add a source annotation to the obolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/).
 1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
-1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
+1. Add annotation 'term tracker item' (type xsd:anyURI)with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms
 1. If the class has children, remove the superclass assertion for the children 
 1. Example: ![Manual merge example 1](images/github-workflow-manual-merge-1.png)
@@ -113,7 +138,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. In the Protege edit menu-> Make entity obsolete
 1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and manually write in a reason as a string (usually 'out of scope'). Add a source annotation to the obolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/).
-1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
+1. Add annotation 'term tracker item' (type xsd:anyURI)with a link to the GitHub issue that requested the obsoletion.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. Add annotation consider, add the CURIE for the term that should be considered as a replacement.
 1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
@@ -124,7 +149,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Add annotation **owl:deprecated** and indicate true (in literal).
 1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and manually write in a reason as a string (usually 'out of scope'). Add a source annotation to the obolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/).
-1. Add SeeAlso with a link to the GitHub issue that requested the obsoletion.
+1. Add annotation 'term tracker item' (type xsd:anyURI) with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms.
 1. If the class has children, remove the superclass assertions for the children.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
@@ -138,19 +163,31 @@ If you only want to obsolete terms without taking another look, you can use the 
 1. run `sh run.sh make mass_obsolete2 -B`
 1. Very carefully review the diff. More carefully then usual!
 
-## When to obsolete / merge
+## Restoring an Obsolete Ontology Term
 
-If a term is a candidate for obsoletion and/or merging, this should be reported on the [GitHub issue tracker](https://github.com/monarch-initiative/mondo/issues) and labeled 'obsolete'. Click [here](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3Aobsolete) for potential terms to be obsoleted.
+### When to restore or reinstate an ontology term
 
-Some examples of when to obsolete and/or merge a term are:  
+There may be rare cases when we chose to reinstate or restore an obsolete class. For example, in this ticket ([#4948](https://github.com/monarch-initiative/mondo/issues/4948)) we decided to reinstate some Orphanet grouping classes because they were used in the classification scheme described by the authors of the [paper](https://pubmed.ncbi.nlm.nih.gov/31633310/).
 
-- **Duplicate terms** (for example MONDO:0019055 mitochondrial disease was obsoleted and replaced by MONDO:0004069 'inborn mitochondrial metabolism disorder')  
-- **Out of scope**- Terms that are not truly diseases, (ie phenotype terms, such as MONDO:0007348 Colchicine resistance). For another example, see [see #503](https://github.com/monarch-initiative/mondo/issues/503)  
-- **obsoleted in source**: for example, OMIM, Orphanet or GARD may retire or obsolete a term. For example, MONDO:0015173 obsolete autoimmune enteropathy type 2
-is a phenotype and not a disease: for example, MONDO:0043606 'obsolete pathologic fracture'
+**Note**: The Gene Ontology has [instructions to restore an obsolete term](https://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term), but in Mondo, we prefer to create a new term and mint a new ID, and point from the obsoleted term to the new term using the `replaced_by` annotation.
 
-Issues should remain open for at least two weeks to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
+### Restore an obsolete term (Add new term)
 
-See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
+1. Follow the usual instructions to [create a new term](https://mondo.readthedocs.io/en/latest/editors-guide/add-new-terms/#add-a-new-term) in Mondo. 
+  1. _More advanced_: New terms can be added using the text file:
+    1. Open mondo-edit.obo in a text editor, like Atom.
+    1. Find the obsoleted term.
+    1. Copy the stanzas for that term and paste as a new term in the file.
+    1. Replace the ID with the new ID
+    1. Remove the 'obsolete' from the label
+    1. Remove the obsolescence annotations: 
+       1. property_value: IAO:0000231 "out of scope" xsd:string
+       1. is_obsolete: true
+    1. If applicable, change the source annotations from MONDO:obsoleteEquivalent to MONDO:equivalentTo
+    1. Update the 'term tracker item' (type xsd:anyURI)annotation to point to the relevant ticket
+1. Find the obsolete term, and add (or replace) the annotation 'replaced_by' to point to the new ID.
+  1. **Note**: A term cannot have both a `consider` annotation and a `replaced_by` annotation. Add only the `replaced_by` annotation that points to the new term you created.
+1. If edits were made in the text file, be sure to open the file in Protege and Save As -> mondo-edit.obo and replace existing failure
+1. Commit to your branch and create a pull request
 
-by Nicole Vasilevsky and Sabrina Toro _updated 2021-12-17_
+by Nicole Vasilevsky and Sabrina Toro _updated 2022-06-07_
