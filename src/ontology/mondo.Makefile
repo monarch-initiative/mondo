@@ -317,6 +317,9 @@ related_to_exact_where_label:
 rm_related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
 
+rm_xref_without_source:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-xref-without-source.ru -o $(SRC)
+
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
