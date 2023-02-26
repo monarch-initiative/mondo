@@ -595,7 +595,7 @@ tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
 
 merge_template: $(MERGE_TEMPLATE)
-	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --prefix "sssom: https://w3id.org/sssom/" --merge-before --input $(SRC) \
  --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 tmp/remove_classes.txt: $(MERGE_TEMPLATE)
@@ -691,6 +691,17 @@ test_owlaxioms:
 
 test: test_owlaxioms 
 
+.PHONY: test_obs_reason
+test_obs_reason:
+	echo "all obsolesence reasons should be typed as xsd:string"
+	! grep -E "property_value: IAO:0000231.*xsd:[^s]" mondo-edit.obo
+	echo "obsolesence reason does not seem to use the correct property"
+	! grep -E "\"terms merged\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+	! grep -E "\"out of scope\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+	! grep -E "\"terms split\" xsd:" mondo-edit.obo | grep -v IAO:0000231
+
+test: test_obs_reason
+
 ######################################
 ### Mondo slurp python ###############
 ######################################
@@ -751,3 +762,19 @@ update-exclusion-reasons: python-install-dependencies
 	python3 ../scripts/exclusion_reasons_enum_updater.py \
 	--input-path-exclusion-reasons ../scripts/exclusion_reasons.csv \
 	--input-path-mondo-schema ../schema/mondo.yaml
+
+##################################
+##### Scheduled GH Actions #######
+##################################
+$(TMPDIR)/new-exact-matches-%.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
+
+$(TMPDIR)/new-exact-matches-%.owl: $(TMPDIR)/new-exact-matches-%.tsv
+	$(ROBOT) --prefix "sssom: https://w3id.org/sssom/" template --template $< -o $@
+
+update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
+	$(ROBOT) merge -i $(SRC) -i $< --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+		mv tmp/$(SRC) $(SRC)
+		make NORM
+		mv NORM $(SRC)
