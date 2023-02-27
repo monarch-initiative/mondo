@@ -13,7 +13,7 @@ This document describes the community curation workflow in Mondo, including how 
     - Guidelines on how to make new term requests are available [here](c-make-good-term-request.md)
 2. Alternatively, you may contact us by email or via Slack to inquire about adding a new term. Please email info@monarchinitative.org with questions or to request to be added to our Slack channel.
 3. Users are always welcome to join our weekly Curation calls,  please email info@monarchinitative.org and request to be added to the invitation.
-If should be noted that every new term request will be represented as a GitHub issue. This allows the community to review and comment on these proposed new terms, and offer guidance on classification, definition,... This open process ensures transparency and representation of the disease view of the community.
+If should be noted that every new term request will be represented as a GitHub issue. This allows the community to review and comment on these proposed new terms, and offer guidance on classification, definition, etc... This open process ensures transparency and representation of the disease view of the community.
 
 ### Term Maturity levels, public opinion period, and conflict resolution
 
