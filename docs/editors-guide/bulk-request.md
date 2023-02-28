@@ -10,7 +10,7 @@ While using the template ensures that the basic information required to create n
 ## Fill out the template
 The [template](https://github.com/monarch-initiative/mondo/blob/master/src/templates/Mondo_bulk_submission.tsv) contains the minimal information required to create a new term in Mondo.
 1. **Disease label** - required for new term request.
-1. **Disease ID** - If the disease is already in Mondo, and the request is to add more information for this existing term, please add the Mondo ID.
+1. **Disease ID** - if the disease is already in Mondo, and the request is to add more information for this existing term, please add the Mondo ID.
 1. **Definition.** - required - Please try to formulate a definition of your term that will be comprehensible to non-specialists. When submitting multiple diseases of the same "type", a pattern should be used for consistency, and ease of the submitter (see (dos-dp patterns)[https://mondo.readthedocs.io/en/latest/editors-guide/e-design-patterns/#design-pattern-dp-docs] for examples). A Mondo curator can assist with this if needed.
 1. **References.** - required - should be included with the definition. Please include link(s) to a published paper (preferrably in the format PMID:XXXXX) or other sources (e.g. orcid). Each reference should be separated by | (pipe, no space)
 1. **Synonyms.** (optional) multiple synonyms should be separated by | (pipe, no space)
