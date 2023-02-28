@@ -4,7 +4,7 @@ When requesting a lot of new disease terms (e.g. 100 chromosomal diseases) at on
 
 ## Prepare for submission  
 We advise submitters to [create a GitHub issue](https://github.com/monarch-initiative/mondo/issues) and communicate their intention to submit a bulk term request using the template.
-When using the template above would ensure that the basic information required to create new terms are submitted, some diseases might require other specific information (e.g. affected gene). A curator will review the submission intend, advise, and (if necessary) send an updated template fitting the disease terms to be submitted.
+While using the template ensures that the basic information required to create new terms are submitted, some diseases might require other specific information (e.g. affected gene). A curator will review the submission, advise, and (if necessary) send an updated template fitting the disease terms to be submitted.
 
 
 ## Fill out the template
