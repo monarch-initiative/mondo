@@ -7,7 +7,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 #classes with the axiom "'bearer of' some rare" AND/OR "has subset :‘gard_rare’" AND limited to disease branch (ie not including the disease susceptibility branch
 
-SELECT ?cls WHERE
+SELECT DISTINCT ?cls WHERE
 {
   ?cls a owl:Class;
   rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
@@ -18,6 +18,7 @@ SELECT ?cls WHERE
 
   union { ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#gard_rare>. }
 
+  union { ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#rare_grouping>. }
 
   FILTER NOT EXISTS {
     ?cls owl:deprecated "true"^^xsd:boolean
