@@ -21,7 +21,7 @@ WHERE {
            owl:annotatedProperty oboInOwl:hasDbXref ;
            owl:annotatedTarget ?xref ;
            oboInOwl:source ?source2 .
-   	    FILTER (strstarts(str(?source2), "MONDO:equivalentTo"))
+   	    FILTER (strstarts(str(?source2), "MONDO:equivalentTo") || strstarts(str(?source2), "MONDO:equivalentObsolete"))
 
     FILTER NOT EXISTS {
     ?xref_anno a owl:Axiom ;
@@ -29,7 +29,7 @@ WHERE {
            owl:annotatedProperty oboInOwl:hasDbXref ;
            owl:annotatedTarget ?xref ;
            oboInOwl:source ?source .
-   	    FILTER (strstarts(str(?source), "MONDO:equivalentTo"))
+   	    FILTER (strstarts(str(?source), "MONDO:equivalentTo") || strstarts(str(?source), "MONDO:equivalentObsolete") || strstarts(str(?source), "MONDO:includedEntryInOMIM"))
     }
 
     OPTIONAL {
