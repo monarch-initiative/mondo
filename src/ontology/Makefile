@@ -401,8 +401,9 @@ imports/so_import.owl: mirror/so.owl imports/so_terms.txt
 
 edit-merged.owl: $(SRC)
 	$(ROBOT) merge -c true -i $< -o $@
-imports/seed.txt: edit-merged.owl
-	$(ROBOT) query -f tsv -i $< -s ../sparql/signature/classes.sparql $@.tmp && perl -npe 's@^\<@@;s@>$$@@' $@.tmp | sort -u > $@
+imports/seed.txt: edit-merged.owl imports/manual_seed.txt
+	$(ROBOT) query -f tsv -i $< -s ../sparql/signature/classes.sparql $@.tmp
+	cat $@.tmp imports/manual_seed.txt | perl -npe 's@^\<@@;s@>$$@@' - | sort -u > $@
 
 imports/%_terms.txt: imports/seed.txt
 	touch $@ && grep -hi $* $< $@ | sort -u  > $@.tmp && mv $@.tmp $@
