@@ -27,9 +27,11 @@ https://www.genenames.org/. Copy the ID (for example, 8965)
 6. In your diff, you will see changes to mondo-edit.obo, src/ontology/imports/hgnc_terms.txt, src/ontology/imports/hgnc_import.owl
 7. Commmit changes on a branch and create a pull request.
 
+Note: if an import does not have a src/ontology/imports/*_terms.txt file (eg for adding NCIT terms). The term(s) to import should be added to src/ontology/imports/manual_seed.txt.  When updating the import, the term(s) will seed the import files, which are pulled in when refreshing modules.
+
 ### Alternate instructions
 
-#### Add classes from external ontologies using a Text Editor 
+#### Add classes from external ontologies using a Text Editor
 
 1. Close Protege
 1. Checkout master
@@ -44,7 +46,7 @@ https://www.genenames.org/. Copy the ID (for example, 8965)
 1. Check diff
 1. Commit/Push
 
-#### Add classes from external ontologies using Protege 
+#### Add classes from external ontologies using Protege
 
 1. Select 'owl:Thing'
 1. Add a new class
