@@ -11,6 +11,7 @@ Name | Description
 [European Joint Programme on Rare Diseases](https://www.ejprarediseases.org/) | An Europe-based information resource for rare diseases.
 [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/) | EBI develops and aligns Mondo with the Experimental Factor Ontology (EFO) for integration of data across EBI. Mondo is used for disease annotations in [EBI resources](https://www.ebi.ac.uk/services), [Open Targets](https://www.opentargets.org/), and [Euro-Bioimaging](http://www.eurobioimaging.eu/) 
 [Euro-Bioimaging](https://www.eurobioimaging.eu/) | Provides access to bioimaging technologies, training and data services. Mondo is used for disease annotations.
+[Exscientia](https://www.exscientia.ai/) | Exscientia is an AI-driven pharmatech company committed to discovering, designing and developing the best possible drugs in the fastest and most effective manner.
 [Fabric Genomics](https://fabricgenomics.com/) | Genome interpretation software for use in rare disease diagnosis.
 [Gabriella Miller Kids First Data Resource Portal](https://kidsfirstdrc.org/) | The Kids First Data Resource Portal is a curated database of clinical and genetic sequence data from pediatric patients with structural abnormalities or childhood cancers, and Mondo is used to structure diagnosis information.
 [Genomics England Panel App](https://panelapp.genomicsengland.co.uk/) | A crowdsourcing tool to allow gene panels to be shared, downloaded, viewed and evaluated by the scientific community for use in rare disease diagnosis.
