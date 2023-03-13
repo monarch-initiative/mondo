@@ -3,7 +3,7 @@ name: Relabel term
 about: Suggested revised label for a Mondo term.
 title: ''
 labels: relabel term
-assignees: nicolevasilevsky, sabrinatoro
+assignees: nicolevasilevsky
 
 ---
 
