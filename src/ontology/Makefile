@@ -328,11 +328,30 @@ reports/reasoner-diff.obo: filtered-nr.obo filtered-nr-reasoned.obo
 
 all_subsets: $(SUBSET_FILES)
 
-tmp/rare-seed.txt: $(SRC)
-	$(ROBOT) merge -i $(SRC) reason query --query ../sparql/signature/rare-subset.sparql $@
+RARE_SUBSET_PRESERVED_RELATIONS=RO:0004003 RO:0000053
 
-subsets/mondo-%.owl: $(ONT).owl tmp/rare-seed.txt | $(SUBSETDIR)
-	robot extract --method subset --input $< -T tmp/rare-seed.txt --output $@ &&\
+tmp/rare-subset-pre.owl: #$(SRC)
+	$(ROBOT) merge -i $(SRC) reason relax materialize $(patsubst %, --term %, $(RARE_SUBSET_PRESERVED_RELATIONS)) -o $@
+
+# This gets us all the rare disease classes:
+tmp/rare-seed-classes.txt: tmp/rare-subset-pre.owl
+	$(ROBOT) merge -i $< query --query ../sparql/signature/rare-subset.sparql $@
+.PRECIOUS: tmp/rare-seed-classes.txt
+
+# This gets us all the entities linked to the rare disease classes
+# Make sure you add the relationships you want to add to ../sparql/signature/rare-subset-related-entity.sparql
+# AND config/rare_subset_relations.txt
+tmp/rare-seed-entities.txt: tmp/rare-subset-pre.owl tmp/rare-seed-classes.txt
+	$(ROBOT) merge -i $< filter -T tmp/rare-seed-classes.txt --trim false query --query ../sparql/signature/rare-subset-related-entity.sparql $@
+.PRECIOUS: tmp/rare-seed-entities.txt
+
+# This merges thes seed together into one file (including rare disease classes _and_ related entities.)
+tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/rare_subset_relations.txt
+	cat $^ | sort | uniq > $@
+.PRECIOUS: tmp/rare-seed.txt
+
+subsets/mondo-rare.owl: $(ONT).owl tmp/rare-seed.txt | $(SUBSETDIR)
+	$(ROBOT) extract --method subset --input $< -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/%.owl
 
