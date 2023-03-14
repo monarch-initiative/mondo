@@ -16,8 +16,8 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   			oboInOwl:source ?source2 .
 
   	FILTER (?source1!=?source2)
-  	FILTER ((str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete") || (str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:relatedTo") || (str(?source1)="MONDO:mondoIsNarrowerThanSource") || (str(?source1)="MONDO:mondoIsBroaderThanSource"))
-  FILTER ((str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete") || (str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:relatedTo") || (str(?source2)="MONDO:mondoIsNarrowerThanSource") || (str(?source2)="MONDO:mondoIsBroaderThanSource"))
+  	FILTER ((str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete") || (str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:relatedTo") || (str(?source1)="MONDO:mondoIsNarrowerThanSource") || (str(?source1)="MONDO:mondoIsBroaderThanSource") || (str(?source1)="MONDO:includedEntryInOMIM"))
+  FILTER ((str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete") || (str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:relatedTo") || (str(?source2)="MONDO:mondoIsNarrowerThanSource") || (str(?source2)="MONDO:mondoIsBroaderThanSource") || (str(?source2)="MONDO:includedEntryInOMIM"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(?xref as ?value)
   BIND(CONCAT(CONCAT(STR(?source1),"-"),STR(?source2)) as ?property)

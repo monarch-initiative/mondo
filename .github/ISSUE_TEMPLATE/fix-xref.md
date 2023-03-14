@@ -3,7 +3,7 @@ name: fix xref
 about: Report issue about incorrect xref on term.
 title: ''
 labels: xref
-assignees: nicolevasilevsky, sabrinatoro
+assignees: nicolevasilevsky
 
 ---
 
