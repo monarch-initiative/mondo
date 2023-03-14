@@ -217,3 +217,7 @@ We use the n_of_one subset if a disease is described only in one individual or f
 ## Term tracker item
 
 If you make changes to a Mondo term based on requests on a GitHub ticket, please add an annotation to the URL of the GitHub ticket using the annotation property 'term tracker item' (type xsd:anyURI)
+
+## Susceptibility terms
+
+Susceptibility to diseases should be classified under MONDO:0042489 'disease susceptibility' (or MONDO:0020573 'inherited disease susceptibility', as appropriate). We should group any OMIM susceptibility terms under a susceptibility to disease term. We will not add OMIM xrefs to these, even if the term is part of the OMIMPS. For example, https://www.omim.org/phenotypicSeries/PS161400 - we will create a new class called narcolepsy, susceptibility but will NOT refer back to the OMIMPS. (See related ticket: [https://github.com/monarch-initiative/mondo/issues/5511](https://github.com/monarch-initiative/mondo/issues/5511)).
