@@ -62,9 +62,11 @@ jobs:
         if: ${{ env.PR_TITLE}}
         with:
           branch-suffix: short-commit-hash
-          labels: Automated
+          # labels: Automated
+          author: ${{ env.ISSUE_CREATOR }} <${{ env.ISSUE_CREATOR }}@users.noreply.github.com>
+          committer: ${{ env.ISSUE_CREATOR }} <${{ env.ISSUE_CREATOR }}@users.noreply.github.com>
           body: ${{ env.PR_BODY }}
           title: ${{ env.PR_TITLE }}
           base: ${{ github.head_ref }}
           branch: ${{ env.branch-name }}
-          token: ${{ secrets.GH_TOKEN }}
+          # token: ${{ secrets.GH_TOKEN }}
