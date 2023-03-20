@@ -7,28 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.3.0
-    strategy:
-      matrix:
-        python-version: ["3.9"]
-        os: [ ubuntu-latest ]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ matrix.python-version }}
+      - name: Checkout main branch
+        uses: actions/checkout@v3
 
-      - name: Set env variables.
-        id: vars
-        run: |
-          echo "resource=src/ontology/mondo-edit.obo" >> $GITHUB_ENV
-          echo "branch-name=mapping_automation" >> $GITHUB_ENV
-
-      - name: Run MakeFile
-        id: MakeFile
+      - name: Update mappings
         run: |
           cd src/ontology
           make GITHUB_ACTION=true IMP=false PAT=false update-doid-mappings -B
@@ -36,19 +22,15 @@ jobs:
           make GITHUB_ACTION=true IMP=false PAT=false update-ncit-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-omim-mappings -B
           make GITHUB_ACTION=true IMP=false PAT=false update-ordo-mappings -B
-          echo "PR_TITLE=[$(date + %Y%m%d)] Weekly automated mappings update." >> $GITHUB_ENV
-          echo "PR_BODY=This ran on $(date + %Y%m%d). PLACEHOLDER: Needs to be updated." >> $GITHUB_ENV
-          
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
-        if: ${{ env.PR_TITLE}}
         with:
           branch-suffix: short-commit-hash
           labels: Automated
-          body: ${{ env.PR_BODY }}
-          title: ${{ env.PR_TITLE }}
+          body: "Update mappings in Mondo from external sources."
+          title: "Weekly automated mappings update"
           base: ${{ github.head_ref }}
-          branch: ${{ env.branch-name }}
+          branch: "mapping_automation"
           token: ${{ secrets.GH_TOKEN }}
           reviewers: "sabrinatoro"

@@ -27,6 +27,9 @@ while (<>) {
         elsif ($anns =~ m@relatedTo@) {
             $rel = 'relatedMatch';
         }
+        elsif ($anns =~ m@includedEntryInOMIM@) {
+            $rel = 'relatedMatch';
+        }
         elsif ($anns =~ m@mondoIsNarrowerThanSource@) {
             $rel = 'broadMatch';
         }
