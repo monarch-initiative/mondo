@@ -11,7 +11,7 @@ This pattern is meant to be used for OMIM Mendelian diseases (ie unitary genetic
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} caused by mutation in {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} caused by variation in {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
 
 ## Annotations 
 
@@ -19,7 +19,7 @@ This pattern is meant to be used for OMIM Mendelian diseases (ie unitary genetic
 
 ## Definition 
 
-Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause of the disease is a mutation in the {[gene](http://purl.obolibrary.org/obo/SO_0000704)} gene.
+Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause of the disease is a variation in the {[gene](http://purl.obolibrary.org/obo/SO_0000704)} gene.
 
 ## Equivalent to 
 
