@@ -6,9 +6,10 @@ prefix disease: <http://purl.obolibrary.org/obo/MONDO_0000001>
 prefix disease_characteristic: <http://purl.obolibrary.org/obo/MONDO_0021125>
 prefix disease_stage: <http://purl.obolibrary.org/obo/MONDO_0021007>
 prefix disease_susceptibility: <http://purl.obolibrary.org/obo/MONDO_0042489>
+prefix injury: <http://purl.obolibrary.org/obo/MONDO_0021178>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?entity ?property ?value WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE
 {
   ?entity a owl:Class ;
      rdfs:label ?n
@@ -24,6 +25,8 @@ SELECT DISTINCT ?entity ?property ?value WHERE
       {?entity rdfs:subClassOf* disease_susceptibility: }
         UNION
       {?entity rdfs:subClassOf* disease_stage: }
+        UNION
+      {?entity rdfs:subClassOf* injury: }
     } )
     BIND(rdfs:subClassOf as ?property)
 }
