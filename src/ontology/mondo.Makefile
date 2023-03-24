@@ -634,7 +634,7 @@ tmp/mondo-ingest.owl:
 tmp/mondo-ingest.db: tmp/mondo-ingest.owl
 	@rm -f .template.db
 	@rm -f .template.db.tmp
-	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	RUST_BACKTRACE=full semsql make $@
 	@rm -f .template.db
 	@rm -f .template.db.tmp
 
