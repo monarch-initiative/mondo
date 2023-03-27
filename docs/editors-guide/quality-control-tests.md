@@ -1402,3 +1402,30 @@ ORDER BY ?entity
 
 ```
 
+###  qc-xref-without-source.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?xref WHERE {
+    ?entity oboInOwl:hasDbXref ?xref .
+    OPTIONAL {
+      ?entity owl:deprecated ?obsolete .
+    }
+    FILTER NOT EXISTS {
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source .
+   	    FILTER (strstarts(str(?source), "MONDO:"))
+  }
+
+    FILTER (strstarts(str(?xref), "OMIM:") || (strstarts(str(?xref), "OMIMPS:" || strstarts(str(?xref), "DOID:") || strstarts(str(?xref), "Orphanet:") || strstarts(str(?xref), "ORDO:") || strstarts(str(?xref), "NCIT:"))))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
+}
+ORDER BY ?entity
+```
+
