@@ -4,6 +4,8 @@
 
 The best way to contribute is by addressing tickets or reporting issues on the [GitHub tracker](https://github.com/monarch-initiative/mondo/issues). See this guide on [how to make a good term request](https://mondo.readthedocs.io/en/latest/editors-guide/c-make-good-term-request/).
 
+See the [Mondo Users Corner](https://mondo.readthedocs.io/en/latest/) in our documentation for more details specific to users.
+
 Issues that need medical expertise are [here](https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed).
 
 # Developers
