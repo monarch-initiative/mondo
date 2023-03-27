@@ -9,7 +9,7 @@ If a term is a candidate for obsoletion and/or merging, this should be reported 
 Some examples of when to obsolete and/or merge a term are:  
 
 - **Duplicate terms** (for example MONDO:0019055 mitochondrial disease was obsoleted and replaced by MONDO:0004069 'inborn mitochondrial metabolism disorder')  
-- **Out of scope**- Some terms are excluded from Mondo based on certain criteria, which are outlined in the [exclusion reason table](editors-guide/exclusion-reasons.md). For example, terms that are not truly diseases, (ie phenotype terms, such as MONDO:0007348 Colchicine resistance). For another example, see [see #503](https://github.com/monarch-initiative/mondo/issues/503).
+- **Out of scope**- Some terms are excluded from Mondo based on certain criteria, which are outlined in the [exclusion reason table](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). For example, terms that are not truly diseases, (ie phenotype terms, such as MONDO:0007348 Colchicine resistance). For another example, see [see #503](https://github.com/monarch-initiative/mondo/issues/503).
 - **obsoleted in source**: for example, OMIM, Orphanet or GARD may retire or obsolete a term. For example, MONDO:0015173 obsolete autoimmune enteropathy type 2
 is a phenotype and not a disease: for example, MONDO:0043606 'obsolete pathologic fracture'
 

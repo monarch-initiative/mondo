@@ -3,7 +3,7 @@ name: Add term
 about: New term suggestion for Mondo
 title: "[NTR]"
 labels: New term request
-assignees: nicolevasilevsky, sabrinatoro
+assignees: nicolevasilevsky
 
 ---
 

@@ -432,9 +432,10 @@ prefix disease: <http://purl.obolibrary.org/obo/MONDO_0000001>
 prefix disease_characteristic: <http://purl.obolibrary.org/obo/MONDO_0021125>
 prefix disease_stage: <http://purl.obolibrary.org/obo/MONDO_0021007>
 prefix disease_susceptibility: <http://purl.obolibrary.org/obo/MONDO_0042489>
+prefix injury: <http://purl.obolibrary.org/obo/MONDO_0021178>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT ?entity ?property ?value WHERE 
+SELECT DISTINCT ?entity ?property ?value WHERE
 {
   ?entity a owl:Class ;
      rdfs:label ?n
@@ -450,6 +451,8 @@ SELECT DISTINCT ?entity ?property ?value WHERE
       {?entity rdfs:subClassOf* disease_susceptibility: }
         UNION
       {?entity rdfs:subClassOf* disease_stage: }
+        UNION
+      {?entity rdfs:subClassOf* injury: }
     } )
     BIND(rdfs:subClassOf as ?property)
 }
@@ -1063,8 +1066,8 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   			oboInOwl:source ?source2 .
 
   	FILTER (?source1!=?source2)
-  	FILTER ((str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete") || (str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:relatedTo") || (str(?source1)="MONDO:mondoIsNarrowerThanSource") || (str(?source1)="MONDO:mondoIsBroaderThanSource"))
-  FILTER ((str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete") || (str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:relatedTo") || (str(?source2)="MONDO:mondoIsNarrowerThanSource") || (str(?source2)="MONDO:mondoIsBroaderThanSource"))
+  	FILTER ((str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete") || (str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:relatedTo") || (str(?source1)="MONDO:mondoIsNarrowerThanSource") || (str(?source1)="MONDO:mondoIsBroaderThanSource") || (str(?source1)="MONDO:includedEntryInOMIM"))
+  FILTER ((str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete") || (str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:relatedTo") || (str(?source2)="MONDO:mondoIsNarrowerThanSource") || (str(?source2)="MONDO:mondoIsBroaderThanSource") || (str(?source2)="MONDO:includedEntryInOMIM"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(?xref as ?value)
   BIND(CONCAT(CONCAT(STR(?source1),"-"),STR(?source2)) as ?property)
