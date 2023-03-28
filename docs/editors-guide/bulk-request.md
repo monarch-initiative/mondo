@@ -9,7 +9,7 @@ While using the template ensures that the basic information required to create n
 
 ## Fill out the template
 
-The [template](https://github.com/monarch-initiative/mondo/blob/master/src/templates/Mondo_bulk_submission.tsv) contains the minimal information required to create a new term in Mondo.
+The [template](https://github.com/monarch-initiative/mondo/blob/master/src/templates/Mondo_bulk_submission.tsv) contains the minimal information required to create a new term in Mondo.  
 
 1. **Disease label** - required for new term request.  
 1. **Disease ID** - if the disease is already in Mondo, and the request is to add more information for this existing term, please add the Mondo ID in the format MONDO:XXXXXXX.  
