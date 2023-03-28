@@ -23,10 +23,11 @@ The [template](https://github.com/monarch-initiative/mondo/blob/master/src/templ
 1. **ORCID**  This allows requesters' contribution to get attributed. Please include your [ORCID](https://orcid.org/). If you do not have an ORCID, you can register for free online.  
 1. **Additional Information** this field might include gene affected, process affected, chromosomal anomaly, etc., that are used to define a disease. We recommend that requesters contact the Mondo team (preferably via a GitHub issue) to discuss additional required fields.  
 
-Note about the [template](https://github.com/monarch-initiative/mondo/blob/master/src/templates/Mondo_bulk_submission.tsv):   
+Note about the [template](https://github.com/monarch-initiative/mondo/blob/master/src/templates/Mondo_bulk_submission.tsv):    
 
-the template contains 4 rows:
-1. row 1: information requested (as listed above)  
+the template contains 4 rows:  
+
+1. row 1: information requested (as listed above)    
 1. row 2: simple explanation of the information requested for this field, as well as the requested format.  
 1. row 3: this row contains the strings for merging the template into MONDO using ROBOT. This row is only for the Mondo team; requesters can ignore this line.  
 1. row 4: is an example of term request. This row can be removed from the submission.  
