@@ -5,6 +5,7 @@
 Name | Description
 -- | -- 
 [Monarch Initiative](https://monarchinitiative.org/) | Monarch is a system that allows for cross-species disease discovery, and Mondo was initially developed for the Monarch Initiative and is used for integrating disease data across species. 
+[Biolookup](http://biolookup.io/) | The Biolookup Service provides metadata and ontological information about biomedical entities based on their [compact identifiers](https://en.wikipedia.org/wiki/CURIE) (CURIEs).
 [ClinGen](https://clinicalgenome.org/) | ClinGen is a curated database of clinically relevant genes and variants. Mondo is used annotating diseases associated with gene variants.
 [Critcal Path Institute](https://c-path.org/) | An independent nonprofit, public-private partnership with the U.S. Food and Drug Administration (FDA) focused on the medical product development process.
 [European Bioinformatics Institute (EBI)](https://www.ebi.ac.uk) | EBI uses Mondo as the primary ontology for disease concepts integrated into the  Experimental Factor Ontology (EFO) for integration of data across EBI. Mondo is used for disease annotations in [EBI resources](https://www.ebi.ac.uk/services), [Open Targets](https://www.opentargets.org/), GWAS catalog and [Euro-Bioimaging](http://www.eurobioimaging.eu/).
@@ -17,6 +18,7 @@ Name | Description
 [Global Genes](https://globalgenes.org/) | A non-profit organization dedicated to eliminating the burdens and challenges of rare diseases for patients and families globally. 
 [HL7 International](https://confluence.hl7.org/display/TA/External+Terminologies+-+Information) | A standards developing organization that provides a comprehensive framework and related standards for the exchange, integration, sharing and retrieval of electronic health information that supports clinical practice and the management, delivery and evaluation of health services.
 [Human Cell Atlas](https://www.humancellatlas.org/) | A group of researchers who aim to create cellular reference maps with the position, function and characteristics of every cell type in the human body.
+[INDRA](https://github.com/sorgerlab/indra) | INDRA (Integrated Network and Dynamical Reasoning Assembler) is an automated model assembly system, originally developed for molecular systems biology and then generalized to other domains.
 [Infertility Disease Database](http://mdl.shsmu.edu.cn/IDDB/module/mainpage/mainpage.jsp) | A resource for genes, experiments and clinical records related with the infertility diseases. 
 [MSeqDR: the Mitochondrial Disease Sequence Data Resource Consortium ](https://mseqdr.org/) | Securely collects and shares data for rare diseases, patients and causative mutations.
 [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) | ClinVar aggregates information about genomic variation and its relationship to human health.
