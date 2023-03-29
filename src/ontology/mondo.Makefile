@@ -465,7 +465,7 @@ sssom:
 oaklib:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
 
-tmp/%.sssom.tsv: tmp/mirror-%.json | sssom | oaklib
+tmp/%.sssom.tsv: tmp/mirror-%.json
 	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
 
 
