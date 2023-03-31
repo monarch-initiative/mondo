@@ -8,31 +8,4 @@ body:
     attributes:
       value: |
         Use this form to request a synonym be added to an existing Mondo term.
-  - type: input
-    id: term
-    attributes:
-      label: Mondo term
-      description: Mondo term to which a synonym should be added.
-      placeholder: ex. spindle cell rhabdomyosarcoma
-    validations:
-      required: true
-  - type: input
-    id: synonyms
-    attributes:
-      label: Synonyms
-      description: Alternative term(s) or acroynymm for the term. Separate multiple synonyms by a comma.
-      placeholder:  ex. SCRMS, SC rhabdomyosarcoma
-    validations:
-      required: false
-  - type: dropdown
-    id: synonym_type
-    attributes:
-      label: Synonym type
-      description: Please indicate if the synonym is exact, broad, narrow or related. See [here for more explanation of synonym scope](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#synonym-scope).
-      options:
-        - exact
-        - broad
-        - narrow
-        - related
-    validations:
-      required: false
+ 
