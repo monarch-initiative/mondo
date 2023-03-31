@@ -44,3 +44,35 @@ body:
         Please provide a definition of the term and a reference, such as a PubMed ID, if applicable, in format PMID:#######. 
     validations:
       required: true
+- type: input
+    id: parent
+    attributes:
+      label: Parent term
+      description: Provide a parent term or superclass (ie the class this new term should be classified under. Provide the ID and label.
+      placeholder: ex. MONDO:0021095 'parkinsonian disorder'
+    validations:
+      required: true
+   - type: input
+    id: children
+    attributes:
+      label: Children term(s)
+      description: List any existing terms that should be classified underneath this new proposed term, if applicable. Provide the ID and label.
+      placeholder: ex. MONDO:0008200 'autosomal dominant Parkinson disease 1'
+    validations:
+      required: false
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID Identifier
+      description: What is the ORCID identifier of the person requesting this term? ORCID identifiers can be made at https://orcid.org.
+      placeholder: e.g. https://orcid.org/0000-0001-5208-3432
+    validations:
+      required: false
+  - type: input
+    id: website
+    attributes:
+      label: Website URL
+      description: Provide a website URL that you'd like to be associated with this new term.
+      placeholder: e.g. https://clinicalgenome.org/affiliation/40005/
+    validations:
+      required: false
