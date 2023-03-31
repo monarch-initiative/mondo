@@ -52,3 +52,11 @@ body:
       placeholder: ex. MONDO:0005212 rhabdomyosarcoma
     validations:
       required: true
+  - type: input
+    id: children
+    attributes:
+      label: Children term(s)
+      description: List any existing terms that should be classified underneath this new proposed term, if applicable. Provide the ID and label.
+      placeholder: ex. MONDO:0100067 childhood spindle cell rhabdomyosarcoma
+    validations:
+      required: false
