@@ -1,5 +1,18 @@
 name: Request a New Ontology Term
-description: Request a new term to be added ot the Mondo ontology.
+description: Request a new term to be added to the Mondo ontology.
 title: Request for new term [NAME]
 labels: [new term request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to register a new ontology with the OBO Foundry. Please first read the instructions provided here: http://obofoundry.org/docs/NewOntologyRegistrationInstructions.html.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: What is the full title of your ontology? Please do not include redundant acronyms.
+      placeholder: ex. Chemical Entities of Biological Interest
+    validations:
+      required: true
 
