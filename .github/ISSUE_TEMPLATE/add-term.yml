@@ -24,3 +24,15 @@ body:
       placeholder:  ex. SCRMS, SC rhabdomyosarcoma
     validations:
       required: false
+  - type: dropdown
+    id: synonym_type
+    attributes:
+      label: Synonym type
+      description: Please indicate if the synonym is exact, broad, narrow or related.
+      options:
+        - exact
+        - broad
+        - narrow
+        - related
+    validations:
+      required: false
