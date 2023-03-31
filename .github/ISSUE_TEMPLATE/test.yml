@@ -1,0 +1,278 @@
+name: Request a New Ontology
+description: Request to register a new ontology with the OBO Foundry.
+title: Request for new ontology [NAME]
+labels: [ new ontology ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to register a new ontology with the OBO Foundry. Please first read the instructions provided here: http://obofoundry.org/docs/NewOntologyRegistrationInstructions.html.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: What is the full title of your ontology? Please do not include redundant acronyms.
+      placeholder: ex. Chemical Entities of Biological Interest
+    validations:
+      required: true
+  - type: input
+    id: slug
+    attributes:
+      label: Short Description
+      description: Please provide a short description of your ontology in one sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        Please provide a long description of your ontology using english prose. A good description covers the kinds of entities in the ontology, the motivation for creating an ontology, how it relates to other OBO ontologies, and the intended users.
+    validations:
+      required: true
+  - type: input
+    id: idspace
+    attributes:
+      label: Identifier Space
+      description: What is the prefix for the identifier space associated with your ontology? This is typically all capital letters. This *must* not conflict with any entries in the [Bioregistry](https://bioregistry.io/registry) nor [BioPortal](https://bioportal.bioontology.org). See OBO Principle [FP-003 "URI/Identifier Space"](https://obofoundry.org/principles/fp-003-uris.html).
+      placeholder: ex. GO
+    validations:
+      required: true
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: What license does your ontology have? The OBO Foundry only considers ontologies with open licenses. See OBO Principle [FP-001 "Open"](https://obofoundry.org/principles/fp-001-open.html).
+      options:
+        - CC0
+        - CC-BY 4.0
+        - CC-BY 3.0
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    validations:
+      required: true
+    attributes:
+      label: Domain
+      description: Please choose the domain that best describes your ontology
+      options:
+        - upper
+        - anatomy and development
+        - health
+        - phenotype
+        - investigations
+        - environment
+        - biochemistry
+        - microbiology
+        - agriculture
+        - diet, metabolomics, and nutrition
+        - biological systems
+        - information technology
+        - organisms
+        - information
+        - simulation
+  - type: markdown
+    attributes:
+      value: |
+        # Links
+
+        This section of the ontology request form contains links to various resources associated with your ontology.
+  - type: input
+    id: repository
+    attributes:
+      label: Source Code Repository
+      description: What is the URL of the repository? Typically, this will be a link to GitHub.
+      placeholder: e.g. https://github.com/obophenotype/uberon/
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage
+      description: What is the homepage of your ontology? If you don't have a specific homepage, you should consider using GitHub pages to make one! Otherwise, include a duplicate of the repository in this field.
+      placeholder: e.g. https://obophenotype.github.io/uberon/
+    validations:
+      required: true
+  - type: input
+    id: tracker
+    attributes:
+      label: Issue Tracker
+      description: What is the URL of the public issue tracker? Typically, this will be the link to the GitHub repository with a trailing `/issues` URL part.
+      placeholder: e.g. https://github.com/obophenotype/uberon/issues
+    validations:
+      required: true
+  - type: input
+    id: contributing
+    attributes:
+      label: Contribution Guidelines
+      description: What is the URL of contribution guidelines? Ideally, this is a file name CONTRIBUTING or CONTRIBUTING.md in the root of your repository.
+      placeholder: e.g. https://github.com/geneontology/go-ontology/blob/master/CONTRIBUTING.md
+    validations:
+      required: true
+  - type: input
+    id: download
+    attributes:
+      label: Ontology Download Link
+      description: What URL can be used to download your Ontology?
+      placeholder: e.g. https://github.com/obophenotype/uberon/raw/master/uberon.owl
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        # Contact
+
+        This section of the ontology request form contains information about the contact person for the ontology. See also OBO Principle [FP-011 "Locus of Authority"](https://obofoundry.org/principles/fp-011-locus-of-authority.html)
+  - type: input
+    id: contact-name
+    attributes:
+      label: Contact Name
+      description: What is the full name of the contact for the ontology?
+      placeholder: e.g. Charles Tapley Hoyt
+    validations:
+      required: true
+  - type: input
+    id: contact-email
+    attributes:
+      label: Contact Email
+      description: What is the email address of the contact for the ontology?
+      placeholder: e.g. cthoyt@gmail.com
+    validations:
+      required: true
+  - type: input
+    id: contact-github
+    attributes:
+      label: Contact GitHub Username
+      description: What is the GitHub username of the contact for the ontology? Do not include the @ symbol.
+      placeholder: e.g. cthoyt
+    validations:
+      required: true
+  - type: input
+    id: contact-orcid
+    attributes:
+      label: Contact ORCID Identifier
+      description: What is the ORCID identifier of the contact for the ontology? ORCID identifiers can be made at https://orcid.org.
+      placeholder: e.g. 0000-0003-4423-4370
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        # Artifacts
+  - type: checkboxes
+    id: formats
+    attributes:
+      label: Formats
+      description: Under which formats is your ontology available? See also OBO Principle [FP-002 "Common Format"](https://obofoundry.org/principles/fp-002-format.html).
+      options:
+        - label: OWL RDF/XML (.owl)
+          required: true
+        - label: OBO (.obo)
+          required: false
+        - label: OBO Graph JSON (.json)
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        # Community
+
+        This section of the ontology request form contains information about how this ontology relates to the greater community
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: |
+        Please provide a list of ontologies that yours depends on using their OBO Foundry prefixes (these are lowercased ID spaces)
+      placeholder: |
+        - envo
+        - chebi
+        - exo
+    validations:
+      required: false
+  - type: textarea
+    id: related
+    attributes:
+      label: Related
+      description: |
+        Please provide a list of related OBO Foundry ontologies
+    validations:
+      required: false
+  - type: textarea
+    id: usages
+    attributes:
+      label: Usages
+      render: yaml
+      description: |
+        Please provide a list of current uses for your ontology in YAML format as a list of objects with `user`, `description`, and `example` keys like in the following example:
+        
+        ```yaml
+        - user: https://www.rhea-db.org/
+          description: Rhea uses CHEBI to annotate reaction participants
+          examples:
+            - url: https://www.rhea-db.org/searchresults?q=CHEBI:29748
+              description: "Query for all usages of CHEBI:29748 (chorismate)"
+        - user: http://zfin.org
+          description: ZFIN uses CHEBI to annotate experiments
+          examples:
+            - url: http://zfin.org/action/expression/experiment?id=ZDB-EXP-190627-10
+              description: "A curated zebrafish experiment involving exposure to (5Z,8Z,14Z)-11,12-dihydroxyicosatrienoic acid (CHEBI:63969)"
+        ```
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        # Finishing Up
+        
+        This final section asks you to introspect on your ontology request.
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: Intended Use Cases and/or Related Projects
+      description: For projects, please include a link to their websites or other location to find more information.
+    validations:
+      required: false
+  - type: textarea
+    id: source
+    attributes:
+      label: Data Sources
+      description: What data sources were used to construct this ontology (e.g., literature, interviews with experts, clinical records)?
+    validations:
+      required: false
+  - type: textarea
+    id: remarks
+    attributes:
+      label: Additional comments or remarks
+      description: Is there an other information that will be helpful for the OBO community and reviewers of your ontology?
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: OBO Foundry Pre-registration Checklist
+      description: |
+        To be considered for inclusion in the OBO Foundry, an ontology must meet certain requirements, as described in in [the registration process instructions](http://obofoundry.org/docs/Policy_for_OBO_namespace_and_associated_PURL_requests.html) and the [registration review checklist](https://github.com/OBOFoundry/OBOFoundry.github.io/blob/master/docs/RegistrationChecklist.md). To ensure you are aware of some of its key points, please review the checklist below.
+      options:
+        - label: I have read and understood [the registration process instructions](http://obofoundry.org/docs/Policy_for_OBO_namespace_and_associated_PURL_requests.html) and the [registration checklist](https://github.com/OBOFoundry/OBOFoundry.github.io/blob/master/docs/RegistrationChecklist.md).
+          required: true
+        - label: There is no other ontology in the OBO Foundry which would be an appropriate place for my terms. If there were, I have contacted the editors, and we decided in mutual agreement that a separate ontology is more appropriate.
+          required: false
+        - label: My ontology has a specific release file with a version IRI and a `dc:license` annotation, serialised in RDF/XML.
+          required: false
+        - label: I understand that term definitions, while not mandatory, are key to understanding the intentions of a term especially when the ontology is used in curation. I made sure that a reasonable majority of terms in my ontology have definitions, using the [IAO:0000115](https://ontobee.org/ontology/IAO?iri=http://purl.obolibrary.org/obo/IAO_0000115) property.
+          required: false
+        - label: For every term in my ontology, I checked whether another OBO Foundry ontology has one with the same meaning. If so, I re-used that term directly (not by cross-reference, by directly using the IRI).
+          required: false
+        - label: For all relationship properties (Object and Data Property), I checked whether [the Relation Ontology (RO)](https://ontobee.org/ontology/catalog/RO?iri=http://www.w3.org/2002/07/owl%23ObjectProperty) includes an appropriate one. I understand that aligning with RO is an essential part of the overall alignment between OBO ontologies!
+          required: false
+        - label: For the selection of appropriate annotation properties, I looked at [OMO](https://ontobee.org/ontology/catalog/OMO?iri=http://www.w3.org/2002/07/owl%23AnnotationProperty) first. I understand that aligning ontology metadata and term-level metadata is essential for cross-integration of OBO ontologies.
+          required: false
+        - label: If I was not sure about the meaning of any of the checkboxes above, I have consulted with a member of the OBO Foundry for advice, e.g., through the [obo-discuss](https://groups.google.com/g/obo-discuss) Google Group.
+          required: false
+        - label: The requested ID space does not conflict with another ID space found in other registries such as the Bioregistry and BioPortal, see [here](https://obofoundry.org/id-policy) for a complete list.
+          required: false
