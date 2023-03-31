@@ -3,12 +3,11 @@ description: Request a new synonym to be added an existing Mondo term.
 title: Request for new synonym [ADD NAME HERE]
 labels: [ synonym ]
 assignees: nicolevasilevsky
-
 body:
   - type: markdown
     attributes:
       value: |
-        Use this form to request a new ontology term be added to Mondo. See additional guidance here: https://mondo.readthedocs.io/en/latest/editors-guide/c-make-good-term-request/.
+        Use this form to request a synonym be added to an existing Mondo term.
   - type: input
     id: term
     attributes:
