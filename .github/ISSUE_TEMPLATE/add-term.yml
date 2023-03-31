@@ -1,6 +1,6 @@
 name: Request a New Ontology Term
 description: Request a new term to be added ot the Mondo ontology.
-title: [New term request]: add name here
+title: New term request: [add name here]
 labels: [new term request]
 assignees: nicolevasilevsky
 body:
@@ -52,17 +52,7 @@ body:
       placeholder: ex. MONDO:0021095 'parkinsonian disorder'
     validations:
       required: true
-  - type: dropdown
-    id: license
-    attributes:
-      label: License
-      description: What license does your ontology have? The OBO Foundry only considers ontologies with open licenses. See OBO Principle [FP-001 "Open"](https://obofoundry.org/principles/fp-001-open.html).
-      options:
-        - CC0
-        - CC-BY 4.0
-        - CC-BY 3.0
-    validations:
-      required: true
+  
   - type: dropdown
     id: domain
     validations:
