@@ -9,11 +9,11 @@ body:
       value: |
         Use this form to request a new ontology term be added to Mondo. See additional guidance here: https://mondo.readthedocs.io/en/latest/editors-guide/c-make-good-term-request/.
   - type: input
-    id: title
+    id: Label
     attributes:
-      label: Title
-      description: What is the full title of your ontology? Please do not include redundant acronyms.
-      placeholder: ex. Chemical Entities of Biological Interest
+      label: Label
+      description: Preferred term label. Please add the label in lowercase, unless it is a proper name.
+      placeholder: ex. Parkinson's disease or asthma
     validations:
       required: true
 
