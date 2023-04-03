@@ -466,7 +466,7 @@ oaklib:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
 
 tmp/%.sssom.tsv: tmp/mirror-%.json
-	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
+	sssom parse tmp/mirror-$*.json --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
 
 
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv tmp/mondo-ingest.db
