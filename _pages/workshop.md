@@ -6,6 +6,7 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops
 
+- [Mondo Workshop (February 01, 2023)](#feb-2023)
 - [Using the Mondo Disease Ontology for Disease Data Curation (June 08, 2022)](#june-2022)
 - [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
 - [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
@@ -13,6 +14,15 @@ Details and summaries for upcoming and past Mondo workshops.
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
 - [Mondo Introductory Workshop (November 2018)](#november-2018)
+
+<a name="feb-2023"></a> 
+## Mondo Workshops
+
+### Description
+The goal of this workshop was to bring together the Mondo team members to define our objectives and highest priorities for the upcoming year (and beyond) and develop a plan, with a timeline and assignments, for actionable tasks. These included but were not limited to 1) aligning with the foundations of ICD11 and 2) improving the Mondo design philosophy.
+
+### Date 
+**February 01, 2023**
 
 <a name="june-2022"></a> 
 ## Using the Mondo Disease Ontology for Disease Data Curation
