@@ -10,12 +10,14 @@
 #
 # See README-editors.md for more details.
 
-IMAGE=${IMAGE:-odkfull}
+docker pull obolibrary/odkfull:dev
+
+IMAGE=${IMAGE:-odkfull:dev}
 MEMORY_GB=${MEMORY_GB:-8}
 MEMORY_JAVA="-Xmx${MEMORY_GB}G"
 ODK_DEBUG=${ODK_DEBUG:-no}
 
-echo "Running ODK with ${MEMORY_GB} GB of memory."
+echo "Running ODK with ${MEMORY_GB} GB of memory, using ${IMAGE}."
 
 TIMECMD=
 if [ x$ODK_DEBUG = xyes ]; then
