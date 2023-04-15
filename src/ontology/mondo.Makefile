@@ -465,14 +465,15 @@ sssom:
 oaklib:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
 
-tmp/%.sssom.tsv: tmp/mirror-%.json | sssom | oaklib
-	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
+tmp/%.sssom.tsv: tmp/mirror-%.json
+	sssom parse tmp/mirror-$*.json --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
 
 
 $(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv tmp/mondo-ingest.db
 	python ../scripts/add_object_label.py run $<
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
+	sssom annotate $@ -o $@ --mapping_set_id "http://purl.obolibrary.org/obo/mondo/mappings/mondo.sssom.tsv"
 	sssom sort $@ -o $@
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
@@ -637,7 +638,7 @@ tmp/mondo-ingest.owl:
 tmp/mondo-ingest.db: tmp/mondo-ingest.owl
 	@rm -f .template.db
 	@rm -f .template.db.tmp
-	RUST_BACKTRACE=full semsql make $@
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
 	@rm -f .template.db
 	@rm -f .template.db.tmp
 
