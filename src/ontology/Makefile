@@ -249,9 +249,10 @@ $(ONT).obo: reasoned.owl
 	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@.tmp.owl
 	owltools --use-catalog $@.tmp.owl --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
 	rm -f $@.tmp.owl
+
 $(ONT).json: $(ONT).owl
-	owltools --use-catalog $< -o -f json  $(ONT).json.tmp && mv $(ONT).json.tmp $@
-#	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
 
 $(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
 	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
@@ -301,8 +302,8 @@ $(ONT)-base.json: $(ONT)-base.owl
 #	owltools --use-catalog $<  -o -f obo $(ONT).obo.tmp && mv $(ONT).obo.tmp $@
 
 %.json: %.owl
-	owltools --use-catalog $< -o -f json  $@.json.tmp && mv $@.json.tmp $@
-#	$(ROBOT) convert -i $< -f json -o $(ONT).json.tmp && mv $(ONT).json.tmp $@
+	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
 
 # ensure that inference including equivalencies does not result in merging any classes in MONDO.
 # if this fails, the resolution is to look for two MONDO classes with equivalence to the same external class
