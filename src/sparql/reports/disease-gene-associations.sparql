@@ -1,0 +1,32 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix RO: <http://purl.obolibrary.org/obo/RO_>
+
+
+SELECT DISTINCT ?entity ?entity_label ?property ?property_label ?gene WHERE 
+{
+
+  VALUES ?property { 
+    	RO:0004021
+        RO:0004028
+        RO:0004001
+        RO:0004004
+        RO:0004025
+        RO:0004020
+        RO:0004003 
+  }
+  
+  ?entity rdfs:subClassOf [ rdf:type owl:Restriction ;
+  owl:onProperty ?property ;
+  owl:someValuesFrom ?gene ] . 
+  ?entity rdfs:label ?entity_label .
+  
+ OPTIONAL {
+  ?property rdfs:label ?property_label .
+ }
+
+FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+FILTER (isIRI(?gene) && regex(str(?gene), "hgnc"))
+}

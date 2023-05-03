@@ -51,7 +51,7 @@ test_reason_equivalence: $(SRC)
 
 ../patterns/imports/seed.txt: ../patterns/dosdp-pattern.owl
 	$(ROBOT) query -f csv -i $< --query ../sparql/terms.sparql $@
-	
+
 ../patterns/imports/seed_sorted.txt: ../patterns/imports/seed.txt
 	cat ../patterns/imports/seed.txt | sort | uniq > $@
 
@@ -70,7 +70,7 @@ PATTERN_IMPORTS_OWL = $(patsubst %, ../patterns/imports/%_import.owl, $(PATTERN_
 pattern_ontology: ../patterns/pattern.owl
 	$(ROBOT) merge -i ../patterns/pattern.owl \
 	filter --select "<http://purl.obolibrary.org/obo/mondo/patterns*>" --select "self annotations" --signature true --trim true -o ../patterns/pattern-simple.owl
-	
+
 ../patterns/dosdp-patterns/README.md: .FORCE
 	pip install tabulate
 	python ../scripts/patterns_create_overview.py "../patterns/dosdp-patterns" "../patterns/data/matches" $@
@@ -79,7 +79,7 @@ pattern_readmes: ../patterns/dosdp-patterns/README.md
 
 MYDIR = .
 list: $(MYDIR)/*
-        
+
 ../../docs/editors-guide/quality-control-tests.md:
 	echo "# Custom SPARQL checks Mondo" > $@ &&\
 	echo "" >> $@ &&\
@@ -124,7 +124,7 @@ SPARQL_TAGS=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/tags/*-tags
 
 tmp/mondo-version_edit.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
-	
+
 tmp/mondo-version_mondo-owl.owl: mondo.owl
 	$(ROBOT) merge -i $< -o $@
 
@@ -140,9 +140,9 @@ tmp/mondo-version_2020.owl:
 tmp/mondo-version_2018.owl:
 	wget "https://osf.io/bqpjm/download?version=5&displayName=mondo-2018-01-06T03%3A29%3A32.300263%2B00%3A00.owl" -O $@
 	$(ROBOT) merge -i $@ -o $@.tmp.owl && mv $@.tmp.owl $@
-	
+
 tmp/mondo-version_2017.owl:
-	wget "https://osf.io/bqpjm/download?version=1&displayName=mondo-2017-10-19T06%3A08%3A40.163682%2B00%3A00.owl" -O $@	
+	wget "https://osf.io/bqpjm/download?version=1&displayName=mondo-2017-10-19T06%3A08%3A40.163682%2B00%3A00.owl" -O $@
 	$(ROBOT) merge -i $@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 # This combines all into one single command
@@ -180,7 +180,7 @@ reports/mondo_analysis.md: $(QC_REPORTS)
 	#sed -i 's/<style.*<[/]style>//g' $@
 	# This is a hack to get rid of <style> tags that are rendered very ugly by github.
 	perl -0777 -i.original -pe 's#<style[^<]*<\/style>##igs' $@
-	
+
 reports/mondo_analysis.pdf: $(QC_REPORTS)
 	jupyter nbconvert --execute --to pdf --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
 
@@ -202,7 +202,7 @@ tmp/mondo-tags-sparql.ttl: $(SRC) | dirs
 
 components/mondo-tags.owl: tmp/mondo-tags-dosdp.owl tmp/mondo-tags-sparql.ttl | dirs
 	$(ROBOT) merge $(addprefix -i , $^) annotate --ontology-iri $(ONTBASE)/$@ -o $@
-	
+
 clean:
 	rm -rf mondo-base.* mondo.json mondo.obo mondo.owl mondo-qc.* \
 		mondo_current_release* all_reports_1 filtered.* mondo-with-equivalents.* \
@@ -299,7 +299,7 @@ build-%:
 
 patterns: matches pattern_docs
 	make components/mondo-tags.owl
-	
+
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
 
@@ -323,9 +323,12 @@ related_annos_to_exact:
 related_to_exact_where_label:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-related-where-label.ru -o $(SRC)
 
-	
+
 rm_related_annos_to_exact:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/rm-related-exact-synonym-annotations.ru -o $(SRC)
+
+rm_xref_without_source:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-xref-without-source.ru -o $(SRC)
 
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
@@ -384,8 +387,8 @@ unmerge:
 	mv tmp/mondo-edit.obo mondo-edit.obo
 	make NORM
 	mv NORM mondo-edit.obo
-	
-	
+
+
 
 # This first merges a the result of a construct query to mondo-edit, than unmerges another
 construct-remerge-query-%: construct-query-% construct-query-%-new
@@ -399,7 +402,7 @@ construct-remerge-query-%: construct-query-% construct-query-%-new
 fix-disorder-names:
 	make construct-unmerge-query-construct-disorders-conformsTo-location-label
 	make construct-merge-query-construct-disorders-conformsTo-location-newlabel
-	
+
 
 update-merge-normalise-%: update-query-%
 	mv $(SRC).obo $(SRC)
@@ -472,17 +475,15 @@ sssom:
 oaklib:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
 
-tmp/%.sssom.tsv: tmp/mirror-%.json | sssom | oaklib | mondo_merge_db
-	sssom parse tmp/mirror-$*.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o $@
-
-qqq:
-	sssom parse tmp/mirror-mondo.json -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -o tmp/www.sssom.tsv
+tmp/%.sssom.tsv: tmp/mirror-%.json
+	sssom parse tmp/mirror-$*.json --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
 
 
-$(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv
+$(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv tmp/mondo-ingest.db
 	python ../scripts/add_object_label.py run $<
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
+	sssom annotate $@ -o $@ --mapping_set_id "http://purl.obolibrary.org/obo/mondo/mappings/mondo.sssom.tsv"
 	sssom sort $@ -o $@
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
@@ -537,7 +538,7 @@ all: reports/mondo_obsoletioncandidates.tsv
 # 2. Make sure the template file ends up in modules, and is named like modules/harrisons-view.tsv, where harrisons is the id
 # 3. Add the id to the MONDOVIEWS variable
 # 4. Run `sh run.sh make mondo-views` to generate all views, including your new one.
-# This will: 
+# This will:
 #     a) build the template (modules/mondo-%-view-top.owl)
 #     b) query for the children of the leafs in the template
 #     c) Remove all other MONDO classes from mondo.owl (other than the leafs and their children)
@@ -626,15 +627,15 @@ merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_clas
 	template --merge-before --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
 
-#ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
-#OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501 
-#--prefix "MONDOREL: http://purl.obolibrary.org/obo/mondo#" 
+#ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment
+#OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501
+#--prefix "MONDOREL: http://purl.obolibrary.org/obo/mondo#"
 
 #		remove --base-iri $(OBO)/$(ONT)"/MONDO_" --axioms external --preserve-structure false --trim false \
 #	remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T modules/mondo-harrisons-children-and-leafs.txt --select complement \
 
 
-open_%_report: 
+open_%_report:
 	open reports/mondo-$*-report.html
 
 mondo_obo:
@@ -643,8 +644,13 @@ mondo_obo:
 tmp/mondo-ingest.owl:
 	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
 
-mondo_merge_db: tmp/mondo-ingest.owl
-	semsql make tmp/mondo-ingest.db
+
+tmp/mondo-ingest.db: tmp/mondo-ingest.owl
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	@rm -f .template.db
+	@rm -f .template.db.tmp
 
 METRIC_SINCE_VERSION=2019-06-29
 METRIC_UNTIL_VERSION=2020-06-30
@@ -689,7 +695,7 @@ risky_obsoletion_check: efo_risks
 test_owlaxioms:
 	! grep "owl-axioms: " mondo-edit.obo
 
-test: test_owlaxioms 
+test: test_owlaxioms
 
 .PHONY: test_obs_reason
 test_obs_reason:
@@ -762,6 +768,11 @@ update-exclusion-reasons: python-install-dependencies
 	python3 ../scripts/exclusion_reasons_enum_updater.py \
 	--input-path-exclusion-reasons ../scripts/exclusion_reasons.csv \
 	--input-path-mondo-schema ../schema/mondo.yaml
+
+config/exclusion_reasons.tsv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTuZlr1P4ZUwdEnet_wN0RShGa8_9MYX-dAFva_xslNuiDrLP_MuIXPu0rzClq-xZQ47QhqzK2p74AA/pub?gid=1644570180&single=true&output=tsv" -O $@
+
+all: config/exclusion_reasons.tsv
 
 ##################################
 ##### Scheduled GH Actions #######
