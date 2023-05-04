@@ -46,7 +46,7 @@ _Note for users_: We do _not_ provide an authoritative list of what is a rare di
 
 The `subsets` listed indicate which authorities consider this disease "rare".
 
-If the list of `subsets` does not include `http://purl.obolibrary.org/obo/mondo#rare`, you can assume that the class was included in the subset as a grouping term, not as a rare disease.
+If the list of `subsets` does not include `http://purl.obolibrary.org/obo/mondo#rare` (or there is no `subsets` field at all), you can assume that the class was included in the subset as a grouping term, not as a rare disease.
 
 
 ## Rare Disease Slim
