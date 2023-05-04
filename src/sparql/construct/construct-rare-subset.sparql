@@ -5,22 +5,22 @@ prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-#classes with the axiom "'bearer of' some rare" AND/OR "has subset :‘gard_rare’" AND limited to disease branch (ie not including the disease susceptibility branch
-
-CONSTRUCT {
-  ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#mondo_rare> .
+INSERT {
+  ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#rare> .
 }
 
 WHERE
 {
-  ?cls a owl:Class;
-  rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
+    
+  VALUES ?subset { 
+    <http://purl.obolibrary.org/obo/mondo#gard_rare> 
+    <http://purl.obolibrary.org/obo/mondo#mondo_rare> 
+    <http://purl.obolibrary.org/obo/mondo#omim_rare>
+    <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
+    <http://purl.obolibrary.org/obo/mondo#nord_rare> 
+  }
 
-  { ?cls rdfs:subClassOf+ [
-               owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
-               owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021136> ] }
-
-  union { ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#gard_rare>. }
+  ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> ?subset.
 
 
   FILTER NOT EXISTS {
