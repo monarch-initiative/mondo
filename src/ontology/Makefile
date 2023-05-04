@@ -226,7 +226,9 @@ filtered.owl: filtered.obo skos.ttl
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
 # note: $(ROBOT) will protect redundant annotated axioms
 reasoned.owl: filtered.owl
-	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK $(ANN) -o $@
+	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK \
+		remove --term MONDO:0700097 $(ANN) -o $@
+
 
 test: reasoned-plus-equivalents.owl
 
