@@ -1,11 +1,12 @@
 ---
 ---
-# Mondo Disease Ontology Workshops
+# Mondo Disease Ontology Workshops and Outreach Calls
 
 Details and summaries for upcoming and past Mondo workshops. 
 
-## Workshops
+## Workshops and Outreach Calls
 
+- [Mondo Outreach Calls](#outreach)
 - [Mondo Workshop (February 01, 2023)](#feb-2023)
 - [Using the Mondo Disease Ontology for Disease Data Curation (June 08, 2022)](#june-2022)
 - [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
@@ -14,6 +15,22 @@ Details and summaries for upcoming and past Mondo workshops.
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
 - [Mondo Introductory Workshop (November 2018)](#november-2018)
+
+
+<a name="outreach"></a> 
+## Mondo Outreach Calls 2023
+
+The goal of the **Mondo Outreach Calls** is to bring together stakeholders and clinical terminology experts with the goal of discussing specific use cases and requirements, and improving Mondo with a focus of our user needs in mind. Every month we plan to invite a group to present their use case (not necessarily directly related to Mondo), and learn if there is anything we can do from the Mondo technical side to better support them. During the call, the Mondo technical team will give an overview of the latest developments and followed by a ~20 minute  talk + discussion from specific users where we’ll discuss paths forward on how we can work together. 
+
+
+Date | Time | Presenter 
+-- | -- | --
+June 02 | 9 AM PT/12 PM ET | TBD
+June 30 | 9 AM PT/12 PM ET | TBD
+July 28 | 9 AM PT/12 PM ET | TBD
+Aug 25 | 9 AM PT/12 PM ET | TBD
+Sept 22 | 9 AM PT/12 PM ET | TBD
+Oct 20 | 9 AM PT/12 PM ET | TBD
 
 <a name="feb-2023"></a> 
 ## Mondo Workshops
