@@ -11,12 +11,12 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?cls ?prefix
 
-WHERE 
+WHERE
 {
   VALUES ?mapping { oboInOwl:hasDbXref }
-  ?cls a owl:Class; 
+  ?cls a owl:Class;
      	?mapping ?value .
-  
+
   FILTER NOT EXISTS {
   	?cls owl:deprecated ?deprecated .
   }
@@ -55,6 +55,7 @@ WHERE
       "OGMS",
       "OMIM",
       "OMIMPS",
+      "OMIA",
       "OMOP",
       "ONCOTREE",
       "Orphanet",
@@ -69,6 +70,6 @@ WHERE
     ))
   FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
   BIND( STRBEFORE(str(?value),":") AS ?prefix)
-  
+
 } ORDER BY ?cls
 
