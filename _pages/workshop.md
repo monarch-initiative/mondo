@@ -23,10 +23,10 @@ Details and summaries for upcoming and past Mondo workshops.
 The goal of the **Mondo Outreach Calls** is to bring together stakeholders and clinical terminology experts with the goal of discussing specific use cases and requirements, and improving Mondo with a focus of our user needs in mind. Every month we plan to invite a group to present their use case (not necessarily directly related to Mondo), and learn if there is anything we can do from the Mondo technical side to better support them. During the call, the Mondo technical team will give an overview of the latest developments and followed by a ~20 minute  talk + discussion from specific users where we’ll discuss paths forward on how we can work together. 
 
 
-Date | Time | Presenter 
--- | -- | --
-June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee from [NORD](https://rarediseases.org/) 
-June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu from [GARD](https://rarediseases.info.nih.gov/about)
+Date | Time | Presenter | Organization
+-- | -- | -- | --
+June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee | [NORD](https://rarediseases.org/) 
+June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu | [GARD](https://rarediseases.info.nih.gov/about)
 July 28 | 9 AM PT/12 PM ET | TBD
 Aug 25 | 9 AM PT/12 PM ET | TBD
 Sept 22 | 9 AM PT/12 PM ET | TBD
