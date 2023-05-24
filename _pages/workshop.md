@@ -25,8 +25,8 @@ The goal of the **Mondo Outreach Calls** is to bring together stakeholders and c
 
 Date | Time | Presenter 
 -- | -- | --
-June 02 | 9 AM PT/12 PM ET | [NORD](https://rarediseases.org/)
-June 30 | 9 AM PT/12 PM ET | TBD
+June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee from [NORD](https://rarediseases.org/): 
+June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu from [GARD](https://rarediseases.info.nih.gov/about)
 July 28 | 9 AM PT/12 PM ET | TBD
 Aug 25 | 9 AM PT/12 PM ET | TBD
 Sept 22 | 9 AM PT/12 PM ET | TBD
