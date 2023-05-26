@@ -351,10 +351,10 @@ tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/r
 	cat $^ | sort | uniq > $@
 .PRECIOUS: tmp/rare-seed.txt
 
-subsets/mondo-rare.owl: $(ONT).owl tmp/rare-seed.txt | $(SUBSETDIR)
+subsets/mondo-rare.owl: $(ONT)-base.owl tmp/rare-seed.txt | $(SUBSETDIR)
 	$(ROBOT) extract --method subset --input $< -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: $(SUBSETDIR)/%.owl
+.PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
 TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch
 subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
