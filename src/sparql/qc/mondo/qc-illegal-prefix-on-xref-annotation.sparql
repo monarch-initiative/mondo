@@ -11,19 +11,19 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?cls ?property ?prefix ?source
 
-WHERE 
+WHERE
 {
     VALUES ?property { oboInOwl:source oboInOwl:hasDbXref }
-    ?cls a owl:Class; 
+    ?cls a owl:Class;
     		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
        	?mapping ?value .
-    
+
       ?axiom owl:annotatedSource ?cls ;
              owl:annotatedProperty ?mapping ;
              owl:annotatedTarget ?value ;
              ?property ?source .
-      
-    
+
+
     FILTER NOT EXISTS {
     	?cls owl:deprecated ?deprecated .
     }
@@ -72,6 +72,7 @@ WHERE
       "OGMS",
       "OMIM",
       "OMIMPS",
+      "OMIA",
       "OMIT",
       "OMOP",
       "ONCOTREE",
