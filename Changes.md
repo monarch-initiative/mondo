@@ -1,3 +1,181 @@
+# 2023-06-01
+## Overview:
+* Number of new terms: 106
+* Number of changed labels: 6
+* Number of changed definitions: 6
+* Number obsoleted terms: 5
+* Number of new obsoletion candidates: 14
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100351 | POLD1-related polyposis and colorectal cancer syndrome | An autosomal dominant hereditary syndrome caused by germline pathogenic POLD1 variants. It is characterized by the presence of colorectal polyps and colorectal cancer. |
+| MONDO:0100472 | lissencephaly spectrum disorder with complex brainstem malformation | A lissencephaly spectrum disorder that manifests as posterior predominant pachygyria (ranging from mild severity to classic lissencephaly) and brainstem malformations which include brainstem dysplasia (typically with reduced anteroposterior thickness and transverse broadening of the pons/medulla) and midline crossing defects (anterior commissure, transverse pontine fibers, pyramidal tract, callosum hypoplasia). |
+| MONDO:0100499 | multiple congenital anomalies due to 14q32.2 imprinting defect | Multiple congenital anomalies caused by imprinting defects at 14q32.2 include Kagami-Ogata syndrome and Temple syndrome. Kagami-Ogata syndrome is characterized by typical facial features, skeletal abnormalities (including \coat-hanger ribs\", and bell-shaped thorax), abdominal wall defects, and developmental delay, and is caused by defects or absence of maternally derived imprinting signals (including paternal UPD14). Temple syndrome is a less specific phenotype including intrauterine and postnatal growth restriction, hypotonia, feeding difficulties in infancy, truncal obesity, and small feet and hands. Temple syndrome is caused by defects or absence of paternally derived imprinting signals (including maternal UPD14)." |
+| MONDO:0100507 | multiple congenital anomalies due to 14q32.2 paternally expressed gene defect | Temple syndrome is a less specific phenotype including intrauterine and postnatal growth restriction, hypotonia, feeding difficulties in infancy, truncal obesity, and small feet and hands. Temple syndrome is caused by defects or absence of paternally derived imprinting signals (including maternal UPD14). |
+| MONDO:0100508 | salivary gland type cancer of the breast | A group of uncommon neoplasms, usually seen in the salivary glands but occurring in the breast, with a variable clinicopathologic spectrum and divided into those with myoepithelial differentiation and those without. This group includes mammary adenoid cystic carcinoma, adenoid cystic carcinoma, mucoepidermoid carcinoma, acinic cell carcinoma, polymorphous low-grade adenocarcinoma and oncocytic carcinoma. |
+| MONDO:0100512 | mitochondrial DNA depletion syndrome, hepatocerebral form | |
+| MONDO:0800439 | syndromic complex neurodevelopmental disorder | A disorder that involves more than one phenotype associated with the central nervous system, including but not limited to intellectual disability, autism, and seizures (epilepsy), and also a distinctive pattern of other features including dysmorphisms and/or congenital malformations. |
+| MONDO:0800440 | HAND1 related congenital heart defect | A heart disease that is present at birth caused by a variation in HAND1. Representative examples include ventricular septal defect, tetralogy of Fallot, and double outlet right ventricle. |
+| MONDO:0800441 | NKX2.5-related congenital, conduction and myopathic heart disease | A heart disease that includes congenital heart defects, abnormal cardiac conduction or myopathy. Congenital heart defects consists of any heart disease that is present at birth. Representative examples include atrial septal defect, ventricular septal defect, tetralogy of Fallot, and hypoplastic left heart syndrome. |
+| MONDO:0800442 | MYH-6 related congenital heart defects | A heart disease that is present at birth that is caused by a variation in MYH-6. Representative examples include atrial septal defect, ventricular septal defect, tetralogy of Fallot and hypoplastic left heart syndrome. |
+| MONDO:0800443 | DEAF1-associated neurodevelopmental disorder | A neurodevelopmental disorder characterized predominantly by intellectual disability, speech delay, motor delay, autism, sleep disturbances, and a high pain threshold. This disorder may be inherited in an autosomal dominant or autosomal recessive manner, likely due to mono-allelic variant resulting in altered function and bi-allelic variants resulting in loss of function, respectively. |
+| MONDO:0850094 | drug-induced hearing loss | |
+| MONDO:0850098 | oligoasthenoteratozoospermia | |
+| MONDO:0850122 | solid adenocarcinoma with mucin production | |
+| MONDO:0850123 | autonomic nervous system benign neoplasm | |
+| MONDO:0850126 | testicular sex cord-stromal benign neoplasm | A sex cord-stromal benign neoplasm that arises from the testis. |
+| MONDO:0850127 | epithelioid inflammatory myofibroblastic sarcoma | |
+| MONDO:0850144 | germ cell benign neoplasm | A benign neoplasm that derives from germ cells. |
+| MONDO:0850150 | kidney cortex disease | A kidney disease that is located in the kidney cortex. |
+| MONDO:0850170 | spinal muscular atrophy type 0 | A childhood spinal muscular atrophy that is evident before birth and characterized by diminished movement in the womb, joint deformities, extremely weak muscle tone and very weak respiratory muscles. |
+| MONDO:0850196 | medulloblastoma WNT activated | A medulloblastoma that is characterized as a molecular subtype by activation of the WNT pathway and TP53 mutations may be present or absent. |
+| MONDO:0850197 | medulloblastoma SHH activated | A medulloblastoma that is characterized as a molecular subtype by activation of the sonic hedgehog (SHH) pathway and TP53 mutations that may be present or absent. |
+| MONDO:0850198 | medulloblastoma non-WNT/non-SHH | A medulloblastoma that is characterized as a molecular subtype that is not associated with activation of the WNT pathway or sonic hedgehog (SHH) pathway and TP53 mutations are absent. |
+| MONDO:0850225 | autoimmune cholangitis | An autoimmune hepatitis that is characterized by primary biliary cirrhosis clinical, biochemical, and histologic characteristics with antinuclear antibody positive sera. |
+| MONDO:0850230 | chronic urticaria | An urticaria that is characterized by the presence of urticaria for a period exceeding 6 weeks, assuming symptoms for most days of the week. |
+| MONDO:0850231 | erythema nodosum | A panniculitis that is characterized by sudden onset of painful, erythematous, subcutaneous nodules mainly localized to the pretibial areas. Lesions are usually bilateral and symmetrical, ranging from 1 to 5 cm in diameter. |
+| MONDO:0850257 | mucinous pancreas adenocarcinoma | A pancreatic adenocarcinoma that derives from epithelial cells originating in glandular tissue, which produce mucin. |
+| MONDO:0850267 | childhood acute megakaryoblastic leukemia | An acute megakaryocytic leukemia that is characterized by fusion oncogenes involving transcriptional regulators in childhood. |
+| MONDO:0850269 | core binding factor acute myeloid leukemia | An acute myeloid leukemia that is characterized by the presence of t(8;21)(q22;q22) or inv(16)(p13q22)/t(16;16)(p13;q22). These cytogenetic abnormalities result in disruption of the transcription factor CBF, which is a regulator of normal hematopoiesis. |
+| MONDO:0850271 | myeloid leukemia associated with down syndrome | An acute megakaryocytic leukemia occurring in children with Down syndrome and that has material basis in mutation in the GATA1 gene. |
+| MONDO:0850282 | chronic asthma | An asthma that is characterized by the development of persistent airway inflammation and recurrent attacks of breathlessness and wheezing, which vary in severity and frequency. |
+| MONDO:0850283 | acute asthma | An asthma that is characterized by severe and sudden onset of increasing wheezing, airways closing, smooth muscle contraction, mucus plugging and lower airway edema that may be reversible upon treatment. |
+| MONDO:0850284 | extrinsic asthma | A chronic asthma that is triggered by an allergen and that is characterized by an immune system overreaction to a harmless substance, such as pollen or dust, with the subsequent release of immunoglobin E (IgE) antibodies. |
+| MONDO:0850285 | environmental induced asthma | An intrinsic asthma that is characterized by exposure to tobacco smoke and other inflammatory gases or particulate matter. |
+| MONDO:0850286 | exercise-induced bronchoconstriction | An intrinsic asthma that is characterized by narrowing of the airways during or shortly after exercise. |
+| MONDO:0850287 | aspirin-induced respiratory disease | An intrinsic asthma that is characertized by severe and prolonged airway obstruction after the ingestion of aspirin or other non-steroidal anti-inflammatory drugs. |
+| MONDO:0850289 | human betaherpesvirus 5 infectious disease | A disease caused by infection with Human betaherpesvirus 5. |
+| MONDO:0850301 | pemphigoid | An autoimmune disease of skin and connective tissue that is characterized by subepidermal blistering especially in the lower abdomen, groin, and flexor surfaces of the extremities, creating tense blisters that do not break easily. |
+| MONDO:0850302 | intracranial meningioma | A meningioma that arises within the cranial cavity. |
+| MONDO:0850303 | supratentorial meningioma | A meningioma that affects the supratentorial brain. |
+| MONDO:0850306 | latent autoimmune diabetes in adults | A type 1 diabetes mellitus that is characterized by a less intensive autoimmune process, highly variable β-cell destruction, different degrees of insulin resistance and heterogeneous titre and pattern of islet autoantibody, sharing features with both type 1 and type 2 diabetes mellitus. |
+| MONDO:0850312 | anaplastic pleomorphic xanthoastrocytoma | A malignant astrocytoma that is characterized by the presence of five or more mitoses per 10 high-power fields. |
+| MONDO:0850332 | IDH-mutant anaplastic astrocytoma | An anaplastic astrocytoma carrying IDH mutations. |
+| MONDO:0850333 | IDH-wildtype anaplastic astrocytoma | An anaplastic astrocytoma lacking mutations in IDH1 or IDH2 genes. |
+| MONDO:0850335 | IDH-wildtype glioblastoma | A glioblastoma that is characterized by high cellularity, high mitotic activity, necrosis or microvascular proliferation and that lacks mutations in IDH genes. |
+| MONDO:0850339 | posterior fossa ependymoma | A high grade ependymoma that is located within the posterior fossa. |
+| MONDO:0850340 | supratentorial ependymoma | A high grade ependymoma that is located within the supratentorial brain. |
+| MONDO:0850346 | oral rhabdomyosarcoma | A rhabdomyosarcoma located in the oral cavity. |
+| MONDO:0850349 | astroblastoma, MN1-altered | An astroblastoma that is characterized by astroblastoma-like morphology with MN1 rearrangements involving the meningioma 1 (MN1) gene on chromosome 22q. |
+| MONDO:0850353 | castration-resistant prostate carcinoma | A prostate carcinoma that is characterized by continued growth and spread despite the surgical removal of the testes or medical intervention to block androgen production. |
+| MONDO:0850368 | immunoglobulin heavy-and-light chain | An amyloidosis that is characterized by both Ig heavy chains and LC contribute to the amyloid fibrils. |
+| MONDO:0850415 | rhabdomyolysis-myalgia syndrome | A myopathy that is characterized by muscle breakdown (rhabdomyolysis), heat and exertion-related muscle pain (myalgia) and cramping symptoms, severe muscle pain, sudden elevation and subsequent fall of serum creatine phosphokinase levels and products of muscle breakdown in the urine (myoglobinuria). Associated with RYR1 variations. Rhabdomyolysis is associated with a range of external triggers, including strenuous exercise beyond the limit of fatigue, heat stress, illicit drug or alcohol abuse, use of supplements or certain medications, recent viral illness or muscle trauma. |
+| MONDO:0850416 | autoimmune epilepsy | An epilepsy that is characterized by new-onset refractory seizures along with subacute progressive cognitive decline and behavioral or psychiatric dysfunction. |
+| MONDO:0850417 | tuberculous encephalopathy | A tuberculosis that is characterized by cerebral edema sometimes with features similar to acute disseminated encephalomyelitis (ADEM) and may manifest with a variety of symptoms ranging from focal neurological deficits to convulsions and decreased conscious state. |
+| MONDO:0850418 | diffuse large B-cell lymphoma activated B-cell type | A diffuse large B-cell lymphoma that is characterized by the expression of CD44, PKCbeta1, Cyclin D2, BCL-2, and IRF4/MUM1 genes. |
+| MONDO:0850419 | diffuse large B-cell lymphoma germinal center B-cell type | A diffuse large B-cell lymphoma that is characterized by the expression of CD10, BCL-6, A-myb, and LMO2 genes, BCL-2 translocation, and c-REL amplification. |
+| MONDO:0850420 | acute necrotizing pancreatitis | An acute pancreatitis that is characterized by one or more areas of necrosis in the pancreas with varying degree of involvement of the surrounding tissues or organ systems. |
+| MONDO:0850421 | acute hemorrhagic pancreatitis | An acute pancreatits that is characterized by acute inflammation of the pancreas in which the initial edematous pancreatitis evolved into necrosis accompanied by hemorrhage. |
+| MONDO:0850449 | mixed phenotype acute leukemia with BCR-ABL1 | An acute biphenotypic leukemia that is characterized by blasts that also carry the translocation t(9;22)(q34.1;q11.2) by karyotypic analysis or the BCR-ABL1 translocation by FISH or PCR. |
+| MONDO:0850450 | mixed phenotype acute leukemia with MLL rearranged | An acute biphenotypic leukemia that is characterized by blasts which carry a translocation between the MLL (KMT2A) gene at 11q23.3 and another gene partner. |
+| MONDO:0850451 | mixed phenotype acute leukemia, B/myeloid | An acute biphenotypic leukemia that is characterized by blasts which express B-lymphoid and myeloid lineage markers but are negative for MLL translocation and t(9;22)(q34;q11.2) translocation. |
+| MONDO:0850452 | mixed phenotype acute leukemia,T/myeloid | An acute biphenotypic leukemia that is characterized by blasts that express antigens of both T and myeloid antigens. |
+| MONDO:0850468 | BN2 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as BN2 with high probability by the LymphGen algorithm. This is based on a combination of genetic features and BN2 DLBCLs often, but do not always, have a translocation involving the BCL6 locus and/or some combination of mutations affecting NOTCH2, TNFAIP3, BCL10 and UBE2A. This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting CD70, which can be coding or non-coding. |
+| MONDO:0850469 | EZB diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as EZB with high probability by the LymphGen algorithm. This is based on a combination of genetic features and EZB DLBCLs often, but do not always, have hot spot mutations in EZH2 and/or a BCL2 translocation. This class can be further subdivided into two sub-classes EZB-MYC+ and EZB-MYC- using the double hit gene expression signature (DHITsig). This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting IRF8, which can be coding or non-coding. |
+| MONDO:0850470 | MCD diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as MCD with high probability by the LymphGen algorithm. This is based on a combination of genetic features and MCD DLBCLs often, but do not always, have the most common hot spot mutation in MYD88 (L265P) and/or activating mutations in CD79B. This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting PIM1 and/or ETV6, which can be coding or non-coding. |
+| MONDO:0850471 | N1 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as N1 with high probability by the LymphGen algorithm. This is based on a combination of genetic features. Although N1 DLBCLs always have an activating mutation affecting NOTCH1, LymphGen can assign cases with this mutation to other classes, depending on the presence of other genetic features. |
+| MONDO:0850472 | ST2 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as ST2 with high probability by the LymphGen algorithm. This is based on a combination of genetic features and ST2 DLBCLs often, but do not always, have missense or nonsense mutations affecting TET2 and NFKBIA. This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting some combination of SGK1, ZFP36L1, SOCS1, HIST1H1E and CD83, which can be coding or non-coding. |
+| MONDO:0850473 | A53 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is characterized by aneuploidy with TP53 inactivation. |
+| MONDO:0850492 | acute myeloid leukemia, t(8;21)(q22; q22.1) | An acute myeloid leukemia associated with t(8;21)(q22;q22) resulting in RUNX1-RUNX1T1 fusion protein expression. The bone marrow and the peripheral blood show large myeloblasts with abundant basophilic cytoplasm, often containing azurophilic granules. |
+| MONDO:0850495 | acute myeloid leukemia, t(1;22)(p13;q13) | An acute myeloid leukemia typically showing megakaryocytic maturation and associated with t(1;22)(p13;q13), resulting in the expression of RBM15-MKL1 fusion protein. |
+| MONDO:0850618 | injection anthrax | An anthrax disease that is characterized by infection at the injection site or deep under the skin or in the muscle where the drug was injected and is caused by heroin contaminated with anthrax spores. |
+| MONDO:0851102 | pulmonary artery disease | |
+| MONDO:0858910 | dropped head syndrome | A spinal disease that is characterized by severe kyphotic deformity of the cervicothoracic spine and by severe weakness of the cervical paraspinal muscles that results in the passively correctable chin-on-chest deformity. This syndrome is defined by weakness of neck extensor muscles against gravity with or without weakness of neck flexor muscles. |
+| MONDO:0858916 | pituitary blastoma | A pituitary cancer that is characterized by features of Cushing disease, with elevated blood ACTH levels and hypercortisolism arising within the fetal anterior pituitary and associated with DICER1 mutations. |
+| MONDO:0858917 | cauda equina neuroendocrine tumor | A cauda equina neoplasm that is a slow-growing, well-differentiated neuroendocrine tumor arising from the cauda equina. |
+| MONDO:0858921 | EWSR1-negative small round cell tumor | A small cell sarcoma that is characterized by the absence of EWSR1 rearrangement and the presence of small round malignant cells with a small amount of cytoplasm. |
+| MONDO:0858926 | developmental delay, hypotrophy, and dysmorphic features without moebius syndrome | A syndrome that is characterized by developmental delay, hypotrophy, and dysmorphic features and that has material basis in homozygous ultra-rare REV3L variant (T2753R). |
+| MONDO:0858939 | diffuse pediatric-type high-grade glioma, H3-wildtype and IDH-wildtype | A high grade glioma that is characterized by the absence of histone H3, IDH1, and IDH2 mutations. |
+| MONDO:0858940 | infant-type hemispheric glioma | A malignant astrocytoma that is characterized by receptor tyrosine kinase fusions in the NTRK family, ROS1, ALK, or MET genes, that arises in the cerebral hemisphere and occurs in early childhood. |
+| MONDO:0858944 | myxoid glioneuronal tumor | A central nervous system benign neoplasm that is characterized by a dinucleotide mutation at codon 385 of the PDGFR gene. It usually occurs in the septum pellucidum but has also been described in the corpus callosum and periventricular white matter of the lateral ventricle. It is composed of oligodendrocyte-like cells in a prominent myxoid stroma. |
+| MONDO:0858950 | traumatic brain injury | A brain disease that is characterized by brain dysfunction caused by an outside force, usually a violent blow to the head. |
+| MONDO:0858956 | diffuse leptomeningeal glioneuronal tumor | A central nervous system benign neoplasm that is characterized by the presence of clear glial neoplastic cells reminiscent of oligodendroglioma. |
+| MONDO:0858957 | multinodular and vacuolating neuronal tumor | A central nervous system benign neoplasm that is composed of cells with glial and/or neuronal differentiation forming multiple nodules with prominent vacuolation and that affecting the cerebral hemispheres. |
+| MONDO:0858958 | high-grade astrocytoma with piloid features | An anaplastic astrocytoma that is characterized by high-grade piloid and/or glioblastoma-like histological features. It may occur anywhere in the central nervous system but most often arises in the posterior fossa. |
+| MONDO:0858959 | polymorphous low grade neuroepithelial tumour of the young | A central nervous system benign neoplasm that is characterized by the presence of oligodendroglioma-like components, may also contain astrocytic components and is associated with seizures and in many cases refractory epilepsy. |
+| MONDO:0858960 | spindle cell oncocytoma | A posterior pituitary benign neoplasm that is characterized by the presence of spindle cells with eosinophilic, granular cytoplasm forming fascicles. |
+| MONDO:0858966 | central nervous system tumor with bcor internal tandem duplication | A central nervous system embryonal tumor that is characterized by the presence of uniform oval or spindle-shaped cells with round or oval nuclei, pseudorosette formation, and heterozygous internal tandem duplication in exon 15 of the BCOR gene. |
+| MONDO:0858967 | primary intracranial sarcoma, DICER1-mutant | A brain sarcoma that is composed of malignant pleomorphic or spindle neoplastic cells typically demonstrating myogenic and/or chondroid differentiation. Cytoplasmic eosinophilic globules and myxoid stroma formation are usually present. It is associated with mutations in the DICER1 gene. |
+| MONDO:0858974 | breast implant illness | A syndrome that is characterized by fatigue, problems with memory or concentration, joint and muscle pain, hair loss, weight changes and anxiety/depression. This syndrome may be related to breast implants |
+| MONDO:0859588 | keratosis pilaris atrophicans faciei | A keratosis pilaris atrophicans that is characterized by scar-like follicular depressions and loss of hair primarily in the eyebrow area. |
+| MONDO:0859591 | childhood low-grade glioma | A low-grade glioma that occurs in children and encompasses tumors of astrocytic, oligodendroglial, and mixed glial-neuronal histology. |
+| MONDO:0859592 | IDH-mutant and 1p/19q-codeleted oligodendroglioma | An anaplastic oligodendroglioma that has material basis in IDH gene family mutation and combined whole-arm losses of 1p and 19q (1p/19q codeletion). |
+| MONDO:0859597 | cns neuroblastoma with FOXR2 activation | A central nervous system neuroblastoma that is characterized by FOXR2 activation and that is composed of small, round cells with hyperchromatic nuclei surrounded by a clear halo. |
+| MONDO:0859598 | erythroleukemia | An acute erythroid leukemia characterised by the presence of at least 50% erythroid precursors and at least 20% myeloblasts in the bone marrow. |
+| MONDO:0859614 | diffuse low-grade glioma, MAPK pathway–altered | A low grade glioma that is characterized by a gene alteration that results in a MAPK pathway abnormality, with morphological features of astrocytoma or oligodendroglioma. |
+| MONDO:0859615 | diffuse astrocytoma, MYB- or MYBL1-altered | A diffuse astrocytoma that is a diffusely infiltrative astroglial neoplasm composed of monomorphic cells with genetic alterations in MYB or MYBL1. |
+| MONDO:0859689 | hepatobiliary benign neoplasm | |
+| MONDO:0859690 | malignant cystadenoma | |
+| MONDO:0859747 | grade I lymphomatoid granulomatosis | A lymphomatoid granulomatosis that is characterized by the presence of a polymorphous lymphoid infiltrate without cytologic atypia. Large lymphocytes are absent or rare. By in situ hybridization, EBV-positive cells are infrequently seen. |
+| MONDO:0859748 | grade II lymphomatoid granulomatosis | A lymphomatoid granulomatosis that is characterized by the presence of occasional large lymphoid cells or immunoblasts in a polymorphous background. Necrosis is more commonly seen as compared to grade I lymphomatoid granulomatosis. By in situ hybridization, EBV-positive cells are readily seen. |
+| MONDO:0859749 | grade III lymphomatoid granulomatosis | A lymphomatoid granulomatosis that is characterized by the presence of aggregates of neoplastic large B-lymphocytes, usually admixed with pleomorphic and Hodgkin-like cells, in a background of chronic inflammation. Necrotic changes are present and are usually extensive. |
+| MONDO:0859761 | SLC12A2-related autosomal recessive neonatal-developmental delay-intellectual disability-feeding difficulty-sensorineural deafness syndrome | |
+| MONDO:0859762 | SLC12A2-related autosomal dominant infantile-developmental delay-intellectual disability-sensorineural deafness syndrome | |
+| MONDO:0859763 | mosaic neurofibromatosis type 1 | |
+| MONDO:0859764 | mosaic NF2-related schwannomatosis | |
+| MONDO:0859765 | mosaic schwannomatosis | |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0008685 | Wolff-Parkinson-White syndrome | Wolff-Parkinson-white syndrome | Wolff-Parkinson-White syndrome |
+| MONDO:0009636 | mitochondrial DNA depletion syndrome 3 (hepatocerebral type) | mitochondrial DNA depletion syndrome 3 | mitochondrial DNA depletion syndrome 3 (hepatocerebral type) |
+| MONDO:0009747 | mitochondrial DNA depletion syndrome 6 (hepatocerebral type) | Navajo neurohepatopathy | mitochondrial DNA depletion syndrome 6 (hepatocerebral type) |
+| MONDO:0010060 | mitochondrial DNA depletion syndrome 7 (hepatocerebral type) | infantile onset spinocerebellar ataxia | mitochondrial DNA depletion syndrome 7 (hepatocerebral type) |
+| MONDO:0014382 | Tatton-Brown-Rahman overgrowth syndrome | tall stature-intellectual disability-facial dysmorphism syndrome | Tatton-Brown-Rahman overgrowth syndrome |
+| MONDO:0100488 | CDH1-related diffuse gastric and lobular breast cancer syndrome | CDH1-related diffuse gastric and lobular breast cancer | CDH1-related diffuse gastric and lobular breast cancer syndrome |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0016003 | ehrlichiosis | Human ehrlichiosis and anaplasmosis describe a group of acute febrile tick-borne diseases characterized by an overlapping clinical picture that includes fever, headache, myalgias, arthralgias, skin eruptions, gastrointestinal symptoms and neurological manifestations. Diseases in this group include human monocytotropic ehrlichiosis (HME), human granulocytotropic anaplasmosis (HGA), and human ehrlichiosis ewingii (HEE). | An disease or disorder caused by infection with Ehrlichia. |
+| MONDO:0000332 | sennetsu fever | An ehlrichiosis caused by Neorickettsia sennetsu. | A disease caused by infection with Neorickettsia sennetsu. |
+| MONDO:0005775 | G6PD deficiency | An X-linked recessive inherited disorder caused by mutations in the G6PD gene. It is characterized by the absence or presence of very low levels of glucose-6-phosphate dehydrogenase. Patients develop hemolytic anemia usually in response to infection or exposure to drugs. | An X-linked genetic condition caused by alterations in the gene G6PD that result in moderately to severely decreased activity levels of the enzyme glucose-6-phosphate dehydrogenase. Most individuals with G6PD deficiency are asymptomatic. Individuals with G6PD variants that cause G6PD deficiency are at risk for acute hemolytic anemia in response to certain medication exposures, chemical exposures, infections, or consumption of fava beans. |
+| MONDO:0025303 | anaplasmosis | An disease or disorder caused by infection with Anaplasma. | A disease or disorder caused by infection with Anaplasma. |
+| MONDO:0100150 | RYR1-related myopathy | | A disorder of the musculoskeletal system caused by pathogenic variants in the RYR1 gene, which encodes the ryanodine receptor type 1 protein. These variants are associated with a variety of overlapping features characterized by symmetric proximal muscle weakness, often with pronounced facial weakness with or without dysmorphism and ophthalmoparesis/ophthalmoplegia with ptosis, bulbar weakness, significant respiratory involvement, severe neonatal hypotonia, scoliosis, orthopedic deformities including arthrogryposis, hip dislocation, club feet, and King Denborough syndrome (pectus carinatum or excavatum, short stature, joint contractures, facial and skeletal deformities), malignant hyperthermia susceptibility, anesthesia-induced rhabdomyolysis, fatigue, exercise-induced hyperthermia/exertional heat stroke, and exertional myalgia. Histologic findings on skeletal muscle biopsy reveal a wide range of structural abnormalities and can include central core disease, multiminicore disease, cone-rod myopathy, centronuclear myopathy, and congenital fiber-type disproportion. |
+| MONDO:0010480 | anemia, nonspherocytic hemolytic, due to G6PD deficiency | | An X-linked genetic condition caused by alterations in the gene G6PD that result in severely decreased activity levels of the enzyme glucose-6-phosphate dehydrogenase. Individuals with hemizygous G6PD variants associated with CNSHA have CNSHA. Individuals with G6PD variants that cause CNSHA are at risk for acute hemolytic anemia in response to certain medication exposures, chemical exposures, infections, or consumption of fava beans. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0007981 | obsolete metachromatic leukodystrophy, adult-onset, with normal arylsulfatase A |
+| MONDO:0020245 | obsolete disease predisposing to age-related macular degeneration |
+| MONDO:0100318 | obsolete SARS-CoV-2-related disease |
+| MONDO:0100321 | obsolete viral disease or post-viral disorder |
+| MONDO:0100336 | obsolete infectious disease or post-infectious disorder |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0007761 | hyperlipoproteinemia type IV |
+| MONDO:0007903 | Li-Fraumeni syndrome 1 |
+| MONDO:0020732 | progeria |
+| MONDO:0010859 | atrioventricular septal defect 3 |
+| MONDO:0011333 | light fixation seizure syndrome |
+| MONDO:0012018 | myopathy, myosin storage, autosomal dominant |
+| MONDO:0012233 | Li-Fraumeni syndrome 2 |
+| MONDO:0012279 | congenital muscular dystrophy merosin-positive |
+| MONDO:0019765 | celosomia |
+| MONDO:0020342 | congenital myopathy with excess of thin filaments |
+| MONDO:0024677 | pancreatic insulinoma |
+| MONDO:0044747 | human anaplasmosis |
+| MONDO:0100300 | hereditary capillary infantile hemangioma |
+| MONDO:0800297 | neuronal ceroid lipofuscinosis, late infantile |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
 # 2023-05-01
 
 ## Overview:
