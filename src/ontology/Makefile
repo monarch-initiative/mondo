@@ -271,7 +271,7 @@ $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 
-OTHER_SRC=imports/axioms.owl
+OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl
 
 $(ONT)-base.owl: reasoned.owl
 	$(ROBOT) remove --input $< --select imports --trim false \
@@ -353,8 +353,8 @@ tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/r
 	cat $^ | sort | uniq > $@
 .PRECIOUS: tmp/rare-seed.txt
 
-subsets/mondo-rare.owl: $(ONT)-base.owl tmp/rare-seed.txt | $(SUBSETDIR)
-	$(ROBOT) extract --method subset --input $< -T tmp/rare-seed.txt --output $@ &&\
+subsets/mondo-rare.owl: $(ONT)-base.owl imports/hgnc_import.owl  tmp/rare-seed.txt | $(SUBSETDIR)
+	$(ROBOT) merge -i $< -i imports/hgnc_import.owl extract --method subset -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
