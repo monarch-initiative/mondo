@@ -55,11 +55,14 @@ _Note: While the release is running, don't shut your laptop or switch between re
 1. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
 1. Run `sh run.sh make prepare_release_direct`
 1. Review the file `src/ontology/reports/mondo_release_diff.md`. There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
+1. **UPDATE from 230601**: with the addition of the rare disease subset, the PR will be too large to commit. In GitHub Desktop:
+      1. find the file "raredisease subset.owl"
+      1. right click and "ignore file"
 1. Commit changes to a branch
-   1. Create a branch and commit the changes on the branch
-   1. Do a pull request (PR)
-   1. Wait for GitHub Actions/QC to pass
-   1. Merge PR
+      1. Create a branch and commit the changes on the branch
+      1. Do a pull request (PR)
+      1. Wait for GitHub Actions/QC to pass
+      1. Merge PR
 
 ## Initial Setup:
 Make sure the initial setup (see above) has been done:  
@@ -92,7 +95,7 @@ Press Enter to open github.com in your browser...
 1. Check these the release pages (make sure you replace the date correctly **in the link in the output in the terminal**):
     1. For example: https://github.com/monarch-initiative/mondo/releases/tag/untagged-2a6c39951f3210b62380
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
-    3. Ensure it has all release artifacts attached to it (there should be 19 assets in the draft. Note, there will be 21 after the release is published.)
+    3. Ensure it has all release artifacts attached to it (there should be 22 assets in the draft. Note, there will be 24 after the release is published.)
     4. Check this file to ensure you see the expected changes (spot check a few changes): download the mondo.obo or mondo.owl from the asset list in the release.
 1. Write a description of the release
    1. Add the release description to the release tab:
