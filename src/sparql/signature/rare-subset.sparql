@@ -1,0 +1,26 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Rare diseases to be included in the subset are:
+# All rare diseases according to our rare disease subset system
+# All their parents
+
+SELECT DISTINCT ?cls WHERE
+{
+  {
+    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#rare> .
+  } UNION {
+    ?rare_cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#rare> .
+    ?rare_cls rdfs:subClassOf* ?cls .
+  }
+
+ FILTER NOT EXISTS {
+    ?cls owl:deprecated "true"^^xsd:boolean
+  }
+ FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+}
+  
