@@ -22,6 +22,8 @@ Details and summaries for upcoming and past Mondo workshops.
 
 The goal of the **Mondo Outreach Calls** is to bring together stakeholders and clinical terminology experts with the goal of discussing specific use cases and requirements, and improving Mondo with a focus of our user needs in mind. Every month we plan to invite a group to present their use case (not necessarily directly related to Mondo), and learn if there is anything we can do from the Mondo technical side to better support them. During the call, the Mondo technical team will give an overview of the latest developments and followed by a ~20 minute  talk + discussion from specific users where we’ll discuss paths forward on how we can work together. 
 
+Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7vUXFoTHtdxscjnfVQ_OrRsnzvE/edit).
+
 
 Date | Time | Presenter | Organization
 -- | -- | -- | --
