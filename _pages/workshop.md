@@ -25,9 +25,9 @@ The goal of the **Mondo Outreach Calls** is to bring together stakeholders and c
 Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7vUXFoTHtdxscjnfVQ_OrRsnzvE/edit).
 
 
-Date | Time | Presenter | Organization
--- | -- | -- | --
-June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee | [NORD](https://rarediseases.org/) 
+Date | Time | Presenter | Organization | Recording
+-- | -- | -- | -- | -- 
+June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee | [NORD](https://rarediseases.org/) | Coming soon
 June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu | [GARD](https://rarediseases.info.nih.gov/about)
 July 28 | 9 AM PT/12 PM ET | TBD
 Aug 25 | 9 AM PT/12 PM ET | TBD
