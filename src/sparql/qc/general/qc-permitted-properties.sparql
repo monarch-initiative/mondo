@@ -9,11 +9,54 @@ prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix dce: <http://purl.org/dc/elements/1.1/>
 prefix dc: <http://purl.org/dc/terms/>
 
-SELECT DISTINCT ?term ?property ?value WHERE 
+SELECT DISTINCT ?term ?property WHERE 
 {
 	?term ?property ?value .
-  	?property a owl:AnnotationProperty .
 	FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
-  	FILTER(!isBlank(?value))
-  FILTER (?property NOT IN (dc:creator, dce:date, IAO:0000115, IAO:0000231, IAO:0100001, mondo:excluded_subClassOf, mondo:excluded_from_qc_check, mondo:excluded_synonym, mondo:pathogenesis, mondo:related, mondo:confidence, dc:conformsTo, mondo:should_conform_to, oboInOwl:consider, oboInOwl:created_by, oboInOwl:creation_date, oboInOwl:hasAlternativeId, oboInOwl:hasBroadSynonym, oboInOwl:hasDbXref, oboInOwl:hasExactSynonym, oboInOwl:hasNarrowSynonym, oboInOwl:hasRelatedSynonym, oboInOwl:id, oboInOwl:inSubset, owl:deprecated, rdfs:comment, rdfs:isDefinedBy, rdfs:label, rdfs:seeAlso, RO:0002161, skos:broadMatch, skos:closeMatch, skos:exactMatch, skos:narrowMatch))
+  	FILTER (?property NOT IN (
+		IAO:0000115, 
+		IAO:0000231, 
+		IAO:0000233, 
+		IAO:0000589, 
+		IAO:0006012, 
+		IAO:0100001, 
+		RO:0002161, 
+		RO:0002175, 
+		dc:conformsTo, 
+		dc:creator, 
+		dce:date, 
+		mondo:confidence, 
+		mondo:excluded_from_qc_check, 
+		mondo:excluded_subClassOf, 
+		mondo:excluded_synonym, 
+		mondo:pathogenesis, 
+		mondo:related, 
+		mondo:should_conform_to, 
+		oboInOwl:consider, 
+		oboInOwl:creation_date, 
+		oboInOwl:hasAlternativeId, 
+		oboInOwl:hasBroadSynonym, 
+		oboInOwl:hasDbXref, 
+		oboInOwl:hasExactSynonym, 
+		oboInOwl:hasNarrowSynonym, 
+		oboInOwl:hasRelatedSynonym, 
+		oboInOwl:id, 
+		oboInOwl:inSubset, 
+		owl:deprecated, 
+		owl:disjointWith,
+		owl:equivalentClass,
+		rdf:type,
+		rdfs:comment, 
+		rdfs:isDefinedBy, 
+		rdfs:label, 
+		rdfs:seeAlso, 
+		rdfs:subClassOf,
+		rdfs:subPropertyOf,
+		skos:broadMatch, 
+		skos:closeMatch, 
+		skos:exactMatch, 
+		skos:narrowMatch,
+		skos:relatedMatch
+		)
+	)
 }
