@@ -112,11 +112,8 @@ If you edit another ontology besides Mondo, you will need to switch your ID rang
 
 1. In the Protege menu, go to `Preferences` > `New Entities Metadata` tab
 1. Check `Annotate new entities with creator (user)` box
-1. In the `Creator property` field, search for `creator` (type in `creator` then click the search button)
-1. Select `dcterms:contributor` from the list
-1. Manually edit the property to dcterms:creator
+1. In the `Creator property` field, add `http://purl.org/dc/terms/creator`
 1. `Creator value` Select Use ORCID
 1. `Date property` http://purl.org/dc/elements/1.1/date
 1. `Date value format` Select ISO-8601
 
-<img width="894" alt="image" src="https://github.com/monarch-initiative/mondo/assets/6722114/701d05cb-4586-419f-80ad-65103eb1df87">
