@@ -9,13 +9,11 @@ prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix dce: <http://purl.org/dc/elements/1.1/>
 prefix dc: <http://purl.org/dc/terms/>
 
-SELECT DISTINCT ?term ?property ?value WHERE 
+SELECT DISTINCT ?term ?property WHERE 
 {
 	?term ?property ?value .
-  	?property a owl:AnnotationProperty .
 	FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
-  	FILTER(!isBlank(?value))
-  FILTER (?property NOT IN (
+  	FILTER (?property NOT IN (
 		IAO:0000115, 
 		IAO:0000231, 
 		IAO:0000233, 
@@ -45,15 +43,20 @@ SELECT DISTINCT ?term ?property ?value WHERE
 		oboInOwl:id, 
 		oboInOwl:inSubset, 
 		owl:deprecated, 
+		owl:disjointWith,
+		owl:equivalentClass,
+		rdf:type,
 		rdfs:comment, 
 		rdfs:isDefinedBy, 
 		rdfs:label, 
 		rdfs:seeAlso, 
+		rdfs:subClassOf,
+		rdfs:subPropertyOf,
 		skos:broadMatch, 
 		skos:closeMatch, 
 		skos:exactMatch, 
-		skos:relatedMatch, 
-		skos:narrowMatch
+		skos:narrowMatch,
+		skos:relatedMatch
 		)
 	)
 }
