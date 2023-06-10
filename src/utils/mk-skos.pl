@@ -42,7 +42,7 @@ while (<>) {
         $rel = "http://www.w3.org/2004/02/skos/core#".$rel;
         my $uri;
         if ($prefix eq 'UMLS') {
-            $uri = 'http://linkedlifedata.com/resource/umls/id/';
+            next;
         }
         elsif ($prefix eq 'MESH') {
             $uri = 'http://identifiers.org/mesh/';
