@@ -741,6 +741,20 @@ migrate-%: tmp/mondo-edit-%.ttl
 
 migrate: migrate-omim
 
+GARD_MAPPINGS=https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgIbFYWkhMT0EgaBNbyT6fJiNKqVjdqcZxXQLwJ3CpXpSzB24BITZGDNSMyg_3bneIvE3F2l_iHWH/pub?gid=1886610709&single=true&output=tsv
+
+.PHONY: update-gard-mappings
+update-gard-mappings:
+	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	wget "$(GARD_MAPPINGS)" -O tmp/gard-mappings.tsv
+	$(ROBOT) template --merge-before --input $(SRC) \
+ 		--template tmp/gard-mappings.tsv convert -f obo -o $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+
+
 #######################################
 ### New Pattern merge pipeline ########
 #######################################
