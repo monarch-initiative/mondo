@@ -22,14 +22,14 @@ The standard OBO properties are used:
 ## Labels
 
 **Case rules:**  
-* Use lowercase, even for initial letter, except for these exceptions:
-    * proper names (for example, Epstein-Barr virus-associated mesenchymal tumor)
-    * latin names (for example, Homo sapiens)
-    * acronyms (e.g. NADPH, IgG, GM14408, HIV-associated cancer)
-    * roman numerals (e.g. type II diabetes)
-* Human gene symbols should be capitalized
-* Type symbols should be capitalized (e.g. “type A”)
-* Generally arabic > roman, except for established names (e.g. cranial nerve VII)
+* Use lowercase, even for initial letter, except for these exceptions:  
+    * proper names (for example, Epstein-Barr virus-associated mesenchymal tumor)  
+    * latin names (for example, Homo sapiens)  
+    * acronyms (e.g. NADPH, IgG, GM14408, HIV-associated cancer)  
+    * Roman numerals (e.g. type II diabetes)  
+* Human gene symbols should be capitalized  
+* Type symbols should be capitalized (e.g. “type A”)  
+* Generally arabic > roman, except for established names (e.g. cranial nerve VII)  
 
 **Uniqueness:**  
 We strive for uniqueness. **However, be careful when evaluating uniqueness**. Various OMIMs that are apparently distinct have names that are the same, except with different lexicalizations.
