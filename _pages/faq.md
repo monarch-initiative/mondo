@@ -116,7 +116,7 @@ Example:
 name: AGAT deficiency  
 related synonym: disorder of glycine amidinotransferase activity 
 
-#### What if I cannot find a specific code / term mapped to a Mondo ID?
+### What if I cannot find a specific code / term mapped to a Mondo ID?
 
 There are two main reasons why a code or a term from another ontology, vocabulary or terminology is not mapped to Mondo yet. 
 
@@ -125,7 +125,7 @@ There are two main reasons why a code or a term from another ontology, vocabular
 
 In rare cases, a term is excluded because of a mistake in the curation. This can happen, for example, when a relevant disease term exist in a branch of a source ontology, like NCIT, that is not tracked by Mondo. In this case, we encourage you to make an issue on the [Mondo issue tracker](https://github.com/monarch-initiative/mondo/issues) to let us know.
  
-#### What are the capitalization rules for Mondo labels?
+### What are the capitalization rules for Mondo labels?
  
  Mondo classes are lowercase, unless they are a proper name. This is standard naming convention for ontologies and is an [OBO Foundry principle](https://obofoundry.org/principles/fp-012-naming-conventions.html). See more details [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#labels). A related ticket is [here](https://github.com/monarch-initiative/mondo/issues/6332).
 
