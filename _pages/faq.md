@@ -15,9 +15,9 @@ We have [guidelines](https://mondo.readthedocs.io/en/latest/editors-guide/c-make
 
 Mondo is released around the first of each month. See the latest release [here](https://github.com/monarch-initiative/mondo/releases).
 
-### When will I see the latest release of Mondo in [OLS](https://www.ebi.ac.uk/ols/ontologies/mondo)?
+### When will I see the latest release of Mondo in [OLS](https://www.ebi.ac.uk/ols4)?
 
-A new release can be expected in [OLS](https://www.ebi.ac.uk/ols/ontologies/mondo) within 7 business days usually.  
+A new release can be expected in [OLS](https://www.ebi.ac.uk/ols4/ontologies/mondo) within 7 business days usually.  
 
 ### Am I allowed to change the content in Mondo?
 
@@ -47,7 +47,7 @@ Mondo is the disease ontology for the [Monarch Initiative](https://monarchinitia
 
 ### Is the latest version of Mondo displayed in the Monarch Initiative website?
 
-The latest release of Mondo is not always displayed in the Monarch website, as the release cycles are not in sync. To see the latest version of Mondo online, we recommend using the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/ontologies/mondo).
+The latest release of Mondo is not always displayed in the Monarch website, as the release cycles are not in sync. To see the latest version of Mondo online, we recommend using the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols4/ontologies/mondo).
 
 ### How is the Human Phenotype Ontology (HPO) related to Mondo?
 
@@ -81,7 +81,7 @@ Mondo and DO have slightly different approaches to classifying cancer; Mondo’s
 
 ### How do I cite Mondo?
 
-Please cite: Mungall, Christopher J., et al. 2017 [The Monarch Initiative: An Integrative Data and Analytic Platform Connecting Phenotypes to Genotypes across Species.](https://academic.oup.com/nar/article/45/D1/D712/2605791) Nucleic Acids Research 45 (D1): D712–22.
+Please cite: Nicole A Vasilevsky, et al. (2022) [Mondo: Unifying diseases for the world, by the world](https://www.medrxiv.org/content/10.1101/2022.04.13.22273750v3) medRxiv 2022.04.13.22273750; doi: https://doi.org/10.1101/2022.04.13.22273750
 
 ### Why do we need Mondo?
 
@@ -125,5 +125,8 @@ There are two main reasons why a code or a term from another ontology, vocabular
 
 In rare cases, a term is excluded because of a mistake in the curation. This can happen, for example, when a relevant disease term exist in a branch of a source ontology, like NCIT, that is not tracked by Mondo. In this case, we encourage you to make an issue on the [Mondo issue tracker](https://github.com/monarch-initiative/mondo/issues) to let us know.
  
+ #### What are the capitalization rules for Mondo labels?
+ 
+ Mondo classes are lowercase, unless they are a proper name. This is standard naming convention for ontologies and is an [OBO Foundry principle](https://obofoundry.org/principles/fp-012-naming-conventions.html). See more details [here](https://mondo.readthedocs.io/en/latest/editors-guide/f-entities/#labels). A related ticket is [here](https://github.com/monarch-initiative/mondo/issues/6332).
 
 {% comment %} Add more FAQs as needed {% endcomment %}
