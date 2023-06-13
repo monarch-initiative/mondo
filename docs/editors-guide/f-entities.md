@@ -36,10 +36,10 @@ We strive for uniqueness. **However, be careful when evaluating uniqueness**. Va
 
 **Disease naming:**  
 Disease naming conventions are explained [here](https://mondo.monarchinitiative.org/pages/disease-naming/).  
-- Mondo follows the OMIM naming conventions. Therefore, the disease name coming from OMIM will be preferentially the primary term label
-- Term relabeling requests (e.g. gene-based labels) are addressed as follow:
-  - if the original term label comes from OMIM, the original label is retained and the requested new label is added as an "exact synonym". If the request comes for a CliGen working group, the synonym type called ‘ClinGen preferred’ will be added.
-  - if the original term label does not come from OMIM, the term will be relabeled as requested (note that the original label will be added as an exact synonym)
+- Mondo follows the OMIM naming conventions. Therefore, the disease name coming from OMIM will be preferentially the primary term label  
+- Term relabeling requests (e.g. gene-based labels) are addressed as follow:  
+  - if the original term label comes from OMIM, the original label is retained and the requested new label is added as an "exact synonym". If the request comes for a ClinGen working group, the synonym type called ‘ClinGen preferred’ will be added.  
+  - if the original term label does not come from OMIM, the term will be relabeled as requested (note that the original label will be added as an exact synonym)  
 
 
 ## Text definitions
