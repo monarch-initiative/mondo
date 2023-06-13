@@ -35,7 +35,7 @@ Further description and a discussion board on obsoletions is available [here](ht
 #### How are terms obsoleted?
 Our workflow for obsoleting terms is evolving to meet the needs of our users. When a term is to be obsoleted (or merged), the term will be annotated with a subset tag `obsoletion candidate`, and will include an annotation with a link to a relevant GitHub ticket and a comment describing the obsoletion reason. The Mondo curation team will send a report around the first of each month, along with the latest release to inform users of potential obsoletions. Users will have at least 2 months* to review the obsoletion candidates. If there are no objections from the community, the curation team will obsolete the term.
 
-*There is an exception, if a term is not a disease, like a gene, the term will be obsoleted earlier. See this [ticket](https://github.com/monarch-initiative/mondo/issues/6337) for an example.
+*There is an exception, if a term is not a disease, like a gene, it may be obsoleted sooner. See this [ticket](https://github.com/monarch-initiative/mondo/issues/6337) for an example.
 
 ### How can I collaborate with Mondo?
 
