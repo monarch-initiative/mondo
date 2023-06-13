@@ -21,21 +21,25 @@ The standard OBO properties are used:
 
 ## Labels
 
-**Case rules:**  
-* Use lowercase, even for initial letter, except for these exceptions:  
-    * proper names (for example, Epstein-Barr virus-associated mesenchymal tumor)  
-    * latin names (for example, Homo sapiens)  
-    * acronyms (e.g. NADPH, IgG, GM14408, HIV-associated cancer)  
-    * Roman numerals (e.g. type II diabetes)  
-* Human gene symbols should be capitalized  
-* Type symbols should be capitalized (e.g. “type A”)  
-* Generally arabic > roman, except for established names (e.g. cranial nerve VII)  
+### Case rules 
 
-**Uniqueness:**  
+- Use lowercase, even for initial letter, except for these exceptions:  
+    - proper names (for example, Epstein-Barr virus-associated mesenchymal tumor)  
+    - latin names (for example, Homo sapiens)  
+    - acronyms (e.g. NADPH, IgG, GM14408, HIV-associated cancer)  
+    - Roman numerals (e.g. type II diabetes)  
+- Human gene symbols should be capitalized  
+- Type symbols should be capitalized (e.g. “type A”)  
+- Generally arabic > roman, except for established names (e.g. cranial nerve VII)  
+
+### Uniqueness
+  
 We strive for uniqueness. **However, be careful when evaluating uniqueness**. Various OMIMs that are apparently distinct have names that are the same, except with different lexicalizations.
 
-**Disease naming:**  
+### Disease naming 
+ 
 Disease naming conventions are explained [here](https://mondo.monarchinitiative.org/pages/disease-naming/).  
+
 - Mondo follows the OMIM naming conventions. Therefore, the disease name coming from OMIM will be preferentially the primary term label  
 - Term relabeling requests (e.g. gene-based labels) are addressed as follow:  
   - if the original term label comes from OMIM, the original label is retained and the requested new label is added as an "exact synonym". If the request comes for a ClinGen working group, the synonym type called ‘ClinGen preferred’ will be added.  
