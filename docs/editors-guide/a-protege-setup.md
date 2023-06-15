@@ -117,3 +117,5 @@ If you edit another ontology besides Mondo, you will need to switch your ID rang
 1. `Date property` http://purl.org/dc/elements/1.1/date
 1. `Date value format` Select ISO-8601
 
+<img width="883" alt="image" src="https://github.com/monarch-initiative/mondo/assets/6722114/ef1a9b25-c7e6-41fd-a6c6-7335e32b78a9">
+
