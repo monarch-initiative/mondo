@@ -30,7 +30,7 @@ Date | Time | Presenter | Organization | Recording
 June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee | [NORD](https://rarediseases.org/) | [Here](https://drive.google.com/file/d/1wJzqU6ruAGuzsk7xZLzIu9G_UH8SI8ta/view?usp=sharing)
 June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu | [GARD](https://rarediseases.info.nih.gov/about)
 July 28 | 9 AM PT/12 PM ET | TBD
-Aug 25 | 9 AM PT/12 PM ET | TBD
+Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton | ClinGen
 Sept 22 | 9 AM PT/12 PM ET | TBD
 Oct 20 | 9 AM PT/12 PM ET | TBD
 
