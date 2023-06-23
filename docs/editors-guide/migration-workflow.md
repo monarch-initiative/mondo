@@ -11,9 +11,11 @@
 See example spreadsheet [here](https://docs.google.com/spreadsheets/d/1k2ycAyi1m1NjnYlfgXgDcN7T3U5-V3muObjaS8zyQyI/edit#gid=339514456). 
 
 *Exclusion list  
-
-- [TSV file](https://github.com/monarch-initiative/mondo-ingest/tree/main/src/ontology/config)   
 - [Google doc](https://docs.google.com/spreadsheets/d/18V-_j4b22LzCytxFEM3pBEl6-_ODJY06gpUwH0F6JVY/edit) 
+
+## Note
+The google doc will be automatically uploaded to this [TSV file](https://github.com/monarch-initiative/mondo-ingest/tree/main/src/ontology/config) via a pipeline.   
+
 
 # Weekly Workflow
 
