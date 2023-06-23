@@ -13,7 +13,7 @@ See example spreadsheet [here](https://docs.google.com/spreadsheets/d/1k2ycAyi1m
 *Exclusion list  
 
 - [TSV file](https://github.com/monarch-initiative/mondo-ingest/tree/main/src/ontology/config)   
-- [Google doc](https://docs.google.com/spreadsheets/d/18V-_j4b22LzCytxFEM3pBEl6-_ODJY06gpUwH0F6JVY/edit))  
+- [Google doc](https://docs.google.com/spreadsheets/d/18V-_j4b22LzCytxFEM3pBEl6-_ODJY06gpUwH0F6JVY/edit) 
 
 # Weekly Workflow
 
