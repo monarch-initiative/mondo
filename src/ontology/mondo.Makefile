@@ -820,3 +820,23 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+######################################
+##### New regeneration process #######
+######################################
+# Remove logical axioms
+
+tmp/mondo-no-logical-axioms.owl: mondo.owl
+	robot filter --input $< --axioms logical --output $@
+
+VERSION = v2023-06-14
+EXTERNAL_ONTOLOGIES:= doid ncit omim
+get-external-resources: $(addprefix tmp/,$(addsuffix .owl,$(EXTERNAL_ONTOLOGIES)))
+
+tmp/%.owl:
+	wget "https://github.com/monarch-initiative/mondo-ingest/releases/download/$(VERSION)/$*.owl" -O $@
+
+ONTOLOGIES:= $(EXTERNAL_ONTOLOGIES)
+ONTOLOGIES += mondo-no-logical-axioms
+tmp/merged.owl: $(addprefix tmp/,$(addsuffix .owl,$(ONTOLOGIES)))
+	robot merge $(foreach file,$^,--input $(file)) --output $@
