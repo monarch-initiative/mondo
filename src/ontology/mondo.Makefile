@@ -825,10 +825,10 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 ##### New regeneration process #######
 ######################################
 # Remove logical axioms
-
 tmp/mondo-no-logical-axioms.owl: mondo.owl
 	robot filter --input $< --axioms logical --output $@
 
+# Declare version and resources of the `mondo-ingest` release
 VERSION = v2023-06-14
 EXTERNAL_ONTOLOGIES:= doid ncit omim
 get-external-resources: $(addprefix tmp/,$(addsuffix .owl,$(EXTERNAL_ONTOLOGIES)))
@@ -838,5 +838,33 @@ tmp/%.owl:
 
 ONTOLOGIES:= $(EXTERNAL_ONTOLOGIES)
 ONTOLOGIES += mondo-no-logical-axioms
+
+# Merge the OWL files.
 tmp/merged.owl: $(addprefix tmp/,$(addsuffix .owl,$(ONTOLOGIES)))
 	robot merge $(foreach file,$^,--input $(file)) --output $@
+
+# filter mondo.sssom.tsv
+
+PREFIXES := DOID NCIT OMIM
+
+tmp/mondo-doid-omim-ncit.sssom.tsv:
+	sssom filter $(addprefix --object_id ,$(addsuffix :%,$(PREFIXES))) $(MAPPINGSDIR)/mondo.sssom.tsv -o $@
+	sssom parse $@ -o $@
+
+tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
+	sssom ptable $< -o $@
+
+boomer-prepare-dirs:
+	mkdir -p tmp/boomer_output
+
+boomer: tmp/combined.ptable.tsv
+	boomer --ptable tmp/combined.ptable.tsv \
+		--ontology tmp/merged.owl \
+		--prefixes prefixes.yaml \
+		--output tmp/boomer_output \
+		--window-count 10 \
+		--exhaustive-search-limit 20 \
+		--runs 5 \
+		--output-internal-axioms true
+	
+	find $(BOOMER_OUTPUT_DIR)/$(RUN_ID) -name "*.json" -type 'f' -size -2000c -delete # Hack for removing individual singleton json files.
