@@ -857,9 +857,9 @@ tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
 boomer-prepare-dirs:
 	mkdir -p tmp/boomer_output
 
-boomer: tmp/combined.ptable.tsv tmp/merged.owl
+boomer: tmp/combined.ptable.tsv
 	boomer --ptable $< \
-		--ontology $^ \
+		--ontology tmp/merged.owl \
 		--prefixes prefixes.yaml \
 		--output tmp/boomer_output \
 		--window-count 10 \
@@ -868,4 +868,10 @@ boomer: tmp/combined.ptable.tsv tmp/merged.owl
 		--output-internal-axioms true
 
 extract-mondo-base:
-	robot remove --input tmp/boomer_output/SOMETHING.owl --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true -o mondo-base.owl
+	robot remove --input tmp/boomer_output.ofn --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true -o mondo-base.owl
+
+#TODO
+# 1. get-subclass-relationships
+# 2. Merge with tmp/mondo-no-logical-axioms.owl
+
+
