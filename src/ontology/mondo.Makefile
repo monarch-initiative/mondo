@@ -852,19 +852,20 @@ tmp/mondo-doid-omim-ncit.sssom.tsv:
 	sssom parse $@ -o $@
 
 tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
-	sssom ptable $< -o $@
+	sssom ptable --default-confidence $< -o $@
 
 boomer-prepare-dirs:
 	mkdir -p tmp/boomer_output
 
-boomer: tmp/combined.ptable.tsv
-	boomer --ptable tmp/combined.ptable.tsv \
-		--ontology tmp/merged.owl \
+boomer: tmp/combined.ptable.tsv tmp/merged.owl
+	boomer --ptable $< \
+		--ontology $^ \
 		--prefixes prefixes.yaml \
 		--output tmp/boomer_output \
 		--window-count 10 \
 		--exhaustive-search-limit 20 \
 		--runs 5 \
 		--output-internal-axioms true
-	
-	find $(BOOMER_OUTPUT_DIR)/$(RUN_ID) -name "*.json" -type 'f' -size -2000c -delete # Hack for removing individual singleton json files.
+
+extract-mondo-base:
+	robot remove --input tmp/boomer_output/SOMETHING.owl --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true -o mondo-base.owl
