@@ -758,7 +758,7 @@ migrate-%: tmp/mondo-edit-%.ttl
 
 migrate: migrate-omim
 
-GARD_MAPPINGS=https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgIbFYWkhMT0EgaBNbyT6fJiNKqVjdqcZxXQLwJ3CpXpSzB24BITZGDNSMyg_3bneIvE3F2l_iHWH/pub?gid=1886610709&single=true&output=tsv
+GARD_MAPPINGS=https://docs.google.com/spreadsheets/d/e/2PACX-1vR3AUD0NRuKsFg6dNxSGSc-zabYn57udSmajScz2_puXOEZbAmEyjyyM9508OnjoJ9Ir21-BnPAJ-KX/pubhtml?gid=1648437389&single=true
 
 .PHONY: update-gard-mappings
 update-gard-mappings:
