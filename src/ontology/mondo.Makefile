@@ -861,7 +861,7 @@ tmp/boomer_output.ofn: tmp/combined.ptable.tsv
 	boomer --ptable $< \
 		--ontology tmp/merged.owl \
 		--prefixes prefixes.yaml \
-		--output tmp/boomer_output \
+		--output $@ \
 		--window-count 10 \
 		--exhaustive-search-limit 20 \
 		--runs 5 \
