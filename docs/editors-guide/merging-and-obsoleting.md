@@ -13,7 +13,9 @@ Some examples of when to obsolete and/or merge a term are:
 - **obsoleted in source**: for example, OMIM, Orphanet or GARD may retire or obsolete a term. For example, MONDO:0015173 obsolete autoimmune enteropathy type 2
 is a phenotype and not a disease: for example, MONDO:0043606 'obsolete pathologic fracture'
 
-Issues should remain open for at least two months to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
+Issues should remain open for at least two (2) months* to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
+
+*There is an exception to this rule if a term is not an actual disease, it can be obsoleted sooner. See this [ticket](https://github.com/monarch-initiative/mondo/issues/6337) for an example.
 
 See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/2765) on Obsoletions
 
