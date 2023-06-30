@@ -6,6 +6,7 @@ A rare disease is a disease that affects fewer than 200,000 people in the United
 We rely on rare disease authorities (see table below) to determine all diseases recognized as “rare”, according to their own criteria. When a disease is considered “rare” according to a source, the corresponding Mondo term is annoted with `in_subset` annotation expressing that this disease is considered rare according to this source: `X_rare`  (where X is the rare disease authority).
 
 Example: 'calciphylaxis' (MONDO:0017215) is considered "rare" according to NORD, GARD, and Orphanet, as shown by the 'in_subset' annotations 'nord_rare', 'gard_rare', 'orphanet_rare'.
+
 ![rareexample](https://github.com/monarch-initiative/mondo/assets/12737987/a5dc4b6e-c3d1-4bca-926a-f81fdcea5ddb)
 
 
