@@ -875,6 +875,7 @@ tmp/mondo-new-boomer-base.owl: tmp/boomer_output.ofn
 
 #TODO
 # 1. get-subclass-relationships
-# 2. Merge with tmp/mondo-no-logical-axioms.owl
+tmp/mondo-boomer-new-mondo.owl: tmp/mondo-new-boomer-base.owl tmp/mondo-no-logical-axioms.owl
+	$(ROBOT) merge -i $< -i tmp/mondo-no-logical-axioms.owl -o $@
 
 
