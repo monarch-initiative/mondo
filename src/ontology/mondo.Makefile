@@ -868,7 +868,10 @@ boomer: tmp/combined.ptable.tsv
 		--output-internal-axioms true
 
 extract-mondo-base:
-	robot remove --input tmp/boomer_output.ofn --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true -o mondo-base.owl
+	$(ROBOT) merge --input $< \
+	reason reduce \
+	remove --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true \
+	filter --axioms subclass -o mondo-base.owl
 
 #TODO
 # 1. get-subclass-relationships
