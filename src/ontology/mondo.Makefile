@@ -845,7 +845,7 @@ tmp/merged.owl: $(addprefix tmp/,$(addsuffix .owl,$(ONTOLOGIES)))
 
 # filter mondo.sssom.tsv
 
-PREFIXES := DOID NCIT OMIM
+PREFIXES := DOID NCIT OMIM OMIMPS
 
 tmp/mondo-doid-omim-ncit.sssom.tsv:
 	sssom filter $(addprefix --object_id ,$(addsuffix :%,$(PREFIXES))) $(MAPPINGSDIR)/mondo.sssom.tsv -o $@
