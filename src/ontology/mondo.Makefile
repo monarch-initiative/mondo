@@ -854,14 +854,12 @@ tmp/mondo-doid-omim-ncit.sssom.tsv:
 tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
 	sssom ptable --default-confidence 0.95 $< -o $@
 
-boomer-prepare-dirs:
+tmp/boomer_output.ofn: tmp/combined.ptable.tsv tmp/merged.owl
 	mkdir -p tmp/boomer_output
-
-tmp/boomer_output.ofn: tmp/combined.ptable.tsv
 	boomer --ptable $< \
-		--ontology tmp/merged.owl \
+		--ontology  $^ \
 		--prefixes prefixes.yaml \
-		--output $@ \
+		--output tmp/boomer_output \
 		--window-count 10 \
 		--exhaustive-search-limit 20 \
 		--runs 5 \
@@ -873,8 +871,6 @@ tmp/mondo-new-boomer-base.owl: tmp/boomer_output.ofn
 	remove --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true \
 	filter --axioms subclass -o mondo-base.owl
 
-#TODO
-# 1. get-subclass-relationships
 tmp/mondo-boomer-new-mondo.owl: tmp/mondo-new-boomer-base.owl tmp/mondo-no-logical-axioms.owl
 	$(ROBOT) merge -i $< -i tmp/mondo-no-logical-axioms.owl -o $@
 
