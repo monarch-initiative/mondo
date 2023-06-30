@@ -8,19 +8,25 @@ We rely on rare disease authorities (see table below) to determine all diseases 
 example: calciphylaxis (MONDO:0017215) is considered "rare" according to NORD, GARD, and Orphanet, as shown by the 'in_subset' annotations 'nord_rare', 'gard_rare', 'orphanet_rare'.
 ![Screenshot 2023-06-27 at 2 59 17 PM](https://github.com/monarch-initiative/mondo/assets/12737987/f7347c08-9a64-4fbc-8be0-41eb6efa334d)
 
+In our [2021 publication](https://mondo.monarchinitiative.org/pages/analysis/), we identified rare diseases as 
+- terms annotated with the `‘bearer of’ some rare` axiom (as provided by Mondo contributing resources)
+- **AND** limited to the ‘human disease’ branch (which excludes ‘susceptibility’ terms)
+_(note that the "gard subset" annotation reported in the publication has been ignored here)_
+The Mondo terms fulfilling the above conditions were annotated with the 'in_subset' annotation 'mondo_rare' (see arrows in image above).
 
 #### The Mondo rare disease subset include ALL rare diseases according to ALL rare disease sources.
+The Mondo rare disease subset represents the UNION of rare diseases according to all authority sources and Mondo. Most of the diseases in this subset will be viewed as “rare” by most authorities, but some will be viewed as “rare” by only some authorities.
 
-The Mondo rare disease subset represents the UNION of rare diseases list according to all authority sources. Most of the diseases in this subset will be viewed as “rare” by most authorities, but some will be viewed as “rare” by only some authorities.
-In addition to the rare diseases as defined by the authoritative sources, this subset includes diseases identified as "rare" based on the method used in our [2021 publication](https://mondo.monarchinitiative.org/pages/analysis/).
-
-Rare disease terms in Mondo are annotated with `in_subset``mondo_rare` (see image above), and include
-- terms annotated with the ‘bearer of’ some rare axiom
+Rare disease terms in Mondo are annotated with `in_subset: rare` (see arrowhead in image above), and include
+- terms with the annotation in_subset ‘mondo_rare’
 - **AND** terms with the annotation in_subset ‘X_rare’ (which includes ALL the rare disease authorities represented in Mondo)
 - **AND** limited to the ‘human disease’ branch (which excludes ‘susceptibility’ terms)
 
 #### Where to find the Mondo rare disease subset, and what is included in the file?
-The Mondo rare disease can be found as a product of the Mondo release [here](https://github.com/monarch-initiative/mondo/tree/master/subsets), in .obo and .json format
+The Mondo rare disease can be found as a product of the Mondo release, available in .obo and .json formats
+- [http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.obo](http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.obo)
+- [http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.json](http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.json)
+
 
 This mondo-rare subset includes **all rare diseases** (as defined above) AND their **ontological parents**.
 
