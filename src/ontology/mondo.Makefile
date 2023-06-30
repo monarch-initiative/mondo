@@ -856,6 +856,8 @@ tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
 
 tmp/boomer_output.ofn: tmp/combined.ptable.tsv tmp/merged.owl
 	mkdir -p tmp/boomer_output
+	find tmp/boomer_output -name "*.json" -type 'f' -delete
+	find tmp/boomer_output -name "*.png" -type 'f' -delete
 	boomer --ptable $< \
 		--ontology  $^ \
 		--prefixes prefixes.yaml \
@@ -869,7 +871,8 @@ tmp/mondo-new-boomer-base.owl: tmp/boomer_output.ofn
 	$(ROBOT) merge --input $< \
 	reason reduce \
 	remove --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true \
-	filter --axioms subclass -o mondo-base.owl
+	filter --axioms subclass \
+	-o $@
 
 tmp/mondo-boomer-new-mondo.owl: tmp/mondo-new-boomer-base.owl tmp/mondo-no-logical-axioms.owl
 	$(ROBOT) merge -i $< -i tmp/mondo-no-logical-axioms.owl -o $@
