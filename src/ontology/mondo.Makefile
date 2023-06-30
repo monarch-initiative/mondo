@@ -867,7 +867,7 @@ tmp/boomer_output.ofn: tmp/combined.ptable.tsv
 		--runs 5 \
 		--output-internal-axioms true
 
-extract-mondo-base:
+tmp/mondo-new-boomer-base.owl: tmp/boomer_output.ofn
 	$(ROBOT) merge --input $< \
 	reason reduce \
 	remove --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true \
