@@ -31,7 +31,7 @@ June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee |
 June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu | [NCATS](https://rarediseases.info.nih.gov/about)
 July 28 | 9 AM PT/12 PM ET | Megan Kane | [MedGen](https://www.ncbi.nlm.nih.gov/medgen/)
 Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton | [ClinGen](https://clinicalgenome.org/)
-Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein | Classifying EFO/MONDO diseases as areas, roots, or subtypes
+Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein and Daniel Korn | Classifying EFO/MONDO diseases as areas, roots, or subtypes
 Oct 20 | 9 AM PT/12 PM ET | TBD
 
 <a name="feb-2023"></a> 
