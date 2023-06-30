@@ -826,7 +826,7 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 ######################################
 # Remove logical axioms
 tmp/mondo-no-logical-axioms.owl: mondo.owl
-	robot filter --input $< --axioms logical --output $@
+	$(ROBOT) remove --input $< --axioms logical --output $@
 
 # Declare version and resources of the `mondo-ingest` release
 VERSION = v2023-06-14
