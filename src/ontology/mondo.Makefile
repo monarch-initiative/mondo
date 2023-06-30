@@ -857,7 +857,7 @@ tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
 boomer-prepare-dirs:
 	mkdir -p tmp/boomer_output
 
-boomer: tmp/combined.ptable.tsv
+tmp/boomer_output.ofn: tmp/combined.ptable.tsv
 	boomer --ptable $< \
 		--ontology tmp/merged.owl \
 		--prefixes prefixes.yaml \
