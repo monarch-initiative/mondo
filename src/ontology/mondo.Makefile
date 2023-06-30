@@ -852,7 +852,7 @@ tmp/mondo-doid-omim-ncit.sssom.tsv:
 	sssom parse $@ -o $@
 
 tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
-	sssom ptable --default-confidence $< -o $@
+	sssom ptable --default-confidence 0.95 $< -o $@
 
 boomer-prepare-dirs:
 	mkdir -p tmp/boomer_output
