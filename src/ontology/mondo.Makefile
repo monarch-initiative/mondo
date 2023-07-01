@@ -790,6 +790,11 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	make NORM
 	mv NORM $(SRC)
 
+# This updates all British English in Mondo to American English.
+.PHONY: americanize
+
+americanize: $(SRC) tmp/british_english_dictionary.csv
+	python ../scripts/clean-british-english.py $^
 
 
 #######################################
@@ -854,3 +859,11 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+.PHONY: help
+help:
+	@echo "$$data"
+	echo "Making sure all english in Mondo in American:"
+	echo "sh run.sh make americanize"
+	echo "Update british english synonyms"
+	echo "sh run.sh make add_british_language_synonyms"
