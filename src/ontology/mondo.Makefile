@@ -758,6 +758,36 @@ migrate-%: tmp/mondo-edit-%.ttl
 
 migrate: migrate-omim
 
+#######################################################
+##### British synonyms pipeline #######################
+#######################################################
+
+tmp/synonyms.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/reports/mondo_synonyms.sparql $@
+
+tmp/labels.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/reports/mondo_labels.sparql $@
+
+tmp/british_english_dictionary.csv:
+	wget "https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/src/ontology/hpo_british_english_dictionary.csv" -O $@
+
+SYN_TYPES=hasBroadSynonym hasRelatedSynonym hasExactSynonym hasNarrowSynonym
+SYN_TYPE_TEMPLATES=$(patsubst %, tmp/be_syns_%.csv, $(SYN_TYPES))
+
+$(SYN_TYPE_TEMPLATES): tmp/labels.csv tmp/synonyms.csv tmp/british_english_dictionary.csv
+	python3 ../scripts/compute_british_synonyms.py $^ tmp/
+
+tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
+	$(ROBOT) merge -i $(SRC) template $(patsubst %, --template %, $(SYN_TYPE_TEMPLATES)) --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
+	$(ROBOT) merge -i $< -i tmp/british_synonyms.owl --collapse-import-closure false -o tmp/mondo-edit.obo && mv tmp/mondo-edit.obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+
+
 #######################################
 ### New Pattern merge pipeline ########
 #######################################
