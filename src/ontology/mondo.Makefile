@@ -781,7 +781,11 @@ tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
 	$(ROBOT) merge -i $(SRC) template $(patsubst %, --template %, $(SYN_TYPE_TEMPLATES)) --output $@ && \
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
+#We remove the old ones so that if we change the synonym scope of the AE synonym, its changed as well for this one.
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
+	echo "WARNING: REMOVING OLD BRITISH SYNONYMS! WE HOPE YOU DIDNT CURATE ANY MANUALLY!"
+	grep -v 'OMO:0003005' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
 	$(ROBOT) merge -i $< -i tmp/british_synonyms.owl --collapse-import-closure false -o tmp/mondo-edit.obo && mv tmp/mondo-edit.obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
