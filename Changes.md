@@ -1,3 +1,255 @@
+# 2023-07-03
+## Overview:
+* Number of new terms: 82
+* Number of changed labels: 50
+* Number of changed definitions: 24
+* Number obsoleted terms: 24
+* Number of new obsoletion candidates: 20
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 10
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100513 | TRAF3 haploinsufficiency | Any Mendelian disease in which the cause of the disease is a mutation in the TRAF3 gene. TRAF3 haploinsufficiency caused by heterozygous loss of function (null) variants presents as an immune dysregulation syndrome of recurrent bacterial infections, autoimmunity, systemic inflammation, B cell lymphoproliferation, and hypergammaglobulinemia. |
+| MONDO:0100519 | epilepsy, idiopathic generalized, susceptibility to, 17 | |
+| MONDO:0100520 | NKX2-1 related choreoathetosis and congenital hypothyroidism with or without pulmonary dysfunction | The NKX2-1 gene is located on chromosome 14 at 14q13.3 and encodes the NK2 homeobox 1 protein, a transcription factor that binds and activates thyroid specific genes. NKX2-1 was first reported in relation to autosomal dominant NKX2-1 related choreoathetosis and congenital hypothyroidism with or without pulmonary dysfunction in 1998. |
+| MONDO:0100521 | NOG-related symphalangism spectrum disorder | An autosomal dominant condition caused by pathogenic variants of the NOG gene, encoding the noggin protein. Five overlapping clinical syndromes associated with NOG mutations have been described; proximal symphalangism, multiple synostoses syndrome 1, tarsal-carpal coalition syndrome, stapes ankylosis with broad thumbs and toes, and brachydactyly type B2. NOG-related symphalangism spectrum disorder is a new term initially proposed by Potti et al., 2011 to encompass these disorders. NOG-SSD is characterized by proximal symphalangism, conductive deafness caused by stapes ankylosis, ocular abnormality such as hyperopia and strabismus, and characteristic facial features including a broad, tubular-shaped nose and a thin upper vermilion. |
+| MONDO:0100522 | hypotrichosis 4 | |
+| MONDO:0100523 | SPAST-related motor disorder | Heterozygous variants in SPAST have been reported in relation to pure spastic paraplegias (infantile, ascending), complicated or complex spastic paraplegia (with dementia, cerebellar ataxia, epilepsy, and/or peripheral neuropathy) and cerebral palsy. Age of symptom onset ranges from neonatal to advanced age with varying symptom severity, |
+| MONDO:0957001 | hereditary mixed dermis disorder | |
+| MONDO:0957003 | hereditary neuro-ophthalmological disease | |
+| MONDO:0957008 | hereditary cerebral malformation | |
+| MONDO:0957009 | hereditary posterior fossa malformation | |
+| MONDO:0957018 | autoinflammatory syndrome of childhood | |
+| MONDO:0957024 | hereditary 46,XX disorder of sex development | |
+| MONDO:0957025 | hereditary 46,XY disorder of sex development | |
+| MONDO:0957048 | isolated macular dystrophy | |
+| MONDO:0957097 | hereditary hemolytic uremic syndrome | |
+| MONDO:0957111 | neurological muscular channelopathy due to a genetic sodium channel defect | |
+| MONDO:0957112 | neurological muscular channelopathy due to a genetic chloride channel defect | |
+| MONDO:0957113 | neurological muscular channelopathy due to a genetic calcium channel defect | |
+| MONDO:0957114 | neurological muscular channelopathy due to a genetic potassium channel defect | |
+| MONDO:0957115 | neurological muscular channelopathy due to a genetic ryanodine receptor defect | |
+| MONDO:1011300 | acute disease, non-human animal | Acute disease that occurs in non-human animals. |
+| MONDO:1011301 | auditory system disorder, non-human animal | Auditory system disorder that occurs in non-human animals. |
+| MONDO:1011302 | branchial arch disease, non-human animal | Branchial arch disease that occurs in non-human animals. |
+| MONDO:1011303 | mammary gland disorder, non-human animal | Mammary gland disorder that occurs in non-human animals. |
+| MONDO:1011304 | mammary fibrocystic disease, non-human animal | Mammary fibrocystic disease that occurs in non-human animals. |
+| MONDO:1011305 | cancer or benign tumor, non-human animal | Cancer or benign tumor that occurs in non-human animals. |
+| MONDO:1011306 | cardiovascular disorder, non-human animal | Cardiovascular disorder that occurs in non-human animals. |
+| MONDO:1011307 | chromosomal disorder, non-human animal | Chromosomal disorder that occurs in non-human animals. |
+| MONDO:1011308 | congenital nervous system disorder, non-human animal | Congenital nervous system disorder that occurs in non-human animals. |
+| MONDO:1011309 | connective tissue disorder, non-human animal | Connective tissue disorder that occurs in non-human animals. |
+| MONDO:1011310 | developmental defect during embryogenesis, non-human animal | Developmental defect during embryogenesis that occurs in non-human animals. |
+| MONDO:1011311 | digestive system disorder, non-human animal | Digestive system disorder that occurs in non-human animals. |
+| MONDO:1011312 | disease related to transplantation, non-human animal | Disease related to transplantation that occurs in non-human animals. |
+| MONDO:1011313 | disorder of development or morphogenesis, non-human animal | Disorder of development or morphogenesis that occurs in non-human animals. |
+| MONDO:1011314 | disorder of glycosylation, non-human animal | Disorder of glycosylation that occurs in non-human animals. |
+| MONDO:1011315 | disorder of orbital region, non-human animal | Disorder of orbital region that occurs in non-human animals. |
+| MONDO:1011316 | disorder of visual system, non-human animal | Disorder of visual system that occurs in non-human animals. |
+| MONDO:1011317 | endocrine system disorder, non-human animal | Endocrine system disorder that occurs in non-human animals. |
+| MONDO:1011318 | hearing disorder, non-human animal | Hearing disorder that occurs in non-human animals. |
+| MONDO:1011319 | hematologic disorder, non-human animal | Hematologic disorder that occurs in non-human animals. |
+| MONDO:1011321 | hereditary disease, non-human animal | Hereditary disease that occurs in non-human animals. |
+| MONDO:1011322 | iatrogenic disease, non-human animal | Iatrogenic disease that occurs in non-human animals. |
+| MONDO:1011323 | idiopathic disease, non-human animal | Idiopathic disease that occurs in non-human animals. |
+| MONDO:1011325 | immunodeficiency-related disorder, non-human animal | Immunodeficiency-Related disorder that occurs in non-human animals. |
+| MONDO:1011327 | inflammatory disease, non-human animal | Inflammatory disease that occurs in non-human animals. |
+| MONDO:1011328 | integumentary system disorder, non-human animal | Integumentary system disorder that occurs in non-human animals. |
+| MONDO:1011329 | keratoconjunctivitis, non-human animal | Keratoconjunctivitis that occurs in non-human animals. |
+| MONDO:1011330 | lymphoid system disorder, non-human animal | Lymphoid system disorder that occurs in non-human animals. |
+| MONDO:1011331 | metabolic disease, non-human animal | Metabolic disease that occurs in non-human animals. |
+| MONDO:1011332 | mitochondrial disease, non-human animal | Mitochondrial disease that occurs in non-human animals. |
+| MONDO:1011333 | mouth disorder, non-human animal | Mouth disorder that occurs in non-human animals. |
+| MONDO:1011334 | mouth mucosa disorder, non-human animal | Mouth mucosa disorder that occurs in non-human animals. |
+| MONDO:1011335 | musculoskeletal system disorder, non-human animal | Musculoskeletal system disorder that occurs in non-human animals. |
+| MONDO:1011336 | nervous system disorder, non-human animal | Nervous system disorder that occurs in non-human animals. |
+| MONDO:1011337 | neurocristopathy, non-human animal | Neurocristopathy that occurs in non-human animals. |
+| MONDO:1011338 | nutritional disorder, non-human animal | Nutritional disorder that occurs in non-human animals. |
+| MONDO:1011339 | obstetric disorder, non-human animal | Obstetric disorder that occurs in non-human animals. |
+| MONDO:1011340 | occupational disorder, non-human animal | Occupational disorder that occurs in non-human animals. |
+| MONDO:1011341 | omphalitis, non-human animal | Omphalitis that occurs in non-human animals. |
+| MONDO:1011342 | otorhinolaryngologic disease, non-human animal | Otorhinolaryngologic disease that occurs in non-human animals. |
+| MONDO:1011343 | perceptual disorders, non-human animal | Perceptual disorders that occurs in non-human animals. |
+| MONDO:1011344 | perinatal disease, non-human animal | Perinatal disease that occurs in non-human animals. |
+| MONDO:1011345 | poisoning, non-human animal | Poisoning that occurs in non-human animals. |
+| MONDO:1011346 | post-bacterial disorder, non-human animal | Post-Bacterial disorder that occurs in non-human animals. |
+| MONDO:1011347 | post-COVID-19 disorder, non-human animal | Post-Covid-19 disorder that occurs in non-human animals. |
+| MONDO:1011348 | post-infectious disorder, non-human animal | Post-Infectious disorder that occurs in non-human animals. |
+| MONDO:1011349 | post-viral disorder, non-human animal | Post-Viral disorder that occurs in non-human animals. |
+| MONDO:1011350 | premature aging syndrome, non-human animal | Premature aging syndrome that occurs in non-human animals. |
+| MONDO:1011351 | psychiatric disorder, non-human animal | Psychiatric disorder that occurs in non-human animals. |
+| MONDO:1011352 | radiation-induced disorder, non-human animal | Radiation-induced disorder that occurs in non-human animals. |
+| MONDO:1011353 | radiculitis, non-human animal | Radiculitis that occurs in non-human animals. |
+| MONDO:1011354 | reproductive system disorder, non-human animal | Reproductive system disorder that occurs in non-human animals. |
+| MONDO:1011356 | sensory ganglionopathy, non-human animal | Sensory ganglionopathy that occurs in non-human animals. |
+| MONDO:1011357 | serositis, non-human animal | Serositis that occurs in non-human animals. |
+| MONDO:1011358 | skin appendage disorder, non-human animal | Skin appendage disorder that occurs in non-human animals. |
+| MONDO:1011359 | subcutaneous tissue disorder, non-human animal | Subcutaneous tissue disorder that occurs in non-human animals. |
+| MONDO:1011360 | syndromic disease, non-human animal | Syndromic disease that occurs in non-human animals. |
+| MONDO:1011361 | thymus gland disorder, non-human animal | Thymus gland disorder that occurs in non-human animals. |
+| MONDO:1011363 | ulcer disease, non-human animal | Ulcer disease that occurs in non-human animals. |
+| MONDO:1011364 | upper digestive tract disorder, non-human animal | Upper digestive tract disorder that occurs in non-human animals. |
+| MONDO:1011365 | urinary system disorder, non-human animal | Urinary system disorder that occurs in non-human animals. |
+| MONDO:1011367 | vision disorder, non-human animal | Vision disorder that occurs in non-human animals. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0021034 | hereditary alopecia | genetic alopecia | hereditary alopecia |
+| MONDO:0015508 | hereditary parenchymatous liver disease | genetic parenchymatous liver disease | hereditary parenchymatous liver disease |
+| MONDO:0018562 | hereditary otorhinolaryngological malformation | genetic otorhinolaryngological malformation | hereditary otorhinolaryngological malformation |
+| MONDO:0100118 | hereditary skin disorder | genetic skin disorder | hereditary skin disorder |
+| MONDO:0020127 | hereditary peripheral neuropathy | genetic peripheral neuropathy | hereditary peripheral neuropathy |
+| MONDO:0020242 | hereditary macular dystrophy | genetic macular dystrophy | hereditary macular dystrophy |
+| MONDO:0001504 | fetishistic disorder | fetishism | fetishistic disorder |
+| MONDO:0018187 | hereditary syndromic Pierre Robin syndrome | genetic syndromic Pierre Robin syndrome | hereditary syndromic Pierre Robin syndrome |
+| MONDO:0018751 | hereditary otorhinolaryngologic disease | genetic otorhinolaryngologic disease | hereditary otorhinolaryngologic disease |
+| MONDO:0015509 | hereditary biliary tract disease | genetic biliary tract disease | hereditary biliary tract disease |
+| MONDO:0015547 | hereditary dementia | genetic dementia | hereditary dementia |
+| MONDO:0020087 | hereditary lipodystrophy | genetic lipodystrophy | hereditary lipodystrophy |
+| MONDO:0017131 | hereditary cardiac anomaly | genetic cardiac anomaly | hereditary cardiac anomaly |
+| MONDO:0007037 | Achondroplasia | achondroplasia | Achondroplasia |
+| MONDO:0007041 | Apert syndrome | apert syndrome | Apert syndrome |
+| MONDO:0007044 | Acrodysostosis 1 with or without hormone resistance | acrodysostosis 1 with or without hormone resistance | Acrodysostosis 1 with or without hormone resistance |
+| MONDO:0007055 | Acromicric dysplasia | acromicric dysplasia | Acromicric dysplasia |
+| MONDO:0007057 | Acroosteolysis dominant type | acroosteolysis dominant type | Acroosteolysis dominant type |
+| MONDO:0007058 | Acropectorovertebral dysplasia | acropectorovertebral dysplasia | Acropectorovertebral dysplasia |
+| MONDO:0007073 | Hypoglossia-hypodactyly syndrome | hypoglossia-hypodactyly syndrome | Hypoglossia-hypodactyly syndrome |
+| MONDO:0007078 | Pseudohypoparathyroidism type 1A | pseudohypoparathyroidism type 1A | Pseudohypoparathyroidism type 1A |
+| MONDO:0007114 | Angel-shaped phalango-epiphyseal dysplasia | angel-shaped phalango-epiphyseal dysplasia | Angel-shaped phalango-epiphyseal dysplasia |
+| MONDO:0007124 | Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome | ankyloblepharon-ectodermal defects-cleft lip/palate syndrome | Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome |
+| MONDO:0007136 | hereditary anorectal anomalies | genetic anorectal anomalies | hereditary anorectal anomalies |
+| MONDO:0016229 | hereditary vascular anomaly | genetic vascular anomaly | hereditary vascular anomaly |
+| MONDO:0043009 | hereditary lethal multiple congenital anomalies/dysmorphic syndrome | genetic lethal multiple congenital anomalies/dysmorphic syndrome | hereditary lethal multiple congenital anomalies/dysmorphic syndrome |
+| MONDO:0015961 | hereditary head and neck malformation | genetic head and neck malformation | hereditary head and neck malformation |
+| MONDO:0015617 | hereditary gastro-esophageal disease | genetic gastro-esophageal disease | hereditary gastro-esophageal disease |
+| MONDO:0021026 | hereditary epidermal appendage anomaly | genetic epidermal appendage anomaly | hereditary epidermal appendage anomaly |
+| MONDO:0018188 | hereditary intestinal polyposis | genetic intestinal polyposis | hereditary intestinal polyposis |
+| MONDO:0008247 | Robin sequence-oligodactyly syndrome | robin sequence-oligodactyly syndrome | Robin sequence-oligodactyly syndrome |
+| MONDO:0021029 | hereditary sebaceous gland anomaly | genetic sebaceous gland anomaly | hereditary sebaceous gland anomaly |
+| MONDO:0800092 | hereditary inflammatory or rheumatoid-like osteoarthropathy | genetic inflammatory or rheumatoid-like osteoarthropathy | hereditary inflammatory or rheumatoid-like osteoarthropathy |
+| MONDO:0015541 | hereditary hemophagocytic lymphohistiocytosis | genetic hemophagocytic lymphohistiocytosis | hereditary hemophagocytic lymphohistiocytosis |
+| MONDO:0009123 | orthostatic hypotension 1 | dopamine beta-hydroxylase deficiency | orthostatic hypotension 1 |
+| MONDO:0016165 | hereditary hypoparathyroidism | genetic hypoparathyroidism | hereditary hypoparathyroidism |
+| MONDO:0020504 | hereditary recurrent myoglobinuria | genetic recurrent myoglobinuria | hereditary recurrent myoglobinuria |
+| MONDO:0010898 | autosomal dominant epilepsy with auditory features | Autosomal dominant epilepsy with auditory features | autosomal dominant epilepsy with auditory features |
+| MONDO:0020075 | hereditary non-syndromic obesity | genetic non-syndromic obesity | hereditary non-syndromic obesity |
+| MONDO:0016025 | myoclonic-astatic epilepsy | myoclonic-astastic epilepsy | myoclonic-astatic epilepsy |
+| MONDO:0015514 | hereditary endocrine growth disease | genetic endocrine growth disease | hereditary endocrine growth disease |
+| MONDO:0014846 | spinocerebellar ataxia, autosomal recessive 23 | autosomal recessive cerebellar ataxia - epilepsy - intellectual disability syndrome due to TUD deficiency | spinocerebellar ataxia, autosomal recessive 23 |
+| MONDO:0014951 | intellectual developmental disorder, autosomal recessive 74 | Sotos syndrome 3 | intellectual developmental disorder, autosomal recessive 74 |
+| MONDO:0016166 | hereditary hyperparathyroidism | genetic hyperparathyroidism | hereditary hyperparathyroidism |
+| MONDO:0018046 | thrombocytopenia-Robin sequence syndrome | thrombocytopenia-robin sequence syndrome | thrombocytopenia-Robin sequence syndrome |
+| MONDO:0019536 | Shiga toxin-associated hemolytic uremic syndrome | typical hemolytic-uremic syndrome | Shiga toxin-associated hemolytic uremic syndrome |
+| MONDO:0021149 | hereditary vs non-hereditary etiology | genetic vs non-genetic etiology | hereditary vs non-hereditary etiology |
+| MONDO:0021905 | Apert-like polydactyly syndrome | apert-like polydactyly syndrome | Apert-like polydactyly syndrome |
+| MONDO:0025510 | pythiosis, non-human animal | pythiosis | pythiosis, non-human animal |
+| MONDO:0043131 | Michels Caskey syndrome | michels caskey syndrome | Michels Caskey syndrome |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0020127 | hereditary peripheral neuropathy | Genetic peripheral neuropathy. | An instance of peripheral neuropathy that is caused by an inherited genomic modification in an individual. |
+| MONDO:0001504 | fetishistic disorder | A disorder characterized by recurrent sexual urges, fantasies, or behaviors involving the use of nonliving objects such as women's wearing apparel (the \fetish\")." | A disorder characterized by recurrent sexual urges, fantasies, or behaviors involving the use of nonliving objects (the \fetish\")." |
+| MONDO:0002457 | Treacher-Collins syndrome | Treacher-Collins syndrome is a congenital disorder of craniofacial development characterized by bilateral symmetrical oto-mandibular dysplasia without abnormalities of the extremities, and associated with several head and neck defects. | A congenital disorder of craniofacial development characterized by bilateral symmetrical oto-mandibular dysplasia without abnormalities of the extremities, and associated with several head and neck defects. |
+| MONDO:0015547 | hereditary dementia | Genetic dementia. | An instance of dementia that is caused by an inherited genomic modification in an individual. |
+| MONDO:0700104 | respiratory system disorder, non-human animal | | Respiratory system disorder that occurs in non-human animals. |
+| MONDO:0020087 | hereditary lipodystrophy | Genetic lipodystrophy. | An instance of lipodystrophy that is caused by an inherited genomic modification in an individual. |
+| MONDO:0007055 | Acromicric dysplasia | Acromicric dysplasia is a rare bone dysplasia characterized by short stature, short hands and feet, mild facial dysmorphism, and characteristic X-ray abnormalities of the hands. | A rare bone dysplasia characterized by short stature, short hands and feet, mild facial dysmorphism, and characteristic X-ray abnormalities of the hands. |
+| MONDO:0007057 | Acroosteolysis dominant type | Acroosteolysis dominant type (AOD) is a rare genetic osteolysis syndrome characterized by acroosteolysis of distal phalanges and generalized osteoporosis, associated with additional ossification anomalies, craniofacial dysmorphism, dental anomalies and a wide range of other characteristics. | A rare genetic osteolysis syndrome characterized by acroosteolysis of distal phalanges and generalized osteoporosis, associated with additional ossification anomalies, craniofacial dysmorphism, dental anomalies and a wide range of other characteristics. |
+| MONDO:0007058 | Acropectorovertebral dysplasia | Acropectorovertebral dysplasia is a skeletal dysplasia characterized by fusion of the carpal and tarsal bones, with complex anomalies of the fingers and toes (preaxial polydactyly of the hands and/or feet, syndactyly of fingers and toes, hypoplasia and dysgenesis of metatarsal bones). | A skeletal dysplasia characterized by fusion of the carpal and tarsal bones, with complex anomalies of the fingers and toes (preaxial polydactyly of the hands and/or feet, syndactyly of fingers and toes, hypoplasia and dysgenesis of metatarsal bones). |
+| MONDO:0007073 | Hypoglossia-hypodactyly syndrome | Hanhart syndrome is a rare condition that primarily affects the craniofacial region and the limbs (arms and legs). People affected by this condition are often born with a short, incompletely developed tongue; absent or partially missing fingers and/or toes; abnormalities of the arms and/or legs; and an extremely small jaw. The severity of these physical abnormalities varies greatly among affected people, and children with this condition often have some, but not all, of the symptoms. The cause of Hanhart syndrome is not fully understood. Treatment depends on the signs and symptoms present in each person. | A rare condition that primarily affects the craniofacial region and the limbs (arms and legs). People affected by this condition are often born with a short, incompletely developed tongue; absent or partially missing fingers and/or toes; abnormalities of the arms and/or legs; and an extremely small jaw. The severity of these physical abnormalities varies greatly among affected people, and children with this condition often have some, but not all, of the symptoms. The cause of Hanhart syndrome is not fully understood. Treatment depends on the signs and symptoms present in each person. |
+| MONDO:0007114 | Angel-shaped phalango-epiphyseal dysplasia | Angel-shaped phalango-epiphyseal dysplasia (ASPED) is a form of acromelic dysplasia characterized by the distinctive radiological sign of angel-shaped middle phalanges, a typical metacarpophalangeal pattern profile (mainly affecting first metacarpals and middle phalanges of second, third and fifth digits, which all appear short), epiphyseal changes in the hips and, in some, abnormal dentition and delayed bone age. | A form of acromelic dysplasia characterized by the distinctive radiological sign of angel-shaped middle phalanges, a typical metacarpophalangeal pattern profile (mainly affecting first metacarpals and middle phalanges of second, third and fifth digits, which all appear short), epiphyseal changes in the hips and, in some, abnormal dentition and delayed bone age. |
+| MONDO:0007124 | Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome | Ankyloblepharon-ectodermal defects-cleft lip/palate (AEC) syndrome is an ectodermal dysplasia syndrome with defining features of ankyloblepharon filiforme adnatum (AFA), ectodermal abnormalities and a cleft lip and/or palate. | An ectodermal dysplasia syndrome with defining features of ankyloblepharon filiforme adnatum (AFA), ectodermal abnormalities and a cleft lip and/or palate. |
+| MONDO:0007438 | dentin dysplasia-sclerotic bones syndrome | Dentin dysplasia-sclerotic bones syndrome is a rare, genetic odontologic disease characterized by the clinical, radiographic, and histologic features of dentine dysplasia and osteosclerosis of all long bones, with heavy cortical bone and narrowed or occluded marrow spaces. There have been no further descriptions in the literature since 1977. | A rare, genetic odontologic disease characterized by the clinical, radiographic, and histologic features of dentine dysplasia and osteosclerosis of all long bones, with heavy cortical bone and narrowed or occluded marrow spaces. There have been no further descriptions in the literature since 1977. |
+| MONDO:0009123 | orthostatic hypotension 1 | Dopamine beta-hydroxylase deficiency is an extremely rare genetic metabolic disorder characterized by autonomic dysregulation leading mainly to orthostatic hypotension. | A very rare primary monoamine neurotransmitter synthesis disorder with norepinephrine and adrenaline deficiency that leads to young-onset severe orthostatic hypotension and eyelid ptosis. |
+| MONDO:0016244 | atypical hemolytic-uremic syndrome | Atypical hemolytic-uremic syndrome (aHUS) is a thrombotic microangiopathy characterized by mechanical hemolytic anemia, thrombocytopenia, and renal dysfunction. | A rare, genetic thrombotic microangiopathy due to dysregulation of the alternative complement pathway and characterized by the triad of hemolytic anemia, thrombocytopenia, and acute renal dysfunction. |
+| MONDO:0016165 | hereditary hypoparathyroidism | Genetic hypoparathyroidism. | An instance of hypoparathyroidism that is caused by an inherited genomic modification in an individual. |
+| MONDO:0017868 | diencephalic-mesencephalic junction dysplasia | Diencephalic-mesencephalic junction dysplasia is a rare, genetic, non-syndromic cerebral malformation characterized by severe intellectual disability, progressive postnatal microcephaly, axial hypotonia, spastic quadriparesis, seizures and facial dysmorphism (bushy eyebrows, hairy forehead, broad nasal root, long flat philtrum, V-shaped upper lip). Additionaly, talipes equinovarus, non-obstructive cardiomyopathy, persistent hyperplastic primary vitreous, obstructive hydrocephalus and autistic features may also be associated. On brain magnetic resonance imaging, the 'butterfly sign' is characterisitcally observed and cortical calcifications, agenesis of the corpus callosum, ventriculomegaly, brainstem dysplasia and cerebellar vermis hypoplasia have also been described. | A rare, genetic, non-syndromic cerebral malformation characterized by severe intellectual disability, progressive postnatal microcephaly, axial hypotonia, spastic quadriparesis, seizures and facial dysmorphism (bushy eyebrows, hairy forehead, broad nasal root, long flat philtrum, V-shaped upper lip). Additionaly, talipes equinovarus, non-obstructive cardiomyopathy, persistent hyperplastic primary vitreous, obstructive hydrocephalus and autistic features may also be associated. On brain magnetic resonance imaging, the 'butterfly sign' is characterisitcally observed and cortical calcifications, agenesis of the corpus callosum, ventriculomegaly, brainstem dysplasia and cerebellar vermis hypoplasia have also been described. |
+| MONDO:0020504 | hereditary recurrent myoglobinuria | Genetic recurrent myoglobinuria is an inborn error of metabolism characterized by abnormal urinary excretion of myoglobin due to acute destruction of skeletal muscle fibers. | An inborn error of metabolism characterized by abnormal urinary excretion of myoglobin due to acute destruction of skeletal muscle fibers. |
+| MONDO:0010933 | autosomal recessive nonsyndromic hearing loss 4 | An autosomal recessive nonsyndromic deafness that has material basis in mutation in the SLC26A4 gene on chromosome 7q22. | An autosomal recessive nonsyndromic deafness that has material basis in mutation in the SLC26A4 gene on chromosome 7q22. Mutation in the FOXI1 gene has been found to be a rare cause of EVA. EVA may also be rarely caused by digenic inheritance of heterozygous mutations in the SLC26A4 and FOXI1 genes, or in the SLC26A4 and KCNJ10 genes. |
+| MONDO:0013885 | Malan overgrowth syndrome | Malan overgrowth syndrome is a multiple congenital anomalies syndrome characterized by moderate postnatal overgrowth, macrocephaly, craniofacial dysmorphism (including high forehead and anterior hairline, downslanting palpebral fissures, prominent chin), developmental delay, and intellectual disability. Additional variable manifestations include unusual behavior, with or without autistic traits, as well as ocular (e.g. strabismus, nystagmus, optic disc pallor/hypoplasia), gastrointestinal (e.g. vomiting, chronic diarrhea, constipation), musculoskeletal (e.g. scoliosis and pectus excavatum), hand/foot (e.g. long, tapered fingers) and central nervous system (e.g. slightly enlarged ventricles) anomalies. | A rare multisystemic genetic disorder characterized by a characteristic facial features with macrocephaly, overgrowth in infancy, intellectual disability and behavioral problems including anxieties and aggressiveness. |
+| MONDO:0014951 | intellectual developmental disorder, autosomal recessive 74 | Any Sotos syndrome in which the cause of the disease is a mutation in the APC2 gene. | Any autosomal recessive non-syndromic intellectual disability in which the cause of the disease is a mutation in the APC2 gene. |
+| MONDO:0016166 | hereditary hyperparathyroidism | Genetic hyperparathyroidism. | An instance of hyperparathyroidism that is caused by an inherited genomic modification in an individual. |
+| MONDO:0019536 | Shiga toxin-associated hemolytic uremic syndrome | Typical hemolytic-uremic syndrome (typical HUS) is a thrombotic microangiopathy characterized by mechanical hemolytic anemia, thrombocytopenia, and renal dysfunction that is usually associated with prodromal enteritis caused by Shigella dysentriae type 1 or E. Coli. | A rare thrombotic microangiopathy characterized by mechanical hemolytic anemia, thrombocytopenia, and renal dysfunction that is usually associated with prodromal enteritis caused by Shigella dysentriae type 1 or E. Coli. |
+| MONDO:0700106 | immune system disorder, non-human animal | | Immune system disorder that occurs in non-human animals. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000769 | obsolete chicken egg allergy |
+| MONDO:0000770 | obsolete shellfish allergy |
+| MONDO:0000778 | obsolete fruit allergy |
+| MONDO:0000781 | obsolete cherry allergy |
+| MONDO:0000782 | obsolete Indian plum allergy |
+| MONDO:0000783 | obsolete orange allergy |
+| MONDO:0000784 | obsolete melon allergy |
+| MONDO:0016123 | obsolete muscular tumor |
+| MONDO:0005290 | obsolete rhabdomyolysis |
+| MONDO:0005307 | obsolete contracture |
+| MONDO:0005849 | obsolete milk allergic reaction |
+| MONDO:0005902 | obsolete peanut allergic reaction |
+| MONDO:0006516 | obsolete sarcopenia |
+| MONDO:0007543 | obsolete enolase, sperm specific |
+| MONDO:0016117 | obsolete muscular lipidosis |
+| MONDO:0008448 | obsolete spheroid body myopathy |
+| MONDO:0008658 | obsolete virus Rd114 RNA Complementarity |
+| MONDO:0016118 | obsolete muscular glycogenosis |
+| MONDO:0015335 | obsolete Mendelian syndromes with cleft lip/palate |
+| MONDO:0010682 | obsolete myoclonic epilepsy, progressive, X-linked |
+| MONDO:0010975 | obsolete arrhythmogenic right ventricular dysplasia 2 |
+| MONDO:0018344 | obsolete periodic paralysis with transient compartment-like syndrome |
+| MONDO:0020643 | obsolete autism susceptibility 1 |
+| MONDO:0033211 | obsolete diencephalic-mesencephalic junction dysplasia syndrome |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0001153 | gender dysphoria |
+| MONDO:0007299 | Sotos syndrome 1 |
+| MONDO:0007779 | autosomal dominant Opitz G/BBB syndrome |
+| MONDO:0010204 | lysosomal acid lipase deficiency |
+| MONDO:0011380 | leukoencephalopathy with vanishing white matter |
+| MONDO:0011499 | Okamoto syndrome |
+| MONDO:0017336 | fatal infantile hypertrophic cardiomyopathy due to mitochondrial complex I deficiency |
+| MONDO:0018786 | pontine autosomal dominant microangiopathy with leukoencephalopathy |
+| MONDO:0021927 | arthrogryposis epileptic seizures migrational brain disorder |
+| MONDO:0034147 | neonatal epileptic encephalopathy due to glutaminase deficiency |
+| MONDO:0035160 | progressive myoclonic epilepsy with neuroserpin inclusion bodies |
+| MONDO:0044618 | CLCN4-related X-linked intellectual disability syndrome |
+| MONDO:0800342 | cap myopathy 2 |
+| MONDO:0858986 | autosomal dominant spastic paraplegia type 80 |
+| MONDO:0858987 | autosomal recessive spastic paraplegia type 82 |
+| MONDO:0858988 | autosomal recessive spastic paraplegia type 83 |
+| MONDO:0858989 | autosomal recessive spastic paraplegia type 84 |
+| MONDO:0858990 | autosomal recessive spastic paraplegia type 85 |
+| MONDO:0858991 | autosomal recessive spastic paraplegia type 86 |
+| MONDO:0858992 | autosomal recessive spastic paraplegia type 87 |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0015508 | hereditary parenchymatous liver disease |
+| MONDO:0020127 | hereditary peripheral neuropathy |
+| MONDO:0018751 | hereditary otorhinolaryngologic disease |
+| MONDO:0015547 | hereditary dementia |
+| MONDO:0016229 | hereditary vascular anomaly |
+| MONDO:0015617 | hereditary gastro-esophageal disease |
+| MONDO:0018188 | hereditary intestinal polyposis |
+| MONDO:0019201 | thyrotoxic periodic paralysis |
+| MONDO:0016165 | hereditary hypoparathyroidism |
+| MONDO:0016166 | hereditary hyperparathyroidism |
+
 # 2023-06-01
 ## Overview:
 * Number of new terms: 106
