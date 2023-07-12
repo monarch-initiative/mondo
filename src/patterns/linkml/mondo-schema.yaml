@@ -1,0 +1,104 @@
+# linkml schema for mondo
+id: https://w3id.org/linkml/examples/mondo
+name: mondo
+prefixes:
+  MONDO: https://purl.obolibrary.org/obo/MONDO_
+
+classes:
+
+  AnatomicalStructure:
+
+  CellType:
+    is_a: AnatomicalStructure
+
+  GrossAnatomicalStructure:
+    is_a: AnatomicalStructure
+
+  ConditionClass:
+
+  SusceptibilityClass:
+    is_a: ConditionClass
+    attributes:
+      susceptibility_towards:
+        range: DiseaseClass
+
+  InjuryClass:
+    is_a: ConditionClass
+    attributes:
+      susceptibility_towards:
+        range: DiseaseClass
+
+  DiseaseClass:
+    is_a: ConditionClass
+    attributes:
+      phenotypic_features:
+        range: PhenotypicFeature
+        multivalued: true
+
+  GroupingClass:
+    attributes:
+      classifies:
+        range: ConditionClass
+        multivalued: true
+
+  DiseaseGroupingClass:
+    is_a: GroupingClass
+    attributes:
+      classifies:
+        range: DiseaseClass
+
+  NeoplasticDiseaseGroupingClass:
+    is_a: DiseaseGroupingClass
+    attributes:
+      morphological_type:
+      primary_site:
+      malignancy:
+
+  HeritableDiseaseGroupingClass:
+    is_a: DiseaseGroupingClass
+
+  HeritableGeneBasedDiseaseGroupingClass:
+    is_a: HeritableDiseaseGroupingClass
+    # used by clingen
+
+  SpecificDiseaseClass:
+    is_a: DiseaseClass
+
+  InfectiousDiseaseClass:
+    is_a: SpecificDiseaseClass
+
+  EnvironmentalDiseaseClass:
+    is_a: SpecificDiseaseClass
+
+  CommonDiseaseClass:
+    is_a: SpecificDiseaseClass
+
+  HeritableDiseaseClass:
+    is_a: SpecificDiseaseClass
+    attributes:
+      primary_causal_gene:
+        range: Gene
+      mode_of_inheritance:
+        range: ModeOfInheritanceType
+
+  PhenotypicSeriesClass:
+    is_a: HeritableDiseaseClass
+
+  GeneLevelHeritableDiseaseClass:
+    is_a: HeritableDiseaseClass
+
+  MemberOfPhenotypicSeriesClass:
+    is_a: GeneLevelHeritableDiseaseClass
+
+  NonMemberOfPhenotypicSeriesClassKnownGene:
+    is_a: GeneLevelHeritableDiseaseClass
+
+  NonMemberOfPhenotypicSeriesClassUnknownGene:
+    is_a: GeneLevelHeritableDiseaseClass
+
+  ChromosomalDiseaseClass:
+    is_a: SpecificDiseaseClass
+    attributes:
+      cytogenetic_location:
+        range: CytogeneticLocation
+
