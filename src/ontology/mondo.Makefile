@@ -868,14 +868,16 @@ tmp/boomer_output.ofn: tmp/combined.ptable.tsv tmp/merged.owl
 		--runs 5 \
 		--output-internal-axioms true
 
-tmp/mondo-new-boomer-base.owl: tmp/boomer_output.ofn
-	$(ROBOT) merge --input $< \
+tmp/mondo-new-boomer-base.owl: # tmp/boomer_output.ofn tmp/merged.owl
+	$(ROBOT) merge --input tmp/boomer_output.ofn --input tmp/merged.owl \
 	reason reduce \
 	remove --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true \
 	filter --axioms subclass \
 	-o $@
 
-tmp/mondo-boomer-new-mondo.owl: tmp/mondo-new-boomer-base.owl tmp/mondo-no-logical-axioms.owl
-	$(ROBOT) merge -i $< -i tmp/mondo-no-logical-axioms.owl -o $@
+tmp/mondo-boomer-new-mondo.owl: # tmp/mondo-new-boomer-base.owl tmp/mondo-no-logical-axioms.owl
+	$(ROBOT) merge -i tmp/mondo-new-boomer-base.owl -i tmp/mondo-no-logical-axioms.owl query --update ../sparql/update/add-placeholder-parent.ru -o $@
 
 
+tmp/mondo-reviewed-subclass.owl: # mondo.owl 
+	$(ROBOT) merge -i tmp/mondo-new-boomer-base.owl -i tmp/mondo-no-logical-axioms.owl query --update ../sparql/update/add-placeholder-parent.ru -o $@
