@@ -9,11 +9,12 @@ Example: 'calciphylaxis' (MONDO:0017215) is considered "rare" according to NORD,
 
 ![rareexample](https://github.com/monarch-initiative/mondo/assets/12737987/a5dc4b6e-c3d1-4bca-926a-f81fdcea5ddb)
 
-
-In our [2021 publication](https://mondo.monarchinitiative.org/pages/analysis/), we identified rare diseases as 
+Some Mondo terms were annotated with a `‘bearer of’ some rare` axiom. These axioms were added automatically to terms coming from Orphanet (before the creation of 'orphanet_rare' in_subset annotation), and manually by a curator based on the disease definition.
+In our [2021 publication](https://mondo.monarchinitiative.org/pages/analysis/) ([and here](https://pubmed.ncbi.nlm.nih.gov/32020066/)), we identified rare diseases as
 - terms annotated with the `‘bearer of’ some rare` axiom (as provided by Mondo contributing resources)
 - **AND** limited to the ‘human disease’ branch (which excludes ‘susceptibility’ terms)
 _(note that the "gard subset" annotation reported in the publication has been ignored here)_
+
 The Mondo terms fulfilling the above conditions were annotated with the 'in_subset' annotation 'mondo_rare' (see arrows in image above).
 
 #### The Mondo rare disease subset include ALL rare diseases according to ALL rare disease sources.
@@ -41,9 +42,9 @@ Users can filter using the subset annotation “X_rare” (where X is a rare dis
 
 | Rare disease authority | link | in_subset annotation in Mondo | Rare disease source criteria |
 | --- | --- | --- | --- |
-|NORD |(website) | nord_rare | *(coming soon)*|
-|GARD |(website) | gard_rare | *(coming soon)*|
-|Orphanet |(website) | orphanet_rare | *(coming soon)*|
+|GARD |[https://rarediseases.info.nih.gov/](https://rarediseases.info.nih.gov/) | gard_rare | *(coming soon)*|
+|NORD |[https://rarediseases.org/](https://rarediseases.org/) | nord_rare | *(coming soon)*|
+|Orphanet |[https://www.orpha.net/](https://www.orpha.net/) | orphanet_rare | *(coming soon)*|
 
 
 
