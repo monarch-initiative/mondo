@@ -821,3 +821,63 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+######################################
+##### New regeneration process #######
+######################################
+# Remove logical axioms
+tmp/mondo-no-logical-axioms.owl: mondo.owl
+	$(ROBOT) remove --input $< --axioms logical --output $@
+
+# Declare version and resources of the `mondo-ingest` release
+VERSION = v2023-06-14
+EXTERNAL_ONTOLOGIES:= doid ncit omim
+get-external-resources: $(addprefix tmp/,$(addsuffix .owl,$(EXTERNAL_ONTOLOGIES)))
+
+tmp/%.owl:
+	wget "https://github.com/monarch-initiative/mondo-ingest/releases/download/$(VERSION)/$*.owl" -O $@
+
+ONTOLOGIES:= $(EXTERNAL_ONTOLOGIES)
+ONTOLOGIES += mondo-no-logical-axioms
+
+# Merge the OWL files.
+tmp/merged.owl: $(addprefix tmp/,$(addsuffix .owl,$(ONTOLOGIES)))
+	robot merge $(foreach file,$^,--input $(file)) --output $@
+
+# filter mondo.sssom.tsv
+
+PREFIXES := DOID NCIT OMIM OMIMPS
+
+tmp/mondo-doid-omim-ncit.sssom.tsv:
+	sssom filter $(addprefix --object_id ,$(addsuffix :%,$(PREFIXES))) $(MAPPINGSDIR)/mondo.sssom.tsv -o $@
+	sssom parse $@ -o $@
+
+tmp/combined.ptable.tsv: tmp/mondo-doid-omim-ncit.sssom.tsv
+	sssom ptable --default-confidence 0.95 $< -o $@
+
+tmp/boomer_output.ofn: tmp/combined.ptable.tsv tmp/merged.owl
+	mkdir -p tmp/boomer_output
+	find tmp/boomer_output -name "*.json" -type 'f' -delete
+	find tmp/boomer_output -name "*.png" -type 'f' -delete
+	boomer --ptable $< \
+		--ontology  $^ \
+		--prefixes prefixes.yaml \
+		--output tmp/boomer_output \
+		--window-count 10 \
+		--exhaustive-search-limit 20 \
+		--runs 5 \
+		--output-internal-axioms true
+
+tmp/mondo-new-boomer-base.owl: # tmp/boomer_output.ofn tmp/merged.owl
+	$(ROBOT) merge --input tmp/boomer_output.ofn --input tmp/merged.owl \
+	reason reduce \
+	remove --base-iri http://purl.obolibrary.org/obo/MONDO_ --axioms external --trim true \
+	filter --axioms subclass \
+	-o $@
+
+tmp/mondo-boomer-new-mondo.owl: # tmp/mondo-new-boomer-base.owl tmp/mondo-no-logical-axioms.owl
+	$(ROBOT) merge -i tmp/mondo-new-boomer-base.owl -i tmp/mondo-no-logical-axioms.owl query --update ../sparql/update/add-placeholder-parent.ru -o $@
+
+
+tmp/mondo-reviewed-subclass.owl: # mondo.owl 
+	$(ROBOT) merge -i tmp/mondo-new-boomer-base.owl -i tmp/mondo-no-logical-axioms.owl query --update ../sparql/update/add-placeholder-parent.ru -o $@
