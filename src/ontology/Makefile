@@ -85,10 +85,10 @@ IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equi
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
 IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
 
-COMPONENTS = mondo-tags
+COMPONENTS = mondo-tags mondo-subsets
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
-SUBSETS = mondo-minimal
+SUBSETS = mondo-minimal mondo-rare
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
 
@@ -271,7 +271,7 @@ $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 
-OTHER_SRC=imports/axioms.owl
+OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl
 
 $(ONT)-base.owl: reasoned.owl
 	$(ROBOT) remove --input $< --select imports --trim false \
@@ -328,7 +328,35 @@ reports/reasoner-diff.obo: filtered-nr.obo filtered-nr-reasoned.obo
 # ----------------------------------------
 # CC-0 MINIMAL
 # ----------------------------------------
-all_subsets: subsets/mondo-minimal.obo subsets/mondo-minimal.owl subsets/mondo-minimal.json
+
+all_subsets: $(SUBSET_FILES)
+
+RARE_SUBSET_PRESERVED_RELATIONS=RO:0004003 RO:0000053
+
+tmp/rare-subset-pre.owl: #$(SRC)
+	$(ROBOT) merge -i $(SRC) reason relax materialize $(patsubst %, --term %, $(RARE_SUBSET_PRESERVED_RELATIONS)) -o $@
+
+# This gets us all the rare disease classes:
+tmp/rare-seed-classes.txt: tmp/rare-subset-pre.owl
+	$(ROBOT) merge -i $< query --query ../sparql/signature/rare-subset.sparql $@
+.PRECIOUS: tmp/rare-seed-classes.txt
+
+# This gets us all the entities linked to the rare disease classes
+# Make sure you add the relationships you want to add to ../sparql/signature/rare-subset-related-entity.sparql
+# AND config/rare_subset_relations.txt
+tmp/rare-seed-entities.txt: tmp/rare-subset-pre.owl tmp/rare-seed-classes.txt
+	$(ROBOT) merge -i $< filter -T tmp/rare-seed-classes.txt --trim false query --query ../sparql/signature/rare-subset-related-entity.sparql $@
+.PRECIOUS: tmp/rare-seed-entities.txt
+
+# This merges thes seed together into one file (including rare disease classes _and_ related entities.)
+tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/rare_subset_relations.txt
+	cat $^ | sort | uniq > $@
+.PRECIOUS: tmp/rare-seed.txt
+
+subsets/mondo-rare.owl: $(ONT)-base.owl imports/hgnc_import.owl  tmp/rare-seed.txt | $(SUBSETDIR)
+	$(ROBOT) merge -i $< -i imports/hgnc_import.owl extract --method subset -T tmp/rare-seed.txt --output $@ &&\
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
 TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch
 subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
@@ -342,6 +370,8 @@ subsets/%.json: subsets/%.owl
 subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
+rare_subset:
+	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl
 
 # ----------------------------------------
 # DOSDP Modules

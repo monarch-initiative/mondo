@@ -1,3 +1,433 @@
+# 2023-07-03
+## Overview:
+* Number of new terms: 82
+* Number of changed labels: 50
+* Number of changed definitions: 24
+* Number obsoleted terms: 24
+* Number of new obsoletion candidates: 20
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 10
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100513 | TRAF3 haploinsufficiency | Any Mendelian disease in which the cause of the disease is a mutation in the TRAF3 gene. TRAF3 haploinsufficiency caused by heterozygous loss of function (null) variants presents as an immune dysregulation syndrome of recurrent bacterial infections, autoimmunity, systemic inflammation, B cell lymphoproliferation, and hypergammaglobulinemia. |
+| MONDO:0100519 | epilepsy, idiopathic generalized, susceptibility to, 17 | |
+| MONDO:0100520 | NKX2-1 related choreoathetosis and congenital hypothyroidism with or without pulmonary dysfunction | The NKX2-1 gene is located on chromosome 14 at 14q13.3 and encodes the NK2 homeobox 1 protein, a transcription factor that binds and activates thyroid specific genes. NKX2-1 was first reported in relation to autosomal dominant NKX2-1 related choreoathetosis and congenital hypothyroidism with or without pulmonary dysfunction in 1998. |
+| MONDO:0100521 | NOG-related symphalangism spectrum disorder | An autosomal dominant condition caused by pathogenic variants of the NOG gene, encoding the noggin protein. Five overlapping clinical syndromes associated with NOG mutations have been described; proximal symphalangism, multiple synostoses syndrome 1, tarsal-carpal coalition syndrome, stapes ankylosis with broad thumbs and toes, and brachydactyly type B2. NOG-related symphalangism spectrum disorder is a new term initially proposed by Potti et al., 2011 to encompass these disorders. NOG-SSD is characterized by proximal symphalangism, conductive deafness caused by stapes ankylosis, ocular abnormality such as hyperopia and strabismus, and characteristic facial features including a broad, tubular-shaped nose and a thin upper vermilion. |
+| MONDO:0100522 | hypotrichosis 4 | |
+| MONDO:0100523 | SPAST-related motor disorder | Heterozygous variants in SPAST have been reported in relation to pure spastic paraplegias (infantile, ascending), complicated or complex spastic paraplegia (with dementia, cerebellar ataxia, epilepsy, and/or peripheral neuropathy) and cerebral palsy. Age of symptom onset ranges from neonatal to advanced age with varying symptom severity, |
+| MONDO:0957001 | hereditary mixed dermis disorder | |
+| MONDO:0957003 | hereditary neuro-ophthalmological disease | |
+| MONDO:0957008 | hereditary cerebral malformation | |
+| MONDO:0957009 | hereditary posterior fossa malformation | |
+| MONDO:0957018 | autoinflammatory syndrome of childhood | |
+| MONDO:0957024 | hereditary 46,XX disorder of sex development | |
+| MONDO:0957025 | hereditary 46,XY disorder of sex development | |
+| MONDO:0957048 | isolated macular dystrophy | |
+| MONDO:0957097 | hereditary hemolytic uremic syndrome | |
+| MONDO:0957111 | neurological muscular channelopathy due to a genetic sodium channel defect | |
+| MONDO:0957112 | neurological muscular channelopathy due to a genetic chloride channel defect | |
+| MONDO:0957113 | neurological muscular channelopathy due to a genetic calcium channel defect | |
+| MONDO:0957114 | neurological muscular channelopathy due to a genetic potassium channel defect | |
+| MONDO:0957115 | neurological muscular channelopathy due to a genetic ryanodine receptor defect | |
+| MONDO:1011300 | acute disease, non-human animal | Acute disease that occurs in non-human animals. |
+| MONDO:1011301 | auditory system disorder, non-human animal | Auditory system disorder that occurs in non-human animals. |
+| MONDO:1011302 | branchial arch disease, non-human animal | Branchial arch disease that occurs in non-human animals. |
+| MONDO:1011303 | mammary gland disorder, non-human animal | Mammary gland disorder that occurs in non-human animals. |
+| MONDO:1011304 | mammary fibrocystic disease, non-human animal | Mammary fibrocystic disease that occurs in non-human animals. |
+| MONDO:1011305 | cancer or benign tumor, non-human animal | Cancer or benign tumor that occurs in non-human animals. |
+| MONDO:1011306 | cardiovascular disorder, non-human animal | Cardiovascular disorder that occurs in non-human animals. |
+| MONDO:1011307 | chromosomal disorder, non-human animal | Chromosomal disorder that occurs in non-human animals. |
+| MONDO:1011308 | congenital nervous system disorder, non-human animal | Congenital nervous system disorder that occurs in non-human animals. |
+| MONDO:1011309 | connective tissue disorder, non-human animal | Connective tissue disorder that occurs in non-human animals. |
+| MONDO:1011310 | developmental defect during embryogenesis, non-human animal | Developmental defect during embryogenesis that occurs in non-human animals. |
+| MONDO:1011311 | digestive system disorder, non-human animal | Digestive system disorder that occurs in non-human animals. |
+| MONDO:1011312 | disease related to transplantation, non-human animal | Disease related to transplantation that occurs in non-human animals. |
+| MONDO:1011313 | disorder of development or morphogenesis, non-human animal | Disorder of development or morphogenesis that occurs in non-human animals. |
+| MONDO:1011314 | disorder of glycosylation, non-human animal | Disorder of glycosylation that occurs in non-human animals. |
+| MONDO:1011315 | disorder of orbital region, non-human animal | Disorder of orbital region that occurs in non-human animals. |
+| MONDO:1011316 | disorder of visual system, non-human animal | Disorder of visual system that occurs in non-human animals. |
+| MONDO:1011317 | endocrine system disorder, non-human animal | Endocrine system disorder that occurs in non-human animals. |
+| MONDO:1011318 | hearing disorder, non-human animal | Hearing disorder that occurs in non-human animals. |
+| MONDO:1011319 | hematologic disorder, non-human animal | Hematologic disorder that occurs in non-human animals. |
+| MONDO:1011321 | hereditary disease, non-human animal | Hereditary disease that occurs in non-human animals. |
+| MONDO:1011322 | iatrogenic disease, non-human animal | Iatrogenic disease that occurs in non-human animals. |
+| MONDO:1011323 | idiopathic disease, non-human animal | Idiopathic disease that occurs in non-human animals. |
+| MONDO:1011325 | immunodeficiency-related disorder, non-human animal | Immunodeficiency-Related disorder that occurs in non-human animals. |
+| MONDO:1011327 | inflammatory disease, non-human animal | Inflammatory disease that occurs in non-human animals. |
+| MONDO:1011328 | integumentary system disorder, non-human animal | Integumentary system disorder that occurs in non-human animals. |
+| MONDO:1011329 | keratoconjunctivitis, non-human animal | Keratoconjunctivitis that occurs in non-human animals. |
+| MONDO:1011330 | lymphoid system disorder, non-human animal | Lymphoid system disorder that occurs in non-human animals. |
+| MONDO:1011331 | metabolic disease, non-human animal | Metabolic disease that occurs in non-human animals. |
+| MONDO:1011332 | mitochondrial disease, non-human animal | Mitochondrial disease that occurs in non-human animals. |
+| MONDO:1011333 | mouth disorder, non-human animal | Mouth disorder that occurs in non-human animals. |
+| MONDO:1011334 | mouth mucosa disorder, non-human animal | Mouth mucosa disorder that occurs in non-human animals. |
+| MONDO:1011335 | musculoskeletal system disorder, non-human animal | Musculoskeletal system disorder that occurs in non-human animals. |
+| MONDO:1011336 | nervous system disorder, non-human animal | Nervous system disorder that occurs in non-human animals. |
+| MONDO:1011337 | neurocristopathy, non-human animal | Neurocristopathy that occurs in non-human animals. |
+| MONDO:1011338 | nutritional disorder, non-human animal | Nutritional disorder that occurs in non-human animals. |
+| MONDO:1011339 | obstetric disorder, non-human animal | Obstetric disorder that occurs in non-human animals. |
+| MONDO:1011340 | occupational disorder, non-human animal | Occupational disorder that occurs in non-human animals. |
+| MONDO:1011341 | omphalitis, non-human animal | Omphalitis that occurs in non-human animals. |
+| MONDO:1011342 | otorhinolaryngologic disease, non-human animal | Otorhinolaryngologic disease that occurs in non-human animals. |
+| MONDO:1011343 | perceptual disorders, non-human animal | Perceptual disorders that occurs in non-human animals. |
+| MONDO:1011344 | perinatal disease, non-human animal | Perinatal disease that occurs in non-human animals. |
+| MONDO:1011345 | poisoning, non-human animal | Poisoning that occurs in non-human animals. |
+| MONDO:1011346 | post-bacterial disorder, non-human animal | Post-Bacterial disorder that occurs in non-human animals. |
+| MONDO:1011347 | post-COVID-19 disorder, non-human animal | Post-Covid-19 disorder that occurs in non-human animals. |
+| MONDO:1011348 | post-infectious disorder, non-human animal | Post-Infectious disorder that occurs in non-human animals. |
+| MONDO:1011349 | post-viral disorder, non-human animal | Post-Viral disorder that occurs in non-human animals. |
+| MONDO:1011350 | premature aging syndrome, non-human animal | Premature aging syndrome that occurs in non-human animals. |
+| MONDO:1011351 | psychiatric disorder, non-human animal | Psychiatric disorder that occurs in non-human animals. |
+| MONDO:1011352 | radiation-induced disorder, non-human animal | Radiation-induced disorder that occurs in non-human animals. |
+| MONDO:1011353 | radiculitis, non-human animal | Radiculitis that occurs in non-human animals. |
+| MONDO:1011354 | reproductive system disorder, non-human animal | Reproductive system disorder that occurs in non-human animals. |
+| MONDO:1011356 | sensory ganglionopathy, non-human animal | Sensory ganglionopathy that occurs in non-human animals. |
+| MONDO:1011357 | serositis, non-human animal | Serositis that occurs in non-human animals. |
+| MONDO:1011358 | skin appendage disorder, non-human animal | Skin appendage disorder that occurs in non-human animals. |
+| MONDO:1011359 | subcutaneous tissue disorder, non-human animal | Subcutaneous tissue disorder that occurs in non-human animals. |
+| MONDO:1011360 | syndromic disease, non-human animal | Syndromic disease that occurs in non-human animals. |
+| MONDO:1011361 | thymus gland disorder, non-human animal | Thymus gland disorder that occurs in non-human animals. |
+| MONDO:1011363 | ulcer disease, non-human animal | Ulcer disease that occurs in non-human animals. |
+| MONDO:1011364 | upper digestive tract disorder, non-human animal | Upper digestive tract disorder that occurs in non-human animals. |
+| MONDO:1011365 | urinary system disorder, non-human animal | Urinary system disorder that occurs in non-human animals. |
+| MONDO:1011367 | vision disorder, non-human animal | Vision disorder that occurs in non-human animals. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0021034 | hereditary alopecia | genetic alopecia | hereditary alopecia |
+| MONDO:0015508 | hereditary parenchymatous liver disease | genetic parenchymatous liver disease | hereditary parenchymatous liver disease |
+| MONDO:0018562 | hereditary otorhinolaryngological malformation | genetic otorhinolaryngological malformation | hereditary otorhinolaryngological malformation |
+| MONDO:0100118 | hereditary skin disorder | genetic skin disorder | hereditary skin disorder |
+| MONDO:0020127 | hereditary peripheral neuropathy | genetic peripheral neuropathy | hereditary peripheral neuropathy |
+| MONDO:0020242 | hereditary macular dystrophy | genetic macular dystrophy | hereditary macular dystrophy |
+| MONDO:0001504 | fetishistic disorder | fetishism | fetishistic disorder |
+| MONDO:0018187 | hereditary syndromic Pierre Robin syndrome | genetic syndromic Pierre Robin syndrome | hereditary syndromic Pierre Robin syndrome |
+| MONDO:0018751 | hereditary otorhinolaryngologic disease | genetic otorhinolaryngologic disease | hereditary otorhinolaryngologic disease |
+| MONDO:0015509 | hereditary biliary tract disease | genetic biliary tract disease | hereditary biliary tract disease |
+| MONDO:0015547 | hereditary dementia | genetic dementia | hereditary dementia |
+| MONDO:0020087 | hereditary lipodystrophy | genetic lipodystrophy | hereditary lipodystrophy |
+| MONDO:0017131 | hereditary cardiac anomaly | genetic cardiac anomaly | hereditary cardiac anomaly |
+| MONDO:0007037 | Achondroplasia | achondroplasia | Achondroplasia |
+| MONDO:0007041 | Apert syndrome | apert syndrome | Apert syndrome |
+| MONDO:0007044 | Acrodysostosis 1 with or without hormone resistance | acrodysostosis 1 with or without hormone resistance | Acrodysostosis 1 with or without hormone resistance |
+| MONDO:0007055 | Acromicric dysplasia | acromicric dysplasia | Acromicric dysplasia |
+| MONDO:0007057 | Acroosteolysis dominant type | acroosteolysis dominant type | Acroosteolysis dominant type |
+| MONDO:0007058 | Acropectorovertebral dysplasia | acropectorovertebral dysplasia | Acropectorovertebral dysplasia |
+| MONDO:0007073 | Hypoglossia-hypodactyly syndrome | hypoglossia-hypodactyly syndrome | Hypoglossia-hypodactyly syndrome |
+| MONDO:0007078 | Pseudohypoparathyroidism type 1A | pseudohypoparathyroidism type 1A | Pseudohypoparathyroidism type 1A |
+| MONDO:0007114 | Angel-shaped phalango-epiphyseal dysplasia | angel-shaped phalango-epiphyseal dysplasia | Angel-shaped phalango-epiphyseal dysplasia |
+| MONDO:0007124 | Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome | ankyloblepharon-ectodermal defects-cleft lip/palate syndrome | Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome |
+| MONDO:0007136 | hereditary anorectal anomalies | genetic anorectal anomalies | hereditary anorectal anomalies |
+| MONDO:0016229 | hereditary vascular anomaly | genetic vascular anomaly | hereditary vascular anomaly |
+| MONDO:0043009 | hereditary lethal multiple congenital anomalies/dysmorphic syndrome | genetic lethal multiple congenital anomalies/dysmorphic syndrome | hereditary lethal multiple congenital anomalies/dysmorphic syndrome |
+| MONDO:0015961 | hereditary head and neck malformation | genetic head and neck malformation | hereditary head and neck malformation |
+| MONDO:0015617 | hereditary gastro-esophageal disease | genetic gastro-esophageal disease | hereditary gastro-esophageal disease |
+| MONDO:0021026 | hereditary epidermal appendage anomaly | genetic epidermal appendage anomaly | hereditary epidermal appendage anomaly |
+| MONDO:0018188 | hereditary intestinal polyposis | genetic intestinal polyposis | hereditary intestinal polyposis |
+| MONDO:0008247 | Robin sequence-oligodactyly syndrome | robin sequence-oligodactyly syndrome | Robin sequence-oligodactyly syndrome |
+| MONDO:0021029 | hereditary sebaceous gland anomaly | genetic sebaceous gland anomaly | hereditary sebaceous gland anomaly |
+| MONDO:0800092 | hereditary inflammatory or rheumatoid-like osteoarthropathy | genetic inflammatory or rheumatoid-like osteoarthropathy | hereditary inflammatory or rheumatoid-like osteoarthropathy |
+| MONDO:0015541 | hereditary hemophagocytic lymphohistiocytosis | genetic hemophagocytic lymphohistiocytosis | hereditary hemophagocytic lymphohistiocytosis |
+| MONDO:0009123 | orthostatic hypotension 1 | dopamine beta-hydroxylase deficiency | orthostatic hypotension 1 |
+| MONDO:0016165 | hereditary hypoparathyroidism | genetic hypoparathyroidism | hereditary hypoparathyroidism |
+| MONDO:0020504 | hereditary recurrent myoglobinuria | genetic recurrent myoglobinuria | hereditary recurrent myoglobinuria |
+| MONDO:0010898 | autosomal dominant epilepsy with auditory features | Autosomal dominant epilepsy with auditory features | autosomal dominant epilepsy with auditory features |
+| MONDO:0020075 | hereditary non-syndromic obesity | genetic non-syndromic obesity | hereditary non-syndromic obesity |
+| MONDO:0016025 | myoclonic-astatic epilepsy | myoclonic-astastic epilepsy | myoclonic-astatic epilepsy |
+| MONDO:0015514 | hereditary endocrine growth disease | genetic endocrine growth disease | hereditary endocrine growth disease |
+| MONDO:0014846 | spinocerebellar ataxia, autosomal recessive 23 | autosomal recessive cerebellar ataxia - epilepsy - intellectual disability syndrome due to TUD deficiency | spinocerebellar ataxia, autosomal recessive 23 |
+| MONDO:0014951 | intellectual developmental disorder, autosomal recessive 74 | Sotos syndrome 3 | intellectual developmental disorder, autosomal recessive 74 |
+| MONDO:0016166 | hereditary hyperparathyroidism | genetic hyperparathyroidism | hereditary hyperparathyroidism |
+| MONDO:0018046 | thrombocytopenia-Robin sequence syndrome | thrombocytopenia-robin sequence syndrome | thrombocytopenia-Robin sequence syndrome |
+| MONDO:0019536 | Shiga toxin-associated hemolytic uremic syndrome | typical hemolytic-uremic syndrome | Shiga toxin-associated hemolytic uremic syndrome |
+| MONDO:0021149 | hereditary vs non-hereditary etiology | genetic vs non-genetic etiology | hereditary vs non-hereditary etiology |
+| MONDO:0021905 | Apert-like polydactyly syndrome | apert-like polydactyly syndrome | Apert-like polydactyly syndrome |
+| MONDO:0025510 | pythiosis, non-human animal | pythiosis | pythiosis, non-human animal |
+| MONDO:0043131 | Michels Caskey syndrome | michels caskey syndrome | Michels Caskey syndrome |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0020127 | hereditary peripheral neuropathy | Genetic peripheral neuropathy. | An instance of peripheral neuropathy that is caused by an inherited genomic modification in an individual. |
+| MONDO:0001504 | fetishistic disorder | A disorder characterized by recurrent sexual urges, fantasies, or behaviors involving the use of nonliving objects such as women's wearing apparel (the \fetish\")." | A disorder characterized by recurrent sexual urges, fantasies, or behaviors involving the use of nonliving objects (the \fetish\")." |
+| MONDO:0002457 | Treacher-Collins syndrome | Treacher-Collins syndrome is a congenital disorder of craniofacial development characterized by bilateral symmetrical oto-mandibular dysplasia without abnormalities of the extremities, and associated with several head and neck defects. | A congenital disorder of craniofacial development characterized by bilateral symmetrical oto-mandibular dysplasia without abnormalities of the extremities, and associated with several head and neck defects. |
+| MONDO:0015547 | hereditary dementia | Genetic dementia. | An instance of dementia that is caused by an inherited genomic modification in an individual. |
+| MONDO:0700104 | respiratory system disorder, non-human animal | | Respiratory system disorder that occurs in non-human animals. |
+| MONDO:0020087 | hereditary lipodystrophy | Genetic lipodystrophy. | An instance of lipodystrophy that is caused by an inherited genomic modification in an individual. |
+| MONDO:0007055 | Acromicric dysplasia | Acromicric dysplasia is a rare bone dysplasia characterized by short stature, short hands and feet, mild facial dysmorphism, and characteristic X-ray abnormalities of the hands. | A rare bone dysplasia characterized by short stature, short hands and feet, mild facial dysmorphism, and characteristic X-ray abnormalities of the hands. |
+| MONDO:0007057 | Acroosteolysis dominant type | Acroosteolysis dominant type (AOD) is a rare genetic osteolysis syndrome characterized by acroosteolysis of distal phalanges and generalized osteoporosis, associated with additional ossification anomalies, craniofacial dysmorphism, dental anomalies and a wide range of other characteristics. | A rare genetic osteolysis syndrome characterized by acroosteolysis of distal phalanges and generalized osteoporosis, associated with additional ossification anomalies, craniofacial dysmorphism, dental anomalies and a wide range of other characteristics. |
+| MONDO:0007058 | Acropectorovertebral dysplasia | Acropectorovertebral dysplasia is a skeletal dysplasia characterized by fusion of the carpal and tarsal bones, with complex anomalies of the fingers and toes (preaxial polydactyly of the hands and/or feet, syndactyly of fingers and toes, hypoplasia and dysgenesis of metatarsal bones). | A skeletal dysplasia characterized by fusion of the carpal and tarsal bones, with complex anomalies of the fingers and toes (preaxial polydactyly of the hands and/or feet, syndactyly of fingers and toes, hypoplasia and dysgenesis of metatarsal bones). |
+| MONDO:0007073 | Hypoglossia-hypodactyly syndrome | Hanhart syndrome is a rare condition that primarily affects the craniofacial region and the limbs (arms and legs). People affected by this condition are often born with a short, incompletely developed tongue; absent or partially missing fingers and/or toes; abnormalities of the arms and/or legs; and an extremely small jaw. The severity of these physical abnormalities varies greatly among affected people, and children with this condition often have some, but not all, of the symptoms. The cause of Hanhart syndrome is not fully understood. Treatment depends on the signs and symptoms present in each person. | A rare condition that primarily affects the craniofacial region and the limbs (arms and legs). People affected by this condition are often born with a short, incompletely developed tongue; absent or partially missing fingers and/or toes; abnormalities of the arms and/or legs; and an extremely small jaw. The severity of these physical abnormalities varies greatly among affected people, and children with this condition often have some, but not all, of the symptoms. The cause of Hanhart syndrome is not fully understood. Treatment depends on the signs and symptoms present in each person. |
+| MONDO:0007114 | Angel-shaped phalango-epiphyseal dysplasia | Angel-shaped phalango-epiphyseal dysplasia (ASPED) is a form of acromelic dysplasia characterized by the distinctive radiological sign of angel-shaped middle phalanges, a typical metacarpophalangeal pattern profile (mainly affecting first metacarpals and middle phalanges of second, third and fifth digits, which all appear short), epiphyseal changes in the hips and, in some, abnormal dentition and delayed bone age. | A form of acromelic dysplasia characterized by the distinctive radiological sign of angel-shaped middle phalanges, a typical metacarpophalangeal pattern profile (mainly affecting first metacarpals and middle phalanges of second, third and fifth digits, which all appear short), epiphyseal changes in the hips and, in some, abnormal dentition and delayed bone age. |
+| MONDO:0007124 | Ankyloblepharon-ectodermal defects-cleft lip/palate syndrome | Ankyloblepharon-ectodermal defects-cleft lip/palate (AEC) syndrome is an ectodermal dysplasia syndrome with defining features of ankyloblepharon filiforme adnatum (AFA), ectodermal abnormalities and a cleft lip and/or palate. | An ectodermal dysplasia syndrome with defining features of ankyloblepharon filiforme adnatum (AFA), ectodermal abnormalities and a cleft lip and/or palate. |
+| MONDO:0007438 | dentin dysplasia-sclerotic bones syndrome | Dentin dysplasia-sclerotic bones syndrome is a rare, genetic odontologic disease characterized by the clinical, radiographic, and histologic features of dentine dysplasia and osteosclerosis of all long bones, with heavy cortical bone and narrowed or occluded marrow spaces. There have been no further descriptions in the literature since 1977. | A rare, genetic odontologic disease characterized by the clinical, radiographic, and histologic features of dentine dysplasia and osteosclerosis of all long bones, with heavy cortical bone and narrowed or occluded marrow spaces. There have been no further descriptions in the literature since 1977. |
+| MONDO:0009123 | orthostatic hypotension 1 | Dopamine beta-hydroxylase deficiency is an extremely rare genetic metabolic disorder characterized by autonomic dysregulation leading mainly to orthostatic hypotension. | A very rare primary monoamine neurotransmitter synthesis disorder with norepinephrine and adrenaline deficiency that leads to young-onset severe orthostatic hypotension and eyelid ptosis. |
+| MONDO:0016244 | atypical hemolytic-uremic syndrome | Atypical hemolytic-uremic syndrome (aHUS) is a thrombotic microangiopathy characterized by mechanical hemolytic anemia, thrombocytopenia, and renal dysfunction. | A rare, genetic thrombotic microangiopathy due to dysregulation of the alternative complement pathway and characterized by the triad of hemolytic anemia, thrombocytopenia, and acute renal dysfunction. |
+| MONDO:0016165 | hereditary hypoparathyroidism | Genetic hypoparathyroidism. | An instance of hypoparathyroidism that is caused by an inherited genomic modification in an individual. |
+| MONDO:0017868 | diencephalic-mesencephalic junction dysplasia | Diencephalic-mesencephalic junction dysplasia is a rare, genetic, non-syndromic cerebral malformation characterized by severe intellectual disability, progressive postnatal microcephaly, axial hypotonia, spastic quadriparesis, seizures and facial dysmorphism (bushy eyebrows, hairy forehead, broad nasal root, long flat philtrum, V-shaped upper lip). Additionaly, talipes equinovarus, non-obstructive cardiomyopathy, persistent hyperplastic primary vitreous, obstructive hydrocephalus and autistic features may also be associated. On brain magnetic resonance imaging, the 'butterfly sign' is characterisitcally observed and cortical calcifications, agenesis of the corpus callosum, ventriculomegaly, brainstem dysplasia and cerebellar vermis hypoplasia have also been described. | A rare, genetic, non-syndromic cerebral malformation characterized by severe intellectual disability, progressive postnatal microcephaly, axial hypotonia, spastic quadriparesis, seizures and facial dysmorphism (bushy eyebrows, hairy forehead, broad nasal root, long flat philtrum, V-shaped upper lip). Additionaly, talipes equinovarus, non-obstructive cardiomyopathy, persistent hyperplastic primary vitreous, obstructive hydrocephalus and autistic features may also be associated. On brain magnetic resonance imaging, the 'butterfly sign' is characterisitcally observed and cortical calcifications, agenesis of the corpus callosum, ventriculomegaly, brainstem dysplasia and cerebellar vermis hypoplasia have also been described. |
+| MONDO:0020504 | hereditary recurrent myoglobinuria | Genetic recurrent myoglobinuria is an inborn error of metabolism characterized by abnormal urinary excretion of myoglobin due to acute destruction of skeletal muscle fibers. | An inborn error of metabolism characterized by abnormal urinary excretion of myoglobin due to acute destruction of skeletal muscle fibers. |
+| MONDO:0010933 | autosomal recessive nonsyndromic hearing loss 4 | An autosomal recessive nonsyndromic deafness that has material basis in mutation in the SLC26A4 gene on chromosome 7q22. | An autosomal recessive nonsyndromic deafness that has material basis in mutation in the SLC26A4 gene on chromosome 7q22. Mutation in the FOXI1 gene has been found to be a rare cause of EVA. EVA may also be rarely caused by digenic inheritance of heterozygous mutations in the SLC26A4 and FOXI1 genes, or in the SLC26A4 and KCNJ10 genes. |
+| MONDO:0013885 | Malan overgrowth syndrome | Malan overgrowth syndrome is a multiple congenital anomalies syndrome characterized by moderate postnatal overgrowth, macrocephaly, craniofacial dysmorphism (including high forehead and anterior hairline, downslanting palpebral fissures, prominent chin), developmental delay, and intellectual disability. Additional variable manifestations include unusual behavior, with or without autistic traits, as well as ocular (e.g. strabismus, nystagmus, optic disc pallor/hypoplasia), gastrointestinal (e.g. vomiting, chronic diarrhea, constipation), musculoskeletal (e.g. scoliosis and pectus excavatum), hand/foot (e.g. long, tapered fingers) and central nervous system (e.g. slightly enlarged ventricles) anomalies. | A rare multisystemic genetic disorder characterized by a characteristic facial features with macrocephaly, overgrowth in infancy, intellectual disability and behavioral problems including anxieties and aggressiveness. |
+| MONDO:0014951 | intellectual developmental disorder, autosomal recessive 74 | Any Sotos syndrome in which the cause of the disease is a mutation in the APC2 gene. | Any autosomal recessive non-syndromic intellectual disability in which the cause of the disease is a mutation in the APC2 gene. |
+| MONDO:0016166 | hereditary hyperparathyroidism | Genetic hyperparathyroidism. | An instance of hyperparathyroidism that is caused by an inherited genomic modification in an individual. |
+| MONDO:0019536 | Shiga toxin-associated hemolytic uremic syndrome | Typical hemolytic-uremic syndrome (typical HUS) is a thrombotic microangiopathy characterized by mechanical hemolytic anemia, thrombocytopenia, and renal dysfunction that is usually associated with prodromal enteritis caused by Shigella dysentriae type 1 or E. Coli. | A rare thrombotic microangiopathy characterized by mechanical hemolytic anemia, thrombocytopenia, and renal dysfunction that is usually associated with prodromal enteritis caused by Shigella dysentriae type 1 or E. Coli. |
+| MONDO:0700106 | immune system disorder, non-human animal | | Immune system disorder that occurs in non-human animals. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000769 | obsolete chicken egg allergy |
+| MONDO:0000770 | obsolete shellfish allergy |
+| MONDO:0000778 | obsolete fruit allergy |
+| MONDO:0000781 | obsolete cherry allergy |
+| MONDO:0000782 | obsolete Indian plum allergy |
+| MONDO:0000783 | obsolete orange allergy |
+| MONDO:0000784 | obsolete melon allergy |
+| MONDO:0016123 | obsolete muscular tumor |
+| MONDO:0005290 | obsolete rhabdomyolysis |
+| MONDO:0005307 | obsolete contracture |
+| MONDO:0005849 | obsolete milk allergic reaction |
+| MONDO:0005902 | obsolete peanut allergic reaction |
+| MONDO:0006516 | obsolete sarcopenia |
+| MONDO:0007543 | obsolete enolase, sperm specific |
+| MONDO:0016117 | obsolete muscular lipidosis |
+| MONDO:0008448 | obsolete spheroid body myopathy |
+| MONDO:0008658 | obsolete virus Rd114 RNA Complementarity |
+| MONDO:0016118 | obsolete muscular glycogenosis |
+| MONDO:0015335 | obsolete Mendelian syndromes with cleft lip/palate |
+| MONDO:0010682 | obsolete myoclonic epilepsy, progressive, X-linked |
+| MONDO:0010975 | obsolete arrhythmogenic right ventricular dysplasia 2 |
+| MONDO:0018344 | obsolete periodic paralysis with transient compartment-like syndrome |
+| MONDO:0020643 | obsolete autism susceptibility 1 |
+| MONDO:0033211 | obsolete diencephalic-mesencephalic junction dysplasia syndrome |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0001153 | gender dysphoria |
+| MONDO:0007299 | Sotos syndrome 1 |
+| MONDO:0007779 | autosomal dominant Opitz G/BBB syndrome |
+| MONDO:0010204 | lysosomal acid lipase deficiency |
+| MONDO:0011380 | leukoencephalopathy with vanishing white matter |
+| MONDO:0011499 | Okamoto syndrome |
+| MONDO:0017336 | fatal infantile hypertrophic cardiomyopathy due to mitochondrial complex I deficiency |
+| MONDO:0018786 | pontine autosomal dominant microangiopathy with leukoencephalopathy |
+| MONDO:0021927 | arthrogryposis epileptic seizures migrational brain disorder |
+| MONDO:0034147 | neonatal epileptic encephalopathy due to glutaminase deficiency |
+| MONDO:0035160 | progressive myoclonic epilepsy with neuroserpin inclusion bodies |
+| MONDO:0044618 | CLCN4-related X-linked intellectual disability syndrome |
+| MONDO:0800342 | cap myopathy 2 |
+| MONDO:0858986 | autosomal dominant spastic paraplegia type 80 |
+| MONDO:0858987 | autosomal recessive spastic paraplegia type 82 |
+| MONDO:0858988 | autosomal recessive spastic paraplegia type 83 |
+| MONDO:0858989 | autosomal recessive spastic paraplegia type 84 |
+| MONDO:0858990 | autosomal recessive spastic paraplegia type 85 |
+| MONDO:0858991 | autosomal recessive spastic paraplegia type 86 |
+| MONDO:0858992 | autosomal recessive spastic paraplegia type 87 |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0015508 | hereditary parenchymatous liver disease |
+| MONDO:0020127 | hereditary peripheral neuropathy |
+| MONDO:0018751 | hereditary otorhinolaryngologic disease |
+| MONDO:0015547 | hereditary dementia |
+| MONDO:0016229 | hereditary vascular anomaly |
+| MONDO:0015617 | hereditary gastro-esophageal disease |
+| MONDO:0018188 | hereditary intestinal polyposis |
+| MONDO:0019201 | thyrotoxic periodic paralysis |
+| MONDO:0016165 | hereditary hypoparathyroidism |
+| MONDO:0016166 | hereditary hyperparathyroidism |
+
+# 2023-06-01
+## Overview:
+* Number of new terms: 106
+* Number of changed labels: 6
+* Number of changed definitions: 6
+* Number obsoleted terms: 5
+* Number of new obsoletion candidates: 14
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100351 | POLD1-related polyposis and colorectal cancer syndrome | An autosomal dominant hereditary syndrome caused by germline pathogenic POLD1 variants. It is characterized by the presence of colorectal polyps and colorectal cancer. |
+| MONDO:0100472 | lissencephaly spectrum disorder with complex brainstem malformation | A lissencephaly spectrum disorder that manifests as posterior predominant pachygyria (ranging from mild severity to classic lissencephaly) and brainstem malformations which include brainstem dysplasia (typically with reduced anteroposterior thickness and transverse broadening of the pons/medulla) and midline crossing defects (anterior commissure, transverse pontine fibers, pyramidal tract, callosum hypoplasia). |
+| MONDO:0100499 | multiple congenital anomalies due to 14q32.2 imprinting defect | Multiple congenital anomalies caused by imprinting defects at 14q32.2 include Kagami-Ogata syndrome and Temple syndrome. Kagami-Ogata syndrome is characterized by typical facial features, skeletal abnormalities (including \coat-hanger ribs\", and bell-shaped thorax), abdominal wall defects, and developmental delay, and is caused by defects or absence of maternally derived imprinting signals (including paternal UPD14). Temple syndrome is a less specific phenotype including intrauterine and postnatal growth restriction, hypotonia, feeding difficulties in infancy, truncal obesity, and small feet and hands. Temple syndrome is caused by defects or absence of paternally derived imprinting signals (including maternal UPD14)." |
+| MONDO:0100507 | multiple congenital anomalies due to 14q32.2 paternally expressed gene defect | Temple syndrome is a less specific phenotype including intrauterine and postnatal growth restriction, hypotonia, feeding difficulties in infancy, truncal obesity, and small feet and hands. Temple syndrome is caused by defects or absence of paternally derived imprinting signals (including maternal UPD14). |
+| MONDO:0100508 | salivary gland type cancer of the breast | A group of uncommon neoplasms, usually seen in the salivary glands but occurring in the breast, with a variable clinicopathologic spectrum and divided into those with myoepithelial differentiation and those without. This group includes mammary adenoid cystic carcinoma, adenoid cystic carcinoma, mucoepidermoid carcinoma, acinic cell carcinoma, polymorphous low-grade adenocarcinoma and oncocytic carcinoma. |
+| MONDO:0100512 | mitochondrial DNA depletion syndrome, hepatocerebral form | |
+| MONDO:0800439 | syndromic complex neurodevelopmental disorder | A disorder that involves more than one phenotype associated with the central nervous system, including but not limited to intellectual disability, autism, and seizures (epilepsy), and also a distinctive pattern of other features including dysmorphisms and/or congenital malformations. |
+| MONDO:0800440 | HAND1 related congenital heart defect | A heart disease that is present at birth caused by a variation in HAND1. Representative examples include ventricular septal defect, tetralogy of Fallot, and double outlet right ventricle. |
+| MONDO:0800441 | NKX2.5-related congenital, conduction and myopathic heart disease | A heart disease that includes congenital heart defects, abnormal cardiac conduction or myopathy. Congenital heart defects consists of any heart disease that is present at birth. Representative examples include atrial septal defect, ventricular septal defect, tetralogy of Fallot, and hypoplastic left heart syndrome. |
+| MONDO:0800442 | MYH-6 related congenital heart defects | A heart disease that is present at birth that is caused by a variation in MYH-6. Representative examples include atrial septal defect, ventricular septal defect, tetralogy of Fallot and hypoplastic left heart syndrome. |
+| MONDO:0800443 | DEAF1-associated neurodevelopmental disorder | A neurodevelopmental disorder characterized predominantly by intellectual disability, speech delay, motor delay, autism, sleep disturbances, and a high pain threshold. This disorder may be inherited in an autosomal dominant or autosomal recessive manner, likely due to mono-allelic variant resulting in altered function and bi-allelic variants resulting in loss of function, respectively. |
+| MONDO:0850094 | drug-induced hearing loss | |
+| MONDO:0850098 | oligoasthenoteratozoospermia | |
+| MONDO:0850122 | solid adenocarcinoma with mucin production | |
+| MONDO:0850123 | autonomic nervous system benign neoplasm | |
+| MONDO:0850126 | testicular sex cord-stromal benign neoplasm | A sex cord-stromal benign neoplasm that arises from the testis. |
+| MONDO:0850127 | epithelioid inflammatory myofibroblastic sarcoma | |
+| MONDO:0850144 | germ cell benign neoplasm | A benign neoplasm that derives from germ cells. |
+| MONDO:0850150 | kidney cortex disease | A kidney disease that is located in the kidney cortex. |
+| MONDO:0850170 | spinal muscular atrophy type 0 | A childhood spinal muscular atrophy that is evident before birth and characterized by diminished movement in the womb, joint deformities, extremely weak muscle tone and very weak respiratory muscles. |
+| MONDO:0850196 | medulloblastoma WNT activated | A medulloblastoma that is characterized as a molecular subtype by activation of the WNT pathway and TP53 mutations may be present or absent. |
+| MONDO:0850197 | medulloblastoma SHH activated | A medulloblastoma that is characterized as a molecular subtype by activation of the sonic hedgehog (SHH) pathway and TP53 mutations that may be present or absent. |
+| MONDO:0850198 | medulloblastoma non-WNT/non-SHH | A medulloblastoma that is characterized as a molecular subtype that is not associated with activation of the WNT pathway or sonic hedgehog (SHH) pathway and TP53 mutations are absent. |
+| MONDO:0850225 | autoimmune cholangitis | An autoimmune hepatitis that is characterized by primary biliary cirrhosis clinical, biochemical, and histologic characteristics with antinuclear antibody positive sera. |
+| MONDO:0850230 | chronic urticaria | An urticaria that is characterized by the presence of urticaria for a period exceeding 6 weeks, assuming symptoms for most days of the week. |
+| MONDO:0850231 | erythema nodosum | A panniculitis that is characterized by sudden onset of painful, erythematous, subcutaneous nodules mainly localized to the pretibial areas. Lesions are usually bilateral and symmetrical, ranging from 1 to 5 cm in diameter. |
+| MONDO:0850257 | mucinous pancreas adenocarcinoma | A pancreatic adenocarcinoma that derives from epithelial cells originating in glandular tissue, which produce mucin. |
+| MONDO:0850267 | childhood acute megakaryoblastic leukemia | An acute megakaryocytic leukemia that is characterized by fusion oncogenes involving transcriptional regulators in childhood. |
+| MONDO:0850269 | core binding factor acute myeloid leukemia | An acute myeloid leukemia that is characterized by the presence of t(8;21)(q22;q22) or inv(16)(p13q22)/t(16;16)(p13;q22). These cytogenetic abnormalities result in disruption of the transcription factor CBF, which is a regulator of normal hematopoiesis. |
+| MONDO:0850271 | myeloid leukemia associated with down syndrome | An acute megakaryocytic leukemia occurring in children with Down syndrome and that has material basis in mutation in the GATA1 gene. |
+| MONDO:0850282 | chronic asthma | An asthma that is characterized by the development of persistent airway inflammation and recurrent attacks of breathlessness and wheezing, which vary in severity and frequency. |
+| MONDO:0850283 | acute asthma | An asthma that is characterized by severe and sudden onset of increasing wheezing, airways closing, smooth muscle contraction, mucus plugging and lower airway edema that may be reversible upon treatment. |
+| MONDO:0850284 | extrinsic asthma | A chronic asthma that is triggered by an allergen and that is characterized by an immune system overreaction to a harmless substance, such as pollen or dust, with the subsequent release of immunoglobin E (IgE) antibodies. |
+| MONDO:0850285 | environmental induced asthma | An intrinsic asthma that is characterized by exposure to tobacco smoke and other inflammatory gases or particulate matter. |
+| MONDO:0850286 | exercise-induced bronchoconstriction | An intrinsic asthma that is characterized by narrowing of the airways during or shortly after exercise. |
+| MONDO:0850287 | aspirin-induced respiratory disease | An intrinsic asthma that is characertized by severe and prolonged airway obstruction after the ingestion of aspirin or other non-steroidal anti-inflammatory drugs. |
+| MONDO:0850289 | human betaherpesvirus 5 infectious disease | A disease caused by infection with Human betaherpesvirus 5. |
+| MONDO:0850301 | pemphigoid | An autoimmune disease of skin and connective tissue that is characterized by subepidermal blistering especially in the lower abdomen, groin, and flexor surfaces of the extremities, creating tense blisters that do not break easily. |
+| MONDO:0850302 | intracranial meningioma | A meningioma that arises within the cranial cavity. |
+| MONDO:0850303 | supratentorial meningioma | A meningioma that affects the supratentorial brain. |
+| MONDO:0850306 | latent autoimmune diabetes in adults | A type 1 diabetes mellitus that is characterized by a less intensive autoimmune process, highly variable β-cell destruction, different degrees of insulin resistance and heterogeneous titre and pattern of islet autoantibody, sharing features with both type 1 and type 2 diabetes mellitus. |
+| MONDO:0850312 | anaplastic pleomorphic xanthoastrocytoma | A malignant astrocytoma that is characterized by the presence of five or more mitoses per 10 high-power fields. |
+| MONDO:0850332 | IDH-mutant anaplastic astrocytoma | An anaplastic astrocytoma carrying IDH mutations. |
+| MONDO:0850333 | IDH-wildtype anaplastic astrocytoma | An anaplastic astrocytoma lacking mutations in IDH1 or IDH2 genes. |
+| MONDO:0850335 | IDH-wildtype glioblastoma | A glioblastoma that is characterized by high cellularity, high mitotic activity, necrosis or microvascular proliferation and that lacks mutations in IDH genes. |
+| MONDO:0850339 | posterior fossa ependymoma | A high grade ependymoma that is located within the posterior fossa. |
+| MONDO:0850340 | supratentorial ependymoma | A high grade ependymoma that is located within the supratentorial brain. |
+| MONDO:0850346 | oral rhabdomyosarcoma | A rhabdomyosarcoma located in the oral cavity. |
+| MONDO:0850349 | astroblastoma, MN1-altered | An astroblastoma that is characterized by astroblastoma-like morphology with MN1 rearrangements involving the meningioma 1 (MN1) gene on chromosome 22q. |
+| MONDO:0850353 | castration-resistant prostate carcinoma | A prostate carcinoma that is characterized by continued growth and spread despite the surgical removal of the testes or medical intervention to block androgen production. |
+| MONDO:0850368 | immunoglobulin heavy-and-light chain | An amyloidosis that is characterized by both Ig heavy chains and LC contribute to the amyloid fibrils. |
+| MONDO:0850415 | rhabdomyolysis-myalgia syndrome | A myopathy that is characterized by muscle breakdown (rhabdomyolysis), heat and exertion-related muscle pain (myalgia) and cramping symptoms, severe muscle pain, sudden elevation and subsequent fall of serum creatine phosphokinase levels and products of muscle breakdown in the urine (myoglobinuria). Associated with RYR1 variations. Rhabdomyolysis is associated with a range of external triggers, including strenuous exercise beyond the limit of fatigue, heat stress, illicit drug or alcohol abuse, use of supplements or certain medications, recent viral illness or muscle trauma. |
+| MONDO:0850416 | autoimmune epilepsy | An epilepsy that is characterized by new-onset refractory seizures along with subacute progressive cognitive decline and behavioral or psychiatric dysfunction. |
+| MONDO:0850417 | tuberculous encephalopathy | A tuberculosis that is characterized by cerebral edema sometimes with features similar to acute disseminated encephalomyelitis (ADEM) and may manifest with a variety of symptoms ranging from focal neurological deficits to convulsions and decreased conscious state. |
+| MONDO:0850418 | diffuse large B-cell lymphoma activated B-cell type | A diffuse large B-cell lymphoma that is characterized by the expression of CD44, PKCbeta1, Cyclin D2, BCL-2, and IRF4/MUM1 genes. |
+| MONDO:0850419 | diffuse large B-cell lymphoma germinal center B-cell type | A diffuse large B-cell lymphoma that is characterized by the expression of CD10, BCL-6, A-myb, and LMO2 genes, BCL-2 translocation, and c-REL amplification. |
+| MONDO:0850420 | acute necrotizing pancreatitis | An acute pancreatitis that is characterized by one or more areas of necrosis in the pancreas with varying degree of involvement of the surrounding tissues or organ systems. |
+| MONDO:0850421 | acute hemorrhagic pancreatitis | An acute pancreatits that is characterized by acute inflammation of the pancreas in which the initial edematous pancreatitis evolved into necrosis accompanied by hemorrhage. |
+| MONDO:0850449 | mixed phenotype acute leukemia with BCR-ABL1 | An acute biphenotypic leukemia that is characterized by blasts that also carry the translocation t(9;22)(q34.1;q11.2) by karyotypic analysis or the BCR-ABL1 translocation by FISH or PCR. |
+| MONDO:0850450 | mixed phenotype acute leukemia with MLL rearranged | An acute biphenotypic leukemia that is characterized by blasts which carry a translocation between the MLL (KMT2A) gene at 11q23.3 and another gene partner. |
+| MONDO:0850451 | mixed phenotype acute leukemia, B/myeloid | An acute biphenotypic leukemia that is characterized by blasts which express B-lymphoid and myeloid lineage markers but are negative for MLL translocation and t(9;22)(q34;q11.2) translocation. |
+| MONDO:0850452 | mixed phenotype acute leukemia,T/myeloid | An acute biphenotypic leukemia that is characterized by blasts that express antigens of both T and myeloid antigens. |
+| MONDO:0850468 | BN2 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as BN2 with high probability by the LymphGen algorithm. This is based on a combination of genetic features and BN2 DLBCLs often, but do not always, have a translocation involving the BCL6 locus and/or some combination of mutations affecting NOTCH2, TNFAIP3, BCL10 and UBE2A. This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting CD70, which can be coding or non-coding. |
+| MONDO:0850469 | EZB diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as EZB with high probability by the LymphGen algorithm. This is based on a combination of genetic features and EZB DLBCLs often, but do not always, have hot spot mutations in EZH2 and/or a BCL2 translocation. This class can be further subdivided into two sub-classes EZB-MYC+ and EZB-MYC- using the double hit gene expression signature (DHITsig). This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting IRF8, which can be coding or non-coding. |
+| MONDO:0850470 | MCD diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as MCD with high probability by the LymphGen algorithm. This is based on a combination of genetic features and MCD DLBCLs often, but do not always, have the most common hot spot mutation in MYD88 (L265P) and/or activating mutations in CD79B. This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting PIM1 and/or ETV6, which can be coding or non-coding. |
+| MONDO:0850471 | N1 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as N1 with high probability by the LymphGen algorithm. This is based on a combination of genetic features. Although N1 DLBCLs always have an activating mutation affecting NOTCH1, LymphGen can assign cases with this mutation to other classes, depending on the presence of other genetic features. |
+| MONDO:0850472 | ST2 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is categorized as ST2 with high probability by the LymphGen algorithm. This is based on a combination of genetic features and ST2 DLBCLs often, but do not always, have missense or nonsense mutations affecting TET2 and NFKBIA. This subgroup also commonly has mutations due to aberrant somatic hypermutation affecting some combination of SGK1, ZFP36L1, SOCS1, HIST1H1E and CD83, which can be coding or non-coding. |
+| MONDO:0850473 | A53 diffuse large B-cell lymphoma | A diffuse large B-cell lymphoma that is characterized by aneuploidy with TP53 inactivation. |
+| MONDO:0850492 | acute myeloid leukemia, t(8;21)(q22; q22.1) | An acute myeloid leukemia associated with t(8;21)(q22;q22) resulting in RUNX1-RUNX1T1 fusion protein expression. The bone marrow and the peripheral blood show large myeloblasts with abundant basophilic cytoplasm, often containing azurophilic granules. |
+| MONDO:0850495 | acute myeloid leukemia, t(1;22)(p13;q13) | An acute myeloid leukemia typically showing megakaryocytic maturation and associated with t(1;22)(p13;q13), resulting in the expression of RBM15-MKL1 fusion protein. |
+| MONDO:0850618 | injection anthrax | An anthrax disease that is characterized by infection at the injection site or deep under the skin or in the muscle where the drug was injected and is caused by heroin contaminated with anthrax spores. |
+| MONDO:0851102 | pulmonary artery disease | |
+| MONDO:0858910 | dropped head syndrome | A spinal disease that is characterized by severe kyphotic deformity of the cervicothoracic spine and by severe weakness of the cervical paraspinal muscles that results in the passively correctable chin-on-chest deformity. This syndrome is defined by weakness of neck extensor muscles against gravity with or without weakness of neck flexor muscles. |
+| MONDO:0858916 | pituitary blastoma | A pituitary cancer that is characterized by features of Cushing disease, with elevated blood ACTH levels and hypercortisolism arising within the fetal anterior pituitary and associated with DICER1 mutations. |
+| MONDO:0858917 | cauda equina neuroendocrine tumor | A cauda equina neoplasm that is a slow-growing, well-differentiated neuroendocrine tumor arising from the cauda equina. |
+| MONDO:0858921 | EWSR1-negative small round cell tumor | A small cell sarcoma that is characterized by the absence of EWSR1 rearrangement and the presence of small round malignant cells with a small amount of cytoplasm. |
+| MONDO:0858926 | developmental delay, hypotrophy, and dysmorphic features without moebius syndrome | A syndrome that is characterized by developmental delay, hypotrophy, and dysmorphic features and that has material basis in homozygous ultra-rare REV3L variant (T2753R). |
+| MONDO:0858939 | diffuse pediatric-type high-grade glioma, H3-wildtype and IDH-wildtype | A high grade glioma that is characterized by the absence of histone H3, IDH1, and IDH2 mutations. |
+| MONDO:0858940 | infant-type hemispheric glioma | A malignant astrocytoma that is characterized by receptor tyrosine kinase fusions in the NTRK family, ROS1, ALK, or MET genes, that arises in the cerebral hemisphere and occurs in early childhood. |
+| MONDO:0858944 | myxoid glioneuronal tumor | A central nervous system benign neoplasm that is characterized by a dinucleotide mutation at codon 385 of the PDGFR gene. It usually occurs in the septum pellucidum but has also been described in the corpus callosum and periventricular white matter of the lateral ventricle. It is composed of oligodendrocyte-like cells in a prominent myxoid stroma. |
+| MONDO:0858950 | traumatic brain injury | A brain disease that is characterized by brain dysfunction caused by an outside force, usually a violent blow to the head. |
+| MONDO:0858956 | diffuse leptomeningeal glioneuronal tumor | A central nervous system benign neoplasm that is characterized by the presence of clear glial neoplastic cells reminiscent of oligodendroglioma. |
+| MONDO:0858957 | multinodular and vacuolating neuronal tumor | A central nervous system benign neoplasm that is composed of cells with glial and/or neuronal differentiation forming multiple nodules with prominent vacuolation and that affecting the cerebral hemispheres. |
+| MONDO:0858958 | high-grade astrocytoma with piloid features | An anaplastic astrocytoma that is characterized by high-grade piloid and/or glioblastoma-like histological features. It may occur anywhere in the central nervous system but most often arises in the posterior fossa. |
+| MONDO:0858959 | polymorphous low grade neuroepithelial tumour of the young | A central nervous system benign neoplasm that is characterized by the presence of oligodendroglioma-like components, may also contain astrocytic components and is associated with seizures and in many cases refractory epilepsy. |
+| MONDO:0858960 | spindle cell oncocytoma | A posterior pituitary benign neoplasm that is characterized by the presence of spindle cells with eosinophilic, granular cytoplasm forming fascicles. |
+| MONDO:0858966 | central nervous system tumor with bcor internal tandem duplication | A central nervous system embryonal tumor that is characterized by the presence of uniform oval or spindle-shaped cells with round or oval nuclei, pseudorosette formation, and heterozygous internal tandem duplication in exon 15 of the BCOR gene. |
+| MONDO:0858967 | primary intracranial sarcoma, DICER1-mutant | A brain sarcoma that is composed of malignant pleomorphic or spindle neoplastic cells typically demonstrating myogenic and/or chondroid differentiation. Cytoplasmic eosinophilic globules and myxoid stroma formation are usually present. It is associated with mutations in the DICER1 gene. |
+| MONDO:0858974 | breast implant illness | A syndrome that is characterized by fatigue, problems with memory or concentration, joint and muscle pain, hair loss, weight changes and anxiety/depression. This syndrome may be related to breast implants |
+| MONDO:0859588 | keratosis pilaris atrophicans faciei | A keratosis pilaris atrophicans that is characterized by scar-like follicular depressions and loss of hair primarily in the eyebrow area. |
+| MONDO:0859591 | childhood low-grade glioma | A low-grade glioma that occurs in children and encompasses tumors of astrocytic, oligodendroglial, and mixed glial-neuronal histology. |
+| MONDO:0859592 | IDH-mutant and 1p/19q-codeleted oligodendroglioma | An anaplastic oligodendroglioma that has material basis in IDH gene family mutation and combined whole-arm losses of 1p and 19q (1p/19q codeletion). |
+| MONDO:0859597 | cns neuroblastoma with FOXR2 activation | A central nervous system neuroblastoma that is characterized by FOXR2 activation and that is composed of small, round cells with hyperchromatic nuclei surrounded by a clear halo. |
+| MONDO:0859598 | erythroleukemia | An acute erythroid leukemia characterised by the presence of at least 50% erythroid precursors and at least 20% myeloblasts in the bone marrow. |
+| MONDO:0859614 | diffuse low-grade glioma, MAPK pathway–altered | A low grade glioma that is characterized by a gene alteration that results in a MAPK pathway abnormality, with morphological features of astrocytoma or oligodendroglioma. |
+| MONDO:0859615 | diffuse astrocytoma, MYB- or MYBL1-altered | A diffuse astrocytoma that is a diffusely infiltrative astroglial neoplasm composed of monomorphic cells with genetic alterations in MYB or MYBL1. |
+| MONDO:0859689 | hepatobiliary benign neoplasm | |
+| MONDO:0859690 | malignant cystadenoma | |
+| MONDO:0859747 | grade I lymphomatoid granulomatosis | A lymphomatoid granulomatosis that is characterized by the presence of a polymorphous lymphoid infiltrate without cytologic atypia. Large lymphocytes are absent or rare. By in situ hybridization, EBV-positive cells are infrequently seen. |
+| MONDO:0859748 | grade II lymphomatoid granulomatosis | A lymphomatoid granulomatosis that is characterized by the presence of occasional large lymphoid cells or immunoblasts in a polymorphous background. Necrosis is more commonly seen as compared to grade I lymphomatoid granulomatosis. By in situ hybridization, EBV-positive cells are readily seen. |
+| MONDO:0859749 | grade III lymphomatoid granulomatosis | A lymphomatoid granulomatosis that is characterized by the presence of aggregates of neoplastic large B-lymphocytes, usually admixed with pleomorphic and Hodgkin-like cells, in a background of chronic inflammation. Necrotic changes are present and are usually extensive. |
+| MONDO:0859761 | SLC12A2-related autosomal recessive neonatal-developmental delay-intellectual disability-feeding difficulty-sensorineural deafness syndrome | |
+| MONDO:0859762 | SLC12A2-related autosomal dominant infantile-developmental delay-intellectual disability-sensorineural deafness syndrome | |
+| MONDO:0859763 | mosaic neurofibromatosis type 1 | |
+| MONDO:0859764 | mosaic NF2-related schwannomatosis | |
+| MONDO:0859765 | mosaic schwannomatosis | |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0008685 | Wolff-Parkinson-White syndrome | Wolff-Parkinson-white syndrome | Wolff-Parkinson-White syndrome |
+| MONDO:0009636 | mitochondrial DNA depletion syndrome 3 (hepatocerebral type) | mitochondrial DNA depletion syndrome 3 | mitochondrial DNA depletion syndrome 3 (hepatocerebral type) |
+| MONDO:0009747 | mitochondrial DNA depletion syndrome 6 (hepatocerebral type) | Navajo neurohepatopathy | mitochondrial DNA depletion syndrome 6 (hepatocerebral type) |
+| MONDO:0010060 | mitochondrial DNA depletion syndrome 7 (hepatocerebral type) | infantile onset spinocerebellar ataxia | mitochondrial DNA depletion syndrome 7 (hepatocerebral type) |
+| MONDO:0014382 | Tatton-Brown-Rahman overgrowth syndrome | tall stature-intellectual disability-facial dysmorphism syndrome | Tatton-Brown-Rahman overgrowth syndrome |
+| MONDO:0100488 | CDH1-related diffuse gastric and lobular breast cancer syndrome | CDH1-related diffuse gastric and lobular breast cancer | CDH1-related diffuse gastric and lobular breast cancer syndrome |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0016003 | ehrlichiosis | Human ehrlichiosis and anaplasmosis describe a group of acute febrile tick-borne diseases characterized by an overlapping clinical picture that includes fever, headache, myalgias, arthralgias, skin eruptions, gastrointestinal symptoms and neurological manifestations. Diseases in this group include human monocytotropic ehrlichiosis (HME), human granulocytotropic anaplasmosis (HGA), and human ehrlichiosis ewingii (HEE). | An disease or disorder caused by infection with Ehrlichia. |
+| MONDO:0000332 | sennetsu fever | An ehlrichiosis caused by Neorickettsia sennetsu. | A disease caused by infection with Neorickettsia sennetsu. |
+| MONDO:0005775 | G6PD deficiency | An X-linked recessive inherited disorder caused by mutations in the G6PD gene. It is characterized by the absence or presence of very low levels of glucose-6-phosphate dehydrogenase. Patients develop hemolytic anemia usually in response to infection or exposure to drugs. | An X-linked genetic condition caused by alterations in the gene G6PD that result in moderately to severely decreased activity levels of the enzyme glucose-6-phosphate dehydrogenase. Most individuals with G6PD deficiency are asymptomatic. Individuals with G6PD variants that cause G6PD deficiency are at risk for acute hemolytic anemia in response to certain medication exposures, chemical exposures, infections, or consumption of fava beans. |
+| MONDO:0025303 | anaplasmosis | An disease or disorder caused by infection with Anaplasma. | A disease or disorder caused by infection with Anaplasma. |
+| MONDO:0100150 | RYR1-related myopathy | | A disorder of the musculoskeletal system caused by pathogenic variants in the RYR1 gene, which encodes the ryanodine receptor type 1 protein. These variants are associated with a variety of overlapping features characterized by symmetric proximal muscle weakness, often with pronounced facial weakness with or without dysmorphism and ophthalmoparesis/ophthalmoplegia with ptosis, bulbar weakness, significant respiratory involvement, severe neonatal hypotonia, scoliosis, orthopedic deformities including arthrogryposis, hip dislocation, club feet, and King Denborough syndrome (pectus carinatum or excavatum, short stature, joint contractures, facial and skeletal deformities), malignant hyperthermia susceptibility, anesthesia-induced rhabdomyolysis, fatigue, exercise-induced hyperthermia/exertional heat stroke, and exertional myalgia. Histologic findings on skeletal muscle biopsy reveal a wide range of structural abnormalities and can include central core disease, multiminicore disease, cone-rod myopathy, centronuclear myopathy, and congenital fiber-type disproportion. |
+| MONDO:0010480 | anemia, nonspherocytic hemolytic, due to G6PD deficiency | | An X-linked genetic condition caused by alterations in the gene G6PD that result in severely decreased activity levels of the enzyme glucose-6-phosphate dehydrogenase. Individuals with hemizygous G6PD variants associated with CNSHA have CNSHA. Individuals with G6PD variants that cause CNSHA are at risk for acute hemolytic anemia in response to certain medication exposures, chemical exposures, infections, or consumption of fava beans. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0007981 | obsolete metachromatic leukodystrophy, adult-onset, with normal arylsulfatase A |
+| MONDO:0020245 | obsolete disease predisposing to age-related macular degeneration |
+| MONDO:0100318 | obsolete SARS-CoV-2-related disease |
+| MONDO:0100321 | obsolete viral disease or post-viral disorder |
+| MONDO:0100336 | obsolete infectious disease or post-infectious disorder |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0007761 | hyperlipoproteinemia type IV |
+| MONDO:0007903 | Li-Fraumeni syndrome 1 |
+| MONDO:0020732 | progeria |
+| MONDO:0010859 | atrioventricular septal defect 3 |
+| MONDO:0011333 | light fixation seizure syndrome |
+| MONDO:0012018 | myopathy, myosin storage, autosomal dominant |
+| MONDO:0012233 | Li-Fraumeni syndrome 2 |
+| MONDO:0012279 | congenital muscular dystrophy merosin-positive |
+| MONDO:0019765 | celosomia |
+| MONDO:0020342 | congenital myopathy with excess of thin filaments |
+| MONDO:0024677 | pancreatic insulinoma |
+| MONDO:0044747 | human anaplasmosis |
+| MONDO:0100300 | hereditary capillary infantile hemangioma |
+| MONDO:0800297 | neuronal ceroid lipofuscinosis, late infantile |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
 # 2023-05-01
 
 ## Overview:

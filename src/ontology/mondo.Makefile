@@ -211,6 +211,30 @@ clean:
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
 
 #############################################
+##### Mondo subset auto-tagger ##############
+#############################################
+
+# gard is currently in Mondo
+# we dont know how to identify rare OMIM terms yet
+RARE_SUBSETS=nord orphanet mondo
+
+tmp/orphanet-rare-subset.ttl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
+
+tmp/nord-rare-subset.ttl: $(SRC)
+	$(ROBOT) template --template subsets/nord-subset.template.tsv convert -f ttl -o $@
+
+tmp/mondo-rare-subset.ttl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-mondo-rare-subset.sparql $@
+
+components/mondo-subsets.owl: tmp/mondo-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl | dirs
+	$(ROBOT) merge -i tmp/nord-rare-subset.ttl -i tmp/mondo-rare-subset.ttl -i tmp/orphanet-rare-subset.ttl \
+		query --update ../sparql/construct/construct-rare-subset.sparql \
+		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+#############################################
 ##### Mondo analysis ########################
 #############################################
 
@@ -224,7 +248,7 @@ clean:
 
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit ordo medgen omim icd10cm
+SOURCE_IDS = doid ncit ordo omim gard
 SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -469,7 +493,7 @@ tmp/%.sssom.tsv: tmp/mirror-%.json
 	sssom parse tmp/mirror-$*.json --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
 
 
-$(MAPPINGSDIR)/%.sssom.tsv: tmp/%.sssom.tsv tmp/mondo-ingest.db
+$(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 	python ../scripts/add_object_label.py run $<
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
 	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
@@ -580,7 +604,8 @@ modules/mondo-%.owl: modules/%.tsv
 .PRECIOUS: modules/mondo-%.owl
 
 MERGE_TEMPLATE=tmp/merge_template.tsv
-TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vTV6ITR7RJMt5jswUHBmEEcfbNAeZWpj4VkDbMY3Bvh_fcmfXEw1CFvbgzOUPDxsj6oT5vsFQRg8FuM/pub?gid=346126899&single=true&output=tsv
+#TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vTV6ITR7RJMt5jswUHBmEEcfbNAeZWpj4VkDbMY3Bvh_fcmfXEw1CFvbgzOUPDxsj6oT5vsFQRg8FuM/pub?gid=346126899&single=true&output=tsv
+TEMPLATE_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgIbFYWkhMT0EgaBNbyT6fJiNKqVjdqcZxXQLwJ3CpXpSzB24BITZGDNSMyg_3bneIvE3F2l_iHWH/pub?gid=1886610709&single=true&output=tsv
 
 tmp/merge_template.tsv:
 	wget "$(TEMPLATE_URL)" -O $@
@@ -616,6 +641,23 @@ merge_obsolete_template: tmp/heal_hierarchy.ru $(MERGE_TEMPLATE) tmp/remove_clas
 	remove -T tmp/remove_classes.txt --preserve-structure false \
 	template --merge-before --template $(MERGE_TEMPLATE) convert -f obo -o $(SRC)
 
+ALL_SOURCES_DEPRECATED_PATTERNS = $(patsubst %, tmp/deprecated-%-mappings.robot.tsv, $(SOURCE_IDS))
+
+tmp/deprecated-%-mappings.robot.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/$*_mapped_deprecated_terms.robot.template.tsv" -O $@
+
+update_deprecated_mappings: $(ALL_SOURCES_DEPRECATED_PATTERNS)
+	$(ROBOT) template --prefix "CHR: http://purl.obolibrary.org/obo/CHR_" --prefix "sssom: https://w3id.org/sssom/" --merge-before --input $(SRC) \
+ 		$(patsubst %, --template %, $^) \
+ 		convert -f obo -o $(SRC)
+	$(MAKE) NORM && mv NORM $(SRC)
+
+deprecated_annotation_merging:
+	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalentObsolete"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true
+	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:equivalentTo"/source="MONDO:equivalentObsolete"/g' mondo-edit.obo || true
+	sed -i 's/\(.*\)source="MONDO:equivalentObsolete"\(.*\)source="MONDO:obsoleteEquivalentObsolete"\(.*\)/\1source="MONDO:obsoleteEquivalentObsolete"\2\3/g' mondo-edit.obo || true
+	sed -i 's/, }/}/g' mondo-edit.obo || true
+	echo "NOTE: There are still some broken cases that need to be manually fixed. Search for `quivalent.*quivalent` (no E) in case sensitive regex mode in Atom or Visual Studio"
 
 #ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment
 #OBJECT_PROPERTIES=BFO:0000054 MONDOREL:disease_causes_feature MONDOREL:disease_has_basis_in_accumulation_of MONDOREL:disease_has_basis_in_development_of MONDOREL:disease_has_major_feature MONDOREL:disease_responds_to MONDOREL:disease_shares_features_of MONDOREL:disease_triggers MONDOREL:has_onset MONDOREL:part_of_progression_of_disease MONDOREL:predisposes_towards intersection:of rdfs:subClassOf RO:0002162 RO:0002451 RO:0002573 RO:0004001 RO:0004020 RO:0004021 RO:0004022 RO:0004024 RO:0004025 RO:0004026 RO:0004027 RO:0004028 RO:0004029 RO:0004030 RO:0009501

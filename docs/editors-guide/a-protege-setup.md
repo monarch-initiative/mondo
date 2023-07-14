@@ -111,10 +111,11 @@ If you edit another ontology besides Mondo, you will need to switch your ID rang
 ## Setting username and auto-adding creation date
 
 1. In the Protege menu, go to `Preferences` > `New Entities Metadata` tab
-2. Check `Annotate new entities with creator (user)` box
-3. `Creator property` Add http://www.geneontology.org/formats/oboInOwl#created_by
-3. `Creator value` Select Use ORCID
-4. `Date property` http://purl.org/dc/elements/1.1/date
-5. `Date value format` Select ISO-8601
+1. Check `Annotate new entities with creator (user)` box
+1. In the `Creator property` field, add `http://purl.org/dc/terms/creator`
+1. `Creator value` Select Use ORCID
+1. `Date property` http://purl.org/dc/elements/1.1/date
+1. `Date value format` Select ISO-8601
 
-![NewEntitiesMetadata](images/NewEntitiesMetadata.png)
+<img width="883" alt="image" src="https://github.com/monarch-initiative/mondo/assets/6722114/ef1a9b25-c7e6-41fd-a6c6-7335e32b78a9">
+
