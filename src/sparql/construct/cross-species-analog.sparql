@@ -1,0 +1,25 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?cls <https://w3id.org/semapv/vocab/crossSpeciesExactMatch> ?mondohuman.
+}
+
+WHERE
+{
+  ?cls a owl:Class;
+  rdfs:label ?label .
+
+  { ?cls rdfs:subClassOf [
+               owl:onProperty <http://purl.obolibrary.org/obo/MONDO_0700097> ;
+               owl:someValuesFrom ?mondohuman ] }
+
+  FILTER NOT EXISTS {
+    ?cls owl:deprecated "true"^^xsd:boolean
+  }
+ FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+}
