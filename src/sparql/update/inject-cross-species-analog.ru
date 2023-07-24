@@ -16,15 +16,15 @@ WHERE
 {
   ?cls a owl:Class .
   {
-    { 
+    {
       ?cls rdfs:subClassOf [
         owl:onProperty MONDO:0700097 ;
-        owl:someValuesFrom ?mondohuman 
-      ] . 
+        owl:someValuesFrom ?mondohuman
+      ] .
     }
   } UNION {
-    ?cls owl:equivalentClass [ 
-      owl:intersectionOf ( 
+    ?cls owl:equivalentClass [
+      owl:intersectionOf (
         MONDO:0005583
         [ rdf:type owl:Restriction ;
           owl:onProperty MONDO:0700097 ;
@@ -33,5 +33,22 @@ WHERE
       )
     ] .
   }
+
+  UNION {
+    ?cls owl:equivalentClass [
+      owl:intersectionOf (
+        MONDO:0005583
+        [ rdf:type owl:Restriction ;
+          owl:onProperty MONDO:0700097 ;
+          owl:someValuesFrom ?mondohuman
+        ]
+        [ rdf:type owl:Restriction ;
+          owl:onProperty <http://purl.obolibrary.org/obo/RO_0002162> ;
+          owl:someValuesFrom ?ncbiTaxon
+        ]
+      )
+    ] .
+  }
+
  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
 }
