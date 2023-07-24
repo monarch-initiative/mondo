@@ -11,7 +11,7 @@ prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo
 prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-   ?entity rdfs:subClassOf* ?parent .
+   ?entity rdfs:subClassOf+ ?parent .
    ?exp owl:annotatedSource ?entity ;
         owl:annotatedProperty oboInOwl:hasDbXref ;
         owl:annotatedTarget ?xref;
