@@ -20,7 +20,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
            owl:annotatedTarget ?xref2 ;
            oboInOwl:source ?source2 .
            
-  	FILTER(STRSTARTS(STR(?xref),"DOID") || STRSTARTS(STR(?xref),"Orphanet") || STRSTARTS(STR(?xref),"OMIM"))
+  	FILTER(STRSTARTS(STR(?xref),"DOID") || STRSTARTS(STR(?xref),"Orphanet") || STRSTARTS(STR(?xref),"OMIM") || STRSTARTS(STR(?xref),"GARD"))
     FILTER(str(?xref2)!=str(?xref))
   	FILTER(STRBEFORE(str(?xref),":") = STRBEFORE(str(?xref2),":")) 
   	FILTER NOT EXISTS {
