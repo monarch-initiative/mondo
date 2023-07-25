@@ -31,7 +31,7 @@ June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee |
 June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu | [NCATS](https://rarediseases.info.nih.gov/about) | [Here](https://lbnl.zoom.us/rec/play/26EVKrlrBYiIKEaqqdnsEqllR9BjBjkw9XQQBdWy9dXcQzh-vVZ56m2k3qr1ORNp6J6E9_gSJ8RUE215.uuzBq8XpezoW94L5?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Flbnl.zoom.us%2Frec%2Fshare%2F-gcOh1SZUK8fIlnXzbprVnp7om8TRvic1lJxIxd6OKM34BjQF33vsxzKbc6W_iPG.ZLWz6mOP5H_N4q3T)
 July 28 | 9 AM PT/12 PM ET | Megan Kane | [MedGen](https://www.ncbi.nlm.nih.gov/medgen/)
 Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton | [ClinGen](https://clinicalgenome.org/)
-Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein, Eric Czech, and Daniel Korn | Classifying EFO/MONDO diseases as areas, roots, or subtypes
+Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein, Eric Czech, and Daniel Korn | [Related Sciences](https://www.related.vc/) (Daniel H and Eric) and [Every Cure](https://everycure.org/) (Daniel K) **Topic:** Classifying EFO/MONDO diseases as areas, roots, or subtypes
 Oct 20 | 9 AM PT/12 PM ET | TBD
 
 <a name="feb-2023"></a> 
