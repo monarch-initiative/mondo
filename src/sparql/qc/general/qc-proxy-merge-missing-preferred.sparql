@@ -25,7 +25,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   	FILTER(STRBEFORE(str(?xref),":") = STRBEFORE(str(?xref2),":")) 
   	FILTER NOT EXISTS {
     	?xref_anno oboInOwl:source ?source11 .
-      	FILTER ((str(?source21)="MONDO:preferredExternal"))
+      	FILTER ((str(?source11)="MONDO:preferredExternal"))
   	}
     FILTER NOT EXISTS {
     	?xref_anno2 oboInOwl:source ?source21 .
