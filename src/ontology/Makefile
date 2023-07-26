@@ -204,6 +204,7 @@ filtered.obo: $(SRC)
 	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
 		--update ../sparql/update/delete-axiom-annotations.ru \
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
+		--update ../sparql/update/inject-cross-species-analog.ru \
 		remove --term-file config/remove-annotations-before-release.txt \
 		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
