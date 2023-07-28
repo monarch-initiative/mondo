@@ -28,7 +28,7 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 Date | Time | Presenter (Organization)| Topic | Recording
 -- | -- | -- | -- | -- 
 June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee ([NORD](https://rarediseases.org/)) | Rare Diseases in NORD | [Here](https://drive.google.com/file/d/1wJzqU6ruAGuzsk7xZLzIu9G_UH8SI8ta/view?usp=sharing)
-June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases.info.nih.gov/about)) | Use of Disease Ontologies and Knowledge in Addressing Translation Science in Rare Diseases | [Here](hhttps://drive.google.com/drive/folders/1qsqteFng74C7Kvm2BdIoDASWOaWaqEjN)
+June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases.info.nih.gov/about)) | Use of Disease Ontologies and Knowledge in Addressing Translation Science in Rare Diseases | [Here](https://drive.google.com/drive/folders/1qsqteFng74C7Kvm2BdIoDASWOaWaqEjN)
 July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/medgen/)) | MedGen curation workflows
 Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.org/)) | ClinGen Variant Curation
 Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes
