@@ -216,21 +216,25 @@ clean:
 
 # gard is currently in Mondo
 # we dont know how to identify rare OMIM terms yet
-RARE_SUBSETS=nord orphanet mondo
+RARE_SUBSETS=nord orphanet inferred gard
 
 tmp/orphanet-rare-subset.ttl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+tmp/gard-rare-subset.ttl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-gard-rare-subset.sparql $@
+
 tmp/nord-rare-subset.ttl: $(SRC)
 	$(ROBOT) template --template subsets/nord-subset.template.tsv convert -f ttl -o $@
 
-tmp/mondo-rare-subset.ttl: $(SRC)
+tmp/inferred-rare-subset.ttl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-mondo-rare-subset.sparql $@
+		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
 
-components/mondo-subsets.owl: tmp/mondo-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl | dirs
-	$(ROBOT) merge -i tmp/nord-rare-subset.ttl -i tmp/mondo-rare-subset.ttl -i tmp/orphanet-rare-subset.ttl \
+components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl | dirs
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		query --update ../sparql/construct/construct-rare-subset.sparql \
 		annotate --ontology-iri $(ONTBASE)/$@ -o $@
 
