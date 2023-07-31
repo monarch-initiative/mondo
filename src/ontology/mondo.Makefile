@@ -289,42 +289,8 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 #sources/CTD_diseases.obo:
 #	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
 
-# TODO: Gard mapped obsoletes
-# Failed commands ------
-#assocs:  # not what I needed
-#	runoak -i sqlite:tmp/mondo-ingest.db associations -p i DOID:2757
-#axioms:  # notImplementedError
-#	runoak -i tmp/mondo-edit-temp.ofn axioms –axiom-type MONDO:equivalentTo
-#	runoak -i tmp/mondo-edit-temp.ofn axioms –axiom-type SubClassOf
-#relat:  # only shows subClassOf
-#	runoak -i sqlite:tmp/mondo-edit.db relationships -p i MONDO:0000004
-# #	runoak -i sqlite:tmp/mondo-edit.db relationships -p i MONDO:0000004 --predicates oboInOwl:hasDbXref skos:exactMatch skos:narrowMatch skos:broadMatch skos:relatedMatch
-
-# Working but not needed commands --------
-#tmp/mondo-edit.owl:
-#	robot convert -i mondo-edit.obo --format owl -o $@
-#ofn:
-#	robot convert -i mondo-edit.obo --format ofn -o tmp/mondo-edit.ofn
-#tmp/mondo.sssom.tsv: tmp/mondo.db
-#	runoak -i sqlite:tmp/mondo.db mappings -O sssom -o $@
-#reports/obsoletes.tsv: tmp/mondo.db
-#	runoak -i sqlite:tmp/mondo.db obsoletes > reports/obsoletes.tsv
-
-# Working helper commands ------
-tmp/mondo.owl: tmp/mondo-version_current.owl
-	cp tmp/mondo-version_current.owl $@
-tmp/mondo.db: tmp/mondo.owl
-	@rm -f .template.db
-	@rm -f .template.db.tmp
-	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
-	@rm -f .template.db
-	@rm -f .template.db.tmp
-tmp/mondo-obsoletes.sssom.tsv: tmp/mondo.db
-	runoak -i sqlite:tmp/mondo.db obsoletes | runoak -i sqlite:tmp/mondo.db mappings -O sssom -o $@ -
-
-# todo: is this what we are needing? I couldn't find a way to add filtering (e.g. "GARD:") in OAK. Maybe can do via unix.
-reports/gard-mondo-mapped-obsoletes.tsv.tsv: tmp/mondo-obsoletes.sssom.tsv
-	python temp_mondo_gard_obsoletes.py
+reports/gard-mondo-mapped-obsoletes.tsv: $(ONT).owl
+	$(ROBOT) query -i $(ONT).owl -f tsv --query $(SPARQLDIR)/reports/gard-mondo-mapped-obsoletes.sparql $@
 
 ##################################################
 ################## Old diseases2owl code #########
