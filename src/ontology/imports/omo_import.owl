@@ -12,8 +12,8 @@
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/omo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-08-03/imports/omo_import.owl"/>
-        <protege:defaultLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</protege:defaultLanguage>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2023-08-01/imports/omo_import.owl"/>
+        <protege:defaultLanguage>en</protege:defaultLanguage>
         <dc:contributor xml:lang="en">Adam Goldstein</dc:contributor>
         <dc:contributor xml:lang="en">Alan Ruttenberg</dc:contributor>
         <dc:contributor xml:lang="en">Albert Goldfain</dc:contributor>
@@ -52,6 +52,7 @@
         <dc:description xml:lang="en">An ontology specifies terms that are used to annotate ontology terms for all OBO ontologies. The ontology was developed as part of Information Artifact Ontology (IAO).</dc:description>
         <dc:title xml:lang="en">OBO Metadata Ontology</dc:title>
         <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
+        <owl:versionInfo>2023-06-09</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -186,12 +187,14 @@ We also have the outstanding issue of how to aim different definitions to differ
     <!-- http://purl.obolibrary.org/obo/IAO_0000118 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000118">
-        <obo:IAO_0000111 xml:lang="en">alternative term</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">alternative label</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">An alternative name for a class or property which means the same thing as the preferred name (semantically equivalent)</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A label for a class or property that can be used to refer to the class or property instead of the preferred rdfs:label. Alternative labels should be used to indicate community- or context-specific labels, abbreviations, shorthand forms and the like.</obo:IAO_0000115>
+        <obo:IAO_0000117>OBO Operations committee</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">alternative term</rdfs:label>
+        <rdfs:comment>Consider re-defing to: An alternative name for a class or property which can mean the same thing as the preferred name (semantically equivalent, narrow, broad or related).</rdfs:comment>
+        <rdfs:label xml:lang="en">alternative label</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -337,6 +340,7 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
         <obo:IAO_0000115 xml:lang="en">Use boolean value xsd:true to indicate that the property is an antisymmetric property</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
         <rdfs:label xml:lang="en">antisymmetric property</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/OMO_0001001"/>
     </owl:AnnotationProperty>
     
 
@@ -538,6 +542,155 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OMO_0001001 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0001001">
+        <obo:IAO_0000115>This is an annotation used on an object property to indicate a logical characterstic beyond what is possible in OWL.</obo:IAO_0000115>
+        <obo:IAO_0000119>OBO Operations call</obo:IAO_0000119>
+        <oboInOwl:created_by rdf:resource="http://orcid.org/0000-0001-5208-3432"/>
+        <rdfs:label>logical characteristic of object property</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0002000 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0002000">
+        <obo:IAO_0000112>&apos;part disjoint with&apos; &apos;defined by construct&apos; &quot;&quot;&quot;
+    PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+    PREFIX : &lt;http://example.org/
+    CONSTRUCT {
+      [
+        a owl:Restriction ;
+        owl:onProperty :part_of ;
+        owl:someValuesFrom ?a ;
+        owl:disjointWith [
+          a owl:Restriction ;
+          owl:onProperty :part_of ;
+          owl:someValuesFrom ?b
+        ]
+      ]
+    }
+    WHERE {
+      ?a :part_disjoint_with ?b .
+    }</obo:IAO_0000112>
+        <obo:IAO_0000115>Links an annotation property to a SPARQL CONSTRUCT query which is meant to provide semantics for a shortcut relation.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/ontodev/robot/issues/963"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0002-7356-1779"/>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0002-8688-6599"/>
+        <rdfs:label>defined by construct</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003000 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003000">
+        <obo:IAO_0000112>CHEBI:26523 (reactive oxygen species) has an exact synonym (ROS), which is of type OMO:0003000 (abbreviation)</obo:IAO_0000112>
+        <obo:IAO_0000115>A synonym type for describing abbreviations or initalisms</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/122"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>abbreviation</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003001 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003001">
+        <obo:IAO_0000115>A synonym type for describing ambiguous synonyms</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/122"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>ambiguous synonym</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003002 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003002">
+        <obo:IAO_0000115>A synonym type for describing dubious synonyms</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/122"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>dubious synonym</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003003 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003003">
+        <obo:IAO_0000112>EFO:0006346 (severe cutaneous adverse reaction) has an exact synonym (scar), which is of the type OMO:0003003 (layperson synonym)</obo:IAO_0000112>
+        <obo:IAO_0000115>A synonym type for describing layperson or colloquial synonyms</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/122"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>layperson synonym</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003004 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003004">
+        <obo:IAO_0000112>CHEBI:23367 (molecular entity) has an exact synonym (molecular entities), which is of the type OMO:0003004 (plural form)</obo:IAO_0000112>
+        <obo:IAO_0000115>A synonym type for describing pluralization synonyms</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/122"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>plural form</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003005 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003005">
+        <obo:IAO_0000112>CHEBI:16189 (sulfate) has an exact synonym (sulphate), which is of the type OMO:0003005 (UK spelling synonym)</obo:IAO_0000112>
+        <obo:IAO_0000115>A synonym type for describing UK spelling variants</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/122"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>UK spelling synonym</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003006 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003006">
+        <obo:IAO_0000115>A synonym type for common misspellings</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/132"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>misspelling</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003007 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003007">
+        <obo:IAO_0000115>A synonym type for misnomers, i.e., a synonym that is not technically correct but is commonly used anyway</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:resource="https://github.com/information-artifact-ontology/ontology-metadata/issues/133"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
+        <rdfs:label>misnomer</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/contributor -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
@@ -628,9 +781,27 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
     
 
 
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
     <!-- http://purl.org/dc/terms/license -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#SynonymType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SynonymType"/>
     
 
 
@@ -643,6 +814,75 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
     <!-- http://www.geneontology.org/formats/oboInOwl#creation_date -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#creation_date"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym">
+        <obo:IAO_0000115>An alternative label for a class or property which has a more general meaning than the preferred name/primary label.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:resource="http://orcid.org/0000-0001-5208-3432"/>
+        <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/18</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">has broad synonym</rdfs:label>
+        <rdfs:seeAlso>https://github.com/information-artifact-ontology/ontology-metadata/issues/18</rdfs:seeAlso>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
+        <obo:IAO_0000115>An alternative label for a class or property which has the exact same meaning than the preferred name/primary label.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:resource="http://orcid.org/0000-0001-5208-3432"/>
+        <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/20</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">has exact synonym</rdfs:label>
+        <rdfs:seeAlso>https://github.com/information-artifact-ontology/ontology-metadata/issues/20</rdfs:seeAlso>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym">
+        <obo:IAO_0000115>An alternative label for a class or property which has a more specific meaning than the preferred name/primary label.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:resource="http://orcid.org/0000-0001-5208-3432"/>
+        <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/19</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">has narrow synonym</rdfs:label>
+        <rdfs:seeAlso>https://github.com/information-artifact-ontology/ontology-metadata/issues/19</rdfs:seeAlso>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym">
+        <obo:IAO_0000115>An alternative label for a class or property that has been used synonymously with the primary term name, but the usage is not strictly correct.</obo:IAO_0000115>
+        <obo:IAO_0000117 rdf:resource="http://orcid.org/0000-0001-5208-3432"/>
+        <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/21</obo:IAO_0000233>
+        <rdfs:label xml:lang="en">has related synonym</rdfs:label>
+        <rdfs:seeAlso>https://github.com/information-artifact-ontology/ontology-metadata/issues/21</rdfs:seeAlso>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -737,6 +977,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000227"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000228"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000229"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OMO_0001000"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1261,6 +1502,20 @@ No imports</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OMO_0001000 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OMO_0001000">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/IAO_0000225"/>
+        <obo:IAO_0000115 xml:lang="en">The term was added to the ontology on the assumption it was in scope, but it turned out later that it was not.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">This obsolesence reason should be used conservatively. Typical valid examples are: un-necessary grouping classes in disease ontologies, a phenotype term added on the assumption it was a disease.</obo:IAO_0000116>
+        <obo:IAO_0000117 rdf:resource="http://orcid.org/0000-0001-5208-3432"/>
+        <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/77</obo:IAO_0000233>
+        <obo:IAO_0000234>https://orcid.org/0000-0001-5208-3432</obo:IAO_0000234>
+        <rdfs:label>out of scope</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1295,5 +1550,5 @@ No imports</obo:IAO_0000115>
 
 
 
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
 

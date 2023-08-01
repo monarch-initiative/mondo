@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+
+# description: Checks if a proper obsolesence reason was documented for this class
+
+SELECT ?entity ?property ?value WHERE {
+  VALUES ?property { IAO:0000231 }
+  ?entity ?property ?value .
+  FILTER(!isIRI(?value))
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
+}
