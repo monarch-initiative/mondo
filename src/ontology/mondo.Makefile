@@ -241,6 +241,11 @@ components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-sub
 		query --update ../sparql/construct/construct-rare-subset.sparql \
 		annotate --ontology-iri $(ONTBASE)/$@ -o $@
 
+components/mondo-characteristic-rare.owl: components/mondo-subsets.owl
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql \
+		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
 
 reports/new-rare-diseases.txt: $(ONT)-base.owl
 	$(ROBOT) query -i $< --query ../sparql/signature/rare-subset.sparql $@
@@ -255,6 +260,7 @@ reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
 
 rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv
 	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
+
 	
 
 
