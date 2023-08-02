@@ -419,8 +419,7 @@ imports/%_import.obo: imports/%_import.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@; fi
 
 imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) merge -i mirror/omo.owl \
-		remove --term OMO:00001000 --term IAO:0000423 --term IAO:0000229 --term IAO:0000227 \
+	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/omo_import.owl
 
