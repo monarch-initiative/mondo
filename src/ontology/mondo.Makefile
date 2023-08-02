@@ -289,6 +289,9 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 #sources/CTD_diseases.obo:
 #	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
 
+reports/gard-mondo-mapped-obsoletes.tsv: $(ONT).owl
+	$(ROBOT) query -i $(ONT).owl -f tsv --query $(SPARQLDIR)/reports/gard-mondo-mapped-obsoletes.sparql $@
+
 ##################################################
 ################## Old diseases2owl code #########
 
