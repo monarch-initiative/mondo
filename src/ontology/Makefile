@@ -142,7 +142,6 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-tags-reasoned.owl.tsv
-test: sparql_test_main_owl
 
 # ----------------------------------------
 # Staging releases
@@ -516,7 +515,10 @@ $(QSRC): $(SRC)
 SRC_TAGS_REASONED=mondo-tags-reasoned.owl
 
 $(SRC_TAGS_REASONED): $(SRC)
-	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason -o $@
+	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false \
+		query --use-graphs false \
+		--update ../sparql/update/inject-cross-species-analog.ru \
+		reason -o $@
 
 # run all violation checks on edit file
 sparql_test_edit: $(SRC_TAGS_REASONED)
