@@ -514,9 +514,12 @@ $(QSRC): $(SRC)
 
 SRC_TAGS_REASONED=mondo-tags-reasoned.owl
 
-$(SRC_TAGS_REASONED): $(SRC)
-	$(ROBOT) query -i $< --use-graphs false --update ../sparql/update/inject-cross-species-analog.ru -o $@
-	$(ROBOT) merge -i $@ -i components/mondo-tags.owl --collapse-import-closure false reason -o $@
+tmp/cross-species-mappings.owl: $(SRC)
+	mkdir -p tmp
+	$(ROBOT) query -i $< --use-graphs false --query ../sparql/construct/construct-cross-species-analog.sparql $@
+
+$(SRC_TAGS_REASONED): $(SRC) tmp/cross-species-mappings.owl
+	$(ROBOT) merge -i $@ -i components/mondo-tags.owl -i tmp/cross-species-mappings.owl --collapse-import-closure false reason -o $@
 
 # run all violation checks on edit file
 sparql_test_edit: $(SRC_TAGS_REASONED)
