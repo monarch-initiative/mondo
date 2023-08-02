@@ -1,4 +1,4 @@
-# Protege 5.5 setup for Mondo Editors
+# Protege 5.6 setup for Mondo Editors
 
 (This was adopted from the [Gene Ontology editors guide](http://wiki.geneontology.org/index.php/Protege5_5_setup_for_GO_Eds))
 
