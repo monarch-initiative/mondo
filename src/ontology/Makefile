@@ -420,6 +420,7 @@ imports/%_import.obo: imports/%_import.owl
 
 imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
 	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		remove --term IAO:0000227 \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/omo_import.owl
 
