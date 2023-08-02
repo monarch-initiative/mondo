@@ -20,14 +20,14 @@ The ELK reasoner is included with Protege 5.6. For instructions on adding the EL
 ## Increase memory in Protege
 
 1. Protege needs at least 4G of RAM to cope with Mondo, ideally use 12G or 16G if your machine can handle it.
-1. If running from Protege.app on a mac, open the /Applications/Protege-5.5.0/Protégé.app/Contents/info.plist file
+1. If running from Protege.app on a mac, open the /Applications/Protege-5.6/Protégé.app/Contents/info.plist file
 1. Below the line: <string>-Xss16M</string>
 1. Insert another line: <string>-Xmx12G</string>
 1. Note - if you have issues opening Protege, then reduce the memory, try 10G (or lower) instead.
 
 ## Fix memory settings
 - Protege needs at least 4G of RAM to cope with Mondo, ideally use 12G or 16G if your machine can handle it.
-- If running from Protege.app on a mac, open the /Applications/Protege-5.5.0/Protégé.app/Contents/info.plist file
+- If running from Protege.app on a mac, open the /Applications/Protege-5.6/Protégé.app/Contents/info.plist file
   - Below the line: `<string>-Xss16M</string>`
   - Insert another line: `<string>-Xmx12G</string>`
 
@@ -51,7 +51,9 @@ If you are using an older version of Protege, see the [instructions on setting t
 
 ### Switching ID range
 
-If you edit another ontology besides Mondo, you will need to switch your ID range. Protege (unfortunately) does not remember the last prefix or ID range that you used when you switch between ontologies. Therefore we need to manually update this each time we switch ontologies. See [instructions here](https://oboacademy.github.io/obook/howto/switching-ontologies/).
+Protege 5.6 manages ID ranges for you automatically and these instructions are not needed.
+
+If you are you using an older version of Protege, see the [instructions here](https://oboacademy.github.io/obook/howto/switching-ontologies/).
 
 ## User details
 
