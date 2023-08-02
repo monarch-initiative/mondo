@@ -142,7 +142,7 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-tags-reasoned.owl.tsv
-
+test: sparql_test_main_owl
 
 # ----------------------------------------
 # Staging releases
