@@ -7,18 +7,16 @@ prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-INSERT {
-  
-}
+SELECT ?entity ?property ?value 
 
 WHERE
 {
-  ?cls a owl:Class ; 
-    <https://w3id.org/semapv/vocab/crossSpeciesExactMatch> ?mondohuman.
+  VALUES ?property { <https://w3id.org/semapv/vocab/crossSpeciesExactMatch> }
+  ?entity ?property ?value.
 
   FILTER NOT EXISTS {
       ?mondohuman rdfs:subClassOf+ MONDO:0700096 .
   }
 
- FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+ FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
 }
