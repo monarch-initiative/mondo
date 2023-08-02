@@ -15,7 +15,7 @@ WHERE
   ?entity ?property ?value.
 
   FILTER NOT EXISTS {
-      ?mondohuman rdfs:subClassOf+ MONDO:0700096 .
+      ?value rdfs:subClassOf+ MONDO:0700096 .
   }
 
  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
