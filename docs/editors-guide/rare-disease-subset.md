@@ -44,7 +44,7 @@ Users can filter using the subset annotation “X_rare” (where X is a rare dis
 | --- | --- | --- | --- |
 | GARD | [https://rarediseases.info.nih.gov/](https://rarediseases.info.nih.gov/) | gard_rare | *(coming soon)*|
 | NORD | [https://rarediseases.org/](https://rarediseases.org/) | nord_rare | *(coming soon)*|
-|Orphanet |[https://www.orpha.net/](https://www.orpha.net/) | orphanet_rare | *(coming soon)*|
+| Orphanet | [https://www.orpha.net/](https://www.orpha.net/) | orphanet_rare | *(coming soon)*|
 
 
 
