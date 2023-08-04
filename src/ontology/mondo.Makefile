@@ -233,25 +233,28 @@ tmp/nord-rare-subset.ttl: $(SRC)
 # The inferred subset depends on the other ones, so we need to first remove the old subsets
 # Then add the gard, nord and orphanet subsets back in
 tmp/inferred-rare-subset.ttl: $(SRC) tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl tmp/orphanet-rare-subset.ttl
-	$(ROBOT) merge -i $(SRC) unmerge -i components/mondo-subsets.owl reason \
+	$(ROBOT) merge -i $(SRC) \
+		unmerge -i components/mondo-subsets.owl \
+		merge $(patsubst %, -i %, $^) \
+		reason \
 		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
 
-components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl | dirs
+components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		query --update ../sparql/construct/construct-rare-subset.sparql \
 		annotate --ontology-iri $(ONTBASE)/$@ -o $@
 
+# As of 3 August, does not do anything.
 components/mondo-characteristic-rare.owl: components/mondo-subsets.owl
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql \
 		annotate --ontology-iri $(ONTBASE)/$@ -o $@
 
-
-reports/new-rare-diseases.txt: $(ONT)-base.owl
-	$(ROBOT) query -i $< --query ../sparql/signature/rare-subset.sparql $@
+reports/new-rare-diseases.txt: #$(ONT)-base.owl
+	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
 
 reports/old-rare-diseases.txt: tmp/mondo-lastbase.owl
-	$(ROBOT) query -i $< --query ../sparql/signature/rare-subset.sparql $@
+	$(ROBOT) query -i tmp/mondo-lastbase.owl --query ../sparql/signature/rare-subset.sparql $@
 
 reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
 	$(ROBOT) filter --input $(ONT)-base.owl  -T reports/$*-rare-diseases.txt --select "annotations self" \
