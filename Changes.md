@@ -1,3 +1,309 @@
+# 2023-08-02
+## Overview:
+
+* Number of new terms: 1
+* Number of changed labels: 3
+* Number of changed definitions: 18
+* Number obsoleted terms: 10
+* Number of new obsoletion candidates: 230
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 1
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:1010000 | pythiosis | A granulomatous disease caused by the aquatic organism pythium insidiosum occurring rarely in humans. It is classified into three forms: ocular, cutaneous, and arterial. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0007062 | adactylia, unilateral | congenital absence/hypoplasia of fingers excluding thumb, unilateral | adactylia, unilateral |
+| MONDO:0008409 | congenital myopathy 7A, myosin storage, autosomal dominant | MYH7-related late-onset scapuloperoneal muscular dystrophy | congenital myopathy 7A, myosin storage, autosomal dominant |
+| MONDO:0044635 | DIAPH1-related sensorineural hearing loss-thrombocytopenia syndrome | diaph1-related sensorineural hearing loss-thrombocytopenia syndrome | DIAPH1-related sensorineural hearing loss-thrombocytopenia syndrome |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0002113 | peritoneal carcinoma | A rare carcinoma that arises from the peritoneum and resembles the malignant surface epithelial-stromal tumors that arise from the ovary. Serous adenocarcinoma is the most common histologic variant. It affects women almost exclusively. The diagnosis of primary peritoneal carcinoma can be made only if both ovaries are not involved by tumor, or, if the ovaries are involved, the tumor is confined to the ovarian surface without invasion of the ovarian stroma and the peritoneal involvement is greater than the ovarian surface involvement. | A peritoneum cancer that is located in the inside of the abdomen. |
+| MONDO:0015686 | primary peritoneal carcinoma | Primary peritoneal carcinoma (PPC) is a rare malignant tumor of the peritoneal cavity of extra-ovarian origin, clinically and histologically similar to advanced-stage serous ovarian carcinoma. | A rare carcinoma that arises from the peritoneum and resembles the malignant surface epithelial-stromal tumors that arise from the ovary. Serous adenocarcinoma is the most common histologic variant. It affects women almost exclusively. The diagnosis of primary peritoneal carcinoma can be made only if both ovaries are not involved by tumor, or, if the ovaries are involved, the tumor is confined to the ovarian surface without invasion of the ovarian stroma and the peritoneal involvement is greater than the ovarian surface involvement. |
+| MONDO:0007062 | adactylia, unilateral | Unilateral adactylia is a terminal transverse defect of the hand characterized by the absence of the terminal portions of digits 2 to 5 with a hypoplastic thumb (adactylia). | A rare, non-syndromic, terminal transverse limb reduction defect characterized by unilateral absence of the terminal portions of digits 2 to 5, with a mildly hypoplastic thumb and small nail remnants on the digital stumps. Metacarpal bones may be variably reduced. |
+| MONDO:0008346 | pulmonary hemosiderosis | Idiopathic pulmonary hemosiderosis is a respiratory disease due to repeated episodes of diffuse alveolar hemorrhage without any underlying apparent cause, most often in children. Anemia, cough, and pulmonary infiltrates on chest radiographs are found in majority of the patients. | A respiratory disease due to repeated episodes of diffuse alveolar hemorrhage without any underlying apparent cause, most often in children. Anemia, cough, and pulmonary infiltrates on chest radiographs are found in majority of the patients. |
+| MONDO:0008458 | spinocerebellar ataxia type 2 | Spinocerebellar ataxia type 2 (SCA2) is a subtype of type I autosomal dominant cerebellar ataxia (ADCA type I) characterized by truncal ataxia, dysarthria, slowed saccades and less commonly ophthalmoparesis and chorea. | A subtype of type I autosomal dominant cerebellar ataxia (ADCA type I) characterized by truncal ataxia, dysarthria, slowed saccades and less commonly ophthalmoparesis and chorea. |
+| MONDO:0008675 | Freeman-Sheldon syndrome | Freeman-Sheldon syndrome (FSS) is a very rare, multiple congenital contractures syndrome characterized by a microstomia with a whistling appearance of the mouth, distinctive facies, club foot and joint contractures. FSS is the most severe form of distal arthrogryposis. | A very rare, multiple congenital contractures syndrome characterized by a microstomia with a whistling appearance of the mouth, distinctive facies, club foot and joint contractures. FSS is the most severe form of distal arthrogryposis. |
+| MONDO:0008843 | atherosclerosis-deafness-diabetes-epilepsy-nephropathy syndrome | Atherosclerosis-deafness-diabetes-epilepsy-nephropathy syndrome is characterised by sensorineural deafness, diabetes mellitus, progressive neurological deterioration with photomyoclonic epilepsy, and progressive nephropathy. It has been described in two brothers. Premature atherosclerosis of renal, coronary, and cerebral arteries and the aorta was also observed. | A rare, severe, circulatory system disease characterized by premature, diffuse, severe atherosclerosis (including the aorta and renal, coronary, and cerebral arteries), sensorineural deafness, diabetes mellitus, progressive neurological deterioration with cerebellar symptoms and photomyoclonic seizures, and progressive nephropathy. Partial deficiency of mitochondrial complexes III and IV in the kidney and fibroblasts (but not in muscle) may be associated. There have been no further descriptions in the literature since 1994. |
+| MONDO:0009835 | subacute sclerosing panencephalitis | Subacute sclerosing panencephalitis (SSPE) is a chronic progressive encephalitis that develops a few years after measles infection and presents with a demyelination of the cerebral cortex. | A chronic progressive encephalitis that develops a few years after measles infection and presents with a demyelination of the cerebral cortex. |
+| MONDO:0011191 | capillary infantile hemangioma | Capillary hemangiomas are benign, highly proliferative lesions involving aberrant localized growth of capillary endothelium. They are the most common tumor of infancy, occurring in up to 10% of all births. Hemangiomas tend to appear shortly after birth and show rapid neonatal growth for up to 12 months characterized by endothelial hypercellularity and increased numbers of mast cells. This phase is followed by slow involution at a rate of about 10% per year and replacement by fibrofatty stroma. Hemangiomas are classified as distinct from vascular malformations, in that the latter are present from birth, tend to grow with the individual, do not regress, and show normal rates of endothelial cell turnover. Most hemangiomas occur sporadically, but some families with autosomal dominant inheritance have been reported. | Capillary hemangiomas are benign, highly proliferative lesions involving aberrant localized growth of capillary endothelium. They are the most common tumor of infancy, occurring in up to 10% of all births. Hemangiomas tend to appear shortly after birth and show rapid neonatal growth for up to 12 months characterized by endothelial hypercellularity and increased numbers of mast cells. This phase is followed by slow involution at a rate of about 10% per year and replacement by fibrofatty stroma. Hemangiomas are classified as distinct from vascular malformations, in that the latter are present from birth, tend to grow with the individual, do not regress, and show normal rates of endothelial cell turnover. |
+| MONDO:0013646 | chromosome 8q21.11 deletion syndrome | 8q21.11 microdeletion syndrome encompasses heterozygous overlapping microdeletions on chromosome 8q21.11 resulting in intellectual disability, facial dysmorphism comprising a round face, ptosis, short philtrum, Cupid's bow and prominent low-set ears, nasal speech and mild finger and toe anomalies. | Heterozygous overlapping microdeletions on chromosome 8q21.11 resulting in intellectual disability, facial dysmorphism comprising a round face, ptosis, short philtrum, Cupid's bow and prominent low-set ears, nasal speech and mild finger and toe anomalies. |
+| MONDO:0014165 | multiple congenital anomalies-hypotonia-seizures syndrome 3 | Intellectual disability-seizures-hypotonia-ophthalmologic-skeletal anomalies syndrome is a rare congenital disorder of glycosylation characterized by neonatal hypotonia, global development delay, developmental regress and severe to profound intellectual disability, infantile onset seizures that are initially associated with febrile episodes with subsequent transition to unprovoked seizures, impaired vision with esotropia and nystagmus, progressive cerebral and cerebellar atrophy, skeletal abnormalities (including brachycephaly, scoliosis, slender long bones, delayed bone age, pectus excavatum and osteopenia), inverted nipples and dysmorphic features including high and narrow forehead, frontal bossing, short nose, depressed nasal bridge, anteverted nares, high palate and wide open mouth consistent with facial hypotonia. Other features may include cardiac abnormalities (such as patent ductus arteriosus, atrial septal defects), urogenital abnormalities (such as nephrocalcinosis, urolithiasis), and low plasma concentration of alkaline phosphatase. | A rare congenital disorder of glycosylation characterized by neonatal hypotonia, global development delay, developmental regress and severe to profound intellectual disability, infantile onset seizures that are initially associated with febrile episodes with subsequent transition to unprovoked seizures, impaired vision with esotropia and nystagmus, progressive cerebral and cerebellar atrophy, skeletal abnormalities (including brachycephaly, scoliosis, slender long bones, delayed bone age, pectus excavatum and osteopenia), inverted nipples and dysmorphic features including high and narrow forehead, frontal bossing, short nose, depressed nasal bridge, anteverted nares, high palate and wide open mouth consistent with facial hypotonia. Other features may include cardiac abnormalities (such as patent ductus arteriosus, atrial septal defects), urogenital abnormalities (such as nephrocalcinosis, urolithiasis), and low plasma concentration of alkaline phosphatase. |
+| MONDO:0018875 | Li-Fraumeni syndrome | Li-Fraumeni syndrome (LFS) is a rare cancer predisposition syndrome characterized by the early-onset of multiple primary cancers such as breast cancer, soft tissue and bone sarcomas, brain tumors and adrenal cortical carcinoma (ACC). | A rare cancer predisposition syndrome characterized by the early-onset of multiple primary cancers such as breast cancer, soft tissue and bone sarcomas, brain tumors and adrenal cortical carcinoma (ACC). |
+| MONDO:0019100 | neuromyelitis optica | Neuromyelitis optica (NMO) and NMO spectrum disorders are inflammatory demyelinating diseases of the central nervous system characterized mainly by attacks of uni- or bilateral optic neuritis (ON) and acute myelitis. | A rare inflammatory disease of the central nervous system characterized mainly by attacks of uni- or bilateral optic neuritis (ON) and acute myelitis. |
+| MONDO:0025510 | pythiosis, non-human animal | A granulomatous disease caused by the aquatic organism pythium insidiosum and occurring primarily in horses, cattle, dogs, cats, fishes, and rarely in humans. It is classified into three forms: ocular, cutaneous, and arterial. | A granulomatous disease caused by the aquatic organism pythium insidiosum and occurring primarily in horses, cattle, dogs, cats, and fishes. It is classified into three forms: ocular, cutaneous, and arterial. |
+| MONDO:0044688 | isolated optic neuritis | | A rare inflammatory optic neuropathy characterized by isolated episodes (either single or recurrent) of optic neuritis not associated with other neurological or systemic disease. Patients typically present with subacute unilateral loss of vision progressing over several days to two weeks, periocular pain and pain on eye movement (which may precede the onset of visual symptoms), light flashes on eye movement, abnormal color vision, reduced contrast sensitivity, and relative afferent pupillary defect. The optic disc appears swollen in many patients, and uveitis may be associated and can be present for years before the onset of optic neuritis. |
+| MONDO:0044687 | chronic relapsing inflammatory optic neuropathy | | A rare inflammatory optic neuropathy characterized by severe and persistent pain followed by subacute visual loss, a relapsing-remitting course, and steroid-dependence. Involvement of both optic nerves is common and is usually sequential. Serum antibodies against aquaporin 4 are absent in most cases. Magnetic resonance imaging shows contrast enhancement of the acutely inflamed optic nerves. |
+| MONDO:0044689 | recurrent idiopathic neuroretinitis | | A rare inflammatory optic neuropathy characterized by recurrent episodes of idiopathic inflammation of the optic nerve head with optic disc edema associated with macular exudate in a star-shaped pattern. Patients present with acute visual loss, most typically in the form of a large central scotoma. Pain is mild or absent. Bilateral involvement is frequent and usually sequential. The interval between attacks is highly variable, ranging from months to several years. Visual loss is cumulative with each attack and often severe. |
+| MONDO:0044690 | optic perineuritis | | A rare ophthalmic disorder characterized by idiopathic orbital inflammation in which the specific target tissue is the optic nerve sheath. Patients typically present with ocular pain, pain on eye movement, visual symptoms with loss of vision progressing over several weeks, dyschromatopsia, and variable visual field defects. Orbital signs and symptoms may be present and include ptosis, ophthalmoplegia, and exophthalmos. Optic disc edema is observed in most cases. The condition is usually unilateral. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0007761 | obsolete hyperlipoproteinemia type IV |
+| MONDO:0007903 | obsolete Li-Fraumeni syndrome 1 |
+| MONDO:0010859 | obsolete atrioventricular septal defect 3 |
+| MONDO:0011333 | obsolete light fixation seizure syndrome |
+| MONDO:0012018 | obsolete myopathy, myosin storage, autosomal dominant |
+| MONDO:0012233 | obsolete Li-Fraumeni syndrome 2 |
+| MONDO:0012279 | obsolete congenital muscular dystrophy merosin-positive |
+| MONDO:0019765 | obsolete celosomia |
+| MONDO:0020342 | obsolete congenital myopathy with excess of thin filaments |
+| MONDO:0100300 | obsolete hereditary capillary infantile hemangioma |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0015334 | branchial arch or oral-acral syndrome |
+| MONDO:0015412 | median facial cleft |
+| MONDO:0015503 | nose and cavum anomaly |
+| MONDO:0020162 | secondary ectropion |
+| MONDO:0020285 | transposition of the great arteries and conotruncal cardiac anomaly |
+| MONDO:0017745 | disorder of O-mannosylglycan synthesis |
+| MONDO:0017270 | autosomal ichthyosis syndrome |
+| MONDO:0016072 | anomaly of puberty or/and menstrual cycle of genetic origin |
+| MONDO:0025511 | inherited neuroendocrine tumor |
+| MONDO:0019224 | inborn disorder of gamma-aminobutyric acid metabolism |
+| MONDO:0020157 | syndromic palpebral coloboma |
+| MONDO:0020167 | malposition of external canthus |
+| MONDO:0015144 | brain inflammatory disease |
+| MONDO:0016738 | primary germ cell tumor of central nervous system |
+| MONDO:0018532 | adenocarcinoma of liver and intrahepatic biliary tract |
+| MONDO:0020125 | acquired neuromuscular junction disease |
+| MONDO:0017742 | disorder of O-xylosylglycan synthesis |
+| MONDO:0018292 | congenital disorder of glycosylation-related bone disorder |
+| MONDO:0016494 | regional variant of Guillain-Barre syndrome |
+| MONDO:0016726 | neuronal tumor |
+| MONDO:0015682 | primary peritoneal tumor |
+| MONDO:0015683 | primary malignant peritoneal tumor |
+| MONDO:0015818 | aggressive primary cutaneous B-cell lymphoma |
+| MONDO:0019063 | vascular anomaly |
+| MONDO:0019286 | sebaceous gland anomaly |
+| MONDO:0015950 | inherited skin tumor |
+| MONDO:0017131 | hereditary cardiac anomaly |
+| MONDO:0020294 | atrial defect and interatrial communication |
+| MONDO:0015620 | syndromic urogenital tract malformation |
+| MONDO:0019054 | congenital limb malformation |
+| MONDO:0017240 | acrodysostosis with multiple hormone resistance |
+| MONDO:0019271 | acrokeratoderma |
+| MONDO:0017448 | congenital absence/hypoplasia of fingers excluding thumb |
+| MONDO:0016565 | syndromic genetic obesity |
+| MONDO:0020215 | syndromic corneal dystrophy |
+| MONDO:0018771 | congenital anomaly of ventricular septum |
+| MONDO:0020148 | syndromic aniridia |
+| MONDO:0020156 | syndromic ankyloblepharon |
+| MONDO:0016229 | hereditary vascular anomaly |
+| MONDO:0015385 | external auditory canal aplasia/hypoplasia |
+| MONDO:0020286 | aortic malformation |
+| MONDO:0015852 | excess breast volume or number |
+| MONDO:0015214 | syndromic visceral malformation |
+| MONDO:0020018 | cranial malformation |
+| MONDO:0017429 | joint formation defects |
+| MONDO:0020145 | developmental defect of the eye |
+| MONDO:0020165 | syndromic epicanthus |
+| MONDO:0015338 | syndromic craniosynostosis |
+| MONDO:0017670 | autosomal dominant diffuse mutilating palmoplantar keratoderma |
+| MONDO:0017756 | disorder of pterin metabolism |
+| MONDO:0018731 | lethal multiple congenital anomalies/dysmorphic syndrome |
+| MONDO:0015930 | respiratory malformation |
+| MONDO:0020023 | respiratory or mediastinal malformation |
+| MONDO:0015822 | acquired neutropenia |
+| MONDO:0007607 | Birt-Hogg-Dube syndrome |
+| MONDO:0019520 | syndromic lymphedema |
+| MONDO:0015846 | syndromic uterovaginal malformation |
+| MONDO:0016375 | acquired peripheral movement disorder |
+| MONDO:0020093 | autosomal dominant isolated diffuse palmoplantar keratoderma |
+| MONDO:0015359 | autosomal dominant hereditary demyelinating motor and sensory neuropathy |
+| MONDO:0015361 | autosomal recessive hereditary demyelinating motor and sensory neuropathy |
+| MONDO:0018795 | syndromic constitutional thrombocytopenia |
+| MONDO:0020195 | excretory apparatus of the lacrimal system anomaly |
+| MONDO:0015504 | larynx anomaly |
+| MONDO:0017127 | inherited soft tissue tumor |
+| MONDO:0020211 | syndromic keratoconus |
+| MONDO:0015210 | syndromic gastroduodenal malformation |
+| MONDO:0020235 | lens size anomaly |
+| MONDO:0020176 | palpebral sebaceous gland tumor |
+| MONDO:0020240 | syndromic retinitis pigmentosa |
+| MONDO:0020205 | bulbar conjunctival dermoid or conjunctival dermolipoma |
+| MONDO:0015213 | non-syndromic visceral malformation |
+| MONDO:0017128 | inherited digestive tract tumor |
+| MONDO:0008347 | idiopathic and/or familial pulmonary arterial hypertension |
+| MONDO:0015853 | deficient breast volume or number |
+| MONDO:0008406 | autosomal recessive Emery-Dreifuss muscular dystrophy |
+| MONDO:0015310 | syndromic optic nerve hypoplasia |
+| MONDO:0018782 | type 1 interferonopathy |
+| MONDO:0017914 | pure or complex autosomal dominant spastic paraplegia |
+| MONDO:0016224 | autosomal dominant proximal spinal muscular atrophy |
+| MONDO:0800095 | syndrome with synostosis or other joint formation defect |
+| MONDO:0020163 | canthal anomaly |
+| MONDO:0015679 | autosomal thrombocytopenia with normal platelets |
+| MONDO:0015208 | syndromic esophageal malformation |
+| MONDO:0015180 | intestinal disease due to fat malabsorption |
+| MONDO:0017969 | 46,XY disorder of sex development of endocrine origin |
+| MONDO:0019593 | 46,XX disorder of sex development induced by fetal androgens excess |
+| MONDO:0008807 | apnea, central sleep |
+| MONDO:0015222 | syndromic respiratory or mediastinal malformation |
+| MONDO:0016114 | bulbospinal muscular atrophy of childhood |
+| MONDO:0020237 | lens shape anomaly |
+| MONDO:0015212 | syndromic intestinal malformation |
+| MONDO:0015211 | non-syndromic intestinal malformation |
+| MONDO:0015366 | autosomal recessive hereditary sensory and autonomic neuropathy |
+| MONDO:0015778 | syndromic hypothyroidism |
+| MONDO:0015323 | teratogenic Pierre Robin syndrome |
+| MONDO:0015179 | intestinal disease due to vitamin absorption anomaly |
+| MONDO:0018384 | avascular necrosis of genetic origin |
+| MONDO:0017961 | 46,XX disorder of gonadal development |
+| MONDO:0015130 | acquired chronic primary adrenal insufficiency |
+| MONDO:0100343 | antenatal Bartter syndrome |
+| MONDO:0020096 | autosomal recessive isolated diffuse palmoplantar keratoderma |
+| MONDO:0017915 | pure or complex autosomal recessive spastic paraplegia |
+| MONDO:0016152 | qualitative or quantitative defects of calpain |
+| MONDO:0016109 | autosomal recessive distal myopathy |
+| MONDO:0018743 | immune-mediated acquired neuromuscular junction disease |
+| MONDO:0017129 | inherited cardiac tumor |
+| MONDO:0015089 | autosomal recessive complex spastic paraplegia |
+| MONDO:0014753 | autosomal recessive optic atrophy |
+| MONDO:0020069 | chronic encephalitis |
+| MONDO:0020287 | pulmonary artery or pulmonary branch anomaly |
+| MONDO:0017744 | disorder of O-xylosyl/N-acetylgalactosaminylglycan synthesis |
+| MONDO:0020210 | syndromic hyperopia |
+| MONDO:0018496 | ARX-related encephalopathy-brain malformation spectrum |
+| MONDO:0020216 | secondary dysgenetic glaucoma |
+| MONDO:0017916 | pure or complex X-linked spastic paraplegia |
+| MONDO:0018222 | X-linked intellectual disability due to GRIA3 anomalies |
+| MONDO:0017912 | X-linked pure spastic paraplegia |
+| MONDO:0016980 | ATR-X-related syndrome |
+| MONDO:0020339 | X-linked complex spastic paraplegia |
+| MONDO:0019227 | inborn disorder of glycerol metabolism |
+| MONDO:0015921 | ARX-related epileptic encephalopathy |
+| MONDO:0016196 | qualitative or quantitative defects of emerin |
+| MONDO:0016154 | qualitative or quantitative defects of myotubularin |
+| MONDO:0016115 | bulbospinal muscular atrophy of adulthood |
+| MONDO:0017966 | 46,XY disorder of gonadal development |
+| MONDO:0015415 | oblique facial cleft |
+| MONDO:0020146 | major induction processes eye anomaly |
+| MONDO:0020346 | synaptic congenital myasthenic syndrome |
+| MONDO:0015088 | autosomal dominant pure spastic paraplegia |
+| MONDO:0019714 | non-syndromic polydactyly, syndactyly and/or hyperphalangy |
+| MONDO:0100189 | apolipoprotein A-I deficiency |
+| MONDO:0019486 | myoclonic epilepsy of infancy |
+| MONDO:0020180 | palpebral piliary tumor |
+| MONDO:0017302 | qualitative or quantitative defects of troponin |
+| MONDO:0016200 | qualitative or quantitative defects of glucosamine (UDP-N-acetyl)-2-epimerase/N-acetylmannosamine kinase |
+| MONDO:0018239 | aggrecan-related bone disorder |
+| MONDO:0020343 | alpha-crystallinopathy |
+| MONDO:0016201 | qualitative or quantitative defects of myotilin |
+| MONDO:0015090 | autosomal recessive pure spastic paraplegia |
+| MONDO:0018550 | spastic paraplegia-optic atrophy-neuropathy and spastic paraplegia-optic atrophy-neuropathy-related disorder |
+| MONDO:0016599 | autosomal dominant secondary polycythemia |
+| MONDO:0018144 | congenital myasthenic syndromes with glycosylation defect |
+| MONDO:0015133 | quantitative and/or qualitative congenital phagocyte defect |
+| MONDO:0015586 | benign familial mesial temporal lobe epilepsy |
+| MONDO:0018788 | COL4A1 or COL4A2-related cerebral small vessel disease |
+| MONDO:0017241 | AP4-related intellectual disability and spastic paraplegia |
+| MONDO:0016536 | autosomal recessive lymphoproliferative disease |
+| MONDO:0018277 | congenital muscular dystrophy with cerebellar involvement |
+| MONDO:0018279 | congenital muscular dystrophy without intellectual disability |
+| MONDO:0016150 | qualitative or quantitative defects of integrin alpha-7 |
+| MONDO:0015418 | lateral facial cleft |
+| MONDO:0044655 | c12orf65-related combined oxidative phosphorylation defect |
+| MONDO:0016647 | autosomal recessive Stickler syndrome |
+| MONDO:0019138 | bleeding diathesis due to a collagen receptor defect |
+| MONDO:0019597 | 46,XY disorder of sex development due to isolated 17,20-lyase deficiency |
+| MONDO:0017709 | disorder of lipid absorption and transport |
+| MONDO:0013742 | familial mesial temporal lobe epilepsy with febrile seizures |
+| MONDO:0015365 | autosomal dominant hereditary sensory and autonomic neuropathy |
+| MONDO:0018318 | disorder of asparagine metabolism |
+| MONDO:0018579 | disorder of ketone body transport |
+| MONDO:0018529 | qualitative or quantitative defects of Torsin-1A-interacting protein 1 |
+| MONDO:0020293 | ascending aorta anomaly |
+| MONDO:0019513 | esophageal malformation |
+| MONDO:0019998 | gastroduodenal malformation |
+| MONDO:0019999 | intestinal malformation |
+| MONDO:0020181 | mesenchymatous palpebral tumor |
+| MONDO:0015398 | hemifacial microsomia |
+| MONDO:0015478 | paramedian facial cleft |
+| MONDO:0016034 | cleft lip with or without cleft palate |
+| MONDO:0015777 | adult hypothyroidism |
+| MONDO:0015817 | aggressive primary cutaneous T-cell lymphoma |
+| MONDO:0015860 | anomaly of puberty or/and menstrual cycle |
+| MONDO:0020147 | anophthalmia-microphthalmia syndrome |
+| MONDO:0016125 | infectious, fungal or parasitic myopathy |
+| MONDO:0016149 | qualitative or quantitative defects of merosin |
+| MONDO:0016157 | qualitative or quantitative defects of fukutin |
+| MONDO:0016172 | acquired sensory ganglionopathy |
+| MONDO:0016179 | acquired amyloid peripheral neuropathy |
+| MONDO:0016182 | qualitative or quantitative defects of protein O-mannose beta1, 2N-acetylglucosaminyltransferase |
+| MONDO:0016183 | qualitative or quantitative defects of protein glycosyltransferase-like |
+| MONDO:0016221 | temporomandibular joint anomaly |
+| MONDO:0016434 | acquired dermis elastic tissue disorder |
+| MONDO:0016495 | functional variant of Guillain-Barre syndrome |
+| MONDO:0020288 | atrioventricular valve anomaly |
+| MONDO:0016701 | oligoastrocytic tumor |
+| MONDO:0016721 | pineal tumor of neuroepithelial tissue |
+| MONDO:0016725 | pineal parenchymal tumor of intermediate differenciation |
+| MONDO:0017288 | DICER1 syndrome |
+| MONDO:0017422 | adactyly of hand |
+| MONDO:0017447 | congenital absence/hypoplasia of thumb |
+| MONDO:0017506 | congenital absence/hypoplasia of thumb, unilateral |
+| MONDO:0017507 | congenital absence/hypoplasia of thumb, bilateral |
+| MONDO:0017508 | congenital absence/hypoplasia of fingers excluding thumb, bilateral |
+| MONDO:0017710 | congenital systemic veins anomaly |
+| MONDO:0018185 | congenital anomaly of the great veins |
+| MONDO:0017743 | disorder of O-N-acetylgalactosaminylglycan synthesis |
+| MONDO:0017962 | 46,XX disorder of sex development induced by fetoplacental androgens excess |
+| MONDO:0020039 | 46,XX disorder of sex development induced by androgens excess |
+| MONDO:0017963 | 46,XX disorder of sex development induced by endogenous maternal-derived androgen |
+| MONDO:0019608 | 46,XX disorder of sex development induced by maternal-derived androgen |
+| MONDO:0017964 | 46,XX disorder of sex development induced by exogenous maternal-derived androgen |
+| MONDO:0017974 | 46,XY disorder of sex development induced by maternal-exposure to endocrine disruptors |
+| MONDO:0020284 | heart position anomaly |
+| MONDO:0019822 | arterial duct anomaly |
+| MONDO:0020177 | pigmented palpebral tumor |
+| MONDO:0019277 | epidermal appendage anomaly |
+| MONDO:0020081 | macrophage or histiocytic tumor |
+| MONDO:0020019 | digestive tract malformation |
+| MONDO:0020155 | eyelid border anomaly |
+| MONDO:0019816 | anomaly of the tricuspid subvalvular apparatus |
+| MONDO:0019826 | abnormal origin or aberrant course of coronary artery |
+| MONDO:0019831 | congenital anomaly of the coronary sinus |
+| MONDO:0019837 | atrial appendage anomaly |
+| MONDO:0020164 | epicanthal fold |
+| MONDO:0020193 | secretory apparatus of the lacrimal system anomaly |
+| MONDO:0020196 | anomaly of the secretory and excretory apparatus of the lacrimal system |
+| MONDO:0022397 | retinal ciliopathy due to mutation in the retinitis pigmentosa-1 gene |
+| MONDO:0022399 | retinal ciliopathy due to mutation in the RPGR gene |
+| MONDO:0022400 | retinal ciliopathy due to mutation in the RPGRIP gene |
+| MONDO:0022404 | retinal ciliopathy due to mutation in Usher gene |
+| MONDO:0022405 | retinal ciliopathy due to mutation in nephronophthisis gene |
+| MONDO:0022407 | retinal ciliopathy due to mutation in Bardet-Biedl gene |
+| MONDO:0034661 | syndromic biliary atresia |
+| MONDO:0034901 | ATP13A2-related parkinsonism |
+| MONDO:0034954 | syndromic vitreoretinopathy |
+| MONDO:0035075 | secondary early-onset glaucoma of genetic origin |
+| MONDO:0035689 | syndrome of reduced sensitivity to thyroid hormone |
+| MONDO:0036042 | KAT6B-related multiple congenital anomalies syndrome |
+| MONDO:0038268 | autoimmune neurological channelopathy |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0024677 | pancreatic insulinoma |
+
 # 2023-07-03
 ## Overview:
 * Number of new terms: 82
