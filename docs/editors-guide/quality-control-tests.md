@@ -197,19 +197,19 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?cls ?property ?prefix ?source
 
-WHERE 
+WHERE
 {
     VALUES ?property { oboInOwl:source oboInOwl:hasDbXref }
-    ?cls a owl:Class; 
+    ?cls a owl:Class;
     		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
        	?mapping ?value .
-    
+
       ?axiom owl:annotatedSource ?cls ;
              owl:annotatedProperty ?mapping ;
              owl:annotatedTarget ?value ;
              ?property ?source .
-      
-    
+
+
     FILTER NOT EXISTS {
     	?cls owl:deprecated ?deprecated .
     }
@@ -258,6 +258,7 @@ WHERE
       "OGMS",
       "OMIM",
       "OMIMPS",
+      "OMIA",
       "OMIT",
       "OMOP",
       "ONCOTREE",
@@ -295,12 +296,12 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?cls ?prefix
 
-WHERE 
+WHERE
 {
   VALUES ?mapping { oboInOwl:hasDbXref }
-  ?cls a owl:Class; 
+  ?cls a owl:Class;
      	?mapping ?value .
-  
+
   FILTER NOT EXISTS {
   	?cls owl:deprecated ?deprecated .
   }
@@ -339,6 +340,7 @@ WHERE
       "OGMS",
       "OMIM",
       "OMIMPS",
+      "OMIA",
       "OMOP",
       "ONCOTREE",
       "Orphanet",
@@ -353,7 +355,7 @@ WHERE
     ))
   FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
   BIND( STRBEFORE(str(?value),":") AS ?prefix)
-  
+
 } ORDER BY ?cls
 
 
@@ -707,6 +709,19 @@ ORDER BY ?entity
 ```
 
 ## General quality checks
+
+###  orcid-contributor-violation.sparql
+
+```
+PREFIX dc_terms: <http://purl.org/dc/terms/>
+
+SELECT ?subject ?orcid
+WHERE {
+  VALUES ?property { dc_terms:contributor dc_terms:creator }
+  ?subject ?property ?orcid .
+  FILTER(!regex(str(?orcid), "^(https://orcid.org/)[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)"))
+}
+```
 
 ###  qc-def-lacks-xref.sparql
 
@@ -1144,13 +1159,103 @@ prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix dce: <http://purl.org/dc/elements/1.1/>
 prefix dc: <http://purl.org/dc/terms/>
 
-SELECT DISTINCT ?term ?property ?value WHERE 
+SELECT DISTINCT ?term ?property WHERE 
 {
 	?term ?property ?value .
-  	?property a owl:AnnotationProperty .
 	FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
-  	FILTER(!isBlank(?value))
-  FILTER (?property NOT IN (dce:creator, dce:date, IAO:0000115, IAO:0000231, IAO:0100001, mondo:excluded_subClassOf, mondo:excluded_from_qc_check, mondo:excluded_synonym, mondo:pathogenesis, mondo:related, mondo:confidence, dc:conformsTo, mondo:should_conform_to, oboInOwl:consider, oboInOwl:created_by, oboInOwl:creation_date, oboInOwl:hasAlternativeId, oboInOwl:hasBroadSynonym, oboInOwl:hasDbXref, oboInOwl:hasExactSynonym, oboInOwl:hasNarrowSynonym, oboInOwl:hasRelatedSynonym, oboInOwl:id, oboInOwl:inSubset, owl:deprecated, rdfs:comment, rdfs:isDefinedBy, rdfs:label, rdfs:seeAlso, RO:0002161, skos:broadMatch, skos:closeMatch, skos:exactMatch, skos:narrowMatch))
+  	FILTER (?property NOT IN (
+		IAO:0000115, 
+		IAO:0000231, 
+		IAO:0000233, 
+		IAO:0000589, 
+		IAO:0006012, 
+		IAO:0100001, 
+		RO:0002161, 
+		RO:0002175, 
+		dc:conformsTo, 
+		dc:creator, 
+		dce:date, 
+		mondo:confidence, 
+		mondo:excluded_from_qc_check, 
+		mondo:excluded_subClassOf, 
+		mondo:excluded_synonym, 
+		mondo:pathogenesis, 
+		mondo:related, 
+		mondo:should_conform_to, 
+		oboInOwl:consider, 
+		oboInOwl:creation_date, 
+		oboInOwl:hasAlternativeId, 
+		oboInOwl:hasBroadSynonym, 
+		oboInOwl:hasDbXref, 
+		oboInOwl:hasExactSynonym, 
+		oboInOwl:hasNarrowSynonym, 
+		oboInOwl:hasRelatedSynonym, 
+		oboInOwl:id, 
+		oboInOwl:inSubset, 
+		owl:deprecated, 
+		owl:disjointWith,
+		owl:equivalentClass,
+		rdf:type,
+		rdfs:comment, 
+		rdfs:isDefinedBy, 
+		rdfs:label, 
+		rdfs:seeAlso, 
+		rdfs:subClassOf,
+		rdfs:subPropertyOf,
+		skos:broadMatch, 
+		skos:closeMatch, 
+		skos:exactMatch, 
+		skos:narrowMatch,
+		skos:relatedMatch
+		)
+	)
+}
+
+```
+
+###  qc-proxy-merge-missing-preferred.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
+  	?entity oboInOwl:hasDbXref ?xref .
+  	?entity oboInOwl:hasDbXref ?xref2 .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source1 .
+  
+  	?xref_anno2 a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref2 ;
+           oboInOwl:source ?source2 .
+           
+  	FILTER(STRSTARTS(STR(?xref),"DOID") || STRSTARTS(STR(?xref),"Orphanet") || STRSTARTS(STR(?xref),"OMIM"))
+    FILTER(str(?xref2)!=str(?xref))
+  	FILTER(STRBEFORE(str(?xref),":") = STRBEFORE(str(?xref2),":")) 
+  	FILTER NOT EXISTS {
+    	?xref_anno oboInOwl:source ?source11 .
+      	FILTER ((str(?source11)="MONDO:preferredExternal"))
+  	}
+    FILTER NOT EXISTS {
+    	?xref_anno2 oboInOwl:source ?source21 .
+      	FILTER ((str(?source21)="MONDO:preferredExternal"))
+  	}
+    FILTER ((str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:equivalentObsolete"))
+  	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:equivalentObsolete"))
+    FILTER ((str(?source1)="MONDO:equivalentTo") && (str(?source2)="MONDO:equivalentTo"))
+  	FILTER ((str(?source1)="MONDO:equivalentObsolete") && (str(?source2)="MONDO:equivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(?xref2 as ?value)
 }
 
 ```
