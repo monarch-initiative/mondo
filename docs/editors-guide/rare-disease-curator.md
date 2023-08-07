@@ -2,7 +2,7 @@
 
 Rare diseases in Mondo are created based on 3 main subsets. Rules for editing these subsets depends on the subset type. Before editing rare disease information in Mondo, please familiarize yourself with how rare diseases are represented in Mondo [here](https://mondo.readthedocs.io/en/latest/editors-guide/rare-disease-subset/).
 
-It is important to keep in mind that the rare disease subsets are updated automatically at the time of the monthly Mondo release. It is therefore crucial that editing rare disease information is done by following the instructions below in order for these edits to be retained after the release.
+It is important to remember that the rare disease subsets are updated automatically at the time of the monthly Mondo release. It is, therefore, crucial that editing rare disease information is done by following the instructions below for these edits to be retained after the release.
 
 **1. Rare disease from authority sources.**
 These terms have an `in_subset` annotation `X_rare`  (where X is the rare disease authority).
@@ -12,7 +12,7 @@ These subsets are maintained automatically:
     - src/ontology/subsets/gard-subset.template.tsv
 - during the Mondo release, the `X_rare` subset is updated based on the Mondo terms on the authoritative source list
 
-Until we have set a process with the sources to maintain this list automatically, Mondo editors can update this list of rare diseases manually **upon request by the authoritative source**.
+Until we have set a process with the sources to maintain this list automatically, Mondo editors should update this list of rare diseases manually **upon request by the authoritative source**.
 1. Create or open a GitHub issue reported by the authoritative source (ie NORD, GARD) to add or remove a term from the authoritative rare disease list.   
 1. Open the rare disease list (from src/ontology/subsets) in a text editor:
      1. To add a new term, add a new line with the Mondo ID to add to the rare subset. Please make sure that the line is similar to the previous one: this document is a robot template, and therefore the information in each column is important.
@@ -27,8 +27,7 @@ These terms have an `in_subset` annotation `mondo_rare`, and should be added man
 1. In Protege, go to the Mondo term, and add the following annotation:
    - Annotation property: in_subset
    - Entity IRI: mondo_rare (note that this term is “subset_property” annotation property branch)
-(Sabrina to add image once it is in GH)
-
+![Screenshot 2023-08-07 at 2 24 46 PM](https://github.com/monarch-initiative/mondo/assets/12737987/18731ad9-3154-49fc-882c-0db4352a0c54)
 2. Add sources for this annotation (it is important to document how a term was determined as rare). Sources MUST include
    - Curator ORCID
    - Supporting evidence : PMID and/or other trusted source (e.g. doi, experts in the field)
