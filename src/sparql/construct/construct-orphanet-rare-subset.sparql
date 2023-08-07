@@ -1,4 +1,5 @@
 prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
@@ -25,6 +26,7 @@ WHERE
   
   }
  
+  FILTER (?cls NOT IN (MONDO:0000001))
   FILTER (strStarts(?source,"MONDO:equivalent"))
   FILTER (strStarts(?xref,"Orphanet:"))
 
