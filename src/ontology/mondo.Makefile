@@ -350,6 +350,10 @@ build-%:
 patterns: matches pattern_docs
 	make components/mondo-tags.owl
 
+components:
+	$(MAKE) patterns
+	$(MAKE) components/mondo-subsets.owl
+
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
 
