@@ -795,16 +795,12 @@ migrate-%: tmp/mondo-edit-%.ttl
 
 migrate: migrate-omim
 
-GARD_MAPPINGS=https://docs.google.com/spreadsheets/d/e/2PACX-1vR3AUD0NRuKsFg6dNxSGSc-zabYn57udSmajScz2_puXOEZbAmEyjyyM9508OnjoJ9Ir21-BnPAJ-KX/pub?gid=1648437389&single=true&output=tsv
-
 .PHONY: update-gard-mappings
 update-gard-mappings:
 	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
 	mv TT mondo-edit.obo
 	# make NORM
 	# mv NORM $(SRC)
-
-
 
 #######################################
 ### New Pattern merge pipeline ########
