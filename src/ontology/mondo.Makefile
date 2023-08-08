@@ -214,25 +214,58 @@ clean:
 ##### Mondo subset auto-tagger ##############
 #############################################
 
-# gard is currently in Mondo
-# we dont know how to identify rare OMIM terms yet
-RARE_SUBSETS=nord orphanet mondo
+RARE_SUBSETS=nord orphanet inferred gard
 
 tmp/orphanet-rare-subset.ttl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+# The complex part here is that we need to dynamically update the MONDO source code, i.e. 
+# MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
+tmp/gard-rare-subset.ttl: $(SRC)
+	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@
+	$(ROBOT) remove -i $< --select imports merge -i $@ query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
+	$(ROBOT) merge -i $@ -i $@.source -o $@
+
 tmp/nord-rare-subset.ttl: $(SRC)
 	$(ROBOT) template --template subsets/nord-subset.template.tsv convert -f ttl -o $@
 
-tmp/mondo-rare-subset.ttl: $(SRC)
-	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-mondo-rare-subset.sparql $@
+# The inferred subset depends on the other ones, so we need to first remove the old subsets
+# Then add the gard, nord and orphanet subsets back in
+tmp/inferred-rare-subset.ttl: $(SRC) tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl tmp/orphanet-rare-subset.ttl
+	$(ROBOT) merge -i $(SRC) \
+		unmerge -i components/mondo-subsets.owl \
+		merge $(patsubst %, -i %, $^) \
+		reason \
+		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
 
-components/mondo-subsets.owl: tmp/mondo-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl | dirs
-	$(ROBOT) merge -i tmp/nord-rare-subset.ttl -i tmp/mondo-rare-subset.ttl -i tmp/orphanet-rare-subset.ttl \
+components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		query --update ../sparql/construct/construct-rare-subset.sparql \
 		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+# As of 3 August, does not do anything.
+components/mondo-characteristic-rare.owl: components/mondo-subsets.owl
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql \
+		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+reports/new-rare-diseases.txt: #$(ONT)-base.owl
+	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
+
+reports/old-rare-diseases.txt: tmp/mondo-lastbase.owl
+	$(ROBOT) query -i tmp/mondo-lastbase.owl --query ../sparql/signature/rare-subset.sparql $@
+
+reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
+	$(ROBOT) filter --input $(ONT)-base.owl  -T reports/$*-rare-diseases.txt --select "annotations self" \
+		export --header "ID|LABEL|SYNONYMS" \
+  		--format tsv --export $@
+
+rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv
+	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
+
+	
+
 
 #############################################
 ##### Mondo analysis ########################
