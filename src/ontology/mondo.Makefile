@@ -801,13 +801,8 @@ GARD_MAPPINGS=https://docs.google.com/spreadsheets/d/e/2PACX-1vR3AUD0NRuKsFg6dNx
 update-gard-mappings:
 	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
 	mv TT mondo-edit.obo
-	wget "$(GARD_MAPPINGS)" -O tmp/gard-mappings.tsv
-	$(ROBOT) template --merge-before --input $(SRC) \
- 		--template tmp/gard-mappings.tsv \
-		query --update $(SPARQLDIR)/update/update-equivalent-obsolete.ru \
-		convert -f obo -o $(SRC)
-	make NORM
-	mv NORM $(SRC)
+	# make NORM
+	# mv NORM $(SRC)
 
 
 
