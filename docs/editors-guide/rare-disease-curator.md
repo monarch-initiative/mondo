@@ -30,7 +30,7 @@ These terms have an `in_subset` annotation `mondo_rare`, and should be added man
 ![Screenshot 2023-08-07 at 2 24 46 PM](https://github.com/monarch-initiative/mondo/assets/12737987/18731ad9-3154-49fc-882c-0db4352a0c54)
 2. Add sources for this annotation (it is important to document how a term was determined as rare). Sources MUST include
    - Curator ORCID
-   - Supporting evidence : PMID and/or other trusted source (e.g. doi, experts in the field)
+   - Supporting evidence: PMID and/or other trusted source (e.g. doi, experts in the field)
 3. Share the GH issue reporting this term as a rare disease with the rare disease authoritative sources (by bringing their attention to this term, they might want to add it to their rare disease list).
 
 **3. Inferred rare disease.**
@@ -39,13 +39,11 @@ This subset should **NOT** be manually curated.
 
 
 #### Note about rare disease subset during term obsoletion/merging.
+Specific rules exist surrounding obsoletion and merging of terms that are in the rare disease subset (see [here](https://mondo.readthedocs.io/en/latest/editors-guide/rare-disease-subset/) and below).
+Since rare disease subsets (except for the mondo_rare subset) are maintained automatically or semi-automatically, obsoleting/merging terms from the rare disease subset should be done with extreme caution. Please discuss this with the Mondo team before proceeding.
+_(this section will be updated once clear SOPs are created)_
 
+**Obsoletion/merging of rare disease terms: rules.** 
 1. If a MONDO term (MONDO id) is obsoleted, the Mondo term will not appear in the rare disease subset, regardless of whether the disease is considered rare by one of the authoritative rare disease sources.
-This removal of an obsolete term from the rare disease subset is automated. Curators should confirm that the removal from the rare disease subset by reviewing the Mondo release following the term obsoletion. Any error should be reported to the technical team via a GitHub issue.
-
 2. If an authoritative rare source obsoletes a disease term or removes a disease from their rare disease list, the corresponding Mondo term will lose its corresponding "X_rare" subset annotation for this particular source.
-This removal from an authoritative source subset will be automated. However, until the pipeline is fully set and functional, curators will update the authority rare disease subset list manual (see "Rare disease from authority sources" section above)
-
 3. If a MONDO term (Mondo-1) is merged with another term (Mondo-2), its rare subset annotations will be transferred to this term (Mondo-2).
-Curators merging a rare disease term should ensure that the Mondo ID is merged or added to the authoritative source list. (see "Rare disease from authority sources: section above).
-
