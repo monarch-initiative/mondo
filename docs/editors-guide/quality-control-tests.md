@@ -723,6 +723,34 @@ WHERE {
 }
 ```
 
+###  qc-cross-species-analog.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?entity ?property ?value 
+
+WHERE
+{
+  VALUES ?property { <https://w3id.org/semapv/vocab/crossSpeciesExactMatch> }
+  ?entity ?property ?value.
+
+  FILTER NOT EXISTS {
+      ?value rdfs:subClassOf+ MONDO:0700096 .
+  }
+
+ FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
+
+```
+
 ###  qc-def-lacks-xref.sparql
 
 ```
@@ -1159,54 +1187,55 @@ prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix dce: <http://purl.org/dc/elements/1.1/>
 prefix dc: <http://purl.org/dc/terms/>
 
-SELECT DISTINCT ?term ?property WHERE 
+SELECT DISTINCT ?term ?property WHERE
 {
 	?term ?property ?value .
 	FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
   	FILTER (?property NOT IN (
-		IAO:0000115, 
-		IAO:0000231, 
-		IAO:0000233, 
-		IAO:0000589, 
-		IAO:0006012, 
-		IAO:0100001, 
-		RO:0002161, 
-		RO:0002175, 
-		dc:conformsTo, 
-		dc:creator, 
-		dce:date, 
-		mondo:confidence, 
-		mondo:excluded_from_qc_check, 
-		mondo:excluded_subClassOf, 
-		mondo:excluded_synonym, 
-		mondo:pathogenesis, 
-		mondo:related, 
-		mondo:should_conform_to, 
-		oboInOwl:consider, 
-		oboInOwl:creation_date, 
-		oboInOwl:hasAlternativeId, 
-		oboInOwl:hasBroadSynonym, 
-		oboInOwl:hasDbXref, 
-		oboInOwl:hasExactSynonym, 
-		oboInOwl:hasNarrowSynonym, 
-		oboInOwl:hasRelatedSynonym, 
-		oboInOwl:id, 
-		oboInOwl:inSubset, 
-		owl:deprecated, 
+		IAO:0000115,
+		IAO:0000231,
+		IAO:0000233,
+		IAO:0000589,
+		IAO:0006012,
+		IAO:0100001,
+		RO:0002161,
+		RO:0002175,
+		dc:conformsTo,
+		dc:creator,
+		dce:date,
+		mondo:confidence,
+		mondo:excluded_from_qc_check,
+		mondo:excluded_subClassOf,
+		mondo:excluded_synonym,
+		mondo:pathogenesis,
+		mondo:related,
+		mondo:should_conform_to,
+		oboInOwl:consider,
+		oboInOwl:creation_date,
+		oboInOwl:hasAlternativeId,
+		oboInOwl:hasBroadSynonym,
+		oboInOwl:hasDbXref,
+		oboInOwl:hasExactSynonym,
+		oboInOwl:hasNarrowSynonym,
+		oboInOwl:hasRelatedSynonym,
+		oboInOwl:id,
+		oboInOwl:inSubset,
+		owl:deprecated,
 		owl:disjointWith,
 		owl:equivalentClass,
 		rdf:type,
-		rdfs:comment, 
-		rdfs:isDefinedBy, 
-		rdfs:label, 
-		rdfs:seeAlso, 
+		rdfs:comment,
+		rdfs:isDefinedBy,
+		rdfs:label,
+		rdfs:seeAlso,
 		rdfs:subClassOf,
 		rdfs:subPropertyOf,
-		skos:broadMatch, 
-		skos:closeMatch, 
-		skos:exactMatch, 
+		skos:broadMatch,
+		skos:closeMatch,
+		skos:exactMatch,
 		skos:narrowMatch,
-		skos:relatedMatch
+		skos:relatedMatch,
+		<https://w3id.org/semapv/vocab/crossSpeciesExactMatch>
 		)
 	)
 }
