@@ -322,6 +322,9 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 #sources/CTD_diseases.obo:
 #	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
 
+reports/gard-mondo-mapped-obsoletes.tsv: $(ONT).owl
+	$(ROBOT) query -i $(ONT).owl -f tsv --query $(SPARQLDIR)/reports/gard-mondo-mapped-obsoletes.sparql $@
+
 ##################################################
 ################## Old diseases2owl code #########
 
@@ -346,6 +349,10 @@ build-%:
 
 patterns: matches pattern_docs
 	make components/mondo-tags.owl
+
+components:
+	$(MAKE) patterns
+	$(MAKE) components/mondo-subsets.owl
 
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
@@ -791,6 +798,13 @@ migrate-%: tmp/mondo-edit-%.ttl
 	$(ROBOT) convert -i $< -f obo -o $@
 
 migrate: migrate-omim
+
+.PHONY: update-gard-mappings
+update-gard-mappings:
+	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	# make NORM
+	# mv NORM $(SRC)
 
 #######################################
 ### New Pattern merge pipeline ########
