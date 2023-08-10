@@ -28,7 +28,13 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
     1. Label for term to be obsoleted 
     1. 'term tracker item': GitHub ticket that describes the obsoletion request
     1. Consider: the replacement term that should be considered for use after the term is obsoleted. If there is no replacement, leave it blank.
-    1. Obsoletion reason: chose from dropdown list.
+    1. Obsoletion reason: chose one of the reasons below.  **Note, the obsoletion reason _code_ should be added in the IRI Editor.** 
+
+        - OMO:0001000: out of scope
+        - IAO:0000423: to be replaced with external ontology term
+        - IAO:0000229: term split
+        - MONDO:TermsMerged: http://purl.obolibrary.org/obo/MONDO_TermsMerged 
+        
     1. Comment: 
        1. Do not add free text here. Copy and paste the formula from the row above so the comment is consistently structured.
        1. Manually check the term to be obsoleted for comment. 
