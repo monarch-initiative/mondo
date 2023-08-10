@@ -48,9 +48,9 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
     
 #### If new obsoletion reasons are needed
 
-Request from the technical team if you need additional obsolescence reasons. This involves:  
-1. amending the QC check, 
-2. updateing the imports/removeseed.txt file and 
+Request from the technical team if you need additional obsolescence reasons. This involves:   
+1. amending the QC check 
+2. updating the imports/removeseed.txt file and 
 3. the omo_import.owl goal. 
 
 Unfortunately, this complex process is necessary due to limitations with the OBO format, see [https://github.com/owlcollab/oboformat/issues/139](https://github.com/owlcollab/oboformat/issues/139).
