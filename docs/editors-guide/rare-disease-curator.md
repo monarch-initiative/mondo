@@ -15,7 +15,7 @@ These subsets are maintained automatically:
 Until we have set a process with the sources to maintain this list automatically, Mondo editors should update this list of rare diseases manually **upon request by the authoritative source**.
 1. Create or open a GitHub issue reported by the authoritative source (ie NORD, GARD) to add or remove a term from the authoritative rare disease list.   
 1. Open the rare disease list (from src/ontology/subsets) in a text editor:
-     1. To add a new term, add a new line with the Mondo ID to add to the rare subset. Please make sure that the line is similar to the previous one: this document is a robot template, and therefore the information in each column is important.
+     1. To add a new term, add a new line with the Mondo ID to add to the rare subset. Please make sure that the line is similar to the previous one: this document is a ROBOT template, and therefore the information in each column is important.
      1. To remove a term from the list, delete the line
 1. The term will be added to the rare disease list once the PR is merged, but the subset annotation will not be added until the monthly Mondo release has run.
 
