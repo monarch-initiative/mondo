@@ -1154,6 +1154,29 @@ ORDER BY ?entity
 
 ```
 
+###  qc-obsoletion-reason.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+
+# description: Checks if a proper obsolesence reason was documented for this class
+
+SELECT ?entity ?property ?value WHERE {
+  VALUES ?property { IAO:0000231 }
+  ?entity ?property ?value .
+  FILTER(!isIRI(?value))
+  FILTER(?value!=OMO:00001000 || 
+    ?value!=IAO:0000423 ||
+    ?value!=IAO:0000229 ||
+    ?value!=MONDO:TermsMerged )
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
+}
+```
+
 ###  qc-owldef-self-reference.sparql
 
 ```
