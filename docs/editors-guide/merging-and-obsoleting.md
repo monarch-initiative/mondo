@@ -45,6 +45,15 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
 4. If a term is to be merged, in a new row in the [ROBOT_MergeTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1109324509), add the information above, and in addition, add:
     1. Mondo ID for the term that will replace the obsoleted terms
     1. Label for the term that will replace the obsoleted terms
+    
+#### If new obsoletion reasons are needed
+
+Request from the technical team if you need additional obsolescence reasons. This involves:  
+1. amending the QC check, 
+2. updateing the imports/removeseed.txt file and 
+3. the omo_import.owl goal. 
+
+Unfortunately, this complex process is necessary due to limitations with the OBO format, see [https://github.com/owlcollab/oboformat/issues/139](https://github.com/owlcollab/oboformat/issues/139).
 
 #### Monthly (before release)
 1. Run the pipeline to [merge the ROBOT template](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/) and commit and merge the PR into mondo-edit.obo.
