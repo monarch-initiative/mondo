@@ -799,6 +799,45 @@ migrate-%: tmp/mondo-edit-%.ttl
 
 migrate: migrate-omim
 
+#######################################################
+##### British synonyms pipeline #######################
+#######################################################
+
+tmp/synonyms.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/reports/mondo_synonyms.sparql $@
+
+tmp/labels.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/reports/mondo_labels.sparql $@
+
+tmp/british_english_dictionary.csv:
+	wget "https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/src/ontology/hpo_british_english_dictionary.csv" -O $@
+
+SYN_TYPES=hasBroadSynonym hasRelatedSynonym hasExactSynonym hasNarrowSynonym
+SYN_TYPE_TEMPLATES=$(patsubst %, tmp/be_syns_%.csv, $(SYN_TYPES))
+
+$(SYN_TYPE_TEMPLATES): tmp/labels.csv tmp/synonyms.csv tmp/british_english_dictionary.csv
+	python3 ../scripts/compute_british_synonyms.py $^ tmp/
+
+tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
+	$(ROBOT) merge -i $(SRC) template $(patsubst %, --template %, $(SYN_TYPE_TEMPLATES)) --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+#We remove the old ones so that if we change the synonym scope of the AE synonym, its changed as well for this one.
+add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
+	echo "WARNING: REMOVING OLD BRITISH SYNONYMS! WE HOPE YOU DIDNT CURATE ANY MANUALLY!"
+	grep -v 'OMO:0003005' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	$(ROBOT) merge -i $< -i tmp/british_synonyms.owl --collapse-import-closure false -o tmp/mondo-edit.obo && mv tmp/mondo-edit.obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+# This updates all British English in Mondo to American English.
+.PHONY: americanize
+
+americanize: $(SRC) tmp/british_english_dictionary.csv
+	python ../scripts/clean-british-english.py $^
+
+
 .PHONY: update-gard-mappings
 update-gard-mappings:
 	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
@@ -868,3 +907,11 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+.PHONY: help
+help:
+	@echo "$$data"
+	echo "Making sure all english in Mondo in American:"
+	echo "sh run.sh make americanize"
+	echo "Update british english synonyms"
+	echo "sh run.sh make add_british_language_synonyms"
