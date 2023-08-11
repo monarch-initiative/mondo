@@ -50,6 +50,12 @@ while (<>) {
         elsif ($prefix eq 'SCTID') {
             $uri = 'http://identifiers.org/snomedct/';
         }
+        elsif ($prefix eq 'GARD') {
+            $uri = 'http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/GARD/';
+        }
+        elsif ($prefix eq 'NORD') {
+            $uri = 'http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/NORD/';
+        }
         elsif ($prefix eq 'NCIT') {
             $uri = 'http://purl.obolibrary.org/obo/NCIT_';
         }

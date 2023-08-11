@@ -199,7 +199,7 @@ ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 GITHUB_ACTION = false
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo|relatedTo|mondoIsNarrowerThanSource|directSiblingOf|mondoIsBroaderThanSource)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM|GARD|NORD):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo|relatedTo|mondoIsNarrowerThanSource|directSiblingOf|mondoIsBroaderThanSource)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
 	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
 		--update ../sparql/update/delete-axiom-annotations.ru \
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
@@ -208,8 +208,10 @@ filtered.obo: $(SRC)
 		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
-skos.ttl: filtered.obo
-	../utils/mk-skos.pl $< > $@
+skos.ttl: filtered.obo components/mondo-subsets.owl
+	$(ROBOT) merge -i $< -i components/mondo-subsets.owl --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$@.obo
+	../utils/mk-skos.pl tmp/$@.obo > $@
 
 # this appears to be problematic. not all declarations are restored on a save.
 #REMOVE_DECLARATIONS = --remove-axioms -t Declaration
