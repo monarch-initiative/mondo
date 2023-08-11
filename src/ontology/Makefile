@@ -143,7 +143,6 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-tags-reasoned.owl.tsv
 
-
 # ----------------------------------------
 # Staging releases
 # ----------------------------------------
@@ -204,6 +203,7 @@ filtered.obo: $(SRC)
 	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
 		--update ../sparql/update/delete-axiom-annotations.ru \
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
+		--update ../sparql/update/inject-cross-species-analog.ru \
 		remove --term-file config/remove-annotations-before-release.txt \
 		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
@@ -271,9 +271,9 @@ $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 
-OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl
+OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl #components/mondo-tags.owl
 
-$(ONT)-base.owl: reasoned.owl
+$(ONT)-base.owl: reasoned.owl $(OTHER_SRC)
 	$(ROBOT) remove --input $< --select imports --trim false \
 		merge $(patsubst %, -i %, $(OTHER_SRC)) \
 		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
@@ -371,7 +371,8 @@ subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
 rare_subset:
-	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl
+	$(MAKE) IMP=false MIR=false COMP=false components/mondo-subsets.owl
+	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl subsets/mondo-rare.json subsets/mondo-rare.obo
 
 # ----------------------------------------
 # DOSDP Modules
@@ -419,6 +420,7 @@ imports/%_import.obo: imports/%_import.owl
 
 imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
 	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		remove --term IAO:0000227 \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/omo_import.owl
 
@@ -514,8 +516,12 @@ $(QSRC): $(SRC)
 
 SRC_TAGS_REASONED=mondo-tags-reasoned.owl
 
-$(SRC_TAGS_REASONED): $(SRC)
-	$(ROBOT) merge -i $< -i components/mondo-tags.owl --collapse-import-closure false reason -o $@
+tmp/cross-species-mappings.owl: $(SRC)
+	mkdir -p tmp
+	$(ROBOT) query -i $< --use-graphs false --query ../sparql/construct/construct-cross-species-analog.sparql $@
+
+$(SRC_TAGS_REASONED): $(SRC) tmp/cross-species-mappings.owl
+	$(ROBOT) merge -i $< -i components/mondo-tags.owl -i tmp/cross-species-mappings.owl --collapse-import-closure false reason -o $@
 
 # run all violation checks on edit file
 sparql_test_edit: $(SRC_TAGS_REASONED)
