@@ -1215,5 +1215,30 @@ slurp: ordo_slurp omim_slurp medgen_slurp
 #	$(ROBOT) merge --input tmp/slurp.obo \
 #  unmerge --input mondo-edit.obo -o $@
 
+.PHONY: help
+help:
+	@echo "$$data"
+
+define data
+Usage: [IMAGE=(odklite|odkfull)] [ODK_DEBUG=yes] sh run.sh make [(IMP|MIR|IMP_LARGE|PAT)=(false|true)] command
+
+----------------------------------------
+	Command reference
+----------------------------------------
+
+Core commands:
+* test:			Run all tests
+* help:			Print ODK Usage information
+
+Examples:
+* sh run.sh make test
+
+Tricks:
+* Add -B to the end of your command to force re-running it even if nothing has changed
+* Use the IMAGE parameter to the run.sh script to use a different image like odklite
+* Use ODK_DEBUG=yes sh run.sh make ... to print information about timing and debugging
+
+endef
+export data
 
 include mondo.Makefile
