@@ -268,8 +268,53 @@ reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
 rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv
 	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
 
-	
+#############################################
+##### One-time scripts ######################
+#############################################
+# MedGen conflicts (Aug 2023) pipeline
+# - https://github.com/monarch-initiative/mondo-ingest/issues/273
+.PHONY: address-medgen-conflicts-aug2023
+address-medgen-conflicts-aug202x3: address-medgen-conflicts-aug2023-deletes address-medgen-conflicts-aug2023-adds
 
+# - MedGen conflicts: dependencies
+tmp/July2023_CUIReports_FromMedGentoMondo.xlsx:
+	mkdir -p tmp && wget "https://github.com/monarch-initiative/mondo-ingest/files/12029712/July2023_CUIReports_FromMedGentoMondo.xlsx" -O $@
+
+# - MedGen conflicts: analysis
+tmp/mondo-edit.obo.tmp.diff: mondo-edit.obo.tmp
+	-diff mondo-edit.obo mondo-edit.obo.tmp > $@
+
+tmp/report-qc-medgen-conflicts-update-diff.tsv: tmp/mondo-edit.obo.tmp.diff
+	python ../scripts/medgen_conflicts_bad_xrefs_analyze_diff.py -i tmp/mondo-edit.obo.tmp.diff -o $@
+
+# - MedGen conflicts: deletes
+.PHONY: address-medgen-conflicts-aug2023-deletes
+address-medgen-conflicts-aug2023-deletes: mondo-edit.obo.tmp2.tmp
+	mv mondo-edit.obo.tmp2.tmp mondo-edit.obo
+	rm mondo-edit.obo.tmp
+
+# TODO fix: need to remove annotations and xrefs separately
+mondo-edit.obo.tmp2.tmp: mondo-edit.obo.tmp
+	grep -v MEDGEN: mondo-edit.obo.tmp2.tmp > $@
+
+mondo-edit.obo.tmp: tmp/bad-medgen-xrefs-grep-command.sh
+	sh $<
+
+tmp/bad-medgen-xrefs-grep-command.sh: tmp/bad-medgen-xrefs.txt
+	python ../scripts/medgen_conflicts_bad_xrefs_grep_command.py -i tmp/bad-medgen-xrefs.txt -t mondo-edit.obo -T mondo-edit.obo.tmp -o $@
+
+tmp/bad-medgen-xrefs.txt: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx
+	python ../scripts/medgen_conflicts_bad_xrefs_collate.py -i tmp/July2023_CUIReports_FromMedGentoMondo.xlsx -o $@
+
+# - MedGen conflicts: adds
+.PHONY: address-medgen-conflicts-aug2023-adds
+address-medgen-conflicts-aug2023-adds: templates/ROBOT_addMedGen_fromConflictResolution.tsv templates/ROBOT_addMedGen_fromIngest.tsv
+
+templates/ROBOT_addMedGen_fromConflictResolution.tsv: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx
+	python ../scripts/medgen_conflicts_add_xrefs.py -i tmp/July2023_CUIReports_FromMedGentoMondo.xlsx -o $@
+
+templates/ROBOT_addMedGen_fromIngest.tsv:
+	wget "https://github.com/monarch-initiative/medgen/releases/latest/download/ROBOT_addMedGen_fromIngest.tsv" -O $@
 
 #############################################
 ##### Mondo analysis ########################
