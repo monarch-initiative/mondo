@@ -41,7 +41,17 @@ If should be noted that every new term request will be represented as a GitHub i
 
 ### Request to remove a term from the obsoletion list
 
-The community has at least two months to dispute the obsoletion of Mondo terms tagged for obsoletion, or to request a longer period of time before the term obsoletion is done (for example if one needs a longer period to review their annotations). All comment or request should be made by commenting on the GitHub ticket or contact the Mondo Curation team via email or Slack.
+Once a Mondo term is tagged as “obsoletion candidate”, the community has two months to dispute, comment, or inquire about the obsoletion of this term. All discussions (disputes, comments, or inquiries) **must be reported on the GitHub issue** linked to the obsoletion (reported in the [obsoletion candidates report](https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/mondo_obsoletioncandidates.tsv)). Disputes and requests to retain the term in Mondo must include the justifications below. There are two main reasons to retain a term in Mondo: 
+1. The **obsoletion candidate is an actual disease or a useful grouping class**, and therefore the concept should be retained in Mondo. In this case, justifications must include
+    1. Supporting evidence(s), such as PMID or DOI, that the term represents an actual disease concept or a grouping term used by the community at large
+    2. ORCID of the individual or link to the expert group requesting this removal from the obsoletion candidate list.
+    3. If obsoletion candidate is a grouping term:
+          1. report of other similar grouping terms (ie sibling terms). For example, if grouping by inheritance type, grouping terms by all inheritance types should exist).
+          2. Suggestions for maintaining the diseases grouped by this term
+             
+Please note that a request to retain a term in Mondo does not imply that the term will be removed from the obsoletion list: further discussion with the Mondo team and the user community will be required before the final decision.
+
+2. The **obsoletion candidate is used in disease annotations**. Annotations using terms tagged for obsoletion should be reviewed and updated accordingly. We do understand that it might take longer than 2 months to review all annotations, and therefore we will accommodate requests for delaying term obsoletion up to one year (unless ongoing discussions indicate otherwise). Please note that unless there is strong evidence that the obsoletion candidate represents an actual disease or a useful grouping class (see above), obsoletion candidates will eventually be obsoleted from Mondo. 
 
 ## Mondo releases
 - Mondo is released on a monthly basis around the 1st of each month.
