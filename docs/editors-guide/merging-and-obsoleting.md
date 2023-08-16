@@ -181,6 +181,8 @@ If you only want to obsolete terms without taking another look, you can use the 
 1. run `sh run.sh make mass_obsolete2 -B`
 1. Very carefully review the diff. More carefully then usual!
 
+**Note:** The QC test obsolete_warning.sparql will give warnings for classes that do not have subset tags obsoletion_candidate.
+
 ## Restoring an Obsolete Ontology Term
 
 ### When to restore or reinstate an ontology term
