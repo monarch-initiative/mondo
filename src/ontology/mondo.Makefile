@@ -220,9 +220,13 @@ tmp/orphanet-rare-subset.ttl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+
+subsets/gard-subset.template.tsv:
+	wget "https://github.com/monarch-initiative/gard/releases/latest/download/mondo-gard-exact.robot.template.tsv" -O $@
+
 # The complex part here is that we need to dynamically update the MONDO source code, i.e. 
 # MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
-tmp/gard-rare-subset.ttl: $(SRC)
+tmp/gard-rare-subset.ttl: $(SRC) subsets/gard-subset.template.tsv
 	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@
 	$(ROBOT) remove -i $< --select imports merge -i $@ query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
 	$(ROBOT) merge -i $@ -i $@.source -o $@
