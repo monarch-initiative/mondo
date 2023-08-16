@@ -10,9 +10,9 @@ SELECT ?entity ?property ?value WHERE {
   VALUES ?property { IAO:0000231 }
   ?entity ?property ?value .
   FILTER(!isIRI(?value))
-  FILTER(?value!=OMO:0001000 || 
-    ?value!=IAO:0000423 ||
-    ?value!=IAO:0000229 ||
+  FILTER(?value!=OMO:0001000 && 
+    ?value!=IAO:0000423 &&
+    ?value!=IAO:0000229 &&
     ?value!=MONDO:TermsMerged )
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
 }
