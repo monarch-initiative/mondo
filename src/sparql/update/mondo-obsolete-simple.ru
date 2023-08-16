@@ -21,6 +21,12 @@ INSERT {
   ?entity <http://purl.obolibrary.org/obo/IAO_0000231> "out of scope" .
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?obsolete_definition .
   ?def_anno owl:annotatedTarget ?obsolete_definition.
+  ?entity <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/OMO_0001000> .
+  ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000231> ;
+           owl:annotatedTarget <http://purl.obolibrary.org/obo/OMO_0001000> ;
+           oboInOwl:source "MONDO:excludeGrouping" .
 }
 
 WHERE {
