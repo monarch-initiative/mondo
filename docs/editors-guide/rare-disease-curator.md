@@ -40,10 +40,11 @@ This subset should **NOT** be manually curated.
 
 #### Note about rare disease subset during term obsoletion/merging.
 Specific rules exist surrounding obsoletion and merging of terms that are in the rare disease subset (see [here](https://mondo.readthedocs.io/en/latest/editors-guide/rare-disease-subset/) and below).
-Since rare disease subsets (except for the mondo_rare subset) are maintained automatically or semi-automatically, obsoleting/merging terms from the rare disease subset should be done with extreme caution. Please discuss this with the Mondo team before proceeding.
+Since rare disease subsets (except for the mondo_rare subset) are maintained automatically or semi-automatically, obsoleting/merging terms from the rare disease subset should be done with extreme caution.
+When obsoleting a term that has "rare" subset annotations, the "rare" subset annotations should be maintained on the obsoleted term.
 _(this section will be updated once clear SOPs are created)_
 
-**Obsoletion/merging of rare disease terms: rules.** 
+**Obsoletion/merging of rare disease terms: rules.**
 1. If a MONDO term (MONDO id) is obsoleted, the Mondo term will not appear in the rare disease subset, regardless of whether the disease is considered rare by one of the authoritative rare disease sources.
 2. If an authoritative rare source obsoletes a disease term or removes a disease from their rare disease list, the corresponding Mondo term will lose its corresponding "X_rare" subset annotation for this particular source.
 3. If a MONDO term (Mondo-1) is merged with another term (Mondo-2), its rare subset annotations will be transferred to this term (Mondo-2).
