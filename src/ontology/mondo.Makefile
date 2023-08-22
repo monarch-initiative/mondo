@@ -548,6 +548,10 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 #	sssom convert -i $< -o $@
 #	#python ../scripts/split_sssom_by_source.py $@
 
+$(MAPPINGSDIR)/all_exact.robot.tsv:
+	wget -O $@ https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/all_exact.robot.tsv
+
+merge_template: $(MAPPINGSDIR)/all_exact.robot.tsv
 
 mappings: $(ALL_MAPPINGS)
 
