@@ -17,7 +17,7 @@ jobs:
       - name: Get merged unmapped exact lexmatches.
         run: |
           cd src/ontology
-          make GITHUB_ACTION=true IMP=false PAT=false merge_template -B
+          make GITHUB_ACTION=true IMP=false PAT=false TEMPLATE_URL="https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/all_exact.robot.tsv" merge_template -B
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
