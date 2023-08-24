@@ -1,0 +1,32 @@
+name: Update Mappings
+
+on:
+#  schedule:
+#    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.4.1
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+
+      - name: Get merged unmapped exact lexmatches.
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false TEMPLATE_URL="https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/all_exact.robot.tsv" merge_template -B
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch-suffix: short-commit-hash
+          labels: Automated
+          body: "Update mappings in Mondo from external sources."
+          title: "Weekly automated mappings update"
+          base: ${{ github.head_ref }}
+          branch: "mapping_automation"
+          token: ${{ secrets.GH_TOKEN }}
+          reviewers: "sabrinatoro"
