@@ -2,8 +2,6 @@
 ---
 # FAQs
 
-## Workshops and Outreach Calls
-
 - [What is an ontology?](#what)
 - [I want to request a new term or request a change to Mondo, how do I do so?](#request)
 - [What kind of information should I include when I create a ticket on the GitHub tracker?](#include)
