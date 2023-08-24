@@ -57,7 +57,7 @@ Mondo is co-developed with [HPO](https://hpo.jax.org/app/), to ensure interopera
 
 ### What is the difference between a disease and a phenotype?
 
-There is a lot of overlap between diseases and phenotypes. Mondo and Human Phenotype Ontology (HPO) define a disease as an entity that has all four of the following features:
+There is a lot of overlap between diseases and phenotypes. Mondo and Human Phenotype Ontology (HPO) define a _disease entity_ (ie not a group of diseases) as an entity that has all four of the following features:
 
 - an etiology (whether identified or as yet unknown)
 - a time course
