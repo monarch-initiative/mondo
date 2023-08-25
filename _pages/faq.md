@@ -91,23 +91,25 @@ The latest release of Mondo is not always displayed in the Monarch website, as t
 Mondo is co-developed with [HPO](https://hpo.jax.org/app/), to ensure interoperability and alignment between the two ontologies and create a more holistic semantic disease resource. A subset of HPO classes are imported into Mondo. HPO terms are used in the logical definitions for the disease terms, where applicable. For example, [MONDO:0003337 'acute hemorrhagic encephalitis'](http://purl.obolibrary.org/obo/MONDO_0003337) is computationally defined as `encephalitis and ('disease has feature' some 'Abnormal bleeding')` ([Abnormal bleeding is an HPO term, HP:0001892](https://hpo.jax.org/app/browse/term/HP:0001892)).
 
 <a name="phenotype"></a> 
-### What is the difference between a disease and a phenotype?
+### What is the difference between a disease entity and a phenotype?
 
 There is a lot of overlap between diseases and phenotypes. Mondo and Human Phenotype Ontology (HPO) define a _disease entity_ (ie not a group of diseases) as an entity that has the four following features:
 
-**A disease has:**   
+**A disease entity has:**   
 1. an etiology (whether identified or as yet unknown)
 2. phenotypic feature(s)
   - often, a constellation of multiple phenotypic features, each of which can have a different onset.
   - in many cases, the phenotypic features can be observed in many diseases and thus can have multiple etiologies (presumably representing the final common pathophysiological pathway). For instance, HP:0001337 Tremor can be observed in many diseases with multiple causes.
   - in the HPO, phenotypic features usually do not encode time courses but represent a single observation. This is difficult for features that can occur repeatedly (HP:0001250 Seizure)
-  
+  - a phenotypic feature usually should not describe more than one feature (HPO leaf term), i.e., it should be atomic. The HPO has some terms such as “Schizophrenia” that are used frequently in the literature to record a set of features and may characterize other diseases.
 3. a characteristic natural history or time course (progressive or static).
 
-**A disease may have:**  
+**A disease entity may have:**  
 4. a typical response to treatment(s)
 
-A phenotype (or a phenotypic feature) is a component of a disease, and HPO terms can be used to describe the set of phenotypic features that characterize a disease. There is a grey zone between diseases and phenotypic features. For instance, diabetes mellitus can be conceptualized as a disease, but it is also a feature of other diseases such as Bardet Biedl syndrome. In some cases like this, Mondo may label the disease entity with (disease) after the disease name, to distinguish it from the HPO phenotype term (for example, [MONDO:0005466 'hypersomnia (disease)'](http://www.ontobee.org/ontology/MONDO?iri=http://purl.obolibrary.org/obo/MONDO_0005466) and [HP:0100786 Hypersomnia](https://hpo.jax.org/app/browse/term/HP:0100786)).
+Note, that this definition applies to **leaf nodes**. For instance, Parkinson’s Disease is NOT a disease entity; it is a grouping term because it has multiple children in Mondo, such as [MONDO:0011613 'autosomal recessive early-onset Parkinson disease 6'](https://www.ebi.ac.uk/ols4/ontologies/mondo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMONDO_0011613), which is a disease entity (leaf term in Mondo). Current efforts are underway to separate disease entities from disease classes or groupings in Mondo.
+
+A phenotype (or a phenotypic feature) is a component of a disease entity, and HPO terms can be used to describe the set of phenotypic features that characterize a disease entity. There is a grey zone between diseases and phenotypic features. For instance, diabetes mellitus can be conceptualized as a disease, but it is also a feature of other diseases such as Bardet Biedl syndrome. In some cases like this, Mondo may have an OBO Foundry unique label that is the disease entity with (disease) after the disease name, to distinguish it from the HPO phenotype term (for example, [MONDO:0005466 hypersomnia](https://www.ebi.ac.uk/ols4/ontologies/mondo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMONDO_0005466) and [HP:0100786 Hypersomnia](https://hpo.jax.org/app/browse/term/HP:0100786)).
 
 _Note, this is adapted from [PMID:33264411](https://pubmed.ncbi.nlm.nih.gov/33264411/) and updated on 2023-08-24._
 
