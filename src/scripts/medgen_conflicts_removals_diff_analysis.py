@@ -42,16 +42,11 @@ def run(input_file: str = INPUT_FILE, output_file: str = OUTPUT_FILE):
     non_xref_removals = [l for l in lines if not l.startswith('xref')]
     report['n_non_xrefs_removals'] = len(non_xref_removals)
 
-    # Report: Non-xref removals detailes
-    report['non_xref_removals_content'] = ''
-    for l in non_xref_removals:
-        report['non_xref_removals_content'] += l
-
-    # Report: Non MedGen xrefs removed that got tagged because UMLS was a source
-    non_umls_removals = [x for x in xref_removals if not x.startswith('xref: UMLS')]
-    report['n_xrefs_removed_cuz_umls_was_a_source'] = len(non_umls_removals)
-
     # Report: Number of MedGen xrefs removed
+    medgen_removals = [x for x in xref_removals if x.startswith('xref: MEDGEN') or x.startswith('xref: MedGen')]
+    report['n_medgen_removals'] = len(medgen_removals)
+
+    # Report: Number of UMLS xrefs removed
     umls_removals = [x for x in xref_removals if x.startswith('xref: UMLS')]
     report['n_umls_removals'] = len(umls_removals)
 

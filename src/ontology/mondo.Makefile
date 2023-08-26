@@ -1,5 +1,6 @@
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
+TEMPLATES_DIR=../templates
 
 .PHONY: dirs python-install-dependencies update-exclusion-reasons
 dirs:
@@ -285,36 +286,25 @@ tmp/mondo-edit.obo.tmp.diff: mondo-edit.obo.tmp
 	-diff mondo-edit.obo mondo-edit.obo.tmp > $@
 
 tmp/report-qc-medgen-conflicts-update-diff.tsv: tmp/mondo-edit.obo.tmp.diff
-	python ../scripts/medgen_conflicts_bad_xrefs_analyze_diff.py -i tmp/mondo-edit.obo.tmp.diff -o $@
+	python ../scripts/medgen_conflicts_removals_diff_analysis.py -i tmp/mondo-edit.obo.tmp.diff -o $@
 
 # - MedGen conflicts: deletes
 .PHONY: address-medgen-conflicts-aug2023-deletes
-address-medgen-conflicts-aug2023-deletes: mondo-edit.obo.tmp2.tmp
-	mv mondo-edit.obo.tmp2.tmp mondo-edit.obo
-	rm mondo-edit.obo.tmp
+address-medgen-conflicts-aug2023-deletes: mondo-edit.obo.tmp
+	mv mondo-edit.obo.tmp mondo-edit.obo
 
-# TODO fix: need to remove annotations and xrefs separately
-mondo-edit.obo.tmp2.tmp: mondo-edit.obo.tmp
-	grep -v MEDGEN: mondo-edit.obo.tmp2.tmp > $@
-
-mondo-edit.obo.tmp: tmp/bad-medgen-xrefs-grep-command.sh
-	sh $<
-
-tmp/bad-medgen-xrefs-grep-command.sh: tmp/bad-medgen-xrefs.txt
-	python ../scripts/medgen_conflicts_bad_xrefs_grep_command.py -i tmp/bad-medgen-xrefs.txt -t mondo-edit.obo -T mondo-edit.obo.tmp -o $@
-
-tmp/bad-medgen-xrefs.txt: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx
-	python ../scripts/medgen_conflicts_bad_xrefs_collate.py -i tmp/July2023_CUIReports_FromMedGentoMondo.xlsx -o $@
+mondo-edit.obo.tmp: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx mondo-edit.obo
+	python ../scripts/medgen_conflicts_removals.py -i tmp/July2023_CUIReports_FromMedGentoMondo.xlsx -I mondo-edit.obo -o $@
 
 # - MedGen conflicts: adds
 .PHONY: address-medgen-conflicts-aug2023-adds
-address-medgen-conflicts-aug2023-adds: templates/ROBOT_addMedGen_fromConflictResolution.tsv templates/ROBOT_addMedGen_fromIngest.tsv
+address-medgen-conflicts-aug2023-adds: $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv
 
-templates/ROBOT_addMedGen_fromConflictResolution.tsv: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx
+$(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx
 	python ../scripts/medgen_conflicts_add_xrefs.py -i tmp/July2023_CUIReports_FromMedGentoMondo.xlsx -o $@
 
-templates/ROBOT_addMedGen_fromIngest.tsv:
-	wget "https://github.com/monarch-initiative/medgen/releases/latest/download/ROBOT_addMedGen_fromIngest.tsv" -O $@
+$(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
+	wget "https://github.com/monarch-initiative/medgen/releases/latest/download/medgen-xrefs.robot.template.tsv" -O $@
 
 #############################################
 ##### Mondo analysis ########################
