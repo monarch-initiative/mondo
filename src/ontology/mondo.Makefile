@@ -548,7 +548,6 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 #	sssom convert -i $< -o $@
 #	#python ../scripts/split_sssom_by_source.py $@
 
-
 mappings: $(ALL_MAPPINGS)
 
 ##### RELEASE Report ######
