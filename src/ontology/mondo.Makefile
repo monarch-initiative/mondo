@@ -371,6 +371,9 @@ reports/mondo_unsats.md: mondo.obo
 	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
 		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
 
+explain_unsat: $(SRC) 
+	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation $(TMPDIR)/$@.md
+
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
 
