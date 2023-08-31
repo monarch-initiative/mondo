@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-03/imports/chebi_import.owl
+data-version: mondo/releases/2023-08-31/imports/chebi_import.owl
 ontology: mondo/imports/chebi_import
 
 [Term]
@@ -269,6 +269,7 @@ synonym: "retinoid carboxylate anions" RELATED []
 synonym: "retinoid carboxylic acid anion" RELATED []
 synonym: "retinoid carboxylic acid anions" RELATED []
 is_a: CHEBI:29067 ! carboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:26537 ! retinoid
 
 [Term]
 id: CHEBI:139590
@@ -358,7 +359,7 @@ relationship: RO:0000087 CHEBI:78675 ! fundamental metabolite
 
 [Term]
 id: CHEBI:144644
-name: a tetracycline zwittterion
+name: a tetracycline zwitterion
 synonym: "a tetracycline" RELATED []
 is_a: CHEBI:26895 ! tetracyclines
 
@@ -448,6 +449,7 @@ is_a: CHEBI:22723 ! benzoic acids
 is_a: CHEBI:26596 ! salicylates
 relationship: has_functional_parent CHEBI:16914 ! salicylic acid
 relationship: is_conjugate_acid_of CHEBI:13719 ! acetylsalicylate
+relationship: RO:0000087 CHEBI:176497 ! geroprotector
 relationship: RO:0000087 CHEBI:35475 ! non-steroidal anti-inflammatory drug
 relationship: RO:0000087 CHEBI:35481 ! non-narcotic analgesic
 relationship: RO:0000087 CHEBI:35493 ! antipyretic
@@ -512,7 +514,7 @@ relationship: RO:0000087 CHEBI:77746 ! human metabolite
 [Term]
 id: CHEBI:15377
 name: water
-def: "An oxygen hydride consisting of an oxygen atom that is covalently bonded to two hydrogen atoms." []
+def: "An oxygen hydride consisting of an oxygen atom that is covalently bonded to two hydrogen atoms" []
 synonym: "[OH2]" RELATED []
 synonym: "acqua" RELATED []
 synonym: "agua" RELATED []
@@ -1007,6 +1009,7 @@ relationship: RO:0000087 CHEBI:78433 ! refrigerant
 id: CHEBI:16541
 name: protein polypeptide chain
 def: "A naturally occurring polypeptide synthesized at the ribosome." []
+synonym: "a protein" RELATED []
 synonym: "polypeptide chain" RELATED []
 synonym: "Protein" RELATED []
 synonym: "protein polypeptide chains" RELATED []
@@ -1017,6 +1020,7 @@ relationship: BFO:0000051 CHEBI:33700 ! proteinogenic amino-acid residue
 id: CHEBI:16646
 name: carbohydrate
 def: "Any member of the class of organooxygen compounds that is a polyhydroxy-aldehyde or -ketone or a lactol resulting from their intramolecular condensation (monosaccharides); substances derived from these by reduction of the carbonyl group (alditols), by oxidation of one or more hydroxy groups to afford the corresponding aldehydes, ketones, or carboxylic acids, or by replacement of one or more hydroxy group(s) by a hydrogen atom; and polymeric products arising by intermolecular acetal formation between two or more such molecules (disaccharides, polysaccharides and oligosaccharides). Carbohydrates contain only carbon, hydrogen and oxygen atoms; prior to any oxidation or reduction, most have the empirical formula Cm(H2O)n. Compounds obtained from carbohydrates by substitution, etc., are known as carbohydrate derivatives and may contain other elements. Cyclitols are generally not regarded as carbohydrates." []
+synonym: "a carbohydrate" RELATED []
 synonym: "carbohidrato" RELATED []
 synonym: "carbohidratos" RELATED []
 synonym: "carbohydrate" EXACT []
@@ -1355,6 +1359,7 @@ is_a: CHEBI:36586 ! carbonyl compound
 id: CHEBI:17089
 name: glycoprotein
 def: "A compound in which a carbohydrate component is covalently bound to a protein component." []
+synonym: "a glycoprotein" RELATED []
 synonym: "glicoproteina" RELATED []
 synonym: "glicoproteinas" RELATED []
 synonym: "Glycoprotein" EXACT []
@@ -1625,6 +1630,19 @@ synonym: "p-hydroxyaniline" RELATED []
 is_a: CHEBI:28829 ! aminophenol
 relationship: RO:0000087 CHEBI:25212 ! metabolite
 relationship: RO:0000087 CHEBI:50904 ! allergen
+
+[Term]
+id: CHEBI:176497
+name: geroprotector
+def: "Any compound that supports healthy aging, slows the biological aging process, or extends lifespan." []
+synonym: "anti-aging agent" RELATED []
+synonym: "anti-aging agents" RELATED []
+synonym: "anti-aging drug" RELATED []
+synonym: "anti-aging drugs" RELATED []
+synonym: "geroprotective agent" RELATED []
+synonym: "geroprotective agents" RELATED []
+synonym: "geroprotectors" RELATED []
+is_a: CHEBI:50267 ! protective agent
 
 [Term]
 id: CHEBI:176838
@@ -2220,6 +2238,7 @@ name: benzoates
 def: "A monocarboxylic acid anion obtained by deprotonation of the carboxy group of any benzoic acid." []
 synonym: "benzoate anion" RELATED []
 is_a: CHEBI:35757 ! monocarboxylic acid anion
+is_a: CHEBI:91007 ! aromatic carboxylate
 
 [Term]
 id: CHEBI:22723
@@ -2995,6 +3014,7 @@ name: monohydroxybenzoate
 def: "A hydroxybenzoate carrying a single hydroxy substituent at unspecified position." []
 synonym: "monohydroxybenzoates" RELATED []
 is_a: CHEBI:24675 ! hydroxybenzoate
+relationship: is_conjugate_base_of CHEBI:25389 ! monohydroxybenzoic acid
 
 [Term]
 id: CHEBI:25389
@@ -3002,6 +3022,7 @@ name: monohydroxybenzoic acid
 def: "Any hydroxybenzoic acid having a single phenolic hydroxy substituent on the benzene ring." []
 synonym: "monohydroxybenzoic acids" RELATED []
 is_a: CHEBI:24676 ! hydroxybenzoic acid
+relationship: is_conjugate_acid_of CHEBI:25388 ! monohydroxybenzoate
 
 [Term]
 id: CHEBI:25414
@@ -3359,6 +3380,7 @@ synonym: "retinoid" EXACT []
 synonym: "retinoids" EXACT []
 synonym: "retinoids" RELATED []
 is_a: CHEBI:23849 ! diterpenoid
+relationship: is_conjugate_acid_of CHEBI:139589 ! retinoid anion
 
 [Term]
 id: CHEBI:26596
@@ -3765,10 +3787,12 @@ is_a: CHEBI:75769 ! B vitamin
 
 [Term]
 id: CHEBI:27314
-name: water-soluble vitamin
+name: water-soluble vitamin (role)
+def: "Any vitamin that dissolves in water and readily absorbed into tissues for immediate use. Unlike the fat-soluble vitamins, they are not stored in the body and need to be replenished regularly in the diet and will rarely accumulate to toxic levels since they are quickly excreted from the body via urine." []
 synonym: "wasserloesliche Vitamine" RELATED []
+synonym: "water-soluble vitamin" RELATED []
 synonym: "water-soluble vitamins" RELATED []
-is_a: CHEBI:33229 ! vitamin
+is_a: CHEBI:33229 ! vitamin (role)
 
 [Term]
 id: CHEBI:27363
@@ -3979,6 +4003,9 @@ relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
 id: CHEBI:28024
 name: cyanic acid
 synonym: "[C(N)OH]" RELATED []
+synonym: "acide cyanique" RELATED []
+synonym: "acido cianico" RELATED []
+synonym: "acidum cyanicum" RELATED []
 synonym: "Cyanic acid" EXACT []
 synonym: "Cyansaeure" RELATED []
 synonym: "HOCN" RELATED []
@@ -4919,9 +4946,9 @@ is_a: CHEBI:51143 ! nitrogen molecular entity
 
 [Term]
 id: CHEBI:33229
-name: vitamin
+name: vitamin (role)
 def: "A biochemical role played by any micronutrient that is an organic compound. Vitamins are present in foods in small amounts and are essential to normal metabolism and biochemical functions, usually as coenzymes. The term \"vitamines\" (from vita + amines) was coined in 1912 by Casimir Funk, who believed that these compounds were amines." []
-synonym: "Vitamin" EXACT []
+synonym: "vitamin" RELATED []
 synonym: "vitamina" RELATED []
 synonym: "vitaminas" RELATED []
 synonym: "vitamine" RELATED []
@@ -6263,6 +6290,7 @@ synonym: "paraquat dication" RELATED []
 synonym: "paraquat ion" RELATED []
 is_a: CHEBI:25697 ! organic cation
 relationship: has_parent_hydride CHEBI:30985 ! 4,4'-bipyridine
+relationship: RO:0000087 CHEBI:176497 ! geroprotector
 relationship: RO:0000087 CHEBI:24527 ! herbicide
 
 [Term]
@@ -6538,7 +6566,7 @@ is_a: CHEBI:33552 ! sulfonic acid derivative
 [Term]
 id: CHEBI:35366
 name: fatty acid
-def: "Any aliphatic monocarboxylic acid derived from or contained in esterified form in an animal or vegetable fat, oil or wax." []
+def: "Any aliphatic monocarboxylic acid derived from or contained in esterified form in an animal or vegetable fat, oil or wax. Natural fatty acids commonly have a chain of 4 to 28 carbons (usually unbranched and even-numbered), which may be saturated or unsaturated. By extension, the term is sometimes used to embrace all acyclic aliphatic carboxylic acids." []
 synonym: "acide gras" RELATED []
 synonym: "acides gras" RELATED []
 synonym: "acido graso" RELATED []
@@ -8368,6 +8396,7 @@ is_a: CHEBI:22160 ! acetamides
 is_a: CHEBI:33853 ! phenols
 relationship: has_functional_parent CHEBI:17602 ! 4-aminophenol
 relationship: RO:0000087 CHEBI:173085 ! ferroptosis inducer
+relationship: RO:0000087 CHEBI:176497 ! geroprotector
 relationship: RO:0000087 CHEBI:35475 ! non-steroidal anti-inflammatory drug
 relationship: RO:0000087 CHEBI:35481 ! non-narcotic analgesic
 relationship: RO:0000087 CHEBI:35493 ! antipyretic
@@ -9433,7 +9462,7 @@ is_a: CHEBI:51269 ! acenes
 id: CHEBI:51356
 name: penicillinate anion
 def: "Any anion formed by loss of a proton from the carboxy group of a penicillin." []
-synonym: "penicillin" RELATED []
+synonym: "a penicillin" RELATED []
 synonym: "penicillin anion" RELATED []
 synonym: "penicillin anions" RELATED []
 is_a: CHEBI:47811 ! penamcarboxylate
@@ -10042,6 +10071,7 @@ is_a: CHEBI:36915 ! inorganic cation
 id: CHEBI:60466
 name: peptide zwitterion
 def: "Zwitterionic form of any peptide where, in general, the amino terminus is positively charged and the carboxy terminus is negatively charged." []
+synonym: "a peptide" RELATED []
 synonym: "peptide zwitterions" RELATED []
 is_a: CHEBI:27369 ! zwitterion
 relationship: is_tautomer_of CHEBI:16670 ! peptide
@@ -10912,14 +10942,14 @@ is_a: CHEBI:75767 ! animal metabolite
 [Term]
 id: CHEBI:75769
 name: B vitamin
-def: "Any member of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such)." []
+def: "Any member of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises of vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such)." []
 synonym: "B vitamins" RELATED []
 synonym: "B-group vitamin" RELATED []
 synonym: "B-group vitamins" RELATED []
 synonym: "vitamin B" RELATED []
 is_a: CHEBI:35352 ! organonitrogen compound
 is_a: CHEBI:36963 ! organooxygen compound
-relationship: RO:0000087 CHEBI:27314 ! water-soluble vitamin
+relationship: RO:0000087 CHEBI:27314 ! water-soluble vitamin (role)
 relationship: RO:0000087 CHEBI:50733 ! nutraceutical
 
 [Term]
@@ -11505,7 +11535,7 @@ name: tetracycline zwitterion
 def: "A zwitterion obtained by transfer of a proton from the 2-hydroxy group to the 1-amino group of tetracycline. It is the major microspecies at pH 7.3 (according to Marvin v 6.2.0.)." []
 synonym: "(1S,4aS,11S,11aS,12aS)-3-carbamoyl-1-(dimethylazaniumyl)-4a,5,7,11-tetrahydroxy-11-methyl-4,6-dioxo-1,4,4a,6,11,11a,12,12a-octahydrotetracen-2-olate" EXACT []
 synonym: "tetracycline" RELATED []
-is_a: CHEBI:144644 ! a tetracycline zwittterion
+is_a: CHEBI:144644 ! a tetracycline zwitterion
 is_a: CHEBI:27369 ! zwitterion
 relationship: is_conjugate_acid_of CHEBI:71392 ! tetracycline(1-)
 relationship: is_conjugate_base_of CHEBI:27902 ! tetracycline

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-03/imports/pato_import.owl
+data-version: mondo/releases/2023-08-31/imports/pato_import.owl
 ontology: mondo/imports/pato_import
 
 [Term]
@@ -60,7 +60,7 @@ relationship: BFO:0000050 BFO:0000020 ! part of specifically dependent continuan
 id: BFO:0000023
 name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
-is_a: BFO:0000017 ! realizable entity
+equivalent_to: CHEBI:50906 ! role
 
 [Term]
 id: BFO:0000034
@@ -74,41 +74,110 @@ def: "An independent continuant that is spatially extended whose identity is ind
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: CARO:0000000
-name: anatomical entity
-is_a: CARO:0030000 ! biological entity
-
-[Term]
-id: CARO:0000003
-name: connected anatomical structure
-is_a: CARO:0000006 ! material anatomical entity
-
-[Term]
-id: CARO:0000006
-name: material anatomical entity
-is_a: BFO:0000040 ! material entity
-is_a: CARO:0000000 ! anatomical entity
-
-[Term]
-id: CARO:0030000
-name: biological entity
-is_a: BFO:0000004 ! independent continuant
+id: CHEBI:50906
+name: role
+def: "A role is particular behaviour which a material entity may exhibit." []
 
 [Term]
 id: CL:0000000
 name: cell
-is_a: CARO:0000003 ! connected anatomical structure
+def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." []
+is_a: UBERON:0000061 ! anatomical structure
+disjoint_from: GO:0043226 ! organelle
 relationship: BFO:0000051 GO:0005634 {gci_filler="PATO:0001407", gci_relation="RO:0000053"} ! has part nucleus
 relationship: BFO:0000051 GO:0005634 {gci_filler="PATO:0001908", gci_relation="RO:0000053"} ! has part nucleus
+relationship: RO:0002160 NCBITaxon:131567 ! only in taxon cellular organisms
+
+[Term]
+id: CL:0001061
+name: abnormal cell
+def: "A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models." []
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
+intersection_of: RO:0000053 PATO:0000460 ! bearer of abnormal
+relationship: RO:0000053 PATO:0000460 ! bearer of abnormal
+
+[Term]
+id: CL:0001063
+name: neoplastic cell
+def: "An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm, an aggregate of cells in the form of a tumor mass or an excess number of abnormal cells (liquid tumor) within an organism." []
+synonym: "tumor cell" RELATED []
+synonym: "tumour cell" RELATED []
+is_a: CL:0001061 ! abnormal cell
+intersection_of: CL:0001061 ! abnormal cell
+intersection_of: RO:0000053 PATO:0002011 ! bearer of neoplastic
+relationship: RO:0000053 PATO:0002011 ! bearer of neoplastic
+
+[Term]
+id: CL:0001064
+name: malignant cell
+def: "A neoplastic cell that is capable of entering a surrounding tissue" []
+synonym: "cancer cell" RELATED []
+is_a: CL:0001063 ! neoplastic cell
+intersection_of: CL:0001063 ! neoplastic cell
+intersection_of: RO:0000053 PATO:0002097 ! bearer of neoplastic, malignant
+relationship: RO:0000053 PATO:0002097 ! bearer of neoplastic, malignant
+
+[Term]
+id: CL:0017500
+name: neutrophillic cytoplasm
+def: "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain." []
+is_a: GO:0005737 ! cytoplasm
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: RO:0000053 PATO:0070046 ! bearer of neutrophillic
+relationship: RO:0000053 PATO:0070046 ! bearer of neutrophillic
+
+[Term]
+id: CL:0017502
+name: acidophilic cytoplasm
+def: "Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain." []
+synonym: "eosinophilic" NARROW []
+is_a: GO:0005737 ! cytoplasm
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: RO:0000053 PATO:0002418 ! bearer of acidophilic
+relationship: RO:0000053 PATO:0002418 ! bearer of acidophilic
+
+[Term]
+id: CL:0017503
+name: basophilic cytoplasm
+def: "Cytoplasm that exhibits molecular interaction for basic dyes under specific pH conditions." []
+is_a: GO:0005737 ! cytoplasm
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: RO:0000053 PATO:0002094 ! bearer of basophilic
+relationship: RO:0000053 PATO:0002094 ! bearer of basophilic
+
+[Term]
+id: CL:0017504
+name: polychromatophilic cytoplasm
+def: "Cytoplasm that exhibits affinity for both basic and acid stains under specific pH conditions." []
+is_a: GO:0005737 ! cytoplasm
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: RO:0000053 PATO:0070047 ! bearer of polychromatophilic
+relationship: RO:0000053 PATO:0070047 ! bearer of polychromatophilic
+
+[Term]
+id: CL:0017505
+name: increased nucleus size
+def: "A nucleus size quality which is relatively high compared to the amount of cytoplasm present in the same cell." []
+is_a: GO:0005634 ! nucleus
+intersection_of: GO:0005634 ! nucleus
+intersection_of: RO:0000053 PATO:0000586 ! bearer of increased size
+relationship: RO:0000053 PATO:0000586 ! bearer of increased size
 
 [Term]
 id: GO:0003674
 name: molecular_function
+def: "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs." []
+synonym: "molecular function" EXACT []
 is_a: BFO:0000015 ! process
+disjoint_from: GO:0005575 ! cellular_component
+disjoint_from: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0003824
 name: catalytic activity
+def: "Catalysis of a biochemical reaction at physiological temperatures. In biologically catalyzed reactions, the reactants are known as substrates, and the catalysts are naturally occurring macromolecular substances known as enzymes. Enzymes possess specific binding sites for substrates, and are usually composed wholly or largely of protein, but RNA that has catalytic activity (ribozyme) is often also regarded as enzymatic." []
+synonym: "enzyme activity" EXACT []
 is_a: GO:0003674 ! molecular_function
 
 [Term]
@@ -118,6 +187,8 @@ def: "A location, relative to cellular compartments and structures, occupied by 
 synonym: "cell or subcellular entity" EXACT []
 synonym: "cellular component" EXACT []
 synonym: "subcellular entity" RELATED []
+is_a: BFO:0000040 ! material entity
+disjoint_from: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0005622
@@ -129,6 +200,7 @@ synonym: "nucleocytoplasm" RELATED []
 synonym: "protoplasm" EXACT []
 synonym: "protoplast" RELATED []
 is_a: GO:0110165 ! cellular anatomical entity
+relationship: BFO:0000050 CL:0000000 ! part of cell
 
 [Term]
 id: GO:0005634
@@ -137,7 +209,9 @@ def: "A membrane-bounded organelle of eukaryotic cells in which chromosomes are 
 synonym: "cell nucleus" EXACT []
 synonym: "horsetail nucleus" NARROW []
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
-is_a: GO:0044464 ! cell part
+disjoint_from: GO:0005737 ! cytoplasm
+relationship: RO:0002160 NCBITaxon:2759 ! only in taxon Eukaryota
+relationship: RO:0002162 NCBITaxon:2759 ! in taxon Eukaryota
 
 [Term]
 id: GO:0005635
@@ -171,6 +245,8 @@ synonym: "cell membrane" EXACT []
 synonym: "cellular membrane" EXACT []
 synonym: "cytoplasmic membrane" EXACT []
 synonym: "inner endospore membrane" NARROW []
+synonym: "integral component of plasma membrane" NARROW []
+synonym: "integral to plasma membrane" NARROW []
 synonym: "juxtamembrane" BROAD []
 synonym: "plasma membrane lipid bilayer" NARROW []
 synonym: "plasmalemma" EXACT []
@@ -191,7 +267,7 @@ relationship: BFO:0000050 GO:0071944 ! part of cell periphery
 [Term]
 id: GO:0008150
 name: biological_process
-def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
+def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
 synonym: "biological process" EXACT []
 synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
@@ -203,31 +279,39 @@ id: GO:0012505
 name: endomembrane system
 def: "A collection of membranous structures involved in transport within the cell. The main components of the endomembrane system are endoplasmic reticulum, Golgi bodies, vesicles, cell membrane and nuclear envelope. Members of the endomembrane system pass materials through each other or though the use of vesicles." []
 is_a: GO:0110165 ! cellular anatomical entity
+relationship: BFO:0000050 CL:0000000 ! part of cell
 relationship: BFO:0000051 GO:0005773 ! has part vacuole
 relationship: BFO:0000051 GO:0005886 ! has part plasma membrane
 
 [Term]
 id: GO:0016020
 name: membrane
-def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." []
+def: "A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it." []
+synonym: "integral component of membrane" NARROW []
+synonym: "integral to membrane" NARROW []
 synonym: "membrane region" NARROW []
 synonym: "region of membrane" NARROW []
+synonym: "transmembrane" RELATED []
 synonym: "whole membrane" NARROW []
 is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0016301
 name: kinase activity
+def: "Catalysis of the transfer of a phosphate group, usually from ATP, to a substrate molecule." []
+synonym: "phosphokinase activity" EXACT []
 is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
 
 [Term]
 id: GO:0016740
 name: transferase activity
+def: "Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." []
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
 id: GO:0016772
 name: transferase activity, transferring phosphorus-containing groups
+def: "Catalysis of the transfer of a phosphorus-containing group from one compound (donor) to another (acceptor)." []
 is_a: GO:0016740 ! transferase activity
 
 [Term]
@@ -262,6 +346,7 @@ id: GO:0031975
 name: envelope
 def: "A multilayered structure surrounding all or part of a cell; encompasses one or more lipid bilayers, and may include a cell wall layer; also includes the space between layers." []
 is_a: GO:0110165 ! cellular anatomical entity
+relationship: BFO:0000050 CL:0000000 ! part of cell
 
 [Term]
 id: GO:0043226
@@ -299,14 +384,9 @@ intersection_of: GO:0043227 ! membrane-bounded organelle
 intersection_of: BFO:0000050 GO:0005622 ! part of intracellular anatomical structure
 
 [Term]
-id: GO:0044464
-name: cell part
-is_a: CARO:0000003 ! connected anatomical structure
-
-[Term]
 id: GO:0071944
 name: cell periphery
-def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." []
+def: "The broad region around and including the plasma membrane of a cell,  encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures." []
 is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
@@ -346,6 +426,30 @@ def: "A part of a cellular organism that is either an immaterial entity or a mat
 is_a: GO:0005575 ! cellular_component
 
 [Term]
+id: NCBITaxon:1
+name: root
+synonym: "all" RELATED []
+is_a: OBI:0100026
+
+[Term]
+id: NCBITaxon:131567
+name: cellular organisms
+synonym: "biota" RELATED []
+is_a: NCBITaxon:1 ! root
+
+[Term]
+id: NCBITaxon:2759
+name: Eukaryota
+synonym: "Eucarya" RELATED []
+synonym: "Eucaryotae" RELATED []
+synonym: "eucaryotes" EXACT []
+synonym: "Eukarya" RELATED []
+synonym: "Eukaryotae" RELATED []
+synonym: "eukaryotes" EXACT []
+synonym: "eukaryotes" RELATED []
+is_a: NCBITaxon:131567 ! cellular organisms
+
+[Term]
 id: PATO:0000001
 name: quality
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
@@ -380,7 +484,6 @@ is_a: PATO:0001546 ! quality of a solid
 id: PATO:0000051
 name: morphology
 def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." []
-is_a: BFO:0000019 ! quality
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
@@ -419,7 +522,7 @@ synonym: "presence" RELATED []
 synonym: "presence or absence in organism" EXACT []
 synonym: "quantitative" EXACT []
 is_a: PATO:0000068 ! qualitative
-relationship: reciprocal_of PATO:0001555 ! has number of
+relationship: RO:0015012 PATO:0001555 ! reciprocal of has number of
 
 [Term]
 id: PATO:0000117
@@ -484,7 +587,7 @@ synonym: "tough" RELATED []
 is_a: PATO:0000048 ! hardness
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000048 ! hardness
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0000387
@@ -493,7 +596,7 @@ def: "A hardness quality of giving little resistance to pressure." []
 is_a: PATO:0000048 ! hardness
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000048 ! hardness
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0000389
@@ -579,7 +682,7 @@ synonym: "supernumerary" EXACT []
 is_a: PATO:0000467 ! present
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0000070 ! amount
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0000498
@@ -594,7 +697,7 @@ synonym: "slow time" RELATED []
 is_a: PATO:0001309 ! duration
 is_a: PATO:0002304 ! increased process quality
 intersection_of: PATO:0001309 ! duration
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0000499
@@ -608,7 +711,7 @@ synonym: "shortened period" EXACT []
 is_a: PATO:0001309 ! duration
 is_a: PATO:0002302 ! decreased process quality
 intersection_of: PATO:0001309 ! duration
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0000586
@@ -622,7 +725,7 @@ synonym: "large" RELATED []
 is_a: PATO:0000117 ! size
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000117 ! size
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0000587
@@ -636,7 +739,7 @@ synonym: "underdeveloped" NARROW []
 is_a: PATO:0000117 ! size
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000117 ! size
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0000588
@@ -727,7 +830,7 @@ is_a: PATO:0000973 ! porosity
 [Term]
 id: PATO:0000992
 name: viscosity
-def: "A physical quality of a liquid inhering in a bearer by virtue of the bearer's disposition to internal resistance to flow." []
+def: "A physical quality of a fluid inhering in a bearer by virtue of the bearer's disposition to internal resistance to flow." []
 is_a: PATO:0001548 ! quality of a liquid
 
 [Term]
@@ -800,15 +903,16 @@ is_a: PATO:0000001 ! quality
 
 [Term]
 id: PATO:0001291
-name: electromagnetic (EM) radiation quality
-def: "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation." []
-is_a: PATO:0001739 ! radiation quality
+name: obsolete electromagnetic (EM) radiation quality
+def: "OBSOLETE A radiation quality that inheres in a bearer by virtue of how that bearer interacts with electromagnetic radiation." []
+is_obsolete: true
+replaced_by: PATO:0070060
 
 [Term]
 id: PATO:0001292
 name: full-spectrum EM radiation quality
 def: "An EM radiation quality that is independent of the EM wavelength range." []
-is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
 
 [Term]
 id: PATO:0001294
@@ -826,7 +930,7 @@ is_a: PATO:0001294 ! radiation reflective quality
 id: PATO:0001300
 name: optical quality
 def: "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light." []
-is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
 
 [Term]
 id: PATO:0001305
@@ -837,7 +941,7 @@ synonym: "hot" EXACT []
 is_a: PATO:0000146 ! temperature
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000146 ! temperature
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001306
@@ -848,7 +952,7 @@ synonym: "low temperature" EXACT []
 is_a: PATO:0000146 ! temperature
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000146 ! temperature
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001309
@@ -892,7 +996,7 @@ is_a: PATO:0001393 ! euploid
 id: PATO:0001396
 name: cellular quality
 def: "A monadic quality of continuant that exists at the cellular level of organisation." []
-is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0070044 ! anatomical structure quality
 
 [Term]
 id: PATO:0001397
@@ -974,7 +1078,7 @@ synonym: "high position" RELATED []
 is_a: PATO:0000140 ! position
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000140 ! position
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001476
@@ -984,7 +1088,7 @@ synonym: "low position" RELATED []
 is_a: PATO:0000140 ! position
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000140 ! position
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001481
@@ -1052,7 +1156,7 @@ synonym: "mereological quality" EXACT []
 synonym: "number" RELATED []
 synonym: "number of" EXACT []
 is_a: PATO:0001241 ! physical object quality
-relationship: reciprocal_of PATO:0000070 ! amount
+relationship: RO:0015012 PATO:0000070 ! reciprocal of amount
 
 [Term]
 id: PATO:0001562
@@ -1063,7 +1167,7 @@ synonym: "small mass" EXACT []
 is_a: PATO:0000125 ! mass
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000125 ! mass
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001563
@@ -1074,7 +1178,7 @@ synonym: "large mass" EXACT []
 is_a: PATO:0000125 ! mass
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000125 ! mass
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001566
@@ -1092,7 +1196,7 @@ synonym: "low pressure" EXACT []
 is_a: PATO:0001025 ! pressure
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001025 ! pressure
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001576
@@ -1102,7 +1206,7 @@ synonym: "high pressure" EXACT []
 is_a: PATO:0001025 ! pressure
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001025 ! pressure
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001579
@@ -1118,7 +1222,7 @@ synonym: "high contractility" EXACT []
 is_a: PATO:0001690 ! contractile
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001690 ! contractile
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001581
@@ -1128,7 +1232,7 @@ synonym: "low contractility" EXACT []
 is_a: PATO:0001690 ! contractile
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001690 ! contractile
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001591
@@ -1143,7 +1247,7 @@ def: "A curvature which is relatively high." []
 is_a: PATO:0000406 ! curved
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000406 ! curved
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001593
@@ -1152,7 +1256,7 @@ def: "A curvature which is relatively low." []
 is_a: PATO:0000406 ! curved
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000406 ! curved
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001655
@@ -1168,7 +1272,7 @@ synonym: "low osmolarity" EXACT []
 is_a: PATO:0001655 ! osmolarity
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001655 ! osmolarity
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001657
@@ -1178,7 +1282,7 @@ synonym: "high osmolarity" EXACT []
 is_a: PATO:0001655 ! osmolarity
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001655 ! osmolarity
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001671
@@ -1188,7 +1292,7 @@ synonym: "high distribution" EXACT []
 is_a: PATO:0001475 ! increased position
 is_a: PATO:0001566 ! distributed
 intersection_of: PATO:0001566 ! distributed
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001672
@@ -1198,12 +1302,12 @@ synonym: "low distribution" EXACT []
 is_a: PATO:0001476 ! decreased position
 is_a: PATO:0001566 ! distributed
 intersection_of: PATO:0001566 ! distributed
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001673
 name: cystic
-def: "Structure quality that is the presence of closed epithelium bounded capsules containing one or more liquid or solid organism substances." []
+def: "Structure quality that is the presence of at least one sac-like closed membranous structure containing one or more liquid or solid organism substances." []
 synonym: "cysts" NARROW []
 is_a: PATO:0002014 ! structure, cavities
 
@@ -1222,7 +1326,7 @@ synonym: "high elevation" EXACT []
 is_a: PATO:0001475 ! increased position
 is_a: PATO:0001687 ! elevation
 intersection_of: PATO:0001687 ! elevation
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001689
@@ -1232,7 +1336,7 @@ synonym: "low elevation" EXACT []
 is_a: PATO:0001476 ! decreased position
 is_a: PATO:0001687 ! elevation
 intersection_of: PATO:0001687 ! elevation
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001690
@@ -1248,7 +1352,7 @@ synonym: "high viscosity" EXACT []
 is_a: PATO:0000998 ! viscous
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000998 ! viscous
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001694
@@ -1258,7 +1362,7 @@ synonym: "low viscosity" EXACT []
 is_a: PATO:0000998 ! viscous
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000998 ! viscous
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001735
@@ -1270,7 +1374,7 @@ is_a: PATO:0001548 ! quality of a liquid
 [Term]
 id: PATO:0001739
 name: radiation quality
-def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
+def: "A quality of radiation that reflects the fluence spectrum of charged and neutral particles within the material or medium where dose is being deposited." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
@@ -1293,7 +1397,7 @@ synonym: "high flexibility" EXACT []
 is_a: PATO:0001544 ! flexible
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001544 ! flexible
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001777
@@ -1303,7 +1407,7 @@ synonym: "low flexibility" EXACT []
 is_a: PATO:0001544 ! flexible
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001544 ! flexible
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001789
@@ -1325,7 +1429,7 @@ synonym: "high coiling" EXACT []
 is_a: PATO:0000404 ! coiled
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000404 ! coiled
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0001796
@@ -1335,7 +1439,7 @@ synonym: "low coiling" EXACT []
 is_a: PATO:0000404 ! coiled
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000404 ! coiled
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0001822
@@ -1369,7 +1473,7 @@ synonym: "rod-like" EXACT []
 synonym: "rod-shaped" EXACT []
 synonym: "tubulate" NARROW []
 is_a: PATO:0002007 ! convex 3-D shape
-relationship: has_cross_section PATO:0000411 ! circular
+relationship: RO:0015011 PATO:0000411 ! has cross section circular
 
 [Term]
 id: PATO:0001874
@@ -1440,7 +1544,7 @@ synonym: "subnumerary" RELATED []
 is_a: PATO:0000467 ! present
 is_a: PATO:0002301 ! decreased quality
 intersection_of: PATO:0000070 ! amount
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0002005
@@ -1461,7 +1565,7 @@ id: PATO:0002007
 name: convex 3-D shape
 def: "A complete three dimensional shape in which for every line connecting pair of points on the object is within the object. Or: a shape lacking cavities. Contrast: concave." []
 is_a: PATO:0002266 ! 3-D shape
-relationship: has_cross_section PATO:0002006 ! 2-D shape
+relationship: RO:0015011 PATO:0002006 ! has cross section 2-D shape
 
 [Term]
 id: PATO:0002009
@@ -1481,6 +1585,32 @@ id: PATO:0002014
 name: structure, cavities
 def: "A structural quality that inheres in a bearer by virtue of the bearer's containing hollow areas." []
 is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0002027
+name: osmolality
+def: "A concentration quality inhering in a bearer by virtue of the bearer's amount of osmoles of solute per kilogram of solvent." []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: PATO:0002028
+name: decreased osmolality
+def: "An osmolality which is relatively low." []
+synonym: "low osmolality" EXACT []
+is_a: PATO:0002027 ! osmolality
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0002027 ! osmolality
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
+
+[Term]
+id: PATO:0002029
+name: increased osmolality
+def: "An osmolality which is relatively high." []
+synonym: "high osmolality" EXACT []
+is_a: PATO:0002027 ! osmolality
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0002027 ! osmolality
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0002039
@@ -1515,7 +1645,7 @@ def: "An affinity which is relatively high." []
 is_a: PATO:0002070 ! affinity
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0002070 ! affinity
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0002072
@@ -1524,7 +1654,7 @@ def: "An affinity which is relatively low." []
 is_a: PATO:0002070 ! affinity
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0002070 ! affinity
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0002078
@@ -1541,8 +1671,8 @@ is_a: PATO:0000051 ! morphology
 [Term]
 id: PATO:0002094
 name: basophilic
-def: "An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific pH conditions." []
-is_a: PATO:0002070 ! affinity
+def: "An affinity inhering in an anatomical structure by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific pH conditions." []
+is_a: PATO:0070045 ! anatomical histological quality
 
 [Term]
 id: PATO:0002096
@@ -1646,7 +1776,7 @@ def: "An elasticity which is relatively high." []
 is_a: PATO:0001171 ! elastic
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001171 ! elastic
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0002288
@@ -1655,7 +1785,7 @@ def: "An elasticity which is relatively low." []
 is_a: PATO:0001171 ! elastic
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001171 ! elastic
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0002299
@@ -1673,8 +1803,8 @@ name: increased quality
 def: "A quality that has a value that is increased compared to normal or average." []
 is_a: PATO:0000069 ! deviation (from_normal)
 intersection_of: PATO:0000001 ! quality
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
+relationship: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0002301
@@ -1682,8 +1812,8 @@ name: decreased quality
 def: "A quality that has a value that is decreased compared to normal or average." []
 is_a: PATO:0000069 ! deviation (from_normal)
 intersection_of: PATO:0000001 ! quality
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
+relationship: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0002302
@@ -1692,7 +1822,7 @@ def: "A quality of a process that has a value that is decreased compared to norm
 is_a: PATO:0001236 ! process quality
 is_a: PATO:0002301 ! decreased quality
 intersection_of: PATO:0001236 ! process quality
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0002303
@@ -1701,7 +1831,7 @@ def: "A quality of an object that has a value that is decreased compared to norm
 is_a: PATO:0001241 ! physical object quality
 is_a: PATO:0002301 ! decreased quality
 intersection_of: PATO:0001241 ! physical object quality
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0002304
@@ -1710,7 +1840,7 @@ def: "A quality of a process that has a value that is increased compared to norm
 is_a: PATO:0001236 ! process quality
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0001236 ! process quality
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0002305
@@ -1719,7 +1849,7 @@ def: "A quality of an object that has a value that is increased compared to norm
 is_a: PATO:0001241 ! physical object quality
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0001241 ! physical object quality
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0002318
@@ -1727,6 +1857,13 @@ name: superelliptic
 def: "A shape constituting a transition between a rectangle and a circle; a closed curve, of which the circle and ellipse are special cases, whose parametric equation is x = a.cos2/rt, y = b.cos2/rt" []
 synonym: "Lamé curve" EXACT []
 is_a: PATO:0002006 ! 2-D shape
+
+[Term]
+id: PATO:0002418
+name: acidophilic
+def: "An affinity inhering in an anatomical structure by virtue of the bearer exhibiting a molecular interaction for acidic dyes under specific pH conditions." []
+synonym: "eosinophilic" EXACT []
+is_a: PATO:0070045 ! anatomical histological quality
 
 [Term]
 id: PATO:0002422
@@ -1802,7 +1939,7 @@ synonym: "combustible" EXACT []
 is_a: PATO:0002305 ! increased object quality
 is_a: PATO:0015021 ! combustibility
 intersection_of: PATO:0015021 ! combustibility
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0015023
@@ -1812,7 +1949,7 @@ synonym: "noncombustible" RELATED []
 is_a: PATO:0002303 ! decreased object quality
 is_a: PATO:0015021 ! combustibility
 intersection_of: PATO:0015021 ! combustibility
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0015024
@@ -1821,7 +1958,7 @@ def: "An increase in porosity." []
 is_a: PATO:0000973 ! porosity
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000973 ! porosity
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
 
 [Term]
 id: PATO:0015025
@@ -1830,7 +1967,7 @@ def: "An decrease in porosity." []
 is_a: PATO:0000973 ! porosity
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000973 ! porosity
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+intersection_of: RO:0015008 PATO:0000461 ! decreased in magnitude relative to normal
 
 [Term]
 id: PATO:0070002
@@ -1840,15 +1977,139 @@ is_a: PATO:0070026 ! multipolar neuron morphology
 
 [Term]
 id: PATO:0070006
-name: bipolar morphology
-def: "A cell morphology that inheres in neurons which have two principal fibres (dendrites or axon) that emerge from the soma and begin to branch some distance from it, have few spines, and branch in narrow fields. This is in contrast to bitufted morphology where branching occurs close to the soma." []
-is_a: PATO:0010006 ! cell morphology
+name: cortical bipolar morphology
+def: "A cell morphology that inheres in neurons which have two principal dendrites that emerge from the soma and begin to branch some distance from it, have few spines, and branch in narrow fields. This is in contrast to bitufted morphology where branching occurs close to the soma." []
+is_a: PATO:0070027 ! bitufted dendrite cell morphology
 
 [Term]
 id: PATO:0070026
 name: multipolar neuron morphology
-def: "A cell morphology that inheres in neurons which possess a single axon and many dendrites and dendritic branches." []
+def: "A cell morphology that inheres in neurons which possess three or more neurites, usually a single axon and many dendrites and dendritic branches." []
 is_a: PATO:0010006 ! cell morphology
+
+[Term]
+id: PATO:0070027
+name: bitufted dendrite cell morphology
+def: "A cell morphology that inheres in neurons with dendrites that are bidirectional, emerging from opposite ends of the soma, with the two arbors extending in radial or tangential directions." []
+is_a: PATO:0010006 ! cell morphology
+
+[Term]
+id: PATO:0070044
+name: anatomical structure quality
+def: "A quality of continuant that exist at the anatomical level of organisation and anything under it. This includes, but is not limited to, cells , tissues, and components." []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0070045
+name: anatomical histological quality
+def: "A quality inhering in an anotomical structure by virtue of its capacity to be stained by specific histological dyes." []
+is_a: PATO:0070044 ! anatomical structure quality
+
+[Term]
+id: PATO:0070046
+name: neutrophillic
+def: "An affinity inhering in an anatomical structure by virtue of the bearer exhibiting a molecular interaction that stains and colors, pale-pink, with Wright-Giemsa stain." []
+is_a: PATO:0070045 ! anatomical histological quality
+
+[Term]
+id: PATO:0070047
+name: polychromatophilic
+def: "An affinity inhering in an anatomical structure by virtue of the bearer exhibiting a molecular interaction for both basic and acid stains under specific pH conditions." []
+is_a: PATO:0070045 ! anatomical histological quality
+
+[Term]
+id: PATO:0070060
+name: quality of interaction of a substance with electromagnetic radiation
+def: "A quality of a substance on which or through which electromagnetic radiation impinges or traverses with respect to radiation. This substance quality changes the quality of the incident radiation with respect to any of: intensity, direction, scatter and wavelength." []
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: UBERON:0000000
+name: processual entity
+def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." []
+disjoint_from: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000061
+name: anatomical structure
+def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." []
+synonym: "biological structure" EXACT []
+synonym: "connected biological structure" EXACT []
+is_a: UBERON:0000465 ! material anatomical entity
+relationship: RO:0002497 UBERON:0000071 ! existence ends during or before death stage
+
+[Term]
+id: UBERON:0000071
+name: death stage
+def: "End of the life of an organism." []
+synonym: "death" RELATED []
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+relationship: RO:0002229 UBERON:0000104 ! ends life cycle
+
+[Term]
+id: UBERON:0000104
+name: life cycle
+def: "An entire span of an organism's life. In metazoans, commences with the zygote stage and ends with the death of the organism." []
+synonym: "entire life cycle" EXACT []
+synonym: "entire lifespan" EXACT []
+synonym: "life" EXACT []
+synonym: "lifespan" EXACT []
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000000 ! processual entity
+relationship: BFO:0000051 UBERON:0000105 ! has part life cycle stage
+relationship: RO:0002230 UBERON:0000071 ! ends with death stage
+
+[Term]
+id: UBERON:0000105
+name: life cycle stage
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." []
+synonym: "developmental stage" NARROW []
+synonym: "stage" NARROW []
+is_a: UBERON:0000000 ! processual entity
+relationship: BFO:0000050 UBERON:0000104 ! part of life cycle
+
+[Term]
+id: UBERON:0000465
+name: material anatomical entity
+def: "Anatomical entity that has mass." []
+is_a: BFO:0000040 ! material entity
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0001062
+name: anatomical entity
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." []
+
+[Term]
+id: UBERON:0005160
+name: vestigial structure
+def: "A remnant structure from earlier development or evolution." []
+is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: RO:0000086 PATO:0000588 ! has quality vestigial
+relationship: RO:0000086 PATO:0000588 ! has quality vestigial
+
+[Term]
+id: UBERON:0009856
+name: sac
+synonym: "diverticulum" RELATED []
+synonym: "pouch" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: RO:0000086 PATO:0001987 ! has quality saccular
+relationship: RO:0000086 PATO:0001987 ! has quality saccular
+
+[Term]
+id: UBERON:0010000
+name: multicellular anatomical structure
+def: "An anatomical structure that has more than one cell as a part." []
+synonym: "multicellular structure" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: RO:0000086 PATO:0001993 ! has quality multicellular
+relationship: BFO:0000051 CL:0000000 ! has part cell
+relationship: RO:0000086 PATO:0001993 ! has quality multicellular
 
 [Typedef]
 id: BFO:0000050
@@ -1870,11 +2131,7 @@ is_a: RO:0002131 ! overlaps
 [Typedef]
 id: BFO:0000062
 name: preceded by
-name: preceded_by
 def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
-def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
-synonym: "is preceded by" EXACT []
-synonym: "takes place after" EXACT []
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 holds_over_chain: BFO:0000050 BFO:0000062
@@ -1891,21 +2148,6 @@ range: BFO:0000003 ! occurrent
 holds_over_chain: BFO:0000050 BFO:0000063
 is_transitive: true
 is_a: RO:0002222 ! temporally related to
-
-[Typedef]
-id: BFO:0000066
-name: occurs in
-def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
-domain: BFO:0000003 ! occurrent
-range: BFO:0000004 ! independent continuant
-holds_over_chain: BFO:0000050 BFO:0000066
-inverse_of: BFO:0000067 ! contains process
-transitive_over: BFO:0000050 ! part of
-
-[Typedef]
-id: BFO:0000067
-name: contains process
-def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
 
 [Typedef]
 id: RO:0000052
@@ -2069,13 +2311,7 @@ is_a: RO:0002222 ! temporally related to
 [Typedef]
 id: RO:0002087
 name: immediately preceded by
-name: immediately_preceded_by
-def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
-synonym: "directly preceded by" EXACT []
-synonym: "is directly preceded by" EXACT []
-synonym: "is immediately preceded by" EXACT []
-synonym: "starts_at_end_of" EXACT []
-is_a: BFO:0000062 ! preceded_by
+is_a: BFO:0000062 ! preceded by
 inverse_of: RO:0002090 ! immediately precedes
 
 [Typedef]
@@ -2090,8 +2326,25 @@ def: "x overlaps y if and only if there exists some z such that x has part z and
 holds_over_chain: BFO:0000050 BFO:0000050
 holds_over_chain: BFO:0000051 BFO:0000050
 holds_over_chain: BFO:0000051 RO:0002131
+is_symmetric: true
 is_a: RO:0002323 ! mereotopologically related to
 transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002160
+name: only in taxon
+def: "x only in taxon y if and only if x is in taxon y, and there is no other organism z such that y!=z a and x is in taxon z." []
+is_a: RO:0002162 ! in taxon
+
+[Typedef]
+id: RO:0002162
+name: in taxon
+def: "x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed." []
+holds_over_chain: BFO:0000050 RO:0002162
+holds_over_chain: BFO:0000051 RO:0002162
+holds_over_chain: RO:0002131 RO:0002162
+holds_over_chain: RO:0002215 RO:0002162
+is_a: RO:0002320 ! evolutionarily related to
 
 [Typedef]
 id: RO:0002180
@@ -2102,9 +2355,10 @@ is_a: BFO:0000051 ! has part
 [Typedef]
 id: RO:0002211
 name: regulates
-def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
+def: "p regulates q iff p is causally upstream of q, the execution of p is not constant and varies according to specific conditions, and p influences the rate or magnitude of execution of q due to an effect either on some enabler of q or some enabler of a part of q." []
 domain: BFO:0000015 ! process
 range: BFO:0000015 ! process
+holds_over_chain: RO:0002230 RO:0002211
 holds_over_chain: RO:0002578 RO:0002578
 is_transitive: true
 is_a: RO:0002411 ! causally upstream of
@@ -2114,7 +2368,8 @@ transitive_over: RO:0002025 ! has effector activity
 [Typedef]
 id: RO:0002212
 name: negatively regulates
-def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "p negatively regulates q iff p regulates q, and p decreases the rate or magnitude of execution of q." []
+holds_over_chain: RO:0002230 RO:0002212
 is_a: RO:0002211 ! regulates
 is_a: RO:0002305 ! causally upstream of, negative effect
 inverse_of: RO:0002335 ! negatively regulated by
@@ -2122,8 +2377,9 @@ inverse_of: RO:0002335 ! negatively regulated by
 [Typedef]
 id: RO:0002213
 name: positively regulates
-def: "Process(P1) postively regulates process(P2) iff: P1 initiates P2, or P1 increases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "p positively regulates q iff p regulates q, and p increases the rate or magnitude of execution of q." []
 holds_over_chain: RO:0002212 RO:0002212
+holds_over_chain: RO:0002230 RO:0002213
 is_transitive: true
 is_a: RO:0002211 ! regulates
 is_a: RO:0002304 ! causally upstream of, positive effect
@@ -2152,6 +2408,22 @@ domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 
 [Typedef]
+id: RO:0002229
+name: ends
+def: "inverse of ends with" []
+is_a: BFO:0000050 ! part of
+is_a: RO:0002222 ! temporally related to
+inverse_of: RO:0002230 ! ends with
+
+[Typedef]
+id: RO:0002230
+name: ends with
+def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: α(y) > α(x) ∧ ω(y) = ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+is_transitive: true
+is_a: BFO:0000051 ! has part
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
 id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
@@ -2177,12 +2449,14 @@ is_a: RO:0002500 ! causal agent in process
 [Typedef]
 id: RO:0002304
 name: causally upstream of, positive effect
+def: "p is causally upstream of, positive effect q iff p is casually upstream of q, and the execution of p is required for the execution of q." []
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004047 ! causally upstream of or within, positive effect
 
 [Typedef]
 id: RO:0002305
 name: causally upstream of, negative effect
+def: "p is causally upstream of, negative effect q iff p is casually upstream of q, and the execution of p decreases the execution of q." []
 is_a: RO:0002411 ! causally upstream of
 is_a: RO:0004046 ! causally upstream of or within, negative effect
 
@@ -2195,6 +2469,11 @@ is_a: RO:0002502 ! depends on
 transitive_over: BFO:0000050 ! part of
 
 [Typedef]
+id: RO:0002320
+name: evolutionarily related to
+def: "A relationship that holds via some environmental process" []
+
+[Typedef]
 id: RO:0002323
 name: mereotopologically related to
 def: "A mereological relationship or a topological relationship" []
@@ -2202,6 +2481,7 @@ def: "A mereological relationship or a topological relationship" []
 [Typedef]
 id: RO:0002327
 name: enables
+def: "c enables p iff c is capable of p and c acts to execute p." []
 is_a: RO:0002215 ! capable of
 inverse_of: RO:0002333 ! enabled by
 transitive_over: BFO:0000051 ! has part
@@ -2267,7 +2547,7 @@ is_a: RO:0002328 ! functionally related to
 id: RO:0002404
 name: causally downstream of
 def: "inverse of upstream of" []
-is_a: BFO:0000062 ! preceded_by
+is_a: BFO:0000062 ! preceded by
 is_a: RO:0002427 ! causally downstream of or within
 inverse_of: RO:0002411 ! causally upstream of
 
@@ -2279,14 +2559,37 @@ is_a: RO:0002404 ! causally downstream of
 inverse_of: RO:0002412 ! immediately causally upstream of
 
 [Typedef]
+id: RO:0002407
+name: indirectly positively regulates
+def: "p indirectly positively regulates q iff p is indirectly causally upstream of q and p positively regulates q." []
+holds_over_chain: RO:0002409 RO:0002409
+holds_over_chain: RO:0002629 RO:0002407
+holds_over_chain: RO:0002629 RO:0002629
+is_transitive: true
+is_a: RO:0002213 ! positively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002629 ! directly positively regulates
+
+[Typedef]
+id: RO:0002409
+name: indirectly negatively regulates
+def: "p indirectly negatively regulates q iff p is indirectly causally upstream of q and p negatively regulates q." []
+holds_over_chain: RO:0002630 RO:0002409
+holds_over_chain: RO:0002630 RO:0002630
+is_transitive: true
+is_a: RO:0002212 ! negatively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002630 ! directly negatively regulates
+
+[Typedef]
 id: RO:0002410
 name: causally related to
-def: "This relation groups causal relations between material entities and causal relations between processes" []
+def: "relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause." []
 
 [Typedef]
 id: RO:0002411
 name: causally upstream of
-def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+def: "p is causally upstream of q iff p is causally related to q, the end of p precedes the end of q, and p is not an occurrent part of q." []
 is_transitive: true
 is_a: BFO:0000063 ! precedes
 is_a: RO:0002418 ! causally upstream of or within
@@ -2294,14 +2597,14 @@ is_a: RO:0002418 ! causally upstream of or within
 [Typedef]
 id: RO:0002412
 name: immediately causally upstream of
-def: "p is immediately causally upstream of q iff both (a) p immediately precedes q and (b) p is causally upstream of q. In addition, the output of p  must be an input of q." []
+def: "p is immediately causally upstream of q iff p is causally upstream of q, and the end of p is coincident with the beginning of q." []
 is_a: RO:0002090 ! immediately precedes
 is_a: RO:0002411 ! causally upstream of
 
 [Typedef]
 id: RO:0002418
 name: causally upstream of or within
-def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
+def: "p is 'causally upstream or within' q iff p is causally related to q, and the end of p precedes, or is coincident with, the end of q." []
 synonym: "affects" RELATED []
 is_transitive: true
 is_a: RO:0002501 ! causal relation between processes
@@ -2346,15 +2649,6 @@ def: "c involved in or regulates p if and only if either (i) c is involved in p 
 is_a: RO:0002264 ! acts upstream of or within
 is_a: RO:0002328 ! functionally related to
 is_a: RO:0002500 ! causal agent in process
-
-[Typedef]
-id: RO:0002432
-name: is active in
-def: "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." []
-synonym: "enables activity in" EXACT []
-holds_over_chain: RO:0002327 BFO:0000066
-is_a: RO:0002131 ! overlaps
-is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002434
@@ -2410,17 +2704,24 @@ id: RO:0002464
 name: helper property (not for use in curation)
 
 [Typedef]
-id: RO:0002479
-name: has part that occurs in
-def: "p has part that occurs in c if and only if there exists some p1, such that p has_part p1, and p1 occurs in c." []
-domain: BFO:0000003 ! occurrent
-range: BFO:0000004 ! independent continuant
-holds_over_chain: BFO:0000051 BFO:0000066
-
-[Typedef]
 id: RO:0002481
 name: is kinase activity
 is_a: RO:0002564 ! molecular interaction relation helper property
+
+[Typedef]
+id: RO:0002487
+name: relation between physical entity and a process or stage
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000003 ! occurrent
+
+[Typedef]
+id: RO:0002497
+name: existence ends during or before
+def: "x existence ends during or before y if and only if the time point at which x ends is before or equivalent to the time point at which y ends." []
+holds_over_chain: BFO:0000050 RO:0002497
+is_a: RO:0002487 ! relation between physical entity and a process or stage
+transitive_over: BFO:0000050 ! part of
+transitive_over: BFO:0000063 ! precedes
 
 [Typedef]
 id: RO:0002500
@@ -2432,7 +2733,7 @@ inverse_of: RO:0002608 ! process has causal agent
 [Typedef]
 id: RO:0002501
 name: causal relation between processes
-def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one where the execution of p influences the execution of q. p may be upstream, downstream, part of, or a container of q." []
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 is_a: RO:0002410 ! causally related to
@@ -2475,7 +2776,7 @@ is_a: RO:0002506 ! causal relation between entities
 [Typedef]
 id: RO:0002578
 name: directly regulates
-def: "Process(P1) directly regulates process(P2) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2." []
+def: "p directly regulates q iff p is immediately causally upstream of q and p regulates q." []
 is_a: RO:0002211 ! regulates
 is_a: RO:0002412 ! immediately causally upstream of
 
@@ -2525,14 +2826,14 @@ is_a: RO:0002410 ! causally related to
 [Typedef]
 id: RO:0002629
 name: directly positively regulates
-def: "Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
+def: "p directly positively regulates q iff p is immediately causally upstream of q, and p positively regulates q." []
 is_a: RO:0002213 ! positively regulates
 is_a: RO:0002578 ! directly regulates
 
 [Typedef]
 id: RO:0002630
 name: directly negatively regulates
-def: "Process(P1) directly negatively regulates process(P2) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P1 directly negatively regulates P2." []
+def: "p directly negatively regulates q iff p is immediately causally upstream of q, and p negatively regulates q." []
 is_a: RO:0002212 ! negatively regulates
 is_a: RO:0002578 ! directly regulates
 
@@ -2590,37 +2891,113 @@ range: BFO:0000040 ! material entity
 is_a: RO:0002566 ! causally influences
 
 [Typedef]
-id: decreased_in_magnitude_relative_to
-name: decreased_in_magnitude_relative_to
-def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
-domain: PATO:0000001 ! quality
-range: PATO:0000001 ! quality
-is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
+id: RO:0012011
+name: indirectly causally upstream of
+def: "p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q." []
+is_a: RO:0002411 ! causally upstream of
 
 [Typedef]
-id: different_in_magnitude_relative_to
-name: different_in_magnitude_relative_to
+id: RO:0012012
+name: indirectly regulates
+def: "p indirectly regulates q iff p is indirectly causally upstream of q and p regulates q." []
+is_a: RO:0002211 ! regulates
+is_a: RO:0012011 ! indirectly causally upstream of
+
+[Typedef]
+id: RO:0015006
+name: different in magnitude relative to
 def: "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
 domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
 
 [Typedef]
-id: has_cross_section
-name: has_cross_section
-def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." []
-
-[Typedef]
-id: increased_in_magnitude_relative_to
-name: increased_in_magnitude_relative_to
+id: RO:0015007
+name: increased in magnitude relative to
 def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
 domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
+is_a: RO:0015006 ! different in magnitude relative to
+
+[Typedef]
+id: RO:0015008
+name: decreased in magnitude relative to
+def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+is_a: RO:0015006 ! different in magnitude relative to
+
+[Typedef]
+id: RO:0015011
+name: has cross section
+def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." []
+
+[Typedef]
+id: RO:0015012
+name: reciprocal of
+def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." []
+
+[Typedef]
+id: RO:0017001
+name: device utilizes material
+def: "X device utilizes material Y means X and Y are material entities, and X is capable of some process P that has input Y." []
+synonym: "utilizes" BROAD []
+holds_over_chain: RO:0002215 RO:0002233
+
+[Typedef]
+id: RO:0019000
+name: regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) regulates characteristic (C) iff: P results in the existence of C OR affects the intensity or magnitude of C." []
+domain: BFO:0000015 ! process
+range: PATO:0000001 ! quality
+holds_over_chain: RO:0002211 RO:0019000
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0019001
+name: positively regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) positively regulates characteristic (C) iff: P results in an increase in the intensity or magnitude of C." []
+holds_over_chain: RO:0002213 RO:0019001
+is_a: RO:0019000 ! regulates characteristic
+
+[Typedef]
+id: RO:0019002
+name: negatively regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) negatively regulates characteristic (C) iff: P results in a decrease in the intensity or magnitude of C." []
+holds_over_chain: RO:0002212 RO:0019001
+holds_over_chain: RO:0002213 RO:0019002
+is_a: RO:0019000 ! regulates characteristic
+
+[Typedef]
+id: decreased_in_magnitude_relative_to
+name: obsolete decreased_in_magnitude_relative_to
+def: "OBSOLETE. q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
 is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
+is_obsolete: true
+replaced_by: RO:0015008
+
+[Typedef]
+id: has_cross_section
+name: obsolete has_cross_section
+def: "OBSOLETE. s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." []
+is_obsolete: true
+replaced_by: RO:0015011
+
+[Typedef]
+id: increased_in_magnitude_relative_to
+name: obsolete increased_in_magnitude_relative_to
+def: "OBSOLETE. q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+is_transitive: true
+is_obsolete: true
+replaced_by: RO:0015007
 
 [Typedef]
 id: reciprocal_of
-name: reciprocal_of
-def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." []
+name: obsolete reciprocal_of
+def: "OBSOLETE. q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." []
+is_obsolete: true
+replaced_by: RO:0015012
 

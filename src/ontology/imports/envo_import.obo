@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-03/imports/envo_import.owl
+data-version: mondo/releases/2023-08-31/imports/envo_import.owl
 ontology: mondo/imports/envo_import
 
 [Term]
@@ -33,6 +33,14 @@ disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
 
 [Term]
+id: BFO:0000006
+name: spatial region
+is_a: BFO:0000141 ! immaterial entity
+disjoint_from: BFO:0000029 ! site
+disjoint_from: BFO:0000029 ! site
+disjoint_from: BFO:0000140 ! continuant fiat boundary
+
+[Term]
 id: BFO:0000015
 name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
@@ -57,6 +65,7 @@ relationship: BFO:0000050 BFO:0000017 ! part of realizable entity
 id: BFO:0000019
 name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
+relationship: BFO:0000050 BFO:0000019 ! part of quality
 
 [Term]
 id: BFO:0000020
@@ -72,7 +81,7 @@ relationship: BFO:0000050 BFO:0000020 ! part of specifically dependent continuan
 id: BFO:0000023
 name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
-is_a: BFO:0000017 ! realizable entity
+equivalent_to: CHEBI:50906 ! role
 
 [Term]
 id: BFO:0000024
@@ -101,6 +110,12 @@ name: generically dependent continuant
 def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
 def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" []
 is_a: BFO:0000002 ! continuant
+relationship: BFO:0000050 BFO:0000031 ! part of generically dependent continuant
+
+[Term]
+id: BFO:0000034
+name: function
+is_a: BFO:0000016 ! disposition
 
 [Term]
 id: BFO:0000040
@@ -110,29 +125,23 @@ is_a: BFO:0000004 ! independent continuant
 disjoint_from: BFO:0000141 ! immaterial entity
 
 [Term]
+id: BFO:0000140
+name: continuant fiat boundary
+def: "b is a continuant fiat boundary = Def. b is an immaterial entity that is of zero, one or two dimensions and does not include a spatial region as part. (axiom label in BFO2 Reference: [029-001])" []
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
 id: BFO:0000141
 name: immaterial entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: CARO:0000000
-name: anatomical entity
-is_a: CARO:0030000 ! biological entity
-
-[Term]
-id: CARO:0000006
-name: material anatomical entity
-is_a: BFO:0000040 ! material entity
-is_a: CARO:0000000 ! anatomical entity
-
-[Term]
-id: CARO:0030000
-name: biological entity
-is_a: BFO:0000004 ! independent continuant
-
-[Term]
 id: CHEBI:138675
 name: gas molecular entity
+def: "Any main group molecular entity that is gaseous at standard temperature and pressure (STP; 0degreeC and 100 kPa)." []
+synonym: "gas molecular entities" RELATED []
+synonym: "gaseous molecular entities" RELATED []
+synonym: "gaseous molecular entity" RELATED []
 is_a: CHEBI:33579 ! main group molecular entity
 
 [Term]
@@ -156,6 +165,17 @@ is_a: CHEBI:52625 ! inorganic hydroxy compound
 [Term]
 id: CHEBI:15379
 name: dioxygen
+synonym: "[OO]" RELATED []
+synonym: "dioxygen" EXACT []
+synonym: "dioxygene" RELATED []
+synonym: "Disauerstoff" RELATED []
+synonym: "E 948" RELATED []
+synonym: "E-948" RELATED []
+synonym: "E948" RELATED []
+synonym: "molecular oxygen" RELATED []
+synonym: "O2" RELATED []
+synonym: "Oxygen" RELATED []
+synonym: "OXYGEN MOLECULE" RELATED []
 is_a: CHEBI:138675 ! gas molecular entity
 is_a: CHEBI:25362 ! elemental molecule
 is_a: CHEBI:33263 ! diatomic oxygen
@@ -194,6 +214,12 @@ is_a: CHEBI:33266 ! diatomic nitrogen
 [Term]
 id: CHEBI:22563
 name: anion
+def: "A monoatomic or polyatomic species having one or more elementary charges of the electron." []
+synonym: "Anion" EXACT []
+synonym: "anion" EXACT []
+synonym: "Anionen" RELATED []
+synonym: "aniones" RELATED []
+synonym: "anions" RELATED []
 is_a: CHEBI:24870 ! ion
 
 [Term]
@@ -216,6 +242,13 @@ is_a: CHEBI:24471 ! halogen molecular entity
 [Term]
 id: CHEBI:23367
 name: molecular entity
+def: "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity." []
+synonym: "entidad molecular" RELATED []
+synonym: "entidades moleculares" RELATED []
+synonym: "entite moleculaire" RELATED []
+synonym: "molecular entities" RELATED []
+synonym: "molecular entity" EXACT []
+synonym: "molekulare Entitaet" RELATED []
 is_a: CHEBI:24431 ! chemical entity
 
 [Term]
@@ -227,11 +260,16 @@ is_a: CHEBI:24867 ! monoatomic ion
 [Term]
 id: CHEBI:24431
 name: chemical entity
+def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
+synonym: "chemical entity" EXACT []
 is_a: BFO:0000040 ! material entity
 
 [Term]
 id: CHEBI:24432
 name: biological role
+def: "A role played by the molecular entity or part thereof within a biological context." []
+synonym: "biological function" RELATED []
+is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
@@ -247,6 +285,7 @@ is_a: CHEBI:33245 ! organic fundamental parent
 [Term]
 id: CHEBI:24651
 name: hydroxides
+def: "Hydroxides are chemical compounds containing a hydroxy group or salts containing hydroxide (OH(-))." []
 is_a: CHEBI:25806 ! oxygen molecular entity
 is_a: CHEBI:33608 ! hydrogen molecular entity
 is_a: CHEBI:37577 ! heteroatomic molecular entity
@@ -254,17 +293,25 @@ is_a: CHEBI:37577 ! heteroatomic molecular entity
 [Term]
 id: CHEBI:24834
 name: inorganic anion
+synonym: "inorganic anions" RELATED []
 is_a: CHEBI:22563 ! anion
 is_a: CHEBI:36914 ! inorganic ion
 
 [Term]
 id: CHEBI:24835
 name: inorganic molecular entity
+def: "A molecular entity that contains no carbon." []
+synonym: "anorganische Verbindungen" RELATED []
+synonym: "inorganic compounds" RELATED []
+synonym: "inorganic entity" RELATED []
+synonym: "inorganic molecular entities" RELATED []
+synonym: "inorganics" RELATED []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
 id: CHEBI:24836
 name: inorganic oxide
+synonym: "inorganic oxides" RELATED []
 is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:25741 ! oxide
 
@@ -277,6 +324,17 @@ is_a: CHEBI:24866 ! salt
 [Term]
 id: CHEBI:24866
 name: salt
+def: "A salt is an assembly of cations and anions." []
+synonym: "ionic compound" RELATED []
+synonym: "ionic compounds" RELATED []
+synonym: "sal" RELATED []
+synonym: "sales" RELATED []
+synonym: "salt" EXACT []
+synonym: "salts" RELATED []
+synonym: "Salz" RELATED []
+synonym: "Salze" RELATED []
+synonym: "sel" RELATED []
+synonym: "sels" RELATED []
 is_a: CHEBI:37577 ! heteroatomic molecular entity
 
 [Term]
@@ -288,28 +346,59 @@ is_a: CHEBI:33238 ! monoatomic entity
 [Term]
 id: CHEBI:24870
 name: ion
+def: "A molecular entity having a net electric charge." []
+synonym: "Ion" EXACT []
+synonym: "ion" EXACT []
+synonym: "Ionen" RELATED []
+synonym: "iones" RELATED []
+synonym: "ions" RELATED []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
 id: CHEBI:25362
 name: elemental molecule
+def: "A molecule all atoms of which have the same atomic number." []
+synonym: "homoatomic molecule" RELATED []
+synonym: "homoatomic molecules" RELATED []
 is_a: CHEBI:25367 ! molecule
 is_a: CHEBI:33259 ! elemental molecular entity
 
 [Term]
 id: CHEBI:25367
 name: molecule
+def: "Any polyatomic entity that is an electrically neutral entity consisting of more than one atom." []
+synonym: "molecula" RELATED []
+synonym: "molecule" EXACT []
+synonym: "molecules" RELATED []
+synonym: "Molekuel" RELATED []
+synonym: "neutral molecular compounds" RELATED []
 is_a: CHEBI:36357 ! polyatomic entity
 
 [Term]
 id: CHEBI:25555
 name: nitrogen atom
+synonym: "7N" RELATED []
+synonym: "azote" RELATED []
+synonym: "N" RELATED []
+synonym: "nitrogen" EXACT []
+synonym: "nitrogen" RELATED []
+synonym: "nitrogeno" RELATED []
+synonym: "Stickstoff" RELATED []
 is_a: CHEBI:25585 ! nonmetal atom
 is_a: CHEBI:33300 ! pnictogen
 
 [Term]
 id: CHEBI:25585
 name: nonmetal atom
+synonym: "Nichtmetall" RELATED []
+synonym: "Nichtmetalle" RELATED []
+synonym: "no metal" RELATED []
+synonym: "no metales" RELATED []
+synonym: "non-metal" RELATED []
+synonym: "non-metaux" RELATED []
+synonym: "nonmetal" EXACT []
+synonym: "nonmetal" RELATED []
+synonym: "nonmetals" RELATED []
 is_a: CHEBI:33250 ! atom
 
 [Term]
@@ -321,12 +410,17 @@ is_a: CHEBI:72695 ! organic molecule
 [Term]
 id: CHEBI:25741
 name: oxide
+def: "An oxide is a chemical compound of oxygen with other chemical elements." []
+synonym: "oxide" EXACT []
+synonym: "oxides" RELATED []
 is_a: CHEBI:25806 ! oxygen molecular entity
 is_a: CHEBI:37577 ! heteroatomic molecular entity
 
 [Term]
 id: CHEBI:25806
 name: oxygen molecular entity
+synonym: "oxygen molecular entities" RELATED []
+synonym: "oxygen molecular entity" EXACT []
 is_a: CHEBI:33304 ! chalcogen molecular entity
 
 [Term]
@@ -343,6 +437,8 @@ is_a: CHEBI:38702 ! inorganic sodium salt
 [Term]
 id: CHEBI:26712
 name: sodium molecular entity
+synonym: "sodium compounds" RELATED []
+synonym: "sodium molecular entities" RELATED []
 is_a: CHEBI:33296 ! alkali metal molecular entity
 
 [Term]
@@ -354,6 +450,15 @@ is_a: CHEBI:35479 ! alkali metal salt
 [Term]
 id: CHEBI:27594
 name: carbon atom
+synonym: "6C" RELATED []
+synonym: "C" RELATED []
+synonym: "Carbon" RELATED []
+synonym: "carbon" EXACT []
+synonym: "carbon" RELATED []
+synonym: "carbone" RELATED []
+synonym: "carbonium" RELATED []
+synonym: "carbono" RELATED []
+synonym: "Kohlenstoff" RELATED []
 is_a: CHEBI:25585 ! nonmetal atom
 is_a: CHEBI:33306 ! carbon group element atom
 
@@ -370,6 +475,8 @@ is_a: CHEBI:50860 ! organic molecular entity
 [Term]
 id: CHEBI:33232
 name: application
+def: "Intended use of the molecular entity or part thereof by humans." []
+is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
@@ -380,6 +487,7 @@ is_a: CHEBI:33259 ! elemental molecular entity
 [Term]
 id: CHEBI:33242
 name: inorganic hydride
+synonym: "inorganic hydrides" RELATED []
 is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:33692 ! hydrides
 
@@ -392,11 +500,23 @@ is_a: CHEBI:50860 ! organic molecular entity
 [Term]
 id: CHEBI:33250
 name: atom
+def: "A chemical entity constituting the smallest component of an element having the chemical properties of the element." []
+synonym: "atom" EXACT []
+synonym: "atome" RELATED []
+synonym: "atomo" RELATED []
+synonym: "atoms" RELATED []
+synonym: "atomus" RELATED []
+synonym: "element" RELATED []
+synonym: "elements" RELATED []
 is_a: CHEBI:24431 ! chemical entity
 
 [Term]
 id: CHEBI:33259
 name: elemental molecular entity
+def: "A molecular entity all atoms of which have the same atomic number." []
+synonym: "homoatomic entity" RELATED []
+synonym: "homoatomic molecular entities" RELATED []
+synonym: "homoatomic molecular entity" RELATED []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
@@ -425,11 +545,16 @@ is_a: CHEBI:51143 ! nitrogen molecular entity
 [Term]
 id: CHEBI:33284
 name: nutrient
+def: "A nutrient is a food component that an organism uses to survive and grow." []
+synonym: "nutrients" RELATED []
 is_a: CHEBI:78295 ! food component
 
 [Term]
 id: CHEBI:33285
 name: heteroorganic entity
+def: "A heteroorganic entity is an organic molecular entity in which carbon atoms or organic groups are bonded directly to one or more heteroatoms." []
+synonym: "heteroorganic entities" RELATED []
+synonym: "organoelement compounds" RELATED []
 is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
@@ -440,6 +565,8 @@ is_a: CHEBI:33232 ! application
 [Term]
 id: CHEBI:33296
 name: alkali metal molecular entity
+def: "A molecular entity containing one or more atoms of an alkali metal." []
+synonym: "alkali metal molecular entities" RELATED []
 is_a: CHEBI:33674 ! s-block molecular entity
 
 [Term]
@@ -450,26 +577,53 @@ is_a: CHEBI:33674 ! s-block molecular entity
 [Term]
 id: CHEBI:33300
 name: pnictogen
+def: "Any p-block element atom that is in group 15 of the periodic table: nitrogen, phosphorus, arsenic, antimony and bismuth." []
+synonym: "group 15 elements" RELATED []
+synonym: "group V elements" RELATED []
+synonym: "nitrogenoideos" RELATED []
+synonym: "nitrogenoides" RELATED []
+synonym: "pnictogene" RELATED []
+synonym: "pnictogenes" RELATED []
+synonym: "pnictogens" EXACT []
 is_a: CHEBI:33560 ! p-block element atom
 
 [Term]
 id: CHEBI:33302
 name: pnictogen molecular entity
+def: "A p-block molecular entity containing any pnictogen." []
+synonym: "pnictogen molecular entities" RELATED []
+synonym: "pnictogen molecular entity" EXACT []
 is_a: CHEBI:33675 ! p-block molecular entity
 
 [Term]
 id: CHEBI:33304
 name: chalcogen molecular entity
+def: "Any p-block molecular entity containing a chalcogen." []
+synonym: "chalcogen compounds" RELATED []
+synonym: "chalcogen molecular entities" RELATED []
+synonym: "chalcogen molecular entity" EXACT []
 is_a: CHEBI:33675 ! p-block molecular entity
 
 [Term]
 id: CHEBI:33306
 name: carbon group element atom
+synonym: "carbon group element" RELATED []
+synonym: "carbon group elements" RELATED []
+synonym: "carbonoides" RELATED []
+synonym: "cristallogene" RELATED []
+synonym: "cristallogenes" RELATED []
+synonym: "group 14 elements" EXACT []
+synonym: "group IV elements" RELATED []
 is_a: CHEBI:33560 ! p-block element atom
 
 [Term]
 id: CHEBI:33318
 name: main group element atom
+def: "An atom belonging to one of the main groups (found in the s- and p- blocks) of the periodic table." []
+synonym: "Hauptgruppenelement" RELATED []
+synonym: "Hauptgruppenelemente" RELATED []
+synonym: "main group element" RELATED []
+synonym: "main group elements" EXACT []
 is_a: CHEBI:33250 ! atom
 
 [Term]
@@ -516,21 +670,35 @@ is_a: CHEBI:33302 ! pnictogen molecular entity
 [Term]
 id: CHEBI:33521
 name: metal atom
+def: "An atom of an element that exhibits typical metallic properties, being typically shiny, with high electrical and thermal conductivity." []
+synonym: "elemental metal" RELATED []
+synonym: "elemental metals" RELATED []
+synonym: "metal element" RELATED []
+synonym: "metal elements" RELATED []
+synonym: "metals" RELATED []
 is_a: CHEBI:33250 ! atom
 
 [Term]
 id: CHEBI:33560
 name: p-block element atom
+def: "Any main group element atom belonging to the p-block of the periodic table." []
+synonym: "p-block element" RELATED []
+synonym: "p-block elements" RELATED []
 is_a: CHEBI:33318 ! main group element atom
 
 [Term]
 id: CHEBI:33579
 name: main group molecular entity
+def: "A molecular entity containing one or more atoms from any of groups 1, 2, 13, 14, 15, 16, 17, and 18 of the periodic table." []
+synonym: "main group compounds" RELATED []
+synonym: "main group molecular entities" RELATED []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
 id: CHEBI:33582
 name: carbon group molecular entity
+synonym: "carbon group molecular entities" RELATED []
+synonym: "carbon group molecular entity" EXACT []
 is_a: CHEBI:33675 ! p-block molecular entity
 
 [Term]
@@ -541,16 +709,26 @@ is_a: CHEBI:33579 ! main group molecular entity
 [Term]
 id: CHEBI:33608
 name: hydrogen molecular entity
+synonym: "hydrogen compounds" RELATED []
+synonym: "hydrogen molecular entities" RELATED []
 is_a: CHEBI:33674 ! s-block molecular entity
 
 [Term]
 id: CHEBI:33674
 name: s-block molecular entity
+def: "An s-block molecular entity is a molecular entity containing one or more atoms of an s-block element." []
+synonym: "s-block compounds" RELATED []
+synonym: "s-block molecular entities" RELATED []
+synonym: "s-block molecular entity" EXACT []
 is_a: CHEBI:33579 ! main group molecular entity
 
 [Term]
 id: CHEBI:33675
 name: p-block molecular entity
+def: "A main group molecular entity that contains one or more atoms of a p-block element." []
+synonym: "p-block compounds" RELATED []
+synonym: "p-block molecular entities" RELATED []
+synonym: "p-block molecular entitiy" RELATED []
 is_a: CHEBI:33579 ! main group molecular entity
 
 [Term]
@@ -562,6 +740,7 @@ is_a: CHEBI:33674 ! s-block molecular entity
 [Term]
 id: CHEBI:33692
 name: hydrides
+def: "Hydrides are chemical compounds of hydrogen with other chemical elements." []
 is_a: CHEBI:33608 ! hydrogen molecular entity
 is_a: CHEBI:37577 ! heteroatomic molecular entity
 
@@ -573,12 +752,23 @@ is_a: CHEBI:36902 ! chalcogen hydride
 [Term]
 id: CHEBI:33694
 name: biomacromolecule
+def: "A macromolecule formed by a living organism." []
+synonym: "biomacromolecules" RELATED []
+synonym: "biopolymer" EXACT []
+synonym: "Biopolymere" RELATED []
+synonym: "biopolymers" RELATED []
 is_a: CHEBI:33839 ! macromolecule
 is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
 id: CHEBI:33839
 name: macromolecule
+def: "A macromolecule is a molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
+synonym: "macromolecule" EXACT []
+synonym: "macromolecules" RELATED []
+synonym: "polymer" RELATED []
+synonym: "polymer molecule" RELATED []
+synonym: "polymers" RELATED []
 is_a: CHEBI:36357 ! polyatomic entity
 
 [Term]
@@ -607,11 +797,15 @@ is_a: CHEBI:24839 ! inorganic salt
 [Term]
 id: CHEBI:36342
 name: subatomic particle
+def: "A particle smaller than an atom." []
+synonym: "subatomic particles" RELATED []
 is_a: BFO:0000040 ! material entity
 
 [Term]
 id: CHEBI:36357
 name: polyatomic entity
+def: "Any molecular entity consisting of more than one atom." []
+synonym: "polyatomic entities" RELATED []
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
@@ -633,18 +827,25 @@ is_a: CHEBI:33583 ! noble gas molecular entity
 [Term]
 id: CHEBI:36914
 name: inorganic ion
+synonym: "inorganic ions" RELATED []
 is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:24870 ! ion
 
 [Term]
 id: CHEBI:36962
 name: organochalcogen compound
+def: "An organochalcogen compound is a compound containing at least one carbon-chalcogen bond." []
+synonym: "organochalcogen compound" EXACT []
+synonym: "organochalcogen compounds" RELATED []
 is_a: CHEBI:33285 ! heteroorganic entity
 is_a: CHEBI:33304 ! chalcogen molecular entity
 
 [Term]
 id: CHEBI:36963
 name: organooxygen compound
+def: "An organochalcogen compound containing at least one carbon-oxygen bond." []
+synonym: "organooxygen compound" EXACT []
+synonym: "organooxygen compounds" RELATED []
 is_a: CHEBI:25806 ! oxygen molecular entity
 is_a: CHEBI:36962 ! organochalcogen compound
 
@@ -666,11 +867,17 @@ is_a: CHEBI:33692 ! hydrides
 [Term]
 id: CHEBI:37176
 name: mononuclear parent hydride
+synonym: "mononuclear hydride" RELATED []
+synonym: "mononuclear hydrides" RELATED []
+synonym: "mononuclear parent hydrides" EXACT []
 is_a: CHEBI:33692 ! hydrides
 
 [Term]
 id: CHEBI:37577
 name: heteroatomic molecular entity
+def: "A molecular entity consisting of two or more chemical elements." []
+synonym: "chemical compound" RELATED []
+synonym: "heteroatomic molecular entities" RELATED []
 is_a: CHEBI:36357 ! polyatomic entity
 
 [Term]
@@ -693,6 +900,12 @@ is_a: CHEBI:46663 ! silicate mineral
 [Term]
 id: CHEBI:46662
 name: mineral
+def: "In general, a mineral is a chemical substance that is normally crystalline formed and has been formed as a result of geological processes. The term also includes metamict substances (naturally occurring, formerly crystalline substances whose crystallinity has been destroyed by ionising radiation) and can include naturally occurring amorphous substances that have never been crystalline ('mineraloids') such as georgite and calciouranoite as well as substances formed by the action of geological processes on bigenic compounds ('biogenic minerals')." []
+synonym: "mineral" EXACT []
+synonym: "Minerale" RELATED []
+synonym: "minerales" RELATED []
+synonym: "minerals" RELATED []
+synonym: "mineraux" RELATED []
 is_a: CHEBI:59999 ! chemical substance
 
 [Term]
@@ -708,20 +921,30 @@ is_a: CHEBI:46663 ! silicate mineral
 [Term]
 id: CHEBI:50860
 name: organic molecular entity
+def: "Any molecular entity that contains carbon." []
+synonym: "organic compounds" RELATED []
+synonym: "organic entity" RELATED []
+synonym: "organic molecular entities" RELATED []
 is_a: CHEBI:33582 ! carbon group molecular entity
 
 [Term]
 id: CHEBI:50906
 name: role
+def: "A role is particular behaviour which a material entity may exhibit." []
 
 [Term]
 id: CHEBI:51086
 name: chemical role
+def: "A role played by the molecular entity or part thereof within a chemical context." []
+is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
 id: CHEBI:51143
 name: nitrogen molecular entity
+synonym: "nitrogen compounds" RELATED []
+synonym: "nitrogen molecular entities" RELATED []
+synonym: "Nitrogenous compounds" RELATED []
 is_a: CHEBI:33302 ! pnictogen molecular entity
 
 [Term]
@@ -738,11 +961,15 @@ is_a: CHEBI:24835 ! inorganic molecular entity
 [Term]
 id: CHEBI:59999
 name: chemical substance
+def: "A chemical substance is a portion of matter of constant composition, composed of molecular entities of the same type or of different types." []
+synonym: "Chemische Substanz" RELATED []
 is_a: CHEBI:24431 ! chemical entity
 
 [Term]
 id: CHEBI:60004
 name: mixture
+def: "A mixture is a chemical substance composed of multiple molecules, at least two of which are of a different kind." []
+synonym: "Mischung" RELATED []
 is_a: CHEBI:59999 ! chemical substance
 
 [Term]
@@ -764,6 +991,10 @@ is_a: CHEBI:51086 ! chemical role
 [Term]
 id: CHEBI:78295
 name: food component
+def: "A physiological role played by any substance that is distributed in foodstuffs. It includes materials derived from plants or animals, such as vitamins or minerals, as well as environmental contaminants." []
+synonym: "dietary component" RELATED []
+synonym: "dietary components" RELATED []
+synonym: "food components" RELATED []
 is_a: CHEBI:52211 ! physiological role
 
 [Term]
@@ -779,6 +1010,7 @@ is_a: CHEBI:24834 ! inorganic anion
 [Term]
 id: ENVO:00000000
 name: geographic feature
+def: "An astrononmical body part which delimited by physical discontinuities with its surroundings." []
 synonym: "macroscopic spatial feature" EXACT []
 is_a: ENVO:01000813 ! astronomical body part
 
@@ -804,8 +1036,6 @@ is_a: ENVO:00000000 ! geographic feature
 id: ENVO:00000015
 name: ocean
 def: "A marine water body which is constitutes the majority of an astronomical body's hydrosphere." []
-synonym: "Ocean" EXACT []
-synonym: "ocean" EXACT []
 synonym: "ocean region" RELATED []
 is_a: ENVO:00001999 ! marine water body
 is_a: ENVO:01001319 ! saline water body
@@ -821,8 +1051,6 @@ synonym: "marginal sea" NARROW []
 synonym: "open sea" NARROW []
 synonym: "open sound" NARROW []
 synonym: "open water" NARROW []
-synonym: "Sea" EXACT []
-synonym: "sea" EXACT []
 is_a: ENVO:00001999 ! marine water body
 is_a: ENVO:01001319 ! saline water body
 relationship: RO:0002473 ENVO:00002149 ! composed primarily of sea water
@@ -882,7 +1110,7 @@ name: human construction
 def: "A construction that has been assembled by deliberate human effort." []
 synonym: "constructed feature" EXACT []
 is_a: ENVO:01001813 ! construction
-intersection_of: ENVO:01001813 ! construction
+intersection_of: BFO:0000040 ! material entity
 intersection_of: RO:0002353 ENVO:01000996 ! output of human-directed construction process
 relationship: BFO:0000050 ENVO:01000983 ! part of technosphere
 relationship: RO:0002353 ENVO:01000996 ! output of human-directed construction process
@@ -891,8 +1119,6 @@ relationship: RO:0002353 ENVO:01000996 ! output of human-directed construction p
 id: ENVO:00000073
 name: building
 def: "A permanent walled and roofed construction." []
-synonym: "BUILDING" EXACT []
-synonym: "building" EXACT []
 is_a: ENVO:00000070 ! human construction
 relationship: BFO:0000051 ENVO:01000420 ! has part building part
 
@@ -998,7 +1224,7 @@ relationship: RO:0002131 ENVO:01001243 ! overlaps forest ecosystem
 [Term]
 id: ENVO:00000128
 name: dry valley
-def: "A valley that no longer has a surface flow of water. Typically found in either Karst (limestone) or chalk terrain." []
+def: "A valley which no longer has water flowing or accumulating over its surface." []
 is_a: ENVO:00000100 ! valley
 intersection_of: ENVO:00000100 ! valley
 intersection_of: RO:0000086 PATO:0001824 ! has quality dry
@@ -1006,28 +1232,33 @@ relationship: RO:0000086 PATO:0001824 ! has quality dry
 
 [Term]
 id: ENVO:00000131
-name: glacial feature
-def: "A hydrographic feature characterized by the dominance of snow or ice." []
+name: obsolete glacial feature
+def: "OBSOLETE A hydrographic feature characterized by the dominance of snow or ice." []
 synonym: "glacer" NARROW []
 synonym: "glacial landform" RELATED []
 synonym: "glacier feature" RELATED []
 synonym: "Ice" RELATED []
 synonym: "LandIce" RELATED []
-is_a: BFO:0000040 ! material entity
+is_obsolete: true
+consider: ENVO:00000133
+consider: ENVO:01000277
+consider: ENVO:01000406
 
 [Term]
 id: ENVO:00000134
 name: permafrost
-def: "Soil or rock and included ice or organic material at or below the freezing point of water (0 degrees Celsius or 32 degrees Fahrenheit) for two or more years." []
-synonym: "Permafrost" EXACT []
+def: "An environmental material which is 1) composed primarily of soil or rock and included ice or organic material and 2) at or below the freezing point of water for two or more years." []
 is_a: ENVO:00010483 ! environmental material
 relationship: RO:0000086 PATO:0001306 ! has quality decreased temperature
 
 [Term]
 id: ENVO:00000176
-name: elevation
+name: elevated landform
 def: "A landform elevated above the surrounding area." []
-is_a: ENVO:00000191 ! solid astronomical body part
+synonym: "elevation" BROAD []
+is_a: ENVO:01001886 ! landform
+intersection_of: ENVO:01001886 ! landform
+intersection_of: RO:0000086 PATO:0001688 ! has quality increased elevation
 relationship: BFO:0000051 ENVO:00002000 ! has part slope
 relationship: RO:0000086 PATO:0001688 ! has quality increased elevation
 
@@ -1036,8 +1267,9 @@ id: ENVO:00000191
 name: solid astronomical body part
 def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." []
 synonym: "geological feature" RELATED []
+synonym: "landform" RELATED []
 synonym: "physiographic feature" RELATED []
-is_a: ENVO:01000813 ! astronomical body part
+is_a: ENVO:01001784 ! compound astronomical body part
 intersection_of: ENVO:01000813 ! astronomical body part
 intersection_of: RO:0002473 ENVO:01000814 ! composed primarily of solid environmental material
 relationship: RO:0002473 ENVO:01000814 ! composed primarily of solid environmental material
@@ -1084,26 +1316,27 @@ synonym: "foreshore" RELATED []
 synonym: "inshore" RELATED []
 synonym: "rivage" RELATED []
 synonym: "seashore" RELATED []
-synonym: "SHORE" EXACT []
-synonym: "shore" EXACT []
 synonym: "shoreface" NARROW []
 synonym: "strand" RELATED []
-is_a: ENVO:00000191 ! solid astronomical body part
+is_a: ENVO:01001884 ! surface landform
 relationship: BFO:0000050 ENVO:01000687 ! part of coast
 relationship: RO:0002220 ENVO:00000063 ! adjacent to water body
 
 [Term]
 id: ENVO:00000309
-name: depression
+name: depressed landform
 def: "A landform sunken or depressed below the surrounding area." []
 synonym: "barrier basin" RELATED []
+synonym: "depression" BROAD []
 synonym: "depression" RELATED []
 synonym: "non tidal basin" RELATED []
 synonym: "pan" RELATED []
 synonym: "pan (geologic)" RELATED []
 synonym: "pans" RELATED []
 synonym: "tidal basin" RELATED []
-is_a: ENVO:00000191 ! solid astronomical body part
+is_a: ENVO:01001886 ! landform
+intersection_of: ENVO:01001886 ! landform
+intersection_of: RO:0000086 PATO:0001689 ! has quality decreased elevation
 relationship: BFO:0000051 ENVO:00002000 ! has part slope
 relationship: RO:0000086 PATO:0001689 ! has quality decreased elevation
 relationship: RO:0000086 PATO:0002143 ! has quality sloped downward
@@ -1111,11 +1344,37 @@ relationship: RO:0000086 PATO:0002143 ! has quality sloped downward
 [Term]
 id: ENVO:00000339
 name: piece of rock
-def: "An abiotic  mesoscopic feature made of the mineral material of the crust of the Earth." []
+def: "A mass of solid material which is composed primarily of rock." []
 is_a: ENVO:01001687 ! mass of solid material
 intersection_of: ENVO:01001687 ! mass of solid material
 intersection_of: RO:0002473 ENVO:00001995 ! composed primarily of rock
 relationship: RO:0002473 ENVO:00001995 ! composed primarily of rock
+
+[Term]
+id: ENVO:00000340
+name: particle of sand
+def: "A particle which 1) is composed primarily of and derived from rock or mineral sources and 2) is or was part of a portion of sand." []
+synonym: "grain of sand" EXACT []
+synonym: "granule of sand" EXACT []
+synonym: "sand granule" EXACT []
+is_a: ENVO:01003002 ! particle
+disjoint_from: ENVO:01000017 ! sand
+
+[Term]
+id: ENVO:00000343
+name: particle of silt
+def: "A particle which 1) is primarily composed of quartz or feldspar and 2) is or was part of a portion of silt." []
+synonym: "grain of silt" EXACT []
+synonym: "granule of silt" EXACT []
+is_a: ENVO:01003002 ! particle
+
+[Term]
+id: ENVO:00000344
+name: grain of desert sand
+is_a: ENVO:00000340 ! particle of sand
+intersection_of: ENVO:00000340 ! particle of sand
+intersection_of: BFO:0000050 ENVO:00005800 ! part of desert sand
+relationship: BFO:0000050 ENVO:00005800 ! part of desert sand
 
 [Term]
 id: ENVO:00000428
@@ -1159,7 +1418,7 @@ relationship: RO:0000086 PATO:0000386 ! has quality hard
 [Term]
 id: ENVO:00001998
 name: soil
-def: "Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms." []
+def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." []
 synonym: "regolith" BROAD []
 is_a: ENVO:00010483 ! environmental material
 relationship: BFO:0000050 ENVO:01000820 ! part of pedosphere
@@ -1169,6 +1428,7 @@ relationship: BFO:0000051 ENVO:01000017 ! has part sand
 relationship: BFO:0000051 ENVO:01000155 ! has part organic material
 relationship: BFO:0000051 ENVO:01000256 ! has part mineral material
 relationship: RO:0000086 PATO:0000984 ! has quality porous
+relationship: RO:0000091 ENVO:06105304 ! has disposition water-holding capacity of soil
 
 [Term]
 id: ENVO:00001999
@@ -1176,7 +1436,6 @@ name: marine water body
 def: "A significant accumulation of water which is part of a marine biome." []
 synonym: "body of marine water" EXACT []
 synonym: "marine waterbody" EXACT []
-is_a: ENVO:01000044 ! marine pelagic feature
 is_a: ENVO:01000617 ! lentic water body
 is_a: ENVO:01001308 ! hydroform
 relationship: BFO:0000050 ENVO:00000447 ! part of marine biome
@@ -1184,10 +1443,10 @@ relationship: BFO:0000050 ENVO:00000447 ! part of marine biome
 [Term]
 id: ENVO:00002000
 name: slope
-def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and  relatively flat surrounding land." []
+def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and relatively flat surrounding land." []
 synonym: "flank" RELATED []
 synonym: "side" RELATED []
-is_a: ENVO:00000191 ! solid astronomical body part
+is_a: ENVO:01001886 ! landform
 relationship: RO:0000086 PATO:0001481 ! has quality sloped
 
 [Term]
@@ -1226,8 +1485,8 @@ relationship: RO:0000086 PATO:0001759 ! has quality granular
 [Term]
 id: ENVO:00002008
 name: dust
-def: "Minute solid particles with diameters less than 500 micrometers. Occurs in and may be deposited from, the atmosphere." []
-is_a: ENVO:01000060 ! particulate matter
+def: "Particulate environmental material with diameters less than 500 micrometers." []
+is_a: ENVO:01000060 ! particulate environmental material
 is_a: ENVO:01000814 ! solid environmental material
 relationship: RO:0000086 PATO:0001824 ! has quality dry
 
@@ -1345,9 +1604,11 @@ is_a: ENVO:00002264 ! waste material
 [Term]
 id: ENVO:00002982
 name: clay
-def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." []
-is_a: ENVO:00010483 ! environmental material
+def: "Particulate environmental material which 1) is composed primarily of clay particles, with only minor proportions of other materials, 2) demonstrates plasticity when wet, and 3) is capable of hardening when dried or fired." []
+is_a: ENVO:01000060 ! particulate environmental material
 disjoint_from: ENVO:01000016 ! silt
+relationship: BFO:0000051 ENVO:01003003 ! has part particle of clay
+relationship: RO:0000053 PATO:0001759 ! has characteristic granular
 relationship: RO:0000086 PATO:0000984 ! has quality porous
 
 [Term]
@@ -1399,6 +1660,15 @@ intersection_of: RO:0001025 ENVO:00000106 ! located in grassland area
 relationship: RO:0001025 ENVO:00000106 ! located in grassland area
 
 [Term]
+id: ENVO:00005786
+name: upland soil
+def: "Soil which is part of some elevated land." []
+is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000176 ! part of elevated landform
+relationship: BFO:0000050 ENVO:00000176 ! part of elevated landform
+
+[Term]
 id: ENVO:00005800
 name: desert sand
 def: "Sand which is part of a desert." []
@@ -1413,6 +1683,7 @@ name: environmental material
 def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
 synonym: "portion of environmental material" EXACT []
 is_a: BFO:0000024 ! fiat object part
+relationship: RO:0002473 CHEBI:33839 ! composed primarily of macromolecule
 
 [Term]
 id: ENVO:00010504
@@ -1447,18 +1718,22 @@ is_obsolete: true
 [Term]
 id: ENVO:01000016
 name: silt
-def: "Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar." []
-is_a: ENVO:00010483 ! environmental material
+def: "Particulate environmental material which is primarily composed of silt particles." []
+is_a: ENVO:01000060 ! particulate environmental material
 disjoint_from: ENVO:01000017 ! sand
+relationship: BFO:0000051 ENVO:00000343 ! has part particle of silt
+relationship: RO:0000053 PATO:0000150 ! has characteristic texture
 relationship: RO:0000086 PATO:0000984 ! has quality porous
-relationship: RO:0000086 PATO:0001759 ! has quality granular
 
 [Term]
 id: ENVO:01000017
 name: sand
-def: "A naturally occurring granular material composed of finely divided rock and mineral particles." []
-is_a: ENVO:00010483 ! environmental material
-relationship: RO:0001000 ENVO:00001995 ! derives from rock
+def: "Particulate environmental material which is composed primarily of particles of sand with only minor proportions of other substances." []
+is_a: ENVO:01000060 ! particulate environmental material
+relationship: BFO:0000051 ENVO:00000340 ! has part particle of sand
+relationship: RO:0000053 PATO:0000150 ! has characteristic texture
+relationship: RO:0000053 PATO:0000984 ! has characteristic porous
+relationship: RO:0000053 PATO:0001759 ! has characteristic granular
 
 [Term]
 id: ENVO:01000023
@@ -1494,9 +1769,13 @@ is_a: ENVO:01000032 ! neritic pelagic zone biome
 
 [Term]
 id: ENVO:01000044
-name: marine pelagic feature
-def: "A prominent or distinctive aspect, quality, or characteristic of environments occurring within the marine water column." []
-is_a: ENVO:00000012 ! hydrographic feature
+name: obsolete marine pelagic feature
+def: "OBSOLETE A prominent or distinctive aspect, quality, or characteristic of environments occurring within the marine water column." []
+is_obsolete: true
+consider: ENVO:00001999
+consider: ENVO:01000686
+consider: ENVO:01001308
+consider: ENVO:01001479
 
 [Term]
 id: ENVO:01000048
@@ -1509,9 +1788,12 @@ relationship: RO:0002507 ENVO:00000015 ! determined by ocean
 
 [Term]
 id: ENVO:01000060
-name: particulate matter
-def: "Particulate material is an environmental material which is composed of microscopic portions of solid or liquid material suspended in another environmental material." []
+name: particulate environmental material
+def: "An environmental material which is composed primarily of particles." []
+synonym: "particulate matter" BROAD []
 is_a: ENVO:00010483 ! environmental material
+relationship: BFO:0000051 ENVO:01003002 ! has part particle
+relationship: RO:0000086 PATO:0001759 ! has quality granular
 
 [Term]
 id: ENVO:01000155
@@ -1699,11 +1981,10 @@ name: ice mass
 def: "A mass of water ice." []
 synonym: "accumulation of ice" BROAD []
 synonym: "ice accumulation" BROAD []
-is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01001687 ! mass of solid material
 intersection_of: ENVO:01001687 ! mass of solid material
 intersection_of: RO:0002473 ENVO:01000277 ! composed primarily of water ice
-relationship: BFO:0000050 ENVO:01000818 ! part of cryosphere
+relationship: BFO:0000050 ENVO:03000143 ! part of cryosphere
 relationship: RO:0002473 ENVO:01000277 ! composed primarily of water ice
 
 [Term]
@@ -1880,7 +2161,6 @@ relationship: RO:0002473 NCBITaxon:33090 ! composed primarily of Viridiplantae
 id: ENVO:01000406
 name: snow
 def: "Snow is an environmental material which is primarily composed of flakes of crystalline water ice." []
-is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:00010483 ! environmental material
 relationship: BFO:0000051 ENVO:00002005 ! has part air
 relationship: RO:0002353 ENVO:01000895 ! output of snowfall
@@ -2018,6 +2298,7 @@ id: ENVO:01000665
 name: waste role
 def: "A role that is realized in some process wherein the bearer is discarded or not utilized further." []
 is_a: BFO:0000023 ! role
+is_a: CHEBI:50906 ! role
 
 [Term]
 id: ENVO:01000676
@@ -2045,7 +2326,6 @@ relationship: RO:0002473 ENVO:00002006 ! composed primarily of liquid water
 id: ENVO:01000687
 name: coast
 def: "A coast is the area where land meets the sea, ocean, or lake." []
-is_a: ENVO:01001479 ! fluid astronomical body part
 is_a: ENVO:01001784 ! compound astronomical body part
 relationship: RO:0002131 ENVO:01000635 ! overlaps planetary landmass
 
@@ -2174,17 +2454,15 @@ relationship: RO:0000086 PATO:0001548 ! has quality quality of a liquid
 id: ENVO:01000817
 name: biosphere
 def: "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." []
-is_a: ENVO:01001479 ! fluid astronomical body part
 is_a: ENVO:01001784 ! compound astronomical body part
 relationship: BFO:0000051 PCO:0000000 ! has part collection of organisms
 
 [Term]
 id: ENVO:01000818
-name: cryosphere
+name: obsolete cryosphere
 def: "A cryosphere is that part of a planet which is primarily composed of water is in solid form." []
-is_a: ENVO:00000131 ! glacial feature
-is_a: ENVO:03000110 ! cryoform
-relationship: RO:0002473 ENVO:01000277 ! composed primarily of water ice
+is_obsolete: true
+replaced_by: ENVO:03000144
 
 [Term]
 id: ENVO:01000819
@@ -2197,7 +2475,6 @@ relationship: RO:0002473 ENVO:00002006 ! composed primarily of liquid water
 id: ENVO:01000820
 name: pedosphere
 def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." []
-is_a: ENVO:01001479 ! fluid astronomical body part
 is_a: ENVO:01001784 ! compound astronomical body part
 relationship: RO:0002131 ENVO:01000267 ! overlaps atmosphere
 relationship: RO:0002131 ENVO:01000646 ! overlaps lithosphere
@@ -2217,7 +2494,6 @@ id: ENVO:01000846
 name: water ice crystal
 def: "A crystal which is primarily composed of water ice." []
 synonym: "ice crystal" BROAD []
-is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000845 ! crystal
 relationship: RO:0002473 ENVO:01000277 ! composed primarily of water ice
 
@@ -2261,7 +2537,7 @@ relationship: RO:0002220 ENVO:01000323 ! adjacent to atmospheric boundary layer
 [Term]
 id: ENVO:01000895
 name: snowfall
-def: "A hydrological process in which irregular aggregates of snow fall to a planetary surface." []
+def: "A hydrological process in which irregular aggregates of snow fall to the surface of an astronomical body." []
 synonym: "snow fall" EXACT []
 is_a: ENVO:01000703 ! hydrological precipitation process
 relationship: RO:0000057 ENVO:01000406 ! has participant snow
@@ -2303,9 +2579,11 @@ relationship: RO:0000057 ENVO:01000815 ! has participant liquid environmental ma
 [Term]
 id: ENVO:01000982
 name: water flow process
-def: "A process during which a volume of water is transported due to a disequilibria in physical forces." []
-is_a: ENVO:01000981 ! mass liquid flow
+def: "A material transport process during which a volume of liquid water is transported due to a disequilibria in physical forces." []
 is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:03000010 ! material transport process
+intersection_of: ENVO:03000010 ! material transport process
+intersection_of: RO:0000057 ENVO:00002006 ! has participant liquid water
 relationship: RO:0000057 ENVO:00002006 ! has participant liquid water
 
 [Term]
@@ -2331,13 +2609,13 @@ relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 id: ENVO:01000996
 name: human-directed construction process
 def: "An process during which natural or manufactured materials and products are processed and arranged by humans or their technology into structures." []
+is_a: ENVO:02500027 ! anthropogenic environmental process
 is_a: OBI:0000011 ! planned process
 intersection_of: OBI:0000011 ! planned process
 intersection_of: RO:0002234 ENVO:00000070 ! has output human construction
 relationship: BFO:0000051 ENVO:03000010 ! has part material transport process
 relationship: BFO:0000051 ENVO:03000043 ! has part material transformation process
 relationship: RO:0002234 ENVO:00000070 ! has output human construction
-relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 
 [Term]
 id: ENVO:01000997
@@ -2382,6 +2660,7 @@ def: "An environmental system determined by an animal." []
 synonym: "animal environment" BROAD []
 synonym: "Metazoan-associated environment" EXACT []
 is_a: ENVO:01001000 ! environmental system determined by an organism
+is_a: ENVO:01001055 ! environment associated with an animal part or small animal
 intersection_of: ENVO:01000254 ! environmental system
 intersection_of: RO:0002507 NCBITaxon:33208 ! determined by Metazoa
 relationship: RO:0002507 NCBITaxon:33208 ! determined by Metazoa
@@ -2487,9 +2766,6 @@ id: ENVO:01001055
 name: environment associated with an animal part or small animal
 def: "An environmental system determined by part of a living or dead animal, or a whole small animal." []
 is_a: ENVO:01001110 ! ecosystem
-intersection_of: ENVO:01001110 ! ecosystem
-intersection_of: RO:0002507 CARO:0000006 ! determined by material anatomical entity
-relationship: RO:0002507 CARO:0000006 ! determined by material anatomical entity
 
 [Term]
 id: ENVO:01001057
@@ -2520,7 +2796,7 @@ name: particulate matter formation process
 def: "A process during which microscopic solid or liquid objects are formed." []
 synonym: "particle formation" RELATED []
 is_a: ENVO:03000043 ! material transformation process
-relationship: RO:0002234 ENVO:01000060 ! has output particulate matter
+relationship: RO:0002234 ENVO:01000060 ! has output particulate environmental material
 
 [Term]
 id: ENVO:01001085
@@ -2745,6 +3021,7 @@ id: ENVO:01001205
 name: lithification
 def: "A process during which sediments compact under pressure, expel connate fluids, and gradually become solid sedimentary rock." []
 is_a: ENVO:03000043 ! material transformation process
+is_a: GO:0008150 ! biological_process
 intersection_of: ENVO:03000043 ! material transformation process
 intersection_of: RO:0002233 ENVO:00002007 ! has input sediment
 intersection_of: RO:0002297 ENVO:00002016 ! results in formation of sedimentary rock
@@ -2856,8 +3133,8 @@ relationship: RO:0002473 ENVO:01000814 ! composed primarily of solid environment
 id: ENVO:01001276
 name: water ice layer
 def: "A solid layer which is primarily composed of some water-based ice." []
-is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01001275 ! solid layer
+is_a: ENVO:01001609 ! cryospheric layer
 intersection_of: ENVO:01001275 ! solid layer
 intersection_of: RO:0002473 ENVO:01000277 ! composed primarily of water ice
 relationship: RO:0002473 ENVO:01000277 ! composed primarily of water ice
@@ -2927,7 +3204,7 @@ is_a: ENVO:01001199 ! terrestrial environmental zone
 [Term]
 id: ENVO:01001308
 name: hydroform
-def: "A geographic feature which is primarily composed of a continuous volume of liquid water held in shape or sustained by an environmental process." []
+def: "A liquid astronomical body part which is primarily composed of a continuous volume of liquid water and is held in shape or sustained by an environmental process." []
 is_a: ENVO:01001477 ! liquid astronomical body part
 intersection_of: ENVO:01001477 ! liquid astronomical body part
 intersection_of: BFO:0000050 ENVO:00000063 ! part of water body
@@ -2979,6 +3256,11 @@ name: advective transport process
 def: "A material transport process during which a volume of material is displaced due to a disequilibrium in physical forces and during which 1) the qualities that inhere in that volume and 2) the processes that are unfolding within it are largely unchanged." []
 synonym: "advective transport" EXACT []
 is_a: ENVO:03000010 ! material transport process
+intersection_of: ENVO:03000010 ! material transport process
+intersection_of: RO:0000053 ENVO:01003012 ! has characteristic advective
+relationship: BFO:0000051 ENVO:01003010 ! has part convective transport process
+relationship: BFO:0000051 ENVO:01003013 ! has part material diffusion process
+relationship: RO:0000053 ENVO:01003012 ! has characteristic advective
 
 [Term]
 id: ENVO:01001346
@@ -2992,7 +3274,7 @@ relationship: RO:0000057 ENVO:01000638 ! has participant planetary crust
 id: ENVO:01001357
 name: desert
 def: "A landform which has been rendered barren or partially barren by environmental extremes, especially by low rainfall." []
-is_a: ENVO:00000191 ! solid astronomical body part
+is_a: ENVO:01001884 ! surface landform
 relationship: RO:0002131 ENVO:00000097 ! overlaps desert area
 
 [Term]
@@ -3030,6 +3312,7 @@ is_a: ENVO:02500027 ! anthropogenic environmental process
 [Term]
 id: ENVO:01001476
 name: body of liquid
+def: "A liquid astronomical body part which is continuous and is delimited by physical discontinuities or non-liquid boundaries." []
 is_a: ENVO:01001477 ! liquid astronomical body part
 
 [Term]
@@ -3062,6 +3345,7 @@ is_a: ENVO:01000813 ! astronomical body part
 id: ENVO:01001483
 name: surface of an astronomical body
 def: "A surface layer where the solid or liquid material of an astronomical body comes into contact with an atmosphere or outer space." []
+synonym: "land surface" RELATED []
 is_a: ENVO:00010504 ! surface layer
 intersection_of: ENVO:00010504 ! surface layer
 intersection_of: BFO:0000050 ENVO:01000799 ! part of astronomical body
@@ -3154,8 +3438,8 @@ name: cryospheric layer
 def: "A layer which is part of a cryosphere." []
 is_a: ENVO:01000281 ! layer
 intersection_of: ENVO:01000281 ! layer
-intersection_of: BFO:0000050 ENVO:01000818 ! part of cryosphere
-relationship: BFO:0000050 ENVO:01000818 ! part of cryosphere
+intersection_of: BFO:0000050 ENVO:03000143 ! part of cryosphere
+relationship: BFO:0000050 ENVO:03000143 ! part of cryosphere
 
 [Term]
 id: ENVO:01001614
@@ -3171,6 +3455,7 @@ id: ENVO:01001617
 name: snow accumulation process
 def: "A material accumulation process during which the mass of snow on a surface increases." []
 is_a: ENVO:03000009 ! material accumulation process
+is_a: GO:0008150 ! biological_process
 relationship: RO:0000057 ENVO:00010504 ! has participant surface layer
 relationship: RO:0000057 ENVO:01000406 ! has participant snow
 relationship: RO:0002297 ENVO:03000111 ! results in formation of snow mass
@@ -3187,6 +3472,7 @@ id: ENVO:01001619
 name: snow and ice accumulation process
 def: "A material accumulation process during which a accumulation of snow and ice forms or increases in mass." []
 is_a: ENVO:01001617 ! snow accumulation process
+is_a: ENVO:02500031 ! hydrological process
 intersection_of: ENVO:03000009 ! material accumulation process
 intersection_of: RO:0002297 ENVO:01001620 ! results in formation of mass of ice and snow
 relationship: RO:0002297 ENVO:01001620 ! results in formation of mass of ice and snow
@@ -3332,7 +3618,7 @@ relationship: RO:0002473 ENVO:00010483 ! composed primarily of environmental mat
 [Term]
 id: ENVO:01001687
 name: mass of solid material
-def: "An object which is composed primarily of a solid environmental material" []
+def: "An mass of environmental material which is composed primarily of a solid environmental material" []
 is_a: ENVO:01001686 ! mass of environmental material
 intersection_of: ENVO:01001686 ! mass of environmental material
 intersection_of: RO:0002473 ENVO:01000814 ! composed primarily of solid environmental material
@@ -3382,7 +3668,9 @@ is_a: ENVO:01001681 ! weather front
 [Term]
 id: ENVO:01001747
 name: mass fluid flow
+def: "An advective transport process during which a fluid moves." []
 is_a: ENVO:01001334 ! advective transport process
+relationship: RO:0000057 ENVO:02000140 ! has participant fluid environmental material
 
 [Term]
 id: ENVO:01001780
@@ -3411,7 +3699,7 @@ is_a: ENVO:01001785 ! land
 [Term]
 id: ENVO:01001784
 name: compound astronomical body part
-def: "A part of an astronomical body which is primarily composed of a continuous medium bearing liquid, gaseous, and solid material in varying quantities." []
+def: "A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities." []
 is_a: ENVO:01000813 ! astronomical body part
 
 [Term]
@@ -3515,6 +3803,69 @@ id: ENVO:01001865
 name: concentration of carbon dioxide in an atmosphere
 def: "The concentration of carbon dioxide when measured in air that is part of an atmosphere." []
 is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:01001884
+name: surface landform
+def: "A landform which occurs on the surface of an astronomical body." []
+synonym: "geographic feature" RELATED []
+is_a: ENVO:01001886 ! landform
+
+[Term]
+id: ENVO:01001886
+name: landform
+def: "A solid astronomical body part which has been formed from and is composed primarily of the matter of that astronomical body." []
+is_a: ENVO:00000191 ! solid astronomical body part
+
+[Term]
+id: ENVO:01003001
+name: water-holding capacity
+def: "A disposition of a material entity which is realised when it is saturated with liquid water." []
+is_a: BFO:0000016 ! disposition
+relationship: RO:0000052 BFO:0000040 ! characteristic of material entity
+
+[Term]
+id: ENVO:01003002
+name: particle
+def: "A mass of solid material which is either 1) a minute fragment of a larger mass or 2) one of a collection of small masses composing an aggregate." []
+synonym: "grain" RELATED []
+is_a: ENVO:01001687 ! mass of solid material
+relationship: BFO:0000050 ENVO:01000060 ! part of particulate environmental material
+
+[Term]
+id: ENVO:01003003
+name: particle of clay
+def: "A particle which 1) is composed primarily of hydrous aluminium phyllosilicate minerals, in turn composed of aluminium and silicon ions bonded into tiny, thin plates by interconnecting oxygen and hydroxide ions, and 2) is or was part of a portion of clay." []
+synonym: "clay particle" EXACT []
+is_a: ENVO:01003002 ! particle
+
+[Term]
+id: ENVO:01003010
+name: convective transport process
+def: "A material transport process which arises spontaneously due to physical heterogeneities in a portion of a material and forces which act throughout its volume." []
+is_a: ENVO:03000010 ! material transport process
+intersection_of: ENVO:03000010 ! material transport process
+intersection_of: RO:0000053 ENVO:01003011 ! has characteristic convective
+relationship: RO:0000053 ENVO:01003011 ! has characteristic convective
+
+[Term]
+id: ENVO:01003011
+name: convective
+def: "A physical quality of a process which is characteristic of processes that transport material within a volume due to the combined effects of material property heterogeneity and body forces across that volume." []
+is_a: PATO:0002062 ! physical quality of a process
+
+[Term]
+id: ENVO:01003012
+name: advective
+def: "A physical quality of a process which is characteristic of process that transport material without, themselves, changing the qualities of those materials or the processes that are unfolding within them." []
+is_a: PATO:0002062 ! physical quality of a process
+
+[Term]
+id: ENVO:01003013
+name: material diffusion process
+def: "A material transport process during which material moves from a region of higher concentration to a region of lower concentration." []
+synonym: "diffusion" BROAD []
+is_a: ENVO:03000010 ! material transport process
 
 [Term]
 id: ENVO:02000091
@@ -3694,7 +4045,7 @@ is_a: ENVO:02500000 ! environmental system process
 id: ENVO:03000015
 name: geographic basin
 def: "A depression which is part of a planetary crust, is of geographic scale, and is partially or completely enclosed." []
-is_a: ENVO:00000309 ! depression
+is_a: ENVO:00000309 ! depressed landform
 relationship: RO:0002131 ENVO:01000638 ! overlaps planetary crust
 
 [Term]
@@ -3713,7 +4064,7 @@ def: "A material accumulation process during which solid particles are pulled th
 is_a: ENVO:03000009 ! material accumulation process
 relationship: BFO:0000051 ENVO:01000875 ! has part precipitation process
 relationship: BFO:0000066 ENVO:00000063 ! occurs in water body
-relationship: RO:0000057 ENVO:01000060 ! has participant particulate matter
+relationship: RO:0000057 ENVO:01000060 ! has participant particulate environmental material
 relationship: RO:0002229 ENVO:03000010 ! ends material transport process
 
 [Term]
@@ -3735,7 +4086,7 @@ relationship: RO:0002233 ENVO:00002006 ! has input liquid water
 [Term]
 id: ENVO:03000110
 name: cryoform
-def: "A geographic feature which is primarily composed of a continuous mass of snow and/or ice." []
+def: "A solid astronomical body part which is primarily composed of a continuous mass of snow and/or ice." []
 is_a: ENVO:00000191 ! solid astronomical body part
 
 [Term]
@@ -3744,12 +4095,17 @@ name: snow mass
 def: "A mass of snow." []
 synonym: "accumulation of snow" BROAD []
 synonym: "snow accumulation" BROAD []
-is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01001691 ! mass of compounded environmental materials
 intersection_of: ENVO:01001691 ! mass of compounded environmental materials
 intersection_of: RO:0002473 ENVO:01000406 ! composed primarily of snow
 relationship: RO:0002354 ENVO:01001617 ! formed as result of snow accumulation process
 relationship: RO:0002473 ENVO:01000406 ! composed primarily of snow
+
+[Term]
+id: ENVO:03000143
+name: cryosphere
+def: "An astronomical body part which is composed primarily of environmental materials in their frozen form." []
+is_a: ENVO:01000813 ! astronomical body part
 
 [Term]
 id: ENVO:03520007
@@ -3768,7 +4124,7 @@ is_a: ENVO:00002114 ! chemically enriched sediment
 id: ENVO:04000003
 name: concentration of carbon dioxide in soil
 def: "The concentration of carbon dioxide when measured in soil." []
-is_a: PATO:0000033 ! concentration of
+is_a: ENVO:3200071 ! concentration of organic molecular entity in soil
 
 [Term]
 id: ENVO:04000004
@@ -3788,10 +4144,36 @@ name: soil surface layer
 def: "A surface layer which is composed primarily of soil." []
 is_a: ENVO:01001311 ! solid surface layer
 is_a: ENVO:01001483 ! surface of an astronomical body
+is_a: ENVO:06105266 ! soil layer
 intersection_of: ENVO:01001311 ! solid surface layer
 intersection_of: RO:0002473 ENVO:00001998 ! composed primarily of soil
 relationship: BFO:0000050 ENVO:01000820 ! part of pedosphere
+
+[Term]
+id: ENVO:06105266
+name: soil layer
+def: "A layer that is composed primarily of soil." []
+is_a: ENVO:01000281 ! layer
+intersection_of: ENVO:01000281 ! layer
+intersection_of: RO:0002473 ENVO:00001998 ! composed primarily of soil
 relationship: RO:0002473 ENVO:00001998 ! composed primarily of soil
+
+[Term]
+id: ENVO:06105271
+name: soil texture
+def: "Texture which inheres in soil." []
+is_a: PATO:0000150 ! texture
+intersection_of: PATO:0000150 ! texture
+intersection_of: RO:0000052 ENVO:00001998 ! characteristic of soil
+relationship: RO:0000052 ENVO:00001998 ! characteristic of soil
+
+[Term]
+id: ENVO:06105304
+name: water-holding capacity of soil
+def: "Water-holding capacity which inheres in some soil." []
+synonym: "soil water-holding capacity" EXACT []
+is_a: ENVO:01003001 ! water-holding capacity
+relationship: RO:0000052 ENVO:00001998 ! characteristic of soil
 
 [Term]
 id: ENVO:09000004
@@ -3885,14 +4267,51 @@ synonym: "water chloride concentration" EXACT []
 is_a: PATO:0000033 ! concentration of
 
 [Term]
+id: ENVO:09000022
+name: concentration of clay in soil
+def: "The concentration of a clay when measured in soil." []
+synonym: "soil clay concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:09000023
+name: concentration of slit in soil
+def: "The concentration of a slit when measured in soil." []
+synonym: "soil slit concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:09000024
+name: concentration of sand in soil
+def: "The concentration of a sand when measured in soil." []
+synonym: "soil sand concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:09000026
+name: concentration of liquid water in soil
+def: "The concentration of a liquid water when measured in soil." []
+synonym: "soil liquid water concentration" EXACT []
+synonym: "soil moisture content" EXACT []
+synonym: "soil water content" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:09000027
+name: concentration of salt in soil
+def: "The concentration of a salt when measured in soil." []
+synonym: "soil salt concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
 id: ENVO:09200000
 name: temperature of environmental material
 def: "The temperature of some environmental material." []
 synonym: "environmental material temperature" EXACT []
 is_a: PATO:0000146 ! temperature
 intersection_of: PATO:0000146 ! temperature
-intersection_of: RO:0000052 ENVO:00010483 ! inheres in environmental material
-relationship: RO:0000052 ENVO:00010483 ! inheres in environmental material
+intersection_of: RO:0000052 ENVO:00010483 ! characteristic of environmental material
+relationship: RO:0000052 ENVO:00010483 ! characteristic of environmental material
 
 [Term]
 id: ENVO:09200001
@@ -3901,8 +4320,8 @@ def: "The temperature of some air." []
 synonym: "air temperature" EXACT []
 is_a: ENVO:09200000 ! temperature of environmental material
 intersection_of: PATO:0000146 ! temperature
-intersection_of: RO:0000052 ENVO:00002005 ! inheres in air
-relationship: RO:0000052 ENVO:00002005 ! inheres in air
+intersection_of: RO:0000052 ENVO:00002005 ! characteristic of air
+relationship: RO:0000052 ENVO:00002005 ! characteristic of air
 
 [Term]
 id: ENVO:09200002
@@ -3911,8 +4330,8 @@ def: "The quality of a environmental system process." []
 synonym: "quality of environmental system process" EXACT []
 is_a: PATO:0001236 ! process quality
 intersection_of: PATO:0001236 ! process quality
-intersection_of: RO:0000052 ENVO:02500000 ! inheres in environmental system process
-relationship: RO:0000052 ENVO:02500000 ! inheres in environmental system process
+intersection_of: RO:0000052 ENVO:02500000 ! characteristic of environmental system process
+relationship: RO:0000052 ENVO:02500000 ! characteristic of environmental system process
 
 [Term]
 id: ENVO:09200004
@@ -3922,7 +4341,7 @@ synonym: "soil porosity" EXACT []
 is_a: ENVO:09200009 ! structure of soil
 is_a: PATO:0000973 ! porosity
 intersection_of: PATO:0000973 ! porosity
-intersection_of: RO:0000052 ENVO:00001998 ! inheres in soil
+intersection_of: RO:0000052 ENVO:00001998 ! characteristic of soil
 
 [Term]
 id: ENVO:09200008
@@ -3932,7 +4351,7 @@ synonym: "soil composition" EXACT []
 is_a: ENVO:09200009 ! structure of soil
 is_a: PATO:0000025 ! composition
 intersection_of: PATO:0000025 ! composition
-intersection_of: RO:0000052 ENVO:00001998 ! inheres in soil
+intersection_of: RO:0000052 ENVO:00001998 ! characteristic of soil
 
 [Term]
 id: ENVO:09200009
@@ -3941,8 +4360,8 @@ def: "The structure of some soil." []
 synonym: "soil structure" EXACT []
 is_a: PATO:0000141 ! structure
 intersection_of: PATO:0000141 ! structure
-intersection_of: RO:0000052 ENVO:00001998 ! inheres in soil
-relationship: RO:0000052 ENVO:00001998 ! inheres in soil
+intersection_of: RO:0000052 ENVO:00001998 ! characteristic of soil
+relationship: RO:0000052 ENVO:00001998 ! characteristic of soil
 
 [Term]
 id: ENVO:09200011
@@ -3951,8 +4370,8 @@ def: "The pressure of some air." []
 synonym: "air pressure" EXACT []
 is_a: PATO:0001025 ! pressure
 intersection_of: PATO:0001025 ! pressure
-intersection_of: RO:0000052 ENVO:00002005 ! inheres in air
-relationship: RO:0000052 ENVO:00002005 ! inheres in air
+intersection_of: RO:0000052 ENVO:00002005 ! characteristic of air
+relationship: RO:0000052 ENVO:00002005 ! characteristic of air
 
 [Term]
 id: ENVO:09200012
@@ -3961,8 +4380,8 @@ def: "The temperature of some soil." []
 synonym: "soil temperature" EXACT []
 is_a: ENVO:09200000 ! temperature of environmental material
 intersection_of: PATO:0000146 ! temperature
-intersection_of: RO:0000052 ENVO:00001998 ! inheres in soil
-relationship: RO:0000052 ENVO:00001998 ! inheres in soil
+intersection_of: RO:0000052 ENVO:00001998 ! characteristic of soil
+relationship: RO:0000052 ENVO:00001998 ! characteristic of soil
 
 [Term]
 id: ENVO:09200013
@@ -3971,8 +4390,8 @@ def: "The wetness of some soil." []
 synonym: "soil wetness" EXACT []
 is_a: PATO:0001822 ! wetness
 intersection_of: PATO:0001822 ! wetness
-intersection_of: RO:0000052 ENVO:00001998 ! inheres in soil
-relationship: RO:0000052 ENVO:00001998 ! inheres in soil
+intersection_of: RO:0000052 ENVO:00001998 ! characteristic of soil
+relationship: RO:0000052 ENVO:00001998 ! characteristic of soil
 
 [Term]
 id: ENVO:09200014
@@ -3981,8 +4400,8 @@ def: "The temperature of some water." []
 synonym: "water temperature" EXACT []
 is_a: ENVO:09200000 ! temperature of environmental material
 intersection_of: PATO:0000146 ! temperature
-intersection_of: RO:0000052 ENVO:00002006 ! inheres in liquid water
-relationship: RO:0000052 ENVO:00002006 ! inheres in liquid water
+intersection_of: RO:0000052 ENVO:00002006 ! characteristic of liquid water
+relationship: RO:0000052 ENVO:00002006 ! characteristic of liquid water
 
 [Term]
 id: ENVO:09200017
@@ -3991,8 +4410,38 @@ def: "The composition of some water." []
 synonym: "water composition" EXACT []
 is_a: PATO:0000025 ! composition
 intersection_of: PATO:0000025 ! composition
-intersection_of: RO:0000052 ENVO:00002006 ! inheres in liquid water
-relationship: RO:0000052 ENVO:00002006 ! inheres in liquid water
+intersection_of: RO:0000052 ENVO:00002006 ! characteristic of liquid water
+relationship: RO:0000052 ENVO:00002006 ! characteristic of liquid water
+
+[Term]
+id: ENVO:09200033
+name: pressure of atmospheric water vapour
+def: "The pressure of some atmospheric water vapour." []
+synonym: "atmospheric water vapour pressure" EXACT []
+is_a: PATO:0001025 ! pressure
+intersection_of: PATO:0001025 ! pressure
+intersection_of: RO:0000052 ENVO:01000268 ! characteristic of atmospheric water vapour
+relationship: RO:0000052 ENVO:01000268 ! characteristic of atmospheric water vapour
+
+[Term]
+id: ENVO:09200034
+name: porosity of snow
+def: "The porosity of some snow." []
+synonym: "snow porosity" EXACT []
+is_a: PATO:0000973 ! porosity
+intersection_of: PATO:0000973 ! porosity
+intersection_of: RO:0000052 ENVO:01000406 ! characteristic of snow
+relationship: RO:0000052 ENVO:01000406 ! characteristic of snow
+
+[Term]
+id: ENVO:09200035
+name: porosity of water ice
+def: "The porosity of some water ice." []
+synonym: "water ice porosity" EXACT []
+is_a: PATO:0000973 ! porosity
+intersection_of: PATO:0000973 ! porosity
+intersection_of: RO:0000052 ENVO:01000277 ! characteristic of water ice
+relationship: RO:0000052 ENVO:01000277 ! characteristic of water ice
 
 [Term]
 id: ENVO:2000045
@@ -4000,7 +4449,7 @@ name: hydrocarbon-based environmental material
 is_a: ENVO:00010483 ! environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
-relationship: RO:0000053 PATO:0015021 ! bearer of combustibility
+relationship: RO:0000053 PATO:0015021 ! has characteristic combustibility
 relationship: RO:0000087 CHEBI:33292 ! has role fuel
 relationship: RO:0002473 CHEBI:24632 ! composed primarily of hydrocarbon
 
@@ -4013,6 +4462,14 @@ intersection_of: ENVO:01000254 ! environmental system
 intersection_of: RO:0002509 UBERON:0001062 ! determined by part of anatomical entity
 relationship: BFO:0000050 ENVO:01001000 ! part of environmental system determined by an organism
 relationship: RO:0002509 UBERON:0001062 ! determined by part of anatomical entity
+
+[Term]
+id: ENVO:2100004
+name: integumental system environment
+is_a: ENVO:2100000 ! anatomical entity environment
+intersection_of: ENVO:2100000 ! anatomical entity environment
+intersection_of: RO:0002509 UBERON:0002416 ! determined by part of integumental system
+relationship: RO:0002509 UBERON:0002416 ! determined by part of integumental system
 
 [Term]
 id: ENVO:21001215
@@ -4043,8 +4500,43 @@ def: "The pressure of some water." []
 synonym: "water pressure" EXACT []
 is_a: PATO:0001025 ! pressure
 intersection_of: PATO:0001025 ! pressure
-intersection_of: RO:0000052 ENVO:00002006 ! inheres in liquid water
-relationship: RO:0000052 ENVO:00002006 ! inheres in liquid water
+intersection_of: RO:0000052 ENVO:00002006 ! characteristic of liquid water
+relationship: RO:0000052 ENVO:00002006 ! characteristic of liquid water
+
+[Term]
+id: ENVO:3100043
+name: concentration of carbon atom in sea water
+def: "The concentration of carbon atom when measured in sea water." []
+synonym: "sea water carbon atom concentration" EXACT []
+is_a: ENVO:09000009 ! concentration of carbon atom in water
+
+[Term]
+id: ENVO:3100060
+name: concentration of dioxygen in sea water
+def: "The concentration of dioxygen when measured in sea water." []
+synonym: "sea water dioxygen concentration" EXACT []
+is_a: ENVO:3100011 ! concentration of dioxygen in liquid water
+
+[Term]
+id: ENVO:3200060
+name: concentration of oxygen in soil
+def: "The concentration of oxygen when measured in soil." []
+synonym: "soil oxygen concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:3200065
+name: concentration of sodium molecular entity in soil
+def: "The concentration of sodium molecular entity when measured in soil." []
+synonym: "soil sodium molecular entity concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: ENVO:3200071
+name: concentration of organic molecular entity in soil
+def: "The concentration of organic molecular entity when measured in soil." []
+synonym: "soil organic molecular entity concentration" EXACT []
+is_a: PATO:0000033 ! concentration of
 
 [Term]
 id: GO:0008150
@@ -4055,6 +4547,9 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0016301
 
 [Term]
 id: NCBITaxon:1
@@ -4297,7 +4792,6 @@ is_a: NCBITaxon:207598 ! Homininae
 id: NCBITaxon:9606
 name: Homo sapiens
 synonym: "human" EXACT []
-synonym: "man" EXACT []
 is_a: NCBITaxon:9605 ! Homo
 
 [Term]
@@ -4418,6 +4912,12 @@ def: "A physical quality of the thermal energy of a system." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0000150
+name: texture
+def: "A morphologic quality inhering in a bearer by virtue of the bearer's relative size, organization and distribution of its surface elements or the representation or invention of the appearance of its surface; visual and tactile surface characteristics." []
+is_a: PATO:0000051 ! morphology
+
+[Term]
 id: PATO:0000386
 name: hard
 def: "A hardness quality of being rigid and resistant to pressure." []
@@ -4469,7 +4969,7 @@ is_a: PATO:0000973 ! porosity
 [Term]
 id: PATO:0000992
 name: viscosity
-def: "A physical quality of a liquid inhering in a bearer by virtue of the bearer's disposition to internal resistance to flow." []
+def: "A physical quality of a fluid inhering in a bearer by virtue of the bearer's disposition to internal resistance to flow." []
 is_a: PATO:0001548 ! quality of a liquid
 
 [Term]
@@ -4534,6 +5034,7 @@ id: PATO:0001300
 name: optical quality
 def: "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light." []
 is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
 
 [Term]
 id: PATO:0001305
@@ -4721,6 +5222,11 @@ def: "A quality inhering in a bearer by virtue of the bearer's being kept below 
 is_a: PATO:0000146 ! temperature
 
 [Term]
+id: PATO:0002062
+name: physical quality of a process
+is_a: PATO:0001236 ! process quality
+
+[Term]
 id: PATO:0002124
 name: laminar
 def: "A quality inhering in a bearer by virtue of the bearer's processing the form of a thin plate sheet or layer." []
@@ -4791,6 +5297,12 @@ is_a: PATO:0002305 ! increased object quality
 is_a: PATO:0015021 ! combustibility
 
 [Term]
+id: PATO:0070060
+name: quality of interaction of a substance with electromagnetic radiation
+def: "A quality of a substance on which or through which electromagnetic radiation impinges or traverses with respect to radiation. This substance quality changes the quality of the incident radiation with respect to any of: intensity, direction, scatter and wavelength." []
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
 id: PCO:0000000
 name: collection of organisms
 def: "A material entity that consists of two or more organisms, viruses, or viroids." []
@@ -4800,6 +5312,7 @@ is_a: PCO:0000031 ! organismal entity
 id: PCO:0000001
 name: population of organisms
 def: "A collection of organisms, all of the same species, that live in the same place." []
+is_a: CARO:0001010
 is_a: PCO:0000018 ! single-species collection of organisms
 relationship: RO:0002303 ENVO:01000739 ! has habitat habitat
 
@@ -4825,6 +5338,7 @@ is_a: PCO:0000000 ! collection of organisms
 id: PCO:0000031
 name: organismal entity
 def: "A material entity that is one or more organisms, viruses or viroids." []
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: PO:0000003
@@ -4879,10 +5393,340 @@ def: "A material entity consisting of multiple components that are causally inte
 is_a: BFO:0000040 ! material entity
 
 [Term]
+id: UBERON:0000061
+name: anatomical structure
+def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." []
+synonym: "biological structure" EXACT []
+synonym: "connected biological structure" EXACT []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000062
+name: organ
+def: "Anatomical structure that performs a specific function or group of functions [WP]." []
+synonym: "anatomical unit" RELATED []
+synonym: "body organ" RELATED []
+synonym: "element" RELATED []
+is_a: UBERON:0010000 ! multicellular anatomical structure
+relationship: BFO:0000050 UBERON:0000467 ! part of anatomical system
+
+[Term]
+id: UBERON:0000076
+name: external ectoderm
+def: "The surface (external) layer of ectoderm which begins to proliferate shortly after separation from the neuroectoderm." []
+synonym: "surface (external) ectoderm" EXACT []
+synonym: "surface ectoderm" EXACT []
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+relationship: BFO:0000050 UBERON:0000924 ! part of ectoderm
+
+[Term]
+id: UBERON:0000307
+name: blastula
+def: "Organism at the blastula stage - an early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." []
+synonym: "blastosphere" RELATED []
+synonym: "blastula embryo" EXACT []
+is_a: UBERON:0000922 ! embryo
+relationship: RO:0002202 UBERON:0007010 ! develops from cleaving embryo
+
+[Term]
+id: UBERON:0000465
+name: material anatomical entity
+def: "Anatomical entity that has mass." []
+is_a: BFO:0000040 ! material entity
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000467
+name: anatomical system
+def: "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function." []
+synonym: "anatomical systems" RELATED []
+synonym: "body system" EXACT []
+synonym: "connected anatomical system" EXACT []
+synonym: "organ system" EXACT []
+synonym: "system" BROAD []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: BFO:0000050 UBERON:0000468 ! part of multicellular organism
+relationship: BFO:0000051 UBERON:0000062 ! has part organ
+
+[Term]
+id: UBERON:0000468
+name: multicellular organism
+def: "Anatomical structure that is an individual member of a species and consists of more than one cell." []
+synonym: "body" RELATED []
+synonym: "Koerper" RELATED []
+synonym: "multi-cellular organism" EXACT []
+synonym: "organism" BROAD []
+synonym: "whole body" RELATED []
+synonym: "whole organism" RELATED []
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000476
+name: acellular anatomical structure
+def: "Anatomical structure that consists of cell parts and cell substances and together does not constitute a cell or a tissue." []
+synonym: "acellular anatomical structures" RELATED []
+is_a: UBERON:0000061 ! anatomical structure
+disjoint_from: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000477
+name: anatomical cluster
+def: "Anatomical group that has its parts adjacent to one another." []
+is_a: UBERON:0034923 ! disconnected anatomical group
+
+[Term]
+id: UBERON:0000479
+name: tissue
+def: "Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation." []
+synonym: "portion of tissue" EXACT []
+synonym: "simple tissue" NARROW []
+synonym: "tissue portion" EXACT []
+is_a: UBERON:0010000 ! multicellular anatomical structure
+relationship: BFO:0000050 UBERON:0000468 ! part of multicellular organism
+
+[Term]
+id: UBERON:0000483
+name: epithelium
+def: "Portion of tissue, that consists of one or more layers of epithelial cells connected to each other by cell junctions and which is underlain by a basal lamina. Examples: simple squamous epithelium, glandular cuboidal epithelium, transitional epithelium, myoepithelium[CARO]." []
+synonym: "epithelial tissue" EXACT []
+synonym: "portion of epithelium" EXACT []
+is_a: UBERON:0000479 ! tissue
+union_of: UBERON:0000486 ! multilaminar epithelium
+union_of: UBERON:0000490 ! unilaminar epithelium
+relationship: BFO:0000051 UBERON:0005769 ! has part basement membrane of epithelium
+
+[Term]
+id: UBERON:0000486
+name: multilaminar epithelium
+def: "Epithelium which consists of more than one layer of epithelial cells that may or may not be in contact with a basement membrane. Examples: keratinized stratified squamous epithelium, ciliated stratified columnar epithelium.[FMA]." []
+synonym: "laminated epithelium" RELATED []
+synonym: "stratified epithelium" EXACT []
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0000490
+name: unilaminar epithelium
+def: "Epithelium which consists of a single layer of epithelial cells. Examples: endothelium, mesothelium, glandular squamous epithelium.[FMA]." []
+synonym: "simple epithelium" EXACT []
+synonym: "unilaminar epithelia" RELATED []
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0000922
+name: embryo
+def: "Anatomical entity that comprises the organism in the early stages of growth and differentiation that are characterized by cleavage, the laying down of fundamental tissues, and the formation of primitive organs and organ systems. For example, for mammals, the process would begin with zygote formation and end with birth. For insects, the process would begin at zygote formation and end with larval hatching. For plant zygotic embryos, this would be from zygote formation to the end of seed dormancy. For plant vegetative embryos, this would be from the initial determination of the cell or group of cells to form an embryo until the point when the embryo becomes independent of the parent plant." []
+synonym: "developing organism" RELATED []
+synonym: "developmental tissue" RELATED []
+synonym: "embryonic organism" EXACT []
+is_a: UBERON:0000468 ! multicellular organism
+
+[Term]
+id: UBERON:0000923
+name: germ layer
+def: "A layer of cells produced during the process of gastrulation during the early development of the animal embryo, which is distinct from other such layers of cells, as an early step of cell differentiation. The three types of germ layers are the endoderm, ectoderm, and mesoderm." []
+synonym: "embryonic germ layer" RELATED []
+synonym: "embryonic germ layers" RELATED []
+synonym: "embryonic tissue" BROAD []
+synonym: "germinal layer" EXACT []
+synonym: "primary germ layer" NARROW []
+is_a: UBERON:0010316 ! germ layer / neural crest
+
+[Term]
+id: UBERON:0000924
+name: ectoderm
+def: "Primary germ layer that is the outer of the embryo's three germ layers and gives rise to epidermis and neural tissue." []
+synonym: "embryonic ectoderm" EXACT []
+is_a: UBERON:0000923 ! germ layer
+relationship: RO:0002202 UBERON:0006601 ! develops from presumptive ectoderm
+relationship: RO:0002495 UBERON:0006601 ! immediate transformation of presumptive ectoderm
+
+[Term]
 id: UBERON:0001062
 name: anatomical entity
 def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." []
 is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: UBERON:0002050
+name: embryonic structure
+def: "Anatomical structure that is part of an embryo." []
+synonym: "developing embryonic structure" EXACT []
+synonym: "developing structure" RELATED []
+synonym: "embryonale Struktur" RELATED []
+synonym: "embryonic anatomical structure" EXACT []
+synonym: "embryonic structures" RELATED []
+is_a: UBERON:0005423 ! developing anatomical structure
+intersection_of: UBERON:0005423 ! developing anatomical structure
+intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
+relationship: BFO:0000050 UBERON:0000922 ! part of embryo
+
+[Term]
+id: UBERON:0002416
+name: integumental system
+def: "Connected anatomical system that forms a barrier between an animal and its environment. In vertebrates, the integumental system consists of the epidermis, dermis plus associated glands and adnexa such as hair and scales. In invertebrates, the integumental system may include cuticle." []
+synonym: "body surface" RELATED []
+synonym: "dermal system" RELATED []
+synonym: "external covering of organism" RELATED []
+synonym: "integumentary system" EXACT []
+synonym: "integumentum commune" RELATED []
+synonym: "organism surface" RELATED []
+synonym: "surface" RELATED []
+is_a: CARO:0000000
+is_a: UBERON:0000467 ! anatomical system
+relationship: BFO:0000051 UBERON:0007376 ! has part outer epithelium
+
+[Term]
+id: UBERON:0002532
+name: epiblast (generic)
+def: "In amniote animal embryology, the epiblast is a tissue type derived either from the inner cell mass in mammals or the blastodisc in birds and reptiles. It lies above the hypoblast. In mammalian embryogenesis, the columnar cells of the epiblast are adjacent to the trophoblast, while the cuboidal cells of the hypoblast are closer to the blastocoele. The epiblast, whilst referred to as the primary ectoderm, differentiates to form all three layers of the trilaminar germ disc in a process called gastrulation[WP]. The outer of the two layers of the blastoderm that form during gastrulation, corresponding to primitive ectoderm during gastrulation and to the definitive ectoderm after gastrulation[ZFA]." []
+synonym: "blastocyst" RELATED []
+synonym: "ectoblast" RELATED []
+synonym: "epiblast" EXACT []
+synonym: "epiblastus" RELATED []
+synonym: "primitive ectoderm" RELATED []
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003102
+name: surface structure
+def: "Anatomical structure that overlaps the outer epithelial layer and is adjacent to the space surrounding the organism." []
+synonym: "anatomical surface feature" EXACT []
+synonym: "surface feature" RELATED []
+synonym: "surface region" RELATED []
+synonym: "surface structures" RELATED []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0004121
+name: ectoderm-derived structure
+def: "An anatomical structure that develops (entirely or partially) from the ectoderm." []
+synonym: "ectodermal deriviative" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: RO:0002202 UBERON:0000924 ! develops from ectoderm
+relationship: RO:0002202 UBERON:0000924 ! develops from ectoderm
+
+[Term]
+id: UBERON:0005291
+name: embryonic tissue
+def: "A portion of tissue that is part of an embryo." []
+synonym: "developing tissue" RELATED []
+synonym: "portion of embryonic tissue" EXACT []
+is_a: UBERON:0000479 ! tissue
+intersection_of: UBERON:0000479 ! tissue
+intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
+relationship: BFO:0000050 UBERON:0002050 ! part of embryonic structure
+
+[Term]
+id: UBERON:0005423
+name: developing anatomical structure
+synonym: "developing structure" RELATED []
+synonym: "developmental structure" RELATED []
+synonym: "developmental tissue" RELATED []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0005764
+name: acellular membrane
+def: "An acellular anatomical structure that is the bounding layer of a anatomical structure." []
+is_a: UBERON:0000476 ! acellular anatomical structure
+relationship: BFO:0000050 UBERON:0000061 ! part of anatomical structure
+
+[Term]
+id: UBERON:0005769
+name: basement membrane of epithelium
+def: "An acellular membrane that is part of the epithelium, lies adjacent to the epithelial cells, and is the fusion of the the basal lamina and the reticular lamina." []
+synonym: "basement membrane" RELATED []
+synonym: "basement membrane of connective tissue" EXACT []
+synonym: "membrana basalis" EXACT []
+is_a: UBERON:0005764 ! acellular membrane
+relationship: BFO:0000050 UBERON:0000483 ! part of epithelium
+
+[Term]
+id: UBERON:0006598
+name: presumptive structure
+def: "Portion of embryonic tissue determined by fate mapping to become a structure." []
+synonym: "future structure" EXACT []
+synonym: "presumptive structures" EXACT []
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0006601
+name: presumptive ectoderm
+def: "Presumptive structure of the blastula that will develop into ectoderm." []
+synonym: "presumptive epidermis" RELATED []
+is_a: UBERON:0006598 ! presumptive structure
+relationship: BFO:0000050 UBERON:0000307 ! part of blastula
+
+[Term]
+id: UBERON:0006612
+name: shell
+def: "A rigid covering that envelops an object." []
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: BFO:0000050 UBERON:0002416 ! part of integumental system
+
+[Term]
+id: UBERON:0007010
+name: cleaving embryo
+def: "Organism at the cleavage stage." []
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:0007376
+name: outer epithelium
+def: "The epidermis is the entire outer epithelial layer of an animal, it may be a single layer that produces an extracellular material (e.g. the cuticle of arthropods) or a complex stratified squamous epithelium, as in the case of many vertebrate species[GO]." []
+synonym: "epidermis" EXACT []
+synonym: "epidermis (sensu Metazoa)" EXACT []
+synonym: "hypoderm" RELATED []
+synonym: "hypodermis" RELATED []
+synonym: "outer epidermal layer" EXACT []
+synonym: "outer epithelial layer" EXACT []
+is_a: UBERON:0003102 ! surface structure
+is_a: UBERON:0010371 ! ecto-epithelium
+relationship: RO:0002202 UBERON:0007383 ! develops from enveloping layer of ectoderm
+
+[Term]
+id: UBERON:0007383
+name: enveloping layer of ectoderm
+def: "Outermost layer of cells surrounding the embryo." []
+synonym: "enveloping layer" EXACT []
+synonym: "EVL" EXACT []
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+relationship: RO:0002202 UBERON:0000076 ! develops from external ectoderm
+
+[Term]
+id: UBERON:0010000
+name: multicellular anatomical structure
+def: "An anatomical structure that has more than one cell as a part." []
+synonym: "multicellular structure" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0010316
+name: germ layer / neural crest
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005291 ! embryonic tissue
+relationship: RO:0002202 UBERON:0002532 ! develops from epiblast (generic)
+
+[Term]
+id: UBERON:0010371
+name: ecto-epithelium
+def: "Epithelium composed of cells that develops from the ectoderm[FMA,modified]." []
+synonym: "ectoderm-derived epithelium" EXACT []
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004121 ! ectoderm-derived structure
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: RO:0002202 UBERON:0000924 ! develops from ectoderm
+
+[Term]
+id: UBERON:0034923
+name: disconnected anatomical group
+def: "Material anatomical entity consisting of multiple anatomical structures that are not connected to each other." []
+is_a: UBERON:0000465 ! material anatomical entity
+relationship: BFO:0000051 UBERON:0000061 ! has part anatomical structure
 
 [Typedef]
 id: BFO:0000050
@@ -4900,15 +5744,35 @@ is_transitive: true
 is_a: RO:0002131 ! overlaps
 
 [Typedef]
+id: BFO:0000062
+name: preceded by
+def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: BFO:0000050 BFO:0000062
+is_transitive: true
+is_a: RO:0002086 ! ends after
+inverse_of: BFO:0000063 ! precedes
+
+[Typedef]
 id: BFO:0000063
 name: precedes
 def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: BFO:0000050 BFO:0000063
+is_transitive: true
 is_a: RO:0002222 ! temporally related to
 
 [Typedef]
 id: BFO:0000066
 name: occurs in
 def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000004 ! independent continuant
+holds_over_chain: BFO:0000050 BFO:0000066
+inverse_of: BFO:0000067 ! contains process
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: BFO:0000067
@@ -4921,64 +5785,248 @@ name: partially_surrounded_by
 def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
 
 [Typedef]
+id: ENVO:01003004
+name: derives from part of
+def: "A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity." []
+
+[Typedef]
 id: RO:0000052
-name: inheres in
-def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
-is_a: RO:0002314 ! inheres in part of
+name: characteristic of
+def: "a relation between a specifically dependent continuant (the characteristic) and any other entity (the bearer), in which the characteristic depends on the bearer for its existence." []
+is_functional: true
+is_a: RO:0002314 ! characteristic of part of
+inverse_of: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000053
-name: bearer of
-def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
+name: has characteristic
+def: "Inverse of characteristic_of" []
+range: BFO:0000020 ! specifically dependent continuant
+is_inverse_functional: true
 
 [Typedef]
 id: RO:0000056
 name: participates in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
+domain: BFO:0000002 ! continuant
+range: BFO:0000003 ! occurrent
+inverse_of: RO:0000057 ! has participant
 
 [Typedef]
 id: RO:0000057
 name: has participant
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000002 ! continuant
+holds_over_chain: BFO:0000051 RO:0000057
+
+[Typedef]
+id: RO:0000079
+name: function of
+def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
+domain: BFO:0000034 ! function
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000085 ! has function
+
+[Typedef]
+id: RO:0000080
+name: quality of
+def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000086 ! has quality
+
+[Typedef]
+id: RO:0000081
+name: role of
+def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
+is_a: RO:0000052 ! characteristic of
+inverse_of: RO:0000087 ! has role
+
+[Typedef]
+id: RO:0000085
+name: has function
+def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000034 ! function
+is_a: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000086
 name: has quality
 def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
-is_a: RO:0000053 ! bearer of
+range: BFO:0000019 ! quality
+is_a: RO:0000053 ! has characteristic
 
 [Typedef]
 id: RO:0000087
 name: has role
 def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
-is_a: RO:0000053 ! bearer of
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000023 ! role
+is_a: RO:0000053 ! has characteristic
+
+[Typedef]
+id: RO:0000091
+name: has disposition
+def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000016 ! disposition
+is_a: RO:0000053 ! has characteristic
+inverse_of: RO:0000092 ! disposition of
+
+[Typedef]
+id: RO:0000092
+name: disposition of
+def: "inverse of has disposition" []
+is_a: RO:0000052 ! characteristic of
 
 [Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+is_a: ENVO:01003004 ! derives from part of
+inverse_of: RO:0001001 ! derives into
+
+[Typedef]
+id: RO:0001001
+name: derives into
+def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+
+[Typedef]
+id: RO:0001015
+name: location of
+def: "a relation between two independent continuants, the location and the target, in which the target is entirely within the location" []
+is_transitive: true
+inverse_of: RO:0001025 ! located in
+
+[Typedef]
+id: RO:0001018
+name: contained in
+domain: BFO:0000040 ! material entity
+range: BFO:0000004 ! independent continuant
+holds_over_chain: RO:0001025 BFO:0000050
+inverse_of: RO:0001019 ! contains
+
+[Typedef]
+id: RO:0001019
+name: contains
 
 [Typedef]
 id: RO:0001025
 name: located in
 def: "a relation between two independent continuants, the target and the location, in which the target is entirely within the location" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_transitive: true
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002007
 name: bounding layer of
 def: "X outer_layer_of Y iff:\n. X :continuant that bearer_of some PATO:laminar\n. X part_of Y\n. exists Z :surface\n. X has_boundary Z\n. Z boundary_of Y\n\nhas_boundary: http://purl.obolibrary.org/obo/RO_0002002\nboundary_of: http://purl.obolibrary.org/obo/RO_0002000" []
+range: BFO:0000040 ! material entity
 is_a: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002013
+name: has regulatory component activity
+def: "A 'has regulatory component activity' B if A and B are GO molecular functions (GO_0003674), A has_component B and A is regulated by B." []
+is_a: RO:0002017 ! has component activity
+is_a: RO:0002334 ! regulated by
+
+[Typedef]
+id: RO:0002014
+name: has negative regulatory component activity
+def: "A relationship that holds between a GO molecular function and a component of that molecular function that negatively regulates the activity of the whole.  More formally, A 'has regulatory component activity' B iff :A and B are GO molecular functions (GO_0003674), A has_component B and A is negatively regulated by B." []
+is_a: RO:0002013 ! has regulatory component activity
+is_a: RO:0002335 ! negatively regulated by
+
+[Typedef]
+id: RO:0002015
+name: has positive regulatory component activity
+def: "A relationship that holds between a GO molecular function and a component of that molecular function that positively regulates the activity of the whole.  More formally, A 'has regulatory component activity' B iff :A and B are GO molecular functions (GO_0003674), A has_component B and A is positively regulated by B." []
+is_a: RO:0002013 ! has regulatory component activity
+is_a: RO:0002336 ! positively regulated by
+
+[Typedef]
+id: RO:0002017
+name: has component activity
+is_a: RO:0002018 ! has component process
+
+[Typedef]
+id: RO:0002018
+name: has component process
+def: "w 'has process component' p if p and w are processes,  w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
+domain: BFO:0000015 ! process
+range: BFO:0000015 ! process
+is_a: RO:0002180 ! has component
+
+[Typedef]
+id: RO:0002022
+name: directly regulated by
+is_a: RO:0002334 ! regulated by
+inverse_of: RO:0002578 ! directly regulates
+
+[Typedef]
+id: RO:0002023
+name: directly negatively regulated by
+def: "Process(P2) is directly negatively regulated by process(P1) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P2 directly negatively regulated by P1." []
+is_a: RO:0002022 ! directly regulated by
+inverse_of: RO:0002630 ! directly negatively regulates
+
+[Typedef]
+id: RO:0002024
+name: directly positively regulated by
+def: "Process(P2) is directly postively regulated by process(P1) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P2 is directly postively regulated by P1." []
+is_a: RO:0002022 ! directly regulated by
+inverse_of: RO:0002629 ! directly positively regulates
+
+[Typedef]
+id: RO:0002025
+name: has effector activity
+def: "A 'has effector activity' B if A and B are GO molecular functions (GO_0003674),  A 'has component activity' B and B is the effector (output function) of B.  Each compound function has only one effector activity." []
+is_functional: true
+is_a: RO:0002017 ! has component activity
 
 [Typedef]
 id: RO:0002084
 name: during which ends
+is_a: RO:0002222 ! temporally related to
+inverse_of: RO:0002093 ! ends during
+
+[Typedef]
+id: RO:0002086
+name: ends after
+holds_over_chain: RO:0002093 BFO:0000062
+is_transitive: true
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
+id: RO:0002087
+name: immediately preceded by
+is_a: BFO:0000062 ! preceded by
+inverse_of: RO:0002090 ! immediately precedes
+
+[Typedef]
+id: RO:0002090
+name: immediately precedes
+is_a: BFO:0000063 ! precedes
+
+[Typedef]
+id: RO:0002093
+name: ends during
 is_a: RO:0002222 ! temporally related to
 
 [Typedef]
 id: RO:0002131
 name: overlaps
 def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
+holds_over_chain: BFO:0000050 BFO:0000050
+holds_over_chain: BFO:0000051 BFO:0000050
+holds_over_chain: BFO:0000051 RO:0002131
+is_symmetric: true
 is_a: RO:0002323 ! mereotopologically related to
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002163
@@ -4993,27 +6041,128 @@ def: "w 'has component' p if w 'has part' p and w is such that it can be directl
 is_a: BFO:0000051 ! has part
 
 [Typedef]
+id: RO:0002202
+name: develops from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_transitive: true
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002203 ! develops into
+
+[Typedef]
+id: RO:0002203
+name: develops into
+def: "inverse of develops from" []
+is_transitive: true
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002387 ! has potential to develop into
+is_a: RO:0002388 ! has potential to directly develop into
+
+[Typedef]
+id: RO:0002207
+name: directly develops from
+def: "Candidate definition: x directly_develops from y if and only if there exists some developmental process (GO:0032502) p such that x and y both participate in p, and x is the output of p and y is the input of p, and a substantial portion of the matter of x comes from y, and the start of x is coincident with or after the end of y." []
+is_a: RO:0002202 ! develops from
+inverse_of: RO:0002210 ! directly develops into
+
+[Typedef]
+id: RO:0002210
+name: directly develops into
+def: "inverse of directly develops from" []
+is_a: RO:0002203 ! develops into
+
+[Typedef]
 id: RO:0002211
 name: regulates
 name: regulates (processual)
-def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
+def: "p regulates q iff p is causally upstream of q, the execution of p is not constant and varies according to specific conditions, and p influences the rate or magnitude of execution of q due to an effect either on some enabler of q or some enabler of a part of q." []
+domain: BFO:0000015 ! process
+range: BFO:0000015 ! process
+holds_over_chain: RO:0002230 RO:0002211
+holds_over_chain: RO:0002578 RO:0002578
+is_transitive: true
 is_a: RO:0002411 ! causally upstream of
+inverse_of: RO:0002334 ! regulated by
+transitive_over: RO:0002025 ! has effector activity
+
+[Typedef]
+id: RO:0002212
+name: negatively regulates
+def: "p negatively regulates q iff p regulates q, and p decreases the rate or magnitude of execution of q." []
+holds_over_chain: RO:0002230 RO:0002212
+is_a: RO:0002211 ! regulates (processual)
+is_a: RO:0002305 ! causally upstream of, negative effect
+inverse_of: RO:0002335 ! negatively regulated by
+
+[Typedef]
+id: RO:0002213
+name: positively regulates
+def: "p positively regulates q iff p regulates q, and p increases the rate or magnitude of execution of q." []
+holds_over_chain: RO:0002212 RO:0002212
+holds_over_chain: RO:0002230 RO:0002213
+is_transitive: true
+is_a: RO:0002211 ! regulates (processual)
+is_a: RO:0002304 ! causally upstream of, positive effect
+inverse_of: RO:0002336 ! positively regulated by
+
+[Typedef]
+id: RO:0002215
+name: capable of
+def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000015 ! process
+is_a: RO:0002216 ! capable of part of
+
+[Typedef]
+id: RO:0002216
+name: capable of part of
+def: "c stands in this relationship to p if and only if there exists some p' such that c is capable_of p', and p' is part_of p." []
+holds_over_chain: RO:0002215 BFO:0000050
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002500 ! causal agent in process
 
 [Typedef]
 id: RO:0002219
 name: surrounded by
 def: "x surrounded_by y if and only if (1) x is adjacent to y and for every region r that is adjacent to x, r overlaps y (2) the shared boundary between x and y occupies the majority of the outermost boundary of x" []
 is_a: RO:0002220 ! adjacent to
+inverse_of: RO:0002221 ! surrounds
 
 [Typedef]
 id: RO:0002220
 name: adjacent to
 def: "x adjacent to y if and only if x and y share a boundary." []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
 is_a: RO:0002163 ! spatially disjoint from
+
+[Typedef]
+id: RO:0002221
+name: surrounds
+def: "inverse of surrounded by" []
+is_a: RO:0002220 ! adjacent to
 
 [Typedef]
 id: RO:0002222
 name: temporally related to
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+
+[Typedef]
+id: RO:0002225
+name: develops from part of
+def: "x develops from part of y if and only if there exists some z such that x develops from z and z is part of y" []
+holds_over_chain: RO:0002207 BFO:0000050
+is_a: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002226
+name: develops in
+def: "x develops_in y if x is located in y whilst x is developing" []
+domain: CARO:0000000
+holds_over_chain: RO:0002207 RO:0001025
+is_a: RO:0002258 ! developmentally preceded by
 
 [Typedef]
 id: RO:0002229
@@ -5021,23 +6170,101 @@ name: ends
 def: "inverse of ends with" []
 is_a: BFO:0000050 ! part of
 is_a: RO:0002222 ! temporally related to
+inverse_of: RO:0002230 ! ends with
+
+[Typedef]
+id: RO:0002230
+name: ends with
+def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: α(y) > α(x) ∧ ω(y) = ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+is_transitive: true
+is_a: BFO:0000051 ! has part
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
+id: RO:0002232
+name: has end location
+def: "x 'has end location' y if and only if there exists some process z such that x 'ends with' z and z 'occurs in' y" []
+domain: BFO:0000015 ! process
+range: BFO:0000004 ! independent continuant
+holds_over_chain: RO:0002230 BFO:0000066
+is_a: RO:0002479 ! has part that occurs in
 
 [Typedef]
 id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
+domain: BFO:0000015 ! process
 is_a: RO:0000057 ! has participant
+inverse_of: RO:0002352 ! input of
 
 [Typedef]
 id: RO:0002234
 name: has output
-def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p." []
+def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present in the same state at the beginning of p." []
+holds_over_chain: RO:0002230 RO:0002234
 is_a: RO:0000057 ! has participant
+inverse_of: RO:0002353 ! output of
+
+[Typedef]
+id: RO:0002254
+name: has developmental contribution from
+def: "x has developmental contribution from y iff x has some part z such that z develops from y" []
+domain: CARO:0000000
+range: CARO:0000000
+holds_over_chain: BFO:0000051 RO:0002202
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002255 ! developmentally contributes to
+
+[Typedef]
+id: RO:0002255
+name: developmentally contributes to
+def: "inverse of has developmental contribution from" []
+holds_over_chain: RO:0002203 BFO:0000050
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002385 ! has potential to developmentally contribute to
+
+[Typedef]
+id: RO:0002258
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
+is_a: RO:0002324 ! developmentally related to
+inverse_of: RO:0002286 ! developmentally succeeded by
+
+[Typedef]
+id: RO:0002263
+name: acts upstream of
+def: "c acts upstream of p if and only if c enables some f that is involved in p' and p' occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p' are processes." []
+holds_over_chain: RO:0002327 RO:0002411
+is_a: RO:0002264 ! acts upstream of or within
+
+[Typedef]
+id: RO:0002264
+name: acts upstream of or within
+def: "c acts upstream of or within p if c is enables f, and f is causally upstream of or within p. c is a material entity and p is an process." []
+synonym: "affects" RELATED []
+holds_over_chain: RO:0002327 RO:0002418
+is_a: RO:0002500 ! causal agent in process
+
+[Typedef]
+id: RO:0002286
+name: developmentally succeeded by
+def: "Inverse of developmentally preceded by" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002287
+name: part of developmental precursor of
+holds_over_chain: BFO:0000050 RO:0002210
+is_a: RO:0002286 ! developmentally succeeded by
 
 [Typedef]
 id: RO:0002295
 name: results in developmental progression of
-def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
+def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical entity and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
+domain: GO:0008150 ! biological_process
+range: CARO:0000000
 is_a: RO:0002324 ! developmentally related to
 
 [Typedef]
@@ -5045,18 +6272,37 @@ id: RO:0002297
 name: results in formation of
 is_a: RO:0002234 ! has output
 is_a: RO:0002295 ! results in developmental progression of
+inverse_of: RO:0002354 ! formed as result of
 
 [Typedef]
 id: RO:0002303
 name: has habitat
 def: "x 'has habitat' y if and only if: x is an organism, y is a habitat, and y can sustain and allow the growth of a population of xs." []
+domain: CARO:0001010
+range: ENVO:01000254 ! environmental system
 is_a: RO:0002321 ! ecologically related to
 
 [Typedef]
+id: RO:0002304
+name: causally upstream of, positive effect
+def: "p is causally upstream of, positive effect q iff p is casually upstream of q, and the execution of p is required for the execution of q." []
+is_a: RO:0002411 ! causally upstream of
+is_a: RO:0004047 ! causally upstream of or within, positive effect
+
+[Typedef]
+id: RO:0002305
+name: causally upstream of, negative effect
+def: "p is causally upstream of, negative effect q iff p is casually upstream of q, and the execution of p decreases the execution of q." []
+is_a: RO:0002411 ! causally upstream of
+is_a: RO:0004046 ! causally upstream of or within, negative effect
+
+[Typedef]
 id: RO:0002314
-name: inheres in part of
-def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
+name: characteristic of part of
+def: "q characteristic of part of w if and only if there exists some p such that q inheres in p and p part of w." []
+holds_over_chain: RO:0000052 BFO:0000050
 is_a: RO:0002502 ! depends on
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002321
@@ -5074,15 +6320,82 @@ name: developmentally related to
 def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
 
 [Typedef]
+id: RO:0002327
+name: enables
+def: "c enables p iff c is capable of p and c acts to execute p." []
+is_a: RO:0002215 ! capable of
+inverse_of: RO:0002333 ! enabled by
+transitive_over: BFO:0000051 ! has part
+transitive_over: RO:0002017 ! has component activity
+
+[Typedef]
 id: RO:0002328
 name: functionally related to
 def: "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." []
+
+[Typedef]
+id: RO:0002329
+name: part of structure that is capable of
+def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
+holds_over_chain: BFO:0000050 RO:0002215
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002331
+name: involved in
+def: "c involved_in p if and only if c enables some process p', and p' is part of p" []
+holds_over_chain: RO:0002327 BFO:0000050
+is_a: RO:0000056 ! participates in
+is_a: RO:0002431 ! involved in or involved in regulation of
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002333
+name: enabled by
+def: "inverse of enables" []
+is_a: RO:0000057 ! has participant
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002334
+name: regulated by
+def: "inverse of regulates" []
+domain: BFO:0000015 ! process
+range: BFO:0000015 ! process
+is_transitive: true
+is_a: RO:0002427 ! causally downstream of or within
+
+[Typedef]
+id: RO:0002335
+name: negatively regulated by
+def: "inverse of negatively regulates" []
+is_a: RO:0002334 ! regulated by
+
+[Typedef]
+id: RO:0002336
+name: positively regulated by
+def: "inverse of positively regulates" []
+is_a: RO:0002334 ! regulated by
+
+[Typedef]
+id: RO:0002350
+name: member of
+def: "is member of is a mereological relation between a item and a collection." []
+is_a: BFO:0000050 ! part of
+inverse_of: RO:0002351 ! has member
 
 [Typedef]
 id: RO:0002351
 name: has member
 def: "has member is a mereological relation between a collection and an item." []
 is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002352
+name: input of
+def: "inverse of has input" []
+is_a: RO:0000056 ! participates in
+is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002353
@@ -5097,40 +6410,254 @@ name: formed as result of
 is_a: RO:0002353 ! output of
 
 [Typedef]
+id: RO:0002379
+name: spatially coextensive with
+def: "x spatially_coextensive_with y if and inly if x and y have the same location" []
+is_a: RO:0002131 ! overlaps
+
+[Typedef]
+id: RO:0002384
+name: has developmental potential involving
+def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+domain: CARO:0000000
+range: CARO:0000000
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: RO:0002385
+name: has potential to developmentally contribute to
+def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002387
+name: has potential to develop into
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002388
+name: has potential to directly develop into
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+is_a: RO:0002387 ! has potential to develop into
+
+[Typedef]
+id: RO:0002404
+name: causally downstream of
+def: "inverse of upstream of" []
+is_a: BFO:0000062 ! preceded by
+is_a: RO:0002427 ! causally downstream of or within
+inverse_of: RO:0002411 ! causally upstream of
+
+[Typedef]
+id: RO:0002405
+name: immediately causally downstream of
+is_a: RO:0002087 ! immediately preceded by
+is_a: RO:0002404 ! causally downstream of
+inverse_of: RO:0002412 ! immediately causally upstream of
+
+[Typedef]
+id: RO:0002407
+name: indirectly positively regulates
+def: "p indirectly positively regulates q iff p is indirectly causally upstream of q and p positively regulates q." []
+holds_over_chain: RO:0002409 RO:0002409
+holds_over_chain: RO:0002629 RO:0002407
+holds_over_chain: RO:0002629 RO:0002629
+is_transitive: true
+is_a: RO:0002213 ! positively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002629 ! directly positively regulates
+
+[Typedef]
+id: RO:0002409
+name: indirectly negatively regulates
+def: "p indirectly negatively regulates q iff p is indirectly causally upstream of q and p negatively regulates q." []
+holds_over_chain: RO:0002630 RO:0002409
+holds_over_chain: RO:0002630 RO:0002630
+is_transitive: true
+is_a: RO:0002212 ! negatively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002630 ! directly negatively regulates
+
+[Typedef]
 id: RO:0002410
 name: causally related to
-def: "This relation groups causal relations between material entities and causal relations between processes" []
+def: "relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause." []
 
 [Typedef]
 id: RO:0002411
 name: causally upstream of
-def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+def: "p is causally upstream of q iff p is causally related to q, the end of p precedes the end of q, and p is not an occurrent part of q." []
+is_transitive: true
 is_a: BFO:0000063 ! precedes
 is_a: RO:0002418 ! causally upstream of or within
 
 [Typedef]
+id: RO:0002412
+name: immediately causally upstream of
+def: "p is immediately causally upstream of q iff p is causally upstream of q, and the end of p is coincident with the beginning of q." []
+is_a: RO:0002090 ! immediately precedes
+is_a: RO:0002411 ! causally upstream of
+
+[Typedef]
 id: RO:0002418
 name: causally upstream of or within
-def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
+def: "p is 'causally upstream or within' q iff p is causally related to q, and the end of p precedes, or is coincident with, the end of q." []
 synonym: "affects" RELATED []
+is_transitive: true
 is_a: RO:0002501 ! causal relation between processes
+inverse_of: RO:0002427 ! causally downstream of or within
+
+[Typedef]
+id: RO:0002427
+name: causally downstream of or within
+def: "inverse of causally upstream of or within" []
+is_transitive: true
+is_a: RO:0002501 ! causal relation between processes
+
+[Typedef]
+id: RO:0002428
+name: involved in regulation of
+def: "c involved in regulation of p if c is involved in some p' and p' regulates some p" []
+holds_over_chain: RO:0002327 RO:0002211
+holds_over_chain: RO:0002331 RO:0002211
+is_a: RO:0002263 ! acts upstream of
+is_a: RO:0002431 ! involved in or involved in regulation of
+
+[Typedef]
+id: RO:0002429
+name: involved in positive regulation of
+def: "c involved in regulation of p if c is involved in some p' and p' positively regulates some p" []
+holds_over_chain: RO:0002327 RO:0002213
+holds_over_chain: RO:0002331 RO:0002213
+is_a: RO:0002428 ! involved in regulation of
+
+[Typedef]
+id: RO:0002430
+name: involved in negative regulation of
+def: "c involved in regulation of p if c is involved in some p' and p' negatively regulates some p" []
+holds_over_chain: RO:0002327 RO:0002212
+holds_over_chain: RO:0002331 RO:0002212
+is_a: RO:0002428 ! involved in regulation of
+
+[Typedef]
+id: RO:0002431
+name: involved in or involved in regulation of
+def: "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" []
+is_a: RO:0002264 ! acts upstream of or within
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002500 ! causal agent in process
+
+[Typedef]
+id: RO:0002432
+name: is active in
+def: "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." []
+synonym: "enables activity in" EXACT []
+holds_over_chain: RO:0002327 BFO:0000066
+is_a: RO:0002131 ! overlaps
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002434
+name: interacts with
+def: "A relationship that holds between two entities in which the processes executed by the two entities are causally connected." []
+synonym: "in pairwise interaction with" EXACT []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_symmetric: true
+
+[Typedef]
+id: RO:0002436
+name: molecularly interacts with
+def: "An interaction relationship in which the two partners are molecular entities that directly physically interact with each other for example via a stable binding interaction or a brief interaction during which one modifies the other." []
+is_symmetric: true
+is_a: RO:0002434 ! interacts with
+
+[Typedef]
+id: RO:0002447
+name: phosphorylates
+is_a: RO:0002436 ! molecularly interacts with
+
+[Typedef]
+id: RO:0002448
+name: directly regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that regulates an activity performed by B. For example, A and B may be gene products and binding of B by A regulates the kinase activity of B.\n\nA and B can be physically interacting but not necessarily. Immediately upstream means there are no intermediate entity between A and B." []
+synonym: "molecularly controls" EXACT []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002436 ! molecularly interacts with
+is_a: RO:0011002 ! regulates activity of
+
+[Typedef]
+id: RO:0002449
+name: directly negatively regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that negatively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B." []
+synonym: "molecularly decreases activity of" EXACT []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002448 ! directly regulates activity of
+
+[Typedef]
+id: RO:0002450
+name: directly positively regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that positively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B." []
+synonym: "molecularly increases activity of" EXACT []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002448 ! directly regulates activity of
+
+[Typedef]
+id: RO:0002464
+name: helper property (not for use in curation)
 
 [Typedef]
 id: RO:0002473
 name: composed primarily of
 def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
 is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002479
+name: has part that occurs in
+def: "p has part that occurs in c if and only if there exists some p1, such that p has_part p1, and p1 occurs in c." []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000004 ! independent continuant
+holds_over_chain: BFO:0000051 BFO:0000066
+
+[Typedef]
+id: RO:0002481
+name: is kinase activity
+is_a: RO:0002564 ! molecular interaction relation helper property
+
+[Typedef]
+id: RO:0002494
+name: transformation of
+def: "x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships" []
+is_transitive: true
+is_a: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002495
+name: immediate transformation of
+def: "x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t" []
+is_a: RO:0002207 ! directly develops from
+is_a: RO:0002494 ! transformation of
 
 [Typedef]
 id: RO:0002500
 name: causal agent in process
 def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
 is_a: RO:0002595 ! causal relation between material entity and a process
+inverse_of: RO:0002608 ! process has causal agent
 
 [Typedef]
 id: RO:0002501
 name: causal relation between processes
-def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one where the execution of p influences the execution of q. p may be upstream, downstream, part of, or a container of q." []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
@@ -5140,20 +6667,34 @@ name: depends on
 [Typedef]
 id: RO:0002506
 name: causal relation between entities
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
 id: RO:0002507
 name: determined by
 def: "s determined by f if and only if s is a type of system, and f is a material entity that is part of s, such that f exerts a strong causal influence on the functioning of s, and the removal of f would cause the collapse of s." []
+domain: RO:0002577 ! system
+range: BFO:0000040 ! material entity
 is_a: BFO:0000050 ! part of
 is_a: RO:0002509 ! determined by part of
 is_a: RO:0002559 ! causally influenced by
+inverse_of: RO:0002508 ! determines
+
+[Typedef]
+id: RO:0002508
+name: determines
+def: "inverse of determined by" []
+is_a: RO:0002566 ! causally influences
 
 [Typedef]
 id: RO:0002509
 name: determined by part of
 def: "s 'determined by part of' w if and only if there exists some f such that (1) s 'determined by' f and (2) f part_of w, or f=w." []
+domain: RO:0002577 ! system
+range: BFO:0000040 ! material entity
+holds_over_chain: RO:0002507 BFO:0000050
 is_a: RO:0002131 ! overlaps
 is_a: RO:0002506 ! causal relation between entities
 
@@ -5161,16 +6702,199 @@ is_a: RO:0002506 ! causal relation between entities
 id: RO:0002559
 name: causally influenced by
 is_a: RO:0002506 ! causal relation between entities
+inverse_of: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0002563
+name: interaction relation helper property
+is_a: RO:0002464 ! helper property (not for use in curation)
+
+[Typedef]
+id: RO:0002564
+name: molecular interaction relation helper property
+is_a: RO:0002563 ! interaction relation helper property
+
+[Typedef]
+id: RO:0002566
+name: causally influences
+def: "The entity or characteristic A is causally upstream of the entity or characteristic B, A having an effect on B. An entity corresponds to any biological type of entity as long as a mass is measurable. A characteristic corresponds to a particular specificity of an entity (e.g., phenotype, shape, size)." []
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
+is_a: RO:0002506 ! causal relation between entities
+
+[Typedef]
+id: RO:0002578
+name: directly regulates
+def: "p directly regulates q iff p is immediately causally upstream of q and p regulates q." []
+is_a: RO:0002211 ! regulates (processual)
+is_a: RO:0002412 ! immediately causally upstream of
+
+[Typedef]
+id: RO:0002584
+name: has part structure that is capable of
+def: "s 'has part structure that is capable of' p if and only if there exists some part x such that s 'has part' x and x 'capable of' p" []
+holds_over_chain: BFO:0000051 RO:0002215
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002595 ! causal relation between material entity and a process
 
 [Typedef]
 id: RO:0002595
 name: causal relation between material entity and a process
 def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000015 ! process
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002596
+name: capable of regulating
+def: "Holds between c and p if and only if c is capable of some activity a, and a regulates p." []
+holds_over_chain: RO:0002215 RO:0002211
+is_a: RO:0002500 ! causal agent in process
+
+[Typedef]
+id: RO:0002597
+name: capable of negatively regulating
+def: "Holds between c and p if and only if c is capable of some activity a, and a negatively regulates p." []
+holds_over_chain: RO:0002215 RO:0002212
+is_a: RO:0002596 ! capable of regulating
+
+[Typedef]
+id: RO:0002598
+name: capable of positively regulating
+def: "Holds between c and p if and only if c is capable of some activity a, and a positively regulates p." []
+holds_over_chain: RO:0002215 RO:0002213
+is_a: RO:0002596 ! capable of regulating
 
 [Typedef]
 id: RO:0002608
 name: process has causal agent
 def: "Inverse of 'causal agent in process'" []
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002629
+name: directly positively regulates
+def: "p directly positively regulates q iff p is immediately causally upstream of q, and p positively regulates q." []
+is_a: RO:0002213 ! positively regulates
+is_a: RO:0002578 ! directly regulates
+
+[Typedef]
+id: RO:0002630
+name: directly negatively regulates
+def: "p directly negatively regulates q iff p is immediately causally upstream of q, and p negatively regulates q." []
+is_a: RO:0002212 ! negatively regulates
+is_a: RO:0002578 ! directly regulates
+
+[Typedef]
+id: RO:0003000
+name: produces
+def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+inverse_of: RO:0003001 ! produced by
+
+[Typedef]
+id: RO:0003001
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+
+[Typedef]
+id: RO:0004031
+name: enables subfunction
+def: "Holds between an entity and an process P where the entity enables some larger compound process, and that larger process has-part P." []
+holds_over_chain: RO:0002327 BFO:0000051
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0004032
+name: acts upstream of or within, positive effect
+holds_over_chain: RO:0002327 RO:0004047
+is_a: RO:0002264 ! acts upstream of or within
+
+[Typedef]
+id: RO:0004033
+name: acts upstream of or within, negative effect
+holds_over_chain: RO:0002327 RO:0004046
+is_a: RO:0002264 ! acts upstream of or within
+
+[Typedef]
+id: RO:0004034
+name: acts upstream of, positive effect
+def: "c 'acts upstream of, positive effect' p if c is enables f, and f is causally upstream of p, and the direction of f is positive" []
+holds_over_chain: RO:0002327 RO:0002304
+is_a: RO:0002263 ! acts upstream of
+is_a: RO:0004032 ! acts upstream of or within, positive effect
+
+[Typedef]
+id: RO:0004035
+name: acts upstream of, negative effect
+def: "c 'acts upstream of, negative effect' p if c is enables f, and f is causally upstream of p, and the direction of f is negative" []
+holds_over_chain: RO:0002327 RO:0002305
+is_a: RO:0002263 ! acts upstream of
+is_a: RO:0004033 ! acts upstream of or within, negative effect
+
+[Typedef]
+id: RO:0004046
+name: causally upstream of or within, negative effect
+is_a: RO:0002418 ! causally upstream of or within
+
+[Typedef]
+id: RO:0004047
+name: causally upstream of or within, positive effect
+is_a: RO:0002418 ! causally upstream of or within
+
+[Typedef]
+id: RO:0011002
+name: regulates activity of
+def: "The entity A has an activity that regulates an activity of the entity B. For example, A and B are gene products where the catalytic activity of A regulates the kinase activity of B." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0012011
+name: indirectly causally upstream of
+def: "p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q." []
+is_a: RO:0002411 ! causally upstream of
+
+[Typedef]
+id: RO:0012012
+name: indirectly regulates
+def: "p indirectly regulates q iff p is indirectly causally upstream of q and p regulates q." []
+is_a: RO:0002211 ! regulates (processual)
+is_a: RO:0012011 ! indirectly causally upstream of
+
+[Typedef]
+id: RO:0017001
+name: device utilizes material
+def: "X device utilizes material Y means X and Y are material entities, and X is capable of some process P that has input Y." []
+synonym: "utilizes" BROAD []
+holds_over_chain: RO:0002215 RO:0002233
+
+[Typedef]
+id: RO:0019000
+name: regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) regulates characteristic (C) iff: P results in the existence of C OR affects the intensity or magnitude of C." []
+domain: BFO:0000015 ! process
+range: PATO:0000001 ! quality
+holds_over_chain: RO:0002211 RO:0019000
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0019001
+name: positively regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) positively regulates characteristic (C) iff: P results in an increase in the intensity or magnitude of C." []
+holds_over_chain: RO:0002213 RO:0019001
+is_a: RO:0019000 ! regulates characteristic
+
+[Typedef]
+id: RO:0019002
+name: negatively regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) negatively regulates characteristic (C) iff: P results in a decrease in the intensity or magnitude of C." []
+holds_over_chain: RO:0002212 RO:0019001
+holds_over_chain: RO:0002213 RO:0019002
+is_a: RO:0019000 ! regulates characteristic
 

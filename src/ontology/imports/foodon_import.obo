@@ -1,276 +1,52 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-03/imports/foodon_import.owl
-subsetdef: Angiosperm ""
-subsetdef: Arabidopsis ""
-subsetdef: Citrus ""
-subsetdef: CL ""
-subsetdef: Gymnosperms ""
-subsetdef: Maize ""
-subsetdef: Poaceae ""
-subsetdef: reference ""
-subsetdef: Rice ""
-subsetdef: Tomato ""
-subsetdef: TraitNet ""
+data-version: mondo/releases/2023-08-31/imports/foodon_import.owl
 ontology: mondo/imports/foodon_import
-
-[Term]
-id: BFO:0000001
-name: entity
-property_value: BFO:0000179 "entity" xsd:string
-property_value: BFO:0000180 "Entity" xsd:string
-property_value: IAO:0000111 "entity" xsd:string
-property_value: IAO:0000112 "Julius Caesar" xsd:string
-property_value: IAO:0000112 "the Second World War" xsd:string
-property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
-property_value: IAO:0000112 "your body mass index" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
-property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ecocore.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ons.owl
-property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Term]
-id: BFO:0000002
-name: continuant
-def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
-is_a: BFO:0000001 ! entity
-disjoint_from: BFO:0000003 ! occurrent
-relationship: BFO:0000050 BFO:0000002 ! part of continuant
-property_value: BFO:0000179 "continuant" xsd:string
-property_value: BFO:0000180 "Continuant" xsd:string
-property_value: IAO:0000111 "continuant" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
-property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ons.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
-property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
-property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
-property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
-property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
-property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
-property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
-property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Term]
-id: BFO:0000003
-name: occurrent
-def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
-is_a: BFO:0000001 ! entity
-relationship: BFO:0000050 BFO:0000003 ! part of occurrent
-property_value: BFO:0000179 "occurrent" xsd:string
-property_value: BFO:0000180 "Occurrent" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: every occurrent that is not a temporal or spatiotemporal region is s-dependent on some independent continuant that is not a spatial region" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: s-dependence obtains between every process and its participants in the sense that, as a matter of necessity, this process could not have existed unless these or those participants existed also. A process may have a succession of participants at different phases of its unfolding. Thus there may be different players on the field at different times during the course of a football game; but the process which is the entire game s-depends_on all of these players nonetheless. Some temporal parts of this process will s-depend_on on only some of the players." xsd:string
-property_value: IAO:0000116 "Occurrent doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. An example would be the sum of a process and the process boundary of another process." xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000006", comment="per discussion with Barry Smith"}
-property_value: IAO:0000116 "Simons uses different terminology for relations of occurrents to regions: Denote the spatio-temporal location of a given occurrent e by 'spn[e]' and call this region its span. We may say an occurrent is at its span, in any larger region, and covers any smaller region. Now suppose we have fixed a frame of reference so that we can speak not merely of spatio-temporal but also of spatial regions (places) and temporal regions (times). The spread of an occurrent, (relative to a frame of reference) is the space it exactly occupies, and its spell is likewise the time it exactly occupies. We write 'spr[e]' and `spl[e]' respectively for the spread and spell of e, omitting mention of the frame." xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000012"}
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ecocore.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: IAO:0000600 "An occurrent is an entity that unfolds itself in time or it is the instantaneous boundary of such an entity (for example a beginning or an ending) or it is a temporal or spatiotemporal region which such an entity occupies_temporal_region or occupies_spatiotemporal_region. (axiom label in BFO2 Reference: [077-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/077-002"}
-property_value: IAO:0000601 "b is an occurrent entity iff b is an entity that has temporal parts. (axiom label in BFO2 Reference: [079-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/079-001"}
-property_value: IAO:0000601 "Every occurrent occupies_spatiotemporal_region some spatiotemporal region. (axiom label in BFO2 Reference: [108-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/108-001"}
-property_value: IAO:0000602 "(forall (x) (if (Occurrent x) (exists (r) (and (SpatioTemporalRegion r) (occupiesSpatioTemporalRegion x r))))) // axiom label in BFO2 CLIF: [108-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/108-001"}
-property_value: IAO:0000602 "(forall (x) (iff (Occurrent x) (and (Entity x) (exists (y) (temporalPartOf y x))))) // axiom label in BFO2 CLIF: [079-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/079-001"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Term]
-id: BFO:0000004
-name: independent continuant
-def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
-def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
-def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
-is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
-property_value: BFO:0000179 "ic" xsd:string
-property_value: BFO:0000180 "IndependentContinuant" xsd:string
-property_value: IAO:0000112 "a chair" xsd:string
-property_value: IAO:0000112 "a heart" xsd:string
-property_value: IAO:0000112 "a leg" xsd:string
-property_value: IAO:0000112 "a molecule" xsd:string
-property_value: IAO:0000112 "a spatial region" xsd:string
-property_value: IAO:0000112 "an atom" xsd:string
-property_value: IAO:0000112 "an orchestra." xsd:string
-property_value: IAO:0000112 "an organism" xsd:string
-property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
-property_value: IAO:0000112 "the interior of your mouth" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
-property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
-property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
-property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
-property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000015
 name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
-def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/083-003"}
 def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
-is_a: BFO:0000003 ! occurrent
-property_value: BFO:0000179 "process" xsd:string
-property_value: BFO:0000180 "Process" xsd:string
-property_value: IAO:0000112 "a process of cell-division, \\ a beating of the heart" xsd:string
-property_value: IAO:0000112 "a process of meiosis" xsd:string
-property_value: IAO:0000112 "a process of sleeping" xsd:string
-property_value: IAO:0000112 "the course of a disease" xsd:string
-property_value: IAO:0000112 "the flight of a bird" xsd:string
-property_value: IAO:0000112 "the life of an organism" xsd:string
-property_value: IAO:0000112 "your process of aging." xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: The realm of occurrents is less pervasively marked by the presence of natural units than is the case in the realm of independent continuants. Thus there is here no counterpart of ‘object’. In BFO 1.0 ‘process’ served as such a counterpart. In BFO 2.0 ‘process’ is, rather, the occurrent counterpart of ‘material entity’. Those natural – as contrasted with engineered, which here means: deliberately executed – units which do exist in the realm of occurrents are typically either parasitic on the existence of natural units on the continuant side, or they are fiat in nature. Thus we can count lives; we can count football games; we can count chemical reactions performed in experiments or in chemical manufacturing. We cannot count the processes taking place, for instance, in an episode of insect mating behavior.Even where natural units are identifiable, for example cycles in a cyclical process such as the beating of a heart or an organism’s sleep/wake cycle, the processes in question form a sequence with no discontinuities (temporal gaps) of the sort that we find for instance where billiard balls or zebrafish or planets are separated by clear spatial gaps. Lives of organisms are process units, but they too unfold in a continuous series from other, prior processes such as fertilization, and they unfold in turn in continuous series of post-life processes such as post-mortem decay. Clear examples of boundaries of processes are almost always of the fiat sort (midnight, a time of death as declared in an operating theater or on a death certificate, the initiation of a state of war)" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/agro.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ecocore.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: IAO:0000602 "(iff (Process a) (and (Occurrent a) (exists (b) (properTemporalPartOf b a)) (exists (c t) (and (MaterialEntity c) (specificallyDependsOnAt a c t))))) // axiom label in BFO2 CLIF: [083-003] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/083-003"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Term]
-id: BFO:0000020
-name: specifically dependent continuant
-def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
-def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
-def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
-is_a: BFO:0000002 ! continuant
-property_value: BFO:0000179 "sdc" xsd:string
-property_value: BFO:0000180 "SpecificallyDependentContinuant" xsd:string
-property_value: IAO:0000111 "specifically dependent continuant" xsd:string
-property_value: IAO:0000112 "of one-sided specifically dependent continuants: the mass of this tomato" xsd:string
-property_value: IAO:0000112 "of relational dependent continuants (multiple bearers): John’s love for Mary, the ownership relation between John and this statue, the relation of authority between John and his subordinates." xsd:string
-property_value: IAO:0000112 "Reciprocal specifically dependent continuants: the function of this key to open this lock and the mutually dependent disposition of this lock: to be opened by this key" xsd:string
-property_value: IAO:0000112 "the disposition of this fish to decay" xsd:string
-property_value: IAO:0000112 "the function of this heart: to pump blood" xsd:string
-property_value: IAO:0000112 "the mutual dependence of proton donors and acceptors in chemical reactions [79" xsd:string
-property_value: IAO:0000112 "the mutual dependence of the role predator and the role prey as played by two organisms in a given interaction" xsd:string
-property_value: IAO:0000112 "the pink color of a medium rare piece of grilled filet mignon at its center" xsd:string
-property_value: IAO:0000112 "the role of being a doctor" xsd:string
-property_value: IAO:0000112 "the shape of this hole." xsd:string
-property_value: IAO:0000112 "the smell of this portion of mozzarella" xsd:string
-property_value: IAO:0000116 "Specifically dependent continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. We're not sure what else will develop here, but for example there are questions such as what are promises, obligation, etc." xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000005", comment="per discussion with Barry Smith"}
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ons.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-property_value: IAO:0000602 "(iff (RelationalSpecificallyDependentContinuant a) (and (SpecificallyDependentContinuant a) (forall (t) (exists (b c) (and (not (SpatialRegion b)) (not (SpatialRegion c)) (not (= b c)) (not (exists (d) (and (continuantPartOfAt d b t) (continuantPartOfAt d c t)))) (specificallyDependsOnAt a b t) (specificallyDependsOnAt a c t)))))) // axiom label in BFO2 CLIF: [131-004] " xsd:string
-property_value: IAO:0000602 "(iff (SpecificallyDependentContinuant a) (and (Continuant a) (forall (t) (if (existsAt a t) (exists (b) (and (IndependentContinuant b) (not (SpatialRegion b)) (specificallyDependsOnAt a b t))))))) // axiom label in BFO2 CLIF: [050-003] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
-
-[Term]
-id: BFO:0000024
-name: fiat object
-name: fiat object part
-is_a: BFO:0000040 ! material entity
-property_value: BFO:0000179 "fiat-object-part" xsd:string
-property_value: BFO:0000180 "FiatObjectPart" xsd:string
-property_value: IAO:0000112 "or with divisions drawn by cognitive subjects for practical reasons, such as the division of a cake (before slicing) into (what will become) slices (and thus member parts of an object aggregate). However, this does not mean that fiat object parts are dependent for their existence on divisions or delineations effected by cognitive subjects. If, for example, it is correct to conceive geological layers of the Earth as fiat object parts of the Earth, then even though these layers were first delineated in recent times, still existed long before such delineation and what holds of these layers (for example that the oldest layers are also the lowest layers) did not begin to hold because of our acts of delineation.Treatment of material entity in BFOExamples viewed by some as problematic cases for the trichotomy of fiat object part, object, and object aggregate include: a mussel on (and attached to) a rock, a slime mold, a pizza, a cloud, a galaxy, a railway train with engine and multiple carriages, a clonal stand of quaking aspen, a bacterial community (biofilm), a broken femur. Note that, as Aristotle already clearly recognized, such problematic cases – which lie at or near the penumbra of instances defined by the categories in question – need not invalidate these categories. The existence of grey objects does not prove that there are not objects which are black and objects which are white; the existence of mules does not prove that there are not objects which are donkeys and objects which are horses. It does, however, show that the examples in question need to be addressed carefully in order to show how they can be fitted into the proposed scheme, for example by recognizing additional subdivisions [29" xsd:string
-property_value: IAO:0000112 "the division of the brain into regions" xsd:string
-property_value: IAO:0000112 "the division of the planet into hemispheres" xsd:string
-property_value: IAO:0000112 "the dorsal and ventral surfaces of the body" xsd:string
-property_value: IAO:0000112 "the FMA:regional parts of an intact human body." xsd:string
-property_value: IAO:0000112 "the upper and lower lobes of the left lung" xsd:string
-property_value: IAO:0000112 "the Western hemisphere of the Earth" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: Most examples of fiat object parts are associated with theoretically drawn divisions" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000600 "b is a fiat object part = Def. b is a material entity which is such that for all times t, if b exists at t then there is some object c such that b proper continuant_part of  c at t and c is demarcated from the remainder of c by a two-dimensional continuant fiat boundary. (axiom label in BFO2 Reference: [027-004])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/027-004"}
-property_value: IAO:0000602 "(forall (x) (if (FiatObjectPart x) (and (MaterialEntity x) (forall (t) (if (existsAt x t) (exists (y) (and (Object y) (properContinuantPartOfAt x y t)))))))) // axiom label in BFO2 CLIF: [027-004] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/027-004"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
-is_a: BFO:0000004 ! independent continuant
-property_value: BFO:0000179 "material" xsd:string
-property_value: BFO:0000180 "MaterialEntity" xsd:string
-property_value: IAO:0000112 "a flame" xsd:string
-property_value: IAO:0000112 "a forest fire" xsd:string
-property_value: IAO:0000112 "a human being" xsd:string
-property_value: IAO:0000112 "a hurricane" xsd:string
-property_value: IAO:0000112 "a photon" xsd:string
-property_value: IAO:0000112 "a puff of smoke" xsd:string
-property_value: IAO:0000112 "a sea wave" xsd:string
-property_value: IAO:0000112 "a tornado" xsd:string
-property_value: IAO:0000112 "an aggregate of human beings." xsd:string
-property_value: IAO:0000112 "an energy wave" xsd:string
-property_value: IAO:0000112 "an epidemic" xsd:string
-property_value: IAO:0000112 "the undetached arm of a human being" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: Material entities (continuants) can preserve their identity even while gaining and losing material parts. Continuants are contrasted with occurrents, which unfold themselves in successive temporal parts or phases [60" xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: Object, Fiat Object Part and Object Aggregate are not intended to be exhaustive of Material Entity. Users are invited to propose new subcategories of Material Entity." xsd:string
-property_value: IAO:0000116 "BFO 2 Reference: ‘Matter’ is intended to encompass both mass and energy (we will address the ontological treatment of portions of energy in a later version of BFO). A portion of matter is anything that includes elementary particles among its proper or improper parts: quarks and leptons, including electrons, as the smallest particles thus far discovered; baryons (including protons and neutrons) at a higher level of granularity; atoms and molecules at still higher levels, forming the cells, organs, organisms and other material entities studied by biologists, the portions of rock studied by geologists, the fossils studied by paleontologists, and so on.Material entities are three-dimensional entities (entities extended in three spatial dimensions), as contrasted with the processes in which they participate, which are four-dimensional entities (entities extended also along the dimension of time).According to the FMA, material entities may have immaterial entities as parts – including the entities identified below as sites; for example the interior (or ‘lumen’) of your small intestine is a part of your body. BFO 2.0 embodies a decision to follow the FMA here." xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/dron.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: IAO:0000600 "A material entity is an independent continuant that has some portion of matter as proper or improper continuant part. (axiom label in BFO2 Reference: [019-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/019-002"}
-property_value: IAO:0000601 "every entity of which a material entity is continuant part is also a material entity. (axiom label in BFO2 Reference: [021-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/021-002"}
-property_value: IAO:0000601 "Every entity which has a material entity as continuant part is a material entity. (axiom label in BFO2 Reference: [020-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/020-002"}
-property_value: IAO:0000602 "(forall (x) (if (and (Entity x) (exists (y t) (and (MaterialEntity y) (continuantPartOfAt x y t)))) (MaterialEntity x))) // axiom label in BFO2 CLIF: [021-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/021-002"}
-property_value: IAO:0000602 "(forall (x) (if (and (Entity x) (exists (y t) (and (MaterialEntity y) (continuantPartOfAt y x t)))) (MaterialEntity x))) // axiom label in BFO2 CLIF: [020-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/020-002"}
-property_value: IAO:0000602 "(forall (x) (if (MaterialEntity x) (IndependentContinuant x))) // axiom label in BFO2 CLIF: [019-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/019-002"}
-property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
-id: CHEBI:24431
-name: chemical entity
-def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
+id: CARO:0000000
+name: anatomical entity
+def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex.  Or, a substance produced by a cellular organism with granularity above the level of a protein complex." []
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." []
 is_a: BFO:0000040 ! material entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
+is_a: CARO:0030000 ! biological entity
+
+[Term]
+id: CARO:0030000
+name: biological entity
 
 [Term]
 id: CHEBI:24432
 name: biological role
 def: "A role played by the molecular entity or part thereof within a biological context." []
 is_a: CHEBI:50906 ! role
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
 
 [Term]
 id: CHEBI:33290
 name: food
 def: "A physiological role played by any substance of either plant, animal or artificial origin which contains essential body nutrients that can be ingested by an organism to provide energy, promote growth, and maintain the processes of life." []
+synonym: "food role" EXACT []
 is_a: CHEBI:52211 ! physiological role
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
 
 [Term]
 id: CHEBI:50906
 name: role
 def: "A role is particular behaviour which a material entity may exhibit." []
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
 
 [Term]
 id: CHEBI:52211
 name: physiological role
 is_a: CHEBI:24432 ! biological role
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/chebi.owl
-
-[Term]
-id: ENVO:00010483
-name: environmental material
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." []
-synonym: "environmental" BROAD []
-is_a: BFO:0000024 ! fiat object part
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00001002
@@ -285,17 +61,14 @@ def: "This class includes food products which are derived from or produced by a 
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: RO:0001000 PO:0000003 ! derives from whole plant
-property_value: IAO:0000114 IAO:0000428
+relationship: RO:0001000 PO:0000003 ! derives from whole plant
 
 [Term]
 id: FOODON:00001046
-name: seafood product
+name: animal seafood product
 def: "A seafood product is a vertebrate or invertibrate organism from an aquatic environment." []
-is_a: FOODON:00002381 ! food product by organism
+is_a: FOODON:00004242 ! animal food product
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "Some of the subclasses are currently freshwater organisms." xsd:string
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001053
@@ -314,18 +87,17 @@ is_a: FOODON:00001258 ! food (fermented)
 [Term]
 id: FOODON:00001055
 name: sea water fish food product
-is_a: FOODON:00001046 ! seafood product
+is_a: FOODON:00001046 ! animal seafood product
 is_a: FOODON:03315173 ! fish product (unspecified species)
 
 [Term]
 id: FOODON:00001092
 name: vertebrate animal food product
 def: "A food product which is derived from or produced by an animal that has a vertibrae." []
-is_a: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002381 ! food product by organism
+is_a: FOODON:00004242 ! animal food product
+intersection_of: FOODON:00004242 ! animal food product
 intersection_of: RO:0001000 FOODON:03411297 ! derives from vertebrate animal
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
+relationship: RO:0001000 FOODON:03411297 ! derives from vertebrate animal
 
 [Term]
 id: FOODON:00001093
@@ -333,21 +105,16 @@ name: cereal grain food product
 is_a: FOODON:00001173 ! plant seed food product
 intersection_of: FOODON:00001173 ! plant seed food product
 intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant
+relationship: RO:0001000 FOODON:03411324 ! derives from grain plant
 
 [Term]
 id: FOODON:00001094
 name: fermented beverage
-comment: SIREN DB annotation:\n* has quality 'liquid' (http://purl.obolibrary.org/obo/FOODON_03430130)\n* formed as a result of 'microbial/enzymatic modification process' (http://purl.obolibrary.org/obo/FOODON_03460119)\n* formed as a result of 'curing or aging process' (http://purl.obolibrary.org/obo/FOODON_03460253)\n                
-subset: subset_siren
 synonym: "alcoholic beverage" EXACT []
-xref: SUBSET_SIREN:F5644
 is_a: FOODON:00001258 ! food (fermented)
 is_a: FOODON:03301977 ! beverage food product
 intersection_of: FOODON:00001258 ! food (fermented)
 intersection_of: FOODON:03301977 ! beverage food product
-property_value: http://purl.org/dc/elements/1.1/date 2019-06-11T07:25:19Z xsd:dateTime
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:00001107
@@ -378,30 +145,21 @@ def: "A food product consisting of an edible fungi or mushroom or yeast." []
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: RO:0001000 FOODON:03411261 ! derives from fungus
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000119 "In_food"
-property_value: seeAlso http://www.asmscience.org/content/journal/microbiolspec/10.1128/microbiolspec.FUNK-0030-2016 xsd:anyURI
+relationship: RO:0001000 FOODON:03411261 ! derives from fungus
 
 [Term]
 id: FOODON:00001145
 name: microbial food product
 def: "A food product derived from one or more microorganisms including bacteria, mold, and yeast." []
 is_a: FOODON:00002381 ! food product by organism
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001172
 name: nut food product
-xref: SUBSET_SIREN:F16972
 is_a: FOODON:00001262 ! botanical fruit food product
 is_a: FOODON:03460177 ! plant seed or nut food product
 relationship: RO:0001000 FOODON:03411213 ! derives from nut producing plant
 relationship: RO:0002350 FOODON:03400260 ! member of nut or nut product (us cfr)
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000116 "The default nut product is a whole, raw nut - meaning that the kernel is whole, and moderately or significantly dried, but not baked.  Minimal references to nuts often leave ambiguous whether the shell is on or off. \"I ate a peanut\" doesn't clarify whether I ate a shell-off nut or whether I did the shelling." xsd:string
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001173
@@ -409,34 +167,32 @@ name: plant seed food product
 is_a: FOODON:03460177 ! plant seed or nut food product
 intersection_of: FOODON:00001015 ! plant food product
 intersection_of: RO:0001000 PO:0009010 ! derives from seed
+relationship: RO:0001000 PO:0009010 ! derives from seed
 
 [Term]
 id: FOODON:00001176
 name: invertebrate animal food product
-is_a: FOODON:00002381 ! food product by organism
-intersection_of: FOODON:00002381 ! food product by organism
+is_a: FOODON:00004242 ! animal food product
+intersection_of: FOODON:00004242 ! animal food product
 intersection_of: RO:0001000 FOODON:00002452 ! derives from invertebrate animal
+relationship: RO:0001000 FOODON:00002452 ! derives from invertebrate animal
 
 [Term]
 id: FOODON:00001180
 name: prepared food product
 def: "Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked." []
 synonym: "prepared" BROAD []
-is_a: FOODON:00001002 ! food product
+is_a: FOODON:03311737 ! processed food product
 relationship: RO:0002350 FOODON:03400172 ! member of prepared food product (us cfr)
-property_value: IAO:0000119 langual:thesaurus.asp?termid=A0172
 
 [Term]
 id: FOODON:00001184
 name: algal food product
 def: "This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms." []
-subset: subset_siren
-xref: SUBSET_SIREN:F10419
 is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: RO:0001000 FOODON:03411301 ! derives from algae
-property_value: IAO:0000412 http://langual.org xsd:string
-property_value: seeAlso https://ungc-communications-assets.s3.amazonaws.com/docs/publications/The-Seaweed-Manifesto.pdf
+relationship: RO:0001000 FOODON:03411301 ! derives from algae
 
 [Term]
 id: FOODON:00001248
@@ -445,10 +201,8 @@ def: "A fish food product includes products made from any fish species (aquatic 
 is_a: FOODON:00001092 ! vertebrate animal food product
 intersection_of: FOODON:00001092 ! vertebrate animal food product
 intersection_of: RO:0001000 FOODON:03411222 ! derives from fish
+relationship: RO:0001000 FOODON:03411222 ! derives from fish
 relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product (us cfr)
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000119 https://en.wikipedia.org/wiki/Fish
 
 [Term]
 id: FOODON:00001256
@@ -456,19 +210,14 @@ name: dairy food product
 def: "A dairy food product has mammilian milk or a milk component as an ingredient." []
 synonym: "dairy product" EXACT []
 synonym: "milk product" EXACT []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0242
 is_a: FOODON:00001092 ! vertebrate animal food product
 relationship: RO:0001000 UBERON:0001913 ! derives from milk
 relationship: RO:0002350 FOODON:03400148 ! member of milk or milk product (us cfr)
-relationship: RO:0002350 FOODON:03400164 ! member of dairy product (us cfr)
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001257
 name: milk or milk based food product
 is_a: FOODON:00001256 ! dairy food product
-property_value: seeAlso https://en.wikipedia.org/wiki/Fat_content_of_milk#/media/File:Milkproducts.svg
 
 [Term]
 id: FOODON:00001258
@@ -480,17 +229,18 @@ relationship: RO:0002353 FOODON:00001304 ! output of food fermentation
 [Term]
 id: FOODON:00001262
 name: botanical fruit food product
-def: "Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits." [http://eurovoc.europa.eu/drupal/?q=request&amp;uri=http\://eurovoc.europa.eu/1115, http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119, http://www.fao.org/pollination/resources/glossary/en/, https://en.wikipedia.org/wiki/Fruit]
+def: "Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits." []
 is_a: FOODON:00001015 ! plant food product
 
 [Term]
 id: FOODON:00001293
 name: shellfish food product
-is_a: FOODON:00001046 ! seafood product
+is_a: FOODON:00001046 ! animal seafood product
 is_a: FOODON:00001176 ! invertebrate animal food product
-intersection_of: FOODON:00001046 ! seafood product
+intersection_of: FOODON:00001046 ! animal seafood product
 intersection_of: FOODON:00001176 ! invertebrate animal food product
 intersection_of: RO:0001000 FOODON:03411433 ! derives from shellfish
+relationship: RO:0001000 FOODON:03411433 ! derives from shellfish
 
 [Term]
 id: FOODON:00001304
@@ -498,8 +248,7 @@ name: food fermentation
 def: "A fermentation process in which either carbohydrates, proteins or fats are modified through microbial, enzymatic and/or other biological process." []
 is_a: FOODON:03460119 ! microbial/enzymatic modification process
 is_a: FOODON:03470107 ! food preservation process
-relationship: RO:0002234 FOODON:00001258 ! has output food (fermented)
-property_value: IAO:0000117 "Damion Dooley" xsd:string
+relationship: OBI:0000299 FOODON:00001258 ! food (fermented)
 
 [Term]
 id: FOODON:00001327
@@ -509,18 +258,12 @@ is_a: FOODON:00001054 ! fermented fish or seafood food product
 is_a: FOODON:00001785 ! crab food product
 intersection_of: FOODON:00001054 ! fermented fish or seafood food product
 intersection_of: RO:0001000 FOODON:03411335 ! derives from crab
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 http://orcid.org/0000-0002-1816-4260 xsd:anyURI
 
 [Term]
 id: FOODON:00001579
 name: alcoholic beverage
 def: "An alcoholic drink (or alcoholic beverage) is a drink that contains ethanol, a type of alcohol produced by fermentation of grains, fruits, or other sources of sugar." []
-xref: SUBSET_SIREN:F10770
 is_a: FOODON:00001094 ! fermented beverage
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000119 https://en.m.wikipedia.org/wiki/Alcoholic_drink xsd:anyURI
 
 [Term]
 id: FOODON:00001714
@@ -533,9 +276,9 @@ id: FOODON:00001771
 name: cow milk based food product
 is_a: FOODON:00001118 ! cattle dairy food product
 is_a: FOODON:00001257 ! milk or milk based food product
-is_a: FOODON:03315150 ! mammalian milk product
 intersection_of: FOODON:00001118 ! cattle dairy food product
 intersection_of: RO:0001000 FOODON:03307455 ! derives from cow milk (raw)
+relationship: RO:0001000 FOODON:03307455 ! derives from cow milk (raw)
 
 [Term]
 id: FOODON:00001785
@@ -543,6 +286,7 @@ name: crab food product
 is_a: FOODON:00001792 ! crustacean food product
 intersection_of: FOODON:00001792 ! crustacean food product
 intersection_of: RO:0001000 FOODON:03411335 ! derives from crab
+relationship: RO:0001000 FOODON:03411335 ! derives from crab
 
 [Term]
 id: FOODON:00001792
@@ -550,6 +294,7 @@ name: crustacean food product
 is_a: FOODON:00001293 ! shellfish food product
 intersection_of: FOODON:00001293 ! shellfish food product
 intersection_of: RO:0001000 FOODON:03411374 ! derives from crustacean
+relationship: RO:0001000 FOODON:03411374 ! derives from crustacean
 
 [Term]
 id: FOODON:00001854
@@ -578,6 +323,7 @@ name: goat dairy food product
 is_a: FOODON:00001109 ! caprine dairy food product
 intersection_of: FOODON:00001109 ! caprine dairy food product
 intersection_of: RO:0001000 FOODON:03305803 ! derives from goat milk (raw)
+relationship: RO:0001000 FOODON:03305803 ! derives from goat milk (raw)
 
 [Term]
 id: FOODON:00001916
@@ -585,14 +331,15 @@ name: grain based alcoholic beverage
 is_a: FOODON:00001882 ! fruit based alcoholic beverage
 intersection_of: FOODON:00001579 ! alcoholic beverage
 intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant
+relationship: RO:0001000 FOODON:03411324 ! derives from grain plant
 
 [Term]
 id: FOODON:00001958
 name: human milk based food product
 is_a: FOODON:00001257 ! milk or milk based food product
-is_a: FOODON:03315150 ! mammalian milk product
 intersection_of: FOODON:00001257 ! milk or milk based food product
 intersection_of: RO:0001000 FOODON:03303918 ! derives from human milk (raw)
+relationship: RO:0001000 FOODON:03303918 ! derives from human milk (raw)
 
 [Term]
 id: FOODON:00002044
@@ -601,6 +348,7 @@ synonym: "mollusk food product" EXACT []
 is_a: FOODON:00001293 ! shellfish food product
 intersection_of: FOODON:00001293 ! shellfish food product
 intersection_of: RO:0001000 FOODON:03412112 ! derives from mollusc
+relationship: RO:0001000 FOODON:03412112 ! derives from mollusc
 
 [Term]
 id: FOODON:00002131
@@ -620,6 +368,7 @@ name: shrimp food product
 is_a: FOODON:00001792 ! crustacean food product
 intersection_of: FOODON:00001792 ! crustacean food product
 intersection_of: RO:0001000 FOODON:03411237 ! derives from shrimp
+relationship: RO:0001000 FOODON:03411237 ! derives from shrimp
 
 [Term]
 id: FOODON:00002244
@@ -631,16 +380,13 @@ id: FOODON:00002373
 name: food product by meal type
 def: "A meal type is the name of an eating occasion that may have location, food type, or other customary contextual features. (Damion's 1st draft definition)" []
 is_a: FOODON:00001002 ! food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002381
 name: food product by organism
 def: "A food product consisting of food material derived primarily from a single organism." []
 is_a: FOODON:00001002 ! food product
-relationship: RO:0001000 FOODON:03411564 ! derives from food product organismal source
-property_value: IAO:0000117 "Damion Dooley" xsd:string
+relationship: RO:0001000 FOODON:03411564 ! derives from organismal source
 
 [Term]
 id: FOODON:00002403
@@ -650,19 +396,17 @@ synonym: "food" EXACT []
 synonym: "foodstuff" EXACT []
 synonym: "nourishment" EXACT []
 synonym: "sustenance" EXACT []
-is_a: ENVO:00010483 ! environmental material
-intersection_of: ENVO:00010483 ! environmental material
+is_a: BFO:0000040 ! material entity
+intersection_of: BFO:0000040 ! material entity
 intersection_of: RO:0000087 CHEBI:33290 ! has role food
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
+relationship: RO:0000087 CHEBI:33290 ! has role food
 
 [Term]
 id: FOODON:00002451
 name: food transformation process
 def: "A process involving the physical transformation of a food source or food product into some derived organic material or food product" []
 is_a: BFO:0000015 ! process
-relationship: RO:0002234 FOODON:00002403 ! has output food material
-property_value: IAO:0000114 "requires discussion" xsd:string
-property_value: IAO:0000117 "Damion Dooley" xsd:string
+relationship: OBI:0000299 FOODON:00002403 ! food material
 
 [Term]
 id: FOODON:00002452
@@ -680,6 +424,7 @@ is_a: FOODON:00001002 ! food product
 [Term]
 id: FOODON:00002470
 name: food object quality
+def: "A physical object quality which can describe an attribute of a food item or related to a food product." []
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
@@ -692,14 +437,9 @@ relationship: RO:0002350 FOODON:03400267 ! member of seafood or seafood product 
 id: FOODON:00002501
 name: multi-component food product
 def: "A food product consisting of food material derived from ingredients sourced from multiple organisms." []
-comment: The definition of this is being discussed in issue: https://github.com/FoodOntology/foodon/issues/57\n\nNamely, how to characterize the threshold of ingredients that make for multi-component classification? Salt, pepper, spices wouldn't normally make a food multi-component?
 is_a: FOODON:00001002 ! food product
 relationship: RO:0001000 FOODON:00002381 ! derives from food product by organism
 relationship: RO:0002350 FOODON:03400139 ! member of multicomponent meal (us cfr)
-property_value: hasSynonym "multi-ingredient" xsd:string
-property_value: http://purl.org/dc/elements/1.1/date 2019-01-23T22:40:32Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002505
@@ -724,8 +464,6 @@ id: FOODON:00002645
 name: food product by process
 def: "A food product organized by the process which it results from." []
 is_a: FOODON:00001002 ! food product
-property_value: http://purl.org/dc/elements/1.1/date 2019-05-23T23:02:07Z xsd:dateTime
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002655
@@ -734,14 +472,13 @@ synonym: "peeled" EXACT []
 is_a: FOODON:00002645 ! food product by process
 intersection_of: FOODON:00002645 ! food product by process
 intersection_of: RO:0002353 FOODON:03000001 ! output of food peeling process
-property_value: http://purl.org/dc/elements/1.1/date 2019-05-25T06:43:20Z xsd:dateTime
-property_value: IAO:0000117 "Damion Dooley" xsd:string
+relationship: RO:0002353 FOODON:03000001 ! output of food peeling process
 
 [Term]
 id: FOODON:00003004
 name: animal
 def: "A multicellular eukaryotic heterotrophic organism within the kingdom Animalia." []
-is_a: FOODON:03411564 ! food product organismal source
+is_a: FOODON:03411564 ! organismal source
 
 [Term]
 id: FOODON:00003194
@@ -749,19 +486,14 @@ name: vegetarian food product
 def: "A food product not including meat and animal tissue products (such as gelatin or animal-derived rennet)." []
 synonym: "vegetarian food" EXACT []
 is_a: FOODON:00002381 ! food product by organism
-property_value: http://purl.org/dc/elements/1.1/date 2019-09-11T21:12:43Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165
-property_value: IAO:0000119 https://en.wikipedia.org/wiki/Vegetarian_cuisine xsd:string
 
 [Term]
 id: FOODON:00003203
 name: food harvesting
 def: "A process which takes in some food material from an individual or community of plant or animal organisms in a given context and time, and outputs a precursor or consumable food product. This may include a part of an organism or the whole, and may involve killing the organism." []
-comment: This includes harvesting from plants, hunting a deer, or milking process of a cow.  The food is derived from part or whole of a single organism species (with perhaps a few exceptions, such as lichen).
 is_a: FOODON:00002451 ! food transformation process
-relationship: RO:0002233 FOODON:00003402 ! has input pre-harvest food material
-relationship: RO:0002234 FOODON:00003374 ! has output harvested food material
+relationship: OBI:0000293 FOODON:00003402 ! pre-harvest food material
+relationship: OBI:0000299 FOODON:00003374 ! harvested food material
 
 [Term]
 id: FOODON:00003318
@@ -769,29 +501,52 @@ name: echinoderm food product
 is_a: FOODON:00001293 ! shellfish food product
 intersection_of: FOODON:00001293 ! shellfish food product
 intersection_of: RO:0001000 FOODON:03412115 ! derives from echinoderm
-property_value: http://purl.org/dc/elements/1.1/date 2020-01-08T00:20:27Z xsd:dateTime
-property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165
+relationship: RO:0001000 FOODON:03412115 ! derives from echinoderm
 
 [Term]
 id: FOODON:00003374
 name: harvested food material
-def: "Organic food material that has been harvested." []
+def: "Organism food material that has been harvested." []
 is_a: FOODON:00002403 ! food material
 relationship: RO:0002353 FOODON:00003203 ! output of food harvesting
 
 [Term]
 id: FOODON:00003402
 name: pre-harvest food material
-def: "Organic food material which has not reached harvestable maturity." []
+def: "Organism food material which has not reached harvestable maturity." []
 is_a: FOODON:00002403 ! food material
+
+[Term]
+id: FOODON:00004242
+name: animal food product
+def: "A food product deriving from one or more animals." []
+is_a: FOODON:00002381 ! food product by organism
+
+[Term]
+id: FOODON:00004328
+name: organism piece
+def: "A piece or pieces or amount of substance derived from one or more organisms." []
+is_a: FOODON:03420116 ! organism material
+
+[Term]
+id: FOODON:00004331
+name: plant material
+def: "Anatomical or other piece(s) or substance derived from one or more plants." []
+is_a: FOODON:03420116 ! organism material
+
+[Term]
+id: FOODON:00004333
+name: plant piece
+def: "An anatomical or other piece derived from a plant." []
+is_a: FOODON:00004328 ! organism piece
+is_a: FOODON:00004331 ! plant material
 
 [Term]
 id: FOODON:03000001
 name: food peeling process
 def: "peeling\" is the process of removing the outer covering, layer or skin from a fruit, vegetable, or plant or animal (such as a shrimp)." []
 is_a: FOODON:03460130 ! physical/chemical modification process
-relationship: RO:0002234 FOODON:00002655 ! has output food (peeled)
-property_value: IAO:0000117 "Damion Dooley" xsd:string
+relationship: OBI:0000299 FOODON:00002655 ! food (peeled)
 
 [Term]
 id: FOODON:03000003
@@ -817,144 +572,97 @@ name: beverage food product
 def: "A liquid prepared for consumption, or a product that can be combined with water or milk to make one." []
 is_a: FOODON:00002373 ! food product by meal type
 relationship: RO:0002350 FOODON:03400229 ! member of beverage (us cfr)
-property_value: http://purl.org/dc/elements/1.1/date 2019-09-12T00:00:00 xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03302116
 name: cow milk (liquid)
-comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
-subset: subset_siren
 synonym: "cow milk" EXACT []
 synonym: "milk" BROAD []
-xref: SUBSET_SIREN:F2116
 is_a: FOODON:00001771 ! cow milk based food product
 is_a: FOODON:03430130 ! food (liquid)
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03303918
 name: human milk (raw)
 def: "Breast milk is the milk produced by the breasts (or mammary glands) of a human female to feed a child." []
-comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F3918
 is_a: FOODON:00001958 ! human milk based food product
 is_a: UBERON:0001913 ! milk
 intersection_of: UBERON:0001913 ! milk
 intersection_of: RO:0003001 NCBITaxon:9606 ! produced by Homo sapiens
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000119 https://en.wikipedia.org/wiki/Breast_milk xsd:anyURI
-property_value: IAO:0000412 http://langual.org xsd:string
+relationship: RO:0003001 NCBITaxon:9606 ! produced by Homo sapiens
 
 [Term]
 id: FOODON:03304511
 name: seafood newburg (dish)
-comment: SIREN DB annotation:\n* has quality 'semiliquid with solid pieces' (http://purl.obolibrary.org/obo/FOODON_03430110)\n* has quality 'fully heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440014)\n* derives from 'skeletal meat part, without bone or shell' (http://purl.obolibrary.org/obo/FOODON_03420125)\n* formed as a result of 'alcoholated' (http://purl.obolibrary.org/obo/FOODON_03460160)\n* has substance added  'spice or herb added' (http://purl.obolibrary.org/obo/FOODON_03460151)\n* has substance added  http://purl.obolibrary.org/obo/FOODON_03460185\n* has substance added  'dairy product added' (http://purl.obolibrary.org/obo/FOODON_03460242)\n* immersed in  'packed in gravy or sauce' (http://purl.obolibrary.org/obo/FOODON_03480034)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F4511
 is_a: FOODON:00002471 ! prepared seafood product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03305803
 name: goat milk (raw)
-comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F5803
 is_a: FOODON:00001911 ! goat dairy food product
 is_a: UBERON:0001913 ! milk
 intersection_of: UBERON:0001913 ! milk
 intersection_of: RO:0003001 NCBITaxon:9925 ! produced by Capra hircus
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
+relationship: RO:0003001 NCBITaxon:9925 ! produced by Capra hircus
 
 [Term]
 id: FOODON:03307455
 name: cow milk (raw)
-comment: SIREN DB annotation:\n* has quality 'liquid, low viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430123)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n* has consumer 'not pasteurized claim or use' (http://purl.obolibrary.org/obo/FOODON_03510121)\n        
-subset: subset_siren
 synonym: "milk" EXACT []
 synonym: "raw milk" BROAD []
-xref: SUBSET_SIREN:F7455
 is_a: FOODON:03302116 ! cow milk (liquid)
 is_a: UBERON:0001913 ! milk
 intersection_of: UBERON:0001913 ! milk
 intersection_of: RO:0001000 FOODON:03411201 ! derives from dairy cow
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03309823
 name: shrimp paste
 def: "definition: Shrimp paste or shrimp sauce is a fermented condiment commonly used in Southeast Asian, Northeastern South Asian and Southern Chinese cuisines." []
-comment: SIREN DB annotation:\n* has quality 'semisolid' (http://purl.obolibrary.org/obo/FOODON_03430144)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'whole animal or most parts used' (http://purl.obolibrary.org/obo/FOODON_03420173)\n* formed as a result of 'fermentation/modification process, multiple component' (http://purl.obolibrary.org/obo/FOODON_03460128)\n* formed as a result of 'water removal process' (http://purl.obolibrary.org/obo/FOODON_03460138)\n* formed as a result of 'salted' (http://purl.obolibrary.org/obo/FOODON_03460173)\n* formed as a result of 'preservation by fermentation' (http://purl.obolibrary.org/obo/FOODON_03470104)\n        
-subset: subset_siren
-synonym: "kapi\nngapi\nterasi\nbelacan\nbelachan\nblachang\nmắm ruốc\nmắm tép\nmắm tôm\nbagoong alamang\nbagoong aramang\nhaa1 zoeng3/haa1 gou1\nhom ha/hae ko\nsidol" NARROW []
+synonym: "bagoong alamang" NARROW []
+synonym: "bagoong aramang" NARROW []
+synonym: "belacan" NARROW []
+synonym: "belachan" NARROW []
+synonym: "blachang" NARROW []
+synonym: "hae ko" NARROW []
+synonym: "hom ha" NARROW []
+synonym: "kapi" NARROW []
+synonym: "mắm ruốc" NARROW []
+synonym: "mắm tép" NARROW []
+synonym: "mắm tôm" NARROW []
+synonym: "ngapi" NARROW []
 synonym: "shrimp sauce" EXACT []
-xref: SUBSET_SIREN:F9823
+synonym: "sidol" NARROW []
+synonym: "terasi" NARROW []
 is_a: FOODON:00001054 ! fermented fish or seafood food product
 is_a: FOODON:00002239 ! shrimp food product
 intersection_of: FOODON:00001054 ! fermented fish or seafood food product
 intersection_of: FOODON:00002239 ! shrimp food product
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000116 "Need to set languages of synonyms (japanese/thai ?)" xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-1816-4260 xsd:anyURI
-property_value: IAO:0000119 wikipedia:Shrimp_pastse http://www.w3.org/2000/01/rdf-schema#Literal
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03311737
 name: processed food product
-subset: subset_siren
-xref: SUBSET_SIREN:F11737
 is_a: FOODON:00001002 ! food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03315150
 name: mammalian milk product
-comment: SIREN DB annotation:\n* derives from 'milk (mammary secretion)' (http://purl.obolibrary.org/obo/UBERON_0001913)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F15150
-is_a: FOODON:00001256 ! dairy food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
+is_a: FOODON:00001257 ! milk or milk based food product
 
 [Term]
 id: FOODON:03315173
 name: fish product (unspecified species)
 def: "A fish product is a home-made or commercially produced or retail or wholesale product containing substantial amounts of freshwater or saltwater fish and/or shellfish flesh. Note that this category should avoid items that mention a particular species of fish or shellfish." []
-comment: SIREN DB annotation:\n* derives from 'skeletal meat part' (http://purl.obolibrary.org/obo/FOODON_03420175)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F15173
 is_a: FOODON:00001248 ! fish food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
-property_value: seeAlso https://en.wikipedia.org/wiki/Fish_products xsd:string
 
 [Term]
 id: FOODON:03315468
 name: shellfish meat (whole or parts)
-comment: SIREN DB annotation:\n* has quality 'solid' (http://purl.obolibrary.org/obo/FOODON_03430151)\n* derives from 'meat part of animal' (http://purl.obolibrary.org/obo/FOODON_03420103)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F15468
 is_a: FOODON:00001293 ! shellfish food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400004
 name: obsolete: product type, other
-comment: LanguaL curation note: Used only if the product does not fall under any of the major product types listed. [FDA CFSAN 1995]
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0004
-property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 replaced_by: http://purl.obolibrary.org/obo/FOODON_00001002
 
@@ -962,177 +670,108 @@ replaced_by: http://purl.obolibrary.org/obo/FOODON_00001002
 id: FOODON:03400129
 name: refined or partially-refined food product (us cfr)
 def: "Extract, concentrate or isolate derived from a food source through one or more refining steps (see *EXTRACT, CONCENTRATE OR ISOLATE OF PLANT OR ANIMAL*) and marketed as such. [FDA CFSAN 1995]" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0129
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400139
 name: multicomponent meal (us cfr)
 def: "A multiple-component food product typically containing a protein source, a vegetable, and a potato, rice or cereal-based component packaged to be served after heating, either as separate items or courses or mixed as recipe components; see 21 CFR 102.26, 102.28 and 104.47 for nutritional quality guidelines." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0139
 is_a: FOODON:03400172 ! prepared food product (us cfr)
-property_value: hasSynonym "compartmentalized dinner" xsd:string
-property_value: hasSynonym "dinner with components separated in serving containers" xsd:string
-property_value: hasSynonym "dinner, compartmentalized" xsd:string
-property_value: hasSynonym "food packs with separate components" xsd:string
-property_value: hasSynonym "heat and serve dinner" xsd:string
-property_value: hasSynonym "multiple-course dinner" xsd:string
-property_value: hasSynonym "tv dinner" xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400148
 name: milk or milk product (us cfr)
 def: "Milk in all forms, milk-based beverage, cultured milk product, or milk or milk product analog. Index infant formula under *MEAL REPLACEMENT*." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0148
 is_a: FOODON:03400164 ! dairy product (us cfr)
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400164
 name: dairy product (us cfr)
 def: "Milk, a product derived from milk, or a dairy product analog; includes cheese and frozen dairy desserts. [FDA CFSAN 1995]" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0164
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400172
 name: prepared food product (us cfr)
 def: "Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked. Prepared foods often undergo several of the processes listed in *F. EXTENT OF HEAT TREATMENT* and *H. TREATMENT APPLIED*; these factors should be carefully considered in indexing. The classification of prepared food products emphasizes consumption characteristics. [FDA CFSAN 1995]" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0172
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
-property_value: hasSynonym "prepared dish" xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400217
 name: meat, poultry, seafood or related product (us cfr)
 def: "Products of the flesh of animals. [FDA CFSAN 1995]" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0217
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400229
 name: beverage (us cfr)
 def: "Alcoholic or nonalcoholic beverage; excludes milk and milk-based beverages, fruit juices and fruit juice drinks, and vegetable juices. [FDA CFSAN 1995]" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0229
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
 relationship: RO:0002351 FOODON:03301977 ! has member beverage food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400260
 name: nut or nut product (us cfr)
 def: "Nuts in all forms, including nut butters and pastes." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0260
 is_a: FOODON:03400306 ! nut or seed product (us cfr)
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400267
 name: seafood or seafood product (us cfr)
 def: "Flesh from fish or shellfish. Includes seafood product analogs and seafood-based sausage or luncheon meat as well as such products as squid ink and clam juice." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0267
 is_a: FOODON:03400217 ! meat, poultry, seafood or related product (us cfr)
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400289
 name: USA agency food product type
 def: "Food group having common consumption, functional or manufacturing characteristics, e.g. *FRUIT OR VEGETABLE PRODUCT*, *DAIRY PRODUCT*, *CONFECTIONARY*, *PREPARED FOOD PRODUCT*, etc. [FDA CFSAN 1995]" []
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0289
 is_a: FOODON:03400361 ! agency food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400306
 name: nut or seed product (us cfr)
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0306
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400352
 name: international agency food product type
 def: "Renamed from *PRODUCT TYPE, CODEX ALIMENTARIUS* in LanguaL 2008." []
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0352
 is_a: FOODON:03400361 ! agency food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400361
 name: agency food product type
 def: "An agency food product type is a class of food product defined by an agency or consortium." []
-comment: This class is designed to hold 3rd party food classification schemes which are being mapped to FoodOn classes using the 'has member' relation. The two hierarchies are not melded into a subclass polyhierarchy because of possible logical inconsistencies in the agency schemes. The hierarchies of agency schemes are as true to their agency representation as possible.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0361
 is_a: FOODON:00002403 ! food material
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400643
 name: Codex Alimentarius classification of food and feed commodities
 def: "Codex Alimentarius, Volume 2 - 1993, Section 2:  Pesticide Residues in Food.\n\nThe Codex Classification of food and animal feed commodities moving in trade and the description of the various items and groups of food and animal feedstuffs included in the present document have been developed by the Codex Committee on Pesticide Residues. It was first adopted by the 18th Session of the Codex Alimentarius Commission, (1989).\n\nThe Codex Classification includes food commodities and animal feedstuffs for which Codex maximum residue limits will not necessarily be established. The Classification is intended to be as complete a listing of food commodities in trade as possible, classified into groups on the basis of the commodity's similar potential for pesticide residues.\n\nThe Classification may also be appropriate for other purposes such as setting maximum levels for other types of residues or for other contaminants in food. The Codex Classification should be consulted in order to obtain a precise description of the food or animal feed commodities and, especially, in cases where Codex maximum residue limits have been set for groups of food and groups of animal feedstuffs. The Codex Classification is intended to promote harmonization of the terms used to describe commodities which are subject to maximum residue limits and of the approach to grouping commodities with similar potential for residue for which a common group maximum residue limit can be set." []
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0643
 is_a: FOODON:03400352 ! international agency food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400644
 name: a.  primary food commodities of plant origin (ccpr)
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0644
 is_a: FOODON:03400643 ! Codex Alimentarius classification of food and feed commodities
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400652
 name: 04  nuts and seeds (ccpr)
 def: "TYPE 04  -  NUTS AND SEEDS\n\nNuts and seeds are derived from a large variety of trees, shrubs and herbaceous plants, mostly cultivated.\n\nThe mature seeds or nuts are used as human food, for the production of beverages or edible vegetable oils and for the production of seed meals and cakes for animal feed." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0652
 is_a: FOODON:03400644 ! a.  primary food commodities of plant origin (ccpr)
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400685
 name: 022  tree nuts (tn) (ccpr)
 def: "Tree nuts are the seeds of a variety of trees and shrubs which are characterized by a hard inedible shell enclosing an oily seed.\nThe seed is protected from pesticides applied during the growing season by the shell and other parts of the fruit.\nThe edible portion of the nut is consumed in succulent, dried or processed forms." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A0685
 is_a: FOODON:03400652 ! 04  nuts and seeds (ccpr)
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03401270
 name: U.S. code of federal regulations, title 21 food product type
 def: "Food and Drugs, title 21, Code of Federal Regulations. Original food classification in LanguaL." []
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=A1270
 is_a: FOODON:03400289 ! USA agency food product type
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-property_value: seeAlso https://www.ecfr.gov/cgi-bin/text-idx?SID=87f720ce0d0b6c4548f4bbfd1f8e4c3d&mc=true&tpl=/ecfrbrowse/Title21/21chapterI.tpl xsd:anyURI
 
 [Term]
 id: FOODON:03411013
@@ -1157,8 +796,7 @@ union_of: FOODON:03412409 ! coelenterate
 id: FOODON:03411041
 name: chemical food component
 def: "Any chemical or chemical mixture that exists in a food material or was added to a food material." []
-is_a: CHEBI:24431 ! chemical entity
-relationship: BFO:0000050 FOODON:00002403 ! part of food material
+is_a: FOODON:00002403 ! food material
 
 [Term]
 id: FOODON:03411047
@@ -1189,7 +827,6 @@ replaced_by: NCBITaxon:9606
 id: FOODON:03411134
 name: mammal
 def: "Mammals (from Latin mamma \"breast\") are vertebrate animals constituting the class Mammalia, and characterized by the presence of mammary glands which in females produce milk for feeding (nursing) their young, a neocortex (a region of the brain), fur or hair, and three middle ear bones." []
-is_a: FOODON:00001092 ! vertebrate animal food product
 is_a: FOODON:03411297 ! vertebrate animal
 
 [Term]
@@ -1226,16 +863,12 @@ is_a: FOODON:03411607 ! nut or edible seed producing plant
 [Term]
 id: FOODON:03411215
 name: obsolete: algae, bacteria or fungus
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1215
-property_value: IAO:0000231 "Disjunction discouraged, use specific item instead." xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 
 [Term]
 id: FOODON:03411222
 name: fish
 def: "Fish are the gill-bearing aquatic craniate animals that lack limbs with digits. Most fish are ectothermic (\"cold-blooded\"), allowing their body temperatures to vary as ambient temperatures change, though some of the large active swimmers like white shark and tuna can hold a higher core temperature." []
-is_a: FOODON:00001248 ! fish food product
 is_a: FOODON:03411021 ! fish or lower water animal
 is_a: FOODON:03411297 ! vertebrate animal
 
@@ -1249,7 +882,7 @@ id: FOODON:03411261
 name: fungus
 def: "A member of the group of eukaryotic organisms in the kingdom Fungi that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms." []
 synonym: "fungi" EXACT []
-is_a: FOODON:03411564 ! food product organismal source
+is_a: FOODON:03411564 ! organismal source
 
 [Term]
 id: FOODON:03411297
@@ -1262,7 +895,7 @@ is_a: FOODON:00003004 ! animal
 id: FOODON:03411301
 name: algae
 def: "An informal term for a large, diverse group of photosynthetic eukaryotic organisms that are not necessarily closely related, and is thus polyphyletic." []
-is_a: FOODON:03411564 ! food product organismal source
+is_a: FOODON:03411564 ! organismal source
 
 [Term]
 id: FOODON:03411312
@@ -1303,7 +936,7 @@ id: FOODON:03411374
 name: crustacean
 def: "Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]" []
 is_a: FOODON:03411433 ! shellfish
-disjoint_from: FOODON:03412115 ! echinoderm
+disjoint_from: FOODON:03412115 {http://www.w3.org/1999/02/22-rdf-syntax-ns#type="owl:AllDisjointClasses"} ! echinoderm
 
 [Term]
 id: FOODON:03411433
@@ -1315,7 +948,7 @@ is_a: FOODON:03411021 ! fish or lower water animal
 
 [Term]
 id: FOODON:03411564
-name: food product organismal source
+name: organismal source
 def: "This is a hierarchy of organisms, grouped minimally in a combination of taxonomy and consumer-oriented food groups." []
 is_a: OBI:0100026 ! organism
 
@@ -1346,7 +979,7 @@ synonym: "Echinodermata" NARROW []
 synonym: "Echinodermata Klein, 1734" NARROW []
 is_a: FOODON:03411142 ! aquatic invertebrate animal (excluding shellfish)
 is_a: FOODON:03411433 ! shellfish
-disjoint_from: FOODON:03412409 ! coelenterate
+disjoint_from: FOODON:03412409 {http://www.w3.org/1999/02/22-rdf-syntax-ns#type="owl:AllDisjointClasses"} ! coelenterate
 
 [Term]
 id: FOODON:03412215
@@ -1358,7 +991,7 @@ is_a: FOODON:03411335 ! crab
 id: FOODON:03412345
 name: lichen
 def: "A composite organism that arises from algae or cyanobacteria living among filaments of multiple fungi species in a mutualistic relationship." []
-is_a: FOODON:03411564 ! food product organismal source
+is_a: FOODON:03411564 ! organismal source
 
 [Term]
 id: FOODON:03412409
@@ -1383,7 +1016,6 @@ is_a: NCBITaxon:9925 ! Capra hircus
 [Term]
 id: FOODON:03412846
 name: obsolete: bacteria
-property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 replaced_by: NCBITaxon:2
 
@@ -1422,26 +1054,25 @@ union_of: FOODON:03420295 ! fruit seed (anatomical part)
 id: FOODON:03420113
 name: mammalian milk or milk component
 def: "A broad term that includes milk and its components, cream, curd and whey; use the appropriate specific term when milk or a milk product is the principal ingredient. Use the appropriate term under *MEAT ANIMAL* to index the source of the milk (note: 21 CFR 131.110 defines milk as cow's milk)." []
-is_a: FOODON:00001257 ! milk or milk based food product
 is_a: FOODON:03315150 ! mammalian milk product
 
 [Term]
 id: FOODON:03420116
-name: part of organism
-def: "Anatomical part of the plant or animal from which a food product or its major ingredient is derived." []
+name: organism material
+def: "Anatomical or other part(s) or substances derived from plant or animal or fungal organisms." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
 id: FOODON:03420122
 name: nonmeat part of animal
 def: "Bone, feathers, shell, skin or trim fat." []
-is_a: FOODON:03420127 ! animal body or body part
+is_a: FOODON:03420127 ! animal (whole or pieces)
 
 [Term]
 id: FOODON:03420127
-name: animal body or body part
-def: "Includes carcass meat, organ meat, and nonmeat parts of animals, as well as the whole animal." []
-is_a: FOODON:03420164 ! part of animal
+name: animal (whole or pieces)
+def: "A whole animal or one or more pieces from one or more animals." []
+is_a: FOODON:03420164 ! animal material
 
 [Term]
 id: FOODON:03420144
@@ -1452,7 +1083,7 @@ is_a: FOODON:03420148 ! root, stem, leaf or flower
 id: FOODON:03420148
 name: root, stem, leaf or flower
 def: "The parts of a plant that are not fruit or seed." []
-is_a: PO:0009011 ! plant structure
+is_a: FOODON:00004333 ! plant piece
 
 [Term]
 id: FOODON:03420155
@@ -1465,14 +1096,13 @@ replaced_by: PO:0009010
 
 [Term]
 id: FOODON:03420164
-name: part of animal
-def: "Anatomical part of an animal; includes eggs and milk that, although separated from the animal, are produced as integral parts and are affected by the animal's food intake and metabolism." []
-is_a: FOODON:03420116 ! part of organism
+name: animal material
+def: "Anatomical or other piece(s) or substance derived from one or more animals." []
+is_a: FOODON:03420116 ! organism material
 
 [Term]
 id: FOODON:03420165
 name: obsolete: fruit or seed
-xref: langual:thesaurus.asp?termid=C0165
 is_obsolete: true
 
 [Term]
@@ -1480,12 +1110,12 @@ id: FOODON:03420167
 name: fruit part
 def: "The fleshy fruit of any plant. *FRUIT* includes vegetables berries and pods as well. The bulk of a fruit is its fleshy part, which is covered by a peel (skin) and which encloses a core, pit or seeds." []
 is_a: PO:0025496 ! multi-tissue plant structure
+relationship: BFO:0000050 PO:0009001 ! part of fruit
 
 [Term]
 id: FOODON:03420174
 name: obsolete: part of plant
 def: "Anatomical part of a plant, such as fruit, seed, pod, leaf, stem or flower as well as the whole plant." []
-property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 replaced_by: PO:0009011
 
@@ -1493,35 +1123,30 @@ replaced_by: PO:0009011
 id: FOODON:03420177
 name: gluten
 def: "Extract, concentrate or isolate high in gluten, the predominant protein of wheat or corn." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=C0177
 is_a: FOODON:00001907 ! gluten refined food product
 is_a: FOODON:03420236 ! protein extract, concentrate or isolate
 intersection_of: FOODON:00001907 ! gluten refined food product
 intersection_of: FOODON:03420236 ! protein extract, concentrate or isolate
 intersection_of: RO:0001000 FOODON:03411324 ! derives from grain plant
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
+relationship: RO:0001000 FOODON:03411324 ! derives from grain plant
 
 [Term]
 id: FOODON:03420178
 name: seed part
 is_a: PO:0025496 ! multi-tissue plant structure
+relationship: BFO:0000050 PO:0009010 ! part of seed
 
 [Term]
 id: FOODON:03420194
 name: egg or egg component
 def: "Poultry, game bird or turtle eggs." []
-is_a: FOODON:03420164 ! part of animal
+is_a: FOODON:03420164 ! animal material
 
 [Term]
 id: FOODON:03420228
 name: extract, concentrate or isolate of plant or animal
 def: "A physical-chemical component separated from the food source or its parts by extraction, centrifugation, filtration, heat processing, expressing or a similar process. The separated component may be converted through further processing. If this is done, the final substance is indexed. A water-extracted component may remain in aqueous dispersion. The extract, concentrate or isolate is indexed in preference to the anatomic part from which it is derived. For example, peanut oil is indexed under *PEANUT* combined wih *FAT OR OIL* rather than with *SEED OR KERNEL*. On the other hand, fruit and vegetable juices can be indexed under *FRUIT JUICE OR NECTAR* or *VEGETABLE JUICE* (A. PRODUCT TYPE); therefore the anatomic part of the plant should be indexed." []
-comment: Damion Dooley's note: Items in this branch will be merged into foodon food product branch.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=C0228
 is_a: FOODON:00001714 ! food product component
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03420236
@@ -1555,6 +1180,7 @@ name: fruit peel (anatomical part)
 def: "The rind or skin of fruit" []
 is_a: FOODON:03420110 ! peel, core or seed
 disjoint_from: FOODON:03420295 ! fruit seed (anatomical part)
+relationship: RO:0001000 PO:0030109 ! derives from hesperidium fruit
 
 [Term]
 id: FOODON:03420295
@@ -1579,11 +1205,10 @@ is_a: FOODON:00002470 ! food object quality
 id: FOODON:03430130
 name: food (liquid)
 def: "A state of matter between a solid and a gas, in which a substance has the capacity to flow and conforms to the shape of the container. Liquids range from water to honey, corresponding to a range in viscosity (or apparent viscosity) from 1 to 500 centipoise (viscosity is a measure of a liquid's resistance to flow). Products that are pourable but have a higher viscosity are *SEMILIQUID*." []
-comment: SIREN DB annotation:\n* has quality 'liquid' (http://purl.obolibrary.org/obo/FOODON_03430130)\n                
-xref: SUBSET_SIREN:F5105
 is_a: FOODON:00002454 ! food product by quality
 intersection_of: FOODON:00002454 ! food product by quality
 intersection_of: RO:0000086 PATO:0001548 ! has quality quality of a liquid
+relationship: RO:0000086 PATO:0001548 ! has quality quality of a liquid
 
 [Term]
 id: FOODON:03430131
@@ -1600,68 +1225,46 @@ is_a: FOODON:03430131 ! whole
 id: FOODON:03460111
 name: food treatment process
 def: "Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation." []
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0111
 is_a: FOODON:00002451 ! food transformation process
 
 [Term]
 id: FOODON:03460119
 name: microbial/enzymatic modification process
 def: "A food modification process by microbial or enzymatic action which results in molecular changes in any food component." []
-comment: LanguaL curation note: If salt, sugar or other food additive is used to aid in the modification process, index it by the appropriate term under *INGREDIENT ADDED*.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0119
 is_a: FOODON:03460141 ! food modification process
-property_value: hasSynonym "fermented, unspecified" xsd:string
 
 [Term]
 id: FOODON:03460130
 name: physical/chemical modification process
 def: "A food modification process where physical or chemical changes are effected in any food ingredient through a physical or non-enzymatic chemical process." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0130
 is_a: FOODON:03460141 ! food modification process
 
 [Term]
 id: FOODON:03460141
 name: food modification process
-comment: LanguaL curation note: Used when the food product underwent mechanical, chemical or enzymatic modification that has affected the texture, flavor or other characteristic of the product.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0141
 is_a: FOODON:03460111 ! food treatment process
 
 [Term]
 id: FOODON:03460177
 name: plant seed or nut food product
-comment: LanguaL curation note: With the exception of peanut (see *PEANUT OR PEANUT BUTTER ADDED*), used when a nut or seed ingredient is the second ingredient in order of predominance.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0177
 is_a: FOODON:00001015 ! plant food product
 union_of: FOODON:00001172 ! nut food product
 union_of: FOODON:00001173 ! plant seed food product
-property_value: IAO:0000116 "This disjunction is provided for food indexers who used the LanguaL category per guidelines.  Currently, by specifying the more specific nut or seed as ingredient instead, this category can be inferred." xsd:string
-property_value: IAO:0000118 "nut or seed added" xsd:string
 
 [Term]
 id: FOODON:03460180
 name: obsolete: food added
-comment: LanguaL curation note: When not otherwise indicated in the scope note, *FOOD ADDED* factor terms are applied when the specified food is the second ingredient in order of predominance, excluding water. Always used for fillings and when the added food is part of the product name (e.g., raisin bread).
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0180
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000231 "\"Food added\" and its subclasses referenced existing ingredients / food products.  FoodOn uses relations like \"has ingredient\" to do the same. If needed, these relations can be annotated with proportions." xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
 is_obsolete: true
 
 [Term]
 id: FOODON:03460225
 name: food component addition process
-comment: LanguaL curation note: A food product is characterized by its main ingredient (food source and part); the addition of secondary ingredients is considered a treatment applied to the product. Secondary ingredients are indexed according to rules that are based on the order of predominance by weight (not counting water) as seen from the label statement, formulation or recipe and/or from the amount of the ingredient as percentage of total product weight. The general rule is:  an ingredient is always indexed if it is the second ingredient in order of predominance, if it is used as a filling, or if it is part of the product name(e.g., raisin bread). Specific rules are given in the scope note for the individual ingredient added; these rules specify more exhaustive indexing. For example, *MUSHROOM ADDED* is indexed regardless of ingredient position. another specific rule is given in the scope note for *SALTED*:  Use if the level of salt is more than 4%. Such a rule is used only when the percentage level can be inferred from the list of ingredients.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0225
 is_a: FOODON:03460111 ! food treatment process
-property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:03470107
 name: food preservation process
 def: "The methods contributing to the prevention or retardation of microbial, enzymatic or oxidative spoilage and thus to the extension of shelf life. Index all methods for which information is available, even if a corresponding descriptor has already been used in *H. TREATMENT APPLIED*. Preservation descriptors refer to the finished food as a whole with these exceptions: (1) if the components of a multi-component food, such as cream pie, are preservation by different methods, index all methods; (2)  if chemical preservatives are declared on the label, always index them even if it is known that the preservative was introduced through or is only present in a component or ingredient of the food; and (3) if the preservation method for an ingredient is declared on the label (such as brie cheese made from pasteurized milk) index it. Also use *INGREDIENT preservation by THERMAL PROCESSING* or *INGREDIENT preservation by IRRADIATION* when ingredients have been pasteurized, ultrapasteurized, sterilized or irradiated." []
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=J0107
 is_a: FOODON:00002451 ! food transformation process
 
 [Term]
@@ -1686,25 +1289,21 @@ id: NCBITaxon:117571
 name: Euteleostomi
 synonym: "bony vertebrates" EXACT []
 is_a: NCBITaxon:7776 ! Gnathostomata <vertebrates>
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:1338369
 name: Dipnotetrapodomorpha
 is_a: NCBITaxon:117571 ! Euteleostomi
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:1437010
 name: Boreoeutheria
 is_a: NCBITaxon:9347 ! Eutheria
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:207598
 name: Homininae
 is_a: NCBITaxon:9526 ! Catarrhini
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:2759
@@ -1712,97 +1311,82 @@ name: Eukaryota
 synonym: "eucaryotes" EXACT []
 synonym: "eukaryotes" EXACT []
 is_a: OBI:0100026 ! organism
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:27592
 name: Bovinae
 is_a: NCBITaxon:9895 ! Bovidae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:314145
 name: Laurasiatheria
 is_a: NCBITaxon:1437010 ! Boreoeutheria
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:314146
 name: Euarchontoglires
 is_a: NCBITaxon:1437010 ! Boreoeutheria
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:314293
 name: Simiiformes
 is_a: NCBITaxon:9443 ! Primates
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:32523
 name: Tetrapoda
 synonym: "tetrapods" EXACT []
 is_a: NCBITaxon:1338369 ! Dipnotetrapodomorpha
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:32524
 name: Amniota
 synonym: "amniotes" EXACT []
 is_a: NCBITaxon:32523 ! Tetrapoda
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:32525
 name: Theria <mammals>
 synonym: "Theria" EXACT []
 is_a: NCBITaxon:40674 ! Mammalia
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:33154
 name: Opisthokonta
 is_a: NCBITaxon:2759 ! Eukaryota
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:33213
 name: Bilateria
 is_a: NCBITaxon:6072 ! Eumetazoa
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:33511
 name: Deuterostomia
 synonym: "deuterostomes" EXACT []
 is_a: NCBITaxon:33213 ! Bilateria
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:35500
 name: Pecora
 is_a: NCBITaxon:91561 ! Artiodactyla
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:40674
 name: Mammalia
 synonym: "mammals" EXACT []
 is_a: NCBITaxon:32524 ! Amniota
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:6072
 name: Eumetazoa
 is_a: NCBITaxon:33154 ! Opisthokonta
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:7711
 name: Chordata
 synonym: "chordates" EXACT []
 is_a: NCBITaxon:33511 ! Deuterostomia
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:7742
@@ -1810,7 +1394,6 @@ name: Vertebrata <vertebrates>
 synonym: "Vertebrata" EXACT []
 synonym: "vertebrates" EXACT []
 is_a: NCBITaxon:7711 ! Chordata
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:7776
@@ -1818,14 +1401,12 @@ name: Gnathostomata <vertebrates>
 synonym: "Gnathostomata" EXACT []
 synonym: "jawed vertebrates" EXACT []
 is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:91561
 name: Artiodactyla
 synonym: "whales, hippos, ruminants, pigs, camels etc." EXACT []
 is_a: NCBITaxon:314145 ! Laurasiatheria
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9347
@@ -1834,42 +1415,35 @@ synonym: "eutherian mammals" EXACT []
 synonym: "placental mammals" EXACT []
 synonym: "placentals" EXACT []
 is_a: NCBITaxon:32525 ! Theria <mammals>
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9443
 name: Primates
 synonym: "primate" EXACT []
 is_a: NCBITaxon:314146 ! Euarchontoglires
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9526
 name: Catarrhini
 is_a: NCBITaxon:314293 ! Simiiformes
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9606
 name: Homo sapiens
 synonym: "human" EXACT []
-synonym: "man" EXACT []
 is_a: FOODON:03411134 ! mammal
 is_a: NCBITaxon:207598 ! Homininae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9895
 name: Bovidae
 is_a: NCBITaxon:35500 ! Pecora
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9903
 name: Bos
 synonym: "oxen, cattle" EXACT []
 is_a: NCBITaxon:27592 ! Bovinae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9913
@@ -1882,15 +1456,15 @@ synonym: "cow" EXACT []
 synonym: "dairy cow" EXACT []
 synonym: "domestic cattle" EXACT []
 synonym: "domestic cow" EXACT []
+synonym: "ox" EXACT []
+synonym: "oxen" EXACT []
 is_a: FOODON:03414374 ! bovine
 is_a: NCBITaxon:9903 ! Bos
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9922
 name: Capra
 is_a: NCBITaxon:9963 ! Caprinae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9925
@@ -1901,67 +1475,51 @@ synonym: "goat" EXACT []
 synonym: "goats" EXACT []
 is_a: FOODON:03411328 ! goat
 is_a: NCBITaxon:9922 ! Capra
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: NCBITaxon:9963
 name: Caprinae
 is_a: NCBITaxon:9895 ! Bovidae
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ncbitaxon.owl
 
 [Term]
 id: OBI:0100026
 name: organism
 def: "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs." []
 is_a: BFO:0000040 ! material entity
-property_value: IAO:0000111 "organism" xsd:string
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000119 "WEB: http://en.wikipedia.org/wiki/Organism" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
 
 [Term]
 id: PATO:0000001
 name: quality
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
-is_a: BFO:0000020 ! specifically dependent continuant
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
 id: PATO:0001018
 name: physical quality
 def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." []
 is_a: PATO:0001241 ! physical object quality
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
 id: PATO:0001241
 name: physical object quality
 def: "A quality which inheres in a continuant." []
 is_a: PATO:0000001 ! quality
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
 id: PATO:0001548
 name: quality of a liquid
 def: "A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape." []
 is_a: PATO:0002198 ! quality of a substance
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
 id: PATO:0002198
 name: quality of a substance
 def: "A quality inhering in a bearer by virtue of its constitution." []
 is_a: PATO:0001018 ! physical quality
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Term]
 id: PO:0000003
 name: whole plant
-namespace: plant_anatomy
 def: "A plant structure (PO:0005679) which is a whole organism." []
-comment: Examples include plant embryo (PO:0009009), megagametophyte (PO:0025279) and microgametophyte (PO:0025280).
-subset: reference
-subset: TraitNet
 synonym: "bush (narrow)" NARROW []
 synonym: "clonal colony (related)" RELATED []
 synonym: "colony (related)" RELATED []
@@ -1985,61 +1543,40 @@ synonym: "tree (narrow)" NARROW []
 synonym: "vine (narrow)" NARROW []
 synonym: "woody clump (narrow)" NARROW []
 synonym: "植物体全体 (Japanese, exact)" EXACT []
-xref: PO_GIT:538
-xref: PO_GIT:69
-is_a: FOODON:03411564 ! food product organismal source
+is_a: FOODON:03411564 ! organismal source
 is_a: PO:0009011 ! plant structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0000018
 name: ovule primordium
-namespace: plant_anatomy
 def: "A floral structure primordium (PO:0025477) that is committed to the development of an ovule (PO:0020003)." []
-comment: The transition from ovule primordium to ovule occurs when an integument (PO:0020021) begins to develop from the protoderm (PO:0006210).
 synonym: "portion of ovule primordium tissue (exact)" EXACT []
 synonym: "primordio de &#243vulo (Spanish, exact)" EXACT []
 synonym: "胚珠原基（可視的） (Japanese, exact)" EXACT []
-xref: PO_GIT:465
 is_a: PO:0025477 ! floral organ primordium
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0000019
 name: gynoecium primordium
-namespace: plant_anatomy
 def: "A floral structure primordium (PO:0025477) that is committed to the development of a gynoecium (PO:0009062)." []
-comment: Use carpel primordium (PO:0004703) for the primordium (PO:0025127) of an individual carpel (PO:0009030).
 synonym: "pistil primordium (exact)" EXACT []
 synonym: "portion of gynoecium primordium tissue (exact)" EXACT []
 synonym: "primordio de gineceo (Spanish, exact)" EXACT []
 synonym: "雌蕊原基(可視的）   (Japanese, exact)" EXACT []
-xref: PO_GIT:465
 is_a: PO:0025477 ! floral organ primordium
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0000037
 name: shoot axis apex
-namespace: plant_anatomy
 def: "A shoot axis (PO:0025029) that is the most distal part of a shoot system (PO:0009006) and has as parts a shoot apical meristem (PO:0020148) and the youngest primordia (PO:0025127)." []
-subset: reference
 synonym: "&#225pice del epiblasto (epiblastema) (Spanish, exact)" EXACT []
 synonym: "シュート頂、茎頂 (Japanese, exact)" EXACT []
-xref: PO_GIT:234
 is_a: PO:0025029 ! shoot axis
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0000229
 name: flower meristem
-namespace: plant_anatomy
-alt_id: PO:0006329
-alt_id: PO:0006373
-alt_id: PO:0006374
-alt_id: PO:0025091
 def: "A portion of reproductive shoot apical meristem tissue (PO:0008028) that gives rise to the floral organs (PO:0025395)." []
-comment: In Zea mays and other grasses, the floret meristem is part of a spikelet and develops into a specific type of floret. If you are annotating to this structure for Zea mays or other grasses, please also add an annotation to the spikelet type that the meristem is part of. Choose the most specific term possible from: spikelet (PO:0009051), ear spikelet (PO:0006320), ear pedicellate spikelet (PO:0006348), ear sessile spikelet (PO:0006349), tassel spikelet (PO:0006309), tassel pedicellate spikelet (PO:0006312), tassel sessile spikelet (PO:0006311).
 synonym: "ear floret meristem (narrow)" NARROW []
 synonym: "floral apical meristem (related)" RELATED []
 synonym: "floral meristem (exact)" EXACT []
@@ -2049,91 +1586,48 @@ synonym: "Poaceae floret meristem (narrow)" NARROW []
 synonym: "tassel floret meristem (narrow)" NARROW []
 synonym: "花芽分裂組織 (Japanese, exact)" EXACT []
 is_a: PO:0008028 ! reproductive shoot apical meristem
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0004010
 name: meristematic cell
-namespace: plant_anatomy
 def: "A native plant cell (PO:0025606) synthesizing protoplasm and producing new cells by division and with only a primary cell wall." []
-subset: CL
 synonym: "c&#233lula meristem&#225tica (Spanish, exact)" EXACT []
 synonym: "stem cell (exact)" EXACT []
 synonym: "分裂組織細胞 (Japanese, exact)" EXACT []
-xref: CL:0000034
-xref: PO_GIT:272
 is_a: PO:0025606 ! native plant cell
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0006079
 name: shoot system meristem
-namespace: plant_anatomy
 def: "A portion of meristem tissue (PO:0009013) that is part of a shoot system (PO:0009006)." []
-subset: TraitNet
 synonym: "meristema del epiblasto (epiblastema) (Spanish, exact)" EXACT []
 synonym: "シュート分裂組織 (Japanese, exact)" EXACT []
-xref: PO_GIT:472
-xref: PO_GIT:583
 is_a: PO:0009013 ! portion of meristem tissue
 relationship: BFO:0000050 PO:0009006 ! part of shoot system
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0006210
 name: protoderm
-namespace: plant_anatomy
 def: "A portion of meristem tissue (PO:0009013) that is the outer layer of an apical meristem (PO:0020144), or the outer layer of a plant embryo proper (PO:0000001), and gives rise to a portion of epidermis (PO:0005679)." []
-comment: A protoderm may or may not arise from independent initial cells (PO:0004011). Some researchers also refer to it as an epidermis in a  meristematic state.
 synonym: "dermatogen cell (related)" RELATED []
 synonym: "portion of protoderm tissue (exact)" EXACT []
 synonym: "protodermis (Spanish, exact)" EXACT []
 synonym: "前表皮、原表皮 (Japanese, exact)" EXACT []
-xref: PO_GIT:125
 is_a: PO:0009013 ! portion of meristem tissue
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0008028
 name: reproductive shoot apical meristem
-namespace: plant_anatomy
 def: "A shoot apical meristem (PO:0020148) that gives rise to the apical growth of reproductive tissues and organs." []
 synonym: "meristema apical reproductivo del epiblasto (epiblastema) (Spanish, exact)" EXACT []
 synonym: "生殖シュート頂端 分裂組織 (Japanese, exact)" EXACT []
-xref: PO_GIT:36
 is_a: PO:0020148 ! shoot apical meristem
 relationship: BFO:0000050 PO:0025222 ! part of reproductive shoot apex
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009001
 name: fruit
-namespace: plant_anatomy
-alt_id: PO:0020067
-alt_id: PO:0020068
-alt_id: PO:0020069
-alt_id: PO:0020070
-alt_id: PO:0020071
-alt_id: PO:0020072
-alt_id: PO:0020073
-alt_id: PO:0020074
-alt_id: PO:0020076
-alt_id: PO:0020077
-alt_id: PO:0020078
-alt_id: PO:0020079
-alt_id: PO:0020080
-alt_id: PO:0020082
-alt_id: PO:0020083
-alt_id: PO:0020087
-alt_id: PO:0020107
 def: "A multi-tissue plant structure (PO:0025496) that develops from a gynoecium (PO:0009062), or a single carpel (PO:0009030), and at maturity may have as parts one or more seeds (PO:0009010)." []
-comment: A fruit (PO:0009001) may contain additional plant structures (PO:0009011) that were part of a flower (PO:0009046) and mature along with the gynoecium, such as a receptacle (PO:0009064). A fruit may develop without fertilization in cases of parthenocarpy, apomixis, or other hormone-induced conditions and may not always contain seeds (PO:0009010). When annotating to fruit (PO:0009001) that are referred to as ‘aggregate’, ‘multiple’, or ‘compound’, please annotate directly to the appropriate plant structure, such as receptacle, hypanthium (PO:0009065) or infructescence (PO:0006342). Fruits only occur in angiosperms.
-subset: Angiosperm
-subset: Arabidopsis
-subset: Maize
-subset: Poaceae
-subset: Rice
-subset: TraitNet
 synonym: "aggregate fruit  (broad)" BROAD []
 synonym: "coenocarp (narrow)" NARROW []
 synonym: "compound fruit  (broad)" BROAD []
@@ -2146,36 +1640,22 @@ synonym: "multiple fruit  (broad)" BROAD []
 synonym: "propagule  (broad)" BROAD []
 synonym: "syncarp (narrow)" NARROW []
 synonym: "果実 (exact, Japanese)" EXACT []
-xref: PO_GIT:76
-is_a: PO:0025496 ! multi-tissue plant structure
+is_a: FOODON:03420167 ! fruit part
 relationship: RO:0002202 PO:0009062 ! develops from gynoecium
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009002
 name: plant cell
-namespace: plant_anatomy
 def: "A cell which is a plant structure (PO:0009011)." []
-comment: Applies to cells that are living or dead at maturity (e.g., fiber cell or tracheid) and includes any external encapsulating structures (if present) such as the plasma membrane and the plant-type cell wall. Definition of cell GO:0005623: "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope". GO:0009505. Definition of plant-type cell wall (GO:0009505): A more or less rigid structure lying outside the cell membrane of a cell and composed of cellulose and pectin and other organic and inorganic substances, synonym; exact: cellulose and pectin-containing cell wall.
-subset: CL
-subset: reference
-subset: TraitNet
 synonym: "c&#233lula vegetal (Spanish, exact)" EXACT []
 synonym: "cell (broad)" BROAD []
 synonym: "植物細胞 (Japanese, exact)" EXACT []
-xref: GO:0005623
-xref: PO_GIT:56
 is_a: PO:0009011 ! plant structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009006
 name: shoot system
-namespace: plant_anatomy
 def: "A collective plant organ structure (PO:0025007) that produces shoot-borne portions of meristem tissue (PO:0009013) and the plant structures (PO:0009011) that arise from them." []
-comment: The shoot system is generally used to refer to the above-ground plant parts, although some plants have parts of their shoot system underground. For example, a rhizome (PO:0004542), bulb (PO:0025356), a corm (PO:0025355) or a subterranean tuber (PO:0004547), as in Solanum tuberosum (potato) or yam, are all part of the shoot system.
-subset: reference
-subset: TraitNet
 synonym: "Poaceae crown (related)" RELATED []
 synonym: "shoot (related)" RELATED []
 synonym: "sistema de epiblasto (epiblastema) (Spanish, exact)" EXACT []
@@ -2183,136 +1663,85 @@ synonym: "thalli (related)" RELATED []
 synonym: "thallus (related)" RELATED []
 synonym: "tree crown (narrow)" NARROW []
 synonym: "シュート系、苗条系 (Japanese, exact)" EXACT []
-xref: PO_GIT:135
 is_a: PO:0025007 ! collective plant organ structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009007
 name: portion of plant tissue
-namespace: plant_anatomy
 def: "A plant structure (PO:0009011) that consists predominantly of similarly specialized plant cells (PO:0009002) of one or more types." []
-comment: A portion of plant tissue may contain one or several types of cells that are organized in a specific spatial arrangement into a structural unit (which includes a mass of callus) and may include an intercellular matrix. May include other types of isolated cells, such as idioblasts.
-subset: reference
-subset: TraitNet
 synonym: "plant tissue (related)" RELATED []
 synonym: "porci&#243n de un tejido vegetal (Spanish, exact)" EXACT []
 synonym: "portion of tissue (broad)" BROAD []
 synonym: "tissue (broad)" BROAD []
 synonym: "植物組織の一部 (Japanese, exact)" EXACT []
-xref: PO_GIT:59
 is_a: PO:0009011 ! plant structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009008
 name: plant organ
-namespace: plant_anatomy
 def: "A multi-tissue plant structure (PO:0025496) that is a functional unit, is a proper part of a whole plant (PO:0000003), and includes portions of plant tissue (PO:0009007) of at least two different types that derive from a common developmental path." []
-comment: Examples include stem (PO:0009047), leaf (PO:0025034), and root (PO:0009005). May include individual plant cells (PO:0009002) that are not part of a portion of plant tissue (e.g., idioblasts, PO:0000283). A plant organ may have one or more different plant organs as parts, such as a sporophyll (PO:0009026) that may have as part a sporangium (PO:0025094) or a carpel (PO:0009030) that may have as part a plant ovule (PO:0020003).
-subset: TraitNet
 synonym: "&#243rgano vegetal (Spanish, exact)" EXACT []
 synonym: "compound plant organ (related)" RELATED []
 synonym: "organ (broad)" BROAD []
 synonym: "simple plant organ (related)" RELATED []
 synonym: "植物 器官 (Japanese, exact)" EXACT []
-xref: PO_GIT:55
 is_a: PO:0025496 ! multi-tissue plant structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009009
 name: plant embryo
-namespace: plant_anatomy
 def: "A whole plant (PO:0000003) that participates in the plant embryo stage (PO:0007631)." []
-comment: A plant embryo is generally formed after the first division of a plant zygote (PO:0000423), but in the case of a nucellar (adventitious) plant embryo (PO:0004537), somatic plant embryo (PO:0025302), microspore-derived cultured plant embryo (PO:0025305), and other embryos that arise through apogamy, it begins after the division of a single cell that is not a zygote. The end of the embryo stage varies among taxa; the beginning of a seed germination stage (PO:0007057) in seed plants, formation of the first vascular leaf (PO:0009025) in pteridophytes, the beginning of development of a sporangium (PO:0025094) in bryophytes, or the beginning of the formation of a plant organ (PO:0009008) such as a root (PO:0009005), shoot axis (PO:0025029), or vascular leaf (PO:0009025) in a cultured plant embryo (PO:0000010).
 synonym: "embri&#243n (Spanish, exact)" EXACT []
 synonym: "embryo (broad)" BROAD []
 synonym: "germ (related)" RELATED []
 synonym: "植物胚 (Japanese, exact)" EXACT []
-xref: PO_GIT:92
 is_a: PO:0000003 ! whole plant
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+is_a: PO:0025099 ! embryo plant structure
 
 [Term]
 id: PO:0009010
 name: seed
-namespace: plant_anatomy
 def: "A multi-tissue plant structure (PO:0025496) that develops from a plant ovule (PO:0020003) and has as parts a plant embryo (PO:0009009) enclosed in a seed coat (PO:0009088)." []
-comment: A seed generally develops from an ovule (PO:0020003) after fertilization, but may develop without fertilization in the case of apogamy (e.g., adventitious embryos or somatic embryos). A seed is a reproductive unit of seed plants (gymnosperms, angiosperms, and fossil pteridosperms).
-subset: Angiosperm
-subset: Arabidopsis
-subset: Citrus
-subset: Gymnosperms
-subset: Maize
-subset: Poaceae
-subset: Rice
-subset: Tomato
-subset: TraitNet
 synonym: "diaspore (broad)" BROAD []
 synonym: "pyrene (narrow)" NARROW []
 synonym: "semilla (Spanish, exact)" EXACT []
 synonym: "種子 (Japanese, exact)" EXACT []
-xref: PO_GIT:405
-is_a: PO:0025496 ! multi-tissue plant structure
-relationship: BFO:0000051 PO:0009009 ! has_part plant embryo
+is_a: FOODON:03420178 ! seed part
+relationship: BFO:0000051 PO:0009009 ! has part plant embryo
 relationship: RO:0002202 PO:0020003 ! develops from plant ovule
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009011
 name: plant structure
-namespace: plant_anatomy
 def: "A plant anatomical entity (PO:0025131) that is, or was, part of a plant, or was derived from a part of a plant." []
-comment: 'Part' includes both proper parts and the whole plant. CARO:0000003 'connected anatomical structure' is defined as: Material anatomical entity that is a single connected structure with inherent 3D shape, generated by coordinated expression of the organism's own genome.
-subset: TraitNet
 synonym: "estructura vegetal (Spanish, exact)" EXACT []
 synonym: "植物 構造 (Japanese, exact)" EXACT []
-xref: PO_GIT:57
-is_a: FOODON:03420116 ! part of organism
 is_a: PO:0025131 ! plant anatomical entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009012
 name: plant structure development stage
-namespace: plant_structure_development_stage
-alt_id: PO:0007021
 def: "A stage in the life of a plant structure (PO:0009011) during which the plant structure undergoes developmental processes." []
-comment: Refers to GO:0032502 'developmental process', which includes growth, differentiation, and senescence, and BFO:0000003 'ocurrent'.
-subset: TraitNet
 synonym: "Arabidopsis growth (related)" RELATED []
 synonym: "etapa de desarrollo de estructura vegetal (Spanish, exact)" EXACT []
 synonym: "plant growth and development stage (exact)" EXACT []
-xref: PO_GIT:185
-is_a: BFO:0000003 ! occurrent
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+is_a: BFO:0000015 ! process
 
 [Term]
 id: PO:0009013
 name: portion of meristem tissue
-namespace: plant_anatomy
 def: "A portion of plant tissue (PO:0009007) in which plant cells (PO:0009002) have retained their embryonic characteristics, or have reverted to them secondarily, and that divide to produce new cells that can undergo differentiation to form mature tissues, i.e. they have a capacity for morphogenesis and growth." []
-subset: TraitNet
 synonym: "meristem (exact)" EXACT []
 synonym: "meristema (Spanish, exact)" EXACT []
 synonym: "meristematic tissue (exact)" EXACT []
 synonym: "分裂組織 (Japanese, exact)" EXACT []
-xref: PO_GIT:472
 is_a: PO:0009007 ! portion of plant tissue
-relationship: BFO:0000051 PO:0004010 ! has_part meristematic cell
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+relationship: BFO:0000051 PO:0004010 ! has part meristematic cell
 
 [Term]
 id: PO:0009046
 name: flower
-namespace: plant_anatomy
-alt_id: PO:0004541
 def: "A determinate reproductive shoot system (PO:0025082) that has as part at least one carpel (PO:0009030) or at least one stamen (PO:0009029) and does not contain any other determinate shoot system (PO:0009006) as a part." []
-comment: The characteristic reproductive structure of angiosperms. May have as part one or more petals, sepals or tepals. May contain one or more pistillode (PO:0009078), staminode (PO:0009077) or other aborted organs that don't show up in mature form.
-subset: Angiosperm
-subset: reference
-subset: TraitNet
 synonym: "Asteraceae floret (narrow)" NARROW []
 synonym: "basal flower (narrow)" NARROW []
 synonym: "double flower (narrow)" NARROW []
@@ -2322,33 +1751,13 @@ synonym: "hermaphrodite flower (narrow)" NARROW []
 synonym: "monoclinous flower (narrow)" NARROW []
 synonym: "perfect flower (narrow)" NARROW []
 synonym: "花 (Japanese, exact)" EXACT []
-xref: PO_GIT:160
-xref: PO_GIT:259
 is_a: PO:0025082 ! reproductive shoot system
 relationship: RO:0002202 PO:0000229 ! develops from flower meristem
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009062
 name: gynoecium
-namespace: plant_anatomy
-alt_id: PO:0006317
-alt_id: PO:0006357
-alt_id: PO:0006365
-alt_id: PO:0006384
-alt_id: PO:0006391
-alt_id: PO:0006394
-alt_id: PO:0006403
-alt_id: PO:0006404
-alt_id: PO:0006423
-alt_id: PO:0006424
-alt_id: PO:0006425
-alt_id: PO:0006426
-alt_id: PO:0025089
 def: "A collective phyllome structure (PO:0025023) composed all of the carpels (PO:0009030) in a flower (PO:0009046)." []
-comment: If annotating gene expression to a gynoecium with a single carpel (PO:0009030), the annotation should go on carpel. A gynoecium with two or more carpels may be either syncarpous (carpels fused) or apopcarpous (carpels free) or the carpels may be partially fused. The word pistil is used synonymously with gynoecium for a synocarpous gynoecium, and synonymously with carpel for an apocarpous gynoecium, whether it has one or more carpels. In Zea mays, gynoecia of tassel florets and of the lower florets of ear spikelets usually do not develop fully, and they are present in a rudimentary state. If you are annotating to this structure for Zea mays or other grasses, please also add an annotation to the corresponding floret type. Choose the most specific term possible from: spikelet floret (PO:0009082), ear floret (PO:0006354), lower floret of pedicellate spikelet of ear (PO:0006353), lower floret of sessile spikelet of ear (PO:0006351), upper floret of pedicellate spikelet of ear (PO:0006350), upper floret of sessile spikelet of ear (PO:0006352), tassel floret (PO:0006310), lower floret of pedicellate spikelet of tassel (PO:0006313), lower floret of sessile spikelet of tassel (PO:0006315), upper floret of pedicellate spikelet of tassel (PO:0006314), upper floret of sessile spikelet of tassel (PO:0006316).
-subset: reference
-subset: TraitNet
 synonym: "apocarpous gynoecium (narrow)" NARROW []
 synonym: "ginoecio (Spanish, exact)" EXACT []
 synonym: "gynaecium (exact)" EXACT []
@@ -2368,50 +1777,32 @@ synonym: "Poaceae gynoecium (narrow)" NARROW []
 synonym: "syncarpous gynoecium (narrow)" NARROW []
 synonym: "Zea gynoecium (narrow)" NARROW []
 synonym: "雌蕊群 (Japanese, exact)" EXACT []
-xref: PO_GIT:470
-xref: PO_GIT:71
-xref: PO_GIT:98
 is_a: PO:0025023 ! collective phyllome structure
 relationship: BFO:0000050 PO:0009046 ! part of flower
 relationship: RO:0002202 PO:0000019 ! develops from gynoecium primordium
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009084
 name: pericarp
-namespace: plant_anatomy
 def: "A portion of plant tissue (PO:0009007) that is the outer layer (wall) of a fruit (PO:0009001), and develops from a plant ovary (PO:0009072) or a carpel (PO:0009030) wall." []
-comment: Pericarp comprises endocarp (PO:0009086), mesocarp (PO:0009087), and exocarp (PO:0009085) layers, each of which can be fleshy or dry. If you are annotating to this term, please add an additional annotation to the specific type of fruit (PO:0009001), such as achene fruit (PO:0030107), berry fruit (PO:0030108), capsule fruit (PO:0030091), caryopsis fruit (PO:0030104), drupe fruit (PO:0030103), follicle fruit (PO:0030105), legume fruit (PO:0030100), nut fruit (PO:0030102), samara fruit (PO:0030099), schizocarp fruit (PO:0030098), silique fruit (PO:0030106), or their subclasses, depending on the species.
-subset: Arabidopsis
-subset: Citrus
-subset: Maize
-subset: Poaceae
-subset: Rice
-subset: Tomato
 synonym: "fruit peel (related)" RELATED []
 synonym: "fruit rind (related)" RELATED []
 synonym: "pericarpo (Spanish, exact)" EXACT []
 synonym: "portion of pericarp tissue (exact)" EXACT []
 synonym: "果皮 (Japanese, exact)" EXACT []
-xref: PO_GIT:149
-xref: PO_GIT:511
 is_a: FOODON:03420167 ! fruit part
 is_a: PO:0009007 ! portion of plant tissue
-intersection_of: BFO:0000051 PO:0009085 ! has_part exocarp
-intersection_of: BFO:0000051 PO:0009086 ! has_part endocarp
-intersection_of: BFO:0000051 PO:0009087 ! has_part mesocarp
-relationship: BFO:0000050 PO:0009001 ! part of fruit
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+intersection_of: BFO:0000051 PO:0009085 ! has part exocarp
+intersection_of: BFO:0000051 PO:0009086 ! has part endocarp
+intersection_of: BFO:0000051 PO:0009087 ! has part mesocarp
+relationship: BFO:0000051 PO:0009085 ! has part exocarp
+relationship: BFO:0000051 PO:0009086 ! has part endocarp
+relationship: BFO:0000051 PO:0009087 ! has part mesocarp
 
 [Term]
 id: PO:0009085
 name: exocarp
-namespace: plant_anatomy
-alt_id: PO:0006046
-alt_id: PO:0006217
 def: "A portion of plant tissue (PO:0009007) that is the outer layer of a pericarp (PO:0009084)." []
-subset: Citrus
-subset: Tomato
 synonym: "ectocarp (exact)" EXACT []
 synonym: "epicarp (exact)" EXACT []
 synonym: "exocarpo (Spanish, exact)" EXACT []
@@ -2421,147 +1812,94 @@ synonym: "outer epidermis of pericarp (related)" RELATED []
 synonym: "pericarp epidermis (related)" RELATED []
 synonym: "portion of exocarp tissue (exact)" EXACT []
 synonym: "外果皮 (Japanese, exact)" EXACT []
-xref: PO_GIT:149
-xref: PO_GIT:511
 is_a: FOODON:03420167 ! fruit part
 is_a: PO:0009007 ! portion of plant tissue
 relationship: BFO:0000050 PO:0009084 ! part of pericarp
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009086
 name: endocarp
-namespace: plant_anatomy
-alt_id: PO:0006047
 def: "A portion of plant tissue (PO:0009007) that is the innermost differentiated layer of a pericarp (PO:0009084)." []
-subset: Arabidopsis
-subset: Citrus
-subset: Maize
-subset: Poaceae
-subset: Rice
-subset: Tomato
 synonym: "citrus flesh (related)" RELATED []
 synonym: "citrus pulp (related)" RELATED []
 synonym: "endocarpo (Spanish, exact)" EXACT []
 synonym: "inner epidermis of pericarp (related)" RELATED []
 synonym: "portion of endocarp tissue (exact)" EXACT []
 synonym: "内果皮 (Japanese, exact)" EXACT []
-xref: PO_GIT:149
-xref: PO_GIT:511
 is_a: FOODON:03420167 ! fruit part
 is_a: PO:0009007 ! portion of plant tissue
 relationship: BFO:0000050 PO:0009084 ! part of pericarp
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0009087
 name: mesocarp
-namespace: plant_anatomy
 def: "A portion of plant tissue (PO:0009007) that is the middle layer of a pericarp (PO:0009084)." []
-subset: Citrus
-subset: Tomato
 synonym: "albedo (related)" RELATED []
 synonym: "mesocarpo (Spanish, exact)" EXACT []
 synonym: "portion of mesocarp tissue (exact)" EXACT []
 synonym: "中果皮 (Japanese, exact)" EXACT []
-xref: PO_GIT:149
-xref: PO_GIT:511
 is_a: FOODON:03420167 ! fruit part
 is_a: PO:0009007 ! portion of plant tissue
 relationship: BFO:0000050 PO:0009084 ! part of pericarp
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0020003
 name: plant ovule
-namespace: plant_anatomy
-alt_id: PO:0006457
-alt_id: PO:0006491
 def: "A plant organ (PO:0009008) that has as parts a nucellus (PO:0020020) in which a female gametophyte (PO:0025279) is located, one or two integuments (PO:0020021), and a funicle (PO:0020006)." []
-comment: A seed (PO:0009010) develops from a plant ovule. In angiosperms, a plant ovule is part of a plant ovary (PO:0009072). In conifers, a plant ovule is part of an ovuliferous scale (add term). If you are annotating to this structure for Zea mays or other grasses, please also add an annotation to the corresponding floret type. Choose the most specific term possible from: spikelet floret (PO:0009082), ear floret (PO:0006354), upper floret of pedicellate spikelet of ear (PO:0006350), upper floret of sessile spikelet of ear (PO:0006352).
-subset: reference
-subset: TraitNet
 synonym: "&#243vulo vegetal (Spanish, exact)" EXACT []
 synonym: "Poaceae ovule (narrow)" NARROW []
 synonym: "Zea ovule (narrow)" NARROW []
 synonym: "胚珠 (Japanese, exact)" EXACT []
-xref: PO_GIT:464
-xref: PO_GIT:70
 is_a: PO:0009008 ! plant organ
 relationship: RO:0002202 PO:0000018 ! develops from ovule primordium
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0020144
 name: apical meristem
-namespace: plant_anatomy
 def: "A maximal portion of meristem tissue (PO:0009013) located at a shoot apex (PO:0000037) or root tip (PO:0000025)." []
-subset: TraitNet
 synonym: "AM (exact)" EXACT []
 synonym: "meristema apical (Spanish, exact)" EXACT []
 synonym: "primary meristem (related)" RELATED []
 synonym: "promeristem (broad)" BROAD []
 synonym: "頂端分裂組織 (Japanese, exact)" EXACT []
-xref: PO_GIT:579
 is_a: PO:0009013 ! portion of meristem tissue
-relationship: BFO:0000051 PO:0006210 ! has_part protoderm
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+relationship: BFO:0000051 PO:0006210 ! has part protoderm
 
 [Term]
 id: PO:0020148
 name: shoot apical meristem
-namespace: plant_anatomy
 def: "A shoot system meristem (PO:0006079) formed at the apex of the shoot axis (PO:0025029), including those originating from an axillary bud meristem (PO:0000232)." []
-subset: TraitNet
 synonym: "meristema apical del epiblasto (epiblastema) (Spanish, exact)" EXACT []
 synonym: "primary shoot meristem (related)" RELATED []
 synonym: "promeristem (broad)" BROAD []
 synonym: "SAM (exact)" EXACT []
 synonym: "茎頂分裂組織 (Japanese, exact)" EXACT []
-xref: PO_GIT:472
 is_a: PO:0006079 ! shoot system meristem
 is_a: PO:0020144 ! apical meristem
 relationship: BFO:0000050 PO:0000037 ! part of shoot axis apex
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0025004
 name: plant axis
-namespace: plant_anatomy
 def: "An axial plant organ (PO:0009008)." []
-comment: Includes roots and shoots.
-subset: TraitNet
 synonym: "eje de la planta (Spanish, exact)" EXACT []
 synonym: "plant axes (exact, plural)" EXACT []
 synonym: "植物軸（軸柱） (Japanese, exact)" EXACT []
 is_a: PO:0009008 ! plant organ
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-07-01T03:44:41Z
 
 [Term]
 id: PO:0025007
 name: collective plant organ structure
-namespace: plant_anatomy
 def: "A collective plant structure (PO:0025497) that is a proper part of a whole plant (PO:0000003), and is composed of two or more adjacent plant organs (PO:0009008) and the associated portions of plant tissue (PO:0009007)." []
-comment: Organs can be of the same type or different types. Examples include flower (PO:0009046), perianth (PO:0009058), and inflorescence (PO:0009049). See also collective organ part structure (PO:0025269), for plant structures composed of parts of multiple organs, but no complete plant organs. This was formerly named collective plant structure.
-subset: TraitNet
 synonym: "estructura vegetal colectiva de &#243rgano (Spanish, exact)" EXACT []
 synonym: "集合植物器官構造 (Japanese, exact)" EXACT []
-xref: PO_GIT:63
 is_a: PO:0025497 ! collective plant structure
-relationship: BFO:0000051 PO:0009008 ! has_part plant organ
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-02-09T04:12:11Z
+relationship: BFO:0000051 PO:0009008 ! has part plant organ
 
 [Term]
 id: PO:0025023
 name: collective phyllome structure
-namespace: plant_anatomy
-alt_id: PO:0008033
 def: "A collective plant organ structure (PO:0025007) that consists of two or more phyllomes (PO:0006001) originating from the same node or from one or more adjacent nodes with compressed shoot internodes (PO:0005005)." []
-subset: TraitNet
 synonym: "cycle (broad)" BROAD []
 synonym: "estructura colectiva del filoma (Spanish, exact)" EXACT []
 synonym: "floral whorl (narrow)" NARROW []
@@ -2569,290 +1907,226 @@ synonym: "phyllome whorl (related)" RELATED []
 synonym: "verticil (broad)" BROAD []
 synonym: "whorl (narrow)" NARROW []
 synonym: "葉的器官が集まった構造 (Japanese, exact)" EXACT []
-xref: PO_GIT:90
-xref: PO_GIT:99
 is_a: PO:0025007 ! collective plant organ structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: Laurel_Cooper
-creation_date: 2010-04-28T11:04:34Z
 
 [Term]
 id: PO:0025029
 name: shoot axis
-namespace: plant_anatomy
 def: "A plant axis (PO:0025004) that is part of a shoot system (PO:0009006)." []
-comment: Often bears leaves and branches. In vascular plants, has at least one node and one internode.
-subset: Angiosperm
-subset: Arabidopsis
-subset: Maize
-subset: Poaceae
-subset: Rice
-subset: TraitNet
 synonym: "caullome (exact)" EXACT []
 synonym: "eje del epiblasto (epiblastema) (Spanish, exact)" EXACT []
 synonym: "shoot (related)" RELATED []
 synonym: "シュート軸 (Japanese, exact)" EXACT []
 is_a: PO:0025004 ! plant axis
 relationship: BFO:0000050 PO:0009006 ! part of shoot system
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-07-01T03:46:35Z
 
 [Term]
 id: PO:0025082
 name: reproductive shoot system
-namespace: plant_anatomy
 def: "A shoot system (PO:0009006) in the sporophytic phase that has as part at least one sporangium (PO:0025094)." []
-subset: TraitNet
 synonym: "sistema de brote reproductivo (Spanish, exact)" EXACT []
 synonym: "生殖シュート 系、苗条系 (Japanese, exact)" EXACT []
 is_a: PO:0009006 ! shoot system
 relationship: RO:0000056 PO:0025530 ! participates in reproductive shoot system development stage
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-09-17T09:49:10Z
 
 [Term]
 id: PO:0025099
 name: embryo plant structure
-namespace: plant_anatomy
 def: "A plant structure (PO:0009011) that is part of an plant embryo (PO:0009009)." []
-comment: Includes plant structures that only occur in embryos (such as suspensor) as well as plant structures that are part of an embryo when a plant is in the embryonic phase (such as embryonic radicle).
 synonym: "embryonic plant structure (exact)" EXACT []
 synonym: "estructura vegetal embri&#243nica (Spanish, exact)" EXACT []
 synonym: "胚性植物構造 (Japanese, exact)" EXACT []
-xref: PO_GIT:245
-xref: PO_GIT:339
 is_a: PO:0009011 ! plant structure
 intersection_of: PO:0009011 ! plant structure
 intersection_of: BFO:0000050 PO:0009009 ! part of plant embryo
 relationship: BFO:0000050 PO:0009009 ! part of plant embryo
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-11-05T01:36:24Z
 
 [Term]
 id: PO:0025127
 name: primordium
-namespace: plant_anatomy
 def: "A portion of meristem tissue (PO:0009013) that has as parts protoderm (PO:0006210) and sub-epidermal meristematic tissue and is committed to the development of a particular plant structure (PO:0009011)." []
-comment: A primordium appears as a protrusion and is the first distinct form of a plant organ (PO:0009008), cardinal organ part (PO:0025001), or collective plant organ structure (PO:0025007). The transition from a primordium to the plant structure it develops into is marked by the development of non-meristematic cells, although meristematic cells may be present after the transition.
 synonym: "portion of primordial tissue (exact)" EXACT []
 synonym: "portion of primordium tissue (exact)" EXACT []
 synonym: "primordia (exact, plural)" EXACT []
 synonym: "primordio (Spanish, exact)" EXACT []
 synonym: "原基（可視的）  (Japanese, exact)" EXACT []
-xref: PO_GIT:186
 is_a: PO:0009013 ! portion of meristem tissue
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-11-15T09:10:22Z
 
 [Term]
 id: PO:0025131
 name: plant anatomical entity
-namespace: plant_anatomy
 def: "An anatomical entity that is or was part of a plant." []
-comment: Includes both material entities such as plant structures and immaterial entities such as plant anatomical spaces. CARO:0000000 'anatomical entity' is defined as: A part of a cellular organism that is either an immaterial entity or a material entity with granularity aboove the level of a protein complex.  Or, a substance produced by a cellular organism with granularity above the level of a protein complex.  Refers to BFO:0000004 'independent continuant'.
 synonym: "entidad anat&#243mica vegetal (Spanish, exact)" EXACT []
 synonym: "植物 解剖学（形態）的実体 (Japanese, exact)" EXACT []
-xref: PO_GIT:224
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-11-15T11:41:38Z
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: PO:0025222
 name: reproductive shoot apex
-namespace: plant_anatomy
 def: "A shoot apex that has as part a reproductive shoot apical meristem." []
 synonym: "&#225pice reproductivo del epiblasto (epiblastema) (Spanish, exact)" EXACT []
 synonym: "生殖シュート頂、茎頂 (Japanese, exact)" EXACT []
 is_a: PO:0000037 ! shoot axis apex
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-12-20T08:47:03Z
 
 [Term]
 id: PO:0025233
 name: portion of embryo plant tissue
-namespace: plant_anatomy
 def: "A portion of plant tissue (PO:0009007) that is part of a plant embryo (PO:0009009)." []
-comment: This class is for tissues that only occur as part of an embryo.
 synonym: "portion of embryo tissue (broad)" BROAD []
 synonym: "portion of embryonic plant tissue (exact)" EXACT []
 synonym: "tejido embri&#243nico vegetal (Spanish, exact)" EXACT []
 synonym: "植物胚性組織 の一部   (Japanese, exact)" EXACT []
-xref: PO_GIT:338
 is_a: PO:0009007 ! portion of plant tissue
 is_a: PO:0025099 ! embryo plant structure
 intersection_of: PO:0009007 ! portion of plant tissue
 intersection_of: BFO:0000050 PO:0009009 ! part of plant embryo
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2010-12-20T12:27:10Z
 
 [Term]
 id: PO:0025338
 name: collective plant organ structure development stage
-namespace: plant_structure_development_stage
 def: "A plant structure development stage (PO:0009012) that has as primary participant a collective plant structure (PO:0025497)." []
-comment: Includes flower development stage (PO:0007615), corolla development stage (PO:0007604), and inflorescence development stage (PO:0001083).
 synonym: "etapa de desarrollo de una estructura colectiva de la planta (Spanish, exact)" EXACT []
 synonym: "集合的植物構造の発生過程 (Japanese, exact)" EXACT []
-xref: PO_GIT:391
 is_a: PO:0009012 ! plant structure development stage
 relationship: RO:0000057 PO:0025007 ! has_participant collective plant organ structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2011-10-19T11:12:49Z
 
 [Term]
 id: PO:0025395
 name: floral organ
-namespace: plant_anatomy
 def: "A plant organ (PO:0009008) that is part of a flower (PO:0009046)." []
-comment: Includes phyllomes such as anthers and petals, as well as shoot axes such as androphores and gynophores.
 synonym: "&#243rgano floral (Spanish, exact)" EXACT []
 synonym: "flower organ (exact)" EXACT []
 synonym: "花器官 (Japanese, exact)" EXACT []
-xref: PO_GIT:423
 is_a: PO:0009008 ! plant organ
 intersection_of: PO:0009008 ! plant organ
 intersection_of: BFO:0000050 PO:0009046 ! part of flower
 relationship: BFO:0000050 PO:0009046 ! part of flower
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2012-01-19T11:44:36Z
 
 [Term]
 id: PO:0025477
 name: floral organ primordium
-namespace: plant_anatomy
 def: "A primordium (PO:0025127) that is committed to the development of a floral organ (PO:0025395) and is part of a reproductive shoot apex (PO:0025222)." []
-comment: If annotating to a primordium of a floral structure, it is better to use the more specific term, such as petal primordium (PO:0000021) or anther primordium (PO:0006089).
-subset: Angiosperm
 synonym: "floral structure primordia (exact, plural)" EXACT []
 synonym: "portion of floral structure primordium tissue (exact)" EXACT []
 synonym: "primordio de organo floral (Spanish, exact)" EXACT []
 synonym: "花器官原基 (Japanese, exact)" EXACT []
-xref: PO_GIT:465
 is_a: PO:0025127 ! primordium
 relationship: BFO:0000050 PO:0025222 ! part of reproductive shoot apex
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: rwalls
-creation_date: 2012-04-26T03:57:09Z
 
 [Term]
 id: PO:0025496
 name: multi-tissue plant structure
-namespace: plant_anatomy
 def: "A plant structure (PO:0009011) that has as parts two or more portions of plant tissue (PO:0009007) of at least two different types and which through specific morphogenetic processes forms a single structural unit demarcated by primarily bona-fide boundaries from other structural units of different types." []
-comment: Most multi-tissue plant structures have at least a small connection to other plant structures via a fiat boundary, such as where a leaf (PO:0025034) connects to a shoot axis (PO:0025029), a petal (PO:0009032) connects to a receptacle (PO:0009064), or a branch (PO:0025073) connects to a stem (PO:0009047).  Refers to CARO:0000055 multi-tissue structure, def'n: Anatomical structure that has as parts two or more portions of tissue of at least two different types, and which through specific morphogenetic processes, form a single distinct structural unit demarcated by bona-fide boundries from other structural units of differnt types.
 synonym: "estructura vegetal con m&#250ltiples tejidos (Spanish, exact)" EXACT []
 synonym: "複数の組織からなる植物構造 (Japanese, exact)" EXACT []
-xref: PO_GIT:480
 is_a: PO:0009011 ! plant structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: Laurel_Cooper
-creation_date: 2012-06-11T14:57:00Z
 
 [Term]
 id: PO:0025497
 name: collective plant structure
-namespace: plant_anatomy
 def: "A plant structure (PO:0009011) that is a proper part of a whole plant (PO:0000003) and includes two or more adjacent plant organs (PO:0009008) or adjacent cardinal organ parts (PO:0025001), along with any associated portions of plant tissue (PO:0009007)." []
-comment: This is a parent term to describe both collective organ part structure (PO:0025269)  (e.g. septum), as well as collective plant organ structure (PO:0025007) (which was formerly named collective plant structure), for example shoot system (PO:0009006).
 synonym: "estructura vegetal colectiva (Spanish, exact)" EXACT []
 synonym: "集合的植物構造 (Japanese, exact)" EXACT []
-xref: PO_GIT:479
 is_a: PO:0009011 ! plant structure
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: Laurel_Cooper
-creation_date: 2012-06-11T15:09:20Z
 
 [Term]
 id: PO:0025527
 name: shoot system development stage
-namespace: plant_structure_development_stage
 def: "A collective plant organ structure development stage (PO:0025338) that begins with the onset of the plant organ development stage (PO:0025339) and ends with either gametophyte senescent stage (PO:0025343) or sporophyte senescent stage (PO:0007017) or death." []
-comment: The shoot system (PO:0009006) develops fron the shoot apical meristem (PO:0020148) in the plant embryo (PO:0009009) in vascular plants.  In lower plants the gametophore (PO:0030018) arises from a gametophore meristematic apical cell (PO:0030019) in the protonema (PO:0030003).
-xref: PO_GIT:517
 is_a: PO:0025338 ! collective plant organ structure development stage
 relationship: RO:0000057 PO:0009006 ! has_participant shoot system
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: Laurel_Cooper
-creation_date: 2012-12-13T18:21:19Z
 
 [Term]
 id: PO:0025530
 name: reproductive shoot system development stage
-namespace: plant_structure_development_stage
 def: "A shoot system development stage (PO:0025527) that has as primary participant a reproductive shoot system (PO:0025082)." []
-xref: PO_GIT:517
 is_a: PO:0025527 ! shoot system development stage
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: Laurel_Cooper
-creation_date: 2012-12-13T19:01:14Z
 
 [Term]
 id: PO:0025606
 name: native plant cell
-namespace: plant_anatomy
 def: "A plant cell (PO:0009002) that is either part of a multicellular whole plant (PO:0000003) 'in vivo' or a unicellular organism 'in natura' (i.e. part of a natural environment)." []
-comment: A native plant cell is one that is not grown or maintained in vitro, nor part of an in vitro plant structure (PO:0000004).
-xref: PO_GIT:586
 is_a: PO:0009002 ! plant cell
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
-created_by: Laurel_Cooper
-creation_date: 2014-05-13T16:51:47Z
 
 [Term]
 id: PO:0030108
 name: berry fruit
-namespace: plant_anatomy
 def: "A fruit (PO:0009001) which at maturity comprises a fleshy endocarp (PO:0009086), fleshy mesocarp (PO:0009087), and fleshy exocarp (PO:0009085)." []
-comment: Examples: pepper (Capsicum annuum), papaya (Carica papaya), avocado (Persea americana), may apple (Podophyllum peltatum), date palm (Phoenix dactylifera), tomato (Solanum lycopersicum), potato (Solanum tuberosum), chocolate (Theobroma cacao), blueberry (Vaccinium spp.), and grape (Vitis vinifera).
 synonym: "bacca (exact)" EXACT []
 synonym: "baya (exact, Spanish)" EXACT []
 synonym: "beere (exact, German)" EXACT []
 synonym: "berry (exact)" EXACT []
 synonym: "indehiscent fruit  (broad)" BROAD []
 synonym: "pyrine (narrow)" NARROW []
-xref: PO_GIT:652
 is_a: PO:0009001 ! fruit
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
 
 [Term]
 id: PO:0030109
 name: hesperidium fruit
-namespace: plant_anatomy
 def: "A berry fruit (PO:0030108) which develops from a superior gynoecium (PO:0009062) and at maturity comprises a thickened exocarp (PO:0009085), thickened mesocarp (PO:0009087), and endocarp (PO:0009086), and has as parts juice sacs (PO:0006013) on a carpel adaxial epidermis (PO:0025618)." []
-comment: A hesperidium fruit (PO:0030109) develops from a superior gynoecium (PO:0009062), and therefore is not surrounded by receptacle (PO:0009064) tissue. Examples: orange, grapefruit, lemon, and lime (Citrus spp.).
 synonym: "citrus fruit (exact)" EXACT []
 synonym: "hesperide (exact, German)" EXACT []
 synonym: "hesperidio (exact, Spanish)" EXACT []
 synonym: "hesperidium (exact)" EXACT []
 synonym: "indehiscent fruit  (broad)" BROAD []
 synonym: "panzerbeere (broad, German)" BROAD []
-xref: PO_GIT:652
 is_a: PO:0030108 ! berry fruit
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/po.owl
+
+[Term]
+id: UBERON:0000061
+name: anatomical structure
+def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." []
+synonym: "biological structure" EXACT []
+synonym: "connected biological structure" EXACT []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000062
+name: organ
+def: "Anatomical structure that performs a specific function or group of functions [WP]." []
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000456
+name: secretion of exocrine gland
+def: "A portion of organism substance that is produced by exocrine glands." []
+synonym: "bodily secretion" EXACT []
+synonym: "exocrine gland fluid/secretion" EXACT []
+synonym: "secreted substance" EXACT []
+is_a: UBERON:0000463 ! organism substance
 
 [Term]
 id: UBERON:0000463
 name: organism substance
 def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." []
+synonym: "body fluid or substance" EXACT []
+synonym: "body substance" EXACT []
+synonym: "organism substance" EXACT []
+synonym: "portion of body substance" EXACT []
+synonym: "portion of organism substance" EXACT []
 is_a: FOODON:03420122 ! nonmeat part of animal
+is_a: UBERON:0000465 ! material anatomical entity
 relationship: RO:0003001 OBI:0100026 ! produced by organism
+
+[Term]
+id: UBERON:0000465
+name: material anatomical entity
+def: "Anatomical entity that has mass." []
+is_a: BFO:0000040 ! material entity
+is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
 id: UBERON:0000468
 name: multicellular organism
 def: "Anatomical structure that is an individual member of a species and consists of more than one cell." []
 synonym: "multi-cellular organism" EXACT []
-is_a: BFO:0000040 ! material entity
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0001062
+name: anatomical entity
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." []
+is_a: CARO:0030000 ! biological entity
 
 [Term]
 id: UBERON:0001911
@@ -2860,8 +2134,8 @@ name: mammary gland
 def: "A specialized accessory gland of the skin of mammals that secretes milk. The gland is typically only developed in females, and regresses in males." []
 synonym: "glandula mammaria" EXACT []
 synonym: "lactiferous gland" EXACT []
-is_a: FOODON:03420127 ! animal body or body part
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0019319 ! exocrine gland of integumental system
 
 [Term]
 id: UBERON:0001913
@@ -2869,18 +2143,48 @@ name: milk
 def: "An emulsion of fat globules within a fluid that is secreted by the mammary gland during lactation." []
 synonym: "mammal milk" EXACT []
 synonym: "mammary gland milk" EXACT []
-is_a: FOODON:00001257 ! milk or milk based food product
 is_a: FOODON:03315150 ! mammalian milk product
 is_a: UBERON:0006314 ! bodily fluid
+is_a: UBERON:0006539 ! mammary gland fluid/secretion
 relationship: RO:0003001 UBERON:0001911 ! produced by mammary gland
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0002365
+name: exocrine gland
+def: "A gland that secretes products (excluding hormones and other chemical messengers) into ducts (duct glands) which lead directly into the external environment[WP]. Typical exocrine glands include sweat glands, salivary glands, mammary glands, stomach, liver, pancreas." []
+synonym: "ducted gland" EXACT []
+synonym: "glandula exocrina" EXACT []
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0002530
+name: gland
+def: "An organ that functions as a secretory or excretory organ." []
+synonym: "glandular organ" EXACT []
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0003100
 name: female organism
 def: "Gonochoristic organism that can produce female gametes." []
 is_a: UBERON:0000468 ! multicellular organism
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0003297
+name: gland of integumental system
+def: "A gland that is part of a integumental system [Automatically generated definition]." []
+synonym: "integumental gland" EXACT []
+synonym: "integumental system gland" EXACT []
+synonym: "integumentary gland" EXACT []
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0004121
+name: ectoderm-derived structure
+def: "An anatomical structure that develops (entirely or partially) from the ectoderm." []
+synonym: "ectodermal deriviative" EXACT []
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0006314
@@ -2889,7 +2193,12 @@ def: "Liquid components of living organisms. includes fluids that are excreted o
 synonym: "body fluid" EXACT []
 synonym: "fluid" BROAD []
 is_a: UBERON:0000463 ! organism substance
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0006539
+name: mammary gland fluid/secretion
+def: "A substance that is secreted by a mammary gland. The substance may differ depending on phase, with colostrum produced during pregancy/early lactation, and milk produced afterwards." []
+is_a: UBERON:0000456 ! secretion of exocrine gland
 
 [Term]
 id: UBERON:0007023
@@ -2897,26 +2206,39 @@ name: adult organism
 def: "A multicellular organism that existence_ends_with a post-juvenile adult stage and existence_starts_with a post-juvenile adult stage." []
 synonym: "adults" EXACT []
 is_a: UBERON:0000468 ! multicellular organism
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
+
+[Term]
+id: UBERON:0010000
+name: multicellular anatomical structure
+def: "An anatomical structure that has more than one cell as a part." []
+synonym: "multicellular structure" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0019319
+name: exocrine gland of integumental system
+def: "An exocrine gland that is part of a integumental system." []
+synonym: "integumental exocrine gland" EXACT []
+synonym: "integumental system exocrine gland" EXACT []
+is_a: UBERON:0002365 ! exocrine gland
+is_a: UBERON:0003297 ! gland of integumental system
 
 [Typedef]
 id: BFO:0000050
 name: part of
 name: part_of
 def: "a core relation that holds between a part and its whole" []
-property_value: IAO:0000111 "is part of" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/obi.owl
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_reflexive: true
 is_transitive: true
 is_a: RO:0002131 ! overlaps
+inverse_of: BFO:0000051 ! has part
 
 [Typedef]
 id: BFO:0000051
 name: has part
 name: has_part
 def: "a core relation that holds between a whole and its part" []
-property_value: IAO:0000111 "has part" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+is_reflexive: true
 is_transitive: true
 is_a: RO:0002131 ! overlaps
 
@@ -2940,66 +2262,46 @@ range: FOODON:00001002 ! food product
 is_a: RO:0009001 ! has substance added
 
 [Typedef]
-id: RO:0000053
-name: bearer of
-def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
-property_value: IAO:0000111 "bearer of" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-
-[Typedef]
 id: RO:0000056
 name: participates in
 name: participates_in
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
-property_value: IAO:0000111 "participates in" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0000057
 name: has participant
 name: has_participant
-def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
-property_value: IAO:0000111 "has participant" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0000086
 name: has quality
 def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000087
 name: has role
 def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0001000
 name: derives from
 def: "a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0002131
 name: overlaps
 def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
+holds_over_chain: BFO:0000050 BFO:0000050
+holds_over_chain: BFO:0000051 BFO:0000050
+holds_over_chain: BFO:0000051 RO:0002131
+is_symmetric: true
 is_a: RO:0002323 ! mereotopologically related to
+transitive_over: BFO:0000050 ! part of
 
 [Typedef]
 id: RO:0002162
 name: in taxon
 def: "x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed." []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
-property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0002320 ! evolutionarily related to
 
 [Typedef]
 id: RO:0002202
@@ -3011,76 +2313,34 @@ is_transitive: true
 id: RO:0002233
 name: has input
 def: "p has input c iff: p is a process, c is a material entity, c is a participant in p, c is present at the start of p, and the state of c is modified during p." []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000057 ! has_participant
-
-[Typedef]
-id: RO:0002234
-name: has output
-def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p." []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000057 ! has_participant
-
-[Typedef]
-id: RO:0002320
-name: evolutionarily related to
-def: "A relationship that holds via some environmental process" []
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0002323
 name: mereotopologically related to
 def: "A mereological relationship or a topological relationship" []
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-
-[Typedef]
-id: RO:0002328
-name: functionally related to
-def: "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." []
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0002350
 name: member of
 def: "is member of is a mereological relation between a item and a collection." []
-property_value: IAO:0000112 "An organism that is a member of a population of organisms" xsd:string
-property_value: IAO:0000118 "is member of" xsd:string
-property_value: IAO:0000118 "member part of" xsd:string
-property_value: IAO:0000119 "SIO" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-property_value: RO:0001900 RO:0001901
-is_a: BFO:0000050 ! part of
-inverse_of: RO:0002351 ! has member
 
 [Typedef]
 id: RO:0002351
 name: has member
 def: "has member is a mereological relation between a collection and an item." []
-property_value: IAO:0000119 "SIO" xsd:string
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: BFO:0000051 ! has_part
 
 [Typedef]
 id: RO:0002353
 name: output of
 def: "inverse of has output" []
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
-is_a: RO:0000056 ! participates in
-is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0003001
 name: produced by
 def: "a produced_by b iff some process that occurs_in b has_output a." []
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 
 [Typedef]
 id: RO:0009001
 name: has substance added
 def: "\"has substance added\" is a relation existing between a (physical) entity and a substance in which the entity has had the substance added to it at some point in time." []
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/ro.owl
 

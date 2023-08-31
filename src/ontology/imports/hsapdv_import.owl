@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/hsapdv_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2021-10-07/imports/hsapdv_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2023-08-31/imports/hsapdv_import.owl"/>
     </owl:Ontology>
     
 
@@ -28,6 +28,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#consider -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#consider"/>
     
 
 
@@ -106,7 +112,7 @@
         <obo:IAO_0000115>A spatiotemporal region encompassing some part of the life cycle of an organism.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>developmental stage</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>stage</oboInOwl:hasNarrowSynonym>
-        <rdfs:label>human life cycle stage</rdfs:label>
+        <rdfs:label>life cycle stage</rdfs:label>
     </owl:Class>
     
 
@@ -116,14 +122,14 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
         <obo:IAO_0000115>Temporal interval that defines human life from the prenatal stage until late adulthood.</obo:IAO_0000115>
-        <rdfs:label>human life cycle</rdfs:label>
+        <rdfs:label>life cycle</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000080 -->
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000045 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000080">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000045">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -131,10 +137,21 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000115>Prenatal stage that starts with fertilization and ends at birth.</obo:IAO_0000115>
+        <rdfs:label>prenatal stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000080 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000080">
         <obo:IAO_0000115>Human developmental stage that covers the period from birth until 12 years old.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000264</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>0-12 years</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>child</oboInOwl:hasRelatedSynonym>
         <rdfs:label>immature stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -142,22 +159,12 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000081 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000081">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000080"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000083"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Immature stage that refers to child who is over 2 and under 13 years old.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000264</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000265</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>2-12 years</oboInOwl:hasExactSynonym>
         <rdfs:label>child stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -165,18 +172,13 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000082 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000082">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000080"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Immature stage that refers to a newborn who is under 32 days old.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000262</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>0-1 month</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>neonatal stage</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>neonate</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>newborn human stage</rdfs:label>
+        <rdfs:label>newborn stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -184,23 +186,12 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000083 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000083">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000080"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000082"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Immature stage that refers to an infant who is over 31 days and is under 24 months old.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000261</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>1-23 months</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>infantile stage</oboInOwl:hasExactSynonym>
         <rdfs:label>infant stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -208,16 +199,12 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000084 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000084">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000081"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 24 months and under 6 years old.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000099</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000270</oboInOwl:consider>
         <oboInOwl:hasRelatedSynonym>preschool child</oboInOwl:hasRelatedSynonym>
         <rdfs:label>2-5 year-old child stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -225,22 +212,11 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000085 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000085">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000081"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000084"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 6 and under 13 years old.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000271</oboInOwl:consider>
         <oboInOwl:hasRelatedSynonym>prepubescent</oboInOwl:hasRelatedSynonym>
         <rdfs:label>6-12 year-old child stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -248,18 +224,13 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000086 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000086">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000204"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Mature stage that refers to an adolescent who is over 13 and under 19 years old.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000268</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>13-18 years</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>teen</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>teenager</oboInOwl:hasRelatedSynonym>
         <rdfs:label>adolescent stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -267,22 +238,12 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000087 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000087">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000204"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Human developmental stage that refers to an adult who is over 19.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000226</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000258</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>19+ years</oboInOwl:hasExactSynonym>
-        <rdfs:label>human adult stage</rdfs:label>
+        <rdfs:label>adult stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -290,16 +251,12 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000088 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000088">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000087"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Adult stage that refers to an adult who is under 45.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000266</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000267</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>19-44 years</oboInOwl:hasExactSynonym>
-        <rdfs:label>human early adulthood stage</rdfs:label>
+        <rdfs:label>early adulthood stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -307,16 +264,11 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000089 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000089">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000088"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Early adulthood that refers to an adult who is under 25.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000266</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>19-24 years</oboInOwl:hasExactSynonym>
         <rdfs:label>young adult stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -324,21 +276,14 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000090 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000090">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000088"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Early adulthood that refers to an adult who is over 25 and under 45.</obo:IAO_0000115>
-        <rdfs:label>25-44 year-old human stage</rdfs:label>
+        <oboInOwl:consider>HsapDv:0000237</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000238</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000239</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000266</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000267</oboInOwl:consider>
+        <rdfs:label>25-44 year-old stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -346,23 +291,13 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000091 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000091">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000087"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000088"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Adult stage that refers to an adult who is over 45.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000227</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000267</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>45+ years</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Middle Aged + Aged</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>human late adulthood stage</rdfs:label>
+        <rdfs:label>late adulthood stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -370,16 +305,12 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000092 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000092">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000091"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Late adulthood that refers to an adult who is over 45 and under 65.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000227</oboInOwl:consider>
+        <oboInOwl:consider>HsapDv:0000267</oboInOwl:consider>
         <oboInOwl:hasExactSynonym>45-64 years</oboInOwl:hasExactSynonym>
-        <rdfs:label>human middle aged stage</rdfs:label>
+        <rdfs:label>middle aged stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -391,11 +322,11 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000084"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000270"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 2 and under 3 years old.</obo:IAO_0000115>
-        <rdfs:label>2-year-old human stage</rdfs:label>
+        <rdfs:label>2-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -407,7 +338,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000084"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000270"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -417,7 +348,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 3 and under 4 years old.</obo:IAO_0000115>
-        <rdfs:label>3-year-old human stage</rdfs:label>
+        <rdfs:label>3-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -429,7 +360,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000084"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000270"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -439,7 +370,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 4 and under 5 years old.</obo:IAO_0000115>
-        <rdfs:label>4-year-old human stage</rdfs:label>
+        <rdfs:label>4-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -451,7 +382,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000084"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -461,7 +392,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 5 and under 6 years old.</obo:IAO_0000115>
-        <rdfs:label>5-year-old human stage</rdfs:label>
+        <rdfs:label>5-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -473,7 +404,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -483,7 +414,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 6 and under 7 years old.</obo:IAO_0000115>
-        <rdfs:label>6-year-old human stage</rdfs:label>
+        <rdfs:label>6-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -495,7 +426,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -505,7 +436,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 7 and under 8 years old.</obo:IAO_0000115>
-        <rdfs:label>7-year-old human stage</rdfs:label>
+        <rdfs:label>7-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -517,7 +448,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -527,7 +458,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 8 and under 9 years old.</obo:IAO_0000115>
-        <rdfs:label>8-year-old human stage</rdfs:label>
+        <rdfs:label>8-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -539,7 +470,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -549,7 +480,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 9 and under 10 years old.</obo:IAO_0000115>
-        <rdfs:label>9-year-old human stage</rdfs:label>
+        <rdfs:label>9-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -561,7 +492,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -571,7 +502,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 10 and under 11 years old.</obo:IAO_0000115>
-        <rdfs:label>10-year-old human stage</rdfs:label>
+        <rdfs:label>10-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -583,7 +514,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -593,7 +524,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 11 and under 12 years old.</obo:IAO_0000115>
-        <rdfs:label>11-year-old human stage</rdfs:label>
+        <rdfs:label>11-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -605,7 +536,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -615,7 +546,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Child stage that refers to a child who is over 12 and under 13 years old.</obo:IAO_0000115>
-        <rdfs:label>12-year-old human stage</rdfs:label>
+        <rdfs:label>12-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -627,7 +558,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -637,7 +568,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Adolescent stage that refers to an adolescent who is over 13 and under 14 years old.</obo:IAO_0000115>
-        <rdfs:label>13-year-old human stage</rdfs:label>
+        <rdfs:label>13-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -649,7 +580,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000271"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -659,7 +590,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Adolescent stage that refers to an adolescent who is over 14 and under 15 years old.</obo:IAO_0000115>
-        <rdfs:label>14-year-old human stage</rdfs:label>
+        <rdfs:label>14-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -671,7 +602,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000268"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -681,7 +612,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Adolescent stage that refers to an adolescent who is over 15 and under 16 years old.</obo:IAO_0000115>
-        <rdfs:label>15-year-old human stage</rdfs:label>
+        <rdfs:label>15-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -693,7 +624,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000268"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -703,7 +634,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Adolescent stage that refers to an adolescent who is over 16 and under 17 years old.</obo:IAO_0000115>
-        <rdfs:label>16-year-old human stage</rdfs:label>
+        <rdfs:label>16-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -715,7 +646,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000268"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -725,7 +656,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Adolescent stage that refers to an adolescent who is over 17 and under 18 years old.</obo:IAO_0000115>
-        <rdfs:label>17-year-old human stage</rdfs:label>
+        <rdfs:label>17-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -737,7 +668,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000268"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -747,7 +678,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Adolescent stage that refers to an adolescent who is over 18 and under 19 years old.</obo:IAO_0000115>
-        <rdfs:label>18-year-old human stage</rdfs:label>
+        <rdfs:label>18-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -759,7 +690,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000268"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -768,8 +699,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000112"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Young adult stage that refers to an adult who is under 20.</obo:IAO_0000115>
-        <rdfs:label>19-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 19 and under 20 years old.</obo:IAO_0000115>
+        <rdfs:label>19-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -781,7 +712,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -790,8 +721,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000113"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 20 and under 21.</obo:IAO_0000115>
-        <rdfs:label>20-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 20 and under 21 years old.</obo:IAO_0000115>
+        <rdfs:label>20-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -803,7 +734,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -812,8 +743,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000114"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 21 and under 22.</obo:IAO_0000115>
-        <rdfs:label>21-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 21 and under 22 years old.</obo:IAO_0000115>
+        <rdfs:label>21-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -825,7 +756,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -834,8 +765,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000115"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 22 and under 23.</obo:IAO_0000115>
-        <rdfs:label>22-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 22 and under 23 years old.</obo:IAO_0000115>
+        <rdfs:label>22-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -847,7 +778,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -856,8 +787,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000116"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 23 and under 24.</obo:IAO_0000115>
-        <rdfs:label>23-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 23 and under 24 years old.</obo:IAO_0000115>
+        <rdfs:label>23-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -869,7 +800,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -878,8 +809,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000117"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 24 and under 25.</obo:IAO_0000115>
-        <rdfs:label>24-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Young adult stage that refers to an adult who is over 24 and under 25 years old.</obo:IAO_0000115>
+        <rdfs:label>24-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -891,7 +822,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -900,8 +831,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000118"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 25 and under 26.</obo:IAO_0000115>
-        <rdfs:label>25-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 25 and under 26 years old.</obo:IAO_0000115>
+        <rdfs:label>25-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -913,7 +844,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -922,8 +853,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000119"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adultwho is over 26 and under 27.</obo:IAO_0000115>
-        <rdfs:label>26-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adultwho is over 26 and under 27 years old.</obo:IAO_0000115>
+        <rdfs:label>26-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -935,7 +866,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -944,8 +875,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000120"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 27 and under 28.</obo:IAO_0000115>
-        <rdfs:label>27-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 27 and under 28 years old.</obo:IAO_0000115>
+        <rdfs:label>27-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -957,7 +888,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -966,8 +897,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000121"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 28 and under 29.</obo:IAO_0000115>
-        <rdfs:label>28-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 28 and under 29 years old.</obo:IAO_0000115>
+        <rdfs:label>28-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -979,7 +910,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -988,8 +919,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000122"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 29 and under 30.</obo:IAO_0000115>
-        <rdfs:label>29-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 29 and under 30 years old.</obo:IAO_0000115>
+        <rdfs:label>29-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1001,7 +932,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1010,8 +941,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000123"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 30 and under 31.</obo:IAO_0000115>
-        <rdfs:label>30-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 30 and under 31 years old.</obo:IAO_0000115>
+        <rdfs:label>30-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1023,7 +954,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1032,8 +963,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000124"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 31 and under 32.</obo:IAO_0000115>
-        <rdfs:label>31-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 31 and under 32 years old.</obo:IAO_0000115>
+        <rdfs:label>31-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1045,7 +976,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1054,8 +985,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000125"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 32 and under 33.</obo:IAO_0000115>
-        <rdfs:label>32-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 32 and under 33 years old.</obo:IAO_0000115>
+        <rdfs:label>32-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1067,7 +998,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1076,8 +1007,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000126"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 33 and under 34.</obo:IAO_0000115>
-        <rdfs:label>33-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 33 and under 34 years old.</obo:IAO_0000115>
+        <rdfs:label>33-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1089,7 +1020,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1098,8 +1029,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000127"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 34 and under 35.</obo:IAO_0000115>
-        <rdfs:label>34-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 34 and under 35 years old.</obo:IAO_0000115>
+        <rdfs:label>34-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1111,7 +1042,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1120,8 +1051,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000128"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 35 and under 36.</obo:IAO_0000115>
-        <rdfs:label>35-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 35 and under 36 years old.</obo:IAO_0000115>
+        <rdfs:label>35-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1133,7 +1064,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1142,8 +1073,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000129"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 36 and under 37.</obo:IAO_0000115>
-        <rdfs:label>36-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 36 and under 37 years old.</obo:IAO_0000115>
+        <rdfs:label>36-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1155,7 +1086,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1164,8 +1095,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000130"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 37 and under 38.</obo:IAO_0000115>
-        <rdfs:label>37-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 37 and under 38 years old.</obo:IAO_0000115>
+        <rdfs:label>37-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1177,7 +1108,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1186,8 +1117,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000131"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 38 and under 39.</obo:IAO_0000115>
-        <rdfs:label>38-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 38 and under 39 years old.</obo:IAO_0000115>
+        <rdfs:label>38-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1199,7 +1130,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1208,8 +1139,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000132"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 39 and under 40.</obo:IAO_0000115>
-        <rdfs:label>39-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 39 and under 40 years old.</obo:IAO_0000115>
+        <rdfs:label>39-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1221,7 +1152,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1230,8 +1161,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000133"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 40 and under 41.</obo:IAO_0000115>
-        <rdfs:label>40-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 40 and under 41 years old.</obo:IAO_0000115>
+        <rdfs:label>40-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1243,7 +1174,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1252,8 +1183,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000134"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 41 and under 42.</obo:IAO_0000115>
-        <rdfs:label>41-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 41 and under 42 years old.</obo:IAO_0000115>
+        <rdfs:label>41-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1265,7 +1196,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1274,8 +1205,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000135"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 42 and under 43.</obo:IAO_0000115>
-        <rdfs:label>42-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 42 and under 43 years old.</obo:IAO_0000115>
+        <rdfs:label>42-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1287,7 +1218,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1296,8 +1227,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000136"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 43 and under 44.</obo:IAO_0000115>
-        <rdfs:label>43-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 43 and under 44 years old.</obo:IAO_0000115>
+        <rdfs:label>43-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1309,7 +1240,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000090"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1318,8 +1249,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000137"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 44 and under 45.</obo:IAO_0000115>
-        <rdfs:label>44-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Adult stage that refers to an adult who is over 44 and under 45 years old.</obo:IAO_0000115>
+        <rdfs:label>44-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1331,7 +1262,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000092"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1340,8 +1271,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 45 and under 46.</obo:IAO_0000115>
-        <rdfs:label>45-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 45 and under 46 years old.</obo:IAO_0000115>
+        <rdfs:label>45-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1353,7 +1284,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000092"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1362,8 +1293,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000139"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 46 and under 47.</obo:IAO_0000115>
-        <rdfs:label>46-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 46 and under 47 years old.</obo:IAO_0000115>
+        <rdfs:label>46-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1375,7 +1306,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000092"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1384,8 +1315,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000140"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 47 and under 48.</obo:IAO_0000115>
-        <rdfs:label>47-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 47 and under 48 years old.</obo:IAO_0000115>
+        <rdfs:label>47-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1397,7 +1328,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000092"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1406,8 +1337,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000141"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 48 and under 49.</obo:IAO_0000115>
-        <rdfs:label>48-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 48 and under 49 years old.</obo:IAO_0000115>
+        <rdfs:label>48-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1419,7 +1350,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000092"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1428,8 +1359,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 49 and under 50.</obo:IAO_0000115>
-        <rdfs:label>49-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 49 and under 50 years old.</obo:IAO_0000115>
+        <rdfs:label>49-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1441,7 +1372,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000092"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000240"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1450,8 +1381,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 50 and under 51.</obo:IAO_0000115>
-        <rdfs:label>50-year-old human stage</rdfs:label>
+        <obo:IAO_0000115>Middle aged stage that refers to an adult who is over 50 and under 51 years old.</obo:IAO_0000115>
+        <rdfs:label>50-year-old stage</rdfs:label>
     </owl:Class>
     
 
@@ -1459,6 +1390,366 @@
     <!-- http://purl.obolibrary.org/obo/HsapDv_0000204 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000204">
+        <obo:IAO_0000115>Human developmental stage that refers to a sexually mature human.</obo:IAO_0000115>
+        <oboInOwl:consider>HsapDv:0000258</oboInOwl:consider>
+        <rdfs:label>mature stage</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000226 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000226">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000258"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A life cycle stage that starts at sexual maturity of the human adult, and ends before senescence.</obo:IAO_0000115>
+        <rdfs:label>prime adult stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000237 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000237">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000266"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000268"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human stage that refers to an individual who is over 20 and under 30 years old.</obo:IAO_0000115>
+        <rdfs:label>third decade stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000238 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000238">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000266"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human stage that refers to an individual who is over 30 and under 40 years old.</obo:IAO_0000115>
+        <rdfs:label>fourth decade stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000239 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000239">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000267"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000238"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human stage that refers to an individual who is over 40 and under 50 years old.</obo:IAO_0000115>
+        <rdfs:label>fifth decade stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000240 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000240">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000267"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000239"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human stage that refers to an individual who is over 50 and under 60 years old.</obo:IAO_0000115>
+        <rdfs:label>sixth decade stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000246 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000246">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000265"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Child stage that refers to a child who is over 12 and under 24 months old.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>12-23 months</oboInOwl:hasExactSynonym>
+        <rdfs:label>1-year-old stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000258 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000258">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0010000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000264"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human developmental stage that refers to a sexually mature human.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>mature stage</oboInOwl:hasExactSynonym>
+        <rdfs:label>adult stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000260 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000260">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000264"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human developmental stage that covers the first period from birth, with breast feeding and/or bottled substitute, and that stops at language acquisition.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>under 1 year old</oboInOwl:hasExactSynonym>
+        <rdfs:label>nursing stage (0-11 months)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000261 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000261">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000260"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000262"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Immature stage that refers to an infant who is over 28 days and is under 12 months old.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>infantile stage</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>under-1-year-old stage</oboInOwl:hasExactSynonym>
+        <rdfs:label>infant stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000262 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000262">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000260"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Immature stage that refers to a human newborn within the first 28 days of life.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>neonatal stage</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>neonate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>newborn stage (0-28 days)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000264 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000264">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0010000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000045"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human developmental stage that covers the period from newborn stage and until 14 years old.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>immature stage</oboInOwl:hasExactSynonym>
+        <rdfs:label>pediatric stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000265 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000265">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000264"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000261"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human stage that refers to a child who is over 12 months and under 5 years old.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>childhood stage</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>preschool child</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>child stage (1-4 yo)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000266 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000266">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000226"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A prime adult stage that refers to an adult who is under 40 years old.</obo:IAO_0000115>
+        <rdfs:label>young adult stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000267 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000267">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000226"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000266"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Late adulthood that refers to an adult who is over 40 and under 60 years old.</obo:IAO_0000115>
+        <rdfs:label>middle aged stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000268 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000268">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000266"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A young adult stage that refers to an adult who is over 15 and under 20 years old.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>adolescent</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>15-19 year-old</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000270 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000270">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000265"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000246"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Child stage that refers to a child who is over 2 and under 5 years old.</obo:IAO_0000115>
+        <rdfs:label>2-4 year-old child stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0000271 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000271">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000264"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000265"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Pediatric stage that refers to a human who is over 5 and under 15 years old.</obo:IAO_0000115>
+        <rdfs:label>juvenile stage (5-14 yo)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HsapDv_0010000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0010000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1466,12 +1757,18 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Human developmental stage that refers to a sexually mature human.</obo:IAO_0000115>
-        <rdfs:label>mature stage</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000045"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Human developmental stage that covers the whole of human life post birth.</obo:IAO_0000115>
+        <rdfs:label>postnatal stage</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
 

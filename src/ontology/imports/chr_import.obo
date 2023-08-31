@@ -1,11 +1,14 @@
 format-version: 1.2
-data-version: mondo/releases/2021-10-06/imports/chr_import.owl
+data-version: mondo/releases/2023-08-31/imports/chr_import.owl
 ontology: mondo/imports/chr_import
 
 [Term]
 id: CHR:9606-chr1
-name: chr1 (Human)
+name: chromosome 1 (Human)
+synonym: "1" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000663.2
 property_value: exactMatch NC:000001.11
@@ -15,8 +18,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr10
-name: chr10 (Human)
+name: chromosome 10 (Human)
+synonym: "10" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000672.2
 property_value: exactMatch NC:000010.11
@@ -26,19 +32,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr10p
-name: chr10p (Human)
+name: 10p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr10 ! chr10 (Human)
+relationship: BFO:0000050 CHR:9606-chr10 ! chromosome 10 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "39800000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
-id: CHR:9606-chr10q
-name: chr10q (Human)
+id: CHR:9606-chr10p11.21-p12.31
+name: 10p11.21-p12.31 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr10 ! chr10 (Human)
+relationship: BFO:0000050 CHR:9606-chr10p ! 10p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr10q
+name: 10q (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr10 ! chromosome 10 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "133797422" xsd:integer
@@ -46,19 +60,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "39800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr10q2
-name: chr10q2 (Human)
+name: 10q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr10q ! chr10q (Human)
+relationship: BFO:0000050 CHR:9606-chr10q ! 10q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "133797422" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "51100000" xsd:integer
 
 [Term]
-id: CHR:9606-chr10q23
-name: chr10q23 (Human)
+id: CHR:9606-chr10q22.3-q23.3
+name: 10q22.3-q23.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr10q2 ! chr10q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr10q ! 10q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr10q23
+name: 10q23 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr10q2 ! 10q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "95300000" xsd:integer
@@ -66,9 +88,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "80300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr10q24
-name: chr10q24 (Human)
+name: 10q24 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr10q2 ! chr10q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr10q2 ! 10q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "104000000" xsd:integer
@@ -76,8 +98,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "95300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr11
-name: chr11 (Human)
+name: chromosome 11 (Human)
+synonym: "11" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000673.2
 property_value: exactMatch NC:000011.10
@@ -87,9 +112,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr11p
-name: chr11p (Human)
+name: 11p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11 ! chr11 (Human)
+relationship: BFO:0000050 CHR:9606-chr11 ! chromosome 11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "53400000" xsd:integer
@@ -97,29 +122,47 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr11p1
-name: chr11p1 (Human)
+name: 11p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11p ! chr11p (Human)
+relationship: BFO:0000050 CHR:9606-chr11p ! 11p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "53400000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
-id: CHR:9606-chr11p15
-name: chr11p15 (Human)
+id: CHR:9606-chr11p13
+name: 11p13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11p1 ! chr11p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr11p1 ! 11p1 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "36400000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "31000000" xsd:integer
+
+[Term]
+id: CHR:9606-chr11p15
+name: 11p15 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr11p1 ! 11p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "22000000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
-id: CHR:9606-chr11p15.4
-name: chr11p15.4 (Human)
+id: CHR:9606-chr11p15-p14
+name: 11p15-p14 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11p15 ! chr11p15 (Human)
+relationship: BFO:0000050 CHR:9606-chr11p ! 11p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr11p15.4
+name: 11p15.4 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr11p15 ! 11p15 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "11700000" xsd:integer
@@ -127,9 +170,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "2800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr11q
-name: chr11q (Human)
+name: 11q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11 ! chr11 (Human)
+relationship: BFO:0000050 CHR:9606-chr11 ! chromosome 11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "135086622" xsd:integer
@@ -137,19 +180,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "53400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr11q2
-name: chr11q2 (Human)
+name: 11q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11q ! chr11q (Human)
+relationship: BFO:0000050 CHR:9606-chr11q ! 11q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "135086622" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "93000000" xsd:integer
 
 [Term]
-id: CHR:9606-chr11q24
-name: chr11q24 (Human)
+id: CHR:9606-chr11q22.2-q22.3
+name: 11q22.2-q22.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11q2 ! chr11q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr11q ! 11q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr11q24
+name: 11q24 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr11q2 ! 11q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "130900000" xsd:integer
@@ -157,9 +208,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "121300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr11q24.1
-name: chr11q24.1 (Human)
+name: 11q24.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr11q24 ! chr11q24 (Human)
+relationship: BFO:0000050 CHR:9606-chr11q24 ! 11q24 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "124000000" xsd:integer
@@ -167,8 +218,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "121300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr12
-name: chr12 (Human)
+name: chromosome 12 (Human)
+synonym: "12" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000674.2
 property_value: exactMatch NC:000012.12
@@ -178,9 +232,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr12p
-name: chr12p (Human)
+name: 12p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr12 ! chr12 (Human)
+relationship: BFO:0000050 CHR:9606-chr12 ! chromosome 12 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "35500000" xsd:integer
@@ -188,9 +242,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr12p1
-name: chr12p1 (Human)
+name: 12p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr12p ! chr12p (Human)
+relationship: BFO:0000050 CHR:9606-chr12p ! 12p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "35500000" xsd:integer
@@ -198,9 +252,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr12p12
-name: chr12p12 (Human)
+name: 12p12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr12p1 ! chr12p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr12p1 ! 12p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "26300000" xsd:integer
@@ -208,9 +262,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "14600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr12p12.1
-name: chr12p12.1 (Human)
+name: 12p12.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr12p12 ! chr12p12 (Human)
+relationship: BFO:0000050 CHR:9606-chr12p12 ! 12p12 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "26300000" xsd:integer
@@ -218,9 +272,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "21100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr12q
-name: chr12q (Human)
+name: 12q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr12 ! chr12 (Human)
+relationship: BFO:0000050 CHR:9606-chr12 ! chromosome 12 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "133275309" xsd:integer
@@ -228,9 +282,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "35500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr12q1
-name: chr12q1 (Human)
+name: 12q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr12q ! chr12q (Human)
+relationship: BFO:0000050 CHR:9606-chr12q ! 12q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "71100000" xsd:integer
@@ -238,18 +292,29 @@ property_value: https://w3id.org/biodatamodels/gff/start "35500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr12q14
-name: chr12q14 (Human)
+name: 12q14 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr12q1 ! chr12q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr12q1 ! 12q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "67300000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "57700000" xsd:integer
 
 [Term]
+id: CHR:9606-chr12q15-q21.1
+name: 12q15-q21.1 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr12q ! 12q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
 id: CHR:9606-chr13
-name: chr13 (Human)
+name: chromosome 13 (Human)
+synonym: "13" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000675.2
 property_value: exactMatch NC:000013.11
@@ -259,9 +324,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr13p
-name: chr13p (Human)
+name: 13p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13 ! chr13 (Human)
+relationship: BFO:0000050 CHR:9606-chr13 ! chromosome 13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "17700000" xsd:integer
@@ -269,9 +334,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr13q
-name: chr13q (Human)
+name: 13q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13 ! chr13 (Human)
+relationship: BFO:0000050 CHR:9606-chr13 ! chromosome 13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "114364328" xsd:integer
@@ -279,9 +344,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "17700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr13q1
-name: chr13q1 (Human)
+name: 13q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13q ! chr13q (Human)
+relationship: BFO:0000050 CHR:9606-chr13q ! 13q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "54700000" xsd:integer
@@ -289,9 +354,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "17700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr13q12
-name: chr13q12 (Human)
+name: 13q12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13q1 ! chr13q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr13q1 ! 13q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "31600000" xsd:integer
@@ -299,9 +364,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "18900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr13q12.3
-name: chr13q12.3 (Human)
+name: 13q12.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13q12 ! chr13q12 (Human)
+relationship: BFO:0000050 CHR:9606-chr13q12 ! 13q12 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "31600000" xsd:integer
@@ -309,9 +374,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "28300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr13q14
-name: chr13q14 (Human)
+name: 13q14 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13q1 ! chr13q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr13q1 ! 13q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "54700000" xsd:integer
@@ -319,9 +384,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "39500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr13q3
-name: chr13q3 (Human)
+name: 13q3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13q ! chr13q (Human)
+relationship: BFO:0000050 CHR:9606-chr13q ! 13q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "114364328" xsd:integer
@@ -329,9 +394,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "78500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr13q34
-name: chr13q34 (Human)
+name: 13q34 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr13q3 ! chr13q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr13q3 ! 13q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "114364328" xsd:integer
@@ -339,8 +404,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "109600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr14
-name: chr14 (Human)
+name: chromosome 14 (Human)
+synonym: "14" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000676.2
 property_value: exactMatch NC:000014.9
@@ -350,9 +418,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr14q
-name: chr14q (Human)
+name: 14q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr14 ! chr14 (Human)
+relationship: BFO:0000050 CHR:9606-chr14 ! chromosome 14 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "107043718" xsd:integer
@@ -360,9 +428,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "17200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr14q1
-name: chr14q1 (Human)
+name: 14q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr14q ! chr14q (Human)
+relationship: BFO:0000050 CHR:9606-chr14q ! 14q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "37400000" xsd:integer
@@ -370,19 +438,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "17200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr14q11
-name: chr14q11 (Human)
+name: 14q11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr14q1 ! chr14q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr14q1 ! 14q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "24100000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "17200000" xsd:integer
 
 [Term]
-id: CHR:9606-chr14q11.2
-name: chr14q11.2 (Human)
+id: CHR:9606-chr14q11-q22
+name: 14q11-q22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr14q11 ! chr14q11 (Human)
+relationship: BFO:0000050 CHR:9606-chr14q ! 14q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr14q11.2
+name: 14q11.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr14q11 ! 14q11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "24100000" xsd:integer
@@ -390,19 +466,35 @@ property_value: https://w3id.org/biodatamodels/gff/start "18200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr14q12
-name: chr14q12 (Human)
+name: 14q12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr14q1 ! chr14q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr14q1 ! 14q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "32900000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "24100000" xsd:integer
 
 [Term]
-id: CHR:9606-chr14q3
-name: chr14q3 (Human)
+id: CHR:9606-chr14q22-q23
+name: 14q22-q23 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr14q ! chr14q (Human)
+relationship: BFO:0000050 CHR:9606-chr14q ! 14q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr14q24.1-q24.3
+name: 14q24.1-q24.3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr14q ! 14q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr14q3
+name: 14q3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr14q ! 14q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "107043718" xsd:integer
@@ -410,18 +502,31 @@ property_value: https://w3id.org/biodatamodels/gff/start "78800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr14q32
-name: chr14q32 (Human)
+name: 14q32 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr14q3 ! chr14q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr14q3 ! 14q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "107043718" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "89300000" xsd:integer
 
 [Term]
+id: CHR:9606-chr14q32.2
+name: 14q32.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr14q32 ! 14q32 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "100900000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "95800000" xsd:integer
+
+[Term]
 id: CHR:9606-chr15
-name: chr15 (Human)
+name: chromosome 15 (Human)
+synonym: "15" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000677.2
 property_value: exactMatch NC:000015.10
@@ -431,9 +536,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q
-name: chr15q (Human)
+name: 15q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15 ! chr15 (Human)
+relationship: BFO:0000050 CHR:9606-chr15 ! chromosome 15 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "101991189" xsd:integer
@@ -441,9 +546,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "19000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q1
-name: chr15q1 (Human)
+name: 15q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q ! chr15q (Human)
+relationship: BFO:0000050 CHR:9606-chr15q ! 15q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "44500000" xsd:integer
@@ -451,19 +556,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "19000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q11
-name: chr15q11 (Human)
+name: 15q11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q1 ! chr15q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr15q1 ! 15q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "25500000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "19000000" xsd:integer
 
 [Term]
-id: CHR:9606-chr15q11.2
-name: chr15q11.2 (Human)
+id: CHR:9606-chr15q11-q13
+name: 15q11-q13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q11 ! chr15q11 (Human)
+relationship: BFO:0000050 CHR:9606-chr15q ! 15q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr15q11.2
+name: 15q11.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr15q11 ! 15q11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "25500000" xsd:integer
@@ -471,9 +584,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "20500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q13
-name: chr15q13 (Human)
+name: 15q13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q1 ! chr15q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr15q1 ! 15q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "33400000" xsd:integer
@@ -481,9 +594,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "27800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q13.3
-name: chr15q13.3 (Human)
+name: 15q13.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q13 ! chr15q13 (Human)
+relationship: BFO:0000050 CHR:9606-chr15q13 ! 15q13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "33400000" xsd:integer
@@ -491,9 +604,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "30900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q14
-name: chr15q14 (Human)
+name: 15q14 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q1 ! chr15q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr15q1 ! 15q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "39800000" xsd:integer
@@ -501,9 +614,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "33400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q2
-name: chr15q2 (Human)
+name: 15q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q ! chr15q (Human)
+relationship: BFO:0000050 CHR:9606-chr15q ! 15q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "101991189" xsd:integer
@@ -511,9 +624,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "44500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q24
-name: chr15q24 (Human)
+name: 15q24 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q2 ! chr15q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr15q2 ! 15q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "78000000" xsd:integer
@@ -521,18 +634,29 @@ property_value: https://w3id.org/biodatamodels/gff/start "72400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr15q25
-name: chr15q25 (Human)
+name: 15q25 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr15q2 ! chr15q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr15q2 ! 15q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "88500000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "78000000" xsd:integer
 
 [Term]
+id: CHR:9606-chr15q26-qter
+name: 15q26-qter (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr15q ! 15q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
 id: CHR:9606-chr16
-name: chr16 (Human)
+name: chromosome 16 (Human)
+synonym: "16" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000678.2
 property_value: exactMatch NC:000016.10
@@ -542,9 +666,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p
-name: chr16p (Human)
+name: 16p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16 ! chr16 (Human)
+relationship: BFO:0000050 CHR:9606-chr16 ! chromosome 16 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "36800000" xsd:integer
@@ -552,9 +676,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p1
-name: chr16p1 (Human)
+name: 16p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p ! chr16p (Human)
+relationship: BFO:0000050 CHR:9606-chr16p ! 16p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "36800000" xsd:integer
@@ -562,9 +686,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p11
-name: chr16p11 (Human)
+name: 16p11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p1 ! chr16p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p1 ! 16p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "36800000" xsd:integer
@@ -572,19 +696,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "28500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p11.2
-name: chr16p11.2 (Human)
+name: 16p11.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p11 ! chr16p11 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p11 ! 16p11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "35300000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "28500000" xsd:integer
 
 [Term]
-id: CHR:9606-chr16p12
-name: chr16p12 (Human)
+id: CHR:9606-chr16p11.2-p12.2
+name: 16p11.2-p12.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p1 ! chr16p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p ! 16p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr16p12
+name: 16p12 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr16p1 ! 16p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "28500000" xsd:integer
@@ -592,19 +724,35 @@ property_value: https://w3id.org/biodatamodels/gff/start "16700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p12.1
-name: chr16p12.1 (Human)
+name: 16p12.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p12 ! chr16p12 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p12 ! 16p12 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "28500000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "24200000" xsd:integer
 
 [Term]
-id: CHR:9606-chr16p13
-name: chr16p13 (Human)
+id: CHR:9606-chr16p12.1-p12.3
+name: 16p12.1-p12.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p1 ! chr16p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p ! 16p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr16p12.2-p11.2
+name: 16p12.2-p11.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr16p ! 16p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr16p13
+name: 16p13 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr16p1 ! 16p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "16700000" xsd:integer
@@ -612,9 +760,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p13.1
-name: chr16p13.1 (Human)
+name: 16p13.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p13 ! chr16p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p13 ! 16p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "16700000" xsd:integer
@@ -622,9 +770,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "10400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p13.11
-name: chr16p13.11 (Human)
+name: 16p13.11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p13.1 ! chr16p13.1 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p13.1 ! 16p13.1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "16700000" xsd:integer
@@ -632,9 +780,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "14700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p13.2
-name: chr16p13.2 (Human)
+name: 16p13.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p13 ! chr16p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p13 ! 16p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "10400000" xsd:integer
@@ -642,9 +790,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "7800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16p13.3
-name: chr16p13.3 (Human)
+name: 16p13.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16p13 ! chr16p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr16p13 ! 16p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "7800000" xsd:integer
@@ -652,9 +800,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr16q
-name: chr16q (Human)
+name: 16q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16 ! chr16 (Human)
+relationship: BFO:0000050 CHR:9606-chr16 ! chromosome 16 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "90338345" xsd:integer
@@ -662,9 +810,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "36800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16q2
-name: chr16q2 (Human)
+name: 16q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16q ! chr16q (Human)
+relationship: BFO:0000050 CHR:9606-chr16q ! 16q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "90338345" xsd:integer
@@ -672,9 +820,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "57300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16q22
-name: chr16q22 (Human)
+name: 16q22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16q2 ! chr16q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr16q2 ! 16q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "74100000" xsd:integer
@@ -682,9 +830,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "66600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16q24
-name: chr16q24 (Human)
+name: 16q24 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16q2 ! chr16q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr16q2 ! 16q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "90338345" xsd:integer
@@ -692,9 +840,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "84100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16q24.1
-name: chr16q24.1 (Human)
+name: 16q24.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16q24 ! chr16q24 (Human)
+relationship: BFO:0000050 CHR:9606-chr16q24 ! 16q24 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "87000000" xsd:integer
@@ -702,9 +850,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "84100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr16q24.3
-name: chr16q24.3 (Human)
+name: 16q24.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr16q24 ! chr16q24 (Human)
+relationship: BFO:0000050 CHR:9606-chr16q24 ! 16q24 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "90338345" xsd:integer
@@ -712,8 +860,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "88700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17
-name: chr17 (Human)
+name: chromosome 17 (Human)
+synonym: "17" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000679.2
 property_value: exactMatch NC:000017.11
@@ -723,9 +874,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr17p
-name: chr17p (Human)
+name: 17p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17 ! chr17 (Human)
+relationship: BFO:0000050 CHR:9606-chr17 ! chromosome 17 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "25100000" xsd:integer
@@ -733,9 +884,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr17p1
-name: chr17p1 (Human)
+name: 17p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17p ! chr17p (Human)
+relationship: BFO:0000050 CHR:9606-chr17p ! 17p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "25100000" xsd:integer
@@ -743,9 +894,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr17p13
-name: chr17p13 (Human)
+name: 17p13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17p1 ! chr17p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr17p1 ! 17p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "10800000" xsd:integer
@@ -753,9 +904,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr17p13.1
-name: chr17p13.1 (Human)
+name: 17p13.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17p13 ! chr17p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr17p13 ! 17p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "10800000" xsd:integer
@@ -763,9 +914,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "6500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17p13.3
-name: chr17p13.3 (Human)
+name: 17p13.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17p13 ! chr17p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr17p13 ! 17p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "3400000" xsd:integer
@@ -773,9 +924,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q
-name: chr17q (Human)
+name: 17q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17 ! chr17 (Human)
+relationship: BFO:0000050 CHR:9606-chr17 ! chromosome 17 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "83257441" xsd:integer
@@ -783,9 +934,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "25100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q1
-name: chr17q1 (Human)
+name: 17q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q ! chr17q (Human)
+relationship: BFO:0000050 CHR:9606-chr17q ! 17q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "39800000" xsd:integer
@@ -793,9 +944,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "25100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q11
-name: chr17q11 (Human)
+name: 17q11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q1 ! chr17q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr17q1 ! 17q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "33500000" xsd:integer
@@ -803,9 +954,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "25100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q11.2
-name: chr17q11.2 (Human)
+name: 17q11.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q11 ! chr17q11 (Human)
+relationship: BFO:0000050 CHR:9606-chr17q11 ! 17q11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "33500000" xsd:integer
@@ -813,9 +964,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "27400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q12
-name: chr17q12 (Human)
+name: 17q12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q1 ! chr17q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr17q1 ! 17q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "39800000" xsd:integer
@@ -823,9 +974,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "33500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q2
-name: chr17q2 (Human)
+name: 17q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q ! chr17q (Human)
+relationship: BFO:0000050 CHR:9606-chr17q ! 17q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "83257441" xsd:integer
@@ -833,9 +984,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "39800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q21
-name: chr17q21 (Human)
+name: 17q21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q2 ! chr17q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr17q2 ! 17q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "52100000" xsd:integer
@@ -843,9 +994,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "39800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q21.3
-name: chr17q21.3 (Human)
+name: 17q21.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q21 ! chr17q21 (Human)
+relationship: BFO:0000050 CHR:9606-chr17q21 ! 17q21 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "52100000" xsd:integer
@@ -853,18 +1004,49 @@ property_value: https://w3id.org/biodatamodels/gff/start "42800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr17q21.31
-name: chr17q21.31 (Human)
+name: 17q21.31 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr17q21.3 ! chr17q21.3 (Human)
+relationship: BFO:0000050 CHR:9606-chr17q21.3 ! 17q21.3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "46800000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "42800000" xsd:integer
 
 [Term]
+id: CHR:9606-chr17q23.1-q23.2
+name: 17q23.1-q23.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr17q ! 17q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr17q24
+name: 17q24 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr17q2 ! 17q2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "72900000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "64600000" xsd:integer
+
+[Term]
+id: CHR:9606-chr17q24.2
+name: 17q24.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr17q24 ! 17q24 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "69100000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "66200000" xsd:integer
+
+[Term]
 id: CHR:9606-chr18
-name: chr18 (Human)
+name: chromosome 18 (Human)
+synonym: "18" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000680.2
 property_value: exactMatch NC:000018.10
@@ -874,9 +1056,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr18p
-name: chr18p (Human)
+name: 18p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr18 ! chr18 (Human)
+relationship: BFO:0000050 CHR:9606-chr18 ! chromosome 18 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "18500000" xsd:integer
@@ -884,9 +1066,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr18q
-name: chr18q (Human)
+name: 18q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr18 ! chr18 (Human)
+relationship: BFO:0000050 CHR:9606-chr18 ! chromosome 18 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "80373285" xsd:integer
@@ -894,8 +1076,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "18500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19
-name: chr19 (Human)
+name: chromosome 19 (Human)
+synonym: "19" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000681.2
 property_value: exactMatch NC:000019.10
@@ -905,9 +1090,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr19p
-name: chr19p (Human)
+name: 19p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19 ! chr19 (Human)
+relationship: BFO:0000050 CHR:9606-chr19 ! chromosome 19 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "26200000" xsd:integer
@@ -915,9 +1100,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr19p1
-name: chr19p1 (Human)
+name: 19p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19p ! chr19p (Human)
+relationship: BFO:0000050 CHR:9606-chr19p ! 19p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "26200000" xsd:integer
@@ -925,9 +1110,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr19p13
-name: chr19p13 (Human)
+name: 19p13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19p1 ! chr19p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr19p1 ! 19p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "19900000" xsd:integer
@@ -935,9 +1120,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr19p13.1
-name: chr19p13.1 (Human)
+name: 19p13.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19p13 ! chr19p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr19p13 ! 19p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "19900000" xsd:integer
@@ -945,9 +1130,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "12600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19p13.12
-name: chr19p13.12 (Human)
+name: 19p13.12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19p13.1 ! chr19p13.1 (Human)
+relationship: BFO:0000050 CHR:9606-chr19p13.1 ! 19p13.1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "16100000" xsd:integer
@@ -955,9 +1140,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "13800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19p13.13
-name: chr19p13.13 (Human)
+name: 19p13.13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19p13.1 ! chr19p13.1 (Human)
+relationship: BFO:0000050 CHR:9606-chr19p13.1 ! 19p13.1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "13800000" xsd:integer
@@ -965,9 +1150,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "12600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19p13.3
-name: chr19p13.3 (Human)
+name: 19p13.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19p13 ! chr19p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr19p13 ! 19p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "6900000" xsd:integer
@@ -975,9 +1160,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr19q
-name: chr19q (Human)
+name: 19q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19 ! chr19 (Human)
+relationship: BFO:0000050 CHR:9606-chr19 ! chromosome 19 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "58617616" xsd:integer
@@ -985,9 +1170,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "26200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19q1
-name: chr19q1 (Human)
+name: 19q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19q ! chr19q (Human)
+relationship: BFO:0000050 CHR:9606-chr19q ! 19q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "58617616" xsd:integer
@@ -995,9 +1180,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "26200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19q13
-name: chr19q13 (Human)
+name: 19q13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19q1 ! chr19q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr19q1 ! 19q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "58617616" xsd:integer
@@ -1005,9 +1190,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "31900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19q13.1
-name: chr19q13.1 (Human)
+name: 19q13.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19q13 ! chr19q13 (Human)
+relationship: BFO:0000050 CHR:9606-chr19q13 ! 19q13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "38200000" xsd:integer
@@ -1015,9 +1200,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "31900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr19q13.11
-name: chr19q13.11 (Human)
+name: 19q13.11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr19q13.1 ! chr19q13.1 (Human)
+relationship: BFO:0000050 CHR:9606-chr19q13.1 ! 19q13.1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "35100000" xsd:integer
@@ -1025,9 +1210,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "31900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1p
-name: chr1p (Human)
+name: 1p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1 ! chr1 (Human)
+relationship: BFO:0000050 CHR:9606-chr1 ! chromosome 1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "123400000" xsd:integer
@@ -1035,9 +1220,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr1p2
-name: chr1p2 (Human)
+name: 1p2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1p ! chr1p (Human)
+relationship: BFO:0000050 CHR:9606-chr1p ! 1p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "106700000" xsd:integer
@@ -1045,9 +1230,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "84400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1p21
-name: chr1p21 (Human)
+name: 1p21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1p2 ! chr1p2 (Human)
+relationship: BFO:0000050 CHR:9606-chr1p2 ! 1p2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "106700000" xsd:integer
@@ -1055,9 +1240,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "94300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1p21.3
-name: chr1p21.3 (Human)
+name: 1p21.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1p21 ! chr1p21 (Human)
+relationship: BFO:0000050 CHR:9606-chr1p21 ! 1p21 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "99300000" xsd:integer
@@ -1065,19 +1250,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "94300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1p3
-name: chr1p3 (Human)
+name: 1p3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1p ! chr1p (Human)
+relationship: BFO:0000050 CHR:9606-chr1p ! 1p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "84400000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
-id: CHR:9606-chr1p35
-name: chr1p35 (Human)
+id: CHR:9606-chr1p32-p31
+name: 1p32-p31 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1p3 ! chr1p3 (Human)
+relationship: BFO:0000050 CHR:9606-chr1p ! 1p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr1p35
+name: 1p35 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr1p3 ! 1p3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "34300000" xsd:integer
@@ -1085,9 +1278,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "27600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1p35.2
-name: chr1p35.2 (Human)
+name: 1p35.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1p35 ! chr1p35 (Human)
+relationship: BFO:0000050 CHR:9606-chr1p35 ! 1p35 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "32300000" xsd:integer
@@ -1095,9 +1288,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "29900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1p36
-name: chr1p36 (Human)
+name: 1p36 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1p3 ! chr1p3 (Human)
+relationship: BFO:0000050 CHR:9606-chr1p3 ! 1p3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "27600000" xsd:integer
@@ -1105,19 +1298,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr1q
-name: chr1q (Human)
+name: 1q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1 ! chr1 (Human)
+relationship: BFO:0000050 CHR:9606-chr1 ! chromosome 1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "248956422" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "123400000" xsd:integer
 
 [Term]
-id: CHR:9606-chr1q2
-name: chr1q2 (Human)
+id: CHR:9606-chr1q12-q21
+name: 1q12-q21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1q ! chr1q (Human)
+relationship: BFO:0000050 CHR:9606-chr1q ! 1q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr1q2
+name: 1q2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr1q ! 1q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "185800000" xsd:integer
@@ -1125,9 +1326,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "143200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1q21
-name: chr1q21 (Human)
+name: 1q21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1q2 ! chr1q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr1q2 ! 1q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "155100000" xsd:integer
@@ -1135,9 +1336,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "143200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1q21.1
-name: chr1q21.1 (Human)
+name: 1q21.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1q21 ! chr1q21 (Human)
+relationship: BFO:0000050 CHR:9606-chr1q21 ! 1q21 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "147500000" xsd:integer
@@ -1145,19 +1346,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "143200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr1q4
-name: chr1q4 (Human)
+name: 1q4 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1q ! chr1q (Human)
+relationship: BFO:0000050 CHR:9606-chr1q ! 1q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "248956422" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "214400000" xsd:integer
 
 [Term]
-id: CHR:9606-chr1q44
-name: chr1q44 (Human)
+id: CHR:9606-chr1q41-q42
+name: 1q41-q42 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr1q4 ! chr1q4 (Human)
+relationship: BFO:0000050 CHR:9606-chr1q ! 1q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr1q44
+name: 1q44 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr1q4 ! 1q4 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "248956422" xsd:integer
@@ -1165,8 +1374,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "243500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2
-name: chr2 (Human)
+name: chromosome 2 (Human)
+synonym: "2" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000664.2
 property_value: exactMatch NC:000002.12
@@ -1176,8 +1388,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr20
-name: chr20 (Human)
+name: chromosome 20 (Human)
+synonym: "20" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000682.2
 property_value: exactMatch NC:000020.11
@@ -1187,9 +1402,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr20p
-name: chr20p (Human)
+name: 20p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20 ! chr20 (Human)
+relationship: BFO:0000050 CHR:9606-chr20 ! chromosome 20 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "28100000" xsd:integer
@@ -1197,9 +1412,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr20p1
-name: chr20p1 (Human)
+name: 20p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20p ! chr20p (Human)
+relationship: BFO:0000050 CHR:9606-chr20p ! 20p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "28100000" xsd:integer
@@ -1207,9 +1422,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr20p12
-name: chr20p12 (Human)
+name: 20p12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20p1 ! chr20p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr20p1 ! 20p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "17900000" xsd:integer
@@ -1217,9 +1432,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "5100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr20p12.3
-name: chr20p12.3 (Human)
+name: 20p12.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20p12 ! chr20p12 (Human)
+relationship: BFO:0000050 CHR:9606-chr20p12 ! 20p12 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "9200000" xsd:integer
@@ -1227,9 +1442,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "5100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr20p13
-name: chr20p13 (Human)
+name: 20p13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20p1 ! chr20p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr20p1 ! 20p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "5100000" xsd:integer
@@ -1237,9 +1452,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr20q
-name: chr20q (Human)
+name: 20q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20 ! chr20 (Human)
+relationship: BFO:0000050 CHR:9606-chr20 ! chromosome 20 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "64444167" xsd:integer
@@ -1247,9 +1462,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "28100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr20q1
-name: chr20q1 (Human)
+name: 20q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20q ! chr20q (Human)
+relationship: BFO:0000050 CHR:9606-chr20q ! 20q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "64444167" xsd:integer
@@ -1257,9 +1472,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "28100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr20q11
-name: chr20q11 (Human)
+name: 20q11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20q1 ! chr20q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr20q1 ! 20q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "39000000" xsd:integer
@@ -1267,9 +1482,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "28100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr20q11.2
-name: chr20q11.2 (Human)
+name: 20q11.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20q11 ! chr20q11 (Human)
+relationship: BFO:0000050 CHR:9606-chr20q11 ! 20q11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "39000000" xsd:integer
@@ -1277,19 +1492,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "30400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr20q13
-name: chr20q13 (Human)
+name: 20q13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20q1 ! chr20q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr20q1 ! 20q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "64444167" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "43100000" xsd:integer
 
 [Term]
-id: CHR:9606-chr20q13.3
-name: chr20q13.3 (Human)
+id: CHR:9606-chr20q13.2-q13.3
+name: 20q13.2-q13.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20q13 ! chr20q13 (Human)
+relationship: BFO:0000050 CHR:9606-chr20q ! 20q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr20q13.3
+name: 20q13.3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr20q13 ! 20q13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "64444167" xsd:integer
@@ -1297,9 +1520,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "56400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr20q13.33
-name: chr20q13.33 (Human)
+name: 20q13.33 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr20q13.3 ! chr20q13.3 (Human)
+relationship: BFO:0000050 CHR:9606-chr20q13.3 ! 20q13.3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "64444167" xsd:integer
@@ -1307,8 +1530,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "59700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr21
-name: chr21 (Human)
+name: chromosome 21 (Human)
+synonym: "21" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000683.2
 property_value: exactMatch NC:000021.9
@@ -1317,9 +1543,38 @@ property_value: https://w3id.org/biodatamodels/gff/end "46709983" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
+id: CHR:9606-chr21q
+name: 21q (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr21 ! chromosome 21 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "46709983" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "12000000" xsd:integer
+
+[Term]
+id: CHR:9606-chr21q22.11-q22.12
+name: 21q22.11-q22.12 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr21q ! 21q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr21q22.13-q22.2
+name: 21q22.13-q22.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr21q ! 21q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
 id: CHR:9606-chr22
-name: chr22 (Human)
+name: chromosome 22 (Human)
+synonym: "22" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000684.2
 property_value: exactMatch NC:000022.11
@@ -1329,9 +1584,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr22q
-name: chr22q (Human)
+name: 22q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr22 ! chr22 (Human)
+relationship: BFO:0000050 CHR:9606-chr22 ! chromosome 22 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "50818468" xsd:integer
@@ -1339,9 +1594,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "15000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr22q1
-name: chr22q1 (Human)
+name: 22q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr22q ! chr22q (Human)
+relationship: BFO:0000050 CHR:9606-chr22q ! 22q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "50818468" xsd:integer
@@ -1349,9 +1604,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "15000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr22q11
-name: chr22q11 (Human)
+name: 22q11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr22q1 ! chr22q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr22q1 ! 22q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "25500000" xsd:integer
@@ -1359,9 +1614,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "15000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr22q11.2
-name: chr22q11.2 (Human)
+name: 22q11.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr22q11 ! chr22q11 (Human)
+relationship: BFO:0000050 CHR:9606-chr22q11 ! 22q11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "25500000" xsd:integer
@@ -1369,9 +1624,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "17400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr22q13
-name: chr22q13 (Human)
+name: 22q13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr22q1 ! chr22q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr22q1 ! 22q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "50818468" xsd:integer
@@ -1379,9 +1634,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "37200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2p
-name: chr2p (Human)
+name: 2p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2 ! chr2 (Human)
+relationship: BFO:0000050 CHR:9606-chr2 ! chromosome 2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "93900000" xsd:integer
@@ -1389,19 +1644,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr2p1
-name: chr2p1 (Human)
+name: 2p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2p ! chr2p (Human)
+relationship: BFO:0000050 CHR:9606-chr2p ! 2p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "93900000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "47500000" xsd:integer
 
 [Term]
-id: CHR:9606-chr2p13
-name: chr2p13 (Human)
+id: CHR:9606-chr2p12-p11.2
+name: 2p12-p11.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2p1 ! chr2p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr2p ! 2p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr2p13
+name: 2p13 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr2p1 ! 2p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "74800000" xsd:integer
@@ -1409,9 +1672,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "68400000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2p13.2
-name: chr2p13.2 (Human)
+name: 2p13.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2p13 ! chr2p13 (Human)
+relationship: BFO:0000050 CHR:9606-chr2p13 ! 2p13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "73300000" xsd:integer
@@ -1419,19 +1682,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "71300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2p16
-name: chr2p16 (Human)
+name: 2p16 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2p1 ! chr2p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr2p1 ! 2p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "61000000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "47500000" xsd:integer
 
 [Term]
-id: CHR:9606-chr2p16.3
-name: chr2p16.3 (Human)
+id: CHR:9606-chr2p16.1-p15
+name: 2p16.1-p15 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2p16 ! chr2p16 (Human)
+relationship: BFO:0000050 CHR:9606-chr2p ! 2p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr2p16.3
+name: 2p16.3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr2p16 ! 2p16 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "52600000" xsd:integer
@@ -1439,9 +1710,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "47500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2p2
-name: chr2p2 (Human)
+name: 2p2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2p ! chr2p (Human)
+relationship: BFO:0000050 CHR:9606-chr2p ! 2p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "47500000" xsd:integer
@@ -1449,9 +1720,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr2p21
-name: chr2p21 (Human)
+name: 2p21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2p2 ! chr2p2 (Human)
+relationship: BFO:0000050 CHR:9606-chr2p2 ! 2p2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "47500000" xsd:integer
@@ -1459,9 +1730,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "41500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q
-name: chr2q (Human)
+name: 2q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2 ! chr2 (Human)
+relationship: BFO:0000050 CHR:9606-chr2 ! chromosome 2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "242193529" xsd:integer
@@ -1469,19 +1740,29 @@ property_value: https://w3id.org/biodatamodels/gff/start "93900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q2
-name: chr2q2 (Human)
+name: 2q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q ! chr2q (Human)
+relationship: BFO:0000050 CHR:9606-chr2q ! 2q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "168900000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "129100000" xsd:integer
 
 [Term]
-id: CHR:9606-chr2q23
-name: chr2q23 (Human)
+id: CHR:9606-chr2q22
+name: 2q22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q2 ! chr2q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q2 ! 2q2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "147900000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "136100000" xsd:integer
+
+[Term]
+id: CHR:9606-chr2q23
+name: 2q23 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr2q2 ! 2q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "154000000" xsd:integer
@@ -1489,9 +1770,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "147900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q23.1
-name: chr2q23.1 (Human)
+name: 2q23.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q23 ! chr2q23 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q23 ! 2q23 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "149000000" xsd:integer
@@ -1499,9 +1780,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "147900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q24
-name: chr2q24 (Human)
+name: 2q24 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q2 ! chr2q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q2 ! 2q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "168900000" xsd:integer
@@ -1509,9 +1790,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "154000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q3
-name: chr2q3 (Human)
+name: 2q3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q ! chr2q (Human)
+relationship: BFO:0000050 CHR:9606-chr2q ! 2q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "242193529" xsd:integer
@@ -1519,9 +1800,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "168900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q31
-name: chr2q31 (Human)
+name: 2q31 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q3 ! chr2q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q3 ! 2q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "182100000" xsd:integer
@@ -1529,9 +1810,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "168900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q31.1
-name: chr2q31.1 (Human)
+name: 2q31.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q31 ! chr2q31 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q31 ! 2q31 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "177100000" xsd:integer
@@ -1539,19 +1820,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "168900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q31.2
-name: chr2q31.2 (Human)
+name: 2q31.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q31 ! chr2q31 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q31 ! 2q31 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "179700000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "177100000" xsd:integer
 
 [Term]
-id: CHR:9606-chr2q33
-name: chr2q33 (Human)
+id: CHR:9606-chr2q32-q33
+name: 2q32-q33 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q3 ! chr2q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q ! 2q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr2q33
+name: 2q33 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr2q3 ! 2q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "208200000" xsd:integer
@@ -1559,19 +1848,29 @@ property_value: https://w3id.org/biodatamodels/gff/start "196600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr2q33.1
-name: chr2q33.1 (Human)
+name: 2q33.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q33 ! chr2q33 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q33 ! 2q33 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "202500000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "196600000" xsd:integer
 
 [Term]
-id: CHR:9606-chr2q37
-name: chr2q37 (Human)
+id: CHR:9606-chr2q35
+name: 2q35 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr2q3 ! chr2q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr2q3 ! 2q3 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "220700000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "214500000" xsd:integer
+
+[Term]
+id: CHR:9606-chr2q37
+name: 2q37 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr2q3 ! 2q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "242193529" xsd:integer
@@ -1579,8 +1878,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "230100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3
-name: chr3 (Human)
+name: chromosome 3 (Human)
+synonym: "3" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000665.2
 property_value: exactMatch NC:000003.12
@@ -1590,9 +1892,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr3p
-name: chr3p (Human)
+name: 3p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3 ! chr3 (Human)
+relationship: BFO:0000050 CHR:9606-chr3 ! chromosome 3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "90900000" xsd:integer
@@ -1600,9 +1902,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr3p2
-name: chr3p2 (Human)
+name: 3p2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3p ! chr3p (Human)
+relationship: BFO:0000050 CHR:9606-chr3p ! 3p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "54400000" xsd:integer
@@ -1610,9 +1912,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr3p25
-name: chr3p25 (Human)
+name: 3p25 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3p2 ! chr3p2 (Human)
+relationship: BFO:0000050 CHR:9606-chr3p2 ! 3p2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "16300000" xsd:integer
@@ -1620,9 +1922,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "8100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3p25.3
-name: chr3p25.3 (Human)
+name: 3p25.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3p25 ! chr3p25 (Human)
+relationship: BFO:0000050 CHR:9606-chr3p25 ! 3p25 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "11600000" xsd:integer
@@ -1630,9 +1932,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "8100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q
-name: chr3q (Human)
+name: 3q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3 ! chr3 (Human)
+relationship: BFO:0000050 CHR:9606-chr3 ! chromosome 3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "198295559" xsd:integer
@@ -1640,9 +1942,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "90900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q1
-name: chr3q1 (Human)
+name: 3q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q ! chr3q (Human)
+relationship: BFO:0000050 CHR:9606-chr3q ! 3q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "122200000" xsd:integer
@@ -1650,9 +1952,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "90900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q13
-name: chr3q13 (Human)
+name: 3q13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q1 ! chr3q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr3q1 ! 3q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "122200000" xsd:integer
@@ -1660,9 +1962,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "103100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q13.3
-name: chr3q13.3 (Human)
+name: 3q13.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q13 ! chr3q13 (Human)
+relationship: BFO:0000050 CHR:9606-chr3q13 ! 3q13 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "122200000" xsd:integer
@@ -1670,9 +1972,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "113700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q13.31
-name: chr3q13.31 (Human)
+name: 3q13.31 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q13.3 ! chr3q13.3 (Human)
+relationship: BFO:0000050 CHR:9606-chr3q13.3 ! 3q13.3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "117600000" xsd:integer
@@ -1680,19 +1982,29 @@ property_value: https://w3id.org/biodatamodels/gff/start "113700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q2
-name: chr3q2 (Human)
+name: 3q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q ! chr3q (Human)
+relationship: BFO:0000050 CHR:9606-chr3q ! 3q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "198295559" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "122200000" xsd:integer
 
 [Term]
-id: CHR:9606-chr3q26
-name: chr3q26 (Human)
+id: CHR:9606-chr3q23
+name: 3q23 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q2 ! chr3q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr3q2 ! 3q2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "143100000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "139000000" xsd:integer
+
+[Term]
+id: CHR:9606-chr3q26
+name: 3q26 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr3q2 ! 3q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "183000000" xsd:integer
@@ -1700,9 +2012,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "161000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q27
-name: chr3q27 (Human)
+name: 3q27 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q2 ! chr3q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr3q2 ! 3q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "188200000" xsd:integer
@@ -1710,9 +2022,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "183000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q27.3
-name: chr3q27.3 (Human)
+name: 3q27.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q27 ! chr3q27 (Human)
+relationship: BFO:0000050 CHR:9606-chr3q27 ! 3q27 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "188200000" xsd:integer
@@ -1720,9 +2032,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "186300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr3q29
-name: chr3q29 (Human)
+name: 3q29 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr3q2 ! chr3q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr3q2 ! 3q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "198295559" xsd:integer
@@ -1730,8 +2042,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "192600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr4
-name: chr4 (Human)
+name: chromosome 4 (Human)
+synonym: "4" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000666.2
 property_value: exactMatch NC:000004.12
@@ -1741,9 +2056,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr4p
-name: chr4p (Human)
+name: 4p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr4 ! chr4 (Human)
+relationship: BFO:0000050 CHR:9606-chr4 ! chromosome 4 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "50000000" xsd:integer
@@ -1751,9 +2066,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr4p1
-name: chr4p1 (Human)
+name: 4p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr4p ! chr4p (Human)
+relationship: BFO:0000050 CHR:9606-chr4p ! 4p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "50000000" xsd:integer
@@ -1761,9 +2076,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr4p16
-name: chr4p16 (Human)
+name: 4p16 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr4p1 ! chr4p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr4p1 ! 4p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "11300000" xsd:integer
@@ -1771,9 +2086,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr4p16.3
-name: chr4p16.3 (Human)
+name: 4p16.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr4p16 ! chr4p16 (Human)
+relationship: BFO:0000050 CHR:9606-chr4p16 ! 4p16 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "4500000" xsd:integer
@@ -1781,9 +2096,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr4q
-name: chr4q (Human)
+name: 4q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr4 ! chr4 (Human)
+relationship: BFO:0000050 CHR:9606-chr4 ! chromosome 4 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "190214555" xsd:integer
@@ -1791,9 +2106,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "50000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr4q2
-name: chr4q2 (Human)
+name: 4q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr4q ! chr4q (Human)
+relationship: BFO:0000050 CHR:9606-chr4q ! 4q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "138500000" xsd:integer
@@ -1801,18 +2116,31 @@ property_value: https://w3id.org/biodatamodels/gff/start "75300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr4q21
-name: chr4q21 (Human)
+name: 4q21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr4q2 ! chr4q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr4q2 ! 4q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "87100000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "75300000" xsd:integer
 
 [Term]
+id: CHR:9606-chr4q25
+name: 4q25 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr4q2 ! 4q2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "113200000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "106700000" xsd:integer
+
+[Term]
 id: CHR:9606-chr5
-name: chr5 (Human)
+name: chromosome 5 (Human)
+synonym: "5" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000667.2
 property_value: exactMatch NC:000005.10
@@ -1822,9 +2150,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr5p
-name: chr5p (Human)
+name: 5p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5 ! chr5 (Human)
+relationship: BFO:0000050 CHR:9606-chr5 ! chromosome 5 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "48800000" xsd:integer
@@ -1832,9 +2160,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr5p1
-name: chr5p1 (Human)
+name: 5p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5p ! chr5p (Human)
+relationship: BFO:0000050 CHR:9606-chr5p ! 5p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "48800000" xsd:integer
@@ -1842,9 +2170,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr5p13
-name: chr5p13 (Human)
+name: 5p13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5p1 ! chr5p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr5p1 ! 5p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "42500000" xsd:integer
@@ -1852,9 +2180,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "28900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q
-name: chr5q (Human)
+name: 5q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5 ! chr5 (Human)
+relationship: BFO:0000050 CHR:9606-chr5 ! chromosome 5 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "181538259" xsd:integer
@@ -1862,9 +2190,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "48800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q1
-name: chr5q1 (Human)
+name: 5q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q ! chr5q (Human)
+relationship: BFO:0000050 CHR:9606-chr5q ! 5q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "98900000" xsd:integer
@@ -1872,9 +2200,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "48800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q12
-name: chr5q12 (Human)
+name: 5q12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q1 ! chr5q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr5q1 ! 5q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "67400000" xsd:integer
@@ -1882,9 +2210,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "59600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q14
-name: chr5q14 (Human)
+name: 5q14 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q1 ! chr5q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr5q1 ! 5q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "93000000" xsd:integer
@@ -1892,19 +2220,49 @@ property_value: https://w3id.org/biodatamodels/gff/start "77600000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q14.3
-name: chr5q14.3 (Human)
+name: 5q14.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q14 ! chr5q14 (Human)
+relationship: BFO:0000050 CHR:9606-chr5q14 ! 5q14 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "93000000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "83500000" xsd:integer
 
 [Term]
-id: CHR:9606-chr5q3
-name: chr5q3 (Human)
+id: CHR:9606-chr5q2
+name: 5q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q ! chr5q (Human)
+relationship: BFO:0000050 CHR:9606-chr5q ! 5q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "131200000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "98900000" xsd:integer
+
+[Term]
+id: CHR:9606-chr5q22
+name: 5q22 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr5q2 ! 5q2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "115900000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "110200000" xsd:integer
+
+[Term]
+id: CHR:9606-chr5q22.2
+name: 5q22.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr5q22 ! 5q22 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "113800000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "112200000" xsd:integer
+
+[Term]
+id: CHR:9606-chr5q3
+name: 5q3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr5q ! 5q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "181538259" xsd:integer
@@ -1912,9 +2270,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "131200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q31
-name: chr5q31 (Human)
+name: 5q31 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q3 ! chr5q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr5q3 ! 5q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "145100000" xsd:integer
@@ -1922,9 +2280,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "131200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q31.3
-name: chr5q31.3 (Human)
+name: 5q31.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q31 ! chr5q31 (Human)
+relationship: BFO:0000050 CHR:9606-chr5q31 ! 5q31 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "145100000" xsd:integer
@@ -1932,9 +2290,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "140100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr5q35
-name: chr5q35 (Human)
+name: 5q35 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr5q3 ! chr5q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr5q3 ! 5q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "181538259" xsd:integer
@@ -1942,8 +2300,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "169000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr6
-name: chr6 (Human)
+name: chromosome 6 (Human)
+synonym: "6" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000668.2
 property_value: exactMatch NC:000006.12
@@ -1953,9 +2314,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr6p
-name: chr6p (Human)
+name: 6p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr6 ! chr6 (Human)
+relationship: BFO:0000050 CHR:9606-chr6 ! chromosome 6 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "59800000" xsd:integer
@@ -1963,9 +2324,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr6p2
-name: chr6p2 (Human)
+name: 6p2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr6p ! chr6p (Human)
+relationship: BFO:0000050 CHR:9606-chr6p ! 6p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "46200000" xsd:integer
@@ -1973,19 +2334,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr6p22
-name: chr6p22 (Human)
+name: 6p22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr6p2 ! chr6p2 (Human)
+relationship: BFO:0000050 CHR:9606-chr6p2 ! 6p2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "30500000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "15200000" xsd:integer
 
 [Term]
-id: CHR:9606-chr6q
-name: chr6q (Human)
+id: CHR:9606-chr6pter-p24
+name: 6pter-p24 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr6 ! chr6 (Human)
+relationship: BFO:0000050 CHR:9606-chr6p ! 6p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr6q
+name: 6q (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr6 ! chromosome 6 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "170805979" xsd:integer
@@ -1993,28 +2362,47 @@ property_value: https://w3id.org/biodatamodels/gff/start "59800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr6q1
-name: chr6q1 (Human)
+name: 6q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr6q ! chr6q (Human)
+relationship: BFO:0000050 CHR:9606-chr6q ! 6q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "105000000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "59800000" xsd:integer
 
 [Term]
-id: CHR:9606-chr6q16
-name: chr6q16 (Human)
+id: CHR:9606-chr6q11-q14
+name: 6q11-q14 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr6q1 ! chr6q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr6q ! 6q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr6q16
+name: 6q16 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr6q1 ! 6q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "105000000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "92500000" xsd:integer
 
 [Term]
+id: CHR:9606-chr6q24-q25
+name: 6q24-q25 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr6q ! 6q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
 id: CHR:9606-chr7
-name: chr7 (Human)
+name: chromosome 7 (Human)
+synonym: "7" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000669.2
 property_value: exactMatch NC:000007.14
@@ -2024,19 +2412,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr7p
-name: chr7p (Human)
+name: 7p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7 ! chr7 (Human)
+relationship: BFO:0000050 CHR:9606-chr7 ! chromosome 7 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "60100000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
-id: CHR:9606-chr7p2
-name: chr7p2 (Human)
+id: CHR:9606-chr7p11.2-p13
+name: 7p11.2-p13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7p ! chr7p (Human)
+relationship: BFO:0000050 CHR:9606-chr7p ! 7p (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr7p2
+name: 7p2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr7p ! 7p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "20900000" xsd:integer
@@ -2044,9 +2440,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr7p22
-name: chr7p22 (Human)
+name: 7p22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7p2 ! chr7p2 (Human)
+relationship: BFO:0000050 CHR:9606-chr7p2 ! 7p2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "7200000" xsd:integer
@@ -2054,9 +2450,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr7p22.1
-name: chr7p22.1 (Human)
+name: 7p22.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7p22 ! chr7p22 (Human)
+relationship: BFO:0000050 CHR:9606-chr7p22 ! 7p22 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "7200000" xsd:integer
@@ -2064,9 +2460,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "4500000" xsd:integer
 
 [Term]
 id: CHR:9606-chr7q
-name: chr7q (Human)
+name: 7q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7 ! chr7 (Human)
+relationship: BFO:0000050 CHR:9606-chr7 ! chromosome 7 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "159345973" xsd:integer
@@ -2074,9 +2470,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "60100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr7q1
-name: chr7q1 (Human)
+name: 7q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7q ! chr7q (Human)
+relationship: BFO:0000050 CHR:9606-chr7q ! 7q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "77900000" xsd:integer
@@ -2084,9 +2480,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "60100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr7q11
-name: chr7q11 (Human)
+name: 7q11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7q1 ! chr7q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr7q1 ! 7q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "77900000" xsd:integer
@@ -2094,9 +2490,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "60100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr7q11.2
-name: chr7q11.2 (Human)
+name: 7q11.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7q11 ! chr7q11 (Human)
+relationship: BFO:0000050 CHR:9606-chr7q11 ! 7q11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "77900000" xsd:integer
@@ -2104,9 +2500,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "62100000" xsd:integer
 
 [Term]
 id: CHR:9606-chr7q11.23
-name: chr7q11.23 (Human)
+name: 7q11.23 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7q11.2 ! chr7q11.2 (Human)
+relationship: BFO:0000050 CHR:9606-chr7q11.2 ! 7q11.2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "77900000" xsd:integer
@@ -2114,9 +2510,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "72700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr7q3
-name: chr7q3 (Human)
+name: 7q3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7q ! chr7q (Human)
+relationship: BFO:0000050 CHR:9606-chr7q ! 7q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "159345973" xsd:integer
@@ -2124,18 +2520,31 @@ property_value: https://w3id.org/biodatamodels/gff/start "107800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr7q31
-name: chr7q31 (Human)
+name: 7q31 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr7q3 ! chr7q3 (Human)
+relationship: BFO:0000050 CHR:9606-chr7q3 ! 7q3 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "127500000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "107800000" xsd:integer
 
 [Term]
+id: CHR:9606-chr7q36
+name: 7q36 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr7q3 ! 7q3 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "159345973" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "148200000" xsd:integer
+
+[Term]
 id: CHR:9606-chr8
-name: chr8 (Human)
+name: chromosome 8 (Human)
+synonym: "8" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000670.2
 property_value: exactMatch NC:000008.11
@@ -2145,9 +2554,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr8p
-name: chr8p (Human)
+name: 8p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8 ! chr8 (Human)
+relationship: BFO:0000050 CHR:9606-chr8 ! chromosome 8 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "45200000" xsd:integer
@@ -2155,9 +2564,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr8p1
-name: chr8p1 (Human)
+name: 8p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8p ! chr8p (Human)
+relationship: BFO:0000050 CHR:9606-chr8p ! 8p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "45200000" xsd:integer
@@ -2165,9 +2574,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "29000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8p11
-name: chr8p11 (Human)
+name: 8p11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8p1 ! chr8p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr8p1 ! 8p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "45200000" xsd:integer
@@ -2175,9 +2584,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "36700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8p11.2
-name: chr8p11.2 (Human)
+name: 8p11.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8p11 ! chr8p11 (Human)
+relationship: BFO:0000050 CHR:9606-chr8p11 ! 8p11 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "43200000" xsd:integer
@@ -2185,9 +2594,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "36700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8p2
-name: chr8p2 (Human)
+name: 8p2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8p ! chr8p (Human)
+relationship: BFO:0000050 CHR:9606-chr8p ! 8p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "29000000" xsd:integer
@@ -2195,9 +2604,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr8p23
-name: chr8p23 (Human)
+name: 8p23 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8p2 ! chr8p2 (Human)
+relationship: BFO:0000050 CHR:9606-chr8p2 ! 8p2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "12800000" xsd:integer
@@ -2205,9 +2614,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr8p23.1
-name: chr8p23.1 (Human)
+name: 8p23.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8p23 ! chr8p23 (Human)
+relationship: BFO:0000050 CHR:9606-chr8p23 ! 8p23 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "12800000" xsd:integer
@@ -2215,9 +2624,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "6300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q
-name: chr8q (Human)
+name: 8q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8 ! chr8 (Human)
+relationship: BFO:0000050 CHR:9606-chr8 ! chromosome 8 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "145138636" xsd:integer
@@ -2225,9 +2634,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "45200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q1
-name: chr8q1 (Human)
+name: 8q1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q ! chr8q (Human)
+relationship: BFO:0000050 CHR:9606-chr8q ! 8q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "72000000" xsd:integer
@@ -2235,19 +2644,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "45200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q12
-name: chr8q12 (Human)
+name: 8q12 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q1 ! chr8q1 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q1 ! 8q1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "65100000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "54600000" xsd:integer
 
 [Term]
-id: CHR:9606-chr8q2
-name: chr8q2 (Human)
+id: CHR:9606-chr8q12.1-q21.2
+name: 8q12.1-q21.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q ! chr8q (Human)
+relationship: BFO:0000050 CHR:9606-chr8q ! 8q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr8q2
+name: 8q2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr8q ! 8q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "145138636" xsd:integer
@@ -2255,9 +2672,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "72000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q21
-name: chr8q21 (Human)
+name: 8q21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q2 ! chr8q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q2 ! 8q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "92300000" xsd:integer
@@ -2265,9 +2682,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "72000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q21.1
-name: chr8q21.1 (Human)
+name: 8q21.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q21 ! chr8q21 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q21 ! 8q21 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "83500000" xsd:integer
@@ -2275,9 +2692,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "72000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q21.11
-name: chr8q21.11 (Human)
+name: 8q21.11 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q21.1 ! chr8q21.1 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q21.1 ! 8q21.1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "74600000" xsd:integer
@@ -2285,9 +2702,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "72000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q22
-name: chr8q22 (Human)
+name: 8q22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q2 ! chr8q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q2 ! 8q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "105100000" xsd:integer
@@ -2295,9 +2712,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "92300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q22.1
-name: chr8q22.1 (Human)
+name: 8q22.1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q22 ! chr8q22 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q22 ! 8q22 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "97900000" xsd:integer
@@ -2305,9 +2722,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "92300000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q24
-name: chr8q24 (Human)
+name: 8q24 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q2 ! chr8q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q2 ! 8q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "145138636" xsd:integer
@@ -2315,9 +2732,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "116700000" xsd:integer
 
 [Term]
 id: CHR:9606-chr8q24.3
-name: chr8q24.3 (Human)
+name: 8q24.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr8q24 ! chr8q24 (Human)
+relationship: BFO:0000050 CHR:9606-chr8q24 ! 8q24 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "145138636" xsd:integer
@@ -2325,8 +2742,11 @@ property_value: https://w3id.org/biodatamodels/gff/start "138900000" xsd:integer
 
 [Term]
 id: CHR:9606-chr9
-name: chr9 (Human)
+name: chromosome 9 (Human)
+synonym: "9" BROAD []
 is_a: GO:0005694
+is_a: GO:0030849
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000671.2
 property_value: exactMatch NC:000009.12
@@ -2336,9 +2756,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr9p
-name: chr9p (Human)
+name: 9p (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr9 ! chr9 (Human)
+relationship: BFO:0000050 CHR:9606-chr9 ! chromosome 9 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "43000000" xsd:integer
@@ -2346,9 +2766,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chr9p1
-name: chr9p1 (Human)
+name: 9p1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr9p ! chr9p (Human)
+relationship: BFO:0000050 CHR:9606-chr9p ! 9p (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "43000000" xsd:integer
@@ -2356,9 +2776,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "33200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr9p13
-name: chr9p13 (Human)
+name: 9p13 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr9p1 ! chr9p1 (Human)
+relationship: BFO:0000050 CHR:9606-chr9p1 ! 9p1 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "39000000" xsd:integer
@@ -2366,9 +2786,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "33200000" xsd:integer
 
 [Term]
 id: CHR:9606-chr9q
-name: chr9q (Human)
+name: 9q (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr9 ! chr9 (Human)
+relationship: BFO:0000050 CHR:9606-chr9 ! chromosome 9 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "138394717" xsd:integer
@@ -2376,19 +2796,49 @@ property_value: https://w3id.org/biodatamodels/gff/start "43000000" xsd:integer
 
 [Term]
 id: CHR:9606-chr9q2
-name: chr9q2 (Human)
+name: 9q2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr9q ! chr9q (Human)
+relationship: BFO:0000050 CHR:9606-chr9q ! 9q (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "99800000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "65000000" xsd:integer
 
 [Term]
-id: CHR:9606-chr9q22
-name: chr9q22 (Human)
+id: CHR:9606-chr9q21
+name: 9q21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr9q2 ! chr9q2 (Human)
+relationship: BFO:0000050 CHR:9606-chr9q2 ! 9q2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "87800000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "65000000" xsd:integer
+
+[Term]
+id: CHR:9606-chr9q21.1
+name: 9q21.1 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr9q21 ! 9q21 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "76600000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "65000000" xsd:integer
+
+[Term]
+id: CHR:9606-chr9q21.13
+name: 9q21.13 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr9q21.1 ! 9q21.1 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "76600000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "71300000" xsd:integer
+
+[Term]
+id: CHR:9606-chr9q22
+name: 9q22 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr9q2 ! 9q2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "99800000" xsd:integer
@@ -2396,18 +2846,56 @@ property_value: https://w3id.org/biodatamodels/gff/start "87800000" xsd:integer
 
 [Term]
 id: CHR:9606-chr9q22.3
-name: chr9q22.3 (Human)
+name: 9q22.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chr9q22 ! chr9q22 (Human)
+relationship: BFO:0000050 CHR:9606-chr9q22 ! 9q22 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "99800000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "91200000" xsd:integer
 
 [Term]
+id: CHR:9606-chr9q3
+name: 9q3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr9q ! 9q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "138394717" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "99800000" xsd:integer
+
+[Term]
+id: CHR:9606-chr9q31.1-q31.3
+name: 9q31.1-q31.3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr9q ! 9q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr9q33.3-q34.11
+name: 9q33.3-q34.11 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr9q ! 9q (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chr9q34
+name: 9q34 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chr9q3 ! 9q3 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "138394717" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "127500000" xsd:integer
+
+[Term]
 id: CHR:9606-chrM
-name: chrM (Human)
+name: chromosome M (Human)
+synonym: "MT" BROAD []
 is_a: GO:0005694
+relationship: BFO:0000050 GO:0005739
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/J01415.2
 property_value: exactMatch NC:012920.1
@@ -2417,8 +2905,12 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chrX
-name: chrX (Human)
+name: chromosome X (Human)
+synonym: "X" BROAD []
+is_a: GO:0000803
+is_a: GO:0000805
 is_a: GO:0005694
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000685.2
 property_value: exactMatch NC:000023.11
@@ -2428,19 +2920,57 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chrXp
-name: chrXp (Human)
+name: Xp (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrX ! chrX (Human)
+relationship: BFO:0000050 CHR:9606-chrX ! chromosome X (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "61000000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
-id: CHR:9606-chrXp2
-name: chrXp2 (Human)
+id: CHR:9606-chrXp1
+name: Xp1 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXp ! chrXp (Human)
+relationship: BFO:0000050 CHR:9606-chrXp ! Xp (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "61000000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "37800000" xsd:integer
+
+[Term]
+id: CHR:9606-chrXp11
+name: Xp11 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXp1 ! Xp1 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "61000000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "37800000" xsd:integer
+
+[Term]
+id: CHR:9606-chrXp11.23-p11.22
+name: Xp11.23-p11.22 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXp ! Xp (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chrXp11.3
+name: Xp11.3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXp11 ! Xp11 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "47600000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "42500000" xsd:integer
+
+[Term]
+id: CHR:9606-chrXp2
+name: Xp2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXp ! Xp (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "37800000" xsd:integer
@@ -2448,9 +2978,9 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chrXp21
-name: chrXp21 (Human)
+name: Xp21 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXp2 ! chrXp2 (Human)
+relationship: BFO:0000050 CHR:9606-chrXp2 ! Xp2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "37800000" xsd:integer
@@ -2458,19 +2988,27 @@ property_value: https://w3id.org/biodatamodels/gff/start "24900000" xsd:integer
 
 [Term]
 id: CHR:9606-chrXp22
-name: chrXp22 (Human)
+name: Xp22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXp2 ! chrXp2 (Human)
+relationship: BFO:0000050 CHR:9606-chrXp2 ! Xp2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "24900000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
-id: CHR:9606-chrXp22.3
-name: chrXp22.3 (Human)
+id: CHR:9606-chrXp22.13-p22.2
+name: Xp22.13-p22.2 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXp22 ! chrXp22 (Human)
+relationship: BFO:0000050 CHR:9606-chrXp ! Xp (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chrXp22.3
+name: Xp22.3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXp22 ! Xp22 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "9600000" xsd:integer
@@ -2478,29 +3016,57 @@ property_value: https://w3id.org/biodatamodels/gff/start "0" xsd:integer
 
 [Term]
 id: CHR:9606-chrXq
-name: chrXq (Human)
+name: Xq (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrX ! chrX (Human)
+relationship: BFO:0000050 CHR:9606-chrX ! chromosome X (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "156040895" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "61000000" xsd:integer
 
 [Term]
-id: CHR:9606-chrXq2
-name: chrXq2 (Human)
+id: CHR:9606-chrXq12-q13.3
+name: Xq12-q13.3 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXq ! chrXq (Human)
+relationship: BFO:0000050 CHR:9606-chrXq ! Xq (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chrXq2
+name: Xq2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXq ! Xq (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "156040895" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "76800000" xsd:integer
 
 [Term]
-id: CHR:9606-chrXq25
-name: chrXq25 (Human)
+id: CHR:9606-chrXq22
+name: Xq22 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXq2 ! chrXq2 (Human)
+relationship: BFO:0000050 CHR:9606-chrXq2 ! Xq2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "109400000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "99100000" xsd:integer
+
+[Term]
+id: CHR:9606-chrXq22.3
+name: Xq22.3 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXq22 ! Xq22 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "109400000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "104500000" xsd:integer
+
+[Term]
+id: CHR:9606-chrXq25
+name: Xq25 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXq2 ! Xq2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "129500000" xsd:integer
@@ -2508,19 +3074,47 @@ property_value: https://w3id.org/biodatamodels/gff/start "121800000" xsd:integer
 
 [Term]
 id: CHR:9606-chrXq26
-name: chrXq26 (Human)
+name: Xq26 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXq2 ! chrXq2 (Human)
+relationship: BFO:0000050 CHR:9606-chrXq2 ! Xq2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "138900000" xsd:integer
 property_value: https://w3id.org/biodatamodels/gff/start "129500000" xsd:integer
 
 [Term]
-id: CHR:9606-chrXq28
-name: chrXq28 (Human)
+id: CHR:9606-chrXq27
+name: Xq27 (Human)
 is_a: GO:0098687
-relationship: BFO:0000050 CHR:9606-chrXq2 ! chrXq2 (Human)
+relationship: BFO:0000050 CHR:9606-chrXq2 ! Xq2 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "148000000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "138900000" xsd:integer
+
+[Term]
+id: CHR:9606-chrXq27.2
+name: Xq27.2 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXq27 ! Xq27 (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+property_value: https://w3id.org/biodatamodels/gff/end "143000000" xsd:integer
+property_value: https://w3id.org/biodatamodels/gff/start "141200000" xsd:integer
+
+[Term]
+id: CHR:9606-chrXq27.3-q28
+name: Xq27.3-q28 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXq ! Xq (Human)
+relationship: RO:0002162 NCBITaxon:9606
+property_value: genome:build "hg38" xsd:string
+
+[Term]
+id: CHR:9606-chrXq28
+name: Xq28 (Human)
+is_a: GO:0098687
+relationship: BFO:0000050 CHR:9606-chrXq2 ! Xq2 (Human)
 relationship: RO:0002162 NCBITaxon:9606
 property_value: genome:build "hg38" xsd:string
 property_value: https://w3id.org/biodatamodels/gff/end "156040895" xsd:integer
@@ -2528,9 +3122,12 @@ property_value: https://w3id.org/biodatamodels/gff/start "148000000" xsd:integer
 
 [Term]
 id: CHR:9606-chrY
-name: chrY (Human)
+name: chromosome Y (Human)
 synonym: "Y" BROAD []
+is_a: GO:0000803
+is_a: GO:0000806
 is_a: GO:0005694
+relationship: BFO:0000050 GO:0005634
 relationship: RO:0002162 NCBITaxon:9606
 property_value: exactMatch http://identifiers.org/insdc/CM000686.2
 property_value: exactMatch NC:000024.10

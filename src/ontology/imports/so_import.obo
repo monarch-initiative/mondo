@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mondo/releases/2021-08-05/imports/so_import.owl
+data-version: mondo/releases/2023-08-31/imports/so_import.owl
 ontology: mondo/imports/so_import
 
 [Term]
@@ -512,7 +512,7 @@ is_a: SO:0001059 ! sequence_alteration
 [Term]
 id: SO:0001877
 name: lncRNA
-def: "A non-coding RNA over 200nucleotides in length." []
+def: "A non-coding RNA generally longer than 200 nucleotides that cannot be classified as any other ncRNA subtype. Similar to mRNAs, lncRNAs are mainly transcribed by RNA polymerase II, are often capped by 7-methyl guanosine at their 5' ends, polyadenylated at their 3' ends and may be spliced." []
 synonym: "INSDC_feature:ncRNA" BROAD []
 synonym: "INSDC_qualifier:lncRNA" EXACT []
 synonym: "lncRNA_transcript" EXACT []
@@ -553,7 +553,7 @@ is_a: SO:0001411 ! biological_region
 [Term]
 id: SO:0002342
 name: sncRNA_gene
-def: "A ncRNA_gene (SO:0001263) that is less than 200 nucleotides in length." []
+def: "A ncRNA_gene that encodes an ncRNA less than 200 nucleotides in length." []
 synonym: "small non-coding RNA gene" EXACT []
 synonym: "sncRNA gene" EXACT []
 is_a: SO:0001263 ! ncRNA_gene
