@@ -1,7 +1,9 @@
 # Mondo Curation Workflow Overview
 
 ## Description
-This document describes the community curation workflow in Mondo, including how new terms are added to Mondo, when terms are obsoleted, and Mondo releases. 
+This document describes the community curation workflow in Mondo, including how new terms are added to Mondo, when terms are obsoleted, and Mondo releases. An overview of the types of commonly requested changes are depicted below.
+
+![Mondo term changes](../images/Mondo-term-changes-figure.png)
 
 ## Adding new terms to Mondo
 - New terms are added to Mondo via two processes:
